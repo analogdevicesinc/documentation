@@ -13,10 +13,6 @@ Install the documentation tools.
 ```
 (cd docs ; pip install -r requirements.txt)
 ```
-Build the libraries (recommended).
-```
-(cd library ; make)
-```
 Build the documentation with Sphinx.
 ```
 (cd docs ; make html)
@@ -31,3 +27,8 @@ To generate it, install the tools at the last topic, then do:
 ./ci/monolithic.sh
 ```
 The output will be written to `docs-mono/_build/html`.
+
+To enable the compilation of all auto generated sections, use the `--extra` flag:
+```
+./ci/monolithic.sh --extra
+```
