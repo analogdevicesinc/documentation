@@ -5,6 +5,30 @@ declare -A repos
 repos[hdl]="git@github.com:analogdevicesinc/hdl.git"
 repos[doctools]="git@github.com:analogdevicesinc/doctools.git"
 
+cli_info="./ci/monolithic [--extra]"
+if [ ! -d ci ]; then
+	echo "Wrong path, run from the top-level path: $cli_info"
+	exit 1
+fi
+
+if [ $# -eq 0 ]; then
+	echo "Extra features disabled, use --extra to enable."
+	extra=0
+else
+	while [ "$1" != "" ]; do
+		case $1 in
+			--extra )
+				extra=1
+				;;
+			* )
+				echo "Usage: $0 [--extra]"
+				exit 1
+				;;
+		esac
+		shift
+	done
+fi
+
 if [[ -d docs-mono ]]
 then
 	rm -r docs-mono
@@ -64,6 +88,8 @@ for i in "${!repos[@]}"; do
 done
 
 # Repo specific tasks
-#(cd repos/hdl/library; make all)
+if [ $extra -eq 1 ]; then
+	(cd repos/hdl/library; make all -j4)
+fi
 
 (cd docs-mono ; make html)
