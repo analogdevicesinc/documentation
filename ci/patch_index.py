@@ -6,18 +6,24 @@ import sys, os
 
 dict_ = {
     'hdl': 'HDL',
+    'no-os': 'no-OS',
     'doctools': 'Doc Tools',
+    'documentation': 'System Level',
 }
 
 name = sys.argv[1]
 if name not in dict_:
     sys.exit(f"Error: {name} not known.")
 
-file = f"repos/{name}/docs/index.rst"
+if name == "no-os":
+    file = f"repos/{name}/doc/sphinx/source/index.rst"
+else:
+    file = f"repos/{name}/docs/index.rst"
 if not os.path.isfile(file):
     sys.exit(f"Error: {file} does not exist")
 
 toctree = []
+print(file)
 with open(file, "r") as f:
     data = f.readlines()
 
@@ -25,6 +31,7 @@ with open(file, "r") as f:
         sys.exit(-1)
 
     in_toc = False
+    print("getting")
     for i in range(0, len(data)):
         if in_toc:
             if data[i][0:12] == '   :caption:':
@@ -49,7 +56,7 @@ with open(file, "r") as f:
             if data[i] == ".. toctree::\n":
                 toctree.append([i,i])
                 in_toc = True
-
+print(toctree)
 file = sys.argv[2]
 if not os.path.isfile(file):
     sys.exit(f"Error: {file} does not exist")
@@ -57,10 +64,13 @@ if not os.path.isfile(file):
 with open(file, "r") as f:
     data_ = f.readlines()
     # Find end of toctree
-    i = data_.index(".. toctree::\n")
-    for i in range(i + 1, len(data_)):
-        if data_[i][0:3] != '   ' and data_[i] != '\n':
-            break
+    if ".. toctree::\n" in data_:
+        i = data_.index(".. toctree::\n")
+        for i in range(i + 1, len(data_)):
+            if data_[i][0:3] != '   ' and data_[i] != '\n':
+                break
+    else:
+        i = len(data_) - 1
 
     header = data_[:i]
     body = data_[i:]
