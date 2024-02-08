@@ -1,21 +1,20 @@
 # -- Project information -----------------------------------------------------
 
+repository = 'documentation'
 project = 'System Level, Analog Devices'
 copyright = '2024, Analog Devices Inc'
 author = 'Analog Devices Inc'
-release = 'v0.1'
 
 # -- General configuration ---------------------------------------------------
 
 extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.intersphinx",
-    "sphinx.ext.viewcode",
     "adi_doctools"
 ]
 
 needs_extensions = {
-    'adi_doctools':'0.2'
+    'adi_doctools':'0.3'
 }
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -42,7 +41,7 @@ todo_emit_warnings = True
 
 # -- Options for HTML output --------------------------------------------------
 
-html_theme = 'furo'
+html_theme = 'cosmic'
 html_static_path = ['sources']
 html_css_files = ["custom.css"]
 html_favicon = "sources/icon.svg"
