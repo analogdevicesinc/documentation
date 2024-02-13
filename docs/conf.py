@@ -14,7 +14,7 @@ extensions = [
 ]
 
 needs_extensions = {
-    'adi_doctools':'0.3'
+    'adi_doctools': '0.3'
 }
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -22,9 +22,11 @@ source_suffix = '.rst'
 
 # -- External docs configuration ----------------------------------------------
 
-intersphinx_mapping = { 'doctools' : ('https://analogdevicesinc.github.io/doctools', None),
-                        'hdl'  : ('https://analogdevicesinc.github.io/hdl',   None),
-                        'no-os': ('https://analogdevicesinc.github.io/no-os', None)}
+intersphinx_mapping = {
+    'doctools': ('https://analogdevicesinc.github.io/doctools', None),
+    'hdl': ('https://analogdevicesinc.github.io/hdl', None),
+    'no-os': ('https://analogdevicesinc.github.io/no-os', None)
+}
 
 intersphinx_disabled_reftypes = ["*"]
 

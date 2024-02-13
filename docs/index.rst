@@ -1,18 +1,9 @@
-:hide-toc:
-
 System Level Documentation
 ===============================================================================
 
 .. toctree::
-   :caption: FMC Compatible Boards
-   :hidden:
 
    categories/transceiver-radio-boards
-
-.. toctree::
-   :caption: User Guide
-   :hidden:
-
    docs_guidelines
 
 .. attention::
