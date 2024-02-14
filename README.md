@@ -22,13 +22,8 @@ The generated documentation will be available at `docs/_build/html`.
 ## Building the monolithic documentation
 
 The monolithic version aggregates all ADI's documentation into a single output/webpage.
-To generate it, install the tools at the last topic, then do:
+To generate it, considering Doctools is installed, do:
 ```
-./ci/monolithic.sh
+adoc aggregate -d docs_output
 ```
-The output will be written to `docs-mono/_build/html`.
-
-To enable the compilation of all auto generated sections, use the `--extra` flag:
-```
-./ci/monolithic.sh --extra
-```
+See [Doctools](https://github.com/analogdevicesinc/doctools) for more information.
