@@ -1,9 +1,9 @@
 # -- Project information -----------------------------------------------------
 
 repository = 'documentation'
-project = 'System Level, Analog Devices'
-copyright = '2024, Analog Devices Inc'
-author = 'Analog Devices Inc'
+project = 'System Level Documentation'
+copyright = '2024, Analog Devices, Inc.'
+author = 'Analog Devices, Inc.'
 
 # -- General configuration ---------------------------------------------------
 
@@ -32,7 +32,6 @@ intersphinx_disabled_reftypes = ["*"]
 
 # -- Custom extensions configuration ------------------------------------------
 
-is_system_top = True
 hide_collapsible_content = True
 validate_links = False
 
