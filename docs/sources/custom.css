@@ -41,20 +41,6 @@ img {
     padding: .5em 0;
 }
 
-iframe {
-    width: calc(50.625rem - 1rem);
-    height: calc(28.47rem - 0.5625rem);
-    margin-left: -1rem;
-}
-
-@media (max-width:50.625rem) {
-    iframe {
-        width: calc(100vw - 1rem);
-        height: calc(56.25vw - 1rem);
-        margin-left: -1rem;
-    }
-}
-
 .WaveDrom {
     background: #fff;
     border-radius: .25em;

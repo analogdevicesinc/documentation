@@ -35,6 +35,11 @@ intersphinx_disabled_reftypes = ["*"]
 hide_collapsible_content = True
 validate_links = False
 
+pseudo_subdomains = {
+    'eval': 'Evaluation Boards',
+    'university': 'University Program',
+}
+
 # -- todo configuration -------------------------------------------------------
 
 todo_include_todos = True
