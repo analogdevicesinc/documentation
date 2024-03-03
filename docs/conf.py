@@ -8,13 +8,11 @@ author = 'Analog Devices, Inc.'
 # -- General configuration ---------------------------------------------------
 
 extensions = [
-    "sphinx.ext.todo",
-    "sphinx.ext.intersphinx",
     "adi_doctools"
 ]
 
 needs_extensions = {
-    'adi_doctools': '0.3'
+    'adi_doctools': '0.3.17'
 }
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -22,13 +20,7 @@ source_suffix = '.rst'
 
 # -- External docs configuration ----------------------------------------------
 
-intersphinx_mapping = {
-    'doctools': ('https://analogdevicesinc.github.io/doctools', None),
-    'hdl': ('https://analogdevicesinc.github.io/hdl', None),
-    'no-OS': ('https://analogdevicesinc.github.io/no-OS', None)
-}
-
-intersphinx_disabled_reftypes = ["*"]
+interref_repos = ['doctools']
 
 # -- Custom extensions configuration ------------------------------------------
 
@@ -39,11 +31,6 @@ pseudo_subdomains = {
     'eval': 'Evaluation Boards',
     'university': 'University Program',
 }
-
-# -- todo configuration -------------------------------------------------------
-
-todo_include_todos = True
-todo_emit_warnings = True
 
 # -- Options for HTML output --------------------------------------------------
 
