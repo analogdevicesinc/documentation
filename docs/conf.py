@@ -24,17 +24,6 @@ interref_repos = ['doctools']
 
 # -- Custom extensions configuration ------------------------------------------
 
-hide_collapsible_content = True
-validate_links = False
-
-pseudo_subdomains = {
-    'eval': 'Evaluation Boards',
-    'university': 'University Program',
-}
-
 # -- Options for HTML output --------------------------------------------------
 
 html_theme = 'cosmic'
-html_static_path = ['sources']
-html_css_files = ["custom.css"]
-html_favicon = "sources/icon.svg"

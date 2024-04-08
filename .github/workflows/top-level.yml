@@ -4,13 +4,13 @@ on:
       - main
     paths:
       - 'docs/**'
+  pull_request:
+    paths:
+      - 'docs/**'
 
 jobs:
-  build:
-    name: Deploy doc
+  build-doc:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
     - name: Set up Python
@@ -33,22 +33,43 @@ jobs:
       run: |
         make html
 
-    - name: Commit
+    - name: Store the generated doc
+      uses: actions/upload-artifact@v4
+      with:
+        name: html
+        path: docs/_build/html
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: [build-doc]
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: 'gh-pages'
+        lfs: 'false'
+
+    - name: Empty gh-pages
+      run: |
+        git rm -r . --quiet
+
+    - uses: actions/download-artifact@v4
+      with:
+        name: html
+
+    - name: Patch doc build
+      run: |
+        rm -r _sources
+        touch .nojekyll
+
+    - name: Commit gh-pages
       run: |
         author=$(git log -1 --pretty=format:'%an')
         email=$(git log -1 --pretty=format:'%ae')
         commit=$(git rev-parse --short HEAD)
-
-        mkdir /tmp/doc
-        rm -r docs/_build/html/_sources
-        cp -r docs/_build/html/* /tmp/doc
-        git stash --all
-        git fetch origin gh-pages
-        git checkout -b gh-pages origin/gh-pages
-        git rm -r . --quiet
-        cp -r /tmp/doc/* .
-        touch .nojekyll
-        git lfs uninstall
 
         git add . >> /dev/null
         git config --global user.name "$author"
@@ -58,7 +79,3 @@ jobs:
     - name: Push to gh-pages
       run: >-
         git push origin gh-pages:gh-pages
-
-    - name: Clean-up
-      run: >-
-        rm -r /tmp/doc
