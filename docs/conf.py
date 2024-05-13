@@ -22,8 +22,6 @@ source_suffix = '.rst'
 
 interref_repos = ['doctools']
 
-# -- Custom extensions configuration ------------------------------------------
-
 # -- Options for HTML output --------------------------------------------------
 
 html_theme = 'cosmic'
