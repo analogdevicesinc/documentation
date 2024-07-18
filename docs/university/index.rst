@@ -168,6 +168,13 @@ This short 6 min video was put together to describe the purpose of ADI's Univers
 
 Interviews with the following people(in order of appearance):
 
+
+
+
+.. toctree::
+
+   active_learning/index
+
 * Jeffrey Pawlick, `Electrical Engineering student, Rensselaer Polytechnic Institute <http://www.ecse.rpi.edu/>`_,
 * Sarah Evans, `Applied Physics student, Rensselaer Polytechnic Institute <http://www.rpi.edu/dept/phys/>`_,
 * Trent Shapiro, `Aerospace Engineering student, Rensselaer Polytechnic Institute <http://mane.rpi.edu/>`_,

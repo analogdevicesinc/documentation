@@ -30,3 +30,8 @@ interref_repos = ['doctools', 'hdl', 'pyadi-iio']
 
 html_theme = 'cosmic'
 html_favicon = path.join("sources", "icon.svg")
+numfig = True
+
+
+numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
+                     'code-block': 'Listing %s', 'section': 'Section %s'}
