@@ -1,6 +1,10 @@
 Engineering University Program
 ===============================================================================
 
+.. toctree::
+   :maxdepth: 4
+
+
 Mission
 -------------------------------------------------------------------------------
 
@@ -172,6 +176,8 @@ Interviews with the following people(in order of appearance):
 
 
 .. toctree::
+   :hidden:
+   :maxdepth: 4
 
    active_learning/index
 
