@@ -17,14 +17,29 @@ Contents
 -------------------------------------------------------------------------------
 
 .. toctree::
+   :caption: Linux Software
+   :maxdepth: 2
+
+   linux/kuiper/index
+   linux/drivers/index
+   linux/zynq-images/index
+
+.. toctree::
    :caption: Evaluation Boards
    :maxdepth: 2
 
-   User Guides <eval/user-guide/index>
-   miscellaneous/docs_guidelines
+   eval/user-guide/index
 
 .. toctree::
    :caption: University Program
    :maxdepth: 1
 
    university/index
+
+.. toctree::
+   :caption: Contributing and Guidelines
+   :maxdepth: 4
+
+   contributing/forking_publishing
+   contributing/creating_new_pages
+   contributing/docs_guidelines

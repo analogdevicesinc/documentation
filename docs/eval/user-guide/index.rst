@@ -1,4 +1,4 @@
-User Guides: Evaluation Boards and Kits
+User guides
 ===============================================================================
 
 Amplifiers

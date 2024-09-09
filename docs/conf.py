@@ -20,7 +20,7 @@ source_suffix = '.rst'
 
 # -- External docs configuration ----------------------------------------------
 
-interref_repos = ['doctools']
+interref_repos = ['doctools', 'hdl']
 
 # -- Options for HTML output --------------------------------------------------
 
