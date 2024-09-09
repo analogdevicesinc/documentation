@@ -16,6 +16,11 @@ and the software which can make it work can be found here.
 .. image:: adrv9009-pcb.jpg
    :align: center
 
+.. toctree::
+
+   Prerequisites <prerequisites>
+   Quickstart <quickstart>
+
 Table of Contents
 -------------------------------------------------------------------------------
 
@@ -25,8 +30,8 @@ If you have any questions, feel free to :ref:`ask <ad-fmcomms2-ebz help-and-supp
 
 #. Use the board to better understand the ADRV9009/ADRV9008-1/ADRV9008-2
 
-   #. `What you need to get started <adrv9009 prerequisites>`__
-   #. `Quick Start Guides <adrv9009 quickstart>`__
+   #. :ref:`What you need to get started <adrv9009 prerequisites>`
+   #. :ref:`Quick Start Guides <adrv9009 quickstart>`
 
       #. :ref:`Linux on ZCU102 <adrv9009 quickstart zynqmp>`
       #. :dokuwiki:`Configure a pre-existing SD-Card <resources/tools-software/linux-software/zynq_images#preparing_the_image>`
