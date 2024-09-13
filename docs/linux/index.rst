@@ -7,4 +7,4 @@ Linux software
 
    kuiper/index
    drivers/index
-   zynq-images/index
+   kernel/index

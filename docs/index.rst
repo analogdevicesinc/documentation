@@ -22,7 +22,7 @@ Contents
 
    linux/kuiper/index
    linux/drivers/index
-   linux/zynq-images/index
+   linux/kernel/index
 
 .. toctree::
    :caption: Evaluation Boards
