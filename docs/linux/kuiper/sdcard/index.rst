@@ -1,3 +1,5 @@
+.. _kuiper sdcard:
+
 SD Card flashing
 ================
 
@@ -25,23 +27,23 @@ get the latest if you can. This can be done with wget as well:
 
 .. code-block:: bash
 
-   rgetz@brain:~/newest$ time wget
+   time wget \
    https://swdownloads.analog.com/cse/kuiper/image_2021-07-28-ADI-Kuiper-full.zip
-   --2021-12-15 17:12:33--
-   http://swdownloads.analog.com/cse/image_2021-07-28-ADI-Kuiper-full.zip Resolving
-   swdownloads.analog.com (swdownloads.analog.com)... 81.196.26.153, 81.196.26.177
-   Connecting to swdownloads.analog.com
-   (swdownloads.analog.com)|81.196.26.153|:80... connected. HTTP request sent,
-   awaiting response... 200 OK Length: 15931539 (14.8 GB)
-   [application/octet-stream] Saving to: 'image_2021-07-28-ADI-Kuiper-full.zip'
-
-   100%[=======================================================================>]
-   15931539 1.94M/s in 6m 52s
-
-   2021-12-15 17:19:26 (1.83 MB/s) - 'image_2021-07-28-ADI-Kuiper-full.zip' saved
-   [15931539/15931539]
-
-   real 6m53.573s user 0m0.740s sys 0m32.342s
+   # --2021-12-15 17:12:33--
+   # http://swdownloads.analog.com/cse/image_2021-07-28-ADI-Kuiper-full.zip Resolving
+   # swdownloads.analog.com (swdownloads.analog.com)... 81.196.26.153, 81.196.26.177
+   # Connecting to swdownloads.analog.com
+   # (swdownloads.analog.com)|81.196.26.153|:80... connected. HTTP request sent,
+   # awaiting response... 200 OK Length: 15931539 (14.8 GB)
+   # [application/octet-stream] Saving to: 'image_2021-07-28-ADI-Kuiper-full.zip'
+   #
+   # 100%[=======================================================================>]
+   # 15931539 1.94M/s in 6m 52s
+   #
+   # 2021-12-15 17:19:26 (1.83 MB/s) - 'image_2021-07-28-ADI-Kuiper-full.zip' saved
+   # [15931539/15931539]
+   #
+   # real 6m53.573s user 0m0.740s sys 0m32.342s
 
 Yeah, it takes an hour (or more if your connection is slow).
 At least you can drive down to your favourite coffee store, and indulge yourself.
@@ -53,23 +55,23 @@ Verify the download
 
    .. code-block:: bash
 
-      rgetz@brain:~/newest$ md5sum image_2021-07-28-ADI-Kuiper-full.zip
-      279097240dec7156ff5e15b7ce0b8a25 image_2021-07-28-ADI-Kuiper-full.zip
+      md5sum image_2021-07-28-ADI-Kuiper-full.zip
+      # 279097240dec7156ff5e15b7ce0b8a25 image_2021-07-28-ADI-Kuiper-full.zip
 
 #. A ``zip`` file is a compressed file, you need to uncompress it, and check the
    md5sum on resulted file:
 
    .. code-block:: bash
 
-      rgetz@brain:~/newest$ time unzip image_2021-07-28-ADI-Kuiper-full.zip real
-      1m17.40s user 74.44s sys 2.11s
+      time unzip image_2021-07-28-ADI-Kuiper-full.zip real
+      # 1m17.40s user 74.44s sys 2.11s
 
 #. Again, check the results:
 
    .. code-block:: bash
 
-      rgetz@brain:~/newest$ md5sum 2021-07-28-ADI-Kuiper-full.img
-      b160453396e482234094a92134769ec6 2021-07-28-ADI-Kuiper-full.img
+      md5sum 2021-07-28-ADI-Kuiper-full.img
+      # b160453396e482234094a92134769ec6 2021-07-28-ADI-Kuiper-full.img
 
 Writing SD Card GUI
 +++++++++++++++++++
@@ -114,19 +116,22 @@ files to block devices.
    Linux distributions do), it is important that you unmount
    it.
 
-   :code:`rgetz@brain:~/newest$ sudo umount /dev/mmcblk0p1`
+   :code:`sudo umount /dev/mmcblk0p1`
 #. Write the file (input file or ``if``) to the storage device (output file or
    ``of``).
 
    .. code-block:: bash
 
-      rgetz@brain:~/newest$ time sudo dd if=2021-07-28-ADI-Kuiper-full.img
-      of=/dev/mmcblk0 bs=4194304
-      [sudo] password for rgetz:
-      0+60640 records in 0+60640 records out 7948206080 bytes (7.9 GB) copied, 571.766 s, 13.9 MB/s
-      real 7m54.11s user 0.29s sys 8.94s
+      time sudo dd \
+           if=2021-07-28-ADI-Kuiper-full.img \
+           of=/dev/mmcblk0 \
+           bs=4194304
+      # [sudo] password for user:
+      # 0+60640 records in 0+60640 records out 7948206080 bytes (7.9 GB) copied, 571.766 s, 13.9 MB/s
+      # real 7m54.11s user 0.29s sys 8.94s
 
    Now, you have that slice of pizza that you got too... :)
+
 This section explains how you should go about formatting and flashing the SD
 card with the software required to use many of platforms Analog Devices
 supports. There are several steps that need to be completed before your SD Card
@@ -137,7 +142,7 @@ will be ready to use.
 
    .. code-block:: bash
 
-      rgetz@brain:~/newest$ sync
+      sync
 
 #. Unplug the SD card from your PC.
 
@@ -160,8 +165,8 @@ If you are unsure of how to use this tool, check the
 
    .. code-block::
 
-      rgetz@brain:~/images$ sudo umount /dev/mmcblk0p1
-      rgetz@brain:~/images$ sudo umount /dev/mmcblk0p2
+      sudo umount /dev/mmcblk0p1
+      sudo umount /dev/mmcblk0p2
 
    If it fails with a
    ``umount: /dev/mmcblk0p2: not mounted`` error, that's OK.
@@ -173,14 +178,14 @@ If you are unsure of how to use this tool, check the
 
    .. code-block:: bash
 
-      rgetz@brain:~/images$ sudo fsck -y /dev/mmcblk0p1
-      fsck from util-linux 2.20.1
-      dosfsck 3.0.13, 30 Jun 2012, FAT32, LFN
-      /dev/mmcblk0p1: 158 files, 76420/130812 clusters
-      rgetz@brain:~/images$ sudo fsck -y /dev/mmcblk0p2
-      fsck from util-linux 2.20.1
-      e2fsck 1.42.5 (29-Jul-2012)
-      /dev/mmcblk0p2: clean, 157918/452480 files, 717760/1808128 blocks
+      sudo fsck -y /dev/mmcblk0p1
+      # fsck from util-linux 2.20.1
+      # dosfsck 3.0.13, 30 Jun 2012, FAT32, LFN
+      # /dev/mmcblk0p1: 158 files, 76420/130812 clusters
+      sudo fsck -y /dev/mmcblk0p2
+      # fsck from util-linux 2.20.1
+      # e2fsck 1.42.5 (29-Jul-2012)
+      # /dev/mmcblk0p2: clean, 157918/452480 files, 717760/1808128 blocks
 
 At this point the SD card is still not bootable,
 follow the topics after :ref:`kuiper imaging sdcard`.

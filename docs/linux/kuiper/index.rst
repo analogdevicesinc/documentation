@@ -843,9 +843,8 @@ See :ref:`kuiper update`.
 Advanced Information For Power Users
 ------------------------------------
 
+:ref:`build_linux_kernel`
+
 :ref-hdl:`build_hdl`
 
-:ref:`build zynq`
-
-:ref:`build zynqmp`
-
+:ref-hdl:`build_boot_bin`
