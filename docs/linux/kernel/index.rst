@@ -3,6 +3,11 @@
 Linux Kernel and devicetrees
 """"""""""""""""""""""""""""
 
+.. toctree::
+   :hidden:
+
+   petalinux
+
 This section provides a concise guide on building the Linux kernel and
 devicetrees for different platforms on different hosts.
 
@@ -46,8 +51,8 @@ Running the script in one line, with defaults:
    chmod +x build_zynq_kernel_image.sh && \
    ./build_zynq_kernel_image.sh
 
-Building using Petalinux
-------------------------
+Building with Petalinux
+-----------------------
 
 Please see here: :ref:`linux-kernel petalinux`.
 
@@ -473,8 +478,8 @@ Running the script in one line, with defaults:
    ./build_zynqmp_kernel_image.sh
 
 
-Building using Petalinux
-------------------------
+Building with Petalinux
+-----------------------
 
 Please see here: :ref:`linux-kernel petalinux`.
 

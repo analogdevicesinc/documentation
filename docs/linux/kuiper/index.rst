@@ -843,7 +843,7 @@ See :ref:`kuiper update`.
 Advanced Information For Power Users
 ------------------------------------
 
-:ref:`build_linux_kernel`
+:ref:`linux-kernel`
 
 :ref-hdl:`build_hdl`
 
