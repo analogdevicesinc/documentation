@@ -9,9 +9,9 @@ Ensure pip is newer than version 23.
 ```
 pip install pip --upgrade
 ```
-Install the documentation tools.
+Install/upgrade the documentation tools.
 ```
-(cd docs ; pip install -r requirements.txt)
+(cd docs ; pip install -r requirements.txt --upgrade)
 ```
 Build the documentation with Sphinx.
 ```
@@ -19,9 +19,9 @@ Build the documentation with Sphinx.
 ```
 The generated documentation will be available at `docs/_build/html`.
 
-## Building the monolithic documentation
+## Building the all documentations
 
-The monolithic version aggregates all ADI's documentation into a single output/webpage.
+It's possible to build all ADI's documentation at once.
 To generate it, considering Doctools is installed, do:
 ```
 adoc aggregate -d docs_output
