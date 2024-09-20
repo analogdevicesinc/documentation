@@ -1,6 +1,5 @@
 .. _adrv9009 quickstart:
 
-
 ADRV9009 quickstart guides
 ===========================
 
@@ -10,6 +9,10 @@ initial system setup for the :adi:`ADRV9009-W/PCBZ <EVAL-ADRV9008-9009>`,
 :adi:`ADRV9008-2W/PCBZ <EVAL-ADRV9008-9009>` boards on various FPGA development
 boards. They will discuss how to program the bitstream, run a no-OS program or
 boot a Linux distribution.
+
+.. toctree::
+
+   ZCU102 <zynqmp>
 
 .. _adrv9009 carriers:
 

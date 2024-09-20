@@ -19,7 +19,8 @@ and the software which can make it work can be found here.
 .. toctree::
 
    Prerequisites <prerequisites>
-   Quickstart <quickstart>
+   Quickstart <quickstart/index>
+   Basic IQ Datafiles <basic-iq-datafiles>
 
 Table of Contents
 -------------------------------------------------------------------------------
@@ -41,15 +42,15 @@ If you have any questions, feel free to :ref:`ask <ad-fmcomms2-ebz help-and-supp
 
       #. :dokuwiki:`IIO Scope <resources/tools-software/linux-software/iio_oscilloscope>`
 
-         #. :dokuwiki:`ADRV9009/ADRV9008 IIO Scope View <resources/tools-software/linux-software/adrv9009_osc_main>`
-         #. :dokuwiki:`ADRV9009/ADRV9008 Control IIO Scope Plugin <resources/tools-software/linux-software/adrv9009_plugin>`
-         #. :dokuwiki:`Advanced ADRV9009/ADRV9008 Control IIO Scope Plugin <resources/tools-software/linux-software/adrv9009_advanced_plugin>`
+         #. :doc:`ADRV9009/ADRV9008 IIO Scope View <linux/software/adrv9009-osc-main>`
+         #. :doc:`ADRV9009/ADRV9008 Control IIO Scope Plugin <linux/software/adrv9009-plugin>`
+         #. :doc:`Advanced ADRV9009/ADRV9008 Control IIO Scope Plugin <linux/software/adrv9009-advanced-plugin>`
 
       #. :dokuwiki:`FRU EEPROM Utility <resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`
 
    #. Push custom data into/out of the ADRV9009/ADRV9008
 
-      #. :ref:`Basic Data files and formats <adrv9009 software basic_iq_datafiles>`
+      #. :doc:`Basic Data files and formats <basic-iq-datafiles>`
       #. :dokuwiki:`Stream data into/out of MATLAB <resources/tools-software/transceiver-toolbox>`
       #. :dokuwiki:`Python Interfaces <resources/tools-software/linux-software/pyadi-iio>`
 
@@ -96,8 +97,8 @@ If you have any questions, feel free to :ref:`ask <ad-fmcomms2-ebz help-and-supp
          #. :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
 
       #. :dokuwiki:`Changing the VCXO frequency and updating the default RF Transceiver Profile <resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
-      #. :dokuwiki:`ADRV9009/ADRV9008 No-OS System Level Design Setup <resources/eval/user-guides/adrv9009/no-os-setup>`
-      #. :dokuwiki:`HDL Reference Design <resources/eval/user-guides/adrv9009/reference_hdl>` which you must use in your FPGA.
+      #. :doc:`ADRV9009/ADRV9008 No-OS System Level Design Setup <no-OS:projects/adrv9009>`
+      #. :ref-hdl:`HDL Reference Design <adrv9009>` which you must use in your FPGA.
       #. :dokuwiki:`HDL Targeting From MATLAB and Simulink <resources/tools-software/transceiver-toolbox>`
 
 #. :ref:`Additional Documentation about SDR Signal Chains - The math behind the RF <ad-fmcomms1-ebz math>`
