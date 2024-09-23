@@ -1,3 +1,7 @@
+# -- Import setup -------------------------------------------------------------
+
+from os import path
+
 # -- Project information -----------------------------------------------------
 
 repository = 'documentation'
@@ -12,7 +16,7 @@ extensions = [
 ]
 
 needs_extensions = {
-    'adi_doctools': '0.3.17'
+    'adi_doctools': '0.3.44'
 }
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -25,3 +29,4 @@ interref_repos = ['doctools', 'hdl']
 # -- Options for HTML output --------------------------------------------------
 
 html_theme = 'cosmic'
+html_favicon = path.join("sources", "icon.svg")

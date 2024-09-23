@@ -8,7 +8,7 @@ all source code is available at the path :git-documentation:`docs`.
 
 To contribute to it, open a pull request with the changes to
 :git-documentation:`this repository </>`, just make sure to read the general
-:ref-doctools:`docs_guidelines` first **and** the additional guidelines
+:ref:`doctools:docs_guidelines` first **and** the additional guidelines
 below specific to the System Level Documentation repository.
 
 Templates

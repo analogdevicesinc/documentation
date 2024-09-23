@@ -1,7 +1,7 @@
 .. _linux-kernel:
 
-Linux Kernel and devicetrees
-""""""""""""""""""""""""""""
+Kernel and devicetrees
+""""""""""""""""""""""
 
 .. toctree::
    :hidden:

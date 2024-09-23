@@ -18,9 +18,9 @@ and the software which can make it work can be found here.
 
 .. toctree::
 
-   Prerequisites <prerequisites>
-   Quickstart <quickstart/index>
-   Basic IQ Datafiles <basic-iq-datafiles>
+   prerequisites
+   quickstart/index
+   basic-iq-datafiles
 
 Table of Contents
 -------------------------------------------------------------------------------
@@ -40,11 +40,11 @@ If you have any questions, feel free to :ref:`ask <ad-fmcomms2-ebz help-and-supp
 
    #. Linux Applications
 
-      #. :dokuwiki:`IIO Scope <resources/tools-software/linux-software/iio_oscilloscope>`
+      #. :ref:`iio-oscilloscope`, with:
 
-         #. :doc:`ADRV9009/ADRV9008 IIO Scope View <linux/software/adrv9009-osc-main>`
-         #. :doc:`ADRV9009/ADRV9008 Control IIO Scope Plugin <linux/software/adrv9009-plugin>`
-         #. :doc:`Advanced ADRV9009/ADRV9008 Control IIO Scope Plugin <linux/software/adrv9009-advanced-plugin>`
+         #. :ref:`iio-oscilloscope adrv9009`
+            (:ref:`iio-oscilloscope adrv9009 plugin`,
+            :ref:`iio-oscilloscope adrv9009 advanced-plugin`)
 
       #. :dokuwiki:`FRU EEPROM Utility <resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`
 
@@ -56,7 +56,7 @@ If you have any questions, feel free to :ref:`ask <ad-fmcomms2-ebz help-and-supp
 
 #. Design with the ADRV9009/ADRV9008
 
-   #. :ref:`Understanding the ADRV9009/ADRV9008 <adrv9009 adrv9008>`
+   #. :ref:`adrv9009 blockdiagram`
 
       #. :adi:`ADRV9009 Product page <ADRV9009>`
       #. :adi:`ADRV9008 Product page <ADRV9008>`
@@ -97,12 +97,19 @@ If you have any questions, feel free to :ref:`ask <ad-fmcomms2-ebz help-and-supp
          #. :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
 
       #. :dokuwiki:`Changing the VCXO frequency and updating the default RF Transceiver Profile <resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
-      #. :doc:`ADRV9009/ADRV9008 No-OS System Level Design Setup <no-OS:projects/adrv9009>`
-      #. :ref-hdl:`HDL Reference Design <adrv9009>` which you must use in your FPGA.
+      #. :dokuwiki:`ADRV9009/ADRV9008 No-OS System Level Design Setup <resources/eval/user-guides/adrv9009/no-os-setup>`
+      #. :dokuwiki:`HDL Reference Design <resources/eval/user-guides/adrv9009/reference_hdl>` which you must use in your FPGA.
       #. :dokuwiki:`HDL Targeting From MATLAB and Simulink <resources/tools-software/transceiver-toolbox>`
 
-#. :ref:`Additional Documentation about SDR Signal Chains - The math behind the RF <ad-fmcomms1-ebz math>`
+#. :dokuwiki:`Additional Documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 #. :ref:`Help and Support <ad-fmcomms2-ebz help-and-support>`
+
+.. _adrv9009 blockdiagram:
+
+Block diagram
+-------------
+
+.. image:: blockdiagram.png
 
 Videos
 -------------------------------------------------------------------------------

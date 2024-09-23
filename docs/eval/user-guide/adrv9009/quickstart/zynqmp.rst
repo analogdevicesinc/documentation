@@ -1,13 +1,13 @@
 .. _adrv9009 quickstart zynqmp:
 
-ADRV9009-W/PCBZ Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide
-===============================================================
+ZCU102 Quickstart
+=================
 
 .. image:: adrv9009_zcu102_quickstart.png
    :width: 600px
 
-This guide provides some quick instructions (still takes awhile to download, and
-set things up) on how to setup the ADRV9009-W/PCBZ on:
+This guide provides some quick instructions on how to setup the ADRV9009-W/PCBZ
+on:
 
 -  :xilinx:`ZCU102`
 

@@ -1,5 +1,5 @@
-ADRV9009 Basic IQ Datafiles
-===========================
+Basic IQ Datafiles
+==================
 
 DDS Mode - DAC Buffer Output allows loading of Matlab MAT, Binary and ASCII TEXT
 sample files.

@@ -1,7 +1,7 @@
 .. _adrv9009 quickstart:
 
-ADRV9009 quickstart guides
-===========================
+Quickstart
+==========
 
 The Quick Start Guides provide a simple step by step instruction on how to do an
 initial system setup for the :adi:`ADRV9009-W/PCBZ <EVAL-ADRV9008-9009>`,

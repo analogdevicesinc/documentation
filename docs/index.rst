@@ -17,12 +17,13 @@ Contents
 -------------------------------------------------------------------------------
 
 .. toctree::
-   :caption: Linux Software
+   :caption: Linux Kernel & Software
    :maxdepth: 2
 
    linux/kuiper/index
    linux/drivers/index
    linux/kernel/index
+   linux/software/index
 
 .. toctree::
    :caption: Evaluation Boards
