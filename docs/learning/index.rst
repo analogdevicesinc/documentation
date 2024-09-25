@@ -15,6 +15,13 @@ System Design
 -------------------------------------------------------------------------------
 
 .. toctree::
+   :caption: Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors
+
+   :maxdepth: 4
+
+   sw_infrastructure/index
+
+.. toctree::
    :caption: Tools for Low Speed Mixed Signal System Design
    :maxdepth: 4
 
