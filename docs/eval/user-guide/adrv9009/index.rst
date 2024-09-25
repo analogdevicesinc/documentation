@@ -17,6 +17,7 @@ and the software which can make it work can be found here.
    :align: center
 
 .. toctree::
+   :hidden:
 
    prerequisites
    quickstart/index
