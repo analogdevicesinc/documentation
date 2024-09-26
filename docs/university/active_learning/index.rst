@@ -19,6 +19,14 @@ Converter Converter Tutorial (IIO 101)
 
    converter_connectivity_tutorial/index
 
+Converter Converter Tutorial (IIO 101)
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :caption: ASDF Caption
+   :maxdepth: 1
+
+   efficiency_power_loss/index
 
 
 Another Excersise: ADALM2000 version
