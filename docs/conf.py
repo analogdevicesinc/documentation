@@ -24,7 +24,7 @@ source_suffix = '.rst'
 
 # -- External docs configuration ----------------------------------------------
 
-interref_repos = ['doctools', 'hdl']
+interref_repos = ['doctools', 'hdl', 'pyadi-iio']
 
 # -- Options for HTML output --------------------------------------------------
 
