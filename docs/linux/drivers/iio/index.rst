@@ -52,7 +52,7 @@ IIO Subsystem Overview
 ----------------------
 
 .. image:: iio_block_view.png
-   :width: 600px
+   :width: 500px
 
 Functionality of IIO
 ~~~~~~~~~~~~~~~~~~~~
@@ -103,6 +103,12 @@ Triggers can be completely unrelated to the sensor itself.
 
 Standalone trigger drivers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. toctree::
+   :hidden:
+
+   iio-trig-sysfs
+   iio-trig-bfin-timer
 
 .. include:: snippets/standalone-trigger-drivers.rst
 

@@ -11,9 +11,9 @@
    - - iio-trig-rtc
      - Provides support for using periodic capable real time clocks as IIO
        triggers.
-   - - :dokuwiki:`iio-trig-sysfs <software/linux/docs/iio/iio-trig-sysfs>`
+   - - :ref:`iio-trig-sysfs <iio iio-trig-sysfs>`
      - Provides support for using SYSFS entry as IIO triggers.
-   - - :dokuwiki:`iio-trig-bfin-timer <software/linux/docs/iio/iio-trig-bfin-timer>`
+   - - :ref:`iio-trig-bfin-timer <iio iio-trig-bfin-timer>`
      - Provides support for using a Blackfin timer as IIO triggers.
 
 
