@@ -41,7 +41,7 @@ there are many places you can stream data to.
 - :dokuwiki:`Visual Analog </libiio/clients/Visual Analog>`
 - :dokuwiki:`IIO oscilloscope for Windows </resources/tools-software/linux-software/iio_oscilloscope>`
 - :dokuwiki:`GNU Radio </resources/tools-software/linux-software/gnuradio>`
-- :dokuwiki:`pyadi-iio: Device Specific Python Interfaces For IIO Drivers </resources/tools-software/linux-software/pyadi-iio>`
+- :ref:`pyadi-iio: Device Specific Python Interfaces For IIO Drivers <pyadi-iio>`
 
 Where to get libiio?
 ====================
@@ -52,6 +52,8 @@ Stable releases are available at :git-libiio:`releases+`.
 
 Continuous integrations pipelines run `here <https://dev.azure.com/AnalogDevices/OpenSource/_build?definitionId=9&branchFilter=5798%2C5798%2C5798%2C5798>`__,
 where installers for every platform can also be found, but may be unstable/buggy.
+
+.. _libiio build:
 
 How to build it?
 ================

@@ -1,3 +1,5 @@
+.. _iio-transceiver adrv9009 customization:
+
 ADRV9009/ADRV9008 Device Driver Customization
 =============================================
 

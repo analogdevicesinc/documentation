@@ -1,3 +1,5 @@
+.. _pyadi-iio:
+
 PyADI-IIO
 =========
 

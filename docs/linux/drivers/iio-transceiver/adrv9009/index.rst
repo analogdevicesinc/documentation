@@ -40,11 +40,11 @@ Evaluation Boards
 Description
 ===========
 
-This is a Linux industrial I/O (:dokuwiki:`IIO <software/linux/docs/iio/iio>`)
+This is a Linux industrial I/O (:ref:`IIO <iio>`)
 subsystem driver, targeting RF Transceivers. The industrial I/O subsystem
 provides a unified framework for drivers for many different types of converters
 and sensors using a number of different physical interfaces (i2c, spi, etc). See
-:dokuwiki:`IIO <software/linux/docs/iio/iio>` for more information.
+:ref:`IIO <iio>` for more information.
 
 Source Code
 ===========
@@ -193,6 +193,8 @@ standard ``TaliseStream.bin`` file.
      - File
    - - Steam
      - :git-linux:`firmware/TaliseStream.bin`
+
+.. _iio-transceiver adrv9009 devicetree:
 
 Example Linux Device-Tree Initialization
 ========================================
@@ -490,6 +492,8 @@ Show device name
    root:/sys/bus/iio/devices/iio:device3> cat name
    adrv9009-phy
 
+.. _iio-transceiver adrv9009 enable-state-machine-controls:
+
 Enable State Machine Controls
 -----------------------------
 
@@ -510,6 +514,8 @@ control methods – SPI control (writing ensm_mode), and pin control.
    root:/sys/bus/iio/devices/iio:device3> echo radio_off > ensm_mode
    root:/sys/bus/iio/devices/iio:device3> cat ensm_mode
    radio_of
+
+.. _iio-transceiver adrv9009 channel-enablepowerdown-controls:
 
 Channel Enable/Powerdown Controls
 ---------------------------------
@@ -541,6 +547,8 @@ corresponding channel powerdown option.
    root:/sys/bus/iio/devices/iio:device3> echo 1 > in_voltage0_powerdown
    root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_powerdown _en
    1
+
+.. _iio-transceiver adrv9009 local-oscillator-control-lo:
 
 Local Oscillator Control (LO)
 -----------------------------
@@ -620,6 +628,8 @@ mode is used and *adi,fhm-config-fhm-gpio-pin* must be in the range of 0..15.
 Filter and Signal Path Configuration
 ------------------------------------
 
+.. _iio-transceiver adrv9009 profiles:
+
 Profiles
 ~~~~~~~~
 
@@ -676,6 +686,8 @@ Querying the RX Sample Rate and Primary Signal Bandwidth
    root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage0_rf_bandwidth
    100000000
 
+.. _iio-transceiver adrv9009 observation-rx-signal-path:
+
 Observation RX Signal Path
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -724,6 +736,8 @@ LO source and control when ORx is enabled as well.
    root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage2_rf_port_select
    OBS_TX_LO
 
+.. _iio-transceiver adrv9009 tx-signal-path:
+
 TX Signal Path
 ~~~~~~~~~~~~~~
 
@@ -748,6 +762,19 @@ Querying the TX Sample Rate and Primary Signal Bandwidth
    245760000
    root@analog:/sys/bus/iio/devices/iio:device3# cat out_voltage0_rf_bandwidth
    75000000
+
+.. _iio-transceiver adrv9009 pa-protection:
+
+PA Protection
+^^^^^^^^^^^^^
+
+.. code-block::
+
+   root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_pa_protection_en
+   0
+   root:/sys/bus/iio/devices/iio:device3> echo 1 > out_voltage0_pa_protection_en
+   root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_pa_protection_en
+   1
 
 RX Gain Control
 ---------------
@@ -825,6 +852,8 @@ Loading a gain table
 
    root@analog:/sys/bus/iio/devices/iio:device3# cat /lib/firmware/adrv9009_std_gaintable > gain_table_config
 
+.. _iio-transceiver adrv9009 gain-control-modes:
+
 Gain control modes
 ~~~~~~~~~~~~~~~~~~
 
@@ -892,6 +921,8 @@ Supported in all available Gain control modes
    root:/sys/bus/iio/devices/iio:device3> cat in_voltage1_hardwaregain
    30.000000 dB
 
+.. _iio-transceiver adrv9009 mgc-setting-the-current-gain:
+
 MGC setting the current Gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -917,6 +948,8 @@ Only available in Manual Gain Control Mode (MGC)
    root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_hardwaregain
    20.000000 dB
 
+.. _iio-transceiver adrv9009 mgc-controlling-the-gain-using-pin-control:
+
 MGC controlling the gain using pin control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -939,6 +972,8 @@ corresponding channel pincontrol option.
    - - in_voltage1_gain_control_pin_mode_en
      - **RX2**
 
+.. _iio-transceiver adrv9009 tx-attenuation-control:
+
 Tx Attenuation Control
 ----------------------
 
@@ -958,6 +993,8 @@ here is gain instead of attenuation, so all values are expressed negative.
 
    root:/sys/bus/iio/devices/iio:device3> cat out_voltage1_hardwaregain
    -10.000000 dB
+
+.. _iio-transceiver adrv9009 tx-attenuation-pin-control:
 
 Tx Attenuation Pin Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -987,6 +1024,8 @@ corresponding channel pincontrol option.
       - out_voltage1_atten_control_pin_mode_en
       - **TX2**
 
+.. _iio-transceiver adrv9009 received-strength-signal-indicator-rssi:
+
 Received Strength Signal Indicator (RSSI)
 -----------------------------------------
 
@@ -997,6 +1036,8 @@ instead.
 
     root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_rssi
     12.75 dB
+
+.. _iio-transceiver adrv9009 calibration-tracking-controls:
 
 Calibration Tracking Controls
 -----------------------------
@@ -1040,6 +1081,8 @@ corresponding tracking option.
    root:/sys/bus/iio/devices/iio:device3> echo 0 > in_voltage0_quadrature_tracking_en
    root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_quadrature_tracking_en
    0
+
+.. _iio-transceiver adrv9009 arm-calibrations:
 
 ARM Calibrations
 ----------------

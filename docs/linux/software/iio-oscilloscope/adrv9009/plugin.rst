@@ -63,17 +63,17 @@ Device Global Settings
 ----------------------
 
 - **Active ENSM:** Displays the active mode of the Enable State Machine.
-  :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009#enable_state_machine_controls>`
+  :ref:`Read More <iio-transceiver adrv9009 enable-state-machine-controls>`
 - **ENSM Modes:** Selects one of the available modes
-  :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009#enable_state_machine_controls>`
+  :ref:`Read More <iio-transceiver adrv9009 enable-state-machine-controls>`
 - **Profile configuration:** Allows a Profile configuration to be loaded from a
   file.
-  :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009#profiles>`
+  :ref:`Read More <iio-transceiver adrv9009 profiles>`
 - **TRX LO Frequency(MHz):** Selects the local oscillator frequency. Range
   75MHz to 6GHz with low tuning granularity.
-  :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009#local_oscillator_control_lo>`
+  :ref:`Read More <iio-transceiver adrv9009 local-oscillator-control-lo>`
 - **Calibrations:** Allows the user to reschedule a certain calibration
-  :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009#arm_calibrations>`
+  :ref:`Read More <iio-transceiver adrv9009 arm-calibrations>`
 
 Receive Chain
 -------------
@@ -87,50 +87,50 @@ Receive Chain
 
   - **Hardware Gain(dB):** Controls the RX gain only in Manual Gain Control
     Mode (MGC).
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#mgc_setting_the_current_gain>`
+    :ref:`Read More <iio-transceiver adrv9009 mgc-setting-the-current-gain>`
   - **RSSI(dB):** Displays the received strength signal level.
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#received_strength_signal_indicator_rssi>`
+            :ref:`Read More <iio-transceiver adrv9009 received-strength-signal-indicator-rssi>`
   - **Gain Control:** Displays the active gain mode.
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#gain_control_modes>`
+    :ref:`Read More <iio-transceiver adrv9009 gain-control-modes>`
   - **Gain Control Modes:** Selects one of the available modes: manual, hybrid
     and automatic.
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#gain_control_modes>`
+    :ref:`Read More <iio-transceiver adrv9009 gain-control-modes>`
   - **Gain Control Pin Mode:** Enables Pin Control Mode
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#mgc_controlling_the_gain_using_pin_control>`
+    :ref:`Read More <iio-transceiver adrv9009 mgc-controlling-the-gain-using-pin-control>`
   - **Tracking**
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#calibration_tracking_controls>`
+    :ref:`Read More <iio-transceiver adrv9009 calibration-tracking-controls>`
 
      - **Quadrature**
      - **HD2**
 
   - **Powerdown:** Channel Enable/Powerdown
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#channel_enablepowerdown_controls>`
+    :ref:`Read More <iio-transceiver adrv9009 channel-enablepowerdown-controls>`
 
 Transmit Chain
 --------------
 
 - **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current
   Profile.
-  :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#tx_signal_path>`
+  :ref:`Read More <iio-transceiver adrv9009 tx-signal-path>`
 - **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile.
-  :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#tx_signal_path>`
+  :ref:`Read More <iio-transceiver adrv9009 tx-signal-path>`
 - **PA Protection:** Enables PA protection
-  :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#pa_protection>`
+  :ref:`Read More <iio-transceiver adrv9009 pa-protection>`
 - **TX**
 
   * **Attenuation(dB):** The TX attenuation/gain can be individually controlled
     for TX1 and TX2. The range is from 0 to -41.95 dB in programmable steps sizes.
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#tx_attenuation_control>`
+    :ref:`Read More <iio-transceiver adrv9009 tx-attenuation-control>`
   * **Attenuation Pin Control Mode:** Enables Pin Control Mode
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#tx_attenuation_pin_control>`
+    :ref:`Read More <iio-transceiver adrv9009 tx-attenuation-pin-control>`
   * **Tracking**
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#calibration_tracking_controls>`
+    :ref:`Read More <iio-transceiver adrv9009 calibration-tracking-controls>`
 
     * **Quadrature**
     * **LO Leakage**
 
   * **Powerdown:** Channel Enable/Powerdown
-    :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#channel_enablepowerdown_controls>`
+    :ref:`Read More <iio-transceiver adrv9009 channel-enablepowerdown-controls>`
 
 Observation Chain
 -----------------
@@ -140,28 +140,28 @@ Observation Chain
 
 -  **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current
    Profile.
-   :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#observation_rx_signal_path>`
+   :ref:`Read More <iio-transceiver adrv9009 observation-rx-signal-path>`
 -  **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile.
-   :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#observation_rx_signal_path>`
+   :ref:`Read More <iio-transceiver adrv9009 observation-rx-signal-path>`
 -  **AUX PLL LO Frequency(MHz):** Controls the AUX PLL local oscillator
    frequency. Range 75MHz to 6GHz with low tuning granularity.
-   :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009#local_oscillator_control_lo>`
+   :ref:`Read More <iio-transceiver adrv9009 local-oscillator-control-lo>`
 -  **Observation Path LO Source:** Controls the LO source for the observation
    receiver
-   :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009#observation_rx_signal_path>`
+   :ref:`Read More <iio-transceiver adrv9009 observation-rx-signal-path>`
 
 -  **RX**
 
    - **Hardware Gain(dB):** Controls the RX gain only in Manual Gain Control
      Mode (MGC).
-     :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#mgc_setting_the_current_gain>`
+     :ref:`Read More <iio-transceiver adrv9009 mgc-setting-the-current-gain>`
    - **Tracking**
-     :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#calibration_tracking_controls>`
+     :ref:`Read More <iio-transceiver adrv9009 calibration-tracking-controls>`
 
      -  **Quadrature**
 
    - **Powerdown:** Channel Enable/Powerdown
-     :dokuwiki:`Read More <resources/tools-software/linux-drivers/iio-transceiver/adrv9009?&#channel_enablepowerdown_controls>`
+     :ref:`Read More <iio-transceiver adrv9009 channel-enablepowerdown-controls>`
 
 FPGA Settings
 -------------

@@ -582,8 +582,7 @@ Console Output
 IIO Oscilloscope Remote
 +++++++++++++++++++++++
 
-Please see also here:
-:dokuwiki:`Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`.
+Please see also :ref:`iio-oscilloscope`.
 
 The IIO Oscilloscope application can be used to connect to another platform that
 has a connected device in order to configure the device and read data from it.

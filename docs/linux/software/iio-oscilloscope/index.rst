@@ -48,7 +48,7 @@ To build on a development host (e.g. x86 laptop or desktop) do the following:
 
 #. Install the ``libiio-dev`` package in Debian or Ubuntu or build and install
    the libiio library from source, by following
-   :dokuwiki:`these instructions <libiio#how_to_build_it>`.
+   :ref:`these instructions <libiio build>`.
    Make sure you do the final ``make install``.
 
    .. important::

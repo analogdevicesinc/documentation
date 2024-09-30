@@ -1,3 +1,5 @@
+.. _libiio internals:
+
 About libiio
 """"""""""""
 
@@ -1107,7 +1109,7 @@ PyADI-IIO
 ^^^^^^^^^
 
 An additional module was created which leverages the libiio python bindings call
-:dokuwiki:`pyadi-iio </resources/tools-software/linux-software/resources/tools-software/linux-software/pyadi-iio>`.
+:ref:`pyadi-iio <pyadi-iio>`.
 pyadi-iio is recommended if a device specific class exists for your
 :git-pyadi-iio:`current hardware <supported_parts.md>`.
 However, since pyadi-iio uses libiio all the libiio python APIs are available in
