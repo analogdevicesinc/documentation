@@ -8,8 +8,7 @@ feature, since you can modify registers on the back of the driver.
 .. tip::
 
    To simplify direct register access you may want to use the libiio
-   :dokuwiki:`iio_reg <resources/tools-software/linux-software/libiio/iio_reg>`
-   command line utility.
+   :ref:`libiio cli`.
 
 Accessing debugfs requires root privileges.
 
