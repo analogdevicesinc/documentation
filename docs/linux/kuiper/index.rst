@@ -20,7 +20,7 @@ prototyping and development
 
 ADI Kuiper Linux supports many platforms and development kits containing
 AMD(Xilinx) and Intel(Altera) FPGAs, as well as Raspberry Pi systems.
-Please see :ref `kuiper project-list`
+Please see :ref:`kuiper project-list`
 for a complete list of supported development kits and hardware projects.
 
 Requirements
@@ -845,6 +845,6 @@ Advanced Information For Power Users
 
 :ref:`linux-kernel`
 
-:ref-hdl:`build_hdl`
+:external+hdl:ref:`build_hdl`
 
-:ref-hdl:`build_boot_bin`
+:external+hdl:ref:`build_boot_bin`

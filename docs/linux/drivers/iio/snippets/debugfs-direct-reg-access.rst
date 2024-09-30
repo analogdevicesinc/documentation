@@ -63,7 +63,8 @@ Special ADI device driver convention for devices that have both:
 In this case when accessing the HDL Core Registers always set BIT31.
 
 The register map for ADI HDL cores can be found at section "Register Map"
-of each :ref-hdl:`library` documentation (:ref-hdl:`example <i3c_controller regmap>`).
+of each :external+hdl:ref:`library` documentation
+(:external+hdl:ref:`example <i3c_controller regmap>`).
 
 .. code::
 
