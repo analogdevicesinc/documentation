@@ -22,21 +22,24 @@ from a number of sensors, converters, etc.
 
 **Description:** Read name of triggerY
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/triggerY/> cat name irqtrig56
+   /sys/bus/iio/devices/triggerY
+   $cat name irqtrig56
 
 **Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ),
 to current trigger of deviceX
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:deviceX/trigger> echo irqtrig56 > current_trigger
+   /sys/bus/iio/devices/iio:deviceX/trigger
+   $echo irqtrig56 > current_trigger
 
 **Description:** Read current trigger source of deviceX
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:deviceX/trigger>cat current_trigger irqtrig56
+   /sys/bus/iio/devices/iio:deviceX/trigger
+   $cat current_trigger irqtrig56
 
 

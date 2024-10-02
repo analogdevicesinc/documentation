@@ -356,133 +356,133 @@ Driver testing / API
    - - out_voltage13\_[…]
      - AUX DAC11
 
-.. code::
+.. shell::
 
-   root:/> cd /sys/bus/iio/devices/
-   root:/sys/bus/iio/devices> ls
-   iio:device0  iio:device3  iio:device2  iio:device3  iio:device4  iio:device5  iio:device6
+   $cd /sys/bus/iio/devices/
+   $ls
+    iio:device0  iio:device3  iio:device2  iio:device3  iio:device4  iio:device5  iio:device6
 
-   root:/sys/bus/iio/devices> cd iio:device3
+   $cd iio:device3
 
-   root@analog:/sys/bus/iio/devices/iio:device3# ls -al
-   total 0
-   drwxr-xr-x 3 root root     0 May 16 14:21 .
-   drwxr-xr-x 5 root root     0 May 16 14:21 ..
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_frm_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_rx_phase_correction_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_rx_qec_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_tx_lol_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_tx_lol_ext_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_tx_qec_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 dev
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 ensm_mode
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 ensm_mode_available
-   -rw-rw-rw- 1 root root 32768 May 16 14:22 gain_table_config
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_temp0_input
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_gain_control_mode
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_gain_control_mode_available
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_gain_control_pin_mode_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_hardwaregain
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_hd2_tracking_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_powerdown
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_quadrature_tracking_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_rf_bandwidth
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_sampling_frequency
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_gain_control_mode
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_gain_control_mode_available
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_gain_control_pin_mode_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_hardwaregain
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_hd2_tracking_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_powerdown
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_quadrature_tracking_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_rf_bandwidth
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_sampling_frequency
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_hardwaregain
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_powerdown
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_quadrature_tracking_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_rf_bandwidth
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_rf_port_select
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_rf_port_select_available
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_sampling_frequency
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_hardwaregain
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_powerdown
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_quadrature_tracking_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_rf_bandwidth
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_rf_port_select
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_rf_port_select_available
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_sampling_frequency
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage4_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage4_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage4_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage5_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage5_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage5_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage6_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage6_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage6_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage7_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage7_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage7_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 name
-   lrwxrwxrwx 1 root root     0 May 16 14:22 of_node -> ../../../../../../../../firmware/devicetree/base/amba/spi@ff040000/adrv9009-phy@1
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_altvoltage0_TRX_LO_frequency
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_altvoltage0_TRX_LO_frequency_hopping_mode_enable
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_altvoltage1_AUX_OBS_RX_LO_frequency
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_atten_control_pin_mode_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_hardwaregain
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_lo_leakage_tracking_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_pa_protection_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_powerdown
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_quadrature_tracking_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_rf_bandwidth
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage10_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage10_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage10_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage11_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage11_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage11_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage12_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage12_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage13_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage13_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_atten_control_pin_mode_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_hardwaregain
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_lo_leakage_tracking_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_pa_protection_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_powerdown
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_quadrature_tracking_en
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_rf_bandwidth
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage2_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage2_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage2_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage3_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage3_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage3_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage4_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage4_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage4_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage5_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage5_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage5_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage6_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage6_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage6_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage7_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage7_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage7_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage8_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage8_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage8_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage9_offset
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage9_raw
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage9_scale
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage_sampling_frequency
-   drwxrwxrwx 2 root root     0 May 16 14:22 power
-   -rw-rw-rw- 1 root root  8192 May 16 14:22 profile_config
-   lrwxrwxrwx 1 root root     0 May 16 14:22 subsystem -> ../../../../../../../../bus/iio
-   -rw-rw-rw- 1 root root  4096 May 16 14:22 uevent
-   root@analog:/sys/bus/iio/devices/iio:device3#
+   $ls -al
+    total 0
+    drwxr-xr-x 3 root root     0 May 16 14:21 .
+    drwxr-xr-x 5 root root     0 May 16 14:21 ..
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_frm_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_rx_phase_correction_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_rx_qec_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_tx_lol_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_tx_lol_ext_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 calibrate_tx_qec_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 dev
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 ensm_mode
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 ensm_mode_available
+    -rw-rw-rw- 1 root root 32768 May 16 14:22 gain_table_config
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_temp0_input
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_gain_control_mode
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_gain_control_mode_available
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_gain_control_pin_mode_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_hardwaregain
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_hd2_tracking_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_powerdown
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_quadrature_tracking_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_rf_bandwidth
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage0_sampling_frequency
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_gain_control_mode
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_gain_control_mode_available
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_gain_control_pin_mode_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_hardwaregain
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_hd2_tracking_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_powerdown
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_quadrature_tracking_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_rf_bandwidth
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage1_sampling_frequency
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_hardwaregain
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_powerdown
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_quadrature_tracking_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_rf_bandwidth
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_rf_port_select
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_rf_port_select_available
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage2_sampling_frequency
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_hardwaregain
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_powerdown
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_quadrature_tracking_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_rf_bandwidth
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_rf_port_select
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_rf_port_select_available
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage3_sampling_frequency
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage4_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage4_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage4_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage5_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage5_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage5_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage6_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage6_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage6_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage7_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage7_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 in_voltage7_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 name
+    lrwxrwxrwx 1 root root     0 May 16 14:22 of_node -> ../../../../../../../../firmware/devicetree/base/amba/spi@ff040000/adrv9009-phy@1
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_altvoltage0_TRX_LO_frequency
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_altvoltage0_TRX_LO_frequency_hopping_mode_enable
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_altvoltage1_AUX_OBS_RX_LO_frequency
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_atten_control_pin_mode_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_hardwaregain
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_lo_leakage_tracking_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_pa_protection_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_powerdown
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_quadrature_tracking_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage0_rf_bandwidth
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage10_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage10_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage10_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage11_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage11_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage11_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage12_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage12_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage13_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage13_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_atten_control_pin_mode_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_hardwaregain
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_lo_leakage_tracking_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_pa_protection_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_powerdown
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_quadrature_tracking_en
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage1_rf_bandwidth
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage2_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage2_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage2_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage3_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage3_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage3_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage4_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage4_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage4_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage5_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage5_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage5_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage6_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage6_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage6_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage7_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage7_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage7_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage8_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage8_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage8_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage9_offset
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage9_raw
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage9_scale
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 out_voltage_sampling_frequency
+    drwxrwxrwx 2 root root     0 May 16 14:22 power
+    -rw-rw-rw- 1 root root  8192 May 16 14:22 profile_config
+    lrwxrwxrwx 1 root root     0 May 16 14:22 subsystem -> ../../../../../../../../bus/iio
+    -rw-rw-rw- 1 root root  4096 May 16 14:22 uevent
+   $
 
 Show device name
 ----------------
@@ -540,12 +540,13 @@ corresponding channel powerdown option.
 - out_voltage0_powerdown
 - out_voltage1_powerdown
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_powerdown
-   0
-   root:/sys/bus/iio/devices/iio:device3> echo 1 > in_voltage0_powerdown
-   root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_powerdown _en
+   /sys/bus/iio/devices/iio:device3
+   $cat in_voltage0_powerdown
+    0
+   $echo 1 > in_voltage0_powerdown
+   $cat in_voltage0_powerdown_en
    1
 
 .. _iio-transceiver adrv9009 local-oscillator-control-lo:
@@ -574,18 +575,20 @@ RxProfile RFBW/2.
      - AUX PLL
      - ORX1, ORX2
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat out_altvoltage1_TX_LO_frequency
-   2400000000
-   root:/sys/bus/iio/devices/iio:device3> echo 2450000000 >  out_altvoltage0_TRX_LO_frequency
-   root:/sys/bus/iio/devices/iio:device3> cat out_altvoltage0_TRX_LO_frequency
-   2450000000
+   /sys/bus/iio/devices/iio:device3
+   $cat out_altvoltage1_TX_LO_frequency
+    2400000000
+   $echo 2450000000 >  out_altvoltage0_TRX_LO_frequency
+   $cat out_altvoltage0_TRX_LO_frequency
+    2450000000
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat out_altvoltage1_TX_LO_frequency
-   2450000000
+   /sys/bus/iio/devices/iio:device3
+   $cat out_altvoltage1_TX_LO_frequency
+    2450000000
 
 Frequency Hopping Mode
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -597,13 +600,14 @@ frequency hopping mode can be enabled using the
 
 -  out_altvoltage0_TRX_LO_frequency_hopping_mode_enable
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat out_altvoltage0_TRX_LO_frequency_hopping_mode_enable
-   0
-   root:/sys/bus/iio/devices/iio:device3> echo 1 > out_altvoltage0_TRX_LO_frequency_hopping_mode_enable
-   root:/sys/bus/iio/devices/iio:device3> cat out_altvoltage0_TRX_LO_frequency_hopping_mode_enable
-   1
+   /sys/bus/iio/devices/iio:device3
+   $cat out_altvoltage0_TRX_LO_frequency_hopping_mode_enable
+    0
+   $echo 1 > out_altvoltage0_TRX_LO_frequency_hopping_mode_enable
+   $cat out_altvoltage0_TRX_LO_frequency_hopping_mode_enable
+    1
 
 Next Hop Frequency
 ^^^^^^^^^^^^^^^^^^
@@ -617,13 +621,14 @@ mode is used and *adi,fhm-config-fhm-gpio-pin* must be in the range of 0..15.
 
 -  out_altvoltage0_TRX_LO_frequency_hopping_mode
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat out_altvoltage0_TRX_LO_frequency_hopping_mode
-   2400000000
-   root:/sys/bus/iio/devices/iio:device3> echo 2460000000 > out_altvoltage0_TRX_LO_frequency_hopping_mode
-   root:/sys/bus/iio/devices/iio:device3> cat out_altvoltage0_TRX_LO_frequency_hopping_mode
-   2460000000
+   /sys/bus/iio/devices/iio:device3
+   $cat out_altvoltage0_TRX_LO_frequency_hopping_mode
+    2400000000
+   $echo 2460000000 > out_altvoltage0_TRX_LO_frequency_hopping_mode
+   $cat out_altvoltage0_TRX_LO_frequency_hopping_mode
+    2460000000
 
 Filter and Signal Path Configuration
 ------------------------------------
@@ -651,10 +656,12 @@ ADI software tools not described here
 Loading a Profile
 ^^^^^^^^^^^^^^^^^
 
-.. code-block::
+.. shell::
+   :showuser:
 
-   root@analog:/sys/bus/iio/devices/iio:device3# cat Tx_BW200_IR245p76_Rx_BW200_OR245p76_ORx_BW200_OR245p76_DC245p76.txt > profile_config
-   root@analog:/sys/bus/iio/devices/iio:device3#
+   $cat Tx_BW200_IR245p76_Rx_BW200_OR245p76_ORx_BW200_OR245p76_DC245p76.txt \
+   $  > profile_config
+   $
 
 RX Signal Path
 ~~~~~~~~~~~~~~
@@ -679,12 +686,13 @@ by changing decimation factors to produce the desired output data rate.
 Querying the RX Sample Rate and Primary Signal Bandwidth
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3# cat in_voltage0_sampling_frequency
-   122880000
-   root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage0_rf_bandwidth
-   100000000
+   /sys/bus/iio/devices/iio:device3
+   $cat in_voltage0_sampling_frequency
+    122880000
+   $cat in_voltage0_rf_bandwidth
+    100000000
 
 .. _iio-transceiver adrv9009 observation-rx-signal-path:
 
@@ -708,12 +716,13 @@ output data rate.
 Querying the ORx Sample Rate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block::
+.. shell::
 
-   root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage2_sampling_frequency
-   245760000
-   root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage2_rf_bandwidth
-   200000000
+   /sys/bus/iio/devices/iio:device3
+   $cat in_voltage2_sampling_frequency
+    245760000
+   $cat in_voltage2_rf_bandwidth
+    200000000
 
 Setting the Observation Path LO Source
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -727,14 +736,14 @@ LO source and control when ORx is enabled as well.
 * OBS_TX_LO Selects RF PLL
 * OBS_AUX_LO Selects AUX PLL
 
-.. code-block::
+.. shell::
 
-   root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage_rf_port_select_available
-   OBS_TX_LO  OBS_AUX_LO
-   root@analog:/sys/bus/iio/devices/iio:device3# echo OBS_TX_LO  > in_voltage2_rf_port_select
-
-   root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage2_rf_port_select
-   OBS_TX_LO
+   /sys/bus/iio/devices/iio:device3
+   $cat in_voltage_rf_port_select_available
+    OBS_TX_LO  OBS_AUX_LO
+   $echo OBS_TX_LO > in_voltage2_rf_port_select
+   $cat in_voltage2_rf_port_select
+    OBS_TX_LO
 
 .. _iio-transceiver adrv9009 tx-signal-path:
 
@@ -756,25 +765,27 @@ fine granularity to help designers optimize signal-to-noise ratio (SNR).
 Querying the TX Sample Rate and Primary Signal Bandwidth
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat out_voltage_sampling_frequency
-   245760000
-   root@analog:/sys/bus/iio/devices/iio:device3# cat out_voltage0_rf_bandwidth
-   75000000
+   /sys/bus/iio/devices/iio:device3
+   $cat out_voltage_sampling_frequency
+    245760000
+   $cat out_voltage0_rf_bandwidth
+    75000000
 
 .. _iio-transceiver adrv9009 pa-protection:
 
 PA Protection
 ^^^^^^^^^^^^^
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_pa_protection_en
-   0
-   root:/sys/bus/iio/devices/iio:device3> echo 1 > out_voltage0_pa_protection_en
-   root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_pa_protection_en
-   1
+   /sys/bus/iio/devices/iio:device3
+   $cat out_voltage0_pa_protection_en
+    0
+   $echo 1 > out_voltage0_pa_protection_en
+   $cat out_voltage0_pa_protection_en
+    1
 
 RX Gain Control
 ---------------
@@ -845,12 +856,13 @@ Example: :git-linux:`firmware/adrv9009_std_gaintable`
 Loading a gain table
 ~~~~~~~~~~~~~~~~~~~~
 
-.. code-block::
+.. shell::
 
-   root@analog:/sys/bus/iio/devices/iio:device3# ls /lib/firmware/ad9*
-   adrv9009_std_gaintable
+   /sys/bus/iio/devices/iio:device3
+   $ls /lib/firmware/ad9*
+    adrv9009_std_gaintable
 
-   root@analog:/sys/bus/iio/devices/iio:device3# cat /lib/firmware/adrv9009_std_gaintable > gain_table_config
+   $cat /lib/firmware/adrv9009_std_gaintable > gain_table_config
 
 .. _iio-transceiver adrv9009 gain-control-modes:
 
@@ -885,41 +897,46 @@ in brief below:
    Automatic Gain Control (AGC) and Hybrid Mode are only available on RX1 and
    RX2
 
-  .. code-block::
+   .. shell::
 
-     root@analog:/sys/bus/iio/devices/iio:device3# cat in_voltage_gain_control_mode_available
-     manual fast_attack slow_attack hybrid
+      /sys/bus/iio/devices/iio:device3
+      $cat in_voltage_gain_control_mode_available
+       manual fast_attack slow_attack hybrid
 
 Querying or Setting a Gain Control Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_gain_control_mode
-   manual
-   root:/sys/bus/iio/devices/iio:device3> echo slow_attack > in_voltage0_gain_control_mode
-   root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_gain_control_mode
-   slow_attack
+   /sys/bus/iio/devices/iio:device3
+   $cat in_voltage0_gain_control_mode
+    manual
+   $echo slow_attack > in_voltage0_gain_control_mode
+   $cat in_voltage0_gain_control_mode
+    slow_attack
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat in_voltage1_gain_control_mode
-   manual
+   /sys/bus/iio/devices/iio:device3
+   $cat in_voltage1_gain_control_mode
+    manual
 
 Reading the current Gain
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Supported in all available Gain control modes
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_hardwaregain
-   30.000000 dB
+   /sys/bus/iio/devices/iio:device3
+   $cat in_voltage0_hardwaregain
+    30.000000 dB
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat in_voltage1_hardwaregain
-   30.000000 dB
+   /sys/bus/iio/devices/iio:device3
+   $cat in_voltage1_hardwaregain
+    30.000000 dB
 
 .. _iio-transceiver adrv9009 mgc-setting-the-current-gain:
 
@@ -942,11 +959,12 @@ Only available in Manual Gain Control Mode (MGC)
    - - in_voltage3_hardwaregain
      - **OBS2** if **in_voltage3_powerdown == 0**
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> echo 20 > in_voltage0_hardwaregain
-   root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_hardwaregain
-   20.000000 dB
+   /sys/bus/iio/devices/iio:device3
+   $echo 20 > in_voltage0_hardwaregain
+   $cat in_voltage0_hardwaregain
+    20.000000 dB
 
 .. _iio-transceiver adrv9009 mgc-controlling-the-gain-using-pin-control:
 
@@ -981,18 +999,20 @@ The TX attenuation/gain can be individually controlled for TX1 and TX2. The
 range is from 0 to -41.95 dB in programmable steps sizes. The nomenclature used
 here is gain instead of attenuation, so all values are expressed negative.
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_hardwaregain
-   -10.000000 dB
-   root:/sys/bus/iio/devices/iio:device3> echo -40.25 > out_voltage0_hardwaregain
-   root:/sys/bus/iio/devices/iio:device3> cat out_voltage0_hardwaregain
-   -40.250000 dB
+   /sys/bus/iio/devices/iio:device3
+   $cat out_voltage0_hardwaregain
+    -10.000000 dB
+   $echo -40.25 > out_voltage0_hardwaregain
+   $cat out_voltage0_hardwaregain
+    -40.250000 dB
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat out_voltage1_hardwaregain
-   -10.000000 dB
+   /sys/bus/iio/devices/iio:device3
+   $cat out_voltage1_hardwaregain
+    -10.000000 dB
 
 .. _iio-transceiver adrv9009 tx-attenuation-pin-control:
 
@@ -1032,9 +1052,10 @@ Received Strength Signal Indicator (RSSI)
 This attribute will report RSSI - however currently it reports Decimated Power
 instead.
 
-.. code-block::
+.. shell::
 
-    root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_rssi
+   /sys/bus/iio/devices/iio:device3
+   $cat in_voltage0_rssi
     12.75 dB
 
 .. _iio-transceiver adrv9009 calibration-tracking-controls:
@@ -1074,13 +1095,14 @@ corresponding tracking option.
    - - out_voltage1_quadrature_tracking_en
      - **TX2**
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat in_voltage_quadrature_tracking_en
-   1
-   root:/sys/bus/iio/devices/iio:device3> echo 0 > in_voltage0_quadrature_tracking_en
-   root:/sys/bus/iio/devices/iio:device3> cat in_voltage0_quadrature_tracking_en
-   0
+   /sys/bus/iio/devices/iio:device3
+   $cat in_voltage_quadrature_tracking_en
+    1
+   $echo 0 > in_voltage0_quadrature_tracking_en
+   $cat in_voltage0_quadrature_tracking_en
+    0
 
 .. _iio-transceiver adrv9009 arm-calibrations:
 
@@ -1105,14 +1127,15 @@ Y.
 -  calibrate_tx_qec_en
 -  calibrate
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat calibrate_tx_lol_ext_en
-   0
-   root:/sys/bus/iio/devices/iio:device3> echo 1 > calibrate_tx_lol_ext_en
-   root:/sys/bus/iio/devices/iio:device3> cat calibrate_tx_lol_ext_en
-   1
-   root:/sys/bus/iio/devices/iio:device3> echo 1 > calibrate
+   /sys/bus/iio/devices/iio:device3
+   $cat calibrate_tx_lol_ext_en
+    0
+   $echo 1 > calibrate_tx_lol_ext_en
+   $cat calibrate_tx_lol_ext_en
+    1
+   $echo 1 > calibrate
 
 AuxADC Reading
 --------------
@@ -1132,12 +1155,13 @@ Attributes are:
 To obtain the reading in mV calculate:
 ``(in_voltage4_raw + in_voltage4_offset) * in_voltage4_scale``
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> grep "" in_voltage4_
-   in_voltage4_offset:45
-   in_voltage4_raw:66
-   in_voltage4_scale:0.775194
+   /sys/bus/iio/devices/iio:device3
+   $grep "" in_voltage4_
+    in_voltage4_offset:45
+    in_voltage4_raw:66
+    in_voltage4_scale:0.775194
 
 AuxDAC Writing
 --------------
@@ -1152,14 +1176,15 @@ Attributes are:
 -  out_voltage[2..11]_offset
 -  out_voltage[2..11]_scale
 
-.. code-block::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> grep "" out_voltage2
-   out_voltage2_offset: 2726
-   out_voltage2_raw:0
-   out_voltage2_scale: 0.782954
+   /sys/bus/iio/devices/iio:device3
+   $grep "" out_voltage2
+    out_voltage2_offset: 2726
+    out_voltage2_raw:0
+    out_voltage2_scale: 0.782954
 
-   root:/sys/bus/iio/devices/iio:device3> echo 1000 > out_voltage2_raw
+   $echo 1000 > out_voltage2_raw
 
 Advanced Debug Facilities
 =========================
@@ -1189,51 +1214,55 @@ In order to identify if the IIO device in question (adrv9009-phy) you first need
 to identify the IIO device number. Therefore read the name attribute of each IIO
 device
 
-.. code-block::
+.. shell::
+   :user: root
+   :showuser:
 
-   root@analog:~# grep "" /sys/bus/iio/devices/iio\:device*/name
-   /sys/bus/iio/devices/iio:device0/name:ams
-   /sys/bus/iio/devices/iio:device1/name:ad9528-1
-   /sys/bus/iio/devices/iio:device2/name:ad7291
-   /sys/bus/iio/devices/iio:device3/name:adrv9009-phy
-   /sys/bus/iio/devices/iio:device4/name:axi-adrv9009-rx-obs-hpc
-   /sys/bus/iio/devices/iio:device5/name:axi-adrv9009-tx-hpc
-   /sys/bus/iio/devices/iio:device6/name:axi-adrv9009-rx-hpc
-   root@analog:~#
+   $grep "" /sys/bus/iio/devices/iio\:device*/name
+    /sys/bus/iio/devices/iio:device0/name:ams
+    /sys/bus/iio/devices/iio:device1/name:ad9528-1
+    /sys/bus/iio/devices/iio:device2/name:ad7291
+    /sys/bus/iio/devices/iio:device3/name:adrv9009-phy
+    /sys/bus/iio/devices/iio:device4/name:axi-adrv9009-rx-obs-hpc
+    /sys/bus/iio/devices/iio:device5/name:axi-adrv9009-tx-hpc
+    /sys/bus/iio/devices/iio:device6/name:axi-adrv9009-rx-hpc
+   $
 
 Change directory to **/sys/kernel/debug**/iio/ iio:deviceX.
 
-.. code-block::
+.. shell::
 
-   root@analog:~# cd /sys/kernel/debug/iio/iio\:device3
-   root@analog:/sys/kernel/debug/iio/iio:device3# ls
-   [--snip--]
-   adi,tx-settings-tx1-atten_md-b
-   adi,tx-settings-tx2-atten_md-b
-   adi,tx1-atten-ctrl-pin-enable
-   adi,tx1-atten-ctrl-pin-step-size
-   adi,tx1-atten-ctrl-pin-tx-atten-dec-pin
-   adi,tx1-atten-ctrl-pin-tx-atten-inc-pin
-   adi,tx2-atten-ctrl-pin-enable
-   adi,tx2-atten-ctrl-pin-step-size
-   adi,tx2-atten-ctrl-pin-tx-atten-dec-pin
-   adi,tx2-atten-ctrl-pin-tx-atten-inc-pin
-   bist_framer_a_prbs
-   bist_framer_b_prbs
-   bist_tone
-   direct_reg_access
-   initialize
+   $cd /sys/kernel/debug/iio/iio\:device3
+   /sys/kernel/debug/iio/iio:device3
+   $ls
+    [--snip--]
+    adi,tx-settings-tx1-atten_md-b
+    adi,tx-settings-tx2-atten_md-b
+    adi,tx1-atten-ctrl-pin-enable
+    adi,tx1-atten-ctrl-pin-step-size
+    adi,tx1-atten-ctrl-pin-tx-atten-dec-pin
+    adi,tx1-atten-ctrl-pin-tx-atten-inc-pin
+    adi,tx2-atten-ctrl-pin-enable
+    adi,tx2-atten-ctrl-pin-step-size
+    adi,tx2-atten-ctrl-pin-tx-atten-dec-pin
+    adi,tx2-atten-ctrl-pin-tx-atten-inc-pin
+    bist_framer_a_prbs
+    bist_framer_b_prbs
+    bist_tone
+    direct_reg_access
+    initialize
 
 Example to change from internal to external TX LO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block::
+.. shell::
 
-   root@analog:/sys/kernel/debug/iio/iio:device3# cat adi,dig-clocks-rf-pll-use-external-lo
-   0
+   /sys/kernel/debug/iio/iio:device3
+   $cat adi,dig-clocks-rf-pll-use-external-lo
+    0
 
-   root@analog:/sys/kernel/debug/iio/iio:device3# echo 1 > adi,dig-clocks-rf-pll-use-external-lo
-   root@analog:/sys/kernel/debug/iio/iio:device3# echo 1 > initialize
+   $echo 1 > adi,dig-clocks-rf-pll-use-external-lo
+   $echo 1 > initialize
 
 Build-In Self-Test (BIST)
 -------------------------
@@ -1271,9 +1300,10 @@ the digital filter does not clip and cause spurs in the tx spectrum.
 
 **Example**: Inject 3MHz tone into TX1 and 5MHz into TX2
 
-.. code-block::
+.. shell::
 
-   root@analog:/sys/kernel/debug/iio/iio:device3# echo 5 > bist_framer_a_prbs
+   /sys/kernel/debug/iio/iio:device3
+   $echo 5 > bist_framer_a_prbs
 
 PRBS
 ~~~~
@@ -1321,9 +1351,10 @@ either injected into the RX or OBS path.
 
 **Example**: Inject PRBS15 into RX
 
-.. code-block::
+.. shell::
 
-    root@analog:/sys/kernel/debug/iio/iio:device3# echo 5 > bist_framer_a_prbs
+    /sys/kernel/debug/iio/iio:device3
+    $echo 5 > bist_framer_a_prbs
 
 Loopback
 ~~~~~~~~
@@ -1351,9 +1382,10 @@ bypassing all the analog and converter sections.
 
 **Example**: Enable framer A loopback
 
-.. code-block::
+.. shell::
 
-   root@analog:/sys/kernel/debug/iio/iio:device3# echo 1 > bist_framer_a_loopback
+   /sys/kernel/debug/iio/iio:device3
+   $echo 1 > bist_framer_a_loopback
 
 GPIO 3v3 Controls
 -----------------
@@ -1371,12 +1403,12 @@ masked via adi,gpio3v3-output-enable-mask.
 
 For test purposes these attributes can be also set via debugfs.
 
-::
+.. shell::
 
-   cd /sys/kernel/debug/iio/iio:device3
-   echo 0x333 > adi,gpio3v3-source-control
-   echo 0xFFF > adi,gpio3v3-output-enable-mask
-   echo 1 > initialize
+   $cd /sys/kernel/debug/iio/iio:device3
+   $echo 0x333 > adi,gpio3v3-source-control
+   $echo 0xFFF > adi,gpio3v3-output-enable-mask
+   $echo 1 > initialize
 
 The gpio3v3 debugfs control allows setting individual GPIOs by number 0…11. Or
 altogether using the 0xFFF mask. GPIOs masked as inputs can also be read.
@@ -1401,11 +1433,12 @@ altogether using the 0xFFF mask. GPIOs masked as inputs can also be read.
 
 **Example**:
 
-.. code-block::
+.. shell::
 
-   root@analog:/sys/kernel/debug/iio/iio:device3# echo 0 1 > gpio3v3
-   root@analog:/sys/kernel/debug/iio/iio:device3# echo 0xFFF 0x123 > gpio3v3
-   root@analog:/sys/kernel/debug/iio/iio:device3# echo 0xFFF 0x0 > gpio3v3
+   /sys/kernel/debug/iio/iio:device3
+   $echo 0 1 > gpio3v3
+   $echo 0xFFF 0x123 > gpio3v3
+   $echo 0xFFF 0x0 > gpio3v3
 
 Low level register access via debugfs (direct_reg_access)
 =========================================================

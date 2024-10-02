@@ -186,13 +186,13 @@ in 3 different ways:
 
 #. Manually:
 
-   .. code-block:: bash
+   .. shell::
       :caption: Run IIO Oscilloscope in remote mode
 
       # Old:
-      export OSC_REMOTE=<IP address of the remote platform>
+      $export OSC_REMOTE=<IP address of the remote platform>
       # New:
-      export IIOD_REMOTE=<IP address of the remote platform>
+      $export IIOD_REMOTE=<IP address of the remote platform>
       osc
 
 #. Settings > Connect and enter ``ip:`` and then the IP address in the popup
