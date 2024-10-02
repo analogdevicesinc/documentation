@@ -24,8 +24,7 @@ information about the options provided here.
 
 .. image:: taliseinit_t.png
 
-See more details about
-:dokuwiki:`ADRV9009/ADRV9008 Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`.
+See more details about :ref:`iio-transceiver adrv9009 customization`.
 
 In order for the settings made on these plugin to take affect, the Save Settings
 button must be pressed. It should be noted that the driver then reinitialized
@@ -64,11 +63,11 @@ several seconds to complete.
       #
       # [ -- snip -- ]
 
-Simply update the values here:
-:dokuwiki:`ADRV9009 Devicetree Initialization <resources/tools-software/linux-drivers/iio-transceiver/adrv9009#example_linux_device-tree_initialization>`
+Simply update the values at
+:ref:`iio-transceiver adrv9009 devicetree`.
 
-For the No-OS driver the mapping can be found here:
-:dokuwiki:`ADRV9009 Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`
+For the No-OS driver the mapping can be found at 
+:ref:`iio-transceiver adrv9009 customization`.
 
 Screenshots / Descriptions
 --------------------------

@@ -48,7 +48,7 @@ To build on a development host (e.g. x86 laptop or desktop) do the following:
 
 #. Install the ``libiio-dev`` package in Debian or Ubuntu or build and install
    the libiio library from source, by following
-   :dokuwiki:`these instructions <libiio#how_to_build_it>`.
+   :ref:`these instructions <libiio build>`.
    Make sure you do the final ``make install``.
 
    .. important::
@@ -186,13 +186,13 @@ in 3 different ways:
 
 #. Manually:
 
-   .. code-block:: bash
+   .. shell::
       :caption: Run IIO Oscilloscope in remote mode
 
       # Old:
-      export OSC_REMOTE=<IP address of the remote platform>
+      $export OSC_REMOTE=<IP address of the remote platform>
       # New:
-      export IIOD_REMOTE=<IP address of the remote platform>
+      $export IIOD_REMOTE=<IP address of the remote platform>
       osc
 
 #. Settings > Connect and enter ``ip:`` and then the IP address in the popup

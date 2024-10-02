@@ -28,4 +28,4 @@ and make sure to remove any placeholder text and instructive comment.
 
    The old wiki uses `dokuwiki <https://www.dokuwiki.org/dokuwiki>`_. When
    importing text from there, consider ``pandoc`` and the tips accross the
-   :ref-doctools:`docs_guidelines` to convert it to reST.
+   :external+doctools:ref:`docs_guidelines` to convert it to reST.

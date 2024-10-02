@@ -17,6 +17,7 @@ and the software which can make it work can be found here.
    :align: center
 
 .. toctree::
+   :hidden:
 
    prerequisites
    quickstart/index
@@ -52,7 +53,7 @@ If you have any questions, feel free to :ref:`ask <ad-fmcomms2-ebz help-and-supp
 
       #. :doc:`Basic Data files and formats <basic-iq-datafiles>`
       #. :dokuwiki:`Stream data into/out of MATLAB <resources/tools-software/transceiver-toolbox>`
-      #. :dokuwiki:`Python Interfaces <resources/tools-software/linux-software/pyadi-iio>`
+      #. :ref:`Python Interfaces <pyadi-iio>`
 
 #. Design with the ADRV9009/ADRV9008
 
@@ -72,9 +73,9 @@ If you have any questions, feel free to :ref:`ask <ad-fmcomms2-ebz help-and-supp
 
       #. Linux software
 
-         #. :dokuwiki:`ADRV9009/ADRV9008 Linux Device Driver <resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+         #. :ref:`ADRV9009/ADRV9008 Linux Device Driver <iio-transceiver adrv9009>`
 
-            #. :dokuwiki:`ADRV9009/ADRV9008 Device Driver Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`
+            #. :ref:`ADRV9009/ADRV9008 Device Driver Customization <iio-transceiver adrv9009 customization>`
             #. :dokuwiki:`Customizing the devicetree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
 
          #. :dokuwiki:`JESD204 (FSM) Interface Linux Kernel Framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`

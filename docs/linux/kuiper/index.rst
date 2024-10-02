@@ -20,7 +20,7 @@ prototyping and development
 
 ADI Kuiper Linux supports many platforms and development kits containing
 AMD(Xilinx) and Intel(Altera) FPGAs, as well as Raspberry Pi systems.
-Please see :ref `kuiper project-list`
+Please see :ref:`kuiper project-list`
 for a complete list of supported development kits and hardware projects.
 
 Requirements
@@ -177,10 +177,10 @@ make a backup of the original file, just in case something goes wrong (which it
 won't, but still...) Open a terminal and enter the following command (noting
 that "analog@analog:~ $" is the prompt, and does not need to be typed):
 
-.. code-block::
+.. shell::
 
-   analog@analog:~ $ sudo cp /boot/config.txt /boot/config.backup
-   analog@analog:~ $ sudo mousepad /boot/config.txt
+   $sudo cp /boot/config.txt /boot/config.backup
+   $sudo mousepad /boot/config.txt
 
 This will bring up the text editor. At this point, the appropriate device tree
 overlays can be included, for example, add the following line to enable the
@@ -199,9 +199,9 @@ please visit the :ref:`project list <kuiper project-list>`.
 
 After editing config.txt, **reboot** for changes to take effect.
 
-.. code-block::
+.. shell::
 
-   analog@analog:~ $ reboot
+   $reboot
 
 System Verification
 -------------------
@@ -793,26 +793,26 @@ hardware and device drivers loaded properly.
 
 Here's an example output:
 
-.. code-block:: bash
+.. shell::
 
-   analog@analog:~ $ iio_info
-   Library version: 0.21 (git tag: 1c0781b)
-   Compiled with backends: local xml ip
-   IIO context created with local backend.
-   Backend version: 0.21 (git tag: 1c0781b)
-   Backend description string: Linux analog 4.19.86-v7l+ #3 SMP Tue Sep 1 19:43:06 UTC 2020 armv7l
-   IIO context has 2 attributes:
-       local,kernel: 4.19.86-v7l+
-       uri: local:
-   IIO context has 5 devices:
-       iio:device0: ad7127-8 (buffer capable)
-           8 channels found:
-               voltage0-voltage1:  (input, index: 0, format: be:u24/32>>0)
-               6 channel-specific attributes found:
-                   attr  0: filter_low_pass_3db_frequency value: 3
-                   attr  1: offset value: 0
-   ...
-   ...
+   $ iio_info
+    Library version: 0.21 (git tag: 1c0781b)
+    Compiled with backends: local xml ip
+    IIO context created with local backend.
+    Backend version: 0.21 (git tag: 1c0781b)
+    Backend description string: Linux analog 4.19.86-v7l+ #3 SMP Tue Sep 1 19:43:06 UTC 2020 armv7l
+    IIO context has 2 attributes:
+        local,kernel: 4.19.86-v7l+
+        uri: local:
+    IIO context has 5 devices:
+        iio:device0: ad7127-8 (buffer capable)
+            8 channels found:
+                voltage0-voltage1:  (input, index: 0, format: be:u24/32>>0)
+                6 channel-specific attributes found:
+                    attr  0: filter_low_pass_3db_frequency value: 3
+                    attr  1: offset value: 0
+    ...
+    ...
 
 So if your setup is running Kuiper Linux and you can see the device drivers from
 your hardware, then you are all set and ready to use the setup!!
@@ -845,6 +845,6 @@ Advanced Information For Power Users
 
 :ref:`linux-kernel`
 
-:ref-hdl:`build_hdl`
+:external+hdl:ref:`build_hdl`
 
-:ref-hdl:`build_boot_bin`
+:external+hdl:ref:`build_boot_bin`

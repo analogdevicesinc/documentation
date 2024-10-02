@@ -43,10 +43,9 @@ parameter, the ADI github project name (https://github.com/analogdevicesinc).
    itself, and switches over to the new one), so you only need to do this if you
    are using an older version.
 
-.. code-block:: bash
-   :caption: This specifies any shell prompt running on the target
+.. shell::
 
-   root@analog:~# adi_update_tools.sh
+   $adi_update_tools.sh
 
 .. collapsible:: Complete update tools log
 
@@ -356,10 +355,9 @@ active Internet connection.
 In order to update all ADI tools, simply call the **adi_update_boot.sh** script
 as shown below:
 
-.. code-block:: bash
-   :caption: This specifies any shell prompt running on the target
+.. shell:: bash
 
-   root@analog:~# adi_update_boot.sh
+   $adi_update_boot.sh
 
 .. collapsible:: Complete update boot log
 
