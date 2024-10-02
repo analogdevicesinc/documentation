@@ -36,32 +36,34 @@ several seconds to complete.
    After you customized the driver for your application needs you can read back
    all values from the Linux debugfs:
 
-   .. code:: bash
+   .. shell::
 
-      pwd
-      # /sys/bus/iio/devices/iio:device3
-      cd /sys/kernel/debug/iio/iio\:device3
-      grep "" * | sed "s/:/ = </g" | awk '{print $0">;"}'
-      # adi,arm-gpio-config-en-tx-tracking-cals-enable = <0>;
-      # adi,arm-gpio-config-en-tx-tracking-cals-gpio-pin-sel = <0>;
-      # adi,arm-gpio-config-en-tx-tracking-cals-polarity = <0>;
-      # adi,arm-gpio-config-orx1-tx-sel0-pin-enable = <0>;
-      # adi,arm-gpio-config-orx1-tx-sel0-pin-gpio-pin-sel = <0>;
-      # adi,arm-gpio-config-orx1-tx-sel0-pin-polarity = <0>;
-      # adi,arm-gpio-config-orx1-tx-sel1-pin-enable = <0>;
-      # adi,arm-gpio-config-orx1-tx-sel1-pin-gpio-pin-sel = <0>;
-      # adi,arm-gpio-config-orx1-tx-sel1-pin-polarity = <0>;
-      # adi,arm-gpio-config-orx2-tx-sel0-pin-enable = <0>;
-      # adi,arm-gpio-config-orx2-tx-sel0-pin-gpio-pin-sel = <0>;
-      # adi,arm-gpio-config-orx2-tx-sel0-pin-polarity = <0>;
-      # adi,arm-gpio-config-orx2-tx-sel1-pin-enable = <0>;
-      # adi,arm-gpio-config-orx2-tx-sel1-pin-gpio-pin-sel = <0>;
-      # adi,arm-gpio-config-orx2-tx-sel1-pin-polarity = <0>;
-      # adi,aux-dac-enables = <0>;
-      # adi,aux-dac-resolution0 = <0>;
-      # adi,aux-dac-resolution1 = <0>;
-      #
-      # [ -- snip -- ]
+      /sys/bus/iio/devices/iio:device3
+      $pwd
+       /sys/bus/iio/devices/iio:device3
+      $cd /sys/kernel/debug/iio/iio\:device3
+      /sys/kernel/debug/iio/iio:device3
+      $grep "" * | sed "s/:/ = </g" | awk '{print $0">;"}'
+       adi,arm-gpio-config-en-tx-tracking-cals-enable = <0>;
+       adi,arm-gpio-config-en-tx-tracking-cals-gpio-pin-sel = <0>;
+       adi,arm-gpio-config-en-tx-tracking-cals-polarity = <0>;
+       adi,arm-gpio-config-orx1-tx-sel0-pin-enable = <0>;
+       adi,arm-gpio-config-orx1-tx-sel0-pin-gpio-pin-sel = <0>;
+       adi,arm-gpio-config-orx1-tx-sel0-pin-polarity = <0>;
+       adi,arm-gpio-config-orx1-tx-sel1-pin-enable = <0>;
+       adi,arm-gpio-config-orx1-tx-sel1-pin-gpio-pin-sel = <0>;
+       adi,arm-gpio-config-orx1-tx-sel1-pin-polarity = <0>;
+       adi,arm-gpio-config-orx2-tx-sel0-pin-enable = <0>;
+       adi,arm-gpio-config-orx2-tx-sel0-pin-gpio-pin-sel = <0>;
+       adi,arm-gpio-config-orx2-tx-sel0-pin-polarity = <0>;
+       adi,arm-gpio-config-orx2-tx-sel1-pin-enable = <0>;
+       adi,arm-gpio-config-orx2-tx-sel1-pin-gpio-pin-sel = <0>;
+       adi,arm-gpio-config-orx2-tx-sel1-pin-polarity = <0>;
+       adi,aux-dac-enables = <0>;
+       adi,aux-dac-resolution0 = <0>;
+       adi,aux-dac-resolution1 = <0>;
+
+       [ -- snip -- ]
 
 Simply update the values at
 :ref:`iio-transceiver adrv9009 devicetree`.

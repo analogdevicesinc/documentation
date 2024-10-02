@@ -487,10 +487,11 @@ Driver testing / API
 Show device name
 ----------------
 
-.. code::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat name
-   adrv9009-phy
+   /sys/bus/iio/devices/iio:device3
+   $cat name
+    adrv9009-phy
 
 .. _iio-transceiver adrv9009 enable-state-machine-controls:
 
@@ -501,19 +502,21 @@ The ADRV9009 transceiver includes an Enable State Machine (ENSM), allowing real
 time control over the current state of the device. The ENSM has two possible
 control methods – SPI control (writing ensm_mode), and pin control.
 
-.. code::
+.. shell::
 
-   root@analog:/sys/bus/iio/devices/iio:device3# cat ensm_mode_available
-   radio_on radio_off
+   /sys/bus/iio/devices/iio:device3
+   $cat ensm_mode_available
+    radio_on radio_off
 
-.. code::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat ensm_mode
-   radio_on
+   /sys/bus/iio/devices/iio:device3
+   $cat ensm_mode
+    radio_on
 
-   root:/sys/bus/iio/devices/iio:device3> echo radio_off > ensm_mode
-   root:/sys/bus/iio/devices/iio:device3> cat ensm_mode
-   radio_of
+   $echo radio_off > ensm_mode
+   $cat ensm_mode
+    radio_of
 
 .. _iio-transceiver adrv9009 channel-enablepowerdown-controls:
 

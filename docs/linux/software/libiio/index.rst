@@ -280,15 +280,15 @@ The fix:
 Rebuild LibIIO
 --------------
 
-.. code:: bash
+.. shell::
 
-   cd /usr/local/src
-   git clone https://github.com/analogdevicesinc/libiio.git
-   cd /usr/local/src/libiio/
-   git clean -d -f -x
-   cmake .
-   make
-   sudo make install
+   $cd /usr/local/src
+   $git clone https://github.com/analogdevicesinc/libiio.git
+   $cd /usr/local/src/libiio/
+   $git clean -d -f -x
+   $cmake .
+   $make
+   $sudo make install
 
 USB Device Mode Kernel Support
 ------------------------------
@@ -321,14 +321,15 @@ Testing
 If everything works out well the USB context should be included in the available
 context list.
 
-::
+.. shell::
 
-   michael@mhenneri-D04:~/devel/pshare/iiod usb$ iio_info -s
-   Library version: 0.10 (git tag: c95ff6a)
-   Compiled with backends: local xml ip usb
-   Available contexts:
-       0: Local devices [local:]
-       1: 0456:b671 (Analog Devices Inc. Generic USB IIOD), serial=00000000 [usb:1.36.0]
+   ~/devel/pshare/iiod usb
+   $iio_info -s
+    Library version: 0.10 (git tag: c95ff6a)
+    Compiled with backends: local xml ip usb
+    Available contexts:
+        0: Local devices [local:]
+        1: 0456:b671 (Analog Devices Inc. Generic USB IIOD), serial=00000000 [usb:1.36.0]
 
 Documentation
 =============

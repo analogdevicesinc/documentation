@@ -38,13 +38,13 @@ To build on a development host (e.g. x86 laptop or desktop) do the following:
    :git-linux_image_ADI-scripts:`adi_update_tools.sh#L317-L320`
    for a maintained list):
 
-   .. code:: bash
+   .. shell::
 
-      apt-get -y install \
-        libgtk2.0-dev libmatio-dev \
-        libfftw3-dev libxml2 libxml2-dev bison flex libavahi-common-dev \
-        libavahi-client-dev libcurl4-openssl-dev libjansson-dev cmake libaio-dev \
-        ncurses-dev libserialport-dev libcdk5-dev
+      $apt-get -y install \
+      $  libgtk2.0-dev libmatio-dev \
+      $  libfftw3-dev libxml2 libxml2-dev bison flex libavahi-common-dev \
+      $  libavahi-client-dev libcurl4-openssl-dev libjansson-dev cmake libaio-dev \
+      $  ncurses-dev libserialport-dev libcdk5-dev
 
 #. Install the ``libiio-dev`` package in Debian or Ubuntu or build and install
    the libiio library from source, by following
@@ -60,28 +60,28 @@ To build on a development host (e.g. x86 laptop or desktop) do the following:
    :dokuwiki:`these instructions <resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync#linux>`.
 #. Download the source using git:
 
-   .. code:: bash
+   .. shell::
 
-      git clone https://github.com/analogdevicesinc/iio-oscilloscope.git
-      cd iio-oscilloscope
-      git checkout origin/main
+      $git clone https://github.com/analogdevicesinc/iio-oscilloscope.git
+      $cd iio-oscilloscope
+      $git checkout origin/main
 
 #. Or, :git-iio-oscilloscope:`download a zip <archive/main.zip+>`,
    and uncompress it:
 
-   .. code:: bash
+   .. shell::
 
-      wget https://github.com/analogdevicesinc/iio-oscilloscope/archive/main.zip
-      unzip master.zip
-      cd iio-oscilloscope
+      $wget https://github.com/analogdevicesinc/iio-oscilloscope/archive/main.zip
+      $unzip master.zip
+      $cd iio-oscilloscope
 
 #. Build and install:
 
-   .. code:: bash
+   .. shell::
 
-      mkdir build && cd build
-      cmake ../ && make -j $(nproc)
-      sudo make install
+      $mkdir build && cd build
+      $cmake ../ && make -j $(nproc)
+      $sudo make install
 
    * If you did not do a ``make install`` of the libiio, the libiio install
      location needs to be set in your path (i.e. ``PATH=/usr/lib:$PATH"`` or
@@ -92,11 +92,10 @@ To build on a development host (e.g. x86 laptop or desktop) do the following:
      environmental variable.
      ``export LD_LIBRARY_PATH=./`` otherwise you may get an error like:
 
-     .. code::
+     .. shell::
 
-        ./osc
-        # ./osc: error while loading shared libraries: libosc.so: cannot open
-        # shared object file: No such file or directory
+        $./osc
+         ./osc: error while loading shared libraries: libosc.so: cannot open shared object file: No such file or directory
 
      Or, worst case, when you are debugging things, you will see your modified
      source code, but it will be running/executing the older shared shared object
@@ -112,10 +111,10 @@ Instead download the sources from https://sourceforge.net/projects/gtkdatabox/fi
 file gtkdatabox-1.0.0.tar.gz and compile and install it using commands below.
 This will ensure that gtkdatabox is compatible with GTK3
 
-.. code::
+.. shell::
 
-   ./configure
-    make make install
+   $./configure
+   $make make install
 
 Please not that in case some other gtkdatabox version is present in the system
 remove it using sudo apt remove. This action can solve error message GTK+ 2.x
@@ -128,20 +127,20 @@ GTK2 Based IIO-Oscilloscope
 If you'd like to build the previous version of IIO-Oscilloscope, which is based
 on GTK2 you will need to install the following packages:
 
-.. code::
+.. shell::
 
-   apt-get -y install libglib2.0-dev libgtk2.0-dev libgtkdatabox-dev \
-     libmatio-dev libfftw3-dev libxml2 libxml2-dev bison flex libavahi-common-dev \
-     libavahi-client-dev libcurl4-openssl-dev libjansson-dev cmake libaio-dev \
-     libserialport-dev \
+   $apt-get -y install libglib2.0-dev libgtk2.0-dev libgtkdatabox-dev \
+   $  libmatio-dev libfftw3-dev libxml2 libxml2-dev bison flex libavahi-common-dev \
+   $  libavahi-client-dev libcurl4-openssl-dev libjansson-dev cmake libaio-dev \
+   $  libserialport-dev
 
 Make sure that you have libgtkdatabox v0.9 installed, which was compiled with GTK2.
 In addition, you will need to clone a specific branch of the IIO-Oscilloscope
 repository, which still uses GTK2 widgets:
 
-.. code::
+.. shell::
 
-   git clone https://github.com/analogdevicesinc/iio-oscilloscope.git --branch 2021_R2
+   $git clone https://github.com/analogdevicesinc/iio-oscilloscope.git --branch 2021_R2
 
 The other prerequisites and build steps are identical.
 
@@ -150,13 +149,13 @@ macOS
 
 The recommended method is to use brew with tfcollin's tap:
 
-.. code::
+.. shell::
 
-   git clone -b fix-gtk-upgrade https://github.com/tfcollins/homebrew-formulae.git
-   cd homebrew-formulae
-   brew install --build-from-source ./gtkdatabox-prev1.rb
-   # if necessary: brew link --overwrite gtkdatabox-prev1
-   brew install --build-from-source ./iio-oscilloscope.rb
+   $git clone -b fix-gtk-upgrade https://github.com/tfcollins/homebrew-formulae.git
+   $cd homebrew-formulae
+   $brew install --build-from-source ./gtkdatabox-prev1.rb
+   #if necessary: brew link --overwrite gtkdatabox-prev1
+   $brew install --build-from-source ./iio-oscilloscope.rb
 
 User guide
 ----------
