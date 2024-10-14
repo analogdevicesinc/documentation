@@ -43,6 +43,16 @@ parties have developed others for more languages.
 Python and C# bindings documentation is available on the :doc:`internals`
 and within the `API documentation <http://analogdevicesinc.github.io/libiio/>`__.
 
+**Deprecated** clients documentations can still be read at:
+
+* :dokuwiki+deprecated:`ADI vs MathWorks Support <resources/tools-software/linux-software/libiio/clients/fmcomms2_3_simulink>`
+* :dokuwiki+deprecated:`LTE Transmitter and Receiver Example <resources/tools-software/linux-software/libiio/clients/lte_example>`
+* :dokuwiki+deprecated:`IIO System Object <resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
+* :dokuwiki+deprecated:`IIO Plugin for Visual Analog <resources/tools-software/linux-software/libiio/clients/visual_analog>`
+* :dokuwiki+deprecated:`QPSK Transmit and Receive Example <resources/tools-software/linux-software/libiio/clients/qpsk_example>`
+* :dokuwiki+deprecated:`ADS-B Airplane Tracking Example <resources/tools-software/linux-software/libiio/clients/adsb_example>`
+* :dokuwiki+deprecated:`Beacon Frame Receiver Example <resources/tools-software/linux-software/libiio/clients/beacon_frame_receiver_simulink>`
+
 Network Backends
 ================
 
