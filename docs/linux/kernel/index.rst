@@ -45,11 +45,11 @@ The script will:
 
 Running the script in one line, with defaults:
 
-.. code:: bash
+.. shell::
 
-   wget https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/main/linux/build_zynq_kernel_image.sh && \
-   chmod +x build_zynq_kernel_image.sh && \
-   ./build_zynq_kernel_image.sh
+   $wget https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/main/linux/build_zynq_kernel_image.sh && \
+   $chmod +x build_zynq_kernel_image.sh && \
+   $./build_zynq_kernel_image.sh
 
 Building with Petalinux
 -----------------------
@@ -64,11 +64,11 @@ available. You can install it via your distro's package manager.
 
 Then
 
-.. code:: bash
+.. shell::
 
-   git clone https://github.com/analogdevicesinc/linux.git \
-             --no-single-branch --depth=10 \
-             -- linux
+   $git clone https://github.com/analogdevicesinc/linux.git \
+   $            --no-single-branch --depth=10 \
+   $            -- linux
 
 or do a git pull in a existing cloned repository.
 
@@ -99,11 +99,11 @@ Checkout the Release branch
    - - 2019_R2
    - - 2021_R1
 
-.. code::
+.. shell::
 
-   git checkout origin/2021_R1 -b 2021_R1
-   # Branch 2021_R1 set up to track remote branch 2021_R1 from origin.
-   # Switched to a new branch '2021_R1'
+   $git checkout origin/2021_R1 -b 2021_R1
+    Branch 2021_R1 set up to track remote branch 2021_R1 from origin.
+    Switched to a new branch '2021_R1'
 
 Setup cross compile environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,11 +143,11 @@ Using the Xilinx toolchain
    - - 2021_R1
      - Vivado 2021.1
 
-.. code:: bash
+.. shell::
 
-   source $PATH_TO_XILINX/Vitis/$VITIS_VERSION/settings64.sh
-   which which arm-linux-gnueabihf-gcc
-   # $PATH_TO_XILINX/Vitis/$VITIS_VERSION/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin/arm-linux-gnueabihf-gcc
+   $source $PATH_TO_XILINX/Vitis/$VITIS_VERSION/settings64.sh
+   $which which arm-linux-gnueabihf-gcc
+    $PATH_TO_XILINX/Vitis/$VITIS_VERSION/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin/arm-linux-gnueabihf-gcc
 
 .. important::
 
@@ -155,10 +155,10 @@ Using the Xilinx toolchain
    it to replace this string: **$PATH_TO_XILINX** that is written above.
    Same goes for the **$VITIS_VERSION**, where you choose the Vitis version.
 
-.. code:: bash
+.. shell::
 
-   export ARCH=arm
-   export CROSS_COMPILE="arm-linux-gnueabihf-"
+   $export ARCH=arm
+   $export CROSS_COMPILE="arm-linux-gnueabihf-"
 
 Using the Linaro toolchain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -168,15 +168,15 @@ Linaro compilers (that work with Zynq) can be downloaded from
 `here <https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabi>`__.
 Always use the latest release just in case.
 
-.. code:: bash
+.. shell::
 
-   wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabi/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
-   tar -xvf gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
+   $wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabi/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
+   $tar -xvf gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
 
-.. code:: bash
+.. shell::
 
-   export ARCH=arm
-   export CROSS_COMPILE=$(pwd)/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-
+   $export ARCH=arm
+   $export CROSS_COMPILE=$(pwd)/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-
 
 Configure the kernel
 ~~~~~~~~~~~~~~~~~~~~
@@ -186,41 +186,41 @@ kernel tree.
 The command shown below is generic and is not project specific.
 As long as the board is a ZYNQ FPGA, use the configuration below.
 
-.. code:: bash
+.. shell::
 
-   make zynq_xcomm_adv7511_defconfig
-   #
-   # configuration written to .config
-   #
+   $make zynq_xcomm_adv7511_defconfig
+    #
+    # configuration written to .config
+    #
 
 Build the kernel
 ~~~~~~~~~~~~~~~~
 
 Build the kernel via 'make'. This is the same for all Xilinx ZYNQ FPGAs.
 
-.. code:: bash
+.. shell::
 
-   make -j5 UIMAGE_LOADADDR=0x8000 uImage
-   # scripts/kconfig/conf --silentoldconfig Kconfig
-   #   CHK     include/config/kernel.release
-   #   CHK     include/generated/uapi/linux/version.h
-   #   UPD     include/config/kernel.release
-   #   CHK     include/generated/utsrelease.h
-   #
-   # [ -- snip --]
-   #
-   #   AS      arch/arm/boot/compressed/bswapsdi2.o
-   #   AS      arch/arm/boot/compressed/piggy.gzip.o
-   #   LD      arch/arm/boot/compressed/vmlinux
-   #   OBJCOPY arch/arm/boot/zImage
-   #   Kernel: arch/arm/boot/zImage is ready
-   #   UIMAGE  arch/arm/boot/uImage
-   # Image Name:   Linux-3.17.0-126697-g611e217-dir
-   # Created:      Fri Nov 28 10:20:40 2014
-   # Image Type:   ARM Linux Kernel Image (uncompressed)
-   # Data Size:    3195872 Bytes = 3120.97 kB = 3.05 MB
-   # Load Address: 00008000
-   # Entry Point:  00008000
+   $make -j5 UIMAGE_LOADADDR=0x8000 uImage
+    scripts/kconfig/conf --silentoldconfig Kconfig
+      CHK     include/config/kernel.release
+      CHK     include/generated/uapi/linux/version.h
+      UPD     include/config/kernel.release
+      CHK     include/generated/utsrelease.h
+
+    [ -- snip --]
+
+      AS      arch/arm/boot/compressed/bswapsdi2.o
+      AS      arch/arm/boot/compressed/piggy.gzip.o
+      LD      arch/arm/boot/compressed/vmlinux
+      OBJCOPY arch/arm/boot/zImage
+      Kernel: arch/arm/boot/zImage is ready
+      UIMAGE  arch/arm/boot/uImage
+    Image Name:   Linux-3.17.0-126697-g611e217-dir
+    Created:      Fri Nov 28 10:20:40 2014
+    Image Type:   ARM Linux Kernel Image (uncompressed)
+    Data Size:    3195872 Bytes = 3120.97 kB = 3.05 MB
+    Load Address: 00008000
+    Entry Point:  00008000
 
 Build the devicetree FCMOMMS2/3/4/5
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -389,10 +389,10 @@ Build the one that fits your FPGA carrier and FMC card
 Building the device tree uses 'make' by turning the .dts file to a .dtb. The
 command is simply 'make' plus the device tree name with a .dtb file extension.
 
-.. code:: bash
+.. shell::
 
-   make zynq-zc702-adv7511-ad9361.dtb
-   #  DTC     arch/arm/boot/dts/zynq-zc702-adv7511-ad9361.dtb
+   $make zynq-zc702-adv7511-ad9361.dtb
+    DTC     arch/arm/boot/dts/zynq-zc702-adv7511-ad9361.dtb
 
 Copy the generated files to your SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -403,10 +403,10 @@ output directories. Take note that the device tree file needs to be renamed to
 **devicetree.dtb**.
 See :ref:`kuiper sdcard` for more information in configuring the SD card.
 
-.. code:: bash
+.. shell::
 
-   cp arch/arm/boot/uImage /media/BOOT/uImage
-   cp arch/arm/boot/dts/zynq-zc702-adv7511-ad9361.dtb  /media/BOOT/devicetree.dtb
+   $cp arch/arm/boot/uImage /media/BOOT/uImage
+   $cp arch/arm/boot/dts/zynq-zc702-adv7511-ad9361.dtb  /media/BOOT/devicetree.dtb
 
 On the target platform (devicetrees)
 ------------------------------------
@@ -420,10 +420,10 @@ To modify devicetrees on the target platform:
 #. Convert the compiled devicetree related to the target back into an editable
    format.
 
-   .. code:: bash
+   .. shell::
 
-      cd /media/analog/boot/zynq-zc702-adv7511
-      dtc -I dtb -O dts -o devicetree.dts devicetree.dtb
+      $cd /media/analog/boot/zynq-zc702-adv7511
+      $dtc -I dtb -O dts -o devicetree.dts devicetree.dtb
 
 
 #. Modify the devicetree.dts file as required.
@@ -432,10 +432,10 @@ To modify devicetrees on the target platform:
    file, copy or rename the original file if you want to keep it before running
    this step.
 
-   .. code:: bash
+   .. shell::
 
-      cd /media/analog/boot/zynq-zc702-adv7511
-      dtc -I dts -O dtb -o devicetree.dtb devicetree.dts
+      $cd /media/analog/boot/zynq-zc702-adv7511
+      $dtc -I dts -O dtb -o devicetree.dtb devicetree.dts
 
 
 Building the ZynqMP / MPSoC Linux kernel and devicetrees from source
@@ -471,11 +471,11 @@ The script will:
 
 Running the script in one line, with defaults:
 
-.. code:: bash
+.. shell::
 
-   wget https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/main/linux/build_zynqmp_kernel_image.sh && \
-   chmod +x build_zynqmp_kernel_image.sh && \
-   ./build_zynqmp_kernel_image.sh
+   $wget https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/main/linux/build_zynqmp_kernel_image.sh && \
+   $       chmod +x build_zynqmp_kernel_image.sh && \
+   $       ./build_zynqmp_kernel_image.sh
 
 
 Building with Petalinux
@@ -491,11 +491,11 @@ available. You can install it via your distro's package manager.
 
 Then
 
-.. code:: bash
+.. shell::
 
-   git clone https://github.com/analogdevicesinc/linux.git \
-             --no-single-branch --depth=10 \
-             -- linux
+   $git clone https://github.com/analogdevicesinc/linux.git \
+   $            --no-single-branch --depth=10 \
+   $            -- linux
 
 or do a git pull in a existing cloned repository.
 
@@ -507,11 +507,11 @@ around 3.4GB and growing.
 Checkout the main development
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. shell::
 
-   git checkout main
-   # Already on 'main'
-   # Your branch is up-to-date with 'origin/main'.
+   $git checkout main
+    Already on 'main'
+    Your branch is up-to-date with 'origin/main'.
 
 Add aarch64-linux-gnu-gcc to PATH
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -519,11 +519,11 @@ Add aarch64-linux-gnu-gcc to PATH
 Using the Xilinx toolchain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code:: bash
+.. shell::
 
-   source $PATH_TO_XILINX/Vitis/$VITIS_VERSION/settings64.sh
-   which aarch64-linux-gnu-gcc
-   # $PATH_TO_XILINX/Vitis/$VITIS_VERSION/gnu/aarch64/lin/aarch64-linux/bin/aarch64-linux-gnu-gcc
+   $source $PATH_TO_XILINX/Vitis/$VITIS_VERSION/settings64.sh
+   $which aarch64-linux-gnu-gcc
+    $PATH_TO_XILINX/Vitis/$VITIS_VERSION/gnu/aarch64/lin/aarch64-linux/bin/aarch64-linux-gnu-gcc
 
 .. important::
 
@@ -531,10 +531,10 @@ Using the Xilinx toolchain
    it to replace this string: **$PATH_TO_XILINX** that is written above.
    Same goes for the **$VITIS_VERSION**, where you choose the Vitis version.
 
-.. code:: bash
+.. shell::
 
-   export ARCH=arm64
-   export CROSS_COMPILE="aarch64-linux-gnu-"
+   $export ARCH=arm64
+   $export CROSS_COMPILE="aarch64-linux-gnu-"
 
 Using the Linaro toolchain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -544,15 +544,15 @@ Linaro compilers (that work with ZYNQMP) can be downloaded from
 `here <https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu>`__.
 Always use the latest release just in case.
 
-.. code:: bash
+.. shell::
 
-   wget https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
-   tar -xvf gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+   $wget https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+   $tar -xvf gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
 
-.. code:: bash
+.. shell::
 
-   export ARCH=arm64
-   export CROSS_COMPILE=$(pwd)/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
+   $export ARCH=arm64
+   $export CROSS_COMPILE=$(pwd)/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
 
 Configure the kernel
 ~~~~~~~~~~~~~~~~~~~~
@@ -560,33 +560,33 @@ Configure the kernel
 Inside the repository, generate the configuration file before building the
 kernel tree.
 
-.. code:: bash
+.. shell::
 
-   make adi_zynqmp_defconfig
-   #
-   # configuration written to .config
-   #
+   $make adi_zynqmp_defconfig
+    #
+    # configuration written to .config
+    #
 
 Build the kernel via 'make'. This is the same for all Xlinx ZYNQMP MPSoC FPGAs.
 
-.. code::
+.. shell::
 
-   make -j5 Image UIMAGE_LOADADDR=0x8000
-   #   CHK     include/config/kernel.release
-   #   CHK     include/generated/uapi/linux/version.h
-   #   HOSTCC  scripts/basic/fixdep
-   #   HOSTCC  scripts/basic/bin2c
-   #
-   # [ -- snip --]
-   #
-   #   CC      init/version.o
-   #   LD      init/built-in.o
-   #   KSYM    .tmp_kallsyms1.o
-   #   KSYM    .tmp_kallsyms2.o
-   #   LD      vmlinux
-   #   SORTEX  vmlinux
-   #   SYSMAP  System.map
-   #   OBJCOPY arch/arm64/boot/Image
+   $make -j5 Image UIMAGE_LOADADDR=0x8000
+      CHK     include/config/kernel.release
+      CHK     include/generated/uapi/linux/version.h
+      HOSTCC  scripts/basic/fixdep
+      HOSTCC  scripts/basic/bin2c
+
+    [ -- snip --]
+
+      CC      init/version.o
+      LD      init/built-in.o
+      KSYM    .tmp_kallsyms1.o
+      KSYM    .tmp_kallsyms2.o
+      LD      vmlinux
+      SORTEX  vmlinux
+      SYSMAP  System.map
+      OBJCOPY arch/arm64/boot/Image
 
 Build the devicetree FCMOMMS2/3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -620,10 +620,10 @@ that uses an SD card for boot up. Building the device tree uses 'make' by
 turning the .dts file to a .dtb. The command is simply 'make' plus the device
 tree name with a .dtb file extension.
 
-.. code:: bash
+.. shell::
 
-   make xilinx/zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dtb
-   #  DTC     arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dtb
+   $make xilinx/zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dtb
+    DTC     arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dtb
 
 Copy the generated files to your SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -634,10 +634,10 @@ output directories. Take note that the device tree file needs to be renamed to
 **devicetree.dtb**.
 See :ref:`kuiper sdcard` for more information in configuring the SD card.
 
-.. code:: bash
+.. shell::
 
-   cp arch/arm64/boot/Image /media/michael/BOOT/
-   cp arch/arm64/boot/dts/xilinx/zynqmp-zcu102-revB-ad9361-fmcomms2-3.dtb /media/michael/BOOT/system.dtb
+   $cp arch/arm64/boot/Image /media/michael/BOOT/
+   $cp arch/arm64/boot/dts/xilinx/zynqmp-zcu102-revB-ad9361-fmcomms2-3.dtb /media/michael/BOOT/system.dtb
 
 Common Issues
 -------------

@@ -17,41 +17,44 @@ need to identify the IIO device number.
 
 Therefore read the name attribute of each IIO device
 
-.. code::
+.. shell::
 
-   root@analog:~> grep "" /sys/bus/iio/devices/iio\:device*/name
-   /sys/bus/iio/devices/iio:device0/name:ad7291
-   /sys/bus/iio/devices/iio:device1/name:ad9361-phy
-   /sys/bus/iio/devices/iio:device2/name:xadc
-   /sys/bus/iio/devices/iio:device3/name:adf4351-udc-rx-pmod
-   /sys/bus/iio/devices/iio:device4/name:adf4351-udc-tx-pmod
-   /sys/bus/iio/devices/iio:device5/name:cf-ad9361-dds-core-lpc
-   /sys/bus/iio/devices/iio:device6/name:cf-ad9361-lpc
+   $grep "" /sys/bus/iio/devices/iio\:device*/name
+    /sys/bus/iio/devices/iio:device0/name:ad7291
+    /sys/bus/iio/devices/iio:device1/name:ad9361-phy
+    /sys/bus/iio/devices/iio:device2/name:xadc
+    /sys/bus/iio/devices/iio:device3/name:adf4351-udc-rx-pmod
+    /sys/bus/iio/devices/iio:device4/name:adf4351-udc-tx-pmod
+    /sys/bus/iio/devices/iio:device5/name:cf-ad9361-dds-core-lpc
+    /sys/bus/iio/devices/iio:device6/name:cf-ad9361-lpc
 
 Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the
 direct_reg_access file exists.
 
-.. code::
+.. shell::
 
-   root@analog:~> cd /sys/kernel/debug/iio/iio\:device1
-   root@analog:/sys/kernel/debug/iio/iio:device1> ls direct_reg_access
-   direct_reg_access
+   $cd /sys/kernel/debug/iio/iio\:device1
+   /sys/kernel/debug/iio/iio:device1
+   $ls direct_reg_access
+    direct_reg_access
 
 **Reading**
 
-.. code::
+.. shell::
 
-   root@analog:/sys/kernel/debug/iio/iio:device1> echo 0x7 > direct_reg_access
-   root@analog:/sys/kernel/debug/iio/iio:device1> cat direct_reg_access
-   0x40
+   /sys/kernel/debug/iio/iio:device1
+   $echo 0x7 > direct_reg_access
+   $cat direct_reg_access
+    0x40
 
 **Writing**
 
-.. code::
+.. shell::
 
-   root@analog:/sys/kernel/debug/iio/iio:device1> echo 0x7 0x50  > direct_reg_access
-   root@analog:/sys/kernel/debug/iio/iio:device1> cat direct_reg_access
-   0x50
+   /sys/kernel/debug/iio/iio:device1
+   $echo 0x7 0x50  > direct_reg_access
+   $cat direct_reg_access
+    0x50
 
 **Accessing HDL CORE registers**
 
@@ -66,9 +69,10 @@ The register map for ADI HDL cores can be found at section "Register Map"
 of each :external+hdl:ref:`library` documentation
 (:external+hdl:ref:`example <i3c_controller regmap>`).
 
-.. code::
+.. shell::
 
-   root@analog:/sys/kernel/debug/iio/iio:device6> echo 0x80000000 > direct_reg_access
-   root@analog:/sys/kernel/debug/iio/iio:device6> cat direct_reg_access
-   0x80062
+   /sys/kernel/debug/iio/iio:device6
+   $echo 0x80000000 > direct_reg_access
+   $cat direct_reg_access
+    0x80062
 

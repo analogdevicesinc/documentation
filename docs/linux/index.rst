@@ -1,7 +1,7 @@
 :orphan:
 
-Linux Kernel & Software
-=======================
+Linux Kernel
+============
 
 .. toctree::
 

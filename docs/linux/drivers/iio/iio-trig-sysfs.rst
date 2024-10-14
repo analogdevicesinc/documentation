@@ -58,18 +58,18 @@ To remove a sysfs trigger write the same ID used when registering it to the
 Driver testing
 ==============
 
-.. code::
+.. shell::
 
-   root:/> cd sys/bus/iio/devices/
-   root:/sys/bus/iio/devices> ls
-   iio:device0
-   iio:device1
-   iio:trigger0
-   root:/sys/bus/iio/devices> cd iio:trigger0
-   root:/sys/devices/iio:trigger0> ls
-   name         subsystem    trigger_now  uevent
-   root:/sys/devices/iio:trigger0> cat name
-   sysfstrig0
-   root:/sys/devices/iio:trigger0> echo 1 > trigger_now
-   root:/sys/devices/iio:trigger0> echo 1 > trigger_now
+   $cd /sys/bus/iio/devices
+   $ls
+    iio:device0
+    iio:device1
+    iio:trigger0
+   $cd iio\:trigger0
+   $ls
+    name         subsystem    trigger_now  uevent
+   $cat name
+    sysfstrig0
+   $echo 1 > trigger_now
+   $echo 1 > trigger_now
 

@@ -110,23 +110,23 @@ AMD/Xilinx
 For the **zynq projects** copy these files to the root of the BOOT FAT32
 partition:
 
-#. target/BOOT.BIN
-#. target/<specific_folder>/devicetree.dtb
+#. <target>/BOOT.BIN
+#. <target>/<specific_folder>/devicetree.dtb
 #. zynq-common/uImage
 
 For the **zynqmp projects** copy these files to the root of the BOOT FAT32
 partition:
 
-#. target/BOOT.BIN
-#. target/<specific_folder>/system.dtb
+#. <target>/BOOT.BIN
+#. <target>/<specific_folder>/system.dtb
 #. zynqmp-common/Image
 
 For the **versal projects** copy these files to the root of the BOOT FAT32
 partition:
 
-#. target/BOOT.BIN
-#. target/<specific_folder>/system.dtb
-#. target/boot.scr
+#. <target>/BOOT.BIN
+#. <target>/<specific_folder>/system.dtb
+#. <target>/boot.scr
 #. versal-common/Image
 
 Intel/Altera
@@ -135,31 +135,49 @@ Intel/Altera
 For **Arria10 SOC projects** copy these files to the root of the BOOT FAT32
 partition:
 
-#. target/fit_spl_fpga.itb
-#. target/socfpga_arria10_socdk_sdmmc.dtb
-#. target/u-boot.img
+#. <target>/fit_spl_fpga.itb
+#. <target>/socfpga_arria10_socdk_sdmmc.dtb
+#. <target>/u-boot.img
 #. socfpga_arria10_common/zImage
 #. socfpga_arria10_common/extlinux.conf, inside a folder named 'extlinux'.
    Create the folder if it does not exist;
 #. write preloader file (fit_spl_fpga.itb) to the corresponding SD card
    partition (third partition - 4MB in size).
 
-(e.g. :code:`dd if=u-boot-splx4.sfp of=/dev/mmcblk0p3`).
-
 For **Cyclone5 projects** copy these files to the root of the BOOT FAT32
 partition:
 
-#. target/soc_system.rbf
-#. target/socfpga.dtb
-#. target/u-boot.scr
-#. target/u-boot-with-spl.sfp
+#. <target>/soc_system.rbf
+#. <target>/socfpga.dtb
+#. <target>/u-boot.scr
+#. <target>/u-boot-with-spl.sfp
 #. socfpga_cyclone5_common/zImage
 #. socfpga_cyclone5_common/extlinux.conf , in a folder called 'extlinux'. Create
    the folder if it does not exist;
 #. write preloader file (u-boot-with-spl.sfp) to the corresponding SD card
    partition (third partition - 4MB in size)
 
-(e.g. :code:`dd if=u-boot-with-spl.bin of=/dev/mmcblk0p3`).
+Writing the preloader file
+++++++++++++++++++++++++++
+
+Writing the boot preloader partition require special attention,
+first look for the device with BOOT mountpoint and annotate the third partition
+from the same device.
+
+Then, clear the partition with zeros and write the preloader image
+(in this example, using a Linux host machine, and Arria10 SoC's *./u-boot-splx4.sfp*):
+
+.. shell::
+   :no-path:
+
+   $DEV=mmcblk0p3
+   $cd /mnt/BOOT/socfpga_arria10_socdk_ad9081
+   $sudo dd if=/dev/zero of=/dev/$DEV oflag=sync status=progress bs=64k || true
+    dd: error writing '/dev/mmcblk0p3': No space left on device
+   $sudo dd if=./u-boot-splx4.sfp of=/dev/$DEV oflag=sync status=progress bs=64k
+    1697+1 records in
+    1697+1 records out
+    868996 bytes (869 kB, 849 KiB) copied, 0.21262 s, 4.1 MB/s
 
 Configuring the SD Card for Raspberry Pi Projects
 -------------------------------------------------
@@ -174,8 +192,7 @@ often present on company computers.
 Connect a keyboard, mouse, and monitor to the Raspberry Pi and connect power.
 The ADI Kuiper Linux desktop should appear. Before editing, it is a good idea to
 make a backup of the original file, just in case something goes wrong (which it
-won't, but still...) Open a terminal and enter the following command (noting
-that "analog@analog:~ $" is the prompt, and does not need to be typed):
+won't, but still...) Open a terminal and enter the following command:
 
 .. shell::
 

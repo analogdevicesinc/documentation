@@ -487,10 +487,11 @@ Driver testing / API
 Show device name
 ----------------
 
-.. code::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat name
-   adrv9009-phy
+   /sys/bus/iio/devices/iio:device3
+   $cat name
+    adrv9009-phy
 
 .. _iio-transceiver adrv9009 enable-state-machine-controls:
 
@@ -501,19 +502,21 @@ The ADRV9009 transceiver includes an Enable State Machine (ENSM), allowing real
 time control over the current state of the device. The ENSM has two possible
 control methods – SPI control (writing ensm_mode), and pin control.
 
-.. code::
+.. shell::
 
-   root@analog:/sys/bus/iio/devices/iio:device3# cat ensm_mode_available
-   radio_on radio_off
+   /sys/bus/iio/devices/iio:device3
+   $cat ensm_mode_available
+    radio_on radio_off
 
-.. code::
+.. shell::
 
-   root:/sys/bus/iio/devices/iio:device3> cat ensm_mode
-   radio_on
+   /sys/bus/iio/devices/iio:device3
+   $cat ensm_mode
+    radio_on
 
-   root:/sys/bus/iio/devices/iio:device3> echo radio_off > ensm_mode
-   root:/sys/bus/iio/devices/iio:device3> cat ensm_mode
-   radio_of
+   $echo radio_off > ensm_mode
+   $cat ensm_mode
+    radio_of
 
 .. _iio-transceiver adrv9009 channel-enablepowerdown-controls:
 
@@ -657,7 +660,7 @@ Loading a Profile
 ^^^^^^^^^^^^^^^^^
 
 .. shell::
-   :showuser:
+   :show-user:
 
    $cat Tx_BW200_IR245p76_Rx_BW200_OR245p76_ORx_BW200_OR245p76_DC245p76.txt \
    $  > profile_config
@@ -1216,7 +1219,7 @@ device
 
 .. shell::
    :user: root
-   :showuser:
+   :show-user:
 
    $grep "" /sys/bus/iio/devices/iio\:device*/name
     /sys/bus/iio/devices/iio:device0/name:ams

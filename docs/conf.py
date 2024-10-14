@@ -16,7 +16,7 @@ extensions = [
 ]
 
 needs_extensions = {
-    'adi_doctools': '0.3.47'
+    'adi_doctools': '0.3.48'
 }
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

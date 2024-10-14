@@ -67,7 +67,7 @@ Console Output
 .. collapsible:: Complete boot log
 
    .. shell::
-      :showuser:
+      :show-user:
 
        Xilinx Zynq MP First Stage Boot Loader
        Release 2017.4   May 11 2018  -  15:08:48
