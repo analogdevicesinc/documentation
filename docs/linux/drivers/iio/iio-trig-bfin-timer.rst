@@ -81,26 +81,29 @@ platform device data. An example is shown below:
 Driver testing
 ==============
 
-::
+.. shell::
 
-   root:/> cd sys/bus/iio/devices/
-   root:/sys/bus/iio/devices> ls
-   device0                  device0:buffer0:event0   device1:buffer0:access0
-   device0:buffer0          device1                  device1:buffer0:event0
-   device0:buffer0:access0  device1:buffer0          trigger0
+   $cd /sys/bus/iio/devices
+   $ls
+    device0                  device0:buffer0:event0   device1:buffer0:access0
+    device0:buffer0          device1                  device1:buffer0:event0
+    device0:buffer0:access0  device1:buffer0          trigger0
 
-::
+.. shell::
 
-   root:/sys/bus/iio/devices> **cd trigger0**
-   root:/sys/devices/trigger0> **ls**
-   name         subsystem    frequency  uevent
+   /sys/bus/iio/devices
+   $cd trigger0
+   $ls
+    name         subsystem    frequency  uevent
 
-::
+.. shell::
 
-   root:/sys/devices/trigger0> cat name
-   bfintmr3
+   /sys/devices/trigger0
+   $cat name
+    bfintmr3
 
-::
+.. shell::
 
-   root:/sys/devices/trigger0> **echo 1000 > frequency**
-   root:/sys/devices/trigger0> **echo 0 > frequency**
+   /sys/devices/trigger0
+   $echo 1000 > frequency
+   $echo 0 > frequency

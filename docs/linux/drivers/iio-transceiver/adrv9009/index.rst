@@ -660,7 +660,7 @@ Loading a Profile
 ^^^^^^^^^^^^^^^^^
 
 .. shell::
-   :showuser:
+   :show-user:
 
    $cat Tx_BW200_IR245p76_Rx_BW200_OR245p76_ORx_BW200_OR245p76_DC245p76.txt \
    $  > profile_config
@@ -1219,7 +1219,7 @@ device
 
 .. shell::
    :user: root
-   :showuser:
+   :show-user:
 
    $grep "" /sys/bus/iio/devices/iio\:device*/name
     /sys/bus/iio/devices/iio:device0/name:ams
