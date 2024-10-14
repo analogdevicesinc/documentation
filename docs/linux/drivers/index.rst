@@ -1,3 +1,5 @@
+.. _linux drivers:
+
 Linux drivers
 =============
 
