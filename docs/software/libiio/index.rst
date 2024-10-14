@@ -3,12 +3,6 @@
 Libiio
 """"""
 
-.. toctree::
-   :hidden:
-
-   About <internals>
-   Command line utility <cli>
-
 Libiio is a library that has been developed by Analog Devices to ease the
 development of software interfacing :ref:`iio` devices.
 
@@ -31,6 +25,24 @@ libiio and connected to the server.
 .. image:: libiio_diagram.png
    :width: 400px
 
+Documentation
+=============
+
+.. toctree::
+   :titlesonly:
+
+   internals
+   Command line utility <cli>
+   Tips & Tricks <tips-tricks>
+
+An automatically generated documentation of the API can be found at :git-libiio:`/`
+
+Python and C# have official bindings available in the repository but third
+parties have developed others for more languages.
+
+Python and C# bindings documentation is available on the :doc:`internals`
+and within the `API documentation <http://analogdevicesinc.github.io/libiio/>`__.
+
 Network Backends
 ================
 
@@ -43,8 +55,8 @@ there are many places you can stream data to.
 - :dokuwiki:`GNU Radio </resources/tools-software/linux-software/gnuradio>`
 - :ref:`pyadi-iio: Device Specific Python Interfaces For IIO Drivers <pyadi-iio>`
 
-Where to get libiio?
-====================
+Source code and releases
+========================
 
 The libiio library source code can be obtained on :git-libiio:`/`.
 
@@ -55,8 +67,8 @@ where installers for every platform can also be found, but may be unstable/buggy
 
 .. _libiio build:
 
-How to build it?
-================
+Building libiio
+===============
 
 Building on the Linux/Zynq Target
 ---------------------------------
@@ -76,51 +88,51 @@ Debian based distributions
 
 On a Debian-flavoured GNU/Linux distribution, like Ubuntu for instance:
 
-::
+.. shell::
 
-   rgetz@pinky:~$ sudo apt-get install build-essential libxml2 libzstd-dev \
-     libxml2-dev bison flex libcdk5-dev cmake
+   $sudo apt-get install build-essential libxml2 libzstd-dev \
+   $    libxml2-dev bison flex libcdk5-dev cmake
 
 Depending on the backend (how you want to attach the IIO device), you may need
 at least one of:
 
-::
+.. shell::
 
-   rgetz@pinky:~$ sudo apt-get install libaio-dev libusb-1.0-0-dev \
-     libserialport-dev libxml2-dev libavahi-client-dev doxygen graphviz
+   $sudo apt-get install libaio-dev libusb-1.0-0-dev \
+   $    libserialport-dev libxml2-dev libavahi-client-dev doxygen graphviz
 
 RedHAT based distributions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. shell::
 
-   [liveuser@localhost-live ~]$ sudo dnf install libxml2 libzstd-dev \
-     libxml2-devel bison flex make gcc cmake rpmdevtools
+   $sudo dnf install libxml2 libzstd-dev \
+   $    libxml2-devel bison flex make gcc cmake rpmdevtools
 
 Depending on the backend (how you want to attach the IIO device), you may need
 at least one of:
 
-::
+.. shell::
 
-   [liveuser@localhost-live ~]$ sudo dnf install libaio-devel libusb1-devel \
-     libserialport-devel avahi-devel doxygen graphviz
+   $sudo dnf install libaio-devel libusb1-devel \
+   $    libserialport-devel avahi-devel doxygen graphviz
 
 FreeBSD based distributions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+.. shell::
 
-   rgetz@freebsd:~ $ sudo pkg update && sudo pkg upgrade && sudo pkg install \
-     libzstd libxml2 bison flex gcc cmake git
+   $sudo pkg update && sudo pkg upgrade && sudo pkg install \
+   $    libzstd libxml2 bison flex gcc cmake git
 
 Depending on the backend (how you want to attach the IIO device), you may need
 at least one of:
 
-::
+.. shell::
 
-   rgetz@freebsd:~ $ sudo pkg install libserialport avahi doxygen graphviz
+   $sudo pkg install libserialport avahi doxygen graphviz
 
-add these lines to ``/etc/rc.conf``:
+Add these lines to ``/etc/rc.conf``:
 
 ::
 
@@ -131,9 +143,9 @@ add these lines to ``/etc/rc.conf``:
 FreeBSD does not automount USB drives by default, so you need to install an
 automounter:
 
-::
+.. shell::
 
-   rgetz@freebsd:~ $ sudo pkg install automount
+   $sudo pkg install automount
 
 Remaining steps
 ~~~~~~~~~~~~~~~
@@ -147,27 +159,30 @@ Remaining steps
 Now you have the prerequisite installed, you can clone a release branch from the
 GIT repository:
 
-::
+.. shell::
 
-   rgetz@pinky:~$ git clone https://github.com/analogdevicesinc/libiio.git --branch v0.25
+   $git clone https://github.com/analogdevicesinc/libiio.git --branch v0.26
 
-Finally, in the ``libiio/`` directory,
+In the *libiio/* directory,
 
-::
+.. shell::
 
-   rgetz@pinky:~/libiio$ mkdir build && cd build && cmake ../ && make && sudo make install
+   ~/libiio
+   $mkdir build && cd build
+   $cmake ../ && make
+   $sudo make install
 
-This will build ``libiio`` in the ``build`` subdirectory, and install it to
-``/usr``. Note that it is possible to install to a different location by setting
+This will build *libiio* in the *build* subdirectory, and install it to
+*/usr*. Note that it is possible to install to a different location by setting
 the PREFIX variable.
 
-To build iio oscilloscope you'll have to make sure libiio directories can be
+To build IIO oscilloscope you'll have to make sure libiio directories can be
 found, one way to do this given it installed to /usr/lib is add it to your
 sessions PATH:
 
-::
+.. shell::
 
-   /libiio$ PATH=/usr/lib/:$PATH
+   $PATH=/usr/lib/:$PATH
 
 Understanding which libiio is being used
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -175,55 +190,58 @@ Understanding which libiio is being used
 During development, sometimes it can be a puzzle which version of libiio is
 being used. An easy way to tell is to do something like:
 
-::
+.. shell::
 
-   analog@imhotep:~/github/libiio$ git describe --tags
-   v0.8-13-g6847e22
+   ~/libiio
+   $git describe --tags
+    v0.8-13-g6847e22
 
 To check what is running:
 
-::
+.. shell::
 
-   analog@imhotep:~/github/libiio/build$ iio_info
-   Library version: 0.8 (git tag: 6847e22)
-   Unable to create IIO context
+   ~/libiio/build
+   $iio_info
+    Library version: 0.8 (git tag: 6847e22)
+    Unable to create IIO context
 
 If you are running an application, and want to find out:
 
-::
+.. shell::
 
-   analog@imhotep:~/github/libiio/build$ strace -ofoo iio_info
-   Library version: 0.8 (git tag: 6847e22)
-   Unable to create IIO context
-   analog@imhotep:~/github/libiio/build$ grep -e ^open  foo | grep libiio
-   open("./tls/x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-   open("./tls/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-   open("./x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-   open("./libiio.so.0", O_RDONLY|O_CLOEXEC) = 3
-   analog@imhotep:~/github/libiio/build$ ls -l ./libiio.so.0
-   lrwxrwxrwx 1 analog analog 13 Nov 15 10:36 ./libiio.so.0 -> libiio.so.0.8
-   analog@imhotep:~/github/libiio/build$ ls -l ./libiio.so.0.8
-   -rwxr-xr-x 1 analog analog 408432 Nov 15 10:36 ./libiio.so.0.8
+   ~/libiio/build
+   $strace -ofoo iio_info
+    Library version: 0.8 (git tag: 6847e22)
+    Unable to create IIO context
+   $grep -e ^open  foo | grep libiio
+    open("./tls/x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+    open("./tls/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+    open("./x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+    open("./libiio.so.0", O_RDONLY|O_CLOEXEC) = 3
+   $ls -l ./libiio.so.0
+    lrwxrwxrwx 1 analog analog 13 Nov 15 10:36 ./libiio.so.0 -> libiio.so.0.8
+    analog@imhotep:~/github/libiio/build$ ls -l ./libiio.so.0.8
+    -rwxr-xr-x 1 analog analog 408432 Nov 15 10:36 ./libiio.so.0.8
 
 This found a version in the same directory.
 
-::
+.. shell::
 
-   analog@imhotep:~$ strace -ofoo iio_info
-   Library version: 0.8 (git tag: 6847e22)
-   Unable to create IIO context
-   analog@imhotep:~$ **grep -e ^open  foo | grep libiio**
-   open("./tls/x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-   open("./tls/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-   open("./x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-   open("./libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-   open("/usr/lib/x86_64-linux-gnu/libiio.so.0", O_RDONLY|O_CLOEXEC) = 3
-   analog@imhotep:~$ **ls -l /usr/lib/x86_64-linux-gnu/libiio.so.0**
-   lrwxrwxrwx 1 root root 13 Nov  9 21:05 /usr/lib/x86_64-linux-gnu/libiio.so.0 -> libiio.so.0.8
-   analog@imhotep:~$ **ls -l /usr/lib/x86_64-linux-gnu/libiio.so.0.8**
-   -rw-r--r-- 1 root root 408432 Nov 15 10:36 /usr/lib/x86_64-linux-gnu/libiio.so.0.8
+   $strace -ofoo iio_info
+    Library version: 0.8 (git tag: 6847e22)
+    Unable to create IIO context
+   $grep -e ^open  foo | grep libiio
+    open("./tls/x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+    open("./tls/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+    open("./x86_64/libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+    open("./libiio.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+    open("/usr/lib/x86_64-linux-gnu/libiio.so.0", O_RDONLY|O_CLOEXEC) = 3
+   $ls -l /usr/lib/x86_64-linux-gnu/libiio.so.0
+    lrwxrwxrwx 1 root root 13 Nov  9 21:05 /usr/lib/x86_64-linux-gnu/libiio.so.0 -> libiio.so.0.8
+   $ls -l /usr/lib/x86_64-linux-gnu/libiio.so.0.8
+    -rw-r--r-- 1 root root 408432 Nov 15 10:36 /usr/lib/x86_64-linux-gnu/libiio.so.0.8
 
-This found the version in ``/usr/lib/x86_64-linux-gnu/libiio.so.0``.
+This found the version in */usr/lib/x86_64-linux-gnu/libiio.so.0*.
 
 Cross-compilation
 -----------------
@@ -268,14 +286,14 @@ The fix:
 #. Download the
    `functionfs.h <https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/usb/functionfs.h>`__
    file.
-#. And place it in /usr/include/linux/usb/functionsfs.h, overwriting the old
+#. And place it in */usr/include/linux/usb/functionsfs.h*, overwriting the old
    one.
 
-::
+.. shell::
 
-   root@analog:~# cd /usr/include/linux/usb
-   root@analog:/usr/include/linux/usb# rm functionfs.h
-   root@analog:/usr/include/linux/usb# wget https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/usb/functionfs.h
+   $cd /usr/include/linux/usb
+   $rm functionfs.h
+   $wget https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/usb/functionfs.h
 
 Rebuild LibIIO
 --------------
@@ -285,7 +303,7 @@ Rebuild LibIIO
    $cd /usr/local/src
    $git clone https://github.com/analogdevicesinc/libiio.git
    $cd /usr/local/src/libiio/
-   $git clean -d -f -x
+   $git clean -xdf
    $cmake .
    $make
    $sudo make install
@@ -330,38 +348,6 @@ context list.
     Available contexts:
         0: Local devices [local:]
         1: 0456:b671 (Analog Devices Inc. Generic USB IIOD), serial=00000000 [usb:1.36.0]
-
-Documentation
-=============
-
-API reference
--------------
-
-An automatically generated documentation of the API can be found at :git-libiio:`/`
-
-Bindings
---------
-
-Python and C# have official bindings available in the repository but third
-parties have developed others for more languages. Python and C# bindings
-documentation is available on the :doc:`internals`
-and within the `API documentation <http://analogdevicesinc.github.io/libiio/>`__.
-
-Libiio internals
-----------------
-
-See the dedicated page :doc:`internals`.
-
-Libiio CLI
-----------
-
-See the dedicated page :doc:`cli`.
-
-Libiio System Considerations Tips & Tricks
-------------------------------------------
-
-See the dedicated page:
-:dokuwiki:`System Considerations Tips & Tricks </resources/tools-software/linux-software/libiio_tips_tricks>`.
 
 libiio Examples
 ===============
