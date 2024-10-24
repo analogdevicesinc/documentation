@@ -295,9 +295,9 @@ The temperature rise vs. heat dissipated curve for the Aavid heat sink is slight
 Further Reading
 ---------------
 
-Using .meas and .step commands to calculate efficiency in LTspice: `en/technical-articles/ltspice-using-meas-and-step-commands-to-calculate-efficiency.html <adi>en/technical-articles/ltspice-using-meas-and-step-commands-to-calculate-efficiency.html>`__
+Using .meas and .step commands to calculate efficiency in LTspice: :adi:`en/technical-articles/ltspice-using-meas-and-step-commands-to-calculate-efficiency.html <en/technical-articles/ltspice-using-meas-and-step-commands-to-calculate-efficiency.html>`
 
-**Return to Lab Activity** `Table of Contents </university/courses/electronics/labs>`__
+**Return to Lab Activity** :dokuwiki:`Table of Contents <university/courses/electronics/labs>`
 
 .. |Efficiency and Power Loss Slide Deck| image:: workshop_efficiency_power_loss.pptx
 .. |cozy_laptop_charger.jpg| image:: cozy_laptop_charger.jpg

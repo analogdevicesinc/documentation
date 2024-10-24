@@ -48,7 +48,7 @@ The specific interface used for the EVAL-ADXL355-PMDZ boards is the extended SPI
 | Pin 6         | Digital Power       | VDD      | Pin 12        | Digital Power  | VDD      |
 +---------------+---------------------+----------+---------------+----------------+----------+
 
-| 
+|
 | |adxl355_layout.png|
 
 ADXL355 Interrupt Pins
@@ -68,10 +68,10 @@ There are two device driver and accompanying software solutions provided for the
 
 **ADXL355 no-OS Driver**
 
-   * The :git-no-OS:`ADXL355 no-OS driver <main:drivers/accel/adxl355>` is used in bare-metal applications, typically running on low-power, embedded microcontrollers. 
+   * The :git-no-OS:`ADXL355 no-OS driver <main:drivers/accel/adxl355>` is used in bare-metal applications, typically running on low-power, embedded microcontrollers.
 
    * The :git-no-OS:`ADXL355 no-OS example project <main:projects/eval-adxl355-pmdz>` uses the ADXL355 no-OS driver and has several configuration options:
-   
+
       * The tinyiiod configuration emulates the Linux IIO framework through the tinyiiod daemon library. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development. This is the configuration that will be referenced in the no-OS platform setups below.
       * The "dummy" configuration implements a simple command-line program that can be run on a terminal.
 
@@ -80,9 +80,9 @@ There are two device driver and accompanying software solutions provided for the
    A zip file containing prebuilt programming files for the no-OS example project, targeting platforms below are available at: `eval-adxl355-pmdz.zip <https://github.com/analogdevicesinc/no-OS/releases/download/last_commit/eval-adxl355-pmdz.zip>`__.
 
    More details are provided in the platform-specific sections below.
- 
+
 **ADXL355 Linux Driver**
-   * The `ADXL355 Linux driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-accelerometer/adxl355>`__ is used in applications running the Linux operating system, typically on larger processors and SoC devices.
+   * The :dokuwiki:`ADXL355 Linux driver <resources/tools-software/linux-drivers/iio-accelerometer/adxl355>` is used in applications running the Linux operating system, typically on larger processors and SoC devices.
    * The ADXL355 Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
 
 
@@ -99,8 +99,8 @@ The following is the list of items needed in order to replicate this demo.
 
 -  Hardware
 
-   -  `EVAL-ADICUP3029 <ADI>EVAL-ADICUP3029>`__
-   -  `EVAL-ADXL355-PMDZ <ADI>EVAL-ADXL355-PMDZ>`__
+   -  :adi:`EVAL-ADICUP3029`
+   -  :adi:`EVAL-ADXL355-PMDZ`
    -  Micro-USB to USB Cable
    -  PC or Laptop with USB Port
 
@@ -110,7 +110,7 @@ The following is the list of items needed in order to replicate this demo.
    - For terminal CLI: eval-adxl355-pmdz_aducm3029_dummy_example.hex from the programming file zip
 
 .. TIP::
-   
+
    There are two basic ways to program the ADICUP3029 with the software for the ADXL355.
 
    #. Dragging and Dropping the .Hex to the Daplink drive
@@ -123,11 +123,11 @@ Setting up the Hardware
 
 1. Connect **EVAL-ADXL355-PMDZ** board at connector **P9** of the **EVAL-ADICUP3029**.
 
-2. Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below. |adxl355_adicup3029_connections.jpg| <wrap center 22%> *<fc>Figure 5. Hardware Setup</fc>* </wrap>
+2. Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below. |adxl355_adicup3029_connections.jpg| *Figure 5. Hardware Setup*
 
-3. Make sure the following switches are as shown from the table below. |switch_config.png| <wrap center 30%> *<fc>Figure 6. Switch Confuguration</fc>* </wrap>
+3. Make sure the following switches are as shown from the table below. |switch_config.png| *Figure 6. Switch Confuguration*
 
-4. From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct. |image1| <wrap center 20%> *<fc>Figure 7. DAPLINK Drive</fc>* </wrap>
+4. From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct. |image1| *Figure 7. DAPLINK Drive*
 
 3. Drag and drop the eval-adxl355-pmdz_aducm3029_iio_example.hex file to the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red) LED will blink rapidly.
 
@@ -159,12 +159,10 @@ The following is the list of items needed in order to replicate this demo.
 
 -  \*\* Software \*\*
 
-
-
    -  For MAX32655FTHR, programming file from zip:
       - For IIO / libiio: eval-adxl355-pmdz_maxim_iio_example_max32655_adxl355.hex
       - For terminal CLI: eval-adxl355-pmdz_maxim_dummy_example_max32655_adxl355.hex
-   - For MAX32650FTHR, 
+   - For MAX32650FTHR,
       - For IIO / libiio: eval-adxl355-pmdz_maxim_iio_example_max32650_adxl355.hex
       - For terminal CLI: eval-adxl355-pmdz_maxim_dummy_example_max32650_adxl355.hex
 
@@ -219,7 +217,7 @@ The final setup should look similar as shown below. |max32650fthr_adxl355pmod.jp
 
 6. Open PuTTY or other similar software. Check the Device Manager to set the correct COM port for the **MAX32650FTHR**.
 
-7. Set baud rate according to the hex file used available in `MAX32650FTHR_demo_ADXL355.hex <repo>no-OS/releases/download/Latest/eval-adxl355-pmdz.zip>`__:
+7. Set baud rate according to the hex file used available in :git-no-OS:`MAX32650FTHR_demo_ADXL355.hex <releases/download/last_commit/eval-adxl355-pmdz.zip+>`:
 
 ====================================================== =========
 Hex file                                               Baud rate
@@ -261,7 +259,7 @@ The following is a list of items needed in order to replicate this demo.
 Loading Image on SD Card
 ------------------------
 
-In order to boot the Raspberry Pi and control the **EVAL-ADXL355-PMDZ**, you will need to install ADI Kuiper Linux on an SD card. Complete instructions, including where to download the SD card image, how to write it to the SD card, and how to configure the system are provided on the :dokuwiki:`Kuiper Linux page </resources/tools-software/linux-software/kuiper-linux>`.
+In order to boot the Raspberry Pi and control the **EVAL-ADXL355-PMDZ**, you will need to install ADI Kuiper Linux on an SD card. Complete instructions, including where to download the SD card image, how to write it to the SD card, and how to configure the system are provided on the :ref:`kuiper`.
 
 Configuring the SD Card
 -----------------------
@@ -294,7 +292,7 @@ The original software example for the ADXL355 was developed on the ADICUP360 pla
 
 .. NOTE::
    Note that the libiio, iio oscilloscope, and pyadi-iio sections below do NOT apply to this example.
-   
+
 Application Software (All Platforms)
 ====================================
 
@@ -302,7 +300,7 @@ The Libiio is a library used for interfacing with IIO devices and is required to
 
 .. ADMONITION:: Download
 
-   Download and install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`__ on your machine.
+   Download and install the latest :git-libiio:`Libiio package <releases+>` on your machine.
 
 
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-ADXL355-PMDZ is attached. Two platforms are currently supported for the EVAL-ADXL355-PMDZ: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the no-OS ADXL355 demo project. The user needs to supply a **URI** which will be used in the context creation.
@@ -360,7 +358,7 @@ On a Unix-based machine, you will see it under the /dev/ directory in this forma
 IIO Commands
 ~~~~~~~~~~~~
 
-There are different commands that can be used to manage and control the device being used. The `iio_attr </resources/tools-software/linux-software/libiio/iio_attr>`__ command reads and writes IIO attributes.
+There are different commands that can be used to manage and control the device being used. The :ref:`libiio iio_attr` command reads and writes IIO attributes.
 
 ::
 
@@ -372,7 +370,7 @@ To look at the context attributes, enter the following command on the terminal:
 
    analog@analog:~$ iio_attr -a -C
 
-The `iio_reg </resources/tools-software/linux-software/libiio/iio_reg>`__ command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the ADICUP3029 platform.
+The :ref:`libiio iio_reg` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the ADICUP3029 platform.
 
 ::
 
@@ -388,7 +386,7 @@ To read the device ID (register = 0x02) of an ADXL355 interfaced via RPI from a 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
-Download and install the latest version of IIO Oscilloscope from: `IIO Oscilloscope Installers <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__.
+Download and install the latest version of IIO Oscilloscope from: :git-iio-oscilloscope:`IIO Oscilloscope Installers <releases+>`.
 
 Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
 Press refresh to display available IIO Devices, once ADXL355 appeared, press connect.
@@ -408,8 +406,8 @@ Access the DMM panel to see the instantaneous reading of the x, y and z axis acc
 PyADI-IIO
 ~~~~~~~~~
 
-| `PyADI-IIO </resources/tools-software/linux-software/pyadi-iio>`__ is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
-| Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this `link </resources/tools-software/linux-software/pyadi-iio>`__.
+:ref:`pyadi-iio` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+| Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :ref:`link <pyadi-iio>`.
 
 Running the example
 ^^^^^^^^^^^^^^^^^^^
@@ -419,22 +417,24 @@ After installing and configuring PYADI-IIO in your machine, you are now ready to
 For RPi
 ^^^^^^^
 
-::
+.. shell:: ps1
 
-   D:\\pyadi-iio\\examples>python adxl355_example.py
+   /d/pyadi-iio/examples
+   $python adxl355_example.py
 
 Press enter and you will get these readings. |adxl355_python_example_rpi.png|
 
 .. NOTE::
-   Github link for the python sample script: `ADXL355 Python Example <https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/adxl355_example.py>`__
+   Github link for the python sample script: :git-pyadi-iio:`ADXL355 Python Example <examples/adxl355_example.py>`
 
 
 For No-OS
 ^^^^^^^^^
 
-::
+.. shell:: ps1
 
-   D:\\pyadi-iio\\examples>python adxl355_no_os_example.py serial:<serial port>,57600
+   /d/pyadi-iio/examples
+   $python adxl355_no_os_example.py serial:<serial port>,57600
 
 In a Windows machine, you can check the port of your MAX32655FTHR and MAX32650FTHR via Device Manager in the Ports (COM & LPT) section. If your device is in COM8, you have to use:
 
@@ -448,14 +448,14 @@ Press enter and you will get these readings.
 
 .. ADMONITION:: Download
 
-   Github link for the python sample script: `ADXL355 Python Example <https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/adxl355_no_os_example.py>`__
+   Github link for the python sample script: :git-pyadi-iio:`ADXL355 Python Example <examples/adxl355_no_os_example.py>`
 
 More information and useful links
 ---------------------------------
 
 -  :adi:`EVAL-ADXL355-PMDZ Product Page <EVAL-ADXL355-PMDZ>`
 -  :adi:`ADXL355 Product Page <ADXL355>`
--  `EVAL-ADXL355-PMDZ no-OS projects <https://github.com/analogdevicesinc/no-OS/tree/master/projects/eval-adxl355-pmdz>`__
+-  :git-no-OS:`EVAL-ADXL355-PMDZ no-OS projects <eval-adxl355-pmdz>`
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -474,18 +474,17 @@ Schematic, PCB Layout, Bill of Materials
 Additional Information
 ----------------------
 
--  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`__
--  `PyADI-IIO Installation Guide </resources/tools-software/linux-software/pyadi-iio>`__
--  `IIO Oscilloscope Installation Guide </resources/tools-software/linux-software/iio_oscilloscope>`__
--  `Kuiper Linux </resources/tools-software/linux-software/kuiper-linux>`__
+-  :ref:`pyadi-iio`
+-  :ref:`iio-oscilloscope`
+-  :ref:`kuiper`
 
 Hardware Registration
 ---------------------
 
 .. NOTE::
    Tip:
-   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <reg>EVAL-ADXL355-PMDZ?&v=Rev B>`__ to receive all these great benefits and more!
-
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware.
+   `Register <https://my.analog.com/en/app/registration/hardware/EVAL-ADXL355-PMDZ?&v=Rev%20B>`__ to receive all these great benefits and more!
 .. |adxl355_pmdz.png| image:: adxl355_pmdz.png
    :width: 350px
 .. |adxl355_layout.png| image:: adxl355_layout.png
