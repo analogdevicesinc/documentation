@@ -10,16 +10,9 @@ Wien Bridge Oscillator: ADALM2000 version
 
    wien_bridge_oscillator/index
    
-Converter Converter Tutorial (IIO 101)
--------------------------------------------------------------------------------
 
-.. toctree::
-   :caption: ASDF Caption
-   :maxdepth: 1
 
-   converter_connectivity_tutorial/index
-
-Converter Converter Tutorial (IIO 101)
+Efficiency and Power Loss
 -------------------------------------------------------------------------------
 
 .. toctree::
@@ -29,7 +22,7 @@ Converter Converter Tutorial (IIO 101)
    efficiency_power_loss/index
 
 
-Another Excersise: ADALM2000 version
+Another Excersise: Placeholder
 -------------------------------------------------------------------------------
 
 .. toctree::

@@ -462,3 +462,7 @@ You're now armed to start building interesting application circuits with the ADX
 
 .. [1]
    pei·ow·tee : 'p' in pie; 'a' in about; 'y' yes; 'o' in code; 't' in tie; 'y' in happy
+
+
+.. toctree::
+   :maxdepth: 4

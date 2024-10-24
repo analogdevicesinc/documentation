@@ -32,10 +32,10 @@ Throughout the exercises we'll be writing simple Python code to capture and anal
 -  Raspberry Pi 4; 2G, 4G, or 8G version. (3B, 3B Plus will work, but
    you will want the 4 :-) )
 -  5V USB-C wall adapter for Raspberry Pi (micro USB for model 3)
--  `EVAL-AD5592R-PMDZ <adi>eval-ad5592r-pmdz>`__
+-  :adi:`EVAL-AD5592R-PMDZ<eval-ad5592r-pmdz>`
 -  Electrical connection hardware (choose one):
 
-   -  `Raspberry Pi to PMOD/QuikEval™/LTpowerPlay® Adaptor HAT <adi>pmd-rpi-intz>`__
+   -  :adi:`Raspberry Pi to PMOD/QuikEval™/LTpowerPlay® Adaptor HAT<pmd-rpi-intz>`
 
    - 12x 15cm socket-to-socket jumpers such as **[[https://schmartboard.com/wire-jumpers/female-jumpers/5-inch/|these from Schmartboard]]**
 - 16GB (or larger) Class 10 (or faster) micro-SD card, with **[[resources:tools-software:linux-software:kuiper-linux|Analog Devices Kuiper Linux]]** installed
@@ -189,3 +189,5 @@ Wrapup
 Additional References
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. toctree::
+   :maxdepth: 4
