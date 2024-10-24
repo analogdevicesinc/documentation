@@ -7,6 +7,3 @@ In the meantime, here is a VERY unofficial video runthrough of most of what we'l
 
 
 .. video:: https://www.youtube.com/watch?v=UHX1njMQ7V0
-
-.. toctree::
-   :maxdepth: 4
