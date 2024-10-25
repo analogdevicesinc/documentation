@@ -381,5 +381,3 @@ Using .meas and .step commands to calculate efficiency in LTspice: :adi:`en/tech
 
 **Return to Lab Activity** :dokuwiki:`Table of Contents <university/courses/electronics/labs>`
 
-.. |Efficiency and Power Loss Slide Deck| image:: workshop_efficiency_power_loss.pptx
-
