@@ -414,8 +414,11 @@ Running the example
 
 After installing and configuring PYADI-IIO in your machine, you are now ready to run python script examples. In our case, run the **adxl355_example.py** found in the examples folder.
 
-For RPi
-^^^^^^^
+.. NOTE::
+   Github link for the python sample script: :git-pyadi-iio:`ADXL355 Python Example <examples/adxl355_example.py>`
+
+Running directly on the RPi
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. shell:: ps1
 
@@ -423,10 +426,6 @@ For RPi
    $python adxl355_example.py
 
 Press enter and you will get these readings. |adxl355_python_example_rpi.png|
-
-.. NOTE::
-   Github link for the python sample script: :git-pyadi-iio:`ADXL355 Python Example <examples/adxl355_example.py>`
-
 
 For No-OS
 ^^^^^^^^^
@@ -446,9 +445,6 @@ Press enter and you will get these readings.
 
 |no_os_adxl355_pyadi.png|
 
-.. ADMONITION:: Download
-
-   Github link for the python sample script: :git-pyadi-iio:`ADXL355 Python Example <examples/adxl355_no_os_example.py>`
 
 More information and useful links
 ---------------------------------

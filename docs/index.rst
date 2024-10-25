@@ -44,18 +44,6 @@ Contents
    university/index
 
 .. toctree::
-   :caption: LTspice Examples
-   :maxdepth: 4
-   
-   LTspice Examples<ltspice_examples/index>
-
-.. toctree::
-   :caption: Learning
-   :maxdepth: 4
-   
-   ./learning/index
-   
-.. toctree::
    :caption: Learning
    :maxdepth: 4
    
