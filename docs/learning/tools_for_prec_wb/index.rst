@@ -1,8 +1,9 @@
 Tools for Precision Wideband Mixed Signal System Design
 ===============================================================================
 
+.. note::
 
-**Note:** This is a work in progress.
+   This is a work in progress.
 
 Introduction
 ~~~~~~~~~~~~
@@ -13,7 +14,7 @@ mixed-signal applications.
 **Content Guide:** This tutorial includes complete written
 instructions, a video guide, and a slide deck that can be used for
 delivering as a hands-on workshop.
-What exactly does "Precision Wideband" mean? 
+What exactly does "Precision Wideband" mean?
 
 The "precision" part means that DC parameters such as offset, gain
 error, linearity, and temperature drift are also important.
@@ -24,22 +25,18 @@ previous and future samples **IS** critical. The application involves
 extracting information from arrays of samples that are correlated with
 each other in some way. AC performance metrics such as signal to noise
 ratio and total harmonic distortion extracted from a Fourier transform
-of the data **will** be considered. Even if the end applicaiton does
-not involve sinewaves, these metrics are almost always a useful
+of the data **will** be considered. Even if the end application does
+not involve sine waves, these metrics are almost always a useful
 indicator of performance.
 
 
-An important point is that sample jitter is important for the “wideband” aspects of these applications. If you are measuring signal to noise ratio, the Signal to Noise ratio (SNR) can be no greater than:
+An important point is that sample jitter is important for the "wideband"
+aspects of these applications. If you are measuring signal to noise ratio,
+the Signal to Noise ratio (SNR) can be no greater than:
 
 :math:`SNR <= -20 * log(2*pi*f\_{IN}*t\_{j})`
 
-where:
-
-- :math:`f\_{IN}` is the analog input frequency in Hz
-
-- :math:`t\_{j}` is the RMS jitter in seconds RMS
-
-where:
+Where:
 :math:`f_{IN}` is the analog input frequency in Hz
 :math:`t_{j}` is the RMS jitter in seconds RMS
 
@@ -66,36 +63,29 @@ Materials
    `HERE <https://github.com/analogdevicesinc/education_tools/pull/48>`__
 -  Optical absorbance demonstration material such as:
 
-   -  Optical filters such as `Roscolux Selector
-      Pack <https://www.mcmaster.com/7769T9/>`__
-   -  `API pH test and adjust
-      kit <https://www.apifishcare.com/product/ph-test-adjuster-kit>`__
+   -  Optical filters such as `Roscolux Selector Pack <https://www.mcmaster.com/7769T9/>`__
+   -  `API pH test and adjust kit <https://www.apifishcare.com/product/ph-test-adjuster-kit>`__
 
--  16GB (or larger) Class 10 (or faster) micro-SD card, with `Analog
-   Devices Kuiper
-   Linux </resources/tools-software/linux-software/kuiper-linux>`__
-   installed
+-  16GB (or larger) Class 10 (or faster) micro-SD card, with
+   :ref:`kuiper` installed.
 -  User interface setup (choose one):
 
    -  HDMI monitor, keyboard, mouse plugged directly into Raspberry Pi
    -  Host Windows/Linux/Mac computer on same network as Raspberry Pi
 
--  :adi:`ADALM2000<adalm2000>`
+-  :adi:`ADALM2000`
 -  Clone or download zip of the Python code for this tutorial from:
-   `Python Code for the Hardware and Software Tools for Precision
-   Wideband Instrumentation
-   Workshop <https://github.com/cristina-suteu/ftc23-hstpwi/>`__
+   `Python Code for the Hardware and Software Tools for Precision Wideband Instrumentation Workshop <https://github.com/cristina-suteu/ftc23-hstpwi/>`__
 
-| 
-| This probably isn't necessary as of Kuiper 2022r2, but just in case
-  you want to update pyadi-iio or have the examples in your home
-  directory, run these commands in a terminal:
+This probably isn't necessary as of Kuiper 2022r2, but just in case
+you want to update pyadi-iio or have the examples in your home
+directory, run these commands in a terminal:
 
-::
+.. shell::
 
-   git clone https://github.com/analogdevicesinc/pyadi-iio.git
-   cd pyadi-iio
-   sudo pip install .
+   $git clone https://github.com/analogdevicesinc/pyadi-iio.git
+   $cd pyadi-iio
+   $sudo pip install .
 
 Background
 ~~~~~~~~~~
@@ -114,19 +104,19 @@ Slide Deck and Video
 
 Since this tutorial is also designed to be presented as a live, hands-on
 workshop, a slide deck is provided here:
- 
+
 A complete video run-through is also provided, either as a companion
 to following the tutorial yourself, or to practice before presenting
 as a hands-on workshop:
-  
-.. NOTE::
-   ToDo: Video and Slide Deck
 
+.. todo::
+
+   Video and Slide Deck
 
 Preparation - a few resources for learning Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Software Stack Review 
+Software Stack Review
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Introducing an exciting new product that we'll apply our skills to
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

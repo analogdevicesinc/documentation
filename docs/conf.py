@@ -12,11 +12,12 @@ author = 'Analog Devices, Inc.'
 # -- General configuration ---------------------------------------------------
 
 extensions = [
+    "sphinx.ext.todo",
     "adi_doctools"
 ]
 
 needs_extensions = {
-    'adi_doctools': '0.3.48'
+    'adi_doctools': '0.3.49'
 }
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -31,7 +32,13 @@ interref_repos = ['doctools', 'hdl', 'pyadi-iio']
 html_theme = 'cosmic'
 html_favicon = path.join("sources", "icon.svg")
 numfig = True
+numfig_per_doc = True
 
+numfig_format = {'figure': 'Figure %s',
+                 'table': 'Table %s',
+                 'code-block': 'Listing %s',
+                 'section': 'Section %s'}
 
-numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
-                     'code-block': 'Listing %s', 'section': 'Section %s'}
+# -- Show TODOs ---------------------------------------------------------------
+
+todo_include_todos = True
