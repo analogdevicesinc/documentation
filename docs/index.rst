@@ -39,9 +39,15 @@ Contents
 
 .. toctree::
    :caption: University Program
-   :maxdepth: 1
+   :maxdepth: 4
 
    university/index
+
+.. toctree::
+   :caption: Learning
+   :maxdepth: 4
+   
+   ./learning/index
 
 .. toctree::
    :caption: Contributing and Guidelines

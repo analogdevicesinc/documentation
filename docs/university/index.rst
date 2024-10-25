@@ -1,6 +1,10 @@
 Engineering University Program
 ===============================================================================
 
+.. toctree::
+   :maxdepth: 4
+
+
 Mission
 -------------------------------------------------------------------------------
 
@@ -167,6 +171,15 @@ This short 6 min video was put together to describe the purpose of ADI's Univers
 .. video:: https://www.youtube.com/watch?v=I-Fy0Y0FPlk
 
 Interviews with the following people(in order of appearance):
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 4
+
+   active_learning/index
 
 * Jeffrey Pawlick, `Electrical Engineering student, Rensselaer Polytechnic Institute <http://www.ecse.rpi.edu/>`_,
 * Sarah Evans, `Applied Physics student, Rensselaer Polytechnic Institute <http://www.rpi.edu/dept/phys/>`_,
