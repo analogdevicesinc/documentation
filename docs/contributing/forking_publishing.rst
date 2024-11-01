@@ -87,10 +87,6 @@ copy ``private`` at the *.git/config*, similar to:
         # Set your private copy as upstream
    	remote = private
    	merge = refs/heads/main
-   [lfs "https://github.com/<your_user>/documentation.git/info/lfs"]
-   	access = basic
-   [lfs "https://github.com/analogdevicesinc/documentation.git/info/lfs"]
-   	access = basic
 
 
 Push the working branch to your copy.
