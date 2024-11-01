@@ -248,3 +248,38 @@ Ensure the tools are up to data from time to time with:
    $(cd docs ; pip install -r requirements.txt --upgrade)
 
 Edit, build, commit, push as usual.
+
+Understanding git lfs
+---------------------
+
+Since git lfs is not that common in the wild, it may be tricky to get the hang
+of it.
+
+First of all, the basics:
+lfs replaces binaries files with pointers, and stores the binaries outside the
+git repository, in an external server.
+
+When you do ``git clone/pull``, by default lfs will also download the binaries
+at the "smudge" step.
+You can change this behaviour by setting globally
+``git lfs install --skip-smudge`` or temporally with ``GIT_LFS_SKIP_SMUDGE=1``
+environment variable.
+
+If during a clone or pull you obtain the error:
+
+::
+
+   Encountered n file(s) that should have been pointers
+
+That simply means that someone pushed files to remote that should have been
+pointers (defined in the *.gitattributes* file).
+And to fix is simple:
+
+.. shell::
+
+   $git add --renomalize .
+   $git commit -m "Convert binary files to pointers"
+   $git push
+
+And advise the committer to ensure he has git lfs enabled with
+``git lfs install``.
