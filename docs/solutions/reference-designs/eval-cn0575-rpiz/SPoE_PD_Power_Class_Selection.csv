@@ -1,0 +1,7 @@
+﻿JP1 Shunt Position,JP2 Shunt Position,PD Class,VPD(min),PPD(max)
+Across Pins 2 and 3,Across Pins 2 and 3,10,14 V,1.23 W
+Across Pins 2 and 3,No Shunt Inserted,11,,3.20 W
+Across Pins 2 and 3,Across Pins 1 and 2,12,,8.40 W
+Across Pins 1 and 2,Across Pins 2 and 3,13,35 V,7.70 W
+Across Pins 1 and 2,No Shunt Inserted,14,,20.0 W
+Across Pins 1 and 2,Across Pins 2 and 3,15,,52.0 W

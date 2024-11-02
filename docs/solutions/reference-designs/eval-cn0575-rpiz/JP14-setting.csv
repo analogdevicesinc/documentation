@@ -1,0 +1,3 @@
+﻿JP14 Setting,Connection
+Open,TEST button is connected to GPIO16 of the Raspberry Pi (Default).
+Shorted,TEST button is not connected to the Raspberry Pi.

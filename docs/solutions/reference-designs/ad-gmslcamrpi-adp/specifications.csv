@@ -1,0 +1,14 @@
+﻿Ribbon Cable Adapter,
+Connectors,"2 x 15 Pin Type A (same side) Flexible Ribbon Cable (2 x MIPI lanes, P/N: 1-84953-5)"
+,2 x 22 Pin Type B (opposite side) Flexible Ribbon Cable (P/N: 687122149022)
+Power,Routing 3.3V external power between pairs of 15-pin and 22-pin connectors
+GMSL Serializer EVK Adapter,
+Connectors,1 x GMSL Serializer EV kit (P/N: QSH-030-01-L-D-A)
+,"2 x 22-pin (4 x MIPI lanes, P/N: 687122149022)"
+Power,Input: 12V from GMSL Serializer EV kit
+,Output: 3.3V at 0.5A on the 22-pin connectors
+GMSL Deserializer EVK Adapter,
+Connectors,1 x GMSL Deserializer EV kit (P/N: QTH-030-01-L-D-A)
+,"2 x 22-pin (4 x MIPI lanes, P/N: 687122149022)"
+Power,Input: 12V from GMSL Deserializer EV kit
+,Output: 5V at 4A on the USB Type A connector to power external devices

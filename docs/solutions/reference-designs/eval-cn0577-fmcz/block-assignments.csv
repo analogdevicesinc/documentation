@@ -1,0 +1,13 @@
+﻿Connector Name,Operation,Description,Settings/Ranges
+P1,Power Down (PD) Mode,"When PD is high CN0577 will operate normally, but when PD is low CN0577 board enters power-down mode and all circuitry (including LVDS interface) is shutdown.",PD = High (Pins 1 and 2)
+,,,PD = Low (Pins 2 and 3)
+P2,Test Pattern (TESTPAT),"Forces the LVDS data outputs to be a test pattern. When TESTPAT is high digital outputs are a test pattern, and when TESTPAT is low digital outputs are the ADC conversion result.","TESTPAT = High (Pins 1 and 2) 
+TESTPAT = Low (Pins 2 and 3)"
+P3,Lane Mode Selection,"The ADC outputs two bits at a time on DA-/DA+ and DB-/DB+ when two-lane output mode is high, and the ADC outputs one bit at a time on DA-/DA+ and DB-/DB+ when two-lane output mode is low.",TWOLANES = High (Pins 1 and 2)
+,,,TWOLANES = Low (Pins 2 and 3)
+P4,FMC Connector (LPC),Low pin count FMC connector used to connect the EVAL-CN0577-FMCZ hardware to various different FPGA development boards and kits.,N/A
+J1,Positive Analog Input,"This is the positive input to the EVAL-CN0577-FMCZ, which connects to external signal sources via an SMA connection.",0V to 4.096 V
+J2,Negative Analog Input,"This is the negative input to the EVAL-CN0577-FMCZ, which connects to external signal sources via an SMA connection.",0V to -4.096 V
+J3,External Clock,If an external clocking source is desired in your system this is where you will need to connect it. Along with connecting it you will also need to update the solder jumper (JP14) to change from the onboard crystal oscillator.,On-board Crystal Oscillator (default 120 MHz)
+JP14,,,External source (120 MHz desired)
+,,,
