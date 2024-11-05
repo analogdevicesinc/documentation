@@ -46,3 +46,12 @@ System Design
    :maxdepth: 1
    
    tools_for_hs/index
+
+
+Workshops
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   workshop_what_sw_for_sdr/index
