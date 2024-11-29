@@ -123,9 +123,10 @@ files to block devices.
    .. shell::
 
       $time sudo dd \
-      $     if=2021-07-28-ADI-Kuiper-full.img \
+      $     bs=4194304 \
+      $     status=progress \
       $     of=/dev/mmcblk0 \
-      $     bs=4194304
+      $     if=2021-07-28-ADI-Kuiper-full.img
        [sudo] password for user:
        0+60640 records in 0+60640 records out 7948206080 bytes (7.9 GB) copied, 571.766 s, 13.9 MB/s
        real 7m54.11s user 0.29s sys 8.94s

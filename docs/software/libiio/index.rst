@@ -275,10 +275,10 @@ Enabling IIOD USB Backend
 In order to use the libIIO USB Backend - support must be built into IIOD. A
 simple check is shown below:
 
-::
+.. shell::
 
-   root@analog:~# iiod -F foo
-   ERROR: IIOD was not compiled with USB support.
+   $iiod -F foo
+    ERROR: IIOD was not compiled with USB support.
 
 In this case LibIIO / IIOD needs to be built with USBD support. (WITH_IIOD_USBD)
 
