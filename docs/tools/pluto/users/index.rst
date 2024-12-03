@@ -43,20 +43,20 @@ Contents
 #. :dokuwiki:`Quick Start <university/tools/pluto/users/quick_start>`
 #. Intro to the Software. Installing Device Drivers on:
 
-   #. :dokuwiki:`Windows </drivers/windows>`
-   #. :dokuwiki:`Linux </drivers/linux>`
-   #. :dokuwiki:`MAC </drivers/osx>`
+   #. :ref:`Windows <pluto-m2k drivers windows>`
+   #. :ref:`Linux <pluto-m2k drivers linux>`
+   #. :ref:`MAC <pluto-m2k drivers osx>`
 
 #. Upgrading the the ADALM-PLUTO :dokuwiki:`Firmware <university/tools/pluto/users/firmware>` .
 #. :dokuwiki:`Calibrating <university/tools/pluto/users/calibration>` the ADALM-PLUTO.
 #. :dokuwiki:`Customizing <university/tools/pluto/users/customizing>` the ADALM-PLUTO.
 #. Once the driver are configured and set up, you can interact with the
-   `ADALM-PLUTO <adi>ADALM-PLUTO>`__ Active Learning Module from:
+   :adi:`ADALM-PLUTO` Active Learning Module from:
 
    #. :dokuwiki:`IIO oscilloscope </resources/tools-software/linux-software/iio_oscilloscope>`
    #. `gqrx <http://gqrx.dk/>`__, an open source software defined radio receiver
       (SDR) powered by the GNU Radio
-   #. `Official support for MATLAB and Simulink <mw>hardware-support/adalm-pluto-radio.html>`__
+   #. :mw:`Official support for MATLAB and Simulink <hardware-support/adalm-pluto-radio.html>`
    #. :dokuwiki:`MATLAB IIO Bindings </resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
    #. :dokuwiki:`GNU Radio </resources/tools-software/linux-software/gnuradio>`
    #. `SDRangel <https://github.com/f4exb/sdrangel>`__, an Open Source Qt5 /

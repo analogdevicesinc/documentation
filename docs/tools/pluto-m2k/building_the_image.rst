@@ -1,7 +1,7 @@
 .. _pluto-m2k building_the_image:
 
 Building the Firmware Image
-===========================
+"""""""""""""""""""""""""""
 
 It is recommenced to use the pre-build images, which can be
 found at :git-plutosdr-fw:`PlutoSDR Firmware releases <releases/latest+>`.
@@ -17,7 +17,7 @@ testing your image, so if something goes wrong - its a quick power cycle to fix
 things.
 
 Prerequisites
--------------
+=============
 
 #. Make sure to download, or upgrade your
    :ref:`Sources <pluto-m2k obtaining_the_sources>`
@@ -71,7 +71,7 @@ Firmware Image.
    $    u-boot-tools bc python cpio zip unzip file wget
 
 Building
---------
+========
 
 .. hint::
 
@@ -112,7 +112,7 @@ packages from the WEB.
 before you type ``make``.
 
 Build Artifacts
-~~~~~~~~~~~~~~~
+---------------
 
 .. shell::
 
@@ -142,7 +142,7 @@ Build Artifacts
           -rw-rw-r-- 1 michael  16K Apr 19 17:39 zynq-pluto-sdr-revb.dtb
 
 Testing on the target
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 There is a script in the :git-plutosdr_scripts:`plutosdr_scripts <+>` repo
 that will quickly download a build artifact (the ``pluto.dfu`` file) to an USB
@@ -162,7 +162,7 @@ not a persistent update over power cycles or further reboots.
         Linux pluto 5.4.0-00535-g9c04de11ae53 #1 SMP PREEMPT Tue Feb 15 16:17:50 EST 2022 armv7l GNU/Linux
 
 Main targets
-~~~~~~~~~~~~
+------------
 
 .. list-table::
    :header-rows: 1
@@ -186,7 +186,7 @@ Main targets
      - ZIP archive containg u-boot and Vivao TCL used for JATG bootstrapping
 
 Other intermediate targets
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 .. list-table::
    :header-rows: 1
@@ -223,7 +223,7 @@ Other intermediate targets
      - Device Tree Blob for Rev.B
 
 How does it work
-================
+----------------
 
 .. warning::
 
