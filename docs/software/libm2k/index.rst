@@ -3,10 +3,10 @@
 Libm2k
 ======
 
-Libm2k is a C++ library for interfacing with the ADALM2000, split into more
+Libm2k is a C++ library for interfacing with the :ref:`m2k`, split into more
 correlated components, interconnected by a context.
 
-These m2k components represent the functionalities of ADALM-2000:
+These m2k components represent the functionalities of ADALM2000:
 
 -  AnalogIn - oscilloscope or voltmeter
 -  AnalogOut - signal generator
@@ -359,7 +359,7 @@ Dependencies
 
 #. Swig
 
-   - Download the SWIG zip from `this page <https://sourceforge.net/projects/swig/files/swigwin/swigwin-4.0.0/swigwin-4.0.0.zip/download`__.
+   - Download the SWIG zip from `this page <https://sourceforge.net/projects/swig/files/swigwin/swigwin-4.0.0/swigwin-4.0.0.zip/download>`__.
    - Choose a location and extract SWIG.
 
 #. Python3

@@ -1,4 +1,4 @@
-.. _m2k developers:
+.. _m2k devs:
 
 For Developers
 ==============
@@ -19,9 +19,9 @@ can do anything you want.
 Content
 -------
 
-.. todo::
-
-   Coming soon sections
+..
+   TODO Coming soon sections
+   Make sure all things are in ./devs
 
 #. Introduction *(Coming soon)*
 #. Hardware
@@ -57,6 +57,6 @@ Content
    #. :ref:`pluto-m2k obtaining_the_sources`
    #. :ref:`pluto-m2k building_the_image`
 
-#. :ref:`pluto-m2k usb_otg_host_function_support`
+#. :ref:`pluto-m2k usb_otg_host`
 #. :ref:`pluto-m2k firmware dfu_update`
 #. :ref:`pluto-m2k reboot`

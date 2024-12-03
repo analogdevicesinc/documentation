@@ -3,32 +3,36 @@
 For End Users
 =============
 
-.. image:: adalm2000.jpg
+.. image:: ../adalm2000.jpg
    :align: right
    :width: 400px
 
 Contents
 --------
 
-#. :dokuwiki:`Introduction to the Hardware </devs/intro>`
+..
+   TODO pluto customizing to pluto-m2k
+   Make sure all things are in ./users
 
-   #. :dokuwiki:`What's with the name? </users/name>` *ADALM2000?*
-   #. :dokuwiki:`Understanding the Internals </users/reference_manual>`
+#. :dokuwiki:`Introduction to the Hardware <university/tools/m2k/devs/intro>`
 
-#. :dokuwiki:`Quick Start </users/quick_start>`
+   #. :dokuwiki:`What's with the name? <university/tools/m2k/users/name>` *ADALM2000?*
+   #. :dokuwiki:`Understanding the Internals <university/tools/m2k/users/reference_manual>`
+
+#. :dokuwiki:`Quick Start <university/tools/m2k/users/quick_start>`
 #. Intro to the Software. Installing Device Drivers on:
 
    #. :dokuwiki:`Windows </university/tools/pluto/drivers/windows>`
    #. :dokuwiki:`Linux </university/tools/pluto/drivers/linux>`
    #. :dokuwiki:`MAC </university/tools/pluto/drivers/osx>`
 
-#. Upgrading the the ADALM2000 :ref:`Firmware <m2k common firmware>`.
+#. Upgrading the the ADALM2000 :ref:`Firmware <pluto-m2k firmware>`.
 #. Common customization: 
 
-   #. :ref:`/university/tools/pluto/users/customizing#multiple_devices>`
-   #. :ref:`/university/tools/pluto/users/customizing##changing_the_root_password_on_the_target>`
-   #. :ref:`/university/tools/pluto/users/customizing#enabling_persistent_ssh_keys>`
-   #. :ref:`/university/tools/pluto/users/customizing#changing_the_usb_ethernet_compatibility_mode>`
+   #. :dokuwiki:`/university/tools/pluto/users/customizing#multiple_devices>`
+   #. :dokuwiki:`/university/tools/pluto/users/customizing#changing_the_root_password_on_the_target>`
+   #. :dokuwiki:`/university/tools/pluto/users/customizing#enabling_persistent_ssh_keys>`
+   #. :dokuwiki:`/university/tools/pluto/users/customizing#changing_the_usb_ethernet_compatibility_mode>`
 
 #. Once the driver are configured and set up, you can interact with the
    :adi:`ADALM2000` Active Learning Module from:

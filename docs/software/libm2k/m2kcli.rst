@@ -76,16 +76,16 @@ synopsis
 
 .. code:: bash
 
-    m2kcli analog-in <uri>
-                     [-h | --help]
-                     [-q | --quiet]
-                     [-C | --calibrate]
-                     [-v | --voltage channel=<index>,... raw=<value>]
-                     [-c | --capture channel=<index>,... buffer_size=<size> raw=<value> [nb_samples=<value>] [format=<type>]]
-                     [-g | --get <attribute>...]
-                     [-G | --get-channel channel=<index>,... <attribute>...]
-                     [-s | --set <attribute>=<value>...]
-                     [-S | --set-channel channel=<index> <attribute>=<value>...]
+   m2kcli analog-in <uri>
+                    [-h | --help]
+                    [-q | --quiet]
+                    [-C | --calibrate]
+                    [-v | --voltage channel=<index>,... raw=<value>]
+                    [-c | --capture channel=<index>,... buffer_size=<size> raw=<value> [nb_samples=<value>] [format=<type>]]
+                    [-g | --get <attribute>...]
+                    [-G | --get-channel channel=<index>,... <attribute>...]
+                    [-s | --set <attribute>=<value>...]
+                    [-S | --set-channel channel=<index> <attribute>=<value>...]
 
 
 description
@@ -982,7 +982,7 @@ Requirements:
 
 -  `socat <https://linux.die.net/man/1/socat>`__
 -  :ref:`libiio <libiio build>`
--  :libm2k with :ref:`m2kcli <m2kcli build>`
+-  libm2k with :ref:`m2kcli <m2kcli build>`
 
 It uses the socat command to create two connected
 `PTYs <https://linux.die.net/man/7/pty>`__ and using the m2kcli uart-terminal

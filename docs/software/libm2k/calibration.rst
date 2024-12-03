@@ -1,7 +1,7 @@
 .. _libm2k calibration:
 
-Libm2k Calibration
-==================
+Calibration
+===========
 
 Description of the ADALM2000 calibration API in
 :dokuwiki:`libm2k </university/tools/m2k/libm2k/libm2k>`.

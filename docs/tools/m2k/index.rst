@@ -3,6 +3,13 @@
 ADALM2000
 =========
 
+.. toctree::
+   :hidden:
+   :glob:
+
+   */index
+   *
+
 The :adi:`ADALM2000` (M2K) Active Learning Module is an affordable
 USB-powered data acquisition module that takes the capabilities of the
 :adi:`ADALM1000` (M1K) Active Learning Module to the next level.
@@ -60,7 +67,7 @@ want to go any deeper into the stack. There are 3 main categories of users:
       C++/C#/Python applications that capture and generate data from the host
       PC.
 
-#. :ref:`ADALM2000 Firmware Developers <m2k developers>`:
+#. :ref:`ADALM2000 Firmware Developers <m2k devs>`:
 
    -  normally write custom software or HDL (for the FPGA) that run directly on
       the ADALM2000 device. This may put the ADALM2000 in different modes, and
@@ -75,10 +82,4 @@ improvement, so if you do have a question, please ask at
 :ez:`EngineerZone <community/university-program>`,
 or check the :ref:`help and support <m2k help_support>` page.
 
-Contents
---------
-
-.. toctree::
-   :glob:
-
-   *
+.. esd-warning::
