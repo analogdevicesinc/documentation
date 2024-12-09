@@ -56,6 +56,7 @@ FMC Compatible Boards
    :maxdepth: 1
 
    adrv9009/index
+   adrv9026/index
 
 ADICUP Development Boards
 -------------------------------------------------------------------------------
