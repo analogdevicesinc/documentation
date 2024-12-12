@@ -1,0 +1,8 @@
+﻿No.,Function,Definition
+1,Connection Indicator,Shows if UART or CAN is connected
+2,Communication Mode Drop Down,Allows selection of the communication mode
+3,Vehicle System Mode,"Contains a dropdown list for vehicle system states such as parked, driving, charging, and fault"
+4,Refresh Button,Updates the list of available communication ports
+5,Battery Specifications,Input boxes for battery specifications which are used for SoC and SoH
+6,Load Defaults Button,Sets the battery specification values to the predefined default program entries
+7,Start Button,Initiates battery monitoring and directs users to the Overview page
