@@ -1,5 +1,5 @@
 System Level Documentation
-===============================================================================
+==========================
 
 .. attention::
 
@@ -36,6 +36,13 @@ Contents
    :maxdepth: 2
 
    eval/user-guide/index
+
+.. toctree::
+   :caption: Products & Tools
+   :maxdepth: 2
+   :glob:
+
+   tools/*/index
 
 .. toctree::
    :caption: University Program
