@@ -1,13 +1,11 @@
-Application Software (Sample Page)
-------------------------
+Application Software
+--------------------
 
+.. Enable after adding content
+   This is a placeholder page for a reference design application software.
+   .. toctree::
+      :titlesonly:
+      :glob:
 
-.. toctree::
-   :titlesonly:
-   :glob:
-
-   */index
-
-
-This is a placeholder page for a reference design application software.
+      */index
 

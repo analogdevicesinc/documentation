@@ -1,24 +1,15 @@
 .. _ad-cellpackbm-sl hardware_guide:
 
-
 Hardware User Guide
-####################
-
-.. toctree::
-   :hidden:
-
-   hardware_guide
-
+"""""""""""""""""""
 
 AD-CELLPACKBM-SL
 ==================
-
 
 System Setup
 ------------
 
 This section describes the procedure for establishing hardware connection between the boards, how to download the system requirements such as the firmware and software, and eventually obtain and view BMS readings through the Broad Market BMS graphical user interface.
-
 
 Equipment Needed
 ----------------
@@ -49,30 +40,24 @@ The following list of equipment are not provided as part of the kit, but are req
 - Digital power supply (such as the Keysight e3631A 0V to 6V power supply)
 - 2x wall plugs (to plug USB cable from DC2472A to provide power)
 
-
 .. image:: Kit_Contents.png
-     :align: center
-     :width: 600px
- 
+   :align: center
+   :width: 600px
 
 Software
 --------
 The BMS Browser GUI is a PC browser based Graphical User Interface (GUI) tool designed to work in conjunction with the hardware in the AD-CELLPACKBM-SL. MyAnalog.com account will be required to download the BMS Browser GUI from below link:
 
-`BMS Broad Market GUI <https://www.analog.com/en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`_
+:adi:`BMS Broad Market GUI <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
 When software updates or new versions of the software are available an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.
-
 
 MCU Configuration & Setup
 --------------------------
 
-.. note:: 
+.. note::
 
    By default (upon purchase), the AD-CELLPACKBM-SL Kit comes with a MAX32625PICO programmer adapter that is already loaded with the appropriate firmware image. Otherwise, if you are using a new MAX32625PICO programmer (that is not part of the original kit), make sure to flash it first with the correct firmware image before using it with the AD-CELLPACKBM-SL BMS Kit. If you do not know how to load the image, follow the instructions below.
-
- 
-
 
 The MCU should be programmed using the following steps:
 
@@ -86,9 +71,6 @@ MAX326825PICO Debugger (One-time setup)
 #. Drag and drop the ``SDP_K1_PyBMS_USB_TO_SPI_Bytes_Debug_USB_Port.bin`` file onto the MAINTENANCE drive. The file transfer should be complete in about 30 seconds.
 #. Unplug and replug the device.
 #. After completing this step, a **DAPLINK** drive should appear. You can drag and drop the firmware (.bin files separate from the above) onto it to program the SDP-K1.
-
-
-
 
 BMS Browser GUI Installation
 -----------------------------
@@ -109,7 +91,6 @@ Launching the BMS Browser GUI
 #. Ensure that the SDP-K1 is connected to the PC via the USB-C cable on P10. The Blue LED, D31 will illuminate when powered.
 #. In the Serial Port dropdown box, select the COM port associated with SDP-K1.
 
-
 Battery Cell Monitoring
 -----------------------
 
@@ -118,7 +99,6 @@ Battery Cell Monitoring
 .. image:: ADBMS6830_Setup.png
      :align: center
      :width: 400 px
-
 
 This setup uses the SDP-K1 as the controller board, but users may also use the AD-APARD32690-SL as MCU and follow the same hardware setup instructions.
 
@@ -149,10 +129,7 @@ Check the **EVAL-ADBMS6830BMSW** User Guide for procedure on connecting resistor
 #. Verify the connection of the twisted cable between the **EVAL-ADBMS6822** and the **EVAL-ADBMS6830BMSW**.
 #. Check the voltage readings by adjusting the potentiometer (POT1) on the **DC2472A** to modify the emulated cell voltages. Monitor the voltage channels on the `Quick Measure Utility`` graph. Select which signals to display on the graph under the `Plot All Devices`` column.
 
-
 .. image:: browser_plot_all_devices.png
-
-
 
 Battery Pack Monitoring
 ------------------------
@@ -160,8 +137,6 @@ Battery Pack Monitoring
 .. image:: pack_monitoring.png
     :align: center
     :width: 600 px
-
-
 
 **Setup**
 
@@ -174,7 +149,6 @@ Battery Pack Monitoring
 #. Attach the **MAX32625PICO** programmer to the **SDP-K1** using the 10-pin ribbon SWD cable. Observe correct polarity when connecting the SWD cable.
 #. Connect one end of the USB cable to **SDP-K1** (P2) and the other end to the host PC.
 
-
 **Test**
 
 1. Open the BMS Browser GUI.
@@ -185,7 +159,6 @@ Battery Pack Monitoring
 6. Upon launching, the `Quick Measure tab`` will open. Note: it can only handle one BMS product in a Daisy Chain. Click `Start Quick Measure`` to begin measurements.
 7. Check the `Total PEC Status`` on the `Memory Map`. It should reflect true, indicating a successful isoSPI link between the **EVAL-ADBMS6822** and the **EVAL-ADBMS2950-BASIC**. If false, there is an error in the signal chain.
 
-
 Complete Daisy Chain
 --------------------
 
@@ -194,7 +167,6 @@ Complete Daisy Chain
 .. image:: complete_daisychain.png
      :align: center
      :width: 600 px
-
 
 Once familiar with the setup for each of the individual boards the entire signal chain can be verified.
 
@@ -221,47 +193,32 @@ Once familiar with the setup for each of the individual boards the entire signal
 
 .. note::
 
-In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EVAL-ADBMS6830BMSW as Device 2, and the third EVAL-ADBMS6830BMSW as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages for the first EVAL-ADBMS6830MSW on Plot 2, and the averaged cell voltages for the third EVAL-ADBMS6830BMSW on Plot 3.
-
+   In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EVAL-ADBMS6830BMSW as Device 2, and the third EVAL-ADBMS6830BMSW as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages for the first EVAL-ADBMS6830MSW on Plot 2, and the averaged cell voltages for the third EVAL-ADBMS6830BMSW on Plot 3.
 
 Simply choose the desired Plot number from the dropdown menu under each device to display the relevant data.
 
 .. image:: daisychain_plot3.png
 
-
 Plot settings can be saved to the PC to be reloaded for future session to save time.
-
----------
-
 
 Resources
 ---------
 
-* `AD-CELLPACKBM-SL Product Page <https://www.analog.com/AD-CELLPACKBM-SL>`_
-* `EVAL-ADBMS6830BMSW Product Page <https://www.analog.com/EVAL-ADBMS2950-BASIC>`_
-* `EVAL-ADBMS6822 Product Page <https://www.analog.com/EVAL-ADBMS6822>`_
-* `SDP-K1 Product Page <https://www.analog.com/SDP-K1>`_
-
-
+* :adi:`AD-CELLPACKBM-SL`
+* :adi:`EVAL-ADBMS6830BMSW`
+* :adi:`EVAL-ADBMS2950-BASIC`
+* :adi:`EVAL-ADBMS6822`
+* :adi:`SDP-K1`
 
 Design & Integration Files
 --------------------------
 
-.. ADMONITION:: Download
+.. admonition:: Download
 
    `AD-CELLPACKBM-SL Design Support Package <design_support_package.zip>`_
-    
-    * Schematic
-    * PCB Layout
-    * Bill of Materials
-    * Allegro Project
 
-::
-
-
-Help and Support
-----------------
-
-For questions and more information, please visit the `EngineerZone Support Community <https://ez.analog.com/reference-designs>`_.
-
+   * Schematic
+   * PCB Layout
+   * Bill of Materials
+   * Allegro Project
 
