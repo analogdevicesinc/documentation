@@ -1,0 +1,34 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram name="Page-1" id="yhlp1mm2UpZfjMkueRri">
+    <mxGraphModel dx="1434" dy="854" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="42-o1ljI3i1nVvcHeXlm-1" value="Reference design dts file" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="120" y="200" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42-o1ljI3i1nVvcHeXlm-2" value="pl.dtsi" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="150" y="260" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42-o1ljI3i1nVvcHeXlm-3" value="pl-delete-nodes-" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="150" y="320" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42-o1ljI3i1nVvcHeXlm-4" value="system-user.dtsi" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="150" y="380" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="42-o1ljI3i1nVvcHeXlm-5" value="Sourced from the ADI Linux kernel &lt;i&gt;i.e arch/&amp;lt;arch&amp;gt;/boot/dts&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="300" y="215" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42-o1ljI3i1nVvcHeXlm-7" value="FPGA node device tree auto generated from the XSA file by Xilinx DTG" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="330" y="275" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42-o1ljI3i1nVvcHeXlm-8" value="Sourced from meta-adi. This is unique per top level dts file, and removes duplicate FPGA nodes" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="330" y="335" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42-o1ljI3i1nVvcHeXlm-9" value="From &lt;font face=&quot;Lucida Console&quot;&gt;project-spec/meta-user/recipes-bsp/device-tree/files&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;Allows final modification of the overall system device tree&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="330" y="395" width="510" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
