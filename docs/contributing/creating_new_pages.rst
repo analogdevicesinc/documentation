@@ -7,6 +7,19 @@ The first step on adding new content is to understand the
 :ref:`creating-new-pages documentation-structure`.
 Then, proceed with :ref:`creating-new-pages adding-content`.
 
+.. _creating-new-pages template:
+
+Content templates and guidelines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Templates and guidelines for specific types of content are available:
+
+.. toctree::
+   :glob:
+   :titlesonly:
+
+   template/*
+
 .. _creating-new-pages documentation-structure:
 
 Documentation structure
@@ -29,7 +42,7 @@ To create each "volume", two
 `toctrees <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree>`__
 replicate the structure of the context top level.
 
-For example, while in :git-documentation:`docs/index.rst#L19-L25`
+For example, while in :git-documentation:`docs/index.rst#L24`
 we have:
 
 .. code:: rst
@@ -38,21 +51,23 @@ we have:
    .. toctree::
       :caption: Linux Kernel & Software
       :maxdepth: 2
+      :glob:
 
-      linux/kuiper/index
-      linux/drivers/index
-      linux/kernel/index
+      linux/*/index
 
-At the specific context toctree (:git-documentation:`docs/linux/index.rst#L6-L10`)
+At the specific context toctree (:git-documentation:`docs/linux/index.rst#L9`)
 we have:
 
 .. code:: rst
 
    .. toctree::
+      :glob:
 
-      kuiper/index
-      drivers/index
-      kernel/index
+      */index
+
+*Glob* is used to match any document that matches the pattern and avoids simple
+but annoying merge conflicts of contributors adding pages to the same toctree
+at the same time.
 
 Use case for the structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
