@@ -1,5 +1,7 @@
-EVAL-ADXL355-PMDZ User Guide
-############################
+.. _eval-adxl355-pmdz:
+
+EVAL-ADXL355-PMDZ
+#################
 
 Overview
 ========
