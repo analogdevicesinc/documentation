@@ -45,6 +45,13 @@ Contents
    tools/*/index
 
 .. toctree::
+   :caption: Apps & Solutions
+   :maxdepth: 4
+   :glob:
+
+   solutions/*/index
+
+.. toctree::
    :caption: University Program
    :maxdepth: 4
 
@@ -53,8 +60,8 @@ Contents
 .. toctree::
    :caption: Learning
    :maxdepth: 4
-   
-   ./learning/index
+
+   learning/index
 
 .. toctree::
    :caption: Contributing and Guidelines
@@ -63,3 +70,4 @@ Contents
    contributing/forking_publishing
    contributing/creating_new_pages
    contributing/docs_guidelines
+

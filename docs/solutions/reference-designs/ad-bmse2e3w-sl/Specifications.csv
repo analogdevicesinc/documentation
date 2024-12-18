@@ -1,0 +1,37 @@
+﻿SYSTEM,,,,,
+Parameter,Min,Typical,Max,Unit,Notes
+System Vin+ Supply Voltage from Battery,60,,100,V,Input voltage supply from battery
+Battery Emulator System Output Voltage,~66,,92,V,Safe output voltage from Battery Emulator
+Current Discharge,,50,100,A,Current rating that the BMS can deliver at discharge mode
+Current Charge,0.3,50,100,A,Current rating that the BMS can deliver at pre-charge/charge mode
+Pre-Charge Resistor,,3×33,,Ω,
+Charge Voltage Input,,,100,V,
+Discharge Voltage Output,,65,92,V,Regulated voltage range
+FET Discharge Rise Time,,,42,mS,
+FET Driver Discharge Input,,,5,V,Coming from GPIO of ADBMS2950
+FET Pre-Charge/Charge Rise Time,,,88,mS,
+FET Driver Pre-Charge/Charge Input,,,5,V,Coming from GPIO of ADBMS2950
+FET V(gs) range,-20,,20,V,Coming from GPIO of ADBMS2950
+FET Rds(on) range,,,4.8,mΩ,Coming from GPIO of ADBMS2950
+ADBMS6830 Cell Monitor,,,,,
+"Total Supply Voltage, V+ to V−",-0.3,,85,V,
+VREG Supply,4.5,5,5.5,V,
+"VREF1, VREF2",3,,3.3,,Supply to internal ADCs
+VRES/VDD,4.5,5,5.5,V,
+Temp,-40,,125,°C,
+CPIN Input Range,-2.5,,5.5,V,
+Cell Count,17,,32,,Min of 17 cells for the system to initiate daisy chain
+Drive,-0.3,,7,V,Drive voltage range with respect to each cell monitoring V-
+ADBMS2950 Pack Monitor,,,,,
+Main Supply Voltage In,14,,,V,
+VREG Pack Monitor,4.5,5,5.5,V,
+"Current Input S1A, I1A, I1B",-4,,4,V,
+"Current Input S1A, I1A, I1B",-4,,4,V,
+"Current Input S2A, I2A, I2B",-4,,4,V,
+"Current Input I3A, I3B",-4,,4,V,
+MAX32690 Microcontroller,,,,,
+MCU Supply Voltage from BMS,3.3,,5.5,V,
+MCU IO Supply for 1.8 V,1.6,,3,V,
+MCU VDD Supply,3.3,,5.5,V,
+MCU Supply at 1.2 V,1.1,,1.35,V,
+MCU Supply at 1.0 V,0.9,,1.2,V,

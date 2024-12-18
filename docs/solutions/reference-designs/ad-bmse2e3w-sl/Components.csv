@@ -1,0 +1,16 @@
+﻿No.,Part,Function
+1,Battery Cell Connector,Connector going to battery cells
+2,ADBMS6830 (U1),BMS 1 Cell Monitoring Chip with LPCM capability
+3,ADBMS6830 (U3),BMS 2 Cell Monitoring Chip with LPCM capability
+4,NTC Provision (U1),Connector for Negative Temperature Coefficient (NTC) Thermistor in ADBMS6830 (U1)
+5,NTC Provision (U3),Connector for Negative Temperature Coefficient (NTC) Thermistor in ADBMS6830 (U3)
+6,ADBMS2950 (U5),Voltage Pack and Current Pack Monitor Chip
+7,ADBMS6822 (U10),Dual isoSPI chip
+8,VBAT+ Connector,Positive Terminal Connector for total voltage capacity of the battery pack
+9,Rsense Pack Monitor,Resistor Sensing for detecting and monitoring total current in the pack
+10,72V to 96V LINK+_OUT Load Connector,Connector going to the load side of the system
+11,72V to 96V LINK+_IN Charger Connector,Connector going to the charging side of the system
+12,CAN Connector,"Three terminal connector provision for CAN_H, CAN_L, and GND communication"
+13,Micro USB Supply Provision,5V DC USB supply provision
+14,UART/SWDIO Connector,Connector for UART/SWDIO communication. Can be used to download program and debugging
+15,MAX32690 MCU Chip,Low power/high power MCU chip used as controller for the system
