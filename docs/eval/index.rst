@@ -6,5 +6,6 @@ Evaluation Boards & Platforms
 Contents
 --------
 .. toctree::
+   :glob:
 
-   user-guide/index
+   */index

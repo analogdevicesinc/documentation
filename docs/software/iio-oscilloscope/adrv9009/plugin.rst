@@ -241,7 +241,7 @@ Restrictions:
 * There are two types of files than can be loaded: **.txt** or **.mat**. The
   IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files<waveforms>`
   that can be used. If you want to create your own data files please take a look
-  at the :doc:`Basic IQ Data Files </eval/user-guide/adrv9009/basic-iq-datafiles>`
+  at the :ref:`adrv9009 basic-iq-datafiles`
   documentation first.
 * Due to hardware limitation only specific combinations of enabled channels
   are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel
