@@ -3,7 +3,7 @@
 The System Level Documentation is the top documentation for Hardware, Projects, and some Linux documentation;
 it also has the ability to aggregate every other documentation into a single monolithic output/website.
 
-## Building the documentation
+## Build the documentation
 
 Ensure pip is newer than version 23.
 ```
@@ -19,9 +19,9 @@ Build the documentation with Sphinx.
 ```
 The generated documentation will be available at `docs/_build/html`.
 
-## Building the all documentations
+## Build all documentations
 
-It's possible to build all ADI's documentation at once.
+It's possible to build all ADI's documentation at once in parallel.
 To generate it, considering Doctools is installed, do:
 ```
 adoc aggregate -d docs_output
