@@ -34,8 +34,9 @@ Contents
 .. toctree::
    :caption: Evaluation Boards
    :maxdepth: 2
+   :glob:
 
-   eval/user-guide/index
+   eval/*/index
 
 .. toctree::
    :caption: Products & Tools
