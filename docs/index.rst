@@ -19,10 +19,9 @@ Contents
 .. toctree::
    :caption: Kuiper & Linux Kernel
    :maxdepth: 2
+   :glob:
 
-   linux/kuiper/index
-   linux/drivers/index
-   linux/kernel/index
+   linux/*/index
 
 .. toctree::
    :caption: Software
@@ -67,8 +66,7 @@ Contents
 .. toctree::
    :caption: Contributing and Guidelines
    :maxdepth: 4
+   :glob:
 
-   contributing/forking_publishing
-   contributing/creating_new_pages
-   contributing/docs_guidelines
+   contributing/*
 

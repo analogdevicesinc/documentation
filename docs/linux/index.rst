@@ -4,7 +4,6 @@ Linux Kernel
 ============
 
 .. toctree::
+   :glob:
 
-   kuiper/index
-   drivers/index
-   kernel/index
+   */index
