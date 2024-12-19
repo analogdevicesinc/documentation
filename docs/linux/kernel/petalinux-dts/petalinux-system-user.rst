@@ -32,7 +32,8 @@ zynqmp-zcu102-rev10-ad9081-m8-l4 device tree with the following adjustments:
     various actions that can be performed in system-user.dtsi.  These in no way
     likely represent a valid AD9081 configuration.
 
-To apply these changes, the ``<project>/project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi``
+To apply these changes, the
+``<project>/project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi``
 file was modified as follows:
 
 .. code-block:: dts

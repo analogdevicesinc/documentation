@@ -26,31 +26,31 @@ to ``<project>/project-spec/meta-user/conf/layer.conf``. This addition will
 still allow meta-adi recipes to run  (for kernel, IIO, etc), but exclude the
 device tree support.
 
-    .. code-block::
-        :caption: conf/layer.conf
-        :emphasize-lines: 18
+.. code-block::
+   :caption: conf/layer.conf
+   :emphasize-lines: 18
 
-        # We have a conf and classes directory, add to BBPATH
-        BBPATH .= ":${LAYERDIR}"
+   # We have a conf and classes directory, add to BBPATH
+   BBPATH .= ":${LAYERDIR}"
 
-        # We have recipes-* directories, add to BBFILES
-        BBFILES += "${LAYERDIR}/recipes-*/*/*.bb \
-            ${LAYERDIR}/recipes-*/*/*.bbappend"
+   # We have recipes-* directories, add to BBFILES
+   BBFILES += "${LAYERDIR}/recipes-*/*/*.bb \
+       ${LAYERDIR}/recipes-*/*/*.bbappend"
 
-        # Define dynamic layers
-        BBFILES_DYNAMIC += " \
-        xilinx-tools:${LAYERDIR}/meta-xilinx-tools/recipes-*/*/*.bbappend \
-        "
+   # Define dynamic layers
+   BBFILES_DYNAMIC += " \
+   xilinx-tools:${LAYERDIR}/meta-xilinx-tools/recipes-*/*/*.bbappend \
+   "
 
-        BBFILE_COLLECTIONS += "meta-user"
-        BBFILE_PATTERN_meta-user = "^${LAYERDIR}/"
-        BBFILE_PRIORITY_meta-user = "7"
-        LAYERSERIES_COMPAT_meta-user = "langdale"
+   BBFILE_COLLECTIONS += "meta-user"
+   BBFILE_PATTERN_meta-user = "^${LAYERDIR}/"
+   BBFILE_PRIORITY_meta-user = "7"
+   LAYERSERIES_COMPAT_meta-user = "langdale"
 
-        BBMASK += "meta-adi-xilinx/recipes-bsp/device-tree/"
+   BBMASK += "meta-adi-xilinx/recipes-bsp/device-tree/"
 
 2. Select Petalinux Template
----------------------------------
+----------------------------
 Petalinux's DTG generates a basic device tree based on the exported XSA file from
 your HDL project. This will configure the minimal parameters for the SoC.  In
 addition to this basic generation, an optional EvKit may be selected.  When
@@ -131,7 +131,7 @@ the ZCU102 is used, so the machine is set to ``zcu102-rev1.0``.
 .. image:: petalinux-config-machine-zcu102.png
 
 3. Disabling PL Node Generation
----------------------------------
+-------------------------------
 By default, Petalinux's DTG generates device tree nodes for any IP blocks
 included in the PL.  This may be applicable for some scenarios, however when
 attempting to use device specific Linux drivers (such as IIO drivers ), this
@@ -143,7 +143,7 @@ conflicts, run ``petalinux-config``, navigate to **DTG Settings**, and enable
 .. image:: petalinux-config-remove-pl.png
 
 4. Adding Custom Device Trees
----------------------------------
+-----------------------------
 At this point, Petalinux & DTG will generate a barebones device tree of either
 the SoC only (if *template* was selected for ``MACHINE_NAME``), or the core
 components for the EvKit selected for ``MACHINE_NAME``.  To add custom nodes,

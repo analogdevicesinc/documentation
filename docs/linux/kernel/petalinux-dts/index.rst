@@ -1,15 +1,7 @@
 .. _petalinux petalinux-dts:
 
 Petalinux Device Trees
-=======================
-
-.. toctree::
-   :hidden:
-
-   petalinux-system-user
-   petalinux-custom-dts
-   petalinux-meta-adi-bypass
-
+======================
 
 Petalinux is Xilinx's flavor of Linux based on the Yocto project.  One of the
 unique pieces of Petalinux is how the device tree is automatically generated
@@ -38,7 +30,7 @@ device tree.  During the ``do_configure()`` stage, the device tree recipe of the
 
 A high-level view of the final *meta-adi* device tree looks like the following:
 
-.. image:: meta-adi-dts-order.drawio.png
+.. image:: meta-adi-dts-order.drawio.svg
 
 Device Tree Modifications
 -------------------------
@@ -70,3 +62,9 @@ as well as recommended use cases:
        leveraging the DTG output as-is.
      - This may be ideal when working with custom hardware without an existing
        device tree in kernel source.
+
+.. toctree::
+   :hidden:
+   :glob:
+
+   *

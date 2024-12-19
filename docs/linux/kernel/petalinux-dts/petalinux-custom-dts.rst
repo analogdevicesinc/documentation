@@ -8,7 +8,6 @@ device tree recipe.  This allows the flexibility and fine grained control of
 a custom device tree, while still being able to include and reference other dts
 files from the kernel source, such as a evaluation kit's base file.
 
-
 Procedure
 ---------
 The following procedure describes how to incorporate a custom device tree file

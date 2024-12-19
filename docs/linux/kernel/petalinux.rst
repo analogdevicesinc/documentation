@@ -3,11 +3,6 @@
 Building with Petalinux
 =======================
 
-.. toctree::
-   :hidden:
-
-   petalinux-dts/index
-
 The ADI Linux kernel can also be compiled using Petalinux to be used on Xilinx
 SoC FPGA based platforms (using :git-meta-adi:`ADI Yocto </>` repository).
 The following table specifies the supported Petalinux versions and documentation:
@@ -614,6 +609,12 @@ The user is:
 Petalinux, meta-adi and Device Trees
 ------------------------------------
 There are several approaches for modifying and customizing the device trees of
-a Petalinux project. Please see here: :doc:`petalinux-dts/index`
-for more information.
+a Petalinux project.
+
+Please see:
+
+.. toctree::
+   :titlesonly:
+
+   petalinux-dts/index
 
