@@ -55,3 +55,11 @@ Workshops
    :maxdepth: 1
 
    workshop_what_sw_for_sdr/index
+   
+Academic Workshops
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   workshops_software_defined_instrumentation/index
