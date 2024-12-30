@@ -5,10 +5,6 @@
 
    This is a draft, very much WIP document in a fork of `<https://github.com/analogdevicesinc/documentation>`__
 
-.. contents::
-   :local:
-   :depth: 3
-
 This project uses the :adi:`MAX32670` microcontroller with the :adi:`ADXL382`
 MEMS accelerometer and :adi:`AD5421` 4-20mA Industrial DAC. The DAC output is correlated to the
 Z-axis of the accelerometer because it’s usually the easiest to think
