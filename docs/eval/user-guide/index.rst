@@ -18,14 +18,14 @@ Clock Generation and Distribution
 Digital to Analog Converters
 -------------------------------------------------------------------------------
 
+Digital to Analog Converters (Current Output)
+-------------------------------------------------------------------------------
+
 .. toctree::
    :caption: 4-20mA DACs
    :maxdepth: 1
 
    eval-ad5421/index
-
-Digital to Analog Converters (Current Output)
--------------------------------------------------------------------------------
 
 Direct Digital Synthesis (DDS)
 -------------------------------------------------------------------------------
