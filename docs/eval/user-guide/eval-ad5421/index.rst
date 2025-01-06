@@ -61,13 +61,30 @@ this guide to avoid damaging boards.
 
    Eval-SDP-CB1Z to AD5421 connection
 
-.. warning:: Please disconnect power from all sources before
-   continuing.
+[OPTIONAL] Troubleshooting with the AD5421 GUI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Note that it is possible at this point to verify communication with the :adi:`EVAL-AD5421` GUI. The GUI can be located on the Product Page under "AD5421 Evaluation Software".
+
+Once the Eval GUI has been installed, you can verify communication by connecting the SDP-BZ board to the AD5421 kit as shown in the above image, and connecting power over USB.
+
+Then, launch the GUI. You should see no popup warnings, and the Control Register is read by the GUI. You can also toggle various parameters such as the Auto Fault Readback to check that the Control Register can be be properly read & written, verifying SPI communication from the SDP-BZ board to the AD5421 and proper power-up for the AD5421.
+
+.. figure:: img/sdp-ad5421.jpg
+   :alt: Successful EVAL-AD5421 Communication
+
+
+If communication to the AD5421 fails, a warning popup will show as follows:
+
+.. figure:: img/ad5421-gui-fail.png
+   :alt: Failed EVAL-AD5421 Communication
 
 
 Soldering for the AD5421
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning:: Please disconnect power from all sources before
+   continuing.
 
 To work with the AD5421, TP1-6 (for SPI and FAULTIN/LDAC) and TP19
 should be soldered in. TP19 is just so the boards can directly share a
