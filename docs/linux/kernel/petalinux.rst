@@ -606,3 +606,15 @@ The user is:
       zynqmp-zcu102-fmcomms5 login: root
       Password:
 
+Petalinux, meta-adi and Device Trees
+------------------------------------
+There are several approaches for modifying and customizing the device trees of
+a Petalinux project.
+
+Please see:
+
+.. toctree::
+   :titlesonly:
+
+   petalinux-dts/index
+
