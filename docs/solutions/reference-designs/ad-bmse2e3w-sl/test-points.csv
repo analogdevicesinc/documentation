@@ -1,0 +1,9 @@
+﻿TP Name,Description,Function,Voltage Range
+TP2,U1 ADBMS6830 BMS1_VREG,U1 Input Voltage BMS1_VREG for ADBMS6830,Low voltage: 15 V to 20 V
+,,,High voltage: (50 V to 58 V)
+TP4,U3 ADBMS6830 BMS2_VREG,U3 Input Voltage BMS2_VREG input for ADBMS6830,0 V to 5 V
+TP7,U6 LTC3639 Output,U6 LTC3639 Regulator Voltage Output,4.5 V to 5.5 V
+TP8,U9 LT8303 Output,U9 LT8303 Switch Down Regulator Output,3.2 V to 3.5 V
+R346,U15 MAX25301A Output,U15 MAX25301A Output 3.3 V going to MCU,3.2 V to 3.5V
+(Left Pin),,,
+TP16,VBAT+,Total Voltage Supply from battery,72 V to 92 V (regulated)

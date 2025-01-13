@@ -3,3 +3,4 @@ _build
 repos
 docs-mono
 Session.vim
+venv
