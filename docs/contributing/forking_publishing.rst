@@ -17,28 +17,33 @@ and `git-lfs <https://git-lfs.com/>`__ artifacts are properly synced.
 Preparing your origin
 ---------------------
 
-There is three options to host your work, for users:
+There is three options to contribute:
 
 * :ref:`forking-publishing fork`: that want to use the GitHub flow (recommended).
 * :ref:`forking-publishing copy`: that want to work privately first.
 * :ref:`forking-publishing branch`: with write access to *analogdevicesinc* organization.
+
+.. tip::
+
+   If using Github Codespaces, just fork/create a branch/copy and follow
+   :ref:`this section <forking-publishing github-codespaces>`.
 
 .. _forking-publishing fork:
 
 Fork
 ~~~~
 
-Ensure git-lfs is installed with:
-
-.. code:: bash
-
-   sudo apt install git-lfs -y
-
 Fork the *analogdevicesinc/documentation* repo on your account.
 
 | **Enable the workflows** on the forked repo at *github.com/<your_user>/documentation/actions*
   by clicking the green button
 | "I understand my workflows, go ahead and enable them".
+
+Ensure git-lfs is installed with:
+
+.. code:: bash
+
+   sudo apt install git-lfs -y
 
 Clone the repository:
 
@@ -138,7 +143,20 @@ Create and checkout a branch
 Preparing your environment
 --------------------------
 
-Clone and build the doc for the first time (working directory: repo root):
+It is possible to contribute:
+
+* :ref:`forking-publishing local` (most freedom); or with
+* A :ref:`forking-publishing github-codespaces`.
+
+Follow either tutorial to bring up the environment.
+
+.. _forking-publishing local:
+
+Using your local host
+~~~~~~~~~~~~~~~~~~~~~
+
+To prepare your environment to work **locally**,
+clone and build the doc for the first time (working directory: repo root):
 
 Ensure pip is up-to-date:
 
@@ -173,6 +191,37 @@ Build the doc (output at docs/_build/html):
 
    ~/documentation
    $(cd docs ; make html)
+
+.. _forking-publishing github-codespaces:
+
+GitHub Codespace
+~~~~~~~~~~~~~~~~
+
+Instead of working locally, you can use a cloud virtual machine with
+GitHub Codespaces.
+
+GitHub Codespaces uses the :git-documentation:`.devcontainer.json` file to
+initialize a container in the cloud.
+This container is pre-configured with all the tools required to build the
+documentation, including the live preview daemon  :external+doctools:ref:`serve`,
+which is automatically started.
+This setup provides a user experience comparable to platforms like Google Docs
+or Overleaf.
+
+.. caution::
+
+   | GitHub Codespaces usage is billed to the user (you)!
+   | Be sure to understand GitHub's billing policies and your account free quota.
+
+To use GitHub Codespaces, navigate to the
+:git-documentation:`GitHub GUI for this repository <+>` and click
+*Code > Codespaces > Create codespace on main*.
+
+This will open a new tab and set up the virtual environment.
+The setup is complete  when the live preview panel appears on the right.
+
+To manage all your GitHub Codespaces and shut them down, visit
+`github.com/codespaces <https://github.com/codespaces>`__.
 
 Adding content
 --------------
@@ -283,3 +332,4 @@ And to fix is simple:
 
 And advise the committer to ensure he has git lfs enabled with
 ``git lfs install``.
+
