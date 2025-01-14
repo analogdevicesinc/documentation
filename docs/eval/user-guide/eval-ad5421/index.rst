@@ -147,7 +147,7 @@ The ADXL382 connects to MAX32670 over SPI0. There are silkscreen
 markings for SPI0 on the MAX32670 EVKit. ADXL382 uses the following
 pins:
 
--  V_AUX / GND
+-  V_AUX (3.3V) / GND
 -  P0.2 (SPI0 MISO)
 -  P0.3 (SPI0 MOSI)
 -  P0.4 (SPI0 SCK)
@@ -173,7 +173,7 @@ MAX32670 via the RSTN button (SW2).
 Flashing the ‘Prebuilt’ Demo
 ----------------------------
 
-Under the ``prebuilt`` folder, there will be an ELF file that contains
+Under the ``prebuilt`` folder, there will be a .BIN file (e.g. ``adxl382-max32670-ad5421-v1.0.0.bin``) that contains
 pre-built code. For those who do not want to compile the code
 themselves, the prebuilt binary may be flashed to the MCU instead. To do
 so, visit the following page:
@@ -187,7 +187,7 @@ https://github.com/analogdevicesinc/max32625pico-firmware-images
    MAX32670 board.
 
 Once you have updated the above firmware, you should see a DAPLINK drive
-show up on your PC. At this point, you can drag-n-drop the .elf file
+show up on your PC. At this point, you can drag-n-drop the .BIN file
 onto the DAPLINK drive to program the prebuilt binary.
 
 .. figure:: img/drag-n-drop-fw.png
