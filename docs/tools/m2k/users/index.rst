@@ -29,10 +29,10 @@ Contents
 #. Upgrading the the ADALM2000 :ref:`Firmware <pluto-m2k firmware>`.
 #. Common customization: 
 
-   #. :dokuwiki:`/university/tools/pluto/users/customizing#multiple_devices>`
-   #. :dokuwiki:`/university/tools/pluto/users/customizing#changing_the_root_password_on_the_target>`
-   #. :dokuwiki:`/university/tools/pluto/users/customizing#enabling_persistent_ssh_keys>`
-   #. :dokuwiki:`/university/tools/pluto/users/customizing#changing_the_usb_ethernet_compatibility_mode>`
+   #. :dokuwiki:`Multiple devices </university/tools/pluto/users/customizing#multiple_devices>`
+   #. :dokuwiki:`Changing the root password on the target </university/tools/pluto/users/customizing#changing_the_root_password_on_the_target>`
+   #. :dokuwiki:`Enabling persistent SSH keys </university/tools/pluto/users/customizing#enabling_persistent_ssh_keys>`
+   #. :dokuwiki:`Changing the USB Ethernet Compatibility Mode </university/tools/pluto/users/customizing#changing_the_usb_ethernet_compatibility_mode>`
 
 #. Once the driver are configured and set up, you can interact with the
    :adi:`ADALM2000` Active Learning Module from:

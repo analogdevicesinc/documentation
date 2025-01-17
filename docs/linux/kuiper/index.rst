@@ -95,6 +95,8 @@ The password for the "root" account is "analog" as well.
    * - analog
      - analog
 
+.. _kuiper fpga:
+
 Configuring the SD Card for FPGA Projects
 -----------------------------------------
 
@@ -103,6 +105,8 @@ partition. In order to configure the SD card to work with a specific FPGA board
 and ADI hardware, several files must be copied onto the root directory. Using
 the host PC, drag and drop the required files onto the ``BOOT`` partition, and
 use the **EJECT** function when removing the SD card from the reader.
+
+.. _kuiper fpga xilinx:
 
 AMD/Xilinx
 ~~~~~~~~~~
@@ -128,6 +132,8 @@ partition:
 #. <target>/<specific_folder>/system.dtb
 #. <target>/boot.scr
 #. versal-common/Image
+
+.. _kuiper fpga intel:
 
 Intel/Altera
 ~~~~~~~~~~~~
