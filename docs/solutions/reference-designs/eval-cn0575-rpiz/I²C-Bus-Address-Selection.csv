@@ -1,0 +1,9 @@
+﻿JP6,JP7,JP8,I2C Bus Address
+B,B,B,0x48 (Default)
+B,B,A,0X49
+B,A,B,0X4A
+B,A,A,0X4B
+A,B,B,0X4C
+A,B,A,0X4D
+A,A,B,0X4E
+A,A,A,0X4F

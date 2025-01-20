@@ -1,0 +1,31 @@
+﻿MAX96724 Interfaces to Jetson SOM,
+Interface,Detailed Description
+2x I2C,"1x I2C, and 1x I2C PT. 400 kbps speeds"
+GPIO Signals,"MFP0, MFP1, MFP4, MFP5, PWDNB"
+MIPI CSI-2,CSI-2 v1.3
+,DPHY v1.2
+CSI SAMTEC Interfaces to Jetson SOM,
+2x I2C,"1x I2C, and 1x I2C PT. 400 kbps speeds"
+GPIO Signals,"ERRB, FSYNC0, RESET, LOCK"
+Oscillator,Configurable speed oscillator signal between 15 MHz and 40 MHz
+1x SPI,25 MHz Serial Peripheral Interface (SPI).
+,Non-standard SPI used for GMSL devices
+CSI-2 v1.3,"4×2, 2×4 CSI-2 DPHY v1.2"
+Power,"12 V, 5 V, 1.8 V"
+GMSL Inputs,
+4x High Speed COAX Connector,59S2AQ-40MT5-Z_1
+GMSL2,"3 Gbps, 6 Gbps, COAX"
+Protocol,GMSL1/2
+PoC,"5 V, 8 V, 12 V"
+GMSL Output,
+1x High Speed COAX Connector,59S2AQ-40MT5-Z_1
+GMSL2/3,"3 Gbps, 6 Gbps, 12 Gbps, COAX"
+Protocol,GMSL1/2/3
+Display Outputs,
+HDMI 2.0a/b,"Up to 6 Gbps, 4Kp60"
+Other Interfaces,
+PCIe Gen 3/4,1×1 Gen3 + 1×4 Gen4
+USB,4x USB 3.1 Type A
+Micro USB Input,USB 2.0
+Ethernet,10/100/1000 BASE-T Ethernet with PoE
+Power,12 V Power Barrel Jack Input

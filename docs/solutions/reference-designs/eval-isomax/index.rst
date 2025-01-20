@@ -128,7 +128,7 @@ For questions and more information about this product, connect with us through t
  
 
 
-Up Next: Hardware & Software User Guide
+Up Next: 
 ----------------------------------------
 
 .. toctree::
