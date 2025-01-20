@@ -52,3 +52,9 @@ Reference Designs
 
       eval-isomax/software_guide/index
 
+
+.. toctree:: 
+   :maxdepth: 2
+
+    eval-cn0575-rpiz/index
+
