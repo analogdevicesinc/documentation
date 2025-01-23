@@ -1,9 +1,14 @@
+.. _eval-cn0577-fmcz:
 
-EVAL-CN0577-FMCZ 
-=====================
+EVAL-CN0577-FMCZ
+================
 
 Overview
-----------
+--------
+
+.. image:: cn0577_1.jpg
+   :align: right
+   :width: 600px
 
 Instrumentation applications such as flow cytometry, optical pulse
 measurement, fast control loops, fast digital distortion correction, and image
@@ -26,19 +31,10 @@ A separate data clock eases the timing requirements of the host FPGA. An
 on-board 120 MHz clock is forwarded to the FPGA and a CONVERT retiming
 flip-flop reduces jitter from the convert signal of the FPGA.
 
-
-
-.. image:: cn0577_1.jpg
-    :width: 600 px
-
-
-
 Simplified Functional Block Diagram
--------------------------------------
+-----------------------------------
 
 .. image:: cn0577_block_diag.png
-
-
 
 Features
 --------
@@ -53,28 +49,25 @@ Features
 - Flexible analog input drive (single-ended or differential mode)
 - On-board 120 MHz precision voltage-controlled crystal oscillator (VCXO)
 
-
-Hardware Configuration 
+Hardware Configuration
 ----------------------
-
 
 Block Assignments
 ~~~~~~~~~~~~~~~~~~~
 
 .. image:: cn0577_block_terminal.png
+   :width: 500px
 
-.. csv-table:: 
-    :file: block-assignments.csv
-
+.. csv-table::
+   :file: block-assignments.csv
 
 Power Supply
 ~~~~~~~~~~~~~
 
 Power to the :adi:`EVAL-CN0577-FMCZ <CN0577>` comes directly from the
-+12 V supply provided through the FMC connector. 
++12 V supply provided through the FMC connector.
 
 .. image:: power_supply_1.png
-
 
 Analog Inputs
 ~~~~~~~~~~~~~~~~
@@ -82,7 +75,6 @@ Analog Inputs
 The SMA connectors on the :adi:`EVAL-CN0577-FMCZ <CN0577>` (VIN+
 and VIN−) provide analog inputs from a low noise, audio precision signal
 source (such as the Audio Precision audio analyzer).
-
 
 On-board Clock Reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,7 +95,6 @@ then forwarded to a global clock connection on the FMC connector.
 
 .. image:: cn0577_clock.png
 
-
 External Clock Reference Option
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -113,17 +104,16 @@ required, an external clock can be applied to the external clock connector
 (J3). Along with connecting it, you will also need to update the solder jumper
 (JP14) to change from the onboard crystal oscillator. If the external clock
 frequency is significantly higher or lower than the on-board 120 MHz clock,
-reanalyze the entire circuit including the FPGA timing constraints. 
+reanalyze the entire circuit including the FPGA timing constraints.
 
 .. image:: jp14.png
-    :width: 300 px
+   :width: 300 px
 
 The external clock circuitry also includes a high speed single inverter that
 provides AC coupling and balances the rise and fall times. This device has a
 typical time propagation delay of 2.4 ns and achieves a high output drive,
 while maintaining low static power dissipation over a broad VCC operating
 range.
-
 
 System Setup
 ~~~~~~~~~~~~~~~~~
@@ -154,7 +144,8 @@ If using :adi:`ADALM2000`` as input source:
 
 Software
 ^^^^^^^^
-- :dokuwiki:`Analog Devices Kuiper Linux image <resources/tools-software/linux-software/kuiper-linux>`
+
+:ref:`kuiper`.
 
 For the device to run, the SD card should be loaded with Analog Devices Kuiper
 Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It
@@ -172,8 +163,8 @@ Loading Image on SD Card
 In order to control the :adi:`EVAL-CN0577-FMCZ <CN0577>`, you will
 need to install ADI Kuiper Linux on an SD card. Complete instructions, including
 where to download the SD card image, how to write it to the SD card, and how to
-configure the system are provided at :dokuwiki:`Kuiper Images <resources/tools-software/linux-software/kuiper-linux>`. Write the
-image and follow the system configuration procedure. Follow the directions for
+configure the system are provided at :ref:`kuiper project-list`.
+Write the image and follow the system configuration procedure. Follow the directions for
 preparing the image for the CN0577.
 
 
@@ -182,25 +173,19 @@ SD Card
 
 To prepare the SD card for the Zedboard:
 
-#. `Download ADI Kuiper Image for CN0540 <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`__
+#. :ref:`Download ADI Kuiper Image for CN0540 <kuiper project-list>`
 
-#. Validate, Format, and Flash the SD Card
-       * :dokuwiki:`Format and flash the SD Card using Windows <resources/tools-software/linux-software/zynq_images/windows_hosts>`
-       * :dokuwiki:`Format and flash the SD Card using Linux <resources/tools-software/linux-software/zynq_images/linux_hosts>`
+#. Validate, Format, and Flash the SD Card :ref:`kuiper sdcard linux` or :ref:`kuiper sdcard windows`.
 
-#. Configuring the SD Card. Follow instructions for Xilinx projects. 
+#. Configuring the SD Card. Follow instructions for Xilinx projects.
 
-      * Directory on SD image: cn0577_zed
-      * Image files on SD card: zynq-common
-
-
+   * Directory on SD image: cn0577_zed
+   * Image files on SD card: zynq-common
 
 System Block Diagram
 ----------------------
 
 .. image:: sys_block_diag.png
-
-
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
@@ -248,8 +233,6 @@ Using :adi:`ADALM2000` as input source:
 
 .. image:: demo_with_m2k.png
 
-
-
 Software
 --------
 
@@ -258,8 +241,8 @@ library. This library is cross-platform (Windows, Linux, Mac) with language
 bindings for C, C#, Python, MATLAB, and others. Two easy to examples that can be
 used with the :adi:`EVAL-CN0577-FMCZ <CN0577>` are:
 
-- :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`
-- :dokuwiki:`Python (via Pyadi-iio) <resources/tools-software/linux-software/pyadi-iio>`
+- :ref:`iio-oscilloscope`
+- :ref:`Python (via Pyadi-iio) <pyadi-iio>`
 
 Connection
 ~~~~~~~~~~
@@ -271,19 +254,17 @@ attached. The platform currently supported for the CN0557: ZedBoard using the
 ADI Kuiper Linux. The user needs to supply a URI which will be used in the
 context creation. The Libiio is a library for interfacing with IIO devices.
 
-Install the `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`__ on your
+Install the :git-libiio:`Libiio package <releases+>` on your
 machine.
 
-The :dokuwiki:`iio_info <resources/tools-software/linux-software/libiio/iio_info>`
+The :ref:`libiio iio_info`
 command is a part of the libIIO package that reports all IIO attributes.
 
 Upon installation, simply enter the command on the terminal command line to
 access it.
 
-
-
-For Windows machine connected to ZedBoard via Ethernet cable:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For Windows machine connected to ZedBoard via Ethernet cable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using SSH Terminal Software:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -292,63 +273,55 @@ Open SSH Terminal Software (PuTTY, TeraTerm or similar). User should now start
 the PuTTY application and enter certain values in the configuration window. In
 the terminal, run:
 
-::
+.. shell::
+   :show-user:
 
-   analog@analog:~$ iio_info -u ip:<ip_address>
-
+   $iio_info -u ip:<ip_address>
 
 Using Command Terminal:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
+.. shell::
 
-   iio_info -s
+   $iio_info -s
 
 Prompting this on the command terminal in your windows PC will give you the ip
 address to access the EVAL-CN0577-FMCZ.
 
-::
+.. shell::
 
-   ssh analog@<ip_address>
+   $ssh analog@<ip_address>
 
-::
+.. shell::
+   :show-user:
 
-   analog@analog:~$ iio_info -u ip:<ip_address>
-
-| 
+   $iio_info -u ip:<ip_address>
 
 IIO Commands
 ~~~~~~~~~~~~
 
 There are different commands that can be used to manage the device being used.
-The :dokuwiki:`iio_attr <resources/tools-software/linux-software/libiio/iio_attr>`
-command reads and writes IIO attributes.
+The :ref:`libiio iio_attr` command reads and writes IIO attributes.
 
-::
+.. shell::
 
-   analog@analog:~$ iio_attr [OPTION]...
+   $iio_attr [OPTION]...
 
 Example:
 
-::
+To look at the context attributes, enter this code on the terminal:
 
-       * To look at the context attributes, enter this code on the terminal:
+.. shell::
 
-::
-
-   analog@analog:~$ iio_attr -a -C
-
-| 
+   $iio_attr -a -C
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~~
 
+.. admonition:: Download
 
-    .. admonition:: Download 
-   
-      Make sure to download/update to the latest version of IIO Oscilloscope.
-         `https://github.com/analogdevicesinc/iio-oscilloscope/releases`_ 
-
+  Make sure to download/update to the latest version of IIO Oscilloscope at
+  :git-iio-oscilloscope:`releases+`
 
 #. Once done with the installation or an update of the latest IIO Oscilloscope,
    open the application. The user needs to supply a URI which will be used in
@@ -359,37 +332,31 @@ IIO Oscilloscope
 
 .. image:: 577_osc.png
 
-
 Debug Panel
 ^^^^^^^^^^^
 
 Below is the Debug panel of ltc2387 wherein you can directly access the
-attributes of the device. 
+attributes of the device.
 
 .. image:: 577_debug_panel.png
-
-
 
 DMM Panel
 ^^^^^^^^^
 
 Access the DMM panel to see the instantaneous reading of the ADC voltages and
-the device temperature. 
+the device temperature.
 
-.. image::577_dmm_panel.png
-
-
+.. image:: 577_dmm_panel.png
 
 Pyadi-IIO
 ~~~~~~~~~
 
-:dokuwiki:`PyADI-IIO <resources/tools-software/linux-software/pyadi-iio>` is a python
-abstraction module for ADI hardware with IIO drivers to make them easier to
-use. This module provides device-specific APIs built on top of the current
+:ref:`pyadi-iio` is a python abstraction module for ADI hardware with IIO drivers
+to make them easier to use.
+This module provides device-specific APIs built on top of the current
 libIIO python bindings. These interfaces try to match the driver naming as
 much as possible without the need to understand the complexities of libIIO and
 IIO.
-
 
 Running the Example
 ^^^^^^^^^^^^^^^^^^^
@@ -403,50 +370,47 @@ examples folder.
    inside the downloaded or cloned *pyadi-iio* directory.
 #. Run the example script using the command.
 
-::
+.. shell::
 
-   .../pyadi-iio/examples $ python3 ltc2387_example.py
+   /path/to/pyadi-iio/examples
+   $python3 ltc2387_example.py
 
-Running example with ADALM2000 with the setting below: 
+Running example with ADALM2000 with the setting below:
 
 .. image:: scopy_diff_input.png
 
-The expected output should look like this: 
+The expected output should look like this:
 
 .. image:: output_time_domain.png
 
 
-GitHub link for the python sample script: `CN0577 Python Example <https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/ltc2387_example.py>`__
-
-
+GitHub link for the python sample script:
+:git-pyadi-iio:`CN0577 Python Example <examples/ltc2387_example.py>`
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 
 .. admonition:: Download
-    
- `EVAL-CN0577-FMCZ Design & Integration Files <CN0577-designsupport.zip>`
 
-  - Schematics
-  - PCB Layout
-  - Bill of Materials
-  - Allegro Project
-  - LTspice Simulation File
+   :download:`EVAL-CN0577-FMCZ Design & Integration Files <CN0577-DesignSupport.zip>`
 
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
+   - LTspice Simulation File
 
 Reference Demos & Software
 ----------------------------
 
-- `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`__
-- :dokuwiki:`PyADI-IIO Installation Guide <resources/tools-software/linux-software/pyadi-iio>`
-- :dokuwiki:`IIO Oscilloscope Installation Guide <resources/tools-software/linux-software/iio_oscilloscope>`
-- :dokuwiki:`Kuiper Images <resources/tools-software/linux-software/kuiper-linux>`
-- :dokuwiki:`CN0577 HDL Reference Design <resources/eval/user-guides/circuits-from-the-lab/cn0577/hdl>`
-
-
+- :git-pyadi-iio:`/`
+- :ref:`pyadi-iio`
+- :ref:`iio-oscilloscope`
+- :ref:`kuiper`
+- :external+hdl:ref:`cn0577`
 
 More Information and Useful Links
------------------------------------
+---------------------------------
 
 - :adi:`CN0577 Circuit Note Page <ADCN0577>`
 - :adi:`LTC2387-18 Product Page <LTC2387-18>`
@@ -459,24 +423,16 @@ More Information and Useful Links
 - :adi:`LT3094 Product Page <LT3094>`
 - :adi:`LT1931 Product Page <LT1931>`
 
-
-
 Registration
 ------------
 
 Receive software update notifications, documentation
 updates, view the latest videos, and more when you register your hardware.
 `Register <https://my.analog.com/en/app/registration/hardware/EVAL-CN0577-FMCZ?&v=RevB>`__ to receive all these great benefits
-and more! 
+and more!
 
----------------------------------------------------------------------------------------------------------------------------------------------
-Up Next...
+HDL Reference design
+--------------------
 
-
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
-   :glob:
-
-   */index
+The HDL Reference Design is documented at :external+hdl:ref:`cn0577`.
 

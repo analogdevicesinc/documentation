@@ -1,5 +1,7 @@
+.. _ad-gmsl522-sl hardware:
+
 Hardware Guide
-===================
+==============
 
 Overview
 --------
@@ -16,50 +18,65 @@ GMSL link. The platform enables NPI, demonstrations, customer, and ecosystem
 development. This platform has hardware interconnects and software tools that
 enable customers in their development of GMSL.
 
-
 .. image:: ad-gmsl522-sl_block_diagram.png
     :width: 600 px
 
-
 Carrier Board Feature List
-------------------------------
+--------------------------
 
 - Connection to Jetson Xavier NX
-     * 260-pin SO-DIMM connector  
+
+  * 260-pin SO-DIMM connector
+
 - GMSL/CSI inputs
-     * SAMTEC – compatible with MAXIM EvKits to CSI inputs of the SOM 
-     * 4xFakra connectors to MAX96724 GMSL to CSI deserializer 
+
+  * SAMTEC – compatible with MAXIM EvKits to CSI inputs of the SOM
+  * 4xFakra connectors to MAX96724 GMSL to CSI deserializer
+
 - GMSL outputs
-     * MAX96717 CSI to GMSL serializer 
+
+  * MAX96717 CSI to GMSL serializer
+
 - USB
-     * USB 2.0 Micro B (device only) 
-     * USB 2.0 Micro B (debug) 
-     * USB 2.0 Type A  
-     * USB 3.0 Type A 
+
+  * USB 2.0 Micro B (device only)
+  * USB 2.0 Micro B (debug)
+  * USB 2.0 Type A
+  * USB 3.0 Type A
+
 - Wired Network
-     * Gigabit Ethernet (RJ45 connector) 
+
+  * Gigabit Ethernet (RJ45 connector)
+
 - Display
-     * HDMI™ Type A (v2.0a/b) 
+
+  * HDMI™ Type A (v2.0a/b)
+
 - M.2 Key M connector
-     * PCIe (Gen4) x4 lane, control 
+
+  * PCIe (Gen4) x4 lane, control
+
 - MicroSD Card
-- UI and indicators 
-     * Reset header: power, reset, and force recovery 
--  LEDs: Power 
+- UI and indicators
+
+  * Reset header: power, reset, and force recovery
+
+- LEDs: Power
 - Miscellaneous
-     * Fan connector: 5 V, PWM and tach 
--  Power
-     * DC Jack: 12 V 8 A input
-     * Main 5.0 V supply: MAX25206ATPA
-     * Main 3.3 V supply: MAX25206ATPA
-     * Main 1.8 V, 1.2 V, 1.0 V supplies: LTC3303ARUCM 
+
+  * Fan connector: 5 V, PWM and tach
+
+- Power
+  * DC Jack: 12 V 8 A input
+  * Main 5.0 V supply: MAX25206ATPA
+  * Main 3.3 V supply: MAX25206ATPA
+  * Main 1.8 V, 1.2 V, 1.0 V supplies: LTC3303ARUCM
 - Developer kit operating temperature range
-     * 0⁰C to 35⁰C 
 
-
+  * 0⁰C to 35⁰C
 
 Power
---------
+-----
 
 Power Input
 ~~~~~~~~~~~
@@ -79,8 +96,6 @@ to turn on the load. It continues to charge up the GATE pin until the linear
 current limit (set to 100 mV/RSENSE) is reached. On this carrier board RSENSE is
 0.01Ω which sets the current limit at 10 A. The input voltage and current can be
 read from this device by accessing it at the 0xB4 I2C address.
-
-
 
 Power Supplies
 ~~~~~~~~~~~~~~
@@ -124,7 +139,7 @@ interfaces and has the following I2C address: 0x2FF
 
 
 Power Sequence
----------------
+--------------
 
 The power-up sequence is similar to the one implemented in the official NVIDIA
 Jetson Nano carrier board. The circuit will provide at least 430 ms delay
@@ -132,8 +147,6 @@ between SHUTDOWN_REQ and POWER_EN.
 
 U38 and U44 are connected to form a SR latch with NAND gates. POWER_EN has 100k
 pull-down on module, so initial state is always 0.
-
-|
 
 **Jumper on P11 pins 9 and 10 - Auto-power-on enabled**
 
@@ -157,8 +170,6 @@ resulting in POWER_EN LOW.
 The board will remain off until the power cable is plugged back in again
 (LATCH_SET is always HIGH as long as VDD_5V_SYS is present)
 
-|
-
 **Jumper on P11 pins 7 and 8 - Auto-power-on disabled**
 
 At power on, both LATCH_SET and LATCH_RESET are pulled-up to VDD_5V_SYS. U26 has
@@ -179,9 +190,8 @@ result in LATCH_SET going LOW while LATCH_RESET is HIGH so POWER_EN will go HIGH
 and the SOM powers on. When releasing the pins 1 and 2 LATCH_SET will be HIGH
 again, but no change will be seen at the at the output of the latch.
 
-
 Power over Coax
--------------------
+---------------
 
 The AD-GMSL522-SL carrier board is designed to send power as well as data over
 coax cables, enabling to power remote devices such as automotive cameras without
@@ -200,9 +210,7 @@ R401, R403, R407, R405. This will limit the current per channel to 500 mA, but
 in case more current is needed and the 12 V supply allows this, R402, R404,
 R408, R406 can be populated instead of R401, R403, R407, R405 and the devices
 will be powered directly from the 12 V supply without any current limitation, or
-protection. 
-
-| 
+protection.
 
 Inputs
 ------
@@ -217,8 +225,9 @@ supplied by the carrier board. R136, R153, R152 can be soldered on the carrier
 to connect the Evkit to the power supplies of the AD-GMSL522-SL carrier board.
 
 .. important::
-    Please check the board and don’t plug the power supply of the
-    Evkit connected to P1 if R152 is installed!
+
+   Please check the board and don’t plug the power supply of the
+   Evkit connected to P1 if R152 is installed!
 
 The GPIO signals from this connector are routed to GPIO pins of Xavier NX which
 are CMOS – 1.8V Type. Please make sure that the GPIO pins of the Evkit are
@@ -228,20 +237,19 @@ configured to be supplied by the 1V8 VDDIO.
 supporting either 4x2, 2x4 CSI-2 DPHY v1.2 configurations.
 
 
-
 GMSL (Deserializer)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 J1, J2, J3, J4 Fakra connectors(59S2AQ-40MT5-Z_1) on the right side of the board
 are connected to the inputs of MAX96724GTN/VY+. This provides reliable platform
 to evaluate the MAX96724 device using standard FAKRA coaxial cables. This
 deserializer device support high-bandwidth, gigabit multimedia serial links
 (GMSL-1 or GMSL-2) and offers spread spectrum and full-duplex control channel
-features. </WRAP>
+features.
 
 
 On-board SERDES
--------------------
+---------------
 
 Quad Deserializer
 ~~~~~~~~~~~~~~~~~
@@ -273,7 +281,7 @@ the following state: GMSL-2, 6 Gbps
 
 
 Single Serializer
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 **MAX96717GTJ/VY+ CSI-2 to GMSL2 serializer**
 
@@ -295,14 +303,13 @@ signals: MAX96717_CFG_SCL, MAX96717_CFG_SDA.
 Address of I2C potentiometers for CFG pins of MAX96724
 
 .. tip::
-  If the state of the configuration pins needs to be changed, please
-  refer to the MAX96717 data sheet to see the recommended resistor values to
-  select each configuration. 
 
-
+   If the state of the configuration pins needs to be changed, please
+   refer to the MAX96717 data sheet to see the recommended resistor values to
+   select each configuration.
 
 Outputs
------------
+-------
 
 HDMI
 ~~~~
@@ -310,9 +317,8 @@ HDMI
 HDMI Type A connector (P10) is directly routed to the HDMI V2.0 interface
 supported by the Xavier NX module.
 
-
 GMSL (Serializer)
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 J7 is the Fakra connector that is tied to the MAX96717 GMSL output pin. It is
 labeled on the board silkscreen as “OUT MAX96717”. This connection does not
@@ -320,11 +326,10 @@ support Power-over-Coax due to the fact that the AD-GMSL522-SL board has its
 own power supply. This does not mean that a deserializer board with
 Power-over-Coax enabled cannot be connected to this connection. This output
 can be used to evaluate deserializer designs or to emulate a camera device via
-sending a colorbar from the deserializer. </WRAP>
-
+sending a colorbar from the deserializer.
 
 Other Interfaces
-----------------------
+----------------
 
 USB
 ~~~
@@ -333,33 +338,33 @@ Jetson Xavier NX supports up to three USB 2.0 ports and a single USB 3.2 port.
 On AD-GMSL522-SL, the USB interfaces are used as follows:
 
 Ethernet
-~~~~~~~~~~~~~
+~~~~~~~~
 
 M1 is a RJ45 Gigabit ethernet connector that has all the
 necessary magnetics integrated.
 
 MicroSD card
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 The AD-GMSL522-SL carrier board brings the SDMMC
 interface from the connector pins for SD card use. P12 is a surface mount,
 right angle connector, for microSD™ card.
 
 NVMe
-~~~~~~~~~~
+~~~~
 
 The AD-GMSL522-SL board includes an M.2 Key M NVMe Expansion
 slot (P5). The PCIE signals are routed to PCIE0 interface of the Xavier NX
-Module. This supports up to Gen4 speed. </WRAP>
+Module. This supports up to Gen4 speed.
 
 
 Fan Connector
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 The AD-GMSL522-SL carrier board includes a 4-pin Fan
 header (P26). This connector is compatible with 70797 Auvidea Cooling Kit.
 
 Reset Header
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 System signals such as POWER_BTN*, FORCE_RECOVERY*, SYS_RESET*, are brought to a standard 0.254 mm pitch header P11.
 
@@ -393,12 +398,6 @@ System signals such as POWER_BTN*, FORCE_RECOVERY*, SYS_RESET*, are brought to a
 | 10      | Not used         |                                                |
 +---------+------------------+------------------------------------------------+
 
-|
-|
-
 .. admonition:: Download
 
-  - `AD-GMSL522-SL schematics <02_074767b_top_public.pdf>`_
-
-
-------------------------------------------------------------------------------------------------------------------------------------------------
+  - :download:`AD-GMSL522-SL schematics <02_074767b_top_public.pdf>`
