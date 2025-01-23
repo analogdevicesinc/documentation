@@ -1,10 +1,11 @@
 AD-GMSL522-SL
-================
+=============
 
 Overview
 --------
 
-The :adi:`AD-GMSL522-SL` is a :adi:`Gigabit Multimedia Serial Link(GMSL) <en/solutions/gigabit-mulitimedia-serial-link.html>`-enabled
+The :adi:`AD-GMSL522-SL` is a
+:adi:`Gigabit Multimedia Serial Link(GMSL) <en/solutions/gigabit-mulitimedia-serial-link.html>`-enabled
 NVIDIA Jetson Xavier NX-based hardware and software solution that allows for
 prototyping with GMSL technology. This solution creates a scalable, user
 friendly, GMSL platform for receiving and transmitting data over GMSL. It
@@ -20,11 +21,10 @@ and MAX96717GTJ/VY+ CSI-2 to GMSL2 serializer and provides a reliable platform
 to evaluate high-bandwidth GMSL.
 
 .. image:: ad-viper-sl_angle.jpg
-    :width: 600 px
-
+   :width: 400 px
 
 Features
-----------
+--------
 
 - Hardware solution that bridges the gap between GMSL2 technology and the NVIDIA Jetson
 - On-board MAX96724 that allows 4x GMSL2/1 camera inputs that allows for camera module bring-up, debug, and video streaming
@@ -33,52 +33,44 @@ Features
 - SAMTEC connector that allows connection of any GMSL DPHY EV Kit to the NVIDIA Jetson
 - Additional inputs: USB, Ethernet, PCIe, and microSD card
 
-
-
 Applications
----------------
+------------
 
 - ADAS Camera Solutions
 - Sensor Fusion ECU
 - Driver and Occupant Monitoring
 - In-cabin Infotainment
 
-
-
 System Architecture
 ---------------------
 
 .. image:: ad-gmsl522-sl_block_diagram.png
 
-
-
 Specifications
 -----------------
 
 .. csv-table::
-    :file: specifications.csv
-
-
-
+   :file: specifications.csv
 
 Software Development
 ---------------------------
 
-The GMSL Linux kernel drivers, the complete
-Linux distributions for the supported processing platforms, and software user
-guides can be found on the `Analog Devices GMSL GitHub repository <https://github.com/analogdevicesinc/gmsl>`__.
+The GMSL Linux kernel drivers, the complete Linux distributions for the supported
+processing platforms, and software user guides can be found on the
+:git-gmsl:`Analog Devices GMSL GitHub repository </>`.
 
+User Guides
+-----------
 
-System Setup and Evaluation
--------------------------------
+Get complete access to hardware components, design files, and procedure on
+how to setup and use the AD-GMSL522-SL Carrier Board:
 
-.. tip::
-     Get complete access to hardware components, design files, and procedure on how to setup and use the AD-GMSL522-SL Carrier Board:
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :glob:
 
-      - :dokuwiki:`AD-GMSL522-SL Getting Started Guide <resources/eval/user-guides/ad-gmsl522-sl/getting-started>`
-      - :dokuwiki:`AD-GMSL522-SL Hardware Guide <resources/eval/user-guides/ad-gmsl522-sl/hardware>`
-
-
+   */index
 
 Resources
 -----------
@@ -93,24 +85,11 @@ Resources
 - :adi:`MAX25206 Product Page <MAX25206>`
 - :adi:`LTC3303 Product Page <LTC3303>`
 
-
 Support
 -------
 
-For questions and more information, please contact us on the **Analog Devices Engineer Zone**.
+For questions and more information, please contact us on the :ez:`/`.
 
-- :ez:`EngineerZone Linux Support <linux-software-drivers/>`
+- :ez:`EngineerZone Linux Support <linux-software-drivers>`
 - :adi:`GMSL-Related Technical Support <en/support.html>`
-
-
----------------------------------------------------------------------------------------------------------------------------------------------
-Up Next...
-
-
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
-   :glob:
-
-   */index
 

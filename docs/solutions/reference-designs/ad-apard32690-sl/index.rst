@@ -1,6 +1,6 @@
 
 AD-APARD32690-SL 
-==================
+================
 
 Introduction
 ------------
@@ -30,15 +30,11 @@ industrial field devices. Some of the main features and benefits include:
 .. csv-table:: Specifications
     :file: specifications.csv
 
-
-
 **Hardware design files:**
 
-- `Schematics <02-073637-01-c.pdf>`_
-- `Layout <08_073637c.zip>`_
-- `Bill of Materials <05-073637-01-c.zip>`_
-
-
+- :download:`Schematics <02-073637-01-c.pdf>`
+- :download:`Layout <08_073637c.zip>`
+- :download:`Bill of Materials <05-073637-01-c.zip>`
 
 System Setup & Evaluation
 -------------------------
@@ -69,18 +65,10 @@ the components in the system as well as example applications enabling
 connectivity via the 10BASE-T1L interface for system configuration and data
 transfer.
 
-`AD-APARD32690-SL Firmware Source Code and User Guide <https://github.com/analogdevicesinc/no-OS/tree/main/projects/apard32690>`_
+`AD-APARD32690-SL Firmware Source Code and User Guide <https://github.com/analogdevicesinc/no-OS/tree/main/projects/apard32690>`__
 
-
-
-Help and Support
-----------------
-
-For questions and more information, please visit the `EngineerZone Support Community <https://ez.analog.com/reference-designs>`_.
-
-
-Up Next: Hardware & Software User Guide
-----------------------------------------
+User Guides
+-----------
 
 .. toctree::
    :titlesonly:
@@ -88,3 +76,7 @@ Up Next: Hardware & Software User Guide
 
    */index
 
+Help and Support
+----------------
+
+For questions and more information, please visit the :ez:`/`.
