@@ -1,0 +1,7 @@
+﻿Jumper,GPIO,Circuit Function,Description
+JP9,GPIO27,ADIN1110 Reset,This an active low ADIN1110 input that resets the part when held low for >10 μs.
+JP10,GPIO22,ADIN1110 Link Status Output,This is an active high ADIN1110 output that indicates whether a valid 10BASE-T1L link has been established.
+JP11,GPIO23,Time Stamp Capture Signal,Assert this pin to timestamp the latest incoming frame received by the ADIN1110. The captured timestamp will be stored in the TS_EXT_CAPT0 and TS_EXT_CAPT1 registers.
+JP12,GPIO24,Time Stamp Timer Signal,"This pin is connected to the TS_TIMER pin of the ADIN1110. When the TS_TIMER output is enabled in the device registers, a waveform with high and low times set by the TS_TIMER_HI and TS_TIMER_LO registers is generated."
+JP13,GPIO6,Overtemperature Indicator,"This pin is asserted when the onboard ADT75 temperature sensor is put into one-shot mode and the temperature measurement exceeds TOS (80°C; default value). By default, the indicator is active low and will only be de-asserted when the temperature drops below THYST (75°C; default value). The temperature sensor can be reprogrammed to change the polarity of this pin, the de-assertion requirement, and the values of TOS and THYST."
+,,,
