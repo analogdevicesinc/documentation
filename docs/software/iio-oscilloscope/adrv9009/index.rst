@@ -44,5 +44,3 @@ There are two plugins available for the ADRV9009:
 
    plugin
    advanced-plugin
-
-

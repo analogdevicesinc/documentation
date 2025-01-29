@@ -31,6 +31,8 @@ LED(s)?
 [Oo]btain
 [Ll]oopback
 [Aa]dditional
+[Hh]ighspeed
+[Dd]efconfig
 
 Tx
 Rx
@@ -39,7 +41,12 @@ Doherty
 PCIe
 Agilent
 Stratix
+Virtex
+MicroBlaze
+Versal
 APIs
+DAC(s)?
+ADC(s)?
 
 ns
 dBm
@@ -53,9 +60,13 @@ Gbps
 [Dd]atasheet
 [Hh]owever
 [Vv]arious
+[Mm]ultiband
+[Ww]ideband
+[Tt]ransmit
 
 # Passiv allow
 is rated
 is kept
 are highlighted
 be adjusted
+in order to
