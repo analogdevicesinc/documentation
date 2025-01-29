@@ -28,6 +28,12 @@ Clock Generation and Distribution
 Digital to Analog Converters
 -------------------------------------------------------------------------------
 
+.. toctree::
+   :caption: Mixed-Signal Front Ends (MxFE)
+   :maxdepth: 1
+
+   ad9084_fmca_ebz/index
+
 Digital to Analog Converters (Current Output)
 -------------------------------------------------------------------------------
 
