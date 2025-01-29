@@ -278,6 +278,7 @@ Each hardware plugin is documented individually:
    :titlesonly:
 
    adrv9009/index
+   ad9084/index
 
 Here are a few common options:
 
