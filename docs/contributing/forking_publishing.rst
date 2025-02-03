@@ -326,7 +326,7 @@ And to fix is simple:
 
 .. shell::
 
-   $git add --renomalize .
+   $git add --renormalize .
    $git commit -m "Convert binary files to pointers"
    $git push
 

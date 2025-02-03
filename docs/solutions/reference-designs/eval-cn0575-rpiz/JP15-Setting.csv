@@ -1,0 +1,3 @@
+﻿JP15 Setting,Connection
+Open,ALERT LED is connected to GPIO26 of the Raspberry Pi (Default).
+Shorted,ALERT LED is not connected to the Raspberry Pi.
