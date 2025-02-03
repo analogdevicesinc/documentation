@@ -51,7 +51,7 @@ The ADALM2000 (M2K) Advanced Active Learning Module is an affordable USB-powered
 Hands-on activity
 ~~~~~~~~~~~~~~~~~
 
-By the end of this lab, you will learn:
+By the end of this workshop, you will learn:
 
 - How to use a desktop Oscilloscope and Signal generator channels by operating a Network Analyzer, as well as Digital Pattern generator
 - How to interface an analog front end simple circuit with M2K channels

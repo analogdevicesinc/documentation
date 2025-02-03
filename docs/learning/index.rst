@@ -63,3 +63,6 @@ Academic Workshops
    :maxdepth: 1
 
    workshops_software_defined_instrumentation/index
+   workshops_introduction_to_electronics/index
+   workshops_embedded_baremetal/index
+   workshops_embedded_linux/index
