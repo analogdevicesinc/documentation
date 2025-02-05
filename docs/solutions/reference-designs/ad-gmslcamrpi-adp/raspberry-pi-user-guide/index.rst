@@ -1,10 +1,10 @@
 .. _ad-gmslcamrpi-adp raspberry-pi-user-guide:
 
 Using with Raspberry Pi
-=========================
+=======================
 
 Required Hardware
--------------------
+-----------------
 
 **Development Kits**
 
@@ -19,7 +19,9 @@ Required Hardware
 
 **Cables**
 
-.. Warning:: Do not use the 15-pin ribbon cable included with the Raspberry Pi camera since that is an opposite sided cable.
+.. warning::
+
+   Do not use the 15-pin ribbon cable included with the Raspberry Pi camera since that is an opposite sided cable.
 
 - 15-Pin Type A (**same side**) Flexible Ribbon Cable, P/N: MP-FFCA10152003A or `similar <https://www.amazon.com/dp/B07RVD2MZV>`__
 - 22-Pin Type B (**opposite side**) Flexible Ribbon Cable, P/N: MP-FFCA05222002B or `similar <https://www.amazon.com/dp/B07S1BSPYD>`__
@@ -99,14 +101,14 @@ board, please visit the respective datasheet documentation:
 .. figure:: serializer_interposer_cfg.png
    :width: 300 px
 
-   Serializer Adapter Camera Switches 
+   Serializer Adapter Camera Switches
 
 **Deserializer Adapter**
 
 .. figure:: deserializer_interposer_cfg.png
    :width: 300 px
 
-   Deserializer Adapter Camera Switches 
+   Deserializer Adapter Camera Switches
 
 System Setup
 ------------
@@ -133,7 +135,7 @@ board.
    Connect the 15-pin Ribbon Cable to the GMSL Adapter Board (opposite side)
 
 On the other side of the 15- to 22-pin adapter board, connect the 22-pin ribbon
-cable. 
+cable.
 
 .. note:: This is an opposite sided flex cable, please ensure it matches the orientation in the picture.
 
@@ -347,5 +349,3 @@ the expected connections and communications have been made.
    camera setup.
 
 .. [#f1] More information about these commands found at `mankier.com/8/i2cdetect <https://www.mankier.com/8/i2cdetect>`__.
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
