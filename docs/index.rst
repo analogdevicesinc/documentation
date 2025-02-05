@@ -34,7 +34,6 @@ Contents
    :caption: Evaluation Boards
    :maxdepth: 2
    :glob:
-   :glob:
 
    eval/*/index
 
