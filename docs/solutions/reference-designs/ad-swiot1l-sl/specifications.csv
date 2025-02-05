@@ -1,0 +1,18 @@
+﻿I/O,
+Channels,4 Software-configurable I/O Channels
+Digital input,"Type 1 and 3, or Type 2"
+Digital output,High-Side (HS) Switch or Push-Pull (PP) Driver
+Analog input,"Voltage (0 V to 10 V), Current (0 mA to 25 mA)"
+Analog output,"Voltage (0 V to 11 V), Current (0 mA to 25 mA)"
+RTD measurements,2-wire RTD (0 Ω to 1 MΩ)
+Computing Resources,
+CPU,MAX32650 Low-Power Arm Cortex-M4 with FPU-Based Microcontroller with Bluetooth 5 for Wearables
+Memory,1 Gb RAM
+Storage,64 Mb QSPI Flash
+Connectivity,
+Ethernet,10BASE-T1L
+Power supply,
+External power,24 DC at 6 A
+Power over Ethernet,SPoE class 12
+Operating Conditions,
+Temperature Range,-25°C to 60°C
