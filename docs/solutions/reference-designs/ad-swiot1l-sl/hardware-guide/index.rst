@@ -1,11 +1,11 @@
 Hardware User Guide
-=====================
+===================
 
 Introduction
---------------
+------------
 
-The :adi:`AD-SWIOT1L-SL` design incorporates the :adi:`AD74413R` Quad-Channel, Software Configurable Input and Output
-and the :adi:`MAX14906` Quad-Channel industrial Digital
+The :adi:`AD-SWIOT1L-SL` design incorporates the :adi:`AD74413R` Quad-Channel,
+Software Configurable Input and Output and the :adi:`MAX14906` Quad-Channel industrial Digital
 Output/Digital Input ICs, allowing the multiplexing of several analog and
 digital functions on four channels which can be independently configurable
 through software to act as:
@@ -47,12 +47,12 @@ The figures represented below illustrate the main components used in the
 :adi:`AD-SWIOT1L-SL` project.
 
 .. figure:: swiot1l_block_diagram.png
-    
-     :adi:`AD-SWIOT1L-SL` Simplified Block Diagram
-    
-.. figure::ad-swiot1l-brd.png
 
-     :adi:`AD-SWIOT1L-SL` Development Board
+   :adi:`AD-SWIOT1L-SL` Simplified Block Diagram
+
+.. figure:: ad-swiot1l-brd.png
+
+   :adi:`AD-SWIOT1L-SL` Development Board
 
 Front-end
 ---------
@@ -63,10 +63,10 @@ portion which composes the front end of the :adi:`AD74413R` and
 available analog and digital functions.
 
 .. figure:: swiot1l_front_end.jpg
-    :align: left
-    :width: 600 px
-    
-    Front-end Devices
+   :align: left
+   :width: 600 px
+
+   Front-end Devices
 
 The 220 pF capacitor connected to the **CCOMP_x** pins
 allows the :adi:`AD74413R` to drive high capacitive loads in the
@@ -100,9 +100,9 @@ Power Supply Options
 The :adi:`AD-SWIOT1L-SL` board can be powered in two ways:
 
 .. figure:: swiot1l_p4_p3.png
-    :width: 400 px 
+   :width: 400 px
 
-    :adi:`AD-SWIOT1L-SL` Power Supply
+   :adi:`AD-SWIOT1L-SL` Power Supply
 
 - Power from an external 24 V supply via the **“24 V TERMINAL BLOCK”**, P4
   connector on the board.
@@ -113,9 +113,9 @@ Each pin function is indicated in a drawing on the PCB board like in the right
 side picture.
 
 .. figure:: swiot1l_s2.png
-    :width: 400 px
+   :width: 400 px
 
-    :adi:`AD-SWIOT1L-SL` Power Switch
+   :adi:`AD-SWIOT1L-SL` Power Switch
 
 If both power supplies are in the system simultaneously, the
 system will take power from the external power supply connected to the **“24 V
@@ -135,15 +135,13 @@ For high-power applications which require the usage of
 need to be powered from an external supply with the **“POWER SWITCH”** commuted
 to the external supply position like in the figure represented below.
 
-.. note:: 
+.. note::
 
-     The greyed-out portions from the figures below represent circuits not used in that particular configuration.
+   The greyed-out portions from the figures below represent circuits not used in that particular configuration.
 
 .. figure:: swiot1l_at_full_power.png
 
-    :adi:`AD-SWIOT1L-SL` at Full Power
-
-|
+   :adi:`AD-SWIOT1L-SL` at Full Power
 
 If the **“POWER SWITCH”** is commuted to the internal supply position like in
 the figure represented below, the :adi:`MAX14906` will not function
@@ -152,9 +150,7 @@ configured.
 
 .. figure:: swiot1l_at_mid_power.png
 
-    :adi:`AD-SWIOT1L-SL` at Mid Power
-
-|
+   :adi:`AD-SWIOT1L-SL` at Mid Power
 
 If the system is powered from a Single-pair Power over Ethernet (SPoE) supply,
 like the :adi:`EVAL-SPoE-KIT-AZ`, via the **“10BASE-T1L
@@ -163,10 +159,10 @@ TERMINAL BLOCK”**, as is illustrated in the figure below, the
 depending on the application.
 
 .. important::
-    
-     Care should be taken into consideration to flip the **“POWER
-     SWITCH”** into the internal power supply position to avoid the situation to
-     establish communication with an unpowered device, which may trigger a software crash.
+
+   Care should be taken into consideration to flip the **"POWER SWITCH"**
+   into the internal power supply position to avoid the situation to
+   establish communication with an unpowered device, which may trigger a software crash.
 
 .. figure:: swiot1l_at_low_power.png
 
@@ -192,19 +188,17 @@ On the right side illustration, when the system is powered from an SPoE power
 supply, it can also be observed the Serial Communication Classification
 Protocol (SCCP) transaction, before the power (24 V) is turned on.
 
-  .. figure:: swiot1l_power_up_section_1.jpg
-     :width: 600 px
-     :align: left
+.. figure:: swiot1l_power_up_section_1.jpg
+   :width: 600 px
+   :align: left
 
-     External Power Supply
+   External Power Supply
 
-  .. figure:: swiot1l_power_up_section_1_1.jpg
-     :width: 600 px
-     :align: right
+.. figure:: swiot1l_power_up_section_1_1.jpg
+   :width: 600 px
+   :align: right
 
-     SPoE Power Supply
-
------------------------------------------
+   SPoE Power Supply
 
 After that, the “CONTROLLER POWER” section will be powered by
 :adi:`MAX17671` together with :adi:`ADP223` (**left side
@@ -218,16 +212,16 @@ At the same time, the “FIELD POWER” section is powered by
 the rest of the peripherals which compose one side of the digital interface.
 
 .. figure:: swiot1l_power_up_section_3.jpg
-    :width: 600 px
-    :align: left
+   :width: 600 px
+   :align: left
 
-    Controller Section Power-up
+   Controller Section Power-up
 
 .. figure:: swiot1l_power_up_section_2.jpg
-    :width: 600 px
-    :align: right
+   :width: 600 px
+   :align: right
 
-    Field Section Power-up
+   Field Section Power-up
 
 Protection
 ----------
@@ -255,7 +249,7 @@ Software I/O Connections
 
 .. figure:: swiot1l_channels_connections.png
 
-    AD-SWIOT1L-SL Channels
+   AD-SWIOT1L-SL Channels
 
 Since this system has 4 channels, which can
 be configured with different functions, to control or monitor different
@@ -272,7 +266,7 @@ Isolation
 
 .. figure:: ad-swiot1l-brd_isolation.png
 
-    AD-SWIOT1L-SL Isolation Circuitry
+   AD-SWIOT1L-SL Isolation Circuitry
 
 To provide a minimum of safety to the design from eventual energy surges during
 operation or setup installation, to protect the digital section of the design
@@ -308,44 +302,44 @@ control applications.
 
 .. figure:: swiot1l_pmod_iso.png
 
-    Pmod Connector and Additional Digital Isolators 
+   Pmod Connector and Additional Digital Isolators
 
 10BASE-T1L Interfacing
 ----------------------
 
 .. figure:: ad-t1lusb2.0-ebz.jpg
-    :width: 400 px
+   :width: 400 px
 
-    AD-T1LUSB-EBZ 10BASE-T1L to USB Adapter
+   AD-T1LUSB-EBZ 10BASE-T1L to USB Adapter
 
 The :adi:`AD-SWIOT1L-SL` kit includes a
 10BASE-T1L to USB adapter :adi:`AD-T1LUSB2.0-EBZ` which is useful to directly
 control the board via a USB connection.
 
-.. note:: 
-     
-      Check out here the :dokuwiki:`User Guide for AD-T1LUSB2.0-EBZ <resources/eval/user-guides/ad-t1lusb-ebz>`
+.. note::
+
+   Check out here the :dokuwiki:`User Guide for AD-T1LUSB2.0-EBZ <resources/eval/user-guides/ad-t1lusb-ebz>`
 
 Besides this, other 10BASE-T1L media converters like the
 :adi:`EVAL-ADIN1100` can be used to directly interface the
 AD-SWIOT1L-SL board on an Ethernet network.
 
 .. figure:: swiot1l_with_eval_adin1100.jpg
-    :width: 500 px
+   :width: 500 px
 
-    AD-SWIOT1L-SL with EVAL-ADIN1100 10BASE-T1L Media Converter
+   AD-SWIOT1L-SL with EVAL-ADIN1100 10BASE-T1L Media Converter
 
 .. figure:: swiot1l_with_t1lusb.jpg
-    :width: 500 px
+   :width: 500 px
 
-    AD-SWIOT1L-SL with AD-T1LUSB-EBZ 10BASE-T1L to USB Adapter
+   AD-SWIOT1L-SL with AD-T1LUSB-EBZ 10BASE-T1L to USB Adapter
 
 Single-pair Power over Ethernet (SPoE)
 --------------------------------------
 
 .. figure:: swiot1l_with_spoe.jpg
 
-    AD-SWIOT1L-SL Powered via SPoE
+   AD-SWIOT1L-SL Powered via SPoE
 
 As mentioned earlier, in the introduction section, the AD-SWIOT1L-SL board can
 be powered via the SPoE technology. For this, we mainly need to use the
@@ -372,7 +366,7 @@ LED Indicators
 
 .. figure:: ad-swiot1l-brd_leds.png
 
-    AD-SWIOT1L-SL LED Indicators
+   AD-SWIOT1L-SL LED Indicators
 
 There are a couple of LEDs present on the board which are used to indicate
 particular system statuses.
@@ -399,19 +393,17 @@ Thermal Info
 ------------
 
 .. figure:: swiot1l_idle.jpg
-    :width: 400 px
+   :width: 400 px
 
-    AD-SWIOT1L-SL Idle Mode Temperature
+   AD-SWIOT1L-SL Idle Mode Temperature
 
 The operating temperature of the AD-SWIOT1L-SL board before it is configured will be around 10°C
 over the ambient temperature.
 
------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 .. figure:: ad74413r_max_power.jpg
-    :width: 400 px
+   :width: 400 px
 
-    AD74413R Maximum Temperature
+   AD74413R Maximum Temperature
 
 The maximum temperature of the
 :adi:`AD74413R` circuitry when is operating at maximum power.
@@ -420,12 +412,10 @@ This is the situation when all channels are using the
 :adi:`AD74413R` sourcing functions at the maximum limit, for
 example, all channels are sourcing 25 mA.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-
 .. figure:: max14906_max_power.jpg
-     :width: 400 px
+   :width: 400 px
 
-     MAX14906 Maximum Temperature
+   MAX14906 Maximum Temperature
 
 The maximum temperature of the
 :adi:`MAX14906` circuitry when is operating at maximum power.
@@ -444,4 +434,3 @@ Support
 Analog Devices will provide **limited** online support for anyone using the
 reference design with Analog Devices components via the :ez:`EngineerZone Reference Designs <ez/reference-designs>` forum.
 
---------------
