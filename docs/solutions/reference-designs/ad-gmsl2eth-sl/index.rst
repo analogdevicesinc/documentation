@@ -1,16 +1,16 @@
 AD-GMSL2ETH-SL
-=================
+==============
 
-FPGA-based 8x GMSL to 10 Gb Ethernet Adapter 
-""""""""""""""""""""""""""""""""""""""""""""""""
+FPGA-based 8x GMSL to 10 Gb Ethernet Adapter
+""""""""""""""""""""""""""""""""""""""""""""
 
 Introduction
 ------------
 
 .. figure:: ad-gmsl2eth-sl.jpg
-    :width: 400 px
+   :width: 400 px
 
-    AD-GMSL2ETH-SL GMSL Board
+   AD-GMSL2ETH-SL GMSL Board
 
 The **AD-GMSL2ETH-SL** is an edge compute platform enabling low latency data
 transfer from eight :adi:`Gigabit Multimedia Serial Link™ (GMSL) <en/product-category/gigabit-multimedia-serial-link.html>`
@@ -26,12 +26,10 @@ is critical. Some of the main features and benefits include:
 - Open-source embedded Linux software and FPGA design
 - Advanced camera triggering functions and control features
 
-.. image:: ad-gmsl2eth-sl-block-diagram.png
-    :width: 800 px
+.. figure:: ad-gmsl2eth-sl-block-diagram.png
+   :width: 800 px
 
-    AD-GMSL2ETH-SL Simplified Block Diagram
-
-|
+   AD-GMSL2ETH-SL Simplified Block Diagram
 
 Specifications
 --------------
@@ -71,7 +69,6 @@ Specifications
 +-----------------------+-----------------------------------------------------+
 
 
-
 System Setup & Evaluation
 -------------------------
 
@@ -90,17 +87,16 @@ FPGA SD Card Image
 ------------------
 
 .. admonition:: Download
-     `SD card image <https://swdownloads.analog.com/cse/gmsl/10G/gmsl-10g-fsync.tar.xz>`__
 
+   `SD card image <https://swdownloads.analog.com/cse/gmsl/10G/gmsl-10g-fsync.tar.xz>`__
 
-After downloading the file, extract the compressed image and write it to the SD card using `Balena Etcher <https://www.balena.io/etcher>`__ or
+After downloading the file, extract the compressed image and write it to the SD
+card using `Balena Etcher <https://www.balena.io/etcher>`__ or
 `Win32-Disk-Imager <https://sourceforge.net/projects/win32diskimager/files/Archive/>`__.
 
 More details on how to extract a compressed image and write it on the SD card on
-Linux and Windows can be found here: `Writing an image onto the SD
-card <http://github.com/analogdevicesinc/aditof_sdk/blob/master/doc/sdcard_burn.md>`__
-
-
+Linux and Windows can be found here:
+`Writing an image onto the SD card <http://github.com/analogdevicesinc/aditof_sdk/blob/master/doc/sdcard_burn.md>`__
 
 System Setup
 ------------
@@ -109,94 +105,98 @@ In order to boot using SD card, you will need to set the boot mode’s switches 
 the corresponding position, as indicated in the following image:
 
 .. figure:: img_1242_1_.jpg
-    :width: 400 px
+   :width: 400 px
 
-    Boot Mode Switches Position
+   Boot Mode Switches Position
 
 Connect the Quad-based mini-Fakra cables to the corresponding connectors on the
 board. These will connect the cameras to the corresponding deserializers.
 
 .. figure:: img_1247_1_.jpg
-    :width: 400 px
+   :width: 400 px
 
-    Connecting the Fakra Cables
+   Connecting the Fakra Cables
 
 Connect a SFP+ cable to the corresponding SFP port on the board.
 
 .. figure:: img_1244_1_.jpg
-    :width: 400 px
+   :width: 400 px
 
-    Connecting the SFP Cable
+   Connecting the SFP Cable
 
 Finally, you will need to connect an USB/micro-USB cable to the micro-USB port
 located on the board. After that, you will be able to connect to the first USB
 com port that appears on the serial terminal, with a baud rate of 115200.
 
-.. note:: 
-       Ubuntu credentials 
-      * user:analog
-      * pass:analog
+.. note::
 
-::
+   Ubuntu credentials
 
-        #eth0 - 10G ethernet interface
+   * user:analog
+   * pass:analog
 
-        $ ls -l /sys/class/net/
-        total 0
-        lrwxrwxrwx 1 root root 0 Mar 20 16:32 eth0 -> ../../devices/platform/axi/a0000000.ethernet/net/eth0
-        lrwxrwxrwx 1 root root 0 Mar 20 16:32 lo -> ../../devices/virtual/net/lo
-        lrwxrwxrwx 1 root root 0 Mar 20 16:32 sit0 -> ../../devices/virtual/net/sit0
+.. shell::
 
-.. Important:: Both server and client should have the same MTU
+   #eth0 - 10G ethernet interface
+   $ls -l /sys/class/net/
+    total 0
+    lrwxrwxrwx 1 root root 0 Mar 20 16:32 eth0 -> ../../devices/platform/axi/a0000000.ethernet/net/eth0
+    lrwxrwxrwx 1 root root 0 Mar 20 16:32 lo -> ../../devices/virtual/net/lo
+    lrwxrwxrwx 1 root root 0 Mar 20 16:32 sit0 -> ../../devices/virtual/net/sit0
 
-::
+.. important::
 
-        #Set the eth0's MTU and IP address
+   Both server and client should have the same MTU
 
-        $ sudo ip link set mtu 9000 dev eth0 up
-        $ sudo ifconfig eth0 10.42.0.1
-        $ ip a
-        1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-            link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-            inet 127.0.0.1/8 scope host lo
-                valid_lft forever preferred_lft forever
-            inet6 ::1/128 scope host 
-                valid_lft forever preferred_lft forever
-        2: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
-            link/sit 0.0.0.0 brd 0.0.0.0
-        3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc mq state UP group default qlen 1000
-            link/ether a2:78:c4:14:da:c2 brd ff:ff:ff:ff:ff:ff
-            inet 10.42.0.1/8 brd 10.255.255.255 scope global eth0
-                valid_lft forever preferred_lft forever
-            inet6 fe80::a078::c4ff:fe14:dac2/64 scope link 
-                valid_lft forever preferred_lft forever
+.. shell::
 
-::
+   #Set the eth0's MTU and IP address
+   $sudo ip link set mtu 9000 dev eth0 up
+   $sudo ifconfig eth0 10.42.0.1
+   $ip a
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+            valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host
+            valid_lft forever preferred_lft forever
+    2: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+        link/sit 0.0.0.0 brd 0.0.0.0
+    3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc mq state UP group default qlen 1000
+        link/ether a2:78:c4:14:da:c2 brd ff:ff:ff:ff:ff:ff
+        inet 10.42.0.1/8 brd 10.255.255.255 scope global eth0
+            valid_lft forever preferred_lft forever
+        inet6 fe80::a078::c4ff:fe14:dac2/64 scope link
+            valid_lft forever preferred_lft forever
 
-        #Configure the video pipeline and the cameras
-        $ cd /home/analog/Workspace/K26
-        $ ./media_cfg_des1/2/12.sh (depending on the desired deserializer or 12 for the case when there are two deserializers with 4 cameras)
+.. shell::
 
-        #Start streaming to another host
-        $ cd /home/analog/Workspace/gstreamer
-        $ ./stream_1des_4cams/2des_8cams.sh (depending on the number of cameras - 4 or 8 cameras - 1 or 2 deserializers) [HOST_IP_ADDRESS of the x86-based workstation can be modified/by default is set to 10.42.0.106 in this script]
+   #Configure the video pipeline and the cameras
+   $cd /home/analog/Workspace/K26
+   $./media_cfg_des1/2/12.sh
+   #(depending on the desired deserializer or 12 for the case when there are two deserializers with 4 cameras)
 
-.. note:: 
+   #Start streaming to another host
+   $cd /home/analog/Workspace/gstreamer
+   #(depending on the number of cameras - 4 or 8 cameras - 1 or 2 deserializers)
+   $./stream_1des_4cams/2des_8cams.sh [HOST_IP_ADDRESS of the x86-based workstation can be modified/by default is set to 10.42.0.106 in this script]
+
+.. note::
 
     In order to stop all this processes generated by the streaming-related
     scripts, you can use the Linux pidof command to see what are the IDs of this
     gstreamer-related instaces, and after that kill these ones by using Linux kill
     command, in the following way:
 
-::
+.. shell::
 
-        $ pidof gst-launch-1.0 [That is the command to show the ID numbers of the opened processes and will show you 8 numbers - like in the following line]
-        $ 800 799 798 797 796 795 794 793
-        $ sudo kill 800 799 797 796 795 794 793
+   #That is the command to show the ID numbers of the opened processes and will show you 8 numbers - like in the following line
+   $pidof gst-launch-1.0
+   $800 799 798 797 796 795 794 793
+   $sudo kill 800 799 797 796 795 794 793
 
 
 Now the streams are running on ports 5004 to 5007, depending on the configured number of cameras.
-
 
 Displaying the Video
 --------------------
@@ -206,108 +206,103 @@ must be installed.
 
 
 Single Deserializer (4 cameras)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now open 4 instances of Gstreamer for each port(5004-5007).
 
 **On x86 workstation**
 
-:: 
+.. shell::
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5004” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5004” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5005” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5005” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5006” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5006” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5007” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
-
-
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5007” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
 .. figure:: img_1252_1_.jpg
 
-    Gstreamer Video Display for Single Deserializer (4 Cameras)
-
-|    
+   Gstreamer Video Display for Single Deserializer (4 Cameras)
 
 2 x Deserializers (8 cameras)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now open 8 instances of Gstreamer for each port(5004-5011).
 
 **On x86 workstation**
-::
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5004” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+.. shell::
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5005” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5004” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5006” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5005” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5007” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5006” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5008” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5007” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5009” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5008” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5010” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5009” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
-        $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-        depth=(string)8, width=(string)1920, height=(string )1080” port=“5011” !
-        rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
-        text-overlay=true sync=false
+   $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5010” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
+   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
+    depth=(string)8, width=(string)1920, height=(string )1080” port=“5011” !
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+    text-overlay=true sync=false
 
-|
+..
+   Enable after adding new content
+
+   User Guides
+   -----------
+
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 1
+      :glob:
+
+      */index
 
 Help and Support
 ----------------
 
-For questions and more information, please visit the `EngineerZone Support Community <https://ez.analog.com/reference-designs>`_.
-
-|
-
-----------------------------------------------------------------------------------------------------------
-
-
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
-   :glob:
-
-   */index
+For questions and more information, please visit the :ez:`/`.
 
 
