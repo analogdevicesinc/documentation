@@ -1,17 +1,22 @@
 EVAL-ISOMAX
 ===========
 
+Low-cost Integrated BMS Monitor with On-board MCU and Dual isoSPI
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 Overview
 --------
 
-.. image:: eval-isomax_angle.jpg
+.. figure:: eval-isomax_angle.jpg
    :align: right
+
+   EVAL-ISOMAX Dual isoSPI Adapter
 
 The :adi:`EVAL-ISOMAX` is an integrated dual isoSPI adapter and
 microcontroller board featuring the :adi:`MAX32670`
 high-reliability, ultra-low-power microcontroller and the
 :adi:`ADBMS6822` dual isoSPI transceiver. This board allows
-multiple ADBMS68xx battery monitors to be connected through daisy-chain
+multiple ADBMS68xx battery monitors to be connected through daisy chain
 configuration. The EVAL-ISOMAX also features reversible isoSPI, which enables a
 redundant path to the peripheral units. The PCB components and DuraClik
 connectors are optimized for low electromagnetic interference (EMI)
@@ -45,17 +50,24 @@ Applications
 What's Inside the Box?
 ----------------------
 
-.. image:: eval-isomax_package_contents.png
+.. figure:: eval-isomax_package_contents.png
+   :width: 400 px
+
+   EVAL-ISOMAX Package Contents
 
 System Architecture
 -------------------
 
-.. image:: eval-isomax_block_diagram.png
+.. figure:: eval-isomax_block_diagram.png
+   :width: 600 px
+
+   EVAL-ISOMAX Simplified Block Diagram
 
 Components and Connections
 --------------------------
 
 .. figure:: primary_side.png
+   :width: 600 px
 
    EVAL-ISOMAX Hardware Components
 
@@ -77,7 +89,10 @@ Option 1: Using the EVAL-ISOMAX as Standalone MCU with other ADI Broad Market BM
 
 Sample Battery Monitoring Setup with the EVAL-ADBMS6830BMSW
 
-.. image:: using_isomax_with_other_adi_bm_boards.png
+.. figure:: using_isomax_with_other_adi_bm_boards.png
+   :width: 600 px
+
+   EVAL-ISOMAX with Other ADI Broadmarket BMS Boards
 
 Option 2: Using the EVAL-ISOMAX as a Secondary Device to other MCU Boards
 -------------------------------------------------------------------------
@@ -86,12 +101,17 @@ See below configuration using different MCUs:
 
 Sample Cell Monitoring Setup using the AD-APARD32690-SL as Main Microcontroller Board and EVAL-ISOMAX as isoSPI Adapter
 
-.. image:: eval-isomax_with_ad-apard32690-sl.png
+.. figure:: eval-isomax_with_ad-apard32690-sl.png
+   :width: 600 px
 
+   EVAL-ISOMAX as a Secondary Device to AD-APARD32690-SL Microcontroller Board
 
 Sample Pack Monitoring Setup using the SDP-K1 as Main Microcontroller Board and EVAL-ISOMAX as isoSPI Adapter
 
-.. image:: adbms2950_with_isomax_and_sdp-k1.png
+.. figure:: adbms2950_with_isomax_and_sdp-k1.png
+   :width: 600 px
+
+   EVAL-ISOMAX as a Secondary Device to SDP-K1 Controller Board
 
 Design and Integration Files
 ----------------------------

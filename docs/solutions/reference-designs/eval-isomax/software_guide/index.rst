@@ -60,15 +60,15 @@ Downloading the BMS Embedded Drivers Installer
    * Tick the checkbox.
    * Then, click the ``I Accept`` button to indicate acceptance of the license agreement.
 
-   .. image:: downloading_drivers.png
+   .. figure:: downloading_drivers.png
+
+      Downloading the BMS Embedded Drivers
 
 #. Click the ``Download`` button to download the installer package.
 
 When software updates or new versions of the software are available an email
 notification will be sent to the email address associated with the MyAnalog
 account used to download the original software package.
-
-
 
 Installing the BMS Embedded Drivers
 ------------------------------------
@@ -115,7 +115,9 @@ Installing the BMS Embedded Drivers
 
    * This will display all the available example projects on the code editor.
 
-   .. image:: examples_folder.png
+   .. figure:: examples_folder.png
+
+     Makefile containing the BMS Examples
 
 10. Configure the Makefile on your desired example project.
 
@@ -123,7 +125,9 @@ The complete procedure on how to use the no-OS BMS examples can be found in the 
 
 File Location: ``C:\Analog\no-OS-BMS-Examples-Rel1.0.0\Documents``
 
- .. image:: examples_installation_guide.png
+ .. figure:: examples_installation_guide.png
+
+     Installation Guide Documents Location
 
 Graphical User Interface
 ------------------------
@@ -154,7 +158,9 @@ Launcher Configuration
 2. Select an appropriately flashed microcontroller board (for this example, SDP-K1).
 3. Launch the evaluation GUI.
 
- .. image:: install_gui.png
+ .. figure:: install_gui.png
+
+    BMS Browser GUI Installer
 
 Establishing Interface Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,7 +171,9 @@ Establishing Interface Connection
 4. Click ``Disconnect`` to terminate the connection for a new one.
 5. Use the refresh button to reload the available MCU boards list.
 
-.. image:: interface_connection.png
+.. figure:: interface_connection.png
+
+   Interface Connection
 
 Daisy Chain Connection
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -175,7 +183,9 @@ compatible ADBMS devices. This process involves selecting a generation of ADBMS
 devices, adding devices to the daisy chain, and configuring the setup for the
 evaluation GUI.
 
-.. image:: daisy_chain_connection.png
+.. figure:: daisy_chain_connection.png
+
+   Daisy Chain Connection
 
 **Select ADBMS Generation**
 
@@ -217,7 +227,9 @@ The Quick Measure tab simplifies metric measurement with a preloaded command seq
 Note that it supports a single device in the daisy chain, and key feature
 enhance configuration and visualization.
 
-.. image:: quick_measure.png
+.. figure:: quick_measure.png
+
+   Quick Measure Tab
 
 **Preloaded Commands:**
 
@@ -254,10 +266,12 @@ The Sequences tab enables the creation and management of custom command sequence
 Load and save sequences, divided into Init and Loop lists. The Init list
 initializes the daisy chain once, while the Loop list runs continuously until
 stopped.
+
 Toggle between lists using the corresponding buttons at the top.
 
-.. image:: sequences.png
+.. figure:: sequences.png
 
+   Sequences Tab
 
 **Load Existing Sequence:**
 
@@ -304,7 +318,9 @@ the Sequences tab.
 It allows combining sequences for a complete execution loop.
 Key features enable precise timing adjustments and visualization.
 
-.. image:: scheduler.png
+.. figure:: scheduler.png
+
+   Scheduler Tab
 
 **Timing Adjustments:**
 
@@ -350,7 +366,9 @@ The Memory Map tab provides a numerical output for the active command loop,
 organized into tables for user convenience. It offers customization and error
 highlighting for effective data analysis.
 
-.. image:: memory_map.png
+.. figure:: memory_map.png
+
+   Memory Map Tab
 
 **Organized Data Display:**
 
@@ -383,8 +401,9 @@ the running command loop.
 It offers customization options for focused analysis and allows for the export
 of captured data for further analysis.
 
-.. image:: plots.png
+.. figure:: plots.png
 
+    Plots Tab
 
 **Plot Selection:**
 
@@ -418,7 +437,9 @@ of captured data for further analysis.
 Data Recall
 ^^^^^^^^^^^
 
-.. image:: data_recall.png
+.. figure:: data_recall.png
+
+   Data Recall Tab
 
 The Data Recall tab allows you to retrieve and plot data from previous freerun
 sessions stored in a database file.
@@ -451,7 +472,9 @@ the database file and test run.
 Diagnostics
 ^^^^^^^^^^^
 
-.. image:: diagnostics.png
+.. figure:: diagnostics.png
+
+    Diagnostics Tab
 
 The Diagnostics tab offers a straightforward way to execute on-device diagnostics
 following the device's safety manual.
