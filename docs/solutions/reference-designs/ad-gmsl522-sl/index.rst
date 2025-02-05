@@ -1,8 +1,17 @@
 AD-GMSL522-SL
 =============
 
+GMSL Carrier Board
+""""""""""""""""""
+
 Overview
 --------
+
+.. figure:: ad-viper-sl_angle.jpg
+   :width: 400 px
+   :align: left
+
+   AD-GMSL522-SL GMSL Board
 
 The :adi:`AD-GMSL522-SL` is a
 :adi:`Gigabit Multimedia Serial Link(GMSL) <en/solutions/gigabit-mulitimedia-serial-link.html>`-enabled
@@ -19,9 +28,6 @@ update these kernels for their specific hardware needs. The design also
 incorporates the MAX96724GTN/VY+ Quad tunneling GMSL2/1 to CSI-2 deserializer
 and MAX96717GTJ/VY+ CSI-2 to GMSL2 serializer and provides a reliable platform
 to evaluate high-bandwidth GMSL.
-
-.. image:: ad-viper-sl_angle.jpg
-   :width: 400 px
 
 Features
 --------
@@ -44,7 +50,10 @@ Applications
 System Architecture
 ---------------------
 
-.. image:: ad-gmsl522-sl_block_diagram.png
+.. figure:: ad-gmsl522-sl_block_diagram.png
+   :width: 600 px
+
+   AD-GMSL522-SL Simplified Block Diagram
 
 Specifications
 -----------------
@@ -53,7 +62,7 @@ Specifications
    :file: specifications.csv
 
 Software Development
----------------------------
+--------------------
 
 The GMSL Linux kernel drivers, the complete Linux distributions for the supported
 processing platforms, and software user guides can be found on the
@@ -73,7 +82,7 @@ how to setup and use the AD-GMSL522-SL Carrier Board:
    */index
 
 Resources
------------
+---------
 
 - :adi:`MAX96724 Product Page <MAX96724>`
 - :adi:`MAX96717 Product Page <MAX96717>`

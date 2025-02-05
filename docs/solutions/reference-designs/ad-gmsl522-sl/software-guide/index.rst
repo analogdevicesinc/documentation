@@ -97,8 +97,10 @@ means that another voltage source should not be connected to these FAKRA
 connectors, otherwise damage could be caused to either the AD-GMSL522-SL
 board, or the user’s module.
 
-.. image:: samtec_connector_image.png
+.. figure:: samtec_connector_image.png
    :width: 600 px
+
+   High-speed FAKRA Connectors
 
 The MAX96724 has its Port B CSI-2 DPHY bus connected to the input of the Jetson
 SoM. The second way that a user can send video to the Jetson SoM is through the
@@ -240,13 +242,20 @@ effect and can therefore be ignored. With this in mind, it can be stated that
 the voltage see on the configuration pins of the SERDES is almost exactly the
 voltage set by the programming of the potentiometer between 0 and 255. i.e.,
 the voltage on the configuration pin can be summarized by this equation:
-CFG(V)=VDDIO*ProgrammedValue Where ProgrammedValue is a hex value between 0
-and 255 and is set per device in the vr_config file. A snippet of the
-configuration file is shown below. Additionally, there are comments in the
+
+.. math::
+
+      CFG(V)=VDDIO*ProgrammedValue 
+
+Where: ProgrammedValue is a hex value between 0 and 255 and is set per device in the vr_config file. 
+
+A snippet of the configuration file is shown below. Additionally, there are comments in the
 configuration file to give example hex values to set for different
 configuration profiles at the bottom of the file.
 
-.. image:: vr_config.png
+.. figure:: vr_config.png
+
+   Pin Voltages Configuration
 
 Updating/Changing Device Tree Blobs (boot modes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -288,8 +297,10 @@ Open a terminal and run the following command:
 
 If the board and SERDES are properly configured, you should see the following:
 
-.. image:: i2cdetect.jpg
+.. figure:: i2cdetect.jpg
     :width: 600 px
+
+    Verifying SERDES Configuration
 
 General Tips for Using the AD-GMSL522-SL Board
 ----------------------------------------------
@@ -382,7 +393,9 @@ below steps:
      - Make sure not to change any of the parameters in the window because it
        will override what was done in the previous step.
 
-.. image:: better_v4l2_thing.jpg
+.. figure:: better_v4l2_thing.jpg
+
+   Video Viewer Play Button
 
 Loopback Testing and Exercises
 ------------------------------
@@ -395,9 +408,11 @@ exercise unless a connection to the internet, or an intranet for use of
 NoMachine or another VNC. It is important to have a coax cable connected between
 the MAX96717 output and the MAX96724 “A” input.
 
-.. image:: viper_block_diagram_using_loopback_section.png
+.. figure:: viper_block_diagram_using_loopback_section.png
 
-Looping back the On-Board MAX96717 to the On-Board MAX96724 (streaming a checkerboard pattern from the MAX96717)
+   Loopback Testing Setup
+
+Looping back the Onboard MAX96717 to the Onboard MAX96724 (streaming a checkerboard pattern from the MAX96717)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this exercise, the functionality of both the MAX96717 and the MAX96724 on the
@@ -424,7 +439,9 @@ or not you are using NoMachine or some other remote-viewing software, your
 setup may differ. The critical part is that there is a COAX cable connected
 between the MAX96717 output, and the MAX96724 input “A”.
 
-.. image:: viper_pattern_generator_setup.png
+.. figure:: viper_pattern_generator_setup.png
+
+   Pattern Generator Test Setup
 
 #. On the AD-GMSL522-SL board, start the GMSL server:
 
@@ -449,7 +466,9 @@ between the MAX96717 output, and the MAX96724 input “A”.
 #. Now, open the “Video Timing and Pattern Generator” Tool in the GUI
 #. Set the parameters of the tool to match what is shown below:
 
-   .. image:: viper_video_pattern_generator.png
+   .. figure:: viper_video_pattern_generator.png
+
+      Video Pattern Generator Settings
 
 #. Click the “Start Video Generation” button at the bottom of the window to start the generator.
 
@@ -468,8 +487,10 @@ At this point, a black and white checkboard should be shown on the display.
 Because the pattern generator builds a static image, it will look like the frame
 is frozen. Your screen should look similar to this:
 
-.. image:: gmsl_gui_pattern_generator_output_showing.png
+.. figure:: gmsl_gui_pattern_generator_output_showing.png
    :width: 600 px
+
+   Pattern Generator Output
 
 Debugging CSI Input to AD-GMSL522-SL Board
 ------------------------------------------
@@ -488,7 +509,7 @@ Follow these steps to see the trace details:
 
         $sudo su
 
-   - Create a shell script with the following contents (e.g. (vim enable_tracing.sh):
+   - Create a shell script with the following contents (e.g., (vim enable_tracing.sh):
 
      .. code:: bash
 
@@ -532,13 +553,17 @@ Follow these steps to see the trace details:
 
 The error codes can be found in the logs. Here is one example:
 
-.. image:: viper_debugging_csi_shortframe.png
+.. figure:: viper_debugging_csi_shortframe.png
+
+   CSI Input Error Log Example
 
 Additionally, the Orin Technical Reference Manual (TRM) can be found on NVIDIA’s
 collateral site to get more information on the errors. This is an excerpt from
 the TRM:
 
-.. image:: viper_debugging_csi_orin_trm.png
+.. figure:: viper_debugging_csi_orin_trm.png
+
+   CSI Input Error Information
 
 More info on this technique and what the trace is saying can be found here:
 https://elinux.org/Jetson/l4t/Camera_BringUp
@@ -555,13 +580,13 @@ of viewing video data requires low latency and high-resolution video. Compared
 to other remote desktop viewers, NoMachine has much higher quality video
 streaming. To install NoMachine on your AD-GMSL522-SL Board and Host PC, follow
 this tutorial from Jetsonhacks: https://jetsonhacks.com/2023/12/03/nomachine-jetson-remote-desktop/
-Or view their own documentation at: https://www.nomachine.com/
+or view their own documentation at: https://www.nomachine.com/
 
-Booting From NVMe
+Booting from NVMe
 ~~~~~~~~~~~~~~~~~
 
-The default memory module on the Jetson Xavier is only 16GB large. Given the
-fact that the AD-GMSL522-SL GMSL kernel is already ~14GB large, there is not
+The default memory module on the Jetson Xavier is only 16 GB large. Given the
+fact that the AD-GMSL522-SL GMSL kernel is already ~14 GB large, there is not
 much space left to do anything useful. One way to remedy this situation is to
 buy and use an NVMe. NVMe is typically much faster than the internal eMMC of the
 Xavier NX so the upgrade is not just space, but speed as well. To get this
@@ -608,8 +633,10 @@ AD-GMSL522-SL Hardware Specifics
 Block Diagram
 ~~~~~~~~~~~~~
 
-.. image:: ad-gmsl522-sl_block_diagram.png
+.. figure:: ad-gmsl522-sl_block_diagram.png
    :width: 600 px
+
+   AD-GMSL522-SL Block Diagram
 
 I2C
 ~~~
