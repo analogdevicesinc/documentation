@@ -1,6 +1,9 @@
 AD-BMSE2E3W-SL
 ==============
 
+72 V to 96 V Battery Management System for Electric 2- and 3-Wheelers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 A concise version of this document is available in portable document format.
 Click on the file below to download:
 
@@ -11,8 +14,10 @@ Click on the file below to download:
 Overview
 --------
 
-.. image:: ad-bmse2e3w-sl_angle.jpg
+.. figure:: ad-bmse2e3w-sl_angle.jpg
    :align: left
+
+   AD-BMSE2E3W-SL
 
 The :adi:`AD-BMSE2E3W-SL` is a BMS reference design for light electric vehicles (LEVs). With a voltage range of 72 V to 96 V, this solution is suitable for electric 2-wheeler and 3-wheeler vehicles with high current capacity ranging up to 100 A.
 
@@ -59,7 +64,9 @@ Applications
 System Architecture
 +++++++++++++++++++
 
-.. image:: updated_block_diagram_72vto96v.png
+.. figure:: updated_block_diagram_72vto96v.png
+
+   AD-BMSE2E3W-SL Simplified Block Diagram
 
 .. csv-table:: Specifications
    :file: Specifications.csv
@@ -71,12 +78,16 @@ What's Inside the Box?
 
 Upon purchase of the AD-BMSE2E3W-SL kit, the package comes with the following boards and accessories:
 
-.. image:: ad-bmse2e3w-sl_package_contents.png
+.. figure:: ad-bmse2e3w-sl_package_contents.png
+
+   AD-BMSE2E3W-SL Kit Contents
 
 Components and Connections
 ++++++++++++++++++++++++++
 
-.. image:: revised_ad-bmse2e3w-sl_board_with_pin_labels.png
+.. figure:: revised_ad-bmse2e3w-sl_board_with_pin_labels.png
+
+   Hardware Components and Connections
 
 .. csv-table:: Hardware Part Functions
    :file: Components.csv
@@ -88,7 +99,9 @@ System Evaluation
 
 Follow the setup shown in the diagram below to get the board up and running. Ensure that the hardware parts and equipment are complete based on list of Equipment Needed. The banana plug cables used in this setup only have a maximum rating of 10A. Cables suitable for higher current rating must be used if the intended application operates at range higher than 10A. Note that the AD-BMSE2E3W-SL board can only accommodate up to 100A.
 
-.. image:: system_evaluation_set-up.png
+.. figure:: system_evaluation_set-up.png
+
+   Evaluation Setup
 
 Equipment Needed
 ^^^^^^^^^^^^^^^^
@@ -150,31 +163,44 @@ The board utilizes the DC2472A battery emulator as input for cell voltage measur
 
 #. Screw the two cell connector blocks to the two DC2472A battery emulators. Note that the first two terminals and the last terminal of each DC2472A cell connector must be left hanging (refer to below figure). Make sure to also set the last two terminals' input to low voltage or equivalent range of roughly 1.4V per cell.
 
-   .. image:: battery_emulator_pins.png
+   .. figure:: battery_emulator_pins.png
+
+      DC2472A Battery Emulator Pins
 
 #. Connect the DC2472A battery emulators to the ADBMSE2E3W-SL board through the cell connector blocks. Then, connect a micro-USB Type B cable to each DC2472A battery emulator and power the boards by connecting the other end of the cables to the Host PC.
 
-   .. image:: usb_emulator.png
+   .. figure:: usb_emulator.png
+
+      Connecting the DC2472A Battery Emulator
 
 #. Set the DC2472A battery emulators to the lowest voltage by fully turning the Cell Voltage Adjustment Potentiometer counterclockwise.
 
 #. Attach the MAX32625PICO programmer to the AD-BMSE2E3W-SL board using the 10-pin ribbon SWD cable. Power the MAX32625PICO using a micro-USB to USB cable connected to the Host PC.
 
-   .. image:: max32625_power_usb_pc.png
+   .. figure:: max32625_power_usb_pc.png
 
-#. Connect the alligator clip cable (red) to the VBATTP Pin or the 3rd of Pin 17 header of the DC2472A battery emulator. Then insert the other end of the cable (banana jack plug) to TP16 (VBAT+ terminal) of the AD-BMSE2E3W-SL board.
+      Connecting the MAX32625PICO Programmer
 
-   .. image:: connector_supply_vbattp.png
+#. Connect the alligator clip cable (red) to the VBATTP Pin or the 3rd of Pin 17 header of the DC2472A battery emulator. Then, insert the other end of the cable (banana jack plug) to TP16 (VBAT+ terminal) of the AD-BMSE2E3W-SL board.
+
+   .. figure:: connector_supply_vbattp.png
+
+      DC2472A's VBATT+ Supply Connector to AD-BMSE2E3W-SL's VBAT+ Terminal
 
 #. Connect the alligator clip cable (black) to the GND (VBAT-) supply of the DC2472A battery emulator. Then, connect the other end of the cable to the Rsense (top side) of the AD-BMSE2E3W-SL.
 
-   .. image:: gnd_vbat-_to_gnd_sense.png
+   .. figure:: gnd_vbat-_to_gnd_sense.png
+
+      DC2472A's VBAT- Supply Connector to AD-BMSE2E3W-SL's Rsense
+
 
 #. Set the DC2472A battery emulators to HIGH voltage or equivalent to 4.1 V per cell by turning the Cell Voltage Adjustment Potentiometer clockwise.
 
 #. Check the supply for the following test points as described in the diagram and table below. Make sure that the voltage levels are within the specified range.
 
-   .. image:: quick_test_points.png
+   .. figure:: quick_test_points.png
+
+      AD-BMSE2E3W-SL Test Points
 
    .. csv-table:: Hardware Supply Quick Test Point
      :file: test-points.csv
