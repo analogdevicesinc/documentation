@@ -4,7 +4,7 @@ EVAL-CN0577-FMCZ
 ================
 
 Analog Front End and Digital Interface for Serial LVDS SAR ADCs
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Overview
 --------
@@ -60,7 +60,7 @@ Hardware Configuration
 ----------------------
 
 Block Assignments
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 .. figure:: cn0577_block_terminal.png
    :width: 500px
@@ -88,7 +88,7 @@ and VIN−) provide analog inputs from a low noise, audio precision signal
 source (such as the Audio Precision audio analyzer).
 
 Onboard Clock Reference
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The :adi:`EVAL-CN0577-FMCZ <CN0577>` clock diagram is shown in the figure below.
 An onboard 120 MHz voltage controlled crystal oscillator is used to provide
@@ -131,7 +131,7 @@ while maintaining low static power dissipation over a broad VCC operating
 range.
 
 System Setup
-------------------
+------------
 
 Demo Requirements
 ~~~~~~~~~~~~~~~~~
@@ -198,7 +198,7 @@ To prepare the SD card for the Zedboard:
    * Image files on SD card: zynq-common
 
 System Block Diagram
-----------------------
+--------------------
 
 .. figure:: sys_block_diag.png
 
@@ -265,7 +265,7 @@ used with the :adi:`EVAL-CN0577-FMCZ <CN0577>` are:
 - :ref:`Python (via Pyadi-iio) <pyadi-iio>`
 
 Connection
-~~~~~~~~~~~~
+~~~~~~~~~~
 
 To be able to connect your device, the software must be able to create a
 context. The context creation in the software depends on the backend used to
@@ -299,7 +299,7 @@ the terminal, run:
    $iio_info -u ip:<ip_address>
 
 Using Command Terminal:
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. shell::
 
@@ -336,7 +336,7 @@ To look at the context attributes, enter this code on the terminal:
    $iio_attr -a -C
 
 IIO Oscilloscope
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
 
