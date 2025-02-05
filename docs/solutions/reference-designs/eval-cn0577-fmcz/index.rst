@@ -3,12 +3,17 @@
 EVAL-CN0577-FMCZ
 ================
 
+Analog Front End and Digital Interface for Serial LVDS SAR ADCs
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 Overview
 --------
 
-.. image:: cn0577_1.jpg
+.. figure:: cn0577_1.jpg
    :align: right
    :width: 600px
+
+   EVAL-CN0577-FMCZ Board
 
 Instrumentation applications such as flow cytometry, optical pulse
 measurement, fast control loops, fast digital distortion correction, and image
@@ -34,7 +39,9 @@ flip-flop reduces jitter from the convert signal of the FPGA.
 Simplified Functional Block Diagram
 -----------------------------------
 
-.. image:: cn0577_block_diag.png
+.. figure:: cn0577_block_diag.png
+
+   CN0577 Simplified Block Diagram
 
 Features
 --------
@@ -55,8 +62,10 @@ Hardware Configuration
 Block Assignments
 ~~~~~~~~~~~~~~~~~~~
 
-.. image:: cn0577_block_terminal.png
+.. figure:: cn0577_block_terminal.png
    :width: 500px
+
+   CN0577 Block Assignments
 
 .. csv-table::
    :file: block-assignments.csv
@@ -67,7 +76,9 @@ Power Supply
 Power to the :adi:`EVAL-CN0577-FMCZ <CN0577>` comes directly from the
 +12 V supply provided through the FMC connector.
 
-.. image:: power_supply_1.png
+.. figure:: power_supply_1.png
+
+   CN0577 Power Supply
 
 Analog Inputs
 ~~~~~~~~~~~~~~~~
@@ -76,11 +87,11 @@ The SMA connectors on the :adi:`EVAL-CN0577-FMCZ <CN0577>` (VIN+
 and VIN−) provide analog inputs from a low noise, audio precision signal
 source (such as the Audio Precision audio analyzer).
 
-On-board Clock Reference
+Onboard Clock Reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The :adi:`EVAL-CN0577-FMCZ <CN0577>` clock diagram is shown in the figure below.
-An on-board 120 MHz voltage controlled crystal oscillator is used to provide
+An onboard 120 MHz voltage controlled crystal oscillator is used to provide
 the clock for the :adi:`EVAL-CN0577-FMCZ <CN0577>` and the FPGA. This
 ultralow noise oscillator has a typical phase noise of -162 dBc/Hz at 10 kHz
 offset, a tuning voltage range of 0 V to 3.3 V, and a frequency pulling range of
@@ -93,7 +104,9 @@ to the 2.5 V level required by the retiming flip-flop. An
 :adi:`ADN4661` converts the 3.3 V clock to LVDS signaling, which is
 then forwarded to a global clock connection on the FMC connector.
 
-.. image:: cn0577_clock.png
+.. figure:: cn0577_clock.png
+
+   CN0577 Onboard Clock Reference
 
 External Clock Reference Option
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,8 +119,10 @@ required, an external clock can be applied to the external clock connector
 frequency is significantly higher or lower than the on-board 120 MHz clock,
 reanalyze the entire circuit including the FPGA timing constraints.
 
-.. image:: jp14.png
+.. figure:: jp14.png
    :width: 300 px
+
+   External Clock Option
 
 The external clock circuitry also includes a high speed single inverter that
 provides AC coupling and balances the rise and fall times. This device has a
@@ -116,7 +131,7 @@ while maintaining low static power dissipation over a broad VCC operating
 range.
 
 System Setup
-~~~~~~~~~~~~~~~~~
+------------------
 
 Demo Requirements
 ~~~~~~~~~~~~~~~~~
@@ -136,7 +151,7 @@ Hardware
 - XLR to SMA adapter cable
 - Audio analyzer (Audio Precision© APX525) or other input source (e.g., ADALM2000)
 
-If using :adi:`ADALM2000`` as input source:
+If using :adi:`ADALM2000` as input source:
 
 - :adi:`AD-M2KBNC-EBZ`
 - BNC to SMA cable
@@ -145,7 +160,7 @@ If using :adi:`ADALM2000`` as input source:
 Software
 ^^^^^^^^
 
-:ref:`kuiper`.
+- :ref:`kuiper` Image
 
 For the device to run, the SD card should be loaded with Analog Devices Kuiper
 Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It
@@ -164,18 +179,18 @@ In order to control the :adi:`EVAL-CN0577-FMCZ <CN0577>`, you will
 need to install ADI Kuiper Linux on an SD card. Complete instructions, including
 where to download the SD card image, how to write it to the SD card, and how to
 configure the system are provided at :ref:`kuiper project-list`.
+
 Write the image and follow the system configuration procedure. Follow the directions for
 preparing the image for the CN0577.
 
-
-SD Card
-~~~~~~~
+Preparing the SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 To prepare the SD card for the Zedboard:
 
-#. :ref:`Download ADI Kuiper Image for CN0540 <kuiper project-list>`
+#. :ref:`Download the ADI Kuiper Image <kuiper project-list>`
 
-#. Validate, Format, and Flash the SD Card :ref:`kuiper sdcard linux` or :ref:`kuiper sdcard windows`.
+#. Validate, format, and flash the SD Card either: :ref:`kuiper sdcard linux` or :ref:`kuiper sdcard windows`.
 
 #. Configuring the SD Card. Follow instructions for Xilinx projects.
 
@@ -185,7 +200,9 @@ To prepare the SD card for the Zedboard:
 System Block Diagram
 ----------------------
 
-.. image:: sys_block_diag.png
+.. figure:: sys_block_diag.png
+
+   CN0577 System Block Diagram
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
@@ -210,8 +227,9 @@ source, follow these steps:
 #. Run the IIO Oscilloscope software and capture the resulting ADC data.
 
 
-.. image:: demo_with_ap.png
+.. figure:: demo_with_ap.png
 
+   CN0577 Evaluation Setup
 
 Using :adi:`ADALM2000` as input source:
 
@@ -231,7 +249,9 @@ Using :adi:`ADALM2000` as input source:
    feature to set input. More information on using the Scopy Signal Generator in :dokuwiki:`here <university/tools/m2k/scopy/siggen>`.
 #. Run the IIO Oscilloscope software and capture the resulting ADC data.
 
-.. image:: demo_with_m2k.png
+.. figure:: demo_with_m2k.png
+
+   CN0577 Setup with ADALM2000 Portable Oscilloscope
 
 Software
 --------
@@ -245,12 +265,12 @@ used with the :adi:`EVAL-CN0577-FMCZ <CN0577>` are:
 - :ref:`Python (via Pyadi-iio) <pyadi-iio>`
 
 Connection
-~~~~~~~~~~
+~~~~~~~~~~~~
 
 To be able to connect your device, the software must be able to create a
 context. The context creation in the software depends on the backend used to
 connect to the device as well as the platform where the EVAL-CN0577-FMCZ is
-attached. The platform currently supported for the CN0557: ZedBoard using the
+attached. The platform currently supported for the CN0557 is the ZedBoard through the
 ADI Kuiper Linux. The user needs to supply a URI which will be used in the
 context creation. The Libiio is a library for interfacing with IIO devices.
 
@@ -330,7 +350,9 @@ IIO Oscilloscope
 #. Press refresh to display available IIO Devices, once ltc2387 appeared, press
    connect.
 
-.. image:: 577_osc.png
+.. figure:: 577_osc.png
+
+   IIO Oscilloscope Connection
 
 Debug Panel
 ^^^^^^^^^^^
@@ -338,7 +360,9 @@ Debug Panel
 Below is the Debug panel of ltc2387 wherein you can directly access the
 attributes of the device.
 
-.. image:: 577_debug_panel.png
+.. figure:: 577_debug_panel.png
+
+   CN0577 Debug Panel
 
 DMM Panel
 ^^^^^^^^^
@@ -346,13 +370,16 @@ DMM Panel
 Access the DMM panel to see the instantaneous reading of the ADC voltages and
 the device temperature.
 
-.. image:: 577_dmm_panel.png
+.. figure:: 577_dmm_panel.png
+
+   CN0577 DMM Panel
 
 Pyadi-IIO
 ~~~~~~~~~
 
 :ref:`pyadi-iio` is a python abstraction module for ADI hardware with IIO drivers
 to make them easier to use.
+
 This module provides device-specific APIs built on top of the current
 libIIO python bindings. These interfaces try to match the driver naming as
 much as possible without the need to understand the complexities of libIIO and
@@ -377,11 +404,15 @@ examples folder.
 
 Running example with ADALM2000 with the setting below:
 
-.. image:: scopy_diff_input.png
+.. figure:: scopy_diff_input.png
+
+   CN0577 Sample Output in Scopy
 
 The expected output should look like this:
 
-.. image:: output_time_domain.png
+.. figure:: output_time_domain.png
+
+   CN0577 Time Domain Output
 
 
 GitHub link for the python sample script:
@@ -436,3 +467,14 @@ HDL Reference design
 
 The HDL Reference Design is documented at :external+hdl:ref:`cn0577`.
 
+..
+   Enable after adding content
+   User Guides
+   -----------
+
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 2
+      :glob:
+
+      */index
