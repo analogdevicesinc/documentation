@@ -1,12 +1,13 @@
 Application Software 
 ------------------------
 
+..
+   Enable after adding pages
+   .. toctree::
+      :titlesonly:
+      :glob:
 
-.. toctree::
-   :titlesonly:
-   :glob:
-
-   */index
+      */index
 
 
 This is a placeholder page for a reference design application software.
