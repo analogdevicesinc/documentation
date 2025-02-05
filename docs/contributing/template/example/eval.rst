@@ -178,11 +178,11 @@ The source code for baremetal projects can be found at:
    * - NUCLEO-H503RB
      - no-OS
      - :git-no-OS:`ad405x:projects/ad405x`
-     - :external+no-OS:doc:`docs <projects/ad405x>`
+     - ``EXAMPLE :external+no-OS:doc:`docs <projects/ad405x>```
    * - NUCLEO-H563ZI
      - no-OS
      - :git-no-OS:`ad405x:projects/ad405x`
-     - :external+no-OS:doc:`docs <projects/ad405x>`
+     - ``EXAMPLE :external+no-OS:doc:`docs <projects/ad405x>```
    * - SDP-K1
      - precision-converters-firmware
      - :git-precision-converters-firmware:`projects/ad405x_iio`
