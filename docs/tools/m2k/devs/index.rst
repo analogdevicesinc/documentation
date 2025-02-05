@@ -36,7 +36,7 @@ Content
 
 #. :external+hdl:doc:`index`
 
-   #. :external+hdl:ref:`m2k`
+   #. ``TODO :external+hdl:ref:`m2k```
    #. :external+hdl:ref:`axi_ad9963`
    #. :external+hdl:ref:`axi_adc_decimate`
    #. :external+hdl:ref:`axi_dac_interpolate`
