@@ -10,7 +10,7 @@ The **AD-GMSL522-SL GMSL Carrier Board** (also referred as Viper board) is a
 higher resolution NVIDIA Jetson based carrier board for converting RAW camera
 data from GMSL cameras/Deserializers into display data.
 
-It is compatible with MAXIM deserializer/serializer EV kits and has 4 GMSL inputs
+It is compatible with Maxim deserializer/serializer EV kits and has 4 GMSL inputs
 and 2 GMSL outputs.
 
 It is a user-friendly GMSL platform for receiving and transmitting data over a
@@ -18,8 +18,10 @@ GMSL link. The platform enables NPI, demonstrations, customer, and ecosystem
 development. This platform has hardware interconnects and software tools that
 enable customers in their development of GMSL.
 
-.. image:: ad-gmsl522-sl_block_diagram.png
-    :width: 600 px
+.. figure:: ad-gmsl522-sl_block_diagram.png
+   :width: 600 px
+
+   AD-GMSL522-SL Simplified Block Diagram
 
 Carrier Board Feature List
 --------------------------
@@ -67,10 +69,12 @@ Carrier Board Feature List
   * Fan connector: 5 V, PWM and tach
 
 - Power
-  * DC Jack: 12 V 8 A input
-  * Main 5.0 V supply: MAX25206ATPA
-  * Main 3.3 V supply: MAX25206ATPA
-  * Main 1.8 V, 1.2 V, 1.0 V supplies: LTC3303ARUCM
+
+  * DC Jack: 12V, 8A input
+  * Main 5V supply: MAX25206ATPA
+  * Main 3.3V supply: MAX25206ATPA
+  * Main 1.8V, 1.2V, 1V supplies: LTC3303ARUCM
+
 - Developer kit operating temperature range
 
   * 0⁰C to 35⁰C
@@ -100,7 +104,9 @@ read from this device by accessing it at the 0xB4 I2C address.
 Power Supplies
 ~~~~~~~~~~~~~~
 
-.. image:: viper_power_tree.png
+.. figure:: viper_power_tree.png
+
+   AD-GMSL522-SL Power Tree
 
 The main DC-DC power supply is a MAX25206ATPA/VY+ converter. This powers up the
 Xavier NX module and a few other loads on the carrier board. It is designed for
@@ -401,4 +407,4 @@ System signals such as POWER_BTN*, FORCE_RECOVERY*, SYS_RESET*, are brought to a
 
 .. admonition:: Download
 
-  - :download:`AD-GMSL522-SL schematics <02_074767b_top_public.pdf>`
+   - :download:`AD-GMSL522-SL schematics <02_074767b_top_public.pdf>`
