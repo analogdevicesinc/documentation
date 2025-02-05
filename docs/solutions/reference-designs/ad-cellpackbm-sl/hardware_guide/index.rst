@@ -4,7 +4,7 @@ Hardware User Guide
 """""""""""""""""""
 
 AD-CELLPACKBM-SL
-==================
+================
 
 System Setup
 ------------
@@ -40,9 +40,11 @@ The following list of equipment are not provided as part of the kit, but are req
 - Digital power supply (such as the Keysight e3631A 0V to 6V power supply)
 - 2x wall plugs (to plug USB cable from DC2472A to provide power)
 
-.. image:: Kit_Contents.png
+.. figure:: Kit_Contents.png
    :align: center
    :width: 600px
+
+   AD-CELLPACKBM-SL Kit Contents
 
 Software
 --------
@@ -96,9 +98,11 @@ Battery Cell Monitoring
 
 **Setup**
 
-.. image:: ADBMS6830_Setup.png
+.. figure:: ADBMS6830_Setup.png
      :align: center
      :width: 400 px
+
+     Cell Monitoring Setup
 
 This setup uses the SDP-K1 as the controller board, but users may also use the AD-APARD32690-SL as MCU and follow the same hardware setup instructions.
 
@@ -127,16 +131,21 @@ Check the **EVAL-ADBMS6830BMSW** User Guide for procedure on connecting resistor
 #. Check the `Total PEC Status`` on the 3rd row under the `Memory Map`. This indicates the status of the isoSPI link between the **EVAL-ADBMS6822** and the EVAL-ADBMS6830BMSW.
 #. Ensure the **EVAL-ADBMS6830BMSW** board is powered correctly, indicated by the Blue LED on the DC2472A being illuminated.
 #. Verify the connection of the twisted cable between the **EVAL-ADBMS6822** and the **EVAL-ADBMS6830BMSW**.
-#. Check the voltage readings by adjusting the potentiometer (POT1) on the **DC2472A** to modify the emulated cell voltages. Monitor the voltage channels on the `Quick Measure Utility`` graph. Select which signals to display on the graph under the `Plot All Devices`` column.
+#. Check the voltage readings by adjusting the potentiometer (POT1) on the **DC2472A** to modify the emulated cell voltages. Monitor the voltage channels on the `Quick Measure Utility` graph. Select which signals to display on the graph under the `Plot All Devices`` column.
 
-.. image:: browser_plot_all_devices.png
+.. figure:: browser_plot_all_devices.png
+
+   Quick Measure Utility Graph
+
 
 Battery Pack Monitoring
 ------------------------
 
-.. image:: pack_monitoring.png
+.. figure:: pack_monitoring.png
     :align: center
     :width: 600 px
+
+    Pack Monitoring Setup
 
 **Setup**
 
@@ -164,9 +173,11 @@ Complete Daisy Chain
 
 **Setup**
 
-.. image:: complete_daisychain.png
-     :align: center
-     :width: 600 px
+.. figure:: complete_daisychain.png
+   :align: center
+   :width: 600 px
+
+   Complete Daisychain Setup
 
 Once familiar with the setup for each of the individual boards the entire signal chain can be verified.
 
@@ -197,7 +208,9 @@ Once familiar with the setup for each of the individual boards the entire signal
 
 Simply choose the desired Plot number from the dropdown menu under each device to display the relevant data.
 
-.. image:: daisychain_plot3.png
+.. figure:: daisychain_plot3.png
+
+   Sample Plot for Daisychain Setup
 
 Plot settings can be saved to the PC to be reloaded for future session to save time.
 

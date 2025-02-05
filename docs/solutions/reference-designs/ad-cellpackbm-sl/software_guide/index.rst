@@ -45,35 +45,28 @@ Downloading the BMS Embedded Drivers Installer
 ----------------------------------------------
 
 
-#. Download from: `BMS Embedded Drivers Version 1.0.0 <https://download.analog.com/secure/bms-drivers-early-access/bmsed-00/1-0-0/no-os-bms-examples-rel1.0.0_beta.exe>`__
+1. Download from: `BMS Embedded Drivers Version 1.0.0 <https://download.analog.com/secure/bms-drivers-early-access/bmsed-00/1-0-0/no-os-bms-examples-rel1.0.0_beta.exe>`__
 2. You will be directed to the *Software Package Download* page.
 
    * Tick the checkbox.
-   * The, click the **I Accept** button to indicate acceptance of the license agreement.
+   * Then, click the **I Accept** button to indicate acceptance of the license agreement.
 
-   .. image:: downloading_drivers.png
+   .. figure:: downloading_drivers.png
 
-#. Click the **Download** button to download the installer package.
+      Downloading the BMS Embedded Drivers
+
+3. Click the **Download** button to download the installer package.
 
 When software updates or new versions of the software are available an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.
 
 Installing the BMS Embedded Drivers
 -----------------------------------
 
-#. Install the **no-OS-BMS-Examples-Rel1.0.0.exe** file.
+#. Install the **no-OS-BMS-Examples-Rel1.0.0.exe** file. Default installation path will be on C:\Analog\
 
- .. important::
+    .. figure:: installing_the_no-os_bms_drivers.png
 
-    Change the SPACE character with a dash (-) on the folder name or installation directory.
-
-    ================================================= =====================================================
-    Change                                            To
-    ================================================= =====================================================
-    ``C:\Analog Devices``                             ``C:\Analog-Devices``
-    ``C:\Analog Devices\no-OS-BMS-Examples-Rel1.0.0`` ``C:\Analog-Devices\no-OS-BMS-Examples-Rel1.0.0``
-    ================================================= =====================================================
-
-    .. image:: installing_the_no-os_bms_drivers.png
+      Installing the BMS Embedded Drivers
 
 #. Download and install `MaximSDK for Maxim MCUs <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_.
 
@@ -83,7 +76,7 @@ Installing the BMS Embedded Drivers
 
 #. While MaximSDK installation is in progress, set up the no-OS-BMS-Examples by going to the no-OS-BMS-Examples directory:
 
-   * Examples Directory: C:\Analog Devices\no-OS-BMS-Examples-Rel1.0.0
+   * Examples Directory: C:\Analog\no-OS-BMS-Examples-Rel1.0.0
 
 #. Select the **run_setup.bat file** and run it as administrator.
 
@@ -104,21 +97,25 @@ Installing the BMS Embedded Drivers
 
 #. Open the no-OS-BMS-Examples file on VS Code or any other code editor.
 
-   * Examples Directory: ``C:\Analog Devices\no-OS-BMS-Examples-Rel1.0.0``
+   * Examples Directory: ``C:\Analog\no-OS-BMS-Examples-Rel1.0.0``
 
-#. Open the Makefile inside ``C:\Analog Devices\no-OS-BMS-Examples-Rel1.0.0\examples`` folder.
+#. Open the Makefile inside ``C:\Analog\no-OS-BMS-Examples-Rel1.0.0\examples`` folder.
 
    * This will display all the available example projects on the code editor.
 
-   .. image:: examples_folder.png
+   .. figure:: examples_folder.png
+
+      BMS Example Projects
 
 #. Configure the Makefile on your desired example project.
 
 The complete procedure on how to use the no-OS BMS examples can be found in the guide inside the **Documents** folder:
 
-File Location: ``C:\Analog Devices\no-OS-BMS-Examples-Rel1.0.0\Documents``
+File Location: ``C:\Analog\no-OS-BMS-Examples-Rel1.0.0\Documents``
 
- .. image:: examples_installation_guide.png
+ .. figure:: examples_installation_guide.png
+
+    Guide Documents Location
 
 Graphical User Interface
 ---------------------------
@@ -148,7 +145,9 @@ Launcher Configuration
 #. Select an appropriately flashed microcontroller board (for this example, SDP-K1).
 #. Launch the evaluation GUI.
 
-.. image:: install_gui.png
+.. figure:: install_gui.png
+
+   BMS BROWSER GUI Installer
 
 Establishing Interface Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -159,14 +158,18 @@ Establishing Interface Connection
 #. Click `Disconnect`` to terminate the connection for a new one.
 #. Use the refresh button to reload the available MCU boards list.
 
-.. image:: interface_connection.png
+.. figure:: interface_connection.png
+
+   Interface Connection Setting
 
 Daisy Chain Connection
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The Daisy Chain section facilitates the creation of a daisy chain using compatible ADBMS devices. This process involves selecting a generation of ADBMS devices, adding devices to the daisy chain, and configuring the setup for the evaluation GUI.
 
-.. image:: daisy_chain_connection.png
+.. figure:: daisy_chain_connection.png
+
+   Daisychain Connection Setting
 
 **Select ADBMS Generation**
 
@@ -204,7 +207,9 @@ Quick Measure
 
 The Quick Measure tab simplifies metric measurement with a preloaded command sequence. Note that it supports a single device in the daisy chain, and key features enhance configuration and visualization.
 
-.. image:: quick_measure.png
+.. figure:: quick_measure.png
+
+   Quick Measure Tab
 
 **Preloaded Commands:**
 
@@ -239,7 +244,9 @@ Sequences
 
 The Sequences tab enables the creation and management of custom command sequences. Load and save sequences, divided into Init and Loop lists. The Init list initializes the daisy chain once, while the Loop list runs continuously until stopped. Toggle between lists using the corresponding buttons at the top.
 
-.. image:: sequences.png
+.. figure:: sequences.png
+
+   Sequences Tab
 
 
 **Load Existing Sequence:**
@@ -267,7 +274,7 @@ The Sequences tab enables the creation and management of custom command sequence
 **Manage Commands:**
 
 - On the right side, select a command to highlight it for modification.
-- Replace, move (drag and drop), or delete the highlighted command using the corresponding buttons.
+- Replace, move (drag-and-drop), or delete the highlighted command using the corresponding buttons.
 
 **SPI Bus and Chip Select:**
 
@@ -283,7 +290,9 @@ Scheduler
 
 The Scheduler tab provides insights into the execution time of sequences from the Sequences tab. It allows combining sequences for a complete execution loop. Key features enable precise timing adjustments and visualization.
 
-.. image:: scheduler.png
+.. figure:: scheduler.png
+
+   Scheduler Tab
 
 
 **Timing Adjustments:**
@@ -322,7 +331,9 @@ Memory Map
 
 The Memory Map tab provides a numerical output for the active command loop, organized into tables for user convenience. It offers customization and error highlighting for effective data analysis.
 
-.. image:: memory_map.png
+.. figure:: memory_map.png
+
+   Memory Map Tab
 
 
 **Organized Data Display:**
@@ -353,7 +364,9 @@ Plots
 
 The Plots tab provides a graphical representation of data collected through the running command loop. It offers customization options for focused analysis and allows for the export of captured data for further analysis.
 
-.. image:: plots.png
+.. figure:: plots.png
+
+   Plots Tab
 
 
 **Plot Selection:**
@@ -387,7 +400,9 @@ The Plots tab provides a graphical representation of data collected through the 
 Data Recall
 ^^^^^^^^^^^^^
 
-.. image:: data_recall.png
+.. figure:: data_recall.png
+
+   Data Recall Tab
 
 The Data Recall tab allows you to retrieve and plot data from previous freerun sessions stored in a database file. The interface is similar to the Plots tab with added functionality for selecting the database file and test run.
 
@@ -416,7 +431,9 @@ The Data Recall tab allows you to retrieve and plot data from previous freerun s
 Diagnostics
 ^^^^^^^^^^^
 
-.. image:: diagnostics.png
+.. figure:: diagnostics.png
+
+   Diagnostics Tab
 
 The Diagnostics tab offers a straightforward way to execute on-device diagnostics following the device's safety manual. It displays available diagnostics, test logs, and results for a single device.
 
