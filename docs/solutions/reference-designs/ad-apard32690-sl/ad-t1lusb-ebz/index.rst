@@ -1,8 +1,8 @@
-AD-T1LUSB2.0-EBZ 
-===================
+AD-T1LUSB2.0-EBZ
+================
 
 USB2.0 to 10BASE-T1L Interface Board
-""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""
 
 Overview
 --------
@@ -29,7 +29,7 @@ The AD-T1LUSB2.0-EBZ board doesn’t require any configuration to be functional
 and ready for use.
 
 Features
----------
+--------
 
 - Easy-to-use USB2.0 to 10BASE-T1L interface
 - Efficient data communication utilizing LAN9500A USB Ethernet Controller and
@@ -37,15 +37,15 @@ Features
 - Onboard EEPROM for saving and recalling MAC configurations
 - LEDs indicating MAC link status and user-programmable PHY status flags
 - Operates without an external power supply, powered directly from the USB bus
- 
+
 Applications
---------------
+------------
 
 - Industrial Ethernet Application Development
 - Building Automation
 
 System Architecture
-----------------------
+-------------------
 
 .. figure:: ad-t1lusb2.0-ebz_block_diagram.png
     :width: 600 px
@@ -53,7 +53,7 @@ System Architecture
     AD-T1LUSB2.0-EBZ Simplified Block Diagram
 
 What’s Inside the Box?
--------------------------
+----------------------
 
 .. figure:: ad-t1lusb2.0-ebz_package_contents.png
     :width: 600 px
@@ -77,18 +77,18 @@ together with the AD-T1LUSB2.0-EBZ board are:
 .. note:: The **AD-T1LUSB2.0-EBZ** will **send or receive data only** over a FROFIBUS/SPE cable, so any design with a 10BASE-T1L interface will need to be powered separately.
 
 AD-SWIOT1L-SL Interfacing
-----------------------------
+-------------------------
 
 .. figure:: ad-swiot1l-sl_ad-t1lusb20-ebz.png
 
-    AD-T1LUSB2.0-EBZ Setup with AD-SWIOT1L-SL
+   AD-T1LUSB2.0-EBZ Setup with AD-SWIOT1L-SL
 
 AD-APARD32690-SL Interfacing
--------------------------------
+----------------------------
 
 .. figure:: ad-adard32690-sl_ad-t1lusb20-ebz.png
 
-    AD-T1LUSB2.0-EBZ Setup with AD-APARD32690-SL 
+   AD-T1LUSB2.0-EBZ Setup with AD-APARD32690-SL
 
 Network Testing
 ----------------
@@ -131,9 +131,9 @@ In this way, we can confirm that the connection between a computer and the
 :adi:`AD-T1LUSB2.0-EBZ` board works as expected.
 
 Design and Integration Files
-----------------------------------
+----------------------------
 
-.. admonition:: Download 
+.. admonition:: Download
 
  :download:`AD-T1LUSB2.0-EBZ Design Support Package <AD-T1LUSB2.0-EBZ-Design-Support-Package.zip>`
 
@@ -143,9 +143,9 @@ Design and Integration Files
  - Allegro Project
 
 Support
-----------
+-------
 
 Analog Devices will provide **limited** online
 support for anyone using the reference design with Analog Devices components via
-the :ez:`EngineerZone Reference Designs <ez/reference-designs>` forum.
+the :ez:`EngineerZone Reference Designs <reference-designs>` forum.
 
