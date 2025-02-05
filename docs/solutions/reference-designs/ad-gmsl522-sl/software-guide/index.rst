@@ -489,7 +489,7 @@ At this point, a black and white checkboard should be shown on the display.
 Because the pattern generator builds a static image, it will look like the frame
 is frozen. Your screen should look similar to this:
 
-.. image:: gmsl_gui_pattern_generator_output_showing.png
+.. figure:: gmsl_gui_pattern_generator_output_showing.png
    :width: 600 px
 
    Pattern Generator Output
