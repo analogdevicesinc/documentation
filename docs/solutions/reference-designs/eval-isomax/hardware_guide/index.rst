@@ -9,7 +9,7 @@ Overview
 The :adi:`EVAL-ISOMAX` is an integrated dual isoSPI adapter and microcontroller
 board featuring the MAX32670 high-reliability, ultralow power microcontroller
 and the ADBMS6822 dual isoSPI transceiver. This board allows multiple ADBMS68xx
-battery monitors to be connected through daisy-chain configuration.
+battery monitors to be connected through daisy chain configuration.
 
 The EVAL-ISOMAX also features reversible isoSPI, which enables a redundant path
 to the peripheral units. The PCB components and DuraClik connectors are
@@ -25,7 +25,6 @@ the software files such as the firmware and GUI installer, and eventually obtain
 and view BMS readings through the BMS graphical user interface.
 
 Before you proceed with the system setup, make sure you have the following:
-
 
 Equipment Needed
 ---------------------
@@ -89,13 +88,18 @@ Uploading the EVAL-ISOMAX Firmware into the Broadmarket BMS Browser GUI Installe
 #. Download and extract the **EVAL-ISOMAX folder** in the host PC.
 #. Copy and paste the entire **EVAL-ISOMAX folder** into the
    USB_TO_SPI directory inside the Broadmarket BMS GUI installation folder.
+
    **Location: C:\\Analog Devices\\BMS_Browser_GUI_Broadmarket-Rel2.0.0\\USB_TO_SPI_Firmware**
 
-   .. image:: copying_the_eval-isomax_folder.png
+   .. figure:: copying_the_eval-isomax_folder.png
+
+      Copying the EVAL-ISOMAX Folder
 
 #. Make sure that the copied folder contains the **isomax32670-usb-to-spi.hex** file.
 
-   .. image:: eval-isomax_folder_contents.png
+   .. figure:: eval-isomax_folder_contents.png
+
+      EVAL-ISOMAX .hex file
 
 #. The EVAL-ISOMAX board is now ready to be used with the Broadmarket BMS
    Browser GUI. Refer to the next sections for procedure on how to set up the
@@ -116,8 +120,10 @@ will keep the resistor temperatures low, preventing power dissipation damage.
 Check the :dokuwiki:`EVAL-ADBMS6830BMSW User Guide <resources/eval/user-guides/eval-adbms6830bmsw>` for procedure on
 connecting resistors.
 
-.. image:: isomax_6830.png
+.. figure:: isomax_6830.png
+   :width: 600 px
 
+   Cell Monitoring Setup
 
 #. Plug the screw-terminal block into the cell voltage connector of the DC2472A
    battery emulator board. Note that the last three terminals of the DC2472A
@@ -147,13 +153,17 @@ Testing the Setup
    default.
 #. Click **Launch**.
 
-   .. image:: browser_launch.png
+   .. figure:: browser_launch.png
+
+      GUI Launch Button
 
 #. Upon launching, the **Quick Measure** tab will open. **Note:** this
    utility only supports a single BMS product in a daisy chain.
    Click **Start Quick Measure** to begin measurements.
 
-   .. image:: browser_start_measure.png
+   .. figure:: browser_start_measure.png
+
+      Start Quick Measure
 
 #. Check the Total PEC Status on the 3rd row under the Memory Map. This
    indicates the status of the isoSPI link between the EVAL-ISOMAX and the
@@ -167,7 +177,9 @@ Testing the Setup
    * Monitor the voltage channels on the Quick Measure Utility graph.
    * Select which signals to display on the graph under the **Plot All Devices** column.
 
-   .. image:: browser_plot_all_devices.png
+   .. figure:: browser_plot_all_devices.png
+
+      Quick Utility Graph
 
 Battery Pack Monitoring (EVAL-ISOMAX + EVAL-ADBMS2950-BASIC)
 ------------------------------------------------------------
@@ -178,7 +190,10 @@ Hardware Connection
 #. Connect the EVAL-ISOMAX (P6) to the EVAL-ADBMS2950-BASIC (isoA) using the
    provided twisted-pair DuraClik cable
 
-    .. image:: isomax_2950.png
+    .. figure:: isomax_2950.png
+       :width: 600 px
+
+       Pack Monitoring Setup
 
 #. Choose between two options for powering the EVAL-ADBMS2950-BASIC:
 
@@ -202,7 +217,9 @@ Testing the Setup
    right arrow to add it to the Daisy Chain. Settings can remain as default.
 #. Click **Launch**.
 
-   .. image:: 2950_launch.png
+   .. figure:: 2950_launch.png
+
+      GUI Launch Button
 
 #. Upon launching, the **Quick Measure** tab will open. **Note:** it can
    only handle one BMS product in a Daisy Chain.
@@ -223,7 +240,9 @@ Hardware Connection
 #. Connect the hardware using the DuraClik isoSPI cables, as shown in the
    diagram below.
 
-   .. image:: isomax_daisy_chain.png
+   .. figure:: isomax_daisy_chain.png
+
+      Complete Daisy Chain Setup
 
 #. Power each DC2472A using a 5V external source connected to J1 through the
    USB cable.
@@ -249,13 +268,17 @@ Testing the Setup
    EVAL-ADBMS2950-BASIC, while the second EVAL-ADBMS6830BMSW is linked to the
    first one via the isoSPI cable.
 
-    .. image:: daisy_chain_launch.png
+    .. figure:: daisy_chain_launch.png
+
+      Launch Daisy Chain
 
 #. Click on the **Launch** button to initiate the GUI. After the GUI
    launches in the browser, go to the **Sequences** tab located in the top
    toolbar, this will open the **Sequence Configuration** page.
 
-    .. image:: daisy_chain_sequences.png
+    .. figure:: daisy_chain_sequences.png
+
+      Daisy Chain Sequences
 
 #. Under **Files**, select **ADBMS6830-ADBMS2950.json**. This action will
    load a preconfigured sequence into the tool.
@@ -276,7 +299,9 @@ Testing the Setup
    Additional details can be accessed in the GUI's help section.
    The accompanying screenshot illustrates this output.
 
-    .. image:: daisy_chain_memory_map.png
+    .. figure:: daisy_chain_memory_map.png
+
+      Daisy Chain Memory Map
 
 #. The **Plots** tab allows for the visualization of parameters recorded during
    the command loop. It supports the creation of up to four plots simultaneously.
@@ -286,13 +311,20 @@ Testing the Setup
    parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages
    for the first EVAL-ADBMS6830MSW on Plot 2, and the averaged cell voltages for
    the third EVAL-ADBMS6830BMSW on Plot 3.
+
    Simply choose the desired Plot number from the dropdown menu under each device to display the relevant data.
 
-    .. image:: daisy_chain_plot1.png
+    .. figure:: daisy_chain_plot1.png
 
-    .. image:: daisy_chain_plot2.png
+        Daisy Chain Plot 1
 
-    .. image:: daisy_chain_plot3.png
+    .. figure:: daisy_chain_plot2.png
+
+       Daisy Chain Plot 2
+
+    .. figure:: daisy_chain_plot3.png
+
+       Daisy Chain Plot 3
 
 #. Plot settings can be saved to the PC to be reloaded for future session to save time.
 
@@ -325,7 +357,6 @@ Equipment Needed
 * Laptop or PC running Windows 10
 * Digital power supply (such as the Keysight e3631A 0V to 6V power supply)
 * 2x wall plugs (to plug USB cable from DC2472A to provide power)
-
 
 **Software Needed**
 
@@ -379,7 +410,7 @@ Follow these instructions if :adi:`AD-APARD32690-SL` is used as the main control
 Follow these steps if :adi:`SDP-K1` is used as the main controller board:
 
 #. Connect the SDP-K1 microcontroller board to the host PC using a USB cable.
-#. Locate the firmware HEX file to be programmed on the MCU board in the
+#. Locate the firmware .hex file to be programmed on the MCU board in the
    installation folder of the BMS Browser GUI Broadmarket.
    Location: **C:\\Analog Devices\\BMS_Browser_GUI_Broadmarket-Rel2.0.0\\USB_TO_SPI_Firmware**
 #. Drag and drop the **SDP_K1_PyBMS_USB_TO_SPI_Bytes_Debug_USB_Port.hex** file
@@ -391,7 +422,10 @@ Battery Cell Monitoring
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
-.. image:: using_isomax_as_a_secondary_device_to_other_mcu.png
+.. figure:: using_isomax_as_a_secondary_device_to_other_mcu.png
+   :width: 600 px
+
+   Cell Monitoring Setup using the EVAL-ISOMAX as isoSPI with a Different MCU as Host Controller
 
 The DC2472A Battery Emulator Board is used for cell voltage input in this setup.
 Alternatively, resistors can be used to simulate battery cell voltages. 100 Ω ½
@@ -475,7 +509,10 @@ Battery Pack Monitoring
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
-.. image:: adbms2950_with_isomax_and_apard.png
+.. figure:: adbms2950_with_isomax_and_apard.png
+   :width: 600 px
+
+   Pack Monitoring Setup using the EVAL-ISOMAX as isoSPI with a Different MCU as Host Controller
 
 #. **Attach EVAL-ISOMAX**:
 
@@ -509,7 +546,7 @@ Testing the Setup
 
 #. **Configure Daisy Chain**:
 
-   * Set the Generation drop-down box to **ADBMSGEN6**.
+   * Set the Generation dropdown box to **ADBMSGEN6**.
    * From the Products list, select **ADBMS2950** and add it to the Daisy Chain.
 
 #. **Launch the GUI**:
@@ -534,7 +571,9 @@ chain can be verified.
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
-.. image:: daisychain_with_isomax_and_apard.png
+.. figure:: daisychain_with_isomax_and_apard.png
+
+   Daisy Chain Setup using the EVAL-ISOMAX as isoSPI with a Different MCU as Host Controller
 
 #. Connect the hardware using the DuraClik isoSPI cables.
 #. Power each DC2472A using a 5 V external source connected to J1 through the
@@ -562,12 +601,16 @@ Testing the Setup
    EVAL-ADBMS2950-BASIC, while the second EVAL-ADBMS6830BMSW is linked to the
    first one via the isoSPI cable.
 
-   .. image:: daisy_chain_launch.png
+   .. figure:: daisy_chain_launch.png
+
+       Launching Daisy Chain Measurement
 
 #. Click on **Launch** to initiate the GUI. After the GUI launches in the Browser,
    go to the **Sequences** tab located in the top toolbar, which will open the *Sequence Configuration* page.
 
-   .. image:: daisy_chain_sequences.png
+   .. figure:: daisy_chain_sequences.png
+
+       Daisy Chain Sequences
 
 #. In the **Files** column, select **ADBMS6830-ADBMS2950.json**. This action will load a preconfigured sequence into the tool.
 
@@ -587,7 +630,9 @@ Testing the Setup
    Additional details can be accessed in the GUI's help section.
    The accompanying screenshot illustrates this output.
 
-    .. image:: daisy_chain_memory_map.png
+    .. figure:: daisy_chain_memory_map.png
+
+        Daisy Chain Memory Map
 
 #. The **Plots** tab allows for the visualization of parameters recorded during
    the command loop. It supports the creation of up to four plots simultaneously.
@@ -597,14 +642,21 @@ Testing the Setup
    I1ACC and I2ACC on Plot 1, the average cell voltages for the first
    EVAL-ADBMS6830BMSW on Plot 2, and the averaged cell voltages for the third
    EVAL-ADBMS6830BMSW on Plot 3.
+
    Simply choose the desired Plot number from the dropdown menu under each device
    to display the relevant data.
 
-    .. image:: daisy_chain_plot1.png
+    .. figure:: daisy_chain_plot1.png
 
-    .. image:: daisy_chain_plot2.png
+        Daisy Chain Plot 1
 
-    .. image:: daisy_chain_plot3.png
+    .. figure:: daisy_chain_plot2.png
+
+        Daisy Chain Plot 2
+
+    .. figure:: daisy_chain_plot3.png
+
+        Daisy Chain Plot 3
 
 #. Plot settings can be saved to the PC to be reloaded for future session to save time.
 
