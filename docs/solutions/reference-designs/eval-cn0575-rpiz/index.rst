@@ -3,8 +3,17 @@
 EVAL-CN0575-RPIZ
 ================
 
+10BASE-T1L Field Device Development Platform with Class 12 and 13 SPoE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 General Description
 -------------------
+
+.. figure:: 63305_2.jpg
+   :width: 400 px
+   :align: right
+
+   EVAL-CN0575-RPIZ Board
 
 The :adi:`EVAL-CN0575-RPIZ <CN0575>` is a 10BASE-T1L MAC/PHY interface with
 Single Pair Power over Ethernet (SPoE) for development of field devices and
@@ -22,20 +31,22 @@ with each evaluation board. However, the :adi:`CN0575` can also be used on its
 own as a basic temperature sensing field device with remote user input/output
 via an onboard button and LED.
 
-.. image:: 63305_2.jpg
-
 Evaluation Board Hardware
 -------------------------
 
 Primary Side
 ~~~~~~~~~~~~
 
-.. image:: eval-cn0575-rpiz-top-with-labels.png
+.. figure:: eval-cn0575-rpiz-top-with-labels.png
+
+   EVAL-CN0575-RPIZ Primary Side
 
 10BASE-T1L Port (P1 and P2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: 10base-t1l-port.jpg
+.. figure:: 10base-t1l-port.jpg
+
+   10BASE-T1L Port
 
 The :adi:`EVAL-CN0575-RPIZ <CN0575>` evaluation board uses a single
 port 10BASE-T1L device and can be connected to a link partner using either one
@@ -71,7 +82,9 @@ alternatively be used with external hardware by changing the appropriate
 jumper settings (refer to Connecting the General Purpose LED and Button to
 External Hardware).
 
-.. image:: adin1110-leds.jpg
+.. figure:: adin1110-leds.jpg
+
+   General Purpose LED and Test Button
 
 The **GPIO16** pin is normally pulled high in this circuit, but will read low
 when the **TEST** button is pressed.
@@ -85,9 +98,11 @@ PD Class 12. If a different PD class is required for the application, the
 **JP1** and **JP2** solder jumpers should be reconfigured to match the desired
 class.
 
-.. image:: ltc9111-jumpers.jpg
+.. figure:: ltc9111-jumpers.jpg
 
-.. csv-table:: SPoE PD Power Class Selection
+   SPoE PD Power Class Jumpers
+
+.. csv-table::
    :file: SPoE_PD_Power_Class_Selection.csv
 
 The :adi:`EVAL-CN0575-RPIZ <CN0575>` was designed and evaluated for PD Classes
@@ -105,8 +120,9 @@ its peripherals).
 Secondary Side
 ~~~~~~~~~~~~~~
 
-.. image:: eval-cn0575-rpiz-bottom-with-labels.png
+.. figure:: eval-cn0575-rpiz-bottom-with-labels.png
 
+   EVAL-CN0575-RPIZ Secondary Side
 
 ADIN1110 SW Power-Down Enable and SPI Configuration (JP3 to JP5)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -118,19 +134,21 @@ required for the application, the :adi:`ADIN1110` should first be
 placed into software power-down and then configured appropriately via the
 device registers.
 
-.. image:: jp3-jp4-jp5.jpg
+.. figure:: jp3-jp4-jp5.jpg
+
+   ADIN1110 SW Power-Down Enable and SPI Configuration Pin
 
 Refer to the table below on setting the **JP3** jumper to enable/disable the
 software power-down feature:
 
-.. csv-table:: ADIN1110 SW Power-Down Enable and SPI Configuration
+.. csv-table::
    :file: JP3-Setting.csv
 
 The :adi:`ADIN1110` supports both generic SPI and the OPEN
 Alliance SPI protocol in its communication. Refer to the table below on
 setting **JP4** and **JP5** to select the SPI protocol:
 
-.. csv-table:: SPI Protocol Setting
+.. csv-table::
   :file: jp4-jp5-settings.csv
 
 ADT75 I²C Bus Address Selection (JP6 to JP8)
@@ -141,32 +159,37 @@ temperature sensor is dependent on the settings of the **JP13**, **JP14**, and
 **JP15** solder jumpers. **Note:** The CN0575 device tree overlay in ADI
 Kuiper Linux has the temperature sensor I²C address set to the default 0x48.
 
-.. image:: jp6-jp7-jp8.jpg
+.. figure:: jp6-jp7-jp8.jpg
 
+   ADT75 I²C Bus Address Selection
 
 If there is a need to reassign the :adi:`ADT75` address, refer to the
 following table:
 
-.. csv-table:: ADT75 I²C Bus Address Selection
+.. csv-table::
   :file: I2C-Bus-Address-Selection.csv
 
 Optional GPIO Pins (JP9 to JP13)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: jp11-jp12-jp13.jpg
+.. figure:: jp11-jp12-jp13.jpg
+
+   Optional GPIO Pins
 
 By default, some functions of the :adi:`ADT75` are
 connected to various GPIO pins of the Raspberry Pi. If these features will not
 be used in the application, the corresponding jumpers can be removed - doing
 this will allow these GPIO pins to be used for other external hardware.
 
-.. csv-table:: Optional GPIO Pins
+.. csv-table::
   :file: Optional-GPIO-Pins.csv
 
 General Purpose LED and Button Connections (JP14 and JP15)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: jp14-jp15.jpg
+.. figure:: jp14-jp15.jpg
+
+   General Purpose LED and Button Connections
 
 While normally functioning as a digital input and general
 purpose indicator respectively, the **TEST** button and **ALERT** LED can
@@ -174,7 +197,7 @@ alternatively be used for external applications by changing the settings of
 the appropriate jumpers. **JP14** is used to set the button connection, while
 **JP15** is used to set the LED connection.
 
-.. csv-table:: JP14 Setting
+.. csv-table::
   :file: JP14-setting.csv
 
 .. csv-table:: JP15 Setting
@@ -230,12 +253,16 @@ media converter that supports SPoE PSE functionality.
 
 Refer to the LTC4296-1 datasheet for example coupling networks.
 
-.. image:: test-setup-block-diagram.png
+.. figure:: test-setup-block-diagram.png
+
+   Test Setup with SPoE via PSE or DC Power Supply
 
 Setup without SPoE (USB-Powered Application)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: block_diagram-new-2.png
+.. figure:: block_diagram-new-2.png
+
+   Test Setup without SPoE (USB-Powered Application)
 
 Software Setup
 ~~~~~~~~~~~~~~
@@ -253,7 +280,9 @@ Complete instructions, including where to download the SD card image, how to
 write it to the micro-SD card, and how to configure the system are provided at
 :ref:`kuiper`.
 
-.. image:: command_prompt.png
+.. figure:: command_prompt.png
+
+   Flashing the Micro-SD using Kuiper Linux
 
 Configuring the Micro-SD Card
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -295,12 +324,16 @@ Pi to the :adi:`EVAL-CN0575-RPIZ <CN0575>`:
    as inet under adin1110-0. In the example below, the IP address is
    169.254.158.120.
 
-.. image:: ifconfig.png
+.. figure:: ifconfig.png
+
+   EVAL-CN0575-RPIZ IP Address
 
 Basic Operation
 ~~~~~~~~~~~~~~~
 
-.. image:: setup.jpg
+.. figure:: setup.jpg
+
+   Complete Evaluation Setup
 
 To establish a 10BASE-T1L connection to a Raspberry Pi using the
 :adi:`EVAL-CN0575-RPIZ <CN0575>` evaluation board and run a basic temperature
@@ -313,7 +346,7 @@ measurement example, follow the below procedure:
 #. Connect the :adi:`EVAL-CN0575-RPIZ <CN0575>` circuit evaluation board to the Raspberry Pi GPIO header.
 
 #. Using an Ethernet cable, connect **P5** on the
-   :adi:`EVAL-ADIN1100EBZ <eval-adin1100>` evaluation board to an RJ-45 port on
+   :adi:`EVAL-ADIN1100EBZ <eval-adin1100>` evaluation board to an RJ45 port on
    the computer.
 
 #. Using a micro-USB cable, connect **P401** on the
@@ -356,7 +389,9 @@ measurement example, follow the below procedure:
    /path/pyadi-iio/examples
    $sudo python lm75_example.py
 
-.. image:: adt75-example.png
+.. figure:: adt75-example.png
+
+   Sample Readout
 
 More Complete Example with Digital I/O
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -389,12 +424,16 @@ explicitly, where **www.xxx.yyy.zzz** is the board’s IP address:
 
 Typical output is shown below:
 
-.. image:: cn0575_example_screenshot.png
+.. figure:: cn0575_example_screenshot.png
+
+   CN0575 Output Example
 
 Errata
 ------
 
-.. image:: c16_marking.png
+.. figure:: c16_marking.png
+
+   Erroneous Marking on C16
 
 The first batch of :adi:`EVAL-CN0575-RPIZ <CN0575>` circuit
 evaluation boards that was produced mistakenly have a 50V capacitor installed
@@ -413,7 +452,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-  :download:`EVAL-CN0575-RPIZ Design & Integration tables <CN0575-DesignSupport.zip>`
+  :download:`EVAL-CN0575-RPIZ Design & Integration Files <CN0575-DesignSupport.zip>`
 
   - Schematics
   - PCB Layout
