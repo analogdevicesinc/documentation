@@ -1,5 +1,5 @@
 
-Using with Nvidia Jetson Orin Nano 
+Using with Nvidia Jetson Orin Nano
 ==================================
 
 Required Hardware
@@ -62,19 +62,19 @@ Hardware Changes
 
 - Configure the switches on the GMSL Serializer and the GMSL Deserializer adapters for **CAM1**.
 
-**Serializer Adapter**           
+**Serializer Adapter**
 
 .. figure:: ser_interposer.jpg
     :width: 400 px
 
-    Serializer Adapter Camera Switches 
-   
+    Serializer Adapter Camera Switches
+
 **Deserializer Adapter**
 
 .. figure:: deser_interposer.jpg
     :width: 400 px
 
-    Deserializer Adapter Camera Switches 
+    Deserializer Adapter Camera Switches
 
 System Setup
 ------------
