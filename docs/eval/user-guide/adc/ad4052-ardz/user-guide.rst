@@ -86,7 +86,7 @@ Unpack the downloaded file to a folder and flash one of the example projects
 (*.elf* files) to the STM32 board using the STM32 Cube IDE or copy over into the
 USB driver hosted by the STM32 board.
 
-See :external+no-OS:doc:`projects/ad405x` for the description of each example.
+See ``TODO :external+no-OS:doc:`projects/ad405x``` for the description of each example.
 
 Precision-converters-firmware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -146,7 +146,7 @@ Evaluation board software
 -------------------------
 
 For no-OS basic examples, the evaluation board is interfaced through any serial
-software such as minicom, picocom and putty (see :external+no-OS:doc:`projects/ad405x`,
+software such as minicom, picocom and putty (see ``TODO :external+no-OS:doc:`projects/ad405x```,
 Basic Example section).
 
 Using no-OS tinyIIO example, precision-converters-firmare or Linux, the interface
