@@ -40,7 +40,7 @@ Simplified Functional Block Diagram
 -----------------------------------
 
 .. figure:: cn0577_block_diag.png
-   
+
    CN0577 Simplified Block Diagram
 
 Features
@@ -467,16 +467,14 @@ HDL Reference design
 
 The HDL Reference Design is documented at :external+hdl:ref:`cn0577`.
 
-|
+..
+   Enable after adding content
+   User Guides
+   -----------
 
-Up Next...
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 2
+      :glob:
 
-
-.. toctree::
-   :titlesonly:
-   :maxdepth: 2
-   :glob:
-
-   */index
-
-----------------------------------------------------------------------------------------------------------
+      */index
