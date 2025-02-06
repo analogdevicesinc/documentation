@@ -92,7 +92,7 @@ A transistor is a miniature semiconductor that regulates or controls current o
 
 .. figure:: transistor.png
    :align: center
-   :width: 400
+   :width: 300
    
    Transistor - the base of Electronics
    
@@ -113,18 +113,14 @@ A transistor is a miniature semiconductor that regulates or controls current o
    
 `How many transistors are needed to create a logic gate?`
 
-.. _fig-and:
+Logic gates built with transistors 
+  
++---------------------------+---------------------------+
+| .. image:: and.png        | .. image:: not.png        |
+|    :width: 280            |    :width: 300            |
+|    :alt: AND              |    :alt: NOT              |
++---------------------------+---------------------------+
 
-.. figure:: and.png
-   :align: left
-   :width: 300
-.. _fig-not:
-
-.. figure:: not.png
-   :align: center
-   :width: 300
-   
-   Logic gates built with transistors
    
 `ADALM2000`
 
@@ -172,7 +168,7 @@ By the end of this workshop, you will learn:
 - `ADALM2000 drivers installation <https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases>`__
 - `Install Scopy software <https://github.com/analogdevicesinc/scopy/releases/tag/v1.4.1>`__
 
-**Demo 1 - Scope and Signal generator channels – Cascaded LP filters**
+**Hands-on activity 1 - Scope and Signal generator channels – Cascaded LP filters**
 
 *Materials*
 
@@ -214,7 +210,7 @@ Steps
 
    Results for Bode Diagram
  
-Second stage filter
+**Second stage filter**
 
 .. _fig-demo1hw1:
 
@@ -240,7 +236,7 @@ Steps:
 
    Results for Bode Diagram
   
-**Demo 2 - Traffic lights control**
+**Hands-on activity 2 - Traffic lights control**
 
 This demo will showcase the usage of logic gates to implement a logic function which describes the functionality of a well-known device: a traffic light. 
 
@@ -353,7 +349,7 @@ Steps:
    Logical OR
 
 
-**Demo3 - NPN transistor characteristics**
+**Hands-on activity 3 - NPN transistor characteristics**
 
 The demo will describe the output characteristics of a BJT NPN transistor using modern instrumentation tools.
 
@@ -389,7 +385,7 @@ The demo will describe the output characteristics of a BJT NPN transistor using 
    
    ADALM2000 connections
    
-Steps
+*Steps*
 
 1.	Open Scopy application
 2.	Create a CSV file with a column having integer values from 0 to 5(0, 1, 2, 3, 4), save it
@@ -401,7 +397,7 @@ Steps
    :align: center
    :width: 600
    
-4.	Select Channel 1, make the setup:
+4.	Select Channel 1, make the setup below:
 
 .. _fig-demo2scopy2:
 
@@ -414,7 +410,7 @@ Steps
  
 `Results`
 
-7.	Observe the out characteristics of the NPN transistor Ic = f(Vce)
+7.	Observe the output characteristics of the NPN transistor Ic = f(Vce)
 
 .. _fig-demo2scopyres:
 
@@ -435,7 +431,7 @@ Steps
 
 Tips: you need to create another csv file for the base control signal of the transistor.
 
-**Demo 4- Home made battery - instructor-led**
+**Hands-on activity 4 - Home made battery - instructor-led**
 
 This demo is instructor-led and intends to implement a proof of concept for a battery powered LED using unconventional materials.
 
@@ -475,7 +471,7 @@ workshop, a slide deck is provided here:
 
    :download:`Introduction to Electronics Slide Deck <ElectronicsBasics_nov24.pdf>`
 
-A complete booklet of the hands-on activity is also provided, either as a companion to
+A complete booklet of the hands-on activity is also provided, as a companion to
 following the tutorial yourself: 
 
 .. ADMONITION:: Download

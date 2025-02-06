@@ -16,7 +16,7 @@ Theoretical content
 - ADALM2000 connectivity
 - Scopy software overview and instruments description
 
-*What is Software Defined Instrumentation?​*
+**What is Software Defined Instrumentation?​**
 
 A single device encapsulating more instruments used for measurements, signal generation, signal acquisition, etc., powered by a PC open-source software that allows the user to customize the measurements, since the software is residing more on the host PC/mobile device instead of on the instrument. ​
 
@@ -29,7 +29,7 @@ Bonus: it has a pocket size!
    
    SDI then vs now
    
-`ADALM2000`
+**ADALM2000**
 
 The ADALM2000 (M2K) Advanced Active Learning Module is an affordable USB-powered data acquisition module, that can be used to introduce fundamentals of electrical engineering in a self or instructor lead setting.​
 
@@ -71,7 +71,7 @@ By the end of this workshop, you will learn:
 - `ADALM2000 drivers installation <https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases>`__
 - `Install Scopy software <https://github.com/analogdevicesinc/scopy/releases/tag/v1.4.1>`__
 
-**Demo 1 - Scope and Signal generator channels – Cascaded LP filters**
+**Hands-on activity 1 - Scope and Signal generator channels – Cascaded LP filters**
 
 *Materials*
 
@@ -113,7 +113,7 @@ Steps
 
    Results for Bode Diagram
    
-Second stage filter
+**Second stage filter**
 
 .. _fig-demo1hw1:
 
@@ -139,7 +139,7 @@ Steps:
 
    Results for Bode Diagram
    
-**Demo 2 - Digital Pattern Generator and Scope – AD5626 component – SPI controlled and analog signal visualized using Scope**
+**Hands-on activity 2 - Digital Pattern Generator and Scope – AD5626 component – SPI controlled and analog signal visualized using Scope**
 
 *Materials*
 
@@ -182,7 +182,7 @@ SPI Transfer:
 
    Schematic and Breadboard connections
   
-Steps: 
+*Steps*
 
 - Connect the Vp power supply to the Vdd of the chip, set it to 5V 
 
@@ -256,7 +256,7 @@ workshop, a slide deck is provided here:
 
    :download:`Software Defined Instrumentation Slide Deck <SDI_Workshop_2023.pptx>`
 
-A complete booklet of the hands-on activity is also provided, either as a companion to
+A complete booklet of the hands-on activity is also provided, as a companion to
 following the tutorial yourself: 
 
 .. ADMONITION:: Download
