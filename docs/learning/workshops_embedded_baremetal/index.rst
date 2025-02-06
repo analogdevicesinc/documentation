@@ -35,448 +35,263 @@ Traditionally, industry chip manufacturers would sell ICs without accompanying s
 
 - Pseudocode with an initialization sequence and/or sequence of data acquisition​
 
-Complex parts require complex software​
+Complex parts require complex software​.
 
+ICs are everywhere.
 
-.. figure::  noos.png
-   :align: left
-   :width: 300
-   
-.. figure:: noos1.png
-   :align: center
-   :width: 300
++---------------------------+---------------------------+
+| .. image:: noos.png       | .. image:: noos1.png      |
+|    :width: 300            |    :width: 300            |
+|    :alt: no os            |    :alt: no os            |
++---------------------------+---------------------------+
 
-   ICs are everywhere
-   
    
 ADI addressed this issue and started providing software for its parts as well.​
-ADI started to provide software for its parts at some point and this is how no-os started​
 
 There is a market advantage in selling parts with accompanying software​.
 
+Baremetal projects deliverables 10 years ago consisted of:
 
-**What is an IC?​**
+- A .zip file containing the driver files​
+- A .zip file containing a project​
 
-An integrated circuit (IC) is an assembly of electronic components in which hundreds to millions of transistors, resistors, and capacitors are interconnected and built up on a thin substrate of semiconductor material (usually silicon) to form a small chip or wafer. Integrated circuits are the building blocks for most electronic devices and equipment.
-
-`Applications`
-
-- Consumer Electronics: Smartphones, computers, and home appliances.
-- Industrial: Automation systems, robotics.
-- Medical: Diagnostic equipment, wearable health devices.
-- Automotive: Engine control units, infotainment systems.
-
-`Importance`
-
-- Miniaturization of circuits.
-- Increased reliability and performance.
-- Cost efficiency.
-
-.. _fig-ic:
-
-.. figure:: ic.png
+.. figure:: noos10.png
    :align: center
-   :width: 500
+   :width: 300
    
-   ICs are everywhere
+   Old Drivers structure
    
-.. _fig-circuit:
+What ADI tried to do back then was to write an ADI driver for an ADI part, provided that we were selling the evaluation board with ADI part on it
+The communication driver would be specific for each microcontroller or system board we would use: Maxim, Microchip, STM, etc
+The structure was mainly containing buffers instantiations and functions calling
+The users would have to fill-in the code with their specific functions
 
-.. figure:: circuit.png
-   :align: center
-   :width: 500
-   
-   LSI – Large Scale Integration circuits compared to the corresponding prototype circuit 1970-1972
+The initial approach had two targets:
 
-**Transistors - what kind of species is that?**
+- Provide bare-metal ADI drivers for ADI parts to users
+- Leverage the driver code in a reference project running on hardware
 
-A transistor is a miniature semiconductor that regulates or controls current or voltage flow in addition amplifying and generating these electrical signals and acting as a switch/gate for them
 
-- why do we need them?
-- how do they work?
-- what are the commonly used types?
+`Advantages`
 
-`Applications`
+Driver code was MCU independent
+	
+`Disadvantages`
 
-- Analog Circuits: Amplifiers, oscillators.
-- Digital Circuits: Logic gates, microprocessors.
-- Power Electronics: Power supplies, motor controllers.
+- Customer responsibility to port reference project on a different MCU
+- .zip file distribution led to no version control and code duplication
+	
+`Evolution provided`
 
-.. _fig-transistor:
+- Provide a way for reference projects to run on multiple hardware combinations
+- Provide a build system that generates binaries and run them on hardware
+- Expose parts as IIO devices to PC applications
+- Improve code quality
 
-.. figure:: transistor.png
+**What is No-OS**
+
+- A software framework for embedded bare-metal development
+- Open-source
+- ADI-BSD license
+- Free
+- Large collection of platform agnostic device drivers for ADI parts
+- Significant collection of reference projects leveraging ADI evaluation boards
+- Reference projects can run on a wide range of hardware
+- Provides IIO enabled devices, making them accessible to PC applications that use libiio
+
+
+**What is a No-OS device driver**
+
+No-OS device driver provides a software interface to hardware devices.
+Software application can access hardware functionality without knowing in detail how the driver operates: register map, bit fields, are directly handled by the driver, as well as communication interface specific sequences and timings
+
+- A piece of code implemented in C, in a .c and .h pair, stored under /drivers on repo
+
+- Its programming interface is directly called by the application code
+.. _fig-api:
+
+.. figure:: api.png
    :align: center
    :width: 400
    
-   Transistor - the base of Electronics
    
-`Functionality`
+- Defines its own descriptor structures and init_param
 
-- Cut Off ("off"):  Emitter > Base < Collector
-- Saturation ("on"): Emitter < Base > Collector
-- Forward Active ("proportional"):  Emitter < Base < Collector
-- Reverse Active ("negative proportional"):  Emitter > Base > Collector
+.. _fig-struct:
 
-.. _fig-vce_ib:
+.. figure:: struct.png
+   :align: center
+   :width: 400
+   
+- Contains minimum init() and remove() functions -  take as parameter the specific init_param structure
 
-.. figure:: vce_ib.png
+Puts the devide into the desired state
+Allocates memory
+Provides the descriptor for being called in other driver function calls, the remove functions frees the resources allocated by the init()
+
+.. _fig-init:
+
+.. figure:: init.png
+   :align: center
+   :width: 400
+   
+   
+- Performs no-OS API calls, does not perform platform specific function calls, it’s platform agnostic
+
+.. _fig-api1:
+
+.. figure:: api1.png
+   :align: center
+   :width: 400
+
+- Software application can access hardware functionality without knowing in detail how the device operates
+
+
+.. _fig-no-os-stack:
+
+.. figure:: no-os-stack.png
    :align: center
    :width: 300
    
-   Output Characteristics - common emitter configuration
+   No-OS Software Stack
    
-`How many transistors are needed to create a logic gate?`
+**No-OS Platforms**
 
-.. _fig-and:
+Platform drivers – represent an implementations of peripheral related no-OS API on a specific platform
+Platform drivers use vendor HAL - Hardware Abstraction Layer
+No-OS platform drivers are implementations of peripheral no-OS API on a particular platform.
 
-.. figure:: and.png
-   :align: left
-   :width: 300
-.. _fig-not:
+No-OS modularity allow it to run a lot of its code on different platforms like:
 
-.. figure:: not.png
+- Xilinx (Zynq7000, ZynqMP, Microblaze)​
+- Maxim (32650, 32655, 32660, 32670, 78000)​, ADuCM (3029)​
+- STM32 (almost any)​
+- RaspberryPi Pico​
+- Mbed
+
+.. _fig-platform:
+
+.. figure:: platform.png
    :align: center
-   :width: 300
+   :width: 600
    
-   Logic gates built with transistors
+   No-OS Platform Drivers
    
-`ADALM2000`
 
-The ADALM2000 (M2K) Advanced Active Learning Module is an affordable USB-powered data acquisition module, that can be used to introduce fundamentals of electrical engineering in a self or instructor lead setting.​
+**No-OS Projects**
 
-​With 12-bit ADCs and DACs running at 100 MSPS, brings the power of high-performance lab equipment to the palm of your hand, enabling electrical engineering students and hobbyists to explore signals and systems into the tens of MHz without the cost and bulk associated with traditional lab gear. ​
+A project is basically an application that can be built, run and debugged on hardware
 
-​When coupled with Analog Devices' Scopy™ graphical application software running on a computer, provides the user with high performance instrumentation.​
+Specifications:
 
-.. _fig-m2k:
+- Located under projects/
+- It has a main() function
+- It uses drivers/ and drivers/platforms directories
+- It uses no-OS API
+- It uses various libraries
+- User interaction – serial, iio-oscilloscope
+- makefiles
 
-.. figure:: m2k.png
-   :align: left
-.. _fig-scopy:
+Project hardware typically is made of:
 
-.. figure:: scopy.png
+- An evaluation board
+- A carrier board
+
+No-OS projects are used for
+	
+- ADI parts evaluation
+- Starting development based on a no-OS project
+
+
+**IIO Concepts**
+
+What is IIO – is a framework in the Linux kernel designed for devices such as adcs, dacs, etc..
+There is a tree concept inside kernel, there is the context concept which is specific to a board and has a set of drivers 
+Context has a backend associated with it, it can be local or remote
+Is has an attribute associated with it – give various descriptions of the board: name, version, etc.
+Underneath the context comes the device, specific to the board and has also attributes, along with debug attributes – components you normally don’t interact with and require extra configuration or settings – ex. Advanced adc settings
+Each device has two components - buffer and channel – buffer is associated with data
+Channel represents the number of paths for signal to be acquired/generated
+
+The Linux Industrial I/O (IIO)  subsystem is intended to provide  support for devices that, in some  sense, are analog-to-digital or digital-  to-analog converters
+Devices that fall into this category are:
+- ADCs
+- DACs
+- Accelerometers, gyros, IMUs
+- Capacitance-to-Digital converters  (CDCs)
+- Pressure, temperature, and light  sensors, etc.
+- RF Transceivers (like the AD9361 /  AD9364 / AD9371 / ADRV9009)
+- It can be used on ADCs ranging from a  1MSPS SoC ADC to >5 GSPS ADCs
+
+.. _fig-iio:
+
+.. figure:: iio.png
    :align: center
+   :width: 500
    
-   M2k and Scopy software
+`Libiio`
 
-Hands-on activity
+It’s written in C, but has bindings in Python, C++, etc. 
+All the high-level apps that talk to libiio are built on top of the stack, 
+The stack preserves its functionality, because of the way things are built, no need to change it, for becoming compatible to use with for ex GNU, Matlab, etc.
+
+.. _fig-libiio:
+
+.. figure:: libiio.png
+   :align: center
+   :width: 500
+  
+
+Hands-on activity   - IN PROGRESS
 ~~~~~~~~~~~~~~~~~
 
 By the end of this workshop, you will learn:
 
-- How to use a breadboard
-- How to power on an IC
-- How to read an IC pinout from datasheet
-- How to use a desktop Oscilloscope and Signal generator channels by operating a Network Analyzer
-- How to visualize a low pass filter characteristic / transfer function
-- How to drive a transistor
-- How to create a logic function for performing a specific task 
 
 
 **Activities**
 
-- Low pass filter transfer function
-- Digital demo – traffic lights using logic gates
-- Back to the analog world - Transistors
-- Home made battery
 
 
 **Pre-requisites**
 
-- `ADALM2000 drivers installation <https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases>`__
-- `Install Scopy software <https://github.com/analogdevicesinc/scopy/releases/tag/v1.4.1>`__
 
-**Demo 1 - Scope and Signal generator channels – Cascaded LP filters**
+**Hands-on activity 1**
 
 *Materials*
 
-- ADALM2000 Active Learning Module
-- Solder-less breadboard, and jumper wire kit
-- 2 x 1 KΩ resistors
-- 2 x 0.1 uF capacitors (marked 104)
-
-**First Stage Filter**
 
 *Hardware setup*
 
-.. _fig-demo1hw:
-
-.. figure:: demo1hw.png
-   :align: center
-   
-   Schematic for first stage filter
-   
-.. _fig-demo1bb:
-
-.. figure:: demo1bb.png
-   :align: center
-
-   Breadboard connections for first stage filter
-
 Steps
 
-	1. Open Network Analyzer
-	2. Set the sweep to logarithmic
-	3. Set the start frequency to 100Hz and stop to 20kHz
-	4. Set the magnitude axis between -50dB and 10dB
-	5. Set the phase axis between -180 and 90 degrees
 	
-.. _fig-demo1waves:
-
-.. figure:: demo1waves.png
-   :align: center
-
-   Results for Bode Diagram
- 
-Second stage filter
-
-.. _fig-demo1hw1:
-
-.. figure:: demo1hw1.png
-   :align: left
-.. _fig-demo1bb1:
-
-.. figure:: demo1bb1.png
-   :align: center
-
-   Schematic and Breadboard connections
-   
-Steps:
-
-1. Connect the Scope Channel 2 after the first RC group and do a single sweep
-2. Take a signal snapshot to preserve the result as a reference
-3. Connect the Scope Channel 2 after the second RC stage and perform another sweep
-
-.. _fig-demo1waves1:
-
-.. figure:: demo1waves1.png
-   :align: center
-
-   Results for Bode Diagram
   
-**Demo 2 - Traffic lights control**
-
-This demo will showcase the usage of logic gates to implement a logic function which describes the functionality of a well-known device: a traffic light. 
-
-*Materials*
-
-- ADALM2000 Active Learning Module 
-- Jumper wires 
-- 1 SN74HC08N part 
-- 1 SN74HC32N part 
-- 1 SN74HC04N part 
-- 1 Yellow LED 
-- 1 Red LED 
-- 1 Green LED 
+**Hands-on activity 2**
+ 
 
 *Theory of operation*
-
-Logic sequence of a traffic light is the one bellow: 
-
-.. _fig-rgy:
-
-.. figure:: rgy.png
-   :align: center
-   :width: 300
-
-You will use two logic inputs to control the traffic lights, those inputs are marked A and B, the sequence is the one bellow: 
-
-.. _fig-rgy1:
-
-.. figure:: rgy1.png
-   :align: center
-   :width: 400
-   
-   Flow diagram
-
-Truth table for the logic function that describes the traffic lights sequence
-
-.. _fig-demo2:
-
-.. figure:: demo2.png
-   :align: center
-   :width: 400
-
-*Hardware Setup*
-
-The circuit functionality is represented in the schematic:
-
-.. _fig-demo2hw:
-
-.. figure:: demo2hw.png
-   :align: center
-   :width: 300
-   
-   Schematic
-   
- 
-Components Pinout 
-  
-+-----------------------------------+-----------------------------------+-----------------------------------+
-|         **SN74HC04N**             |         **SN74HC04N**             |        **LED Terminals**          |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-| .. image:: SN74HC04N.png          | .. image:: SN74HC08N.png          | .. image:: led.png                |
-|    :width: 300                    |    :width: 300                    |    :width: 300                    |
-|    :alt: SN74HC04N                |    :alt: SN74HC08N                |    :alt: LED                      |
-+-----------------------------------+-----------------------------------+-----------------------------------+
-
 
    
 Steps: 
 
-1.	Place the ICs on the breadboard with each pin row on one side of the breadboard delimitator.
-2.	Open Scopy application
-3.	Open the Oscilloscope instrument
-4.	Open the Power instrument
-5.	Connect the V+ wire to pins 14 of the both ICs - VCC
-6.	Connect GND pin of the M2K to pin 7 of both ICs
-7.	Connect DIO 0 pin to SN74HC04N pin 1
-8.	Connect DIO 0 pin to SN74HC08N pin 1
-9.	Connect DIO 1 pin to SN74HC04N pin 3
-10.	Connect DIO 1 pin to Y LED
-11.	Connect SN74HC04N pin 2 to R LED
-12.	Connect SN74HC04N pin 4 to SN74HC08N pin 2
-13.	Connect SN74HC08N pin 3 to G LED
-14.	Set the V+ to 3.3V and press the Enable button
-
-
 *Results* 
 
-•	Open the Scopy Digital IO and Power instruments: 
-•	Toggle the DIO0 and DIO1 digital pins according to the logical function truth table and verify the outputs match the table results 
-
-.. _fig-demo2scopy:
-
-.. figure:: demo2scopy.png
-   :align: center
-   :width: 400
-   
-   Scopy setup
-   
 **Challenge**
 
-•	Implement a logical OR function using SN74HC32N part from the kit
-•	Pinout:
 
-.. _fig-SN74HC32N:
+**Hands-on activity 3**
 
-.. figure:: SN74HC32N.png
-   :align: center
-   :width: 300
-   
-   Logical OR
-
-
-**Demo3 - NPN transistor characteristics**
-
-The demo will describe the output characteristics of a BJT NPN transistor using modern instrumentation tools.
 
 *Materials* 
 
-•	ADALM2000 Active Learning Module
-•	Jumper wires
-•	1 - 100KΩResistor
-•	1 - 100ΩResistor
-•	1 - small signal NPN transistor - 2N3904
-•	1 - small signal PNP transistor - 2N3906
-
 *Theory of operation*
-
-2N2904 Pinout
-
-+------------------------+------------------------+
-| .. image:: npn.png     | .. image:: npn1.png    | 
-|    :width: 200         |    :width: 200         |
-|    :alt: pnp           |    :alt: SN74HC08N     |
-+------------------------+------------------------+
 
 *Hardware setup*
 
-•	Place the transistor and resistors on the breadboard.
-•	Make the connections between ADALM2000 and circuit as shown below.
-
-.. _fig-npn2:
-
-.. figure:: npn2.png
-   :align: center
-   :width: 350
-   
-   ADALM2000 connections
-   
 Steps
 
-1.	Open Scopy application
-2.	Create a CSV file with a column having integer values from 0 to 5(0, 1, 2, 3, 4), save it
-3.	Open the Waveform generator instrument and select Channel 2, load the previously created csv file and make the setup:
-
-.. _fig-demo2scopy1:
-
-.. figure:: demo2scopy1.png
-   :align: center
-   :width: 600
-   
-4.	Select Channel 1, make the setup:
-
-.. _fig-demo2scopy2:
-
-.. figure:: demo2scopy2.png
-   :align: center
-   :width: 600
-   
-5.	Open the scope and select the XY view
-6.	Add a math channel with the following function: M1 = t0/100  - it represents the Ic current, given the 100 ohms collector resistor
- 
-`Results`
-
-7.	Observe the out characteristics of the NPN transistor Ic = f(Vce)
-
-.. _fig-demo2scopyres:
-
-.. figure:: demo2scopyres.png
-   :align: center
-   :width: 600
-
 **Challenge**
-
-•	Obtain the characteristics for a PNP transistor provided.
-•	The curve trace should look like the one in the image:
-   
-.. _fig-demo2scopych:
-
-.. figure:: demo2scopych.png
-   :align: center
-   :width: 600
-
-Tips: you need to create another csv file for the base control signal of the transistor.
-
-**Demo 4- Home made battery - instructor-led**
-
-This demo is instructor-led and intends to implement a proof of concept for a battery powered LED using unconventional materials.
-
-*Materials:*
-
-•	ADALM2000 Active Learning Module
-•	Jumper wires (wires with alligator clips will work best)
-•	3 lemons: large, fresh, “juicy” lemons work best.
-•	Zinc plated screws or nails
-•	Copper plated coins or copper nails or heavy gauge (14 or 12) copper wire.
-•	Red LED
-
-*Hardware Setup*
-
-1. Insert a copper penny into a small cut or push a copper nail or heavy gauge wire into one side of the lemon. 
-2. Push a galvanized (zinc coated) screw or nail into the other side of the lemon. The zinc and copper electrodes must not touch.
-
-.. _fig-demo4:
-
-.. figure:: demo4.png
-   :align: center
-   :width: 150
-
-
-*Results*
-
-You should be able to observe how the Red LED is lit by the 4 or more lemon-cells battery
 
 
 Slide Deck, booklet and additional materials
@@ -487,37 +302,20 @@ workshop, a slide deck is provided here:
 
 .. ADMONITION:: Download
 
-   :download:`Introduction to Electronics Slide Deck <ElectronicsBasics_nov24.pdf>`
+   :download:`Emebdded Software Slide Deck <No-OS Workshop 2025.pdf>`
 
-A complete booklet of the hands-on activity is also provided, either as a companion to
+A complete booklet of the hands-on activity is also provided, as a companion to
 following the tutorial yourself: 
 
 .. ADMONITION:: Download
 
-  :download:`Introduction to Electronics Booklet <Ebasics Booklet.pdf>`
+  :download:`Embedded Software Booklet <No-OS Booklet.pdf>`
   
-Comma Separated Values file used for generating the base step voltage needed for the Transistor Characteristic demo: 
-
-.. ADMONITION:: Download
-
-  :download:`Base Voltage Values <BaseVoltage.csv>`
   
   
 Takeaways
 ~~~~~~~~~~~
 
-Electronics can be both fun and challenging, but it brings many satisfactions
-
-ADALM2000 is a very versatile tool suited to use in various applications:​
-
-- Lab setups​
-
-- Advanced measurements​
-
-- Learning platforms​
-
-- Research
- 
 
 Resources 
 ~~~~~~~~~~~
@@ -528,10 +326,10 @@ https://wiki.analog.com/resources/no-os/api
 
 https://wiki.analog.com/resources/no-os?s[]=no&s[]=os
 
+https://github.com/analogdevicesinc/no-OS
+
 https://www.analog.com/en/analog-dialogue/articles/understanding-and-using-the-no-os-and-platform-drivers.html
  
-https://github.com/analogdevicesinc/no-OS/tree/master/projects
-
 
 *Specific hardware resources*
 
