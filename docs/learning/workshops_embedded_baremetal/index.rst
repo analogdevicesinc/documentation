@@ -256,7 +256,7 @@ By the end of this workshop, you will learn:
 **Pre-requisites**
 
 
-**Hands-on activity 1**
+**Hands-on activity 1 **
 
 *Materials*
 
@@ -280,11 +280,19 @@ Steps:
 **Challenge**
 
 
+<<<<<<< HEAD
 **Hands-on activity 3**
+=======
+**Hands-on activity3 **
+>>>>>>> ff4b355ba3172f6e650319b36548c25afa439229
 
 
 *Materials* 
 
+<<<<<<< HEAD
+=======
+•
+>>>>>>> ff4b355ba3172f6e650319b36548c25afa439229
 *Theory of operation*
 
 *Hardware setup*
