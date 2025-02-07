@@ -64,3 +64,4 @@ Academic Workshops
 
    workshops_software_defined_instrumentation/index
    workshops_introduction_to_electronics/index
+   workshops_embedded_baremetal/index
