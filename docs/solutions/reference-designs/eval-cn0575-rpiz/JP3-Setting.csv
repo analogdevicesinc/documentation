@@ -1,0 +1,3 @@
+﻿JP3 Setting,Software Power-Down Configuration
+Open,PHY enters software PD mode after a reset operation (Default).
+Shorted,PHY does not enter software PD mode after a reset operation.

@@ -720,7 +720,7 @@ the receive side of the ADALM-PLUTO.
 
    .. shell::
 
-      $iio_attr -u usb:3.80.5 -s -c ad
+      $iio_attr -u usb:3.80.5 -s -c *ad*
        dev 'cf-ad9361-dds-core-lpc', channel 'voltage0' (output, index: 0, format: le:S16/16>>0)
        dev 'cf-ad9361-dds-core-lpc', channel 'voltage1' (output, index: 1, format: le:S16/16>>0)
        dev 'cf-ad9361-lpc', channel 'voltage0' (input, index: 0, format: le:S12/16>>0)
@@ -734,7 +734,7 @@ the receive side of the ADALM-PLUTO.
 
    .. shell::
 
-      $iio_attr -u usb:3.80.5  -D ad9361-phy loopback 1
+      $iio_attr -u usb:3.80.5 -D ad9361-phy loopback 1
        dev 'ad9361-phy', debug attr 'loopback', value :'0'
        wrote 2 bytes to loopback
        dev 'ad9361-phy', debug attr 'loopback', value :'1'

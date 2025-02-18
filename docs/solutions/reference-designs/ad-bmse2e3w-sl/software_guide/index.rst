@@ -49,40 +49,56 @@ GUI Installation
 
 #. Double-click on **ad-bmse2e3w-sl-rel1.0.0.exe** to install the program to your computer.
 
-   .. image:: gui_executable_file.png
+   .. figure:: gui_executable_file.png
+
+      AD-BMSE2E3W-SL-Rel1.0.0 Installer File
 
 #. Accept the license terms and click *Next* to proceed with the installation. The default installation directory is in ``C:\Analog Devices\``
 
-  .. image:: gui_installation.png
+  .. figure:: gui_installation.png
+
+      License Terms and Agreement
 
 #. Locate the **light_ev_bmsv1.0.0.hex** file inside the AD-BMSE2E3W-SL installer files folder.
 
    ``C:\Analog Devices\AD-BMSE2E3W-SL-Rel1.0.0\Software\Firmware``
 
-   .. image:: firmware_location.png
+   .. figure:: firmware_location.png
+
+      Firmware Location inside the Installer Files Folder
 
 
 #. Drag and drop the .hex file into the DAPLink drive to flash the program on the MCU.
 
-   .. image:: hex_file_to_daplink.png
+   .. figure:: hex_file_to_daplink.png
+
+      Drag-and-drop HEX to DAPLink Drive
 
 
 #. Find the **Light_EV_BMS_GUI.exe** file inside the AD-BMSE2E3W-SL installer files folder.
 
    ``C:\Analog Devices\AD-BMSE2E3W-SL-Rel1.0.0\Software\GUI\Light_EV_BMS_GUI_v1.0.0``
 
-   .. image:: gui_executable_file_location.png
+   .. figure:: gui_executable_file_location.png
+
+      Installer File Location
 
 #. Double-click the **Light_EV_BMS_GUI.exe** file to open the program. You should see a script running in the background separately and the landing page running in the browser.
 
-   .. image:: background_script.png
+   .. figure:: background_script.png
 
-   .. image:: home_landing_page.png
+      Background Script
+
+   .. figure:: home_landing_page.png
+
+      GUI Landing Page
 
 Interface Setup
 ---------------
 
-.. image:: home_landing_details.png
+.. figure:: home_landing_details.png
+
+   Landing Page Menu
 
 .. csv-table:: Details Available on the Landing Page
   :file: landing-page.csv
@@ -91,26 +107,36 @@ Interface Setup
 
 #. Set the jumper configuration based on the communication mode being used: UART or CAN.
 
-   .. image:: communication_jumper_selection.png
+   .. figure:: communication_jumper_selection.png
+
+      Selecting the Communication Mode
 
    On the GUI landing page, hover to the *Communication Mode* dropdown menu. Select **UART COM** followed by the specific port number if using UART, or **CAN** if using CAN.
 
-   .. image:: communication_mode.png
+   .. figure:: communication_mode.png
+
+      Communication Mode Menu
 
 
    Press the ``RESET`` button every time the hardware set up is changed.
 
-   .. image:: reset_button_hardware.png
+   .. figure:: reset_button_hardware.png
+
+      RESET Button
 
 
 #. Click the ``Load Defaults`` button to set the initial entry values for the different parameters needed for the State of Charge (SoC) and State of Health (SoH) calculations.
 
-   .. image:: setting_defaults.png
+   .. figure:: setting_defaults.png
+
+      Loading Default Settings
 
 
 #. Click the ``Start`` button to begin the measurements.
 
-   .. image:: start_button.png
+   .. figure:: start_button.png
+
+      Start Button
 
 Tabs
 ----
@@ -120,21 +146,27 @@ Overview
 
 The Overview tab features plots for stack voltage, module current, max charge current, max discharge current, cell voltages, cell temperatures, and state of the battery. This tab also allows setting of the vehicle state, which by default is set to "PARKED".
 
-.. image:: update_overview_page.png
+.. figure:: update_overview_page.png
+
+   Overview Tab
 
 Graph
 ^^^^^
 
 The Graph tab enables checking the progression of the readings for different parameters such as the cell voltage, temperature, SoC, SoH, and pack voltage and current.
 
-.. image:: update_graph_page.png
+.. figure:: update_graph_page.png
+
+   Graph Tab
 
 Console
 ^^^^^^^
 
 Presents the actual numerical data being fetched by the UI in a tabular form. This tab allows the user to study or qualify the data, if needed.
 
-.. image:: update_console_page.png
+.. figure:: update_console_page.png
+
+   Console Tab
 
 Diagnostic
 ^^^^^^^^^^
@@ -146,5 +178,7 @@ Indicators:
 * Green color = passed (or no issue detected)
 * Red color = failed
 
- .. image:: update_diagnsotic_page.png
+ .. figure:: update_diagnsotic_page.png
+
+   Diagnostics Tab
 

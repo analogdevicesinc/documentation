@@ -6,7 +6,9 @@ Sample Application
 
 Below diagram depicts the essential components needed when using this BMS reference design for basic electric 2-wheeler or 3-wheeler applications. Each block represents a component. Use the diagram as a guide to understand the system operation.
 
-.. image:: 72v-96v_vehicle_system.png
+.. figure:: 72v-96v_vehicle_system.png
+
+   Setup for 72V to 96V Vehicle BMS
 
 #. **Battery Cell/Pack Block** - This block is where your battery supply or source is located. There are two configurations on how to connect the battery cells to the BMS:
 
@@ -29,7 +31,9 @@ Below diagram depicts the essential components needed when using this BMS refere
 
    **UART Communication**
 
-   .. image:: uart_comm.png
+   .. figure:: uart_comm.png
+
+      UART Communication
 
    .. figure:: basic_can_comm.png
 
@@ -41,7 +45,9 @@ Below diagram depicts the essential components needed when using this BMS refere
 
 #. **Load** - This block is where you can place your external load. The voltage output at this level can vary from 72V to 96V with 50A to 100A range current capacity. The system implements a low side current sensing using Rshunt (sense resistor) where the VBAT- of the battery is connected to the upper end of the Rshunt bar and Shunt- is connected to the lower end of the Rshunt. The Shunt- will then be connected to the end of the load or the negative supply of the load.
 
-   .. image:: load_diagram.png
+   .. figure:: load_diagram.png
+
+      Connecting an External Load
 
 After the set up for vehicle and load connection is done, you can now load the sample firmware for vehicle application.
 

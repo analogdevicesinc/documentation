@@ -9,6 +9,16 @@ Amplifiers
 Analog Switches and Multiplexers
 -------------------------------------------------------------------------------
 
+Analog to Digital Converters
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :caption: MEMS Accelerometers
+   :maxdepth: 1
+   :glob:
+
+   adc/*/index
+
 Automatic Test Equipment - PMU & DPS
 -------------------------------------------------------------------------------
 
@@ -39,8 +49,9 @@ Inertial MEMS Sensors
 .. toctree::
    :caption: MEMS Accelerometers
    :maxdepth: 1
+   :glob:
 
-   eval-adxl355-pmdz/index
+   mem/*/index
 
 Interface and Isolation
 -------------------------------------------------------------------------------
@@ -60,9 +71,9 @@ FMC Compatible Boards
 .. toctree::
    :caption: Transceiver/Radio Boards
    :maxdepth: 1
+   :glob:
 
-   adrv9009/index
-   adrv9026/index
+   transceiver/*/index
 
 ADICUP Development Boards
 -------------------------------------------------------------------------------

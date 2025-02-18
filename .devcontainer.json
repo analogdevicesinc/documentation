@@ -1,0 +1,25 @@
+{
+  "image": "python:latest",
+  "name": "Documentation codespace (adi_doctools)",
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["docs/index.rst"]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "python -m venv venv ; source venv/bin/activate ; pip install -r docs/requirements.txt",
+  "postCreateCommand": "",
+  "postAttachCommand": {
+    "server": "source venv/bin/activate ; (cd docs ; adoc serve -p 8000)"
+  },
+  "portsAttributes": {
+    "8000": {
+      "label": "livel-editor",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [8000]
+}

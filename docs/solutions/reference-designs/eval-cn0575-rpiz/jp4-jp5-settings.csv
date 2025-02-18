@@ -1,0 +1,5 @@
+﻿JP4 Setting,JP5 Setting,SPI Protocol
+Open,Open,OPEN Alliance with Protection
+Open,Shorted,OPEN Alliance without Protection
+Shorted,Open,Generic SPI with 8-bit CRC
+Shorted,Shorted,Generic SPI without 8-bit CRC (Default)
