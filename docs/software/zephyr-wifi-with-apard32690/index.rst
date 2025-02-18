@@ -1,6 +1,12 @@
 Networking Support - WiFi / T1L
 ===============================
 
+The following document describes how to build and flash firmware for the NINA-W102 module on the :adi:`MAX32690 Arduino Form-Factor Board <AD-APARD32690-SL>`.
+It will also describe how to build and  flash the Zephyr Wifi sample to work with this board once the NINA-W102 has been flashed.
+
+Some familiarity with Zephyr and building / flashing Zephyr applications is assumed. If you are new to Zephyr, please start with the Getting Started Guide:
+https://docs.zephyrproject.org/latest/develop/getting_started/index.html
+
 WiFi
 ----
 The wifi chip on the AD-APARD32690 is a uBlox NINA-W102 "Open CPU" Wifi/Bluetooth module.  The modules is based on an ESP32 chip, with "Open CPU" meaning it does NOT come preloaded with firmware from uBlox, but rather is intended for customers to develop their own firmware to run on it.
@@ -21,15 +27,18 @@ However, the pre-built firmware is for ESP32 development boards which have a dif
 
 Building NINA-W102 Firmware
 ---------------------------
-The following instruction mostly come from this document:
+
+Before proceeding, ensure that P50 and P55 on the APARD32690 board are in position 1-2 if you are trying to get the NINA-W102 UART data through the SWD connector. Be sure to switch this back later for testing the Zephyr application.
+
+The following instructions mostly come from this document:
 https://docs.espressif.com/projects/esp-at/en/latest/esp32/Compile_and_Develop/How_to_clone_project_and_compile_it.html
 
 Install the ESP SDK: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html
 
 Open the ESP-IDF Command Prompt and run the following steps:
 
-1. get the project. git clone --recursive https://github.com/espressif/esp-at.git
-2. Run the builder.  python build.py install
+1. Get the project: git clone --recursive https://github.com/espressif/esp-at.git
+2. Run the builder:  python build.py install
     * Select PLATFORM_ESP32
     * Select module ESP32-D2WD as it has the same flash size as the NINA-W102, making it easier to configure
     * When asked about silent mode, select Y.  Otherwise, if silent mode is not enable, you'll need to set the compiler options later to Optimize for Size to get it to fit
@@ -64,6 +73,7 @@ The NINA-W102 device may be flashed using the stand alone ESP Flash download too
 FW image built with 115200bps basic buad rate and no flow control: :strong:`factory_ESP32-AT_115200_NoFlow.bin`
 
 Follow the instructions in the previous section up through step 3, then consult the ESP-AT Downloading guide for using the Flash Download Tool on Windows. Selecting the combined factory firmware image, as described above.
+https://docs.espressif.com/projects/esp-at/en/latest/esp32/Get_Started/Downloading_guide.html#flash-at-firmware-into-your-device
 
 AT Command Verification
 -----------------------
@@ -152,9 +162,12 @@ Flash the application using a Segger JLink as below:
 
     west flash -r jlink
 
+At this point, make sure that P55 and P50 on the APARD32690 board are in positions 2-3 to get UART data from the MAX32690.
+
 Testing
 -------
 
+At this point, make sure that P55 and P50 on the APARD32690 board are in positions 2-3 to get UART data from the MAX32690. Connect to a terminal application with 115200 baud, 8-N-1 UART settings. Make sure that P56 and P38 are also connected.
 The Zephyr Wifi sample application comes with a Wifi shell for doing basic Wifi interactions.  After launching the scan, and connect commands were used to successfully connect to an AP via the Zephyr network subsystem.
 
 Verify the devices installed with `device list`:
