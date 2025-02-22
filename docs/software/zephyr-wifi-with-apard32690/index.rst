@@ -1,7 +1,7 @@
 Networking Support - WiFi / T1L
 ===============================
 
-The following document describes how to build and flash firmware for the NINA-W102 module on the :adi:`MAX32690 Arduino Form-Factor Board <AD-APARD32690-SL>`.
+The following document describes how to build and flash firmware for boards with the NINA-W102 WiFi module. As an example, it will use the :adi:`MAX32690 Arduino Form-Factor Board <AD-APARD32690-SL>`.
 It will also describe how to build and  flash the Zephyr Wifi sample to work with this board once the NINA-W102 has been flashed.
 
 Some familiarity with Zephyr and building / flashing Zephyr applications is assumed. If you are new to Zephyr, please start with the Getting Started Guide:
@@ -69,8 +69,6 @@ Depending on the integrity of the cables (bad jumper wires, etc), you may be hav
 Standalone Programming
 ----------------------
 The NINA-W102 device may be flashed using the stand alone ESP Flash download tool without needing to install the full SDK.
-
-FW image built with 115200bps basic buad rate and no flow control: :strong:`factory_ESP32-AT_115200_NoFlow.bin`
 
 Follow the instructions in the previous section up through step 3, then consult the ESP-AT Downloading guide for using the Flash Download Tool on Windows. Selecting the combined factory firmware image, as described above.
 https://docs.espressif.com/projects/esp-at/en/latest/esp32/Get_Started/Downloading_guide.html#flash-at-firmware-into-your-device
