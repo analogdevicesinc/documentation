@@ -1,13 +1,15 @@
 {
   "image": "python:latest",
-  "name": "Documentation codespace (adi_doctools)",
+  "name": "Documentation editor",
   "customizations": {
     "codespaces": {
       "openFiles": ["docs/index.rst"]
     }
   },
   "features": {
-    "ghcr.io/devcontainers/features/git-lfs:1": {}
+    "ghcr.io/devcontainers/features/git-lfs:1": {
+      "autoPull": "false"
+    }
   },
   "waitFor": "onCreateCommand",
   "updateContentCommand": "python -m venv venv ; source venv/bin/activate ; pip install -r docs/requirements.txt",
@@ -17,7 +19,7 @@
   },
   "portsAttributes": {
     "8000": {
-      "label": "livel-editor",
+      "label": "live-editor",
       "onAutoForward": "openPreview"
     }
   },

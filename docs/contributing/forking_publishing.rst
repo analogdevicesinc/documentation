@@ -19,14 +19,51 @@ Preparing your origin
 
 There is three options to contribute:
 
-* :ref:`forking-publishing fork`: that want to use the GitHub flow (recommended).
+* :ref:`forking-publishing branch`: with write access to *analogdevicesinc* organization (recommended).
+* :ref:`forking-publishing fork`: that want to use the GitHub flow.
 * :ref:`forking-publishing copy`: that want to work privately first.
-* :ref:`forking-publishing branch`: with write access to *analogdevicesinc* organization.
 
 .. tip::
 
    If using Github Codespaces, just fork/create a branch/copy and follow
    :ref:`this section <forking-publishing github-codespaces>`.
+
+.. _forking-publishing branch:
+
+Branch
+~~~~~~
+
+If you have write permission to the repository, you shall add your work to a
+branch at mainland, then just:
+
+Ensure git-lfs is installed with:
+
+.. code:: bash
+
+   sudo apt install git-lfs -y
+
+Initialize it with skip-smudge during clone, so we can fetch on demand later:
+
+.. code:: shell
+
+   git lfs install --skip-smudge
+
+Clone the repository
+
+.. shell::
+
+   $git clone https://github.com/analogdevicesinc/documentation \
+   $    --origin public \
+   $    --depth 10 \
+   $    -- documentation
+   $cd documentation
+
+Create and checkout a branch
+
+.. shell::
+
+   ~/documentation
+   $git checkout -b <your_branch>
 
 .. _forking-publishing fork:
 
@@ -45,13 +82,33 @@ Ensure git-lfs is installed with:
 
    sudo apt install git-lfs -y
 
+Initialize it with skip-smudge during clone, so we can fetch on demand later:
+
+.. code:: shell
+
+   git lfs install --skip-smudge
+
 Clone the repository:
 
 .. shell::
 
    $git clone https://github.com/<your_user>/documentation \
-   $    --depth=10 -- documentation
+   $    --origin public \
+   $    --depth 10 -- documentation
    $cd documentation
+
+
+Fetch the large files from *analogdevicesinc* that your are working on and push
+to your copy the large files binaries (and vice-versa):
+
+.. shell::
+
+   ~/documentation
+   $git lfs pull public -I file_basename
+   $git lfs push private --all
+
+If you don't have write permission to *analogdevicesinc*, you won't be able
+to push to it, but a reviewer can do in your behalf during review.
 
 .. _forking-publishing copy:
 
@@ -64,12 +121,19 @@ Ensure git-lfs is installed with:
 
    sudo apt install git-lfs -y
 
+Initialize it with skip-smudge during clone, so we can fetch on demand later:
+
+.. code:: shell
+
+   git lfs install --skip-smudge
+
 Clone mainland:
 
 .. shell::
 
    $git clone https://github.com/analogdevicesinc/documentation \
-   $    --depth=10 -- documentation
+   $    --origin public \
+   $    --depth 10 -- documentation
    $cd documentation
 
 Setup both origins, for example, call *analogdevicesinc* ``public`` and your
@@ -101,44 +165,17 @@ Push the working branch to your copy.
    ~/documentation
    $git push private main:main
 
-Fetch from *analogdevicesinc* and push to your copy the large files binaries:
+Fetch the large files from *analogdevicesinc* that your are working on and push
+to your copy the large files binaries (and vice-versa):
 
 .. shell::
 
    ~/documentation
-   $git lfs fetch --all public
-   $git lfs push --all private
+   $git lfs pull public -I file_basename
+   $git lfs push private --all
 
-.. _forking-publishing branch:
-
-Branch
-~~~~~~
-
-If you have write permission to the repository, you shall add your work to a
-branch at mainland, then just:
-
-Ensure git-lfs is installed with:
-
-.. code:: bash
-
-   sudo apt install git-lfs -y
-
-
-Clone the repository
-
-.. shell::
-
-   $git clone https://github.com/analogdevicesinc/documentation \
-   $    --depth=10 \
-   $    -- documentation
-   $cd documentation
-
-Create and checkout a branch
-
-.. shell::
-
-   ~/documentation
-   $git checkout -b <your_branch>
+If you don't have write permission to *analogdevicesinc*, you won't be able
+to push to it, but a reviewer can do in your behalf during review.
 
 Preparing your environment
 --------------------------
@@ -185,7 +222,18 @@ Install the requirements:
    ~/documentation
    $(cd docs ; pip install -r requirements.txt --upgrade)
 
-Build the doc (output at docs/_build/html):
+Launch the doc editing server using :external+doctools:ref:`serve`:
+
+.. shell::
+
+   ~/documentation
+   $(cd docs ; adoc serve)
+
+The server will fetch on demand the git lfs resource (smudge step) from the
+pages you visit on the local server, and watched files you touch.
+
+Alternatively, you can build it once calling Sphinx directly, but if the git lfs
+smudge step was skipped, the images and other binary files will be missing.
 
 .. shell::
 
@@ -203,7 +251,7 @@ GitHub Codespaces.
 GitHub Codespaces uses the :git-documentation:`.devcontainer.json` file to
 initialize a container in the cloud.
 This container is pre-configured with all the tools required to build the
-documentation, including the live preview daemon  :external+doctools:ref:`serve`,
+documentation, including the live preview daemon :external+doctools:ref:`serve`,
 which is automatically started.
 This setup provides a user experience comparable to platforms like Google Docs
 or Overleaf.
@@ -310,15 +358,17 @@ git repository, in an external server.
 
 When you do ``git clone/pull``, by default lfs will also download the binaries
 at the "smudge" step.
-You can change this behaviour by setting globally
+But instead, we recommend to change this behaviour by setting globally
 ``git lfs install --skip-smudge`` or temporally with ``GIT_LFS_SKIP_SMUDGE=1``
-environment variable.
+environment variable and then fetch the artifacts on demand, either by the
+``git lfs pull public -I file_basename`` or letting :external+doctools:ref:`serve` handle it.
+This method on-demand saves a lot of bandwidth and time.
 
 If during a clone or pull you obtain the error:
 
 ::
 
-   Encountered n file(s) that should have been pointers
+   Encountered <n> file(s) that should have been pointers
 
 That simply means that someone pushed files to remote that should have been
 pointers (defined in the *.gitattributes* file).
@@ -327,7 +377,7 @@ And to fix is simple:
 .. shell::
 
    $git add --renormalize .
-   $git commit -m "Convert binary files to pointers"
+   $git commit -m "lfs: convert binary files to pointers" --signoff
    $git push
 
 And advise the committer to ensure he has git lfs enabled with
