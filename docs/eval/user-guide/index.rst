@@ -31,6 +31,12 @@ Digital to Analog Converters
 Digital to Analog Converters (Current Output)
 -------------------------------------------------------------------------------
 
+.. toctree::
+   :caption: 4-20mA DACs
+   :maxdepth: 1
+
+   eval-ad5421/index
+
 Direct Digital Synthesis (DDS)
 -------------------------------------------------------------------------------
 
