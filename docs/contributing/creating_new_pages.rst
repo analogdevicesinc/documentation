@@ -7,19 +7,6 @@ The first step on adding new content is to understand the
 :ref:`creating-new-pages documentation-structure`.
 Then, proceed with :ref:`creating-new-pages adding-content`.
 
-.. _creating-new-pages template:
-
-Content templates and guidelines
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Templates and guidelines for specific types of content are available:
-
-.. toctree::
-   :glob:
-   :titlesonly:
-
-   template/*
-
 .. _creating-new-pages documentation-structure:
 
 Documentation structure
@@ -100,6 +87,19 @@ To add to this doc, we only need to append to *docs/index.rst* as:
       my-repo/*/index
 
 And copy ``my-repo/docs`` as ``documentation/docs/my-repo`` (mostly).
+
+.. _creating-new-pages template:
+
+Content templates and guidelines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Templates and guidelines for specific types of content are available:
+
+.. toctree::
+   :glob:
+   :titlesonly:
+
+   template/*
 
 .. _creating-new-pages adding-content:
 
@@ -182,6 +182,26 @@ Build the doc and see the changes:
 Even better than having to run ``make html`` at every edit, you can leverage
 :external+doctools:ref:`author-mode` to have a live-updating instance of the doc,
 you just need to save the file and the build will be triggered automatically.
+
+Adding images and other binary files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As described in :ref:`forking-publishing`, this repository leverages
+`git-lfs <https://git-lfs.com/>`__ to keep clone time low and storage space
+in check.
+It also recommends setting ``--skip-smudge`` globally and let :external+doctools:ref:`serve`
+manage them for you.
+
+When adding images and other binary files, if the extension matches the :git-documentation:`.gitattributes`
+file, git lfs will automatically create a symbolic link and upload to the remote with
+``git lfs push public --all``.
+
+Please remember that repository write permission is required for pushing git lfs artifacts,
+so if you are working on a fork, push them to your fork, and a reviewer can fetch and push to public/origin
+accordingly.
+
+Finally, if you are adding a binary type not in the :git-documentation:`.gitattributes` file, please add it
+to it also, this way we can keep the repository lean and efficient long-term.
 
 .. _importing-dokuwiki:
 
