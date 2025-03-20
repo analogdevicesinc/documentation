@@ -24,7 +24,7 @@ System Design
    converter_connectivity_tutorial/index
 
 .. toctree::
-   :caption: Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors
+   :caption: ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors
    :maxdepth: 1
 
    sw_infrastructure/index
