@@ -8,7 +8,7 @@ The steps below are a walk-through to contribute to
 It ensures that GitHub Actions and GitHub Pages are enabled, so you can run
 continuous integration and see the pages live at *<your_user>.github.io/documentation*,
 and `git-lfs <https://git-lfs.com/>`__ artifacts are properly synced.
-To learn about git lfs and use it as a pro, read :ref:`git-lfs`.
+To learn about git LFS and use it as a pro, read :ref:`git-lfs`.
 
 .. note::
 
@@ -230,10 +230,10 @@ Launch the doc editing server using :external+doctools:ref:`serve`:
    ~/documentation
    $(cd docs ; adoc serve)
 
-The server will fetch on demand the git lfs resource (smudge step) from the
+The server will fetch on demand the git LFS resource (smudge step) from the
 pages you visit on the local server, and watched files you touch.
 
-Alternatively, you can build it once calling Sphinx directly, but if the git lfs
+Alternatively, you can build it once calling Sphinx directly, but if the git LFS
 smudge step was skipped, the images and other binary files will be missing.
 
 .. shell::
@@ -349,17 +349,17 @@ Edit, build, commit, push as usual.
 
 .. _git-lfs:
 
-Conquer git lfs
+Conquer git LFS
 ---------------
 
-Since git lfs is not that common in the wild, it may be tricky to get the hang
+Since git LFS is not that common in the wild, it may be tricky to get the hang
 of it.
 
 First of all, the basics:
-lfs replaces binaries files with pointers, and stores the binaries outside the
+Git LFS replaces binaries files with pointers, and stores the binaries outside the
 git repository, in an external server.
 
-When you do ``git clone/pull``, by default lfs will also download the binaries
+When you do ``git clone/pull``, by default LFS will also download the binaries
 at the "smudge" step.
 But we **highly** recommend to change this behaviour to fetch the artifacts on
 demand by setting globally ``git lfs install --skip-smudge`` or temporally with
@@ -419,19 +419,19 @@ And to fix is simple:
    $git commit -m "lfs: convert binary files to pointers" --signoff
    $git push
 
-Then, advise the committer to ensure he has git lfs enabled with
+Then, advise the committer to ensure he has git LFS enabled with
 ``git lfs install`` and to read this page.
 
 Checking out branches and commits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Git lfs simply follows the rules on the :git-documentation:`.gitattributes` file.
+Git LFS simply follows the rules on the :git-documentation:`.gitattributes` file.
 And some times you may encounter during checkout:
 
 .. shell::
    :no-path:
 
-   $git checkout other_branch -f
+   $git checkout other_branch
     error: Your local changes to the following files would be overwritten by checkout:
             path/to/file/that_should_be_a_pointer.pptx
     Please commit your changes or stash them before you switch branches.
@@ -448,9 +448,10 @@ If you don't care about this file at the moment, just ``--force`` your way out.
 Pull request permission
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-When a user opens a pull request, he temporally grants you write permission for their
-remove branch for commits, but not for git lfs storage, so pushing lfs artifacts to
-their remote will cause:
+ When a user creates a pull request, they temporarily grant write permission
+ for the removal of branches containing commits.
+ However, this does not extend to LFS.
+ As such, pushing LFS artifacts to their remote will result in:
 
 .. shell::
    :no-path:
@@ -468,11 +469,11 @@ their remote will cause:
     remote: Try to push them with 'git lfs push --all'.
     To https://github.com/<contributor>/documentation.git
 
-As a reviewer, this may get on the way and there is no particular fix for that beyond not pushing
-commits with new lfs artifacts, or awkwardly asking contributor permissions to their repository.
+As a reviewer, this gets on the way and there is no straightforward
+solution beyond not pushing commits with new LFS artifacts, or awkwardly requesting
+contributor permissions to their repository.
 
-If you want to add new lfs artifacts, as a reviewer, just merge the PR, and commit to main.
-If it is a complex PR, you can push to a new branch, and work from there and once you and the
-contributor are ratified, close the original PR without merging, merging the branch on the main
-remote instead.
-
+If you wish to add new LFS artifacts, as a reviewer, simply merge the PR and commit to main.
+If the pull request is complex, you can push to a new branch, work on it, and
+once both parties are satisfied, close the original PR without merging, merging
+the branch onto the main remote instead.
