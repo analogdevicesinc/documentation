@@ -1,6 +1,9 @@
 EVAL-ESS1-SYS
 =============
 
+Scalable BMS Kit for Cell and Pack Monitoring 
+"""""""""""""""""""""""""""""""""""""""""""""
+
 Introduction
 ------------
 
@@ -153,7 +156,7 @@ BMS Browser GUI Installation
          :align: center
          :width: 500px
 
-#. Accept the license terms and click next to proceed with the installation.
+#. Accept the license terms and click **Next** to proceed with the installation.
 
     .. image:: gui_license.png
          :align: center
@@ -165,8 +168,8 @@ BMS Browser GUI Installation
             :align: center
             :width: 500px
 
-MCU Configuration & Setup
-~~~~~~~~~~~~~~~~~~~~~~~~~
+MCU Configuration and Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important:: 
     
@@ -178,12 +181,9 @@ The MCU should be programmed using the following steps:
 
 **MAX326825PICO Debugger (One-time setup)**
 
-#. Download the firmware file
-  `max32625_max32690evkit_if_crc_swd_v1.0.7.bin <https://confluence.analog.com/download/attachments/984201370/max32625_max32690evkit_if_crc_swd_v1.0.7.bin?version=1&modificationDate=1709666334248&api=v2>`__
-  for the MAX32625PICO board.
-#. Consult the `MSDK User
-  Guide <https://analogdevicesinc.github.io/msdk/USERGUIDE/#updating-the-max32625pico-pico-debug-adapter-firmware>`__
-  for detailed instructions on updating the MAX32625PICO Debug Adapter Firmware.
+#. Download the firmware file `firmware file <https://confluence.analog.com/download/attachments/984201370/max32625_max32690evkit_if_crc_swd_v1.0.7.bin?version=1&modificationDate=1709666334248&api=v2>`__ for the MAX32625PICO board.
+#. Consult the `MSDK User Guide <https://analogdevicesinc.github.io/msdk/USERGUIDE/#updating-the-max32625pico-pico-debug-adapter-firmware>`__
+   for detailed instructions on updating the MAX32625PICO Debug Adapter Firmware.
 
         * Plug in the MAX32625PICO board while holding the on-board button. A red LED should blink, then hold steady, and a MAINTENANCE drive should appear on your PC. 
            
@@ -191,13 +191,14 @@ The MCU should be programmed using the following steps:
 
         * **Drag-n-drop** the .hex file onto the MAINTENANCE drive. The file transfer should be complete in about 30 seconds.
         * Unplug and replug the device.
-        * After completion, a **DAPLINK** drive should appear. You can drag and drop the firmware (.hex files separate from the above) onto it to program the AD-APARD32690-SL when the probe is properly connected.
+        * After completion, a **DAPLINK** drive should appear. You can drag and drop the firmware (.hex files separate from the above) 
+          onto it to program the AD-APARD32690-SL when the probe is properly connected.
 
 #. Connect the MAX32625PICO to the AD-APARD32690-SL at **P9**, ensuring the correct 10-pin ribbon cable orientation.
   
      .. note:: Not all MAX32625PICO Debuggers have a key lock on the ribbon cable connector.
 
-#. Connect a USB cable from the AD-APARD32690-SL (via P10) to the PC.
+#. Connect a USB cable from the AD-APARD32690-SL (**via P10**) to the PC.
 #. Connect another USB cable from the MAX32625PICO to the PC.
 #. A DAPLINK drive should appear in Windows Explorer.
 #. Locate the firmware .hex file to be programmed on the MCU board in the
@@ -299,8 +300,7 @@ measurements with the EV-ADES1830CCSZ.
 EVAL-ADBMS2950-BASIC Quick Test
 -------------------------------
 
-The next part of this guide
-explains how to perform basic measurements with the EVAL-ADBMS2950-BASIC.
+The next part of this guide explains how to perform basic measurements with the EVAL-ADBMS2950-BASIC.
 You’ll need a benchtop power supply to create a current through the shunt
 resistor on the EVAL-ADBMS2950-BASIC.
 
@@ -312,27 +312,37 @@ resistor on the EVAL-ADBMS2950-BASIC.
 
 #. Choose between two options for powering the EVAL-ADBMS2950-BASIC:
 
-   * Supply 5V to J1 and set the current limit to 200 mA. The EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode and ~100 mA in active mode.
+   * Supply 5V to J1 and set the current limit to 200 mA. The EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode
+     and ~100 mA in active mode.
    * Alternatively, power it via a micro-USB cable connected to J10.  
 
-#. Attach a current source to the shunt using crocodile clips, ensuring the positive terminal connects to the bat- port and the negative terminal to the shunt- port. Note that crocodile clips are appropriate only for low currents, primarily for checking hardware functionality. For high current evaluations, consult the
-:dokuwiki:`resources:eval:user-guides:eval-adbms2950-basic <EVAL-ADBMS2950-BASIC User Guide>`.
+#. Attach a current source to the shunt using crocodile clips, ensuring the positive terminal connects to the bat- port
+   and the negative terminal to the shunt- port. Note that crocodile clips are appropriate only for low currents, primarily 
+   for checking hardware functionality. For high current evaluations, consult the :dokuwiki:`EVAL-ADBMS2950-BASIC User Guide <resources/eval/user-guides/eval-adbms2950-basic>`.
 #. Configure the power supply to generate a 5A current.
-#. Open the **BMS_Browser** and select the correct COM port. Set ADBMSGEN6 in the Generation drop-down box. Then, add the ADBMS2950 from the product list to the Daisy Chain and click **Launch**. 
+#. Open the **BMS_Browser** and select the correct COM port. Set ADBMSGEN6 in the Generation drop-down box. Then, add the 
+   ADBMS2950 from the product list to the Daisy Chain and click **Launch**. 
     
     .. image:: 2.5.png
 
-#. After opening, the **Quick Measure tab** is available. **Note:** it can only handle one BMS product in a Daisy Chain. Click **Start Quick Measure** to begin.
-#. Check the Total PEC Status to confirm a successful isoSPI link between the EVAL-ADBMS6822 and the EVAL-ADBMS2950-BASIC. If false, there is an error in the signal chain.
-#. Confirm that the reference voltages for the ADBMS2950 are accurate. Scroll through the **Memory Map** section to check VREF2A, VREF2B, VREF1P25, etc. The anticipated values are indicated in the provided image. {{ :resources:eval:user-guides:eval-ess1-sys:2.8.png?nolink |}}
-#. Check the current through the shunt by selecting I1 ADC result in the Memory Map. With a 50 μΩ shunt resistor and a 5A current, the expected I1 ADC voltage is 0.00025. Adjust the current to 4.5A, resulting in an expected I1 ADC Result of 0.000225. {{ :resources:eval:user-guides:eval-ess1-sys:2.9.png?nolink |}}
+#. After opening, the **Quick Measure tab** is available. **Note:** it can only handle one BMS product in a Daisy Chain.
+   Click **Start Quick Measure** to begin.
+#. Check the Total PEC Status to confirm a successful isoSPI link between the EVAL-ADBMS6822 and the EVAL-ADBMS2950-BASIC. If false,
+   there is an error in the signal chain.
+#. Confirm that the reference voltages for the ADBMS2950 are accurate. Scroll through the **Memory Map** section to check VREF2A,
+   VREF2B, VREF1P25, etc. The anticipated values are indicated in the provided image. 
+    
+    .. image:: 2.8.png
 
+#. Check the current through the shunt by selecting I1 ADC result in the Memory Map. With a 50 μΩ shunt resistor and a 5A current,
+   the expected I1 ADC voltage is 0.00025. Adjust the current to 4.5A, resulting in an expected I1 ADC Result of 0.000225. 
+    
+    .. image:: 2.9.png
 
 Complete Daisy Chain Test
 -------------------------
 
-Once familiar with the setup for each of
-the individual boards the entire signal chain can be verified.
+Once familiar with the setup for each of the individual boards the entire signal chain can be verified.
 
 #. Connect the hardware using the provided isoSPI cables. Power DC2472A boards
    using the USB cable connected to a wall plug. Power the EVAL-ADBMS2950-BASIC
@@ -361,16 +371,25 @@ the individual boards the entire signal chain can be verified.
    action will load a preconfigured sequence into the tool.
 #. Ensure that the steps are followed in the specified order.
 
-       *  Click on **Initialization Sequence** followed by **General Initialization** under the **Sequences** column to load the defined sequences from the **EVAL-ESS1-Sys-Example.json file** into the tool.
-       * Next, select **Loop Sequence** and then click on **General Readback Loop** under the **Sequences** column. This action loads the loop sequence defined in the **EVAL-ESS1-Sys-Example.json file** into the tool.
+       * Click on **Initialization Sequence** followed by **General Initialization** under the **Sequences** column to load 
+         the defined sequences from the **EVAL-ESS1-Sys-Example.json file** into the tool.
+       * Next, select **Loop Sequence** and then click on **General Readback Loop** under the **Sequences** column. This action 
+         loads the loop sequence defined in the **EVAL-ESS1-Sys-Example.json file** into the tool.
        * Finally, click on **Start Freerun** to initiate the freerun mode.
 
-#. During free run mode, the Initialization Sequence is performed once initially. Subsequently, the loop sequence continues to run continuously until the **Stop Freerun** button is clicked.
-#. After activating freerun mode, navigate to the **Memory Map** tab. This section displays a numerical representation of the ongoing command loop. Additional details can be accessed in the GUI's help section. The accompanying screenshot illustrates this output. 
+#. During free run mode, the Initialization Sequence is performed once initially. Subsequently, the loop sequence continues to run
+   continuously until the **Stop Freerun** button is clicked.
+#. After activating freerun mode, navigate to the **Memory Map** tab. This section displays a numerical representation of the
+   ongoing command loop. Additional details can be accessed in the GUI's help section. The accompanying screenshot illustrates
+   this output. 
    
     .. image:: 3.8.png
 
-#. The **Plots** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to four plots simultaneously. In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EV-ADES1830CCSZ as Device 2, and the third EV-ADES1830CCSZ as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages for the first EV-ADES1830CCSZ on Plot 2, and the averaged cell voltages for the third EV-ADES1830CCSZ on Plot 3. Simply choose the desired Plot number from the dropdown menu under each device to display the relevant data. 
+#. The **Plots** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to 
+   four plots simultaneously. In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EV-ADES1830CCSZ as Device 2,
+   and the third EV-ADES1830CCSZ as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell 
+   voltages for the first EV-ADES1830CCSZ on Plot 2, and the averaged cell voltages for the third EV-ADES1830CCSZ on Plot 3. Simply choose the desired 
+   Plot number from the dropdown menu under each device to display the relevant data. 
    
     .. image:: dc_9a.png
       
