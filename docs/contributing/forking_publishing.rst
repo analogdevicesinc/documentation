@@ -8,6 +8,7 @@ The steps below are a walk-through to contribute to
 It ensures that GitHub Actions and GitHub Pages are enabled, so you can run
 continuous integration and see the pages live at *<your_user>.github.io/documentation*,
 and `git-lfs <https://git-lfs.com/>`__ artifacts are properly synced.
+To learn about git lfs and use it as a pro, read :ref:`git-lfs`.
 
 .. note::
 
@@ -346,8 +347,10 @@ Ensure the tools are up to data from time to time with:
 
 Edit, build, commit, push as usual.
 
-Understanding git lfs
----------------------
+.. _git-lfs:
+
+Conquer git lfs
+---------------
 
 Since git lfs is not that common in the wild, it may be tricky to get the hang
 of it.
@@ -358,17 +361,53 @@ git repository, in an external server.
 
 When you do ``git clone/pull``, by default lfs will also download the binaries
 at the "smudge" step.
-But instead, we recommend to change this behaviour by setting globally
-``git lfs install --skip-smudge`` or temporally with ``GIT_LFS_SKIP_SMUDGE=1``
-environment variable and then fetch the artifacts on demand, either by the
-``git lfs pull public -I file_basename`` or letting :external+doctools:ref:`serve` handle it.
-This method on-demand saves a lot of bandwidth and time.
+But we **highly** recommend to change this behaviour to fetch the artifacts on
+demand by setting globally ``git lfs install --skip-smudge`` or temporally with
+``GIT_LFS_SKIP_SMUDGE=1`` environment variable.
+It is recommended because it saves a lot of bandwidth and (your precious) time.
 
-If during a clone or pull you obtain the error:
+In this configuration, you can fetch the artifact:
 
-::
+.. shell::
 
-   Encountered <n> file(s) that should have been pointers
+   ~/documentation
+   $git lfs pull -I path/to/my_file.png
+   # Checking size
+   $ls -l path/to/my_file.png
+    -rw-r--r-- 1 me me 34162787 Mar 25 11:09 path/to/my_file.png
+
+
+And revert to it's pointer state:
+
+.. shell::
+
+   ~/documentation
+   $rm path/to/my_file.png ; git restore -- $_
+   # Checking pointer
+   $cat path/to/my_file.png
+    version https://git-lfs.github.com/spec/v1
+    oid sha256:837ad06a63c0b1c10a02615601f73b7b7596746a62064fe35bb8a4d1543f04a2
+    size 34162787
+
+For documentation, you don't need to do it manually, :external+doctools:ref:`serve`
+will automatically fetch lfs artifacts of watched touched files and visited pages
+on the live server.
+
+In the following subsections are common issues and on what to do in each situation.
+
+.. _files-pointers:
+
+Files that should have been pointers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Git lfs simply follows the rules on the :git-documentation:`.gitattributes` file.
+And some times you may encounter during clone and pull:
+
+.. shell::
+   :no-path:
+
+   $git pull
+    Encountered <n> file(s) that should have been pointers
 
 That simply means that someone pushed files to remote that should have been
 pointers (defined in the *.gitattributes* file).
@@ -380,6 +419,60 @@ And to fix is simple:
    $git commit -m "lfs: convert binary files to pointers" --signoff
    $git push
 
-And advise the committer to ensure he has git lfs enabled with
-``git lfs install``.
+Then, advise the committer to ensure he has git lfs enabled with
+``git lfs install`` and to read this page.
+
+Checking out branches and commits
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Git lfs simply follows the rules on the :git-documentation:`.gitattributes` file.
+And some times you may encounter during checkout:
+
+.. shell::
+   :no-path:
+
+   $git checkout other_branch -f
+    error: Your local changes to the following files would be overwritten by checkout:
+            path/to/file/that_should_be_a_pointer.pptx
+    Please commit your changes or stash them before you switch branches.
+    Aborting
+
+It is the same cause as :ref:`previously <files-pointers>`.
+If you don't care about this file at the moment, just ``--force`` your way out.
+
+.. shell::
+   :no-path:
+
+   $git checkout other_branch -f
+
+Pull request permission
+~~~~~~~~~~~~~~~~~~~~~~~
+
+When a user opens a pull request, he temporally grants you write permission for their
+remove branch for commits, but not for git lfs storage, so pushing lfs artifacts to
+their remote will cause:
+
+.. shell::
+   :no-path:
+
+   $git push contributor
+    error: Authentication error: Authentication required: You must have push access to verify locks
+    error: failed to push some refs to 'https://github.com/<contributor>/documentation.git'
+
+   $git push contributor --no-verify
+    Writing objects: 100% (8/8), 1.08 KiB | 1.08 MiB/s, done.
+    Total 8 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0)
+    remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+    remote: error: GH008: Your push referenced at least 1 unknown Git LFS object:
+    remote:     9b439f0ad3b1e8e965955487b72e84045e85fb844392890c7d34ba45b3430c1e
+    remote: Try to push them with 'git lfs push --all'.
+    To https://github.com/<contributor>/documentation.git
+
+As a reviewer, this may get on the way and there is no particular fix for that beyond not pushing
+commits with new lfs artifacts, or awkwardly asking contributor permissions to their repository.
+
+If you want to add new lfs artifacts, as a reviewer, just merge the PR, and commit to main.
+If it is a complex PR, you can push to a new branch, and work from there and once you and the
+contributor are ratified, close the original PR without merging, merging the branch on the main
+remote instead.
 
