@@ -1,7 +1,7 @@
 EVAL-ESS1-SYS
 =============
 
-Scalable BMS Kit for Cell and Pack Monitoring 
+Scalable BMS Kit for Cell and Pack Monitoring
 """""""""""""""""""""""""""""""""""""""""""""
 
 Introduction
@@ -26,7 +26,7 @@ the EVAL-ESS1-SYS package and listed in the table below.
 Evaluation Kit Contents
 ------------------------
 
-The following is a complete list of contents that are in the EVAL-ESS1-SYS 
+The following is a complete list of contents that are in the EVAL-ESS1-SYS
 kit:
 
 +--------+------------------------------+-----+------------------------------+
@@ -94,7 +94,7 @@ kit:
 |        |                              |     | capability on the            |
 |        |                              |     | AD-APARD32690-SL MCU board   |
 +--------+------------------------------+-----+------------------------------+
- 
+
 System Requirements
 -------------------
 
@@ -126,8 +126,8 @@ Software Needed
 BMS Browser/Windows®-based graphical user interface program can be
 downloaded through :adi:`BMS Browser GUI Broad Market <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
-.. note:: 
-   
+.. note::
+
    When software updates or new versions of the software are
    available an email notification will be sent to the email address associated
    with the MyAnalog account used to download the original software package.
@@ -150,52 +150,52 @@ BMS Browser GUI Installation
 
 #. BMS Browser must be downloaded from MyAnalog as outlined above.
 #. Double click on **bms_browser_gui_broadmarket-relX.Y.Z.exe** to install the
-   GUI. 
-   
-    .. image:: gui_install.png
-         :align: center
-         :width: 500px
+   GUI.
+
+   .. image:: gui_install.png
+      :align: center
+      :width: 500px
 
 #. Accept the license terms and click **Next** to proceed with the installation.
 
-    .. image:: gui_license.png
-         :align: center
-         :width: 500px
+  .. image:: gui_license.png
+     :align: center
+     :width: 500px
 
 #. Default installation directory will be in **C:\\Analog Devices\\**
 
-      .. image:: gui_destination.png
-            :align: center
-            :width: 500px
+   .. image:: gui_destination.png
+      :align: center
+      :width: 500px
 
 MCU Configuration and Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: 
-    
-    The MCU should be programmed with the correct firmware when
-    received as part of the EVAL-ESS1-SYS kit. Only use this section if the firmware
-    on the MCU board has been updated for other evaluation purposes.
+.. important::
+
+   The MCU should be programmed with the correct firmware when
+   received as part of the EVAL-ESS1-SYS kit. Only use this section if the firmware
+   on the MCU board has been updated for other evaluation purposes.
 
 The MCU should be programmed using the following steps:
 
 **MAX326825PICO Debugger (One-time setup)**
 
-#. Download the firmware file `firmware file <https://confluence.analog.com/download/attachments/984201370/max32625_max32690evkit_if_crc_swd_v1.0.7.bin?version=1&modificationDate=1709666334248&api=v2>`__ for the MAX32625PICO board.
+#. Download the firmware file :download:`firmware file <max32625_max32690evkit_if_crc_swd_v1.0.7.bin>` for the MAX32625PICO board.
 #. Consult the `MSDK User Guide <https://analogdevicesinc.github.io/msdk/USERGUIDE/#updating-the-max32625pico-pico-debug-adapter-firmware>`__
    for detailed instructions on updating the MAX32625PICO Debug Adapter Firmware.
 
-        * Plug in the MAX32625PICO board while holding the on-board button. A red LED should blink, then hold steady, and a MAINTENANCE drive should appear on your PC. 
-           
-             .. image:: max32625pico_maxdap.png
+        * Plug in the MAX32625PICO board while holding the on-board button. A red LED should blink, then hold steady, and a MAINTENANCE drive should appear on your PC.
+
+          .. image:: max32625pico_maxdap.png
 
         * **Drag-n-drop** the .hex file onto the MAINTENANCE drive. The file transfer should be complete in about 30 seconds.
         * Unplug and replug the device.
-        * After completion, a **DAPLINK** drive should appear. You can drag and drop the firmware (.hex files separate from the above) 
+        * After completion, a **DAPLINK** drive should appear. You can drag and drop the firmware (.hex files separate from the above)
           onto it to program the AD-APARD32690-SL when the probe is properly connected.
 
 #. Connect the MAX32625PICO to the AD-APARD32690-SL at **P9**, ensuring the correct 10-pin ribbon cable orientation.
-  
+
      .. note:: Not all MAX32625PICO Debuggers have a key lock on the ribbon cable connector.
 
 #. Connect a USB cable from the AD-APARD32690-SL (**via P10**) to the PC.
@@ -238,7 +238,7 @@ EV-ADES1830CCSZ Quick Test
 --------------------------
 
 .. important::
-   
+
     Do not attempt to discharge the cells using the EV-ADES1830
     attached to the cell simulator. This will draw in too much current and will
     damage the ADES1830’s internal FETs. Instead, if balancing the board is the
@@ -251,9 +251,9 @@ measurements with the EV-ADES1830CCSZ.
 
 #. Attach the EVAL-ADBMS6822 board to the AD-APARD32690-SL Arduino headers.
 #. Use the DuraClik-to-RJ45 cable to connect the MAIN isoSPI port on the
-   EVAL-ADBMS6822 to PORT A on the EV-ADES1830CCSZ. 
-   
-     .. image:: single_chain.png
+   EVAL-ADBMS6822 to PORT A on the EV-ADES1830CCSZ.
+
+   .. image:: single_chain.png
 
 #. Connect the DC2472A emulator board to the EV-ADES1830CCSZ using the provided
    16-cell adapter cable.
@@ -269,15 +269,15 @@ measurements with the EV-ADES1830CCSZ.
    to ADBMSGEN6.
 #. From the **Products** list, select the ADES1830, then click on the right
    arrow to add it to the Daisy Chain. Settings can remain as default.
-#. Click **Launch**. 
-    
-     .. image:: 1.9.png
+#. Click **Launch**.
+
+   .. image:: 1.9.png
 
 #. Upon launch, the Quick Measure tab will open. **Note:** this utility only
    supports a single BMS product in a Daisy Chain. Click **Start Quick Measure**
-   to begin measurements. 
-   
-     .. image:: 1.10.png
+   to begin measurements.
+
+   .. image:: 1.10.png
 
 #. Check the Total PEC Status on the 3rd row under the Memory Map. This
    indicates the status of the isoSPI link between the EVAL-ADBMS6822 and the
@@ -293,9 +293,9 @@ measurements with the EV-ADES1830CCSZ.
 #. Check the voltage readings by adjusting the potentiometer (POT1) on the
    DC2472A to modify the emulated cell voltages. Monitor the voltage channels on
    the **Quick Measure Utility graph**. Select which signals to display on the
-   graph under the **Plot All Devices** column. 
-   
-    .. image:: 1.12.png
+   graph under the **Plot All Devices** column.
+
+   .. image:: 1.12.png
 
 EVAL-ADBMS2950-BASIC Quick Test
 -------------------------------
@@ -314,15 +314,16 @@ resistor on the EVAL-ADBMS2950-BASIC.
 
    * Supply 5V to J1 and set the current limit to 200 mA. The EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode
      and ~100 mA in active mode.
-   * Alternatively, power it via a micro-USB cable connected to J10.  
+   * Alternatively, power it via a micro-USB cable connected to J10.
 
 #. Attach a current source to the shunt using crocodile clips, ensuring the positive terminal connects to the bat- port
-   and the negative terminal to the shunt- port. Note that crocodile clips are appropriate only for low currents, primarily 
-   for checking hardware functionality. For high current evaluations, consult the :dokuwiki:`EVAL-ADBMS2950-BASIC User Guide <resources/eval/user-guides/eval-adbms2950-basic>`.
+   and the negative terminal to the shunt- port. Note that crocodile clips are appropriate only for low currents, primarily
+   for checking hardware functionality. For high current evaluations, consult the
+   :dokuwiki:`EVAL-ADBMS2950-BASIC User Guide <resources/eval/user-guides/eval-adbms2950-basic>`.
 #. Configure the power supply to generate a 5A current.
-#. Open the **BMS_Browser** and select the correct COM port. Set ADBMSGEN6 in the Generation drop-down box. Then, add the 
-   ADBMS2950 from the product list to the Daisy Chain and click **Launch**. 
-    
+#. Open the **BMS_Browser** and select the correct COM port. Set ADBMSGEN6 in the Generation drop-down box. Then, add the
+   ADBMS2950 from the product list to the Daisy Chain and click **Launch**.
+
     .. image:: 2.5.png
 
 #. After opening, the **Quick Measure tab** is available. **Note:** it can only handle one BMS product in a Daisy Chain.
@@ -330,13 +331,13 @@ resistor on the EVAL-ADBMS2950-BASIC.
 #. Check the Total PEC Status to confirm a successful isoSPI link between the EVAL-ADBMS6822 and the EVAL-ADBMS2950-BASIC. If false,
    there is an error in the signal chain.
 #. Confirm that the reference voltages for the ADBMS2950 are accurate. Scroll through the **Memory Map** section to check VREF2A,
-   VREF2B, VREF1P25, etc. The anticipated values are indicated in the provided image. 
-    
+   VREF2B, VREF1P25, etc. The anticipated values are indicated in the provided image.
+
     .. image:: 2.8.png
 
 #. Check the current through the shunt by selecting I1 ADC result in the Memory Map. With a 50 μΩ shunt resistor and a 5A current,
-   the expected I1 ADC voltage is 0.00025. Adjust the current to 4.5A, resulting in an expected I1 ADC Result of 0.000225. 
-    
+   the expected I1 ADC voltage is 0.00025. Adjust the current to 4.5A, resulting in an expected I1 ADC Result of 0.000225.
+
     .. image:: 2.9.png
 
 Complete Daisy Chain Test
@@ -347,7 +348,7 @@ Once familiar with the setup for each of the individual boards the entire signal
 #. Connect the hardware using the provided isoSPI cables. Power DC2472A boards
    using the USB cable connected to a wall plug. Power the EVAL-ADBMS2950-BASIC
    through either J1 or the USB connector, as explained earlier.
-  
+
      .. image:: ess_hardware_setup.png
 
 #. Launch the **BMS Browser** following the previous instructions and choose the
@@ -357,23 +358,23 @@ Once familiar with the setup for each of the individual boards the entire signal
    device on the chain, connected to the EVAL-ADBMS6822. The first
    EV-ADES1830CCSZ connects to the EVAL-ADBMS2950-BASIC using the
    DuraClik-to-RJ45 cable, while the second EV-ADES1830CCSZ is linked to the
-   first one via the RJ45-to-RJ45 cable. 
+   first one via the RJ45-to-RJ45 cable.
 
      .. image:: 3.2.png
 
 #. Click on **Launch** to initiate the GUI. After the GUI launches in the
    Browser, go to the **Sequences** tab located in the top toolbar, which will
-   open the Sequence Configuration page. 
-    
+   open the Sequence Configuration page.
+
      .. image:: 3.4.png
 
 #. In the **Files** column, select the **EVAL-ESS1-SYS-Example.json**. This
    action will load a preconfigured sequence into the tool.
 #. Ensure that the steps are followed in the specified order.
 
-       * Click on **Initialization Sequence** followed by **General Initialization** under the **Sequences** column to load 
+       * Click on **Initialization Sequence** followed by **General Initialization** under the **Sequences** column to load
          the defined sequences from the **EVAL-ESS1-Sys-Example.json file** into the tool.
-       * Next, select **Loop Sequence** and then click on **General Readback Loop** under the **Sequences** column. This action 
+       * Next, select **Loop Sequence** and then click on **General Readback Loop** under the **Sequences** column. This action
          loads the loop sequence defined in the **EVAL-ESS1-Sys-Example.json file** into the tool.
        * Finally, click on **Start Freerun** to initiate the freerun mode.
 
@@ -381,33 +382,33 @@ Once familiar with the setup for each of the individual boards the entire signal
    continuously until the **Stop Freerun** button is clicked.
 #. After activating freerun mode, navigate to the **Memory Map** tab. This section displays a numerical representation of the
    ongoing command loop. Additional details can be accessed in the GUI's help section. The accompanying screenshot illustrates
-   this output. 
-   
+   this output.
+
     .. image:: 3.8.png
 
-#. The **Plots** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to 
+#. The **Plots** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to
    four plots simultaneously. In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EV-ADES1830CCSZ as Device 2,
-   and the third EV-ADES1830CCSZ as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell 
-   voltages for the first EV-ADES1830CCSZ on Plot 2, and the averaged cell voltages for the third EV-ADES1830CCSZ on Plot 3. Simply choose the desired 
-   Plot number from the dropdown menu under each device to display the relevant data. 
-   
+   and the third EV-ADES1830CCSZ as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell
+   voltages for the first EV-ADES1830CCSZ on Plot 2, and the averaged cell voltages for the third EV-ADES1830CCSZ on Plot 3. Simply choose the desired
+   Plot number from the dropdown menu under each device to display the relevant data.
+
     .. image:: dc_9a.png
-      
+
     .. image:: dc_9b.png
-      
+
     .. image:: dc_9c.png
 
-#. Plot settings can be saved to the PC to be reloaded for future session to save time. 
+#. Plot settings can be saved to the PC to be reloaded for future session to save time.
 
 Help and Support
 ----------------
 
 For questions and more information, please visit the Analog Devices Engineer
-Zone. 
+Zone.
 
 For internal support, you can raise a question or submit a ticket through our
-Jira Service Desk using the following link: `BU Applications Technical
-Support <https://jira.analog.com/servicedesk/customer/portal/131>`__.
+Jira Service Desk using the following link:
+`BU Applications Technical Support <https://jira.analog.com/servicedesk/customer/portal/131>`__.
 
 For external users, please post your questions under the :ez:`Reference Designs` forum in EngineerZone to get assistance from
 the community and experts.
