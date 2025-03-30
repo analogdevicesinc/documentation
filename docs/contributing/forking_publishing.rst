@@ -362,9 +362,20 @@ git repository, in an external server.
 When you do ``git clone/pull``, by default LFS will also download the binaries
 at the "smudge" step.
 But we **highly** recommend to change this behaviour to fetch the artifacts on
-demand by setting globally ``git lfs install --skip-smudge`` or temporally with
-``GIT_LFS_SKIP_SMUDGE=1`` environment variable.
+demand by setting globally ``git lfs install --skip-smudge``.
 It is recommended because it saves a lot of bandwidth and (your precious) time.
+
+.. caution::
+
+   ``GIT_LFS_SKIP_SMUDGE=1`` and ``--skip-smudge`` are not the identical!
+
+   .. shell::
+      :no-path:
+
+      # Still fetches with either set.
+      $git lfs pull -I pointer_file
+      # Only still fetches with --skip-smudge, skipped with GIT_LFS_SKIP_SMUDGE=1
+      $git lfs smudge < pointer_file > /tmp/file.png``
 
 In this configuration, you can fetch the artifact:
 
