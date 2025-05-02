@@ -459,10 +459,10 @@ If you don't care about this file at the moment, just ``--force`` your way out.
 Pull request permission
 ~~~~~~~~~~~~~~~~~~~~~~~
 
- When a user creates a pull request, they temporarily grant write permission
- for the removal of branches containing commits.
- However, this does not extend to LFS.
- As such, pushing LFS artifacts to their remote will result in:
+When a user creates a pull request, they temporarily grant write permission
+for the removal of branches containing commits.
+However, this does not extend to LFS.
+As such, pushing LFS artifacts to their remote will result in:
 
 .. shell::
    :no-path:
@@ -488,3 +488,24 @@ If you wish to add new LFS artifacts, as a reviewer, simply merge the PR and com
 If the pull request is complex, you can push to a new branch, work on it, and
 once both parties are satisfied, close the original PR without merging, merging
 the branch onto the main remote instead.
+
+But if you **don't** want to touch any LFS file and are only rebasing, you can temporarily
+disable lfs, work, push, and enable again, for example:
+
+.. shell::
+
+   $git lfs uninstall
+    Hooks for this repository have been removed.
+    Global Git LFS configuration has been removed.
+   # Restore any smudged file to its pointer state, to make sure no miss touches
+   $git restore .
+   # Work, work, work...
+   $git rebase -i @~20
+   # Push even to a contributor's fork with an open PR
+   $git push contributor branch-name:branch-name
+    Enumerating objects: 6, done.
+    Writing objects: 100% (4/4), 768 bytes | 768.00 KiB/s, done.
+    To https://github.com/contributor/documentation.git
+       21s72b2..1b31311  branch-name -> branch-name
+   # Re-install lfs
+   $git lfs install --skip-smudge
