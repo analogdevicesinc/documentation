@@ -1,0 +1,82 @@
+﻿Function,Command,Description,Example
+Application commands,,,
+,HELP,Display available commands.,
+,REG? XXX,Read an ADPD register.,REG? 10A - read register 0x10A
+,,<XXX> = register address in hexadecimal,
+,REG XXX YYYY,Write an ADPD register.,REG 10A 301 - write 0x301 to register 0x10A
+,,<XXX> = register address in hexadecimal,
+,,<YYYY> = register new value in hexadecimal,
+,MODE?,Read the data display mode. Return a 4 character code:,
+,,CODE - raw data is displayed;,
+,,ARAT - absolute ratio is displayed;,
+,,RRAT - relative ratio is displayed;,
+,,INS1 - data processed for instrument 1 is displayed;,
+,,INS2 - data processed for instrument 2 is displayed.,
+,MODE XXXX,Set the data display mode.,MODE CODE - set display mode to raw codes
+,,XXXX = 4 character code to describe the data display mode. The options are:,
+,,CODE - raw data is displayed;,
+,,ARAT - absolute ratio is displayed;,
+,,RRAT - relative ratio is displayed;,
+,,INS1 - data processed for instrument 1 is displayed;,
+,,INS2 - data processed for instrument 2 is displayed.,
+,STREAM X,Start calculating and displaying a stream of data.,STREAM 10 - stream for 10 values of the output.
+,,X = If 0 or not present enter continuous streaming mode; if X>0 stream data for X values.,
+,IDLE?,Queries the idle condition.,
+,IDLE x,"If X=0 or not listed only the terminal stream is terminated, but the application continues sampling. If X=1 stop sampling altogether.","IDLE 0 - stop streaming, but keep sampling."
+,ALRM?,Query alarm status; if returned 0 no alarm is present;,
+,,If bit 0 of the returned value is 1 instrument 2 value is below lower threshold;,
+,,If bit 1 of the returned value is 1 instrument 2 value is above higher threshold.,
+,DEFn? XXXX,Query operation parameters.,DEF0? ARAT - query the abslute ratio expression for optical path 0
+,,n = ID of the required optical path (can be from 0 to 8).,
+,,XXXX = the operation parameter to be queried. The following options exist:,
+,,ARAT = absolute ratio expression in reverse polish notation (RPN);,
+,,RFLT = the digital low pass filter bandwidth applied to the absolute ratio measurements;,
+,,ALRM = the high and low alarm threshold for the INS2 measurements;,
+,,RATB = baseline ratio used in calculating the relative ratio;,
+,,INS1 = the coefficients of the fifth order polynomial used to calculate the first instrument measurements;,
+,,INS2 = the coefficients of the fifth order polynomial used to calculate the second instrument measurements.,
+,BOOT,Perform a software reset.,
+,ODR?,Query the Output Data Rate of the STREAM command.,
+,ODR XX.XX,Sets Output Data Rate for the STREAM command.,ODR 2.5 - set output data rate to 2.5 SPS
+,,XX.XX = The new ODR in Hz. It can have only certain values and will round down to them:,
+,,ODR options between 5 Hz and 0.01 Hz and can be calculated by 5/ODR = integer number.,
+,RATMASK?,Query the active channels mask. Returns a hexadecimal 8 bit number that has 1 for every active channel and 0 for every hidden channel.,
+,,For example if 1 - only optical path 0 is turned on; if 3 - Optical paths 0 and 1 are turned on and the rest are hidden; etc.,
+,RATMASK XX,Set the active channels mask.,"RATMASK F - turn on optical paths 0, 1, 2 and 3 and leave the rest(4, 5, 6 and 7) off"
+,,XX = New optical path mask.,
+,FL_HELP,Display the tooltip for the flash commands.,
+,PCB-LEDn YY.Y XXX.X,Do an automatic calibration of the specified PCB LED current so that the corresponding ADC channels returns a percentage of the saturation.,"PCB-LED1 45.8 190.5 - calibrate LED 1 so that the cresponding optical path(s) return 45.8% from the ADC saturation, but limit the current to 190.5 mA."
+,,"n = LED ID from the PCB.(1, 2, 3 or 4)",
+,,YY.Y = percentage of ADC saturation.,
+,,XXX.X = maximum LED current. If left not specified will default at 338 mA.,
+,DEFn args,Set operation parameters.,
+,,n = ID of the required optical path (can be from 0 to 8).,
+,,args = operation parameters and their new value.,
+,DEFn ARAT RPN,Set the absolute ratio expression;,DEF0 ARAT A2A1/ - set the optical path 0 absolute ratio to be calculated as (slotA_ch2 / slotA_ch1);
+,,RPN = new ARAT expression.,
+,DEFn RFLT XX.XX,"Set the digital filter bandwidth, in Hz, used for the absolute ratio measurement;","DEF1 RFLT 0.5 - set the optical path 1 digital filter bandwidth to 0.5 Hz. Not all values are possible, query the parameter to get the actual value set;"
+,,XX.XX = new digital filter bandwidth in Hz.,
+,DEFn ALRM XXXX YYYY,Set high and low alarm thresholds for instrument 2 measurements;,DEF0 ALRM 25 15 - set optical path 0 high alarm threshold to 25 and low alarm threshold to 15;
+,,XXXX = new alarm high threshold;,
+,,YYYY = new alarm low threshold;,
+,DEFn RATB X.XXXXX,Set baseline ratio for to calculate relative ratio of the signal path;,DEF2 RATB 2.3 - set the baseline ratio as 2.3 for signal path 2;
+,,X.XXXXX = new baseline ratio.,
+,DEFn INS1 X.XXE+XX Y.YYE+YY …,"Set the fifth order polynomial coefficients for calculating instrument 1, ordered from lowest to highest power;",DEF0 INS1 0 1 0.54 1.23e+0 5.48e-4 44.22 - set coefficients for optical path 0;
+,DEFn INS2 X.XXE+XX Y.YYE+YY …,"Set the fifth order polynomial coefficients for calculating instrument 2, ordered from lowest to highest power;",DEF4 INS2 0 1 0.54 1.23e+0 5.48e-4 44.22 - set coefficients for optical path 4;
+Flash commands,,,
+,FL_CLEARBUF,Clear the software buffer.,
+,FL_LOAD X,Load the software buffer with data from flash configuration page.,
+,,x = 0 to load from User Update page; 1 to load from the Manufacture Default page.,
+,FL_PROGRAM X,Program the flash configuration page with data from the software buffer.,
+,,x = 0 to program the User Update page; key to program the Manufacture Default page.,
+,FL_ERASE X,Erase the flash configuration page.,
+,,x = 0 to erase the User Update page; key to erase the Manufacture Default page.,
+,FL_APPLY,Settings currently in the software buffer are applied to the application and device.,
+,FL_WRITE CMD,Save a specific device or application parameter into the software buffer.,FL_WRITE REG 10A 3355 - write the register 0x10A to the value 0x3355.
+,,cmd = register or application command to input the relevant parameter.,FL_WRITE DEF2 RFLT 0.01 - set filter bandwidth of ration 2 to 0.01Hz
+,,For register commands the buffer contains an array of register-value pairs that will be written in order to the device. Calling this function with a register command will add a new register-value pair at the end of the array.,
+,,The only application command supported by this command is the def command. Calling the DEF command will update that value into the software buffer. It can be later applied to the application.,
+,FL_READ CMD,Read a specific device or application parameter value from the software buffer.,FL_READ REG? 10A - return the first value of the register 0x10A
+,,cmd = register or application command to input the relevant parameter.,FL_READ DEF2? RFLT - display the setting of the ration 2 filter bandwidth from the software buffer.
+,,For register commands the buffer contains an array of register-value pairs that will be written in order to the device. Calling this function with a regiter command will display the value of the first occurrence of the register.,
+,,The only application command supported by this command is the def command. Calling the DEF command will read that value from the software buffer.,
