@@ -18,3 +18,4 @@
   * https://analogdevicesinc.github.io/documentation/contributing/creating_new_pages.html#adding-images-and-other-binary-files
 - [ ] I have built the pages I edited or created, using either `make html` or `adoc serve`:
   * https://analogdevicesinc.github.io/doctools/cli.html#serve
+- [ ] I have signed-off my commits and believe my contribution improves the repository.
