@@ -126,9 +126,10 @@ Initial Connection and Setup
    940nm, and select measurement type: turbidity.
 
    .. image:: tr_wavelength.png
+      :width: 300px
 
 #. Add empty an cuvette (or filled with distilled water) to the cuvette holder
-   assembly and insert to path 4. Click Optimize LED for path 4. This properly
+   assembly and insert to path 4. Click ``Optimize LED`` for path 4. This properly
    sets the LED current in these paths so that the light intensity is close to
    50%.
 
@@ -158,17 +159,11 @@ routine allows for high precision turbidity measurements.
 #. Note the average value of the RRAT measured from the samples and stop
    measurement.
 
-   .. image:: tr_20ftu.png
-      :width: 200px
-      :align: left
-
-   .. image:: tr_100ftu.png
-      :width: 200px
-      :align: center
-
-   .. image:: tr_800ftu.png
-      :width: 200px
-      :align: right
+     +--------------------------+--------------------------+---------------------------+
+     | 20 FTU                   | 100 FTU                  | 800 FTU                   |
+     +--------------------------+--------------------------+---------------------------+
+     | .. image:: tr_20ftu.png  | .. image:: tr_100ftu.png | .. image:: tr_800ftu.png  |
+     +--------------------------+--------------------------+---------------------------+ 
 
 #. Two linear equations can be computed from the three turbidity (FTU) and
    average RRAT data points using the slope formula and point-slope form.

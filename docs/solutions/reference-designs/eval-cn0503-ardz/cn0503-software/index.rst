@@ -193,7 +193,7 @@ Obtaining the Software
 There are two basic ways to program the ADICUP3029 with the software for the
 CN0503.
 
-#. Dragging and Dropping the .Hex to the Daplink drive
+#. Dragging and Dropping the .Hex file to the DAPlink drive
 #. Building, Compiling, and Debugging using CCES
 
 Using the drag and drop method, the software is going to be a version that

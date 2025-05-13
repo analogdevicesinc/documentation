@@ -322,17 +322,17 @@ Adding a Narrowband Transmit Filter and Neutral Density Filter (Optional)
    optical path if your application requires it.
 
    #. The **Narrowband Transmit Filter** is used to select specific wavelengths
-         of light from a wideband LED. Place the filter into the **Cuvette
-         Holder** as shown below. The placement does not need to be as secure
-         and tight as the **Beamsplitter** and **Condenser Lens**.
+      of light from a wideband LED. Place the filter into the **Cuvette
+      Holder** as shown below. The placement does not need to be as secure
+      and tight as the **Beamsplitter** and **Condenser Lens**.
 
    #. The **Neutral Density Filter** is used to decrease the light intensity
-         for a wide range of wavelengths. For instances wherein the LED light
-         intensity easily saturates the photodiode current input to the
-         :adi:`ADPD4101`, adding the **Neutral Density Filter** will help
-         decrease the input current range.
+      for a wide range of wavelengths. For instances wherein the LED light
+      intensity easily saturates the photodiode current input to the
+      :adi:`ADPD4101`, adding the **Neutral Density Filter** will help
+      decrease the input current range.
 
-      .. image:: img_20200429_190439.jpg
+       .. image:: img_20200429_190439.jpg
 
 Placing the Cuvette Cover
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -346,11 +346,11 @@ to lock the **Cuvette Holder** as detailed below.
    be completely pressed and held tight to the depression to avoid the hassle
    of it coming off later.
 
-.. image:: img_20200429_190531.jpg
+    .. image:: img_20200429_190531.jpg
 
 #. Place the **Cuvette Cover** on top of the **Cuvette Holder** as shown below.
 
-.. image:: img_20200429_190545.jpg
+    .. image:: img_20200429_190545.jpg
 
 #. Secure the **Cuvette Cover** using an **S3 Screw** at the specified hole
    shown below.
@@ -369,13 +369,13 @@ The **Cuvette** can easily be added to the **Cuvette Holder** as shown below.
    the **Cuvette Holder** as shown below. This should be completely pressed and
    held tight to the depression to avoid the hassle of it coming off later.
 
-   .. image:: img_20200429_190512.jpg
+    .. image:: img_20200429_190512.jpg
 
 #. Replace the **Cuvette Cover** and attach an **S2 Screw** at the specified
    hole in the **Cuvette Holder** as shown below. The depth of the screw can be
    adjusted to increase or decrease the tightness of the hold.
 
-   .. image:: img_20200429_190755.jpg
+    .. image:: img_20200429_190755.jpg
 
 Video Guides
 ~~~~~~~~~~~~
@@ -541,18 +541,18 @@ two selection headers, one for each input channel. Each selection header
 requires two shunts to configure, to connect both anode and cathode of the
 photodiode.
 
-+-------------------------+-----------------------------+--------------------------+
++---------------------------+---------------------------+--------------------------+
 | P1ASEL Shunt Positions    | Photodiode Connected to   | Image                    |
 |                           | the First Input Channel   |                          |
-+=========================+===========================+============================+
++===========================+===========================+==========================+
 | **0 DEG Position** /      | Transmit photodiode is    | .. image:: p1asel-0.png  |
 | Connecting pins 1 and 3 / | connected to the first    |                          |
 | Connecting pins 2 and 4   | input channel             |                          |
-+-------------------------+-----------------------------+--------------------------+
++---------------------------+---------------------------+--------------------------+
 | **90 DEG Position** /     | Fluorescent photodiode is | .. image:: p1asel-90.png |
 | Connecting pins 3 and 5 / | connected to the first    |                          |
 | Connecting pins 2 and 6   | input channel             |                          |
-+-------------------------+-----------------------------+--------------------------+
++---------------------------+---------------------------+--------------------------+
 
 +---------------------------+---------------------------+--------------------------+
 | P1BSEL Shunt Positions    | Photodiode Connected to   | Image                    |
