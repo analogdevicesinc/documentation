@@ -45,7 +45,7 @@ Application commands,,,
 ,RATMASK XX,Set the active channels mask.,"RATMASK F - turn on optical paths 0, 1, 2 and 3 and leave the rest(4, 5, 6 and 7) off"
 ,,XX = New optical path mask.,
 ,FL_HELP,Display the tooltip for the flash commands.,
-,PCB-LEDn YY.Y XXX.X,Do an automatic calibration of the specified PCB LED current so that the corresponding ADC channels returns a percentage of the saturation.,"PCB-LED1 45.8 190.5 - calibrate LED 1 so that the cresponding optical path(s) return 45.8% from the ADC saturation, but limit the current to 190.5 mA."
+,PCB-LEDn YY.Y XXX.X,Do an automatic calibration of the specified PCB LED current so that the corresponding ADC channels returns a percentage of the saturation.,"PCB-LED1 45.8 190.5 - calibrate LED 1 so that the corresponding optical path(s) return 45.8% from the ADC saturation, but limit the current to 190.5 mA."
 ,,"n = LED ID from the PCB.(1, 2, 3 or 4)",
 ,,YY.Y = percentage of ADC saturation.,
 ,,XXX.X = maximum LED current. If left not specified will default at 338 mA.,

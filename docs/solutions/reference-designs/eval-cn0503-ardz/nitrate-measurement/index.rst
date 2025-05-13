@@ -99,7 +99,7 @@ Initial Connection and Setup
 #. Load the configuration file for Nitrate Measurement: :download:`cn0503_defaults_nitrate.zip`
 
 #. Configure the settings for path 3 with the desired name, set wavelength to
-   530 nm and select measurement type: absorption.
+   530nm and select measurement type: Absorption.
 
    .. image:: nitrate_path_setting.png
 
@@ -139,7 +139,7 @@ which will be defined as the relative ratio RRAT.
 
 #. In the “Enter a direct command” text field, type “DEF1 RATB <average
    value>” for path 3, then press ``Send Command``. Replace the <average value> to
-   the value you have noted earlier and click ``OK``.
+   the value you have noted earlier and click ``Okay``.
 
    .. image:: nitrate_ratb.png
 
