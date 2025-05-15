@@ -34,7 +34,7 @@ To enable a filesystem, Zephyr requires a partition with a "storage"
 label somewhere in the Device Tree. One thing we will eventually want to
 produce is the following DT snippet:
 
-.. code:: dts
+.. code-block:: dts
 
    &flash0 {
        partitions {
@@ -159,7 +159,7 @@ flash partition shown at the top of this page. Next, we have to enable
 the correct Kconfigs to include the flash filesystem, set it to use
 LittleFS, and enable the FS Shell.
 
-.. code:: py
+.. code-block:: py
 
    # Enable Shell
    CONFIG_SHELL=y
