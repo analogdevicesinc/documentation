@@ -18,14 +18,11 @@ in just a few minutes.
 Reference Documentation & Sample Applications
 ---------------------------------------------
 
-`File Systems — Zephyr Project
-Documentation <https://docs.zephyrproject.org/latest/services/file_system/index.html>`__
+`File Systems — Zephyr Project Documentation <https://docs.zephyrproject.org/latest/services/file_system/index.html>`__
 
-`File system manipulation — Zephyr Project
-Documentation <https://docs.zephyrproject.org/latest/samples/subsys/fs/fs_sample/README.html#fs>`__
+`File system manipulation — Zephyr Project Documentation <https://docs.zephyrproject.org/latest/samples/subsys/fs/fs_sample/README.html#fs>`__
 
-`File system shell — Zephyr Project
-Documentation <https://docs.zephyrproject.org/latest/samples/subsys/shell/fs/README.html#shell-fs>`__
+`File system shell — Zephyr Project Documentation <https://docs.zephyrproject.org/latest/samples/subsys/shell/fs/README.html#shell-fs>`__
 
 Zephyr Setup Needs
 ------------------
@@ -69,19 +66,10 @@ To set up a custom partition in Codefusion Studio, open the Memory
 Analysis tool by using the .cfsconfig file within the .cfs folder of a
 workspace.
 
-.. container::
+.. image:: img/cfs-workspace.png
 
-   |image1|
+.. image:: img/cfs-mem-allocation.png
 
-|
-
-.. container::
-
-   |image2|
-
-|
-
-At first glance, this may appear overwhelming. But compare it to the
 traditional method of mapping out device memory (GNU Linkerscript) and
 you might actually find this rather pleasing! What we want to do is 2
 things:
@@ -96,11 +84,7 @@ Decreasing the size of the Cortex M4 Flash
 To do this, click the "Non-Volatile Memory" menu, then click the slider
 icon on the "m4 flash" partition.
 
-.. container::
-
-   |image3|
-
-|
+.. image:: img/cfs-arm-partitions.png
 
 A menu will open on the right side, which has a lot of cool features! I
 will save most of them for another day, to keep this explanation brief.
@@ -108,11 +92,7 @@ Scroll to the "Memory Blocks" section at the bottom of the menu, then
 decrease the size of the "m4 flash" partition to 2 Megabytes. Then click
 "Edit Partition".
 
-.. container::
-
-   |image4|
-
- 
+.. image:: img/cfs-partition-edit.png
 
 Creating a Storage Partition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,11 +100,7 @@ Creating a Storage Partition
 Next, click the "Create Partition" button on the far-left side of the
 Memory Allocator menu. Create the partition with the following settings:
 
- 
-
-.. container::
-
-   |image5|
+.. image:: img/cfs-create-partition.png
 
 Storage Partition Attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -139,20 +115,14 @@ Storage Partition Attributes
 **Size**                   1 MB
 ========================== =================
 
-.. container::
-
-   |image6|
+.. image:: img/cfs-parition-specs.png
 
 Generate Code
 ~~~~~~~~~~~~~
 
 Finally, head to the end of the Config Tools, and click "Generate".
 
-.. container::
-
-   |image7|
-
-|
+.. image:: img/cfs-generate.png
 
 This should produce an overlay file under "boards" that contains the
 flash partition shown at the top of this page. Next, we have to enable
@@ -195,20 +165,4 @@ and finally run a write/read test. The commands of interest are shown
 below. Note that in the below image, the "test" directory had already
 been created by calling the mkdir test command.
 
-.. container::
-
-   |image8|
-
- 
-
-.. |image1| image:: img/cfs-workspace.png
-.. |image2| image:: img/cfs-mem-allocation.png
-            :width: 1500
-            :height: 800
-.. |image3| image:: img/cfs-arm-partitions.png
-.. |image4| image:: img/cfs-partition-edit.png
-.. |image5| image:: img/cfs-create-partition.png
-.. |image6| image:: img/cfs-parition-specs.png
-.. |image7| image:: img/cfs-generate.png
-            :height: 800px
-.. |image8| image:: img/fs-shell-teraterm.png
+.. image:: img/fs-shell-teraterm.png
