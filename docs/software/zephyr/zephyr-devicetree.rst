@@ -1,5 +1,5 @@
-Devicetree
-==========
+Intro to Devicetree
+===================
 
 Zephyr contains a concept borrowed from Linux called the "Devicetree",
 which is a key differentiator between Zephyr and other Real-Time
