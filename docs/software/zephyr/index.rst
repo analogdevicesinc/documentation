@@ -6,4 +6,5 @@ Zephyr RTOS
    :maxdepth: 1
    :glob:
 
+   *
    */*
