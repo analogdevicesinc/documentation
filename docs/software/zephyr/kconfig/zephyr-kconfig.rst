@@ -15,7 +15,7 @@ Individual boards have .defconfig files which can enable individual
 features by default. Here's an example from the max32650fthr_defconfig
 file in the Zephyr tree:
 
-.. code:: py
+.. code:: Kconfig
 
    # Copyright (c) 2023-2024 Analog Devices, Inc.
    # SPDX-License-Identifier: Apache-2.0
@@ -63,7 +63,7 @@ the defconfig for your board can be enabled here. You can also over-ride
 the defconfig parameters in this file. Here is an example prj.conf for a
 substantial project with the **apard32690_max32690_m4** board target:
 
-.. code:: py
+.. code:: Kconfig
 
    # Copyright (c) 2021 Nordic Semiconductor ASA
    # SPDX-License-Identifier: Apache-2.0
