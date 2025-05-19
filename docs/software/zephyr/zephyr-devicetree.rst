@@ -11,7 +11,7 @@ to Linux too!
 Devicetree: What is it & Why use it?
 ------------------------------------
 
-The Devicetree is an abstract data structure. It's purpose is to
+The Devicetree is an abstract data structure. Its purpose is to
 describe and configure the hardware connected to a system. The reason
 this is useful is that embedded developers usually spend a lot (too
 much) of their time wrestling with the configuration of hardware
@@ -19,7 +19,7 @@ features, pin maps, and peripheral settings instead of approaching the
 actual processing of the target signals and data within an application.
 The devicetree creates a structure that can be pulled into application
 code to determine the connected hardware at runtime (so long as the
-device tree has the correct configuration). This means a couple things:
+device tree has the correct configuration). This means a couple of things:
 
 -  Application code can be much more portable between multiple hardware
    boards, and multiple separate revisions. This is because the driver C
@@ -93,18 +93,18 @@ a **label** and a **property**. 
       presence or absence of the property conveys sufficient
       information. 
 
-   -  The size and type of a property is implied by the enclosing
+   -  The size and type of property is implied by the enclosing
       brackets ("<>" in the case of the integer subnode_property above)
 
-Each node has a **path** and can be indexed by appending it's parent
-nodes with forward slashes, such as in Linux. For example, the path to
+Each node has a **path** and can be indexed by appending its parent
+nodes with forward slashes, such as on Linux. For example, the path to
 the example_subnode is "/example_node/example_subnode". 
 
 Aliases
 ^^^^^^^
 
 One may see an "aliases" node contained within a device tree source
-file. The aliases node has properties whose names are aliases and values
+file. The aliases' node has properties whose names are aliases and values
 are references to a node in the device tree. A reference to a node can
 be given using the reference symbol "&". Here's an example using the
 subnode label from earlier:
@@ -118,7 +118,7 @@ subnode label from earlier:
    };
 
 These aliases which can be referenced by C/C++ application code to make
-it more portable. For example, an "led0" alias may be used to identify a
+it more portable. For example, a "led0" alias may be used to identify a
 connected LED without having to directly reference it's GPIO pin or
 otherwise tether the application code to a particular board.  
 
@@ -140,9 +140,9 @@ Devicetree bindings declare both the required and optional properties of
 a device. Devicetree bindings are required by Zephyr in order to compile
 the device tree, and are in the YAML file format. Linux also has a
 concept of devicetree bindings, which may be either YAML or free-text
-format.  However unlike Zephyr, Linux device tree bindings are not
+format.  However, unlike Zephyr, Linux device tree bindings are not
 required, and are simply used as developer documentation.  It is not
-uncommon to find a device tree binding file missing for a driver in
+uncommon to find a device tree binding file missing for a driver on
 Linux.
 
 "compatible"
@@ -186,7 +186,7 @@ Information can be extracted from the Devicetree to use in application
 code – that means device drivers now will have a component located in
 the Devicetree as well, and application C/C++ code will frequently
 reference the Devicetree to extract information about connected
-hardware. This adds an additional layer of complexity with the benefit
+hardware. This adds a layer of complexity with the benefit
 of allowing hardware to be described at runtime rather than directly
 within the application firmware. This ultimately should mean that more
 application code is portable to more hardware variants given that the
@@ -305,7 +305,7 @@ example is as follows:
 The code is located here:
 https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/basic/blinky/src/main.c
 and documented here:
-`README.rst <https://github.com/zephyrproject-rtos/zephyr/blob/main//samples/basic/blinky/README.rst>`__
+`README.rst <https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/basic/blinky/README.rst>`__
 
 .. code:: cpp
 
@@ -359,9 +359,8 @@ Further References
 Next step – go read the specs!
 
 -  If you have to develop or modify Devicetree beyond this level, it's
-   likely you need to read the Devicetree specification: `The Devicetree
-   Project <https://www.devicetree.org/>`__
+   likely you need to read the Devicetree specification:
+   `The Devicetree Project <https://www.devicetree.org/>`__
 -  For Zephyr-specific devicetree APIs, pair the Devicetree spec
    (platform-independent) with the Zephyr Devicetree API Reference:
-   `Devicetree — Zephyr Project
-   Documentation <https://docs.zephyrproject.org/latest/build/dts/index.html>`__
+   `Devicetree — Zephyr Project Documentation <https://docs.zephyrproject.org/latest/build/dts/index.html>`__
