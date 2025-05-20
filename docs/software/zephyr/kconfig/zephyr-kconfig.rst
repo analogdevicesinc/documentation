@@ -38,7 +38,7 @@ default for the MAX32655FTHR for a generic Zephyr application.  Some of
 these include the Zephyr GPIO API, UART driver, and the Console
 subsystem with a UART Backend. Because they are in the defconfig file,
 these will be enabled by default for any Zephyr application building for
-this board. For other boards like the AD-SWIOT1L ethernet platform,
+this board. For other boards like the AD-SWIOT1L Ethernet platform,
 these defconfigs ("default configs") may include enabling the MPU or
 Trustzone-M support for the ARM Cortex-M SoC. 
 
@@ -121,12 +121,12 @@ form of a unified .config file by default. This then ties into the west
 meta-build system, which will roll your full configuration into the next
 time you call "west build". When you do a "pristine" build, this will
 re-write your configuration, so it may be worth saving .config files
-that you want to keep between projects. builds. Otherwise, using
+that you want to keep between projects builds. Otherwise, using
 something like menuconfig to note down parameters to include in your
 prj.conf can be a useful workflow. More information on menuconfig and
 guiconfig can be found at the Zephyr project documentation for these
-interfaces: `Interactive Kconfig interfaces — Zephyr Project
-Documentation <https://docs.zephyrproject.org/latest/build/kconfig/menuconfig.html>`__. 
+interfaces:
+`Interactive Kconfig interfaces — Zephyr Project Documentation <https://docs.zephyrproject.org/latest/build/kconfig/menuconfig.html>`__. 
 
 Kconfig Search Index
 --------------------
@@ -135,9 +135,8 @@ One difficult part of using Zephyr can be navigating the Kconfig
 dependencies – many Kconfigs are not actually designed to be set
 directly because they depend on other Kconfigs already being set. A good
 place to start looking through Kconfig dependencies is the Kconfig
-Search Index in the Zephyr documentation: `Kconfig Search — Zephyr
-Project
-Documentation <https://docs.zephyrproject.org/latest/kconfig.html>`__. 
+Search Index in the Zephyr documentation:
+`Kconfig Search — Zephyr Project Documentation <https://docs.zephyrproject.org/latest/kconfig.html>`__. 
 
 .. image:: img/kconfig-search.png
 
@@ -152,7 +151,7 @@ Kconfig / Devicetree Relationship
 
 In the above image, notice how the CONFIG_ADT7420 value depends on
 DT_HAS_ADI_ADT7420_ENABLED and CONFIG_SENSOR. This means that this value
-actually requires a "adt7420" compatible node in your Devicetree that
+actually requires an "adt7420" compatible node in your Devicetree that
 has its "status" property set to "okay".  It also requires CONFIG_SENSOR
 to be enabled in your project. 
 
