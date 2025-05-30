@@ -56,6 +56,14 @@ Workshops
 
    workshop_what_sw_for_sdr/index
 
+
+.. toctree::
+   :caption: A Precision Converter FPGA Integration Journey
+   :maxdepth: 1
+
+   workshop_a_precision_converter_fpga_integration_journey/index
+
+
 Academic Workshops
 -------------------------------------------------------------------------------
 
