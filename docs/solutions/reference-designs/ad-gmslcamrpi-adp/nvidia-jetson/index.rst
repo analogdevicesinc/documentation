@@ -2,6 +2,13 @@
 Using with Nvidia Jetson Orin Nano
 ==================================
 
+.. note::
+
+   The default username and password for the device are as follows:
+
+   * Username: analog
+   * Password: analog
+
 Required Hardware
 -----------------
 
