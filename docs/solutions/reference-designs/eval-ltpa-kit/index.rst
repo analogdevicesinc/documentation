@@ -15,11 +15,11 @@ Low-cost, High Performance, Compact Laboratory Tool for Evaluating and Character
 Overview
 --------
 
-The :adi:`EVAL-LTPA-KIT or LTpowerAnalyzer Kit <EVAL-LTPA-KIT>` is a low-cost, 
-high performance, compact laboratory tool for evaluating and characterizing 
-power supply designs — allowing measurements of frequency response, 
-transient response, and output impedance. Combined with the capabilities 
-of the ADALM2000 Active Learning Module, it offers high portability 
+The :adi:`EVAL-LTPA-KIT or LTpowerAnalyzer Kit <EVAL-LTPA-KIT>` is a low-cost,
+high performance, compact laboratory tool for evaluating and characterizing
+power supply designs — allowing measurements of frequency response,
+transient response, and output impedance. Combined with the capabilities
+of the ADALM2000 Active Learning Module, it offers high portability
 with its compact size.
 
 The LTpowerAnalyzer Software offers a user-friendly interface with
@@ -52,7 +52,7 @@ System Architecture
 
 .. figure:: system1_2.png
 
-    EVAL-LTPA-KIT Simplified System Block Diagram
+   EVAL-LTPA-KIT Simplified System Block Diagram
 
 Specifications
 ---------------
@@ -152,8 +152,8 @@ evaluated with the ADALM2000.
 +------------------+----------------------------------------------------------+
 
 .. figure:: power_analyzer_board_pinout.png
-    
-    LTpowerAnalyzer Board (LB3031A) Pinout
+
+   LTpowerAnalyzer Board (LB3031A) Pinout
 
 Current Probe Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -171,9 +171,9 @@ connected, and adjust the current range accordingly. The probes are not designed
 to generate a continuous DC current due to their small size.
 
 .. figure:: current_probes.jpg
-    
-    LB3058A Current Probe Modules: 1A, 10A, 50A, and 100A
- 
+
+   LB3058A Current Probe Modules: 1A, 10A, 50A, and 100A
+
 The minimum resolution of the current probe is determined by the maximum
 offset of the amplifier driving the MOSFET in each of the three power stages
 (2 mV) and is equal to the maximum current for each power stage divided by 100.
@@ -200,17 +200,28 @@ scrape away an opening in the solder mask on the board, then solder the probe
 directly to the board using a piece of solder braid folded at a 90-degree angle
 on either side to provide a strong mechanical connection.
 
-+----------------------------------------------------+---------------------------------------------------+
-| .. figure:: minus_side_solder_braid_connection.png | .. figure:: plus_side_solder_braid_connection.png |
-|    :width: 200 px                                  |    :width: 200 px                                 |
-|                                                    |                                                   |
-| Minus Side Solder Braid Connection                 | Plus Side Solder Braid Connection                 |
-+----------------------------------------------------+---------------------------------------------------+
-| .. figure:: low_current_turret_connection.png      | .. figure:: socket_connection.png                 |
-|    :width: 200 px                                  |    :width: 220 px                                 |
-|                                                    |                                                   |    
-| Low Current Turret Connection                      | Socket Connection                                 |
-+----------------------------------------------------+---------------------------------------------------+
+.. grid::
+   :widths: 50% 50%
+
+   .. figure:: minus_side_solder_braid_connection.png
+      :width: 200 px
+
+      Minus Side Solder Braid Connection
+
+   .. figure:: plus_side_solder_braid_connection.png
+      :width: 200 px
+
+      Plus Side Solder Braid Connection
+
+   .. figure:: low_current_turret_connection.png
+      :width: 200 px
+
+      Low Current Turret Connection
+
+   .. figure:: socket_connection.png
+      :width: 220 px
+
+      Socket Connection
 
 For smaller currents, the probe can be connected via turrets or wire to the
 board. The current probe can also be mated with the 60-pin surface mount
@@ -231,7 +242,7 @@ signal amplifiers AC-coupled, a ±100 VDC common-mode voltage can be accommodate
 with a frequency range of 100 Hz to 10 MHz. 
 
 .. figure:: voutrangeextension.png
-    
+
     Standard 4-Wire Connection
 
 At low frequencies, the open loop gain of the supply is high, so most of the
@@ -266,7 +277,7 @@ for the two-wire and kelvin connections.
 
 .. figure:: system2.png
 
-    2-Wire Bode Plot Connection
+   2-Wire Bode Plot Connection
 
 The results below 5 kHz are quite different because the voltage drop across the
 wires swamps out the signal at the input, which is very low because of the high
@@ -298,8 +309,8 @@ which should minimize this problem.
 Follow below configuration to set up the system using Module Connection:
 
 .. figure:: modulebodesetup.png
-    
-    Bode Plot Module Connection
+
+   Bode Plot Module Connection
 
 LED Driver Connection
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -313,21 +324,21 @@ The common-mode range of the LTPowerAnalyzer is ±100V, and Rs is typically 20�
 to 40Ω.
 
 .. figure:: ledriver2.jpg
-    
+
     Bode Plot LED Driver Connection
 
 Getting Started
 ----------------
 
-Please refer to the following pages for detailed instructions on 
+Please refer to the following pages for detailed instructions on
 how to set up the LTpowerAnalyzer system for evaluation.
 
 .. toctree::
-      :titlesonly:
-      :maxdepth: 2
-      :glob:
+   :titlesonly:
+   :maxdepth: 2
+   :glob:
 
-      */index
+   */index
 
 Help and Support
 -----------------

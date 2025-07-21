@@ -28,7 +28,7 @@ System Requirements
 
 .. admonition:: Download
 
- - `LTpowerAnalyzer Software Installer <https://swdownloads.analog.com/LTpowerAnalyzer/SetupLTpowerAnalyzer.exe>`__
+   :download:`LTpowerAnalyzer Software Installer <https://swdownloads.analog.com/LTpowerAnalyzer/SetupLTpowerAnalyzer.exe>`
 
 Software Installation
 ---------------------
@@ -37,18 +37,18 @@ This section provides a step-by-step procedure of installing the LTpowerAnalyzer
 software. For this demonstration, the LTpowerAnalyzer software version is **LTPA
 version 1.8.1.2.**
 
-1. Download the `LTpowerAnalyzer Software Installer Package <https://swdownloads.analog.com/LTpowerAnalyzer/SetupLTpowerAnalyzer.exe>`__
+1. Download the :download:`LTpowerAnalyzer Software Installer Package <https://swdownloads.analog.com/LTpowerAnalyzer/SetupLTpowerAnalyzer.exe>`
 2. Locate the executable file **SetupLTpowerAnalyzer.exe** inside the
    downloads folder.
 3. Double-click the installer file. A notification window will pop up, listing
    the accompanying drivers and libraries necessary to run the LTpowerAnalyzer
    software. Click ``OK`` to proceed.
 4. Select a destination location to install the LTpowerAnalyzer folder files. By
-   default, the software files will install at the location 
-   **C:\\Program Files (x86)\LTpowerAnalyzer**. To select a different location, 
+   default, the software files will install at the location
+   **C:\\Program Files (x86)\LTpowerAnalyzer**. To select a different location,
    click the ``Browse`` option.
 5. After choosing a destination location, click ``Install`` to proceed with the
-   installation of the LTpowerAnalyzer software. 
+   installation of the LTpowerAnalyzer software.
 
 Installing the Software Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,8 +70,8 @@ Installing libm2k Ver. 0.7.0
 1. Carefully read and understand the License Agreement form before proceeding.
 2. Click the ``I accept the agreement`` option.
 3. Click ``Next`` to proceed with the installation.
-4. Select the additional installs with the libm2k. 
-   
+4. Select the additional installs with the libm2k.
+
    .. note::
       The Overwrite libiio option appears when you have previously installed this in your system.
 
@@ -87,7 +87,7 @@ Installing M2K USB Drivers
 2. Click the ``I accept the agreement`` option.
 3. Click ``Next`` to proceed with the installation.
 4. Click ``Install`` to begin the installation process.
-5. Click ``Next`` to proceed with the installation wizard. If a Windows Security prompt pops up, 
+5. Click ``Next`` to proceed with the installation wizard. If a Windows Security prompt pops up,
    just click ``Install`` to proceed with the installation.
 6. Check the list of device drivers to be installed.
 7. Click ``Finish``.
@@ -113,9 +113,9 @@ calibration. If no calibration has yet been run, a warning will be generated:
 
 .. figure:: calibrationwarning.png
 
-    No Calibration Data Found Warning
+   No Calibration Data Found Warning
 
-To perform a calibration, click on the ``Calibration`` -> ``Run`` menu item. 
+To perform a calibration, click on the ``Calibration`` -> ``Run`` menu item.
 The calibration data will be saved in the ``AppData directory`` usually found at
 **C:\\Users\\(Your User Name)\\AppData\\Local\\LTpowerAnalyzer\\LTpowerAnalyzer.xml**.
 
@@ -213,9 +213,9 @@ Measurements
 
 .. important::
 
-    Make sure that you have set up the hardware for **Bode Measurement** 
-    as described in the :ref:`EVAL-LTPA-KIT Hardware Setup Guide <ltpa-hardware>`
-    before proceeding with the steps listed below.
+   Make sure that you have set up the hardware for **Bode Measurement**
+   as described in the :ref:`EVAL-LTPA-KIT Hardware Setup Guide <ltpa-hardware>`
+   before proceeding with the steps listed below.
 
 BODE PLOT
 ----------
@@ -290,8 +290,8 @@ The Bode Measurement Setup is on the left side of the window.
 +-----------------------+-----------------------------------------------------+
 
 .. figure:: lib1_bodegraphtab.png
-    
-    Bode Plot Measurement Tab
+
+   Bode Plot Measurement Tab
 
 Bode Graph Tab Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -362,8 +362,8 @@ Click on the ``Analysis tab`` on the right to bring up the sweep results.
 +-----------------------+-----------------------------------------------------+
 
 .. figure:: lib1_bodeanatab.png
-    
-    Bode Plot Measurement Analysis Tab
+
+   Bode Plot Measurement Analysis Tab
 
 Copying Analysis Data
 ~~~~~~~~~~~~~~~~~~~~~
@@ -375,7 +375,7 @@ for all the measurement tabs that provides analysis information.
 1. Right-click on the ``Analysis Tab`` to see the ``Copy Data`` option.
 2. After the ``Copy Data`` option comes out, left-click to copy the
    measurement data.
-3. Paste the data to an excel spreadsheet by pressing ``CTRL+V``. 
+3. Paste the data to an excel spreadsheet by pressing ``CTRL+V``.
 
 Load, Modify, and Save Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -439,7 +439,7 @@ Plot feature of the LTpowerAnalyzer software.
    Turn off the power to the demo board, then run a calibration.
 
    .. figure:: bode_plot_getting_started_calibration_2.png
-      
+
       Running a Calibration
 
 3. Set up the Injection Level.
@@ -475,7 +475,7 @@ Plot feature of the LTpowerAnalyzer software.
       viewed by clicking on the ``Analysis tab`` on the right.
 
    .. figure:: lib4_bodemeas.png
-      
+
       Running a Bode Plot Measurement
 
 5. Rename the Measurements.
@@ -504,7 +504,7 @@ Plot feature of the LTpowerAnalyzer software.
    .. figure:: lib6_bodemeas.png
 
    .. figure:: lib7_bodemeas.png
-         
+
       Editing the Main Title
 
 7. Add a Text Annotation.
@@ -515,15 +515,15 @@ Plot feature of the LTpowerAnalyzer software.
 
    - STEP #3: Click the ``OK`` button.
 
-   Next, select the new annotation by placing the cursor over it and then left-click. 
+   Next, select the new annotation by placing the cursor over it and then left-click.
    The annotation can then be resized and moved as needed.
 
    .. figure:: lib8_bodemeas.png
-      
+
    .. figure:: lib9_bodemeas.png
-      
+
    .. figure:: lib10_bodemeas.png
-      
+
       Adding a Text Annotation
 
 8. Saving the Results.
@@ -537,7 +537,7 @@ Plot feature of the LTpowerAnalyzer software.
    Note that the **Setup File** type will only save the setup.
 
    .. figure:: lib11_bodemeas.png
-   
+
    .. figure:: lib12_bodemeas.png
 
       Saving a Bode Plot Measurement
@@ -551,7 +551,7 @@ the input to the DUT is small, leading to a noisy reading. By increasing the
 injected signal level at low frequencies, the noise in the reading can be
 reduced. As the frequency is increased, the DUT needs to drive the decreasing
 output capacitance impedance, which can cause the DUT’s control loop to go
-non-linear, leading to distortion and inaccurate gain and phase measurements. 
+non-linear, leading to distortion and inaccurate gain and phase measurements.
 At the mid frequencies, it is best to set the signal level to as low a value as
 possible. At higher frequencies (~ 500 kHz+), the gain can be much less than 1
 and it might be useful to increase the signal level again.
@@ -610,7 +610,7 @@ Acquired data are arranged under the following:
 - Open ``EXCEL`` and press ``CTRL+V`` to paste the data.
 
 .. figure:: bodeplotdatagrid.jpg
-   
+
    Bode Plot Measurement Data View
 
 .. figure:: bodeplotanalysisdatatabexel.jpg
@@ -622,8 +622,8 @@ TRANSIENT RESPONSE
 ------------------
 
 .. important::
-   
-   Make sure that you have properly set up the hardware for Transients Measurement 
+
+   Make sure that you have properly set up the hardware for Transients Measurement
    as described in the :ref:`EVAL-LTPA-KIT Hardware Guide <ltpa-hardware>`
    before proceeding to below steps.
 
@@ -691,7 +691,7 @@ Transient Pulse Measurement Setup
 |              | before calculating the settling times                        |
 +--------------+--------------------------------------------------------------+
 
-.. figure:: lib1_pulsemeas.png 
+.. figure:: lib1_pulsemeas.png
 
    Transient Pulse Measurement Setup
 
@@ -708,7 +708,7 @@ before the value. Simply click on the box in the table and enter the value.
   contents of the table.
 
 .. figure:: lib1_pwlmeas.png
-   
+
    Transient PWL Measurement Setup
 
 Transient Graph Tab Interface
@@ -779,7 +779,7 @@ Transient Graph Tab Interface
 +------------------------+-------------------------------------------------------------+
 
 .. figure:: lib1_pulsemeas1.png
-    
+
    Transient Graph Tab
 
 Transient Analysis Limit Display
@@ -790,7 +790,7 @@ the voltage waveform with the Y values set by the values in the Lower Limit and
 Upper Limit combo boxes.
 
 .. figure:: lib1_limidisp.png
-   
+
    Transient Analysis with Limits Displayed
 
 If the voltage waveform remains inside the box, the limit text will turn green,
@@ -801,7 +801,7 @@ otherwise the text will be red.
 |                                      |                                      |
 | **Transient Analysis Passing Set     | **Transient Analysis Failing Set     |
 | Limits indicated by Green Text**     | Limits indicated by Red Text**       |
-+--------------------------------------+--------------------------------------+ 
++--------------------------------------+--------------------------------------+
 
 Transient Analysis Tab
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -826,7 +826,7 @@ Transient Analysis Tab
 +----------------------+------------------------------------------------------+
 
 .. figure:: lib1_tranana.png
-   
+
    Transient Analysis Tab
 
 Copying Analysis Data
@@ -859,7 +859,7 @@ Transients Response Measurement feature of the LTpowerAnalyzer software.
       output voltage and current probe temperature should be displayed.
 
    .. figure:: transientgettingstarted_2.png
-      
+
       Transient Tab with the Current Probe Connected
 
 2. Run a calibration.
@@ -868,7 +868,7 @@ Transients Response Measurement feature of the LTpowerAnalyzer software.
       capacitor by shorting the outputs, then run a calibration.
 
    .. figure:: transientgettingstarted_2.png
-      
+
       Running a Calibration
 
 3. Running Transients
@@ -890,11 +890,11 @@ Transients Response Measurement feature of the LTpowerAnalyzer software.
       graph of the transient measurements appear at the window.
 
    .. figure:: lib3_extranmeas.png
-      
+
       Guide on Running a Pulse Control Transient
 
    .. figure:: pwltransient.jpg
-      
+
       Sample Result of a Pulse Control Transient Stimuli
 
    *3.b Piecewise Linear Function Control*
@@ -911,11 +911,11 @@ Transients Response Measurement feature of the LTpowerAnalyzer software.
       of the transient measurements appear at the window.
 
       .. figure:: lib5_extranmeas.png
-         
+
          Setting up a Piece Wise Linear Transient Control
 
       .. figure:: lib6_extranmeas.png
-         
+
          Running a PWL Transient Measurement
 
 Making Multiple Pulse Transient Analysis
@@ -932,13 +932,13 @@ pulses with programmable widths and duty cycles.
    - STEP #3: Indicate the desired pulse width of the pulse train.
 
    .. figure:: lib1_multipulana.png
-      
+
       Configuring the Transient Tab for Multiple Pulse Analysis
 
 2. Click ``RUN`` to run a Transient Analysis.
 
    .. figure:: lib2_multipulana.png
-      
+
       Sample Multiple Pulse Transient Analysis
 
 Transient Rise and Fall Times
@@ -958,7 +958,7 @@ When the Low Current is set to zero, the rise and fall times will be fixed at
 ~200ns, which is set by the loop bandwidth of the current source.
 
 .. figure:: lib2_rifati.png
-   
+
    Locked Control Parameters at Low Current = 0A
 
 Extending VOUT Measurement Range
@@ -971,7 +971,7 @@ clipping that occurs when the signal level gets too high. Notice that the Output
 Voltage Scale Factor is set to 1.0.
 
 .. figure:: lib1_extmeasran.png
-   
+
    Nominal VOUT+ Signal Range Example
 
 Sometimes the range needs to be extended, which can be accomplished by placing a
@@ -980,7 +980,7 @@ extend the range, but the noise will go up as the division ratio is increased.
 The sum of the resistor values should be kept less than 10 kΩ.
 
 .. figure:: lib2_extmeasran.png
-   
+
    Adding Resistor Dividers to Extend the VOUT+ Range
 
 The plot below shows the Vout+ input being driven with a sine wave generator
@@ -989,14 +989,14 @@ Notice that the range has doubled and that the Output Voltage Scale Factor is
 set to 2.0 to get the right values.
 
 .. figure:: lib3_extmeasran.png
-   
+
    Extending VOUT+ Range Using 1k-1k Resistor Divider
- 
+
 OUTPUT IMPEDANCE
 ----------------
 
 .. important::
-   Make sure that you have properly set up the hardware for Output Impedance Measurement 
+   Make sure that you have properly set up the hardware for Output Impedance Measurement
    as described in the :ref:`EVAL-LTPA-KIT Hardware Guide <ltpa-hardware>`
    before proceeding to below steps.
 
@@ -1076,16 +1076,16 @@ Impedance Graph Tab
 ~~~~~~~~~~~~~~~~~~~~
 
 ==================== ==========================================================
-*X-axis*             
+*X-axis*
 **Minimum**          100 Hz to 10 Mhz
 **Maximum**          100 Hz to 10 Mhz
 **AutoScale**        The X-axis data will be automatically scaled
-*Y-axis (Impedance)* 
+*Y-axis (Impedance)*
 **Minimum**          0 Ω to 100 Ω
 **Maximum**          0 Ω to 100 Ω
 **Increments**       Number of Y1 Axis increments
 **AutoScale**        The Y-axis data will be automatically scaled
-*Y2 Axis (Phase)*    
+*Y2 Axis (Phase)*
 **Minimum**          -360 Deg to 360 Deg
 **Maximum**          -360 Deg to 360 Deg
 **Increments**       Number of Y2 Axis increments
@@ -1101,7 +1101,7 @@ Making an Impedance Measurement
 
 Ensure that the hardware has been properly set up as described in the
 :ref:`EVAL-LTPA-KIT Hardware Guide <ltpa-hardware>`
-before performing these measurements. The following section discusses 
+before performing these measurements. The following section discusses
 the procedure to make an impedance measurement using the LTpowerAnalyzer software.
 
 1. Check the system status.
@@ -1112,7 +1112,7 @@ the procedure to make an impedance measurement using the LTpowerAnalyzer softwar
    output voltage and current probe temperature should be displayed.
 
    .. figure:: lib2_impemeas.png
-      
+
       Impedance Tab with the Current Probe Connected
 
 2. Run a calibration if needed.
@@ -1135,7 +1135,7 @@ the procedure to make an impedance measurement using the LTpowerAnalyzer softwar
    graph is updated as additional rows or points are added.
 
    .. figure:: lib4_impemeas.png
-      
+
       Set the Impedance Measurement Injection Current Level
 
 4. Run an impedance measurement.
@@ -1150,7 +1150,7 @@ the procedure to make an impedance measurement using the LTpowerAnalyzer softwar
       finished.
 
    .. figure:: lib5_impemeas.png
-      
+
       Run an Impedance Measurement
 
    Set up the impedance control parameters, the expected switching frequency and
@@ -1172,7 +1172,7 @@ connected. Right-click on the table to bring up a menu which allows data editing
 in the table.
 
 .. figure:: lib1_impelvl.png
-   
+
    Setting the Impedance Measurement Current Level
 
 The average current of the sine wave is equal to approximately 1.1
@@ -1188,7 +1188,7 @@ measurement since the injection current is a larger fraction of the maximum
 probe current, leading to a less noisy sine wave.
 
 .. figure:: lib2_impelvl.png
-   
+
    Current Sine Wave
 
 OSCILLOSCOPE
@@ -1308,7 +1308,7 @@ FFT signals at the input and output.
 Scope Cursor Tab
 ~~~~~~~~~~~~~~~~~
 
-Click on the ``Cursor tab`` on the right to bring up the cursor setup. There are 
+Click on the ``Cursor tab`` on the right to bring up the cursor setup. There are
 two cursors available, and can be moved by holding down the left mouse button while
 the pointer is over the dashed vertical black cursor line.
 
@@ -1334,7 +1334,7 @@ the pointer is over the dashed vertical black cursor line.
 +----------------------+------------------------------------------------------+
 
 .. figure:: scopecursors.jpg
-   
+
    Scope Cursors Tab
 
 Scope Bode Analysis
@@ -1382,7 +1382,7 @@ to display the scope measurement data.
 +------------------------+----------------------------------------------------+
 
 .. figure:: scopebode.jpg
-   
+
    Scope Bode Analysis Tab
 
 Copying Analysis Data
@@ -1393,7 +1393,7 @@ section provides the step-by-step procedure to copy the data. This also applies
 for all the measurement tabs that provides analysis information.
 
 .. figure:: lib5_copyanalysis.png
-   
+
    Oscilloscope Measurement Analysis Tab
 
 1. Right-click on the ``Analysis Tab`` to see the ``Copy Data`` option
@@ -1404,7 +1404,7 @@ for all the measurement tabs that provides analysis information.
 Scope Impedance Analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When the impedance analysis configuration is selected, click on the 
+When the impedance analysis configuration is selected, click on the
 ``Analysis tab`` to display the scope measurement data.
 
 *Analysis Tab*
@@ -1463,11 +1463,11 @@ screen shot. If the supply is on and it still won’t trigger, check the trigger
 level or switch the trigger mode from Normal to Auto to force the trigger.
 
 .. figure:: lib1_mistrig.png
-   
+
    Oscilloscope Missing Trigger
 
 .. figure:: lib2_mistrig.png
-   
+
    Changing the Trigger Mode from Normal to Auto
 
 Measuring Switcher Ripple Voltage
@@ -1488,16 +1488,16 @@ checking the FFT trace.
       start showing the measured waveform.
 
       .. figure:: lib1_meswripv.png
-         
+
          Configuring the Scope Settings for Ripple Measurements
 
 2. Measuring waveform ripple with the Analysis Tab:
 
-   -  Waveform ripple in the scope window can be measured by checking 
+   -  Waveform ripple in the scope window can be measured by checking
       the ``Analysis tab``.
 
       .. figure:: scopeswitchingfrequency.jpg
-         
+
          Ripple Measurements in the Analysis Tab
 
 3. Measuring switcher frequency with FFT Waveform and Cursor Tab:
@@ -1506,7 +1506,7 @@ checking the FFT trace.
       cursor tab.
 
       .. figure:: lib3_meswripv.png
-         
+
          Switcher Frequency Measurement in the FFT Waveform
 
 Additional GUI Controls
@@ -1543,7 +1543,7 @@ Click on the ``Cursor tab`` on the right to bring up the cursor setup.
 +----------------------+------------------------------------------------------+
 
 .. figure:: lib1_curstab.png
-   
+
    Cursor Tab View
 
 Data Tab
@@ -1580,7 +1580,7 @@ bring up the data setup.
 +----------------+------------------------------------------------------------+
 
 .. figure:: lib1_dattab.png
-   
+
    Data Tab View
 
 Renaming, Hiding, and Deleting traces
@@ -1597,7 +1597,7 @@ To rename a trace, click on the ``Data tab`` on the right.
 
       Accessing the Waveform Data Editor
 
-#. Click on a box in the ``Name column`` and change the name. 
+#. Click on a box in the ``Name column`` and change the name.
 
    .. figure:: lib2_rename.png
 
@@ -1615,7 +1615,7 @@ legends completely, editing the number of visible traces, or by adding an offset
 to the ``Graph tab`` or by dragging it up.
 
 .. figure:: lib1_hiding.png
-   
+
    Legends Blocking Portions of the Traces
 
 1. Moving the Origin Cursor:
@@ -1623,7 +1623,7 @@ to the ``Graph tab`` or by dragging it up.
    - Click and drag the red origin cursor up or down to move the covered traces.
 
    .. figure:: lib2_hiding.png
-      
+
       Movable Origin Cursor
 
 2. Hiding All Trace Legends:
@@ -1631,7 +1631,7 @@ to the ``Graph tab`` or by dragging it up.
    - Hide all trace labels by clicking the ``Legend`` checkbox.
 
    .. figure:: lib3_hiding.png
-      
+
       Trace Legends Checkbox
 
 3. Hiding a Specific Traces:
@@ -1641,7 +1641,7 @@ to the ``Graph tab`` or by dragging it up.
       hide. Trace legends are automatically updated.
 
    .. figure:: lib4_hiding.png
-      
+
       Hiding a Trace via the Visible Column
 
 How to Delete Traces
@@ -1657,7 +1657,7 @@ the entire measurement windowpane.
    -  Click ``Delete``. Selected traces will be automatically removed.
 
    .. figure:: lib1_delete.png
-         
+
       Deleting Specific Traces
 
 2. Deleting all traces
@@ -1666,7 +1666,7 @@ the entire measurement windowpane.
    -  The windowpane will be automatically updated with all traces removed.
 
    .. figure:: lib3_delete.png
-      
+
       Delete All Button
 
 Docking and Undocking Forms
@@ -1683,14 +1683,14 @@ Each form in the main window (right window below) can be undocked by right-click
    The undocked form will appear as a separate pop-up window.
 
    .. figure:: lib1_undock.png
-      
+
       Undocking Forms in the LTpowerAnalyzer Software
 
    Separated forms can be merged back into the main window by clicking on the ``X``
    icon in the upper right-hand corner of the form.
 
    .. figure:: lib2_undock.png
-      
+
       Merging Undocked Forms
 
 Using the LTpowerAnalyzer with LTpowerCAD
@@ -1701,34 +1701,34 @@ LTpowerCAD software to help optimize the design. You must have the version of
 LTpowerCAD that is authorized for ADI internal use for the interface to work.
 Here are the steps to follow:
 
-1. Launch LTpowerCAD and open LTpowerAnalyzer interface. 
+1. Launch LTpowerCAD and open LTpowerAnalyzer interface.
 
    .. figure:: ltpowercad1.png
 
       Launching LTpowerCAD with LTpowerAnalyzer Interface
 
-2. Copy and paste from LTpowerAnalyzer to LTpowerCAD. 
+2. Copy and paste from LTpowerAnalyzer to LTpowerCAD.
 
    .. figure:: ltpowercad2.png
-      
+
       Copying and Pasting Bode Plot Data from LTpowerAnalyzer to LTpowerCAD
 
-3. Import LTpowerAnalyzer data to LTpowerCAD. 
+3. Import LTpowerAnalyzer data to LTpowerCAD.
 
    .. figure:: ltpowercad3.png
-      
+
       Importing LTpowerAnalyzer Data to LTpowerCAD
 
-4. Re-compensate measured loop gain in LTpowerCAD. 
+4. Re-compensate measured loop gain in LTpowerCAD.
 
    .. figure:: ltpowercad4.png
-      
+
       Re-compensating Measured Loop Gain in LTpowerCAD
 
-#. Re-adjust loop compensation network. 
+#. Re-adjust loop compensation network.
 
    .. figure:: ltpowercad5.png
-      
+
       Re-adjusting Loop Compensation Network in LTpowerCAD
 
 Checking for Software Updates
@@ -1745,16 +1745,19 @@ on the ``Update button`` will download and launch the latest install file.
 
    LTpowerAnalyzer Software Update Check
 
-.. figure:: lib2_upcheck.png
-   
-   Local Version Out-of-Date Status Message
+.. grid::
+   :widths: 50% 50%
 
-.. figure:: lib3_upcheck.png 
-   
-   LTpowerAnalyzer Software Installer File
+   .. figure:: lib2_upcheck.png
+
+      Local Version Out-of-Date Status Message
+
+   .. figure:: lib3_upcheck.png
+
+      LTpowerAnalyzer Software Installer File
 
 .. figure:: lib4_upcheck.png
-   
+
    Checking for Updates After Installation
 
 Additional Resources
