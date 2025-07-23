@@ -46,6 +46,13 @@ Hardware Changes
 
         R88 for VDDIO Provision
 
+.. note::
+
+   The CFG pins settings for deserializer are:
+
+   * CFG0: 0
+   * CFG1: 0
+
 **GMSL Serializer Evaluation Kit**
 
 - Place a jumper on the J10 connector to enable power over the coaxial cable.
@@ -62,6 +69,13 @@ Hardware Changes
         :width: 400 px
 
         Serializer Resistors
+
+.. note::
+
+   The CFG pins settings for serializer are:
+
+   * CFG0: 0
+   * CFG1: 7
 
 |
 
