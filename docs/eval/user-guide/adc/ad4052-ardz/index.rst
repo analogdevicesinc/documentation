@@ -208,7 +208,7 @@ interface the evaluation board.
 The source code is available at
 :git-hdl:`ad4052:projects/ad4052_ardz`
 and documented at
-:external+hdl:ref:`ad4052-ardz`.
+:external+hdl:ref:`ad4052_ardz`.
 
 Get start with the HDL reference design reading the :external+hdl:ref:`user_guide`.
 
