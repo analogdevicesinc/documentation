@@ -74,3 +74,4 @@ Academic Workshops
    workshops_introduction_to_electronics/index
    workshops_embedded_baremetal/index
    workshops_embedded_linux/index
+   workshops_applied_systems_control/index
