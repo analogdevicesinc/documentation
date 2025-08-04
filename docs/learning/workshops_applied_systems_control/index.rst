@@ -3,14 +3,14 @@ Applied Systems Control Workshop
 
 Introduction
 ~~~~~~~~~~~~
-This workshop provides an introduction to applied systems control, focusing on practical applications and real-world scenarios. Participants will learn about various control systems, their design, and implementation.
+This workshop provides an introduction to applied systems control, focusing on practical applications and real-world scenarios. Participants will learn about various control systems, their design and implementation.
 
 Theoretical content
 ~~~~~~~~~~~~~~~~~~~
 - Overview of industrial control and automation systems
 - Introduction to PWM control
 - Introduction to PID control
-- Introduction the AD-SWIOT1L-SL board
+- AD-SWIOT1L-SL Board Overview
 
 .. image:: industrial.png
     :width: 500
@@ -164,7 +164,7 @@ PID control is widely used in various applications, including:
     :align: center
 
 
-Introduction to the AD-SWIOT1L-SL board
+AD-SWIOT1L-SL Board Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The AD-SWIOT1L-SL board is a versatile platform designed for industrial control applications. It features a range of components that facilitate the implementation of control strategies, including PWM and PID control.
 
@@ -198,14 +198,18 @@ It includes:
 
 .. grid::
     :widths: 50% 50%
-.. image:: block_diagram.png
-    :alt: AD-SWIOT1L-SL block diagram
-    :width: 500
 
-.. image:: board_design.png
-    :alt: AD-SWIOT1L-SL board design
-    :width: 500
-    
+    .. figure:: block_diagram.png
+        :alt: AD-SWIOT1L-SL block diagram
+        :width: 500
+
+        AD-SWIOT1L-SL Block Diagram
+
+    .. figure:: board_design.png
+        :alt: AD-SWIOT1L-SL board design
+        :width: 500
+
+        AD-SWIOT1L-SL Board Design
 
 
 **Kit contents**
