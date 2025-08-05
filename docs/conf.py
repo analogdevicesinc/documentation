@@ -6,7 +6,7 @@ from os import path
 
 repository = 'documentation'
 project = 'System Level Documentation'
-copyright = '2024, Analog Devices, Inc.'
+copyright = '2025, Analog Devices, Inc.'
 author = 'Analog Devices, Inc.'
 
 # -- General configuration ---------------------------------------------------

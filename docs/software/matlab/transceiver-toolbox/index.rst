@@ -1,3 +1,5 @@
+.. _matlab transceiver-toolbox:
+
 Transceiver Toolbox
 ===================
 
