@@ -34,13 +34,18 @@ things. However, like many things, documentation is never as complete as it
 should be. If you have any questions, feel free to
 :ref:`ask <help-and-support>`.
 
-#. Use the board to better understand the ADRV9026/ADRV9029
+To better understand the :adi:`ADRV9026` / :adi:`ADRV9029`, we recommend to use
+the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` evaluation board.
 
-   #. :ref:`What you need to get started <adrv9026 prerequisites>`
-   #. :ref:`Quick Start Guides <adrv9026 quickstart>`
+#. Using the evaluation board/full stack reference design that we offer:
 
-      #. :ref:`Linux on ZCU102 <adrv9026 quickstart zynqmp>`
-      #. Configure an SD Card with :external+adi-kuiper-gen:doc:`Kuiper <index>`
+   #. :ref:`Prerequisites <adrv9026 prerequisites>` - what you need to get started
+   #. :ref:`Quick start guides <adrv9026 quickstart>`:
+
+      #. Using the :ref:`ZCU102/Zynq UltraScale MP SoC <adrv9026 quickstart zynqmp>`
+      #. Using the :ref:`VCK190/Versal <adrv9026 quickstart versal>`
+
+   #. Configure an SD Card with :external+adi-kuiper-gen:doc:`Kuiper <index>`
 
    #. Linux Applications
 
@@ -52,14 +57,14 @@ should be. If you have any questions, feel free to
 
       #. :adi:`ADRV9026 Product page <ADRV9026>`
       #. :adi:`ADRV9029 Product page <ADRV9029>`
-      #. :adi:`Full Datasheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
+      #. :adi:`Full data sheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
 
    #. Hardware in the Loop / How to design your own custom BaseBand
 
       #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
       #. :dokuwiki:`Transceiver Toolbox <resources/tools-software/transceiver-toolbox>`
 
-   #. Design a custom ADRV9026/ADRV9029 based platform
+   #. Design a custom ADRV9026/ADRV9029-based platform
 
       #. Linux software
 
@@ -87,7 +92,7 @@ should be. If you have any questions, feel free to
          #. :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
 
       #. :dokuwiki:`Changing the VCXO frequency and updating the default RF Transceiver Profile <resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
-      #. :dokuwiki:`HDL Reference Design <resources/eval/user-guides/adrv9026/ad9026_hdl>` which you must use in your FPGA.
+      #. :external+hdl:ref:`HDL Reference Design <projects/adrv9026>` which you must use in your FPGA.
 
 #. :dokuwiki:`Additional Documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 #. :ref:`Help and Support <help-and-support>`
