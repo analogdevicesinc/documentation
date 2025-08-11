@@ -31,14 +31,16 @@ should be. If you have any questions, feel free to
 To better understand the :adi:`ADRV9026` / :adi:`ADRV9029`, we recommend to use
 the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` evaluation board.
 
-#. :ref:`Prerequisites <adrv9026 prerequisites>` - what you need to get started (hardware, software)
-#. :ref:`Quick start guides <adrv9026 quickstart>`:
+#. Using the evaluation board/full stack reference design that we offer:
 
-   #. On :ref:`ZCU102/Zynq UltraScale MP SoC <adrv9026 quickstart zynqmp>`
-   #. On :ref:`VCK190/Versal <adrv9026 quickstart versal>`
-
-#. :ref:`Configure a pre-existing SD Card <kuiper sdcard>`
-#. :ref:`Update the old card you received with your hardware <kuiper update>`
+   #. :ref:`Prerequisites <adrv9026 prerequisites>` - what you need to get started
+   #. :ref:`Quick start guides <adrv9026 quickstart>`:
+   
+      #. Using the :ref:`ZCU102/Zynq UltraScale MP SoC <adrv9026 quickstart zynqmp>`
+      #. Using the :ref:`VCK190/Versal <adrv9026 quickstart versal>`
+   
+   #. :ref:`Configure a pre-existing SD Card <kuiper sdcard>` or
+      :ref:`update the old card you received with your hardware <kuiper update>`
 
    #. Linux Applications
 
@@ -50,7 +52,7 @@ the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` evaluation board.
 
       #. :adi:`ADRV9026 Product page <ADRV9026>`
       #. :adi:`ADRV9029 Product page <ADRV9029>`
-      #. :adi:`Full Datasheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
+      #. :adi:`Full data sheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
 
    #. Hardware in the Loop / How to design your own custom BaseBand
 
@@ -85,10 +87,10 @@ the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` evaluation board.
          #. :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
 
       #. :dokuwiki:`Changing the VCXO frequency and updating the default RF Transceiver Profile <resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
-      #. :dokuwiki:`HDL Reference Design <resources/eval/user-guides/adrv9026/ad9026_hdl>` which you must use in your FPGA.
+      #. :external+hdl:ref:`HDL Reference Design <projects/adrv9026>` which you must use in your FPGA.
 
 #. :dokuwiki:`Additional Documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
-#. :ref:`Help and Support <ad-fmcomms2-ebz help-and-support>`
+#. :ref:`Help and Support <help-and-support>`
 
 .. _adrv9026 blockdiagram:
 
