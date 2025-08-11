@@ -1,24 +1,33 @@
 :orphan:
 
-.. _ad-fmcomms2-ebz help-and-support:
+.. _help-and-support:
 
 Help and Support for ADI FMC Cards & RF SoMs
 ===============================================================================
 
 If you have any questions regarding the:
 
-* ADI FMC Boards : AD-FMCOMMS2-EBZ, AD-FMCOMMS3-EBZ, AD-FMCOMMS4-EBZ,
+* ADI FMC Boards: AD-FMCOMMS2-EBZ, AD-FMCOMMS3-EBZ, AD-FMCOMMS4-EBZ,
   AD-FMCOMMS5-EBZ AD-FMCOMMS11-EBZ
 * Arrow ARRADIO board or
 * ADI RF SoM (ADRV9364-Z7020, ADRV9361-Z7035 or ADRV9009-ZU11EG)
 
 or are experiencing any problems while using the board or following the user
-guides feel free to ask us a question.
-Questions can be asked on our :ez:`/` support community.
-Calling on the phone, emailing someone directly, will only cause things to get
-answered in much slower manner.
+guides, feel free to ask us a question.
 
-Why EngineerZone? Why can't I get one-on-one email/phone support on the AD9361?
+Questions can be asked on our :ez:`/` support community.
+
+.. important::
+
+   Calling on the phone, emailing someone directly or writing private messages
+   to employees on :ez:`EngineerZone </>`, will only cause things to get
+   answered in much much slower manner.
+
+Why EngineerZone?
+-------------------------------------------------------------------------------
+
+Why can't I get one-on-one email/phone support on the AD9361?
+
 The AD9361 is a very complex part - it has over one thousand (1000) different
 registers with little way to understand (other than experience, and staring at
 things a long time) what is going on inside the part. The working system
@@ -26,7 +35,7 @@ crosses many domains (RF, FIR Filter Design, driver software, HDL, user
 applications). One single person can't understand the entire thing, so a single
 email, which is forwarded around to multiple places actually takes longer to
 get questions answered (and has a higher chance of getting lost), than posting
-them on EngineerZone (Where things are tracked, and closed). Having experts in
+them on EngineerZone (**where things are tracked, and closed**). Having experts in
 the field monitor the EngineerZone is a better use of everyone's time, and
 questions are actually answered faster for those asking. Please use it.
 
@@ -38,15 +47,15 @@ executed, the result you expected you would get and the result you actually
 got. By doing so you enable us to provide you precise and detailed answers in a
 timely manner.
 
-Before asking questions please also take the time to check if somebody else
-already asked the same question and already got an answer. Please make sure you
+Before asking questions, **please also take the time to check if somebody else
+already asked the same question and already got an answer**. Please make sure you
 ask in these forums. EngineerZone is a big place, with lots of places to post
 questions, and it's possible to ask a question in the wrong place, where no one
 familiar with these boards/parts/software monitors things, and it will go
 unanswered forever. Don't get mad if this happens. The problem is between the
 chair and the keyboard (you). If you are posting in the right place, and the
-question is unanswered for a few working days, please bump the thread (we are
-human, and sometimes miss things).
+question is unanswered for a few working days, please bump the thread
+(we, humans, are replying to the threads after all, and sometimes miss things).
 
 HDL / Hardware Questions
 -------------------------------------------------------------------------------
@@ -56,8 +65,8 @@ hardware or the HDL reference design please state them in the
 :ez:`FPGA Reference Designs <fpga>` sub-community.
 If you have questions about the tools, please go ask the tools vendors:
 
-* `AMD Xilinx Forums <https://support.xilinx.com/s>`_
-* `Intel Altera Forums <https://community.intel.com/t5/FPGA/ct-p/fpga>`_
+- `AMD Xilinx Forums <https://support.xilinx.com/s>`_
+- `Intel Altera Forums <https://community.intel.com/t5/FPGA/ct-p/fpga>`_
 
 Linux Driver or Application Questions
 -------------------------------------------------------------------------------
