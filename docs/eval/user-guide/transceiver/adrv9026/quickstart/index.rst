@@ -19,37 +19,34 @@ Supported carriers
 -------------------------------------------------------------------------------
 
 The :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>`, is, by definition a "FPGA
-mezzanine card" (FMC), that means it needs a carrier to plug into.
+mezzanine card" (FMC); that means it needs a carrier to plug into.
 The carriers we support are:
 
 .. list-table::
    :header-rows: 1
 
-   - - Board
+   - - FPGA board
      - EVAL-ADRV9026
      - EVAL-ADRV9029
-   - - :xilinx:`ZCU102`
+   - - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
      - Yes
      - Yes
    - - :xilinx:`KC705`
-     -
-     -
-   - - :xilinx:`VC707`
-     -
-     -
+     - ---
+     - ---
    - - :xilinx:`KCU105`
-     -
-     -
-   - - :xilinx:`ZC706`
-     -
-     -
-   - - :xilinx:`VCU118`
-     - Yes
-     - Yes
+     - ---
+     - ---
    - - :xilinx:`VCK190`
      - Yes
      - Yes
-   - - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
+   - - :xilinx:`VCU118`
+     - Yes
+     - Yes
+   - - :xilinx:`ZC706`
+     - ---
+     - ---
+   - - :xilinx:`ZCU102`
      - Yes
      - Yes
 
@@ -61,42 +58,38 @@ The supported OS are:
 .. list-table::
    :header-rows: 1
 
-   - - Board
+   - - FPGA board
      - HDL
-     - Linux Software
-     - No-OS Software
-   - - :xilinx:`ZCU102`
+     - Linux software
+     - No-OS software
+   - - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
      - Yes
      - Yes
-     - Yes
+     - ---
    - - :xilinx:`KC705`
-     -
-     -
-     -
-   - - :xilinx:`VC707`
-     -
-     -
-     -
+     - ---
+     - ---
+     - ---
    - - :xilinx:`KCU105`
-     -
-     -
-     -
-   - - :xilinx:`ZC706`
-     -
-     -
-     -
-   - - :xilinx:`VCU118`
-     - Yes
-     - Yes
-     - Yes
+     - ---
+     - ---
+     - ---
    - - :xilinx:`VCK190`
      - Yes
      - Yes
      - Yes
-   - - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
+   - - :xilinx:`VCU118`
      - Yes
      - Yes
-     -
+     - Yes
+   - - :xilinx:`ZCU102`
+     - Yes
+     - Yes
+     - Yes
+   - - :xilinx:`ZC706`
+     - ---
+     - ---
+     - ---
 
 Hardware Setup
 -------------------------------------------------------------------------------
@@ -110,17 +103,25 @@ ZCU102 + EVAL-ADRV9026/ADRV9029
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: adrv9026_zcu102_quickstart.jpg
-   :width: 800px
-
+   :width: 800
 
 VCK190 + EVAL-ADRV9026/ADRV9029
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: adrv9026_vck190_quickstart.jpg
-   :width: 800px
+   :width: 800
+
+A10SoC + EVAL-ADRV9026/ADRV9029
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TO BE ADDED
+
+VCU118 + EVAL-ADRV9026/ADRV9029
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TO BE ADDED
 
 Unboxing guide
 -------------------------------------------------------------------------------
 
 :ez:`Detailed unboxing guide <cfs-file/__key/communityserver-discussions-components-files/703/AD9371-and-ADRV9026-setup-with-ZCU102-or-ZC706-April2019.pdf>`
-

@@ -4,27 +4,26 @@ VCK190 Quickstart
 ===============================================================================
 
 .. image:: adrv9026_vck190_quickstart.jpg
-   :width: 800px
+   :width: 800
 
 This guide provides some quick instructions on how to setup the
-EVAL-ADRV9026/ADRV9029 on:
+:adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` on:
 
 - :xilinx:`VCK190`
 
-Instructions on how to build the ZynqMP / MPSoC / Versal ACAP Linux kernel
-and devicetrees from source can be found here:
+Instructions on how to build the Zynq UltraScale MPSoC / Versal ACAP Linux kernel
+and device trees from source can be found here:
 
-- :dokuwiki:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
-- :dokuwiki:`How to build the ZynqMP boot image BOOT.BIN <resources/tools-software/linux-software/build-the-zynqmp-boot-image>`
+- :ref:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source <linux-kernel zynqmp>`
+- :external+hdl:ref:`How to build the ZynqMP boot image BOOT.BIN <build_hdl>`
 
 Required Software
 -------------------------------------------------------------------------------
 
 - SD Card 16GB imaged with :external+adi-kuiper-gen:doc:`Kuiper <index>`
-- Since the Versal support is not part of the latest release you must update
+- **Since the Versal support is not part of the latest release**, you must update
   the BOOT partition of the SDCARD with the latest built files from main
   branches that can be downloaded from here: :download:`Boot files <adrv9026_vck190_boot.tar.gz>`
-
 - A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
 - System controller image
 
@@ -35,7 +34,7 @@ Required Hardware
 -------------------------------------------------------------------------------
 
 - AMD Xilinx :xilinx:`VCK190` Rev A board
-- EVAL-ADRV9026/ADRV9029 FMC board.
+- EVAL-ADRV9026/ADRV9029 FMC board
 - USB type-C cable
 - Ethernet cables
 - Optionally USB keyboard mouse and a Display Port compatible monitor
@@ -135,7 +134,7 @@ Console Output
 
 .. collapsible:: Complete boot log
 
-   :: 
+   ::
 
       U-Boot 2023.01 (Sep 21 2023 - 11:02:37 +0000)
 
@@ -807,7 +806,7 @@ IIO Oscilloscope Remote
 
 Please see also :ref:`iio-oscilloscope`.
 
-The IIO Oscilloscope application can be used to connect to another platform 
+The IIO Oscilloscope application can be used to connect to another platform
 that has a connected device in order to configure the device and read data from
 it.
 
