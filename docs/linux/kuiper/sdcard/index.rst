@@ -1,7 +1,7 @@
 .. _kuiper sdcard:
 
-SD Card flashing
-================
+SD card flashing
+===============================================================================
 
 Follow the tutorial below based on your host system:
 :ref:`Linux <kuiper sdcard linux>`
@@ -11,19 +11,20 @@ or
 .. _kuiper sdcard linux:
 
 From Linux hosts
-----------------
+-------------------------------------------------------------------------------
 
 This section explains how you should go about formatting and flashing the SD
-card with the software required to use many of platforms Analog Devices
-supports.
-There are several steps that need to be completed before your SD Card will be
+card with the software required to use many of the platforms
+:adi:`Analog Devices <>` supports.
+
+There are several steps that need to be completed before your SD card will be
 ready to use.
 
 Download the file
-+++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download the relevant SD card image file from the :ref:`kuiper` page. Please
-get the latest if you can. This can be done with wget as well:
+Download the relevant SD card image file from the :ref:`kuiper` page. Please,
+get the latest if you can. This can be done with *wget* as well:
 
 .. shell::
 
@@ -45,21 +46,20 @@ get the latest if you can. This can be done with wget as well:
 
     real 6m53.573s user 0m0.740s sys 0m32.342s
 
-Yeah, it takes an hour (or more if your connection is slow).
-At least you can drive down to your favourite coffee store, and indulge yourself.
+It should take about an hour (or more if your connection is slow).
 
 Verify the download
-+++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Check the md5, to make sure you have the right file.
+#. Check the *md5*, to make sure you have the right file.
 
    .. shell::
 
       $md5sum image_2021-07-28-ADI-Kuiper-full.zip
        279097240dec7156ff5e15b7ce0b8a25 image_2021-07-28-ADI-Kuiper-full.zip
 
-#. A ``zip`` file is a compressed file, you need to uncompress it, and check the
-   md5sum on resulted file:
+#. A ``zip`` file is a compressed file; you need to uncompress it, and check the
+   *md5sum* on resulted file:
 
    .. shell::
 
@@ -73,19 +73,18 @@ Verify the download
       $md5sum 2021-07-28-ADI-Kuiper-full.img
        b160453396e482234094a92134769ec6 2021-07-28-ADI-Kuiper-full.img
 
-Writing SD Card GUI
-+++++++++++++++++++
+Writing SD card GUI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
 
-   This will overwrite your entire SD card completely.
-   Backup anything from the card you want to keep.
+   This will overwrite your entire SD card completely. Backup anything from
+   the card you want to keep.
 
-It is recommended to use `Etcher <https://www.balena.io/etcher/>`__ to write to
-your SD card but other options exist. Only the process for Etcher is covered
-here.
+It is recommended to use `Etcher`_ to write to your SD card, but other options
+exist. Only the process for `Etcher`_ is covered here.
 
-Insert your target SD card and launch Etcher. With Etcher:
+Insert your target SD card into your computer, launch `Etcher`_ and do:
 
 #. Select write image from file
 #. Select the **.img** file that you have already extracted
@@ -95,26 +94,25 @@ Insert your target SD card and launch Etcher. With Etcher:
 
 .. image:: etcher.png
 
-At this point the SD card is still not bootable,
-follow the topics after :ref:`kuiper imaging sdcard`.
+At this point, the SD card is still not bootable, so follow the topics after
+:ref:`kuiper imaging sdcard`.
 
-Writing SD Card Command Line
-++++++++++++++++++++++++++++
+Writing SD card Command Line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
 
-   This will overwrite your entire SD card completely.
-   Backup anything from the card you want to keep.
+   This will overwrite your entire SD card completely. Backup anything from
+   the card you want to keep.
 
-Now that everything looks OK, write the file to your SD Card.
+Now that everything looks OK, write the file to your SD card.
 
 This will depend on your system, where your SD card installed itself. You also
-need to do this as root, since normal users shouldn't be able to randomly write
+need to do this as **root**, since normal users shouldn't be able to randomly write
 files to block devices.
 
-#. plug the SD Card into your SD-Writer. If this mounts the device (which many
-   Linux distributions do), it is important that you unmount
-   it.
+#. Plug the SD card into your SD-Writer. If this mounts the device (which many
+   Linux distributions do), it is important that you unmount it.
 
    :code:`sudo umount /dev/mmcblk0p1`
 #. Write the file (input file or ``if``) to the storage device (output file or
@@ -134,10 +132,11 @@ files to block devices.
    Now, you have that slice of pizza that you got too... :)
 
 This section explains how you should go about formatting and flashing the SD
-card with the software required to use many of platforms Analog Devices
-supports. There are several steps that need to be completed before your SD Card
-will be ready to use.
+card with the software required to use many of the platforms that Analog Devices
+supports.
 
+There are several steps that need to be completed before your SD card will be
+ready to use.
 
 #. Ensure the output buffers are flushed:
 
@@ -148,12 +147,13 @@ will be ready to use.
 #. Unplug the SD card from your PC.
 
 Verify
-++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since it's possible that the write process of a disk image can have some issues
-(if the target had a sector marked as bad, dd will not notice, and write on top
-of it), the safest thing to do is to run a
+(if the target had a sector marked as bad, *dd* will not notice, and will write
+on top of it), the safest thing to do is to run a
 `file system consistency check <https://en.wikipedia.org/wiki/fsck>`__ on things.
+
 If you are unsure of how to use this tool, check the
 `man page <http://linux.die.net/man/8/fsck>`__.
 
@@ -188,40 +188,71 @@ If you are unsure of how to use this tool, check the
        e2fsck 1.42.5 (29-Jul-2012)
        /dev/mmcblk0p2: clean, 157918/452480 files, 717760/1808128 blocks
 
-At this point the SD card is still not bootable,
-follow the topics after :ref:`kuiper imaging sdcard`.
+At this point, the SD card is still not bootable, so follow the topics after
+:ref:`kuiper imaging sdcard`.
 
 .. _kuiper sdcard windows:
 
 From Windows hosts
-------------------
+-------------------------------------------------------------------------------
 
 This section explains how you should go about formatting and flashing the SD
-card with the software required to use many of platforms Analog Devices
-supports.
-There are several steps that need to be completed before your SD Card will be
+card with the software required to use many of the platforms that
+Analog Devices supports.
+
+There are several steps that need to be completed before your SD card will be
 ready to use.
+
+Using the ADI Kuiper Imager (RECOMMENDED)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Download the .exe file to install the ADI Kuiper Imager and run it
+#. Connect the SD card to the computer (**make sure it does not encrypt
+   the files**)
+#. In the ADI Kuiper imager app:
+
+  #. select the **Storage** as your SD card partition;
+  #. select the **Image source**; this can be either:
+
+     - our officially released image **Image source** > **ADI Kuiper Linux** >
+       "ADI Kuiper Linux 2023_R2 Patch1" or whichever is the latest release
+       you want to use. This will download the image from our sources, so you
+       need access to the Internet;
+     - in other instances, specialized pre-compiled images that are created
+       for projects that are not yet included on the standard image.
+
+  #. select the **Target**: the FPGA vendor, then the family for it, and lastly
+     the evaluation board configuration. This will write the appropriate boot
+     files on the SD card once it's done formatting and flashing the
+     ADI Kuiper image first;
+  #. click the **Write** button from bottom right to start writing to the SD
+     card. The whole process should take about 15 minutes, and you need access
+     to the internet.
+
+Using third party tools
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Download the compressed software image file
 #. Extract the software image file
-#. Connect the SD Card to the computer
-#. Verify the software image file (Optional)
-#. Format the SD Card (Optional)
-#. Flash the SD Card
+#. Connect the SD card to the computer (**make sure it does not encrypt
+   the files**)
+#. Verify the software image file (optional)
+#. Format the SD card (optional)
+#. Flash the SD card
 
-Download the SD Card File
-+++++++++++++++++++++++++
+Download the SD card File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Download the software image file you want to write onto your SD Card. Typically
+Download the software image file you want to write onto your SD card. Typically,
 this is going to be the standard :ref:`kuiper`, but in some
-instances specialized pre-compiled images are created for projects that are not
+instances, specialized pre-compiled images are created for projects that are not
 yet included on the standard image. So be sure you have the correct file.
 
--  Save the .Zip file or .Xz file to your local hard drive, and remember the
-   file location.
+- Save the .Zip file or .Xz file to your local hard drive, and remember the
+  file location.
 
 Extract the Software Image File
-+++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step will decompress the large software image file you downloaded. Ensure
 you have a decompression utility installed on your computer, capable of
@@ -236,18 +267,22 @@ or
 .. image:: 7zip.png
    :width: 400px
 
-Connect the SD Card to the Computer
-+++++++++++++++++++++++++++++++++++
+Connect the SD card to the Computer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Connect the SD Card to either an internal or external SD Card reader which is
-connected to your computer. Most newer computers have an SD Card reader, but
-there are plenty of USB connectable SD Card reader devices available.
+Connect the SD card to either an internal or external SD card reader which is
+connected to your computer. Most newer computers have an SD card reader, but
+there are plenty of USB connectable SD card reader devices available.
 
-Verify the Download (Optional)
-++++++++++++++++++++++++++++++
+.. caution::
 
-This step is used to validate that the image you downloaded. Ensuring that it is
-the version is correct and that the software wasn't corrupted during download.
+   Make sure your computer does not encrypt the files that are on the SD card!
+
+Verify the download (optional)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This step is used to validate the image you downloaded, ensuring that it is
+the correct version and that the software wasn't corrupted during download.
 
 Ensure you have the following application installed on your computer:
 `WinMD5 <http://www.winmd5.com/>`__.
@@ -259,22 +294,22 @@ Ensure you have the following application installed on your computer:
 .. image:: winmd5free.png
    :width: 400px
 
-Format the SD Card (Optional)
-+++++++++++++++++++++++++++++
+Format the SD card (optional)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This step should be used if the SD Card format is unknown or needs to be
+This step should be used if the SD card format is unknown or needs to be
 reconfigured.
 
-Using SD Card Formatter
-~~~~~~~~~~~~~~~~~~~~~~~
+Using SD card Formatter
+```````````````````````````````````````````````````````````````````````````````
 
 Ensure you have the following application installed on your computer:
-`SD Card Formatter <https://www.sdcardformatter.com/>`__.
+`SD card Formatter <https://www.sdcardformatter.com/>`__.
 
-Open the SD Card Formatter application on your computer, and set the following
+Open the SD card Formatter application on your computer, and set the following
 fields:
 
-#. **Select Card** = SD Card drive you want to format (usually says "boot" or
+#. **Select Card** = SD card drive you want to format (usually says "boot" or
    "volume")
 #. **Card Information** = Make sure the disc size approximately matches your SD
    Card capacity
@@ -291,7 +326,7 @@ fields:
       :width: 400px
 
 Using DISKPART via Windows command prompt
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```````````````````````````````````````````````````````````````````````````````
 
 Windows command prompt has **DISKPART** that is also capable of reformatting SD
 cards and other drives.
@@ -308,13 +343,13 @@ cards and other drives.
 #. After the progress is at 100%, type ``assign`` to finalize the drive letter
    for Windows.
 
-Flash the SD Card
-+++++++++++++++++
+Flash the SD card
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This step will physically write the software image file onto the SD Card so it
+This step will physically write the software image file onto the SD card, so it
 will be ready for use.
 
-There are several Windows applications that can flash SD Cards, we will describe
+There are several Windows applications that can flash SD cards; we will describe
 how to do it using two common tools. Ensure you have at least one of the
 following tools installed on your computer:
 
@@ -327,11 +362,12 @@ or
    If you are unsure, or don't understand these directions - STOP.
    If you are not careful, you could accidentally write a Linux image to your
    PC hard drive.
+
    Your PC will not function properly after this, and your IT department should
-   not blame ADI.
+   not blame :adi:`ADI <>`.
 
 Win32DiskImager
-~~~~~~~~~~~~~~~
+```````````````````````````````````````````````````````````````````````````````
 
 #. Open up the Win32DiskImager application on your PC
 
@@ -346,14 +382,14 @@ Win32DiskImager
       :width: 400px
 
 #. Double check that the **Device** location in the upper-right corner, matches
-   the SD Card drive location.
+   the SD card drive location.
 
    .. attention::
 
       You DO NOT want to accidentally re-image your hard drive, so this step is
-      critical to ensure you are flashing the SD Card and not anything else.
+      critical to ensure you are flashing the SD card and not anything else.
 
-#. When you are ready to flash the SD Card, click on the "Write" button.
+#. When you are ready to flash the SD card, click on the "Write" button.
 #. Win32DiskImager will also alert you to make sure you want to write to this
    drive, acting as another failsafe so that you don't accidentally image the
    wrong drive.
@@ -361,10 +397,10 @@ Win32DiskImager
    .. image:: sd_card_flash_write_confirm.png
       :width: 400px
 
-#. Flashing the image to the SD Card typically take 10-15 minutes, but a
+#. Flashing the image to the SD card typically take 10-15 minutes, but a
    progress bar is provided during the process. So grab yourself a coffee.
 #. "Write Successful" will appear when the program is finished, letting you know
-   the SD Card is ready.
+   the SD card is ready.
 
    .. image:: sd_card_flash_success.png
       :width: 400px
@@ -374,7 +410,7 @@ Win32DiskImager
    from the reader.
 
 Etcher
-~~~~~~
+```````````````````````````````````````````````````````````````````````````````
 
 #. Open Balena Etcher and select the .img file you want to write to the SD
    card.
@@ -418,3 +454,4 @@ Etcher
 #. Go to the toolbar of your Windows OS, and click on "safely remove hardware",
    and remove your completed SD card.
 
+.. _Etcher: https://www.balena.io/etcher/
