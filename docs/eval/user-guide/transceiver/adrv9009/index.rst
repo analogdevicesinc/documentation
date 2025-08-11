@@ -30,7 +30,7 @@ Table of Contents
 
 People who follow the flow that is outlined, have a much better experience with
 things. However, like many things, documentation is never as complete as it should be.
-If you have any questions, feel free to :ref:`ask <ad-fmcomms2-ebz help-and-support>`.
+If you have any questions, feel free to :ref:`ask <help-and-support>`.
 
 #. Use the board to better understand the ADRV9009/ADRV9008-1/ADRV9008-2
 
@@ -104,7 +104,7 @@ If you have any questions, feel free to :ref:`ask <ad-fmcomms2-ebz help-and-supp
       #. :dokuwiki:`HDL Targeting From MATLAB and Simulink <resources/tools-software/transceiver-toolbox>`
 
 #. :dokuwiki:`Additional Documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
-#. :ref:`Help and Support <ad-fmcomms2-ebz help-and-support>`
+#. :ref:`Help and Support <help-and-support>`
 
 .. _adrv9009 blockdiagram:
 
