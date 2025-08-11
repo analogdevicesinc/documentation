@@ -26,16 +26,21 @@ and massive multiple in/multiple out (MIMO) base stations.
    prerequisites
    quickstart/index
 
-Table of Contents
+
+Recommendations
 -------------------------------------------------------------------------------
 
 People who follow the flow that is outlined, have a much better experience with
 things. However, like many things, documentation is never as complete as it
-should be. If you have any questions, feel free to
-:ref:`ask <help-and-support>`.
+should be. If you have any questions, feel free to ask on our
+:ref:`EngineerZone forums <help-and-support>`, but before that, please make
+sure you read our documentation thoroughly.
 
 To better understand the :adi:`ADRV9026` / :adi:`ADRV9029`, we recommend to use
 the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` evaluation board.
+
+Table of Contents
+-------------------------------------------------------------------------------
 
 #. Using the evaluation board/full stack reference design that we offer:
 
@@ -126,7 +131,7 @@ Software-Defined Radio
 MathWorks Webinars
 -------------------------------------------------------------------------------
 
-#. :mw:`Modelling and Simulating Analog Devices’ RF Transceivers with MATLAB and SimRF <videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html>`
+#. :mw:`Modelling and Simulating Analog Devices' RF Transceivers with MATLAB and SimRF <videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html>`
 #. :mw:`Getting Started with Software-Defined Radio using MATLAB and Simulink <videos/getting-started-with-software-defined-radio-using-matlab-and-simulink-108646.html>`
 
 Warning
