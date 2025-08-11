@@ -197,10 +197,37 @@ From Windows hosts
 -------------------------------------------------------------------------------
 
 This section explains how you should go about formatting and flashing the SD
-card with the software required to use many of platforms Analog Devices
-supports.
-There are several steps that need to be completed before your SD Card will be
+card with the software required to use many of the platforms that
+Analog Devices supports.
+
+There are several steps that need to be completed before your SD card will be
 ready to use.
+
+Using the ADI Kuiper Imager (RECOMMENDED)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Download the .exe file to install the ADI Kuiper Imager and run it
+#. Connect the SD card to the computer (**make sure it does not encrypt
+   the files**)
+#. In the ADI Kuiper imager app:
+
+  #. select the **Storage** as your SD card partition;
+  #. select the **Image source**; this can be either:
+
+     - our officially released image **Image source** > **ADI Kuiper Linux** >
+       "ADI Kuiper Linux 2023_R2 Patch1" or whichever is the latest release
+       you want to use. This will download the image from our sources, so you
+       need access to the Internet;
+     - in other instances, specialized pre-compiled images that are created
+       for projects that are not yet included on the standard image.
+
+  #. select the **Target**: the FPGA vendor, then the family for it, and lastly
+     the evaluation board configuration. This will write the appropriate boot
+     files on the SD card once it's done formatting and flashing the
+     ADI Kuiper image first;
+  #. click the **Write** button from bottom right to start writing to the SD
+     card. The whole process should take about 15 minutes, and you need access
+     to the internet.
 
 Using third party tools
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
