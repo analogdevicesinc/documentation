@@ -50,8 +50,8 @@ CFG1      **7** – Coax, 6 Gbps, Pixel   **0** – Coax, GMSL2, 6Gbps
 For more information about the default CFG configuration of each evaluation
 board, please visit the respective datasheet documentation:
 
-- :adi:`MAX98717EVKIT Data Sheet <media/en/technical-documentation/data-sheets/max96717ev.pdf>`
-- :adi:`MAX98724EVKIT Data Sheet <media/en/technical-documentation/data-sheets/max96724-bak-evk-max96724r-bak-evk.pdf>`
+- :adi:`MAX96717EVKIT Data Sheet <media/en/technical-documentation/data-sheets/max96717ev.pdf>`
+- :adi:`MAX96724EVKIT Data Sheet <media/en/technical-documentation/data-sheets/max96724-bak-evk-max96724r-bak-evk.pdf>`
 
 **GMSL Deserializer Evaluation Kit**
 
