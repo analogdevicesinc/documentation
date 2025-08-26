@@ -1,7 +1,7 @@
 .. _admv96s-wgbe-ek1 software-guide:
 
 Software User Guide
-====================
+===================
 
 Evaluation
 ----------
@@ -46,9 +46,9 @@ Installing the Wethlink GUI on Windows
 - To install the GUI double click the ``wethlink_installer.exe`` file. When
   prompted press ``Install`` and after the setup is completed press ``Close``.
 
-    .. figure:: gui_installation.png
+.. figure:: gui_installation.png
 
-        Wethlink GUI Installation
+   Wethlink GUI Installation
 
 - After installation the app is found at the path of the Destination Folder in
   the previous step.
@@ -248,7 +248,7 @@ Hz (provided by the embedded RTC) to the ``no_os_pid`` P.I.D. controller which
 computes a new set of gain values that are written back into the transceiver.
 This feedback loop is the core functionality of this system and it ensures that
 the wireless link operates with optimum gains at any distance that the ADMV9615
-and ADMV9625 are set apart. 
+and ADMV9625 are set apart.
 
 .. figure:: wethlink-firmware.png
     :width: 600 px
@@ -259,9 +259,9 @@ A detailed view of this feedback loop is represented below, showing exactly what
 gains the feedback loop controls:
 
 .. figure:: algo.png
-    :width: 600 px
+   :width: 600 px
 
-    Feedback Loop Block Diagram 
+   Feedback Loop Block Diagram
 
 The firmware can also interact with a PC application over the serial line
 (UART). Upon boot, it prints boot messages at 115200 baudrate, then launches an
@@ -274,9 +274,9 @@ used to interact with the firmware:
 #. `Wethlink GUI <https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe>`__ (Windows only)
 
 The fact that the firmware exposes the on-board devices as iio devices in a
-`standardized way <https://www.kernel.org/doc/html/v4.12/driver-api/iio/index.html>`__ 
-means that it is easy to devise new applications that can interact with the 
-firmware by simply using the ``libiio`` library.
+`standardized way <https://www.kernel.org/doc/html/v4.12/driver-api/iio/index.html>`__
+means that it is easy to devise new applications that can interact with the
+firmware by simply using the :ref:`libiio` library.
 
 IIO devices
 ~~~~~~~~~~~
@@ -453,9 +453,9 @@ gains to receive something meaningful. But if there is no incoming signal, gain
 changes cannot possibly affect RX_DET so the firmware lights up the LED in red.
 
 .. figure:: led.jpg
-    :width: 400 px
+   :width: 400 px
 
-    LED Indicators
+   LED Indicators
 
 The RJ45 connector also has embedded LED’s. The top left one lights up green
 when the ADIN1300 has connected to another PHY over the Ethernet cable. This LED
@@ -502,9 +502,9 @@ found in NVMP1 or in the factory defaults area, a set of in-firmware hardcoded
 parameters are used for the boot.
 
 .. figure:: eeprom-diagram.png
-    :width: 300 px
+   :width: 300 px
 
-    EEPROM Memory Map
+   EEPROM Memory Map
 
 Resetting to factory defaults
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -566,7 +566,7 @@ throughout the whole system.
 
 .. figure:: autonegotiation.png
 
-    Autonegotiation Flow
+   Autonegotiation Flow
 
 Steps 1-4 are executed in an interrupt service routine from the PHY when link
 status changes.
@@ -576,10 +576,10 @@ autonegotiation page was received.
 
 To resume this section:
 
--   there is speed and duplex mode autonegotiation at Ethernet level
--   there is speed and duplex mode autonegotiation at SGMII level
--   the lowest advertised speed of a device in the system is propagated and the
-    system subsequently works at that speed
+- there is speed and duplex mode autonegotiation at Ethernet level
+- there is speed and duplex mode autonegotiation at SGMII level
+- the lowest advertised speed of a device in the system is propagated and the
+  system subsequently works at that speed
 
 Temperature compensated gains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -597,13 +597,13 @@ lookup tables.
 You can disable auto compensation by unticking the checkbox, or you can keep it
 and adjust the tables to your liking.
 
-TX temperature compensation table: 
+TX temperature compensation table:
 
 .. figure:: tx-compensation.png
 
     TX temperature compensation table
 
-RX temperature compensation table: 
+RX temperature compensation table:
 
 .. figure:: rx-compensation.png
 
@@ -655,7 +655,7 @@ an attenuation in steps between 0 and 31. The bottom part is a simulated RX_DET
 
 .. figure:: pid.png
 
-    P.I.D. Control Simulation
+   P.I.D. Control Simulation
 
 With the factory default settings, the algorithm finds the target within 10
 iterations or less and does it with few gain changes addressing both of the

@@ -35,30 +35,30 @@ reference applications. The MAX32650 can be programmed through a programming
 port which can also be used for firmware debugging.
 
 .. figure:: admv96s-wgbe-ek1_block_diagram.png
-    
-    ADMV96S-WGBE-EK1 Block Diagram
+
+   ADMV96S-WGBE-EK1 Block Diagram
 
 Evaluation Kit Contents
 -----------------------
 
--   1x ADMV96S-WGBE-EK1 populated with ADMV9615 and heatsink
--   1x ADMV96S-WGBE-EK1 populated with ADMV9625 and heatsink
--   2x 12V 1.5A power supplies (VEL36US120-US-JA 12V, 36W AC/DC external 
-    wall mount Class II adapter)
--   2x USB-A to micro-USB cables
--   2x MAX32625PICO programmer
--   1x rail
+- 1x ADMV96S-WGBE-EK1 populated with ADMV9615 and heatsink
+- 1x ADMV96S-WGBE-EK1 populated with ADMV9625 and heatsink
+- 2x 12V 1.5A power supplies (VEL36US120-US-JA 12V, 36W AC/DC external
+  wall mount Class II adapter)
+- 2x USB-A to micro-USB cables
+- 2x MAX32625PICO programmer
+- 1x rail
 
 Setting up the Hardware
 -----------------------
 
 .. figure:: block_diagram_of_the_system.png
 
-    System Block Diagram
+   System Block Diagram
 
 .. figure:: image-2023-6-12_14-45-19-1.png
 
-    ADMV96S-WGBE-EK1 Hardware Setup
+   ADMV96S-WGBE-EK1 Hardware Setup
 
 Set up the hardware following these steps:
 
@@ -121,7 +121,7 @@ Power tree
 
 .. figure:: 60ghz_pwmap.png
 
-    Power Tree Diagram
+   Power Tree Diagram
 
 The main DC/DC regulator is the :adi:`LTM4623`, designed for 5V
 output. This will supply the ADMV96x5 and all the circuits on the
@@ -169,9 +169,10 @@ Software
 --------
 
 .. tip::
-    Access software setup procedure here:
 
-    - :ref:`admv96s-wgbe-ek1 software-guide`
+   Access software setup procedure here:
+
+   - :ref:`admv96s-wgbe-ek1 software-guide`
 
 Additional Information and Useful Links
 ---------------------------------------
@@ -197,8 +198,9 @@ Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Download:
-    ADMV96S-WGBE-EK1 Design & Integration Files
 
-    - :download:`Schematics <02_073235b_top.pdf>`
-    - :download:`PCB Layout <pcb_layout_gerber_files.zip>`
-    - :download:`Bill of Materials <bom.zip>`
+   ADMV96S-WGBE-EK1 Design & Integration Files
+
+   - :download:`Schematics <02_073235b_top.pdf>`
+   - :download:`PCB Layout <pcb_layout_gerber_files.zip>`
+   - :download:`Bill of Materials <bom.zip>`
