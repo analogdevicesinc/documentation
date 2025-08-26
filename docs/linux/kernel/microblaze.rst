@@ -18,7 +18,7 @@ Linux Kernel image for the FMC board connected to a:
 The :git-linux:`/` contains the Linux Kernel flavor from Analog Devices Inc.
 :download:`rootfs.cpio.gz <https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz>`
 contains the files system to be used.
-As the compiler, the Microblaze GNU Tools are bumbled on both
+As the compiler, the Microblaze GNU Tools are included on both
 :xilinx:`AMD Vivado <en/products/software/adaptive-socs-and-fpgas/vivado.html>` and
 :xilinx:`AMD Vivis <en/products/software/adaptive-socs-and-fpgas/vivado.html>`, as well
 as the ``xsdb`` tool for booting.
@@ -54,7 +54,7 @@ The release branches have the format ``<Year>_R[1|2]``, starting from ``2014_R2`
 Setup cross compile environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Microblaze GNU Toolchain bumbled in AMD Vivado/Xilinx is the recommended
+The Microblaze GNU Toolchain included in AMD Vivado/Xilinx is the recommended
 compiler.
 
 /data/opt/Xilinx/Vitis/$XVERSION/gnu/microblaze/linux_toolchain/lin64_le/bin/
