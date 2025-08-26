@@ -30,17 +30,18 @@ ability to perform a complete capture and conversion of precision analog input
 data in <70ns with the ADC module and generate a settled full-scale analog
 output in <200ns from initial data written to the DAC.
 
-.. figure:: eval-cn0585-fmcz_top-web.jpg
-    :align: left
-    :width: 400 px
+.. grid::
+   :widths: 50 50
 
-    EVAL-CN0585-FMCZ Board (Top)
+   .. figure:: eval-cn0585-fmcz_top-web.jpg
+       :width: 400 px
 
-.. figure:: eval-cn0585-fmcz_bottom-web.jpg
-    :align: right
-    :width: 390 px
+       EVAL-CN0585-FMCZ Board (Top)
 
-    EVAL-CN0585-FMCZ Board (Bottom)
+   .. figure:: eval-cn0585-fmcz_bottom-web.jpg
+       :width: 400 px
+
+       EVAL-CN0585-FMCZ Board (Bottom)
 
 .. figure:: cn0585.png
 
@@ -120,16 +121,16 @@ reference supplied by the :adi:`AD7291`.
 Calculating the supply voltage from the positive voltage rails can be
 accomplished using the following equation:
 
-        .. math::
+.. math::
 
-            V_{\text{RAIL-POS}} = \text{Scale Factor} \times \text{IIO Measured Voltage}
+   V_{\text{RAIL-POS}} = \text{Scale Factor} \times \text{IIO Measured Voltage}
 
 Calculating the supply voltage from the negative voltage rails can be
 accomplished using the following equation:
 
-        .. math::
+.. math::
 
-            V_{\text{RAIL-NEG}} = \text{Scale Factor} \times (2.5 - \text{IIO Measured Voltage}) + 2.5
+   V_{\text{RAIL-NEG}} = \text{Scale Factor} \times (2.5 - \text{IIO Measured Voltage}) + 2.5
 
 .. table:: Voltage Scaling
 
@@ -377,12 +378,12 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-        :Download:`EVAL-CN0585-FMCZ Design & Integration Files <cn0585-designsupport.zip>`
+   :download:`EVAL-CN0585-FMCZ Design & Integration Files <cn0585-designsupport.zip>`
 
-        - Schematics
-        - PCB Layout
-        - Bill of Materials
-        - Allegro Project
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
 
 Additional Information and Useful Links
 ---------------------------------------
@@ -397,11 +398,11 @@ Additional Information and Useful Links
 Reference Demos & Software
 --------------------------
 
-- :git-hdl:`AXI_AD3552R IP core </docs/library/axi_ad35xxr/index.rst>`
-- :git-hdl:`AXI_LTC2387 IP core </docs/library/axi_ltc23877/index.rst>`
+- :external+hdl:ref:`axi_ad35xxr`
+- :external+hdl:ref:`axi_ltc2387`
 - :dokuwiki:`AD3552R Dual Channel, 16-Bit, 33 MUPS, Multispan, Multi-IO SPI DAC Linux device driver <resources/tools-software/linux-drivers/iio-dac/axi-ad3552r>`
 - :dokuwiki:`LTC2387 SAR ADC IIO Linux Driver <resources/tools-software/linux-drivers/iio-adc/ltc2387>`
-- `High Speed Converter Toolbox for MATLAB and Simulink <https://analogdevicesinc.github.io/documentation/software/matlab/hsx-toolbox/index.html>`__
-- :ref:`PyADI-IIO Installation Guide <pyadi-iio>`
-- :ref:`IIO Oscilloscope <iio-oscilloscope>`
-- `Kuiper Linux <https://analogdevicesinc.github.io/documentation/linux/kuiper/index.html>`__
+- :ref:`hsx-toolbox`
+- :ref:`pyadi-iio`
+- :ref:`iio-oscilloscope`
+- :ref:`kuiper`
