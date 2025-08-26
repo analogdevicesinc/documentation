@@ -1,4 +1,4 @@
-.. _admv96s-wgbe-ek1_hardware_guide:
+.. _admv96s-wgbe-ek1 hardware-guide:
 
 Hardware User Guide
 ===================
@@ -76,11 +76,16 @@ Set up the hardware following these steps:
 Connectors and Buttons
 ----------------------
 
-+-----------------------+---------------------------+
-| Front                 | Back                      |
-+-----------------------+---------------------------+
-| .. figure:: front.png | .. figure:: back.png      |
-+-----------------------+---------------------------+
+.. grid::
+   :widths: 50 50
+
+   .. figure:: front.png
+
+      Front
+
+   .. figure:: back.png
+
+      Back
 
 +-----------+-----------------------------------------------------------------+
 | Item Name | Function/Description                                            |
@@ -166,7 +171,7 @@ Software
 .. tip::
     Access software setup procedure here:
 
-    - :ref:`ADMV96S-WGBE-EK1 Software User Guide <admv96s-wgbe-ek1_software_guide>`
+    - :ref:`admv96s-wgbe-ek1 software-guide`
 
 Additional Information and Useful Links
 ---------------------------------------
@@ -184,8 +189,8 @@ Additional Information and Useful Links
 Resources
 ---------
 
-- :ref:`ADMV96S-WGBE-EK1 Software User Guide <admv96s-wgbe-ek1_software_guide>`
-- `ADMV96S-WGBE-EK1 Firmware Project <https://github.com/analogdevicesinc/no-OS/tree/main/projects/wethlink>`__
+- :ref:`admv96s-wgbe-ek1 software-guide`
+- :git-no-OS:`ADMV96S-WGBE-EK1 Firmware Project <projects/wethlink>`
 - `Wethlink Installer <https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe>`__
 
 Design and Integration Files
@@ -194,6 +199,6 @@ Design and Integration Files
 .. admonition:: Download:
     ADMV96S-WGBE-EK1 Design & Integration Files
 
-    - :download:`Schematics<02_073235b_top.pdf>`
-    - :download:`PCB Layout<pcb_layout_gerber_files.zip>`
-    - :download:`Bill of Materials<bom.zip>`
+    - :download:`Schematics <02_073235b_top.pdf>`
+    - :download:`PCB Layout <pcb_layout_gerber_files.zip>`
+    - :download:`Bill of Materials <bom.zip>`

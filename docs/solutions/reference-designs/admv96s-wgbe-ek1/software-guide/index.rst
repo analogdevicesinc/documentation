@@ -1,4 +1,4 @@
-.. _admv96s-wgbe-ek1_software_guide:
+.. _admv96s-wgbe-ek1 software-guide:
 
 Software User Guide
 ====================
@@ -8,7 +8,7 @@ Evaluation
 
 The evaluation kit comes with the :adi:`MAX32650 <max32650>`
 preprogrammed with a firmware that is ready to use as-is. If you’ve gone
-through the :ref:`hardware setup <admv96s-wgbe-ek1_hardware_guide>`
+through the :ref:`hardware setup <admv96s-wgbe-ek1 hardware-guide>`
 and you’ve connected at least the power and the Ethernet cables to the two
 boards of the setup, the firmware takes care of establishing and maintaining a
 wireless link automatically on power on.
@@ -36,7 +36,7 @@ Linux
 ~~~~~
 
 - git
-- `libiio <https://analogdevicesinc.github.io/documentation/software/libiio/index.html>`__
+- :ref:`libiio`
 - python3
 - pip
 
@@ -61,14 +61,12 @@ Running the Wethlink GUI on Linux
 There is no installer provided on Linux, you have to clone the repo, install the
 dependencies and run the app in python.
 
-.. code-block::
+.. shell::
 
-   $ git clone https://github.com/analogdevicesinc/wethlink.git # TODO: does not exist yet
-   $ cd wethlink
-   $ pip install PyQt6 pyserial pylibiio
-   $ python wethlink.py
-
-----------------------
+   $git clone https://github.com/analogdevicesinc/wethlink.git # TODO: does not exist yet
+   $cd wethlink
+   $pip install PyQt6 pyserial pylibiio
+   $python wethlink.py
 
 Firmware Installation
 ----------------------
@@ -77,7 +75,7 @@ How to find the firmware version?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Boot message
-^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 When a board is powered up or reset with the RESET button, the firmware starts
 executing and prints some messages over the serial port. You may access the
@@ -118,15 +116,15 @@ applciation and display information about it. In our case, the firmware is
 running an ``iiod`` application, as can be seen in the boot message, so we can
 query it over the serial port (replace /dev/ttyACM0 with COMn on Windows):
 
-.. code-block::
+.. shell::
 
-   $ iio_info -u serial:/dev/ttyACM0,345600,8n1n 
-   iio_info version: 0.25 (git tag:v0.25)
-   Libiio version: 0.25 (git tag: v0.25) backends: local xml ip usb serial
-   IIO context created with serial backend.
-   Backend version: 1.1 (git tag: 0000000)
-   Backend description string: no-OS/projects/wethlink tags/wethlink-v1.0.0-7c98c2261
-   ...
+   $iio_info -u serial:/dev/ttyACM0,345600,8n1n
+    iio_info version: 0.25 (git tag:v0.25)
+    Libiio version: 0.25 (git tag: v0.25) backends: local xml ip usb serial
+    IIO context created with serial backend.
+    Backend version: 1.1 (git tag: 0000000)
+    Backend description string: no-OS/projects/wethlink tags/wethlink-v1.0.0-7c98c2261
+    [...]
 
 We can conclude that the on-board firmware is ``v1.0.0`` built using git commit
 ``7c98c2261``.
@@ -173,52 +171,56 @@ specifies the Git SHA of the running firmware:
    Git SHA: 649f2a1524190c5f0ea32c97bb8682ad6fd772a0
 
 If what you see on your device is not the one indicated above, please follow the
-`instructions on this
-page <https://github.com/analogdevicesinc/max32625pico-firmware-images#how-to-update-the-firmware>`__ 
+instructions on :git-max32625pico-firmware-images:`this page <#how-to-update-the-firmware+>`
 to update the MAXDAP firmware first.
 
 mcufla.sh
 ~~~~~~~~~
 
-:git-no-OS:`no-OS` provides a standalone script that can be used to program
+:git-no-OS:`/` provides a standalone script that can be used to program
 .elf files to various targets, including the :adi:`MAX32650`. Typical usage
 and output is shown below:
 
-.. code-block::
+.. shell::
 
-   $ wget https://raw.githubusercontent.com/analogdevicesinc/no-OS/master/tools/scripts/mcufla.sh
-   $ chmod +x ./mcufla.sh
-   $ ./mcufla.sh ~/Work/no-OS/projects/wethlink/build/wethlink.elf
-   Maxim platform detected
-   Running cmd: /home/dari/.mcuflash/maxim/openocd/src/openocd -s /home/dari/.mcuflash/maxim/openocd/tcl -c 'adapter driver cmsis-dap; transport select swd; ' -f target/max32650.cfg -c 'program /home/dari/Work/no-OS/projects/wethlink/build/wethlink.elf verify reset exit'
-   Open On-Chip Debugger 0.11.0+dev-g56a818e4c (2023-10-24-15:55)
-   Licensed under GNU GPL v2
-   For bug reports, read
-       http://openocd.org/doc/doxygen/bugs.html
-   swd
-   Info : CMSIS-DAP: SWD  supported
-   Info : CMSIS-DAP: Atomic commands supported
-   Info : CMSIS-DAP: Test domain timer supported
-   Info : CMSIS-DAP: FW Version = 2.1.0
-   Info : CMSIS-DAP: Serial# = 042517028fbd037a00000000000000000000000097969906
-   Info : CMSIS-DAP: Interface Initialised (SWD)
-   Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
-   Info : CMSIS-DAP: Interface ready
-   Info : clock speed 2000 kHz
-   Info : SWD DPIDR 0x2ba01477
-   Info : max32xxx.cpu: Cortex-M4 r0p1 processor detected
-   Info : max32xxx.cpu: target has 6 breakpoints, 4 watchpoints
-   Info : max32xxx.cpu: external reset detected
-   Info : starting gdb server for max32xxx.cpu on 3333
-   Info : Listening on port 3333 for gdb connections
-   target halted due to debug-request, current mode: Thread 
-   xPSR: 0x01000000 pc: 0x00000184 msp: 0x2000b300
-   ** Programming Started **
-   ** Programming Finished **
-   ** Verify Started **
-   ** Verified OK **
-   ** Resetting Target **
-   shutdown command invoked
+   $wget https://raw.githubusercontent.com/analogdevicesinc/no-OS/master/tools/scripts/mcufla.sh
+   $chmod +x ./mcufla.sh
+   $./mcufla.sh ~/Work/no-OS/projects/wethlink/build/wethlink.elf
+    Maxim platform detected
+    Running cmd:
+      /home/dari/.mcuflash/maxim/openocd/src/openocd
+        -s /home/dari/.mcuflash/maxim/openocd/tcl
+        -c 'adapter driver cmsis-dap; transport select swd; '
+        -f target/max32650.cfg
+        -c 'program /home/dari/Work/no-OS/projects/wethlink/build/wethlink.elf verify reset exit'
+    Open On-Chip Debugger 0.11.0+dev-g56a818e4c (2023-10-24-15:55)
+    Licensed under GNU GPL v2
+    For bug reports, read
+        http://openocd.org/doc/doxygen/bugs.html
+    swd
+    Info : CMSIS-DAP: SWD  supported
+    Info : CMSIS-DAP: Atomic commands supported
+    Info : CMSIS-DAP: Test domain timer supported
+    Info : CMSIS-DAP: FW Version = 2.1.0
+    Info : CMSIS-DAP: Serial# = 042517028fbd037a00000000000000000000000097969906
+    Info : CMSIS-DAP: Interface Initialised (SWD)
+    Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+    Info : CMSIS-DAP: Interface ready
+    Info : clock speed 2000 kHz
+    Info : SWD DPIDR 0x2ba01477
+    Info : max32xxx.cpu: Cortex-M4 r0p1 processor detected
+    Info : max32xxx.cpu: target has 6 breakpoints, 4 watchpoints
+    Info : max32xxx.cpu: external reset detected
+    Info : starting gdb server for max32xxx.cpu on 3333
+    Info : Listening on port 3333 for gdb connections
+    target halted due to debug-request, current mode: Thread
+    xPSR: 0x01000000 pc: 0x00000184 msp: 0x2000b300
+    ** Programming Started **
+    ** Programming Finished **
+    ** Verify Started **
+    ** Verified OK **
+    ** Resetting Target **
+    shutdown command invoked
 
 make run
 ~~~~~~~~
@@ -233,7 +235,7 @@ and ``make HW_VERSION=1`` builds for rev B hardware.
 
 .. note::
     For instructions on how to build the project, please refer to the
-    `No-OS Build Guide <https://analogdevicesinc.github.io/no-OS/build_guide.html>`__
+    :external+no-OS:doc:`build_guide`
 
 Theory of Operation
 -------------------
@@ -282,118 +284,118 @@ IIO devices
 You can see all the iio devices and their channels and attributes below, as
 obtained with ``iio_info``:
 
-.. code-block::
+.. shell::
 
-   $ iio_info -u serial:/dev/ttyACM0,345600,8n1n 
-   iio_info version: 0.25 (git tag:v0.25)
-   Libiio version: 0.25 (git tag: v0.25) backends: local xml ip usb serial
-   IIO context created with serial backend.
-   Backend version: 1.1 (git tag: 0000000)
-   Backend description string: no-OS/projects/wethlink tags/wethlink-v1.0.0-rc1-7c98c2261
-   IIO context has 9 attributes:
-       hw_model: admv9625
-       hw_version: b
-       hw_serial: serial
-       carrier_model: model
-       carrier_version: b
-       carrier_serial: serial
-       uri: serial:/dev/ttyACM0,345600,8n1n
-       serial,port: /dev/ttyACM0
-       serial,description: DAPLink CMSIS-DAP - 042517028fbd037a00000000000000000000000097969906
-   IIO context has 6 devices:
-       iio:device0: hmc6300
-           1 channels found:
-               temp:  (input)
-               1 channel-specific attributes found:
-                   attr  0: raw value: 15
-           8 device-specific attributes found:
-                   attr  0: enabled value: 1
-                   attr  1: vco value: 59850000
-                   attr  2: vco_available value: 55125000 55387500 55650000 55912500 56175000 56437500 56700000 56962500 57225000 57487500 57750000 58012500 58275000 58537500 58800000 59062500 59325000 59587500 59850000 60112500 60375000 60637500 60900000 61162500 61425000 61687500 61950000 62212500 62475000 62737500 63000000 63262500 63525000 63787500 64050000 64312500 64575000 64837500 65100000 65362500 65625000 65887500 66150000 
-                   attr  3: vco_band value: 8
-                   attr  4: vco_lock value: 1
-                   attr  5: if_attn value: 15
-                   attr  6: temp_en value: 1
-                   attr  7: rf_attn value: 9
-           1 debug attributes found:
-                   debug attr  0: direct_reg_access value: 0
-           No trigger on this device
-       iio:device1: hmc6301
-           1 channels found:
-               temp:  (input)
-               1 channel-specific attributes found:
-                   attr  0: raw value: 15
-           14 device-specific attributes found:
-                   attr  0: enabled value: 1
-                   attr  1: vco value: 63262500
-                   attr  2: vco_available value: 55125000 55387500 55650000 55912500 56175000 56437500 56700000 56962500 57225000 57487500 57750000 58012500 58275000 58537500 58800000 59062500 59325000 59587500 59850000 60112500 60375000 60637500 60900000 61162500 61425000 61687500 61950000 62212500 62475000 62737500 63000000 63262500 63525000 63787500 64050000 64312500 64575000 64837500 65100000 65362500 65625000 65887500 66150000 
-                   attr  3: vco_band value: 15
-                   attr  4: vco_lock value: 1
-                   attr  5: if_attn value: 6
-                   attr  6: temp_en value: 1
-                   attr  7: rf_lna_gain value: 1
-                   attr  8: bb_attn1 value: 0
-                   attr  9: bb_attn2 value: 0
-                   attr 10: bb_attni_fine value: 0
-                   attr 11: bb_attnq_fine value: 0
-                   attr 12: bb_lpc value: 0
-                   attr 13: bb_hpc value: 0
-           1 debug attributes found:
-                   debug attr  0: direct_reg_access value: 0
-           No trigger on this device
-       iio:device2: mwc
-           2 channels found:
-               voltage0: tx_det (input)
-               2 channel-specific attributes found:
-                   attr  0: raw value: 257
-                   attr  1: scale value: 1.191406250
-               voltage1: rx_det (input)
-               2 channel-specific attributes found:
-                   attr  0: raw value: 596
-                   attr  1: scale value: 2.978515625
-           10 device-specific attributes found:
-                   attr  0: tx_autotuning value: 1
-                   attr  1: tx_target value: 350
-                   attr  2: tx_tolerance value: 50
-                   attr  3: rx_autotuning value: 1
-                   attr  4: rx_target value: 1950
-                   attr  5: rx_tolerance value: 50
-                   attr  6: tx_auto_ifvga value: 1
-                   attr  7: rx_auto_ifvga_rflna value: 1
-                   attr  8: reset value: 0
-                   attr  9: save value: 0
-           1 debug attributes found:
-                   debug attr  0: direct_reg_access value: 1
-           No trigger on this device
-       iio:device3: adin1300
-           0 channels found:
-           3 device-specific attributes found:
-                   attr  0: link value: 0
-                   attr  1: speed value: 6
-                   attr  2: autonegotiate value: 1
-           1 debug attributes found:
-                   debug attr  0: direct_reg_access value: 4416
-           No trigger on this device
-       iio:device4: max24287
-           0 channels found:
-           3 device-specific attributes found:
-                   attr  0: par_speed value: 5
-                   attr  1: ser_link value: 1
-                   attr  2: ser_speed value: 5
-           1 debug attributes found:
-                   debug attr  0: direct_reg_access value: 0
-           No trigger on this device
-       iio:device5: adm1177 (buffer capable)
-           2 channels found:
-               voltage0:  (input, index: 0, format: le:u12/32>>0)
-               2 channel-specific attributes found:
-                   attr  0: raw value: 1901
-                   attr  1: scale value: 6.433105468
-               current0:  (input, index: 1, format: le:u12/32>>0)
-               2 channel-specific attributes found:
-                   attr  0: raw value: 358
-                   attr  1: scale value: 1.033593750
-           No trigger on this device
+   $iio_info -u serial:/dev/ttyACM0,345600,8n1n
+    iio_info version: 0.25 (git tag:v0.25)
+    Libiio version: 0.25 (git tag: v0.25) backends: local xml ip usb serial
+    IIO context created with serial backend.
+    Backend version: 1.1 (git tag: 0000000)
+    Backend description string: no-OS/projects/wethlink tags/wethlink-v1.0.0-rc1-7c98c2261
+    IIO context has 9 attributes:
+        hw_model: admv9625
+        hw_version: b
+        hw_serial: serial
+        carrier_model: model
+        carrier_version: b
+        carrier_serial: serial
+        uri: serial:/dev/ttyACM0,345600,8n1n
+        serial,port: /dev/ttyACM0
+        serial,description: DAPLink CMSIS-DAP - 042517028fbd037a00000000000000000000000097969906
+    IIO context has 6 devices:
+        iio:device0: hmc6300
+            1 channels found:
+                temp:  (input)
+                1 channel-specific attributes found:
+                    attr  0: raw value: 15
+            8 device-specific attributes found:
+                    attr  0: enabled value: 1
+                    attr  1: vco value: 59850000
+                    attr  2: vco_available value: 55125000 55387500 55650000 55912500 56175000 56437500 56700000 56962500 57225000 57487500 57750000 58012500 58275000 58537500 58800000 59062500 59325000 59587500 59850000 60112500 60375000 60637500 60900000 61162500 61425000 61687500 61950000 62212500 62475000 62737500 63000000 63262500 63525000 63787500 64050000 64312500 64575000 64837500 65100000 65362500 65625000 65887500 66150000
+                    attr  3: vco_band value: 8
+                    attr  4: vco_lock value: 1
+                    attr  5: if_attn value: 15
+                    attr  6: temp_en value: 1
+                    attr  7: rf_attn value: 9
+            1 debug attributes found:
+                    debug attr  0: direct_reg_access value: 0
+            No trigger on this device
+        iio:device1: hmc6301
+            1 channels found:
+                temp:  (input)
+                1 channel-specific attributes found:
+                    attr  0: raw value: 15
+            14 device-specific attributes found:
+                    attr  0: enabled value: 1
+                    attr  1: vco value: 63262500
+                    attr  2: vco_available value: 55125000 55387500 55650000 55912500 56175000 56437500 56700000 56962500 57225000 57487500 57750000 58012500 58275000 58537500 58800000 59062500 59325000 59587500 59850000 60112500 60375000 60637500 60900000 61162500 61425000 61687500 61950000 62212500 62475000 62737500 63000000 63262500 63525000 63787500 64050000 64312500 64575000 64837500 65100000 65362500 65625000 65887500 66150000
+                    attr  3: vco_band value: 15
+                    attr  4: vco_lock value: 1
+                    attr  5: if_attn value: 6
+                    attr  6: temp_en value: 1
+                    attr  7: rf_lna_gain value: 1
+                    attr  8: bb_attn1 value: 0
+                    attr  9: bb_attn2 value: 0
+                    attr 10: bb_attni_fine value: 0
+                    attr 11: bb_attnq_fine value: 0
+                    attr 12: bb_lpc value: 0
+                    attr 13: bb_hpc value: 0
+            1 debug attributes found:
+                    debug attr  0: direct_reg_access value: 0
+            No trigger on this device
+        iio:device2: mwc
+            2 channels found:
+                voltage0: tx_det (input)
+                2 channel-specific attributes found:
+                    attr  0: raw value: 257
+                    attr  1: scale value: 1.191406250
+                voltage1: rx_det (input)
+                2 channel-specific attributes found:
+                    attr  0: raw value: 596
+                    attr  1: scale value: 2.978515625
+            10 device-specific attributes found:
+                    attr  0: tx_autotuning value: 1
+                    attr  1: tx_target value: 350
+                    attr  2: tx_tolerance value: 50
+                    attr  3: rx_autotuning value: 1
+                    attr  4: rx_target value: 1950
+                    attr  5: rx_tolerance value: 50
+                    attr  6: tx_auto_ifvga value: 1
+                    attr  7: rx_auto_ifvga_rflna value: 1
+                    attr  8: reset value: 0
+                    attr  9: save value: 0
+            1 debug attributes found:
+                    debug attr  0: direct_reg_access value: 1
+            No trigger on this device
+        iio:device3: adin1300
+            0 channels found:
+            3 device-specific attributes found:
+                    attr  0: link value: 0
+                    attr  1: speed value: 6
+                    attr  2: autonegotiate value: 1
+            1 debug attributes found:
+                    debug attr  0: direct_reg_access value: 4416
+            No trigger on this device
+        iio:device4: max24287
+            0 channels found:
+            3 device-specific attributes found:
+                    attr  0: par_speed value: 5
+                    attr  1: ser_link value: 1
+                    attr  2: ser_speed value: 5
+            1 debug attributes found:
+                    debug attr  0: direct_reg_access value: 0
+            No trigger on this device
+        iio:device5: adm1177 (buffer capable)
+            2 channels found:
+                voltage0:  (input, index: 0, format: le:u12/32>>0)
+                2 channel-specific attributes found:
+                    attr  0: raw value: 1901
+                    attr  1: scale value: 6.433105468
+                current0:  (input, index: 1, format: le:u12/32>>0)
+                2 channel-specific attributes found:
+                    attr  0: raw value: 358
+                    attr  1: scale value: 1.033593750
+            No trigger on this device
 
 The context contains information that is provisioned at manufacturing such as
 serial number, hardware revision, or information produced during the build
@@ -666,7 +668,7 @@ the whole -40°C to 80°C.
 Resources
 ---------
 
-- :ref:`ADMV96S-WGBE-EK1 Hardware User Guide <admv96s-wgbe-ek1_hardware_guide>`
-- :ref:`ADMV96S-WGBE-EK1 Software User Guide <admv96s-wgbe-ek1_software_guide>`
-- `ADMV96S-WGBE-EK1 Firmware Project <https://github.com/analogdevicesinc/no-OS/tree/main/projects/wethlink>`__
+- :ref:`ADMV96S-WGBE-EK1 Hardware User Guide <admv96s-wgbe-ek1 hardware-guide>`
+- :ref:`ADMV96S-WGBE-EK1 Software User Guide <admv96s-wgbe-ek1 software-guide>`
+- :git-no-OS:`ADMV96S-WGBE-EK1 Firmware Project <projects/wethlink>`
 - `Wethlink Installer <https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe>`__

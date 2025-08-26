@@ -102,15 +102,21 @@ Package Contents
   plugs to accommodate the various power socket standards in different countries
   or regions*
 
-Getting your system up and running
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+User Guides
+-----------
+
+Getting your system up and running by following the user guides.
 
 .. tip::
-    Access hardware setup procedure, design files, and
-    software installer through these pages:
+   Access hardware setup procedure, design files, and
 
-- :ref:`ADMV96S-WGBE-EK1 Hardware User Guide <admv96s-wgbe-ek1_hardware_guide>`
-- :ref:`ADMV96S-WGBE-EK1 Software User Guide <admv96s-wgbe-ek1_software_guide>`
+.. toctree::
+   :caption: The following user guides are available:
+   :titlesonly:
+   :maxdepth: 2
+   :glob:
+
+   */index
 
 Application Development
 -----------------------
@@ -162,10 +168,10 @@ Hardware Connections
 #.  Connect the other RJ45 Ethernet connector to PC2’s Ethernet jack.
 
 File Sharing Setup
-```````````````````
+^^^^^^^^^^^^^^^^^^
 
-The following procedure was taken from: How to Share Files between Two
-Computers Using LAN Cable – TechWiser
+The following procedure was taken from:
+`How to Share Files between Two Computers Using LAN Cable – TechWiser <https://techwiser.com/how-to-connect-pc-to-pc-lan-cable/>`_
 
 -   On PC1, go to the Start menu and search “Control Panel”. Once you see it,
     click on it, to open it.
@@ -281,31 +287,33 @@ Iperf is a free tool for network performance and measurement,
 -   Unzip the downloaded archive.
 
 -   On PC1, open a DOS Command window and navigate to the directory where iperf
-    is installed. Type in
+    is installed:
 
-    .. code-block:: 
+    .. shell:: ps1
 
-        cd C:\\Users\\Public\\Documents\\iperf-3.1.3-win64
+       $cd C:\Users\Public\Documents\iperf-3.1.3-win64
 
--   Set this computer as the server. Type in
+-   Set this computer as the server:
 
-    .. code-block::
+    .. shell:: ps1
 
-        “iperf3.exe –s”
+       /c/Users/Public/Documents/iperf-3.1.3-win64
+       $iperf3.exe -s
 
 -   On PC2, open a DOS Command window and Navigate to the directory where iperf is
-    installed. Type in
+    installed:
 
-    .. code-block::
+    .. shell:: ps1
 
-        “cd C:\\Users\\Public\\Documents\\iperf-3.1.3-win64”
+       $cd C:\Users\Public\Documents\iperf-3.1.3-win64
 
 -   Set this computer as the client. Type in
 
-    .. code-block::
+    .. shell:: ps1
 
-        “iperf3.exe -c 192.168.1.1”
-    
+       /c/Users/Public/Documents/iperf-3.1.3-win64
+       $iperf3.exe -c 192.168.1.1
+
     .. figure:: iperf_settings.png
 
 -   Iperf tests the link speed about 950 Mbps.
@@ -313,15 +321,15 @@ Iperf is a free tool for network performance and measurement,
 Resources
 ---------
 
-- :ref:`ADMV96S-WGBE-EK1 Software User Guide <admv96s-wgbe-ek1_software_guide>`
-- `ADMV96S-WGBE-EK1 Firmware Project <https://github.com/analogdevicesinc/no-OS/tree/main/projects/wethlink>`__
+- :ref:`ADMV96S-WGBE-EK1 Software User Guide <admv96s-wgbe-ek1 software-guide>`
+- :git-no-OS:`ADMV96S-WGBE-EK1 Firmware Project <projects/wethlink>`
 - `Wethlink Installer <https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe>`__
 
 Help and Support
 -----------------
 
 For questions and more information, please visit the Analog Devices
-:ez:`EngineerZone Support Community <ez/reference-designs>`.
+:ez:`EngineerZone Support Community <reference-designs>`.
 
 .. toctree::
    :titlesonly:
