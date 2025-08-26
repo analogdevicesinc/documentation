@@ -1,35 +1,36 @@
-AD-GMSL2ETH-SL
-==============
+ADRD8012-01Z
+============
 
 FPGA-based 8x GMSL to 10 Gb Ethernet Adapter
 """"""""""""""""""""""""""""""""""""""""""""
 
-Introduction
-------------
+Overview
+---------
 
-.. figure:: ad-gmsl2eth-sl.jpg
-   :width: 400 px
+.. figure:: ADRD8012-01Z_ANGLE-evaluation-board.jpg
+   :width: 600 px
 
-   AD-GMSL2ETH-SL GMSL Board
+   ADRD8012-01Z GMSL Board
 
-The **AD-GMSL2ETH-SL** is an edge compute platform enabling low latency data
-transfer from eight :adi:`Gigabit Multimedia Serial Link™ (GMSL) <en/product-category/gigabit-multimedia-serial-link.html>`
+The **ADRD8012-01Z** is an edge compute platform enabling low latency data
+transfer from eight :adi:`Gigabit Multimedia Serial Link™ (GMSL) </product-category/gigabit-multimedia-serial-link.html>`
 interfaces on to a 10 Gb Ethernet link. The target applications include
 autonomous robots and vehicles where machine vision and real-time sensor fusion
 is critical. Some of the main features and benefits include:
 
-- 8 x GMSL2 camera interfaces with up to 6 Gbps/channel
-- 10 Gbps SFP+ Ethernet interface
-- Precision Time Protocol for synchronization with host systems and other edge devices
-- Embedded processing capabilities using the on-board `AMD Kria K26 System-on-Module <https://www.amd.com/en/products/system-on-modules/kria/k26/k26i-industrial.html>`__
-- ROS2 compliant
-- Open-source embedded Linux software and FPGA design
-- Advanced camera triggering functions and control features
+-  8x GMSL2 camera interfaces with up to 6 Gbps/channel
+-  10 Gbps SFP+ Ethernet interface
+-  Precision Time Protocol for synchronization with host systems and other edge devices
+-  Embedded processing capabilities using the on-board 
+   `AMD Kria K26 System-on-Module <https://www.amd.com/en/products/system-on-modules/kria/k26/k26i-industrial.html>`__
+-  ROS2 compliant
+-  Open-source embedded Linux software and FPGA design
+-  Advanced camera triggering functions and control features
 
-.. figure:: ad-gmsl2eth-sl-block-diagram.png
+.. figure:: ADRD8012-01Z_01-block-diagram.png
    :width: 800 px
 
-   AD-GMSL2ETH-SL Simplified Block Diagram
+   ADRD8012-01Z Simplified Block Diagram
 
 Specifications
 --------------
@@ -40,13 +41,13 @@ Specifications
 | SFP+                  | Supports 10 Gb Ethernet with IEEE 1588 hardware     |
 |                       | timestamping                                        |
 +-----------------------+-----------------------------------------------------+
-| RS232                 | Serial interface for connecting UART peripherals,   |
+| RS-232                | Serial interface for connecting UART peripherals,   |
 |                       | e.g., GNSS devices                                  |
 +-----------------------+-----------------------------------------------------+
 | I/O                   | 16 general purpose I/O pins with software           |
-|                       | configurable functionality, 3.3 V voltage level     |
+|                       | configurable functionality, 3.3V voltage level      |
 +-----------------------+-----------------------------------------------------+
-| GMSL                  | 2 x Quad Fakra connectors supporting 8 x GMSL       |
+| GMSL                  | 2x Quad Fakra connectors supporting 8 x GMSL        |
 |                       | camera interfaces                                   |
 +-----------------------+-----------------------------------------------------+
 | Processing            |                                                     |
@@ -55,13 +56,13 @@ Specifications
 +-----------------------+-----------------------------------------------------+
 | Power & Thermal       |                                                     |
 +-----------------------+-----------------------------------------------------+
-| Power supply          | Input voltage: 9 V to 48 V DC at 24 W max           |
+| Power Supply          | Input voltage: 9V to 48V DC at 24W max              |
 +-----------------------+-----------------------------------------------------+
-| Operating temperature | -40°C to 60°C                                       |
+| Operating Temperature | -40°C to 60°C                                       |
 +-----------------------+-----------------------------------------------------+
 | Software              |                                                     |
 +-----------------------+-----------------------------------------------------+
-| Operating system      | Linux OS                                            |
+| Operating System      | Linux OS                                            |
 +-----------------------+-----------------------------------------------------+
 | Network data protocol | RTP over UDP with software implementation and       |
 |                       | option for licensable FPGA accelerated RTP & UDP    |
@@ -73,9 +74,9 @@ System Setup & Evaluation
 -------------------------
 
 Required Hardware
------------------
+~~~~~~~~~~~~~~~~~~
 
-- 1 x :adi:`AD-GMSL2ETH-SL <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-gmsl2eth-sl.html>`
+- 1 x :adi:`ADRD8012-01Z </resources/evaluation-hardware-and-software/evaluation-boards-kits/ADRD8012-01Z.html>`
 - 8 x `Tier IV C1 cameras <https://edge.auto/automotive-camera/#C1>`__
 - 8 x Fakra cables
 - 2 x Quad-based mini-Fakra cables
@@ -84,7 +85,7 @@ Required Hardware
 - 1 x SFP+ Ethernet cable
 
 FPGA SD Card Image
-------------------
+~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
 
@@ -99,7 +100,7 @@ Linux and Windows can be found here:
 `Writing an image onto the SD card <http://github.com/analogdevicesinc/aditof_sdk/blob/master/doc/sdcard_burn.md>`__
 
 System Setup
-------------
+~~~~~~~~~~~~~
 
 In order to boot using SD card, you will need to set the boot mode’s switches to
 the corresponding position, as indicated in the following image:
@@ -124,16 +125,16 @@ Connect a SFP+ cable to the corresponding SFP port on the board.
 
    Connecting the SFP Cable
 
-Finally, you will need to connect an USB/micro-USB cable to the micro-USB port
+Finally, you will need to connect a USB/micro-USB cable to the micro-USB port
 located on the board. After that, you will be able to connect to the first USB
-com port that appears on the serial terminal, with a baud rate of 115200.
+COM port that appears on the serial terminal, with a baud rate of **115200**.
 
 .. note::
 
    Ubuntu credentials
 
-   * user:analog
-   * pass:analog
+   * username:analog
+   * password:analog
 
 .. shell::
 
@@ -197,6 +198,22 @@ com port that appears on the serial terminal, with a baud rate of 115200.
 
 
 Now the streams are running on ports 5004 to 5007, depending on the configured number of cameras.
+
+Install Gstreamer on x86
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Depending on the Linux distribution of your x86 workstation, you can install
+Gstreamer by using the corresponding package manager. For example, on Ubuntu
+you can use the following command:
+
+.. shell::
+
+   $sudo apt-get install gstreamer1.0-tools gstreamer1.0-plugins-base
+    gstreamer1.0-plugins-good gstreamer1.0-plugins-bad
+    gstreamer1.0-plugins-ugly gstreamer1.0-libav
+
+More details about Gstreamer installation can be found
+`here <https://gstreamer.freedesktop.org/documentation/installing/index.html?gi-language=c>`__.
 
 Displaying the Video
 --------------------
@@ -304,5 +321,3 @@ Help and Support
 ----------------
 
 For questions and more information, please visit the :ez:`/`.
-
-
