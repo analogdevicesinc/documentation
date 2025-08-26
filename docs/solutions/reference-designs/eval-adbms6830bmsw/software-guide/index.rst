@@ -1,4 +1,4 @@
-.. _eval-adbms6830bmsw-software-guide:
+.. _eval-adbms6830bmsw software-guide:
 
 Software User Guide
 ====================

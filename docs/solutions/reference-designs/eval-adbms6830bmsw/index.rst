@@ -92,7 +92,7 @@ Equipment Needed
 -  Host PC with installed 
    :adi:`Broadmarket BMS Software </resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
-      - :ref:`see installation guide <eval-adbms6830bmsw-software-guide>`
+   - :ref:`See installation guide <eval-adbms6830bmsw software-guide>`
 
 
 Cell Voltage Connection (J1)
@@ -360,12 +360,17 @@ possible isoSPI daisy-chain break occurs.
 Resources
 ---------
 
-Software User Guide
-~~~~~~~~~~~~~~~~~~~
+User Guides
+~~~~~~~~~~~
 
-.. tip::
-   For Software Setup instructions, visit the 
-   :dokuwiki:`EVAL-ADBMS6830BMSW Software User Guide <eval-adbms6830bmsw-software-guide>`
+A :ref:`eval-adbms6830bmsw software-guide` is available.
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+   :glob:
+
+   */index
 
 Design & Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
