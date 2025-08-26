@@ -199,6 +199,22 @@ COM port that appears on the serial terminal, with a baud rate of **115200**.
 
 Now the streams are running on ports 5004 to 5007, depending on the configured number of cameras.
 
+Install Gstreamer on x86
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Depending on the Linux distribution of your x86 workstation, you can install
+Gstreamer by using the corresponding package manager. For example, on Ubuntu
+you can use the following command:
+
+.. shell::
+
+   $sudo apt-get install gstreamer1.0-tools gstreamer1.0-plugins-base
+    gstreamer1.0-plugins-good gstreamer1.0-plugins-bad
+    gstreamer1.0-plugins-ugly gstreamer1.0-libav
+
+More details about Gstreamer installation can be found
+`here <https://gstreamer.freedesktop.org/documentation/installing/index.html?gi-language=c>`__.
+
 Displaying the Video
 --------------------
 
@@ -212,21 +228,6 @@ Single Deserializer (4 cameras)
 Now open 4 instances of Gstreamer for each port(5004-5007).
 
 **On x86 workstation**
-
-.. collapsible:: Gstreamer Installation Instructions on x86 Workstation
-
-   Depending on your Linux distribution, you can install Gstreamer by using the
-   corresponding package manager. For example, on Ubuntu you can use the
-   following command:
-
-   .. shell::
-
-      $sudo apt-get install gstreamer1.0-tools gstreamer1.0-plugins-base
-      gstreamer1.0-plugins-good gstreamer1.0-plugins-bad
-      gstreamer1.0-plugins-ugly gstreamer1.0-libav
-
-   More details about Gstreamer installation can be found
-   `here <https://gstreamer.freedesktop.org/documentation/installing/index.html?gi-language=c>`__.
 
 .. shell::
 
@@ -260,21 +261,6 @@ Now open 4 instances of Gstreamer for each port(5004-5007).
 Now open 8 instances of Gstreamer for each port(5004-5011).
 
 **On x86 workstation**
-
-.. collapsible:: Gstreamer Installation Instructions on x86 Workstation
-
-   Depending on your Linux distribution, you can install Gstreamer by using the
-   corresponding package manager. For example, on Ubuntu you can use the
-   following command:
-
-   .. shell::
-
-      $sudo apt-get install gstreamer1.0-tools gstreamer1.0-plugins-base
-      gstreamer1.0-plugins-good gstreamer1.0-plugins-bad
-      gstreamer1.0-plugins-ugly gstreamer1.0-libav
-
-   More details about Gstreamer installation can be found
-   `here <https://gstreamer.freedesktop.org/documentation/installing/index.html?gi-language=c>`__.
 
 .. shell::
 
