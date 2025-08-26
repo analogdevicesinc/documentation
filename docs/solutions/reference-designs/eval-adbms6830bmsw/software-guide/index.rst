@@ -15,8 +15,8 @@ Downloads
 
 .. admonition:: Download
 
-    Evaluation GUI for ADI Broadmarket BMS products:
-    :adi:`BMS Browser GUI Broadmarket </resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
+   Evaluation GUI for ADI Broadmarket BMS products:
+   :adi:`BMS Browser GUI Broadmarket <resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
 Firmware
 --------
@@ -30,16 +30,17 @@ Installing the Firmware
     or ``usb-to-spi-max32690.hex``) onto the corresponding MCU’s USB drive 
     (e.g., SDP USB drive) to update the firmware. 
     
-        .. figure:: usb_spi_firmware_list.png
-            :align: center
+    .. figure:: usb_spi_firmware_list.png
+       :align: center
   
-            USB-to-SPI Firmware Location
+       USB-to-SPI Firmware Location
 
 .. tip:: 
-    This software setup uses the SDP-K1 as microcontroller board, but users
-    may also use the :adi:`AD-APARD32690-SL`. In order to flash the firmware image 
-    on the :adi:`AD-APARD32690-SL` MCU board, it needs to be connected to 
-    the :adi:`MAX32625PICO` programming adapter board.
+
+   This software setup uses the SDP-K1 as microcontroller board, but users
+   may also use the :adi:`AD-APARD32690-SL`. In order to flash the firmware image 
+   on the :adi:`AD-APARD32690-SL` MCU board, it needs to be connected to 
+   the :adi:`MAX32625PICO` programming adapter board.
 
 **Instructions for flashing firmware image on MAX32625PICO**
 
@@ -53,18 +54,18 @@ Installing the Firmware
     drive is mounted). 
 
     .. figure:: max32625pico_flasher.png
-        :width: 300 px
-        :align: center
+       :width: 300 px
+       :align: center
   
-        MAX32625PICO Firmware Flasher Button
+       MAX32625PICO Firmware Flasher Button
 
-#.  Release the button once the MAINTENANCE drive is mounted.
-#.  Drag and drop (to the MAINTENANCE drive) the firmware image.
-#.  After a few seconds, the MAINTENANCE drive will disappear and be replaced by
-    a drive named **DAPLINK**. This indicates that the process is complete, and the
-    MAX32625PICO can now be used to flash the firmware to the Maxim MCU (e.g.,
-    AD-APARD32690-SL, MAX32670 MCU base board) as indicated by Step #3 in
-    “Installing the Firmware”.
+#. Release the button once the MAINTENANCE drive is mounted.
+#. Drag and drop (to the MAINTENANCE drive) the firmware image.
+#. After a few seconds, the MAINTENANCE drive will disappear and be replaced by
+   a drive named **DAPLINK**. This indicates that the process is complete, and the
+   MAX32625PICO can now be used to flash the firmware to the Maxim MCU (e.g.,
+   AD-APARD32690-SL, MAX32670 MCU base board) as indicated by Step #3 in
+   "Installing the Firmware".
 
 Application Software (GUI)
 ---------------------------
@@ -79,10 +80,10 @@ Launching the Graphical User Interface
 #. To launch the GUI, navigate to the BMS_BROWSER_GUI_BroadMarket_V2.0.0 directory.
 #. Double-click the ``BMS_BROWSER_GUI_BroadMarket_V2.0.0.exe`` file.
 
-    .. figure:: bms_bm_browser_gui.png
-        :align: center
+   .. figure:: bms_bm_browser_gui.png
+      :align: center
 
-        BMS Browser GUI BroadMarket Software Location
+      BMS Browser GUI BroadMarket Software Location
 
 Launcher Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -104,9 +105,9 @@ Establishing Interface Connection
 #. Use the refresh button to reload the available MCU boards list.
 
 .. figure:: interface_connection_v2.0.png
-    :align: center
+   :align: center
   
-    Interface Connection Section
+   Interface Connection Section
 
 Daisy Chain Connection
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -117,9 +118,9 @@ involves selecting a generation of ADBMS devices, adding devices to the daisy
 chain, and configuring the setup for the evaluation GUI.
 
 .. figure:: daisy_chain_connection_v.2.0.png
-    :align: center
+   :align: center
   
-    Daisy Chain Connection Setting
+   Daisy Chain Connection Setting
 
 #. **Select ADBMS Generation:**
 
@@ -160,9 +161,9 @@ sequence. Note that it supports a single device in the daisy chain, and key
 features enhance configuration and visualization. 
 
 .. figure:: quick_measure_utility.png
-    :align: center
+   :align: center
   
-    Quick Measure Tab
+   Quick Measure Tab
 
 #. **Preloaded Commands:**
 
@@ -204,9 +205,9 @@ runs continuously until stopped. Toggle between lists using the corresponding
 buttons at the top.
 
 .. figure:: sequences.png
-    :align: center
+   :align: center
   
-    Sequences Tab
+   Sequences Tab
 
 #. **Load Existing Sequence:**
 
@@ -264,9 +265,9 @@ complete execution loop. Key features enable precise timing adjustments and
 visualization. 
 
 .. figure:: scheduler_v2.0.png
-    :align: center
+   :align: center
   
-    Scheduler Tab
+   Scheduler Tab
 
 #. **Timing Adjustments:**
 
@@ -316,9 +317,9 @@ active command loop, organized into tables for user convenience. It offers
 customization and error highlighting for effective data analysis.
 
 .. figure:: memory_map_v2.0.0.png
-    :align: center
+   :align: center
   
-    Memory Map Tab
+   Memory Map Tab
 
 #. **Organized Data Display:**
 
@@ -354,9 +355,9 @@ for focused analysis and allows for the export of captured data for further
 analysis. 
 
 .. figure:: plotfilter_v2.0.0.png
-    :align: center
+   :align: center
   
-    Plots Tab
+   Plots Tab
 
 #. **Plot Selection:**
 
@@ -400,9 +401,9 @@ similar to the Plots tab with added functionality for selecting the database
 file and test run.
 
 .. figure:: data_recall.png
-    :align: center
+   :align: center
   
-    Data Recall Tab
+   Data Recall Tab
 
 #. **Access Data Recall Tab:**
 
@@ -438,9 +439,9 @@ following the device’s safety manual. It displays available diagnostics, test 
 and results for a single device.
 
 .. figure:: diagnostics.png
-    :align: center
+   :align: center
   
-    Diagnostics Tab
+   Diagnostics Tab
 
 #. **Access Diagnostics Tab:**
 
@@ -516,12 +517,13 @@ display_user_manual_on_start:
   - Save the changes.
 
 .. tip::
-    By adjusting these configuration settings in the config.json file, 
-    users can optimize the software’s behavior to better suit their requirements. 
-    Whether it’s fine-tuning comport connections, managing CPU usage, or controlling 
-    the display of the user manual, these settings provide a flexible approach to enhancing 
-    the software’s usability. Make sure to save your changes and restart the software 
-    for the modifications to take effect.
+
+   By adjusting these configuration settings in the config.json file, 
+   users can optimize the software’s behavior to better suit their requirements. 
+   Whether it’s fine-tuning comport connections, managing CPU usage, or controlling 
+   the display of the user manual, these settings provide a flexible approach to enhancing 
+   the software’s usability. Make sure to save your changes and restart the software 
+   for the modifications to take effect.
 
 Further Help
 ------------

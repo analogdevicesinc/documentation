@@ -9,8 +9,8 @@ EVAL-ADBMS6830BMSW
 Overview
 --------
 
-The :adi:`EVAL-ADBMS6830BMSW` is a full-featured evaluation board 
-for the :adi:`ADBMS6830B`, a 16-channel battery stack monitor 
+The :adi:`EVAL-ADBMS6830BMSW` is a full-featured evaluation board
+for the :adi:`ADBMS6830B`, a 16-channel battery stack monitor
 for broad market applications. This board allows multiple boards
 to be linked through a single, twisted pair wire interface (isoSPI) to monitor
 a long series of cells in a stack. It provides access to full channel
@@ -20,9 +20,9 @@ can access either path to do measurement functions and serve as a redundant
 communication path. The PCB, components, and DuraClik connectors are optimized
 for low EMI susceptibility and emissions.
 
-The :adi:`EVAL-ADBMS6830BMSW` can communicate to a PC by connecting 
-an :adi:`EVAL-ADBMS6822` dual master isoSPI together with a 
-microcontroller board such as the :adi:`EVAL-SDP-CK1Z`, 
+The :adi:`EVAL-ADBMS6830BMSW` can communicate to a PC by connecting
+an :adi:`EVAL-ADBMS6822` dual master isoSPI together with a
+microcontroller board such as the :adi:`EVAL-SDP-CK1Z`,
 the :adi:`AD-APARD32690-SL`, or the :adi:`MAX32670EVKIT`.
 
 The SDP-K1 and the other MCUs mentioned above provide a standard SPI
@@ -40,7 +40,7 @@ Features
 --------
 
 -  Full featured evaluation board for the :adi:`ADBMS6830B`
--  Demonstrates high-performance measurements of the ADBMS6830B
+-  Demonstrates high-performance measurements of the :adi:`ADBMS6830B`
 -  Includes two isoSPI ports for reversible isoSPI support
 -  Daisy-chain capability
 -  Accessible cell and GPIO connections via optional connectors
@@ -71,7 +71,7 @@ System Architecture
    EVAL-ADBMS6830BMSW System Architecture
 
 .. figure:: picture_1.png
-   :width: 1200 px      
+   :width: 1200 px
    :align: center
 
    EVAL-ADBMS6830BMSW Simplied Block Diagram
@@ -89,7 +89,7 @@ Equipment Needed
 -  :adi:`DC2472A` Battery Stack Simulator
 -  isoSPI DuraClik connectors
 -  USB cable
--  Host PC with installed 
+-  Host PC with installed
    :adi:`Broadmarket BMS Software </resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
 
    - :ref:`See installation guide <eval-adbms6830bmsw software-guide>`
@@ -98,7 +98,7 @@ Equipment Needed
 Cell Voltage Connection (J1)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: 
+.. important::
    Correct wiring must be followed to avoid the risk of damaging the EVAL-ADBMS6830BMSW evaluation board.
 
 When connected to a battery stack, the cell group being monitored provides power
@@ -109,12 +109,12 @@ for the EVAL-ADBMS6830BMSW.
 #. Insert the cell voltage connections or resistors into the screw-terminal
    clamping contacts. These connections provide power and input stimuli for the
    battery stack monitor IC.
- 
+
 The cell voltages are wired to J1, starting from position 1 (the most negative
 potential of the group). See Table 1 for the correct J1 pinout.
 
 ============================================ =================
-*Table 1. Pin Designations for J1 Connector* 
+*Table 1. Pin Designations for J1 Connector*
 ============================================ =================
 Pin No.                                      Connection
 1                                            C0 (stack-)
@@ -136,9 +136,10 @@ Pin No.                                      Connection
 ============================================ =================
 
 .. tip::
+
    Alternatively, resistors can be used to simulate battery cell
-   voltages. 100 Ω ½ W or equivalent resistors are recommended because 100 Ω 
-   (or lower values) typically will not induce measurement errors, and the ½ W 
+   voltages. 100 Ω ½ W or equivalent resistors are recommended because 100 Ω
+   (or lower values) typically will not induce measurement errors, and the ½ W
    (or greater rating) will keep the resistor temperatures low, preventing power
    dissipation damage.
 
@@ -147,8 +148,8 @@ Resistors Connection
 
 #. Carefully connect 16 100 Ω resistors into the screw-terminal block between
    each CPIN input clamping contact from position 1 to position 17,
-   EVAL-ADBMS6830BMSW J1 pinout, and the resistor divider string. 
-   
+   EVAL-ADBMS6830BMSW J1 pinout, and the resistor divider string.
+
    .. figure:: figure_3.png
       :width: 200 px
       :align: center
@@ -163,9 +164,9 @@ Resistors Connection
 Serial Interface Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-isoSPI is the only communication option for the EVAL-ADBMS6830BMSW. 
-Due to the custom EMI-optimized isoSPI cable with DuraClik connectors, 
-it is highly recommended to use the EVAL-ADBMS6822 dual master isoSPI demo board 
+isoSPI is the only communication option for the EVAL-ADBMS6830BMSW.
+Due to the custom EMI-optimized isoSPI cable with DuraClik connectors,
+it is highly recommended to use the EVAL-ADBMS6822 dual master isoSPI demo board
 or equivalent for easy plug-and-play operation.
 
 The EVAL-ADBMS6822 dual master isoSPI demo board can be connected as a typical
@@ -183,7 +184,7 @@ voltages or can be wired with individual V-/GND connections with connections
 with each GPIO.
 
 ============================================ ======================
-*Table 2. Pin Designations for J5 Connector* 
+*Table 2. Pin Designations for J5 Connector*
 ============================================ ======================
 Pin No.                                      Connection
 1                                            GPIO1
@@ -205,8 +206,8 @@ Pin No.                                      Connection
 IREG Optional Header (J2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This pair of thru-holes can be used to measure IREG with an ammeter. 
-The use of an ammeter bypasses the D2 LED (VREG active), which allows 
+This pair of thru-holes can be used to measure IREG with an ammeter.
+The use of an ammeter bypasses the D2 LED (VREG active), which allows
 accurate measurement of IREG current.
 
 Add an ammeter between J2 pins 1 and 2 to measure IREG.
@@ -214,7 +215,7 @@ Add an ammeter between J2 pins 1 and 2 to measure IREG.
 Supply Optional Header (J6)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This pair of thru-holes can be used to insert and measure the supplied voltage 
+This pair of thru-holes can be used to insert and measure the supplied voltage
 with a power supply or voltmeter, respectively.
 
 To furnish power separately from the cell stack, remove R55 and the power
@@ -223,10 +224,10 @@ board using J6.
 General Setup
 --------------
 
-.. important:: 
+.. important::
 
-   To prevent damage to the EVAL-ADBMS6830BMSW, see Table 1 to confirm 
-   that the cell voltage connections to the screw-terminal block matches 
+   To prevent damage to the EVAL-ADBMS6830BMSW, see Table 1 to confirm
+   that the cell voltage connections to the screw-terminal block matches
    the EVAL-ADBMS6830BMSW J1 pinout.
 
    The 2-wire twisted pair cable with the DuraClik end plugs have 1 mm thick
@@ -237,8 +238,9 @@ General Setup
 EVAL-ADBMS6822 to EVAL-ADBMS6830BMSW Typical isoSPI Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tip:: 
-   This setup uses the SDP-K1 as microcontroller, but users may also use 
+.. tip::
+
+   This setup uses the SDP-K1 as microcontroller, but users may also use
    the :adi:`AD-APARD32690-SL` as MCU and follow the same setup presented below.
 
 A typical isoSPI connection begins with the isoSPI master connected to the
@@ -268,17 +270,18 @@ finally to the last (or top) EVAL-ADBMS6830BMSW.
 #. Plug the screw-terminal block(s) into the J1 cell voltage connectors.
 
 .. admonition:: Download
-   
-   A Windows-based graphical user interface is available for users 
+
+   A Windows-based graphical user interface is available for users
    to readily evaluate this system.
 
-   For Software Setup instructions, visit the 
-   :ref:`EVAL-ADBMS6830BMSW Software User Guide <eval-adbms6830bmsw-software-guide>`
+   For Software Setup instructions, visit the
+   :ref:`EVAL-ADBMS6830BMSW Software User Guide <eval-adbms6830bmsw software-guide>`
 
 EVAL-ADBMS6822 to EVAL-ADBMS6830BMSW Reverse isoSPI Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
+
    This setup uses the SDP-K1 as microcontroller, but
    users may also use the :adi:`AD-APARD32690-SL` as MCU and
    follow the same connection procedure presented below.
@@ -315,13 +318,13 @@ EVAL-ADBMS6822 to EVAL-ADBMS6830BMSW Redundant isoSPI Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
-   This setup uses the SDP-K1 as microcontroller, but users may also use 
+   This setup uses the SDP-K1 as microcontroller, but users may also use
    the :adi:`AD-APARD32690-SL` as MCU and follow the same setup presented below.
-   
+
 A redundant isoSPI connection begins with the primary (or main) isoSPI master
 connected to the first (or bottom) EVAL-ADBMS6830BMSW and has a backup
 auxiliary isoSPI master connected to the last (or top) EVAL-ADBMS6830BMSW.
-   
+
 Additional EVAL-ADBMS6830BMSW boards can be daisy-chained between the two
 isoSPI masters on the isoSPI bus. Primary (or main) communication begins with
 the first (or bottom) EVAL-ADBMS6830BMSW then to the upper EVAL-ADBMS6830BMSW
@@ -376,7 +379,7 @@ Design & Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
-   
+
    :download:`EVAL-ADBMS6830BMSW Design Support Package <EVAL-ADBMS6830BMSW-designsupport.zip>`
 
    - Schematic
@@ -390,8 +393,3 @@ Help and Support
 For questions and more information about this product, connect with us through
 the :ez:`Analog Devices EngineerZone <Reference Designs>`.
 
-.. toctree::
-   :titlesonly:
-   :glob:
-
-   */index
