@@ -24,7 +24,7 @@ no-OS General Description
 
 :git-no-OS:`/` is a software framework by :adi:`Analog Devices Inc <index>`
 for systems that don’t include an operating system (OS), otherwise known as baremetal. 
-This framework defines a :dokuwiki:`common interface (API) </resources/no-os/api>`
+This framework defines a :dokuwiki+deprecated:`common interface (API) </resources/no-os/api>`
 for accessing typical baremetal peripherals such as GPIO, SPI, I2C, RTC, Timer,
 Interrupt Controller, and other. This common API may be then used to initialize 
 and control these peripherals in a common way across multiple microcontroller platforms. 
@@ -33,18 +33,18 @@ The framework currently supports Intel and Xilinx microprocessors and SoC's as w
 Analog Devices' own precision microcontrollers, several Maxim MAX32xxx microcontrollers,
 STMicroelectronics' STM32, Raspberry Pi's Pico, and mbed-OS-based devices. By using this 
 common driver API, following its own 
-`coding style <https://github.com/analogdevicesinc/no-OS/wiki/Code-Style-guidelines>`__,
+:git-no-OS:`coding style <wiki/Code-Style-guidelines+>`,
 the :git-no-OS:`/` is able to provide reference projects for
 Analog Devices evaluation boards running on various underlying hardware.
 
-Thanks to the `build guide <https://analogdevicesinc.github.io/no-OS/build_guide.html>`__, 
+Thanks to the :external+no-OS:doc:`build_guide`,
 no-OS users may generate standalone reference projects in a short period of time and 
 use them as the starting point for their own development. no-OS is an open-source
 software, and its official repository is the 
 :git-no-OS:`no-OS GitHub Repository </>`. 
 
 Users are free to use and distribute no-OS, provided that they comply with the
-`license <https://github.com/analogdevicesinc/no-OS/blob/master/LICENSE>`__.
+:git-no-OS:`license <LICENSE>`.
 The no-OS main drivers used in the firmware are the ones concerned with the
 :adi:`MAX32655` microcontroller, the :adi:`ADE7913` isolated, 3-channel Σ-Δ ADC, 
 and the :adi:`ADT75` temperature monitoring system.
@@ -55,7 +55,7 @@ no-OS Support for Maxim Microcontrollers
 The no-OS framework supports several Maxim microcontrollers, including the
 :adi:`MAX32655`, and implements the low-level functions for controlling the 
 hardware components of the device: GPIO, UART, NVIC, I2C, and SPI. 
-The `build guide <https://analogdevicesinc.github.io/no-OS/build_guide.html>`__ 
+The :external+no-OS:doc:`build_guide`
 provides the steps required for creating and building an application based 
 on a supported Maxim microcontroller part.
 
@@ -139,7 +139,7 @@ Requirements
 - Serial terminal
 
 The binary can be obtained following the steps presented at the
-`no-OS build guide <https://analogdevicesinc.github.io/no-OS/build_guide.html>`__ 
+:external+no-OS:doc:`build_guide`
 
 STEP 1 — MAX32625PICO firmware update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
