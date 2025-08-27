@@ -6,9 +6,9 @@ Software User Guide
 Overview
 ---------
 
-The :adi:`AD-ACEVSECRDSET-SL <ad-bct2ade9113-sl.html>` is an electric vehicle (EV) 
-type 2 charging system  based on ADI’s microcontroller and energy metering technology. 
-This solution is designed for a Type 2 EVSE 3.6kW EV charging cable, enabling 
+The :adi:`AD-ACEVSECRDSET-SL <ad-bct2ade9113-sl.html>` is an electric vehicle (EV)
+type 2 charging system  based on ADI’s microcontroller and energy metering technology.
+This solution is designed for a Type 2 EVSE 3.6kW EV charging cable, enabling
 easy integration with standard EV systems.
 
 The :adi:`AD-ACEVSECRDSET-SL <ad-bct2ade9113-sl.html>` is designed to meet
@@ -23,40 +23,40 @@ no-OS General Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :git-no-OS:`/` is a software framework by :adi:`Analog Devices Inc <index>`
-for systems that don’t include an operating system (OS), otherwise known as baremetal. 
+for systems that don’t include an operating system (OS), otherwise known as baremetal.
 This framework defines a :dokuwiki+deprecated:`common interface (API) </resources/no-os/api>`
 for accessing typical baremetal peripherals such as GPIO, SPI, I2C, RTC, Timer,
-Interrupt Controller, and other. This common API may be then used to initialize 
-and control these peripherals in a common way across multiple microcontroller platforms. 
+Interrupt Controller, and other. This common API may be then used to initialize
+and control these peripherals in a common way across multiple microcontroller platforms.
 
 The framework currently supports Intel and Xilinx microprocessors and SoC's as well as
 Analog Devices' own precision microcontrollers, several Maxim MAX32xxx microcontrollers,
-STMicroelectronics' STM32, Raspberry Pi's Pico, and mbed-OS-based devices. By using this 
-common driver API, following its own 
+STMicroelectronics' STM32, Raspberry Pi's Pico, and mbed-OS-based devices. By using this
+common driver API, following its own
 :git-no-OS:`coding style <wiki/Code-Style-guidelines+>`,
 the :git-no-OS:`/` is able to provide reference projects for
 Analog Devices evaluation boards running on various underlying hardware.
 
 Thanks to the :external+no-OS:doc:`build_guide`,
-no-OS users may generate standalone reference projects in a short period of time and 
+no-OS users may generate standalone reference projects in a short period of time and
 use them as the starting point for their own development. no-OS is an open-source
-software, and its official repository is the 
-:git-no-OS:`no-OS GitHub Repository </>`. 
+software, and its official repository is the
+:git-no-OS:`no-OS GitHub Repository </>`.
 
 Users are free to use and distribute no-OS, provided that they comply with the
 :git-no-OS:`license <LICENSE>`.
 The no-OS main drivers used in the firmware are the ones concerned with the
-:adi:`MAX32655` microcontroller, the :adi:`ADE7913` isolated, 3-channel Σ-Δ ADC, 
+:adi:`MAX32655` microcontroller, the :adi:`ADE7913` isolated, 3-channel Σ-Δ ADC,
 and the :adi:`ADT75` temperature monitoring system.
 
 no-OS Support for Maxim Microcontrollers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The no-OS framework supports several Maxim microcontrollers, including the
-:adi:`MAX32655`, and implements the low-level functions for controlling the 
-hardware components of the device: GPIO, UART, NVIC, I2C, and SPI. 
+:adi:`MAX32655`, and implements the low-level functions for controlling the
+hardware components of the device: GPIO, UART, NVIC, I2C, and SPI.
 The :external+no-OS:doc:`build_guide`
-provides the steps required for creating and building an application based 
+provides the steps required for creating and building an application based
 on a supported Maxim microcontroller part.
 
 ADE7913 no-OS driver
@@ -64,8 +64,8 @@ ADE7913 no-OS driver
 
 The existing no-OS driver for the :adi:`ADE7913` ADC implements the
 functionalities provided by the device through a comprehensive high-level API.
-All the settings of the :adi:`ADE7913` ADC are accessed through separate 
-functions that perform SPI read and write operations on the corresponding 
+All the settings of the :adi:`ADE7913` ADC are accessed through separate
+functions that perform SPI read and write operations on the corresponding
 device registers. The driver provides the possibility of reading
 the acquired data at moments in time specified by the application or depending
 on the state of the Data Ready pin through an interrupt. Using the device
@@ -97,10 +97,10 @@ read operation is performed on one of the device’s registers.
 ADT75 no-OS driver
 ~~~~~~~~~~~~~~~~~~
 
-no-OS support for the :adi:`ADT75` provides an easy and straight-forward way 
-of obtaining temperature readings from the device. Using the device implies 
-the specification of the SPI communication parameters, the call of the 
-``adt75_init`` function for initialization, and the ``adt75_get_single_temp`` 
+no-OS support for the :adi:`ADT75` provides an easy and straight-forward way
+of obtaining temperature readings from the device. Using the device implies
+the specification of the SPI communication parameters, the call of the
+``adt75_init`` function for initialization, and the ``adt75_get_single_temp``
 API for getting the current temperature value.
 
 .. code:: C
@@ -144,7 +144,7 @@ The binary can be obtained following the steps presented at the
 STEP 1 — MAX32625PICO firmware update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--   Download the MAX32655FTHR Firmware image from 
+-   Download the MAX32655FTHR Firmware image from
     `here <https://github.com/MaximIntegrated/max32625pico-firmware-images/>`__.
 
 -   Follow the procedure indicated
@@ -205,7 +205,7 @@ The following messages should be displayed in the serial terminal window:
 
 .. figure:: rev_d_debug_1.png
     :width: 400 px
-    
-After the self-test passes the status LED 1 will be on. 
+
+After the self-test passes the status LED 1 will be on.
 
 .. figure:: ad-acevsecrdset-sl_soft3.jpg

@@ -1,6 +1,6 @@
 .. _ad-acevsecrdset-sl:
-    
-AD-ACEVSECRDSET-SL 
+
+AD-ACEVSECRDSET-SL
 ==================
 
 Type 2 EVSE 3.6 kW Charging Cable
@@ -9,15 +9,15 @@ Type 2 EVSE 3.6 kW Charging Cable
 Introduction
 ------------
 
-The :adi:`AD-ACEVSECRDSET-SL <ad-bct2ade9113-sl>` is  a complete Type 2 EVSE 3.6kW 
-charging cable solution, providing a reference design intended for evaluation 
+The :adi:`AD-ACEVSECRDSET-SL <ad-bct2ade9113-sl>` is  a complete Type 2 EVSE 3.6kW
+charging cable solution, providing a reference design intended for evaluation
 and prototyping of EV charging systems.
 
-The system includes the :adi:`ADE9113` 3-channel isolated sigma-delta (Σ-Δ) ADC 
-for voltage and current measurement on the single-phase power input and 
-measurement of the relay voltage for solder contacts detection and relay 
-state of health. Safe operation is enabled by the inclusion of a 6mA DC / 30mA rms RCD. 
-Detection of overvoltage, undervoltage, overcurrent, overtemperature, and EV diode 
+The system includes the :adi:`ADE9113` 3-channel isolated sigma-delta (Σ-Δ) ADC
+for voltage and current measurement on the single-phase power input and
+measurement of the relay voltage for solder contacts detection and relay
+state of health. Safe operation is enabled by the inclusion of a 6mA DC / 30mA rms RCD.
+Detection of overvoltage, undervoltage, overcurrent, overtemperature, and EV diode
 presence are also available.
 
 The :adi:`MAX32655` ultralow power ARM® Cortex®-M4 processor
