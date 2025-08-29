@@ -7,10 +7,10 @@ Power Quality Analyzer
 """"""""""""""""""""""
 
 .. figure:: ade9430_angle.jpg
-  :width: 400px
-  :align: left
+   :width: 400px
+   :align: left
 
-  AD-PQMON-SL Board
+   AD-PQMON-SL Board
 
 Overview
 --------
@@ -29,9 +29,9 @@ This reference design also has an on-board processor, the
 microcontroller (MCU) with 3MB flash and 1MB SRAM.
 
 .. figure:: ad-pqmon-sl_block_diagram.png
-  :width: 800px
+   :width: 800px
 
-  AD-PQMON-SL Block Diagram
+   AD-PQMON-SL Block Diagram
 
 Features
 --------
@@ -66,8 +66,9 @@ Applications
 - Intelligent buildings
 
 .. tip::
-    For more information about the hardware see the
-    AD-PQMON-SL Hardware User Guide
+
+   For more information about the hardware see the
+   :ref:`ad-pqmon-sl hardware-guide`.
 
 System Setup & Evaluation
 -------------------------
@@ -93,10 +94,10 @@ no-OS framework. It includes the baremetal device drivers for all the
 components in the system as well as an example application enabling evaluation
 of the power quality features. <WRAP center round download 100%>
 
-- :git-no-OS:`Github resources </projects/eval-pqmon>`
+- :git-no-OS:`Github resources <projects/eval-pqmon>`
 
 It is recommended to update the firmware to the latest version as indicated
-`here </resources/eval/user-guides/ad-pqmon-sl/software#firmware_update>`__.
+:ref:`here <ad-pqmon-sl software-guide firmware-update>`.
 
 - `latest hex file <https://swdownloads.analog.com/cse/scopy/ad-pqmon-sl/eval-pqmon.hex>`__
 - `Scopy 2 download link <https://swdownloads.analog.com/cse/scopy/ad-pqmon-sl/scopy-windows-x86_64-setup-7797088.zip>`__
@@ -115,9 +116,8 @@ Helpful Documents
 
 - :adi:`ADE9430 Data Sheet <ade9430>`
 - :dokuwiki:`ADE9430 Technical Reference Manual </resources/eval/user-guides/ade9430>`
-- `ADSW-PQ-CLS Power Quality Library - Software Request <https://www.analog.com/srf>`__
-- `Scopy add-on for PQMON board
-  documentation <https://analogdevicesinc.github.io/scopy/plugins/pqm/index.html>`__
+- :adi:`ADSW-PQ-CLS Power Quality Library - Software Request <srf>`
+- :external+scopy:doc:`Scopy plugin for PQMON <plugins/pqm/index>`
 
 Additional Resources
 ---------------------
@@ -148,9 +148,9 @@ Design and Integration Files
 Support
 -------
 
-Analog Devices will provide **limited** online support for anyone using the 
-reference design with Analog Devices components via the 
-:ez:`EngineerZone reference designs </reference-designs>` forum.
+Analog Devices will provide **limited** online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`EngineerZone reference designs <reference-designs>` forum.
 
 It should be noted that the older the tools’ versions and release branches are,
 the lower the chances to receive support from ADI engineers.

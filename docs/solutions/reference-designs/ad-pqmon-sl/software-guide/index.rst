@@ -1,5 +1,7 @@
+.. _ad-pqmon-sl software-guide:
+
 Software User Guide
-====================
+===================
 
 Equipment needed
 ----------------
@@ -26,22 +28,22 @@ The following software is needed for testing the :adi:`AD-PQMON-SL` board:
   with the :adi:`AD-PQMON-SL` add-on
 
 For Scopy installation, follow the steps indicated
-:dokuwiki:`here </university/tools/m2k/scopy>`
+:external+scopy:doc:`in the user guide <user_guide/index>`.
 
-After making the board connections and installing Scopy, 
+After making the board connections and installing Scopy,
 connect to the GUI by following these steps:
 
 - Connect the USB Type-C cable from the AD-PQMON-SL board to your PC.
 - Launch the installed Scopy application.
 - Click the “+” button as shown in the following image:
 
-    .. figure:: scopy0.jpg
+  .. figure:: scopy0.jpg
 
 - In the window that opens, click the refresh button as shown in the following image:
 
   .. figure:: scopy2.jpg
 
-- From the drop-down menu labeled ``PORT NAME``, select the COM port connected 
+- From the drop-down menu labeled ``PORT NAME``, select the COM port connected
   to the AD-PQMON-SL board (for example, COM37).
 
   .. figure:: scopy3.jpg
@@ -75,7 +77,7 @@ Measurements
 
 - The measurements tabs are available on the left side of the GUI:
 
-    .. figure:: scopy10.jpg
+  .. figure:: scopy10.jpg
 
 RMS Tab
 ~~~~~~~
@@ -83,14 +85,14 @@ RMS Tab
 - The RMS tab can be activated by clicking on it and then selecting the
   Run button.
 
-    .. figure:: scopy11.jpg
+  .. figure:: scopy11.jpg
 
-    .. figure:: scopy12.jpg
+  .. figure:: scopy12.jpg
 
 - The PQEvents indicator notifies the user when a PQ event has occurred. Events are
   saved in the log file if logging is enabled.
 
-    .. figure:: scopy12_1.jpg
+  .. figure:: scopy12_1.jpg
 
 - If an event occurs during the session, the PQEvents indicator will become
   active. The event details can be found in the log file (in the RMS tab, only PQ
@@ -98,33 +100,33 @@ RMS Tab
   resets the indicator. Even if the indicator is not reset, any new event will be
   registered in the log file.
 
-    .. figure:: scopy13_5.jpg
+  .. figure:: scopy13_5.jpg
 
 - Logging can be enabled only when the measurement is not running. First, select the
   LOG button. Then, specify a log directory by clicking the button highlighted in the
   following image.
 
-    .. figure:: scopy12_2.jpg
+  .. figure:: scopy12_2.jpg
 
 - Choose a folder where the data will be saved in CSV format. The
   file will be named as follows: “nameofactivewindow_date_time.csv”
   (e.g. rms_01-01-2024_11-00-00).
 
-    .. figure:: scopy12_3.jpg
+  .. figure:: scopy12_3.jpg
 
 - After the folder is selected, data will be recorded during a session. The
   session starts when the Run button is activated and ends when it is
   stopped.
 
-    .. figure:: scopy12_4.jpg
+  .. figure:: scopy12_4.jpg
 
-    .. figure:: scopy12_5.jpg
+  .. figure:: scopy12_5.jpg
 
 - A snapshot of an RMS log file is shown in the following image. As seen,
   several PQ events occurred during the session.
 
-    .. figure:: rms_tab_events.jpg
-      :width: 1000px
+  .. figure:: rms_tab_events.jpg
+     :width: 1000px
 
 Harmonics Tab
 ~~~~~~~~~~~~~~
@@ -140,28 +142,28 @@ Harmonics Tab
 - The PQEvents indicator notifies the user when a PQ event has occurred. Events are
   saved in the log file if logging is enabled.
 
-    .. figure:: scopy13.jpg
+  .. figure:: scopy13.jpg
 
 - The user can select between viewing harmonics or interharmonics.
 
-    .. figure:: scopy13_1.jpg
+  .. figure:: scopy13_1.jpg
 
 - Logging can be enabled only when the measurement is not running. First, select the
   LOG button. Then, specify a log directory by clicking the button highlighted in the following image.
 
-    .. figure:: scopy13_2.jpg
+  .. figure:: scopy13_2.jpg
 
 - Choose a folder where the data will be saved in CSV format. The
   file will be named as follows: “nameofactivewindow_date_time.csv”
   (e.g. harmonics_01-01-2024_11-00-00).
 
-    .. figure:: scopy13_3.jpg
+  .. figure:: scopy13_3.jpg
 
 - After the folder is selected, data will be recorded during a session. The
   session starts when the Run button is activated and ends when it is
   stopped.
 
-    .. figure:: scopy13_4.jpg
+  .. figure:: scopy13_4.jpg
 
 - If an event occurs during the session, the PQEvents indicator will become
   active. The event details can be found in the log file. The log file in the Harmonics
@@ -173,14 +175,14 @@ Harmonics Tab
 - A snapshot of a harmonics log file containing only harmonics data is
   shown in the following image.
 
-    .. figure:: harmonics_tab_log.jpg
-       :width: 1000px
+  .. figure:: harmonics_tab_log.jpg
+     :width: 1000px
 
 - In the following snapshot, PQ events can be seen interleaved with
   the harmonics values.
 
-    .. figure:: harmonics_tab_events.jpg
-       :width: 1000px
+  .. figure:: harmonics_tab_events.jpg
+     :width: 1000px
 
 Waveforms Tab
 ~~~~~~~~~~~~~
@@ -188,12 +190,12 @@ Waveforms Tab
 - The Waveform tab can be activated by clicking on it and afterwards select the
   Run button.
 
-    .. figure:: scopy16.jpg
+  .. figure:: scopy16.jpg
 
 - The upper side graph is the voltage and the one to the bottom is the current.
   To zoom in use the mouse to click and drag.
 
-    .. figure:: scopy17.jpg
+  .. figure:: scopy17.jpg
 
 - The log file can also be activated in the waveforms tab in the same manner
   explained in the rms or harmonics sections, but in this case the PQ events is
@@ -201,11 +203,11 @@ Waveforms Tab
   harmonics) must be used. The data logged in this tab contains only the
   waveforms values.
 
-    .. figure:: scopy17_1.jpg
+  .. figure:: scopy17_1.jpg
 
 -  A snapshot of a log file can be seen in the following image.
 
-    .. figure:: waveforms_tab_log.jpg
+   .. figure:: waveforms_tab_log.jpg
 
 Settings Tab
 ~~~~~~~~~~~~~
@@ -213,31 +215,34 @@ Settings Tab
 - The Settings tab is used to read and set the thresholds and the config values.
   Activate it by selecting it from the right-side menu.
 
-    .. figure:: scopy18.jpg
+  .. figure:: scopy18.jpg
 
 - To see all the parameters scroll down
 
-    .. figure:: scopy18_1.jpg
+  .. figure:: scopy18_1.jpg
 
 - To read the values that are currently set click the Read button.
 
-    .. figure:: scopy18_2.jpg
+  .. figure:: scopy18_2.jpg
 
-    .. figure:: scopy18_3.jpg
+  .. figure:: scopy18_3.jpg
 
 - To modify a parameter select it, change its value to the desired one and click
   the Set button.
 
 .. tip::
-    More information about the **Scopy PQMON addon** can
-    be consulted
-    `here <https://analogdevicesinc.github.io/scopy/plugins/pqm/index.html>`__
+
+   More information about the **Scopy PQMON addon** can
+   be consulted
+   :external+scopy:doc:`here <plugins/pqm/index>`
 
 The system comes pre-programmed with a firmware that works with the **Scopy**
 application, allowing complete system evaluation.
 
-**Scopy** will work only with the official 
-:git-no-OS:`firmware releases </projects/eval-pqmon>` 
+**Scopy** will work only with the official
+:git-no-OS:`firmware releases <projects/eval-pqmon>`
+
+.. _ad-pqmon-sl software-guide firmware-update:
 
 Firmware Update
 ---------------
@@ -245,43 +250,43 @@ Firmware Update
 Firmware update using a prebuilt hex file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`PQMON hex file download 
-<https://swdownloads.analog.com/cse/scopy/ad-pqmon-sl/eval-pqmon.hex>`__
+`PQMON hex file download  <https://swdownloads.analog.com/cse/scopy/ad-pqmon-sl/eval-pqmon.hex>`__
 
-**Step 1 - MAX32625PICO Firmware Update** 
+**Step 1 - MAX32625PICO Firmware Update**
 
--   Download the :adi:`MAX32650FTHR` firmware image from
-    `here <https://github.com/analogdevicesinc/max32625pico-firmware-images>`__
+- Download the :adi:`MAX32650FTHR` firmware image from
+  :git-max32625pico-firmware-images:`here <master:/>`
 
-    .. figure:: scopy23.jpg
+  .. figure:: scopy23.jpg
 
--   Follow the procedure indicated
-    `here <https://github.com/analogdevicesinc/max32625pico-firmware-images#how-to-update-the-firmware>`__
-    to load the new firmware.
+- Follow the procedure indicated
+  :git-max32625pico-firmware-images:`here <master:#how-to-update-the-firmware+>`
+  to load the new firmware.
 
-**Step 2 - Connect the MAX32625PICO to the AD-PQMON-SL Board** 
+**Step 2 - Connect the MAX32625PICO to the AD-PQMON-SL Board**
 
--   Connect the Cortex Debug Cable to the :adi:`MAX32625PICO` 
-    with the connector key directed towards the outside of the board.
+- Connect the Cortex Debug Cable to the :adi:`MAX32625PICO`
+  with the connector key directed towards the outside of the board.
 
--   Connect the programmer to the board as shown in the following picture.
+- Connect the programmer to the board as shown in the following picture.
 
-    .. figure:: scopy24.jpg
+  .. figure:: scopy24.jpg
 
 **Step 3 - Power up the board by connecting the USB type C cable**
 
-    .. figure:: scopy25.jpg
+.. figure:: scopy25.jpg
 
 **Step 4 - Flashing the firmware to the AD-PQMON-SL**
 
--   If the :adi:`MAX32625PICO` is not connected to the PC USB port, connect it now.
--   Once connected, the DAPLINK should appear as a storage device on your PC.
+- If the :adi:`MAX32625PICO` is not connected to the PC USB port, connect it now.
+- Once connected, the DAPLINK should appear as a storage device on your PC.
 
-    .. figure:: scopy26.jpg
+  .. figure:: scopy26.jpg
+     :width: 300
 
--   Open the DAPLINK storage device.
--   Drag and drop the provided .hex file into the DAPLINK drive. 
-    The firmware will be written to the target MCU.
+- Open the DAPLINK storage device.
+- Drag and drop the provided .hex file into the DAPLINK drive.
+  The firmware will be written to the target MCU.
 
 Building the Project
 ~~~~~~~~~~~~~~~~~~~~~
@@ -300,7 +305,7 @@ pqlib_dir
 
 .. code-block::
 
-   |   libadi_pqlib_cm4_gcc.a
+    |  libadi_pqlib_cm4_gcc.a
     └───include
         |   ade9430.h
         |   adi_pqlib_debug.h

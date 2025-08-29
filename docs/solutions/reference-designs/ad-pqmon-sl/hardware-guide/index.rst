@@ -1,5 +1,7 @@
+.. _ad-pqmon-sl hardware-guide:
+
 Hardware User Guide
-====================
+===================
 
 Introduction
 ------------
@@ -31,15 +33,15 @@ library.
 
 .. figure:: main_components_3.jpg
 
-  AD-PQMON-SL Main Components
+   AD-PQMON-SL Main Components
 
 Front-end
 ---------
 
 .. figure:: input_stage.jpg
-  :width: 600px
+   :width: 600px
 
-  AD-PQMON-SL Input Stage
+   AD-PQMON-SL Input Stage
 
 The :adi:`AD-PQMON-SL` uses all seven second order Σ-Δ ADCs of the :adi:`ADE9430`. 
 There are 4 current inputs and 3 voltage ones that can be seen in the following image. 
@@ -57,7 +59,9 @@ replaced with the new values. The board is populated with 5.1 Ω resistances,
 resulting a current transfer function for a 3000:1 current transformer ratio
 equal with:
 
-*10.2 / 3000 = 0.0034 V rms/ A rms*
+.. math::
+
+   10.2 / 3000 = 0.0034 V rms/ A rms
 
 The current gain in this case will be *3000 / 10.2 = 294.11* (the default value
 in the firmware). If the burden resistances are changed the value of the current
@@ -67,17 +71,19 @@ For the voltage input the voltage gain is computed considering the upper
 resistance from the divider approximately 1 MΩ and the lower resistance equal
 with 1 kΩ resulting a value of 1001. The voltage transfer function is:
 
-*(1 / (1000 + 1)) = 0.001 V rms*
+.. math::
+
+   (1 / (1000 + 1)) = 0.001 V rms
 
 .. figure:: burden_resistors.jpg
-  :width: 400px
+   :width: 400px
 
-  Burden Resistors for Current Transformers
+   Burden Resistors for Current Transformers
 
 .. figure:: current_transformer.jpg
-  :width: 400px
+   :width: 400px
 
-  Current Transformer Connection
+   Current Transformer Connection
 
 Power Supply
 ------------
@@ -97,7 +103,7 @@ Isolation
 
 .. figure:: isolation_barrier.jpg
 
-  AD-PQMON-SL Isolation Barrier
+   AD-PQMON-SL Isolation Barrier
 
 The solution has an on-board :adi:`ADuM6424A` Quad-Channel Isolator with 
 Integrated DC-to-DC Converter. This DC-DC converter is used to supply all the 
@@ -116,9 +122,9 @@ There are 8 LEDs on the :adi:`PQMON <AD-PQMON-SL>` motherboard. Five of them
 are on the ADE side and three on the isolated side. 
 
 .. figure:: ade-leds.jpg
-  :width: 400px
+   :width: 400px
 
-  LEDs on the ADE side
+   LEDs on the ADE side
 
 The five on the ADE side are connected as follows:
 
@@ -129,9 +135,9 @@ The five on the ADE side are connected as follows:
 - LED5 - IRQ1 ADE
 
 .. figure:: mcu_leds.jpg
-  :width: 400px
+   :width: 400px
 
-  LEDs on the MCU side
+   LEDs on the MCU side
 
 The three on the MCU side are connected as:
 
@@ -144,7 +150,7 @@ Daughter Board Expansion
 
 .. figure:: daughter_board.jpg 
 
-  AD-PQMON-SL with Daughter Board
+   AD-PQMON-SL with Daughter Board
 
 The add-on board includes a standalone interface (a 64 x 4 display, 2 LEDs,
 and 5 buttons), an SD card for long time data logging, several
@@ -175,14 +181,14 @@ be seen in the following images:
 
 .. figure:: board.jpg
 
-  AD-PQMON-SL Board for Single Phase Testing
+   AD-PQMON-SL Board for Single Phase Testing
 
 A block schematic of the setup is provided in the following image.
 
 .. figure:: single_phase_block_schematic.jpg
-  :width: 600px
+   :width: 600px
 
-  Single Phase Block Schematic
+   Single Phase Block Schematic
 
 An example of a cable assembly that replicates the block schematic connections
 is presented in the following image. With this cable, tests can be made using
@@ -190,13 +196,13 @@ different loads.
 
 .. figure:: cable_single_phase.jpg
 
-  Cable Assembly for Single Phase Testing
+   Cable Assembly for Single Phase Testing
 
 The cable is connected to the board as shown in the following image.
 
 .. figure:: single_phase_board_connection.jpg
 
-  Single Phase Board Connection
+   Single Phase Board Connection
 
 Setup for Testing All Channels Using a Single-Phase Input
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -206,7 +212,7 @@ following setup can be used.
 
 .. figure:: single_phase_all_inputs.jpg
 
-  Single Phase Setup for Testing All Inputs
+   Single Phase Setup for Testing All Inputs
 
 The mains voltage can also be connected to the load if a switch with more poles
 is used. With this setup one can observe the influence of the input power supply
