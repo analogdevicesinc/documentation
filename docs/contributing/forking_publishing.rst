@@ -73,9 +73,14 @@ Fork
 
 Fork the *analogdevicesinc/documentation* repo on your account.
 
-| **Enable the workflows** on the forked repo at *github.com/<your_user>/documentation/actions*
-  by clicking the green button
-| "I understand my workflows, go ahead and enable them".
+**Enable the workflows** on the forked repo at *github.com/<your_user>/documentation/actions*
+by clicking the :green:`green button` "I understand my workflows, go ahead and enable them".
+
+.. caution::
+
+   If you forked all branches, the :green:`green button` **will** be hidden by
+   the ``pages build and deployment`` run. You **need** to delete all runs from
+   the Actions tab to get the :green:`green button` again.
 
 Ensure git-lfs is installed with:
 
@@ -459,10 +464,9 @@ If you don't care about this file at the moment, just ``--force`` your way out.
 Pull request permission
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-When a user creates a pull request, they temporarily grant write permission
-for the removal of branches containing commits.
-However, this does not extend to LFS.
-As such, pushing LFS artifacts to their remote will result in:
+When a user creates a pull request, they temporarily grant write permission for
+the removal of branches containing commits. However, this does not extend to
+LFS:
 
 .. shell::
    :no-path:
@@ -470,6 +474,20 @@ As such, pushing LFS artifacts to their remote will result in:
    $git push contributor
     error: Authentication error: Authentication required: You must have push access to verify locks
     error: failed to push some refs to 'https://github.com/<contributor>/documentation.git'
+
+If you **didn't** touch any LFS files, you can just skip the verification:
+
+.. shell::
+
+   $git push contributor --no-verify
+    Writing objects: 100% (8/8), 1.08 KiB | 1.08 MiB/s, done.
+    Total 8 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0)
+    To https://github.com/contributor/documentation.git
+       21s72b2..1b31311  branch-name -> branch-name
+
+But if you did add **new** or **modified** LFS artifacts, the push will fail:
+
+.. shell::
 
    $git push contributor --no-verify
     Writing objects: 100% (8/8), 1.08 KiB | 1.08 MiB/s, done.
@@ -480,17 +498,19 @@ As such, pushing LFS artifacts to their remote will result in:
     remote: Try to push them with 'git lfs push --all'.
     To https://github.com/<contributor>/documentation.git
 
+
 As a reviewer, this gets on the way and there is no straightforward
 solution beyond not pushing commits with new LFS artifacts, or awkwardly requesting
 contributor permissions to their repository.
 
-If you wish to add new LFS artifacts, as a reviewer, simply merge the PR and commit to main.
+If you wish to add new LFS artifacts, as a reviewer, simply merge the PR and commit to the
+further changes.
 If the pull request is complex, you can push to a new branch, work on it, and
 once both parties are satisfied, close the original PR without merging, merging
 the branch onto the main remote instead.
 
-But if you **don't** want to touch any LFS file and are only rebasing, you can temporarily
-disable lfs, work, push, and enable again, for example:
+For rebasing, if you **won't** touch any LFS file, you can temporarily
+disable lfs, work, push, and enable again:
 
 .. shell::
 
@@ -502,10 +522,10 @@ disable lfs, work, push, and enable again, for example:
    # Work, work, work...
    $git rebase -i @~20
    # Push even to a contributor's fork with an open PR
-   $git push contributor branch-name:branch-name
-    Enumerating objects: 6, done.
-    Writing objects: 100% (4/4), 768 bytes | 768.00 KiB/s, done.
-    To https://github.com/contributor/documentation.git
-       21s72b2..1b31311  branch-name -> branch-name
    # Re-install lfs
    $git lfs install --skip-smudge
+   $git push contributor --no-verify --force
+    Writing objects: 100% (4/4), 768 bytes | 768.00 KiB/s, done.
+    Total 16 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
+    To https://github.com/contributor/documentation.git
+       21s72b2..1b31311  branch-name -> branch-name
