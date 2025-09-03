@@ -74,7 +74,7 @@ The AD-SWIOT1L-SL firmware is based on ADI’s open-source no-OS framework. It i
 for all the components in the system as well as example applications enabling connectivity via the 10BASE-T1L 
 interface for system configuration and data transfer.
 
-Getting started with AD-SWIOT1L-SL
+Getting Started with AD-SWIOT1L-SL
 ----------------------------------
 Depending on who you are, and what you want to do, you may have different needs, and different wants.
 Based on your goals while using the AD-SWIOT1L-SL board, you may be interested in the following quickstart guides: 
