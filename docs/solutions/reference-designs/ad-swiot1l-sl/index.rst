@@ -1,5 +1,5 @@
-AD-SWIOT1L-SL
-=============
+Getting Started with AD-SWIOT1L-SL
+==================================
 
 Software-configurable Analog and Digital I/O with 10BASE-T1L Evaluation and Development Platform
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -44,6 +44,12 @@ Package Contents
 The development kit is delivered with a set of accessories required to put the
 system together and get it up and running in no time.
 
+.. figure:: swiot1l_kit_v1.jpg
+   :align: left
+   :width: 600 px
+
+   AD-SWIOT1L-SL Package Contents
+
 This is what you’ll find in the development kit box:
 
 - 1 x :adi:`AD-SWIOT1L-SL` board with enclosure
@@ -64,16 +70,24 @@ Application Development
    :width: 300 px
    :align: right
 
-The AD-SWIOT1L-SL firmware is based on ADI’s open-source no-OS framework. It
-includes the bare-metal device drivers for all the components in the system as
-well as example applications enabling connectivity via the 10BASE-T1L interface
-for system configuration and data transfer.
+The AD-SWIOT1L-SL firmware is based on ADI’s open-source no-OS framework. It includes the bare-metal device drivers 
+for all the components in the system as well as example applications enabling connectivity via the 10BASE-T1L 
+interface for system configuration and data transfer.
 
-.. admonition:: Download
+Getting started with AD-SWIOT1L-SL
+----------------------------------
+Depending on who you are, and what you want to do, you may have different needs, and different wants.
+Based on your goals while using the AD-SWIOT1L-SL board, you may be interested in the following quickstart guides: 
 
-   :git-no-OS:`AD-SWIOT1L-SL Firmware Source Code and User Guide <projects/swiot1l>`
+#. `Interact with AD-SWIOT1L-SL using Scopy <https://analogdevicesinc.github.io/scopy/plugins/swiot1l/index.html>`_
+#. `Program and debug AD-SWIOT1L-SL application code <https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html>`_
+   
+   - A step-by-step guide to properly setup and configure your AD-SWIOT1L-SL system
+#. `Program and debug AD-SWIOT1L-SL firmware <https://github.com/analogdevicesinc/no-OS/tree/main/projects/swiot1l>`_
+   
+   - Detailed information about programming and debugging the system
 
-User Guides
+User guides
 -----------
 
 .. toctree::
