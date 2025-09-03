@@ -64,8 +64,8 @@ The following is a list of items needed in order to replicate this demo.
 
 **Software**
 
-  - :git-repo:`AduCM3029_demo_cn0503 demo application <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0503>`
-  - :adi:`CrossCore Embedded Studio (2.8.0 or higher) </resources/evaluation-hardware-and-software/embedded-development-software/adswt-cces.html>`
+  - :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0503 demo application <projects/ADuCM3029_demo_cn0503>`
+  - :adi:`CrossCore Embedded Studio (2.8.0 or higher) <resources/evaluation-hardware-and-software/embedded-development-software/adswt-cces.html>`
   - `ADuCM302x DFP (3.2.0 or higher) <https://www.keil.arm.com/packs/aducm302x_dfp-analogdevices/boards/>`_
   - :dokuwiki:`ADICUP3029 BSP (1.1.0 or higher) </resources/eval/user-guides/eval-adicup3029/software/adicup3029>`
   - Serial Terminal Program such as Putty or Tera Term
@@ -209,10 +209,10 @@ The software for the **ADuCM3029_demo_cn0503** can be found here:
 .. admonition:: Download
 
    Prebuilt CN0503 Hex File :
-   :git-repo:`AduCM3029_demo_cn0503.hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0503.hex>`
+   :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0503.hex <releases/download/Latest/ADuCM3029_demo_cn0503.hex+>`
 
    Complete CN0503 Source Files :
-   :git-repo:`AduCM3029_demo_cn0503 Source Code <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0503>`
+   :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0503 Source Code <EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0503+>`
 
 How to Use the Tools
 --------------------
