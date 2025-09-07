@@ -1,0 +1,8 @@
+Characteristic,Condition,Value
+Port Voltage (VPORT),At Ethernet Port,37 VDC to 57 VDC
+Auxiliary Voltage (VAUX),From AUX+ to AUX- terminals,37 VDC to 57 VDC
+Output Voltage (VOUT),"VPORT = 54 V, IOUT = 100 mA to 2 A",12.0 V ±5%
+Max Output Current (IOUTMAX),VPORT = 54 V,2 ADC
+Output Regulation,"VPORT = 54 V, 0% to 100% of IOUT",± 0.30% of VOUT(Typ.)
+Load Transient Response,Load step from 25% to 100%,±5%
+Efficiency,"VPORT = 54 V, IOUT = 2 A",85.4% (Typ.)
