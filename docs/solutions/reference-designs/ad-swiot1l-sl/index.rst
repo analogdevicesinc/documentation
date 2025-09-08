@@ -4,32 +4,34 @@ AD-SWIOT1L-SL
 Software-configurable Analog and Digital I/O with 10BASE-T1L Evaluation and Development Platform
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
 Introduction
 ------------
 
-.. figure:: ad-swiot1l-sl_angle-web.jpg
-   :align: right
-   :width: 400 px
-
-   AD-SWIOT1L-SL Development Platform
-
-The :adi:`AD-SWIOT1L-SL` is a complete hardware and software platform for prototyping intelligent,
-secure, network-capable field devices, with applications in factory automation,
-process control, and intelligent buildings. Some of the main features and
-benefits include:
+The :adi:`AD-SWIOT1L-SL` is a complete hardware and software platform for
+prototyping intelligent, secure, network-capable field devices, with
+applications in factory automation, process control, and intelligent buildings.
+Some of the main features and benefits include:
 
 - Ultimate flexibility in I/O interface configurability through software
 - Embedded processing for implementing self-capable edge devices
-- Built-in security for root-of-trust, mutual authentication, data confidentiality and integrity, secure boot, and secure communications
+- Built-in security for root-of-trust, mutual authentication, data
+  confidentiality and integrity, secure boot, and secure communications
 - Long-range single-pair 10BASE-T1L Ethernet interface
-- Power delivery via the 10BASE-T1L interface or from a field supply enabling both low and high power applications
+- Power delivery via the 10BASE-T1L interface or from a field supply enabling
+  both low and high power applications
 - Fully isolated design for safe operation
 - Industry standard form factor compatible with DIN rail mounts
+
+.. figure:: ad-swiot1l-sl_angle-web.jpg
+   :width: 400 px
+
+   :adi:`AD-SWIOT1L-SL` Development Platform
 
 .. figure:: swiot1l_block_diagram.png
    :width: 800 px
 
-   AD-SWIOT1L-SL Simplifed Block Diagram
+   :adi:`AD-SWIOT1L-SL` Simplifed Block Diagram
 
 
 Specifications
@@ -37,6 +39,7 @@ Specifications
 
 .. csv-table::
    :file: specifications.csv
+
 
 Package Contents
 ----------------
@@ -57,23 +60,46 @@ The AD-SWIOT1L-SL comes with pre-programmed firmware enabling the system to
 interface with a PC application for system configuration, control, and data
 acquisition over the 10BASE-T1L interface.
 
+.. figure:: swiot1l_kit_v1.jpg
+   :width: 600 px
+
+   :adi:`AD-SWIOT1L-SL` Package Contents
+
+
 Application Development
 -----------------------
 
-.. figure:: sw_block_diagram.png
-   :width: 300 px
-   :align: right
-
 The AD-SWIOT1L-SL firmware is based on ADI’s open-source no-OS framework. It
-includes the bare-metal device drivers for all the components in the system as
+includes the bare-metal device drivers for all the components in the system, as
 well as example applications enabling connectivity via the 10BASE-T1L interface
 for system configuration and data transfer.
 
-.. admonition:: Download
+.. figure:: sw_block_diagram.png
+   :width: 300 px
 
-   :git-no-OS:`AD-SWIOT1L-SL Firmware Source Code and User Guide <projects/swiot1l>`
+   :adi:`AD-SWIOT1L-SL` Software Block Diagram
 
-User Guides
+
+Getting Started with AD-SWIOT1L-SL
+----------------------------------
+
+Depending on your specific use case for the AD-SWIOT1L-SL platform, these guickstart guides may serve as valuable resources to assist you in navigating your project:
+
+#. `Interact with AD-SWIOT1L-SL using Scopy
+   <https://analogdevicesinc.github.io/scopy/plugins/swiot1l/index.html>`_
+#. `Program and debug AD-SWIOT1L-SL application code
+   <https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html>`_
+
+   - A step-by-step guide to properly setup and configure your AD-SWIOT1L-SL
+     system
+
+#. `Program and debug AD-SWIOT1L-SL firmware
+   <https://github.com/analogdevicesinc/no-OS/tree/main/projects/swiot1l>`_
+
+   - Detailed information about programming and debugging the system
+
+
+User guides
 -----------
 
 .. toctree::
@@ -81,6 +107,7 @@ User Guides
    :glob:
 
    */index
+
 
 Help and Support
 ----------------
