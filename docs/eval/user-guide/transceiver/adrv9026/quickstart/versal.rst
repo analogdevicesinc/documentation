@@ -24,8 +24,7 @@ Required Software
 - **Since the Versal support is not part of the latest release**, you must update
   the BOOT partition of the SDCARD with the latest built files from main
   branches that can be downloaded from here: :download:`Boot files <adrv9026_vck190_boot.tar.gz>`
-
-- A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
+- An UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
 - System controller image
 
   - :xilinx:`Image <member/forms/download/design-license-xef.html?filename=sc2.2_01.img.zip>`
@@ -44,7 +43,7 @@ Testing
 -------------------------------------------------------------------------------
 
 .. image:: vck190.jpg
-   :width: 900px
+   :width: 900
 
 - Connect the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` FMC board to the
   FPGA carrier FMC+ FMCP1 socket.
@@ -55,48 +54,48 @@ Testing
   OFF,OFF,OFF,ON as seen in the below picture).
 
 .. image:: vck190_sw1.jpg
-   :width: 200px
+   :width: 200
 
 - Configure System Controller for SD BOOT (mode SW11[4:1] switch in the
   position OFF,OFF,OFF,ON as seen in the below picture).
 
 .. image:: vck190_sw11.jpg
-   :width: 200px
+   :width: 200
 
 - Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access
-  Board Evaluation & Management Tool (BEAM).
-- Turn on the power switch on the FPGA board.
+  Board Evaluation & Management Tool (BEAM);
+- Turn on the power switch on the FPGA board;
 - Observe kernel and serial console messages on your terminal, both the ACAP
   UART interface and the System controller. (use the first ttyUSB or COM port
   registered for the ACAP UART interface, and try  the other 2 to find the one
-  for System Controller)
+  for System Controller);
 - On the System Controller console, a BEAM Tool Web Address should be assigned.
-  Go to this web address to set VADJ_FMC to 1.5V.
+  Go to this web address to set VADJ_FMC to 1.5V;
 - To change VADJ_FMC On BEAM, click 'Test The Board'>'Board Settings'>'FMC'.
   Then on 'Set VADJ_FMC', select 1.5V and click 'Set'.
 
 .. image:: beam-home.jpg
-   :width: 1000px
+   :width: 1000
 
 .. image:: beam-board-settings.jpg
-   :width: 1000px
+   :width: 1000
 
 .. image:: beam-set-vadj.jpg
-   :width: 1000px
+   :width: 1000
 
 - On the ACAP UART interface console, reboot the system. After reboot,
   adrv9026 devices should be present.
 
 .. note::
 
-   Versal based carriers (vck190) might not boot with released image.
+   Versal-based carriers (:xilinx:`VCK190`) might not boot with released image.
 
-   The problem appears because some revisions of VCK190 or VPK may have the
-   date/time set randomly or in 64bit format. To make them boot, it is enough
-   to overwrite the date, following next steps:
+   The problem appears because some revisions of :xilinx:`VCK190` or
+   :xilinx:`VPK180` may have the date/time set randomly or in 64bit format.
+   To make them boot, it is enough to overwrite the date, following next steps:
 
    - when booting the board, hit any key to go into u-boot menu
-   - type mw F12A0000 6613DE3D (this value is hexa of the date from Unix
+   - type ``mw F12A0000 6613DE3D`` (this value is hexa of the date from Unix
      Converter webpage)
    - continue booting
 

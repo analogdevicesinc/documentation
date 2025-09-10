@@ -26,7 +26,6 @@ and massive multiple in/multiple out (MIMO) base stations.
    prerequisites
    quickstart/index
 
-
 Recommendations
 -------------------------------------------------------------------------------
 
@@ -59,48 +58,47 @@ Table of Contents
 
 #. Design with the ADRV9026/ADRV9029
 
-   #. :ref:`adrv9026 blockdiagram`
+   - :ref:`adrv9026 blockdiagram`
 
-      #. :adi:`ADRV9026 Product page <ADRV9026>`
-      #. :adi:`ADRV9029 Product page <ADRV9029>`
-      #. :adi:`Full data sheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
+     - :adi:`ADRV9026 product page <ADRV9026>`
+     - :adi:`ADRV9029 product page <ADRV9029>`
+     - :adi:`Full data sheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
 
-   #. Hardware in the Loop / How to design your own custom BaseBand
+   - Hardware in the Loop / How to design your own custom BaseBand
 
-      #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
-      #. :dokuwiki:`Transceiver Toolbox <resources/tools-software/transceiver-toolbox>`
+     - :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+     - :dokuwiki:`Transceiver Toolbox <resources/tools-software/transceiver-toolbox>`
 
-   #. Design a custom ADRV9026/ADRV9029-based platform
+   - Resources for designing a custom ADRV9026/ADRV9029-based platform software
 
-      #. Linux software
+     #. For Linux software:
 
-         #. :dokuwiki:`ADRV9026/ADRV9029 Linux Device Driver <resources/tools-software/linux-drivers/iio-transceiver/adrv9025>`
+        #. About the device driver:
 
-            #. :dokuwiki:`ADRV9026/ADRV9029 Device Driver Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9025-customization>`
-            #. :dokuwiki:`Customizing the devicetree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
+           - :dokuwiki:`JESD204B Transmit Linux driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+           - :dokuwiki:`JESD204B Receive Linux driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+           - :dokuwiki:`JESD204B/C AXI_ADXCVR High-speed transceivers Linux driver <resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+           - :dokuwiki:`AXI ADC HDL Linux driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+           - :dokuwiki:`AXI DAC HDL Linux driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+           - :dokuwiki:`AD9528 Low Jitter Clock Generator Linux driver <resources/tools-software/linux-drivers/iio-pll/ad9528>`
+           - :dokuwiki:`AXI-DMAC DMA Controller Linux driver <resources/tools-software/linux-drivers/axi-dmac>`
+           - :dokuwiki:`ADRV9026/ADRV9029 Linux device driver <resources/tools-software/linux-drivers/iio-transceiver/adrv9025>`
+             and :dokuwiki:`how to customize it <resources/tools-software/linux-drivers/iio-transceiver/adrv9025-customization>`
 
-         #. :dokuwiki:`JESD204 (FSM) Interface Linux Kernel Framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
-         #. :dokuwiki:`AD9528 Low Jitter Clock Generator Linux Driver <resources/tools-software/linux-drivers/iio-pll/ad9528>`
-         #. :dokuwiki:`AXI-DMAC DMA Controller Linux Driver <resources/tools-software/linux-drivers/axi-dmac>`
-         #. :dokuwiki:`JESD204B Transmit Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+        #. About the device tree:
 
-            #. :dokuwiki:`JESD204B Status Utility <resources/tools-software/linux-software/jesd_status>`
+           - :dokuwiki:`Customizing the device tree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
 
-         #. :dokuwiki:`JESD204B Receive Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+        #. About the JESD204 utilities:
 
-            #. :dokuwiki:`JESD204B Status Utility <resources/tools-software/linux-software/jesd_status>`
+           - :dokuwiki:`JESD204 (FSM) interface Linux Kernel framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+           - :dokuwiki:`JESD204B status utility <resources/tools-software/linux-software/jesd_status>`
+           - :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
 
-         #. :dokuwiki:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+     #. :dokuwiki:`Changing the VCXO frequency and updating the default RF Transceiver Profile <resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
+     #. :external+hdl:ref:`HDL reference design <adrv9026>` which you must use in your FPGA.
 
-            #. :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
-
-         #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
-         #. :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
-
-      #. :dokuwiki:`Changing the VCXO frequency and updating the default RF Transceiver Profile <resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
-      #. :external+hdl:ref:`HDL Reference Design <adrv9026>` which you must use in your FPGA.
-
-#. :dokuwiki:`Additional Documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
+#. :dokuwiki:`Additional documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 #. :ref:`Help and Support <help-and-support>`
 
 .. _adrv9026 blockdiagram:
@@ -121,13 +119,13 @@ Software Defined Radio using the Linux IIO Framework
 ADI Articles
 -------------------------------------------------------------------------------
 
-#. Four Quick Steps to Production: Using Model-Based Design for
-Software-Defined Radio
+Four Quick Steps to Production: Using Model-Based Design for Software-Defined
+Radio:
 
-   #. :adi:`Part 1 - The Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
-   #. :adi:`Part 2 - Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
-   #. :adi:`Part 3 - Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`
-   #. :adi:`Part 4 - Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
+#. :adi:`Part 1 - The Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
+#. :adi:`Part 2 - Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
+#. :adi:`Part 3 - Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`
+#. :adi:`Part 4 - Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
 
 MathWorks Webinars
 -------------------------------------------------------------------------------
