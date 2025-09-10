@@ -1,17 +1,17 @@
 .. _adrv9026 quickstart:
 
-Quickstart
+Quick start
 ===============================================================================
 
-The Quick Start Guides provide a simple step by step instruction on how to do
+The Quick start guides provide simple step by step instructions on how to do
 an initial system setup for the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>`
-boards on various FPGA development boards. They will discuss how to program the
-bitstream, run a no-OS program or boot a Linux distribution.
+boards on various FPGA development boards. In these guides, we will discuss how
+to program the bitstream, run a no-OS program or boot a Linux distribution.
 
 .. toctree::
 
-   ZCU102 <zynqmp>
    VCK190 <versal>
+   ZCU102 <zynqmp>
 
 .. _adrv9026 carriers:
 
@@ -20,6 +20,7 @@ Supported carriers
 
 The :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>`, is, by definition a "FPGA
 mezzanine card" (FMC); that means it needs a carrier to plug into.
+
 The carriers we support are:
 
 .. list-table::
@@ -94,9 +95,9 @@ The supported OS are:
 Hardware Setup
 -------------------------------------------------------------------------------
 
-In most carriers, the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` boards
+On most carriers, the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` boards
 connects to the HPC1 connector (unless otherwise noted). The carrier setup
-requires power, UART (115200), ethernet (Linux), HDMI (if available) and/or
+requires power, UART (115200), Ethernet (Linux), HDMI (if available) and/or
 JTAG (no-OS) connections. A few typical setups are shown below.
 
 ZCU102 + EVAL-ADRV9026/ADRV9029

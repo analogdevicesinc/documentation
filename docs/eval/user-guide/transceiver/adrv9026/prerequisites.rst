@@ -16,10 +16,10 @@ Hardware prerequisites
    ADRV9026/ADRV9029. Our recommended carriers (the ones we use all the time)
    are either:
 
-   - The :xilinx:`AMD Xilinx ZCU102 <ZCU102>`. The fabric on this device is
+   - The AMD Xilinx ZCU102 :xilinx:`ZCU102`. The fabric on this device is
      large, and if you are looking at targeting - this is the recommended
      option.
-   - The :xilinx:`AMD Xilinx VCK190 <VCK190>`. The fabric on this device is much
+   - The AMD Xilinx :xilinx:`VCK190`. The fabric on this device is much
      larger.
    - There are a few more boards, which do work, but are currently not
      supported by us. The experience with the fabric-only solutions is very close to
@@ -31,7 +31,7 @@ Hardware prerequisites
 
    #. for the ARM/FPGA SoC platforms, this normally includes:
 
-      - DisplayPort monitor
+      - HDMI or DisplayPort monitor
       - USB Keyboard
       - USB Mouse
 
