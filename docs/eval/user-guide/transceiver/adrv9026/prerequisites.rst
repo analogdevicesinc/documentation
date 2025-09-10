@@ -11,10 +11,7 @@ Hardware prerequisites
 
 #. The ADRV9026/ADRV9029-based evaluation board:
    :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>`
-#. A carrier platform. :adi:`ADI <>` does not offer these boards for sale or loan;
-   getting one yourself is the normal part of development or evaluation of the
-   ADRV9026/ADRV9029. Our recommended carriers (the ones we use all the time)
-   are either:
+#. An FPGA carrier platform. Our recommended ones are either:
 
    - The AMD Xilinx ZCU102 :xilinx:`ZCU102`. The fabric on this device is
      large, and if you are looking at targeting - this is the recommended
@@ -22,12 +19,12 @@ Hardware prerequisites
    - The AMD Xilinx :xilinx:`VCK190`. The fabric on this device is much
      larger.
    - There are a few more boards, which do work, but are currently not
-     supported by us. The experience with the fabric-only solutions is very close to
-     the ARM/FPGA SoC based solutions, but the GUI runs on a host PC (Windows
-     or Linux).
+     supported by us. The experience with the fabric-only solutions is very
+     close to the ARM/FPGA SoC based solutions, but the GUI runs on a host PC
+     (Windows or Linux).
    - :ref:`See the supported carriers <adrv9026 carriers>`.
 
-#. Some way to interact with the platform:
+#. Some way to interact with the FPGA platform:
 
    #. for the ARM/FPGA SoC platforms, this normally includes:
 
@@ -50,4 +47,12 @@ Hardware prerequisites
 Software prerequisites
 -------------------------------------------------------------------------------
 
-#. IIO Oscilloscope
+Normally, for basic functionalities regarding visualizing the data received
+from the FPGA, we use the following:
+
+#. :external+scopy:doc:`Scopy <index>` v2.0 or later (must contain the IIO plugin)
+
+.. note::
+
+   :adi:`ADI <>` does not offer FPGA carrier platforms for sale or loan; getting
+   one yourself is the normal part of development or evaluation.

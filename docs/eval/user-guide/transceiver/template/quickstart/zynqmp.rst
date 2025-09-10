@@ -31,15 +31,15 @@ Instructions on how to manually build the boot files from source can be found
 here:
 
 - :ref:`linux-kernel zynqmp`
-- :external+hdl:ref:`adrv9026` build documentation. More HDL build details at
+- :external+hdl:ref:`adrv9026`. More HDL build details at
   :external+hdl:ref:`build_hdl`.
 
 Required Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- SD Card 16GB imaged with :external+adi-kuiper-gen:doc:`Kuiper <index>`
-  (check out that guide on how to do it, then come back to this section)
-- A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
+- SD card imaged with ADI Kuiper Linux (see :ref:`kuiper sdcard` on
+  how to do it, then come back to this section)
+- An UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
 
 Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -962,13 +962,13 @@ To see the EEPROM specifications, run:
 
 .. shell::
 
-   $fru-dump -b /sys/bus/i2c/devices/15-0050/eeprom
+   $fru-dump -b /sys/bus/i2c/devices/15-0050/eeprom 
     read 256 bytes from /sys/bus/i2c/devices/15-0050/eeprom
     Date of Man   : Wed Oct 25 12:20:00 2017
     Manufacturer  : Analog Devices
     Product Name  : ADRV9029 CE Board
     Serial Number : 031621035
-    Part Number   : ADRV9029-MB/PCBZ
+    Part Number   : ADRV9029-MB/PCBZ 
     FRU File ID   : Empty Field
     PCB Rev    : 01C
     PCB ID     : 9029CE01C
@@ -1081,7 +1081,7 @@ Follow the steps in this order, to avoid damaging the components:
 #. Connect the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` FMC board to the
    FPGA carrier **HPC1** FMC1 socket
 #. Configure :xilinx:`ZCU102` for JTAG boot mode (mode SW6[4:1] switch in
-   the position **ON,ON,ON,ON** as seen in the below picture)
+   the position **** as seen in the below picture)
 #. Plug-in an Ethernet cable from your router/switch to the Ethernet port on
    the FPGA board
 #. Connect USB UART J83 (Micro USB) to your host PC
