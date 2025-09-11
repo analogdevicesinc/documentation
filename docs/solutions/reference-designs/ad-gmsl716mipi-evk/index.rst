@@ -8,10 +8,10 @@ Overview
 --------
 
 .. figure:: board_angle.jpg
-    :align: left 
-    :width: 400px
+   :align: left
+   :width: 400px
 
-    AD-GMSL716MIPI-EVK Board
+   AD-GMSL716MIPI-EVK Board
 
 The :adi:`AD-GMSL716MIPI-EVK` is a compact, cost-effective
 GMSL2 deserializer evaluation board that bridges GMSL2 serialized video signals
@@ -30,8 +30,6 @@ Key technical capabilities include support for up to 15-meter cable lengths,
 3Gbps or 6Gbps forward link rates, and bidirectional I2C communication for
 camera control. The board’s small form factor and mounting compatibility make it
 ideal for rapid prototyping and development of GMSL2 camera systems.
-
-\
 
 Features
 --------
@@ -61,9 +59,9 @@ System Architecture
 -------------------
 
 .. figure:: block_diagram.png
-    :width: 500px
-    
-    AD-GMSL716MIPI-EVK Simplified Block Diagram
+   :width: 500px
+
+   AD-GMSL716MIPI-EVK Simplified Block Diagram
 
 **Forward Path (Camera to SoC):**
 
@@ -117,7 +115,7 @@ Hardware Components and Connections
 
 .. figure:: connectors.png
 
-    AD-GMSL716MIPI-EVK Connectors and Indicators
+   AD-GMSL716MIPI-EVK Connectors and Indicators
 
 +-------------------+---------------------------------------------------------+
 | **DS1 LED**       | Indicates 5V USB-C input                                |
@@ -152,7 +150,7 @@ Equipment Needed
 
 .. figure:: Hardware-Setup.png
 
-    AD-GMSL716MIPI-EVK Hardware Setup
+   AD-GMSL716MIPI-EVK Hardware Setup
 
 Power System Verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -223,12 +221,12 @@ Design & Integration Files
 
 .. admonition:: Download
 
-    :download:`AD-GMSL716MIPI-EVK Design Support Package <ad-gmsl716mipi-evk-designsupport.zip>`
+   :download:`AD-GMSL716MIPI-EVK Design Support Package <ad-gmsl716mipi-evk-designsupport.zip>`
 
-    - Schematic
-    - PCB Layout
-    - Bill of Materials
-    - Allegro Project
+   - Schematic
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
 
 Help and Support
 ~~~~~~~~~~~~~~~~
