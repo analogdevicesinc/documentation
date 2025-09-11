@@ -1,39 +1,44 @@
-﻿LEDs,
-DS1,Power good
-DS2,User LED
-Buttons & Switches,
-S1,MAX32690 Reset
-S2,User Button
-S3,User switches
-S4,1: ADIN1110 SWPD_EN
-,2: ADIN1110 SPI_CFG0
-,3: ADIN1110 SPI_CFG1
-Jumper settings,
-P50,Position 1-2: Connect programmer SWD_RX to WiFi UART TX
-,Position 2-3: Connect programmer SWD_RX to MAX32690
-P55,Position 1-2: Connect programmer SWD_TX to WiFi UART RX
-,Position 2-3: Connect programmer SWD_RX to MAX32690
-P38,Connect WiFi UART TX to MAX32690
-P56,Connect WiFi UART RX to MAX32690
-P51,Position 1-2: Set programmer voltage to 3V3 (normal operation mode)
-,Position 2-3: Set programmer voltage to 1V8 (WiFi chip programming)
-Connectors,
-P1,10BASE-T1L
-P10,USB-C Power & Data
-P14,External Power 5V-28V
-P9,SWD Programmer
-P11,SPOE Shield ISO GND
-P16,SPOE Shield PI+
-P17,SPOE Shield PI-
-P53,SPOE Shield PI+
-P54,SPOE Shield PI-
-P12,SPOE Shield Data TRX N
-P15,SPOE Shield Data TRX P
-P8,SPI PMOD
-P13,I2C PMOD
-P2,Arduino Connector - Power
-P3,Arduino Connector - Analog
-P4,Arduino Connector - SPI / I2S
-P5,Arduino Connector - SPI & I2C
-P6,Arduino Connector - UART
-P7,Arduino Connector - GPIO & CAN
+﻿LEDs              , 
+DS1               , Power good
+DS2               , User LED
+Buttons & Switches, 
+S1                , MAX32690 Reset
+S2                , User Button
+S3                , User switches
+S4                , 1: ADIN1110 SWPD_EN
+                  , 2: ADIN1110 SPI_CFG0
+                  , 3: ADIN1110 SPI_CFG1
+Jumper settings   , 
+P50               , Position 1-2: Connect programmer SWD_RX to WiFi UART TX
+                  , Position 2-3: Connect programmer SWD_RX to MAX32690
+P55               , Position 1-2: Connect programmer SWD_TX to WiFi UART RX
+                  , Position 2-3: Connect programmer SWD_RX to MAX32690
+P38               , Connect WiFi UART TX to MAX32690
+P56               , Connect WiFi UART RX to MAX32690
+P51               , Position 1-2: Set programmer voltage to 3V3 (normal operation mode)
+                  , Position 2-3: Set programmer voltage to 1V8 (WiFi chip programming)
+JP12              , Position 1-2: To use the Low Power UART0RX port for programming and debugging
+                  , Position 2-3: to use the normal UART0RX port for programming and debugging
+JP13              , Position 1-2: To use the Low Power UART0TX port for programming and debugging
+                  , Position 2-3: to use the normal UART0TX port for programming and debugging
+Connectors        , 
+P1                , 10BASE-T1L
+P10               , USB-C Power & Data
+P14               , External Power 5V-28V
+P9                , SWD Programmer
+P58               , RISC-V Programmer
+P11               , SPOE Shield ISO GND
+P16               , SPOE Shield PI+
+P17               , SPOE Shield PI-
+P53               , SPOE Shield PI+
+P54               , SPOE Shield PI-
+P12               , SPOE Shield Data TRX N
+P15               , SPOE Shield Data TRX P
+P8                , SPI PMOD
+P13               , I2C PMOD
+P2                , Arduino Connector - Power
+P3                , Arduino Connector - Analog
+P4                , Arduino Connector - SPI / I2S
+P5                , Arduino Connector - SPI & I2C
+P6                , Arduino Connector - UART
+P7                , Arduino Connector - GPIO & CAN

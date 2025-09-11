@@ -73,7 +73,7 @@ transfer.
 
 Hardware Components and Connections
 -----------------------------------
-
+.. attention:: TO BE REPLACED!
 .. figure:: apard32690_hw_components.png
 
     Hardware Components and Connections

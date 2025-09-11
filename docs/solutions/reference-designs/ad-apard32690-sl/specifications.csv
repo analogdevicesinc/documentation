@@ -1,13 +1,13 @@
-﻿Computing Resources,
-CPU,MAX32690 Ultralow Power ARM Cortex-M4 with FPU-Based Microcontroller (MCU) with 3 MB Flash and 1 MB SRAM
-Memory,1 Gb RAM
-Storage,64 Mb QSPI Flash
-Security,MAXQ1065 Ultralow Power Cryptographic Controller with ChipDNATM
-Connectivity,
-Ethernet,"ADIN1110 Robust, Industrial, Low Power 10BASE-T1L Ethernet MAC-PHY"
-WiFi,"NINA-W102 - IEEE 802.11b, IEEE 802.11g, IEEE 802.11n"
-Bluetooth,Bluetooth 5.2 LE Radio
-USB,USB 2.0
-Power supply,
-External power,5V DC to 28V DC
-USB-C,"5 V at 3 A, without power negotiation"
+﻿Computing Resources, 
+CPU                , MAX32690 Ultralow Power ARM Cortex-M4 with FPU-Based Microcontroller (MCU) with 3 MB Flash and 1 MB SRAM
+Memory             , 1 Gb RAM
+Storage            , 64 Mb QSPI Flash
+Security           , MAXQ1065 Ultralow Power Cryptographic Controller with ChipDNATM
+Connectivity       , 
+Ethernet           , "ADIN1110 Robust, Industrial, Low Power 10BASE-T1L Ethernet MAC-PHY"
+WiFi               , "NINA-W102 - IEEE 802.11b, IEEE 802.11g, IEEE 802.11n"
+Bluetooth          , Bluetooth 5.2 LE Radio
+USB                , USB 2.0
+Power supply       , 
+External power     , 5V DC to 28V DC
+USB-C              , "5 V at 3 A, without power negotiation"
