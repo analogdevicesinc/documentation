@@ -127,7 +127,7 @@ The drivers source code are available at:
      - Documentation
    * - no-OS
      - :git-no-OS:`drivers/adc/ad405x`
-     - :external+no-OS:doc:`doc <drivers/ad405x>`
+     - :external+no-OS:doc:`doc <drivers/adc/ad405x>`
    * - Linux
      - :git-linux:`staging/ad4052:drivers/iio/adc/ad4052.c`
      - :ref:`doc <linux ad4052>`
