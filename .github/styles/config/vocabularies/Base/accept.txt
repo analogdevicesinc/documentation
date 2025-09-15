@@ -1,0 +1,4 @@
+ADI|adi
+[Dd]octools
+toctree
+docname
