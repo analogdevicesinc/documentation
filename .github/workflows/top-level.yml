@@ -35,6 +35,25 @@ jobs:
         name: html
         path: docs/_build/html
 
+  check-doc:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        lfs: 'false'
+
+    - name: Install pip packages
+      run: |
+        pip install docutils
+
+    - uses: errata-ai/vale-action@v2.1.1
+      with:
+        files: docs
+        fail_on_error: ${{ github.event_name == 'pull_request' }}
+        reporter: ${{ github.event_name == 'pull_request' && 'github-pr-check' || 'github-check' }}
+        filter_mode: ${{ github.event_name == 'pull_request' && 'added' || 'nofilter' }}
+
   deploy:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
