@@ -27,9 +27,9 @@ System Setup
 
    Connecting the :adi:`MAX32625PICO` Programmer
 
-.. raw:: html
-
-   <div style="clear: both;"></div>
+.. clear-content::
+   :side: both
+   :break:
 
 Software Setup
 --------------
