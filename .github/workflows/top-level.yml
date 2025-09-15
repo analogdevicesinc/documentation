@@ -52,7 +52,7 @@ jobs:
         files: docs
         fail_on_error: ${{ github.event_name == 'pull_request' }}
         reporter: ${{ github.event_name == 'pull_request' && 'github-pr-check' || 'github-check' }}
-        filter_mode: ${{ github.event_name == 'pull_request' && 'added' || 'nofilter' }}
+        filter_mode: ${{ github.event_name == 'pull_request' && 'added' || 'files' }}
 
   deploy:
     runs-on: ubuntu-latest
