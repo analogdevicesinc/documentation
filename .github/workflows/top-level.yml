@@ -43,16 +43,23 @@ jobs:
       with:
         lfs: 'false'
 
-    - name: Install pip packages
+    - name: Check writing
       run: |
-        pip install docutils
+        pip install docutils vale
+        vale sync
 
-    - uses: errata-ai/vale-action@v2.1.1
-      with:
-        files: docs
-        fail_on_error: ${{ github.event_name == 'pull_request' }}
-        reporter: ${{ github.event_name == 'pull_request' && 'github-pr-check' || 'github-check' }}
-        filter_mode: ${{ github.event_name == 'pull_request' && 'added' || 'file' }}
+        check_vale() {
+          files=$(git diff --diff-filter=ACM --no-renames --name-only @~..@ -- docs/**/*.rst)
+
+          [[ -z "$files" ]] && return
+          while read file; do
+            vale $file --output=JSON | \
+              jq -r 'to_entries[] | .key as $file | .value[] |
+              "::\(.Severity) file=\($file),line=\(.Line),col=\(.Span[0])::vale:\(.Check):\($file):\(.Line):\(.Span[0]) \(.Message)"'
+          done <<< "$files"
+        }
+
+        check_vale
 
   deploy:
     runs-on: ubuntu-latest
