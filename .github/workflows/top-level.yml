@@ -37,29 +37,23 @@ jobs:
 
   check-doc:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
 
     steps:
     - uses: actions/checkout@v4
       with:
         lfs: 'false'
 
-    - name: Check writing
+    - name: Install pip package
       run: |
-        pip install docutils vale
-        vale sync
+        pip install docutils
 
-        check_vale() {
-          files=$(git diff --diff-filter=ACM --no-renames --name-only @~..@ -- docs/**/*.rst)
-
-          [[ -z "$files" ]] && return
-          while read file; do
-            vale $file --output=JSON | \
-              jq -r 'to_entries[] | .key as $file | .value[] |
-              "::\(.Severity) file=\($file),line=\(.Line),col=\(.Span[0])::vale:\(.Check):\($file):\(.Line):\(.Span[0]) \(.Message)"'
-          done <<< "$files"
-        }
-
-        check_vale
+    - uses: errata-ai/vale-action@v2.1.1
+      with:
+        files: docs
+        reporter: github-pr-check
+        filter_mode: added
+        fail_on_error: false
 
   deploy:
     runs-on: ubuntu-latest
