@@ -191,7 +191,7 @@ With ``xsdb``/``xsct``:
         2  MicroBlaze Debug Module at USER2
            3  MicroBlaze #0 (Running)
    xsdb> targets 3
-   xsdb> dow simpleImage.kcu105_fmcdaq2
+   xsdb> dow simpleImage.kcu105_fmcdaq2.strip
    xsdb> con
    xsdb> disconnect
 
@@ -203,5 +203,5 @@ With ``xmd``:
 
    xmd> fpga -f system_top.bit
    xmd> connect mb mdm
-   xmd> dow simpleImage.vc707_fmcomms2-3
+   xmd> dow simpleImage.vc707_fmcomms2-3.strip
    xmd> run
