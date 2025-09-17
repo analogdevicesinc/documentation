@@ -1,3 +1,5 @@
+.. _ad-paarray3552r-sl:
+
 AD-PAARRAY3552R-SL
 ==================
 
@@ -9,22 +11,22 @@ Overview
 
 The :adi:`AD-PAARRAY3552R-SL` reference design provides
 biasing control and protection of Gallium Nitride (GaN) and Gallium Arsenide
-(GaAs) power amplifier (PA). It is designed for massive multiple input -
+(GaAs) power amplifier (PA). Designed for massive multiple input -
 multiple output (MIMO) and macro base station RF front-end applications.
 
 The system automatically manages the biasing sequence of GaN power amplifiers
 while continuously monitoring crucial parameters such voltages, currents, and
 temperatures.
 
-The core of this solution is the :adi:`AD3552R` high-speed, dual-channel, 
+The core of this solution is the :adi:`AD3552R` high-speed, dual-channel,
 16-bit DAC, which supports ultrafast sub-µs voltage settling time of GaN gates.
 
 It also features the :adi:`LTC7000`, a high-side NMOS static switch
 driver that adeptly handles key fault events such as overvoltage, overcurrent,
 and overtemperature.
 
-The on-board :adi:`MAX32666` ultralow power Arm Cortex-M4 microcontroller 
-oversees the biasing sequence, sensor management, and user interface. 
+The on-board :adi:`MAX32666` ultralow power Arm Cortex-M4 microcontroller
+oversees the biasing sequence, sensor management, and user interface.
 The firmware can be effortlessly updated via SWD, UART-bootloader,
 facilitating rapid prototyping and development.
 
@@ -140,17 +142,17 @@ The solution also comes with a pre-programmed firmware allowing the system to
 interface with a PC application for a system configuration, control, and data
 acquisition through serial interface.
 
-In order to update the firmware on the on-board MCU, the user needs to purchase
-the :adi:`MAX32625 PICO Evaluation Kit <MAX32625PICO>` separately.
+To update the firmware on the on-board MCU, the user needs to purchase the
+:adi:`MAX32625 PICO Evaluation Kit <MAX32625PICO>` separately.
 
 User Guides
 -----------
 
-Visit the AD-PAARRAY3552R-SL Software User Guide page to learn how to install 
+Visit the AD-PAARRAY3552R-SL Software User Guide page to learn how to install
 the firmware and use the application GUI
 
-For comprehensive details on hardware configuration, design files, 
-and usage instructions for the AD-PAARRAY3552R-SL, 
+For comprehensive details on hardware configuration, design files,
+and usage instructions for the AD-PAARRAY3552R-SL,
 refer to the AD-PAARRAY3552R-SL Hardware User Guide.
 
 .. toctree::

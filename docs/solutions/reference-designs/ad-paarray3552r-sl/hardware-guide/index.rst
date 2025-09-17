@@ -1,5 +1,5 @@
-..  _ad-paarray3552r-sl hardware-guide:
-   
+.. _ad-paarray3552r-sl hardware-guide:
+
 Hardware User Guide
 ====================
 
@@ -29,7 +29,7 @@ graphical user interface (GUI) for evaluation and further development.
 The system can be powered from an external +38V to +55V supply, making it
 suitable for applications requiring high current capabilities.
 
-Board Specifications 
+Board Specifications
 --------------------
 
 **Dimension:**
@@ -40,12 +40,13 @@ Board Specifications
 
 - PCB Material: FR4 ISOLA 370HR
 - No. of layers: 6
-   - Top Layer (Component, Signal Layer, 90 Ω differential)
-   - Ground Plane
-   - Signal Layer
-   - Power Plane
-   - Ground Plane
-   - Bottom Layer (Component, Signal Layer)
+
+  - Top Layer (Component, Signal Layer, 90 Ω differential)
+  - Ground Plane
+  - Signal Layer
+  - Power Plane
+  - Ground Plane
+  - Bottom Layer (Component, Signal Layer)
 
 Components and Connections
 --------------------------
@@ -60,13 +61,13 @@ Primary Side
 Power Supply Connectors
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-These connectors are used to supply +48V to the entire circuitry. 
+These connectors are used to supply +48V to the entire circuitry.
 The :adi:`AD-PAARRAY3552R-SL` provides an option for the
 user to use either a barrel jack connector or a two-wire terminal.
 
 - **P1** - Barrel connector jack. Use this port if a 5.5 mm x 2.5 mm barrel jack
   adapter is preferred.
-- **P2** - Two-port terminal connector. Port for supply power throughs
+- **P2** - Two-port terminal connector. Port for supply power through
   non-terminated wires. Ensure proper connection to the positive and negative
   terminals of the power supply.
 
@@ -86,7 +87,7 @@ Three indicator LEDs to display the board’s current status:
 Peripheral Connectors
 ^^^^^^^^^^^^^^^^^^^^^
 
-These connectors are used for debugging, programming, and communication 
+These connectors are used for debugging, programming, and communication
 between the software and hardware.
 
 - **P5** - USB-to-UART Serial Communication through micro-USB to USB cable
@@ -102,8 +103,8 @@ Hardware switches used to reset specific devices:
 Test Points
 ^^^^^^^^^^^
 
-The reference design board is comprised of several test points. The table 
-below describes  some of the most significant test points and 
+The reference design board is comprised of several test points. The table
+below describes  some of the most significant test points and
 their descriptions.
 
 .. figure:: ad-paarray3552r-sl_test_points.png
@@ -111,7 +112,7 @@ their descriptions.
    AD-PAARRAY3552R-SL Test Points
 
 =========== ========================== ===========
-**TP Name** **Description**            **Voltage**                          
+**TP Name** **Description**            **Voltage**
 =========== ========================== ===========
 TP6         U2 LTC7000 Output          +48V
 TP8         U3 ADM7172 LDO Output      +5V
@@ -128,19 +129,19 @@ TP16        U10 LT3471 Negative Output -12V
 Pin Turrets and Hooks
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The :adi:`AD-PAARRAY3552R-SL` is designed for specific power amplifiers 
+The :adi:`AD-PAARRAY3552R-SL` is designed for specific power amplifiers
 and is used on the RF signal chain, as shown below.
 
 .. figure:: ad-paarray3552r-sl_03.png
 
    RF Signal Chain
 
-The bias lines of these amplifiers must be connected to the designated pinouts
+The bias lines of these amplifiers must be connected to the designated pinout
 on the reference design board. Refer to the table below for the correct pin
 assignments.
 
 =============== =============================== ============
-Pin Assignments                                 
+Pin Assignments
 =============== =============================== ============
 **Pin Name**    **Description**                 **Pin Type**
 5V0_SW          RF Switch +5V Pin               Hook
@@ -196,7 +197,7 @@ Equipment Needed
 - Two (2) SMA to SMA male cables
 - Host Windows PC:
    -  with 2 free USB-A ports
-   -  with installed control GUI: 
+   -  with installed control GUI:
       :ref:`see installation guide <ad-paarray3552r-sl software-guide>`
 
 Board Modification
@@ -212,8 +213,8 @@ before using the board:
 Fault Settings
 ^^^^^^^^^^^^^^
 
-The hardware is capable of detecting fault events such as overvoltage, 
-overcurrent, and overtemperature. Below are the default settings for 
+The hardware is capable of detecting fault events such as overvoltage,
+overcurrent, and overtemperature. Below are the default settings for
 these fault events. You will need to adjust these settings based on the
 power amplifier you are using.
 
@@ -222,13 +223,13 @@ power amplifier you are using.
 - Overcurrent: 3.5A
 - Overtemperature: +75°C
 
-**Overvoltage Settings** 
+**Overvoltage Settings**
 
-The LTC7000s OVLO pin is responsible for the
-overvoltage event. If theVoltage on this pin exceeds 1.21V, an overvoltage
-fault will be flagged. Below are the default resistor values for a +55V and +60V
-overvoltage. Adjust the following resistor values to set your desired
-overvoltage. Refer to :adi:`LTC7000` datasheet for more information.
+The LTC7000s OVLO pin manages the overvoltage event. If the voltage on this pin
+exceeds 1.21V, an overvoltage fault will be flagged. Below are the default
+resistor values for a +55V and +60V overvoltage. Adjust the following resistor
+values to set your desired overvoltage. Refer to :adi:`LTC7000` datasheet for
+more information.
 
 - +55V overvoltage
   - R3, R114 = 1Meg
@@ -238,16 +239,16 @@ overvoltage. Refer to :adi:`LTC7000` datasheet for more information.
   - R24 = 1Meg
   - R25 = 21K
 
-**Undervoltage Settings** 
+**Undervoltage Settings**
 
-The LTC7000s RUN pin is responsible for the
-undervoltage event. If the voltage on this pin falls below 1.11V, an
-undervoltage fault will be flagged. Below are the default resistorValues for a
-+38V and +6V undervoltage. Adjust the following resistorValues to set your
-desired undervoltage. (Please note that the LTC7000 does not support a fault
-flag on its FAULT pin when an undervoltage event occurs, so we are unable to
-detect this kind of fault. However, the device will automatically shut off in
-such a case). Refer to :adi:`LTC7000` datasheet for more information.
+The LTC7000s RUN pin manages the undervoltage event. If the voltage on this pin
+falls below 1.11V, an undervoltage fault will be flagged. Below are the default
+resistor values for a +38V and +6V undervoltage. Adjust the following resistor
+values to set your desired undervoltage. (Please note that the LTC7000 does not
+support a fault flag on its FAULT pin when an undervoltage event occurs, so we
+are unable to detect this kind of fault. However, the device will automatically
+shut off in such a case). Refer to :adi:`LTC7000` datasheet for more
+information.
 
 - +38V undervoltage
   - R156, R177 = 1Meg
@@ -257,7 +258,7 @@ such a case). Refer to :adi:`LTC7000` datasheet for more information.
   - R26 = 1Meg
   - R23 = 221K
 
-**Overcurrent Settings** 
+**Overcurrent Settings**
 
 The LTC7000's SNS and ISET pin are responsible for the
 overvoltage event. Below are the default resistor values for a 3.5A
@@ -267,13 +268,13 @@ overcurrent. Refer to :adi:`LTC7000` datasheet for more information.
 - R9, R31, R120 = 0.015 (R_SENSE)
 - R12, R34, R123 = 105K (R_ISET)
 
-**Overtemperature Settings** 
+**Overtemperature Settings**
 
-The MAX6516 is responsible for the overvoltage
-event. You can adjust the hysteresis to your desired value.
+The MAX6516 is manages the overvoltage event. You can adjust the hysteresis to
+your desired value.
 
 ==================== ============================ ============================
-Hysteresis Settings                               
+Hysteresis Settings
 ==================== ============================ ============================
 **Hysteresis Point** **R144**                     **R146**
 2°C                  Populate with 0-ohm resistor DNI/NC
@@ -282,7 +283,7 @@ Hysteresis Settings
 
 For this demo, we will be using the HMC8500 GaN Power Amplifier with an
 operating drain voltage of +28V (absolute max = +35V). It will have the
-following fault settings and its corresponding resistorValues.
+following fault settings and its corresponding resistor values.
 
 +----------------+-------------------+---------------------+-------------+
 | Fault          | Set Value         | Resistor Value      | Remarks     |
@@ -315,7 +316,7 @@ bypass capacitors should be powered using the circuit shown in the figure
 below.
 
 .. figure:: inrush_current_limiter.png
-   
+
    Inrush Current Limiter Circuit
 
 The pull-up gate drive to the power MOSFET from TGUP is passed through an RC
@@ -329,7 +330,7 @@ pull-down for the MOSFET gate is directly from the TGDN pin. Note that the
 voltage rating on capacitor CG needs to be the same or higher than the external
 MOSFET and CLOAD.
 
-Thealues for RG and CG to limit the inrush current can be calculated from the
+The values for RG and CG to limit the inrush current can be calculated from the
 below equation:
 
 .. figure:: formula.png
@@ -343,9 +344,9 @@ On this application, we will use a <100mA inrush current.
 Using the formula above, RG = 200K.
 
 =============================== ============== ==================
-Inrush Current Limiter Settings                
+Inrush Current Limiter Settings
 =============================== ============== ==================
-**Parameters**                  **Refdes**     **ResistorValue**
+**Parameters**                  ``Refdes``     **ResistorValue**
 RG                              R11, R33, R122 200K
 GC                              C10,C21,C164   10nF
 RS                              R14,R36,R125   10 ohms
@@ -367,22 +368,22 @@ General Setup
    This connection allows the user to upload firmware to the board.
 #. Then, connect the other micro-USB to USB cable to port P5. This connection
    enables USB-to-UART communication.
-   
-   .. figure:: uart_connection.png 
-      
+
+   .. figure:: uart_connection.png
+
       UART Connection
 
 #. Connect the positive terminal of the bench power supply to port P2.1.
 #. Connect the negative terminal of the bench power supply to port P2.2.
 #. Set the power supply voltage to +28V before turning it on. Note: The default
    undervoltage settings were set to +38V. The user needs to modify the hardware
-   by changing the resistorValues to perform the +28V drain voltage. Refer to
+   by changing the resistor values to perform the +28V drain voltage. Refer to
    the “Board Modification Section” above.
 #. Turn on the bench power supply. You will notice that DS3 (Green LED) will
    lights on.
 
    .. figure:: psu_connection.png
-      
+
       Power Supply Connection
 
 #. Perform the software setup indicate on the software user guide.
@@ -390,9 +391,9 @@ General Setup
    shown in Figure 3.
 #. But for this demo, we will provide bias on the following Tx signal
    chain:
-   
+
    .. figure:: demo_signal_chain.png
-      
+
       RF Signal Chain for Demo
 
 #. For safety measures, turn off the bench power supply.
@@ -400,9 +401,9 @@ General Setup
 
    - Frequency: 2.4 GHz
    - Power level: -30 dBm
-      
+
       .. figure:: sig_gen_setup.png
-      
+
          Signal Generator Setup
 
 #. Set the spectrum analyzer with the following settings:
@@ -412,17 +413,17 @@ General Setup
    - Resolution: Adjust depending on your choice.
    - Amplitude: +20 dBm
    - Marker is at 2.4 GHz
-   
+
       .. figure:: sig_analyzer_setup.png
-         
+
          Signal Analyzer Setup
 
 #. Don’t turn on the signal generator yet.
-#. Cascade the RF devices by the following chain: 
+#. Cascade the RF devices by the following chain:
    **HMC849A** -> **ADL5611** -> **HMC8500**
-   
+
    .. figure:: cascaded_devices.png
-      
+
       Cascaded Devices
 
 #. Connect the RF input/output of the signal chain to the signal generator and
@@ -439,16 +440,16 @@ General Setup
 #. Turn on the +28V bench power supply once again. You will notice that DS3
    (Green LED) lights up, indicating proper
    power-up.
-   
+
    .. figure:: overall_setup.png
-      
+
       Overall Hardware Setup
 
 #. Open the GUI Application. In the GUI Homepage, click the ``Go`` button under
    “Device Monitoring and Control”.
-   
+
    .. figure:: gui_home.png
-      
+
       GUI Homepage
 
 #. It will show the GUI dashboard. On the device connection, choose the correct
@@ -460,32 +461,32 @@ General Setup
    power-up/down sequence.
 #. For the manual power sequence, the user needs to manually adjust the knobs,
    sliders, and buttons under the “Control Group” section in the GUI according
-   to the amplifier’s drain and gateVoltage
+   to the amplifier’s drain and gate voltage
    requirements.
-   
+
    .. figure:: gui_control_group_main.png
-      
+
       GUI Control Group
 
 #. For the automatic power sequence, the user only needs to press the “Start”
    button of the power-up under the “Device Group” section in the GUI. It will
    automatically perform the power-up sequencing requirement of the HMC8500.
-   Please note that the automatic power sequencing has default gateVoltage
+   Please note that the automatic power sequencing has default gate voltage
    levels designed for the HMC8500 GaN Power Amplifier.
 
    .. figure:: gui_device_group.png
-      
+
       GUI Device Group
 
-#. To change the defaultVoltages in the automatic power sequencing, the user
+#. To change the default voltages in the automatic power sequencing, the user
    needs to modify the source code according to their power amplifier
    requirement.
 #. Once properly powered up, turn on the RF signal generator. On the signal
    analyzer, you should see an amplifier RF output signal of around +12 dBm at
    2.4 GHz, indicating a successful power-up.
-   
+
    .. figure:: rf_output.png
-      
+
       RF Output
 
 #. To power down, press the “Start” button of the power-down sequence and it
@@ -497,30 +498,30 @@ System Performance
 Power Sequencing
 ~~~~~~~~~~~~~~~~
 
-The system exhibits an automated bias sequencing required by a power amplifier 
-which minimizes human intervention and possible device damage. The default bias 
+The system exhibits an automated bias sequencing required by a power amplifier
+which minimizes human intervention and possible device damage. The default bias
 sequence implemented follows the common GaN power amplifier
 sequencing as shown below.
 
 .. figure:: bias_sequencing_gan.png
 
    GaN Power Sequence
-   
+
 .. figure:: ldmos.png.jpg
-   
+
    LDMOS Power Sequence
 
 AD3552R DAC Settling Time
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The system enables an ultrafast sub-µs voltage settling time 
-for GaN gates from pinch-off to the normal operating voltage 
-by utilizing the AD3553R dual-channel, ultrafast, 16-bit DAC. 
+The system enables an ultrafast sub-µs voltage settling time
+for GaN gates from pinch-off to the normal operating voltage
+by utilizing the AD3553R dual-channel, ultrafast, 16-bit DAC.
 This rapid voltage transition allows the board to meet the TDD
 switching requirements for biasing a GaN amplifier in RF front-end
 applications, such as 5G base station radio units.
 
-The typical voltage transition time from GaN pinch-off to its normal 
+The typical voltage transition time from GaN pinch-off to its normal
 operating voltage is shown in the figure below.
 
 .. figure:: pinch_off_to_normal.png
@@ -528,22 +529,22 @@ operating voltage is shown in the figure below.
    Settling Time from Pinch-off to Normal
 
 .. figure:: normal_to_pinch_off.png
-   
+
    Settling Time from Normal to Pinch-off
 
 Fault Event
 ~~~~~~~~~~~
 
-The system can protect itself against undesirable fault incidents, 
-such as overvoltage, overcurrent, and overtemperature events. 
-The on-board :adi:`LTC7000` handles overvoltage (OV) and overcurrent (OC) 
-fault detection, while the :adi:`MAX6516` is responsible for temperature 
+The system can protect itself against undesirable fault incidents,
+such as overvoltage, overcurrent, and overtemperature events.
+The on-board :adi:`LTC7000` handles overvoltage (OV) and overcurrent (OC)
+fault detection, while the :adi:`MAX6516` is responsible for temperature
 monitoring and detection.
 
 The table below shows the preset threshold for each parameter.
 
 =============== =====================
-Safety Features 
+Safety Features
 =============== =====================
 Fault Event     Fault Threshold Limit
 Overvoltage     +55V
@@ -552,7 +553,7 @@ Overtemperature +75°C
 =============== =====================
 
 .. tip::
-   Users can define the fault threshold limits based on their application 
+   Users can define the fault threshold limits based on their application
    by adjusting resistor values. Consult the schematic for the resistor values.
 
 Fault Time Response
@@ -574,18 +575,18 @@ fault signal coming from the LTC7000 and perform the required power-down
 sequencing. The system took almost 5 µs to register the fault flag time.
 
 .. figure:: mcu_time.png
-   
+
    Fault Flag Time
-   
+
 Thermal Performance
 ~~~~~~~~~~~~~~~~~~~
 
-**Figure 23** shows the temperature of the AD-PAARRAY3552R-SL board in normal operating 
-conditions. This is the situation when all of the bias pins are sourcing their 
+**Figure 23** shows the temperature of the AD-PAARRAY3552R-SL board in normal operating
+conditions. This is the situation when all of the bias pins are sourcing their
 specified loads under normal operations.
 
 .. figure:: thermal.png
-   
+
    Thermal Performance
 
 Resources
@@ -600,7 +601,7 @@ Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
-  
+
   :download:`AD-PAARRAY3552R-SL Design & Integration Files <ad-paarray3552r-sl-design-support.zip>`
 
    - Schematic
