@@ -629,7 +629,7 @@ Learn how to <a class="icon link reference external" href="https://analogdevices
      <span class="mi">2</span>  <span class="n">MicroBlaze</span> <span class="n">Debug</span> <span class="n">Module</span> <span class="n">at</span> <span class="n">USER2</span>
         <span class="mi">3</span>  <span class="n">MicroBlaze</span> <span class="c1">#0 (Running)</span>
 <span class="n">xsdb</span><span class="o">&gt;</span> <span class="n">targets</span> <span class="mi">3</span>
-<span class="n">xsdb</span><span class="o">&gt;</span> <span class="n">dow</span> <span class="n">simpleImage</span><span class="o">.</span><span class="n">kcu105_fmcdaq2</span>
+<span class="n">xsdb</span><span class="o">&gt;</span> <span class="n">dow</span> <span class="n">simpleImage</span><span class="o">.</span><span class="n">kcu105_fmcdaq2</span><span class="o">.</span><span class="n">strip</span>
 <span class="n">xsdb</span><span class="o">&gt;</span> <span class="n">con</span>
 <span class="n">xsdb</span><span class="o">&gt;</span> <span class="n">disconnect</span>
 </pre></div>
@@ -638,7 +638,7 @@ Learn how to <a class="icon link reference external" href="https://analogdevices
 <p>With <code class="docutils literal notranslate"><span class="pre">xmd</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xmd</span><span class="o">&gt;</span> <span class="n">fpga</span> <span class="o">-</span><span class="n">f</span> <span class="n">system_top</span><span class="o">.</span><span class="n">bit</span>
 <span class="n">xmd</span><span class="o">&gt;</span> <span class="n">connect</span> <span class="n">mb</span> <span class="n">mdm</span>
-<span class="n">xmd</span><span class="o">&gt;</span> <span class="n">dow</span> <span class="n">simpleImage</span><span class="o">.</span><span class="n">vc707_fmcomms2</span><span class="o">-</span><span class="mi">3</span>
+<span class="n">xmd</span><span class="o">&gt;</span> <span class="n">dow</span> <span class="n">simpleImage</span><span class="o">.</span><span class="n">vc707_fmcomms2</span><span class="o">-</span><span class="mf">3.</span><span class="n">strip</span>
 <span class="n">xmd</span><span class="o">&gt;</span> <span class="n">run</span>
 </pre></div>
 </div>
