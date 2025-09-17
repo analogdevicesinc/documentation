@@ -27,7 +27,7 @@ jobs:
     - name: Build doc
       working-directory: docs
       run: |
-        [[ "${{ runner.debug }}" == "false" ]] && j_="-jauto"
+        [[ "${{ runner.debug }}" != "1" ]] && j_="-jauto"
         make html SPHINXOPTS="$j_ -W --keep-going"
 
     - name: Store the generated doc
