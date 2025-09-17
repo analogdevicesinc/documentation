@@ -107,6 +107,7 @@ User guides
    :glob:
 
    */index
+   sample_application/index
 
 
 Help and Support
