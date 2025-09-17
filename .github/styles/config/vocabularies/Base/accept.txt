@@ -1,4 +1,26 @@
 ADI|adi
+LTspice
 [Dd]octools
+
 toctree
 docname
+
+PDO(s)?
+LED(s)?
+
+evaluate
+preloaded
+
+maximum
+minimum
+
+[Oo]vercurrent
+[Oo]vervoltage
+[Uu]ndervoltage
+[Ww]earables
+[Pp]inout
+
+# Passiv allow
+is rated
+is kept
+are highlighted
