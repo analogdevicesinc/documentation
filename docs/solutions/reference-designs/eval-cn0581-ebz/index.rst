@@ -72,57 +72,57 @@ Below photos show the top view (left image) and bottom view (right image) of the
 
 The :adi:`EVAL-CN0581-EBZ <CN0581>` pinout is described below:
 
-+------------------+------------------+------------------+------------------+
-| Connectors and   | Schematic Pin    | On-board         | Pin Description  |
-| Pins             | Name             | Silkscreen       |                  |
-|                  |                  | Symbol           |                  |
-+==================+==================+==================+==================+
-| P12 Pin 1        | USB_VBUS_RAW     | RAW              | Input VBUS       |
-+------------------+------------------+------------------+------------------+
-| P11 Pin 2; P12   | VBUS_OUT         | OUT              | VBUS Output      |
-| Pins 3, 4, 5     |                  |                  |                  |
-+------------------+------------------+------------------+------------------+
-| P14 Pin 1; P15   | PPVIO            | VIO              | I/O Logic        |
-| Pin 2            |                  |                  | Voltage          |
-+------------------+------------------+------------------+------------------+
-| P14 Pin 2        | USR_INT#         | INT              | Interrupt pin of |
-|                  |                  |                  | MAX77958 PD      |
-|                  |                  |                  | Controller       |
-+------------------+------------------+------------------+------------------+
-| P14 Pin 3        | USR_SDA          | SDA              | I2C Serial Data  |
-|                  |                  |                  | of MAX77958 PD   |
-|                  |                  |                  | Controller       |
-+------------------+------------------+------------------+------------------+
-| P14 Pin 4        | USR_SCL          | SCL              | I2C Serial Clock |
-|                  |                  |                  | of MAX77958 PD   |
-|                  |                  |                  | Controller       |
-+------------------+------------------+------------------+------------------+
-| P14 Pin 5        | PRG_VCIN         | VCI              | MTP and Vconn    |
-|                  |                  |                  | power supply     |
-|                  |                  |                  | input of         |
-|                  |                  |                  | MAX77958 PD      |
-|                  |                  |                  | Controller       |
-+------------------+------------------+------------------+------------------+
-| P14 Pin 6        | ENOUT            | OEN              | Open Drain       |
-|                  |                  |                  | Output Enable    |
-|                  |                  |                  | provided by      |
-|                  |                  |                  | LT4364-2 Surge   |
-|                  |                  |                  | Stopper          |
-+------------------+------------------+------------------+------------------+
-| P14 Pin 7        | USR_OUT_EN       | IEN              | External Input   |
-|                  |                  |                  | Enable for       |
-|                  |                  |                  | LTC4364-2 Surge  |
-|                  |                  |                  | Stopper          |
-+------------------+------------------+------------------+------------------+
-| P11 Pin 1; P12   | GND              | GND              | Ground           |
-| Pins 2, 6, 7, 8; |                  |                  |                  |
-| Pin 14 Pin 4     |                  |                  |                  |
-+------------------+------------------+------------------+------------------+
-| P15 Pin 1        | PP3V3_LDO        | -                | Internal 3V3 IO  |
-|                  |                  |                  | Voltage - place  |
-|                  |                  |                  | jumper on P15 to |
-|                  |                  |                  | use internal 3V3 |
-+------------------+------------------+------------------+------------------+
++------------------+------------------+------------------+-------------------+
+| Connectors and   | Schematic Pin    | On-board         | Pin Description   |
+| Pins             | Name             | Silkscreen       |                   |
+|                  |                  | Symbol           |                   |
++==================+==================+==================+===================+
+| P12 Pin 1        | USB_VBUS_RAW     | RAW              | Input VBUS        |
++------------------+------------------+------------------+-------------------+
+| P11 Pin 2; P12   | VBUS_OUT         | OUT              | VBUS Output       |
+| Pins 3, 4, 5     |                  |                  |                   |
++------------------+------------------+------------------+-------------------+
+| P14 Pin 1; P15   | PPVIO            | VIO              | I/O Logic         |
+| Pin 2            |                  |                  | Voltage           |
++------------------+------------------+------------------+-------------------+
+| P14 Pin 2        | USR_INT#         | INT              | Interrupt pin of  |
+|                  |                  |                  | MAX77958 PD       |
+|                  |                  |                  | Controller        |
++------------------+------------------+------------------+-------------------+
+| P14 Pin 3        | USR_SDA          | SDA              | I2C Serial Data   |
+|                  |                  |                  | of MAX77958 PD    |
+|                  |                  |                  | Controller        |
++------------------+------------------+------------------+-------------------+
+| P14 Pin 4        | USR_SCL          | SCL              | I2C Serial Clock  |
+|                  |                  |                  | of MAX77958 PD    |
+|                  |                  |                  | Controller        |
++------------------+------------------+------------------+-------------------+
+| P14 Pin 5        | PRG_VCIN         | VCI              | MTP and ``Vconn`` |
+|                  |                  |                  | power supply      |
+|                  |                  |                  | input of          |
+|                  |                  |                  | MAX77958 PD       |
+|                  |                  |                  | Controller        |
++------------------+------------------+------------------+-------------------+
+| P14 Pin 6        | ENOUT            | OEN              | Open Drain        |
+|                  |                  |                  | Output Enable     |
+|                  |                  |                  | provided by       |
+|                  |                  |                  | LT4364-2 Surge    |
+|                  |                  |                  | Stopper           |
++------------------+------------------+------------------+-------------------+
+| P14 Pin 7        | USR_OUT_EN       | IEN              | External Input    |
+|                  |                  |                  | Enable for        |
+|                  |                  |                  | LTC4364-2 Surge   |
+|                  |                  |                  | Stopper           |
++------------------+------------------+------------------+-------------------+
+| P11 Pin 1; P12   | GND              | GND              | Ground            |
+| Pins 2, 6, 7, 8; |                  |                  |                   |
+| Pin 14 Pin 4     |                  |                  |                   |
++------------------+------------------+------------------+-------------------+
+| P15 Pin 1        | PP3V3_LDO        | -                | Internal 3V3 IO   |
+|                  |                  |                  | Voltage - place   |
+|                  |                  |                  | jumper on P15 to  |
+|                  |                  |                  | use internal 3V3  |
++------------------+------------------+------------------+-------------------+
 
 VBUS Voltage and Current Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -285,7 +285,7 @@ that can provide the desired PDO. In the table below are shown the fixed PDOs of
 a 96W USB-C power charger.
 
 =========================== =============== =============
-Power Delivery Object (PDO)                 
+Power Delivery Object (PDO)
 =========================== =============== =============
 **Voltage (V)**             **Current (A)** **Power (W)**
 5.2                         3               15.6
@@ -306,13 +306,11 @@ power adapter with the PDOs described in the table above.
 
 *Settings:*
 
-Operating Current = OFF \| OFF \| OFF \| OFF —> 0.5A
+Operating Current = OFF | OFF | OFF | OFF —> 0.5A
 
-Min VBUS = OFF \| OFF \| OFF —> 5V
+Min VBUS = OFF | OFF | OFF —> 5V
 
-Max VBUS = OFF \| OFF \| OFF —> 5V
-
-\
+Max VBUS = OFF | OFF | OFF —> 5V
 
 After powering on :adi:`EVAL-CN0581-EBZ <CN0581>`:
 
@@ -323,8 +321,6 @@ Input DS1 LED : ON (Input voltage present)
 Output DS2 LED : ON (Output voltage present)
 
 Measured Output Voltage: 5.2V
-
-\
 
 In this example, :adi:`EVAL-CN0581-EBZ <CN0581>` selects 5.2V/3A because
 the 96 W charger has 5.2V available (falls in the 5V fixed supply output
@@ -340,13 +336,11 @@ requested (0.5A) is less than the maximum value provided by the charger at
 
 *Settings:*
 
-Operating Current = OFF \| ON \| OFF \| ON —> 3A
+Operating Current = OFF | ON | OFF | ON —> 3A
 
-Min VBUS = OFF \| OFF \| ON —> 9V
+Min VBUS = OFF | OFF | ON —> 9V
 
-Max VBUS = OFF \| ON \| OFF —> 12V
-
-\
+Max VBUS = OFF | ON | OFF —> 12V
 
 After powering on :adi:`EVAL-CN0581-EBZ <CN0581>`:
 
@@ -357,8 +351,6 @@ Input DS1 LED : ON (Input voltage present)
 Output DS2 LED : ON (Output voltage present)
 
 Measured Output Voltage: 9V
-
-\
 
 Here :adi:`EVAL-CN0581-EBZ <CN0581>` selects 9V/3A because this is the
 maximum output power that the charger can provide between 9V and 12V. Also,
@@ -372,13 +364,11 @@ the operating current requested can be provided by the charger (3A).
 
 *Settings:*
 
-Operating Current = OFF \| ON \| ON \| OFF —> 3.5A
+Operating Current = OFF | ON | ON | OFF —> 3.5A
 
-Min VBUS = OFF \| ON \| ON —> 15V
+Min VBUS = OFF | ON | ON —> 15V
 
-Max VBUS = OFF \| ON \| ON —> 15V
-
-\
+Max VBUS = OFF | ON | ON —> 15V
 
 After powering on :adi:`EVAL-CN0581-EBZ <CN0581>`:
 
@@ -389,8 +379,6 @@ Input DS1 LED : ON (Input voltage present)
 Output DS2 LED : OFF (Output voltage absent, = 0V)
 
 Measured Output Voltage: 0V
-
-\
 
 With these settings, :adi:`EVAL-CN0581-EBZ <CN0581>` keeps the surge stopper
 closed and the output is 0 V because the operating current requested (3.5A)
@@ -404,13 +392,11 @@ is greater than what the charger can provide at 15A (3A).
 
 *Settings:*
 
-Operating Current = OFF \| OFF \| ON \| OFF —> 1.5A
+Operating Current = OFF | OFF | ON | OFF —> 1.5A
 
-Min VBUS = ON \| OFF \| OFF —> 20V
+Min VBUS = ON | OFF | OFF —> 20V
 
-Max VBUS = OFF \| ON \| OFF —> 12V
- 
-\
+Max VBUS = OFF | ON | OFF —> 12V
 
 After powering on :adi:`EVAL-CN0581-EBZ <CN0581>`:
 
@@ -422,16 +408,11 @@ Output DS2 LED : ON (Output voltage present)
 
 Measured Output Voltage: 5.2V
 
-\
-
 :adi:`EVAL-CN0581-EBZ <CN0581>` defaults to 5V/3A PDO because the selected
 Min VBUS (20V) is greater than Max VBUS (12V).
 
-\
-\
-
-Additional Information and Useful Links
----------------------------------------
+More information and useful links
+---------------------------------
 
 - :adi:`CN0581 Circuit Note <CN0581>`
 - :adi:`MAX77958 Product Page <MAX77958>`
