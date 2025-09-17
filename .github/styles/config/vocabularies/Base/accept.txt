@@ -2,17 +2,17 @@ ADI|adi
 LTspice
 [Dd]octools
 
-toctree
-docname
+[Tt]octree
+[Dd]ocname
 
 PDO(s)?
 LED(s)?
 
-evaluate
-preloaded
+[Ee]valuate
+[Pp]reloaded
 
-maximum
-minimum
+[Mm]aximum
+[Mm]inimum
 
 [Oo]vercurrent
 [Oo]vervoltage
