@@ -200,7 +200,7 @@ The output files for building the kernel and device tree are **uImage** and
 **<device_tree_name>.dtb**. Refer to the code below to find their respective
 output directories. Take note that the device tree file needs to be renamed to
 **devicetree.dtb**.
-See :ref:`kuiper sdcard` for more information in configuring the SD card.
+See :external+adi-kuiper-gen:doc:`use-kuiper-image` for more information in configuring the SD card.
 
 .. shell::
 

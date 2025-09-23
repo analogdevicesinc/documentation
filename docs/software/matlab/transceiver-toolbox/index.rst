@@ -407,7 +407,7 @@ the ADI SD card.
 
 First make sure you have a valid SD card for your platform with the necessary
 devicetree and kernel image selected.
-:ref:`Follow this process here <kuiper sdcard>`.
+:external+adi-kuiper-gen:doc:`Follow this process here <use-kuiper-image>`.
 
 Once your SD card is ready, in step 4.3 "Build FPGA Bitstream" of HDL Workflow
 Advisor select a custom Tcl file for synthesis build. Utilize this

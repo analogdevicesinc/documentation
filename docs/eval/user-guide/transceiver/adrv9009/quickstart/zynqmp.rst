@@ -22,7 +22,7 @@ from source can be found here:
 Required Software
 -----------------
 
--  SD Card 8GB imaged with Kuiper Linux (see :ref:`kuiper sdcard`)
+-  SD Card 8GB imaged with Kuiper Linux (see :external+adi-kuiper-gen:doc:`use-kuiper-image`)
 -  A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
 
 Required Hardware

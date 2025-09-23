@@ -260,7 +260,7 @@ More information on Raspberry Pi OS can be found at `Raspberry Pi OS <https://ww
 Raspberry Pi OS includes lots of fun stuff - Minecraft, an office suite, web browser, sound processing labs,
 other games, etc. We won't cover any of that, but do explore on your own!
 (More information on the Kuiper Belt can be found at `Kuiper_belt <https://en.wikipedia.org/wiki/Kuiper_belt>`__)
-The SD card image is available at :ref:`kuiper sdcard`.
+The SD card image is available at :external+adi-kuiper-gen:doc:`use-kuiper-image`.
 
 Download the compressed zip file, and extract the .img file. (tar.gz files can
 be extracted using 7zip in Windows.) Follow the procedure for burning SD

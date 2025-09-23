@@ -377,7 +377,7 @@ Configuring the SD Card
 -----------------------
 
 Follow the configuration procedure under **Configuring the SD Card for
-Raspberry Pi Projects** at :ref:`kuiper sdcard`, substituting the
+Raspberry Pi Projects** at :external+adi-kuiper-gen:doc:`use-kuiper-image`, substituting the
 following lines in **config.txt**:
 
 ::

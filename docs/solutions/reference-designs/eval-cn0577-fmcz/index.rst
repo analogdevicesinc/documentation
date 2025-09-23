@@ -178,7 +178,8 @@ Loading Image on SD Card
 In order to control the :adi:`EVAL-CN0577-FMCZ <CN0577>`, you will
 need to install ADI Kuiper Linux on an SD card. Complete instructions, including
 where to download the SD card image, how to write it to the SD card, and how to
-configure the system are provided at :ref:`kuiper project-list`.
+configure the system are provided at
+:dokuwiki:`Kuiper Project List <resources/tools-software/linux-software/kuiper-linux/project-list>`.
 
 Write the image and follow the system configuration procedure. Follow the directions for
 preparing the image for the CN0577.
@@ -188,9 +189,9 @@ Preparing the SD Card
 
 To prepare the SD card for the Zedboard:
 
-#. :ref:`Download the ADI Kuiper Image <kuiper project-list>`
+#. :dokuwiki:`Download the ADI Kuiper Image <resources/tools-software/linux-software/kuiper-linux/project-list>`
 
-#. Validate, format, and flash the SD Card either: :ref:`kuiper sdcard linux` or :ref:`kuiper sdcard windows`.
+#. Validate, format, and :external+adi-kuiper-gen:doc:`flash the SD Card <use-kuiper-image>`.
 
 #. Configuring the SD Card. Follow instructions for Xilinx projects.
 
