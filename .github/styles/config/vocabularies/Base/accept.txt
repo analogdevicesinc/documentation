@@ -1,6 +1,7 @@
 ADI|adi
 LTspice
 [Dd]octools
+Kuiper
 
 [Tt]octree
 [Dd]ocname
