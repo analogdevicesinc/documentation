@@ -54,7 +54,7 @@ Libiio Installer
 
    Skip the Zynq SDR or ADALM-PLUTO post-installation steps. They
    are not used.
-   The FPGA carrier board SD card images are available on :ref:`kuiper sdcard`.
+   The FPGA carrier board SD card images are available on :external+adi-kuiper-gen:doc:`use-kuiper-image`.
 
 is required to use the streaming system objects or blocks. These support
 packages provide the necessary libIIO MATLAB bindings used by ADI's system

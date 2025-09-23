@@ -83,7 +83,7 @@ Building libiio
 Building on the Linux/Zynq Target
 ---------------------------------
 
-Check out how to :ref:`stay up to date <kuiper update>`.
+Check out how to :external+adi-kuiper-gen:doc:`stay up to date <repositories>`.
 This will check out and build the latest version.
 
 Building on the Linux Host Target
