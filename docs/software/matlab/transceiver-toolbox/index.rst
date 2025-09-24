@@ -406,8 +406,9 @@ bitstreams requires creation of a BOOT.BIN file which will be compatible with
 the ADI SD card.
 
 First make sure you have a valid SD card for your platform with the necessary
-devicetree and kernel image selected.
-:external+adi-kuiper-gen:doc:`Follow this process here <use-kuiper-image>`.
+devicetree and kernel image selected. See
+:external+adi-kuiper-gen:doc:`Kuiper documentation <index>` for more information
+about configuring the SD card with a Kuiper Linux image.
 
 Once your SD card is ready, in step 4.3 "Build FPGA Bitstream" of HDL Workflow
 Advisor select a custom Tcl file for synthesis build. Utilize this

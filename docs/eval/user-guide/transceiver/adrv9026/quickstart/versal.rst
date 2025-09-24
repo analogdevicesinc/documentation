@@ -20,7 +20,7 @@ and devicetrees from source can be found here:
 Required Software
 -------------------------------------------------------------------------------
 
-- SD Card 16GB imaged with Kuiper Linux (see :external+adi-kuiper-gen:doc:`use-kuiper-image`)
+- SD Card 16GB imaged with :external+adi-kuiper-gen:doc:`Kuiper <index>`
 - Since the Versal support is not part of the latest release you must update
   the BOOT partition of the SDCARD with the latest built files from main
   branches that can be downloaded from here: :download:`Boot files <adrv9026_vck190_boot.tar.gz>`
