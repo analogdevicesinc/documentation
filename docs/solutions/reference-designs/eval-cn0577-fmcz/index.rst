@@ -163,10 +163,9 @@ Software
 - :ref:`kuiper` Image
 
 For the device to run, the SD card should be loaded with Analog Devices Kuiper
-Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It
-incorporates Linux device drivers for ADI products as well as tools and other
-software products designed and created with ease of use in mind. The reasoning
-behind creating this distribution is to minimize the barriers to
+Linux. It incorporates Linux device drivers for ADI products as well as tools
+and other software products designed and created with ease of use in mind. The
+reasoning behind creating this distribution is to minimize the barriers to
 integrating ADI hardware devices into a Linux-based embedded system.
 
 Access to the embedded system can be through a remote PC connected either via
@@ -178,22 +177,12 @@ Loading Image on SD Card
 In order to control the :adi:`EVAL-CN0577-FMCZ <CN0577>`, you will
 need to install ADI Kuiper Linux on an SD card. Complete instructions, including
 where to download the SD card image, how to write it to the SD card, and how to
-configure the system are provided at
-:dokuwiki:`Kuiper Project List <resources/tools-software/linux-software/kuiper-linux/project-list>`.
+configure the system are provided in the
+:external+adi-kuiper-gen:doc:`Kuiper documentation <index>`.
 
-Write the image and follow the system configuration procedure. Follow the directions for
-preparing the image for the CN0577.
-
-Preparing the SD Card
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-To prepare the SD card for the Zedboard:
-
-#. :dokuwiki:`Download the ADI Kuiper Image <resources/tools-software/linux-software/kuiper-linux/project-list>`
-
-#. Validate, format, and :external+adi-kuiper-gen:doc:`flash the SD Card <use-kuiper-image>`.
-
-#. Configuring the SD Card. Follow instructions for Xilinx projects.
+When
+:external+adi-kuiper-gen:doc:`configuring the SD Card <hardware-configuration>`
+follow instructions for Xilinx projects.
 
    * Directory on SD image: cn0577_zed
    * Image files on SD card: zynq-common
