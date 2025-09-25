@@ -1,0 +1,5 @@
+extends: existence
+message: "Use 'AMD Xilinx' instead of 'Xilinx'."
+level: warning
+tokens:
+    - '(?<!AMD\s)Xilinx\b'

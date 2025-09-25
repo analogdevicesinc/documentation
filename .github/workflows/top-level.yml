@@ -55,6 +55,15 @@ jobs:
         reporter: github-pr-check
         filter_mode: added
         fail_on_error: false
+        vale_flags: "--config=.github/styles/vale-spelling.ini"
+
+    - uses: errata-ai/vale-action@v2.1.1
+      with:
+        files: docs
+        reporter: github-pr-check
+        filter_mode: added
+        fail_on_error: false
+        vale_flags: "--config=.github/styles/vale-enforcement.ini"
 
   deploy:
     runs-on: ubuntu-latest

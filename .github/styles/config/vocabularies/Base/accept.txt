@@ -1,10 +1,13 @@
 ADI|adi
 LTspice
 [Dd]octools
-Kuiper
+[Kk]uiper
+[Xx]ilinx
+no-OS
 
 [Tt]octree
 [Dd]ocname
+[Dd]evicetree
 
 PDO(s)?
 LED(s)?
@@ -24,6 +27,8 @@ LED(s)?
 [Bb]ootloader
 [Ww]alkthrough
 [Aa]cquire
+[Mm]inimize
+[Oo]btain
 
 Tx
 Rx
