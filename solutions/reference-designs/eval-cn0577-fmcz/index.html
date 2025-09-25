@@ -111,7 +111,6 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#loading-image-on-sd-card">Loading Image on SD Card</a></li>
-<li><a class="reference internal" href="#preparing-the-sd-card">Preparing the SD Card</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#system-block-diagram">System Block Diagram</a><ul>
@@ -690,10 +689,9 @@ range.</p>
 <li><p><a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a> Image</p></li>
 </ul>
 <p>For the device to run, the SD card should be loaded with Analog Devices Kuiper
-Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It
-incorporates Linux device drivers for ADI products as well as tools and other
-software products designed and created with ease of use in mind. The reasoning
-behind creating this distribution is to minimize the barriers to
+Linux. It incorporates Linux device drivers for ADI products as well as tools
+and other software products designed and created with ease of use in mind. The
+reasoning behind creating this distribution is to minimize the barriers to
 integrating ADI hardware devices into a Linux-based embedded system.</p>
 <p>Access to the embedded system can be through a remote PC connected either via
 LAN cable or Wi-Fi.</p>
@@ -704,24 +702,17 @@ LAN cable or Wi-Fi.</p>
 <p>In order to control the <a class="icon adi reference external" href="https://www.analog.com/CN0577" target="_blank">EVAL-CN0577-FMCZ</a>, you will
 need to install ADI Kuiper Linux on an SD card. Complete instructions, including
 where to download the SD card image, how to write it to the SD card, and how to
-configure the system are provided at
-<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux/project-list" target="_blank">Kuiper Project List</a>.</p>
-<p>Write the image and follow the system configuration procedure. Follow the directions for
-preparing the image for the CN0577.</p>
-</section>
-<section id="preparing-the-sd-card">
-<h4>Preparing the SD Card<a class="headerlink" href="#preparing-the-sd-card" title="Link to this heading"></a></h4>
-<p>To prepare the SD card for the Zedboard:</p>
-<ol class="arabic simple">
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux/project-list" target="_blank">Download the ADI Kuiper Image</a></p></li>
-<li><p>Validate, format, and <a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/use-kuiper-image.html" target="_blank" title="(in Kuiper vlatest)"><span class="xref std std-doc">flash the SD Card</span></a>.</p></li>
-<li><p>Configuring the SD Card. Follow instructions for Xilinx projects.</p>
-<ul class="simple">
+configure the system are provided in the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/index.html" target="_blank" title="(in Kuiper vlatest)"><span class="xref std std-doc">Kuiper documentation</span></a>.</p>
+<p>When
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/hardware-configuration.html" target="_blank" title="(in Kuiper vlatest)"><span class="xref std std-doc">configuring the SD Card</span></a>
+follow instructions for Xilinx projects.</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Directory on SD image: cn0577_zed</p></li>
 <li><p>Image files on SD card: zynq-common</p></li>
 </ul>
-</li>
-</ol>
+</div></blockquote>
 </section>
 </section>
 <section id="system-block-diagram">

@@ -651,31 +651,27 @@ a “bricked” cardg</p>
 <p>What is “ADI Kuiper Linux”? Here’s a little glossary:</p>
 <ul class="simple">
 <li><p>Debian = A Popular Linux Distribution</p></li>
-<li><p>Raspberry Pi OS = Debian customized for Raspberry Pi</p></li>
-<li><p>ADI Kuiper Linux = ADI’s Raspberry Pi OS variant with extra goodies:</p>
+<li><p>ADI Kuiper Linux = ADI’s specialized Debian distribution with extra goodies:</p>
 <ul>
 <li><p>All drivers for ADI, LTC parts that make sense enabled</p></li>
 <li><p>Boot files for FPGA-based reference designs and evaluation boards
-targetting a number of popular FPGA platforms, including:</p>
+targeting a number of popular FPGA platforms, including:</p>
 <ul>
-<li><p>Data acquisition and transciever boards (FMCOMMSx, FMCDAQx, etc.)</p></li>
-<li><p>ZedBoard, Digilent Cora Z7, ZCU102, Intel DE10-Nano, Arria 10 SoC dev kit</p></li>
+<li><p>Data acquisition and transceiver boards (FMCOMMSx, FMCDAQx, etc.)</p></li>
+<li><p>Xilinx platforms: ZedBoard, Digilent Cora Z7, ZCU102, VCK190</p></li>
+<li><p>Intel/Altera platforms: DE10-Nano, Arria 10 SoC dev kit, Cyclone 5</p></li>
 </ul>
 </li>
-<li><p>LibIIO, IIO Oscilloscope, other ADI programs and utilitiesg</p></li>
+<li><p>LibIIO, IIO Oscilloscope, other ADI programs and utilities</p></li>
 <li><p>iiod runs at startup</p></li>
-<li><p>GNURadio</p></li>
+<li><p>GNU Radio (optional)</p></li>
+<li><p>Desktop environment with VNC server (optional)</p></li>
 </ul>
 </li>
 </ul>
-<p>More information on Raspberry Pi OS can be found at <a class="icon link reference external" href="https://www.raspberrypi.com/software/" target="_blank">Raspberry Pi OS</a>.
-Raspberry Pi OS includes lots of fun stuff - Minecraft, an office suite, web browser, sound processing labs,
-other games, etc. We won’t cover any of that, but do explore on your own!
-(More information on the Kuiper Belt can be found at <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Kuiper_belt" target="_blank">Kuiper_belt</a>)
-The SD card image is available at <a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/use-kuiper-image.html" target="_blank" title="(in Kuiper vlatest)"><span>Using Kuiper Images</span></a>.</p>
-<p>Download the compressed zip file, and extract the .img file. (tar.gz files can
-be extracted using 7zip in Windows.) Follow the procedure for burning SD
-cards above, using a 16GB (or larger), high-quality, Class 10 or faster SD card.</p>
+<p>In order to obtain an SD card with a Kuiper Linux image you can follow the steps
+in the <a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/index.html" target="_blank" title="(in Kuiper vlatest)"><span class="xref std std-doc">dedicated Kuiper documentation</span></a>.
+Make sure to use or build an image with desktop configured.</p>
 <p>At this point, you should be able to:</p>
 <ol class="arabic simple">
 <li><p>Insert the card into the Raspberry Pi</p></li>
@@ -939,12 +935,12 @@ provides breakpoints, variable watches, and is perfectly adequate for simple to
 intermediate development.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>On Python Versions - We’re using Python 3 (3.9.2 in Kuiper 2022_r2 to be
-specific.) So if you’re installing on your remote host, make sure to get a
-recent version of Python 3. Previous Kuiper Linux releases had multiple Python
-versions installed, defaulting to Python 2.x. The current Kuiper Linux defaults
-to Python 3 so this is no longer an issue, but for historical curiosity the
-procedure for setting the default to Python 3 is to run the following commands:</p>
+<p>On Python Versions - We’re using Python 3. So if you’re installing on your
+remote host, make sure to get a recent version of Python 3. Previous Kuiper
+Linux releases had multiple Python versions installed, defaulting to
+Python 2.x. The current Kuiper Linux defaults to Python 3 so this is no
+longer an issue, but for historical curiosity the procedure for setting the
+default to Python 3 is to run the following commands:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
@@ -1087,8 +1083,8 @@ your Raspberry Pi, for example, let’s say you collect some data on your Pi
 using a Python script, and want to get it over to your Windows machine. It is
 available from <a class="icon link reference external" href="https://winscp.net/eng/index.php" target="_blank">WinSCP Homepage</a>.</p>
 <p>As with SSH, Mac and Linux machines include SCP alreadyg</p>
-<p>VNC is a remote desktop application, and Kuiper Linux runs a VNC server by
-default. There are several clients available; RealVNC works well and is
+<p>VNC is a remote desktop application, and Kuiper Linux optionally runs a VNC
+server. There are several clients available; RealVNC works well and is
 available at <a class="icon link reference external" href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank">RealVNC Viewer</a>.
 A screenshot of VNC logged into the Raspberry Pi is shown in <a class="reference internal" href="#fig-rpi-vnc"><span class="std std-numref">Figure 15</span></a></p>
 <figure class="align-center" id="id19">
