@@ -1,21 +1,20 @@
-.. _ad9084_fmca_ebz quickstart versal:
+.. _ad9084_ebz quickstart microblaze:
 
-AD9084-FMCA-EBZ Versal ACAP VCK190/VPK180 Quick Start Guide
-===========================================================
+AD9084-FMCA-EBZ Virtex UltraScale+ VCU118/VCU128 Quick Start Guide
+==================================================================
 
 This guide provides some quick instructions on how to setup the AD9084 eval board on:
 
--  :xilinx:`VCK190`
--  :xilinx:`VPK180`
+-  :xilinx:`VCU118`
+-  :xilinx:`VCU128`
 
 Required Hardware
 -----------------
 
-- AMD Xilinx :xilinx:`VCK190` or :xilinx:`VPK180` board
+- AMD Xilinx :xilinx:`VCU118` or :xilinx:`VCU128` board
 - :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
-- SD Card of at least 16GB imaged with Kuiper Linux (see :ref:`kuiper sdcard`)
-- 2x `Vita 57 FMC+ Extender <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__ (:xilinx:`VCK190` only)
-- USB Type-C cable
+- 2x `Vita 57 FMC+ Extender <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__
+- 2 x Micro-USB cable
 - Ethernet cables
 - Power supply for the FPGA carrier board and the :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
 
@@ -24,6 +23,7 @@ Required Software
 
 - A Linux OS on a PC
 - Xilinx Vivado 2023.2
+- Xilinx Vitis 2023.2
 - A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
 - :ref:`IIO-Oscilloscope <iio-oscilloscope>` with the :ref:`AD9084 plugin <ad9084 iio-oscilloscope-plugin>`
 
@@ -37,43 +37,39 @@ following guide: `Building HDL projects <https://analogdevicesinc.github.io/hdl/
   :show-user:
 
   $git clone https://github.com/analogdevicesinc/hdl.git
-  $cd hdl/projects/ad9084_fmca_ebz/vck190
+  $cd hdl/projects/ad9084_ebz/vcu118
   $make
-    Building ad9084_fmca_ebz_vck190 [/home/analog/hdl/projects/ad9084_fmca_ebz/vck190/ad9084_fmca_ebz_vck190_vivado.log] ... OK
+    Building ad9084_ebz_vcu118 [/home/analog/hdl/projects/ad9084_ebz/vcu118/ad9084_ebz_vcu118_vivado.log] ... OK
 
-Building the boot image BOOT.BIN
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. _ad9084_ebz microblaze linux:
 
-Instructions on how to build the boot image BOOT.BIN image for Versal boards can be found here:
+Build the Linux files
+-----------------------
 
-- `Building an HDL Project <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`__
-- `Build the boot image BOOT.BIN <https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html#for-versal>`__
-
-.. _ad9084_fmca_ebz versal linux:
-
-Building the Linux files
-------------------------
-
-On the development host
-
-Get the cross compiler and set the CROSS_COMPILE and ARCH variables
+Microblaze gnu toolchain from Xilinx is no longer available on git.
+Please use gnu tools from Vitis installation as below:
 
 .. shell::
   :show-user:
 
-  /github-linux-build
-  $wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.3-2021.07/binrel/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu.tar.xz
-  $tar xvf gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu.tar.xz
-  $export CROSS_COMPILE=arm64
-  $export PATH=`pwd`/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu/bin:$PATH
+  $export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/:$PATH
+  $export ARCH=microblaze
+  $export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
 
-Create a local copy of ADI's kernel tree
+or alternatively, source the Vivado **settings64.sh** as below:
 
 .. shell::
   :show-user:
 
-  $mkdir github-linux-build
-  $cd github-linux-build
+  $source /opt/Xilinx/Vivado/2023.2/settings64.sh
+  $export ARCH=microblaze
+  $export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
+
+Get Linux kernel source
+
+.. shell::
+  :show-user:
+
   $git clone https://github.com/analogdevicesinc/linux.git
     Cloning into 'linux'...
     remote: Counting objects: 2757163, done.
@@ -82,7 +78,52 @@ Create a local copy of ADI's kernel tree
     Receiving objects: 100% (2757163/2757163), 782.04 MiB | 1.39 MiB/s, done.
     Resolving deltas: 100% (2296596/2296596), done.
 
-Configure the kernel and build it
+Get the Root File-System
+
+The root file system or rootfs contains everything (besides the Linux kernel itself) needed to support a full Linux system.
+It contains all the (user) applications, configurations, services, data, etc.
+Without the rootfs your Linux system cannot run. You can either just download the pre-build image or
+build it yourself. Instructions can be found here: `Building with buildroot <https://wiki.analog.com/resources/tools-software/linux-build/generic/buildroot>`__
+
+.. shell::
+  :show-user:
+
+  $cd linux
+  $wget https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz
+    --2022-01-18 09:52:08--  https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz
+    Resolving swdownloads.analog.com (swdownloads.analog.com)... 23.63.205.142
+    Connecting to swdownloads.analog.com (swdownloads.analog.com)|23.63.205.142|:443... connected.
+    HTTP request sent, awaiting response... 200 OK
+    Length: 6772207 (6,5M) [application/x-gzip]
+    Saving to: ‘rootfs.cpio.gz’
+
+    rootfs.cpio.gz                                     100%[===============================================================================================================>]   6,46M  3,32MB/s    in 1,9s
+
+    2022-01-18 09:52:12 (3,32 MB/s) - ‘rootfs.cpio.gz’ saved [6772207/6772207]
+
+.. important::
+  rootfs.cpio.gz must be placed in the root of your kernel tree. (~/linux/rootfs.cpio.gz)
+
+Configure the Kernel and build it
+
+The following command shows the general format for the build target name:
+
+.. shell::
+
+  $make simpleImage.<dts file name>
+
+.. note::
+
+  The <dts file name> does not include the file extension “.dts”.
+
+To see what device-trees for the different FPGA carrier and FMC module combination exist type:
+
+.. shell::
+
+  ~/linux
+  $ls -l arch/microblaze/boot/dts | grep ad9084
+
+Building the kernel with the default device tree
 
 .. important::
 
@@ -93,143 +134,84 @@ Configure the kernel and build it
 .. shell::
   :show-user:
 
-  /github-linux-build/linux
-  $make adi_versal_defconfig
+  $cd linux
+  $make adi_mb_defconfig
   #
   # configuration written to .config
   #
-  $make -j16 Image
-    CHK     include/config/kernel.release
-    CHK     include/generated/uapi/linux/version.h
-    HOSTCC  scripts/basic/fixdep
-    HOSTCC  scripts/basic/bin2c
-    [ -- snip --]
-    CC      init/version.o
-    LD      init/built-in.o
-    KSYM    .tmp_kallsyms1.o
-    KSYM    .tmp_kallsyms2.o
+  $make -j4 simpleImage.vcu118_ad9084
+    SYNC    include/config/auto.conf.cmd
+    CC      scripts/mod/empty.o
+    CC      scripts/mod/devicetable-offsets.s
+    MKELF   scripts/mod/elfconfig.h
+    HOSTCC  scripts/mod/modpost.o
+    HOSTCC  scripts/mod/sumversion.o
+    HOSTCC  scripts/mod/file2alias.o
+    [ --snip-- ]
+    AR      init/built-in.a
+    LD      vmlinux.o
+    MODPOST vmlinux.symvers
+    MODINFO modules.builtin.modinfo
+    GEN     modules.builtin
+    LD      .tmp_vmlinux.kallsyms1
+    KSYMS   .tmp_vmlinux.kallsyms1.S
+    AS      .tmp_vmlinux.kallsyms1.S
+    LD      .tmp_vmlinux.kallsyms2
+    KSYMS   .tmp_vmlinux.kallsyms2.S
+    AS      .tmp_vmlinux.kallsyms2.S
     LD      vmlinux
-    SORTEX  vmlinux
+    SORTTAB vmlinux
     SYSMAP  System.map
-    OBJCOPY arch/arm64/boot/Image
+    OBJCOPY arch/microblaze/boot/simpleImage.vcu118_ad9084
+    SHIPPED arch/microblaze/boot/simpleImage.vcu118_ad9084.unstrip
+    STRIP   vmlinux arch/microblaze/boot/simpleImage.vcu118_ad9084.strip
+    UIMAGE  arch/microblaze/boot/simpleImage.vcu118_ad9084.ub
+    Image Name:   Linux-5.10.0-97916-g513446e488c3
+    Created:      Tue Jan 18 12:07:35 2022
+    Image Type:   MicroBlaze Linux Kernel Image (uncompressed)
+    Data Size:    18398124 Bytes = 17966.92 KiB = 17.55 MiB
+    Load Address: 80000000
+    Entry Point:  80000000
+    Kernel: arch/microblaze/boot/simpleImage.vcu118_ad9084 is ready  (#3678)
 
-Build the devicetree
+.. note::
 
-============================= =================================================
-Device tree                   Board
-============================= =================================================
-versal-vck190-reva-ad9084.dts :xilinx:`VCK190` and the :adi:`AD9084` eval board
-versal-vpk180-reva-ad9084.dts :xilinx:`VPK180` and the :adi:`AD9084` eval board
-============================= =================================================
-
-.. shell::
-  :show-user:
-
-  /github-linux-build/linux
-  $make xilinx/versal-vck190-reva-ad9084.dtb
-    DTC     arch/arm64/boot/dts/xilinx/versal-vck190-reva-ad9084.dtb
-
-Copy the generated files to your SD Card
-
-.. shell::
-  :show-user:
-
-  /github-linux-build/linux
-  $cp arch/arm64/boot/Image /media/BOOT
-  $cp arch/arm64/boot/dts/xilinx/versal-vck190-reva-ad9084.dtb /media/BOOT/system.dtb
-
+  The STRIP image found under arch/microblaze/boot/ is the ELF image which can be loaded via the debugger
 
 Testing
 -------
 
-The following steps are intended for :xilinx:`VCK190` but they mostly apply to
-:xilinx:`VPK180` as well.
+First we need to prepare a working directory where we will gather all the required binary files.
 
-.. image:: versal/vck190.jpg
-   :width: 900px
+From the HDL build directory locate the system_top.bit and copy it to the working directory.
 
-Physical setup
-^^^^^^^^^^^^^^
+From the Linux build directory locate the simpleImage and copy it to the working directory.
 
-#. Place the pre-built bootfiles (BOOT.BIN, Image, system.dtb, boot.scr) in the root of the SD card's BOOT partition.
-#. Insert the SD card into the FPGA carrier board (J302).
-#. Connect USB UART J207 (Type-C USB) to your host PC.
-#. (:xilinx:`VCK190` only) Insert System Controller SD card into socket J206.
-#. Configure ACAP for SD BOOT (mode SW1[4:1] switch in the position **OFF,OFF,OFF,ON** as seen in the below picture).
+.. shell::
 
-   .. image:: versal/vck190_sw1.jpg
-      :width: 200px
+  $mkdir working_dir
+  $cp <hdl_repo_dir>/projects/ad9084_ebz/vcu118/ad9084_ebz_vcu118.runs/impl_1/system_top.bit working_dir
+  $cp <linux_repo_dir>/arch/microblaze/boot/simpleImage.vcu118_ad9084.strip working_dir
 
-#. Configure System Controller for SD BOOT (mode SW11[4:1] switch in the position **OFF,OFF,OFF,ON** as seen in the below picture).
+Next step is to program the board with xsct or similar tool
 
-   .. image:: versal/vck190_sw11.jpg
-      :width: 200px
+.. shell::
 
-#. Connect :adi:`AD9084-FMCA-EBZ <AD9084>` to FMCP2 (J53) with FMC+ riser or equivalent.
-#. Connect the power supplies to the FPGA carrier board and the AD9084-FMCA-EBZ evaluation board.
-
-   .. image:: versal/vck190_ad9084_fmca_ebz.jpg
-      :width: 800px
-
-#. Verify VADJ is set to 1.5 V
-
-Verify 1.5 V VADJ
-^^^^^^^^^^^^^^^^^
-
-#. Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access Board Evaluation & Management Tool (BEAM).
-#. Turn on the power switch on the FPGA board.
-#. Observe kernel and serial console messages on your terminal, both the ACAP UART interface and the System controller.
-   (use the first ttyUSB or COM port registered for the ACAP UART interface,
-   and try the other 2 to find the one for System Controller)
-#. On the System Controller console, a BEAM Tool Web Address should be assigned.
-   Go to this web address to set VADJ_FMC to 1.5V.
-#. To change VADJ_FMC On BEAM, click "Test The Board">"Board Settings">"FMC".
-   Then on "Set VADJ_FMC", select 1.5V and click "Set", AD9084 LEDs should turn on immediately.
-
-   .. image:: versal/beam-home.jpg
-      :width: 700px
-
-   .. image:: versal/beam-board-settings.jpg
-      :width: 700px
-
-   .. image:: versal/beam-set-vadj.jpg
-      :width: 700px
-
-#. On the ACAP UART interface console, reboot the system. After reboot, ad9084 devices should be present.
-
-.. esd-warning::
-
-ACAP SDcard boot files
-^^^^^^^^^^^^^^^^^^^^^^
-
-The files that need to be present on the sdcard BOOT partition are:
-
-- BOOT.BIN
-- Image
-- system.dtb
-- boot.scr
-
-Startup
-^^^^^^^
-
-Once the physical setup is complete, it is recommended to start a UART session
-to the FPGA carrier board to monitor the boot process.
-Power on the AD9084-FMCA-EBZ board then power on the FPGA carrier board.
-The FPGA carrier board will boot from the SD card and the AD9084-FMCA-EBZ
-evaluation board will be initialized.
-
-.. important::
-
-   When setting up the UART make sure you connect to the ACAP UART interface and not the System controller.
+  $xsct
+  $xsct% connect
+  $xsct% fpga -f system_top.bit
+  $xsct% after 1000
+  $xsct% target 3
+  $xsct% dow simpleImage.vcu118_ad9084.strip
+  $xsct% after 1000
+  $xsct% con
+  $xsct% disconnect
 
 .. note::
 
    Login Information
          - user: analog
          - password: analog
-
-Boot messages
-^^^^^^^^^^^^^
 
 .. collapsible:: Complete boot log
 
@@ -730,11 +712,3 @@ Boot messages
       iio:device2: axi-ad9084-rx-hpc-b
       iio:device3: axi-ad9084-tx-hpc (buffer capable)
       iio:device3: axi-ad9084-tx-hpc-b
-
-.. important::
-
-   Even thought this is Linux, this is a persistent file systems. Care should be
-   taken not to corrupt the file system -- please shut down things, don't just
-   turn off the power switch. Depending on your monitor, the standard power off
-   could be hiding. You can do this from the terminal as well with
-   :code:`sudo shutdown -h now`

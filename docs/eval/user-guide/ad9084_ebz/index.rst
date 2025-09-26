@@ -23,7 +23,7 @@ The device also features low latency loopback and frequency
 hopping modes targeted at phased array radar systems and electronic
 warfare applications.
 
-.. image:: ad9084_fmca_ebz.png
+.. image:: ad9084_ebz.png
    :width: 600px
 
 .. toctree::
@@ -40,13 +40,13 @@ things. However, like many things, documentation is never as complete as it shou
 
 #. Use the board to better understand the AD9084
 
-   #. :ref:`What you need to get started <ad9084_fmca_ebz prerequisites>`
-   #. :ref:`Quick Start Guides <ad9084_fmca_ebz quickstart>`
+   #. :ref:`What you need to get started <ad9084_ebz prerequisites>`
+   #. :ref:`Quick Start Guides <ad9084_ebz quickstart>`
 
       #. :ref:`Configure a pre-existing SD Card <kuiper sdcard>`
       #. :ref:`Update the old card you received with your hardware <kuiper update>`
       #. :ref:`AD9084 (Apollo) Profile Generator <ad9084 profile-generator>`
-      #. :ref:`Running a new JESD mode on hardware <ad9084_fmca_ebz quickstart new_usecase>`
+      #. :ref:`Running a new JESD mode on hardware <ad9084_ebz quickstart new_usecase>`
 
    #. Linux Applications
 

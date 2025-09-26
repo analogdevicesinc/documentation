@@ -1,4 +1,4 @@
-.. _ad9084_fmca_ebz quickstart new_usecase:
+.. _ad9084_ebz quickstart new_usecase:
 
 Running a new JESD mode on hardware
 ===================================

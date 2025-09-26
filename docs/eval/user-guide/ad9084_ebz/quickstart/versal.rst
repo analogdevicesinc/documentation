@@ -1,112 +1,31 @@
-.. _ad9084_fmca_ebz quickstart agilex:
+.. _ad9084_ebz quickstart versal:
 
-AD9084-FMCA-EBZ Intel Agilex 7 Quick Start Guide
-================================================
+AD9084-FMCA-EBZ Versal ACAP VCK190/VPK180 Quick Start Guide
+===========================================================
 
 This guide provides some quick instructions on how to setup the AD9084 eval board on:
-   - Intel Agilex 7 `DK-SI-AGIB027FA <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/si-agi027.html>`__
+
+-  :xilinx:`VCK190`
+-  :xilinx:`VPK180`
 
 Required Hardware
 -----------------
 
-- Intel `DK-SI-AGIB027FA <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/si-agi027.html>`__ board
-- Intel `HPS IO48 OOBE Daughter Card <https://www.intel.com/content/www/us/en/docs/programmable/721605/current/daughter-cards-17810.html>`__
+- AMD Xilinx :xilinx:`VCK190` or :xilinx:`VPK180` board
 - :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
 - SD Card of at least 16GB imaged with Kuiper Linux (see :ref:`kuiper sdcard`)
-- 1x `Vita 57 FMC+ Extender <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__
-- USB-C cable
-- Ethernet cable
+- 2x `Vita 57 FMC+ Extender <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__ (:xilinx:`VCK190` only)
+- USB Type-C cable
+- Ethernet cables
 - Power supply for the FPGA carrier board and the :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
 
 Required Software
 -----------------
 
 - A Linux OS on a PC
-- Intel Quartus Pro 24.2
+- Xilinx Vivado 2023.2
 - A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
 - :ref:`IIO-Oscilloscope <iio-oscilloscope>` with the :ref:`AD9084 plugin <ad9084 iio-oscilloscope-plugin>`
-
-.. _ad9084_fmca_ebz agilex linux:
-
-Build the Linux files
----------------------
-
-Create a local copy of ADI's kernel tree
-
-.. shell::
-  :show-user:
-
-  $git clone https://github.com/analogdevicesinc/linux.git
-  Cloning into 'linux'...
-   remote: Counting objects: 2757163, done.
-   remote: Compressing objects: 100% (495484/495484), done.
-   remote: Total 2757163 (delta 2296596), reused 2687337 (delta 2234506)
-   Receiving objects: 100% (2757163/2757163), 782.04 MiB | 1.39 MiB/s, done.
-   Resolving deltas: 100% (2296596/2296596), done.
-
-Configure the kernel and build it
-
-.. important::
-
-   If you wish to use a non-default AD9084 profile,
-   follow the steps in the :ref:`AD9084 Profile Generator <ad9084 profile-generator>`
-   before proceeding in order to add the profile to the Linux build.
-
-.. shell:: bash
-   :no-path:
-
-   $cd linux
-   $make adi_zynqmp_defconfig
-   #
-   # configuration written to .config
-   #
-   $make -j16 Image
-      CHK     include/config/kernel.release
-      CHK     include/generated/uapi/linux/version.h
-      HOSTCC  scripts/basic/fixdep
-      HOSTCC  scripts/basic/bin2c
-      [ -- snip --]
-      CC      init/version.o
-      LD      init/built-in.o
-      KSYM    .tmp_kallsyms1.o
-      KSYM    .tmp_kallsyms2.o
-      LD      vmlinux
-      SORTEX  vmlinux
-      SYSMAP  System.map
-      OBJCOPY arch/arm64/boot/Image
-   $make intel/socfpga_agilex_socdk_ad9084.dtb
-      DTC     arch/arm64/boot/dts/intel/socfpga_agilex_socdk_ad9084.dtb
-   $cd ..
-
-Build the ARM Trusted Firmware
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. shell:: bash
-   :no-path:
-
-   $git clone -b QPDS24.1_REL_GSRD_PR https://github.com/altera-opensource/arm-trusted-firmware
-   $cd arm-trusted-firmware
-   $make bl31 PLAT=agilex DEPRECATED=1
-   $cd ..
-
-Build U-Boot
-^^^^^^^^^^^^
-
-.. shell:: bash
-   :no-path:
-
-   $git clone -b QPDS24.1_REL_GSRD_PR https://github.com/altera-opensource/u-boot-socfpga
-   $cd u-boot-socfpga
-   $ln -sf ../arm-trusted-firmware/build/agilex/release/bl31.bin .
-   $sed -i 's/earlycon panic=-1/earlycon panic=-1 console=ttyS0,115200 root=\/dev\/mmcblk0p2 rw rootwait/g' configs/socfpga_agilex_defconfig
-   $sed -i '/^CONFIG_NAND_BOOT=y/d' configs/socfpga_agilex_defconfig
-   $sed -i '/^CONFIG_SPL_NAND_SUPPORT=y/d' configs/socfpga_agilex_defconfig
-   $sed -i '/^CONFIG_CMD_UBI=y/d' configs/socfpga_agilex_defconfig
-   $echo 'CONFIG_USE_BOOTCOMMAND=y' >> configs/socfpga_agilex_defconfig
-   $echo 'CONFIG_BOOTCOMMAND="load mmc 0:1 \${loadaddr} agilex.core.rbf; bridge disable; fpga load 0 \${loadaddr} \${filesize}; bridge enable; load mmc 0:1 ${kernel_addr_r} Image; load mmc 0:1 ${fdt_addr_r} socfpga_agilex_socdk.dtb; booti ${kernel_addr_r} - ${fdt_addr_r}"' >> configs/socfpga_agilex_defconfig
-   $make socfpga_agilex_defconfig
-   $make
-   $cd ..
 
 Building the HDL project
 ------------------------
@@ -118,75 +37,190 @@ following guide: `Building HDL projects <https://analogdevicesinc.github.io/hdl/
   :show-user:
 
   $git clone https://github.com/analogdevicesinc/hdl.git
-  $cd hdl/projects/ad9084_fmca_ebz/fm87
+  $cd hdl/projects/ad9084_ebz/vck190
   $make
-    Building ad9084_fmca_ebz_fm87 [/home/analog/hdl/projects/ad9084_fmca_ebz/fm87/ad9084_fmca_ebz_fm87_quartus.log] ... OK
+    Building ad9084_ebz_vck190 [/home/analog/hdl/projects/ad9084_ebz/vck190/ad9084_ebz_vck190_vivado.log] ... OK
 
-After the design is built, the resulting SRAM Object File (.sof) file shall be converted to a Raw Binary File (.rbf)
-and a Jtag Indirect Configuration (.jic) file.
+Building the boot image BOOT.BIN
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you skipped the last section, ensure to set the architecture and cross compiler environment variables and have the U-boot files built.
+Instructions on how to build the boot image BOOT.BIN image for Versal boards can be found here:
 
-.. shell:: bash
-   :no-path:
+- `Building an HDL Project <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`__
+- `Build the boot image BOOT.BIN <https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html#for-versal>`__
 
-   $quartus_pfg -c ad9084_fmca_ebz_fm87.sof ad9084_fmca_ebz_fm87.jic \
-   $  -o hps_path=../../../../u-boot-socfpga/spl/u-boot-spl-dtb.hex \
-   $  -o device=MT25QU02G \
-   $  -o flash_loader=AGIB027R31B1E1V \
-   $  -o mode=ASX4 \
-   $  -o hps=1
+.. _ad9084_ebz versal linux:
 
-Copy the built files to the /BOOT partition:
+Building the Linux files
+------------------------
 
-.. shell:: bash
-   :no-path:
+On the development host
 
-   $cp u-boot-socfpga/u-boot.itb /media/BOOT/
-   $cp linux/arch/arm64/boot/Image /media/BOOT/
-   $cp linux/arch/arm64/boot/dts/intel/socfpga_agilex_socdk_ad9084.dtb /media/BOOT/socfpga_agilex_socdk.dtb
-   $cp hdl/projects/ad9084_fmca_ebz/fm87/ad9084_fmca_ebz_fm87.core.rbf /media/BOOT/agilex.core.rbf
+Get the cross compiler and set the CROSS_COMPILE and ARCH variables
 
-Programming steps
------------------
+.. shell::
+  :show-user:
 
-- Set **S9** to JTAG
-- Power on the FPGA
-- Open the Quartus Programmer and flash the ad9084_fmca_ebz_fm87.jic
-- Power off the FPGA
-- Set **S9** to QSPI
-- Insert the SD-card and power up the board
+  /github-linux-build
+  $wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.3-2021.07/binrel/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu.tar.xz
+  $tar xvf gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu.tar.xz
+  $export CROSS_COMPILE=arm64
+  $export PATH=`pwd`/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu/bin:$PATH
 
-**S9** 4-bit DIP Switch
+Create a local copy of ADI's kernel tree
 
-========== =====  =====  =====  =====
-Switch Bit 1      2      3      4
-Name       MSEL0  MSEL1  MSEL2  MSEL3
-JTAG Mode  ON     ON     ON     OFF
-QSPI Mode  ON     OFF    OFF    OFF
-========== =====  =====  =====  =====
+.. shell::
+  :show-user:
 
-Default Switch Positions for the AD9084 project
+  $mkdir github-linux-build
+  $cd github-linux-build
+  $git clone https://github.com/analogdevicesinc/linux.git
+    Cloning into 'linux'...
+    remote: Counting objects: 2757163, done.
+    remote: Compressing objects: 100% (495484/495484), done.
+    remote: Total 2757163 (delta 2296596), reused 2687337 (delta 2234506)
+    Receiving objects: 100% (2757163/2757163), 782.04 MiB | 1.39 MiB/s, done.
+    Resolving deltas: 100% (2296596/2296596), done.
 
-================ =====  =====  =====  =====
-4-bit DIP Switch 1      2      3      4
-S4               ON     ON     ON     ON
-S15              ON     ON     ON     OFF
-S10              ON     ON     ON     ON
-S23              OFF    ON     ON     ON
-S6               OFF    OFF    OFF    OFF
-S1               OFF    OFF    OFF    OFF
-S22              OFF    ON     ON     ON
-S19              OFF    OFF    ON     ON
-S20              ON     ON     ON     ON
-================ =====  =====  =====  =====
+Configure the kernel and build it
 
 .. important::
-  SW23[1] has to be in the ``OFF`` position to route the reference
-  clock from the HMC7044 to the transceivers
+
+   If you wish to use a non-default AD9084 profile,
+   follow the steps in the :ref:`AD9084 Profile Generator <ad9084 profile-generator>`
+   before proceeding in order to add the profile to the Linux build.
+
+.. shell::
+  :show-user:
+
+  /github-linux-build/linux
+  $make adi_versal_defconfig
+  #
+  # configuration written to .config
+  #
+  $make -j16 Image
+    CHK     include/config/kernel.release
+    CHK     include/generated/uapi/linux/version.h
+    HOSTCC  scripts/basic/fixdep
+    HOSTCC  scripts/basic/bin2c
+    [ -- snip --]
+    CC      init/version.o
+    LD      init/built-in.o
+    KSYM    .tmp_kallsyms1.o
+    KSYM    .tmp_kallsyms2.o
+    LD      vmlinux
+    SORTEX  vmlinux
+    SYSMAP  System.map
+    OBJCOPY arch/arm64/boot/Image
+
+Build the devicetree
+
+============================= =================================================
+Device tree                   Board
+============================= =================================================
+versal-vck190-reva-ad9084.dts :xilinx:`VCK190` and the :adi:`AD9084` eval board
+versal-vpk180-reva-ad9084.dts :xilinx:`VPK180` and the :adi:`AD9084` eval board
+============================= =================================================
+
+.. shell::
+  :show-user:
+
+  /github-linux-build/linux
+  $make xilinx/versal-vck190-reva-ad9084.dtb
+    DTC     arch/arm64/boot/dts/xilinx/versal-vck190-reva-ad9084.dtb
+
+Copy the generated files to your SD Card
+
+.. shell::
+  :show-user:
+
+  /github-linux-build/linux
+  $cp arch/arm64/boot/Image /media/BOOT
+  $cp arch/arm64/boot/dts/xilinx/versal-vck190-reva-ad9084.dtb /media/BOOT/system.dtb
+
 
 Testing
 -------
+
+The following steps are intended for :xilinx:`VCK190` but they mostly apply to
+:xilinx:`VPK180` as well.
+
+.. image:: versal/vck190.jpg
+   :width: 900px
+
+Physical setup
+^^^^^^^^^^^^^^
+
+#. Place the pre-built bootfiles (BOOT.BIN, Image, system.dtb, boot.scr) in the root of the SD card's BOOT partition.
+#. Insert the SD card into the FPGA carrier board (J302).
+#. Connect USB UART J207 (Type-C USB) to your host PC.
+#. (:xilinx:`VCK190` only) Insert System Controller SD card into socket J206.
+#. Configure ACAP for SD BOOT (mode SW1[4:1] switch in the position **OFF,OFF,OFF,ON** as seen in the below picture).
+
+   .. image:: versal/vck190_sw1.jpg
+      :width: 200px
+
+#. Configure System Controller for SD BOOT (mode SW11[4:1] switch in the position **OFF,OFF,OFF,ON** as seen in the below picture).
+
+   .. image:: versal/vck190_sw11.jpg
+      :width: 200px
+
+#. Connect :adi:`AD9084-FMCA-EBZ <AD9084>` to FMCP2 (J53) with FMC+ riser or equivalent.
+#. Connect the power supplies to the FPGA carrier board and the AD9084-FMCA-EBZ evaluation board.
+
+   .. image:: versal/vck190_ad9084_ebz.jpg
+      :width: 800px
+
+#. Verify VADJ is set to 1.5 V
+
+Verify 1.5 V VADJ
+^^^^^^^^^^^^^^^^^
+
+#. Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access Board Evaluation & Management Tool (BEAM).
+#. Turn on the power switch on the FPGA board.
+#. Observe kernel and serial console messages on your terminal, both the ACAP UART interface and the System controller.
+   (use the first ttyUSB or COM port registered for the ACAP UART interface,
+   and try the other 2 to find the one for System Controller)
+#. On the System Controller console, a BEAM Tool Web Address should be assigned.
+   Go to this web address to set VADJ_FMC to 1.5V.
+#. To change VADJ_FMC On BEAM, click "Test The Board">"Board Settings">"FMC".
+   Then on "Set VADJ_FMC", select 1.5V and click "Set", AD9084 LEDs should turn on immediately.
+
+   .. image:: versal/beam-home.jpg
+      :width: 700px
+
+   .. image:: versal/beam-board-settings.jpg
+      :width: 700px
+
+   .. image:: versal/beam-set-vadj.jpg
+      :width: 700px
+
+#. On the ACAP UART interface console, reboot the system. After reboot, ad9084 devices should be present.
+
+.. esd-warning::
+
+ACAP SDcard boot files
+^^^^^^^^^^^^^^^^^^^^^^
+
+The files that need to be present on the sdcard BOOT partition are:
+
+- BOOT.BIN
+- Image
+- system.dtb
+- boot.scr
+
+Startup
+^^^^^^^
+
+Once the physical setup is complete, it is recommended to start a UART session
+to the FPGA carrier board to monitor the boot process.
+Power on the AD9084-FMCA-EBZ board then power on the FPGA carrier board.
+The FPGA carrier board will boot from the SD card and the AD9084-FMCA-EBZ
+evaluation board will be initialized.
+
+.. important::
+
+   When setting up the UART make sure you connect to the ACAP UART interface and not the System controller.
 
 .. note::
 

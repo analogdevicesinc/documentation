@@ -1,4 +1,4 @@
-.. _ad9084_fmca_ebz quickstart:
+.. _ad9084_ebz quickstart:
 
 Quickstart
 ==========
@@ -15,7 +15,7 @@ run a no-OS program or boot a Linux distribution.
   Versal ACAP VCK190/VPK180 <versal>
   Intel Agilex 7 I-Series <agilex>
 
-.. _ad9084_fmca_ebz carriers:
+.. _ad9084_ebz carriers:
 
 Supported carriers
 ------------------

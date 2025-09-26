@@ -1,31 +1,112 @@
-.. _ad9084_fmca_ebz quickstart microblaze:
+.. _ad9084_ebz quickstart agilex:
 
-AD9084-FMCA-EBZ Virtex UltraScale+ VCU118/VCU128 Quick Start Guide
-==================================================================
+AD9084-FMCA-EBZ Intel Agilex 7 Quick Start Guide
+================================================
 
 This guide provides some quick instructions on how to setup the AD9084 eval board on:
-
--  :xilinx:`VCU118`
--  :xilinx:`VCU128`
+   - Intel Agilex 7 `DK-SI-AGIB027FA <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/si-agi027.html>`__
 
 Required Hardware
 -----------------
 
-- AMD Xilinx :xilinx:`VCU118` or :xilinx:`VCU128` board
+- Intel `DK-SI-AGIB027FA <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/si-agi027.html>`__ board
+- Intel `HPS IO48 OOBE Daughter Card <https://www.intel.com/content/www/us/en/docs/programmable/721605/current/daughter-cards-17810.html>`__
 - :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
-- 2x `Vita 57 FMC+ Extender <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__
-- 2 x Micro-USB cable
-- Ethernet cables
+- SD Card of at least 16GB imaged with Kuiper Linux (see :ref:`kuiper sdcard`)
+- 1x `Vita 57 FMC+ Extender <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__
+- USB-C cable
+- Ethernet cable
 - Power supply for the FPGA carrier board and the :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
 
 Required Software
 -----------------
 
 - A Linux OS on a PC
-- Xilinx Vivado 2023.2
-- Xilinx Vitis 2023.2
+- Intel Quartus Pro 24.2
 - A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
 - :ref:`IIO-Oscilloscope <iio-oscilloscope>` with the :ref:`AD9084 plugin <ad9084 iio-oscilloscope-plugin>`
+
+.. _ad9084_ebz agilex linux:
+
+Build the Linux files
+---------------------
+
+Create a local copy of ADI's kernel tree
+
+.. shell::
+  :show-user:
+
+  $git clone https://github.com/analogdevicesinc/linux.git
+  Cloning into 'linux'...
+   remote: Counting objects: 2757163, done.
+   remote: Compressing objects: 100% (495484/495484), done.
+   remote: Total 2757163 (delta 2296596), reused 2687337 (delta 2234506)
+   Receiving objects: 100% (2757163/2757163), 782.04 MiB | 1.39 MiB/s, done.
+   Resolving deltas: 100% (2296596/2296596), done.
+
+Configure the kernel and build it
+
+.. important::
+
+   If you wish to use a non-default AD9084 profile,
+   follow the steps in the :ref:`AD9084 Profile Generator <ad9084 profile-generator>`
+   before proceeding in order to add the profile to the Linux build.
+
+.. shell:: bash
+   :no-path:
+
+   $cd linux
+   $make adi_zynqmp_defconfig
+   #
+   # configuration written to .config
+   #
+   $make -j16 Image
+      CHK     include/config/kernel.release
+      CHK     include/generated/uapi/linux/version.h
+      HOSTCC  scripts/basic/fixdep
+      HOSTCC  scripts/basic/bin2c
+      [ -- snip --]
+      CC      init/version.o
+      LD      init/built-in.o
+      KSYM    .tmp_kallsyms1.o
+      KSYM    .tmp_kallsyms2.o
+      LD      vmlinux
+      SORTEX  vmlinux
+      SYSMAP  System.map
+      OBJCOPY arch/arm64/boot/Image
+   $make intel/socfpga_agilex_socdk_ad9084.dtb
+      DTC     arch/arm64/boot/dts/intel/socfpga_agilex_socdk_ad9084.dtb
+   $cd ..
+
+Build the ARM Trusted Firmware
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. shell:: bash
+   :no-path:
+
+   $git clone -b QPDS24.1_REL_GSRD_PR https://github.com/altera-opensource/arm-trusted-firmware
+   $cd arm-trusted-firmware
+   $make bl31 PLAT=agilex DEPRECATED=1
+   $cd ..
+
+Build U-Boot
+^^^^^^^^^^^^
+
+.. shell:: bash
+   :no-path:
+
+   $git clone -b QPDS24.1_REL_GSRD_PR https://github.com/altera-opensource/u-boot-socfpga
+   $cd u-boot-socfpga
+   $ln -sf ../arm-trusted-firmware/build/agilex/release/bl31.bin .
+   $sed -i 's/earlycon panic=-1/earlycon panic=-1 console=ttyS0,115200 root=\/dev\/mmcblk0p2 rw rootwait/g' configs/socfpga_agilex_defconfig
+   $sed -i '/^CONFIG_NAND_BOOT=y/d' configs/socfpga_agilex_defconfig
+   $sed -i '/^CONFIG_SPL_NAND_SUPPORT=y/d' configs/socfpga_agilex_defconfig
+   $sed -i '/^CONFIG_CMD_UBI=y/d' configs/socfpga_agilex_defconfig
+   $echo 'CONFIG_USE_BOOTCOMMAND=y' >> configs/socfpga_agilex_defconfig
+   $echo 'CONFIG_BOOTCOMMAND="load mmc 0:1 \${loadaddr} agilex.core.rbf; bridge disable; fpga load 0 \${loadaddr} \${filesize}; bridge enable; load mmc 0:1 ${kernel_addr_r} Image; load mmc 0:1 ${fdt_addr_r} socfpga_agilex_socdk.dtb; booti ${kernel_addr_r} - ${fdt_addr_r}"' >> configs/socfpga_agilex_defconfig
+   $make socfpga_agilex_defconfig
+   $make
+   $cd ..
 
 Building the HDL project
 ------------------------
@@ -37,181 +118,84 @@ following guide: `Building HDL projects <https://analogdevicesinc.github.io/hdl/
   :show-user:
 
   $git clone https://github.com/analogdevicesinc/hdl.git
-  $cd hdl/projects/ad9084_fmca_ebz/vcu118
+  $cd hdl/projects/ad9084_ebz/fm87
   $make
-    Building ad9084_fmca_ebz_vcu118 [/home/analog/hdl/projects/ad9084_fmca_ebz/vcu118/ad9084_fmca_ebz_vcu118_vivado.log] ... OK
+    Building ad9084_ebz_fm87 [/home/analog/hdl/projects/ad9084_ebz/fm87/ad9084_ebz_fm87_quartus.log] ... OK
 
-.. _ad9084_fmca_ebz microblaze linux:
+After the design is built, the resulting SRAM Object File (.sof) file shall be converted to a Raw Binary File (.rbf)
+and a Jtag Indirect Configuration (.jic) file.
 
-Build the Linux files
------------------------
+If you skipped the last section, ensure to set the architecture and cross compiler environment variables and have the U-boot files built.
 
-Microblaze gnu toolchain from Xilinx is no longer available on git.
-Please use gnu tools from Vitis installation as below:
+.. shell:: bash
+   :no-path:
 
-.. shell::
-  :show-user:
+   $quartus_pfg -c ad9084_ebz_fm87.sof ad9084_ebz_fm87.jic \
+   $  -o hps_path=../../../../u-boot-socfpga/spl/u-boot-spl-dtb.hex \
+   $  -o device=MT25QU02G \
+   $  -o flash_loader=AGIB027R31B1E1V \
+   $  -o mode=ASX4 \
+   $  -o hps=1
 
-  $export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/:$PATH
-  $export ARCH=microblaze
-  $export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
+Copy the built files to the /BOOT partition:
 
-or alternatively, source the Vivado **settings64.sh** as below:
+.. shell:: bash
+   :no-path:
 
-.. shell::
-  :show-user:
+   $cp u-boot-socfpga/u-boot.itb /media/BOOT/
+   $cp linux/arch/arm64/boot/Image /media/BOOT/
+   $cp linux/arch/arm64/boot/dts/intel/socfpga_agilex_socdk_ad9084.dtb /media/BOOT/socfpga_agilex_socdk.dtb
+   $cp hdl/projects/ad9084_ebz/fm87/ad9084_ebz.core.rbf /media/BOOT/agilex.core.rbf
 
-  $source /opt/Xilinx/Vivado/2023.2/settings64.sh
-  $export ARCH=microblaze
-  $export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
+Programming steps
+-----------------
 
-Get Linux kernel source
+- Set **S9** to JTAG
+- Power on the FPGA
+- Open the Quartus Programmer and flash the ad9084_ebz.jic
+- Power off the FPGA
+- Set **S9** to QSPI
+- Insert the SD-card and power up the board
 
-.. shell::
-  :show-user:
+**S9** 4-bit DIP Switch
 
-  $git clone https://github.com/analogdevicesinc/linux.git
-    Cloning into 'linux'...
-    remote: Counting objects: 2757163, done.
-    remote: Compressing objects: 100% (495484/495484), done.
-    remote: Total 2757163 (delta 2296596), reused 2687337 (delta 2234506)
-    Receiving objects: 100% (2757163/2757163), 782.04 MiB | 1.39 MiB/s, done.
-    Resolving deltas: 100% (2296596/2296596), done.
+========== =====  =====  =====  =====
+Switch Bit 1      2      3      4
+Name       MSEL0  MSEL1  MSEL2  MSEL3
+JTAG Mode  ON     ON     ON     OFF
+QSPI Mode  ON     OFF    OFF    OFF
+========== =====  =====  =====  =====
 
-Get the Root File-System
+Default Switch Positions for the AD9084 project
 
-The root file system or rootfs contains everything (besides the Linux kernel itself) needed to support a full Linux system.
-It contains all the (user) applications, configurations, services, data, etc.
-Without the rootfs your Linux system cannot run. You can either just download the pre-build image or
-build it yourself. Instructions can be found here: `Building with buildroot <https://wiki.analog.com/resources/tools-software/linux-build/generic/buildroot>`__
-
-.. shell::
-  :show-user:
-
-  $cd linux
-  $wget https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz
-    --2022-01-18 09:52:08--  https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz
-    Resolving swdownloads.analog.com (swdownloads.analog.com)... 23.63.205.142
-    Connecting to swdownloads.analog.com (swdownloads.analog.com)|23.63.205.142|:443... connected.
-    HTTP request sent, awaiting response... 200 OK
-    Length: 6772207 (6,5M) [application/x-gzip]
-    Saving to: ‘rootfs.cpio.gz’
-
-    rootfs.cpio.gz                                     100%[===============================================================================================================>]   6,46M  3,32MB/s    in 1,9s
-
-    2022-01-18 09:52:12 (3,32 MB/s) - ‘rootfs.cpio.gz’ saved [6772207/6772207]
-
-.. important::
-  rootfs.cpio.gz must be placed in the root of your kernel tree. (~/linux/rootfs.cpio.gz)
-
-Configure the Kernel and build it
-
-The following command shows the general format for the build target name:
-
-.. shell::
-
-  $make simpleImage.<dts file name>
-
-.. note::
-
-  The <dts file name> does not include the file extension “.dts”.
-
-To see what device-trees for the different FPGA carrier and FMC module combination exist type:
-
-.. shell::
-
-  ~/linux
-  $ls -l arch/microblaze/boot/dts | grep ad9084
-
-Building the kernel with the default device tree
+================ =====  =====  =====  =====
+4-bit DIP Switch 1      2      3      4
+S4               ON     ON     ON     ON
+S15              ON     ON     ON     OFF
+S10              ON     ON     ON     ON
+S23              OFF    ON     ON     ON
+S6               OFF    OFF    OFF    OFF
+S1               OFF    OFF    OFF    OFF
+S22              OFF    ON     ON     ON
+S19              OFF    OFF    ON     ON
+S20              ON     ON     ON     ON
+================ =====  =====  =====  =====
 
 .. important::
-
-   If you wish to use a non-default AD9084 profile,
-   follow the steps in the :ref:`AD9084 Profile Generator <ad9084 profile-generator>`
-   before proceeding in order to add the profile to the Linux build.
-
-.. shell::
-  :show-user:
-
-  $cd linux
-  $make adi_mb_defconfig
-  #
-  # configuration written to .config
-  #
-  $make -j4 simpleImage.vcu118_ad9084
-    SYNC    include/config/auto.conf.cmd
-    CC      scripts/mod/empty.o
-    CC      scripts/mod/devicetable-offsets.s
-    MKELF   scripts/mod/elfconfig.h
-    HOSTCC  scripts/mod/modpost.o
-    HOSTCC  scripts/mod/sumversion.o
-    HOSTCC  scripts/mod/file2alias.o
-    [ --snip-- ]
-    AR      init/built-in.a
-    LD      vmlinux.o
-    MODPOST vmlinux.symvers
-    MODINFO modules.builtin.modinfo
-    GEN     modules.builtin
-    LD      .tmp_vmlinux.kallsyms1
-    KSYMS   .tmp_vmlinux.kallsyms1.S
-    AS      .tmp_vmlinux.kallsyms1.S
-    LD      .tmp_vmlinux.kallsyms2
-    KSYMS   .tmp_vmlinux.kallsyms2.S
-    AS      .tmp_vmlinux.kallsyms2.S
-    LD      vmlinux
-    SORTTAB vmlinux
-    SYSMAP  System.map
-    OBJCOPY arch/microblaze/boot/simpleImage.vcu118_ad9084
-    SHIPPED arch/microblaze/boot/simpleImage.vcu118_ad9084.unstrip
-    STRIP   vmlinux arch/microblaze/boot/simpleImage.vcu118_ad9084.strip
-    UIMAGE  arch/microblaze/boot/simpleImage.vcu118_ad9084.ub
-    Image Name:   Linux-5.10.0-97916-g513446e488c3
-    Created:      Tue Jan 18 12:07:35 2022
-    Image Type:   MicroBlaze Linux Kernel Image (uncompressed)
-    Data Size:    18398124 Bytes = 17966.92 KiB = 17.55 MiB
-    Load Address: 80000000
-    Entry Point:  80000000
-    Kernel: arch/microblaze/boot/simpleImage.vcu118_ad9084 is ready  (#3678)
-
-.. note::
-
-  The STRIP image found under arch/microblaze/boot/ is the ELF image which can be loaded via the debugger
+  SW23[1] has to be in the ``OFF`` position to route the reference
+  clock from the HMC7044 to the transceivers
 
 Testing
 -------
-
-First we need to prepare a working directory where we will gather all the required binary files.
-
-From the HDL build directory locate the system_top.bit and copy it to the working directory.
-
-From the Linux build directory locate the simpleImage and copy it to the working directory.
-
-.. shell::
-
-  $mkdir working_dir
-  $cp <hdl_repo_dir>/projects/ad9084_fmca_ebz/vcu118/ad9084_fmca_ebz_vcu118.runs/impl_1/system_top.bit working_dir
-  $cp <linux_repo_dir>/arch/microblaze/boot/simpleImage.vcu118_ad9084.strip working_dir
-
-Next step is to program the board with xsct or similar tool
-
-.. shell::
-
-  $xsct
-  $xsct% connect
-  $xsct% fpga -f system_top.bit
-  $xsct% after 1000
-  $xsct% target 3
-  $xsct% dow simpleImage.vcu118_ad9084.strip
-  $xsct% after 1000
-  $xsct% con
-  $xsct% disconnect
 
 .. note::
 
    Login Information
          - user: analog
          - password: analog
+
+Boot messages
+^^^^^^^^^^^^^
 
 .. collapsible:: Complete boot log
 
@@ -712,3 +696,11 @@ Next step is to program the board with xsct or similar tool
       iio:device2: axi-ad9084-rx-hpc-b
       iio:device3: axi-ad9084-tx-hpc (buffer capable)
       iio:device3: axi-ad9084-tx-hpc-b
+
+.. important::
+
+   Even thought this is Linux, this is a persistent file systems. Care should be
+   taken not to corrupt the file system -- please shut down things, don't just
+   turn off the power switch. Depending on your monitor, the standard power off
+   could be hiding. You can do this from the terminal as well with
+   :code:`sudo shutdown -h now`
