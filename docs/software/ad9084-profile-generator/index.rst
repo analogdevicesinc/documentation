@@ -79,7 +79,7 @@ the generated ``.bin`` under the ``CONFIG_EXTRA_FIRMWARE`` option:
   $cat arch/arch/microblaze/configs/adi_mb_defconfig | grep 'CONFIG_EXTRA_FIRMWARE='
   CONFIG_EXTRA_FIRMWARE="new_profile.bin APOLLO_FW_CPU1_B.bin <...>"
 
-You can then follow the :ref:`Linux kernel build flow <ad9084_fmca_ebz microblaze linux>`
+You can then follow the :ref:`Linux kernel build flow <ad9084_ebz microblaze linux>`
 to build the kernel and boot it on the board.
 
 For Versal carriers (:xilinx:`VCK190`/:xilinx:`VPK180`)
@@ -97,7 +97,7 @@ the generated ``.bin`` under the ``CONFIG_EXTRA_FIRMWARE`` option:
   $cat arch/arm64/configs/adi_versal_defconfig | grep 'CONFIG_EXTRA_FIRMWARE='
   CONFIG_EXTRA_FIRMWARE="new_profile.bin APOLLO_FW_CPU1_B.bin <...>"
 
-You can then follow the :ref:`Linux kernel build flow <ad9084_fmca_ebz versal linux>`
+You can then follow the :ref:`Linux kernel build flow <ad9084_ebz versal linux>`
 to build the kernel and boot it on the board.
 
 For Intel Agilex 7 I-Series (`FM87 <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/si-agi027.html>`__)
@@ -115,7 +115,7 @@ the generated ``.bin`` under the ``CONFIG_EXTRA_FIRMWARE`` option:
   $cat arch/arm64/configs/adi_zynqmp_defconfig | grep 'CONFIG_EXTRA_FIRMWARE='
   CONFIG_EXTRA_FIRMWARE="new_profile.bin APOLLO_FW_CPU1_B.bin <...>"
 
-You can then follow the :ref:`Linux kernel build flow <ad9084_fmca_ebz agilex linux>`
+You can then follow the :ref:`Linux kernel build flow <ad9084_ebz agilex linux>`
 to build the kernel and boot it on the board.
 
 .. important::

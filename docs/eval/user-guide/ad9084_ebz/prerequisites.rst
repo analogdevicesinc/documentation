@@ -1,4 +1,4 @@
-.. _ad9084_fmca_ebz prerequisites:
+.. _ad9084_ebz prerequisites:
 
 Prerequisites
 =============
@@ -10,7 +10,7 @@ start out with:
 #. A carrier platform. ADI does not offer these boards for sale or loan, getting
    one yourself is normal part of development or evaluation of the AD9084.
 
-    - :ref:`See the supported carriers <ad9084_fmca_ebz carriers>`.
+    - :ref:`See the supported carriers <ad9084_ebz carriers>`.
     - Depending on the carrier, one or more `FMC+ riser cards <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__ may be needed.
 
 #. Analysis | Control | Evaluation (ACE) software with the AD9084 plugin installed.
