@@ -54,8 +54,8 @@ jobs:
 
           [[ -z "$files" ]] && return
           while read file; do
-            echo $file
-            vale $file --config=.github/styles/$1 --output=JSON | \
+            echo "$1: $file"
+            vale --config=.github/styles/$1 --output=JSON  $file |  \
               jq -r 'to_entries[] | .key as $file | .value[] |
               "::\(.Severity) file=\($file),line=\(.Line),col=\(.Span[0])::vale:\(.Check):\($file):\(.Line):\(.Span[0]) \(.Message)"'
           done <<< "$files"
