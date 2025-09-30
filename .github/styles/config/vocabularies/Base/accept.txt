@@ -29,14 +29,21 @@ LED(s)?
 [Aa]cquire
 [Mm]inimize
 [Oo]btain
+[Ll]oopback
+[Aa]dditional
 
 Tx
 Rx
 MIMO(s)?
 Doherty
+PCIe
+Agilent
+Stratix
+APIs
 
 ns
 dBm
+Gbps
 
 [Oo]vercurrent
 [Oo]vervoltage
@@ -45,6 +52,7 @@ dBm
 [Pp]inout
 [Dd]atasheet
 [Hh]owever
+[Vv]arious
 
 # Passiv allow
 is rated
