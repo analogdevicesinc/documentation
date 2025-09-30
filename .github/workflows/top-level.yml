@@ -47,14 +47,15 @@ jobs:
     - name: Check writing
       run: |
         pip install docutils vale
-        vale sync
 
         check_vale() {
           files=$(git diff --diff-filter=ACM --no-renames --name-only $base_sha..$head_sha -- docs/*.rst docs/**/*.rst)
 
+          echo "$1"
+          vale sync --config=.github/styles/$1
           [[ -z "$files" ]] && return
           while read file; do
-            echo "$1: $file"
+            echo "$file"
             vale --config=.github/styles/$1 --output=JSON  $file |  \
               jq -r 'to_entries[] | .key as $file | .value[] |
               "::\(.Severity) file=\($file),line=\(.Line),col=\(.Span[0])::vale:\(.Check):\($file):\(.Line):\(.Span[0]) \(.Message)"'
