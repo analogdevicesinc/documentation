@@ -47,7 +47,7 @@ jobs:
         pip install docutils vale
 
         check_vale() {
-          files=$(git diff --diff-filter=ACM --no-renames --name-only $base_sha..$head_sha -- docs/*.rst docs/**/*.rst)
+          files=$(git diff --diff-filter=ACM --no-renames --name-only $base_sha..$head_sha -- 'docs/*.rst' 'docs/**/*.rst')
 
           echo "$1"
           vale sync --config=.github/styles/$1
