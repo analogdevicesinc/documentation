@@ -41,9 +41,7 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        lfs: 'false'
+    - uses: analogdevicesinc/doctools/checkout@action
     - name: Check writing
       run: |
         pip install docutils vale
