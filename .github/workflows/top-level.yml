@@ -41,29 +41,27 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        lfs: 'false'
-
-    - name: Install pip package
+    - uses: analogdevicesinc/doctools/checkout@action
+    - name: Check writing
       run: |
-        pip install docutils
+        pip install docutils vale
 
-    - uses: errata-ai/vale-action@v2.1.1
-      with:
-        files: docs
-        reporter: github-pr-check
-        filter_mode: added
-        fail_on_error: false
-        vale_flags: "--config=.github/styles/vale-spelling.ini"
+        check_vale() {
+          files=$(git diff --diff-filter=ACM --no-renames --name-only $base_sha..$head_sha -- 'docs/*.rst' 'docs/**/*.rst')
 
-    - uses: errata-ai/vale-action@v2.1.1
-      with:
-        files: docs
-        reporter: github-pr-check
-        filter_mode: added
-        fail_on_error: false
-        vale_flags: "--config=.github/styles/vale-enforcement.ini"
+          echo "$1"
+          vale sync --config=.github/styles/$1
+          [[ -z "$files" ]] && return
+          while read file; do
+            echo "$file"
+            vale --config=.github/styles/$1 --output=JSON  $file |  \
+              jq -r 'to_entries[] | .key as $file | .value[] |
+              "::\(.Severity) file=\($file),line=\(.Line),col=\(.Span[0])::vale:\(.Check):\($file):\(.Line):\(.Span[0]) \(.Message)"'
+          done <<< "$files"
+        }
+
+        check_vale vale-spelling.ini
+        check_vale vale-enforcement.ini
 
   deploy:
     runs-on: ubuntu-latest
