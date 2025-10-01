@@ -1,6 +1,8 @@
 # -- Import setup -------------------------------------------------------------
 
 from os import path
+import sys
+sys.path.insert(0, path.abspath('ext'))
 
 # -- Project information -----------------------------------------------------
 
@@ -13,7 +15,8 @@ author = 'Analog Devices, Inc.'
 
 extensions = [
     "sphinx.ext.todo",
-    "adi_doctools"
+    "adi_doctools",
+    "ext_lfs_to_links",
 ]
 
 needs_extensions = {
