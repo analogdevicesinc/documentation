@@ -561,15 +561,20 @@ and entering the break points into the table on the left. The maximum signal
 level is 500 mV pk-pk. Right-click on the table to bring up a menu which will
 help edit the data in the table.
 
-.. figure: lib1_bodeinjlvl.png
+.. figure:: lib1_bodeinjlvl.png
 
    Setting the Bode Plot Injection Level
 
-+----------------------------------------------+-----------------------------------------------+
-| .. figure:: lib2_bodeinjlvl.png              | .. figure:: lib3_bodeinjlvl.png               |
-|                                              |                                               |
-| Tapered vs. Constant 20 mV Injection Levels  | Tapered vs. Constant 100 mV Injection Levels  |
-+----------------------------------------------+-----------------------------------------------+
+.. grid::
+   :widths: 50% 50%
+
+   .. figure:: lib2_bodeinjlvl.png
+
+      Tapered vs. Constant 20 mV Injection Levels
+
+   .. figure:: lib3_bodeinjlvl.png
+
+      Tapered vs. Constant 100 mV Injection Levels
 
 With a constant 20 mV pk-pk injection level, both the gain and phase
 measurements are noticeably noisier at low frequencies because of the small
@@ -796,12 +801,17 @@ Upper Limit combo boxes.
 If the voltage waveform remains inside the box, the limit text will turn green,
 otherwise the text will be red.
 
-+--------------------------------------+--------------------------------------+
-| .. figure:: lib2_limidisp.png        | .. figure:: lib3_limidisp.png        |
-|                                      |                                      |
-| **Transient Analysis Passing Set     | **Transient Analysis Failing Set     |
-| Limits indicated by Green Text**     | Limits indicated by Red Text**       |
-+--------------------------------------+--------------------------------------+
+.. grid::
+   :widths: 50% 50%
+
+   .. figure:: lib2_limidisp.png
+
+      Transient Analysis Passing Set Limits indicated by Green Text
+
+   .. figure:: lib3_limidisp.png
+
+      Transient Analysis Failing Set Limits indicated by Red Text
+
 
 Transient Analysis Tab
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -950,7 +960,7 @@ Time combo boxes. The rise times are programmable only when the Low Current is
 set to a minimum value other than zero in order to overcome the offset of the
 amplifier in the current control loop on the current probe.
 
-.. figure::lib1_rifati.png
+.. figure:: lib1_rifati.png
 
    Transient Rise Time Comparison
 
