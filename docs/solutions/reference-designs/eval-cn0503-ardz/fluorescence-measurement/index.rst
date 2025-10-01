@@ -50,14 +50,14 @@ The following is a list of items needed in order to replicate this demo.
 Setting Up the EVAL-CN0503-ARDZ
 -------------------------------
 
-Before starting with these steps, please check the :ref:`Hardware User
-Guide<eval-cn0503-ardz>` for the steps to assembling the :adi:`CN0503`.
-Additionally, please check the :ref:`Software User Guide<cn0503-software>` for
-the steps in setting up the firmware and the :download:`Quick Setup Guide
-<cn0503_gui_quick_start_guide.docx>` for running the software. This demo
-assumes that you already have an assembled board with a working firmware
-already programmed on the :adi:`EVAL-ADICUP3029` and a ready-to-run software in
-the host computer.
+Before starting with these steps, please check the
+:ref:`Hardware User Guide<eval-cn0503-ardz>` for the steps to assembling the
+:adi:`CN0503`. Additionally, please check the :ref:`Software User Guide <cn0503-software>`
+for the steps in setting up the firmware and the
+:download:`Quick Setup Guide <cn0503_gui_quick_start_guide.docx>`
+for running the software. This demo assumes that you already have an assembled
+board with a working firmware already programmed on the :adi:`EVAL-ADICUP3029`
+and a ready-to-run software in the host computer.
 
 Configure the on-board jumper shunt connection as below:
 
