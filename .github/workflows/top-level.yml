@@ -15,9 +15,6 @@ jobs:
         python-version: "3.x"
 
     - uses: actions/checkout@v4
-      with:
-        lfs: 'true'
-
     - name: Install pip packages
       working-directory: docs
       run: |
@@ -27,7 +24,14 @@ jobs:
     - name: Build doc
       working-directory: docs
       run: |
+        export GIT_LFS_TO_LINKS="true"
+        export GIT_ORG_REPOSITORY="${{ github.repository }}"
+        [ "${{ github.event_name }}" = "pull_request" ] \
+          && export GIT_BRANCH="${{ github.event.pull_request.base.ref }}" \
+          || export GIT_BRANCH="${{ github.ref_name }}"
+
         [[ "${{ runner.debug }}" != "1" ]] && j_="-jauto"
+
         make html SPHINXOPTS="$j_ -W --keep-going"
 
     - name: Store the generated doc
