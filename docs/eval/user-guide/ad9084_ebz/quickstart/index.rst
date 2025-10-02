@@ -9,11 +9,12 @@ on various FPGA development boards. They will discuss how to program the bitstre
 run a no-OS program or boot a Linux distribution.
 
 .. toctree::
-  :maxdepth: 2
+   :maxdepth: 2
 
-  Virtex UltraScale+ VCU118/VCU128 <microblaze>
-  Versal ACAP VCK190/VPK180 <versal>
-  Intel Agilex 7 I-Series <agilex>
+   Virtex UltraScale+ VCU118/VCU128 <microblaze>
+   Versal ACAP VCK190/VPK180 <versal>
+   Intel Agilex 7 I-Series <agilex>
+   new_usecase
 
 .. _ad9084_ebz carriers:
 

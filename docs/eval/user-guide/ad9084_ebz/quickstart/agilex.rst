@@ -12,7 +12,8 @@ Required Hardware
 - Intel `DK-SI-AGIB027FA <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/si-agi027.html>`__ board
 - Intel `HPS IO48 OOBE Daughter Card <https://www.intel.com/content/www/us/en/docs/programmable/721605/current/daughter-cards-17810.html>`__
 - :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
-- SD Card of at least 16GB imaged with Kuiper Linux (see :ref:`kuiper sdcard`)
+- SD Card of at least 16GB imaged with Kuiper Linux (see
+  :external+adi-kuiper-gen:doc:`Configure a SD Card <hardware-configuration>`)
 - 1x `Vita 57 FMC+ Extender <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__
 - USB-C cable
 - Ethernet cable

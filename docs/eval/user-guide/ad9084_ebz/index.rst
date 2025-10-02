@@ -33,7 +33,7 @@ warfare applications.
    quickstart/index
 
 Table of Contents
--------------------------------------------------------------------------------
+-----------------
 
 People who follow the flow that is outlined, have a much better experience with
 things. However, like many things, documentation is never as complete as it should be.
@@ -43,8 +43,8 @@ things. However, like many things, documentation is never as complete as it shou
    #. :ref:`What you need to get started <ad9084_ebz prerequisites>`
    #. :ref:`Quick Start Guides <ad9084_ebz quickstart>`
 
-      #. :ref:`Configure a pre-existing SD Card <kuiper sdcard>`
-      #. :ref:`Update the old card you received with your hardware <kuiper update>`
+      #. :external+adi-kuiper-gen:doc:`Configure a SD Card <hardware-configuration>`
+      #. :external+adi-kuiper-gen:doc:`Update the SD Card <repositories>`
       #. :ref:`AD9084 (Apollo) Profile Generator <ad9084 profile-generator>`
       #. :ref:`Running a new JESD mode on hardware <ad9084_ebz quickstart new_usecase>`
 
