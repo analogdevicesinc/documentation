@@ -69,56 +69,18 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     needs: [build-doc]
     permissions:
       contents: write
+    if: >
+      github.ref == 'refs/heads/main' ||
+      github.event_name == 'pull_request' ||
+      github.ref_type == 'tag'
 
     steps:
-    - run: |
-        git config --global user.name "${{ github.event.head_commit.committer.name }}"
-        git config --global user.email "${{ github.event.head_commit.committer.email }}"
-
-    - uses: actions/checkout@v4
-    - name: Create gh-pages branch
-      run: >
-        git ls-remote --exit-code --heads origin refs/heads/gh-pages ||
-        (
-          git reset --hard ;
-          git clean -fdx ;
-          git checkout --orphan gh-pages ;
-          git reset --hard;
-          git commit -m "empty" --allow-empty ;
-          git push origin gh-pages:gh-pages
-        )
-
-    - uses: actions/checkout@v4
+    - uses: analogdevicesinc/doctools/gh-pages-deploy@action
       with:
-        ref: 'gh-pages'
-        lfs: 'false'
-
-    - name: Empty gh-pages
-      run: |
-        git rm -r . --quiet || true
-
-    - uses: actions/download-artifact@v4
-      with:
+        new_tag: ${{ github.ref_type == 'tag' }}
+        tag: ${{ github.ref_name }}
         name: html
 
-    - name: Patch doc build
-      run: |
-        rm -r _sources
-        touch .nojekyll
-
-    - name: Commit gh-pages
-      run: |
-        author=$(git log -1 --pretty=format:'%an')
-        email=$(git log -1 --pretty=format:'%ae')
-        commit=$(git rev-parse --short HEAD)
-
-        git add . >> /dev/null
-        git commit -m "deploy: ${GITHUB_SHA}" --allow-empty
-
-    - name: Push to gh-pages
-      run: >-
-        git push origin gh-pages:gh-pages
