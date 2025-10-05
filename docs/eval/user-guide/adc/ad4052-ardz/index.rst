@@ -9,11 +9,8 @@
    hdl:
      - projects/ad4052_ardz
 
-   linux:
-     - iio/ad4052
-
    no-OS:
-     - drivers/ad405x
+     - drivers/adc/ad405x
 
 .. _eval-ad4052-ardz:
 
