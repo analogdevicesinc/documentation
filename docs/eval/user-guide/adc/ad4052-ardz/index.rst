@@ -1,3 +1,20 @@
+.. collection:: EVAL-AD4050/AD4052-ARDZ
+   :subtitle: Evaluating the AD4050/AD4052 Compact, Low Power, 12-Bit/16-Bit, 2 MSPS Easy Drive SAR ADCs
+   :image: eval-angle.png
+   :label: eval user-guide
+
+   documentation:
+     - User guide <.>
+
+   hdl:
+     - projects/ad4052_ardz
+
+   linux:
+     - iio/ad4052
+
+   no-OS:
+     - drivers/ad405x
+
 .. _eval-ad4052-ardz:
 
 EVAL-AD4050/AD4052-ARDZ
