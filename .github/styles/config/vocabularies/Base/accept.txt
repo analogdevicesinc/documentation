@@ -33,10 +33,14 @@ LED(s)?
 [Aa]dditional
 [Hh]ighspeed
 [Dd]efconfig
+[Ss]etpoint
 
 Tx
 Rx
 MIMO(s)?
+PLC(s)?
+DCS(s)?
+PAC(s)?
 Doherty
 PCIe
 Agilent
@@ -47,6 +51,10 @@ Versal
 APIs
 DAC(s)?
 ADC(s)?
+PWM(s)?
+HMI(s)?
+Profibus
+Ethernet
 
 ns
 dBm
