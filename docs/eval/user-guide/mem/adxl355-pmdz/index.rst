@@ -1,3 +1,19 @@
+.. collection:: EVAL-ADXL355-PMDZ
+   :subtitle: Evaluating the ADXL355 Low-Noise, Low-Drift, Low-Power, 3-Axis MEMS Accelerometers
+   :image: adxl355_pmdz.png
+   :label: eval user-guide
+
+   documentation:
+     - User guide <.>
+     - Converter Connectivity Tutorial <learning/converter_connectivity_tutorial/index>
+
+   no-OS:
+     - no-OS Driver (adxl355) <drivers/accel/adxl355>
+
+   pyadi-iio:
+     - pyADI-iio Driver (adxl355) <devices/adi.adxl355>
+
+
 .. _eval-adxl355-pmdz:
 
 EVAL-ADXL355-PMDZ
@@ -92,7 +108,7 @@ Power Supply Considerations and Configuration
 
 When using the ADXL355 PMOD board, the 3.3V power for the PMOD comes directly
 from the host board it is connected to. Most Pmod platform boards can supply at
-least 100 mA, more than adquate for the EVAL-ADXL355-PMDZ.
+least 100 mA, more than adequate for the EVAL-ADXL355-PMDZ.
 
 Device Driver and Software Support
 ==================================
