@@ -1,3 +1,17 @@
+.. collection:: EVAL-ADXL355-PMDZ
+   :subtitle: Evaluating the ADXL355 Low-Noise, Low-Drift, Low-Power, 3-Axis MEMS Accelerometers
+   :image: adxl355_pmdz.png
+   :label: eval user-guide
+
+   documentation:
+     - User guide <.>
+
+   no-OS:
+     - no-OS Driver (adxl355) <drivers/accel/adxl355>
+
+   linux:
+      - `ADXL355 Kuiper Linux/RPi Support (adxl355) <https://github.com/analogdevicesinc/linux/blob/rpi-5.10.y/arch/arm/boot/dts/overlays/rpi-adxl355-overlay.dts>`__
+
 .. _eval-adxl355-pmdz:
 
 EVAL-ADXL355-PMDZ
