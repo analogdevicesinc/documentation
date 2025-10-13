@@ -11,6 +11,8 @@ no-OS
 
 PDO(s)?
 LED(s)?
+FET(s)?
+PSE(s)?
 
 [Ee]valuate
 [Pp]reloaded
@@ -34,6 +36,7 @@ LED(s)?
 [Hh]ighspeed
 [Dd]efconfig
 [Ss]etpoint
+[Pp]assthrough
 
 Tx
 Rx
@@ -55,6 +58,7 @@ PWM(s)?
 HMI(s)?
 Profibus
 Ethernet
+Zener
 
 ns
 dBm
