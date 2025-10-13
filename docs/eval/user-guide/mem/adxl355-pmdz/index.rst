@@ -11,7 +11,7 @@
      - no-OS Driver (adxl355) <drivers/accel/adxl355>
 
    pyadi-iio:
-     - pyADI-iio Driver (adxl355) <devices/adi.adxl355>
+     - pyadi-iio Abstraction (adxl355) <devices/adi.adxl355>
 
 
 .. _eval-adxl355-pmdz:
