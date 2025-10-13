@@ -4,6 +4,7 @@ LTspice
 [Kk]uiper
 [Xx]ilinx
 no-OS
+Digilent
 
 [Tt]octree
 [Dd]ocname
@@ -13,6 +14,7 @@ PDO(s)?
 LED(s)?
 FET(s)?
 PSE(s)?
+Pmod(s)?
 
 [Ee]valuate
 [Pp]reloaded
@@ -22,7 +24,7 @@ PSE(s)?
 [Mm]ultiple
 [Uu]ltrafast
 [Uu]ltralow
-[Mm]icrocontroller
+[Mm]icrocontroller(s)?
 [Oo]vertemperature
 [Mm]onitor
 [Pp]urchase
