@@ -7,6 +7,8 @@ on:
 jobs:
   build-doc:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
     - name: Set up Python
@@ -43,6 +45,8 @@ jobs:
   check-doc:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
+    permissions:
+      contents: read
 
     steps:
     - uses: analogdevicesinc/doctools/checkout@action
