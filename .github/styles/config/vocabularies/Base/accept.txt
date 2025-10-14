@@ -65,6 +65,7 @@ Zener
 ns
 dBm
 Gbps
+kbps
 
 [Oo]vercurrent
 [Oo]vervoltage
