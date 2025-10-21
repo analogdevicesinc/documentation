@@ -20,7 +20,7 @@ start out with:
       or Linux).
    -  :ref:`See the supported carriers <adrv9009 carriers>`.
 
-#.  some way to interact with the platform,
+#. Some way to interact with the platform,
 
    #. for the ARM/FPGA SoC platforms, this normally includes:
 

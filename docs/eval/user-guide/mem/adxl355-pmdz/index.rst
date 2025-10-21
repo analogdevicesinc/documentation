@@ -271,19 +271,19 @@ MAX32655FTHR
 ------------
 
 1. Connect **MAX32655FTHR** with the **FTHR-PMOD-INTZ**. Note that MAXIM
-feather board should have stacking headers for feather board where the
-interposer board will be connected.
+   feather board should have stacking headers for feather board where the
+   interposer board will be connected.
 
 2. Connect **EVAL-ADXL355-PMDZ** to the **FTHR-PMOD-INTZ**.
 
 3. Power up the **MAX32655FTHR** by connecting it to your laptop using micro-USB
 
 4. Open the file explorer. Drag-and-drop the pre-built hex file to the DAPLINK.
-If the transfer was not completed, update the firmware for the DAPLINK. Follow
-the steps here: https://github.com/MaximIntegrated/max32625pico-firmware-images/
+   If the transfer was not completed, update the firmware for the DAPLINK. Follow
+   the steps here: https://github.com/MaximIntegrated/max32625pico-firmware-images/
 
 5. Open PuTTY or other similar software. Check the Device Manager to set
-correct COM for the MAX32655FTHR. Set baud rate according to hex file used:
+   correct COM for the MAX32655FTHR. Set baud rate according to hex file used:
 
 +------------------------------------------------------------------+-----------+
 | Hex file                                                         | Baud rate |
