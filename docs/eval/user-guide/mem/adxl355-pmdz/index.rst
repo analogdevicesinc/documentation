@@ -1,6 +1,6 @@
 .. collection:: EVAL-ADXL355-PMDZ
    :subtitle: Evaluating the ADXL355 Low-Noise, Low-Drift, Low-Power, 3-Axis MEMS Accelerometers
-   :image: adxl355_pmdz.png
+   :image: eval-angle.png
    :label: eval user-guide
 
    documentation:
@@ -21,6 +21,10 @@ EVAL-ADXL355-PMDZ
 
 Overview
 ========
+
+.. image:: eval-angle.png
+   :align: right
+   :width: 300px
 
 The :adi:`EVAL-ADXL355-PMDZ` is a compact, low-cost,
 Pmod-compatible evaluation board for the :adi:`ADXL355` low noise
@@ -50,9 +54,6 @@ filtering from 1 Hz to 1 kHz, and low noise density of 25µ/√Hz at less than
 200µA current consumption, ADXL355 MEMS accelerometer offers performance level
 comparable to much more expensive devices with less power consumption and BOM
 cost.
-
-.. image:: adxl355_pmdz.png
-   :width: 350px
 
 Input and Output Connections and Configurations
 ===============================================
