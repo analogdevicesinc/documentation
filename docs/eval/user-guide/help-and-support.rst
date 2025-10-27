@@ -7,10 +7,10 @@ Help and Support for ADI FMC Cards & RF SoMs
 
 If you have any questions regarding the:
 
-* ADI FMC Boards: AD-FMCOMMS2-EBZ, AD-FMCOMMS3-EBZ, AD-FMCOMMS4-EBZ,
+- ADI FMC Boards: AD-FMCOMMS2-EBZ, AD-FMCOMMS3-EBZ, AD-FMCOMMS4-EBZ,
   AD-FMCOMMS5-EBZ AD-FMCOMMS11-EBZ
-* Arrow ARRADIO board or
-* ADI RF SoM (ADRV9364-Z7020, ADRV9361-Z7035 or ADRV9009-ZU11EG)
+- Arrow ARRADIO board or
+- ADI RF SoM (ADRV9364-Z7020, ADRV9361-Z7035 or ADRV9009-ZU11EG)
 
 or are experiencing any problems while using the board or following the user
 guides, feel free to ask us a question.
@@ -112,13 +112,13 @@ MATLAB/Simulink/SimRF Questions
 Questions about the MathWorks provided AD9361 simRF model, or the FMCOMMS2/3/4/5
 Hardware support package can be asked either:
 
-* :mw:`MathWorks information page <products/connections/product_detail/adi-rf-transceivers.html>`
-* :mw:`MathWorks Hardware Support <hardware-support/request-hardware-support.html>`
+- :mw:`MathWorks information page <products/connections/product_detail/adi-rf-transceivers.html>`
+- :mw:`MathWorks Hardware Support <hardware-support/request-hardware-support.html>`
 
 Questions about the Analog Devices provided Filter Wizard, or streaming system object,
 or Board Support Package can be asked:
 
-* :ez:`MATLAB/Simulink support <sw-interface-tools>`
+- :ez:`MATLAB/Simulink support <sw-interface-tools>`
 
 GNU Radio
 -------------------------------------------------------------------------------
@@ -139,9 +139,9 @@ documentation.
 If you think you have a real bug, where you have developed a real fix (first - thanks),
 feel free to:
 
-* Post something on EngineerZone.
-* Post something on the GitHub issue tracker.
-* Fork the GitHub repository, and fix it, and then send a pull request.
+- Post something on EngineerZone.
+- Post something on the GitHub issue tracker.
+- Fork the GitHub repository, and fix it, and then send a pull request.
 
 Either is OK with us.
 
@@ -150,9 +150,9 @@ More info
 
 For more information also check:
 
-* `VITA's FMC info <http://www.vita.com/fmc>`_
-* :adi:`AD-FMCOMMS2-EBZ`
-* :adi:`AD-FMCOMMS3-EBZ`
-* :adi:`AD-FMCOMMS4-EBZ`
-* :adi:`AD-FMCOMMS5-EBZ`
-* :dokuwiki:`Arradio <resources/eval/user-guides/arradio>`
+- `VITA's FMC info <http://www.vita.com/fmc>`_
+- :adi:`AD-FMCOMMS2-EBZ`
+- :adi:`AD-FMCOMMS3-EBZ`
+- :adi:`AD-FMCOMMS4-EBZ`
+- :adi:`AD-FMCOMMS5-EBZ`
+- :dokuwiki:`Arradio <resources/eval/user-guides/arradio>`
