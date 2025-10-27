@@ -1,4 +1,4 @@
-.. _adrv9026 prerequisites:
+.. _adrv902x prerequisites:
 
 Prerequisites
 ===============================================================================
@@ -6,34 +6,53 @@ Prerequisites
 What you need, depends on what you are trying to do. As a minimum, you need to
 start out with:
 
-#. The ADRV9026 based card.
-#. A carrier platform. ADI does not offer these boards for sale or loan,
-   getting one yourself is normal part of development or evaluation of the
-   ADRV9026. Our recommended carriers (the ones we use all the time) are either:
+Hardware prerequisites
+-------------------------------------------------------------------------------
 
-   - The :xilinx:`AMD ZCU102 <zcu102>`. The fabric on this device is much
-     larger, and if you are looking at targeting - this is the recommended
+#. The ADRV9026/ADRV9029-based evaluation board:
+   :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>`
+#. An FPGA carrier platform. Our recommended ones are either:
+
+   - The AMD Xilinx ZCU102 :xilinx:`ZCU102`. The fabric on this device is
+     large, and if you are looking at targeting - this is the recommended
      option.
-   - There are a few more boards, which do work, but are currently not yet
-     supported. The experience of the fabric only solutions is very close to
-     the ARM/FPGA SoC based solutions, but the GUI runs on a host PC (Windows
-     or Linux).
-   - :ref:`See the supported carriers <adrv9026 carriers>`.
+   - The AMD Xilinx :xilinx:`VCK190`. The fabric on this device is much
+     larger.
+   - There are a few more boards, which do work, but are currently not
+     supported by us. The experience with the fabric-only solutions is very
+     close to the ARM/FPGA SoC based solutions, but the GUI runs on a host PC
+     (Windows or Linux).
+   - :ref:`See the supported carriers <adrv902x carriers>`.
 
-#. Some way to interact with the platform,
+#. Some way to interact with the FPGA platform:
 
-   #. For the ARM/FPGA SoC platforms, this normally includes:
+   #. for the ARM/FPGA SoC platforms, this normally includes:
 
-      - DisplayPort monitor
+      - HDMI or DisplayPort monitor
       - USB Keyboard
       - USB Mouse
 
-   #. For the FPGA only solutions, this includes:
+   #. for the FPGA only solutions, this includes:
 
       - LAN cable (Ethernet)
       - Host PC (Windows or Linux)
 
 #. Internet connection (without proxies makes things much easier) to update the
-   scripts/binaries on the SD Card that came with the ADI FMC Card. (Firewalls
+   scripts/binaries on the SD card that came with the ADI FMC Card (firewalls
    are OK, proxies make things a pain).
 #. RF Test equipment
+#. An SD card with at leas 16GB of memory (in case you're using Linux). You
+   should have received one when purchasing the evaluation board.
+
+Software prerequisites
+-------------------------------------------------------------------------------
+
+Normally, for basic functionalities regarding visualizing the data received
+from the FPGA, we use the following:
+
+#. :external+scopy:doc:`Scopy <index>` v2.0 or later (must contain the IIO plugin)
+
+.. note::
+
+   :adi:`ADI <>` does not offer FPGA carrier platforms for sale or loan; getting
+   one yourself is the normal part of development or evaluation.
