@@ -21,7 +21,8 @@ Supported carriers
 The :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>`, is, by definition a "FPGA
 mezzanine card" (FMC); that means it needs a carrier to plug into.
 
-The carriers we support are:
+The carriers we support are listed below, as well as the FMC port where to
+connect the evaluation board:
 
 .. list-table::
    :header-rows: 1
@@ -30,26 +31,17 @@ The carriers we support are:
      - EVAL-ADRV9026
      - EVAL-ADRV9029
    - - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
-     - Yes
-     - Yes
-   - - :xilinx:`KC705`
-     - ---
-     - ---
-   - - :xilinx:`KCU105`
-     - ---
-     - ---
+     - FMCA
+     - FMCA
    - - :xilinx:`VCK190`
-     - Yes
-     - Yes
+     - FMCP1
+     - FMCP1
    - - :xilinx:`VCU118`
-     - Yes
-     - Yes
-   - - :xilinx:`ZC706`
-     - ---
-     - ---
+     - FMCP
+     - FMCP
    - - :xilinx:`ZCU102`
-     - Yes
-     - Yes
+     - FMC HPC1
+     - FMC HPC1
 
 Supported Environments
 -------------------------------------------------------------------------------
@@ -67,14 +59,6 @@ The supported OS are:
      - Yes
      - Yes
      - ---
-   - - :xilinx:`KC705`
-     - ---
-     - ---
-     - ---
-   - - :xilinx:`KCU105`
-     - ---
-     - ---
-     - ---
    - - :xilinx:`VCK190`
      - Yes
      - Yes
@@ -87,10 +71,6 @@ The supported OS are:
      - Yes
      - Yes
      - Yes
-   - - :xilinx:`ZC706`
-     - ---
-     - ---
-     - ---
 
 Hardware Setup
 -------------------------------------------------------------------------------
