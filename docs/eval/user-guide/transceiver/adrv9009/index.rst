@@ -1,5 +1,25 @@
 .. _adrv9009:
 
+.. collection:: EVAL-ADRV9008/9
+   :subtitle: Evaluating the ADRV9009 Integrated Dual RF Tx, Rx, and Observation Rx
+   :image: adrv9009-pcb.jpg
+   :label: eval user-guide
+
+   documentation:
+     - User guide <.>
+
+   hdl:
+     - HDL Project (adrv9009) <projects/adrv9009>
+
+   no-OS:
+     - no-OS Driver (talise) <drivers/rf-transceiver/talise>
+
+   pyadi-iio:
+     - pyADI-iio Driver (adrv9009) <devices/adi.adrv9009>
+
+   pyadi-jif:
+     - pyADI-jif API Reference (adrv9009) <adijif/converters.adrv9009>
+
 ADRV9009 & ADRV9008
 ===============================================================================
 
