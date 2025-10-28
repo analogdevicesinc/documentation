@@ -7,15 +7,48 @@ ADRV902x
    :align: left
    :width: 150
 
-The :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>`, are FMC radio cards for the
-:adi:`ADRV9026` and :adi:`ADRV9029`, highly integrated, radio frequency (RF)
-agile transceivers offering four independently controlled transmitters,
-dedicated observation receiver inputs for monitoring each transmitter channel,
-four independently controlled receivers, integrated synthesizers, and digital
-signal processing functions providing complete transceiver solutions. The
-devices provide the performance demanded by cellular infrastructure
+Overview
+-------------------------------------------------------------------------------
+
+The :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>`, are FMC radio cards
+designed to showcase the :adi:`ADRV9026` and :adi:`ADRV9029`, highly
+integrated, radio frequency (RF) agile transceivers offering 4 independently
+controlled transmitters, dedicated observation receiver inputs for monitoring
+each transmitter channel, 4 independently controlled receivers, integrated
+synthesizers, and digital signal processing functions providing complete
+transceiver solutions.
+
+The devices provide the performance demanded by cellular infrastructure
 applications, such as small cell base station radios, macro 3G/4G/5G systems,
 and massive multiple in/multiple out (MIMO) base stations.
+
+Features:
+
+- Both chips feature:
+
+  - 4 differential transmitters & 4 differential receivers
+  - 2 observation receivers with 2 inputs each
+  - Support for TDD and FDD applications
+  - 24.33 Gbps JESD204B/JESD204C digital interface
+
+- Complete ADRV9026 radio cards for evaluation
+
+  - ADRV9026-HB/PCBZ for frequency band 2.8GHz to 6GHz
+  - ADRV9026-MB/PCBZ for frequency band 650MHz to 2.8GHz
+  - ADRV9026-LB/PCBZ for frequency band 75MHz to 1000MHz
+
+- Complete ADRV9029 radio cards for evaluation
+
+  - ADRV9029-HB/PCBZ (integrated DPD & CFR) for frequency band 2.8GHz to 6GHz
+  - ADRV9029-MB/PCBZ (integrated DPD & CFR) for frequency band 650MHz to 2.8GHz
+
+- A separate power daughter card provides reference design for high efficiency
+  power supply solution
+- FMC connector for FPGA
+
+Applications:
+
+- 3G/4G/5G TDD and FDD massive MIMO, macro and small cell base stations
 
 .. image:: adrv9026-pcb.png
    :align: center
@@ -24,6 +57,7 @@ and massive multiple in/multiple out (MIMO) base stations.
    :hidden:
 
    prerequisites
+   user-guide
    quickstart/index
 
 Recommendations
@@ -91,7 +125,7 @@ Table of contents
         #. About the JESD204 utilities:
 
            - :dokuwiki:`JESD204 (FSM) interface Linux Kernel framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
-           - :dokuwiki:`JESD204B status utility <resources/tools-software/linux-software/jesd_status>`
+           - :dokuwiki:`JESD204 status utility <resources/tools-software/linux-software/jesd_status>`
            - :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
            - :external+hdl:ref:`jesd204`
 

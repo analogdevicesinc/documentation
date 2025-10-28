@@ -9,7 +9,7 @@ VCK190 Quick start
 This guide provides some quick instructions on how to setup the
 :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` on:
 
-- :xilinx:`VCK190`
+- :xilinx:`VCK190` FMCP1 (J51) port
 
 Using Linux as software
 -------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ Required Hardware
 Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: vck190.jpg
+.. image:: ../../../images/vck190.jpg
    :width: 900
 
 Creating the setup
@@ -86,13 +86,13 @@ Follow the steps in this order, to avoid damaging the components:
 - Configure ACAP for SD boot (mode SW1[4:1] switch in the position
   **OFF,OFF,OFF,ON** as seen in the below picture)
 
-.. image:: vck190_sw1.jpg
+.. image:: ../../../images/vck190_sw1.jpg
    :width: 200
 
 - Configure System Controller for SD card boot (mode SW11[4:1] switch in the
    position **OFF,OFF,OFF,ON** as seen in the below picture).
 
-.. image:: vck190_sw11.jpg
+.. image:: ../../../images/vck190_sw11.jpg
    :width: 200
 
 - Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access
@@ -839,11 +839,11 @@ To see the IIO devices detected, run:
 .. shell::
 
    $iio_info | grep iio:device
-   iio:device0: xilinx-ams
-   iio:device1: ad9528-1
-   iio:device2: adrv9025-phy
-   iio:device3: axi-adrv9025-rx-hpc (buffer capable)
-   iio:device4: axi-adrv9025-tx-hpc (buffer capable)
+    iio:device0: xilinx-ams
+    iio:device1: ad9528-1
+    iio:device2: adrv9025-phy
+    iio:device3: axi-adrv9025-rx-hpc (buffer capable)
+    iio:device4: axi-adrv9025-tx-hpc (buffer capable)
 
 To see the EEPROM specifications, run:
 
@@ -861,6 +861,13 @@ To see the EEPROM specifications, run:
     PCB ID     : 9029CE01C
     BOM Rev    : A
     Uses LVDS  : Y
+
+To use the :dokuwiki:`JESD204 status utility <resources/tools-software/linux-software/jesd_status>`,
+run:
+
+.. shell::
+
+   $jesd_status
 
 To power off the system, run the following command, and wait for the final
 message to be printed, then power off the FPGA board from the switch as well.
