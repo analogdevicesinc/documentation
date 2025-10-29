@@ -64,7 +64,7 @@ Required hardware
 Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../../../images/vck190.jpg
+.. image:: ../../images/vck190.jpg
    :width: 900
 
 Creating the setup
@@ -82,13 +82,13 @@ Follow the steps in this order, to avoid damaging the components:
 - Configure ACAP for SD boot (mode SW1[4:1] switch in the position
   **OFF,OFF,OFF,ON** as seen in the below picture)
 
-.. image:: ../../../images/vck190_sw1.jpg
+.. image:: ../../images/vck190_sw1.jpg
    :width: 200
 
 - Configure System Controller for SD card boot (mode SW11[4:1] switch in the
    position **OFF,OFF,OFF,ON** as seen in the below picture).
 
-.. image:: ../../../images/vck190_sw11.jpg
+.. image:: ../../images/vck190_sw11.jpg
    :width: 200
 
 - Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access
@@ -870,7 +870,7 @@ To reboot the system, run:
    power off could be hiding. You can do this from the terminal as well with
    :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
 
-.. include:: ../../../using-iio-osc.rst
+.. include:: ../../common/using-iio-osc.rst
 
 About the IIO devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

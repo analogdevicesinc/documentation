@@ -61,7 +61,7 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../../images/zcu102.jpg
+.. image:: ../../images/zcu102.jpg
    :width: 900
 
 .. esd-warning::
@@ -81,7 +81,7 @@ Follow the steps in this order, to avoid damaging the components:
 #. Observe Kernel and serial console output messages on your terminal (use
    the first ttyUSB or COM port registered)
 
-.. image:: ../../../images/zcu102_1p0_bootmode.jpg
+.. image:: ../../images/zcu102_1p0_bootmode.jpg
    :width: 400
 
 Boot messages
@@ -1011,7 +1011,7 @@ To reboot the system, run:
    power off could be hiding. You can do this from the terminal as well with
    :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
 
-.. include:: ../../../using-iio-osc.rst
+.. include:: ../../common/using-iio-osc.rst
 
 About the IIO devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1075,7 +1075,7 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../../images/zcu102.jpg
+.. image:: ../../images/zcu102.jpg
    :width: 900
 
 .. esd-warning::
