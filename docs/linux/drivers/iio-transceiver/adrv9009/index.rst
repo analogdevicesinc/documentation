@@ -3,7 +3,7 @@
 ADRV9009, ADRV9008-1, ADRV9008-2
 """"""""""""""""""""""""""""""""
 
-.. image:: /eval/user-guide/transceiver/adrv9009/adrv9009-bc.jpg
+.. image:: /solutions/reference-designs/eval-adrv9009/adrv9009-bc.jpg
    :align: right
    :width: 200px
 

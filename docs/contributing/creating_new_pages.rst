@@ -20,7 +20,7 @@ Due to this, there are multiple topics,
 for example, there is information from
 :ref:`linux drivers`
 to
-:ref:`Evaluation boards user guides <eval user-guides>`.
+:ref:`Evaluation boards user guides <reference-designs>`.
 
 As an analogy, if this documentation were a encyclopedia, each topic would be
 a volume.

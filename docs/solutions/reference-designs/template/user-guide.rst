@@ -29,16 +29,15 @@ Hardware configuration
 Power supply
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The power supply comes from the FMC connector, given by the FPGA.
-
-The VADJ values can be checked out in the README.md file of each combination
-with an FPGA, at: :git-hdl:``.
-
 ..
    Specify how the power comes to the evaluation board. For example, it can come
    through the FMC connector, or for others, external power supply through
    banana cables.
    Specify the VADJ.
+   The power supply comes from the FMC connector, given by the FPGA.
+
+   The VADJ values can be checked out in the README.md file of each combination
+   with an FPGA, at: :git-hdl:``.
 
 Analog inputs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

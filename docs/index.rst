@@ -31,13 +31,6 @@ Contents
    software/*/index
 
 .. toctree::
-   :caption: Evaluation Boards
-   :maxdepth: 2
-   :glob:
-
-   eval/*/index
-
-.. toctree::
    :caption: Products & Tools
    :maxdepth: 2
    :glob:
