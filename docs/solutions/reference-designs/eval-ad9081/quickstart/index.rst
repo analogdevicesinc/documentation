@@ -1,6 +1,6 @@
 .. _ad9081 quickstart:
 
-Quick start
+Quick start guides
 ===============================================================================
 
 The Quick start guides provide simple step by step instructions on how to do
@@ -109,18 +109,18 @@ Hardware setup
 -------------------------------------------------------------------------------
 
 On most carriers, the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` boards
-connects to the HPC1 connector (unless otherwise noted). The carrier setup
+connect to the HPC1 connector (unless otherwise noted). The carrier setup
 requires power, UART (115200), Ethernet (Linux), HDMI (if available) and/or
 JTAG (no-OS) connections. A few typical setups are shown below.
 
 ZCU102 + EVAL-AD9081
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ad9081_zcu102_quickstart.jpg
+.. image:: ../../images/ad9081_zcu102_setup.png
    :width: 800
 
 VCK190 + EVAL-AD9081
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ad9081_vck190_quickstart.jpg
+.. image:: ../../images/ad9081_vck190_setup.jpg
    :width: 800

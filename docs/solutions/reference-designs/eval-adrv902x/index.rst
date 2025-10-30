@@ -1,9 +1,9 @@
 .. _adrv902x:
 
-ADRV902x
+ADRV902X
 ===============================================================================
 
-.. image:: adrv9026-bc.webp
+.. image:: ../images/adrv9026.webp
    :align: left
    :width: 150
 
@@ -50,14 +50,15 @@ Applications:
 
 - 3G/4G/5G TDD and FDD massive MIMO, macro and small cell base stations
 
-.. image:: adrv9026-pcb.png
+.. image:: ../images/eval_adrv9026.png
    :align: center
+   :width: 500
 
 .. toctree::
    :hidden:
 
-   prerequisites
    user-guide
+   prerequisites
    quickstart/index
 
 Recommendations
@@ -91,7 +92,7 @@ Table of contents
 
 #. Design with the ADRV9026/ADRV9029
 
-   - :ref:`adrv902x blockdiagram`
+   - :ref:`adrv902x block-diagram`
 
      - :adi:`ADRV9026 product page <ADRV9026>`
      - :adi:`ADRV9029 product page <ADRV9029>`
@@ -135,12 +136,14 @@ Table of contents
 #. :dokuwiki:`Additional documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 #. :ref:`Help and Support <help-and-support>`
 
-.. _adrv902x blockdiagram:
+.. _adrv902x block-diagram:
 
 Block diagram
 -------------------------------------------------------------------------------
 
-.. image:: blockdiagram.png
+.. image:: ../images/adrv9026_block_diagram.png
+   :align: center
+   :width: 800
 
 Videos
 -------------------------------------------------------------------------------

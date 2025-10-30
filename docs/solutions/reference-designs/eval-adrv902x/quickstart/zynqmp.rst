@@ -3,7 +3,7 @@
 ZCU102 Quick start
 ===============================================================================
 
-.. image:: adrv9026_zcu102_quickstart.jpg
+.. image:: ../../images/adrv9026_zcu102_setup.jpg
    :width: 800
 
 This guide provides quick instructions on how to setup the

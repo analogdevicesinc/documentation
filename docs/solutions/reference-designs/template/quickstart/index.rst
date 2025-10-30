@@ -10,6 +10,7 @@ to program the bitstream, run a no-OS program or boot a Linux distribution.
 
 .. toctree::
 
+   On A10SoC <a10soc>
    On VCK190 <versal>
    On ZCU102 <zynqmp>
 
@@ -109,9 +110,12 @@ JTAG (no-OS) connections. A few typical setups are shown below.
 ZCU102 + EVALUATION BOARD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. Add image here with the setup on ZCU102
+..
+  Add image here with the setup on ZCU102. The file should be named like this:
+  evaluationboard_carrier_setup.jpg or .png. The order should be followed!
+  The images should all be stored in docs/solutions/reference-designs/images
 
-.. image:: adrv9026_zcu102_quickstart.jpg
+.. image:: ../../images/adrv9026_zcu102_setup.jpg
    :width: 800
 
 ..

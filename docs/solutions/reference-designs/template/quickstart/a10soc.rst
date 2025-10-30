@@ -1,21 +1,21 @@
-.. _ad9081 quickstart a10soc:
+.. _template quickstart a10soc:
 
-Arria 10 SoC Quick start
+A10SoC Quick start
 ===============================================================================
+
+..
+  Add image here with the setup on A10SoC. The file should be named like this:
+  evaluationboard_carrier_setup.jpg or .png. The order should be followed!
+  The images should all be stored in docs/solutions/reference-designs/images
 
 .. image:: ../../images/ad9081_a10soc_setup.jpg
    :width: 800
 
 This guide provides quick instructions on how to setup the
-:adi:`EVAL-AD9081` on:
+:adi:`EVALUATION BOARD` on:
 
 - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
   (Rev. C or later) on FMCA
-
-.. warning::
-
-    :adi:`EVAL-AD9082` is not supported on
-    :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`!
 
 Using Linux as software
 -------------------------------------------------------------------------------
@@ -35,8 +35,10 @@ The following files are needed for the system to boot:
 - Linux device tree: ``socfpga_arria10_socdk_sdmmc.dtb``
 - U-Boot image: ``u-boot.img``
 - ``extlinux.conf`` in the **extlinux** folder from SD Card
-- Write ``u-boot-splx4.sfp`` from **socfpga_arria10_socdk_ad9081** folder on
+- Write ``u-boot-splx4.sfp`` from **socfpga_arria10_socdk_template** folder on
   **third** SD Card partition:
+
+.. Adapt the name of the folder, to your setup!
 
     .. shell:: bash
 
@@ -51,12 +53,15 @@ The following files are needed for the system to boot:
         2048+0 records out
         1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.25035 s, 4.2 MB/s
 
+..
+   Replace the output of those commands with the actual output from your setup!
+
 Instructions on how to manually build the boot files from source can be found
 here:
 
 - :dokuwiki:`Building the Intel SoC-FPGA kernel and devicetrees from source <resources/tools-software/linux-build/generic/socfpga>`
-- :external+hdl:ref:`ad9081_fmca_ebz` build documentation. More HDL build details at
-  :external+hdl:ref:`build_hdl`.
+- :external+hdl:ref:`template_project` build documentation.
+  More HDL build details at :external+hdl:ref:`build_hdl`.
 
 Required software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +75,7 @@ Required hardware
 
 - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
   (Rev. C or later) FPGA board and its power supply
-- :adi:`EVAL-AD9081` FMC evaluation board
+- :adi:`EVALUATION BOARD` FMC evaluation board
 - microSD card with at least 16GB of memory
 - Micro-USB cable (UART)
 - LAN cable (Ethernet)
@@ -78,9 +83,9 @@ Required hardware
 - (Optional) USB keyboard & mouse and a HDMI compatible monitor
 
 More details as to why you need these, can be found at
-:ref:`ad9081 prerequisites`.
+:ref:`template prerequisites`.
 
-.. _ad9081 quickstart a10soc_changes:
+.. _template quickstart a10soc_changes:
 
 A10SoC required hardware changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,7 +105,7 @@ A10SoC required hardware changes
 In the default configuration of the
 :intel:`Arria10 SoC Development Kit <content/www/us/en/products/details/fpga/arria/10.html>`,
 some of the FMC header pins are connected to a dedicated clock chip.
-To be compatible with the :adi:`EVAL-AD9081`, these pins need to be connected
+To be compatible with the :adi:`EVALUATION BOARD`, these pins need to be connected
 directly to the FPGA.
 
 The connection of those pins can be changed by moving the position of
@@ -113,7 +118,7 @@ four zero Ohm resistors:
 
 These resistors can be found on the backside of the A10SoC, underneath the
 FMCA connector (J29). The following picture shows the required configuration
-to be compatible with the :adi:`EVAL-AD9081`.
+to be compatible with the :adi:`EVALUATION BOARD`.
 
 Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +137,7 @@ and the DAC channels on the evaluation board, using SMA cables.
 Follow the steps in this order, to avoid damaging the components:
 
 #. Connect the SMA cables ADC0-DAC0, ADC1-DAC1, ADC2-DAC2, ADC3-DAC3
-#. Connect the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` FMC board to the
+#. Connect the :adi:`EVALUATION BOARD` / :adi:`EVAL-AD9082` FMC board to the
    FPGA carrier **HPC1** FMCA (J29) socket
 #. Both the HPS (J26) and FPGA (J27) memory module must be installed on the A10SoC
 #. Insert microSD card into the card socket on the FPGA
