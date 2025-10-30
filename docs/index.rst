@@ -7,9 +7,9 @@ System Level Documentation
    `wiki <https://wiki.analog.com/resources/eval/user-guides/>`_
    has been imported yet.
 
-This docs provides developers using Analog Devices products with software and
-documentation, including HDL interface code, software drivers, and reference
-project examples for FPGA connectivity.
+The System Level documentation provides developers using Analog Devices
+products with software and documentation, including HDL interface code,
+software drivers, and reference project examples for FPGA connectivity.
 It also contains user guides for some Analog Devices evaluation boards to help
 developers get up and running fast.
 
