@@ -3,7 +3,7 @@
 ZCU102 Quick start
 ===============================================================================
 
-.. image:: ad9081_zcu102_quickstart.jpg
+.. image:: ../../images/ad9081_zcu102_setup.png
    :width: 800
 
 This guide provides quick instructions on how to setup the

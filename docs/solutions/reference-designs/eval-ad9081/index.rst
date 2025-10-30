@@ -3,9 +3,16 @@
 AD9081 & AD9082
 ===============================================================================
 
-.. image:: ad9081.webp
+.. image:: ../images/ad9081.webp
    :align: left
    :width: 150
+
+.. image:: ../images/ad9082.webp
+   :align: left
+   :width: 120
+
+Overview
+-------------------------------------------------------------------------------
 
 The :adi:`EVAL-AD9081` is an FMC radio card for the :adi:`AD9081`, mixed signal
 front end (MxFE®), highly integrated device with four 16-bit, 12 GSPS maximum
@@ -45,14 +52,23 @@ Applications:
 - Phased array radar and electronic warfare
 - Electronic test and measurement systems
 
-.. image:: ad9081-pcb.png
+:adi:`EVAL-AD9081` looks like this, with 4x ADCs and 4x DACs:
+
+.. image:: ../images/eval_ad9081.png
    :align: center
+   :width: 400
+
+While :adi:`EVAL-AD9082` looks like this, with 2x ADCs and 4x DACs:
+
+.. image:: ../images/eval_ad9082.png
+   :align: center
+   :width: 450
 
 .. toctree::
    :hidden:
 
-   prerequisites
    user-guide
+   prerequisites
    quickstart/index
 
 Recommendations
@@ -72,9 +88,12 @@ Table of contents
 
 #. Using the evaluation board/full stack reference design that we offer:
 
-   #. :ref:`Prerequisites <ad9081 prerequisites>` - what you need to get started
-   #. :ref:`Quick start guides <ad9081 quickstart>`:
+   #. :ref:`ad9081 user-guide` - what you need to know about the
+      evaluation board
+   #. :ref:`ad9081 prerequisites` - what you need to get started with the setup
+   #. :ref:`ad9081 quickstart`:
 
+      #. Using the :ref:`Arria 10 SX SoC <ad9081 quickstart a10soc>`
       #. Using the :ref:`VCK190 & VPK180/Versal <ad9081 quickstart versal>`
       #. Using the :ref:`ZCU102/Zynq UltraScale MP SoC <ad9081 quickstart zynqmp>`
 
@@ -84,9 +103,9 @@ Table of contents
 
       #. :ref:`iio-oscilloscope`
 
-#. Design with the AD9081
+#. Design with the AD9081/AD9082
 
-   - :ref:`ad9081 blockdiagram`
+   - :ref:`ad9081 block-diagram`
 
      - :adi:`AD9081 product page <AD9081>`
      - :adi:`AD9082 product page <AD9082>`
@@ -128,12 +147,18 @@ Table of contents
 #. :dokuwiki:`Additional documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 #. :ref:`Help and Support <help-and-support>`
 
-.. _ad9081 blockdiagram:
+.. _ad9081 block-diagram:
 
 Block diagram
 -------------------------------------------------------------------------------
 
-.. .. image:: blockdiagram.png
+.. image:: ../images/ad9081_block_diagram.png
+   :align: center
+   :width: 700
+
+.. image:: ../images/ad9082_block_diagram.png
+   :align: center
+   :width: 700
 
 Videos
 -------------------------------------------------------------------------------

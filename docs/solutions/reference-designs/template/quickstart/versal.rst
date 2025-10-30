@@ -3,7 +3,12 @@
 VCK190 Quick start
 ===============================================================================
 
-.. .. image:: adrv9026_vck190_quickstart.jpg
+..
+  Add image here with the setup on VCK190. The file should be named like this:
+  evaluationboard_carrier_setup.jpg or .png. The order should be followed!
+  The images should all be stored in docs/solutions/reference-designs/images
+
+.. .. image:: ../../images/adrv9026_vck190_setup.jpg
 ..    :width: 800
 
 This guide provides some quick instructions on how to setup the
@@ -37,8 +42,8 @@ here:
 - :ref:`linux-kernel zynqmp` (the only difference compared to the ZynqMP is
   that instead of running ``make adi_zynqmp_defconfig``,
   you must run ``make adi_versal_defconfig``)
-- :external+hdl:ref:`template_project` build documentation. More HDL build details at
-  :external+hdl:ref:`build_hdl`.
+- :external+hdl:ref:`template_project` build documentation.
+  More HDL build details at :external+hdl:ref:`build_hdl`.
 
 Required software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

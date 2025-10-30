@@ -3,11 +3,11 @@
 EVALUATION BOARD
 ===============================================================================
 
-Add a picture here of the evaluation board
+.. Add a picture here of the chip
 
-..  .. image:: evalboard_picture.webp
-       :align: left
-       :width: 150
+.. image:: ../images/ad9081.webp
+   :align: left
+   :width: 150
 
 Overview
 -------------------------------------------------------------------------------
@@ -19,11 +19,6 @@ The :adi:`EVALUATION BOARD`, is a FMC radio card for the
 agile transceivers offering four independently controlled transmitters,
 (...).
 
-Add a picture here of the main chip
-
-.. .. image:: chip_image.png
-      :align: center
-
 Features:
 
 - feature 1
@@ -34,11 +29,16 @@ Applications:
 - application 1
 - application 2
 
+.. Add a picture here of the evaluation board
+.. image:: ../images/eval_ad9081.png
+   :align: center
+   :width: 500
+
 .. toctree::
    :hidden:
 
-   prerequisites
    user-guide
+   prerequisites
    quickstart/index
 
 Recommendations
@@ -72,7 +72,7 @@ Table of contents
 
 #. Design with the CHIP1/CHIP2
 
-   - :ref:`template blockdiagram`
+   - :ref:`template block-diagram`
 
      - :adi:`CHIP1 product page <CHIP1>`
      - :adi:`CHIP2 product page <CHIP2>`
@@ -111,12 +111,15 @@ Table of contents
 
 #. :ref:`Help and Support <help-and-support>`
 
-.. _template blockdiagram:
+.. _template block-diagram:
 
 Block diagram
 -------------------------------------------------------------------------------
 
-.. .. image:: blockdiagram.png
+.. Add here the block diagram of the chip
+.. image:: ../images/ad9081_block_diagram.png
+   :align: center
+   :width: 800
 
 .. If it applies, uncomment it and remove the indentation
   Videos

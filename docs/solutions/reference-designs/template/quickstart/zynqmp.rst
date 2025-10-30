@@ -3,8 +3,12 @@
 ZCU102 Quick start
 ===============================================================================
 
-.. Add image here with the setup on ZCU102
-.. .. image:: adrv9026_zcu102_quickstart.jpg
+..
+  Add image here with the setup on ZCU102. The file should be named like this:
+  evaluationboard_carrier_setup.jpg or .png. The order should be followed!
+  The images should all be stored in docs/solutions/reference-designs/images
+
+.. .. image:: ../../images/adrv9026_zcu102_quickstart.jpg
 ..    :width: 800
 
 This guide provides quick instructions on how to setup the
@@ -33,8 +37,8 @@ Instructions on how to manually build the boot files from source can be found
 here:
 
 - :ref:`linux-kernel zynqmp`
-- :external+hdl:ref:`template_project` build documentation. More HDL build details at
-  :external+hdl:ref:`build_hdl`.
+- :external+hdl:ref:`template_project` build documentation.
+  More HDL build details at :external+hdl:ref:`build_hdl`.
 
 Required software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

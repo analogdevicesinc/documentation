@@ -3,7 +3,7 @@
 VCK190 Quick start
 ===============================================================================
 
-.. image:: adrv9026_vck190_quickstart.jpg
+.. image:: ../../images/ad9081_vck190_setup.jpg
    :width: 800
 
 This guide provides some quick instructions on how to setup the

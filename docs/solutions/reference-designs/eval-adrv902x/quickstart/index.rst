@@ -10,8 +10,8 @@ to program the bitstream, run a no-OS program or boot a Linux distribution.
 
 .. toctree::
 
-   VCK190 <versal>
-   ZCU102 <zynqmp>
+   On VCK190 <versal>
+   On ZCU102 <zynqmp>
 
 .. _adrv902x carriers:
 
@@ -83,13 +83,13 @@ JTAG (no-OS) connections. A few typical setups are shown below.
 ZCU102 + EVAL-ADRV9026/ADRV9029
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: adrv9026_zcu102_quickstart.jpg
+.. image:: ../../images/adrv9026_zcu102_setup.jpg
    :width: 800
 
 VCK190 + EVAL-ADRV9026/ADRV9029
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: adrv9026_vck190_quickstart.jpg
+.. image:: ../../images/adrv9026_vck190_setup.jpg
    :width: 800
 
 A10SoC + EVAL-ADRV9026/ADRV9029
