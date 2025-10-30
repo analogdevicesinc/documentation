@@ -17,6 +17,13 @@ Contents
 -------------------------------------------------------------------------------
 
 .. toctree::
+   :caption: Product Categories
+   :maxdepth: 2
+   :glob:
+
+   products/*/index
+
+.. toctree::
    :caption: Kuiper & Linux Kernel
    :maxdepth: 2
    :glob:
@@ -31,7 +38,7 @@ Contents
    software/*/index
 
 .. toctree::
-   :caption: Products & Tools
+   :caption: Devices
    :maxdepth: 2
    :glob:
 
