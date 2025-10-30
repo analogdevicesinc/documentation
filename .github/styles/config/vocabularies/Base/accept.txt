@@ -39,6 +39,7 @@ Pmod(s)?
 [Dd]efconfig
 [Ss]etpoint
 [Pp]assthrough
+[Bb]aremetal
 
 Tx
 Rx
@@ -83,5 +84,6 @@ kbps
 is rated
 is kept
 are highlighted
+are prefixed
 be adjusted
 in order to
