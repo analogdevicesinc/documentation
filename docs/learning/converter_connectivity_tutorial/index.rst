@@ -26,10 +26,9 @@ tools to this end
    - :ref:`kuiper` has matured considerably, with broad support for ADI devices
      and popular processor and FPGA development platforms
 
-   - The very popular :adi:`ADXL355 Pmod <eval-adxl355-pmdz>` would have been
-     used initially, but the Linux driver had not been upstreamed yet. It has since
-     been released, and is being added as an option for this tutorial. (The original
-     ADXL345 / Digilent Pmod-ACL is still included.)
+   - The :adi:`ADXL355 Pmod <eval-adxl355-pmdz>` has since been released, and
+     is being added as an option for this tutorial. (The original ADXL345 /
+     Digilent Pmod-ACL is still included.)
 
    -  LibIIO now supports HWMON devices (if these terms aren't familiar, you'll
       learn about them soon), enabling the use of the absolute **best** device to
@@ -194,7 +193,7 @@ correct image shortly. This is a fairly common step in bringing up embedded
 computers - Raspberry Pi, BeagleBone, Zedboard, Arrow SoCkit, or any machine
 that boots from an SD card. There are lots of ways to burn images, but the most
 straightforward way is to use the standard Raspberry Pi Imager, available here:
-`Raspberry Pi OS (including Raspbery Pi Imager  <https://www.raspberrypi.com/software/>`__
+`Raspberry Pi OS (including Raspbery Pi Imager)  <https://www.raspberrypi.com/software/>`__
 
 There are instructions for Windows, Mac, and Linux. The imager also works on
 machines that encrypt data being written to external drives since it's writing
@@ -310,27 +309,50 @@ find anything. While we do have our ADXL3x5/LM75 physically connected to the
 board, Linux doesn't know about it yet because UNlike USB, PCI, SCSI, Firewire,
 HDMI, etc, SPI and I2C devices do not support enumeration. How do we tell the
 Linux kernel what we've connected to the expansion header? The answer is the
-"Device Tree Overlay"g
+"Device Tree Overlay".
 
 While you won't have to do anything more than editing a couple of files in this
 tutorial, it helps to understand a bit about what is going on under the
 surface. A "Device Tree" contains information about a system's hardware - what
 peripherals exist (like displays, memory, USB, Ethernet controllers, GPIO pins,
 etc.) A "Device Tree Overlay" contains information about additional connected
-hardware, like our ADXL3x5/LM75. :numref:`fig-device_tree` shows a screenshot
-of the ADXL345's overlay source.
+hardware, like our ADXL3x5/LM75. :numref:`code-device-tree` shows the devicetree
+of the ADXL345's overlay targetting the Raspberry Pi.
 It shows that the ADXL345 is connected to the SPI port, using
 the first CS signal (CS0), the maximum SPI clock frequency is 1MHz, and the
 interrupt signal is connected to Pin 19 (as shown in the connection diagram
 above.)
 
-.. _fig-device_tree:
+.. _code-device-tree:
 
-.. figure:: device_tree.png
-   :align: center
-   :width: 600
+.. code-block:: dts
+   :caption: Partial ADXL345 overlay source (dts)
 
-   Partial ADXL345 overlay source (dts)
+   // SPDX-License-Identifier: GPL-2.0
+   /dts-v1/;
+   /plugin/;
+
+   #include <dt-bindings/interrupt-controller/irq.h>
+
+   &{/} {
+        compatible = "brcm,bcm2835", "brcm,bcm2708", "brcm,bcm2709";
+   };
+
+   &spi0 {
+           adxl345: adxl345@0 {
+                   compatible = "adi,adxl345";
+                   reg = <0>;
+                   spi-max-frequency = <1000000>;
+                   spi-cpha;
+                   spi-cpol;
+                   interrupts = <19 IRQ_TYPE_LEVEL_HIGH>;
+                   interrupt-parent = <&gpio>;
+           };
+   };
+
+   &spidev0 {
+           status = "disabled";
+   };
 
 The device tree source is then compiled into a "flattened" device tree that the
 Linux kernel reads directly. While this process is fairly straightforward, it's
@@ -342,12 +364,11 @@ Any changes to the connections - SPI CS line, interrrupt line, etc. will
 require a corresponding modification to the overlay.)
 
 For reference, here are the overlay source files for the three devices in this
-tutorial. These are in the Linux rpi-5.15.y branch, used for Kuiper Linux
-2022_r2 release:
+tutorial. These are in the Linux rpi-6.12.y branch:
 
-- `LM75 Device Tree Overlay <https://github.com/analogdevicesinc/linux/blob/rpi-5.15.y/arch/arm/boot/dts/overlays/rpi-lm75-overlay.dts>`__
-- `ADXL345 Device Tree Overlay <https://github.com/analogdevicesinc/linux/blob/rpi-5.15.y/arch/arm/boot/dts/overlays/rpi-adxl345-overlay.dts>`__
-- `ADXL355 Device Tree Overlay <https://github.com/analogdevicesinc/linux/blob/rpi-5.15.y/arch/arm/boot/dts/overlays/rpi-adxl355-overlay.dts>`__
+- `LM75 Device Tree Overlay <https://github.com/analogdevicesinc/linux/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/rpi-lm75-overlay.dts>`__
+- `ADXL345 Device Tree Overlay <https://github.com/analogdevicesinc/linux/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/rpi-adxl345-overlay.dts>`__
+- `ADXL355 Device Tree Overlay <https://github.com/analogdevicesinc/linux/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/rpi-adxl355-overlay.dts>`__
 
 .. NOTE::
 
@@ -430,6 +451,21 @@ To shut down at the end of the day, type:
 
 Hello, ADXL345, ADXL355, or LM75!
 ---------------------------------
+
+.. caution::
+
+   The ADXL345 has two drivers:
+
+   - :git-linux:`drivers/iio/accel/adxl345.h` (``ADXL345_I2C/SPI``)
+   - :git-linux:`drivers/input/misc/adxl34x.h` (``INPUT_ADXL34X``)
+
+   And the IIO driver ``ADXL345_I2C/SPI`` cannot be selected if the inputs
+   ``INPUT_ADXL34X`` driver is selected! Make sure to do ``make menufconfig`` to
+   disable ``INPUT_ADXL34X``, then enable ``ADXL345_I2C/SPI``.
+
+   Kuiper and RPI ships with ``INPUT_ADXL34X`` compiled as a module.
+   Make sure to `blacklist <https://wiki.debian.org/KernelModuleBlacklisting>`__
+   the one that won't be used before attaching the devicetree.
 
 If all went well, Linux should have booted, found the ADXL3x5 or LM75, and
 loaded its driver. Run IIO Oscilloscope again. locate the DMM screen, check the
