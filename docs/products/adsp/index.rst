@@ -56,7 +56,10 @@ Linux support
 ADI supports running Linux on all ADSP SoCs with Cortex-A5 and A55 cores.
 That includes the following repositories. New features are tracked in the `ADSP
 Github Project
-<https://github.com/orgs/analogdevicesinc/projects/20/views/1>`__.
+<https://github.com/orgs/analogdevicesinc/projects/20/views/1>`__ and
+coordinated with the community during weekly public office hours at 17:00 CET
+using a `Jitsi meeting
+<https://meet.jit.si/AnalogDevicesIncDigitalSignalProcessingOfficeHours>`__.
 
 Upstream forks
 ==============
