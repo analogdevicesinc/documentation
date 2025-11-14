@@ -1,0 +1,10 @@
+﻿Connected to,Net Name,Pin Number,Pin Name,"Type (I=Input, O=Output)",Description
+P0_21_32670,- -,6,DIO3,I/O,Multi-purpose digital I/O - external TCXO supply voltage
+P0_23_32670,- -,12,DIO2,I/O,Multi-purpose digital I/O / RF Switch control
+P0_24_32670,DIO2_SX,13,DIO1,I/O,Multi-purpose digital IO
+P0_25_32670,- -,14,BUSY,O,Busy indicator
+P0_26_32670,- -,15,NRESET,I,Reset signal active low
+SPI0_MISO_32670,- -,16,MISO,O,SPI subordinate output
+SPI0_MOSI_32670,- -,17,MOSI,I,SPI subordinate input
+SPI0_SCK_32670,- -,18,SCK,I,SPI clock
+SPI0_SS0_32670,- -,19,NSS,I,
