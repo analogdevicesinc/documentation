@@ -5,6 +5,7 @@ LTspice
 [Xx]ilinx
 no-OS
 Digilent
+Olimex
 
 [Tt]octree
 [Dd]ocname
@@ -87,3 +88,8 @@ are highlighted
 are prefixed
 be adjusted
 in order to
+are based
+is delivered
+be used
+be powered
+is supported
