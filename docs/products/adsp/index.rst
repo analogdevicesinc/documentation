@@ -3,6 +3,12 @@
 Digital Signal Processors (ADSP)
 ================================
 
+.. toctree::
+   :hidden:
+   :glob:
+
+   *
+
 ADI has a large portfolio of :adi:`Digital Signal Processors <en/product-category/dsp.html>`
 (see :adi:`Selection Table for Digital Signal Processors <en/parametricsearch/3020#/>`).
 A subset of those processors include ARM Cortex cores and are prefixed with SC
