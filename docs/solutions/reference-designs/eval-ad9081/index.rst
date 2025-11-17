@@ -136,6 +136,7 @@ Table of contents
         #. About the JESD204 utilities:
 
            - :dokuwiki:`JESD204 (FSM) interface Linux Kernel framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+           - :dokuwiki:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver <resources/tools-software/linux-drivers/iio-pll/hmc7044>`
            - :dokuwiki:`JESD204 status utility <resources/tools-software/linux-software/jesd_status>`
            - :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
            - :external+hdl:ref:`jesd204`
