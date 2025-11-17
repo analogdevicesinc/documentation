@@ -60,30 +60,24 @@ Linux support
 -------------
 
 ADI supports running Linux on all ADSP SoCs with Cortex-A5 and A55 cores.
-That includes the following repositories. New features are tracked in the `ADSP
-Github Project
-<https://github.com/orgs/analogdevicesinc/projects/20/views/1>`__ and
-coordinated with the community during weekly public office hours at 17:00 CET
-on Thursdays using a `Jitsi meeting
-<https://meet.jit.si/AnalogDevicesIncDigitalSignalProcessingOfficeHours>`__.
+That includes the following repositories. New features are tracked in the
+`ADSP Github Project <https://github.com/orgs/analogdevicesinc/projects/20/views/1>`__
+and coordinated with the community during weekly public office hours at 17:00 CET
+on Thursdays using a
+`Jitsi meeting <https://meet.jit.si/AnalogDevicesIncDigitalSignalProcessingOfficeHours>`__.
 
 Upstream forks
-==============
+--------------
 
-- `analogdevicesinc/linux <https://github.com/analogdevicesinc/linux>`__
-- `analogdevicesinc/u-boot <https://github.com/analogdevicesinc/u-boot>`__
-- `analogdevicesinc/buildroot
-  <https://github.com/analogdevicesinc/buildroot>`__
-- `analogdevicesinc/trusted-firmware-a
-  <https://github.com/analogdevicesinc/trusted-firmware-a>`__
-- `analogdevicesinc/optee_os
-  <https://github.com/analogdevicesinc/optee_os>`__
+- :git-linux:`analogdevicesinc/linux <+>`
+- :git-u-boot:`analogdevicesinc/u-boot <+>`
+- :git-buildroot:`analogdevicesinc/buildroot <+>`
+- :git-trusted-firmware-a:`analogdevicesinc/trusted-firmware-a <+>`
+- :git-optee_os:`analogdevicesinc/optee_os <+>`
 
 ADI repositories
-================
+----------------
 
-- `analogdevicesinc/adsp-ldr <https://github.com/analogdevicesinc/adsp-ldr>`__
-- `analogdevicesinc/lnxdsp-repo-manifest
-  <https://github.com/analogdevicesinc/lnxdsp-repo-manifest>`__
-- `analogdevicesinc/br2-external
-  <https://github.com/analogdevicesinc/br2-external>`__
+- :git-adsp-ldr:`analogdevicesinc/adsp-ldr <+>`
+- :git-lnxdsp-repo-manifest:`analogdevicesinc/lnxdsp-repo-manifest <+>`
+- :git-br2-external:`analogdevicesinc/br2-external <+>`
