@@ -5,8 +5,8 @@ Getting started
 
 ADSP evaluation boards do not ship with pre-installed software. The chips also
 do not support booting directly from SD cards. Therefore the evaluation boards
-need to be bootstrapped over JTAG using a `ADI ICE-1000 or ICE-2000 JTAG
-debugger <https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html>`_.
+need to be bootstrapped over JTAG using a :adi:`ADI ICE-1000 or ICE-2000 JTAG
+debugger <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html>`.
 
 Setup a JTAG connection
 -----------------------
