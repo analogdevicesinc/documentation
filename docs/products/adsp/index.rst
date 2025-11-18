@@ -69,15 +69,38 @@ on Thursdays using a
 Upstream forks
 --------------
 
-- :git-linux:`analogdevicesinc/linux <+>`
-- :git-u-boot:`analogdevicesinc/u-boot <+>`
-- :git-buildroot:`analogdevicesinc/buildroot <+>`
-- :git-trusted-firmware-a:`analogdevicesinc/trusted-firmware-a <+>`
-- :git-optee_os:`analogdevicesinc/optee_os <+>`
+The ADSP Linux team maintains branches based on upstream releases. Changes made
+to support ADI hardware is upstreamed as quickly as possible. Until those
+changes have been accepted upstream, they are maintained in the following ADI
+forks.
+
+Release versions include the upstream version and a ADI specific release number
+(e.g.  ``1``, ``2``, ...).
+
+- :git-linux:`+`:
+    - v6.12.0:
+      :git-linux:`Commits <commits/adsp-6.12.0-y+>`
+    - v6.12.38:
+      :git-linux:`Commits <commits/adsp-6.12.38-y+>`
+- :git-u-boot:`+`
+    - v2025.07:
+      :git-linux:`Commits <commits/adi-u-boot-2025.07.y+>`
+      :git-linux:`Release 1 <releases/tag/v2025.07-1+>`
+    - v2025.10:
+      :git-linux:`Commits <commits/adi-u-boot-2025.10.y+>`
+- :git-buildroot:`+`
+    - v2025.05:
+      :git-linux:`Commits <commits/adi-2025.05.x+>`
+- :git-trusted-firmware-a:`+`
+- :git-optee_os:`+`
+- :git-openocd:`+`
 
 ADI repositories
 ----------------
 
-- :git-adsp-ldr:`analogdevicesinc/adsp-ldr <+>`
-- :git-lnxdsp-repo-manifest:`analogdevicesinc/lnxdsp-repo-manifest <+>`
-- :git-br2-external:`analogdevicesinc/br2-external <+>`
+- :git-adsp-ldr:`+`
+    - :git-adsp-ldr:`v1.0.0 <releases/tag/v1.0.0+>`
+      :git-adsp-ldr:`v1.0.1 <releases/tag/v1.0.1+>`
+      :git-adsp-ldr:`v1.0.2 <releases/tag/v1.0.2+>`
+- :git-lnxdsp-repo-manifest:`+`
+- :git-br2-external:`+`
