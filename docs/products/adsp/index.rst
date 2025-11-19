@@ -85,13 +85,13 @@ Release versions include the upstream version and a ADI specific release number
       :git-linux:`Commits <commits/adsp-6.12.38-y+>`
 - :git-u-boot:`+`
     - v2025.07:
-      :git-linux:`Commits <commits/adi-u-boot-2025.07.y+>`
-      :git-linux:`Release 1 <releases/tag/v2025.07-1+>`
+      :git-u-boot:`Commits <commits/adi-u-boot-2025.07.y+>`
+      :git-u-boot:`Release 1 <releases/tag/v2025.07-1+>`
     - v2025.10:
-      :git-linux:`Commits <commits/adi-u-boot-2025.10.y+>`
+      :git-u-boot:`Commits <commits/adi-u-boot-2025.10.y+>`
 - :git-buildroot:`+`
     - v2025.05:
-      :git-linux:`Commits <commits/adi-2025.05.x+>`
+      :git-buildroot:`Commits <commits/adi-2025.05.x+>`
 - :git-trusted-firmware-a:`+`
 - :git-optee_os:`+`
 - :git-openocd:`+`
