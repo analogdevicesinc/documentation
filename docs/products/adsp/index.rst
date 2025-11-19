@@ -80,6 +80,7 @@ Release versions include the upstream version and a ADI specific release number
 - :git-linux:`+`:
     - v6.12.0:
       :git-linux:`Commits <commits/adsp-6.12.0-y+>`
+      :git-linux:`Release 1 <releases/tag/adsp-6.12.0-1+>`
     - v6.12.38:
       :git-linux:`Commits <commits/adsp-6.12.38-y+>`
 - :git-u-boot:`+`
