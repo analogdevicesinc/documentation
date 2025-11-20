@@ -41,20 +41,34 @@ For example, for the ICE-1000 and ADZS-SC589-EZLITE run the following:
 Boot U-Boot Proper
 ------------------
 
-In another terminal either ``cd`` into the extracted release archive or the
-appropriate build output directory when building from source. Then load and run
-the two U-Boot stages using ``gdb``. Note that Debian and Ubuntu ship
-multi-architecture GDB support in a separate package.
+To boot U-Boot SPL and U-Boot Proper using GDB install
+``gdb-multiarch`` on Debian or Ubuntu systems:
 
-After loading U-Boot SPL wait 2-3 seconds to allow SPL to complete execution
-before interrupting it with ``^C``.
+.. shell:: sh
+
+    $sudo apt-get install -y gdb-multiarch
+
+In the terminal, ``cd`` into the extracted release archive or the appropriate
+build output directory. Then start GDB and run the following command with
+using the script
+:download:`u-boot.gdb <u-boot.gdb>` to load and run both U-Boot stages. 
+
+.. shell:: sh
+
+    $gdb-multiarch -x path/to/u-boot.gdb
+
+Boot Linux
+----------
+
+Once U-Boot Proper is running and a U-Boot prompt is accessible over serial it
+is possible to load and boot Linux.
+
+In a new terminal ``cd`` into the extracted release archive and run a web
+server (e.g. ``python -m http.server``).
+
+In the console of U-Boot, we can load images as:
 
 .. code-block:: console
 
-    sudo apt-get install -y gdb-multiarch
-    gdb-multiarch
-    (gdb) load u-boot-spl
-    (gdb) c
-    ^C
-    (gdb) load u-boot
-    (gdb) c
+    => dhcp
+    => wget ${fdt_addr_r} <host-ip-addr>:/<path-to-image>
