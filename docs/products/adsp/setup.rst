@@ -53,7 +53,7 @@ build output directory. Then download the GDB automation script using:
 
 .. shell:: sh
 
-    $curl -O https://analogdevicesinc.github.io/documentation/products/adsp/u-boot.gdb
+    $curl -O https://raw.githubusercontent.com/analogdevicesinc/documentation/refs/heads/main/docs/products/adsp/u-boot.gdb
 
 Once downloaded, start GDB and run the following command with the script in order to
 load and run both U-Boot stages as:
