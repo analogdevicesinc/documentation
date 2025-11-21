@@ -49,11 +49,13 @@ To boot U-Boot SPL and U-Boot Proper using GDB install
     $sudo apt-get install -y gdb-multiarch
 
 In the terminal, ``cd`` into the extracted release archive or the appropriate
-build output directory. Then download the GDB automation script using:
+build output directory.
+
+Then download the GDB automation :download:`u-boot.gdb` script using:
 
 .. shell:: sh
 
-    $curl -O https://analogdevicesinc.github.io/documentation/products/adsp/u-boot.gdb
+    $curl -O https://raw.githubusercontent.com/analogdevicesinc/documentation/refs/heads/main/docs/products/adsp/u-boot.gdb
 
 Once downloaded, start GDB and run the following command with the script in order to
 load and run both U-Boot stages as:
