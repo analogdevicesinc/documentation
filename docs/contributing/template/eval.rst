@@ -6,7 +6,7 @@ from the hardware overview, features, kit contents, hardware, user guides,
 developer guides, and source code.
 
 A top-level template is available at
-:git-documentation:`docs/contributing/template/example/eval.rst`
+:git-documentation:`docs/solutions/reference-designs/template/_index.rst`
 (:ref:`rendered <template eval>`).
 Please pay attention to the comments only visible on the source code,
 and remove them as you follow the template.
