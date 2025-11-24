@@ -1,15 +1,18 @@
 Software Configuration and Setup
 =================================
 
-This section provides guidance on configuring and running the software components of the High-Performance Analog Meets AI demonstration.
+This section provides guidance on configuring and running the software
+components of the High-Performance Analog Meets AI demonstration.
 
 Overview
 --------
 
 The demonstration consists of two main software components:
 
-1. **Holoscan Modulation Classification Application** - A real-time AI-powered modulation classification system built with NVIDIA Holoscan SDK
-2. **Data Visualization Dashboard** - A Python-based Dash application for monitoring and analyzing classification results
+1. **Holoscan Modulation Classification Application** - A real-time AI-powered
+   modulation classification system built with NVIDIA Holoscan SDK
+2. **Data Visualization Dashboard** - A Python-based Dash application for
+   monitoring and analyzing classification results
 
 Holoscan Modulation Classification Application
 ----------------------------------------------
@@ -17,7 +20,9 @@ Holoscan Modulation Classification Application
 Description
 ~~~~~~~~~~~
 
-This application performs real-time modulation classification on incoming data using MATLAB-generated CUDA code. It processes signals from ADRV9009 devices and classifies them into one of eight modulation schemes:
+This application performs real-time modulation classification on incoming data
+using MATLAB-generated CUDA code. It processes signals from ADRV9009 devices
+and classifies them into one of eight modulation schemes:
 
 - BPSK (Binary Phase Shift Keying)
 - QPSK (Quadrature Phase Shift Keying)
@@ -35,7 +40,13 @@ Key Components
    - Example applications: https://github.com/nvidia-holoscan/holohub/tree/main/applications/iio
    - Generic operators: https://github.com/nvidia-holoscan/holohub/tree/main/operators/iio_controller
 
-There are 5 operators (each with its own Python binding) that can read/write IIO attributes, read/write IIO buffers and configure the initial setup for a device/system. This demonstration uses the buffer read operator in order to read from the 2 ADRV9009 devices. After that, the matlab module (that needs to be compiled beforehand) will call the classification function that returns the modulation and confidence level. This will be printed to the output file from where the python dash app will read and display the information.
+There are 5 operators (each with its own Python binding) that can read/write
+IIO attributes, read/write IIO buffers and configure the initial setup for a
+device/system. This demonstration uses the buffer read operator in order to
+read from the 2 ADRV9009 devices. After that, the matlab module (that needs to
+be compiled beforehand) will call the classification function that returns the
+modulation and confidence level. This will be printed to the output file from
+where the python dash app will read and display the information.
 
 Configuration
 ~~~~~~~~~~~~~
