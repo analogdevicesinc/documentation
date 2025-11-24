@@ -93,6 +93,7 @@ Release versions include the upstream version and a ADI specific release number
 - :git-buildroot:`+`
     - v2025.05:
       :git-buildroot:`Commits <commits/adi-2025.05.x+>`
+      :git-buildroot:`Release 1 <releases/tag/2025.05-1+>`
 - :git-trusted-firmware-a:`+`
 - :git-optee_os:`+`
 - :git-openocd:`+`
