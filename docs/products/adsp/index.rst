@@ -97,6 +97,11 @@ Release versions include the upstream version and a ADI specific release number
 - :git-trusted-firmware-a:`+`
 - :git-optee_os:`+`
 - :git-openocd:`+`
+    - :git-openocd:`0.12.0-1.0.0 <releases/tag/0.12.0-1.0.0+>`
+      :git-openocd:`0.12.0-1.1.1 <releases/tag/0.12.0-1.1.1+>`
+      :git-openocd:`0.12.0-1.1.2 <releases/tag/0.12.0-1.1.2+>`
+      :git-openocd:`0.12.0-1.2.0 <releases/tag/0.12.0-1.2.0+>`
+      :git-openocd:`0.12.0-1.3.0 <releases/tag/0.12.0-1.3.0+>`
 
 ADI repositories
 ----------------
