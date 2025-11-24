@@ -1,21 +1,21 @@
 DEMO High-Performance Analog Meets AI
 ===============================================================================
 
-Extracting data from high-performance, high-data-rate analog signal chains for AI
-model training and real-time inference presents significant challenges due to the
-complexity of interfaces, processing, and integration requirements. Analog Devices
-addresses these challenges by providing a comprehensive, open-source data extraction
-and integration software stack, which ensures seamless connectivity between advanced
-signal chains and high-performance compute platforms.
-
+Extracting data from high-performance, high-data-rate analog signal chains for
+AI model training and real-time inference presents significant challenges due
+to the complexity of interfaces, processing, and integration requirements.
+Analog Devices addresses these challenges by providing a comprehensive,
+open-source data extraction and integration software stack, which ensures
+seamless connectivity between advanced signal chains and high-performance
+compute platforms.
 
 Resources
 -------------------------------------------------------------------------------
 
-- HDL branch:       `adrv9009_qsfp_10G <https://github.com/analogdevicesinc/hdl/tree/adrv9009_qsfp_10G>`__
-- Linux branch:     `adr9009zu11eg_100MHZ_qsfp <https://github.com/analogdevicesinc/linux/tree/adr9009zu11eg_100MHZ_qsfp>`__
+- HDL branch:       :git-hdl:`adrv9009_qsfp_10G <adrv9009_qsfp_10G:>`
+- Linux branch:     :git-linux:`adr9009zu11eg_100MHZ_qsfp <adr9009zu11eg_100MHZ_qsfp:>`
 - Corundum branch:  `corundum <https://github.com/ucsdsysnet/corundum.git>`__
-- PyADI-IIO branch: `jupiter_modulation <https://github.com/analogdevicesinc/pyadi-iio/tree/jupiter_modulation>`__
+- PyADI-IIO branch: :git-pyadi-iio:`jupiter_modulation <jupiter_modulation:>`
 
 Block diagram
 -------------------------------------------------------------------------------
@@ -27,17 +27,19 @@ Block diagram
 Demo description
 -------------------------------------------------------------------------------
 
-This demo illustrates an AI-based multi-channel RF modulation scheme recognition
-workflow for signal intelligence applications. Four AD-JUPITER-EBZ systems are used
-to generate RF signals with different modulation schemes across a total of eight
-channels. The signals are then digitized by two ADRV9009-ZU11EG SoMs, which stream
-the raw IQ data to a host PC via 10Gb Ethernet links. The AI model, derived from
-a MathWorks reference design, is deployed on the NVIDIA GPU hosted in the PC. The
-NVIDIA Holoscan AI infrastructure manages the efficient transfer of data from the
-network interfaces into GPU memory, where the AI model is executed. By combining
-ADI’s high-performance data extraction infrastructure with MathWorks development
-tools and NVIDIA deployment frameworks, the system enables efficient AI application
-development and real-time execution for advanced signal intelligence tasks.
+This demo illustrates an AI-based multi-channel RF modulation scheme
+recognition workflow for signal intelligence applications. Four AD-JUPITER-EBZ
+systems are used to generate RF signals with different modulation schemes
+across a total of eight channels. The signals are then digitized by two
+ADRV9009-ZU11EG SoMs, which stream the raw IQ data to a host PC via 10Gb
+Ethernet links. The AI model, derived from a MathWorks reference design, is
+deployed on the NVIDIA GPU hosted in the PC. The NVIDIA Holoscan AI
+infrastructure manages the efficient transfer of data from the network
+interfaces into GPU memory, where the AI model is executed. By combining ADI’s
+high-performance data extraction infrastructure with MathWorks development
+tools and NVIDIA deployment frameworks, the system enables efficient AI
+application development and real-time execution for advanced signal
+intelligence tasks.
 
 .. figure:: demo_description.svg
    :align: center
@@ -56,31 +58,36 @@ Key capabilities include:
 
 #. High-Performance Data Extraction
 
-   * Supports real-time acquisition of high-bandwidth RF data from multi-channel signal chains.
-   * Seamlessly bridges physical interfaces, FPGA-based logic, and low-level software drivers
-     to enable reliable data transfer from ADI RF front ends to edge processors.
-   * Flexible connectivity options, including Ethernet, PCIe, USB, and UART, allow integration
-     with a wide range of compute platforms.
+   * Supports real-time acquisition of high-bandwidth RF data from
+     multi-channel signal chains.
+   * Seamlessly bridges physical interfaces, FPGA-based logic, and low-level
+     software drivers to enable reliable data transfer from ADI RF front ends
+     to edge processors.
+   * Flexible connectivity options, including Ethernet, PCIe, USB, and UART,
+     allow integration with a wide range of compute platforms.
 
 #. Real-Time AI Modulation Recognition
 
-   * Demonstrates multi-channel RF modulation scheme classification using AI models deployed on NVIDIA GPUs.
-   * The NVIDIA Holoscan AI infrastructure ensures efficient data movement between network interfaces and
-     GPU memory, supporting low-latency inference.
+   * Demonstrates multi-channel RF modulation scheme classification using AI
+     models deployed on NVIDIA GPUs.
+   * The NVIDIA Holoscan AI infrastructure ensures efficient data movement
+     between network interfaces and GPU memory, supporting low-latency
+     inference.
 
 #. Multi-Channel & Multi-Device Synchronization
 
-   * Incorporates multiple AD-JUPITER-EBZ boards and ADRV9009-ZU11EG SoMs to generate and
-     digitize RF signals across eight channels.
-   * Provides accurate clock distribution and synchronization through AD-SYNCHRONA14-EBZ,
-     ensuring deterministic latency and coherent signal processing across multiple systems.
+   * Incorporates multiple AD-JUPITER-EBZ boards and ADRV9009-ZU11EG SoMs to
+     generate and digitize RF signals across eight channels.
+   * Provides accurate clock distribution and synchronization through
+     AD-SYNCHRONA14-EBZ, ensuring deterministic latency and coherent signal
+     processing across multiple systems.
 
 #. Seamless Data Integration Stack
 
-   * Enables flexible partitioning of data flow between edge and host compute devices, improving
-     scalability and system optimization.
-   * Utilizes an open-source ADI software stack that simplifies the setup of data collection
-     pipelines for AI model training and real-time inference.
+   * Enables flexible partitioning of data flow between edge and host compute
+     devices, improving scalability and system optimization.
+   * Utilizes an open-source ADI software stack that simplifies the setup of
+     data collection pipelines for AI model training and real-time inference.
 
 #. Integration with Industry-Standard AI Frameworks
 
@@ -91,14 +98,16 @@ Key capabilities include:
 
 #. End-to-End AI Development Ecosystem
 
-   * ADI’s AI Fusion tools within CodeFusion Studio™ enable model optimization, deployment,
-     and real-time performance analysis.
-   * Supports rapid development cycles by providing actionable insights and performance metrics for system tuning.
+   * ADI’s AI Fusion tools within CodeFusion Studio™ enable model optimization,
+     deployment, and real-time performance analysis.
+   * Supports rapid development cycles by providing actionable insights and
+     performance metrics for system tuning.
 
 Required Hardware
 -------------------------------------------------------------------------------
 
-The following hardware components are required to set up and run the multi-channel RF modulation recognition demo:
+The following hardware components are required to set up and run the
+multi-channel RF modulation recognition demo:
 
 .. list-table::
    :widths: 15 30 5 15
@@ -141,17 +150,19 @@ The following hardware components are required to set up and run the multi-chann
 SD Card Configuration
 -------------------------------------------------------------------------------
 
-- For the Jupiter SDR platform, the boot files are generated using the Using Kuiper Image:
+- For the Jupiter SDR platform, the boot files are generated using the Using
+  Kuiper Image:
 
- `Writing the Image to an SD Card <https://analogdevicesinc.github.io/adi-kuiper-gen/use-kuiper-image.html>`__
+  :external+adi-kuiper-gen:ref:`Writing the Image to an SD Card <use-kuiper-image>`
 
-- For the ADRV9009-ZU11EG, begin by checking out the HDL branch, then navigate to the **adrv2crr_fmc** directory.
+- For the ADRV9009-ZU11EG, begin by checking out the HDL branch, then navigate
+  to the **adrv2crr_fmc** directory.
 
-Run the following command to enable Corundum support and build the design: **make CORUNDUM=1**
-Once the build process is complete, generate the necessary boot files: boot.bin, device tree, and uImage by following
-the steps:
+Run the following command to enable Corundum support and build the design:
+**make CORUNDUM=1** Once the build process is complete, generate the necessary
+boot files: boot.bin, device tree, and uImage by following the steps:
 
-- BOOT.BIN: `Build the boot image BOOT.BIN <https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html>`__
+- BOOT.BIN: :external+hdl:ref:`Build the boot image BOOT.BIN <build_boot_bin>`
 - Devicetree: :dokuwiki:`Building the Zynq Linux kernel and devicetrees from source <resources/tools-software/linux-build/generic/zynq?s%5b%5d=devicetree>`
 
 Capture in Data Using Scopy2.0
@@ -172,11 +183,8 @@ Captured RF Signal in Frequency Domain
 AI Modulation Detection Applications
 -------------------------------------------------------------------------------
 
-
-Software Configuration
------------------------
-
 .. toctree::
+   :caption: The following applications are available:
    :maxdepth: 1
 
    software/index

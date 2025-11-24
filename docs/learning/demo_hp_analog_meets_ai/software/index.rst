@@ -79,20 +79,23 @@ Building and Running
 
 1. **Build the Application**
 
-   .. code-block:: bash
+   .. shell::
 
-      ./holohub build iio
+      ~/holohub
+      $build iio
 
 2. **Run the Application**
 
-   .. code-block:: bash
+   .. shell::
 
-      ./holohub run iio
+      ~/holohub
+      $run iio
 
 The application will:
 
 - Connect to the specified ADRV9009 devices
-- Continuously read data samples (8192 samples per buffer, but it is configurable from the code)
+- Continuously read data samples (8192 samples per buffer, but it is
+  configurable from the code)
 - Process data through the MATLAB classification model
 - Output results to ``modulation_results.txt`` and ``modulation_results1.txt``
 
@@ -103,12 +106,13 @@ Location
 ~~~~~~~~
 
 The visualization script is located at:
-``https://github.com/analogdevicesinc/pyadi-iio/blob/afpop/jupiter_modulation/examples/plot_identification_data.py``
+:git-pyadi-iio:`raw+afpop:jupiter_modulation/examples/plot_identification_data.py`
 
 Description
 ~~~~~~~~~~~
 
-This Python application provides a web-based dashboard for monitoring and analyzing the modulation classification results in real-time. It features:
+This Python application provides a web-based dashboard for monitoring and
+analyzing the modulation classification results in real-time. It features:
 
 - Real-time confusion matrices
 - Constellation diagrams
@@ -139,9 +143,9 @@ Prerequisites
 
 Install required Python packages:
 
-.. code-block:: bash
+.. shell::
 
-   pip install dash plotly pandas scipy scikit-learn numpy pyadi-iio
+   $pip3 install dash plotly pandas scipy scikit-learn numpy pyadi-iio
 
 Hardware Requirements
 ~~~~~~~~~~~~~~~~~~~~~
@@ -191,13 +195,14 @@ Running the Dashboard
 
 1. **Start the Holoscan Application**
 
-   Ensure the Holoscan modulation classification application is running and generating output files.
+   Ensure the Holoscan modulation classification application is running and
+   generating output files.
 
 2. **Launch the Dashboard**
 
-   .. code-block:: bash
+   .. shell::
 
-      python3 plot_identification_data.py
+      $python3 plot_identification_data.py
 
 3. **Access the Web Interface**
 
@@ -206,8 +211,10 @@ Running the Dashboard
 Usage Workflow
 ~~~~~~~~~~~~~~
 
-1. **Select Modulation**: Use the dropdown to choose a specific modulation or select "Random" for automatic switching
-2. **Monitor Classification**: Observe real-time classification results for both ADRV9009 devices
+1. **Select Modulation**: Use the dropdown to choose a specific modulation or
+   select "Random" for automatic switching
+2. **Monitor Classification**: Observe real-time classification results for
+   both ADRV9009 devices
 3. **Analyze Performance**: Review confusion matrices and accuracy metrics
 4. **Examine Signals**: Study constellation diagrams and time-domain waveforms
 
@@ -217,4 +224,4 @@ Support and Resources
 For additional support and documentation:
 
 - **Holoscan SDK Documentation**: https://docs.nvidia.com/holoscan/
-- **PyADI-IIO Documentation**: https://analogdevicesinc.github.io/pyadi-iio/
+- **PyADI-IIO Documentation**: :external+pyadi-iio:doc:`index`
