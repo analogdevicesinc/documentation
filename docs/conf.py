@@ -53,3 +53,21 @@ numfig_format = {'figure': 'Figure %s',
 # -- Show TODOs ---------------------------------------------------------------
 
 todo_include_todos = True
+
+# -- Linkcheck ----------------------------------------------------------------
+
+linkcheck_sitemaps = [
+    "https://wiki.analog.com/doku.php?do=sitemap",
+    "https://www.analog.com/media/en/en-pdf-sitemap.xml",
+    "https://www.analog.com/media/en/en-pdp-sitemap.xml",
+]
+linkcheck_timeout = 5
+linkcheck_request_headers = {
+    "*": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:142.0) Gecko/20100101 Firefox/142.0",
+        "Accept-Language": "en-US,en;q=0.5",
+    },
+}
+linkcheck_ignore = [
+    r'https://www.digikey.com/',
+]
