@@ -1,4 +1,8 @@
-.. _template:
+:orphan:
+
+.. Remove :orphan: marker, rename _index to index and add to a toctree
+
+.. _template eval:
 
 EVALUATION BOARD
 ===============================================================================
