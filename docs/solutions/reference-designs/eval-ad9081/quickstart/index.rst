@@ -5,8 +5,8 @@ Quick start guides
 
 The Quick start guides provide simple step by step instructions on how to do
 an initial system setup for the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082`
-boards on various FPGA development boards. In these guides, we will discuss how
-to program the bitstream, run a no-OS program or boot a Linux distribution.
+boards on various FPGA development boards. In these guides, we will discuss
+how to program the bitstream, run a no-OS program or boot a Linux distribution.
 
 .. toctree::
 

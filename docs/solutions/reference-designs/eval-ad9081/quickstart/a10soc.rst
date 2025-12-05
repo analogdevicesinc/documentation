@@ -55,8 +55,8 @@ Instructions on how to manually build the boot files from source can be found
 here:
 
 - :dokuwiki:`Building the Intel SoC-FPGA kernel and devicetrees from source <resources/tools-software/linux-build/generic/socfpga>`
-- :external+hdl:ref:`ad9081_fmca_ebz` build documentation. More HDL build details at
-  :external+hdl:ref:`build_hdl`.
+- :external+hdl:ref:`ad9081_fmca_ebz` build documentation. More HDL build
+  details at :external+hdl:ref:`build_hdl`.
 
 Required software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,6 +115,9 @@ These resistors can be found on the backside of the A10SoC, underneath the
 FMCA connector (J29). The following picture shows the required configuration
 to be compatible with the :adi:`EVAL-AD9081`.
 
+.. image:: ../../images/a10soc_fmc_rework.jpg
+   :width: 400
+
 Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -134,7 +137,8 @@ Follow the steps in this order, to avoid damaging the components:
 #. Connect the SMA cables ADC0-DAC0, ADC1-DAC1, ADC2-DAC2, ADC3-DAC3
 #. Connect the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` FMC board to the
    FPGA carrier **HPC1** FMCA (J29) socket
-#. Both the HPS (J26) and FPGA (J27) memory module must be installed on the A10SoC
+#. Both the HPS (J26) and FPGA (J27) memory module must be installed on the
+   A10SoC
 #. Insert microSD card into the card socket on the FPGA
 #. Configure the FPGA for SD card boot mode. That is the
    :intel:`default position <content/www/us/en/docs/programmable/683735/current/boot-select.html>`
@@ -146,9 +150,6 @@ Follow the steps in this order, to avoid damaging the components:
 #. Turn on the power switch on the FPGA board
 #. Observe Kernel and serial console output messages on your terminal (use
    the first ttyUSB or COM port registered)
-
-.. image:: ../../images/a10soc_fmc_rework.jpg
-   :width: 400
 
 Boot messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -677,6 +678,7 @@ To reboot the system, run:
    be taken not to corrupt the file system -- please shut down things, don't
    just turn off the power switch. Depending on your monitor, the standard
    power off could be hiding. You can do this from the terminal as well with
-   :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
+   :code:`sudo shutdown -h now` or the above-mentioned command for powering
+   off.
 
 .. include:: ../../common/using-iio-osc.rst

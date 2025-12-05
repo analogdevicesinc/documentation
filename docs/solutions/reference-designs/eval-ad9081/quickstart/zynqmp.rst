@@ -32,8 +32,8 @@ Instructions on how to manually build the boot files from source can be found
 here:
 
 - :ref:`linux-kernel zynqmp`
-- :external+hdl:ref:`ad9081_fmca_ebz` build documentation. More HDL build details at
-  :external+hdl:ref:`build_hdl`.
+- :external+hdl:ref:`ad9081_fmca_ebz` build documentation. More HDL build
+  details at :external+hdl:ref:`build_hdl`.
 
 Required Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1012,14 +1012,16 @@ To reboot the system, run:
    be taken not to corrupt the file system -- please shut down things, don't
    just turn off the power switch. Depending on your monitor, the standard
    power off could be hiding. You can do this from the terminal as well with
-   :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
+   :code:`sudo shutdown -h now` or the above-mentioned command for powering
+   off.
 
 .. include:: ../../common/using-iio-osc.rst
 
 About the IIO devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Main receivers RX1, RX2, RX3, and RX4 are handled by the axi-ad9081-rx-hpc IIO device.
+Main receivers RX1, RX2, RX3, and RX4 are handled by the axi-ad9081-rx-hpc IIO
+device.
 
 Channels:
 
