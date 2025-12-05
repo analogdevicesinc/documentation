@@ -66,6 +66,8 @@ and coordinated with the community during weekly public office hours at 17:00 CE
 on Thursdays using a
 `Jitsi meeting <https://meet.jit.si/AnalogDevicesIncDigitalSignalProcessingOfficeHours>`__.
 
+To set up new ADSP evaluation boards see :ref:`Getting Started <adsp setup>`.
+
 Upstream forks
 --------------
 
@@ -112,3 +114,5 @@ ADI repositories
       :git-adsp-ldr:`v1.0.2 <releases/tag/v1.0.2+>`
 - :git-lnxdsp-repo-manifest:`+`
 - :git-br2-external:`+`
+    - v2025.05:
+      :git-br2-external:`Release 0.1.0 <releases/tag/2025.05-0.1.0+>`
