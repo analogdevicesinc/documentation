@@ -5,14 +5,16 @@ Quick start guides
 
 The Quick start guides provide simple step by step instructions on how to do
 an initial system setup for the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082`
-boards on various FPGA development boards. In these guides, we will discuss how
-to program the bitstream, run a no-OS program or boot a Linux distribution.
+boards on various FPGA development boards. In these guides, we will discuss
+how to program the bitstream, run a no-OS program or boot a Linux distribution.
 
 .. toctree::
 
    On A10SoC <a10soc>
-   On VCK190 <versal>
-   On ZCU102 <zynqmp>
+   On VCK190 <vck190>
+   On ZC706 <zc706>
+   On VCU118 <vcu118>
+   On ZCU102 <zcu102>
 
 .. _ad9081 carriers:
 

@@ -32,9 +32,9 @@ Hardware prerequisites
       - LAN cable (Ethernet)
       - Host PC (Windows or Linux)
 
-#. Internet connection (without proxies makes things much easier) to update the
-   scripts/binaries on the SD card that came with the ADI FMC Card (firewalls
-   are OK, proxies make things a pain).
+#. Internet connection (without proxies makes things much easier) to update
+   the scripts/binaries on the SD card that came with the ADI FMC Card
+   (firewalls are OK, proxies make things a pain).
 #. RF Test equipment
 #. An SD card with at least 16GB of memory (in case you're using Linux). You
    should have received one when purchasing the evaluation board.
@@ -45,9 +45,10 @@ Software prerequisites
 Normally, for basic functionalities regarding visualizing the data received
 from the FPGA, we use the following:
 
-#. :external+scopy:doc:`Scopy <index>` v2.0 or later (must contain the IIO plugin)
+#. :external+scopy:doc:`Scopy <index>` v2.0 or later (must contain the IIO
+   plugin)
 
 .. note::
 
-   :adi:`ADI <>` does not offer FPGA carrier platforms for sale or loan; getting
-   one yourself is the normal part of development or evaluation.
+   :adi:`ADI <>` does not offer FPGA carrier platforms for sale or loan;
+   getting one yourself is the normal part of development or evaluation.
