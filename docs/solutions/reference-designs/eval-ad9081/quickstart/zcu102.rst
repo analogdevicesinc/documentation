@@ -1,4 +1,4 @@
-.. _ad9081 quickstart zynqmp:
+.. _ad9081 quickstart zcu102:
 
 ZCU102 Quick start
 ===============================================================================
@@ -1105,3 +1105,5 @@ connected to the proper ttyUSB or COM port:
    ::
 
       Xilinx Zynq MP First Stage Boot Loader
+
+.. include:: ../../common/using-iio-osc.rst
