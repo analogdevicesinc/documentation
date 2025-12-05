@@ -1,0 +1,7 @@
+   , MIN (MAX), MIN (MAX)   , MIN (MAX)
+   , P36 (P41), P34 (P40)   , P31 (P38)
+5V , OPEN     , OPEN        , OPEN
+9V , OPEN     , OPEN        , SHORT
+12V, OPEN     , SHORT       , OPEN
+15V, OPEN     , SHORT       , SHORT
+20V, SHORT    , OPEN / SHORT, OPEN / SHORT
