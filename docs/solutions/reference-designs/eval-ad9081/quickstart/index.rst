@@ -11,8 +11,8 @@ how to program the bitstream, run a no-OS program or boot a Linux distribution.
 .. toctree::
 
    On A10SoC <a10soc>
-   On VCK190 <versal>
-   On ZCU102 <zynqmp>
+   On VCK190 <vck190>
+   On ZCU102 <zcu102>
 
 .. _ad9081 carriers:
 
