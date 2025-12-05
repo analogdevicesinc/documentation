@@ -66,6 +66,8 @@ and coordinated with the community during weekly public office hours at 17:00 CE
 on Thursdays using a
 `Jitsi meeting <https://meet.jit.si/AnalogDevicesIncDigitalSignalProcessingOfficeHours>`__.
 
+To set up new ADSP evaluation boards see :ref:`Getting Started <adsp setup>`.
+
 Upstream forks
 --------------
 
