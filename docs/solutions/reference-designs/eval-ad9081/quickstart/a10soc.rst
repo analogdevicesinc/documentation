@@ -682,3 +682,8 @@ To reboot the system, run:
    off.
 
 .. include:: ../../common/using-iio-osc.rst
+
+About the IIO devices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TBD

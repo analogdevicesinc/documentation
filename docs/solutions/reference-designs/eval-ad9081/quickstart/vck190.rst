@@ -875,6 +875,4 @@ To reboot the system, run:
 About the IIO devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-..
-   This section is with ^^^ because the last section from using-iio-osc.rst which
-   is included previously, has the last section as ^^^.
+TBD
