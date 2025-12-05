@@ -79,6 +79,10 @@ Follow the steps in this order, to avoid damaging the components:
 #. Insert SD card into the SD card socket on the FPGA
 #. Configure :xilinx:`ZCU102` for SD card boot mode (mode SW6[4:1] switch in
    the position **OFF,OFF,OFF,ON** as seen in the below picture)
+
+   .. image:: ../../images/zcu102_1p0_bootmode.jpg
+   :width: 400
+
 #. Plug-in an Ethernet cable from your router/switch to the Ethernet port on
    the FPGA board
 #. Connect USB UART J83 (Micro USB) to your host PC
@@ -87,9 +91,6 @@ Follow the steps in this order, to avoid damaging the components:
 #. Turn on the power switch on the FPGA board
 #. Observe Kernel and serial console output messages on your terminal (use
    the first ttyUSB or COM port registered)
-
-.. image:: ../../images/zcu102_1p0_bootmode.jpg
-   :width: 400
 
 Boot messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
