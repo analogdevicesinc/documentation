@@ -80,7 +80,7 @@ Follow the steps in this order, to avoid damaging the components:
    the position **OFF,OFF,OFF,ON** as seen in the below picture)
 
    .. image:: ../../images/zcu102_1p0_bootmode.jpg
-   :width: 400
+    :width: 400
 
 #. Plug-in an Ethernet cable from your router/switch to the Ethernet port on
    the FPGA board
