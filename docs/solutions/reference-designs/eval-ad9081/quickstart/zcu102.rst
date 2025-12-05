@@ -3,13 +3,15 @@
 ZCU102 Quick start
 ===============================================================================
 
-.. image:: ../../images/ad9081_zcu102_setup.png
-   :width: 800
-
 This guide provides quick instructions on how to setup the
 :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` on:
 
 - :xilinx:`ZCU102` FMC HPC0
+
+.. image:: ../../images/zcu102.jpg
+   :width: 900
+
+.. esd-warning::
 
 Using Linux as software
 -------------------------------------------------------------------------------
@@ -62,11 +64,8 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/zcu102.jpg
-   :width: 900
-
-.. esd-warning::
-
+.. image:: ../../images/ad9081_zcu102_setup.png
+   :width: 800
 
 In the following example, we will make a physical loopback between the ADC
 and the DAC channels on the evaluation board, using SMA cables.
@@ -1077,10 +1076,8 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/zcu102.jpg
-   :width: 900
-
-.. esd-warning::
+.. image:: ../../images/ad9081_zcu102_setup.png
+   :width: 800
 
 Follow the steps in this order, to avoid damaging the components:
 

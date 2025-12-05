@@ -3,13 +3,15 @@
 VCK190 Quick start
 ===============================================================================
 
-.. image:: ../../images/ad9081_vck190_setup.jpg
-   :width: 800
-
 This guide provides some quick instructions on how to setup the
 :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` on:
 
 - :xilinx:`VCK190` FMCP1 (J51) port
+
+.. image:: ../../images/vck190.jpg
+   :width: 900
+
+.. esd-warning::
 
 Using Linux as software
 -------------------------------------------------------------------------------
@@ -64,13 +66,11 @@ Required Hardware
 Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../../images/vck190.jpg
-   :width: 900
-
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. esd-warning::
+.. image:: ../../images/ad9081_vck190_setup.jpg
+   :width: 800
 
 Follow the steps in this order, to avoid damaging the components:
 

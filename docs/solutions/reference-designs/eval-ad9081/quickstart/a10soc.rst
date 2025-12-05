@@ -3,14 +3,16 @@
 Arria 10 SoC Quick start
 ===============================================================================
 
-.. image:: ../../images/ad9081_a10soc_setup.jpg
-   :width: 800
-
 This guide provides quick instructions on how to setup the
 :adi:`EVAL-AD9081` on:
 
 - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
   (Rev. C or later) on FMCA
+
+.. image:: ../../images/a10soc.jpg
+   :width: 900
+
+.. esd-warning::
 
 .. warning::
 
@@ -124,10 +126,8 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/a10soc.jpg
-   :width: 900
-
-.. esd-warning::
+.. image:: ../../images/ad9081_a10soc_setup.jpg
+   :width: 800
 
 In the following example, we will make a physical loopback between the ADC
 and the DAC channels on the evaluation board, using SMA cables.
