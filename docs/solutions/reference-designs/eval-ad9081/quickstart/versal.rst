@@ -74,62 +74,61 @@ Creating the setup
 
 Follow the steps in this order, to avoid damaging the components:
 
-- Connect the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` FMC board to the
-  FPGA carrier FMC+ FMCP1 socket
-- Connect USB UART J207 (Type-C USB) to your host PC
-- Insert SD card with ADI Kuiper image into socket J302
-- Insert System Controller SD card into socket J206
-- Configure ACAP for SD boot (mode SW1[4:1] switch in the position
-  **OFF,OFF,OFF,ON** as seen in the below picture)
 
-.. image:: ../../images/vck190_sw1.jpg
-   :width: 200
+#. Connect the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` FMC board to the
+   FPGA carrier FMC+ FMCP1 socket
+#. Connect USB UART J207 (Type-C USB) to your host PC
+#. Insert SD card with ADI Kuiper image into socket J302
+#. Insert System Controller SD card into socket J206
+#. Configure ACAP for SD boot (mode SW1[4:1] switch in the position
+   **OFF,OFF,OFF,ON** as seen in the below picture)
 
-- Configure System Controller for SD card boot (mode SW11[4:1] switch in the
+   .. image:: ../../images/vck190_sw1.jpg
+      :width: 200
+
+#. Configure System Controller for SD card boot (mode SW11[4:1] switch in the
    position **OFF,OFF,OFF,ON** as seen in the below picture).
 
-.. image:: ../../images/vck190_sw11.jpg
-   :width: 200
+   .. image:: ../../images/vck190_sw11.jpg
+      :width: 200
 
-- Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access
-  Board Evaluation & Management Tool (BEAM);
-- Turn on the power switch on the FPGA board;
-- Observe kernel and serial console messages on your terminal, both the ACAP
-  UART interface and the System controller. (use the first ttyUSB or COM port
-  registered for the ACAP UART interface, and try  the other 2 to find the one
-  for System Controller);
-- On the System Controller console, a BEAM Tool Web Address should be assigned.
-  Go to this web address to set VADJ_FMC to 1.5V;
-- To change VADJ_FMC On BEAM, click 'Test The Board'>'Board Settings'>'FMC'.
-  Then on 'Set VADJ_FMC', select 1.5V and click 'Set'.
+#. Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access
+   Board Evaluation & Management Tool (BEAM);
+#. Turn on the power switch on the FPGA board;
+#. Observe kernel and serial console messages on your terminal, both the ACAP
+   UART interface and the System controller. (use the first ttyUSB or COM port
+   registered for the ACAP UART interface, and try the other 2 to find the one
+   for System Controller);
+#. On the System Controller console, a BEAM Tool Web Address should be assigned.
+   Go to this web address to set VADJ_FMC to 1.5V;
 
-.. image:: beam-home.jpg
-   :width: 1000
+   .. image:: beam-home.jpg
+      :width: 1000
 
-.. image:: beam-board-settings.jpg
-   :width: 1000
+   .. image:: beam-board-settings.jpg
+      :width: 1000
 
-.. image:: beam-set-vadj.jpg
-   :width: 1000
+   .. image:: beam-set-vadj.jpg
+      :width: 1000
 
-- On the ACAP UART interface console, reboot the system. After reboot,
-  ad9081 devices should be present.
+#. On the ACAP UART interface console, reboot the system. After reboot,
+   ad9081 devices should be present.
 
-.. note::
+   .. note::
 
-   Versal-based carriers (:xilinx:`VCK190`) might not boot with released image.
+      Versal-based carriers (:xilinx:`VCK190`) might not boot with released image.
 
-   The problem appears because some revisions of :xilinx:`VCK190` or
-   :xilinx:`VPK180` may have the date/time set randomly or in 64bit format.
-   To make them boot, it is enough to overwrite the date, following next steps:
+      The problem appears because some revisions of :xilinx:`VCK190` or
+      :xilinx:`VPK180` may have the date/time set randomly or in 64bit format.
+      To make them boot, it is enough to overwrite the date, following next steps:
 
-   - when booting the board, hit any key to go into u-boot menu
-   - type ``mw F12A0000 6613DE3D`` (this value is hexa of the date from Unix
-     Converter webpage)
-   - continue booting
+      - when booting the board, hit any key to go into u-boot menu
+      - type ``mw F12A0000 6613DE3D`` (this value is hexa of the date from Unix
+        Converter webpage)
+      - continue booting
 
 ACAP SD card boot files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The files that need to be present on the SD card BOOT partition are:
 
@@ -143,13 +142,13 @@ Copy the BOOT.BIN, boot.scr and system.dtb from the
 ADI Kuiper image. Then, copy the Image from the ``versal-common`` folder.
 
 Setting up UART
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When setting up the UART make sure you connect to the ACAP UART interface and
 not the System controller.
 
 Boot messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Login Information required for the System Controller:
 
