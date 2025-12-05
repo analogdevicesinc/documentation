@@ -8,6 +8,12 @@ do not support booting directly from SD cards. Therefore the evaluation boards
 need to be bootstrapped over JTAG using a :adi:`ADI ICE-1000 or ICE-2000 JTAG
 debugger <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html>`.
 
+Download a binary release
+-------------------------
+
+Navigate to the :git-br2-external:`br2-external releases page <releases+>` and
+download the appropriate `images-*.tar.xz` release archive.
+
 Setup a JTAG connection
 -----------------------
 
