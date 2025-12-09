@@ -59,6 +59,12 @@ Workshops
    workshop_a_precision_converter_fpga_integration_journey/index
 
 
+.. toctree::
+   :maxdepth: 1
+
+   workshop_kuiper/index
+
+
 Academic Workshops
 -------------------------------------------------------------------------------
 
