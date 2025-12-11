@@ -1,0 +1,10 @@
+﻿,Parameter,pyadi-iio Function,Description,Minimum Value,Maximum Value
+Write Functions,V2 Input Voltage,my_cn0556.set_boost_input_volt(value),sets the boost input voltage value,10V,14V
+,V2 Undervoltage,my_cn0556.set_boost_input_undervolt(value),sets the boost input undervoltage value,8V,12V
+,V1 Output Voltage,my_cn0556.set_boost_output_volt(value),sets the boost output voltage value,14V,56V
+,V2 Input Current Limit,my_cn0556.set_boost_input_current_lim(value),sets the boost input current limit value,12A,35A
+,V1 Output Current Limit,my_cn0556.set_boost_output_current_lim(value),set the boost output current limit value,0.07A,10A
+Read Functions,Input Voltage at V2,my_cn0556.measure_boost_input_volt(),measures the boost input voltage at V2 side,approx. 10V to 14V,
+,Output Voltage at V1,my_cn0556.measure_boost_output_volt(),measures the boost output voltage at V1 side,approx. 14V to 56V,
+,Input Current at V2,my_cn0556.measure_boost_input_current(),measures the boost input current at V2 side,approx. 0A to 35A,
+,Output Current at V1,my_cn0556.measure_boost_output_current(),measures the boost output current at V1 side,approx. 0.07A to 10A,
