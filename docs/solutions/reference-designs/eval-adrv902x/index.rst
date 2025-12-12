@@ -1,6 +1,6 @@
 .. _adrv902x:
 
-ADRV902X
+EVAL-ADRV902X
 ===============================================================================
 
 .. image:: ../images/adrv9026.webp
@@ -81,9 +81,9 @@ Table of contents
    #. :ref:`Prerequisites <adrv902x prerequisites>` - what you need to get started
    #. :ref:`Quick start guides <adrv902x quickstart>`:
 
-      #. Using the :ref:`ZCU102/Zynq UltraScale MP SoC <adrv902x quickstart zynqmp>`
-      #. Using the :ref:`VCK190/Versal <adrv902x quickstart versal>`
-
+      #. Using the :ref:`VCK190/Versal <adrv902x quickstart vck190>`
+      #. Using the :ref:`ZCU102/Zynq UltraScale+ MP SoC <adrv902x quickstart zcu102>`
+ 
    #. Configure an SD Card with :external+adi-kuiper-gen:doc:`Kuiper <index>`
 
    #. Linux Applications
