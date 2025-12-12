@@ -1,15 +1,17 @@
-.. _ad9081 quickstart zynqmp:
+.. _ad9081 quickstart zcu102:
 
 ZCU102 Quick start
 ===============================================================================
-
-.. image:: ../../images/ad9081_zcu102_setup.png
-   :width: 800
 
 This guide provides quick instructions on how to setup the
 :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` on:
 
 - :xilinx:`ZCU102` FMC HPC0
+
+.. image:: ../../images/zcu102.jpg
+   :width: 900
+
+.. esd-warning::
 
 Using Linux as software
 -------------------------------------------------------------------------------
@@ -32,8 +34,8 @@ Instructions on how to manually build the boot files from source can be found
 here:
 
 - :ref:`linux-kernel zynqmp`
-- :external+hdl:ref:`ad9081_fmca_ebz` build documentation. More HDL build details at
-  :external+hdl:ref:`build_hdl`.
+- :external+hdl:ref:`ad9081_fmca_ebz` build documentation. More HDL build
+  details at :external+hdl:ref:`build_hdl`.
 
 Required Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,11 +64,8 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/zcu102.jpg
-   :width: 900
-
-.. esd-warning::
-
+.. image:: ../../images/ad9081_zcu102_setup.png
+   :width: 800
 
 In the following example, we will make a physical loopback between the ADC
 and the DAC channels on the evaluation board, using SMA cables.
@@ -74,11 +73,15 @@ and the DAC channels on the evaluation board, using SMA cables.
 Follow the steps in this order, to avoid damaging the components:
 
 #. Connect the SMA cables ADC0-DAC0, ADC1-DAC1, ADC2-DAC2, ADC3-DAC3
-#. Connect the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` FMC board to the
-   FPGA carrier **HPC1** FMC1 socket
+#. Connect the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` FMC board to the ZCU102
+   **HPC1** FMC1 socket
 #. Insert SD card into the SD card socket on the FPGA
 #. Configure :xilinx:`ZCU102` for SD card boot mode (mode SW6[4:1] switch in
    the position **OFF,OFF,OFF,ON** as seen in the below picture)
+
+   .. image:: ../../images/zcu102_1p0_bootmode.jpg
+    :width: 400
+
 #. Plug-in an Ethernet cable from your router/switch to the Ethernet port on
    the FPGA board
 #. Connect USB UART J83 (Micro USB) to your host PC
@@ -87,9 +90,6 @@ Follow the steps in this order, to avoid damaging the components:
 #. Turn on the power switch on the FPGA board
 #. Observe Kernel and serial console output messages on your terminal (use
    the first ttyUSB or COM port registered)
-
-.. image:: ../../images/zcu102_1p0_bootmode.jpg
-   :width: 400
 
 Boot messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1012,14 +1012,16 @@ To reboot the system, run:
    be taken not to corrupt the file system -- please shut down things, don't
    just turn off the power switch. Depending on your monitor, the standard
    power off could be hiding. You can do this from the terminal as well with
-   :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
+   :code:`sudo shutdown -h now` or the above-mentioned command for powering
+   off.
 
 .. include:: ../../common/using-iio-osc.rst
 
 About the IIO devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Main receivers RX1, RX2, RX3, and RX4 are handled by the axi-ad9081-rx-hpc IIO device.
+Main receivers RX1, RX2, RX3, and RX4 are handled by the axi-ad9081-rx-hpc IIO
+device.
 
 Channels:
 
@@ -1074,19 +1076,17 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/zcu102.jpg
-   :width: 900
-
-.. esd-warning::
+.. image:: ../../images/ad9081_zcu102_setup.png
+   :width: 800
 
 Follow the steps in this order, to avoid damaging the components:
 
-#. Connect the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` FMC board to the
-   FPGA carrier **HPC1** FMC1 socket
+#. Connect the :adi:`EVAL-AD9081` / :adi:`EVAL-AD9082` FMC board to the ZCU102
+   **HPC1** FMC1 socket
 #. Configure :xilinx:`ZCU102` for JTAG boot mode (mode SW6[4:1] switch in
    the position **ON,ON,ON,ON**)
 #. Connect USB UART J83 (Micro USB) to your host PC
-#. Connecy USB JTAG (Micro USB) to your host PC
+#. Connect USB JTAG (Micro USB) to your host PC
 #. (Optional) Connect a monitor to the FPGA by HDMI, and a mouse and a keyboard
 #. Turn on the power switch on the FPGA board
 #. Observe console output messages on your terminal (use the first ttyUSB or
@@ -1103,3 +1103,8 @@ connected to the proper ttyUSB or COM port:
    ::
 
       Xilinx Zynq MP First Stage Boot Loader
+
+..
+   TBD
+
+.. include:: ../../common/using-iio-osc.rst
