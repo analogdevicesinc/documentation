@@ -387,6 +387,13 @@ Design & Integration Files
    - Bill of Materials
    - Allegro Project
 
+.. toctree::
+   :titlesonly:
+   :hidden:
+   :glob:
+
+   */index
+
 Help and Support
 ----------------
 
