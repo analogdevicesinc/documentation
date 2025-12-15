@@ -1,27 +1,28 @@
-.. _ad9084_ebz quickstart versal:
+.. _ad9084 quickstart versal:
 
 AD9084-FMCA-EBZ Versal ACAP VCK190/VPK180 Quick Start Guide
 ===========================================================
 
-This guide provides some quick instructions on how to setup the AD9084 eval board on:
+This guide provides some quick instructions on how to setup the
+:adi:`EVAL-AD9084` board on:
 
-- :xilinx:`VCK190`
-- :xilinx:`VPK180`
+- :xilinx:`VCK190` on FMC2
+- :xilinx:`VPK180` on FMC+
 
 Required Hardware
------------------
+-------------------------------------------------------------------------------
 
 - AMD Xilinx :xilinx:`VCK190` or :xilinx:`VPK180` board
-- :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
+- :adi:`EVAL-AD9084` evaluation board
 - SD Card of at least 16GB imaged with Kuiper Linux (see
   :external+adi-kuiper-gen:doc:`Configure a SD Card <hardware-configuration>`)
 - 2x `Vita 57 FMC+ Extender <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__ (:xilinx:`VCK190` only)
 - USB Type-C cable
 - Ethernet cables
-- Power supply for the FPGA carrier board and the :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
+- Power supply for the FPGA carrier board and the :adi:`EVAL-AD9084` evaluation board
 
 Required Software
------------------
+-------------------------------------------------------------------------------
 
 - A Linux OS on a PC
 - Xilinx Vivado 2025.1
@@ -29,7 +30,7 @@ Required Software
 - :ref:`IIO-Oscilloscope <iio-oscilloscope>` with the :ref:`AD9084 plugin <ad9084 iio-oscilloscope-plugin>`
 
 Building the HDL project
-------------------------
+-------------------------------------------------------------------------------
 
 Before building the hdl project setup your computer based on the
 following guide: :external+hdl:ref:`build_hdl`
@@ -43,17 +44,17 @@ following guide: :external+hdl:ref:`build_hdl`
      Building ad9084_ebz_vck190 [/home/analog/hdl/projects/ad9084_ebz/vck190/ad9084_ebz_vck190_vivado.log] ... OK
 
 Building the boot image BOOT.BIN
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Instructions on how to build the boot image BOOT.BIN image for Versal boards can be found here:
 
 - :external+hdl:ref:`Building an HDL Project <build_hdl>`
 - :external+hdl:ref:`Build the boot image BOOT.BIN <build_boot_bin versal>`
 
-.. _ad9084_ebz versal linux:
+.. _ad9084 versal linux:
 
 Building the Linux files
-------------------------
+-------------------------------------------------------------------------------
 
 On the development host
 
@@ -137,7 +138,7 @@ Copy the generated files to your SD Card.
 
 
 Testing
--------
+-------------------------------------------------------------------------------
 
 The following steps are intended for :xilinx:`VCK190` but they mostly apply to
 :xilinx:`VPK180` as well.
@@ -145,39 +146,46 @@ The following steps are intended for :xilinx:`VCK190` but they mostly apply to
 .. image:: versal/vck190.jpg
 
 Physical setup
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Place the pre-built bootfiles (BOOT.BIN, Image, system.dtb, boot.scr) in the root of the SD card's BOOT partition.
+#. Place the pre-built bootfiles (BOOT.BIN, Image, system.dtb, boot.scr) in the
+   root of the SD card's BOOT partition.
 #. Insert the SD card into the FPGA carrier board (J302).
 #. Connect USB UART J207 (Type-C USB) to your host PC.
 #. (:xilinx:`VCK190` only) Insert System Controller SD card into socket J206.
-#. Configure ACAP for SD BOOT (mode SW1[4:1] switch in the position **OFF,OFF,OFF,ON** as seen in the below picture).
+#. Configure ACAP for SD BOOT (mode SW1[4:1] switch in the position
+   **OFF,OFF,OFF,ON** as seen in the below picture).
 
    .. image:: versal/vck190_sw1.jpg
 
-#. Configure System Controller for SD BOOT (mode SW11[4:1] switch in the position **OFF,OFF,OFF,ON** as seen in the below picture).
+#. Configure System Controller for SD BOOT (mode SW11[4:1] switch in the
+   position **OFF,OFF,OFF,ON** as seen in the below picture).
 
    .. image:: versal/vck190_sw11.jpg
 
-#. Connect :adi:`AD9084-FMCA-EBZ <AD9084>` to FMCP2 (J53) with FMC+ riser or equivalent.
-#. Connect the power supplies to the FPGA carrier board and the AD9084-FMCA-EBZ evaluation board.
+#. Connect :adi:`EVAL-AD9084` to FMCP2 (J53) with FMC+ riser or equivalent.
+#. Connect the power supplies to the FPGA carrier board and the
+   :adi:`EVAL-AD9084`` evaluation board.
 
    .. image:: versal/vck190_ad9084_ebz.jpg
 
 #. Verify VADJ is set to 1.5 V
 
-Verify 1.5 V VADJ
-^^^^^^^^^^^^^^^^^
+Set VADJ to 1.5 V
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access Board Evaluation & Management Tool (BEAM).
+#. Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access
+   Board Evaluation & Management Tool (BEAM).
 #. Turn on the power switch on the FPGA board.
-#. Observe kernel and serial console messages on your terminal, both the ACAP UART interface and the System controller.
+#. Observe kernel and serial console messages on your terminal, both the ACAP
+   UART interface and the System controller.
    (use the first ttyUSB or COM port registered for the ACAP UART interface,
    and try the other 2 to find the one for System Controller)
 #. On the System Controller console, a BEAM Tool Web Address should be assigned.
    Go to this web address to set VADJ_FMC to 1.5V.
 #. To change VADJ_FMC On BEAM, click "Test The Board">"Board Settings">"FMC".
-   Then on "Set VADJ_FMC", select 1.5V and click "Set", AD9084 LEDs should turn on immediately.
+   Then on "Set VADJ_FMC", select 1.5V and click "Set", AD9084 LEDs should turn
+   on immediately.
 
    .. image:: versal/beam-home.jpg
 
@@ -202,12 +210,13 @@ Verify 1.5 V VADJ
          $    --connect-timeout 1 ; \
          $  do sleep 1 ; done
 
-#. On the ACAP UART interface console, reboot the system. After reboot, ad9084 devices should be present.
+#. On the ACAP UART interface console, reboot the system. After reboot, ad9084
+   devices should be present.
 
 .. esd-warning::
 
 ACAP SDcard boot files
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The files that need to be present on the sdcard BOOT partition are:
 
@@ -217,7 +226,7 @@ The files that need to be present on the sdcard BOOT partition are:
 - boot.scr
 
 Startup
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once the physical setup is complete, it is recommended to start a UART session
 to the FPGA carrier board to monitor the boot process.
@@ -227,7 +236,8 @@ evaluation board will be initialized.
 
 .. important::
 
-   When setting up the UART make sure you connect to the ACAP UART interface and not the System controller.
+   When setting up the UART make sure you connect to the ACAP UART interface
+   and not the System controller.
 
 .. note::
 
@@ -237,7 +247,7 @@ evaluation board will be initialized.
    - password: analog
 
 Boot messages
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. collapsible:: Complete boot log
 
