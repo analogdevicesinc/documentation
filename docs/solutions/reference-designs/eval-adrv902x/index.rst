@@ -1,4 +1,18 @@
-.. _adrv902x:
+.. _adrv9026:
+
+.. collection:: EVAL-ADRV9026/ADRV9029
+   :subtitle: Evaluating the ADRV9026/ADRV9029 Integrated Quad RF Transceiver with Observation Path
+   :image: adrv9026-pcb.png
+   :label: eval user-guide
+
+   documentation:
+     - User guide <.>
+
+   no-OS:
+     - no-OS Driver (madura) <drivers/rf-transceiver/madura>
+
+   linux:
+     - Linux Driver (adrv902x) <drivers/iio/adc/adrv902x> 
 
 ADRV902X
 ===============================================================================
