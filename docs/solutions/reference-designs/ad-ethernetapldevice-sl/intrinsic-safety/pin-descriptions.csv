@@ -1,0 +1,6 @@
+﻿Jumper settings,
+
+R25 & R24,Configure the MAX42500 I2C address
+R30 & R68,Configure the ADIN1110 SPI protocol  
+R98,Connects MAXQ1065 HW Reset pin to teh MAX32690 HW reset pin
+R100,Connects the MAX42500 reset pin to the MAX32690 and ADIN1110 HW reset pins

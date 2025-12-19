@@ -1,0 +1,8 @@
+﻿Specs,Class A,Class C,Class 3
+UPS(max) (VDC) ,15,15,50
+UPS(min) (VDC) ,9.6,11.61,46
+IPS(min) (mA) ,55.56,95,1250
+PPS(min) (W) ,0.54,1.1,57.5
+UPL(min) (VDC) ,9,1,36
+PPL(min) (W) ,0.5,1,36
+IPL(min) (mA) ,20,20,40
