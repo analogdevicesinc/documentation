@@ -1,0 +1,16 @@
+﻿Section,Device analised,Rail,Voltage(V),Current(mA),Power(mW),Comments
+"10Base-T1L Circuit 	ADIN1110",,DVDD_1V1,1.1,12,13.2,1.1V can be taken from internal LDO of ADIN1110
+,,VDDIO,1.8,18,32.4,
+,,AVDD_H,1.8,28,50.4,
+,,AVDD_L,1.8,28,50.4,
+Digital Circuit,MAX32690,VCORE,1.1,9.18,10.098,7.65uA/MHz @ 120MHz (maximum)
+,,VDD_3A,3.3,0.339,1.1187,VDD3A connected with VDDIOH
+,,VDD_IOH,3.3,8,26.4,I_OL and I_OH max current
+,,VDD_A,1.8,0.399,0.7182,VDDA connected with VDDIO
+,,VDD_IO,1.8,4,7.2,I_OL and I_OH max current
+Analog-to-Digital Converter/ Temperature Sensor Circuit,ADFS7124-4,AVDD (isolated side),3.3,2.2,7.26,being supplied via isolate power
+,,IOVDD (isolated side),3.3,1.08,3.564,being supplied via isolate power
+Digital Isolator,ADuM1441,VDD1,3.3,0.9,"2,97",
+,,VDD2 (isolated side),3.3,0.9,2.97, being supplied via isolate power
+Supervisory Circuit,MAX42500,VDD,"3,3",0.15,0.495,being supplied via separate line using LDO (Functional Safety)
+,MAX6613,VCC,3.3,0.013,0.0429,being supplied via separate line using LDO (Functional Safety)
