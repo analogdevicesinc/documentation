@@ -59,14 +59,14 @@ Hardware Design Files
 ~~~~~~~~~~~~~~~~~~~~~
 
 - :download:`Schematic Power and Comms board <02-083152-01-b.pdf>`
-- :download:`Schematic Digital IS board <02-083153-01-c.pdf>`
+- :download:`Schematic Digital IS board <02-083153-01-d.pdf>`
 - :download:`Schematic Digital NON-IS board <02-084576-01-b.pdf>`
-- :download:`Layout Power and Comms board <08-083152-01-b-1.pdf>`
-- :download:`Layout Digital IS board <08-083153-01-c.pdf>`
+- :download:`Layout Power and Comms board <08-083152-01-b.pdf>`
+- :download:`Layout Digital IS board <08-083153-01-d.pdf>`
 - :download:`Layout Digital NON-IS board <08-084576-01-b.pdf>`
-- :download:`Bill of Materials Power and Comms board <05-083152-01-b.csv.zip>`
-- :download:`Bill of Materials Digital IS board <05-083153-01-c.csv.zip>`
-- :download:`Bill of Materials Digital NON-IS board <05-084576-01-b.csv.zip>`
+- :download:`Bill of Materials Power and Comms board <05-083152-01-b.zip>`
+- :download:`Bill of Materials Digital IS board <05-083153-01-d.zip>`
+- :download:`Bill of Materials Digital NON-IS board <05-084576-01-b.zip>`
 
 Package Contents
 ----------------
@@ -195,11 +195,8 @@ The software stack includes:
 - Secure boot and authentication via MAXQ1065
 - Zephyr RTOS support
 
-..
-  Enable this after adding content
-
-  Complementary Documentation
-  ---------------------------
+Complementary Documentation
+---------------------------
 
   .. toctree::
      :titlesonly:

@@ -1,0 +1,14 @@
+﻿Node Name,Value,Description
+1V1,1.1V,"1.1V output of AD151-1.1 LDO, supplying the MAX32690's VCORE"
+1V8,1.8V,"1.8V output of MAX17626 buck converter, for VDDIO of 1.8V in the entire signal chain"
+3V3,3.3V,"Output voltage of ADP151-3.3 LDO, powering up VDD with 3.3V requirement"
+3V5,3.5V to 3.6V,"Output voltage of LT8606 buck converter, approximately within 3.5V, can have a bit more margin if increase to 3.6V"
+I_LINEP,20mA to 55.56mA,"Current at the Ethernet-APL Line, the main input current, or the line current, or the main DC current consumption"
+I_LOADP,0mA to 55mA,"Current at Load side of LT8440, also known as input current of LT8606 Buck Converter"
+I_SHUNT,0mA to 43.3mA,Current flowing to the Shunt Pin of LT8440
+ISO_3V3,3.3V,Isolated output of 3.3V produced by combination of MAX253 push-pull and ADP151-3.3 LDO. w/ respect to secondary/isolated ground
+ISO_GND,Ground (0V),isolated ground
+LINE_P,9V to 15V (typical),"Input APL Line (the differential connection of LINE_P and LINE_N is the ""LOAD PORT"" of APL field device)"
+LOAD_N,Ground (0V),main local ground (named LOAD_E on secondary board of AD-EthernetAPLDevice-SL)
+LOAD_P,approx. 8V to 14V (typical),"Voltage at Load Side of LT8440, also the input of LT8606 Buck converter"
+SUP_3V3,3.3V,"Separate 3.3V output for supplying supervisory circuits like MAX42500 and MAX6613, using ADP151-3.3 LDO "
