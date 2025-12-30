@@ -71,6 +71,33 @@ jobs:
         check_vale vale-spelling.ini
         check_vale vale-enforcement.ini
 
+    - name: Check git lfs
+      run: |
+        git lfs install --skip-smudge --force
+
+        _emit_fmt() {
+          msg=$(echo "$1" | tr -d '\t')
+          msg=$(printf "$msg" | sed ':a;N;$!ba;s/\n/'%0A'/g')
+          printf "%s\n" "$msg"
+          exit 1
+        }
+
+        lfs_error="
+        At least one file should have been an LFS pointer, but is not.
+        Please ensure that binary data was committed to git lfs, a tutorial is provided at:
+        https://analogdevicesinc.github.io/documentation/contributing/creating_new_pages.html#adding-images-and-other-binary-files"
+
+        git ls-files \
+          | parallel -j "$(nproc)" --halt never '
+            if git check-attr filter -- {} | grep -q "lfs$"; then
+              line=$(git show :{} | head -n 1)
+              if [ "$line" != "version https://git-lfs.github.com/spec/v1" ]; then
+                echo "::error file={}::File should have been an LFS pointer, but is not"
+                exit 1
+              fi
+            fi
+          ' || _emit_fmt "::warning ::check_lfs: $lfs_error"
+
   deploy:
     runs-on: ubuntu-latest
     needs: [build-doc]
