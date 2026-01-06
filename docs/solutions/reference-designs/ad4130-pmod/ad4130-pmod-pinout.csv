@@ -1,0 +1,7 @@
+Pin Number, Pin Function               , Mnemonic, Pin Number, Pin Function               , Mnemonic, 
+1         , Chip Select                , CS _N   , 7         , Interrupt 1                , INT1
+2         , Master Out Slave In        , MOSI    , 8         , Interrupt 2                , INT2
+3         , Master In Slave Out        , MISO    , 9         , Interrupt 3                , INT3
+4         , Serial Clock               , SCLK    , 10        , Synchronization Logic Input, SYNC_N
+5         , Ground                     , GND     , 11        , Ground                     , GND
+6         , Digital Power              , IOVDD   , 12        , Digital power              , IOVDD

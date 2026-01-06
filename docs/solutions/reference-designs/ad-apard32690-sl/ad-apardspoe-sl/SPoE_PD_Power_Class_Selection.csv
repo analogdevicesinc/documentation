@@ -1,0 +1,6 @@
+﻿PD Class, JP1 Position  , JP2 Position  , VPD(min), VPD(max), I(max), PPD(max)
+      10, Across 1 and 2, Across 1 and 2, 14 V    , 30 V    , 92 mA , 1.23 W
+      11, Across 1 and 2, Disconnected  , 14 V    , 30 V    , 240 mA, 3.20 W
+      12, Across 1 and 2, Across 2 and 3, 14 V    , 30 V    , 632 mA, 8.40 W
+      13, Across 2 and 3, Across 1 and 2, 35 V    , 58 V    , 231 mA, 7.70 W
+      14, Across 1 and 3, Disconnected  , 35 V    , 58 V    , 600 mA, 20.0 W
