@@ -8,8 +8,8 @@
 
     <title>Build MicroBlaze Linux kernel &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=31a9e0ba" />
-    <script async="async" src="../../_static/app.umd.js?v=3a4867e9"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../_static/app.umd.js?v=62fc6850"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -685,77 +685,65 @@ devicetree, build the simpleImage:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nv">dtb</span><span class="o">=</span>vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1.dtb
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">dtb</span><span class="o">=</span>vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1.dtb
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set dtb address and length</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set dtb address and length</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">dtb_start</span><span class="o">=</span><span class="k">$((</span><span class="m">16#84e5c8</span><span class="k">))</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nv">dtb_start</span><span class="o">=</span><span class="k">$((</span><span class="m">16#84e5c8</span><span class="k">))</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">dtb_end</span><span class="o">=</span><span class="k">$((</span><span class="m">16#85f000</span><span class="k">))</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nv">dtb_end</span><span class="o">=</span><span class="k">$((</span><span class="m">16#85f000</span><span class="k">))</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">dtb_length</span><span class="o">=</span><span class="k">$((</span><span class="nv">dtb_end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">dtb_start</span><span class="k">))</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nv">dtb_length</span><span class="o">=</span><span class="k">$((</span><span class="nv">dtb_end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">dtb_start</span><span class="k">))</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span><span class="nv">$dtb</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clear any previous devicetree</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">of</span><span class="o">=</span><span class="s2">&quot;arch/microblaze/boot/simpleImage.generic.strip&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">bs</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">seek</span><span class="o">=</span><span class="nv">$dtb_start</span><span class="w"> </span><span class="nv">conv</span><span class="o">=</span>notrunc<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="nv">$dtb_length</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> 68152 bytes (68 kB, 67 KiB) copied, 0.0198292 s, 3.4 MB/s
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write new</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>make<span class="w"> </span><span class="nv">$dtb</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span><span class="s2">&quot;arch/microblaze/boot/dts/</span><span class="nv">$dtb</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">of</span><span class="o">=</span><span class="s2">&quot;arch/microblaze/boot/simpleImage.generic.strip&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">bs</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">seek</span><span class="o">=</span><span class="nv">$dtb_start</span><span class="w"> </span><span class="nv">conv</span><span class="o">=</span>notrunc
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clear any previous devicetree</span>
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="se">\</span>
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>    of=&quot;arch/microblaze/boot/simpleImage.generic.strip&quot; \
-    bs=1 seek=$dtb_start conv=notrunc count=$dtb_length
- 68152 bytes (68 kB, 67 KiB) copied, 0.0198292 s, 3.4 MB/s
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write new</span>
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span><span class="s2">&quot;arch/microblaze/boot/dts/</span><span class="nv">$dtb</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>    of=&quot;arch/microblaze/boot/simpleImage.generic.strip&quot; \
-    bs=1 seek=$dtb_start conv=notrunc
- 31787 bytes (32 kB, 31 KiB) copied, 0.0111866 s, 2.8 MB/s
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> 31787 bytes (32 kB, 31 KiB) copied, 0.0111866 s, 2.8 MB/s
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>

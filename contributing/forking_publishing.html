@@ -8,8 +8,8 @@
 
     <title>Forking and publishing &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../_static/app.min.css?v=31a9e0ba" />
-    <script async="async" src="../_static/app.umd.js?v=3a4867e9"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../_static/app.umd.js?v=62fc6850"></script>
     <link rel="icon" href="../_static/icon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -708,7 +708,7 @@ clone and build the doc for the first time (working directory: repo root):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span><span class="nb">cd</span><span class="w"> </span>docs<span class="w"> </span><span class="p">;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>--upgrade<span class="o">)</span>
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><p>Launch the doc editing server using <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/cli.html#serve" target="_blank" title="(in Doctools v0.4.29)"><span>Serve</span></a>:</p>
+<div class="clear-left"></div></div></div><p>Launch the doc editing server using <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/cli.html#serve" target="_blank" title="(in Doctools v0.4.30)"><span>Serve</span></a>:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/documentation$
 </pre></div>
 </div>
@@ -733,7 +733,7 @@ GitHub Codespaces.</p>
 <p>GitHub Codespaces uses the <a class="icon git reference external" href="https://github.com/analogdevicesinc/documentation/tree/main/.devcontainer.json" target="_blank">.devcontainer.json</a> file to
 initialize a container in the cloud.
 This container is pre-configured with all the tools required to build the
-documentation, including the live preview daemon <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/cli.html#serve" target="_blank" title="(in Doctools v0.4.29)"><span>Serve</span></a>,
+documentation, including the live preview daemon <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/cli.html#serve" target="_blank" title="(in Doctools v0.4.30)"><span>Serve</span></a>,
 which is automatically started.
 This setup provides a user experience comparable to platforms like Google Docs
 or Overleaf.</p>
@@ -834,10 +834,7 @@ It is recommended because it saves a lot of bandwidth and (your precious) time.<
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p><code class="docutils literal notranslate"><span class="pre">GIT_LFS_SKIP_SMUDGE=1</span></code> and <code class="docutils literal notranslate"><span class="pre">--skip-smudge</span></code> are not the identical!</p>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Still fetches with either set.</span>
+<div class="code-shell"><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Still fetches with either set.</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>$
@@ -846,10 +843,7 @@ It is recommended because it saves a lot of bandwidth and (your precious) time.<
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>-I<span class="w"> </span>pointer_file
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Only still fetches with --skip-smudge, skipped with GIT_LFS_SKIP_SMUDGE=1</span>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Only still fetches with --skip-smudge, skipped with GIT_LFS_SKIP_SMUDGE=1</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>$
@@ -866,10 +860,7 @@ It is recommended because it saves a lot of bandwidth and (your precious) time.<
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>lfs<span class="w"> </span>pull<span class="w"> </span>-I<span class="w"> </span>path/to/my_file.png
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/documentation$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checking size</span>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checking size</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/documentation$
@@ -888,10 +879,7 @@ It is recommended because it saves a lot of bandwidth and (your precious) time.<
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>path/to/my_file.png<span class="w"> </span><span class="p">;</span><span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>--<span class="w"> </span><span class="nv">$_</span>
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/documentation$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checking pointer</span>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checking pointer</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/documentation$
@@ -905,7 +893,7 @@ oid sha256:837ad06a63c0b1c10a02615601f73b7b7596746a62064fe35bb8a4d1543f04a2
 size 34162787
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><p>For documentation, you don’t need to do it manually, <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/cli.html#serve" target="_blank" title="(in Doctools v0.4.29)"><span>Serve</span></a>
+<div class="clear-left"></div></div></div><p>For documentation, you don’t need to do it manually, <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/cli.html#serve" target="_blank" title="(in Doctools v0.4.30)"><span>Serve</span></a>
 will automatically fetch lfs artifacts of watched touched files and visited pages
 on the live server.</p>
 <p>In the following subsections are common issues and on what to do in each situation.</p>
@@ -1035,10 +1023,7 @@ disable lfs, work, push, and enable again:</p>
 Global Git LFS configuration has been removed.
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Restore any smudged file to its pointer state, to make sure no miss touches</span>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Restore any smudged file to its pointer state, to make sure no miss touches</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
@@ -1047,10 +1032,7 @@ Global Git LFS configuration has been removed.
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>restore<span class="w"> </span>.
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Work, work, work...</span>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Work, work, work...</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
@@ -1059,16 +1041,10 @@ Global Git LFS configuration has been removed.
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>@~20
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Push even to a contributor&#39;s fork with an open PR</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Push even to a contributor&#39;s fork with an open PR</span>
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Re-install lfs</span>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Re-install lfs</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$

@@ -8,8 +8,8 @@
 
     <title>ADRD8012-01Z &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=31a9e0ba" />
-    <script async="async" src="../../../_static/app.umd.js?v=3a4867e9"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../../_static/app.umd.js?v=62fc6850"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -646,10 +646,7 @@ COM port that appears on the serial terminal, with a baud rate of <strong>115200
 <li><p>password:analog</p></li>
 </ul>
 </div>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#eth0 - 10G ethernet interface</span>
+<div class="code-shell"><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#eth0 - 10G ethernet interface</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
@@ -668,10 +665,7 @@ lrwxrwxrwx 1 root root 0 Mar 20 16:32 sit0 -&gt; ../../devices/virtual/net/sit0
 <p class="admonition-title">Important</p>
 <p>Both server and client should have the same MTU</p>
 </div>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set the eth0&#39;s MTU and IP address</span>
+<div class="code-shell"><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set the eth0&#39;s MTU and IP address</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
@@ -708,10 +702,7 @@ lrwxrwxrwx 1 root root 0 Mar 20 16:32 sit0 -&gt; ../../devices/virtual/net/sit0
         valid_lft forever preferred_lft forever
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Configure the video pipeline and the cameras</span>
+<div class="clear-left"></div></div></div><div class="code-shell"><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Configure the video pipeline and the cameras</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
@@ -726,19 +717,13 @@ lrwxrwxrwx 1 root root 0 Mar 20 16:32 sit0 -&gt; ../../devices/virtual/net/sit0
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./media_cfg_des1/2/12.sh
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/home/analog/Workspace/K26$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#(depending on the desired deserializer or 12 for the case when there are two deserializers with 4 cameras)</span>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#(depending on the desired deserializer or 12 for the case when there are two deserializers with 4 cameras)</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/home/analog/Workspace/K26$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Start streaming to another host</span>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Start streaming to another host</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/home/analog/Workspace/K26$
@@ -747,10 +732,7 @@ lrwxrwxrwx 1 root root 0 Mar 20 16:32 sit0 -&gt; ../../devices/virtual/net/sit0
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/home/analog/Workspace/gstreamer
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/home/analog/Workspace/gstreamer$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#(depending on the number of cameras - 4 or 8 cameras - 1 or 2 deserializers)</span>
+<div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#(depending on the number of cameras - 4 or 8 cameras - 1 or 2 deserializers)</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/home/analog/Workspace/gstreamer$
@@ -766,10 +748,7 @@ scripts, you can use the Linux pidof command to see what are the IDs of this
 gstreamer-related instaces, and after that kill these ones by using Linux kill
 command, in the following way:</p>
 </div>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#That is the command to show the ID numbers of the opened processes and will show you 8 numbers - like in the following line</span>
+<div class="code-shell"><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#That is the command to show the ID numbers of the opened processes and will show you 8 numbers - like in the following line</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
@@ -943,7 +922,7 @@ text-overlay=true sync=false
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>gst-launch-1.0<span class="w"> </span>udpsrc<span class="w"> </span><span class="nv">caps</span><span class="o">=</span>“application/x-rtp,<span class="w"> </span><span class="nv">sampling</span><span class="o">=</span>YCbCr-4:2:2,
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gst-launch-1.0<span class="w"> </span>udpsrc<span class="w"> </span><span class="nv">caps</span><span class="o">=</span>“application/x-rtp,<span class="w"> </span><span class="nv">sampling</span><span class="o">=</span>YCbCr-4:2:2,
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>depth=(string)8, width=(string)1920, height=(string )1080” port=“5010” !
