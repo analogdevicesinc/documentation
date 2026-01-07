@@ -680,7 +680,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   `EVAL-CN0503-ARDZ Design & Integration Files <CN0503-DesignSupport.zip>`__
+   :download:`EVAL-CN0503-ARDZ Design & Integration Files <CN0503-DesignSupport.zip>`
 
    - Schematics
    - PCB Layout
@@ -692,7 +692,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   `EVAL-CN0503-ARDZ STL Files <rev_d.zip>`_
+   :download:`EVAL-CN0503-ARDZ STL Files <rev_d.zip>`
 
    - Mounted Base
    - Assembled Cuvette Holder
