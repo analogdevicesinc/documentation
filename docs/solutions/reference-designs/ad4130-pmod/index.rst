@@ -375,7 +375,7 @@ More information and useful links
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 
-.. ADMONITION:: Download
+.. ADMONITION: Download
 
    :download:`EVAL-AD4130-8-PMDZ Design & Integration Files
    <eval-ad4130-8-pmdz-DesignSupport.zip>`
