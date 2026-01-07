@@ -33,6 +33,7 @@ interref_repos = [
     'pyadi-iio',
     'adi-kuiper-gen',
     'scopy',
+    'linux',
     'no-OS',
     'precision-converters-firmware',
 ]
