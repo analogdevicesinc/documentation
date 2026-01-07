@@ -1,25 +1,3 @@
-.. _linux-kernel:
-
-Kernel and devicetrees
-======================
-
-This section provides a concise guide on building the Linux kernel and
-devicetrees for different platforms on different hosts.
-
-Jump to your platform and preferred method:
-
-.. toctree::
-   :maxdepth: 2
-
-   Build Zynq <zynq>
-   Build ZynqMP <zynqmp>
-   Build MicroBlaze <microblaze>
-
-The :git-linux:`/` can also be compiled using Petalinux to be used on Xilinx
-SoC FPGA based platforms.
-
-.. toctree::
-   :titlesonly:
-
-   petalinux
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:cf71f3ee2b5e221bbc60b69f3f084a97cb47f9c8b87d75119897eda672eb622f
+size 522

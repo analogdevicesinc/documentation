@@ -1,36 +1,3 @@
-.. _linux ad9084:
-
-AD9084/AD9088
-=============
-
-.. attention::
-
-   This is a stub page, content will be updated shortly.
-
-Supported Devices
------------------
-
-* :adi:`AD9084`
-* :adi:`AD9088`
-
-Evaluation Boards
------------------
-
-Source Code
------------
-
-Status
-------
-
-Files
------
-
-Description
------------
-
-Devicetree
-----------
-
-Usage
------
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:36de1895b6951d14dd33b10b1b65f00ed04226e7fa0455e563f43e649fdcac7b
+size 379

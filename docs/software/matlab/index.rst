@@ -1,12 +1,3 @@
-MATLAB & Simulink Toolboxes
-===========================
-
-Analog Devices provides a set of tools to model, interface, and target with ADI
-devices within MATLAB and Simulink.
-
-.. toctree::
-   :titlesonly:
-   :glob:
-
-   */index
-   bsp-extend
+version https://git-lfs.github.com/spec/v1
+oid sha256:c29ec859c1889758470b92b807dba9a0dc3bf55c9dbbb4ba89444b71c740deaf
+size 251

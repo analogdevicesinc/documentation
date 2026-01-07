@@ -1,6 +1,3 @@
-Precision ADC Tutorial
-===============================================================================
-
-Future home of this tutorial currently on the ADI wiki:
-
-`Precision ADC Tutorial <https://wiki.analog.com/university/labs/software/precision_adc_toolbox>`__
+version https://git-lfs.github.com/spec/v1
+oid sha256:8b6fdbed6f47ad37b0146fb3f8b40c278091745b8aec1451280e14c372de3ccb
+size 267
