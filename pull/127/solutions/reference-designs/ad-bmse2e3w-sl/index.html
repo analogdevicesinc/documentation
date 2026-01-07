@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="A concise version of this document is available in portable document format. Click on the file below to download:" name="description" />
+
+    <title>AD-BMSE2E3W-SL &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../../_static/app.umd.js?v=62fc6850"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Sample Application" href="sample_application/index.html" />
+    <link rel="prev" title="NINA-W102 Networking Support" href="../ad-apard32690-sl/nina-w102/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD-BMSE2E3W-SL</a><ul>
+<li><a class="reference internal" href="#v-to-96-v-battery-management-system-for-electric-2-and-3-wheelers">72 V to 96 V Battery Management System for Electric 2- and 3-Wheelers</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#applications">Applications</a></li>
+<li><a class="reference internal" href="#system-architecture">System Architecture</a></li>
+<li><a class="reference internal" href="#what-s-inside-the-box">What’s Inside the Box?</a></li>
+<li><a class="reference internal" href="#components-and-connections">Components and Connections</a></li>
+<li><a class="reference internal" href="#system-evaluation">System Evaluation</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#preparing-the-mcu">Preparing the MCU</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+<li><a class="reference internal" href="#design-integration-files">Design &amp; Integration Files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#guides-sample-software">Guides&amp;Sample Software</a></li>
+<li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2-1" id="toctree-collapse-2-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3" id="toctree-collapse-2-3"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../application-software/index.html">Application Software</a></li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3" checked=""/><div class="collapse"><a class="current reference internal" href="#">AD-BMSE2E3W-SL</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-4" id="toctree-collapse-12-4"/><div class="collapse"><a class="reference internal" href="../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-12-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-5" id="toctree-collapse-12-5"/><div class="collapse"><a class="reference internal" href="../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-12-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-6" id="toctree-collapse-12-6"/><div class="collapse"><a class="reference internal" href="../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-12-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-7" id="toctree-collapse-12-7"/><div class="collapse"><a class="reference internal" href="../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-12-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-8" id="toctree-collapse-12-8"/><div class="collapse"><a class="reference internal" href="../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-12-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-9" id="toctree-collapse-12-9"/><div class="collapse"><a class="reference internal" href="../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-12-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-10" id="toctree-collapse-12-10"/><div class="collapse"><a class="reference internal" href="../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-12-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-11" id="toctree-collapse-12-11"/><div class="collapse"><a class="reference internal" href="../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-12-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad4130-pmod/index.html">EVAL-AD4130-8-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-12" id="toctree-collapse-12-12"/><div class="collapse"><a class="reference internal" href="../ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-12-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-12-1" id="toctree-collapse-12-12-1"/><div class="collapse"><a class="reference internal" href="../ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-12-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-13" id="toctree-collapse-12-13"/><div class="collapse"><a class="reference internal" href="../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-12-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14" id="toctree-collapse-12-14"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-12-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14-1" id="toctree-collapse-12-14-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-12-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15" id="toctree-collapse-12-15"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-12-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16" id="toctree-collapse-12-16"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-12-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16-1" id="toctree-collapse-12-16-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-17" id="toctree-collapse-12-17"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">ADRV902X</a><label for="toctree-collapse-12-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-17-1" id="toctree-collapse-12-17-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-12-17-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/versal.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/zynqmp.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18" id="toctree-collapse-12-18"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-12-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19" id="toctree-collapse-12-19"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-12-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-20" id="toctree-collapse-12-20"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-12-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-21" id="toctree-collapse-12-21"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-12-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-22" id="toctree-collapse-12-22"/><div class="collapse"><a class="reference internal" href="../template/index.html">EVALUATION BOARD</a><label for="toctree-collapse-12-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../template/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../template/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-22-1" id="toctree-collapse-12-22-1"/><div class="collapse"><a class="reference internal" href="../template/quickstart/index.html">Quick start guide</a><label for="toctree-collapse-12-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../template/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/quickstart/versal.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/quickstart/zynqmp.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad-bmse2e3w-sl">
+<h1>AD-BMSE2E3W-SL<a class="headerlink" href="#ad-bmse2e3w-sl" title="Link to this heading"></a></h1>
+<section id="v-to-96-v-battery-management-system-for-electric-2-and-3-wheelers">
+<h2>72 V to 96 V Battery Management System for Electric 2- and 3-Wheelers<a class="headerlink" href="#v-to-96-v-battery-management-system-for-electric-2-and-3-wheelers" title="Link to this heading"></a></h2>
+<p>A concise version of this document is available in portable document format.
+Click on the file below to download:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/AD-BMSE2E3W-SL-UG-2245.pdf"><code class="xref download docutils literal notranslate"><span class="pre">AD-BMSE2E3W-SL</span> <span class="pre">QuickStart</span> <span class="pre">Guide</span> <span class="pre">(pdf)</span></code></a></p>
+</div>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<figure class="align-left" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/ad-bmse2e3w-sl_angle.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/ad-bmse2e3w-sl_angle.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD-BMSE2E3W-SL</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-BMSE2E3W-SL" target="_blank">AD-BMSE2E3W-SL</a> is a BMS reference design for light electric vehicles (LEVs). With a voltage range of 72 V to 96 V, this solution is suitable for electric 2-wheeler and 3-wheeler vehicles with high current capacity ranging up to 100 A.</p>
+<p>This single-board system utilizes the best-in-class ADBMS6830 cell monitoring chip that is capable of monitoring up to 2x 16-channel. This board also features battery pack monitoring using the ADBMS2950. The ADBMS6822 dual isoSPI transceiver provides a built-in 2-wire reversible isoSPI connection, which simplifies the communication of BMS parts in a daisy chain configuration before sending the data to SPI lines in the microcontroller.</p>
+<p>The on-board MAX32690 MCU, when loaded with the firmware, can perform BMS measurements such as cell voltage (average and filtered), and pack voltage and pack current measurement. The board also has a charge, pre-charge, and discharge mode that can be controlled by the ADBMS2950 pack monitor chip.</p>
+<p>The AD-BMSE2E3W-SL is designed to perform either in embedded mode or using a GUI, where it calculates the battery’s State of Charge (SoC) and State of Health (SoH) through enhanced coulomb counting technique.</p>
+<section id="features">
+<h4>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h4>
+<ul>
+<li><p>Variable 72 V to 96 V regulated voltage range, suitable for E2W/E3W applications</p></li>
+<li><p>ASIL-D compliant and automotive grade BMS chip</p></li>
+<li><p>Built-in charge/pre-charge, and discharge circuitry</p></li>
+<li><p>1.8 mV total measurement error for cell voltage monitoring</p></li>
+<li><p>High performance cell/pack voltage and current monitoring</p></li>
+<li><p>On-board isoSPI communication</p></li>
+<li><p>Low Power Cell Monitoring (LPCM) capability</p></li>
+<li><p>GPIO Controllable FET Monitoring</p></li>
+<li><p>ADBMS6830 GPIO input ready for NTC sensors</p></li>
+<li><p>Low Power MAX32690 MCU</p></li>
+<li><p>UART and CAN Communication</p></li>
+<li><p>SOC and SOH through Enhanced Coulomb Counting Technique</p></li>
+<li><p>E2W/E3W Basic System Behavior Modes</p></li>
+<li><p>Embedded Application-ready (via CLI)</p></li>
+<li><p>GUI capable of the following measurements and fault detection:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Cell Monitoring Voltage and Current</p></li>
+<li><p>Pack Monitoring Charge Current Monitoring</p></li>
+<li><p>Discharge Current Monitoring</p></li>
+<li><p>Temperature Monitoring</p></li>
+<li><p>Cell OV/UV Detection</p></li>
+<li><p>Cell/GPIO Open-wire Detection</p></li>
+<li><p>Cell Balancing</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="applications">
+<h4>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Electric and hybrid 2-wheeler vehicles</p></li>
+<li><p>Electric and hybrid 3-wheeler vehicles</p></li>
+<li><p>Light electric vehicles</p></li>
+</ul>
+</section>
+<section id="system-architecture">
+<h4>System Architecture<a class="headerlink" href="#system-architecture" title="Link to this heading"></a></h4>
+<figure class="align-default" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/updated_block_diagram_72vto96v.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/updated_block_diagram_72vto96v.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD-BMSE2E3W-SL Simplified Block Diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Specifications</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>SYSTEM</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Parameter</p></td>
+<td><p>Min</p></td>
+<td><p>Typical</p></td>
+<td><p>Max</p></td>
+<td><p>Unit</p></td>
+<td><p>Notes</p></td>
+</tr>
+<tr class="row-odd"><td><p>System Vin+ Supply Voltage from Battery</p></td>
+<td><p>60</p></td>
+<td></td>
+<td><p>100</p></td>
+<td><p>V</p></td>
+<td><p>Input voltage supply from battery</p></td>
+</tr>
+<tr class="row-even"><td><p>Battery Emulator System Output Voltage</p></td>
+<td><p>~66</p></td>
+<td></td>
+<td><p>92</p></td>
+<td><p>V</p></td>
+<td><p>Safe output voltage from Battery Emulator</p></td>
+</tr>
+<tr class="row-odd"><td><p>Current Discharge</p></td>
+<td></td>
+<td><p>50</p></td>
+<td><p>100</p></td>
+<td><p>A</p></td>
+<td><p>Current rating that the BMS can deliver at discharge mode</p></td>
+</tr>
+<tr class="row-even"><td><p>Current Charge</p></td>
+<td><p>0.3</p></td>
+<td><p>50</p></td>
+<td><p>100</p></td>
+<td><p>A</p></td>
+<td><p>Current rating that the BMS can deliver at pre-charge/charge mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pre-Charge Resistor</p></td>
+<td></td>
+<td><p>3×33</p></td>
+<td></td>
+<td><p>Ω</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Charge Voltage Input</p></td>
+<td></td>
+<td></td>
+<td><p>100</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Discharge Voltage Output</p></td>
+<td></td>
+<td><p>65</p></td>
+<td><p>92</p></td>
+<td><p>V</p></td>
+<td><p>Regulated voltage range</p></td>
+</tr>
+<tr class="row-even"><td><p>FET Discharge Rise Time</p></td>
+<td></td>
+<td></td>
+<td><p>42</p></td>
+<td><p>mS</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>FET Driver Discharge Input</p></td>
+<td></td>
+<td></td>
+<td><p>5</p></td>
+<td><p>V</p></td>
+<td><p>Coming from GPIO of ADBMS2950</p></td>
+</tr>
+<tr class="row-even"><td><p>FET Pre-Charge/Charge Rise Time</p></td>
+<td></td>
+<td></td>
+<td><p>88</p></td>
+<td><p>mS</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>FET Driver Pre-Charge/Charge Input</p></td>
+<td></td>
+<td></td>
+<td><p>5</p></td>
+<td><p>V</p></td>
+<td><p>Coming from GPIO of ADBMS2950</p></td>
+</tr>
+<tr class="row-even"><td><p>FET V(gs) range</p></td>
+<td><p>-20</p></td>
+<td></td>
+<td><p>20</p></td>
+<td><p>V</p></td>
+<td><p>Coming from GPIO of ADBMS2950</p></td>
+</tr>
+<tr class="row-odd"><td><p>FET Rds(on) range</p></td>
+<td></td>
+<td></td>
+<td><p>4.8</p></td>
+<td><p>mΩ</p></td>
+<td><p>Coming from GPIO of ADBMS2950</p></td>
+</tr>
+<tr class="row-even"><td><p>ADBMS6830 Cell Monitor</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Total Supply Voltage, V+ to V−</p></td>
+<td><p>-0.3</p></td>
+<td></td>
+<td><p>85</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VREG Supply</p></td>
+<td><p>4.5</p></td>
+<td><p>5</p></td>
+<td><p>5.5</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VREF1, VREF2</p></td>
+<td><p>3</p></td>
+<td></td>
+<td><p>3.3</p></td>
+<td></td>
+<td><p>Supply to internal ADCs</p></td>
+</tr>
+<tr class="row-even"><td><p>VRES/VDD</p></td>
+<td><p>4.5</p></td>
+<td><p>5</p></td>
+<td><p>5.5</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Temp</p></td>
+<td><p>-40</p></td>
+<td></td>
+<td><p>125</p></td>
+<td><p>°C</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CPIN Input Range</p></td>
+<td><p>-2.5</p></td>
+<td></td>
+<td><p>5.5</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Cell Count</p></td>
+<td><p>17</p></td>
+<td></td>
+<td><p>32</p></td>
+<td></td>
+<td><p>Min of 17 cells for the system to initiate daisy chain</p></td>
+</tr>
+<tr class="row-even"><td><p>Drive</p></td>
+<td><p>-0.3</p></td>
+<td></td>
+<td><p>7</p></td>
+<td><p>V</p></td>
+<td><p>Drive voltage range with respect to each cell monitoring V-</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADBMS2950 Pack Monitor</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Main Supply Voltage In</p></td>
+<td><p>14</p></td>
+<td></td>
+<td></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VREG Pack Monitor</p></td>
+<td><p>4.5</p></td>
+<td><p>5</p></td>
+<td><p>5.5</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Current Input S1A, I1A, I1B</p></td>
+<td><p>-4</p></td>
+<td></td>
+<td><p>4</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Current Input S1A, I1A, I1B</p></td>
+<td><p>-4</p></td>
+<td></td>
+<td><p>4</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Current Input S2A, I2A, I2B</p></td>
+<td><p>-4</p></td>
+<td></td>
+<td><p>4</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Current Input I3A, I3B</p></td>
+<td><p>-4</p></td>
+<td></td>
+<td><p>4</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MAX32690 Microcontroller</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MCU Supply Voltage from BMS</p></td>
+<td><p>3.3</p></td>
+<td></td>
+<td><p>5.5</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MCU IO Supply for 1.8 V</p></td>
+<td><p>1.6</p></td>
+<td></td>
+<td><p>3</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MCU VDD Supply</p></td>
+<td><p>3.3</p></td>
+<td></td>
+<td><p>5.5</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>MCU Supply at 1.2 V</p></td>
+<td><p>1.1</p></td>
+<td></td>
+<td><p>1.35</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MCU Supply at 1.0 V</p></td>
+<td><p>0.9</p></td>
+<td></td>
+<td><p>1.2</p></td>
+<td><p>V</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="what-s-inside-the-box">
+<h4>What’s Inside the Box?<a class="headerlink" href="#what-s-inside-the-box" title="Link to this heading"></a></h4>
+<p>Upon purchase of the AD-BMSE2E3W-SL kit, the package comes with the following boards and accessories:</p>
+<figure class="align-default" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/ad-bmse2e3w-sl_package_contents.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/ad-bmse2e3w-sl_package_contents.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD-BMSE2E3W-SL Kit Contents</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="components-and-connections">
+<h4>Components and Connections<a class="headerlink" href="#components-and-connections" title="Link to this heading"></a></h4>
+<figure class="align-default" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/revised_ad-bmse2e3w-sl_board_with_pin_labels.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/revised_ad-bmse2e3w-sl_board_with_pin_labels.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Hardware Components and Connections</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id6">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Hardware Part Functions</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 5.0%" />
+<col style="width: 25.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>No.</p></th>
+<th class="head"><p>Part</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Battery Cell Connector</p></td>
+<td><p>Connector going to battery cells</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>ADBMS6830 (U1)</p></td>
+<td><p>BMS 1 Cell Monitoring Chip with LPCM capability</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>ADBMS6830 (U3)</p></td>
+<td><p>BMS 2 Cell Monitoring Chip with LPCM capability</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>NTC Provision (U1)</p></td>
+<td><p>Connector for Negative Temperature Coefficient (NTC) Thermistor in ADBMS6830 (U1)</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>NTC Provision (U3)</p></td>
+<td><p>Connector for Negative Temperature Coefficient (NTC) Thermistor in ADBMS6830 (U3)</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>ADBMS2950 (U5)</p></td>
+<td><p>Voltage Pack and Current Pack Monitor Chip</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>ADBMS6822 (U10)</p></td>
+<td><p>Dual isoSPI chip</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>VBAT+ Connector</p></td>
+<td><p>Positive Terminal Connector for total voltage capacity of the battery pack</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>Rsense Pack Monitor</p></td>
+<td><p>Resistor Sensing for detecting and monitoring total current in the pack</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>72V to 96V LINK+_OUT Load Connector</p></td>
+<td><p>Connector going to the load side of the system</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>72V to 96V LINK+_IN Charger Connector</p></td>
+<td><p>Connector going to the charging side of the system</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>CAN Connector</p></td>
+<td><p>Three terminal connector provision for CAN_H, CAN_L, and GND communication</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>Micro USB Supply Provision</p></td>
+<td><p>5V DC USB supply provision</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>UART/SWDIO Connector</p></td>
+<td><p>Connector for UART/SWDIO communication. Can be used to download program and debugging</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>MAX32690 MCU Chip</p></td>
+<td><p>Low power/high power MCU chip used as controller for the system</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="system-evaluation">
+<h4>System Evaluation<a class="headerlink" href="#system-evaluation" title="Link to this heading"></a></h4>
+<p>Follow the setup shown in the diagram below to get the board up and running. Ensure that the hardware parts and equipment are complete based on list of Equipment Needed. The banana plug cables used in this setup only have a maximum rating of 10A. Cables suitable for higher current rating must be used if the intended application operates at range higher than 10A. Note that the AD-BMSE2E3W-SL board can only accommodate up to 100A.</p>
+<figure class="align-default" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/system_evaluation_set-up.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/system_evaluation_set-up.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Evaluation Setup</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="equipment-needed">
+<h5>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p>1x AD-BMSE2E3W-SL Board</p></li>
+<li><p>2x DC2472A Battery Cell Emulator Boards</p></li>
+<li><p>1x MAX32625PICO Programming Adapter with 10-pin SWD cable (loaded with firmware image)</p></li>
+<li><p>2x Cell Connector Block (18-cell connector)</p></li>
+<li><p>2x USB Type A to Micro-B cable</p></li>
+<li><p>2x Stackable Banana Plug to Alligator Clip Cable (BU-P1166-12-2, Red)</p></li>
+<li><p>1x Stackable Banana Plug to Alligator Clip Cable (BU-P1166-12-0, Black)</p></li>
+<li><p>7x Top Mount Heatsink (to be installed for high current applications)</p></li>
+<li><p>1x Laptop or PC running Windows 10</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This reference design has not undergone compliant testing for EMI/ EMC standards for automotive. It is up for the user to do its qualification as the requirements vary depending on its end application or use cases.</p>
+</div>
+<div><div class="esd-warning docutils container">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For high current applications requiring greater than 50 A, it is advisable to install a heat sink to protect the pre-charge, charge, and discharge MOSFETs from overheating.</p>
+<ul class="simple">
+<li><p>The AD-BMSE2E3W-SL Kit has 7 available HEATSINK PIN-FIN W/TAPE (375424B00034G) easy-to-install, adhesive type, aluminum top mount heat sink than can be installed directly on top of the board.</p></li>
+<li><p>Peel off the protective film from the bottom of each heat sink and firmly press each one on top of the following FETs:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Attach the 5 heat sinks on the top layer of the board (Q4, Q5, Q6, Q7, and Q9),</p></li>
+<li><p>the remaining 2 heat sinks on the bottom layer of the board (Q3 and Q8).</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="preparing-the-mcu">
+<h4>Preparing the MCU<a class="headerlink" href="#preparing-the-mcu" title="Link to this heading"></a></h4>
+<p>By default (upon purchase), the AD+BMSE2E3W+SL board comes with a MAX32625PICO programmer adapter that is loaded with firmware image.</p>
+<p>Otherwise, if you are using a new MAX32625PICO programmer (that is not part of the original kit), make sure to flash it first with the correct firmware image before connecting it to the AD-BMSE2E3W-SL board. If you do not know how to load the image, follow the instructions below:</p>
+<ol class="arabic simple">
+<li><p>Download the firmware image:
+<a class="icon git reference external" href="https://analogdevicesinc.github.io/DownGit/#/home?url=https://github.com/analogdevicesinc/max32625pico-firmware-images/tree/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin" target="_blank">MAX32625PICO Firmware Image for MAX32690</a></p></li>
+<li><p>Do not connect the MAX32625PICO to the AD-BMSE2E3W-SL Board yet.</p></li>
+<li><p>Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.</p></li>
+<li><p>Press the button on the MAX32625PICO. (Do not release the button until the MAINTENANCE drive is mounted)</p></li>
+<li><p>Release the button once the MAINTENANCE drive is mounted.</p></li>
+<li><p>Drag and drop (to the MAINTENANCE drive) the firmware image.</p></li>
+<li><p>After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the AD-BMSE2E3W-SL Board.</p></li>
+</ol>
+</section>
+<section id="hardware-setup">
+<h4>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h4>
+<p>The board utilizes the DC2472A battery emulator as input for cell voltage measurement. The DC2472A allows a cell voltage of 1.4 V (min) to 4.2 V (max). Follow below steps to set up the board for cell measurement:</p>
+<ol class="arabic">
+<li><p>Screw the two cell connector blocks to the two DC2472A battery emulators. Note that the first two terminals and the last terminal of each DC2472A cell connector must be left hanging (refer to below figure). Make sure to also set the last two terminals’ input to low voltage or equivalent range of roughly 1.4V per cell.</p>
+<figure class="align-default" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/battery_emulator_pins.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/battery_emulator_pins.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">DC2472A Battery Emulator Pins</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the DC2472A battery emulators to the ADBMSE2E3W-SL board through the cell connector blocks. Then, connect a micro-USB Type B cable to each DC2472A battery emulator and power the boards by connecting the other end of the cables to the Host PC.</p>
+<figure class="align-default" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/usb_emulator.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/usb_emulator.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Connecting the DC2472A Battery Emulator</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Set the DC2472A battery emulators to the lowest voltage by fully turning the Cell Voltage Adjustment Potentiometer counterclockwise.</p></li>
+<li><p>Attach the MAX32625PICO programmer to the AD-BMSE2E3W-SL board using the 10-pin ribbon SWD cable. Power the MAX32625PICO using a micro-USB to USB cable connected to the Host PC.</p>
+<figure class="align-default" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/max32625_power_usb_pc.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/max32625_power_usb_pc.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Connecting the MAX32625PICO Programmer</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the alligator clip cable (red) to the VBATTP Pin or the 3rd of Pin 17 header of the DC2472A battery emulator. Then, insert the other end of the cable (banana jack plug) to TP16 (VBAT+ terminal) of the AD-BMSE2E3W-SL board.</p>
+<figure class="align-default" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/connector_supply_vbattp.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/connector_supply_vbattp.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">DC2472A’s VBATT+ Supply Connector to AD-BMSE2E3W-SL’s VBAT+ Terminal</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the alligator clip cable (black) to the GND (VBAT-) supply of the DC2472A battery emulator. Then, connect the other end of the cable to the Rsense (top side) of the AD-BMSE2E3W-SL.</p>
+<figure class="align-default" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/gnd_vbat-_to_gnd_sense.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/gnd_vbat-_to_gnd_sense.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">DC2472A’s VBAT- Supply Connector to AD-BMSE2E3W-SL’s Rsense</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Set the DC2472A battery emulators to HIGH voltage or equivalent to 4.1 V per cell by turning the Cell Voltage Adjustment Potentiometer clockwise.</p></li>
+<li><p>Check the supply for the following test points as described in the diagram and table below. Make sure that the voltage levels are within the specified range.</p>
+<figure class="align-default" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/quick_test_points.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/download-fixes/docs/solutions/reference-designs/ad-bmse2e3w-sl/quick_test_points.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">AD-BMSE2E3W-SL Test Points</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id14">
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Hardware Supply Quick Test Point</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>TP Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Voltage Range</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TP2</p></td>
+<td><p>U1 ADBMS6830 BMS1_VREG</p></td>
+<td><p>U1 Input Voltage BMS1_VREG for ADBMS6830</p></td>
+<td><p>Low voltage: 15 V to 20 V</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td><p>High voltage: (50 V to 58 V)</p></td>
+</tr>
+<tr class="row-even"><td><p>TP4</p></td>
+<td><p>U3 ADBMS6830 BMS2_VREG</p></td>
+<td><p>U3 Input Voltage BMS2_VREG input for ADBMS6830</p></td>
+<td><p>0 V to 5 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>TP7</p></td>
+<td><p>U6 LTC3639 Output</p></td>
+<td><p>U6 LTC3639 Regulator Voltage Output</p></td>
+<td><p>4.5 V to 5.5 V</p></td>
+</tr>
+<tr class="row-even"><td><p>TP8</p></td>
+<td><p>U9 LT8303 Output</p></td>
+<td><p>U9 LT8303 Switch Down Regulator Output</p></td>
+<td><p>3.2 V to 3.5 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>R346</p></td>
+<td><p>U15 MAX25301A Output</p></td>
+<td><p>U15 MAX25301A Output 3.3 V going to MCU</p></td>
+<td><p>3.2 V to 3.5V</p></td>
+</tr>
+<tr class="row-even"><td><p>(Left Pin)</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TP16</p></td>
+<td><p>VBAT+</p></td>
+<td><p>Total Voltage Supply from battery</p></td>
+<td><p>72 V to 92 V (regulated)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p>Once all steps are completed, you are now ready to use this reference design and run the accompanying software found in the link below:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The AD-BMSE2E3W-SL comes complete with firmware examples and easy-to-use application GUI. Access the software resources and see the setup procedure in the AD-BMSE2E3W-SL Software User Guide.</p>
+</div>
+</li>
+</ol>
+</section>
+<section id="resources">
+<h4>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADBMS6830" target="_blank">ADBMS6830</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADBMS2950" target="_blank">ADBMS2950</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADBMS6822" target="_blank">ADBMS6822</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/MAX32690" target="_blank">MAX32690</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LLT8303" target="_blank">LLT8303</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADUM225N" target="_blank">ADUM225N</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LTC7001" target="_blank">LTC7001</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LTC3639" target="_blank">LTC3639</a></p></li>
+</ul>
+</section>
+<section id="design-integration-files">
+<h4>Design &amp; Integration Files<a class="headerlink" href="#design-integration-files" title="Link to this heading"></a></h4>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="reference external" href="ad-bmse2e3w-sl-designsupport.zip">AD-BMSE2E3W-SL Design Support Package</a></p>
+<ul class="simple">
+<li><p>Schematic</p></li>
+<li><p>PCB Layout</p></li>
+<li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="guides-sample-software">
+<h3>Guides&amp;Sample Software<a class="headerlink" href="#guides-sample-software" title="Link to this heading"></a></h3>
+<p>A software user-guide and sample application for <a class="icon adi reference external" href="https://www.analog.com/AD-BMSE2E3W-SL" target="_blank">AD-BMSE2E3W-SL</a> are available:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_guide/index.html">Software User Guide</a></li>
+</ul>
+</div>
+</section>
+<section id="help-and-support">
+<h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
+<p>For questions and more information, please visit the <a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone Support Community</a>.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../ad-apard32690-sl/nina-w102/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">NINA-W102 Networking Support</a>
+    <a href="sample_application/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Sample Application</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
