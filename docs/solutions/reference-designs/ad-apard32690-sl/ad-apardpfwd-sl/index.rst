@@ -289,7 +289,7 @@ and ping the :adi:`AD-APARD32690-SL <AD-APARD32690-SL>`:
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 
-.. admonition:: Download
+.. admonition: Download
 
   :download:`AD-APARDPFWD-SL Design & Integration
   Files<AD-APARDPFWD-SL-DesignSupport.zip>`
