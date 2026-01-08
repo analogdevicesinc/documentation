@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This workshop goes through the whole stack for the integration of a precision converter using an FPGA." name="description" />
+
+    <title>A Precision Converter FPGA Integration Journey &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Software Defined Instrumentation" href="../workshops_software_defined_instrumentation/index.html" />
+    <link rel="prev" title="What software do I need for my SDR?" href="../workshop_what_sw_for_sdr/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">A Precision Converter FPGA Integration Journey</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#spi-engine-architecture">SPI Engine Architecture</a></li>
+<li><a class="reference internal" href="#use-case">Use Case</a></li>
+<li><a class="reference internal" href="#build-system">Build System</a></li>
+<li><a class="reference internal" href="#evaluate-system">Evaluate System</a></li>
+<li><a class="reference internal" href="#conclusions">Conclusions</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2-1" id="toctree-collapse-2-2-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3" id="toctree-collapse-2-3"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../solutions/application-software/index.html">Application Software</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-4" id="toctree-collapse-12-4"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-12-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-5" id="toctree-collapse-12-5"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-12-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-6" id="toctree-collapse-12-6"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-12-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-7" id="toctree-collapse-12-7"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-12-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-8" id="toctree-collapse-12-8"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-12-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-9" id="toctree-collapse-12-9"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-12-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-10" id="toctree-collapse-12-10"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-12-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-11" id="toctree-collapse-12-11"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-12-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-12" id="toctree-collapse-12-12"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-12-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-13" id="toctree-collapse-12-13"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-12-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad4130-pmod/index.html">EVAL-AD4130-8-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14" id="toctree-collapse-12-14"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-12-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14-1" id="toctree-collapse-12-14-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15" id="toctree-collapse-12-15"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-12-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16" id="toctree-collapse-12-16"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-12-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16-1" id="toctree-collapse-12-16-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-12-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-17" id="toctree-collapse-12-17"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-12-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18" id="toctree-collapse-12-18"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-12-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18-1" id="toctree-collapse-12-18-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19" id="toctree-collapse-12-19"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/index.html">ADRV902X</a><label for="toctree-collapse-12-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19-1" id="toctree-collapse-12-19-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-12-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/versal.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/zynqmp.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-20" id="toctree-collapse-12-20"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-12-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-21" id="toctree-collapse-12-21"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-12-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-22" id="toctree-collapse-12-22"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-12-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-23" id="toctree-collapse-12-23"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-12-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-24" id="toctree-collapse-12-24"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/template/index.html">EVALUATION BOARD</a><label for="toctree-collapse-12-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/template/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/template/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-24-1" id="toctree-collapse-12-24-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/template/quickstart/index.html">Quick start guide</a><label for="toctree-collapse-12-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/template/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/template/quickstart/versal.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/template/quickstart/zynqmp.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../university/index.html">Engineering University Program</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Learning! Tutorials, Workshops, Etc</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="a-precision-converter-fpga-integration-journey">
+<h1>A Precision Converter FPGA Integration Journey<a class="headerlink" href="#a-precision-converter-fpga-integration-journey" title="Link to this heading"></a></h1>
+<p>This workshop goes through the whole stack for the integration of a precision
+converter using an FPGA.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p><strong>Customer Journey</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_customer_journey_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_customer_journey_1.png" />
+</figure>
+<p>Tools / Platforms are a customer choice, ADI ports to “current” development
+environment/kit.</p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_customer_journey_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_customer_journey_2.png" />
+</figure>
+<p>Maintenance is an ADI burden. Customer don’t start their designs at the same
+time, and want to use the latest and greatest.</p>
+<p><strong>COS Reference Design “Donut Hole” Strategy</strong></p>
+<p><em>Surround others processor, FPGA, micro ADI components</em>
+<em>Reference design creates stickiness</em>
+<em>Customer experiences low friction</em>
+<em>Leverage ecosystems</em>
+<em>Develop/participate in viable communities / ecosystems:</em></p>
+<ul class="simple">
+<li><p>Linux kernel (1.3 Billion users)</p></li>
+<li><p>GitHub (40 Million users)</p></li>
+<li><p>Python (100 Million users)</p></li>
+<li><p>MATLAB (1 Million users)</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_donut.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_donut.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_donut.png" width="500" />
+</a>
+</figure>
+<p><strong>COS Full Stack High Level Overview</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_full_stack_overview.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_full_stack_overview.png" />
+</figure>
+<p><strong>COS Full Stack HDL Designs</strong></p>
+<p><em>Common HDL across all IIO reference designs</em></p>
+<p><em>Full stack reference Designs include JESD204 physical layers (XCVR), link layers, and transport layers.</em></p>
+<ul class="simple">
+<li><p>Termination to DMA via an AXI-STREAM or FIFO interface</p></li>
+<li><p>Runs across different Intel and Xilinx carriers</p></li>
+</ul>
+<p><em>Are designed to be disconnected to “insert custom signal processing”</em></p>
+<ul class="simple">
+<li><p>Your modem, your signals intelligence, etc.</p></li>
+</ul>
+<p><em>Example designs show how to use MUX in different places in design, to stream debug data (I/Q samples, or payload (data buffers)) as IIO streams.</em></p>
+<p><em>Works with industry standard debug tools:</em></p>
+<ul class="simple">
+<li><p>Xilinx Integrated Logic Analyzer</p></li>
+<li><p>Intel Signal Tap</p></li>
+<li><p>MathWorks HDL Verifier (in SoC Blockset)</p></li>
+</ul>
+<figure class="align-center">
+<img alt="../../_images/ad9081_204b_M4L8.svg" src="../../_images/ad9081_204b_M4L8.svg" />
+</figure>
+<p><strong>COS Typical Prototyping System</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_typical_system.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_typical_system.png" />
+</figure>
+<p><strong>COS IP Library</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_ip_library.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_ip_library.png" />
+</figure>
+<p><strong>COS Frameworks - JESD204 Interface Framework</strong></p>
+<p><em>JESD204 Layers:</em></p>
+<ul class="simple">
+<li><p>Physical – FPGA specific (GTXE2, GTHE3, GTHE4, GTY4, GTY5, Arria 10, Stratix 10)</p></li>
+<li><p>Data Link – GPL 2 and commercial license</p></li>
+<li><p>Transport – ADC/DAC/Transceiver specific</p></li>
+</ul>
+<p><em>The Framework includes:</em></p>
+<ul class="simple">
+<li><p>Evaluation boards</p></li>
+<li><p>HDL</p></li>
+<li><p>Software</p></li>
+</ul>
+<figure class="align-center">
+<img alt="../../_images/jesd204_chain.svg" src="../../_images/jesd204_chain.svg" />
+</figure>
+<p><strong>COS Frameworks - SPI Engine Framework</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>COS HDL projects</p></th>
+<th class="head"><p>%</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>JESD PROJECTS</p></td>
+<td><p>34%</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI ENGINE PROJECTS</p></td>
+<td><p>21%</p></td>
+</tr>
+<tr class="row-even"><td><p>CUSTOM INTERFACE PROJECTS</p></td>
+<td><p>45%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>SPI Engine supports 21.5% of the HLD projects.</p>
+<figure class="align-center">
+<img alt="../../_images/intro_spie.svg" src="../../_images/intro_spie.svg" />
+</figure>
+</section>
+<section id="spi-engine-architecture">
+<h2>SPI Engine Architecture<a class="headerlink" href="#spi-engine-architecture" title="Link to this heading"></a></h2>
+<p><strong>Serial Peripheral Interface</strong></p>
+<p>A full-duplex serial communication bus design by Motorola in mid 1980s, used
+in short distance chip to chip communication, primarily in embedded systems.
+It becomes a ‘de facto’ standard, with small variations depending on the use
+case and application.</p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spi_master_slave.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spi_master_slave.png" />
+</figure>
+<p>SCLK – Serial Clock from master
+MOSI – Master Output Slave Input
+MISO – Master Input Slave Output
+CSN  – Chip Select N (active low)</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>SPI MODE</p></th>
+<th class="head"><p>CPOL</p></th>
+<th class="head"><p>CPHA</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spi_modes_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spi_modes_2.png" />
+</figure>
+<p><strong>Why the MCU SPI controller isn’t enough?</strong></p>
+<p><em>Physical layer challenges:</em></p>
+<ul class="simple">
+<li><p>Almost every ADI chip has a 3-wire SPI (but this is not a big issue)</p></li>
+<li><p>CS can have other functionalities too (e.g., conversion start)</p></li>
+<li><p>Other status or control lines can co-exist (BUSY/CNV)</p></li>
+<li><p>Multiple MOSI line can co-exist</p></li>
+<li><p>SCLK frequency limited to ~50MHz (higher frequency support is rear)</p></li>
+<li><p>Fixed timing relationship of the interface lines</p></li>
+<li><p>No possibility to synchronize the interface with other signals</p></li>
+<li><p>Limited number of MISO lines</p></li>
+<li><p>No DDR support</p></li>
+</ul>
+<p><em>All the SPI controllers are fully software driven:</em></p>
+<ul class="simple">
+<li><p>Can not support low latency transfers</p></li>
+<li><p>Can not support high throughput periodic transfers (capture or send a stream of data)</p></li>
+<li><p>Non-deterministic (e.g., time between spi_read function call and the actual SPI transfer is undefined)</p></li>
+</ul>
+<p><strong>SPI transfers timing diagram – AD4020</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spi_transfer_diagram_ad4020.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spi_transfer_diagram_ad4020.png" />
+</figure>
+<p><strong>SPI transfers timing diagram – AD4630</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spi_transfer_diagram_ad4630.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spi_transfer_diagram_ad4630.png" />
+</figure>
+<p><strong>SPI Engine Framework – What it is?</strong></p>
+<p>SPI Engine is a highly flexible and powerful SPI controller open-source
+framework. It consists out of multiple submodules which communicate over
+well-defined interfaces. This allows a high degree of flexibility and
+re-usability while at the same time staying highly customizable and easily
+extensible.</p>
+<p><em>Some of the SPI Engine Framework features are:</em></p>
+<ul class="simple">
+<li><p>HDL IP supporting the two major FPGA vendors (AMD Xilinx and Intel)</p></li>
+<li><p>Software API integrated into the Linux kernel’s SPI framework</p></li>
+<li><p>Bare-metal software API</p></li>
+<li><p>Examples with various devices (device drivers that leverage the framework)</p></li>
+</ul>
+<p><strong>SPI Engine Framework – HDL Architecture</strong></p>
+<figure class="align-center">
+<img alt="../../_images/spie_framework.svg" src="../../_images/spie_framework.svg" />
+</figure>
+<p><em>Command Stream Generator (CSG)</em></p>
+<ul class="simple">
+<li><p>Software driven (controlled through a register map)</p></li>
+<li><p>Hardware driven (MISO or MOSI data offload)</p></li>
+<li><p>Generate a predefined command sequence periodically or synchronously</p></li>
+</ul>
+<p><em>Command Stream Executor (CSE)</em></p>
+<ul class="simple">
+<li><p>Parse an incoming command stream and drive the physical pins on the interface</p></li>
+<li><p>Can be a standard parser or a custom parser (e.g. custom SDI latching)</p></li>
+</ul>
+<p><em>Command Stream Interconnect (CSI)</em></p>
+<ul class="simple">
+<li><p>Arbitrates multiple streams from multiple CSGs to a single CSE</p></li>
+</ul>
+<p><strong>SPI Engine Framework – AXI SPI Engine IP</strong></p>
+<ul class="simple">
+<li><p>Memory mapped access to command stream interface</p></li>
+<li><p>Fully software controlled CSG</p></li>
+<li><p>Memory mapped access to offload control interface</p></li>
+<li><p>Allow dynamic reconfiguration of offload block</p></li>
+<li><p>SPI clock and AXI clock can be asynchronous</p></li>
+</ul>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spie_axi_spi_engine_ip.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spie_axi_spi_engine_ip.png" />
+</figure>
+<p><strong>SPI Engine Framework – Data Offload IP</strong></p>
+<ul class="simple">
+<li><p>Internal RAM/ROM for CMD and SDO stream</p></li>
+<li><p>A trigger launches a command stream</p></li>
+<li><p>Received data is sent to an AXI4-streaming interface</p></li>
+<li><p>It can be connected directly to a DMA</p></li>
+</ul>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spie_offload_ip.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spie_offload_ip.png" />
+</figure>
+<p><strong>SPI Engine Framework – Interconnect IP</strong></p>
+<ul class="simple">
+<li><p>Arbitrates multiple command streams into a single CSE</p></li>
+<li><p>Arbitration is done at an SPI transaction level (a SYNC instruction must be
+used for end of transaction)</p></li>
+<li><p>Lower slave port always take precedence</p></li>
+</ul>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spie_interconnect_ip.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spie_interconnect_ip.png" />
+</figure>
+<p><strong>SPI Engine Framework – Execution IP</strong></p>
+<ul class="simple">
+<li><p>Accepts commands on the control interface</p></li>
+<li><p>Generates low-level SPI signals on the SPI interface</p></li>
+<li><p>Active signal indicates if the block is busy processing commands</p></li>
+</ul>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spie_execution_ip.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/spie_execution_ip.png" />
+</figure>
+<p><strong>SPI Engine Framework – Command Stream Interfaces</strong></p>
+<p><em>4 AXI-Stream interfaces</em></p>
+<ul class="simple">
+<li><p>CMD: Instructions</p></li>
+<li><p>SDO: SPI write data (MOSI)</p></li>
+<li><p>SDI: SPI read data (MISO)</p></li>
+<li><p>SYNC: Synchronization events</p></li>
+</ul>
+<p><em>Each streams follows standard AXI-Stream handshaking</em></p>
+<ul class="simple">
+<li><p>Only the main AXI-stream signals are used (ready, valid, data)</p></li>
+</ul>
+<p><strong>SPI Engine Framework – Software support</strong></p>
+<ul class="simple">
+<li><p>Introduces the concept of SPI offload</p></li>
+<li><p>Moves certain operations typically performed by the application processor to the SPI controller</p></li>
+<li><p>Interrupt offload capability</p></li>
+<li><p>Data offload capability</p></li>
+<li><p>SPI-Engine is one implementation of SPI offload</p></li>
+<li><p>ADI converter drivers can be used with any offload capable SPI controller</p></li>
+</ul>
+<p><strong>Build prerequisites – HDL repository</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_hdl.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_hdl.png" />
+</figure>
+<p><strong>Build prerequisites – Linux repository</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_linux.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_linux.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_clone.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_clone.png" />
+</figure>
+</section>
+<section id="use-case">
+<h2>Use Case<a class="headerlink" href="#use-case" title="Link to this heading"></a></h2>
+<p><strong>What is the use case?</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_examples.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_examples.png" />
+</figure>
+<p><em>Requirements:</em></p>
+<ul class="simple">
+<li><p>Highest sampling rate possible with low jitter in sample acquisition</p></li>
+<li><p>Maximum SNR</p></li>
+<li><p>Minimum THD</p></li>
+<li><p>Minimize processor usage for data acquisition and processing</p></li>
+</ul>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_typical_app.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_typical_app.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_snr.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_snr.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_jitter.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_jitter.png" />
+</figure>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Test conditions</p></th>
+<th class="head"><p>Regular SPI controller</p></th>
+<th class="head"><p>SPI Engine controller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Resolution[bits]</p></td>
+<td><p>16</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sampling rate[KSPS]</p></td>
+<td><p>15</p></td>
+<td><p>15 and 1330</p></td>
+</tr>
+<tr class="row-even"><td><p>Input signal frequency[kHz]</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Input signal amplitude[dBFS]</p></td>
+<td><p>-0.5</p></td>
+<td><p>-0.5</p></td>
+</tr>
+<tr class="row-even"><td><p>Supply voltage [V]</p></td>
+<td><p>-2.5 and 5</p></td>
+<td><p>-2.5 and 5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Features of the AD7984 converter</strong></p>
+<ul class="simple">
+<li><p>High performance</p></li>
+<li><p>Throughput: 1.33 MSPS</p></li>
+<li><p>True differential analog input range: ±VREF</p></li>
+<li><p>0 V to VREF with VREF between 2.9 V to 5 V</p></li>
+<li><p>Zero latency architecture</p></li>
+<li><p>18-bit resolution with no missing codes</p></li>
+<li><p>Dynamic range: 99.7 dB, VREF = 5 V</p></li>
+<li><p>SNR: 98.5 dB at fIN = 1 kHz, VREF = 5 V</p></li>
+<li><p>THD: −110.5 dB at fIN = 1 kHz, VREF = 5 V</p></li>
+<li><p>SINAD: 97.5 dB at fIN = 1 kHz, VREF = 5 V</p></li>
+</ul>
+<p><strong>AD7984 SPI transfer Timing Diagram</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_ad7984_transfer_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_ad7984_transfer_diagram.png" />
+</figure>
+<p><strong>Timing parameters needed to configure the framework</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Device</p></th>
+<th class="head"><p>Resolution
+[bits]</p></th>
+<th class="head"><p>Sample rate
+[KSPS]</p></th>
+<th class="head"><p>T_SPI_SCLK min
+[ns]</p></th>
+<th class="head"><p>T_CONV max
+[ns]</p></th>
+<th class="head"><p>T_CYC min
+[ns]</p></th>
+<th class="head"><p>T_ACQ min
+[ns]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AD7942</p></td>
+<td><p>14</p></td>
+<td><p>250</p></td>
+<td><p>18</p></td>
+<td><p>2200</p></td>
+<td><p>4000</p></td>
+<td><p>1800</p></td>
+</tr>
+<tr class="row-odd"><td><p>AD7946</p></td>
+<td><p>14</p></td>
+<td><p>500</p></td>
+<td><p>15</p></td>
+<td><p>1600</p></td>
+<td><p>2000</p></td>
+<td><p>400</p></td>
+</tr>
+<tr class="row-even"><td><p>AD7988-1</p></td>
+<td><p>16</p></td>
+<td><p>100</p></td>
+<td><p>12</p></td>
+<td><p>9500</p></td>
+<td><p>1000</p></td>
+<td><p>500</p></td>
+</tr>
+<tr class="row-odd"><td><p>AD7685</p></td>
+<td><p>16</p></td>
+<td><p>250</p></td>
+<td><p>15</p></td>
+<td><p>2200</p></td>
+<td><p>4000</p></td>
+<td><p>1800</p></td>
+</tr>
+<tr class="row-even"><td><p>AD7687</p></td>
+<td><p>16</p></td>
+<td><p>250</p></td>
+<td><p>10</p></td>
+<td><p>2200</p></td>
+<td><p>4000</p></td>
+<td><p>1800</p></td>
+</tr>
+<tr class="row-odd"><td><p>AD7691</p></td>
+<td><p>16</p></td>
+<td><p>250</p></td>
+<td><p>15</p></td>
+<td><p>2200</p></td>
+<td><p>4000</p></td>
+<td><p>1800</p></td>
+</tr>
+<tr class="row-even"><td><p>AD7686</p></td>
+<td><p>16</p></td>
+<td><p>500</p></td>
+<td><p>15</p></td>
+<td><p>1600</p></td>
+<td><p>2000</p></td>
+<td><p>400</p></td>
+</tr>
+<tr class="row-odd"><td><p>AD7693</p></td>
+<td><p>16</p></td>
+<td><p>500</p></td>
+<td><p>15</p></td>
+<td><p>1600</p></td>
+<td><p>2000</p></td>
+<td><p>400</p></td>
+</tr>
+<tr class="row-even"><td><p>AD7988-5(B)</p></td>
+<td><p>16</p></td>
+<td><p>500</p></td>
+<td><p>12</p></td>
+<td><p>1600</p></td>
+<td><p>2000</p></td>
+<td><p>400</p></td>
+</tr>
+<tr class="row-odd"><td><p>AD7988-5(C)</p></td>
+<td><p>16</p></td>
+<td><p>500</p></td>
+<td><p>12</p></td>
+<td><p>1200</p></td>
+<td><p>2000</p></td>
+<td><p>800</p></td>
+</tr>
+<tr class="row-even"><td><p>AD7980</p></td>
+<td><p>16</p></td>
+<td><p>1000</p></td>
+<td><p>10</p></td>
+<td><p>710</p></td>
+<td><p>1000</p></td>
+<td><p>290</p></td>
+</tr>
+<tr class="row-odd"><td><p>AD7983</p></td>
+<td><p>16</p></td>
+<td><p>1333</p></td>
+<td><p>12</p></td>
+<td><p>500</p></td>
+<td><p>750</p></td>
+<td><p>250</p></td>
+</tr>
+<tr class="row-even"><td><p>AD7982</p></td>
+<td><p>18</p></td>
+<td><p>1000</p></td>
+<td><p>12</p></td>
+<td><p>710</p></td>
+<td><p>1000</p></td>
+<td><p>290</p></td>
+</tr>
+<tr class="row-odd"><td><p>AD7982</p></td>
+<td><p>18</p></td>
+<td><p>1000</p></td>
+<td><p>12</p></td>
+<td><p>710</p></td>
+<td><p>1000</p></td>
+<td><p>290</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>AD7984</strong></p></td>
+<td><p><strong>18</strong></p></td>
+<td><p><strong>1333</strong></p></td>
+<td><p><strong>12</strong></p></td>
+<td><p><strong>500</strong></p></td>
+<td><p><strong>750</strong></p></td>
+<td><p><strong>250</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>HDL design block diagram</strong></p>
+<figure class="align-center">
+<img alt="../../_images/use_case_hdl_bd.svg" src="../../_images/use_case_hdl_bd.svg" />
+</figure>
+<p><strong>HDL Framework instantiation</strong></p>
+<ul class="simple">
+<li><p>TCL Function header:</p></li>
+</ul>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">proc</span><span class="w"> </span>spi_engine_create<span class="w"> </span><span class="k">{{</span><span class="nv">name</span><span class="w"> </span><span class="s2">&quot;spi_engine&quot;</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">data_width</span><span class="w"> </span><span class="mi">32</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">async_spi_clk</span><span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">num_cs</span><span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">num_sdi</span><span class="w"> </span><span class="mi">1</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">sdi_delay</span><span class="w"> </span><span class="mi">0</span><span class="k">}</span><span class="w"> </span><span class="k">{</span><span class="nv">echo_sclk</span><span class="w"> </span><span class="mi">0</span><span class="k">}}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Instantiation example for PulSAR ADC:</p></li>
+</ul>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span><span class="nv">$ad_hdl_dir</span><span class="o">/</span>library<span class="o">/</span>spi_engine<span class="o">/</span>scripts<span class="o">/</span>spi_engine.tcl4
+<span class="k">set</span><span class="w"> </span>data_width32
+<span class="k">set</span><span class="w"> </span>async_spi_clk1
+<span class="k">set</span><span class="w"> </span>num_cs1
+<span class="k">set</span><span class="w"> </span>num_sdi1
+<span class="k">set</span><span class="w"> </span>sdi_delay1
+<span class="k">set</span><span class="w"> </span>hier_spi_enginespi_pulsar_adc
+<span class="nv">spi_engine_create</span><span class="w"> </span><span class="nv">$hier_spi_engine</span><span class="w"> </span><span class="nv">$data_width</span><span class="w"> </span><span class="nv">$async_spi_clk</span><span class="w"> </span><span class="nv">$num_cs</span><span class="w"> </span><span class="nv">$num_sdi</span><span class="w"> </span><span class="nv">$sdi_delay</span>
+</pre></div>
+</div>
+<p>#. DATA_WIDTH - will set the width of the data bus / data line used by the SPI
+Engine to connect tothe DMA. It will also set the maximum word length for the
+SPI transfer. Since the Pulsar_ADC devices are all single SDI/SDO and some of
+them require 18bit transfers, this value will be rounded to 32bit.</p>
+<p>#. ASYNC_SPI_CLK - will chose the reference clock for the SPI Engine. Setting
+this to 0 will configure the hierarchy to use the axi clock (100MHz) as the
+reference clock. Setting it to 1 will allow for an external reference clock
+(SPI_CLK).</p>
+<ol class="arabic simple">
+<li><p>NUM_CS - selects the number of CS lines.</p></li>
+<li><p>NUM_SDI - selects the number of SDI lines.</p></li>
+</ol>
+<p>#. SDI_DELAY - the latch of the SDI line can be delayed with 1, 2 or 3 SPI core
+clock cycle. Needed for designs with high SCLK rate (&gt;50MHz).</p>
+<p><strong>PulSAR ADC Architecture</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_pulsar_arch.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_pulsar_arch.png" />
+</figure>
+<p><em>ADI AXI PWM GENERATOR</em></p>
+<ul class="simple">
+<li><p>ad_ip_parameter pulsar_adc_trigger_gen CONFIG.PULSE_0_PERIOD 120</p></li>
+<li><p>ad_ip_parameter pulsar_adc_trigger_gen CONFIG.PULSE_0_WIDTH 1</p></li>
+<li><p>ad_connect spi_clk pulsar_adc_trigger_gen/ext_clk</p></li>
+<li><p>ad_connect pulsar_adc_trigger_gen/pwm_0 $hier_spi_engine/offload/trigger</p></li>
+</ul>
+<p><em>AXI CLKGEN</em></p>
+<ul class="simple">
+<li><p>ad_ip_instance axi_clkgen spi_clkgen</p></li>
+<li><p>ad_ip_parameter spi_clkgen CONFIG.CLK0_DIV 5</p></li>
+<li><p>ad_ip_parameter spi_clkgen CONFIG.VCO_DIV 1</p></li>
+<li><p>ad_ip_parameter spi_clkgen CONFIG.VCO_MUL 8</p></li>
+<li><p>ad_connect $hier_spi_engine/m_spi pulsar_adc_spi</p></li>
+<li><p>ad_connect spi_clk spi_clkgen/clk_0</p></li>
+<li><p>ad_connect spi_clk spi_pulsar_adc/spi_clk</p></li>
+</ul>
+<p><em>ADI AXI DMA CONTROLLER</em></p>
+<ul class="simple">
+<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_TYPE_SRC 1</p></li>
+<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_TYPE_DEST 0</p></li>
+<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.CYCLIC 0</p></li>
+<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.SYNC_TRANSFER_START 0</p></li>
+<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.AXI_SLICE_SRC 0</p></li>
+<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.AXI_SLICE_DEST 1</p></li>
+<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_2D_TRANSFER 0</p></li>
+<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH_SRC 32</p></li>
+<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH _DEST 64</p></li>
+<li><p>ad_connect spi_clk axi_pulsar_adc_dma/s_axis_aclk</p></li>
+</ul>
+<p><strong>Debug options – ILA</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_ila.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_ila.png" />
+</figure>
+<p><strong>Debug options – regular SPI controller transfer capture</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_spi.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_spi.png" />
+</figure>
+<p><strong>Debug options –SPI Engine controller transfer capture</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_spie.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_spie.png" />
+</figure>
+</section>
+<section id="build-system">
+<h2>Build System<a class="headerlink" href="#build-system" title="Link to this heading"></a></h2>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_bd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_bd.png" />
+</figure>
+<p><strong>System Build - ADALM2000</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_m2k.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_m2k.png" />
+</figure>
+<ul class="simple">
+<li><p>Two programmable power supplies</p></li>
+<li><p>Two-channel USB digital oscilloscope</p></li>
+<li><p>Two-channel arbitrary function generator</p></li>
+<li><p>16-channel digital logic analyzer (3.3V CMOS and 1.8V or 5V tolerant, 100MS/s)</p></li>
+</ul>
+<p><strong>System Build - Scopy</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_scopy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_scopy.png" />
+</figure>
+<p>Uses the ADALM2000 to implement virtual instruments:</p>
+<ul class="simple">
+<li><p>Oscilloscope (with Mixed Signal Capability)</p></li>
+<li><p>Signal Generator (Functions and Arbitrary)</p></li>
+<li><p>Spectrum Analyzer</p></li>
+<li><p>Network Analyzer</p></li>
+<li><p>Voltmeter</p></li>
+<li><p>Power Supply</p></li>
+<li><p>Logic Analyzer (with Stack Decoder support)</p></li>
+<li><p>Digital Pattern Generator</p></li>
+<li><p>GPIO</p></li>
+</ul>
+<p><strong>System Build - Schematic</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_schematic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_schematic.png" />
+</figure>
+<p><strong>System Build - Cora Z7S Configuration</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_cora.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_cora.png" />
+</figure>
+<p><strong>System Build - Power Supply</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_power_supply.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_power_supply.png" />
+</figure>
+<p><strong>System Build - Input Signal</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_input_signal.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_input_signal.png" />
+</figure>
+<p><strong>System Build - UART Configuration</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_uart.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_uart.png" />
+</figure>
+<p><strong>System Build – change host IP</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_ip.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_ip.png" />
+</figure>
+<p><strong>System Build - UART and Ethernet Testing</strong></p>
+<p>Step 1 - using Putty</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">ifconfig</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifconfig
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+    inet 169.254.92.202  netmask 255.255.255.0  broadcast 10.48.65.255
+    inet6 fe80::241:8f:d3d0:e43b  prefixlen 64  scopeid 0x20&lt;link&gt;
+    ether 0e:23:90:e3:61:01  txqueuelen 1000  (Ethernet)
+    RX packets 483757  bytes 81480222 (77.7 MiB)
+    RX errors 0  dropped 0  overruns 0  frame 0
+    TX packets 5562  bytes 775511 (757.3 KiB)
+    TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    device interrupt 38
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+    inet 127.0.0.1  netmask 255.0.0.0
+    inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+    loop  txqueuelen 1000  (Local Loopback)
+    RX packets 83  bytes 10176 (9.9 KiB)
+    RX errors 0  dropped 0  overruns 0  frame 0
+    TX packets 83  bytes 10176 (9.9 KiB)
+    TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div>
+<p>Step 2 - using Cygwin</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">ping 169.254.92.202</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ping<span class="w"> </span><span class="m">169</span>.254.92.202
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Pinging 169.254.92.202 with 32 bytes of data:
+Reply from 169.254.92.202: bytes=32 time=2ms TTL=64
+Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
+Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
+Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
+
+Ping statistics for 169.254.92.202:
+  Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+  Minimum = 1ms, Maximum = 2ms, Average = 1ms
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div>
+</section>
+<section id="evaluate-system">
+<h2>Evaluate System<a class="headerlink" href="#evaluate-system" title="Link to this heading"></a></h2>
+<p><strong>System Evaluation – regular SPI trigger configuration</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_trigger_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_trigger_1.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_trigger_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_trigger_2.png" />
+</figure>
+<p><strong>System Evaluation</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Steps</p></th>
+<th class="head"><p>Regular SPI controller</p></th>
+<th class="head"><p>SPI Engine controller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Connect IIO Oscilloscope and visualize the captured signals</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Run the Python script on <a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development" target="_blank">Cora Z7S</a> / Cygwin</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Analyze results in VisualAnalog</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Compare the results</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>System Evaluation - IIO Oscilloscope</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_iio_osc_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_iio_osc_1.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_iio_osc_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_iio_osc_2.png" />
+</figure>
+<p><strong>System Evaluation - Logic Analyzer</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_m2k_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_m2k_1.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_m2k_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_m2k_2.png" />
+</figure>
+<p><strong>System Evaluation</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Steps</p></th>
+<th class="head"><p>Regular SPI controller</p></th>
+<th class="head"><p>SPI Engine controller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Connect IIO Oscilloscope and visualize the captured signals</p></td>
+<td><p>X</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Run the Python script on <a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development" target="_blank">Cora Z7S</a> / Cygwin</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Analyze results in VisualAnalog</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Compare the results</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>System Evaluation - Python script</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_script.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_script.png" />
+</figure>
+<p><strong>System Evaluation – Python from the FPGA board</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_fpga_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_fpga_1.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_fpga_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_fpga_2.png" />
+</figure>
+<p><strong>System Evaluation – Python from a remote machine - optional</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_1.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_2.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_3.png" />
+</figure>
+<p><strong>System Evaluation</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Steps</p></th>
+<th class="head"><p>Regular SPI controller</p></th>
+<th class="head"><p>SPI Engine controller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Connect IIO Oscilloscope and visualize the captured signals</p></td>
+<td><p>X</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Run the Python script on <a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development" target="_blank">Cora Z7S</a> / Cygwin</p></td>
+<td><p>X</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Analyze results in VisualAnalog</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Compare the results</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>System Evaluation - IIO Oscilloscope</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_cora_and_iio_osc.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_cora_and_iio_osc.png" />
+</figure>
+<p><strong>System Evaluation</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Steps</p></th>
+<th class="head"><p>Regular SPI controller</p></th>
+<th class="head"><p>SPI Engine controller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Connect IIO Oscilloscope and visualize the captured signals</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Run the Python script on <a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development" target="_blank">Cora Z7S</a> / Cygwin</p></td>
+<td><p>X</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Analyze results in VisualAnalog</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Compare the results</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>System Evaluation – Python from the FPGA board</strong></p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 3 </span><span class="caption-text">cd /boot/</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
+<div class="code-shell"><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>$cd /cygdrive/c/work/fae_workshop_workspace
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_fpga_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_fpga_1.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_fpga_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_fpga_2.png" />
+</figure>
+<p><strong>System Evaluation – Python from a remote machine - optional</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_remote_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_remote_1.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_remote_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_remote_2.png" />
+</figure>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_remote_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_remote_3.png" />
+</figure>
+<p><strong>System Evaluation</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Steps</p></th>
+<th class="head"><p>Regular SPI controller</p></th>
+<th class="head"><p>SPI Engine controller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Connect IIO Oscilloscope and visualize the captured signals</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Run the Python script on <a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development" target="_blank">Cora Z7S</a> / Cygwin</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>Analyze results in VisualAnalog</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Compare the results</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Listing 4 </span><span class="caption-text">cd /cygdrive/c/work/fae_workshop_workspace</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/cygdrive/c/work/fae_workshop_workspace
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-number">Listing 5 </span><span class="caption-text">scp <a class="reference external" href="mailto:root&#37;&#52;&#48;169&#46;254&#46;92&#46;202L/boot/workshop/fae_workshop_visual&#46;vac">root<span>&#64;</span>169<span>&#46;</span>254<span>&#46;</span>92<span>&#46;</span>202L/boot/workshop/fae_workshop_visual<span>&#46;</span>vac</a> .</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>root@169.254.92.202L/boot/workshop/fae_workshop_visual.vac<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>root@169.254.92.202&#39;s password:analog
+fae_worksop_visual.vac                        100% 17KB     1.7MB/s   00:00
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_analyse_results.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_analyse_results.png" />
+</figure>
+<p><strong>System Evaluation–Analyze results (SPI Engine-1.3MSPS)</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_analyse_results_spie_1m3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_analyse_results_spie_1m3.png" />
+</figure>
+<p><strong>System Evaluation–Analyze results (Regular SPI -15KSPS)</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_analyse_results_spi_1k5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_analyse_results_spi_1k5.png" />
+</figure>
+<p><strong>System Evaluation–Analyze results (SPI Engine-15KSPS)</strong></p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_analyse_results_spie_1k5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_analyse_results_spie_1k5.png" />
+</figure>
+<p><strong>System Evaluation</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Steps</p></th>
+<th class="head"><p>Regular SPI controller</p></th>
+<th class="head"><p>SPI Engine controller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Connect IIO Oscilloscope and visualize the captured signals</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Run the Python script on <a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development" target="_blank">Cora Z7S</a> / Cygwin</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>Analyze results in VisualAnalog</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Compare the results</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>System Evaluation – Results comparison</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Datasheet</p></th>
+<th class="head"><p>Regular SPI controller
+(Fin=1kHz, SR=15KHz, Ain=-0.5dBFS)</p></th>
+<th class="head"><p>SPI Engine controller
+(Fin=1kHz, SR=15KHz, Ain=-0.5dBFS)</p></th>
+<th class="head"><p>SPI Engine controller
+(Fin=1kHz, SR=1.33MHz, Ain=-0.5dBFS)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Signal-to-Noise SNR [dBFS]</p></td>
+<td><p>98.5</p></td>
+<td><p>14.81</p></td>
+<td><p>78.60</p></td>
+<td><p>77.70</p></td>
+</tr>
+<tr class="row-odd"><td><p>Spurious-Free Dynamic Range SFDR [dBFS]</p></td>
+<td><p>112.5</p></td>
+<td><p>21.13</p></td>
+<td><p>92.97</p></td>
+<td><p>99.15</p></td>
+</tr>
+<tr class="row-even"><td><p>Total Harmonic Distortion THD [dBFS]</p></td>
+<td><p>-110.5</p></td>
+<td><p>-45.65</p></td>
+<td><p>-99.20</p></td>
+<td><p>-110</p></td>
+</tr>
+<tr class="row-odd"><td><p>Signal-to-(Noise + Distortion) SINAD [dBFS]</p></td>
+<td><p>98</p></td>
+<td><p>14.30</p></td>
+<td><p>78</p></td>
+<td><p>77.20</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>System Evaluation</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Steps</p></th>
+<th class="head"><p>Regular SPI controller</p></th>
+<th class="head"><p>SPI Engine controller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Connect IIO Oscilloscope and visualize the captured signals</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Run the Python script on <a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development" target="_blank">Cora Z7S</a> / Cygwin</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>Analyze results in VisualAnalog</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Compare the results</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>A classic MCU can be used for converters that have the sampling rate up to
+100kSPS.</p></li>
+<li><p>Maximum performance, in terms of sampling rate, SNR, THD can be only
+achieved with an FPGA.</p></li>
+<li><p>SPI Engine is a highly flexible and powerful open-source SPI controller
+framework which can interface a wide range of precision converters.</p></li>
+<li><p>We are now familiar with the COS group open-source solution stack.</p></li>
+</ol>
+<p><strong>Thank You!</strong></p>
+<p><strong>Related Presentations</strong></p>
+<ul class="simple">
+<li><p>My customer uses an FPGA in his product. Now what?</p></li>
+<li><p>ADALM2000 in real life applications</p></li>
+<li><p>Just enough Software and HDL for High-Speed designs</p></li>
+<li><p>Hardware and Software Tools for Precision Wideband Instrumentation</p></li>
+</ul>
+<p><strong>Questions?</strong>
+<a class="icon ez reference external" href="https://ez.analog.com/community/university-program" target="_blank">EngineerZone</a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../workshop_what_sw_for_sdr/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">What software do I need for my SDR?</a>
+    <a href="../workshops_software_defined_instrumentation/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Software Defined Instrumentation</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

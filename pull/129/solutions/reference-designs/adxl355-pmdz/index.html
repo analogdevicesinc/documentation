@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The EVAL-ADXL355-PMDZ is a compact, low-cost, Pmod-compatible evaluation board for the ADXL355 low noise density, low zero-g offset drift, low power, 3-axis MEMS accelerometer with selectable measurement ranges. The ADXL355 supports the ±2g, ±4g, and ±8g ranges, and offers industry leading noise, offset drift over temperature, and long term stability, enabling precision applications with minimal calibration and with very low power consumption. Applications include:" name="description" />
+
+    <title>EVAL-ADXL355-PMDZ &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="AD9081 &amp; AD9082" href="../eval-ad9081/index.html" />
+    <link rel="prev" title="ADRD8012-01Z" href="../adrd8012-01Z/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVAL-ADXL355-PMDZ</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#input-and-output-connections-and-configurations">Input and Output Connections and Configurations</a><ul>
+<li><a class="reference internal" href="#pmod-processor-connector">Pmod  Processor Connector</a></li>
+<li><a class="reference internal" href="#adxl355-interrupt-pins">ADXL355 Interrupt Pins</a></li>
+<li><a class="reference internal" href="#power-supply-considerations-and-configuration">Power Supply Considerations and Configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#device-driver-and-software-support">Device Driver and Software Support</a></li>
+<li><a class="reference internal" href="#system-setup-using-adicup3029">System Setup Using ADICUP3029</a><ul>
+<li><a class="reference internal" href="#demo-requirements">Demo Requirements</a></li>
+<li><a class="reference internal" href="#setting-up-the-hardware">Setting up the Hardware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system-setup-using-max32655fthr-or-max32650fthr">System Setup Using MAX32655FTHR or MAX32650FTHR</a><ul>
+<li><a class="reference internal" href="#demo-requirements-1">Demo Requirements</a></li>
+<li><a class="reference internal" href="#max32655fthr">MAX32655FTHR</a></li>
+<li><a class="reference internal" href="#max32650fthr">MAX32650FTHR</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system-setup-using-raspberry-pi">System Setup Using Raspberry Pi</a><ul>
+<li><a class="reference internal" href="#id3">Demo Requirements</a></li>
+<li><a class="reference internal" href="#loading-image-on-sd-card">Loading Image on SD Card</a></li>
+<li><a class="reference internal" href="#configuring-the-sd-card">Configuring the SD Card</a></li>
+<li><a class="reference internal" href="#id4">Setting up the Hardware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system-setup-using-eval-adicup360-deprecated">System Setup Using EVAL-ADICUP360 <strong>(DEPRECATED)</strong></a></li>
+<li><a class="reference internal" href="#application-software-all-platforms">Application Software (All Platforms)</a><ul>
+<li><a class="reference internal" href="#for-rpi-direct-local-access">For RPI Direct Local Access:</a></li>
+<li><a class="reference internal" href="#for-windows-machine-connected-to-raspberry-pi">For Windows machine connected to Raspberry Pi:</a><ul>
+<li><a class="reference internal" href="#for-windows-machine-connected-to-adicup3029">For Windows machine connected to ADICUP3029:</a><ul>
+<li><a class="reference internal" href="#iio-commands">IIO Commands</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope">IIO Oscilloscope</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debug-panel">Debug Panel</a></li>
+<li><a class="reference internal" href="#dmm-panel">DMM Panel</a><ul>
+<li><a class="reference internal" href="#pyadi-iio">PyADI-IIO</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-the-example">Running the example</a></li>
+<li><a class="reference internal" href="#running-directly-on-the-rpi">Running directly on the RPi</a></li>
+<li><a class="reference internal" href="#for-no-os">For No-OS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-information-and-useful-links">More information and useful links</a></li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+<li><a class="reference internal" href="#additional-information">Additional Information</a></li>
+<li><a class="reference internal" href="#hardware-registration">Hardware Registration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2-1" id="toctree-collapse-2-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3" id="toctree-collapse-2-3"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../application-software/index.html">Application Software</a></li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-4" id="toctree-collapse-12-4"/><div class="collapse"><a class="reference internal" href="../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-12-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-5" id="toctree-collapse-12-5"/><div class="collapse"><a class="reference internal" href="../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-12-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-6" id="toctree-collapse-12-6"/><div class="collapse"><a class="reference internal" href="../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-12-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-7" id="toctree-collapse-12-7"/><div class="collapse"><a class="reference internal" href="../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-12-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-8" id="toctree-collapse-12-8"/><div class="collapse"><a class="reference internal" href="../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-12-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-9" id="toctree-collapse-12-9"/><div class="collapse"><a class="reference internal" href="../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-12-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-10" id="toctree-collapse-12-10"/><div class="collapse"><a class="reference internal" href="../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-12-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-11" id="toctree-collapse-12-11"/><div class="collapse"><a class="reference internal" href="../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-12-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-12" id="toctree-collapse-12-12"/><div class="collapse"><a class="reference internal" href="../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-12-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-13" id="toctree-collapse-12-13"/><div class="collapse"><a class="reference internal" href="../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-12-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad4130-pmod/index.html">EVAL-AD4130-8-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14" id="toctree-collapse-12-14"/><div class="collapse"><a class="reference internal" href="../ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-12-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14-1" id="toctree-collapse-12-14-1"/><div class="collapse"><a class="reference internal" href="../ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15" id="toctree-collapse-12-15"/><div class="collapse"><a class="reference internal" href="../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-12-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16" id="toctree-collapse-12-16"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-12-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16-1" id="toctree-collapse-12-16-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-12-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-17" id="toctree-collapse-12-17"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-12-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18" id="toctree-collapse-12-18"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-12-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18-1" id="toctree-collapse-12-18-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19" id="toctree-collapse-12-19"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">ADRV902X</a><label for="toctree-collapse-12-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19-1" id="toctree-collapse-12-19-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-12-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/versal.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/zynqmp.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-20" id="toctree-collapse-12-20"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-12-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-21" id="toctree-collapse-12-21"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-12-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-22" id="toctree-collapse-12-22"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-12-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-23" id="toctree-collapse-12-23"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-12-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-24" id="toctree-collapse-12-24"/><div class="collapse"><a class="reference internal" href="../template/index.html">EVALUATION BOARD</a><label for="toctree-collapse-12-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../template/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../template/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-24-1" id="toctree-collapse-12-24-1"/><div class="collapse"><a class="reference internal" href="../template/quickstart/index.html">Quick start guide</a><label for="toctree-collapse-12-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../template/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/quickstart/versal.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/quickstart/zynqmp.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <div class="_collection" olduri="eval-angle.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/eval-angle.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/eval-angle.png" />
+</div><section id="eval-adxl355-pmdz">
+<span id="id1"></span><h1>EVAL-ADXL355-PMDZ<a class="headerlink" href="#eval-adxl355-pmdz" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/eval-angle.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/eval-angle.png" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/eval-angle.png" style="width: 300px;" />
+</a>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL355-PMDZ" target="_blank">EVAL-ADXL355-PMDZ</a> is a compact, low-cost,
+Pmod-compatible evaluation board for the <a class="icon adi reference external" href="https://www.analog.com/ADXL355" target="_blank">ADXL355</a> low noise
+density, low zero-g offset drift, low power, 3-axis MEMS accelerometer with
+selectable measurement ranges. The ADXL355 supports the ±2g, ±4g, and ±8g
+ranges, and offers industry leading noise, offset drift over temperature, and
+long term stability, enabling precision applications with minimal calibration
+and with very low power consumption. Applications include:</p>
+<ul class="simple">
+<li><p>Inertial measurement units (IMUs)/altitude and heading reference systems (AHRS)</p></li>
+<li><p>Platform stabilization systems</p></li>
+<li><p>Structural health monitoring</p></li>
+<li><p>Seismic imaging</p></li>
+<li><p>Tilt sensing</p></li>
+<li><p>Robotics</p></li>
+<li><p>Condition monitoring</p></li>
+</ul>
+<p>The ADXL355 accelerometers offer guaranteed temperature stability with null
+offset coefficients of 0.15mg/°C (max). The stability minimizes resource and
+expense associated with calibration and testing effort, helping to achieve
+higher throughput for device OEMs. In addition, the hermetic package helps
+ensure that the end product conforms to its repeatability and stability
+specifications long after they leave the factory.</p>
+<p>With output of ±2g to ±8g full scale range (FSR), selectable digital
+filtering from 1 Hz to 1 kHz, and low noise density of 25µ/√Hz at less than
+200µA current consumption, ADXL355 MEMS accelerometer offers performance level
+comparable to much more expensive devices with less power consumption and BOM
+cost.</p>
+</section>
+<section id="input-and-output-connections-and-configurations">
+<h2>Input and Output Connections and Configurations<a class="headerlink" href="#input-and-output-connections-and-configurations" title="Link to this heading"></a></h2>
+<p>The PMOD board is small in size with dimensions approximately 2.5 cm in width
+by 2.5 cm in length.</p>
+<section id="pmod-processor-connector">
+<h3>Pmod  Processor Connector<a class="headerlink" href="#pmod-processor-connector" title="Link to this heading"></a></h3>
+<p>The PMOD interface is a series of standardized digital interfaces for various
+digital communication protocols such as SPI, I2C, and UART. These interface
+types were standardized by Digilent, which is now a division of National
+Instruments. Complete details on the Pmod specification can be found on the
+<a class="icon link reference external" href="https://digilent.com/reference/pmod/start" target="_blank">Digilent Pmod landing page</a>.</p>
+<p>The specific interface used for the EVAL-ADXL355-PMDZ boards is the extended
+SPI. In general ADI has adopted the extended SPI connector for all PMOD devices
+which have an SPI interface. It provides flexibility to add interrupts, general
+purpose I/O, resets, and other digitally controlled functions.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>P1 Pin Number</p></th>
+<th class="head"><p>Pin Function</p></th>
+<th class="head"><p>Mnemonic</p></th>
+<th class="head"><p>P1 Pin Number</p></th>
+<th class="head"><p>Pin Function</p></th>
+<th class="head"><p>Mnemonic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pin 1</p></td>
+<td><p>Chip Select</p></td>
+<td><p>CS</p></td>
+<td><p>Pin 7</p></td>
+<td><p>Interrupt 1</p></td>
+<td><p>INT1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 2</p></td>
+<td><p>Master Out Slave In</p></td>
+<td><p>MOSI</p></td>
+<td><p>Pin 8</p></td>
+<td><p>Not Connected</p></td>
+<td><p>NC</p></td>
+</tr>
+<tr class="row-even"><td><p>Pin 3</p></td>
+<td><p>Master In Slave Out</p></td>
+<td><p>MISO</p></td>
+<td><p>Pin 9</p></td>
+<td><p>Interrupt 2</p></td>
+<td><p>INT2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 4</p></td>
+<td><p>Serial Clock</p></td>
+<td><p>SCLK</p></td>
+<td><p>Pin 10</p></td>
+<td><p>Data Ready</p></td>
+<td><p>DRDY</p></td>
+</tr>
+<tr class="row-even"><td><p>Pin 5</p></td>
+<td><p>Digital Ground</p></td>
+<td><p>DGND</p></td>
+<td><p>Pin 11</p></td>
+<td><p>Digital Ground</p></td>
+<td><p>DGND</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 6</p></td>
+<td><p>Digital Power</p></td>
+<td><p>VDD</p></td>
+<td><p>Pin 12</p></td>
+<td><p>Digital Power</p></td>
+<td><p>VDD</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_layout.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_layout.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_layout.png" style="width: 300px;" />
+</a>
+</section>
+<section id="adxl355-interrupt-pins">
+<h3>ADXL355 Interrupt Pins<a class="headerlink" href="#adxl355-interrupt-pins" title="Link to this heading"></a></h3>
+<p>The EVAL-ADXL355-PMDZ has two interrupt pins and a data ready pin which can be
+used as external indicators for the user. The interrupt pins can be programmed
+through software to reflect various status flags within the ADXL355, and those
+pins are accessible through the SPI PMOD header. For complete details on the
+individual status flags, what they mean, and how to program the chip to reflect
+those interrupts, please consult the <a class="icon adi reference external" href="https://www.analog.com/ADXL355" target="_blank">ADXL355</a> data sheet.</p>
+</section>
+<section id="power-supply-considerations-and-configuration">
+<h3>Power Supply Considerations and Configuration<a class="headerlink" href="#power-supply-considerations-and-configuration" title="Link to this heading"></a></h3>
+<p>When using the ADXL355 PMOD board, the 3.3V power for the PMOD comes directly
+from the host board it is connected to. Most Pmod platform boards can supply at
+least 100 mA, more than adequate for the EVAL-ADXL355-PMDZ.</p>
+</section>
+</section>
+<section id="device-driver-and-software-support">
+<h2>Device Driver and Software Support<a class="headerlink" href="#device-driver-and-software-support" title="Link to this heading"></a></h2>
+<p>There are two device driver and accompanying software solutions provided for
+the EVAL-ADXL355-PMDZ:</p>
+<p><strong>ADXL355 no-OS Driver</strong></p>
+<blockquote>
+<div><ul>
+<li><p>The <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/accel/adxl355" target="_blank">ADXL355 no-OS driver</a> is used
+in bare-metal applications, typically running on low-power, embedded
+microcontrollers.</p></li>
+<li><p>The <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/eval-adxl355-pmdz" target="_blank">ADXL355 no-OS example project</a>
+uses the ADXL355 no-OS driver and has several configuration options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The tinyiiod configuration emulates the Linux IIO framework through the
+tinyiiod daemon library. The application communicates with the host computer
+via the serial backend, over a USB-UART physical connection. This facilitates
+rapid application development on a host computer, independent from embedded
+code development. This is the configuration that will be referenced in the
+no-OS platform setups below.</p></li>
+<li><p>The “dummy” configuration implements a simple command-line program that
+can be run on a terminal.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p>A zip file containing prebuilt programming files for the no-OS example project,
+targeting platforms below are available at:
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/releases/download/last_commit/eval-adxl355-pmdz.zip" target="_blank">eval-adxl355-pmdz.zip</a>.</p>
+<p>More details are provided in the platform-specific sections below.</p>
+</div>
+<p><strong>ADXL355 Linux Driver</strong></p>
+<ul class="simple">
+<li><p>The <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-accelerometer/adxl355" target="_blank">ADXL355 Linux driver</a> is used in
+applications running the Linux operating system, typically on larger processors
+and SoC devices.</p></li>
+<li><p>The ADXL355 Linux driver uses the Industrial Input/Output (IIO) framework,
+greatly simplifying the development of application code via the cross-platform
+Libiio library, which is written in C and includes bindings for Python, MATLAB,
+C#, and other languages. Application code can run directly on the platform
+board, communicating with the device over the local backend, or from a remote
+host over the network or USB backends.</p></li>
+</ul>
+</section>
+<section id="system-setup-using-adicup3029">
+<h2>System Setup Using ADICUP3029<a class="headerlink" href="#system-setup-using-adicup3029" title="Link to this heading"></a></h2>
+<p>The EVAL-ADXL355-PMDZ can be used with <a class="icon adi reference external" href="https://www.analog.com/eval-adicup3029" target="_blank">ADICUP3029</a>.</p>
+<section id="demo-requirements">
+<h3>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h3>
+<p>The following is the list of items needed in order to replicate this demo.</p>
+<ul class="simple">
+<li><p>Hardware</p>
+<ul>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL355-PMDZ" target="_blank">EVAL-ADXL355-PMDZ</a></p></li>
+<li><p>Micro-USB to USB Cable</p></li>
+<li><p>PC or Laptop with USB Port</p></li>
+</ul>
+</li>
+<li><p>Software</p>
+<ul>
+<li><p>For IIO / libiio: eval-adxl355-pmdz_aducm3029_iio_example.hex from the
+programming file zip</p></li>
+<li><dl class="simple">
+<dt>For terminal CLI: eval-adxl355-pmdz_aducm3029_dummy_example.hex from the</dt><dd><p>programming file zip</p>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>There are two basic ways to program the ADICUP3029 with the software for the
+ADXL355.</p>
+<ol class="arabic simple">
+<li><p>Dragging and Dropping the .Hex to the Daplink drive</p></li>
+<li><p>Using the drag and drop method, the software is going to be a version
+that Analog Devices creates for testing and evaluation purposes.
+This is the <strong>EASIEST</strong> way to get started with the reference design.</p></li>
+</ol>
+</div>
+</section>
+<section id="setting-up-the-hardware">
+<h3>Setting up the Hardware<a class="headerlink" href="#setting-up-the-hardware" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Connect <strong>EVAL-ADXL355-PMDZ</strong> board at connector <strong>P9</strong> of the
+<strong>EVAL-ADICUP3029</strong>.</p></li>
+<li><p>Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and
+connect it to a computer. The final setup should look similar to the picture
+below.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_adicup3029_connections.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_adicup3029_connections.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_adicup3029_connections.jpg" style="width: 900px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Hardware Setup</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Make sure the following switches are as shown from the table below.</p>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/switch_config.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/switch_config.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/switch_config.png" style="width: 900px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Switch Confuguration</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>From your PC, open My Computer and look for the DAPLINK drive, if you see
+this then the drivers are complete and correct.</p>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/daplink.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/daplink.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/daplink.jpg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">DAPLINK Drive</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Drag and drop the eval-adxl355-pmdz_aducm3029_iio_example.hex file to the
+DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red) LED
+will blink rapidly.</p></li>
+<li><p>The DS2 will stop blinking and will stay ON once the programming is done.</p></li>
+<li><p>For demo purposes, place the board horizontally such that the Z-axis reading
+will be approximately 9.8 m/s^2.</p></li>
+</ol>
+</section>
+</section>
+<section id="system-setup-using-max32655fthr-or-max32650fthr">
+<h2>System Setup Using MAX32655FTHR or MAX32650FTHR<a class="headerlink" href="#system-setup-using-max32655fthr-or-max32650fthr" title="Link to this heading"></a></h2>
+<p>The <strong>EVAL-ADXL355-PMDZ</strong> can be used with the MAX32655FTHR or
+MAX32650FTHR.</p>
+<section id="demo-requirements-1">
+<span id="id2"></span><h3>Demo Requirements<a class="headerlink" href="#demo-requirements-1" title="Link to this heading"></a></h3>
+<p>The following is the list of items needed in order to replicate this demo.</p>
+<ul class="simple">
+<li><p><strong>Hardware</strong></p>
+<ul>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/MAX32655FTHR" target="_blank">MAX32655FTHR</a> or <a class="icon adi reference external" href="https://www.analog.com/MAX32650FTHR" target="_blank">MAX32650FTHR</a>
+with <a class="icon adi reference external" href="https://www.analog.com/MAX32625PICO" target="_blank">MAX32625PICO</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/FTHR-PMD-INTZ" target="_blank">FTHR-PMD-INTZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL355-PMDZ" target="_blank">EVAL-ADXL355-PMDZ</a></p></li>
+<li><p>Micro-USB to USB Cable</p></li>
+<li><p>10-pin ribbon cable</p></li>
+<li><p>PC or Laptop with USB Port</p></li>
+</ul>
+</li>
+<li><p><strong>Software</strong></p>
+<ul>
+<li><p>For MAX32655FTHR, programming file from zip:</p>
+<ul>
+<li><p>For IIO / libiio: eval-adxl355-pmdz_maxim_iio_example_max32655_adxl355.hex</p></li>
+<li><p>For terminal CLI: eval-adxl355-pmdz_maxim_dummy_example_max32655_adxl355.hex</p></li>
+</ul>
+</li>
+<li><p>For MAX32650FTHR,</p>
+<ul>
+<li><p>For IIO / libiio: eval-adxl355-pmdz_maxim_iio_example_max32650_adxl355.hex</p></li>
+<li><p>For terminal CLI: eval-adxl355-pmdz_maxim_dummy_example_max32650_adxl355.hex</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="max32655fthr">
+<h3>MAX32655FTHR<a class="headerlink" href="#max32655fthr" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Connect <strong>MAX32655FTHR</strong> with the <strong>FTHR-PMOD-INTZ</strong>. Note that MAXIM
+feather board should have stacking headers for feather board where the
+interposer board will be connected.</p></li>
+<li><p>Connect <strong>EVAL-ADXL355-PMDZ</strong> to the <strong>FTHR-PMOD-INTZ</strong>.</p></li>
+<li><p>Power up the <strong>MAX32655FTHR</strong> by connecting it to your laptop using micro-USB</p></li>
+<li><p>Open the file explorer. Drag-and-drop the pre-built hex file to the DAPLINK.
+If the transfer was not completed, update the firmware for the DAPLINK. Follow
+the steps here: <a class="icon link reference external" href="https://github.com/MaximIntegrated/max32625pico-firmware-images/" target="_blank">https://github.com/MaximIntegrated/max32625pico-firmware-images/</a></p></li>
+<li><p>Open PuTTY or other similar software. Check the Device Manager to set
+correct COM for the MAX32655FTHR. Set baud rate according to hex file used:</p></li>
+</ol>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Hex file</p></th>
+<th class="head"><p>Baud rate</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>eval-adxl355-pmdz_maxim_dummy_example_max32655_adxl355</p></td>
+<td><p>57600</p></td>
+</tr>
+<tr class="row-odd"><td><p>eval-adxl355-pmdz_maxim_iio_example_max32655_adxl355</p></td>
+<td><p>115200</p></td>
+</tr>
+<tr class="row-even"><td><p>eval-adxl355-pmdz_maxim_iio_trigger_example_max32655_adxl355.hex</p></td>
+<td><p>115200</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The final setup should look similar to the picture below.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_max32655fthr_connections.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_max32655fthr_connections.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_max32655fthr_connections.jpg" style="width: 450px;" />
+</a>
+</section>
+<section id="max32650fthr">
+<h3>MAX32650FTHR<a class="headerlink" href="#max32650fthr" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Using a 10-pin ribbon cable, connect the <strong>MAX32625PICO</strong> to the
+<strong>MAX32650FTHR</strong>.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/max32650fthr_with_pico.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/max32650fthr_with_pico.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/max32650fthr_with_pico.png" style="width: 400px;" />
+</a>
+</li>
+<li><p>Connect <strong>MAX32650FTHR</strong> to the <strong>FTHR-PMOD-INTZ</strong>.</p></li>
+<li><p>Connect <strong>EVAL-ADXL355-PMDZ</strong> to the <strong>FTHR-PMOD-INTZ</strong>.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>MAX31855PMB1</p></th>
+<th class="head"><p>FTHR-PMOD-INTZ SPI</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pin 1 (Chip Enable)</p></td>
+<td><p>CS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 2 (Not connected)</p></td>
+<td><p>MOSI</p></td>
+</tr>
+<tr class="row-even"><td><p>Pin 3 (MISO)</p></td>
+<td><p>MISO</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 4 (SCK)</p></td>
+<td><p>SCK</p></td>
+</tr>
+<tr class="row-even"><td><p>Pin 5 (GND)</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 6 (VCC)</p></td>
+<td><p>VCC</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The final setup should look similar as shown below.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/max32650fthr_adxl355pmod.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/max32650fthr_adxl355pmod.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/max32650fthr_adxl355pmod.jpg" style="width: 450px;" />
+</a>
+</li>
+<li><p>Power up the <strong>MAX32650FTHR</strong> by connecting it to your laptop using
+micro-USB. Connect <strong>MAX32625PICO</strong> to your laptop as well.</p></li>
+<li><p>Open the file explorer. Drag-and-drop the pre-built hex file to the DAPLINK.
+If the transfer was not completed, update the firmware for the DAPLINK. Follow
+the steps here: <a class="icon link reference external" href="https://github.com/MaximIntegrated/max32625pico-firmware-images/" target="_blank">https://github.com/MaximIntegrated/max32625pico-firmware-images/</a></p></li>
+<li><p>Open PuTTY or other similar software. Check the Device Manager to set the
+correct COM port for the <strong>MAX32650FTHR</strong>.</p></li>
+<li><p>Set baud rate according to the hex file used available in
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/releases/download/last_commit/eval-adxl355-pmdz.zip" target="_blank">MAX32650FTHR_demo_ADXL355.hex</a>:</p></li>
+</ol>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Hex file</p></th>
+<th class="head"><p>Baud rate</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>eval-adxl355-pmdz_maxim_dummy_example_max32650_adxl355</p></td>
+<td><p>57600</p></td>
+</tr>
+<tr class="row-odd"><td><p>eval-adxl355-pmdz_maxim_iio_example_max32650_adxl355</p></td>
+<td><p>115200</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The expected output viewed in the PuTTY is shown below.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/basic_putty_adxl355.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/basic_putty_adxl355.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/basic_putty_adxl355.png" style="width: 600px;" />
+</a>
+</section>
+</section>
+<section id="system-setup-using-raspberry-pi">
+<h2>System Setup Using Raspberry Pi<a class="headerlink" href="#system-setup-using-raspberry-pi" title="Link to this heading"></a></h2>
+<p>The EVAL-ADXL355-PMDZ can be used with a Raspberry Pi.</p>
+<section id="id3">
+<h3>Demo Requirements<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>The following is a list of items needed in order to replicate this demo.</p>
+<ul class="simple">
+<li><p><strong>Hardware</strong></p>
+<ul>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADXL355" target="_blank">EVAL-ADXL355-PMDZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMOD to Raspberry Pi Adapter (PMD-RPI-INTZ)</a></p></li>
+<li><p>Raspberry PI Zero, Zero W, 3B+, or 4</p></li>
+<li><p>16GB (or larger) Class 10 (or faster) micro-SD card</p></li>
+<li><p>5Vdc, 2.5A power supply with micro USB connector (USB-C power supply for Raspberry Pi 4)</p></li>
+<li><p>User interface setup (choose one):</p>
+<ul>
+<li><p>HDMI monitor, keyboard, mouse plugged directly into Raspberry Pi</p></li>
+<li><p>Host Windows/Linux/Mac computer on the same network as Raspberry Pi</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Software</strong></p>
+<ul>
+<li><p>32-bit Kuiper Linux Image from <a class="icon git reference external" href="https://github.com/analogdevicesinc/adi-kuiper-gen/actions/workflows/kuiper2_0-build.yml" target="_blank">GitHub Actions</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="loading-image-on-sd-card">
+<h3>Loading Image on SD Card<a class="headerlink" href="#loading-image-on-sd-card" title="Link to this heading"></a></h3>
+<p>In order to boot the Raspberry Pi and control the <strong>EVAL-ADXL355-PMDZ</strong>, you
+will need to install ADI Kuiper Linux on an SD card. Complete instructions,
+including where to download the SD card image, how to write it to the SD card,
+and how to configure the system are provided on the <a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a>.</p>
+</section>
+<section id="configuring-the-sd-card">
+<h3>Configuring the SD Card<a class="headerlink" href="#configuring-the-sd-card" title="Link to this heading"></a></h3>
+<p>Follow the configuration procedure for Raspberry Pi at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/hardware-configuration.html" target="_blank" title="(in Kuiper latest)"><span>Hardware Configuration</span></a>, substituting the
+following lines in <strong>config.txt</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dtoverlay</span><span class="o">=</span><span class="n">rpi</span><span class="o">-</span><span class="n">adxl355</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Setting up the Hardware<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>To set up the circuit for evaluation, consider the following steps:</p>
+<ol class="arabic">
+<li><p>Connect the <strong>P9</strong> of the <strong>PMOD to Raspberry Pi Interposer</strong> board at the
+male header GPIO pin connector of the <strong>Raspberry Pi</strong> as shown below.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/interposer.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/interposer.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/interposer.png" style="width: 500px;" />
+</a>
+</li>
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL355-PMDZ" target="_blank">EVAL-ADXL355-PMDZ</a> on the
+PMOD to Raspberry Pi Interposer board either via Port P1 or P2.</p>
+</li>
+<li><p>Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned
+SD card on the designated slot on the RPi.</p></li>
+<li><p>Connect the system to a monitor using an HDMI cable through the mini HDMI
+connector on the RPi.</p></li>
+<li><p>Connect a USB keyboard and mouse to the RPi through the USB ports.</p></li>
+<li><p>Power on the RPi board by plugging in a 5V power supply with a micro-USB
+connector. The final setup should look similar to the picture below.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/eval-adxl355-pmdz_overall_setup.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/eval-adxl355-pmdz_overall_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/eval-adxl355-pmdz_overall_setup.png" style="width: 600px;" />
+</a>
+</li>
+</ol>
+</section>
+</section>
+<section id="system-setup-using-eval-adicup360-deprecated">
+<h2>System Setup Using EVAL-ADICUP360 <strong>(DEPRECATED)</strong><a class="headerlink" href="#system-setup-using-eval-adicup360-deprecated" title="Link to this heading"></a></h2>
+<p>The original software example for the ADXL355 was developed on the ADICUP360
+platform, and is a simple, terminal-based command line interface. This type of
+example program is being deprecated in favor of tinyiiod-based servers for
+embedded platforms, however this example is still available for reference here:
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/eval-adicup360/reference_designs/demo_adxl355" target="_blank">ADXL355 Accelerometer PMOD Demo on ADICUP360</a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In order to use the <strong>EVAL-ADXL355-PMDZ</strong> with the <strong>ADICUP360</strong>, the user
+<strong>MUST</strong> remove resistor R1. The ADXL355 holds the DATA_RDY pin low during
+powerup, and that holds the EVAL-ADICUP360 in UART boot mode. When this mode is
+active the MCU will stay in standby mode till it receives the proper command,
+effectively making the ADuCM360 not run. So to avoid this, please remove R1 and
+note that you can’t use the DATA_RDY pin with the ADICUP360.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the libiio, iio oscilloscope, and pyadi-iio sections below do NOT
+apply to this example.</p>
+</div>
+</section>
+<section id="application-software-all-platforms">
+<h2>Application Software (All Platforms)<a class="headerlink" href="#application-software-all-platforms" title="Link to this heading"></a></h2>
+<p>The Libiio is a library used for interfacing with IIO devices and is required
+to be installed on your computer.</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p>Download and install the latest <a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/releases" target="_blank">Libiio package</a> on
+your machine.</p>
+</div>
+<p>To be able to connect your device, the software must be able to create a
+context. The context creation in the software depends on the backend used to
+connect to the device as well as the platform where the EVAL-ADXL355-PMDZ is
+attached. Two platforms are currently supported for the EVAL-ADXL355-PMDZ:
+Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the no-OS
+ADXL355 demo project. The user needs to supply a <strong>URI</strong> which will be used in
+the context creation.</p>
+<p>The <a class="reference internal" href="../../../software/libiio/cli.html#libiio-iio-info"><span class="std std-ref">iio_info</span></a> command is a part of the libIIO package that reports
+all IIO attributes.</p>
+<p>Upon installation, simply enter the command on the terminal command line to
+access it.</p>
+<section id="for-rpi-direct-local-access">
+<h3>For RPI Direct Local Access:<a class="headerlink" href="#for-rpi-direct-local-access" title="Link to this heading"></a></h3>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
+<section id="for-windows-machine-connected-to-raspberry-pi">
+<h3>For Windows machine connected to Raspberry Pi:<a class="headerlink" href="#for-windows-machine-connected-to-raspberry-pi" title="Link to this heading"></a></h3>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>ip:&lt;ip<span class="w"> </span>address<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>ip&gt;
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>For example, if your Raspberry Pi has the IP address 192.168.1.7, then enter:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>ip:192.168.1.7
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do note that the Windows machine and the RPI board should be connected to
+the same network in order for the machine to detect the device.</p>
+</div>
+<section id="for-windows-machine-connected-to-adicup3029">
+<h4>For Windows machine connected to ADICUP3029:<a class="headerlink" href="#for-windows-machine-connected-to-adicup3029" title="Link to this heading"></a></h4>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>serial:&lt;serial<span class="w"> </span>port&gt;
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Examples:</p>
+<ul class="simple">
+<li><p>In a Windows machine, you can check the port of your ADICUP3029 via Device
+Manager in the Ports (COM &amp; LPT) section. If your device is in COM4, enter:</p></li>
+</ul>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>serial:COM4
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>On a Unix-based machine, you will see it under the /dev/ directory in this
+format “ttyUSBn”, where n is a number depending on how many serial USB devices
+attached. If you see that your device is ttyUSB0, enter:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>serial:/dev/ttyUSB0
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><section id="iio-commands">
+<h5>IIO Commands<a class="headerlink" href="#iio-commands" title="Link to this heading"></a></h5>
+<p>There are different commands that can be used to manage and control the device
+being used. The <a class="reference internal" href="../../../software/libiio/cli.html#libiio-iio-attr"><span class="std std-ref">iio_attr</span></a> command reads and writes IIO attributes.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span><span class="o">[</span>OPTION<span class="o">]</span>...
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To look at the context attributes, enter the following command on the terminal:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-C
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>The <a class="reference internal" href="../../../software/libiio/cli.html#libiio-iio-reg"><span class="std std-ref">iio_reg</span></a> command reads or writes SPI or I2C registers in an
+IIO device. This is generally not needed for end applications, but can be
+useful in debugging drivers. Note that you need to specify a context using the
+<em>-u</em> qualifier when you are not directly accessing the device via RPI or when
+you are using the ADICUP3029 platform.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_reg<span class="w"> </span>-u<span class="w"> </span>&lt;context&gt;<span class="w"> </span>&lt;device&gt;<span class="w"> </span>&lt;register&gt;<span class="w"> </span><span class="o">[</span>&lt;value&gt;<span class="o">]</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To read the device ID (register = 0x02) of an ADXL355 interfaced via RPI from a
+Windows machine, enter the following code on the terminal:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_reg<span class="w"> </span>-u<span class="w"> </span>ip:&lt;ip<span class="w"> </span>address&gt;<span class="w"> </span>adxl355<span class="w"> </span>0x02
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
+<section id="iio-oscilloscope">
+<h5>IIO Oscilloscope<a class="headerlink" href="#iio-oscilloscope" title="Link to this heading"></a></h5>
+<p>Download and install the latest version of IIO Oscilloscope from:
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases" target="_blank">IIO Oscilloscope Installers</a>.</p>
+<p>Once done with the installation or an update of the latest IIO Oscilloscope,
+open the application. The user needs to supply a URI which will be used in the
+context creation of the IIO Oscilloscope and the instructions can be seen from
+the previous section.
+Press refresh to display available IIO Devices, once ADXL355 appeared, press
+connect.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_iio_osc.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_iio_osc.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_iio_osc.png" style="width: 300px;" />
+</a>
+</section>
+</section>
+<section id="debug-panel">
+<h4>Debug Panel<a class="headerlink" href="#debug-panel" title="Link to this heading"></a></h4>
+<p>Below is the Debug panel of ADXL355 wherein you can directly access the
+attributes of the device.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_iio_debug.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_iio_debug.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_iio_debug.png" style="width: 400px;" />
+</a>
+</section>
+<section id="dmm-panel">
+<h4>DMM Panel<a class="headerlink" href="#dmm-panel" title="Link to this heading"></a></h4>
+<p>Access the DMM panel to see the instantaneous reading of the x, y and z axis
+acceleration readings and the device temperature.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_iio_dmm_panel.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_iio_dmm_panel.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_iio_dmm_panel.png" style="width: 400px;" />
+</a>
+<section id="pyadi-iio">
+<h5>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h5>
+<p><a class="reference internal" href="../../../software/pyadi-iio/index.html#pyadi-iio"><span class="std std-ref">PyADI-IIO</span></a> is a python abstraction module for ADI hardware with IIO
+drivers to make them easier to use. This module provides device-specific APIs
+built on top of the current libIIO python bindings. These interfaces try to
+match the driver naming as much as possible without the need to understand the
+complexities of libIIO and IIO.</p>
+<p>Follow the step-by-step procedure on how to install, configure, and set up
+PYADI-IIO and install the necessary packages/modules needed by referring to
+this <a class="reference internal" href="../../../software/pyadi-iio/index.html#pyadi-iio"><span class="std std-ref">link</span></a>.</p>
+</section>
+</section>
+<section id="running-the-example">
+<h4>Running the example<a class="headerlink" href="#running-the-example" title="Link to this heading"></a></h4>
+<p>After installing and configuring PYADI-IIO in your machine, you are now ready
+to run python script examples. In our case, run the <strong>adxl355_example.py</strong>
+found in the examples folder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Github link for the python sample script: <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/adxl355_example.py" target="_blank">ADXL355 Python
+Example</a></p>
+</div>
+</section>
+<section id="running-directly-on-the-rpi">
+<h4>Running directly on the RPi<a class="headerlink" href="#running-directly-on-the-rpi" title="Link to this heading"></a></h4>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="p">:</span>\<span class="n">pyadi</span><span class="o">-</span><span class="n">iio</span>\<span class="n">examples</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-ps1 notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">adxl355_example</span><span class="p">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Press enter and you will get these readings.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_python_example_rpi.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_python_example_rpi.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/adxl355_python_example_rpi.png" style="width: 600px;" />
+</a>
+</section>
+<section id="for-no-os">
+<h4>For No-OS<a class="headerlink" href="#for-no-os" title="Link to this heading"></a></h4>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="p">:</span>\<span class="n">pyadi</span><span class="o">-</span><span class="n">iio</span>\<span class="n">examples</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-ps1 notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">adxl355_no_os_example</span><span class="p">.</span><span class="n">py</span> <span class="n">serial</span><span class="p">:&lt;</span><span class="n">serial</span> <span class="n">port</span><span class="p">&gt;,</span><span class="n">57600</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>In a Windows machine, you can check the port of your MAX32655FTHR and
+MAX32650FTHR via Device Manager in the Ports (COM &amp; LPT) section. If your
+device is in COM8, you have to use:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>pyadi-iio/examples/adxl355_no_os_example.py<span class="w"> </span>serial:COM8,57600
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Press enter and you will get these readings.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/no_os_adxl355_pyadi.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/no_os_adxl355_pyadi.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062/docs/solutions/reference-designs/adxl355-pmdz/no_os_adxl355_pyadi.png" style="width: 600px;" />
+</a>
+</section>
+</section>
+<section id="more-information-and-useful-links">
+<h3>More information and useful links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL355-PMDZ" target="_blank">EVAL-ADXL355-PMDZ Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADXL355" target="_blank">ADXL355 Product Page</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/eval-adxl355-pmdz" target="_blank">EVAL-ADXL355-PMDZ no-OS projects</a></p></li>
+</ul>
+</section>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/eval-adxl355-pmdz-designsupport.zip" target="_blank">EVAL-ADXL355-PMDZ Design &amp; Integration Files</a></p>
+<ul class="simple">
+<li><p>Schematics</p></li>
+<li><p>Bill of Materials</p></li>
+<li><p>Gerber Files</p></li>
+<li><p>Assembly Files</p></li>
+<li><p>Allegro Layout File</p></li>
+</ul>
+</div>
+</section>
+<section id="additional-information">
+<h3>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../software/pyadi-iio/index.html#pyadi-iio"><span class="std std-ref">PyADI-IIO</span></a></p></li>
+<li><p><a class="reference internal" href="../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a></p></li>
+<li><p><a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a></p></li>
+</ul>
+</section>
+<section id="hardware-registration">
+<h3>Hardware Registration<a class="headerlink" href="#hardware-registration" title="Link to this heading"></a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Receive software update notifications, documentation updates, view the
+latest videos, and more when you register your hardware.
+<a class="icon link reference external" href="https://my.analog.com/en/app/registration/hardware/EVAL-ADXL355-PMDZ?&amp;v=Rev%20B" target="_blank">Register</a>
+to receive all these great benefits and more!</p>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../adrd8012-01Z/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ADRD8012-01Z</a>
+    <a href="../eval-ad9081/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD9081 &amp; AD9082</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
