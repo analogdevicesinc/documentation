@@ -1,7 +1,7 @@
 .. _ad-ethernetapldevice-sl:
 
 AD-ETHERNETAPLDEVICE-SL
-========================
+=======================
 
 Ethernet-APL Field Platform for Intelligent, Secure, and Connected Industrial Devices
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -53,20 +53,20 @@ Key Features
    AD-EthernetAPLDevice-SL Simplified Block Diagram
 
 .. csv-table:: Specifications
-    :file: specifications.csv
+   :file: specifications.csv
 
 Hardware Design Files
 ~~~~~~~~~~~~~~~~~~~~~
 
 - :download:`Schematic Power and Comms board <02-083152-01-b.pdf>`
-- :download:`Schematic Digital IS board <02-083153-01-c.pdf>`
+- :download:`Schematic Digital IS board <02-083153-01-d.pdf>`
 - :download:`Schematic Digital NON-IS board <02-084576-01-b.pdf>`
-- :download:`Layout Power and Comms board <08-083152-01-b-1.pdf>`
-- :download:`Layout Digital IS board <08-083153-01-c.pdf>`
+- :download:`Layout Power and Comms board <08-083152-01-b.pdf>`
+- :download:`Layout Digital IS board <08-083153-01-d.pdf>`
 - :download:`Layout Digital NON-IS board <08-084576-01-b.pdf>`
-- :download:`Bill of Materials Power and Comms board <05-083152-01-b.csv.zip>`
-- :download:`Bill of Materials Digital IS board <05-083153-01-c.csv.zip>`
-- :download:`Bill of Materials Digital NON-IS board <05-084576-01-b.csv.zip>`
+- :download:`Bill of Materials Power and Comms board <05-083152-01-b.zip>`
+- :download:`Bill of Materials Digital IS board <05-083153-01-d.zip>`
+- :download:`Bill of Materials Digital NON-IS board <05-084576-01-b.zip>`
 
 Package Contents
 ----------------
@@ -76,7 +76,8 @@ system together and get it up and running in no time.
 
 This is what you’ll find in the development kit box:
 
-- 1x AD-EthernetAPLDevice-SL intrinsic safety certify kit (Power and Comms + Digital IS boards)
+- 1x AD-EthernetAPLDevice-SL intrinsic safety certify kit (Power and Comms +
+  Digital IS boards)
 - 1x Digital NON-IS board. This board is not IS certify and enables access to
   the RISC-V JTAG for debugging purposes (Digital NON-IS board)
 - 1x MAX32650PICO programmer (ARM) + cable
@@ -91,17 +92,15 @@ Application Development
 
    Software Architecture
 
-The :adi:`AD-ETHERNETAPLDEVICE-SL <AD-ETHERNETAPLDEVICE-SL>` firmware examples are based on ADI’s
+The :adi:`AD-ETHERNETAPLDEVICE-SL` firmware examples are based on ADI’s
 open-source no-OS framework. It includes the bare-metal device drivers for all
 the components in the system as well as example applications enabling
 connectivity via the 10BASE-T1L interface for system configuration and data
 transfer.
 
-:git-no-OS:`AD-ETHERNETAPLDEVICE-SL Firmware Source Code and User Guide <projects/AD-ETHERNETAPLDEVICE-SL>`
-
 Additionally, a proprietary PROFINET stack software application is available to
-enable easy evaluation and system prototyping (myanalog.com registration
-required).
+enable easy evaluation and system prototyping (https://myanalog.com
+registration required).
 
 The board is fully supported in Code Fusion Studio {{ soon to be available }}
 
@@ -195,11 +194,8 @@ The software stack includes:
 - Secure boot and authentication via MAXQ1065
 - Zephyr RTOS support
 
-..
-  Enable this after adding content
-
-  Complementary Documentation
-  ---------------------------
+Complementary Documentation
+---------------------------
 
   .. toctree::
      :titlesonly:
