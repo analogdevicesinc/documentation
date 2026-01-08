@@ -5,7 +5,7 @@ Linux User Guide
 
 This user guide uses :external+linux:doc:`index` and supports the carriers
 Digilent Cora Z7S and Terasic DE10-Nano. For linux, see
-:ref:`eval-ad4062-ardz no-os`.
+:ref:`eval-ad4062-ardz no-OS`.
 
 Building the firmware
 ---------------------
@@ -165,7 +165,7 @@ Interfacing with IIO
 The Linux IIO driver provides a complete feature set for the AD4060/AD4062,
 including threshold events, triggers, and GPIO controller support.
 
-For language bindings and high level GUI tools see :ref:`ad4062_ardz tools`.
+For language bindings and high level GUI tools see :ref:`eval-ad4062-ardz tools`.
 
 Device enumeration
 ~~~~~~~~~~~~~~~~~~

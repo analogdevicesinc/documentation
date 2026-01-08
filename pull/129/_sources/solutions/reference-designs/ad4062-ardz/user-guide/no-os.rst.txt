@@ -1,4 +1,4 @@
-.. _eval-ad4062-ardz no-os:
+.. _eval-ad4062-ardz no-OS:
 
 No-OS User Guide
 ================
@@ -161,7 +161,7 @@ The no-OS driver supports the AD4060/AD4062 I3C devices through a core driver
 and a TinyIIO layer. The TinyIIO layer exposes the device to :ref:`libiio`
 clients running on a host PC over a serial connection.
 
-For language bindings and high level GUI tools see :ref:`ad4062_ardz tools`.
+For language bindings and high level GUI tools see :ref:`eval-ad4062-ardz tools`.
 
 Connecting to the device
 ~~~~~~~~~~~~~~~~~~~~~~~~
