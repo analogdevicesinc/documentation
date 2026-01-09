@@ -1,4 +1,4 @@
-.. _adrv902x quickstart versal:
+.. _adrv902x quickstart vck190:
 
 VCK190 Quick start
 ===============================================================================
@@ -78,46 +78,46 @@ Creating the setup
 
 Follow the steps in this order, to avoid damaging the components:
 
-- Connect the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` FMC board to the
-  FPGA carrier FMC+ FMCP1 socket
-- Connect USB UART J207 (Type-C USB) to your host PC
-- Insert SD card with ADI Kuiper image into socket J302
-- Insert System Controller SD card into socket J206
-- Configure ACAP for SD boot (mode SW1[4:1] switch in the position
-  **OFF,OFF,OFF,ON** as seen in the below picture)
+#. Connect the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` FMC board to the
+   FPGA carrier FMC+ FMCP1 socket
+#. Connect USB UART J207 (Type-C USB) to your host PC
+#. Insert SD card with ADI Kuiper image into socket J302
+#. Insert System Controller SD card into socket J206
+#. Configure ACAP for SD boot (mode SW1[4:1] switch in the position
+   **OFF,OFF,OFF,ON** as seen in the below picture)
 
-.. image:: ../../images/vck190_sw1.jpg
-   :width: 200
+   .. image:: ../../images/vck190_sw1.jpg
+      :width: 200
 
-- Configure System Controller for SD card boot (mode SW11[4:1] switch in the
+#. Configure System Controller for SD card boot (mode SW11[4:1] switch in the
    position **OFF,OFF,OFF,ON** as seen in the below picture).
 
-.. image:: ../../images/vck190_sw11.jpg
-   :width: 200
+   .. image:: ../../images/vck190_sw11.jpg
+      :width: 200
 
-- Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access
-  Board Evaluation & Management Tool (BEAM);
-- Turn on the power switch on the FPGA board;
-- Observe kernel and serial console messages on your terminal, both the ACAP
-  UART interface and the System controller. (use the first ttyUSB or COM port
-  registered for the ACAP UART interface, and try  the other 2 to find the one
-  for System Controller);
-- On the System Controller console, a BEAM Tool Web Address should be assigned.
-  Go to this web address to set VADJ_FMC to 1.5V;
-- To change VADJ_FMC On BEAM, click 'Test The Board'>'Board Settings'>'FMC'.
-  Then on 'Set VADJ_FMC', select 1.5V and click 'Set'.
+#. Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access
+   Board Evaluation & Management Tool (BEAM);
+#. Turn on the power switch on the FPGA board;
+#. Observe kernel and serial console messages on your terminal, both the ACAP
+   UART interface and the System controller. (use the first ttyUSB or COM port
+   registered for the ACAP UART interface, and try  the other 2 to find the one
+   for System Controller);
+#. On the System Controller console, a BEAM Tool Web Address should be assigned.
+   Go to this web address to set VADJ_FMC to 1.5V;
+#. To change VADJ_FMC On BEAM, click 'Test The Board'>'Board Settings'>'FMC'.
+   Then on 'Set VADJ_FMC', select 1.5V and click 'Set'.
 
-.. image:: beam-home.jpg
-   :width: 1000
+   .. image:: beam-home.jpg
+      :width: 1000
 
-.. image:: beam-board-settings.jpg
-   :width: 1000
+   .. image:: beam-board-settings.jpg
+      :width: 1000
 
-.. image:: beam-set-vadj.jpg
-   :width: 1000
+   .. image:: beam-set-vadj.jpg
+      :width: 1000
 
-- On the ACAP UART interface console, reboot the system. After reboot,
-  adrv9026 devices should be present.
+#. On the ACAP UART interface console, reboot the system. After reboot,
+   ADRV9026 devices should be present.
 
 .. note::
 
@@ -894,10 +894,6 @@ To reboot the system, run:
 
 About the IIO devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-..
-   This section is with ^^^ because the last section from using-iio-osc.rst which
-   is included previously, has the last section as ^^^.
 
 Main receivers RX1, RX2, RX3, and RX4 are handled by the axi-adrv9025-rx-hpc IIO device.
 
