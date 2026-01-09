@@ -1,16 +1,17 @@
-.. _ad9084_ebz prerequisites:
+.. _ad9084 prerequisites:
 
 Prerequisites
-=============
+===============================================================================
+
 
 What you need, depends on what you are trying to do. As a minimum, you need to
 start out with:
 
-#. The :adi:`AD9084-FMCA-EBZ`` evaluation card.
+#. The :adi:`EVAL-AD9084` evaluation card.
 #. A carrier platform. ADI does not offer these boards for sale or loan, getting
    one yourself is normal part of development or evaluation of the AD9084.
 
-    - :ref:`See the supported carriers <ad9084_ebz carriers>`.
+    - :ref:`See the supported carriers <ad9084 carriers>`.
     - The carrier may require one or more `FMC+ riser cards <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__.
 
 #. Analysis | Control | Evaluation (ACE) software with the AD9084 plugin installed.
@@ -30,5 +31,4 @@ start out with:
 #. Internet connection (without proxies makes things much easier) to update the
    scripts/binaries on the SD Card that came with the ADI FMC Card. (Firewalls
    are OK, proxies make things a pain).
-
 #. RF Test equipment.

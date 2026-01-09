@@ -1,25 +1,25 @@
-.. _ad9084_ebz quickstart microblaze:
+.. _ad9084 quickstart microblaze:
 
 AD9084-FMCA-EBZ Virtex UltraScale+ VCU118/VCU128 Quick Start Guide
-==================================================================
+===============================================================================
 
 This guide provides some quick instructions on how to setup the AD9084 eval board on:
 
-- :xilinx:`VCU118`
-- :xilinx:`VCU128`
+- :xilinx:`VCU118` on FMC+
+- :xilinx:`VCU128` on FMC+
 
 Required Hardware
------------------
+-------------------------------------------------------------------------------
 
 - AMD Xilinx :xilinx:`VCU118` or :xilinx:`VCU128` board
-- :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
+- :adi:`EVAL-AD9084` evaluation board
 - 2x `Vita 57 FMC+ Extender <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__
 - 2 x Micro-USB cable
 - Ethernet cables
-- Power supply for the FPGA carrier board and the :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board
+- Power supply for the FPGA carrier board and the :adi:`EVAL-AD9084` evaluation board
 
 Required Software
------------------
+-------------------------------------------------------------------------------
 
 - A Linux OS on a PC
 - Xilinx Vivado 2025.1
@@ -28,7 +28,7 @@ Required Software
 - :ref:`IIO-Oscilloscope <iio-oscilloscope>` with the :ref:`AD9084 plugin <ad9084 iio-oscilloscope-plugin>`
 
 Building the HDL project
-------------------------
+-------------------------------------------------------------------------------
 
 Before building the hdl project setup your computer based on the following
 guide: :external+hdl:ref:`build_hdl`
@@ -44,7 +44,7 @@ guide: :external+hdl:ref:`build_hdl`
 .. _ad9084_ebz microblaze linux:
 
 Build the Linux files
------------------------
+-------------------------------------------------------------------------------
 
 Microblaze gnu toolchain from Xilinx is no longer available on gcc.
 Please use gnu tools from Vitis installation as below:
@@ -180,7 +180,7 @@ Building the kernel with the default device tree
    The STRIP image found under arch/microblaze/boot/ is the ELF image which can be loaded via the debugger
 
 Testing
--------
+-------------------------------------------------------------------------------
 
 First we need to prepare a working directory where we will gather all the required binary files.
 
