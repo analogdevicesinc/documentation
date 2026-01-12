@@ -9,11 +9,11 @@ Long Range Wireless Radio Development Platform for Asset Management Applications
 Overview
 --------
 
-The :adi:`MAX32670-LR-ARDZ` base board features the :adi:`MAX32670` 
-high-reliability, ultralow power microcontroller based on Arm Cortex-M4 processor, 
-and the LR1110 long range RF transceiver module. The integrated RF transceiver 
-supports a frequency range from 800 MHz up to 960 MHz, making it suitable for 
-high-performance flexible platforms that wirelessly transmit encrypted data 
+The :adi:`MAX32670-LR-ARDZ` base board features the :adi:`MAX32670`
+high-reliability, ultralow power microcontroller based on Arm Cortex-M4 processor,
+and the LR1110 long range RF transceiver module. The integrated RF transceiver
+supports a frequency range from 800 MHz up to 960 MHz, making it suitable for
+high-performance flexible platforms that wirelessly transmit encrypted data
 at long-range; enabling a wide range of IoT applications using ADI sensing solutions.
 
 This solution also utilizes Semtech’s Long Range Cloud™ Geolocation
@@ -241,13 +241,13 @@ GPIO         10             I2C2_SCL_32670
 HSPI CLK     11             SPI0_SCK_32670
 HSPI MISO    12             SPI0_MISO_32670
 HSPI MOSI    13             SPI0_MOSI_32670
-GPIO         14             
-GPIO         15             
-GPIO         16             
+GPIO         14
+GPIO         15
+GPIO         16
 GND          17             GND
 VIN          18             VOUT_3130(def)/VCC_31334
-\                           
-\                           
+\
+\
 VSPI MOSI    1              SPI1_MOSI_32670
 I2C SCL      2              I2C0_SCL_32670
 UART 0 TX    3              UART0A_TX_32670
@@ -262,9 +262,9 @@ RTC          11             UART0A_CTS_32670
 RTC          12             UART0A_RTS_32670
 RTC          13             SPI0_SS0_32670
 RTC          14             UART1A_CTS_32670
-SDI          15             
-SDO          16             
-SCK          17             
+SDI          15
+SDO          16
+SCK          17
 3V3          18             VOUT_3130
 ============ ============== ========================
 
@@ -374,7 +374,7 @@ PMOD Connector Pin Map
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 ================================== ============== ============
-**SPI PMOD**                                      
+**SPI PMOD**
 **Net Name**                       **Pin Number** **Pin Name**
 SPI0_SS0_32670(def)/SPI1_SS0_32670 1              SS
 SPI0_MOSI_32670                    2              MOSI
@@ -388,8 +388,8 @@ SWDIOB_32670                       9              IO7
 P0_23_32670                        10             IO8
 GND                                11             GND
 1V8_SSB3/3V3_SSB3(def)/VOUT_3130   12             VCC
-\                                                 
-**I2C PMOD**                                      
+\
+**I2C PMOD**
 I2C1_SCL_32670/I2C2_SCL_32670      1              SCL
 I2C1_SCL_32670/I2C2_SCL_32670      2              SCL
 I2C1_SDA_32670/I2C2_SDA_32670      3              SDA
@@ -500,7 +500,7 @@ Button Function
 ====== ======================================================
 S1     provides a hardware RESET to MAX32670 microcontroller.
 ====== ======================================================
- 
+
 LED Indicators
 ^^^^^^^^^^^^^^
 
@@ -521,7 +521,7 @@ DS5    used as a LED indicator for the 3.3 V voltage output from the MAX3130.
 Programming Connectors
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This board uses an SWD interface and the :adi:`MAX32625PICO` board 
+This board uses an SWD interface and the :adi:`MAX32625PICO` board
 for programming the on-board MCUs. See the :adi:`MAX32625PICO page </media/en/technical-documentation/data-sheets/MAX32625PICO.pdf>`
 for more details.
 
@@ -551,7 +551,7 @@ depicted in the following image.
 
 .. figure:: jtag_swd_10_connector.png
 
-The debugger board will need to be **plugged in via the USB port** in order 
+The debugger board will need to be **plugged in via the USB port** in order
 to program any board.
 
 In order to program the MAX32670 node board, the board must be powered by (1)
@@ -576,7 +576,7 @@ Equipment Needed
 - One (1) :adi:`EV-CATTLETAG-ARDZ` Sensor Node
 - One (1) MAX32625PICO Rapid Development Platform with 10-pin ribbon cable
   with firmware image:
-  `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
+  :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin+>`
 - One (1) CR123A Battery or any equivalent external DC power supply (+3V to +4.7V)
   **Note that this is not included in the kit**
 - One (1) Micro USB to USB cable
@@ -608,8 +608,8 @@ Equipment Needed
 How to flash the firmware image in the MAX32625PICO
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Download the firmware image: `MAX32625PICO Firmware Image for
-   MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
+#. Download the firmware image:
+   :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
 #. Do not connect the MAX32625PICO to the
    :adi:`MAX32670-LR-ARDZ` Base Board yet.
 #. Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
