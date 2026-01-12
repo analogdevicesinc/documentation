@@ -1,37 +1,37 @@
-.. _ad9084_ebz quickstart agilex:
+.. _ad9084 quickstart agilex:
 
 AD9084-FMCA-EBZ Intel Agilex 7 Quick Start Guide
-================================================
+===============================================================================
 
 This guide provides some quick instructions on how to setup the AD9084 eval board on:
 
 - Intel Agilex 7 :intel:`DK-SI-AGIB027FA <content/www/us/en/products/details/fpga/development-kits/agilex/si-agi027.html>`
 
 Required Hardware
------------------
+-------------------------------------------------------------------------------
 
 - Intel :intel:`DK-SI-AGIB027FA <content/www/us/en/products/details/fpga/development-kits/agilex/si-agi027.html>` board.
 - Intel :intel:`HPS IO48 OOBE Daughter Card <content/www/us/en/docs/programmable/721605/current/daughter-cards-17810.html>`.
-- :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board.
+- :adi:`EVAL-AD9084` evaluation board.
 - SD Card of at least 16GB imaged with Kuiper Linux (see
   :external+adi-kuiper-gen:doc:`Configure a SD Card <hardware-configuration>`).
 - 1x `Vita 57 FMC+ Extender <https://www.samtec.com/kits/optics-fpga/fmcp-extender/>`__.
 - USB-C cable.
 - Ethernet cable.
-- Power supply for the FPGA carrier board and the :adi:`AD9084-FMCA-EBZ <AD9084>` evaluation board.
+- Power supply for the FPGA carrier board and the :adi:`EVAL-AD9084` evaluation board.
 
 Required Software
------------------
+-------------------------------------------------------------------------------
 
 - A Linux OS on a PC.
 - Intel Quartus Pro 24.2.
 - A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
 - :ref:`IIO-Oscilloscope <iio-oscilloscope>` with the :ref:`AD9084 plugin <ad9084 iio-oscilloscope-plugin>`.
 
-.. _ad9084_ebz agilex linux:
+.. _ad9084 agilex linux:
 
 Build the Linux files
----------------------
+-------------------------------------------------------------------------------
 
 Create a local copy of ADI's kernel tree
 
@@ -81,7 +81,7 @@ Configure the kernel and build it
    $cd ..
 
 Build the ARM Trusted Firmware
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. shell:: bash
    :no-path:
@@ -92,7 +92,7 @@ Build the ARM Trusted Firmware
    $cd ..
 
 Build U-Boot
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. shell:: bash
    :no-path:
@@ -111,7 +111,7 @@ Build U-Boot
    $cd ..
 
 Building the HDL project
-------------------------
+-------------------------------------------------------------------------------
 
 Before building the hdl project setup your computer based on the following
 guide: :external+hdl:ref:`build_hdl`
@@ -150,7 +150,7 @@ Copy the built files to the /BOOT partition:
    $cp hdl/projects/ad9084_ebz/fm87/ad9084_ebz.core.rbf /media/BOOT/agilex.core.rbf
 
 Programming steps
------------------
+-------------------------------------------------------------------------------
 
 - Set **S9** to JTAG
 - Power on the FPGA
@@ -189,7 +189,7 @@ S20              ON     ON     ON     ON
    clock from the HMC7044 to the transceivers
 
 Testing
--------
+-------------------------------------------------------------------------------
 
 .. note::
 
@@ -199,7 +199,7 @@ Testing
    - password: analog
 
 Boot messages
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. collapsible:: Complete boot log
 

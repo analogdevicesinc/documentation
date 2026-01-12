@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta content="This guide provides some quick instructions on how to setup the AD9084 eval board on:" name="description" />
 
-    <title>AD9084-FMCA-EBZ Versal ACAP VCK190/VPK180 Quick Start Guide &#8212; System Level Documentation  documentation</title>
+    <title>AD9084-FMCA-EBZ Virtex UltraScale+ VCU118/VCU128 Quick Start Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=5d595293" />
     <script async="async" src="../../../../_static/app.umd.js?v=46a18818"></script>
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="AD9084-FMCA-EBZ Intel Agilex 7 Quick Start Guide" href="agilex.html" />
-    <link rel="prev" title="AD9084-FMCA-EBZ Virtex UltraScale+ VCU118/VCU128 Quick Start Guide" href="microblaze.html" />
+    <link rel="next" title="AD9084-FMCA-EBZ Versal ACAP VCK190/VPK180 Quick Start Guide" href="versal.html" />
+    <link rel="prev" title="Quickstart" href="index.html" />
    
   
   
@@ -94,22 +94,12 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">AD9084-FMCA-EBZ Versal ACAP VCK190/VPK180 Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#">AD9084-FMCA-EBZ Virtex UltraScale+ VCU118/VCU128 Quick Start Guide</a><ul>
 <li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
 <li><a class="reference internal" href="#required-software">Required Software</a></li>
-<li><a class="reference internal" href="#building-the-hdl-project">Building the HDL project</a><ul>
-<li><a class="reference internal" href="#building-the-boot-image-boot-bin">Building the boot image BOOT.BIN</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#building-the-linux-files">Building the Linux files</a></li>
-<li><a class="reference internal" href="#testing">Testing</a><ul>
-<li><a class="reference internal" href="#physical-setup">Physical setup</a></li>
-<li><a class="reference internal" href="#verify-1-5-v-vadj">Verify 1.5 V VADJ</a></li>
-<li><a class="reference internal" href="#acap-sdcard-boot-files">ACAP SDcard boot files</a></li>
-<li><a class="reference internal" href="#startup">Startup</a></li>
-<li><a class="reference internal" href="#boot-messages">Boot messages</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#building-the-hdl-project">Building the HDL project</a></li>
+<li><a class="reference internal" href="#build-the-linux-files">Build the Linux files</a></li>
+<li><a class="reference internal" href="#testing">Testing</a></li>
 </ul>
 </li>
 </ul>
@@ -340,33 +330,34 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14" id="toctree-collapse-12-14" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-12-14"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14-1" id="toctree-collapse-12-14-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-12-14-1"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Versal ACAP VCK190/VPK180</a></li>
-<li class="toctree-l4"><a class="reference internal" href="agilex.html">Intel Agilex 7 I-Series</a></li>
-<li class="toctree-l4"><a class="reference internal" href="new_usecase.html">Running a new JESD mode on hardware</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15" id="toctree-collapse-12-15"/><div class="collapse"><a class="reference internal" href="../../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-12-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14" id="toctree-collapse-12-14"/><div class="collapse"><a class="reference internal" href="../../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-12-14"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16" id="toctree-collapse-12-16"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-12-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15" id="toctree-collapse-12-15"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-12-15"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16-1" id="toctree-collapse-12-16-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-12-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15-1" id="toctree-collapse-12-15-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-12-15-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16" id="toctree-collapse-12-16" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-12-16"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16-1" id="toctree-collapse-12-16-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-12-16-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="new_usecase.html">Running a new JESD mode on hardware</a></li>
 </ul>
 </li>
 </ul>
@@ -485,24 +476,22 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="ad9084-fmca-ebz-versal-acap-vck190-vpk180-quick-start-guide">
-<span id="ad9084-ebz-quickstart-versal"></span><h1>AD9084-FMCA-EBZ Versal ACAP VCK190/VPK180 Quick Start Guide<a class="headerlink" href="#ad9084-fmca-ebz-versal-acap-vck190-vpk180-quick-start-guide" title="Link to this heading"></a></h1>
+  <section id="ad9084-fmca-ebz-virtex-ultrascale-vcu118-vcu128-quick-start-guide">
+<span id="ad9084-quickstart-microblaze"></span><h1>AD9084-FMCA-EBZ Virtex UltraScale+ VCU118/VCU128 Quick Start Guide<a class="headerlink" href="#ad9084-fmca-ebz-virtex-ultrascale-vcu118-vcu128-quick-start-guide" title="Link to this heading"></a></h1>
 <p>This guide provides some quick instructions on how to setup the AD9084 eval board on:</p>
 <ul class="simple">
-<li><p><a class="icon link reference external" href="https://www.xilinx.com/VCK190" target="_blank">VCK190</a></p></li>
-<li><p><a class="icon link reference external" href="https://www.xilinx.com/VPK180" target="_blank">VPK180</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/VCU118" target="_blank">VCU118</a> on FMC+</p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/VCU128" target="_blank">VCU128</a> on FMC+</p></li>
 </ul>
 <section id="required-hardware">
 <h2>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>AMD Xilinx <a class="icon link reference external" href="https://www.xilinx.com/VCK190" target="_blank">VCK190</a> or <a class="icon link reference external" href="https://www.xilinx.com/VPK180" target="_blank">VPK180</a> board</p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9084" target="_blank">AD9084-FMCA-EBZ</a> evaluation board</p></li>
-<li><p>SD Card of at least 16GB imaged with Kuiper Linux (see
-<a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/hardware-configuration.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">Configure a SD Card</span></a>)</p></li>
-<li><p>2x <a class="icon link reference external" href="https://www.samtec.com/kits/optics-fpga/fmcp-extender/" target="_blank">Vita 57 FMC+ Extender</a> (<a class="icon link reference external" href="https://www.xilinx.com/VCK190" target="_blank">VCK190</a> only)</p></li>
-<li><p>USB Type-C cable</p></li>
+<li><p>AMD Xilinx <a class="icon link reference external" href="https://www.xilinx.com/VCU118" target="_blank">VCU118</a> or <a class="icon link reference external" href="https://www.xilinx.com/VCU128" target="_blank">VCU128</a> board</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9084" target="_blank">EVAL-AD9084</a> evaluation board</p></li>
+<li><p>2x <a class="icon link reference external" href="https://www.samtec.com/kits/optics-fpga/fmcp-extender/" target="_blank">Vita 57 FMC+ Extender</a></p></li>
+<li><p>2 x Micro-USB cable</p></li>
 <li><p>Ethernet cables</p></li>
-<li><p>Power supply for the FPGA carrier board and the <a class="icon adi reference external" href="https://www.analog.com/AD9084" target="_blank">AD9084-FMCA-EBZ</a> evaluation board</p></li>
+<li><p>Power supply for the FPGA carrier board and the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9084" target="_blank">EVAL-AD9084</a> evaluation board</p></li>
 </ul>
 </section>
 <section id="required-software">
@@ -510,14 +499,15 @@ Content on this topic
 <ul class="simple">
 <li><p>A Linux OS on a PC</p></li>
 <li><p>Xilinx Vivado 2025.1</p></li>
+<li><p>Xilinx Vitis 2025.1</p></li>
 <li><p>A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).</p></li>
 <li><p><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO-Oscilloscope</span></a> with the <a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html#ad9084-iio-oscilloscope-plugin"><span class="std std-ref">AD9084 plugin</span></a></p></li>
 </ul>
 </section>
 <section id="building-the-hdl-project">
 <h2>Building the HDL project<a class="headerlink" href="#building-the-hdl-project" title="Link to this heading"></a></h2>
-<p>Before building the hdl project setup your computer based on the
-following guide: <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a></p>
+<p>Before building the hdl project setup your computer based on the following
+guide: <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a></p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
 </pre></div>
 </div>
@@ -527,93 +517,144 @@ following guide: <a class="icon link reference external" href="https://analogdev
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>hdl/projects/ad9084_ebz/vck190
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>hdl/projects/ad9084_ebz/vcu118
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~/hdl/projects/ad9084_ebz/vck190$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~/hdl/projects/ad9084_ebz/vcu118$
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> Building ad9084_ebz_vck190 [/home/analog/hdl/projects/ad9084_ebz/vck190/ad9084_ebz_vck190_vivado.log] ... OK
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> Building ad9084_ebz_vcu118 [/home/analog/hdl/projects/ad9084_ebz/vcu118/ad9084_ebz_vcu118_vivado.log] ... OK
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><section id="building-the-boot-image-boot-bin">
-<h3>Building the boot image BOOT.BIN<a class="headerlink" href="#building-the-boot-image-boot-bin" title="Link to this heading"></a></h3>
-<p>Instructions on how to build the boot image BOOT.BIN image for Versal boards can be found here:</p>
-<ul class="simple">
-<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span class="xref std std-ref">Building an HDL Project</span></a></p></li>
-<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html#build-boot-bin-versal" target="_blank" title="(in HDL)"><span class="xref std std-ref">Build the boot image BOOT.BIN</span></a></p></li>
-</ul>
-</section>
-</section>
-<section id="building-the-linux-files">
-<span id="ad9084-ebz-versal-linux"></span><h2>Building the Linux files<a class="headerlink" href="#building-the-linux-files" title="Link to this heading"></a></h2>
-<p>On the development host</p>
-<p>Get the cross compiler and set the CROSS_COMPILE and ARCH variables</p>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:/github-linux-build$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.3-2021.07/binrel/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu.tar.xz
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:/github-linux-build$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>xvf<span class="w"> </span>gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu.tar.xz
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:/github-linux-build$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm64
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:/github-linux-build$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu/bin:<span class="nv">$PATH</span>
-</pre></div>
-</div>
-<div class="clear-left"></div></div></div><p>Create a local copy of ADI’s kernel tree</p>
+<div class="clear-left"></div></div></div></section>
+<section id="build-the-linux-files">
+<span id="ad9084-ebz-microblaze-linux"></span><h2>Build the Linux files<a class="headerlink" href="#build-the-linux-files" title="Link to this heading"></a></h2>
+<p>Microblaze gnu toolchain from Xilinx is no longer available on gcc.
+Please use gnu tools from Vitis installation as below:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>github-linux-build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/opt/Xilinx/Vitis/2025.1/gnu/microblaze/linux_toolchain/lin64_le/bin/:<span class="nv">$PATH</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>github-linux-build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>microblaze
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~/github-linux-build$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>microblazeel-xilinx-linux-gnu-
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>or alternatively, source the Vivado <strong>settings64.sh</strong> as below:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/Xilinx/Vivado/2025.1/settings64.sh
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>microblaze
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>microblazeel-xilinx-linux-gnu-
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Get Linux kernel source</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/linux.git
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> Cloning into &#39;linux&#39;...
- remote: Counting objects: 2757163, done.
- remote: Compressing objects: 100% (495484/495484), done.
- remote: Total 2757163 (delta 2296596), reused 2687337 (delta 2234506)
- Receiving objects: 100% (2757163/2757163), 782.04 MiB | 1.39 MiB/s, done.
- Resolving deltas: 100% (2296596/2296596), done.
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;linux&#39;...
+remote: Counting objects: 2757163, done.
+remote: Compressing objects: 100% (495484/495484), done.
+remote: Total 2757163 (delta 2296596), reused 2687337 (delta 2234506)
+Receiving objects: 100% (2757163/2757163), 782.04 MiB | 1.39 MiB/s, done.
+Resolving deltas: 100% (2296596/2296596), done.
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><p>Configure the kernel and build it</p>
+<div class="clear-left"></div></div></div><p>Get the Root File-System</p>
+<p>The root file system or rootfs contains everything (besides the Linux kernel itself) needed to support a full Linux system.
+It contains all the (user) applications, configurations, services, data, etc.
+Without the rootfs your Linux system cannot run. You can either just download the pre-build image or
+build it yourself. Instructions can be found here: <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-build/generic/buildroot" target="_blank">Building with buildroot</a></p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>linux
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~/linux$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> --2022-01-18 09:52:08--  https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz
+ Resolving swdownloads.analog.com (swdownloads.analog.com)... 23.63.205.142
+ Connecting to swdownloads.analog.com (swdownloads.analog.com)|23.63.205.142|:443... connected.
+ HTTP request sent, awaiting response... 200 OK
+ Length: 6772207 (6,5M) [application/x-gzip]
+ Saving to: ‘rootfs.cpio.gz’
+
+ rootfs.cpio.gz                                     100%[===============================================================================================================&gt;]   6,46M  3,32MB/s    in 1,9s
+
+ 2022-01-18 09:52:12 (3,32 MB/s) - ‘rootfs.cpio.gz’ saved [6772207/6772207]
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>rootfs.cpio.gz must be placed in the root of your kernel tree. (~/linux/rootfs.cpio.gz)</p>
+</div>
+<p>Configure the Kernel and build it</p>
+<p>The following command shows the general format for the build target name:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>simpleImage.&lt;dts<span class="w"> </span>file<span class="w"> </span>name&gt;
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The &lt;dts file name&gt; does not include the file extension “.dts”.</p>
+</div>
+<p>To see what device-trees for the different FPGA carrier and FMC module combination exist type:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/linux$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>arch/microblaze/boot/dts<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ad9084
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Building the kernel with the default device tree</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>If you wish to use a non-default AD9084 profile,
 follow the steps in the <a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html#ad9084-profile-generator"><span class="std std-ref">AD9084 Profile Generator</span></a>
 before proceeding in order to add the profile to the Linux build.</p>
 </div>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:/github-linux-build/linux$
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>adi_versal_defconfig
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>linux
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~/linux$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>adi_mb_defconfig
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
@@ -625,162 +666,131 @@ before proceeding in order to add the profile to the Linux build.</p>
 <div class="clear-left"></div></div><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:/github-linux-build/linux$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~/linux$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-j16<span class="w"> </span>Image
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-j4<span class="w"> </span>simpleImage.vcu118_ad9084
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> CHK     include/config/kernel.release
- CHK     include/generated/uapi/linux/version.h
- HOSTCC  scripts/basic/fixdep
- HOSTCC  scripts/basic/bin2c
- [ -- snip --]
- CC      init/version.o
- LD      init/built-in.o
- KSYM    .tmp_kallsyms1.o
- KSYM    .tmp_kallsyms2.o
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> SYNC    include/config/auto.conf.cmd
+ CC      scripts/mod/empty.o
+ CC      scripts/mod/devicetable-offsets.s
+ MKELF   scripts/mod/elfconfig.h
+ HOSTCC  scripts/mod/modpost.o
+ HOSTCC  scripts/mod/sumversion.o
+ HOSTCC  scripts/mod/file2alias.o
+ [ --snip-- ]
+ AR      init/built-in.a
+ LD      vmlinux.o
+ MODPOST vmlinux.symvers
+ MODINFO modules.builtin.modinfo
+ GEN     modules.builtin
+ LD      .tmp_vmlinux.kallsyms1
+ KSYMS   .tmp_vmlinux.kallsyms1.S
+ AS      .tmp_vmlinux.kallsyms1.S
+ LD      .tmp_vmlinux.kallsyms2
+ KSYMS   .tmp_vmlinux.kallsyms2.S
+ AS      .tmp_vmlinux.kallsyms2.S
  LD      vmlinux
- SORTEX  vmlinux
+ SORTTAB vmlinux
  SYSMAP  System.map
- OBJCOPY arch/arm64/boot/Image
+ OBJCOPY arch/microblaze/boot/simpleImage.vcu118_ad9084
+ SHIPPED arch/microblaze/boot/simpleImage.vcu118_ad9084.unstrip
+ STRIP   vmlinux arch/microblaze/boot/simpleImage.vcu118_ad9084.strip
+ UIMAGE  arch/microblaze/boot/simpleImage.vcu118_ad9084.ub
+ Image Name:   Linux-5.10.0-97916-g513446e488c3
+ Created:      Tue Jan 18 12:07:35 2022
+ Image Type:   MicroBlaze Linux Kernel Image (uncompressed)
+ Data Size:    18398124 Bytes = 17966.92 KiB = 17.55 MiB
+ Load Address: 80000000
+ Entry Point:  80000000
+ Kernel: arch/microblaze/boot/simpleImage.vcu118_ad9084 is ready  (#3678)
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><p>Build one of the supported devicetrees <code class="docutils literal notranslate"><span class="pre">versal-vck190-reva-ad9084-*.dts</span></code>, such as
-<code class="docutils literal notranslate"><span class="pre">versal-vck190-reva-ad9084-204C-M4-L4-NP16-20p0-4x4.dts</span></code>.</p>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:/github-linux-build/linux$
-</pre></div>
+<div class="clear-left"></div></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The STRIP image found under arch/microblaze/boot/ is the ELF image which can be loaded via the debugger</p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>arch/arm64/boot/dts/xilinx/versal-vck190-reva-ad9084-*.dts
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> arch/arm64/boot/dts/xilinx/versal-vck190-reva-ad9084-204C-M4-L4-NP16-20p0-4x4.dts
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:/github-linux-build/linux$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>xilinx/versal-vck190-reva-ad9084-204C-M4-L4-NP16-20p0-4x4.dtb
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> DTC     arch/arm64/boot/dts/xilinx/versal-vck190-reva-ad9084-204C-M4-L4-NP16-20p0-4x4.dtb
-</pre></div>
-</div>
-<div class="clear-left"></div></div></div><p>Copy the generated files to your SD Card.</p>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:/github-linux-build/linux$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>arch/arm64/boot/Image<span class="w"> </span>/media/BOOT
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:/github-linux-build/linux$
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>arch/arm64/boot/dts/xilinx/versal-vck190-reva-ad9084-204C-M4-L4-NP16-20p0-4x4.dtb<span class="w"> </span>/media/BOOT/system.dtb
-</pre></div>
-</div>
-<div class="clear-left"></div></div></div></section>
+</section>
 <section id="testing">
 <h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
-<p>The following steps are intended for <a class="icon link reference external" href="https://www.xilinx.com/VCK190" target="_blank">VCK190</a> but they mostly apply to
-<a class="icon link reference external" href="https://www.xilinx.com/VPK180" target="_blank">VPK180</a> as well.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/vck190.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/vck190.jpg" />
-<section id="physical-setup">
-<h3>Physical setup<a class="headerlink" href="#physical-setup" title="Link to this heading"></a></h3>
-<ol class="arabic">
-<li><p>Place the pre-built bootfiles (BOOT.BIN, Image, system.dtb, boot.scr) in the root of the SD card’s BOOT partition.</p></li>
-<li><p>Insert the SD card into the FPGA carrier board (J302).</p></li>
-<li><p>Connect USB UART J207 (Type-C USB) to your host PC.</p></li>
-<li><p>(<a class="icon link reference external" href="https://www.xilinx.com/VCK190" target="_blank">VCK190</a> only) Insert System Controller SD card into socket J206.</p></li>
-<li><p>Configure ACAP for SD BOOT (mode SW1[4:1] switch in the position <strong>OFF,OFF,OFF,ON</strong> as seen in the below picture).</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/vck190_sw1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/vck190_sw1.jpg" />
-</li>
-<li><p>Configure System Controller for SD BOOT (mode SW11[4:1] switch in the position <strong>OFF,OFF,OFF,ON</strong> as seen in the below picture).</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/vck190_sw11.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/vck190_sw11.jpg" />
-</li>
-<li><p>Connect <a class="icon adi reference external" href="https://www.analog.com/AD9084" target="_blank">AD9084-FMCA-EBZ</a> to FMCP2 (J53) with FMC+ riser or equivalent.</p></li>
-<li><p>Connect the power supplies to the FPGA carrier board and the AD9084-FMCA-EBZ evaluation board.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/vck190_ad9084_ebz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/vck190_ad9084_ebz.jpg" />
-</li>
-<li><p>Verify VADJ is set to 1.5 V</p></li>
-</ol>
-</section>
-<section id="verify-1-5-v-vadj">
-<h3>Verify 1.5 V VADJ<a class="headerlink" href="#verify-1-5-v-vadj" title="Link to this heading"></a></h3>
-<ol class="arabic">
-<li><p>Connect an Ethernet cable to J307 and also to SYSCTL Ethernet port to access Board Evaluation &amp; Management Tool (BEAM).</p></li>
-<li><p>Turn on the power switch on the FPGA board.</p></li>
-<li><p>Observe kernel and serial console messages on your terminal, both the ACAP UART interface and the System controller.
-(use the first ttyUSB or COM port registered for the ACAP UART interface,
-and try the other 2 to find the one for System Controller)</p></li>
-<li><p>On the System Controller console, a BEAM Tool Web Address should be assigned.
-Go to this web address to set VADJ_FMC to 1.5V.</p></li>
-<li><p>To change VADJ_FMC On BEAM, click “Test The Board”&gt;”Board Settings”&gt;”FMC”.
-Then on “Set VADJ_FMC”, select 1.5V and click “Set”, AD9084 LEDs should turn on immediately.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/beam-home.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/beam-home.jpg" />
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/beam-board-settings.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/beam-board-settings.jpg" />
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/beam-set-vadj.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad9084_ebz/quickstart/versal/beam-set-vadj.jpg" />
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Alternatively to the GUI, you can setup VADJ and reboot with <code class="docutils literal notranslate"><span class="pre">curl</span></code>:</p>
-<div class="code-shell"><div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update according the BEAM Tool Web Address</span>
+<p>First we need to prepare a working directory where we will gather all the required binary files.</p>
+<p>From the HDL build directory locate the system_top.bit and copy it to the working directory.</p>
+<p>From the Linux build directory locate the simpleImage and copy it to the working directory.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>working_dir
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">URL</span><span class="o">=</span><span class="m">128</span>.0.0.84
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>&lt;hdl_repo_dir&gt;/projects/ad9084_ebz/vcu118/ad9084_ebz_vcu118.runs/impl_1/system_top.bit<span class="w"> </span>working_dir
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">until</span><span class="w"> </span>curl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="s1">&#39;http://$URL:50002/cmdquery?sc_cmd=setvoltage&amp;target=VADJ_FMC&amp;params=1.5&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--connect-timeout<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="k">do</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>&lt;linux_repo_dir&gt;/arch/microblaze/boot/simpleImage.vcu118_ad9084.strip<span class="w"> </span>working_dir
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Next step is to program the board with xsct or similar tool</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">until</span><span class="w"> </span>curl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="s1">&#39;http://$URL:50002/cmdquery?sc_cmd=reset&amp;target=&amp;params=&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--connect-timeout<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="k">do</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>connect
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div>
-</li>
-<li><p>On the ACAP UART interface console, reboot the system. After reboot, ad9084 devices should be present.</p></li>
-</ol>
-<div><div class="esd-warning docutils container">
-<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
-Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
 </div>
-</div></section>
-<section id="acap-sdcard-boot-files">
-<h3>ACAP SDcard boot files<a class="headerlink" href="#acap-sdcard-boot-files" title="Link to this heading"></a></h3>
-<p>The files that need to be present on the sdcard BOOT partition are:</p>
-<ul class="simple">
-<li><p>BOOT.BIN</p></li>
-<li><p>Image</p></li>
-<li><p>system.dtb</p></li>
-<li><p>boot.scr</p></li>
-</ul>
-</section>
-<section id="startup">
-<h3>Startup<a class="headerlink" href="#startup" title="Link to this heading"></a></h3>
-<p>Once the physical setup is complete, it is recommended to start a UART session
-to the FPGA carrier board to monitor the boot process.
-Power on the AD9084-FMCA-EBZ board then power on the FPGA carrier board.
-The FPGA carrier board will boot from the SD card and the AD9084-FMCA-EBZ
-evaluation board will be initialized.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>When setting up the UART make sure you connect to the ACAP UART interface and not the System controller.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>fpga<span class="w"> </span>-f<span class="w"> </span>system_top.bit
+</pre></div>
 </div>
-<div class="admonition note">
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>after<span class="w"> </span><span class="m">1000</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>target<span class="w"> </span><span class="m">3</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>dow<span class="w"> </span>simpleImage.vcu118_ad9084.strip
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>after<span class="w"> </span><span class="m">1000</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>con
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>disconnect
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Login Information</p>
 <ul class="simple">
@@ -788,9 +798,6 @@ evaluation board will be initialized.</p>
 <li><p>password: analog</p></li>
 </ul>
 </div>
-</section>
-<section id="boot-messages">
-<h3>Boot messages<a class="headerlink" href="#boot-messages" title="Link to this heading"></a></h3>
 <div><div class="collapsible docutils container">
 <input class="collapsible_input" id="4364e3e845913c5a94cd050b14928ddaa28fd823" name="4364e3e845913c5a94cd050b14928ddaa28fd823" type="checkbox"></input><label for="4364e3e845913c5a94cd050b14928ddaa28fd823"><p>Complete boot log</p>
 <div class="icon"></div></label><div class="collapsible_content docutils container">
@@ -1300,24 +1307,15 @@ iio:device3: axi-ad9084-tx-hpc (buffer capable)
 iio:device3: axi-ad9084-tx-hpc-b
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Even thought this is Linux, this is a persistent file systems. Care should be
-taken not to corrupt the file system – please shut down things, don’t just
-turn off the power switch. Depending on your monitor, the standard power off
-could be hiding. You can do this from the terminal as well with
-<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">shutdown</span> <span class="pre">-h</span> <span class="pre">now</span></code></p>
-</div>
-</section>
-</section>
+<div class="clear-left"></div></div></div></section>
 </section>
 
 
           </div>
               <div class="related">
                 &nbsp;
-    <a href="microblaze.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD9084-FMCA-EBZ Virtex UltraScale+ VCU118/VCU128 Quick Start Guide</a>
-    <a href="agilex.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD9084-FMCA-EBZ Intel Agilex 7 Quick Start Guide</a>
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Quickstart</a>
+    <a href="versal.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD9084-FMCA-EBZ Versal ACAP VCK190/VPK180 Quick Start Guide</a>
               </div>
           
         </div>
