@@ -100,7 +100,10 @@ This overview covers:
 
 **Architecture** explains the full-stack architecture and design philosophy,
 showing how data flows from hardware through HDL, drivers, libraries, and
-applications.
+applications. Includes detailed diagrams of ecosystem interdependencies,
+demonstrating how HDL serves as a common foundation for both FPGA (Linux)
+and microcontroller (no-OS) paths, with host tools working uniformly across
+both through libiio.
 
 **Components** provides detailed information about each major ecosystem component:
 HDL, Linux kernel drivers, libiio, no-OS, pyadi-iio, and applications.

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800">
+  <defs>
+    <style>
+      .box { stroke: #333; stroke-width: 2; }
+      .box-text { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+      .box-desc { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+      .arrow { stroke: #666; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .arrow-bidirectional { stroke: #666; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); marker-start: url(#arrowhead-start); }
+      .arrow-label { font-family: Arial, sans-serif; font-size: 10px; fill: #444; font-weight: bold; }
+      .title-text { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .subtitle-text { font-family: Arial, sans-serif; font-size: 14px; fill: #666; }
+      .section-label { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #888; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <marker id="arrowhead-start" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto">
+      <polygon points="10 0, 0 3, 10 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="30" class="title-text" text-anchor="middle">ADI Ecosystem Interdependencies</text>
+  <text x="500" y="50" class="subtitle-text" text-anchor="middle">How HDL, no-OS, Linux, and Host Tools Work Together</text>
+
+  <!-- HDL Common Core (Center Top) -->
+  <rect x="350" y="80" width="300" height="100" rx="5" class="box" fill="#c8e6c9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="500" y="110" class="box-text" text-anchor="middle">HDL Repository</text>
+  <text x="500" y="130" class="box-desc" text-anchor="middle">Common FPGA Design Foundation</text>
+  <text x="370" y="150" class="box-desc">• Reference designs (projects/)</text>
+  <text x="370" y="165" class="box-desc">• IP cores (JESD204, SPI Engine, DMA)</text>
+
+  <!-- Left Branch: no-OS Path -->
+  <rect x="50" y="250" width="350" height="120" rx="5" class="box" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+  <text x="225" y="280" class="box-text" text-anchor="middle">no-OS Firmware (Microcontroller)</text>
+  <text x="225" y="300" class="box-desc" text-anchor="middle">Runs on ARM Cortex-M (STM32, MAX32, etc.)</text>
+  <text x="70" y="322" class="box-desc" font-weight="bold">Uses HDL for:</text>
+  <text x="90" y="337" class="box-desc">• SPI Engine driver patterns</text>
+  <text x="90" y="352" class="box-desc">• Device initialization sequences</text>
+  <text x="250" y="322" class="box-desc" font-weight="bold">Provides:</text>
+  <text x="270" y="337" class="box-desc">• TinyIIO server</text>
+  <text x="270" y="352" class="box-desc">• Bare-metal drivers</text>
+
+  <!-- Right Branch: Linux Path -->
+  <rect x="600" y="250" width="350" height="120" rx="5" class="box" fill="#e3f2fd" stroke="#1565c0" stroke-width="3"/>
+  <text x="775" y="280" class="box-text" text-anchor="middle">Linux Kernel (FPGA/SBC)</text>
+  <text x="775" y="300" class="box-desc" text-anchor="middle">Runs on Zynq/ZynqMP/Raspberry Pi</text>
+  <text x="620" y="322" class="box-desc" font-weight="bold">Uses HDL for:</text>
+  <text x="640" y="337" class="box-desc">• AXI memory maps</text>
+  <text x="640" y="352" class="box-desc">• Devicetree generation</text>
+  <text x="800" y="322" class="box-desc" font-weight="bold">Provides:</text>
+  <text x="820" y="337" class="box-desc">• IIO kernel drivers</text>
+  <text x="820" y="352" class="box-desc">• DMA buffers</text>
+
+  <!-- Arrows from HDL to no-OS and Linux -->
+  <line x1="450" y1="180" x2="225" y2="250" class="arrow"/>
+  <text x="320" y="210" class="arrow-label">Shares design patterns</text>
+  <text x="320" y="225" class="arrow-label">&amp; initialization code</text>
+
+  <line x1="550" y1="180" x2="775" y2="250" class="arrow"/>
+  <text x="630" y="210" class="arrow-label">Generates devicetree</text>
+  <text x="630" y="225" class="arrow-label">&amp; AXI addresses</text>
+
+  <!-- Host PC Section -->
+  <rect x="200" y="450" width="600" height="80" rx="5" class="box" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="3"/>
+  <text x="500" y="480" class="box-text" text-anchor="middle">Host PC Development Environment</text>
+  <text x="500" y="500" class="box-desc" text-anchor="middle">Windows / Linux / macOS</text>
+  <text x="220" y="520" class="box-desc">• Python • MATLAB • C/C++ • Web browsers • IDEs</text>
+
+  <!-- libiio Bridge Layer -->
+  <rect x="300" y="560" width="400" height="60" rx="5" class="box" fill="#bbdefb" stroke="#0277bd" stroke-width="2"/>
+  <text x="500" y="585" class="box-text" text-anchor="middle">libiio (Hardware Abstraction)</text>
+  <text x="500" y="605" class="box-desc" text-anchor="middle">Unified API supporting multiple backends: local, usb, ip, serial</text>
+
+  <!-- Arrows from no-OS and Linux to Host PC -->
+  <line x1="225" y1="370" x2="350" y2="450" class="arrow"/>
+  <text x="250" y="405" class="arrow-label">serial: backend</text>
+  <text x="250" y="420" class="arrow-label">(USB/UART)</text>
+
+  <line x1="775" y1="370" x2="650" y2="450" class="arrow"/>
+  <text x="680" y="405" class="arrow-label">local:/ip: backend</text>
+  <text x="680" y="420" class="arrow-label">(direct or network)</text>
+
+  <!-- Arrow from Host to libiio -->
+  <line x1="500" y1="530" x2="500" y2="560" class="arrow"/>
+
+  <!-- Host Tools (Bottom) -->
+  <rect x="80" y="650" width="180" height="110" rx="5" class="box" fill="#ffebee"/>
+  <text x="170" y="675" class="box-text" text-anchor="middle">Python Tools</text>
+  <text x="100" y="695" class="box-desc">• pyadi-iio</text>
+  <text x="100" y="710" class="box-desc">• Jupyter notebooks</text>
+  <text x="100" y="725" class="box-desc">• Custom scripts</text>
+  <text x="100" y="740" class="box-desc">• Data analysis</text>
+
+  <rect x="290" y="650" width="180" height="110" rx="5" class="box" fill="#ffebee"/>
+  <text x="380" y="675" class="box-text" text-anchor="middle">GUI Applications</text>
+  <text x="310" y="695" class="box-desc">• Scopy</text>
+  <text x="310" y="710" class="box-desc">• IIO Oscilloscope</text>
+  <text x="310" y="725" class="box-desc">• Custom GUIs</text>
+  <text x="310" y="740" class="box-desc">• Web dashboards</text>
+
+  <rect x="500" y="650" width="180" height="110" rx="5" class="box" fill="#ffebee"/>
+  <text x="590" y="675" class="box-text" text-anchor="middle">MATLAB/Simulink</text>
+  <text x="520" y="695" class="box-desc">• Transceiver Toolbox</text>
+  <text x="520" y="710" class="box-desc">• HSX Toolbox</text>
+  <text x="520" y="725" class="box-desc">• Algorithm dev</text>
+  <text x="520" y="740" class="box-desc">• HIL simulation</text>
+
+  <rect x="710" y="650" width="180" height="110" rx="5" class="box" fill="#ffebee"/>
+  <text x="800" y="675" class="box-text" text-anchor="middle">Build Tools</text>
+  <text x="730" y="695" class="box-desc">• Vivado/Quartus</text>
+  <text x="730" y="710" class="box-desc">• GCC toolchains</text>
+  <text x="730" y="725" class="box-desc">• STM32CubeIDE</text>
+  <text x="730" y="740" class="box-desc">• Kernel builds</text>
+
+  <!-- Arrows from libiio to tools -->
+  <line x1="400" y1="620" x2="170" y2="650" class="arrow"/>
+  <line x1="450" y1="620" x2="380" y2="650" class="arrow"/>
+  <line x1="550" y1="620" x2="590" y2="650" class="arrow"/>
+
+  <!-- Note box -->
+  <rect x="50" y="100" width="250" height="60" rx="5" fill="#fff9c4" stroke="#f57f17" stroke-width="2"/>
+  <text x="175" y="120" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; fill: #f57f17;" text-anchor="middle">Key Insight</text>
+  <text x="175" y="140" class="box-desc" text-anchor="middle">HDL is the common foundation</text>
+  <text x="175" y="155" class="box-desc" text-anchor="middle">for both FPGA (Linux) and MCU</text>
+
+  <!-- Bidirectional arrow between HDL and Build Tools -->
+  <line x1="650" y1="130" x2="800" y2="650" class="arrow" stroke-dasharray="5,5"/>
+  <text x="700" y="380" class="arrow-label" style="font-style: italic;">Built using</text>
+</svg>

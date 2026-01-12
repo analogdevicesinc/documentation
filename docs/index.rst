@@ -29,6 +29,12 @@ Rather than reinventing the wheel, we integrate with established open-source
 ecosystems like the Linux kernel, Python scientific computing, and MATLAB,
 allowing you to focus on your application while relying on proven infrastructure.
 
+.. figure:: ecosystem-intro.svg
+   :align: center
+   :width: 600px
+
+   The ADI ecosystem provides a complete stack from hardware to applications
+
 **New to the ecosystem?** Start with the :doc:`Ecosystem Overview </overview/index>`
 to understand how all the pieces fit together, or jump directly to a
 :doc:`workflow example </overview/workflows>` that matches your use case.
@@ -74,33 +80,33 @@ Contents
 
 .. toctree::
    :caption: Devices
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    tools/*/index
 
 .. toctree::
    :caption: Apps & Solutions
-   :maxdepth: 4
+   :maxdepth: 2
    :glob:
 
    solutions/*/index
 
 .. toctree::
    :caption: University Program
-   :maxdepth: 4
+   :maxdepth: 2
 
    university/index
 
 .. toctree::
    :caption: Learning
-   :maxdepth: 4
+   :maxdepth: 2
 
    learning/index
 
 .. toctree::
    :caption: Contributing and Guidelines
-   :maxdepth: 4
+   :maxdepth: 2
    :glob:
 
    contributing/*

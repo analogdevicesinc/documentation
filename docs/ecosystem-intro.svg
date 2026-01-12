@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <style>
+      .box { stroke: #333; stroke-width: 2; }
+      .box-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .box-desc { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+      .arrow { stroke: #666; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Hardware Layer -->
+  <rect x="100" y="40" width="600" height="70" rx="5" class="box" fill="#d7ccc8"/>
+  <text x="400" y="65" class="box-text" text-anchor="middle" style="font-size: 15px;">ADI Hardware</text>
+  <text x="400" y="90" class="box-desc" text-anchor="middle">ADCs, DACs, Transceivers, Sensors, Signal Chain Components</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="110" x2="400" y2="140" class="arrow"/>
+
+  <!-- HDL and Firmware Layer -->
+  <rect x="100" y="140" width="600" height="70" rx="5" class="box" fill="#c8e6c9"/>
+  <text x="400" y="165" class="box-text" text-anchor="middle" style="font-size: 15px;">HDL and Firmware</text>
+  <text x="400" y="190" class="box-desc" text-anchor="middle">FPGA Reference Designs, IP Cores, Bare-Metal Drivers</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="210" x2="400" y2="240" class="arrow"/>
+
+  <!-- Drivers and Libraries Layer -->
+  <rect x="100" y="240" width="600" height="70" rx="5" class="box" fill="#bbdefb"/>
+  <text x="400" y="265" class="box-text" text-anchor="middle" style="font-size: 15px;">Drivers and Libraries</text>
+  <text x="400" y="290" class="box-desc" text-anchor="middle">Linux IIO Drivers, libiio, Hardware Abstraction</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="310" x2="400" y2="340" class="arrow"/>
+
+  <!-- Applications Layer -->
+  <rect x="100" y="340" width="600" height="70" rx="5" class="box" fill="#f3e5f5"/>
+  <text x="400" y="365" class="box-text" text-anchor="middle" style="font-size: 15px;">Applications and Tools</text>
+  <text x="400" y="390" class="box-desc" text-anchor="middle">Python, MATLAB, Scopy, IIO Oscilloscope, Custom Applications</text>
+
+  <!-- Bottom note -->
+  <text x="400" y="440" class="box-desc" text-anchor="middle" style="font-style: italic; fill: #888;">Complete stack from silicon to software</text>
+</svg>
