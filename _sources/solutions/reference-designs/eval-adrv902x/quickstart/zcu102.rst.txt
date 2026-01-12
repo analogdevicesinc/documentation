@@ -1,10 +1,12 @@
-.. _adrv902x quickstart zynqmp:
+.. _adrv902x quickstart zcu102:
 
 ZCU102 Quick start
 ===============================================================================
 
-.. image:: ../../images/adrv9026_zcu102_setup.jpg
-   :width: 800
+.. image:: ../../images/zcu102.jpg
+   :width: 900
+
+.. esd-warning::
 
 This guide provides quick instructions on how to setup the
 :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` on:
@@ -61,28 +63,27 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/zcu102.jpg
-   :width: 900
-
-.. esd-warning::
+.. image:: ../../images/adrv9026_zcu102_setup.jpg
+   :width: 800
 
 Follow the steps in this order, to avoid damaging the components:
 
 #. Connect the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` FMC board to the
-   FPGA carrier **HPC1** FMC1 socket
+   ZCU102 **HPC1** FMC1 socket
 #. Insert SD card into the SD card socket on the FPGA
 #. Configure :xilinx:`ZCU102` for SD card boot mode (mode SW6[4:1] switch in
    the position **OFF,OFF,OFF,ON** as seen in the below picture)
+
+   .. image:: ../../images/zcu102_1p0_bootmode.jpg
+      :width: 400
+
 #. Plug-in an Ethernet cable from your router/switch to the Ethernet port on
    the FPGA board
-#. Connect USB UART J83 (Micro USB) to your host PC
+#. Connect USB UART J83 (Micro-USB) to your host PC
 #. (Optional) Connect a monitor to the FPGA by HDMI, and a mouse and a keyboard
 #. Turn on the power switch on the FPGA board
 #. Observe Kernel and serial console output messages on your terminal (use
    the first ttyUSB or COM port registered)
-
-.. image:: ../../images/zcu102_1p0_bootmode.jpg
-   :width: 400
 
 Boot messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1009,16 +1010,13 @@ To reboot the system, run:
    be taken not to corrupt the file system -- please shut down things, don't
    just turn off the power switch. Depending on your monitor, the standard
    power off could be hiding. You can do this from the terminal as well with
-   :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
+   :code:`sudo shutdown -h now` or the above-mentioned command for powering
+   off.
 
 .. include:: ../../common/using-iio-osc.rst
 
 About the IIO devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-..
-   This section is with ^^^ because the last section from using-iio-osc.rst which
-   is included previously, has the last section as ^^^.
 
 Main receivers RX1, RX2, RX3, and RX4 are handled by the axi-adrv9025-rx-hpc IIO device.
 
@@ -1075,19 +1073,17 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/zcu102.jpg
-   :width: 900
-
-.. esd-warning::
+.. image:: ../../images/adrv9026_zcu102_setup.jpg
+   :width: 800
 
 Follow the steps in this order, to avoid damaging the components:
 
 #. Connect the :adi:`EVAL-ADRV9026/ADRV9029 <EVAL-ADRV9026>` FMC board to the
-   FPGA carrier **HPC1** FMC1 socket
+   ZCU102 **HPC1** FMC1 socket
 #. Configure :xilinx:`ZCU102` for JTAG boot mode (mode SW6[4:1] switch in
    the position **ON,ON,ON,ON**)
-#. Connect USB UART J83 (Micro USB) to your host PC
-#. Connecy USB JTAG (Micro USB) to your host PC
+#. Connect USB UART J83 (Micro-USB) to your host PC
+#. Connect USB JTAG (Micro-USB) to your host PC
 #. (Optional) Connect a monitor to the FPGA by HDMI, and a mouse and a keyboard
 #. Turn on the power switch on the FPGA board
 #. Observe console output messages on your terminal (use the first ttyUSB or
@@ -1104,3 +1100,6 @@ connected to the proper ttyUSB or COM port:
    ::
 
       Xilinx Zynq MP First Stage Boot Loader
+
+..
+    TBD

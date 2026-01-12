@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="This guide provides quick instructions on how to setup the EVAL-ADRV9026/ADRV9029 on:" name="description" />
+<meta content="All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection. Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device." name="description" />
 
     <title>ZCU102 Quick start &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
@@ -14,7 +14,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="EVAL-CN0503-ARDZ" href="../../eval-cn0503-ardz/index.html" />
-    <link rel="prev" title="VCK190 Quick start" href="versal.html" />
+    <link rel="prev" title="VCK190 Quick start" href="vck190.html" />
    
   
   
@@ -399,11 +399,11 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19" id="toctree-collapse-12-19" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">ADRV902X</a><label for="toctree-collapse-12-19"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19" id="toctree-collapse-12-19" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-ADRV902X</a><label for="toctree-collapse-12-19"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19-1" id="toctree-collapse-12-19-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quick start</a><label for="toctree-collapse-12-19-1"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="versal.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vck190.html">On VCK190</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">On ZCU102</a></li>
 </ul>
 </li>
@@ -496,15 +496,19 @@ Content on this topic
       <div class="documentwrapper">
         <div class="bodywrapper" id="top-anchor">
           <div class="body-header">
-  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">ADRV902X</a></li><li><a href="index.html">Quick start</a></li></ol></nav>
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-ADRV902X</a></li><li><a href="index.html">Quick start</a></li></ol></nav>
 </div>
           <div class="body" role="main">
             
   <section id="zcu102-quick-start">
-<span id="adrv902x-quickstart-zynqmp"></span><h1>ZCU102 Quick start<a class="headerlink" href="#zcu102-quick-start" title="Link to this heading"></a></h1>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/adrv9026_zcu102_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/adrv9026_zcu102_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/adrv9026_zcu102_setup.jpg" width="800" />
+<span id="adrv902x-quickstart-zcu102"></span><h1>ZCU102 Quick start<a class="headerlink" href="#zcu102-quick-start" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102.jpg" width="900" />
 </a>
-<p>This guide provides quick instructions on how to setup the
+<div><div class="esd-warning docutils container">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><p>This guide provides quick instructions on how to setup the
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9026" target="_blank">EVAL-ADRV9026/ADRV9029</a> on:</p>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a></p></li>
@@ -555,29 +559,26 @@ here:</p>
 <h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
 <section id="creating-the-setup">
 <h4>Creating the setup<a class="headerlink" href="#creating-the-setup" title="Link to this heading"></a></h4>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102.jpg" width="900" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/adrv9026_zcu102_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/adrv9026_zcu102_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/adrv9026_zcu102_setup.jpg" width="800" />
 </a>
-<div><div class="esd-warning docutils container">
-<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
-Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
-</div>
-</div><p>Follow the steps in this order, to avoid damaging the components:</p>
-<ol class="arabic simple">
+<p>Follow the steps in this order, to avoid damaging the components:</p>
+<ol class="arabic">
 <li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9026" target="_blank">EVAL-ADRV9026/ADRV9029</a> FMC board to the
-FPGA carrier <strong>HPC1</strong> FMC1 socket</p></li>
+ZCU102 <strong>HPC1</strong> FMC1 socket</p></li>
 <li><p>Insert SD card into the SD card socket on the FPGA</p></li>
 <li><p>Configure <a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> for SD card boot mode (mode SW6[4:1] switch in
-the position <strong>OFF,OFF,OFF,ON</strong> as seen in the below picture)</p></li>
+the position <strong>OFF,OFF,OFF,ON</strong> as seen in the below picture)</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102_1p0_bootmode.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102_1p0_bootmode.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102_1p0_bootmode.jpg" width="400" />
+</a>
+</li>
 <li><p>Plug-in an Ethernet cable from your router/switch to the Ethernet port on
 the FPGA board</p></li>
-<li><p>Connect USB UART J83 (Micro USB) to your host PC</p></li>
+<li><p>Connect USB UART J83 (Micro-USB) to your host PC</p></li>
 <li><p>(Optional) Connect a monitor to the FPGA by HDMI, and a mouse and a keyboard</p></li>
 <li><p>Turn on the power switch on the FPGA board</p></li>
 <li><p>Observe Kernel and serial console output messages on your terminal (use
 the first ttyUSB or COM port registered)</p></li>
 </ol>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102_1p0_bootmode.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102_1p0_bootmode.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102_1p0_bootmode.jpg" width="400" />
-</a>
 </section>
 <section id="boot-messages">
 <h4>Boot messages<a class="headerlink" href="#boot-messages" title="Link to this heading"></a></h4>
@@ -1512,7 +1513,8 @@ message to be printed, then power off the FPGA board from the switch as well.</p
 be taken not to corrupt the file system – please shut down things, don’t
 just turn off the power switch. Depending on your monitor, the standard
 power off could be hiding. You can do this from the terminal as well with
-<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">shutdown</span> <span class="pre">-h</span> <span class="pre">now</span></code> or the above-mentioned command for powering off.</p>
+<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">shutdown</span> <span class="pre">-h</span> <span class="pre">now</span></code> or the above-mentioned command for powering
+off.</p>
 </div>
 </section>
 </section>
@@ -1600,20 +1602,16 @@ will include Vivado as well)</p></li>
 <h3>Testing<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <section id="id5">
 <h4>Creating the setup<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/zcu102.jpg" width="900" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/adrv9026_zcu102_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/adrv9026_zcu102_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/adrv9026_zcu102_setup.jpg" width="800" />
 </a>
-<div><div class="esd-warning docutils container">
-<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
-Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
-</div>
-</div><p>Follow the steps in this order, to avoid damaging the components:</p>
+<p>Follow the steps in this order, to avoid damaging the components:</p>
 <ol class="arabic simple">
 <li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9026" target="_blank">EVAL-ADRV9026/ADRV9029</a> FMC board to the
-FPGA carrier <strong>HPC1</strong> FMC1 socket</p></li>
+ZCU102 <strong>HPC1</strong> FMC1 socket</p></li>
 <li><p>Configure <a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> for JTAG boot mode (mode SW6[4:1] switch in
 the position <strong>ON,ON,ON,ON</strong>)</p></li>
-<li><p>Connect USB UART J83 (Micro USB) to your host PC</p></li>
-<li><p>Connecy USB JTAG (Micro USB) to your host PC</p></li>
+<li><p>Connect USB UART J83 (Micro-USB) to your host PC</p></li>
+<li><p>Connect USB JTAG (Micro-USB) to your host PC</p></li>
 <li><p>(Optional) Connect a monitor to the FPGA by HDMI, and a mouse and a keyboard</p></li>
 <li><p>Turn on the power switch on the FPGA board</p></li>
 <li><p>Observe console output messages on your terminal (use the first ttyUSB or
@@ -1641,7 +1639,7 @@ connected to the proper ttyUSB or COM port:</p>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="versal.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">VCK190 Quick start</a>
+    <a href="vck190.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">VCK190 Quick start</a>
     <a href="../../eval-cn0503-ardz/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVAL-CN0503-ARDZ</a>
               </div>
           
