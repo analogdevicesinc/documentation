@@ -21,9 +21,9 @@ environment/kit.
 Maintenance is an ADI burden. Customer don't start their designs at the same
 time, and want to use the latest and greatest.
 
-**COS Reference Design "Donut Hole" Strategy**
+**COS Reference Design Integrated System Strategy**
 
-*Surround others processor, FPGA, micro ADI components*
+*Surround customer's processor, FPGA, or microcontroller with ADI components*
 *Reference design creates stickiness*
 *Customer experiences low friction*
 *Leverage ecosystems*

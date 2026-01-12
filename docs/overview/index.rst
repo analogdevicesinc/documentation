@@ -22,13 +22,13 @@ high-speed FPGA-based data acquisition system, a precision embedded measurement
 device, or a prototyping platform on a Raspberry Pi, the ADI ecosystem provides
 the building blocks you need.
 
-The Donut Hole Strategy
+The Integrated System Approach
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the heart of the ADI approach is what we call the **"Donut Hole Strategy"**:
-we surround your processor, FPGA, or microcontroller (the "hole") with best-in-class
-ADI analog and mixed-signal components, along with all the software and HDL support
-needed to make them work seamlessly together.
+At the heart of the ADI approach is an **integrated system philosophy**: we surround
+your processor, FPGA, or microcontroller with best-in-class ADI analog and mixed-signal
+components, along with all the software and HDL support needed to make them work
+seamlessly together.
 
 Rather than reinventing the wheel, we leverage established ecosystems:
 

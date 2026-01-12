@@ -488,7 +488,7 @@ Why the IIO Framework?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `Industrial I/O (IIO) <https://www.kernel.org/doc/html/latest/driver-api/iio/index.html>`_
-subsystem is central to the ADI architecture. Why IIO?
+subsystem is central to the ADI architecture. It is not the only kernel subsystem that ADI uses or authors drivers within, but it is the most widely applicable for many ADI products to date. IIO is used for a number of reasons:
 
 **Standard Interface:**
 All ADI devices present a uniform interface, whether they're ADCs, DACs, IMUs,
@@ -527,7 +527,7 @@ Choosing the Right Platform
      - Best For
      - Advantages
      - Considerations
-   * - **FPGA (Zynq, ZynqMP)**
+   * - **FPGA (Zynq, ZynqMP, Cyclone, Stratix)**
      - High-speed data converters, custom signal processing, multiple devices
      - Parallel processing, low latency, flexible I/O, Linux + FPGA fabric
      - Higher cost, power, complexity; requires HDL knowledge

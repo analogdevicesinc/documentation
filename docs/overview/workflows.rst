@@ -101,8 +101,6 @@ The ``adi.ad9081`` Python class:
    mxfe = adi.ad9081(uri="local:")
 
    # Configure receiver
-   mxfe.rx_sample_rate = 4000000000  # 4 GSPS
-   mxfe.rx_rf_bandwidth = 1000000000  # 1 GHz
    mxfe.rx_enabled_channels = [0, 1]  # Enable 2 channels
    mxfe.rx_buffer_size = 2**16
 
