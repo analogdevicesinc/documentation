@@ -10,8 +10,8 @@ to program the bitstream, run a no-OS program or boot a Linux distribution.
 
 .. toctree::
 
-   On VCK190 <versal>
-   On ZCU102 <zynqmp>
+   On VCK190 <vck190>
+   On ZCU102 <zcu102>
 
 .. _adrv902x carriers:
 
@@ -80,11 +80,10 @@ connects to the HPC1 connector (unless otherwise noted). The carrier setup
 requires power, UART (115200), Ethernet (Linux), HDMI (if available) and/or
 JTAG (no-OS) connections. A few typical setups are shown below.
 
-ZCU102 + EVAL-ADRV9026/ADRV9029
+A10SoC + EVAL-ADRV9026/ADRV9029
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../../images/adrv9026_zcu102_setup.jpg
-   :width: 800
+TO BE ADDED
 
 VCK190 + EVAL-ADRV9026/ADRV9029
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,15 +91,16 @@ VCK190 + EVAL-ADRV9026/ADRV9029
 .. image:: ../../images/adrv9026_vck190_setup.jpg
    :width: 800
 
-A10SoC + EVAL-ADRV9026/ADRV9029
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-TO BE ADDED
-
 VCU118 + EVAL-ADRV9026/ADRV9029
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TO BE ADDED
+
+ZCU102 + EVAL-ADRV9026/ADRV9029
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../../images/adrv9026_zcu102_setup.jpg
+   :width: 800
 
 Unboxing guide
 -------------------------------------------------------------------------------

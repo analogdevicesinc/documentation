@@ -47,6 +47,33 @@
                 "user-guide"
             ]
         },
+        "EVAL-AD4060/AD4062-ARDZ": {
+            "docname": "documentation/solutions/reference-designs/ad4062-ardz/index",
+            "description": "",
+            "include": {
+                "documentation": {
+                    "solutions/reference-designs/ad4062-ardz": {
+                        "name": "User guide"
+                    }
+                },
+                "hdl": {
+                    "projects/ad4062_ardz": {
+                        "name": "HDL Project (ad4062_ardz)"
+                    }
+                },
+                "no-OS": {
+                    "drivers/adc/ad405x": {
+                        "name": "no-OS driver (ad405x)"
+                    }
+                }
+            },
+            "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/dev_workshops/docs/solutions/reference-designs/ad4062-ardz/eval-angle.png",
+            "subtitle": "Evaluating the AD4060/AD4062 Compact, Low Power, 12-Bit/16-Bit, 2 MSPS Easy Drive SAR ADCs",
+            "label": [
+                "eval",
+                "user-guide"
+            ]
+        },
         "EVAL-ADXL355-PMDZ": {
             "docname": "documentation/solutions/reference-designs/adxl355-pmdz/index",
             "description": "",
