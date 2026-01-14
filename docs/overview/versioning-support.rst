@@ -21,6 +21,17 @@ helps you select compatible versions and plan upgrades.
 Component Versioning Strategies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Across the different ADI source code repositories, there will be a concept of a release. This primarily relates to a a cross component release where components are built and tested together to ensure compatibility. This is done through a single Linux distribution (Kuiper Linux) that bundles specific versions of each component. no-OS releases follow this same cadence but are tested separately since they run in different environments.
+
+The Kuiper Linux distribution release name is primarily tied to the version of AMD tools (Vivado), which the HDL release is also tied to. This is due to the historical supported hardware platforms that have been supported by ADI since 2014. Therefore, a release with the name ``2023_r2`` indicates that it is tied to AMD Vivado 2023.2 and Vitis 2023.2. The HDL, Linux, and no-OS repositories will all create release tags and branches with similar names.
+
+Outside of HDL, Linux, and no-OS, other components such as libiio and pyadi-iio have their own independent versioning strategies that are not tied to the Kuiper Linux or HDL release names. However, for each Kuiper Linux release, specific versions of libiio and pyadi-iio are bundled and tested together to ensure compatibility. These are documented in the Kuiper Linux release notes.
+
+```{note}
+In 2026, new release naming will be more generic to denote the year and not be as strictly tied to a version of AMD tools.
+```
+
+
 HDL (Hardware Description Language)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -28,7 +39,7 @@ HDL (Hardware Description Language)
 
 **Strategy:**
 
-- Quarterly releases (r1, r2, r3, r4 each year)
+- Bi-annual releases
 - Git tags for each release
 - Branches for Long-Term Support (LTS) versions
 - ``main`` branch tracks latest development
@@ -61,13 +72,14 @@ Linux Kernel Drivers
 - ADI patches applied on top for new features
 - Drivers upstreamed to mainline when stable
 - LTS kernels (5.15, 6.1, 6.6) recommended for production
+- ``main`` branch uses AMD/Xilinx as upstream base. See Linux README for details.
 
 **What Changes:**
 
-- New IIO drivers
+- New drivers
 - Devicetree bindings
 - Bug fixes and optimizations
-- JESD204 framework updates
+- Documentation updates
 
 **Finding Version:**
 
@@ -178,7 +190,7 @@ Kuiper Linux
 
 **Strategy:**
 
-- Annual releases (r1, r2)
+- Bi-annual releases (r1, r2)
 - Debian-based, tracks Debian stable
 - Bundles specific versions of ADI tools
 - Rolling updates via ``apt`` between releases
@@ -203,6 +215,10 @@ Kuiper Linux
 
 Version Compatibility Matrix
 -------------------------------------------------------------------------------
+
+```{warning}
+THIS IS A PLACEHOLDER TABLE. PLEASE UPDATE WITH ACTUAL TESTED VERSIONS.
+```
 
 The following table shows tested and recommended version combinations:
 
@@ -324,6 +340,10 @@ Release Cadence and Planning
 Typical Release Schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+```{warning}
+THIS IS A PLACEHOLDER SCHEDULE. ACTUAL DATES MAY VARY.
+```
+
 .. list-table::
    :header-rows: 1
    :widths: 20 25 55
@@ -353,26 +373,12 @@ Typical Release Schedule
      - Quarterly-Biannual
      - Independent release cycle
 
-Long-Term Support (LTS)
+Support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**What is LTS?**
+Critical fixes may be backported to the current release branch. Older releases will not receive new features or updates. It is advised to request support for the latest stable release, as fixes are added there first. As newer releases become available, older release support is phased out and will have limited assistance.
 
-Long-Term Support versions are maintained with bug fixes and security updates
-for extended periods, without adding new features that might introduce regressions.
-
-**LTS Versions:**
-
-- **Linux Kernel:** 5.15 LTS (until Dec 2026), 6.1 LTS (until Dec 2026), 6.6 LTS (until Dec 2026)
-- **HDL:** Certain releases designated as LTS (e.g., 2024_r1), backport critical fixes
-- **libiio:** Pre-v1.0 releases maintained as stable
-
-**When to Use LTS:**
-
-- Production systems requiring stability
-- Long product lifecycles (5+ years)
-- Regulated industries (medical, aerospace)
-- When you can't afford frequent updates
+When asking for support, please specify which release you are using (e.g., Kuiper Linux 2024_r1, HDL 2024_r2, libiio v0.26) to get the most accurate help. If you are using development branches (``main``), be aware that these may have bugs and are not guaranteed stable.
 
 **When to Use Latest:**
 
@@ -510,7 +516,7 @@ What to Include When Asking for Help
 
 **Good Example:**
 
-   *"I'm using AD4080 with STM32 Nucleo-H563ZI running no-OS 2024_r1 firmware.
+   *"I'm using AD4080 with STM32 Nucleo-H563ZI running no-OS 2023_r2 firmware.
    When I try to connect via serial from my Ubuntu 22.04 host with libiio 0.26,
    I get 'Error: no device found'. Output of check_versions.sh attached.
    iio_info -u local: works on the host (finds CPU temp sensor). The STM32
