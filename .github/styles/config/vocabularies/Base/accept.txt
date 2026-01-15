@@ -81,15 +81,3 @@ kbps
 [Ww]ideband
 [Tt]ransmit
 
-# Passiv allow
-is rated
-is kept
-are highlighted
-are prefixed
-be adjusted
-in order to
-are based
-is delivered
-be used
-be powered
-is supported
