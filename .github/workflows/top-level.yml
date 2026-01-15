@@ -64,7 +64,7 @@ jobs:
             echo "$file"
             vale --config=.github/styles/$1 --output=JSON  $file |  \
               jq -r 'to_entries[] | .key as $file | .value[] |
-              "::\(.Severity) file=\($file),line=\(.Line),col=\(.Span[0])::vale:\(.Check):\($file):\(.Line):\(.Span[0]) \(.Message)"'
+              "\($file):\(.Line):\(.Span[0])\n::\(.Severity) file=\($file),line=\(.Line),col=\(.Span[0])::vale:\(.Check):\(.Span[0]) \(.Message)"'
           done <<< "$files"
         }
 
