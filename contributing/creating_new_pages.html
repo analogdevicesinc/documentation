@@ -662,14 +662,14 @@ are not “applying” to the documentation.
 Just rebuild the whole doc with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">html</span></code> if the output is confusing.</p>
 </div>
 <p>Even better than having to run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> at every edit, you can leverage
-<a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/cli.html#author-mode" target="_blank" title="(in Doctools v0.4.30)"><span>Why was Author Mode renamed to Serve?</span></a> to have a live-updating instance of the doc,
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/cli.html#author-mode" target="_blank" title="(in Doctools v0.4.32)"><span>Why was Author Mode renamed to Serve?</span></a> to have a live-updating instance of the doc,
 you just need to save the file and the build will be triggered automatically.</p>
 <section id="adding-images-and-other-binary-files">
 <h3>Adding images and other binary files<a class="headerlink" href="#adding-images-and-other-binary-files" title="Link to this heading"></a></h3>
 <p>As described in <a class="reference internal" href="forking_publishing.html#forking-publishing"><span class="std std-ref">Forking and publishing</span></a>, this repository leverages
 <a class="icon link reference external" href="https://git-lfs.com/" target="_blank">git-lfs</a> to keep clone time low and storage space
 in check.
-It also recommends setting <code class="docutils literal notranslate"><span class="pre">--skip-smudge</span></code> globally and let <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/cli.html#serve" target="_blank" title="(in Doctools v0.4.30)"><span>Serve</span></a>
+It also recommends setting <code class="docutils literal notranslate"><span class="pre">--skip-smudge</span></code> globally and let <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/cli.html#serve" target="_blank" title="(in Doctools v0.4.32)"><span>Serve</span></a>
 manage them for you.</p>
 <p>When adding images and other binary files, if the extension matches the <a class="icon git reference external" href="https://github.com/analogdevicesinc/documentation/tree/main/.gitattributes" target="_blank">.gitattributes</a>
 file, git lfs will automatically create a symbolic link and upload to the remote with
@@ -693,7 +693,7 @@ please review the content carefully.</p>
 <p>For images, ensure to click on the image on <em>wiki.analog.com</em> to ensure you
 download the original and not the compressed image.</p>
 <p>Always prioritize vector images (<em>.svg</em>).</p>
-<p>Finally, content yet not imported, keep/use the <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/docs_guidelines/roles.html#role-dokuwiki" target="_blank" title="(in Doctools v0.4.30)"><span>Dokuwiki</span></a>.
+<p>Finally, content yet not imported, keep/use the <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/docs_guidelines/roles.html#role-dokuwiki" target="_blank" title="(in Doctools v0.4.32)"><span>Dokuwiki</span></a>.
 And for deprecated content, add the qualifier <code class="docutils literal notranslate"><span class="pre">+deprecated</span></code>, for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:dokuwiki+deprecated:`Old content &lt;resources/old/content&gt;`
 </pre></div>
