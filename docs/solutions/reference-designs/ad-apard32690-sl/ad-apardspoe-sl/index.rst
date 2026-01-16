@@ -16,20 +16,19 @@ General Description
    AD-APARDSPOE-SL
 
 The :adi:`AD-APARDSPOE-SL <AD-APARDSPOE-SL>` is a 10BASE-T1L power extractor
-with
-Single Pair Power over Ethernet (SPoE) for development of field devices and
+with Single Pair Power over Ethernet (SPoE) for development of field devices and
 applications on a :adi:`AD-APARD32690-SL <AD-APARD32690-SL>` platform board.
-The SPoE powered device (PD) and isolated flyback regulator provide 12 V
-power to the platform board. SPoE Class 10-12 (24 V nominal) and
-Class 13-14 (55 V nominal) are supported.
+The SPoE powered device (PD) and isolated flyback regulator provide 12V
+power to the platform board. SPoE Class 10-12 (24V nominal) and
+Class 13-14 (55V nominal) are supported.
 
 Designed for use on the :adi:`AD-APARD32690-SL <AD-APARD32690-SL>` platform,
 the :adi:`AD-APARDSPOE-SL <AD-APARDSPOE-SL>` hardware features Arduino
-Form-factor headers, and 3 pins
-to extract power from the :adi:`AD-APARD32690-SL <AD-APARD32690-SL>` board.
+Form-factor headers, and 3 pins to extract power from the
+:adi:`AD-APARD32690-SL <AD-APARD32690-SL>` board.
 
 To support board stacking and the development of field device applications using
-Arduino shields, the :adi:`AD-APARDSPOE-SL<AD-APARD32690-SL>` is equipped with
+Arduino shields, the :adi:`AD-APARDSPOE-SL <AD-APARD32690-SL>` is equipped with
 extra-tall headers, enabling other Arduino shields to be stacked on top of it.
 
 The design also features a complete power isolation to the host
@@ -78,8 +77,7 @@ class.
    Do not use PD Classes 15!
 
    The :adi:`AD-APARDSPOE-SL <AD-APARDSPOE-SL>` evaluation board is not designed
-   to
-   handle the class 15's power specifications.
+   to handle the Class 15's power specifications.
 
 Secondary Side
 ~~~~~~~~~~~~~~
@@ -100,11 +98,11 @@ System Setup
 
 - Power Source, either:
 
-  - :adi:`AD-RPI-T1LPSE-SL <AD-RPI-T1LPSE-SL>` 2-port 10BASE-T1L w/SPoE
+  - :adi:`AD-RPI-T1LPSE-SL <AD-RPI-T1LPSE-SL>` 2-port 10BASE-T1L with SPoE
     PSE Development Platform
 
     - Raspberry Pi Model 3B (or higher)
-    - Micro-SD Card for Raspberry Pi
+    - MicroSD Card for Raspberry Pi
 
   - Other 10BASE-T1L Power Coupling Network Board w/ SPoE PSE
 
@@ -117,10 +115,9 @@ Block Diagram
 Setup with SPoE via PSE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The :adi:`AD-RPI-T1LPSE-SL <AD-RPI-T1LPSE-SL>` 2-port 10BASE-T1L w/SPoE PSE
-Development Platform
-provides a complete solution for powering the :adi:`AD-APARDSPOE-SL
-<AD-APARDSPOE-SL>` evaluation board
+The :adi:`AD-RPI-T1LPSE-SL <AD-RPI-T1LPSE-SL>` 2-port 10BASE-T1L with SPoE PSE
+Development Platform provides a complete solution for powering 
+the :adi:`AD-APARDSPOE-SL` evaluation board
 and the :adi:`AD-APARD32690-SL <AD-APARD32690-SL>` platform board via SPoE.
 
 .. figure:: apard-spoe-block-diagram.png
