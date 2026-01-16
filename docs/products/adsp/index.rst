@@ -108,10 +108,20 @@ Release versions include the upstream version and a ADI specific release number
 ADI repositories
 ----------------
 
+For Yocto support see ``lxndsp-adi-meta`` below.
+
 - :git-adsp-ldr:`+`
     - :git-adsp-ldr:`v1.0.0 <releases/tag/v1.0.0+>`
       :git-adsp-ldr:`v1.0.1 <releases/tag/v1.0.1+>`
       :git-adsp-ldr:`v1.0.2 <releases/tag/v1.0.2+>`
+- :git-lnxdsp-adi-meta:`+`
+    - Kirkstone:
+      :git-lnxdsp-adi-meta:`Release v3.0.0 <releases/tag/3.0.0-rel+>`
+      :git-lnxdsp-adi-meta:`Release v3.1.0 <releases/tag/3.1.0-rel+>`
+      :git-lnxdsp-adi-meta:`Release v3.1.1 <releases/tag/3.1.1-rel+>`
+      :git-lnxdsp-adi-meta:`Release v3.1.2 <releases/tag/3.1.2-rel+>`
+    - Scarthgap:
+      :git-lnxdsp-adi-meta:`Release v5.0.0 <releases/tag/5.0.0-rel+>`
 - :git-lnxdsp-repo-manifest:`+`
 - :git-br2-external:`+`
     - v2025.05:
