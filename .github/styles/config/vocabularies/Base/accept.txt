@@ -81,3 +81,8 @@ kbps
 [Ww]ideband
 [Tt]ransmit
 
+Yocto
+Scarthgap
+Jitsi
+Github
+Kirkstone
