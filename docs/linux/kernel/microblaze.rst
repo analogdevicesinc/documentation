@@ -112,6 +112,11 @@ that the *<dts-file>* does not include the file extension *.dts*.
    ~/linux
    $make simpleImage.<dts-file>
 
+.. tip::
+
+   You can generate a :ref:`generic simpleImage and overwrite the dtb <linux-kernel microblaze dtb-hack>`
+   instead.
+
 To see what device-trees for the different FPGA carrier and FMC module combination exist type:
 
 .. shell::
@@ -163,6 +168,42 @@ So, for example, for *vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_rev
 
 The STRIP image (*.strip*) found under *arch/microblaze/boot* is the ELF image
 to load via the debugger.
+
+.. _linux-kernel microblaze dtb-hack:
+
+Patch a DTB to a simpleImage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Microblaze embeds the device tree into the simpleImage, but if you need to
+generate a batch of images with the same kernel, you can create an "empty"
+devicetree, build the simpleImage:
+
+.. shell::
+
+   $printf "/dts-v1/;\n\n/ { };\n" > arch/microblaze/boot/dts/generic.dts
+   $make simpleImage.generic
+
+And patch the device tree into the strip simpleImage:
+
+.. shell::
+
+   $ dtb=vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1.dtb
+   # Set dtb address and length
+   $ dtb_start=$((16#84e5c8))
+   $ dtb_end=$((16#85f000))
+   $ dtb_length=$((dtb_end - dtb_start))
+   # Build
+   $ make $dtb
+   # Clear any previous devicetree
+   $ dd if=/dev/zero \
+        of="arch/microblaze/boot/simpleImage.generic.strip" \
+        bs=1 seek=$dtb_start conv=notrunc count=$dtb_length
+     68152 bytes (68 kB, 67 KiB) copied, 0.0198292 s, 3.4 MB/s
+   # Write new
+   $ dd if="arch/microblaze/boot/dts/$dtb" \
+        of="arch/microblaze/boot/simpleImage.generic.strip" \
+        bs=1 seek=$dtb_start conv=notrunc
+     31787 bytes (32 kB, 31 KiB) copied, 0.0111866 s, 2.8 MB/s
 
 Boot on FPGA MicroBlaze
 ~~~~~~~~~~~~~~~~~~~~~~~

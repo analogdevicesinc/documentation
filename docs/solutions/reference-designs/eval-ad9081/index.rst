@@ -94,8 +94,11 @@ Table of contents
    #. :ref:`ad9081 quickstart`:
 
       #. Using the :ref:`Arria 10 SX SoC <ad9081 quickstart a10soc>`
-      #. Using the :ref:`VCK190 & VPK180/Versal <ad9081 quickstart versal>`
-      #. Using the :ref:`ZCU102/Zynq UltraScale MP SoC <ad9081 quickstart zynqmp>`
+      #. Using the :ref:`VCK190 & VPK180/Versal <ad9081 quickstart vck190>`
+      #. Using the :ref:`VCU118/ Virtex UltraScale+ <ad9081 quickstart vcu118>`
+      #. Using the :ref:`ZC706/ Zynq-7000 SoC <ad9081 quickstart zc706>`
+      #. Using the :ref:`ZCU102/Zynq UltraScale+ MP SoC <ad9081 quickstart zcu102>`
+
 
    #. Configure an SD Card with :external+adi-kuiper-gen:doc:`Kuiper <index>`
 
@@ -136,6 +139,7 @@ Table of contents
         #. About the JESD204 utilities:
 
            - :dokuwiki:`JESD204 (FSM) interface Linux Kernel framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+           - :dokuwiki:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver <resources/tools-software/linux-drivers/iio-pll/hmc7044>`
            - :dokuwiki:`JESD204 status utility <resources/tools-software/linux-software/jesd_status>`
            - :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
            - :external+hdl:ref:`jesd204`

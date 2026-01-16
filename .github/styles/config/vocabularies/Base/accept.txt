@@ -5,6 +5,7 @@ LTspice
 [Xx]ilinx
 no-OS
 Digilent
+Olimex
 
 [Tt]octree
 [Dd]ocname
@@ -80,10 +81,3 @@ kbps
 [Ww]ideband
 [Tt]ransmit
 
-# Passiv allow
-is rated
-is kept
-are highlighted
-are prefixed
-be adjusted
-in order to
