@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="An important water quality indicator for almost any use is the presence of dispersed, suspended solids—particles not in true solution (often including silt, clay, algae, other microorganisms, organic matter, and other minute particles). Turbidity is a qualitative characteristic imparted by how these suspended solids obstruct the transmittance of light. Turbidity is not a direct measure of suspended particles in water but rather a measure of the scattering effect such particles have on light." name="description" />
+
+    <title>Turbidity Measurement Demo &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../../../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="EVAL-CN0521-EBZ" href="../../eval-cn0521-ebz/index.html" />
+    <link rel="prev" title="pH Measurement Demo" href="../pH-measurement/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Turbidity Measurement Demo</a><ul>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#demo-requirements">Demo Requirements</a><ul>
+<li><a class="reference internal" href="#assembling-the-940nm-led">Assembling the 940nm LED</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#setting-the-eval-cn0503-ardz">Setting the EVAL-CN0503-ARDZ</a><ul>
+<li><a class="reference internal" href="#initial-connection-and-setup">Initial Connection and Setup</a></li>
+<li><a class="reference internal" href="#linear-approximation-using-3-point-calibration">Linear Approximation using 3-Point Calibration</a></li>
+<li><a class="reference internal" href="#performing-a-turbidity-measurement">Performing a Turbidity Measurement</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reference-links">Reference Links</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2-1" id="toctree-collapse-2-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3" id="toctree-collapse-2-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../application-software/index.html">Application Software</a></li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-4" id="toctree-collapse-12-4"/><div class="collapse"><a class="reference internal" href="../../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-12-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-5" id="toctree-collapse-12-5"/><div class="collapse"><a class="reference internal" href="../../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-12-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-6" id="toctree-collapse-12-6"/><div class="collapse"><a class="reference internal" href="../../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-12-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-7" id="toctree-collapse-12-7"/><div class="collapse"><a class="reference internal" href="../../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-12-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-8" id="toctree-collapse-12-8"/><div class="collapse"><a class="reference internal" href="../../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-12-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-9" id="toctree-collapse-12-9"/><div class="collapse"><a class="reference internal" href="../../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-12-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-10" id="toctree-collapse-12-10"/><div class="collapse"><a class="reference internal" href="../../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-12-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-11" id="toctree-collapse-12-11"/><div class="collapse"><a class="reference internal" href="../../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-12-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-12" id="toctree-collapse-12-12"/><div class="collapse"><a class="reference internal" href="../../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-12-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-13" id="toctree-collapse-12-13"/><div class="collapse"><a class="reference internal" href="../../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-12-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14" id="toctree-collapse-12-14"/><div class="collapse"><a class="reference internal" href="../../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-12-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15" id="toctree-collapse-12-15"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-12-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15-1" id="toctree-collapse-12-15-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-12-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16" id="toctree-collapse-12-16"/><div class="collapse"><a class="reference internal" href="../../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-12-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16-1" id="toctree-collapse-12-16-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-17" id="toctree-collapse-12-17"/><div class="collapse"><a class="reference internal" href="../../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-12-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18" id="toctree-collapse-12-18"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-12-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18-1" id="toctree-collapse-12-18-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19" id="toctree-collapse-12-19"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-12-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19-1" id="toctree-collapse-12-19-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-12-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-20" id="toctree-collapse-12-20" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-12-20"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-21" id="toctree-collapse-12-21"/><div class="collapse"><a class="reference internal" href="../../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-12-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-22" id="toctree-collapse-12-22"/><div class="collapse"><a class="reference internal" href="../../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-12-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-23" id="toctree-collapse-12-23"/><div class="collapse"><a class="reference internal" href="../../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-12-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-CN0503-ARDZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="turbidity-measurement-demo">
+<span id="turbidity"></span><h1>Turbidity Measurement Demo<a class="headerlink" href="#turbidity-measurement-demo" title="Link to this heading"></a></h1>
+<p>An important water quality indicator for almost any use is the presence of
+dispersed, suspended solids—particles not in true solution (often including
+silt, clay, algae, other microorganisms, organic matter, and other minute
+particles). Turbidity is a qualitative characteristic imparted by how these
+suspended solids obstruct the transmittance of light. Turbidity is not a direct
+measure of suspended particles in water but rather a measure of the scattering
+effect such particles have on light.</p>
+<section id="general-description">
+<h2>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h2>
+<p>The EVAL-CN0503-ARDZ is a four-channel optical platform capable of
+fluorescence, absorbance and scattering measurements. The two middle
+channels/light paths are only capable of absorbance and 180-degree scattering
+measurements. This demo uses one of the side paths for 90- and 180-degree
+scattering measurements.</p>
+<p>Turbidity measurements follow design standards requiring specific types of
+light sources and number and angle of detectors. One of the standards is
+ISO7027 Water Quality - Determination of Turbidity which requires a
+monochromatic light source usually an IR LED, and a primary detector at a
+90-degree angle. The demo will follow the standard using a single 940nm LED
+and two detectors at 90- and 180-degree angles. The unit for turbidity under
+the standard is FTU and the CN0503 computes this using 2 linear approximations
+(for low and high turbidity measurements) obtained from a 3-point calibration.</p>
+</section>
+<section id="demo-requirements">
+<h2>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h2>
+<p>The following is a list of items needed in order to replicate this demo.</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a>, completely assembled (see <a class="reference internal" href="../index.html#eval-cn0503-ardz"><span class="std std-ref">Hardware User Guide</span></a>)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> with firmware (see <a class="reference internal" href="../cn0503-software/index.html#cn0503-software"><span class="std std-ref">Software User Guide</span></a>)</p></li>
+<li><p>Host computer with CN0503 software (see <a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/cn0503_gui_quick_start_guide.docx"><code class="xref download docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">Setup</span> <span class="pre">Guide</span></code></a>)
+and Microsoft Excel (Optional for computing the parameters of the linear approximation)</p></li>
+<li><p><a class="icon link reference external" href="https://www.digikey.com/scripts/DkSearch/dksus.dll?KeywordSearch?Site=US&amp;Keywords=en/products/detail/lumileds/L1IZ-0940000000000/7243419" target="_blank">Lumileds Luxeon IR Compact 940nm LED L1IZ-0940000000000</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.amazon.com/Oakton-AO-35635-52-Replacement-Turbidity-Calibration/dp/B00DDOW1JS" target="_blank">Oakton T100 calibration kit (optional for calibration)</a></p></li>
+<li><p>Test solutions (common household liquids, such as milk, mixed with water or
+cement slurry water)</p></li>
+</ul>
+<section id="assembling-the-940nm-led">
+<h3>Assembling the 940nm LED<a class="headerlink" href="#assembling-the-940nm-led" title="Link to this heading"></a></h3>
+<p>The default options for the LED sources do not include infrared wavelength.
+Spare Lumiled and Lite-on LED boards are available for users to mount custom
+LEDs. The demo uses the Lumiled Luxeon IR Compact Series 940nm LED.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/940nm_assembly.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/940nm_assembly.png" />
+</section>
+</section>
+<section id="setting-the-eval-cn0503-ardz">
+<h2>Setting the EVAL-CN0503-ARDZ<a class="headerlink" href="#setting-the-eval-cn0503-ardz" title="Link to this heading"></a></h2>
+<p>Before starting with these steps, please check the <a class="reference internal" href="../index.html#eval-cn0503-ardz"><span class="std std-ref">Hardware User
+Guide</span></a> for the steps to assembling the <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a>.
+Additionally, please check the <a class="reference internal" href="../cn0503-software/index.html#cn0503-software"><span class="std std-ref">Software User Guide</span></a> for
+the steps in setting up the firmware and the
+<a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/cn0503_gui_quick_start_guide.docx"><code class="xref download docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">Setup</span> <span class="pre">Guide</span></code></a> for running
+the software. This demo assumes that you already have an assembled board with a
+working firmware already programmed on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> and a
+ready-to-run software in the host computer.</p>
+<p>Configure the on-board jumper shunt connection as below:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jumper Header</p></th>
+<th class="head"><p>Setting</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>LD4SEL</em></p></td>
+<td><p>Set to VARD</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/ld4sel-ard.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/ld4sel-ard.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><p><em>IOSEL</em></p></td>
+<td><p>Set to ARD</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/iosel-ard.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/iosel-ard.png" />
+</td>
+</tr>
+<tr class="row-even"><td><p><em>P1.8V</em></p></td>
+<td><p>Shorted</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/p1.8v-ard.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/p1.8v-ard.png" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You can use either path 1 or 4 for turbidity measurements. The
+steps outlined here will use path 4, and setting LED4, P4ASEL, and P4BSEL.</p>
+</div>
+<ol class="arabic">
+<li><p>Connect the 940nm LED Board to LED4.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_940nm.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_940nm.png" />
+</li>
+<li><p>Remove the fluorescent filter, if present, from the slot shown below:</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/fl_fluorescentfilter.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/fl_fluorescentfilter.png" />
+</li>
+<li><p>Set the jumper headers P4ASEL and P4BSEL as instructed in the table below:</p></li>
+</ol>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jumper Header</p></th>
+<th class="head"><p>Setting</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>P4ASEL</em></p></td>
+<td><p>Set to 0DEG</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/p4asel-0.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/p4asel-0.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><p><em>P4BSEL</em></p></td>
+<td><p>Set to 90DEG</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/p4bsel-90.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/p4bsel-90.png" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="initial-connection-and-setup">
+<h3>Initial Connection and Setup<a class="headerlink" href="#initial-connection-and-setup" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> to the <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> and connect a
+microUSB-to-USB cable from the board to the host computer.</p></li>
+<li><p>Run the software using python scripts or the executable, see the
+<a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/cn0503_gui_quick_start_guide.docx"><code class="xref download docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">Setup</span> <span class="pre">Guide</span></code></a>
+and wait for the main window to open.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/ph_mainwindow.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/ph_mainwindow.png" />
+</li>
+<li><p>Click the Gear icon at the top right of the window to open Settings.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/ph_opensettings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/ph_opensettings.png" />
+</li>
+<li><p>Select the correct COM Port of the device and click the <code class="docutils literal notranslate"><span class="pre">Connect</span></code> button
+(see <a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/cn0503_gui_quick_start_guide.docx"><code class="xref download docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">Setup</span> <span class="pre">Guide</span></code></a> for help).</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_selectcom.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_selectcom.png" />
+</li>
+<li><p>Load the configuration file for pH Measurement: <a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/cn0503_defaults_turbidity.zip"><code class="xref download docutils literal notranslate"><span class="pre">cn0503_defaults_turbidity.zip</span></code></a></p></li>
+<li><p>Configure the settings for path 4 with the desired name, set wavelength to
+940nm, and select measurement type: turbidity.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_wavelength.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_wavelength.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_wavelength.png" style="width: 300px;" />
+</a>
+</li>
+<li><p>Add empty an cuvette (or filled with distilled water) to the cuvette holder
+assembly and insert to path 4. Click <code class="docutils literal notranslate"><span class="pre">Optimize</span> <span class="pre">LED</span></code> for path 4. This properly
+sets the LED current in these paths so that the light intensity is close to
+50%.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_optimizeled.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_optimizeled.png" />
+</li>
+<li><p>Remove the cuvette and click <code class="docutils literal notranslate"><span class="pre">Okay</span></code> to return to the Main Window.</p></li>
+</ol>
+</section>
+<section id="linear-approximation-using-3-point-calibration">
+<span id="turbidity-calibration"></span><h3>Linear Approximation using 3-Point Calibration<a class="headerlink" href="#linear-approximation-using-3-point-calibration" title="Link to this heading"></a></h3>
+<p>Turbidity measurement is sensitive to multiple factors including ambient light
+and particulate contamination of samples. A pseudo-three-point calibration
+routine allows for high precision turbidity measurements.</p>
+<ol class="arabic">
+<li><p>Fill three different cuvettes with the 20, 100, and 800 FTU calibration
+solutions up to the level marking as shown below.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_level.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_level.png" />
+</li>
+<li><p>Go to the main window of the application and set the optical path to RRAT and
+the click on <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Measurement</span></code>.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_calstart.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_calstart.png" />
+</li>
+<li><p>Note the average value of the RRAT measured from the samples and stop
+measurement.</p>
+<blockquote>
+<div><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>20 FTU</p></td>
+<td><p>100 FTU</p></td>
+<td><p>800 FTU</p></td>
+</tr>
+<tr class="row-even"><td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_20ftu.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_20ftu.png" />
+</td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_100ftu.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_100ftu.png" />
+</td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_800ftu.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_800ftu.png" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></blockquote>
+</li>
+<li><p>Two linear equations can be computed from the three turbidity (FTU) and
+average RRAT data points using the slope formula and point-slope form.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_eqtn.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_eqtn.png" />
+</li>
+<li><p>You can also use this Excel file <a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/turbidity_calibration.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">turbidity_calibration.xlsx</span></code></a> which plots
+the calibration points and generates a linear equation from a trendline.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_calplot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_calplot.png" />
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You can include more calibration points in the Excel table for
+both high and low turbidity ranges.</p>
+</div>
+<ol class="arabic">
+<li><p>To use the linear approximation, go to the Settings Window then, the Advanced
+Settings Window. In the command field, enter the coefficients of the linear
+approximation following the syntax: <em>DEF3 INS1 &lt;x-intercept&gt; &lt;slope&gt;</em></p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_polylincmd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_polylincmd.png" />
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You can only use one linear approximation at a time using INS1.
+Select the measurement range best fitted for the liquid sample. You can also
+start with using the low turbidity range first before switching to the high
+turbidity measurement when the measured value is greater than 100 FTU.</p>
+</div>
+</section>
+<section id="performing-a-turbidity-measurement">
+<h3>Performing a Turbidity Measurement<a class="headerlink" href="#performing-a-turbidity-measurement" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Set the INS1 polynomial to the linear approximation for either low or high
+turbidity measurement. If you are unsure of the turbidity range of the
+sample, choose the low turbidity range and check if the measurement is
+greater than 100 FTU. If it is, set the INS polynomial to the linear
+approximation for high turbidity measurements.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_polylincmd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_polylincmd.png" />
+</li>
+<li><p>Place a prepared cuvette with the test sample to either path 4. The liquid
+sample should reach up to the marking as detailed in the
+<a class="reference internal" href="#turbidity-calibration"><span class="std std-ref">Linear Approximation using 3-Point Calibration</span></a>
+section.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_sample.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_sample.png" />
+</li>
+<li><p>Go back to the Main Window by clicking <code class="docutils literal notranslate"><span class="pre">Okay</span></code> on both the Advanced Settings and
+Settings. Select path 4 and, set display mode to INS1, and press <code class="docutils literal notranslate"><span class="pre">Start</span>
+<span class="pre">Measurement</span></code>.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_meas.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_meas.png" />
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Optionally, you can set the unit displayed in the plot to FTU
+by writing this in the primary unit field of path 4 found by clicking the
+<code class="docutils literal notranslate"><span class="pre">Advanced</span></code> button in the Settings window.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_unit.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/tr_unit.png" />
+</div>
+</section>
+</section>
+<section id="reference-links">
+<h2>Reference Links<a class="headerlink" href="#reference-links" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../index.html#eval-cn0503-ardz"><span class="std std-ref">Hardware User Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../cn0503-software/index.html#cn0503-software"><span class="std std-ref">Software User Guide</span></a></p></li>
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_spi_engine_workshop/docs/solutions/reference-designs/eval-cn0503-ardz/turbidity/cn0503_gui_quick_start_guide.docx"><code class="xref download docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">Setup</span> <span class="pre">Guide</span></code></a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../pH-measurement/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">pH Measurement Demo</a>
+    <a href="../../eval-cn0521-ebz/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVAL-CN0521-EBZ</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
