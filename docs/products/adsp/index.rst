@@ -79,6 +79,13 @@ forks.
 Release versions include the upstream version and a ADI specific release number
 (e.g.  ``1``, ``2``, ...).
 
+- Deprecated :git-lnxdsp-linux:`+`:
+    - v4.19
+      :git-lnxdsp-linux:`Commits <commits/release/yocto-1.0.0+>`
+    - v5.4.183
+      :git-lnxdsp-linux:`Commits <commits/release/yocto-2.1.0+>`
+    - v5.15.78
+      :git-lnxdsp-linux:`Commits <commits/release/yocto-3.1.0+>`
 - :git-linux:`+`:
     - v6.12.0:
       :git-linux:`Commits <commits/adsp-6.12.0-y+>`
