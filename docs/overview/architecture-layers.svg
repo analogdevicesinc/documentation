@@ -14,7 +14,7 @@
   </defs>
 
   <!-- Title -->
-  <text x="400" y="30" class="title-text" text-anchor="middle">ADI Ecosystem Architecture</text>
+  <text x="400" y="30" class="title-text" text-anchor="middle">ADI Technology Stack</text>
 
   <!-- Layer 7: Applications -->
   <rect x="100" y="60" width="600" height="65" rx="5" class="layer-box" fill="#d32f2f"/>
@@ -26,8 +26,8 @@
 
   <!-- Layer 6: Language Bindings -->
   <rect x="100" y="135" width="600" height="65" rx="5" class="layer-box" fill="#7b1fa2"/>
-  <text x="120" y="160" class="layer-text">Layer 6: Language Bindings</text>
-  <text x="120" y="180" class="layer-desc">pyadi-iio • MATLAB Toolboxes • C/C++ APIs</text>
+  <text x="120" y="160" class="layer-text">Layer 6: Ecosystem Bindings</text>
+  <text x="120" y="180" class="layer-desc">pyadi-iio (Python) • MATLAB Toolboxes • C/C++ APIs • ROS • GNURadio • Nvidia Holoscan</text>
 
   <!-- Arrow -->
   <line x1="400" y1="200" x2="400" y2="210" class="arrow"/>

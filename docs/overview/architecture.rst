@@ -14,7 +14,7 @@ see how the different components work together and where your design fits in.
 The Seven-Layer Architecture
 -------------------------------------------------------------------------------
 
-The ADI ecosystem follows a layered architecture model, where each layer provides
+The ADI technology stack follows a layered architecture model, where each layer provides
 services to the layer above it and consumes services from the layer below. This
 separation of concerns makes the system modular, testable, and portable across
 different platforms.
@@ -23,7 +23,7 @@ different platforms.
    :align: center
    :width: 600px
 
-   Seven-layer architecture of the ADI prototyping ecosystem
+   Seven-layer architecture of the ADI prototyping technology stack
 
 Layer 1: Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
