@@ -1,0 +1,51 @@
+# Custom doc builder template
+# ---------------------------
+# Generated with adi_doctools 0.4.30
+
+project: "EVAL-AD4060/AD4062-ARDZ"
+description: "Precision SAR ADC Evaluation and Integration Guide"
+
+# Dirs and files to include
+# First level is repository name
+include:
+  - documentation/solutions/reference-designs/ad4062-ardz
+  - documentation/software/libiio/cli.rst
+  - no-OS/drivers/adc/ad405x.rst
+  - no-OS/projects/adc/ad405x.rst
+  - linux/iio/ad4062.rst
+  - hdl/projects/ad4062_ardz
+
+# Custom pages
+# Are copied over preserving the path
+custom:
+  - custom-pages/intro.rst
+
+# Create toctree for entry point page
+entry-point:
+  - caption:
+    files:
+      - custom-pages/intro.rst
+  - caption: Evaluation Board
+    files:
+      - documentation/solutions/reference-designs/ad4062-ardz/index.rst
+  - caption: no-OS Firmware
+    files:
+      - no-OS/projects/adc/ad405x.rst
+      - no-OS/drivers/adc/ad405x.rst
+  - caption: Linux Kernel Driver
+    files:
+      - linux/iio/ad4062.rst
+  - caption: FPGA Design
+    files:
+      - hdl/projects/ad4062_ardz/index.rst
+  - caption: Software Tools
+    files:
+      - documentation/software/libiio/cli.rst
+
+# Per repository configuration
+# extra: do steps that require extra software (e.g. vendor sdk)
+# branch: clone from a specific branch, overwrites "main"
+
+# Include extra extensions
+extensions:
+   - sphinx.ext.duration
