@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <style>
+      .box { stroke: #333; stroke-width: 2; }
+      .box-text { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+      .box-desc { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+      .arrow { stroke: #666; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .arrow-label { font-family: Arial, sans-serif; font-size: 10px; fill: #444; font-style: italic; }
+      .layer-label { font-family: Arial, sans-serif; font-size: 11px; fill: #888; font-weight: bold; }
+      .title-text { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="25" class="title-text" text-anchor="middle">Workflow 2: Microcontroller + Precision ADC</text>
+
+  <!-- Layer labels -->
+  <text x="25" y="85" class="layer-label">Layer 1</text>
+  <text x="25" y="165" class="layer-label">Layer 2</text>
+  <text x="25" y="275" class="layer-label">Layer 3</text>
+  <text x="25" y="410" class="layer-label">Layers</text>
+  <text x="25" y="425" class="layer-label">5-7</text>
+
+  <!-- Layer 1: AD4080 Hardware -->
+  <rect x="100" y="60" width="700" height="60" rx="5" class="box" fill="#d7ccc8"/>
+  <text x="450" y="85" class="box-text" text-anchor="middle">AD4080 40 MSPS Precision SAR ADC</text>
+  <text x="450" y="105" class="box-desc" text-anchor="middle">EVAL-AD4080-ARDZ (Arduino Shield) • SINC5+Comp filters • 16-bit resolution</text>
+
+  <!-- Arrow with SPI -->
+  <line x1="450" y1="120" x2="450" y2="140" class="arrow"/>
+  <text x="470" y="133" class="arrow-label">SPI (up to 80 MHz)</text>
+
+  <!-- Layer 2: STM32 MCU and Host PC -->
+  <rect x="100" y="140" width="320" height="100" rx="5" class="box" fill="#ffe0b2"/>
+  <text x="260" y="165" class="box-text" text-anchor="middle">STM32H563ZI Microcontroller</text>
+  <text x="260" y="185" class="box-desc" text-anchor="middle">ST Nucleo-H563ZI Dev Board</text>
+  <text x="120" y="207" class="box-desc">• ARM Cortex-M33 @ 250 MHz</text>
+  <text x="120" y="222" class="box-desc">• 2 MB Flash, 640 KB RAM</text>
+  <text x="120" y="237" class="box-desc">• USB 2.0 HS device</text>
+
+  <rect x="480" y="140" width="320" height="100" rx="5" class="box" fill="#ffe0b2"/>
+  <text x="640" y="165" class="box-text" text-anchor="middle">Host PC / Raspberry Pi</text>
+  <text x="640" y="185" class="box-desc" text-anchor="middle">Runs libiio + Applications</text>
+  <text x="500" y="207" class="box-desc">• Python environment</text>
+  <text x="500" y="222" class="box-desc">• MATLAB (optional)</text>
+  <text x="500" y="237" class="box-desc">• Scopy GUI</text>
+
+  <!-- Arrow between MCU and PC -->
+  <line x1="420" y1="190" x2="480" y2="190" class="arrow"/>
+  <text x="432" y="180" class="arrow-label">USB/Serial</text>
+  <text x="422" y="205" class="arrow-label">(Virtual COM Port)</text>
+
+  <!-- Layer 3: no-OS Firmware -->
+  <rect x="100" y="260" width="320" height="100" rx="5" class="box" fill="#c8e6c9"/>
+  <text x="260" y="285" class="box-text" text-anchor="middle">no-OS Firmware</text>
+  <text x="260" y="305" class="box-desc" text-anchor="middle">Bare-metal code running on STM32</text>
+  <text x="120" y="327" class="box-desc">• AD4080 device driver (SPI control)</text>
+  <text x="120" y="342" class="box-desc">• DMA circular buffers</text>
+  <text x="120" y="357" class="box-desc">• TinyIIO server on USB CDC</text>
+
+  <!-- Arrow connecting firmware to MCU -->
+  <line x1="260" y1="260" x2="260" y2="240" class="arrow" stroke-dasharray="5,5" marker-end="none"/>
+
+  <!-- Note about Layer 4 -->
+  <rect x="480" y="280" width="320" height="60" rx="5" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="640" y="302" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; fill: #e65100;" text-anchor="middle">Layer 4 Skipped!</text>
+  <text x="640" y="320" class="box-desc" text-anchor="middle">No Linux drivers needed. TinyIIO</text>
+  <text x="640" y="335" class="box-desc" text-anchor="middle">talks directly to libiio via serial.</text>
+
+  <!-- Layers 5-7: Software Stack on Host -->
+  <rect x="480" y="380" width="320" height="180" rx="5" class="box" fill="#f3e5f5"/>
+  <text x="640" y="405" class="box-text" text-anchor="middle">Software Stack (Host PC)</text>
+
+  <text x="500" y="430" class="box-desc" font-weight="bold">Layer 5 - libiio:</text>
+  <text x="520" y="445" class="box-desc">serial: backend to STM32</text>
+  <text x="520" y="460" class="box-desc">serial:/dev/ttyACM0,230400,8n1</text>
+
+  <text x="500" y="482" class="box-desc" font-weight="bold">Layer 6 - pyadi-iio:</text>
+  <text x="520" y="497" class="box-desc">adc = adi.ad4080(uri="serial:...")</text>
+  <text x="520" y="512" class="box-desc">data = adc.rx()</text>
+
+  <text x="500" y="534" class="box-desc" font-weight="bold">Layer 7 - Applications:</text>
+  <text x="520" y="549" class="box-desc">• Scopy • Python scripts • MATLAB</text>
+
+  <!-- Arrow from firmware to host -->
+  <line x1="420" y1="310" x2="480" y2="400" class="arrow"/>
+  <text x="420" y="350" class="arrow-label">TinyIIO Protocol</text>
+
+  <!-- Arrow within host stack -->
+  <line x1="640" y1="340" x2="640" y2="380" class="arrow"/>
+
+  <!-- Bottom note -->
+  <text x="450" y="590" style="font-family: Arial, sans-serif; font-size: 11px; fill: #666;" text-anchor="middle">Low Power &amp; Low Cost: Battery operation • $50-200 BOM • Standalone deployment • Real-time deterministic timing</text>
+</svg>

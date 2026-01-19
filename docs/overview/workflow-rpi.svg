@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <defs>
+    <style>
+      .box { stroke: #333; stroke-width: 2; }
+      .box-text { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+      .box-desc { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+      .arrow { stroke: #666; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .arrow-label { font-family: Arial, sans-serif; font-size: 10px; fill: #444; font-style: italic; }
+      .layer-label { font-family: Arial, sans-serif; font-size: 11px; fill: #888; font-weight: bold; }
+      .title-text { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="25" class="title-text" text-anchor="middle">Workflow 3: Raspberry Pi + Evaluation Boards</text>
+
+  <!-- Layer labels -->
+  <text x="25" y="100" class="layer-label">Layer 1</text>
+  <text x="25" y="200" class="layer-label">Layer 2</text>
+  <text x="25" y="340" class="layer-label">Layer 4</text>
+  <text x="25" y="480" class="layer-label">Layers</text>
+  <text x="25" y="495" class="layer-label">5-7</text>
+
+  <!-- Layer 1: Multiple ADI Devices -->
+  <rect x="100" y="60" width="240" height="100" rx="5" class="box" fill="#d7ccc8"/>
+  <text x="220" y="85" class="box-text" text-anchor="middle">Arduino Shields (ARDZ)</text>
+  <text x="220" y="105" class="box-desc" text-anchor="middle">Precision ADCs:</text>
+  <text x="220" y="122" class="box-desc" text-anchor="middle">• AD4080 / AD4052</text>
+  <text x="220" y="137" class="box-desc" text-anchor="middle">• AD5592R (ADC/DAC)</text>
+  <text x="220" y="152" class="box-desc" text-anchor="middle">Connect via SPI/I2C</text>
+
+  <rect x="380" y="60" width="240" height="100" rx="5" class="box" fill="#d7ccc8"/>
+  <text x="500" y="85" class="box-text" text-anchor="middle">USB Instruments</text>
+  <text x="500" y="105" class="box-desc" text-anchor="middle">ADALM2000 (M2k):</text>
+  <text x="500" y="122" class="box-desc" text-anchor="middle">• 2-ch Oscilloscope</text>
+  <text x="500" y="137" class="box-desc" text-anchor="middle">• Signal generator</text>
+  <text x="500" y="152" class="box-desc" text-anchor="middle">Connect via USB</text>
+
+  <rect x="660" y="60" width="240" height="100" rx="5" class="box" fill="#d7ccc8"/>
+  <text x="780" y="85" class="box-text" text-anchor="middle">Remote Devices</text>
+  <text x="780" y="105" class="box-desc" text-anchor="middle">Network-connected:</text>
+  <text x="780" y="122" class="box-desc" text-anchor="middle">• Other RPi nodes</text>
+  <text x="780" y="137" class="box-desc" text-anchor="middle">• Zynq boards</text>
+  <text x="780" y="152" class="box-desc" text-anchor="middle">Connect via Ethernet</text>
+
+  <!-- Arrows down to RPi -->
+  <line x1="220" y1="160" x2="220" y2="175" class="arrow"/>
+  <text x="150" y="170" class="arrow-label">SPI/I2C</text>
+
+  <line x1="500" y1="160" x2="450" y2="175" class="arrow"/>
+  <text x="480" y="170" class="arrow-label">USB</text>
+
+  <line x1="780" y1="160" x2="730" y2="175" class="arrow"/>
+  <text x="760" y="170" class="arrow-label">Network</text>
+
+  <!-- Layer 2: Raspberry Pi 4 -->
+  <rect x="100" y="175" width="700" height="110" rx="5" class="box" fill="#ffe0b2"/>
+  <text x="450" y="200" class="box-text" text-anchor="middle">Raspberry Pi 4 with Kuiper Linux</text>
+  <text x="450" y="220" class="box-desc" text-anchor="middle">ARM Cortex-A72 (4 cores @ 1.5 GHz) • 4 GB RAM • Debian-based OS</text>
+
+  <text x="120" y="242" class="box-desc">Hardware Interfaces:</text>
+  <text x="120" y="257" class="box-desc">• GPIO header (SPI, I2C)</text>
+  <text x="120" y="272" class="box-desc">• USB 3.0 ports (4x)</text>
+
+  <text x="380" y="242" class="box-desc">Pre-Installed Software:</text>
+  <text x="380" y="257" class="box-desc">• Linux kernel with IIO drivers</text>
+  <text x="380" y="272" class="box-desc">• libiio, pyadi-iio, Scopy</text>
+
+  <text x="640" y="242" class="box-desc">Network:</text>
+  <text x="640" y="257" class="box-desc">• Gigabit Ethernet</text>
+  <text x="640" y="272" class="box-desc">• WiFi (802.11ac)</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="285" x2="450" y2="305" class="arrow"/>
+
+  <!-- Layer 4: Linux IIO Drivers -->
+  <rect x="100" y="305" width="700" height="120" rx="5" class="box" fill="#bbdefb"/>
+  <text x="450" y="330" class="box-text" text-anchor="middle">Linux IIO Drivers</text>
+  <text x="450" y="350" class="box-desc" text-anchor="middle">Multiple drivers for different devices, all using IIO framework:</text>
+
+  <text x="120" y="372" class="box-desc" font-weight="bold">For Arduino Shields:</text>
+  <text x="140" y="387" class="box-desc">• ad4080, ad4052 (precision ADCs)</text>
+  <text x="140" y="402" class="box-desc">• ad5592r (mixed-signal)</text>
+  <text x="140" y="417" class="box-desc">Configured via devicetree overlays</text>
+
+  <text x="420" y="372" class="box-desc" font-weight="bold">For USB Devices:</text>
+  <text x="440" y="387" class="box-desc">• m2k context (ADALM2000)</text>
+  <text x="440" y="402" class="box-desc">• Plug-and-play</text>
+  <text x="440" y="417" class="box-desc">Auto-detected</text>
+
+  <text x="680" y="372" class="box-desc" font-weight="bold">For Network:</text>
+  <text x="700" y="387" class="box-desc">• IIOD forwarding</text>
+  <text x="700" y="402" class="box-desc">• Remote contexts</text>
+  <text x="700" y="417" class="box-desc">• ip: backend</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="425" x2="450" y2="445" class="arrow"/>
+
+  <!-- Layers 5-7: Unified Software Stack -->
+  <rect x="100" y="445" width="700" height="150" rx="5" class="box" fill="#f3e5f5"/>
+  <text x="450" y="470" class="box-text" text-anchor="middle">Unified Software Stack (Layers 5-7)</text>
+
+  <text x="120" y="495" class="box-desc" font-weight="bold">Layer 5 - libiio (Multi-Backend):</text>
+  <text x="140" y="510" class="box-desc">local: for on-board devices • usb: for ADALM2000 • ip: for remote devices</text>
+
+  <text x="120" y="532" class="box-desc" font-weight="bold">Layer 6 - pyadi-iio (Unified API):</text>
+  <text x="140" y="547" class="box-desc">adc_local = adi.ad4080(uri="local:")  # Arduino shield</text>
+  <text x="140" y="562" class="box-desc">m2k = adi.m2k(uri="usb:")  # ADALM2000</text>
+  <text x="140" y="577" class="box-desc">adc_remote = adi.ad4080(uri="ip:node.local")  # Network device</text>
+
+  <text x="590" y="510" class="box-desc" font-weight="bold">Layer 7 - Apps:</text>
+  <text x="610" y="525" class="box-desc">• Scopy GUI</text>
+  <text x="610" y="540" class="box-desc">• Jupyter Lab</text>
+  <text x="610" y="555" class="box-desc">• Python scripts</text>
+  <text x="610" y="570" class="box-desc">• Web dashboards</text>
+
+  <!-- Bottom note -->
+  <text x="450" y="620" style="font-family: Arial, sans-serif; font-size: 11px; fill: #666;" text-anchor="middle">Rapid Prototyping: Hours to running • Multi-device support • Full Linux environment • Familiar tools (Python, web, SSH)</text>
+  <text x="450" y="640" style="font-family: Arial, sans-serif; font-size: 11px; fill: #666;" text-anchor="middle">Perfect for: Education • Algorithm development • Proof-of-concept • Demonstrations • Multi-sensor systems</text>
+</svg>
