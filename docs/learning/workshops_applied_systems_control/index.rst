@@ -276,12 +276,13 @@ It includes:
 
 **Kit contents**
 
-
 | 1 x 10BASE-T1L TO USB adapter board
 | 1 x Profibus cable for single pair Ethernet (SPE) Connectivity
 | 1 x USB 2.0 cable
 | 1 x cable connector for external 24V power supply
 | 1 x cable connector for channels connectivity
+| 1 x Raspberry Pi 5
+| 1 x Raspberry Pi 5 Type-C power supply 
 
 .. figure:: kit.png
    :alt: AD-SWIOT1L-SL kit contents
@@ -296,20 +297,35 @@ Hands-on activity
 Participants will engage in hands-on activities to apply the theoretical
 concepts learned. The activities will include:
 
-#. Booting your PC Linux
+#. Power on the Raspberry Pi 5 board using a Type-C power supply and boot it.
 
 #. Power the AD-SWIOT1L-SL board by plugging in the power supply.
 
-#. Connect the USB to T1L media converter to your PC and the AD-SWIOT1L-SL
-   board. After a short time, both link status LEDs(on the media converter and
+#. Connect the USB to T1L media converter to your Raspberry 5 board using a 
+   micro-USB cable. 
+   
+#. Connect the USB to T1L media converter to the AD-SWIOT1L-SL
+   board using the PROFIBUS cable. After a short time, both link status LEDs(on the media converter and
    the board) should be on.
+
+#. Connect the Raspberry Pi 5 to a display using a HDMI to Micro-HDMI cable, and
+   connect a keyboard and mouse to the USB ports.
+
+In the end, your setup should look like this:
+
+.. figure:: system_setup.jpg
+   :alt: System setup with Raspberry Pi 5 and AD-SWIOT1L-SL boards connected
+   :width: 600
+   :align: center
+   
+   System setup with Raspberry Pi 5 and AD-SWIOT1L-SL boards connected
 
 #. Testing the board connectivity
 
-    - Open a terminal and run the command: ``ping 169.254.97.40`` This command
-      will rule out the host (PC) network configuration issues.
+    - Open a terminal and run the command: ``ping 192.168.97.40`` This command
+      will rule out the host (RPi 5) network configuration issues.
     - If the ping command is not successful run ``sudo ip route add
-      169.254.97.40 dev eth0`` to add a route to the board's IP address.
+      192.168.97.40 dev eth0`` to add a route to the board's IP address.
 
    .. image:: ping.png
       :alt: Ping command output
@@ -346,14 +362,14 @@ workshop, a slide deck is provided here:
 
 .. admonition:: Download
 
-   :download:`Applied Systems Control Slide Deck <../workshops_applied_systems_control/Applied_systems_control.pptx>`
+   :download:`Applied Systems Control Slide Deck <../workshops_applied_systems_control/Applied_Systems_Control_Workshop.pptx>`
 
 A complete booklet of the hands-on activity is also provided, either as a companion to
 following the tutorial yourself:
 
 .. admonition:: Download
 
-   :download:`Applied Systems Control Booklet <../workshops_applied_systems_control/applied_systems_control_booklet.pdf>`
+   :download:`Applied Systems Control Booklet <../workshops_applied_systems_control/Applied_Systems_Control_Workshop_Booklet.pdf>`
 
 **Exercise 1: Power the RGB LED red, green and blue**
 
