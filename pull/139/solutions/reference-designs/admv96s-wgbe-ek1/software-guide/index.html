@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The evaluation kit comes with the MAX32650 preprogrammed with a firmware that is ready to use as-is. If you’ve gone through the hardware setup and you’ve connected at least the power and the Ethernet cables to the two boards of the setup, the firmware takes care of establishing and maintaining a wireless link automatically on power on." name="description" />
+
+    <title>Software User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../../../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="ADRD8012-01Z" href="../../adrd8012-01Z/index.html" />
+    <link rel="prev" title="Hardware User Guide" href="../hardware-guide/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Software User Guide</a><ul>
+<li><a class="reference internal" href="#evaluation">Evaluation</a></li>
+<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a><ul>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#installing-the-wethlink-gui-on-windows">Installing the Wethlink GUI on Windows</a></li>
+<li><a class="reference internal" href="#running-the-wethlink-gui-on-linux">Running the Wethlink GUI on Linux</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#firmware-installation">Firmware Installation</a><ul>
+<li><a class="reference internal" href="#how-to-find-the-firmware-version">How to find the firmware version?</a><ul>
+<li><a class="reference internal" href="#boot-message">Boot message</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-libiio-from-command-line">Using libiio from command line</a></li>
+<li><a class="reference internal" href="#using-wethlink-gui">Using Wethlink GUI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-update-the-firmware">How to update the firmware ?</a><ul>
+<li><a class="reference internal" href="#drag-and-drop-a-hex">Drag and drop a .hex</a></li>
+<li><a class="reference internal" href="#is-the-maxdap-firmware-correct">Is the MAXDAP firmware correct?</a></li>
+<li><a class="reference internal" href="#mcufla-sh">mcufla.sh</a></li>
+<li><a class="reference internal" href="#make-run">make run</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#theory-of-operation">Theory of Operation</a><ul>
+<li><a class="reference internal" href="#iio-devices">IIO devices</a></li>
+<li><a class="reference internal" href="#led">LED</a></li>
+<li><a class="reference internal" href="#eeprom">EEPROM</a></li>
+<li><a class="reference internal" href="#resetting-to-factory-defaults">Resetting to factory defaults</a></li>
+<li><a class="reference internal" href="#production-firmware-and-provisioning">Production firmware and provisioning</a></li>
+<li><a class="reference internal" href="#autonegotiation">Autonegotiation</a></li>
+<li><a class="reference internal" href="#temperature-compensated-gains">Temperature compensated gains</a></li>
+<li><a class="reference internal" href="#p-i-d-controlled-gains">P.I.D. controlled gains</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../overview/index.html">Ecosystem Overview</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview/architecture.html">Full Stack Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview/components.html">Ecosystem Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview/workflows.html">Common Development Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview/versioning-support.html">Versioning and Support</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../products/adalm/index.html">Active Learning Modules (ADALM)</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adalm/m2k/index.html">ADALM2000</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/m2k/help_support.html">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../../../../products/adalm/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3" id="toctree-collapse-2-3"/><div class="collapse"><a class="reference internal" href="../../../../products/adalm/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-2-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3-1" id="toctree-collapse-2-3-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adalm/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-2-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../products/adalm/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3-2" id="toctree-collapse-2-3-2"/><div class="collapse"><a class="reference internal" href="../../../../products/adalm/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-2-3-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../products/adalm/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../products/adalm/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../products/adalm/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3-3" id="toctree-collapse-2-3-3"/><div class="collapse"><a class="reference internal" href="../../../../products/adalm/pluto/users/index.html">For End Users</a><label for="toctree-collapse-2-3-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../products/adalm/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/pluto/help_support.html">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../products/adalm/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adalm/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-2" id="toctree-collapse-4-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-4-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-2-1" id="toctree-collapse-4-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-4-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-3" id="toctree-collapse-4-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-4-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5-1" id="toctree-collapse-5-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-5-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5-1-1" id="toctree-collapse-5-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-5-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/index.html">Software</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-1" id="toctree-collapse-6-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-6-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-1-1" id="toctree-collapse-6-1-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-6-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-2" id="toctree-collapse-6-2"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-6-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-3" id="toctree-collapse-6-3"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-4" id="toctree-collapse-6-4"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-6-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-5" id="toctree-collapse-6-5"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-6-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1" id="toctree-collapse-7-1"/><div class="collapse"><a class="reference internal" href="../../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-7-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-2" id="toctree-collapse-7-2"/><div class="collapse"><a class="reference internal" href="../../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-7-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-3" id="toctree-collapse-7-3"/><div class="collapse"><a class="reference internal" href="../../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-7-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-4" id="toctree-collapse-7-4"/><div class="collapse"><a class="reference internal" href="../../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-7-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-5" id="toctree-collapse-7-5"/><div class="collapse"><a class="reference internal" href="../../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-7-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-6" id="toctree-collapse-7-6"/><div class="collapse"><a class="reference internal" href="../../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-7-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-7" id="toctree-collapse-7-7"/><div class="collapse"><a class="reference internal" href="../../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-7-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-8" id="toctree-collapse-7-8"/><div class="collapse"><a class="reference internal" href="../../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-7-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-9" id="toctree-collapse-7-9"/><div class="collapse"><a class="reference internal" href="../../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-7-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-10" id="toctree-collapse-7-10"/><div class="collapse"><a class="reference internal" href="../../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-7-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-11" id="toctree-collapse-7-11"/><div class="collapse"><a class="reference internal" href="../../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-7-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-12" id="toctree-collapse-7-12"/><div class="collapse"><a class="reference internal" href="../../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-7-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-13" id="toctree-collapse-7-13"/><div class="collapse"><a class="reference internal" href="../../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-7-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-14" id="toctree-collapse-7-14" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-7-14"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-15" id="toctree-collapse-7-15"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-7-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-15-1" id="toctree-collapse-7-15-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-7-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-16" id="toctree-collapse-7-16"/><div class="collapse"><a class="reference internal" href="../../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-7-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-16-1" id="toctree-collapse-7-16-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-7-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-17" id="toctree-collapse-7-17"/><div class="collapse"><a class="reference internal" href="../../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-7-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-18" id="toctree-collapse-7-18"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-7-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-18-1" id="toctree-collapse-7-18-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-7-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-19" id="toctree-collapse-7-19"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-7-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-19-1" id="toctree-collapse-7-19-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-7-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-20" id="toctree-collapse-7-20"/><div class="collapse"><a class="reference internal" href="../../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-7-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-21" id="toctree-collapse-7-21"/><div class="collapse"><a class="reference internal" href="../../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-7-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-22" id="toctree-collapse-7-22"/><div class="collapse"><a class="reference internal" href="../../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-7-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-23" id="toctree-collapse-7-23"/><div class="collapse"><a class="reference internal" href="../../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-7-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-1" id="toctree-collapse-9-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-9-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">ADMV96S-WGBE-EK1</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="software-user-guide">
+<span id="admv96s-wgbe-ek1-software-guide"></span><h1>Software User Guide<a class="headerlink" href="#software-user-guide" title="Link to this heading"></a></h1>
+<section id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Link to this heading"></a></h2>
+<p>The evaluation kit comes with the <a class="icon adi reference external" href="https://www.analog.com/max32650" target="_blank">MAX32650</a>
+preprogrammed with a firmware that is ready to use as-is. If you’ve gone
+through the <a class="reference internal" href="../hardware-guide/index.html#admv96s-wgbe-ek1-hardware-guide"><span class="std std-ref">hardware setup</span></a>
+and you’ve connected at least the power and the Ethernet cables to the two
+boards of the setup, the firmware takes care of establishing and maintaining a
+wireless link automatically on power on.</p>
+</section>
+<section id="software-setup">
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Wethlink</span></code> GUI is an optional software that can be used to configure the
+firmware operation from a PC. The firmware establishes a wireless link
+automatically without any input from the Wethlink GUI. For a quick evaluation of
+the ADMV96S-WGBE-EK1 you need not use the software at all. But if you want to
+better observe or change the behavior of the firmware or want access to the raw
+registers of the devices, you may use the software to achieve that, and this
+page walks you through the installation process..</p>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe" target="_blank">wethlink_installer.exe</a></p></li>
+</ul>
+</section>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>git</p></li>
+<li><p><a class="reference internal" href="../../../../software/libiio/index.html#libiio"><span class="std std-ref">Libiio</span></a></p></li>
+<li><p>python3</p></li>
+<li><p>pip</p></li>
+</ul>
+</section>
+<section id="installing-the-wethlink-gui-on-windows">
+<h3>Installing the Wethlink GUI on Windows<a class="headerlink" href="#installing-the-wethlink-gui-on-windows" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>To install the GUI double click the <code class="docutils literal notranslate"><span class="pre">wethlink_installer.exe</span></code> file. When
+prompted press <code class="docutils literal notranslate"><span class="pre">Install</span></code> and after the setup is completed press <code class="docutils literal notranslate"><span class="pre">Close</span></code>.</p></li>
+</ul>
+<figure class="align-default" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/gui_installation.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/gui_installation.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Wethlink GUI Installation</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>After installation the app is found at the path of the Destination Folder in
+the previous step.</p></li>
+<li><p>You can start the app by double clicking the <code class="docutils literal notranslate"><span class="pre">wethlink.exe</span></code> file in the
+destination folder or by launching it from the Windows start menu.</p></li>
+</ul>
+</section>
+<section id="running-the-wethlink-gui-on-linux">
+<h3>Running the Wethlink GUI on Linux<a class="headerlink" href="#running-the-wethlink-gui-on-linux" title="Link to this heading"></a></h3>
+<p>There is no installer provided on Linux, you have to clone the repo, install the
+dependencies and run the app in python.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/wethlink.git<span class="w"> </span><span class="c1"># TODO: does not exist yet</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>wethlink
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/wethlink$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>PyQt6<span class="w"> </span>pyserial<span class="w"> </span>pylibiio
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/wethlink$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>wethlink.py
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
+</section>
+<section id="firmware-installation">
+<h2>Firmware Installation<a class="headerlink" href="#firmware-installation" title="Link to this heading"></a></h2>
+<section id="how-to-find-the-firmware-version">
+<h3>How to find the firmware version?<a class="headerlink" href="#how-to-find-the-firmware-version" title="Link to this heading"></a></h3>
+<section id="boot-message">
+<h4>Boot message<a class="headerlink" href="#boot-message" title="Link to this heading"></a></h4>
+<p>When a board is powered up or reset with the RESET button, the firmware starts
+executing and prints some messages over the serial port. You may access the
+serial port by connecting a MAXDAP to the JTAG SWD header and to the PC. To view
+the boot messages, open up a serial terminal application of your choice and
+configure it to listen to the serial port that appears in your system when you
+connect the MAXDAP to the PC (COMx on Windows, /dev/ttyACMx on Linux). The
+serial port settings must be 115200 baud, 8 databits, no parity bits, 1 stopbit,
+no flow control signals.</p>
+<p>A typical boot message looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tags</span><span class="o">/</span><span class="n">wethlink</span><span class="o">-</span><span class="n">v1</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">7</span><span class="n">c98c2261</span> <span class="k">for</span> <span class="n">revision</span> <span class="n">B</span>
+<span class="n">Transceiver</span><span class="p">:</span> <span class="n">admv9625</span>
+<span class="n">EEPROM</span><span class="p">:</span> <span class="n">loading</span> <span class="n">non</span><span class="o">-</span><span class="n">volatile</span> <span class="n">parameters</span><span class="o">...</span>
+<span class="n">EEPROM</span><span class="p">:</span> <span class="n">loaded</span> <span class="n">non</span><span class="o">-</span><span class="n">volatile</span> <span class="n">parameters</span><span class="o">.</span>
+<span class="n">Running</span> <span class="n">IIOD</span> <span class="n">server</span><span class="o">...</span>
+<span class="n">If</span> <span class="n">successful</span><span class="p">,</span> <span class="n">you</span> <span class="n">may</span> <span class="n">connect</span> <span class="n">an</span> <span class="n">IIO</span> <span class="n">client</span> <span class="n">application</span> <span class="n">by</span><span class="p">:</span>
+<span class="mf">1.</span> <span class="n">Disconnecting</span> <span class="n">the</span> <span class="n">serial</span> <span class="n">terminal</span> <span class="n">you</span> <span class="n">use</span> <span class="n">to</span> <span class="n">view</span> <span class="n">this</span> <span class="n">message</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Connecting</span> <span class="n">the</span> <span class="n">IIO</span> <span class="n">client</span> <span class="n">application</span> <span class="n">using</span> <span class="n">the</span> <span class="n">serial</span> <span class="n">backend</span> <span class="n">configured</span> <span class="k">as</span> <span class="n">shown</span><span class="p">:</span>
+    <span class="n">Baudrate</span><span class="p">:</span> <span class="mi">345600</span>
+    <span class="n">Data</span> <span class="n">size</span><span class="p">:</span> <span class="mi">8</span> <span class="n">bits</span>
+    <span class="n">Parity</span><span class="p">:</span> <span class="n">none</span>
+    <span class="n">Stop</span> <span class="n">bits</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">Flow</span> <span class="n">control</span><span class="p">:</span> <span class="n">none</span>
+</pre></div>
+</div>
+<p>The firmware version is thus <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code>, built using git commit <code class="docutils literal notranslate"><span class="pre">7c98c2261</span></code>
+for <code class="docutils literal notranslate"><span class="pre">revision</span> <span class="pre">B</span></code> hardware.</p>
+</section>
+</section>
+<section id="using-libiio-from-command-line">
+<h3>Using libiio from command line<a class="headerlink" href="#using-libiio-from-command-line" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">libiio</span> <span class="pre">(v0.25</span> <span class="pre">or</span> <span class="pre">later)</span></code> library setup also installs some useful command
+line tools such as <code class="docutils literal notranslate"><span class="pre">iio_info</span></code> which can connect to a remote <code class="docutils literal notranslate"><span class="pre">iiod</span></code>
+applciation and display information about it. In our case, the firmware is
+running an <code class="docutils literal notranslate"><span class="pre">iiod</span></code> application, as can be seen in the boot message, so we can
+query it over the serial port (replace /dev/ttyACM0 with COMn on Windows):</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>serial:/dev/ttyACM0,345600,8n1n
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>iio_info version: 0.25 (git tag:v0.25)
+Libiio version: 0.25 (git tag: v0.25) backends: local xml ip usb serial
+IIO context created with serial backend.
+Backend version: 1.1 (git tag: 0000000)
+Backend description string: no-OS/projects/wethlink tags/wethlink-v1.0.0-7c98c2261
+[...]
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>We can conclude that the on-board firmware is <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> built using git commit
+<code class="docutils literal notranslate"><span class="pre">7c98c2261</span></code>.</p>
+</section>
+<section id="using-wethlink-gui">
+<h3>Using Wethlink GUI<a class="headerlink" href="#using-wethlink-gui" title="Link to this heading"></a></h3>
+<p>Simply connect to the serial port of the device with the Wethlink GUI app and
+observe the Context tab content.</p>
+</section>
+</section>
+<section id="how-to-update-the-firmware">
+<h2>How to update the firmware ?<a class="headerlink" href="#how-to-update-the-firmware" title="Link to this heading"></a></h2>
+<section id="drag-and-drop-a-hex">
+<h3>Drag and drop a .hex<a class="headerlink" href="#drag-and-drop-a-hex" title="Link to this heading"></a></h3>
+<p>To update to a newer firmware version (<a class="icon link reference external" href="https://swdownloads.analog.com/update/wethlink/latest/revb-wethlink.hex" target="_blank">such as the latest
+release</a>),
+download the .hex file onto the DAPLINK drive that is created when you plug in
+the programmer. While the file is being copied, you will see the MAXDAP device
+blinking. Once the programming is done, the device reconnects again to the PC as
+a DAPLINK drive. Check this newly attached DAPLINK drive for a FAIL.TXT file. If
+it doesn’t exist, you have correctly programmed the board as in the following
+video:</p>
+<div class="embed-video"><video class="only-screen" controls="controls"><source src="https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/fw-update.webm" type="video/mp4"></source></video><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
+<p><a href="https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/fw-update.webm"><span>https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/fw-update.webm</span></a></p>
+</div></div><p>If however, there is a FAIL.TXT file, if might be that the programmer isn’t
+connected correctly or that the firmware of the programmer itself is not a
+firmware that can program a <a class="icon adi reference external" href="https://www.analog.com/MAX32650" target="_blank">MAX32650</a> target.
+Here’s how a failed programming looks like:</p>
+<div class="embed-video"><video class="only-screen" controls="controls"><source src="https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/fw-update-bad.webm" type="video/mp4"></source></video><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
+<p><a href="https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/fw-update-bad.webm"><span>https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/fw-update-bad.webm</span></a></p>
+</div></div></section>
+<section id="is-the-maxdap-firmware-correct">
+<h3>Is the MAXDAP firmware correct?<a class="headerlink" href="#is-the-maxdap-firmware-correct" title="Link to this heading"></a></h3>
+<p>The MAXDAP itself needs to run a specific firmware version to be able to program
+the MAX32650 with Drag and Drop. The DETAILS.TXT file on the DAPLINK drive
+specifies the Git SHA of the running firmware:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Git</span> <span class="n">SHA</span><span class="p">:</span> <span class="mi">649</span><span class="n">f2a1524190c5f0ea32c97bb8682ad6fd772a0</span>
+</pre></div>
+</div>
+<p>If what you see on your device is not the one indicated above, please follow the
+instructions on <a class="icon git reference external" href="https://github.com/analogdevicesinc/max32625pico-firmware-images/#how-to-update-the-firmware" target="_blank">this page</a>
+to update the MAXDAP firmware first.</p>
+</section>
+<section id="mcufla-sh">
+<h3>mcufla.sh<a class="headerlink" href="#mcufla-sh" title="Link to this heading"></a></h3>
+<p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/" target="_blank">ADI no-OS repository</a> provides a standalone script that can be used to program
+.elf files to various targets, including the <a class="icon adi reference external" href="https://www.analog.com/MAX32650" target="_blank">MAX32650</a>. Typical usage
+and output is shown below:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://raw.githubusercontent.com/analogdevicesinc/no-OS/master/tools/scripts/mcufla.sh
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>./mcufla.sh
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./mcufla.sh<span class="w"> </span>~/Work/no-OS/projects/wethlink/build/wethlink.elf
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Maxim platform detected
+Running cmd:
+  /home/dari/.mcuflash/maxim/openocd/src/openocd
+    -s /home/dari/.mcuflash/maxim/openocd/tcl
+    -c &#39;adapter driver cmsis-dap; transport select swd; &#39;
+    -f target/max32650.cfg
+    -c &#39;program /home/dari/Work/no-OS/projects/wethlink/build/wethlink.elf verify reset exit&#39;
+Open On-Chip Debugger 0.11.0+dev-g56a818e4c (2023-10-24-15:55)
+Licensed under GNU GPL v2
+For bug reports, read
+    http://openocd.org/doc/doxygen/bugs.html
+swd
+Info : CMSIS-DAP: SWD  supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: Test domain timer supported
+Info : CMSIS-DAP: FW Version = 2.1.0
+Info : CMSIS-DAP: Serial# = 042517028fbd037a00000000000000000000000097969906
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 2000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : max32xxx.cpu: Cortex-M4 r0p1 processor detected
+Info : max32xxx.cpu: target has 6 breakpoints, 4 watchpoints
+Info : max32xxx.cpu: external reset detected
+Info : starting gdb server for max32xxx.cpu on 3333
+Info : Listening on port 3333 for gdb connections
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x00000184 msp: 0x2000b300
+** Programming Started **
+** Programming Finished **
+** Verify Started **
+** Verified OK **
+** Resetting Target **
+shutdown command invoked
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
+<section id="make-run">
+<h3>make run<a class="headerlink" href="#make-run" title="Link to this heading"></a></h3>
+<p>This method involves installing the toolchain for building the
+<code class="docutils literal notranslate"><span class="pre">projects/wethlink</span></code> project and uploading the generated binary to the target
+with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">run</span></code>.</p>
+<p>Hardware revision must be specified when building the wethlink project,
+otherwise the build errors out. <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">HW_VERSION=0</span></code> builds for rev A hardware,
+and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">HW_VERSION=1</span></code> builds for rev B hardware.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For instructions on how to build the project, please refer to the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/build_guide.html" target="_blank" title="(in no-OS)"><span>No-OS Build Guide</span></a></p>
+</div>
+</section>
+</section>
+<section id="theory-of-operation">
+<h2>Theory of Operation<a class="headerlink" href="#theory-of-operation" title="Link to this heading"></a></h2>
+<p>The firmware uses many no-OS modules for accessing the various peripherals it
+needs for this project. The diagram below shows how these modules interact with
+the hardware and with each other. Of particular interest is the feedback loop
+from the embedded ADC that is periodically used to sample TX_DET and RX_DET at 1
+Hz (provided by the embedded RTC) to the <code class="docutils literal notranslate"><span class="pre">no_os_pid</span></code> P.I.D. controller which
+computes a new set of gain values that are written back into the transceiver.
+This feedback loop is the core functionality of this system and it ensures that
+the wireless link operates with optimum gains at any distance that the ADMV9615
+and ADMV9625 are set apart.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/wethlink-firmware.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/wethlink-firmware.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/wethlink-firmware.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Firmware Block Diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>A detailed view of this feedback loop is represented below, showing exactly what
+gains the feedback loop controls:</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/algo.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/algo.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/algo.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Feedback Loop Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The firmware can also interact with a PC application over the serial line
+(UART). Upon boot, it prints boot messages at 115200 baudrate, then launches an
+<code class="docutils literal notranslate"><span class="pre">iiod</span></code> application that can be accessed from a PC using <code class="docutils literal notranslate"><span class="pre">libiio</span></code> over a
+serial backend at 345600 baudrate. The following existing PC applications may be
+used to interact with the firmware:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">iio_info</span></code>, <code class="docutils literal notranslate"><span class="pre">iio_attr</span></code> (command-line tools from <a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/tree/main/Libiio" target="_blank">Libiio</a> )</p></li>
+<li><p><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe" target="_blank">Wethlink GUI</a> (Windows only)</p></li>
+</ol>
+<p>The fact that the firmware exposes the on-board devices as iio devices in a
+<a class="icon link reference external" href="https://www.kernel.org/doc/html/v4.12/driver-api/iio/index.html" target="_blank">standardized way</a>
+means that it is easy to devise new applications that can interact with the
+firmware by simply using the <a class="reference internal" href="../../../../software/libiio/index.html#libiio"><span class="std std-ref">Libiio</span></a> library.</p>
+<section id="iio-devices">
+<h3>IIO devices<a class="headerlink" href="#iio-devices" title="Link to this heading"></a></h3>
+<p>You can see all the iio devices and their channels and attributes below, as
+obtained with <code class="docutils literal notranslate"><span class="pre">iio_info</span></code>:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>serial:/dev/ttyACM0,345600,8n1n
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>iio_info version: 0.25 (git tag:v0.25)
+Libiio version: 0.25 (git tag: v0.25) backends: local xml ip usb serial
+IIO context created with serial backend.
+Backend version: 1.1 (git tag: 0000000)
+Backend description string: no-OS/projects/wethlink tags/wethlink-v1.0.0-rc1-7c98c2261
+IIO context has 9 attributes:
+    hw_model: admv9625
+    hw_version: b
+    hw_serial: serial
+    carrier_model: model
+    carrier_version: b
+    carrier_serial: serial
+    uri: serial:/dev/ttyACM0,345600,8n1n
+    serial,port: /dev/ttyACM0
+    serial,description: DAPLink CMSIS-DAP - 042517028fbd037a00000000000000000000000097969906
+IIO context has 6 devices:
+    iio:device0: hmc6300
+        1 channels found:
+            temp:  (input)
+            1 channel-specific attributes found:
+                attr  0: raw value: 15
+        8 device-specific attributes found:
+                attr  0: enabled value: 1
+                attr  1: vco value: 59850000
+                attr  2: vco_available value: 55125000 55387500 55650000 55912500 56175000 56437500 56700000 56962500 57225000 57487500 57750000 58012500 58275000 58537500 58800000 59062500 59325000 59587500 59850000 60112500 60375000 60637500 60900000 61162500 61425000 61687500 61950000 62212500 62475000 62737500 63000000 63262500 63525000 63787500 64050000 64312500 64575000 64837500 65100000 65362500 65625000 65887500 66150000
+                attr  3: vco_band value: 8
+                attr  4: vco_lock value: 1
+                attr  5: if_attn value: 15
+                attr  6: temp_en value: 1
+                attr  7: rf_attn value: 9
+        1 debug attributes found:
+                debug attr  0: direct_reg_access value: 0
+        No trigger on this device
+    iio:device1: hmc6301
+        1 channels found:
+            temp:  (input)
+            1 channel-specific attributes found:
+                attr  0: raw value: 15
+        14 device-specific attributes found:
+                attr  0: enabled value: 1
+                attr  1: vco value: 63262500
+                attr  2: vco_available value: 55125000 55387500 55650000 55912500 56175000 56437500 56700000 56962500 57225000 57487500 57750000 58012500 58275000 58537500 58800000 59062500 59325000 59587500 59850000 60112500 60375000 60637500 60900000 61162500 61425000 61687500 61950000 62212500 62475000 62737500 63000000 63262500 63525000 63787500 64050000 64312500 64575000 64837500 65100000 65362500 65625000 65887500 66150000
+                attr  3: vco_band value: 15
+                attr  4: vco_lock value: 1
+                attr  5: if_attn value: 6
+                attr  6: temp_en value: 1
+                attr  7: rf_lna_gain value: 1
+                attr  8: bb_attn1 value: 0
+                attr  9: bb_attn2 value: 0
+                attr 10: bb_attni_fine value: 0
+                attr 11: bb_attnq_fine value: 0
+                attr 12: bb_lpc value: 0
+                attr 13: bb_hpc value: 0
+        1 debug attributes found:
+                debug attr  0: direct_reg_access value: 0
+        No trigger on this device
+    iio:device2: mwc
+        2 channels found:
+            voltage0: tx_det (input)
+            2 channel-specific attributes found:
+                attr  0: raw value: 257
+                attr  1: scale value: 1.191406250
+            voltage1: rx_det (input)
+            2 channel-specific attributes found:
+                attr  0: raw value: 596
+                attr  1: scale value: 2.978515625
+        10 device-specific attributes found:
+                attr  0: tx_autotuning value: 1
+                attr  1: tx_target value: 350
+                attr  2: tx_tolerance value: 50
+                attr  3: rx_autotuning value: 1
+                attr  4: rx_target value: 1950
+                attr  5: rx_tolerance value: 50
+                attr  6: tx_auto_ifvga value: 1
+                attr  7: rx_auto_ifvga_rflna value: 1
+                attr  8: reset value: 0
+                attr  9: save value: 0
+        1 debug attributes found:
+                debug attr  0: direct_reg_access value: 1
+        No trigger on this device
+    iio:device3: adin1300
+        0 channels found:
+        3 device-specific attributes found:
+                attr  0: link value: 0
+                attr  1: speed value: 6
+                attr  2: autonegotiate value: 1
+        1 debug attributes found:
+                debug attr  0: direct_reg_access value: 4416
+        No trigger on this device
+    iio:device4: max24287
+        0 channels found:
+        3 device-specific attributes found:
+                attr  0: par_speed value: 5
+                attr  1: ser_link value: 1
+                attr  2: ser_speed value: 5
+        1 debug attributes found:
+                debug attr  0: direct_reg_access value: 0
+        No trigger on this device
+    iio:device5: adm1177 (buffer capable)
+        2 channels found:
+            voltage0:  (input, index: 0, format: le:u12/32&gt;&gt;0)
+            2 channel-specific attributes found:
+                attr  0: raw value: 1901
+                attr  1: scale value: 6.433105468
+            current0:  (input, index: 1, format: le:u12/32&gt;&gt;0)
+            2 channel-specific attributes found:
+                attr  0: raw value: 358
+                attr  1: scale value: 1.033593750
+        No trigger on this device
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>The context contains information that is provisioned at manufacturing such as
+serial number, hardware revision, or information produced during the build
+process such as the firmware version. The ADMV9615 or ADMV9625 DIP switch state
+is also exposed as a context attribute and the firmware makes certain decisions
+based on it.</p>
+<p>There are 6 exposed devices:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hmc6300</span></code> - the transmitter or the ADMV96x5 module</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hmc6301</span></code>- the receiver of the ADMV96x5 module</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mwc</span></code> - this device exposes attributes and channels that are specific to
+this project, such as the <code class="docutils literal notranslate"><span class="pre">tx_det</span></code> and <code class="docutils literal notranslate"><span class="pre">rx_det</span></code> ADC channels, attributes
+to enable/disable automatic gain control, attributes to write settings to
+non-volatile memory etc. (read “mwc” as “microwave connector”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adin1300</span></code> - the Ethernet PHY</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max24287</span></code> - the RGMII to SGMII Serializer/Deserializer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adm1177</span></code> - the input power monitor</p></li>
+</ol>
+</section>
+<section id="led">
+<h3>LED<a class="headerlink" href="#led" title="Link to this heading"></a></h3>
+<p>Each ADMV96S-WGBE-EK reference design board has a few LED’s to convey
+information from the firmware to the user.</p>
+<p>The blue LED is a <em>power good</em> LED and it only lights up if the input power is a
+clean 12V.</p>
+<p>The 4 LED series at the top of the board convey the following information:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>RX</p></th>
+<th class="head"></th>
+<th class="head"><p>TX</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DET_OUT</p></td>
+<td><p>RX_LOCK</p></td>
+<td><p>DET_OUT</p></td>
+<td><p>TX_LOCK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lit (green or
+red) when RX
+autotuning is
+on, otherwise
+not lit. Green
+when RX_DET is
+within tolerance
+of the target.
+Red when RX_DET
+is not within
+tolerance of the
+target.</p></td>
+<td><p>Lit when RX VCO
+has locked.</p></td>
+<td><p>Lit (green or
+red) when TX
+autotuning is
+on, otherwise
+not lit. Green
+when TX_DET is
+within tolerance
+of the target.
+Red when TX_DET
+is not within
+tolerance of the
+target.</p></td>
+<td><p>Lit when TX VCO
+has locked.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The following examples shows a board that has TX and RX VCO’s locked, TX and RX
+autotuning on, TX_DET within tolerance of target but the firmware can’t keep
+RX_DET within tolerance of target. To force this error, one of the boards facing
+each other was unplugged so the photographed board was trying to maximize the RX
+gains to receive something meaningful. But if there is no incoming signal, gain
+changes cannot possibly affect RX_DET so the firmware lights up the LED in red.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/led.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/led.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/led.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">LED Indicators</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The RJ45 connector also has embedded LED’s. The top left one lights up green
+when the ADIN1300 has connected to another PHY over the Ethernet cable. This LED
+is briefly turned off when there is activity on the Ethernet cable essentially
+blinking it. So a blinking top left LED means both the Ethernet link is up and
+there is ongoing activity. The top right LED conveys link speed information and
+is turned off when link speed is 10 Mbps, lit green for 100 Mbps and lit amber
+when speed is 1000 Mbps.</p>
+</section>
+<section id="eeprom">
+<h3>EEPROM<a class="headerlink" href="#eeprom" title="Link to this heading"></a></h3>
+<p>The 24LC32A EEPROM has 32Kb memory capacity (4 KB) and is connected to an I2C
+bus. The firmware uses the EEPROM to store non-volatile parameters to be loaded
+at boot.</p>
+<p>In order not to waste space, and to make sure future iterations of the firmware
+may use areas of the EEPROM that are currently unused, a design decision had to
+be made from the start, as to what size a non-volatile parameter set should
+have. A reasonable size of 256 bytes was chosen, which makes it possible to fit
+16 such parameter sets into the memory.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Address</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Size</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x0</p></td>
+<td><p>NVMP1</p></td>
+<td><p>256</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x100</p></td>
+<td><p>Reserved</p></td>
+<td><p>3584</p></td>
+</tr>
+<tr class="row-even"><td><p>0xF00</p></td>
+<td><p>Factory defaults</p></td>
+<td><p>256</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Two such areas are currently used by the firmware, one is the NVMP1 area which
+is the active configuration loaded at boot and the other one is the factory
+defaults configuration which can be copied into the active configuration with a
+certain procedure.</p>
+<p>The 0x100 to 0x3FF memory area is not used.</p>
+<p>Each NVMP area has 255 bytes of actual parameters and 1 last byte consisting of
+a CRC8 computed over the leading 255 bytes.</p>
+<p>The CRC8 checksums are checked at boot and if they have been incorrectly written
+or tampered with, the parameters are not used. If no suitable parameters are
+found in NVMP1 or in the factory defaults area, a set of in-firmware hardcoded
+parameters are used for the boot.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/eeprom-diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/eeprom-diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/eeprom-diagram.png" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">EEPROM Memory Map</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="resetting-to-factory-defaults">
+<h3>Resetting to factory defaults<a class="headerlink" href="#resetting-to-factory-defaults" title="Link to this heading"></a></h3>
+<p>To explicitly reset to factory defaults, click the S3 button, keep it pressed
+and click the S2 button briefly. The four LED’s will blink 10 times for about 3
+seconds to confirm the reset to factory defaults has completed.</p>
+</section>
+<section id="production-firmware-and-provisioning">
+<h3>Production firmware and provisioning<a class="headerlink" href="#production-firmware-and-provisioning" title="Link to this heading"></a></h3>
+<p>There are two versions of the firmware that are for <em>normal</em> and <em>production</em>
+use.</p>
+<p>The <em>normal</em> firmware is the one that runs on the hardware, provided the
+hardware had gone through the production process fully. The production process
+has 3 main steps: actual hardware production, provisioning and testing.</p>
+<p>The <em>production</em> firmware is a variant that has the following extra features:</p>
+<ul class="simple">
+<li><p>It disregards whatever is in the EEPROM and loads up with hardcoded
+parameters.</p></li>
+<li><p>It allows writing of the factory defaults area of the EEPROM by exposing the
+<code class="docutils literal notranslate"><span class="pre">mwc.save_defaults</span></code> attribute.</p></li>
+<li><p>It allows provisioning by allowing the change of the serial number
+(<code class="docutils literal notranslate"><span class="pre">mwc.hw_serial</span></code>, <code class="docutils literal notranslate"><span class="pre">mwc.carrier_serial</span></code>), revision (<code class="docutils literal notranslate"><span class="pre">mwc.hw_version</span></code>,
+<code class="docutils literal notranslate"><span class="pre">mwc.carrier_version</span></code>) and model name (<code class="docutils literal notranslate"><span class="pre">mwc.carrier_model</span></code>) which all
+default to <code class="docutils literal notranslate"><span class="pre">-</span></code> when the device is not provisioned.</p></li>
+</ul>
+<p>With a <em>normal</em> firmware, the device will not behave correctly if it was not
+provisioned. The firmware needs valid parameters to operate correctly so having
+<code class="docutils literal notranslate"><span class="pre">-</span></code> being displayed as carrier serial number is an indicator that the device
+hasn’t somehow gone through the full production cycle that performs
+provisioning.</p>
+</section>
+<section id="autonegotiation">
+<h3>Autonegotiation<a class="headerlink" href="#autonegotiation" title="Link to this heading"></a></h3>
+<p>The EVAL-ADMV96S-WGBE-EK1 is a system composed of two independent boards that
+connect to the <em>outside</em> world through Ethernet. The network infrastructure at
+the other end of the Ethernet cable is not known yet the system can detect its
+capabilities in terms of data bandwidth and dulplex mode due to autonegotiation
+signaling at physical layer (OSI model).</p>
+<p>The system may be connected at any time to devices on a network that have
+different capabilities. The device at one end could be able to talk 100 Mbps
+half-duplex, the one at the other end could be capable of 1 Gbps full-duplex. In
+this scenario, the system needs to adapt for the weakest link and configure the
+100 Mbps half-duplex speed at all levels, it’s the common denominator that
+allows the two devices to talk to each other.</p>
+<p>Having two independent devices in a system, each running its own firmware, this
+could only be possible if there is some mechanism through which the devices
+could advertise speeds to one another. The wireless link carries SGMII interface
+and the SGMII itself has an autonegotiation mechanism through which a frame
+containing speed and duplex information can be passed on from one device to the
+other. The firmware uses this feature to propagate an Ethernet link speed change
+throughout the whole system.</p>
+<figure class="align-default" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/autonegotiation.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/autonegotiation.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Autonegotiation Flow</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Steps 1-4 are executed in an interrupt service routine from the PHY when link
+status changes.</p>
+<p>Steps 5-6 are executed in an interrupt service routine from the SERDES when new
+autonegotiation page was received.</p>
+<p>To resume this section:</p>
+<ul class="simple">
+<li><p>there is speed and duplex mode autonegotiation at Ethernet level</p></li>
+<li><p>there is speed and duplex mode autonegotiation at SGMII level</p></li>
+<li><p>the lowest advertised speed of a device in the system is propagated and the
+system subsequently works at that speed</p></li>
+</ul>
+</section>
+<section id="temperature-compensated-gains">
+<h3>Temperature compensated gains<a class="headerlink" href="#temperature-compensated-gains" title="Link to this heading"></a></h3>
+<p>Due to reasons related to the transceiver hardware, the optimum gains at which
+it operates are temperature dependent. Affected gains are TX IF VGA, RX IF VGA
+and RX RF LNA. The optimum gains found through lab characterization are provided
+by Analog Devices.</p>
+<p>The transceivers have a very coarse temperature sensor that is used by the
+firmware to look up gains in a lookup table. The default behavior of the
+firmware is to auto compensate gains for temperature using the factory default
+lookup tables.</p>
+<p>You can disable auto compensation by unticking the checkbox, or you can keep it
+and adjust the tables to your liking.</p>
+<p>TX temperature compensation table:</p>
+<figure class="align-default" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/tx-compensation.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/tx-compensation.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">TX temperature compensation table</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>RX temperature compensation table:</p>
+<figure class="align-default" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/rx-compensation.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/rx-compensation.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">RX temperature compensation table</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Raw Temp</p></th>
+<th class="head"><p>Range</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>-40°C … -25°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>-25°C … 10°C</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>10°C … 40°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>40°C … 75°C</p></td>
+</tr>
+<tr class="row-even"><td><p>31</p></td>
+<td><p>&gt; 75°C</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="p-i-d-controlled-gains">
+<h3>P.I.D. controlled gains<a class="headerlink" href="#p-i-d-controlled-gains" title="Link to this heading"></a></h3>
+<p>TX_DET and RX_DET analog signals of the transceivers are sampled regularly by
+the embedded ADC of the microcontroller. They correspond to the TX and RX signal
+power and need to be kept in a certain sweetspot for proper operation of the
+wireless link.</p>
+<p>The remaining gains, that aren’t temperature controlled, are the TX RF VGA and
+the RX BB (COARSE1, COARSE2 and FINE). By controlling these gains up and down,
+one can see a change in the RX and RX power detectors.</p>
+<p>So we have a feedback loop and we can apply control theory on it in the form of
+a P.I.D. algorithm to keep the TX_DET and RX_DET in the sweetspot by having the
+algorithm tweak the gains. The implementation actually only uses the
+proportional and integral coefficients, essentially making this a P.I. control.</p>
+<p>Every second the algorithm is run for several iterations until it settles on a
+resulting gain. There are two challenges:</p>
+<ol class="arabic simple">
+<li><p>Make it settle fast! We don’t care too much about overshoot, we care about
+settling fast because the algorithm is run on the main loop along with other
+things and we don’t want to block for too long.</p></li>
+<li><p>Make it settle with as little gain changes as possible! Any gain change will
+momentarily mess with the signals being sent in that instant across the
+wireless link, so by minimizing the gain changes, we minimize the bit error
+rate throughout the whole system.</p></li>
+</ol>
+<p>To illustrate how the algorithm works, here’s the result of a simulation with
+artificial perturbations at samples 100, 200, 300, and 400 in order to observe
+the characteristics of the control. The top part shows the output of the P.I. as
+an attenuation in steps between 0 and 31. The bottom part is a simulated RX_DET
+(mV) based on what attenuation the algorithm previously set.</p>
+<figure class="align-default" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/pid.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/tfcollins/overview-doc/docs/solutions/reference-designs/admv96s-wgbe-ek1/software-guide/pid.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">P.I.D. Control Simulation</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>With the factory default settings, the algorithm finds the target within 10
+iterations or less and does it with few gain changes addressing both of the
+above points. As with any P.I.D. algorithm, it’s possible that better behavior
+is achievable by experimentally fine tuning the coefficients but with the
+factory default coefficients and initial release implementation, the system
+achieves a bit error rate of less than 10E-10 for constant distance and across
+the whole -40°C to 80°C.</p>
+</section>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../hardware-guide/index.html#admv96s-wgbe-ek1-hardware-guide"><span class="std std-ref">ADMV96S-WGBE-EK1 Hardware User Guide</span></a></p></li>
+<li><p><a class="reference internal" href="#admv96s-wgbe-ek1-software-guide"><span class="std std-ref">ADMV96S-WGBE-EK1 Software User Guide</span></a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/wethlink" target="_blank">ADMV96S-WGBE-EK1 Firmware Project</a></p></li>
+<li><p><a class="icon link reference external" href="https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe" target="_blank">Wethlink Installer</a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../hardware-guide/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Hardware User Guide</a>
+    <a href="../../adrd8012-01Z/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADRD8012-01Z</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

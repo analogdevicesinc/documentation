@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This page explains how versioning works across the ADI ecosystem, which component versions work together, where to find support, and how to stay up-to-date with new releases." name="description" />
+
+    <title>Versioning and Support &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Active Learning Modules (ADALM)" href="../products/adalm/index.html" />
+    <link rel="prev" title="Common Development Workflows" href="workflows.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Versioning and Support</a><ul>
+<li><a class="reference internal" href="#understanding-ecosystem-versioning">Understanding Ecosystem Versioning</a><ul>
+<li><a class="reference internal" href="#component-versioning-strategies">Component Versioning Strategies</a><ul>
+<li><a class="reference internal" href="#hdl">HDL</a></li>
+<li><a class="reference internal" href="#linux-kernel-drivers">Linux Kernel Drivers</a></li>
+<li><a class="reference internal" href="#libiio">libiio</a></li>
+<li><a class="reference internal" href="#no-os">no-OS</a></li>
+<li><a class="reference internal" href="#pyadi-iio">pyadi-iio</a></li>
+<li><a class="reference internal" href="#kuiper-linux">Kuiper Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-compatibility-matrix">Version Compatibility Matrix</a><ul>
+<li><a class="reference internal" href="#compatibility-notes">Compatibility Notes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#checking-installed-versions">Checking Installed Versions</a><ul>
+<li><a class="reference internal" href="#quick-version-check-script">Quick Version Check Script</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#release-cadence-and-planning">Release Cadence and Planning</a><ul>
+<li><a class="reference internal" href="#typical-release-schedule">Typical Release Schedule</a></li>
+<li><a class="reference internal" href="#support">Support</a></li>
+<li><a class="reference internal" href="#staying-updated">Staying Updated</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#support-channels">Support Channels</a><ul>
+<li><a class="reference internal" href="#getting-help">Getting Help</a></li>
+<li><a class="reference internal" href="#what-to-include-when-asking-for-help">What to Include When Asking for Help</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contributing-to-the-ecosystem">Contributing to the Ecosystem</a><ul>
+<li><a class="reference internal" href="#how-to-contribute">How to Contribute</a></li>
+<li><a class="reference internal" href="#contribution-guidelines">Contribution Guidelines</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#migration-guides">Migration Guides</a><ul>
+<li><a class="reference internal" href="#upgrading-between-releases">Upgrading Between Releases</a></li>
+<li><a class="reference internal" href="#deprecation-policy">Deprecation Policy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Ecosystem Overview</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Full Stack Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="components.html">Ecosystem Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html">Common Development Workflows</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Versioning and Support</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../products/adalm/index.html">Active Learning Modules (ADALM)</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../products/adalm/m2k/index.html">ADALM2000</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/m2k/help_support.html">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../products/adalm/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3" id="toctree-collapse-2-3"/><div class="collapse"><a class="reference internal" href="../products/adalm/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-2-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3-1" id="toctree-collapse-2-3-1"/><div class="collapse"><a class="reference internal" href="../products/adalm/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-2-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../products/adalm/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3-2" id="toctree-collapse-2-3-2"/><div class="collapse"><a class="reference internal" href="../products/adalm/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-2-3-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../products/adalm/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../products/adalm/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../products/adalm/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3-3" id="toctree-collapse-2-3-3"/><div class="collapse"><a class="reference internal" href="../products/adalm/pluto/users/index.html">For End Users</a><label for="toctree-collapse-2-3-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../products/adalm/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto/help_support.html">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../products/adalm/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-2" id="toctree-collapse-4-2"/><div class="collapse"><a class="reference internal" href="../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-4-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-2-1" id="toctree-collapse-4-2-1"/><div class="collapse"><a class="reference internal" href="../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-4-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-3" id="toctree-collapse-4-3"/><div class="collapse"><a class="reference internal" href="../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-4-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5-1" id="toctree-collapse-5-1"/><div class="collapse"><a class="reference internal" href="../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-5-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5-1-1" id="toctree-collapse-5-1-1"/><div class="collapse"><a class="reference internal" href="../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-5-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../software/index.html">Software</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-1" id="toctree-collapse-6-1"/><div class="collapse"><a class="reference internal" href="../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-6-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-1-1" id="toctree-collapse-6-1-1"/><div class="collapse"><a class="reference internal" href="../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-6-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-2" id="toctree-collapse-6-2"/><div class="collapse"><a class="reference internal" href="../software/libiio/index.html">Libiio</a><label for="toctree-collapse-6-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-3" id="toctree-collapse-6-3"/><div class="collapse"><a class="reference internal" href="../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-4" id="toctree-collapse-6-4"/><div class="collapse"><a class="reference internal" href="../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-6-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-5" id="toctree-collapse-6-5"/><div class="collapse"><a class="reference internal" href="../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-6-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1" id="toctree-collapse-7-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-7-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-2" id="toctree-collapse-7-2"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-7-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-3" id="toctree-collapse-7-3"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-7-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-4" id="toctree-collapse-7-4"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-7-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-5" id="toctree-collapse-7-5"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-7-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-6" id="toctree-collapse-7-6"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-7-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-7" id="toctree-collapse-7-7"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-7-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-8" id="toctree-collapse-7-8"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-7-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-9" id="toctree-collapse-7-9"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-7-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-10" id="toctree-collapse-7-10"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-7-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-11" id="toctree-collapse-7-11"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-7-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-12" id="toctree-collapse-7-12"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-7-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-13" id="toctree-collapse-7-13"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-7-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-14" id="toctree-collapse-7-14"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-7-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-15" id="toctree-collapse-7-15"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-7-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-15-1" id="toctree-collapse-7-15-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-7-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-16" id="toctree-collapse-7-16"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-7-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-16-1" id="toctree-collapse-7-16-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-7-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-17" id="toctree-collapse-7-17"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-7-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-18" id="toctree-collapse-7-18"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-7-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-18-1" id="toctree-collapse-7-18-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-7-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-19" id="toctree-collapse-7-19"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-7-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-19-1" id="toctree-collapse-7-19-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-7-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-20" id="toctree-collapse-7-20"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-7-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-21" id="toctree-collapse-7-21"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-7-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-22" id="toctree-collapse-7-22"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-7-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-23" id="toctree-collapse-7-23"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-7-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../university/index.html">Engineering University Program</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-1" id="toctree-collapse-9-1"/><div class="collapse"><a class="reference internal" href="../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-9-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="index.html">Ecosystem Overview</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="versioning-and-support">
+<span id="overview-versioning-support"></span><h1>Versioning and Support<a class="headerlink" href="#versioning-and-support" title="Link to this heading"></a></h1>
+<p>This page explains how versioning works across the ADI ecosystem, which component
+versions work together, where to find support, and how to stay up-to-date with
+new releases.</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#understanding-ecosystem-versioning" id="id2">Understanding Ecosystem Versioning</a></p>
+<ul>
+<li><p><a class="reference internal" href="#component-versioning-strategies" id="id3">Component Versioning Strategies</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#version-compatibility-matrix" id="id4">Version Compatibility Matrix</a></p>
+<ul>
+<li><p><a class="reference internal" href="#compatibility-notes" id="id5">Compatibility Notes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#checking-installed-versions" id="id6">Checking Installed Versions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#quick-version-check-script" id="id7">Quick Version Check Script</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#release-cadence-and-planning" id="id8">Release Cadence and Planning</a></p>
+<ul>
+<li><p><a class="reference internal" href="#typical-release-schedule" id="id9">Typical Release Schedule</a></p></li>
+<li><p><a class="reference internal" href="#support" id="id10">Support</a></p></li>
+<li><p><a class="reference internal" href="#staying-updated" id="id11">Staying Updated</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#support-channels" id="id12">Support Channels</a></p>
+<ul>
+<li><p><a class="reference internal" href="#getting-help" id="id13">Getting Help</a></p></li>
+<li><p><a class="reference internal" href="#what-to-include-when-asking-for-help" id="id14">What to Include When Asking for Help</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#contributing-to-the-ecosystem" id="id15">Contributing to the Ecosystem</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-contribute" id="id16">How to Contribute</a></p></li>
+<li><p><a class="reference internal" href="#contribution-guidelines" id="id17">Contribution Guidelines</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#migration-guides" id="id18">Migration Guides</a></p>
+<ul>
+<li><p><a class="reference internal" href="#upgrading-between-releases" id="id19">Upgrading Between Releases</a></p></li>
+<li><p><a class="reference internal" href="#deprecation-policy" id="id20">Deprecation Policy</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#see-also" id="id21">See Also</a></p></li>
+</ul>
+</nav>
+<section id="understanding-ecosystem-versioning">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Understanding Ecosystem Versioning</a><a class="headerlink" href="#understanding-ecosystem-versioning" title="Link to this heading"></a></h2>
+<p>The ADI ecosystem consists of multiple independently-versioned components that
+must work together. Understanding the versioning strategy for each component
+helps you select compatible versions and plan upgrades.</p>
+<section id="component-versioning-strategies">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Component Versioning Strategies</a><a class="headerlink" href="#component-versioning-strategies" title="Link to this heading"></a></h3>
+<p>Across the different ADI source code repositories, there will be a concept of a release. This primarily relates to a a cross component release where components are built and tested together to ensure compatibility. This is done through a single Linux distribution (Kuiper Linux) that bundles specific versions of each component. no-OS releases follow this same cadence but are tested separately since they run in different environments.</p>
+<p>The Kuiper Linux distribution release name is primarily tied to the version of AMD tools (Vivado), which the HDL release is also tied to. This is due to the historical supported hardware platforms that have been supported by ADI since 2014. Therefore, a release with the name <code class="docutils literal notranslate"><span class="pre">2023_r2</span></code> indicates that it is tied to AMD Vivado 2023.2 and Vitis 2023.2. The HDL, Linux, and no-OS repositories will all create release tags and branches with similar names.</p>
+<p>Outside of HDL, Linux, and no-OS, other components such as libiio and pyadi-iio have their own independent versioning strategies that are not tied to the Kuiper Linux or HDL release names. However, for each Kuiper Linux release, specific versions of libiio and pyadi-iio are bundled and tested together to ensure compatibility. These are documented in the Kuiper Linux release notes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In 2026, new release naming will be more generic to denote the year and not
+be as strictly tied to a version of AMD tools.</p>
+</div>
+<section id="hdl">
+<h4>HDL<a class="headerlink" href="#hdl" title="Link to this heading"></a></h4>
+<p><strong>Version Format:</strong> <code class="docutils literal notranslate"><span class="pre">YYYY_rN</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">hdl_2024_r2</span></code>)</p>
+<p><strong>Strategy:</strong></p>
+<ul class="simple">
+<li><p>Bi-annual releases</p></li>
+<li><p>Git tags for each release</p></li>
+<li><p>Branches for Long-Term Support (LTS) versions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main</span></code> branch tracks latest development</p></li>
+</ul>
+<p><strong>What Changes:</strong></p>
+<ul class="simple">
+<li><p>New device support</p></li>
+<li><p>IP core updates (JESD204, SPI Engine, DMA)</p></li>
+<li><p>Bug fixes and performance improvements</p></li>
+<li><p>Vivado/Quartus version requirements</p></li>
+</ul>
+<p><strong>Finding Version:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>hdl
+git<span class="w"> </span>describe<span class="w"> </span>--tags
+<span class="c1"># e.g., hdl_2024_r2</span>
+</pre></div>
+</div>
+<p><strong>Release Notes:</strong></p>
+<div class="line-block">
+<div class="line"><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/releases" target="_blank">GitHub Releases</a></div>
+<div class="line"><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/releases.html#releases" target="_blank" title="(in HDL)"><span class="xref std std-ref">Releases user guide</span></a></div>
+</div>
+</section>
+<section id="linux-kernel-drivers">
+<h4>Linux Kernel Drivers<a class="headerlink" href="#linux-kernel-drivers" title="Link to this heading"></a></h4>
+<p><strong>Version Format:</strong> Mainline kernel version + ADI patches (e.g., <code class="docutils literal notranslate"><span class="pre">6.1.75-adi</span></code>)</p>
+<p><strong>Strategy:</strong></p>
+<ul class="simple">
+<li><p>Tracks upstream Linux kernel releases</p></li>
+<li><p>ADI patches applied on top for new features</p></li>
+<li><p>Drivers upstreamed to mainline when stable</p></li>
+<li><p>LTS kernels (5.15, 6.1, 6.6) recommended for production</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main</span></code> branch uses AMD/Xilinx as upstream base. See Linux README for details.</p></li>
+</ul>
+<p><strong>What Changes:</strong></p>
+<ul class="simple">
+<li><p>New drivers</p></li>
+<li><p>Devicetree bindings</p></li>
+<li><p>Bug fixes and optimizations</p></li>
+<li><p>Documentation updates</p></li>
+</ul>
+<p><strong>Finding Version:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uname<span class="w"> </span>-r
+<span class="c1"># e.g., 6.1.75-adi-xilinx-v2024.1</span>
+</pre></div>
+</div>
+<p><strong>Release Notes:</strong></p>
+<div class="line-block">
+<div class="line"><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/releases" target="_blank">GitHub Releases</a></div>
+<div class="line"><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/getting_started.html#getting-started" target="_blank" title="(in Linux Drivers)"><span class="xref std std-ref">Releases user guide</span></a></div>
+</div>
+</section>
+<section id="libiio">
+<h4>libiio<a class="headerlink" href="#libiio" title="Link to this heading"></a></h4>
+<p><strong>Version Format:</strong> <code class="docutils literal notranslate"><span class="pre">vMAJOR.MINOR</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">v0.26</span></code>)</p>
+<p><strong>Strategy:</strong></p>
+<ul class="simple">
+<li><p>Semantic versioning approaching v1.0</p></li>
+<li><p>Minor versions add features, maintain backward compatibility</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main</span></code> branch for development</p></li>
+<li><p>Tagged releases on GitHub</p></li>
+</ul>
+<p><strong>What Changes:</strong></p>
+<ul class="simple">
+<li><p>New backends (e.g., serial backend added in v0.21)</p></li>
+<li><p>Performance improvements</p></li>
+<li><p>API additions (rarely breaking changes)</p></li>
+<li><p>Bug fixes</p></li>
+</ul>
+<p><strong>Finding Version:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>--version
+<span class="c1"># Libiio version: 0.26 (git tag: a0eca0d)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">iio</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iio</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="c1"># (&#39;0&#39;, &#39;26&#39;, &#39;a0eca0d&#39;)</span>
+</pre></div>
+</div>
+<p><strong>Release Notes:</strong> <a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/releases" target="_blank">GitHub Releases</a></p>
+</section>
+<section id="no-os">
+<h4>no-OS<a class="headerlink" href="#no-os" title="Link to this heading"></a></h4>
+<p><strong>Version Format:</strong> <code class="docutils literal notranslate"><span class="pre">YYYY_rN</span></code> (synchronized with HDL releases)</p>
+<p><strong>Strategy:</strong></p>
+<ul class="simple">
+<li><p>Quarterly releases aligned with HDL</p></li>
+<li><p>Tagged releases on GitHub</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main</span></code> branch for development</p></li>
+<li><p>Platform HAL updates</p></li>
+</ul>
+<p><strong>What Changes:</strong></p>
+<ul class="simple">
+<li><p>New device drivers</p></li>
+<li><p>Platform support (new MCUs)</p></li>
+<li><p>TinyIIO server updates</p></li>
+<li><p>Build system improvements</p></li>
+</ul>
+<p><strong>Finding Version:</strong></p>
+<p>Check firmware build logs or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span></code> in source tree.</p>
+<p><strong>Release Notes:</strong> <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/releases" target="_blank">GitHub Releases</a></p>
+</section>
+<section id="pyadi-iio">
+<h4>pyadi-iio<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h4>
+<p><strong>Version Format:</strong> <code class="docutils literal notranslate"><span class="pre">vMAJOR.MINOR.PATCH</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">v0.0.17</span></code>)</p>
+<p><strong>Strategy:</strong></p>
+<ul class="simple">
+<li><p>Python semantic versioning</p></li>
+<li><p>Published to PyPI (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyadi-iio</span></code>)</p></li>
+<li><p>Frequent releases (monthly to quarterly)</p></li>
+<li><p>Backward compatible within minor versions</p></li>
+</ul>
+<p><strong>What Changes:</strong></p>
+<ul class="simple">
+<li><p>New device classes</p></li>
+<li><p>API additions</p></li>
+<li><p>Bug fixes</p></li>
+<li><p>libiio dependency updates</p></li>
+</ul>
+<p><strong>Finding Version:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>show<span class="w"> </span>pyadi-iio
+<span class="c1"># Version: 0.0.17</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adi</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">adi</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="c1"># &#39;0.0.17&#39;</span>
+</pre></div>
+</div>
+<p><strong>Release Notes:</strong> <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/releases" target="_blank">GitHub Releases</a></p>
+</section>
+<section id="kuiper-linux">
+<h4>Kuiper Linux<a class="headerlink" href="#kuiper-linux" title="Link to this heading"></a></h4>
+<p><strong>Version Format:</strong> <code class="docutils literal notranslate"><span class="pre">YYYY_rN</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">2024_r1</span></code>)</p>
+<p><strong>Strategy:</strong></p>
+<ul class="simple">
+<li><p>Bi-annual releases (r1, r2)</p></li>
+<li><p>Debian-based, tracks Debian stable</p></li>
+<li><p>Bundles specific versions of ADI tools</p></li>
+<li><p>Rolling updates via <code class="docutils literal notranslate"><span class="pre">apt</span></code> between releases</p></li>
+</ul>
+<p><strong>What’s Included:</strong></p>
+<ul class="simple">
+<li><p>Base: Debian 12 (Bookworm) or 11 (Bullseye)</p></li>
+<li><p>Kernel: ADI-patched Linux (e.g., 6.1.x)</p></li>
+<li><p>libiio: Specific version (e.g., 0.26)</p></li>
+<li><p>pyadi-iio: Specific version (e.g., 0.0.17)</p></li>
+<li><p>Scopy: Latest stable</p></li>
+<li><p>Tools: IIO Oscilloscope, GNU Radio, development tools</p></li>
+</ul>
+<p><strong>Finding Version:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/etc/issue
+<span class="c1"># Analog Devices Kuiper Linux 2024_r1</span>
+</pre></div>
+</div>
+<p><strong>Release Notes:</strong> <a class="icon git reference external" href="https://github.com/analogdevicesinc/adi-kuiper-gen/releases" target="_blank">GitHub Releases</a></p>
+</section>
+</section>
+</section>
+<section id="version-compatibility-matrix">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Version Compatibility Matrix</a><a class="headerlink" href="#version-compatibility-matrix" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a placeholder table, please update with actual tested versions.</p>
+</div>
+<p>The following table shows tested and recommended version combinations:</p>
+<div class="table-wrapper colwidths-given docutils container" id="id1">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Recommended Version Combinations</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 12.0%" />
+<col style="width: 15.0%" />
+<col style="width: 10.0%" />
+<col style="width: 12.0%" />
+<col style="width: 15.0%" />
+<col style="width: 12.0%" />
+<col style="width: 24.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>HDL</p></th>
+<th class="head"><p>Linux Kernel</p></th>
+<th class="head"><p>libiio</p></th>
+<th class="head"><p>pyadi-iio</p></th>
+<th class="head"><p>Kuiper Linux</p></th>
+<th class="head"><p>no-OS</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>2024_r2</strong></p></td>
+<td><p>6.1.75-adi</p></td>
+<td><p>v0.26</p></td>
+<td><p>v0.0.17</p></td>
+<td><p>2024_r1</p></td>
+<td><p>2024_r2</p></td>
+<td><p><strong>Latest Stable</strong> - Recommended for new projects</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2024_r1</strong></p></td>
+<td><p>6.1.54-adi</p></td>
+<td><p>v0.25</p></td>
+<td><p>v0.0.16</p></td>
+<td><p>2023_r2</p></td>
+<td><p>2024_r1</p></td>
+<td><p><strong>LTS</strong> - Production use, well-tested</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2023_r2</strong></p></td>
+<td><p>5.15.x-adi</p></td>
+<td><p>v0.24</p></td>
+<td><p>v0.0.15</p></td>
+<td><p>2023_r2</p></td>
+<td><p>2023_r2</p></td>
+<td><p>Previous LTS - Mature, conservative</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>main</strong></p></td>
+<td><p>6.6.x-adi</p></td>
+<td><p>main</p></td>
+<td><p>main</p></td>
+<td><p>N/A</p></td>
+<td><p>main</p></td>
+<td><p><strong>Development</strong> - Bleeding edge, may have issues</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="compatibility-notes">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Compatibility Notes</a><a class="headerlink" href="#compatibility-notes" title="Link to this heading"></a></h3>
+<p><strong>Forward Compatibility:</strong></p>
+<ul class="simple">
+<li><p><strong>libiio:</strong> Generally backward compatible; newer versions work with older contexts</p></li>
+<li><p><strong>pyadi-iio:</strong> Requires compatible libiio version (usually latest or previous release)</p></li>
+<li><p><strong>Linux drivers:</strong> Mainline drivers work across kernel versions (devicetree may differ)</p></li>
+<li><p><strong>HDL:</strong> IP cores are forward compatible within same Vivado/Quartus major version</p></li>
+</ul>
+<p><strong>Breaking Changes:</strong></p>
+<p>Major version bumps (e.g., libiio v0.x → v1.0) may introduce API changes. Check
+release notes before upgrading production systems.</p>
+<p><strong>Mixing Versions:</strong></p>
+<p>You can generally mix versions across the network boundary:</p>
+<ul class="simple">
+<li><p>Old libiio client can access new server (via <code class="docutils literal notranslate"><span class="pre">ip:</span></code> backend)</p></li>
+<li><p>New libiio client can access old devices</p></li>
+<li><p>pyadi-iio works with multiple libiio versions</p></li>
+</ul>
+<p><strong>FPGA + Linux:</strong></p>
+<p>HDL and Linux kernel versions must match for:</p>
+<ul class="simple">
+<li><p>Devicetree bindings (new devices)</p></li>
+<li><p>AXI IP core addresses</p></li>
+<li><p>Driver compatibility with HDL features</p></li>
+</ul>
+<p>Use the same release tag (e.g., both <code class="docutils literal notranslate"><span class="pre">2024_r1</span></code>) to ensure compatibility.</p>
+</section>
+</section>
+<section id="checking-installed-versions">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Checking Installed Versions</a><a class="headerlink" href="#checking-installed-versions" title="Link to this heading"></a></h2>
+<section id="quick-version-check-script">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Quick Version Check Script</a><a class="headerlink" href="#quick-version-check-script" title="Link to this heading"></a></h3>
+<p>Run this on your Linux system to see all installed ADI component versions:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== ADI Ecosystem Version Check ===&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Linux Kernel:&quot;</span>
+uname<span class="w"> </span>-r
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;libiio:&quot;</span>
+iio_info<span class="w"> </span>--version<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;version:&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;pyadi-iio:&quot;</span>
+python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import adi; print(&#39;v&#39; + adi.__version__)&quot;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Not installed&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Kuiper Linux:&quot;</span>
+cat<span class="w"> </span>/etc/issue<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Kuiper<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Not Kuiper Linux&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;HDL (if cloned):&quot;</span>
+<span class="nb">cd</span><span class="w"> </span>~/hdl<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>describe<span class="w"> </span>--tags<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;HDL not found&quot;</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;no-OS (if cloned):&quot;</span>
+<span class="nb">cd</span><span class="w"> </span>~/no-OS<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>describe<span class="w"> </span>--tags<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;no-OS not found&quot;</span>
+</pre></div>
+</div>
+<p>Save as <code class="docutils literal notranslate"><span class="pre">check_versions.sh</span></code> and run with <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">check_versions.sh</span></code>.</p>
+</section>
+</section>
+<section id="release-cadence-and-planning">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Release Cadence and Planning</a><a class="headerlink" href="#release-cadence-and-planning" title="Link to this heading"></a></h2>
+<section id="typical-release-schedule">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Typical Release Schedule</a><a class="headerlink" href="#typical-release-schedule" title="Link to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a placeholder schedule, actual dates may vary.</p>
+</div>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Frequency</p></th>
+<th class="head"><p>Typical Timing</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>HDL</strong></p></td>
+<td><p>Quarterly</p></td>
+<td><p>February (r1), May (r2), August (r3), November (r4)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Linux Kernel</strong></p></td>
+<td><p>Continuous</p></td>
+<td><p>Follows upstream LTS, ADI patches as needed</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>libiio</strong></p></td>
+<td><p>As Needed</p></td>
+<td><p>2-3 times per year, or when major features ready</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>no-OS</strong></p></td>
+<td><p>Quarterly</p></td>
+<td><p>Synchronized with HDL releases</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>pyadi-iio</strong></p></td>
+<td><p>Monthly-Quarterly</p></td>
+<td><p>As new device support or features are added</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Kuiper Linux</strong></p></td>
+<td><p>Annual</p></td>
+<td><p>Usually Q1 (r1) and Q3 (r2)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Scopy</strong></p></td>
+<td><p>Quarterly-Biannual</p></td>
+<td><p>Independent release cycle</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="support">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Support</a><a class="headerlink" href="#support" title="Link to this heading"></a></h3>
+<p>Critical fixes may be backported to the current release branch. Older releases will not receive new features or updates. It is advised to request support for the latest stable release, as fixes are added there first. As newer releases become available, older release support is phased out and will have limited assistance.</p>
+<p>When asking for support, please specify which release you are using (e.g., Kuiper Linux 2024_r1, HDL 2024_r2, libiio v0.26) to get the most accurate help. If you are using development branches (<code class="docutils literal notranslate"><span class="pre">main</span></code>), be aware that these may have bugs and are not guaranteed stable.</p>
+<p><strong>When to Use Latest:</strong></p>
+<ul class="simple">
+<li><p>New projects in development</p></li>
+<li><p>Need latest device support</p></li>
+<li><p>Active development, frequent updates acceptable</p></li>
+<li><p>Prototyping and evaluation</p></li>
+</ul>
+</section>
+<section id="staying-updated">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Staying Updated</a><a class="headerlink" href="#staying-updated" title="Link to this heading"></a></h3>
+<p><strong>Subscribe to Announcements:</strong></p>
+<ul class="simple">
+<li><p>Watch GitHub repositories (analogdevicesinc/hdl, /linux, /libiio, /no-OS, /pyadi-iio)</p></li>
+<li><p>Enable “Releases only” notifications</p></li>
+<li><p>Join EngineerZone forums for announcements</p></li>
+</ul>
+<p><strong>Check for Updates:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update package lists (Debian/Ubuntu/Kuiper)</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>list<span class="w"> </span>--upgradable<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;libiio|adi&#39;</span>
+
+<span class="c1"># Update Python packages</span>
+pip<span class="w"> </span>list<span class="w"> </span>--outdated<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>pyadi-iio
+
+<span class="c1"># Update from GitHub</span>
+<span class="nb">cd</span><span class="w"> </span>~/hdl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>HEAD..origin/main<span class="w"> </span>--oneline
+</pre></div>
+</div>
+<p><strong>Upgrade Strategy:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Read release notes first</strong> - Check for breaking changes</p></li>
+<li><p><strong>Test in non-production environment</strong></p></li>
+<li><p><strong>Backup configurations</strong> (devicetree, application code)</p></li>
+<li><p><strong>Upgrade dependencies together</strong> (e.g., HDL + kernel in sync)</p></li>
+<li><p><strong>Verify functionality</strong> before deploying</p></li>
+</ol>
+</section>
+</section>
+<section id="support-channels">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Support Channels</a><a class="headerlink" href="#support-channels" title="Link to this heading"></a></h2>
+<section id="getting-help">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Getting Help</a><a class="headerlink" href="#getting-help" title="Link to this heading"></a></h3>
+<p><strong>EngineerZone Forums:</strong></p>
+<p><a class="icon link reference external" href="https://ez.analog.com/" target="_blank">https://ez.analog.com/</a></p>
+<p>ADI’s official support forum, monitored by engineers:</p>
+<ul class="simple">
+<li><p>Search existing discussions</p></li>
+<li><p>Post questions with hardware details, software versions, error messages</p></li>
+<li><p>Fastest response for general questions</p></li>
+</ul>
+<p><strong>GitHub Issues:</strong></p>
+<p>Report bugs and request features on specific repositories:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/hdl/issues" target="_blank">HDL Issues</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/linux/issues" target="_blank">Linux Issues</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/libiio/issues" target="_blank">libiio Issues</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/no-OS/issues" target="_blank">no-OS Issues</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/pyadi-iio/issues" target="_blank">pyadi-iio Issues</a></p></li>
+</ul>
+<p>Include:</p>
+<ul class="simple">
+<li><p>Component versions (<code class="docutils literal notranslate"><span class="pre">check_versions.sh</span></code> output)</p></li>
+<li><p>Hardware platform</p></li>
+<li><p>Complete error messages</p></li>
+<li><p>Minimal reproducible example</p></li>
+</ul>
+<p><strong>ADI Wiki:</strong></p>
+<p><a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">https://wiki.analog.com/</a></p>
+<p>Comprehensive documentation:</p>
+<ul class="simple">
+<li><p>Driver pages with detailed documentation</p></li>
+<li><p>Application notes</p></li>
+<li><p>Hardware setup guides</p></li>
+<li><p>Known issues and workarounds</p></li>
+</ul>
+<p><strong>Product Pages:</strong></p>
+<p>Datasheets, evaluation board user guides, design files on analog.com:</p>
+<ul class="simple">
+<li><p>Technical specifications</p></li>
+<li><p>Reference schematics</p></li>
+<li><p>Characterization data</p></li>
+</ul>
+<p><strong>Technical Support:</strong></p>
+<p>For customers with support contracts, contact ADI technical support directly
+through your regional sales representative or via the ADI website.</p>
+<p><strong>Community Resources:</strong></p>
+<ul class="simple">
+<li><p><strong>GNU Radio Mailing List:</strong> For SDR-related questions</p></li>
+<li><p><strong>Raspberry Pi Forums:</strong> For RPi hardware questions</p></li>
+<li><p><strong>Stack Overflow:</strong> Tag with <code class="docutils literal notranslate"><span class="pre">analog-devices</span></code>, <code class="docutils literal notranslate"><span class="pre">iio</span></code>, <code class="docutils literal notranslate"><span class="pre">pyadi-iio</span></code></p></li>
+</ul>
+</section>
+<section id="what-to-include-when-asking-for-help">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">What to Include When Asking for Help</a><a class="headerlink" href="#what-to-include-when-asking-for-help" title="Link to this heading"></a></h3>
+<p><strong>Essential Information:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Hardware:</strong></p>
+<ul class="simple">
+<li><p>Device part number (e.g., AD9081, AD4080)</p></li>
+<li><p>Evaluation board (e.g., AD9081-FMCA-EBZ)</p></li>
+<li><p>Carrier board (e.g., ZCU102, Nucleo-H563ZI, Raspberry Pi 4)</p></li>
+</ul>
+</li>
+<li><p><strong>Software Versions:</strong></p>
+<ul class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">check_versions.sh</span></code> and include output</p></li>
+<li><p>Specify if using Kuiper Linux or custom build</p></li>
+</ul>
+</li>
+<li><p><strong>Error Details:</strong></p>
+<ul class="simple">
+<li><p>Complete error messages (not screenshots of text)</p></li>
+<li><p>Kernel logs: <code class="docutils literal notranslate"><span class="pre">dmesg</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">ad\|iio</span></code></p></li>
+<li><p>Application output with debug enabled</p></li>
+</ul>
+</li>
+<li><p><strong>What You’ve Tried:</strong></p>
+<ul class="simple">
+<li><p>Steps to reproduce</p></li>
+<li><p>Troubleshooting already attempted</p></li>
+<li><p>Related forum/GitHub threads searched</p></li>
+</ul>
+</li>
+<li><p><strong>Expected vs. Actual:</strong></p>
+<ul class="simple">
+<li><p>What you expected to happen</p></li>
+<li><p>What actually happened</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Good Example:</strong></p>
+<blockquote>
+<div><p><em>“I’m using AD4080 with STM32 Nucleo-H563ZI running no-OS 2023_r2 firmware.
+When I try to connect via serial from my Ubuntu 22.04 host with libiio 0.26,
+I get ‘Error: no device found’. Output of check_versions.sh attached.
+iio_info -u local: works on the host (finds CPU temp sensor). The STM32
+appears as /dev/ttyACM0 and I can see serial output in minicom. I tried
+increasing baud rate to 460800 with same result. Related GitHub issue #123
+mentions similar problem but solution didn’t work for me.”</em></p>
+</div></blockquote>
+<p><strong>Bad Example:</strong></p>
+<blockquote>
+<div><p><em>“My ADC doesn’t work. Help!”</em></p>
+</div></blockquote>
+</section>
+</section>
+<section id="contributing-to-the-ecosystem">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Contributing to the Ecosystem</a><a class="headerlink" href="#contributing-to-the-ecosystem" title="Link to this heading"></a></h2>
+<p>The ADI ecosystem is open source and welcomes community contributions.</p>
+<section id="how-to-contribute">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">How to Contribute</a><a class="headerlink" href="#how-to-contribute" title="Link to this heading"></a></h3>
+<p><strong>Code Contributions:</strong></p>
+<ol class="arabic simple">
+<li><p>Fork the repository on GitHub</p></li>
+<li><p>Create a feature branch (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">feature/my-feature</span></code>)</p></li>
+<li><p>Make changes following project coding style</p></li>
+<li><p>Test thoroughly on target hardware</p></li>
+<li><p>Submit a Pull Request with detailed description</p></li>
+</ol>
+<p><strong>Documentation Contributions:</strong></p>
+<ul class="simple">
+<li><p>Fix typos or unclear explanations</p></li>
+<li><p>Add examples or tutorials</p></li>
+<li><p>Translate documentation</p></li>
+<li><p>Update outdated information</p></li>
+</ul>
+<p><strong>Bug Reports:</strong></p>
+<p>High-quality bug reports are valuable contributions:</p>
+<ul class="simple">
+<li><p>Detailed reproduction steps</p></li>
+<li><p>Minimal test case</p></li>
+<li><p>System information (versions, hardware)</p></li>
+<li><p>Logs and error messages</p></li>
+</ul>
+<p><strong>Hardware Testing:</strong></p>
+<ul class="simple">
+<li><p>Test pre-release versions on your hardware</p></li>
+<li><p>Report compatibility issues</p></li>
+<li><p>Validate fixes before release</p></li>
+</ul>
+<p><strong>Sharing Knowledge:</strong></p>
+<ul class="simple">
+<li><p>Answer questions on EngineerZone</p></li>
+<li><p>Write blog posts or tutorials</p></li>
+<li><p>Present at conferences</p></li>
+<li><p>Share example applications</p></li>
+</ul>
+</section>
+<section id="contribution-guidelines">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Contribution Guidelines</a><a class="headerlink" href="#contribution-guidelines" title="Link to this heading"></a></h3>
+<p>Each repository has a <code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code> file with specific guidelines. General
+principles:</p>
+<ul class="simple">
+<li><p><strong>Code Style:</strong> Follow existing style (HDL: Verilog standards; Python: PEP8)</p></li>
+<li><p><strong>Commit Messages:</strong> Clear, concise, imperative mood (“Add feature” not “Added feature”)</p></li>
+<li><p><strong>Testing:</strong> Ensure changes don’t break existing functionality</p></li>
+<li><p><strong>Documentation:</strong> Update docs to match code changes</p></li>
+<li><p><strong>Sign-off:</strong> Include <code class="docutils literal notranslate"><span class="pre">Signed-off-by:</span></code> in commits (Developer Certificate of Origin)</p></li>
+</ul>
+</section>
+</section>
+<section id="migration-guides">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Migration Guides</a><a class="headerlink" href="#migration-guides" title="Link to this heading"></a></h2>
+<section id="upgrading-between-releases">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Upgrading Between Releases</a><a class="headerlink" href="#upgrading-between-releases" title="Link to this heading"></a></h3>
+<p><strong>HDL Upgrades:</strong></p>
+<p>When upgrading HDL versions:</p>
+<ol class="arabic simple">
+<li><p>Check <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/releases.html" target="_blank" title="(in HDL)"><span class="xref std std-doc">release notes</span></a> for breaking changes</p></li>
+<li><p>Update Vivado/Quartus to required version (check project README)</p></li>
+<li><p>Rebuild project (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">&amp;&amp;</span> <span class="pre">make</span></code>)</p></li>
+<li><p>Update devicetree if using new features</p></li>
+<li><p>Recompile Linux kernel if devicetree changed</p></li>
+<li><p>Test boot and device enumeration</p></li>
+</ol>
+<p><strong>Linux Kernel Upgrades:</strong></p>
+<ol class="arabic simple">
+<li><p>Review <a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/getting_started.html" target="_blank">kernel changelog</a></p></li>
+<li><p>Update devicetree for new bindings</p></li>
+<li><p>Recompile kernel and modules</p></li>
+<li><p>Update userspace tools (libiio) if needed</p></li>
+<li><p>Test IIO device functionality</p></li>
+</ol>
+<p><strong>libiio Upgrades:</strong></p>
+<p>Usually straightforward:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>libiio-utils<span class="w"> </span>python3-libiio
+</pre></div>
+</div>
+<p>Or build from source:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/libiio
+<span class="nb">cd</span><span class="w"> </span>libiio
+git<span class="w"> </span>checkout<span class="w"> </span>v0.26<span class="w">  </span><span class="c1"># or latest tag</span>
+mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>..<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install
+</pre></div>
+</div>
+<p><strong>pyadi-iio Upgrades:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pyadi-iio
+</pre></div>
+</div>
+<p>Check for API changes in <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/releases" target="_blank">release notes</a>.</p>
+<p><strong>no-OS Upgrades:</strong></p>
+<p>Firmware upgrades require rebuilding and reflashing:</p>
+<ol class="arabic simple">
+<li><p>Pull latest tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">2024_r2</span></code></p></li>
+<li><p>Update project if needed (check project README for changes)</p></li>
+<li><p>Rebuild: <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build</span> <span class="pre">&amp;&amp;</span> <span class="pre">cd</span> <span class="pre">build</span> <span class="pre">&amp;&amp;</span> <span class="pre">cmake</span> <span class="pre">..</span> <span class="pre">&amp;&amp;</span> <span class="pre">make</span></code></p></li>
+<li><p>Flash new binary to microcontroller</p></li>
+<li><p>Verify IIO device enumeration from host</p></li>
+</ol>
+</section>
+<section id="deprecation-policy">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Deprecation Policy</a><a class="headerlink" href="#deprecation-policy" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Advance Notice: Deprecated features announced in release notes</p></li>
+<li><p>Transition Period: Minimum 2 releases before removal</p></li>
+<li><p>Migration Path: Alternative solution provided</p></li>
+<li><p>Warnings: eprecated APIs emit warnings before removal</p></li>
+</ul>
+</section>
+</section>
+<section id="see-also">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Link to this heading"></a></h2>
+<p>Next Steps:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="architecture.html"><span class="doc">Full Stack Architecture</span></a> - Understanding the full stack</p></li>
+<li><p><a class="reference internal" href="components.html"><span class="doc">Ecosystem Components</span></a> - Component-specific documentation</p></li>
+<li><p><a class="reference internal" href="workflows.html"><span class="doc">Common Development Workflows</span></a> - Practical examples with version requirements</p></li>
+</ul>
+<p>Support:</p>
+<ul class="simple">
+<li><p><a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/" target="_blank">Wiki</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/" target="_blank">GitHub Organization</a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="workflows.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Common Development Workflows</a>
+    <a href="../products/adalm/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Active Learning Modules (ADALM)</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

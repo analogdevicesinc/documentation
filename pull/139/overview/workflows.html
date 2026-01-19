@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This page shows concrete examples of how ADI ecosystem components work together in real-world development scenarios. Each workflow demonstrates a complete path from hardware to application, illustrating which components are used and how they integrate." name="description" />
+
+    <title>Common Development Workflows &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Versioning and Support" href="versioning-support.html" />
+    <link rel="prev" title="Ecosystem Components" href="components.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Common Development Workflows</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#workflow-1-fpga-high-speed-data-converter">Workflow 1: FPGA + High-Speed Data Converter</a><ul>
+<li><a class="reference internal" href="#use-case-example-ad9081-mxfe-software-defined-radio">Use Case Example: AD9081 MxFE Software-Defined Radio</a></li>
+<li><a class="reference internal" href="#architecture">Architecture</a></li>
+<li><a class="reference internal" href="#development-steps">Development Steps</a></li>
+<li><a class="reference internal" href="#when-to-use-this-workflow">When to Use This Workflow</a></li>
+<li><a class="reference internal" href="#reference-documentation">Reference Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#workflow-2-microcontroller-precision-adc">Workflow 2: Microcontroller + Precision ADC</a><ul>
+<li><a class="reference internal" href="#use-case-example-ad4080-precision-data-logger">Use Case Example: AD4080 Precision Data Logger</a></li>
+<li><a class="reference internal" href="#id1">Architecture</a></li>
+<li><a class="reference internal" href="#id2">Development Steps</a></li>
+<li><a class="reference internal" href="#id3">When to Use This Workflow</a></li>
+<li><a class="reference internal" href="#id4">Reference Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#workflow-3-raspberry-pi-evaluation-board">Workflow 3: Raspberry Pi + Evaluation Board</a><ul>
+<li><a class="reference internal" href="#use-case-example-multi-sensor-data-acquisition">Use Case Example: Multi-Sensor Data Acquisition</a></li>
+<li><a class="reference internal" href="#id5">Architecture</a></li>
+<li><a class="reference internal" href="#id6">Development Steps</a></li>
+<li><a class="reference internal" href="#id7">When to Use This Workflow</a></li>
+<li><a class="reference internal" href="#id8">Reference Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#future-workflows-coming-soon">Future Workflows (Coming Soon)</a><ul>
+<li><a class="reference internal" href="#workflow-4-remote-multi-device-setup">Workflow 4: Remote Multi-Device Setup</a></li>
+<li><a class="reference internal" href="#workflow-5-hardware-in-the-loop-testing">Workflow 5: Hardware-in-the-Loop Testing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#choosing-the-right-workflow">Choosing the Right Workflow</a><ul>
+<li><a class="reference internal" href="#quick-decision-guide">Quick Decision Guide</a></li>
+<li><a class="reference internal" href="#migration-paths">Migration Paths</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Ecosystem Overview</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Full Stack Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="components.html">Ecosystem Components</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Common Development Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versioning-support.html">Versioning and Support</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../products/adalm/index.html">Active Learning Modules (ADALM)</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../products/adalm/m2k/index.html">ADALM2000</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/m2k/help_support.html">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../products/adalm/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3" id="toctree-collapse-2-3"/><div class="collapse"><a class="reference internal" href="../products/adalm/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-2-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3-1" id="toctree-collapse-2-3-1"/><div class="collapse"><a class="reference internal" href="../products/adalm/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-2-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../products/adalm/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3-2" id="toctree-collapse-2-3-2"/><div class="collapse"><a class="reference internal" href="../products/adalm/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-2-3-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../products/adalm/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../products/adalm/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../products/adalm/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3-3" id="toctree-collapse-2-3-3"/><div class="collapse"><a class="reference internal" href="../products/adalm/pluto/users/index.html">For End Users</a><label for="toctree-collapse-2-3-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../products/adalm/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto/help_support.html">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../products/adalm/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../products/adalm/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-2" id="toctree-collapse-4-2"/><div class="collapse"><a class="reference internal" href="../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-4-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-2-1" id="toctree-collapse-4-2-1"/><div class="collapse"><a class="reference internal" href="../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-4-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-3" id="toctree-collapse-4-3"/><div class="collapse"><a class="reference internal" href="../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-4-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5-1" id="toctree-collapse-5-1"/><div class="collapse"><a class="reference internal" href="../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-5-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5-1-1" id="toctree-collapse-5-1-1"/><div class="collapse"><a class="reference internal" href="../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-5-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../software/index.html">Software</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-1" id="toctree-collapse-6-1"/><div class="collapse"><a class="reference internal" href="../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-6-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-1-1" id="toctree-collapse-6-1-1"/><div class="collapse"><a class="reference internal" href="../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-6-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-2" id="toctree-collapse-6-2"/><div class="collapse"><a class="reference internal" href="../software/libiio/index.html">Libiio</a><label for="toctree-collapse-6-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-3" id="toctree-collapse-6-3"/><div class="collapse"><a class="reference internal" href="../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-4" id="toctree-collapse-6-4"/><div class="collapse"><a class="reference internal" href="../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-6-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6-5" id="toctree-collapse-6-5"/><div class="collapse"><a class="reference internal" href="../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-6-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1" id="toctree-collapse-7-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-7-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-2" id="toctree-collapse-7-2"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-7-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-3" id="toctree-collapse-7-3"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-7-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-4" id="toctree-collapse-7-4"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-7-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-5" id="toctree-collapse-7-5"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-7-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-6" id="toctree-collapse-7-6"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-7-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-7" id="toctree-collapse-7-7"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-7-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-8" id="toctree-collapse-7-8"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-7-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-9" id="toctree-collapse-7-9"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-7-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-10" id="toctree-collapse-7-10"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-7-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-11" id="toctree-collapse-7-11"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-7-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-12" id="toctree-collapse-7-12"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-7-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-13" id="toctree-collapse-7-13"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-7-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-14" id="toctree-collapse-7-14"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-7-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-15" id="toctree-collapse-7-15"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-7-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-15-1" id="toctree-collapse-7-15-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-7-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-16" id="toctree-collapse-7-16"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-7-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-16-1" id="toctree-collapse-7-16-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-7-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-17" id="toctree-collapse-7-17"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-7-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-18" id="toctree-collapse-7-18"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-7-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-18-1" id="toctree-collapse-7-18-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-7-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-19" id="toctree-collapse-7-19"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-7-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-19-1" id="toctree-collapse-7-19-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-7-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-20" id="toctree-collapse-7-20"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-7-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-21" id="toctree-collapse-7-21"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-7-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-22" id="toctree-collapse-7-22"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-7-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-23" id="toctree-collapse-7-23"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-7-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../university/index.html">Engineering University Program</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-1" id="toctree-collapse-9-1"/><div class="collapse"><a class="reference internal" href="../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-9-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="index.html">Ecosystem Overview</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="common-development-workflows">
+<span id="overview-workflows"></span><h1>Common Development Workflows<a class="headerlink" href="#common-development-workflows" title="Link to this heading"></a></h1>
+<p>This page shows concrete examples of how ADI ecosystem components work together
+in real-world development scenarios. Each workflow demonstrates a complete path
+from hardware to application, illustrating which components are used and how
+they integrate.</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id12">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#workflow-1-fpga-high-speed-data-converter" id="id13">Workflow 1: FPGA + High-Speed Data Converter</a></p>
+<ul>
+<li><p><a class="reference internal" href="#use-case-example-ad9081-mxfe-software-defined-radio" id="id14">Use Case Example: AD9081 MxFE Software-Defined Radio</a></p></li>
+<li><p><a class="reference internal" href="#architecture" id="id15">Architecture</a></p></li>
+<li><p><a class="reference internal" href="#development-steps" id="id16">Development Steps</a></p></li>
+<li><p><a class="reference internal" href="#when-to-use-this-workflow" id="id17">When to Use This Workflow</a></p></li>
+<li><p><a class="reference internal" href="#reference-documentation" id="id18">Reference Documentation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#workflow-2-microcontroller-precision-adc" id="id19">Workflow 2: Microcontroller + Precision ADC</a></p>
+<ul>
+<li><p><a class="reference internal" href="#use-case-example-ad4080-precision-data-logger" id="id20">Use Case Example: AD4080 Precision Data Logger</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id21">Architecture</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id22">Development Steps</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id23">When to Use This Workflow</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id24">Reference Documentation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#workflow-3-raspberry-pi-evaluation-board" id="id25">Workflow 3: Raspberry Pi + Evaluation Board</a></p>
+<ul>
+<li><p><a class="reference internal" href="#use-case-example-multi-sensor-data-acquisition" id="id26">Use Case Example: Multi-Sensor Data Acquisition</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id27">Architecture</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id28">Development Steps</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id29">When to Use This Workflow</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id30">Reference Documentation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#future-workflows-coming-soon" id="id31">Future Workflows (Coming Soon)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#workflow-4-remote-multi-device-setup" id="id32">Workflow 4: Remote Multi-Device Setup</a></p></li>
+<li><p><a class="reference internal" href="#workflow-5-hardware-in-the-loop-testing" id="id33">Workflow 5: Hardware-in-the-Loop Testing</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#choosing-the-right-workflow" id="id34">Choosing the Right Workflow</a></p>
+<ul>
+<li><p><a class="reference internal" href="#quick-decision-guide" id="id35">Quick Decision Guide</a></p></li>
+<li><p><a class="reference internal" href="#migration-paths" id="id36">Migration Paths</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#see-also" id="id37">See Also</a></p></li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The ADI ecosystem supports three primary development workflows, each optimized
+for different use cases:</p>
+<ol class="arabic simple">
+<li><p><strong>FPGA + High-Speed Data Converter</strong> - For high-performance applications
+requiring GSPS sample rates, custom signal processing, or multiple devices</p></li>
+<li><p><strong>Microcontroller + Precision ADC</strong> - For cost-effective, low-power
+standalone measurement systems</p></li>
+<li><p><strong>Raspberry Pi + Evaluation Board</strong> - For rapid prototyping, education,
+and demonstration systems</p></li>
+</ol>
+<p>Understanding these workflows will help you choose the right approach for your
+project and see how the <a class="reference internal" href="components.html"><span class="doc">ecosystem components</span></a> fit together.</p>
+</section>
+<section id="workflow-1-fpga-high-speed-data-converter">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Workflow 1: FPGA + High-Speed Data Converter</a><a class="headerlink" href="#workflow-1-fpga-high-speed-data-converter" title="Link to this heading"></a></h2>
+<p>This workflow targets high-performance applications using Xilinx Zynq/ZynqMP
+SoCs with ADI’s high-speed data converters like RF transceivers or multi-GSPS
+ADCs/DACs.</p>
+<section id="use-case-example-ad9081-mxfe-software-defined-radio">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Use Case Example: AD9081 MxFE Software-Defined Radio</a><a class="headerlink" href="#use-case-example-ad9081-mxfe-software-defined-radio" title="Link to this heading"></a></h3>
+<p><strong>Hardware:</strong></p>
+<ul class="simple">
+<li><p>Xilinx ZCU102 (Zynq UltraScale+ MPSoC)</p></li>
+<li><p>AD9081-FMCA-EBZ evaluation board (Quad 12 GSPS ADC, Quad 12 GSPS DAC)</p></li>
+<li><p>JESD204B/C high-speed serial links (up to 15.5 Gbps per lane)</p></li>
+</ul>
+<p><strong>Application:</strong> Multi-channel wideband transceiver for communications,
+radar, or test equipment.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/workflow-fpga.svg"><img alt="../_images/workflow-fpga.svg" src="../_images/workflow-fpga.svg" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">FPGA workflow: Zynq + AD9081 MxFE via JESD204C</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="architecture">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Link to this heading"></a></h3>
+<p><strong>Layer 1 - Hardware:</strong>
+AD9081 MxFE provides 4 ADC channels (up to 4 GSPS each) and 4 DAC channels
+(up to 12 GSPS each) with digital signal processing (NCOs, filters, DDCs, DUCs).</p>
+<p><strong>Layer 2 - Hardware Interface:</strong>
+Zynq UltraScale+ MPSoC combines:</p>
+<ul class="simple">
+<li><p>ARM Cortex-A53 processors (4 cores) running Linux</p></li>
+<li><p>Programmable logic (FPGA fabric) for JESD204 and signal processing</p></li>
+<li><p>High-speed transceivers (GTH) for multi-gigabit serial links</p></li>
+</ul>
+<p><strong>Layer 3 - HDL:</strong>
+The <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/ad9081_fmca_ebz/index.html" target="_blank" title="(in HDL)"><span class="xref std std-doc">AD9081 HDL project</span></a> provides:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/jesd204/index.html" target="_blank" title="(in HDL)"><span class="xref std std-doc">JESD204 TPL/Link/PHY</span></a> implementation</p></li>
+<li><p>DMA controllers for moving data to/from ARM processors</p></li>
+<li><p>Clock management and synchronization</p></li>
+<li><p>AXI interfaces to Linux</p></li>
+</ul>
+<p><strong>Layer 4 - Linux Drivers:</strong>
+The <code class="docutils literal notranslate"><span class="pre">axi-ad9081</span></code> IIO driver:</p>
+<ul class="simple">
+<li><p>Initializes AD9081 via SPI</p></li>
+<li><p>Configures JESD204 link (lane rates, lane count, scrambling)</p></li>
+<li><p>Programs digital filters, NCOs, DDCs/DUCs</p></li>
+<li><p>Exposes DMA buffers for high-throughput streaming</p></li>
+</ul>
+<p><strong>Layer 5 - libiio:</strong>
+Provides <code class="docutils literal notranslate"><span class="pre">local:</span></code> backend for direct access to IIO devices on the Zynq.</p>
+<p><strong>Layer 6 - pyadi-iio:</strong>
+The <code class="docutils literal notranslate"><span class="pre">adi.ad9081</span></code> Python class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adi</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Create AD9081 object (on local Zynq)</span>
+<span class="n">mxfe</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">ad9081</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;local:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure receiver</span>
+<span class="n">mxfe</span><span class="o">.</span><span class="n">rx_enabled_channels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Enable 2 channels</span>
+<span class="n">mxfe</span><span class="o">.</span><span class="n">rx_buffer_size</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">16</span>
+
+<span class="c1"># Receive data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">mxfe</span><span class="o">.</span><span class="n">rx</span><span class="p">()</span>  <span class="c1"># Returns complex NumPy array</span>
+
+<span class="c1"># Plot spectrum</span>
+<span class="n">fft</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fft</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Layer 7 - Application:</strong>
+MATLAB, GNU Radio, or custom Python/C++ applications for SDR, spectrum monitoring,
+or signal intelligence.</p>
+</section>
+<section id="development-steps">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Development Steps</a><a class="headerlink" href="#development-steps" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p><strong>Hardware Setup:</strong></p>
+<ul class="simple">
+<li><p>Mount AD9081-FMCA-EBZ on ZCU102 FMC connector</p></li>
+<li><p>Connect clocks, power, and signal sources</p></li>
+<li><p>Ensure proper termination and grounding</p></li>
+</ul>
+</li>
+<li><p><strong>Build HDL Project:</strong></p>
+<p>Follow <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html" target="_blank" title="(in HDL)"><span class="xref std std-doc">build instructions</span></a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/hdl
+<span class="nb">cd</span><span class="w"> </span>hdl/projects/ad9081_fmca_ebz/zcu102
+make
+</pre></div>
+</div>
+<p>This generates a Vivado project and builds the bitstream.</p>
+</li>
+<li><p><strong>Build Linux Kernel:</strong></p>
+<p>Use <a class="reference internal" href="../linux/kuiper/index.html"><span class="doc">Kuiper Linux</span></a> or build with <a class="reference internal" href="../linux/kernel/petalinux.html"><span class="doc">PetaLinux</span></a>.
+The <code class="docutils literal notranslate"><span class="pre">axi-ad9081</span></code> driver is included in ADI’s kernel.</p>
+</li>
+<li><p><strong>Program and Boot:</strong></p>
+<ul class="simple">
+<li><p>Program FPGA bitstream</p></li>
+<li><p>Copy BOOT.BIN and image.ub to SD card</p></li>
+<li><p>Boot Linux on Zynq</p></li>
+</ul>
+</li>
+<li><p><strong>Verify IIO Devices:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
+<span class="c1"># Should show axi-ad9081 devices</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Develop Application:</strong></p>
+<p>Use pyadi-iio, MATLAB, or C/C++ with libiio to stream data.</p>
+</li>
+</ol>
+</section>
+<section id="when-to-use-this-workflow">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">When to Use This Workflow</a><a class="headerlink" href="#when-to-use-this-workflow" title="Link to this heading"></a></h3>
+<p>Choose FPGA-based workflow when you need:</p>
+<ul class="simple">
+<li><p><strong>High Sample Rates:</strong> &gt;100 MSPS, up to 12+ GSPS</p></li>
+<li><p><strong>Low Latency:</strong> &lt;1 µs signal processing latency</p></li>
+<li><p><strong>Multiple Devices:</strong> Synchronizing several converters</p></li>
+<li><p><strong>Custom Processing:</strong> FFTs, filtering, beamforming in FPGA fabric</p></li>
+<li><p><strong>High Bandwidth:</strong> JESD204 multi-gigabit links</p></li>
+<li><p><strong>Scalability:</strong> Room to grow with additional logic</p></li>
+</ul>
+<p><strong>Typical Applications:</strong></p>
+<ul class="simple">
+<li><p>Software-defined radio platforms</p></li>
+<li><p>Phased array radar systems</p></li>
+<li><p>5G/6G test equipment</p></li>
+<li><p>Satellite communications</p></li>
+<li><p>Medical imaging (MRI, ultrasound)</p></li>
+<li><p>High-energy physics instrumentation</p></li>
+</ul>
+<p><strong>Trade-offs:</strong></p>
+<ul class="simple">
+<li><p>Higher cost ($1K-$10K+ for evaluation boards)</p></li>
+<li><p>More complex (requires FPGA knowledge for customization)</p></li>
+<li><p>Higher power consumption (5-50W)</p></li>
+<li><p>Longer development time</p></li>
+<li><p>Requires specialized tools (Vivado, PetaLinux)</p></li>
+</ul>
+</section>
+<section id="reference-documentation">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Reference Documentation</a><a class="headerlink" href="#reference-documentation" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Project Page:</strong> <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/ad9081_fmca_ebz/index.html" target="_blank" title="(in HDL)"><span class="xref std std-doc">AD9081 FMCA EBZ</span></a></p></li>
+<li><p><strong>HDL User Guide:</strong> <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/index.html" target="_blank">HDL Documentation</a></p></li>
+<li><p><strong>Linux Driver:</strong> <a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081" target="_blank">axi-ad9081 driver</a></p></li>
+<li><p><strong>Similar Projects:</strong> <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/index.html" target="_blank" title="(in HDL)"><span class="xref std std-doc">All HDL Projects</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="workflow-2-microcontroller-precision-adc">
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">Workflow 2: Microcontroller + Precision ADC</a><a class="headerlink" href="#workflow-2-microcontroller-precision-adc" title="Link to this heading"></a></h2>
+<p>This workflow targets cost-effective, low-power standalone measurement systems
+using bare-metal microcontrollers with precision ADCs.</p>
+<section id="use-case-example-ad4080-precision-data-logger">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Use Case Example: AD4080 Precision Data Logger</a><a class="headerlink" href="#use-case-example-ad4080-precision-data-logger" title="Link to this heading"></a></h3>
+<p><strong>Hardware:</strong></p>
+<ul class="simple">
+<li><p>ST Nucleo-H563ZI development board (STM32H563ZI MCU, ARM Cortex-M33, 250 MHz)</p></li>
+<li><p>EVAL-AD4080-ARDZ evaluation board (40 MSPS SAR ADC, Arduino form factor)</p></li>
+<li><p>SPI interface (up to 80 MHz)</p></li>
+<li><p>USB connection to host PC for data streaming</p></li>
+</ul>
+<p><strong>Application:</strong> Portable seismic sensor, vibration monitor, or precision
+measurement instrument.</p>
+<p>This example is based on the <a class="reference internal" href="../learning/sw_infrastructure/index.html"><span class="doc">Software Infrastructure Tutorial</span></a>.</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="../_images/workflow-mcu.svg"><img alt="../_images/workflow-mcu.svg" src="../_images/workflow-mcu.svg" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Microcontroller workflow: STM32 + AD4080 ADC via SPI and TinyIIO</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id1">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Architecture</a><a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p><strong>Layer 1 - Hardware:</strong>
+AD4080 40 MSPS oversampling SAR ADC with integrated digital filters (SINC5,
+SINC5+Comp, Averaging).</p>
+<p><strong>Layer 2 - Hardware Interface:</strong>
+STM32H563ZI microcontroller provides:</p>
+<ul class="simple">
+<li><p>High-speed SPI (up to 100 MHz capable)</p></li>
+<li><p>USB 2.0 HS device (for TinyIIO over USB CDC)</p></li>
+<li><p>DMA controllers for efficient data movement</p></li>
+<li><p>2 MB flash, 640 KB RAM</p></li>
+</ul>
+<p><strong>Layer 3 - no-OS Firmware:</strong>
+The <a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/index.html" target="_blank" title="(in no-OS)"><span class="xref std std-doc">AD4080 no-OS project</span></a> provides:</p>
+<ul class="simple">
+<li><p>SPI driver for STM32 HAL</p></li>
+<li><p>AD4080 device driver (register configuration, data capture)</p></li>
+<li><p>TinyIIO server running on USB CDC (virtual serial port)</p></li>
+<li><p>DMA-based circular buffers for continuous capture</p></li>
+</ul>
+<p><strong>Layer 4 - Drivers:</strong>
+<em>Not used</em> - TinyIIO on the MCU communicates directly with libiio via serial
+protocol, bypassing the need for kernel drivers.</p>
+<p><strong>Layer 5 - libiio:</strong>
+Uses <code class="docutils literal notranslate"><span class="pre">serial:</span></code> backend to connect to STM32 over USB:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># From host PC (Raspberry Pi, laptop, etc.)</span>
+iio_info<span class="w"> </span>-u<span class="w"> </span>serial:/dev/ttyACM0,230400,8n1
+</pre></div>
+</div>
+<p><strong>Layer 6 - pyadi-iio:</strong>
+The <code class="docutils literal notranslate"><span class="pre">adi.ad4080</span></code> Python class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adi</span>
+
+<span class="c1"># Connect to AD4080 via serial (MCU appears as /dev/ttyACM0)</span>
+<span class="n">adc</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">ad4080</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;serial:/dev/ttyACM0,230400,8n1&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure filter</span>
+<span class="n">adc</span><span class="o">.</span><span class="n">filter_type</span> <span class="o">=</span> <span class="s2">&quot;sinc5_plus_compensation&quot;</span>
+<span class="n">adc</span><span class="o">.</span><span class="n">sampling_frequency</span> <span class="o">=</span> <span class="mi">1000000</span>  <span class="c1"># 1 MSPS</span>
+<span class="n">adc</span><span class="o">.</span><span class="n">rx_buffer_size</span> <span class="o">=</span> <span class="mi">4096</span>
+
+<span class="c1"># Capture data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">rx</span><span class="p">()</span>  <span class="c1"># NumPy array</span>
+</pre></div>
+</div>
+<p><strong>Layer 7 - Application:</strong>
+Scopy for interactive testing, or custom Python scripts for data logging and
+analysis.</p>
+</section>
+<section id="id2">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Development Steps</a><a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p><strong>Hardware Setup:</strong></p>
+<ul class="simple">
+<li><p>Mount EVAL-AD4080-ARDZ on ST Nucleo (Arduino headers)</p></li>
+<li><p>Connect signal source (function generator, sensor)</p></li>
+<li><p>Connect Nucleo USB to host PC</p></li>
+</ul>
+</li>
+<li><p><strong>Build Firmware:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/no-OS
+<span class="nb">cd</span><span class="w"> </span>no-OS/projects/ad4080
+mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>..<span class="w"> </span>-DPLATFORM<span class="o">=</span>stm32
+make
+</pre></div>
+</div>
+<p>Or use STM32CubeIDE to import project.</p>
+</li>
+<li><p><strong>Flash Firmware:</strong></p>
+<p>Use ST-LINK programmer (built into Nucleo):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>st-flash<span class="w"> </span>write<span class="w"> </span>ad4080_project.bin<span class="w"> </span>0x8000000
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify Connection:</strong></p>
+<p>From host PC:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>serial:/dev/ttyACM0,230400,8n1
+<span class="c1"># Should show ad4080 IIO device</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Develop Application:</strong></p>
+<p>Use Scopy, pyadi-iio, or MATLAB to control device and capture data.</p>
+</li>
+</ol>
+</section>
+<section id="id3">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">When to Use This Workflow</a><a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>Choose microcontroller-based workflow when you need:</p>
+<ul class="simple">
+<li><p><strong>Low Cost:</strong> MCU boards $10-$50, total BOM $50-$200</p></li>
+<li><p><strong>Low Power:</strong> &lt;1W typical, battery operation feasible</p></li>
+<li><p><strong>Standalone Operation:</strong> No OS, boots instantly</p></li>
+<li><p><strong>Real-Time Performance:</strong> Deterministic timing</p></li>
+<li><p><strong>Simple Deployment:</strong> Single binary, no updates</p></li>
+<li><p><strong>Portability:</strong> Handheld, wearable applications</p></li>
+</ul>
+<p><strong>Typical Applications:</strong></p>
+<ul class="simple">
+<li><p>Portable medical devices (ECG, pulse oximetry)</p></li>
+<li><p>Industrial sensors (temperature, pressure, vibration)</p></li>
+<li><p>Data loggers (environmental monitoring)</p></li>
+<li><p>Precision measurement tools</p></li>
+<li><p>Battery-powered instrumentation</p></li>
+<li><p>Embedded control systems</p></li>
+</ul>
+<p><strong>Trade-offs:</strong></p>
+<ul class="simple">
+<li><p>Lower sample rates (&lt;100 MSPS typically)</p></li>
+<li><p>Limited processing (no FFTs, complex algorithms)</p></li>
+<li><p>Simpler UI (limited display options)</p></li>
+<li><p>Serial/USB bottleneck for data streaming</p></li>
+<li><p>Manual firmware updates</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Reference Documentation</a><a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Tutorial:</strong> <a class="reference internal" href="../learning/sw_infrastructure/index.html"><span class="doc">Software Infrastructure Tutorial</span></a></p></li>
+<li><p><strong>no-OS Framework:</strong> <a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/index.html" target="_blank">no-OS Documentation</a></p></li>
+<li><p><strong>AD4080 Driver:</strong> <a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/index.html" target="_blank" title="(in no-OS)"><span class="xref std std-doc">AD4080 no-OS driver</span></a></p></li>
+<li><p><strong>Similar Designs:</strong> <a class="reference internal" href="../solutions/reference-designs/index.html"><span class="doc">Precision ADC Reference Designs</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="workflow-3-raspberry-pi-evaluation-board">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">Workflow 3: Raspberry Pi + Evaluation Board</a><a class="headerlink" href="#workflow-3-raspberry-pi-evaluation-board" title="Link to this heading"></a></h2>
+<p>This workflow targets rapid prototyping, education, and demonstration using
+Raspberry Pi with Arduino-compatible evaluation boards or USB devices.</p>
+<section id="use-case-example-multi-sensor-data-acquisition">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">Use Case Example: Multi-Sensor Data Acquisition</a><a class="headerlink" href="#use-case-example-multi-sensor-data-acquisition" title="Link to this heading"></a></h3>
+<p><strong>Hardware:</strong></p>
+<ul class="simple">
+<li><p>Raspberry Pi 4 (4 GB RAM)</p></li>
+<li><p>SD card with Kuiper Linux</p></li>
+<li><p>Multiple Arduino-shield evaluation boards (ARDZ)</p></li>
+<li><p>Optional: ADALM2000 USB multi-function instrument</p></li>
+</ul>
+<p><strong>Application:</strong> Educational lab setup, proof-of-concept prototyping, or
+conference demonstration.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/workflow-rpi.svg"><img alt="../_images/workflow-rpi.svg" src="../_images/workflow-rpi.svg" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Raspberry Pi workflow: RPi + Arduino shields and USB devices</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id5">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">Architecture</a><a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p><strong>Layer 1 - Hardware:</strong>
+Various ADI devices on Arduino shields:</p>
+<ul class="simple">
+<li><p>AD4052/AD4080 (precision ADCs)</p></li>
+<li><p>AD5592R (ADC/DAC/GPIO)</p></li>
+<li><p>ADXL345 (accelerometer)</p></li>
+<li><p>ADALM2000 (USB multi-function instrument)</p></li>
+</ul>
+<p><strong>Layer 2 - Hardware Interface:</strong>
+Raspberry Pi 4 provides:</p>
+<ul class="simple">
+<li><p>GPIO header (SPI, I2C buses)</p></li>
+<li><p>USB 3.0 ports</p></li>
+<li><p>Gigabit Ethernet</p></li>
+<li><p>ARM Cortex-A72 (4 cores, 1.5 GHz)</p></li>
+</ul>
+<p><strong>Layer 3 - HDL/Firmware:</strong>
+<em>Not applicable</em> - Direct SPI/I2C from processor, no FPGA or MCU firmware.</p>
+<p><strong>Layer 4 - Linux IIO Drivers:</strong>
+Kuiper Linux includes pre-loaded drivers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ad4052</span></code>/<code class="docutils literal notranslate"><span class="pre">ad4080</span></code> for precision ADCs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ad5592r</span></code> for mixed-signal device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adxl345</span></code> for accelerometer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m2k</span></code> context for ADALM2000</p></li>
+</ul>
+<p>Devicetree overlays configure SPI chip selects and pin assignments.</p>
+<p><strong>Layer 5 - libiio:</strong>
+Multiple backend types on same system:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">local:</span></code> for on-board IIO devices (SPI/I2C shields)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">usb:</span></code> for ADALM2000</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ip:</span></code> for remote devices</p></li>
+</ul>
+<p><strong>Layer 6 - pyadi-iio:</strong>
+Unified Python interface:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adi</span>
+
+<span class="c1"># Local SPI device</span>
+<span class="n">adc</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">ad4080</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;local:&quot;</span><span class="p">)</span>
+
+<span class="c1"># USB device</span>
+<span class="n">m2k</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">m2k</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;usb:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Remote device</span>
+<span class="n">remote_sensor</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">adxl345</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;ip:sensor-node.local&quot;</span><span class="p">)</span>
+
+<span class="c1"># Capture from all simultaneously</span>
+<span class="n">adc_data</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">rx</span><span class="p">()</span>
+<span class="n">m2k_data</span> <span class="o">=</span> <span class="n">m2k</span><span class="o">.</span><span class="n">rx</span><span class="p">()</span>
+<span class="n">accel_data</span> <span class="o">=</span> <span class="n">remote_sensor</span><span class="o">.</span><span class="n">rx</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Layer 7 - Applications:</strong>
+Full desktop Linux environment:</p>
+<ul class="simple">
+<li><p>Scopy for ADALM2000 control</p></li>
+<li><p>IIO Oscilloscope for generic devices</p></li>
+<li><p>Jupyter Lab for interactive Python</p></li>
+<li><p>Custom web servers for remote monitoring</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3><a class="toc-backref" href="#id28" role="doc-backlink">Development Steps</a><a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p><strong>Setup Kuiper Linux:</strong></p>
+<ul class="simple">
+<li><p>Download image from <a class="reference internal" href="../linux/kuiper/index.html"><span class="doc">Kuiper Linux page</span></a></p></li>
+<li><p>Write to SD card with balenaEtcher or dd</p></li>
+<li><p>Boot Raspberry Pi</p></li>
+</ul>
+</li>
+<li><p><strong>Configure Hardware:</strong></p>
+<p>Mount Arduino shields on GPIO header. For custom boards, enable devicetree
+overlay:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dtoverlay<span class="w"> </span>spi0-1cs<span class="w">  </span><span class="c1"># Enable SPI with 1 chip select</span>
+<span class="c1"># Edit /boot/config.txt to make permanent</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify Devices:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
+<span class="c1"># Should show all connected IIO devices</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install Additional Software:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>additional-libraries
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>useful-tools
+</pre></div>
+</div>
+</li>
+<li><p><strong>Develop Application:</strong></p>
+<p>Use Jupyter Lab, Python scripts, or MATLAB (via remote access) to control
+devices and visualize data.</p>
+</li>
+</ol>
+</section>
+<section id="id7">
+<h3><a class="toc-backref" href="#id29" role="doc-backlink">When to Use This Workflow</a><a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>Choose Raspberry Pi workflow when you need:</p>
+<ul class="simple">
+<li><p><strong>Rapid Prototyping:</strong> Get running in minutes</p></li>
+<li><p><strong>Education:</strong> Teach data acquisition and signal processing</p></li>
+<li><p><strong>Demonstrations:</strong> Conference booths, customer visits</p></li>
+<li><p><strong>Multi-Device Systems:</strong> Integrate several evaluation boards</p></li>
+<li><p><strong>Familiar Environment:</strong> Standard Linux, Python, web browsers</p></li>
+<li><p><strong>Low Barrier:</strong> Minimal specialized knowledge required</p></li>
+</ul>
+<p><strong>Typical Applications:</strong></p>
+<ul class="simple">
+<li><p>University laboratory setups</p></li>
+<li><p>Algorithm development and validation</p></li>
+<li><p>Proof-of-concept demonstrations</p></li>
+<li><p>Trade show exhibits</p></li>
+<li><p>Remote monitoring stations</p></li>
+<li><p>Hobbyist projects</p></li>
+</ul>
+<p><strong>Trade-offs:</strong></p>
+<ul class="simple">
+<li><p>Medium sample rates (&lt;10 MSPS typical on SPI)</p></li>
+<li><p>No hard real-time guarantees</p></li>
+<li><p>Limited I/O (shared SPI bus, limited chip selects)</p></li>
+<li><p>Networking dependencies for remote access</p></li>
+<li><p>SD card reliability concerns</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">Reference Documentation</a><a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Kuiper Linux:</strong> <a class="reference internal" href="../linux/kuiper/index.html"><span class="doc">Kuiper Linux Guide</span></a></p></li>
+<li><p><strong>Raspberry Pi Setup:</strong> <a class="reference internal" href="../linux/kernel/index.html#linux-kernel"><span class="std std-ref">Kernel and devicetrees</span></a></p></li>
+<li><p><strong>Arduino Shields:</strong> <a class="reference internal" href="../solutions/reference-designs/index.html"><span class="doc">Evaluation Boards</span></a></p></li>
+<li><p><strong>Tutorials:</strong> <a class="reference internal" href="../learning/index.html"><span class="doc">Learning Resources</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="future-workflows-coming-soon">
+<h2><a class="toc-backref" href="#id31" role="doc-backlink">Future Workflows (Coming Soon)</a><a class="headerlink" href="#future-workflows-coming-soon" title="Link to this heading"></a></h2>
+<p>The following workflows are planned for future documentation updates:</p>
+<section id="workflow-4-remote-multi-device-setup">
+<h3><a class="toc-backref" href="#id32" role="doc-backlink">Workflow 4: Remote Multi-Device Setup</a><a class="headerlink" href="#workflow-4-remote-multi-device-setup" title="Link to this heading"></a></h3>
+<p><strong>Description:</strong> Using IIOD (IIO Daemon) to network-enable multiple devices
+and control them from a central host. Ideal for distributed sensor networks,
+multi-channel acquisition, or lab automation.</p>
+<p><strong>Components:</strong></p>
+<ul class="simple">
+<li><p>IIOD servers forwarding contexts over network</p></li>
+<li><p>Central control PC accessing devices via <code class="docutils literal notranslate"><span class="pre">ip:</span></code> backend</p></li>
+<li><p>Synchronized triggering across devices</p></li>
+</ul>
+<p><strong>Use Cases:</strong> Four-channel phased array demo (from workshop), distributed
+environmental monitoring, automated test equipment.</p>
+<p><strong>Documentation:</strong> See Appendix A of the <a class="reference internal" href="../learning/sw_infrastructure/index.html"><span class="doc">Software Infrastructure Tutorial</span></a>
+for IIOD basics.</p>
+</section>
+<section id="workflow-5-hardware-in-the-loop-testing">
+<h3><a class="toc-backref" href="#id33" role="doc-backlink">Workflow 5: Hardware-in-the-Loop Testing</a><a class="headerlink" href="#workflow-5-hardware-in-the-loop-testing" title="Link to this heading"></a></h3>
+<p><strong>Description:</strong> Using ADALM2000 and libm2k for automated hardware testing,
+characterization, and validation. Stimulus generation and response measurement
+in closed-loop scripts.</p>
+<p><strong>Components:</strong></p>
+<ul class="simple">
+<li><p>ADALM2000 as signal generator and oscilloscope</p></li>
+<li><p>libm2k Python/C++ API</p></li>
+<li><p>Test automation frameworks (pytest, unittest)</p></li>
+</ul>
+<p><strong>Use Cases:</strong> Board bring-up testing, production test automation, design
+verification, educational lab experiments.</p>
+<p><strong>Documentation:</strong> See <a class="reference internal" href="../products/adalm/m2k/index.html#m2k"><span class="std std-ref">ADALM2000</span></a> for device capabilities.</p>
+</section>
+</section>
+<section id="choosing-the-right-workflow">
+<h2><a class="toc-backref" href="#id34" role="doc-backlink">Choosing the Right Workflow</a><a class="headerlink" href="#choosing-the-right-workflow" title="Link to this heading"></a></h2>
+<section id="quick-decision-guide">
+<h3><a class="toc-backref" href="#id35" role="doc-backlink">Quick Decision Guide</a><a class="headerlink" href="#quick-decision-guide" title="Link to this heading"></a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Your Requirement</p></th>
+<th class="head"><p>Workflow 1 (FPGA)</p></th>
+<th class="head"><p>Workflow 2 (MCU)</p></th>
+<th class="head"><p>Workflow 3 (RPi)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sample Rate &gt; 100 MSPS</p></td>
+<td><p>✅ Yes</p></td>
+<td><p>❌ No</p></td>
+<td><p>❌ No</p></td>
+</tr>
+<tr class="row-odd"><td><p>Custom Signal Processing</p></td>
+<td><p>✅ FPGA fabric</p></td>
+<td><p>⚠️ Limited</p></td>
+<td><p>⚠️ Software only</p></td>
+</tr>
+<tr class="row-even"><td><p>Low Power (&lt;1W)</p></td>
+<td><p>❌ No</p></td>
+<td><p>✅ Yes</p></td>
+<td><p>⚠️ ~5W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Low Cost (&lt;$100)</p></td>
+<td><p>❌ No ($1K+)</p></td>
+<td><p>✅ Yes</p></td>
+<td><p>✅ Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Rapid Prototyping</p></td>
+<td><p>❌ Weeks</p></td>
+<td><p>⚠️ Days</p></td>
+<td><p>✅ Hours</p></td>
+</tr>
+<tr class="row-odd"><td><p>Standalone Operation</p></td>
+<td><p>⚠️ Possible</p></td>
+<td><p>✅ Yes</p></td>
+<td><p>❌ Needs OS</p></td>
+</tr>
+<tr class="row-even"><td><p>Python/MATLAB Support</p></td>
+<td><p>✅ Yes</p></td>
+<td><p>✅ Yes (via serial)</p></td>
+<td><p>✅ Yes (native)</p></td>
+</tr>
+<tr class="row-odd"><td><p>GUI Applications</p></td>
+<td><p>✅ Via network</p></td>
+<td><p>✅ Via serial</p></td>
+<td><p>✅ Native</p></td>
+</tr>
+<tr class="row-even"><td><p>Learning Curve</p></td>
+<td><p>⚠️ Steep</p></td>
+<td><p>⚠️ Moderate</p></td>
+<td><p>✅ Easy</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="migration-paths">
+<h3><a class="toc-backref" href="#id36" role="doc-backlink">Migration Paths</a><a class="headerlink" href="#migration-paths" title="Link to this heading"></a></h3>
+<p>The layered architecture enables smooth migration between workflows:</p>
+<p><strong>Prototype → Production:</strong></p>
+<ol class="arabic simple">
+<li><p>Start with <strong>Workflow 3</strong> (Raspberry Pi) for proof of concept</p></li>
+<li><p>Validate algorithms and user requirements</p></li>
+<li><p>Move to <strong>Workflow 2</strong> (MCU) for cost reduction and standalone operation</p></li>
+<li><p>Or move to <strong>Workflow 1</strong> (FPGA) for performance scaling</p></li>
+</ol>
+<p><strong>The application code (Layers 5-7) remains largely unchanged</strong>, just switch the
+libiio URI.</p>
+<p><strong>Development → Deployment:</strong></p>
+<ul class="simple">
+<li><p>Develop on desktop with <code class="docutils literal notranslate"><span class="pre">ip:</span></code> backend (remote Zynq/RPi)</p></li>
+<li><p>Deploy same code on embedded Zynq with <code class="docutils literal notranslate"><span class="pre">local:</span></code> backend</p></li>
+<li><p>No code changes needed beyond URI configuration</p></li>
+</ul>
+</section>
+</section>
+<section id="see-also">
+<h2><a class="toc-backref" href="#id37" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Link to this heading"></a></h2>
+<p><strong>Next Steps:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="components.html"><span class="doc">Ecosystem Components</span></a> - Detailed component documentation</p></li>
+<li><p><a class="reference internal" href="versioning-support.html"><span class="doc">Versioning and Support</span></a> - Version compatibility for your chosen workflow</p></li>
+<li><p><a class="reference internal" href="architecture.html"><span class="doc">Full Stack Architecture</span></a> - Understanding the layered architecture</p></li>
+</ul>
+<p><strong>Learning Resources:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../learning/sw_infrastructure/index.html"><span class="doc">Software Infrastructure Tutorial</span></a> - Workflow 2 hands-on</p></li>
+<li><p><a class="reference internal" href="../learning/workshop_a_precision_converter_fpga_integration_journey/index.html"><span class="doc">FPGA Integration Journey</span></a> - Workflow 1 deep dive</p></li>
+<li><p><a class="reference internal" href="../linux/kuiper/index.html"><span class="doc">Kuiper Linux Guide</span></a> - Workflow 3 setup</p></li>
+</ul>
+<p><strong>Reference Designs:</strong></p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/index.html" target="_blank" title="(in HDL)"><span class="xref std std-doc">HDL Projects</span></a> - FPGA designs (Workflow 1)</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/index.html" target="_blank" title="(in no-OS)"><span class="xref std std-doc">no-OS Projects</span></a> - MCU firmware (Workflow 2)</p></li>
+<li><p><a class="reference internal" href="../solutions/reference-designs/index.html"><span class="doc">Evaluation Boards</span></a> - Arduino shields (Workflow 3)</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="components.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Ecosystem Components</a>
+    <a href="versioning-support.html" title="Next document (Alt+Shift+RightArrow)" class="next">Versioning and Support</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
