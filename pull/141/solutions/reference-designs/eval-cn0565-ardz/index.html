@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The EVAL-CN0565-ARDZ is an electrical impedance tomography (EIT) measurement system for characterizing and computing interior impedance of surfaces. The platform allows a conductivity map to be reconstructed using several repeating measurements from electrodes placed at different locations. It supports impedance measurement setups with up to 24 electrodes. The design uses a pair 8x12 analog crosspoint switches, which enables the excitation signal to be applied to one pair of electrodes at a time. The implementation of crosspoint switches allows the circuit to maximize the impedance measurements, which consequently improves the resolution of the constructed images." name="description" />
+
+    <title>EVAL-CN0565-ARDZ &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="EVAL-CN0575-RPIZ" href="../eval-cn0575-rpiz/index.html" />
+    <link rel="prev" title="EVAL-CN0521-EBZ" href="../eval-cn0521-ebz/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVAL-CN0565-ARDZ</a><ul>
+<li><a class="reference internal" href="#electrical-impedance-tomography-measurement-system">Electrical Impedance Tomography Measurement System</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#hardware-configuration">Hardware Configuration</a><ul>
+<li><a class="reference internal" href="#connectors-and-jumpers">Connectors and Jumpers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system-setup">System Setup</a><ul>
+<li><a class="reference internal" href="#documents-needed">Documents Needed</a></li>
+<li><a class="reference internal" href="#demo-requirements">Demo Requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-setup">Software Setup</a><ul>
+<li><a class="reference internal" href="#python-installation-guide">Python Installation Guide</a></li>
+<li><a class="reference internal" href="#installing-libiio">Installing Libiio</a></li>
+<li><a class="reference internal" href="#uploading-the-hex-file">Uploading the HEX File</a></li>
+<li><a class="reference internal" href="#installing-software-requirements">Installing Software Requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-example-scripts">Python Example Scripts</a><ul>
+<li><a class="reference internal" href="#using-the-specific-electrode-pair-script">Using the Specific Electrode Pair Script</a></li>
+<li><a class="reference internal" href="#using-the-electrode-tomography-script">Using the Electrode Tomography Script</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cn0565-graphical-user-interface-test-example">CN0565 Graphical User Interface Test Example</a></li>
+<li><a class="reference internal" href="#resources">Resources</a><ul>
+<li><a class="reference internal" href="#design-and-integration-files">Design and Integration Files</a></li>
+<li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../application-software/index.html">Application Software</a></li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-4" id="toctree-collapse-12-4"/><div class="collapse"><a class="reference internal" href="../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-12-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-5" id="toctree-collapse-12-5"/><div class="collapse"><a class="reference internal" href="../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-12-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-6" id="toctree-collapse-12-6"/><div class="collapse"><a class="reference internal" href="../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-12-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-7" id="toctree-collapse-12-7"/><div class="collapse"><a class="reference internal" href="../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-12-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-8" id="toctree-collapse-12-8"/><div class="collapse"><a class="reference internal" href="../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-12-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-9" id="toctree-collapse-12-9"/><div class="collapse"><a class="reference internal" href="../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-12-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-10" id="toctree-collapse-12-10"/><div class="collapse"><a class="reference internal" href="../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-12-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-11" id="toctree-collapse-12-11"/><div class="collapse"><a class="reference internal" href="../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-12-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-12" id="toctree-collapse-12-12"/><div class="collapse"><a class="reference internal" href="../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-12-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-13" id="toctree-collapse-12-13"/><div class="collapse"><a class="reference internal" href="../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-12-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14" id="toctree-collapse-12-14"/><div class="collapse"><a class="reference internal" href="../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-12-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15" id="toctree-collapse-12-15"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-12-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15-1" id="toctree-collapse-12-15-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-12-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16" id="toctree-collapse-12-16"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-12-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16-1" id="toctree-collapse-12-16-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-17" id="toctree-collapse-12-17"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-12-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18" id="toctree-collapse-12-18"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-12-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18-1" id="toctree-collapse-12-18-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19" id="toctree-collapse-12-19"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-12-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19-1" id="toctree-collapse-12-19-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-12-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-20" id="toctree-collapse-12-20"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-12-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-21" id="toctree-collapse-12-21"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-12-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-22" id="toctree-collapse-12-22"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-12-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-23" id="toctree-collapse-12-23"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-12-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="eval-cn0565-ardz">
+<span id="id1"></span><h1>EVAL-CN0565-ARDZ<a class="headerlink" href="#eval-cn0565-ardz" title="Link to this heading"></a></h1>
+<section id="electrical-impedance-tomography-measurement-system">
+<h2>Electrical Impedance Tomography Measurement System<a class="headerlink" href="#electrical-impedance-tomography-measurement-system" title="Link to this heading"></a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<figure class="align-left" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/eval-cn0565-ardz.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/eval-cn0565-ardz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/eval-cn0565-ardz.jpg" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0565-ARDZ Evaluation Board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0565" target="_blank">EVAL-CN0565-ARDZ</a> is an electrical impedance
+tomography (EIT) measurement system for characterizing and computing interior
+impedance of surfaces. The platform allows a conductivity map to be
+reconstructed using several repeating measurements from electrodes placed at
+different locations. It supports impedance measurement setups with up to 24
+electrodes. The design uses a pair 8x12 analog crosspoint switches, which
+enables the excitation signal to be applied to one pair of electrodes at a
+time. The implementation of crosspoint switches allows the circuit to maximize
+the impedance measurements, which consequently improves the resolution of the
+constructed images.</p>
+<p>The design also features a complete power and signal isolation to the host
+controller, which can be used as reference for bioimpedance applications.
+The board comes in an Arduino-compatible form factor and includes an
+industry-standard software interface, allowing easy integration to end-user
+systems as well to connect up to external development platforms such as the
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a>.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/cn0565_block_diagram-1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/cn0565_block_diagram-1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/cn0565_block_diagram-1.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0565-ARDZ Simplified Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Supports 24 impedance input, arbitrarily assignable to quadrupole impedance
+measurement channels</p></li>
+<li><p>Supports impedance measurement setups with up to 24 electrode pairs</p></li>
+<li><p>Accepts measurement frequency range from 0.015 Hz up to 200 kHz</p></li>
+<li><p>Provides measurement ground that is fully isolated from host computer, with
+0.47 µF isolation capacitance</p></li>
+</ul>
+</section>
+<section id="hardware-configuration">
+<h3>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h3>
+<section id="connectors-and-jumpers">
+<h4>Connectors and Jumpers<a class="headerlink" href="#connectors-and-jumpers" title="Link to this heading"></a></h4>
+<ul>
+<li><p>P7 (Chip Select Mapping) - leave this at default setting for the provided firmware</p>
+<blockquote>
+<div><figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/p7_connection.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/p7_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/p7_connection.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-CN0565-ARDZ P7 Pin Location</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>P1 (DUT Connections) - shows the pin mapping diagram</p>
+<blockquote>
+<div><figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/p1_connection.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/p1_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/p1_connection.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">EVAL-CN0565-ARDZ P1 Pin Location</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="system-setup">
+<h3>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h3>
+<section id="documents-needed">
+<h4>Documents Needed<a class="headerlink" href="#documents-needed" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com//media/en/reference-design-documentation/reference-designs/cn0565%20rev.%20a.pdf" target="_blank">CN0565 Circuit Note</a></p></li>
+</ul>
+</section>
+<section id="demo-requirements">
+<h4>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h4>
+<p><strong>Hardware</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0565" target="_blank">EVAL-CN0565-ARDZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a></p></li>
+<li><p>Host PC</p></li>
+<li><p>Micro-USB Cable</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Software</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/cn0565_hex.zip"><code class="xref download docutils literal notranslate"><span class="pre">CN0565</span> <span class="pre">Embedded</span> <span class="pre">Firmware</span></code></a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/releases" target="_blank">Libiio</a> (necessary library)</p></li>
+<li><p><a class="icon link reference external" href="https://www.python.org/downloads" target="_blank">Python 3</a> (to run the example scripts)</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="hardware-setup">
+<h3>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/windows_hardware_bring-up_test.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/windows_hardware_bring-up_test.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/windows_hardware_bring-up_test.png" style="width: 1500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">EVAL-CN0565-ARDZ Test Setup</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="getting-started">
+<h4>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h4>
+<p><strong>Follow below steps to set up the hardware for testing:</strong></p>
+<ol class="arabic simple">
+<li><p>Check visually if Pins 1 and 2 on the P7 of EVAL-CN0565-ARDZ are shorted by
+default.</p></li>
+<li><p>Connect the EVAL-CN0565-ARDZ (via male header pins) to the EVAL-ADICUP3029
+(via female header pins). Ensure that the header pins between the two boards
+fit properly together.</p></li>
+<li><p>Connect the EVAL-ADICUP3029 to the host PC using a micro-USB cable. The DS2
+LED in the EVAL-CN565-ARDZ should turn green, this indicates power.</p></li>
+<li><p>Upload the CN0565 firmware to the EVAL-ADICUP3029 by copying the prebuilt
+.HEX file directly into the DAPLINK drive.</p></li>
+<li><p>Drag and drop the CN0565.HEX file to the DAPLINK. The DAPLINK will
+automatically disconnect and connect again, this indicates successful
+uploading.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure that the DAPLINK is visible in the file explorer, this
+indicates a proper connection between the EVAL-ADICUP3029 and the host PC.</p>
+</div>
+</section>
+</section>
+<section id="software-setup">
+<h3>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h3>
+<section id="python-installation-guide">
+<h4>Python Installation Guide<a class="headerlink" href="#python-installation-guide" title="Link to this heading"></a></h4>
+<p>Assumes a fresh installation of all required software</p>
+<ol class="arabic">
+<li><p>Download the <a class="icon link reference external" href="https://www.python.org/downloads/" target="_blank">Latest Version of Python</a>.
+Choose the latest available version depending on the operating system.</p></li>
+<li><p>Run installer as Administrator. During installation, check <strong>Add Python
+version to PATH</strong> before clicking <strong>Install Now</strong></p></li>
+<li><p>To check if the download is successful, go to command prompt and type the
+command line below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="installing-libiio">
+<h4>Installing Libiio<a class="headerlink" href="#installing-libiio" title="Link to this heading"></a></h4>
+<p>Libiio is a library that has been developed by
+Analog Devices to ease the development of software interfacing Linux
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/software/linux/docs/iio/iio" target="_blank">Industrial I/O (IIO)</a> devices.</p>
+<ol class="arabic">
+<li><p>Download and install the latest release of libIIO <a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/releases" target="_blank">Libiio Latest Release</a></p></li>
+<li><p>Install the libIIO bindings through pip</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">libiio</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install the PyADI-IIO through pip</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyadi</span><span class="o">-</span><span class="n">iio</span>
+</pre></div>
+</div>
+</li>
+<li><p>If you need to update/overwrite your PyADI-IIO through pip, use the command below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pyadi</span><span class="o">-</span><span class="n">iio</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="uploading-the-hex-file">
+<h4>Uploading the HEX File<a class="headerlink" href="#uploading-the-hex-file" title="Link to this heading"></a></h4>
+<p>In order to use the EVAL-CN0565-ARDZ with the EVAL-ADICUP3029, you must upload
+the CN0565 HEX file. The procedure is as follows:</p>
+<ol class="arabic">
+<li><p>Open the file explorer in the Host PC (Windows)</p></li>
+<li><p>Open the folder where the CN0565.HEX file is located. If you don’t have the
+HEX file, download this file:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/cn0565_hex.zip"><code class="xref download docutils literal notranslate"><span class="pre">CN0565</span> <span class="pre">Embedded</span> <span class="pre">Firmware</span></code></a></p>
+</div>
+</li>
+<li><p>Launch another file explorer, and then open the DAPLINK folder.</p></li>
+<li><p>Drag and drop the CN0565.HEX file into the DAPLINK folder. The window will
+automatically close and temporarily disconnect the EVAL-ADICUP3029, and then
+reconnect again. This is an indication that the HEX file is properly
+installed.</p></li>
+</ol>
+</section>
+<section id="installing-software-requirements">
+<h4>Installing Software Requirements<a class="headerlink" href="#installing-software-requirements" title="Link to this heading"></a></h4>
+<ul>
+<li><p>Clone the example firmware from GitHub <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/cn0565" target="_blank">EVAL-CN0565-ARDZ Python Scripts</a>.
+This includes the .txt file that contains the required modules and libraries
+to run the example scripts.</p></li>
+<li><p>In Windows, open a command terminal. Point the current working directory to
+the cloned <strong>pyadi-iio</strong> repository by changing the directory using this
+command:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">folder</span> <span class="n">address</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Navigate inside the <strong>pyadi-iio</strong> folder and install the following
+requirements using these commands:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements_dev</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements_doc</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements_prod_test</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>To test the source as a standalone module, enter this command:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span>
+</pre></div>
+</div>
+</li>
+<li><p>After installing the required modules and libraries, launch the device manager
+and check for the active COM port where the board is connected. In the
+pyadi-iio folder &gt; examples &gt; cn0565, this is where the script is saved.
+Change the COM port in the script.</p></li>
+<li><p>To run the test script, copy the address where the script is saved then enter
+this command:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">folder</span> <span class="n">address</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">&lt;</span><span class="n">file</span> <span class="n">name</span><span class="o">&gt;.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Check the active port where the board is connected in your device manager.</p>
+<ul class="simple">
+<li><p>cn0565_example.py edit on line 122</p></li>
+<li><p>cn0565_example_single.py edit on line 24</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="python-example-scripts">
+<h3>Python Example Scripts<a class="headerlink" href="#python-example-scripts" title="Link to this heading"></a></h3>
+<p>Two sample scripts have been created to execute EIT measurements in the
+EVAL-CN0565-ARDZ. The <strong>Specific Electrode Pair script</strong> allows the user to
+measure the impedance on a specific electrode pair, whereas the <strong>Electrode
+Tomography script</strong> examines the impedance of the entire test board across all
+electrodes.</p>
+<section id="using-the-specific-electrode-pair-script">
+<h4>Using the Specific Electrode Pair Script<a class="headerlink" href="#using-the-specific-electrode-pair-script" title="Link to this heading"></a></h4>
+<ul>
+<li><p>Open the command terminal and direct the current working directory to where
+the example script is saved.</p></li>
+<li><p>Run the script by entering this command:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">cn0565_example_single</span><span class="o">.</span><span class="n">py</span>
+<span class="n">python</span> <span class="n">cn0565_example_single</span><span class="o">.</span><span class="n">py</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>Prompting these commands in the terminal will give you the <strong>Amplitude,
+Frequency and Baud Rate</strong>, <strong>Electrode Pair, Rectangular and Polar Form
+Impedance</strong>, and the <strong>Real and Imaginary Impedance</strong> for the specific electrode
+pair.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/example_single.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/example_single.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/example_single.png" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">EVAL-CN0565-ARDZ Example Script Output</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The numbers 0, 1, 1, 0 indicate the electrode positions for Force
+Leads: F+, F-, and Sense Leads: S+, and S-</p>
+</div>
+</section>
+<section id="using-the-electrode-tomography-script">
+<h4>Using the Electrode Tomography Script<a class="headerlink" href="#using-the-electrode-tomography-script" title="Link to this heading"></a></h4>
+<ul>
+<li><p>Open the command terminal and direct the current working directory to where
+the example script is saved.</p></li>
+<li><p>Run the script by entering this command:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">cn0565_example</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Prompting these commands in the terminal will give you the <strong>Amplitude,
+Frequency and Baud Rate</strong>, <strong>Electrode Pair, Rectangular and Polar form
+impedance</strong>. Then, the <strong>Electrode Pair</strong> followed by the <strong>Rectangular and
+Polar Form Impedance</strong> and the <strong>Real and Imaginary Impedance</strong> for each
+electrode pair that is being measured will display.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/example.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/example.png" />
+</figure>
+<p>After running the sample script, the program will prompt a question whether
+you like to generate a csv file that contains the raw data.</p>
+<p>Enter <strong>Y</strong> if you want to generate a .csv file.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/y_n.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/y_n.png" />
+</figure>
+<p>Enter <strong>N</strong> if you don’t need to generate a .csv file.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/n_y.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/n_y.png" />
+</figure>
+<p>All python scripts used in performing this test are uploaded in the git repository.
+You may access the repository using this link:
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/cn0565" target="_blank">EVAL-CN0565-ARDZ Python Scripts</a>.</p>
+</section>
+</section>
+<section id="cn0565-graphical-user-interface-test-example">
+<h3>CN0565 Graphical User Interface Test Example<a class="headerlink" href="#cn0565-graphical-user-interface-test-example" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Connect the EVAL-CN0565-ARDZ to the EVAL-ADICUP3029 via the Arduino headers.</p></li>
+<li><p>Connect to the EVAL-ADICUP3029 to the host PC via a micro-USB cable.</p>
+<ul class="simple">
+<li><p>The DS2 in the EVAL-CN0565-ARDZ must turn green to indicate power.</p></li>
+</ul>
+</li>
+<li><p>Upload the CN0565 demo firmware to the EVAL-ADICUP3029 by copying the
+pre-built .HEX file directly into the DAPLINK drive
+(<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029" target="_blank">see the ADICUP3029 User Guide</a>).</p>
+<ul class="simple">
+<li><p>Make sure that the DAPLINK is visible in the file explorer, indicating a
+proper connection between the two boards.</p></li>
+<li><p>Drag and drop the CN0565.HEX file to the DAPLINK. The DAPLINK will
+automatically disconnect and connect again, which indicates successful
+uploading.</p></li>
+</ul>
+</li>
+<li><p>Open the command prompt in the Host PC (Windows).</p></li>
+<li><p>Assuming all requirements have been installed, open a command terminal and
+direct to the current working directory to where the example script is saved
+by entering</p>
+</li>
+<li><p>Prompt the CN0565 Realtime EIT GUI by entering this command:</p>
+</li>
+<li><p>Select the type of dataset, type of image reconstruction, number of
+electrodes, and set the frequency.</p></li>
+<li><p>Once all the parameters are set, connect the board to the GUI by selecting
+<strong>Active Comport</strong>, and then click <strong>Connect</strong>. When the board is already
+connected, the image will automatically display.</p></li>
+</ol>
+<p>Disconnecting the board is necessary to run the GUI for another set of
+measurement. Once disconnected, proceed to Step 6.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/imaging.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/imaging.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/imaging.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Results Displayed in the CN0565 GUI</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0565" target="_blank">CN0565 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD5940" target="_blank">AD5940 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADG2128" target="_blank">ADG2128 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADUM5020" target="_blank">ADuM5020 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADM7150" target="_blank">ADM7150 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADM8829" target="_blank">ADM8829 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADUM3151" target="_blank">ADuM3151 Product Page</a></p></li>
+</ul>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<div class="line-block">
+<div class="line">GitHub link for the Python sample script:</div>
+<div class="line"><a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/cn0565" target="_blank">EVAL-CN0565-ARDZ Python Scripts</a></div>
+</div>
+</div>
+<section id="design-and-integration-files">
+<h4>Design and Integration Files<a class="headerlink" href="#design-and-integration-files" title="Link to this heading"></a></h4>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/eval-cn0565-ardz/CN0565-DesignSupport.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-CN0565-ARDZ</span> <span class="pre">Design</span> <span class="pre">&amp;</span> <span class="pre">Integration</span> <span class="pre">Files</span></code></a></p>
+<ul class="simple">
+<li><p>Schematic</p></li>
+<li><p>PCB Layout</p></li>
+<li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
+</ul>
+</div>
+</section>
+<section id="help-and-support">
+<h4>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h4>
+<p>For questions and more information about this product, connect with us through
+the Analog Devices <a class="icon ez reference external" href="https://ez.analog.com/ez/reference-designs" target="_blank">EngineerZone</a>.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../eval-cn0521-ebz/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">EVAL-CN0521-EBZ</a>
+    <a href="../eval-cn0575-rpiz/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVAL-CN0575-RPIZ</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

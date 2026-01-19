@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The ADMV96S-WGBE-EK1 is a complete evaluation and prototyping system for 60 GHz short data links. It consists of a pair of receiver and transmitter boards with a 1 Gbps Ethernet interface on each side of the wireless link." name="description" />
+
+    <title>ADMV96S-WGBE-EK1 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Hardware User Guide" href="hardware-guide/index.html" />
+    <link rel="prev" title="Libraries and GUI Tools" href="../ad4062-ardz/tools.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADMV96S-WGBE-EK1</a><ul>
+<li><a class="reference internal" href="#ghz-wireless-connector">60 GHz Wireless Connector</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#applications">Applications</a></li>
+<li><a class="reference internal" href="#specifications">Specifications</a></li>
+<li><a class="reference internal" href="#package-contents">Package Contents</a></li>
+<li><a class="reference internal" href="#user-guides">User Guides</a></li>
+<li><a class="reference internal" href="#application-development">Application Development</a><ul>
+<li><a class="reference internal" href="#example-1-demonstrate-gigabit-capability-by-connecting-to-the-internet-using-lan-with-the-contactless-60-ghz-link">Example 1 – Demonstrate Gigabit Capability by Connecting to the Internet Using LAN with the Contactless 60 GHz Link</a><ul>
+<li><a class="reference internal" href="#hardware-connections">Hardware Connections</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-2-create-a-two-pc-lan-connected-with-the-contactless-60ghz-link-and-share-large-data-files">Example 2 – Create a Two PC LAN Connected with the Contactless 60GHz Link and Share Large Data Files</a><ul>
+<li><a class="reference internal" href="#id2">Hardware Connections</a></li>
+<li><a class="reference internal" href="#file-sharing-setup">File Sharing Setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-3-use-iperf-to-check-ethernet-link-speed">Example 3 – Use Iperf to Check Ethernet Link Speed</a><ul>
+<li><a class="reference internal" href="#id3">Hardware Connections</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#iperf">Iperf</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+<li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../application-software/index.html">Application Software</a></li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-4" id="toctree-collapse-12-4"/><div class="collapse"><a class="reference internal" href="../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-12-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-5" id="toctree-collapse-12-5"/><div class="collapse"><a class="reference internal" href="../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-12-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-6" id="toctree-collapse-12-6"/><div class="collapse"><a class="reference internal" href="../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-12-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-7" id="toctree-collapse-12-7"/><div class="collapse"><a class="reference internal" href="../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-12-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-8" id="toctree-collapse-12-8"/><div class="collapse"><a class="reference internal" href="../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-12-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-9" id="toctree-collapse-12-9"/><div class="collapse"><a class="reference internal" href="../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-12-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-10" id="toctree-collapse-12-10"/><div class="collapse"><a class="reference internal" href="../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-12-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-11" id="toctree-collapse-12-11"/><div class="collapse"><a class="reference internal" href="../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-12-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-12" id="toctree-collapse-12-12"/><div class="collapse"><a class="reference internal" href="../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-12-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-13" id="toctree-collapse-12-13"/><div class="collapse"><a class="reference internal" href="../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-12-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14" id="toctree-collapse-12-14" checked=""/><div class="collapse"><a class="current reference internal" href="#">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-12-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15" id="toctree-collapse-12-15"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-12-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15-1" id="toctree-collapse-12-15-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-12-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16" id="toctree-collapse-12-16"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-12-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16-1" id="toctree-collapse-12-16-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-17" id="toctree-collapse-12-17"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-12-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18" id="toctree-collapse-12-18"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-12-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18-1" id="toctree-collapse-12-18-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19" id="toctree-collapse-12-19"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-12-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19-1" id="toctree-collapse-12-19-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-12-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-20" id="toctree-collapse-12-20"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-12-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-21" id="toctree-collapse-12-21"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-12-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-22" id="toctree-collapse-12-22"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-12-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-23" id="toctree-collapse-12-23"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-12-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="admv96s-wgbe-ek1">
+<span id="id1"></span><h1>ADMV96S-WGBE-EK1<a class="headerlink" href="#admv96s-wgbe-ek1" title="Link to this heading"></a></h1>
+<section id="ghz-wireless-connector">
+<h2>60 GHz Wireless Connector<a class="headerlink" href="#ghz-wireless-connector" title="Link to this heading"></a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADMV96S-WGBE-EK1" target="_blank">ADMV96S-WGBE-EK1</a> is a complete evaluation and
+prototyping system for 60 GHz short data links. It consists of a pair of
+receiver and transmitter boards with a 1 Gbps Ethernet interface on each side of
+the wireless link.</p>
+<p>The 60 GHz wireless link is implemented by the <a class="icon adi reference external" href="https://www.analog.com/ADMV9525" target="_blank">ADMV9525</a> and
+<a class="icon adi reference external" href="https://www.analog.com/ADMV9525" target="_blank">ADMV9525</a> modules. These are coupled with a SerDes device
+which translates the modules’ SGMII interface to RGMII so that it can be
+connected to an ADIN1300 industrial low latency and low power 1 Gbps Ethernet
+PHY. This enables each side of the wireless link to act as an Ethernet port and
+essentially create a seamless wire-like connection between two ends of an
+Ethernet cable.</p>
+<p>The on-board <a class="icon adi reference external" href="https://www.analog.com/MAX32650" target="_blank">MAX32650</a> ultralow power ARM® Cortex®-M4
+microcontroller controls the system’s operation and implements the algorithms to
+configure the wireless link in real time so that optimal link quality is
+constantly maintained over temperature and various operating conditions. An
+open-source software stack is provided for firmware development as well as
+reference applications. The MAX32650 can be programmed and debugged through a
+JTAG SWD header which can also be used for connecting the Wethlink GUI
+application to the board.</p>
+<figure class="align-default" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/60ghz_link_side_projection.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/60ghz_link_side_projection.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADMV96S-WGBE-EK1 Evaluation Kit</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/evaal-admv96s-wgbe-ek1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/evaal-admv96s-wgbe-ek1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">ADMV96S-WGBE-EK1 Simplified Block Diagram</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Allows evaluation and prototyping of 60 GHz short data links to replace
+traditional mechanical connectors in moving joints</p></li>
+<li><p>1 Gbps / 100 Mbps / 10 Mbps Ethernet interface on both sides of the wireless
+data link</p></li>
+<li><p>Fully programmable system allowing ultimate flexibility for custom
+developments</p></li>
+<li><p>Open-source software stack for firmware development</p></li>
+<li><p>Open-source GUI for system configuration, monitoring, and control</p></li>
+</ul>
+</section>
+<section id="applications">
+<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Slip rings</p></li>
+<li><p>Magnetic resonance imaging systems</p></li>
+<li><p>Autonomous Guided Vehicles</p></li>
+<li><p>Truck and trailer coupling</p></li>
+<li><p>Railway coupling</p></li>
+</ul>
+</section>
+<section id="specifications">
+<h3>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>User Interfaces</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LEDs</p></td>
+<td><p>Power status, TX and RX gain status, TX and RX
+PLL lock status, Ethernet status</p></td>
+</tr>
+<tr class="row-odd"><td><p>Connectivity</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>10-pin Cortex SWD header</p></td>
+<td><p>May be used with MAXDAP (MAX32625PICO) external
+adapter for connecting the Wethlink GUI to the
+evaluation board and for programming firmware.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ethernet</p></td>
+<td><p>1xRJ45 1 Gbps / 100 Mbps / 10 Mbps Ethernet port</p></td>
+</tr>
+<tr class="row-even"><td><p>Power supply</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>External power</p></td>
+<td><p>12 VDC at 2A, 2.10 mm ID (0.083“), 5.50 mm OD
+(0.217”) connector</p></td>
+</tr>
+<tr class="row-even"><td><p>Mechanical Specs</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Dimensions</p></td>
+<td><p>3.283 x 2.362</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="package-contents">
+<h3>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>2x ADMV96x5 reference design boards</p></li>
+<li><p>ADMV9615</p></li>
+<li><p>ADMV9625</p></li>
+<li><p>2x support PCBs</p></li>
+<li><p>1x rail system</p></li>
+<li><p>2x heatsinks</p></li>
+<li><p>2x MAXDAP programmer</p></li>
+<li><p>2x VEL36US120 power adapter
+<em>Users may need to purchase different adapter
+plugs to accommodate the various power socket standards in different countries
+or regions</em></p></li>
+</ul>
+</section>
+<section id="user-guides">
+<h3>User Guides<a class="headerlink" href="#user-guides" title="Link to this heading"></a></h3>
+<p>Getting your system up and running by following the user guides.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Access hardware setup procedure, design files, and</p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">The following user guides are available:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software-guide/index.html">Software User Guide</a></li>
+</ul>
+</div>
+</section>
+<section id="application-development">
+<h3>Application Development<a class="headerlink" href="#application-development" title="Link to this heading"></a></h3>
+<section id="example-1-demonstrate-gigabit-capability-by-connecting-to-the-internet-using-lan-with-the-contactless-60-ghz-link">
+<h4>Example 1 – Demonstrate Gigabit Capability by Connecting to the Internet Using LAN with the Contactless 60 GHz Link<a class="headerlink" href="#example-1-demonstrate-gigabit-capability-by-connecting-to-the-internet-using-lan-with-the-contactless-60-ghz-link" title="Link to this heading"></a></h4>
+<figure class="align-default" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">ADMV9615 and ADMV9625 Contactless Ethernet Link Labeled Pair1 and Pair-2</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="hardware-connections">
+<h5>Hardware Connections<a class="headerlink" href="#hardware-connections" title="Link to this heading"></a></h5>
+<figure class="align-default" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_1_hw_connections.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_1_hw_connections.png" />
+<figcaption>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">Hardware Connections for Example 1</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Mount the ADMV9615 and ADMV9625 Assemblies onto the guide rails with patch
+antennas facing each other.</p></li>
+<li><p>Connect 12V power supplies.</p></li>
+<li><p>Connect one RJ45 Ethernet connector to your PC.</p></li>
+<li><p>Connect the other RJ45 Ethernet connector to your Local Area Network.</p></li>
+<li><p>Turn off your PC’s Wi-Fi connection.</p></li>
+<li><p>Within a few seconds, your PC should connect to your LAN with a speed of up
+to 1 Gbps (if your network can support it)</p></li>
+<li><p>(Optional) Connect MAXDAP connector using a micro-USB to your PCs if you
+would like to configure the firmware.</p></li>
+</ol>
+</section>
+</section>
+<section id="example-2-create-a-two-pc-lan-connected-with-the-contactless-60ghz-link-and-share-large-data-files">
+<h4>Example 2 – Create a Two PC LAN Connected with the Contactless 60GHz Link and Share Large Data Files<a class="headerlink" href="#example-2-create-a-two-pc-lan-connected-with-the-contactless-60ghz-link-and-share-large-data-files" title="Link to this heading"></a></h4>
+<figure class="align-default" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 20 </span><span class="caption-text">ADMV9615 and ADMV9625 Contactless Ethernet Link Labeled Pair-1 and Pair-2</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="id2">
+<h5>Hardware Connections<a class="headerlink" href="#id2" title="Link to this heading"></a></h5>
+<figure class="align-default" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_2_hw_connections.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_2_hw_connections.png" />
+<figcaption>
+<p><span class="caption-number">Figure 21 </span><span class="caption-text">Hardware Connections for Example 2</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Mount the ADMV9615 and ADMV9625 assemblies onto the guide rails with patch
+antennas facing each other.</p></li>
+<li><p>Connect 12V power supply, 2 PL.</p></li>
+<li><p>Connect one RJ45 Ethernet connector to PC1’s Ethernet jack.</p></li>
+<li><p>Connect the other RJ45 Ethernet connector to PC2’s Ethernet jack.</p></li>
+</ol>
+</section>
+<section id="file-sharing-setup">
+<h5>File Sharing Setup<a class="headerlink" href="#file-sharing-setup" title="Link to this heading"></a></h5>
+<p>The following procedure was taken from:
+<a class="icon link reference external" href="https://techwiser.com/how-to-connect-pc-to-pc-lan-cable/" target="_blank">How to Share Files between Two Computers Using LAN Cable – TechWiser</a></p>
+<ul class="simple">
+<li><p>On PC1, go to the Start menu and search “Control Panel”. Once you see it,
+click on it, to open it.</p></li>
+</ul>
+<figure class="align-default" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/file_sharing_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/file_sharing_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 22 </span><span class="caption-text">File Sharing Setup</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Choose <strong>Networks and Internet</strong>.</p></li>
+<li><p>Next, choose <strong>Network and Sharing Center</strong>.</p></li>
+<li><p>Click on <strong>Advanced Sharing Settings</strong>.</p></li>
+<li><p>Choose <strong>All Networks</strong>.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/network_settings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/network_settings.png" />
+</figure>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/network_settings_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/network_settings_2.png" />
+</figure>
+<ul class="simple">
+<li><p>Choose <strong>Turn on Sharing</strong>.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/network_and_sharing.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/network_and_sharing.png" />
+</figure>
+<ul class="simple">
+<li><p>Turn off Password Protection (Once Done with File Sharing Turn Password
+Protection Back On)</p></li>
+<li><p>Perform steps 2 through 6 for PC2.</p></li>
+</ul>
+<p>To put both PCs on the same network, manually set up IP settings by opening
+<strong>Control Panel</strong>.</p>
+<ul class="simple">
+<li><p>Choose <strong>Network and Sharing</strong>.</p></li>
+<li><p>Select <strong>Ethernet</strong> and click <strong>Properties</strong>.</p></li>
+<li><p>Select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong>.</p></li>
+<li><p>Select <strong>Properties</strong>.</p></li>
+</ul>
+<p>For PC1, choose “Use the following IP address”.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/ip_address.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/ip_address.png" />
+</figure>
+<ul class="simple">
+<li><p>IP Address: <strong>192.168.1.1</strong></p></li>
+<li><p>Subnet mask: <strong>255.255.255.0</strong></p></li>
+<li><p>Default Gateway: <strong>192.168.1.2</strong></p></li>
+</ul>
+<p>Use the following DNS server address:</p>
+<ul class="simple">
+<li><p>Preferred DNS Server: <strong>208.67.222.222</strong></p></li>
+<li><p>Alternate DNS server: <strong>208.67.220.220</strong></p></li>
+</ul>
+<p>For PC2, choose “Use the following IP address”.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/pc2_ip_address.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/pc2_ip_address.png" />
+</figure>
+<ul class="simple">
+<li><p>IP Address: <strong>192.168.1.2</strong>.</p></li>
+<li><p>Subnet mask: <strong>255.255.255.0</strong>.</p></li>
+<li><p>Default Gateway: <strong>192.168.1.1</strong>.</p></li>
+</ul>
+<p>Use the following DNS server addresses:</p>
+<ul class="simple">
+<li><p>Preferred DNS Server: <strong>208.67.222.222</strong></p></li>
+<li><p>Alternate DNS Server: <strong>208.67.220.220</strong></p></li>
+</ul>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/network_tab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/network_tab.png" />
+</figure>
+<ul class="simple">
+<li><p>Open Windows Explorer and click on the <strong>Network</strong> tab.</p></li>
+<li><p>If everything is set up properly, both computers should appear.</p></li>
+<li><p>You still need to share a target folder on the LAN.</p></li>
+<li><p>Create a new <strong>folder</strong> on the desktop and place some large files into it.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/creating_a_folder.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/creating_a_folder.png" />
+</figure>
+<ul class="simple">
+<li><p>Select the folder you want to share and right-click it.</p></li>
+<li><p>Choose <strong>Everyone</strong> and click <strong>Add</strong>.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/sharing_settings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/sharing_settings.png" />
+</figure>
+<ul class="simple">
+<li><p>Once shared, the next window will show the location of the folder.</p></li>
+<li><p>That’s it! Go back to the PC from which you want to access the file, open the
+<strong>Networks</strong> panel, and click on the other computer’s name.</p></li>
+<li><p>Here you will see the folder you just shared. Open the folder and
+transfer files and folders as you normally do—copy and paste, etc.</p></li>
+<li><p>You can repeat these steps from the other computer as well.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/shared_folder.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/shared_folder.png" />
+</figure>
+</section>
+</section>
+<section id="example-3-use-iperf-to-check-ethernet-link-speed">
+<h4>Example 3 – Use Iperf to Check Ethernet Link Speed<a class="headerlink" href="#example-3-use-iperf-to-check-ethernet-link-speed" title="Link to this heading"></a></h4>
+<figure class="align-default" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 23 </span><span class="caption-text">ADMV9615 and ADMV9625 Contactless Ethernet Link Labeled Pair1 and Pair2</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="id3">
+<h5>Hardware Connections<a class="headerlink" href="#id3" title="Link to this heading"></a></h5>
+<figure class="align-default" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_3_hw_connections.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/use_case_3_hw_connections.png" />
+<figcaption>
+<p><span class="caption-number">Figure 24 </span><span class="caption-text">Hardware Connections for Example 3</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Mount the ADMV9615 and ADMV9625 assemblies onto the guide rails with patch
+antennas facing each other.</p></li>
+<li><p>Connect 12V power supplies.</p></li>
+<li><p>Connect one RJ45 Ethernet connector to PC1’s Ethernet jack.</p></li>
+<li><p>Connect the other RJ45 Ethernet connector to PC2’s Ethernet jack.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="iperf">
+<h3>Iperf<a class="headerlink" href="#iperf" title="Link to this heading"></a></h3>
+<p>Follow the Procedure from Example 2 for File Sharing Using a 2 PC LAN:</p>
+<p>Iperf is a free tool for network performance and measurement,
+<a class="icon link reference external" href="https://iperf.fr/iperf-download.php" target="_blank">download it here</a></p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/iperf.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/iperf.png" />
+</figure>
+<ul>
+<li><p>Unzip the downloaded archive.</p></li>
+<li><p>On PC1, open a DOS Command window and navigate to the directory where iperf
+is installed:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-ps1 notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Public</span><span class="p">\</span><span class="n">Documents</span><span class="p">\</span><span class="n">iperf</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">3-win64</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></li>
+<li><p>Set this computer as the server:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Public</span>\<span class="n">Documents</span>\<span class="n">iperf</span><span class="o">-</span><span class="mf">3.1.3</span><span class="o">-</span><span class="n">win64</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-ps1 notranslate"><div class="highlight"><pre><span></span><span class="n">iperf3</span><span class="p">.</span><span class="n">exe</span> <span class="n">-s</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></li>
+<li><p>On PC2, open a DOS Command window and Navigate to the directory where iperf is
+installed:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-ps1 notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Public</span><span class="p">\</span><span class="n">Documents</span><span class="p">\</span><span class="n">iperf</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">3-win64</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></li>
+<li><p>Set this computer as the client. Type in</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Public</span>\<span class="n">Documents</span>\<span class="n">iperf</span><span class="o">-</span><span class="mf">3.1.3</span><span class="o">-</span><span class="n">win64</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-ps1 notranslate"><div class="highlight"><pre><span></span><span class="n">iperf3</span><span class="p">.</span><span class="n">exe</span> <span class="n">-c</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">1</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/iperf_settings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/linux-cleanup/docs/solutions/reference-designs/admv96s-wgbe-ek1/iperf_settings.png" />
+</figure>
+</li>
+<li><p>Iperf tests the link speed about 950 Mbps.</p></li>
+</ul>
+</section>
+<section id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="software-guide/index.html#admv96s-wgbe-ek1-software-guide"><span class="std std-ref">ADMV96S-WGBE-EK1 Software User Guide</span></a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/wethlink" target="_blank">ADMV96S-WGBE-EK1 Firmware Project</a></p></li>
+<li><p><a class="icon link reference external" href="https://swdownloads.analog.com/update/wethlink/latest/wethlink_installer.exe" target="_blank">Wethlink Installer</a></p></li>
+</ul>
+</section>
+<section id="help-and-support">
+<h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
+<p>For questions and more information, please visit the Analog Devices
+<a class="icon ez reference external" href="https://ez.analog.com/reference-designs" target="_blank">EngineerZone Support Community</a>.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../ad4062-ardz/tools.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Libraries and GUI Tools</a>
+    <a href="hardware-guide/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Hardware User Guide</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
