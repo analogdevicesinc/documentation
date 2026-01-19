@@ -28,7 +28,65 @@ for different use cases:
    and demonstration systems
 
 Understanding these workflows will help you choose the right approach for your
-project and see how the :doc:`ecosystem components <components>` fit together.
+project and see how the :doc:`technology stack components <components>` fit together.
+
+Technology Stack Deviations: Linux vs. no-OS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+System support will deviate at the driver layers for the same hardware depending
+on system use and popularity. For example, a high-speed data converter connected
+to an FPGA will typically support both Linux drivers and bare-metal projects.
+This is the case for AD9081, ADRV9009, and many other devices.
+
+.. figure:: workflow-linux-noos.svg
+   :align: center
+   :width: 800px
+
+   Linux vs. no-OS development paths: same hardware, different software stacks
+
+**Recommended Approach: Start with Linux**
+
+In these cases, it is always recommended to use the Linux drivers first, and
+then move to bare-metal projects if the use case requires it.
+
+.. list-table:: Linux vs. no-OS Comparison
+   :header-rows: 1
+   :widths: 15 42 43
+
+   * - Aspect
+     - Linux
+     - no-OS (Bare-Metal)
+   * - **Best For**
+     - Prototyping, validation, algorithm development
+     - Production deployment, resource-constrained systems
+   * - **Strengths**
+     - | - More guardrails and error checking
+       | - Rich debugging (iio_info, oscilloscope, Scopy)
+       | - Direct MATLAB/Python/pyadi-iio connectivity
+       | - Faster iteration during development
+     - | - Minimal footprint, instant boot
+       | - Deterministic real-time performance
+       | - Lower power consumption
+       | - Production-ready, deployable firmware
+   * - **Weaknesses**
+     - | - Higher resource usage (RAM, CPU, storage)
+       | - Non-deterministic timing due to OS scheduling
+       | - Longer boot time
+     - | - Steeper learning curve
+       | - Limited debugging tools
+       | - Manual integration with host applications
+
+**Transition Path**
+
+Once the use case is proven and the developer is comfortable with the device,
+they can move to bare-metal projects for a more optimized deployable solution.
+The typical workflow is:
+
+1. **Prototype with Linux** - Validate device functionality, develop algorithms,
+   and test signal chains using the rich Linux ecosystem
+2. **Port to no-OS** - Once requirements are locked, port the application logic
+   to bare-metal for deployment, reusing the same HDL design and device drivers
+
 
 Workflow 1: FPGA + High-Speed Data Converter
 -------------------------------------------------------------------------------

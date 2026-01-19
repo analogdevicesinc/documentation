@@ -29,7 +29,7 @@
   <!-- Layer 1: AD9081 Hardware -->
   <rect x="100" y="60" width="700" height="60" rx="5" class="box" fill="#d7ccc8"/>
   <text x="450" y="85" class="box-text" text-anchor="middle">AD9081 MxFE (Multi-Channel Transceiver)</text>
-  <text x="450" y="105" class="box-desc" text-anchor="middle">Quad 12 GSPS ADC + Quad 12 GSPS DAC • NCOs, DDCs, DUCs</text>
+  <text x="450" y="105" class="box-desc" text-anchor="middle">Quad 4 GSPS ADC + Quad 12 GSPS DAC • NCOs, DDCs, DUCs</text>
 
   <!-- Arrow with JESD204C -->
   <line x1="450" y1="120" x2="450" y2="140" class="arrow"/>
@@ -65,7 +65,7 @@
 
   <!-- Layer 4: Linux IIO Driver -->
   <rect x="100" y="340" width="700" height="70" rx="5" class="box" fill="#bbdefb"/>
-  <text x="450" y="365" class="box-text" text-anchor="middle">Linux IIO Driver (axi-ad9081)</text>
+  <text x="450" y="365" class="box-text" text-anchor="middle">Linux IIO Driver (axi-ad9081-rx-hpc)</text>
   <text x="450" y="385" class="box-desc" text-anchor="middle">• Initializes AD9081 via SPI • Configures JESD204 link parameters</text>
   <text x="450" y="402" class="box-desc" text-anchor="middle">• Programs NCOs, filters, DDCs/DUCs • Exposes DMA buffers via IIO</text>
 
