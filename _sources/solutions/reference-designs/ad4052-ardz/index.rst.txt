@@ -144,7 +144,7 @@ The drivers source code are available at:
      - :external+no-OS:doc:`doc <drivers/adc/ad405x>`
    * - Linux
      - :git-linux:`staging/ad4052:drivers/iio/adc/ad4052.c`
-     - :ref:`doc <linux ad4052>`
+     - -
 
 The no-OS driver is divided into a core driver and a tinyIIO layer to be used
 with :ref:`libiio`.

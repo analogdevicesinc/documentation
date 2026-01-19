@@ -13,8 +13,6 @@
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="ADRV9009/ADRV9008 Device Driver Customization" href="customization.html" />
-    <link rel="prev" title="IIO Transceivers" href="../index.html" />
    
   
   
@@ -221,21 +219,9 @@ Content on this topic
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../iio-adc/ad4052/index.html">AD4052</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
-</ul>
-</li>
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">IIO Transceivers</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2-1" id="toctree-collapse-2-2-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-2-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="customization.html">Customization</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3" id="toctree-collapse-2-3"/><div class="collapse"><a class="reference internal" href="../../iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-3"><div class="icon"></div></label></div><ul>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
 </ul>
@@ -559,7 +545,7 @@ Content on this topic
       <div class="documentwrapper">
         <div class="bodywrapper" id="top-anchor">
           <div class="body-header">
-  <nav class="breadcrumb"><ol><li><a href="../../index.html">Linux drivers</a></li><li><a href="../index.html">IIO Transceivers</a></li></ol></nav>
+  <nav class="breadcrumb empty"><ol></ol></nav>
 </div>
           <div class="body" role="main">
             
@@ -890,6 +876,10 @@ via device tree.</p>
 </section>
 <section id="driver-testing-api">
 <h2>Driver testing / API<a class="headerlink" href="#driver-testing-api" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">orphan<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
 <p>Each and every IIO device, typically a hardware chip, has a device folder under
 <em>/sys/bus/iio/devices/iio:deviceX</em>.
 Where X is the IIO index of the device. Under every of these directory folders
@@ -2439,6 +2429,10 @@ altogether using the 0xFFF mask. GPIOs masked as inputs can also be read.</p>
 </section>
 <section id="low-level-register-access-via-debugfs-direct-reg-access">
 <h2>Low level register access via debugfs (direct_reg_access)<a class="headerlink" href="#low-level-register-access-via-debugfs-direct-reg-access" title="Link to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">orphan<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
 <p>Some IIO drivers feature an optional debug facility, allowing users to read or
 write registers directly. Special care needs to be taken when using this
 feature, since you can modify registers on the back of the driver.</p>
@@ -2547,8 +2541,8 @@ of each <a class="icon link reference external" href="https://analogdevicesinc.g
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">IIO Transceivers</a>
-    <a href="customization.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADRV9009/ADRV9008 Device Driver Customization</a>
+    <div></div>
+    <div></div>
               </div>
           
         </div>
