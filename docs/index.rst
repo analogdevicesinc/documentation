@@ -52,7 +52,6 @@ Contents
 -------------------------------------------------------------------------------
 
 .. toctree::
-   :caption: Ecosystem Overview
    :maxdepth: 2
 
    overview/index
@@ -72,24 +71,11 @@ Contents
    linux/*/index
 
 .. toctree::
-   :caption: Software
-   :maxdepth: 1
-   :glob:
-
-   software/*/index
-
-.. toctree::
-   :caption: Devices
-   :maxdepth: 1
-   :glob:
-
-   tools/*/index
-
-.. toctree::
    :caption: Apps & Solutions
    :maxdepth: 2
    :glob:
 
+   software/index
    solutions/*/index
 
 .. toctree::
