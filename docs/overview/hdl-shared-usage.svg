@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <defs>
+    <style>
+      .box { stroke: #333; stroke-width: 2; }
+      .box-text { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+      .box-desc { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+      .arrow { stroke: #666; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .title-text { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+      .subtitle-text { font-family: Arial, sans-serif; font-size: 14px; fill: #666; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="30" class="title-text" text-anchor="middle">How HDL Supports Both Linux and no-OS</text>
+  <text x="500" y="50" class="subtitle-text" text-anchor="middle">Shared IP cores and design patterns across FPGA and microcontroller implementations</text>
+
+  <!-- HDL Repository at top -->
+  <rect x="300" y="80" width="400" height="140" rx="5" class="box" fill="#c8e6c9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="500" y="110" class="box-text" text-anchor="middle" style="font-size: 16px;">HDL Repository (analogdevicesinc/hdl)</text>
+
+  <text x="320" y="140" class="box-desc" font-weight="bold">Shared Components:</text>
+  <text x="340" y="160" class="box-desc">• SPI Engine IP core (library/spi_engine/)</text>
+  <text x="340" y="175" class="box-desc">• Device interface modules (library/*/ad*.v)</text>
+  <text x="340" y="190" class="box-desc">• Register maps and initialization sequences</text>
+  <text x="340" y="205" class="box-desc">• Timing specifications and constraints</text>
+
+  <!-- Split into two paths -->
+
+  <!-- LEFT: FPGA/Linux Path -->
+  <rect x="50" y="280" width="400" height="180" rx="5" class="box" fill="#e3f2fd" stroke="#1565c0" stroke-width="3"/>
+  <text x="250" y="310" class="box-text" text-anchor="middle" style="font-size: 15px;">FPGA Implementation (Zynq/ZynqMP)</text>
+
+  <text x="70" y="335" class="box-desc" font-weight="bold">HDL Usage:</text>
+  <text x="90" y="355" class="box-desc">✓ Synthesizes IP cores into FPGA fabric</text>
+  <text x="90" y="370" class="box-desc">✓ Creates AXI memory-mapped interfaces</text>
+  <text x="90" y="385" class="box-desc">✓ Generates devicetree bindings</text>
+  <text x="90" y="400" class="box-desc">✓ Implements DMA controllers</text>
+
+  <text x="70" y="425" class="box-desc" font-weight="bold">Result:</text>
+  <text x="90" y="445" class="box-desc">Linux IIO drivers control hardware via AXI registers</text>
+
+  <!-- RIGHT: MCU/no-OS Path -->
+  <rect x="550" y="280" width="400" height="180" rx="5" class="box" fill="#fff3e0" stroke="#e65100" stroke-width="3"/>
+  <text x="750" y="310" class="box-text" text-anchor="middle" style="font-size: 15px;">Microcontroller Implementation (STM32/MAX32)</text>
+
+  <text x="570" y="335" class="box-desc" font-weight="bold">HDL Usage:</text>
+  <text x="590" y="355" class="box-desc">✓ References register maps and sequences</text>
+  <text x="590" y="370" class="box-desc">✓ Adapts SPI Engine timing to software SPI</text>
+  <text x="590" y="385" class="box-desc">✓ Uses same initialization procedures</text>
+  <text x="590" y="400" class="box-desc">✓ Mirrors FPGA interface behavior</text>
+
+  <text x="570" y="425" class="box-desc" font-weight="bold">Result:</text>
+  <text x="590" y="445" class="box-desc">no-OS drivers control hardware via GPIO/SPI</text>
+
+  <!-- Arrows from HDL -->
+  <line x1="400" y1="220" x2="250" y2="280" class="arrow"/>
+  <text x="280" y="245" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #1565c0;">Synthesized</text>
+  <text x="280" y="260" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #1565c0;">into FPGA</text>
+
+  <line x1="600" y1="220" x2="750" y2="280" class="arrow"/>
+  <text x="640" y="245" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #e65100;">Referenced by</text>
+  <text x="640" y="260" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #e65100;">software drivers</text>
+
+  <!-- Example: SPI Engine -->
+  <rect x="100" y="500" width="350" height="160" rx="5" class="box" fill="#f1f8e9" stroke="#558b2f" stroke-width="2"/>
+  <text x="275" y="525" class="box-text" text-anchor="middle">Example: SPI Engine IP Core</text>
+
+  <text x="120" y="550" class="box-desc" font-weight="bold">In HDL (FPGA):</text>
+  <text x="140" y="570" class="box-desc">• Dedicated SPI controller in fabric (library/spi_engine/)</text>
+  <text x="140" y="585" class="box-desc">• Offload engine for continuous transfers</text>
+  <text x="140" y="600" class="box-desc">• DMA integration for high throughput</text>
+  <text x="140" y="615" class="box-desc">• Operates at 100+ MHz SPI clock</text>
+
+  <text x="120" y="635" class="box-desc" font-weight="bold">In no-OS (MCU):</text>
+  <text x="140" y="650" class="box-desc">• Software emulates timing patterns from HDL</text>
+
+  <!-- Example: Register Maps -->
+  <rect x="550" y="500" width="350" height="160" rx="5" class="box" fill="#fce4ec" stroke="#c2185b" stroke-width="2"/>
+  <text x="725" y="525" class="box-text" text-anchor="middle">Example: Device Register Maps</text>
+
+  <text x="570" y="550" class="box-desc" font-weight="bold">Defined in HDL:</text>
+  <text x="590" y="570" class="box-desc">• AD9081 register addresses (0x0000-0xFFFF)</text>
+  <text x="590" y="585" class="box-desc">• Bit field definitions and reset values</text>
+  <text x="590" y="600" class="box-desc">• Initialization sequence: write reg[0x42]=0x01...</text>
+
+  <text x="570" y="620" class="box-desc" font-weight="bold">Used by Both:</text>
+  <text x="590" y="635" class="box-desc">• Linux driver: axi-ad9081.c reads from HDL docs</text>
+  <text x="590" y="650" class="box-desc">• no-OS driver: ad9081.c uses identical register map</text>
+
+  <!-- Arrows to examples -->
+  <line x1="250" y1="460" x2="275" y2="500" class="arrow" stroke-dasharray="5,5"/>
+  <line x1="750" y1="460" x2="725" y2="500" class="arrow" stroke-dasharray="5,5"/>
+
+  <!-- Bottom note -->
+  <rect x="150" y="675" width="700" height="20" rx="3" fill="none" stroke="none"/>
+  <text x="500" y="690" style="font-family: Arial, sans-serif; font-size: 12px; fill: #666; font-style: italic;" text-anchor="middle">Single source of truth in HDL ensures consistent behavior between FPGA and MCU implementations</text>
+</svg>

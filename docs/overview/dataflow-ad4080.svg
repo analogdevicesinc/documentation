@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <defs>
+    <style>
+      .box { stroke: #333; stroke-width: 2; }
+      .box-text { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+      .box-desc { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+      .arrow { stroke: #666; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .arrow-label { font-family: Arial, sans-serif; font-size: 11px; fill: #444; font-style: italic; }
+      .layer-label { font-family: Arial, sans-serif; font-size: 12px; fill: #888; font-weight: bold; }
+      .title-text { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="25" class="title-text" text-anchor="middle">Data Flow: AD4080 ADC with STM32 and Raspberry Pi</text>
+
+  <!-- Layer labels on the left -->
+  <text x="20" y="90" class="layer-label">Layer 1</text>
+  <text x="20" y="185" class="layer-label">Layer 2</text>
+  <text x="20" y="280" class="layer-label">Layer 3</text>
+  <text x="20" y="415" class="layer-label">Layer 5</text>
+  <text x="20" y="520" class="layer-label">Layer 6</text>
+  <text x="20" y="625" class="layer-label">Layer 7</text>
+
+  <!-- Layer 1: AD4080 Hardware -->
+  <rect x="100" y="60" width="700" height="60" rx="5" class="box" fill="#d7ccc8"/>
+  <text x="450" y="85" class="box-text" text-anchor="middle">AD4080 40 MSPS Oversampling SAR ADC</text>
+  <text x="450" y="105" class="box-desc" text-anchor="middle">Samples analog signals • Provides digital data via SPI interface</text>
+
+  <!-- Arrow down with label -->
+  <line x1="450" y1="120" x2="450" y2="145" class="arrow"/>
+  <text x="470" y="135" class="arrow-label">SPI (MOSI, MISO, SCLK, CS)</text>
+
+  <!-- Layer 2: STM32 MCU -->
+  <rect x="100" y="155" width="300" height="80" rx="5" class="box" fill="#ffe0b2"/>
+  <text x="250" y="180" class="box-text" text-anchor="middle">STM32 Microcontroller</text>
+  <text x="250" y="197" class="box-desc" text-anchor="middle">(ST Nucleo-H563ZI)</text>
+  <text x="250" y="215" class="box-desc" text-anchor="middle">• Controls AD4080 via SPI</text>
+  <text x="250" y="230" class="box-desc" text-anchor="middle">• Manages timing & configuration</text>
+
+  <!-- Layer 2: Raspberry Pi (right side) -->
+  <rect x="500" y="155" width="300" height="80" rx="5" class="box" fill="#ffe0b2"/>
+  <text x="650" y="180" class="box-text" text-anchor="middle">Raspberry Pi 4</text>
+  <text x="650" y="200" class="box-desc" text-anchor="middle">Runs Kuiper Linux</text>
+  <text x="650" y="217" class="box-desc" text-anchor="middle">• Python environment</text>
+  <text x="650" y="232" class="box-desc" text-anchor="middle">• USB host for STM32</text>
+
+  <!-- Arrow from STM32 to RPi -->
+  <line x1="400" y1="195" x2="500" y2="195" class="arrow"/>
+  <text x="435" y="188" class="arrow-label">USB/Serial</text>
+  <text x="415" y="205" class="arrow-label">(UART over USB)</text>
+
+  <!-- Layer 3: no-OS Firmware -->
+  <rect x="100" y="255" width="300" height="80" rx="5" class="box" fill="#c8e6c9"/>
+  <text x="250" y="280" class="box-text" text-anchor="middle">no-OS Firmware</text>
+  <text x="250" y="300" class="box-desc" text-anchor="middle">• Initializes AD4080 (sampling rate, filters)</text>
+  <text x="250" y="317" class="box-desc" text-anchor="middle">• Reads samples via SPI Engine</text>
+  <text x="250" y="332" class="box-desc" text-anchor="middle">• Runs TinyIIO server on UART</text>
+
+  <!-- Arrow connecting Layer 3 to Layer 2 -->
+  <line x1="250" y1="255" x2="250" y2="235" class="arrow" stroke-dasharray="5,5" marker-end="none"/>
+
+  <!-- Arrow from firmware across to RPi -->
+  <line x1="400" y1="295" x2="500" y2="295" class="arrow"/>
+  <text x="415" y="288" class="arrow-label">TinyIIO Protocol</text>
+  <text x="420" y="305" class="arrow-label">(over serial)</text>
+
+  <!-- Layer 5: libiio on Raspberry Pi -->
+  <rect x="500" y="385" width="300" height="80" rx="5" class="box" fill="#bbdefb"/>
+  <text x="650" y="410" class="box-text" text-anchor="middle">libiio Library</text>
+  <text x="650" y="430" class="box-desc" text-anchor="middle">• Connects via serial backend:</text>
+  <text x="650" y="445" class="box-desc" text-anchor="middle">serial:/dev/ttyACM0,230400,8n1</text>
+  <text x="650" y="460" class="box-desc" text-anchor="middle">• Provides buffer interface</text>
+
+  <!-- Arrow connecting libiio to upper layers -->
+  <line x1="650" y1="385" x2="650" y2="235" class="arrow" stroke-dasharray="5,5" marker-end="none"/>
+
+  <!-- Layer 6: pyadi-iio -->
+  <rect x="500" y="490" width="300" height="80" rx="5" class="box" fill="#e1bee7"/>
+  <text x="650" y="515" class="box-text" text-anchor="middle">pyadi-iio (Python)</text>
+  <text x="650" y="537" class="box-desc" text-anchor="middle">adc = adi.ad4080(uri="serial:/dev/...")</text>
+  <text x="650" y="552" class="box-desc" text-anchor="middle">adc.sampling_frequency = 1000000</text>
+  <text x="650" y="567" class="box-desc" text-anchor="middle">data = adc.rx()  # NumPy array</text>
+
+  <!-- Arrow from libiio to pyadi-iio -->
+  <line x1="650" y1="465" x2="650" y2="490" class="arrow"/>
+
+  <!-- Layer 7: Application -->
+  <rect x="500" y="595" width="300" height="70" rx="5" class="box" fill="#ffcdd2"/>
+  <text x="650" y="620" class="box-text" text-anchor="middle">User Application</text>
+  <text x="650" y="640" class="box-desc" text-anchor="middle">Scopy GUI / Python Script / MATLAB</text>
+  <text x="650" y="657" class="box-desc" text-anchor="middle">• Display • Analysis • Data Logging</text>
+
+  <!-- Arrow from pyadi-iio to application -->
+  <line x1="650" y1="570" x2="650" y2="595" class="arrow"/>
+
+  <!-- Side note box -->
+  <rect x="80" y="400" width="350" height="90" rx="5" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+  <text x="255" y="420" style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; fill: #333;" text-anchor="middle">No Linux Drivers Needed!</text>
+  <text x="255" y="440" style="font-family: Arial, sans-serif; font-size: 11px; fill: #555;" text-anchor="middle">The STM32 runs bare-metal firmware with</text>
+  <text x="255" y="455" style="font-family: Arial, sans-serif; font-size: 11px; fill: #555;" text-anchor="middle">TinyIIO server. libiio talks directly to the MCU</text>
+  <text x="255" y="470" style="font-family: Arial, sans-serif; font-size: 11px; fill: #555;" text-anchor="middle">via serial, bypassing Layer 4 (drivers) entirely.</text>
+  <text x="255" y="485" style="font-family: Arial, sans-serif; font-size: 11px; fill: #555;" text-anchor="middle">This is perfect for microcontroller-based designs!</text>
+
+  <!-- Legend -->
+  <text x="50" y="690" style="font-family: Arial, sans-serif; font-size: 10px; fill: #666;">Solid arrows: Data flow  |  Dashed arrows: Component relationships  |  Layers 4 (drivers) not used in this MCU-based workflow</text>
+</svg>

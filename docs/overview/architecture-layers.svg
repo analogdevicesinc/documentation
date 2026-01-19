@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <style>
+      .layer-box { stroke: #333; stroke-width: 2; }
+      .layer-text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #fff; }
+      .layer-desc { font-family: Arial, sans-serif; font-size: 12px; fill: #fff; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .title-text { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #333; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="30" class="title-text" text-anchor="middle">ADI Technology Stack</text>
+
+  <!-- Layer 7: Applications -->
+  <rect x="100" y="60" width="600" height="65" rx="5" class="layer-box" fill="#d32f2f"/>
+  <text x="120" y="85" class="layer-text">Layer 7: Applications</text>
+  <text x="120" y="105" class="layer-desc">Scopy • IIO Oscilloscope • MATLAB • Kuiper Linux • Custom Apps</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="125" x2="400" y2="135" class="arrow"/>
+
+  <!-- Layer 6: Language Bindings -->
+  <rect x="100" y="135" width="600" height="65" rx="5" class="layer-box" fill="#7b1fa2"/>
+  <text x="120" y="160" class="layer-text">Layer 6: Ecosystem Bindings</text>
+  <text x="120" y="180" class="layer-desc">pyadi-iio (Python) • MATLAB Toolboxes • C/C++ APIs • ROS • GNURadio • Nvidia Holoscan</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="200" x2="400" y2="210" class="arrow"/>
+
+  <!-- Layer 5: Libraries -->
+  <rect x="100" y="210" width="600" height="65" rx="5" class="layer-box" fill="#303f9f"/>
+  <text x="120" y="235" class="layer-text">Layer 5: Libraries</text>
+  <text x="120" y="255" class="layer-desc">libiio (local, USB, network, serial) • libm2k</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="275" x2="400" y2="285" class="arrow"/>
+
+  <!-- Layer 4: Drivers -->
+  <rect x="100" y="285" width="600" height="65" rx="5" class="layer-box" fill="#0288d1"/>
+  <text x="120" y="310" class="layer-text">Layer 4: Drivers</text>
+  <text x="120" y="330" class="layer-desc">Linux IIO Drivers • Zephyr Drivers • no-OS Drivers</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="350" x2="400" y2="360" class="arrow"/>
+
+  <!-- Layer 3: HDL/Firmware -->
+  <rect x="100" y="360" width="600" height="65" rx="5" class="layer-box" fill="#388e3c"/>
+  <text x="120" y="385" class="layer-text">Layer 3: HDL / Firmware</text>
+  <text x="120" y="405" class="layer-desc">FPGA Reference Designs • IP Cores (JESD204, SPI Engine) • no-OS Firmware</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="425" x2="400" y2="435" class="arrow"/>
+
+  <!-- Layer 2: Hardware Interface -->
+  <rect x="100" y="435" width="600" height="65" rx="5" class="layer-box" fill="#f57c00"/>
+  <text x="120" y="460" class="layer-text">Layer 2: Hardware Interface</text>
+  <text x="120" y="480" class="layer-desc">FPGA (Zynq, ZynqMP) • Processors (Raspberry Pi) • MCUs (STM32, MAX32)</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="500" x2="400" y2="510" class="arrow"/>
+
+  <!-- Layer 1: Hardware -->
+  <rect x="100" y="510" width="600" height="65" rx="5" class="layer-box" fill="#5d4037"/>
+  <text x="120" y="535" class="layer-text">Layer 1: Hardware</text>
+  <text x="120" y="555" class="layer-desc">ADI Devices: ADCs, DACs, Transceivers, Sensors, IMUs, PLLs, DDS</text>
+
+  <!-- Legend -->
+  <text x="50" y="595" style="font-family: Arial, sans-serif; font-size: 11px; fill: #666;">Data flows upward from hardware through each layer to applications</text>
+</svg>
