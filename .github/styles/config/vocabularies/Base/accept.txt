@@ -6,6 +6,11 @@ LTspice
 no-OS
 Digilent
 Olimex
+GitHub
+Blockset
+Arria
+AXI
+
 
 [Tt]octree
 [Dd]ocname
@@ -93,3 +98,4 @@ is delivered
 be used
 be powered
 is supported
+facto
