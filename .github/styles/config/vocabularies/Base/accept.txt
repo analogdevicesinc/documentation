@@ -6,6 +6,10 @@ LTspice
 no-OS
 Digilent
 Olimex
+Scopy
+Uno
+Nucleo
+[Ll]ibiio
 
 [Tt]octree
 [Dd]ocname
