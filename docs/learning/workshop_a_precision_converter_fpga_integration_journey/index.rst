@@ -50,7 +50,7 @@ time, and want to use the latest and greatest.
 *Full stack reference Designs include JESD204 physical layers (XCVR), link layers, and transport layers.*
 
 - Termination to DMA via an AXI-STREAM or FIFO interface
-- Runs across different Intel and Xilinx carriers
+- Runs across different Intel and AMD Xilinx carriers
 
 *Are designed to be disconnected to "insert custom signal processing"*
 
@@ -60,7 +60,7 @@ time, and want to use the latest and greatest.
 
 *Works with industry standard debug tools:*
 
-- Xilinx Integrated Logic Analyzer
+- AMD Xilinx Integrated Logic Analyzer
 - Intel Signal Tap
 - MathWorks HDL Verifier (in SoC Blockset)
 
@@ -398,12 +398,12 @@ Supply voltage [V]           -2.5 and 5             -2.5 and 5
 
 
 #. DATA_WIDTH - will set the width of the data bus / data line used by the SPI
-Engine to connect tothe DMA. It will also set the maximum word length for the
+Engine to connect to the DMA. It will also set the maximum word length for the
 SPI transfer. Since the Pulsar_ADC devices are all single SDI/SDO and some of
 them require 18bit transfers, this value will be rounded to 32bit.
 
 #. ASYNC_SPI_CLK - will chose the reference clock for the SPI Engine. Setting
-this to 0 will configure the hierarchy to use the axi clock (100MHz) as the
+this to 0 will configure the hierarchy to use the AXI clock (100MHz) as the
 reference clock. Setting it to 1 will allow for an external reference clock
 (SPI_CLK).
 
