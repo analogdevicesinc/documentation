@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="AC power supply or connection to mains for the measurement side" name="description" />
+
+    <title>Software User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../../../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="AD-PS3803-RD" href="../../ad-ps3803-rd/index.html" />
+    <link rel="prev" title="Hardware User Guide" href="../hardware-guide/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Software User Guide</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment needed</a></li>
+<li><a class="reference internal" href="#testing">Testing</a></li>
+<li><a class="reference internal" href="#measurements">Measurements</a><ul>
+<li><a class="reference internal" href="#rms-tab">RMS Tab</a></li>
+<li><a class="reference internal" href="#harmonics-tab">Harmonics Tab</a></li>
+<li><a class="reference internal" href="#waveforms-tab">Waveforms Tab</a></li>
+<li><a class="reference internal" href="#settings-tab">Settings Tab</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#firmware-update">Firmware Update</a><ul>
+<li><a class="reference internal" href="#firmware-update-using-a-prebuilt-hex-file">Firmware update using a prebuilt hex file</a></li>
+<li><a class="reference internal" href="#building-the-project">Building the Project</a><ul>
+<li><a class="reference internal" href="#preliminary-requirements">Preliminary requirements</a></li>
+<li><a class="reference internal" href="#build-and-run">Build and Run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2-1" id="toctree-collapse-2-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-3" id="toctree-collapse-2-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../application-software/index.html">Application Software</a></li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-4" id="toctree-collapse-12-4"/><div class="collapse"><a class="reference internal" href="../../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-12-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-5" id="toctree-collapse-12-5"/><div class="collapse"><a class="reference internal" href="../../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-12-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-6" id="toctree-collapse-12-6"/><div class="collapse"><a class="reference internal" href="../../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-12-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-7" id="toctree-collapse-12-7"/><div class="collapse"><a class="reference internal" href="../../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-12-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-8" id="toctree-collapse-12-8"/><div class="collapse"><a class="reference internal" href="../../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-12-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-9" id="toctree-collapse-12-9"/><div class="collapse"><a class="reference internal" href="../../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-12-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-10" id="toctree-collapse-12-10" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-PQMON-SL</a><label for="toctree-collapse-12-10"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-11" id="toctree-collapse-12-11"/><div class="collapse"><a class="reference internal" href="../../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-12-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-12" id="toctree-collapse-12-12"/><div class="collapse"><a class="reference internal" href="../../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-12-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-13" id="toctree-collapse-12-13"/><div class="collapse"><a class="reference internal" href="../../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-12-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-14" id="toctree-collapse-12-14"/><div class="collapse"><a class="reference internal" href="../../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-12-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15" id="toctree-collapse-12-15"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-12-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-15-1" id="toctree-collapse-12-15-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-12-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16" id="toctree-collapse-12-16"/><div class="collapse"><a class="reference internal" href="../../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-12-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-16-1" id="toctree-collapse-12-16-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-17" id="toctree-collapse-12-17"/><div class="collapse"><a class="reference internal" href="../../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-12-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18" id="toctree-collapse-12-18"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-12-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-18-1" id="toctree-collapse-12-18-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-12-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19" id="toctree-collapse-12-19"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-12-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-19-1" id="toctree-collapse-12-19-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-12-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-20" id="toctree-collapse-12-20"/><div class="collapse"><a class="reference internal" href="../../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-12-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-21" id="toctree-collapse-12-21"/><div class="collapse"><a class="reference internal" href="../../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-12-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-22" id="toctree-collapse-12-22"/><div class="collapse"><a class="reference internal" href="../../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-12-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-23" id="toctree-collapse-12-23"/><div class="collapse"><a class="reference internal" href="../../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-12-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-PQMON-SL</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="software-user-guide">
+<span id="ad-pqmon-sl-software-guide"></span><h1>Software User Guide<a class="headerlink" href="#software-user-guide" title="Link to this heading"></a></h1>
+<section id="equipment-needed">
+<h2>Equipment needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>AC power supply or connection to mains for the measurement side</p></li>
+<li><p>Mains or USB type C connector cable for supplying power to the board</p></li>
+<li><p>PC running Windows or Linux</p></li>
+<li><p>Cable to build the assembly</p></li>
+<li><p>USB type C connector cable to connect to the USB port of the PC. (this can be
+used also to deliver power to the board)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD-PQMON-SL" target="_blank">AD-PQMON-SL</a> evaluation board</p></li>
+</ul>
+<p><em>Optional:</em></p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/MAX32625PICO" target="_blank">MAX32625PICO</a> for debug and programming</p></li>
+</ul>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
+<p>The following software is needed for testing the <a class="icon adi reference external" href="https://www.analog.com/AD-PQMON-SL" target="_blank">AD-PQMON-SL</a> board:</p>
+<ul class="simple">
+<li><p>Firmware (link available in the resources section)</p></li>
+<li><p><a class="icon link reference external" href="https://swdownloads.analog.com/cse/scopy/ad-pqmon-sl/scopy-windows-x86_64-setup-7797088.zip" target="_blank">Scopy</a>
+with the <a class="icon adi reference external" href="https://www.analog.com/AD-PQMON-SL" target="_blank">AD-PQMON-SL</a> add-on</p></li>
+</ul>
+<p>For Scopy installation, follow the steps indicated
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/user_guide/index.html" target="_blank" title="(in Scopy main)"><span class="xref std std-doc">in the user guide</span></a>.</p>
+<p>After making the board connections and installing Scopy,
+connect to the GUI by following these steps:</p>
+<ul>
+<li><p>Connect the USB Type-C cable from the AD-PQMON-SL board to your PC.</p></li>
+<li><p>Launch the installed Scopy application.</p></li>
+<li><p>Click the “+” button as shown in the following image:</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy0.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy0.jpg" />
+</figure>
+</li>
+<li><p>In the window that opens, click the refresh button as shown in the following image:</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy2.jpg" />
+</figure>
+</li>
+<li><p>From the drop-down menu labeled <code class="docutils literal notranslate"><span class="pre">PORT</span> <span class="pre">NAME</span></code>, select the COM port connected
+to the AD-PQMON-SL board (for example, COM37).</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy3.jpg" />
+</figure>
+</li>
+<li><p>After selecting the correct COM port, the URI field will be automatically populated.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy4.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy4.jpg" />
+</figure>
+</li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Verify</span></code> button.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy5.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy5.jpg" />
+</figure>
+</li>
+<li><p>Ensure that <code class="docutils literal notranslate"><span class="pre">PQMPlugin</span></code> is selected in the plugin list.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy6.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy6.jpg" />
+</figure>
+</li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">DEVICE</span></code> button.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy7.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy7.jpg" />
+</figure>
+</li>
+<li><p>In the next window, click the <code class="docutils literal notranslate"><span class="pre">Connect</span></code> button.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy8.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy8.jpg" />
+</figure>
+</li>
+<li><p>A confirmation message, as shown in the following image, indicates a successful connection.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy9.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy9.jpg" />
+</figure>
+</li>
+</ul>
+</section>
+<section id="measurements">
+<h2>Measurements<a class="headerlink" href="#measurements" title="Link to this heading"></a></h2>
+<ul>
+<li><p>The measurements tabs are available on the left side of the GUI:</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy10.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy10.jpg" />
+</figure>
+</li>
+</ul>
+<section id="rms-tab">
+<h3>RMS Tab<a class="headerlink" href="#rms-tab" title="Link to this heading"></a></h3>
+<ul>
+<li><p>The RMS tab can be activated by clicking on it and then selecting the
+Run button.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy11.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy11.jpg" />
+</figure>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12.jpg" />
+</figure>
+</li>
+<li><p>The PQEvents indicator notifies the user when a PQ event has occurred. Events are
+saved in the log file if logging is enabled.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12_1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12_1.jpg" />
+</figure>
+</li>
+<li><p>If an event occurs during the session, the PQEvents indicator will become
+active. The event details can be found in the log file (in the RMS tab, only PQ
+events are logged). The indicator remains active until the user clicks on it, which
+resets the indicator. Even if the indicator is not reset, any new event will be
+registered in the log file.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13_5.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13_5.jpg" />
+</figure>
+</li>
+<li><p>Logging can be enabled only when the measurement is not running. First, select the
+LOG button. Then, specify a log directory by clicking the button highlighted in the
+following image.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12_2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12_2.jpg" />
+</figure>
+</li>
+<li><p>Choose a folder where the data will be saved in CSV format. The
+file will be named as follows: “nameofactivewindow_date_time.csv”
+(e.g. rms_01-01-2024_11-00-00).</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12_3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12_3.jpg" />
+</figure>
+</li>
+<li><p>After the folder is selected, data will be recorded during a session. The
+session starts when the Run button is activated and ends when it is
+stopped.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12_4.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12_4.jpg" />
+</figure>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12_5.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy12_5.jpg" />
+</figure>
+</li>
+<li><p>A snapshot of an RMS log file is shown in the following image. As seen,
+several PQ events occurred during the session.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/rms_tab_events.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/rms_tab_events.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/rms_tab_events.jpg" style="width: 1000px;" />
+</a>
+</figure>
+</li>
+</ul>
+</section>
+<section id="harmonics-tab">
+<h3>Harmonics Tab<a class="headerlink" href="#harmonics-tab" title="Link to this heading"></a></h3>
+<ul>
+<li><p>The Harmonics tab can be activated by clicking on it and then selecting the
+Run button.</p></li>
+<li><p>To display the harmonics for different waveforms, select the desired line from the
+table above the graph.</p></li>
+<li><p>The THD (Total Harmonic Distortion) values are shown for each measurement next to the THD label.</p></li>
+<li><p>The PQEvents indicator notifies the user when a PQ event has occurred. Events are
+saved in the log file if logging is enabled.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13.jpg" />
+</figure>
+</li>
+<li><p>The user can select between viewing harmonics or interharmonics.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13_1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13_1.jpg" />
+</figure>
+</li>
+<li><p>Logging can be enabled only when the measurement is not running. First, select the
+LOG button. Then, specify a log directory by clicking the button highlighted in the following image.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13_2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13_2.jpg" />
+</figure>
+</li>
+<li><p>Choose a folder where the data will be saved in CSV format. The
+file will be named as follows: “nameofactivewindow_date_time.csv”
+(e.g. harmonics_01-01-2024_11-00-00).</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13_3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13_3.jpg" />
+</figure>
+</li>
+<li><p>After the folder is selected, data will be recorded during a session. The
+session starts when the Run button is activated and ends when it is
+stopped.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13_4.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy13_4.jpg" />
+</figure>
+</li>
+<li><p>If an event occurs during the session, the PQEvents indicator will become
+active. The event details can be found in the log file. The log file in the Harmonics
+tab contains both the harmonics values and the PQ events, interleaved at the time
+the event occurred. The indicator remains active until the user clicks on it, which
+resets the indicator. Even if the indicator is not reset, any new PQ event will be
+registered in the log file.</p></li>
+<li><p>A snapshot of a harmonics log file containing only harmonics data is
+shown in the following image.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/harmonics_tab_log.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/harmonics_tab_log.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/harmonics_tab_log.jpg" style="width: 1000px;" />
+</a>
+</figure>
+</li>
+<li><p>In the following snapshot, PQ events can be seen interleaved with
+the harmonics values.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/harmonics_tab_events.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/harmonics_tab_events.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/harmonics_tab_events.jpg" style="width: 1000px;" />
+</a>
+</figure>
+</li>
+</ul>
+</section>
+<section id="waveforms-tab">
+<h3>Waveforms Tab<a class="headerlink" href="#waveforms-tab" title="Link to this heading"></a></h3>
+<ul>
+<li><p>The Waveform tab can be activated by clicking on it and afterwards select the
+Run button.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy16.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy16.jpg" />
+</figure>
+</li>
+<li><p>The upper side graph is the voltage and the one to the bottom is the current.
+To zoom in use the mouse to click and drag.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy17.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy17.jpg" />
+</figure>
+</li>
+<li><p>The log file can also be activated in the waveforms tab in the same manner
+explained in the rms or harmonics sections, but in this case the PQ events is
+not present. If PQ events need to be recorded, then the other two tabs (rms,
+harmonics) must be used. The data logged in this tab contains only the
+waveforms values.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy17_1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy17_1.jpg" />
+</figure>
+</li>
+<li><p>A snapshot of a log file can be seen in the following image.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/waveforms_tab_log.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/waveforms_tab_log.jpg" />
+</figure>
+</li>
+</ul>
+</section>
+<section id="settings-tab">
+<h3>Settings Tab<a class="headerlink" href="#settings-tab" title="Link to this heading"></a></h3>
+<ul>
+<li><p>The Settings tab is used to read and set the thresholds and the config values.
+Activate it by selecting it from the right-side menu.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy18.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy18.jpg" />
+</figure>
+</li>
+<li><p>To see all the parameters scroll down</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy18_1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy18_1.jpg" />
+</figure>
+</li>
+<li><p>To read the values that are currently set click the Read button.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy18_2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy18_2.jpg" />
+</figure>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy18_3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy18_3.jpg" />
+</figure>
+</li>
+<li><p>To modify a parameter select it, change its value to the desired one and click
+the Set button.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>More information about the <strong>Scopy PQMON addon</strong> can
+be consulted
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/plugins/pqm/index.html" target="_blank" title="(in Scopy main)"><span class="xref std std-doc">here</span></a></p>
+</div>
+<p>The system comes pre-programmed with a firmware that works with the <strong>Scopy</strong>
+application, allowing complete system evaluation.</p>
+<p><strong>Scopy</strong> will work only with the official
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/eval-pqmon" target="_blank">firmware releases</a></p>
+</section>
+</section>
+<section id="firmware-update">
+<span id="ad-pqmon-sl-software-guide-firmware-update"></span><h2>Firmware Update<a class="headerlink" href="#firmware-update" title="Link to this heading"></a></h2>
+<section id="firmware-update-using-a-prebuilt-hex-file">
+<h3>Firmware update using a prebuilt hex file<a class="headerlink" href="#firmware-update-using-a-prebuilt-hex-file" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://swdownloads.analog.com/cse/scopy/ad-pqmon-sl/eval-pqmon.hex" target="_blank">PQMON hex file download</a></p>
+<p><strong>Step 1 - MAX32625PICO Firmware Update</strong></p>
+<ul>
+<li><p>Download the <a class="icon adi reference external" href="https://www.analog.com/MAX32650FTHR" target="_blank">MAX32650FTHR</a> firmware image from
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/max32625pico-firmware-images/tree/master/" target="_blank">here</a></p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy23.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy23.jpg" />
+</figure>
+</li>
+<li><p>Follow the procedure indicated
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/max32625pico-firmware-images/master:#how-to-update-the-firmware" target="_blank">here</a>
+to load the new firmware.</p></li>
+</ul>
+<p><strong>Step 2 - Connect the MAX32625PICO to the AD-PQMON-SL Board</strong></p>
+<ul>
+<li><p>Connect the Cortex Debug Cable to the <a class="icon adi reference external" href="https://www.analog.com/MAX32625PICO" target="_blank">MAX32625PICO</a>
+with the connector key directed towards the outside of the board.</p></li>
+<li><p>Connect the programmer to the board as shown in the following picture.</p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy24.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy24.jpg" />
+</figure>
+</li>
+</ul>
+<p><strong>Step 3 - Power up the board by connecting the USB type C cable</strong></p>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy25.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy25.jpg" />
+</figure>
+<p><strong>Step 4 - Flashing the firmware to the AD-PQMON-SL</strong></p>
+<ul>
+<li><p>If the <a class="icon adi reference external" href="https://www.analog.com/MAX32625PICO" target="_blank">MAX32625PICO</a> is not connected to the PC USB port, connect it now.</p></li>
+<li><p>Once connected, the DAPLINK should appear as a storage device on your PC.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy26.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy26.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4062-yml/docs/solutions/reference-designs/ad-pqmon-sl/software-guide/scopy26.jpg" width="300" />
+</a>
+</figure>
+</li>
+<li><p>Open the DAPLINK storage device.</p></li>
+<li><p>Drag and drop the provided .hex file into the DAPLINK drive.
+The firmware will be written to the target MCU.</p></li>
+</ul>
+</section>
+<section id="building-the-project">
+<h3>Building the Project<a class="headerlink" href="#building-the-project" title="Link to this heading"></a></h3>
+<section id="preliminary-requirements">
+<h4>Preliminary requirements<a class="headerlink" href="#preliminary-requirements" title="Link to this heading"></a></h4>
+<p>The licensed software library that works in conjunction with the
+<a class="icon adi reference external" href="https://www.analog.com/ADE9430" target="_blank">ADE9430</a> IC can be obtained from
+<a class="icon link reference external" href="https://form.analog.com/form_pages/softwaremodules/SRF.aspx" target="_blank">here</a>.</p>
+<p>After obtaining the libraries, the following files need to be added to the
+project:</p>
+<p>pqlib_dir</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>|  libadi_pqlib_cm4_gcc.a
+└───include
+    |   ade9430.h
+    |   adi_pqlib_debug.h
+    |   adi_pqlib_error.h
+    |   adi_pqlib_memory.h
+    |   adi_pqlib_profile.h
+    |   adi_pqlib_version.h
+    |   adi_pqlib.h
+    └───config
+        └───adi_pqlib_cfg.h
+</pre></div>
+</div>
+<p>It can be integrated into the project by defining the <code class="docutils literal notranslate"><span class="pre">PQLIB_PATH</span></code> to point to
+the <code class="docutils literal notranslate"><span class="pre">pqlib_dir</span></code> path.</p>
+</section>
+<section id="build-and-run">
+<h4>Build and Run<a class="headerlink" href="#build-and-run" title="Link to this heading"></a></h4>
+<p>The project is based on a <a class="icon adi reference external" href="https://www.analog.com/MAX32650" target="_blank">MAX32650</a> microcontroller. It can be
+built and run by running the following script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove build directory</span>
+make<span class="w"> </span>reset
+<span class="c1"># select platform</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PLATFORM</span><span class="o">=</span>maxim
+<span class="c1"># select controller type</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span>max32650
+<span class="c1"># build and flash the code</span>
+make<span class="w"> </span><span class="nv">PQLIB_PATH</span><span class="o">=</span>&lt;path_to_library&gt;<span class="w"> </span>run
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../hardware-guide/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Hardware User Guide</a>
+    <a href="../../ad-ps3803-rd/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-PS3803-RD</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
