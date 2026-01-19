@@ -1,3 +1,7 @@
+:orphan:
+
+.. TODO: migrate to /linux
+
 .. _iio-transceiver adrv9009:
 
 ADRV9009, ADRV9008-1, ADRV9008-2

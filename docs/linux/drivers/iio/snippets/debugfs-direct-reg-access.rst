@@ -1,3 +1,5 @@
+:orphan:
+
 ..
   Low level register access via debugfs (direct_reg_access)
 
