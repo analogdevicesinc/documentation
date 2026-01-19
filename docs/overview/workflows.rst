@@ -523,7 +523,7 @@ Reference Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Kuiper Linux:** :doc:`Kuiper Linux Guide </linux/kuiper/index>`
-- **Raspberry Pi Setup:** :doc:`Linux Kernel Build </linux/kernel/build>`
+- **Raspberry Pi Setup:** :ref:`linux-kernel`
 - **Arduino Shields:** :doc:`Evaluation Boards </solutions/reference-designs/index>`
 - **Tutorials:** :doc:`Learning Resources </learning/index>`
 
@@ -567,8 +567,7 @@ in closed-loop scripts.
 **Use Cases:** Board bring-up testing, production test automation, design
 verification, educational lab experiments.
 
-**Documentation:** See :doc:`ADALM2000 Guide </tools/m2k/index>` for device
-capabilities.
+**Documentation:** See :ref:`m2k` for device capabilities.
 
 Choosing the Right Workflow
 -------------------------------------------------------------------------------

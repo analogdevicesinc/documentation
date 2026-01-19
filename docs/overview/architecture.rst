@@ -48,7 +48,7 @@ with ADI hardware:
 
 **FPGA Platforms:**
 
-- **Xilinx Zynq/ZynqMP/Versal:** ARM cores + programmable logic
+- **AMD Xilinx Zynq/ZynqMP/Versal:** ARM cores + programmable logic
 - **Intel (Altera) SoC FPGAs:** ARM cores + programmable logic
 - **Standalone FPGAs:** With external processors
 
@@ -141,7 +141,7 @@ the details of drivers and low-level protocols.
 
 **libiio:**
 
-The :external+libiio:doc:`libiio library <index>` is the cornerstone of the software ecosystem:
+The :ref:`libiio` is the cornerstone of the software ecosystem:
 
 - **Multiple Backends:**
 
@@ -594,7 +594,8 @@ See Also
 
 - :doc:`Software Infrastructure Tutorial </learning/sw_infrastructure/index>` - Complete AD4080 example
 - :doc:`FPGA Integration Journey </learning/workshop_a_precision_converter_fpga_integration_journey/index>` - HDL deep dive
-- :doc:`IIO 101 Tutorial </learning/tutorial/converter_connectivity/iio_101_tutorial/index>` - IIO framework basics
+
+.. TODO - :doc:`IIO 101 Tutorial </learning/tutorial/converter_connectivity/iio_101_tutorial/index>` - IIO framework basics
 
 **External References:**
 

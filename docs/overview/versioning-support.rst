@@ -27,12 +27,12 @@ The Kuiper Linux distribution release name is primarily tied to the version of A
 
 Outside of HDL, Linux, and no-OS, other components such as libiio and pyadi-iio have their own independent versioning strategies that are not tied to the Kuiper Linux or HDL release names. However, for each Kuiper Linux release, specific versions of libiio and pyadi-iio are bundled and tested together to ensure compatibility. These are documented in the Kuiper Linux release notes.
 
-```{note}
-In 2026, new release naming will be more generic to denote the year and not be as strictly tied to a version of AMD tools.
-```
+.. note::
 
+   In 2026, new release naming will be more generic to denote the year and not
+   be as strictly tied to a version of AMD tools.
 
-HDL (Hardware Description Language)
+HDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Version Format:** ``YYYY_rN`` (e.g., ``hdl_2024_r2``)
@@ -59,7 +59,10 @@ HDL (Hardware Description Language)
    git describe --tags
    # e.g., hdl_2024_r2
 
-**Release Notes:** :external+hdl:doc:`Release notes <user_guide/releases>`
+**Release Notes:**
+
+| :git-hdl:`GitHub Releases <releases+>`
+| :external+hdl:ref:`Releases user guide <releases>`
 
 Linux Kernel Drivers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -88,7 +91,10 @@ Linux Kernel Drivers
    uname -r
    # e.g., 6.1.75-adi-xilinx-v2024.1
 
-**Release Notes:** `Linux Kernel Getting Started <https://analogdevicesinc.github.io/linux/getting_started.html>`_
+**Release Notes:**
+
+| :git-linux:`GitHub Releases <releases+>`
+| :external+linux:ref:`Releases user guide <getting_started>`
 
 libiio
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -122,7 +128,7 @@ libiio
    print(iio.version)
    # ('0', '26', 'a0eca0d')
 
-**Release Notes:** :external+libiio:doc:`GitHub Releases <index>`
+**Release Notes:** :git-libiio:`GitHub Releases <releases+>`
 
 no-OS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -147,7 +153,7 @@ no-OS
 
 Check firmware build logs or ``git describe --tags`` in source tree.
 
-**Release Notes:** :external+no-OS:doc:`GitHub repository <index>`
+**Release Notes:** :git-no-OS:`GitHub Releases <releases+>`
 
 pyadi-iio
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -181,7 +187,7 @@ pyadi-iio
    print(adi.__version__)
    # '0.0.17'
 
-**Release Notes:** :external+pyadi-iio:doc:`GitHub Releases <index>`
+**Release Notes:** :git-pyadi-iio:`GitHub Releases <releases+>`
 
 Kuiper Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -211,14 +217,14 @@ Kuiper Linux
    cat /etc/issue
    # Analog Devices Kuiper Linux 2024_r1
 
-**Release Notes:** :doc:`Kuiper Linux </linux/kuiper/index>`
+**Release Notes:** :git-adi-kuiper-gen:`GitHub Releases <releases+>`
 
 Version Compatibility Matrix
 -------------------------------------------------------------------------------
 
-```{warning}
-THIS IS A PLACEHOLDER TABLE. PLEASE UPDATE WITH ACTUAL TESTED VERSIONS.
-```
+.. warning::
+
+   This is a placeholder table, please update with actual tested versions.
 
 The following table shows tested and recommended version combinations:
 
@@ -340,9 +346,9 @@ Release Cadence and Planning
 Typical Release Schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-```{warning}
-THIS IS A PLACEHOLDER SCHEDULE. ACTUAL DATES MAY VARY.
-```
+.. warning::
+
+   This is a placeholder schedule, actual dates may vary.
 
 .. list-table::
    :header-rows: 1
@@ -585,8 +591,6 @@ principles:
 - **Documentation:** Update docs to match code changes
 - **Sign-off:** Include ``Signed-off-by:`` in commits (Developer Certificate of Origin)
 
-See :doc:`Contributing Guidelines </contributing/index>` for details.
-
 Migration Guides
 -------------------------------------------------------------------------------
 
@@ -636,7 +640,7 @@ Or build from source:
 
    pip install --upgrade pyadi-iio
 
-Check for API changes in `release notes <https://github.com/analogdevicesinc/pyadi-iio/releases>`_.
+Check for API changes in :git-pyadi-iio:`release notes <releases+>`.
 
 **no-OS Upgrades:**
 
@@ -651,29 +655,22 @@ Firmware upgrades require rebuilding and reflashing:
 Deprecation Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- **Advance Notice:** Deprecated features announced in release notes
-- **Transition Period:** Minimum 2 releases before removal
-- **Migration Path:** Alternative solution provided
-- **Warnings:** Deprecated APIs emit warnings before removal
+- Advance Notice: Deprecated features announced in release notes
+- Transition Period: Minimum 2 releases before removal
+- Migration Path: Alternative solution provided
+- Warnings: eprecated APIs emit warnings before removal
 
 See Also
 -------------------------------------------------------------------------------
 
-**Next Steps:**
+Next Steps:
 
 - :doc:`architecture` - Understanding the full stack
 - :doc:`components` - Component-specific documentation
 - :doc:`workflows` - Practical examples with version requirements
 
-**External Documentation:**
+Support:
 
-- `HDL Releases <https://analogdevicesinc.github.io/hdl/user_guide/releases.html>`_
-- `Linux Getting Started <https://analogdevicesinc.github.io/linux/getting_started.html>`_
-- `libiio Releases <https://github.com/analogdevicesinc/libiio/releases>`_
-- `pyadi-iio Releases <https://github.com/analogdevicesinc/pyadi-iio/releases>`_
-
-**Support:**
-
-- `EngineerZone Forums <https://ez.analog.com/>`_
-- `ADI Wiki <https://wiki.analog.com/>`_
-- `GitHub Organizations <https://github.com/analogdevicesinc/>`_
+- :ez:`/`
+- :dokuwiki:`Wiki </>`
+- `GitHub Organization <https://github.com/analogdevicesinc/>`_

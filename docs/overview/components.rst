@@ -172,7 +172,7 @@ Hardware configuration via devicetree:
 
 Example devicetree snippet:
 
-.. code-block:: devicetree
+::
 
    &spi0 {
        adc@0 {
@@ -209,8 +209,8 @@ Getting Started
 **For Xilinx Zynq Platforms:**
 
 1. Use ADI's pre-built HDL reference design (includes devicetree)
-2. Build Linux kernel with :doc:`kernel build guide </linux/kernel/build>` or
-   use :doc:`PetaLinux </linux/kernel/petalinux>`
+2. Build Linux kernel with :ref:`linux-kernel`, :ref:`linux-kernel petalinux`
+   is also supported.
 3. Boot Linux on target
 4. Drivers load automatically based on devicetree
 5. Access via libiio
@@ -234,7 +234,7 @@ Documentation
 
 - **Driver Documentation:** `Linux Drivers Page <https://wiki.analog.com/resources/tools-software/linux-drivers-all>`_
 - **Getting Started:** `Linux Kernel Getting Started <https://analogdevicesinc.github.io/linux/getting_started.html>`_
-- **Kernel Builds:** :doc:`Build Guides </linux/kernel/build>`
+- **Kernel Builds:** :doc:`Build Guides </linux/kernel/index>`
 - **IIO Framework:** `Kernel IIO Documentation <https://www.kernel.org/doc/html/latest/driver-api/iio/index.html>`_
 
 libiio (Hardware Abstraction Library)
@@ -243,7 +243,7 @@ libiio (Hardware Abstraction Library)
 What It Is
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:external+libiio:doc:`libiio <index>` is the cornerstone library of the ADI
+:ref:`libiio` is the cornerstone library of the ADI
 software ecosystem. It provides a platform-independent API for accessing IIO
 devices, abstracting away the differences between local hardware, network-connected
 devices, USB gadgets, and serial-connected microcontrollers.
@@ -334,7 +334,7 @@ On Debian/Ubuntu (including Kuiper Linux):
 
 **Build from Source:**
 
-See :external+libiio:doc:`building` for complete instructions.
+See :ref:`libiio build` for complete instructions.
 
 **Example C Code:**
 
@@ -378,10 +378,9 @@ See :external+libiio:doc:`building` for complete instructions.
 Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- **Main Documentation:** `libiio Documentation <https://analogdevicesinc.github.io/libiio/v0.25/index.html>`_
-- **GitHub Repository:** `analogdevicesinc/libiio <https://github.com/analogdevicesinc/libiio>`_
-- **Build Instructions:** :external+libiio:doc:`building`
-- **API Reference:** :external+libiio:doc:`index`
+- **Main Documentation:** `libiio Documentation <https://analogdevicesinc.github.io/libiio/v0.25/index.html>`__
+- **GitHub Repository:** :git-libiio:`/`
+- **Build Instructions and API reference:** :ref:`libiio`
 
 no-OS (Bare-Metal Firmware Framework)
 -------------------------------------------------------------------------------
@@ -634,8 +633,8 @@ Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Main Documentation:** :external+pyadi-iio:doc:`index`
-- **GitHub Repository:** `analogdevicesinc/pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`_
-- **Examples:** :external+pyadi-iio:doc:`examples`
+- **GitHub Repository:** :git-pyadi-iio:`/`
+- **Examples:** :external+pyadi-iio:doc:`guides/examples`
 - **Device Classes:** :external+pyadi-iio:doc:`devices/index`
 
 Applications and Tools
@@ -740,7 +739,8 @@ See Also
 **Learning Resources:**
 
 - :doc:`Software Infrastructure Tutorial </learning/sw_infrastructure/index>`
-- :doc:`IIO 101 Tutorial </learning/tutorial/converter_connectivity/iio_101_tutorial/index>`
+
+.. TODO - :doc:`IIO 101 Tutorial </learning/tutorial/converter_connectivity/iio_101_tutorial/index>`
 
 **External Documentation:**
 
