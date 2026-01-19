@@ -1,3 +1,5 @@
+:orphan:
+
 ..
   IIO device files
 
