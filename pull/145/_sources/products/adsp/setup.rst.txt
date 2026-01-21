@@ -1,0 +1,216 @@
+.. _adsp setup:
+
+Getting started
+===============
+
+ADSP evaluation boards do not ship with pre-installed software. The chips also
+do not support booting directly from SD cards. Therefore the evaluation boards
+need to be bootstrapped over JTAG using a :adi:`ADI ICE-1000 or ICE-2000 JTAG
+debugger <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html>`.
+
+Phase 1: Download Release
+-------------------------
+
+Navigate to the :git-br2-external:`br2-external releases page <releases+>` and
+download the appropriate `images-*.tar.xz` release archive that matches your hardware.
+
+Phase 2: JTAG & OpenOCD Setup
+-----------------------------
+
+To communicate with the board, you must build and run the ADI fork of OpenOCD.
+
+Install Dependencies
+~~~~~~~~~~~~~~~~~~~~
+
+**Ubuntu**
+
+.. shell:: sh
+
+   $sudo apt install -y git autoconf automake libtool pkg-config \
+   $libjim-dev gcc g++ make texinfo gdb-multiarch
+
+**Fedora**
+
+.. shell:: sh
+
+   $sudo dnf install git autoconf automake libtool pkgconfig \
+   $jimtcl-devel gcc gcc-c++ make texinfo gdb
+
+**Windows (MSYS2)**
+
+Open a **MinGW64** shell and run:
+
+.. shell:: sh
+
+   $pacman -Syu
+   $pacman -S --needed git mingw-w64-x86_64-toolchain \
+   $mingw-w64-x86_64-libusb mingw-w64-x86_64-hidapi \
+   $mingw-w64-x86_64-libtool mingw-w64-x86_64-pkg-config \
+   $mingw-w64-x86_64-jimtcl autoconf automake make
+
+Build OpenOCD
+~~~~~~~~~~~~~
+
+.. shell:: sh
+
+    $git clone https://github.com/analogdevicesinc/openocd
+   $cd openocd
+   $./bootstrap
+   $./configure
+   $make -j$(nproc)
+
+.. note::
+   On Windows, the resulting ``openocd.exe`` can be run directly.
+
+
+Run OpenOCD
+~~~~~~~~~~~
+Run ``openocd`` from the build directory.
+
+**Example Command:**
+
+For the ICE-1000 and EV-SC598-SOM run the following:
+
+.. shell:: sh
+
+    # Ensure you are inside the 'openocd' folder
+    ~/openocd
+    $src/openocd -f ice1000.cfg \
+    $    -f adspsc59x_a55.cfg \
+    $    --search tcl/ \
+    $    --search tcl/interface/ \
+    $    --search tcl/target/
+
+.. tip::
+   If you are using a different board, replace ``adspsc59x_a55.cfg`` with the configuration file from the table below.
+
+.. list-table:: OpenOCD Target Configurations
+   :header-rows: 1
+
+   * - OpenOCD config
+     - Debug target
+     - Intended SoCs
+     - Supported SoM
+   * - ``adsp2183x.cfg``
+     - ADSP-218x DSP
+     - ADSP-2181, ADSP-2183
+     - ADSP21835W-EV-SOM
+   * - ``adspsc57x.cfg`` / ``adspsc57x_single_SHARC.cfg``
+     - Cortex-A5 + dual SHARC-XI
+     - ADSP-SC570, ADSP-SC571, ADSP-SC572, ADSP-SC573
+     - ADZS-SC573-EZLITE
+   * - ``adspsc58x.cfg`` / ``adspsc58x_single_SHARC.cfg``
+     - Cortex-A5 + dual SHARC-XI
+     - ADSP-SC582, ADSP-SC583, ADSP-SC584
+     - ADZS-SC584-EZLITE
+   * - ``adspsc59x.cfg`` / ``adspsc59x_single_SHARC.cfg``
+     - Cortex-A5 + dual SHARC-XI
+     - ADSP-SC592, ADSP-SC594
+     - EV-SC594-SOM
+   * - ``adspsc59x_a55.cfg``
+     - Cortex-A55
+     - ADSP-SC596, ADSP-SC598
+     - EV-SC598-SOM
+   * - ``adspsc83x.cfg``
+     - Cortex-M33
+     - ADSP-SC834, ADSP-SC835
+     - ADSPSC835W-EV-SOM
+
+Phase 3: Serial Console Setup
+-----------------------------
+
+A serial console is highly recommended for interacting with U-Boot and Linux.
+
+1. **Connect** the USB-to-UART cable to your PC.
+2. **Identify** the port:
+
+   * **Linux:** Check the ``by-id`` directory to find your unique device name.
+
+     .. shell:: sh
+
+        $ls /dev/serial/by-id/
+
+   * **Windows:** Check **Device Manager > Ports** (look for ``COMx``).
+
+3. **Configure** your terminal.
+
+   **Example with Minicom on Linux:**
+
+   .. shell:: sh
+
+      # Replace with your specific device path found above
+      $sudo minicom -D /dev/serial/by-id/<your-device-name> -b 115200
+
+   **Settings:**
+   * **Baud:** ``115200``
+   * **Data/Parity/Stop:** ``8-N-1``
+   * **Flow Control:** ``None``
+
+Phase 4: Booting the System
+---------------------------
+
+.. warning::
+   **Check Boot Mode Switch (S1)**
+
+   Before powering on, locate the rotary switch labeled **S1 (Boot Mode Select)** on the board.
+   Ensure the arrow on the dial is pointing to position **0**.
+
+Boot U-Boot Proper
+~~~~~~~~~~~~~~~~~~
+
+You need a multi-architecture GDB to load the bootloader.
+
+1.  **Install GDB:**
+
+    * Linux: ``sudo apt-get install -y gdb-multiarch``
+    * Windows: ``pacman -S mingw-w64-x86_64-gdb``
+
+   .. note::
+         **Fedora Users:**
+         The standard ``gdb`` package on Fedora and other RPM-based distributions already includes multi-architecture support. \
+         No additional installation is required if ``gdb`` is already present.
+
+2.  **Download Helper Script:**
+
+    .. shell:: sh
+
+        $curl -O https://raw.githubusercontent.com/analogdevicesinc/documentation/refs/heads/main/docs/products/adsp/u-boot.gdb
+
+3.  **Run GDB:**
+
+    .. shell:: sh
+
+       # Linux
+       $gdb-multiarch -x u-boot.gdb
+
+       # Windows
+       $gdb -x u-boot.gdb
+
+Boot Linux
+~~~~~~~~~~
+
+Once the U-Boot prompt ``=>`` appears in your serial console:
+
+1.  **Start File Server:**
+    Open a *new* terminal on your PC, go to your release directory, and run:
+
+    .. shell:: sh
+
+        $python3 -m http.server
+
+2.  **Find your PC IP Address:**
+    * **Linux:** Run ``hostname -I``
+    * **Windows:** Run ``ipconfig``
+
+3.  **Boot from U-Boot:**
+    In the serial console, run the following (replace ``<your-pc-ip>`` with the IP you found above):
+
+    .. code-block:: console
+
+        => dhcp
+        => wget ${kernel_addr_r} <your-pc-ip>:/Image
+        => wget ${fdt_addr_r} <your-pc-ip>:/sc598-som-ezkit.dtb
+        => booti ${kernel_addr_r} - ${fdt_addr_r}
+
+    .. note::
+       Make sure to use the ``.dtb`` file name that matches your board (e.g., ``sc598-som-ezkit.dtb``).
