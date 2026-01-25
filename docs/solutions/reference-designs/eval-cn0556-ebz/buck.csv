@@ -1,0 +1,10 @@
+,Parameter,Pyadi-iio Function,Description,Minimum Value,Maximum Value
+Write Functions,V1 Input Voltage,my_cn0556.set_buck_input_volt(value),sets the buck input voltage value,14V,56V
+,V1 Undervoltage,my_cn0556.set_buck_input_undervolt(value),set the buck input undervoltage value,12V,54V
+,V2 Output Voltage,my_cn0556.set_buck_output_volt(value),sets the buck output voltage value,2V,14V
+,V1 Input Current Limit,my_cn0556.set_buck_input_current_lim(value),sets the buck input current limit value,0.07A,10A
+,V2 Output Current Limit,my_cn0556.set_buck_output_current_lim(value),sets the buck output current limit value,12A,35 A
+Read Functions,Input Voltage at V1,my_cn0556.measure_buck_input_volt(),measures the buck input voltage at V1 side,approx. 14 V to 56 V,
+,Output Voltage at V2,my_cn0556.measure_buck_output_volt(),measures the buck output voltage at V2 side,approx. 2 V to 14 V,
+,Input Current at V1,my_cn0556.measure_buck_input_current(),measures the buck input current at V1 side,approx. 0.07 A to 10 A,
+,Output Current at V2,my_cn0556.measure_buck_output_current(),measures the buck output current at V2 side,approx. 0 A to 35 A,
