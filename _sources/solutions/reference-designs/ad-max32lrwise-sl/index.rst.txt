@@ -181,8 +181,10 @@ motor.
 System Setup
 ------------
 
-PHASE 1: Hardware Setup
-~~~~~~~~~~~~~~~~~~~~~~~~
+.. _ad-max32lrwise-sl hardware-setup:
+
+Hardware Setup
+~~~~~~~~~~~~~~
 
 Note that this setup only applies for MAX32670-LR-ARDZ Base Board. Users may use
 a different base board or microcontroller, however the firmware built for this
