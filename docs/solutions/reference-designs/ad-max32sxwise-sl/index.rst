@@ -1,9 +1,9 @@
-.. _ad-max32lrwise-sl:
+.. _ad-max32sxwise-sl:
 
-AD-MAX32LRWISE-SL
+AD-MAX32SXWISE-SL
 =================
 
-Long Range Wireless Radio Development Kit based on MAX32670 MCU and LR1110 RF Transceiver
+Long Range Wireless Radio Development Kit based on MAX32670 MCU and SX1261 RF Transceiver
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. admonition:: Download
@@ -13,13 +13,12 @@ Long Range Wireless Radio Development Kit based on MAX32670 MCU and LR1110 RF Tr
 Overview
 --------
 
-The :adi:`AD-MAX32LRWISE-SL` development kit is a tool intended for
-designing solutions based on low-power, long range proprietary
-radio communication technique. This platform features the LR1110, an RF
-transceiver based on spread spectrum modulation techniques derived from chirp
-spread spectrum (CSS) technology, and supports a frequency range from 800 MHz to
-960 MHz. This solution is also based on the MAX32670 ultralow power
-microcontroller based on ARM Cortex-M4 processor.
+The :adi:`AD-MAX32SXWISE-SL` development kit is a tool intended for designing
+solutions based on low-power, long range proprietary radio communication technique.
+This platform features the SX1261 RF transceiver based on spread spectrum
+modulation techniques derived from chirp spread spectrum (CSS) technology, and supports
+a frequency range from 800 MHz to 960 MHz. This solution is also based on the
+MAX32670 ultralow power microcontroller based on Arm Cortex-M4 processor.
 
 The kit is composed of a development board and equipped with sensor modules,
 providing users with a complete system that is suitable for quick prototyping
@@ -35,12 +34,13 @@ need to flash it with functional firmware. A simple join example has been
 open-sourced, providing more flexibility and easy customization in terms of
 firmware development.
 
-Overall, the :adi:`AD-MAX32LRWISE-SL` development kit offers a
-comprehensive and user-friendly solution for individuals or developers interested
-in exploring and implementing LPWAN technology for IoT applications.
+Overall, the :adi:`AD-MAX32SXWISE-SL` development kit
+offers a comprehensive and user-friendly solution for individuals or
+developers interested in exploring and implementing LPWAN technology for IoT
+applications.
 
 Features
---------
+~~~~~~~~
 
 - Provides the user with a platform to evaluate the features and performance of
   the evaluation kit.
@@ -54,10 +54,10 @@ Features
   and other parameters relevant to IoT communication.
 - Comes with user-friendly interfaces, documentation, and software tools that
   simplify the integration process which can save developers time and effort
-  when incorporating the LR1110 into their IoT devices.
+  when incorporating the SX1261 into their IoT devices.
 
 Applications
--------------
+~~~~~~~~~~~~
 
 - Battery-Powered Medical Devices
 - Industrial Sensors
@@ -66,43 +66,47 @@ Applications
 - Smart Sensor Controller
 - System Housekeeping Controller
 
-What’s Inside the Box
+What’s Inside the Box?
 ----------------------
 
-.. figure:: ad-max32lrwise-sl.png
+Upon purchase of the AD-MAX32SXWISE-SL kit, the package comes with the following
+boards and accessories:
+
+.. figure:: ad-max32sxwise-sl.png
 
 System Architecture
 -------------------
 
-.. figure:: ad-max32lrwise-sl_block_diagram.png
+.. figure:: ad-max32sxwise-sl_block_diagram.png
+  :width: 500px
 
 Specifications
 --------------
 
 +------------------------------------------------------------------------------+
-| **MCU**                                                                      |
+| MCU                                                                          |
 +==============================================================================+
 | Arm Cortex-M4 Core with FPU up to 100 MHz                                    |
 +------------------------------------------------------------------------------+
-| 384 kB flash memory with error correction                                    |
+| 384 kB Flash Memory with error correction                                    |
 +------------------------------------------------------------------------------+
-| 160 kB SRAM (128 kB with ECC enabled), optionally preserved in lowest power  |
+| 160 kB SRAM (128 KB with ECC enabled), optionally preserved in lowest power  |
 | modes                                                                        |
 +------------------------------------------------------------------------------+
-| **Security**                                                                 |
+| Security                                                                     |
 +------------------------------------------------------------------------------+
 | Available secure boot                                                        |
 +------------------------------------------------------------------------------+
 | Support cryptographic algorithms, including AES-128/192/256, 1024-bit DSA,   |
 | 2048-bit (CRT) and secure boot loader                                        |
 +------------------------------------------------------------------------------+
-| **Power**                                                                    |
+| Power                                                                        |
 +------------------------------------------------------------------------------+
-| Ultralow Power Real Time Clock (RTC) with Integrated Power Switch            |
+| Ultralow Power Real Time Clock (RTC) with integrated power switch            |
 +------------------------------------------------------------------------------+
 | With 300 nA power consumption during sleep mode                              |
 +------------------------------------------------------------------------------+
-| **Long Range Radio**                                                         |
+| Long Range Radio                                                             |
 +------------------------------------------------------------------------------+
 | Support FSK, GFSK, MSK, GMSK, and Long Range FHSS modulations                |
 +------------------------------------------------------------------------------+
@@ -112,28 +116,27 @@ Specifications
 +------------------------------------------------------------------------------+
 | High sensitivity: down to -148 dBm                                           |
 +------------------------------------------------------------------------------+
-| Low power multi-constellation GNSS scanner/ passive Wi-Fi AP MAC address     |
-| scanner (only available for LR1110 radio chip)                               |
-+------------------------------------------------------------------------------+
 
 Components
 ----------
 
-When you purchase the :adi:`AD-MAX32LRWISE-SL` development
-kit, the package comes with the following boards and accessories:
+When you purchase the :adi:`AD-MAX32SXWISE-SL` development kit,
+the package comes with the following boards and accessories:
 
-**Base Board**
+Base Board:
 
-- :adi:`MAX32670-LR-ARDZ` Baseboard
+  - :adi:`MAX32670-SX-ARDZ` Base board
 
-**Component Sensor Node**
+Component Sensor Nodes:
 
-- :adi:`EV-CATTLETAG-ARDZ` Sensor for Livestock Tracking and Health Monitoring
+  - :adi:`EV-STRUCTURAL-ARDZ` for Structural Monitoring
+  - :adi:`EV-FLOWMETER-ARDZ` for Flow Rate Metering
+  - :adi:`EV-ADE9000SHIELDZ` for Electric Metering
 
-**Gateway Concentrator**
+Gateway Concentrator:
 
-- RAK5146 PiHAT Kit
-- Raspberry Pi 4 Model B with Power Supply Adapter
+  - RAK5146 PiHAT Kit
+  - Raspberry Pi 4 Model B with Power Supply Adapter
 
 - MAX32625PICO Programming Adapter
 - Micro SD Card
@@ -147,53 +150,84 @@ combine all the required elements for long range communication. This platform
 uses the chirp spread spectrum technique, allowing sensors to connect to a
 network and send and receive data in long distances.
 
-MAX32670-LR-ARDZ Base Board
+MAX32670-SX-ARDZ Base Board
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The MAX32670-LR-ARDZ Base board consists of the MAX32670 high-reliability,
-ultralow power microcontroller based on Arm Cortex-M4 processor, and the LR1110
-long range RF transceiver module.
+This development kit comes with the :adi:`MAX32670-SX-ARDZ` as its base board.
+This board is consisting of the MAX32670 high-reliability, ultralow power
+microcontroller based on Arm Cortex-M4 processor, and the SX1261
+long range transceiver module.
 
-.. figure:: max32670-lr-ardz_base_board.png
+.. figure:: max32670-sx-ardz_base_board.png
 
 What are Sensor Nodes?
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Sensor nodes are devices that send or receive messages through wireless
-communication to and back from the gateways. These devices communicate with
-nearby gateways connected through a network server. Depending on the intended
-applications, sensors can transmit various type of data such as temperature,
-flow rate, vibration, etc.
+Sensor nodes are devices that wirelessly send or receive messages to and back
+from the gateways. These devices communicate with nearby gateways connected
+through a network server. Depending on the intended applications, sensors can
+transmit various type of data such as temperature, flow rate, vibration, etc.
 
-EV-CATTLETAG-ARDZ Sensor for Livestock Monitoring
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Below are the sensor nodes compatible with the MAX32670-SX-ARDZ Base Board.
+All of these 3 sensors are included in the :adi:`AD-MAX32SXWISE-SL` development kit.
 
-The :adi:`EV-CATTLETAG-ARDZ` is a system module that uses ADI power solution
-on the controller and transceiver module used for virtual fencing solution
-for livestock, where the animals are controlled by GPS-collars and an app.
-The system is consisting of a MAX20361 power harvester, MAX20335 BMS,
-and a MAX30210 temperature sensor and a buzzer with an option for vibration
-motor.
+EV-STRUCTURAL-ARDZ Sensor for Structural Monitoring
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: ev-cattletag-ardz.jpg
-   :width: 500 px
+The :adi:`EV-STRUCTURAL-ARDZ` is a vibration sensor that uses the
+ADXL343 digital output MEMS accelerometer chip and the
+ADIS16203 programmable 360° inclinometer. Aside from providing vibration data,
+this end node also features the MAX30210 digital temperature sensor which gives
+the option to shut down sensitive machines and equipment for smart motor sensing
+applications. This vibration sensor can also detect if the horizontal position
+of the sensor changes, which points towards a collapse of the structure where
+the sensor was deployed.
+
+.. figure:: ev-structural-ardz.png
+  :width: 400px
+
+EV-FLOWMETER-ARDZ Sensor for Flow Rate Metering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The :adi:`EV-FLOWMETER-ARDZ` is an ultrasonic time-of-flight (ToF) flow meter
+that sends and receives ultrasound waves between piezoelectric transducers
+in both the upstream and downstream directions in the pipe. By measuring the
+TOF difference between the upstream and downstream wave travels,
+utilizing sophisticated digital signal processing techniques, a very
+accurate flow rate can be calculated.
+
+.. figure:: ev-flowmeter-ardz_angle.png
+  :width: 400px
+
+EV-ADE9000SHIELDZ Sensor for Electric Metering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The :adi:`EV-ADE9000SHIELDZ` is an Arduino shield compatible with Arduino Zero.
+The shield can be directly interfaced with current transformers and voltage leads.
+It enables quick evaluation and prototyping of energy and power quality
+measurement systems with the ADE9000. Arduino library and application examples
+are provided to simplify implementation of larger systems.
+
+.. figure:: ev-ade9000shieldz.png
+  :width: 400px
 
 System Setup
 ------------
 
 PHASE 1: Hardware Setup
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Note that this setup only applies for MAX32670-LR-ARDZ Base Board. Users may use
+Note that this setup only applies for MAX32670-SX-ARDZ Base Board. Users may use
 a different base board or microcontroller, however the firmware built for this
 demo application cannot be used as this is specifically designed for the
-MAX32670-LR-ARDZ.
+MAX32670-SX-ARDZ.
 
 Equipment Needed
 ^^^^^^^^^^^^^^^^
 
-- One (1) :adi:`MAX32670-LR-ARDZ` Base Board
-- One (1) :adi:`EV-CATTLETAG-ARDZ` Sensor Node
+- One (1) :adi:`MAX32670-SX-ARDZ` Base Board
+- One (1) Sensor Node, any of these:
+    - :adi:`EV-STRUCTURAL-ARDZ`, :adi:`EV-FLOWMETER-ARDZ`, :adi:`EV-ADE9000SHIELDZ`
 - One (1) MAX32625PICO Rapid Development Platform with 10-pin ribbon cable
   with :git-max32625pico-firmware-images:`firmware image <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
 - One (1) CR123A Battery or any equivalent external DC power supply (+3V to +4.7V).
@@ -203,25 +237,27 @@ Equipment Needed
 
 .. figure:: hardware_setup.png
 
-#. Insert one CR123A battery (3V to 4.7V) into the battery holder
-   (BT1 connector) of the :adi:`MAX32670-LR-ARDZ` Base Board.
+#.  Insert one CR123A battery (3V to 4.7V) into the battery holder
+    (BT1 connector) of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
-   .. tip::
+    **Make sure to check for the battery polarity in the BT1 connector,
+    refer to the figure below. The DS3 LED will light up indicating
+    that you have inserted the battery correctly and that power is
+    provided in the base board.**
 
-      Make sure to check for the battery polarity in the BT1 connector, refer
-      to the figure below. The DS3 LED will light up indicating that you have
-      inserted the battery correctly and that power is provided in the base
-      board.
+    .. figure:: base_board_with_battery.png
 
-   .. figure:: max32670-lr-ardz_with_battery.png
+#.  Connect one **Sensor Node** to the :adi:`MAX32670-SX-ARDZ` Base Board
+    by aligning the corresponding Arduino headers on each board.
 
-#. Connect the :adi:`EV-CATTLETAG-ARDZ` to the :adi:`MAX32670-LR-ARDZ` Base Board
-   by aligning the corresponding Arduino headers on each board.
-#. Connect the `MAX32625PICO :adi:`MAX32625PICO` programming adapter to the
-   :adi:`MAX32670-LR-ARDZ` Base Board through the 10-pin
-   ribbon cable.
+    You do not have to set up the three sensor nodes altogether, just choose
+    **one** from the available sensors in the kit:
 
-   .. tip::
+    - :adi:`EV-STRUCTURAL-ARDZ` for Structural Monitoring
+    - :adi:`EV-FLOWMETER-ARDZ` for Flow Rate Metering
+    - :adi:`EV-ADE9000SHIELDZ` for Electric Metering
+
+    .. tip::
 
       Make sure that the MAX32625PICO programming adapter has been flashed with
       the correct image before connecting it to the MAX32670-LR-ARDZ Base
@@ -231,25 +267,21 @@ Equipment Needed
 
 #. Download the firmware image:
    :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
-#. Do not connect the MAX32625PICO to the :adi:`MAX32670-LR-ARDZ` Base Board yet.
+#. Do not connect the MAX32625PICO to the :adi:`MAX32670-SX-ARDZ` Base Board yet.
 #. Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
 #. Press the button on the MAX32625PICO. **(Do not release the button until the
    MAINTENANCE drive is mounted)**.
-
-   .. figure:: max32625pico_maxdap.png
-      :width: 300 px
-
 #. Release the button once the MAINTENANCE drive is mounted.
 #. Drag and drop (to the MAINTENANCE drive) the firmware image.
 #. After a few seconds, the MAINTENANCE drive will disappear and be replaced by
    a drive named DAPLINK. This indicates that the process is complete, and the
    MAX32625PICO can now be used to flash the firmware of the
-   :adi:`MAX32670-LR-ARDZ` Base Board.
+   :adi:`MAX32670-SX-ARDZ` Base Board.
 
 #. Connect the :adi:`MAX32625PICO` programming adapter to the
    Host PC using the micro USB to USB cable.
 
-   .. figure:: max32670-lr-ardz_to_maxpico.png
+   .. figure:: max32670-sx-ardz_to_maxpico.png
 
 **Once you have completed this setup, proceed to PHASE 2 found in**
 :dokuwiki:`ADI Long Range Wireless Radio Software User Guide </resources/eval/user-guides/longrangewirelessradio/software>`.
@@ -271,23 +303,22 @@ FAQs
 - **A.** It usually happens whenever the power of the base board is not enough to operate the board.
 
 - **Q.** Can we use other gateways aside from ChirpStack?
-- **A.** Customers are not limited to use ChirpStack gateway, it is possible to use
-   other gateways available in the market.
+- **A.** Customers are not limited to use ChirpStack gateway, it is possible to use other gateways available in the market.
 
 - **Q.** What maximum number a gateway can handle?
-- **A.** It depends on the channels available per assigned region and the time
-   division set by the user on sending data from the nodes to gateway.
+- **A.** It depends on the channels available per assigned region and the time division
+  set by the user on sending data from the nodes to gateway.
 
 - **Q.** Is there another way to see the GUI without using the local setup?
 - **A.** The GUI can also be accessed through cloud service, but it is not supported by ADI.
 
 - **Q.** What is the maximum distance the gateway and nodes can communicate?
-- **A.** The gateway and nodes’ maximum and effective range may vary depending on
-   the modulation parameters, transmit power, antenna gain, environmental
-   conditions, and obstacles present in the communication path. In practice, it
-   can reach several kilometers in rural areas with a clear line of sight. The
-   effective range may be shorter in urban areas where obstacle and interference
-   are present.
+- **A.** The gateway and nodes' maximum and effective range may vary
+  depending on the modulation parameters, transmit power, antenna gain,
+  environmental conditions, and obstacles present in the communication
+  path. In practice, it can reach several kilometers in rural areas with
+  a clear line of sight. The effective range may be shorter in urban
+  areas where obstacle and interference are present.
 
 Help and Support
 ----------------

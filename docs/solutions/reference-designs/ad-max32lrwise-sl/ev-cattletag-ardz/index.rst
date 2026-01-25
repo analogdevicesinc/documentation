@@ -69,8 +69,7 @@ and these are listed below:
 
 .. figure:: ev-cattletag-ardz_solar_panel_option.png
 
-- **P8 Terminal block** - external power supply, between 3V to 4.2V allowable
-  input
+- **P8 Terminal block** - external power supply, between 3V to 4.2V allowable input
 - **Battery holder** - 2xAAA battery is required.
 - **Arduino Power** - external power supply that comes directly from the host board
   it is connected to.
@@ -127,8 +126,8 @@ Equipment Needed
 - One (1) :adi:`EV-CATTLETAG-ARDZ` Sensor Node
 - One (1) MAX32625PICO Rapid Development Platform with 10-pin ribbon cable
   with firmware image:
-  `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
-- One (1) CR123A Battery or any equivalent external DC power supply (+3V to +4.7V)
+  :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+- One (1) CR123A Battery or any equivalent external DC power supply (+3V to +4.7V).
   **Note that this is not included in the kit**
 - One (1) Micro USB to USB cable
 - Host PC (Windows 10 or later)
@@ -159,10 +158,9 @@ Equipment Needed
 How to flash the firmware image in the MAX32625PICO
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Download the firmware image: `MAX32625PICO Firmware Image for
-   MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
-#. Do not connect the MAX32625PICO to the
-   :adi:`MAX32670-LR-ARDZ` Base Board yet.
+#. Download the firmware image:
+   :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+#. Do not connect the MAX32625PICO to the :adi:`MAX32670-LR-ARDZ` Base Board yet.
 #. Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
 #. Press the button on the MAX32625PICO. **(Do not release the button until the
    MAINTENANCE drive is mounted)**.
