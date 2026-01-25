@@ -13,11 +13,11 @@ Long Range Wireless Radio Development Kit based on MAX32670 MCU and SX1261 RF Tr
 Overview
 --------
 
-The :adi:`AD-MAX32SXWISE-SL` development kit is a tool intended for designing 
-solutions based on low-power, long range proprietary radio communication technique. 
-This platform features the SX1261 RF transceiver based on spread spectrum 
-modulation techniques derived from chirp spread spectrum (CSS) technology, and supports 
-a frequency range from 800 MHz to 960 MHz. This solution is also based on the 
+The :adi:`AD-MAX32SXWISE-SL` development kit is a tool intended for designing
+solutions based on low-power, long range proprietary radio communication technique.
+This platform features the SX1261 RF transceiver based on spread spectrum
+modulation techniques derived from chirp spread spectrum (CSS) technology, and supports
+a frequency range from 800 MHz to 960 MHz. This solution is also based on the
 MAX32670 ultralow power microcontroller based on Arm Cortex-M4 processor.
 
 The kit is composed of a development board and equipped with sensor modules,
@@ -33,7 +33,7 @@ and management capabilities of the system. To use the development board, users
 need to flash it with functional firmware. A simple join example has been
 open-sourced, providing more flexibility and easy customization in terms of
 firmware development.
-  
+
 Overall, the :adi:`AD-MAX32SXWISE-SL` development kit
 offers a comprehensive and user-friendly solution for individuals or
 developers interested in exploring and implementing LPWAN technology for IoT
@@ -70,7 +70,7 @@ What’s Inside the Box?
 ----------------------
 
 Upon purchase of the AD-MAX32SXWISE-SL kit, the package comes with the following
-boards and accessories: 
+boards and accessories:
 
 .. figure:: ad-max32sxwise-sl.png
 
@@ -120,7 +120,7 @@ Specifications
 Components
 ----------
 
-When you purchase the :adi:`AD-MAX32SXWISE-SL` development kit, 
+When you purchase the :adi:`AD-MAX32SXWISE-SL` development kit,
 the package comes with the following boards and accessories:
 
 Base Board:
@@ -153,15 +153,15 @@ network and send and receive data in long distances.
 MAX32670-SX-ARDZ Base Board
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This development kit comes with the :adi:`MAX32670-SX-ARDZ` as its base board. 
-This board is consisting of the MAX32670 high-reliability, ultralow power 
+This development kit comes with the :adi:`MAX32670-SX-ARDZ` as its base board.
+This board is consisting of the MAX32670 high-reliability, ultralow power
 microcontroller based on Arm Cortex-M4 processor, and the SX1261
 long range transceiver module.
 
 .. figure:: max32670-sx-ardz_base_board.png
 
-**What are Sensor Nodes?**
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+What are Sensor Nodes?
+~~~~~~~~~~~~~~~~~~~~~~
 
 Sensor nodes are devices that wirelessly send or receive messages to and back
 from the gateways. These devices communicate with nearby gateways connected
@@ -174,10 +174,10 @@ All of these 3 sensors are included in the :adi:`AD-MAX32SXWISE-SL` development 
 EV-STRUCTURAL-ARDZ Sensor for Structural Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The :adi:`EV-STRUCTURAL-ARDZ` is a vibration sensor that uses the 
-ADXL343 digital output MEMS accelerometer chip and the 
-ADIS16203 programmable 360° inclinometer. Aside from providing vibration data, 
-this end node also features the MAX30210 digital temperature sensor which gives 
+The :adi:`EV-STRUCTURAL-ARDZ` is a vibration sensor that uses the
+ADXL343 digital output MEMS accelerometer chip and the
+ADIS16203 programmable 360° inclinometer. Aside from providing vibration data,
+this end node also features the MAX30210 digital temperature sensor which gives
 the option to shut down sensitive machines and equipment for smart motor sensing
 applications. This vibration sensor can also detect if the horizontal position
 of the sensor changes, which points towards a collapse of the structure where
@@ -189,23 +189,23 @@ the sensor was deployed.
 EV-FLOWMETER-ARDZ Sensor for Flow Rate Metering
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The :adi:`EV-FLOWMETER-ARDZ` is an ultrasonic time-of-flight (ToF) flow meter 
-that sends and receives ultrasound waves between piezoelectric transducers 
-in both the upstream and downstream directions in the pipe. By measuring the 
-TOF difference between the upstream and downstream wave travels, 
+The :adi:`EV-FLOWMETER-ARDZ` is an ultrasonic time-of-flight (ToF) flow meter
+that sends and receives ultrasound waves between piezoelectric transducers
+in both the upstream and downstream directions in the pipe. By measuring the
+TOF difference between the upstream and downstream wave travels,
 utilizing sophisticated digital signal processing techniques, a very
 accurate flow rate can be calculated.
 
 .. figure:: ev-flowmeter-ardz_angle.png
   :width: 400px
- 
+
 EV-ADE9000SHIELDZ Sensor for Electric Metering
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The :adi:`EV-ADE9000SHIELDZ` is an Arduino shield compatible with Arduino Zero. 
-The shield can be directly interfaced with current transformers and voltage leads. 
-It enables quick evaluation and prototyping of energy and power quality 
-measurement systems with the ADE9000. Arduino library and application examples 
+The :adi:`EV-ADE9000SHIELDZ` is an Arduino shield compatible with Arduino Zero.
+The shield can be directly interfaced with current transformers and voltage leads.
+It enables quick evaluation and prototyping of energy and power quality
+measurement systems with the ADE9000. Arduino library and application examples
 are provided to simplify implementation of larger systems.
 
 .. figure:: ev-ade9000shieldz.png
@@ -226,10 +226,10 @@ Equipment Needed
 ^^^^^^^^^^^^^^^^
 
 - One (1) :adi:`MAX32670-SX-ARDZ` Base Board
-- One (1) Sensor Node, any of these: 
+- One (1) Sensor Node, any of these:
     - :adi:`EV-STRUCTURAL-ARDZ`, :adi:`EV-FLOWMETER-ARDZ`, :adi:`EV-ADE9000SHIELDZ`
 - One (1) MAX32625PICO Rapid Development Platform with 10-pin ribbon cable
-  with `firmware image <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
+  with :git-max32625pico-firmware-images:`firmware image <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
 - One (1) CR123A Battery or any equivalent external DC power supply (+3V to +4.7V).
   **Note that this is not included in the kit**
 - One (1) Micro USB to USB cable
@@ -237,20 +237,20 @@ Equipment Needed
 
 .. figure:: hardware_setup.png
 
-#.  Insert one CR123A battery (3V to 4.7V) into the battery holder 
+#.  Insert one CR123A battery (3V to 4.7V) into the battery holder
     (BT1 connector) of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
-    **Make sure to check for the battery polarity in the BT1 connector, 
-    refer to the figure below. The DS3 LED will light up indicating 
+    **Make sure to check for the battery polarity in the BT1 connector,
+    refer to the figure below. The DS3 LED will light up indicating
     that you have inserted the battery correctly and that power is
-    provided in the base board.** 
-  
+    provided in the base board.**
+
     .. figure:: base_board_with_battery.png
 
-#.  Connect one **Sensor Node** to the :adi:`MAX32670-SX-ARDZ` Base Board 
+#.  Connect one **Sensor Node** to the :adi:`MAX32670-SX-ARDZ` Base Board
     by aligning the corresponding Arduino headers on each board.
 
-    You do not have to set up the three sensor nodes altogether, just choose 
+    You do not have to set up the three sensor nodes altogether, just choose
     **one** from the available sensors in the kit:
 
     - :adi:`EV-STRUCTURAL-ARDZ` for Structural Monitoring
@@ -266,7 +266,7 @@ Equipment Needed
 **How to flash the firmware image in the MAX32625PICO**
 
 #. Download the firmware image:
-   `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
+   :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
 #. Do not connect the MAX32625PICO to the :adi:`MAX32670-SX-ARDZ` Base Board yet.
 #. Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
 #. Press the button on the MAX32625PICO. **(Do not release the button until the
@@ -279,8 +279,8 @@ Equipment Needed
    :adi:`MAX32670-SX-ARDZ` Base Board.
 
 #. Connect the :adi:`MAX32625PICO` programming adapter to the
-   Host PC using the micro USB to USB cable. 
-   
+   Host PC using the micro USB to USB cable.
+
    .. figure:: max32670-sx-ardz_to_maxpico.png
 
 **Once you have completed this setup, proceed to PHASE 2 found in**
@@ -306,7 +306,7 @@ FAQs
 - **A.** Customers are not limited to use ChirpStack gateway, it is possible to use other gateways available in the market.
 
 - **Q.** What maximum number a gateway can handle?
-- **A.** It depends on the channels available per assigned region and the time division 
+- **A.** It depends on the channels available per assigned region and the time division
   set by the user on sending data from the nodes to gateway.
 
 - **Q.** Is there another way to see the GUI without using the local setup?

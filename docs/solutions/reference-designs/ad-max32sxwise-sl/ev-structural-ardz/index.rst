@@ -1,6 +1,6 @@
 .. _ev-structural-ardz:
 
-EV-STRUCTURAL-ARDZ 
+EV-STRUCTURAL-ARDZ
 ==================
 
 Sensor for Structural Monitoring
@@ -9,13 +9,13 @@ Sensor for Structural Monitoring
 Overview
 --------
 
-The :adi:`EV-STRUCTURAL-ARDZ` is a vibration sensor that uses the 
-:adi:`ADXL343` digital output MEMS accelerometer chip and the :adi:`ADIS16203` 
-programmable 360° inclinometer. Aside from providing vibration data, 
-this board also features the :adi:`MAX30210` digital temperature sensor 
-which gives the option to shut down sensitive machines and equipment 
-for smart motor sensing applications. This vibration sensor can also detect 
-if the horizontal position of the sensor changes, which points towards 
+The :adi:`EV-STRUCTURAL-ARDZ` is a vibration sensor that uses the
+:adi:`ADXL343` digital output MEMS accelerometer chip and the :adi:`ADIS16203`
+programmable 360° inclinometer. Aside from providing vibration data,
+this board also features the :adi:`MAX30210` digital temperature sensor
+which gives the option to shut down sensitive machines and equipment
+for smart motor sensing applications. This vibration sensor can also detect
+if the horizontal position of the sensor changes, which points towards
 a collapse of the structure where the sensor was deployed.
 
 .. figure:: ev-structural-ardz.png
@@ -67,7 +67,7 @@ Block Diagram
 Hardware Design
 ---------------
 
-Components and Connections 
+Components and Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Digital Interface (Arduino)
@@ -80,7 +80,7 @@ company. Complete details on the PMOD specification can be found
 `here <https://www.arduino.cc/en/hardware>`__.
 
 The pin map for the Arduino pins is described in the table and its schematic
-diagram below. 
+diagram below.
 
 .. figure:: ev-structural-ardz_revb.png
    :width: 600 px
@@ -90,7 +90,7 @@ diagram below.
 Sensor Device
 ^^^^^^^^^^^^^
 
-The board comes with the :adi:`ADXL343` 3-Axis MEMS Accelerometers, :adi:`ADIS16203` 
+The board comes with the :adi:`ADXL343` 3-Axis MEMS Accelerometers, :adi:`ADIS16203`
 Programmable 360° Inclinometer, and :adi:`MAX30210` ±0.1°C Accurate, 16-Bit Digital I2C Temperature Sensor.
 
 .. figure:: ev-structural-ardz_revb2.png
@@ -123,7 +123,7 @@ Equipment Needed
 - One (1) :adi:`MAX32670-SX-ARDZ` Base Board
 - One (1) :adi:`EV-FLOWMETER-ARDZ` Sensor Node
 - One (1) MAX32625PICO Rapid Development Platform with 10-pin ribbon cable
-  with `firmware image <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
+  with :git-max32625pico-firmware-images:`firmware image <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
 - One (1) CR123A Battery or any equivalent external DC power supply (+3V to +4.7V).
   **Note that this is not included in the kit**
 - One (1) Micro USB to USB cable
@@ -131,19 +131,19 @@ Equipment Needed
 
 .. figure:: hardware_setup.png
 
-#.  Insert one CR123A battery (3V to 4.7V) into the battery holder 
+#.  Insert one CR123A battery (3V to 4.7V) into the battery holder
     (BT1 connector) of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
     **Make sure to check for the battery polarity in
     the BT1 connector, refer to the figure below. The DS3 LED will light up
     indicating that you have inserted the battery correctly and that power is
-    provided in the base board.** 
-  
+    provided in the base board.**
+
     .. figure:: base_board_with_battery.png
 
-#. Connect the :adi:`EV-STRUCTURAL-ARDZ` Sensor Node to the :adi:`MAX32670-SX-ARDZ` 
+#. Connect the :adi:`EV-STRUCTURAL-ARDZ` Sensor Node to the :adi:`MAX32670-SX-ARDZ`
    Base Board by aligning the corresponding Arduino headers on each board.
-#. Connect the `MAX32625PICO` programming adapter to the :adi:`MAX32670-SX-ARDZ` 
+#. Connect the `MAX32625PICO` programming adapter to the :adi:`MAX32670-SX-ARDZ`
    Base Board through the 10-pin ribbon cable.
 
    .. tip::
@@ -155,7 +155,7 @@ Equipment Needed
 **How to flash the firmware image in the MAX32625PICO**
 
 #. Download the firmware image:
-   `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
+   :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
 #. Do not connect the MAX32625PICO to the :adi:`MAX32670-SX-ARDZ` Base Board yet.
 #. Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
 #. Press the button on the MAX32625PICO. **(Do not release the button until the
@@ -167,8 +167,8 @@ Equipment Needed
    MAX32625PICO can now be used to flash the firmware of the
    :adi:`MAX32670-SX-ARDZ` Base Board.
 #. Connect the :adi:`MAX32625PICO` programming adapter to the
-   Host PC using the micro USB to USB cable. 
-   
+   Host PC using the micro USB to USB cable.
+
    .. figure:: max32670-sx-ardz_to_maxpico.png
 
 Once you have completed this setup, proceed to PHASE 2 found in
@@ -185,7 +185,7 @@ Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
-   
+
    :download:`EV-STRUCTURAL-ARDZ Design Support Package Rev. B <ev-structural-ardz-designsupport.zip>`
 
    - Schematic

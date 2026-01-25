@@ -9,8 +9,8 @@ Long Range Wireless Radio Development Platform
 Overview
 --------
 
-The :adi:`MAX32670-SX-ARDZ` base board features the MAX32670 high-reliability, 
-ultralow power microcontroller based on Arm Cortex-M4 processor, and 
+The :adi:`MAX32670-SX-ARDZ` base board features the MAX32670 high-reliability,
+ultralow power microcontroller based on Arm Cortex-M4 processor, and
 the SX1261 long range RF transceiver module.
 
 The integrated RF transceiver supports a frequency range from 800 MHz
@@ -159,9 +159,9 @@ GPIO         10             I2C2_SCL_32670
 HSPI CLK     11             SPI0_SCK_32670
 HSPI MISO    12             SPI0_MISO_32670
 HSPI MOSI    13             SPI0_MOSI_32670
-GPIO         14             
-GPIO         15             
-GPIO         16             
+GPIO         14
+GPIO         15
+GPIO         16
 GND          17             GND
 VIN          18             VOUT_3130(def)/VCC_31334
 ============ ============== ========================
@@ -182,9 +182,9 @@ RTC          11             UART0A_CTS_32670
 RTC          12             UART0A_RTS_32670
 RTC          13             SPI0_SS0_32670
 RTC          14             UART1A_CTS_32670
-SDI          15             
-SDO          16             
-SCK          17             
+SDI          15
+SDO          16
+SCK          17
 3V3          18             VOUT_3130
 ============ ============== ===================
 
@@ -203,7 +203,7 @@ PMOD Connector Pin Map
 
 ================================== ============== ============
 **Net Name**                       **Pin Number** **Pin Name**
-**SPI PMOD**                                      
+**SPI PMOD**
 SPI0_SS0_32670(def)/SPI1_SS0_32670 1              SS
 SPI0_MOSI_32670                    2              MOSI
 SPI0_MISO_32670                    3              MISO
@@ -220,7 +220,7 @@ GND                                11             GND
 
 ================================ ============== ============
 **Net Name**                     **Pin Number** **Pin Name**
-**I2C PMOD**                                    
+**I2C PMOD**
 I2C1_SCL_32670/I2C2_SCL_32670    1              SCL
 I2C1_SCL_32670/I2C2_SCL_32670    2              SCL
 I2C1_SDA_32670/I2C2_SDA_32670    3              SDA
@@ -261,9 +261,9 @@ radio modulation technique.
 
 .. figure:: max32670-sx-ardz_lora_chipset.png
 
-The :adi:`MAX32670` communicates to the SX1261 using the SPI bus, 
-so the users will need to send long range commands and data over SPI bus. 
-Library functions calls have been specifically designed to be used with 
+The :adi:`MAX32670` communicates to the SX1261 using the SPI bus,
+so the users will need to send long range commands and data over SPI bus.
+Library functions calls have been specifically designed to be used with
 the MAX32670 and SX1261 using SPI bus.
 
 The pins that connect the MAX32670 and the SX1261 are as follows:
@@ -424,10 +424,10 @@ Equipment Needed
 ^^^^^^^^^^^^^^^^
 
 - One (1) :adi:`MAX32670-SX-ARDZ` Base Board
-- One (1) Sensor Node, any of these: 
+- One (1) Sensor Node, any of these:
     - :adi:`EV-STRUCTURAL-ARDZ`, :adi:`EV-FLOWMETER-ARDZ`, :adi:`EV-ADE9000SHIELDZ`
 - One (1) MAX32625PICO Rapid Development Platform with 10-pin ribbon cable
-  with `firmware image <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
+  with :git-max32625pico-firmware-images:`firmware image <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
 - One (1) CR123A Battery or any equivalent external DC power supply (+3V to +4.7V).
   **Note that this is not included in the kit**
 - One (1) Micro USB to USB cable
@@ -435,17 +435,17 @@ Equipment Needed
 
 .. figure:: hardware_setup.png
 
-#.  Insert one CR123A battery (3V to 4.7V) into the battery holder 
+#.  Insert one CR123A battery (3V to 4.7V) into the battery holder
     (BT1 connector) of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
     **Make sure to check for the battery polarity in
     the BT1 connector, refer to the figure below. The DS3 LED will light up
     indicating that you have inserted the battery correctly and that power is
-    provided in the base board.** 
-  
+    provided in the base board.**
+
     .. figure:: base_board_with_battery.png
 
-#.  Connect one **Sensor Node** to the :adi:`MAX32670-SX-ARDZ` Base Board 
+#.  Connect one **Sensor Node** to the :adi:`MAX32670-SX-ARDZ` Base Board
     by aligning the corresponding Arduino headers on each board.
 
     You do not have to set up the three sensor nodes altogether, just choose **one**
@@ -464,7 +464,7 @@ Equipment Needed
 **How to flash the firmware image in the MAX32625PICO**
 
 #. Download the firmware image:
-   `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
+   :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
 #. Do not connect the MAX32625PICO to the :adi:`MAX32670-LR-ARDZ` Base Board yet.
 #. Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
 #. Press the button on the MAX32625PICO. **(Do not release the button until the
@@ -477,8 +477,8 @@ Equipment Needed
    :adi:`MAX32670-LR-ARDZ` Base Board.
 
 #. Connect the :adi:`MAX32625PICO` programming adapter to the
-   Host PC using the micro USB to USB cable. 
-   
+   Host PC using the micro USB to USB cable.
+
    .. figure:: max32670-sx-ardz_to_maxpico.png
 
 **Once you have completed this setup, proceed to PHASE 2 found in**
@@ -501,7 +501,7 @@ Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
-   
+
    :download:`MAX32670-SX-ARDZ Design Support Package Rev. C <max32670-sx-ardz-designsupport.zip>`
 
    - Schematic
