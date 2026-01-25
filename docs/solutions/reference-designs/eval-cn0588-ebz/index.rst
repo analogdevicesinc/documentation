@@ -1,6 +1,6 @@
 .. _eval-cn0588-ebz:
 
-EVAL-CN0588-EBZ 
+EVAL-CN0588-EBZ
 ===============
 
 DC to 10 kHz MEMS-Based IEPE Vibration Sensor
@@ -11,7 +11,7 @@ Overview
 
 The :adi:`CN0588` is a MEMS-based IEPE vibration sensor optimized
 for condition-based monitoring (CbM) applications. This solution has a
-constant current supply of 4mA and a DC voltage bias ranging from 
+constant current supply of 4mA and a DC voltage bias ranging from
 around 8.75V to 14.75V.
 
 .. figure:: eval-cn0588-ebz_top.jpg
@@ -25,7 +25,7 @@ is the de facto standard in CbM vibration sensing ecosystem. The IEPE
 interface, also commercially known as ICP, is a 2-wire protocol, signal and
 ground. In this protocol a data logger supplies a constant current via the
 signal line to the vibration sensor and the sensor modulates the voltage
-according to the measurand, typically between 10V to 30V. This reference
+according to the measured, typically between 10V to 30V. This reference
 design enables a direct IEPE piezoelectric sensor replacement with benefits of
 high bandwidth, temperature stability and ultralow noise MEMS accelerometers.
 This allows customers to easily evaluate an IEPE MEMS accelerometer solution
@@ -101,7 +101,7 @@ Equipment Needed
 - EVAL-CN0582-USBZ
 - Host PC (Windows 10)
 
-       * with installed `CN0582 Evaluation Software <http://swdownloads.analog.com/cse/cftl/CN0582/CN0582%20EVALUATION%20SOFTWARE%20INSTALLER.EXE>`__
+  * with installed `CN0582 Evaluation Software <http://swdownloads.analog.com/cse/cftl/CN0582/CN0582%20EVALUATION%20SOFTWARE%20INSTALLER.EXE>`__
 
 - Vibration Shaker (e.g., King Design 9363-ED-2F4K-5N)
 - Reference Sensor (PCBM352C67)
@@ -111,11 +111,11 @@ Equipment Needed
 - BNC Cable
 
 .. tip::
-   This measurement demonstration uses the EVAL-CN0582-USBZ as IEPE-compatible 
-   vibration measurement equipment, and requires the CN0582 Evaluation Software 
+   This measurement demonstration uses the EVAL-CN0582-USBZ as IEPE-compatible
+   vibration measurement equipment, and requires the CN0582 Evaluation Software
    to be installed.
 
-For instructions on how to obtain and install the software, visit the 
+For instructions on how to obtain and install the software, visit the
 :dokuwiki:`CN0582 User Guide </resources/eval/user-guides/circuits-from-the-lab/cn0582>`.
 
 .. figure:: eval-cn0588-ebz_setup3.png
@@ -127,26 +127,26 @@ For instructions on how to obtain and install the software, visit the
 #. Attach another SMA connector from the EVAL-CN0588-EBZ going to Channel 1 of
    the EVAL-CN0582-USBZ.
 #. Power up the EVAL-CN0582-USBZ by connecting the Type C end of the USB cable
-   to the board and the other end to the host PC. 
+   to the board and the other end to the host PC.
 
    .. tip::
       The RED and GREEN LED should light up, indicating proper power up.
 
 #. Turn on the vibration shaker by plugging in the 19 V power supply.
 #. Ready the shaker by clicking the tune button. Two (2) green LEDs must light
-   up. 
-   
+   up.
+
    .. figure:: eval-cn0588-ebz_hw_2.png
 
-#. Download and install the `CN0582 Evaluation
-   Software <http://swdownloads.analog.com/cse/cftl/CN0582/CN0582%20EVALUATION%20SOFTWARE%20INSTALLER.EXE>`__.
+#. Download and install the
+   `CN0582 Evaluation Software <http://swdownloads.analog.com/cse/cftl/CN0582/CN0582%20EVALUATION%20SOFTWARE%20INSTALLER.EXE>`__.
 
    .. tip::
       Only the GREEN LED should light up on the board during installation. This
       indicates successful firmware upload.
 
 #. Follow the installation prompts until the main window of the GUI appears.
-   
+
    .. figure:: eval-cn0588-ebz_setup4.png
 
 #. On the GUI dashboard, navigate to the left and click **‘Vibration Testing’**
@@ -157,7 +157,7 @@ For instructions on how to obtain and install the software, visit the
    .. figure:: vs_interface.png
 
 #. Set the acceleration sensitivity and the sensor DC bias (mV) using the
-   following values: 
+   following values:
 
    **Reference**
 
@@ -175,7 +175,7 @@ For instructions on how to obtain and install the software, visit the
 #. Adjust the frequency settings to your requirements.
 #. Connect the other end of the BNC cable to the EVAL-CN0582-USBZ (J6).
 #. Click Start to launch the test. Then wait for it to finish.
-   
+
    .. figure:: eval-cn0588-ebz_freq.png
 
 .. tip::
@@ -183,9 +183,9 @@ For instructions on how to obtain and install the software, visit the
    IEPE-compatible data acquisition systems. Analog Devices has various IEPE
    reference designs that users can readily evaluate and prototype with.
 
-   For CbM applications requiring one channel measurement, the 
+   For CbM applications requiring one channel measurement, the
    :adi:`CN0540 24-Bit IEPE data acquisition system <cn0540>` is recommended.
-   
+
    For applications requiring Arduino form-factor, the :adi:`CN0579 <CN0579>` is
    the suggested IEPE vibration sensor measurement system to use with the CN0588.
 
@@ -201,7 +201,7 @@ Design & Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
-   
+
    :download:`EVAL-CN0588-EBZ Design & Integration Files <CN0588-designsupport.zip>`
 
    - Schematics
@@ -213,4 +213,4 @@ Help and Support
 ~~~~~~~~~~~~~~~~
 
 For questions and more information about this product, connect with us through
-the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
+the Analog Devices :ez:`ez/reference-designs`.
