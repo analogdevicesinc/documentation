@@ -18,7 +18,7 @@ system-on-module (SOM), and the **EVAL-CN0583-CRR1** carrier board.
 
 The **EVAL-CN0583-SOM** is a standalone module designed for development of
 smoke detection applications. The :adi:`CN0583` SOM integrates an
-:adi:`ADPD188BI` smoke sensor, a :adi:`MAX32660` microcontroller, 
+:adi:`ADPD188BI` smoke sensor, a :adi:`MAX32660` microcontroller,
 and regulated DC power supplies needed for proper operation.
 
 The SOM only requires DC power and ground connections from a host system to
@@ -36,13 +36,13 @@ their smoke detector application.
 System-on-Module
 ----------------
 
-Board Castellation
-~~~~~~~~~~~~~~~~~~
+Board Castellated Pins
+~~~~~~~~~~~~~~~~~~~~~~
 
-The SOM has 28 castellated “pins” divided into two 14-pin rows and arranged in
+The SOM has 28 castellated "pins" divided into two 14-pin rows and arranged in
 a dual in-line pattern. These pins are used to supply power and interface
 external circuitry with the SOM hardware, allowing access to the GPIO pins of
-the :adi:`MAX32660` and :adi:`ADPD188BI`. The table below shows the default 
+the :adi:`MAX32660` and :adi:`ADPD188BI`. The table below shows the default
 pinout of the SOM when programmed with the :adi:`CN0583` demo application.
 
 .. figure:: eval-cn0583-som_front.jpg
@@ -126,25 +126,25 @@ pinout of the SOM when programmed with the :adi:`CN0583` demo application.
    +------------+----------+-----------------------------------------------------+
 
 
-Refer to the :adi:`ADPD188BI` and :adi:`MAX32660` data sheets for details on 
-the available functions of their respective GPIO pins. 
+Refer to the :adi:`ADPD188BI` and :adi:`MAX32660` data sheets for details on
+the available functions of their respective GPIO pins.
 
-.. tip:: 
-   The actual functions of the digital pins are user-configurable and 
-   are determined by how the :adi:`MAX32660` GPIO pins are configured in 
-   the SOM firmware. When changing the pin assignments, check if the new pinout 
-   will conflict with the onboard circuity of the the carrier board.
-   
-.. important:: 
+.. tip::
+   The actual functions of the digital pins are user-configurable and
+   are determined by how the :adi:`MAX32660` GPIO pins are configured in
+   the SOM firmware. When changing the pin assignments, check if the new pinout
+   will conflict with the onboard circuity of the carrier board.
+
+.. important::
    Do not set **P0.0** and **P0.1** to any other function besides
    **SWDIO** and **SWDCLK** to avoid issues with reprogramming the SOM using the
    carrier board.
 
 If this was accidentally done and there is a need to upload a new firmware,
 the flash memory of the :adi:`MAX32660` must first be erased prior
-to reprogramming. To do this, install 
-`Maxim Microcontrollers SDK <https://analog-devices-msdk.github.io/msdk/USERGUIDE/#installation>`__
-and `Visual Studio Code <https://analog-devices-msdk.github.io/msdk/USERGUIDE/#getting-started-with-visual-studio-code>`__,
+to reprogramming. To do this, install
+`Maxim Microcontrollers SDK <https://analogdevicesinc.github.io/msdk/USERGUIDE/#installation>`__
+and `Visual Studio Code <https://analogdevicesinc.github.io/msdk/USERGUIDE/#getting-started-with-visual-studio-code>`__,
 then perform the following steps:
 
 #. Create a new project from MaximSDK’s examples for :adi:`MAX32660`
@@ -186,7 +186,7 @@ data back to a serial terminal program.
    +------------+----------+-----------------------------------------------------+
 
 Input power to the SOM can be supplied either through the **VBATT** pins on
-the board castellation, or via pin 1 of **JP1**.
+the board castellated pins, or via pin 1 of **JP1**.
 
 Refer to the table below on setting the **JP1** and **JP4** jumpers to select
 the power source.
@@ -237,7 +237,7 @@ and **JP3** jumpers to enable the LED supply voltages.
 Carrier Board
 -------------
 
-The **EVAL-CN0583-CRR1** is a carier board designed to directly mount the
+The **EVAL-CN0583-CRR1** is a carrier board designed to directly mount the
 **EVAL-CN0583-SOM** and emulate a traditional smoke detector application.
 
 .. figure:: eval-cn0583-crrz_front.jpg
@@ -276,7 +276,7 @@ JP1    BATTERY       CR123A battery.
 ====== ============= ==================================================
 
 .. important::
-   Only the input power source of the SOM can be switched 
+   Only the input power source of the SOM can be switched
    using jumper **JP1**. The onboard programmer/debugger on the
    carrier board will always draw power from the USB connector.
 
@@ -417,7 +417,7 @@ This step is only required if you want to update the firmware of the CN0583 SOM.
 The programming may be done over DAPLINK, as following:
 
 #. Download the hex file for the demo application. Alternatively, you may use
-   your own hex file. 
+   your own hex file.
 
    .. admonition:: Download
 
@@ -443,8 +443,8 @@ The programming may be done over DAPLINK, as following:
 Serial Terminal Setup
 ~~~~~~~~~~~~~~~~~~~~~
 
-A serial terminal is an application that runs on a PC or laptop that is 
-used to display data and interact with a connected device 
+A serial terminal is an application that runs on a PC or laptop that is
+used to display data and interact with a connected device
 (including many of the Circuits from the Lab reference designs). The
 device’s UART peripheral is most often connected to a UART to USB interface
 IC, which appears as a traditional COM port on the host PC/ laptop.
@@ -502,7 +502,7 @@ the connected devices.
    Laptop.
 #. Open your device manager, and find out which COM port was assigned to your
    device.
-   
+
    .. figure:: device_manager.png
 
 #. Open up your serial terminal program (e.g., PuTTY).
@@ -510,7 +510,7 @@ the connected devices.
    match the requirements of your connected device. The default baud rate for
    most of the reference designs is 115200. Make sure that you use the correct
    baud rate for your application.
-   
+
    .. figure:: putty_settings.png
 
 #. Ensure you click on the checkboxes for **Implicit CR in every LF** and
@@ -676,8 +676,8 @@ Device Driver Support
 There are no-OS drivers provided for controlling the digital devices on the
 :adi:`CN0583` boards.
 
-- `ADPD188BI No-OS Driver </resources/tools-software/uc-drivers/adpd188>`__
-- :git-no-OS:`MAX31875 No-OS Driver </drivers/temperature/max31875>`
+- :dokuwiki:`ADPD188BI No-OS Driver </resources/tools-software/uc-drivers/adpd188>`
+- :git-no-OS:`MAX31875 No-OS Driver <drivers/temperature/max31875>`
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
