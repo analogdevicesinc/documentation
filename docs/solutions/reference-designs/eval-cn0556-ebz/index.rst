@@ -27,13 +27,13 @@ board remotely.
 Features
 ~~~~~~~~
 
-     * High Efficiency Buck or Boost DC-DC Converter
-     * 14V to 56V Buck Input Voltage and 8V to 14V Boost Input Voltage
-     * Fully Programmable Bidirectional Control and Monitoring ​
-     * Seamless Buck-to-Boost Transition and Vice Versa​
-     * Buck Mode: 35A Maximum Output Current​
-     * Boost Mode: 10A Maximum Output Current​
-     * Reverse Current Protection
+* High Efficiency Buck or Boost DC-DC Converter
+* 14V to 56V Buck Input Voltage and 8V to 14V Boost Input Voltage
+* Fully Programmable Bidirectional Control and Monitoring
+* Seamless Buck-to-Boost Transition and Vice Versa
+* Buck Mode: 35A Maximum Output Current
+* Boost Mode: 10A Maximum Output Current
+* Reverse Current Protection
 
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,26 +49,26 @@ Requirements
 
 **Hardware**
 
-   - :adi:`EVAL-CN0556-EBZ <CN0556>`
-   - Analog I/O module :adi:`EVAL-CN0554-RPIZ <CN0554>`
-   - Raspberry Pi 4 Model B
-   - Raspberry Pi 4 USB-C power supply
-   - Benchtop power supply, up to 56V and 35A
-   - Digital multimeter
-   - Electronic load
-   - MicroHDMI to HDMI cable
-   - Monitor with HDMI display
-   - USB keyboard and mouse
-   - 16 GB microSD card
+- :adi:`EVAL-CN0556-EBZ <CN0556>`
+- Analog I/O module :adi:`EVAL-CN0554-RPIZ <CN0554>`
+- Raspberry Pi 4 Model B
+- Raspberry Pi 4 USB-C power supply
+- Benchtop power supply, up to 56V and 35A
+- Digital multimeter
+- Electronic load
+- MicroHDMI to HDMI cable
+- Monitor with HDMI display
+- USB keyboard and mouse
+- 16 GB microSD card
 
-**Software**
+Software
 
-   - :ref:`ADI Kuiper Linux image <kuiper>`
-   - Python 3.7 or newer
+- :ref:`kuiper`
+- Python 3.7 or newer
 
-**Documentation**
+Documentation
 
-   - :adi:`CN0556 Circuit Note <CN0556>`
+- :adi:`CN0556 Circuit Note <CN0556>`
 
 Software Setup
 --------------
@@ -83,7 +83,7 @@ software products designed and created with ease of use in mind. The reasoning
 behind creating this distribution is to minimize the barriers to integrating ADI
 hardware devices into a Linux-based embedded system.
 
-Access to the embedded system can be through ​a remote PC connected ​either via
+Access to the embedded system can be through a remote PC connected either via
 LAN cable or Wi-Fi.
 
 Downloading and Flashing ADI Kuiper Linux Image on SD Card
@@ -97,8 +97,8 @@ system are provided at :ref:`Kuiper Images <kuiper>`.
 .. figure:: command_prompt.png
 
 There is an available Wiki Page which explains in detail on how to download
-and flash the SD card using Windows or Linux OS: **‘Configuring the SD Card
-for Raspberry Pi Projects’** in the 
+and flash the SD card using Windows or Linux OS: 'Configuring the SD Card
+for Raspberry Pi Projects' in the
 :dokuwiki:`Formatting and Flashing SD Cards using Windows </resources/tools-software/linux-software/zynq_images/windows_hosts>`.
 
 Configuring the SD Card for CN0556
@@ -109,12 +109,11 @@ update the device tree overlay. A Device Tree Overlay contains information about
 additional connected hardware, the EVAL-CN0556-EBZ for this case. The overlay file 
 is already included in the SD card and just needs to be matched to the EVAL-CN0556-EBZ.
 
-Follow the procedure under **‘Configuring the SD Card for Raspberry Pi
-Projects’** in the :ref:`Analog Devices Kuiper Linux page <kuiper>`, 
-substituting the following lines in **config.txt**
+Follow :external+adi-kuiper-gen:ref:`hardware-configuration-raspberry-pi`,
+substituting the following lines in **config.txt**.
 
 This brings up the file in the terminal. Scroll down until the line that
-begins with **“dtoverlay”** is found; then, whatever it currently is, change
+begins with ``dtoverlay`` is found; then, whatever it currently is, change
 it to:
 
 ::
@@ -124,15 +123,14 @@ it to:
 Running the Example Scripts using PyADI-IIO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`PyADI-IIO <pyadi-iio>` is a python abstraction module for ADI hardware 
-with IIO drivers to make them easier to use. This module provides device-specific 
-APIs built on top of the current libIIO python bindings. These interfaces try to 
-match the driver naming as much as possible without the need to understand the 
+:ref:`pyadi-iio` is a python abstraction module for ADI hardware with IIO
+drivers to make them easier to use. This module provides device-specific APIs
+built on top of the current libIIO python bindings. These interfaces try to
+match the driver naming as much as possible without the need to understand the
 complexities of libIIO and IIO.
 
 Follow the step-by-step procedure on how to install, configure, and set up
-PyADI-IIO and all necessary packages and modules found in 
-:ref:`pyadi-iio: Device Specific Python Interfaces for IIO Drivers <pyadi-iio>`.
+PyADI-IIO and all necessary packages and modules found in :ref:`pyadi-iio`.
 
 Hardware Configuration
 ----------------------
@@ -209,7 +207,7 @@ CN0556 Buck Mode Setup   CN0556 Boost Mode Setup
 #. Connect the EVAL-CN0556-EBZ on top of the EVAL-CN0554-RPIZ and Raspberry Pi 4
    combination based on the connections indicated below.
 
-   .. figure::cn0554_cn0556_rev_c.png
+   .. figure:: cn0554_cn0556_rev_c.png
 
 #. Ensure that the jumper configuration at P1 and P5 is correct before powering
    on the device. See **Jumper Settings** to verify the
@@ -276,9 +274,10 @@ Running the Buck Mode Example Script
    directory.
 #. Run the example script using the command:
 
-   ::
+   .. shell::
 
-      ~/pyadi-iio/examples/cn0556_examples $ python cn0556_example_buck.py 
+      ~/pyadi-iio/examples/cn0556_examples
+      $ python cn0556_example_buck.py
 
 #. The details of the current and voltage set at the output will be displayed.
    
@@ -342,6 +341,7 @@ Running the Boost Mode Example script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip:: 
+
    By default, the example script sets the board into Boost Mode and sets its
    parameters to its maximum values. You may try to adjust the values after this test.
    Refer to the table of ranges appropriate for each control function.
@@ -360,9 +360,10 @@ Running the Boost Mode Example script
    directory.
 #. Run the example script using the command:
 
-   ::
+   .. shell::
 
-      ~/pyadi-iio/examples/cn0556_examples $ python cn0556_example_boost.py 
+      ~/pyadi-iio/examples/cn0556_examples
+      $ python cn0556_example_boost.py
 
 #. The details of the current and voltage set at the output will be displayed.
    
@@ -393,7 +394,7 @@ voltage at the input and output terminals. The summary of the CN0556 functions
 for **Boost Mode** can be found below:
 
 .. csv-table:: Boost Mode Functions Summary
-    :file: boost.csv
+   :file: boost.csv
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
