@@ -82,44 +82,76 @@ Arduino Interface
 All connector pinouts for the :adi:`EVAL-CN0579-ARDZ <CN0579>` are described in
 the table below.
 
-==================== ======= =============== ===================
-Connector            Pin No. Pin Name        CN0579 Pin Function
-==================== ======= =============== ===================
-Arduino DIO 1 (P12)  1       SCL             SCL
-\                    2       SDA             SDA
-\                    3       AREF            NC (Not connected)
-\                    4       GND             GND
-\                    5       13 / SCLK       SCLK
-\                    6       12 / MISO       MISO
-\                    7       11 / PWM / MOSI MOSI
-\                    8       10 / PWM / CS   CS_ADC
-\                    9       9 / PWM         DRDY_N
-\                    10      8               DCLK
-Arduino DIO 0 (P14)  1       7               DOUT0
-\                    2       6 / PWM         DOUT1
-\                    3       5 / PWM         DOUT2
-\                    4       4               DOUT3
-\                    5       3 / PWM         SHUTDOWN_N
-\                    6       2               RESET_N
-\                    7       TX              NC
-\                    8       RX              NC
-Arduino Analog (P13) 1       AIN0            NC
-\                    2       AIN1            NC
-\                    3       AIN2            NC
-\                    4       AIN3            NC
-\                    5       AIN4            NC
-\                    6       AIN5            NC
-Arduino Power (P11)  1       NC              NC
-\                    2       IOREF           IOREF
-\                    3       RESET           NC
-\                    4       3.3 V           3V3
-\                    5       5V              5V
-\                    6       GND             GND
-\                    7       GND             GND
-\                    8       Vin             NC
-==================== ======= =============== ===================
++----------------------+---------+-----------------+---------------------+
+| Connector            | Pin No. | Pin Name        | CN0579 Pin Function |
++======================+=========+=================+=====================+
+| Arduino DIO 1 (P12)  | 1       | SCL             | SCL                 |
+|                      +---------+-----------------+---------------------+
+|                      | 2       | SDA             | SDA                 |
+|                      +---------+-----------------+---------------------+
+|                      | 3       | AREF            | NC (Not connected)  |
+|                      +---------+-----------------+---------------------+
+|                      | 4       | GND             | GND                 |
+|                      +---------+-----------------+---------------------+
+|                      | 5       | 13 / SCLK       | SCLK                |
+|                      +---------+-----------------+---------------------+
+|                      | 6       | 12 / MISO       | MISO                |
+|                      +---------+-----------------+---------------------+
+|                      | 7       | 11 / PWM / MOSI | MOSI                |
+|                      +---------+-----------------+---------------------+
+|                      | 8       | 10 / PWM / CS   | CS_ADC              |
+|                      +---------+-----------------+---------------------+
+|                      | 9       | 9 / PWM         | DRDY_N              |
+|                      +---------+-----------------+---------------------+
+|                      | 10      | 8               | DCLK                |
++----------------------+---------+-----------------+---------------------+
+| Arduino DIO 0 (P14)  | 1       | 7               | DOUT0               |
+|                      +---------+-----------------+---------------------+
+|                      | 2       | 6 / PWM         | DOUT1               |
+|                      +---------+-----------------+---------------------+
+|                      | 3       | 5 / PWM         | DOUT2               |
+|                      +---------+-----------------+---------------------+
+|                      | 4       | 4               | DOUT3               |
+|                      +---------+-----------------+---------------------+
+|                      | 5       | 3 / PWM         | SHUTDOWN_N          |
+|                      +---------+-----------------+---------------------+
+|                      | 6       | 2               | RESET_N             |
+|                      +---------+-----------------+---------------------+
+|                      | 7       | TX              | NC                  |
+|                      +---------+-----------------+---------------------+
+|                      | 8       | RX              | NC                  |
++----------------------+---------+-----------------+---------------------+
+| Arduino Analog (P13) | 1       | AIN0            | NC                  |
+|                      +---------+-----------------+---------------------+
+|                      | 2       | AIN1            | NC                  |
+|                      +---------+-----------------+---------------------+
+|                      | 3       | AIN2            | NC                  |
+|                      +---------+-----------------+---------------------+
+|                      | 4       | AIN3            | NC                  |
+|                      +---------+-----------------+---------------------+
+|                      | 5       | AIN4            | NC                  |
+|                      +---------+-----------------+---------------------+
+|                      | 6       | AIN5            | NC                  |
++----------------------+---------+-----------------+---------------------+
+| Arduino Power (P11)  | 1       | NC              | NC                  |
+|                      +---------+-----------------+---------------------+
+|                      | 2       | IOREF           | IOREF               |
+|                      +---------+-----------------+---------------------+
+|                      | 3       | RESET           | NC                  |
+|                      +---------+-----------------+---------------------+
+|                      | 4       | 3.3 V           | 3V3                 |
+|                      +---------+-----------------+---------------------+
+|                      | 5       | 5V              | 5V                  |
+|                      +---------+-----------------+---------------------+
+|                      | 6       | GND             | GND                 |
+|                      +---------+-----------------+---------------------+
+|                      | 7       | GND             | GND                 |
+|                      +---------+-----------------+---------------------+
+|                      | 8       | Vin             | NC                  |
++----------------------+---------+-----------------+---------------------+
 
-.. tip:: 
+.. tip::
+
     To achieve reasonable noise measurements, the piezo
     vibration sensor must be stabilized using either an active shaker table, which
     cancels environmental vibrations; or anchored to a massive object, which makes
@@ -200,8 +232,8 @@ The following is the list of items needed in order to replicate this demo.
 
 **Software**
 
-- :dokuwiki:`ADI Kuiper Image </resources/tools-software/linux-software/kuiper-linux>`
-- `IIO Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__
+- :ref:`kuiper`
+- :ref:`iio-oscilloscope`
 
 Hardware Setup
 ~~~~~~~~~~~~~~
@@ -210,7 +242,7 @@ Hardware Setup
 
 #. Mount the EVAL-CN0579-ARDZ onto the DE10-Nano.
 #. Connect a monitor to the DE10-Nano using an HDMI cable.
-#. Connect a USB OTG adapter to the DE10-Nano's USB OTG port. If additional USB ports 
+#. Connect a USB OTG adapter to the DE10-Nano's USB OTG port. If additional USB ports
    are needed, attach a USB hub to the adapter.
 #. Connect your keyboard and mouse to the USB OTG adapter or USB hub.
 #. Plug in the DE10-Nano power supply.
@@ -235,8 +267,7 @@ To prepare the SD card for the DE10-Nano board:
 Download and Install IIO Oscilloscope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Download the latest `IIO Oscilloscope
-   release <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__
+#. Download the latest :ref:`iio-oscilloscope`
    from GitHub and install it on your PC. (You may need to right-click the
    installer and run as ``Elevated`` in order to get it to install.)
 #. Once microSD card has been imaged, safely remove the hardware from the SD
@@ -265,7 +296,7 @@ The following is the list of items needed in order to replicate this demo.
 **Software**
 
 - `ADI Kuiper Image for CN0579 <https://swdownloads.analog.com/cse/kuiper/cn0540.tar.gz>`__
-- `IIO Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__
+- :ref:`iio-oscilloscope`
 
 Hardware Setup
 ~~~~~~~~~~~~~~
@@ -273,7 +304,7 @@ Hardware Setup
 .. figure:: 579_coraz7_setup.png
 
 #. Mount the EVAL-CN0579-ARDZ on the Cora Z7.
-#. Connect ethernet cable on the Cora Z7 and on your PC.
+#. Connect the Ethernet cable on the Cora Z7 and on your PC.
 #. Power up Cora Z7 by plugging its power supply or connecting microUSB.
 #. Wait for the system to boot up. Upon boot up, open command terminal or any similar applications like PuTTy to communicate with the board.
 
@@ -288,14 +319,13 @@ To prepare the SD card for the DE10-Nano board:
 #. :dokuwiki:`Download ADI Kuiper Image </resources/tools-software/linux-software/kuiper-linux>`
 #. Validate, format, and flash the SD Card
 
-      - :dokuwiki:`Format and flash the SD Card using Windows </resources/tools-software/linux-software/zynq_images/windows_hosts>`
-      - :dokuwiki:`Format and flash the SD Card using Linux </resources/tools-software/linux-software/zynq_images/linux_hosts>`
+   - :dokuwiki:`Format and flash the SD Card using Windows </resources/tools-software/linux-software/zynq_images/windows_hosts>`
+   - :dokuwiki:`Format and flash the SD Card using Linux </resources/tools-software/linux-software/zynq_images/linux_hosts>`
 
 Download and Install IIO Oscilloscope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Down the latest `IIO Oscilloscope
-   release <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__
+#. Download the latest :ref:`iio-oscilloscope`
    from Github, and install it on your PC. (You may need to right-click the
    installer, and run as ``Elevated`` in order to get it to install.)
 #. Once the microSD card has been imaged, safely remove the hardware from the SD
@@ -313,7 +343,7 @@ C#, Python, MATLAB, and others. Two easy examples that can be used with the
 :adi:`EVAL-CN0579-ARDZ <CN0579>` are:
 
 - :dokuwiki:`IIO Oscilloscope Installation Guide </resources/tools-software/linux-software/iio_oscilloscope>`
-- :ref:`Python (via Pyadi-iio) <pyadi-iio>`
+- :ref:`pyadi-iio`
 
 Connection
 ~~~~~~~~~~
@@ -328,11 +358,11 @@ context creation. The Libiio is a library for interfacing with IIO devices.
 
 .. admonition:: Download
 
-   Install the `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`__ 
+   Install the `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`__
    on your machine.
 
-The `iio_info </resources/tools-software/linux-software/libiio/iio_info>`__
-command is a part of the libIIO package that reports all IIO attributes.
+The :ref:`libiio iio_info` command is a part of the libIIO package that reports
+all IIO attributes.
 
 Upon installation, simply enter the command on the terminal command line to
 access it.
@@ -347,16 +377,16 @@ Open SSH Terminal Software (PuTTY, TeraTerm, or similar). The user should now
 start the PuTTY application and enter certain values in the configuration
 window. In the terminal, run:
 
-.. code-block:: console
+.. shell::
 
-   analog@analog:~$ iio_info -u ip:<ip_address>
+   $ iio_info -u ip:<ip_address>
 
 Using Command Terminal
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: console
+.. shell::
 
-   iio_info -s
+   $ iio_info -s
 
 Prompting this on the command terminal in your Windows PC will give you the 
 IP address to access the EVAL-CN0579-ARDZ.
@@ -365,9 +395,9 @@ IP address to access the EVAL-CN0579-ARDZ.
 
    ssh analog@<ip_address>
 
-.. code-block:: console
+.. shell::
 
-   analog@analog:~$ iio_info -u ip:<ip_address>
+   $ iio_info -u ip:<ip_address>
 
 IIO Commands
 ^^^^^^^^^^^^
@@ -376,26 +406,25 @@ There are different commands that can be used to manage the device being used.
 The :dokuwiki:`iio_attr </resources/tools-software/linux-software/libiio/iio_attr>`
 command reads and writes IIO attributes.
 
-.. code-block:: console
+.. shell::
 
-   analog@analog:~$ iio_attr [OPTION]...
+   $ iio_attr [OPTION]...
 
 **Example:**
 
 - To look at the context attributes, enter this code on the terminal:
 
-.. code-block:: console
+.. shell::
 
-   analog@analog:~$ iio_attr -a -C
+   $ iio_attr -a -C
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
-   
-   Make sure to download/update to the latest version of IIO Oscilloscope.
 
-   `Releases: <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__
+   Make sure to download/update to the latest version of IIO Oscilloscope
+   :git-iio-oscilloscope:`release <releases+>`.
 
 #. Once done with the installation or an update of the latest IIO Oscilloscope,
    open the application. The user needs to supply a URI, which will be used in
@@ -413,7 +442,7 @@ Below is the Debug panel wherein you can directly access
 the attributes of the device.
 
 .. figure:: 579_debug0.png
-   
+
 DMM Panel
 ^^^^^^^^^
 
@@ -421,15 +450,13 @@ Access the DMM panel to see the instantaneous reading of the ADC voltages.
 
 .. figure:: 579_dmm.png
 
-----
-
 Pyadi-IIO
 ~~~~~~~~~~
 
-:ref:`PyADI-IIO <pyadi-iio>` is a Python abstraction module for ADI hardware 
-with IIO drivers to make them easier to use. This module provides device-specific APIs 
-built on top of the current libIIO Python bindings. These interfaces try to match 
-the driver naming as much as possible without the need to understand the complexities 
+:ref:`pyadi-iio` is a Python abstraction module for ADI hardware
+with IIO drivers to make them easier to use. This module provides device-specific APIs
+built on top of the current libIIO Python bindings. These interfaces try to match
+the driver naming as much as possible without the need to understand the complexities
 of libIIO and IIO.
 
 Running the Example
@@ -444,9 +471,10 @@ machine, you are now ready to run Python script examples. In our case, run the
    inside the downloaded or cloned *pyadi-iio* directory.
 #. Run the example script using the command.
 
-   .. code-block:: console
+   .. shell::
 
-      /pyadi-iio/examples $ python3 cn0579_example.py
+      /pyadi-iio/examples
+      $ python3 cn0579_example.py
 
 The expected output should look like this:
 
@@ -502,4 +530,4 @@ Help and Support
 ~~~~~~~~~~~~~~~~
 
 For questions and more information about this product, connect with us through
-the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
+the Analog Devices :ez:`ez/reference-designs`.
