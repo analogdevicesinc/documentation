@@ -8,13 +8,7 @@ do not support booting directly from SD cards. Therefore the evaluation boards
 need to be bootstrapped over JTAG using a :adi:`ADI ICE-1000 or ICE-2000 JTAG
 debugger <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html>`.
 
-Phase 1: Download Release
--------------------------
-
-Navigate to the :git-br2-external:`br2-external releases page <releases+>` and
-download the appropriate `images-*.tar.xz` release archive that matches your hardware.
-
-Phase 2: JTAG & OpenOCD Setup
+JTAG & OpenOCD Setup
 -----------------------------
 
 To communicate with the board, you must build and run the ADI fork of OpenOCD.
@@ -59,116 +53,91 @@ Build OpenOCD
    $./configure
    $make -j$(nproc)
 
-.. note::
-   On Windows, the resulting ``openocd.exe`` can be run directly.
-
+*Note: On Windows, the resulting ``openocd.exe`` can be run directly.*
 
 Run OpenOCD
 ~~~~~~~~~~~
-Run ``openocd`` from the build directory.
 
-**Example Command:**
-
-For the ICE-1000 and EV-SC598-SOM run the following:
+Run ``openocd`` from the cloned repository. For the ICE-1000 and EV-SC598-SOM run the following:
 
 .. shell:: sh
 
     # Ensure you are inside the 'openocd' folder
     ~/openocd
-    $src/openocd -f ice1000.cfg \
+    $sudo src/openocd -f ice1000.cfg \
     $    -f adspsc59x_a55.cfg \
     $    --search tcl/ \
     $    --search tcl/interface/ \
     $    --search tcl/target/
 
-.. tip::
-   If you are using a different board, replace ``adspsc59x_a55.cfg`` with the configuration file from the table below.
+* Target (Cortex-A5): Use ``adspsc59x.cfg`` (e.g., SC594).
+* Target (Cortex-A55): Use ``adspsc59x_a55.cfg`` (e.g., SC598).
 
-.. list-table:: OpenOCD Target Configurations
-   :header-rows: 1
+*Note: The ``*_single_SHARC.cfg`` variants are for devices with only one SHARC core enabled (e.g., SC592).*
 
-   * - OpenOCD config
-     - Debug target
-     - Intended SoCs
-     - Supported SoM
-   * - ``adsp2183x.cfg``
-     - ADSP-218x DSP
-     - ADSP-2181, ADSP-2183
-     - ADSP21835W-EV-SOM
-   * - ``adspsc57x.cfg`` / ``adspsc57x_single_SHARC.cfg``
-     - Cortex-A5 + dual SHARC-XI
-     - ADSP-SC570, ADSP-SC571, ADSP-SC572, ADSP-SC573
-     - ADZS-SC573-EZLITE
-   * - ``adspsc58x.cfg`` / ``adspsc58x_single_SHARC.cfg``
-     - Cortex-A5 + dual SHARC-XI
-     - ADSP-SC582, ADSP-SC583, ADSP-SC584
-     - ADZS-SC584-EZLITE
-   * - ``adspsc59x.cfg`` / ``adspsc59x_single_SHARC.cfg``
-     - Cortex-A5 + dual SHARC-XI
-     - ADSP-SC592, ADSP-SC594
-     - EV-SC594-SOM
-   * - ``adspsc59x_a55.cfg``
-     - Cortex-A55
-     - ADSP-SC596, ADSP-SC598
-     - EV-SC598-SOM
-   * - ``adspsc83x.cfg``
-     - Cortex-M33
-     - ADSP-SC834, ADSP-SC835
-     - ADSPSC835W-EV-SOM
-
-Phase 3: Serial Console Setup
+Serial Console Setup
 -----------------------------
 
 A serial console is highly recommended for interacting with U-Boot and Linux.
 
-1. **Connect** the USB-to-UART cable to your PC.
-2. **Identify** the port:
+1. Connect a standard USB cable from your PC to the board's UART/Debug port.
+2. Identify the port
 
    * **Linux:** Check the ``by-id`` directory to find your unique device name.
 
-     .. shell:: sh
+   .. shell:: sh
 
-        $ls /dev/serial/by-id/
+      $ ls /dev/serial/by-id/
 
-   * **Windows:** Check **Device Manager > Ports** (look for ``COMx``).
+   On SC5xx systems, the console appears as a CP2102N USB-to-UART bridge with a unique serial number, for example:
 
-3. **Configure** your terminal.
+      .. shell:: sh
 
-   **Example with Minicom on Linux:**
+         $ tree /dev/serial/by-id
+         /dev/serial/by-id
+         ├── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_1e574c842d61ed1193564f8009472825-if00-port0 -> ../../ttyUSB1
+         └── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_8624ff6b1261ed11a8d3518009472825-if00-port0 -> ../../ttyUSB0
+
+   This naming is stable because the USB-UART bridge provides a unique serial number.
+
+   * **Windows:** Open Device Manager > Ports (COM & LPT). The SC5xx console appears as a Silicon Labs CP210x USB to UART Bridge with an assigned port such as COM3 or COM7. The COM number is stable as long as the adapter remains on the same USB port.
+
+3. Configure your terminal
+   Configure the serial terminal for 115200 baud, 8 data bits, no parity, 1 stop bit (8-N-1), and disable all flow control.
+
+   Example with Minicom(Linux):
 
    .. shell:: sh
 
       # Replace with your specific device path found above
       $sudo minicom -D /dev/serial/by-id/<your-device-name> -b 115200
 
-   **Settings:**
-   * **Baud:** ``115200``
-   * **Data/Parity/Stop:** ``8-N-1``
-   * **Flow Control:** ``None``
-
-Phase 4: Booting the System
+Booting the System
 ---------------------------
+
+Download Release
+~~~~~~~~~~~~~~~~~~
+
+Navigate to the :git-br2-external:`br2-external releases page <releases+>` and
+download the appropriate ``images-*.tar.xz`` release archive that matches your 
+hardware.
+
+Boot U-Boot Proper
+~~~~~~~~~~~~~~~~~~
 
 .. warning::
    **Check Boot Mode Switch (S1)**
 
-   Before powering on, locate the rotary switch labeled **S1 (Boot Mode Select)** on the board.
-   Ensure the arrow on the dial is pointing to position **0**.
-
-Boot U-Boot Proper
-~~~~~~~~~~~~~~~~~~
+   Before powering on, locate the rotary switch labeled "S1 (Boot Mode Select)" on the board.
+   Ensure the arrow on the dial is pointing to position "0".
 
 You need a multi-architecture GDB to load the bootloader.
 
 1.  **Install GDB:**
 
-    * Linux: ``sudo apt-get install -y gdb-multiarch``
-    * Windows: ``pacman -S mingw-w64-x86_64-gdb``
-
-   .. note::
-         **Fedora Users:**
-         The standard ``gdb`` package on Fedora and other RPM-based distributions already includes multi-architecture support. \
-         No additional installation is required if ``gdb`` is already present.
+   * Ubuntu/Debian: ``sudo apt-get install -y gdb-multiarch``
+   * Windows: ``pacman -S mingw-w64-x86_64-gdb``
+   * Fedora/RHEL: ``sudo dnf install -y gdb``
 
 2.  **Download Helper Script:**
 
@@ -180,16 +149,16 @@ You need a multi-architecture GDB to load the bootloader.
 
     .. shell:: sh
 
-       # Linux
+       # Ubuntu/Debian
        $gdb-multiarch -x u-boot.gdb
 
-       # Windows
+       # Fedora/RHEL/Windows
        $gdb -x u-boot.gdb
+   
+   *Note: The ``u-boot.gdb`` script expects the bootloader binaries to be present in the current directory with their default names (``u-boot-spl`` and ``u-boot``).*
 
 Boot Linux
 ~~~~~~~~~~
-
-Once the U-Boot prompt ``=>`` appears in your serial console:
 
 1.  **Start File Server:**
     Open a *new* terminal on your PC, go to your release directory, and run:
@@ -199,8 +168,9 @@ Once the U-Boot prompt ``=>`` appears in your serial console:
         $python3 -m http.server
 
 2.  **Find your PC IP Address:**
-    * **Linux:** Run ``hostname -I``
-    * **Windows:** Run ``ipconfig``
+
+    * Linux: Run ``ip a``
+    * Windows: Run ``ipconfig``
 
 3.  **Boot from U-Boot:**
     In the serial console, run the following (replace ``<your-pc-ip>`` with the IP you found above):
@@ -212,5 +182,4 @@ Once the U-Boot prompt ``=>`` appears in your serial console:
         => wget ${fdt_addr_r} <your-pc-ip>:/sc598-som-ezkit.dtb
         => booti ${kernel_addr_r} - ${fdt_addr_r}
 
-    .. note::
-       Make sure to use the ``.dtb`` file name that matches your board (e.g., ``sc598-som-ezkit.dtb``).
+   *Note: Make sure to use the ``.dtb`` file name that matches your board (e.g., ``sc598-som-ezkit.dtb``).*

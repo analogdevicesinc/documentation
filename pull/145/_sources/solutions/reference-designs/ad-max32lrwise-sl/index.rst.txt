@@ -181,8 +181,10 @@ motor.
 System Setup
 ------------
 
-PHASE 1: Hardware Setup
-~~~~~~~~~~~~~~~~~~~~~~~~
+.. _ad-max32lrwise-sl hardware-setup:
+
+Hardware Setup
+~~~~~~~~~~~~~~
 
 Note that this setup only applies for MAX32670-LR-ARDZ Base Board. Users may use
 a different base board or microcontroller, however the firmware built for this
@@ -195,11 +197,11 @@ Equipment Needed
 - One (1) :adi:`MAX32670-LR-ARDZ` Base Board
 - One (1) :adi:`EV-CATTLETAG-ARDZ` Sensor Node
 - One (1) MAX32625PICO Rapid Development Platform with 10-pin ribbon cable
-  with firmware image: max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin
-- One (1) CR123A Battery or any equivalent external DC power supply (+3V to +4.7V)
-  ** Note that this is not included in the kit**
+  with :git-max32625pico-firmware-images:`firmware image <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+- One (1) CR123A Battery or any equivalent external DC power supply (+3V to +4.7V).
+  **Note that this is not included in the kit**
 - One (1) Micro USB to USB cable
--  Host PC (Windows 10 or later)
+- Host PC (Windows 10 or later)
 
 .. figure:: hardware_setup.png
 
@@ -230,7 +232,7 @@ Equipment Needed
 **How to flash the firmware image in the MAX32625PICO**
 
 #. Download the firmware image:
-   `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`__
+   :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
 #. Do not connect the MAX32625PICO to the :adi:`MAX32670-LR-ARDZ` Base Board yet.
 #. Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
 #. Press the button on the MAX32625PICO. **(Do not release the button until the
@@ -251,14 +253,18 @@ Equipment Needed
 
    .. figure:: max32670-lr-ardz_to_maxpico.png
 
-Once you have completed this setup, proceed to PHASE 2 found in
-ADI Long Range Wireless Radio Software User Guide.
+**Once you have completed this setup, proceed to PHASE 2 found in**
+:dokuwiki:`ADI Long Range Wireless Radio Software User Guide </resources/eval/user-guides/longrangewirelessradio/software>`.
 
 Resources
 ---------
 
-- MAX32670-LR-ARDZ Base Board User Guide
-- EV-CATTLETAG-ARDZ Sensor User Guide
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :glob:
+
+   */index
 
 FAQs
 ----
@@ -290,10 +296,3 @@ Help and Support
 
 For questions and more information about this product, connect with us through
 the :ez:`Analog Devices Engineer Zone </>`.
-
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
-   :glob:
-
-   */index
