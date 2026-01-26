@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The objective of this activity is to explore the concepts of efficiency, power loss, temperature rise, and heat flow." name="description" />
+
+    <title>Activity: Efficiency, Power Loss, and Thermal Management &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=5d595293" />
+    <script async="async" src="../../../_static/app.umd.js?v=46a18818"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Learning! Tutorials, Workshops, Etc" href="../../../learning/index.html" />
+    <link rel="prev" title="Activity: The Wien Bridge Oscillator" href="../wien_bridge_oscillator/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Activity: Efficiency, Power Loss, and Thermal Management</a><ul>
+<li><a class="reference internal" href="#objective">Objective</a></li>
+<li><a class="reference internal" href="#safety">Safety</a></li>
+<li><a class="reference internal" href="#workshop-slide-deck">Workshop Slide Deck</a></li>
+<li><a class="reference internal" href="#background">Background:</a></li>
+<li><a class="reference internal" href="#materials">Materials</a></li>
+<li><a class="reference internal" href="#thermal-resistance-primer">Thermal Resistance Primer</a></li>
+<li><a class="reference internal" href="#procedure-lt3080-linear-regulator">Procedure: LT3080 Linear Regulator</a></li>
+<li><a class="reference internal" href="#procedure-ltm8067-isolated-flyback-dc-dc-converter">Procedure: LTM8067 Isolated Flyback DC/DC Converter</a></li>
+<li><a class="reference internal" href="#questions">Questions</a></li>
+<li><a class="reference internal" href="#further-reading">Further Reading</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFWD-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16-1" id="toctree-collapse-13-16-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17-1" id="toctree-collapse-13-17-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-17-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19-1" id="toctree-collapse-13-19-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20-1" id="toctree-collapse-13-20-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-20-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Engineering University Program</a></li><li><a href="../index.html">Active Learning: Student-oriented Lab Exercises</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="activity-efficiency-power-loss-and-thermal-management">
+<h1>Activity: Efficiency, Power Loss, and Thermal Management<a class="headerlink" href="#activity-efficiency-power-loss-and-thermal-management" title="Link to this heading"></a></h1>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>The objective of this activity is to explore the concepts of efficiency, power
+loss, temperature rise, and heat flow.</p>
+</section>
+<section id="safety">
+<h2>Safety<a class="headerlink" href="#safety" title="Link to this heading"></a></h2>
+<p>This experiment deals with power electronics, and while the voltages are low,
+and power is generally less than a few watts, devices and heat sinks can get
+hot, and if something goes wrong, parts can fail unexpectedly. WEAR EYE
+PROTECTION, and DON’T TOUCH circuits when they are running, and wait for them
+to cool down after shutting off power.</p>
+</section>
+<section id="workshop-slide-deck">
+<h2>Workshop Slide Deck<a class="headerlink" href="#workshop-slide-deck" title="Link to this heading"></a></h2>
+<p>A slide deck is provided as a companion to this exercise, and can be used to
+help in presenting this material in classroom, lab setting, or in hands-on
+workshops.</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/Workshop_Efficiency_Power_Loss.pptx"><code class="xref download docutils literal notranslate"><span class="pre">Efficiency</span> <span class="pre">and</span> <span class="pre">Power</span> <span class="pre">Loss</span> <span class="pre">Slide</span> <span class="pre">Deck</span></code></a></p>
+</div>
+</section>
+<section id="background">
+<h2>Background:<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<p>All circuits require power. A smart phone is a close-to-home example; it is
+compact, reliable (hopefully) and performs an astonishing array of functions.
+Electric cars, network server blades, avionics, your laptop computer, and your
+microwave oven, all require power. And a common theme with most modern
+electronics is that powering them is not getting any easier - requirements on
+voltage accuracy, current capacity, size, cost, are all being pushed further
+and further. But no power conversion circuit is perfect, some power will be
+lost in the process, and it is this lost power, and what do do with it, that
+will be explored in this lab.</p>
+<p>When thinking about power supplies, the term “efficiency” often one of the
+first parameter that comes to mind. And this is one way of comparing power
+supplies, and is certainly important. But the idea of power loss is often a
+more practical metric to keep in the forefront of your mind. Why? Consider two
+laptop chargers, one is 85% efficient and the other is 90% efficient, which are
+typical numbers. While paying a little more for the extra bit of energy
+required for the 5% less efficient unit might be annoying, it’s insignificant
+compared to what it costs to run an air conditioner (or electric oven, etc.)
+The real annoyance is how hot the charger gets; the 85% efficient supply
+dissipates 50% more power, and the temperature rise will be 1.5X as much above
+ambient. Have you ever left a laptop charger on your couch, and somehow a
+pillow found its way on top of it as shown in
+<a class="reference internal" href="#fig-cozy-laptop-charger"><span class="std std-numref">Figure 1</span></a>? That extra power makes a BIG difference!</p>
+<figure class="align-center" id="id3">
+<span id="fig-cozy-laptop-charger"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/Cozy_Laptop_Charger.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/Cozy_Laptop_Charger.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/Cozy_Laptop_Charger.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Common Laptop Charger Situation</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Here on Earth, there is the luxury of air to carry heat away from stuff that
+gets hot. What about a space application? Or even an avionic application, where
+air may have a fraction of its ability to move heat that it has at sea level?
+That’s why the difference between a 99% efficient power supply and a 98%
+efficient supply can be tremendously important - the 98% efficient supply has
+double the power loss; twice as much heat must be carried away from the
+application, and in space, thermal radiation is the only way.</p>
+<p>Whether the amount of power lost from a circuit is large or small, one thing is
+true - it WILL escape to the environment. It will escape by increasing the
+temperature of the circuit until the heat flowing out of the circuit is equal
+to the electrical power being lost, and the goal is to make sure that when this
+equilibrium is met, the circuit is still functioning properly.</p>
+<p>With that in mind, let’s do some experiments, and try not to burn our fingers
+in the process.</p>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ADALM2000 Active Learning Module OR</p></li>
+<li><p>2 multimeters (minimum), preferably with a 1A current range</p></li>
+<li><p>Solder-less breadboard</p></li>
+<li><p>Jumper wires</p></li>
+<li><p>PC/Mac running LTspice and Scopy</p></li>
+<li><p>0-24V, 1Amp, Adjustable Power supply</p></li>
+<li><p>LT3080 LDO regulator</p></li>
+<li><p>LTM8067 Isolated Switching Regulator (on BOB)</p></li>
+<li><p>6.2Ω, 10W power resistor</p></li>
+<li><p>TO-220 heat sink, Aavid 7021 or similar, or various sizes of double-sided,
+copper-clad PCB material.</p></li>
+<li><p>Heat sink compound / thermal grease</p></li>
+<li><p>AD592 Temperature Sensor</p></li>
+<li><p>Optional: Infrared thermometer</p></li>
+</ul>
+</section>
+<section id="thermal-resistance-primer">
+<h2>Thermal Resistance Primer<a class="headerlink" href="#thermal-resistance-primer" title="Link to this heading"></a></h2>
+<p>Why don’t Linear Regulators have an efficiency number proudly displayed on the
+front page of the datasheet, like switching regulators? It could be because the
+relevant laws of physics are intuitively understood by most engineers using
+these parts - Current through any “black box”, multiplied by the voltage drop,
+equals power that will leave the box somehow. In the case of an LDO regulator,
+that power leaves as heat. (If the “black box” were an LED, some of that power
+would leave as light, if it were a motor, the power might leave as mechanical
+power through the rotating shaft.) And if the input supply to an LDO regulator
+varies widely, the efficiency will also vary widely - it could be near 100%
+when the input supply is just a little bit higher than the output voltage, or
+10% or less, if the input is 12V and the output is 1.2V. But there are
+definitely situations where linear regulators are the right tool for the job.
+(We’ll save that discussion for later.)</p>
+<p>Before even starting to build any circuitry, we know that we’re going to have
+to get rid of some heat. The LT3080 regulator from the parts kit is in the very
+common T0-220 package, with a tab for mounting to a heat sink as shown in
+<a class="reference internal" href="#fig-lt3080-pinout"><span class="std std-numref">Figure 2</span></a>.</p>
+<figure class="align-default" id="id4">
+<span id="fig-lt3080-pinout"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/wiki_LT3080_pinout.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/wiki_LT3080_pinout.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">LT3080 package, pinout, thermal resistance</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>This shows the physical layout of the part, pinout, and three parameters,
+defined as follows:</p>
+<p><strong>T JMAX</strong> - Maximum Junction Temperature</p>
+<p><strong>Θ JC</strong> - Thermal resistance from Junction to Case</p>
+<p><strong>Θ JA</strong> - Thermal resistance from Junction to Ambient</p>
+<p>Further defining terms:</p>
+<p><strong>Thermal Resistance</strong> - Resistance to the flow of heat, expressed as the
+temperature rise due to a given power flowing through the resistance.</p>
+<p><strong>T J</strong> - Junction Temperature - The temperature of the “important part” of
+the silicon die. The junction must be kept below a certain temperature in order
+for the part to function properly. It is mounted to the metal tab inside the
+part, and encased in plastic.</p>
+<p><strong>T AMBIENT</strong> - Ambient Temperature - the temperature of the environment, far
+away from the part.</p>
+<p><strong>T C</strong> - Case Temperature - Temperature of the interface between the package
+and heat sink or printed circuit board.</p>
+<p>These seemingly simple terms are in reality quite difficult to measure.
+Measuring “ambient” is not that bad; an appropriate thermometer can be used to
+measure the temperature of the thermal mass that the part is dumping heat into,
+which is often the air in the room. But what about the “case”? The case
+temperature is defined as the temperature of a large block of copper, to which
+the package is optimally mounted. It represents a theoretical minimum thermal
+resistance, not achievable in actual applications (for most device packages.)
+So while the top of the device’s package is literally part of the case, a
+measurement of its temperature is NOT the “case temperature”.</p>
+<p>This description from Vishay Application Note 827 illustrates this point: “For
+the MOSFET/heat sink assembly, a specially designed heat sink assembly of a
+copper block (4 in. x 4 in. x 0.75 in.) was used to simulate an infinite heat
+sink attached to the case of the TO-220 device.”</p>
+<p>Junction temperature is, as the name suggests, the temperature of the
+operational semiconductor junction in the device, which in reality may be many
+junctions in a complex circuit. And it is this temperature that must be kept
+below the maximum specified; if exceeded, the part is not guaranteed to
+function properly. But note that unless your device has a built-in temperature
+sensor (and some do), it is difficult to measure the junction temperature
+directly.</p>
+<p>Note that the maximum junction temperature can be well above the boiling point
+of water - too hot to touch. So using your finger to test if a circuit is cool
+enough is not only dangerous, it is completely inaccurate.</p>
+<p>So how are these numbers used? The objective is to keep the junction below the
+maximum allowed. So we can use knowledge of how much power is dissipated in the
+part (near the junction), and the thermal resistance to the air, to calculate
+how hot the junction will get.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[T_{J} = T_{AMBIENT} + P_{D} + Θ_{JA}\]</div>
+</div>
+<p>Where P<sub>D</sub> is the power dissipation.</p>
+<p>One very useful mental model is to think of thermal resistances as electrical
+resistances, such that:</p>
+<p>1°C/W = 1 Ω</p>
+<p>1W of dissipation = 1A of current being driven through the resistance</p>
+<p>1V = 1°C temperature rise across the resistance.</p>
+<p>Doing a quick calculation on the LT3080 in the TO-20 package, if the input
+voltage is 10V, output voltage is 5V, and the load current is 200mA, the power
+dissipated in the part is (10V - 5V) * 0.2A = 1W. This will cause a
+temperature rise of 40°C, so if the air in the room is 25C, the junction will
+heat up to approximately 65°C - well under the 125°C maximum (but hot enough
+to burn skin!) The electrical analogy is shown in <a class="reference internal" href="#fig-1w-temp-rise"><span class="std std-numref">Figure 3</span></a>,
+running a DC operating point simulation.</p>
+<figure class="align-default" id="id5">
+<span id="fig-1w-temp-rise"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_1W_temp_rise_sch.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_1W_temp_rise_sch.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Electrical model of thermal resistance, 1W dissipation.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Notice that Tjunction is 65 “volts”, which is 65C in the analogy.</p>
+<p>But what happens if the load current increases to 500mA? Now you have to get
+rid of 2.5W, which will cause a temperature rise of 100°C, pushing you right
+up to the maximum junction of 125°C, with no safety margin. This is shown in
+<a class="reference internal" href="#fig-2w5-temp-rise"><span class="std std-numref">Figure 4</span></a>.</p>
+<figure class="align-default" id="id6">
+<span id="fig-2w5-temp-rise"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_2W5_temp_rise_sch.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_2W5_temp_rise_sch.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Electrical model of thermal resistance, 2.5W dissipation.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>That doesn’t sound like a very high performance part, and the datasheet clearly
+says the part is capable of delivering 1.1A of current. So what is going on,
+given the Θ<sub>JA</sub> of 40°C/W? Here is the key point about datasheet Θ<sub>JA</sub> numbers:</p>
+<p>Θ<sub>JA</sub> is designed to be PESSIMISTIC. That is, it is purposely measured
+on a circuit board, with no extra copper to spread the heat, with no extra
+airflow. Almost ANYTHING that you do to spread heat will effectively lower Θ<sub>JA</sub> . <a class="reference internal" href="#fig-to-220-thermals"><span class="std std-numref">Figure 5</span></a> illustrates this for the DD-Pak
+package:</p>
+<figure class="align-default" id="id7">
+<span id="fig-to-220-thermals"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/wiki_TO-220_thermals.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/wiki_TO-220_thermals.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Table 5 from LT3080 datasheet</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>And note that while Θ<sub>JA</sub> is listed for the TO-220 package on page 2 of
+the datasheet, it’s not even mentioned here. Why? Because the TO-220 package is
+designed to be mounted to an external heat sink of some sort. It is possible to
+solder the back tab of the part to a circuit board, but you would normally use
+the DD-Pak in those situations (DD-Pak looks like a TO-220 with shorter leads
+and no tab.)</p>
+<p>The LT3080 in the parts kit is the TO-220 package version, and we’re not
+soldering it down, which means that we really ought to be using a heat sink.
+How does that affect our calculations? Luckily <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, the heat sink manufacturer
+will provide the other number we need: Θ<sub>CA</sub> - the thermal resistance
+from case to ambient. The datasheet for the Aavid 7021 heat sink provides the
+graph shown in <a class="reference internal" href="#fig-aavid-7021-thermals"><span class="std std-numref">Figure 6</span></a>:</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>This is not really luck, it’s an essential piece of data.</p>
+</aside>
+</aside>
+<figure class="align-default" id="id8">
+<span id="fig-aavid-7021-thermals"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/wiki_aavid_7021_thermals.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/wiki_aavid_7021_thermals.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Aavid 7021 Temperature rise and Thermal resistance.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>This shows the following:</p>
+<p>Θ<sub>CA</sub> is approximately 10°C/W in still air (2 Watts causes a 20°C
+temperature rise, from the graph).</p>
+<p>Θ<sub>CA</sub> decreases with airflow - by quite a bit - down to about 2.25°C/W
+at 800ft/minute (4.06m/s)</p>
+<p>This is reconcilable with table 5 above - the heat sink is a folded up piece of
+aluminum, with a total area of about 3060mm<sup>2</sup>, and a 2500mm<sup>2</sup>
+PC board has a thermal resistance of about 25°C/W. But the heat sink is all
+aluminum, and the PC board is copper foil, but it’s glued to fiberglass (a poor
+conductor of heat.) <a class="reference internal" href="#fig-aavid-7021-drawing"><span class="std std-numref">Figure 7</span></a> is a mechanical drawing of
+the part.</p>
+<figure class="align-default" id="id9">
+<span id="fig-aavid-7021-drawing"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/wiki_aavid_7021_drawing.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/wiki_aavid_7021_drawing.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Aavid 7021 diagram</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Let’s re-run the LTspice simulation one more time, with the Aavid 7021 heat
+sink’s thermal resistance, shown in <a class="reference internal" href="#fig-lt3080-2w5-temp-rise-w-sink"><span class="std std-numref">Figure 8</span></a>:</p>
+<figure class="align-default" id="id10">
+<span id="fig-lt3080-2w5-temp-rise-w-sink"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/wiki_LT3080_2W5_temp_rise_w_sink_sch.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/wiki_LT3080_2W5_temp_rise_w_sink_sch.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Electrical model of thermal resistance, 2.5W dissipation with heat sink.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The expected temperature rise is about 32.5°C, for a junction temperature of
+57.5°C</p>
+</section>
+<section id="procedure-lt3080-linear-regulator">
+<h2>Procedure: LT3080 Linear Regulator<a class="headerlink" href="#procedure-lt3080-linear-regulator" title="Link to this heading"></a></h2>
+<p>Refer to the circuit shown in <a class="reference internal" href="#fig-lt3080-sch"><span class="std std-numref">Figure 9</span></a> below.</p>
+<figure class="align-default" id="id11">
+<span id="fig-lt3080-sch"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_schematic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_schematic.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">LT3080 schematic</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The LTspice file is set up to sweep the input voltage from 5V to 12V and plot
+input power, output power, and efficiency. Results are shown in
+<a class="reference internal" href="#fig-lt3080-efficiency"><span class="std std-numref">Figure 10</span></a> below, with the red trace representing
+efficiency.</p>
+<figure class="align-center" id="id12">
+<span id="fig-lt3080-efficiency"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_efficiency.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_efficiency.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_efficiency.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">LT3080 LTspice simulation</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>As expected, efficiency is relatively high (about 66%) when the input voltage
+(shown in green) is low. As the input voltage increases, the power dissipation
+in the LT3080 (blue) increases, and efficiency decreases (to about 28% when the
+input voltage is 12V). Results of this simulation will reflect reality very
+accurately. The reason is that the loss mechanisms are straightforward - power
+dissipations are simply DC currents multiplied by DC voltages.</p>
+<figure class="align-default" id="id13">
+<span id="fig-lt3080-bb"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/lt3080_bb.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/lt3080_bb.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">LT3080 Breadboard connections</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Construct the circuit on a solder-less breadboard as shown in
+<a class="reference internal" href="#fig-lt3080-bb"><span class="std std-numref">Figure 11</span></a>, keeping the following in mind:</p>
+<p>Mount the LT3080 to the heat sink first, with a small drop of heat sink
+compound between the package and heat sink. Carefully twist the LT3080’s leads
+90 degrees such that they line up with the breadboard’s columns. This is to
+preserve the springiness of the breadboard’s contacts. Note that the SET
+resistor is three 1M resistors in parallel. WARNING: if the SET resistors lose
+contact, the output voltage will increase to its maximum, and the 6.2Ω
+resistor will get very hot!</p>
+<p>Also, there are several options for measuring voltages and currents. Input
+voltage and current can be measured with multimeters set to appropriate voltage
+and current ranges, or, can be read directly from the power supply if it
+includes an accurate voltmeter and current meter. Output current can either be
+measured directly with a multimeter, or calculated, by first measuring the
+actual resistance of the load resistor with a multimeter and dividing the
+measured output voltage by the resistance. (The resistor in the parts kit has a
+10% tolerance, so it should be measured first.) Input and output voltages can
+also be measured with the ADALM2000 and Scopy running in voltmeter mode, or
+with a multimeter. Connections are shown in <a class="reference internal" href="#fig-lt3080-breadboard"><span class="std std-numref">Figure 12</span></a>.</p>
+<figure class="align-center" id="id14">
+<span id="fig-lt3080-breadboard"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_breadboard.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_breadboard.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LT3080_breadboard.jpg" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Overhead view</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Things are about to get a bit warm - too warm to touch. So we need a way of at
+least getting some idea of HOW warm without getting burned. The AD592
+temperature sensor provides an easy way to do this; schematic shown in
+<a class="reference internal" href="#fig-ad592-circuit"><span class="std std-numref">Figure 13</span></a>.</p>
+<figure class="align-default" id="id15">
+<span id="fig-ad592-circuit"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/AD592_circuit.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/AD592_circuit.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">AD592 Thermometer Circuit</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The AD592 leads can be extended, and the middle lead is not connected so it can
+be used to provide extra support as shown in <a class="reference internal" href="#fig-ad592-temp-sensor"><span class="std std-numref">Figure 14</span></a>.</p>
+<figure class="align-center" id="id16">
+<span id="fig-ad592-temp-sensor"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/AD592_temperature_sensor.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/AD592_temperature_sensor.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/AD592_temperature_sensor.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">AD592 Connections</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>A small rubber band can then be used to hold the sensor against the top surface
+of the LT3080 as shown in <a class="reference internal" href="#fig-ad592-mounting"><span class="std std-numref">Figure 15</span></a>. Use a tiny drop of
+thermal grease between the sensor and top of the LT3080 package.</p>
+<figure class="align-center" id="id17">
+<span id="fig-ad592-mounting"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/AD592_mounting.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/AD592_mounting.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/AD592_mounting.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">AD592 mounting</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>It was mentioned above that the top of the “case” is not truly a measurement of
+the case temperature - but it turns out that the temperature of the top of the
+case can be used to approximate the temperature of the junction - which is
+difficult to measure directly. Application note 834 from Vishay:
+<a class="icon link reference external" href="https://www.vishay.com/docs/69993/an834.pdf" target="_blank">https://www.vishay.com/docs/69993/an834.pdf</a> describes the relationship between
+the measured temperature rise at the top of a package to junction temperature
+rise by the following formula:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[T_{j}{rise} = k * T_{top} rise\]</div>
+</div>
+<p>With typical k values of 1.18 for DDPAK package (similar to TO-220) So while we
+don’t have actual measurements for the LT3080, we can assume that the
+temperature rise of the die is about 20% greater than the temperature at the
+top package surface, measured with an AD592, small thermocouple, or infrared
+thermometer.</p>
+<p>Power up the circuit and fill out the following data <a class="reference internal" href="#tab-lt3080"><span class="std std-numref">Table 1</span></a>:</p>
+<div class="table-wrapper grid docutils container" id="id18">
+<span id="tab-lt3080"></span><span id="tab-lt3080"></span><table class="grid docutils align-default" id="id18">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">LT3080 Data Table</span><a class="headerlink" href="#id18" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Input Voltage</p></th>
+<th class="head"><p>Output Voltage</p></th>
+<th class="head"><p>Input Current</p></th>
+<th class="head"><p>Output Current</p></th>
+<th class="head"><p>LT3080 pwr dissipation</p></th>
+<th class="head"><p>Load pwr dissipation</p></th>
+<th class="head"><p>Efficiency</p></th>
+<th class="head"><p>Temperature rise</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5V</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>10V</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>⠀</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note the relationship between LT3080 power dissipation, efficiency, and
+temperature rise.</p>
+</section>
+<section id="procedure-ltm8067-isolated-flyback-dc-dc-converter">
+<h2>Procedure: LTM8067 Isolated Flyback DC/DC Converter<a class="headerlink" href="#procedure-ltm8067-isolated-flyback-dc-dc-converter" title="Link to this heading"></a></h2>
+<p>Next, we’ll explore the efficiency and thermal performance of the LTM8067
+Isolated flyback module. We’re not interested in the fact that it’s isolated
+(meaning, output and input ground terminals are independent) or that it is a
+module (all components encased in a single package). We are interested in the
+fact that it is a switching converter, which is more efficient (and loses less
+power to the environment) than a linear regulator, at least under most
+circumstances. The LTM8067 in the parts kit comes mounted to a breakout board
+as shown in <a class="reference internal" href="#fig-ltm8067-bob"><span class="std std-numref">Figure 16</span></a>, with a potentiometer that allows the
+output voltage to be adjusted from 3V to 15V.</p>
+<figure class="align-default" id="id19">
+<span id="fig-ltm8067-bob"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_bob.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_bob.png" />
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">LTM8067 Breakout Board</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The block diagram from the datasheet shows a basic isolated flyback circuit as
+shown in <a class="reference internal" href="#fig-ltm8067-block-diagram"><span class="std std-numref">Figure 17</span></a>. Without going into details, one
+key point is worth worth noting: unlike the pass transistor in the LT3080, The
+MOSFET in the LTM8067 is either off completely, or on completely, operating as
+a switch. This means that very little power is dissipated in the transistor.
+Furthermore, the resistance of the transformer windings is designed to be as
+small as possible, also resulting in minimal power dissipation. The Schottky
+diode will necessarily have some forward drop, usually about 0.4V, so that is
+one loss mechanism that we can predict with some accuracy. For example, if the
+load current is 250mA, the diode will dissipate 0.1W as heat. But that’s still
+relatively small, compared to the dissipation in an LT3080 under some
+circumstances.</p>
+<figure class="align-default" id="id20">
+<span id="fig-ltm8067-block-diagram"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_block_diagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">LTM8067 Block Diagram.</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Setup for this experiment is straightforward; the LTM8067 BOB has four pairs of
+pins, and the pins of each pair are the same node. Note that with the
+adjustment potentiometer on the left:</p>
+<ul class="simple">
+<li><p>Input positive is at the top left corner</p></li>
+<li><p>Input ground is at the lower left corner</p></li>
+<li><p>Output positive is bottom center</p></li>
+<li><p>Output negative is top center.</p></li>
+</ul>
+<p>Also note that the output current capability of the LTM8067 varies with input
+voltage as shown in <a class="reference internal" href="#fig-ltm8067-iout-vs-vin"><span class="std std-numref">Figure 18</span></a>:</p>
+<figure class="align-default" id="id21">
+<span id="fig-ltm8067-iout-vs-vin"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_iout_vs_vin.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_iout_vs_vin.png" />
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">LTM8067 Output Current vs. Input Voltage</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Even with the BOB set to the minimum output of 3V, the 6.2 Ω power resistor
+will draw 440mA, requiring about 20V input voltage. Borrow a neighbor’s 6.2Ω
+resistor and connect in series with your for a total load resistance of 13.6Ω,
+as shown in <a class="reference internal" href="#fig-ltm8067-schematic"><span class="std std-numref">Figure 19</span></a>.</p>
+<figure class="align-default" id="id22">
+<span id="fig-ltm8067-schematic"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_schematic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_schematic.png" />
+<figcaption>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">LTM8067 Schematic</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Simulations of switching regulators are not as straightforward. Some aspects of
+the circuit’s operation are modeled well - such as the control loop dynamics,
+and instantaneous voltages and currents. However, power loss mechanisms are not
+well modeled, so it is better to refer to the part’s datasheet for measured
+results. The LTM8067 LTspice simulation is set up to show the turn-on transient
+waveforms by default, shown in <a class="reference internal" href="#fig-ltm8067-waveform"><span class="std std-numref">Figure 20</span></a>. The green trace
+is the output voltage, and the red trace is input current - notice that current
+is drawn in “chunks” from the source, due to switching nature of the module.</p>
+<figure class="align-center" id="id23">
+<span id="fig-ltm8067-waveform"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_waveform.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_waveform.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_waveform.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 20 </span><span class="caption-text">LTM8067 Turn-on Transient</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>However, we can still try extracting efficiency from the LTspice simulation.
+Disable the startup transient SPICE directives (right-click, set to “Comment”)
+and enable the efficiency SPICE directives (right-click, set to “SPICE
+directive”). Re-run the simulation, then view the SPICE error log. Results are
+shown in <a class="reference internal" href="#fig-ltm8067-efficiency"><span class="std std-numref">Figure 21</span></a> below</p>
+<figure class="align-default" id="id24">
+<span id="fig-ltm8067-efficiency"></span><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_efficiency.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_efficiency.png" />
+<figcaption>
+<p><span class="caption-number">Figure 21 </span><span class="caption-text">LTM8067 Efficiency(%) vs Input Voltage Simulation that MUST be Compared to
+Datasheet Curves</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>(Comparing with datasheet figure “Efficiency vs Load Current, VOUT = 3.3V”
+reveals that LTspice is optimistically high.)</p>
+<p>Construct the circuit on a solder-less breadboard according to
+<a class="reference internal" href="#fig-ltm8067-bb"><span class="std std-numref">Figure 22</span></a>.</p>
+<figure class="align-default" id="id25">
+<span id="fig-ltm8067-bb"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/ltm8067_bb.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/ltm8067_bb.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/ltm8067_bb.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 22 </span><span class="caption-text">LTM8067 Breadboard Circuit</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>As with the LT3080 circuit, construction details matter, refer to
+<a class="reference internal" href="#fig-ltm8067-breadboard"><span class="std std-numref">Figure 23</span></a>.</p>
+<figure class="align-default" id="id26">
+<span id="fig-ltm8067-breadboard"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_breadboard.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_breadboard.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/template_spi_engine/docs/university/active_learning/efficiency_power_loss/LTM8067_breadboard.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 23 </span><span class="caption-text">LTM8067 Construction and Connection Details</span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Power up the circuit and fill out the following data in <a class="reference internal" href="#tab-ltm8067"><span class="std std-numref">Table 2</span></a>:</p>
+<div class="table-wrapper grid docutils container" id="id27">
+<span id="tab-ltm8067"></span><span id="tab-ltm8067"></span><table class="grid docutils align-default" id="id27">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">LTM8067 Data Table</span><a class="headerlink" href="#id27" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Input Voltage</p></th>
+<th class="head"><p>Output Voltage</p></th>
+<th class="head"><p>Input Current</p></th>
+<th class="head"><p>Output Current</p></th>
+<th class="head"><p>LTM8067 pwr dissipation</p></th>
+<th class="head"><p>Load pwr dissipation</p></th>
+<th class="head"><p>Efficiency</p></th>
+<th class="head"><p>Temperature rise</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5V</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>10V</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>⠀</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note the relationship between LTM8067 power dissipation, efficiency, and
+temperature rise.</p>
+</section>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Link to this heading"></a></h2>
+<p>How does the LTM8067 efficiency, power loss, and temperature rise compare to
+the LT3080?</p>
+<p>The temperature rise vs. heat dissipated curve for the Aavid heat sink is
+slightly curved - it appears to have a lower thermal resistance as more heat is
+dissipated. Why?</p>
+<div class="admonition-download-resources admonition">
+<p class="admonition-title">Download Resources:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/DownGit/#/home?url=https://github.com/analogdevicesinc/education_tools/tree/master/m2k/fritzing/efficency_power_loss_bb" target="_blank">Efficiency and Power Loss Fritzing files</a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/DownGit/#/home?url=https://github.com/analogdevicesinc/education_tools/tree/master/m2k/ltspice/efficency_power_loss_ltspice" target="_blank">Efficiency and Power Loss LTSpice files</a></p></li>
+</ul>
+</div>
+</section>
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading"></a></h2>
+<p>Using .meas and .step commands to calculate efficiency in LTspice:</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/technical-articles/ltspice-using-meas-and-step-commands-to-calculate-efficiency.html" target="_blank">LTspice: Using .MEAS and .STEP Commands to Calculate Efficiency</a></p></li>
+<li><p><strong>Return to Lab Activity</strong> <a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/labs" target="_blank">Table of Contents</a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../wien_bridge_oscillator/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Activity: The Wien Bridge Oscillator</a>
+    <a href="../../../learning/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Learning! Tutorials, Workshops, Etc</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
