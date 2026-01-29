@@ -9,12 +9,11 @@ Feather-to-PMOD Interposer Hardware User Guide
 Overview
 --------
 
-The :adi:`FTHR-PMD-INTZ` is an
-add-on adapter board especially built for the MAXIM MCU boards. Maxim
-Feather Boards, namely the :adi:`MAX32630FTHR`, :adi:`MAX32650FTHR`, 
-:adi:`MAX32655FTHR`, :adi:`MAX32666FTHR`, and :adi:`MAX78000FTHR`, 
-are very small form factors called “feathers”, and they require 
-special connectors to be used with other Pmod boards.
+The :adi:`FTHR-PMD-INTZ` is an add-on adapter board especially built for the
+MAXIM MCU boards. Maxim Feather Boards, namely the :adi:`MAX32630FTHR`,
+:adi:`MAX32650FTHR`, :adi:`MAX32655FTHR`, :adi:`MAX32666FTHR`, and
+:adi:`MAX78000FTHR`, are very small form factors called “feathers”, and they
+require special connectors to be used with other Pmod boards.
 
 This interposer board provides such solution and allows interfacing with
 up to two Pmod boards via SPI or I2C interface. Furthermore, this add-on
@@ -30,7 +29,7 @@ Interface Specification and Adafruit Feather Specification.
 
    **Evaluation Kit Contents:**
 
-   - :adi:`FTHR-PMD-INTZ` Adapter Board 
+   - :adi:`FTHR-PMD-INTZ` Adapter Board
      (`Buy <https://shoppingcart.analog.com/AddModel.aspx?locale=en&ACTION=BUY_BUNDLES&modelNbr=FTHR-PMD-INTZ>`__)
 
 Adapter Board Hardware
@@ -44,7 +43,7 @@ Adapter Board Hardware
 Power Configuration
 ~~~~~~~~~~~~~~~~~~~
 
-The circuit is powered by the voltage coming from the 
+The circuit is powered by the voltage coming from the
 Maxim Featherheaders.
 
 .. figure:: power_jumpers_with_label.png
@@ -181,13 +180,13 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-  :download:`FTHR-PMD-INTZ Design & Integration Files <fthr-pmdz-intz-designsupport.zip>`
+   :download:`FTHR-PMD-INTZ Design & Integration Files <fthr-pmdz-intz-designsupport.zip>`
 
-  - Schematics
-  - PCB Layout
-  - Bill of Materials
-  - Allegro Project
-  - LTspice Simulation File
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
+   - LTspice Simulation File
 
 
 Additional Information and Useful Links
