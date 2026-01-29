@@ -15,8 +15,8 @@ industrial, scientific and medical (ISM) band. It provides a gain
 of 40 dB through its RF band of operation using two :adi:`ADL5523`
 amplifiers cascaded together, boosting signals for various 
 communication protocols such as
-`ISM <https://www.bing.com/search?q=ism+band&qs=n&form=QBRE&msbsrank=6_6__0&sp=-1&pq=ism+b&sc=6-5&sk=&cvid=D8BE9AEBE8F54016B96EB458461A2B9B>`__,
-`MC-GSM <https://www.bing.com/search?q=MC-GSM&qs=n&form=QBRE&msbsrank=6_6__0&sp=-1&pq=mc-gsm&sc=6-6&sk=&cvid=8FD7D6C81EFF443ABA86218D0CCCA3BE>`__,
+`ISM <https://en.wikipedia.org/wiki/ISM_radio_band>`__,
+`MC-GSM <https://www.google.com/search?q=mc-gsm>`__,
 `W-CDMA <https://www.3gpp.org/technologies/keywords-acronyms/104-w-cdma>`__,
 `TD-SCDMA <http://www.telecomabc.com/t/tdcdma.html>`__, and
 `LTE <https://en.wikipedia.org/wiki/LTE_%28telecommunication%29>`__ .
@@ -43,7 +43,7 @@ wall-wart power supplies available in the market.
 
 The :adi:`CN0555` reference design features the :adi:`ADL5523`, 
 which is a high performance 
-`GaAs pHEMT <https://www.bing.com/search?q=What+is+GaAs+Phemt&qs=n&form=QBRE&msbsrank=1_1__0&sp=-1&pq=what+is+gaas+phemt&sc=1-18&sk=&cvid=D43F8B5D1864493486DA375A62324E6A>`__
+`GaAs pHEMT <https://www.google.com/search?q=gaas-phemt>`__
 low noise amplifier. It provides a high gain and low noise figure for
 single down-conversion intermediate frequency (IF) sampling receiver
 architectures, as well as direct down-conversion receivers. It is easy
@@ -132,7 +132,7 @@ Hardware
 Firmware
 ^^^^^^^^
 
-- :download:`Pluto firmware 0.30 version <https://github.com/analogdevicesinc/plutosdr-fw/releases/download/v0.30/plutosdr-fw-v0.30.zip>`
+- :git-plutosdr-fw:`Pluto firmware 0.30 version <releases/download/v0.30/plutosdr-fw-v0.30.zip+>`
 
 ADALM-PLUTO Preparation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +140,7 @@ ADALM-PLUTO Preparation
 Firmware Loading
 ^^^^^^^^^^^^^^^^
 
-#.  Download :download:`Pluto firmware 0.30 version <https://github.com/analogdevicesinc/plutosdr-fw/releases/download/v0.30/plutosdr-fw-v0.30.zip>`
+#.  Download :git-plutosdr-fw:`Pluto firmware 0.30 version <releases/download/v0.30/plutosdr-fw-v0.30.zip+>`
 
 #.  Unzip the downloaded file.
 
@@ -242,9 +242,8 @@ Normal Operation
 
 .. important::
 
-   The :adi:`ADALM-PLUTO` can be configured using an IIO Oscilloscope, visit the website on 
-   :dokuwiki:`IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`
-   to learn more about the tool.
+   The :adi:`ADALM-PLUTO` can be configured using an IIO Oscilloscope, visit
+   :ref:`iio-oscilloscope` to learn more about the tool.
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
@@ -252,7 +251,7 @@ IIO Oscilloscope
 .. important::
 
    Make sure to download/update to the latest version of IIO Oscilloscope
-   found on this `link <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__
+   found on this :git-iio-oscilloscope:`link <releases+>`
 
 - Once done with the installation or an update of the latest IIO
   Oscilloscope, open the application. The user needs to supply a URI,
