@@ -9,14 +9,14 @@ USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System
 General Description
 -------------------
 
-:adi:`CN0582` or the USB 3.0 Quad-Channel IEPE Vibration Sensor 
-Measurement System is a system board capable of reading data 
-from analog (IEPE) accelerometers. The analog IEPE inputs also 
-contain current source switches to accommodate sensors that might 
+:adi:`CN0582` or the USB 3.0 Quad-Channel IEPE Vibration Sensor
+Measurement System is a system board capable of reading data
+from analog (IEPE) accelerometers. The analog IEPE inputs also
+contain current source switches to accommodate sensors that might
 need external power and individual channel offset voltage setting.
 
-Aside from IEPE sensor measurements, the board is also an arbitrary 
-sinewave generator providing stimulus to an external vibration shaker 
+Aside from IEPE sensor measurements, the board is also an arbitrary
+sinewave generator providing stimulus to an external vibration shaker
 and a multi-channel data acquisition system.
 
 Requirements
@@ -82,7 +82,7 @@ capability to operate as Dual-Role Port (DRP), it can also adjust
 power requirements as needed based on the application such as when a
 device is connected, it will provide power and will act as HOST.
 
-.. note:: 
+.. note::
 
     NOTE: For the External Power Supply, the recommended voltage
     is from 4.5 V to 5.5 V.
@@ -97,7 +97,7 @@ and the corresponding applications.
 
 .. admonition:: Download
 
-    :download:`CN0582 Evaluation Software Installer <http://swdownloads.analog.com/cse/cftl/CN0582/CN0582%20EVALUATION%20SOFTWARE%20INSTALLER.EXE>`
+   :download:`CN0582 Evaluation Software Installer <http://swdownloads.analog.com/cse/cftl/CN0582/CN0582%20EVALUATION%20SOFTWARE%20INSTALLER.EXE>`
 
 **GUI Installer**
 
@@ -126,11 +126,11 @@ folder created by the installer and its contents.
 
    Uninstall Multi-Channel Vibration Test Platform
 
-.. note:: 
+.. note::
 
-    The folder containing the screenshots from the file export 
-    functionality (Multi-Channel Vibration Test Platform File 
-    Exports folder) isn’t deleted by this installer so this 
+    The folder containing the screenshots from the file export
+    functionality (Multi-Channel Vibration Test Platform File
+    Exports folder) isn’t deleted by this installer so this
     should be deleted manually.
 
 Quick Start Guide
@@ -213,8 +213,8 @@ DAQ Settings
    DAQ Settings
 
 The DAQ window allows changing the capture parameters for each channel
-such as current source, coupling, and gain. The signal generator 
-output can also be set here as well as data capture for Time 
+such as current source, coupling, and gain. The signal generator
+output can also be set here as well as data capture for Time
 and Frequency Domain.
 
 **1. Device Selection**
@@ -222,7 +222,7 @@ and Frequency Domain.
 Listed through the dropdown are all the Multi-Channel Vibration Test
 Platform Board your machine detects where the user is required to
 choose one (1) to be paired with the GUI.
- 
+
 It’s assumed that Multi-Channel Vibration Test Platform devices are
 only to be used with the GUI. Connecting a non 4CH. DAQ board or one
 with different firmware will result in an incorrect or different
@@ -239,38 +239,38 @@ cycles (1, 2, 3, 4, 5 or full cycle) that can be applied.
 This control group gives control to different input parameters per
 channel such as sensor dc bias, current source toggling, and gain.
 
-.. important:: 
+.. important::
 
-    Note: It is best to check the IEPE sensor requirements before 
-    using supplying external power supply to avoid incurring 
+    Note: It is best to check the IEPE sensor requirements before
+    using supplying external power supply to avoid incurring
     permanent damage to either board or sensor.
 
 **Current Source**
 
-This control group is responsible for providing a standard 
-IEPE sensor an external power supply if needed 
-(4mA / channel). Individual channel external power supply is 
+This control group is responsible for providing a standard
+IEPE sensor an external power supply if needed
+(4mA / channel). Individual channel external power supply is
 enabled/disabled by toggling their corresponding slider.
 
 **4-20mA Sensor Mode**
 
-Channel 3 provides an interface for interfacing with 4-20mA 
+Channel 3 provides an interface for interfacing with 4-20mA
 sensors upon toggling the slider under Channel 3 in the GUI:
-By default, this is unselected to cater to other input sources. 
+By default, this is unselected to cater to other input sources.
 Enable this by toggling the slider.
 
 **Coupling**
 
 Allows either DC or AC coupling of the input signal. The coupling
-selected affects the necessary offset to ensure optimal 
+selected affects the necessary offset to ensure optimal
 data capture. Refer to input offset section.
 
 **Channel Gain**
 
 Allows changing the signal gain for a corresponding channel.
 
-.. note:: 
-    
+.. note::
+
     Allowable Gain Values:
      - 1
      - 2
@@ -282,10 +282,10 @@ Allows changing the signal gain for a corresponding channel.
 
 **Sensor DC Bias**
 
-The sensor DC bias converts the input based on corresponding 
-sensor’s bias specification to a voltage offset such that the 
+The sensor DC bias converts the input based on corresponding
+sensor’s bias specification to a voltage offset such that the
 signal falls within the ADC’s optimal capture range.
- 
+
 **4. Channel Selector**
 
 The Channel selector buttons control which channel or channels are
@@ -313,13 +313,13 @@ the field.
 
 The amplitude field dictates the output amplitude (in peak to peak,
 Volts) from the BNC connector. Valid values are from 0 to 3300mV
-(3.3Vpk2pk ^ 1.2Vrms). Once an amplitude has been set, click 
+(3.3Vpk2pk ^ 1.2Vrms). Once an amplitude has been set, click
 the SET button on the right side of the field.
 
 **Bandwidth**
 
-Allows selection between two different output paths: a. Full 
-bandwidth or no Sallen Key Filter or b. 25kHz Sallen Key Filtered 
+Allows selection between two different output paths: a. Full
+bandwidth or no Sallen Key Filter or b. 25kHz Sallen Key Filtered
 output. Toggle the slider to the desired output path.
 
 **6. Graph Display Settings**
@@ -340,11 +340,11 @@ message.
 
  - **Frequency Domain**
 
-   Plots frequency domain data of enabled channels. Y-axis is dBm, 
+   Plots frequency domain data of enabled channels. Y-axis is dBm,
    X – axis is frequency (Hz).
 
  - **Time and Frequency Domain**
- 
+
    This plot option allows simultaneous display of both Time and
    Frequency Domain representation of captured data.
 
@@ -353,15 +353,15 @@ message.
 Saves a screenshot of the selected graph/s.
 
  - **Time Domain**
- 
+
    Saves screenshot of Time Domain graph.
 
  - **Frequency Domain**
- 
+
    Saves screenshot of Frequency Domain graph.
-    
+
  - **External Trigger**
- 
+
    When selected, a positive pulse must be sent to the trigger in
    connector to begin capture, allowing beginning of capture via
    hardware trigger.
@@ -369,7 +369,7 @@ Saves a screenshot of the selected graph/s.
 Vibration Test
 --------------
 
-Vibration Test process for calibrating one or more DUT vs. 
+Vibration Test process for calibrating one or more DUT vs.
 a reference sensor.
 
 .. figure:: vs_interface.png
@@ -388,10 +388,10 @@ Selection section.
 
 The frequency range for the vibration test to be performed.
 
-    .. note:: 
+    .. note::
 
         - Start Frequency - Initial frequency for the vibration test.
-        - Frequency Step - Frequency step from one 
+        - Frequency Step - Frequency step from one
           frequency point to another.
         - Stop Frequency - Final frequency for the vibration test.
 
@@ -399,22 +399,22 @@ The frequency range for the vibration test to be performed.
 
 Sets the amount of G to be used and the measure.
 
-    .. note:: 
+.. note::
 
-        - Peak
-        - Peak to Peak
-        - RMS
+   - Peak
+   - Peak to Peak
+   - RMS
 
 **4. Limit Lines**
 
 Shows line options available to display with captured data for limit
 testing.
 
-    .. note:: 
+.. note::
 
-        - 3dB Line
-        - 10% Sensitivity
-        - Both
+   - 3dB Line
+   - 10% Sensitivity
+   - Both
 
 **5. Reference & DUT Sensor Setup Section**
 
@@ -424,18 +424,18 @@ these items.
 
 **Sensor Sensitivity**
 
-Sets the sensitivity (Volts / G) for each sensor attached on the 
-input channels. Channel 0 (topmost) serves as the reference 
-amplitude for the vibration test while other channels are for 
+Sets the sensitivity (Volts / G) for each sensor attached on the
+input channels. Channel 0 (topmost) serves as the reference
+amplitude for the vibration test while other channels are for
 other DUT.
- 
+
  **Enable**
 
  Selects which channels would be displayed for the vibration test
  results. Default settings: CH0 always enabled, other channels enabled
  upon toggling.
 
- .. important:: 
+ .. important::
 
     ADXL digital sensor functionality not yet incorporated as of this
     version.
@@ -448,10 +448,10 @@ Selects the plot type to be displayed. Options include Voltage scale,
 DUT, or Self-Scan.
 
  .. note::
-        
-     - Voltage Scale: amplitude setting used to reach target sensitivity 
+
+     - Voltage Scale: amplitude setting used to reach target sensitivity
        for each frequency point.
-     - DUT: compares reference channel measurement with DUT 
+     - DUT: compares reference channel measurement with DUT
        from other channel/s.
      - Self-Scan: reference channel + setup calibration.
 
@@ -459,7 +459,7 @@ DUT, or Self-Scan.
 
 Selects the scale for the Y-axis of the graph. Options include
 Magnitude (g), Decibel (Log(g)), Vrms, or Decibel (Log(Vrms)).
- 
+
  .. note::
 
     - Magnitude (g): Y-axis is in g’s.
@@ -471,11 +471,11 @@ Magnitude (g), Decibel (Log(g)), Vrms, or Decibel (Log(Vrms)).
 
 Displays the reference sensor and DUT amplitude/s vs. frequency for
 the performed vibration test.
- 
+
 **File Export**
 
 Exports screenshot of Frequency Response graph.
- 
+
 **External Trigger**
 
 Similar to external trigger from DAQ section.
@@ -505,18 +505,18 @@ Sets the amplitude of the sinusoid to be output from the board
 The frequency range of sinusoids to be output.
 
  .. note::
-        
-    - Start Frequency – starting frequency to be generated 
+
+    - Start Frequency – starting frequency to be generated
       to the output.
     - Frequency Step – increment from one frequency point
       to another.
-    - Stop Frequency – last frequency to be generated 
+    - Stop Frequency – last frequency to be generated
       to the output.
 
 **4. Duration Per Frequency(mS)**
 
 Delay (in milliseconds / mS) before switching from one frequency
-output to another. 
+output to another.
 
 
 Hardware Setup
@@ -525,28 +525,28 @@ Hardware Setup
 
 Before simulating the program, setting up the hardware is necessary.
 
-#. Connect the EVAL-CN0582 to the Vibration Shaker 
+#. Connect the EVAL-CN0582 to the Vibration Shaker
    using a BNC connector.
 
-#. By using SMA connector, connect the Piezo Reference Sensor of 
+#. By using SMA connector, connect the Piezo Reference Sensor of
    the Vibration Shaker to channel 0.
 
-#. Attach another SMA connector from the Test Sensor going to 
+#. Attach another SMA connector from the Test Sensor going to
    channel 1 of the EVAL-CN0582.
 
-#. Power up the CN0582 by connecting the Type C end of the USB 
-   cable to the board and the other end to the host. There should 
+#. Power up the CN0582 by connecting the Type C end of the USB
+   cable to the board and the other end to the host. There should
    be a RED and GREEN LED lit up on the board to note proper power up.
 
-    .. figure:: hardware_setup.jpg
-        :align: center
-        
-        Hardware Setup
-        
-**How to Use the Program**
-==========================
+   .. figure:: hardware_setup.jpg
+      :align: center
 
-To test the program with IEPE sensors the following equipment 
+      Hardware Setup
+
+How to Use the Program
+======================
+
+To test the program with IEPE sensors the following equipment
 is needed:
 
 **Equipment needed:**
@@ -558,54 +558,54 @@ is needed:
 #. USB C cable
 
 #. Analog input source (optional): *Signal Generator (Square, Sine,
-   Sawtooth etc.)* 
-   
+   Sawtooth etc.)*
+
    *IEPE Accelerometer (i.e., PCB MC325C67) + Shaker + SMA coaxial cables.*
 
 **Procedure:**
 
-#. Run the CN0582 Evaluation Software. Follow the prompts until 
-   the GUI main window appears. Only the GREEN LED should be lit up 
+#. Run the CN0582 Evaluation Software. Follow the prompts until
+   the GUI main window appears. Only the GREEN LED should be lit up
    on the board to note a successful firmware upload as well.
 
 #. Navigate to the DAQ or Vibration Test window by clicking the
    following image on the left side of the GUI.
- 
-    .. figure:: htu_overview.png
-        :align: center
 
-#. Depending on the available setup, perform the following 
+   .. figure:: htu_overview.png
+      :align: center
+
+#. Depending on the available setup, perform the following
    actions:
-   
-   - IEPE Accelerometers + Shaker: Connect one accelerometer 
-     (reference) to Analog Input Channel 0. If applicable, connect 
+
+   - IEPE Accelerometers + Shaker: Connect one accelerometer
+     (reference) to Analog Input Channel 0. If applicable, connect
      the other accelerometers to other Analog Input Channels.
-   - With or without external signal generator: Use the 
+   - With or without external signal generator: Use the
      BNC-to-SMA coaxial cable to connect the signal generator output
-     to Analog Input Channel 0. If there’s an external signal 
+     to Analog Input Channel 0. If there’s an external signal
      generator, connect this to another Analog Input Channel.
-   - The Shaker must be initially off before setting and 
+   - The Shaker must be initially off before setting and
      running the necessary parameters.
 
-#. Toggle the current source (for IEPE accelerometer), 
+#. Toggle the current source (for IEPE accelerometer),
    gain, coupling, and sensor dc bias settings as needed.
 
-    .. figure:: htu_vibration_test.png
-        :align: center
+   .. figure:: htu_vibration_test.png
+      :align: center
 
 
-    .. important:: 
-    
-        Vibration Testing Window Settings
+   .. important::
 
-#. On the channel selector section, enable the channel 
+      Vibration Testing Window Settings
+
+#. On the channel selector section, enable the channel
    where the other Analog Input source is connected.
 
-#. Click set when the parameters have been chosen, 
+#. Click set when the parameters have been chosen,
    then press Start to launch the test.
 
 Help and Support
 ================
 
 For questions and more information about this product, connect with us through
-the :ez:`Analog Devices EngineerZone <Reference Designs>`.
+the :ez:`reference-designs`.
