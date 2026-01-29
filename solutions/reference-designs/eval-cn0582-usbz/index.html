@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD-ACEVSECRDSET-SL is  a complete Type 2 EVSE 3.6kW charging cable solution, providing a reference design intended for evaluation and prototyping of EV charging systems." name="description" />
+<meta content="CN0582 or the USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System is a system board capable of reading data from analog (IEPE) accelerometers. The analog IEPE inputs also contain current source switches to accommodate sensors that might need external power and individual channel offset voltage setting." name="description" />
 
-    <title>AD-ACEVSECRDSET-SL &#8212; System Level Documentation  documentation</title>
+    <title>EVAL-0582-USBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=5d595293" />
     <script async="async" src="../../../_static/app.umd.js?v=46a18818"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Hardware User Guide" href="hardware-guide/index.html" />
-    <link rel="prev" title="Reference Designs" href="../index.html" />
+    <link rel="next" title="EVAL-CN0583-SOM" href="../eval-cn0583-som/index.html" />
+    <link rel="prev" title="EVAL-CN0581-EBZ" href="../eval-cn0581-ebz/index.html" />
    
   
   
@@ -94,22 +94,25 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">AD-ACEVSECRDSET-SL</a><ul>
-<li><a class="reference internal" href="#type-2-evse-3-6-kw-charging-cable">Type 2 EVSE 3.6 kW Charging Cable</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#features">Features</a></li>
-<li><a class="reference internal" href="#applications">Applications</a></li>
-<li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
-<li><a class="reference internal" href="#specifications">Specifications</a></li>
-<li><a class="reference internal" href="#system-setup">System Setup</a></li>
-<li><a class="reference internal" href="#additional-information-and-useful-links">Additional Information and Useful Links</a></li>
-<li><a class="reference internal" href="#software-resources">Software Resources</a></li>
-<li><a class="reference internal" href="#design-and-integration-files">Design and Integration Files</a></li>
+<li><a class="reference internal" href="#">EVAL-0582-USBZ</a><ul>
+<li><a class="reference internal" href="#usb-3-0-quad-channel-iepe-vibration-sensor-measurement-system">USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System</a><ul>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#installation-guide">Installation Guide</a></li>
+<li><a class="reference internal" href="#quick-start-guide">Quick Start Guide</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#graphical-user-interface-start-up">Graphical User Interface Start Up</a><ul>
+<li><a class="reference internal" href="#daq-settings">DAQ Settings</a></li>
+<li><a class="reference internal" href="#vibration-test">Vibration Test</a></li>
+<li><a class="reference internal" href="#sine-generation-window">Sine Generation Window</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#how-to-use-the-program">How to Use the Program</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
         </nav>
@@ -256,9 +259,9 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="hardware-guide/index.html">Hardware User Guide</a></li>
-<li class="toctree-l3"><a class="reference internal" href="software-guide/index.html">Software User Guide</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
@@ -418,10 +421,10 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0582-usbz/index.html">EVAL-0582-USBZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0582-usbz/index.html#hardware-setup">Hardware Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0582-usbz/index.html#how-to-use-the-program">How to Use the Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0582-usbz/index.html#help-and-support">Help and Support</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use-the-program">How to Use the Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#help-and-support">Help and Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
@@ -503,201 +506,561 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="ad-acevsecrdset-sl">
-<span id="id1"></span><h1>AD-ACEVSECRDSET-SL<a class="headerlink" href="#ad-acevsecrdset-sl" title="Link to this heading"></a></h1>
-<section id="type-2-evse-3-6-kw-charging-cable">
-<h2>Type 2 EVSE 3.6 kW Charging Cable<a class="headerlink" href="#type-2-evse-3-6-kw-charging-cable" title="Link to this heading"></a></h2>
-<section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h3>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/ad-bct2ade9113-sl" target="_blank">AD-ACEVSECRDSET-SL</a> is  a complete Type 2 EVSE 3.6kW
-charging cable solution, providing a reference design intended for evaluation
-and prototyping of EV charging systems.</p>
-<p>The system includes the <a class="icon adi reference external" href="https://www.analog.com/ADE9113" target="_blank">ADE9113</a> 3-channel isolated sigma-delta (Σ-Δ) ADC
-for voltage and current measurement on the single-phase power input and
-measurement of the relay voltage for solder contacts detection and relay
-state of health. Safe operation is enabled by the inclusion of a 6mA DC / 30mA rms RCD.
-Detection of overvoltage, undervoltage, overcurrent, overtemperature, and EV diode
-presence are also available.</p>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/MAX32655" target="_blank">MAX32655</a> ultralow power ARM® Cortex®-M4 processor
-implements the logic for system control and communication with the EV over the
-control pilot interface. A programming and debugging interface are included.
-The MAX32655 Bluetooth 5.2 interface enables connectivity to external devices.</p>
-<p>The design is accompanied by an open-source software stack and reference
-applications, enabling custom software development to start from a proven
-implementation validated to meet the applicable standards. The system is
-designed to meet the IEC61851 and IEC62752 standards.</p>
+  <section id="eval-0582-usbz">
+<span id="eval-cn0582-usbz"></span><h1>EVAL-0582-USBZ<a class="headerlink" href="#eval-0582-usbz" title="Link to this heading"></a></h1>
+<section id="usb-3-0-quad-channel-iepe-vibration-sensor-measurement-system">
+<h2>USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System<a class="headerlink" href="#usb-3-0-quad-channel-iepe-vibration-sensor-measurement-system" title="Link to this heading"></a></h2>
+<section id="general-description">
+<h3>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h3>
+<p><a class="icon adi reference external" href="https://www.analog.com/CN0582" target="_blank">CN0582</a> or the USB 3.0 Quad-Channel IEPE Vibration Sensor
+Measurement System is a system board capable of reading data
+from analog (IEPE) accelerometers. The analog IEPE inputs also
+contain current source switches to accommodate sensors that might
+need external power and individual channel offset voltage setting.</p>
+<p>Aside from IEPE sensor measurements, the board is also an arbitrary
+sinewave generator providing stimulus to an external vibration shaker
+and a multi-channel data acquisition system.</p>
+</section>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h3>
+<p>The USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System is a
+complete system from Hardware, Firmware, to Software for performing
+basic Data acquisition (DAQ) functions and vibration tests.</p>
+<p>The following sections will detail the necessary steps and conditions
+needed to fully operate the system.</p>
+<p><strong>Firmware</strong></p>
+<p>Once the USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System
+is installed via the given installer (Refer to the Installation Guide
+section), the compatible firmware is located within the same folder as
+the GUI executable file.</p>
+<p>At startup, the GUI uploads the firmware to the board for easier use.
+Do not remove the firmware (.img file) in the folder to avoid errors.</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/firmware_image.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/firmware_image.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0582 Firmware</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Should there be any updates necessary, uninstall the GUI and
+corresponding files using the uninstaller (C:\Analog Devices\USB3.0
+Based Multi-Channel Test Platform for Vibration
+Sensor\Uninstall.exe). An updated installer containing the updated
+firmware and other files will be uploaded for download.</p>
+<p><strong>Equipment Needed</strong></p>
+<ul class="simple">
+<li><p>Computer running Windows 10 OS</p></li>
+<li><p>Signal Generator (optional).</p></li>
+<li><p>Digital Multimeter (optional).</p></li>
+<li><p>Vibration Shaker (i.e., King Design).</p></li>
+<li><p>Piezo Reference Sensor (i.e., 352C67 from PCB Piezotronics).</p></li>
+<li><p>Test Sensor (i.e., Type 4394 from Brüel and Kjær).</p></li>
+</ul>
+<p><strong>Accessories Needed</strong></p>
+<ul class="simple">
+<li><p>BNC-to-SMA cable (x1).</p></li>
+<li><p>SMA-to-SMA cable (x4).</p></li>
+<li><p>USB Type C cable</p></li>
+<li><p>5V power Supply(optional).</p></li>
+</ul>
+<p><strong>Power Supply Requirements</strong></p>
+<p>The board can be powered up via USB3.0 or external Power Supply:</p>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-acevsecrdset-sl/ad-acevsecrdset-sl_angle.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-acevsecrdset-sl/ad-acevsecrdset-sl_angle.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-acevsecrdset-sl/ad-acevsecrdset-sl_angle.jpg" style="width: 600px;" />
-</a>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/multichannel_vibration_test_power_supply.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/multichannel_vibration_test_power_supply.png" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD-ACEVSECRDSET-SL Type 2 EVSE Cordset Evaluation Kit</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Multi-Channel Vibration Test Power Supply</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+<p>The Multi-Channel Vibration Test Platform can automatically prioritize
+the external power supply if detected then switch back to USB port if
+unplugged. Since Multi-Channel Vibration Test Platform has the
+capability to operate as Dual-Role Port (DRP), it can also adjust
+power requirements as needed based on the application such as when a
+device is connected, it will provide power and will act as HOST.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NOTE: For the External Power Supply, the recommended voltage
+is from 4.5 V to 5.5 V.</p>
+</div>
 </section>
-<section id="features">
-<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>Complete reference design for Type 2 EVSE Cordset (IC-CPD)</p></li>
-<li><p>Power level from 2.3kW up to 3.6kW (at 230V)</p></li>
-<li><p>Designed to meet the applicable standards: IEC61851, IEC62752</p></li>
-<li><p>Incorporates a 6mA DC/30mA rms RCD and a control pilot circuit</p></li>
-<li><p>Relay soldered contacts detection</p></li>
-<li><p>Upstream and downstream PE detection</p></li>
-<li><p>Overtemperature detection</p></li>
-<li><p>Integrated isolation</p></li>
-<li><p>Reduced component count for cost optimization</p></li>
-<li><p>Bluetooth 5.2 interface for connectivity to external devices</p></li>
-<li><p>Open-source software stack to enable custom firmware development</p></li>
-</ul>
-</section>
-<section id="applications">
-<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>EV Charging</p></li>
-</ul>
-</section>
-<section id="block-diagram">
-<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
-<figure class="align-default" id="id3">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-acevsecrdset-sl/block_diagram_new.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-acevsecrdset-sl/block_diagram_new.png" />
+<section id="installation-guide">
+<h3>Installation Guide<a class="headerlink" href="#installation-guide" title="Link to this heading"></a></h3>
+<p>The CN0582 Evaluation Software.exe is a single file installer that
+includes the GUI installer, uninstaller, and driver installer. The
+installer will create the files and folders required to operate CN0582
+and the corresponding applications.</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="http://swdownloads.analog.com/cse/cftl/CN0582/CN0582%20EVALUATION%20SOFTWARE%20INSTALLER.EXE"><code class="xref download docutils literal notranslate"><span class="pre">CN0582</span> <span class="pre">Evaluation</span> <span class="pre">Software</span> <span class="pre">Installer</span></code></a></p>
+</div>
+<p><strong>GUI Installer</strong></p>
+<p>This will setup the dependencies folder which will also contain the
+USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System GUI
+executable file.</p>
+<p><strong>Driver Installer</strong></p>
+<p>Running the driver installer is necessary to fully setup the necessary
+drivers and make the board recognizable by the software.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/driver_installer.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/driver_installer.png" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD-ACEVSECRDSET-SL Simplified Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Multi-Channel Vibration Test Platform</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+<p><strong>GUI Removal</strong></p>
+<p>To uninstall the GUI, run the file named Uninstall.exe in the same
+location as the GUI executable file. Running this will remove the
+folder created by the installer and its contents.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/uninstall.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/uninstall.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Uninstall Multi-Channel Vibration Test Platform</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The folder containing the screenshots from the file export
+functionality (Multi-Channel Vibration Test Platform File
+Exports folder) isn’t deleted by this installer so this
+should be deleted manually.</p>
+</div>
 </section>
-<section id="specifications">
-<h3>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h3>
+<section id="quick-start-guide">
+<h3>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h3>
+<p><strong>Interconnection</strong></p>
+<p>The Multi-Channel Vibration Test Platform requires any type C
+connector to interface with host and is backward compatible with
+USB2.0. For Best performance, it is recommended to connect with USB3.0
+ports and corresponding cable.</p>
+<p><strong>Boot options</strong></p>
+<p>The Multi-Channel Vibration Test Platform has 2 boot options: SPI and
+USB boot. SPI boot loads the firmware stored in the SPI flash memory,
+if any. This is useful when a custom firmware already loaded onboard
+is needed or for instances where the board would undergo a power
+restart and immediate loading, with no software intervention, is
+needed.</p>
+<p>The other option, USB boot, is the default for all CN-0582 boards.
+Restarting the board in this mode registers the board as a bootloader
+instead of a valid device. This allows bundling the software with the
+hardware since the GUI will be responsible for uploading the firmware
+to the board and not having the necessary software renders the
+hardware unusable.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Electrical Specs</p></th>
-<th class="head"></th>
-</tr>
-</thead>
 <tbody>
-<tr class="row-even"><td><p>Power</p></td>
-<td><p>3.6kW</p></td>
+<tr class="row-odd"><td><p>BOOT</p></td>
+<td><p>S1-1</p></td>
+<td><p>S1-2</p></td>
 </tr>
-<tr class="row-odd"><td><p>Input voltage</p></td>
-<td><p>230V +/-15% or 120V +/-15%</p></td>
+<tr class="row-even"><td><p>USB</p></td>
+<td><p>ON</p></td>
+<td><p>ON</p></td>
 </tr>
-<tr class="row-even"><td><p>Input current</p></td>
-<td><p>16A</p></td>
-</tr>
-<tr class="row-odd"><td><p>Input frequency</p></td>
-<td><p>50Hz / 60Hz</p></td>
-</tr>
-<tr class="row-even"><td><p>Output voltage</p></td>
-<td><p>230V +/-15% or 120V +/-15%</p></td>
-</tr>
-<tr class="row-odd"><td><p>Output current</p></td>
-<td><p>10A/16A</p></td>
-</tr>
-<tr class="row-even"><td><p>Output frequency</p></td>
-<td><p>50Hz / 60Hz</p></td>
-</tr>
-<tr class="row-odd"><td colspan="2"><p><strong>Operating Conditions</strong></p></td>
-</tr>
-<tr class="row-even"><td><p>Operating temperature</p></td>
-<td><p>-25°C to +45°C</p></td>
-</tr>
-<tr class="row-odd"><td><p>Residual current device</p></td>
-<td><p>6mA DC / 30mA rms</p></td>
-</tr>
-<tr class="row-even"><td colspan="2"><p><strong>Safety Features</strong></p></td>
-</tr>
-<tr class="row-odd"><td><p>Overvoltage category</p></td>
-<td><p>II</p></td>
-</tr>
-<tr class="row-even"><td rowspan="5"><p>Protection features</p></td>
-<td><p>Relay soldered contacts detection</p></td>
-</tr>
-<tr class="row-odd"><td><p>Overvoltage</p></td>
-</tr>
-<tr class="row-even"><td><p>Undervoltage</p></td>
-</tr>
-<tr class="row-odd"><td><p>Overcurrent</p></td>
-</tr>
-<tr class="row-even"><td><p>Overtemperature</p></td>
-</tr>
-<tr class="row-odd"><td rowspan="3"><p>Other features</p></td>
-<td><p>Integrated isolation</p></td>
-</tr>
-<tr class="row-even"><td><p>Diode detection</p></td>
-</tr>
-<tr class="row-odd"><td><p>Upstream and downstream PE detection</p></td>
-</tr>
-<tr class="row-even"><td colspan="2"><p><strong>User Interface &amp; Control</strong></p></td>
-</tr>
-<tr class="row-odd"><td><p>Communication</p></td>
-<td><p>Bluetooth 5.2</p></td>
-</tr>
-<tr class="row-even"><td><p>Status Indicators</p></td>
-<td><p>LEDs</p></td>
-</tr>
-<tr class="row-odd"><td><p>Debugging</p></td>
-<td><p>RS-232</p></td>
-</tr>
-<tr class="row-even"><td><p>Designed to the following standards</p></td>
-<td><p>IEC 61851, IEC 62752</p></td>
+<tr class="row-odd"><td><p>SPI</p></td>
+<td><p>OFF</p></td>
+<td><p>ON</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p><strong>USB Boot</strong></p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/test_usbboot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/test_usbboot.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Multi-Channel Vibration Test USB Boot</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>SPI Boot</strong></p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/test_spiboot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/test_spiboot.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Multi-Channel Vibration Test SPI Boot</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>GUI Usage</strong></p>
+<p>The Multi-Channel Vibration Test Platform Board default boot setup is
+for USB boot, allowing the firmware to be loaded via software. The
+installer, once done running, sets up the dependencies, firmware, and
+the executable file to run the GUI itself.</p>
+<p>At every startup, the GUI uploads the firmware and proceeds if
+successful. Otherwise, the GUI won’t proceed while giving prompts for
+next actions.</p>
+<p>At exit, the GUI resets the different board settings such as the
+signal generator output amplitude and frequency, channel offset, and
+current source button status. This is for the board to have a known
+state upon exit and ensure safety for connected components.</p>
 </section>
-<section id="system-setup">
-<h3>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h3>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="hardware-guide/index.html">Hardware User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="software-guide/index.html">Software User Guide</a></li>
+</section>
+<section id="graphical-user-interface-start-up">
+<h2>Graphical User Interface Start Up<a class="headerlink" href="#graphical-user-interface-start-up" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/user_interface.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/user_interface.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">CN0572 Evaluation Software User Interface</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="daq-settings">
+<h3>DAQ Settings<a class="headerlink" href="#daq-settings" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/daq_settings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/daq_settings.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">DAQ Settings</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The DAQ window allows changing the capture parameters for each channel
+such as current source, coupling, and gain. The signal generator
+output can also be set here as well as data capture for Time
+and Frequency Domain.</p>
+<p><strong>1. Device Selection</strong></p>
+<p>Listed through the dropdown are all the Multi-Channel Vibration Test
+Platform Board your machine detects where the user is required to
+choose one (1) to be paired with the GUI.</p>
+<p>It’s assumed that Multi-Channel Vibration Test Platform devices are
+only to be used with the GUI. Connecting a non 4CH. DAQ board or one
+with different firmware will result in an incorrect or different
+string message.</p>
+<p><strong>2. Number of Cycles</strong></p>
+<p>This determines the number of cycles to be displayed in the Graph
+Display. The dropdown menu contains the options for the number of
+cycles (1, 2, 3, 4, 5 or full cycle) that can be applied.</p>
+<p><strong>3. Channel Settings</strong></p>
+<p>This control group gives control to different input parameters per
+channel such as sensor dc bias, current source toggling, and gain.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note: It is best to check the IEPE sensor requirements before
+using supplying external power supply to avoid incurring
+permanent damage to either board or sensor.</p>
+</div>
+<p><strong>Current Source</strong></p>
+<p>This control group is responsible for providing a standard
+IEPE sensor an external power supply if needed
+(4mA / channel). Individual channel external power supply is
+enabled/disabled by toggling their corresponding slider.</p>
+<p><strong>4-20mA Sensor Mode</strong></p>
+<p>Channel 3 provides an interface for interfacing with 4-20mA
+sensors upon toggling the slider under Channel 3 in the GUI:
+By default, this is unselected to cater to other input sources.
+Enable this by toggling the slider.</p>
+<p><strong>Coupling</strong></p>
+<p>Allows either DC or AC coupling of the input signal. The coupling
+selected affects the necessary offset to ensure optimal
+data capture. Refer to input offset section.</p>
+<p><strong>Channel Gain</strong></p>
+<p>Allows changing the signal gain for a corresponding channel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>Allowable Gain Values:</dt><dd><ul class="simple">
+<li><p>1</p></li>
+<li><p>2</p></li>
+<li><p>5</p></li>
+<li><p>10</p></li>
+<li><p>20</p></li>
+<li><p>50</p></li>
+<li><p>100</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<p><strong>Sensor DC Bias</strong></p>
+<p>The sensor DC bias converts the input based on corresponding
+sensor’s bias specification to a voltage offset such that the
+signal falls within the ADC’s optimal capture range.</p>
+<p><strong>4. Channel Selector</strong></p>
+<p>The Channel selector buttons control which channel or channels are
+displayed in the graphs. Should have at least 1 selected channel
+before data capture.</p>
+<p><strong>Capture Mode</strong></p>
+<p>This button selects whether to perform a single capture (snapshot) or
+a continuous capture of the selected plot type (Time, Frequency, Both).</p>
+<p><strong>5. Signal Generator Settings</strong></p>
+<p>This control group allows the changing of the board’s signal generator
+output parameters.</p>
+<p><strong>Frequency</strong></p>
+<p>In the frequency field, type the frequency you want to set in Hertz
+(Hz). Allowable frequency values are from 0 to 25 kHz. Once a
+frequency has been chosen, click the SET button on the right side of
+the field.</p>
+<p><strong>Amplitude</strong></p>
+<p>The amplitude field dictates the output amplitude (in peak to peak,
+Volts) from the BNC connector. Valid values are from 0 to 3300mV
+(3.3Vpk2pk ^ 1.2Vrms). Once an amplitude has been set, click
+the SET button on the right side of the field.</p>
+<p><strong>Bandwidth</strong></p>
+<p>Allows selection between two different output paths: a. Full
+bandwidth or no Sallen Key Filter or b. 25kHz Sallen Key Filtered
+output. Toggle the slider to the desired output path.</p>
+<p><strong>6. Graph Display Settings</strong></p>
+<p>This control group allows changing the visualization parameters to
+match the intended range of observation or region of the waveform/s.</p>
+<p><strong>Plot Type</strong></p>
+<p>Selects the plot type for the DAQ window (Time, Frequency, or Both).
+Pressing START without a selected plot type will yield a prompt
+message.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Time Domain</strong></p>
+<p>Plots time domain data for enabled channels. Y-axis is Volts,
+X – axis is time (uS).</p>
+</li>
+<li><p><strong>Frequency Domain</strong></p>
+<p>Plots frequency domain data of enabled channels. Y-axis is dBm,
+X – axis is frequency (Hz).</p>
+</li>
+<li><p><strong>Time and Frequency Domain</strong></p>
+<p>This plot option allows simultaneous display of both Time and
+Frequency Domain representation of captured data.</p>
+</li>
+</ul>
+</div></blockquote>
+<p><strong>File Export</strong></p>
+<p>Saves a screenshot of the selected graph/s.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Time Domain</strong></p>
+<p>Saves screenshot of Time Domain graph.</p>
+</li>
+<li><p><strong>Frequency Domain</strong></p>
+<p>Saves screenshot of Frequency Domain graph.</p>
+</li>
+<li><p><strong>External Trigger</strong></p>
+<p>When selected, a positive pulse must be sent to the trigger in
+connector to begin capture, allowing beginning of capture via
+hardware trigger.</p>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="vibration-test">
+<h3>Vibration Test<a class="headerlink" href="#vibration-test" title="Link to this heading"></a></h3>
+<p>Vibration Test process for calibrating one or more DUT vs.
+a reference sensor.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/vs_interface.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/vs_interface.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Vibration Test Interface</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>1. Device Selection</strong></p>
+<p>Listed through the dropdown are all the Multi-Channel Vibration TesT
+Platform Board your machine detects where the user is required to
+choose one (1) to be paired with the GUI. Refer to the Device
+Selection section.</p>
+<p><strong>2. Sine Sweep Range</strong></p>
+<p>The frequency range for the vibration test to be performed.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Start Frequency - Initial frequency for the vibration test.</p></li>
+<li><p>Frequency Step - Frequency step from one
+frequency point to another.</p></li>
+<li><p>Stop Frequency - Final frequency for the vibration test.</p></li>
 </ul>
 </div>
-</section>
-<section id="additional-information-and-useful-links">
-<h3>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h3>
+</div></blockquote>
+<p><strong>3. G-Settings</strong></p>
+<p>Sets the amount of G to be used and the measure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-bct2ade9113-sl" target="_blank">AD-ACEVSECRDSET-SL Product Page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/MAX32655" target="_blank">MAX32655 Product Page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/ADE9113" target="_blank">ADE9113 Product Page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/ADA4523-1" target="_blank">ADA4523-1 Product Page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/ADT75" target="_blank">ADT75 Product Page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/MAX20457" target="_blank">MAX20457 Product Page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/LT8330" target="_blank">LT8330 Product Page</a></p></li>
-</ul>
-</section>
-<section id="software-resources">
-<h3>Software Resources<a class="headerlink" href="#software-resources" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad-acevsecrdset-sl" target="_blank">Link to the project source code</a></p></li>
-</ul>
-</section>
-<section id="design-and-integration-files">
-<h3>Design and Integration Files<a class="headerlink" href="#design-and-integration-files" title="Link to this heading"></a></h3>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-acevsecrdset-sl/ad-acevsecrdset-sl_design_support_package_rev._e.zip"><code class="xref download docutils literal notranslate"><span class="pre">AD-ACEVSECRDSET-SL</span> <span class="pre">Design</span> <span class="pre">&amp;</span> <span class="pre">Integration</span> <span class="pre">Files</span> <span class="pre">(Rev</span> <span class="pre">E)</span></code></a></p>
-<ul class="simple">
-<li><p>Schematics</p></li>
-<li><p>PCB Layout</p></li>
-<li><p>Bill of Materials</p></li>
-<li><p>Allegro Project</p></li>
+<li><p>Peak</p></li>
+<li><p>Peak to Peak</p></li>
+<li><p>RMS</p></li>
 </ul>
 </div>
+<p><strong>4. Limit Lines</strong></p>
+<p>Shows line options available to display with captured data for limit
+testing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>3dB Line</p></li>
+<li><p>10% Sensitivity</p></li>
+<li><p>Both</p></li>
+</ul>
+</div>
+<p><strong>5. Reference &amp; DUT Sensor Setup Section</strong></p>
+<p>Current Source, Coupling, Gain, and Sensor DC Bias settings operate
+similar to DAQ counterpart. Refer to DAQ section for reference on
+these items.</p>
+<p><strong>Sensor Sensitivity</strong></p>
+<p>Sets the sensitivity (Volts / G) for each sensor attached on the
+input channels. Channel 0 (topmost) serves as the reference
+amplitude for the vibration test while other channels are for
+other DUT.</p>
+<blockquote>
+<div><p><strong>Enable</strong></p>
+<p>Selects which channels would be displayed for the vibration test
+results. Default settings: CH0 always enabled, other channels enabled
+upon toggling.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>ADXL digital sensor functionality not yet incorporated as of this
+version.</p>
+</div>
+</div></blockquote>
+<p><strong>6. Graph Display Settings</strong></p>
+<p><strong>Plot Type</strong></p>
+<p>Selects the plot type to be displayed. Options include Voltage scale,
+DUT, or Self-Scan.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Voltage Scale: amplitude setting used to reach target sensitivity
+for each frequency point.</p></li>
+<li><p>DUT: compares reference channel measurement with DUT
+from other channel/s.</p></li>
+<li><p>Self-Scan: reference channel + setup calibration.</p></li>
+</ul>
+</div>
+</div></blockquote>
+<p><strong>Plot Scale</strong></p>
+<p>Selects the scale for the Y-axis of the graph. Options include
+Magnitude (g), Decibel (Log(g)), Vrms, or Decibel (Log(Vrms)).</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Magnitude (g): Y-axis is in g’s.</p></li>
+<li><p>Decibel (Log(g)): Y-axis is log(g)</p></li>
+<li><p>Vrms: Y-axis is in Vrms.</p></li>
+<li><p>Decibel (Log(Vrms)): Y-axis is log(Vrms).</p></li>
+</ul>
+</div>
+</div></blockquote>
+<p><strong>Graph Display</strong></p>
+<p>Displays the reference sensor and DUT amplitude/s vs. frequency for
+the performed vibration test.</p>
+<p><strong>File Export</strong></p>
+<p>Exports screenshot of Frequency Response graph.</p>
+<p><strong>External Trigger</strong></p>
+<p>Similar to external trigger from DAQ section.</p>
+</section>
+<section id="sine-generation-window">
+<h3>Sine Generation Window<a class="headerlink" href="#sine-generation-window" title="Link to this heading"></a></h3>
+<p>This window is used for generating a sweeping sinusoid pattern:</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/sine_interf.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/sine_interf.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Sine Interface</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>1. Device Selection</strong></p>
+<p>Refer to the Device Selection section.</p>
+<p><strong>2. Amplitude</strong></p>
+<p>Sets the amplitude of the sinusoid to be output from the board
+(in mVpp).</p>
+<p><strong>3. Sine Generation Range</strong></p>
+<p>The frequency range of sinusoids to be output.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Start Frequency – starting frequency to be generated
+to the output.</p></li>
+<li><p>Frequency Step – increment from one frequency point
+to another.</p></li>
+<li><p>Stop Frequency – last frequency to be generated
+to the output.</p></li>
+</ul>
+</div>
+</div></blockquote>
+<p><strong>4. Duration Per Frequency(mS)</strong></p>
+<p>Delay (in milliseconds / mS) before switching from one frequency
+output to another.</p>
+</section>
+</section>
+</section>
+<section id="hardware-setup">
+<h1>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h1>
+<p>Before simulating the program, setting up the hardware is necessary.</p>
+<ol class="arabic">
+<li><p>Connect the EVAL-CN0582 to the Vibration Shaker
+using a BNC connector.</p></li>
+<li><p>By using SMA connector, connect the Piezo Reference Sensor of
+the Vibration Shaker to channel 0.</p></li>
+<li><p>Attach another SMA connector from the Test Sensor going to
+channel 1 of the EVAL-CN0582.</p></li>
+<li><p>Power up the CN0582 by connecting the Type C end of the USB
+cable to the board and the other end to the host. There should
+be a RED and GREEN LED lit up on the board to note proper power up.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/hardware_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/hardware_setup.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Hardware Setup</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="how-to-use-the-program">
+<h1>How to Use the Program<a class="headerlink" href="#how-to-use-the-program" title="Link to this heading"></a></h1>
+<p>To test the program with IEPE sensors the following equipment
+is needed:</p>
+<p><strong>Equipment needed:</strong></p>
+<ol class="arabic">
+<li><p>EVAL-CN0582-USBZ.</p></li>
+<li><p>BNC-SMA coaxial cable.</p></li>
+<li><p>USB C cable</p></li>
+<li><p>Analog input source (optional): <em>Signal Generator (Square, Sine,
+Sawtooth etc.)</em></p>
+<p><em>IEPE Accelerometer (i.e., PCB MC325C67) + Shaker + SMA coaxial cables.</em></p>
+</li>
+</ol>
+<p><strong>Procedure:</strong></p>
+<ol class="arabic">
+<li><p>Run the CN0582 Evaluation Software. Follow the prompts until
+the GUI main window appears. Only the GREEN LED should be lit up
+on the board to note a successful firmware upload as well.</p></li>
+<li><p>Navigate to the DAQ or Vibration Test window by clicking the
+following image on the left side of the GUI.</p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/htu_overview.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/htu_overview.png" />
+</figure>
+</li>
+<li><p>Depending on the available setup, perform the following
+actions:</p>
+<ul class="simple">
+<li><p>IEPE Accelerometers + Shaker: Connect one accelerometer
+(reference) to Analog Input Channel 0. If applicable, connect
+the other accelerometers to other Analog Input Channels.</p></li>
+<li><p>With or without external signal generator: Use the
+BNC-to-SMA coaxial cable to connect the signal generator output
+to Analog Input Channel 0. If there’s an external signal
+generator, connect this to another Analog Input Channel.</p></li>
+<li><p>The Shaker must be initially off before setting and
+running the necessary parameters.</p></li>
+</ul>
+</li>
+<li><p>Toggle the current source (for IEPE accelerometer),
+gain, coupling, and sensor dc bias settings as needed.</p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/htu_vibration_test.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0582-usbz/htu_vibration_test.png" />
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Vibration Testing Window Settings</p>
+</div>
+</li>
+<li><p>On the channel selector section, enable the channel
+where the other Analog Input source is connected.</p></li>
+<li><p>Click set when the parameters have been chosen,
+then press Start to launch the test.</p></li>
+</ol>
 </section>
 <section id="help-and-support">
-<h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
-<p>For questions and more information, please visit the <a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone</a>.</p>
-</section>
-</section>
+<h1>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h1>
+<p>For questions and more information about this product, connect with us through
+the <a class="icon ez reference external" href="https://ez.analog.com/reference-designs" target="_blank">EngineerZone</a>.</p>
 </section>
 
 
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Reference Designs</a>
-    <a href="hardware-guide/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Hardware User Guide</a>
+    <a href="../eval-cn0581-ebz/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">EVAL-CN0581-EBZ</a>
+    <a href="../eval-cn0583-som/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVAL-CN0583-SOM</a>
               </div>
           
         </div>
