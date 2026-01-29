@@ -11,15 +11,15 @@ General Description
 
 The :adi:`EVAL-CN0550-EBZ <CN0550>` is a 4-layer printed circuit board (PCB)
 that allows evaluation of the :adi:`CN0550 <CN0550>` High Speed USB 2.0
-Peripheral Isolator circuit. The board is fabricated with a 0.5oz./1 oz. 
+Peripheral Isolator circuit. The board is fabricated with a ``0.5oz./1oz.``
 copper cladding and IPC-4101 (or IPC-4103) laminates and bonding materials.
 
 Designed to be connected between a host controller and a USB peripheral
-device, the :adi:`EVAL-CN0550-EBZ <CN0550>` features a small form-factor 
-with dimensions of 2.315in ×1.335in x 0.062mm (PCB only). 
+device, the :adi:`EVAL-CN0550-EBZ <CN0550>` features a small form-factor
+with dimensions of 2.315in ×1.335in x 0.062mm (PCB only).
 The evaluation board uses standard Type-A USB connectors for its
 signal path — for easy integration with USB systems, a male connector is used
-for the host side and and a female connector is used for the peripheral side.
+for the host side and a female connector is used for the peripheral side.
 Straight headers on each side allow the users to use an external power supply
 for high current applications.
 
@@ -56,7 +56,7 @@ Host Side Power Connector and LED Indicator (P3, EXT1)
 
 The onboard regulator circuit of the CN0550 can typically
 supply a maximum current of 440mA to the peripheral side when powered from
-the VCC pin of the USB host. For applications that require higher current, 
+the VCC pin of the USB host. For applications that require higher current,
 the CN0550 output can be increased by moving the J1 solder jumper to the ‘B’
 position, and connecting an external >5VDC power supply across the P3
 header.
@@ -74,11 +74,12 @@ B            External power supply connected across P3.
 ============ ==========================================
 
 .. figure:: cn0550-p3-connections.jpg
-  
+
 .. tip::
-  The maximum voltage that can be safely applied at
-  P3 is 32 V. Connect the (+) and (-) pins of the external power supply
-  respectively to pins 1 and 2 of P3.
+
+   The maximum voltage that can be safely applied at
+   P3 is 32 V. Connect the (+) and (-) pins of the external power supply
+   respectively to pins 1 and 2 of P3.
 
 Peripheral Side Power Connector and LED Indicator (P4, EXT2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,16 +104,17 @@ B            External power supply connected across P4
 .. figure:: cn0550-p4-connections.jpg
 
 .. tip::
-  The voltage applied at P3 should be limited to
-  the normal operating VCC range for USB (4.75V to 5.25V). Connect the (+) 
-  and (-) pins of the external power supply respectively to pins 1 and 2 of P4.
+
+   The voltage applied at P3 should be limited to
+   the normal operating VCC range for USB (4.75V to 5.25V). Connect the (+)
+   and (-) pins of the external power supply respectively to pins 1 and 2 of P4.
 
 Schematic, Layout and Bill of Materials
 ---------------------------------------
 
 .. admonition:: Download
-  
-  `EVAL-CN0550-EBZ Design & Integration Files <https://www.analog.com/CN0550-DesignSupport>`__
+
+  :adi:`EVAL-CN0550-EBZ Design & Integration Files <CN0550-DesignSupport>`
 
   - Schematic
   - Bill of Materials
