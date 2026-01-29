@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The ADRV9009-W/PCBZ, ADRV9008-1W/PCBZ and ADRV9008-2W/PCBZ are FMC radio cards for the ADRV9009 and ADRV9008, respectively, a highly integrated RF Transceiver™. While the complete chip level design package can be found on the ADI web site, information on the card and how to use it, the design package that surrounds it, and the software which can make it work can be found here." name="description" />
+<meta content="The EVAL-CN0523-EBZ is a USB-powered, RF power amplifier that is optimized for transmitting signal chains in the 5.8GHz ISM band. Using two HMC407 amplifiers cascaded together, the design provides a gain of 28dB and return losses of more than 10dB throughout its RF band of operation." name="description" />
 
-    <title>ADRV9009 &amp; ADRV9008 &#8212; System Level Documentation  documentation</title>
+    <title>EVAL-CN0523-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=5d595293" />
     <script async="async" src="../../../_static/app.umd.js?v=46a18818"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Prerequisites" href="prerequisites.html" />
-    <link rel="prev" title="Software User Guide" href="../eval-adbms6830bmsw/software-guide/index.html" />
+    <link rel="next" title="EVAL-CN0540-ARDZ" href="../eval-cn0540-ardz/index.html" />
+    <link rel="prev" title="EVAL-CN0521-EBZ" href="../eval-cn0521-ebz/index.html" />
    
   
   
@@ -94,16 +94,32 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">ADRV9009 &amp; ADRV9008</a><ul>
-<li><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
-<li><a class="reference internal" href="#block-diagram">Block diagram</a></li>
-<li><a class="reference internal" href="#videos">Videos</a><ul>
-<li><a class="reference internal" href="#software-defined-radio-using-the-linux-iio-framework">Software Defined Radio using the Linux IIO Framework</a></li>
-<li><a class="reference internal" href="#adi-articles">ADI Articles</a></li>
-<li><a class="reference internal" href="#mathworks-webinars">MathWorks Webinars</a></li>
+<li><a class="reference internal" href="#">EVAL-CN0523-EBZ</a><ul>
+<li><a class="reference internal" href="#usb-powered-5-8-ghz-rf-power-amplifier-with-overtemperature-management">USB-Powered, 5.8 GHz RF Power Amplifier with Overtemperature Management</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#reference-design-hardware">Reference Design Hardware</a><ul>
+<li><a class="reference internal" href="#primary-side">Primary Side</a><ul>
+<li><a class="reference internal" href="#sma-connectors">SMA Connectors</a></li>
+<li><a class="reference internal" href="#led-indicators">LED Indicators</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#warning">Warning</a></li>
+<li><a class="reference internal" href="#secondary-side">Secondary Side</a><ul>
+<li><a class="reference internal" href="#power-supply-connector">Power Supply Connector</a></li>
+<li><a class="reference internal" href="#changing-the-temperature-switch-trip-point-jp1-jp2-jp3">Changing the Temperature Switch Trip Point (JP1, JP2, JP3)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
+<li><a class="reference internal" href="#test-setup">Test Setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-information-and-useful-links">More Information and Useful Links</a></li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+<li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -368,13 +384,13 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19" checked=""/><div class="collapse"><a class="current reference internal" href="#">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19-1" id="toctree-collapse-13-19-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-19-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="quickstart/zynqmp.html">ZCU102</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19-1" id="toctree-collapse-13-19-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
@@ -396,7 +412,7 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-CN0523-EBZ</a></li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
@@ -495,164 +511,321 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="adrv9009-adrv9008">
-<span id="adrv9009"></span><h1>ADRV9009 &amp; ADRV9008<a class="headerlink" href="#adrv9009-adrv9008" title="Link to this heading"></a></h1>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-adrv9009/adrv9009-bc.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-adrv9009/adrv9009-bc.jpg" class="align-left" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-adrv9009/adrv9009-bc.jpg" width="150" />
-</a>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009" target="_blank">ADRV9009-W/PCBZ</a>, <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009" target="_blank">ADRV9008-1W/PCBZ</a>
-and <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9008-9009" target="_blank">ADRV9008-2W/PCBZ</a> are FMC radio cards for the
-<a class="icon adi reference external" href="https://www.analog.com/ADRV9009" target="_blank">ADRV9009</a> and <a class="icon adi reference external" href="https://www.analog.com/ADRV9008" target="_blank">ADRV9008</a>, respectively, a highly integrated RF Transceiver™.
-While the complete chip level design package can be found on
-<a class="icon adi reference external" href="https://www.analog.com/en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html" target="_blank">the ADI web site</a>,
-information on the card and how to use it, the design package that surrounds it,
-and the software which can make it work can be found here.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-adrv9009/adrv9009-pcb.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-adrv9009/adrv9009-pcb.jpg" />
-<div class="toctree-wrapper compound">
+  <section id="eval-cn0523-ebz">
+<span id="id1"></span><h1>EVAL-CN0523-EBZ<a class="headerlink" href="#eval-cn0523-ebz" title="Link to this heading"></a></h1>
+<section id="usb-powered-5-8-ghz-rf-power-amplifier-with-overtemperature-management">
+<h2>USB-Powered, 5.8 GHz RF Power Amplifier with Overtemperature Management<a class="headerlink" href="#usb-powered-5-8-ghz-rf-power-amplifier-with-overtemperature-management" title="Link to this heading"></a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a> is a USB-powered, RF power amplifier
+that is optimized for transmitting signal chains in the 5.8GHz ISM band.
+Using two <a class="icon adi reference external" href="https://www.analog.com/HMC407" target="_blank">HMC407</a> amplifiers cascaded together, the design
+provides a gain of 28dB and return losses of more than 10dB throughout its RF
+band of operation.</p>
+<p>An overtemperature management feature is implemented on the
+<a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a> wherein the amplifiers are
+automatically disabled when the board temperature reaches a preset threshold,
+and it automatically returns to normal operation once the temperature falls
+below the hysteresis point.</p>
+<p>Designed to be used with the <a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a>, or other
+software defined radio platform, the board features a small form factor, with
+dimensions of <code class="docutils literal notranslate"><span class="pre">25.4mm</span> <span class="pre">×</span> <span class="pre">50.8mm</span> <span class="pre">x</span> <span class="pre">1.5748mm</span></code> (PCB only). The RF input and
+output are designed with a 50Ω impedance, enabling direct connection between
+the circuit and standard 50Ω systems.</p>
+<p>A micro-USB connector is used for the input power, allowing the evaluation board
+to use most 5V wall wart power supplies available in the market.</p>
+<figure class="align-default" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/cn0523_simplified_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/cn0523_simplified_block_diagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0523-EBZ Block Diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="reference-design-hardware">
+<h3>Reference Design Hardware<a class="headerlink" href="#reference-design-hardware" title="Link to this heading"></a></h3>
+<section id="primary-side">
+<h4>Primary Side<a class="headerlink" href="#primary-side" title="Link to this heading"></a></h4>
+<figure class="align-default" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/top_temp.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/top_temp.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0523 Primary Side</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="sma-connectors">
+<h5>SMA Connectors<a class="headerlink" href="#sma-connectors" title="Link to this heading"></a></h5>
+<p>The SMA connectors are used for the RF input and output connections:</p>
+<ul class="simple">
+<li><p><strong>J1</strong> is the <strong>RF Input</strong> SMA male connector that would be connected to a
+radio or piece of RF equipment. The maximum RF input level of the
+<a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a> is <strong>+10dBm</strong>. Do not use a higher input
+level to avoid damaging the circuit.</p></li>
+<li><p><strong>J2</strong> is the <strong>RF Output</strong> SMA FEmale connector that would be connected to
+an antenna. The saturated output power (Psat) of <a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a>
+is <strong>+27dBm</strong>. Ensure that the RF load can handle the amplified RF signal.
+Use an RF attenuator if necessary to avoid damage.</p></li>
+</ul>
+</section>
+<section id="led-indicators">
+<h5>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h5>
+<p>The reference design uses two LEDs to indicate its current status:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LED Indications of Board Status</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>DS1</strong></p></td>
+<td><p><strong>DS2</strong></p></td>
+<td><p><strong>Board Status</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Off</p></td>
+<td><p>Off</p></td>
+<td><p>No power</p></td>
+</tr>
+<tr class="row-even"><td><p>Off</p></td>
+<td><p>On</p></td>
+<td><p>Normal operation</p></td>
+</tr>
+<tr class="row-odd"><td><p>On</p></td>
+<td><p>On</p></td>
+<td><p>Overtemperature</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<section id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
-<p>People who follow the flow that is outlined, have a much better experience with
-things. However, like many things, documentation is never as complete as it should be.
-If you have any questions, feel free to <a class="reference internal" href="../common/help-and-support.html#help-and-support"><span class="std std-ref">ask</span></a>.</p>
-<ol class="arabic simple">
-<li><p>Use the board to better understand the ADRV9009/ADRV9008-1/ADRV9008-2</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="prerequisites.html#adrv9009-prerequisites"><span class="std std-ref">What you need to get started</span></a></p></li>
-<li><p><a class="reference internal" href="quickstart/index.html#adrv9009-quickstart"><span class="std std-ref">Quick Start Guides</span></a></p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="quickstart/zynqmp.html#adrv9009-quickstart-zynqmp"><span class="std std-ref">Linux on ZCU102</span></a></p></li>
-<li><p>Configure an SD Card with <a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">Kuiper</span></a></p></li>
-</ol>
-</li>
-<li><p>Linux Applications</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a>, with:</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html#iio-oscilloscope-adrv9009"><span class="std std-ref">ADRV9009</span></a>
-(<a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html#iio-oscilloscope-adrv9009-plugin"><span class="std std-ref">Standard Plugin</span></a>,
-<a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html#iio-oscilloscope-adrv9009-advanced-plugin"><span class="std std-ref">Advanced plugin</span></a>)</p></li>
-</ol>
-</li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump" target="_blank">FRU EEPROM Utility</a></p></li>
-</ol>
-</li>
-<li><p>Push custom data into/out of the ADRV9009/ADRV9008</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="basic-iq-datafiles.html"><span class="doc">Basic Data files and formats</span></a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/transceiver-toolbox" target="_blank">Stream data into/out of MATLAB</a></p></li>
-<li><p><a class="reference internal" href="../../../software/pyadi-iio/index.html#pyadi-iio"><span class="std std-ref">Python Interfaces</span></a></p></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>Design with the ADRV9009/ADRV9008</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="#adrv9009-blockdiagram"><span class="std std-ref">Block diagram</span></a></p>
-<ol class="arabic simple">
-<li><p><a class="icon adi reference external" href="https://www.analog.com/ADRV9009" target="_blank">ADRV9009 Product page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/ADRV9008" target="_blank">ADRV9008 Product page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html" target="_blank">Full Datasheet and chip design package</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2.4.zip" target="_blank">MATLAB Filter Wizard / Profile Generator for ADRV9009</a></p></li>
-</ol>
-</li>
-<li><p>Hardware in the Loop / How to design your own custom BaseBand</p>
-<ol class="arabic simple">
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/gnuradio" target="_blank">GNU Radio</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/transceiver-toolbox" target="_blank">Transceiver Toolbox</a></p></li>
-</ol>
-</li>
-<li><p>Design a custom ADRV9009/ADRV9008 based platform</p>
-<ol class="arabic simple">
-<li><p>Linux software</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="../../../linux/drivers/iio-transceiver/adrv9009/index.html#iio-transceiver-adrv9009"><span class="std std-ref">ADRV9009/ADRV9008 Linux Device Driver</span></a></p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="../../../linux/drivers/iio-transceiver/adrv9009/customization.html#iio-transceiver-adrv9009-customization"><span class="std std-ref">ADRV9009/ADRV9008 Device Driver Customization</span></a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks" target="_blank">Customizing the devicetree on the target</a></p></li>
-</ol>
-</li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework" target="_blank">JESD204 (FSM) Interface Linux Kernel Framework</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/ad9528" target="_blank">AD9528 Low Jitter Clock Generator Linux Driver</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad7291" target="_blank">AD7291 IIO ADC Linux Driver</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/axi-dmac" target="_blank">AXI-DMAC DMA Controller Linux Driver</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx" target="_blank">JESD204B Transmit Linux Driver</a></p>
-<ol class="arabic simple">
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/jesd_status" target="_blank">JESD204B Status Utility</a></p></li>
-</ol>
-</li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx" target="_blank">JESD204B Receive Linux Driver</a></p>
-<ol class="arabic simple">
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/jesd_status" target="_blank">JESD204B Status Utility</a></p></li>
-</ol>
-</li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_adxcvr" target="_blank">JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver</a></p>
-<ol class="arabic simple">
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/jesd_eye_scan" target="_blank">JESD204 Eye Scan</a></p></li>
-</ol>
-</li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl" target="_blank">AXI ADC HDL Linux Driver</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl" target="_blank">AXI DAC HDL Linux Driver</a></p></li>
-</ol>
-</li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/rf-trx-vcxo-and-profiles" target="_blank">Changing the VCXO frequency and updating the default RF Transceiver Profile</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/adrv9009/no-os-setup" target="_blank">ADRV9009/ADRV9008 No-OS System Level Design Setup</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/adrv9009/reference_hdl" target="_blank">HDL Reference Design</a> which you must use in your FPGA.</p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/transceiver-toolbox" target="_blank">HDL Targeting From MATLAB and Simulink</a></p></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms1-ebz/math" target="_blank">Additional Documentation about SDR Signal Chains - The math behind the RF</a></p></li>
-<li><p><a class="reference internal" href="../common/help-and-support.html#help-and-support"><span class="std std-ref">Help and Support</span></a></p></li>
-</ol>
-</section>
-<section id="block-diagram">
-<span id="adrv9009-blockdiagram"></span><h2>Block diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h2>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-adrv9009/blockdiagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-adrv9009/blockdiagram.png" />
-</section>
-<section id="videos">
-<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading"></a></h2>
-<section id="software-defined-radio-using-the-linux-iio-framework">
-<h3>Software Defined Radio using the Linux IIO Framework<a class="headerlink" href="#software-defined-radio-using-the-linux-iio-framework" title="Link to this heading"></a></h3>
-<div class="embed-video"><video class="only-screen" controls="controls"><source src="http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4" type="video/mp4"></source></video><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
-<p><a href="http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4"><span>http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4</span></a></p>
-</div></div></section>
-<section id="adi-articles">
-<h3>ADI Articles<a class="headerlink" href="#adi-articles" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
-<li><p>Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio</p>
-<ol class="arabic simple">
-<li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-09/four-step-sdr-01.html" target="_blank">Part 1 - The Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-10/four-step-sdr-02.html" target="_blank">Part 2 - Mode S Detection and Decoding Using MATLAB and Simulink</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-11/four-step-sdr-03.html" target="_blank">Part 3 - Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-12/four-step-sdr-04.html" target="_blank">Part 4 - Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow</a></p></li>
-</ol>
-</li>
-</ol>
-</section>
-<section id="mathworks-webinars">
-<h3>MathWorks Webinars<a class="headerlink" href="#mathworks-webinars" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
-<li><p><a class="icon link reference external" href="https://www.mathworks.com/videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html" target="_blank">Modelling and Simulating Analog Devices’ RF Transceivers with MATLAB and SimRF</a></p></li>
-<li><p><a class="icon link reference external" href="https://www.mathworks.com/videos/getting-started-with-software-defined-radio-using-matlab-and-simulink-108646.html" target="_blank">Getting Started with Software-Defined Radio using MATLAB and Simulink</a></p></li>
-</ol>
 </section>
 </section>
-<section id="warning">
-<h2>Warning<a class="headerlink" href="#warning" title="Link to this heading"></a></h2>
-<div><div class="esd-warning docutils container">
-<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
-Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+<section id="secondary-side">
+<h4>Secondary Side<a class="headerlink" href="#secondary-side" title="Link to this heading"></a></h4>
+<figure class="align-default" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/bot_temp.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/bot_temp.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0523 Secondary Side</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="power-supply-connector">
+<h5>Power Supply Connector<a class="headerlink" href="#power-supply-connector" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p><strong>P1</strong> is the micro-USB port used to provide 5V power to the board. The total
+typical supply current of the on-board RF amplifiers is 230mA.</p></li>
+</ul>
+</section>
+<section id="changing-the-temperature-switch-trip-point-jp1-jp2-jp3">
+<h5>Changing the Temperature Switch Trip Point (JP1, JP2, JP3)<a class="headerlink" href="#changing-the-temperature-switch-trip-point-jp1-jp2-jp3" title="Link to this heading"></a></h5>
+<ul>
+<li><p>The trip point of the temperature switch can be set using the solder jumpers
+JP1, JP2, and JP3 as shown in the table below. When the board temperature
+reaches the trip point, the <a class="icon adi reference external" href="https://www.analog.com/ADT6401" target="_blank">ADT6401</a> will disable the two RF
+amplifiers.</p>
+<figure class="align-default" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/jmp_settings.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/jmp_settings.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">ADT6401 Jumper Settings</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ul>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Selecting a Trip
+Point for the
+ADT6401</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>JP1 Setting</strong></p></td>
+<td><p><strong>JP2 Setting</strong></p></td>
+<td><p><strong>JP3 Setting</strong></p></td>
+<td><p><strong>Trip Point</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>2 &amp; 3</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>+45°C</p></td>
+</tr>
+<tr class="row-even"><td><p>1 &amp; 2</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>+55°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>No solder jumper</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>+65°C</p></td>
+</tr>
+<tr class="row-even"><td><p>2 &amp; 3</p></td>
+<td><p>1 &amp; 2</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>+75°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>1 &amp; 2</p></td>
+<td><p>1 &amp; 2</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>+85°C</p></td>
+</tr>
+<tr class="row-even"><td><p>No solder jumper</p></td>
+<td><p>1 &amp; 2</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>+95°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>2 &amp; 3</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>1 &amp; 2</p></td>
+<td><p>+65°C</p></td>
+</tr>
+<tr class="row-even"><td><p>1 &amp; 2</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>1 &amp; 2</p></td>
+<td><p>+75°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>No solder jumper</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>1 &amp; 2</p></td>
+<td><p>+85°C</p></td>
+</tr>
+<tr class="row-even"><td><p>2 &amp; 3</p></td>
+<td><p>1 &amp; 2</p></td>
+<td><p>1 &amp; 2</p></td>
+<td><p>+95°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>2 &amp; 3</p></td>
+<td><p>No solder jumper</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>+105°C</p></td>
+</tr>
+<tr class="row-even"><td><p>1 &amp; 2</p></td>
+<td><p>No solder jumper</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>+115°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>No solder jumper</p></td>
+<td><p>No solder jumper</p></td>
+<td><p>2 &amp; 3</p></td>
+<td><p>+55°C</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</div></section>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Due to the considerable thermal dissipation of the RF amplifiers,
+the last three options should not be used.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="getting-started">
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h3>
+<section id="required-equipment">
+<h4>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h4>
+<p><strong>Hardware</strong></p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a></p></li>
+<li><p>Two (2) micro-USB power adaptors or micro-USB to USB cables for powering
+<a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> and <a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a></p></li>
+<li><p>One (1) SMA male-to-male cable</p></li>
+<li><p>One (1) SMA 30 dB RF attenuator</p></li>
+</ul>
+<p><strong>Firmware</strong></p>
+<ul>
+<li><p>For step-by-step procedure on how to update the Pluto Firmware, you can
+use this <a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/users/firmware" target="_blank">user guide link</a>.
+The latest firmware version for the <strong>ADALM-PLUTO</strong> can be found here:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">download</p>
+<p>ADALM-PLUTO Firmware:
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/plutosdr-fw/releases/latest" target="_blank">Pluto version latest release</a></p>
+</div>
+</li>
+<li><p>In order to properly operate the ADALM PLUTO, you need to setup and configure
+it. Follow the procedure through this
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/users/firmware" target="_blank">link</a>.</p></li>
+</ul>
+</section>
+<section id="test-setup">
+<h4>Test Setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>Connect directly the <strong>TX port</strong> of <a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> to the
+<strong>RF Input (J1)</strong> of the <a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a>.</p></li>
+<li><p>Connect directly the <strong>RX port</strong> of the <a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> to
+a 30dB attenuator.</p></li>
+<li><p>Connect <strong>RF Output (J2)</strong> of the <a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a> to a 30dB
+attenuator using a male-to-male SMA cable.</p></li>
+<li><p>Connect <strong>P1</strong> (micro-USB) connector of the <a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a>
+into a PC USB port or a 5V USB charger.</p></li>
+<li><p>Connect the micro-USB to USB cable to a PC/laptop and the other end to the
+<a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> data port.</p></li>
+<li><p>The DS2 LED of <a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a> will automatically
+turn on, indicating that the board is powered on and is in operation.</p></li>
+<li><p>Refer to the image below for the full hardware setup.</p>
+<figure class="align-default" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/full_hw_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/full_hw_setup.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">EVAL-CN0523-EBZ Test Setup</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Connecting the CN0523 directly to the PlutoSDR input (Rx)
+may result in an exceedance of its absolute maximum ratings
+of +2.5dBm. Such an action may lead to permanent damage to the PlutoSDR. It is
+strongly recommended to use a <strong>30dB or 40dB attenuator</strong> at the RX input of
+the ADALM PLUTO to avoid incurring damage.</p>
+</div>
+</section>
+</section>
+<section id="more-information-and-useful-links">
+<h3>More Information and Useful Links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">CN0523 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/HMC407" target="_blank">HMC407 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADT6401" target="_blank">ADT6401 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LT8364" target="_blank">LT8364 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADM7150" target="_blank">ADM7150 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADM7171" target="_blank">ADM7171 Product Page</a></p></li>
+<li><p><a class="reference internal" href="../../../tools/pluto/index.html#pluto"><span class="std std-ref">ADALM-PLUTO Overview</span></a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/users/amp" target="_blank">Amplifiers for RF Transmission</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/users/amp" target="_blank">RF Amplifier Considerations</a></p></li>
+</ul>
+</section>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon link reference external" href="https://www.analog.com/cn0523-DesignSupport" target="_blank">EVAL-CN0523-EBZ Design &amp; Integration Files</a></p>
+<ul class="simple">
+<li><p>Schematics</p></li>
+<li><p>PCB Layout</p></li>
+<li><p>Bill of Materials</p></li>
+<li><p>Gerber Files</p></li>
+<li><p>Allegro Board File</p></li>
+</ul>
+</div>
+</section>
+<section id="help-and-support">
+<h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
+<p>For questions and more information about this product, connect with us through
+the Analog Devices <a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone</a>.</p>
+</section>
+</section>
 </section>
 
 
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../eval-adbms6830bmsw/software-guide/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Software User Guide</a>
-    <a href="prerequisites.html" title="Next document (Alt+Shift+RightArrow)" class="next">Prerequisites</a>
+    <a href="../eval-cn0521-ebz/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">EVAL-CN0521-EBZ</a>
+    <a href="../eval-cn0540-ardz/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVAL-CN0540-ARDZ</a>
               </div>
           
         </div>
