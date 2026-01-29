@@ -316,61 +316,55 @@ To find the IP of the SYNCHRONA:
 - Wait a few seconds then hit any key to see if it booted already
 - Type **ifconfig**. This should look like this:
 
-     *Raspbian GNU/Linux 11 analog ttyS0*
+  .. shell::
+     :user: root
+     :group: analog
 
-     *analog login: root (automatic login)*
+      Raspbian GNU/Linux 11 analog ttyS0
 
-     *Linux analog 5.10.63-v7l+ #1 SMP Fri May 6 11:30:22 UTC 2022 armv7l*
+      analog login: root (automatic login)
 
-     *The programs included with the Debian GNU/Linux system are free
-     software; the exact distribution terms for each program are described
-     in the individual files in /usr/share/doc/\*/copyright.*
+      Linux analog 5.10.63-v7l+ #1 SMP Fri May 6 11:30:22 UTC 2022 armv7l
 
-     *Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-     permitted by applicable law.*
+      The programs included with the Debian GNU/Linux system are free
+      software; the exact distribution terms for each program are described
+      in the individual files in /usr/share/doc/\*/copyright.
 
-     *Last login: Sun Jun 12 04:05:54 BST 2022 on ttyS0*
+      Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+      permitted by applicable law.
 
-     *root@analog:~# ifconfig*
+      Last login: Sun Jun 12 04:05:54 BST 2022 on ttyS0
 
-     *eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST> mtu 1500*      
-         *inet 192.168.2.1 netmask 255.255.255.0 broadcast 192.168.2.255*
-         
-         *inet6 fe80::6b61:ce03:6067:283c prefixlen 64 scopeid 0x20*
-         
-         *ether e4:5f:01:93:77:3f txqueuelen 1000 (Ethernet)*
-         
-         *RX packets 79 bytes 11147 (10.8 KiB)*
-         
-         *RX errors 0 dropped 0 overruns 0 frame 0*
-         
-         *TX packets 29 bytes 5447 (5.3 KiB)* 
-         
-         *TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0*
+     $ ifconfig
 
-     *lo: flags=73<UP,LOOPBACK,RUNNING> mtu 65536* 
-         *inet 127.0.0.1 netmask 255.0.0.0*
+     eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST> mtu 1500
+         inet 192.168.2.1 netmask 255.255.255.0 broadcast 192.168.2.255
+         inet6 fe80::6b61:ce03:6067:283c prefixlen 64 scopeid 0x20
+         ether e4:5f:01:93:77:3f txqueuelen 1000 (Ethernet)
+         RX packets 79 bytes 11147 (10.8 KiB)
+         RX errors 0 dropped 0 overruns 0 frame 0
+         TX packets 29 bytes 5447 (5.3 KiB)*
+         TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0
 
-         *inet6 ::1 prefixlen 128 scopeid 0x10<host>*
-
-         *loop txqueuelen 1000 (Local Loopback)* 
-
-         *RX packets 16 bytes 1188 (1.1 KiB)* 
-
-         *RX errors 0 dropped 0 overruns 0 frame 0* 
-
-         *TX packets 16 bytes 1188 (1.1 KiB)*
-
-         *TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0*
+     lo: flags=73<UP,LOOPBACK,RUNNING> mtu 65536*
+         inet 127.0.0.1 netmask 255.0.0.0
+         inet6 ::1 prefixlen 128 scopeid 0x10<host>
+         loop txqueuelen 1000 (Local Loopback)*
+         RX packets 16 bytes 1188 (1.1 KiB)*
+         RX errors 0 dropped 0 overruns 0 frame 0*
+         TX packets 16 bytes 1188 (1.1 KiB)
+         TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0
 
 - Now you need to enable DHCP on SYNCHRONA. 
   You need to do the followings:
 
-     *root@analog:~# cd /linux_image_ADI-scripts/*
+  .. shell::
+     :user: root
+     :group: analog
 
-     *root@analog:/linux_image_ADI-scripts# ./enable_dhcp.sh*
-
-     *root@analog:/linux_image_ADI-scripts# reboot*
+     $ cd /linux_image_ADI-scripts/
+     $ ./enable_dhcp.sh
+     $ reboot
 
 - Wait for the device to reboot. When all is done, you should see the
   initial text like in the code snippet from above
@@ -612,7 +606,6 @@ Design and Integration Files
 
 .. admonition:: Download
 
-  :download:`Schematic AD-SYNCHRONA14-EBZ.pdf`
-
-  :download:`Schematic ADD-ON Board.pdf`
+  | :download:`Schematic AD-SYNCHRONA14-EBZ.pdf`
+  | :download:`Schematic ADD-ON Board.pdf`
 
