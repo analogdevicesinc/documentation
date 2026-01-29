@@ -9,8 +9,8 @@ USB-Powered, 5.8 GHz RF Power Amplifier with Overtemperature Management
 Overview
 --------
 
-The :adi:`EVAL-CN0523-EBZ <CN0523>` is a USB-powered, RF power amplifier 
-that is optimized for transmitting signal chains in the 5.8GHz ISM band. 
+The :adi:`EVAL-CN0523-EBZ <CN0523>` is a USB-powered, RF power amplifier
+that is optimized for transmitting signal chains in the 5.8GHz ISM band.
 Using two :adi:`HMC407` amplifiers cascaded together, the design
 provides a gain of 28dB and return losses of more than 10dB throughout its RF
 band of operation.
@@ -23,15 +23,15 @@ below the hysteresis point.
 
 Designed to be used with the :adi:`ADALM-PLUTO`, or other
 software defined radio platform, the board features a small form factor, with
-dimensions of 25.4mm×50.8mmx1.5748mm (PCB only). The RF input and output
-are designed with a 50Ω impedance, enabling direct connection between the
-circuit and standard 50Ω systems.
+dimensions of ``25.4mm × 50.8mm x 1.5748mm`` (PCB only). The RF input and
+output are designed with a 50Ω impedance, enabling direct connection between
+the circuit and standard 50Ω systems.
 
 A micro-USB connector is used for the input power, allowing the evaluation board
 to use most 5V wall wart power supplies available in the market.
 
 .. figure:: cn0523_simplified_block_diagram.png
-   
+
    EVAL-CN0523-EBZ Block Diagram
 
 Reference Design Hardware
@@ -41,7 +41,7 @@ Primary Side
 ~~~~~~~~~~~~
 
 .. figure:: top_temp.jpg
-   
+
    CN0523 Primary Side
 
 SMA Connectors
@@ -49,35 +49,35 @@ SMA Connectors
 
 The SMA connectors are used for the RF input and output connections:
 
-   - **J1** is the **RF Input** SMA male connector that would be connected to a
-     radio or piece of RF equipment. The maximum RF input level of the
-     :adi:`EVAL-CN0523-EBZ <CN0523>` is **+10dBm**. Do not use a higher input
-     level to avoid damaging the circuit.
+- **J1** is the **RF Input** SMA male connector that would be connected to a
+  radio or piece of RF equipment. The maximum RF input level of the
+  :adi:`EVAL-CN0523-EBZ <CN0523>` is **+10dBm**. Do not use a higher input
+  level to avoid damaging the circuit.
 
-   - **J2** is the **RF Output** SMA FEmale connector that would be connected to
-     an antenna. The saturated output power (Psat) of :adi:`EVAL-CN0523-EBZ <CN0523>` 
-     is **+27dBm**. Ensure that the RF load can handle the amplified RF signal. 
-     Use an RF attenuator if necessary to avoid damage.
+- **J2** is the **RF Output** SMA FEmale connector that would be connected to
+  an antenna. The saturated output power (Psat) of :adi:`EVAL-CN0523-EBZ <CN0523>`
+  is **+27dBm**. Ensure that the RF load can handle the amplified RF signal.
+  Use an RF attenuator if necessary to avoid damage.
 
 LED Indicators
 ^^^^^^^^^^^^^^
 
-- The reference design uses two LEDs to indicate its current status:
+The reference design uses two LEDs to indicate its current status:
 
-   =============================== ======= ================
-   LED Indications of Board Status         
-   =============================== ======= ================
-   **DS1**                         **DS2** **Board Status**
-   Off                             Off     No power
-   Off                             On      Normal operation
-   On                              On      Overtemperature
-   =============================== ======= ================
+=============================== ======= ================
+LED Indications of Board Status
+=============================== ======= ================
+**DS1**                         **DS2** **Board Status**
+Off                             Off     No power
+Off                             On      Normal operation
+On                              On      Overtemperature
+=============================== ======= ================
 
 Secondary Side
 ~~~~~~~~~~~~~~
 
 .. figure:: bot_temp.jpg
-   
+
    CN0523 Secondary Side
 
 Power Supply Connector
@@ -133,7 +133,7 @@ Changing the Temperature Switch Trip Point (JP1, JP2, JP3)
 +-------------------+------------------+-----------------+----------------+
 
 .. important::
-   Due to the considerable thermal dissipation of the RF amplifiers, 
+   Due to the considerable thermal dissipation of the RF amplifiers,
    the last three options should not be used.
 
 Getting Started
@@ -154,13 +154,13 @@ Required Equipment
 **Firmware**
 
 - For step-by-step procedure on how to update the Pluto Firmware, you can
-  use this :dokuwiki:`user guide link </university/tools/pluto/users/firmware>`. 
+  use this :dokuwiki:`user guide link </university/tools/pluto/users/firmware>`.
   The latest firmware version for the **ADALM-PLUTO** can be found here:
 
-   .. admonition:: download
-   
-      ADALM-PLUTO Firmware:
-      `Pluto version latest release <https://github.com/analogdevicesinc/plutosdr-fw/releases/latest>`__
+  .. admonition:: download
+
+     ADALM-PLUTO Firmware:
+     :git-plutosdr-fw:`Pluto version latest release <releases/latest+>`
 
 - In order to properly operate the ADALM PLUTO, you need to setup and configure
   it. Follow the procedure through this
@@ -184,12 +184,12 @@ Test Setup
 #. Refer to the image below for the full hardware setup.
 
    .. figure:: full_hw_setup.jpg
-      
+
       EVAL-CN0523-EBZ Test Setup
 
-.. warning:: 
-   
-   Connecting the CN0523 directly to the PlutoSDR input (Rx) 
+.. warning::
+
+   Connecting the CN0523 directly to the PlutoSDR input (Rx)
    may result in an exceedance of its absolute maximum ratings
    of +2.5dBm. Such an action may lead to permanent damage to the PlutoSDR. It is
    strongly recommended to use a **30dB or 40dB attenuator** at the RX input of
