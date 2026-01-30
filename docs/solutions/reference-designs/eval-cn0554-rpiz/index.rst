@@ -39,7 +39,7 @@ Equipment Required
 
 - **Software**
 
-  - :dokuwiki:`Analog Devices, Inc. Kuiper Linux Image <resources/tools-software/linux-software/kuiper-linux>`
+- :external+adi-kuiper-gen:doc:`index`
 
 Connectors and Jumper Configurations
 ------------------------------------
@@ -104,28 +104,19 @@ Equipment Required
 **Hardware**
 
 - :adi:`EVAL-CN0554-RPIZ` Circuit Evaluation Board
-
 - Raspberry Pi 4 Model B
-
 - Display monitor with HDMI
-
 - Micro HDMI to HDMI adapter
-
 - USB keyboard and mouse
-
 - 16 GB or larger SD card
-
 - 5 V, 3 A USB Type-C power adapter
-
 - Female-to-female loopback jumper cables
-
 - Oscilloscope
-
 - Digital voltmeter (6-digit or higher)
 
 **Software**
 
-- :dokuwiki:`Analog Devices, Inc. Kuiper Linux Image <resources/tools-software/linux-software/kuiper-linux>`
+- :external+adi-kuiper-gen:doc:`index`
 
 **Documentation**
 
@@ -226,18 +217,18 @@ of use in mind. The reasoning behind creating this distribution is to
 minimize the barriers to integrating ADI hardware devices into a
 Linux-based embedded system.
 
-Access to the embedded system can be through ​a remote PC connected
-​either via LAN cable or Wi-Fi.
+Access to the embedded system can be through a remote PC connected either via
+LAN cable or Wi-Fi.
 
 Downloading and Flashing Kuiper Linux Image on SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to control the :adi:`EVAL-CN0554-RPIZ` from the Raspberry Pi, you
-will need to install ADI Kuiper Linux on an SD card. Complete
-instructions, including where to download the SD card image, how to
-write it to the SD card, and how to configure the system are provided at
-:dokuwiki:`Kuiper Images <resources/tools-software/linux-software/kuiper-linux>`.
-Write the image and follow the system configuration procedure.
+In order to control the :adi:`EVAL-CN0554-RPIZ` from the Raspberry Pi, you will
+need to install ADI Kuiper Linux on an SD card. Complete instructions,
+including where to download the SD card image, how to write it to the SD card,
+and how to configure the system are provided at
+:external+adi-kuiper-gen:doc:`index`. Write the image and follow the system
+configuration procedure.
 
 .. figure:: command_prompt.png
    :align: center
@@ -252,9 +243,8 @@ EVAL-CN0554-RPIZ for this case. The overlay file is already included in
 the SD card and just needs to be matched to the EVAL-CN0554-RPIZ.
 
 Follow the Hardware Configuration procedure under **Preparing the Image:
-Raspberry Pi** in the 
-:dokuwiki:`Kuiper Images <resources/tools-software/linux-software/kuiper-linux>`
-page, substituting the following lines in **config.txt**:
+Raspberry Pi** in the :external+adi-kuiper-gen:doc:`index` page, substituting
+the following lines in **config.txt**:
 
 This brings up the file in the terminal. Scroll down until the line that
 begins with “dtoverlay” is found; then, whatever it currently is, change
@@ -269,9 +259,9 @@ it to:
 Save the file by Ctrl + X command. Reboot the system by typing on the
 command prompt:
 
-.. code-block::
+.. shell::
 
-   analog@analog:~$ sudo reboot
+   $ sudo reboot
 
 Graphical User Interface (GUI) and Example Python Scripts
 ---------------------------------------------------------
@@ -279,15 +269,14 @@ Graphical User Interface (GUI) and Example Python Scripts
 There are two main tools which a user has the option to interact with
 the :adi:`EVAL-CN0554-RPIZ`.
 
-- :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`
-
-- :dokuwiki:`Python (via Pyadi-iio) <resources/tools-software/linux-software/pyadi-iio>`
+- :ref:`iio-oscilloscope`
+- :ref:`pyadi-iio`
 
 Software Control and Diagnostics via IIO Oscilloscope
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :adi:`EVAL-CN0554-RPIZ` can be evaluated using IIO Oscilloscope. 
-Customers can use the debug tab and the DMM tab. Various controls 
+The :adi:`EVAL-CN0554-RPIZ` can be evaluated using IIO Oscilloscope.
+Customers can use the debug tab and the DMM tab. Various controls
 and diagnostics are available in these plug-ins.
 
 Debug Tab
@@ -295,8 +284,8 @@ Debug Tab
 
 The debug tab provides direct access to IIO device and channel
 attributes, as well as the registers of the
-:adi:`EVAL-CN0554-RPIZ` components. The IIO attributes and 
-registers can be read and written for advanced configuration 
+:adi:`EVAL-CN0554-RPIZ` components. The IIO attributes and
+registers can be read and written for advanced configuration
 and information.
 
 DMM Tab
@@ -304,14 +293,13 @@ DMM Tab
 
 The DMM tab provides the ADC readings for the :adi:`AD7124-8`.
 
-Pyadi-IIO
+PyADI-IIO
 ~~~~~~~~~
 
-:dokuwiki:`PyADI-IIO <resources/tools-software/linux-software/pyadi-iio>`
-is a python abstraction module for ADI hardware with IIO drivers to make
-them easier to use. This module provides device-specific APIs built on
-top of the current libIIO python bindings. These interfaces try to match
-the driver naming as much as possible without the need to understand the
+:ref:`pyadi-iio` is a python abstraction module for ADI hardware with IIO
+drivers to make them easier to use. This module provides device-specific APIs
+built on top of the current libIIO python bindings. These interfaces try to
+match the driver naming as much as possible without the need to understand the
 complexities of libIIO and IIO.
 
 Running the Example
@@ -334,8 +322,8 @@ single-tone frequency with calibrated output power in dBm.
 .. note::
 
    **Update image, file name, and location**
-   
-   Github link for the python sample script: 
+
+   GitHub link for the python sample script:
    :git-pyadi-iio:`CN0554 Python Example <examples/cn0554_example.py>`
 
 Schematic, PCB Layout, Bill of Materials
@@ -360,13 +348,9 @@ Additional Information and Useful Links
 Reference Demos & Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :git-pyadi-iio:`pyADI-IIO`
-
-- :dokuwiki:`PyADI-IIO Installation Guide <resources/tools-software/linux-software/pyadi-iio>`
-
-- :dokuwiki:`IIO Oscilloscope Installation Guide <resources/tools-software/linux-software/iio_oscilloscope>`
-
-- :dokuwiki:`Kuiper Images <resources/tools-software/linux-software/kuiper-linux>`
+- :ref:`pyadi-iio`
+- :ref:`iio-oscilloscope`
+- :external+adi-kuiper-gen:doc:`index`
 
 Hardware Registration
 ---------------------
