@@ -32,41 +32,31 @@ The following sections will describe the hardware in more detail.
 The CN0359 have 5 connectors:
 
 - **J1** for power supply
-
-- **J2** for RS-485 communication (*Rev A*) or UART communication (*Rev
-  B*)
-
+- **J2** for RS-485 communication (*Rev A*) or UART communication (*Rev B*)
 - **J3** for RTD temperature sensor
-
 - **J4** for JTAG/SWD debug
-
 - **J5** for conductivity sensor
 
 EVAL-CN0359-EB1Z Rev. A
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: cn0359_front.jpg
-    :align: center
+   :align: center
 
 EVAL-CN0359-EBZ Rev. B
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: cn0359-top.png
-    :align: center
+   :align: center
 
 The following equipment are required to evaluate the CN0359:
 
 - CN0359 circuit evaluation board
-
 - EVAL-CFTL-6V-PWRZ 6V DC wall connector (or equivalent)
-
 - 2-wire and 4-wire conductivity cells
-
 - 2-wire and 3-wire and 4-wire PT100 and PT1000 RTDs
-
 - PC with Microsoft Windows 7 (or later OS) and USB 2.0 (or faster USB)
   port
-
 - USB to RS-485 converter cable (Rev A) or ADALM-UARTJTAG or similar USB
   to UART bridge module (Rev B)
 
@@ -74,7 +64,7 @@ The following equipment are required to evaluate the CN0359:
 
   The following conductivity cells have been used to test the
   functionality of the CN0359:
-  
+
   - TOPAC CS SK10T (2-electrode cell)
   - TOPAC CS SK40T (4-electrode cell)
 
@@ -106,9 +96,9 @@ Pin 4      I(-)        (-) Conductivity Probe Excitation Current Pin
 Pin 5      GND         Ground
 ========== =========== =============================================
 
-.. important:: 
-  The error specification for the CN0359 is +/- 0.3% within the 
-  0.1 μS to 10 S (10 MΩ to 0.1 Ω) conductivity range. If the 
+.. important::
+  The error specification for the CN0359 is +/- 0.3% within the
+  0.1 μS to 10 S (10 MΩ to 0.1 Ω) conductivity range. If the
   conductivity of the solution being measured is outside this range,
   extra error may be introduced.
 
@@ -129,9 +119,9 @@ evaluation boards.**
     :align: center
 
 .. caution::
-  
+
   When using 2-electrode sensors with the CN0359 evaluation board:
-  
+
   - Pin 1 ⇔ Pin 2 of J5 **MUST** be shorted.
   - Pin 3 ⇔ Pin 4 of J5 **MUST** be shorted.
 
@@ -218,12 +208,12 @@ Pin 3      A           RS-485 A Signal
 ========== =========== ===============
 
 .. important::
-  
-  The :adi:`CN0359` software is capable of supporting up to 254 boards 
+
+  The :adi:`CN0359` software is capable of supporting up to 254 boards
   (with RS-485 addresses from 1 to 254) connected to one RS-485 network.
-  To improve noise performance, the RS-485 terminal resistor (R10) on 
+  To improve noise performance, the RS-485 terminal resistor (R10) on
   the Rev A boards is set to 10 kΩ.
-  
+
 
   If multiple devices will be used on the same RS-485 network, R10 may
   need to be changed (or removed completely) to comply with the RS-485
@@ -264,9 +254,9 @@ Pin 10     NC          No Connection
 JTAG/SWD Connections
 --------------------
 
-Connector **J4** allows users to debug and/or program the 
-:adi:`CN0359` through a JTAG/SWD debug probe. The physical 
-form factor of this connector differs based on the 
+Connector **J4** allows users to debug and/or program the
+:adi:`CN0359` through a JTAG/SWD debug probe. The physical
+form factor of this connector differs based on the
 evaluation board revision.
 
 The JTAG/SWD debug interface on the CN0359 only supports SWD mode.
@@ -274,9 +264,9 @@ The JTAG/SWD debug interface on the CN0359 only supports SWD mode.
 Rev A: Standard ARM JTAG
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Rev A boards, J4 is pin compatible with 
-`SEGGER J-Link <https://www.segger.com/jlink-debug-probes.html>`__ 
-debug probes that have the standard 20-pin connector/cable. 
+In the Rev A boards, J4 is pin compatible with
+`SEGGER J-Link <https://www.segger.com/jlink-debug-probes.html>`__
+debug probes that have the standard 20-pin connector/cable.
 The following table shows the pin map of J4 in this case:
 
 +-----------------------+-----------------------+-----------------------+
@@ -339,9 +329,9 @@ The following table shows the pin map of J4 in this case:
 Rev B: Mini-JTAG
 ~~~~~~~~~~~~~~~~
 
-In the Rev B boards, J4 is pin compatible with 
-`SEGGER J-Link <https://www.segger.com/jlink-debug-probes.html>`__ 
-debug probes that have the smaller 10-pin connector/cable. The 
+In the Rev B boards, J4 is pin compatible with
+`SEGGER J-Link <https://www.segger.com/jlink-debug-probes.html>`__
+debug probes that have the smaller 10-pin connector/cable. The
 following table shows the pin map of J4 in this case:
 
 +-----------------------+-----------------------+-----------------------+
@@ -413,7 +403,7 @@ user:
 - LCD Contrast
 
 .. warning::
-  
+
   Always check the excitation voltage and frequency before connecting the
   conductivity sensor to the CN0359 evaluation board. Using a setting that
   is outside the specifications of the sensor can cause damage.
@@ -548,15 +538,15 @@ following events:
 Data Communications Interface
 -----------------------------
 
-.. caution:: 
+.. caution::
 
-  To communicate with the :adi:`CN0359` from a PC, use a RS-485 to 
-  USB converter (or UART to USB bridge, depending on the version of 
-  the board) and a terminal emulator such as 
-  `Putty <http://www.putty.org/>`__ or  
-  `Tera Term <https://ttssh2.osdn.jp/index.html.en>`__. Please 
-  check the settings of your software before connecting to the 
-  board. The output of the terminal program must match the following 
+  To communicate with the :adi:`CN0359` from a PC, use a RS-485 to
+  USB converter (or UART to USB bridge, depending on the version of
+  the board) and a terminal emulator such as
+  `Putty <http://www.putty.org/>`__ or
+  `Tera Term <https://ttssh2.osdn.jp/index.html.en>`__. Please
+  check the settings of your software before connecting to the
+  board. The output of the terminal program must match the following
   command formats.
 
 .. important::
@@ -570,7 +560,7 @@ Data Communications Interface
   stream upon pressing the Return key. For software that cannot append
   char ‘\\n’ automatically, the command string should be sent to the
   CN0359 in hexadecimal format with 0x0a appended.
-  
+
 
   The CN0359 software uses char ’ ’ (i.e., the space character) as a
   delimiter in the command string.
@@ -578,8 +568,8 @@ Data Communications Interface
 Rev A: RS-485 Command Usage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this user guide, the :adi:`CN0359` is referred to as the client, 
-and the PC (or any device used to initiate communication) is referred 
+In this user guide, the :adi:`CN0359` is referred to as the client,
+and the PC (or any device used to initiate communication) is referred
 to as the host.
 
 The half-duplex RS-485 interface used in Rev A boards can connect
@@ -588,16 +578,16 @@ in receive status while idle, and can only transmit data when given the
 appropriate command.
 
 .. warning::
-  
-  Only one device can send data at the a given time in this 
-  configuration; otherwise the RS-485 network will encounter signaling 
-  conflicts. If multiple hosts exist in your network, please ensure 
+
+  Only one device can send data at the a given time in this
+  configuration; otherwise the RS-485 network will encounter signaling
+  conflicts. If multiple hosts exist in your network, please ensure
   that no such conflicts occur.
 
 .. caution::
-  
-  The RS-485 address can only be changed through the LCD and encoder 
-  user interface. Set the desired address first prior to sending 
+
+  The RS-485 address can only be changed through the LCD and encoder
+  user interface. Set the desired address first prior to sending
   commands to the board.
 
 The following format is used to explain the different RS-485 commands in
@@ -610,10 +600,10 @@ this user guide:
 **DESCRIPTION**
 
 .. important::
-  
-  The *address* is the integer value of the RS-485 address, ranging 
-  from 1 to 254. The *address* should always go before the **command** 
-  and the *option* for proper communication to the corresponding 
+
+  The *address* is the integer value of the RS-485 address, ranging
+  from 1 to 254. The *address* should always go before the **command**
+  and the *option* for proper communication to the corresponding
   :adi:`CN0359`.
 
 --------------
@@ -628,7 +618,7 @@ will query the CN0359 at address 100 for its settings and its
 measurements:
 
 .. code-block::
-  
+
   100 poll
 
 --------------
@@ -643,7 +633,7 @@ following command will set a 2.5 V peak excitation voltage for the
 CN0359 at address 100:
 
 .. code-block::
-  
+
   100 setvolt 2.5
 
 --------------
@@ -658,7 +648,7 @@ following command will set an 85.6 Hz excitation frequency for the
 CN0359 at address 100:
 
 .. code-block::
-  
+
   100 setfreq 85.6
 
 --------------
@@ -673,7 +663,7 @@ example, the following command will input a cell constant of 1.268 cm-1
 to the CN0359 at address 100:
 
 .. code-block::
-  
+
   100 setk 1.268
 
 --------------
@@ -688,7 +678,7 @@ following command will input a -2.58%/°C temperature coefficient to the
 CN0359 at address 100:
 
 .. code-block::
-  
+
   100 setcof -2.58
 
 --------------
@@ -701,15 +691,15 @@ The **setstm** command is used to set the track-and-hold setup time as a
 percentage of a half excitation period, ranging from 0% to 80%.
 
 .. note::
-  
-  Setup time is measured from the start of a half excitation period to 
+
+  Setup time is measured from the start of a half excitation period to
   the moment the CN0359 begins tracking the measurement voltages.
 
 For example, the following command will set a 5.8% setup time for the
 CN0359 at address 100:
 
 .. code-block::
-  
+
   100 setcof 5.8
 
 If the excitation frequency is 100Hz, then half of the period will be 5
@@ -726,7 +716,7 @@ The **sethtm** command is used to set the track-and-hold hold time as a
 percentage of a half excitation period, ranging from 0% to 10%.
 
 .. note::
-  
+
   Hold time is measured from the moment the CN0359 stops tracking the
   measurement voltages to the end of a half excitation period.
 
@@ -843,8 +833,8 @@ The **setstm** command is used to set the track-and-hold setup time as a
 percentage of a half excitation period, ranging from 0% to 80%.
 
 .. note::
-  
-  Setup time is measured from the start of a half excitation period to 
+
+  Setup time is measured from the start of a half excitation period to
   the moment the CN0359 begins tracking the measurement voltages.
 
 For example, the following command will set a 5.8% setup time for the
@@ -868,7 +858,7 @@ The **sethtm** command is used to set the track-and-hold hold time as a
 percentage of a half excitation period, ranging from 0% to 10%.
 
 .. note::
-  
+
   Hold time is measured from the moment the CN0359 stops tracking the
   measurement voltages to the end of a half excitation period.
 
@@ -894,28 +884,28 @@ programming the evaluation board.
 Hardware Interface
 ------------------
 
-Connector **J4** allows users to debug and/or program the 
-:adi:`CN0359` through a JTAG/SWD debug probe. The physical form 
-factor of this connector differs based on the evaluation board 
-revision. The JTAG/SWD debug interface on the CN0359 only supports 
+Connector **J4** allows users to debug and/or program the
+:adi:`CN0359` through a JTAG/SWD debug probe. The physical form
+factor of this connector differs based on the evaluation board
+revision. The JTAG/SWD debug interface on the CN0359 only supports
 SWD mode.
 
 .. caution::
-  
-  A J-Link debug probe (or equivalent) is needed to download the 
+
+  A J-Link debug probe (or equivalent) is needed to download the
   firmware to the onboard :adi:`ADuCM360` of the :adi:`CN0359`.
 
 .. important::
-  
-  Details regarding the J-Link debug probe can be found at 
+
+  Details regarding the J-Link debug probe can be found at
   `J-Link Manual <https://www.segger.com/downloads/jlink>`__
 
 Rev A: Standard ARM JTAG
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the Rev A boards, J4 is pin compatible with 
-`SEGGER J-Link <https://www.segger.com/jlink-debug-probes.html>`__ 
-debug probes that have the standard 20-pin connector/cable. 
+In the Rev A boards, J4 is pin compatible with
+`SEGGER J-Link <https://www.segger.com/jlink-debug-probes.html>`__
+debug probes that have the standard 20-pin connector/cable.
 The following table shows the pin map of J4 in this case:
 
 +-----------------------+-----------------------+-----------------------+
@@ -977,9 +967,9 @@ The following table shows the pin map of J4 in this case:
 Rev B: Mini-JTAG
 ~~~~~~~~~~~~~~~~
 
-In the Rev B boards, J4 is pin compatible with 
-`SEGGER J-Link <https://www.segger.com/jlink-debug-probes.html>`__ 
-debug probes that have the smaller 10-pin connector/cable. The 
+In the Rev B boards, J4 is pin compatible with
+`SEGGER J-Link <https://www.segger.com/jlink-debug-probes.html>`__
+debug probes that have the smaller 10-pin connector/cable. The
 following table shows the pin map of J4 in this case:
 
 +-----------------------+-----------------------+-----------------------+
@@ -1023,14 +1013,14 @@ Downloading the Firmware to the CN0359
 
 **To download the firmware to the CN0359 evaluation board:**
 
-1. Download and install the latest 
+1. Download and install the latest
    `J-Link Software and Documentation Pack <https://www.segger.com/downloads/jlink>`__.
 
-2. 
+2.
   *For Rev A evaluation boards:*
 
     Download the latest :adi:`CN0359 Design & Integration Files <CN0359>`
-    and extract the contents of CN0359 Source Code Package in 
+    and extract the contents of CN0359 Source Code Package in
     CN0359 Design & Integration Files.
 
 
@@ -1050,99 +1040,99 @@ Downloading the Firmware to the CN0359
 
  .. code-block::
 
-  SEGGER J-Link Commander V6.00i (Compiled Sep  2 2016 19:25:27)
-  DLL version V6.00i, compiled Sep  2 2016 19:25:12
-  Connecting to J-Link via USB...O.K.
-  Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
-  Hardware version: V8.00
-  S/N:
-  License(s): RDI,FlashDL,FlashBP,JFlash,GDBFull
-  VTref = 3.300V
-  Type "connect" to establish a target connection, '?' for help 
+    SEGGER J-Link Commander V6.00i (Compiled Sep  2 2016 19:25:27)
+    DLL version V6.00i, compiled Sep  2 2016 19:25:12
+    Connecting to J-Link via USB...O.K.
+    Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+    Hardware version: V8.00
+    S/N:
+    License(s): RDI,FlashDL,FlashBP,JFlash,GDBFull
+    VTref = 3.300V
+    Type "connect" to establish a target connection, '?' for help
 
 6. In the J-Link terminal, enter the command: **device ADuCM360**
 
   .. code-block::
 
-   J-Link>device ADuCM360 
+     J-Link>device ADuCM360
 
 7. In the J-Link terminal, enter the command: **if swd**
 
   .. code-block::
 
-   J-Link>if swd
-   Selecting SWD as current target interface.
+     J-Link>if swd
+     Selecting SWD as current target interface.
 
 8. In the J-Link terminal, enter the command: **speed 4000**
 
   .. code-block::
 
-   J-Link>speed 4000
-   Selecting 4000 kHz as target interface speed 
+     J-Link>speed 4000
+     Selecting 4000 kHz as target interface speed
 
 9. In the J-Link terminal, enter the command: **erase**
 
  .. code-block::
 
-   J-Link>erase
-   Target connection not established yet but required for command.
-   Device "ADUCM360" selected.
-   Connecting to target via SWD
-   Found SWD-DP with ID 0x2BA01477
-   DPIDR: 0x2BA01477
-   CoreSight SoC-400 or earlier
-   Scanning AP map to find all available APs
-   AP[1]: Stopped AP scan as end of AP map has been reached
-   AP[0]:AHB-AP (IDR: 0x24770011)
-   Iterating through AP map to find AHB-AP to use
-   AP[0]: Core found
-   AP[0]: AHB-AP ROM base: 0xE00FF000
-   CPUID register: 0x412FC230. Implementer code: 0x41 (ARM)
-   Found Cortex-M3 r2p0, Little endian.
-   FPUnit: 6 code (BP) slots and 2 literal slots
-   CoreSight components:
-   ROMTbl[0] @ E00FF000
-   [0][0]: E000E000 CID B105E00D PID 002BB000 SCS
-   [0][1]: E0001000 CID B105E00D PID 002BB002 DWT
-   [0][2]: E0002000 CID B105E00D PID 002BB003 FPB
-   Cortex-M3 identified.
-   Without any given address range, Erase Chip will be executed
-   Erasing device...
-   Comparing flash   [100%] Done.
-   Erasing flash     [100%] Done.
-   Verifying flash   [100%] Done.
-   J -Link: Flash download: Total time needed: 0.421s 
-   (Prepare: 0.373s, Compare: 0.000s, Erase: 0.025s, 
-   Program: 0.000s, Verify: 0.000s, Restore: 0.021s)
-   Erasing done. 
+    J-Link>erase
+    Target connection not established yet but required for command.
+    Device "ADUCM360" selected.
+    Connecting to target via SWD
+    Found SWD-DP with ID 0x2BA01477
+    DPIDR: 0x2BA01477
+    CoreSight SoC-400 or earlier
+    Scanning AP map to find all available APs
+    AP[1]: Stopped AP scan as end of AP map has been reached
+    AP[0]:AHB-AP (IDR: 0x24770011)
+    Iterating through AP map to find AHB-AP to use
+    AP[0]: Core found
+    AP[0]: AHB-AP ROM base: 0xE00FF000
+    CPUID register: 0x412FC230. Implementer code: 0x41 (ARM)
+    Found Cortex-M3 r2p0, Little endian.
+    FPUnit: 6 code (BP) slots and 2 literal slots
+    CoreSight components:
+    ROMTbl[0] @ E00FF000
+    [0][0]: E000E000 CID B105E00D PID 002BB000 SCS
+    [0][1]: E0001000 CID B105E00D PID 002BB002 DWT
+    [0][2]: E0002000 CID B105E00D PID 002BB003 FPB
+    Cortex-M3 identified.
+    Without any given address range, Erase Chip will be executed
+    Erasing device...
+    Comparing flash   [100%] Done.
+    Erasing flash     [100%] Done.
+    Verifying flash   [100%] Done.
+    J -Link: Flash download: Total time needed: 0.421s
+    (Prepare: 0.373s, Compare: 0.000s, Erase: 0.025s,
+    Program: 0.000s, Verify: 0.000s, Restore: 0.021s)
+    Erasing done.
 
-10. 
+10.
 
   *For Rev A evaluation boards:*
 
     Input the following command in the J-Link terminal:
 
      .. code-block::
-  
-      Loadfile x:\yyy\CN0359\Release\CN0359.bin 0
 
-    x is the disk drive; yyy is the file path of the CN0359 
+        Loadfile x:\yyy\CN0359\Release\CN0359.bin 0
+
+    x is the disk drive; yyy is the file path of the CN0359
     source code package
 
      .. code-block::
 
-      J-Link>loadfile x:\yyy\CN0359\Release\CN0359.bin 0
-      Downloading file [x:\yyy\CN0359\Release\CN0359.bin]...
-      Comparing flash   [100%] Done.
-      Erasing flash     [100%] Done.
-      Programming flash [100%] Done.
-      Verifying flash   [100%] Done.
-      J-Link: Flash download: Flash programming performed 
-      for 1 range (76288 bytes)
-      J-Link: Flash download: Total time needed: 5.945s 
-      (Prepare: 0.065s, Compare: 0.529s, Erase: 0.023s, 
-      Program: 5.157s, Verify: 0.131s, Restore: 0.038s)
-      O.K.
+        J-Link>loadfile x:\yyy\CN0359\Release\CN0359.bin 0
+        Downloading file [x:\yyy\CN0359\Release\CN0359.bin]...
+        Comparing flash   [100%] Done.
+        Erasing flash     [100%] Done.
+        Programming flash [100%] Done.
+        Verifying flash   [100%] Done.
+        J-Link: Flash download: Flash programming performed
+        for 1 range (76288 bytes)
+        J-Link: Flash download: Total time needed: 5.945s
+        (Prepare: 0.065s, Compare: 0.529s, Erase: 0.023s,
+        Program: 5.157s, Verify: 0.131s, Restore: 0.038s)
+        O.K.
 
   *For Rev B evaluation boards:*
 
@@ -1150,32 +1140,30 @@ Downloading the Firmware to the CN0359
 
     .. code-block::
 
-      loadfile x:\yyy\ADuCM360_demo_cn0359 0
+       loadfile x:\yyy\ADuCM360_demo_cn0359 0
 
     x is the disk drive; yyy is the file path of the CN0359 firmware file
 
     .. code-block::
 
-      J-Link>loadfile x:\yyy\ADuCM360_demo_cn0359 0
-      Downloading file [x:\yyy\ADuCM360_demo_cn0359]...
-      Comparing flash   [100%] Done.
-      Erasing flash     [100%] Done.
-      Programming flash [100%] Done.
-      Verifying flash   [100%] Done.
-      J-Link: Flash download: Bank 0 @ 
-      0x00000000: 1 range affected (82432 bytes)
-      J-Link: Flash download: Total: 1.160s 
-      (Prepare: 0.046s, Compare: 0.022s, Erase: 0.000s, 
-      Program & Verify: 0.1069s, Restore: 0.021s)
-      J-Link: Flash download: Program & Verify 
-      speed: 75 KB/s
-      O.K. 
+       J-Link>loadfile x:\yyy\ADuCM360_demo_cn0359 0
+       Downloading file [x:\yyy\ADuCM360_demo_cn0359]...
+       Comparing flash   [100%] Done.
+       Erasing flash     [100%] Done.
+       Programming flash [100%] Done.
+       Verifying flash   [100%] Done.
+       J-Link: Flash download: Bank 0 @
+       0x00000000: 1 range affected (82432 bytes)
+       J-Link: Flash download: Total: 1.160s
+       (Prepare: 0.046s, Compare: 0.022s, Erase: 0.000s,
+       Program & Verify: 0.1069s, Restore: 0.021s)
+       J-Link: Flash download: Program & Verify
+       speed: 75 KB/s
+       O.K.
 
 11. Disconnect the J-Link debug probe and power supply from the CN0359
 evaluation board. The CN0359 evaluation board will run the downloaded
 program when it is powered up again.
-
---------------
 
 
 Software Development Environment
@@ -1190,7 +1178,7 @@ The source code for the CN0359 software can be downloaded from:
 ADuCM360_demo_cn0359_reva is a CrossCore project. Import the project in
 ADI CrossCore Embedded Studio to build and debug the code.
 
-- :adi:`CrossCore Embedded Studio <esign-center/evaluation-hardware-and-software/software/adswt-cces.html>`
+- :adi:`CrossCore Embedded Studio <design-center/evaluation-hardware-and-software/software/adswt-cces.html>`
 
 
 Rev B Source Code
@@ -1202,9 +1190,7 @@ The source code for the CN0359 software can be downloaded from:
 ADuCM360_demo_cn0359 is a CrossCore project. Import the project in ADI
 CrossCore Embedded Studio to build and debug the code.
 
-- :adi:`CrossCore Embedded Studio <esign-center/evaluation-hardware-and-software/software/adswt-cces.html>`
-
---------------
+- :adi:`CrossCore Embedded Studio <design-center/evaluation-hardware-and-software/software/adswt-cces.html>`
 
 Software Structure
 ------------------
@@ -1462,8 +1448,6 @@ The following chart shows the structure of the source code:
  - The **include** and **system** folders contain ADuCM360 support files
    for external declaration and Cortex-M3 cmsis library support.
 
---------------
-
 Schematic, PCB Layout, Bill of Materials
 ============================================
 
@@ -1483,13 +1467,11 @@ Schematic, PCB Layout, Bill of Materials
 EVAL-CN0359-EB1Z Rev B Files
 
 - :git-EVAL-ADICUP360:`Software Source Code <projects/ADuCM360_demo_cn0359>`
-
 - :download:`Software Binary Release 1.0 <ADuCM360_demo_cn0359.bin>`
 
 EVAL-CN0359-EB1Z Rev A Files
 
 - :git-EVAL-ADICUP360:`Software Source Code <projects/ADuCM360_demo_cn0359_reva>`
-
 - :download:`Software Binary Release 1.0 <ADuCM360_demo_cn0359_reva.bin>`
 
 --------------
@@ -1498,7 +1480,7 @@ EVAL-CN0359-EB1Z Rev A Files
 ================
 
 Receive software update notifications, documentation updates, view the
-latest videos, and more when you register your hardware. 
+latest videos, and more when you register your hardware.
 `Register your Rev A Board <https://my.analog.com/en/app/registration/hardware/EVAL-CN0359-EB1Z?&v=RevA>`__
 or `Register your Rev B Board <https://my.analog.com/en/app/registration/hardware/EVAL-CN0359-EBZ?&v=RevB>`__
 to receive all these great benefits and more!
