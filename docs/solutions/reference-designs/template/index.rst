@@ -1,6 +1,3 @@
-:orphan:
-:no-search:
-
 .. _template:
 
 EVALUATION BOARD

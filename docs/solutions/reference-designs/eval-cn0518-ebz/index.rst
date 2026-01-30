@@ -29,16 +29,16 @@ circuit and standard 50Ω systems.
 A micro-USB connector is used for the input power, allowing the evaluation board
 to use most 5V wall wart power supplies available in the market.
 
-.. figure:: EVAL-CN0518-EBZ.JPG
+.. figure:: eval-cn0518-ebz.jpg
    :width: 500 px
 
    EVAL-CN0518-EBZ Reference Design Board
 
-The :adi:`EVAL-CN0518-EBZ <CN0518>` features the :adi:`HMC376`, 
+The :adi:`EVAL-CN0518-EBZ <CN0518>` features the :adi:`HMC376`,
 which is a GaAs, pHEMT, MMIC, low noise amplifier
 operating between 700MHz to 1000MHz. This amplifier is ideal for use in GSM
-and CDMA cellular base station front end receivers. This low noise noise
-amplifier does not require any external matching circuitry to operate.
+and CDMA cellular base station front end receivers. This low noise amplifier
+does not require any external matching circuitry to operate.
 
 .. figure:: block_diagram.png
 
@@ -85,7 +85,7 @@ The reference design uses two LEDs to indicate its current status:
 RF Port       Reference Designator Description
 ============= ==================== =============================================
 **Green LED** DS1                  Indicates that power is present on the board
-**Red LED**   DS2                  Indicates when an overpower event occurs 
+**Red LED**   DS2                  Indicates when an overpower event occurs
 ============= ==================== =============================================
 
 This table shows the board status when the various LEDs are ON/OFF.
@@ -140,7 +140,7 @@ operation by referring to this
 Test Setup
 ~~~~~~~~~~
 
-.. figure:: test_setup.png 
+.. figure:: test_setup.png
 
    EVAL-CN0518-EBZ Test Setup
 
@@ -157,18 +157,16 @@ Test Setup
    indicating that the board is powered on and is in operation.
 
 .. important::
-   The :adi:`ADALM-PLUTO` can be configured using an
-   IIO Oscilloscope, visit the website on 
-   :dokuwiki:`IIO Oscilloscope </resources/tools-software/linux-software/iio_oscilloscope>` 
-   to learn more about the tool.
+   The :adi:`ADALM-PLUTO` can be configured using an IIO Oscilloscope, visit
+   the website on :ref:`iio-oscilloscope` to learn more about the tool.
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
-.. important:: 
-   Make sure to download or update to the latest version of IIO
-   Oscilloscope found on this
-   `link <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__.
+.. important::
+
+   Make sure to download or update to the latest version of IIO Oscilloscope
+   found on this :git-iio-oscilloscope:`link <releases+>`.
 
 - Once done with the installation or an update of the latest IIO Oscilloscope,
   open the application. The user needs to supply a URI, which will be used in
@@ -177,7 +175,7 @@ IIO Oscilloscope
 - Press refresh to display available IIO devices. Once the
   :adi:`ADALM-PLUTO` appeared, press connect.
 
-.. figure:: connecting_of_iio_osc.jpg 
+.. figure:: connecting_of_iio_osc.jpg
 
    IIO Oscilloscope Configuration
 
@@ -214,7 +212,7 @@ Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 
 .. admonition:: Download
-   
+
    :adi:`EVAL-CN0518-EBZ Design & Integration Files <CN0518-DesignSupport>`
 
    - Schematics
@@ -225,7 +223,8 @@ Schematic, PCB Layout, Bill of Materials
 Registration
 ------------
 
-.. tip:: 
+.. tip::
+
    Receive software update notifications and documentation
    updates, view the latest videos, and more when you register your hardware.
    :adi:`Register <EVAL-CN0518-EBZ?&v=Rev F>` to receive all these great benefits
