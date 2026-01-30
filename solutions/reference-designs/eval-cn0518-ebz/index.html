@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD-GMSL-D-E-ADP# GMSL oLDI/LVDS to HDMI adapter converts oLDI/LVDS signals from GMSL Deserializers to standard HDMI 2.0 output. This adapter is to be used for debug and system testing only and is not designed to be fully implemented in a final system architecture." name="description" />
+<meta content="The EVAL-CN0518-EBZ is a USB-powered, RF power amplifier that is optimized for receiving signal chains in the 915 MHz ISM band. Using two HMC376 amplifiers cascaded together, the design provides a gain of 25dB and return losses of more than 10dB at its center frequency." name="description" />
 
-    <title>AD-GMSL-D-E-ADP# &#8212; System Level Documentation  documentation</title>
+    <title>EVAL-CN0518-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=5d595293" />
     <script async="async" src="../../../_static/app.umd.js?v=46a18818"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="AD-GMSL522-SL" href="../ad-gmsl522-sl/index.html" />
-    <link rel="prev" title="Power Description" href="../ad-ethernetapldevice-sl/power/index.html" />
+    <link rel="next" title="EVAL-CN0521-EBZ" href="../eval-cn0521-ebz/index.html" />
+    <link rel="prev" title="Turbidity Measurement Demo" href="../eval-cn0503-ardz/turbidity/index.html" />
    
   
   
@@ -94,26 +94,32 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">AD-GMSL-D-E-ADP#</a><ul>
-<li><a class="reference internal" href="#gmsl-oldi-lvds-to-hdmi-adapter">GMSL oLDI/LVDS to HDMI Adapter</a><ul>
+<li><a class="reference internal" href="#">EVAL-CN0518-EBZ</a><ul>
+<li><a class="reference internal" href="#usb-powered-915-mhz-rf-low-noise-amplifier-receiver-with-overpower-protection-circuit">USB-Powered, 915 MHz RF Low Noise Amplifier Receiver with Overpower Protection Circuit</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#features">Features</a></li>
-<li><a class="reference internal" href="#applications">Applications</a></li>
-<li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
-<li><a class="reference internal" href="#system-setup">System Setup</a><ul>
-<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#reference-design-hardware">Reference Design Hardware</a><ul>
+<li><a class="reference internal" href="#primary-side">Primary Side</a></li>
+<li><a class="reference internal" href="#secondary-side">Secondary Side</a></li>
+<li><a class="reference internal" href="#sma-connectors">SMA Connectors</a></li>
+<li><a class="reference internal" href="#led-indicators">LED Indicators</a></li>
+<li><a class="reference internal" href="#power-supply-connector">Power Supply Connector</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#adapter-setup">Adapter Setup</a></li>
-<li><a class="reference internal" href="#deserializer-configuration">Deserializer Configuration</a></li>
-<li><a class="reference internal" href="#advanced-features">Advanced Features</a><ul>
-<li><a class="reference internal" href="#hdmi-audio">HDMI Audio</a></li>
-<li><a class="reference internal" href="#uart-monitoring">UART Monitoring</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#required-equipment">Required Equipment</a><ul>
+<li><a class="reference internal" href="#hardware">Hardware</a></li>
+<li><a class="reference internal" href="#firmware">Firmware</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#software-development">Software Development</a></li>
-<li><a class="reference internal" href="#design-and-integration-files">Design and Integration Files</a></li>
-<li><a class="reference internal" href="#support">Support</a></li>
+<li><a class="reference internal" href="#adalm-pluto-preparation">ADALM-PLUTO Preparation</a></li>
+<li><a class="reference internal" href="#test-setup">Test Setup</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope">IIO Oscilloscope</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-information-and-useful-links">More Information and Useful Links</a></li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+<li><a class="reference internal" href="#registration">Registration</a></li>
+<li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
 </ul>
 </li>
 </ul>
@@ -292,7 +298,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
@@ -408,7 +414,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-CN0518-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
@@ -517,297 +523,291 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="ad-gmsl-d-e-adp">
-<span id="id1"></span><h1>AD-GMSL-D-E-ADP#<a class="headerlink" href="#ad-gmsl-d-e-adp" title="Link to this heading"></a></h1>
-<section id="gmsl-oldi-lvds-to-hdmi-adapter">
-<h2>GMSL oLDI/LVDS to HDMI Adapter<a class="headerlink" href="#gmsl-oldi-lvds-to-hdmi-adapter" title="Link to this heading"></a></h2>
+  <section id="eval-cn0518-ebz">
+<span id="id1"></span><h1>EVAL-CN0518-EBZ<a class="headerlink" href="#eval-cn0518-ebz" title="Link to this heading"></a></h1>
+<section id="usb-powered-915-mhz-rf-low-noise-amplifier-receiver-with-overpower-protection-circuit">
+<h2>USB-Powered, 915 MHz RF Low Noise Amplifier Receiver with Overpower Protection Circuit<a class="headerlink" href="#usb-powered-915-mhz-rf-low-noise-amplifier-receiver-with-overpower-protection-circuit" title="Link to this heading"></a></h2>
 <section id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
-<figure class="align-left" id="id2">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/ad-gmsl-d-e-adp_angle.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/ad-gmsl-d-e-adp_angle.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/ad-gmsl-d-e-adp_angle.jpg" style="width: 400px;" />
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">EVAL-CN0518-EBZ</a> is a USB-powered, RF power
+amplifier that is optimized for receiving signal chains in the 915 MHz ISM band.
+Using two <a class="icon adi reference external" href="https://www.analog.com/HMC376" target="_blank">HMC376</a> amplifiers cascaded together, the design
+provides a gain of 25dB and return losses of more than 10dB at its center
+frequency.</p>
+<p>The circuit includes a high speed overpower cutoff that protects sensitive
+downstream equipment connected to the receiver system. The receiver system also
+automatically returns to normal operation when the RF power level drops within
+the acceptable range.</p>
+<p>Designed to be used with the <a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a>, the
+<a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">EVAL-CN0518-EBZ</a> features a small form factor with
+dimensions of 25.4mm×49.6mmx1.5748mm (PCB only). The RF input and output
+are designed with a 50Ω impedance, enabling direct connection between the
+circuit and standard 50Ω systems.</p>
+<p>A micro-USB connector is used for the input power, allowing the evaluation board
+to use most 5V wall wart power supplies available in the market.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/eval-cn0518-ebz.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/eval-cn0518-ebz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/eval-cn0518-ebz.jpg" style="width: 500px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD-GMSL-D-E-ADP# GMSL Adapter Board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0518-EBZ Reference Design Board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-GMSL-D-E-ADP.html" target="_blank">AD-GMSL-D-E-ADP# GMSL oLDI/LVDS to HDMI adapter</a>
-converts oLDI/LVDS signals from GMSL Deserializers to standard HDMI 2.0 output.
-This adapter is to be used for debug and system testing only and is not designed
-to be fully implemented in a final system architecture.</p>
-<p>The adapter is designed to fit all GMSL oLDI Deserializers Evaluation Boards
-using the equipped Samtec board-to-board connectors. It utilizes automatic
-configuration by “seeing” the incoming oLDI/LVDS signals and adjusting the
-HDMI’s output based upon the received signals. A UART output is available to
-be used for monitoring the automatic configuration process.</p>
-<p>The adapter includes inputs for I2S audio and was designed in such a way that
-the GMSL I2S signals (from the forward channel) could be used as inputs. Like
-the video setup, the adapter automatically detects and adds the I2S audio data
-into the HDMI signals without the need to program the adapter itself.</p>
-</section>
-<section id="features">
-<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>Converts the oLDI/LVDS signals from GMSL Deserializers to standard HDMI 2.0</p></li>
-<li><p>Useful for debug and testing of GMSL display systems</p></li>
-<li><p>Designed to fit all GMSL oLDI Deserializers Evaluation Boards using the equipped Samtec board-to-board connectors</p></li>
-<li><p>Includes inputs for GMSL I2S signals</p></li>
-</ul>
-</section>
-<section id="applications">
-<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>High-resolution display systems</p></li>
-<li><p>Advanced Driver Assistance Systems (ADAS)</p></li>
-</ul>
-</section>
-<section id="block-diagram">
-<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">EVAL-CN0518-EBZ</a> features the <a class="icon adi reference external" href="https://www.analog.com/HMC376" target="_blank">HMC376</a>,
+which is a GaAs, pHEMT, MMIC, low noise amplifier
+operating between 700MHz to 1000MHz. This amplifier is ideal for use in GSM
+and CDMA cellular base station front end receivers. This low noise amplifier
+does not require any external matching circuitry to operate.</p>
 <figure class="align-default" id="id3">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/oldi_to_hdmi_adapter_block_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/oldi_to_hdmi_adapter_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/oldi_to_hdmi_adapter_block_diagram.png" style="width: 500px;" />
-</a>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/block_diagram.png" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD-GMSL-D-E-ADP# Simplified Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0518-EBZ Simplified Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
-<section id="system-setup">
-<h3>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h3>
-<section id="equipment-needed">
-<h4>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h4>
+<section id="reference-design-hardware">
+<h3>Reference Design Hardware<a class="headerlink" href="#reference-design-hardware" title="Link to this heading"></a></h3>
+<section id="primary-side">
+<h4>Primary Side<a class="headerlink" href="#primary-side" title="Link to this heading"></a></h4>
+<figure class="align-default" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/primary_side.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/primary_side.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0518 Primary Side</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="secondary-side">
+<h4>Secondary Side<a class="headerlink" href="#secondary-side" title="Link to this heading"></a></h4>
+<figure class="align-default" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/secondary_side.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/secondary_side.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CN0518 Secondary Side</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="sma-connectors">
+<h4>SMA Connectors<a class="headerlink" href="#sma-connectors" title="Link to this heading"></a></h4>
+<p>The SMA connectors are used for the RF input and output connections.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>RF Port</p></td>
+<td><p>Reference Designator</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>RF Input (SMA male
+connector)</p></td>
+<td><p>J2</p></td>
+<td><p>Connect to a radio or
+piece of RF equipment</p></td>
+</tr>
+<tr class="row-odd"><td><p>RF Output (SMA female
+connector)</p></td>
+<td><p>J1</p></td>
+<td><p>Connect to an antenna</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="led-indicators">
+<h4>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h4>
+<p>The reference design uses two LEDs to indicate its current status:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>RF Port</p></th>
+<th class="head"><p>Reference Designator</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Green LED</strong></p></td>
+<td><p>DS1</p></td>
+<td><p>Indicates that power is present on the board</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Red LED</strong></p></td>
+<td><p>DS2</p></td>
+<td><p>Indicates when an overpower event occurs</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This table shows the board status when the various LEDs are ON/OFF.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Green LED</p></th>
+<th class="head"><p>Red LED</p></th>
+<th class="head"><p>Board Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>No Power</p></td>
+</tr>
+<tr class="row-odd"><td><p>ON</p></td>
+<td><p>OFF</p></td>
+<td><p>Normal RF Operation</p></td>
+</tr>
+<tr class="row-even"><td><p>ON</p></td>
+<td><p>ON</p></td>
+<td><p>Overpower Event (RF Output Attenuated)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="power-supply-connector">
+<h4>Power Supply Connector<a class="headerlink" href="#power-supply-connector" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li><p>One (1) AD-GMSL-D-E-ADP# GMSL oLDI to HDMI Adapter</p></li>
-<li><p>One (1) GMSL Deserializer Evaluation Kit (EvKit)</p></li>
-<li><p>One set standoff screws and nuts (included in the EvKit)</p></li>
-<li><p>One (1) GMSL cable</p></li>
-<li><p>One (1) micro-USB to USB cable</p></li>
-<li><p>12 V power supply</p></li>
-<li><p>Host PC or laptop with HDMI display</p></li>
-<li><p>Logic Analyzer (to be used in UART monitoring only)</p></li>
+<li><p><strong>P1</strong> is the micro-USB port used to provide 5V power to the board.</p></li>
 </ul>
 </section>
 </section>
-<section id="adapter-setup">
-<h3>Adapter Setup<a class="headerlink" href="#adapter-setup" title="Link to this heading"></a></h3>
-<figure class="align-default" id="id4">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/samtec_connectors.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/samtec_connectors.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/samtec_connectors.png" style="width: 600px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">Standard GMSL oLDI Deserializer Connectors</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>The <strong>AD-GMSL-D-E-ADP# GMSL adapter</strong> is designed to fit all GMSL oLDI
-Deserializers Evaluation boards using the equipped Samtec board-to-board
-connectors.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>It is critical that this procedure is followed
-in every installation of this GMSL adapter; not doing so could incur permanent
-damage to the adapter.</p>
-</div>
-<p>The installation steps are as follows:</p>
-<ol class="arabic">
-<li><p>Start with the Deserializer (EvKit) completely unplugged from all connections
-<strong>This includes the GMSL Link, USB, oLDI Screen, and Power.</strong></p></li>
-<li><p>With the unconnected EvKit, install standoff screws and nuts.</p>
-<figure class="align-default" id="id5">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/installing_standoff_screws.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/installing_standoff_screws.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/installing_standoff_screws.png" style="width: 400px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 4 </span><span class="caption-text">Connecting Standoff Screws</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>Connect the <strong>AD-GMSL-D-E-ADP# GMSL adapter</strong> to the Deserializer (EvKit)
-through the Samtec board-to-board connector.</p></li>
-<li><p>Make sure that <strong>AD-GMSL-D-E-ADP# GMSL adapter</strong> is firmly attached and
-evenly seated in the Samtec port.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Do not overtighten the screws as this may cause the EvKit PCB to bend.</p>
-</div>
-<figure class="align-default" id="id6">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/attaching_ev_kit_to_the_adapter.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/attaching_ev_kit_to_the_adapter.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/attaching_ev_kit_to_the_adapter.png" style="width: 400px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 5 </span><span class="caption-text">Attaching the Deserializer to the AD-GMSL-D-E-ADP#</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>Connect the GMSL cable.</p>
-<figure class="align-default" id="id7">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_gmsl_cable.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_gmsl_cable.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_gmsl_cable.png" style="width: 400px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 6 </span><span class="caption-text">Connecting the GMSL Cable</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>Connect the micro-USB to USB cable.</p>
-<figure class="align-default" id="id8">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_usb_cable.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_usb_cable.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_usb_cable.png" style="width: 400px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 7 </span><span class="caption-text">Connecting the USB Cable</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>Connect one end of the HDMI cable to <strong>AD-GMSL-D-E-ADP# GMSL adapter</strong> and
-then the other end to the HDMI display monitor.</p>
-<figure class="align-default" id="id9">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_hdmi_cable.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_hdmi_cable.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_hdmi_cable.png" style="width: 400px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 8 </span><span class="caption-text">Connecting the HDMI Cable</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>Connect the 12 V power adapter cable.</p>
-<figure class="align-default" id="id10">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_the_power_cable.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_the_power_cable.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/connecting_the_power_cable.png" style="width: 500px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 9 </span><span class="caption-text">Connecting the Power Cable</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>Power ON the EvKit by sliding the power switch as shown below.</p>
-<figure class="align-default" id="id11">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/power_switch.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/power_switch.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/power_switch.png" style="width: 500px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 10 </span><span class="caption-text">Deserializer Power Switch</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>Confirm if GMSL link has been established. The Lock LEDs on the EvKits light
-up, indicating that links are set up properly. Also, the Power LED on the
-<strong>AD-GMSL-D-E-ADP# GMSL adapter</strong> will light up as an indication that boards
-are properly supplied with required power.</p>
-<figure class="align-default" id="id12">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/leds_buttons.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/leds_buttons.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/leds_buttons.png" style="width: 600px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 11 </span><span class="caption-text">GMSL Link LED Indicators</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>Proceed to Configuration after the Link Lock is established.</p></li>
-</ol>
+<section id="getting-started">
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h3>
+<section id="required-equipment">
+<h4>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h4>
+<section id="hardware">
+<h5>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">EVAL-CN0518-EBZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a></p></li>
+<li><p>Two (2) micro-USB power adaptor or micro-USB to USB cable for powering
+<a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> and <a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">EVAL-CN0518-EBZ</a></p></li>
+<li><p>One (1) SMA male-to-male cable</p></li>
+</ul>
 </section>
-<section id="deserializer-configuration">
-<h3>Deserializer Configuration<a class="headerlink" href="#deserializer-configuration" title="Link to this heading"></a></h3>
-<p>The <strong>AD-GMSL-D-E-ADP# GMSL adapter</strong> utilizes automatic configuration by
-“seeing” the incoming oLDI/LVDS signals and adjusting the HDMI’s output based
-upon the received signals. For the adapter to operate, the GMSL Deserializer
-must be configured to output the appropriate signals. Note that the steps
-outlined below contains the Deserializer’s setup only and doesn’t include the
-setup for the Serializer.</p>
-<ol class="arabic simple">
-<li><p>For <strong>Daisy-Chain capable devices</strong>, configure <strong>Register 0x05, bits [7:6] to be 0x1, 0x2, 0x3</strong> –- this enables the video port output.</p></li>
-<li><p>For <strong>All Devices</strong>, set <strong>Register 0x1CE to be 0x4E</strong> –- this configures the oLDI ports for dual oLDI port operation using VESA LVDS signaling.</p></li>
-<li><p>Perform normal setup for the Serializer.</p></li>
-<li><p>After the above steps are completed, video output should be flowing to the connected HDMI-capable monitor.</p></li>
-</ol>
-</section>
-<section id="advanced-features">
-<h3>Advanced Features<a class="headerlink" href="#advanced-features" title="Link to this heading"></a></h3>
-<section id="hdmi-audio">
-<h4>HDMI Audio<a class="headerlink" href="#hdmi-audio" title="Link to this heading"></a></h4>
-<p>The <strong>AD-GMSL-D-E-ADP# GMSL adapter</strong> includes inputs for I2S audio and was
-designed in such a way that the GMSL I2S signals (from the forward channel)
-could be used as inputs into the adapter. Like the video setup, the adapter
-automatically detects and adds the I2S audio data into the HDMI signals without
-the need to program the adapter itself.</p>
-<p>Follow below procedure for audio hardware setup:</p>
-<ol class="arabic">
-<li><p>Power OFF the board Deserializer (EvKit) and disconnect the 12 V power
-supply.</p></li>
-<li><dl>
-<dt>Jump the following signals on <strong>J6</strong>: SCK to SCK, SD to SPDIF, and WS to WS.</dt><dd><figure class="align-default" id="id13">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/j6_signals.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/j6_signals.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/j6_signals.png" style="width: 400px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 12 </span><span class="caption-text">J6 Signals</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</dd>
-</dl>
-</li>
-<li><p>Reinstall the <strong>AD-GMSL-D-E-ADP# GMSL adapter</strong> and apply power to the Deserializer.</p></li>
-<li><p>Perform normal video setup, as described in the <em>Deserializer Configuration</em> section.</p></li>
-<li><p>Perform normal audio setup based on your audio device’s setup instructions.</p></li>
-<li><p>At this point, both audio and video should be running for your system.</p></li>
-</ol>
-</section>
-<section id="uart-monitoring">
-<h4>UART Monitoring<a class="headerlink" href="#uart-monitoring" title="Link to this heading"></a></h4>
-<p>This adapter utilizes automatic configuration by “seeing” the incoming
-oLDI/LVDS signals and adjusting the HDMI’s output based upon the received
-signals. This process can be monitored by using the adapter’s UART output.</p>
-<p>This requires connections from two pins on the adapter to a logic analyzer.</p>
-<ol class="arabic">
-<li><p>Power OFF and DISCONNECT the Deserializer’s 12 V power supply before setting
-up the UART connections.</p></li>
-<li><p>Connect the logic analyzer to <strong>Pin GP4 &amp; GND</strong> of the <strong>AD-GMSL-D-E-ADP# GMSL adapter</strong>.</p></li>
-<li><p>Below example shows the settings used for the SALEAE Logic Analyzer.</p>
-<figure class="align-default" id="id14">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/async_serial_protocol_analyzer_settings.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/async_serial_protocol_analyzer_settings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/async_serial_protocol_analyzer_settings.png" style="width: 600px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 13 </span><span class="caption-text">Async Serial Protocol Analyzer Settings</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>After configuring the Async Serial protocol analyzer using the above
-settings, start the data capture.</p></li>
-<li><p>Open the logic analyzer’s terminal to check the stream of text while the
-device is being set up.</p></li>
-<li><p>Set up the Deserializer based on the procedure described in the <em>Deserializer Configuration</em> section.</p></li>
-<li><p>The terminal stream should display a plain text readout with the following
-information:</p>
-<figure class="align-default" id="id15">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/terminal_stream_readout.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/terminal_stream_readout.png" />
-<figcaption>
-<p><span class="caption-number">Figure 14 </span><span class="caption-text">Sample Readout in Terminal</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If no video is flowing, the UART output should only
-be consist of the first two lines of text. Once video is active, the other lines
-will be printed.</p>
-</div>
-</section>
-</section>
-<section id="software-development">
-<h3>Software Development<a class="headerlink" href="#software-development" title="Link to this heading"></a></h3>
-<p>The GMSL Linux kernel drivers, the complete Linux
-distributions for the supported processing platforms, and software user guides
-can be found on the <a class="icon link reference external" href="https://github.com/analogdevicesinc/gmsl" target="_blank">Analog Devices GMSL GitHub repository</a>.</p>
-</section>
-<section id="design-and-integration-files">
-<h3>Design and Integration Files<a class="headerlink" href="#design-and-integration-files" title="Link to this heading"></a></h3>
+<section id="firmware">
+<h5>Firmware<a class="headerlink" href="#firmware" title="Link to this heading"></a></h5>
+<p>For the step-by-step procedure on how to update the Pluto Firmware, you can use
+this <a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/users/firmware" target="_blank">user guide link</a>.</p>
+<p>The latest firmware version for the <strong>ADALM-PLUTO</strong> can be found here:</p>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
-<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl-d-e-adp/ad-gmsl-d-e-adp_design_support.zip"><code class="xref download docutils literal notranslate"><span class="pre">AD-GMSL-D-E-ADP#</span> <span class="pre">Design</span> <span class="pre">Support</span> <span class="pre">Files</span></code></a></p>
+<p>ADALM-PLUTO Firmware: <a class="icon link reference external" href="https://github.com/analogdevicesinc/plutosdr-fw/releases/latest" target="_blank">Pluto version latest release</a></p>
+</div>
+</section>
+</section>
+<section id="adalm-pluto-preparation">
+<h4>ADALM-PLUTO Preparation<a class="headerlink" href="#adalm-pluto-preparation" title="Link to this heading"></a></h4>
+<p>Follow the step-by-step process on how to configure the ADALM-PLUTO for proper
+operation by referring to this
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/users/firmware" target="_blank">link</a>.</p>
+</section>
+<section id="test-setup">
+<h4>Test Setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h4>
+<figure class="align-default" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/test_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/test_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">EVAL-CN0518-EBZ Test Setup</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Connect directly the <strong>Rx port</strong> of <a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> to
+<strong>J1</strong> of the <a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">EVAL-CN0518-EBZ</a>.</p></li>
+<li><p>Connect the <strong>Tx port</strong> of the <a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> to <strong>J2</strong> of
+the <a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">EVAL-CN0518-EBZ</a> using a male-to-male SMA cable.</p></li>
+<li><p>Connect <strong>P1</strong> (micro-USB) connector of the
+<a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">EVAL-CN0518-EBZ</a> into a PC USB port or a 5V USB
+charger.</p></li>
+<li><p>Connect the micro-USB to USB cable to a PC/laptop and the other end to the
+<a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> data port.</p></li>
+<li><p>The DS2 LED of <a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">CN0518-EBZ</a> will automatically turn on,
+indicating that the board is powered on and is in operation.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> can be configured using an IIO Oscilloscope, visit
+the website on <a class="reference internal" href="../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a> to learn more about the tool.</p>
+</div>
+</section>
+<section id="iio-oscilloscope">
+<h4>IIO Oscilloscope<a class="headerlink" href="#iio-oscilloscope" title="Link to this heading"></a></h4>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure to download or update to the latest version of IIO Oscilloscope
+found on this <a class="icon git reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases" target="_blank">link</a>.</p>
+</div>
 <ul class="simple">
-<li><p>Schematic</p></li>
+<li><p>Once done with the installation or an update of the latest IIO Oscilloscope,
+open the application. The user needs to supply a URI, which will be used in
+the context creation of the IIO Oscilloscope. The instructions can be seen in
+the previous section.</p></li>
+<li><p>Press refresh to display available IIO devices. Once the
+<a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> appeared, press connect.</p></li>
+</ul>
+<figure class="align-default" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/connecting_of_iio_osc.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/connecting_of_iio_osc.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">IIO Oscilloscope Configuration</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>On the AD936x tab, set the required parameters for the
+<a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">EVAL-CN0518-EBZ</a> to operate properly.</p></li>
+</ul>
+<figure class="align-default" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/ad936x.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/ad936x.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">ADALM-PLUTO Settings</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Using the capture window, you can see the RF output of the
+<a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">EVAL-CN0518-EBZ</a> in the frequency domain.</p></li>
+</ul>
+<figure class="align-default" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/capture_window.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0518-ebz/capture_window.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">CN0518 RF Output</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="more-information-and-useful-links">
+<h3>More Information and Useful Links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0518" target="_blank">CN0518 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/HMC376" target="_blank">HMC376 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADG901" target="_blank">ADG901 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADL5904" target="_blank">ADL5904 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LT8335" target="_blank">LT8335 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LT3042" target="_blank">LT3042 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADM7170" target="_blank">ADM7170 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LTC6991" target="_blank">LTC6991 Product Page</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto" target="_blank">ADALM-PLUTO Overview</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/users/amp" target="_blank">Amplifiers for RF Transmission</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/users/amp" target="_blank">RF Amplifier Considerations</a></p></li>
+</ul>
+</section>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/CN0518-DesignSupport" target="_blank">EVAL-CN0518-EBZ Design &amp; Integration Files</a></p>
+<ul class="simple">
+<li><p>Schematics</p></li>
 <li><p>PCB Layout</p></li>
 <li><p>Bill of Materials</p></li>
 <li><p>Allegro Project</p></li>
 </ul>
 </div>
 </section>
-<section id="support">
-<h3>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h3>
-<p>For questions and more information, please contact us on the <strong>Analog Devices
-Engineer Zone</strong>.</p>
-<ul class="simple">
-<li><p><a class="icon ez reference external" href="https://ez.analog.com/community/linux-software-drivers" target="_blank">EngineerZone Linux Software Drivers</a></p></li>
-<li><p><a class="icon ez reference external" href="https://ez.analog.com/community/fpga" target="_blank">EngineerZone FPGA Reference Designs</a></p></li>
-</ul>
+<section id="registration">
+<h3>Registration<a class="headerlink" href="#registration" title="Link to this heading"></a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Receive software update notifications and documentation
+updates, view the latest videos, and more when you register your hardware.
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0518-EBZ?&amp;v=Rev F" target="_blank">Register</a> to receive all these great benefits
+and more!</p>
+</div>
+</section>
+<section id="help-and-support">
+<h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
+<p>For questions and more information about this product, connect with us through the Analog Devices <a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone</a> .</p>
 </section>
 </section>
 </section>
@@ -816,8 +816,8 @@ Engineer Zone</strong>.</p>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../ad-ethernetapldevice-sl/power/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Power Description</a>
-    <a href="../ad-gmsl522-sl/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-GMSL522-SL</a>
+    <a href="../eval-cn0503-ardz/turbidity/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Turbidity Measurement Demo</a>
+    <a href="../eval-cn0521-ebz/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVAL-CN0521-EBZ</a>
               </div>
           
         </div>
