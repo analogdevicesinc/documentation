@@ -3,7 +3,15 @@
 For End Users
 =============
 
-.. image:: ../adalm2000.jpg
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :glob:
+
+   name
+   reference_manual
+
+.. image:: ../images/adalm2000.jpg
    :align: right
    :width: 400px
 
@@ -14,10 +22,10 @@ Contents
    TODO pluto customizing to pluto-m2k
    Make sure all things are in ./users
 
-#. :dokuwiki:`Introduction to the Hardware <university/tools/m2k/devs/intro>`
+#. :ref:`Introduction to the Hardware <m2k intro>`
 
-   #. :dokuwiki:`What's with the name? <university/tools/m2k/users/name>` *ADALM2000?*
-   #. :dokuwiki:`Understanding the Internals <university/tools/m2k/users/reference_manual>`
+   #. :ref:`What's with the name? <m2k name>` *ADALM2000*
+   #. :ref:`Understanding the Internals <m2k reference_manual>`
 
 #. :dokuwiki:`Quick Start <university/tools/m2k/users/quick_start>`
 #. Intro to the Software. Installing Device Drivers on:
@@ -26,8 +34,8 @@ Contents
    #. :dokuwiki:`Linux </university/tools/pluto/drivers/linux>`
    #. :dokuwiki:`MAC </university/tools/pluto/drivers/osx>`
 
-#. Upgrading the the ADALM2000 :ref:`Firmware <pluto-m2k firmware>`.
-#. Common customization: 
+#. Upgrading the the ADALM2000 :ref:`Firmware <pluto-m2k firmware>`
+#. Common customization:
 
    #. :dokuwiki:`Multiple devices </university/tools/pluto/users/customizing#multiple_devices>`
    #. :dokuwiki:`Changing the root password on the target </university/tools/pluto/users/customizing#changing_the_root_password_on_the_target>`

@@ -3,6 +3,10 @@
 ADALM2000
 =========
 
+.. image:: ./images/adalm2000.jpg
+   :align: left
+   :width: 200px
+
 .. toctree::
    :hidden:
    :glob:
