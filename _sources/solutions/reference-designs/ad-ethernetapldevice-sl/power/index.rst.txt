@@ -25,8 +25,7 @@ As shown in Table 2 - Electrical Characteristics of Power Classes, the
 specification. For the complete table, read the document's Table 6 of
 `Ethernet-APL Port Profile specification <https://library.fieldcommgroup.org/10186/TS10186/1.1/#page=20>`_.
 
-.. csv-table:: Electrical Characteristics of Power Classes
-   (Excerpt only/incomplete table)
+.. csv-table:: Electrical Characteristics of Power Classes (Excerpt only/incomplete table)
    :file: power_class.csv
 
 Circuit Analysis
@@ -69,16 +68,14 @@ voltage sensed by the LINEA and LINEB pins of LT8440, and the current
 that will flow to the LOAD_P thru the system of
 AD-EthernetAPLDevice-SL, it will dictate the regulation amplitude of
 the line current and which mode it will regulate. For the complete
-specification of LT8440 for Table 4, Table 5 and Table 6, see the
+specification of LT8440, see the
 Electrical Characteristics on LT8440 datasheet.
 
 The line current will also depend on both the shunt current
-(I_SHUNT) and LOAD_P current (I_LOADP) as the line current (I_LINEP)
+(I_SHUNT) and LOAD_P current (I_LOADP) as the line current (ILINEP)
 is the summation of I_LOADP and I_SHUNT shown in Equation 1.
 
-.. math::
-
-   I_LINEP = I_LOADP+I_SHUNT (1)
+   I_LINEP = I_LOADP + I_SHUNTP (1)
 
 .. figure:: LT8440-simplify.png
    :alt: Simplified Partial Circuit of LT8440
@@ -94,23 +91,21 @@ conducting in which it satisfies Equation 1.
 
 The shunt pin will conduct if the current I_LOADP is not conducting
 (0mA) or I_LOADP is only minimal or lesser than the typical Shunt
-Regulation Mode current indicated in table 5 so the shunt pin detects
+Regulation Mode current indicated in Table 4 so the shunt pin detects
 the lack of I_LOADP, then the shunt pin pulls more current so that
 I_LINEP will regulate the current within the boundaries indicated on
-Table 5.
+Table 4.
 
 Shunt current will only be equal to the line current if LOAD_P is
 operating at No-Load (0mA). If there is a minimal I_LOADP current,
 the Shunt current self-adjust to be what is indicated on Equation 2,
 which is simply a linear algebra manipulation of Equation 1.
 
-.. math::
-
-   I_SHUNT = I_LINEP - I_LOADP   (2)
+   ISHUNT = ILINEP - ILOADP   (2)
 
 For example: for LINE_P voltage of 10.5V, and I_LOADP = 10mA, the
-Shunt pin will pull the current I_SHUNT = 30mA approximately, so that
-it will satisfy the I_LINEP = 40.5mA (for Level 1) or I_LINEP =
+Shunt pin will pull the current ISHUNT = 30mA approximately, so that
+it will satisfy the ILINEP = 40.5mA (for Level 1) or ILINEP =
 39.7mA (for Level 2).
 
 .. csv-table:: Regulating Line Current during Shunt Regulation Mode (Excerpt
@@ -180,6 +175,7 @@ isolated 3.3V (ISO_3V3) for supplying the data isolator and A/D
 Converter temperature sensor interface.
 
 .. figure:: power_planner.png
+   :width: 900 px
    :alt: AD-EthernetAPLDevice-SL Power Tree
 
    AD-EthernetAPLDevice-SL Power Tree
@@ -272,6 +268,7 @@ the entire Power Tree, the following curves are captured at ambient
 temperature of 25 degrees Celsius (typical).
 
 .. figure:: LOAD_P.png
+   :width: 600 px
    :alt: LOAD_P (Load Side) and Shunt Parameters
 
    LOAD_P (Load Side) and Shunt Parameters
@@ -295,6 +292,7 @@ The shunt and load side power are small enough to not violate the APL
 limit when adding the two parameters.
 
 .. figure:: Efficiency.png
+   :width: 600 px
    :alt: Efficiency and Current of Power Tree
 
    Efficiency and Current of Power Tree
@@ -317,6 +315,7 @@ indicated on the APL requirements like the 55.56mA maximum current at
 9V, and the 500mW limit for the entire line voltage range.
 
 .. figure:: Power_performance.png
+   :width: 600 px
    :alt: LINE_P Power Performance at Normal Operation, Shorted and
          Opened Load
 
@@ -341,6 +340,7 @@ therefore the LT8440 is doing its function as a power conditioner at
 normal operation and as a power limiter during fault scenario.
 
 .. figure:: Current_performance.png
+   :width: 600 px
    :alt: LINE_P Current Performance at Normal Operation, Shorted and
          Opened Load
 
