@@ -1,5 +1,5 @@
-﻿Section,Device analised,Rail,Voltage(V),Current(mA),Power(mW),Comments
-"10Base-T1L Circuit 	ADIN1110",,DVDD_1V1,1.1,12,13.2,1.1V can be taken from internal LDO of ADIN1110
+﻿Section,Device Analyzed,Rail,Voltage(V),Current(mA),Power(mW),Comments
+"10Base-T1L Circuit 	",ADIN1110,DVDD_1V1,1.1,12,13.2,1.1V can be taken from internal LDO of ADIN1110
 ,,VDDIO,1.8,18,32.4,
 ,,AVDD_H,1.8,28,50.4,
 ,,AVDD_L,1.8,28,50.4,

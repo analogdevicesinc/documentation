@@ -1,0 +1,11 @@
+﻿Component Type,Voltage Derating,Current Derating,Power Derating,Junction or Die Temperature,Temperature Range
+Capacitors,Voltage maximum,Ripple Current,,Temperature maximum,Operating temperatures
+Connectors or Ports,,Current maximum per pin,,,Operating temperatures
+Diodes for Suppression (TVS),,,,,Operating temperatures
+"Diodes for General Purpose (Silicon, Schottky)",Reverse breakdown or blocking voltage,Forward current maximum,Power maximum,Temperature maximum,Operating temperatures
+Diodes for Stabilization (Zener),,Reverse or Zener current maximum,Power maximum,Temperature maximum,Operating temperatures
+Analog Integrated Circuit,Wide supply maximum voltage,Load current maximum,Power maximum,Temperature maximum,Operating temperatures
+Digital Integrated Circuit,Wide supply maximum voltage,Load current maximum,Power maximum,Temperature maximum,Operating temperatures
+Inductors and Transformers,,Average or RMS current,,,Operating temperatures
+"Quartz, Crystals or Oscillators",,,,,Operating temperatures
+Resistors,Voltage maximum,Current maximum via Ohm's Law,Power maximum,Temperature maximum,Operating temperatures

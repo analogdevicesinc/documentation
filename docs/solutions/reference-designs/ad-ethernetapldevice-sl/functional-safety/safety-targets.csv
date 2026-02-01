@@ -1,0 +1,14 @@
+﻿Subject,Requirements
+Targets of Safety Function,SIL2 low demand according to IEC-61508
+Wording of the Safety Function,The AD-EthernetAPLDevice-SL shall measure a temperature value with a connected RTD or thermocouple sensor at the TEMP connector and transmit this value over the APL connector with a functional safe protocol.
+Safe State (Assumption),There are two possible safe states:
+,a) The safe bus communication over APL with the Hockey Puck is not possible anymore.
+,b) The Hockey Puck is indicating an internal error over the safe bus protocol and mark the transmitted temperature measurement as faulty.
+Targets of safety parameter according to IEC-61508,PFD (percentage) of SIL2 ? 35% of 10^-2
+,PFD (avg) ? 3.5 x 10^-3
+,Circuit parts with type-B components:
+,HFT=0 ? SFF ? 90%
+Timing ,Proof test interval ? 12 months
+,Safe reaction time ? 1s
+,Max. internal diagnosis time ? 8h
+,Low demand mode

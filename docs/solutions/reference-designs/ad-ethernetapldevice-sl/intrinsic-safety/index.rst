@@ -3,39 +3,46 @@
 Intrinsic Safety Design
 =======================
 
-Ethernet-APL Field Platform Intrinsic Safety Analysis
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 Introduction
 ------------
 
 The :adi:`AD-ETHERNETAPLDEVICE-SL` has been certify for Ex ia IIC Ga intrinsic
-safety requirements according to IEC 60079-11:2011 standard.
+safety requirements according to IEC 60079-11:2011 standard. It also complies
+with 2-WISE (two-wire intrinsically safe ethernet) standard dictated
+by IEC TS 60079-47.
 
 Key Parameters
 ~~~~~~~~~~~~~~
+The 10Base-T1L Ethernet connection can only be considered 2-WISE,
+especially for the APL Field Device if it passed the specification of a
+Power Load Port indicated in IEC TS 60079-47.
 
 .. csv-table:: Electrical Data
    :file: specifications.csv
+   :header-rows: 1
+   :widths: auto
 
-**DISCLAIMER**
+Disclaimer
+~~~~~~~~~~
 
 The electrical circuits must be protected by encapsulation within the final
 device. Such an encapsulation is required for:
 
 - protection against spark ignition (IEC 60079-11:2023, 6.6.2.1)
 - protection against thermal ignition (IEC 60079-11:2023, 6.6.2.2)
-- rating of electrical components from which the intrinsic safety depends (IEC 60079-11:2023, 6.6.6)
-- application of separation distances through casting compound (IEC 60079-11:2023, Table 7, column 3)
+- rating of electrical components from which the intrinsic safety depends
+  (IEC 60079-11:2023, 6.6.6)
+- application of separation distances through casting compound
+  (IEC 60079-11:2023, Table 7, column 3)
 
 The corresponding sections of EN 60079-11:2012 shall be applied in addition.
 
 An enclosure is not part of this certification.
 
 The full technical requirements of manufacturer's specification must be
-considered for the final device. The local temperature range of -40 °C ≤ Tamb ≤
-+85 °C shall never be exceeded. The maximum surface temperature does not exceed
-135 °C (for T4), if the end user fulfills all requirements.
+considered for the final device. The local temperature range of -40°C ≤ Tamb ≤
++85°C shall never be exceeded. The maximum surface temperature does not exceed
+135°C (for T4), if the end user fulfills all requirements.
 
 This Ex Component has no "Ex" marking as it is not offered separately for sale,
 but is solely for integration by the Ex Component manufacturer into their own
@@ -48,7 +55,7 @@ selection, such power ratings, distances or temperature coefficients, special
 attention has been paid to the blocks highlighted in the diagram.
 
 .. figure:: IS-block-analysis.png
-   :width: 500 px
+   :width: 900 px
    :alt: AD-EthernetAPLDevice-SL Board
 
    AD-EthernetAPLDevice-SL Board
@@ -71,210 +78,199 @@ value for intrinsic safety.
 
 To qualify the component, independent measurements have been performed to
 verify that the energy stored by the inductor is within allowable limits at
-different conditions.
+different conditions. Maximum allowable energy is 20uJ
+for Ex ia IIC Ga equipment or device.
 
 .. figure:: CM-choke.png
-   :width: 500 px
+   :width: 600 px
    :alt: CM choke
 
-   CM choke peak energy
+   CM Choke Spike Voltage to Measure Inductor Energy
 
-LT8440 Sensing and Power Limiter
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Intrinsic Safety Protection for APL Circuit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :adi:`LT8440` has been specially designed for Ethernet-APL Intrinsic
-Safety applications.
+The Ethernet and power protection path is responsible for the Field Device to
+be intrinsically safe, along with other connections or ports outside of the
+board. It consists of magnetics and diodes at the front end to control common
+mode and differential impedances, and to control signal polarity and contain
+stored energy in capacitors and inductors (fault protection). LT8440 works in
+this path to limit total power dissipation in the module, keeping heat under
+control in all conditions. While other ports may be implemented using
+resistors as current limiters, hence it will indirectly limit power and
+energy. The light-blue highlights on the simplified circuit below indicates
+the protection parts or “barriers” that prevent excess energy which protect
+against explosion, more information can be learned on IEC 60079-11.
 
-It serves two primary functions, the first one is to minimize input current
-glitches that could disrupt the Ethernet communication, and the second one is
-to limit the power that can be delivered to the system in case of a fault
-condition. The :adi:`LT8440` adjust the maximum current allowable to teh load
-by sensing the input voltage provided by the field switch so deliver teh
-maximum possible power to the load.
+.. figure:: APL_frontend.png
+   :width: 800 px
+   :alt: APL Front End Circuit with LT8440 Power Conditioner
 
-In our design, the sensing input pins from the :adi:`LT8440` has been connected
-after the diode bridge as this allows for a higher capacitance values.
+   APL Front End Circuit with LT8440 Power Conditioner
 
-Zener diodes
+LT8440 as Power Limiter
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The LT8440 has been specially designed for Ethernet-APL Intrinsic Safety
+applications. It serves two primary functions, the first one is to minimize
+input current glitches that could disrupt Ethernet communication, and the
+second one is to limit the power that can be delivered to the system in case
+of a faulty condition. The LT8440 adjust the maximum current allowable to the
+load by sensing the input voltage provided by the field switch to deliver the
+maximum possible power to the load. In our design, the sensing input pins from
+the LT8440 has been connected after the diode bridge as this allows for a
+higher capacitance values.
+
+.. figure:: required_frontend.png
+   :width: 700 px
+   :alt: Required Frontend Design with Large Effective Capacitance &
+         Inductance on the Load Side
+
+   Required Frontend Design with Large Effective
+   Capacitance and Inductance on the Load Side
+
+Zener Diodes
 ~~~~~~~~~~~~
 
 The Zener diodes will limit the maximum voltage seeing by the circuit in case
-of failure. Remember that the maximum voltage allowed in the intrinsic safety
-analysis is 28V.
+of failure. In the specification of IEC TS 60079-47, the maximum voltage is
+17.5V. But in addition to that, for a low-power field device, smaller parts
+are needed which are commonly have low voltage and power ratings, so the
+selected Zener must be much lower than 17.5V. In the reference design the
+typical Zener diode used as protection has a Zener voltage of 5V.
 
-- Certified for intrinsic safety (Ex ia IIC Ga)
-- Pre-certified Ethernet-APL
-- Functional safety ready (SIL2) with:
+.. figure:: simplified_zener.png
+   :width: 600 px
+   :alt: Simplified Zener Diode and Current Limiter
 
-    - :adi:`MAX42500`  voltage monitor with integrated windowing watchdog
-    - :adi:`MAX66132` temperature sensor
-    - :adi:`ADFS7124-4` sigma-delta ADC (SC3 certified)
-    - Complete FMEDA documentation
+   Simplified Zener Diode and Current Limiter
 
-- :adi:`MAX32690`  dual-core MCU (ARM Cortex-M4 with FPU + RISC-V co-processor)
-- External RAM (512 Mb) and Flash (64 Mb)
-- :adi:`MAXQ1065`  security co-processor for:
+When using the Zener Diode as voltage limiter, it’s placed in combination with
+a current limiter, this current limiter can be a resistor or a
+semiconductor-controlled limiter. In the reference design, the Zener diodes
+are in combination with the LT8440 if there is a failure or faulty condition
+like the shorting failure of the buck converter in between them for example.
+The usual combination is done to make sure both voltage and current are
+limited, resulting in restricting the power, hence restricting energy.
+When the LT8440 and Zener diodes are combined, it creates a regulated source
+in which power is controlled, and the voltage amplitude is protected even
+during fault. Which allows for selection of cheap and very small parts that
+are low-voltage and low-power in ratings, while not violating intrinsic
+safety.
 
-    - Root-of-trust
-    - Mutual authentication
-    - Data confidentiality and integrity
-    - Secure boot and communications
+.. figure:: zener_diode_combi.png
+   :width: 900 px
+   :alt: Zener Diode combination with LT8440
 
-- 10BASE-T1L Ethernet via :adi:`ADIN1110`  MAC/PHY
-- Powered via Single-Pair Power over Ethernet (SPoE), :adi:`ADIN1100D2Z` recommended
-- Open-source software stack with drivers and example applications
-- Zephyr RTOS support and integration with Code Fusion Studio
+   Zener Diode combination with LT8440
 
-.. grid::
-   :widths: 50% 50%
+General Purpose Diodes
+~~~~~~~~~~~~~~~~~~~~~~
 
-   .. figure:: COMB_TOP.png
-      :alt: AD-EthernetAPLDevice-SL Board
+Diodes serve several functions. For the purposes of intrinsic safety, diodes
+can fail to open circuit or short circuit.
 
-      AD-EthernetAPLDevice-SL Board
+1.  The ethernet cable can be connected in either polarity, so either of the
+connector pins may be positive. The APL requires polarity insensitivity at the
+connector. The diode bridge provides this polarity insensitivity, and the
+additional series diode provides redundancy for failure protection. These
+diodes must be Schottky type to have the lowest forward voltage drop. Voltage
+drop in this path dissipates power, making less available to the load.
 
-   .. figure:: APL_Hockeypuck_block_diagram.svg
-      :alt: Simplified Block Diagram
+2.  All capacitances in the circuit can store energy, and only Schottky diodes
+are considered fast enough to catch that energy before it can propagate out to
+the connector and cause a spark in the case of a short circuit. For ‘Ex ia’
+level protection, we need 3 polarity protection diodes in series to account
+for 2 simultaneous short circuit failures. The diode bridge and the additional
+series Schottky diode provide this protection.
 
-      Simplified Block Diagram
+3.  The DM (differential mode) inductor can store energy that must be
+dissipated safely in the event of an open-circuit fault. The bank of diodes
+connected in parallel to the DM choke only operates in the event of an open
+circuit in the inductor that would otherwise create a voltage spike. These
+diodes must be redundant in parallel to reach 'Ex ia' protection. Three diodes
+in series are recommended for higher or wider operating temperature range
+because of the diode forward voltages being dependent on ambient temperature,
+which the diodes must block the ethernet signal of 1V p-p during forward
+biased, and must not be distorted by diodes conducting across the inductor.
+But if size and component count are a critical factor, it can be reduced to 2
+diodes in series in lesser or narrower temperature range.
 
-.. csv-table:: Specifications
-   :file: specifications.csv
+Capacitor as DC Blocker
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Hardware Design Files
-~~~~~~~~~~~~~~~~~~~~~
+Because of the nature of capacitors during steady state or DC analysis, the
+capacitors simply block direct current, in which it is suitable protection by
+acting as a blocker for DC Power and DC Energy. In the APL field device
+circuit, the capacitors responsible for blocking the DC, while allowing the AC
+signal to pass through for the Ethernet Data is designed then to be rated
+during fault-short by simply being a DC blocker.
 
-- :download:`Schematic Power and Comms board <02-083152-01-b.pdf>`
-- :download:`Schematic Digital IS board <02-083153-01-c.pdf>`
-- :download:`Schematic Digital NON-IS board <02-084576-01-b.pdf>`
-- :download:`Layout Power and Comms board <08-083152-01-b-1.pdf>`
-- :download:`Layout Digital IS board <08-083153-01-c.pdf>`
-- :download:`Layout Digital NON-IS board <08-084576-01-b.pdf>`
-- :download:`Bill of Materials Power and Comms board <05-083152-01-b.csv.zip>`
-- :download:`Bill of Materials Digital IS board <05-083153-01-c.csv.zip>`
-- :download:`Bill of Materials Digital NON-IS board <05-084576-01-b.csv.zip>`
+Resistors
+~~~~~~~~~
 
-Package Contents
-----------------
+Resistors are often used to limit current if a protected component experiences
+a short circuit failure. ICs such as the LT8440 are considered to fail to a
+pin-to-pin short circuit, so it must be protected. As defined in the IEC
+60079-11, infallible resistors (those of film type and suitably large to allow
+infallible space between ends) can only fail to an open circuit state. The
+main reason to use redundant resistors is to dissipate heat in the event of a
+short circuit elsewhere in the system. If a single resistor is physically
+large enough with better power dissipation, then a single resistor is
+sufficient.
 
-The development kit is delivered with a set of accessories required to put the
-system together and get it up and running in no time.
+Explosion Protection Levels and Redundancy Approach
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is what you’ll find in the development kit box:
+In a circuit analysis when safety against explosion is involved, assume or
+anticipate the fault that will occur in the circuit, and the protection parts
+of the circuit must withstand permissible or maximum electrical parameters
+that can happen during circuit failure dictated by the requirements or
+specifications.
 
-- 1x AD-EthernetAPLDevice-SL intrinsic safety certify kit (Power and Comms +
-  Digital IS boards)
-- 1x Digital NON-IS board. This board is not IS certify and enables acces to
-  the RISC-V JTAG for debugging pourposes (Digital NON-IS board)
-- 1x MAX32650PICO programmer (ARM) + cable
-- 1x OLIMEX programmer (RISC-V)
-- 1x OLIMEX adapter + cable
+The design of the Intrinsic Safety protection is categorized by the level of
+protection indicated by IEC 60079-11. The more stringent the protection, the
+stricter the circuit implementation will be, this involves the de-rating or
+safety factor of component ratings and the redundancy of protection parts
+based on the number of countable faults.
 
-Application Development
------------------------
+.. csv-table:: Level of Protection for Intrinsic Safety
+   :file: level-of-protection.csv
 
-.. figure:: sw_block_diagram.png
-   :width: 400 px
+Countable faults are the type of faults or failure that if it happens, it will
+caused explosion, hence it is “counted” because they are critical and must be
+prevented by doing duplication or redundancy.
 
-   Software Architecture
+PCB Layout Considerations
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :adi:`AD-ETHERNETAPLDEVICE-SL` firmware examples are based on ADI’s
-open-source no-OS framework. It includes the bare-metal device drivers for all
-the components in the system as well as example applications enabling
-connectivity via the 10BASE-T1L interface for system configuration and data
-transfer.
+IEC 60079-11 requires PCB clearance and creepage requirements, depending on
+the protection level and encapsulation involved, clearance from different
+insulated layers, or if the traces are exposed in air. A simplified table is
+shown below, although the complete distances table for different input
+conditions are provided in IEC 60079-11.
 
-Additionaly, a propietary PROFINET stack software application is available to
-enable easy evaluation and system prototyping (https://myanalog.com registration
-required).
+.. csv-table:: Simplified Clearance Table based on IEC 60079-11 Level of Protection
+   :file: pcb_clearance.csv
 
-The board is fully supported in Code Fusion Studio {{upcoming}}.
+This states that there should be a distance for the traces for different
+permissible voltages, and when in between the protection parts. These distance
+requirements are not just for the traces in the same layer, but also on the
+different layers, meaning the clearance requirement is 3-dimensional.
 
-Hardware Components and Connections
------------------------------------
-
-.. figure:: Power-connectors.png
+.. figure:: simplified_pcb.png
    :width: 600 px
 
-   Power Board Connections
+   Simplified Visual of PCB Clearance
 
-.. figure:: IS-connector.png
+Depending on the Level of Protection, there will be required copper thickness
+and redundancy of vias that may involve.
+
+.. csv-table:: Requirements for Infallible Circuit board Tracks and Vias
+   :file: infallable_circuit_requirements.csv
+
+.. figure:: conservative_layout.png
    :width: 600 px
+   :alt: Visual of Conservative Layout with Via Redundancy
 
-   Digital IS Board Connections
-
-.. figure:: non-IS-connectors.png
-   :width: 600 px
-
-   Digital NON_IS Board Connections
-
-.. csv-table:: Pin Description
-   :file: pin-descriptions.csv
-
-Hardware Setup
---------------
-
-Required Hardware
-~~~~~~~~~~~~~~~~~
-
-- **Development kit**: AD-EthernetAPLDevice-SL
-- **Debugging board**: If Risc-V co-processor need to be debugged, replace the
-  IS digital board with the NON-IS Digital board
-- **Power supply**: Single-Pair Power over Ethernet (SPoE) via DEMO-ADIN1100D2Z
-  supplied from external power connector (from 9V to 15V), or a Ethernet-APL
-  field switch
-- **ARM programmer**: MAX32625PICO or any SWD-compatible programmer
-- **RISC-V programmer** Olimex ARM-USB-OCD
-- **Media converter** 10BASE-T1L to 10BASE-T or similar. DEMO-ADIN1100D2Z
-  includes a media converter and can be used for both power and data or , or a
-  Ethernet-APL field switch
-
-Setup Instructions
-~~~~~~~~~~~~~~~~~~
-
-#. Connect the AD-EthernetAPLDevice-SL to the DEMO-ADIN1100D2Z and ensure all connectors are fully seated.
-#. Connect a 2- or 4-wire PT100 sensor to the temperature connector.
-#. Attach the MAX32625PICO programmer to the ARM debug header using the 10-pin ribbon cable.
-#. For RISC‑V debugging, install the NON‑IS digital board and connect the
-   RISC‑V debug probe to the RISC‑V JTAG header (available only on the NON‑IS
-   board).
-#. Connect the DEMO-ADIN1100D2Z to your PC via Ethernet.
-#. Apply power to the DEMO-ADIN1100D2Z (9V to 15V input). The
-   AD-EthernetAPLDevice-SL will be powered via SPoE.
-
-.. figure:: Config.png
-   :width: 600 px
-   :alt: Hardware Setup
-
-   AD-EthernetAPLDevice-SL Hardware Setup
-
-Software Setup
---------------
-
-Programming the AD-EthernetAPLDevice-SL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The AD-EthernetAPLDevice-SL is supported by an open-source software stack based
-on Analog Devices’ no-OS framework. It includes:
-
-- Bare-metal drivers for all on-board components
-- Example applications for data acquisition and system configuration via 10BASE-T1L
-- Zephyr RTOS board definition
-- Integration with Code Fusion Studio
-
-For a complete experience, download latest Code Fusion Studio from
-:adi:`here <en/design-center/design-tools-and-calculators/code-fusion-studio.html>`.
-
-The software stack includes:
-
-- no-OS drivers and HAL
-- Example applications for ADCs, DACs, sensors
-- UART and Ethernet (10BASE-T1L) communication support
-- Secure boot and authentication via MAXQ1065
-- Zephyr RTOS support
-
-Help and Support
-----------------
-
-For questions and more information, please visit the :ez:`/` community or
-contact your local ADI representative.
+   Visual of Conservative Layout with Via Redundancy

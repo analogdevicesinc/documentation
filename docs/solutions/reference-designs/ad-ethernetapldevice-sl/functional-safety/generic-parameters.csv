@@ -1,0 +1,7 @@
+﻿Parameter,Unit,Value
+Safey Ratio,%,67
+Minimum Ambient Temperature,°C,-40
+Maximum Ambient Temperature,°C,90
+Minimum Storage Temperature,°C,-40
+Maximum Storage Temperature,°C,85
+Junction Temperature (ΔTmax –ΔT)),K,3

@@ -1,0 +1,5 @@
+﻿Subject,Requirements
+Standard for determination of failure rates,Siemens Standard SN29500
+Environmental Conditions,The analysis shall be performed for T = 40°C
+,Height (for soft errors): ≤ 2000m
+Other requirements to be fulfilled via FMEDA,Proof of absence of feedback for the non-safety parts to the safety function

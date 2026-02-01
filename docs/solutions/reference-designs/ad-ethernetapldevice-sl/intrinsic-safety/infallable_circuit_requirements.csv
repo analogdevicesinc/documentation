@@ -1,0 +1,11 @@
+﻿Level of Protection,Minimum number of Tracks or Vias,Minimum Conductor Thickness (micrometers),Minimum Track width (millimeters)
+‘Ex ia’,1,30 (outer layers),2
+,,24 (inner layers),
+,2,30 (outer layers),1
+,,24 (inner layers),
+,3,Adequately sized,Adequately sized
+,,(no minimum required),(no minimum required)
+‘Ex ib’,1,30 (outer layers),2
+,,24 (inner layers),
+,2,Adequately sized,Adequately sized
+,,(no minimum required),(no minimum required)
