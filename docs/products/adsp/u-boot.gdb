@@ -1,6 +1,6 @@
 set pagination off
 file u-boot-spl
-target remote :3333
+target extended-remote :3333
 tbreak board_init_r
 load
 continue
