@@ -90,6 +90,7 @@ Release versions include the upstream version and a ADI specific release number
     - v6.12.0:
       :git-linux:`Commits <commits/adsp-6.12.0-y+>`
       :git-linux:`Release 1 <releases/tag/adsp-6.12.0-1+>`
+      :git-linux:`Release 2 <releases/tag/6.12.0-2+>`
     - v6.12.38:
       :git-linux:`Commits <commits/adsp-6.12.38-y+>`
 - :git-u-boot:`+`
@@ -99,10 +100,12 @@ Release versions include the upstream version and a ADI specific release number
     - v2025.10:
       :git-u-boot:`Commits <commits/adi-u-boot-2025.10.y+>`
       :git-u-boot:`Release 1 <releases/tag/v2025.10-1+>`
+      :git-u-boot:`Release 2 <releases/tag/v2025.10-2+>`
 - :git-buildroot:`+`
     - v2025.05:
       :git-buildroot:`Commits <commits/adi-2025.05.x+>`
       :git-buildroot:`Release 1 <releases/tag/2025.05-1+>`
+      :git-buildroot:`Release 2 <releases/tag/2025.05-2+>`
 - :git-trusted-firmware-a:`+`
 - :git-optee_os:`+`
 - :git-openocd:`+`
@@ -133,3 +136,4 @@ For Yocto support see ``lxndsp-adi-meta`` below.
 - :git-br2-external:`+`
     - v2025.05:
       :git-br2-external:`Release 0.1.0 <releases/tag/2025.05-0.1.0+>`
+      :git-br2-external:`Release 0.2.0 <releases/tag/2025.05-0.2.0+>`
