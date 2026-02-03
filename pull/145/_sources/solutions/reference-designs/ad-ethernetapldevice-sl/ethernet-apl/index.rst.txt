@@ -36,17 +36,15 @@ More details can be found in APL Port Profile Specification or the
 IEC TS 63444 standard.
 
 .. figure:: Power-up.png
-   :width: 450 px
-   :align: left
+   :width: 600 px
    :alt: Illustrative Current Step Characteristics During Power-up
 
    Illustrative Current Step Characteristics During Power-up
 
-The main way is to make sure there is sequencing implemented on the
-power circuit of the APL field device; the power parts should never
-start-up at the same time such that it will cause huge spike that
-violates the APL specifications or even cause malfunction if it is
-not design as intended.
+There is sequencing implemented on the power circuit of the APL field device;
+the power parts should never start-up at the same time such that it
+will cause huge spike that violates the APL specifications or even cause
+malfunction if it is not design as intended.
 
 In addition, a proper power sequence is necessary for the
 microcontroller MAX32690, this is for the sequence specific for the
@@ -62,8 +60,7 @@ and VCORE(MIN) = 1.05V.
 .. clear-content::
 
 .. figure:: MCU_sequence.png
-   :width: 450 px
-   :align: left
+   :width: 600 px
    :alt: Power Up and Power Down Requirements of MAX32690
 
    Power Up and Power Down Requirements of MAX32690
@@ -78,7 +75,7 @@ current it might generate, and may cause other failures on the
 reference design.
 
 .. figure:: Hot_input1.png
-   :width: 600 px
+   :width: 700 px
 
    Hot Input LINE_P Current Capture w/ REG_3V5, SUP_3V3, ISO_3V3
    Voltages
@@ -93,7 +90,7 @@ at very high peak, the charge is small granted that it happened too
 fast. The critical events of current however, are the spikes that
 happened after the inrush along with the di/dt.
 
-Looking at Figure cc, the start-up or di/dt slope or slew rate is
+Looking at Figure 3, the start-up or di/dt slope or slew rate is
 only at 1.5003 mA/ms which is slow enough and it didn't violate the
 SPUR di/dt maximum of 10mA/ms. None of the spikes happening after
 the inrush has a charge value violating the 20μC maximum. In
@@ -106,7 +103,7 @@ profile current step characteristics requirement for start-up during
 hot-plug scenario.
 
 .. figure:: Hot_input2.png
-   :width: 600 px
+   :width: 700 px
 
    Hot Input LINE_P Current Capture w/ REG_3V5, LINE_P, LOAD_P Voltages
 
@@ -122,11 +119,8 @@ node, the lower the capacitance, the lower the spike peak will be
 and the shorter the charging time, thus reducing the spike's
 effective charge.
 
-.. clear-content::
-
 .. figure:: zoom_hot_input.png
-  :width: 450 px
-  :align: left
+  :width: 700 px
   :alt: Zoomed Hot Input LINE_P Current Capture
 
   Zoomed Hot Input LINE_P Current Capture
@@ -139,20 +133,17 @@ the time distance between 1V8 and 1V1 is 3.2ms. The sequence is in
 correct order for start-up, which is 3V3 first, 1V8 second and 1V1
 third or last.
 
-.. clear-content::
+.. figure:: Hot-Input3.png
+   :width: 700 px
+   :alt: Hot Input Power-up Sequence of 3V3, 1V8 and 1V1
 
-.. grid::
-   :widths: 50% 50%
+   Hot Input Power-up Sequence of 3V3, 1V8 and 1V1
 
-   .. figure:: Hot-Input3.png
-      :alt: Hot Input Power-up Sequence of 3V3, 1V8 and 1V1
+.. figure:: Zoom_hot_input3.png
+   :width: 700 px
+   :alt: Zoomed Power-up Sequence for 1V8 and 1V1
 
-      Hot Input Power-up Sequence of 3V3, 1V8 and 1V1
-
-   .. figure:: Zoom_hot_input3.png
-      :alt: Zoomed Power-up Sequence for 1V8 and 1V1
-
-      Zoomed Power-up Sequence for 1V8 and 1V1
+   Zoomed Power-up Sequence for 1V8 and 1V1
 
 The capture for the power shut down sequence of LINE_P current and
 the main three supply voltages for the microcontroller, following
@@ -164,7 +155,7 @@ also following the correct sequence for shutdown being 1V1 first,
 1V8 second and 3V3 third or last.
 
 .. figure:: shutdown.png
-   :width: 600 px
+   :width: 700 px
    :alt: Shut-down Sequence for 3V3, 1V8 and 1V1
 
    Shut-down Sequence for 3V3, 1V8 and 1V1
