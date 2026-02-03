@@ -22,15 +22,15 @@ Install Dependencies
 
       .. shell:: sh
 
-         $sudo apt install -y git autoconf automake libtool pkg-config \
-           libjim-dev gcc g++ make texinfo gdb-multiarch
+         $ sudo apt install -y git autoconf automake libtool pkg-config \
+                libjim-dev gcc g++ make texinfo gdb-multiarch
 
    .. tab-item:: Fedora
 
       .. shell:: sh
 
          $sudo dnf install -y git autoconf automake libtool pkgconfig \
-           jimtcl-devel gcc gcc-c++ make texinfo gdb
+               jimtcl-devel gcc gcc-c++ make texinfo gdb
 
    .. tab-item:: Windows (MSYS2)
 
@@ -66,11 +66,11 @@ Run ``openocd`` from the cloned repository. For the ICE-1000 and EV-SC598-SOM ru
 .. shell:: sh
 
     ~/openocd
-    $sudo src/openocd -f ice1000.cfg \
-    $    -f adspsc59x_a55.cfg \
-    $    --search tcl/ \
-    $    --search tcl/interface/ \
-    $    --search tcl/target/
+    $ sudo src/openocd -f ice1000.cfg \
+           -f adspsc59x_a55.cfg \
+           --search tcl/ \
+           --search tcl/interface/ \
+           --search tcl/target/
 
 * For the ADSP-SC594 (Cortex-A5) use ``adspsc59x.cfg``
 * For the ADSP-SC598 (Cortex-A55) use  ``adspsc59x_a55.cfg``
@@ -93,9 +93,9 @@ When connecting to SC598 evaluation boards, the console appears as a CP2102N USB
       .. shell:: sh
 
          $ tree /dev/serial/by-id
-         /dev/serial/by-id
-         ├── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_1e574c842d...-if00-port0 -> ../../ttyUSB1
-         └── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_8624ff6b12...-if00-port0 -> ../../ttyUSB0
+          /dev/serial/by-id
+          ├── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_1e574c842d...-if00-port0 -> ../../ttyUSB1
+          └── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_8624ff6b12...-if00-port0 -> ../../ttyUSB0
 
    .. tab-item:: Windows
 
@@ -103,12 +103,12 @@ When connecting to SC598 evaluation boards, the console appears as a CP2102N USB
 
          $ pnputil /enum-devices /class Ports
 
-         Microsoft PnP Utility
+          Microsoft PnP Utility
 
-         Devices in class "Ports":
+          Devices in class "Ports":
 
-         Instance ID:    USB\VID_10C4&PID_EA60\8624FF6B1261ED11A8D3518009472825
-         Device Name:    Silicon Labs CP210x USB to UART Bridge (COM7)
+          Instance ID:    USB\VID_10C4&PID_EA60\8624FF6B1261ED11A8D3518009472825
+          Device Name:    Silicon Labs CP210x USB to UART Bridge (COM7)
 
 Configure the serial terminal for 115200 baud, 8 data bits, no parity, 1 stop bit (8-N-1), and disable all flow control.
 
@@ -120,7 +120,7 @@ Configure the serial terminal for 115200 baud, 8 data bits, no parity, 1 stop bi
 
          # Example with Minicom
          # Replace the device path with your specific path found above
-         $sudo minicom -D /dev/serial/by-id/<your-device> -b 115200
+         $ sudo minicom -D /dev/serial/by-id/<your-device> -b 115200
 
    .. tab-item:: Windows
 
@@ -128,7 +128,7 @@ Configure the serial terminal for 115200 baud, 8 data bits, no parity, 1 stop bi
 
          # Example with PuTTY
          # Replace the device port with your specific port found above
-         $putty.exe -serial COM<port-of-device> -sercfg 115200,8,n,1,N
+         $ putty.exe -serial COM<port-of-device> -sercfg 115200,8,n,1,N
 
 Booting the System
 ---------------------------
@@ -157,19 +157,19 @@ You need a multi-architecture GDB to load the bootloader.
 
       .. shell:: sh
 
-         $sudo apt-get install -y gdb-multiarch
+         $ sudo apt-get install -y gdb-multiarch
 
    .. tab-item:: Windows
 
       .. shell:: sh
 
-         $pacman -S mingw-w64-x86_64-gdb
+        $ pacman -S mingw-w64-x86_64-gdb
 
    .. tab-item:: Fedora/RHEL
 
       .. shell:: sh
 
-         $sudo dnf install -y gdb
+         $ sudo dnf install -y gdb
 
 Run GDB:
 
@@ -179,15 +179,15 @@ Run GDB:
 
       .. shell:: sh
 
-         $cd images-*   # Navigate to extracted release directory
-         $gdb-multiarch -x u-boot.gdb
+         $ cd images-*   # Navigate to extracted release directory
+         $ gdb-multiarch -x u-boot.gdb
 
    .. tab-item:: Windows/Fedora/RHEL
 
       .. shell:: sh
 
-         $cd images-*   # Navigate to extracted release directory
-         $gdb -x u-boot.gdb
+         $ cd images-*   # Navigate to extracted release directory
+         $ gdb -x u-boot.gdb
 
 Boot Linux
 ~~~~~~~~~~
@@ -200,15 +200,15 @@ Start file server by opening a new terminal on your PC at release directory:
 
       .. shell:: sh
 
-         $cd images-*   # Navigate to extracted release directory
-         $python3 -m http.server 8000
+         $ cd images-*   # Navigate to extracted release directory
+         $ python3 -m http.server 8000
 
    .. tab-item:: Windows
 
       .. shell:: sh
 
-         $cd images-*   # Navigate to extracted release directory
-         $python -m http.server 8000
+         $ cd images-*   # Navigate to extracted release directory
+         $ python -m http.server 8000
 
 Find your IP address:
 
@@ -218,13 +218,13 @@ Find your IP address:
 
       .. shell:: sh
 
-         $ip a
+         $ ip a
 
    .. tab-item:: Windows
 
       .. shell:: sh
 
-         $ipconfig
+         $ ipconfig
 
 Boot from U-Boot:
 

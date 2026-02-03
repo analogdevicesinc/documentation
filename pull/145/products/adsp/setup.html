@@ -526,21 +526,21 @@ debugger</a>.</p>
 <p>To communicate with the board, you must build and run the ADI fork of OpenOCD.</p>
 <section id="install-dependencies">
 <h3>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Link to this heading"></a></h3>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-08db6f6a26f043b90f5c0919a7d1c10c3f13ff76-0" name="tab-set-08db6f6a26f043b90f5c0919a7d1c10c3f13ff76" type="radio"></input><label class="tab-label" for="tab-item-08db6f6a26f043b90f5c0919a7d1c10c3f13ff76-0">Ubuntu</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="tab-set docutils"><input checked="checked" id="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-0" name="tab-set-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d" type="radio"></input><label class="tab-label" for="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-0">Ubuntu</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>libtool<span class="w"> </span>pkg-config<span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>libjim-dev<span class="w"> </span>gcc<span class="w"> </span>g++<span class="w"> </span>make<span class="w"> </span>texinfo<span class="w"> </span>gdb-multiarch
+<span class="w">      </span>libjim-dev<span class="w"> </span>gcc<span class="w"> </span>g++<span class="w"> </span>make<span class="w"> </span>texinfo<span class="w"> </span>gdb-multiarch
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-08db6f6a26f043b90f5c0919a7d1c10c3f13ff76-1" name="tab-set-08db6f6a26f043b90f5c0919a7d1c10c3f13ff76" type="radio"></input><label class="tab-label" for="tab-item-08db6f6a26f043b90f5c0919a7d1c10c3f13ff76-1">Fedora</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-1" name="tab-set-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d" type="radio"></input><label class="tab-label" for="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-1">Fedora</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>libtool<span class="w"> </span>pkgconfig<span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>jimtcl-devel<span class="w"> </span>gcc<span class="w"> </span>gcc-c++<span class="w"> </span>make<span class="w"> </span>texinfo<span class="w"> </span>gdb
+<span class="w">     </span>jimtcl-devel<span class="w"> </span>gcc<span class="w"> </span>gcc-c++<span class="w"> </span>make<span class="w"> </span>texinfo<span class="w"> </span>gdb
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-08db6f6a26f043b90f5c0919a7d1c10c3f13ff76-2" name="tab-set-08db6f6a26f043b90f5c0919a7d1c10c3f13ff76" type="radio"></input><label class="tab-label" for="tab-item-08db6f6a26f043b90f5c0919a7d1c10c3f13ff76-2">Windows (MSYS2)</label><div class="tab-content docutils"><div class="code-shell"><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1">#Open a MinGW64 shell and run:</span>
+<div class="clear-left"></div></div></div></div><input id="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-2" name="tab-set-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d" type="radio"></input><label class="tab-label" for="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-2">Windows (MSYS2)</label><div class="tab-content docutils"><div class="code-shell"><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1">#Open a MinGW64 shell and run:</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
@@ -603,10 +603,10 @@ debugger</a>.</p>
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>src/openocd<span class="w"> </span>-f<span class="w"> </span>ice1000.cfg<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-f<span class="w"> </span>adspsc59x_a55.cfg<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--search<span class="w"> </span>tcl/<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--search<span class="w"> </span>tcl/interface/<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--search<span class="w"> </span>tcl/target/
+<span class="w">      </span>-f<span class="w"> </span>adspsc59x_a55.cfg<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--search<span class="w"> </span>tcl/<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--search<span class="w"> </span>tcl/interface/<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--search<span class="w"> </span>tcl/target/
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><ul class="simple">
@@ -621,47 +621,33 @@ debugger</a>.</p>
 <p>A serial console is highly recommended for interacting with U-Boot and Linux.</p>
 <p>Connect a standard USB-C cable from your PC to the SoM.</p>
 <p>When connecting to SC598 evaluation boards, the console appears as a CP2102N USB-to-UART bridge with a unique serial number:</p>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-e710c4bdcc3b258bb4124dc5158bb22555a114ef-0" name="tab-set-e710c4bdcc3b258bb4124dc5158bb22555a114ef" type="radio"></input><label class="tab-label" for="tab-item-e710c4bdcc3b258bb4124dc5158bb22555a114ef-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="tab-set docutils"><input checked="checked" id="tab-item-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82-0" name="tab-set-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82" type="radio"></input><label class="tab-label" for="tab-item-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tree<span class="w"> </span>/dev/serial/by-id
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>├── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_1e574c842d...-if00-port0 -&gt; ../../ttyUSB1
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>/dev/serial/by-id
+├── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_1e574c842d...-if00-port0 -&gt; ../../ttyUSB1
+└── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_8624ff6b12...-if00-port0 -&gt; ../../ttyUSB0
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>└── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_8624ff6b12...-if00-port0 -&gt; ../../ttyUSB0
-</pre></div>
-</div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-e710c4bdcc3b258bb4124dc5158bb22555a114ef-1" name="tab-set-e710c4bdcc3b258bb4124dc5158bb22555a114ef" type="radio"></input><label class="tab-label" for="tab-item-e710c4bdcc3b258bb4124dc5158bb22555a114ef-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82-1" name="tab-set-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82" type="radio"></input><label class="tab-label" for="tab-item-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pnputil<span class="w"> </span>/enum-devices<span class="w"> </span>/class<span class="w"> </span>Ports
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Microsoft PnP Utility
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Devices in class &quot;Ports&quot;:
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Instance ID:    USB\VID_10C4&amp;PID_EA60\8624FF6B1261ED11A8D3518009472825
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Device Name:    Silicon Labs CP210x USB to UART Bridge (COM7)
+
+Devices in class &quot;Ports&quot;:
+
+Instance ID:    USB\VID_10C4&amp;PID_EA60\8624FF6B1261ED11A8D3518009472825
+Device Name:    Silicon Labs CP210x USB to UART Bridge (COM7)
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></div></div><p>Configure the serial terminal for 115200 baud, 8 data bits, no parity, 1 stop bit (8-N-1), and disable all flow control.</p>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-c2a4a6bee792cdb06d510abe530505c25767d923-0" name="tab-set-c2a4a6bee792cdb06d510abe530505c25767d923" type="radio"></input><label class="tab-label" for="tab-item-c2a4a6bee792cdb06d510abe530505c25767d923-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example with Minicom</span>
+<div class="tab-set docutils"><input checked="checked" id="tab-item-8616df58d8e5f312a9154c9db7c09d37d50dd75a-0" name="tab-set-8616df58d8e5f312a9154c9db7c09d37d50dd75a" type="radio"></input><label class="tab-label" for="tab-item-8616df58d8e5f312a9154c9db7c09d37d50dd75a-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example with Minicom</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace the device path with your specific path found above</span>
@@ -673,7 +659,7 @@ debugger</a>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>minicom<span class="w"> </span>-D<span class="w"> </span>/dev/serial/by-id/&lt;your-device&gt;<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span>
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-c2a4a6bee792cdb06d510abe530505c25767d923-1" name="tab-set-c2a4a6bee792cdb06d510abe530505c25767d923" type="radio"></input><label class="tab-label" for="tab-item-c2a4a6bee792cdb06d510abe530505c25767d923-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example with PuTTY</span>
+<div class="clear-left"></div></div></div></div><input id="tab-item-8616df58d8e5f312a9154c9db7c09d37d50dd75a-1" name="tab-set-8616df58d8e5f312a9154c9db7c09d37d50dd75a" type="radio"></input><label class="tab-label" for="tab-item-8616df58d8e5f312a9154c9db7c09d37d50dd75a-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example with PuTTY</span>
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace the device port with your specific port found above</span>
@@ -703,26 +689,26 @@ hardware.</p>
 Ensure the arrow on the dial is pointing to position “0”.</p>
 </div>
 <p>You need a multi-architecture GDB to load the bootloader.</p>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-5e0942ecb1d37850f3515efee928287468e93662-0" name="tab-set-5e0942ecb1d37850f3515efee928287468e93662" type="radio"></input><label class="tab-label" for="tab-item-5e0942ecb1d37850f3515efee928287468e93662-0">Ubuntu/Debian</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="tab-set docutils"><input checked="checked" id="tab-item-b79629b5278bda11ff297737ed0b37474facce23-0" name="tab-set-b79629b5278bda11ff297737ed0b37474facce23" type="radio"></input><label class="tab-label" for="tab-item-b79629b5278bda11ff297737ed0b37474facce23-0">Ubuntu/Debian</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>gdb-multiarch
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-5e0942ecb1d37850f3515efee928287468e93662-1" name="tab-set-5e0942ecb1d37850f3515efee928287468e93662" type="radio"></input><label class="tab-label" for="tab-item-5e0942ecb1d37850f3515efee928287468e93662-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-b79629b5278bda11ff297737ed0b37474facce23-1" name="tab-set-b79629b5278bda11ff297737ed0b37474facce23" type="radio"></input><label class="tab-label" for="tab-item-b79629b5278bda11ff297737ed0b37474facce23-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pacman<span class="w"> </span>-S<span class="w"> </span>mingw-w64-x86_64-gdb
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-5e0942ecb1d37850f3515efee928287468e93662-2" name="tab-set-5e0942ecb1d37850f3515efee928287468e93662" type="radio"></input><label class="tab-label" for="tab-item-5e0942ecb1d37850f3515efee928287468e93662-2">Fedora/RHEL</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-b79629b5278bda11ff297737ed0b37474facce23-2" name="tab-set-b79629b5278bda11ff297737ed0b37474facce23" type="radio"></input><label class="tab-label" for="tab-item-b79629b5278bda11ff297737ed0b37474facce23-2">Fedora/RHEL</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>gdb
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></div></div><p>Run GDB:</p>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-b022addc7173176fb9f6bb1a6ed2f3f894838600-0" name="tab-set-b022addc7173176fb9f6bb1a6ed2f3f894838600" type="radio"></input><label class="tab-label" for="tab-item-b022addc7173176fb9f6bb1a6ed2f3f894838600-0">Ubuntu/Debian</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="tab-set docutils"><input checked="checked" id="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-0" name="tab-set-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20" type="radio"></input><label class="tab-label" for="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-0">Ubuntu/Debian</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
@@ -734,7 +720,7 @@ Ensure the arrow on the dial is pointing to position “0”.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gdb-multiarch<span class="w"> </span>-x<span class="w"> </span>u-boot.gdb
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-b022addc7173176fb9f6bb1a6ed2f3f894838600-1" name="tab-set-b022addc7173176fb9f6bb1a6ed2f3f894838600" type="radio"></input><label class="tab-label" for="tab-item-b022addc7173176fb9f6bb1a6ed2f3f894838600-1">Windows/Fedora/RHEL</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-1" name="tab-set-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20" type="radio"></input><label class="tab-label" for="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-1">Windows/Fedora/RHEL</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
@@ -750,7 +736,7 @@ Ensure the arrow on the dial is pointing to position “0”.</p>
 <section id="boot-linux">
 <h3>Boot Linux<a class="headerlink" href="#boot-linux" title="Link to this heading"></a></h3>
 <p>Start file server by opening a new terminal on your PC at release directory:</p>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-d1b1114f67d7ed4ffb30de3ecef269cbc2a10380-0" name="tab-set-d1b1114f67d7ed4ffb30de3ecef269cbc2a10380" type="radio"></input><label class="tab-label" for="tab-item-d1b1114f67d7ed4ffb30de3ecef269cbc2a10380-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="tab-set docutils"><input checked="checked" id="tab-item-e38c1cb477e793441fea9db5b9b7beacb25fad62-0" name="tab-set-e38c1cb477e793441fea9db5b9b7beacb25fad62" type="radio"></input><label class="tab-label" for="tab-item-e38c1cb477e793441fea9db5b9b7beacb25fad62-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
@@ -762,7 +748,7 @@ Ensure the arrow on the dial is pointing to position “0”.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span>
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-d1b1114f67d7ed4ffb30de3ecef269cbc2a10380-1" name="tab-set-d1b1114f67d7ed4ffb30de3ecef269cbc2a10380" type="radio"></input><label class="tab-label" for="tab-item-d1b1114f67d7ed4ffb30de3ecef269cbc2a10380-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-e38c1cb477e793441fea9db5b9b7beacb25fad62-1" name="tab-set-e38c1cb477e793441fea9db5b9b7beacb25fad62" type="radio"></input><label class="tab-label" for="tab-item-e38c1cb477e793441fea9db5b9b7beacb25fad62-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
@@ -775,13 +761,13 @@ Ensure the arrow on the dial is pointing to position “0”.</p>
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></div></div><p>Find your IP address:</p>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-6398612567cf29da043ee67c3ab18116c069b93a-0" name="tab-set-6398612567cf29da043ee67c3ab18116c069b93a" type="radio"></input><label class="tab-label" for="tab-item-6398612567cf29da043ee67c3ab18116c069b93a-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="tab-set docutils"><input checked="checked" id="tab-item-5c86b092f7810255890247cb3b857ef3c7932cb4-0" name="tab-set-5c86b092f7810255890247cb3b857ef3c7932cb4" type="radio"></input><label class="tab-label" for="tab-item-5c86b092f7810255890247cb3b857ef3c7932cb4-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ip<span class="w"> </span>a
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-6398612567cf29da043ee67c3ab18116c069b93a-1" name="tab-set-6398612567cf29da043ee67c3ab18116c069b93a" type="radio"></input><label class="tab-label" for="tab-item-6398612567cf29da043ee67c3ab18116c069b93a-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-5c86b092f7810255890247cb3b857ef3c7932cb4-1" name="tab-set-5c86b092f7810255890247cb3b857ef3c7932cb4" type="radio"></input><label class="tab-label" for="tab-item-5c86b092f7810255890247cb3b857ef3c7932cb4-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ipconfig
