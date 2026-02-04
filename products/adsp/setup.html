@@ -8,7 +8,7 @@
 
     <title>Getting started &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=5d595293" />
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=22cbc7d3" />
     <script async="async" src="../../_static/app.umd.js?v=46a18818"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -95,10 +95,19 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">Getting started</a><ul>
-<li><a class="reference internal" href="#download-a-binary-release">Download a binary release</a></li>
-<li><a class="reference internal" href="#setup-a-jtag-connection">Setup a JTAG connection</a></li>
+<li><a class="reference internal" href="#jtag-openocd-setup">JTAG &amp; OpenOCD Setup</a><ul>
+<li><a class="reference internal" href="#install-dependencies">Install Dependencies</a></li>
+<li><a class="reference internal" href="#build-openocd">Build OpenOCD</a></li>
+<li><a class="reference internal" href="#run-openocd">Run OpenOCD</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#serial-console-setup">Serial Console Setup</a></li>
+<li><a class="reference internal" href="#booting-the-system">Booting the System</a><ul>
+<li><a class="reference internal" href="#download-release">Download Release</a></li>
 <li><a class="reference internal" href="#boot-u-boot-proper">Boot U-Boot Proper</a></li>
 <li><a class="reference internal" href="#boot-linux">Boot Linux</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -512,14 +521,49 @@ Content on this topic
 do not support booting directly from SD cards. Therefore the evaluation boards
 need to be bootstrapped over JTAG using a <a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html" target="_blank">ADI ICE-1000 or ICE-2000 JTAG
 debugger</a>.</p>
-<section id="download-a-binary-release">
-<h2>Download a binary release<a class="headerlink" href="#download-a-binary-release" title="Link to this heading"></a></h2>
-<p>Navigate to the <a class="icon git reference external" href="https://github.com/analogdevicesinc/br2-external/releases" target="_blank">br2-external releases page</a> and
-download the appropriate <cite>images-*.tar.xz</cite> release archive.</p>
-</section>
-<section id="setup-a-jtag-connection">
-<h2>Setup a JTAG connection<a class="headerlink" href="#setup-a-jtag-connection" title="Link to this heading"></a></h2>
-<p>Build and install the ADI fork of OpenOCD:</p>
+<section id="jtag-openocd-setup">
+<h2>JTAG &amp; OpenOCD Setup<a class="headerlink" href="#jtag-openocd-setup" title="Link to this heading"></a></h2>
+<p>To communicate with the board, you must build and run the ADI fork of OpenOCD.</p>
+<section id="install-dependencies">
+<h3>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Link to this heading"></a></h3>
+<div class="tab-set docutils"><input checked="checked" id="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-0" name="tab-set-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d" type="radio"></input><label class="tab-label" for="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-0">Ubuntu</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>libtool<span class="w"> </span>pkg-config<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>libjim-dev<span class="w"> </span>gcc<span class="w"> </span>g++<span class="w"> </span>make<span class="w"> </span>texinfo<span class="w"> </span>gdb-multiarch
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div><input id="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-1" name="tab-set-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d" type="radio"></input><label class="tab-label" for="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-1">Fedora</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>libtool<span class="w"> </span>pkgconfig<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>jimtcl-devel<span class="w"> </span>gcc<span class="w"> </span>gcc-c++<span class="w"> </span>make<span class="w"> </span>texinfo<span class="w"> </span>gdb
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div><input id="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-2" name="tab-set-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d" type="radio"></input><label class="tab-label" for="tab-item-1cd8f1b92ce81b3779eae3bc23b5f77b4d90a85d-2">Windows (MSYS2)</label><div class="tab-content docutils"><div class="code-shell"><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1">#Open a MinGW64 shell and run:</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pacman<span class="w"> </span>-Syu
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pacman<span class="w"> </span>-S<span class="w"> </span>--needed<span class="w"> </span>git<span class="w"> </span>mingw-w64-x86_64-toolchain<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>mingw-w64-x86_64-libusb<span class="w"> </span>mingw-w64-x86_64-hidapi<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>mingw-w64-x86_64-libtool<span class="w"> </span>mingw-w64-x86_64-pkgconf<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoconf<span class="w"> </span>automake<span class="w"> </span>make
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1">#Jim Tcl must also be built from source before building OpenOCD.</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div></div></section>
+<section id="build-openocd">
+<h3>Build OpenOCD<a class="headerlink" href="#build-openocd" title="Link to this heading"></a></h3>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
@@ -550,63 +594,194 @@ download the appropriate <cite>images-*.tar.xz</cite> release archive.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span>
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><p>Run <code class="docutils literal notranslate"><span class="pre">openocd</span></code> with either <code class="docutils literal notranslate"><span class="pre">ice1000.cfg</span></code> or <code class="docutils literal notranslate"><span class="pre">ice2000.cfg</span></code> and one of the
-following configs:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adspsc58x.cfg</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">adspsc59x_a55.cfg</span></code></p></li>
-</ul>
-<p>For example, for the ICE-1000 and ADZS-SC589-EZLITE run the following:</p>
+<div class="clear-left"></div></div></div><p>On Windows, the resulting <code class="docutils literal notranslate"><span class="pre">openocd.exe</span></code> can be run directly.</p>
+</section>
+<section id="run-openocd">
+<h3>Run OpenOCD<a class="headerlink" href="#run-openocd" title="Link to this heading"></a></h3>
+<p>Run <code class="docutils literal notranslate"><span class="pre">openocd</span></code> from the cloned repository. For the ICE-1000 and EV-SC598-SOM run the following:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/openocd$
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>src/openocd<span class="w"> </span>-f<span class="w"> </span>ice1000.cfg<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-f<span class="w"> </span>adspsc58x.cfg<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--search<span class="w"> </span>tcl/<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--search<span class="w"> </span>tcl/interface/<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--search<span class="w"> </span>tcl/target/
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>src/openocd<span class="w"> </span>-f<span class="w"> </span>ice1000.cfg<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-f<span class="w"> </span>adspsc59x_a55.cfg<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--search<span class="w"> </span>tcl/<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--search<span class="w"> </span>tcl/interface/<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--search<span class="w"> </span>tcl/target/
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></section>
+<div class="clear-left"></div></div></div><ul class="simple">
+<li><p>For the ADSP-SC594 (Cortex-A5) use <code class="docutils literal notranslate"><span class="pre">adspsc59x.cfg</span></code></p></li>
+<li><p>For the ADSP-SC598 (Cortex-A55) use  <code class="docutils literal notranslate"><span class="pre">adspsc59x_a55.cfg</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">*_single_SHARC.cfg</span></code> variants are for devices with only one SHARC core enabled (e.g. SC592).</p>
+</section>
+</section>
+<section id="serial-console-setup">
+<h2>Serial Console Setup<a class="headerlink" href="#serial-console-setup" title="Link to this heading"></a></h2>
+<p>A serial console is highly recommended for interacting with U-Boot and Linux.</p>
+<p>Connect a standard USB-C cable from your PC to the SoM.</p>
+<p>When connecting to SC598 evaluation boards, the console appears as a CP2102N USB-to-UART bridge with a unique serial number:</p>
+<div class="tab-set docutils"><input checked="checked" id="tab-item-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82-0" name="tab-set-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82" type="radio"></input><label class="tab-label" for="tab-item-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tree<span class="w"> </span>/dev/serial/by-id
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>/dev/serial/by-id
+├── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_1e574c842d...-if00-port0 -&gt; ../../ttyUSB1
+└── usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_8624ff6b12...-if00-port0 -&gt; ../../ttyUSB0
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div><input id="tab-item-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82-1" name="tab-set-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82" type="radio"></input><label class="tab-label" for="tab-item-e413fb3a7ec9c667b6fa800bb2a0723cb7132f82-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pnputil<span class="w"> </span>/enum-devices<span class="w"> </span>/class<span class="w"> </span>Ports
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Microsoft PnP Utility
+
+Devices in class &quot;Ports&quot;:
+
+Instance ID:    USB\VID_10C4&amp;PID_EA60\8624FF6B1261ED11A8D3518009472825
+Device Name:    Silicon Labs CP210x USB to UART Bridge (COM7)
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div></div><p>Configure the serial terminal for 115200 baud, 8 data bits, no parity, 1 stop bit (8-N-1), and disable all flow control.</p>
+<div class="tab-set docutils"><input checked="checked" id="tab-item-8616df58d8e5f312a9154c9db7c09d37d50dd75a-0" name="tab-set-8616df58d8e5f312a9154c9db7c09d37d50dd75a" type="radio"></input><label class="tab-label" for="tab-item-8616df58d8e5f312a9154c9db7c09d37d50dd75a-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example with Minicom</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace the device path with your specific path found above</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>minicom<span class="w"> </span>-D<span class="w"> </span>/dev/serial/by-id/&lt;your-device&gt;<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div><input id="tab-item-8616df58d8e5f312a9154c9db7c09d37d50dd75a-1" name="tab-set-8616df58d8e5f312a9154c9db7c09d37d50dd75a" type="radio"></input><label class="tab-label" for="tab-item-8616df58d8e5f312a9154c9db7c09d37d50dd75a-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example with PuTTY</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace the device port with your specific port found above</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>putty.exe<span class="w"> </span>-serial<span class="w"> </span>COM&lt;port-of-device&gt;<span class="w"> </span>-sercfg<span class="w"> </span><span class="m">115200</span>,8,n,1,N
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div></div></section>
+<section id="booting-the-system">
+<h2>Booting the System<a class="headerlink" href="#booting-the-system" title="Link to this heading"></a></h2>
+<section id="download-release">
+<h3>Download Release<a class="headerlink" href="#download-release" title="Link to this heading"></a></h3>
+<p>Navigate to the <a class="icon git reference external" href="https://github.com/analogdevicesinc/br2-external/releases" target="_blank">br2-external releases page</a> and
+download the appropriate <code class="docutils literal notranslate"><span class="pre">images-*.tar.xz</span></code> release archive that matches your
+hardware.</p>
+</section>
 <section id="boot-u-boot-proper">
-<h2>Boot U-Boot Proper<a class="headerlink" href="#boot-u-boot-proper" title="Link to this heading"></a></h2>
-<p>To boot U-Boot SPL and U-Boot Proper using GDB install
-<code class="docutils literal notranslate"><span class="pre">gdb-multiarch</span></code> on Debian or Ubuntu systems:</p>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<h3>Boot U-Boot Proper<a class="headerlink" href="#boot-u-boot-proper" title="Link to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Check Boot Mode Switch (S1)</strong></p>
+<p>Before powering on, locate the rotary switch labeled “S1 (Boot Mode Select)” on the board.
+Ensure the arrow on the dial is pointing to position “0”.</p>
+</div>
+<p>You need a multi-architecture GDB to load the bootloader.</p>
+<div class="tab-set docutils"><input checked="checked" id="tab-item-b79629b5278bda11ff297737ed0b37474facce23-0" name="tab-set-b79629b5278bda11ff297737ed0b37474facce23" type="radio"></input><label class="tab-label" for="tab-item-b79629b5278bda11ff297737ed0b37474facce23-0">Ubuntu/Debian</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>gdb-multiarch
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><p>In the terminal, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the extracted release archive or the appropriate
-build output directory.</p>
-<p>Then download the GDB automation <code class="xref download docutils literal notranslate"><span class="pre">u-boot.gdb</span></code> script using:</p>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-b79629b5278bda11ff297737ed0b37474facce23-1" name="tab-set-b79629b5278bda11ff297737ed0b37474facce23" type="radio"></input><label class="tab-label" for="tab-item-b79629b5278bda11ff297737ed0b37474facce23-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/analogdevicesinc/documentation/refs/heads/main/docs/products/adsp/u-boot.gdb
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pacman<span class="w"> </span>-S<span class="w"> </span>mingw-w64-x86_64-gdb
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><p>Once downloaded, start GDB and run the following command with the script in order to
-load and run both U-Boot stages as:</p>
-<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-b79629b5278bda11ff297737ed0b37474facce23-2" name="tab-set-b79629b5278bda11ff297737ed0b37474facce23" type="radio"></input><label class="tab-label" for="tab-item-b79629b5278bda11ff297737ed0b37474facce23-2">Fedora/RHEL</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>gdb
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div></div><p>Run GDB:</p>
+<div class="tab-set docutils"><input checked="checked" id="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-0" name="tab-set-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20" type="radio"></input><label class="tab-label" for="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-0">Ubuntu/Debian</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gdb-multiarch<span class="w"> </span>-x<span class="w"> </span>u-boot.gdb
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></section>
-<section id="boot-linux">
-<h2>Boot Linux<a class="headerlink" href="#boot-linux" title="Link to this heading"></a></h2>
-<p>Once U-Boot Proper is running and a U-Boot prompt is accessible over serial it
-is possible to load and boot Linux.</p>
-<p>In a new terminal <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the extracted release archive and run a web
-server (e.g. <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">http.server</span></code>).</p>
-<p>In the console of U-Boot, we can load images as:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; dhcp</span>
-<span class="go">=&gt; wget ${fdt_addr_r} &lt;host-ip-addr&gt;:/&lt;path-to-image&gt;</span>
+<div class="clear-left"></div></div></div></div><input id="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-1" name="tab-set-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20" type="radio"></input><label class="tab-label" for="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-1">Windows/Fedora/RHEL</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gdb<span class="w"> </span>-x<span class="w"> </span>u-boot.gdb
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div></div></section>
+<section id="boot-linux">
+<h3>Boot Linux<a class="headerlink" href="#boot-linux" title="Link to this heading"></a></h3>
+<p>Start a file server in a new terminal on your PC in the release directory:</p>
+<div class="tab-set docutils"><input checked="checked" id="tab-item-e38c1cb477e793441fea9db5b9b7beacb25fad62-0" name="tab-set-e38c1cb477e793441fea9db5b9b7beacb25fad62" type="radio"></input><label class="tab-label" for="tab-item-e38c1cb477e793441fea9db5b9b7beacb25fad62-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div><input id="tab-item-e38c1cb477e793441fea9db5b9b7beacb25fad62-1" name="tab-set-e38c1cb477e793441fea9db5b9b7beacb25fad62" type="radio"></input><label class="tab-label" for="tab-item-e38c1cb477e793441fea9db5b9b7beacb25fad62-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div></div><p>Find your IP address:</p>
+<div class="tab-set docutils"><input checked="checked" id="tab-item-5c86b092f7810255890247cb3b857ef3c7932cb4-0" name="tab-set-5c86b092f7810255890247cb3b857ef3c7932cb4" type="radio"></input><label class="tab-label" for="tab-item-5c86b092f7810255890247cb3b857ef3c7932cb4-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ip<span class="w"> </span>a
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div><input id="tab-item-5c86b092f7810255890247cb3b857ef3c7932cb4-1" name="tab-set-5c86b092f7810255890247cb3b857ef3c7932cb4" type="radio"></input><label class="tab-label" for="tab-item-5c86b092f7810255890247cb3b857ef3c7932cb4-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ipconfig
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div></div><p>In the U-Boot console, run the following (replace <code class="docutils literal notranslate"><span class="pre">&lt;your-pc-ip&gt;</span></code> with the IP you found above):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; dhcp</span>
+<span class="go">=&gt; wget ${kernel_addr_r} &lt;your-pc-ip&gt;:/Image</span>
+<span class="go">=&gt; wget ${fdt_addr_r} &lt;your-pc-ip&gt;:/sc598-som-ezkit.dtb</span>
+<span class="go">=&gt; booti ${kernel_addr_r} - ${fdt_addr_r}</span>
+</pre></div>
+</div>
+<p>Note: Make sure to use the <code class="docutils literal notranslate"><span class="pre">.dtb</span></code> file name that matches your board (e.g. <code class="docutils literal notranslate"><span class="pre">sc598-som-ezkit.dtb</span></code>).</p>
+</section>
 </section>
 </section>
 
