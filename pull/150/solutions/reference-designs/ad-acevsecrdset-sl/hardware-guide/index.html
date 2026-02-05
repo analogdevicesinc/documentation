@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The AD-ACEVSECRDSET-SL design incorporates the ADE9113 3-Channel, Isolated, Sigma Delta (Σ-Δ) ADC and the MAX32655 low-power, Arm Cortex-M4 processor with FPU-Based microcontroller and Bluetooth 5.2 allowing the implementation of type 2 EVSE charging cables. The ADE9113 has two voltage measurement channels and a current measurement one used to implement the safety functions in the firmware. The integrated isolation makes the connection with the MAX32655 straightforward. The communication between the two components is implemented over SPI." name="description" />
+
+    <title>Hardware User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=22cbc7d3" />
+    <script async="async" src="../../../../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Software User Guide" href="../software-guide/index.html" />
+    <link rel="prev" title="AD-ACEVSECRDSET-SL" href="../index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Hardware User Guide</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#components">Components</a><ul>
+<li><a class="reference internal" href="#revision-a">Revision A</a></li>
+<li><a class="reference internal" href="#revision-d">Revision D</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#setting-up-the-board">Setting up the board</a></li>
+<li><a class="reference internal" href="#user-interface">User Interface</a></li>
+<li><a class="reference internal" href="#test-points">Test Points</a></li>
+<li><a class="reference internal" href="#scope-images">Scope Images</a></li>
+<li><a class="reference internal" href="#testing-the-evse">Testing the EVSE</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16-1" id="toctree-collapse-13-16-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17-1" id="toctree-collapse-13-17-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-17-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19-1" id="toctree-collapse-13-19-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20-1" id="toctree-collapse-13-20-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-20-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0359-ebz/index.html#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0359-ebz/index.html#software-source-code"><strong>Software Source Code</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0359-ebz/index.html#registration"><strong>Registration</strong></a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0582-usbz/index.html">EVAL-0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0582-usbz/index.html#hardware-setup">Hardware Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0582-usbz/index.html#how-to-use-the-program">How to Use the Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0582-usbz/index.html#help-and-support">Help and Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fthr-pmd-intz/index.html#feather-to-pmod-interposer-hardware-user-guide">Feather-to-PMOD Interposer Hardware User Guide</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-ACEVSECRDSET-SL</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="hardware-user-guide">
+<span id="ad-acevsecrdset-sl-hardware-guide"></span><h1>Hardware User Guide<a class="headerlink" href="#hardware-user-guide" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-ACEVSECRDSET-SL" target="_blank">AD-ACEVSECRDSET-SL</a> design incorporates the <a class="icon adi reference external" href="https://www.analog.com/ADE9113" target="_blank">ADE9113</a>
+3-Channel, Isolated, Sigma Delta (Σ-Δ) ADC and the <a class="icon adi reference external" href="https://www.analog.com/MAX32655" target="_blank">MAX32655</a>
+low-power, Arm Cortex-M4 processor with FPU-Based microcontroller
+and Bluetooth 5.2 allowing the implementation of type 2 EVSE charging cables.
+The <a class="icon adi reference external" href="https://www.analog.com/ADE9113" target="_blank">ADE9113</a> has two voltage measurement channels and a current measurement
+one used to implement the safety functions in the firmware. The integrated isolation
+makes the connection with the <a class="icon adi reference external" href="https://www.analog.com/MAX32655" target="_blank">MAX32655</a> straightforward. The communication
+between the two components is implemented over SPI.</p>
+<p>The control pilot (CP) signal needed for implementing the communication between
+the EVSE and EV is generated using the <a class="icon adi reference external" href="https://www.analog.com/MAX32655" target="_blank">MAX32655</a> and the <a class="icon adi reference external" href="https://www.analog.com/ADA4523-1" target="_blank">ADA4523-1</a>
+Low Noise, Zero Drift Op Amp.</p>
+<p>The system is powered from the single phase 230V AC input. An isolated AC-DC
+SMPS is used to deliver 12V to the board and the <a class="icon adi reference external" href="https://www.analog.com/MAX20457" target="_blank">MAX20457</a>
+high-efficiency dual synchronous buck converters for automotive applications
+are used to step down the voltage to 5V and 3.3V providing power to the
+isolated side of the board. The <a class="icon adi reference external" href="https://www.analog.com/LT8330" target="_blank">LT8330</a> used in the inverting
+configuration generates the 12V negative voltage needed for the low side of the
+CP signal.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/MAX32655" target="_blank">MAX32655</a> exposes all the necessary debug and programming
+features enabling a complete software development experience. The Bluetooth 5.2
+LE radio with the available fully open-source Bluetooth 5.2 stack makes it easy
+to develop an interaction method between the user and the board. Four user
+buttons and 4 LEDs are also provided to complete the user interface. Serial
+communication (RS-232) is used for sending debug messages during testing or
+development.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADT75" target="_blank">ADT75</a> 12-Bit digital temperature sensor monitors the
+temperature of the device and sends it to the MCU unit for implementing
+overtemperature protection.</p>
+<p>The main components used in the design are highlighted in the following figures.</p>
+</section>
+<section id="components">
+<h2>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
+<section id="revision-a">
+<h3>Revision A<a class="headerlink" href="#revision-a" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/02_ad_acevsecrdset_sl_top_components.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/02_ad_acevsecrdset_sl_top_components.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Revision A Top Components</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/03_ad_acevsecrdset_sl_bottom_components_v3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/03_ad_acevsecrdset_sl_bottom_components_v3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Revision A Bottom Components</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="revision-d">
+<h3>Revision D<a class="headerlink" href="#revision-d" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/ad-acevsecrdset-sl_board_with_components-top_rev_d.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/ad-acevsecrdset-sl_board_with_components-top_rev_d.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Revision D Top Components</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/ad-acevsecrdset-sl_board_with_components-bottom_rev_d.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/ad-acevsecrdset-sl_board_with_components-bottom_rev_d.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Revision D Bottom Components</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<hr class="docutils" />
+<section id="setting-up-the-board">
+<h2>Setting up the board<a class="headerlink" href="#setting-up-the-board" title="Link to this heading"></a></h2>
+<p>To power up the board, connect the <code class="docutils literal notranslate"><span class="pre">grid</span> <span class="pre">connector</span></code> to a single-phase 230V AC line.
+A 3-wire cable rated at 16A is the minimum acceptable. The output can be connected to
+an EVSE test adapter, a type 2 cable (and EV), or left disconnected for first time power-up
+or programming. The program/debug connector, which is a 10-pin ARM Cortex debug connector,
+must be connected to a programmer, such as the <a class="icon adi reference external" href="https://www.analog.com/MAX32625PICO" target="_blank">MAX32625PICO</a> MAXDAP DAPLink programmer
+based on the <a class="icon adi reference external" href="https://www.analog.com/MAX32625" target="_blank">MAX32625</a>, using a cable if a firmware update is required. The MAXDAP can
+also be used to read debug messages during development. Messages are sent via RS-232.
+The UART device ID is 0, with the following settings: 57600 baud, 8 data bits,
+no parity, 1 stop bit (57600 8N1).</p>
+<p>The following figures show the messages received on a computer connected to the board
+through the MAXDAP, with the debug print option enabled.</p>
+<p><strong>Revision A</strong></p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/debug_message_self_test.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/debug_message_self_test.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/debug_message_self_test.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Rev A — Debug messages received during the self-test phase</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Revision D</strong></p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/rev_d_debug_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/rev_d_debug_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/rev_d_debug_1.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Rev D — Debug messages received during the self-test phase</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>After the self-test finishes, a charging session can be initiated by the EV or
+the device connected to the <code class="docutils literal notranslate"><span class="pre">EV</span> <span class="pre">connector</span></code>. The following images present the
+debug messages received during a charging session.</p>
+<p><strong>Revision A</strong></p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/debug_message_charging_session.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/debug_message_charging_session.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/debug_message_charging_session.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Rev A — Debug messages received during a charging session</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Revision D</strong></p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/rev_d_debug2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/rev_d_debug2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/rev_d_debug2.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Rev D — Debug messages received during a charging session</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="user-interface">
+<h2>User Interface<a class="headerlink" href="#user-interface" title="Link to this heading"></a></h2>
+<p>Three programable push buttons, one MCU reset button and four LEDs, are available
+for user interface.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/user_interface.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/user_interface.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Programmable Push Buttons</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The buttons and LEDs are connected to the MCU as shown in the image above.
+The LEDs indicate the current state of the EVSE or display the type of error
+if one is detected.</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/leds_revd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/leds_revd.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">LEDs on the Rev D board</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+<div class="legend">
+<p>during state C if the LED blinks fast then the current is set at 16A,
+if it blinks slow it is limited to 10A</p>
+</div>
+</figcaption>
+</figure>
+</section>
+<section id="test-points">
+<h2>Test Points<a class="headerlink" href="#test-points" title="Link to this heading"></a></h2>
+<p>For evaluation and debugging purpose, test points are provided at every
+important point on the PCB. The names of the test points are printed on the
+silkscreen.</p>
+</section>
+<section id="scope-images">
+<h2>Scope Images<a class="headerlink" href="#scope-images" title="Link to this heading"></a></h2>
+<p><strong>CP signal values corelated to the EVSE states</strong></p>
+<p>The CP signal is shown for each state (A, B, C, D, and diode error) in the
+following images, measured at two different points on the board. The first image
+for each case shows the value measured at the CP test point highlighted in
+the following image, and the second shows the value at the CP_READ test point,
+which corresponds to the MCU ADC input.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/19_ad_acevsecrdset_sl_cp_test_points.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/19_ad_acevsecrdset_sl_cp_test_points.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/19_ad_acevsecrdset_sl_cp_test_points.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">CP Test Points</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The values of the CP signal must be in the limits indicated in the next table
+for each state.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>State</p></th>
+<th class="head"><p>CP signal
+type</p></th>
+<th class="head"><p>CP high
+value [V]</p></th>
+<th class="head"><p>CP low
+Value [V]</p></th>
+<th class="head"><p>Equivalent
+resistance
+[Ω]</p></th>
+<th class="head"><p>EV status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>State A</p></td>
+<td><p>PWM/DC</p></td>
+<td><p>12 [11;13]</p></td>
+<td></td>
+<td></td>
+<td><p>Not
+connected</p></td>
+</tr>
+<tr class="row-odd"><td><p>State B</p></td>
+<td><p>PWM/DC</p></td>
+<td><p>9 [8;10]</p></td>
+<td><p>-12</p></td>
+<td><p>2740</p></td>
+<td><p>Connected</p></td>
+</tr>
+<tr class="row-even"><td><p>State C</p></td>
+<td><p>PWM/DC</p></td>
+<td><p>6 [5;7]</p></td>
+<td><p>-12</p></td>
+<td><p>882</p></td>
+<td><p>Charging,
+does not
+require
+charging
+ventilation</p></td>
+</tr>
+<tr class="row-odd"><td><p>State D</p></td>
+<td><p>PWM/DC</p></td>
+<td><p>3 [2;4]</p></td>
+<td><p>-12</p></td>
+<td><p>246</p></td>
+<td><p>Charging,
+ventilation
+required</p></td>
+</tr>
+<tr class="row-even"><td><p>State E</p></td>
+<td><p>DC</p></td>
+<td><p>0 [-1;1]</p></td>
+<td><p>0</p></td>
+<td></td>
+<td><p>Fault in
+control
+circuit</p></td>
+</tr>
+<tr class="row-odd"><td><p>State F</p></td>
+<td><p>DC</p></td>
+<td></td>
+<td><p>-12</p></td>
+<td></td>
+<td><p>Unknown
+fault</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/09_ad_acevsecrdset_sl_cp_statea.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/09_ad_acevsecrdset_sl_cp_statea.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/09_ad_acevsecrdset_sl_cp_statea.jpg" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">State A — (EVSE IDLE) CP test point</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/10_ad_acevsecrdset_sl_cp_statea_adcin.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/10_ad_acevsecrdset_sl_cp_statea_adcin.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/10_ad_acevsecrdset_sl_cp_statea_adcin.jpg" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">State A — CP_READ test point</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/12_ad_acevsecrdset_sl_cp_stateb.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/12_ad_acevsecrdset_sl_cp_stateb.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/12_ad_acevsecrdset_sl_cp_stateb.jpg" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">State B — (EV connected) CP test point</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/11_ad_acevsecrdset_sl_cp_stateb_adcin.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/11_ad_acevsecrdset_sl_cp_stateb_adcin.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/11_ad_acevsecrdset_sl_cp_stateb_adcin.jpg" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">State B — CP_READ test point</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/13_ad_acevsecrdset_sl_cp_statec_adcin.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/13_ad_acevsecrdset_sl_cp_statec_adcin.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/13_ad_acevsecrdset_sl_cp_statec_adcin.jpg" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">State C — (charging requested) CP test point</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/14_ad_acevsecrdset_sl_cp_statec.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/14_ad_acevsecrdset_sl_cp_statec.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/14_ad_acevsecrdset_sl_cp_statec.jpg" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">State C — CP_READ test point</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/16_ad_acevsecrdset_sl_cp_stated.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/16_ad_acevsecrdset_sl_cp_stated.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/16_ad_acevsecrdset_sl_cp_stated.jpg" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">State D — (charging with ventilation requested) CP test point</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id19">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/15_ad_acevsecrdset_sl_cp_stated_adcin.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/15_ad_acevsecrdset_sl_cp_stated_adcin.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/15_ad_acevsecrdset_sl_cp_stated_adcin.jpg" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">State D — CP_READ test point</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id20">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/18_ad_acevsecrdset_sl_cp_state_b_diode_error.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/18_ad_acevsecrdset_sl_cp_state_b_diode_error.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/18_ad_acevsecrdset_sl_cp_state_b_diode_error.jpg" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 20 </span><span class="caption-text">State diode error (EV diode missing) CP test point</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id21">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/17_ad_acevsecrdset_sl_cp_state_b_diode_error_adcin.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/17_ad_acevsecrdset_sl_cp_state_b_diode_error_adcin.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/17_ad_acevsecrdset_sl_cp_state_b_diode_error_adcin.jpg" style="width: 1000px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 21 </span><span class="caption-text">State diode error CP_READ test point</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="testing-the-evse">
+<h2>Testing the EVSE<a class="headerlink" href="#testing-the-evse" title="Link to this heading"></a></h2>
+<p>Two measurements are presented following a complete run of the state machine,
+from power-up to charging and EV disconnection. The tests are performed using
+the following test bench setup.</p>
+<figure class="align-default" id="id22">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/20_ad_acevsecrdset_sl_test_bench.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/20_ad_acevsecrdset_sl_test_bench.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 22 </span><span class="caption-text">Normal working conditions with highlight on the EVSE-EV states</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id23">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/06_ad_acevsecrdset_sl_charging_scenario.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/06_ad_acevsecrdset_sl_charging_scenario.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 23 </span><span class="caption-text">RCD AC error detected during a charging session in state C (charging without ventilation)</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id24">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/rcd_error_scenario.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/rcd_error_scenario.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 24 </span><span class="caption-text">EVSE Setup with Type 2 cable connected on the EV side</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/21_ad_acevsecrdset_sl_test_bench_type2_cable.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/21_ad_acevsecrdset_sl_test_bench_type2_cable.jpg" />
+</figure>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD-ACEVSECRDSET-SL</a>
+    <a href="../software-guide/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Software User Guide</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

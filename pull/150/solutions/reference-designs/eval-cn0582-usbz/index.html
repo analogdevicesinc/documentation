@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="CN0582 or the USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System is a system board capable of reading data from analog (IEPE) accelerometers. The analog IEPE inputs also contain current source switches to accommodate sensors that might need external power and individual channel offset voltage setting." name="description" />
+
+    <title>EVAL-0582-USBZ &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=22cbc7d3" />
+    <script async="async" src="../../../_static/app.umd.js?v=46a18818"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="EVAL-CN0583-SOM" href="../eval-cn0583-som/index.html" />
+    <link rel="prev" title="EVAL-CN0581-EBZ" href="../eval-cn0581-ebz/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVAL-0582-USBZ</a><ul>
+<li><a class="reference internal" href="#usb-3-0-quad-channel-iepe-vibration-sensor-measurement-system">USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System</a><ul>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#installation-guide">Installation Guide</a></li>
+<li><a class="reference internal" href="#quick-start-guide">Quick Start Guide</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#graphical-user-interface-start-up">Graphical User Interface Start Up</a><ul>
+<li><a class="reference internal" href="#daq-settings">DAQ Settings</a></li>
+<li><a class="reference internal" href="#vibration-test">Vibration Test</a></li>
+<li><a class="reference internal" href="#sine-generation-window">Sine Generation Window</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#how-to-use-the-program">How to Use the Program</a></li>
+<li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16-1" id="toctree-collapse-13-16-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-16-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17-1" id="toctree-collapse-13-17-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-17-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19-1" id="toctree-collapse-13-19-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20-1" id="toctree-collapse-13-20-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-20-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0359-ebz/index.html#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0359-ebz/index.html#software-source-code"><strong>Software Source Code</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0359-ebz/index.html#registration"><strong>Registration</strong></a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use-the-program">How to Use the Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#help-and-support">Help and Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fthr-pmd-intz/index.html#feather-to-pmod-interposer-hardware-user-guide">Feather-to-PMOD Interposer Hardware User Guide</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="eval-0582-usbz">
+<span id="eval-cn0582-usbz"></span><h1>EVAL-0582-USBZ<a class="headerlink" href="#eval-0582-usbz" title="Link to this heading"></a></h1>
+<section id="usb-3-0-quad-channel-iepe-vibration-sensor-measurement-system">
+<h2>USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System<a class="headerlink" href="#usb-3-0-quad-channel-iepe-vibration-sensor-measurement-system" title="Link to this heading"></a></h2>
+<section id="general-description">
+<h3>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h3>
+<p><a class="icon adi reference external" href="https://www.analog.com/CN0582" target="_blank">CN0582</a> or the USB 3.0 Quad-Channel IEPE Vibration Sensor
+Measurement System is a system board capable of reading data
+from analog (IEPE) accelerometers. The analog IEPE inputs also
+contain current source switches to accommodate sensors that might
+need external power and individual channel offset voltage setting.</p>
+<p>Aside from IEPE sensor measurements, the board is also an arbitrary
+sinewave generator providing stimulus to an external vibration shaker
+and a multi-channel data acquisition system.</p>
+</section>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h3>
+<p>The USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System is a
+complete system from Hardware, Firmware, to Software for performing
+basic Data acquisition (DAQ) functions and vibration tests.</p>
+<p>The following sections will detail the necessary steps and conditions
+needed to fully operate the system.</p>
+<p><strong>Firmware</strong></p>
+<p>Once the USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System
+is installed via the given installer (Refer to the Installation Guide
+section), the compatible firmware is located within the same folder as
+the GUI executable file.</p>
+<p>At startup, the GUI uploads the firmware to the board for easier use.
+Do not remove the firmware (.img file) in the folder to avoid errors.</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/firmware_image.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/firmware_image.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0582 Firmware</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Should there be any updates necessary, uninstall the GUI and
+corresponding files using the uninstaller (C:\Analog Devices\USB3.0
+Based Multi-Channel Test Platform for Vibration
+Sensor\Uninstall.exe). An updated installer containing the updated
+firmware and other files will be uploaded for download.</p>
+<p><strong>Equipment Needed</strong></p>
+<ul class="simple">
+<li><p>Computer running Windows 10 OS</p></li>
+<li><p>Signal Generator (optional).</p></li>
+<li><p>Digital Multimeter (optional).</p></li>
+<li><p>Vibration Shaker (i.e., King Design).</p></li>
+<li><p>Piezo Reference Sensor (i.e., 352C67 from PCB Piezotronics).</p></li>
+<li><p>Test Sensor (i.e., Type 4394 from Brüel and Kjær).</p></li>
+</ul>
+<p><strong>Accessories Needed</strong></p>
+<ul class="simple">
+<li><p>BNC-to-SMA cable (x1).</p></li>
+<li><p>SMA-to-SMA cable (x4).</p></li>
+<li><p>USB Type C cable</p></li>
+<li><p>5V power Supply(optional).</p></li>
+</ul>
+<p><strong>Power Supply Requirements</strong></p>
+<p>The board can be powered up via USB3.0 or external Power Supply:</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/multichannel_vibration_test_power_supply.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/multichannel_vibration_test_power_supply.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Multi-Channel Vibration Test Power Supply</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Multi-Channel Vibration Test Platform can automatically prioritize
+the external power supply if detected then switch back to USB port if
+unplugged. Since Multi-Channel Vibration Test Platform has the
+capability to operate as Dual-Role Port (DRP), it can also adjust
+power requirements as needed based on the application such as when a
+device is connected, it will provide power and will act as HOST.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NOTE: For the External Power Supply, the recommended voltage
+is from 4.5 V to 5.5 V.</p>
+</div>
+</section>
+<section id="installation-guide">
+<h3>Installation Guide<a class="headerlink" href="#installation-guide" title="Link to this heading"></a></h3>
+<p>The CN0582 Evaluation Software.exe is a single file installer that
+includes the GUI installer, uninstaller, and driver installer. The
+installer will create the files and folders required to operate CN0582
+and the corresponding applications.</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="http://swdownloads.analog.com/cse/cftl/CN0582/CN0582%20EVALUATION%20SOFTWARE%20INSTALLER.EXE"><code class="xref download docutils literal notranslate"><span class="pre">CN0582</span> <span class="pre">Evaluation</span> <span class="pre">Software</span> <span class="pre">Installer</span></code></a></p>
+</div>
+<p><strong>GUI Installer</strong></p>
+<p>This will setup the dependencies folder which will also contain the
+USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System GUI
+executable file.</p>
+<p><strong>Driver Installer</strong></p>
+<p>Running the driver installer is necessary to fully setup the necessary
+drivers and make the board recognizable by the software.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/driver_installer.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/driver_installer.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Multi-Channel Vibration Test Platform</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>GUI Removal</strong></p>
+<p>To uninstall the GUI, run the file named Uninstall.exe in the same
+location as the GUI executable file. Running this will remove the
+folder created by the installer and its contents.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/uninstall.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/uninstall.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Uninstall Multi-Channel Vibration Test Platform</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The folder containing the screenshots from the file export
+functionality (Multi-Channel Vibration Test Platform File
+Exports folder) isn’t deleted by this installer so this
+should be deleted manually.</p>
+</div>
+</section>
+<section id="quick-start-guide">
+<h3>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h3>
+<p><strong>Interconnection</strong></p>
+<p>The Multi-Channel Vibration Test Platform requires any type C
+connector to interface with host and is backward compatible with
+USB2.0. For Best performance, it is recommended to connect with USB3.0
+ports and corresponding cable.</p>
+<p><strong>Boot options</strong></p>
+<p>The Multi-Channel Vibration Test Platform has 2 boot options: SPI and
+USB boot. SPI boot loads the firmware stored in the SPI flash memory,
+if any. This is useful when a custom firmware already loaded onboard
+is needed or for instances where the board would undergo a power
+restart and immediate loading, with no software intervention, is
+needed.</p>
+<p>The other option, USB boot, is the default for all CN-0582 boards.
+Restarting the board in this mode registers the board as a bootloader
+instead of a valid device. This allows bundling the software with the
+hardware since the GUI will be responsible for uploading the firmware
+to the board and not having the necessary software renders the
+hardware unusable.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>BOOT</p></td>
+<td><p>S1-1</p></td>
+<td><p>S1-2</p></td>
+</tr>
+<tr class="row-even"><td><p>USB</p></td>
+<td><p>ON</p></td>
+<td><p>ON</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI</p></td>
+<td><p>OFF</p></td>
+<td><p>ON</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>USB Boot</strong></p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/test_usbboot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/test_usbboot.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Multi-Channel Vibration Test USB Boot</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>SPI Boot</strong></p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/test_spiboot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/test_spiboot.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Multi-Channel Vibration Test SPI Boot</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>GUI Usage</strong></p>
+<p>The Multi-Channel Vibration Test Platform Board default boot setup is
+for USB boot, allowing the firmware to be loaded via software. The
+installer, once done running, sets up the dependencies, firmware, and
+the executable file to run the GUI itself.</p>
+<p>At every startup, the GUI uploads the firmware and proceeds if
+successful. Otherwise, the GUI won’t proceed while giving prompts for
+next actions.</p>
+<p>At exit, the GUI resets the different board settings such as the
+signal generator output amplitude and frequency, channel offset, and
+current source button status. This is for the board to have a known
+state upon exit and ensure safety for connected components.</p>
+</section>
+</section>
+<section id="graphical-user-interface-start-up">
+<h2>Graphical User Interface Start Up<a class="headerlink" href="#graphical-user-interface-start-up" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/user_interface.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/user_interface.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">CN0572 Evaluation Software User Interface</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="daq-settings">
+<h3>DAQ Settings<a class="headerlink" href="#daq-settings" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/daq_settings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/daq_settings.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">DAQ Settings</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The DAQ window allows changing the capture parameters for each channel
+such as current source, coupling, and gain. The signal generator
+output can also be set here as well as data capture for Time
+and Frequency Domain.</p>
+<p><strong>1. Device Selection</strong></p>
+<p>Listed through the dropdown are all the Multi-Channel Vibration Test
+Platform Board your machine detects where the user is required to
+choose one (1) to be paired with the GUI.</p>
+<p>It’s assumed that Multi-Channel Vibration Test Platform devices are
+only to be used with the GUI. Connecting a non 4CH. DAQ board or one
+with different firmware will result in an incorrect or different
+string message.</p>
+<p><strong>2. Number of Cycles</strong></p>
+<p>This determines the number of cycles to be displayed in the Graph
+Display. The dropdown menu contains the options for the number of
+cycles (1, 2, 3, 4, 5 or full cycle) that can be applied.</p>
+<p><strong>3. Channel Settings</strong></p>
+<p>This control group gives control to different input parameters per
+channel such as sensor dc bias, current source toggling, and gain.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note: It is best to check the IEPE sensor requirements before
+using supplying external power supply to avoid incurring
+permanent damage to either board or sensor.</p>
+</div>
+<p><strong>Current Source</strong></p>
+<p>This control group is responsible for providing a standard
+IEPE sensor an external power supply if needed
+(4mA / channel). Individual channel external power supply is
+enabled/disabled by toggling their corresponding slider.</p>
+<p><strong>4-20mA Sensor Mode</strong></p>
+<p>Channel 3 provides an interface for interfacing with 4-20mA
+sensors upon toggling the slider under Channel 3 in the GUI:
+By default, this is unselected to cater to other input sources.
+Enable this by toggling the slider.</p>
+<p><strong>Coupling</strong></p>
+<p>Allows either DC or AC coupling of the input signal. The coupling
+selected affects the necessary offset to ensure optimal
+data capture. Refer to input offset section.</p>
+<p><strong>Channel Gain</strong></p>
+<p>Allows changing the signal gain for a corresponding channel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>Allowable Gain Values:</dt><dd><ul class="simple">
+<li><p>1</p></li>
+<li><p>2</p></li>
+<li><p>5</p></li>
+<li><p>10</p></li>
+<li><p>20</p></li>
+<li><p>50</p></li>
+<li><p>100</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<p><strong>Sensor DC Bias</strong></p>
+<p>The sensor DC bias converts the input based on corresponding
+sensor’s bias specification to a voltage offset such that the
+signal falls within the ADC’s optimal capture range.</p>
+<p><strong>4. Channel Selector</strong></p>
+<p>The Channel selector buttons control which channel or channels are
+displayed in the graphs. Should have at least 1 selected channel
+before data capture.</p>
+<p><strong>Capture Mode</strong></p>
+<p>This button selects whether to perform a single capture (snapshot) or
+a continuous capture of the selected plot type (Time, Frequency, Both).</p>
+<p><strong>5. Signal Generator Settings</strong></p>
+<p>This control group allows the changing of the board’s signal generator
+output parameters.</p>
+<p><strong>Frequency</strong></p>
+<p>In the frequency field, type the frequency you want to set in Hertz
+(Hz). Allowable frequency values are from 0 to 25 kHz. Once a
+frequency has been chosen, click the SET button on the right side of
+the field.</p>
+<p><strong>Amplitude</strong></p>
+<p>The amplitude field dictates the output amplitude (in peak to peak,
+Volts) from the BNC connector. Valid values are from 0 to 3300mV
+(3.3Vpk2pk ^ 1.2Vrms). Once an amplitude has been set, click
+the SET button on the right side of the field.</p>
+<p><strong>Bandwidth</strong></p>
+<p>Allows selection between two different output paths: a. Full
+bandwidth or no Sallen Key Filter or b. 25kHz Sallen Key Filtered
+output. Toggle the slider to the desired output path.</p>
+<p><strong>6. Graph Display Settings</strong></p>
+<p>This control group allows changing the visualization parameters to
+match the intended range of observation or region of the waveform/s.</p>
+<p><strong>Plot Type</strong></p>
+<p>Selects the plot type for the DAQ window (Time, Frequency, or Both).
+Pressing START without a selected plot type will yield a prompt
+message.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Time Domain</strong></p>
+<p>Plots time domain data for enabled channels. Y-axis is Volts,
+X – axis is time (uS).</p>
+</li>
+<li><p><strong>Frequency Domain</strong></p>
+<p>Plots frequency domain data of enabled channels. Y-axis is dBm,
+X – axis is frequency (Hz).</p>
+</li>
+<li><p><strong>Time and Frequency Domain</strong></p>
+<p>This plot option allows simultaneous display of both Time and
+Frequency Domain representation of captured data.</p>
+</li>
+</ul>
+</div></blockquote>
+<p><strong>File Export</strong></p>
+<p>Saves a screenshot of the selected graph/s.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Time Domain</strong></p>
+<p>Saves screenshot of Time Domain graph.</p>
+</li>
+<li><p><strong>Frequency Domain</strong></p>
+<p>Saves screenshot of Frequency Domain graph.</p>
+</li>
+<li><p><strong>External Trigger</strong></p>
+<p>When selected, a positive pulse must be sent to the trigger in
+connector to begin capture, allowing beginning of capture via
+hardware trigger.</p>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="vibration-test">
+<h3>Vibration Test<a class="headerlink" href="#vibration-test" title="Link to this heading"></a></h3>
+<p>Vibration Test process for calibrating one or more DUT vs.
+a reference sensor.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/vs_interface.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/vs_interface.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Vibration Test Interface</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>1. Device Selection</strong></p>
+<p>Listed through the dropdown are all the Multi-Channel Vibration TesT
+Platform Board your machine detects where the user is required to
+choose one (1) to be paired with the GUI. Refer to the Device
+Selection section.</p>
+<p><strong>2. Sine Sweep Range</strong></p>
+<p>The frequency range for the vibration test to be performed.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Start Frequency - Initial frequency for the vibration test.</p></li>
+<li><p>Frequency Step - Frequency step from one
+frequency point to another.</p></li>
+<li><p>Stop Frequency - Final frequency for the vibration test.</p></li>
+</ul>
+</div>
+</div></blockquote>
+<p><strong>3. G-Settings</strong></p>
+<p>Sets the amount of G to be used and the measure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Peak</p></li>
+<li><p>Peak to Peak</p></li>
+<li><p>RMS</p></li>
+</ul>
+</div>
+<p><strong>4. Limit Lines</strong></p>
+<p>Shows line options available to display with captured data for limit
+testing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>3dB Line</p></li>
+<li><p>10% Sensitivity</p></li>
+<li><p>Both</p></li>
+</ul>
+</div>
+<p><strong>5. Reference &amp; DUT Sensor Setup Section</strong></p>
+<p>Current Source, Coupling, Gain, and Sensor DC Bias settings operate
+similar to DAQ counterpart. Refer to DAQ section for reference on
+these items.</p>
+<p><strong>Sensor Sensitivity</strong></p>
+<p>Sets the sensitivity (Volts / G) for each sensor attached on the
+input channels. Channel 0 (topmost) serves as the reference
+amplitude for the vibration test while other channels are for
+other DUT.</p>
+<blockquote>
+<div><p><strong>Enable</strong></p>
+<p>Selects which channels would be displayed for the vibration test
+results. Default settings: CH0 always enabled, other channels enabled
+upon toggling.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>ADXL digital sensor functionality not yet incorporated as of this
+version.</p>
+</div>
+</div></blockquote>
+<p><strong>6. Graph Display Settings</strong></p>
+<p><strong>Plot Type</strong></p>
+<p>Selects the plot type to be displayed. Options include Voltage scale,
+DUT, or Self-Scan.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Voltage Scale: amplitude setting used to reach target sensitivity
+for each frequency point.</p></li>
+<li><p>DUT: compares reference channel measurement with DUT
+from other channel/s.</p></li>
+<li><p>Self-Scan: reference channel + setup calibration.</p></li>
+</ul>
+</div>
+</div></blockquote>
+<p><strong>Plot Scale</strong></p>
+<p>Selects the scale for the Y-axis of the graph. Options include
+Magnitude (g), Decibel (Log(g)), Vrms, or Decibel (Log(Vrms)).</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Magnitude (g): Y-axis is in g’s.</p></li>
+<li><p>Decibel (Log(g)): Y-axis is log(g)</p></li>
+<li><p>Vrms: Y-axis is in Vrms.</p></li>
+<li><p>Decibel (Log(Vrms)): Y-axis is log(Vrms).</p></li>
+</ul>
+</div>
+</div></blockquote>
+<p><strong>Graph Display</strong></p>
+<p>Displays the reference sensor and DUT amplitude/s vs. frequency for
+the performed vibration test.</p>
+<p><strong>File Export</strong></p>
+<p>Exports screenshot of Frequency Response graph.</p>
+<p><strong>External Trigger</strong></p>
+<p>Similar to external trigger from DAQ section.</p>
+</section>
+<section id="sine-generation-window">
+<h3>Sine Generation Window<a class="headerlink" href="#sine-generation-window" title="Link to this heading"></a></h3>
+<p>This window is used for generating a sweeping sinusoid pattern:</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/sine_interf.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/sine_interf.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Sine Interface</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>1. Device Selection</strong></p>
+<p>Refer to the Device Selection section.</p>
+<p><strong>2. Amplitude</strong></p>
+<p>Sets the amplitude of the sinusoid to be output from the board
+(in mVpp).</p>
+<p><strong>3. Sine Generation Range</strong></p>
+<p>The frequency range of sinusoids to be output.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Start Frequency – starting frequency to be generated
+to the output.</p></li>
+<li><p>Frequency Step – increment from one frequency point
+to another.</p></li>
+<li><p>Stop Frequency – last frequency to be generated
+to the output.</p></li>
+</ul>
+</div>
+</div></blockquote>
+<p><strong>4. Duration Per Frequency(mS)</strong></p>
+<p>Delay (in milliseconds / mS) before switching from one frequency
+output to another.</p>
+</section>
+</section>
+</section>
+<section id="hardware-setup">
+<h1>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h1>
+<p>Before simulating the program, setting up the hardware is necessary.</p>
+<ol class="arabic">
+<li><p>Connect the EVAL-CN0582 to the Vibration Shaker
+using a BNC connector.</p></li>
+<li><p>By using SMA connector, connect the Piezo Reference Sensor of
+the Vibration Shaker to channel 0.</p></li>
+<li><p>Attach another SMA connector from the Test Sensor going to
+channel 1 of the EVAL-CN0582.</p></li>
+<li><p>Power up the CN0582 by connecting the Type C end of the USB
+cable to the board and the other end to the host. There should
+be a RED and GREEN LED lit up on the board to note proper power up.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/hardware_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/hardware_setup.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Hardware Setup</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="how-to-use-the-program">
+<h1>How to Use the Program<a class="headerlink" href="#how-to-use-the-program" title="Link to this heading"></a></h1>
+<p>To test the program with IEPE sensors the following equipment
+is needed:</p>
+<p><strong>Equipment needed:</strong></p>
+<ol class="arabic">
+<li><p>EVAL-CN0582-USBZ.</p></li>
+<li><p>BNC-SMA coaxial cable.</p></li>
+<li><p>USB C cable</p></li>
+<li><p>Analog input source (optional): <em>Signal Generator (Square, Sine,
+Sawtooth etc.)</em></p>
+<p><em>IEPE Accelerometer (i.e., PCB MC325C67) + Shaker + SMA coaxial cables.</em></p>
+</li>
+</ol>
+<p><strong>Procedure:</strong></p>
+<ol class="arabic">
+<li><p>Run the CN0582 Evaluation Software. Follow the prompts until
+the GUI main window appears. Only the GREEN LED should be lit up
+on the board to note a successful firmware upload as well.</p></li>
+<li><p>Navigate to the DAQ or Vibration Test window by clicking the
+following image on the left side of the GUI.</p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/htu_overview.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/htu_overview.png" />
+</figure>
+</li>
+<li><p>Depending on the available setup, perform the following
+actions:</p>
+<ul class="simple">
+<li><p>IEPE Accelerometers + Shaker: Connect one accelerometer
+(reference) to Analog Input Channel 0. If applicable, connect
+the other accelerometers to other Analog Input Channels.</p></li>
+<li><p>With or without external signal generator: Use the
+BNC-to-SMA coaxial cable to connect the signal generator output
+to Analog Input Channel 0. If there’s an external signal
+generator, connect this to another Analog Input Channel.</p></li>
+<li><p>The Shaker must be initially off before setting and
+running the necessary parameters.</p></li>
+</ul>
+</li>
+<li><p>Toggle the current source (for IEPE accelerometer),
+gain, coupling, and sensor dc bias settings as needed.</p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/htu_vibration_test.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/install-uboot/docs/solutions/reference-designs/eval-cn0582-usbz/htu_vibration_test.png" />
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Vibration Testing Window Settings</p>
+</div>
+</li>
+<li><p>On the channel selector section, enable the channel
+where the other Analog Input source is connected.</p></li>
+<li><p>Click set when the parameters have been chosen,
+then press Start to launch the test.</p></li>
+</ol>
+</section>
+<section id="help-and-support">
+<h1>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h1>
+<p>For questions and more information about this product, connect with us through
+the <a class="icon ez reference external" href="https://ez.analog.com/reference-designs" target="_blank">EngineerZone</a>.</p>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../eval-cn0581-ebz/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">EVAL-CN0581-EBZ</a>
+    <a href="../eval-cn0583-som/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVAL-CN0583-SOM</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
