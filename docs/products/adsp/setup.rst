@@ -236,3 +236,30 @@ In the U-Boot console, run the following (replace ``<your-pc-ip>`` with the IP y
    => booti ${kernel_addr_r} - ${fdt_addr_r}
 
 Note: Make sure to use the ``.dtb`` file name that matches your board (e.g. ``sc598-som-ezkit.dtb``).
+
+Install U-Boot
+~~~~~~~~~~~~~~
+
+After Linux boots, the system automatically enters an installer environment.
+
+Serial console displays a prompt:
+
+.. code-block:: console
+
+   ======== Installer Environment ========
+   Install U-Boot to SPI Flash
+
+   This will erase and program SPI flash.
+   Continue? [y/N]:
+
+Type ``y`` to erase the flash contents and install U-Boot. After programming completes, 
+the console instructs you to move the S1 boot mode switch to the SPI boot position.
+
+.. code-block:: console
+
+   SPI install complete
+
+   Set the switch S1 to position 1 (SPI boot).
+   Waiting for switch...
+
+Once the position change is detected, the system reboots automatically from SPI flash and the U-Boot console appears.
