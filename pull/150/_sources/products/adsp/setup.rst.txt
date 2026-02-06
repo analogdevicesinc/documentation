@@ -262,4 +262,4 @@ the console instructs you to move the S1 boot mode switch to the SPI boot positi
    Set the switch S1 to position 1 (SPI boot).
    Waiting for switch...
 
-Once the position change is detected, the system reboots automatically from SPI flash and U-Boot console appears.
+Once the position change is detected, the system reboots automatically from SPI flash and the U-Boot console appears.
