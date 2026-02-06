@@ -48,7 +48,7 @@ not find the exposed methods and will not work.
 In the VI Package Manager, you should load the .vip package and then install
 it.
 
-.. image:: install-vipackage.png
+.. image:: ./images/install-vipackage.png
 
 .. note::
 
@@ -78,7 +78,7 @@ Examples and LabVIEW palette
 
 The ADALM2000 palette can be found under the "Analog Devices" category.
 
-.. image:: pallette-preview.png
+.. image:: ./images/pallette-preview.png
 
 This contains the following subpalettes:
 
