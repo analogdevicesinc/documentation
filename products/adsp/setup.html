@@ -106,6 +106,7 @@
 <li><a class="reference internal" href="#download-release">Download Release</a></li>
 <li><a class="reference internal" href="#boot-u-boot-proper">Boot U-Boot Proper</a></li>
 <li><a class="reference internal" href="#boot-linux">Boot Linux</a></li>
+<li><a class="reference internal" href="#install-u-boot">Install U-Boot</a></li>
 </ul>
 </li>
 </ul>
@@ -781,6 +782,27 @@ Ensure the arrow on the dial is pointing to position “0”.</p>
 </pre></div>
 </div>
 <p>Note: Make sure to use the <code class="docutils literal notranslate"><span class="pre">.dtb</span></code> file name that matches your board (e.g. <code class="docutils literal notranslate"><span class="pre">sc598-som-ezkit.dtb</span></code>).</p>
+</section>
+<section id="install-u-boot">
+<h3>Install U-Boot<a class="headerlink" href="#install-u-boot" title="Link to this heading"></a></h3>
+<p>After Linux boots, the system automatically enters an installer environment.</p>
+<p>Serial console displays a prompt:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">======== Installer Environment ========</span>
+<span class="go">Install U-Boot to SPI Flash</span>
+
+<span class="go">This will erase and program SPI flash.</span>
+<span class="go">Continue? [y/N]:</span>
+</pre></div>
+</div>
+<p>Type <code class="docutils literal notranslate"><span class="pre">y</span></code> to erase the flash contents and install U-Boot. After programming completes,
+the console instructs you to move the S1 boot mode switch to the SPI boot position.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SPI install complete</span>
+
+<span class="go">Set the switch S1 to position 1 (SPI boot).</span>
+<span class="go">Waiting for switch...</span>
+</pre></div>
+</div>
+<p>Once the position change is detected, the system reboots automatically from SPI flash and the U-Boot console appears.</p>
 </section>
 </section>
 </section>
