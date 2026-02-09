@@ -19,6 +19,9 @@
 EVAL-ADXL355-PMDZ
 #################
 
+Low Noise, Low Drift 3-axis Accelerometer PMOD Board
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 Overview
 ========
 

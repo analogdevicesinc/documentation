@@ -3,8 +3,8 @@
 FTHR-PMD-INTZ
 =============
 
-Feather-to-PMOD Interposer Hardware User Guide
-==============================================
+Feather to PMOD Adaptor Board
+"""""""""""""""""""""""""""""
 
 Overview
 --------

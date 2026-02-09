@@ -3,8 +3,8 @@
 EVAL-CN0554-RPIZ
 ================
 
-EVAL-CN0554-RPIZ Hardware User Guide
-""""""""""""""""""""""""""""""""""""
+±10 V Analog Input and ±15 V Analog Output for Raspberry Pi Platforms
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 The :adi:`EVAL-CN0554-RPIZ` is a flexible, general-purpose 
 multichannel mixed-signal analog input/output (I/O) module. 
