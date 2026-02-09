@@ -145,9 +145,10 @@ jobs:
           errors.
           You must write your final review in markdown at $summary_file as a
           GitHub Summary.
-          You shall suggest fixup commits (**must** use \`--fixup\`) to resolve
+          You shall suggest fixup commits (must use \`--fixup\`) to resolve
           issues, if so, you must use \`git format-patch -o $patches_path\`
           to store the patches to the $patches_path directory (never autosquash).
+          It is ok to create more than one fixup commit for the same commit.
 
           Do not review commits starting with \"[TMP]\", \"[ADI]\", \".github:\" or
           \"ci:\", they are not part of the series but to change the CI/CD or
@@ -165,9 +166,9 @@ jobs:
 
           Documentation guidelines are provided at
           https://raw.githubusercontent.com/analogdevicesinc/documentation/refs/heads/main/docs/contributing/docs_guidelines.rst
-          https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs_guidelines/index.rst
-          https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs_guidelines/directives.rst
-          https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs_guidelines/roles.rst
+          https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/index.rst
+          https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/directives.rst
+          https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/roles.rst
           Use correct Sphinx roles and directives throughout.
 
           Remember how roles resolve:
