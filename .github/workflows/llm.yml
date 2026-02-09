@@ -132,17 +132,25 @@ jobs:
         echo -n "${{ inputs.prompt }}" > $prompt_file
         [[ -s "$prompt_file" ]] || echo -n "
           Run a documentation review on the commit range $base_sha..$head_sha.
+          The review has four big tasks:
+
+          - Content check
+          - Cross-references check
+          - Sanity check
+          - Global improvement
+
+          ## Guidelines and Tools
 
           You must read $annotations_file for the CI/CD notes, warnings, and
           errors.
           You must write your final review in markdown at $summary_file as a
           GitHub Summary.
           You shall suggest fixup commits (**must** use \`--fixup\`) to resolve
-          issues, if so, you **must** use \`git format-patch -o $patches_path\`
+          issues, if so, you must use \`git format-patch -o $patches_path\`
           to store the patches to the $patches_path directory (never autosquash).
 
-          Do not review commits starting with "[TMP]", "[ADI]", ".github:" or
-          "ci:", they are not part of the series but to change the CI/CD or
+          Do not review commits starting with \"[TMP]\", \"[ADI]\", \".github:\" or
+          \"ci:\", they are not part of the series but to change the CI/CD or
           temporally change behaviour.
 
           The documentation must build cleanly with \`cd docs; make html\`, a
@@ -162,23 +170,85 @@ jobs:
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs_guidelines/roles.rst
           Use correct Sphinx roles and directives throughout.
 
-          Remove or fix:
-
-          - Broken links
-          - References to files or pages that do not exist
-          - Full links when roles can be used (e.g., :git-pyadi-iio:\`examples/ad4020_example.py\` , :adi:\`ad4052\` , and :external+hdl:ref:\`spi_engine\` )
-
           Remember how roles resolve:
 
           - :external+REPO:doc\`index\` becomes https://analogdevicesinc.github.io/REPO/index.html
           - :external+REPO:ref\`some_lable\` becomes https://analogdevicesinc.github.io/REPO/resolve/path/to/label.html
           - :git-REPO:\`Title <PATH/TO>\` becomes https://github.com/analogdevicesinc/REPO/tree/main/PATH/TO
-          - :git-REPO:\`Title <PATH/TO+>\` becomes https://github.com/analogdevicesinc/REPO/PATH/TO (no "tree/main")
+          - :git-REPO:\`Title <PATH/TO+>\` becomes https://github.com/analogdevicesinc/REPO/PATH/TO (no \"tree/main\")
           - :adi:\`Title <PATH/TO>\` becomes https://analog.com/PATH/TO
+          - :dokuwiki:\`Title <PATH/TO>\` becomes https://wiki.analog.com/PATH/TO
 
           You can fetch sphinx references with (change the repo (no-OS, linux, etc))
-          python3 -m sphinx.ext.intersphinx https://analogdevicesinc.github.io/hdl/objects.inv
+            python3 -m sphinx.ext.intersphinx https://analogdevicesinc.github.io/hdl/objects.inv
           And use adoc-search to search all repository documentations.
+
+          This documentation is currently being imported from dokuwiki.
+
+          You can fetch dokuwiki pages by suffixing \`?do=export_raw\`, for example
+          https://wiki.analog.com/resources/fpga/docs/axi_dmac?do=export_raw
+
+          ## Task 1: Content check
+
+          At this task, you will focus on the content, fixing content logical
+          errors, as well as: Broken links References to files or pages that do not
+          exist Full links when roles can be used (e.g.,
+          :git-pyadi-iio:\`examples/ad4020_example.py\` , :adi:\`ad4052\` , and
+          :external+hdl:ref:\`spi_engine\` )
+
+          Do not use custom titles unless it is an obvious replace, like \"the
+          documentation is available here\", where here is the custom title.
+
+          Filenames should be in lower case and dash separated:
+          docs/solutions/reference-designs/ad-jupiter-ebz/hardware-overview.rst
+
+          While references uses dashes for same words, and space for context/namespace:
+
+            .. _jupiter-sdr hardware-overview:
+
+          Remember, at this stage, the focus is improving the quality of the added pages.
+
+          ## Task 2: Cross reference check
+
+          After doing the content check, you will check if the author used dokuwiki roles
+          for content already imported.
+
+          If there is a dokuwiki page that you noticed was already imported,
+          please, replace all instances in the whole documentation, for example:
+
+          :dokuwiki:\`ADI Reference Designs HDL User Guide <resources/fpga/docs/hdl>\`
+          to
+          :external+hdl:ref:\`user_guide\`
+
+          and
+          :dokuwiki:\`AXI_ADRV9002 Interface Core <resources/eval/user-guides/adrv9002/axi_adrv9002>\`
+          to
+          :external+hdl:ref:\`adrv9001\`
+
+          Please note that some dokuwiki links can be misleading, for example:
+          :dokuwiki:\`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>\`
+          Refers to the Linux driver of the HDL IP, that means the refernce would reside at
+          :external+linux:ref:\`axi-adc-hdl\`
+          However, little to no Linux page have been imported yet.
+
+          \`adoc search\` will show you the external reference format for each
+          search match, sometimes a page documents multiple parts like adrv9002
+          and adrv9001. Of course, if you are in the documentation repository
+          already, the reference is just :ref:\`label\` and not
+          :external+documentation:ref:\`label\`. In general, you can also drop
+          custom titles, like \"AXI_ADRV9002 Interface Core\".
+
+          ### Task 3: Sanity check
+
+          Now you will revisit all changes you made by looking at the git history.
+          Deletion of links and content is not acceptable unless justified.
+          Look for destructive changes that does not make sense and fix or revert.
+
+          ### Task 4: Global improvement
+
+          Finally, for updated dokuwiki to the new format references that you are confident,
+          you shall generate patches updating the whole documentation, that is, grep
+          for the original dokuwiki path, and update with the new reference.
 
         " | sed ':a;N;$!ba;s/  */ /g' | sed 's/^[[:space:]]*//' > $prompt_file
         cat $prompt_file
