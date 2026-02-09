@@ -188,6 +188,8 @@ jobs:
 
           You can fetch dokuwiki pages by suffixing \`?do=export_raw\`, for example
           https://wiki.analog.com/resources/fpga/docs/axi_dmac?do=export_raw
+          You can match dokuwiki pagen names with \`<query>?do=search\`, for example
+          https://wiki.analog.com/ad9081?do=search
 
           ## Task 1: Content check
 
@@ -196,6 +198,9 @@ jobs:
           exist Full links when roles can be used (e.g.,
           :git-pyadi-iio:\`examples/ad4020_example.py\` , :adi:\`ad4052\` , and
           :external+hdl:ref:\`spi_engine\` )
+
+          For added .rst files, you **must** check if it is a dokuwiki import, and if so,
+          download the original page and compare the content.
 
           Do not use custom titles unless it is an obvious replace, like \"the
           documentation is available here\", where here is the custom title.
