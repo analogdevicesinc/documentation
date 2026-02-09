@@ -154,7 +154,7 @@ Kits, Boards, & Other Accessories
 * :dokuwiki:`ADALM-BUCK-ARDZ <university/tools/lab_hw/adalm_buck>`
 * :dokuwiki:`ADALM-SR1-EBZ <university/tools/lab_hw/adalm-sr1>`
 * :dokuwiki:`ADALM2000 Cable Assembly <university/tools/m2k/accessories/cableassembly>`
-* :dokuwiki:`ADALM2000 BNC Adapter Board <university/tools/m2k/accessories/bnc>`
+* :ref:`ad-m2kbnc-ebz`
 * :dokuwiki:`ADALM2000 Power Booster Board <university/tools/m2k/accessories/power>`
 * :adi:`Rapid Prototyping Boards <media/en/news-marketing-collateral/solutions-bulletins-brochures/Solutions-for-Rapid-Prototyping.pdf>`
 

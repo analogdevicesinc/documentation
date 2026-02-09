@@ -255,7 +255,7 @@ Resources
 *ADALM2000 Wiki*
 
 :dokuwiki:`university/tools/m2k`
-:dokuwiki:`university/tools/m2k/accessories/bnc`
+:ref:`ad-m2kbnc-ebz`
 :dokuwiki:`university/tools/m2k/accessories/power`
 
 *ADALM2000 Lab Activities*
