@@ -1,3 +1,5 @@
+.. _ad-m2kbnc-ebz:
+
 AD-M2KBNC-EBZ
 ==============
 
@@ -75,7 +77,7 @@ AC/DC Coupling
 .. figure:: coupling_highlight.png
     :width: 600 px
 
-**Figure 4. AD-M2KBNC-EBZ jumpers for AD/DC coupling**
+**Figure 4. AD-M2KBNC-EBZ jumpers for AC/DC coupling**
 
 The input and output channels of this board can be AC or DC coupled using the
 shunt jumpers. In the following table is presented the jumper configuration:
