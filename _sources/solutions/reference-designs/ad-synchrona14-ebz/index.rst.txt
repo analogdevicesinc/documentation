@@ -3,8 +3,8 @@
 AD-SYNCHRONA14-EBZ
 ==================
 
-AD-SYNCHRONA14-EBZ User Guide
-"""""""""""""""""""""""""""""
+Multichannel System Clocking Device
+"""""""""""""""""""""""""""""""""""
 
 Overview
 --------

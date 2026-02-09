@@ -3,8 +3,8 @@
 EVAL-CN0359-EBZ
 ===============
 
-CN0359 Conductivity Measurement System User Guide
-"""""""""""""""""""""""""""""""""""""""""""""""""
+Fully Automatic High Performance Conductivity Measurement System
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Overview
 --------
@@ -372,7 +372,7 @@ following table shows the pin map of J4 in this case:
 +-----------------------+-----------------------+-----------------------+
 
 Usage Instructions
-""""""""""""""""""
+------------------
 
 The CN0359 is powered from a 6V DC wall connector (EVAL-CFTL-6V-PWRZ)
 and will run automatically when the supply is plugged in. The
@@ -876,7 +876,7 @@ If the excitation frequency is 1 kHz, then half of the period will be
 --------------
 
 Software Programming
-""""""""""""""""""""
+--------------------
 
 This section will describe the CN0359 software and the process for
 programming the evaluation board.
@@ -1449,7 +1449,7 @@ The following chart shows the structure of the source code:
    for external declaration and Cortex-M3 cmsis library support.
 
 Schematic, PCB Layout, Bill of Materials
-============================================
+-----------------------------------------
 
 
 .. admonition:: Download
@@ -1461,8 +1461,8 @@ Schematic, PCB Layout, Bill of Materials
    - Bill of Materials
    - Allegro Project
 
-**Software Source Code**
-========================
+Software Source Code
+--------------------
 
 EVAL-CN0359-EB1Z Rev B Files
 
@@ -1476,8 +1476,8 @@ EVAL-CN0359-EB1Z Rev A Files
 
 --------------
 
-**Registration**
-================
+Registration
+------------
 
 Receive software update notifications, documentation updates, view the
 latest videos, and more when you register your hardware.

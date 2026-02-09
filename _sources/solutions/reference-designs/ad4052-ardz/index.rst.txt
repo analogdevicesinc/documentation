@@ -17,6 +17,9 @@
 EVAL-AD4050/AD4052-ARDZ
 =======================
 
+Compact, Low Power, 12-Bit/16-Bit, 2 MSPS Easy Drive SAR ADCs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 .. image:: eval-angle.png
    :align: right
 
