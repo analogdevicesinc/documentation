@@ -35,7 +35,7 @@ the last 1dB or 1% EVM of performance.
 
 The :adi:`AD-FMCOMMS3-EBZ` board is very similar to the
 :dokuwiki:`AD-FMCOMMS2-EBZ <resources/eval/user-guides/ad-fmcomms2-ebz>`
-board with only one exception, the RX/TX RF differential to single ended
+board with only one exception, the Rx/Tx RF differential to single ended
 transformer. The AD-FMCOMMS3-EBZ is more targetted for wider tuning
 range applications, that is why we use the
 :download:`TCM1-63AX+ <TCM1-63AX+.pdf>` from

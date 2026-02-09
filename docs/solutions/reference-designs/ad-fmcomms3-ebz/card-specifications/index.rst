@@ -9,16 +9,14 @@ Transmit and Receive Specs
 LO BW
 ~~~~~
 
-+----------------------------------------------+
-| .. figure:: lo_sweep.png                     |
-+----------------------------------------------+
-| LO BW over the full range or 70 MHz to 6 GHz |
-+----------------------------------------------+
+.. figure:: lo_sweep.png
+
+   LO BW over the full range or 70 MHz to 6 GHz
 
 EVM
 ~~~
 
-The `error vector magnitude <https://en.wikipedia.org/wiki/Error_vector_magnitude>`__ 
+The `error vector magnitude <https://en.wikipedia.org/wiki/Error_vector_magnitude>`__
 or EVM (sometimes also called receive constellation error or RCE) is a
 measure used to quantify the performance of a digital radio transmitter
 or receiver.
@@ -47,10 +45,10 @@ be any of:
 
 In many cases
 `LTE <https://en.wikipedia.org/wiki/LTE_%28telecommunication%29>`__ is
-used for EVM testing, since it such as well defined, and understdood
+used for EVM testing, since it such as well defined, and understood
 standard for high-speed wireless communication for mobile phones and
-data terminals. The 
-`European Telecommunications Standards Institute <http://www.etsi.org/>`__ 
+data terminals. The
+`European Telecommunications Standards Institute <http://www.etsi.org/>`__
 (ETSI) has :download:`detailed standards <ts_136141.pdf>`
 which define the waveforms used for LTE EVM testing, including:
 
@@ -66,19 +64,19 @@ which define the waveforms used for LTE EVM testing, including:
 To create these vectors to play out either a bench instrument, or a SDR
 platform, most people (including ADI) use one of:
 
- - Keysight 
+ - Keysight
    `SignalStudio <https://www.keysight.com/zz/en/software/application-sw/signal-studio-software.html>`__
 
- - MathWorks 
+ - MathWorks
    `LTE System Toolbox <https://www.mathworks.com/products/lte.html>`__
 
 On the receive side (to actually decode the LTE signal, and measure
 EVM), we use one of:
 
- - Keysight 
+ - Keysight
    `89600 VSA Software <https://www.keysight.com/zz/en/software/application-sw/89600-vsa-software.html>`__
 
- - MathWorks 
+ - MathWorks
    `LTE System Toolbox <https://www.mathworks.com/products/lte.html>`__
 
 To complicate matters, EVM is a unit-less measurement. It’s a ratio,
@@ -89,16 +87,14 @@ percent by discussing -34 dB, -40 dB, -46 dB (which are the same
 physical error). Typically EVM performance of less than -35 dB is
 required for many communications applications.
 
-+---------------------------------------------+
-| .. figure:: fmcomms3_evm.png                |
-+---------------------------------------------+
-| EVM over the full range or 70 MHz to 6 GHz  |
-+---------------------------------------------+
+.. figure:: fmcomms3_evm.png
+
+   EVM over the full range or 70 MHz to 6 GHz
 
 Transmit Specs
 --------------
 
-TX Output Power vs Frequency
+Tx Output Power vs Frequency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since there is a large (2 orders of magnitude) tuning range of the
@@ -108,11 +104,9 @@ AD9361 can output.
 Tests were done both with CW (single tone 10 MHz offset from the LO),
 measuring output power, lo leakage, and image.
 
-+----------------------------------------------+
-| .. figure:: tx_wb_sweep.png                  |
-+----------------------------------------------+
-| TX Output Power vs Frequency 70 MHz to 6 GHz |
-+----------------------------------------------+
+.. figure:: tx_wb_sweep.png
+
+   Tx Output Power vs Frequency 70 MHz to 6 GHz
 
 Tests should also be done with a wide band signal (LTE 10), measuring
 output power, and
@@ -169,23 +163,19 @@ Dynamic range
 LO BW
 ~~~~~
 
-+----------------------------------------------+
-| .. figure:: rx_sweep_track.png               |
-+----------------------------------------------+
-| LO BW over the full range or 70 MHz to 6 GHz |
-+----------------------------------------------+
+.. figure:: rx_sweep_track.png
+
+   LO BW over the full range or 70 MHz to 6 GHz
 
 EVM
 ~~~
 
-+-------------------------------------------+
-| .. figure:: lte_10_rx_slow.png            |
-|    :width: 800px                          |         
-+-------------------------------------------+
-| LTE10, slow AGC, 2.4GHz LO, -38dBm input  |
-+-------------------------------------------+
-| .. figure:: lte_20_rx_slow.png            |
-|    :width: 800px                          |   
-+-------------------------------------------+
-| LTE20, slow AGC, 2.4GHz LO, -38dBm input  |
-+-------------------------------------------+
+.. figure:: lte_10_rx_slow.png
+   :width: 800px
+
+   LTE10, slow AGC, 2.4GHz LO, -38dBm input
+
+.. figure:: lte_20_rx_slow.png
+   :width: 800px
+
+   LTE20, slow AGC, 2.4GHz LO, -38dBm input
