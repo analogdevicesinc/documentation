@@ -1,7 +1,7 @@
 .. _eval-cn0582-usbz:
 
-EVAL-0582-USBZ
-==============
+EVAL-CN0582-USBZ
+================
 
 USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -197,7 +197,7 @@ state upon exit and ensure safety for connected components.
 
 
 Graphical User Interface Start Up
-"""""""""""""""""""""""""""""""""
+---------------------------------
 
 .. figure:: user_interface.png
    :align: center
@@ -520,7 +520,7 @@ output to another.
 
 
 Hardware Setup
-==============
+--------------
 
 
 Before simulating the program, setting up the hardware is necessary.
@@ -544,7 +544,7 @@ Before simulating the program, setting up the hardware is necessary.
       Hardware Setup
 
 How to Use the Program
-======================
+----------------------
 
 To test the program with IEPE sensors the following equipment
 is needed:
@@ -605,7 +605,7 @@ is needed:
    then press Start to launch the test.
 
 Help and Support
-================
+----------------
 
 For questions and more information about this product, connect with us through
 the :ez:`reference-designs`.
