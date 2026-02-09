@@ -13,7 +13,7 @@ RF band of operation, boosting signals for various communication protocols such
 as ISM, MC-GSM, W-CDMA, TD-SCDMA, and LTE. It requires a 5V USB supply for
 normal operation. The input and output, both populated with edge-mounted SMA
 connectors, are DC blocked and matched to 50Ω for ease of use. More information
-on this board can be found at 
+on this board can be found at
 :dokuwiki:`PlutoSDR Amplifier </university/tools/pluto/users/amp>`.
 
 The :adi:`ADL5606` is a broadband, two-stage, 1W RF driver amplifier
@@ -39,7 +39,7 @@ Required Equipment
 ~~~~~~~~~~~~~~~~~~
 
 - :adi:`EVAL-CN0417-EBZ Board <CN0417>`
-- RF Signal Source (like the :adi:`PlutoSDR`)
+- RF Signal Source (like the :ref:`PlutoSDR <pluto>`)
 - Micro-USB power adaptor or Micro-USB to USB cable
 
 Block Assignments
@@ -63,7 +63,7 @@ Test setup
 #.  Plug the other end of the cable into a power outlet or a PC USB port
     providing at least 500 mA.
 #.  An LED light will turn on indicating the board is on and is in operation.
-#.  Connect the RF output of the RF signal source to J1 of 
+#.  Connect the RF output of the RF signal source to J1 of
     the :adi:`EVAL-CN0417-EBZ Board <CN0417>`
 #.  Connect J2 of the :adi:`EVAL-CN0417-EBZ Board <CN0417>` to desired DUT or
     equipment needing the amplifier signal.
@@ -71,7 +71,7 @@ Test setup
 Running the System
 ~~~~~~~~~~~~~~~~~~
 
--   After completing the setup, the :adi:`EVAL-CN0417-EBZ Board <CN0417>` 
+-   After completing the setup, the :adi:`EVAL-CN0417-EBZ Board <CN0417>`
     will automatically turn on and output the amplified version of the input.
 
 Normal Operation
@@ -84,8 +84,8 @@ For normal operation, connect:
 #.  Connect P1 (micro USB) connector of the :adi:`EVAL-CN0417-EBZ Board <CN0417>`
     into a PC USB port or 5V USB charger.
 #.  An LED light will turn on indicating the board is on and is in operation.
-#.  Connect the RF output of the Pluto SDR to J1 of the 
-    :adi:`EVAL-CN0417-EBZ Board <CN0417>` Board.
+#.  Connect the RF output of the :ref:`PlutoSDR <pluto>` to J1 of the
+    :adi:`EVAL-CN0417-EBZ Board <CN0417>`.
 #.  Connect J2 of the :adi:`EVAL-CN0417-EBZ Board <CN0417>` to an antenna
     (ensure the antenna can dissipate 1W).
 
@@ -119,9 +119,9 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-    :adi:`EVAL-CN0417-EBZ Design & Integration Files <CN0417-DesignSupport.zip>`
+   :download:`EVAL-CN0417-EBZ Design & Integration Files <CN0417-DesignSupport.zip>`
 
-    - Schematics
-    - PCB Layout
-    - Bill of Materials
-    - PADS project
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - PADS project
