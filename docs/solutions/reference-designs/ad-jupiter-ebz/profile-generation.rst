@@ -1,4 +1,4 @@
-.. _ad-jupiter-ebz profgen:
+.. _ad-jupiter-ebz profile-generation:
 
 Profile generation flow using TES
 =================================
@@ -38,8 +38,7 @@ For more information about profiles and how to load please see here:
     
     We are about to release a library which allows device profile generation
     outside of TES. This library can be used in applications such as the
-    :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`,
-    or other SDR software.
+    :ref:`iio-oscilloscope`, or other SDR software.
 
 Installation and Configuration
 ------------------------------

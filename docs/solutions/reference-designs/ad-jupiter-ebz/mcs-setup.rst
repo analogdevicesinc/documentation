@@ -1,4 +1,4 @@
-.. _ad-jupiter-ebz mcssetup:
+.. _ad-jupiter-ebz mcs-setup:
 
 Jupiter_SDR MCS Setup
 =====================
@@ -79,9 +79,7 @@ Setup
     boot files from the archive above, for MCS sync (Image, 
     system.dtb, BOOT.BIN and boot.scr)
 
-#.  Configure the Synchrona, see the below
-    :dokuwiki:`setting_synchrona_for_mcs_setup <resources/eval/user-guides/jupiter_sdr/mcs#setting_synchrona_for_mcs_setup>`
-    section
+#.  Configure the Synchrona, see the :ref:`ad-jupiter-ebz mcs-setup`.
 
 #.  Connect all SMA cable and terminations as described in
     :dokuwiki:`connecting_jupiter_sdr_with_synchrona <resources/eval/user-guides/jupiter_sdr/mcs#connecting_jupiter_sdr_with_synchrona>`
@@ -130,7 +128,7 @@ Setting Synchrona for MCS setup
 If your Synchrona does not boot or you need a fresh SD card for
 synchrona, you should re-image the SD card with the image from the
 bottom of this section, or check if there is a newer version on
-:dokuwiki:`testing <resources/eval/user-guides/ad-synchrona14-ebz/testing>`
+:dokuwiki:`ad-synchrona14-ebz <resources/eval/user-guides/ad-synchrona14-ebz>`
 
 - Write the image to an SD card, 16 G or above. Using your favourite
   tool

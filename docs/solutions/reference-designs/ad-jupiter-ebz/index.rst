@@ -10,8 +10,8 @@ Overview
 --------
 
 Jupiter is a versatile software-defined platform based on Analog Devices
-:adi:`ADRV9002` and  
-:xilinx:`Xilinx Zynq UltraScale+ MPSoC. <products/adaptive-socs-and-fpgas/soc/zynq-ultrascale-plus-mpsoc.html>`
+:adi:`ADRV9002` and
+:xilinx:`AMD Xilinx Zynq UltraScale+ MPSoC. <products/adaptive-socs-and-fpgas/soc/zynq-ultrascale-plus-mpsoc.html>`
 :adi:`ADRV9002` is a new generation RF transceiver that has dual-channel
 transmitters, dual-channel receivers covering 30 MHz to 6 GHz frequency 
 range with very good RF linearity performance and a set of advanced 
@@ -30,16 +30,6 @@ environments.
 .. figure:: jupitersdr_front1.png
    :align: center
 
-.. toctree::
-   :hidden:
-
-   quickstart/index
-   hardwareoverview
-   mcssetup
-   knownissues
-   refdesign
-   profgen
-
 The platform comes with open-source software that includes:
 
 - Linux and no-OS
@@ -48,8 +38,6 @@ The platform comes with open-source software that includes:
 - MATLAB
 - GNU Radio
 - Python
-
----------------------------------------------------------
 
 Key Features
 ------------
@@ -64,7 +52,7 @@ Key Features
      - External MCS input
      - RF Front-end
 - Processing system
-     - Zynq UltraScale+ MPSoC XCZU3EG
+     - AMD Xilinx Zynq UltraScale+ MPSoC XCZU3EG
          - ARM CORTEX-A53 1.5GHz
          - ARM CORTEX-R5 500 MHz
          - Mali-400 MP2 graphic processor
@@ -91,8 +79,6 @@ Key Features
          - Power Source 5V/0.9A
      - 802.3at POE compliant, 25.5W Type2 (POE+)
 
----------------------------------------------------------
-
 User Resources
 --------------
 
@@ -102,16 +88,26 @@ never as complete as it should be. If you have any questions,
 feel free to ask.
 
 - Getting Started
-     #. :dokuwiki:`What you need to get started <resources/eval/user-guides/jupiter-sdr/quickstart>`
+     #. Quick Start Guide (see :ref:`ad-jupiter-ebz quickstart`)
      #. Quick Start Guides
-         #. :dokuwiki:`Generate a custom device profile using TES <resources/eval/user-guides/jupiter-sdr/profile_generation_using_tes>`
+         #. Generate a custom device profile using TES (see :ref:`ad-jupiter-ebz profile-generation`)
          #. :dokuwiki:`Configure a pre-existing SD-Card <resources/tools-software/linux-software/kuiper-linux>`
          #. :dokuwiki:`Update the old card you received with your hardware <resources/tools-software/linux-software/kuiper-linux>`
 - Software Solutions
-     #. :dokuwiki:`IIO Scope <resources/tools-software/linux-software/iio_oscilloscope>`
+     #. :ref:`iio-oscilloscope`
          #. :dokuwiki:`ADRV9001/2 IIO Scope View <resources/tools-software/linux-software/adrv9002_osc_main>`
          #. :dokuwiki:`ADRV9001/2 Control IIO Scope Plugin <resources/tools-software/linux-software/adrv9002_plugin>`
          #. :dokuwiki:`ADRV9001/2 Profile Generator Plugin <resources/tools-software/linux-software/adrv9002_profile_generator_plugin>`
+     #. :external+scopy:ref:`adrv9002`
+     #. :ref:`matlab transceiver-toolbox`
+     #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+     #. :ref:`pyadi-iio`
+     #. :ref:`libiio cli`
+- Embedded Resources
+     #. :dokuwiki:`ADRV9001/2 Linux Device Driver <resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+     #. :dokuwiki:`ADRV9001/2 Device Driver Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+     #. :dokuwiki:`AXI-DMAC DMA Controller Linux Driver <resources/tools-software/linux-drivers/axi-dmac>`
+     #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
      #. :dokuwiki:`Transceiver Toolbox for MATLAB and Simulink <resources/tools-software/transceiver-toolbox>`
      #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
      #. :dokuwiki:`Python Interfaces <resources/tools-software/linux-software/pyadi-iio>`
@@ -122,21 +118,21 @@ feel free to ask.
      #. :dokuwiki:`AXI-DMAC DMA Controller Linux Driver <resources/tools-software/linux-drivers/axi-dmac>`
      #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
      #. :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
-     #. :dokuwiki:`Customizing the devicetree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
-     #. :dokuwiki:`ADRV9001/2 No-OS System Level Design Setup <resources/eval/user-guides/adrv9002/no-os-setup>`
-     #. :dokuwiki:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source <resources/tools-software/linux-build/generic/zynqmp>`
+     #. :ref:`linux-kernel zynq`
+     #. :external+no-OS:doc:`projects/rf-transceiver/adrv9001`
+     #. :ref:`linux-kernel zynqmp`
 - FPGA Resources
-     #. :dokuwiki:`HDL Reference Design <resources/eval/user-guides/jupiter_sdr/reference_hdl>` which you must use in your FPGA.
-     #. :dokuwiki:`AXI_ADRV9002 Interface Core <resources/eval/user-guides/adrv9002/axi_adrv9002>`
-     #. :dokuwiki:`ADI Reference Designs HDL User Guide <resources/fpga/docs/hdl>`
-     #. :dokuwiki:`HDL Targeting From MATLAB and Simulink <resources/tools-software/transceiver-toolbox>`
+     #. HDL Reference Design (see :ref:`ad-jupiter-ebz reference-design`) which you must use in your FPGA.
+     #. :external+hdl:ref:`adrv9001`
+     #. :external+hdl:ref:`user_guide`
+     #. :ref:`matlab transceiver-toolbox`
 - Hardware Resources
-     #. :dokuwiki:`Jupiter SDR Hardware Overview <resources/eval/user-guides/jupiter-sdr/hardware-overview>`
+     #. Jupiter SDR Hardware Overview (see :ref:`jupiter-sdr hardware-overview`)
      #. :adi:`ADRV9002 Product page <ADRV9002>`
      #. :adi:`Full Datasheet and chip design package <design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
-- :dokuwiki:`Multi-chip synchronization support <resources/eval/user-guides/jupiter_sdr/mcs>`
-- :dokuwiki:`Help and Support <resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`
-     - Known issues <resources/eval/user-guides/jupiter-sdr/known-issues>`
+- Multi-chip synchronization support (see :ref:`ad-jupiter-ebz mcs-setup`)
+- :ref:`Help and Support <help-and-support>`
+     - Known issues (see :ref:`jupiter-sdr known-issues`)
      - For Hardware technical support go to:
          - :ez:`Design Support Community ADRV9001-ADRV9007 <wide-band-rf-transceivers/design-support-adrv9001-adrv9007>`
      - For Evaluation System Software support (TES GUI, ADRV9001 API driver, etc.) go to:
@@ -149,7 +145,15 @@ feel free to ask.
          - :ez:`Microcontroller and No-OS Driver <community/linux-device-drivers/microcontroller-no-os-drivers>` sub-community.
      - Additional Documentation about SDR Signal Chains - The math behind the RF <>`
 
----------------------------------------------------------
+.. toctree::
+   :hidden:
+
+   quickstart/index
+   hardware-overview
+   mcs-setup
+   known-issues
+   reference-design
+   profile-generation
 
 Downloads
 ---------
@@ -167,8 +171,6 @@ The latest boot files for adrv9002 (for all supported carriers) can be found in 
 Below it's an experimental pre-release which enables DMA Coherency on the AXI DMA core. That means the IP core can snoop the caches and so samples can actually live in them. This gave some promising throughput improvements when using libiio IP and USB backends:
 
  - :download:`Jupiter DMA Coeherent <jupiter-dma-coeherent.tar.gz>`
-
----------------------------------------------------------
 
 Reference Material
 ------------------

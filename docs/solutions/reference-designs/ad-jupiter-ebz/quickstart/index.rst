@@ -15,14 +15,14 @@ Required Software
 - Instructions on how to build the ZynqMP / MPSoC Linux kernel and 
   devicetrees from source can be found here:
 
-    - :dokuwiki:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
-    - :dokuwiki:`How to build the ZynqMP boot image BOOT.BIN <resources/tools-software/linux-software/build-the-zynqmp-boot-image>`
+    - :ref:`linux-kernel zynqmp`
+    - :external+hdl:ref:`build_boot_bin`
     
 - When streaming data over USB3 interface is desired 
   :git-plutosdr-m2k-drivers-win:`USB driver <releases+>` need to be 
   installed on the host computer
 - UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
-- :dokuwiki:`IIO Osciloscope <resources/tools-software/linux-software/iio_oscilloscope>`
+- :ref:`iio-oscilloscope`
 
 Please use the :dokuwiki:`release Image 2021_R2 or later <resources/tools-software/linux-software/kuiper-linux>`
 

@@ -1,4 +1,4 @@
-.. _ad-jupiter-ebz refdesign:
+.. _ad-jupiter-ebz reference-design:
 
 Jupiter SDR HDL Reference Design
 ================================
@@ -9,9 +9,7 @@ interface. At the moment, only LVDS interface is supported.
 
 The design supports SDR or DDR modes, one or two lane mode. This is
 runtime selectable. The complete list of supported adrv9001 modes, can
-be consulted in the 
-:dokuwiki:`AXI_ADRV9001/AXI_ADRV9002 Interface Core <resources/eval/user-guides/adrv9002/axi_adrv9002#physical_interface>`
-documentation.
+be consulted in the :external+hdl:ref:`adrv9001` documentation.
 
 Block design
 ------------
@@ -54,27 +52,27 @@ Register map
 +-----------------------------------+------------------------------------------+
 | Address                           | IP                                       |
 +-----------------------------------+------------------------------------------+
-| 0x44A00000                        | :dokuwiki:`axi_adrv9001 <resources/eval/ |
-|                                   | user-guides/adrv9002/axi_adrv9002>`      |
+| 0x44A00000                        | :external+hdl:ref:`axi_adrv9001          |
+|                                   | <adrv9001>`                              |
 +-----------------------------------+------------------------------------------+
-| 0x44A30000                        | :dokuwiki:`axi_adrv9001_rx1_dma          |
-|                                   | <resources/fpga/docs/axi_dmac>`          |
+| 0x44A30000                        | :external+hdl:ref:`axi_adrv9001_rx1_dma  |
+|                                   | <axi_dmac>`                              |
 +-----------------------------------+------------------------------------------+
-| 0x44A40000                        | :dokuwiki:`axi_adrv9001_rx2_dma          |
-|                                   | <resources/fpga/docs/axi_dmac>`          |
+| 0x44A40000                        | :external+hdl:ref:`axi_adrv9001_rx2_dma  |
+|                                   | <axi_dmac>`                              |
 +-----------------------------------+------------------------------------------+
-| 0x44A50000                        | :dokuwiki:`axi_adrv9001_tx1_dma          |
-|                                   | <resources/fpga/docs/axi_dmac>`          |
+| 0x44A50000                        | :external+hdl:ref:`axi_adrv9001_tx1_dma  |
+|                                   | <axi_dmac>`                              |
 +-----------------------------------+------------------------------------------+
-| 0x44A60000                        | :dokuwiki:`axi_adrv9001_tx2_dma          |
-|                                   | <resources/fpga/docs/axi_dmac>`          |
+| 0x44A60000                        | :external+hdl:ref:`axi_adrv9001_tx2_dma  |
+|                                   | <axi_dmac>`                              |
 +-----------------------------------+------------------------------------------+
 | 0x44A70000                        | :xilinx:`pl_sysmon <products/            |
 |                                   | adaptive-socs-and-fpgas/technologies/    |
 |                                   | system-monitor-and-xadc.html>`           |
 +-----------------------------------+------------------------------------------+
-| 0x45000000                        | :dokuwiki:`axi_sysid_0                   |
-|                                   | <resources/fpga/docs/axi_sysid>`         |
+| 0x45000000                        | :external+hdl:ref:`axi_sysid_0           |
+|                                   | <axi_sysid>`                             |
 +-----------------------------------+------------------------------------------+
 
 SPI connections
@@ -354,20 +352,16 @@ Source code
 Building the HDL project
 ----------------------------
 
-To build the project follow the
-:dokuwiki:`build <resources/fpga/docs/build>`
+To build the project follow the :external+hdl:ref:`build <build_hdl>`
 documentation.
 
 More Information
 ----------------
 
-- :dokuwiki:`ADI Reference Designs HDL UserGuide <resources/fpga/docs/hdl>`
-
+- :external+hdl:ref:`user_guide`
 - :dokuwiki:`ADRV9002 Device Driver Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
-
 - :dokuwiki:`ADRV9002 Integrated Dual RF Transceiver Linux device driver <resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
-
-- :dokuwiki:`Jupiter_SDR Main page <resources/eval/user-guides/jupiter-sdr>`
+- :ref:`ad-jupiter-ebz`
 
 Support
 -------

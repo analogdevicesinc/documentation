@@ -1,4 +1,4 @@
-.. _jupiter-sdr hardwareoverview:
+.. _jupiter-sdr hardware-overview:
 
 Jupiter SDR Hardware Overview
 =============================
@@ -94,7 +94,7 @@ CLK2         SATA      150 MHz
 CLK3         not used  
 ============ ========= =================
 
-:adi:`AD9542` provides a flexible solutionfor generating the required 
+:adi:`AD9542` provides a flexible solution for generating the required
 MGTR clocks. It integrates a dual PLL with 5 pairs of clock output 
 pins. AD9542 is capable to load its configuration from EEPROM making 
 it suitable for stand alone use.
@@ -142,9 +142,9 @@ having link data rate of 1.62Gb/s, 2.7Gb/s or 5.4Gbps. Most of the
 monitors will achieve 1080p at 60 FPS. It also supports AUX channel for
 audio digital signal transfer (720 Mb/s).
 
-.. warning:: 
-    
-    Xilinx provide a list of
+.. warning::
+
+    AMD Xilinx provide a list of
     `monitors <https://adaptivesupport.amd.com/s/article/68671?language=en_US>`__
     that were tested and work with the Ultrascale+ Display Port 
     controller.
@@ -249,7 +249,7 @@ RF FE Main Board
 ^^^^^^^^^^^^^^^^
 
 The main board expose to the front panel two wide band receive channels
-RX1A and RX2A which are connected to the ADRV9002 transceiver RX A
+RX1A and RX2A which are connected to the ADRV9002 transceiver Rx A
 channels. The receive path consist of a by-passable LNA
 :adi:`HMC8414`, a non-reflective SPDT
 switch :adi:`HMC8038` that allows to
@@ -260,7 +260,7 @@ driver and is not exposed to the user. The frequency range of the main
 board RX1A and RX2A paths is 100 MHz to 6 GHz.
 
 On the main board we have another two receive channels RX1B and RX2B
-which are connected to RX B channels of ADRV9002. These receive channels
+which are connected to Rx B channels of ADRV9002. These receive channels
 are connected to the RF add-on board through uFL cables and also have
 the same SPDT switch and balun as on the RX A channels.
 
@@ -270,8 +270,8 @@ non-reflective switch :adi:`ADRF5040`
 which allows disconnecting the TX output during internal calibration or
 connecting the transmit path to the RF Add-on board. There are some
 attributes exposed to the user that allows selecting between TX1A and
-TX1B respective TX2A and TX2B. 
-(:dokuwiki:`link to command example <resources/eval/user-guides/jupiter-sdr/quickstart#tx_channel_selection>`)
+TX1B respective TX2A and TX2B.
+(:ref:`link to command example <ad-jupiter-ebz quickstart>`)
 
 RF FE Add-on board
 ^^^^^^^^^^^^^^^^^^
@@ -351,7 +351,7 @@ ADRV9002 external gain control functionality allows AGPIO pins
 configured as output to automatically set required front end gain. The
 software exposes required attributes that allows to manually control the
 AGPIO state.
-(:dokuwiki:`link to command example <resources/eval/user-guides/jupiter-sdr/quickstart#rx_gain_control>`)
+(:ref:`link to command example <ad-jupiter-ebz quickstart>`)
 
 =========== ==============================
 LNA control ADRV9002 external gain control
