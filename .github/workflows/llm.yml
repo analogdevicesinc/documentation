@@ -166,12 +166,14 @@ jobs:
 
           - Broken links
           - References to files or pages that do not exist
+          - Full links when roles can be used (e.g., :git-pyadi-iio:\`examples/ad4020_example.py\` , :adi:\`ad4052\` , and :external+hdl:ref:\`spi_engine\` )
 
           Remember how roles resolve:
 
           - :external+REPO:doc\`index\` becomes https://analogdevicesinc.github.io/REPO/index.html
           - :external+REPO:ref\`some_lable\` becomes https://analogdevicesinc.github.io/REPO/resolve/path/to/label.html
-          - :git-REPO:\`Title <PATH/TO>\` becomes https://github.com/REPO/tree/main/PATH/TO
+          - :git-REPO:\`Title <PATH/TO>\` becomes https://github.com/analogdevicesinc/REPO/tree/main/PATH/TO
+          - :git-REPO:\`Title <PATH/TO+>\` becomes https://github.com/analogdevicesinc/REPO/PATH/TO (no "tree/main")
           - :adi:\`Title <PATH/TO>\` becomes https://analog.com/PATH/TO
 
           You can fetch sphinx references with (change the repo (no-OS, linux, etc))
