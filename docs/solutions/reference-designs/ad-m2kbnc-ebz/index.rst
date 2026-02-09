@@ -10,13 +10,18 @@ The :adi:`AD-M2KBNC-EBZ` is an :adi:`ADALM2000` add-on board
 which allows the user to connect oscilloscope probes and other test
 leads to the analog inputs of M2K.
 
-+---------------------------------------+------------------------------------------+
-| .. figure:: ad-m2kbnc-ebz-top-web.png | .. figure:: ad-m2kbnc-ebz-bottom-web.png |
-|    :width: 600px                      |    :width: 600px                         |
-|                                       |                                          |
-+---------------------------------------+------------------------------------------+
+.. grid::
+   :widths: 50% 50%
 
-**Figure 1. AD-M2KBNC-EBZ Top View and Bottom View**
+   .. figure:: ad-m2kbnc-ebz-top-web.png
+      :width: 600px
+
+      AD-M2KBNC-EBZ Top View
+
+   .. figure:: ad-m2kbnc-ebz-bottom-web.png
+      :width: 600px
+
+      AD-M2KBNC-EBZ Bottom View
 
 Features
 --------
@@ -55,11 +60,11 @@ Package contents
 - 10x mini grabber test clips
 
 .. figure:: ad-m2kbnc-ebz-angle-web.png
-    
+
 .. figure:: ad-m2kbnc-ebz_package.png
 
-**Figure 2. AD-M2KBNC-EBZ Package Contents**
-    
+   AD-M2KBNC-EBZ Package Contents
+
 Getting Started
 ---------------
 
@@ -67,15 +72,15 @@ The BNC adapter board is simply plugged into the ADALM2000 and can be used
 straight away. It does not need any supply or additional circuitry.
 
 .. figure:: 20220314_104919.jpg
-    :width: 600 px
+   :width: 600 px
 
-**Figure 3. AD-M2KBNC-EBZ Connected to ADALM2000**
+   AD-M2KBNC-EBZ Connected to ADALM2000
 
 AC/DC Coupling
 ~~~~~~~~~~~~~~
 
 .. figure:: coupling_highlight.png
-    :width: 600 px
+   :width: 600 px
 
 **Figure 4. AD-M2KBNC-EBZ jumpers for AC/DC coupling**
 
@@ -121,13 +126,18 @@ ADALM2000.
 | 2 3       | 2 3 | 2 3 | 2 3 | 1+         | 2+ | 1- | 2- |
 +-----------+-----+-----+-----+------------+----+----+----+
 
-+-----------------------------------------+-----------------------------------------+
-| .. figure:: input_path_single_ended.png | .. figure:: input_path_differential.png |
-|    :width: 600px                        |    :width: 600px                        |
-+-----------------------------------------+-----------------------------------------+
+.. grid::
+   :widths: 50% 50%
 
-**Figure 5. AD-M2KBNC-EBZ bottom solder jumpers (left-single
-ended inputs, right-differential inputs)**
+   .. figure:: input_path_single_ended.png
+      :width: 600px
+
+      AD-M2KBNC-EBZ single-ended inputs bottom solder jumpers
+
+   .. figure:: input_path_differential.png
+      :width: 600px
+
+      AD-M2KBNC-EBZ right-differential inputs bottom solder jumpers
 
 Schematics and CAD Files
 ------------------------
