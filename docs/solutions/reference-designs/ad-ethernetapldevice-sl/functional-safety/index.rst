@@ -9,8 +9,8 @@ Introduction
 The AD-EthernetAPLDevice-SL has a failure modes, effects, and diagnostics analysis
 (FMEDA) document readily available upon request to support functional safety
 designs despite it not being assessed for functional safety. It also utilizes ADI
-functional safety certified components like the MAX42500 and ADFS7124-4 as
-diagnostics to further improve systematic capability and functional safety
+functional safety certified components like the :adi:`MAX42500` and :adi:`ADFS7124-4` 
+as diagnostics to further improve systematic capability and functional safety
 compliance. Furthermore, this reference design demonstrates how such FS-certified
 parts can be implemented in an actual system.
 
@@ -102,48 +102,48 @@ TÜV Rheinland. The diagnostic functions, which aid safe integrity level (SIL)
 certification, are based on the following features of the component, if ever the
 user wants to use these features:
 
-1. SIGNAL CHAIN CHECK - ADFS7124-4 can check all voltages connected to the
+1. ``SIGNAL CHAIN CHECK`` - ADFS7124-4 can check all voltages connected to the
 device.
 
-2. REFERENCE DETECT - ADFS7124-4 includes on-chip circuitry to detect if there
+2. ``REFERENCE DETECT`` - ADFS7124-4 includes on-chip circuitry to detect if there
 is a valid reference for conversions or calibrations when selecting an external
 reference as the reference source.
 
-3. CALIBRATION, CONVERSION, AND SATURATION ERRORS - These diagnostics check the
+3. ``CALIBRATION, CONVERSION, AND SATURATION ERRORS`` - These diagnostics check the
 analog input used as well as the modulator and digital filter during conversions
 or calibration.
 
-4. OVERVOLTAGE/UNDERVOLTAGE DETECTION - The overvoltage/undervoltage monitors
+4. ``OVERVOLTAGE/UNDERVOLTAGE DETECTION`` - The overvoltage/undervoltage monitors
 check the absolute voltage on the AINx analog input pins.
 
-5. POWER SUPPLY MONITORS - Along with converting external voltages, the ADC can
+5. ``POWER SUPPLY MONITORS`` - Along with converting external voltages, the ADC can
 monitor the voltages on the Analog Supply pin and Digital I/O Supply pins of the
 ADC.
 
-6. LDO CAPACITOR DETECT - The analog and digital LDOs require an external
+6. ``LDO CAPACITOR DETECT`` - The analog and digital LDOs require an external
 decoupling capacitor of at least 0.1 µF. The ADFS7124-4 can check for the
 presence of this decoupling capacitor.
 
-7. MCLK COUNTER - The ADFS7124-4 allows the user to monitor the controller
+7. ``MCLK COUNTER`` - The ADFS7124-4 allows the user to monitor the controller
 clock. A stable controller clock is important as the output data rate, filter
 settling time, and the filter notch frequencies are dependent on the controller
 clock.
 
-8. SPI SCLK COUNTER - The SPI SCLK counter counts the number of SCLK pulses used
+8. ``SPI SCLK COUNTER`` - The SPI SCLK counter counts the number of SCLK pulses used
 in each read and write operation.
 
-9. SPI READ/WRITE ERRORS - The ADFS7124-4 can check the read and write
+9. ``SPI READ/WRITE ERRORS`` - The ADFS7124-4 can check the read and write
 operations to ensure that valid registers are being addressed.
 
-10. CHECKSUM PROTECTION - Using the checksum ensures that only valid data is
+10. ``CHECKSUM PROTECTION`` - Using the checksum ensures that only valid data is
 written to a register and allows data read from a register to be validated.
 
-11. BURNOUT CURRENTS - The ADFS7124-4 contains two constant current generators
+11. ``BURNOUT CURRENTS`` - The ADFS7124-4 contains two constant current generators
 that can be programmed to 0.5 µA, 2 µA, or 4 µA. Use these currents to verify
 that an external transducer is still operational before attempting to take
 measurements on that channel.
 
-12. TEMPERATURE SENSOR - The ADFS7124-4 has an embedded temperature sensor that
+12. ``TEMPERATURE SENSOR`` - The ADFS7124-4 has an embedded temperature sensor that
 is useful to monitor the die temperature of the IC.
 
 All the diagnostics are explained further on how to use them in the ADFS7124-4
@@ -183,5 +183,5 @@ Besides which parameters to analyze, it's important that generic parameters are
 established when initiating the derating analysis, especially if ambient
 temperature is involved.
 
-.. csv-table:: Generic Parameters for AD-EthernetAPLDevice-SL
+.. csv-table:: Generic Parameters for the AD-EthernetAPLDevice-SL
    :file: generic-parameters.csv
