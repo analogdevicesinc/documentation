@@ -4,7 +4,7 @@ Jupiter SDR - known issues
 ==========================
 
 Jupiter SDR known issues when used with
-:dokuwiki:`2023_r2 Patch1 Kuiper image: <resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
+:external+adi-kuiper-gen:doc:`2023_r2 Patch1 Kuiper image <index>`
 
 #. IIO buffer size limited to 131072 samples when USB 3 interface is
    used to stream data to a host

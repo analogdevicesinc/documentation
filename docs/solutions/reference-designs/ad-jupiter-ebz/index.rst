@@ -91,8 +91,7 @@ feel free to ask.
      #. Quick Start Guide (see :ref:`ad-jupiter-ebz quickstart`)
      #. Quick Start Guides
          #. Generate a custom device profile using TES (see :ref:`ad-jupiter-ebz profile-generation`)
-         #. :dokuwiki:`Configure a pre-existing SD-Card <resources/tools-software/linux-software/kuiper-linux>`
-         #. :dokuwiki:`Update the old card you received with your hardware <resources/tools-software/linux-software/kuiper-linux>`
+         #. :external+adi-kuiper-gen:ref:`use-kuiper-image`
 - Software Solutions
      #. :ref:`iio-oscilloscope`
          #. :dokuwiki:`ADRV9001/2 IIO Scope View <resources/tools-software/linux-software/adrv9002_osc_main>`
@@ -108,17 +107,10 @@ feel free to ask.
      #. :dokuwiki:`ADRV9001/2 Device Driver Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
      #. :dokuwiki:`AXI-DMAC DMA Controller Linux Driver <resources/tools-software/linux-drivers/axi-dmac>`
      #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
-     #. :dokuwiki:`Transceiver Toolbox for MATLAB and Simulink <resources/tools-software/transceiver-toolbox>`
+     #. :ref:`matlab transceiver-toolbox`
      #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
-     #. :dokuwiki:`Python Interfaces <resources/tools-software/linux-software/pyadi-iio>`
-     #. :dokuwiki:`IIO Command Line Tools <resources/tools-software/linux-software/libiio/cmd_line>`
-- Embedded Resources
-     #. :dokuwiki:`ADRV9001/2 Linux Device Driver <resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
-     #. :dokuwiki:`ADRV9001/2 Device Driver Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
-     #. :dokuwiki:`AXI-DMAC DMA Controller Linux Driver <resources/tools-software/linux-drivers/axi-dmac>`
-     #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
-     #. :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
-     #. :ref:`linux-kernel zynq`
+     #. :ref:`pyadi-iio`
+     #. :ref:`libiio cli`
      #. :external+no-OS:doc:`projects/rf-transceiver/adrv9001`
      #. :ref:`linux-kernel zynqmp`
 - FPGA Resources
@@ -143,7 +135,7 @@ feel free to ask.
          - :ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>` sub-community.
      - For questions regarding the no-OS drivers for ADRV9001/2, please use the
          - :ez:`Microcontroller and No-OS Driver <community/linux-device-drivers/microcontroller-no-os-drivers>` sub-community.
-     - Additional Documentation about SDR Signal Chains - The math behind the RF <>`
+     - :dokuwiki:`Additional Documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 
 .. toctree::
    :hidden:

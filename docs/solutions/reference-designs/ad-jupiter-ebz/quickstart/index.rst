@@ -11,7 +11,7 @@ This guide provides some quick instructions on how to setup Jupiter SDR.
 Required Software
 -----------------
 
-- SD Card 16GB image using the instructions here: :dokuwiki:`Kuiper Linux image <resources/tools-software/linux-software/kuiper-linux>`
+- SD Card 16GB image using the instructions here: :external+adi-kuiper-gen:doc:`Kuiper Linux image <index>`
 - Instructions on how to build the ZynqMP / MPSoC Linux kernel and 
   devicetrees from source can be found here:
 
@@ -24,7 +24,7 @@ Required Software
 - UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
 - :ref:`iio-oscilloscope`
 
-Please use the :dokuwiki:`release Image 2021_R2 or later <resources/tools-software/linux-software/kuiper-linux>`
+Please use the :external+adi-kuiper-gen:doc:`release Image 2021_R2 or later <index>`
 
 Hardware Setup
 --------------
@@ -852,4 +852,4 @@ After following the steps, the board should be rebooted.
 Setup Networking
 ----------------
 
-Follow :dokuwiki:`this article for further network config <resources/tools-software/linux-software/network-config>`.
+Follow :dokuwiki:`this article for further network config <resources/tools-software/linux-software/network-config>`
