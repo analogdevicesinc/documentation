@@ -169,7 +169,15 @@ jobs:
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/index.rst
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/directives.rst
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/roles.rst
-          Use correct Sphinx roles and directives throughout.
+          Use correct Sphinx roles and directives throughout. You must
+          prioritize using Sphinx references (:ref:, :doc:, ...), and
+          with those you shouldn't use custom titles, unless for placeholders
+          like \"the documentation is available _here_\", where \"_here_\" is the
+          custom title.
+
+          Roles like :dokuwiki: and :adi: do require custom titles since
+          they are simple link aliases, while the Sphinx references are
+          baked by the Sphinx inventory.
 
           Remember how roles resolve:
 
@@ -202,9 +210,6 @@ jobs:
           For added .rst files, you **must** check if it is a dokuwiki import, and if so,
           download the original page and compare the content.
 
-          Do not use custom titles unless it is an obvious replace, like \"the
-          documentation is available here\", where here is the custom title.
-
           Filenames should be in lower case and dash separated:
           docs/solutions/reference-designs/ad-jupiter-ebz/hardware-overview.rst
 
@@ -213,6 +218,13 @@ jobs:
             .. _jupiter-sdr hardware-overview:
 
           Remember, at this stage, the focus is improving the quality of the added pages.
+
+          Simple things to fix also include:
+
+          - Removing trailing whitespace.
+          - Not using the :download: role for download artifacts, for example:
+            :adi:\`data.zip\` -> :download:\`data.zip\`,
+            \`data.zip\`__ -> :download:\`data.zip\`
 
           ## Task 2: Cross reference check
 
