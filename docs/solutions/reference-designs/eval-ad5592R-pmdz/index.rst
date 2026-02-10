@@ -1,22 +1,24 @@
 .. _eval-ad5592r-pmdz:
 
-AD-M2KCBL-EBZ
-=============
+EVAL-AD5592R-PMDZ
+=================
 
-8-channel, 12-Bit, Configurable ADC/DAC/GPIO with on-chip Reference, SPI Interface PMOD Module
+8-channel, 12-Bit, Configurable ADC/DAC/GPIO with on-chip Reference, SPI Interface Pmod Module
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Overview
 --------
 
 The :adi:`EVAL-AD5592R-PMDZ` is a minimalist 8-channel, 12-Bit, configurable
-ADC/DAC/GPIO with on-chip reference, SPI interface PMOD module. This
+ADC/DAC/GPIO with on-chip reference, SPI interface Pmod module. This
 board serves as a low-cost alternative to the full-featured product
 evaluation boards, with terminal block connections and no extra signal
 conditioning.
 
 .. figure:: eval-ad5592r-pmdz-angle-web.png
    :align: center
+
+   EVAL-AD5592R-PMDZ Evaluation Board
 
 This user guide will focus on the hardware aspect of the
 :adi:`EVAL-AD5592R-PMDZ` including the connectors, indicators, and different
@@ -29,6 +31,8 @@ Simplified functional block diagram
 
 .. figure:: ad5592r_block_diagram.png
    :align: center
+
+   AD5592R Functional Block Diagram
 
 Connectors and Configuration
 ----------------------------
@@ -68,7 +72,7 @@ P2        1       VREF     Voltage Reference
           6       CH4      Channel 4 Input/Output
 ========= ======= ======== ======================
 
-SPI PMOD Connector (P1)
+SPI Pmod Connector (P1)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------+-------------+--------------------------+-----------------+-------------+
@@ -110,16 +114,20 @@ and VREF
 .. figure:: 5592-1.png
    :align: center
 
+   Test Points Location
+
 **Voltage reference configuration**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The default connection of the :adi:`AD5592R` **Vref** pin is shorted at pin 1
+The default connection of the :adi:`AD5592R` **VREF** pin is shorted at pin 1
 of JP1 solder jumper where you can easily configure your voltage
 reference input at pin 1 of terminal block P2, either from an external
 source or internal 2.5 V.
 
 .. figure:: 5592-2.png
    :align: center
+
+   Voltage Reference Configuration Jumper
 
 LED Indicator
 ~~~~~~~~~~~~~
@@ -129,13 +137,15 @@ The DS1 is the power green LED indicator of the board.
 .. figure:: power_led_indicator.png
    :align: center
 
+   Power LED Indicator (DS1)
+
 Power Supply Considerations and Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When using the :adi:`AD5592R` PMOD board, the 3.3 V power for the PMOD comes
+When using the :adi:`AD5592R` Pmod board, the 3.3 V power for the Pmod comes
 directly from the host board it is connected to. The power from the host
 is generally capable of providing up to 100 mA at 3.3 V, but for complete
-PMOD power specifications, please click
+Pmod power specifications, please click
 :adi:`here <media/en/technical-documentation/data-sheets/ad5592r.pdf>`.
 
 Device Driver Support
@@ -199,7 +209,7 @@ demo.
    There are two basic ways to program the ADICUP3029 with the 
    software for the AD5592R.
 
-   #. Dragging and Dropping the Hex to the Daplink drive
+   #. Dragging and Dropping the Hex to the DAPLink drive
 
       - Using the drag and drop method, the software is going to be a
         version that Analog Devices creates for testing and evaluation
@@ -235,6 +245,8 @@ Setting up the Hardware
    .. figure:: ad5592r-pmod.jpg
       :align: center
 
+      EVAL-AD5592R-PMDZ Connected to EVAL-ADICUP3029 at P8
+
 #. Connect a micro-USB cable to the P8 connector of the EVAL-ADICUP3029
    and connect it to a computer. The final setup should look similar to the
    picture below.
@@ -242,11 +254,15 @@ Setting up the Hardware
    .. figure:: ad5592r-pmod-on.jpg
       :align: center
 
+      Complete Hardware Setup with EVAL-ADICUP3029
+
 #. Make sure the following switches are as shown in the table
    below.
 
    .. figure:: switch_config.png
       :align: center
+
+      Switch Configuration Settings
 
 #. From your PC, open My Computer and look for the DAPLINK drive, if you
    see this then the drivers are complete and correct.
@@ -255,6 +271,8 @@ Setting up the Hardware
       :align: center
       :height: 400px
       :width: 400px
+
+      DAPLink Drive in File Explorer
 
 #. Simply extract the provided zip file. Once extracted, you will see
    the pre-built hex file for the AD5592R demo. Then drag and drop this Hex
@@ -270,10 +288,14 @@ Setting up the Hardware
    .. figure:: putty_5592.png
       :align: center
 
+      PuTTY Configuration Settings
+
 #. The expected output viewed in the PuTTY is shown below.
 
    .. figure:: adicup_5592.png
       :align: center
+
+      Expected Output in PuTTY Terminal
 
 System Setup Using Raspberry Pi
 -------------------------------
@@ -344,6 +366,8 @@ To set up the circuit for evaluation, consider the following steps:
    .. figure:: interposer.png
       :align: center
 
+      Pmod to Raspberry Pi Interposer Connection
+
 
 #. Connect the :adi:`EVAL-AD5592R-PMDZ`
    on the PMOD to Raspberry Pi Interposer board either via Port P1 or
@@ -351,6 +375,8 @@ To set up the circuit for evaluation, consider the following steps:
 
    .. figure:: 5592_rpi.jpg
       :align: center
+
+      EVAL-AD5592R-PMDZ Connected to Raspberry Pi via Interposer
 
 #. Burn the SD card with the proper ADI Kuiper Linux image. Insert the
    burned SD card into the designated slot on the RPi.
@@ -366,6 +392,8 @@ To set up the circuit for evaluation, consider the following steps:
 
    .. figure:: setup_5592.png
       :align: center
+
+      Complete Raspberry Pi Setup
 
 Application Software (All Platforms)
 ------------------------------------
@@ -390,9 +418,8 @@ the AD5592R: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029
 running the no-OS AD5592R demo project. The user needs to supply a
 **URI** which will be used in the context creation.
 
-The
-:dokuwiki:`iio_info <resources/tools-software/linux-software/libiio/iio_info>`
-command is a part of the libIIO package that reports all IIO attributes.
+The :ref:`libiio iio_info` command is a part of the libIIO package that reports
+all IIO attributes.
 
 Upon installation, simply enter the command on the terminal command line
 to access it.
@@ -426,9 +453,8 @@ IIO Commands
 ~~~~~~~~~~~~
 
 There are different commands that can be used to manage and control the
-device being used. The
-:dokuwiki:`iio_attr <resources/tools-software/linux-software/libiio/iio_attr>`
-command reads and writes IIO attributes.
+device being used. The :ref:`libiio iio_attr` command reads and writes IIO
+attributes.
 
 .. code-block::
 
@@ -442,9 +468,8 @@ Example:
    
      analog@analog:~$ iio_attr -a -C
 
-The
-:dokuwiki:`iio_reg <resources/tools-software/linux-software/libiio/iio_reg>`
-command reads or writes SPI or I2C registers in an IIO device. This is
+The :ref:`libiio iio_reg` command reads or writes SPI or I2C registers in an
+IIO device. This is
 generally not needed for end applications but can be useful in debugging
 drivers. Note that you need to specify a context using the *-u*
 qualifier when you are not directly accessing the device via RPI or when
@@ -483,6 +508,8 @@ IIO Oscilloscope
    .. figure:: 5592_osc.png
       :align: center
 
+      IIO Oscilloscope Connection Screen
+
 Debug Panel
 ^^^^^^^^^^^
 
@@ -491,6 +518,8 @@ attributes of the device.
 
    .. figure:: 5592_debug.png
       :align: center
+
+      IIO Oscilloscope Debug Panel for AD5592R
 
 DMM Panel
 ^^^^^^^^^
@@ -501,20 +530,20 @@ temperature and voltages.
    .. figure:: 5592_dmm.png
       :align: center
 
+      IIO Oscilloscope DMM Panel
+
 PyADI-IIO
 ~~~~~~~~~
 
-:dokuwiki:`PyADI-IIO <resources/tools-software/linux-software/pyadi-iio>`
-is a Python abstraction module for ADI hardware with IIO drivers to make
-them easier to use. This module provides device-specific APIs built on
-top of the current libIIO Python bindings. These interfaces try to match
-the driver naming as much as possible without the need to understand the
+:ref:`pyadi-iio` is a Python abstraction module for ADI hardware with IIO
+drivers to make them easier to use. This module provides device-specific APIs
+built on top of the current libIIO Python bindings. These interfaces try to
+match the driver naming as much as possible without the need to understand the
 complexities of libIIO and IIO.
 
 Follow the step-by-step procedure on how to install, configure, and set
-up PYADI-IIO and install the necessary packages/modules needed by
-referring to this
-:dokuwiki:`link. <resources/tools-software/linux-software/pyadi-iio>`
+up PyADI-IIO and install the necessary packages/modules needed by
+referring to the :ref:`pyadi-iio` documentation.
 
 Running the example
 ^^^^^^^^^^^^^^^^^^^
@@ -534,6 +563,8 @@ readings.
    .. figure:: 5592_example.png
       :align: center
 
+      PyADI-IIO Example Output
+
 .. admonition:: Download
    
    Github link for the Python sample script: 
@@ -546,7 +577,7 @@ More Information and Useful Links
 
 - :adi:`EVAL-AD5592R-PMDZ`
 
-- :dokuwiki:`AD5592/AD5593 PMOD ADICUP3029 Demo <resources/eval/user-guides/eval-adicup3029/reference_designs/demo_ad5592r_ad5593r>`
+- :dokuwiki:`AD5592/AD5593 Pmod ADICUP3029 Demo <resources/eval/user-guides/eval-adicup3029/reference_designs/demo_ad5592r_ad5593r>`
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -555,21 +586,18 @@ Schematic, PCB Layout, Bill of Materials
 
    :download:`EVAL-AD5592R-PMDZ Design & Integration Files <eval-ad5592r-pmdz-designsupport.zip>`
 
-    - Schematics
-    - PCB Layout
-    - Bill of Materials
-    - Allegro Project
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
 
 Additional Information
 ----------------------
 
-- :git-pyadi-iio:`pyADI-IIO </>`
-
-- :dokuwiki:`PyADI-IIO Installation Guide <resources/tools-software/linux-software/pyadi-iio>`
-
-- :dokuwiki:`IIO Oscilloscope Installation Guide <resources/tools-software/linux-software/iio_oscilloscope>`
-
-- :dokuwiki:`Kuiper Linux <resources/tools-software/linux-software/kuiper-linux>`
+- :ref:`pyadi-iio`
+- :ref:`libiio cli`
+- :ref:`iio-oscilloscope`
+- :external+adi-kuiper-gen:doc:`index`
 
 Registration
 ------------

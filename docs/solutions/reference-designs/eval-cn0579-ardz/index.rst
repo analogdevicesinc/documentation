@@ -403,8 +403,7 @@ IIO Commands
 ^^^^^^^^^^^^
 
 There are different commands that can be used to manage the device being used.
-The :dokuwiki:`iio_attr </resources/tools-software/linux-software/libiio/iio_attr>`
-command reads and writes IIO attributes.
+The :ref:`libiio iio_attr` command reads and writes IIO attributes.
 
 .. shell::
 
