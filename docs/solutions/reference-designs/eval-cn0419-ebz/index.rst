@@ -1,3 +1,5 @@
+.. _eval-cn0419-ebz:
+
 EVAL-CN0419-EBZ
 ===============
 
@@ -9,7 +11,7 @@ Overview
 
 The :adi:`CN0419` is a circuit that isolates a peripheral device that
 already implements a USB interface by using the :adi:`ADuM4160`, a USB port isolator
-based on Analog Devices iCoupler technology. It is bus-powered by pairing it
+based on Analog Devices iCoupler® technology. It is bus-powered by pairing it
 with a small isolated DC-to-DC converter such as the :adi:`ADuM5020`. The application
 circuit shown is typical of many medical and industrial applications.
 
@@ -25,10 +27,12 @@ DC-to-DC converter provides regulated, isolated power that is below CISPR22
 Class B limits at full load on a 2-layer printed circuit board (PCB) with
 ferrites.
 
-The :adi:`EVAL-CN0419-EBZ <CN0419>` board connects through a USB Type A Plug 
+The :adi:`EVAL-CN0419-EBZ <CN0419>` board connects through a USB Type A Plug
 and is powered by the bus voltage from the USB port.
 
 .. figure:: figure_7.png
+
+   CN0419 circuit block diagram
 
 General Setup
 -------------
@@ -40,7 +44,7 @@ Block assignments
 
 - Terminal block **P1** is the USB Male plug to be inserted to USB port
 - Terminal block **P2** is the USB Female receptacle for the peripheral
-- Terminal block **S1** is the switch for selection of speed operation 
+- Terminal block **S1** is the switch for selection of speed operation
   (Full speed or Low speed)
 
 Speed selection
@@ -48,7 +52,7 @@ Speed selection
 
 Peripheral devices run at one of three speeds, low (1.5 Mbps), full (12 Mbps),
 and high (480 Mbps). The :adi:`EVAL-CN0419-EBZ Evaluation Board <CN0419>` can
-accommodate the low and full speed operations. Listed below are some examples 
+accommodate the low and full speed operations. Listed below are some examples
 of peripheral devices for each speed.
 
 #. Low speed devices
@@ -66,20 +70,23 @@ low speed. A switch at the upstream side allows the user to select between these
 speeds. To switch between the two modes, flip the actuator of S1 switch to FS
 mode as indicated in silkscreen for full speed operation and LS mode otherwise.
 
-.. figure:: ls_mode.png
+.. grid::
+   :widths: 50 50
 
-   Low speed operation
+   .. figure:: ls_mode.png
 
-.. figure:: fs_mode.png
+      Low speed operation
 
-   Full speed operation
+   .. figure:: fs_mode.png
+
+      Full speed operation
 
 Required Equipment
 ~~~~~~~~~~~~~~~~~~
 
 - :adi:`EVAL-CN0419-EBZ Evaluation Board <CN0419>`
 - PC with the following *minimum requirements*:
-   
+
    - PC, Mac, Linux computer, or other host that supports USB
    - Peripheral Device (USB Flash drive, keyboard, evaluation board, etc.)
    - USB Extender (Optional)
@@ -99,8 +106,8 @@ Running the System
 ~~~~~~~~~~~~~~~~~~
 
 #. Make sure the setting for S1 is correct based on the peripheral device.
-#. Plug P1 of the board into the PC/host, the :adi:`EVAL-CN0419-EBZ <CN0419>` is 
-   automatically turned on and providing isolation. DS1 will light up as an indication 
+#. Plug P1 of the board into the PC/host, the :adi:`EVAL-CN0419-EBZ <CN0419>` is
+   automatically turned on and providing isolation. DS1 will light up as an indication
    that the board is delivering power to the peripheral device.
 #. The PC/host must recognize the peripheral connected to make sure the setup is working.
 #. Upon successful connection, you can now provide your peripheral the isolated power.
@@ -118,7 +125,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :adi:`EVAL-CN0419-EBZ Design & Integration Files <CN0419-DesignSupport>`
+   :adi`EVAL-CN0419-EBZ Design & Integration Files <CN0419-DesignSupport>`
 
    - Schematics
    - PCB Layout

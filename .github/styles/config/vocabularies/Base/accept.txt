@@ -71,6 +71,7 @@ Zener
 ns
 dBm
 Gbps
+Mbps
 kbps
 
 [Oo]vercurrent
@@ -90,3 +91,5 @@ Scarthgap
 Jitsi
 Github
 Kirkstone
+iCoupler
+isoPower
