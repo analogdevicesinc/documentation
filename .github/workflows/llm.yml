@@ -132,9 +132,10 @@ jobs:
         echo -n "${{ inputs.prompt }}" > $prompt_file
         [[ -s "$prompt_file" ]] || echo -n "
           Run a documentation review on the commit range $base_sha..$head_sha.
-          The review has four big tasks:
+          The review has five big tasks:
 
           - Content check
+          - Layout and usage check
           - Cross-references check
           - Sanity check
           - Global improvement
@@ -144,7 +145,10 @@ jobs:
           You must read $annotations_file for the CI/CD notes, warnings, and
           errors.
           You must write your final review in markdown at $summary_file as a
-          GitHub Summary.
+          GitHub Summary, since we are reviewing restructuredText pages too,
+          avoid appending reST syntax in the Markdown summary and put whole
+          code snippets in Markdown code blocks.
+
           You shall suggest fixup commits (must use \`--fixup\`) to resolve
           issues, if so, you must use \`git format-patch -o $patches_path\`
           to store the patches to the $patches_path directory (never autosquash).
@@ -164,8 +168,7 @@ jobs:
           sitemap with all pdfs, including the datasheets, are available at
           https://www.analog.com/media/en/en-pdf-sitemap.xml
 
-          Documentation guidelines are provided at
-          https://raw.githubusercontent.com/analogdevicesinc/documentation/refs/heads/main/docs/contributing/docs_guidelines.rst
+          **Must fetch and read**, full documentation guidelines are provided at
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/index.rst
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/directives.rst
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/roles.rst
@@ -219,14 +222,67 @@ jobs:
 
           Remember, at this stage, the focus is improving the quality of the added pages.
 
-          Simple things to fix also include:
+          ## Task 2: Layout and usage check
 
-          - Removing trailing whitespace.
+          Contributors should use the grid and flex directives whenever possible,
+          for example:
+
+          \`\`\`
+          +---------------------------------------+------------------------------------------+
+          | .. figure:: ad-m2kbnc-ebz-top-web.png | .. figure:: ad-m2kbnc-ebz-bottom-web.png |
+          |    :width: 600px                      |    :width: 600px                         |
+          |                                       |                                          |
+          +---------------------------------------+------------------------------------------+
+
+          **Figure 1. AD-M2KBNC-EBZ Top View and Bottom View**
+          \`\`\`
+
+          Should be updated to
+
+
+          \`\`\`
+          .. grid::
+             :widths: 50% 50%
+
+             .. figure:: ad-m2kbnc-ebz-top-web.png
+
+                AD-M2KBNC-EBZ Top View
+
+             .. figure:: ad-m2kbnc-ebz-bottom-web.png
+
+                AD-M2KBNC-EBZ Bottom View
+          \`\`\`
+
+          To ensure it is responsive on smaller screens.
+          Of course true tables that contains headers, and are not simply used to great a grid,
+          should be kept as tables.
+
+          You should ensure no trailing whitespace.
+
+          For downloads, ensure the download role is used for local files, for example,
+          a common mistake is:
+          \`\`\`
+
+          .. admonition:: Download
+
+              :adi:\`EVAL-CN0417-EBZ Design & Integration Files <CN0417-DesignSupport.zip>\`
+          \`\`\`
+
+          Because creates a https://analog.com/CN0417-DesignSupport.zip link that is not
+          automatically checked.
+          While the correct to download the local file is:
+
+          \`\`\`
+          .. admonition:: Download
+
+             :download:\`EVAL-CN0417-EBZ Design & Integration Files <CN0417-DesignSupport.zip>\`
+          \`\`\`
+
           - Not using the :download: role for download artifacts, for example:
             :adi:\`data.zip\` -> :download:\`data.zip\`,
             \`data.zip\`__ -> :download:\`data.zip\`
 
-          ## Task 2: Cross reference check
+          ## Task 3: Cross reference check
 
           After doing the content check, you will check if the author used dokuwiki roles
           for content already imported.
@@ -256,13 +312,13 @@ jobs:
           :external+documentation:ref:\`label\`. In general, you can also drop
           custom titles, like \"AXI_ADRV9002 Interface Core\".
 
-          ### Task 3: Sanity check
+          ## Task 4: Sanity check
 
           Now you will revisit all changes you made by looking at the git history.
           Deletion of links and content is not acceptable unless justified.
           Look for destructive changes that does not make sense and fix or revert.
 
-          ### Task 4: Global improvement
+          ## Task 5: Global improvement
 
           Finally, for updated dokuwiki to the new format references that you are confident,
           you shall generate patches updating the whole documentation, that is, grep
