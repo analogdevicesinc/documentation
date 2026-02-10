@@ -119,7 +119,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0417-EBZ Design & Integration Files <CN0417-DesignSupport.zip>`
+   :download:`EVAL-CN0417-EBZ Design & Integration Files <cn0417-design-support.zip>`
 
    - Schematics
    - PCB Layout
