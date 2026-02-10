@@ -95,6 +95,7 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">Applied Systems Control Workshop</a><ul>
+<li><a class="reference internal" href="#slide-deck-and-booklet">Slide Deck and Booklet</a></li>
 <li><a class="reference internal" href="#theoretical-content">Theoretical content</a></li>
 <li><a class="reference internal" href="#overview-of-industrial-control-and-automation-systems">Overview of industrial control and automation systems</a></li>
 <li><a class="reference internal" href="#industrial-automation-components">Industrial automation components</a></li>
@@ -103,7 +104,6 @@
 <li><a class="reference internal" href="#introduction-to-pid-control">Introduction to PID control</a></li>
 <li><a class="reference internal" href="#ad-swiot1l-sl-board-overview">AD-SWIOT1L-SL Board Overview</a></li>
 <li><a class="reference internal" href="#hands-on-activity">Hands-on activity</a></li>
-<li><a class="reference internal" href="#slide-deck-and-booklet">Slide Deck and Booklet</a></li>
 <li><a class="reference internal" href="#workshop-takeaways">Workshop Takeaways</a></li>
 </ul>
 </li>
@@ -532,6 +532,21 @@ Content on this topic
 <p>This workshop provides an introduction to applied systems control, focusing on
 practical applications and real-world scenarios. Participants will learn about
 various control systems, their design and implementation.</p>
+<section id="slide-deck-and-booklet">
+<h2>Slide Deck and Booklet<a class="headerlink" href="#slide-deck-and-booklet" title="Link to this heading"></a></h2>
+<p>Since this tutorial is also designed to be presented as a live, hands-on
+workshop, a slide deck is provided here:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_applied_systems_control/Applied_Systems_Control_Workshop.pptx"><code class="xref download docutils literal notranslate"><span class="pre">Applied</span> <span class="pre">Systems</span> <span class="pre">Control</span> <span class="pre">Slide</span> <span class="pre">Deck</span></code></a></p>
+</div>
+<p>A complete booklet of the hands-on activity is also provided, either as a companion to
+following the tutorial yourself:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_applied_systems_control/Applied_Systems_Control_Workshop_Booklet.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Applied</span> <span class="pre">Systems</span> <span class="pre">Control</span> <span class="pre">Booklet</span></code></a></p>
+</div>
+</section>
 <section id="theoretical-content">
 <h2>Theoretical content<a class="headerlink" href="#theoretical-content" title="Link to this heading"></a></h2>
 <ul class="simple">
@@ -749,6 +764,8 @@ implementation of control strategies, including PWM and PID control.</p>
 <div class="line">1 x USB 2.0 cable</div>
 <div class="line">1 x cable connector for external 24V power supply</div>
 <div class="line">1 x cable connector for channels connectivity</div>
+<div class="line">1 x Raspberry Pi 5</div>
+<div class="line">1 x Raspberry Pi 5 Type-C power supply</div>
 </div>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_applied_systems_control/kit.png"><img alt="AD-SWIOT1L-SL kit contents" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_applied_systems_control/kit.png" width="500" />
@@ -762,19 +779,31 @@ implementation of control strategies, including PWM and PID control.</p>
 <h2>Hands-on activity<a class="headerlink" href="#hands-on-activity" title="Link to this heading"></a></h2>
 <p>Participants will engage in hands-on activities to apply the theoretical
 concepts learned. The activities will include:</p>
-<ol class="arabic">
-<li><p>Booting your PC Linux</p></li>
+<ol class="arabic simple">
+<li><p>Power on the Raspberry Pi 5 board using a Type-C power supply and boot it.</p></li>
 <li><p>Power the AD-SWIOT1L-SL board by plugging in the power supply.</p></li>
-<li><p>Connect the USB to T1L media converter to your PC and the AD-SWIOT1L-SL
-board. After a short time, both link status LEDs(on the media converter and
+<li><p>Connect the USB to T1L media converter to your Raspberry 5 board using a
+micro-USB cable.</p></li>
+<li><p>Connect the USB to T1L media converter to the AD-SWIOT1L-SL
+board using the PROFIBUS cable. After a short time, both link status LEDs(on the media converter and
 the board) should be on.</p></li>
+<li><p>Connect the Raspberry Pi 5 to a display using a HDMI to Micro-HDMI cable, and
+connect a keyboard and mouse to the USB ports.</p></li>
+</ol>
+<p>In the end, your setup should look like this:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_applied_systems_control/system_setup.jpg"><img alt="System setup with Raspberry Pi 5 and AD-SWIOT1L-SL boards connected" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_applied_systems_control/system_setup.jpg" width="600" />
+</a>
+<p>System setup with Raspberry Pi 5 and AD-SWIOT1L-SL boards connected</p>
+</div></blockquote>
+<ol class="arabic">
 <li><p>Testing the board connectivity</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Open a terminal and run the command: <code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">169.254.97.40</span></code> This command
-will rule out the host (PC) network configuration issues.</p></li>
+<li><p>Open a terminal and run the command: <code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">192.168.97.40</span></code> This command
+will rule out the host (RPi 5) network configuration issues.</p></li>
 <li><p>If the ping command is not successful run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">ip</span> <span class="pre">route</span> <span class="pre">add</span>
-<span class="pre">169.254.97.40</span> <span class="pre">dev</span> <span class="pre">eth0</span></code> to add a route to the board’s IP address.</p></li>
+<span class="pre">192.168.97.40</span> <span class="pre">dev</span> <span class="pre">eth0</span></code> to add a route to the board’s IP address.</p></li>
 </ul>
 </div></blockquote>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_applied_systems_control/ping.png"><img alt="Ping command output" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_applied_systems_control/ping.png" width="500" />
@@ -795,21 +824,6 @@ will rule out the host (PC) network configuration issues.</p></li>
 </figure>
 </li>
 </ol>
-</section>
-<section id="slide-deck-and-booklet">
-<h2>Slide Deck and Booklet<a class="headerlink" href="#slide-deck-and-booklet" title="Link to this heading"></a></h2>
-<p>Since this tutorial is also designed to be presented as a live, hands-on
-workshop, a slide deck is provided here:</p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_applied_systems_control/Applied_systems_control.pptx"><code class="xref download docutils literal notranslate"><span class="pre">Applied</span> <span class="pre">Systems</span> <span class="pre">Control</span> <span class="pre">Slide</span> <span class="pre">Deck</span></code></a></p>
-</div>
-<p>A complete booklet of the hands-on activity is also provided, either as a companion to
-following the tutorial yourself:</p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_applied_systems_control/applied_systems_control_booklet.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Applied</span> <span class="pre">Systems</span> <span class="pre">Control</span> <span class="pre">Booklet</span></code></a></p>
-</div>
 <p><strong>Exercise 1: Power the RGB LED red, green and blue</strong></p>
 <blockquote>
 <div><ul class="simple">
