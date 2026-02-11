@@ -4,19 +4,18 @@ EVAL-AD5593R-PMDZ
 =================
 
 8-channel, 12-Bit, Configurable ADC/DAC/GPIO with on-chip Reference, I2C
-interface PMOD Module
+interface Pmod Module
 
 Overview
 --------
 
 :adi:`EVAL-AD5593R-PMDZ` is a minimalist 8-channel, 12-Bit, Configurable
-ADC/DAC/GPIO with on-chip Reference, I2C interface PMOD module. This
+ADC/DAC/GPIO with on-chip Reference, I2C interface Pmod module. This
 board serves as a low-cost alternative to the full-featured product
 evaluation boards, with terminal block connections and no extra signal
 conditioning.
 
 .. figure:: eval-ad5593r-pmdz.png
-   :align: center
 
 This user guide will focus on the hardware aspect of the
 :adi:`EVAL-AD5593R-PMDZ` including the connectors, indicators, and
@@ -29,7 +28,6 @@ Simplified functional block diagram
 -----------------------------------
 
 .. figure:: ad5593r_block_diagram.png
-   :align: center
 
 Connectors and Configuration
 ----------------------------
@@ -58,10 +56,10 @@ P3        1       VREF     Voltage Reference
           6       CH4      Channel 4 Input/Output
 ========= ======= ======== ======================
 
-I2C PMOD Connector (P1)
+I2C Pmod Connector (P1)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The :adi:`EVAL-AD5593R-PMDZ` digital IMOD connector is described
+The :adi:`EVAL-AD5593R-PMDZ` digital Pmod connector is described
 in the table below.
 
 ======= ======== ================
@@ -82,18 +80,16 @@ Users can also check the I2C signal quality and voltage supply of the
 board using test points labeled RST, SCL, SDA, and VLOGIC.
 
 .. figure:: 5593-1.png
-   :align: center
 
 Voltage Reference Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The default connection of the AD5593R **Vref** pin is shorted at pin 1
+The default connection of the AD5593R **VREF** pin is shorted at pin 1
 of the JP1 solder jumper where you can easily configure your voltage
 reference input at pin 1 of terminal block P3, either from an external
 source or internal 2.5 V
 
 .. figure:: 5593-2.png
-   :align: center
 
 LED Indicator
 ~~~~~~~~~~~~~
@@ -101,15 +97,14 @@ LED Indicator
 The DS1 is the power green LED indicator of the board.
 
 .. figure:: 5593-3.png
-   :align: center
 
 Power Supply Considerations and Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When using the AD5593R PMOD board, the 3.3V power for the PMOD comes
+When using the AD5593R Pmod board, the 3.3V power for the Pmod comes
 directly from the host board it is connected to. The power from the host
 is generally capable of providing up to 100 mA at 3.3V, but for complete
-PMOD power specifications please click 
+Pmod power specifications please click
 :download:`here <pmod-interface-specification-1_3_1.pdf>`.
 
 Device Driver Support
@@ -153,25 +148,21 @@ demo.
 - **Hardware**
 
   - :adi:`EVAL-ADICUP3029`
-
   - :adi:`EVAL-AD5593R-PMDZ`
-
   - Micro-USB to USB Cable
-
   - PC or Laptop with USB Port
 
 - **Software**
 
   - PuTTY or other similar software
-
   - :download:`ADuCM3029_demo_AD5593R.hex <ADuCM3029_demo_ad5592r_ad5593r.zip>`
 
 .. important::
-    
+
     There are two basic ways to program the ADICUP3029 with the software for
     the :adi:`AD5593R`.
 
-     #. Dragging and Dropping the Hex to the Daplink drive
+     #. Dragging and Dropping the Hex to the DAPLink drive
 
          #. Using the drag and drop method, the software is going to be a
             version that Analog Devices creates for testing and evaluation
@@ -180,7 +171,7 @@ demo.
 
      #. Building, Compiling, and Debugging using CCES
 
-         #. Importing the project into 
+         #. Importing the project into
             :adi:`CrossCore Embedded Studio`
             is going to allow you to change parameters and customize the
             software to your application, but will a bit more advanced and
@@ -205,31 +196,27 @@ Setting up the Hardware
    **EVAL-ADICUP3029**.
 
    .. figure:: img_3001.jpg
-      :align: center
 
 #. Connect a micro-USB cable to the P9 connector of the EVAL-ADICUP3029
    and connect it to a computer. The final setup should look similar to the
    picture below.
 
    .. figure:: img_2998.jpg
-      :align: center   
 
 #. Make sure the following switches are as shown in the table
    below.
 
    .. figure:: switch_config.png
-      :align: center   
 
-#. From your PC, open My Computer and look for the DAPLINK drive, if you
+#. From your PC, open My Computer and look for the DAPLink drive, if you
    see this then the drivers are complete and correct.
 
    .. figure:: daplink.jpg
-      :align: center
-      :width: 600px  
+      :width: 600px
 
 #. Simply extract the provided zip file. Once extracted, you will see
    the pre-built hex file for the AD5593R demo. Then drag and drop this Hex
-   file to the DAPLINK drive and your ADICUP3029 board will be programmed.
+   file to the DAPLink drive and your ADICUP3029 board will be programmed.
    The DS2 (red) LED will blink rapidly.
 
 #. The DS2 will stop blinking and will stay ON once the programming is
@@ -239,12 +226,10 @@ Setting up the Hardware
    the correct COM port for the ADICUP3029. Set the baud rate to 115200.
 
    .. figure:: ad5593_putty.png
-      :align: center 
 
 #. The expected output viewed in the PuTTY is shown below.
 
    .. figure:: ad5593_example_adicup.png
-      :align: center 
 
 System Setup Using Raspberry Pi
 -------------------------------
@@ -259,21 +244,15 @@ The following is a list of items needed in order to replicate this demo.
 - **Hardware**
 
   - :adi:`EVAL-AD5593R-PMDZ`
-
-  - :adi:`PMOD to Raspberry Pi Adapter (PMD-RPI-INTZ) <PMD-RPI-INTZ>`
-
+  - :adi:`Pmod to Raspberry Pi Adapter (PMD-RPI-INTZ) <PMD-RPI-INTZ>`
   - Raspberry PI Zero, Zero W, 3B+, or 4
-
   - 16 GB (or larger) Class 10 (or faster) micro-SD card
-
   - 5 Vdc, 2.5 A power supply with micro USB connector (USB-C power
     supply for Raspberry Pi 4)
-
   - User interface setup (choose one):
 
     - HDMI monitor, keyboard, and mouse plugged directly into Raspberry
       Pi
-
     - Host Windows/Linux/Mac computer on the same network as Raspberry
       Pi
 
@@ -301,8 +280,8 @@ page, substituting the following lines in **config.txt**:
 
    dtoverlay=rpi-ad5593r
 
-.. warning:: 
-    
+.. warning::
+
     The EVAL-AD5593R-PMDZ board has a 100k pullup resistor on the
     RESET pin, which correspond to Raspberry Pi GPIO13 and GPIO17 on
     PMD-RPI-INTZ P3 and P4, respectively. The default state of these
@@ -319,19 +298,17 @@ Setting up the Hardware
 
 To set up the circuit for evaluation, consider the following steps:
 
-#. Connect the P9 of the **PMOD to Raspberry Pi Interposer** board at
+#. Connect the P9 of the **Pmod to Raspberry Pi Interposer** board at
    the male header GPIO pin connector of the **Raspberry Pi** as shown
    below.
 
    .. figure:: interposer.png
-      :align: center 
 
 #. Connect the :adi:`EVAL-AD5593R-PMDZ`
-   on the PMOD to Raspberry Pi Interposer board either via Port P3 or
+   on the Pmod to Raspberry Pi Interposer board either via Port P3 or
    P4.
 
    .. figure:: 5593_rpi.jpg
-      :align: center 
 
 #. Burn the SD card with the proper ADI Kuiper Linux image. Insert the
    burned SD card into the designated slot on the RPi.
@@ -346,7 +323,6 @@ To set up the circuit for evaluation, consider the following steps:
    picture below.
 
    .. figure:: setup_5593.png
-      :align: center 
 
 Application Software (All Platforms)
 ------------------------------------
@@ -358,8 +334,8 @@ The Libiio is a library used for interfacing with IIO devices and is
 required to be installed on your computer.
 
 .. admonition:: Download
-    
-    Download and Install the latest :git-libiio:`Libiiopackage <releases+>`
+
+    Download and Install the latest :git-libiio:`Libiio package <releases+>`
     on your machine.
 
 To be able to connect your device, the software must be able to create a
@@ -395,8 +371,8 @@ Example:
  - If your Raspberry Pi has the IP address 192.168.1.7, you have to use
    *iio_info -u ip::192.168.1.7* as your URI
 
-.. note:: 
-    
+.. note::
+
     Do note that the Windows machine and the RPI board should be connected
     to the same network in order for the machine to detect the device.
 
@@ -416,7 +392,7 @@ Example:
  - To look at the context attributes, enter this code on the terminal:
 
     .. code-block::
-        
+
         analog@analog:~$ iio_attr -a -C
 
 The :ref:`libiio iio_reg`
@@ -427,7 +403,7 @@ qualifier when you are not directly accessing the device via RPI or when
 you are using the ADICUP3029 platform.
 
 .. code-block::
-    
+
     analog@analog:~$ iio_reg -u <context> <device> <register> [<value>]
 
 Example:
@@ -436,14 +412,14 @@ Example:
    RPI from a Windows machine, enter the following code on the terminal:
 
      .. code-block::
-        
+
         iio_reg -u ip: ad5593r 0x02
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
-.. caution:: 
-    
+.. caution::
+
     Make sure to download/update to the latest version of IIO-Oscilloscope
     found on this :git-iio-oscilloscope:`link <releases+>`.
 
@@ -456,8 +432,7 @@ IIO Oscilloscope
 #. Press refresh to display available IIO Devices, once ad5593r
    appeared, press connect.
 
-   .. figure:: 5593_iio_connect.jpg
-      :align: center 
+.. figure:: 5593_iio_connect.jpg
 
 Debug Panel
 ^^^^^^^^^^^
@@ -465,8 +440,7 @@ Debug Panel
 Below is the Debug panel of AD5593R wherein you can directly access the
 attributes of the device.
 
-   .. figure:: 5593_debug.jpg
-      :align: center 
+.. figure:: 5593_debug.jpg
 
 DMM Panel
 ^^^^^^^^^
@@ -474,51 +448,49 @@ DMM Panel
 Access the DMM panel to see the instantaneous reading of the input
 capacitances and the device temperature.
 
-   .. figure:: 5593_dmm.jpg
-      :align: center 
+.. figure:: 5593_dmm.jpg
 
 PyADI-IIO
 ~~~~~~~~~
 
-:ref:`PyADI-IIO` is a Python abstraction module for ADI hardware with
-IIO drivers to make them easier to use. This module provides 
+:ref:`pyadi-iio` is a Python abstraction module for ADI hardware with
+IIO drivers to make them easier to use. This module provides
 device-specific APIs built on top of the current libIIO Python bindings.
 These interfaces try to match the driver naming as much as possible
 without the need to understand the complexities of libIIO and IIO.
 
 Follow the step-by-step procedure on how to install, configure, and set
 up PYADI-IIO and install the necessary packages/modules needed by
-referring to this link: :ref:`PyADI-IIO`.
+referring to this link: :ref:`pyadi-iio`.
 
 Running the example
 ^^^^^^^^^^^^^^^^^^^
 
 After installing and configuring PYADI-IIO in your machine, you are now
 ready to run Python script examples. In our case, run the
-https://ad5592r_example.py/ found in the examples folder.
+ad5592r_example.py found in the examples folder.
 
-.. code-block::
+.. shell::
 
-    D:\pyadi-iio\examples>python ad5592r_example.py 
+   ~/pyadi-iio/examples
+   $ python3 ad5592r_example.py
 
 Press enter and you will get these readings.
 
-   .. figure:: 5593_pyadi.jpg
-      :align: center 
+.. figure:: 5593_pyadi.jpg
+   :align: center
 
 .. admonition:: Download
-    
-    Github link for the Python sample script: 
-    :git-pyadi-iio:`AD5593R Python Example <blob/master/examples/ad5592r_example.py+>`
+
+   Github link for the Python sample script:
+   :git-pyadi-iio:`AD5593R Python Example <examples/ad5592r_example.py>`
 
 More Information and Useful Links
 ---------------------------------
 
-- :adi:`AD5593R Product Page <AD5593R>`
-
+- :adi:`AD5593R`
 - :adi:`EVAL-AD5593R-PMDZ`
-
-- :dokuwiki:`AD5592/AD5593 PMOD ADICUP3029 Demo <resources/eval/user-guides/eval-adicup3029/reference_designs/demo_ad5592r_ad5593r>`
+- :dokuwiki:`AD5592/AD5593 Pmod ADICUP3029 Demo <resources/eval/user-guides/eval-adicup3029/reference_designs/demo_ad5592r_ad5593r>`
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -527,10 +499,10 @@ Schematic, PCB Layout, Bill of Materials
 
    :download:`EVAL-AD5593R-PMDZ Design & Integration Files <eval-ad5593r-pmdz-designsupport.zip>`
 
-    - Schematics
-    - PCB Layout
-    - Bill of Materials
-    - Allegro Project
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
 
 Additional Information
 ----------------------
