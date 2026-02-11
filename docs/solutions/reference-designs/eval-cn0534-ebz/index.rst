@@ -17,9 +17,9 @@ communication systems.
 
 The 5.8 GHz band is preferred for short range digital communication
 applications (such as WiFi) because of the number of channels and the
-bandwidth available. While the transmission range is short-er than that
+bandwidth available. While the transmission range is shorter than that
 of the 2.4 GHz band, its 150 MHz bandwidth accommodates up to 23
-non-overlapping WiFi channels. Additional com-mon uses include software
+non-overlapping WiFi channels. Additional common uses include software
 defined radio, wireless access points, public safety radio, wireless
 repeaters, femtocells, and Long-Term Evolution (LTE)/Worldwide
 Interoperability for Microwave Access (WiMAX)/4G, base transceiver
@@ -61,8 +61,8 @@ General Setup
    :align: center
    :width: 600px
 
-.. note:: 
-    
+.. note::
+
     LED, DS1 from :adi:`CN0534`, will automatically turn on indicating that the
     CN0534 is powered and operational. If the LED is off, the CN0534 could
     still be powered properly, but the RF input power into the amplifier
@@ -115,7 +115,7 @@ ADALM-Pluto Preparation
 Firmware Loading
 ^^^^^^^^^^^^^^^^
 
-#.  Download :download:`Pluto firmware 0.30version <plutosdr-fw-v0.30.zip>`
+#.  Download the :git-plutosdr-fw:`latest Pluto firmware <releases/latest+>`.
 
 #.  Unzip downloaded folder.
 
@@ -191,22 +191,22 @@ Normal Operation
     :align: center
     :width: 800px
 
-#. Connect the RF Tx of Pluto SDR to J2 of the 
+#. Connect the RF Tx of Pluto SDR to J2 of the
    :adi:`EVAL-CN0534-EBZ Board <CN0534>`.
 
 #. Connect J1 of the :adi:`EVAL-CN0534-EBZ Board <CN0534>`
    to the RF Rx of Pluto SDR
 
-#. Connect P1 (micro USB) connector of the 
-   :adi:`EVAL-CN0534-EBZ Board <CN0534>` into a PC USB port 
+#. Connect P1 (micro USB) connector of the
+   :adi:`EVAL-CN0534-EBZ Board <CN0534>` into a PC USB port
    or 5 V USB charger.
 
 #. The DS1 LED of CN0534 will automatically turn on indicating the board
    is powered on and is in operation.
 
-.. important:: 
-    
-    The ADALM-Pluto can be configured using an IIO Oscilloscope, 
+.. important::
+
+    The ADALM-Pluto can be configured using an IIO Oscilloscope,
     visit the website on
 
      - :ref:`iio-oscilloscope` to know more about the tool.
@@ -219,10 +219,10 @@ Normal Operation
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~
 
-.. important:: 
-    
-    Make sure to download/update to the latest version of 
-    IIO-Oscilloscope found on this 
+.. important::
+
+    Make sure to download/update to the latest version of
+    IIO-Oscilloscope found on this
     :git-iio-oscilloscope:`link <releases+>`.
 
 #. Once done with the installation or an update of the latest
@@ -282,10 +282,10 @@ WARNING
     to the input (Rx) of a radio or other piece of RF equipment may
     exceed the absolute maximum ratings for the RF Input. (which is +2.5 dBm
     for the ADALM-PLUTO). Doing this may permanently damage the input.
-    
-     .. figure:: cn0534_sample_application.png
-        :align: center
-        :width: 700px
+
+    .. figure:: cn0534_sample_application.png
+       :align: center
+       :width: 700px
 
     Never do this in normal operation.
 
@@ -293,21 +293,13 @@ More Information and Useful Links
 ---------------------------------
 
  - :adi:`EVAL-CN0534-EBZ Board <CN0534>`
-
  - :adi:`HMC717A Product Page <HMC717A>`
-
- - :adi:`ADL5405 Product Page <ADL5904>`
-
+ - :adi:`ADL5904 Product Page <ADL5904>`
  - :adi:`HMC802A Product Page <HMC802A>`
-
  - :adi:`LTC6991 Product Page <LTC6991>`
-
  - :adi:`LT8335 Product Page <LT8335>`
-
  - :adi:`ADM7150 Product Page <ADM7150>`
-
  - :adi:`ADP150 Product Page <ADP150>`
-
  - :dokuwiki:`RF Amplifier Considerations <university/tools/pluto/users/amp>`
 
 Schematic, PCB Layout, Bill of Materials
@@ -317,8 +309,8 @@ Schematic, PCB Layout, Bill of Materials
 
    :download:`EVAL-CN0534-SDPZ Design & Integration Files <cn0534_design_support_package.zip>`
 
-     - Schematics
-     - PCB Layout
-     - Bill of Materials
-     - Gerber Files
-     - Allegro Board File
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Gerber Files
+   - Allegro Board File
