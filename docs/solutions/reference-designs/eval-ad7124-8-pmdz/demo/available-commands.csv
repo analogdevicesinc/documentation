@@ -1,0 +1,29 @@
+﻿Function,Command,Description,Example
+General commands,,,
+Help,h,Display available commands.,
+Reset,rst,Reset the application.,rst dev - perform only device reset (datasheet defaults);
+,,<opt> = 'dev' to perform only a device reset; do not include to perform an application reset.,rst - perform application reset (application defaults).
+ADC commands,,,
+Register read,arr,Read an ADC register of a specific address.,arr 2a - Read register 0x2A
+,,<addr> = Address of the register to be read in hexadecimal base.,
+Register write,awr,Write an ADC register of a specific address with a new value.,arw 9 8002 - Write 0x8002 to register 0x9.
+,,<addr> = Address of the register to be written in hexadecimal base.,
+,,<val> = New value of the register.,
+Get data,ags,Get a number of samples per enabled channels. If the operation takes too long press 'q' to abort.,
+,,<no> = Number of samples (maximum 2048). If sample rate is smaller than 3000 setting the argument 0 or no argument means continuous streaming.,
+Enable channels,aces,Choose ADC channels to be activated.,aces 0xAAAA - activate every other channel. '0x' is necessary for hexadecimal interpretation.
+,,<mask> = 16-bit mask of the channels to be activated. Can be hexadecimal or binary.,
+,,"A bit of 1 means activated the channel, a bit of 0 means deactivate the channel.",
+Get enabled channels,aceg,"Get enable status of ADC channels. Returns a hexadecimal 16-bit mask where bits of 1 represent enabled channels, and bits of 0 represent disabled channels.",
+Set PGA,aps,Set PGA for a channel.,"aps 0 opt3 - set ADC channel 0 to PGA 3, gain value of 8."
+,,<chan> = ID of the channel to be changed.,
+,,"<opt> = PGA option; values are: opt0, opt1, … opt7 corresponding to the datasheet.",
+Get PGA,apg,"Display a channel's PGA option; return values are: opt0, opt1, … opt7 corresponding to the datasheet.",apg 0 - read the PGA value of channel 0.
+,,<chan> = ID of the channel to be read.,
+Set sample,aos,"Set ADC sample rate. Filter option, power mode and reference clock must be taken into consideration.",aos 2000 - set sample rate to 2000 samples per second.
+rate,,<odr> = New sample rate value.,
+Get sample rate,aog,Read the current sample rate.,
+Set filter option,afs,Set ADC filter option.,afs fflt4 - set filter option to fast settling sinc4.
+,,"<opt> = filter option; can be: 'sinc4', 'sinc3', 'fflt4', 'fflt3' and 'postf'.",
+,,"<post> = post-filter option; can be: 'opt0', 'opt1', … 'opt3'; add only when opt=postf.",
+Get filter option,afg,Read the current filter.,
