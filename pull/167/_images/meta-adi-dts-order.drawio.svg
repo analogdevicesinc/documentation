@@ -1,0 +1,24 @@
+<svg width="722px" height="243px" style="background-color:rgb(255, 255, 255)" version="1.1" viewBox="-.5 -.5 722 243" xmlns="http://www.w3.org/2000/svg">
+ <g pointer-events="all" stroke-width="3">
+  <rect x="1" y="1" width="170" height="60" rx="9" ry="9" fill="#1ba1e2" stroke="#006eaf"/>
+  <rect x="31" y="61" width="170" height="60" rx="9" ry="9" fill="#d80073" stroke="#a50040"/>
+  <rect x="31" y="121" width="170" height="60" rx="9" ry="9" fill="#008a00" stroke="#005700"/>
+  <rect x="31" y="181" width="170" height="60" rx="9" ry="9" fill="#76608a" stroke="#432d57"/>
+ </g>
+ <g fill="#ffffff" font-family="Helvetica" font-size="12px" text-anchor="middle">
+  <text x="85.5" y="34.499996"><tspan font-family="sans-serif">Reference design dts file</tspan></text>
+  <text x="115.5" y="94.5"><tspan font-family="sans-serif">pl.dtsi</tspan></text>
+  <text x="115.5" y="154.5"><tspan font-family="sans-serif">pl-delete-nodes-</tspan></text>
+  <text x="115.5" y="214.5"><tspan font-family="sans-serif">system-user.dtsi</tspan></text>
+ </g>
+ <g fill="#000000" font-family="Helvetica" font-size="14px">
+  <text transform="translate(-.5 -5.39)" x="213" y="215" style="inline-size:426.497;white-space:pre" xml:space="preserve"><tspan x="213" y="215"><tspan font-family="sans-serif">From </tspan><tspan font-style="italic">project-spec/meta-user/recipes-bsp/device-tree/</tspan><tspan font-style="italic">files </tspan><tspan font-family="sans-serif">
+</tspan></tspan><tspan x="213" y="232.92576"><tspan font-family="sans-serif">Allows final modification of the overall system device tree</tspan></tspan></text>
+  <text transform="translate(-.5 -5.39)" x="213" y="155" style="inline-size:381.466;white-space:pre" xml:space="preserve"><tspan x="213" y="155"><tspan font-family="sans-serif">Sourced from meta-adi. This is unique per top 
+</tspan></tspan><tspan x="213" y="172.92576"><tspan font-family="sans-serif">level dts file, and removes duplicate FPGA nodes</tspan></tspan></text>
+  <text transform="translate(-.5 -5.39)" x="213" y="95" style="inline-size:344.111;white-space:pre" xml:space="preserve"><tspan x="213" y="95"><tspan font-family="sans-serif">FPGA node device tree auto generated 
+</tspan></tspan><tspan x="213" y="112.92576"><tspan font-family="sans-serif">from the XSA file by Xilinx DTG</tspan></tspan></text>
+  <text transform="translate(-.5 -3.81)" x="183" y="35" style="inline-size:338.5;white-space:pre" xml:space="preserve"><tspan x="183" y="35"><tspan font-family="sans-serif">Sourced from the ADI Linux kernel 
+</tspan></tspan><tspan x="183" y="52.925762">i.e <tspan font-style="italic">arch/&lt;arch&gt;/boot/dts</tspan></tspan></text>
+ </g>
+</svg>
