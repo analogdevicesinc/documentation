@@ -221,6 +221,18 @@ jobs:
 
             .. _jupiter-sdr hardware-overview:
 
+          A common mistake is adding ZIP file for software and firmware downloads, like this:
+          \`\`\`
+          #.  Download :download:\`Pluto firmware 0.30version <plutosdr-fw-v0.30.zip>\`.
+          \`\`\`
+
+          While the correct approach is always to link to latest:
+          \`\`\`
+          #.  Download the Pluto firmware from :git-plutosdr-fw:\`the latest release <releases/latest+>\`.
+          \`\`\`
+          To ensure, the users download the latest and greatest. It is okay to
+          have ZIPs for design and integration files.
+
           Remember, at this stage, the focus is improving the quality of the added pages.
 
           ## Task 2: Layout and usage check
