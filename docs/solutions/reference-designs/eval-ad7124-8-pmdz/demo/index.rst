@@ -1,18 +1,20 @@
+.. _eval-ad7124-8-pmdz demo:
+
 EVAL-AD7124-8-PMDZ Demo Project
 ===============================
 
 The **ADuCM3029_demo_ad7124_8PMDZ** project provides a solution to control the
-:adi:`AD7124-8` ADC on the :adi:`EVAL-AD7124-8-PMDZ` Pmod Board using a simple CLI 
-on the **USB**. The demo showcases the flexibility of the AD7124 in choosing 
+:adi:`AD7124-8` ADC on the :adi:`EVAL-AD7124-8-PMDZ` Pmod Board using a simple CLI
+on the **USB**. The demo showcases the flexibility of the AD7124 in choosing
 inputs, filters and different ranges for the available 16 channels.
 
 General Description
 -------------------
 
-The :adi:`EVAL-AD7124-8-PMDZ` is a minimalist 8-Channel, Low Noise, Low Power, 
-24-Bit, Sigma-Delta ADC (Analog to Digital Converter) with PGA and Reference, 
-SPI Pmod board for the :adi:`AD7124-8`. This module is designed 
-as a low-cost alternative to the fully-featured :adi:`AD7124-8` 
+The :adi:`EVAL-AD7124-8-PMDZ` is a minimalist 8-Channel, Low Noise, Low Power,
+24-bit, Sigma-Delta ADC (Analog to Digital Converter) with PGA and Reference,
+SPI Pmod board for the :adi:`AD7124-8`. This module is designed
+as a low-cost alternative to the fully-featured :adi:`AD7124-8`
 evaluation board and has no extra signal conditioning for the ADC.
 
 The initial configuration of the **ADuCM3029_demo_ad7124_8PMDZ** engages all
@@ -61,26 +63,29 @@ The following is a list of items needed in order to replicate this demo.
 
 **Software**
 
-  - `ADuCM3029_demo_ad7124_8PMDZ demo
-    application <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_ad7124_8PMDZ>`__
+  - :git-EVAL-ADICUP3029:`ADuCM3029_demo_ad7124_8PMDZ demo application <master:projects/ADuCM3029_demo_ad7124_8PMDZ>`
   - CrossCore Embedded Studio (2.9.1 or higher)
   - ADuCM302x DFP (3.2.0 or higher)
   - ADICUP3029 BSP (1.1.0 or higher)
   - Serial Terminal Program
 
-    - Such as Putty or Tera Term
+    - Such as Putty or TeraTerm
 
 Setting up the Hardware
 -----------------------
 
 #. Connect **EVAL-AD7124-8-PMDZ** board to the **EVAL-ADICUP3029**.
-   
+
     .. figure:: ad7124_pmod_unplug.jpg
+
+       EVAL-AD7124-8-PMDZ and EVAL-ADICUP3029 before connection
 
 #. Connect a micro-USB cable to P10 connector of the **EVAL-ADICUP3029** and connect
    it to a computer. The final setup should look similar to the picture below.
 
     .. figure:: ad7124_pmod_plug.jpg
+
+       EVAL-AD7124-8-PMDZ connected to EVAL-ADICUP3029
 
 Configuring the Software
 ------------------------
@@ -103,7 +108,7 @@ line driver / receiver and connected to the PC via a 9-pin or 25-pin serial
 port.) There are many open-source applications, and while there are many
 choices, typically we use one of the following:
 
-- `Tera Term <https://ttssh2.osdn.jp/index.html.en>`__
+- `TeraTerm <https://ttssh2.osdn.jp/index.html.en>`__
 - `Putty <https://www.putty.org/>`__
 - `Real Term <https://realterm.sourceforge.io/>`__
 
@@ -156,6 +161,8 @@ Example Setup using PuTTY
 
    .. figure:: device_manager.png
 
+      Windows Device Manager showing COM port
+
 #. Open up your serial terminal program (e.g., PuTTY).
 #. Click on the serial configuration tab or window, and input the settings to
    match the requirements of your connected device. The default baud rate for
@@ -163,6 +170,8 @@ Example Setup using PuTTY
    baud rate for your application.
 
    .. figure:: putty_serial_config.png
+
+      PuTTY serial configuration
 
 #. Ensure you click on the checkboxes for **Implicit CR in every LF** and
    **Implicit LF in every CF**.
@@ -173,7 +182,9 @@ Example Setup using PuTTY
    turn off local echo.)
 
    .. figure:: putty_terminal_options.png
-    :width: 600 px
+      :width: 600
+
+      PuTTY terminal options
 
 #. Click on the ``Open`` button, and as long as your connected device and serial
    terminal program are setup the same, then you should be able to start
@@ -189,6 +200,8 @@ list of commands and their short versions. Below is the short command list:
   :file: available-commands.csv
 
 .. figure:: ad71248pmdz_terminal_sample.png
+
+   Terminal output sample
 
 Obtaining the Software
 ----------------------
@@ -211,28 +224,27 @@ The software for the **ADuCM3029_demo_ad7124_8PMDZ** can be found here:
 
 .. admonition:: Download
 
-  Prebuilt AD7124-8 PMOD Hex File
+  Prebuilt AD7124-8 Pmod Hex File
 
-   - `ADuCM3029_demo_ad7124_8PMDZ.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_ad7124_8PMDZ.hex>`__
+   - :git-EVAL-ADICUP3029:`ADuCM3029_demo_ad7124_8PMDZ.Hex <releases/download/Latest/ADuCM3029_demo_ad7124_8PMDZ.hex+>`
 
-  Complete AD7124-8 PMOD Source Files
+  Complete AD7124-8 Pmod Source Files
 
-    - `ADuCM3029_demo_ad7124_8PMDZ Source
-      Code <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_ad7124_8PMDZ>`__
+    - :git-EVAL-ADICUP3029:`ADuCM3029_demo_ad7124_8PMDZ Source Code <projects/ADuCM3029_demo_ad7124_8PMDZ>`
 
 How to Use the Tools
 --------------------
 
 The official tool we promote for use with the EVAL-ADICUP3029 is CrossCore
 Embedded Studio. For more information on downloading the tools and a quick start
-guide on how to use the tool basics, please check out the 
-:dokuwiki:`Tools Overview page. </resources/eval/user-guides/eval-adicup3029/tools>`
+guide on how to use the tool basics, please check out the
+:dokuwiki:`Tools Overview page </resources/eval/user-guides/eval-adicup3029/tools>`.
 
 Importing
 ~~~~~~~~~
 
 For more detailed instructions on importing this application/demo example into
-the CrossCore Embedded Studios tools, please view our 
+the CrossCore Embedded Studios tools, please view our
 :dokuwiki:`How to import existing projects into your workspace </resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_import_existing_projects_into_your_workspace>`
 section.
 
@@ -240,7 +252,7 @@ Debugging
 ~~~~~~~~~
 
 For more detailed instructions on importing this application/demo example into
-the CrossCore Embedded Studios tools, please view our 
+the CrossCore Embedded Studios tools, please view our
 :dokuwiki:`How to configure the debug session </resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_configure_the_debug_session_for_an_aducm3029_application>`
 section.
 
@@ -249,7 +261,9 @@ Project Structure
 
 The application contains the platform drivers with the sources in
 **platform_source** and the headers in **platform_include**. In the **src** root
-directory there is the ad7124 driver as found on Github, but with a custom
+directory there is the ad7124 driver as found on GitHub, but with a custom
 initialization vector in **ad7124_regs** module.
 
 .. figure:: ad7124pmdz_file_structure.png
+
+   AD7124 PMDZ project file structure

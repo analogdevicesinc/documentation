@@ -1,13 +1,13 @@
 EVAL-AD7124-8-PMDZ
 ==================
 
-8-Channel, Low Noise, Low Power, 24-Bit, Sigma-Delta ADC with PGA and Reference PMOD Board
+8-Channel, Low Noise, Low Power, 24-Bit, Sigma-Delta ADC with PGA and Reference Pmod Board
 
 Overview
 --------
 
-The :adi:`EVAL-AD7124-8-PMDZ` is a minimalist 8-channel, low noise, 
-low power, 24-Bit, sigma-delta ADC with PGA and reference, SPI Pmod board 
+The :adi:`EVAL-AD7124-8-PMDZ` is a minimalist 8-channel, low noise,
+low power, 24-bit, sigma-delta ADC with PGA and reference, SPI Pmod board
 for the :adi:`AD7124-8`. This module is designed as a low-cost
 alternative to the fully-featured :adi:`AD7124-8` evaluation board
 and has no extra signal conditioning for the ADC.
@@ -16,22 +16,23 @@ All pins of the :adi:`AD7124-8` are exposed, which makes the
 :adi:`EVAL-AD7124-8-PMDZ` very flexible and easy to use.
 
 .. figure:: EVAL-AD7124-8-PMDZTOP.JPG
-   :width: 600 px
-   :align: center
+   :width: 600
+
+   EVAL-AD7124-8-PMDZ Top View
 
 Functional Block Diagram
 ------------------------
 
 .. figure:: ad7124-8_functional_block_diagram.png
-   :width: 1000 px
-   :align: center
+
+   AD7124-8 Functional Block Diagram
 
 About the AD7124-8
 ------------------
 
 The :adi:`AD7124-8` is a low power, low noise, completely integrated
 analog front end for high precision measurement applications. The device
-contains a low noise, 24-bit Σ-Δ analog-to-digital converter (ADC), and can be
+contains a low noise, 24-bit ΣΔ analog-to-digital converter (ADC), and can be
 configured to have 8 differential inputs or 15 single-ended or
 pseudo-differential inputs. The on-chip programmable gain amplifier (PGA) allows
 small amplitude signals to be interfaced directly to the ADC.
@@ -82,7 +83,7 @@ Connectors and Configuration
 ----------------------------
 
 By default, the :adi:`EVAL-AD7124-8-PMDZ` is configured to
-be controlled and power from the PMOD connector using standard connections. So
+be controlled and power from the Pmod connector using standard connections. So
 no additional configuration is required, unless you want to customize it.
 
 AD7124-8 Inputs/Outputs Connections
@@ -123,7 +124,7 @@ Digital Communications
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The Digital communication on the :adi:`EVAL-AD7124-8-PMDZ` is accomplished using a
-standard expanded SPI PMOD port.
+standard expanded SPI Pmod port.
 
 **Connector P1**
 
@@ -158,8 +159,9 @@ Eight solder jumpers are available at the bottom of the board, if you want to
 change the operating modes. See the schematic for more details.
 
 .. figure:: EVAL-AD7124-8-PMDZBOTTOM.JPG
-   :width: 600 px
-   :align: center
+   :width: 600
+
+   EVAL-AD7124-8-PMDZ Bottom View
 
 +------------------------------------------+---------------+------------------+
 | Description and default connection       | Solder Jumper | Default Position |
@@ -214,9 +216,10 @@ Additional Information and Useful Links
 Reference Demos & Software
 --------------------------
 
-- :dokuwiki:`ADICUP3029+EVAL-AD7124-8-PMDZ Demo </resources/eval/user-guides/eval-adicup3029/reference_designs/demo_ad7124-8>`
+- :ref:`eval-ad7124-8-pmdz demo`
 - :dokuwiki:`AD7124 IIO Sigma-Delta ADC Linux Driver </resources/tools-software/linux-drivers/iio-adc/ad7124>`
 - :dokuwiki:`AD7124 No-OS Software </resources/tools-software/uc-drivers/ad7124>`
+- :git-no-OS:`projects/ad7124-8pmdz`
 
 .. toctree::
    :titlesonly:
