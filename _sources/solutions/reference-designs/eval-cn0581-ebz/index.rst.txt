@@ -1,8 +1,7 @@
 EVAL-CN0581-EBZ
 ================
 
-Configurable USB-C Power Sink Solution
-"""""""""""""""""""""""""""""""""""""""
+Configurable USB-C Power Sink Solution.
 
 Overview
 --------

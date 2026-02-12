@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The EVAL-CN0556-EBZ is a programmable buck or boost power supply featuring an adjustable buck output of 2V to 14V, 35A, and adjustable boost output of 14V to 56V, 10A. The design allows the mode of operation to externally controlled or automatically selected. Six independent control loops regulate input and output voltage in both directions, as well as provide input and output current limit programming and monitoring." name="description" />
+<meta content="Programmable High Current and Voltage Source/Sink Power Supply." name="description" />
 
     <title>EVAL-CN0556-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0556-EBZ</a><ul>
-<li><a class="reference internal" href="#programmable-high-current-and-voltage-source-sink-power-supply">Programmable High Current and Voltage Source/Sink Power Supply</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a><ul>
 <li><a class="reference internal" href="#features">Features</a></li>
 <li><a class="reference internal" href="#simplified-block-diagram">Simplified Block Diagram</a></li>
@@ -131,8 +130,6 @@
 </li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#additional-information-and-useful-links">Additional Information and Useful Links</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -562,10 +559,9 @@ Content on this topic
             
   <section id="eval-cn0556-ebz">
 <span id="id1"></span><h1>EVAL-CN0556-EBZ<a class="headerlink" href="#eval-cn0556-ebz" title="Link to this heading"></a></h1>
-<section id="programmable-high-current-and-voltage-source-sink-power-supply">
-<h2>Programmable High Current and Voltage Source/Sink Power Supply<a class="headerlink" href="#programmable-high-current-and-voltage-source-sink-power-supply" title="Link to this heading"></a></h2>
+<p>Programmable High Current and Voltage Source/Sink Power Supply.</p>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0556" target="_blank">EVAL-CN0556-EBZ</a> is a programmable buck or boost power
 supply featuring an adjustable buck output of 2V to 14V, 35A, and
 adjustable boost output of 14V to 56V, 10A. The design allows the mode of
@@ -581,7 +577,7 @@ board remotely.</p>
 </a>
 </figure>
 <section id="features">
-<h4>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h4>
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>High Efficiency Buck or Boost DC-DC Converter</p></li>
 <li><p>14V to 56V Buck Input Voltage and 8V to 14V Boost Input Voltage</p></li>
@@ -593,7 +589,7 @@ board remotely.</p>
 </ul>
 </section>
 <section id="simplified-block-diagram">
-<h4>Simplified Block Diagram<a class="headerlink" href="#simplified-block-diagram" title="Link to this heading"></a></h4>
+<h3>Simplified Block Diagram<a class="headerlink" href="#simplified-block-diagram" title="Link to this heading"></a></h3>
 <figure class="align-default">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0556-ebz/cn0556_simplified_block_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0556-ebz/cn0556_simplified_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0556-ebz/cn0556_simplified_block_diagram.png" style="width: 600px;" />
 </a>
@@ -601,9 +597,9 @@ board remotely.</p>
 </section>
 </section>
 <section id="system-setup">
-<h3>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h3>
+<h2>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h2>
 <section id="requirements">
-<h4>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h4>
+<h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h3>
 <p><strong>Hardware</strong></p>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0556" target="_blank">EVAL-CN0556-EBZ</a></p></li>
@@ -630,7 +626,7 @@ board remotely.</p>
 </section>
 </section>
 <section id="software-setup">
-<h3>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h3>
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
 <p>The input and output voltages and current limits of the <a class="icon adi reference external" href="https://www.analog.com/CN0556" target="_blank">CN0556</a>
 can be controlled through software. Interfacing <a class="icon adi reference external" href="https://www.analog.com/CN0556" target="_blank">CN0556</a> with the
 <a class="icon adi reference external" href="https://www.analog.com/CN0554" target="_blank">CN0554</a> analog I/O module enables full control capability. For
@@ -643,7 +639,7 @@ hardware devices into a Linux-based embedded system.</p>
 <p>Access to the embedded system can be through a remote PC connected either via
 LAN cable or Wi-Fi.</p>
 <section id="downloading-and-flashing-adi-kuiper-linux-image-on-sd-card">
-<h4>Downloading and Flashing ADI Kuiper Linux Image on SD Card<a class="headerlink" href="#downloading-and-flashing-adi-kuiper-linux-image-on-sd-card" title="Link to this heading"></a></h4>
+<h3>Downloading and Flashing ADI Kuiper Linux Image on SD Card<a class="headerlink" href="#downloading-and-flashing-adi-kuiper-linux-image-on-sd-card" title="Link to this heading"></a></h3>
 <p>In order to control the EVAL-CN0556-EBZ from the Raspberry Pi, you need to install ADI
 Kuiper Linux on an SD card. Complete instructions, including where to download
 the SD card image, how to write it to the SD card, and how to configure the
@@ -657,7 +653,7 @@ for Raspberry Pi Projects’ in the
 <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/zynq_images/windows_hosts" target="_blank">Formatting and Flashing SD Cards using Windows</a>.</p>
 </section>
 <section id="configuring-the-sd-card-for-cn0556">
-<h4>Configuring the SD Card for CN0556<a class="headerlink" href="#configuring-the-sd-card-for-cn0556" title="Link to this heading"></a></h4>
+<h3>Configuring the SD Card for CN0556<a class="headerlink" href="#configuring-the-sd-card-for-cn0556" title="Link to this heading"></a></h3>
 <p>For the Linux kernel to identify the device connected to the expansion header,
 update the device tree overlay. A Device Tree Overlay contains information about
 additional connected hardware, the EVAL-CN0556-EBZ for this case. The overlay file
@@ -672,7 +668,7 @@ it to:</p>
 </div>
 </section>
 <section id="running-the-example-scripts-using-pyadi-iio">
-<h4>Running the Example Scripts using PyADI-IIO<a class="headerlink" href="#running-the-example-scripts-using-pyadi-iio" title="Link to this heading"></a></h4>
+<h3>Running the Example Scripts using PyADI-IIO<a class="headerlink" href="#running-the-example-scripts-using-pyadi-iio" title="Link to this heading"></a></h3>
 <p><a class="reference internal" href="../../../software/pyadi-iio/index.html#pyadi-iio"><span class="std std-ref">PyADI-IIO</span></a> is a python abstraction module for ADI hardware with IIO
 drivers to make them easier to use. This module provides device-specific APIs
 built on top of the current libIIO python bindings. These interfaces try to
@@ -683,9 +679,9 @@ PyADI-IIO and all necessary packages and modules found in <a class="reference in
 </section>
 </section>
 <section id="hardware-configuration">
-<h3>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h3>
+<h2>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h2>
 <section id="jumper-settings">
-<h4>Jumper Settings<a class="headerlink" href="#jumper-settings" title="Link to this heading"></a></h4>
+<h3>Jumper Settings<a class="headerlink" href="#jumper-settings" title="Link to this heading"></a></h3>
 <p><strong>Using 3.3V from the on-board LDO</strong></p>
 <p>At P1, check if the shunt placed is in correct position. The shunt should be
 placed correctly to short Pins 3 and 4. If it is not in proper placement, move
@@ -742,10 +738,10 @@ resistor in between</p></td>
 </section>
 </section>
 <section id="hardware-setup">
-<h3>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
 </section>
 <section id="cn0556-initial-hardware-setup-buck-or-boost-mode">
-<h3>CN0556 Initial Hardware Setup (BUCK or BOOST Mode)<a class="headerlink" href="#cn0556-initial-hardware-setup-buck-or-boost-mode" title="Link to this heading"></a></h3>
+<h2>CN0556 Initial Hardware Setup (BUCK or BOOST Mode)<a class="headerlink" href="#cn0556-initial-hardware-setup-buck-or-boost-mode" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0556" target="_blank">EVAL-CN0556-EBZ</a> can be programmed to function in buck or
 boost mode. Follow below steps to check the buck and boost converter
 functionality of the <a class="icon adi reference external" href="https://www.analog.com/CN0556" target="_blank">EVAL-CN0556-EBZ</a> when connected to the
@@ -799,9 +795,9 @@ boot up.</p></li>
 </ol>
 </section>
 <section id="mode-1-cn0556-in-buck-mode">
-<h3>Mode 1: CN0556 in Buck Mode<a class="headerlink" href="#mode-1-cn0556-in-buck-mode" title="Link to this heading"></a></h3>
+<h2>Mode 1: CN0556 in Buck Mode<a class="headerlink" href="#mode-1-cn0556-in-buck-mode" title="Link to this heading"></a></h2>
 <section id="hardware-setup-continuation">
-<h4>Hardware Setup (continuation):<a class="headerlink" href="#hardware-setup-continuation" title="Link to this heading"></a></h4>
+<h3>Hardware Setup (continuation):<a class="headerlink" href="#hardware-setup-continuation" title="Link to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The following steps involve high DC voltages.
@@ -828,7 +824,7 @@ instructions on how to get measurements.</p></li>
 </ol>
 </section>
 <section id="running-the-buck-mode-example-script">
-<h4>Running the Buck Mode Example Script<a class="headerlink" href="#running-the-buck-mode-example-script" title="Link to this heading"></a></h4>
+<h3>Running the Buck Mode Example Script<a class="headerlink" href="#running-the-buck-mode-example-script" title="Link to this heading"></a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>By default, the example script sets the board into Buck Mode and sets its
@@ -883,7 +879,7 @@ electronic load to 0A.</p></li>
 </ol>
 </section>
 <section id="summary-of-buck-mode-functions">
-<h4>Summary of Buck Mode Functions<a class="headerlink" href="#summary-of-buck-mode-functions" title="Link to this heading"></a></h4>
+<h3>Summary of Buck Mode Functions<a class="headerlink" href="#summary-of-buck-mode-functions" title="Link to this heading"></a></h3>
 <p>The CN0556 buck mode pyadi-iio example script enables the user to control
 the input and output parameters of the board, as well as to measure the
 current and voltage at the input and output terminals. The summary of the
@@ -968,9 +964,9 @@ CN0556 functions for <strong>Buck Mode</strong> can be found below:</p>
 </section>
 </section>
 <section id="mode-2-cn0556-in-boost-mode">
-<h3>Mode 2: CN0556 in Boost Mode<a class="headerlink" href="#mode-2-cn0556-in-boost-mode" title="Link to this heading"></a></h3>
+<h2>Mode 2: CN0556 in Boost Mode<a class="headerlink" href="#mode-2-cn0556-in-boost-mode" title="Link to this heading"></a></h2>
 <section id="id2">
-<h4>Hardware Setup (continuation):<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<h3>Hardware Setup (continuation):<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The following steps involve high DC voltages. Follow instructions carefully
@@ -994,7 +990,7 @@ section for step-by-step instructions on how to get measurements.</p></li>
 </ol>
 </section>
 <section id="running-the-boost-mode-example-script">
-<h4>Running the Boost Mode Example script<a class="headerlink" href="#running-the-boost-mode-example-script" title="Link to this heading"></a></h4>
+<h3>Running the Boost Mode Example script<a class="headerlink" href="#running-the-boost-mode-example-script" title="Link to this heading"></a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>By default, the example script sets the board into Boost Mode and sets its
@@ -1046,7 +1042,7 @@ electronic load to 0A.</p></li>
 </ol>
 </section>
 <section id="summary-of-boost-mode-functions">
-<h4>Summary of Boost Mode Functions<a class="headerlink" href="#summary-of-boost-mode-functions" title="Link to this heading"></a></h4>
+<h3>Summary of Boost Mode Functions<a class="headerlink" href="#summary-of-boost-mode-functions" title="Link to this heading"></a></h3>
 <p>The CN0556 boost mode pyadi-iio example script enables the user to control the
 input and output parameters of the board, as well as to measure the current and
 voltage at the input and output terminals. The summary of the CN0556 functions
@@ -1131,7 +1127,7 @@ for <strong>Boost Mode</strong> can be found below:</p>
 </section>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
-<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0556-ebz/cn0556-designsupport.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-CN0556-EBZ</span> <span class="pre">Design</span> <span class="pre">&amp;</span> <span class="pre">Integration</span> <span class="pre">Files</span></code></a></p>
@@ -1144,7 +1140,7 @@ for <strong>Boost Mode</strong> can be found below:</p>
 </div>
 </section>
 <section id="additional-information-and-useful-links">
-<h3>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h3>
+<h2>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/zynq_images/windows_hosts" target="_blank">Formatting and Flashing SD Cards using Windows</a></p></li>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/zynq_images/linux_hosts" target="_blank">Formatting and Flashing SD Cards using Linux</a></p></li>
@@ -1156,7 +1152,6 @@ for <strong>Boost Mode</strong> can be found below:</p>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/LT3010" target="_blank">LT3010 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADA4505-1" target="_blank">ADA4505-1 Product Page</a></p></li>
 </ul>
-</section>
 </section>
 </section>
 

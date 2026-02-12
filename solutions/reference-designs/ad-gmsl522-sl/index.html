@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD-GMSL522-SL is a Gigabit Multimedia Serial Link(GMSL)-enabled NVIDIA Jetson Xavier NX-based hardware and software solution that allows for prototyping with GMSL technology. This solution creates a scalable, user friendly, GMSL platform for receiving and transmitting data over GMSL. It supports two forms of camera input – either straight CSI data coming through a SAMTEC connector from a GMSL evaluation kit, or via camera modules using GMSL2 or GMSL1 technology to connect to the on-board MAX96724 via COAX connectors. The package also includes software tools to enable development of GMSL applications. Among these tools are modified L4T kernels that support certain camera modules and documentation that allows any user to update these kernels for their specific hardware needs. The design also incorporates the MAX96724GTN/VY+ Quad tunneling GMSL2/1 to CSI-2 deserializer and MAX96717GTJ/VY+ CSI-2 to GMSL2 serializer and provides a reliable platform to evaluate high-bandwidth GMSL." name="description" />
+<meta content="GMSL Carrier Board." name="description" />
 
     <title>AD-GMSL522-SL &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AD-GMSL522-SL</a><ul>
-<li><a class="reference internal" href="#gmsl-carrier-board">GMSL Carrier Board</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#features">Features</a></li>
 <li><a class="reference internal" href="#applications">Applications</a></li>
@@ -105,8 +104,6 @@
 <li><a class="reference internal" href="#user-guides">User Guides</a></li>
 <li><a class="reference internal" href="#resources">Resources</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -536,10 +533,9 @@ Content on this topic
             
   <section id="ad-gmsl522-sl">
 <h1>AD-GMSL522-SL<a class="headerlink" href="#ad-gmsl522-sl" title="Link to this heading"></a></h1>
-<section id="gmsl-carrier-board">
-<h2>GMSL Carrier Board<a class="headerlink" href="#gmsl-carrier-board" title="Link to this heading"></a></h2>
+<p>GMSL Carrier Board.</p>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <figure class="align-left" id="id1">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl522-sl/ad-viper-sl_angle.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl522-sl/ad-viper-sl_angle.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl522-sl/ad-viper-sl_angle.jpg" style="width: 400px;" />
 </a>
@@ -564,7 +560,7 @@ and MAX96717GTJ/VY+ CSI-2 to GMSL2 serializer and provides a reliable platform
 to evaluate high-bandwidth GMSL.</p>
 </section>
 <section id="features">
-<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Hardware solution that bridges the gap between GMSL2 technology and the NVIDIA Jetson</p></li>
 <li><p>On-board MAX96724 that allows 4x GMSL2/1 camera inputs that allows for camera module bring-up, debug, and video streaming</p></li>
@@ -575,7 +571,7 @@ to evaluate high-bandwidth GMSL.</p>
 </ul>
 </section>
 <section id="applications">
-<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h3>
+<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>ADAS Camera Solutions</p></li>
 <li><p>Sensor Fusion ECU</p></li>
@@ -584,7 +580,7 @@ to evaluate high-bandwidth GMSL.</p>
 </ul>
 </section>
 <section id="system-architecture">
-<h3>System Architecture<a class="headerlink" href="#system-architecture" title="Link to this heading"></a></h3>
+<h2>System Architecture<a class="headerlink" href="#system-architecture" title="Link to this heading"></a></h2>
 <figure class="align-default" id="id2">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl522-sl/ad-gmsl522-sl_block_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl522-sl/ad-gmsl522-sl_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-gmsl522-sl/ad-gmsl522-sl_block_diagram.png" style="width: 600px;" />
 </a>
@@ -594,7 +590,7 @@ to evaluate high-bandwidth GMSL.</p>
 </figure>
 </section>
 <section id="specifications">
-<h3>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h3>
+<h2>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h2>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <tbody>
@@ -696,13 +692,13 @@ to evaluate high-bandwidth GMSL.</p>
 </div>
 </section>
 <section id="software-development">
-<h3>Software Development<a class="headerlink" href="#software-development" title="Link to this heading"></a></h3>
+<h2>Software Development<a class="headerlink" href="#software-development" title="Link to this heading"></a></h2>
 <p>The GMSL Linux kernel drivers, the complete Linux distributions for the supported
 processing platforms, and software user guides can be found on the
 <a class="icon git reference external" href="https://github.com/analogdevicesinc/gmsl/tree/main/" target="_blank">Analog Devices GMSL GitHub repository</a>.</p>
 </section>
 <section id="user-guides">
-<h3>User Guides<a class="headerlink" href="#user-guides" title="Link to this heading"></a></h3>
+<h2>User Guides<a class="headerlink" href="#user-guides" title="Link to this heading"></a></h2>
 <p>Get complete access to hardware components, design files, and procedure on
 how to setup and use the AD-GMSL522-SL Carrier Board:</p>
 <div class="toctree-wrapper compound">
@@ -713,7 +709,7 @@ how to setup and use the AD-GMSL522-SL Carrier Board:</p>
 </div>
 </section>
 <section id="resources">
-<h3>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h3>
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/MAX96724" target="_blank">MAX96724 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/MAX96717" target="_blank">MAX96717 Product Page</a></p></li>
@@ -727,13 +723,12 @@ how to setup and use the AD-GMSL522-SL Carrier Board:</p>
 </ul>
 </section>
 <section id="support">
-<h3>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h3>
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <p>For questions and more information, please contact us on the <a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone</a>.</p>
 <ul class="simple">
 <li><p><a class="icon ez reference external" href="https://ez.analog.com/linux-software-drivers" target="_blank">EngineerZone Linux Support</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/en/support.html" target="_blank">GMSL-Related Technical Support</a></p></li>
 </ul>
-</section>
 </section>
 </section>
 

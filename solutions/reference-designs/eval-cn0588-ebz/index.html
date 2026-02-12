@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The CN0588 is a MEMS-based IEPE vibration sensor optimized for condition-based monitoring (CbM) applications. This solution has a constant current supply of 4mA and a DC voltage bias ranging from around 8.75V to 14.75V." name="description" />
+<meta content="DC to 10 kHz MEMS-Based IEPE Vibration Sensor." name="description" />
 
     <title>EVAL-CN0588-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0588-EBZ</a><ul>
-<li><a class="reference internal" href="#dc-to-10-khz-mems-based-iepe-vibration-sensor">DC to 10 kHz MEMS-Based IEPE Vibration Sensor</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a><ul>
 <li><a class="reference internal" href="#features">Features</a></li>
 <li><a class="reference internal" href="#applications">Applications</a></li>
@@ -117,8 +116,6 @@
 <li><a class="reference internal" href="#resources">Resources</a><ul>
 <li><a class="reference internal" href="#design-integration-files">Design &amp; Integration Files</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -550,10 +547,9 @@ Content on this topic
             
   <section id="eval-cn0588-ebz">
 <span id="id1"></span><h1>EVAL-CN0588-EBZ<a class="headerlink" href="#eval-cn0588-ebz" title="Link to this heading"></a></h1>
-<section id="dc-to-10-khz-mems-based-iepe-vibration-sensor">
-<h2>DC to 10 kHz MEMS-Based IEPE Vibration Sensor<a class="headerlink" href="#dc-to-10-khz-mems-based-iepe-vibration-sensor" title="Link to this heading"></a></h2>
+<p>DC to 10 kHz MEMS-Based IEPE Vibration Sensor.</p>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0588" target="_blank">CN0588</a> is a MEMS-based IEPE vibration sensor optimized
 for condition-based monitoring (CbM) applications. This solution has a
 constant current supply of 4mA and a DC voltage bias ranging from
@@ -577,7 +573,7 @@ high bandwidth, temperature stability and ultralow noise MEMS accelerometers.
 This allows customers to easily evaluate an IEPE MEMS accelerometer solution
 for CbM applications on the same ICP piezoelectric sensor platform.</p>
 <section id="features">
-<h4>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h4>
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Mechanically enclosed and machine mountable</p></li>
 <li><p>IEPE interface to retrofit into existing machines</p></li>
@@ -587,7 +583,7 @@ for CbM applications on the same ICP piezoelectric sensor platform.</p>
 </ul>
 </section>
 <section id="applications">
-<h4>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h4>
+<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Predictive Maintenance</p></li>
 <li><p>Vibration Analysis</p></li>
@@ -596,16 +592,16 @@ for CbM applications on the same ICP piezoelectric sensor platform.</p>
 </ul>
 </section>
 <section id="block-diagram">
-<h4>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h4>
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
 <figure class="align-default">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0588-ebz/cn0588_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0588-ebz/cn0588_block_diagram.png" />
 </figure>
 </section>
 </section>
 <section id="hardware-setup">
-<h3>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
 <section id="equipment-needed">
-<h4>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h4>
+<h3>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>EVAL-CN0588-EBZ</p></li>
 <li><p>Current Source (e.g., Keithley 6220), or an IEPE-compatible DAQ such as the
@@ -618,7 +614,7 @@ for CbM applications on the same ICP piezoelectric sensor platform.</p>
 </section>
 </section>
 <section id="setting-up-the-hardware">
-<h3>Setting up the Hardware<a class="headerlink" href="#setting-up-the-hardware" title="Link to this heading"></a></h3>
+<h2>Setting up the Hardware<a class="headerlink" href="#setting-up-the-hardware" title="Link to this heading"></a></h2>
 <figure class="align-default">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0588-ebz/eval-cn0588-ebz_setup0.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0588-ebz/eval-cn0588-ebz_setup0.png" />
 </figure>
@@ -636,14 +632,14 @@ acceleration, the IEPE output should be around 12V.</p></li>
 <p>The EVAL-CN0588-EBZ is ready for experiment.</p>
 </section>
 <section id="sample-measurements">
-<h3>Sample Measurements<a class="headerlink" href="#sample-measurements" title="Link to this heading"></a></h3>
+<h2>Sample Measurements<a class="headerlink" href="#sample-measurements" title="Link to this heading"></a></h2>
 <section id="using-cn0588-with-the-cn0582-quad-channel-iepe-daq">
-<h4>Using CN0588 with the CN0582 Quad-Channel IEPE DAQ<a class="headerlink" href="#using-cn0588-with-the-cn0582-quad-channel-iepe-daq" title="Link to this heading"></a></h4>
+<h3>Using CN0588 with the CN0582 Quad-Channel IEPE DAQ<a class="headerlink" href="#using-cn0588-with-the-cn0582-quad-channel-iepe-daq" title="Link to this heading"></a></h3>
 <p>For applications requiring 4 channels, the CN0582 is the recommended IEPE
 vibration measurement equipment to be paired with the CN0588. Follow below
 procedure to set up the system for evaluation.</p>
 <section id="id2">
-<h5>Equipment Needed<a class="headerlink" href="#id2" title="Link to this heading"></a></h5>
+<h4>Equipment Needed<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
 <ul class="simple">
 <li><p>EVAL-CN0588-EBZ</p></li>
 <li><p>EVAL-CN0582-USBZ</p></li>
@@ -749,7 +745,7 @@ the suggested IEPE vibration sensor measurement system to use with the CN0588.</
 </section>
 </section>
 <section id="resources">
-<h3>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h3>
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADXL1002" target="_blank">ADXL1002 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADR5045" target="_blank">ADR5043/ADR5045 Product Page</a></p></li>
@@ -757,7 +753,7 @@ the suggested IEPE vibration sensor measurement system to use with the CN0588.</
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0582" target="_blank">CN0582 Product Page</a></p></li>
 </ul>
 <section id="design-integration-files">
-<h4>Design &amp; Integration Files<a class="headerlink" href="#design-integration-files" title="Link to this heading"></a></h4>
+<h3>Design &amp; Integration Files<a class="headerlink" href="#design-integration-files" title="Link to this heading"></a></h3>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0588-ebz/CN0588-designsupport.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-CN0588-EBZ</span> <span class="pre">Design</span> <span class="pre">&amp;</span> <span class="pre">Integration</span> <span class="pre">Files</span></code></a></p>
@@ -770,10 +766,9 @@ the suggested IEPE vibration sensor measurement system to use with the CN0588.</
 </div>
 </section>
 <section id="help-and-support">
-<h4>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h4>
+<h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
 <p>For questions and more information about this product, connect with us through
 the Analog Devices <a class="icon ez reference external" href="https://ez.analog.com/ez/reference-designs" target="_blank">EngineerZone</a>.</p>
-</section>
 </section>
 </section>
 </section>

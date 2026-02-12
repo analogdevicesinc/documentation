@@ -3,8 +3,7 @@
 FTHR-PMD-INTZ
 =============
 
-Feather to PMOD Adaptor Board
-"""""""""""""""""""""""""""""
+Feather to PMOD Adaptor Board.
 
 Overview
 --------

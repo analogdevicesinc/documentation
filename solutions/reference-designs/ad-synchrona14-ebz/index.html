@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD-SYNCHRONA14-EBZ is an ideal self-contained device suitable for applications that require a highly accurate frequency and phase-controlled source clock. It is designed around the AD9545, a quad input synchronizer and jitter cleaner, and the HMC7044, a 3.2 GHz, 14-output high performance jitter attenuator. This board greatly simplifies clock distribution and multichannel synchronization in complex systems. Using popular industry connectors such as SMA and Samtec Circular RF Twinax, most labs have cables that are compatible with this device. It is intended for use in a lab environment by trained professionals for evaluation and prototyping purposes and can be used as a reference design for integrating into custom applications." name="description" />
+<meta content="Multichannel System Clocking Device." name="description" />
 
     <title>AD-SYNCHRONA14-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AD-SYNCHRONA14-EBZ</a><ul>
-<li><a class="reference internal" href="#multichannel-system-clocking-device">Multichannel System Clocking Device</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#applications">Applications</a></li>
 <li><a class="reference internal" href="#key-features">Key Features</a></li>
@@ -128,8 +127,6 @@
 </li>
 <li><a class="reference internal" href="#add-on-voltage-translation-board">ADD-ON Voltage Translation Board</a><ul>
 <li><a class="reference internal" href="#design-and-integration-files">Design and Integration Files</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -561,10 +558,9 @@ Content on this topic
             
   <section id="ad-synchrona14-ebz">
 <span id="ad-syncrhona14-ebz"></span><h1>AD-SYNCHRONA14-EBZ<a class="headerlink" href="#ad-synchrona14-ebz" title="Link to this heading"></a></h1>
-<section id="multichannel-system-clocking-device">
-<h2>Multichannel System Clocking Device<a class="headerlink" href="#multichannel-system-clocking-device" title="Link to this heading"></a></h2>
+<p>Multichannel System Clocking Device.</p>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD-SYNCHRONA14-EBZ" target="_blank">AD-SYNCHRONA14-EBZ</a> is an ideal self-contained device suitable
 for applications that require a highly accurate frequency and
 phase-controlled source clock. It is designed around the
@@ -598,7 +594,7 @@ interest and accuracy needed for a wide variety of application areas.</p>
 </figure>
 </section>
 <section id="applications">
-<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h3>
+<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>High accuracy reference clock distribution</p></li>
 <li><p>Systems clocked from a single source</p></li>
@@ -609,7 +605,7 @@ interest and accuracy needed for a wide variety of application areas.</p>
 </ul>
 </section>
 <section id="key-features">
-<h3>Key Features<a class="headerlink" href="#key-features" title="Link to this heading"></a></h3>
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading"></a></h2>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <tbody>
@@ -666,14 +662,14 @@ Clock Translator)</p>
 </div>
 </section>
 <section id="hardware">
-<h3>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h3>
+<h2>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h2>
 <section id="power-supply">
-<h4>Power Supply<a class="headerlink" href="#power-supply" title="Link to this heading"></a></h4>
+<h3>Power Supply<a class="headerlink" href="#power-supply" title="Link to this heading"></a></h3>
 <p>Use a 12 Volts dc power supply with a minimum power of 36 W and
 a 2.1 x 5.5 mm barrel jack.</p>
 </section>
 <section id="block-diagram">
-<h4>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h4>
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
 <figure class="align-center" id="id2">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/block_diagram.png" />
 <figcaption>
@@ -682,7 +678,7 @@ a 2.1 x 5.5 mm barrel jack.</p>
 </figure>
 </section>
 <section id="clock-output-configuration">
-<h4>Clock Output Configuration<a class="headerlink" href="#clock-output-configuration" title="Link to this heading"></a></h4>
+<h3>Clock Output Configuration<a class="headerlink" href="#clock-output-configuration" title="Link to this heading"></a></h3>
 <p>There are a total of 14 high speed clocks that come out of the final
 clock mux; these can range from 2150 MHz to 3550 MHz in different modes
 and connection schemes. The maximum clock output is 2400 MHz, which can
@@ -846,7 +842,7 @@ of the passive components.</p></td>
 output configuration.</p>
 </section>
 <section id="differential-connectors">
-<h4>100 Ω Differential Connectors<a class="headerlink" href="#differential-connectors" title="Link to this heading"></a></h4>
+<h3>100 Ω Differential Connectors<a class="headerlink" href="#differential-connectors" title="Link to this heading"></a></h3>
 <p>CH11, CH12, CH13, and CH14 are 100 Ω impedance differential outputs with
 circular RF Twinax Jack.</p>
 <p>The <a class="icon link reference external" href="https://www.samtec.com/products/cjt-bh" target="_blank">CJT-BH connector series</a>
@@ -855,7 +851,7 @@ from Samtec are paired with
 – Circular RF Twinax Cable Assembly.</p>
 </section>
 <section id="clock-input-reference-input">
-<h4>Clock Input (Reference Input)<a class="headerlink" href="#clock-input-reference-input" title="Link to this heading"></a></h4>
+<h3>Clock Input (Reference Input)<a class="headerlink" href="#clock-input-reference-input" title="Link to this heading"></a></h3>
 <p>On the back panel, there are 3 differential 100 Ω inputs.</p>
 <p>In the standard configuration, <strong>CH1</strong> is disconnected from the SMA
 connectors. The reason for this is that inside the AD-SYNCHRONA14-EBZ,
@@ -888,7 +884,7 @@ the standard software version, this input is set to function with a
 </div>
 </section>
 <section id="internal-references">
-<h4>Internal References<a class="headerlink" href="#internal-references" title="Link to this heading"></a></h4>
+<h3>Internal References<a class="headerlink" href="#internal-references" title="Link to this heading"></a></h3>
 <p>There are two <strong>VCXOs</strong>, ultralow phase noise oscillators (-165dBc/Hz).</p>
 <p>The VCXOs are 100 MHz and 122.88 MHz; both of which are software
 selectable and used to drive the PLL2 of <a class="icon adi reference external" href="https://www.analog.com/HMC7044" target="_blank">HMC7044</a>.</p>
@@ -902,15 +898,15 @@ providing high frequency stability.</p>
 </section>
 </section>
 <section id="software">
-<h3>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h3>
+<h2>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h2>
 <section id="drivers">
-<h4>Drivers<a class="headerlink" href="#drivers" title="Link to this heading"></a></h4>
+<h3>Drivers<a class="headerlink" href="#drivers" title="Link to this heading"></a></h3>
 <p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/hmc7044" target="_blank">HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver</a></p>
 <p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/clk/adi/clk-ad9545.c" target="_blank">AD9545 Quad Input, 10-Output, Dual DPLL/IEEE 1588, 1 pps Synchronizer and Jitter Cleaner</a></p>
 </section>
 </section>
 <section id="gui">
-<h3>GUI<a class="headerlink" href="#gui" title="Link to this heading"></a></h3>
+<h2>GUI<a class="headerlink" href="#gui" title="Link to this heading"></a></h2>
 <p>The Raspberry Pi inside AD-SYNCHRONA14-EBZ runs the <strong>RaspAP</strong>, which is
 an application that gives access to the GUI.</p>
 <ul class="simple">
@@ -1018,7 +1014,7 @@ default one which was inet 192.168.2.1</p></li>
 </figcaption>
 </figure>
 <section id="general-page">
-<h4>General Page<a class="headerlink" href="#general-page" title="Link to this heading"></a></h4>
+<h3>General Page<a class="headerlink" href="#general-page" title="Link to this heading"></a></h3>
 <p>The General Page of the GUI allows users to enable/disable channels, and
 set the frequencies on each channel. Refer to the <strong>Clock Output
 Configuration</strong> section above for the proper settings.</p>
@@ -1078,7 +1074,7 @@ settings.</p></li>
 </ul>
 </section>
 <section id="advanced-page">
-<h4>Advanced Page<a class="headerlink" href="#advanced-page" title="Link to this heading"></a></h4>
+<h3>Advanced Page<a class="headerlink" href="#advanced-page" title="Link to this heading"></a></h3>
 <p>In the Advanced Page of the GUI, you can find a detailed
 block diagram of AD-SYNCHRONA14-EBZ.</p>
 <p>As shown in the illustration below, you can see the VCXO that is being
@@ -1092,7 +1088,7 @@ connected into REF_IN.</p>
 </figcaption>
 </figure>
 <section id="input-priority">
-<h5>Input Priority<a class="headerlink" href="#input-priority" title="Link to this heading"></a></h5>
+<h4>Input Priority<a class="headerlink" href="#input-priority" title="Link to this heading"></a></h4>
 <p>The input priority table is used to prioritize the input references.</p>
 <ul>
 <li><p>Set the input priority table by dragging each reference upwards or
@@ -1112,7 +1108,7 @@ automatically to the next valid reference.</p></li>
 </ul>
 </section>
 <section id="coarse-delay-fine-delay">
-<h5>Coarse Delay &amp; Fine Delay<a class="headerlink" href="#coarse-delay-fine-delay" title="Link to this heading"></a></h5>
+<h4>Coarse Delay &amp; Fine Delay<a class="headerlink" href="#coarse-delay-fine-delay" title="Link to this heading"></a></h4>
 <p>Coarse delay and fine delay settings are also available in the
 <strong>Advanced Page</strong>.</p>
 <figure class="align-center" id="id10">
@@ -1128,7 +1124,7 @@ automatically to the next valid reference.</p></li>
 </section>
 </section>
 <section id="debug-page">
-<h4>Debug Page<a class="headerlink" href="#debug-page" title="Link to this heading"></a></h4>
+<h3>Debug Page<a class="headerlink" href="#debug-page" title="Link to this heading"></a></h3>
 <p>This page features various debug information. On top of this, more
 actions are available for users’ access, as shown in the illustration
 below:</p>
@@ -1188,9 +1184,9 @@ not change device configuration.</p></td>
 </section>
 </section>
 <section id="use-cases">
-<h3>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading"></a></h3>
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading"></a></h2>
 <section id="standalone-use-case">
-<h4>Standalone Use Case<a class="headerlink" href="#standalone-use-case" title="Link to this heading"></a></h4>
+<h3>Standalone Use Case<a class="headerlink" href="#standalone-use-case" title="Link to this heading"></a></h3>
 <p>The AD-SYNCHRONA14-EBZ can be used as a standalone device
 without the need of an external clock reference.</p>
 <p>Inside the AD-SYNCHRONA14-EBZ, there is a Raspberry Pi
@@ -1219,7 +1215,7 @@ between the VCXOs and change the output frequency of <a class="icon adi referenc
 </section>
 </section>
 <section id="add-on-voltage-translation-board">
-<h3>ADD-ON Voltage Translation Board<a class="headerlink" href="#add-on-voltage-translation-board" title="Link to this heading"></a></h3>
+<h2>ADD-ON Voltage Translation Board<a class="headerlink" href="#add-on-voltage-translation-board" title="Link to this heading"></a></h2>
 <figure class="align-center" id="id13">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/ad-synchrona-ebz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/ad-synchrona-ebz.jpg" />
 <figcaption>
@@ -1243,7 +1239,7 @@ inside AD-SYNCHRONA14-EBZ.</p>
 </figcaption>
 </figure>
 <section id="design-and-integration-files">
-<h4>Design and Integration Files<a class="headerlink" href="#design-and-integration-files" title="Link to this heading"></a></h4>
+<h3>Design and Integration Files<a class="headerlink" href="#design-and-integration-files" title="Link to this heading"></a></h3>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <div class="line-block">
@@ -1251,7 +1247,6 @@ inside AD-SYNCHRONA14-EBZ.</p>
 <div class="line"><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/Schematic ADD-ON Board.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Schematic</span> <span class="pre">ADD-ON</span> <span class="pre">Board.pdf</span></code></a></div>
 </div>
 </div>
-</section>
 </section>
 </section>
 </section>

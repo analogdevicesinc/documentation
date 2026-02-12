@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Seamlessly insert GMSL into the signal chain and create a full GMSL Camera System with off-the-shelf parts." name="description" />
+<meta content="GMSL EV Kit Adapter Board." name="description" />
 
     <title>AD-GMSLCAMRPI-ADP# &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AD-GMSLCAMRPI-ADP#</a><ul>
-<li><a class="reference internal" href="#gmsl-ev-kit-adapter-board">GMSL EV Kit Adapter Board</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#specifications">Specifications</a></li>
 <li><a class="reference internal" href="#gmsl-ev-kit-compatibility">GMSL EV Kit Compatibility</a></li>
@@ -105,8 +104,6 @@
 <li><a class="reference internal" href="#software-development">Software Development</a></li>
 <li><a class="reference internal" href="#user-guides">User Guides</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -536,8 +533,7 @@ Content on this topic
             
   <section id="ad-gmslcamrpi-adp">
 <span id="id1"></span><h1>AD-GMSLCAMRPI-ADP#<a class="headerlink" href="#ad-gmslcamrpi-adp" title="Link to this heading"></a></h1>
-<section id="gmsl-ev-kit-adapter-board">
-<h2>GMSL EV Kit Adapter Board<a class="headerlink" href="#gmsl-ev-kit-adapter-board" title="Link to this heading"></a></h2>
+<p>GMSL EV Kit Adapter Board.</p>
 <p>Seamlessly insert GMSL into the signal chain and create a full GMSL Camera
 System with off-the-shelf parts.</p>
 <figure class="align-default" id="id2">
@@ -548,7 +544,7 @@ System with off-the-shelf parts.</p>
 </figcaption>
 </figure>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The <a class="reference external" href="design-center/evaluation-hardware-and-software/evaluation-boards-kits/AD-GMSLCAMRPI-ADP.html">AD-GMSLCAMRPI-ADP#</a>
 enables connecting GMSL serializer and deserialier Evaluation Kits (EVK) to a
 wide range of cameras and processing platforms supporting industry standard
@@ -582,7 +578,7 @@ connectors.</p></li>
 </figure>
 </section>
 <section id="specifications">
-<h3>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h3>
+<h2>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h2>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <tbody>
@@ -643,13 +639,13 @@ connectors.</p></li>
 </ul>
 </section>
 <section id="gmsl-ev-kit-compatibility">
-<h3>GMSL EV Kit Compatibility<a class="headerlink" href="#gmsl-ev-kit-compatibility" title="Link to this heading"></a></h3>
+<h2>GMSL EV Kit Compatibility<a class="headerlink" href="#gmsl-ev-kit-compatibility" title="Link to this heading"></a></h2>
 <p>The MIPI-CSI2 signals, I2C communication, and power pins align on the EV kits
 but the MFP connections can vary.</p>
 <p>Refer to the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-gmslcamrpi-adp/comp_guide" target="_blank">Serializer and Deserializer EV Kit Compatibility Guide</a> to see the connections across EV kits.</p>
 </section>
 <section id="camera-connections">
-<h3>Camera Connections<a class="headerlink" href="#camera-connections" title="Link to this heading"></a></h3>
+<h2>Camera Connections<a class="headerlink" href="#camera-connections" title="Link to this heading"></a></h2>
 <p>Connect RPi 15-pin cameras to GMSL Serializer EV Kit’s with the 15-pin to 22-pin
 adapter. Or use a 15-pin to 22-Pin Adapter Cable.</p>
 <figure class="align-default" id="id5">
@@ -668,7 +664,7 @@ adapter. Or use a 15-pin to 22-Pin Adapter Cable.</p>
 </figure>
 </section>
 <section id="soc-connections">
-<h3>SoC Connections<a class="headerlink" href="#soc-connections" title="Link to this heading"></a></h3>
+<h2>SoC Connections<a class="headerlink" href="#soc-connections" title="Link to this heading"></a></h2>
 <p>The same configuration is used for the SoC side where the 22-pin adapter can be
 directly connect to a Jetson Orin Development kit or use the 22-15 pin adapter
 to connect to an Raspberry Pi.</p>
@@ -688,7 +684,7 @@ to connect to an Raspberry Pi.</p>
 </figure>
 </section>
 <section id="example-configurations">
-<h3>Example Configurations<a class="headerlink" href="#example-configurations" title="Link to this heading"></a></h3>
+<h2>Example Configurations<a class="headerlink" href="#example-configurations" title="Link to this heading"></a></h2>
 <p>The adapter can be used to connect the GMSL Deserializer EV kits to a number of
 processing platforms for GMSL evaluation and application development. The user
 guides below provide instructions on how to get the systems up and running by
@@ -700,13 +696,13 @@ configuring the hardware and running the associated software.</p>
 </ul>
 </section>
 <section id="software-development">
-<h3>Software Development<a class="headerlink" href="#software-development" title="Link to this heading"></a></h3>
+<h2>Software Development<a class="headerlink" href="#software-development" title="Link to this heading"></a></h2>
 <p>The GMSL Linux kernel drivers, the complete Linux distributions for the
 supported processing platforms, and software user guides can be found on the
 <a class="icon git reference external" href="https://github.com/analogdevicesinc/gmsl/tree/main/" target="_blank">ADI gmsl repository</a>.</p>
 </section>
 <section id="user-guides">
-<h3>User Guides<a class="headerlink" href="#user-guides" title="Link to this heading"></a></h3>
+<h2>User Guides<a class="headerlink" href="#user-guides" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="amd-kria/index.html">Using with AMD Kria</a></li>
@@ -716,14 +712,13 @@ supported processing platforms, and software user guides can be found on the
 </div>
 </section>
 <section id="support">
-<h3>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h3>
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <p>For questions and more information, please contact us on the <strong>Analog Devices
 Engineer Zone</strong>.</p>
 <ul class="simple">
 <li><p><a class="icon ez reference external" href="https://ez.analog.com/community/linux-software-drivers" target="_blank">EngineerZone Linux Software Drivers</a></p></li>
 <li><p><a class="icon ez reference external" href="https://ez.analog.com/community/fpga" target="_blank">EngineerZone FPGA Reference Designs</a></p></li>
 </ul>
-</section>
 </section>
 </section>
 

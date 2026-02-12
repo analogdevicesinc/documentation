@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The EVAL-CN0585-FMCZ Low Latency Development Kit (LLDK) board is a development board consisting of 4 x 16-bit ADC channels and 4 x 16-bit DAC channels that are interfaced with an FPGA through the FMC Low Pin Count (LPC) Connector. Current revision of EVAL-CN0585-FMCZ is Rev B. EVAL-CN0585-FMCZ, EVAL-CN0584-EBZ and ZedBoard are connected together to build a development system setup as shown in Figure 1." name="description" />
+<meta content="Quad Channel, Low Latency, Data Acquisition and Signal Generation Module." name="description" />
 
     <title>EVAL-CN0585-FMCZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -96,7 +96,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0585-FMCZ</a><ul>
-<li><a class="reference internal" href="#quad-channel-low-latency-data-acquisition-and-signal-generation-module">Quad Channel, Low Latency, Data Acquisition and Signal Generation Module</a><ul>
 <li><a class="reference internal" href="#connections-and-configurations">Connections and Configurations</a><ul>
 <li><a class="reference internal" href="#receive-channel">Receive Channel</a></li>
 <li><a class="reference internal" href="#transmit-channel">Transmit Channel</a></li>
@@ -120,8 +119,6 @@
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#additional-information-and-useful-links">Additional Information and Useful Links</a></li>
 <li><a class="reference internal" href="#reference-demos-software">Reference Demos &amp; Software</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -551,8 +548,7 @@ Content on this topic
             
   <section id="eval-cn0585-fmcz">
 <span id="id1"></span><h1>EVAL-CN0585-FMCZ<a class="headerlink" href="#eval-cn0585-fmcz" title="Link to this heading"></a></h1>
-<section id="quad-channel-low-latency-data-acquisition-and-signal-generation-module">
-<h2>Quad Channel, Low Latency, Data Acquisition and Signal Generation Module<a class="headerlink" href="#quad-channel-low-latency-data-acquisition-and-signal-generation-module" title="Link to this heading"></a></h2>
+<p>Quad Channel, Low Latency, Data Acquisition and Signal Generation Module.</p>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">EVAL-CN0585-FMCZ</a> Low Latency Development Kit (LLDK) board
 is a development board consisting of 4 x 16-bit ADC channels and 4 x 16-bit DAC
 channels that are interfaced with an FPGA through the FMC Low Pin Count (LPC)
@@ -598,9 +594,9 @@ output in &lt;200ns from initial data written to the DAC.</p>
 </figcaption>
 </figure>
 <section id="connections-and-configurations">
-<h3>Connections and Configurations<a class="headerlink" href="#connections-and-configurations" title="Link to this heading"></a></h3>
+<h2>Connections and Configurations<a class="headerlink" href="#connections-and-configurations" title="Link to this heading"></a></h2>
 <section id="receive-channel">
-<h4>Receive Channel<a class="headerlink" href="#receive-channel" title="Link to this heading"></a></h4>
+<h3>Receive Channel<a class="headerlink" href="#receive-channel" title="Link to this heading"></a></h3>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">EVAL-CN0585-FMCZ</a> board has four <a class="icon adi reference external" href="https://www.analog.com/ADAQ23876" target="_blank">ADAQ23876</a>
 16-Bit 15 MSPS Data Acquisition µModules to capture analog data
 from the AFE board connector. The Data Acquisition µModules are
@@ -615,7 +611,7 @@ accessible through the AFE board connector pins. As an example the
 <a class="icon adi reference external" href="https://www.analog.com/CN0584" target="_blank">EVAL-CN0584-EBZ</a> is available for hardware in loop (HIL) applications.</p>
 </section>
 <section id="transmit-channel">
-<h4>Transmit Channel<a class="headerlink" href="#transmit-channel" title="Link to this heading"></a></h4>
+<h3>Transmit Channel<a class="headerlink" href="#transmit-channel" title="Link to this heading"></a></h3>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">EVAL-CN0585-FMCZ</a> board has two <a class="icon adi reference external" href="https://www.analog.com/AD3552R" target="_blank">AD3552R</a>
 16-bit 33 MUPS DACs that provide four analog output signals to the AFE board
 connector. Data is transferred to the <a class="icon adi reference external" href="https://www.analog.com/AD3552R" target="_blank">AD3552R</a> DAC from the
@@ -626,7 +622,7 @@ can be configured, such as 0V to 2.5V, 0V to 5V, −5V to +5V, −10V to +10V,
 and custom intermediate ranges with full 16-bit resolution.</p>
 </section>
 <section id="voltage-reference">
-<h4>Voltage Reference<a class="headerlink" href="#voltage-reference" title="Link to this heading"></a></h4>
+<h3>Voltage Reference<a class="headerlink" href="#voltage-reference" title="Link to this heading"></a></h3>
 <p>The default ADC reference configuration uses the internal 2.048 V, ±0.1%
 accurate, 20 ppm/°C max voltage reference. For more stringent use cases where
 the accuracy and temperature drift is an issue, an external
@@ -654,7 +650,7 @@ and temperature drift is an issue, an external <a class="icon adi reference exte
 </div>
 </section>
 <section id="voltage-monitoring">
-<h4>Voltage Monitoring<a class="headerlink" href="#voltage-monitoring" title="Link to this heading"></a></h4>
+<h3>Voltage Monitoring<a class="headerlink" href="#voltage-monitoring" title="Link to this heading"></a></h3>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">EVAL-CN0585-FMCZ</a> board provides voltage monitoring
 capability for the power supply rails. The circuit consists of an
 <a class="icon adi reference external" href="https://www.analog.com/AD7291" target="_blank">AD7291</a> 8-Channel, I2C, 12-Bit SAR ADC, and resistive dividers.
@@ -760,13 +756,13 @@ amp)</p></td>
 R14, R17, and R18 can be used to select alternate addressing.</p>
 </section>
 <section id="logic-level-translators">
-<h4>Logic Level Translators<a class="headerlink" href="#logic-level-translators" title="Link to this heading"></a></h4>
+<h3>Logic Level Translators<a class="headerlink" href="#logic-level-translators" title="Link to this heading"></a></h3>
 <p>Several logic-level translators are used on the board to interface with the FMC
 connector signals and the various logic levels used on the board. The FMC
 connector signal levels are driven by the VIO voltage supplied from the FPGA
 board.</p>
 <section id="gpio">
-<h5>GPIO<a class="headerlink" href="#gpio" title="Link to this heading"></a></h5>
+<h4>GPIO<a class="headerlink" href="#gpio" title="Link to this heading"></a></h4>
 <p>A GPIO interface is provided by a MAX7301ATL+ I/O Expander connected to the SPI
 interface on the SPIO_CSB0 chip select interface. The GPIO outputs are
 controlled by writing to the MAX7301ATL+ via the SPI interface provided on the
@@ -776,7 +772,7 @@ the ADAQ23875 Data Acquisition µModules. Eight GPIO signals are level-shifted
 and provided to the AFE board connector for control signals on the AFE board.</p>
 </section>
 <section id="i2c">
-<h5>I2C<a class="headerlink" href="#i2c" title="Link to this heading"></a></h5>
+<h4>I2C<a class="headerlink" href="#i2c" title="Link to this heading"></a></h4>
 <p>The I2C interface is provided from the FPGA FMC connector and is made available
 to the <a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">EVAL-CN0585-FMCZ</a> board and the user via the AFE board
 connector. On the <a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">EVAL-CN0585-FMCZ</a> board the I2C interface is
@@ -785,7 +781,7 @@ for board identification and IO characteristics, and the AD7291 voltage
 monitoring ADC.</p>
 </section>
 <section id="spi">
-<h5>SPI<a class="headerlink" href="#spi" title="Link to this heading"></a></h5>
+<h4>SPI<a class="headerlink" href="#spi" title="Link to this heading"></a></h4>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">EVAL-CN0585-FMCZ</a> board provides an SPI interface for the
 user on SPI0 from the FMC connector. Communication with the MAX7301ATL+ GPIO
 expander is enabled by chip select SPIO_CSB0. A second chip select, SPI_CSB1
@@ -799,7 +795,7 @@ DAC channels.</p>
 </section>
 </section>
 <section id="application-specific-analog-front-end-connector">
-<h4>Application-specific Analog Front-End Connector<a class="headerlink" href="#application-specific-analog-front-end-connector" title="Link to this heading"></a></h4>
+<h3>Application-specific Analog Front-End Connector<a class="headerlink" href="#application-specific-analog-front-end-connector" title="Link to this heading"></a></h3>
 <p>The AFE connector interface provides six signal connections for each of the four
 <a class="icon adi reference external" href="https://www.analog.com/ADAQ23876" target="_blank">ADAQ23876</a> Data Acquisition µModules. The six signal
 connections allow the user to set the input voltage range of the differential
@@ -1139,7 +1135,7 @@ _SCALING_N</p></td>
 <p>The AFE board connector on the <a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">EVAL-CN0585-FMCZ</a> board is a
 Samtec high-density socket connector.</p>
 <section id="fmc-lpc-connector-pinout-for-lldk-board-rev-b">
-<h5>FMC LPC Connector Pinout for LLDK Board (Rev B)<a class="headerlink" href="#fmc-lpc-connector-pinout-for-lldk-board-rev-b" title="Link to this heading"></a></h5>
+<h4>FMC LPC Connector Pinout for LLDK Board (Rev B)<a class="headerlink" href="#fmc-lpc-connector-pinout-for-lldk-board-rev-b" title="Link to this heading"></a></h4>
 <p>FMC LPC connector routes the data acquired by the ADAQ23876 to FPGA and
 transfers the data from FPGA to AD3552R DAC.</p>
 <figure class="align-default" id="id12">
@@ -1151,12 +1147,12 @@ transfers the data from FPGA to AD3552R DAC.</p>
 </section>
 </section>
 <section id="led-indicators">
-<h4>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h4>
+<h3>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h3>
 <p>Once the board is connected to the host and powered on, the green LED (DS1)
 will illuminate to indicate that the board is receiving power and is operating correctly.</p>
 </section>
 <section id="power-supply-considerations-and-configuration">
-<h4>Power Supply Considerations and Configuration<a class="headerlink" href="#power-supply-considerations-and-configuration" title="Link to this heading"></a></h4>
+<h3>Power Supply Considerations and Configuration<a class="headerlink" href="#power-supply-considerations-and-configuration" title="Link to this heading"></a></h3>
 <p>The Rev. B of the <a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">EVAL-CN0585-FMCZ</a> board is powered through the
 USB-C connector of the board.</p>
 <div class="admonition important">
@@ -1168,7 +1164,7 @@ consumption exceeds the FMC standard current limit.</p>
 </section>
 </section>
 <section id="system-setup-using-a-zedboard">
-<h3>System Setup Using a ZedBoard<a class="headerlink" href="#system-setup-using-a-zedboard" title="Link to this heading"></a></h3>
+<h2>System Setup Using a ZedBoard<a class="headerlink" href="#system-setup-using-a-zedboard" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">EVAL-CN0585-FMCZ (Rev B)</a> connected to
 <a class="icon adi reference external" href="https://www.analog.com/CN0584" target="_blank">EVAL-CN0584-EBZ</a> is fully supported using a ZedBoard.
 For description of system setup and functionality using the
@@ -1177,7 +1173,7 @@ ZedBoard, refer to <a class="reference internal" href="../eval-cn0584-ebz/index.
 System Setup Using a ZedBoard section.</p>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
-<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0585-fmcz/cn0585-designsupport.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-CN0585-FMCZ</span> <span class="pre">Design</span> <span class="pre">&amp;</span> <span class="pre">Integration</span> <span class="pre">Files</span></code></a></p>
@@ -1190,7 +1186,7 @@ System Setup Using a ZedBoard section.</p>
 </div>
 </section>
 <section id="additional-information-and-useful-links">
-<h3>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h3>
+<h2>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0585" target="_blank">CN0585 Circuit Note Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADAQ23876" target="_blank">ADAQ23876 Product Page</a></p></li>
@@ -1201,7 +1197,7 @@ System Setup Using a ZedBoard section.</p>
 </ul>
 </section>
 <section id="reference-demos-software">
-<h3>Reference Demos &amp; Software<a class="headerlink" href="#reference-demos-software" title="Link to this heading"></a></h3>
+<h2>Reference Demos &amp; Software<a class="headerlink" href="#reference-demos-software" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/axi_ad35xxr/index.html#axi-ad35xxr" target="_blank" title="(in HDL)"><span>AXI AD35XXR</span></a></p></li>
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/axi_ltc2387/index.html#axi-ltc2387" target="_blank" title="(in HDL)"><span>AXI LTC2387</span></a></p></li>
@@ -1212,7 +1208,6 @@ System Setup Using a ZedBoard section.</p>
 <li><p><a class="reference internal" href="../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a></p></li>
 <li><p><a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a></p></li>
 </ul>
-</section>
 </section>
 </section>
 

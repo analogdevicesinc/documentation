@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The CN0417 is a small USB-powered RF power amplifier optimized for 2400 MHz operation. The amplifier typically provides 20 dB of gain through its RF band of operation, boosting signals for various communication protocols such as ISM, MC-GSM, W-CDMA, TD-SCDMA, and LTE. It requires a 5V USB supply for normal operation. The input and output, both populated with edge-mounted SMA connectors, are DC blocked and matched to 50Ω for ease of use. More information on this board can be found at PlutoSDR Amplifier." name="description" />
+<meta content="USB Powered 2.4 GHz RF Power Amplifier." name="description" />
 
     <title>EVAL-CN0417-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0417-EBZ</a><ul>
-<li><a class="reference internal" href="#usb-powered-2-4-ghz-rf-power-amplifier">USB Powered 2.4 GHz RF Power Amplifier</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#general-setup">General Setup</a><ul>
 <li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
@@ -107,8 +106,6 @@
 </li>
 <li><a class="reference internal" href="#additional-resources">Additional Resources</a><ul>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -540,10 +537,9 @@ Content on this topic
             
   <section id="eval-cn0417-ebz">
 <h1>EVAL-CN0417-EBZ<a class="headerlink" href="#eval-cn0417-ebz" title="Link to this heading"></a></h1>
-<section id="usb-powered-2-4-ghz-rf-power-amplifier">
-<h2>USB Powered 2.4 GHz RF Power Amplifier<a class="headerlink" href="#usb-powered-2-4-ghz-rf-power-amplifier" title="Link to this heading"></a></h2>
+<p>USB Powered 2.4 GHz RF Power Amplifier.</p>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0417" target="_blank">CN0417</a> is a small USB-powered RF power amplifier optimized for
 2400 MHz operation. The amplifier typically provides 20 dB of gain through its
 RF band of operation, boosting signals for various communication protocols such
@@ -568,9 +564,9 @@ voltage from the USB port.</p>
 </figure>
 </section>
 <section id="general-setup">
-<h3>General Setup<a class="headerlink" href="#general-setup" title="Link to this heading"></a></h3>
+<h2>General Setup<a class="headerlink" href="#general-setup" title="Link to this heading"></a></h2>
 <section id="required-equipment">
-<h4>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h4>
+<h3>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0417" target="_blank">EVAL-CN0417-EBZ Board</a></p></li>
 <li><p>RF Signal Source (like the <a class="reference internal" href="../../../tools/pluto/index.html#pluto"><span class="std std-ref">PlutoSDR</span></a>)</p></li>
@@ -578,7 +574,7 @@ voltage from the USB port.</p>
 </ul>
 </section>
 <section id="block-assignments">
-<h4>Block Assignments<a class="headerlink" href="#block-assignments" title="Link to this heading"></a></h4>
+<h3>Block Assignments<a class="headerlink" href="#block-assignments" title="Link to this heading"></a></h3>
 <figure class="align-default">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0417-ebz/revb_blockd.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0417-ebz/revb_blockd.jpg" />
 </figure>
@@ -591,7 +587,7 @@ normally be connected to an antenna</p></li>
 </ul>
 </section>
 <section id="test-setup">
-<h4>Test setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h4>
+<h3>Test setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h3>
 <figure class="align-default">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0417-ebz/10-31-2018_10-51-55_am.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0417-ebz/10-31-2018_10-51-55_am.png" />
 </figure>
@@ -608,14 +604,14 @@ equipment needing the amplifier signal.</p></li>
 </ol>
 </section>
 <section id="running-the-system">
-<h4>Running the System<a class="headerlink" href="#running-the-system" title="Link to this heading"></a></h4>
+<h3>Running the System<a class="headerlink" href="#running-the-system" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>After completing the setup, the <a class="icon adi reference external" href="https://www.analog.com/CN0417" target="_blank">EVAL-CN0417-EBZ Board</a>
 will automatically turn on and output the amplified version of the input.</p></li>
 </ul>
 </section>
 <section id="normal-operation">
-<h4>Normal Operation<a class="headerlink" href="#normal-operation" title="Link to this heading"></a></h4>
+<h3>Normal Operation<a class="headerlink" href="#normal-operation" title="Link to this heading"></a></h3>
 <figure class="align-default">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0417-ebz/cn0417.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0417-ebz/cn0417.png" />
 </figure>
@@ -647,7 +643,7 @@ not exceed the maximum ratings for the RF Input.</p>
 </section>
 </section>
 <section id="additional-resources">
-<h3>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading"></a></h3>
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0417" target="_blank">CN0417 Circuit Note Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0417-DesignSupport" target="_blank">CN0417 Design Support Package</a></p></li>
@@ -656,7 +652,7 @@ not exceed the maximum ratings for the RF Input.</p>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/LTM8045" target="_blank">LTM8045 Product Page</a></p></li>
 </ul>
 <section id="schematic-pcb-layout-bill-of-materials">
-<h4>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h4>
+<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0417-ebz/cn0417-design-support.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-CN0417-EBZ</span> <span class="pre">Design</span> <span class="pre">&amp;</span> <span class="pre">Integration</span> <span class="pre">Files</span></code></a></p>
@@ -667,7 +663,6 @@ not exceed the maximum ratings for the RF Input.</p>
 <li><p>PADS project</p></li>
 </ul>
 </div>
-</section>
 </section>
 </section>
 </section>

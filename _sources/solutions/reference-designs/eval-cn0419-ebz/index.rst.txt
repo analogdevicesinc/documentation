@@ -3,8 +3,7 @@
 EVAL-CN0419-EBZ
 ===============
 
-Universal Serial Bus (USB) Peripheral Isolator Circuit
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Universal Serial Bus (USB) Peripheral Isolator Circuit.
 
 Overview
 --------

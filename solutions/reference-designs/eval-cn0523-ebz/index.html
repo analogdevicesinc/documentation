@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The EVAL-CN0523-EBZ is a USB-powered, RF power amplifier that is optimized for transmitting signal chains in the 5.8GHz ISM band. Using two HMC407 amplifiers cascaded together, the design provides a gain of 28dB and return losses of more than 10dB throughout its RF band of operation." name="description" />
+<meta content="USB-Powered, 5.8 GHz RF Power Amplifier with Overtemperature Management." name="description" />
 
     <title>EVAL-CN0523-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0523-EBZ</a><ul>
-<li><a class="reference internal" href="#usb-powered-5-8-ghz-rf-power-amplifier-with-overtemperature-management">USB-Powered, 5.8 GHz RF Power Amplifier with Overtemperature Management</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#reference-design-hardware">Reference Design Hardware</a><ul>
 <li><a class="reference internal" href="#primary-side">Primary Side</a><ul>
@@ -118,8 +117,6 @@
 <li><a class="reference internal" href="#more-information-and-useful-links">More Information and Useful Links</a></li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -549,10 +546,9 @@ Content on this topic
             
   <section id="eval-cn0523-ebz">
 <span id="id1"></span><h1>EVAL-CN0523-EBZ<a class="headerlink" href="#eval-cn0523-ebz" title="Link to this heading"></a></h1>
-<section id="usb-powered-5-8-ghz-rf-power-amplifier-with-overtemperature-management">
-<h2>USB-Powered, 5.8 GHz RF Power Amplifier with Overtemperature Management<a class="headerlink" href="#usb-powered-5-8-ghz-rf-power-amplifier-with-overtemperature-management" title="Link to this heading"></a></h2>
+<p>USB-Powered, 5.8 GHz RF Power Amplifier with Overtemperature Management.</p>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a> is a USB-powered, RF power amplifier
 that is optimized for transmitting signal chains in the 5.8GHz ISM band.
 Using two <a class="icon adi reference external" href="https://www.analog.com/HMC407" target="_blank">HMC407</a> amplifiers cascaded together, the design
@@ -578,9 +574,9 @@ to use most 5V wall wart power supplies available in the market.</p>
 </figure>
 </section>
 <section id="reference-design-hardware">
-<h3>Reference Design Hardware<a class="headerlink" href="#reference-design-hardware" title="Link to this heading"></a></h3>
+<h2>Reference Design Hardware<a class="headerlink" href="#reference-design-hardware" title="Link to this heading"></a></h2>
 <section id="primary-side">
-<h4>Primary Side<a class="headerlink" href="#primary-side" title="Link to this heading"></a></h4>
+<h3>Primary Side<a class="headerlink" href="#primary-side" title="Link to this heading"></a></h3>
 <figure class="align-default" id="id3">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/top_temp.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/top_temp.jpg" />
 <figcaption>
@@ -588,7 +584,7 @@ to use most 5V wall wart power supplies available in the market.</p>
 </figcaption>
 </figure>
 <section id="sma-connectors">
-<h5>SMA Connectors<a class="headerlink" href="#sma-connectors" title="Link to this heading"></a></h5>
+<h4>SMA Connectors<a class="headerlink" href="#sma-connectors" title="Link to this heading"></a></h4>
 <p>The SMA connectors are used for the RF input and output connections:</p>
 <ul class="simple">
 <li><p><strong>J1</strong> is the <strong>RF Input</strong> SMA male connector that would be connected to a
@@ -602,7 +598,7 @@ Use an RF attenuator if necessary to avoid damage.</p></li>
 </ul>
 </section>
 <section id="led-indicators">
-<h5>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h5>
+<h4>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h4>
 <p>The reference design uses two LEDs to indicate its current status:</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -635,7 +631,7 @@ Use an RF attenuator if necessary to avoid damage.</p></li>
 </section>
 </section>
 <section id="secondary-side">
-<h4>Secondary Side<a class="headerlink" href="#secondary-side" title="Link to this heading"></a></h4>
+<h3>Secondary Side<a class="headerlink" href="#secondary-side" title="Link to this heading"></a></h3>
 <figure class="align-default" id="id4">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/bot_temp.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0523-ebz/bot_temp.jpg" />
 <figcaption>
@@ -643,14 +639,14 @@ Use an RF attenuator if necessary to avoid damage.</p></li>
 </figcaption>
 </figure>
 <section id="power-supply-connector">
-<h5>Power Supply Connector<a class="headerlink" href="#power-supply-connector" title="Link to this heading"></a></h5>
+<h4>Power Supply Connector<a class="headerlink" href="#power-supply-connector" title="Link to this heading"></a></h4>
 <ul class="simple">
 <li><p><strong>P1</strong> is the micro-USB port used to provide 5V power to the board. The total
 typical supply current of the on-board RF amplifiers is 230mA.</p></li>
 </ul>
 </section>
 <section id="changing-the-temperature-switch-trip-point-jp1-jp2-jp3">
-<h5>Changing the Temperature Switch Trip Point (JP1, JP2, JP3)<a class="headerlink" href="#changing-the-temperature-switch-trip-point-jp1-jp2-jp3" title="Link to this heading"></a></h5>
+<h4>Changing the Temperature Switch Trip Point (JP1, JP2, JP3)<a class="headerlink" href="#changing-the-temperature-switch-trip-point-jp1-jp2-jp3" title="Link to this heading"></a></h4>
 <ul>
 <li><p>The trip point of the temperature switch can be set using the solder jumpers
 JP1, JP2, and JP3 as shown in the table below. When the board temperature
@@ -758,9 +754,9 @@ the last three options should not be used.</p>
 </section>
 </section>
 <section id="getting-started">
-<h3>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h3>
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
 <section id="required-equipment">
-<h4>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h4>
+<h3>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h3>
 <p><strong>Hardware</strong></p>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a></p></li>
@@ -787,7 +783,7 @@ it. Follow the procedure through this
 </ul>
 </section>
 <section id="test-setup">
-<h4>Test Setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h4>
+<h3>Test Setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Connect directly the <strong>TX port</strong> of <a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a> to the
 <strong>RF Input (J1)</strong> of the <a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">EVAL-CN0523-EBZ</a>.</p></li>
@@ -821,7 +817,7 @@ the ADALM PLUTO to avoid incurring damage.</p>
 </section>
 </section>
 <section id="more-information-and-useful-links">
-<h3>More Information and Useful Links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h3>
+<h2>More Information and Useful Links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0523" target="_blank">CN0523 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/HMC407" target="_blank">HMC407 Product Page</a></p></li>
@@ -835,7 +831,7 @@ the ADALM PLUTO to avoid incurring damage.</p>
 </ul>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
-<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon link reference external" href="https://www.analog.com/cn0523-DesignSupport" target="_blank">EVAL-CN0523-EBZ Design &amp; Integration Files</a></p>
@@ -849,10 +845,9 @@ the ADALM PLUTO to avoid incurring damage.</p>
 </div>
 </section>
 <section id="help-and-support">
-<h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
+<h2>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h2>
 <p>For questions and more information about this product, connect with us through
 the Analog Devices <a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone</a>.</p>
-</section>
 </section>
 </section>
 

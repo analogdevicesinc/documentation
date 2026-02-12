@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="CN0503 is a reconfigurable multi-parameter optical liquid measurement platform capable of performing colorimetry, turbidity, and fluorometry. The design minimizes complexity by using a highly integrated multimodal sensor front end capable of simultaneously driving four LEDs, and synchronously measuring four pairs of photodiodes at a flexible sampling rate. Furthermore, the front end has on-chip digital filters and high ambient light rejection which allow the platform to operate regardless of environmental lighting conditions." name="description" />
+<meta content="Multiple Parameter Optical Liquid Measurement Platform." name="description" />
 
     <title>EVAL-CN0503-ARDZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0503-ARDZ</a><ul>
-<li><a class="reference internal" href="#multiple-parameter-optical-liquid-measurement-platform">Multiple Parameter Optical Liquid Measurement Platform</a><ul>
 <li><a class="reference internal" href="#materials-needed">Materials Needed</a></li>
 <li><a class="reference internal" href="#led-and-photodiode-boards">LED and Photodiode Boards</a><ul>
 <li><a class="reference internal" href="#led-boards">LED Boards</a></li>
@@ -144,8 +143,6 @@
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#d-printed-files-mechanical-base-and-cuvette-holder">3D Printed Files (Mechanical Base and Cuvette Holder)</a></li>
 <li><a class="reference internal" href="#software-reference-design-demo">Software Reference Design &amp; Demo</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -575,8 +572,7 @@ Content on this topic
             
   <section id="eval-cn0503-ardz">
 <span id="id1"></span><h1>EVAL-CN0503-ARDZ<a class="headerlink" href="#eval-cn0503-ardz" title="Link to this heading"></a></h1>
-<section id="multiple-parameter-optical-liquid-measurement-platform">
-<h2>Multiple Parameter Optical Liquid Measurement Platform<a class="headerlink" href="#multiple-parameter-optical-liquid-measurement-platform" title="Link to this heading"></a></h2>
+<p>Multiple Parameter Optical Liquid Measurement Platform.</p>
 <p><a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> is a reconfigurable multi-parameter optical liquid
 measurement platform capable of performing colorimetry, turbidity, and
 fluorometry. The design minimizes complexity by using a highly integrated
@@ -587,7 +583,7 @@ rejection which allow the platform to operate regardless of environmental
 lighting conditions.</p>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/fullphoto.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/fullphoto.jpg" />
 <section id="materials-needed">
-<h3>Materials Needed<a class="headerlink" href="#materials-needed" title="Link to this heading"></a></h3>
+<h2>Materials Needed<a class="headerlink" href="#materials-needed" title="Link to this heading"></a></h2>
 <p>Here are the list of items (and their photos) included in <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">EVAL-CN0503-ARDZ</a>.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -758,7 +754,7 @@ Mounted Diameter</p></td>
 </div>
 </section>
 <section id="led-and-photodiode-boards">
-<h3>LED and Photodiode Boards<a class="headerlink" href="#led-and-photodiode-boards" title="Link to this heading"></a></h3>
+<h2>LED and Photodiode Boards<a class="headerlink" href="#led-and-photodiode-boards" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> supports 4 channels or paths of light which can be
 configured for different types of optical measurements. The 2 channels at the
 sides are capable of measuring light intensity reflected at 90 degrees from
@@ -768,7 +764,7 @@ natively support 8 different wavelengths. Additional spare boards are
 available to accommodate LEDs with other wavelengths.</p>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/pathlayout.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/pathlayout.jpg" />
 <section id="led-boards">
-<h4>LED Boards<a class="headerlink" href="#led-boards" title="Link to this heading"></a></h4>
+<h3>LED Boards<a class="headerlink" href="#led-boards" title="Link to this heading"></a></h3>
 <p>There are 12 LED boards listed below which are included in
 <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> covering 8 different wavelengths, 2 spare boards for
 custom Lite-On LEDs, and 2 spare boards for Lumiled LEDs.</p>
@@ -821,7 +817,7 @@ custom Lite-On LEDs, and 2 spare boards for Lumiled LEDs.</p>
 </div>
 </section>
 <section id="photodiode-pd-boards">
-<h4>Photodiode (PD) Boards<a class="headerlink" href="#photodiode-pd-boards" title="Link to this heading"></a></h4>
+<h3>Photodiode (PD) Boards<a class="headerlink" href="#photodiode-pd-boards" title="Link to this heading"></a></h3>
 <p>There are a total of 6 PD boards used in <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a>, 4 Transmit PD
 Boards and 2 Fluorescent PD Boards. The Transmit PD Boards are used to measure
 light intensity passing through the liquid sample. The Fluorescent PD boards are
@@ -849,7 +845,7 @@ light sample.</p>
 </section>
 </section>
 <section id="assembling-the-mechanical-fixtures">
-<h3>Assembling the Mechanical Fixtures<a class="headerlink" href="#assembling-the-mechanical-fixtures" title="Link to this heading"></a></h3>
+<h2>Assembling the Mechanical Fixtures<a class="headerlink" href="#assembling-the-mechanical-fixtures" title="Link to this heading"></a></h2>
 <p><a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> uses 3D printed mechanical fixtures to enable four directed light
 paths to the liquid sample held in a <strong>Cuvette</strong>. The mechanical fixtures can be classified
 into two separate objects: the <strong>Mounted Base</strong> and the <strong>Tower</strong>. The <strong>Mounted Base</strong>
@@ -859,9 +855,9 @@ sample, and optical glass items: a <strong>Condenser Lens</strong>, a <strong>Ne
 <strong>Narrowband Transmit Filter</strong>, and a <strong>Beamsplitter</strong>. Below are two videos showing the
 assembly of the base and tower, respectively.</p>
 <section id="assembling-the-base">
-<h4>Assembling the Base<a class="headerlink" href="#assembling-the-base" title="Link to this heading"></a></h4>
+<h3>Assembling the Base<a class="headerlink" href="#assembling-the-base" title="Link to this heading"></a></h3>
 <section id="mounting-the-base">
-<h5>Mounting the Base<a class="headerlink" href="#mounting-the-base" title="Link to this heading"></a></h5>
+<h4>Mounting the Base<a class="headerlink" href="#mounting-the-base" title="Link to this heading"></a></h4>
 <p>A <strong>Mounted Base</strong>  fits on top of the <strong>Main Board</strong>  by following the outlined position in the
 silkscreen. At its bottom, attach 4 <strong>M1 magnets</strong>  to the provisions as shown below.</p>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/img_20200429_094741.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/img_20200429_094741.jpg" />
@@ -877,7 +873,7 @@ the <strong>Main Board</strong>.</p>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/img_20200428_113023.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/img_20200428_113023.jpg" />
 </section>
 <section id="connecting-the-led-and-photodiode-pd-boards">
-<h5>Connecting the LED and Photodiode (PD) Boards<a class="headerlink" href="#connecting-the-led-and-photodiode-pd-boards" title="Link to this heading"></a></h5>
+<h4>Connecting the LED and Photodiode (PD) Boards<a class="headerlink" href="#connecting-the-led-and-photodiode-pd-boards" title="Link to this heading"></a></h4>
 <p>The <strong>LED Boards</strong> are drawn with a huge ‘X’ on the silkscreen which marks
 the center of the area of interest or the active area of the LED.
 To mount the <strong>LED Boards</strong>, face the top of the board with the LED facing
@@ -906,7 +902,7 @@ jumper headers.</p>
 </div>
 </section>
 <section id="inserting-the-flourescent-filters">
-<h5>Inserting the Flourescent Filters<a class="headerlink" href="#inserting-the-flourescent-filters" title="Link to this heading"></a></h5>
+<h4>Inserting the Flourescent Filters<a class="headerlink" href="#inserting-the-flourescent-filters" title="Link to this heading"></a></h4>
 <p>Two <strong>Fluorescent Filters</strong>  can be placed in the square
 slot in front of each <strong>Fluorescent PD Board</strong>  as shown below.</p>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/img_20200429_112032.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/img_20200429_112032.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/img_20200429_112032.jpg" style="width: 500px;" />
@@ -914,7 +910,7 @@ slot in front of each <strong>Fluorescent PD Board</strong>  as shown below.</p>
 </section>
 </section>
 <section id="assembling-the-tower">
-<h4>Assembling the Tower<a class="headerlink" href="#assembling-the-tower" title="Link to this heading"></a></h4>
+<h3>Assembling the Tower<a class="headerlink" href="#assembling-the-tower" title="Link to this heading"></a></h3>
 <p>The tower holds the optical glass items and the cuvette which holds the liquid
 sample. This section details how each of these items are assembled into
 position to form the light path and also, the 3D printed mechanical fixtures
@@ -926,7 +922,7 @@ which hold them in place (<strong>Cuvette Holder</strong>, <strong>Cuvette Holde
 do as well as prioritizes the important optical glass pieces.</p>
 </div>
 <section id="securing-the-beamsplitter">
-<h5>Securing the Beamsplitter<a class="headerlink" href="#securing-the-beamsplitter" title="Link to this heading"></a></h5>
+<h4>Securing the Beamsplitter<a class="headerlink" href="#securing-the-beamsplitter" title="Link to this heading"></a></h4>
 <p>The <strong>Beamsplitter</strong>  is used to direct the light path to both the liquid
 sample in the <strong>Cuvette</strong>  as well as the reference photodiode located below
 it. It is angled at 45 degrees with respect to the light path and should be
@@ -960,7 +956,7 @@ sounds when you shake the <strong>Cuvette Holder</strong>.</p>
 </div>
 </section>
 <section id="securing-the-condenser-lens">
-<h5>Securing the Condenser Lens<a class="headerlink" href="#securing-the-condenser-lens" title="Link to this heading"></a></h5>
+<h4>Securing the Condenser Lens<a class="headerlink" href="#securing-the-condenser-lens" title="Link to this heading"></a></h4>
 <p>The <strong>Condenser Lens</strong> is used to focus and direct the light from the LED
 through the tower and form the light path. Thus, it is important that the
 <strong>Condenser Lens</strong> be positioned properly and tightly secured so that no slight
@@ -987,7 +983,7 @@ you shake the <strong>Cuvette Holder</strong>.</p>
 </div>
 </section>
 <section id="adding-a-narrowband-transmit-filter-and-neutral-density-filter-optional">
-<h5>Adding a Narrowband Transmit Filter and Neutral Density Filter (Optional)<a class="headerlink" href="#adding-a-narrowband-transmit-filter-and-neutral-density-filter-optional" title="Link to this heading"></a></h5>
+<h4>Adding a Narrowband Transmit Filter and Neutral Density Filter (Optional)<a class="headerlink" href="#adding-a-narrowband-transmit-filter-and-neutral-density-filter-optional" title="Link to this heading"></a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This step is typically not required, because the EVAL-CN0503-ARDZ kit does
@@ -1012,7 +1008,7 @@ decrease the input current range.</p>
 </div>
 </section>
 <section id="placing-the-cuvette-cover">
-<h5>Placing the Cuvette Cover<a class="headerlink" href="#placing-the-cuvette-cover" title="Link to this heading"></a></h5>
+<h4>Placing the Cuvette Cover<a class="headerlink" href="#placing-the-cuvette-cover" title="Link to this heading"></a></h4>
 <p>The <strong>Cuvette Cover</strong> secures the hold for the <strong>Cuvette</strong> and shields the
 measurement light path from external sources. It also prevents the optional
 filters from being knocked out of the <strong>Cuvette Holder</strong>. Thus, it is necessary
@@ -1035,7 +1031,7 @@ shown below.</p></li>
 </ol>
 </section>
 <section id="placing-the-cuvette">
-<h5>Placing the Cuvette<a class="headerlink" href="#placing-the-cuvette" title="Link to this heading"></a></h5>
+<h4>Placing the Cuvette<a class="headerlink" href="#placing-the-cuvette" title="Link to this heading"></a></h4>
 <p>The <strong>Cuvette</strong> can easily be added to the <strong>Cuvette Holder</strong> as shown below.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1061,24 +1057,24 @@ adjusted to increase or decrease the tightness of the hold.</p>
 </section>
 </section>
 <section id="video-guides">
-<h4>Video Guides<a class="headerlink" href="#video-guides" title="Link to this heading"></a></h4>
+<h3>Video Guides<a class="headerlink" href="#video-guides" title="Link to this heading"></a></h3>
 <section id="unboxing">
-<h5>Unboxing<a class="headerlink" href="#unboxing" title="Link to this heading"></a></h5>
+<h4>Unboxing<a class="headerlink" href="#unboxing" title="Link to this heading"></a></h4>
 <div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/FaHWg4H_XkU"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
 <p><a href="https://www.youtube.com/watch?v=FaHWg4H_XkU"><span>https://www.youtube.com/watch?v=FaHWg4H_XkU</span></a></p>
 </div></div></section>
 <section id="assembly-video">
-<h5>Assembly Video<a class="headerlink" href="#assembly-video" title="Link to this heading"></a></h5>
+<h4>Assembly Video<a class="headerlink" href="#assembly-video" title="Link to this heading"></a></h4>
 <div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/bH7nCD6H8c0"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
 <p><a href="https://www.youtube.com/watch?v=bH7nCD6H8c0"><span>https://www.youtube.com/watch?v=bH7nCD6H8c0</span></a></p>
 </div></div></section>
 <section id="basic-fluorescence-demo">
-<h5>Basic Fluorescence Demo<a class="headerlink" href="#basic-fluorescence-demo" title="Link to this heading"></a></h5>
+<h4>Basic Fluorescence Demo<a class="headerlink" href="#basic-fluorescence-demo" title="Link to this heading"></a></h4>
 <div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/97YHC4MVhbU"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
 <p><a href="https://www.youtube.com/watch?v=97YHC4MVhbU"><span>https://www.youtube.com/watch?v=97YHC4MVhbU</span></a></p>
 </div></div></section>
 <section id="mounting-the-tower-to-the-base">
-<h5>Mounting the Tower to the Base<a class="headerlink" href="#mounting-the-tower-to-the-base" title="Link to this heading"></a></h5>
+<h4>Mounting the Tower to the Base<a class="headerlink" href="#mounting-the-tower-to-the-base" title="Link to this heading"></a></h4>
 <p>The <strong>Mounted Base</strong> accommodates up to a maximum of 4
 <strong>Towers</strong>.</p>
 <p><strong>Towers</strong> are interchangeable and can be placed in any of the 4
@@ -1089,12 +1085,12 @@ pressure may be needed to fully push the <strong>Tower</strong> down.</p>
 </section>
 </section>
 <section id="jumper-settings">
-<h3>Jumper Settings<a class="headerlink" href="#jumper-settings" title="Link to this heading"></a></h3>
+<h2>Jumper Settings<a class="headerlink" href="#jumper-settings" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> has ten jumper positions which configure different
 settings as shown below. The default shunt positions are highlighted.</p>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/jumperlocations.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/jumperlocations.jpg" />
 <section id="v-ldo-enable">
-<h4>1.8V LDO Enable<a class="headerlink" href="#v-ldo-enable" title="Link to this heading"></a></h4>
+<h3>1.8V LDO Enable<a class="headerlink" href="#v-ldo-enable" title="Link to this heading"></a></h3>
 <p>P1.8V enables the 1.8V LDO supply which sources its input voltage from the
 Arduino 3.3V pin. By default, a shunt is placed in P1.8V.</p>
 <div class="table-wrapper docutils container">
@@ -1127,7 +1123,7 @@ the LDO should be disabled.</p>
 </div>
 </section>
 <section id="i-o-voltage-selection">
-<h4>I/O Voltage Selection<a class="headerlink" href="#i-o-voltage-selection" title="Link to this heading"></a></h4>
+<h3>I/O Voltage Selection<a class="headerlink" href="#i-o-voltage-selection" title="Link to this heading"></a></h3>
 <p>IOSEL selects the source of the logic level voltage for the
 <a class="icon adi reference external" href="https://www.analog.com/ADPD4101" target="_blank">ADPD4101</a>. By default, a shunt is placed connecting Pins 1
 and 2.</p>
@@ -1155,7 +1151,7 @@ and 2.</p>
 </div>
 </section>
 <section id="led-supply-selection">
-<h4>LED Supply Selection<a class="headerlink" href="#led-supply-selection" title="Link to this heading"></a></h4>
+<h3>LED Supply Selection<a class="headerlink" href="#led-supply-selection" title="Link to this heading"></a></h3>
 <p>There are 4 jumper selection headers to set the supply source of each of the
 four LED connections. Each follow the same selection rules for shunt
 placement. By default, a shunt is placed connecting pins 1 and 2 for all 4
@@ -1332,7 +1328,7 @@ Connecting pins 3 and 4</p></td>
 </div>
 </section>
 <section id="photodiode-selection">
-<h4>Photodiode Selection<a class="headerlink" href="#photodiode-selection" title="Link to this heading"></a></h4>
+<h3>Photodiode Selection<a class="headerlink" href="#photodiode-selection" title="Link to this heading"></a></h3>
 <p>There are 4 photodiode selection headers available to the two side light
 paths. These 2 light paths have the option to use a fluorescent photodiode
 located at right angles from the light path. The combination of which
@@ -1467,14 +1463,14 @@ input channel</p></td>
 </section>
 </section>
 <section id="arduino-connection">
-<h3>Arduino Connection<a class="headerlink" href="#arduino-connection" title="Link to this heading"></a></h3>
+<h2>Arduino Connection<a class="headerlink" href="#arduino-connection" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> stacks on top of the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> or any Arduino microcontroller
 using the <strong>PWMH</strong>, <strong>PWML</strong>, <strong>POWER</strong>, and <strong>ANALOG</strong> headers. You will also have to
 remove the stand-offs from the <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> as shown below.</p>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/img_20200502_160856.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/img_20200502_160856.jpg" />
 </section>
 <section id="demo-hardware-setup">
-<h3>Demo Hardware Setup<a class="headerlink" href="#demo-hardware-setup" title="Link to this heading"></a></h3>
+<h2>Demo Hardware Setup<a class="headerlink" href="#demo-hardware-setup" title="Link to this heading"></a></h2>
 <p>This section details the hardware setup of <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> for a
 demonstration showing 4 different experiments in each optical path, utilizing
 colorimetry (absorbance measurement), turbidity, and fluorescence measurement.
@@ -1535,7 +1531,7 @@ Filters</p></td>
 <p>The jumper configuration of the <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> for this setup is
 shown below.</p>
 <section id="optical-path-1">
-<h4>Optical Path 1<a class="headerlink" href="#optical-path-1" title="Link to this heading"></a></h4>
+<h3>Optical Path 1<a class="headerlink" href="#optical-path-1" title="Link to this heading"></a></h3>
 <p>In optical path 1, the experiment shows the detection of quinine in tonic water
 using fluorescence measurements. Optionally, you can also use samples of soda
 water and de-ionized water for comparison.</p>
@@ -1544,7 +1540,7 @@ water and de-ionized water for comparison.</p>
 </ul>
 </section>
 <section id="optical-path-2">
-<h4>Optical Path 2<a class="headerlink" href="#optical-path-2" title="Link to this heading"></a></h4>
+<h3>Optical Path 2<a class="headerlink" href="#optical-path-2" title="Link to this heading"></a></h3>
 <p>In optical path 2, the experiment shows pH measurement by using colorimetry to
 detect changes the solution through the bromothymol blue indicator. As pH
 changes from an acidic level to a neutral and basic level, bromothymol blue
@@ -1556,7 +1552,7 @@ be done using a simple aquarium kit.</p>
 </ul>
 </section>
 <section id="optical-path-3">
-<h4>Optical Path 3<a class="headerlink" href="#optical-path-3" title="Link to this heading"></a></h4>
+<h3>Optical Path 3<a class="headerlink" href="#optical-path-3" title="Link to this heading"></a></h3>
 <p>In optical path 3, the experiment shows nitrate detection using colorimetry.
 Using the API reagent found in nitrate test kits, a solution with a higher
 concentration of nitrate turns into a darker shade of red. As a result, the
@@ -1567,7 +1563,7 @@ concentration.</p>
 </ul>
 </section>
 <section id="optical-path-4">
-<h4>Optical Path 4<a class="headerlink" href="#optical-path-4" title="Link to this heading"></a></h4>
+<h3>Optical Path 4<a class="headerlink" href="#optical-path-4" title="Link to this heading"></a></h3>
 <p>In optical path 4, the experiment shows turbidity measurements of cloudy water
 made by adding a a drop of milk and de-ionized water using 530nm light.</p>
 <ul class="simple">
@@ -1576,7 +1572,7 @@ made by adding a a drop of milk and de-ionized water using 530nm light.</p>
 </section>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
-<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/CN0503-DesignSupport.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-CN0503-ARDZ</span> <span class="pre">Design</span> <span class="pre">&amp;</span> <span class="pre">Integration</span> <span class="pre">Files</span></code></a></p>
@@ -1589,7 +1585,7 @@ made by adding a a drop of milk and de-ionized water using 530nm light.</p>
 </div>
 </section>
 <section id="d-printed-files-mechanical-base-and-cuvette-holder">
-<h3>3D Printed Files (Mechanical Base and Cuvette Holder)<a class="headerlink" href="#d-printed-files-mechanical-base-and-cuvette-holder" title="Link to this heading"></a></h3>
+<h2>3D Printed Files (Mechanical Base and Cuvette Holder)<a class="headerlink" href="#d-printed-files-mechanical-base-and-cuvette-holder" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0503-ardz/rev_d.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-CN0503-ARDZ</span> <span class="pre">STL</span> <span class="pre">Files</span></code></a></p>
@@ -1607,7 +1603,7 @@ vendors; we are merely providing our feedback.</p>
 </div>
 </section>
 <section id="software-reference-design-demo">
-<h3>Software Reference Design &amp; Demo<a class="headerlink" href="#software-reference-design-demo" title="Link to this heading"></a></h3>
+<h2>Software Reference Design &amp; Demo<a class="headerlink" href="#software-reference-design-demo" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="cn0503-software/index.html">Software User Guide</a></li>
@@ -1617,7 +1613,6 @@ vendors; we are merely providing our feedback.</p>
 <li class="toctree-l1"><a class="reference internal" href="turbidity/index.html">Turbidity Measurement Demo</a></li>
 </ul>
 </div>
-</section>
 </section>
 </section>
 

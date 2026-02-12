@@ -3,8 +3,7 @@
 AD-RPI-T1LPSE-SL
 ================
 
-2-port 10BASE-T1L Field Switch with SPoE PSE
-""""""""""""""""""""""""""""""""""""""""""""
+2-port 10BASE-T1L Field Switch with SPoE PSE.
 
 General Description
 -------------------

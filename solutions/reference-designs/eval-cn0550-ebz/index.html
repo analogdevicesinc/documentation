@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The EVAL-CN0550-EBZ is a 4-layer printed circuit board (PCB) that allows evaluation of the CN0550 High Speed USB 2.0 Peripheral Isolator circuit. The board is fabricated with a 0.5oz./1oz. copper cladding and IPC-4101 (or IPC-4103) laminates and bonding materials." name="description" />
+<meta content="Low/Full/High-Speed USB 2.0 Isolator with Isolated Power." name="description" />
 
     <title>EVAL-CN0550-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0550-EBZ</a><ul>
-<li><a class="reference internal" href="#low-full-high-speed-usb-2-0-isolator-with-isolated-power">Low/Full/High-Speed USB 2.0 Isolator with Isolated Power</a><ul>
 <li><a class="reference internal" href="#general-description">General Description</a></li>
 <li><a class="reference internal" href="#evaluation-board-hardware">Evaluation Board Hardware</a><ul>
 <li><a class="reference internal" href="#usb-host-plug-and-led-indicator-p1-bus1">USB Host Plug and LED Indicator (P1, BUS1)</a></li>
@@ -106,8 +105,6 @@
 </li>
 <li><a class="reference internal" href="#schematic-layout-and-bill-of-materials">Schematic, Layout and Bill of Materials</a></li>
 <li><a class="reference internal" href="#more-information-and-useful-links">More Information and Useful Links</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -537,10 +534,9 @@ Content on this topic
             
   <section id="eval-cn0550-ebz">
 <span id="id1"></span><h1>EVAL-CN0550-EBZ<a class="headerlink" href="#eval-cn0550-ebz" title="Link to this heading"></a></h1>
-<section id="low-full-high-speed-usb-2-0-isolator-with-isolated-power">
-<h2>Low/Full/High-Speed USB 2.0 Isolator with Isolated Power<a class="headerlink" href="#low-full-high-speed-usb-2-0-isolator-with-isolated-power" title="Link to this heading"></a></h2>
+<p>Low/Full/High-Speed USB 2.0 Isolator with Isolated Power.</p>
 <section id="general-description">
-<h3>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h3>
+<h2>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0550" target="_blank">EVAL-CN0550-EBZ</a> is a 4-layer printed circuit board (PCB)
 that allows evaluation of the <a class="icon adi reference external" href="https://www.analog.com/CN0550" target="_blank">CN0550</a> High Speed USB 2.0
 Peripheral Isolator circuit. The board is fabricated with a <code class="docutils literal notranslate"><span class="pre">0.5oz./1oz.</span></code>
@@ -555,7 +551,7 @@ Straight headers on each side allow the users to use an external power supply
 for high current applications.</p>
 </section>
 <section id="evaluation-board-hardware">
-<h3>Evaluation Board Hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h3>
+<h2>Evaluation Board Hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h2>
 <figure class="align-default" id="id2">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0550-ebz/cn0550-top.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0550-ebz/cn0550-top.jpg" />
 <figcaption>
@@ -563,7 +559,7 @@ for high current applications.</p>
 </figcaption>
 </figure>
 <section id="usb-host-plug-and-led-indicator-p1-bus1">
-<h4>USB Host Plug and LED Indicator (P1, BUS1)<a class="headerlink" href="#usb-host-plug-and-led-indicator-p1-bus1" title="Link to this heading"></a></h4>
+<h3>USB Host Plug and LED Indicator (P1, BUS1)<a class="headerlink" href="#usb-host-plug-and-led-indicator-p1-bus1" title="Link to this heading"></a></h3>
 <p>The USB host controller must be connected to the male USB-A connector (P1).</p>
 <p><em>The yellow-green LED (BUS1) lights up to indicate the presence of 5V power
 from the USB host.</em></p>
@@ -572,7 +568,7 @@ from the USB host.</em></p>
 </figure>
 </section>
 <section id="usb-peripheral-port-and-led-indicator-p2-bus2">
-<h4>USB Peripheral Port and LED Indicator (P2, BUS2)<a class="headerlink" href="#usb-peripheral-port-and-led-indicator-p2-bus2" title="Link to this heading"></a></h4>
+<h3>USB Peripheral Port and LED Indicator (P2, BUS2)<a class="headerlink" href="#usb-peripheral-port-and-led-indicator-p2-bus2" title="Link to this heading"></a></h3>
 <p>The USB peripheral device must be connected to the female USB-A connector
 (P2).</p>
 <p><em>The yellow-green LED (BUS2) lights up to indicate the presence of 5V power
@@ -582,7 +578,7 @@ for the USB peripheral device.</em></p>
 </figure>
 </section>
 <section id="host-side-power-connector-and-led-indicator-p3-ext1">
-<h4>Host Side Power Connector and LED Indicator (P3, EXT1)<a class="headerlink" href="#host-side-power-connector-and-led-indicator-p3-ext1" title="Link to this heading"></a></h4>
+<h3>Host Side Power Connector and LED Indicator (P3, EXT1)<a class="headerlink" href="#host-side-power-connector-and-led-indicator-p3-ext1" title="Link to this heading"></a></h3>
 <p>The onboard regulator circuit of the CN0550 can typically
 supply a maximum current of 440mA to the peripheral side when powered from
 the VCC pin of the USB host. For applications that require higher current,
@@ -622,7 +618,7 @@ respectively to pins 1 and 2 of P3.</p>
 </div>
 </section>
 <section id="peripheral-side-power-connector-and-led-indicator-p4-ext2">
-<h4>Peripheral Side Power Connector and LED Indicator (P4, EXT2)<a class="headerlink" href="#peripheral-side-power-connector-and-led-indicator-p4-ext2" title="Link to this heading"></a></h4>
+<h3>Peripheral Side Power Connector and LED Indicator (P4, EXT2)<a class="headerlink" href="#peripheral-side-power-connector-and-led-indicator-p4-ext2" title="Link to this heading"></a></h3>
 <p>For applications where 5V power is already available on the peripheral side,
 the onboard regulator can be bypassed by moving the J2 solder jumper to the
 ‘B’ position, and connecting the external 5V peripheral power across the P3
@@ -661,7 +657,7 @@ and (-) pins of the external power supply respectively to pins 1 and 2 of P4.</p
 </section>
 </section>
 <section id="schematic-layout-and-bill-of-materials">
-<h3>Schematic, Layout and Bill of Materials<a class="headerlink" href="#schematic-layout-and-bill-of-materials" title="Link to this heading"></a></h3>
+<h2>Schematic, Layout and Bill of Materials<a class="headerlink" href="#schematic-layout-and-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon adi reference external" href="https://www.analog.com/CN0550-DesignSupport" target="_blank">EVAL-CN0550-EBZ Design &amp; Integration Files</a></p>
@@ -675,13 +671,12 @@ and (-) pins of the external power supply respectively to pins 1 and 2 of P4.</p
 </div>
 </section>
 <section id="more-information-and-useful-links">
-<h3>More Information and Useful Links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h3>
+<h2>More Information and Useful Links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0550" target="_blank">CN0550 Circuit Note Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADuM3165" target="_blank">ADuM3165 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/LT8301" target="_blank">LT8301 Product Page</a></p></li>
 </ul>
-</section>
 </section>
 </section>
 

@@ -16,8 +16,7 @@ software drivers, and algorithm development.
 Our development boards for Battery Management Systems (BMS), Gigabit Multimedia
 Serial Link (GMSL), and 10BASE-T1L applications are now available in the following pages:
 
-.. toctree::
-   :maxdepth: 2
+.. toctree-preview::
    :glob:
 
    */index

@@ -3,8 +3,7 @@
 EVAL-CN0579-ARDZ
 ================
 
-Quad-Channel IEPE Vibration Sensor Measurement System
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Quad-Channel IEPE Vibration Sensor Measurement System.
 
 Overview
 --------

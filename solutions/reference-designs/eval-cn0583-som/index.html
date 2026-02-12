@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The hardware used for evaluation of the CN0583 smoke detector module is composed of two parts — the EVAL-CN0583-SOM smoke detector system-on-module (SOM), and the EVAL-CN0583-CRR1 carrier board." name="description" />
+<meta content="Multistandard Micropower Verified Smoke Detection System-on-Module." name="description" />
 
     <title>EVAL-CN0583-SOM &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0583-SOM</a><ul>
-<li><a class="reference internal" href="#multistandard-micropower-verified-smoke-detection-system-on-module">Multistandard Micropower Verified Smoke Detection System-on-Module</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#system-on-module">System-on-Module</a><ul>
 <li><a class="reference internal" href="#board-castellated-pins">Board Castellated Pins</a></li>
@@ -129,8 +128,6 @@
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#additional-information-and-useful-links">Additional Information and Useful Links</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -560,10 +557,9 @@ Content on this topic
             
   <section id="eval-cn0583-som">
 <span id="id1"></span><h1>EVAL-CN0583-SOM<a class="headerlink" href="#eval-cn0583-som" title="Link to this heading"></a></h1>
-<section id="multistandard-micropower-verified-smoke-detection-system-on-module">
-<h2>Multistandard Micropower Verified Smoke Detection System-on-Module<a class="headerlink" href="#multistandard-micropower-verified-smoke-detection-system-on-module" title="Link to this heading"></a></h2>
+<p>Multistandard Micropower Verified Smoke Detection System-on-Module.</p>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The hardware used for evaluation of the <a class="icon adi reference external" href="https://www.analog.com/CN0583" target="_blank">CN0583</a> smoke detector
 module is composed of two parts — the <strong>EVAL-CN0583-SOM</strong> smoke detector
 system-on-module (SOM), and the <strong>EVAL-CN0583-CRR1</strong> carrier board.</p>
@@ -587,9 +583,9 @@ included on the board to allow users to implement a basic alarm function in
 their smoke detector application.</p>
 </section>
 <section id="system-on-module">
-<h3>System-on-Module<a class="headerlink" href="#system-on-module" title="Link to this heading"></a></h3>
+<h2>System-on-Module<a class="headerlink" href="#system-on-module" title="Link to this heading"></a></h2>
 <section id="board-castellated-pins">
-<h4>Board Castellated Pins<a class="headerlink" href="#board-castellated-pins" title="Link to this heading"></a></h4>
+<h3>Board Castellated Pins<a class="headerlink" href="#board-castellated-pins" title="Link to this heading"></a></h3>
 <p>The SOM has 28 castellated “pins” divided into two 14-pin rows and arranged in
 a dual in-line pattern. These pins are used to supply power and interface
 external circuitry with the SOM hardware, allowing access to the GPIO pins of
@@ -773,7 +769,7 @@ reconnecting it afterward.</p></li>
 </ol>
 </section>
 <section id="uart-cable-connection">
-<h4>UART Cable Connection<a class="headerlink" href="#uart-cable-connection" title="Link to this heading"></a></h4>
+<h3>UART Cable Connection<a class="headerlink" href="#uart-cable-connection" title="Link to this heading"></a></h3>
 <p>There are 4 test points on the SOM that can be used to access the UART port of
 the <a class="icon adi reference external" href="https://www.analog.com/MAX32660" target="_blank">MAX32660</a> with an external cable. This can be used to
 configure the smoke detector module during run time, or stream the measured
@@ -850,7 +846,7 @@ the <strong>P1</strong> test points.</p></td>
 </div>
 </section>
 <section id="led-supply-voltage-configuration">
-<h4>LED Supply Voltage Configuration<a class="headerlink" href="#led-supply-voltage-configuration" title="Link to this heading"></a></h4>
+<h3>LED Supply Voltage Configuration<a class="headerlink" href="#led-supply-voltage-configuration" title="Link to this heading"></a></h3>
 <p>Depending on your specific power and application requirements, it may be
 desirable to only supply power to one of the internal LEDs of the
 <a class="icon adi reference external" href="https://www.analog.com/ADPD188BI" target="_blank">ADPD188BI</a>. Refer to the table below on setting the <strong>JP2</strong>
@@ -894,7 +890,7 @@ disabled.</p></td>
 </section>
 </section>
 <section id="carrier-board">
-<h3>Carrier Board<a class="headerlink" href="#carrier-board" title="Link to this heading"></a></h3>
+<h2>Carrier Board<a class="headerlink" href="#carrier-board" title="Link to this heading"></a></h2>
 <p>The <strong>EVAL-CN0583-CRR1</strong> is a carrier board designed to directly mount the
 <strong>EVAL-CN0583-SOM</strong> and emulate a traditional smoke detector application.</p>
 <figure class="align-default">
@@ -902,7 +898,7 @@ disabled.</p></td>
 </a>
 </figure>
 <section id="som-mounting">
-<h4>SOM Mounting<a class="headerlink" href="#som-mounting" title="Link to this heading"></a></h4>
+<h3>SOM Mounting<a class="headerlink" href="#som-mounting" title="Link to this heading"></a></h3>
 <p>The two rows of pogo pins (P1, P2) are spring-loaded connectors used to mount
 the SOM. The SOM is inserted between these connectors “one side at a time” by
 aligning one castellated edge with a row of carrier board pogo pins, and then
@@ -916,7 +912,7 @@ with the pogo pins.</p>
 </figure>
 </section>
 <section id="power-source-options">
-<h4>Power Source Options<a class="headerlink" href="#power-source-options" title="Link to this heading"></a></h4>
+<h3>Power Source Options<a class="headerlink" href="#power-source-options" title="Link to this heading"></a></h3>
 <p>Depending on the application requirements, input power to the SOM can be
 supplied in one of three ways. To select the power source, adjust the setting
 of <strong>JP1</strong> as listed in the table below.</p>
@@ -956,7 +952,7 @@ carrier board will always draw power from the USB connector.</p>
 </div>
 </section>
 <section id="push-buttons">
-<h4>Push Buttons<a class="headerlink" href="#push-buttons" title="Link to this heading"></a></h4>
+<h3>Push Buttons<a class="headerlink" href="#push-buttons" title="Link to this heading"></a></h3>
 <p>There are two buttons on the <a class="icon adi reference external" href="https://www.analog.com/CN0583" target="_blank">CN0583</a> carrier board.</p>
 <ol class="arabic simple">
 <li><p>The <strong>TEST</strong> button can be used as a user input in the smoke detector
@@ -971,7 +967,7 @@ Class (CDC) virtual serial port, and UART communication with the
 </ol>
 </section>
 <section id="led-indicators">
-<h4>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h4>
+<h3>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h3>
 <p>There are two LEDs on the <a class="icon adi reference external" href="https://www.analog.com/CN0583" target="_blank">CN0583</a> carrier board.</p>
 <ol class="arabic simple">
 <li><p>The <strong>ALARM</strong> LED can be used as a visual indicator in the smoke detection
@@ -984,13 +980,13 @@ debugger firmware).</p></li>
 </ol>
 </section>
 <section id="buzzer">
-<h4>Buzzer<a class="headerlink" href="#buzzer" title="Link to this heading"></a></h4>
+<h3>Buzzer<a class="headerlink" href="#buzzer" title="Link to this heading"></a></h3>
 <p>The buzzer on the carrier board can be used as an audible alarm for the smoke
 detector application loaded on the SOM. This is connected to <strong>P0.5</strong> of the
 <a class="icon adi reference external" href="https://www.analog.com/MAX32660" target="_blank">MAX32660</a> on the SOM via pin 5 of <strong>P1</strong>.</p>
 </section>
 <section id="data-storage">
-<h4>Data Storage<a class="headerlink" href="#data-storage" title="Link to this heading"></a></h4>
+<h3>Data Storage<a class="headerlink" href="#data-storage" title="Link to this heading"></a></h3>
 <p>The carrier board includes a micro-SD card slot to enable storage of smoke
 data. To enable/disable this function, adjust the setting of jumper <strong>JP2</strong> as
 listed in the table below.</p>
@@ -1020,7 +1016,7 @@ listed in the table below.</p>
 </div>
 </section>
 <section id="programming-the-debugger">
-<h4>Programming the Debugger<a class="headerlink" href="#programming-the-debugger" title="Link to this heading"></a></h4>
+<h3>Programming the Debugger<a class="headerlink" href="#programming-the-debugger" title="Link to this heading"></a></h3>
 <p>The debugger circuit used in the carrier board is based on the
 <a class="icon adi reference external" href="https://www.analog.com/MAX32625PICO" target="_blank">MAX32625PICO</a> application platform. By default, the
 included <a class="icon adi reference external" href="https://www.analog.com/MAX32625" target="_blank">MAX32625</a> is already programmed with a bootloader
@@ -1095,9 +1091,9 @@ MAX32625.</p></td>
 </section>
 </section>
 <section id="cn0583-example-demo">
-<h3>CN0583 Example Demo<a class="headerlink" href="#cn0583-example-demo" title="Link to this heading"></a></h3>
+<h2>CN0583 Example Demo<a class="headerlink" href="#cn0583-example-demo" title="Link to this heading"></a></h2>
 <section id="demo-requirements">
-<h4>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h4>
+<h3>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h3>
 <p>The following are required to implement the example <a class="icon adi reference external" href="https://www.analog.com/CN0583" target="_blank">CN0583</a> demo
 application:</p>
 <blockquote>
@@ -1111,7 +1107,7 @@ application:</p>
 </ul>
 </div></blockquote>
 <section id="hardware-setup">
-<h5>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h5>
+<h4>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h4>
 <ol class="arabic simple">
 <li><p>Install the ADPD188BI smoke chamber on the primary side of the SOM.</p></li>
 <li><p>Carefully insert the SOM between <strong>P1</strong> and <strong>P2</strong> of the carrier board,
@@ -1127,7 +1123,7 @@ are complete and correct.</p></li>
 </section>
 </section>
 <section id="programming-the-som">
-<h4>Programming the SOM<a class="headerlink" href="#programming-the-som" title="Link to this heading"></a></h4>
+<h3>Programming the SOM<a class="headerlink" href="#programming-the-som" title="Link to this heading"></a></h3>
 <p>This step is only required if you want to update the firmware of the CN0583 SOM.
 The programming may be done over DAPLINK, as following:</p>
 <ol class="arabic">
@@ -1157,7 +1153,7 @@ section.</p></li>
 </ol>
 </section>
 <section id="serial-terminal-setup">
-<h4>Serial Terminal Setup<a class="headerlink" href="#serial-terminal-setup" title="Link to this heading"></a></h4>
+<h3>Serial Terminal Setup<a class="headerlink" href="#serial-terminal-setup" title="Link to this heading"></a></h3>
 <p>A serial terminal is an application that runs on a PC or laptop that is
 used to display data and interact with a connected device
 (including many of the Circuits from the Lab reference designs). The
@@ -1244,7 +1240,7 @@ entering commands.</p></li>
 </ol>
 </section>
 <section id="available-commands">
-<h4>Available Commands<a class="headerlink" href="#available-commands" title="Link to this heading"></a></h4>
+<h3>Available Commands<a class="headerlink" href="#available-commands" title="Link to this heading"></a></h3>
 <p>Typing <strong>help</strong> (or simply <strong>h</strong>) after the initial calibration sequence will
 display the list of commands and their shortened versions.</p>
 <div class="table-wrapper docutils container" id="id5">
@@ -1470,7 +1466,7 @@ to PTR and 0.163 (1/6) samples per second, respectively.</p>
 </div>
 </section>
 <section id="example-output-data">
-<h4>Example Output Data<a class="headerlink" href="#example-output-data" title="Link to this heading"></a></h4>
+<h3>Example Output Data<a class="headerlink" href="#example-output-data" title="Link to this heading"></a></h3>
 <p>Below are examples of the <a class="icon adi reference external" href="https://www.analog.com/CN0583" target="_blank">CN0583</a> boards outputting data in
 PTR and raw codes and then exiting after several samples:</p>
 <figure class="align-default">
@@ -1482,7 +1478,7 @@ PTR and raw codes and then exiting after several samples:</p>
 </section>
 </section>
 <section id="test-results">
-<h3>Test Results<a class="headerlink" href="#test-results" title="Link to this heading"></a></h3>
+<h2>Test Results<a class="headerlink" href="#test-results" title="Link to this heading"></a></h2>
 <p>Using the CN0583 hardware and the <strong>ADSW-SMOKEALGO-PRODLIC algorithm</strong>, the
 setup was tested at a certified testing facility (Intertek) and passed all the
 smoke sensor aspects of the UL-217 8th Edition Standards. You can view the
@@ -1497,7 +1493,7 @@ Standard and the results are available here:</p>
 </ul>
 </section>
 <section id="device-driver-support">
-<h3>Device Driver Support<a class="headerlink" href="#device-driver-support" title="Link to this heading"></a></h3>
+<h2>Device Driver Support<a class="headerlink" href="#device-driver-support" title="Link to this heading"></a></h2>
 <p>There are no-OS drivers provided for controlling the digital devices on the
 <a class="icon adi reference external" href="https://www.analog.com/CN0583" target="_blank">CN0583</a> boards.</p>
 <ul class="simple">
@@ -1506,7 +1502,7 @@ Standard and the results are available here:</p>
 </ul>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
-<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon link reference external" href="https://form.analog.com/form_pages/securedownloads/cftlsecuredownload.aspx?returnUrl=en/CN0583-DesignSupport.html" target="_blank">CN0583 Design Support Package</a></p>
@@ -1520,7 +1516,7 @@ Standard and the results are available here:</p>
 </div>
 </section>
 <section id="additional-information-and-useful-links">
-<h3>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h3>
+<h2>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://form.analog.com/form_pages/securedownloads/cftlsecuredownload.aspx?returnUrl=en/CN0583-DesignSupport.html" target="_blank">CN0583 Design Support Package</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADPD188BI" target="_blank">ADPD188BI Product Page</a></p></li>
@@ -1531,9 +1527,8 @@ Standard and the results are available here:</p>
 </ul>
 </section>
 <section id="help-and-support">
-<h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
+<h2>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h2>
 <p>For questions and more information, please visit the <a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone</a>.</p>
-</section>
 </section>
 </section>
 

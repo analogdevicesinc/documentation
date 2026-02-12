@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The EVAL-CN0575-RPIZ is a 10BASE-T1L MAC/PHY interface with Single Pair Power over Ethernet (SPoE) for development of field devices and applications on a Raspberry Pi platform board. The SPoE powered device (PD) and isolated flyback regulator provide 5 V power to the platform board and attached application circuitry. SPoE Class 12 (8.4 W, 24 V nominal) and Class 13 (7.7 W, 55 V nominal) are supported." name="description" />
+<meta content="10BASE-T1L Field Device Development Platform with Class 12 and 13 SPoE." name="description" />
 
     <title>EVAL-CN0575-RPIZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0575-RPIZ</a><ul>
-<li><a class="reference internal" href="#base-t1l-field-device-development-platform-with-class-12-and-13-spoe">10BASE-T1L Field Device Development Platform with Class 12 and 13 SPoE</a><ul>
 <li><a class="reference internal" href="#general-description">General Description</a></li>
 <li><a class="reference internal" href="#evaluation-board-hardware">Evaluation Board Hardware</a><ul>
 <li><a class="reference internal" href="#primary-side">Primary Side</a><ul>
@@ -135,8 +134,6 @@
 <li><a class="reference internal" href="#additional-information-and-useful-links">Additional Information and Useful Links</a></li>
 <li><a class="reference internal" href="#hardware-registration">Hardware Registration</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -566,10 +563,9 @@ Content on this topic
             
   <section id="eval-cn0575-rpiz">
 <span id="id1"></span><h1>EVAL-CN0575-RPIZ<a class="headerlink" href="#eval-cn0575-rpiz" title="Link to this heading"></a></h1>
-<section id="base-t1l-field-device-development-platform-with-class-12-and-13-spoe">
-<h2>10BASE-T1L Field Device Development Platform with Class 12 and 13 SPoE<a class="headerlink" href="#base-t1l-field-device-development-platform-with-class-12-and-13-spoe" title="Link to this heading"></a></h2>
+<p>10BASE-T1L Field Device Development Platform with Class 12 and 13 SPoE.</p>
 <section id="general-description">
-<h3>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h3>
+<h2>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h2>
 <figure class="align-right" id="id2">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/63305_2.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/63305_2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/63305_2.jpg" style="width: 400px;" />
 </a>
@@ -592,9 +588,9 @@ own as a basic temperature sensing field device with remote user input/output
 via an onboard button and LED.</p>
 </section>
 <section id="evaluation-board-hardware">
-<h3>Evaluation Board Hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h3>
+<h2>Evaluation Board Hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h2>
 <section id="primary-side">
-<h4>Primary Side<a class="headerlink" href="#primary-side" title="Link to this heading"></a></h4>
+<h3>Primary Side<a class="headerlink" href="#primary-side" title="Link to this heading"></a></h3>
 <figure class="align-default" id="id3">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/eval-cn0575-rpiz-top-with-labels.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/eval-cn0575-rpiz-top-with-labels.png" />
 <figcaption>
@@ -602,7 +598,7 @@ via an onboard button and LED.</p>
 </figcaption>
 </figure>
 <section id="base-t1l-port-p1-and-p2">
-<h5>10BASE-T1L Port (P1 and P2)<a class="headerlink" href="#base-t1l-port-p1-and-p2" title="Link to this heading"></a></h5>
+<h4>10BASE-T1L Port (P1 and P2)<a class="headerlink" href="#base-t1l-port-p1-and-p2" title="Link to this heading"></a></h4>
 <figure class="align-default" id="id4">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/10base-t1l-port.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/10base-t1l-port.jpg" />
 <figcaption>
@@ -621,7 +617,7 @@ from a 10BASE-T1L-capable controller unit.</p></li>
 </ul>
 </section>
 <section id="phy-status-indicators-led0-and-led1">
-<h5>PHY Status Indicators (LED0 and LED1)<a class="headerlink" href="#phy-status-indicators-led0-and-led1" title="Link to this heading"></a></h5>
+<h4>PHY Status Indicators (LED0 and LED1)<a class="headerlink" href="#phy-status-indicators-led0-and-led1" title="Link to this heading"></a></h4>
 <p><strong>LED0</strong> and <strong>LED1</strong> are the <a class="icon adi reference external" href="https://www.analog.com/ADIN1110" target="_blank">ADIN1110</a>
 status indicators, and can be configured to display various activities via the
 device registers.</p>
@@ -631,7 +627,7 @@ when there is activity; while <strong>LED1</strong> is disabled. Refer to the LE
 available functions.</p>
 </section>
 <section id="general-purpose-led-and-button-alert-and-test">
-<h5>General Purpose LED and Button (ALERT and TEST)<a class="headerlink" href="#general-purpose-led-and-button-alert-and-test" title="Link to this heading"></a></h5>
+<h4>General Purpose LED and Button (ALERT and TEST)<a class="headerlink" href="#general-purpose-led-and-button-alert-and-test" title="Link to this heading"></a></h4>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0575" target="_blank">EVAL-CN0575-RPIZ</a> evaluation board includes a simple
 button (<strong>TEST</strong>) and LED (<strong>ALERT</strong>) circuit that can be respectively used as
 a digital input and a general purpose indicator. This circuit is controlled by
@@ -649,7 +645,7 @@ External Hardware).</p>
 when the <strong>TEST</strong> button is pressed.</p>
 </section>
 <section id="spoe-pd-power-class-selection-jp1-and-jp2">
-<h5>SPoE PD Power Class Selection (JP1 and JP2)<a class="headerlink" href="#spoe-pd-power-class-selection-jp1-and-jp2" title="Link to this heading"></a></h5>
+<h4>SPoE PD Power Class Selection (JP1 and JP2)<a class="headerlink" href="#spoe-pd-power-class-selection-jp1-and-jp2" title="Link to this heading"></a></h4>
 <p>By default, the <a class="icon adi reference external" href="https://www.analog.com/LTC9111" target="_blank">LTC9111</a> SPoE PD
 controller included in the <a class="icon adi reference external" href="https://www.analog.com/CN0575" target="_blank">CN0575</a> circuit is configured for
 PD Class 12. If a different PD class is required for the application, the
@@ -722,7 +718,7 @@ handle these higher power specifications.</p>
 </section>
 </section>
 <section id="secondary-side">
-<h4>Secondary Side<a class="headerlink" href="#secondary-side" title="Link to this heading"></a></h4>
+<h3>Secondary Side<a class="headerlink" href="#secondary-side" title="Link to this heading"></a></h3>
 <figure class="align-default" id="id7">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/eval-cn0575-rpiz-bottom-with-labels.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/eval-cn0575-rpiz-bottom-with-labels.png" />
 <figcaption>
@@ -730,7 +726,7 @@ handle these higher power specifications.</p>
 </figcaption>
 </figure>
 <section id="adin1110-sw-power-down-enable-and-spi-configuration-jp3-to-jp5">
-<h5>ADIN1110 SW Power-Down Enable and SPI Configuration (JP3 to JP5)<a class="headerlink" href="#adin1110-sw-power-down-enable-and-spi-configuration-jp3-to-jp5" title="Link to this heading"></a></h5>
+<h4>ADIN1110 SW Power-Down Enable and SPI Configuration (JP3 to JP5)<a class="headerlink" href="#adin1110-sw-power-down-enable-and-spi-configuration-jp3-to-jp5" title="Link to this heading"></a></h4>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0575" target="_blank">EVAL-CN0575-RPIZ</a> evaluation board uses
 the default hardware configuration for the PHY specified in the
 <a class="icon adi reference external" href="https://www.analog.com/ADIN1110" target="_blank">ADIN1110</a> data sheet. If a different operating mode is
@@ -791,7 +787,7 @@ setting <strong>JP4</strong> and <strong>JP5</strong> to select the SPI protocol
 </div>
 </section>
 <section id="adt75-i2c-bus-address-selection-jp6-to-jp8">
-<h5>ADT75 I²C Bus Address Selection (JP6 to JP8)<a class="headerlink" href="#adt75-i2c-bus-address-selection-jp6-to-jp8" title="Link to this heading"></a></h5>
+<h4>ADT75 I²C Bus Address Selection (JP6 to JP8)<a class="headerlink" href="#adt75-i2c-bus-address-selection-jp6-to-jp8" title="Link to this heading"></a></h4>
 <p>The I²C bus address of the onboard <a class="icon adi reference external" href="https://www.analog.com/ADT75" target="_blank">ADT75</a>
 temperature sensor is dependent on the settings of the <strong>JP13</strong>, <strong>JP14</strong>, and
 <strong>JP15</strong> solder jumpers. <strong>Note:</strong> The CN0575 device tree overlay in ADI
@@ -857,7 +853,7 @@ following table:</p>
 </div>
 </section>
 <section id="optional-gpio-pins-jp9-to-jp13">
-<h5>Optional GPIO Pins (JP9 to JP13)<a class="headerlink" href="#optional-gpio-pins-jp9-to-jp13" title="Link to this heading"></a></h5>
+<h4>Optional GPIO Pins (JP9 to JP13)<a class="headerlink" href="#optional-gpio-pins-jp9-to-jp13" title="Link to this heading"></a></h4>
 <figure class="align-default" id="id10">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/jp11-jp12-jp13.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/jp11-jp12-jp13.jpg" />
 <figcaption>
@@ -911,7 +907,7 @@ this will allow these GPIO pins to be used for other external hardware.</p>
 </div>
 </section>
 <section id="general-purpose-led-and-button-connections-jp14-and-jp15">
-<h5>General Purpose LED and Button Connections (JP14 and JP15)<a class="headerlink" href="#general-purpose-led-and-button-connections-jp14-and-jp15" title="Link to this heading"></a></h5>
+<h4>General Purpose LED and Button Connections (JP14 and JP15)<a class="headerlink" href="#general-purpose-led-and-button-connections-jp14-and-jp15" title="Link to this heading"></a></h4>
 <figure class="align-default" id="id11">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/jp14-jp15.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/jp14-jp15.jpg" />
 <figcaption>
@@ -964,7 +960,7 @@ respectively.</p>
 </section>
 </section>
 <section id="system-setup">
-<h3>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h3>
+<h2>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h2>
 <p><strong>Required Equipment</strong></p>
 <p><strong>Hardware</strong></p>
 <ul class="simple">
@@ -996,9 +992,9 @@ respectively.</p>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0575" target="_blank">CN0575</a> Circuit Note</p></li>
 </ul>
 <section id="block-diagram">
-<h4>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h4>
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
 <section id="setup-with-spoe-via-pse-or-dc-power-supply">
-<h5>Setup with SPoE via PSE or DC Power Supply<a class="headerlink" href="#setup-with-spoe-via-pse-or-dc-power-supply" title="Link to this heading"></a></h5>
+<h4>Setup with SPoE via PSE or DC Power Supply<a class="headerlink" href="#setup-with-spoe-via-pse-or-dc-power-supply" title="Link to this heading"></a></h4>
 <p>Power coupling boards compatible with the EVAL-ADIN1100 for
 various SPoE classes and droop levels are in development. Alternatively, use a
 media converter that supports SPoE PSE functionality.</p>
@@ -1011,7 +1007,7 @@ media converter that supports SPoE PSE functionality.</p>
 </figure>
 </section>
 <section id="setup-without-spoe-usb-powered-application">
-<h5>Setup without SPoE (USB-Powered Application)<a class="headerlink" href="#setup-without-spoe-usb-powered-application" title="Link to this heading"></a></h5>
+<h4>Setup without SPoE (USB-Powered Application)<a class="headerlink" href="#setup-without-spoe-usb-powered-application" title="Link to this heading"></a></h4>
 <figure class="align-default" id="id14">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/block_diagram-new-2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/block_diagram-new-2.png" />
 <figcaption>
@@ -1021,9 +1017,9 @@ media converter that supports SPoE PSE functionality.</p>
 </section>
 </section>
 <section id="software-setup">
-<h4>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h4>
+<h3>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h3>
 <section id="downloading-and-flashing-the-micro-sd-card">
-<h5>Downloading and Flashing the Micro-SD Card<a class="headerlink" href="#downloading-and-flashing-the-micro-sd-card" title="Link to this heading"></a></h5>
+<h4>Downloading and Flashing the Micro-SD Card<a class="headerlink" href="#downloading-and-flashing-the-micro-sd-card" title="Link to this heading"></a></h4>
 <p>To use the <a class="icon adi reference external" href="https://www.analog.com/CN0575" target="_blank">EVAL-CN0575-RPIZ</a> with the Raspberry Pi, the
 micro-SD card should be preloaded with <a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a>,
 a distribution based on Raspbian from the Raspberry Pi Foundation that
@@ -1040,7 +1036,7 @@ write it to the micro-SD card, and how to configure the system are provided at
 </figure>
 </section>
 <section id="configuring-the-micro-sd-card">
-<h5>Configuring the Micro-SD Card<a class="headerlink" href="#configuring-the-micro-sd-card" title="Link to this heading"></a></h5>
+<h4>Configuring the Micro-SD Card<a class="headerlink" href="#configuring-the-micro-sd-card" title="Link to this heading"></a></h4>
 <p>The Linux kernel requires a matching device tree overlay to identify the
 devices on the CN0575. The overlay table is included with the <a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a>
 and simply needs to be enabled.</p>
@@ -1059,7 +1055,7 @@ Enable the CN0575 overlay by adding the following line to <em>config.txt</em>:</
 </div>
 <div class="clear-left"></div></div></div></section>
 <section id="determining-the-ip-address-of-the-cn0575">
-<h5>Determining the IP Address of the CN0575<a class="headerlink" href="#determining-the-ip-address-of-the-cn0575" title="Link to this heading"></a></h5>
+<h4>Determining the IP Address of the CN0575<a class="headerlink" href="#determining-the-ip-address-of-the-cn0575" title="Link to this heading"></a></h4>
 <p>Follow the below procedure to determine the IP address assigned by the Raspberry
 Pi to the <a class="icon adi reference external" href="https://www.analog.com/CN0575" target="_blank">EVAL-CN0575-RPIZ</a>:</p>
 <ol class="arabic simple">
@@ -1082,7 +1078,7 @@ as inet under adin1110-0. In the example below, the IP address is
 </section>
 </section>
 <section id="basic-operation">
-<h4>Basic Operation<a class="headerlink" href="#basic-operation" title="Link to this heading"></a></h4>
+<h3>Basic Operation<a class="headerlink" href="#basic-operation" title="Link to this heading"></a></h3>
 <figure class="align-default" id="id17">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/setup.jpg" />
 <figcaption>
@@ -1145,7 +1141,7 @@ Run the temperature measurement example by entering the following command:</p></
 </figure>
 </section>
 <section id="more-complete-example-with-digital-i-o">
-<h4>More Complete Example with Digital I/O<a class="headerlink" href="#more-complete-example-with-digital-i-o" title="Link to this heading"></a></h4>
+<h3>More Complete Example with Digital I/O<a class="headerlink" href="#more-complete-example-with-digital-i-o" title="Link to this heading"></a></h3>
 <p>A more complete example that blinks the onboard LED and reads the push button
 is also provided. Note that this script can be run either directly on the
 Raspberry Pi, or remotely from a host computer.
@@ -1182,7 +1178,7 @@ explicitly, where <strong>www.xxx.yyy.zzz</strong> is the board’s IP address:<
 </section>
 </section>
 <section id="errata">
-<h3>Errata<a class="headerlink" href="#errata" title="Link to this heading"></a></h3>
+<h2>Errata<a class="headerlink" href="#errata" title="Link to this heading"></a></h2>
 <figure class="align-default" id="id20">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/c16_marking.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/c16_marking.png" />
 <figcaption>
@@ -1201,7 +1197,7 @@ same rating used in later batches of the <a class="icon adi reference external" 
 or simply desolder it and leave it empty.</p>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
-<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0575-rpiz/CN0575-DesignSupport.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-CN0575-RPIZ</span> <span class="pre">Design</span> <span class="pre">&amp;</span> <span class="pre">Integration</span> <span class="pre">Files</span></code></a></p>
@@ -1214,7 +1210,7 @@ or simply desolder it and leave it empty.</p>
 </div>
 </section>
 <section id="additional-information-and-useful-links">
-<h3>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h3>
+<h2>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0575" target="_blank">CN0575 Circuit Note Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0575-DesignSupport" target="_blank">CN0575 Design Support Package</a></p></li>
@@ -1227,7 +1223,7 @@ or simply desolder it and leave it empty.</p>
 </ul>
 </section>
 <section id="hardware-registration">
-<h3>Hardware Registration<a class="headerlink" href="#hardware-registration" title="Link to this heading"></a></h3>
+<h2>Hardware Registration<a class="headerlink" href="#hardware-registration" title="Link to this heading"></a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Receive software update notifications, documentation updates, view the latest
@@ -1235,9 +1231,8 @@ videos, and more when you <a class="icon adi reference external" href="https://w
 </div>
 </section>
 <section id="help-and-support">
-<h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
+<h2>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h2>
 <p>For questions and more information about this product, connect with us through the Analog Devices <a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone</a> .</p>
-</section>
 </section>
 </section>
 

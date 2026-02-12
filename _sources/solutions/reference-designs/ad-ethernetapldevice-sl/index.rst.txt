@@ -3,8 +3,7 @@
 AD-ETHERNETAPLDEVICE-SL
 =======================
 
-Ethernet-APL Field Platform for Intelligent, Secure, and Connected Industrial Devices
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Ethernet-APL Field Platform for Intelligent, Secure, and Connected Industrial Devices.
 
 Introduction
 ------------

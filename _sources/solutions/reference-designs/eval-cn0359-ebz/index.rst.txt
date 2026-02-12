@@ -3,8 +3,7 @@
 EVAL-CN0359-EBZ
 ===============
 
-Fully Automatic High Performance Conductivity Measurement System
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Fully Automatic High Performance Conductivity Measurement System.
 
 Overview
 --------

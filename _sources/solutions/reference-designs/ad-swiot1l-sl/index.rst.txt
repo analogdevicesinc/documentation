@@ -1,8 +1,7 @@
 AD-SWIOT1L-SL
 =============
 
-Software-configurable Analog and Digital I/O with 10BASE-T1L Evaluation and Development Platform
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Software-configurable Analog and Digital I/O with 10BASE-T1L Evaluation and Development Platform.
 
 
 Introduction

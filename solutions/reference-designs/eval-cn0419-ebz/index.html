@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The CN0419 is a circuit that isolates a peripheral device that already implements a USB interface by using the ADuM4160, a USB port isolator based on Analog Devices iCoupler® technology. It is bus-powered by pairing it with a small isolated DC-to-DC converter such as the ADuM5020. The application circuit shown is typical of many medical and industrial applications." name="description" />
+<meta content="Universal Serial Bus (USB) Peripheral Isolator Circuit." name="description" />
 
     <title>EVAL-CN0419-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0419-EBZ</a><ul>
-<li><a class="reference internal" href="#universal-serial-bus-usb-peripheral-isolator-circuit">Universal Serial Bus (USB) Peripheral Isolator Circuit</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#general-setup">General Setup</a><ul>
 <li><a class="reference internal" href="#block-assignments">Block assignments</a></li>
@@ -107,8 +106,6 @@
 </li>
 <li><a class="reference internal" href="#more-information-and-useful-links">More Information and Useful Links</a><ul>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -540,10 +537,9 @@ Content on this topic
             
   <section id="eval-cn0419-ebz">
 <span id="id1"></span><h1>EVAL-CN0419-EBZ<a class="headerlink" href="#eval-cn0419-ebz" title="Link to this heading"></a></h1>
-<section id="universal-serial-bus-usb-peripheral-isolator-circuit">
-<h2>Universal Serial Bus (USB) Peripheral Isolator Circuit<a class="headerlink" href="#universal-serial-bus-usb-peripheral-isolator-circuit" title="Link to this heading"></a></h2>
+<p>Universal Serial Bus (USB) Peripheral Isolator Circuit.</p>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0419" target="_blank">CN0419</a> is a circuit that isolates a peripheral device that
 already implements a USB interface by using the <a class="icon adi reference external" href="https://www.analog.com/ADuM4160" target="_blank">ADuM4160</a>, a USB port isolator
 based on Analog Devices iCoupler® technology. It is bus-powered by pairing it
@@ -569,9 +565,9 @@ and is powered by the bus voltage from the USB port.</p>
 </figure>
 </section>
 <section id="general-setup">
-<h3>General Setup<a class="headerlink" href="#general-setup" title="Link to this heading"></a></h3>
+<h2>General Setup<a class="headerlink" href="#general-setup" title="Link to this heading"></a></h2>
 <section id="block-assignments">
-<h4>Block assignments<a class="headerlink" href="#block-assignments" title="Link to this heading"></a></h4>
+<h3>Block assignments<a class="headerlink" href="#block-assignments" title="Link to this heading"></a></h3>
 <figure class="align-default">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0419-ebz/block_assign.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0419-ebz/block_assign.png" />
 </figure>
@@ -583,7 +579,7 @@ and is powered by the bus voltage from the USB port.</p>
 </ul>
 </section>
 <section id="speed-selection">
-<h4>Speed selection<a class="headerlink" href="#speed-selection" title="Link to this heading"></a></h4>
+<h3>Speed selection<a class="headerlink" href="#speed-selection" title="Link to this heading"></a></h3>
 <p>Peripheral devices run at one of three speeds, low (1.5 Mbps), full (12 Mbps),
 and high (480 Mbps). The <a class="icon adi reference external" href="https://www.analog.com/CN0419" target="_blank">EVAL-CN0419-EBZ Evaluation Board</a> can
 accommodate the low and full speed operations. Listed below are some examples
@@ -620,7 +616,7 @@ mode as indicated in silkscreen for full speed operation and LS mode otherwise.<
 </figure>
 </div></section>
 <section id="required-equipment">
-<h4>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h4>
+<h3>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h3>
 <ul>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0419" target="_blank">EVAL-CN0419-EBZ Evaluation Board</a></p></li>
 <li><p>PC with the following <em>minimum requirements</em>:</p>
@@ -635,7 +631,7 @@ mode as indicated in silkscreen for full speed operation and LS mode otherwise.<
 </ul>
 </section>
 <section id="test-setup">
-<h4>Test Setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h4>
+<h3>Test Setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h3>
 <figure class="align-default">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0419-ebz/setup_diagram2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0419-ebz/setup_diagram2.png" />
 </figure>
@@ -648,7 +644,7 @@ PC/host</p></li>
 </ol>
 </section>
 <section id="running-the-system">
-<h4>Running the System<a class="headerlink" href="#running-the-system" title="Link to this heading"></a></h4>
+<h3>Running the System<a class="headerlink" href="#running-the-system" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Make sure the setting for S1 is correct based on the peripheral device.</p></li>
 <li><p>Plug P1 of the board into the PC/host, the <a class="icon adi reference external" href="https://www.analog.com/CN0419" target="_blank">EVAL-CN0419-EBZ</a> is
@@ -660,7 +656,7 @@ that the board is delivering power to the peripheral device.</p></li>
 </section>
 </section>
 <section id="more-information-and-useful-links">
-<h3>More Information and Useful Links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h3>
+<h2>More Information and Useful Links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0419" target="_blank">CN0419 Circuit Note Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0419-DesignSupport" target="_blank">CN0419 Design Support Package</a></p></li>
@@ -668,7 +664,7 @@ that the board is delivering power to the peripheral device.</p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADuM5020" target="_blank">ADuM5020 Product Page</a></p></li>
 </ul>
 <section id="schematic-pcb-layout-bill-of-materials">
-<h4>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h4>
+<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p>:adi`EVAL-CN0419-EBZ Design &amp; Integration Files &lt;CN0419-DesignSupport&gt;`</p>
@@ -679,7 +675,6 @@ that the board is delivering power to the peripheral device.</p></li>
 <li><p>Allegro Project</p></li>
 </ul>
 </div>
-</section>
 </section>
 </section>
 </section>

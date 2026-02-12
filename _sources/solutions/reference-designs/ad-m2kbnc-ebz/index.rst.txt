@@ -3,8 +3,7 @@
 AD-M2KBNC-EBZ
 ==============
 
-ADALM2000 BNC Adapter Board
-""""""""""""""""""""""""""""
+ADALM2000 BNC Adapter Board.
 
 The :adi:`AD-M2KBNC-EBZ` is an :adi:`ADALM2000` add-on board
 which allows the user to connect oscilloscope probes and other test

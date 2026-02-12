@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The EVAL-CN0554-RPIZ is a flexible, general-purpose multichannel mixed-signal analog input/output (I/O) module. The 16 single-ended analog outputs are software configurable, with ranges of 0 V to 5 V, ±5 V, 0 V to 10 V, and ±15 V. Eight channels of fully differential analog input are provided with hardware selectable input ranges of ±2.5 V and ±25 V. The circuit is designed to mount directly on top of a Raspberry Pi, providing this popular single board computer an analog input/output interface. Software control is accessible through the Linux industrial input/output (IIO) framework." name="description" />
+<meta content="±10 V Analog Input and ±15 V Analog Output for Raspberry Pi Platforms." name="description" />
 
     <title>EVAL-CN0554-RPIZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0554-RPIZ</a><ul>
-<li><a class="reference internal" href="#v-analog-input-and-15-v-analog-output-for-raspberry-pi-platforms">±10 V Analog Input and ±15 V Analog Output for Raspberry Pi Platforms</a><ul>
 <li><a class="reference internal" href="#equipment-required">Equipment Required</a></li>
 <li><a class="reference internal" href="#connectors-and-jumper-configurations">Connectors and Jumper Configurations</a><ul>
 <li><a class="reference internal" href="#adc-header">ADC Header</a></li>
@@ -132,8 +131,6 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#hardware-registration">Hardware Registration</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -563,8 +560,7 @@ Content on this topic
             
   <section id="eval-cn0554-rpiz">
 <span id="id1"></span><h1>EVAL-CN0554-RPIZ<a class="headerlink" href="#eval-cn0554-rpiz" title="Link to this heading"></a></h1>
-<section id="v-analog-input-and-15-v-analog-output-for-raspberry-pi-platforms">
-<h2>±10 V Analog Input and ±15 V Analog Output for Raspberry Pi Platforms<a class="headerlink" href="#v-analog-input-and-15-v-analog-output-for-raspberry-pi-platforms" title="Link to this heading"></a></h2>
+<p>±10 V Analog Input and ±15 V Analog Output for Raspberry Pi Platforms.</p>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0554-RPIZ" target="_blank">EVAL-CN0554-RPIZ</a> is a flexible, general-purpose
 multichannel mixed-signal analog input/output (I/O) module.
 The 16 single-ended analog outputs are software configurable,
@@ -582,7 +578,7 @@ input/output (IIO) framework.</p>
 </figcaption>
 </figure>
 <section id="equipment-required">
-<h3>Equipment Required<a class="headerlink" href="#equipment-required" title="Link to this heading"></a></h3>
+<h2>Equipment Required<a class="headerlink" href="#equipment-required" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>Hardware</strong></p>
 <ul>
@@ -602,7 +598,7 @@ input/output (IIO) framework.</p>
 </ul>
 </section>
 <section id="connectors-and-jumper-configurations">
-<h3>Connectors and Jumper Configurations<a class="headerlink" href="#connectors-and-jumper-configurations" title="Link to this heading"></a></h3>
+<h2>Connectors and Jumper Configurations<a class="headerlink" href="#connectors-and-jumper-configurations" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0554-RPIZ" target="_blank">EVAL-CN0554-RPIZ</a> has
 three main connectors: the 40-pin connector which mounts the board on
 top of the Raspberry Pi, the 30-pin DAC connector which has the 16
@@ -616,7 +612,7 @@ I/O.</p>
 </figcaption>
 </figure>
 <section id="adc-header">
-<h4>ADC Header<a class="headerlink" href="#adc-header" title="Link to this heading"></a></h4>
+<h3>ADC Header<a class="headerlink" href="#adc-header" title="Link to this heading"></a></h3>
 <p>Need details on the input connector and what to inputs go to what pin on
 the connector and ADC!</p>
 <p>The table below shows the different configurations for each jumper
@@ -643,12 +639,12 @@ header.</p>
 </div>
 </section>
 <section id="dac-header">
-<h4>DAC Header<a class="headerlink" href="#dac-header" title="Link to this heading"></a></h4>
+<h3>DAC Header<a class="headerlink" href="#dac-header" title="Link to this heading"></a></h3>
 <p>Need details on the output connector and which connections go where on
 the DAC channels.</p>
 </section>
 <section id="dither-and-toggle">
-<h4>Dither and Toggle<a class="headerlink" href="#dither-and-toggle" title="Link to this heading"></a></h4>
+<h3>Dither and Toggle<a class="headerlink" href="#dither-and-toggle" title="Link to this heading"></a></h3>
 <p>Need details on which pins this is on for the RPI and which outputs they
 affect</p>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0554-RPIZ" target="_blank">EVAL-CN0554-RPIZ</a> has
@@ -664,9 +660,9 @@ of onboard EEPROMs</p>
 </section>
 </section>
 <section id="system-setup">
-<h3>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h3>
+<h2>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h2>
 <section id="id2">
-<h4>Equipment Required<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<h3>Equipment Required<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <p><strong>Hardware</strong></p>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0554-RPIZ" target="_blank">EVAL-CN0554-RPIZ</a> Circuit Evaluation Board</p></li>
@@ -690,7 +686,7 @@ of onboard EEPROMs</p>
 </ul>
 </section>
 <section id="system-block-diagram">
-<h4>System Block Diagram<a class="headerlink" href="#system-block-diagram" title="Link to this heading"></a></h4>
+<h3>System Block Diagram<a class="headerlink" href="#system-block-diagram" title="Link to this heading"></a></h3>
 <figure class="align-center" id="id6">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0554-rpiz/cn0554_simplified_block_diagram.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0554-rpiz/cn0554_simplified_block_diagram.jpg" />
 <figcaption>
@@ -699,7 +695,7 @@ of onboard EEPROMs</p>
 </figure>
 </section>
 <section id="running-the-system">
-<h4>Running the System<a class="headerlink" href="#running-the-system" title="Link to this heading"></a></h4>
+<h3>Running the System<a class="headerlink" href="#running-the-system" title="Link to this heading"></a></h3>
 <p>To set up the complete system, follow these steps:</p>
 <ol class="arabic">
 <li><p>Connect the
@@ -795,7 +791,7 @@ V which is the default input voltage attenuation.</p>
 </section>
 </section>
 <section id="software-setup">
-<h3>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h3>
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
 <p>For the device to run, the SD card should be loaded with Analog Devices
 Kuiper Linux, a distribution based on Raspbian from the Raspberry Pi
 Foundation. It incorporates Linux device drivers for ADI products as
@@ -806,7 +802,7 @@ Linux-based embedded system.</p>
 <p>Access to the embedded system can be through a remote PC connected either via
 LAN cable or Wi-Fi.</p>
 <section id="downloading-and-flashing-kuiper-linux-image-on-sd-card">
-<h4>Downloading and Flashing Kuiper Linux Image on SD Card<a class="headerlink" href="#downloading-and-flashing-kuiper-linux-image-on-sd-card" title="Link to this heading"></a></h4>
+<h3>Downloading and Flashing Kuiper Linux Image on SD Card<a class="headerlink" href="#downloading-and-flashing-kuiper-linux-image-on-sd-card" title="Link to this heading"></a></h3>
 <p>In order to control the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0554-RPIZ" target="_blank">EVAL-CN0554-RPIZ</a> from the Raspberry Pi, you will
 need to install ADI Kuiper Linux on an SD card. Complete instructions,
 including where to download the SD card image, how to write it to the SD card,
@@ -818,7 +814,7 @@ configuration procedure.</p>
 </figure>
 </section>
 <section id="configuring-the-sd-card-for-the-cn0554">
-<h4>Configuring the SD Card for the CN0554<a class="headerlink" href="#configuring-the-sd-card-for-the-cn0554" title="Link to this heading"></a></h4>
+<h3>Configuring the SD Card for the CN0554<a class="headerlink" href="#configuring-the-sd-card-for-the-cn0554" title="Link to this heading"></a></h3>
 <p>For the Linux kernel to identify the device connected to the expansion
 header, update the device tree overlay. A <strong>Device Tree Overlay</strong>
 contains information about additional connected hardware, the
@@ -846,7 +842,7 @@ command prompt:</p>
 <div class="clear-left"></div></div></div></section>
 </section>
 <section id="graphical-user-interface-gui-and-example-python-scripts">
-<h3>Graphical User Interface (GUI) and Example Python Scripts<a class="headerlink" href="#graphical-user-interface-gui-and-example-python-scripts" title="Link to this heading"></a></h3>
+<h2>Graphical User Interface (GUI) and Example Python Scripts<a class="headerlink" href="#graphical-user-interface-gui-and-example-python-scripts" title="Link to this heading"></a></h2>
 <p>There are two main tools which a user has the option to interact with
 the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0554-RPIZ" target="_blank">EVAL-CN0554-RPIZ</a>.</p>
 <ul class="simple">
@@ -854,12 +850,12 @@ the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0
 <li><p><a class="reference internal" href="../../../software/pyadi-iio/index.html#pyadi-iio"><span class="std std-ref">PyADI-IIO</span></a></p></li>
 </ul>
 <section id="software-control-and-diagnostics-via-iio-oscilloscope">
-<h4>Software Control and Diagnostics via IIO Oscilloscope<a class="headerlink" href="#software-control-and-diagnostics-via-iio-oscilloscope" title="Link to this heading"></a></h4>
+<h3>Software Control and Diagnostics via IIO Oscilloscope<a class="headerlink" href="#software-control-and-diagnostics-via-iio-oscilloscope" title="Link to this heading"></a></h3>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0554-RPIZ" target="_blank">EVAL-CN0554-RPIZ</a> can be evaluated using IIO Oscilloscope.
 Customers can use the debug tab and the DMM tab. Various controls
 and diagnostics are available in these plug-ins.</p>
 <section id="debug-tab">
-<h5>Debug Tab<a class="headerlink" href="#debug-tab" title="Link to this heading"></a></h5>
+<h4>Debug Tab<a class="headerlink" href="#debug-tab" title="Link to this heading"></a></h4>
 <p>The debug tab provides direct access to IIO device and channel
 attributes, as well as the registers of the
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0554-RPIZ" target="_blank">EVAL-CN0554-RPIZ</a> components. The IIO attributes and
@@ -867,19 +863,19 @@ registers can be read and written for advanced configuration
 and information.</p>
 </section>
 <section id="dmm-tab">
-<h5>DMM Tab<a class="headerlink" href="#dmm-tab" title="Link to this heading"></a></h5>
+<h4>DMM Tab<a class="headerlink" href="#dmm-tab" title="Link to this heading"></a></h4>
 <p>The DMM tab provides the ADC readings for the <a class="icon adi reference external" href="https://www.analog.com/AD7124-8" target="_blank">AD7124-8</a>.</p>
 </section>
 </section>
 <section id="pyadi-iio">
-<h4>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h4>
+<h3>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h3>
 <p><a class="reference internal" href="../../../software/pyadi-iio/index.html#pyadi-iio"><span class="std std-ref">PyADI-IIO</span></a> is a python abstraction module for ADI hardware with IIO
 drivers to make them easier to use. This module provides device-specific APIs
 built on top of the current libIIO python bindings. These interfaces try to
 match the driver naming as much as possible without the need to understand the
 complexities of libIIO and IIO.</p>
 <section id="running-the-example">
-<h5>Running the Example<a class="headerlink" href="#running-the-example" title="Link to this heading"></a></h5>
+<h4>Running the Example<a class="headerlink" href="#running-the-example" title="Link to this heading"></a></h4>
 <p>This demo uses a PyADI-IIO example script. This script will show the
 single-tone frequency with calibrated output power in dBm.</p>
 <ol class="arabic simple">
@@ -901,7 +897,7 @@ folder inside the downloaded or cloned <em>pyadi-iio</em> directory.</p></li>
 </section>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
-<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0554-rpiz/cn0554-DesignSupport.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-CN0554-RPIZ</span> <span class="pre">Design</span> <span class="pre">&amp;</span> <span class="pre">Integration</span> <span class="pre">Files</span></code></a></p>
@@ -914,13 +910,13 @@ folder inside the downloaded or cloned <em>pyadi-iio</em> directory.</p></li>
 </div>
 </section>
 <section id="additional-information-and-useful-links">
-<h3>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h3>
+<h2>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD7124" target="_blank">AD7124 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/LTC2688" target="_blank">LTC2688 Product Page</a></p></li>
 </ul>
 <section id="reference-demos-software">
-<h4>Reference Demos &amp; Software<a class="headerlink" href="#reference-demos-software" title="Link to this heading"></a></h4>
+<h3>Reference Demos &amp; Software<a class="headerlink" href="#reference-demos-software" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../../software/pyadi-iio/index.html#pyadi-iio"><span class="std std-ref">PyADI-IIO</span></a></p></li>
 <li><p><a class="reference internal" href="../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a></p></li>
@@ -929,12 +925,11 @@ folder inside the downloaded or cloned <em>pyadi-iio</em> directory.</p></li>
 </section>
 </section>
 <section id="hardware-registration">
-<h3>Hardware Registration<a class="headerlink" href="#hardware-registration" title="Link to this heading"></a></h3>
+<h2>Hardware Registration<a class="headerlink" href="#hardware-registration" title="Link to this heading"></a></h2>
 <p>Receive software update notifications, documentation updates, view the
 latest videos, and more when you register your hardware.
 <a class="icon link reference external" href="https://my.analog.com/en/app/registration/hardware/EVAL-CN0554-RPIZ?&amp;v=RevB" target="_blank">Register</a>
 to receive all these great benefits and more!</p>
-</section>
 </section>
 </section>
 

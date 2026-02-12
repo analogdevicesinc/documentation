@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The EVAL-CN0581-EBZ is a standalone USB-C power delivery (PD) module that adds USB-C power sink capability to projects and devices, replacing traditional power jacks. Voltages of 5 V, 9V, 15 V, or 20 V at currents from 0.5 A to 5 A are supported, selected via dual in-line (DIP) switches. A hot-swap surge stopper with ideal diode allows charging of large bulk bypass capacitors, and an enable output enables the downstream load after ramp up is complete, while preventing reverse current during faults. No software control is required for operation; the preloaded firmware configuration reads the DIP switches and sets the power delivery object (PDO) voltage and current modes accordingly. Custom configurations can be optionally programmed via an I2C interface." name="description" />
+<meta content="Configurable USB-C Power Sink Solution." name="description" />
 
     <title>EVAL-CN0581-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,6 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0581-EBZ</a><ul>
-<li><a class="reference internal" href="#configurable-usb-c-power-sink-solution">Configurable USB-C Power Sink Solution</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#features">Features</a></li>
 <li><a class="reference internal" href="#applications">Applications</a></li>
@@ -115,8 +114,6 @@
 <li><a class="reference internal" href="#more-information-and-useful-links">More information and useful links</a></li>
 <li><a class="reference internal" href="#design-and-integration-files">Design and Integration Files</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -546,10 +543,9 @@ Content on this topic
             
   <section id="eval-cn0581-ebz">
 <h1>EVAL-CN0581-EBZ<a class="headerlink" href="#eval-cn0581-ebz" title="Link to this heading"></a></h1>
-<section id="configurable-usb-c-power-sink-solution">
-<h2>Configurable USB-C Power Sink Solution<a class="headerlink" href="#configurable-usb-c-power-sink-solution" title="Link to this heading"></a></h2>
+<p>Configurable USB-C Power Sink Solution.</p>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <figure class="align-left" id="id1">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0581-ebz/eval-cn0581-ebz_angle.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0581-ebz/eval-cn0581-ebz_angle.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0581-ebz/eval-cn0581-ebz_angle.jpg" style="width: 300px;" />
 </a>
@@ -576,7 +572,7 @@ programmed via an I2C interface.</p>
 </figure>
 </section>
 <section id="features">
-<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>USB Type-C power delivery standalone controller</p></li>
 <li><p>Surge stopper with ideal diode which provides:
@@ -593,7 +589,7 @@ settings</p></li>
 </ul>
 </section>
 <section id="applications">
-<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h3>
+<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Smart speakers</p></li>
 <li><p>Power tools</p></li>
@@ -606,9 +602,9 @@ settings</p></li>
 </ul>
 </section>
 <section id="hardware-configuration">
-<h3>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h3>
+<h2>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h2>
 <section id="board-overview-and-pinout-description">
-<h4>Board Overview and Pinout Description<a class="headerlink" href="#board-overview-and-pinout-description" title="Link to this heading"></a></h4>
+<h3>Board Overview and Pinout Description<a class="headerlink" href="#board-overview-and-pinout-description" title="Link to this heading"></a></h3>
 <p>Below photos show the top view (left image) and bottom view (right image) of the
 <a class="icon adi reference external" href="https://www.analog.com/CN0581" target="_blank">EVAL-CN0581-EBZ</a> and its main components:</p>
 <figure class="align-default" id="id3">
@@ -721,7 +717,7 @@ use internal 3V3</p></td>
 </div>
 </section>
 <section id="vbus-voltage-and-current-settings">
-<h4>VBUS Voltage and Current Settings<a class="headerlink" href="#vbus-voltage-and-current-settings" title="Link to this heading"></a></h4>
+<h3>VBUS Voltage and Current Settings<a class="headerlink" href="#vbus-voltage-and-current-settings" title="Link to this heading"></a></h3>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0581" target="_blank">EVAL-CN0581-EBZ</a> board includes three dual in-line package
 (DIP) switches for the selection of the minimum VBUS voltage requested from the
 source, Min VBUS (“MINV” on silkscreen), the maximum VBUS voltage requested from
@@ -951,7 +947,7 @@ the chosen settings:</p>
 </ul>
 </section>
 <section id="i-o-logic-voltage-configuration-jumper">
-<h4>I/O Logic Voltage Configuration (Jumper)<a class="headerlink" href="#i-o-logic-voltage-configuration-jumper" title="Link to this heading"></a></h4>
+<h3>I/O Logic Voltage Configuration (Jumper)<a class="headerlink" href="#i-o-logic-voltage-configuration-jumper" title="Link to this heading"></a></h3>
 <p>In order for the board to function, it needs an I/O logic supply voltage between
 3.3 V and 5 V. The <a class="icon adi reference external" href="https://www.analog.com/CN0581" target="_blank">EVAL-CN0581-EBZ</a> has an on-board
 <a class="icon adi reference external" href="https://www.analog.com/ADP7142" target="_blank">ADP7142</a> low dropout regulator, which can be used by placing
@@ -960,7 +956,7 @@ voltage needs to be used (between 3.3 V and 5 V), it can be added on P14 -&gt; P
 1 or on P15 -&gt; Pin 2 (do not place the jumper on P15 in this case).</p>
 </section>
 <section id="led-indicators">
-<h4>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h4>
+<h3>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h3>
 <p>On the <a class="icon adi reference external" href="https://www.analog.com/CN0581" target="_blank">EVAL-CN0581-EBZ</a>, there are two LEDs indicating the power
 at the input and the output. LED DS1 (if on) indicates that power at
 USB_VBUS_RAW (input) is present; and LED DS2 (if on) indicates that power at
@@ -970,7 +966,7 @@ stopper is kept closed and LED DS2 is turned off.</p>
 </section>
 </section>
 <section id="system-setup">
-<h3>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h3>
+<h2>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/CN0581" target="_blank">EVAL-CN0581-EBZ</a> can be easily tested using just a
 multimeter and a Type-C charger. A block diagram with a setup example is
 provided in the figure below. For this setup, check if cable supports powers
@@ -987,7 +983,7 @@ voltage by placing a 2.54 mm pitch jumper with one row and two pins on P15
 connector. If an external logic voltage is needed, it can be provided on PPVIO
 pin (between 3.3V and 5V).</p>
 <section id="equipment-needed">
-<h4>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h4>
+<h3>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0581" target="_blank">EVAL-CN0581-EBZ</a> circuit evaluation board</p></li>
 <li><p>USB-C power charger (preferred with 100 W capability)</p></li>
@@ -997,7 +993,7 @@ pin (between 3.3V and 5V).</p>
 </ul>
 </section>
 <section id="getting-started">
-<h4>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h4>
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Choose the settings for the Min and Max VBUS and Operating Current and place
 the two-pin jumper provided on P15 connector for selecting the onboard 3.3V
@@ -1011,7 +1007,7 @@ voltmeter/multimeter between VBUS_OUT and GND (see pinout description).</p></li>
 </ol>
 </section>
 <section id="examples-of-different-voltage-and-current-settings">
-<h4>Examples of Different Voltage and Current Settings<a class="headerlink" href="#examples-of-different-voltage-and-current-settings" title="Link to this heading"></a></h4>
+<h3>Examples of Different Voltage and Current Settings<a class="headerlink" href="#examples-of-different-voltage-and-current-settings" title="Link to this heading"></a></h3>
 <p>To obtain the desired set power, the first step is to select a USB-C charger
 that can provide the desired PDO. In the table below are shown the fixed PDOs of
 a 96W USB-C power charger.</p>
@@ -1122,7 +1118,7 @@ Min VBUS (20V) is greater than Max VBUS (12V).</p>
 </section>
 </section>
 <section id="more-information-and-useful-links">
-<h3>More information and useful links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h3>
+<h2>More information and useful links<a class="headerlink" href="#more-information-and-useful-links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/CN0581" target="_blank">CN0581 Circuit Note</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/MAX77958" target="_blank">MAX77958 Product Page</a></p></li>
@@ -1132,7 +1128,7 @@ Min VBUS (20V) is greater than Max VBUS (12V).</p>
 </ul>
 </section>
 <section id="design-and-integration-files">
-<h3>Design and Integration Files<a class="headerlink" href="#design-and-integration-files" title="Link to this heading"></a></h3>
+<h2>Design and Integration Files<a class="headerlink" href="#design-and-integration-files" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-cn0581-ebz/CN0581-designsupport.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-CN0581-EBZ</span> <span class="pre">Design</span> <span class="pre">&amp;</span> <span class="pre">Integration</span> <span class="pre">Files</span></code></a></p>
@@ -1146,10 +1142,9 @@ Min VBUS (20V) is greater than Max VBUS (12V).</p>
 </div>
 </section>
 <section id="help-and-support">
-<h3>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h3>
+<h2>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h2>
 <p>For questions and more information about this product, connect with us through
 the Analog Devices <a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone</a>.</p>
-</section>
 </section>
 </section>
 
