@@ -101,6 +101,8 @@ Release versions include the upstream version and a ADI specific release number
       :git-u-boot:`Commits <commits/adi-u-boot-2025.10.y+>`
       :git-u-boot:`Release 1 <releases/tag/v2025.10-1+>`
       :git-u-boot:`Release 2 <releases/tag/v2025.10-2+>`
+    - v2026.01:
+      :git-u-boot:`Commits <commits/adi-u-boot-2026.01.y+>`
 - :git-buildroot:`+`
     - v2025.05:
       :git-buildroot:`Commits <commits/adi-2025.05.x+>`
