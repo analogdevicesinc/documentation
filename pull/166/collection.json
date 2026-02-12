@@ -1,0 +1,108 @@
+{
+    "pattern": {},
+    "collection": {
+        "Applied Systems Control": {
+            "docname": "documentation/learning/workshops_applied_systems_control/index",
+            "description": "Introduction to applied systems control, focusing on practical applications\nand real-world scenarios. Participants will learn about various control\nsystems, their design and implementation.\n",
+            "include": {
+                "documentation": {
+                    "learning/workshops_applied_systems_control": {
+                        "name": "Applied Systems Control Workshop"
+                    },
+                    "solutions/reference-designs/ad-swiot1l-sl/index": {
+                        "name": "AD-SWIOT1L-SL"
+                    }
+                }
+            },
+            "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/section-desc/docs/learning/workshops_applied_systems_control/industrial.png",
+            "subtitle": "Overview of industrial control and automation systems.",
+            "label": [
+                "workshop"
+            ]
+        },
+        "EVAL-AD4050/AD4052-ARDZ": {
+            "docname": "documentation/solutions/reference-designs/ad4052-ardz/index",
+            "description": "",
+            "include": {
+                "documentation": {
+                    "solutions/reference-designs/ad4052-ardz": {
+                        "name": "User guide"
+                    }
+                },
+                "hdl": {
+                    "projects/ad4052_ardz": {
+                        "name": "HDL Project (ad4052_ardz)"
+                    }
+                },
+                "no-OS": {
+                    "drivers/adc/ad405x": {
+                        "name": "no-OS driver (ad405x)"
+                    }
+                }
+            },
+            "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/section-desc/docs/solutions/reference-designs/ad4052-ardz/eval-angle.png",
+            "subtitle": "Evaluating the AD4050/AD4052 Compact, Low Power, 12-Bit/16-Bit, 2 MSPS Easy Drive SAR ADCs",
+            "label": [
+                "eval",
+                "user-guide"
+            ]
+        },
+        "EVAL-AD4060/AD4062-ARDZ": {
+            "docname": "documentation/solutions/reference-designs/ad4062-ardz/index",
+            "description": "",
+            "include": {
+                "documentation": {
+                    "solutions/reference-designs/ad4062-ardz": {
+                        "name": "User guide"
+                    }
+                },
+                "hdl": {
+                    "projects/ad4062_ardz": {
+                        "name": "HDL Project (ad4062_ardz)"
+                    }
+                },
+                "no-OS": {
+                    "drivers/adc/ad405x": {
+                        "name": "no-OS driver (ad405x)"
+                    }
+                }
+            },
+            "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/section-desc/docs/solutions/reference-designs/ad4062-ardz/eval-angle.png",
+            "subtitle": "Evaluating the AD4060/AD4062 Compact, Low Power, 12-Bit/16-Bit, 2 MSPS Easy Drive SAR ADCs",
+            "label": [
+                "eval",
+                "user-guide"
+            ]
+        },
+        "EVAL-ADXL355-PMDZ": {
+            "docname": "documentation/solutions/reference-designs/adxl355-pmdz/index",
+            "description": "",
+            "include": {
+                "documentation": {
+                    "solutions/reference-designs/adxl355-pmdz": {
+                        "name": "User guide"
+                    },
+                    "learning/converter_connectivity_tutorial/index": {
+                        "name": "Converter Connectivity Tutorial"
+                    }
+                },
+                "no-OS": {
+                    "drivers/accel/adxl355": {
+                        "name": "no-OS Driver (adxl355)"
+                    }
+                },
+                "pyadi-iio": {
+                    "devices/adi.adxl355": {
+                        "name": "pyadi-iio Abstraction (adxl355)"
+                    }
+                }
+            },
+            "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/section-desc/docs/solutions/reference-designs/adxl355-pmdz/eval-angle.png",
+            "subtitle": "Evaluating the ADXL355 Low-Noise, Low-Drift, Low-Power, 3-Axis MEMS Accelerometers",
+            "label": [
+                "eval",
+                "user-guide"
+            ]
+        }
+    }
+}
