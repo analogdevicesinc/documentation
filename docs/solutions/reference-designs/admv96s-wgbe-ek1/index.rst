@@ -3,8 +3,7 @@
 ADMV96S-WGBE-EK1
 =================
 
-60 GHz Wireless Connector
-"""""""""""""""""""""""""
+60 GHz Wireless Connector.
 
 Overview
 --------

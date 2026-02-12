@@ -3,8 +3,7 @@
 AD-ACEVSECRDSET-SL
 ==================
 
-Type 2 EVSE 3.6 kW Charging Cable
-""""""""""""""""""""""""""""""""""
+Type 2 EVSE 3.6 kW Charging Cable.
 
 Introduction
 ------------

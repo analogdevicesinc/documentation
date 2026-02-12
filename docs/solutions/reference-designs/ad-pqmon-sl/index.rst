@@ -3,8 +3,7 @@
 AD-PQMON-SL
 ============
 
-Power Quality Analyzer
-""""""""""""""""""""""
+Power Quality Analyzer.
 
 .. figure:: ade9430_angle.jpg
    :width: 400px

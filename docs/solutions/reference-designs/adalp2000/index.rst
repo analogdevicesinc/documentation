@@ -3,8 +3,7 @@
 ADALP2000
 =========
 
-ADALP2000 Analog Parts Kit
-""""""""""""""""""""""""""
+ADALP2000 Analog Parts Kit.
 
 .. figure:: kit_contents.jpg
    :align: center

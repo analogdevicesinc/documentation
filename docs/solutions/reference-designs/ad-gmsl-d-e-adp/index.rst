@@ -3,8 +3,7 @@
 AD-GMSL-D-E-ADP#
 ================
 
-GMSL oLDI/LVDS to HDMI Adapter
-""""""""""""""""""""""""""""""
+GMSL oLDI/LVDS to HDMI Adapter.
 
 Overview
 --------

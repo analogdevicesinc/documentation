@@ -3,8 +3,7 @@
 EVAL-CN0503-ARDZ
 ================
 
-Multiple Parameter Optical Liquid Measurement Platform
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Multiple Parameter Optical Liquid Measurement Platform.
 
 :adi:`CN0503` is a reconfigurable multi-parameter optical liquid
 measurement platform capable of performing colorimetry, turbidity, and

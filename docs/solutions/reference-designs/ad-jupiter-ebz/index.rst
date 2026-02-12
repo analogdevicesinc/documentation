@@ -3,8 +3,7 @@
 AD-JUPITER-EBZ
 ==============
 
-Software-Defined Radio
-""""""""""""""""""""""
+Software-Defined Radio.
 
 Overview
 --------

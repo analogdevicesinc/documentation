@@ -1,8 +1,7 @@
 EVAL-ISOMAX
 ===========
 
-Low-cost Integrated BMS Monitor with On-board MCU and Dual isoSPI
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Low-cost Integrated BMS Monitor with On-board MCU and Dual isoSPI.
 
 Overview
 --------

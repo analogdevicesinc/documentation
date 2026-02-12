@@ -1,8 +1,7 @@
 EVAL-CN0417-EBZ
 ===============
 
-USB Powered 2.4 GHz RF Power Amplifier
-""""""""""""""""""""""""""""""""""""""
+USB Powered 2.4 GHz RF Power Amplifier.
 
 Overview
 --------

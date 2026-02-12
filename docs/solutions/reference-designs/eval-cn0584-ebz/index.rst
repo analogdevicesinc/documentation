@@ -3,8 +3,7 @@
 EVAL-CN0584-EBZ
 ===============
 
-Precision Low Latency Development Kit
-""""""""""""""""""""""""""""""""""""""
+Precision Low Latency Development Kit.
 
 Overview
 --------

@@ -3,8 +3,7 @@
 EVAL-CN0565-ARDZ
 ================
 
-Electrical Impedance Tomography Measurement System
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+Electrical Impedance Tomography Measurement System.
 
 Overview
 --------

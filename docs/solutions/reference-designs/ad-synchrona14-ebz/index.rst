@@ -3,8 +3,7 @@
 AD-SYNCHRONA14-EBZ
 ==================
 
-Multichannel System Clocking Device
-"""""""""""""""""""""""""""""""""""
+Multichannel System Clocking Device.
 
 Overview
 --------

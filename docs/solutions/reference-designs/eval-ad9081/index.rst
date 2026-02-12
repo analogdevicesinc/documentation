@@ -3,8 +3,7 @@
 AD9081 & AD9082
 ===============================================================================
 
-MxFE™ Quad, 16-Bit, 12GSPS RFDAC and Quad, 12-Bit, 4/6 GSPS RFADC
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+MxFE™ Quad, 16-Bit, 12GSPS RFDAC and Quad, 12-Bit, 4/6 GSPS RFADC.
 
 .. image:: ../images/ad9081.webp
    :align: left

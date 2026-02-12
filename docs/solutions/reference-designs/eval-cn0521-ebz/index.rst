@@ -3,8 +3,7 @@
 EVAL-CN0521-EBZ
 ===============
 
-USB-Powered, 2.4 GHz RF Low Noise Amplifier Receiver with Overpower Protection Circuit
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+USB-Powered, 2.4 GHz RF Low Noise Amplifier Receiver with Overpower Protection Circuit.
 
 Overview
 --------

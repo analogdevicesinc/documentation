@@ -3,8 +3,7 @@
 EVAL-CN0575-RPIZ
 ================
 
-10BASE-T1L Field Device Development Platform with Class 12 and 13 SPoE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+10BASE-T1L Field Device Development Platform with Class 12 and 13 SPoE.
 
 General Description
 -------------------

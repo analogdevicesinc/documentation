@@ -3,8 +3,7 @@
 AD-MAX32LRWISE-SL
 =================
 
-Long Range Wireless Radio Development Kit based on MAX32670 MCU and LR1110 RF Transceiver
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Long Range Wireless Radio Development Kit based on MAX32670 MCU and LR1110 RF Transceiver.
 
 .. admonition:: Download
 

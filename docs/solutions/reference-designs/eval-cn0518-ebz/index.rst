@@ -3,8 +3,7 @@
 EVAL-CN0518-EBZ
 ===============
 
-USB-Powered, 915 MHz RF Low Noise Amplifier Receiver with Overpower Protection Circuit
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+USB-Powered, 915 MHz RF Low Noise Amplifier Receiver with Overpower Protection Circuit.
 
 Overview
 --------

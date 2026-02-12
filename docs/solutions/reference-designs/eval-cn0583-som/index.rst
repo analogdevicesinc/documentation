@@ -3,8 +3,7 @@
 EVAL-CN0583-SOM
 ===============
 
-Multistandard Micropower Verified Smoke Detection System-on-Module
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Multistandard Micropower Verified Smoke Detection System-on-Module.
 
 Overview
 --------

@@ -1,8 +1,7 @@
 EVAL-ESS1-SYS
 =============
 
-Scalable BMS Kit for Cell and Pack Monitoring
-"""""""""""""""""""""""""""""""""""""""""""""
+Scalable BMS Kit for Cell and Pack Monitoring.
 
 Introduction
 ------------

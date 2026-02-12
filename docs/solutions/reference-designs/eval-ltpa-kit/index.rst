@@ -3,8 +3,7 @@
 EVAL-LTPA-KIT (LTpowerAnalyzer Kit)
 ===================================
 
-Low-cost, High Performance, Compact Laboratory Tool for Evaluating and Characterizing Power Supply Designs
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Low-cost, High Performance, Compact Laboratory Tool for Evaluating and Characterizing Power Supply Designs.
 
 .. figure:: kitangle.gif
     :align: center

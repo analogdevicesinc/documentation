@@ -3,8 +3,7 @@
 AD9084-FMCA-EBZ (Apollo)
 ===============================================================================
 
-Apollo MxFE Quad, 16-Bit, 28GSPS RF DAC and Quad, 12-Bit, 20 GSPS RF ADC
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Apollo MxFE Quad, 16-Bit, 28GSPS RF DAC and Quad, 12-Bit, 20 GSPS RF ADC.
 
 .. image:: ../images/ad9084.png
    :align: left

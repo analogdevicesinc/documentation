@@ -3,8 +3,7 @@
 EVAL-CN0550-EBZ
 ===============
 
-Low/Full/High-Speed USB 2.0 Isolator with Isolated Power
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Low/Full/High-Speed USB 2.0 Isolator with Isolated Power.
 
 General Description
 -------------------

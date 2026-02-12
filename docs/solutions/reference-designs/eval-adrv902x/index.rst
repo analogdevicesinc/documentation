@@ -3,8 +3,7 @@
 EVAL-ADRV902X
 ===============================================================================
 
-Integrated, Quad RF Transceiver with Observation Path
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Integrated, Quad RF Transceiver with Observation Path.
 
 .. image:: ../images/adrv9026.webp
    :align: left

@@ -3,8 +3,7 @@
 EVAL-CN0555-EBZ
 ===============
 
-USB-Powered, 433.92 MHz RF Low Noise Amplifier Receiver with Overpower Protection
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+USB-Powered, 433.92 MHz RF Low Noise Amplifier Receiver with Overpower Protection.
 
 Overview
 --------

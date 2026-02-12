@@ -3,8 +3,7 @@
 EVAL-CN0582-USBZ
 ================
 
-USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+USB 3.0 Quad-Channel IEPE Vibration Sensor Measurement System.
 
 General Description
 -------------------

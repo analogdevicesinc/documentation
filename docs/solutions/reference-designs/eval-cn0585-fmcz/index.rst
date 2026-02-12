@@ -3,8 +3,7 @@
 EVAL-CN0585-FMCZ
 ==================
 
-Quad Channel, Low Latency, Data Acquisition and Signal Generation Module
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Quad Channel, Low Latency, Data Acquisition and Signal Generation Module.
 
 The :adi:`EVAL-CN0585-FMCZ <CN0585>` Low Latency Development Kit (LLDK) board
 is a development board consisting of 4 x 16-bit ADC channels and 4 x 16-bit DAC

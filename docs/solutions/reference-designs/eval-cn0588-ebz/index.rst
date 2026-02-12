@@ -3,8 +3,7 @@
 EVAL-CN0588-EBZ
 ===============
 
-DC to 10 kHz MEMS-Based IEPE Vibration Sensor
-""""""""""""""""""""""""""""""""""""""""""""""
+DC to 10 kHz MEMS-Based IEPE Vibration Sensor.
 
 Overview
 --------
