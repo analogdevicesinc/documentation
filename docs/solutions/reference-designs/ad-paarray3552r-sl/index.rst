@@ -3,8 +3,7 @@
 AD-PAARRAY3552R-SL
 ==================
 
-RF Front-end GaN Power Amplifier Biasing, Protection, and Control Reference Design
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+RF Front-end GaN Power Amplifier Biasing, Protection, and Control Reference Design.
 
 Overview
 --------

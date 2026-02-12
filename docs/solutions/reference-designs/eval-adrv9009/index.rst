@@ -3,8 +3,7 @@
 ADRV9009 & ADRV9008
 ===============================================================================
 
-Integrated Dual RF Tx, Rx, and Observation Rx
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Integrated Dual RF Tx, Rx, and Observation Rx.
 
 .. image:: adrv9009-bc.jpg
    :align: left

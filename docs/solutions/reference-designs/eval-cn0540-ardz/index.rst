@@ -3,8 +3,7 @@
 EVAL-CN0540-ARDZ
 ===============================================================================
 
-24-Bit Data Acquisition System for IEPE Sensors
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+24-Bit Data Acquisition System for IEPE Sensors.
 
 .. image:: ../images/ad7768-1.png
     :align: left

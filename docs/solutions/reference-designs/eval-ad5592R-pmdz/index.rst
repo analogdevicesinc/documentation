@@ -3,8 +3,7 @@
 EVAL-AD5592R-PMDZ
 =================
 
-8-channel, 12-Bit, Configurable ADC/DAC/GPIO with on-chip Reference, SPI Interface Pmod Module
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+8-channel, 12-Bit, Configurable ADC/DAC/GPIO with on-chip Reference, SPI Interface Pmod Module.
 
 Overview
 --------

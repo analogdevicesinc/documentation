@@ -3,8 +3,7 @@
 AD-FMCOMMS3-EBZ
 ===============
 
-AD9361 Wideband Software Defined Radio Board
-""""""""""""""""""""""""""""""""""""""""""""
+AD9361 Wideband Software Defined Radio Board.
 
 .. figure:: ad9361_top_layer.png
    :align: center

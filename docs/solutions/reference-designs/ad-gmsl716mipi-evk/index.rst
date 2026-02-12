@@ -1,8 +1,7 @@
 AD-GMSL716MIPI-EVK
 ==================
 
-GMSL2-to-MIPI Deserializer Board for SoC Camera Systems
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+GMSL2-to-MIPI Deserializer Board for SoC Camera Systems.
 
 Overview
 --------

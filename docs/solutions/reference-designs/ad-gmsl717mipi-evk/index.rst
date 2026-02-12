@@ -1,8 +1,7 @@
 AD-GMSL717MIPI-EVK
 ==================
 
-GMSL2 Serializer Board for Raspberry Pi Cameras
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+GMSL2 Serializer Board for Raspberry Pi Cameras.
 
 
 Overview

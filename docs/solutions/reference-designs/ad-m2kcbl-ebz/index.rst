@@ -3,8 +3,7 @@
 AD-M2KCBL-EBZ
 =============
 
-ADALM2000 Cable Assembly
-""""""""""""""""""""""""
+ADALM2000 Cable Assembly.
 
 The AD-M2KCLB-EBZ is a cable assembly, compatible with the
 :adi:`ADALM2000 <ADALM2000>` and is the replacement

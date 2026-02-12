@@ -1,8 +1,7 @@
 AD-CELLPACKBM-SL
 ================
 
-Cell and Pack Monitoring Kit for Broad Market Applications
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Cell and Pack Monitoring Kit for Broad Market Applications.
 
 A concise version of this document is available in portable document format. Click on the file below to download:
 
