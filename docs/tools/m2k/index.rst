@@ -11,8 +11,12 @@ ADALM2000
    :hidden:
    :glob:
 
-   */index
-   *
+   intro
+   users/index
+   devs/index
+   matlab
+   labview
+   help_support
 
 The :adi:`ADALM2000` (M2K) Active Learning Module is an affordable
 USB-powered data acquisition module that takes the capabilities of the

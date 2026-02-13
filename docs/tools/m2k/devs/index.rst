@@ -7,6 +7,13 @@ For Developers
    :align: right
    :width: 400px
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :glob:
+
+   hardware
+
 The people who typical read these pages are those who write custom software or
 HDL (for the FPGA) that run directly on the M2K device. This may put the M2K in
 different modes, and support different external USB devices (including USB/LAB,
@@ -28,7 +35,7 @@ Content
    Make sure all things are in ./devs
 
 #. Introduction *(Coming soon)*
-#. Hardware
+#. :ref:`m2k hardware`
 
    #. Detailed Specifications *(Coming soon)*
    #. :dokuwiki:`Schematics </university/tools/m2k/devs/hardware>`
