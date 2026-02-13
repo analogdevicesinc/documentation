@@ -3,8 +3,7 @@
 EVAL-CN0556-EBZ
 ===============
 
-Programmable High Current and Voltage Source/Sink Power Supply
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Programmable High Current and Voltage Source/Sink Power Supply.
 
 Overview
 --------

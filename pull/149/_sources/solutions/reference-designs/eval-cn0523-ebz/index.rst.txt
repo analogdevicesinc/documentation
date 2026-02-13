@@ -3,8 +3,7 @@
 EVAL-CN0523-EBZ
 ===============
 
-USB-Powered, 5.8 GHz RF Power Amplifier with Overtemperature Management
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+USB-Powered, 5.8 GHz RF Power Amplifier with Overtemperature Management.
 
 Overview
 --------

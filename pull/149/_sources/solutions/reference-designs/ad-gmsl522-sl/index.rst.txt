@@ -1,8 +1,7 @@
 AD-GMSL522-SL
 =============
 
-GMSL Carrier Board
-""""""""""""""""""
+GMSL Carrier Board.
 
 Overview
 --------

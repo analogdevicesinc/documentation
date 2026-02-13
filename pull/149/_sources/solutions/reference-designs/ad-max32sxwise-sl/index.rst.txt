@@ -3,8 +3,7 @@
 AD-MAX32SXWISE-SL
 =================
 
-Long Range Wireless Radio Development Kit based on MAX32670 MCU and SX1261 RF Transceiver
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Long Range Wireless Radio Development Kit based on MAX32670 MCU and SX1261 RF Transceiver.
 
 .. admonition:: Download
 

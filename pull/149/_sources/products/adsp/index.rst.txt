@@ -91,8 +91,13 @@ Release versions include the upstream version and a ADI specific release number
       :git-linux:`Commits <commits/adsp-6.12.0-y+>`
       :git-linux:`Release 1 <releases/tag/adsp-6.12.0-1+>`
       :git-linux:`Release 2 <releases/tag/6.12.0-2+>`
+
+..
     - v6.12.38:
       :git-linux:`Commits <commits/adsp-6.12.38-y+>`
+    - v6.12.65:
+      :git-linux:`Commits <commits/adsp-6.12.65-y+>`
+
 - :git-u-boot:`+`
     - v2025.07:
       :git-u-boot:`Commits <commits/adi-u-boot-2025.07.y+>`
@@ -101,6 +106,8 @@ Release versions include the upstream version and a ADI specific release number
       :git-u-boot:`Commits <commits/adi-u-boot-2025.10.y+>`
       :git-u-boot:`Release 1 <releases/tag/v2025.10-1+>`
       :git-u-boot:`Release 2 <releases/tag/v2025.10-2+>`
+    - v2026.01:
+      :git-u-boot:`Commits <commits/adi-u-boot-2026.01.y+>`
 - :git-buildroot:`+`
     - v2025.05:
       :git-buildroot:`Commits <commits/adi-2025.05.x+>`
@@ -132,6 +139,7 @@ For Yocto support see ``lxndsp-adi-meta`` below.
       :git-lnxdsp-adi-meta:`Release v3.1.2 <releases/tag/3.1.2-rel+>`
     - Scarthgap:
       :git-lnxdsp-adi-meta:`Release v5.0.0 <releases/tag/5.0.0-rel+>`
+      :git-lnxdsp-adi-meta:`Release v5.0.1 <releases/tag/5.0.1-rel+>`
 - :git-lnxdsp-repo-manifest:`+`
 - :git-br2-external:`+`
     - v2025.05:

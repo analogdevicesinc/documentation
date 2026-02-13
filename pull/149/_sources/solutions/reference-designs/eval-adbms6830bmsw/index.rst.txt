@@ -3,8 +3,7 @@
 EVAL-ADBMS6830BMSW
 ===================
 
-16-Channel Battery Stack Monitor Evaluation Board for Broad Market Applications
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+16-Channel Battery Stack Monitor Evaluation Board for Broad Market Applications.
 
 Overview
 --------

@@ -3,8 +3,7 @@
 EVAL-CN0577-FMCZ
 ================
 
-Analog Front End and Digital Interface for Serial LVDS SAR ADCs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Analog Front End and Digital Interface for Serial LVDS SAR ADCs.
 
 Overview
 --------
@@ -236,7 +235,7 @@ Using :adi:`ADALM2000` as input source:
 #. Connect the ADALM2000 to :adi:`EVAL-CN0577-FMCZ <CN0577>` using
    BNC to SMA cable (W1 to J1 and W2 to J2)
 #. Plug the ADALM2000 to the host PC. Open Scopy and use the Signal Generator
-   feature to set input. More information on using the Scopy Signal Generator in :dokuwiki:`here <university/tools/m2k/scopy/siggen>`.
+   feature to set input. More information on using the :external+scopy:ref:`signal_generator`.
 #. Run the IIO Oscilloscope software and capture the resulting ADC data.
 
 .. figure:: demo_with_m2k.png

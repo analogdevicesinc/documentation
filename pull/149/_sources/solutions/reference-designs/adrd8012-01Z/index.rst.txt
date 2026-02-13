@@ -1,8 +1,7 @@
 ADRD8012-01Z
 ============
 
-FPGA-based 8x GMSL to 10 Gb Ethernet Adapter
-""""""""""""""""""""""""""""""""""""""""""""
+FPGA-based 8x GMSL to 10 Gb Ethernet Adapter.
 
 Overview
 ---------

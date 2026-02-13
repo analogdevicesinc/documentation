@@ -1,8 +1,7 @@
 AD-PS3803-RD
 ============
 
-PoE+ with Ideal Diode Bridge to Isolated Flyback DC/DC (12V, 2A)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+PoE+ with Ideal Diode Bridge to Isolated Flyback DC/DC (12V, 2A).
 
 .. figure:: ad-ps3803-rd_angle.jpg
   :width: 400 px

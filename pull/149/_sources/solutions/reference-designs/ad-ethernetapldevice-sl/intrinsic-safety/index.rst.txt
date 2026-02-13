@@ -13,7 +13,7 @@ by IEC TS 60079-47.
 
 Key Parameters
 ~~~~~~~~~~~~~~
-The 10Base-T1L Ethernet connection can only be considered 2-WISE,
+The 10BASE-T1L Ethernet connection can only be considered 2-WISE,
 especially for the APL Field Device if it passed the specification of a
 Power Load Port indicated in IEC TS 60079-47.
 
@@ -184,14 +184,14 @@ level protection, we need 3 polarity protection diodes in series to account
 for 2 simultaneous short circuit failures. The diode bridge and the additional
 series Schottky diode provide this protection.
 
-3.  The DM (differential mode) inductor can store energy that must be
+3.  The differential mode (DM) inductor can store energy that must be
 dissipated safely in the event of an open-circuit fault. The bank of diodes
 connected in parallel to the DM choke only operates in the event of an open
 circuit in the inductor that would otherwise create a voltage spike. These
 diodes must be redundant in parallel to reach 'Ex ia' protection. Three diodes
 in series are recommended for higher or wider operating temperature range
 because of the diode forward voltages being dependent on ambient temperature,
-which the diodes must block the ethernet signal of 1V p-p during forward
+which the diodes must block the ethernet signal of 1Vp-p during forward
 biased, and must not be distorted by diodes conducting across the inductor.
 But if size and component count are a critical factor, it can be reduced to 2
 diodes in series in lesser or narrower temperature range.
