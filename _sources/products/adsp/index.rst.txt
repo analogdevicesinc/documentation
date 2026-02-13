@@ -139,6 +139,7 @@ For Yocto support see ``lxndsp-adi-meta`` below.
       :git-lnxdsp-adi-meta:`Release v3.1.2 <releases/tag/3.1.2-rel+>`
     - Scarthgap:
       :git-lnxdsp-adi-meta:`Release v5.0.0 <releases/tag/5.0.0-rel+>`
+      :git-lnxdsp-adi-meta:`Release v5.0.1 <releases/tag/5.0.1-rel+>`
 - :git-lnxdsp-repo-manifest:`+`
 - :git-br2-external:`+`
     - v2025.05:
