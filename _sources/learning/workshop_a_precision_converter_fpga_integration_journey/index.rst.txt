@@ -556,6 +556,10 @@ Use Case: High-Performance AD7984 Integration
 The AD7984 is an ideal choice for demonstrating SPI Engine capabilities due to
 its demanding timing requirements and excellent specifications.
 
+.. seealso::
+
+   :external+hdl:ref:`spi_engine tutorial`
+
 **Key Specifications:**
 
 :Resolution: 18 bits with no missing codes
@@ -770,14 +774,14 @@ The SPI Engine framework provides a TCL helper function to simplify instantiatio
    Complete system architecture for PulSAR ADC integration showing PWM trigger
    generator, SPI Engine with offload, clock generation, and DMA controller.
 
-*ADI AXI PWM GENERATOR*
+:external+hdl:ref:`axi_pwm_gen`
 
 - ad_ip_parameter pulsar_adc_trigger_gen CONFIG.PULSE_0_PERIOD 120
 - ad_ip_parameter pulsar_adc_trigger_gen CONFIG.PULSE_0_WIDTH 1
 - ad_connect spi_clk pulsar_adc_trigger_gen/ext_clk
 - ad_connect pulsar_adc_trigger_gen/pwm_0 $hier_spi_engine/offload/trigger
 
-*AXI CLKGEN*
+:external+hdl:ref:`axi_clkgen`
 
 - ad_ip_instance axi_clkgen spi_clkgen
 - ad_ip_parameter spi_clkgen CONFIG.CLK0_DIV 5
@@ -787,7 +791,7 @@ The SPI Engine framework provides a TCL helper function to simplify instantiatio
 - ad_connect spi_clk spi_clkgen/clk_0
 - ad_connect spi_clk spi_pulsar_adc/spi_clk
 
-*ADI AXI DMA CONTROLLER*
+:external+hdl:ref:`axi_dmac`
 
 - ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_TYPE_SRC 1
 - ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_TYPE_DEST 0
@@ -797,7 +801,7 @@ The SPI Engine framework provides a TCL helper function to simplify instantiatio
 - ad_ip_parameter axi_pulsar_adc_dma CONFIG.AXI_SLICE_DEST 1
 - ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_2D_TRANSFER 0
 - ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH_SRC 32
-- ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH _DEST 64
+- ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH_DEST 64
 - ad_connect spi_clk axi_pulsar_adc_dma/s_axis_aclk
 
 Build and Test System
@@ -902,7 +906,7 @@ Now that you have the repositories set up, follow these guides to build the HDL 
 
    Follow the comprehensive guide to build the FPGA HDL design for Zynq platforms using Vivado:
 
-   📚 `HDL Project Build Guide <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`_
+   :external+hdl:doc:`user_guide/build_hdl`
 
    This guide covers:
 
@@ -916,7 +920,7 @@ Now that you have the repositories set up, follow these guides to build the HDL 
 
    After building the HDL, create the complete Zynq boot image containing FPGA bitstream, FSBL, and U-Boot:
 
-   📚 `Boot Image Build Guide <https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html>`_
+   :external+hdl:doc:`user_guide/build_boot_bin`
 
    This guide covers:
 
@@ -930,7 +934,7 @@ Now that you have the repositories set up, follow these guides to build the HDL 
 
    Build the Linux kernel with ADI drivers and devicetree for Zynq-7000 platforms:
 
-   📚 `Zynq Linux Build Guide <https://analogdevicesinc.github.io/documentation/linux/kernel/zynq.html>`_
+   :doc:`/linux/kernel/zynq`
 
    This guide covers:
 
@@ -942,7 +946,7 @@ Now that you have the repositories set up, follow these guides to build the HDL 
 
 **System Build - ADALM2000 (M2K)**
 
-The ADALM2000 provides essential test and measurement capabilities for this workshop.
+The :ref:`m2k` provides essential test and measurement capabilities for this workshop.
 
 .. figure:: system_build_m2k.png
    :align: center
@@ -963,8 +967,8 @@ The ADALM2000 provides essential test and measurement capabilities for this work
    :align: center
    :width: 600px
 
-   Scopy multi-instrument software interface showing oscilloscope, function generator,
-   and logic analyzer views.
+   :external+scopy:doc:`index` multi-instrument software interface showing
+   oscilloscope, function generator, and logic analyzer views.
 
 **Scopy Virtual Instruments:**
 
@@ -1070,7 +1074,9 @@ Step 1 - using Putty
         TX packets 83  bytes 10176 (9.9 KiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-Step 2 - using Cygwin
+Step 2 - Testing Connectivity from Host PC
+
+Test network connectivity to the board from your host machine:
 
 .. shell::
    :caption: ping 169.254.92.202
@@ -1309,9 +1315,11 @@ Conclusions
 
 **Questions? Community Support:**
 
+For technical questions and community discussions:
+
 :ez:`community/university-program`
 
 **Hardware Reference:**
 
-.. _Cora Z7S: https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-developmen
+- Cora Z7S: https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development
 
