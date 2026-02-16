@@ -8,8 +8,8 @@
 
     <title>A Precision Converter FPGA Integration Journey &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=22cbc7d3" />
-    <script async="async" src="../../_static/app.umd.js?v=46a18818"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=9bac72d6" />
+    <script async="async" src="../../_static/app.umd.js?v=d8ceb7f1"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1203,6 +1203,10 @@ precision measurement systems requiring high-fidelity data acquisition.</span><a
 <p><strong>AD7984: High-Performance 18-bit SAR ADC</strong></p>
 <p>The AD7984 is an ideal choice for demonstrating SPI Engine capabilities due to
 its demanding timing requirements and excellent specifications.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/spi_engine/tutorial.html#spi-engine-tutorial" target="_blank" title="(in HDL)"><span>SPI Engine Tutorial - PulSAR-ADC</span></a></p>
+</div>
 <p><strong>Key Specifications:</strong></p>
 <dl class="field-list simple">
 <dt class="field-odd">Resolution<span class="colon">:</span></dt>
@@ -1450,14 +1454,14 @@ designs with SCLK &gt; 50 MHz to meet setup/hold timing.</p>
 generator, SPI Engine with offload, clock generation, and DMA controller.</span><a class="headerlink" href="#id28" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><em>ADI AXI PWM GENERATOR</em></p>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/axi_pwm_gen/index.html#axi-pwm-gen" target="_blank" title="(in HDL)"><span>AXI PWM Generator</span></a></p>
 <ul class="simple">
 <li><p>ad_ip_parameter pulsar_adc_trigger_gen CONFIG.PULSE_0_PERIOD 120</p></li>
 <li><p>ad_ip_parameter pulsar_adc_trigger_gen CONFIG.PULSE_0_WIDTH 1</p></li>
 <li><p>ad_connect spi_clk pulsar_adc_trigger_gen/ext_clk</p></li>
 <li><p>ad_connect pulsar_adc_trigger_gen/pwm_0 $hier_spi_engine/offload/trigger</p></li>
 </ul>
-<p><em>AXI CLKGEN</em></p>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/axi_clkgen/index.html#axi-clkgen" target="_blank" title="(in HDL)"><span>AXI CLK Generator</span></a></p>
 <ul class="simple">
 <li><p>ad_ip_instance axi_clkgen spi_clkgen</p></li>
 <li><p>ad_ip_parameter spi_clkgen CONFIG.CLK0_DIV 5</p></li>
@@ -1467,7 +1471,7 @@ generator, SPI Engine with offload, clock generation, and DMA controller.</span>
 <li><p>ad_connect spi_clk spi_clkgen/clk_0</p></li>
 <li><p>ad_connect spi_clk spi_pulsar_adc/spi_clk</p></li>
 </ul>
-<p><em>ADI AXI DMA CONTROLLER</em></p>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/axi_dmac/index.html#axi-dmac" target="_blank" title="(in HDL)"><span>AXI DMAC</span></a></p>
 <ul class="simple">
 <li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_TYPE_SRC 1</p></li>
 <li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_TYPE_DEST 0</p></li>
@@ -1477,7 +1481,7 @@ generator, SPI Engine with offload, clock generation, and DMA controller.</span>
 <li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.AXI_SLICE_DEST 1</p></li>
 <li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_2D_TRANSFER 0</p></li>
 <li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH_SRC 32</p></li>
-<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH _DEST 64</p></li>
+<li><p>ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH_DEST 64</p></li>
 <li><p>ad_connect spi_clk axi_pulsar_adc_dma/s_axis_aclk</p></li>
 </ul>
 </section>
@@ -1569,7 +1573,7 @@ git<span class="w"> </span>checkout<span class="w"> </span>ad7984_demo
 <p class="admonition-title">Important</p>
 <p><strong>Building the HDL Project for Zynq</strong></p>
 <p>Follow the comprehensive guide to build the FPGA HDL design for Zynq platforms using Vivado:</p>
-<p>📚 <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html" target="_blank">HDL Project Build Guide</a></p>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a></p>
 <p>This guide covers:</p>
 <ul class="simple">
 <li><p>Setting up AMD Xilinx Vivado tools for Zynq</p></li>
@@ -1582,7 +1586,7 @@ git<span class="w"> </span>checkout<span class="w"> </span>ad7984_demo
 <p class="admonition-title">Tip</p>
 <p><strong>Creating the Zynq Boot Image (BOOT.BIN)</strong></p>
 <p>After building the HDL, create the complete Zynq boot image containing FPGA bitstream, FSBL, and U-Boot:</p>
-<p>📚 <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html" target="_blank">Boot Image Build Guide</a></p>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html" target="_blank" title="(in HDL)"><span>Build the boot image BOOT.BIN</span></a></p>
 <p>This guide covers:</p>
 <ul class="simple">
 <li><p>Combining Zynq FSBL, bitstream, and U-Boot into BOOT.BIN</p></li>
@@ -1595,7 +1599,7 @@ git<span class="w"> </span>checkout<span class="w"> </span>ad7984_demo
 <p class="admonition-title">Note</p>
 <p><strong>Building Zynq Linux Kernel and Devicetree</strong></p>
 <p>Build the Linux kernel with ADI drivers and devicetree for Zynq-7000 platforms:</p>
-<p>📚 <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/zynq.html" target="_blank">Zynq Linux Build Guide</a></p>
+<p><a class="reference internal" href="../../linux/kernel/zynq.html"><span class="doc">Build Zynq Linux kernel and devicetree</span></a></p>
 <p>This guide covers:</p>
 <ul class="simple">
 <li><p>Configuring the Linux kernel for Zynq with ADI device support</p></li>
@@ -1606,7 +1610,7 @@ git<span class="w"> </span>checkout<span class="w"> </span>ad7984_demo
 </ul>
 </div>
 <p><strong>System Build - ADALM2000 (M2K)</strong></p>
-<p>The ADALM2000 provides essential test and measurement capabilities for this workshop.</p>
+<p>The <a class="reference internal" href="../../tools/m2k/index.html#m2k"><span class="std std-ref">ADALM2000</span></a> provides essential test and measurement capabilities for this workshop.</p>
 <figure class="align-center" id="id32">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_m2k.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_m2k.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_m2k.png" style="width: 500px;" />
 </a>
@@ -1626,8 +1630,8 @@ git<span class="w"> </span>checkout<span class="w"> </span>ad7984_demo
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_scopy.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_scopy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_scopy.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 31 </span><span class="caption-text">Scopy multi-instrument software interface showing oscilloscope, function generator,
-and logic analyzer views.</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 31 </span><span class="caption-text"><a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/index.html" target="_blank" title="(in Scopy main)"><span>Scopy</span></a> multi-instrument software interface showing
+oscilloscope, function generator, and logic analyzer views.</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Scopy Virtual Instruments:</strong></p>
@@ -1751,7 +1755,8 @@ lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></div>
-<p>Step 2 - using Cygwin</p>
+<p>Step 2 - Testing Connectivity from Host PC</p>
+<p>Test network connectivity to the board from your host machine:</p>
 <div class="literal-block-wrapper docutils container" id="id41">
 <div class="code-block-caption"><span class="caption-number">Listing 4 </span><span class="caption-text">ping 169.254.92.202</span><a class="headerlink" href="#id41" title="Link to this code"></a></div>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
@@ -1989,8 +1994,12 @@ development and deployment.</p></li>
 <li><p>Hardware and Software Tools for Precision Wideband Instrumentation</p></li>
 </ul>
 <p><strong>Questions? Community Support:</strong></p>
+<p>For technical questions and community discussions:</p>
 <p><a class="icon ez reference external" href="https://ez.analog.com/community/university-program" target="_blank">EngineerZone</a></p>
 <p><strong>Hardware Reference:</strong></p>
+<ul class="simple">
+<li><p>Cora Z7S: <a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development" target="_blank">https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development</a></p></li>
+</ul>
 </section>
 </section>
 </section>
