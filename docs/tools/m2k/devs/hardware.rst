@@ -53,7 +53,7 @@ PCB.
       :width: 400px
 
 If you want to remove the PCB, and place it on the table, we recommend that you
-attach `Cylindrical Bumpers <https://www.digikey.com/scripts/DkSearch/dksus.dll?KeywordSearch?Site=US&Keywords=3M156065-ND>`__
+attach `Cylindrical Bumpers <https://www.digikey.com/en/products/detail/3m/SJ5076/570288?s=N4IgTCBcDaIMwFkCMBWAbABjSgtAOQBEQBdAXyA>`__
 (also known as feet), on the PCB to protect the components on the bottom of the
 PCB. These are not included in the design, and must be purchased separately (as
 we don't expect too many people wanting to do this).
