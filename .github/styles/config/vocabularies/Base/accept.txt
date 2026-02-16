@@ -10,6 +10,7 @@ Scopy
 Uno
 Nucleo
 [Ll]ibiio
+Trinamic
 
 [Tt]octree
 [Dd]ocname
@@ -67,6 +68,7 @@ HMI(s)?
 Profibus
 Ethernet
 Zener
+CANopen
 
 ns
 dBm
