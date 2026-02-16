@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This workshop is designed to explore the ADI Kuiper Linux distribution and teach you how to customize it for your specific needs. ADI Kuiper Linux is an open-source Linux distribution created by Analog Devices for product evaluation boards and reference designs. Through hands-on activities, you’ll learn to build custom Kuiper 2 images, configure boot files for different carrier boards, and interact with ADI hardware using IIO tools." name="description" />
+
+    <title>Customizing ADI Kuiper Linux &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=9bac72d6" />
+    <script async="async" src="../../_static/app.umd.js?v=d8ceb7f1"></script>
+    <link rel="icon" href="../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Software Defined Instrumentation" href="../workshops_software_defined_instrumentation/index.html" />
+    <link rel="prev" title="A Precision Converter FPGA Integration Journey" href="../workshop_a_precision_converter_fpga_integration_journey/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Customizing ADI Kuiper Linux</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#slide-deck-and-booklet">Slide Deck and Booklet</a></li>
+<li><a class="reference internal" href="#theory">Theory</a><ul>
+<li><a class="reference internal" href="#introduction-to-adi-kuiper-linux">Introduction to ADI Kuiper Linux</a></li>
+<li><a class="reference internal" href="#what-does-kuiper-include">What Does Kuiper Include</a></li>
+<li><a class="reference internal" href="#unlocking-the-power-of-kuiper-2">Unlocking the Power of Kuiper 2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hands-on-activity">Hands-on activity</a><ul>
+<li><a class="reference internal" href="#pre-requisites">Pre-requisites</a></li>
+<li><a class="reference internal" href="#workshop-preparation">Workshop Preparation</a><ul>
+<li><a class="reference internal" href="#preparing-the-raspberry-pi-5-sd-card">Preparing the Raspberry Pi 5 SD Card</a></li>
+<li><a class="reference internal" href="#preparing-the-coraz7s-sd-card">Preparing the CoraZ7S SD Card</a></li>
+<li><a class="reference internal" href="#preparing-the-jupiter-sd-card">Preparing the Jupiter SD Card</a></li>
+<li><a class="reference internal" href="#preparing-the-raspberry-pi-4-sd-card">Preparing the Raspberry Pi 4 SD Card</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#build-a-custom-kuiper-2-image">Build a Custom Kuiper 2 Image</a></li>
+<li><a class="reference internal" href="#coraz7s-exercises">CoraZ7S Exercises</a><ul>
+<li><a class="reference internal" href="#prepare-sd-card">Prepare SD card</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#exercise-1-coraz7s-environment-exploration">Exercise 1: CoraZ7s Environment Exploration</a></li>
+<li><a class="reference internal" href="#exercise-2-build-a-kernel-object-for-adxl355-driver">Exercise 2: Build a kernel object for ADXL355 driver</a></li>
+<li><a class="reference internal" href="#exercise-3-play-a-snake-game-with-the-accelerometer">Exercise 3: Play a Snake game with the accelerometer</a></li>
+<li><a class="reference internal" href="#extra-control-a-led-optional">Extra: Control a LED (Optional)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jupiter-sdr-exercises">Jupiter SDR Exercises</a><ul>
+<li><a class="reference internal" href="#id1">Prepare SD card</a></li>
+<li><a class="reference internal" href="#id2">Hardware Setup</a></li>
+<li><a class="reference internal" href="#exercise-1-jupiter-sdr-environment-exploration">Exercise 1: Jupiter SDR Environment Exploration</a></li>
+<li><a class="reference internal" href="#exercise-2-jupiter-configuration">Exercise 2: Jupiter Configuration</a></li>
+<li><a class="reference internal" href="#exercise-3-loopback-complex-sinewave">Exercise 3: Loopback Complex Sinewave</a></li>
+<li><a class="reference internal" href="#extra-doppler-effect-optional">Extra: Doppler Effect (Optional)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#raspberry-pi-4-exercises">Raspberry Pi 4 Exercises</a><ul>
+<li><a class="reference internal" href="#id3">Prepare SD Card</a></li>
+<li><a class="reference internal" href="#id4">Hardware Setup</a></li>
+<li><a class="reference internal" href="#exercise-1-raspberry-pi-4-environment-exploration">Exercise 1: Raspberry Pi 4 Environment Exploration</a></li>
+<li><a class="reference internal" href="#exercise-2-monitor-workstation-temperature">Exercise 2: Monitor Workstation Temperature</a></li>
+<li><a class="reference internal" href="#exercise-3-monitor-remotely-rpi4-temperature">Exercise 3: Monitor Remotely RPi4 Temperature</a></li>
+<li><a class="reference internal" href="#extra-optional-challenge">Extra: Optional Challenge</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#raspberry-pi-5-networking-exercise">Raspberry Pi 5 Networking Exercise</a></li>
+<li><a class="reference internal" href="#boot-your-custom-kuiper-2-image-on-rpi5">Boot your Custom Kuiper 2 Image on RPi5</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#takeaways">Takeaways</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19-1" id="toctree-collapse-13-19-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20-1" id="toctree-collapse-13-20-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-20-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23-1" id="toctree-collapse-13-23-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-23-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Learning! Tutorials, Workshops, Etc</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="customizing-adi-kuiper-linux">
+<h1>Customizing ADI Kuiper Linux<a class="headerlink" href="#customizing-adi-kuiper-linux" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This workshop is designed to explore the ADI Kuiper Linux distribution and teach
+you how to customize it for your specific needs. ADI Kuiper Linux is an
+open-source Linux distribution created by Analog Devices for product evaluation
+boards and reference designs. Through hands-on activities, you’ll learn to build
+custom Kuiper 2 images, configure boot files for different carrier boards, and
+interact with ADI hardware using IIO tools.</p>
+</section>
+<section id="slide-deck-and-booklet">
+<h2>Slide Deck and Booklet<a class="headerlink" href="#slide-deck-and-booklet" title="Link to this heading"></a></h2>
+<p>Since this tutorial is also designed to be presented as a live, hands-on
+workshop, a slide deck is provided here:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/learning/workshop_kuiper/ftc_2025_kuiper.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Customizing</span> <span class="pre">ADI</span> <span class="pre">Kuiper</span> <span class="pre">Linux</span> <span class="pre">Slide</span> <span class="pre">Deck</span></code></a></p>
+</div>
+<p>A complete booklet of the hands-on activity is also provided, as a companion to
+following the tutorial yourself:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/learning/workshop_kuiper/ftc_2025_kuiper_booklet.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Customizing</span> <span class="pre">ADI</span> <span class="pre">Kuiper</span> <span class="pre">Linux</span> <span class="pre">Booklet</span></code></a></p>
+</div>
+</section>
+<section id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Introduction to ADI Kuiper Linux</p></li>
+<li><p>What Does Kuiper Include</p></li>
+<li><p>Unlocking the Power of Kuiper 2</p>
+<ul>
+<li><p>Key Features</p></li>
+<li><p>Stages Anatomy</p></li>
+<li><p>Build Flow</p></li>
+<li><p>Configuration File</p></li>
+<li><p>Supported Versions</p></li>
+<li><p>Extra Scripts</p></li>
+</ul>
+</li>
+</ul>
+<section id="introduction-to-adi-kuiper-linux">
+<h3>Introduction to ADI Kuiper Linux<a class="headerlink" href="#introduction-to-adi-kuiper-linux" title="Link to this heading"></a></h3>
+<p>ADI Kuiper Linux is an open-source Linux distribution for Analog Devices. It
+serves as the primary distribution for product evaluation boards and reference
+designs.</p>
+<ul class="simple">
+<li><p>It includes pre-built boot files, device drivers and a variety of development
+utilities</p></li>
+<li><p>Supports over 140 FPGA-based projects and over 30 Raspberry Pi-based designs</p></li>
+<li><p>The first release was published at the beginning of 2021</p></li>
+</ul>
+</section>
+<section id="what-does-kuiper-include">
+<h3>What Does Kuiper Include<a class="headerlink" href="#what-does-kuiper-include" title="Link to this heading"></a></h3>
+<p><em>Boot Files</em></p>
+<ul class="simple">
+<li><p>More than 1,300 Linux device drivers for Analog Devices products</p></li>
+<li><p>Pre-built boot files for over 140 FPGA-based projects and over 30 RPi-based
+designs</p></li>
+<li><p>Supported platforms include:</p>
+<ul>
+<li><p>AMD/Xilinx: Zynq, Zynq MP, Versal</p></li>
+<li><p>Intel FPGA: Cyclone5, Arria10, Stratix10</p></li>
+<li><p>Raspberry Pi: 2, 3, 4, 5</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Libraries and Applications</em></p>
+<p>A variety of development utilities, software libraries and examples for
+different projects:</p>
+<ul class="simple">
+<li><p>LibIIO - Linux Industrial I/O library</p></li>
+<li><p>IIO Oscilloscope - Signal visualization tool</p></li>
+<li><p>PyADI-IIO - Python for ADI Industrial I/O Devices</p></li>
+<li><p>ADI-LIBM2k - Interface library for the ADALM2000</p></li>
+<li><p>GNU Radio - The free and open software radio ecosystem</p></li>
+<li><p>Scopy - Multi-functional software tool</p></li>
+</ul>
+</section>
+<section id="unlocking-the-power-of-kuiper-2">
+<h3>Unlocking the Power of Kuiper 2<a class="headerlink" href="#unlocking-the-power-of-kuiper-2" title="Link to this heading"></a></h3>
+<p><em>Key Features</em></p>
+<ul class="simple">
+<li><p>Kuiper 2 is a <strong>Debian based</strong> distribution</p></li>
+<li><p>Contains a <strong>configuration file</strong>, where every setting can be done without
+modifying the source code</p></li>
+<li><p>Supported architectures are <strong>armhf</strong> (32 bits) and <strong>arm64</strong> (64 bits)</p></li>
+<li><p>Analog Devices <strong>libraries can be added individually</strong>, making the image
+completely customizable for each project</p></li>
+<li><p>Supports installation of <strong>different versions of boot files</strong> for Xilinx and
+Intel carriers and Raspberry Pi platforms</p></li>
+<li><p>Can <strong>configure the image at build time for a specific hardware setup</strong>,
+preparing the image to be transferred on an SD card and booted on a board,
+without the need to manually copy boot files</p></li>
+<li><p>Supports running a <strong>custom script</strong> at build time, to cover even more custom
+settings that are not standard in the config file</p></li>
+<li><p>Supports <strong>exporting the source files</strong> of all the packages used in the
+Kuiper 2 image at build time</p></li>
+</ul>
+<p><em>Stages Anatomy</em></p>
+<p>The adi-kuiper-gen repository structure includes:</p>
+<ul class="simple">
+<li><p><strong>ci/</strong> - Support for automatic builds in GitHub Actions</p></li>
+<li><p><strong>docs/</strong> - Support for GitHub Documentation</p></li>
+<li><p><strong>stages/</strong> - Build stages organized in numbered directories:</p>
+<ul>
+<li><p>01.bootstrap</p></li>
+<li><p>02.set-locale-and-timezone</p></li>
+<li><p>03.system-tweaks</p></li>
+<li><p>04.configure-desktop-env</p></li>
+<li><p>05.adi-tools</p></li>
+<li><p>06.boot-partition</p></li>
+<li><p>07.extra-tweaks</p></li>
+<li><p>08.export-stage</p></li>
+</ul>
+</li>
+<li><p><strong>build-docker.sh</strong> - Shell script used to automate the process of preparing
+the Docker environment</p></li>
+<li><p><strong>config</strong> - Set of variables that control tool installation</p></li>
+<li><p><strong>kuiper-stages.sh</strong> - Shell script used to build the Kuiper 2 image</p></li>
+</ul>
+<p>The stages approach adds logical clarity, modularity, simplifies maintenance
+and simplifies customization.</p>
+<p><em>Build Flow</em></p>
+<p>The build process follows this flow:</p>
+<ol class="arabic simple">
+<li><p>Source files are stored on GitHub</p></li>
+<li><p>Pull requests and pushes trigger GitHub Actions</p></li>
+<li><p>The build starts and runs through each stage (stage 1 through stage 8)</p></li>
+<li><p>The config file provides settings to the stages directory</p></li>
+<li><p>Docker is used to execute the build</p></li>
+<li><p>The ADI Package Repository is used during the build</p></li>
+<li><p>The resulting ADI-KUIPER-LINUX image is exported</p></li>
+<li><p>ADI boot files (from Jenkins/Azure Pipelines) are added to complete the image</p></li>
+</ol>
+<p><em>Configuration File</em></p>
+<p>The configuration file controls various aspects of the build:</p>
+<ul class="simple">
+<li><p><strong>Target architecture</strong> - armhf or arm64</p></li>
+<li><p><strong>Debian version</strong> - The base Debian release</p></li>
+<li><p><strong>Boot files</strong> - Release version or source of installation (SW Downloads or
+ADI repository)</p></li>
+<li><p><strong>ADI library or tool</strong> - cmake arguments (if the case), github branch or tag</p></li>
+<li><p><strong>Extra script</strong> - Custom scripts to run during build</p></li>
+<li><p><strong>Export sources</strong> - Whether to export package sources</p></li>
+<li><p><strong>Prepare boot files in the boot partition</strong> - board and carrier settings</p></li>
+</ul>
+<p><em>Supported Versions</em></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Variable in config file</p></th>
+<th class="head"><p>Stage/substage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Basic image</p></td>
+<td><p>No variable</p></td>
+<td><p>01.bootstrap, 02.set-locale-and-timezone, 03.system-tweaks,
+05.adi-tools/14.write-git-logs, 06.boot-partition,
+08.export-stage/01.extend-rootfs, 08.export-stage/03.generate-license,
+08.export-stage/04.export-image</p></td>
+</tr>
+<tr class="row-odd"><td><p>With desktop environment</p></td>
+<td><p>CONFIG_DESKTOP</p></td>
+<td><p>04.configure-desktop-env</p></td>
+</tr>
+<tr class="row-even"><td><p>With ADI tool</p></td>
+<td><p>CONFIG_[ADI tool], CONFIG_[ADI tool]_CMAKE_ARGS, BRANCH_[ADI tool]</p></td>
+<td><p>05.adi-tools/xx.install-[ADI tool]</p></td>
+</tr>
+<tr class="row-odd"><td><p>With exported sources</p></td>
+<td><p>EXPORT_SOURCES</p></td>
+<td><p>08.export-stage/02.export-sources</p></td>
+</tr>
+<tr class="row-even"><td><p>With custom script</p></td>
+<td><p>EXTRA_SCRIPT</p></td>
+<td><p>07.extra-tweaks/01.extra-scripts</p></td>
+</tr>
+<tr class="row-odd"><td><p>With boot partition ready for a specific hardware setup</p></td>
+<td><p>ADI_EVAL_BOARD, CARRIER</p></td>
+<td><p>08.export-stage/04.export-image</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Extra Scripts</em></p>
+<p>Kuiper allows you to run additional scripts during the build process to
+customize the resulting image. This feature enables advanced customization
+beyond the standard configuration options.</p>
+<p>To use extra scripts:</p>
+<ol class="arabic simple">
+<li><p><strong>Add the script</strong> - Place your script file inside the adi-kuiper-gen/stages
+directory</p></li>
+<li><p><strong>Make it executable</strong> - Make sure your script is executable:
+<code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">your-script.sh</span></code></p></li>
+<li><p><strong>Add the path</strong> - Set EXTRA_SCRIPT in the config file to your script’s
+path, relative to adi-kuiper-gen directory</p></li>
+</ol>
+</section>
+</section>
+<section id="hands-on-activity">
+<h2>Hands-on activity<a class="headerlink" href="#hands-on-activity" title="Link to this heading"></a></h2>
+<p>By the end of this workshop, you will learn:</p>
+<ul class="simple">
+<li><p>How to build a custom Kuiper 2 image using adi-kuiper-gen</p></li>
+<li><p>How to prepare SD cards for different carrier boards</p></li>
+<li><p>How to explore IIO devices and connect to target boards</p></li>
+<li><p>How to build and load kernel modules</p></li>
+<li><p>How to use GNU Radio with Jupiter SDR</p></li>
+<li><p>How to monitor temperature sensors locally and remotely using libiio</p></li>
+</ul>
+<section id="pre-requisites">
+<h3>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Link to this heading"></a></h3>
+<p><strong>Common Linux commands:</strong></p>
+<ul class="simple">
+<li><p><strong>cd</strong>: used to change the current working directory in Linux and other
+Unix-like operating systems</p></li>
+<li><p><strong>ls</strong>: lists files and directories within the file system, and shows
+detailed information about them</p></li>
+<li><p><strong>cat</strong>: displays the contents of one or multiple text files</p></li>
+<li><p><strong>echo</strong>: prints out its arguments as standard output; use <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>
+with the <em>echo</em> command to print the output to a file instead of displaying
+it in the terminal</p></li>
+<li><p><strong>mv</strong>: moves a file from one location to another, rename a file with or
+without moving it</p></li>
+</ul>
+</section>
+<section id="workshop-preparation">
+<h3>Workshop Preparation<a class="headerlink" href="#workshop-preparation" title="Link to this heading"></a></h3>
+<p>This workshop requires four SD cards with pre-configured Kuiper images:</p>
+<ul class="simple">
+<li><p>One for the <strong>Raspberry Pi 5</strong> (development workstation)</p></li>
+<li><p>One for the <strong>CoraZ7S</strong> (target board)</p></li>
+<li><p>One for the <strong>Jupiter SDR</strong> (target board)</p></li>
+<li><p>One for the <strong>Raspberry Pi 4</strong> (target board)</p></li>
+</ul>
+<section id="preparing-the-raspberry-pi-5-sd-card">
+<h4>Preparing the Raspberry Pi 5 SD Card<a class="headerlink" href="#preparing-the-raspberry-pi-5-sd-card" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Download the <a class="icon link reference external" href="https://swdownloads.analog.com/cse/kuiper/kuiperv2.0.0/FTC25/ftc25_pi5_image.zip" target="_blank">Raspberry Pi 5 Kuiper image</a>.</p></li>
+<li><p>Unzip the downloaded file to extract the image.</p></li>
+<li><p>Write the image to an SD card by following the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/use-kuiper-image.html#use-kuiper-image" target="_blank" title="(in Kuiper latest)"><span class="xref std std-ref">Writing the Image to an SD Card</span></a> guide.</p></li>
+</ol>
+</section>
+<section id="preparing-the-coraz7s-sd-card">
+<h4>Preparing the CoraZ7S SD Card<a class="headerlink" href="#preparing-the-coraz7s-sd-card" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Download the <a class="icon link reference external" href="https://swdownloads.analog.com/cse/kuiper/kuiperv2.0.0/FTC25/ftc25_cora_image.zip" target="_blank">CoraZ7S Kuiper image</a>.</p></li>
+<li><p>Unzip the downloaded file to extract the image.</p></li>
+<li><p>Write the image to an SD card by following the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/use-kuiper-image.html#use-kuiper-image" target="_blank" title="(in Kuiper latest)"><span class="xref std std-ref">Writing the Image to an SD Card</span></a> guide.</p></li>
+</ol>
+</section>
+<section id="preparing-the-jupiter-sd-card">
+<h4>Preparing the Jupiter SD Card<a class="headerlink" href="#preparing-the-jupiter-sd-card" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Download the <a class="icon link reference external" href="https://swdownloads.analog.com/cse/kuiper/kuiperv2.0.0/FTC25/ftc25_jupiter_image.zip" target="_blank">Jupiter Kuiper image</a>.</p></li>
+<li><p>Unzip the downloaded file to extract the image.</p></li>
+<li><p>Write the image to an SD card by following the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/use-kuiper-image.html#use-kuiper-image" target="_blank" title="(in Kuiper latest)"><span class="xref std std-ref">Writing the Image to an SD Card</span></a> guide.</p></li>
+</ol>
+</section>
+<section id="preparing-the-raspberry-pi-4-sd-card">
+<h4>Preparing the Raspberry Pi 4 SD Card<a class="headerlink" href="#preparing-the-raspberry-pi-4-sd-card" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Download the <a class="icon link reference external" href="https://swdownloads.analog.com/cse/kuiper/kuiperv2.0.0/FTC25/ftc25_pi4_image.zip" target="_blank">Raspberry Pi 4 Kuiper image</a>.</p></li>
+<li><p>Unzip the downloaded file to extract the image.</p></li>
+<li><p>Write the image to an SD card by following the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/use-kuiper-image.html#use-kuiper-image" target="_blank" title="(in Kuiper latest)"><span class="xref std std-ref">Writing the Image to an SD Card</span></a> guide.</p></li>
+</ol>
+<hr class="docutils" />
+<p>Make sure the Raspberry Pi 5 in front of you is booted and is connected to the
+monitor, mouse, keyboard and WiFi.</p>
+<p>The booklet and the .ppt presentation can also be found in the Kuiper image on
+Raspberry Pi 5 on the desktop named “booklet.pdf” and “powerpoint.pdf”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before disconnecting a board from the power cable, run the following command
+in the terminal connected to that image:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>poweroff
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="build-a-custom-kuiper-2-image">
+<h3>Build a Custom Kuiper 2 Image<a class="headerlink" href="#build-a-custom-kuiper-2-image" title="Link to this heading"></a></h3>
+<p>In this exercise you will learn how to build a Kuiper 2 image that runs a
+custom script.</p>
+<ol class="arabic">
+<li><p>Open a terminal, clone the adi-kuiper-gen repository, move inside it and
+start Visual Studio Code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/adi-kuiper-gen
+<span class="nb">cd</span><span class="w"> </span>adi-kuiper-gen
+code<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+<li><p>Modify the <em>config</em> file in the project as follows:</p>
+<div class="table-wrapper colwidths-given docutils container" id="id5">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Config file modifications</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Line in config</p></th>
+<th class="head"><p>Old string</p></th>
+<th class="head"><p>Modified string</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Line 8</p></td>
+<td><p>TARGET_ARCHITECTURE=armhf</p></td>
+<td><p>TARGET_ARCHITECTURE=arm64</p></td>
+</tr>
+<tr class="row-odd"><td><p>Line 23</p></td>
+<td><p>CONFIG_DESKTOP=n</p></td>
+<td><p>CONFIG_DESKTOP=y</p></td>
+</tr>
+<tr class="row-even"><td><p>Line 30</p></td>
+<td><p>CONFIG_LIBIIO=n</p></td>
+<td><p>CONFIG_LIBIIO=y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Line 226</p></td>
+<td><p>EXTRA_SCRIPT=</p></td>
+<td><p>EXTRA_SCRIPT=stages/07.extra-tweaks/01.extra-scripts/examples/extra-script-example.sh</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Make sure you saved the file.</p>
+</li>
+<li><p>Create a new file at the location
+<em>stages/07.extra-tweaks/01.extra-scripts/examples/</em> named <em>custom-file.txt</em>
+and write to it “Hello FTC25” (or anything you want). You can do that by
+right-clicking on <em>examples</em> folder and pressing <em>Add new file</em>.</p></li>
+<li><p>Open the file <em>extra-script-example.sh</em> from location
+<em>stages/07.extra-tweaks/01.extra-scripts/examples/</em> and add the following
+line at the end of the file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>stages/07.extra-tweaks/01.extra-scripts/examples/custom-file.txt<span class="w"> </span>/home/analog
+</pre></div>
+</div>
+<p>Make sure to save the files. You can close now Visual Studio Code.</p>
+</li>
+<li><p>In the terminal you have opened start the build by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>bash<span class="w"> </span>build-docker.sh
+</pre></div>
+</div>
+<p>Password: <em>analog</em></p>
+<p><strong>Congratulations! You started your first Kuiper 2 custom build!</strong></p>
+<p><strong>Do not close the terminal until the build is finished. For any other
+command you will need to open a new terminal.</strong></p>
+</li>
+</ol>
+</section>
+<section id="coraz7s-exercises">
+<h3>CoraZ7S Exercises<a class="headerlink" href="#coraz7s-exercises" title="Link to this heading"></a></h3>
+<p>For this workshop you will get: a CoraZ7S board, an ethernet cable, a USB
+cable, and an ADXL355 pmod.</p>
+<section id="prepare-sd-card">
+<h4>Prepare SD card<a class="headerlink" href="#prepare-sd-card" title="Link to this heading"></a></h4>
+<p>The first thing you must do is prepare the SD Card with CoraZ7s boot files.</p>
+<ol class="arabic">
+<li><p>Make sure the adapter is connected through USB to the workstation (RPi5).</p></li>
+<li><p>Insert the SD Card you received with the CoraZ7s board into the SD slot on
+the adapter.</p></li>
+<li><p>Run the following command to see the storage devices connected to the
+workstation (typically /dev/sda):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lsblk
+</pre></div>
+</div>
+<p>Identify the SD card (verify its size and mountpoint).</p>
+</li>
+<li><p>Run the following command to list the available project boot files on the
+SD Card.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>configure-setup.sh<span class="w"> </span>-b<span class="w"> </span>/media/root/BOOT<span class="w"> </span>--help
+</pre></div>
+</div>
+<p>Make sure you see the adxl355/coraz7s pair among the eval_board/carrier
+pairs. If missing, it’s possible you somehow got a wrong SD card.</p>
+<p>Now let’s run the script to prepare the boot files for our CoraZ7s carrier.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>configure-setup.sh<span class="w"> </span>-b<span class="w"> </span>/media/root/BOOT<span class="w"> </span>adxl355<span class="w"> </span>coraz7s
+</pre></div>
+</div>
+<p>If successful you should see the following:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&#39;/media/analog/BOOT/zynq-common/uImage&#39; -&gt; &#39;/media/analog/BOOT/uImage&#39;
+&#39;/media/analog/BOOT/ zynq-coraz7s-adxl355/BOOT.BIN&#39; -&gt; &#39;/media/analog/BOOT/BOOT.BIN&#39;
+&#39;/media/analog/BOOT/ zynq-coraz7s-adxl355/devicetree.dtb&#39; -&gt; &#39;/media/analog/BOOT/devicetree.dtb&#39;
+&#39;/media/analog/BOOT/ zynq-coraz7s-adxl355//uEnv.txt&#39; -&gt; &#39;/media/analog/BOOT/uEnv.txt&#39;
+Successfully prepared boot partition for running project adxl355 on coraz7s.
+</pre></div>
+</div>
+</li>
+<li><p><strong>SAFELY</strong> unmount the SD card partitions (BOOT and rootfs) by right
+clicking each one and selecting unmount. The password is <em>analog</em>.</p></li>
+<li><p>Extract the SD Card from the adapter.</p></li>
+</ol>
+<p>Now the SD Card is prepared for CoraZ7s!</p>
+</section>
+<section id="hardware-setup">
+<h4>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Insert the SD card prepared in the SD port of CoraZ7s.</p></li>
+<li><p>Connect the ADXL355 to the JA port of the CoraZ7s.</p></li>
+<li><p>Connect the UART port of the CoraZ7s to a USB port of your Raspberry Pi 5
+using the USB cable received.</p></li>
+<li><p>Connect the Ethernet port of the CoraZ7s to the Ethernet port of your
+Raspberry Pi 5.</p></li>
+</ol>
+<p>By now, your CoraZ7s board should be up and running. It may take a few seconds
+for it to boot.</p>
+</section>
+<section id="exercise-1-coraz7s-environment-exploration">
+<h4>Exercise 1: CoraZ7s Environment Exploration<a class="headerlink" href="#exercise-1-coraz7s-environment-exploration" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>On your Raspberry Pi 5, search for <em>Terminal</em> and open it.</p></li>
+<li><p>Write the following command to discover the available IIO devices:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-s
+</pre></div>
+</div>
+<p>Look for the IP address correspondent to <em>ftc25-cora</em> machine. You will need
+it for the next steps. To find it easier you can search by the hostname of
+the carrier:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-s<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ftc25-cora
+</pre></div>
+</div>
+<p>The output should look like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0: 169.254.35.68 (xadc) [ip:ftc25-cora.local]
+</pre></div>
+</div>
+</li>
+<li><p>Write the following command to connect via ssh to the CoraZ7s (replace the
+IP address in the command with the address of your board):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-X<span class="w"> </span>analog@169.254.35.68
+</pre></div>
+</div>
+<p>The password is <em>analog</em>.</p>
+<p>At this point you should see this in your terminal:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>analog@ftc25-pi5:~$ ssh root@169.254.35.68
+root@169.254.35.68&#39;s password:
+Linux analog 6.1.70-35308-ge2e62cc28c80 #1525 SMP Fri Aug 15 07:04:44 EEST 2025
+armhf
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Oct 24 19:11:04 2025 from 169.254.35.68
+root@ftc25-cora:~#
+</pre></div>
+</div>
+<p>You are now connected to the CoraZ7s. Every command you run from this point
+forward will be executed on the CoraZ7s, not your workstation.</p>
+</li>
+</ol>
+</section>
+<section id="exercise-2-build-a-kernel-object-for-adxl355-driver">
+<h4>Exercise 2: Build a kernel object for ADXL355 driver<a class="headerlink" href="#exercise-2-build-a-kernel-object-for-adxl355-driver" title="Link to this heading"></a></h4>
+<p>This exercise will demonstrate how to create a kernel object for an existing
+driver and load it in such a way that the system recognizes it as part of the
+kernel. By running the command <em>iio_info</em> in the terminal you will see in the
+output that there is no <em>adxl355</em> device found.</p>
+<ol class="arabic">
+<li><p>Move to the ftc25-cora folder:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>ftc25-cora
+</pre></div>
+</div>
+</li>
+<li><p>Create a Makefile:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>touch<span class="w"> </span>Makefile
+</pre></div>
+</div>
+</li>
+<li><p>Open the Makefile with a file editor of your choice (nano, Vim, Code):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>Makefile
+</pre></div>
+</div>
+</li>
+<li><p>Write to the Makefile the following lines and then save and exit the file
+with CTRL+S, then CTRL+X:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">obj-m</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>adxl355_spi.o
+
+<span class="nf">all</span><span class="o">:</span>
+<span class="w">  </span>make<span class="w"> </span>-C<span class="w"> </span>/usr/src/linux-headers-6.1.0/<span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="k">$(</span>shell<span class="w"> </span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span>modules
+
+<span class="nf">clean</span><span class="o">:</span>
+<span class="w">  </span>make<span class="w"> </span>-C<span class="w"> </span>/usr/src/linux-headers-6.1.0/<span class="w"> </span><span class="nv">M</span><span class="o">=</span><span class="k">$(</span>shell<span class="w"> </span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span>modules
+</pre></div>
+</div>
+<p>Make sure to keep the indentation (use tabs, not spaces).</p>
+</li>
+<li><p>Run <em>make</em> to build the kernel object:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>make
+</pre></div>
+</div>
+</li>
+<li><p>Load the new kernel object:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>insmod<span class="w"> </span>adxl355_spi.ko
+</pre></div>
+</div>
+</li>
+<li><p>Check again with <em>iio_info</em> to see readings from the accelerometer.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="exercise-3-play-a-snake-game-with-the-accelerometer">
+<h4>Exercise 3: Play a Snake game with the accelerometer<a class="headerlink" href="#exercise-3-play-a-snake-game-with-the-accelerometer" title="Link to this heading"></a></h4>
+<p>Using the accelerometer module, you will have the chance to play a little oldie
+but goldie SNAKE game.</p>
+<ol class="arabic">
+<li><p>Run the game controls in the background:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>game.py<span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start the Snake game:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/usr/games/nsnake
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Move the accelerometer board around and observe the output. Be careful not to
+disconnect the wires. Have fun!</p>
+</section>
+<section id="extra-control-a-led-optional">
+<h4>Extra: Control a LED (Optional)<a class="headerlink" href="#extra-control-a-led-optional" title="Link to this heading"></a></h4>
+<p>Turn on an LED and make it blink with a heartbeat rhythm.</p>
+<ol class="arabic">
+<li><p>Switch to <em>root</em> user for this exercise:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>su
+</pre></div>
+</div>
+<p>Password: <em>analog</em></p>
+</li>
+<li><p>Move to the LEDs directory using the command below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/sys/class/leds
+</pre></div>
+</div>
+</li>
+<li><p>Here you can see 6 directories corresponding to the 3 colors of each RGB
+LED on the board:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<p>Each one of them contains the following attributes:</p>
+<div class="table-wrapper colwidths-given docutils container" id="id6">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">LED attributes</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>brightness</p></td>
+<td><p>stores the status of the LED; possible values: 0, 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>trigger</p></td>
+<td><p>changes the status of the LED</p></td>
+</tr>
+<tr class="row-even"><td><p>max_brightness</p></td>
+<td><p>indicates the max brightness value that can be written to brightness
+attribute</p></td>
+</tr>
+<tr class="row-odd"><td><p>device</p></td>
+<td><p>a symbolic link pointing to the parent device of the LED</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The important features of the <em>trigger</em> function are:</p>
+<div class="table-wrapper colwidths-given docutils container" id="id7">
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Trigger options</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Trigger</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>none</p></td>
+<td><p>the default state where no specific trigger is set for the LED</p></td>
+</tr>
+<tr class="row-odd"><td><p>timer</p></td>
+<td><p>this trigger causes the LED to blink at a specified rate set in
+<em>delay_on</em> and <em>delay_off</em> attributes</p></td>
+</tr>
+<tr class="row-even"><td><p>oneshot</p></td>
+<td><p>turns the LED on for a short period and then turns it off; the period
+is set in <em>oneshot</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>heartbeat</p></td>
+<td><p>causes the LED to blink in a pattern that mimics a heartbeat</p></td>
+</tr>
+<tr class="row-even"><td><p>cpu</p></td>
+<td><p>links the LED activity to CPU activity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <em>delay_on</em> and <em>delay_off</em> attributes are active when the timer features
+is enabled, and it will appear in the LED folder.</p>
+</li>
+<li><p>Turn on the RED color of the first LED by setting the corresponding
+<em>brightness</em> to 1:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>led0_red/brightness
+</pre></div>
+</div>
+</li>
+<li><p>Make the red color of the first led blink in heartbeat mode:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>heartbeat<span class="w"> </span>&gt;&gt;<span class="w"> </span>led0_red/trigger
+</pre></div>
+</div>
+</li>
+<li><p>Now run a script that executes a series of commands that change the LEDs
+colors:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>leds.sh
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>After you finish the exercises on CoraZ7s, please make sure to run “sudo
+poweroff” in the terminal connected to the target board.</strong></p>
+</section>
+</section>
+<section id="jupiter-sdr-exercises">
+<h3>Jupiter SDR Exercises<a class="headerlink" href="#jupiter-sdr-exercises" title="Link to this heading"></a></h3>
+<p>You received a Jupiter board with an SD Card, a power cable, one loopback cable
+and 2 antennas.</p>
+<section id="id1">
+<h4>Prepare SD card<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<p>The first thing you must do is prepare the SD Card with Jupiter SDR boot files.</p>
+<ol class="arabic">
+<li><p>Make sure the adapter is connected through USB to the workstation (RPi5).</p></li>
+<li><p>Insert the SD Card you received with the Jupiter SDR board into the SD slot
+on the adapter.</p></li>
+<li><p>Run the following command to see the storage devices connected to the
+workstation (typically /dev/sda):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lsblk
+</pre></div>
+</div>
+<p>Identify the SD card (verify its size and mountpoint).</p>
+</li>
+<li><p>Run the following command to list the available project boot files on the
+SD Card.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>configure-setup.sh<span class="w"> </span>-b<span class="w"> </span>/media/root/BOOT<span class="w"> </span>--help
+</pre></div>
+</div>
+<p>Make sure you see the jupiter_srd/jupiter_sdr pair among the
+eval_board/carrier pairs. If missing, it’s possible you somehow got a wrong
+SD card.</p>
+<p>Now let’s run the script to prepare the boot files for our Jupiter SDR
+carrier.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>configure-setup.sh<span class="w"> </span>-b<span class="w"> </span>/media/root/BOOT<span class="w"> </span>jupiter_sdr<span class="w"> </span>jupiter_sdr
+</pre></div>
+</div>
+<p>If successful you should see the following:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&#39;/media/analog/BOOT/zynqmp-common/Image&#39; -&gt; &#39;/media/analog/BOOT/Image&#39;
+&#39;/media/analog/BOOT/zynqmp-jupiter-sdr/BOOT.BIN&#39; -&gt; &#39;/media/analog/BOOT/BOOT.BIN&#39;
+&#39;/media/analog/BOOT/zynqmp-jupiter-sdr/boot.scr&#39; -&gt; &#39;/media/analog/BOOT/boot.scr&#39;
+&#39;/media/analog/BOOT/zynqmp-jupiter-sdr/system.dtb&#39; -&gt; &#39;/media/analog/BOOT/system.dtb&#39;
+&#39;/media/analog/BOOT/zynqmp-common/uEnv.txt&#39; -&gt; &#39;/media/analog/BOOT/uEnv.txt&#39;
+Successfully prepared boot partition for running project jupiter_sdr on jupiter_sdr.
+</pre></div>
+</div>
+</li>
+<li><p><strong>SAFELY</strong> unmount the SD card partitions (BOOT and rootfs) by right
+clicking each one and selecting unmount. The password is <em>analog</em>.</p></li>
+<li><p>Extract the SD Card from the adapter.</p></li>
+</ol>
+<p>Now the SD Card is prepared for Jupiter SDR!</p>
+</section>
+<section id="id2">
+<h4>Hardware Setup<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Insert the SD card prepared in the SD port of Jupiter SDR.</p></li>
+<li><p>Connect the Ethernet port of the Jupiter SDR to the Ethernet port of your
+Raspberry Pi 5.</p></li>
+<li><p>Connect the loopback cable to the Jupiter SDR to A TX1 and A RX1.</p></li>
+<li><p>Connect the power cable you received to the power port of the Jupiter SDR.</p></li>
+<li><p>Make sure to press the power button.</p></li>
+</ol>
+<p>By now, your Jupiter SDR board should be up and running. It may take a few
+seconds for it to boot.</p>
+</section>
+<section id="exercise-1-jupiter-sdr-environment-exploration">
+<h4>Exercise 1: Jupiter SDR Environment Exploration<a class="headerlink" href="#exercise-1-jupiter-sdr-environment-exploration" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>On your Raspberry Pi 5, search for <em>Terminal</em> and open it.</p></li>
+<li><p>Write the following command to discover the available IIO devices:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-s
+</pre></div>
+</div>
+<p>Look for the IP address correspondent to <em>ftc25-jupiter</em> machine. You will
+need it for the next steps. To find it easier you can search by the hostname
+of the carrier:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-s<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ftc25-jupiter
+</pre></div>
+</div>
+<p>The output should look like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0: 169.254.35.68
+(ltc2945,tps6598x_source_psy_0_0038,tps6598x_source_psy_0_003f,xilinx-ams,adrv9002-
+phy,axi-adrv9002-rx-lpc,axi-adrv9002-rx2-lpc,axi-adrv9002-tx-lpc,axi-adrv9002-tx2-
+lpc) [ip:ftc25-jupiter.local]
+</pre></div>
+</div>
+</li>
+<li><p>Connect to the Jupiter SDR board as the <strong>root</strong> user using one of the
+following commands. Make sure to replace the IP address with the actual
+address of the board.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>root@169.254.35.68
+</pre></div>
+</div>
+<p>The password is <em>analog</em>.</p>
+<p>At this point you should see something like this in your terminal:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>analog@ftc25-pi5:~$ ssh root@169.254.35.68
+root@169.254.35.68&#39;s password:
+Linux analog 6.1.70-35308-ge2e62cc28c80 #1525 SMP Fri Aug 15 07:04:44 EEST 2025
+aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Oct 24 19:11:04 2025 from 169.254.35.68
+root@ftc25-jupiter:~#
+</pre></div>
+</div>
+<p>You are now connected to Jupiter SDR. Every command you run from this point
+forward will be executed on the Jupiter SDR, not your workstation.</p>
+</li>
+</ol>
+</section>
+<section id="exercise-2-jupiter-configuration">
+<h4>Exercise 2: Jupiter Configuration<a class="headerlink" href="#exercise-2-jupiter-configuration" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>You should be connected as the <strong>root</strong> user to Jupiter by the end of the
+previous exercise.</p></li>
+<li><p>Write the Jupiter profile to configure the driver used to control the board
+to prepare for the following exercises:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/home/analog/ftc25-jupiter/jupiter_1_92MHz_profile.json<span class="w"> </span>&gt;<span class="w"> </span>/sys/bus/iio/devices/iio:device1/profile_config
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Now you have the hardware and driver parts ready for the GNU Radio exercises!</p>
+</section>
+<section id="exercise-3-loopback-complex-sinewave">
+<h4>Exercise 3: Loopback Complex Sinewave<a class="headerlink" href="#exercise-3-loopback-complex-sinewave" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Open GNU Radio Companion, the application used for the following exercises.
+Go to Applications &gt; Development &gt; GNU Radio Companion.</p></li>
+<li><p>Open the exercise_3.grc file from <em>/home/analog/ftc25-pi5/jupiter</em> folder.</p></li>
+<li><p>Double-click on the Variable Config block and fill the placeholder IP
+variable with the actual IP address of the Jupiter board. If you forgot it,
+you could simply use the <code class="docutils literal notranslate"><span class="pre">iio_info</span> <span class="pre">-s</span></code> command again.</p></li>
+<li><p>Click the play button. It may take a few seconds for the visualization to
+open.</p></li>
+<li><p>You should see the transmitted samples and received samples visualization,
+along with the transmitted spectrum and received spectrum.</p></li>
+</ol>
+<p>Congrats! You have a loopback transmission of a complex sinewave using your
+Jupiter board.</p>
+<p><strong>Bonus:</strong> You can try setting different frequencies using the slider at the
+top.</p>
+</section>
+<section id="extra-doppler-effect-optional">
+<h4>Extra: Doppler Effect (Optional)<a class="headerlink" href="#extra-doppler-effect-optional" title="Link to this heading"></a></h4>
+<p>Connect the antennas to the Jupiter SDR to A TX1 and A RX1 (replacing the
+loopback cable).</p>
+<ol class="arabic simple">
+<li><p>Open the <em>extra.grc</em> file from <em>ftc25-pi5/jupiter</em> folder on desktop and
+fill in the board IP address. This is very similar to what was done in the
+previous exercise.</p></li>
+<li><p>Press play and have fun with the Doppler effect visualization.</p></li>
+</ol>
+<p><strong>After you finish the exercises on Jupiter SDR, please make sure to run “sudo
+poweroff” in the terminal connected to the target board.</strong></p>
+</section>
+</section>
+<section id="raspberry-pi-4-exercises">
+<h3>Raspberry Pi 4 Exercises<a class="headerlink" href="#raspberry-pi-4-exercises" title="Link to this heading"></a></h3>
+<p>You received a Raspberry Pi 4 board, an SD Card and a power cable.</p>
+<p>For this exercise, there is no need to configure the boot files for the board,
+since Kuiper runs on Raspberry Pi boards by default.</p>
+<section id="id3">
+<h4>Prepare SD Card<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<p>No SD card preparation is needed for Raspberry Pi 4.</p>
+</section>
+<section id="id4">
+<h4>Hardware Setup<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Make sure the Raspberry Pi 4 has an SD card in the SD port.</p></li>
+<li><p>Connect the power cable you received to the power port of the Raspberry Pi 4.</p></li>
+<li><p>Connect the ethernet cable you received to the ethernet port of the
+Raspberry Pi 4.</p></li>
+</ol>
+<p>By now, your Raspberry Pi 4 board should be up and running. It may take a few
+seconds for it to boot.</p>
+</section>
+<section id="exercise-1-raspberry-pi-4-environment-exploration">
+<h4>Exercise 1: Raspberry Pi 4 Environment Exploration<a class="headerlink" href="#exercise-1-raspberry-pi-4-environment-exploration" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>On your Raspberry Pi 5, search for <em>Terminal</em> and open it.</p></li>
+<li><p>Write the following command to discover the available IIO devices:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-s
+</pre></div>
+</div>
+<p>Look for the IP address correspondent to <em>ftc25-pi4</em> machine. You will need
+it for the next steps. To find it more easily you can search by the hostname
+of the carrier:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-s<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ftc25-pi4
+</pre></div>
+</div>
+<p>The output should look like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0: 169.254.35.68 (cpu_termal,rpi_volt) [ip:ftc25-pi4.local]
+</pre></div>
+</div>
+<p>Make sure you remember the IP address corresponding to the Raspberry Pi 4
+board.</p>
+</li>
+</ol>
+</section>
+<section id="exercise-2-monitor-workstation-temperature">
+<h4>Exercise 2: Monitor Workstation Temperature<a class="headerlink" href="#exercise-2-monitor-workstation-temperature" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>Start the temperature monitoring python script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>ftc25-pi5/pi4/monitor_temperature.py
+</pre></div>
+</div>
+<p>You should see now a thermometer that monitors the internal temperature of
+your RPi5 Workstation. Take your time to understand what is being displayed.</p>
+</li>
+<li><p>Open a new terminal instance like you did in the first step of Exercise 1.</p></li>
+<li><p>In this new terminal use the following script to stress the CPU of the RPi5
+and raise its temperature:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>ftc25-pi5/pi4/stress.py
+</pre></div>
+</div>
+<p>This script will stop by itself when a critical (&gt;80 degrees Celsius)
+temperature is reached.</p>
+</li>
+<li><p>Go back to the initial terminal where the monitor_temperature.py script and
+observe the effect.</p></li>
+<li><p>Press CTRL+C to stop the monitoring application.</p></li>
+</ol>
+</section>
+<section id="exercise-3-monitor-remotely-rpi4-temperature">
+<h4>Exercise 3: Monitor Remotely RPi4 Temperature<a class="headerlink" href="#exercise-3-monitor-remotely-rpi4-temperature" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>Using one of the active terminals, open the monitor_temperature.py script
+in VS Code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>code<span class="w"> </span>ftc25-pi5/pi4/monitor_temperature.py
+</pre></div>
+</div>
+</li>
+<li><p>Search for the following section:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#===================================================================</span>
+<span class="c1"># EXERCISE: Change this ONE line for remote monitoring!</span>
+<span class="c1">#===================================================================</span>
+<span class="c1"># For LOCAL monitoring (RPi5 monitors itself):</span>
+<span class="c1">#     ctx = iio.Context()</span>
+<span class="c1">#</span>
+<span class="c1"># For REMOTE monitoring (RPi5 monitors RPi4 at 169.254.35.68):</span>
+<span class="c1">#     ctx = iio.Context(&quot;ip:169.254.35.68&quot;)</span>
+<span class="c1">#===================================================================</span>
+
+<span class="c1"># Change the line below</span>
+<span class="n">ctx</span> <span class="o">=</span> <span class="n">iio</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+
+<span class="c1">#===================================================================</span>
+</pre></div>
+</div>
+<p>Right now, the highlighted line of code uses the default local context,
+meaning the temperature sensor it monitors is the one on your Raspberry Pi 5
+Workstation.</p>
+</li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">ctx</span> <span class="pre">=</span> <span class="pre">iio.Context()</span></code> with the following, making sure you use the
+actual IP address of your Raspberry Pi 4 target board, the one you
+discovered in Exercise 1. If you forgot it you can simply use the
+<code class="docutils literal notranslate"><span class="pre">iio_info</span> <span class="pre">-s</span></code> command once again.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ctx</span> <span class="o">=</span> <span class="n">iio</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="s2">&quot;ip:169.254.35.68&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make sure you save the file and then close the VS Code editor.</p></li>
+<li><p>In one of the active terminals start the monitoring script once again:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>ftc25-pi5/pi4/monitor_temperature.py
+</pre></div>
+</div>
+<p>Now the digital thermometer is monitoring remotely the temperature sensor on
+Raspberry Pi 4.</p>
+</li>
+<li><p>Press CTRL+C to stop the monitoring application.</p></li>
+</ol>
+</section>
+<section id="extra-optional-challenge">
+<h4>Extra: Optional Challenge<a class="headerlink" href="#extra-optional-challenge" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>Using one of the active terminals, start the monitor_temperature.py script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>ftc25-pi5/pi4/monitor_temperature.py
+</pre></div>
+</div>
+<p>Let it run.</p>
+</li>
+<li><p>Using another terminal, copy the stress.py script to RPi4 using scp. Make
+sure you replace the IP address below with the actual IP address of the
+target board.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>ftc25-pi5/pi4/stress.py<span class="w"> </span>analog@169.254.35.68:/home/analog
+</pre></div>
+</div>
+</li>
+<li><p>Connect to the target board using ssh. Don’t forget to replace the IP
+address.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>analog@169.254.35.68
+</pre></div>
+</div>
+</li>
+<li><p>Start the stress script on the target board:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>stress.py
+</pre></div>
+</div>
+</li>
+<li><p>Observe the effects on the digital thermometer running in the first
+terminal.</p></li>
+<li><p>Press CTRL+C to stop the monitoring application.</p></li>
+</ol>
+<p><strong>After you finish the exercises on Raspberry Pi 4, please make sure to run
+“sudo poweroff” in a terminal connected to the target board.</strong></p>
+</section>
+</section>
+<section id="raspberry-pi-5-networking-exercise">
+<h3>Raspberry Pi 5 Networking Exercise<a class="headerlink" href="#raspberry-pi-5-networking-exercise" title="Link to this heading"></a></h3>
+<p>For this exercise you will communicate with other participants via a
+lightweight publish/subscribe protocol called MQTT.</p>
+<ol class="arabic">
+<li><p>Open a terminal and run the following command to listen to a port where all
+participants will write messages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mosquitto_sub<span class="w"> </span>-h<span class="w"> </span>test.mosquitto.org<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;ftc25-kuiper&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open a new terminal and write the following command to send messages to the
+port everyone listens to:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mosquitto_pub<span class="w"> </span>-h<span class="w"> </span>test.mosquitto.org<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;ftc25-kuiper&quot;</span><span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Hello from Pi </span><span class="nv">$HOSTNAME</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="boot-your-custom-kuiper-2-image-on-rpi5">
+<h3>Boot your Custom Kuiper 2 Image on RPi5<a class="headerlink" href="#boot-your-custom-kuiper-2-image-on-rpi5" title="Link to this heading"></a></h3>
+<p>In this exercise you will write on an SD card the Kuiper 2 image you just built
+and will boot it on the Raspberry Pi 5 in front of you.</p>
+<ol class="arabic">
+<li><p>Power-off the carrier board in front of you (CoraZ7s, Raspberry Pi 4 or
+Jupiter SDR), take the SD card from it and connect it to the Raspberry Pi 5.</p></li>
+<li><p>Open a terminal in adi-kuiper-gen/kuiper-volume folder, unarchive and copy
+the Kuiper image on the SD card. Use lsblk command to check the partition.
+As you saw earlier, the SD card from the adapter is mounted at SDA.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lsblk
+sudo<span class="w"> </span>unzip<span class="w"> </span>image_2025-11-10-ADI-Kuiper-Linux-arm64.zip
+sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>image_2025-11-10-ADI-Kuiper-Linux-arm64.img<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/sda<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync
+</pre></div>
+</div>
+</li>
+<li><p>After the image is copied successfully, <strong>SAFELY</strong> unmount the SD card
+partitions (BOOT and rootfs) by right clicking each one and selecting
+unmount. The password is <em>analog</em>.</p></li>
+<li><p>Extract the recently written SD card from the adapter.</p></li>
+<li><p>Power off the Raspberry Pi 5 and disconnect it from the power cable, take
+out the SD card from it and replace it with the recently written card, and
+then connect back the Pi board to power.</p></li>
+<li><p>Look after the file you copied with the extra script and check what it
+contains.</p></li>
+</ol>
+<p><strong>Congratulations! You booted your first Kuiper 2 custom image!</strong></p>
+</section>
+</section>
+<section id="takeaways">
+<h2>Takeaways<a class="headerlink" href="#takeaways" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>ADI Kuiper Linux simplifies embedded development</strong>: The distribution
+provides pre-built boot files, device drivers, and development utilities for
+Analog Devices products.</p></li>
+<li><p><strong>Kuiper 2 is highly customizable</strong>: The configuration file allows you to
+control every aspect of the build without modifying source code, from
+architecture selection to custom scripts.</p></li>
+<li><p><strong>Stages-based build system</strong>: The modular stages approach adds logical
+clarity and simplifies both maintenance and customization.</p></li>
+<li><p><strong>IIO enables seamless device communication</strong>: Using libiio and tools like
+iio_info, you can discover and interact with ADI devices both locally and
+remotely over the network.</p></li>
+<li><p><strong>Support for multiple platforms</strong>: Kuiper supports Xilinx/AMD FPGAs, Intel
+FPGAs, and Raspberry Pi boards, making it versatile for various evaluation
+and development scenarios.</p></li>
+<li><p><strong>Open source advantage</strong>: With BSD-3-Clause licensing, ADI Kuiper Linux
+code can be freely used, modified, and integrated into projects.</p></li>
+</ul>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h2>
+<p><strong>Kuiper</strong></p>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/index.html" target="_blank" title="(in Kuiper latest)"><span>ADI Kuiper Linux</span></a></p>
+<p><a class="icon git reference external" href="https://github.com/analogdevicesinc/adi-kuiper-gen/tree/main/" target="_blank">adi-kuiper-gen Repository</a></p>
+<p><strong>Hardware</strong></p>
+<p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/cora-z7/reference-manual" target="_blank">Digilent Cora Z7 Reference Manual</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/AD-JUPITER-EBZ" target="_blank">Jupiter SDR Product Page</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL355-PMDZ" target="_blank">EVAL-ADXL355-PMDZ Product Page</a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../workshop_a_precision_converter_fpga_integration_journey/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">A Precision Converter FPGA Integration Journey</a>
+    <a href="../workshops_software_defined_instrumentation/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Software Defined Instrumentation</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

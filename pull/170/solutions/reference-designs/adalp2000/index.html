@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="ADALP2000 Analog Parts Kit." name="description" />
+
+    <title>ADALP2000 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=9bac72d6" />
+    <script async="async" src="../../../_static/app.umd.js?v=d8ceb7f1"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ADMV96S-WGBE-EK1" href="../admv96s-wgbe-ek1/index.html" />
+    <link rel="prev" title="Libraries and GUI Tools" href="../ad4062-ardz/tools.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADALP2000</a><ul>
+<li><a class="reference internal" href="#kit-contents">Kit Contents</a><ul>
+<li><a class="reference internal" href="#depreciated-items">Depreciated items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19-1" id="toctree-collapse-13-19-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-19-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20-1" id="toctree-collapse-13-20-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-20-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23-1" id="toctree-collapse-13-23-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-23-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adalp2000">
+<span id="id1"></span><h1>ADALP2000<a class="headerlink" href="#adalp2000" title="Link to this heading"></a></h1>
+<p>ADALP2000 Analog Parts Kit.</p>
+<figure class="align-center">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/kit_contents.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/kit_contents.jpg" />
+</figure>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADALP2000" target="_blank">ADALP2000</a> Parts Kit contains a large selection of components perfect
+for creating a wide variety of useful circuits and devices. Featuring a variety
+of components from Analog Devices, the kit includes transistors, resistors,
+capacitors, diodes, sensors, and variety of useful ICs including op-amps,
+converters, and regulators.</p>
+<p>We are on Rev B of the ADALP2000 parts kit, and its BIGGER and more
+COMPREHENSIVE than ever. Below is a complete rundown of the components
+that can be found within the kit.</p>
+<p>A <a class="icon adi reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-board/ADALP2000-product-highlights.pdf" target="_blank">complete list</a>
+and description of components is listed below.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is possible that some inductors included in the ADALP2000 parts kit
+may have sustained some cosmetic impairments during shipping and
+handling. These inductors are 100% functional, and while the cosmetic
+issues does not <em>look</em> nice, it does not affect the electrical
+performance, and all devices meet their datasheet specifications.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that the pinout of some of the breakout boards is mirrored. This
+was done to maintain a 300-mil row spacing, maximizing available
+breadboard connection points. Double-check all pinouts before building
+your circuit.</p>
+<blockquote>
+<div><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad7920_pinout_error.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad7920_pinout_error.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad7920_pinout_error.png" style="width: 250px;" />
+</a>
+</figure>
+</div></blockquote>
+</div>
+<section id="kit-contents">
+<h2>Kit Contents<a class="headerlink" href="#kit-contents" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Picture</p></th>
+<th class="head"><p>Part Number</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad22151.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad22151.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad22151.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD22151</p></td>
+<td><p>Magnetic Field
+Sensor</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad22151" target="_blank">AD22151</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad5626.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad5626.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad5626.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD5626</p></td>
+<td><p>12-Bit Digital
+to Analog
+Converter</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad5626" target="_blank">AD5626</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad7920.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad7920.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad7920.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD7920</p></td>
+<td><p>12-Bit Analog
+to Digital
+Converter</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7920" target="_blank">AD7920</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8210.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8210.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8210.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD8210</p></td>
+<td><p>Current Shunt
+Monitor</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad8210" target="_blank">AD8210</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8226.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8226.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8226.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD8226</p></td>
+<td><p>Instrumentation
+Amplifier</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad8226" target="_blank">AD8226</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8542.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8542.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8542.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD8542</p></td>
+<td><p>CMOS Rail to
+Rail Op Amp</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad8542" target="_blank">AD8542</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/adp3300.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/adp3300.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/adp3300.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>ADP3300</p></td>
+<td><p>3.3V, 50mA
+Linear
+Regulator(LDO)</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/adp3300" target="_blank">ADP3300</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/adtl082.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/adtl082.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/adtl082.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>ADTL082</p></td>
+<td><p>JFET Op-Amp</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/adtl082" target="_blank">ADTL082</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/adxl327.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/adxl327.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/adxl327.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>ADXL327</p></td>
+<td><p>3-Axis Low-G
+Accelerometer</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/adxl327" target="_blank">ADXL327</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/lt3092.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/lt3092.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/lt3092.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>LT3092</p></td>
+<td><p>Programmable
+Current Source</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/lt3092" target="_blank">LT3092</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1541.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1541.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1541.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>LTC1541</p></td>
+<td><p>Micropower AMP, Comparator,
+&amp; Reference</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ltc1541" target="_blank">LTC1541</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc6992.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc6992.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc6992.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>LTC6992-1</p></td>
+<td><p>Voltage-Controlled
+Pulse Width
+Modulator</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ltc6992-1" target="_blank">LTC6992-1</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltm8067.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltm8067.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltm8067.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>LTM8067</p></td>
+<td><p>Isolated DC-DC
+Converter</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ltm8067" target="_blank">LTM8067</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/hph1-0190.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/hph1-0190.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/hph1-0190.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>HPH1-0190</p></td>
+<td><p>Hexa-Path
+Transformer</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/hexa-path.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/hph1-1400.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/hph1-1400.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/hph1-1400.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>HPH1-1400</p></td>
+<td><p>Hexa-Path
+Transformer</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/hexa-path.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/trrs_mic.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/trrs_mic.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/trrs_mic.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>SJ-43515TS-SMT-TR</p></td>
+<td><p>TRRS
+Microphone In</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sj-4351x-smt.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/micro_usb.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/micro_usb.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/micro_usb.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>ZX62D-B-5PA8(30)</p></td>
+<td><p>Micro USB
+Connector</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad584.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad584.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad584.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD584</p></td>
+<td><p>Programmable
+Voltage
+Reference</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad584" target="_blank">AD584</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad592.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad592.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad592.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD592</p></td>
+<td><p>Current Temperature Sensor</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad592" target="_blank">AD592</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad654.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad654.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad654.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD654</p></td>
+<td><p>Voltage to
+Frequency
+Converter</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad654" target="_blank">AD654</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad2210.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad2210.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad2210.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD22100</p></td>
+<td><p>Voltage Temperature Sensor</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad22100" target="_blank">AD22100</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8561.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8561.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ad8561.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>AD8561</p></td>
+<td><p>Comparator</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad8561" target="_blank">AD8561</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/lt3080.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/lt3080.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/lt3080.png" style="width: 250px; height: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>LT3080</p></td>
+<td><p>Adjustable
+1.1A LDO</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/lt3080" target="_blank">LT3080</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1043.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1043.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1043.png" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>LTC1043</p></td>
+<td><p>Precision Switch-CAP Block</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ltc1043" target="_blank">LTC1043</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1054.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1054.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1054.png" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>LTC1054</p></td>
+<td><p>Switched-Capacitor Regulator</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ltc1054" target="_blank">LTC1054</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1485.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1485.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ltc1485.png" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>LTC1485</p></td>
+<td><p>Differential Bus Transceiver</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ltc1485" target="_blank">LTC1485</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op27.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op27.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op27.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>OP27</p></td>
+<td><p>Low Noise, Precision Op Amp</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/op27" target="_blank">OP27</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op37.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op37.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op37.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>OP37</p></td>
+<td><p>Precision Op
+Amp</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/op37" target="_blank">OP37</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op97.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op97.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op97.png" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>OP97</p></td>
+<td><p>Low Noise, Precision Op Amp</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/op97" target="_blank">OP97</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op482.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op482.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op482.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>OP482</p></td>
+<td><p>High Speed
+JFET Op Amp</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/op482" target="_blank">OP482</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op484.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op484.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/op484.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>OP484</p></td>
+<td><p>Precision Rail
+to Rail Op Amp</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/op484" target="_blank">OP484</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/tmp01.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/tmp01.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/tmp01.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>TMP01</p></td>
+<td><p>Temperature
+Controller</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/tmp01" target="_blank">TMP01</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc04n.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc04n.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc04n.png" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>SN74HC04N</p></td>
+<td><p>Hex Inverter</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc04.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc08n.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc08n.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc08n.png" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>SN74HC08N</p></td>
+<td><p>Quad AND Gate</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc08.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc32n.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc32n.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn74hc32n.png" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>SN74HC32N</p></td>
+<td><p>Quad OR Gate</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn54hc32-sp.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/c273n.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/c273n.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/c273n.png" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>SN74HC273N</p></td>
+<td><p>Octal D
+Flip-Flop</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/sn54hc273-sp.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/bb_small.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/bb_small.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/bb_small.png" style="width: 250px; height: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>solderless
+Breadboard</p></td>
+<td><p>solderless
+Breadboard</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/j_wires.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/j_wires.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/j_wires.png" style="width: 250px; height: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>Jumper
+Wires</p></td>
+<td><p>Male to Male
+Jumper Wires</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/screwd.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/screwd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/screwd.png" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>Screwdriver</p></td>
+<td><p>Flathead
+Screwdriver</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/mic.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/mic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/mic.png" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>HCM9765-P11-453</p></td>
+<td><p>Microphone</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/hcm9765-p11-453.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/speaker_f.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/speaker_f.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/speaker_f.png" style="width: 250px; height: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>Speaker</p></td>
+<td><p>8 Ω Speaker</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/therm.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/therm.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/therm.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>B57164K103J</p></td>
+<td><p>10 kΩ Thermistor 5mm lead
+coated disk</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/K164-1317145.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/power-r.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/power-r.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/power-r.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>SQP10AJB-6R2</p></td>
+<td><p>6.2 Ω 10W Power
+Resistor Axial
+Cement Link</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/YAGEO-SQP_NSP.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/pots.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/pots.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/pots.png" style="width: 250px; height: 250px;" />
+</a>
+</figure>
+</td>
+<td><ul class="simple">
+<li><p>3386C-1-502LF</p></li>
+<li><p>3386C-1-103LF</p></li>
+<li><p>3386C-1-503LF</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Single Turn
+5 kΩ Potentiometer</p></li>
+<li><p>Single Turn
+10 kΩ Potentiometer</p></li>
+<li><p>Single Turn
+50 kΩ Potentiometer</p></li>
+</ul>
+</td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/3386t-1-503.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/transist.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/transist.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/transist.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>2N3904</p></td>
+<td><p>NPN General Purpose Transistor TO-92 Link
+Marking: 2N3904</p></td>
+<td><p><a class="icon link reference external" href="https://www.onsemi.com/pdf/datasheet/2n3903-d.pdf" target="_blank">Datasheet</a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/transist.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/transist.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/transist.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>2N3906</p></td>
+<td><p>PNP General Purpose Transistor TO-92 Link
+Marking: 2N3906</p></td>
+<td><p><a class="icon link reference external" href="https://www.onsemi.com/pdf/datasheet/2n3906-d.pdf" target="_blank">Datasheet</a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/irf510.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/irf510.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/irf510.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>IRF510</p></td>
+<td><p>N-Channel MOSFET 100V TO-220
+Link Marking:
+IRF510</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/irf510.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/tip31.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/tip31.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/tip31.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>TIP31CFS</p></td>
+<td><p>NPN Epitaxial
+Transistor
+TO-220 Link
+Marking: TIP31</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/tip31a-549394.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/tip32.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/tip32.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/tip32.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>TIP32CFS</p></td>
+<td><p>PNP Epitaxial
+Transistor
+TO-220 Link
+Marking: TIP32</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/TIP32C-890156.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zvn2110a.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zvn2110a.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zvn2110a.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>ZVN2110A</p></td>
+<td><p>N-Channel Enhancement FET
+TO-92 Link
+Marking: ZVN211</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ZVN2110A.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zvn3310.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zvn3310.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zvn3310.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>ZVN3310</p></td>
+<td><p>N-Channel Enhancement Transistor TO-92 Link
+Marking: ZVN211</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ZVN3310A.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zvp2110a.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zvp2110a.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zvp2110a.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>ZVP2110A</p></td>
+<td><p>P-Channel Enhancement FET
+TO-92 Link
+Marking: ZVP211</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/ZVP2110A.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/leds.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/leds.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/leds.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>various LEDs
+(red, yellow
+, Green)</p></td>
+<td><p>T-1 3/4 Link</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/qed-123.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/qed-123.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/qed-123.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>QED-123</p></td>
+<td><p>Infrared LED
+T-1 3/4</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/QED123-D.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/qsd123.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/qsd123.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/qsd123.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>QSD123</p></td>
+<td><p>Infrared Photo
+Transistor T-1</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/2287891.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n914.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n914.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n914.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>1N3064</p></td>
+<td><p>Small Signal Diode DO-35 Link</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n3064-284013.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n4001.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n4001.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n4001.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>1N4001</p></td>
+<td><p>50V General
+Purpose Rectifier DO-204 Link</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n4001.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n914.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n914.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n914.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>1N4735
+(or 1N4729)</p></td>
+<td><p>6.2V (or 3.6V)
+Zener Diode
+DO-41 Link</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n4728a.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the diodes can be difficult to identify. The note below has
+a circuit that can be used to identify the Zener diode and determine whether
+it is the 3.6V or 6.2V model.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n914.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n914.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n914.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>1N914</p></td>
+<td><p>Small Signal
+Diode DO-35
+Link</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/1n914.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/qsc114.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/qsc114.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/qsc114.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td><p>OP999</p></td>
+<td><p>photodiode
+T-1¾</p></td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/OP999-TT.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/inductors.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/inductors.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/inductors.png" style="width: 250px; height: 250px;" />
+</a>
+</figure>
+</td>
+<td><ul class="simple">
+<li><p>RFB0807-1R0L</p></li>
+<li><p>RFB0807-100L</p></li>
+<li><p>RFB0807-101L</p></li>
+<li><p>RFB0807-102L</p></li>
+<li><p>RFB0807-103L</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>1uH Inductor
+5mm radial
+Link</p></li>
+<li><p>10uH Inductor
+5mm radial
+Link</p></li>
+<li><p>100uH Inductor 5mm radial
+Link</p></li>
+<li><p>1mH Inductor
+5mm radial
+Link</p></li>
+<li><p>10mH Inductor
+5mm radial
+Link</p></li>
+</ul>
+</td>
+<td><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/rfb.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Datasheet</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/20k.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/20k.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/20k.jpg" style="width: 250px;" />
+</a>
+</figure>
+</td>
+<td></td>
+<td><ul class="simple">
+<li><p>1.1 Ω 1/8W axial Resistor</p></li>
+<li><p>10 Ω 1/8W axial Resistor</p></li>
+<li><p>47 Ω 1/8W axial Resistor</p></li>
+<li><p>68 Ω 1/8W axial Resistor</p></li>
+<li><p>100 Ω 1/8W axial Resistor</p></li>
+<li><p>470 Ω 1/8W axial Resistor</p></li>
+<li><p>1 kΩ 1/8W axial Resistor</p></li>
+<li><p>1.5 kΩ 1/8W
+axial Resistor</p></li>
+<li><p>2.2 kΩ 1/8W
+axial Resistor</p></li>
+<li><p>4.7 kΩ 1/8W
+axial Resistor</p></li>
+<li><p>6.8 kΩ 1/8W
+axial Resistor</p></li>
+<li><p>10 kΩ 1/8W axial Resistor</p></li>
+<li><p>20 kΩ 1/8W axial Resistor</p></li>
+<li><p>47 kΩ 1/8W axial Resistor</p></li>
+<li><p>68 kΩ 1/8W axial Resistor</p></li>
+<li><p>100 kΩ 1/8W
+axial Resistor</p></li>
+<li><p>200 kΩ 1/8W
+axial Resistor</p></li>
+<li><p>470 kΩ 1/8W
+axial Resistor</p></li>
+<li><p>1 MΩ 1/8W axial Resistor</p></li>
+<li><p>5 MΩ 1/8W axial Resistor</p></li>
+</ul>
+</td>
+<td><p><a class="icon link reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-resistors" target="_blank">Resistors Link</a></p>
+<p>(including color code)
+Axial Carbon Comp.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/caps.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/caps.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/caps.jpg" style="width: 250px; height: 250px;" />
+</a>
+</figure>
+</td>
+<td></td>
+<td><ul class="simple">
+<li><p>39 pF Ceramic
+Capacitor
+Disc</p></li>
+<li><p>100 pF Ceramic Capacitor
+Disc</p></li>
+<li><p>0.001 μF Ceramic Capacitor Disc</p></li>
+<li><p>0.0047 μF Ceramic Capacitor Disc</p></li>
+<li><p>0.01 μF Ceramic Capacitor
+Disc</p></li>
+<li><p>0.047 μF Ceramic Capacitor Disc</p></li>
+<li><p>0.1 μF Ceramic Capacitor
+Disc</p></li>
+<li><p>1 μF Ceramic
+Capacitor
+Disc</p></li>
+<li><p>4.7 μF Ceramic Capacitor
+Disc</p></li>
+<li><p>10 μF Ceramic
+Capacitor
+Disc</p></li>
+<li><p>22 μF Ceramic
+Capacitor
+Disc</p></li>
+<li><p>47 μF Ceramic
+Capacitor
+Disc</p></li>
+<li><p>220 μF Ceramic Capacitor
+Disc</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Link Marking: 39</p></li>
+<li><p>Link Marking: 101</p></li>
+<li><p>Link Marking: 102</p></li>
+<li><p>Link Marking: 472</p></li>
+<li><p>Link Marking: 103</p></li>
+<li><p>Link Marking: 473</p></li>
+<li><p>Link Marking: 104</p></li>
+<li><p>Link Marking: 1 μF</p></li>
+<li><p>Link Marking: 4.7 μF</p></li>
+<li><p>Link Marking: 10 μF</p></li>
+<li><p>Link Marking: 22 μF</p></li>
+<li><p>Link Marking: 47 μF</p></li>
+<li><p>Link Marking: 220 μF</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Set V-/V+ to -5V/+5V (or use a bench-top supply set to 10V.)
+The Zener diode will read ~6.2V (or ~3.6V) from 1- to 1+, a
+silicon or Schottky diode will read 10V.</p>
+<blockquote>
+<div><figure class="align-default">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zenert.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zenert.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adsp/philip/use-cases/docs/solutions/reference-designs/adalp2000/zenert.png" style="width: 250px;" />
+</a>
+</figure>
+</div></blockquote>
+</div>
+<section id="depreciated-items">
+<h3>Depreciated items<a class="headerlink" href="#depreciated-items" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>SSM2220 PNP Matched Transistors BOB</p></li>
+<li><p>SSM2212 NPN Matched Transistors BOB</p></li>
+<li><p>ADMP504 MEMS Ultralow Noise Microphone BOB</p></li>
+<li><p>605-00004 piezo vibration sensor</p></li>
+<li><p>GT-0950RP3 Buzzer/Speaker 5mm radial</p></li>
+<li><p>CD4007</p></li>
+<li><p>PDV-P9203 5-20kΩ Photocell</p></li>
+<li><p>QSC114 Infrared Transistor</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../ad4062-ardz/tools.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Libraries and GUI Tools</a>
+    <a href="../admv96s-wgbe-ek1/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADMV96S-WGBE-EK1</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
