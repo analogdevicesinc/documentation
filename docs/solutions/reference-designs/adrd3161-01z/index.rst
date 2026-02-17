@@ -48,7 +48,7 @@ Required Hardware
 -----------------
 
 * :adi:`ADRD3161-01Z`
-* Stepper / BLDC / DC motor. Documented output represents the `QSH5718-51-28-101-10k <https://www.analog.com/qsh5718>`_ Stepper.
+* Stepper / BLDC / DC motor. Documented output represents the :adi:`QSH5718-51-28-101-10k <qsh5718>` Stepper.
 * DC power supply (9 .. 70 VDC)
 * CAN, encoder cables, described in the :doc:`hardware-guide`
 

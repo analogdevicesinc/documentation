@@ -9,19 +9,19 @@ Bootstrapping the TMC9660
 -------------------------
 
 .. warning::
-	**USERS SHOULD NOT HAVE TO FOLLOW THE BOOTSTRAPPING SECTION.** These steps have already been done in the factory. Only follow them if you understand the TMC9660 bootstrap procedure. This permanently uses up one of the 4 configuration slots on the TMC9660. It cannot be undone and may only be overwritten at most 4 times on a given TMC9660 IC.
+
+   **USERS SHOULD NOT HAVE TO FOLLOW THE BOOTSTRAPPING SECTION.** These steps have already been done in the factory. Only follow them if you understand the TMC9660 bootstrap procedure. This permanently uses up one of the 4 configuration slots on the TMC9660. It cannot be undone and may only be overwritten at most 4 times on a given TMC9660 IC.
 
 The :adi:`TMC9660` has reconfigurable I/O, clocking, LDO outputs, etc. Bootstrapping is the initial step of configuring these. Through bootstrapping, a configuration may be loaded in volatile memory, or "burned" to permanent nonvolatile memory to be loaded at power-up. These burn operations should be used sparingly, as they are limited to a total of 4 :abbr:`OTP (One Time Programmable)` configuration slots.
 
-Configurations may be applied temporarily. If you want to try out a different configuration to the one provided as a default for this board, follow `AN-2601: TMC9660 Configuration and Bootstrapping
-<https://www.analog.com/en/resources/app-notes/an-2601.html>`_ and reference the :ref:`board schematic <adrd3161_design_files>` and `default configuration <https://github.com/analogdevicesinc/adrd3161-fw/blob/main/scripts/ioconfig_adrd3161.toml>`_.
-
+Configurations may be applied temporarily. If you want to try out a different configuration to the one provided as a default for this board, follow :adi:`AN-2601: TMC9660 Configuration and Bootstrapping
+<en/resources/app-notes/an-2601.html>`_ and reference the :ref:`board schematic <adrd3161_design_files>` and :git-adrd3161-fw:`default configuration <scripts/ioconfig_adrd3161.toml>`.
 These instructions assume the TMC9660 is unconfigured (or has an invalid config, as described in the TMC9660 datasheet, section *Configuration Storage*) and thus enters bootstrap mode at startup.
 
 Preparation:
 
-* Download `UBLTools <https://www.analog.com/en/products/tmc9660.html#software-resources>`_
-* Download bootstrap `config file <https://github.com/analogdevicesinc/adrd3161-fw/blob/main/scripts/ioconfig_adrd3161.toml>`_.
+* Download :adi:`UBLTools <en/products/tmc9660.html#software-resources>`
+* Download bootstrap :git-adrd3161-fw:`config file <scripts/ioconfig_adrd3161.toml>`.
 * Obtain an UART probe (:adi:`MAX32625PICO` or other MAXDAP compatible)
 
 Steps:
@@ -30,24 +30,24 @@ Steps:
 #. Take note of which serial interface the probe took. In the following commands, replace ``COM123`` with the actual serial port name.
 #. Verify the TMC9660 communicates and is in bootstrap mode:
 
-   .. code-block:: console
+   .. shell:: ps1
 
       $ ublcli.exe --port COM123 inspect chip
-      Chip:                 TMC9660
-      Bootloader Version:   v1.0
+       Chip:                 TMC9660
+       Bootloader Version:   v1.0
 
 #. Upload the configuration and burn:
 
-   .. code-block:: console
+   .. shell:: ps1
 
       $ ublcli.exe --port COM123 write config --burn ioconfig_adrd3161.toml
-      Proceed with OTP burn? (y/n): y
-      Config burned successfully
+       Proceed with OTP burn? (y/n): y
+       Config burned successfully
 
 Flashing the MAX32662
 ---------------------
 
-The ADRD316-01Z firmware is based on Zephyr. The source code for the latest version may be found at https://github.com/analogdevicesinc/adrd3161-fw .
+The ADRD316-01Z firmware is based on Zephyr. The source code for the latest version may be found at :git-adrd3161-fw:`/ <+>`.
 
 Prerequisites:
 
@@ -64,13 +64,13 @@ user home install path.
    .. tab-item:: Create new west workspace
 
       If you do not have Zephyr SDK already set up, start by creating a Zephyr
-      workspace, following the `Zephyr Getting Started
-      <https://docs.zephyrproject.org/latest/develop/getting_started/index.html>`_
+      workspace, following the
+      `Zephyr Getting Started <https://docs.zephyrproject.org/latest/develop/getting_started/index.html>`__
       tutorial. In short, the following commands should suffice:
 
       Set up virtualenv:
 
-      .. code-block:: console
+      .. shell::
 
          $ mkdir zephyrproject
          $ cd zephyrproject
@@ -79,7 +79,7 @@ user home install path.
 
       Set up west workspace:
 
-      .. code-block:: console
+      .. shell::
 
          $ pip install west
          $ west init -m https://github.com/analogdevicesinc/adrd3161-fw . # This might take a while - big download
@@ -94,7 +94,7 @@ user home install path.
 
       You may reuse a pre-existing West workspace. This is especially convenient if working on other boards in the ADRD family.
 
-      .. code-block:: console
+      .. shell::
 
          $ cd <path to west workspace>
          $ source .venv/bin/activate
@@ -104,7 +104,7 @@ user home install path.
 
 Enter the workspace and load the python virtual environment:
 
-.. code-block:: console
+.. shell::
 
    $ cd <path to west workspace>
    $ source .venv/bin/activate
@@ -112,13 +112,13 @@ Enter the workspace and load the python virtual environment:
 
 Build the firmware:
 
-.. code-block:: console
+.. shell::
 
    $ west build -b adrd3161 -p auto app
 
 Flash the firmware (will build if necessary):
 
-.. code-block:: console
+.. shell::
 
    # Replace /MaximSDK/ with the path to MSDK
    $ west flash --openocd-search /MaximSDK/Tools/OpenOCD/scripts/ --openocd /MaximSDK/Tools/OpenOCD/openocd

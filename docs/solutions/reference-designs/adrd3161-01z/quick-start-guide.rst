@@ -9,13 +9,12 @@ Connect the motor windings to screw terminal block P3 and a motor position encod
 Control using TMCL-IDE
 ----------------------
 
-`TMCL-IDE
-<https://www.analog.com/en/resources/evaluation-hardware-and-software/motor-motion-control-software/tmcl-ide.html>`_
+:adi:`TMCL-IDE <en/resources/evaluation-hardware-and-software/motor-motion-control-software/tmcl-ide.html>`
 is the main software package for Trinamic parts. The TMC9660 may be directly interfaced with from TMCL-IDE if connected via UART. The TMC9660 may be controlled via UART and by the MAX32662 at the same time, seamlessly. This usage is helpful for debugging and lower level access to the TMC9660 than the CANopen interface allows.
 
 Prerequisites:
 
-* Install the latest version of `TMCL-IDE <https://www.analog.com/en/resources/evaluation-hardware-and-software/motor-motion-control-software/tmcl-ide.html>`_
+* Install the latest version of :adi:`TMCL-IDE <en/resources/evaluation-hardware-and-software/motor-motion-control-software/tmcl-ide.html>`
 * Obtain a suitable UART probe (:adi:`MAX32625PICO` or other MAXDAP compatible)
 
 Steps:
@@ -23,8 +22,9 @@ Steps:
 #. Connect a UART probe to header P7.
 #. In TMCL-IDE, select the corresponding serial port from the *Connected devices* menu on the left side.
 #. Use the following settings to initiate a connection:
-	* 115200 baud
-	* search IDs from 1 to 1
+
+   * 115200 baud
+   * search IDs from 1 to 1
 
 Initially, use the TMCL-IDE TMC9660 tuning wizard to obtain proper motor control parameters. Carefully go through each step, up to and including encoder configuration.
 
@@ -57,37 +57,47 @@ Install / load the appropriate kernel modules for your CAN adapter:
 
    .. tab-item:: slcan
 
-      Adapters using the ``slcan`` protocol and driver, such as the :adi:`ADRD4161`, need the slcan daemon to run. On the ADRD4161, run::
+      Adapters using the ``slcan`` protocol and driver, such as the :adi:`ADRD4161`, need the slcan daemon to run. On the ADRD4161, run:
+
+      .. code-block:: bash
 
          sudo slcand -o -c -f -t hw -s 6 -S 2000000 /dev/ttyAMA0 can0
 
       Other devices will need a different set of arguments to ``slcand``.
 
-Configure and bring up the CAN interface (replace can0 with the name of the interface, if different)::
+Configure and bring up the CAN interface (replace can0 with the name of the interface, if different):
 
-	$ ip link set can0 down
-	$ ip link set can0 type can bitrate 500000
-	$ ip link set can0 up
+.. shell::
+
+   $ ip link set can0 down
+   $ ip link set can0 type can bitrate 500000
+   $ ip link set can0 up
 
 Additionally, the ``can-utils`` package has a useful set of tools which aid in bus monitoring and troubleshooting.
 
-If connected to an ADRD3161-01Z board, you should see regular heartbeat messages using `candump`::
+If connected to an ADRD3161-01Z board, you should see regular heartbeat messages using `candump`:
 
-	$ candump can0
-	can0  717   [1]  7F
-	can0  717   [1]  7F
-	can0  717   [1]  7F
-	...
+.. shell::
+
+   $ candump can0
+     can0  717   [1]  7F
+     can0  717   [1]  7F
+     can0  717   [1]  7F
+     ...
 
 In the above snippet, ``717`` is the CAN message ID, and it corresponds to node ID ``0x17``. The following content of each line signifies a message length of 1 bytes and hexadecimal content ``7F``. This is an CANopen NMT heartbeat message signaling the node is in the ``PRE-OPERATIONAL`` state.
 
-To remotely reset all nodes on the bus, run::
+To remotely reset all nodes on the bus, run:
 
-	$ cansend can0 000#0081
+.. shell::
 
-To remotely reset a specific node, with ID xx, run (after replacing xx with the ID in hexadecimal)::
+   $ cansend can0 000#0081
 
-	$ cansend can0 000#xx81
+To remotely reset a specific node, with ID xx, run (after replacing xx with the ID in hexadecimal):
+
+.. shell::
+
+   $ cansend can0 000#xx81
 
 Run a simple Python example
 '''''''''''''''''''''''''''
