@@ -176,3 +176,9 @@ The ADRDx161 board family communicates via CAN bus. The two headers P8, P9 allow
 .. image:: res/cable-can.png
 .. .. graphviz:: res/cable-can.gv
 
+.. _adrd3161_design_files:
+
+Design support files
+--------------------
+
+A design support package consisting of the board schematic, layout, assembly and fabrication files, and more, can be downloaded from the :adi:`ADRD3161-01Z` page. If you intend to build your own board from scratch, follow the :doc:`production-guide` for the necessary first-time programming steps.

@@ -14,7 +14,7 @@ Bootstrapping the TMC9660
 The :adi:`TMC9660` has reconfigurable I/O, clocking, LDO outputs, etc. Bootstrapping is the initial step of configuring these. Through bootstrapping, a configuration may be loaded in volatile memory, or "burned" to permanent nonvolatile memory to be loaded at power-up. These burn operations should be used sparingly, as they are limited to a total of 4 :abbr:`OTP (One Time Programmable)` configuration slots.
 
 Configurations may be applied temporarily. If you want to try out a different configuration to the one provided as a default for this board, follow `AN-2601: TMC9660 Configuration and Bootstrapping
-<https://www.analog.com/en/resources/app-notes/an-2601.html>`_ and reference the *board schematic* (TODO) and `default configuration <https://github.com/analogdevicesinc/adrd3161-fw/blob/main/scripts/ioconfig_adrd3161.toml>`_.
+<https://www.analog.com/en/resources/app-notes/an-2601.html>`_ and reference the :ref:`board schematic <adrd3161_design_files>` and `default configuration <https://github.com/analogdevicesinc/adrd3161-fw/blob/main/scripts/ioconfig_adrd3161.toml>`_.
 
 These instructions assume the TMC9660 is unconfigured (or has an invalid config, as described in the TMC9660 datasheet, section *Configuration Storage*) and thus enters bootstrap mode at startup.
 
