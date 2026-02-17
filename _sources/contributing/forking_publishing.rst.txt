@@ -53,18 +53,18 @@ Clone the repository
 
 .. shell::
 
-   $git clone https://github.com/analogdevicesinc/documentation \
-   $    --origin public \
-   $    --depth 10 \
-   $    -- documentation
-   $cd documentation
+   $ git clone https://github.com/analogdevicesinc/documentation \
+         --origin public \
+         --depth 10 \
+         -- documentation
+   $ cd documentation
 
 Create and checkout a branch
 
 .. shell::
 
    ~/documentation
-   $git checkout -b <your_branch>
+   $ git checkout -b <your_branch>
 
 .. _forking-publishing fork:
 
@@ -98,10 +98,10 @@ Clone the repository:
 
 .. shell::
 
-   $git clone https://github.com/<your_user>/documentation \
-   $    --origin public \
-   $    --depth 10 -- documentation
-   $cd documentation
+   $ git clone https://github.com/<your_user>/documentation \
+         --origin public \
+         --depth 10 -- documentation
+   $ cd documentation
 
 
 Fetch the large files from *analogdevicesinc* that your are working on and push
@@ -110,8 +110,8 @@ to your copy the large files binaries (and vice-versa):
 .. shell::
 
    ~/documentation
-   $git lfs pull public -I file_basename
-   $git lfs push private --all
+   $ git lfs pull public -I file_basename
+   $ git lfs push private --all
 
 If you don't have write permission to *analogdevicesinc*, you won't be able
 to push to it, but a reviewer can do in your behalf during review.
@@ -137,10 +137,10 @@ Clone mainland:
 
 .. shell::
 
-   $git clone https://github.com/analogdevicesinc/documentation \
-   $    --origin public \
-   $    --depth 10 -- documentation
-   $cd documentation
+   $ git clone https://github.com/analogdevicesinc/documentation \
+        --origin public \
+        --depth 10 -- documentation
+   $ cd documentation
 
 Setup both origins, for example, call *analogdevicesinc* ``public`` and your
 copy ``private`` at the *.git/config*, similar to:
@@ -177,8 +177,8 @@ to your copy the large files binaries (and vice-versa):
 .. shell::
 
    ~/documentation
-   $git lfs pull public -I file_basename
-   $git lfs push private --all
+   $ git lfs pull public -I file_basename
+   $ git lfs push private --all
 
 If you don't have write permission to *analogdevicesinc*, you won't be able
 to push to it, but a reviewer can do in your behalf during review.
@@ -201,39 +201,41 @@ Using your local host
 To prepare your environment to work **locally**,
 clone and build the doc for the first time (working directory: repo root):
 
-Ensure pip is up-to-date:
-
-.. code:: bash
-
-   pip install pip --upgrade
-
 :green:`Setup the virtual env at the repo root path:`
 
 .. shell::
 
    ~/documentation
-   $python -m venv ./venv
+   $ python -m venv ./venv
 
 :green:`Activate the virtual env`:
 
 .. shell::
 
    ~/documentation
-   $source ./venv/scripts/activate
+   $ source ./venv/scripts/activate
+
+Ensure pip is up-to-date:
+
+.. code:: bash
+
+   python3 -m ensurepip
+   pip install pip --upgrade
+
 
 Install the requirements:
 
 .. shell::
 
    ~/documentation
-   $(cd docs ; pip install -r requirements.txt --upgrade)
+   $ (cd docs ; pip install -r requirements.txt --upgrade)
 
 Launch the doc editing server using :external+doctools:ref:`serve`:
 
 .. shell::
 
    ~/documentation
-   $(cd docs ; adoc serve)
+   $ (cd docs ; adoc serve)
 
 The server will fetch on demand the git LFS resource (smudge step) from the
 pages you visit on the local server, and watched files you touch.
@@ -244,7 +246,7 @@ smudge step was skipped, the images and other binary files will be missing.
 .. shell::
 
    ~/documentation
-   $(cd docs ; make html)
+   $ (cd docs ; make html)
 
 .. _forking-publishing github-codespaces:
 
@@ -303,7 +305,7 @@ Create a new folder and file matching the entry from last step:
 .. shell::
 
    ~/documentation/docs
-   $mkdir my_topic; touch my_topic/index.rst
+   $ mkdir my_topic; touch my_topic/index.rst
 
 Edit *my_topic/index.rst*, adding a title and some content.
 
@@ -341,14 +343,14 @@ Resuming work at a later time
 .. shell::
 
    ~/documentation
-   $source ./venv/scripts/activate
+   $ source ./venv/scripts/activate
 
 Ensure the tools are up to data from time to time with:
 
 .. shell::
 
    ~/documentation
-   $(cd docs ; pip install -r requirements.txt --upgrade)
+   $ (cd docs ; pip install -r requirements.txt --upgrade)
 
 Edit, build, commit, push as usual.
 
@@ -378,11 +380,23 @@ It is recommended because it saves a lot of bandwidth and (your precious) time.
       :no-path:
 
       # Still fetches with either set.
-      $git lfs pull -I pointer_file
+      $ git lfs pull -I pointer_file
       # Only still fetches with --skip-smudge, skipped with GIT_LFS_SKIP_SMUDGE=1
-      $git lfs smudge < pointer_file > /tmp/file.png``
+      $ git lfs smudge < pointer_file > /tmp/file.png``
 
-In this configuration, you can fetch the artifact:
+Instead of applying ``--skip-smudge`` globally, you can set locally (only at
+the repository) with:
+
+.. shell::
+
+   $ GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/analogdevicesinc/documentation \
+        --origin public \
+        --depth 10 \
+        -- documentation
+   $ cd documentation
+   $ git lfs install --local --force --skip-smudge
+
+With ``--skip-smudge`` active, you can fetch the artifact with:
 
 .. shell::
 
@@ -393,7 +407,7 @@ In this configuration, you can fetch the artifact:
     -rw-r--r-- 1 me me 34162787 Mar 25 11:09 path/to/my_file.png
 
 
-And revert to it's pointer state:
+And revert to its pointer state:
 
 .. shell::
 
