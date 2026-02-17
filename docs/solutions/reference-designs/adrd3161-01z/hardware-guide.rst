@@ -1,7 +1,7 @@
 ADRD3161-01Z Hardware Guide
 ===========================
 
-.. figure:: res/adrd3161-01z-annotated.png
+.. figure:: res/adrd3161-01z-annotated.lfs.svg
    :align: center
    :width: 40em
 
@@ -140,32 +140,32 @@ Depending on the used motor and its wiring, you may need to customize the encode
       :adi:`ADI Trinamic TMCS <en/product-category/motor-encoders.html>` series, and the builtin encoders on
       :adi:`ADI Trinamic QSH <en/product-category/stepper-motors.html>` series stepper motors.
 
-      .. image:: res/cable-encoder-stepper.png
-      .. .. wireviz:: res/cable-encoder-stepper.yml
+      .. image:: res/cable-encoder-stepper.lfs.svg
+      .. .. wireviz:: res/cable-encoder-stepper.wireviz.yaml
 
    .. tab-item:: BLDC with Hall
       
       Encoder cable for a generic BLDC with Digital Hall sensor configuration, with no special encoder connector, such as the
       :adi:`ADI Trinamic QBL <en/product-category/bldc-brushless-dc-motors.html>` series.
 
-      .. image:: res/cable-encoder-bldc.png
-      .. .. wireviz:: res/cable-encoder-bldc.yml
+
+      .. image:: res/cable-encoder-bldc.lfs.svg
+      .. .. wireviz:: res/cable-encoder-bldc.wireviz.yaml
 
    .. tab-item:: BLDC with Hall, VESC-like connector
 
       Encoder cable for using a Digital Hall sensor with a VESC-like encoder connector (6-pin JST PH), such as the
       `REV-21-1650 <https://revrobotics.eu/rev-21-1650/>`_.
 
-      .. image:: res/cable-encoder-bldc-vesc.png
-      .. .. wireviz:: res/cable-encoder-bldc-vesc.yml
+      .. image:: res/cable-encoder-bldc-vesc.lfs.svg
+      .. .. wireviz:: res/cable-encoder-bldc-vesc.wireviz.yaml
 
    .. tab-item:: BLDC with Hall & ADI Trinamic ABN
 
       Encoder cable for using both an ADI Trinamic ABN encoder and a Digital Hall sensor.
 
-      .. image:: res/cable-encoder-bldc-abn.png
-      .. .. wireviz:: res/cable-encoder-bldc-abn.yml
-
+      .. image:: res/cable-encoder-bldc-abn.lfs.svg
+      .. .. wireviz:: res/cable-encoder-bldc-abn.wireviz.yaml
 
 .. _adrd3161_cable_can:
 
@@ -174,8 +174,8 @@ CAN cable
 
 The ADRDx161 board family communicates via CAN bus. The two headers P8, P9 allow for daisy-chaining CAN devices.
 
-.. image:: res/cable-can.png
-.. .. wireviz:: res/cable-can.yml
+.. image:: res/cable-can.lfs.svg
+.. .. wireviz:: res/cable-can.wireviz.yaml
 
 .. _adrd3161_design_files:
 

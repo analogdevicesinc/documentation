@@ -1,12 +1,15 @@
-all: pngs
+all: svgs
 
-pngs: cable-can.png cable-encoder-bldc-abn.png cable-encoder-bldc-vesc.png cable-encoder-bldc.png cable-encoder-stepper.png
+wireviz_files := $(wildcard *.wireviz.yml)
+pngs: $(wireviz_files:.wireviz.yml=.png)
+svgs: $(wireviz_files:.wireviz.yml=.lfs.svg)
+gvs: $(wireviz_files:.wireviz.yml=.gv)
 
-%.png: %.yml
-	wireviz -fp $^
+%.png: %.wireviz.yml
+	wireviz -fp $^ -O $(patsubst %.png,%,$@)
 
-wireviz: cable-can.gv cable-encoder-bldc-abn.gv cable-encoder-bldc-vesc.gv cable-encoder-bldc.gv cable-encoder-stepper.gv 
+%.lfs.svg: %.wireviz.yml
+	wireviz -fs $^ -O $(patsubst %.svg,%,$@)
 
-%.gv: %.yml
-	wireviz -fg $^
-
+%.gv: %.wireviz.yml
+	wireviz -fg $^ -O $(patsubst %.gv,%,$@)
