@@ -1,5 +1,5 @@
-ADRD3161 Quick Start Guide
-==========================
+ADRD3161-01Z Quick Start Guide
+==============================
 
 Connect a motor and encoder
 ---------------------------
@@ -33,7 +33,7 @@ After you have found suitable motor control parameters, use the "Position/Veloci
 Control via CAN bus
 -------------------
 
-The ADRD3161 implements CANopen, with the CiA 402 profile for motor drives. The device is interoperable with other CANopen devices, but has limited applicability on a CAN bus that is not CANopen, unless carefully configured.
+The ADRD3161-01Z implements CANopen, with the CiA 402 profile for motor drives. The device is interoperable with other CANopen devices, but has limited applicability on a CAN bus that is not CANopen, unless carefully configured.
 
 Check that the board has started up correctly:
 
@@ -71,7 +71,7 @@ Configure and bring up the CAN interface (replace can0 with the name of the inte
 
 Additionally, the ``can-utils`` package has a useful set of tools which aid in bus monitoring and troubleshooting.
 
-If connected to an ADRD3161 board, you should see regular heartbeat messages using `candump`::
+If connected to an ADRD3161-01Z board, you should see regular heartbeat messages using `candump`::
 
 	$ candump can0
 	can0  717   [1]  7F
@@ -92,7 +92,7 @@ To remotely reset a specific node, with ID xx, run (after replacing xx with the 
 Run a simple Python example
 '''''''''''''''''''''''''''
 
-The following example code uses the Python ``canopen`` library to communicate with the ADRD3161 and spin it in velocity mode.
+The following example code uses the Python ``canopen`` library to communicate with the ADRD3161-01Z and spin it in velocity mode.
 
 .. code-block:: python3
 

@@ -1,5 +1,5 @@
-ADRD3161 Hardware Guide
-=======================
+ADRD3161-01Z Hardware Guide
+===========================
 
 .. figure:: res/adrd3161-01z-annotated.png
    :align: center
@@ -175,3 +175,4 @@ The ADRDx161 board family communicates via CAN bus. The two headers P8, P9 allow
 
 .. image:: res/cable-can.png
 .. .. graphviz:: res/cable-can.gv
+

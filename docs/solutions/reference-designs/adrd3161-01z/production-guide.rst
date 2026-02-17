@@ -1,5 +1,5 @@
-ADRD3161 Production Guide
-=========================
+ADRD3161-01Z Production Guide
+=============================
 
 .. note::
 
@@ -47,7 +47,7 @@ Steps:
 Flashing the MAX32662
 ---------------------
 
-The ADRD3161 firmware is based on Zephyr. The source code for the latest version may be found at https://github.com/analogdevicesinc/adrd3161-fw .
+The ADRD316-01Z firmware is based on Zephyr. The source code for the latest version may be found at https://github.com/analogdevicesinc/adrd3161-fw .
 
 Prerequisites:
 

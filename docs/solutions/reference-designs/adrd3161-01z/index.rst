@@ -1,5 +1,5 @@
-ADRD3161
-========
+ADRD3161-01Z
+============
 
 Motor Control module with CANopen CiA 402
 """""""""""""""""""""""""""""""""""""""""
@@ -13,7 +13,7 @@ Introduction
 
    ADRD3161-01Z Motor Control board
 
-The :adi:`ADRD3161` is an FOC motor driver board based on the :adi:`TMC9660`, capable of
+The :adi:`ADRD3161-01Z` is an FOC motor driver board based on the :adi:`TMC9660`, capable of
 driving Stepper, BLDC, and brushed DC motors with optional quadrature (ABN)
 and/or Hall encoders. It communicates via CANopen CiA 402 over 500 kbaud CAN.
 For development, the :adi:`TMC9660` may also be accessed directly via UART and thus
@@ -47,7 +47,7 @@ Connections:
 Required Hardware
 -----------------
 
-* :adi:`ADRD3161`
+* :adi:`ADRD3161-01Z`
 * Stepper / BLDC / DC motor. Documented output represents the `QSH5718-51-28-101-10k <https://www.analog.com/qsh5718>`_ Stepper.
 * DC power supply (9 .. 70 VDC)
 * CAN, encoder cables, described in the :doc:`hardware-guide`
