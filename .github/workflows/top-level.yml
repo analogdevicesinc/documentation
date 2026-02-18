@@ -98,6 +98,10 @@ jobs:
             fi
           ' || _emit_fmt "::warning ::check_lfs: $lfs_error"
 
+    - name: Check casing
+      run: |
+        python3 .github/scripts/case.py
+
   deploy:
     runs-on: ubuntu-latest
     needs: [build-doc]
