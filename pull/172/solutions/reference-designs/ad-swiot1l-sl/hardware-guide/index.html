@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The AD-SWIOT1L-SL design incorporates the AD74413R Quad-Channel, Software Configurable Input and Output and the MAX14906 Quad-Channel industrial Digital Output/Digital Input ICs, allowing the multiplexing of several analog and digital functions on four channels which can be independently configurable through software to act as:" name="description" />
+
+    <title>Hardware User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=9bac72d6" />
+    <script async="async" src="../../../../_static/app.umd.js?v=d8ceb7f1"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Software User Guide" href="../software-guide/index.html" />
+    <link rel="prev" title="AD-SWIOT1L-SL" href="../index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Hardware User Guide</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#front-end">Front-end</a></li>
+<li><a class="reference internal" href="#power-supply-options">Power Supply Options</a><ul>
+<li><a class="reference internal" href="#power-supply-timing">Power Supply Timing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#protection">Protection</a></li>
+<li><a class="reference internal" href="#software-i-o-connections">Software I/O Connections</a></li>
+<li><a class="reference internal" href="#isolation">Isolation</a></li>
+<li><a class="reference internal" href="#feature-expansion">Feature Expansion</a></li>
+<li><a class="reference internal" href="#base-t1l-interfacing">10BASE-T1L Interfacing</a></li>
+<li><a class="reference internal" href="#single-pair-power-over-ethernet-spoe">Single-pair Power over Ethernet (SPoE)</a></li>
+<li><a class="reference internal" href="#led-indicators">LED Indicators</a></li>
+<li><a class="reference internal" href="#thermal-info">Thermal Info</a></li>
+<li><a class="reference internal" href="#support">Support</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20-1" id="toctree-collapse-13-20-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-20-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21-1" id="toctree-collapse-13-21-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-21-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23-1" id="toctree-collapse-13-23-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-23-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-SWIOT1L-SL</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="hardware-user-guide">
+<h1>Hardware User Guide<a class="headerlink" href="#hardware-user-guide" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> design incorporates the <a class="icon adi reference external" href="https://www.analog.com/AD74413R" target="_blank">AD74413R</a> Quad-Channel,
+Software Configurable Input and Output and the <a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> Quad-Channel industrial Digital
+Output/Digital Input ICs, allowing the multiplexing of several analog and
+digital functions on four channels which can be independently configurable
+through software to act as:</p>
+<ul class="simple">
+<li><p>Voltage Input or Output</p></li>
+<li><p>Current Input or Output</p></li>
+<li><p>Digital Input or Output</p></li>
+<li><p>RTD Measurement</p></li>
+</ul>
+<p>A 10 Mbps single-pair Ethernet link, using the <a class="icon adi reference external" href="https://www.analog.com/ADIN1110" target="_blank">ADIN1110</a>
+10BASE-T1L MAC/PHY, enables remote data acquisition and device configuration.
+The 10BASE-T1L interface can also be used for powering the system via the
+Single-pair Power over Ethernet (SPoE) technology using the
+<a class="icon adi reference external" href="https://www.analog.com/LTC9111" target="_blank">LTC9111</a> Powered Device (PD) controller. This way power and
+data for the system are provided over the same cable to simplify the cabling
+infrastructure and cost significantly.</p>
+<p>The system can be powered from an external 24 V supply for applications
+requiring high current capabilities. Up to 1.2 A can be output on any channel
+configured as a digital output. The power supply solution also includes the
+<a class="icon adi reference external" href="https://www.analog.com/ADP1032" target="_blank">ADP1032</a> high-performance, isolated micropower management unit
+(PMU) to provide power and digital control for software-configurable I/O devices
+in one of the most compact formats. The <a class="icon adi reference external" href="https://www.analog.com/LT8304" target="_blank">LT8304</a> Micropower
+No-Opto Isolated Flyback Converter together with <a class="icon adi reference external" href="https://www.analog.com/MAX17671" target="_blank">MAX17671</a> and
+<a class="icon adi reference external" href="https://www.analog.com/ADP223" target="_blank">ADP223</a> completes the power tree to provide power to the digital
+part of the design.</p>
+<p>The onboard <a class="icon adi reference external" href="https://www.analog.com/MAX32650" target="_blank">MAX32650</a> ultralow power ARM® Cortex®-M4
+microprocessor exposes all the necessary debug and programming features to
+enable a complete software development experience with the system. It is coupled
+with 1 Gb RAM and 64 Mb Flash external memories to meet the most demanding
+applications and provide the flexibility to implement any protocol stack.
+Security features are enabled by the <a class="icon adi reference external" href="https://www.analog.com/MAXQ1065" target="_blank">MAXQ1065</a> security
+coprocessor. The system’s firmware is based on ADI’s open-source no-OS framework
+and a user-friendly graphical user interface (GUI) for evaluation and further
+development.</p>
+<p>The figures represented below illustrate the main components used in the
+<a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> project.</p>
+<figure class="align-default" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_block_diagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text"><a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> Simplified Block Diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad-swiot1l-brd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad-swiot1l-brd.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text"><a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> Development Board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="front-end">
+<h2>Front-end<a class="headerlink" href="#front-end" title="Link to this heading"></a></h2>
+<p>In order to obtain a system that is software configurable I/O, the hardware
+portion which composes the front end of the <a class="icon adi reference external" href="https://www.analog.com/AD74413R" target="_blank">AD74413R</a> and
+<a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> combination needs to be designed to accommodate all
+available analog and digital functions.</p>
+<figure class="align-left" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_front_end.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_front_end.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_front_end.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Front-end Devices</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The 220 pF capacitor connected to the <strong>CCOMP_x</strong> pins
+allows the <a class="icon adi reference external" href="https://www.analog.com/AD74413R" target="_blank">AD74413R</a> to drive high capacitive loads in the
+voltage output use case.</p>
+<p>The P channel FET is used to lower power dissipation on the
+<a class="icon adi reference external" href="https://www.analog.com/AD74413R" target="_blank">AD74413R</a> die in cases where a low resistive load is present.</p>
+<p>The 2 kΩ resistor connected to the <strong>SENSEH_x</strong> pins is used to close the loop in
+the current output mode. The low tolerance of this resistor and R<sub>SENSE</sub>
+(0.1%) is required to improve accuracy in RTD measurements.</p>
+<p>The other 2 kΩ resistor connected to the <strong>SENSEL_x</strong> pins is also used to close
+the loop in voltage output mode, besides the current output one.</p>
+<p>The R<sub>FILTER</sub> and C<sub>FILTER</sub> components connected to the
+<strong>SENSEHF_x</strong> and <strong>SENSELF_x</strong> pins are used to measure the current through the
+R<sub>SENSE</sub> or the voltage between the I/OP_x and I/ON_x screw terminals.</p>
+<p>The TVS diodes connected on each I/OP_x and I/ON_x screw terminals have the
+purpose to provide protection against overvoltages (±40 V DC).</p>
+<p>The 470 pF capacitors connected to each DOIx pins on the
+<a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> are required for ESD protection.</p>
+<p>The <strong>LOAD</strong> can be any analog or digital industrial device or instrument.</p>
+</section>
+<section id="power-supply-options">
+<h2>Power Supply Options<a class="headerlink" href="#power-supply-options" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> board can be powered in two ways:</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_p4_p3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_p4_p3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_p4_p3.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text"><a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> Power Supply</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Power from an external 24 V supply via the <strong>“24 V TERMINAL BLOCK”</strong>, P4
+connector on the board.</p></li>
+<li><p>Power from an SPoE supply via the <strong>“10BASE-T1L TERMINAL BLOCK”</strong>, P3
+connector on the board.</p></li>
+</ul>
+<p>Each pin function is indicated in a drawing on the PCB board like in the right
+side picture.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_s2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_s2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_s2.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text"><a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> Power Switch</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>If both power supplies are in the system simultaneously, the
+system will take power from the external power supply connected to the <strong>“24 V
+TERMINAL BLOCK”</strong>.</p>
+<p>The design also includes a <strong>“POWER SWITCH”</strong> to switch the power (24 V) source.
+The power source for <a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> can the from the
+<a class="icon adi reference external" href="https://www.analog.com/ADP1032" target="_blank">ADP1032</a> internal supply, or from the external power supply.</p>
+<p>To quickly identify the <strong>“POWER SWITCH”</strong> position and meaning, a table is
+drawn on the PCB board like in the right side picture.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>For high-power applications which require the usage of
+<a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> (Industrial Digital I/O) device, the system will
+need to be powered from an external supply with the <strong>“POWER SWITCH”</strong> commuted
+to the external supply position like in the figure represented below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The greyed-out portions from the figures below represent circuits not used in that particular configuration.</p>
+</div>
+<figure class="align-default" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_at_full_power.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_at_full_power.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text"><a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> at Full Power</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>If the <strong>“POWER SWITCH”</strong> is commuted to the internal supply position like in
+the figure represented below, the <a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> will not function
+at full power, such that it will be necessary to take care of how the device is
+configured.</p>
+<figure class="align-default" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_at_mid_power.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_at_mid_power.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text"><a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> at Mid Power</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>If the system is powered from a Single-pair Power over Ethernet (SPoE) supply,
+like the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SPoE-KIT-AZ" target="_blank">EVAL-SPoE-KIT-AZ</a>, via the <strong>“10BASE-T1L
+TERMINAL BLOCK”</strong>, as is illustrated in the figure below, the
+<a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> will not function at full power, but is still usable
+depending on the application.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Care should be taken into consideration to flip the <strong>“POWER SWITCH”</strong>
+into the internal power supply position to avoid the situation to
+establish communication with an unpowered device, which may trigger a software crash.</p>
+</div>
+<figure class="align-default" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_at_low_power.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_at_low_power.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text"><a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> at Low Power</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="power-supply-timing">
+<h3>Power Supply Timing<a class="headerlink" href="#power-supply-timing" title="Link to this heading"></a></h3>
+<p>As described above, the system can be powered in two ways: from the SPoE power
+supply or the external power supply connector.</p>
+<p>No matter how the system is powered, the primary supply voltage, which can be
+24 V or 36 V, will power the main supplies (<a class="icon adi reference external" href="https://www.analog.com/ADP1032" target="_blank">ADP1032</a> and
+<a class="icon adi reference external" href="https://www.analog.com/MAX17671" target="_blank">MAX17671</a>) for both sections of the system (<strong>“FIELD POWER”</strong>
+and <strong>“CONTROLLER POWER”</strong>) as illustrated above.</p>
+<p>The figures illustrated below represent the power-up sequence for the main
+supplies (<a class="icon adi reference external" href="https://www.analog.com/ADP1032" target="_blank">ADP1032</a> and <a class="icon adi reference external" href="https://www.analog.com/MAX17671" target="_blank">MAX17671</a>), when the
+system is powered from the external 24 V power supply (<strong>left</strong>), and when the
+system is powered from an SPoE power supply (<strong>right</strong>).</p>
+<p>On the right side illustration, when the system is powered from an SPoE power
+supply, it can also be observed the Serial Communication Classification
+Protocol (SCCP) transaction, before the power (24 V) is turned on.</p>
+<figure class="align-left" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_1.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_1.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">External Power Supply</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-right" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_1_1.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_1_1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_1_1.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">SPoE Power Supply</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>After that, the “CONTROLLER POWER” section will be powered by
+<a class="icon adi reference external" href="https://www.analog.com/MAX17671" target="_blank">MAX17671</a> together with <a class="icon adi reference external" href="https://www.analog.com/ADP223" target="_blank">ADP223</a> (<strong>left side
+illustration</strong>) to provide the 3.3 V, 1.8 V, and 1.1 V voltages for the
+<a class="icon adi reference external" href="https://www.analog.com/MAX32650" target="_blank">MAX32650</a> and the rest of the peripherals, including one side
+of the digital interface.</p>
+<p>At the same time, the “FIELD POWER” section is powered by
+<a class="icon adi reference external" href="https://www.analog.com/ADP1032" target="_blank">ADP1032</a> (<strong>right side illustration</strong>) to provide the 24 V and
+3.3 V voltages for <a class="icon adi reference external" href="https://www.analog.com/AD74413R" target="_blank">AD74413R</a>, <a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a>, and
+the rest of the peripherals which compose one side of the digital interface.</p>
+<figure class="align-left" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_3.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_3.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Controller Section Power-up</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-right" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_2.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_power_up_section_2.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Field Section Power-up</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="protection">
+<h2>Protection<a class="headerlink" href="#protection" title="Link to this heading"></a></h2>
+<p>On the 24 V external power supply, the AD-SWIOT1L-SL board is protected against
+surges by a TVS diode.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> is protected against electrostatic discharge
+(ESD) events by a ceramic capacitor of 470 pF, 100 V on each DOI_ pin and by a
+ceramic capacitor of 1 μF, 100 V on each VDD_ pin. Also, reverse current
+protection is provided for <a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> by using a P-channel
+transistor on each VDD_ pin.</p>
+<p>Each <a class="icon adi reference external" href="https://www.analog.com/AD74413R" target="_blank">AD74413R</a> channel is protected against overvoltages (±40
+V) via a TVS diode.</p>
+<p>On the networking side, the <a class="icon adi reference external" href="https://www.analog.com/ADIN1110" target="_blank">ADIN1110</a> is protected against
+surges via ESD suppressors.</p>
+<p>The SPoE power supply, composed from <a class="icon adi reference external" href="https://www.analog.com/LTC9111" target="_blank">LTC9111</a> circuitry also
+provides protection against overvoltages (+40 V).</p>
+</section>
+<section id="software-i-o-connections">
+<h2>Software I/O Connections<a class="headerlink" href="#software-i-o-connections" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_channels_connections.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_channels_connections.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">AD-SWIOT1L-SL Channels</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Since this system has 4 channels, which can
+be configured with different functions, to control or monitor different
+industrial sensors, actuators, or other devices, to identify pin functions and
+channel names easily, a drawing is added on the PCB.</p>
+<p>The screw terminals tolerate overvoltages up to ± 40 V DC.</p>
+<p>The system is designed to be robust in noisy environments and can withstand
+overvoltage scenarios such as miswire and surge events.</p>
+</section>
+<section id="isolation">
+<h2>Isolation<a class="headerlink" href="#isolation" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad-swiot1l-brd_isolation.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad-swiot1l-brd_isolation.png" />
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">AD-SWIOT1L-SL Isolation Circuitry</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>To provide a minimum of safety to the design from eventual energy surges during
+operation or setup installation, to protect the digital section of the design
+which contains the MCU (<a class="icon adi reference external" href="https://www.analog.com/MAX32650" target="_blank">MAX32650</a>) and other sensitive
+devices, the field devices <a class="icon adi reference external" href="https://www.analog.com/AD74413R" target="_blank">AD74413R</a>,
+<a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> and the eventual device connected on the PMOD
+connector are isolated from the rest of the system via digital isolators and
+isolated power supplies plus a galvanic isolated barrier.</p>
+<p>The components used for digital and power isolation on the
+<a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> board meet the requirements for an
+industrial application.</p>
+<p>For digital isolation the following components are used:
+<a class="icon adi reference external" href="https://www.analog.com/MAX12930" target="_blank">MAX12930</a>, <a class="icon adi reference external" href="https://www.analog.com/MAX14483" target="_blank">MAX14483</a> and optionally
+<a class="icon adi reference external" href="https://www.analog.com/MAX14933" target="_blank">MAX14933</a> while for power
+<a class="icon link reference external" href="https://www.coilcraft.com/en-us/products/transformers/power-transformers/power-converter-transformers/za9384/za9644-ae/" target="_blank">ZA9644-AED</a>
+and <a class="icon link reference external" href="https://www.we-online.com/en/components/icref/analog-devices/LT8304-Flyback-5" target="_blank">750315836</a>
+transformers and <a class="icon adi reference external" href="https://www.analog.com/ADP1032" target="_blank">ADP1032</a> which also provide isolation for some
+digital signals.</p>
+</section>
+<section id="feature-expansion">
+<h2>Feature Expansion<a class="headerlink" href="#feature-expansion" title="Link to this heading"></a></h2>
+<p>A PMOD connector, <strong>P2</strong>, is present on the board for feature expansion reasons, in
+order to extend the platform capabilities. For this, an SPI interface with an
+additional output signal and power is exposed on the PMOD connector.</p>
+<p>There are also placeholders for additional digital isolators (U12, U13, and U14)
+to enable if necessary direct control or monitoring for all channels without
+using only the SPI interface. This may be necessary for high-speed process
+control applications.</p>
+<figure class="align-default" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_pmod_iso.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_pmod_iso.png" />
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Pmod Connector and Additional Digital Isolators</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="base-t1l-interfacing">
+<h2>10BASE-T1L Interfacing<a class="headerlink" href="#base-t1l-interfacing" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad-t1lusb2.0-ebz.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad-t1lusb2.0-ebz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad-t1lusb2.0-ebz.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">AD-T1LUSB-EBZ 10BASE-T1L to USB Adapter</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> kit includes a
+10BASE-T1L to USB adapter <a class="icon adi reference external" href="https://www.analog.com/AD-T1LUSB2.0-EBZ" target="_blank">AD-T1LUSB2.0-EBZ</a> which is useful to directly
+control the board via a USB connection.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Check out here the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-t1lusb-ebz" target="_blank">User Guide for AD-T1LUSB2.0-EBZ</a></p>
+</div>
+<p>Besides this, other 10BASE-T1L media converters like the
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-ADIN1100" target="_blank">EVAL-ADIN1100</a> can be used to directly interface the
+AD-SWIOT1L-SL board on an Ethernet network.</p>
+<figure class="align-default" id="id17">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_with_eval_adin1100.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_with_eval_adin1100.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_with_eval_adin1100.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">AD-SWIOT1L-SL with EVAL-ADIN1100 10BASE-T1L Media Converter</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id18">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_with_t1lusb.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_with_t1lusb.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_with_t1lusb.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">AD-SWIOT1L-SL with AD-T1LUSB-EBZ 10BASE-T1L to USB Adapter</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="single-pair-power-over-ethernet-spoe">
+<h2>Single-pair Power over Ethernet (SPoE)<a class="headerlink" href="#single-pair-power-over-ethernet-spoe" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id19">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_with_spoe.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_with_spoe.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">AD-SWIOT1L-SL Powered via SPoE</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>As mentioned earlier, in the introduction section, the AD-SWIOT1L-SL board can
+be powered via the SPoE technology. For this, we mainly need to use the
+<a class="icon adi reference external" href="https://www.analog.com/LTC9111" target="_blank">LTC9111</a> Powered Device (PD) controller, included on the board,
+and the companion part <a class="icon adi reference external" href="https://www.analog.com/LTC4296-1" target="_blank">LTC4296-1</a> five port, Single-pair
+Power over Ethernet (SPoE), Power Sourcing Equipment (PSE) controller.</p>
+<p>The purpose of the <a class="icon adi reference external" href="https://www.analog.com/LTC9111" target="_blank">LTC9111</a> PD controller is to communicate the
+power classification and to provide protection against undervoltage or
+overvoltage scenarios. In contrast, the <a class="icon adi reference external" href="https://www.analog.com/LTC4296-1" target="_blank">LTC4296-1</a> PSE
+controller will initiate the communication for power classification and it will
+provide protection against overcurrents and other energy surges events.</p>
+<p>The communication between PD classification is made via the Serial Communication
+Classification Protocol (SCCP) and is initiated before the power over data lines
+is turned on.</p>
+<p>On the AD-SWIOT1L-SL board, the <a class="icon adi reference external" href="https://www.analog.com/LTC9111" target="_blank">LTC9111</a> circuitry is
+configurated to function as a class 12 PD device, which means that it will only
+function together with a PSE equipment configurated only in class 12.</p>
+</section>
+<section id="led-indicators">
+<h2>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id20">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad-swiot1l-brd_leds.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad-swiot1l-brd_leds.png" />
+<figcaption>
+<p><span class="caption-number">Figure 20 </span><span class="caption-text">AD-SWIOT1L-SL LED Indicators</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>There are a couple of LEDs present on the board which are used to indicate
+particular system statuses.</p>
+<p>To easily identify if the system is powered properly, there is a green LED
+around the <a class="icon adi reference external" href="https://www.analog.com/ADP1032" target="_blank">ADP1032</a> power supply which will indicate if the 24
+V and 3.3 V rails for the software configurable I/0 devices are within margins,
+by being lit and another green LED which will be also lit if the 24 V supply for
+<a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> is present.</p>
+<p>Around the <a class="icon adi reference external" href="https://www.analog.com/ADIN1110" target="_blank">ADIN1110</a> there are also two LEDs, green and
+yellow, which depending on the software configuration, can be used to indicate
+different network statuses.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> has also a LED matrix, with red and green LEDs,
+that can be used to eider indicate the channels’ statuses and faults or can be
+used as general-purpose indicators.</p>
+<p>Finally, there are also two green LEDs around the P1 programming connector (SWD)
+which can be controlled directly by the <a class="icon adi reference external" href="https://www.analog.com/MAX32650" target="_blank">MAX32650</a>
+microcontroller (MCU).</p>
+</section>
+<section id="thermal-info">
+<h2>Thermal Info<a class="headerlink" href="#thermal-info" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id21">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_idle.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_idle.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/swiot1l_idle.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 21 </span><span class="caption-text">AD-SWIOT1L-SL Idle Mode Temperature</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The operating temperature of the AD-SWIOT1L-SL board before it is configured will be around 10°C
+over the ambient temperature.</p>
+<figure class="align-default" id="id22">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad74413r_max_power.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad74413r_max_power.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/ad74413r_max_power.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 22 </span><span class="caption-text">AD74413R Maximum Temperature</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The maximum temperature of the
+<a class="icon adi reference external" href="https://www.analog.com/AD74413R" target="_blank">AD74413R</a> circuitry when is operating at maximum power.</p>
+<p>This is the situation when all channels are using the
+<a class="icon adi reference external" href="https://www.analog.com/AD74413R" target="_blank">AD74413R</a> sourcing functions at the maximum limit, for
+example, all channels are sourcing 25 mA.</p>
+<figure class="align-default" id="id23">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/max14906_max_power.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/max14906_max_power.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/solutions/reference-designs/ad-swiot1l-sl/hardware-guide/max14906_max_power.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 23 </span><span class="caption-text">MAX14906 Maximum Temperature</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The maximum temperature of the
+<a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> circuitry when is operating at maximum power.</p>
+<p>This is the situation when all channels are using the
+<a class="icon adi reference external" href="https://www.analog.com/MAX14906" target="_blank">MAX14906</a> digital output functions with the current limit set
+at maximum and a load that is draining almost the maximum available power, for
+example, from all channels the load is draining 1.2 A.</p>
+<p>This is usually the worst-case scenario when the AD-SWIOT1L-SL board will heat
+up at the highest temperature.</p>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
+<p>Analog Devices will provide <strong>limited</strong> online support for anyone using the
+reference design with Analog Devices components via the <a class="icon ez reference external" href="https://ez.analog.com/ez/reference-designs" target="_blank">EngineerZone Reference Designs</a> forum.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD-SWIOT1L-SL</a>
+    <a href="../software-guide/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Software User Guide</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

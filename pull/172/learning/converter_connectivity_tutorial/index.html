@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="You don’t have to be a software engineer in order to leverage device drivers and example code as you are evaluating and prototyping with Analog Devices’ data converters and converter-like products. Selection of an ADC, DAC, or sensor often starts by finding something that meets performance requirements (obviously). This may be followed with some experimentation with the device’s evaluation board and accompanying software, but at some point you need to “take the next step”. This “next step” could be any one of a wide array of things - wiring the eval board to a prototype of a larger system, deeper characterization using your own benchtop test equipment, or any one of a plethora of random requirements. This tutorial will arm you with a number of tools to this end" name="description" />
+
+    <title>Converter Connectivity Tutorial &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=9bac72d6" />
+    <script async="async" src="../../_static/app.umd.js?v=d8ceb7f1"></script>
+    <link rel="icon" href="../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Software Infrastructure for designing with ADCs, DACs, and Sensors" href="../sw_infrastructure/index.html" />
+    <link rel="prev" title="Precision ADC Tutorial" href="../tutorial_prec_adc/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Converter Connectivity Tutorial</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#representative-systems">Representative systems</a></li>
+<li><a class="reference internal" href="#connecting-the-hardware">Connecting the Hardware</a></li>
+<li><a class="reference internal" href="#burning-sd-cards">Burning SD cards</a></li>
+<li><a class="reference internal" href="#adi-kuiper-linux">ADI Kuiper Linux</a></li>
+<li><a class="reference internal" href="#device-tree-overlays">Device Tree Overlays</a></li>
+<li><a class="reference internal" href="#hello-adxl345-adxl355-or-lm75">Hello, ADXL345, ADXL355, or LM75!</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#pyadi-iio">PyADI-IIO</a><ul>
+<li><a class="reference internal" href="#tools-for-your-toolbox-ssh-scp-vnc">Tools for your Toolbox: SSH, SCP, VNC</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#going-headless">Going “Headless”</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20-1" id="toctree-collapse-13-20-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-20-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21-1" id="toctree-collapse-13-21-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-21-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23-1" id="toctree-collapse-13-23-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-23-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Learning! Tutorials, Workshops, Etc</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="converter-connectivity-tutorial">
+<h1>Converter Connectivity Tutorial<a class="headerlink" href="#converter-connectivity-tutorial" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>You don’t have to be a software engineer in order to leverage device drivers
+and example code as you are evaluating and prototyping with Analog Devices’
+data converters and converter-like products. Selection of an ADC, DAC, or
+sensor often starts by finding something that meets performance requirements
+(obviously). This may be followed with some experimentation with the device’s
+evaluation board and accompanying software, but at some point you need to “take
+the next step”. This “next step” could be any one of a wide array of things -
+wiring the eval board to a prototype of a larger system, deeper
+characterization using your own benchtop test equipment, or any one of a
+plethora of random requirements. This tutorial will arm you with a number of
+tools to this end</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Update:</strong>
+The first version of this tutorial was published in early 2020, after test
+driving the setup with a few select field engineers. A lot has happened since
+then:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a> has matured considerably, with broad support for ADI devices
+and popular processor and FPGA development platforms</p></li>
+<li><p>The <a class="icon adi reference external" href="https://www.analog.com/eval-adxl355-pmdz" target="_blank">ADXL355 Pmod</a> has since been released, and
+is being added as an option for this tutorial. (The original ADXL345 /
+Digilent Pmod-ACL is still included.)</p></li>
+<li><p>LibIIO now supports HWMON devices (if these terms aren’t familiar, you’ll
+learn about them soon), enabling the use of the absolute <strong>best</strong> device to
+start learning about embedded Linux systems: the LM75 temperature sensor.
+It is an industry standard with several manufacturers, including the
+<a class="icon adi reference external" href="https://www.analog.com/LM75" target="_blank">Maxim LM75</a> and ADI’s variant, <a class="icon adi reference external" href="https://www.analog.com/ADT75" target="_blank">ADT75</a></p></li>
+</ul>
+<p>So while it’s generally not a good idea to have too many options in a basic
+tutorial, we felt that having a couple was appropriate here, including one that
+is very low cost (the LM75)g</p>
+</div>
+<p>Analog Devices provides an assortment of evaluation boards and reference
+designs for converters of various channel counts, bandwidths, and other
+functionality, whose drivers fit into the Industrial Input Output (IIO)
+framework. This framework facilitates robust data transfer to or from the
+converter into “userspace”, where the user program could be a MATLAB script for
+device characterization, a Python script that talks to benchtop signal
+generators and spectrum analyzers via GPIB in addition to the ADI part under
+test, or a C program embedded in the end product. Most of these involve fairly
+costly reference design hardware installed on even more costly FPGA platform
+boards, which, to extract maximum performance, require test equipment exceeding
+the cost of a luxury car. So the question arises - what is the simplest, lowest
+cost system that captures the important aspects of these larger systems? $50
+total for a Raspberry Pi, SD card, and an LM75 temperature sensor (or ADXL355
+or ADXL345 board) sounds like a pretty reasonable deal. The only test equipment
+required is:</p>
+<ul class="simple">
+<li><p>You (your finger to warm up the LM75, or shake the ADXL3x5)</p></li>
+<li><p>The Earth (to provide a precise, low-noise, -9.8m/s<sup>2</sup> acceleration)</p></li>
+</ul>
+<figure class="align-center" id="id5">
+<span id="fig-simple-iio-hardware"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/simple_iio_hardware.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/simple_iio_hardware.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/simple_iio_hardware.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Ultra-simple IIO-based system</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>A Note on Security:</strong> The Raspberry Pi is a fantastic tool, but it can
+represent a network security gap if used improperly. Our Raspberry Pi will
+start out configured in a fairly open state - a simple root password, SSH login
+enabled. This isn’t an issue if the Raspberry Pi does not have internet access
+or is behind a firewall, but if you are going to connect to your network, it’s
+a good idea to change the password to something secure. Refer to this article
+on Raspberry Pi Security:
+<a class="icon link reference external" href="https://www.raspberrypi.org/documentation/configuration/security.md" target="_blank">Securing your Raspberry Pi</a>.</p>
+<p><strong>A Note on the Tutorial:</strong> This tutorial is hands-on, and attempts to be clear
+and consistent. But there are often several “right” ways of doing a step -
+choice of editor to modify files on an SD card, using a Windows, Mac, or Linux
+machine, etc. When in doubt: <strong>Double-check your wiring</strong>, and just try stuff.
+Worst case, you’ll need to re-burn your SD card to get back to the starting
+point.</p>
+</section>
+<section id="representative-systems">
+<h2>Representative systems<a class="headerlink" href="#representative-systems" title="Link to this heading"></a></h2>
+<p>We are intentionally starting with an extremely simple example. But once you
+understand how to communicate with an LM74, ADXL345, or ADXL355, you’re well
+over the initial learning curve to understanding much more complicated
+systems. The <a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto" target="_blank">ADALM-Pluto</a> is a great example -
+it contains an AD9363 RF Agile Transcieiver, Zynq SoC FPGA, Memory, USB interface,
+and much more. Even the simplified block diagram is pretty daunting:</p>
+<figure class="align-default" id="id6">
+<span id="fig-pluto-medium-block-diagram"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/pluto_medium_block_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/pluto_medium_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/pluto_medium_block_diagram.png" width="200" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Pluto Simplified Block Diagram</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>If the Pluto wasn’t scary enough, the <a class="icon adi reference external" href="https://www.analog.com/cn0566" target="_blank">Phased Array (Phaser) Development
+Platform</a> might be a step in that direction. It incorporates two
+<a class="icon adi reference external" href="https://www.analog.com/adiADAR1000" target="_blank">ADAR1000</a> beamformers, an <a class="icon adi reference external" href="https://www.analog.com/AF4159" target="_blank">ADF4159</a> Fast
+Waveform Generating, 13 GHz, Fractional-N Frequency Synthesizer and uses the
+Pluto as its IF digitizer. It’s also got a <a class="icon adi reference external" href="https://www.analog.com/AD7291" target="_blank">AD7291</a> 8-Channel,
+I2C, 12-Bit SAR ADC with Temperature Sensor for basic monitoring; a simple
+device by comparison, but it’s got its own device driver, and is adjacent the
+more complex devices both physically and in software.</p>
+<figure class="align-default" id="id7">
+<span id="fig-2-23-2023-4-37-00-pm"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/2-23-2023_4-37-00_pm.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/2-23-2023_4-37-00_pm.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/2-23-2023_4-37-00_pm.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Phaser System Overview</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>But - all of the phaser’s devices work together, and by the time you finish
+this tutorial you’ll be able to chip away at understanding how the individual
+devices work, and eventually, how they whole system works.</p>
+</section>
+<section id="connecting-the-hardware">
+<h2>Connecting the Hardware<a class="headerlink" href="#connecting-the-hardware" title="Link to this heading"></a></h2>
+<p>Before we dig too deep into software stuff, let’s prepare the hardware. There
+are lots of ways to connect boards together, custom adapters, Raspberry Pi
+prototyping hats, etc. The <a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a> is an interposer
+that simplifies connecting I2C and SPI Pmod boards, QuikEval compatible eval
+boards, and Power System Managemement (PSM) eval boards to a Raspberry Pi.
+<a class="reference internal" href="#fig-adxl354-pmd-rpi-intz"><span class="std std-numref">Figure 4</span></a> shows the
+<a class="icon link reference external" href="https://store.digilentinc.com/pmod-acl-3-axis-accelerometer/" target="_blank">ADXL345 Pmod</a>
+(available  directly from Digilent and from various distributors) mounted to the
+PMD-RPI-INTZ board. Note that the Pmod must be installed on P1, which uses SPI
+CS0 and has the interrupt pin connected to GPIO 19g</p>
+<figure class="align-default" id="id8">
+<span id="fig-adxl354-pmd-rpi-intz"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/adxl354_pmd-rpi-intz.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/adxl354_pmd-rpi-intz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/adxl354_pmd-rpi-intz.jpg" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">ADXL345 Pmod Mounted to PMD-RPI-INTZ Interposer</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Another option that generally applies to eval boards with test points on the
+digital signals is to use discrete jumper wires. Five inch jumpers from
+Schmartboard: <a class="icon link reference external" href="https://schmartboard.com/wire-jumpers/female-jumpers/5-inch/" target="_blank">Schmartboard Jumpers</a> are very
+convenientg</p>
+<p>If you are using Jumpers, use <a class="reference internal" href="#fig-simple-iio-hardware"><span class="std std-numref">Figure 1</span></a> as a visual aid and make the connections
+shown in <a class="reference internal" href="#fig-rpi-adxl345-connections"><span class="std std-numref">Figure 5</span></a>.
+The accelerometer board is a Digilent model Pmod:ACL,
+it is essentially a breakout board for the ADXL345.</p>
+<p>In theory, any Raspberry Pi should work, although it is probably best to use
+a modern model with a 40-pin expansion header.
+(The model shown in <a class="reference internal" href="#fig-simple-iio-hardware"><span class="std std-numref">Figure 1</span></a> is a model 3B, version 1.2.)
+Note that there are TWO SPI ports - SPI0 and SPI1. We will be using SPI0
+(Pins 8, 19, 21, 23)</p>
+<figure class="align-center" id="id9">
+<span id="fig-rpi-adxl345-connections"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_adxl345_connections.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_adxl345_connections.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_adxl345_connections.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">RPi-Pmod connections</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<ul class="simple">
+<li><p>Add detailed pictures of ADXL355 Pmod and options for LM75 and ADT75g
+In the meantime - it’s straightforward:</p></li>
+<li><p>The ADXL355 Pmod plugs into the same P1 location on the PMD-RPI-INTZ</p></li>
+<li><p>The Digilent <a class="icon link reference external" href="https://digilent.com/shop/pmod-tmp3-digital-temperature-sensor/" target="_blank">Pmod TMP3</a>
+uses the
+compatible Microchip TCN75A temperature sensor. It’s not the most convenient;
+it’s not truly Pmod compatible because the header is mounted vertically, the
+easiest way to connect it to the Pi is with Schmartboard jumpersg</p>
+<ul>
+<li><p>The Analog Devices LM75 and ADT75 don’t have convenient eval boards so
+the best option is to solder them to breakout boards</p></li>
+<li><p>There are several “maker style” LM75 breakout boards offered by your
+favorite online vendors that should work fineg</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="burning-sd-cards">
+<h2>Burning SD cards<a class="headerlink" href="#burning-sd-cards" title="Link to this heading"></a></h2>
+<p>In order to boot the Raspberry Pi, you will need to obtain an SD card
+“image”, and write (or “burn”) it to a card. We’ll talk about where to get the
+correct image shortly. This is a fairly common step in bringing up embedded
+computers - Raspberry Pi, BeagleBone, Zedboard, Arrow SoCkit, or any machine
+that boots from an SD card. There are lots of ways to burn images, but the most
+straightforward way is to use the standard Raspberry Pi Imager, available here:
+<a class="icon link reference external" href="https://www.raspberrypi.com/software/" target="_blank">Raspberry Pi OS (including Raspbery Pi Imager)</a></p>
+<p>There are instructions for Windows, Mac, and Linux. The imager also works on
+machines that encrypt data being written to external drives since it’s writing
+“raw” data. HOWEVER - beware encryption software when editing configuration
+files! (More on that later…)</p>
+<figure class="align-center" id="id10">
+<span id="fig-raspberry-pi-imager"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/raspberry_pi_imager.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/raspberry_pi_imager.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/raspberry_pi_imager.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Raspberry Pi Imager Screenshot</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>A new SD card is usually preformatted as a single EXFAT partition, usable by
+all operating system. But after burning an image to the card, it will show up
+as several partitions, not all of which are visible to all operating systems.
+So if you burn a card in Windows, and a popup appears saying “This drive needs
+to be formatted, would you like to format now?”, the answer is <strong>NO!</strong>
+<a class="reference internal" href="#fig-sd-card-partitions"><span class="std std-numref">Figure 7</span></a>.
+shows the SD card partitions before and after burning the image. Attempting to
+read the partition map in Windows (under Administrative Tools, Disk Management)
+will show the ext4 partition as “unknown”.</p>
+<figure class="align-center" id="id11">
+<span id="fig-sd-card-partitions"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/sd_card_partitions.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/sd_card_partitions.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/sd_card_partitions.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">SD card partitions before and after “burning”</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Helpful Hint: It may happen that an SD card becomes corrupted somehow. This can
+sometimes be fixed in Windows by opening storage manager in Administrative
+tools, then removing all partitions, and reformatting as EXFAT (a similar
+procedure can be followed using fdisk in Linux.) But computers are smart -
+sometimes too smart - and there are cases where these tools fail to repartition
+a drive. However - digital cameras are not as smart, and using a digital
+camera’s (such as a Nikon D90) SD card formatting feature will often resurrect
+a “bricked” cardg</p>
+</section>
+<section id="adi-kuiper-linux">
+<h2>ADI Kuiper Linux<a class="headerlink" href="#adi-kuiper-linux" title="Link to this heading"></a></h2>
+<p>What is “ADI Kuiper Linux”? Here’s a little glossary:</p>
+<ul class="simple">
+<li><p>Debian = A Popular Linux Distribution</p></li>
+<li><p>ADI Kuiper Linux = ADI’s specialized Debian distribution with extra goodies:</p>
+<ul>
+<li><p>All drivers for ADI, LTC parts that make sense enabled</p></li>
+<li><p>Boot files for FPGA-based reference designs and evaluation boards
+targeting a number of popular FPGA platforms, including:</p>
+<ul>
+<li><p>Data acquisition and transceiver boards (FMCOMMSx, FMCDAQx, etc.)</p></li>
+<li><p>Xilinx platforms: ZedBoard, Digilent Cora Z7, ZCU102, VCK190</p></li>
+<li><p>Intel/Altera platforms: DE10-Nano, Arria 10 SoC dev kit, Cyclone 5</p></li>
+</ul>
+</li>
+<li><p>LibIIO, IIO Oscilloscope, other ADI programs and utilities</p></li>
+<li><p>iiod runs at startup</p></li>
+<li><p>GNU Radio (optional)</p></li>
+<li><p>Desktop environment with VNC server (optional)</p></li>
+</ul>
+</li>
+</ul>
+<p>In order to obtain an SD card with a Kuiper Linux image you can follow the steps
+in the <a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">dedicated Kuiper documentation</span></a>.
+Make sure to use or build an image with desktop configured.</p>
+<p>At this point, you should be able to:</p>
+<ol class="arabic simple">
+<li><p>Insert the card into the Raspberry Pi</p></li>
+<li><p>Connect an HDMI monitor</p></li>
+<li><p>Connect a USB keyboard and mouse</p></li>
+<li><p>Supply power via a micro-USB cable and old phone charger.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to use the Raspberry Pi without a local keyboard, mouse,
+monitor - see the “Going Headless” section below.</p>
+</div>
+<p>If all goes well, you should see a desktop. From the start menu, click Other -&gt;
+IIO Oscilloscope (or open a terminal and run IIO Oscilloscope):</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>osc
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>(Enter the root password, “analog” by default unless you followed the advice
+above to change it.) You should then see IIO oscilloscope running as shown in
+<a class="reference internal" href="#fig-rpi-desktop"><span class="std std-numref">Figure 8</span></a>!
+Also note that IIO Oscilloscope will run without root privileges, but
+all devices will be read-only. For example, you won’t be able to change the
+ADXL3x5’s sampling frequency, or LM75’s over/under temperature thresholdsg</p>
+<figure class="align-center" id="id12">
+<span id="fig-rpi-desktop"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_desktop.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_desktop.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_desktop.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Raspberry Pi w/ ADI Kuiper Linux desktop</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>But… if you look at the IIO oscilloscope panels, where’s the ADXL3x5 or LM75?
+Well, the Linux kernel does a bunch of stuff during boot, controlled by various
+configuration files (remember autoexec.bat and config.sys on old DOS systems?,
+Yup, the authore has suppressed that memory, too.) One of them,
+/boot/config.txt, is how you tell Linux about what hardware is connected, and
+the default is NOT the ADXL345… so let’s fix thatg</p>
+</section>
+<section id="device-tree-overlays">
+<h2>Device Tree Overlays<a class="headerlink" href="#device-tree-overlays" title="Link to this heading"></a></h2>
+<p>When we first powered up the Raspberry Pi and ran IIO Oscilloscope it didn’t
+find anything. While we do have our ADXL3x5/LM75 physically connected to the
+board, Linux doesn’t know about it yet because UNlike USB, PCI, SCSI, Firewire,
+HDMI, etc, SPI and I2C devices do not support enumeration. How do we tell the
+Linux kernel what we’ve connected to the expansion header? The answer is the
+“Device Tree Overlay”.</p>
+<p>While you won’t have to do anything more than editing a couple of files in this
+tutorial, it helps to understand a bit about what is going on under the
+surface. A “Device Tree” contains information about a system’s hardware - what
+peripherals exist (like displays, memory, USB, Ethernet controllers, GPIO pins,
+etc.) A “Device Tree Overlay” contains information about additional connected
+hardware, like our ADXL3x5/LM75. <a class="reference internal" href="#code-device-tree"><span class="std std-numref">Listing 1</span></a> shows the devicetree
+of the ADXL345’s overlay targetting the Raspberry Pi.
+It shows that the ADXL345 is connected to the SPI port, using
+the first CS signal (CS0), the maximum SPI clock frequency is 1MHz, and the
+interrupt signal is connected to Pin 19 (as shown in the connection diagram
+above.)</p>
+<div class="literal-block-wrapper docutils container" id="id13">
+<span id="code-device-tree"></span><div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">Partial ADXL345 overlay source (dts)</span><a class="headerlink" href="#id13" title="Link to this code"></a></div>
+<div class="highlight-dts notranslate"><div class="highlight"><pre><span></span><span class="c1">// SPDX-License-Identifier: GPL-2.0</span>
+<span class="cp">/dts-v1/</span><span class="p">;</span>
+<span class="cp">/plugin/</span><span class="p">;</span>
+
+<span class="cp">#include</span><span class="cm"> </span><span class="cpf">&lt;dt-bindings/interrupt-controller/irq.h&gt;</span>
+
+<span class="o">&amp;</span><span class="p">{</span><span class="o">/</span><span class="p">}</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="kr">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;brcm,bcm2835&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;brcm,bcm2708&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;brcm,bcm2709&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="o">&amp;</span><span class="na">spi0</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nl">adxl345</span><span class="p">:</span><span class="w"> </span><span class="nf">adxl345</span><span class="o">@</span><span class="mi">0</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">                </span><span class="kr">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;adi,adxl345&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="kr">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">                </span><span class="n">spi-max-frequency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1000000</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">                </span><span class="n">spi-cpha</span><span class="p">;</span>
+<span class="w">                </span><span class="n">spi-cpol</span><span class="p">;</span>
+<span class="w">                </span><span class="n">interrupts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">19</span><span class="w"> </span><span class="na">IRQ_TYPE_LEVEL_HIGH</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">                </span><span class="n">interrupt-parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">gpio</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="p">};</span>
+
+<span class="o">&amp;</span><span class="nf">spidev0</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kr">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;disabled&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<p>The device tree source is then compiled into a “flattened” device tree that the
+Linux kernel reads directly. While this process is fairly straightforward, it’s
+beyond the scope of this tutorial. Furthermore, the device tree overlay for
+this tutorial is already included on the SD card, along with several other
+overlays for other hardware configurations. (Note that the device tree overlay
+is specific to a particular device AND how it is connected to the Raspberry Pi.
+Any changes to the connections - SPI CS line, interrrupt line, etc. will
+require a corresponding modification to the overlay.)</p>
+<p>For reference, here are the overlay source files for the three devices in this
+tutorial. These are in the Linux rpi-6.12.y branch:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/linux/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/rpi-lm75-overlay.dts" target="_blank">LM75 Device Tree Overlay</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/linux/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/rpi-adxl345-overlay.dts" target="_blank">ADXL345 Device Tree Overlay</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/linux/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/rpi-adxl355-overlay.dts" target="_blank">ADXL355 Device Tree Overlay</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more gory details on device trees, a great resource is
+<a class="icon link reference external" href="https://elinux.org/images/f/f9/Petazzoni-device-tree-dummies_0.pdf" target="_blank">Device Tree for Dummies</a>
+by Thomas Petazzonig.</p>
+</div>
+<p>So keeping with the spirit of doing while we’re learning, let’s configure the
+overlay for this experiment. The device tree overlay is specified in the
+config.txt file, which lives in the BOOT partition on the SD card. There are
+several ways to edit this file - Since the BOOT partition is a FAT filesystem,
+you can use any text editor on any operating system; Notepad on Windows, Kedit
+on Linux, etc. Or… if your Raspberry Pi is booted up, you can edit directly
+on the Pi! Just open a command prompt, and type:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mousepad<span class="w"> </span>/boot/config.txt
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Which will bring up the file in the Mousepad editor. Scroll down until you find
+the line that begins with “dtoverlay”, and, whatever it happens to be, change
+it to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dtoverlay</span><span class="o">=</span><span class="n">rpi</span><span class="o">-</span><span class="n">adxl345</span>
+<span class="c1"># dtoverlay=rpi-adxl345</span>
+<span class="c1"># dtoverlay=rpi-lm75,addr=0x48</span>
+<span class="n">dtparam</span><span class="o">=</span><span class="n">act_led_trigger</span><span class="o">=</span><span class="n">heartbeat</span>
+<span class="n">dtoverlay</span><span class="o">=</span><span class="n">gpio</span><span class="o">-</span><span class="n">shutdown</span><span class="p">,</span><span class="n">gpio_pin</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span><span class="n">active_low</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">gpiopull</span><span class="o">=</span><span class="n">up</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id14">
+<span id="fig-edit-config"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/edit_config.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/edit_config.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/edit_config.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Editing config.txt directly on Raspberry Pi</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Notice the two commented lines beginning with <strong>#</strong>. As you might expect, you
+should UN-comment the appropriate line for the device you have connectedg
+Also notice that there are a couple of additional lines - there are lots of
+useful optional parameters that can be set in the config.txt file, here we’re
+setting the onboard LED to the “heartbeat” function, this makes it easy to see
+if the board is running or shut down, even if you don’t have a display
+connected. The other line turns GPIO21 into a hardware shutdown function, also
+very useful if you are operating the board without a displayg
+| If you want to make it easy to revert back to some other overlay, comment out
+the original line with a pound sign / hashtag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#dtoverlay=rpi-something-other-than-adxl345</span>
+<span class="n">dtoverlay</span><span class="o">=</span><span class="n">rpi</span><span class="o">-</span><span class="n">adxl345</span>
+</pre></div>
+</div>
+<p>One last thing worth noting - the default video resolution is 1920x1080. If
+this causes problems with your monitor, hanging hdmi_group, mode to 2, 58:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdmi_group</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">hdmi_mode</span><span class="o">=</span><span class="mi">58</span>
+</pre></div>
+</div>
+<p>will set the screen resolution to 1680x1050. Information on other video modes
+is available here:
+<a class="icon link reference external" href="https://www.raspberrypi.org/documentation/configuration/config-txt/video.md" target="_blank">Raspberry Pi Video Modes</a></p>
+<p>However you edit the file, save, close, cross your fingers, and… reboot! You
+can do this from the start menu, or from a terminal type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+</div>
+<p>To shut down at the end of the day, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">shutdown</span> <span class="o">-</span><span class="n">h</span> <span class="n">now</span>
+</pre></div>
+</div>
+</section>
+<section id="hello-adxl345-adxl355-or-lm75">
+<h2>Hello, ADXL345, ADXL355, or LM75!<a class="headerlink" href="#hello-adxl345-adxl355-or-lm75" title="Link to this heading"></a></h2>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The ADXL345 has two drivers:</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/accel/adxl345.h" target="_blank">drivers/iio/accel/adxl345.h</a> (<code class="docutils literal notranslate"><span class="pre">ADXL345_I2C/SPI</span></code>)</p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/input/misc/adxl34x.h" target="_blank">drivers/input/misc/adxl34x.h</a> (<code class="docutils literal notranslate"><span class="pre">INPUT_ADXL34X</span></code>)</p></li>
+</ul>
+<p>And the IIO driver <code class="docutils literal notranslate"><span class="pre">ADXL345_I2C/SPI</span></code> cannot be selected if the inputs
+<code class="docutils literal notranslate"><span class="pre">INPUT_ADXL34X</span></code> driver is selected! Make sure to do <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menufconfig</span></code> to
+disable <code class="docutils literal notranslate"><span class="pre">INPUT_ADXL34X</span></code>, then enable <code class="docutils literal notranslate"><span class="pre">ADXL345_I2C/SPI</span></code>.</p>
+<p>Kuiper and RPI ships with <code class="docutils literal notranslate"><span class="pre">INPUT_ADXL34X</span></code> compiled as a module.
+Make sure to <a class="icon link reference external" href="https://wiki.debian.org/KernelModuleBlacklisting" target="_blank">blacklist</a>
+the one that won’t be used before attaching the devicetree.</p>
+</div>
+<p>If all went well, Linux should have booted, found the ADXL3x5 or LM75, and
+loaded its driver. Run IIO Oscilloscope again. locate the DMM screen, check the
+ADXL345, select all channels, and click the triangular “play” button. You
+should see acceleration values displayed as shown in <a class="reference internal" href="#fig-iio-scope-adxl345"><span class="std std-numref">Figure 10</span></a></p>
+<figure class="align-center" id="id15">
+<span id="fig-iio-scope-adxl345"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/iio_scope_adxl345.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/iio_scope_adxl345.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/iio_scope_adxl345.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">IIO Oscilloscope showing ADXL345 channels</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>IIO Oscilloscope is a great tool for establishing signs of life, but really
+isn’t intended for much more, so let’s start digging deeper into how to
+communicate with the ADXL345 programmatically. Close out of IIO Oscilloscope,
+open a terminal and enter:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>You should see the screen filled with information about the ADXL345 - sample
+rates, “raw” values, scale values, etc. This means that you’re ready to start
+writing programs to do useful stuff with the ADXL345… on the Raspberry Pi
+itself. But before we go there, let’s introduce one more extraordinarily
+powerful feature of the IIO framework - the ability to communicate remotely
+over a network connection. This ability is made up of two components: an IIOD
+server running on the Raspberry Pi, and LibIIO running on the remote machine.
+LibIIO is cross-platform, so client applications can be written on Windows /
+Mac / Linuxg</p>
+<p>Let’s take a peek at the IIOD server. In the Raspberry Pi terminal, enter:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>iiod
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Which means “list all processes from all users, but only display ones that
+include the text “iiod””. You should see a process running as shown in
+<a class="reference internal" href="#fig-iiod-process-screenshot"><span class="std std-numref">Figure 11</span></a> below.
+(Note that this is the login screen for an ADALM2000 - it’s all the same.)</p>
+<p>And the red line relates this process back to the handy little diagram from
+<a class="reference internal" href="../../software/libiio/index.html#libiio"><span class="std std-ref">Libiio</span></a> (We will be recycling that diagram - a lot.)</p>
+<figure class="align-center" id="id16">
+<span id="fig-iiod-process-screenshot"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/iiod_process_screenshot.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/iiod_process_screenshot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/iiod_process_screenshot.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">IIOD process</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The other piece is libiio on the remote host. LibIIO can be obtained from:
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/releases" target="_blank">ADI libiio repository (releases)</a></p>
+<p>Download and install the appropriate latest version for your remote host (For
+example, libiio-0.24.gc4498c2-Windows-setup.exe for Windows) Once this is done,
+open a command prompt, and enter:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>ip:analog.local
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>(Where the IP address may be different, depending on how you’ve connected.) If
+all goes well, you should see lots of information associated with the
+ADXL345… that is connected to your Raspberry Pi… but from your Windows /
+Linux / Mac machine! <em>(How cool is that?)</em></p>
+<figure class="align-center" id="id17">
+<span id="fig-iio-info-local-remote"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/iio_info_local_remote.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/iio_info_local_remote.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/iio_info_local_remote.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">iio_info run locally and remotely</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>NOW you’ve got all the pieces for some fun hacking - you can write software
+that runs directly on the Raspberry Pi and talks to the ADXL345 (which… is
+conceptually similar to writing software that runs on a Xilinx SoC board and
+grabs data from an attached high-speed ADC) AND, you can write software on a
+remote host - useful if you want a larger application that is more appropriate
+to run on the host, or if you want to grab large amounts of data for analysis</p>
+<p>LibIIO is written natively in C, but there are bindings for MATLAB, C#, and
+Python. Let’s use Python..g</p>
+</section>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
+<p>Any language that can call a shared library can communicate with libiio. But
+Python is attractive for getting started for several reasons:</p>
+<p>It’s FREE It’s tremendously popular It’s got tons of number crunching
+libraries It’s got tons of libraries for communicating with hardware (It’s also
+really really fun!) And - it’s easy to learn. If you’ve never touched Python
+before, there are lots of free resources, including this 4-hour course on
+YouTube from freeCodeCamp.org:</p>
+<div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/rfscVS0vtbw"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
+<p><a href="https://www.youtube.com/watch?v=rfscVS0vtbw"><span>https://www.youtube.com/watch?v=rfscVS0vtbw</span></a></p>
+</div></div><p>And this very nice interactive tutorial:
+<a class="icon link reference external" href="https://www.learnpython.org/" target="_blank">Learn Python</a>
+in which code snippets run in the browser (no need to intall Python.)
+If you prefer paper, <a class="icon link reference external" href="https://nostarch.com/python-kids-2nd-edition" target="_blank">Python for Kids by Jason R. Briggs</a> is a well written books for
+kids of all ages.
+(And <a class="icon link reference external" href="https://nostarch.com/programwithminecraft" target="_blank">Learn to Program with Minecraft: Transform Your World with the Power of Python</a> by
+Craig Richardson is a pretty nice introduction to the idea of communicating
+over a network connection; the Minecraft world is a process that communicates
+over network ports.)</p>
+<p>There are several choices of Python installations, and which one to use is
+largely a matter of preference. You can install from scratch from
+<a class="icon link reference external" href="https://www.python.org/" target="_blank">Python.org</a>, or a more full featured distribution such as
+Anaconda, PyCharm, or VS Code. And <strong>Python is pre-installed on ADI Kuiper
+Linux</strong>, as is the Thonny IDE. Thonny is basic as far as IDEs go, but it
+provides breakpoints, variable watches, and is perfectly adequate for simple to
+intermediate development.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Python Versions - We’re using Python 3. So if you’re installing on your
+remote host, make sure to get a recent version of Python 3. Previous Kuiper
+Linux releases had multiple Python versions installed, defaulting to
+Python 2.x. The current Kuiper Linux defaults to Python 3 so this is no
+longer an issue, but for historical curiosity the procedure for setting the
+default to Python 3 is to run the following commands:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python2.7<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python3.7<span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>(This only needs to be done once.)</p>
+</div>
+</section>
+<section id="pyadi-iio">
+<h2>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h2>
+<p>PyADI-IIO (pronounced “Py-odi” <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> is like <a class="icon link reference external" href="https://en.wikipedia.org/wiki/peyote" target="_blank">peyote</a>,
+but with a Py) is a python  abstraction module for ADI hardware with IIO drivers
+to make them easier to use.
+Pyadi-iio can be installed through pip, and is pre-installed on ADI Kuiper
+Linux, but if you’re reading this you’ll probably want to be hacking around a
+bit so go to <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/" target="_blank">ADI PyADI-IIO repository</a> and follow the “installing
+from source” instructions. And note that this can be done on your remote
+Windows / Mac / Linux host AND… on the Raspberry Pi itself! Git is already
+installed on ADI Kuiper Linux, but may need to be installed on a Windows host.
+(You can also download the repository as a zip, but cloning will make it easier
+to update.) Let’s install pyadi-iio.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/pyadi-iio.git
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pyadi-iio
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/pyadi-iio$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Note: This requires that your Raspberry Pi be able to access the internet. If
+you’ve followed the “headless” instructions below, this may not be the case.
+However - if you have access to a wireless network and your Raspberry Pi has an
+Ethernet adapter, you can connect in this way. Just click the WiFi icon and log
+on as you would on any other machine, supplying a password if necessary</p>
+<figure class="align-center" id="id18">
+<span id="fig-rpi-wifi-login"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_wifi_login.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_wifi_login.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_wifi_login.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">WiFi logon</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Now it’s (almost) trivial to grab data from the ADXL345 used in this tutorial,
+as well as more complicated hardware. With pyadi-iio installed, you should be
+able to run the ADXL345 example.</p>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>Update ADXL345 pyadi-iio example.
+As of Feb. 2024, the ADXL345 example has a hardcoded ip address. Most newer
+examples allow the context to be passed via command line argument, but in the
+meantime change line 10 from:</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myacc</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">adxl345</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;ip:192.168.1.232&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myacc</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">adxl345</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;ip:localhost&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Enter the following commands, making sure you’re in the pyadi-iio root
+directory:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/pyadi-iio$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>examples
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/pyadi-iio/examples$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>adxl345_example.py
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>The example program takes a few acceleration readings, shows how to set the
+sample rate, and shows how to convert values to SI units.</p>
+<p>If you’re running the example on the remote host, you should be able to talk to
+the Pi by using the context “ip:analog.local”, the address noted for the
+“headless” configuration below. If your Raspberry Pi’s address is different
+(supplied by DHCP, for example), change it accordingly. The example will also
+run locally, with the same IP address! But as soon as the IP address changes,
+the example won’t work any more. Since we’re running locally, you can set the
+IP address to the local loopback address:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myacc</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">adxl345</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;ip:localhost&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But since we’re running locally, why bother talking through IIOD? Setting the
+context to local takes care of that:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myacc</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">adxl345</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;local:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But there’s one subtlety… run Python as root (<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">python</span> <span class="pre">adxl345_example.py</span></code>).
+The reason is that IIOD runs with root privileges and can read / write to
+devices. The example script will be able to read just fine, but writing even
+something as mundane as the sample rate requires root privileges.</p>
+<p>The example script should run just fine on the Raspberry Pi itself, and on the
+remote host. Try writing a program to read out a hundred samples from each
+channel (X,Y,Z) and store to a file, or if you’re really adventurous, display
+the 3-axis acceleration as an arrow in a graphical screen.</p>
+<p>The ADXL355 and LM75 examples allow the IIO context to be passed as a command
+line argument. From the command line, run the following for the ADXL355:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/pyadi-iio/examples$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>adxl355_example.py<span class="w"> </span>ip:localhost
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>And this for the LM75:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/pyadi-iio/examples$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>lm75_example.py<span class="w"> </span>ip:localhost
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><section id="tools-for-your-toolbox-ssh-scp-vnc">
+<h3>Tools for your Toolbox: SSH, SCP, VNC<a class="headerlink" href="#tools-for-your-toolbox-ssh-scp-vnc" title="Link to this heading"></a></h3>
+<p>Putty and TeraTerm are popular (and free) SSH clients that let you log into a
+console on your Raspberry Pi (or other remote client). They are available at
+<a class="icon link reference external" href="https://www.putty.org/" target="_blank">PuTTY Homepage</a> and <a class="icon link reference external" href="https://ttssh2.osdn.jp/index.html.en" target="_blank">TeraTerm Homepage</a>,
+respectively.
+Try both, which one is better is largely a matter of preference.</p>
+<p>On Mac and Linux machines, you can simply log in via ssh from the command line.</p>
+<p>WinSCP is a handy tool that lets you copy files between a Windows machine and
+your Raspberry Pi, for example, let’s say you collect some data on your Pi
+using a Python script, and want to get it over to your Windows machine. It is
+available from <a class="icon link reference external" href="https://winscp.net/eng/index.php" target="_blank">WinSCP Homepage</a>.</p>
+<p>As with SSH, Mac and Linux machines include SCP alreadyg</p>
+<p>VNC is a remote desktop application, and Kuiper Linux optionally runs a VNC
+server. There are several clients available; RealVNC works well and is
+available at <a class="icon link reference external" href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank">RealVNC Viewer</a>.
+A screenshot of VNC logged into the Raspberry Pi is shown in <a class="reference internal" href="#fig-rpi-vnc"><span class="std std-numref">Figure 14</span></a></p>
+<figure class="align-center" id="id19">
+<span id="fig-rpi-vnc"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_vnc.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_vnc.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/rpi_vnc.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">VNC desktop</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="going-headless">
+<h2>Going “Headless”<a class="headerlink" href="#going-headless" title="Link to this heading"></a></h2>
+<p>(Ignore if you’re using a monitor / keyboard / mouse) If it happens that you
+don’t have a spare monitor / keyboard / mouse, or it’s just inconvenient, you
+can operate the Raspberry Pi with only a network connection. By default, the
+ADI Kuiper Linux network hostname is <strong>analog</strong>, and the machine can be
+accessed as <strong>analog.local</strong>.</p>
+<p>The Raspberry Pi can also be accessed directly by its IP address. If your
+network has a DHCP server, and you can find the IP address that it assigned to
+the Raspberry Pi, you’re all set. But a very robust way is to set the Raspberry
+Pi’s address manually, and do the same to one network adapter on the host. To
+set the Raspberry Pi’s address, open the boot partition on a host machine (once
+again… BEWARE ENCRYPTION!), and note that this host machine could be the
+Raspberry Pi itself, with a montior / keyboard / mouse attached. Open the file
+“cmdline.txt” and add the following to the end:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ip</span><span class="o">=</span><span class="mf">192.168.1.232</span><span class="p">::</span><span class="mf">192.168.1.1</span><span class="p">:</span><span class="mf">255.255.255.0</span><span class="p">:</span><span class="n">rpi</span><span class="p">:</span><span class="n">eth0</span><span class="p">:</span><span class="n">off</span>
+</pre></div>
+</div>
+<p>Where, the 192.168.1.232 is somewhat arbitrary - just make sure that the first
+3 octets (192.168.1) are DIFFERENT from those of any other network adapters on
+your host machine. The next step is to configure your host’s network adapter.
+Open your computer’s “Network Connections” control panel note that your host
+could have lots of adapters. Sometimes it’s obvious - if you’re using a cable
+connection, it’s obviously NOT your WiFi adapter. If you’re using a
+USB-Ethernet adapter (a super convenient option sometimes), plugging and
+unplugging the adapter, and seeing which disappears. Open the adapter’s
+configuration (right-click, “Properties”) and configure the IPV4 properties as
+shown in <a class="reference internal" href="#fig-static-ip-host"><span class="std std-numref">Figure 15</span></a> below.
+Make sure the last octet in the IP address is DIFFERENT from that set on the Raspberry Pig</p>
+<figure class="align-center" id="id20">
+<span id="fig-static-ip-host"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/static_ip_host.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/static_ip_host.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/static_ip_host.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Setting Up Static IP on Windows Host</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Finally, open a command prompt, and ping your Raspberry Pi as shown in
+<a class="reference internal" href="#fig-ping-rpi"><span class="std std-numref">Figure 16</span></a>:</p>
+<figure class="align-center" id="id21">
+<span id="fig-ping-rpi"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/ping_rpi.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/ping_rpi.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/vale/docs/learning/converter_connectivity_tutorial/ping_rpi.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">Pinging the Headless Pi</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>If you get a reply, you’re all set! You can now log into the Raspberry Pi using
+PuTTY, VNC, and talk to attached IIO devices via IIO oscilloscope or libiio on
+the remote host.</p>
+<p><strong>Leveraged Learning:</strong> This process (and any frustrations accompanied on the
+way) is the same for using any network connected embedded computer, test
+equipment, etc.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>You’re now armed to start building interesting application circuits with the
+ADXL345, starting with a solid software foundation. Applications can either be
+connected to a host computer, or can run remotely on the Raspberry Pi itself.
+Hopefully you’re left with one of two feelings:</p>
+<ol class="arabic simple">
+<li><p>Device drivers look really complicated, thank goodness I can dive in as a
+user and do something useful without having to fully understand the details.
+(If this is the case, see if the devices you’re using in your present work are
+supported in ADI Kuiper Linux, and try to get them up and running.)</p></li>
+<li><p>This is really interesting! I want to know more! (If this is the case,
+great! A good starting point would be
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-build/generic/raspberrypi" target="_blank">Building for Raspberry PI</a>)</p></li>
+</ol>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>pei·ow·tee : ‘p’ in pie; ‘a’ in about; ‘y’ yes; ‘o’ in code; ‘t’ in tie; ‘y’ in happy</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../tutorial_prec_adc/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Precision ADC Tutorial</a>
+    <a href="../sw_infrastructure/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Software Infrastructure for designing with ADCs, DACs, and Sensors</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
