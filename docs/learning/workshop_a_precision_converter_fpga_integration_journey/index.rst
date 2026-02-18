@@ -21,16 +21,16 @@ Before starting this workshop, you should have:
   - Hardware:
 
     - `Cora Z7S <https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development/>`_ development board
-    - `EVAL-AD7984-PMDZ <https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7984-pmdz.html#eb-overview>`_ evaluation board
+    - :adi:`EVAL-AD7984-PMDZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7984-pmdz.html#eb-overview>` evaluation board
     - SD Card
     - :ref:`m2k` for testing
 
   - Software
 
     - Access to a Linux machine or `WSL <https://learn.microsoft.com/en-us/windows/wsl/install>`_
-    - `ADI Kuiper Imager <https://github.com/analogdevicesinc/adi-kuiper-imager/releases>`_ or a similar tool for flashing an OS images onto a SD card
-    - PuTTY or a similar tool for serial comunication
-    - `Scopy <https://github.com/analogdevicesinc/scopy/releases>`_ (if the lates release version is lower than 2.2.0, use `this link <https://github.com/analogdevicesinc/scopy/actions/runs/21665596082/artifacts/5371706838>`_ to download the required version)
+    - :git-adi-kuiper-imager:`ADI Kuiper Imager <releases+>` or a similar tool for flashing an OS image onto an SD card
+    - PuTTY or a similar tool for serial communication
+    - :git-scopy:`Scopy <releases/latest+>`
     - `AMD Vivado <https://www.xilinx.com/support/download.html>`_
     - `Digilent Adept drivers <https://digilent.com/shop/software/digilent-adept/?srsltid=AfmBOorvxbSPfEaGfdK2o047TAwyQIDQgtQX7yOQpRT9oZEm91BkfJZn>`_
     - If you are working from WSL, you will need the `usbipd-win <https://learn.microsoft.com/en-us/windows/wsl/connect-usb>`_ utility to attach a usb port to the Linux environment
@@ -854,7 +854,7 @@ Create a folder to store the temporary files for the workshop:
 
 .. important::
 
-   The location of this directory will be used throughout the entire workshop. If you chose a differnet location for your directory, make sure to replace the path from the examples with your path.
+   The location of this directory will be used throughout the entire workshop. If you chose a different location for your directory, make sure to replace the path from the examples with your path.
 
 **Step 2: Download Cross-Compiler Toolchain**
 
@@ -931,7 +931,7 @@ Navigate to the **pulsar_adc_pmdz** project for the **Cora Z7S** board and build
 
 .. tip:: 
 
-   A comprehensive descrtiption of how to build the FPGA HDL design for Zynq platforms, using Vivado, can be found in the :external+hdl:doc:`user_guide/build_hdl` guide, which covers:
+   A comprehensive description of how to build the FPGA HDL design for Zynq platforms, using Vivado, can be found in the :external+hdl:doc:`user_guide/build_hdl` guide, which covers:
 
       - Setting up AMD Xilinx Vivado tools for Zynq
       - Building the FPGA bitstream for Zynq-7000
@@ -1152,7 +1152,7 @@ Clone the pyadi-iio repository and switch to the **ad7984_demo** branch:
    cd pyadi-iio
    git checkout ad7984_demo
 
-After switching to the **ad7984_demo** branch, runt the following command to install the required Python packages:
+After switching to the **ad7984_demo** branch, run the following command to install the required Python packages:
 
 .. code-block:: bash
 
@@ -1192,12 +1192,14 @@ After creating the script, open it with a text editor and paste the following co
 Run the script with the sampling rate as a parameter:
 
 .. shell::
+   :user: root
+   :group: analog
 
-   root@analog:/media/workshop# ./tmr_conf_script.sh 10000
-   Setting the sampling rate to 10000
-   configfs is not a mountpoint
-   tmr0
-   root@analog:/media/workshop#
+   /media/workshop
+   $./tmr_conf_script.sh 10000
+    Setting the sampling rate to 10000
+    configfs is not a mountpoint
+    tmr0
 
 System Evaluation - Regular SPI Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1238,15 +1240,16 @@ To evaluate the performance of the SPI transfers, the **ad7984_example.py** Pyth
 Navigate to the workshop folder and run the script with the following parameters:
 
 .. shell::
+   :user: root
+   :group: analog
 
-   root@analog:~# cd /media/workshop/
-   root@analog:/media/workshop# python pyadi-iio/examples/ad7984_example.py local: 0 classic
-   WARNING: High-speed mode not enabled
-   Raw data saved to: spi_clasic_ad7984_captured_data.txt
-   Using sample rate: 10000.0 Hz for classic mode
-   FFT analysis saved as: spi_clasic_ad7984_fft_analysis.jpg
-   SNR: 39.615 dB, THD: -53.204 dBc, SFDR: 39.62 dBc
-   root@analog:/media/workshop#
+   $ cd /media/workshop/
+   $ python pyadi-iio/examples/ad7984_example.py local: 0 classic
+    WARNING: High-speed mode not enabled
+    Raw data saved to: spi_clasic_ad7984_captured_data.txt
+    Using sample rate: 10000.0 Hz for classic mode
+    FFT analysis saved as: spi_clasic_ad7984_fft_analysis.jpg
+    SNR: 39.615 dB, THD: -53.204 dBc, SFDR: 39.62 dBc
 
 The result of the Python script is a FFT analysis of the input signal, saved as **spi_clasic_ad7984_fft_analysis.jpg** in the present directory. To create a copy of the resulted image, use the following command in a terminal window on your local machine, and, when prompted for the password, type **analog**:
 
@@ -1269,13 +1272,16 @@ The ``scp`` command creates a copy of the .jpg file on the present working direc
 Adittionaly, the Python script can also be executed from the local machine, using the IP of the Cora development board:
 
 .. shell::
+   :user: root
+   :group: analog
 
-   PPop@PPOP-L01:~/spi_workshop# python pyadi-iio/examples/ad7984_example.py ip:169.254.92.202 1 classic
-   WARNING: High-speed mode not enabled
-   Raw data saved to: spi_clasic_ad7984_captured_data.txt
-   Using sample rate: 10000.0 Hz for classic mode
-   FFT analysis saved as: spi_clasic_ad7984_fft_analysis.jpg
-   SNR: 39.615 dB, THD: -53.204 dBc, SFDR: 39.62 dBc
+   ~/spi_workshop
+   $ python pyadi-iio/examples/ad7984_example.py ip:169.254.92.202 1 classic
+    WARNING: High-speed mode not enabled
+    Raw data saved to: spi_clasic_ad7984_captured_data.txt
+    Using sample rate: 10000.0 Hz for classic mode
+    FFT analysis saved as: spi_clasic_ad7984_fft_analysis.jpg
+    SNR: 39.615 dB, THD: -53.204 dBc, SFDR: 39.62 dBc
 
 .. important::
 
@@ -1299,13 +1305,15 @@ To visualize the data obtained using the SPI engine, move the EVAL-AD7984-PMDZ t
 To evaluate the performance of the SPI engine, run the **ad7984_example.py** script with the following parameters:
 
 .. shell::
+   :user: root
+   :group: analog
 
-   root@analog:/media/workshop# python pyadi-iio/examples/ad7984_example.py local: 0 engine
-   Raw data saved to: spi_engine_ad7984_captured_data.txt
-   Using sample rate: 1330000.0 Hz for engine mode
-   FFT analysis saved as: spi_engine_ad7984_fft_analysis.jpg
-   SNR: 70.394 dB, THD: -66.987 dBc, SFDR: 70.37 dBc
-   root@analog:/media/workshop#
+   /media/workshop
+   $ python pyadi-iio/examples/ad7984_example.py local: 0 engine
+    Raw data saved to: spi_engine_ad7984_captured_data.txt
+    Using sample rate: 1330000.0 Hz for engine mode
+    FFT analysis saved as: spi_engine_ad7984_fft_analysis.jpg
+    SNR: 70.394 dB, THD: -66.987 dBc, SFDR: 70.37 dBc
 
 
 Use the following command, with **analog** as password, to create a copy of **spi_engine_ad7984_fft_analysis.jpg** on your local machine:
@@ -1329,12 +1337,15 @@ The results obtained should resamble the image below:
 Similar to the previous case, the Python script can be executed from the local machine, for the SPI engine scenario, as shown below: 
 
 .. shell::
+   :user: root
+   :group: analog
 
-   PPop@PPOP-L01:~/spi_workshop# python pyadi-iio/examples/ad7984_example.py ip:169.254.92.202 1 engine
-   Raw data saved to: spi_engine_ad7984_captured_data.txt
-   Using sample rate: 1330000.0 Hz for engine mode
-   FFT analysis saved as: spi_engine_ad7984_fft_analysis.jpg
-   SNR: 70.394 dB, THD: -66.987 dBc, SFDR: 70.37 dBc
+   ~/spi_workshop
+   $ python pyadi-iio/examples/ad7984_example.py ip:169.254.92.202 1 engine
+    Raw data saved to: spi_engine_ad7984_captured_data.txt
+    Using sample rate: 1330000.0 Hz for engine mode
+    FFT analysis saved as: spi_engine_ad7984_fft_analysis.jpg
+    SNR: 70.394 dB, THD: -66.987 dBc, SFDR: 70.37 dBc
 
 .. important::
 
