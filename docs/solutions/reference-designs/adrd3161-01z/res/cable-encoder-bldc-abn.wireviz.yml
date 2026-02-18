@@ -1,0 +1,53 @@
+connectors:
+  X1:
+    type: Micro-Fit 3.0
+    subtype: Receptacle
+    manufacturer: Molex
+    mpn: 430250800
+    pinlabels: [VCC, GND, Encoder A, Encoder B, Encoder N, Hall U, Hall V, Hall W]
+    image:
+      src: connector-microfit.jpg
+      width: 200
+    notes: to ADRD3161
+
+  X2:
+    pinlabels: [VCC, A, B, C, GND]
+    #pincolors: [RD, BU, GN, WH, BK]
+    notes: to Hall effect encoder
+
+  X3:
+    type: CLIK-Mate
+    subtype: Plug
+    manufacturer: Molex
+    mpn: 5023800900
+    pinlabels: [VCC, GND, A+, A-, B+, B-, Z+, Z-, Shield]
+    #pincolors: [RD, BK, WH, WHBK, GN, GNBK, YE, YEBK, BU]
+    image:
+      src: connector-clikmate.jpg
+      width: 200
+    notes: to Trinamic ABN encoder
+
+cables:
+  W1:
+    gauge: 26 AWG
+    wirecount: 5
+    colors: [RD, BU, GN, WH, BK]
+
+  W2:
+    gauge: 28 AWG
+    wirecount: 9
+    colors: [RD, BK, WH, WHBK, GN, GNBK, YE, YEBK, BU]
+
+connections:
+  -
+    - X1: [VCC, GND, Hall U, Hall V, Hall W]
+    - W1: [1, 5, 2, 3, 4]
+    - X2: [VCC, GND, A, B, C]
+  -
+    - X1: [VCC, GND, Encoder A, Encoder B, Encoder N]
+    - W2: [1, 2, 3, 5, 7]
+    - X3: [VCC, GND, A+, B+, Z+]
+  -
+    - W2: [4, 6, 8, 9]
+    - X3: [A-, B-, Z-, Shield]
+

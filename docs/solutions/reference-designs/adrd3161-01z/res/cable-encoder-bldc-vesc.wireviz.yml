@@ -1,0 +1,47 @@
+connectors:
+  X1:
+    type: Micro-Fit 3.0
+    subtype: Receptacle
+    manufacturer: Molex
+    mpn: 430250800
+    pinlabels: [VCC, GND, Encoder A, Encoder B, Encoder N, Hall U, Hall V, Hall W]
+    image:
+      src: connector-microfit.jpg
+      width: 200
+    notes: to ADRD3161
+
+  X2:
+    type: JST PH
+    subtype: Header
+    manufacturer: JST
+    mpn: B6B-PH-K-S
+    pinlabels: [VCC, Temperature, Encoder A, Encoder B, Encoder C, GND]
+    notes: part of adapter cable
+
+  X3:
+    type: JST PH
+    subtype: receptacle
+    manufacturer: JST
+    mpn: PHR-6
+    pinlabels: [VCC, Temperature, Encoder A, Encoder B, Encoder C, GND]
+    notes: part of motor encoder cable
+    image:
+      src: connector-vesc.jpg
+      width: 200
+
+cables:
+  W1:
+    gauge: 26 AWG
+    wirecount: 5
+    colors: [RD, BU, GN, WH, BK]
+
+connections:
+  -
+    - X1: [VCC, GND, Hall U, Hall V, Hall W]
+    - W1: [1, 5, 2, 3, 4]
+    - X2: [VCC, GND, Encoder A, Encoder B, Encoder C]
+  -
+    - X2
+    - <==
+    - X3
+

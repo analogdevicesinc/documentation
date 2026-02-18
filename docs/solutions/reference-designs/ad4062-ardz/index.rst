@@ -12,6 +12,8 @@
    no-OS:
      - no-OS driver (ad405x) <drivers/adc/ad405x>
 
+.. .. custom-doc:: doc.yml
+
 .. _eval-ad4062-ardz:
 
 EVAL-AD4060/AD4062-ARDZ

@@ -141,7 +141,7 @@ Depending on the used motor and its wiring, you may need to customize the encode
       :adi:`ADI Trinamic QSH <en/product-category/stepper-motors.html>` series stepper motors.
 
       .. image:: res/cable-encoder-stepper.lfs.svg
-      .. .. wireviz:: res/cable-encoder-stepper.wireviz.yaml
+      .. .. wireviz:: res/cable-encoder-stepper.wireviz.yml
 
    .. tab-item:: BLDC with Hall
       
@@ -150,7 +150,7 @@ Depending on the used motor and its wiring, you may need to customize the encode
 
 
       .. image:: res/cable-encoder-bldc.lfs.svg
-      .. .. wireviz:: res/cable-encoder-bldc.wireviz.yaml
+      .. .. wireviz:: res/cable-encoder-bldc.wireviz.yml
 
    .. tab-item:: BLDC with Hall, VESC-like connector
 
@@ -158,14 +158,14 @@ Depending on the used motor and its wiring, you may need to customize the encode
       `REV-21-1650 <https://revrobotics.eu/rev-21-1650/>`_.
 
       .. image:: res/cable-encoder-bldc-vesc.lfs.svg
-      .. .. wireviz:: res/cable-encoder-bldc-vesc.wireviz.yaml
+      .. .. wireviz:: res/cable-encoder-bldc-vesc.wireviz.yml
 
    .. tab-item:: BLDC with Hall & ADI Trinamic ABN
 
       Encoder cable for using both an ADI Trinamic ABN encoder and a Digital Hall sensor.
 
       .. image:: res/cable-encoder-bldc-abn.lfs.svg
-      .. .. wireviz:: res/cable-encoder-bldc-abn.wireviz.yaml
+      .. .. wireviz:: res/cable-encoder-bldc-abn.wireviz.yml
 
 .. _adrd3161_cable_can:
 
@@ -175,7 +175,7 @@ CAN cable
 The ADRDx161 board family communicates via CAN bus. The two headers P8, P9 allow for daisy-chaining CAN devices.
 
 .. image:: res/cable-can.lfs.svg
-.. .. wireviz:: res/cable-can.wireviz.yaml
+.. .. wireviz:: res/cable-can.wireviz.yml
 
 .. _adrd3161_design_files:
 

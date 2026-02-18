@@ -1,0 +1,29 @@
+connectors:
+  X1: &can
+    type: Micro-Fit 3.0
+    subtype: Receptacle
+    manufacturer: Molex
+    mpn: 430250400
+    pincount: 4
+    pinlabels: [CANH, CANL, GND]
+    pincolors: [YE, OG, BK]
+    image:
+      src: connector-microfit-can.jpg
+      width: 150
+
+  X2:
+    <<: *can
+
+cables:
+  W1:
+    gauge: 24 AWG
+    wirecount: 3
+    colors: [YE, OG, BK]
+    notes: Twisted
+
+connections:
+  -
+    - X1: [1, 2, 3]
+    - W1: [1, 2, 3]
+    - X2: [1, 2, 3]
+
