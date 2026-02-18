@@ -10,17 +10,37 @@ the SPI Engine Framework.
    :depth: 2
 
 Prerequisites
-~~~~~~~~~~~~~
+-------------
 
 Before starting this workshop, you should have:
 
 - Basic understanding of FPGA development concepts
 - Familiarity with SPI protocol fundamentals
-- Access to Cora Z7S development board (optional for hands-on)
-- ADALM2000 (M2K) for testing (optional)
+- Access to the following resources:
+
+  - Hardware:
+
+    - `Cora Z7S <https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development/>`_ development board
+    - :adi:`EVAL-AD7984-PMDZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7984-pmdz.html#eb-overview>` evaluation board
+    - SD Card
+    - :ref:`m2k` for testing
+
+  - Software
+
+    - Access to a Linux machine or `WSL <https://learn.microsoft.com/en-us/windows/wsl/install>`_
+    - :git-adi-kuiper-imager:`ADI Kuiper Imager <releases+>` or a similar tool for flashing an OS image onto an SD card
+    - PuTTY or a similar tool for serial communication
+    - :git-scopy:`Scopy <releases/latest+>`
+    - `AMD Vivado <https://www.xilinx.com/support/download.html>`_
+    - `Digilent Adept drivers <https://digilent.com/shop/software/digilent-adept/?srsltid=AfmBOorvxbSPfEaGfdK2o047TAwyQIDQgtQX7yOQpRT9oZEm91BkfJZn>`_
+    - If you are working from WSL, you will need the `usbipd-win <https://learn.microsoft.com/en-us/windows/wsl/connect-usb>`_ utility to attach a usb port to the Linux environment
+
+.. note::
+
+   The steps presented in this workshop were created using a Windows based machine and WSL.
 
 Learning Objectives
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 By the end of this workshop, you will:
 
@@ -53,7 +73,7 @@ Introduction
    Maintenance lifecycle: Customers start designs at different times and require
    access to the latest tools and IP cores.
 
-**COS Reference Design "Donut Hole" Strategy**
+**Reference Design "Donut Hole" Strategy**
 
 The strategy focuses on surrounding customer-selected processors, FPGAs, and
 microcontrollers with ADI components, creating a seamless integration experience.
@@ -79,7 +99,7 @@ microcontrollers with ADI components, creating a seamless integration experience
    The "Donut Hole" strategy: ADI surrounds customer technology choices with
    comprehensive hardware and software support, enabling rapid development.
 
-**COS Full Stack High Level Overview**
+**Full Stack High Level Overview**
 
 .. figure:: intro_full_stack_overview.png
    :align: center
@@ -88,7 +108,7 @@ microcontrollers with ADI components, creating a seamless integration experience
    Complete system architecture showing the full software and hardware stack from
    applications down to FPGA HDL and ADI converters.
 
-**COS Full Stack HDL Designs**
+**Full Stack HDL Designs**
 
 .. figure:: infrastructure_diagram.png
    :align: center
@@ -96,7 +116,7 @@ microcontrollers with ADI components, creating a seamless integration experience
 
    Complete infrastructure diagram showing the full stack HDL design architecture.
 
-**COS Typical Prototyping System**
+**Typical Prototyping System**
 
 .. figure:: what_support_our_infrastructure.png
    :align: center
@@ -121,7 +141,7 @@ microcontrollers with ADI components, creating a seamless integration experience
    * - **Lattice**
      - CertusPro-NX
 
-**COS IP Library**
+**IP Library**
 
 .. figure:: section_of_the_ips_supported.png
    :align: center
@@ -130,7 +150,7 @@ microcontrollers with ADI components, creating a seamless integration experience
    ADI's open-source IP library provides reusable HDL cores for common functions
    including DMAs, interfaces, utilities, and converter-specific IP blocks.
 
-**COS Frameworks - JESD204 Interface Framework**
+**Frameworks - JESD204 Interface Framework**
 
 The JESD204 framework provides a complete solution for high-speed converter interfaces.
 
@@ -153,7 +173,7 @@ The JESD204 framework provides a complete solution for high-speed converter inte
    JESD204 signal chain showing all three layers from FPGA transceiver through
    data link processing to converter-specific transport.
 
-**COS Frameworks - SPI Engine Framework**
+**Frameworks - SPI Engine Framework**
 
 .. tip::
    **SPI Engine Powers Over 20% of ADI's HDL Projects**
@@ -504,7 +524,7 @@ dramatically improving performance and reducing CPU load.
    any other offload-capable SPI controller with minimal changes.
 
 Use Case: High-Performance AD7984 Integration
-----------------------------------------------
+---------------------------------------------
 
 **Application Requirements**
 
@@ -804,10 +824,11 @@ The SPI Engine framework provides a TCL helper function to simplify instantiatio
 - ad_ip_parameter axi_pulsar_adc_dma CONFIG.DMA_DATA_WIDTH_DEST 64
 - ad_connect spi_clk axi_pulsar_adc_dma/s_axis_aclk
 
-Build and Test System
----------------------
+Test System Setup
+-----------------
 
-**Complete Test Setup**
+Overview
+~~~~~~~~
 
 .. figure:: system_build_bd.png
    :align: center
@@ -816,172 +837,178 @@ Build and Test System
    Complete workshop system showing Cora Z7S FPGA board, AD7984 converter circuit,
    ADALM2000 for signal generation and debug, and host computer.
 
-**Build Prerequisites**
-
-To build and run the complete system, you'll need access to ADI's open-source repositories.
-
-.. figure:: build_prerequisites_hdl.png
-   :align: center
-   :width: 70%
-
-   HDL repository structure at `analogdevicesinc/hdl <https://github.com/analogdevicesinc/hdl>`_
-   containing FPGA projects, IP libraries, and build scripts.
-
-.. figure:: build_prerequisites_linux.png
-   :align: center
-   :width: 70%
-
-   Linux kernel repository at `analogdevicesinc/linux <https://github.com/analogdevicesinc/linux>`_
-   with ADI device drivers and devicetree configurations.
-
-**Repository Setup and Build Environment**
+Repository and Build Environment Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow these steps to set up your development environment with the necessary repositories and toolchain:
 
+**Step 1: Create Workspace Directory**
+
+Create a folder to store the temporary files for the workshop:
+
+.. code-block:: bash
+
+   cd ~
+   mkdir spi_workshop
+   cd spi_workshop/
+
 .. important::
-   **Step 1: Create Workspace Directory**
 
-   .. code-block:: bash
+   The location of this directory will be used throughout the entire workshop. If you chose a different location for your directory, make sure to replace the path from the examples with your path.
 
-      cd /mnt/c/
-      mkdir fae_workshop
-      cd fae_workshop/
+**Step 2: Download Cross-Compiler Toolchain**
 
-.. tip::
-   **Step 2: Clone HDL Repository and Checkout Branch**
+Download the ARM cross-compiler toolchain for building Linux kernel:
 
-   Clone the HDL repository and switch to the **ad7984_demo** branch:
+.. code-block:: bash
 
-   .. code-block:: bash
+   wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabi/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
+   tar -xvf gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
 
-      git clone https://github.com/analogdevicesinc/hdl.git
-      cd hdl
-      git checkout ad7984_demo
+**Step 3: Set Cross-Compiler Environment Variables**
 
-   This prepares the HDL project files needed for building the FPGA design.
+Configure the **CROSS_COMPILE** and **ARCH** environment variables:
 
-.. tip::
-   **Step 3: Download Cross-Compiler Toolchain**
+.. code-block:: bash
 
-   Download the ARM cross-compiler toolchain for building Linux kernel:
+   export CROSS_COMPILE=$(pwd)/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-
+   export ARCH=arm
 
-   .. code-block:: bash
+**Step 4: Clone HDL Repository and Checkout Branch**
 
-      wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabi/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
-      tar -xvf gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
+Clone the HDL repository and switch to the **ad7984_demo** branch:
 
-.. note::
-   **Step 4: Set Cross-Compiler Environment Variable**
+.. code-block:: bash
 
-   Configure the CROSS_COMPILE environment variable to point to your toolchain:
+   git clone https://github.com/analogdevicesinc/hdl.git
+   cd hdl
+   git checkout ad7984_demo
 
-   .. code-block:: bash
+This prepares the HDL project files needed for building the FPGA design.
 
-      export CROSS_COMPILE=$(pwd)/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-
+**Step 5: Clone ADI Linux Repository**
 
-.. tip::
-   **Step 5: Clone ADI Linux Repository**
+Clone the Analog Devices Linux kernel repository with device drivers and switch to the **ad7984_demo** branch:
 
-   Clone the Analog Devices Linux kernel repository with device drivers:
+.. code-block:: bash
 
-   .. code-block:: bash
+   cd ~/spi_workshop
+   git clone https://github.com/analogdevicesinc/linux.git
+   cd linux
+   git checkout ad7984_demo
 
-      git clone https://github.com/analogdevicesinc/linux.git
+This will create a `linux` directory containing the ADI Linux kernel sources with all necessary drivers.
 
-   This will create a `linux` directory containing the ADI Linux kernel sources with all necessary drivers.
-
-   After cloning the Linux repository, checkout to the **ad7984_demo** branch:
-
-   .. code-block:: bash
-
-      cd linux
-      git checkout ad7984_demo
-
-**HDL Project Build Instructions for Zynq Target**
+HDL Project Build Instructions for Zynq Target
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that you have the repositories set up, follow these guides to build the HDL project and boot image for your **Zynq-7000 SoC** target (Cora Z7S board):
 
-.. important::
-   **Building the HDL Project for Zynq**
+**Step 1: Prepare the SD Card**
 
-   Follow the comprehensive guide to build the FPGA HDL design for Zynq platforms using Vivado:
-
-   :external+hdl:doc:`user_guide/build_hdl`
-
-   This guide covers:
-
-   - Setting up AMD Xilinx Vivado tools for Zynq
-   - Building the FPGA bitstream for Zynq-7000
-   - Generating hardware description files (.xsa)
-   - Zynq-specific build commands and options
+Use **ADI Kuiper Imager** (or a similar tool) to flash the SD card with the latest image of **ADI Kuiper Linux**.
 
 .. tip::
-   **Creating the Zynq Boot Image (BOOT.BIN)**
 
-   After building the HDL, create the complete Zynq boot image containing FPGA bitstream, FSBL, and U-Boot:
+   Here you can find more information about obtaining the latest :external+adi-kuiper-gen:doc:`index` image.
 
-   :external+hdl:doc:`user_guide/build_boot_bin`
+**Step 2: Build the HDL Project**
 
-   This guide covers:
+Navigate to the **pulsar_adc_pmdz** project for the **Cora Z7S** board and build the project:
 
-   - Combining Zynq FSBL, bitstream, and U-Boot into BOOT.BIN
-   - Creating bootable SD card image for Zynq
-   - Devicetree compilation for Zynq-7000 platforms
-   - Boot configuration for ARM processor + FPGA fabric
+.. code-block:: bash
+
+   cd ~/spi_workshop/hdl/projects/pulsar_adc_pmdz/coraz7s
+   make
+
+.. important::
+
+   If you use a Vivado version higher than 2023.1, the **ADI_IGNORE_VERSION_CHECK** parameter needs to be set to 1 before building the project:
+
+   .. code-block:: bash
+
+      export ADI_IGNORE_VERSION_CHECK=1
+
+.. tip:: 
+
+   A comprehensive description of how to build the FPGA HDL design for Zynq platforms, using Vivado, can be found in the :external+hdl:doc:`user_guide/build_hdl` guide, which covers:
+
+      - Setting up AMD Xilinx Vivado tools for Zynq
+      - Building the FPGA bitstream for Zynq-7000
+      - Generating hardware description files (.xsa)
+      - Zynq-specific build commands and options
+
+**Step 3: Build the Zynq Boot Image (BOOT.BIN)**
+
+After building the HDL, create the complete Zynq boot image containing FPGA bitstream, FSBL, and U-Boot.
+
+.. tip::
+
+   More information about the process can be found in the :external+hdl:doc:`user_guide/build_boot_bin` guide, which covers:
+
+      - Combining Zynq FSBL, bitstream, and U-Boot into BOOT.BIN
+      - Creating bootable SD card image for Zynq
+      - Devicetree compilation for Zynq-7000 platforms
+      - Boot configuration for ARM processor + FPGA fabric
 
 .. note::
-   **Building Zynq Linux Kernel and Devicetree**
 
-   Build the Linux kernel with ADI drivers and devicetree for Zynq-7000 platforms:
+   The u-boot from any of the **zynq-coraz7s** projects, found on the SD card, can be used to generate the BOOT.BIN file.
 
-   :doc:`/linux/kernel/zynq`
+**Step 4: Build the Zynq Linux Kernel and Devicetree**
 
-   This guide covers:
+Build the Linux kernel with ADI drivers and devicetree for Zynq-7000 platforms, using the Linaro toolchain. Navigate to the local copy of the linux repository and confugure the kernel:
 
-   - Configuring the Linux kernel for Zynq with ADI device support
-   - Building uImage (kernel) and devicetree blob (DTB)
-   - Cross-compilation setup using the ARM toolchain
-   - Installing kernel modules and preparing rootfs
-   - Complete build commands for Zynq targets
+.. code-block:: bash
 
-**System Build - ADALM2000 (M2K)**
+   cd ~/spi_workshop/linux
+   make zynq_xcomm_adv7511_defconfig
 
-The :ref:`m2k` provides essential test and measurement capabilities for this workshop.
+After successfully configuring the kernel, build the kernel image using the following command:
 
-.. figure:: system_build_m2k.png
-   :align: center
-   :width: 500px
+.. code-block:: bash
 
-   ADALM2000 active learning module with integrated instruments.
+   make -j5 UIMAGE_LOADADDR=0x8000 uImage
 
-**ADALM2000 Capabilities:**
+.. note:: 
 
-- **Two programmable power supplies**: ±5V for converter biasing
-- **Two-channel oscilloscope**: USB-based, for analog signal monitoring
-- **Arbitrary function generator**: Two-channel signal source for ADC input
-- **16-channel logic analyzer**: 100 MS/s, 3.3V CMOS (1.8V or 5V tolerant) for SPI debug
+   Some additional dependecies might be required to successfully build the kernel image.
+   The generated image can be found at `~/spi_workshop/linux/arch/arm/boot/uImage`.
 
-**System Build - Scopy Software**
+Lastly, generate the devicetree using the following command:
 
-.. figure:: system_build_scopy.png
-   :align: center
-   :width: 600px
+.. code-block:: bash
 
-   :external+scopy:doc:`index` multi-instrument software interface showing
-   oscilloscope, function generator, and logic analyzer views.
+   make zynq-coraz7s-ad7984.dtb
 
-**Scopy Virtual Instruments:**
+.. note:: 
 
-:Oscilloscope: Mixed-signal capability with protocol decoding
-:Signal Generator: Functions and arbitrary waveforms
-:Spectrum Analyzer: FFT analysis for SNR/THD measurement
-:Network Analyzer: Frequency response characterization
-:Power Supply: Adjustable voltage sources
-:Logic Analyzer: With SPI protocol stack decoder
-:Digital Pattern Generator: For stimulus generation
-:Voltmeter: Precision DC measurements
+   The devicetree file can be found at `~/spi_workshop/linux/arch/arm/boot/dts/zynq-coraz7s-ad7984.dtb`.
 
-**System Build - Schematic**
+.. tip::
+
+   For a detailed overview of the process, check out the :doc:`/linux/kernel/zynq` guide, which covers:
+
+      - Configuring the Linux kernel for Zynq with ADI device support
+      - Building uImage (kernel) and devicetree blob (DTB)
+      - Cross-compilation setup using the ARM toolchain
+      - Installing kernel modules and preparing rootfs
+      - Complete build commands for Zynq targets
+
+**Step 5: Load Files on the SD Card**
+
+Copy the **BOOT.BIN**, **uImage**, and **devicetree** files in the root directory of your SD card.
+
+.. important:: 
+
+   The **.dtb** file must be renamed to **devicetree.dtb** before booting.  
+
+System Configuration
+~~~~~~~~~~~~~~~~~~~~
+
+**Schematic**
+
+The image below shows the required connections for the hardware setup:
 
 .. figure:: system_build_schematic.png
    :align: center
@@ -990,7 +1017,9 @@ The :ref:`m2k` provides essential test and measurement capabilities for this wor
    Circuit schematic showing AD7984 connections to Cora Z7S FPGA board, including
    power, reference, and SPI interface signals.
 
-**System Build - Cora Z7S Configuration**
+**Cora Z7S Configuration**
+
+Follow the steps shown below to power on the Cora development board:
 
 .. figure:: system_build_cora.png
    :align: center
@@ -998,19 +1027,25 @@ The :ref:`m2k` provides essential test and measurement capabilities for this wor
 
    Cora Z7S board setup and initial configuration for Zynq-7000 SoC.
 
-**System Build - Preferences Configuration**
+**ADALM2000 Configuration**
+
+Open :external+scopy:doc:`index` and navigate to **Preferences**, select **ADCPlugin**, and make sure that the **Enable automatic IIO context ping** option is disabled, as shown in the image below:
 
 .. figure:: general_preferences_scopy.png
    :align: center
    :width: 75%
+   
+   ADCPlugin setup.
 
-**System Build - ADALM2000 Configuration**
+Plug in the USB cable and and connect to the M2K using Scopy, as presented in the figure below:
 
 .. figure:: adalm2000_configuration.png
    :align: center
    :width: 75%
 
-**System Build - Power Supply Configuration**
+   M2K connection.
+
+After successfully connecting to the M2K, configure the power supplies by setting the positive output to **5 V** and the negative output to **-2.5 V**:
 
 .. figure:: system_build_power_supply.png
    :align: center
@@ -1019,7 +1054,7 @@ The :ref:`m2k` provides essential test and measurement capabilities for this wor
    ADALM2000 power supply settings: Configure positive and negative supplies
    for converter operation (typically +5V and -2.5V).
 
-**System Build - Input Signal Generation**
+Lastly, configure the signal generator to output a sinewave with **3 V amplitude**, **offset 2 V**, **1 kHz frequency**, and **0 deg phase** on channel one, and a sinewave with the same parameters and a **180 deg phase** on the second channel:
 
 .. figure:: system_build_input_signal.png
    :align: center
@@ -1028,7 +1063,9 @@ The :ref:`m2k` provides essential test and measurement capabilities for this wor
    Function generator configuration: 1 kHz sine wave at -0.5 dBFS amplitude for
    SNR and THD testing.
 
-**System Build - UART Configuration**
+**UART Configuration**
+
+Verify the COM port assigned to the Cora development board and connnect to it via serial, using PuTTY (or similar a tool), as shown in the image below:
 
 .. figure:: system_build_uart.png
    :align: center
@@ -1037,147 +1074,285 @@ The :ref:`m2k` provides essential test and measurement capabilities for this wor
    Serial terminal (PuTTY) configuration for board console access: 115200 baud,
    8N1, no flow control.
 
-**System Build - Network Configuration**
+.. note::
 
-.. figure:: system_build_ip.png
-   :align: center
-   :width: 75%
+   The ``ls -al /dev/serial/by-id`` command can be used to check serial ports on Linux.
 
-   Setting host PC IP address for Ethernet connectivity to Cora Z7S board
-   (typically 169.254.x.x link-local address).
+**Network Configuration**
 
-**System Build - UART and Ethernet Testing**
+.. important::
 
-Step 1 - using Putty
+   Connecting the Cora development board to the internet is required in order to complete this workshop.
+
+The IP address assigned to the Cora development board can be obtained by opening a terminal window using PuTTY and running the ``ifconfig`` command, as shown below. The IP address is shown as **inet**, under the **eth0** interface.
 
 .. shell::
-   :caption: ifconfig
    :user: root
 
    $ifconfig
-    eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 169.254.92.202  netmask 255.255.255.0  broadcast 10.48.65.255
-        inet6 fe80::241:8f:d3d0:e43b  prefixlen 64  scopeid 0x20<link>
-        ether 0e:23:90:e3:61:01  txqueuelen 1000  (Ethernet)
-        RX packets 483757  bytes 81480222 (77.7 MiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 5562  bytes 775511 (757.3 KiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-        device interrupt 38
+   eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+      inet 169.254.92.202  netmask 255.255.255.0  broadcast 10.48.65.255
+      inet6 fe80::241:8f:d3d0:e43b  prefixlen 64  scopeid 0x20<link>
+      ether 0e:23:90:e3:61:01  txqueuelen 1000  (Ethernet)
+      RX packets 483757  bytes 81480222 (77.7 MiB)
+      RX errors 0  dropped 0  overruns 0  frame 0
+      TX packets 5562  bytes 775511 (757.3 KiB)
+      TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+      device interrupt 38
 
-    lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
-        inet 127.0.0.1  netmask 255.0.0.0
-        inet6 ::1  prefixlen 128  scopeid 0x10<host>
-        loop  txqueuelen 1000  (Local Loopback)
-        RX packets 83  bytes 10176 (9.9 KiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 83  bytes 10176 (9.9 KiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+   lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+      inet 127.0.0.1  netmask 255.0.0.0
+      inet6 ::1  prefixlen 128  scopeid 0x10<host>
+      loop  txqueuelen 1000  (Local Loopback)
+      RX packets 83  bytes 10176 (9.9 KiB)
+      RX errors 0  dropped 0  overruns 0  frame 0
+      TX packets 83  bytes 10176 (9.9 KiB)
+      TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-Step 2 - Testing Connectivity from Host PC
-
-Test network connectivity to the board from your host machine:
+To check if the development board is reachable via LAN, you can use the ``ping`` command from a terminal or command prompt window, using the previously obtained IP address, as shown below:
 
 .. shell::
-   :caption: ping 169.254.92.202
 
    $ping 169.254.92.202
 
-    Pinging 169.254.92.202 with 32 bytes of data:
-    Reply from 169.254.92.202: bytes=32 time=2ms TTL=64
-    Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
-    Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
-    Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
+   Pinging 169.254.92.202 with 32 bytes of data:
+   Reply from 169.254.92.202: bytes=32 time=2ms TTL=64
+   Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
+   Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
+   Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
 
-    Ping statistics for 169.254.92.202:
+   Ping statistics for 169.254.92.202:
       Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-    Approximate round trip times in milli-seconds:
+   Approximate round trip times in milli-seconds:
       Minimum = 1ms, Maximum = 2ms, Average = 1ms
 
 Evaluate System
 ---------------
 
-**System Evaluation – regular SPI trigger configuration**
+.. _repo-setup-label:
 
-.. figure:: system_evaluation_spi_trigger_1.png
-   :align: center
-   :width: 80%
+Environment Setup
+~~~~~~~~~~~~~~~~~
 
-.. figure:: system_evaluation_spi_trigger_2.png
-   :align: center
-   :width: 80%
+**Setup the pyadi-iio Repository**
 
-**Data Capture using Scopy 2.0 - Regular SPI controller**
+First, connect to the Cora development board using PuTTY and create a workspace directory:
+
+.. code-block:: bash
+
+   cd /media
+   mkdir workshop
+   cd workshop/
+
+Clone the pyadi-iio repository and switch to the **ad7984_demo** branch:
+
+.. code-block:: bash
+
+   git clone https://github.com/analogdevicesinc/pyadi-iio.git
+   cd pyadi-iio
+   git checkout ad7984_demo
+
+After switching to the **ad7984_demo** branch, run the following command to install the required Python packages:
+
+.. code-block:: bash
+
+   pip install .
+
+**Regular SPI Trigger Configuration**
+
+Navigate to the workspace and create a bash script for configuring the regular SPI trigger:
+
+.. code-block:: bash
+
+   cd /media/workshop
+   touch tmr_conf_script.sh
+   chmod +x tmr_conf_script.sh
+
+After creating the script, open it with a text editor and paste the following code:
+
+.. code-block:: bash
+   
+   #!/bin/bash
+   echo Setting the sampling rate to $1
+   cd /
+   mkdir -p configfs
+   if ! mountpoint configfs
+   then
+      mount -t configfs none configfs
+   fi
+   mkdir -p configfs/iio/triggers/hrtimer/tmr0
+   cat /sys/bus/iio/devices/trigger0/name
+   cd /sys/bus/iio/devices
+   echo tmr0 > iio\:device0/trigger/current_trigger
+   echo 2048 > iio\:device0/buffer/length
+   echo $1 > trigger0/sampling_frequency
+   echo 1 > iio\:device0/scan_elements/in_voltage0-voltage1_en
+   echo 1 > iio\:device0/buffer/enable
+
+Run the script with the sampling rate as a parameter:
+
+.. shell::
+   :user: root
+   :group: analog
+
+   /media/workshop
+   $./tmr_conf_script.sh 10000
+    Setting the sampling rate to 10000
+    configfs is not a mountpoint
+    tmr0
+
+System Evaluation - Regular SPI Controller
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Data Capture using Scopy**
 
 .. note::
 
    **Board IP Address:** The Cora Z7S board IP address is **169.254.92.202**
-   (obtained from running ``ifconfig`` command in PuTTY terminal)
+   (previously obtained from running ``ifconfig`` command in PuTTY terminal)
+
+Scopy can be used to remotely connect to the Cora development board and display the data obtained from the ADC. To achieve this, go to the Home section in Scopy and add the device using the IP address of the development board, as shown below:
 
 .. figure:: data_capture_scopy2.png
    :align: center
    :width: 80%
 
-**Data capture using Scopy 2.0 - SPI controller**
+   Scopy remote connection setup.
+
+After the device was found, click on Add Device and then Connect. Your device should appear as **ADCPlugin** in the list on the left side of the window, next to the M2K. Open the **ADC-Time** section, select the **spi_clasic_ad7984** channel and you should see the data obtained using the regular SPI transfers when you initialize a capture on the oscilloscope:
 
 .. figure:: system_evaluation_scopy.png
    :align: center
    :width: 80%
 
-**System Evaluation - Python script**
+   Scopy data capture - regular SPI.
+
+**Data Capture using Python**
+
+To evaluate the performance of the SPI transfers, the **ad7984_example.py** Python script is provided:
 
 .. figure:: system_evaluation_spi_python_script.png
    :align: center
    :width: 80%
 
-**System Evaluation – Python from the FPGA board**
+   Python test script.
 
-.. figure:: system_evaluation_spi_python_from_fpga.png
-   :align: center
-   :width: 80%
+Navigate to the workshop folder and run the script with the following parameters:
 
-**System Evaluation – Python Data Capture Results**
+.. shell::
+   :user: root
+   :group: analog
+
+   $ cd /media/workshop/
+   $ python pyadi-iio/examples/ad7984_example.py local: 0 classic
+    WARNING: High-speed mode not enabled
+    Raw data saved to: spi_clasic_ad7984_captured_data.txt
+    Using sample rate: 10000.0 Hz for classic mode
+    FFT analysis saved as: spi_clasic_ad7984_fft_analysis.jpg
+    SNR: 39.615 dB, THD: -53.204 dBc, SFDR: 39.62 dBc
+
+The result of the Python script is a FFT analysis of the input signal, saved as **spi_clasic_ad7984_fft_analysis.jpg** in the present directory. To create a copy of the resulted image, use the following command in a terminal window on your local machine, and, when prompted for the password, type **analog**:
+
+.. code-block:: bash
+
+   scp root@169.254.92.202:/media/workshop/spi_clasic_ad7984_fft_analysis.jpg spi_clasic_ad7984_fft_analysis.jpg
+
+.. important::
+
+   Make sure that the IP address and the path to the .jpg file match your setup.
+
+The ``scp`` command creates a copy of the .jpg file on the present working directory of your local machine, and it should look like the following image: 
 
 .. figure:: system_evaluation_spi_python_capture.png
    :align: center
    :width: 80%
 
-**System Evaluation – Python from a remote machine - optional**
+   FFT analysis - regular SPI.
 
-.. figure:: system_evaluation_spi_python_from_remote_1.png
-   :align: center
-   :width: 80%
+Adittionaly, the Python script can also be executed from the local machine, using the IP of the Cora development board:
 
-.. figure:: system_evaluation_spi_python_from_remote_2.png
-   :align: center
-   :width: 80%
+.. shell::
+   :user: root
+   :group: analog
 
-**Data capture using Scopy 2.0 - SPI Engine**
+   ~/spi_workshop
+   $ python pyadi-iio/examples/ad7984_example.py ip:169.254.92.202 1 classic
+    WARNING: High-speed mode not enabled
+    Raw data saved to: spi_clasic_ad7984_captured_data.txt
+    Using sample rate: 10000.0 Hz for classic mode
+    FFT analysis saved as: spi_clasic_ad7984_fft_analysis.jpg
+    SNR: 39.615 dB, THD: -53.204 dBc, SFDR: 39.62 dBc
+
+.. important::
+
+   The pyadi-iio repository needs to be set up on the local machine, using the same :ref:`steps presented before <repo-setup-label>`. Make sure that the IP address and the paths match your setup.
+
+System Evaluation - SPI Engine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Data Capture using Scopy**
+
+To visualize the data obtained using the SPI engine, move the EVAL-AD7984-PMDZ to the **JA** PMOD connector and select the **spi_engine_ad7984** channel in **ADC-Time** section, as shown in the image below:
 
 .. figure:: system_evaluation_scopy_spi_engine.png
    :align: center
    :width: 80%
 
-**System Evaluation – Python from the FPGA board**
+   Scopy data capture - SPI engine.
 
-.. figure:: system_evaluation_spie_python_from_fpga_1.png
-   :align: center
-   :width: 80%
+**Data Capture using Python**
 
-**System Evaluation – Python Data Capture Results**   
+To evaluate the performance of the SPI engine, run the **ad7984_example.py** script with the following parameters:
+
+.. shell::
+   :user: root
+   :group: analog
+
+   /media/workshop
+   $ python pyadi-iio/examples/ad7984_example.py local: 0 engine
+    Raw data saved to: spi_engine_ad7984_captured_data.txt
+    Using sample rate: 1330000.0 Hz for engine mode
+    FFT analysis saved as: spi_engine_ad7984_fft_analysis.jpg
+    SNR: 70.394 dB, THD: -66.987 dBc, SFDR: 70.37 dBc
+
+
+Use the following command, with **analog** as password, to create a copy of **spi_engine_ad7984_fft_analysis.jpg** on your local machine:
+
+.. code-block:: bash
+
+   scp root@169.254.92.202:/media/workshop/spi_engine_ad7984_fft_analysis.jpg spi_engine_ad7984_fft_analysis.jpg
+
+.. important::
+
+   Make sure that the IP address and the path to the .jpg file match your setup.
+
+The results obtained should resamble the image below: 
 
 .. figure:: system_evaluation_spie_python_from_fpga_2.png
    :align: center
    :width: 80%
 
-**System Evaluation – Python from a remote machine - optional**
+   FFT analysis - SPI engine.
 
-.. figure:: system_evaluation_spie_python_from_remote_1.png
-   :align: center
-   :width: 80%
+Similar to the previous case, the Python script can be executed from the local machine, for the SPI engine scenario, as shown below: 
 
+.. shell::
+   :user: root
+   :group: analog
 
-**System Evaluation – Performance Results Comparison**
+   ~/spi_workshop
+   $ python pyadi-iio/examples/ad7984_example.py ip:169.254.92.202 1 engine
+    Raw data saved to: spi_engine_ad7984_captured_data.txt
+    Using sample rate: 1330000.0 Hz for engine mode
+    FFT analysis saved as: spi_engine_ad7984_fft_analysis.jpg
+    SNR: 70.394 dB, THD: -66.987 dBc, SFDR: 70.37 dBc
+
+.. important::
+
+   The pyadi-iio repository needs to be set up on the local machine, using the same :ref:`steps presented before <repo-setup-label>`. Make sure that the IP address and the paths match your setup.
+
+Performance Results Comparison
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
    **SPI Engine Achieves Near-Datasheet Performance**
@@ -1188,6 +1363,8 @@ Evaluate System
 .. figure:: measured_performance_comparison.png
    :align: center
    :width: 85%
+
+   Performance comparison between the regular SPI controller and SPI engine.
 
 **Performance Analysis:**
 
@@ -1212,8 +1389,9 @@ Evaluate System
      - Variable (μs range)
      - Deterministic (<1 ns)
 
-.. important::
-   **Key Takeaway**: The SPI Engine framework enables precision converters to achieve
+.. admonition:: Key Takeaway
+
+   The SPI Engine framework enables precision converters to achieve
    their full datasheet specifications by providing deterministic, low-jitter timing
    that traditional MCU SPI controllers cannot deliver.
 
@@ -1229,17 +1407,35 @@ Evaluate System
 
 **Debug Options  - Logic Analyzer from Scopy**
 
+The M2K is used to probe the SPI signals on pins IO0-IO3 on the Cora Z7S development board. To visualize the signals, open the Logic Analyzer in Scopy and cofigure it as shown in the images below:   
+
 .. figure:: system_evaluation_m2k_1.png
    :align: center
    :width: 80%
 
-|
+   Scopy logic analyzer setup - 1.
 
 .. figure:: system_evaluation_m2k_2.png
    :align: center
    :width: 80%
 
+   Scopy logic analyzer setup - 2.
+
+By default, the signals on pins IO0-IO3 correspond to the regular SPI scenario. To see the signals for the SPI engine scenario, you need to change the value of **GPIO[34]** to 1, following the steps in the figure below:
+
+.. figure:: one_bit_adc_toggle.png
+   :align: center
+   :width: 80%
+
+   Switching between debug signals.
+
+.. important::
+
+   To visualize the SPI signals for the SPI engine scenario, a higher bandwidth oscilloscope must be used.
+
 **Debug Options – Integrated Logic Analyzer (ILA)**
+
+For further debuging options, two ILA instances have been added to the design as shown in the diagram below:
 
 .. figure:: use_case_debug_options_ila.png
    :align: center
@@ -1247,7 +1443,17 @@ Evaluate System
 
    Xilinx ILA configuration for capturing SPI Engine signals and debugging timing issues.
 
+To use the ILA, open the Hardware Manage in Vivado and connect to the Cora development board. After you successfully connected to the target, configure the probes by clicking on **Specify the probes file and refresh the device**, navigating to ``~/spi_workshop/hdl/projects/pulsar_adc_pmdz/coraz7s``, selecting **debug_nets.ltx**, and refreshing the device, as shown below:
+
+.. figure:: ila_probe_specify.png
+   :align: center
+   :width: 85%
+
+   ILA probe setup.
+
 **Comparison: Regular SPI vs. SPI Engine Waveforms**
+
+After successfully configuring the probes, **hw_ila_1** and **hw_ila_2** can be used to visualize the SPI signals for the regular and engine use cases. The images below show the comparison between the two cases, using ILA:
 
 .. figure:: use_case_debug_options_spi.png
    :align: center
@@ -1292,8 +1498,7 @@ Conclusions
    - Near-datasheet AC performance (>79% SNR achievement)
    - Minimal CPU overhead (<1%)
 
-#. **Production-Ready Solution Stack**: The complete COS (Customer Obsession through
-   Software) open-source ecosystem provides HDL, Linux drivers, and tools for rapid
+#. **Production-Ready Solution Stack**: The complete open-source ecosystem provides HDL, Linux drivers, and tools for rapid
    development and deployment.
 
 **Performance Achieved:**
@@ -1318,8 +1523,3 @@ Conclusions
 For technical questions and community discussions:
 
 :ez:`community/university-program`
-
-**Hardware Reference:**
-
-- Cora Z7S: https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development
-

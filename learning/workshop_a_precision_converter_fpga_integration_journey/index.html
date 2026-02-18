@@ -96,15 +96,25 @@
           <ul>
 <li><a class="reference internal" href="#">A Precision Converter FPGA Integration Journey</a><ul>
 <li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li><a class="reference internal" href="#learning-objectives">Learning Objectives</a><ul>
+<li><a class="reference internal" href="#learning-objectives">Learning Objectives</a></li>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#spi-engine-architecture">SPI Engine Architecture</a></li>
 <li><a class="reference internal" href="#use-case-high-performance-ad7984-integration">Use Case: High-Performance AD7984 Integration</a></li>
-<li><a class="reference internal" href="#build-and-test-system">Build and Test System</a></li>
-<li><a class="reference internal" href="#evaluate-system">Evaluate System</a></li>
-<li><a class="reference internal" href="#conclusions">Conclusions</a></li>
+<li><a class="reference internal" href="#test-system-setup">Test System Setup</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#repository-and-build-environment-setup">Repository and Build Environment Setup</a></li>
+<li><a class="reference internal" href="#hdl-project-build-instructions-for-zynq-target">HDL Project Build Instructions for Zynq Target</a></li>
+<li><a class="reference internal" href="#system-configuration">System Configuration</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#evaluate-system">Evaluate System</a><ul>
+<li><a class="reference internal" href="#environment-setup">Environment Setup</a></li>
+<li><a class="reference internal" href="#system-evaluation-regular-spi-controller">System Evaluation - Regular SPI Controller</a></li>
+<li><a class="reference internal" href="#system-evaluation-spi-engine">System Evaluation - SPI Engine</a></li>
+<li><a class="reference internal" href="#performance-results-comparison">Performance Results Comparison</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conclusions">Conclusions</a></li>
 </ul>
 </li>
 </ul>
@@ -546,31 +556,67 @@ the SPI Engine Framework.</p>
 <nav class="contents local" id="workshop-contents">
 <p class="topic-title">Workshop Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#prerequisites" id="id46">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#learning-objectives" id="id47">Learning Objectives</a></p>
+<li><p><a class="reference internal" href="#prerequisites" id="id52">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#learning-objectives" id="id53">Learning Objectives</a></p></li>
+<li><p><a class="reference internal" href="#introduction" id="id54">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#spi-engine-architecture" id="id55">SPI Engine Architecture</a></p></li>
+<li><p><a class="reference internal" href="#use-case-high-performance-ad7984-integration" id="id56">Use Case: High-Performance AD7984 Integration</a></p></li>
+<li><p><a class="reference internal" href="#test-system-setup" id="id57">Test System Setup</a></p>
 <ul>
-<li><p><a class="reference internal" href="#introduction" id="id48">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#spi-engine-architecture" id="id49">SPI Engine Architecture</a></p></li>
-<li><p><a class="reference internal" href="#use-case-high-performance-ad7984-integration" id="id50">Use Case: High-Performance AD7984 Integration</a></p></li>
-<li><p><a class="reference internal" href="#build-and-test-system" id="id51">Build and Test System</a></p></li>
-<li><p><a class="reference internal" href="#evaluate-system" id="id52">Evaluate System</a></p></li>
-<li><p><a class="reference internal" href="#conclusions" id="id53">Conclusions</a></p></li>
+<li><p><a class="reference internal" href="#overview" id="id58">Overview</a></p></li>
+<li><p><a class="reference internal" href="#repository-and-build-environment-setup" id="id59">Repository and Build Environment Setup</a></p></li>
+<li><p><a class="reference internal" href="#hdl-project-build-instructions-for-zynq-target" id="id60">HDL Project Build Instructions for Zynq Target</a></p></li>
+<li><p><a class="reference internal" href="#system-configuration" id="id61">System Configuration</a></p></li>
 </ul>
 </li>
+<li><p><a class="reference internal" href="#evaluate-system" id="id62">Evaluate System</a></p>
+<ul>
+<li><p><a class="reference internal" href="#environment-setup" id="id63">Environment Setup</a></p></li>
+<li><p><a class="reference internal" href="#system-evaluation-regular-spi-controller" id="id64">System Evaluation - Regular SPI Controller</a></p></li>
+<li><p><a class="reference internal" href="#system-evaluation-spi-engine" id="id65">System Evaluation - SPI Engine</a></p></li>
+<li><p><a class="reference internal" href="#performance-results-comparison" id="id66">Performance Results Comparison</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#conclusions" id="id67">Conclusions</a></p></li>
 </ul>
 </nav>
 <section id="prerequisites">
-<h2><a class="toc-backref" href="#id46" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id52" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
 <p>Before starting this workshop, you should have:</p>
 <ul class="simple">
 <li><p>Basic understanding of FPGA development concepts</p></li>
 <li><p>Familiarity with SPI protocol fundamentals</p></li>
-<li><p>Access to Cora Z7S development board (optional for hands-on)</p></li>
-<li><p>ADALM2000 (M2K) for testing (optional)</p></li>
+<li><p>Access to the following resources:</p>
+<ul>
+<li><p>Hardware:</p>
+<ul>
+<li><p><a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development/" target="_blank">Cora Z7S</a> development board</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7984-pmdz.html#eb-overview" target="_blank">EVAL-AD7984-PMDZ</a> evaluation board</p></li>
+<li><p>SD Card</p></li>
+<li><p><a class="reference internal" href="../../tools/m2k/index.html#m2k"><span class="std std-ref">ADALM2000</span></a> for testing</p></li>
 </ul>
+</li>
+<li><p>Software</p>
+<ul>
+<li><p>Access to a Linux machine or <a class="icon link reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install" target="_blank">WSL</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/adi-kuiper-imager/releases" target="_blank">ADI Kuiper Imager</a> or a similar tool for flashing an OS image onto an SD card</p></li>
+<li><p>PuTTY or a similar tool for serial communication</p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/scopy/releases/latest" target="_blank">Scopy</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/support/download.html" target="_blank">AMD Vivado</a></p></li>
+<li><p><a class="icon link reference external" href="https://digilent.com/shop/software/digilent-adept/?srsltid=AfmBOorvxbSPfEaGfdK2o047TAwyQIDQgtQX7yOQpRT9oZEm91BkfJZn" target="_blank">Digilent Adept drivers</a></p></li>
+<li><p>If you are working from WSL, you will need the <a class="icon link reference external" href="https://learn.microsoft.com/en-us/windows/wsl/connect-usb" target="_blank">usbipd-win</a> utility to attach a usb port to the Linux environment</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The steps presented in this workshop were created using a Windows based machine and WSL.</p>
+</div>
 </section>
 <section id="learning-objectives">
-<h2><a class="toc-backref" href="#id47" role="doc-backlink">Learning Objectives</a><a class="headerlink" href="#learning-objectives" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id53" role="doc-backlink">Learning Objectives</a><a class="headerlink" href="#learning-objectives" title="Link to this heading"></a></h2>
 <p>By the end of this workshop, you will:</p>
 <ol class="arabic simple">
 <li><p>Understand why traditional MCU SPI controllers limit converter performance</p></li>
@@ -579,8 +625,9 @@ the SPI Engine Framework.</p>
 <li><p>Compare regular SPI vs. SPI Engine performance metrics</p></li>
 <li><p>Achieve near-datasheet performance with proper FPGA integration</p></li>
 </ol>
+</section>
 <section id="introduction">
-<h3><a class="toc-backref" href="#id48" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h3>
+<h2><a class="toc-backref" href="#id54" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p><strong>Customer Journey</strong></p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_customer_journey_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_customer_journey_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_customer_journey_1.png" style="width: 85%;" />
@@ -603,7 +650,7 @@ across multiple FPGA vendors and development boards to support diverse needs.</p
 access to the latest tools and IP cores.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>COS Reference Design “Donut Hole” Strategy</strong></p>
+<p><strong>Reference Design “Donut Hole” Strategy</strong></p>
 <p>The strategy focuses on surrounding customer-selected processors, FPGAs, and
 microcontrollers with ADI components, creating a seamless integration experience.</p>
 <p><strong>Key Benefits:</strong></p>
@@ -636,7 +683,7 @@ microcontrollers with ADI components, creating a seamless integration experience
 comprehensive hardware and software support, enabling rapid development.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>COS Full Stack High Level Overview</strong></p>
+<p><strong>Full Stack High Level Overview</strong></p>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_full_stack_overview.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_full_stack_overview.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/intro_full_stack_overview.png" style="width: 90%;" />
 </a>
@@ -645,7 +692,7 @@ comprehensive hardware and software support, enabling rapid development.</span><
 applications down to FPGA HDL and ADI converters.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>COS Full Stack HDL Designs</strong></p>
+<p><strong>Full Stack HDL Designs</strong></p>
 <figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/infrastructure_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/infrastructure_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/infrastructure_diagram.png" style="width: 90%;" />
 </a>
@@ -653,7 +700,7 @@ applications down to FPGA HDL and ADI converters.</span><a class="headerlink" hr
 <p><span class="caption-number">Figure 5 </span><span class="caption-text">Complete infrastructure diagram showing the full stack HDL design architecture.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>COS Typical Prototyping System</strong></p>
+<p><strong>Typical Prototyping System</strong></p>
 <figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/what_support_our_infrastructure.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/what_support_our_infrastructure.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/what_support_our_infrastructure.png" style="width: 85%;" />
 </a>
@@ -687,7 +734,7 @@ including development environments, build systems, and deployment platforms.</sp
 </tbody>
 </table>
 </div>
-<p><strong>COS IP Library</strong></p>
+<p><strong>IP Library</strong></p>
 <figure class="align-center" id="id7">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/section_of_the_ips_supported.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/section_of_the_ips_supported.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/section_of_the_ips_supported.png" style="width: 85%;" />
 </a>
@@ -696,7 +743,7 @@ including development environments, build systems, and deployment platforms.</sp
 including DMAs, interfaces, utilities, and converter-specific IP blocks.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>COS Frameworks - JESD204 Interface Framework</strong></p>
+<p><strong>Frameworks - JESD204 Interface Framework</strong></p>
 <p>The JESD204 framework provides a complete solution for high-speed converter interfaces.</p>
 <p><strong>JESD204 Layer Architecture:</strong></p>
 <dl class="field-list simple">
@@ -724,7 +771,7 @@ including DMAs, interfaces, utilities, and converter-specific IP blocks.</span><
 data link processing to converter-specific transport.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>COS Frameworks - SPI Engine Framework</strong></p>
+<p><strong>Frameworks - SPI Engine Framework</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p><strong>SPI Engine Powers Over 20% of ADI’s HDL Projects</strong></p>
@@ -771,7 +818,7 @@ for precision converter interfaces.</span><a class="headerlink" href="#id10" tit
 </ul>
 </section>
 <section id="spi-engine-architecture">
-<h3><a class="toc-backref" href="#id49" role="doc-backlink">SPI Engine Architecture</a><a class="headerlink" href="#spi-engine-architecture" title="Link to this heading"></a></h3>
+<h2><a class="toc-backref" href="#id55" role="doc-backlink">SPI Engine Architecture</a><a class="headerlink" href="#spi-engine-architecture" title="Link to this heading"></a></h2>
 <p><strong>Serial Peripheral Interface (SPI) - Background</strong></p>
 <p>SPI is a full-duplex serial communication bus designed by Motorola in the mid-1980s.
 It is widely used for short-distance chip-to-chip communication in embedded systems
@@ -1131,7 +1178,7 @@ any other offload-capable SPI controller with minimal changes.</p>
 </div>
 </section>
 <section id="use-case-high-performance-ad7984-integration">
-<h3><a class="toc-backref" href="#id50" role="doc-backlink">Use Case: High-Performance AD7984 Integration</a><a class="headerlink" href="#use-case-high-performance-ad7984-integration" title="Link to this heading"></a></h3>
+<h2><a class="toc-backref" href="#id56" role="doc-backlink">Use Case: High-Performance AD7984 Integration</a><a class="headerlink" href="#use-case-high-performance-ad7984-integration" title="Link to this heading"></a></h2>
 <p><strong>Application Requirements</strong></p>
 <figure class="align-center" id="id23">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_examples.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_examples.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_examples.png" style="width: 80%;" />
@@ -1483,9 +1530,10 @@ generator, SPI Engine with offload, clock generation, and DMA controller.</span>
 <li><p>ad_connect spi_clk axi_pulsar_adc_dma/s_axis_aclk</p></li>
 </ul>
 </section>
-<section id="build-and-test-system">
-<h3><a class="toc-backref" href="#id51" role="doc-backlink">Build and Test System</a><a class="headerlink" href="#build-and-test-system" title="Link to this heading"></a></h3>
-<p><strong>Complete Test Setup</strong></p>
+<section id="test-system-setup">
+<h2><a class="toc-backref" href="#id57" role="doc-backlink">Test System Setup</a><a class="headerlink" href="#test-system-setup" title="Link to this heading"></a></h2>
+<section id="overview">
+<h3><a class="toc-backref" href="#id58" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
 <figure class="align-center" id="id29">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_bd.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_bd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_bd.png" style="width: 90%;" />
 </a>
@@ -1494,38 +1542,34 @@ generator, SPI Engine with offload, clock generation, and DMA controller.</span>
 ADALM2000 for signal generation and debug, and host computer.</span><a class="headerlink" href="#id29" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>Build Prerequisites</strong></p>
-<p>To build and run the complete system, you’ll need access to ADI’s open-source repositories.</p>
-<figure class="align-center" id="id30">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_hdl.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_hdl.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_hdl.png" style="width: 70%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 28 </span><span class="caption-text">HDL repository structure at <a class="icon link reference external" href="https://github.com/analogdevicesinc/hdl" target="_blank">analogdevicesinc/hdl</a>
-containing FPGA projects, IP libraries, and build scripts.</span><a class="headerlink" href="#id30" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id31">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_linux.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_linux.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/build_prerequisites_linux.png" style="width: 70%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 29 </span><span class="caption-text">Linux kernel repository at <a class="icon link reference external" href="https://github.com/analogdevicesinc/linux" target="_blank">analogdevicesinc/linux</a>
-with ADI device drivers and devicetree configurations.</span><a class="headerlink" href="#id31" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><strong>Repository Setup and Build Environment</strong></p>
+</section>
+<section id="repository-and-build-environment-setup">
+<h3><a class="toc-backref" href="#id59" role="doc-backlink">Repository and Build Environment Setup</a><a class="headerlink" href="#repository-and-build-environment-setup" title="Link to this heading"></a></h3>
 <p>Follow these steps to set up your development environment with the necessary repositories and toolchain:</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
 <p><strong>Step 1: Create Workspace Directory</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/mnt/c/
-mkdir<span class="w"> </span>fae_workshop
-<span class="nb">cd</span><span class="w"> </span>fae_workshop/
+<p>Create a folder to store the temporary files for the workshop:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+mkdir<span class="w"> </span>spi_workshop
+<span class="nb">cd</span><span class="w"> </span>spi_workshop/
 </pre></div>
 </div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The location of this directory will be used throughout the entire workshop. If you chose a different location for your directory, make sure to replace the path from the examples with your path.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><strong>Step 2: Clone HDL Repository and Checkout Branch</strong></p>
+<p><strong>Step 2: Download Cross-Compiler Toolchain</strong></p>
+<p>Download the ARM cross-compiler toolchain for building Linux kernel:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabi/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
+tar<span class="w"> </span>-xvf<span class="w"> </span>gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
+</pre></div>
+</div>
+<p><strong>Step 3: Set Cross-Compiler Environment Variables</strong></p>
+<p>Configure the <strong>CROSS_COMPILE</strong> and <strong>ARCH</strong> environment variables:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-
+<span class="nb">export</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm
+</pre></div>
+</div>
+<p><strong>Step 4: Clone HDL Repository and Checkout Branch</strong></p>
 <p>Clone the HDL repository and switch to the <strong>ad7984_demo</strong> branch:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/hdl.git
 <span class="nb">cd</span><span class="w"> </span>hdl
@@ -1533,199 +1577,187 @@ git<span class="w"> </span>checkout<span class="w"> </span>ad7984_demo
 </pre></div>
 </div>
 <p>This prepares the HDL project files needed for building the FPGA design.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><strong>Step 3: Download Cross-Compiler Toolchain</strong></p>
-<p>Download the ARM cross-compiler toolchain for building Linux kernel:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabi/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
-tar<span class="w"> </span>-xvf<span class="w"> </span>gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.xz
-</pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Step 4: Set Cross-Compiler Environment Variable</strong></p>
-<p>Configure the CROSS_COMPILE environment variable to point to your toolchain:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-
-</pre></div>
-</div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
 <p><strong>Step 5: Clone ADI Linux Repository</strong></p>
-<p>Clone the Analog Devices Linux kernel repository with device drivers:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/linux.git
-</pre></div>
-</div>
-<p>This will create a <cite>linux</cite> directory containing the ADI Linux kernel sources with all necessary drivers.</p>
-<p>After cloning the Linux repository, checkout to the <strong>ad7984_demo</strong> branch:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>linux
+<p>Clone the Analog Devices Linux kernel repository with device drivers and switch to the <strong>ad7984_demo</strong> branch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/spi_workshop
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/linux.git
+<span class="nb">cd</span><span class="w"> </span>linux
 git<span class="w"> </span>checkout<span class="w"> </span>ad7984_demo
 </pre></div>
 </div>
-</div>
-<p><strong>HDL Project Build Instructions for Zynq Target</strong></p>
+<p>This will create a <cite>linux</cite> directory containing the ADI Linux kernel sources with all necessary drivers.</p>
+</section>
+<section id="hdl-project-build-instructions-for-zynq-target">
+<h3><a class="toc-backref" href="#id60" role="doc-backlink">HDL Project Build Instructions for Zynq Target</a><a class="headerlink" href="#hdl-project-build-instructions-for-zynq-target" title="Link to this heading"></a></h3>
 <p>Now that you have the repositories set up, follow these guides to build the HDL project and boot image for your <strong>Zynq-7000 SoC</strong> target (Cora Z7S board):</p>
+<p><strong>Step 1: Prepare the SD Card</strong></p>
+<p>Use <strong>ADI Kuiper Imager</strong> (or a similar tool) to flash the SD card with the latest image of <strong>ADI Kuiper Linux</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Here you can find more information about obtaining the latest <a class="icon link reference external" href="https://analogdevicesinc.github.io/adi-kuiper-gen/index.html" target="_blank" title="(in Kuiper latest)"><span>ADI Kuiper Linux</span></a> image.</p>
+</div>
+<p><strong>Step 2: Build the HDL Project</strong></p>
+<p>Navigate to the <strong>pulsar_adc_pmdz</strong> project for the <strong>Cora Z7S</strong> board and build the project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/spi_workshop/hdl/projects/pulsar_adc_pmdz/coraz7s
+make
+</pre></div>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><strong>Building the HDL Project for Zynq</strong></p>
-<p>Follow the comprehensive guide to build the FPGA HDL design for Zynq platforms using Vivado:</p>
-<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a></p>
-<p>This guide covers:</p>
-<ul class="simple">
+<p>If you use a Vivado version higher than 2023.1, the <strong>ADI_IGNORE_VERSION_CHECK</strong> parameter needs to be set to 1 before building the project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ADI_IGNORE_VERSION_CHECK</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A comprehensive description of how to build the FPGA HDL design for Zynq platforms, using Vivado, can be found in the <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a> guide, which covers:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Setting up AMD Xilinx Vivado tools for Zynq</p></li>
 <li><p>Building the FPGA bitstream for Zynq-7000</p></li>
 <li><p>Generating hardware description files (.xsa)</p></li>
 <li><p>Zynq-specific build commands and options</p></li>
 </ul>
+</div></blockquote>
 </div>
+<p><strong>Step 3: Build the Zynq Boot Image (BOOT.BIN)</strong></p>
+<p>After building the HDL, create the complete Zynq boot image containing FPGA bitstream, FSBL, and U-Boot.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><strong>Creating the Zynq Boot Image (BOOT.BIN)</strong></p>
-<p>After building the HDL, create the complete Zynq boot image containing FPGA bitstream, FSBL, and U-Boot:</p>
-<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html" target="_blank" title="(in HDL)"><span>Build the boot image BOOT.BIN</span></a></p>
-<p>This guide covers:</p>
-<ul class="simple">
+<p>More information about the process can be found in the <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html" target="_blank" title="(in HDL)"><span>Build the boot image BOOT.BIN</span></a> guide, which covers:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Combining Zynq FSBL, bitstream, and U-Boot into BOOT.BIN</p></li>
 <li><p>Creating bootable SD card image for Zynq</p></li>
 <li><p>Devicetree compilation for Zynq-7000 platforms</p></li>
 <li><p>Boot configuration for ARM processor + FPGA fabric</p></li>
 </ul>
+</div></blockquote>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Building Zynq Linux Kernel and Devicetree</strong></p>
-<p>Build the Linux kernel with ADI drivers and devicetree for Zynq-7000 platforms:</p>
-<p><a class="reference internal" href="../../linux/kernel/zynq.html"><span class="doc">Build Zynq Linux kernel and devicetree</span></a></p>
-<p>This guide covers:</p>
-<ul class="simple">
+<p>The u-boot from any of the <strong>zynq-coraz7s</strong> projects, found on the SD card, can be used to generate the BOOT.BIN file.</p>
+</div>
+<p><strong>Step 4: Build the Zynq Linux Kernel and Devicetree</strong></p>
+<p>Build the Linux kernel with ADI drivers and devicetree for Zynq-7000 platforms, using the Linaro toolchain. Navigate to the local copy of the linux repository and confugure the kernel:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/spi_workshop/linux
+make<span class="w"> </span>zynq_xcomm_adv7511_defconfig
+</pre></div>
+</div>
+<p>After successfully configuring the kernel, build the kernel image using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-j5<span class="w"> </span><span class="nv">UIMAGE_LOADADDR</span><span class="o">=</span>0x8000<span class="w"> </span>uImage
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some additional dependecies might be required to successfully build the kernel image.
+The generated image can be found at <cite>~/spi_workshop/linux/arch/arm/boot/uImage</cite>.</p>
+</div>
+<p>Lastly, generate the devicetree using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>zynq-coraz7s-ad7984.dtb
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The devicetree file can be found at <cite>~/spi_workshop/linux/arch/arm/boot/dts/zynq-coraz7s-ad7984.dtb</cite>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For a detailed overview of the process, check out the <a class="reference internal" href="../../linux/kernel/zynq.html"><span class="doc">Build Zynq Linux kernel and devicetree</span></a> guide, which covers:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Configuring the Linux kernel for Zynq with ADI device support</p></li>
 <li><p>Building uImage (kernel) and devicetree blob (DTB)</p></li>
 <li><p>Cross-compilation setup using the ARM toolchain</p></li>
 <li><p>Installing kernel modules and preparing rootfs</p></li>
 <li><p>Complete build commands for Zynq targets</p></li>
 </ul>
+</div></blockquote>
 </div>
-<p><strong>System Build - ADALM2000 (M2K)</strong></p>
-<p>The <a class="reference internal" href="../../tools/m2k/index.html#m2k"><span class="std std-ref">ADALM2000</span></a> provides essential test and measurement capabilities for this workshop.</p>
-<figure class="align-center" id="id32">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_m2k.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_m2k.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_m2k.png" style="width: 500px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 30 </span><span class="caption-text">ADALM2000 active learning module with integrated instruments.</span><a class="headerlink" href="#id32" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><strong>ADALM2000 Capabilities:</strong></p>
-<ul class="simple">
-<li><p><strong>Two programmable power supplies</strong>: ±5V for converter biasing</p></li>
-<li><p><strong>Two-channel oscilloscope</strong>: USB-based, for analog signal monitoring</p></li>
-<li><p><strong>Arbitrary function generator</strong>: Two-channel signal source for ADC input</p></li>
-<li><p><strong>16-channel logic analyzer</strong>: 100 MS/s, 3.3V CMOS (1.8V or 5V tolerant) for SPI debug</p></li>
-</ul>
-<p><strong>System Build - Scopy Software</strong></p>
-<figure class="align-center" id="id33">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_scopy.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_scopy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_scopy.png" style="width: 600px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 31 </span><span class="caption-text"><a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/index.html" target="_blank" title="(in Scopy main)"><span>Scopy</span></a> multi-instrument software interface showing
-oscilloscope, function generator, and logic analyzer views.</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><strong>Scopy Virtual Instruments:</strong></p>
-<dl class="field-list simple">
-<dt class="field-odd">Oscilloscope<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Mixed-signal capability with protocol decoding</p>
-</dd>
-<dt class="field-even">Signal Generator<span class="colon">:</span></dt>
-<dd class="field-even"><p>Functions and arbitrary waveforms</p>
-</dd>
-<dt class="field-odd">Spectrum Analyzer<span class="colon">:</span></dt>
-<dd class="field-odd"><p>FFT analysis for SNR/THD measurement</p>
-</dd>
-<dt class="field-even">Network Analyzer<span class="colon">:</span></dt>
-<dd class="field-even"><p>Frequency response characterization</p>
-</dd>
-<dt class="field-odd">Power Supply<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Adjustable voltage sources</p>
-</dd>
-<dt class="field-even">Logic Analyzer<span class="colon">:</span></dt>
-<dd class="field-even"><p>With SPI protocol stack decoder</p>
-</dd>
-<dt class="field-odd">Digital Pattern Generator<span class="colon">:</span></dt>
-<dd class="field-odd"><p>For stimulus generation</p>
-</dd>
-<dt class="field-even">Voltmeter<span class="colon">:</span></dt>
-<dd class="field-even"><p>Precision DC measurements</p>
-</dd>
-</dl>
-<p><strong>System Build - Schematic</strong></p>
-<figure class="align-center" id="id34">
+<p><strong>Step 5: Load Files on the SD Card</strong></p>
+<p>Copy the <strong>BOOT.BIN</strong>, <strong>uImage</strong>, and <strong>devicetree</strong> files in the root directory of your SD card.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <strong>.dtb</strong> file must be renamed to <strong>devicetree.dtb</strong> before booting.</p>
+</div>
+</section>
+<section id="system-configuration">
+<h3><a class="toc-backref" href="#id61" role="doc-backlink">System Configuration</a><a class="headerlink" href="#system-configuration" title="Link to this heading"></a></h3>
+<p><strong>Schematic</strong></p>
+<p>The image below shows the required connections for the hardware setup:</p>
+<figure class="align-center" id="id30">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_schematic.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_schematic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_schematic.png" style="width: 85%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 32 </span><span class="caption-text">Circuit schematic showing AD7984 connections to Cora Z7S FPGA board, including
-power, reference, and SPI interface signals.</span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 28 </span><span class="caption-text">Circuit schematic showing AD7984 connections to Cora Z7S FPGA board, including
+power, reference, and SPI interface signals.</span><a class="headerlink" href="#id30" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>System Build - Cora Z7S Configuration</strong></p>
-<figure class="align-center" id="id35">
+<p><strong>Cora Z7S Configuration</strong></p>
+<p>Follow the steps shown below to power on the Cora development board:</p>
+<figure class="align-center" id="id31">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_cora.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_cora.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_cora.png" style="width: 85%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 33 </span><span class="caption-text">Cora Z7S board setup and initial configuration for Zynq-7000 SoC.</span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 29 </span><span class="caption-text">Cora Z7S board setup and initial configuration for Zynq-7000 SoC.</span><a class="headerlink" href="#id31" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>System Build - Preferences Configuration</strong></p>
-<figure class="align-center">
+<p><strong>ADALM2000 Configuration</strong></p>
+<p>Open <a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/index.html" target="_blank" title="(in Scopy main)"><span>Scopy</span></a> and navigate to <strong>Preferences</strong>, select <strong>ADCPlugin</strong>, and make sure that the <strong>Enable automatic IIO context ping</strong> option is disabled, as shown in the image below:</p>
+<figure class="align-center" id="id32">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/general_preferences_scopy.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/general_preferences_scopy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/general_preferences_scopy.png" style="width: 75%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 30 </span><span class="caption-text">ADCPlugin setup.</span><a class="headerlink" href="#id32" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<p><strong>System Build - ADALM2000 Configuration</strong></p>
-<figure class="align-center">
+<p>Plug in the USB cable and and connect to the M2K using Scopy, as presented in the figure below:</p>
+<figure class="align-center" id="id33">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/adalm2000_configuration.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/adalm2000_configuration.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/adalm2000_configuration.png" style="width: 75%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 31 </span><span class="caption-text">M2K connection.</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<p><strong>System Build - Power Supply Configuration</strong></p>
-<figure class="align-center" id="id36">
+<p>After successfully connecting to the M2K, configure the power supplies by setting the positive output to <strong>5 V</strong> and the negative output to <strong>-2.5 V</strong>:</p>
+<figure class="align-center" id="id34">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_power_supply.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_power_supply.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_power_supply.png" style="width: 75%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 34 </span><span class="caption-text">ADALM2000 power supply settings: Configure positive and negative supplies
-for converter operation (typically +5V and -2.5V).</span><a class="headerlink" href="#id36" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 32 </span><span class="caption-text">ADALM2000 power supply settings: Configure positive and negative supplies
+for converter operation (typically +5V and -2.5V).</span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>System Build - Input Signal Generation</strong></p>
-<figure class="align-center" id="id37">
+<p>Lastly, configure the signal generator to output a sinewave with <strong>3 V amplitude</strong>, <strong>offset 2 V</strong>, <strong>1 kHz frequency</strong>, and <strong>0 deg phase</strong> on channel one, and a sinewave with the same parameters and a <strong>180 deg phase</strong> on the second channel:</p>
+<figure class="align-center" id="id35">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_input_signal.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_input_signal.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_input_signal.png" style="width: 75%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 35 </span><span class="caption-text">Function generator configuration: 1 kHz sine wave at -0.5 dBFS amplitude for
-SNR and THD testing.</span><a class="headerlink" href="#id37" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 33 </span><span class="caption-text">Function generator configuration: 1 kHz sine wave at -0.5 dBFS amplitude for
+SNR and THD testing.</span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>System Build - UART Configuration</strong></p>
-<figure class="align-center" id="id38">
+<p><strong>UART Configuration</strong></p>
+<p>Verify the COM port assigned to the Cora development board and connnect to it via serial, using PuTTY (or similar a tool), as shown in the image below:</p>
+<figure class="align-center" id="id36">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_uart.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_uart.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_uart.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 36 </span><span class="caption-text">Serial terminal (PuTTY) configuration for board console access: 115200 baud,
-8N1, no flow control.</span><a class="headerlink" href="#id38" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 34 </span><span class="caption-text">Serial terminal (PuTTY) configuration for board console access: 115200 baud,
+8N1, no flow control.</span><a class="headerlink" href="#id36" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>System Build - Network Configuration</strong></p>
-<figure class="align-center" id="id39">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_ip.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_ip.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_build_ip.png" style="width: 75%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 37 </span><span class="caption-text">Setting host PC IP address for Ethernet connectivity to Cora Z7S board
-(typically 169.254.x.x link-local address).</span><a class="headerlink" href="#id39" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><strong>System Build - UART and Ethernet Testing</strong></p>
-<p>Step 1 - using Putty</p>
-<div class="literal-block-wrapper docutils container" id="id40">
-<div class="code-block-caption"><span class="caption-number">Listing 3 </span><span class="caption-text">ifconfig</span><a class="headerlink" href="#id40" title="Link to this code"></a></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-al</span> <span class="pre">/dev/serial/by-id</span></code> command can be used to check serial ports on Linux.</p>
+</div>
+<p><strong>Network Configuration</strong></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Connecting the Cora development board to the internet is required in order to complete this workshop.</p>
+</div>
+<p>The IP address assigned to the Cora development board can be obtained by opening a terminal window using PuTTY and running the <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> command, as shown below. The IP address is shown as <strong>inet</strong>, under the <strong>eth0</strong> interface.</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
@@ -1733,130 +1765,287 @@ SNR and THD testing.</span><a class="headerlink" href="#id37" title="Link to thi
 </pre></div>
 </div>
 <div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
-    inet 169.254.92.202  netmask 255.255.255.0  broadcast 10.48.65.255
-    inet6 fe80::241:8f:d3d0:e43b  prefixlen 64  scopeid 0x20&lt;link&gt;
-    ether 0e:23:90:e3:61:01  txqueuelen 1000  (Ethernet)
-    RX packets 483757  bytes 81480222 (77.7 MiB)
-    RX errors 0  dropped 0  overruns 0  frame 0
-    TX packets 5562  bytes 775511 (757.3 KiB)
-    TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-    device interrupt 38
-
-lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
-    inet 127.0.0.1  netmask 255.0.0.0
-    inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
-    loop  txqueuelen 1000  (Local Loopback)
-    RX packets 83  bytes 10176 (9.9 KiB)
-    RX errors 0  dropped 0  overruns 0  frame 0
-    TX packets 83  bytes 10176 (9.9 KiB)
-    TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div>
-<p>Step 2 - Testing Connectivity from Host PC</p>
-<p>Test network connectivity to the board from your host machine:</p>
-<div class="literal-block-wrapper docutils container" id="id41">
-<div class="code-block-caption"><span class="caption-number">Listing 4 </span><span class="caption-text">ping 169.254.92.202</span><a class="headerlink" href="#id41" title="Link to this code"></a></div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>  inet 169.254.92.202  netmask 255.255.255.0  broadcast 10.48.65.255
+  inet6 fe80::241:8f:d3d0:e43b  prefixlen 64  scopeid 0x20&lt;link&gt;
+  ether 0e:23:90:e3:61:01  txqueuelen 1000  (Ethernet)
+  RX packets 483757  bytes 81480222 (77.7 MiB)
+  RX errors 0  dropped 0  overruns 0  frame 0
+  TX packets 5562  bytes 775511 (757.3 KiB)
+  TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+  device interrupt 38
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>  inet 127.0.0.1  netmask 255.0.0.0
+  inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+  loop  txqueuelen 1000  (Local Loopback)
+  RX packets 83  bytes 10176 (9.9 KiB)
+  RX errors 0  dropped 0  overruns 0  frame 0
+  TX packets 83  bytes 10176 (9.9 KiB)
+  TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To check if the development board is reachable via LAN, you can use the <code class="docutils literal notranslate"><span class="pre">ping</span></code> command from a terminal or command prompt window, using the previously obtained IP address, as shown below:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ping<span class="w"> </span><span class="m">169</span>.254.92.202
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Pinging 169.254.92.202 with 32 bytes of data:
-Reply from 169.254.92.202: bytes=32 time=2ms TTL=64
-Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
-Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
-Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
-
-Ping statistics for 169.254.92.202:
-  Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-Approximate round trip times in milli-seconds:
-  Minimum = 1ms, Maximum = 2ms, Average = 1ms
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Pinging 169.254.92.202 with 32 bytes of data:
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Reply from 169.254.92.202: bytes=32 time=2ms TTL=64
+Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
+Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
+Reply from 169.254.92.202: bytes=32 time=1ms TTL=64
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Ping statistics for 169.254.92.202:
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>  Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Approximate round trip times in milli-seconds:
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>  Minimum = 1ms, Maximum = 2ms, Average = 1ms
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
 </section>
 <section id="evaluate-system">
-<h3><a class="toc-backref" href="#id52" role="doc-backlink">Evaluate System</a><a class="headerlink" href="#evaluate-system" title="Link to this heading"></a></h3>
-<p><strong>System Evaluation – regular SPI trigger configuration</strong></p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_trigger_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_trigger_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_trigger_1.png" style="width: 80%;" />
-</a>
-</figure>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_trigger_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_trigger_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_trigger_2.png" style="width: 80%;" />
-</a>
-</figure>
-<p><strong>Data Capture using Scopy 2.0 - Regular SPI controller</strong></p>
+<h2><a class="toc-backref" href="#id62" role="doc-backlink">Evaluate System</a><a class="headerlink" href="#evaluate-system" title="Link to this heading"></a></h2>
+<section id="environment-setup">
+<span id="repo-setup-label"></span><h3><a class="toc-backref" href="#id63" role="doc-backlink">Environment Setup</a><a class="headerlink" href="#environment-setup" title="Link to this heading"></a></h3>
+<p><strong>Setup the pyadi-iio Repository</strong></p>
+<p>First, connect to the Cora development board using PuTTY and create a workspace directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/media
+mkdir<span class="w"> </span>workshop
+<span class="nb">cd</span><span class="w"> </span>workshop/
+</pre></div>
+</div>
+<p>Clone the pyadi-iio repository and switch to the <strong>ad7984_demo</strong> branch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/pyadi-iio.git
+<span class="nb">cd</span><span class="w"> </span>pyadi-iio
+git<span class="w"> </span>checkout<span class="w"> </span>ad7984_demo
+</pre></div>
+</div>
+<p>After switching to the <strong>ad7984_demo</strong> branch, run the following command to install the required Python packages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+<p><strong>Regular SPI Trigger Configuration</strong></p>
+<p>Navigate to the workspace and create a bash script for configuring the regular SPI trigger:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/media/workshop
+touch<span class="w"> </span>tmr_conf_script.sh
+chmod<span class="w"> </span>+x<span class="w"> </span>tmr_conf_script.sh
+</pre></div>
+</div>
+<p>After creating the script, open it with a text editor and paste the following code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span><span class="w"> </span>Setting<span class="w"> </span>the<span class="w"> </span>sampling<span class="w"> </span>rate<span class="w"> </span>to<span class="w"> </span><span class="nv">$1</span>
+<span class="nb">cd</span><span class="w"> </span>/
+mkdir<span class="w"> </span>-p<span class="w"> </span>configfs
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span>mountpoint<span class="w"> </span>configfs
+<span class="k">then</span>
+<span class="w">   </span>mount<span class="w"> </span>-t<span class="w"> </span>configfs<span class="w"> </span>none<span class="w"> </span>configfs
+<span class="k">fi</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>configfs/iio/triggers/hrtimer/tmr0
+cat<span class="w"> </span>/sys/bus/iio/devices/trigger0/name
+<span class="nb">cd</span><span class="w"> </span>/sys/bus/iio/devices
+<span class="nb">echo</span><span class="w"> </span>tmr0<span class="w"> </span>&gt;<span class="w"> </span>iio<span class="se">\:</span>device0/trigger/current_trigger
+<span class="nb">echo</span><span class="w"> </span><span class="m">2048</span><span class="w"> </span>&gt;<span class="w"> </span>iio<span class="se">\:</span>device0/buffer/length
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span>&gt;<span class="w"> </span>trigger0/sampling_frequency
+<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>iio<span class="se">\:</span>device0/scan_elements/in_voltage0-voltage1_en
+<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>iio<span class="se">\:</span>device0/buffer/enable
+</pre></div>
+</div>
+<p>Run the script with the sampling rate as a parameter:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/media/workshop$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./tmr_conf_script.sh<span class="w"> </span><span class="m">10000</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Setting the sampling rate to 10000
+configfs is not a mountpoint
+tmr0
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
+<section id="system-evaluation-regular-spi-controller">
+<h3><a class="toc-backref" href="#id64" role="doc-backlink">System Evaluation - Regular SPI Controller</a><a class="headerlink" href="#system-evaluation-regular-spi-controller" title="Link to this heading"></a></h3>
+<p><strong>Data Capture using Scopy</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Board IP Address:</strong> The Cora Z7S board IP address is <strong>169.254.92.202</strong>
-(obtained from running <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> command in PuTTY terminal)</p>
+(previously obtained from running <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> command in PuTTY terminal)</p>
 </div>
-<figure class="align-center">
+<p>Scopy can be used to remotely connect to the Cora development board and display the data obtained from the ADC. To achieve this, go to the Home section in Scopy and add the device using the IP address of the development board, as shown below:</p>
+<figure class="align-center" id="id37">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/data_capture_scopy2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/data_capture_scopy2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/data_capture_scopy2.png" style="width: 80%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 35 </span><span class="caption-text">Scopy remote connection setup.</span><a class="headerlink" href="#id37" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<p><strong>Data capture using Scopy 2.0 - SPI controller</strong></p>
-<figure class="align-center">
+<p>After the device was found, click on Add Device and then Connect. Your device should appear as <strong>ADCPlugin</strong> in the list on the left side of the window, next to the M2K. Open the <strong>ADC-Time</strong> section, select the <strong>spi_clasic_ad7984</strong> channel and you should see the data obtained using the regular SPI transfers when you initialize a capture on the oscilloscope:</p>
+<figure class="align-center" id="id38">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_scopy.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_scopy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_scopy.png" style="width: 80%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 36 </span><span class="caption-text">Scopy data capture - regular SPI.</span><a class="headerlink" href="#id38" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<p><strong>System Evaluation - Python script</strong></p>
-<figure class="align-center">
+<p><strong>Data Capture using Python</strong></p>
+<p>To evaluate the performance of the SPI transfers, the <strong>ad7984_example.py</strong> Python script is provided:</p>
+<figure class="align-center" id="id39">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_script.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_script.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_script.png" style="width: 80%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 37 </span><span class="caption-text">Python test script.</span><a class="headerlink" href="#id39" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<p><strong>System Evaluation – Python from the FPGA board</strong></p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_fpga.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_fpga.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_fpga.png" style="width: 80%;" />
-</a>
-</figure>
-<p><strong>System Evaluation – Python Data Capture Results</strong></p>
-<figure class="align-center">
+<p>Navigate to the workshop folder and run the script with the following parameters:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/media/workshop/
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/media/workshop$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>pyadi-iio/examples/ad7984_example.py<span class="w"> </span>local:<span class="w"> </span><span class="m">0</span><span class="w"> </span>classic
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>WARNING: High-speed mode not enabled
+Raw data saved to: spi_clasic_ad7984_captured_data.txt
+Using sample rate: 10000.0 Hz for classic mode
+FFT analysis saved as: spi_clasic_ad7984_fft_analysis.jpg
+SNR: 39.615 dB, THD: -53.204 dBc, SFDR: 39.62 dBc
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>The result of the Python script is a FFT analysis of the input signal, saved as <strong>spi_clasic_ad7984_fft_analysis.jpg</strong> in the present directory. To create a copy of the resulted image, use the following command in a terminal window on your local machine, and, when prompted for the password, type <strong>analog</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>root@169.254.92.202:/media/workshop/spi_clasic_ad7984_fft_analysis.jpg<span class="w"> </span>spi_clasic_ad7984_fft_analysis.jpg
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure that the IP address and the path to the .jpg file match your setup.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">scp</span></code> command creates a copy of the .jpg file on the present working directory of your local machine, and it should look like the following image:</p>
+<figure class="align-center" id="id40">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_capture.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_capture.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_capture.png" style="width: 80%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 38 </span><span class="caption-text">FFT analysis - regular SPI.</span><a class="headerlink" href="#id40" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<p><strong>System Evaluation – Python from a remote machine - optional</strong></p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_1.png" style="width: 80%;" />
-</a>
-</figure>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spi_python_from_remote_2.png" style="width: 80%;" />
-</a>
-</figure>
-<p><strong>Data capture using Scopy 2.0 - SPI Engine</strong></p>
-<figure class="align-center">
+<p>Adittionaly, the Python script can also be executed from the local machine, using the IP of the Cora development board:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/spi_workshop$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>pyadi-iio/examples/ad7984_example.py<span class="w"> </span>ip:169.254.92.202<span class="w"> </span><span class="m">1</span><span class="w"> </span>classic
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>WARNING: High-speed mode not enabled
+Raw data saved to: spi_clasic_ad7984_captured_data.txt
+Using sample rate: 10000.0 Hz for classic mode
+FFT analysis saved as: spi_clasic_ad7984_fft_analysis.jpg
+SNR: 39.615 dB, THD: -53.204 dBc, SFDR: 39.62 dBc
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The pyadi-iio repository needs to be set up on the local machine, using the same <a class="reference internal" href="#repo-setup-label"><span class="std std-ref">steps presented before</span></a>. Make sure that the IP address and the paths match your setup.</p>
+</div>
+</section>
+<section id="system-evaluation-spi-engine">
+<h3><a class="toc-backref" href="#id65" role="doc-backlink">System Evaluation - SPI Engine</a><a class="headerlink" href="#system-evaluation-spi-engine" title="Link to this heading"></a></h3>
+<p><strong>Data Capture using Scopy</strong></p>
+<p>To visualize the data obtained using the SPI engine, move the EVAL-AD7984-PMDZ to the <strong>JA</strong> PMOD connector and select the <strong>spi_engine_ad7984</strong> channel in <strong>ADC-Time</strong> section, as shown in the image below:</p>
+<figure class="align-center" id="id41">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_scopy_spi_engine.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_scopy_spi_engine.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_scopy_spi_engine.png" style="width: 80%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 39 </span><span class="caption-text">Scopy data capture - SPI engine.</span><a class="headerlink" href="#id41" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<p><strong>System Evaluation – Python from the FPGA board</strong></p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_fpga_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_fpga_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_fpga_1.png" style="width: 80%;" />
-</a>
-</figure>
-<p><strong>System Evaluation – Python Data Capture Results</strong></p>
-<figure class="align-center">
+<p><strong>Data Capture using Python</strong></p>
+<p>To evaluate the performance of the SPI engine, run the <strong>ad7984_example.py</strong> script with the following parameters:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>/media/workshop$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>pyadi-iio/examples/ad7984_example.py<span class="w"> </span>local:<span class="w"> </span><span class="m">0</span><span class="w"> </span>engine
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Raw data saved to: spi_engine_ad7984_captured_data.txt
+Using sample rate: 1330000.0 Hz for engine mode
+FFT analysis saved as: spi_engine_ad7984_fft_analysis.jpg
+SNR: 70.394 dB, THD: -66.987 dBc, SFDR: 70.37 dBc
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Use the following command, with <strong>analog</strong> as password, to create a copy of <strong>spi_engine_ad7984_fft_analysis.jpg</strong> on your local machine:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>root@169.254.92.202:/media/workshop/spi_engine_ad7984_fft_analysis.jpg<span class="w"> </span>spi_engine_ad7984_fft_analysis.jpg
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure that the IP address and the path to the .jpg file match your setup.</p>
+</div>
+<p>The results obtained should resamble the image below:</p>
+<figure class="align-center" id="id42">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_fpga_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_fpga_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_fpga_2.png" style="width: 80%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 40 </span><span class="caption-text">FFT analysis - SPI engine.</span><a class="headerlink" href="#id42" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<p><strong>System Evaluation – Python from a remote machine - optional</strong></p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_remote_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_remote_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_spie_python_from_remote_1.png" style="width: 80%;" />
-</a>
-</figure>
-<p><strong>System Evaluation – Performance Results Comparison</strong></p>
+<p>Similar to the previous case, the Python script can be executed from the local machine, for the SPI engine scenario, as shown below:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/spi_workshop$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>pyadi-iio/examples/ad7984_example.py<span class="w"> </span>ip:169.254.92.202<span class="w"> </span><span class="m">1</span><span class="w"> </span>engine
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Raw data saved to: spi_engine_ad7984_captured_data.txt
+Using sample rate: 1330000.0 Hz for engine mode
+FFT analysis saved as: spi_engine_ad7984_fft_analysis.jpg
+SNR: 70.394 dB, THD: -66.987 dBc, SFDR: 70.37 dBc
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The pyadi-iio repository needs to be set up on the local machine, using the same <a class="reference internal" href="#repo-setup-label"><span class="std std-ref">steps presented before</span></a>. Make sure that the IP address and the paths match your setup.</p>
+</div>
+</section>
+<section id="performance-results-comparison">
+<h3><a class="toc-backref" href="#id66" role="doc-backlink">Performance Results Comparison</a><a class="headerlink" href="#performance-results-comparison" title="Link to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>SPI Engine Achieves Near-Datasheet Performance</strong></p>
 <p>Regular MCU SPI controllers achieve only <strong>15%</strong> of datasheet SNR, while SPI Engine
 delivers <strong>79%</strong> even at low sample rates and <strong>100%</strong> of THD at maximum rate.</p>
 </div>
-<figure class="align-center">
+<figure class="align-center" id="id43">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/measured_performance_comparison.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/measured_performance_comparison.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/measured_performance_comparison.png" style="width: 85%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 41 </span><span class="caption-text">Performance comparison between the regular SPI controller and SPI engine.</span><a class="headerlink" href="#id43" title="Link to this image"></a></p>
+</figcaption>
 </figure>
 <p><strong>Performance Analysis:</strong></p>
 <div class="table-wrapper colwidths-given docutils container">
@@ -1892,62 +2081,89 @@ delivers <strong>79%</strong> even at low sample rates and <strong>100%</strong>
 </tbody>
 </table>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p><strong>Key Takeaway</strong>: The SPI Engine framework enables precision converters to achieve
+<div class="admonition-key-takeaway admonition">
+<p class="admonition-title">Key Takeaway</p>
+<p>The SPI Engine framework enables precision converters to achieve
 their full datasheet specifications by providing deterministic, low-jitter timing
 that traditional MCU SPI controllers cannot deliver.</p>
 </div>
 <p><strong>Audio Signal Quality Comparison</strong></p>
-<figure class="align-center" id="id42">
+<figure class="align-center" id="id44">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/audio_comparison.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/audio_comparison.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/audio_comparison.png" style="width: 85%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 38 </span><span class="caption-text">Audio quality comparison: Regular SPI controller (left) shows distorted waveform with
+<p><span class="caption-number">Figure 42 </span><span class="caption-text">Audio quality comparison: Regular SPI controller (left) shows distorted waveform with
 visible noise and jitter artifacts, while SPI Engine (right) delivers clean,
-high-fidelity signal reproduction with minimal distortion.</span><a class="headerlink" href="#id42" title="Link to this image"></a></p>
+high-fidelity signal reproduction with minimal distortion.</span><a class="headerlink" href="#id44" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Debug Options  - Logic Analyzer from Scopy</strong></p>
-<figure class="align-center">
+<p>The M2K is used to probe the SPI signals on pins IO0-IO3 on the Cora Z7S development board. To visualize the signals, open the Logic Analyzer in Scopy and cofigure it as shown in the images below:</p>
+<figure class="align-center" id="id45">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_m2k_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_m2k_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_m2k_1.png" style="width: 80%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 43 </span><span class="caption-text">Scopy logic analyzer setup - 1.</span><a class="headerlink" href="#id45" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<figure class="align-center">
+<figure class="align-center" id="id46">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_m2k_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_m2k_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/system_evaluation_m2k_2.png" style="width: 80%;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 44 </span><span class="caption-text">Scopy logic analyzer setup - 2.</span><a class="headerlink" href="#id46" title="Link to this image"></a></p>
+</figcaption>
 </figure>
+<p>By default, the signals on pins IO0-IO3 correspond to the regular SPI scenario. To see the signals for the SPI engine scenario, you need to change the value of <strong>GPIO[34]</strong> to 1, following the steps in the figure below:</p>
+<figure class="align-center" id="id47">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/one_bit_adc_toggle.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/one_bit_adc_toggle.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/one_bit_adc_toggle.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 45 </span><span class="caption-text">Switching between debug signals.</span><a class="headerlink" href="#id47" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To visualize the SPI signals for the SPI engine scenario, a higher bandwidth oscilloscope must be used.</p>
+</div>
 <p><strong>Debug Options – Integrated Logic Analyzer (ILA)</strong></p>
-<figure class="align-center" id="id43">
+<p>For further debuging options, two ILA instances have been added to the design as shown in the diagram below:</p>
+<figure class="align-center" id="id48">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_ila.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_ila.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_ila.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 39 </span><span class="caption-text">Xilinx ILA configuration for capturing SPI Engine signals and debugging timing issues.</span><a class="headerlink" href="#id43" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 46 </span><span class="caption-text">Xilinx ILA configuration for capturing SPI Engine signals and debugging timing issues.</span><a class="headerlink" href="#id48" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>To use the ILA, open the Hardware Manage in Vivado and connect to the Cora development board. After you successfully connected to the target, configure the probes by clicking on <strong>Specify the probes file and refresh the device</strong>, navigating to <code class="docutils literal notranslate"><span class="pre">~/spi_workshop/hdl/projects/pulsar_adc_pmdz/coraz7s</span></code>, selecting <strong>debug_nets.ltx</strong>, and refreshing the device, as shown below:</p>
+<figure class="align-center" id="id49">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/ila_probe_specify.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/ila_probe_specify.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/ila_probe_specify.png" style="width: 85%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 47 </span><span class="caption-text">ILA probe setup.</span><a class="headerlink" href="#id49" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Comparison: Regular SPI vs. SPI Engine Waveforms</strong></p>
-<figure class="align-center" id="id44">
+<p>After successfully configuring the probes, <strong>hw_ila_1</strong> and <strong>hw_ila_2</strong> can be used to visualize the SPI signals for the regular and engine use cases. The images below show the comparison between the two cases, using ILA:</p>
+<figure class="align-center" id="id50">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_spi.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_spi.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_spi.png" style="width: 85%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 40 </span><span class="caption-text"><strong>Regular SPI Controller</strong>: Irregular timing, software-induced delays,
-visible jitter between conversions.</span><a class="headerlink" href="#id44" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 48 </span><span class="caption-text"><strong>Regular SPI Controller</strong>: Irregular timing, software-induced delays,
+visible jitter between conversions.</span><a class="headerlink" href="#id50" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id45">
+<figure class="align-center" id="id51">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_spie.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_spie.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshop_a_precision_converter_fpga_integration_journey/use_case_debug_options_spie.png" style="width: 85%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 41 </span><span class="caption-text"><strong>SPI Engine Controller</strong>: Precise timing, consistent conversion intervals,
-deterministic operation at full 1.33 MSPS rate.</span><a class="headerlink" href="#id45" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 49 </span><span class="caption-text"><strong>SPI Engine Controller</strong>: Precise timing, consistent conversion intervals,
+deterministic operation at full 1.33 MSPS rate.</span><a class="headerlink" href="#id51" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
+</section>
 <section id="conclusions">
-<h3><a class="toc-backref" href="#id53" role="doc-backlink">Conclusions</a><a class="headerlink" href="#conclusions" title="Link to this heading"></a></h3>
+<h2><a class="toc-backref" href="#id67" role="doc-backlink">Conclusions</a><a class="headerlink" href="#conclusions" title="Link to this heading"></a></h2>
 <div class="summary admonition">
 <p class="admonition-title">Workshop Summary</p>
 <p>Through this hands-on workshop, we demonstrated the dramatic performance
@@ -1972,8 +2188,7 @@ providing:</p>
 <li><p>Minimal CPU overhead (&lt;1%)</p></li>
 </ul>
 </li>
-<li><p><strong>Production-Ready Solution Stack</strong>: The complete COS (Customer Obsession through
-Software) open-source ecosystem provides HDL, Linux drivers, and tools for rapid
+<li><p><strong>Production-Ready Solution Stack</strong>: The complete open-source ecosystem provides HDL, Linux drivers, and tools for rapid
 development and deployment.</p></li>
 </ol>
 <p><strong>Performance Achieved:</strong></p>
@@ -1994,11 +2209,6 @@ development and deployment.</p></li>
 <p><strong>Questions? Community Support:</strong></p>
 <p>For technical questions and community discussions:</p>
 <p><a class="icon ez reference external" href="https://ez.analog.com/community/university-program" target="_blank">EngineerZone</a></p>
-<p><strong>Hardware Reference:</strong></p>
-<ul class="simple">
-<li><p>Cora Z7S: <a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development" target="_blank">https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development</a></p></li>
-</ul>
-</section>
 </section>
 </section>
 
