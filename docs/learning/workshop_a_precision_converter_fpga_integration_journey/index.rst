@@ -28,7 +28,7 @@ Before starting this workshop, you should have:
   - Software
 
     - Access to a Linux machine or `WSL <https://learn.microsoft.com/en-us/windows/wsl/install>`_
-    - `ADI Kupier Imager <https://github.com/analogdevicesinc/adi-kuiper-imager/releases>`_ or a similar tool for flashing an OS images onto a SD card
+    - `ADI Kuiper Imager <https://github.com/analogdevicesinc/adi-kuiper-imager/releases>`_ or a similar tool for flashing an OS images onto a SD card
     - PuTTY or a similar tool for serial comunication
     - `Scopy <https://github.com/analogdevicesinc/scopy/releases>`_ (if the lates release version is lower than 2.2.0, use `this link <https://github.com/analogdevicesinc/scopy/actions/runs/21665596082/artifacts/5371706838>`_ to download the required version)
     - `AMD Vivado <https://www.xilinx.com/support/download.html>`_
@@ -906,11 +906,11 @@ Now that you have the repositories set up, follow these guides to build the HDL 
 
 **Step 1: Prepare the SD Card**
 
-Use **ADI Kupier Imager** (or a similar tool) to flash the SD card with the latest image of **ADI Kupier Linux**.
+Use **ADI Kuiper Imager** (or a similar tool) to flash the SD card with the latest image of **ADI Kuiper Linux**.
 
 .. tip::
 
-   More information about obtaining the latest Kupier Linux image can be found `here <https://analogdevicesinc.github.io/adi-kuiper-gen/quick-start.html>`_.
+   Here you can find more information about obtaining the latest :external+adi-kuiper-gen:doc:`index` image.
 
 **Step 2: Build the HDL Project**
 
