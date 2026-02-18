@@ -1027,7 +1027,7 @@ Downloading the Firmware to the CN0359
 
     Download the latest release of ADuCM360_demo_cn0359 from
     :adi:`EVAL-ADICUP360`. Currently, Release 1.0 is available:
-    :download:`EVAL-ADICUP360 <ADuCM360_demo_cn0359.bin>`
+    :download:`EVAL-ADICUP360 <aducm360_demo_cn0359.bin>`
 
 3. Connect the J-Link debug probe to the USB port of your computer and
    to **J4** on the CN0359 evaluation board (using a 20-pin/10-pin JTAG/SWD
@@ -1172,7 +1172,7 @@ Rev A Source Code
 ~~~~~~~~~~~~~~~~~
 
 The source code for the CN0359 software can be downloaded from:
-:download:`EVAL-ADICUP360 <ADuCM360_demo_cn0359_reva.bin>`.
+:download:`EVAL-ADICUP360 <aducm360_demo_cn0359_reva.bin>`.
 
 ADuCM360_demo_cn0359_reva is a CrossCore project. Import the project in
 ADI CrossCore Embedded Studio to build and debug the code.
@@ -1184,7 +1184,7 @@ Rev B Source Code
 ~~~~~~~~~~~~~~~~~
 
 The source code for the CN0359 software can be downloaded from:
-:download:`EVAL-ADICUP360 <ADuCM360_demo_cn0359.bin>`.
+:download:`EVAL-ADICUP360 <aducm360_demo_cn0359.bin>`.
 
 ADuCM360_demo_cn0359 is a CrossCore project. Import the project in ADI
 CrossCore Embedded Studio to build and debug the code.
@@ -1453,7 +1453,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0359-EBZ Design and Integration File <cn0359-DesignSupport.zip>`
+   :download:`EVAL-CN0359-EBZ Design and Integration File <cn0359-designsupport.zip>`
 
    - Schematic
    - PCB Layout
@@ -1466,12 +1466,12 @@ Software Source Code
 EVAL-CN0359-EB1Z Rev B Files
 
 - :git-EVAL-ADICUP360:`Software Source Code <projects/ADuCM360_demo_cn0359>`
-- :download:`Software Binary Release 1.0 <ADuCM360_demo_cn0359.bin>`
+- :download:`Software Binary Release 1.0 <aducm360_demo_cn0359.bin>`
 
 EVAL-CN0359-EB1Z Rev A Files
 
 - :git-EVAL-ADICUP360:`Software Source Code <projects/ADuCM360_demo_cn0359_reva>`
-- :download:`Software Binary Release 1.0 <ADuCM360_demo_cn0359_reva.bin>`
+- :download:`Software Binary Release 1.0 <aducm360_demo_cn0359_reva.bin>`
 
 --------------
 

@@ -134,7 +134,7 @@ MAX32670 MCU Pin Map
 The pin map for the :adi:`MAX32670` is described in the table and its schematic diagram below.
 
 .. csv-table::
-   :file: MAX32670-MCU-Pin-Map.csv
+   :file: max32670-mcu-pin-map.csv
 
 .. figure:: max32670_mcu_pin_map.png
 

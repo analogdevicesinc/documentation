@@ -267,13 +267,13 @@ Components Pinout
 .. grid::
    :widths: 33% 33% 33%
 
-   .. figure:: SN74HC04N.png
+   .. figure:: sn74hc04n.png
       :width: 300
       :alt: SN74HC04N
 
       SN74HC04N
 
-   .. figure:: SN74HC08N.png
+   .. figure:: sn74hc08n.png
       :width: 300
       :alt: SN74HC08N
 
@@ -319,7 +319,7 @@ Steps:
 • Implement a logical OR function using SN74HC32N part from the kit
 • Pinout:
 
-.. figure:: SN74HC32N.png
+.. figure:: sn74hc32n.png
    :align: center
    :width: 300
 
@@ -438,20 +438,20 @@ workshop, a slide deck is provided here:
 
 .. admonition:: Download
 
-   :download:`Introduction to Electronics Slide Deck <ElectronicsBasics_nov24.pdf>`
+   :download:`Introduction to Electronics Slide Deck <electronicsbasics_nov24.pdf>`
 
 A complete booklet of the hands-on activity is also provided, as a companion to
 following the tutorial yourself:
 
 .. admonition:: Download
 
-  :download:`Introduction to Electronics Booklet <Ebasics Booklet.pdf>`
+  :download:`Introduction to Electronics Booklet <ebasics booklet.pdf>`
 
 Comma Separated Values file used for generating the base step voltage needed for the Transistor Characteristic demo:
 
 .. admonition:: Download
 
-  :download:`Base Voltage Values <BaseVoltage.csv>`
+  :download:`Base Voltage Values <basevoltage.csv>`
 
 Takeaways
 ~~~~~~~~~

@@ -40,7 +40,7 @@ The following list of equipment are not provided as part of the kit, but are req
 - Digital power supply (such as the Keysight e3631A 0V to 6V power supply)
 - 2x wall plugs (to plug USB cable from DC2472A to provide power)
 
-.. figure:: Kit_Contents.png
+.. figure:: kit_contents.png
    :align: center
    :width: 600px
 
@@ -98,7 +98,7 @@ Battery Cell Monitoring
 
 **Setup**
 
-.. figure:: ADBMS6830_Setup.png
+.. figure:: adbms6830_setup.png
      :align: center
      :width: 400 px
 
