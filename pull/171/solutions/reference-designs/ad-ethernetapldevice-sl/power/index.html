@@ -690,7 +690,7 @@ reference design with DIN-B form factor), we can slightly compromise
 the efficiency but making sure first that it won’t violate the line
 current ceiling it can pull to the <a class="icon adi reference external" href="https://www.analog.com/LT8440" target="_blank">LT8440</a>.</p>
 <figure class="align-default" id="id3">
-<img alt="Source to Load Simplified 2-WISE/APL Port Connection" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/Connection.png" />
+<img alt="Source to Load Simplified 2-WISE/APL Port Connection" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/connection.png" />
 <figcaption>
 <p><span class="caption-number">Figure 1 </span><span class="caption-text">Source to Load Simplified 2-WISE/APL Port Connection</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
@@ -712,7 +712,7 @@ is the summation of I_LOADP and I_SHUNT shown in Equation 1.</p>
 <div><p>I_LINEP = I_LOADP + I_SHUNTP (1)</p>
 </div></blockquote>
 <figure class="align-default" id="id4">
-<img alt="Simplified Partial Circuit of LT8440" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/LT8440-simplify.png" />
+<img alt="Simplified Partial Circuit of LT8440" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/lt8440-simplify.png" />
 <figcaption>
 <p><span class="caption-number">Figure 2 </span><span class="caption-text">Simplified Partial Circuit of LT8440</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
@@ -834,7 +834,7 @@ work as intended.</p>
 <p>Figure 3 is the designed configuration for AD-EthernetAPLDevice-SL
 to pass the Intrinsic safety design certification.</p>
 <figure class="align-default" id="id7">
-<img alt="Required Frontend Design with Large Effective Capacitance &amp; Inductance on the Load Side" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/LT8440-connection.png" />
+<img alt="Required Frontend Design with Large Effective Capacitance &amp; Inductance on the Load Side" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/lt8440-connection.png" />
 <figcaption>
 <p><span class="caption-number">Figure 3 </span><span class="caption-text">Required Frontend Design with Large Effective Capacitance &amp;
 Inductance on the Load Side</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
@@ -1084,7 +1084,7 @@ Consumption section.</p>
 the entire Power Tree, the following curves are captured at ambient
 temperature of 25 degrees Celsius (typical).</p>
 <figure class="align-default" id="id10">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/LOAD_P.png"><img alt="LOAD_P (Load Side) and Shunt Parameters" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/LOAD_P.png" style="width: 600px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/load_p.png"><img alt="LOAD_P (Load Side) and Shunt Parameters" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/load_p.png" style="width: 600px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 5 </span><span class="caption-text">LOAD_P (Load Side) and Shunt Parameters</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
@@ -1105,7 +1105,7 @@ at 12.7V line voltage which is approximately 139.46mW.</p>
 <p>The shunt and load side power are small enough to not violate the APL
 limit when adding the two parameters.</p>
 <figure class="align-default" id="id11">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/Efficiency.png"><img alt="Efficiency and Current of Power Tree" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/Efficiency.png" style="width: 600px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/efficiency.png"><img alt="Efficiency and Current of Power Tree" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/efficiency.png" style="width: 600px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 6 </span><span class="caption-text">Efficiency and Current of Power Tree</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
@@ -1127,7 +1127,7 @@ current and power, but those two parameters must not exceed what is
 indicated on the APL requirements like the 55.56mA maximum current at
 9V, and the 500mW limit for the entire line voltage range.</p>
 <figure class="align-default" id="id12">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/Power_performance.png"><img alt="LINE_P Power Performance at Normal Operation, Shorted and Opened Load" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/Power_performance.png" style="width: 600px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/power_performance.png"><img alt="LINE_P Power Performance at Normal Operation, Shorted and Opened Load" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/power_performance.png" style="width: 600px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 7 </span><span class="caption-text">LINE_P Power Performance at Normal Operation, Shorted and
@@ -1150,7 +1150,7 @@ faulted/shorted, it did not exceed the maximum die power rating of
 therefore the LT8440 is doing its function as a power conditioner at
 normal operation and as a power limiter during fault scenario.</p>
 <figure class="align-default" id="id13">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/Current_performance.png"><img alt="LINE_P Current Performance at Normal Operation, Shorted and Opened Load" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/Current_performance.png" style="width: 600px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/current_performance.png"><img alt="LINE_P Current Performance at Normal Operation, Shorted and Opened Load" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/power/current_performance.png" style="width: 600px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 8 </span><span class="caption-text">LINE_P Current Performance at Normal Operation, Shorted and

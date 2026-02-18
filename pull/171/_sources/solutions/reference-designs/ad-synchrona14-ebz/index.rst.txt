@@ -605,6 +605,6 @@ Design and Integration Files
 
 .. admonition:: Download
 
-  | :download:`Schematic AD-SYNCHRONA14-EBZ.pdf`
-  | :download:`Schematic ADD-ON Board.pdf`
+  | :download:`schematic ad-synchrona14-ebz.pdf`
+  | :download:`schematic add-on board.pdf`
 

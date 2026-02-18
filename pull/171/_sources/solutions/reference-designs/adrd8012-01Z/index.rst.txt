@@ -6,7 +6,7 @@ FPGA-based 8x GMSL to 10 Gb Ethernet Adapter.
 Overview
 ---------
 
-.. figure:: ADRD8012-01Z_ANGLE-evaluation-board.jpg
+.. figure:: adrd8012-01z_angle-evaluation-board.jpg
    :width: 600 px
 
    ADRD8012-01Z GMSL Board
@@ -26,7 +26,7 @@ is critical. Some of the main features and benefits include:
 -  Open-source embedded Linux software and FPGA design
 -  Advanced camera triggering functions and control features
 
-.. figure:: ADRD8012-01Z_01-block-diagram.png
+.. figure:: adrd8012-01z_01-block-diagram.png
    :width: 800 px
 
    ADRD8012-01Z Simplified Block Diagram

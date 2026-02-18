@@ -123,7 +123,7 @@ microcontrollers with ADI components, creating a seamless integration experience
 
 **COS IP Library**
 
-.. figure:: section_of_the_IPs_supported.png
+.. figure:: section_of_the_ips_supported.png
    :align: center
    :width: 85%
 

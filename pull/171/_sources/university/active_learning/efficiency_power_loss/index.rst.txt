@@ -25,7 +25,7 @@ workshops.
 
 .. ADMONITION:: Download
 
-   :download:`Efficiency and Power Loss Slide Deck <Workshop_Efficiency_Power_Loss.pptx>`
+   :download:`Efficiency and Power Loss Slide Deck <workshop_efficiency_power_loss.pptx>`
 
 Background:
 -----------
@@ -56,7 +56,7 @@ pillow found its way on top of it as shown in
 
 .. _fig-cozy_laptop_charger:
 
-.. figure:: Cozy_Laptop_Charger.jpg
+.. figure:: cozy_laptop_charger.jpg
    :align: center
    :width: 600
 
@@ -122,7 +122,7 @@ common T0-220 package, with a tab for mounting to a heat sink as shown in
 
 .. _fig-lt3080_pinout:
 
-.. figure:: wiki_LT3080_pinout.png
+.. figure:: wiki_lt3080_pinout.png
 
    LT3080 package, pinout, thermal resistance
 
@@ -209,7 +209,7 @@ running a DC operating point simulation.
 
 .. _fig-1w_temp_rise:
 
-.. figure:: LT3080_1W_temp_rise_sch.png
+.. figure:: lt3080_1w_temp_rise_sch.png
 
    Electrical model of thermal resistance, 1W dissipation.
 
@@ -223,7 +223,7 @@ up to the maximum junction of 125°C, with no safety margin. This is shown in
 
 .. _fig-2w5_temp_rise:
 
-.. figure:: LT3080_2W5_temp_rise_sch.png
+.. figure:: lt3080_2w5_temp_rise_sch.png
 
    Electrical model of thermal resistance, 2.5W dissipation.
 
@@ -240,7 +240,7 @@ package:
 
 .. _fig-TO-220_thermals:
 
-.. figure:: wiki_TO-220_thermals.png
+.. figure:: wiki_to-220_thermals.png
 
    Table 5 from LT3080 datasheet
 
@@ -294,7 +294,7 @@ sink's thermal resistance, shown in :numref:`fig-lt3080_2w5_temp_rise_w_sink`:
 
 .. _fig-lt3080_2w5_temp_rise_w_sink:
 
-.. figure:: wiki_LT3080_2W5_temp_rise_w_sink_sch.png
+.. figure:: wiki_lt3080_2w5_temp_rise_w_sink_sch.png
 
    Electrical model of thermal resistance, 2.5W dissipation with heat sink.
 
@@ -309,7 +309,7 @@ Refer to the circuit shown in :numref:`fig-LT3080_sch` below.
 
 .. _fig-LT3080_sch:
 
-.. figure:: LT3080_schematic.png
+.. figure:: lt3080_schematic.png
 
    LT3080 schematic
 
@@ -320,7 +320,7 @@ efficiency.
 
 .. _fig-lt3080_efficiency:
 
-.. figure:: LT3080_efficiency.png
+.. figure:: lt3080_efficiency.png
    :align: center
    :width: 600
 
@@ -363,7 +363,7 @@ with a multimeter. Connections are shown in :numref:`fig-LT3080_breadboard`.
 
 .. _fig-LT3080_breadboard:
 
-.. figure:: LT3080_breadboard.jpg
+.. figure:: lt3080_breadboard.jpg
    :align: center
    :width: 800
 
@@ -376,7 +376,7 @@ temperature sensor provides an easy way to do this; schematic shown in
 
 .. _fig-AD592_circuit:
 
-.. figure:: AD592_circuit.png
+.. figure:: ad592_circuit.png
 
    AD592 Thermometer Circuit
 
@@ -385,7 +385,7 @@ be used to provide extra support as shown in :numref:`fig-AD592_temp_sensor`.
 
 .. _fig-AD592_temp_sensor:
 
-.. figure:: AD592_temperature_sensor.jpg
+.. figure:: ad592_temperature_sensor.jpg
    :align: center
    :width: 600
 
@@ -397,7 +397,7 @@ thermal grease between the sensor and top of the LT3080 package.
 
 .. _fig-AD592_mounting:
 
-.. figure:: AD592_mounting.jpg
+.. figure:: ad592_mounting.jpg
    :align: center
    :width: 600
 
@@ -480,7 +480,7 @@ output voltage to be adjusted from 3V to 15V.
 
 .. _fig-LTM8067_bob:
 
-.. figure:: LTM8067_bob.png
+.. figure:: ltm8067_bob.png
 
    LTM8067 Breakout Board
 
@@ -499,7 +499,7 @@ circumstances.
 
 .. _fig-LTM8067_block_diagram:
 
-.. figure:: LTM8067_block_diagram.png
+.. figure:: ltm8067_block_diagram.png
 
    LTM8067 Block Diagram.
 
@@ -517,7 +517,7 @@ voltage as shown in :numref:`fig-LTM8067_iout_vs_vin`:
 
 .. _fig-LTM8067_iout_vs_vin:
 
-.. figure:: LTM8067_iout_vs_vin.png
+.. figure:: ltm8067_iout_vs_vin.png
 
    LTM8067 Output Current vs. Input Voltage
 
@@ -528,7 +528,7 @@ as shown in :numref:`fig-ltm8067_schematic`.
 
 .. _fig-ltm8067_schematic:
 
-.. figure:: LTM8067_schematic.png
+.. figure:: ltm8067_schematic.png
 
    LTM8067 Schematic
 
@@ -543,7 +543,7 @@ is drawn in "chunks" from the source, due to switching nature of the module.
 
 .. _fig-ltm8067_waveform:
 
-.. figure:: LTM8067_waveform.png
+.. figure:: ltm8067_waveform.png
    :align: center
    :width: 600
 
@@ -557,7 +557,7 @@ shown in :numref:`fig-ltm8067_efficiency` below
 
 .. _fig-ltm8067_efficiency:
 
-.. figure:: LTM8067_efficiency.png
+.. figure:: ltm8067_efficiency.png
 
    LTM8067 Efficiency(%) vs Input Voltage Simulation that MUST be Compared to
    Datasheet Curves
@@ -580,7 +580,7 @@ As with the LT3080 circuit, construction details matter, refer to
 
 .. _fig-LTM8067_breadboard:
 
-.. figure:: LTM8067_breadboard.jpg
+.. figure:: ltm8067_breadboard.jpg
    :width: 600
 
    LTM8067 Construction and Connection Details

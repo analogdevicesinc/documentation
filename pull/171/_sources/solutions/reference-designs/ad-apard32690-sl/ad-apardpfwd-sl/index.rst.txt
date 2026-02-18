@@ -9,7 +9,7 @@ AD-APARDPFW-SL
 General Description
 -------------------
 
-.. figure:: AD-APARDPFW-SL_top-angle-evaluation-board.png
+.. figure:: ad-apardpfw-sl_top-angle-evaluation-board.png
    :width: 475 px
    :align: right
 
@@ -78,7 +78,7 @@ To select which SPI protocol to use, the **JP3** solder jumper should be
 configured as follows:
 
 .. csv-table::
-   :file: ADIN2111_SPI_Selection.csv
+   :file: adin2111_spi_selection.csv
 
 The :adi:`ADIN2111` supports software power-down after power-up or reset for each
 port independently. To utilize this feature:
@@ -88,7 +88,7 @@ port independently. To utilize this feature:
   jumper with the following settings
 
 .. csv-table::
-   :file: ADIN2111_Power_Down_Selection.csv
+   :file: adin2111_power_down_selection.csv
 
 Secondary Side
 ~~~~~~~~~~~~~~
@@ -112,7 +112,7 @@ class.
    SPoE PD Power Class Jumpers
 
 .. csv-table::
-   :file: SPoE_PD_Power_Class_Selection.csv
+   :file: spoe_pd_power_class_selection.csv
 
 .. warning::
 
@@ -291,7 +291,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-  :download:`AD-APARDPFW-SL Design & Integration Files<AD-APARDPFW-SL-designsupport.zip>`
+  :download:`AD-APARDPFW-SL Design & Integration Files<ad-apardpfw-sl-designsupport.zip>`
 
   - Schematics
   - PCB Layout

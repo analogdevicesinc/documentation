@@ -560,7 +560,7 @@ switch, there are mandatory power-up requirements:</p>
 <p>More details can be found in APL Port Profile Specification or the
 IEC TS 63444 standard.</p>
 <figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Power-up.png"><img alt="Illustrative Current Step Characteristics During Power-up" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Power-up.png" style="width: 600px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/power-up.png"><img alt="Illustrative Current Step Characteristics During Power-up" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/power-up.png" style="width: 600px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 1 </span><span class="caption-text">Illustrative Current Step Characteristics During Power-up</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
@@ -581,7 +581,7 @@ the minimum or threshold/reset voltages of the three main supply
 pins of MAX32690: VRST(VDDIOH_MIN) = 1.71V, VRST(VDDIO_MIN) = 1.71V
 and VCORE(MIN) = 1.05V.</p>
 <div class="clear-both"></div><figure class="align-default" id="id3">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/MCU_sequence.png"><img alt="Power Up and Power Down Requirements of MAX32690" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/MCU_sequence.png" style="width: 600px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/mcu_sequence.png"><img alt="Power Up and Power Down Requirements of MAX32690" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/mcu_sequence.png" style="width: 600px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 2 </span><span class="caption-text">Power Up and Power Down Requirements of MAX32690</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
@@ -596,7 +596,7 @@ failing the charge requirement on the spike from the large peak
 current it might generate, and may cause other failures on the
 reference design.</p>
 <figure class="align-default" id="id4">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Hot_input1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Hot_input1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Hot_input1.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/hot_input1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/hot_input1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/hot_input1.png" style="width: 700px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 3 </span><span class="caption-text">Hot Input LINE_P Current Capture w/ REG_3V5, SUP_3V3, ISO_3V3
@@ -624,7 +624,7 @@ never exceed 55.56mA. The reference design has passed the APL port
 profile current step characteristics requirement for start-up during
 hot-plug scenario.</p>
 <figure class="align-default" id="id5">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Hot_input2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Hot_input2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Hot_input2.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/hot_input2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/hot_input2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/hot_input2.png" style="width: 700px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 4 </span><span class="caption-text">Hot Input LINE_P Current Capture w/ REG_3V5, LINE_P, LOAD_P Voltages</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
@@ -656,14 +656,14 @@ the time distance between 1V8 and 1V1 is 3.2ms. The sequence is in
 correct order for start-up, which is 3V3 first, 1V8 second and 1V1
 third or last.</p>
 <figure class="align-default" id="id7">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Hot-Input3.png"><img alt="Hot Input Power-up Sequence of 3V3, 1V8 and 1V1" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Hot-Input3.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/hot-input3.png"><img alt="Hot Input Power-up Sequence of 3V3, 1V8 and 1V1" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/hot-input3.png" style="width: 700px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 6 </span><span class="caption-text">Hot Input Power-up Sequence of 3V3, 1V8 and 1V1</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id8">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Zoom_hot_input3.png"><img alt="Zoomed Power-up Sequence for 1V8 and 1V1" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/Zoom_hot_input3.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/zoom_hot_input3.png"><img alt="Zoomed Power-up Sequence for 1V8 and 1V1" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main-2/docs/solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/zoom_hot_input3.png" style="width: 700px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 7 </span><span class="caption-text">Zoomed Power-up Sequence for 1V8 and 1V1</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>

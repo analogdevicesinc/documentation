@@ -17,7 +17,7 @@ Schematic, PCB Layout, Bill of Materials
 
         Note that the RF transformers used as baluns on 
         the Rev A board are Mini Circuits 
-        :download:`TCM1-63AX+ <TCM1-63AX+.pdf>`. They
+        :download:`TCM1-63AX+ <tcm1-63ax+.pdf>`. They
         are rated for an operating frequency between 
         10 MHz and 6 GHz.
 
