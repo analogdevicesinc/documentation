@@ -102,7 +102,7 @@ workshop, a slide deck is provided here:
 
 .. ADMONITION:: Download
 
-   :download:`Tools for Low-Speed Mixed Signal System Design Slide Deck <Tools_for_low_speed_ms_workshop.pptx>`
+   :download:`Tools for Low-Speed Mixed Signal System Design Slide Deck <tools_for_low_speed_ms_workshop.pptx>`
 
 A complete video run-through is also provided, either as a companion to
 following the tutorial yourself, or to practice before presenting as a
