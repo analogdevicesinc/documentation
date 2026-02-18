@@ -610,7 +610,7 @@ Content on this topic
 </li>
 <li><dl class="simple">
 <dt>Either 1k series resistors, or 2k/3k attenuators between the M2k and AD4080</dt><dd><ul>
-<li><p><a class="icon link reference external" href="https://github.com/trupples/ftc2024-ad4080-addon/tree/main/minimal" target="_blank">Design files for a minimal attenuator / filter board used in initial worshop</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/trupples/ftc2024-ad4080-addon/tree/main/minimal" target="_blank">Design files for a minimal attenuator / filter board used in initial workshop</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -673,7 +673,7 @@ Content on this topic
 <p class="admonition-title">Todo</p>
 <p>Re-host code and setup scripts, perhaps in the analogdevicesinc/education_tools repo.</p>
 </div>
-<p>Open a termial and run the following commands:</p>
+<p>Open a terminal and run the following commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">cristina</span><span class="o">-</span><span class="n">suteu</span><span class="o">/</span><span class="n">ftc24</span><span class="o">-</span><span class="n">ws</span><span class="o">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">ftc24</span><span class="o">-</span><span class="n">ws</span>
 <span class="n">sudo</span> <span class="o">./</span><span class="n">workshopsetup</span><span class="o">.</span><span class="n">sh</span>
@@ -693,7 +693,7 @@ from the task bar:</p>
 <p>There are three IIO contexts in our setup:
 - The Raspberry Pi itself, whose backend is local. It has two IIO devices: an internal temperature sensor and a supply voltage monitor
 - The ST Nucleo-H563ZI,whose backend is serial. It has one IIO device: the AD4080
-- The ADALM2000, whose backend is either USB or netowrk. It has several IIO devices: the XADC housekeeping ADCs on the FPGA, the AD9963 ADC/DAC, and custom peripherals (triggering, waveform generation, DMAs) in the FPGA.</p>
+- The ADALM2000, whose backend is either USB or network. It has several IIO devices: the XADC housekeeping ADCs on the FPGA, the AD9963 ADC/DAC, and custom peripherals (triggering, waveform generation, DMAs) in the FPGA.</p>
 <p>Let’s use the <code class="docutils literal notranslate"><span class="pre">iio_info</span></code> utility to display information about…</p>
 <p>…the <code class="docutils literal notranslate"><span class="pre">local:</span></code> context (raspberry pi cpu_thermal):</p>
 <blockquote>
@@ -763,7 +763,7 @@ from the task bar:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>The iio_info utility is handy for debugging setups, making sure contexts are available, and checking that devices are recognized. There are other command line utilities for reading and writing individual attributtes, reading and writing data to DMA buffers, but they’re not very convenient for interactive use.</p>
+<p>The iio_info utility is handy for debugging setups, making sure contexts are available, and checking that devices are recognized. There are other command line utilities for reading and writing individual attributes, reading and writing data to DMA buffers, but they’re not very convenient for interactive use.</p>
 </section>
 </section>
 <section id="exercise-2-scopy-2-0">
@@ -829,7 +829,7 @@ version.</p>
 </section>
 <section id="exercise-3-python-and-the-thonny-ide">
 <h2>Exercise 3: Python and the Thonny IDE<a class="headerlink" href="#exercise-3-python-and-the-thonny-ide" title="Link to this heading"></a></h2>
-<p>Most examples in this workshop are Python scripts. Thonny is a Python IDE and will allow you to edit and run them easily. Launch Thony from the start menu:</p>
+<p>Most examples in this workshop are Python scripts. Thonny is a Python IDE and will allow you to edit and run them easily. Launch Thonny from the start menu:</p>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/sw_infrastructure/thonny_open.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/sw_infrastructure/thonny_open.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/sw_infrastructure/thonny_open.png" style="width: 20em;" />
 </a>
 </section>
@@ -843,7 +843,7 @@ and click Run:</p>
 <section id="performance-metrics-with-genalyzer">
 <h2>Performance metrics with Genalyzer<a class="headerlink" href="#performance-metrics-with-genalyzer" title="Link to this heading"></a></h2>
 <p>Stop the M2k waveform generator and close Scopy, because this demo will generate
-a signal programaticaly. In Thonny, load
+a signal programmatically. In Thonny, load
 <strong>Desktop/ftc24-ws/hello_genalyzer/m2k_source_ad4080_sink.py</strong>
 and Run:</p>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/sw_infrastructure/m2k_source_ad4080_sink.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/sw_infrastructure/m2k_source_ad4080_sink.png" />
