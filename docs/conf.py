@@ -1,8 +1,6 @@
 # -- Import setup -------------------------------------------------------------
 
 from os import path
-import sys
-sys.path.insert(0, path.abspath('ext'))
 
 # -- Project information -----------------------------------------------------
 
