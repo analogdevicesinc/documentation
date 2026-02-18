@@ -226,14 +226,14 @@ workshop, a slide deck is provided here:
 
 .. admonition:: Download
 
-   :download:`Software Defined Instrumentation Slide Deck <SDI_Workshop_2023.pptx>`
+   :download:`Software Defined Instrumentation Slide Deck <sdi_workshop_2023.pptx>`
 
 A complete booklet of the hands-on activity is also provided, as a companion to
 following the tutorial yourself:
 
 .. admonition:: Download
 
-  :download:`Software Defined Instrumentation Booklet <SDI_Booklet.docx>`
+  :download:`Software Defined Instrumentation Booklet <sdi_booklet.docx>`
 
 
 Takeaways

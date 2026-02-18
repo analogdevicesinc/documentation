@@ -70,7 +70,7 @@ class.
    SPoE PD Power Class Jumpers
 
 .. csv-table::
-   :file: SPoE_PD_Power_Class_Selection.csv
+   :file: spoe_pd_power_class_selection.csv
 
 .. warning::
 
@@ -250,7 +250,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-  :download:`AD-APARDSPOE-SL Design & Integration Files <AD-APARDSPOE-SL-designsupport.zip>`
+  :download:`AD-APARDSPOE-SL Design & Integration Files <ad-apardspoe-sl-designsupport.zip>`
 
   - Schematics
   - PCB Layout

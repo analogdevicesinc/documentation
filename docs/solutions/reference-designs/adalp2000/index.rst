@@ -181,11 +181,11 @@ Kit Contents
 |    :height: 250 px       |             |                |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: therm.jpg    | B57164K103J | 10 kΩ Thermist\| :download:`Datasheet     |
-|    :width: 250 px        |             | or 5mm lead    | <K164-1317145.pdf>`      |
+|    :width: 250 px        |             | or 5mm lead    | <k164-1317145.pdf>`      |
 |                          |             | coated disk    |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: power-r.jpg  | SQP10AJB-6R2| 6.2 Ω 10W Power| :download:`Datasheet     |
-|    :width: 250 px        |             | Resistor Axial | <YAGEO-SQP_NSP.pdf>`     |
+|    :width: 250 px        |             | Resistor Axial | <yageo-sqp_nsp.pdf>`     |
 |                          |             | Cement Link    |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: pots.png     | * 3386C-1-5\| * Single Turn  | :download:`Datasheet     |
@@ -221,22 +221,22 @@ Kit Contents
 |                          |             | Marking: TIP31 |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: tip32.jpg    | TIP32CFS    | PNP Epitaxial  | :download:`Datasheet     |
-|    :width: 250 px        |             | Transistor     | <TIP32C-890156.pdf>`     |
+|    :width: 250 px        |             | Transistor     | <tip32c-890156.pdf>`     |
 |                          |             | TO-220 Link    |                          |
 |                          |             | Marking: TIP32 |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: zvn2110a.jpg | ZVN2110A    | N-Channel Enha\| :download:`Datasheet     |
-|    :width: 250 px        |             | ncement FET    | <ZVN2110A.pdf>`          |
+|    :width: 250 px        |             | ncement FET    | <zvn2110a.pdf>`          |
 |                          |             | TO-92 Link     |                          |
 |                          |             | Marking: ZVN211|                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: zvn3310.jpg  | ZVN3310     | N-Channel Enha\| :download:`Datasheet     |
-|    :width: 250 px        |             | ncement Transi\| <ZVN3310A.pdf>`          |
+|    :width: 250 px        |             | ncement Transi\| <zvn3310a.pdf>`          |
 |                          |             | stor TO-92 Link|                          |
 |                          |             | Marking: ZVN211|                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: zvp2110a.jpg | ZVP2110A    | P-Channel Enha\| :download:`Datasheet     |
-|    :width: 250 px        |             | ncement FET    | <ZVP2110A.pdf>`          |
+|    :width: 250 px        |             | ncement FET    | <zvp2110a.pdf>`          |
 |                          |             | TO-92 Link     |                          |
 |                          |             | Marking: ZVP211|                          |
 +--------------------------+-------------+----------------+--------------------------+
@@ -245,7 +245,7 @@ Kit Contents
 |                          | , Green)    |                |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: qed-123.jpg  | QED-123     | Infrared LED   | :download:`Datasheet     |
-|    :width: 250 px        |             | T-1 3/4        | <QED123-D.pdf>`          |
+|    :width: 250 px        |             | T-1 3/4        | <qed123-d.pdf>`          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: qsd123.jpg   | QSD123      | Infrared Photo | :download:`Datasheet     |
 |    :width: 250 px        |             | Transistor T-1 | <2287891.pdf>`           |
@@ -271,7 +271,7 @@ Kit Contents
 |                          |             | Link           |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: qsc114.jpg   | OP999       | photodiode     | :download:`Datasheet     |
-|    :width: 250 px        |             | T-1¾           | <OP999-TT.pdf>`          |
+|    :width: 250 px        |             | T-1¾           | <op999-tt.pdf>`          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: inductors.png| * RFB0807-1\| * 1uH Inductor | :download:`Datasheet     |
 |    :width: 250 px        |   R0L       |   5mm radial   | <rfb.pdf>`               |

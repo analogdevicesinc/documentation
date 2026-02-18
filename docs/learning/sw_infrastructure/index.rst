@@ -39,7 +39,7 @@ This tutorial is also designed to be presented as a live, hands-on workshop; a s
 
 .. ADMONITION:: Download
 
-   :download:`Slide Deck: ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors <ADI_Software_Infrastructure_for_ADCs_DACs_Sensors.pptx>`
+   :download:`Slide Deck: ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors <adi_software_infrastructure_for_adcs_dacs_sensors.pptx>`
 
 A complete video run-through will also be provided, either as a companion to following the tutorial yourself, or to practice before presenting as a hands-on workshop. This video is a placeholder for the time being, but many of the concepts apply directly to this workshop:
 

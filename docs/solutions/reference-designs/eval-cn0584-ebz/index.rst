@@ -809,7 +809,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0584-EBZ Design & Integration Files<CN0584-DesignSupport.zip>`
+   :download:`EVAL-CN0584-EBZ Design & Integration Files<cn0584-designsupport.zip>`
 
       - Schematics
       - PCB Layout

@@ -135,7 +135,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
- :download:`AD-T1LUSB2.0-EBZ Design Support Package <AD-T1LUSB2.0-EBZ-Design-Support-Package.zip>`
+ :download:`AD-T1LUSB2.0-EBZ Design Support Package <ad-t1lusb2.0-ebz-design-support-package.zip>`
 
  - Schematic
  - PCB Layout

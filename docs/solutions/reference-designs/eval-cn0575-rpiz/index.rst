@@ -102,7 +102,7 @@ class.
    SPoE PD Power Class Jumpers
 
 .. csv-table::
-   :file: SPoE_PD_Power_Class_Selection.csv
+   :file: spoe_pd_power_class_selection.csv
 
 The :adi:`EVAL-CN0575-RPIZ <CN0575>` was designed and evaluated for PD Classes
 12 and 13. However, Classes 10 and 11 may still be
@@ -141,7 +141,7 @@ Refer to the table below on setting the **JP3** jumper to enable/disable the
 software power-down feature:
 
 .. csv-table::
-   :file: JP3-Setting.csv
+   :file: jp3-setting.csv
 
 The :adi:`ADIN1110` supports both generic SPI and the OPEN
 Alliance SPI protocol in its communication. Refer to the table below on
@@ -166,7 +166,7 @@ If there is a need to reassign the :adi:`ADT75` address, refer to the
 following table:
 
 .. csv-table::
-  :file: I2C-Bus-Address-Selection.csv
+  :file: i2c-bus-address-selection.csv
 
 Optional GPIO Pins (JP9 to JP13)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -181,7 +181,7 @@ be used in the application, the corresponding jumpers can be removed - doing
 this will allow these GPIO pins to be used for other external hardware.
 
 .. csv-table::
-  :file: Optional-GPIO-Pins.csv
+  :file: optional-gpio-pins.csv
 
 General Purpose LED and Button Connections (JP14 and JP15)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -197,10 +197,10 @@ the appropriate jumpers. **JP14** is used to set the button connection, while
 **JP15** is used to set the LED connection.
 
 .. csv-table::
-  :file: JP14-setting.csv
+  :file: jp14-setting.csv
 
 .. csv-table:: JP15 Setting
-  :file: JP15-Setting.csv
+  :file: jp15-setting.csv
 
 .. tip::
 
@@ -451,7 +451,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-  :download:`EVAL-CN0575-RPIZ Design & Integration Files <CN0575-DesignSupport.zip>`
+  :download:`EVAL-CN0575-RPIZ Design & Integration Files <cn0575-designsupport.zip>`
 
   - Schematics
   - PCB Layout

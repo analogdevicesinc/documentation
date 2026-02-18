@@ -100,7 +100,7 @@ Alliance SPI must be used. To select which SPI protocol to use, the **JP1**
 follows:
 
 .. csv-table::
-   :file: ADIN2111_SPI_Selection.csv
+   :file: adin2111_spi_selection.csv
 
 The :adi:`ADIN2111` supports software power-down functionality for each port
 independently after power-up or reset. To enable this feature:
@@ -109,7 +109,7 @@ independently after power-up or reset. To enable this feature:
 - For PHY2, configure the JP2 solder jumper as follows:
 
 .. csv-table::
-   :file: ADIN2111_Power_Down_Selection.csv
+   :file: adin2111_power_down_selection.csv
 
 LTC4296
 ^^^^^^^
@@ -137,10 +137,10 @@ following solder jumper configurations are required:
    SPoE PD Power Class Jumpers
 
 .. csv-table:: SPoE PSE High Side Circuit Breaker Resistor Selection Table
-   :file: SPoE_PSE_Power_Class_Selection_High_Side.csv
+   :file: spoe_pse_power_class_selection_high_side.csv
 
 .. csv-table:: SPoE PSE Low Side Sensing Resistor Selection Table
-   :file: SPoE_PSE_Power_Class_Selection_Low_Side.csv
+   :file: spoe_pse_power_class_selection_low_side.csv
 
 The :adi:`LTC4296` also supports SPoE Class 10. To enable this functionality,
 specific resistor changes are required:
@@ -159,7 +159,7 @@ The complete power requirements for the SPoE classes are shown in the table
 below:
 
 .. csv-table:: SPoE PSE Power Class Requirements
-   :file: SPoE_PSE_Power_Class_Requirements.csv
+   :file: spoe_pse_power_class_requirements.csv
 
 Secondary Side
 ~~~~~~~~~~~~~~
@@ -176,7 +176,7 @@ Delivery (PD) controller, can be configured using the following jumper
 configurations:
 
 .. csv-table:: USB-C Power Delivery Controller Configuration
-   :file: USB_PD_Controller_Configuration.csv
+   :file: usb_pd_controller_configuration.csv
 
 .. warning::
 
@@ -461,7 +461,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-  :download:`AD-RPI-T1LPSE-SL Design & Integration Files <AD-RPI-T1LPSE-SL-designsupport.zip>`
+  :download:`AD-RPI-T1LPSE-SL Design & Integration Files <ad-rpi-t1lpse-sl-designsupport.zip>`
 
   - Schematics
   - PCB Layout

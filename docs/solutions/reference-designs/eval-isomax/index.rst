@@ -117,7 +117,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
- :download:`EVAL-ISOMAX Design Support Package <EVAL-ISOMAX-design_support.zip>`
+ :download:`EVAL-ISOMAX Design Support Package <eval-isomax-design_support.zip>`
 
  * Schematic
  * PCB Layout

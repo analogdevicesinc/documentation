@@ -15,7 +15,7 @@ and has no extra signal conditioning for the ADC.
 All pins of the :adi:`AD7124-8` are exposed, which makes the
 :adi:`EVAL-AD7124-8-PMDZ` very flexible and easy to use.
 
-.. figure:: EVAL-AD7124-8-PMDZTOP.jpg
+.. figure:: eval-ad7124-8-pmdztop.jpg
    :width: 600
 
    EVAL-AD7124-8-PMDZ Top View
@@ -158,7 +158,7 @@ Solder Jumpers
 Eight solder jumpers are available at the bottom of the board, if you want to
 change the operating modes. See the schematic for more details.
 
-.. figure:: EVAL-AD7124-8-PMDZBOTTOM.jpg
+.. figure:: eval-ad7124-8-pmdzbottom.jpg
    :width: 600
 
    EVAL-AD7124-8-PMDZ Bottom View
