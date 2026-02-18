@@ -1,6 +1,6 @@
 .. _eval-cn0506-fmcz quickstart zed:
 
-ZedBoard Quickstart
+CN0506 + ZedBoard Quickstart
 ===============================================================================
 
 This guide provides some quick instructions (still takes a while to download 
@@ -28,20 +28,20 @@ Prerequisites
 Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. `Avnet ZedDoard <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/>`__ Rev 1.0 or later
-#. :adi:`EVAL-CN0506-FMCZ`
-#. 2 x Micro-USB cable
-#. Ethernet cable
-#. Signal generator
-#. 4-way splitter (optional)
+- `Avnet ZedDoard <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/>`__ Rev 1.0 or later
+- :adi:`EVAL-CN0506-FMCZ`
+- 2 x Micro-USB cable
+- Ethernet cable
+- Signal generator
+- 4-way splitter (optional)
 
 Required Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. A Linux OS on a PC
-#. Xilinx Vivado 2019.1 or later
-#. UART terminal (e.g TeraTerm)
-#. `IIO Scope <https://github.com/analogdevicesinc/iio-oscilloscope/releases/download/v0.13-master/adi-osc-setup.exe/>`__ 
+- A Linux OS on a PC
+- Xilinx Vivado 2019.1 or later
+- UART terminal (e.g TeraTerm)
+- `IIO Scope <https://github.com/analogdevicesinc/iio-oscilloscope/releases/download/v0.13-master/adi-osc-setup.exe/>`__ 
 
 Board Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +56,6 @@ Board Setup
     #. Use an external 12V power supply and connect it to the TP1 (PWR_IN) and 
     TP2 (AGND) points.
 
-
 You will need to:
 
 #. Get the `ZedBoard <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/>`__
@@ -67,12 +66,11 @@ You will need to:
       :align: center
       :width: 500
 
-   Boot (JP7-JP11) and MIO0 (JP6
-   ) jumpers are set to SD card mode.   To use USB peripheral devices with ZedBoard
-   , install jumpers JP2 and JP3. The FMC interface spans over two PL I/O banks, 
-   banks 34 and 35. To meet the FMC spec, these banks are powered from an 
-   adjustable voltage set by jumper, J18. Selectable voltages include 1.8V, 
-   default, and 2.5V.
+   Boot (JP7-JP11) and MIO0 (JP6) jumpers are set to SD card mode. To use USB 
+   peripheral devices with ZedBoard, install jumpers JP2 and JP3. The FMC 
+   interface spans over two PL I/O banks, banks 34 and 35. To meet the FMC 
+   spec, these banks are powered from an adjustable voltage set by jumper, J18. 
+   Selectable voltages include 1.8V, default, and 2.5V.
 #. Prepare the SD card with the proper Linux image (see :dokuwiki:`here <resources/tools-software/linux-software/zynq_images>`
    and pay attention to the Linux/Windows setup)
 #. Insert the SD-CARD into the SD Card Interface Connector (J12)
@@ -124,7 +122,6 @@ source can be found here:
 .. tip::
 
     Prebuild files for boards with 125MHz VCXO can be downloaded from `here <http://swdownloads.analog.com/cse/prebuilt/vcu118_dual_ad9208_VCXO125_binaries.zip>`__
-
 
 Program the board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
