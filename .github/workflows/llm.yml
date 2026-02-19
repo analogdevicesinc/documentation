@@ -337,15 +337,6 @@ jobs:
           you shall generate patches updating the whole documentation, that is, grep
           for the original dokuwiki path, and update with the new reference.
 
-          For false positive of spell check, improve the vale rules, in particular, use
-          this snippet to sort after changing the rules:
-          \`\`\`
-          file=\".github/styles/config/vocabularies/Base/accept.txt\"
-          { grep '^[[:upper:]]' \$file | sort -u; \
-            grep '^\['          \$file | sort -u; \
-            grep '^[[:lower:]]' \$file | sort -u; } > tmp && mv tmp \$file
-          \`\`\`
-
         " | sed ':a;N;$!ba;s/  */ /g' | sed 's/^[[:space:]]*//' > $prompt_file
         cat $prompt_file
 

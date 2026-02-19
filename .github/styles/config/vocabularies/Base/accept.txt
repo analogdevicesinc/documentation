@@ -45,6 +45,7 @@ DUTs
 EEPROMs
 EMIOn
 Ethernet
+EVAL
 FET(s)?
 FFTs
 FFT_size
