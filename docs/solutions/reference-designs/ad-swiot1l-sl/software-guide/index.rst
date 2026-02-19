@@ -274,7 +274,7 @@ The iio context should look similar to this:
 
 
 Field Device Configuration and Usage
------------------------------------
+----------------------------------------
 
 This section details how the IIO interface may be used to configure
 and sample data from the field devices. The system has the following
@@ -462,7 +462,7 @@ Channel Configurations
 Each AD74413R channel can be configured with one of these functions: ``voltage_out``, ``current_out``, ``voltage_in``, ``current_in_ext``, ``current_in_loop``, ``resistance``, ``digital_input``, ``digital_input_loop``, ``current_in_ext_hart``, ``current_in_loop_hart``.
 
 1. Voltage Input
-~~~~~~~~~~~~~~~~
+''''''''''''''''
 
 Creates one IIO channel:
 
@@ -498,7 +498,7 @@ Creates one IIO channel:
      - Yes
 
 2. Current Output
-~~~~~~~~~~~~~~~~~
+'''''''''''''''''
 
 Creates two IIO channels:
 
@@ -550,7 +550,7 @@ Same attributes as Voltage Input configuration above.
      - Yes
 
 3. Voltage Output
-~~~~~~~~~~~~~~~~~
+'''''''''''''''''
 
 Creates two IIO channels:
 
@@ -629,7 +629,7 @@ Creates two IIO channels:
      - Yes
 
 4. Current Input Externally Powered
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''
 
 Creates one IIO channel:
 
@@ -665,7 +665,7 @@ Creates one IIO channel:
      - Yes
 
 5. Current Input Loop Powered
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''
 
 Creates two IIO channels:
 
@@ -744,17 +744,17 @@ Creates two IIO channels:
      - Yes
 
 6. Current Input Loop Powered with HART Compatibility
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 The channels and their attributes are the same as **Current Input Loop Powered** mode.
 
 7. Current Input Externally Powered with HART Compatibility
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 The channels and their attributes are the same as **Current Input Externally Powered** mode.
 
 8. Resistance
-~~~~~~~~~~~~~
+'''''''''''''
 
 Creates one IIO channel:
 
@@ -782,7 +782,7 @@ Creates one IIO channel:
      - Yes
 
 9. Digital Input
-~~~~~~~~~~~~~~~~
+''''''''''''''''
 
 Creates one IIO channel:
 
@@ -822,7 +822,7 @@ Creates one IIO channel:
      - Yes
 
 10. Digital Input Loop Powered
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''
 
 Creates two IIO channels:
 
