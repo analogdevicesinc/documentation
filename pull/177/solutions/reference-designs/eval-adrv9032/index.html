@@ -99,6 +99,7 @@
 <li><a class="reference internal" href="#recommendations">Recommendations</a></li>
 <li><a class="reference internal" href="#table-of-contents">Table of contents</a></li>
 <li><a class="reference internal" href="#block-diagram">Block diagram</a></li>
+<li><a class="reference internal" href="#pictures">Pictures</a></li>
 <li><a class="reference internal" href="#videos">Videos</a><ul>
 <li><a class="reference internal" href="#software-defined-radio-using-the-linux-iio-framework">Software Defined Radio using the Linux IIO Framework</a></li>
 </ul>
@@ -551,10 +552,10 @@ Content on this topic
   <section id="eval-adrv9032">
 <span id="adrv9032"></span><h1>EVAL-ADRV9032<a class="headerlink" href="#eval-adrv9032" title="Link to this heading"></a></h1>
 <p>Integrated 2T2R TDD and FDD RadioVerse Transceiver with Dual Observation Paths.</p>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/solutions/add-eval-adrv9032-docs/docs/solutions/reference-designs/images/adrv903x-evaluation-board.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/solutions/add-eval-adrv9032-docs/docs/solutions/reference-designs/images/adrv903x-evaluation-board.png" class="align-left" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/solutions/add-eval-adrv9032-docs/docs/solutions/reference-designs/images/adrv903x-evaluation-board.png" width="150" />
-</a>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../../../_images/evaluation-board-angle.webp"><img alt="../../../_images/evaluation-board-angle.webp" class="align-right" src="../../../_images/evaluation-board-angle.webp" width="500" />
+</a>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html" target="_blank">EVAL-ADRV903x</a>, is an FMC radio card
 designed to showcase the <a class="icon adi reference external" href="https://www.analog.com/ADRV9032R" target="_blank">ADRV9032</a> and <a class="icon adi reference external" href="https://www.analog.com/ADRV9032R" target="_blank">ADRV9032R</a>, highly
 integrated, radio frequency (RF) agile transceivers offering 2 independently
@@ -654,11 +655,13 @@ the <a class="icon adi reference external" href="https://www.analog.com/en/resou
 <ul>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx" target="_blank">JESD204B Transmit Linux driver</a></p></li>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx" target="_blank">JESD204B Receive Linux driver</a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/jesd204/axi_jesd204_tx/index.html#axi-jesd204-tx" target="_blank" title="(in HDL)"><span>JESD204B/C Link Transmit Peripheral</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/jesd204/axi_jesd204_rx/index.html#axi-jesd204-rx" target="_blank" title="(in HDL)"><span>JESD204B/C Link Receive Peripheral</span></a></p></li>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_adxcvr" target="_blank">JESD204B/C AXI_ADXCVR High-speed transceivers Linux driver</a></p></li>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl" target="_blank">AXI ADC HDL Linux driver</a></p></li>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl" target="_blank">AXI DAC HDL Linux driver</a></p></li>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/ad9528" target="_blank">AD9528 Low Jitter Clock Generator Linux driver</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/axi-dmac" target="_blank">AXI-DMAC DMA Controller Linux driver</a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/axi_dmac/index.html#axi-dmac" target="_blank" title="(in HDL)"><span>AXI DMAC</span></a></p></li>
 <li><p>ADRV9032/ADRV9032R Linux device driver (in-tree at <a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/adrv903x/adrv903x.c" target="_blank">drivers/iio/adc/adrv903x/adrv903x.c</a>)</p></li>
 </ul>
 </li>
@@ -678,7 +681,8 @@ the <a class="icon adi reference external" href="https://www.analog.com/en/resou
 </ol>
 </li>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/rf-trx-vcxo-and-profiles" target="_blank">Changing the VCXO frequency and updating the default RF Transceiver Profile</a></p></li>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/adrv9032" target="_blank">HDL reference design</a> which you must use in your FPGA.</p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/adrv9032" target="_blank">HDL reference design</a> which you must use in your FPGA.
+More HDL build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
 </ol>
 </li>
 </ul>
@@ -701,8 +705,23 @@ applications. The transceiver includes:</p>
 <li><p>SPI control interface</p></li>
 <li><p>General purpose I/O and interrupts</p></li>
 </ul>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/solutions/add-eval-adrv9032-docs/docs/solutions/reference-designs/images/adrv9032_block_diagram.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/solutions/add-eval-adrv9032-docs/docs/solutions/reference-designs/images/adrv9032_block_diagram.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/solutions/add-eval-adrv9032-docs/docs/solutions/reference-designs/images/adrv9032_block_diagram.jpg" width="800" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/solutions/add-eval-adrv9032-docs/docs/solutions/reference-designs/eval-adrv9032/block-diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/solutions/add-eval-adrv9032-docs/docs/solutions/reference-designs/eval-adrv9032/block-diagram.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/solutions/add-eval-adrv9032-docs/docs/solutions/reference-designs/eval-adrv9032/block-diagram.png" width="800" />
 </a>
+</section>
+<section id="pictures">
+<h2>Pictures<a class="headerlink" href="#pictures" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id1">
+<img alt="../../../_images/evaluation-board-top.webp" src="../../../_images/evaluation-board-top.webp" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADRV903X evaluation board - top view</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="../../../_images/evaluation-board-bottom.webp" src="../../../_images/evaluation-board-bottom.webp" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">ADRV903X evaluation board - bottom view</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="videos">
 <h2>Videos<a class="headerlink" href="#videos" title="Link to this heading"></a></h2>
@@ -717,7 +736,7 @@ applications. The transceiver includes:</p>
 <p>Four Quick Steps to Production: Using Model-Based Design for Software-Defined
 Radio:</p>
 <ol class="arabic simple">
-<li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-09/four-step-sdr-01.html" target="_blank">Part 1 - The Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-09/four-step-sdr-01.html" target="_blank">Part 1 - The Analog Devices/AMD Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-10/four-step-sdr-02.html" target="_blank">Part 2 - Mode S Detection and Decoding Using MATLAB and Simulink</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-11/four-step-sdr-03.html" target="_blank">Part 3 - Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-12/four-step-sdr-04.html" target="_blank">Part 4 - Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow</a></p></li>

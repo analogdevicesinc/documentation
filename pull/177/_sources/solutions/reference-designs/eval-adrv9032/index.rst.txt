@@ -5,12 +5,12 @@ EVAL-ADRV9032
 
 Integrated 2T2R TDD and FDD RadioVerse Transceiver with Dual Observation Paths.
 
-.. image:: ../images/adrv903x-evaluation-board.png
-   :align: left
-   :width: 150
-
 Overview
 -------------------------------------------------------------------------------
+
+.. image:: evaluation-board-angle.webp
+   :align: right
+   :width: 500
 
 The :adi:`EVAL-ADRV903x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html>`, is an FMC radio card
 designed to showcase the :adi:`ADRV9032 <ADRV9032R>` and :adi:`ADRV9032R`, highly
@@ -111,11 +111,13 @@ Table of contents
 
            - :dokuwiki:`JESD204B Transmit Linux driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
            - :dokuwiki:`JESD204B Receive Linux driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+           - :external+hdl:ref:`axi_jesd204_tx`
+           - :external+hdl:ref:`axi_jesd204_rx`
            - :dokuwiki:`JESD204B/C AXI_ADXCVR High-speed transceivers Linux driver <resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
            - :dokuwiki:`AXI ADC HDL Linux driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
            - :dokuwiki:`AXI DAC HDL Linux driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
            - :dokuwiki:`AD9528 Low Jitter Clock Generator Linux driver <resources/tools-software/linux-drivers/iio-pll/ad9528>`
-           - :dokuwiki:`AXI-DMAC DMA Controller Linux driver <resources/tools-software/linux-drivers/axi-dmac>`
+           - :external+hdl:ref:`axi_dmac`
            - ADRV9032/ADRV9032R Linux device driver (in-tree at :git-linux:`drivers/iio/adc/adrv903x/adrv903x.c`)
 
         #. About the device tree:
@@ -131,6 +133,7 @@ Table of contents
 
      #. :dokuwiki:`Changing the VCXO frequency and updating the default RF Transceiver Profile <resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
      #. :git-hdl:`HDL reference design <projects/adrv9032>` which you must use in your FPGA.
+        More HDL build details at :external+hdl:ref:`build_hdl`.
 
 #. :dokuwiki:`Additional documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 #. :ref:`Help and Support <help-and-support>`
@@ -152,9 +155,20 @@ applications. The transceiver includes:
 - SPI control interface
 - General purpose I/O and interrupts
 
-.. image:: ../images/adrv9032_block_diagram.jpg
+.. image:: block-diagram.png
    :align: center
    :width: 800
+
+Pictures
+-------------------------------------------------------------------------------
+
+.. figure:: evaluation-board-top.webp
+
+   ADRV903X evaluation board - top view
+
+.. figure:: evaluation-board-bottom.webp
+
+   ADRV903X evaluation board - bottom view
 
 Videos
 -------------------------------------------------------------------------------
@@ -170,7 +184,7 @@ ADI articles
 Four Quick Steps to Production: Using Model-Based Design for Software-Defined
 Radio:
 
-#. :adi:`Part 1 - The Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
+#. :adi:`Part 1 - The Analog Devices/AMD Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
 #. :adi:`Part 2 - Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
 #. :adi:`Part 3 - Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`
 #. :adi:`Part 4 - Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
