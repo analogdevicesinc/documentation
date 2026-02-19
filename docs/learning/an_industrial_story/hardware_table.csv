@@ -1,0 +1,7 @@
+Component              , Role                                                                                                             , Quantity, Notes
+Raspberry Pi 4+        , Running Kuiper 2 and Scopy 2 to connect to downstream devices.                                                   ,        1, 
+AD-RPI-T1LPSE-SL       , T1L capable board that can also power downstream devices.                                                        ,        1, It has a built in ADIN2111 which will communicate with the RPI using SPI.
+AD-APARDPFW-SL         , Power forwarding board with T1L capabilities.                                                                    ,        1, It has a built in ADIN1110 which will send the packets to the AD-APARD32690-SL. It is also used to power a downstream device using daisy-chaining.
+AD-APARD32690-SL Rev. E, Running Zephyr to communicate with the RPI and to calculate the temperature using data from the EVAL-CN0391-ARDZ.,        1, It uses a MAX32690 microcontroller.
+EVAL-ADIN1110          , Running Zephyr to communicate with the RPI and to calculate the temperature using data from the EVAL-CN0391-ARDZ.,        1, It uses an STM32L4 microcontroller.
+EVAL-CN0391-ARDZ       , Read the voltage difference on the thermocouple probe.                                                           ,        2, Please refer to the :adi:`EVAL-CN0391-ARDZ <cn0391>` for more information.
