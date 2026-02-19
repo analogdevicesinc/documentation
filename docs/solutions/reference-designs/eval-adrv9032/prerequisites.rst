@@ -45,7 +45,7 @@ Software prerequisites
 Normally, for basic functionalities regarding visualizing the data received
 from the FPGA, we use the following:
 
-#. :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`
+#. :ref:`iio-oscilloscope`
 
 .. note::
 

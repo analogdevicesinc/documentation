@@ -9,7 +9,7 @@ ZCU102 Quick start
 .. esd-warning::
 
 This guide provides quick instructions on how to setup the
-:adi:`EVAL-ADRV903x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html>` on:
+:adi:`Eval-ADRV903x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html>` on:
 
 - :xilinx:`ZCU102`
 
@@ -48,7 +48,7 @@ Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - AMD Xilinx :xilinx:`ZCU102` Rev 1.0 or later FPGA board and its power supply
-- :adi:`EVAL-ADRV903x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html>` FMC evaluation board
+- :adi:`Eval-ADRV903x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html>` FMC evaluation board
 - SD card with at least 16GB of memory
 - Micro-USB cable (UART)
 - LAN cable (Ethernet)
@@ -65,7 +65,7 @@ Creating the setup
 
 Follow the steps in this order, to avoid damaging the components:
 
-#. Connect the :adi:`EVAL-ADRV903x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html>` FMC board to the
+#. Connect the :adi:`Eval-ADRV903x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html>` FMC board to the
    ZCU102 **HPC1** FMC1 socket
 #. Insert SD card into the SD card socket on the FPGA
 #. Configure :xilinx:`ZCU102` for SD card boot mode (mode SW6[4:1] switch in

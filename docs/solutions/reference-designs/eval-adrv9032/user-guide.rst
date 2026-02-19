@@ -37,4 +37,4 @@ The evaluation board is supported with the Libiio library. This library is
 cross-platform (Windows, Linux, Mac) with language bindings for C, C#, Python,
 MATLAB, and others. One easy to example that can be used with it is:
 
-- :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`
+- :ref:`iio-oscilloscope`
