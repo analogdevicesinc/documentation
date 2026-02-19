@@ -103,9 +103,10 @@ User guides
 
 .. toctree::
    :titlesonly:
-   :glob:
 
-   */index
+   hardware-guide/index
+   firmware-guide/index
+   software-guide/index
 
 
 Help and Support
