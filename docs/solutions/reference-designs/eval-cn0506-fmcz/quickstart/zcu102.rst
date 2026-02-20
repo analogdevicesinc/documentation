@@ -29,7 +29,7 @@ Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - EVAL-:adi:`CN0506`-FMCZ board
-- Xlink :xilinx:`ZCU102` Evaluation Board Rev 1.0 or a later version
+- Xilinx :xilinx:`ZCU102` Evaluation Board Rev 1.0 or a later version
 - Power Cord and Adapter compatible with ZCU102
 - SD Card 16 GB or higher
 - Mini USB Cable
@@ -178,7 +178,7 @@ Performing iPerf3
 
 #. The performance test will also require your Host PC to be the iPerf3 server 
    and the carrier is the client. The server should be run first before the 
-   client. Install iPerf3 on your Host PC. Go to `the Downloads page <https://iperf.fr/iperf-download.php>`__ 
+   client. Install iPerf3 on your Host PC. Go to the `Downloads page <https://iperf.fr/iperf-download.php>`__ 
    and download the necessary files depending on your Host PC.
 
    .. image:: ../images/7_windows_download_iperf3.png

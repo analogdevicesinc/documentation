@@ -1,0 +1,298 @@
+.. _eval-cn0506-fmcz quickstart zc706:
+
+CN0506 + ZC706 Quickstart
+===============================================================================
+
+This guide provides instructions on how to setup :adi:`CN0506` on the 
+:xilinx:`ZC706` platform.
+
+.. image:: ../images/cn0506_in_zcu102_dsc0002.jpg
+   :align: center
+   :width: 500
+
+Overview
+-------------------------------------------------------------------------------
+
+The :adi:`CN0506` is a 10 Mbps/100 Mbps/1000 Mbps dual channel, low latency, 
+low power industrial Ethernet PHY evaluation board designed to interface the 
+MAC and PHY through MII, RMII, or RGMII interfaces which can be installed on 
+Field Programmable Gate Array (FPGA) platforms such as ZC102 evaluation board 
+using VITA-57 FPGA mezzanine cards (FMC) to the low pin count (LPC) FMC 
+connector to provide a hardware environment for developing and evaluating 
+designs targeting the Zynq®-7000 XC7Z045-2FFG900C SoC in industrial Ethernet 
+applications.
+
+Prerequisites
+-------------------------------------------------------------------------------
+
+Required Hardware
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- EVAL-:adi:`CN0506`-FMCZ board
+- Xilinx :xilinx:`ZC706` Evaluation Board Rev 1.0 or a later version
+- Power Cord and Adapter compatible with ZC706
+- SD Card 16 GB or higher
+- Mini USB Cable
+- Ethernet Cable
+
+Required Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Linux or Windows OS on a Host PC
+- UART Terminal (e.g TeraTerm, PuTTY)
+- `iPerf3 <https://iperf.fr/iperf-download.php>`__
+
+Hardware Setup
+-------------------------------------------------------------------------------
+
+#. Connect the EVAL-CN0506-FMCZ to the low pin count (LPC) FMC connector on the 
+   ZC706 evaluation board.
+
+   .. image:: ../images/lpc_fmc_dsc0003.jpg
+      :align: center
+      :width: 500
+
+#. Connect the ZC706 USB-to-UART Bridge with Mini USB Connector (U52, J21) to 
+   the host PC using a Mini USB cable.
+
+   .. image:: ../images/usb-to-uart_dsc0004.jpg
+      :align: center
+      :width: 500
+
+#. Connect the Ethernet cable in the CN0506 M1 or M2 Ethernet port depending on 
+   your preference.
+
+   .. image:: ../images/ethernet_dsc0005.jpg
+      :align: center
+      :width: 500
+
+#. Plug the power cord into the 12 V power jack 2×6 connector J22.
+
+   .. attention::
+
+      Do not switch on yet the Power On/Off Switch (SW1) and make sure that the 
+      switch and jumper settings are in default mode. Refer to the `ZC706 User 
+      Guide <support/documentation/boards_and_kits/zc706/ug954-zc706-eval-board-xc7z045-ap-soc.pdf>` 
+      for detailed default jumper settings information.
+
+   .. image:: ../images/power_cord_dsc0007.jpg
+      :align: center
+      :width: 500
+
+Software Setup
+-------------------------------------------------------------------------------
+
+#. Download the latest Linux Image and flash the file to your 16 GB SD Card. 
+   Refer to :dokuwiki:`adi-kuiper_images <resources/tools-software/linux-software/kuiper-linux>`
+   for more detailed instruction.
+
+#. In your flashed Linux Image BOOT partition, copy the kernel to the root 
+   folder. The kernel will vary depending on the carrier platform. With ZC706, 
+   copy the uImage file in the \zynq-common\ folder to the root folder or just 
+   outside the folder of the kernel.
+
+#. Copy the boot files to the root folder. The boot files can be found in the 
+   \zynq-zed-adv7511-cn0506-mii\ or \zynq-zed-adv7511-cn0506-rgmii\ folder 
+   depending on your needs. In this guide, we will copy all the files inside 
+   \zynq-zed-adv7511-cn0506-mii\ folder to the root folder.
+
+   .. attention::
+
+      This is a critical step to follow because the EVAL-CN0506-FMCZ board needs 
+      the following files to communicate with the FPGA platform properly using 
+      the Analog Devices Linux Kuiper OS.
+
+   .. image:: ../images/screenshot_2021-11-26_195656.png
+      :align: center
+      :width: 500
+
+#. Safely eject the SD Card from your host PC and insert it into your ZC706 
+   SD Card Interface Connector (J30).
+
+   .. image:: ../images/sd_card_dsc0008.jpg
+      :align: center
+      :width: 500
+
+#. The hardware and software setup is now done.
+
+Performing iPerf3
+-------------------------------------------------------------------------------
+
+#. Make sure you have installed your favorite terminal emulator (in this case, 
+   TeraTerm) on your Host PC.
+
+#. Connect the UART USB Cable connection from ZC706 to your Host PC. Your Host 
+   PC should have a CP2103 USB to UART Bridge Controller driver installed or up 
+   to date. This is important so your PC can communicate with the FPGA board.
+
+   .. image:: ../images/1_uart_installation.png
+      :align: center
+      :width: 500
+
+#. Connect an Ethernet Cable connection from CN0506 M1 to your Ethernet-capable 
+   Host PC. Make sure the Host PC is also connected to the Internet using Wi-Fi 
+   or Ethernet.
+
+   .. image:: ../images/ethernet_to_pc_dsc0012.jpg
+      :align: center
+      :width: 500
+
+#. Bridge network connections so we can install necessary tools such as iPerf3 
+   for ZC706 through the Internet. Go to Control Panel > Network and Internet > 
+   Network Connections. To create a Network Bridge between your Wi-Fi/Ethernet 
+   Internet and CN0506 Ethernet, select the two network connections, 
+   right-click, and select “Bridge Connections.”
+
+   .. image:: ../images/2_bridge_installation.png
+      :align: center
+      :width: 500
+
+#. Launch TeraTerm and make a new serial connection with the designated COM 
+   port. Click Serial, choose the correct COM port number, then click OK.
+
+   .. image:: ../images/3_tera_term_serial.png
+      :align: center
+      :width: 500
+
+#. Change the baud rate from 9600 to 115200. Go to Setup > Serial Port... A 
+   dialog box will pop up and then change the Speed to 115200. Click “New 
+   setting.”
+
+   .. image:: ../images/4_serial_config.png
+      :align: center
+      :width: 500
+
+   .. image:: ../images/5_serial_config_baud_115200.png
+      :align: center
+      :width: 500
+
+#. Install iPerf3 on your Linux machine. Enter in the terminal line, then 
+   write and enter
+
+   .. code::
+      
+      apg-get install iperf3
+
+   .. image:: ../images/6_aptget_install_iperf3.png
+      :align: center
+      :width: 500
+
+#. The performance test will also require your Host PC to be the iPerf3 server 
+   and the carrier is the client. The server should be run first before the 
+   client. Install iPerf3 on your Host PC. Go to the `Downloads page <https://iperf.fr/iperf-download.php>`__ 
+   and download the necessary files depending on your Host PC.
+
+   .. image:: ../images/7_windows_download_iperf3.png
+      :align: center
+      :width: 500
+
+#. Open your Host PC's terminal (e.g. Windows PowerShell) and navigate through 
+   the iPerf3 directory.
+
+   .. image:: ../images/8_ms_powershell.png
+      :align: center
+      :width: 500
+
+#. Get the IP address of the connected Ethernet port of your Host PC using the 
+   command: “ipconfig”. Take note of the IP address of the connected Ethernet 
+   cable because this will vary from time to time. In this case, we have the IP 
+   address 169.254.6.62 of “Ethernet adapter Ethernet” which corresponds to your 
+   Host PC's Ethernet port.
+
+   .. code::
+
+      ipconfig
+
+   .. image:: ../images/9_ipconfig.png
+      :align: center
+      :width: 500
+
+#. In your Linux machine UART terminal (TeraTerm), Get the IP address of the 
+   connected Ethernet port of CN0506. Use the command “ip addr”. Take note of 
+   the IP address of the connected Ethernet cable because this will vary from 
+   time to time. In this case, we have the IP address 169.254.7.196 of “eth1” 
+   which corresponds to the M1 Ethernet port of CN0506.
+
+   .. code::
+
+      ip addr
+
+   .. image:: ../images/10_ipaddr.png
+      :align: center
+      :width: 500
+
+#. In your Host PC's terminal. run the iperf3 as the server. In this case of 
+   Windows PowerShell, use the command:
+
+   .. code::
+
+      iperf3.exe -s B 169.254.6.62
+
+   .. image:: ../images/11_iperf_exe_b.png
+      :align: center
+      :width: 500
+
+   This will run the iperf3 from the PC as the server (-s) and bound to its 
+   Ethernet port having the address 169.254.6.62. It is acceptable to keep the 
+   server running since this will wait for connections from the client.
+
+#. In your Linux terminal (which we use is TeraTerm), you will need to run the 
+   iperf3 client for each Ethernet port so you can verify its performance by 
+   using “iperf3 -c <IP address of server> -B <IP address of client>. Enter the 
+   following commands:
+
+   .. code::
+
+      iperf3 -c 169.254.6.62 -B 169.254.7.196
+
+   .. image:: ../images/12_performance_run_b_s.png
+      :align: center
+      :width: 500
+
+#. Use the command "-R" to reverse the direction of the performance test.
+
+   .. code::
+
+      iperf3 -c 169.254.6.62 -B 169.254.7.196 -R
+
+   .. image:: ../images/performance_run_b_s_r.png
+      :align: center
+      :width: 500
+
+#. We're done with the basic iPerf3 performance test! If you want to go 
+   further with the test, this is your time to shine and this is high time for 
+   you to get started with your application development.
+
+Additional Information and Useful Links
+-------------------------------------------------------------------------------
+
+HDL Refference Design
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:dokuwiki:`CN0506 HDL Reference Designs <resources/eval/user-guides/circuits-from-the-lab/cn0506/hdl>`
+
+Linux
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:dokuwiki:`Linux Driver </resources/tools-software/linux-drivers/net-phy/adin>`
+
+Connected Products
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:adi:`ADIN1300 Product Page <en/products/adin1300.html>`
+
+Registration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the 
+   latest videos, and more when you register your hardware. 
+   `Register <https://my.analog.com/en/app/registration/hardware/EVAL-CN0506-FMCZ?&v=RevB>`__ 
+   to receive all these great benefits and more!
+
+Need Help?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* :ez:`Analog Devices Circuit from the Lab Help Forum <circuits_from_the_lab>`
+* :ez:`Add a question! <circuits_from_the_lab/f/q-a/p/addpost>`
