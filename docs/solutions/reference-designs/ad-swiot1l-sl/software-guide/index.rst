@@ -12,7 +12,7 @@ System Setup
 ------------
 
 - Connect the AD-SWIOT1L-SL to the AD-T1LUSB2.0-EBZ using the single pair Ethernet cable.
-- Connect the AD-T1LUSB2.0-EBZ to your PC using an USB cable.
+- Connect the AD-T1LUSB2.0-EBZ to your PC using an usb cable
 - Connect the 24 V power supply to the AD-SWIOT1L-SL.
 
 Windows User Guide
@@ -20,9 +20,9 @@ Windows User Guide
 - Connect the AD-SWIOT1L-SL to your Windows PC using the AD-T1LUSB2.0-EBZ.
 
 To communicate with the AD-SWIOT1L-SL board, you need to configure your Windows
-PC's network adapter with a static IP address in the same subnet as the board e.g 192.168.97.1/24
+PC's network adapter with a static ip address in the same subnet as the board e.g 192.168.97.1/24
 
-The AD-SWIOT1L-SL board uses the static IP address: **192.168.97.40**
+The AD-SWIOT1L-SL board uses the static ip address: **192.168.97.40**
 
 Configure Windows Network Adapter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -32,15 +32,15 @@ Configure Windows Network Adapter
    :width: 400 px
    :align: center
 
-2. Select your ethernet interface and click "Edit" to modify the IP settings
+2. Select your Ethernet interface and click "Edit" to modify the ip settings
 
 .. figure:: 2.png
    :width: 300 px
    :align: center
 
-3. Set the IP settings to manual and configure the following values:
+3. Set the ip settings to manual and configure the following values:
 
-   - **IP address**: 192.168.97.1
+   - **ip address**: 192.168.97.1
    - **Subnet mask**: 255.255.255.0
 
    .. figure:: 3.png
@@ -53,7 +53,7 @@ Configure Windows Network Adapter
       :width: 450 px
       :align: center
 
-4. Open a command prompt and verify the new assigned IP address using the command:
+4. Open a command prompt and verify the new assigned ip address using the command:
 
    .. code:: bash
 
@@ -75,16 +75,16 @@ Configure Windows Network Adapter
 
 .. Add Windows-specific instructions here
 
-Linux User Guide
+linux User Guide
 ----------------
-- Connect the AD-SWIOT1L-SL to your Linux PC using the AD-T1LUSB2.0-EBZ
+- Connect the AD-SWIOT1L-SL to your linux PC using the AD-T1LUSB2.0-EBZ
 
 
-To communicate with the AD-SWIOT1L-SL board, you need to configure your Linux PC’s network 
+To communicate with the AD-SWIOT1L-SL board, you need to configure your linux PC's network
 adapter with a static IP address in the same subnet as the board e.g 192.168.97.1/24.
 
 
-Configure Linux Network Adapter
+Configure linux Network Adapter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Identify the network interface corresponding to the AD-T1LUSB2.0-EBZ using the command:
@@ -93,7 +93,7 @@ Configure Linux Network Adapter
    :width: 300 px
    :align: center
 
-2. Configure the network interface with a static IP address:
+2. Configure the network interface with a static ip address:
    
 .. figure:: linux_2.png
    :width: 400 px
@@ -105,9 +105,10 @@ Configure Linux Network Adapter
 
 
 3. Verify you can ping the AD-SWIOT1L-SL board:
+   
 .. code:: bash
 
-   ping  192.168.97.40
+   ping 192.168.97.40
 
 .. figure:: linux_4.png
    :width: 450 px
@@ -126,7 +127,7 @@ comprehensive `Scopy Plugin Documentation <https://analogdevicesinc.github.io/sc
 Using the IIO interface
 ------------------------------
 
-The firmware is based on a no-OS implementation of the IIO framework from the Linux kernel, which offers similar functionalities. 
+The firmware is based on a no-OS implementation of the IIO framework from the linux kernel, which offers similar functionalities. 
 Thus, the board may be configured through the use of pyadi-iio API.
 
 In order to get the pyadi-iio drivers follow the next steps:
