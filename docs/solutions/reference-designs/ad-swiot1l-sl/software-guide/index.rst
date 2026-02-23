@@ -105,9 +105,10 @@ Configure Linux Network Adapter
 
 
 3. Verify you can ping the AD-SWIOT1L-SL board:
+   
 .. code:: bash
 
-   ping  192.168.97.40
+   ping 192.168.97.40
 
 .. figure:: linux_4.png
    :width: 450 px

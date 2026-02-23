@@ -60,12 +60,17 @@ To update the firmware on the AD-SWIOT1L-SL, the MAX32625PICO programmer is used
    * Plug the micro USB cable into the PC.
    * Once you see the MAINTENANCE drive being mounted, you may release the button.
 
-     .. figure:: picture2.jpg
-        :width: 300 px
+     .. figure:: MAINTENANCE.jpg
+        :width: 450 px
 
-        MAX32625PICO Button
+        Maintenance Mode - MAX32625PICO
 
 #. Drag and drop (to the MAINTENANCE drive) the firmware image you previously downloaded.
+
+.. figure:: picture1.jpg
+   :width: 600 px
+   :align: center
+
 #. After a few seconds, the MAINTENANCE drive will disappear and will be replaced
    by a drive named DAPLINK. Once this is done, the process is complete, and the
    MAX32625PICO may be used to flash the firmware of the AD-SWIOT1L-SL board.
