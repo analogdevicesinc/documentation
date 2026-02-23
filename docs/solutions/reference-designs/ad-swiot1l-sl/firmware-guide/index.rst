@@ -6,13 +6,13 @@ Required Hardware
 
 - **Development kit**: :adi:`AD-SWIOT1L-SL` Software-configurable Analog and Digital I/O with 10BASE-T1L
 - **Power supplies**: 24V power supply at minimum 2A
-- **Programmer**: :adi:`MAX32625PICO` or any other similar programmer supporting the SWD interface
+- **Programmer**: :adi:`MAX32625PICO` or any other similar programmer supporting the swd interface
 
 System Setup
 ------------
 
 - Connect the AD-SWIOT1L-SL to the AD-T1LUSB2.0-EBZ using the single pair Ethernet cable.
-- Connect the AD-T1LUSB2.0-EBZ to your PC using an USB cable.
+- Connect the AD-T1LUSB2.0-EBZ to your PC using an usb cable.
 - Connect the 24 V power supply to the AD-SWIOT1L-SL.
 
 .. figure:: picture1.jpg
@@ -40,7 +40,7 @@ the way to production firmware and applications development.
 .. important::
 
    The system comes pre-programmed with a standard firmware. To work with
-   **Scopy**, you need to flash the specific static IP firmware version.
+   **Scopy**, you need to flash the specific static ip firmware version.
 
    **Scopy** will work only with the official
    `AD-SWIOT1L-SL firmware releases <https://github.com/analogdevicesinc/no-OS/releases/tag/swiot1l-v1.1.0>`_
@@ -48,32 +48,37 @@ the way to production firmware and applications development.
 Updating the AD-SWIOT1L-SL Firmware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To update the firmware on the AD-SWIOT1L-SL, the MAX32625PICO programmer is used as a SWD interface to flash the new firmware image. The MAX32625PICO comes with a default bootloader that we need to replace.
+To update the firmware on the AD-SWIOT1L-SL, the MAX32625PICO programmer is used as a swd interface to flash the new firmware image. The MAX32625PICO comes with a default bootloader that we need to replace.
 
 
-#. Download the firmware image: `MAX32625PICO firmware <https://github.com/MaximIntegrated/max32625pico-firmware-images/raw/master/bin/max32625_max32650fthr_if_crc_swd_v1.0.6.bin>`__
+#. Download the latest firmware for MAX32650FTHR: `MAX32625PICO firmware <https://github.com/analogdevicesinc/max32625pico-firmware-images/>`__
 #. Set the MAX32625PICO in MAINTENANCE mode:
 
    * Disconnect the MAX32625PICO from the PC and the AD-SWIOT1L-SL board.
-   * Plug the micro USB cable only in the MAX32625PICO.
+   * Plug the micro usb cable only in the MAX32625PICO.
    * Keep the button on the MAX32625PICO pressed.
-   * Plug the micro USB cable into the PC.
+   * Plug the micro usb cable into the PC.
    * Once you see the MAINTENANCE drive being mounted, you may release the button.
 
-     .. figure:: picture2.jpg
-        :width: 300 px
+     .. figure:: MAINTENANCE.jpg
+        :width: 450 px
 
-        MAX32625PICO Button
+        Maintenance Mode - MAX32625PICO
 
 #. Drag and drop (to the MAINTENANCE drive) the firmware image you previously downloaded.
+
+.. figure:: picture1.jpg
+   :width: 600 px
+   :align: center
+
 #. After a few seconds, the MAINTENANCE drive will disappear and will be replaced
-   by a drive named DAPLINK. Once this is done, the process is complete, and the
-   MAX32625PICO may be used to flash the firmware of the AD-SWIOT1L-SL board.
+   by a drive named Daplink. Once this is done, the process is complete, and the
+   MAX32625PICO may be used to flash the firmware on the AD-SWIOT1L-SL board.
 
 Programming the AD-SWIOT1L-SL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Connect the MAX32625PICO to the PC using the micro USB cable.
+- Connect the MAX32625PICO to the PC using the micro usb cable.
 - Connect the MAX32625PICO to the AD-SWIOT1L-SL board using the 10-pin ribbon cable.
 - Connect the 24 V power supply to the AD-SWIOT1L-SL. Make sure the board is powered up for the next steps.
 
@@ -81,9 +86,10 @@ Programming the AD-SWIOT1L-SL
 
    AD-SWIOT1L-SL Programming Setup
 
-* A DAPLINK drive should appear as mounted on your PC.
-* Drag and drop the new firmware image into the DAPLINK drive. After a few seconds, the drive will be remounted.
-* Check the DAPLINK directory and make sure there is no FAIL.TXT file. In case
+* A Daplink should appear as mounted on your PC.
+* Drag and drop the new firmware image into the Daplink drive. After a few
+  seconds, the drive will be remounted.
+* Check the Daplink directory and make sure there is no FAIL.TXT file. In case
   there is, repeat the drag and drop step. Otherwise, you may disconnect the
   MAX32625PICO from the AD-SWIOT1L-SL, since the firmware update is complete.
 
@@ -95,5 +101,5 @@ The :git-no-OS:`AD-SWIOT1L-SL firmware <projects/swiot1l>` is
 based on Analog Devices’ open-source no-OS framework, which includes all the
 tools required for embedded code development and debugging as well as libraries
 enabling host-side connectivity for system configuration and data transfer over
-the UART or the 10BASE-T1L interfaces. The firmware source code and related
+the uart the 10BASE-T1L interfaces. The firmware source code and related
 documentation can be found on the Analog Devices GitHub at the link above.
