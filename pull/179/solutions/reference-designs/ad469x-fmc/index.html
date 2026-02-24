@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD4696 / AD4695 are 16-bit, 16-channel (or 4-channel), multiplexed SAR ADCs with Easy Drive features and a high-Z input stage." name="description" />
+<meta content="The AD469x HDL reference design provides all the interfaces necessary to interact with the devices on the AD4696 evaluation board." name="description" />
 
     <title>AD469x-FMC User Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -99,6 +99,7 @@
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
+<li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
@@ -643,10 +644,12 @@ Content on this topic
 <span id="ad469x-fmc"></span><h1>AD469x-FMC User Guide<a class="headerlink" href="#ad469x-fmc-user-guide" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/AD4696" target="_blank">AD4696</a> / <a class="icon adi reference external" href="https://www.analog.com/AD4695" target="_blank">AD4695</a> are 16-bit, 16-channel (or 4-channel),
-multiplexed SAR ADCs with Easy Drive features and a high-Z input stage.</p>
-<p>The HDL reference design uses the SPI Engine Framework for interfacing with the
-ADC and DMA for data transfer to system memory.</p>
+<p>The AD469x HDL reference design provides all the interfaces necessary to
+interact with the devices on the <a class="icon adi reference external" href="https://www.analog.com/AD4696" target="_blank">AD4696</a> evaluation board.</p>
+<p>The design uses a SPI Engine instance to control and acquire data from the
+AD4696 16-bit precision ADC, providing support to capture continuous samples at
+maximum sampling rate. The reference design uses the standard SPI Engine
+Framework with the offload module triggered by the BUSY signal of the device.</p>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
@@ -663,6 +666,19 @@ ADC and DMA for data transfer to system memory.</p>
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<section id="block-diagram">
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id1">
+<img alt="../../../_images/ad469x_hdl.svg" src="../../../_images/ad469x_hdl.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD469x-FMC block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The reference design uses the standard SPI Engine Framework to interface the
+AD4696 ADC in single SDO Mode. The SPI offload module, which can be used to
+capture continuous data stream at maximum data rate, is triggered by the BUSY
+signal of the device.</p>
+</section>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">

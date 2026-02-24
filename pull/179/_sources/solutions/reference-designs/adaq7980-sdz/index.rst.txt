@@ -6,17 +6,34 @@ ADAQ7980-SDZ User Guide
 Introduction
 ------------
 
-The :adi:`ADAQ7980` is a 16-bit, 1 MSPS data acquisition system in a module
-(SiP) that integrates a SAR ADC, a low noise fully differential ADC driver
-amplifier, a stable reference buffer, and a high performance regulator.
+The :adi:`ADAQ7980` / :adi:`ADAQ7988` are 16-bit analog-to-digital converter
+(ADC) subsystems that integrate four common signal processing and conditioning
+blocks into a system in package (SiP) design. These devices contain:
 
-The HDL reference design uses the SPI Engine Framework for interfacing with the
-ADC and DMA for data transfer to system memory.
+- A high accuracy, low power, 16-bit SAR ADC
+- A low power, high bandwidth, high input impedance ADC driver
+- A low power, stable reference buffer
+- An efficient power management block
+
+Housed within a 5 mm x 4 mm LGA package, the ADAQ7980 simplifies the design
+process for data acquisition systems while providing the flexibility of a
+configurable ADC driver feedback loop to allow gain and/or common-mode
+adjustments.
+
+Applications:
+
+- Automated test equipment (ATE)
+- Battery powered instrumentation
+- Communications
+- Data acquisition
+- Process control
+- Medical instruments
 
 Supported Devices
 -----------------
 
 - :adi:`ADAQ7980`
+- :adi:`ADAQ7988`
 
 Supported Carriers
 ------------------
@@ -25,6 +42,20 @@ Supported Carriers
 
 HDL Reference Design
 --------------------
+
+The reference design uses the standard SPI Engine Framework with an integrated
+pulse generator, which provides the required conversion rate for the ADC.
+
+Design Configuration
+~~~~~~~~~~~~~~~~~~~~
+
+The reference design uses an integrated pulse generator to synchronize the
+capture events during continuous conversion. The required sampling rate can be
+set in the ``system_bd.tcl`` file:
+
+.. code-block:: tcl
+
+   set adc_sampling_rate 1000000
 
 HDL Source Code
 ~~~~~~~~~~~~~~~

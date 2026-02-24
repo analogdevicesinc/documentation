@@ -6,9 +6,18 @@ AD4630-FMC User Guide
 Introduction
 ------------
 
-The :adi:`AD4630-24` is a dual-channel, 24-bit, 2 MSPS precision SAR ADC with
-Easy Drive features. It provides excellent dynamic range and is designed for
-high-precision measurement applications.
+The EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ, and EVAL-AD4630-16FMCZ evaluation
+boards enable quick and easy evaluation of the AD4x3x family of 24-bit and
+16-bit precision successive approximation register (SAR) analog-to-digital
+converters (ADCs).
+
+The :adi:`AD4630-24` and :adi:`AD4630-16` are 2 MSPS per channel, low power,
+dual channel, 24-bit or 16-bit SAR ADCs, while the :adi:`AD4030-24` is a
+single channel, 24-bit precision SAR ADC supporting up to 2 MSPS.
+
+The evaluation boards are designed for use with the ZedBoard. The ZedBoard
+controls data capture and buffering, and connects to the evaluation board via
+an FMC LPC connector.
 
 Supported Devices
 -----------------
@@ -22,6 +31,87 @@ Supported Carriers
 
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
 
+Evaluation Board Hardware
+-------------------------
+
+The evaluation board includes:
+
+- Two differential input channels with SMA connectors (AD4630-24/16) or one
+  differential input channel (AD4030-24)
+- A high precision voltage reference (:adi:`ADR4550` or :adi:`LTC6655`)
+- A configurable analog front end (AFE) supporting multiple driver topologies
+- An optional 100 MHz clock source for the FPGA and ADC
+- Full power supply solution from 12 V supplied through the FMC connector
+
+Analog Front End
+~~~~~~~~~~~~~~~~
+
+The evaluation board has a flexible driver network supporting multiple
+topologies:
+
+- **Differential Amplifier (default)** - :adi:`ADA4945-1` fully differential
+  amplifier driving the ADC with unity gain. Supports single-ended and
+  differential sources.
+- **Dual Buffer** - :adi:`ADA4896-2` dual unity gain buffer for best noise
+  performance due to low voltage and current noise (1 nV/rtHz and 2.8 pA/rtHz).
+- **Buffer with Gain** - Combination of ADA4896-2 and ADA4945-1 for
+  applications requiring high input impedance with gain.
+- **Direct Drive** - Allows the ADC to be driven directly from the SMA
+  connectors for evaluation with external driver configurations.
+
+System Operational Constraints
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Maximum sampling rate by device configuration
+   :header-rows: 1
+
+   * - Clocking Mode
+     - Lane Mode
+     - Data Rate
+     - Data Format
+     - Max Sampling Rate
+   * - SPI
+     - 1
+     - SDR
+     - 24-bit
+     - 2 MSPS
+   * - SPI
+     - 1
+     - DDR
+     - 32 or 24-bit
+     - 2 MSPS
+   * - SPI
+     - 2
+     - SDR or DDR
+     - 32 or 24-bit
+     - 2 MSPS
+   * - SPI
+     - 4
+     - SDR or DDR
+     - 32 or 24-bit
+     - 2 MSPS
+   * - Echo Clock
+     - 1
+     - SDR
+     - 24-bit
+     - 2 MSPS
+   * - Echo Clock
+     - 1
+     - DDR
+     - 32 or 24-bit
+     - 2 MSPS
+   * - Echo Clock
+     - 2
+     - SDR or DDR
+     - 32 or 24-bit
+     - 2 MSPS
+
+.. note::
+
+   The sampling rate in single lane, 32-bit output formats in SDR mode is
+   limited by the FPGA SPI engine. This is not a limitation of the
+   AD4630/AD4030 device.
+
 HDL Reference Design
 --------------------
 
@@ -29,6 +119,14 @@ HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`projects/ad4630_fmc`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ad4630.c`
 
 More Information
 ----------------

@@ -6,14 +6,24 @@ CN0363 User Guide
 Introduction
 ------------
 
-The CN0363 is a colorimeter reference design that uses the :adi:`ADPD1080`
-photometric front end with the :adi:`AD5201` digital potentiometer and the
-:adi:`ADA4961` amplifier. It provides precision color measurement using
-multiple LED wavelengths.
+The EVAL-CN0363-PMDZ is a colorimeter reference design based on the
+:adi:`AD7175-2` sigma-delta ADC, the :adi:`AD5201` digital potentiometer, and
+the :adi:`ADPD1080` photometric front end. The HDL reference design implements
+function blocks to communicate over SPI with the AD7175-2 to configure it and
+receive raw ADC data, as well as configure the AD5201 digital potentiometer.
+The data received from the ADC is passed to a digital synchronous detector
+processing pipeline and written to system memory using DMA.
+
+.. figure:: colorimeter_block_diagram.png
+   :align: center
+
+   CN0363 system block diagram
 
 Supported Devices
 -----------------
 
+- :adi:`AD7175-2`
+- :adi:`AD5201`
 - :adi:`ADPD1080`
 
 Supported Carriers
@@ -23,6 +33,48 @@ Supported Carriers
 
 HDL Reference Design
 --------------------
+
+SPI Communication
+~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0363_hdl_spi.png
+   :align: center
+
+   CN0363 SPI communication block diagram
+
+The SPI Engine Framework is used for SPI communication. This allows flexibility
+to access all configuration registers for both connected SPI devices
+dynamically from software, as well as allowing low-latency and high-throughput
+automated access to the SPI bus when capturing sample data from the ADC.
+
+The SPI-Engine offload core reads the ADC result data and feeds it into the
+processing pipeline. The stored SPI message is executed when the data ready
+(RDY) signal from the ADC is detected.
+
+Synchronous Detector Processing Pipeline
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0363_hdl_processing.png
+   :align: center
+
+   CN0363 processing pipeline block diagram
+
+The processing pipeline consists of the following stages:
+
+#. **Phase/Data Sync** - Takes a snapshot of the phase counter on conversion
+   done, then waits for the corresponding data sample from the ADC. Converts
+   data from offset binary to two's complement.
+#. **High-pass Filter** - Removes noise below 50 Hz and any DC components.
+#. **CORDIC Demodulator** - Calculates the data multiplied by both cosine and
+   sine of the phase. Outputs demodulated in-phase (I) and quadrature (Q)
+   components.
+#. **Low-pass Filter** - Removes frequency components different from the
+   excitation frequency.
+#. **Sequencer** - Cycles through input data, intermediate results, and final
+   processing results, sending them to the DMA controller.
+
+Both filters are configured in a time-division-multiplexing configuration,
+sharing logic for filter output calculation between channels.
 
 HDL Source Code
 ~~~~~~~~~~~~~~~

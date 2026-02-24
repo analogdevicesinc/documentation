@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD7768-1 is a low power, high performance, 24-bit sigma-delta ADC that offers a wide dynamic range with simultaneous 50/60 Hz rejection. It is the single-channel variant of the AD7768 family." name="description" />
+<meta content="The AD7768-1 is a low power, high performance, sigma-delta analog-to-digital converter (ADC) with a sigma-delta modulator and digital filter for precision conversion of both AC and DC signals. It is a single channel version of the AD7768, an 8-channel, simultaneously sampling, sigma-delta ADC." name="description" />
 
     <title>AD7768-1-EVB User Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -643,9 +643,27 @@ Content on this topic
 <span id="ad77681evb"></span><h1>AD7768-1-EVB User Guide<a class="headerlink" href="#ad7768-1-evb-user-guide" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/AD7768-1" target="_blank">AD7768-1</a> is a low power, high performance, 24-bit sigma-delta ADC
-that offers a wide dynamic range with simultaneous 50/60 Hz rejection. It is
-the single-channel variant of the <a class="icon adi reference external" href="https://www.analog.com/AD7768" target="_blank">AD7768</a> family.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD7768-1" target="_blank">AD7768-1</a> is a low power, high performance, sigma-delta
+analog-to-digital converter (ADC) with a sigma-delta modulator and digital
+filter for precision conversion of both AC and DC signals. It is a single
+channel version of the <a class="icon adi reference external" href="https://www.analog.com/AD7768" target="_blank">AD7768</a>, an 8-channel, simultaneously sampling,
+sigma-delta ADC.</p>
+<p>The AD7768-1 achieves a 108.5 dB dynamic range when using the low ripple FIR
+digital filter at 256 kSPS, giving 110.8 kHz input bandwidth, combined with
++/-1.1 ppm INL, +/-30 uV offset error, and +/-30 ppm gain error.</p>
+<p>The AD7768-1 offers flexibility to configure and optimize for input bandwidth
+vs. output data rate and vs. power dissipation through three operating modes:</p>
+<ul class="simple">
+<li><p><strong>Fast mode</strong> - sinc filter with up to 256 kSPS and 52.2 kHz bandwidth at
+26.4 mW, or FIR filter with up to 256 kSPS, 110.8 kHz bandwidth at 36.8 mW</p></li>
+<li><p><strong>Median mode</strong> - FIR filter with up to 128 kSPS, 55.4 kHz bandwidth at
+19.7 mW</p></li>
+<li><p><strong>Low power mode</strong> - FIR filter with up to 32 kSPS, 13.85 kHz bandwidth at
+6.75 mW</p></li>
+</ul>
+<p>Filter options include a low ripple FIR filter, a low latency sinc5 filter with
+up to 1.024 MHz data rate, and a programmable sinc3 filter with 50 Hz/60 Hz
+rejection capabilities.</p>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
@@ -661,6 +679,10 @@ the single-channel variant of the <a class="icon adi reference external" href="h
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<p>The reference design uses the standard SPI Engine Framework. The offload module
+is triggered by the DRDY (data ready) signal of the device. Because the board
+has two AD7768-1 devices, the data path consists of two separate SPI interfaces
+and GPIOs, and two DMAs for data stream capture.</p>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">

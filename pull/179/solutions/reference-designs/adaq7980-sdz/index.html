@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The ADAQ7980 is a 16-bit, 1 MSPS data acquisition system in a module (SiP) that integrates a SAR ADC, a low noise fully differential ADC driver amplifier, a stable reference buffer, and a high performance regulator." name="description" />
+<meta content="The ADAQ7980 / ADAQ7988 are 16-bit analog-to-digital converter (ADC) subsystems that integrate four common signal processing and conditioning blocks into a system in package (SiP) design. These devices contain:" name="description" />
 
     <title>ADAQ7980-SDZ User Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -99,6 +99,7 @@
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
+<li><a class="reference internal" href="#design-configuration">Design Configuration</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
@@ -643,16 +644,34 @@ Content on this topic
 <span id="adaq7980-sdz"></span><h1>ADAQ7980-SDZ User Guide<a class="headerlink" href="#adaq7980-sdz-user-guide" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/ADAQ7980" target="_blank">ADAQ7980</a> is a 16-bit, 1 MSPS data acquisition system in a module
-(SiP) that integrates a SAR ADC, a low noise fully differential ADC driver
-amplifier, a stable reference buffer, and a high performance regulator.</p>
-<p>The HDL reference design uses the SPI Engine Framework for interfacing with the
-ADC and DMA for data transfer to system memory.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADAQ7980" target="_blank">ADAQ7980</a> / <a class="icon adi reference external" href="https://www.analog.com/ADAQ7988" target="_blank">ADAQ7988</a> are 16-bit analog-to-digital converter
+(ADC) subsystems that integrate four common signal processing and conditioning
+blocks into a system in package (SiP) design. These devices contain:</p>
+<ul class="simple">
+<li><p>A high accuracy, low power, 16-bit SAR ADC</p></li>
+<li><p>A low power, high bandwidth, high input impedance ADC driver</p></li>
+<li><p>A low power, stable reference buffer</p></li>
+<li><p>An efficient power management block</p></li>
+</ul>
+<p>Housed within a 5 mm x 4 mm LGA package, the ADAQ7980 simplifies the design
+process for data acquisition systems while providing the flexibility of a
+configurable ADC driver feedback loop to allow gain and/or common-mode
+adjustments.</p>
+<p>Applications:</p>
+<ul class="simple">
+<li><p>Automated test equipment (ATE)</p></li>
+<li><p>Battery powered instrumentation</p></li>
+<li><p>Communications</p></li>
+<li><p>Data acquisition</p></li>
+<li><p>Process control</p></li>
+<li><p>Medical instruments</p></li>
+</ul>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADAQ7980" target="_blank">ADAQ7980</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADAQ7988" target="_blank">ADAQ7988</a></p></li>
 </ul>
 </section>
 <section id="supported-carriers">
@@ -663,6 +682,17 @@ ADC and DMA for data transfer to system memory.</p>
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<p>The reference design uses the standard SPI Engine Framework with an integrated
+pulse generator, which provides the required conversion rate for the ADC.</p>
+<section id="design-configuration">
+<h3>Design Configuration<a class="headerlink" href="#design-configuration" title="Link to this heading"></a></h3>
+<p>The reference design uses an integrated pulse generator to synchronize the
+capture events during continuous conversion. The required sampling rate can be
+set in the <code class="docutils literal notranslate"><span class="pre">system_bd.tcl</span></code> file:</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span>adc_sampling_rate<span class="w"> </span><span class="mi">1000000</span>
+</pre></div>
+</div>
+</section>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">

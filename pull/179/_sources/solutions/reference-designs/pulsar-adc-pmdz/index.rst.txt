@@ -7,27 +7,161 @@ Introduction
 ------------
 
 The PulSAR ADC PMOD evaluation boards provide a low-cost way to evaluate the
-ADI PulSAR family of precision SAR ADCs using PMOD-compatible carrier boards.
+ADI PulSAR family of precision SAR ADCs. These low power ADCs offer very high
+performance from 14-bits up to 18-bits with throughputs ranging from 100 kSPS
+to 1.3 MSPS. The boards are designed to demonstrate the ADC's performance and
+to provide an easy digital interface for a variety of system applications.
 
-The HDL reference design uses the SPI Engine Framework for interfacing with
-the ADC via the PMOD connector.
+.. list-table:: Supported PulSAR ADC PMOD Boards
+   :header-rows: 1
 
-Supported Devices
------------------
+   * - Product
+     - Resolution
+     - ADC Throughput
+     - Input Stage
+   * - :adi:`AD7942`
+     - 14-bit
+     - 250 kSPS
+     - Unipolar, Single-Ended
+   * - :adi:`AD7946`
+     - 14-bit
+     - 500 kSPS
+     - Unipolar, Single-Ended
+   * - :adi:`AD7988-1`
+     - 16-bit
+     - 100 kSPS
+     - Unipolar, Single-Ended
+   * - :adi:`AD7685`
+     - 16-bit
+     - 250 kSPS
+     - Unipolar, Single-Ended
+   * - :adi:`AD7687`
+     - 16-bit
+     - 250 kSPS
+     - Unipolar, Differential
+   * - :adi:`AD7686`
+     - 16-bit
+     - 500 kSPS
+     - Unipolar, Single-Ended
+   * - :adi:`AD7688`
+     - 16-bit
+     - 500 kSPS
+     - Unipolar, Differential
+   * - :adi:`AD7693`
+     - 16-bit
+     - 500 kSPS
+     - Unipolar, Differential
+   * - :adi:`AD7980`
+     - 16-bit
+     - 1000 kSPS
+     - Unipolar, Single-Ended
+   * - :adi:`AD7983`
+     - 16-bit
+     - 1333 kSPS
+     - Unipolar, Single-Ended
+   * - :adi:`AD7690`
+     - 18-bit
+     - 400 kSPS
+     - Unipolar, Differential
+   * - :adi:`AD7691`
+     - 18-bit
+     - 250 kSPS
+     - Unipolar, Differential
+   * - :adi:`AD7982`
+     - 18-bit
+     - 1000 kSPS
+     - Unipolar, Differential
+   * - :adi:`AD7984`
+     - 18-bit
+     - 1333 kSPS
+     - Unipolar, Differential
 
-- :adi:`AD7942`
-- :adi:`AD7946`
-- :adi:`AD7988-1`
-- :adi:`AD7685`
-- :adi:`AD7687`
-- :adi:`AD7691`
-- :adi:`AD7693`
-- :adi:`AD7980`
-- :adi:`AD7982`
-- :adi:`AD7984`
+Hardware Setup
+--------------
+
+Power Supply Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ADC's are driven by precision amplifiers optimized for noise and power. In
+order to enable the amplifiers to provide zero and full scale inputs to the ADC,
+external power supplies of -2.5 V, GND, and 7.5 V are needed. These supplies
+provide the power for the entire PMOD board.
+
+Input Connectors
+~~~~~~~~~~~~~~~~
+
+SMB connectors are used for the input signals to minimize noise. Each board
+has two SMB connectors for positive (+) and negative (-) inputs to the
+converter. Each converter has a combination of single-ended, differential, or
+pseudo-differential inputs; consult the device datasheet for details.
+
+Digital Interface (PMOD)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The PMOD interface uses the extended SPI configuration. Each of the PulSAR
+PMOD boards is hardware configured in a 3-wire mode with no busy indicator.
+The signals between the converter and the processor are CNV (chip select),
+SCLK (serial clock), and MISO (serial data out).
+
+Supported Carriers
+------------------
+
+- `Cora Z7S <https://digilent.com/reference/programmable-logic/cora-z7/start>`__
 
 HDL Reference Design
 --------------------
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: pulsar_adc_pmod_hdl.svg
+   :align: center
+
+   PulSAR ADC PMOD block diagram
+
+The reference design uses the standard SPI Engine Framework with an integrated
+PWM generator, which provides the required conversion rate for the ADC.
+
+Design Configuration
+~~~~~~~~~~~~~~~~~~~~
+
+The reference design uses a clock generator for the division of the SPI clock
+and a PWM generator for the conversion signal. The ``PULSE_0_PERIOD`` parameter
+is computed as ``Tcyc_min / Tspi_clk``:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Part
+     - PULSE_0_PERIOD
+   * - AD7942
+     - 640
+   * - AD7946
+     - 320
+   * - AD7988-1
+     - 1600
+   * - AD7685
+     - 640
+   * - AD7687
+     - 640
+   * - AD7691
+     - 640
+   * - AD7686
+     - 320
+   * - AD7688
+     - 320
+   * - AD7693
+     - 320
+   * - AD7980
+     - 160
+   * - AD7983
+     - 120
+   * - AD7690
+     - 250
+   * - AD7982
+     - 160
+   * - AD7984
+     - 120
 
 HDL Source Code
 ~~~~~~~~~~~~~~~

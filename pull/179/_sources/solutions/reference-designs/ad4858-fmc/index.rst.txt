@@ -6,11 +6,15 @@ AD4858-FMC User Guide
 Introduction
 ------------
 
-The :adi:`AD4858` is an 8-channel, 20-bit, 1 MSPS per channel simultaneous
-sampling SAR ADC with Easy Drive features.
+The :adi:`AD4858` is a 20-bit, low noise, 8-channel simultaneous sampling
+successive approximation register (SAR) ADC with buffered differential, wide
+common range picoamp inputs.
 
-The HDL reference design supports both CMOS and LVDS interface modes. It uses
-the SPI Engine Framework for device configuration and DMA for data transfer.
+The EVAL-AD4858 supports pin-selectable SPI CMOS and LVDS serial interfaces.
+In CMOS mode, applications may employ between 1-8 lanes of serial output data,
+allowing the user to optimize bus width and data throughput. In LVDS mode, pins
+SDO+/-, SCKI+/- and SCKO+/- function as differential serial data input, clock
+output and clock input pins respectively (from the FPGA's point of view).
 
 Supported Devices
 -----------------
@@ -19,6 +23,10 @@ Supported Devices
 - :adi:`AD4857`
 - :adi:`AD4856`
 - :adi:`AD4855`
+- :adi:`AD4854`
+- :adi:`AD4853`
+- :adi:`AD4852`
+- :adi:`AD4851`
 
 Supported Carriers
 ------------------
@@ -27,6 +35,78 @@ Supported Carriers
 
 HDL Reference Design
 --------------------
+
+Build Parameters
+~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Default
+     - Description
+   * - LVDS_CMOS_N
+     - 0
+     - Interface type: 0 - CMOS, 1 - LVDS
+
+Block Diagram
+~~~~~~~~~~~~~
+
+The data path and clock domains are depicted in the following diagram:
+
+.. figure:: ad4858_fmcz_block_diagram.svg
+   :align: center
+
+   AD4858-FMC block diagram
+
+The AXI_AD4858 IP core contains two configuration modes: CMOS and LVDS.
+Depending on which is selected at build time via the ``LVDS_CMOS_N`` parameter,
+different files are used for the project.
+
+The AD4858 chip has three modes of configuration regarding the packet format:
+20/24/32-bit format, which is configurable at runtime.
+
+Clock Scheme
+^^^^^^^^^^^^
+
+Depending on the configuration used (CMOS or LVDS), the clock scheme differs.
+Due to limitations of the evaluation board, an internal clock from the FPGA is
+used:
+
+- In LVDS mode: ``external_clk`` = 200 MHz, ``external_fast_clk`` = 400 MHz
+- In CMOS mode: ``external_clk`` = 100 MHz
+
+For custom systems where the AD4858 chip is used, it is recommended to use an
+external clock rather than a clock from the FPGA as done in this reference
+design.
+
+Limitations
+^^^^^^^^^^^
+
+The period of the SCKI clock signal is limited to a minimum of 2.5 ns (at most
+400 MHz). With the SCKI frequency constrained, the case where the conversion
+time is maximum (715 ns) is not achievable with the 24 and 32-bit packet
+formats.
+
+If maximum conversion rate of 400 MHz is required, only the 20-bit packet
+format can be used.
+
+CPU/Memory Interconnect Addresses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :header-rows: 1
+
+   * - Instance
+     - Address
+   * - axi_ad4858
+     - 0x43C0_0000
+   * - axi_pwm_gen
+     - 0x43D0_0000
+   * - ad4858_dma
+     - 0x43E0_0000
+   * - adc_clkgen
+     - 0x4400_0000
 
 HDL Source Code
 ~~~~~~~~~~~~~~~

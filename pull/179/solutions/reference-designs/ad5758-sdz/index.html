@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD5758 is a single-channel, voltage and current output digital-to- analog converter (DAC) that operates with a power supply range from a single supply of +4.5 V to +60 V or a dual supply of +/-4.5 V to +/-33 V." name="description" />
+<meta content="The AD5758 is a single-channel, voltage and current output digital-to- analog converter (DAC) that operates with a power supply range from -33 V minimum on AVSS to +33 V maximum on AVDD1 with a maximum operating voltage between the two rails of 60 V." name="description" />
 
     <title>AD5758-SDZ User Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -644,8 +644,28 @@ Content on this topic
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD5758" target="_blank">AD5758</a> is a single-channel, voltage and current output digital-to-
-analog converter (DAC) that operates with a power supply range from a single
-supply of +4.5 V to +60 V or a dual supply of +/-4.5 V to +/-33 V.</p>
+analog converter (DAC) that operates with a power supply range from -33 V
+minimum on AVSS to +33 V maximum on AVDD1 with a maximum operating voltage
+between the two rails of 60 V.</p>
+<p>On-chip dynamic power control (DPC) minimizes package power dissipation by
+regulating the supply voltage (VDPC+) to the VIOUT output driver circuitry
+from 5 V to 27 V using a buck dc-to-dc converter optimized for minimum on-chip
+power dissipation. The CHART pin enables a HART signal to be coupled onto the
+current output.</p>
+<p>The device uses a versatile 4-wire SPI that operates at clock rates of up to
+50 MHz and is compatible with standard SPI, QSPI, MICROWIRE, DSP, and
+micro-controller interface standards. The interface also features an optional
+SPI CRC and a watchdog timer. The AD5758 offers diagnostic features such as
+output current monitoring and an integrated 12-bit diagnostic ADC. Additional
+robustness is provided by a fault protection switch on VIOUT, +VSENSE, and
+-VSENSE pins.</p>
+<p>Applications:</p>
+<ul class="simple">
+<li><p>Process control</p></li>
+<li><p>Actuator control</p></li>
+<li><p>PLC and DCS applications</p></li>
+<li><p>HART network connectivity</p></li>
+</ul>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
@@ -661,6 +681,9 @@ supply of +4.5 V to +60 V or a dual supply of +/-4.5 V to +/-33 V.</p>
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<p>The HDL project uses a ZedBoard and its hardware interfaces. There is no custom
+logic in the programmable side of the Zynq 7000 SoC; the design uses the
+standard base reference design framework.</p>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">

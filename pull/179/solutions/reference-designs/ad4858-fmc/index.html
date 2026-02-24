@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD4858 is an 8-channel, 20-bit, 1 MSPS per channel simultaneous sampling SAR ADC with Easy Drive features." name="description" />
+<meta content="The AD4858 is a 20-bit, low noise, 8-channel simultaneous sampling successive approximation register (SAR) ADC with buffered differential, wide common range picoamp inputs." name="description" />
 
     <title>AD4858-FMC User Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -99,6 +99,13 @@
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
+<li><a class="reference internal" href="#build-parameters">Build Parameters</a></li>
+<li><a class="reference internal" href="#block-diagram">Block Diagram</a><ul>
+<li><a class="reference internal" href="#clock-scheme">Clock Scheme</a></li>
+<li><a class="reference internal" href="#limitations">Limitations</a></li>
+<li><a class="reference internal" href="#cpu-memory-interconnect-addresses">CPU/Memory Interconnect Addresses</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
@@ -639,10 +646,14 @@ Content on this topic
 <span id="ad4858-fmc"></span><h1>AD4858-FMC User Guide<a class="headerlink" href="#ad4858-fmc-user-guide" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/AD4858" target="_blank">AD4858</a> is an 8-channel, 20-bit, 1 MSPS per channel simultaneous
-sampling SAR ADC with Easy Drive features.</p>
-<p>The HDL reference design supports both CMOS and LVDS interface modes. It uses
-the SPI Engine Framework for device configuration and DMA for data transfer.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD4858" target="_blank">AD4858</a> is a 20-bit, low noise, 8-channel simultaneous sampling
+successive approximation register (SAR) ADC with buffered differential, wide
+common range picoamp inputs.</p>
+<p>The EVAL-AD4858 supports pin-selectable SPI CMOS and LVDS serial interfaces.
+In CMOS mode, applications may employ between 1-8 lanes of serial output data,
+allowing the user to optimize bus width and data throughput. In LVDS mode, pins
+SDO+/-, SCKI+/- and SCKO+/- function as differential serial data input, clock
+output and clock input pins respectively (from the FPGA’s point of view).</p>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
@@ -651,6 +662,10 @@ the SPI Engine Framework for device configuration and DMA for data transfer.</p>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD4857" target="_blank">AD4857</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD4856" target="_blank">AD4856</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD4855" target="_blank">AD4855</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD4854" target="_blank">AD4854</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD4853" target="_blank">AD4853</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD4852" target="_blank">AD4852</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD4851" target="_blank">AD4851</a></p></li>
 </ul>
 </section>
 <section id="supported-carriers">
@@ -661,6 +676,88 @@ the SPI Engine Framework for device configuration and DMA for data transfer.</p>
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<section id="build-parameters">
+<h3>Build Parameters<a class="headerlink" href="#build-parameters" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LVDS_CMOS_N</p></td>
+<td><p>0</p></td>
+<td><p>Interface type: 0 - CMOS, 1 - LVDS</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="block-diagram">
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
+<p>The data path and clock domains are depicted in the following diagram:</p>
+<figure class="align-center" id="id1">
+<img alt="../../../_images/ad4858_fmcz_block_diagram.svg" src="../../../_images/ad4858_fmcz_block_diagram.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD4858-FMC block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The AXI_AD4858 IP core contains two configuration modes: CMOS and LVDS.
+Depending on which is selected at build time via the <code class="docutils literal notranslate"><span class="pre">LVDS_CMOS_N</span></code> parameter,
+different files are used for the project.</p>
+<p>The AD4858 chip has three modes of configuration regarding the packet format:
+20/24/32-bit format, which is configurable at runtime.</p>
+<section id="clock-scheme">
+<h4>Clock Scheme<a class="headerlink" href="#clock-scheme" title="Link to this heading"></a></h4>
+<p>Depending on the configuration used (CMOS or LVDS), the clock scheme differs.
+Due to limitations of the evaluation board, an internal clock from the FPGA is
+used:</p>
+<ul class="simple">
+<li><p>In LVDS mode: <code class="docutils literal notranslate"><span class="pre">external_clk</span></code> = 200 MHz, <code class="docutils literal notranslate"><span class="pre">external_fast_clk</span></code> = 400 MHz</p></li>
+<li><p>In CMOS mode: <code class="docutils literal notranslate"><span class="pre">external_clk</span></code> = 100 MHz</p></li>
+</ul>
+<p>For custom systems where the AD4858 chip is used, it is recommended to use an
+external clock rather than a clock from the FPGA as done in this reference
+design.</p>
+</section>
+<section id="limitations">
+<h4>Limitations<a class="headerlink" href="#limitations" title="Link to this heading"></a></h4>
+<p>The period of the SCKI clock signal is limited to a minimum of 2.5 ns (at most
+400 MHz). With the SCKI frequency constrained, the case where the conversion
+time is maximum (715 ns) is not achievable with the 24 and 32-bit packet
+formats.</p>
+<p>If maximum conversion rate of 400 MHz is required, only the 20-bit packet
+format can be used.</p>
+</section>
+<section id="cpu-memory-interconnect-addresses">
+<h4>CPU/Memory Interconnect Addresses<a class="headerlink" href="#cpu-memory-interconnect-addresses" title="Link to this heading"></a></h4>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Instance</p></th>
+<th class="head"><p>Address</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>axi_ad4858</p></td>
+<td><p>0x43C0_0000</p></td>
+</tr>
+<tr class="row-odd"><td><p>axi_pwm_gen</p></td>
+<td><p>0x43D0_0000</p></td>
+</tr>
+<tr class="row-even"><td><p>ad4858_dma</p></td>
+<td><p>0x43E0_0000</p></td>
+</tr>
+<tr class="row-odd"><td><p>adc_clkgen</p></td>
+<td><p>0x4400_0000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">

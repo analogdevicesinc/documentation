@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The CN0363 is a colorimeter reference design that uses the ADPD1080 photometric front end with the AD5201 digital potentiometer and the ADA4961 amplifier. It provides precision color measurement using multiple LED wavelengths." name="description" />
+<meta content="The EVAL-CN0363-PMDZ is a colorimeter reference design based on the AD7175-2 sigma-delta ADC, the AD5201 digital potentiometer, and the ADPD1080 photometric front end. The HDL reference design implements function blocks to communicate over SPI with the AD7175-2 to configure it and receive raw ADC data, as well as configure the AD5201 digital potentiometer. The data received from the ADC is passed to a digital synchronous detector processing pipeline and written to system memory using DMA." name="description" />
 
     <title>CN0363 User Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -99,6 +99,8 @@
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
+<li><a class="reference internal" href="#spi-communication">SPI Communication</a></li>
+<li><a class="reference internal" href="#synchronous-detector-processing-pipeline">Synchronous Detector Processing Pipeline</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
@@ -639,14 +641,25 @@ Content on this topic
 <span id="cn0363"></span><h1>CN0363 User Guide<a class="headerlink" href="#cn0363-user-guide" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>The CN0363 is a colorimeter reference design that uses the <a class="icon adi reference external" href="https://www.analog.com/ADPD1080" target="_blank">ADPD1080</a>
-photometric front end with the <a class="icon adi reference external" href="https://www.analog.com/AD5201" target="_blank">AD5201</a> digital potentiometer and the
-<a class="icon adi reference external" href="https://www.analog.com/ADA4961" target="_blank">ADA4961</a> amplifier. It provides precision color measurement using
-multiple LED wavelengths.</p>
+<p>The EVAL-CN0363-PMDZ is a colorimeter reference design based on the
+<a class="icon adi reference external" href="https://www.analog.com/AD7175-2" target="_blank">AD7175-2</a> sigma-delta ADC, the <a class="icon adi reference external" href="https://www.analog.com/AD5201" target="_blank">AD5201</a> digital potentiometer, and
+the <a class="icon adi reference external" href="https://www.analog.com/ADPD1080" target="_blank">ADPD1080</a> photometric front end. The HDL reference design implements
+function blocks to communicate over SPI with the AD7175-2 to configure it and
+receive raw ADC data, as well as configure the AD5201 digital potentiometer.
+The data received from the ADC is passed to a digital synchronous detector
+processing pipeline and written to system memory using DMA.</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/cn0363/colorimeter_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/cn0363/colorimeter_block_diagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0363 system block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD7175-2" target="_blank">AD7175-2</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD5201" target="_blank">AD5201</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADPD1080" target="_blank">ADPD1080</a></p></li>
 </ul>
 </section>
@@ -658,6 +671,47 @@ multiple LED wavelengths.</p>
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<section id="spi-communication">
+<h3>SPI Communication<a class="headerlink" href="#spi-communication" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/cn0363/cn0363_hdl_spi.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/cn0363/cn0363_hdl_spi.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0363 SPI communication block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The SPI Engine Framework is used for SPI communication. This allows flexibility
+to access all configuration registers for both connected SPI devices
+dynamically from software, as well as allowing low-latency and high-throughput
+automated access to the SPI bus when capturing sample data from the ADC.</p>
+<p>The SPI-Engine offload core reads the ADC result data and feeds it into the
+processing pipeline. The stored SPI message is executed when the data ready
+(RDY) signal from the ADC is detected.</p>
+</section>
+<section id="synchronous-detector-processing-pipeline">
+<h3>Synchronous Detector Processing Pipeline<a class="headerlink" href="#synchronous-detector-processing-pipeline" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/cn0363/cn0363_hdl_processing.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/cn0363/cn0363_hdl_processing.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0363 processing pipeline block diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The processing pipeline consists of the following stages:</p>
+<ol class="arabic simple">
+<li><p><strong>Phase/Data Sync</strong> - Takes a snapshot of the phase counter on conversion
+done, then waits for the corresponding data sample from the ADC. Converts
+data from offset binary to two’s complement.</p></li>
+<li><p><strong>High-pass Filter</strong> - Removes noise below 50 Hz and any DC components.</p></li>
+<li><p><strong>CORDIC Demodulator</strong> - Calculates the data multiplied by both cosine and
+sine of the phase. Outputs demodulated in-phase (I) and quadrature (Q)
+components.</p></li>
+<li><p><strong>Low-pass Filter</strong> - Removes frequency components different from the
+excitation frequency.</p></li>
+<li><p><strong>Sequencer</strong> - Cycles through input data, intermediate results, and final
+processing results, sending them to the DMA controller.</p></li>
+</ol>
+<p>Both filters are configured in a time-division-multiplexing configuration,
+sharing logic for filter output calculation between channels.</p>
+</section>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">
