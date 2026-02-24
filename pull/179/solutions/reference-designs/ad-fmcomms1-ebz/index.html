@@ -100,8 +100,22 @@
 <li><a class="reference internal" href="#applications">Applications</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#functional-overview">Functional Overview</a><ul>
+<li><a class="reference internal" href="#transmit-path">Transmit Path</a></li>
+<li><a class="reference internal" href="#receive-path">Receive Path</a></li>
+<li><a class="reference internal" href="#clocking">Clocking</a></li>
+<li><a class="reference internal" href="#power-supply">Power Supply</a></li>
+<li><a class="reference internal" href="#configuration-options">Configuration Options</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-support">Software Support</a><ul>
+<li><a class="reference internal" href="#linux-drivers">Linux Drivers</a></li>
+<li><a class="reference internal" href="#i-q-correction">I/Q Correction</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#support">Support</a></li>
@@ -687,13 +701,168 @@ software</p></li>
 </ul>
 </section>
 </section>
+<section id="functional-overview">
+<h2>Functional Overview<a class="headerlink" href="#functional-overview" title="Link to this heading"></a></h2>
+<section id="transmit-path">
+<h3>Transmit Path<a class="headerlink" href="#transmit-path" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/AD9122" target="_blank">AD9122</a></p></td>
+<td><p>Dual 16-bit, 1200 MSPS TxDAC with offset, phase, and gain compensation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADL5375" target="_blank">ADL5375</a></p></td>
+<td><p>400 MHz to 6 GHz broadband quadrature modulator</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADL5602" target="_blank">ADL5602</a></p></td>
+<td><p>50 MHz to 4.0 GHz RF/IF gain block (20 dB)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADF4351" target="_blank">ADF4351</a></p></td>
+<td><p>Wideband synthesizer with integrated VCO (35 MHz to 4400 MHz)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Output power is up to 7.5 dBm. Transmit bandwidth is up to 250 MHz depending
+on ADL5602/ADL5375 response flatness. Optional amplifiers (<a class="icon adi reference external" href="https://www.analog.com/ADL5605" target="_blank">ADL5605</a> or
+<a class="icon adi reference external" href="https://www.analog.com/ADL5606" target="_blank">ADL5606</a>) can be added for antenna driving.</p>
+</section>
+<section id="receive-path">
+<h3>Receive Path<a class="headerlink" href="#receive-path" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADL5380" target="_blank">ADL5380</a></p></td>
+<td><p>400 to 6000 MHz quadrature demodulator (500 MHz bandwidth)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/AD8366" target="_blank">AD8366</a></p></td>
+<td><p>DC to 600 MHz dual variable gain amplifier (4.5 dB to 20.25 dB gain)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/AD9643" target="_blank">AD9643</a></p></td>
+<td><p>14-bit, 250 MSPS dual analog-to-digital converter</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Baseband response extends to DC to 400 MHz (-3 dB point). An optional
+external LNA (<a class="icon adi reference external" href="https://www.analog.com/ADL5523" target="_blank">ADL5523</a>, 400 MHz to 4000 MHz) can be used.</p>
+</section>
+<section id="clocking">
+<h3>Clocking<a class="headerlink" href="#clocking" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/AD9548" target="_blank">AD9548</a></p></td>
+<td><p>Quad/octal input network clock generator (1 Hz to 750 MHz)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/AD9523-1" target="_blank">AD9523-1</a></p></td>
+<td><p>Low jitter clock generator with 14 outputs (1 MHz to 1 GHz)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Default clock configuration: 30 MHz FPGA clock is cleaned up via the AD9548,
+then the AD9523-1 generates 491.52 MHz for DAC sample rate, 245.76 MHz for
+ADC sample rate, and 122.88 MHz for LO PLL reference clocks. External
+synchronization is supported for multiple board configurations.</p>
+</section>
+<section id="power-supply">
+<h3>Power Supply<a class="headerlink" href="#power-supply" title="Link to this heading"></a></h3>
+<p>The board is powered entirely from the FPGA carrier board through the FMC
+connector:</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADP2323" target="_blank">ADP2323</a>: 3 A switching regulator</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADP7104" target="_blank">ADP7104</a>: 500 mA low dropout regulator</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADP151" target="_blank">ADP151</a>: 150/200 mA ultra-low-noise LDO</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADP1740" target="_blank">ADP1740</a>: 2 A LDO</p></li>
+</ul>
+</section>
+<section id="configuration-options">
+<h3>Configuration Options<a class="headerlink" href="#configuration-options" title="Link to this heading"></a></h3>
+<p>The board ships in the default RF-enabled configuration. The ADC RF section
+uses three-pad solder jumpers (JP1-JP3, JP7) and the DAC RF section uses
+solder jumpers (JP4-JP6, JP17).</p>
+<p>A bypass mode (RF disabled) is available for direct analog interface to the
+ADC inputs/DAC outputs, but performance suffers and the RF section still
+consumes power.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Frequent jumper changes will damage the solder pads and they may lift off
+the board. Solder jumpers provide better RF performance than traditional
+pin jumpers.</p>
+</div>
+<p>Three Pi attenuators (0 dB default) are included in the design: one in the
+receive chain (before the balun) and two in the transmit chain.</p>
+</section>
+</section>
+<section id="supported-carriers">
+<h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC702" target="_blank">ZC702</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></li>
+<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></li>
+</ul>
+</section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<p>The reference design is a processor-based embedded system using DDS for
+flexible internal signal generation, external memory via VDMA for waveforms,
+FFT processing for spectrum analysis, and DMA transfers for ADC data to DDR.</p>
+<p>Key IP cores:</p>
+<ul class="simple">
+<li><p><strong>cf_axi_adc</strong>: ADC interface (AXI streaming)</p></li>
+<li><p><strong>cf_axi_dds</strong>: DAC DDS interface (AXI streaming)</p></li>
+<li><p>I/Q correction HDL available for Simulink-based matrix multiplication</p></li>
+</ul>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/hdl_2016_r1/projects/fmcomms1" target="_blank">projects/fmcomms1</a></p></li>
 </ul>
+</section>
+</section>
+<section id="software-support">
+<h2>Software Support<a class="headerlink" href="#software-support" title="Link to this heading"></a></h2>
+<section id="linux-drivers">
+<h3>Linux Drivers<a class="headerlink" href="#linux-drivers" title="Link to this heading"></a></h3>
+<p>The following IIO subsystem drivers are used:</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9523-1" target="_blank">AD9523-1</a>: PLL clock generator</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADF4350" target="_blank">ADF4350</a>: Synthesizer/tuning</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD8366" target="_blank">AD8366</a>: Variable gain amplifier</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9643" target="_blank">AD9643</a>: ADC digital interface</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9122" target="_blank">AD9122</a>: DAC/DDS digital interface</p></li>
+</ul>
+<p>Applications include IIO Oscilloscope (local or remote), shell scripts for
+command-line control, <code class="docutils literal notranslate"><span class="pre">fru_dump</span></code> for board info readback, and <code class="docutils literal notranslate"><span class="pre">xcomm_cal</span></code>
+for calibration.</p>
+</section>
+<section id="i-q-correction">
+<h3>I/Q Correction<a class="headerlink" href="#i-q-correction" title="Link to this heading"></a></h3>
+<p>The board provides an I/Q correction framework to compensate for amplitude
+offset, phase offset, and DC bias in baseband signals caused by component
+mismatches. Without correction, image interference creates an error floor
+limiting demodulation performance.</p>
+<p>The correction uses a two-step implementation: matrix parameter calculation
+(MATLAB/Simulink) and hardware multiplication (HDL). Simulink models are
+provided for calculating the correction matrix parameters.</p>
 </section>
 </section>
 <section id="support">

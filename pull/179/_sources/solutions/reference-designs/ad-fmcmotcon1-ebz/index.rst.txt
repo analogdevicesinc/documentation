@@ -52,6 +52,21 @@ Features
 - High speed industrial Ethernet interface
 - Example reference designs for Xilinx FPGAs and Simulink from MathWorks
 
+Interfaces
+~~~~~~~~~~
+
+The controller board provides the following interfaces:
+
+- 2x Gigabit Ethernet PHYs for industrial communication
+- Hall sensor interface (single-ended and differential)
+- Encoder interface
+- Resolver interface
+- Isolated ADC interfaces for current and voltage measurement
+- Isolated Xilinx XADC interface
+- BEMF zero-cross detection for sensorless BLDC/PMSM operation
+
+All control and feedback signals are fully isolated.
+
 HDL Reference Design
 --------------------
 
@@ -74,6 +89,13 @@ Software Support
 The Linux Industrial I/O (IIO) drivers for the motor control solution require
 the HDL cores to have a specified register map. A DMA interface is set up for
 high speed data transfer using multiple multiplexed data channels.
+
+The following software tools are supported:
+
+- Linux drivers for motor control with IIO Oscilloscope plugin for real-time
+  monitoring
+- MATLAB Simulink models for control algorithm development
+- QDESYS Motor Control IP integration
 
 Support
 -------

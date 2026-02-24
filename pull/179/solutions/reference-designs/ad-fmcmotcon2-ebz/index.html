@@ -95,11 +95,15 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AD-FMCMOTCON2-EBZ</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#interfaces">Interfaces</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#software-support">Software Support</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
 </ul>
 </li>
@@ -663,6 +667,22 @@ system. This is a dynamically adjustable load system that can be used to test
 real-time motor control performance.</p>
 <p>This platform is intended to be used as a prototyping system to verify the
 hardware and the control algorithms before moving to the production stage.</p>
+<section id="interfaces">
+<h3>Interfaces<a class="headerlink" href="#interfaces" title="Link to this heading"></a></h3>
+<p>The controller board provides the following interfaces for dual motor control:</p>
+<ul class="simple">
+<li><p>2x Gigabit Ethernet PHYs (RGMII mode) for industrial Ethernet</p></li>
+<li><p>2x Hall sensor interfaces (single-ended and differential)</p></li>
+<li><p>2x Encoder interfaces</p></li>
+<li><p>Digital position sensor interfaces (EnDat, BiSS)</p></li>
+<li><p>6 high-speed ADC digital interfaces (data + clock)</p></li>
+<li><p>18 isolated drive signals (dual H-bridge capable)</p></li>
+<li><p>2 isolated GPOs + 2 isolated GPIs</p></li>
+<li><p>FMC signal voltage adaptation for all FMC voltage levels</p></li>
+<li><p>BEMF zero-cross detection for sensorless motor control</p></li>
+<li><p>Reverse voltage protection and integrated overcurrent protection</p></li>
+</ul>
+</section>
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
@@ -685,6 +705,16 @@ to RGMII interface available on the FMC Controller Board</p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/hdl_2018_r2/projects/motcon2_fmc" target="_blank">projects/motcon2_fmc</a></p></li>
 </ul>
 </section>
+</section>
+<section id="software-support">
+<h2>Software Support<a class="headerlink" href="#software-support" title="Link to this heading"></a></h2>
+<p>The following software tools are supported:</p>
+<ul class="simple">
+<li><p>Linux drivers for motor control with IIO Oscilloscope plugin</p></li>
+<li><p>Xilinx Zynq Intelligent Drives support from Simulink</p></li>
+<li><p>QDESYS Motor Control IP and EtherCAT design support</p></li>
+<li><p>MathWorks design algorithms</p></li>
+</ul>
 </section>
 <section id="support">
 <h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>

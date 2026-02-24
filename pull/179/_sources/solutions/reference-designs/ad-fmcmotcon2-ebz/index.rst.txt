@@ -41,6 +41,22 @@ real-time motor control performance.
 This platform is intended to be used as a prototyping system to verify the
 hardware and the control algorithms before moving to the production stage.
 
+Interfaces
+~~~~~~~~~~
+
+The controller board provides the following interfaces for dual motor control:
+
+- 2x Gigabit Ethernet PHYs (RGMII mode) for industrial Ethernet
+- 2x Hall sensor interfaces (single-ended and differential)
+- 2x Encoder interfaces
+- Digital position sensor interfaces (EnDat, BiSS)
+- 6 high-speed ADC digital interfaces (data + clock)
+- 18 isolated drive signals (dual H-bridge capable)
+- 2 isolated GPOs + 2 isolated GPIs
+- FMC signal voltage adaptation for all FMC voltage levels
+- BEMF zero-cross detection for sensorless motor control
+- Reverse voltage protection and integrated overcurrent protection
+
 HDL Reference Design
 --------------------
 
@@ -61,6 +77,16 @@ HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`hdl_2018_r2:projects/motcon2_fmc`
+
+Software Support
+----------------
+
+The following software tools are supported:
+
+- Linux drivers for motor control with IIO Oscilloscope plugin
+- Xilinx Zynq Intelligent Drives support from Simulink
+- QDESYS Motor Control IP and EtherCAT design support
+- MathWorks design algorithms
 
 Support
 -------

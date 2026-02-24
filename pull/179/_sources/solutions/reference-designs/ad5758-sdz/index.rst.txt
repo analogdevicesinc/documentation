@@ -32,6 +32,28 @@ Applications:
 - PLC and DCS applications
 - HART network connectivity
 
+The AD5758 supports the following output ranges:
+
+**Voltage Output Ranges:**
+
+- 0 V to 5 V
+- 0 V to 10 V
+- -5 V to +5 V
+- -10 V to +10 V
+
+**Current Output Ranges:**
+
+- 0 mA to 20 mA
+- 0 mA to 24 mA
+- 4 mA to 24 mA
+- -20 mA to +20 mA
+- -24 mA to +24 mA
+- -1 mA to +22 mA
+
+The device includes an integrated 12-bit diagnostic ADC that can monitor
+multiple internal nodes including die temperature, supply voltages, output
+voltage/current sense, and reference voltages.
+
 Supported Devices
 -----------------
 

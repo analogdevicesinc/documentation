@@ -97,6 +97,7 @@
 <li><a class="reference internal" href="#">AD-FMCMOTCON1-EBZ</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#interfaces">Interfaces</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
@@ -683,6 +684,20 @@ applications</p></li>
 <li><p>Example reference designs for Xilinx FPGAs and Simulink from MathWorks</p></li>
 </ul>
 </section>
+<section id="interfaces">
+<h3>Interfaces<a class="headerlink" href="#interfaces" title="Link to this heading"></a></h3>
+<p>The controller board provides the following interfaces:</p>
+<ul class="simple">
+<li><p>2x Gigabit Ethernet PHYs for industrial communication</p></li>
+<li><p>Hall sensor interface (single-ended and differential)</p></li>
+<li><p>Encoder interface</p></li>
+<li><p>Resolver interface</p></li>
+<li><p>Isolated ADC interfaces for current and voltage measurement</p></li>
+<li><p>Isolated Xilinx XADC interface</p></li>
+<li><p>BEMF zero-cross detection for sensorless BLDC/PMSM operation</p></li>
+</ul>
+<p>All control and feedback signals are fully isolated.</p>
+</section>
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
@@ -706,6 +721,13 @@ automatically generated HDL code for Simulink designed motor controller</p></li>
 <p>The Linux Industrial I/O (IIO) drivers for the motor control solution require
 the HDL cores to have a specified register map. A DMA interface is set up for
 high speed data transfer using multiple multiplexed data channels.</p>
+<p>The following software tools are supported:</p>
+<ul class="simple">
+<li><p>Linux drivers for motor control with IIO Oscilloscope plugin for real-time
+monitoring</p></li>
+<li><p>MATLAB Simulink models for control algorithm development</p></li>
+<li><p>QDESYS Motor Control IP integration</p></li>
+</ul>
 </section>
 <section id="support">
 <h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>

@@ -54,13 +54,153 @@ Applications
 - Radar and advanced imaging
 - General purpose data acquisition
 
+Functional Overview
+-------------------
+
+Transmit Path
+~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Component
+     - Function
+   * - :adi:`AD9122`
+     - Dual 16-bit, 1200 MSPS TxDAC with offset, phase, and gain compensation
+   * - :adi:`ADL5375`
+     - 400 MHz to 6 GHz broadband quadrature modulator
+   * - :adi:`ADL5602`
+     - 50 MHz to 4.0 GHz RF/IF gain block (20 dB)
+   * - :adi:`ADF4351`
+     - Wideband synthesizer with integrated VCO (35 MHz to 4400 MHz)
+
+Output power is up to 7.5 dBm. Transmit bandwidth is up to 250 MHz depending
+on ADL5602/ADL5375 response flatness. Optional amplifiers (:adi:`ADL5605` or
+:adi:`ADL5606`) can be added for antenna driving.
+
+Receive Path
+~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Component
+     - Function
+   * - :adi:`ADL5380`
+     - 400 to 6000 MHz quadrature demodulator (500 MHz bandwidth)
+   * - :adi:`AD8366`
+     - DC to 600 MHz dual variable gain amplifier (4.5 dB to 20.25 dB gain)
+   * - :adi:`AD9643`
+     - 14-bit, 250 MSPS dual analog-to-digital converter
+
+Baseband response extends to DC to 400 MHz (-3 dB point). An optional
+external LNA (:adi:`ADL5523`, 400 MHz to 4000 MHz) can be used.
+
+Clocking
+~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Component
+     - Function
+   * - :adi:`AD9548`
+     - Quad/octal input network clock generator (1 Hz to 750 MHz)
+   * - :adi:`AD9523-1`
+     - Low jitter clock generator with 14 outputs (1 MHz to 1 GHz)
+
+Default clock configuration: 30 MHz FPGA clock is cleaned up via the AD9548,
+then the AD9523-1 generates 491.52 MHz for DAC sample rate, 245.76 MHz for
+ADC sample rate, and 122.88 MHz for LO PLL reference clocks. External
+synchronization is supported for multiple board configurations.
+
+Power Supply
+~~~~~~~~~~~~
+
+The board is powered entirely from the FPGA carrier board through the FMC
+connector:
+
+- :adi:`ADP2323`: 3 A switching regulator
+- :adi:`ADP7104`: 500 mA low dropout regulator
+- :adi:`ADP151`: 150/200 mA ultra-low-noise LDO
+- :adi:`ADP1740`: 2 A LDO
+
+Configuration Options
+~~~~~~~~~~~~~~~~~~~~~
+
+The board ships in the default RF-enabled configuration. The ADC RF section
+uses three-pad solder jumpers (JP1-JP3, JP7) and the DAC RF section uses
+solder jumpers (JP4-JP6, JP17).
+
+A bypass mode (RF disabled) is available for direct analog interface to the
+ADC inputs/DAC outputs, but performance suffers and the RF section still
+consumes power.
+
+.. warning::
+
+   Frequent jumper changes will damage the solder pads and they may lift off
+   the board. Solder jumpers provide better RF performance than traditional
+   pin jumpers.
+
+Three Pi attenuators (0 dB default) are included in the design: one in the
+receive chain (before the balun) and two in the transmit chain.
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZC702`
+- :xilinx:`ZC706`
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+- :xilinx:`KC705`
+- :xilinx:`VC707`
+
 HDL Reference Design
 --------------------
+
+The reference design is a processor-based embedded system using DDS for
+flexible internal signal generation, external memory via VDMA for waveforms,
+FFT processing for spectrum analysis, and DMA transfers for ADC data to DDR.
+
+Key IP cores:
+
+- **cf_axi_adc**: ADC interface (AXI streaming)
+- **cf_axi_dds**: DAC DDS interface (AXI streaming)
+- I/Q correction HDL available for Simulink-based matrix multiplication
 
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`hdl_2016_r1:projects/fmcomms1`
+
+Software Support
+----------------
+
+Linux Drivers
+~~~~~~~~~~~~~
+
+The following IIO subsystem drivers are used:
+
+- :adi:`AD9523-1`: PLL clock generator
+- :adi:`ADF4350`: Synthesizer/tuning
+- :adi:`AD8366`: Variable gain amplifier
+- :adi:`AD9643`: ADC digital interface
+- :adi:`AD9122`: DAC/DDS digital interface
+
+Applications include IIO Oscilloscope (local or remote), shell scripts for
+command-line control, ``fru_dump`` for board info readback, and ``xcomm_cal``
+for calibration.
+
+I/Q Correction
+~~~~~~~~~~~~~~
+
+The board provides an I/Q correction framework to compensate for amplitude
+offset, phase offset, and DC bias in baseband signals caused by component
+mismatches. Without correction, image interference creates an error floor
+limiting demodulation performance.
+
+The correction uses a two-step implementation: matrix parameter calculation
+(MATLAB/Simulink) and hardware multiplication (HDL). Simulink models are
+provided for calculating the correction matrix parameters.
 
 Support
 -------

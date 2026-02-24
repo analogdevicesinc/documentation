@@ -96,6 +96,10 @@
           <ul>
 <li><a class="reference internal" href="#">AD-FMCOMMS5-EBZ</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#multi-chip-synchronization">Multi-Chip Synchronization</a><ul>
+<li><a class="reference internal" href="#hardware-revisions">Hardware Revisions</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
@@ -667,6 +671,45 @@ time, it is suggested to get familiar with the single AD9361 based platforms
 (<a class="reference internal" href="../ad-fmcomms2-ebz/index.html#ad-fmcomms2-ebz"><span class="std std-ref">AD-FMCOMMS2-EBZ</span></a> or
 <a class="reference internal" href="../ad-fmcomms3-ebz/index.html#ad-fmcomms3-ebz"><span class="std std-ref">AD-FMCOMMS3-EBZ</span></a>) first.</p>
 </section>
+<section id="multi-chip-synchronization">
+<h2>Multi-Chip Synchronization<a class="headerlink" href="#multi-chip-synchronization" title="Link to this heading"></a></h2>
+<p>Each AD9361 operates independently with its own baseband PLL. For MIMO
+applications, multi-chip synchronization (MCS) is required to align phase
+and timing between the two devices. The key requirements are:</p>
+<ul class="simple">
+<li><p>A common reference oscillator for both AD9361 devices</p></li>
+<li><p>MCS control logic to synchronize the baseband PLLs</p></li>
+<li><p>Phase synchronization calibration after each power-up</p></li>
+</ul>
+<p>The AD9361 baseband PLLs synchronize from the reference clock input. The
+phase synchronization procedure is documented for different hardware revisions.</p>
+<section id="hardware-revisions">
+<h3>Hardware Revisions<a class="headerlink" href="#hardware-revisions" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Revision</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rev-A/B</p></td>
+<td><p>Unmatched trace lengths, RF switches limited to &lt; 900 MHz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rev-C</p></td>
+<td><p>Phase-matched traces, improved RF switches for higher frequencies</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Rev-B has an errata: <a class="icon adi reference external" href="https://www.analog.com/ADF5355" target="_blank">ADF5355</a> floating AVDD pin requires rework fix.</p>
+</div>
+<p>Interface voltage requirement: VDD_INTERFACE 1.71-2.625 V (1.8 V nominal
++/-5%).</p>
+</section>
+</section>
 <section id="supported-carriers">
 <h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <div class="table-wrapper docutils container">
@@ -696,6 +739,9 @@ time, it is suggested to get familiar with the single AD9361 based platforms
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<p>The reference design uses two synchronized AD9361 instances with clock
+distribution and synchronization logic. It reuses the AD9361 reference design
+with multi-channel extensions.</p>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -712,11 +758,23 @@ time, it is suggested to get familiar with the single AD9361 based platforms
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/cf_axi_adc_core.c" target="_blank">AXI ADC HDL Linux Driver</a></p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/frequency/cf_axi_dds.c" target="_blank">AXI DAC DDS Linux Driver</a></p></li>
 </ul>
+<p>The AD9361 Linux IIO driver supports multi-instance operation for the dual
+AD9361 configuration. The IIO Oscilloscope includes a dedicated FMCOMMS5
+plugin for dual-device control.</p>
+<p>Additional tools and frameworks:</p>
+<ul class="simple">
+<li><p>MATLAB/Simulink libiio clients</p></li>
+<li><p>GNU Radio with MIMO support</p></li>
+<li><p>Phased Array System Toolbox examples</p></li>
+<li><p>Phase synchronization tools and calibration utilities</p></li>
+<li><p>Array processing and beamforming examples</p></li>
+</ul>
 </section>
 </section>
 <section id="more-information">
 <h2>More Information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="reference internal" href="../ad-fmcomms2-ebz/index.html#ad-fmcomms2-ebz"><span class="std std-ref">AD-FMCOMMS2-EBZ User Guide</span></a></p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/docs/user_guide/introduction.rst" target="_blank">ADI Reference Designs HDL User Guide</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361 Product Page</a></p></li>
 </ul>

@@ -98,6 +98,10 @@
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li><a class="reference internal" href="#jesd204b-interface">JESD204B Interface</a><ul>
+<li><a class="reference internal" href="#arria-10-soc-notes">Arria 10 SoC Notes</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
@@ -694,6 +698,47 @@ from the external DDR via DMA. The ADC data is sent to the DDR via DMA.</p>
 </table>
 </div>
 </section>
+<section id="jesd204b-interface">
+<h2>JESD204B Interface<a class="headerlink" href="#jesd204b-interface" title="Link to this heading"></a></h2>
+<p>The AD9371 uses a JESD204B serial interface to the FPGA. The default
+configuration uses a 4.9152 Gbps lane rate with a 122.88 MHz link clock.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Lanes</p></th>
+<th class="head"><p>Lane Rate</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TX</p></td>
+<td><p>4</p></td>
+<td><p>4.9152 Gbps</p></td>
+</tr>
+<tr class="row-odd"><td><p>RX</p></td>
+<td><p>2</p></td>
+<td><p>4.9152 Gbps</p></td>
+</tr>
+<tr class="row-even"><td><p>Observation RX</p></td>
+<td><p>2</p></td>
+<td><p>4.9152 Gbps</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="arria-10-soc-notes">
+<h3>Arria 10 SoC Notes<a class="headerlink" href="#arria-10-soc-notes" title="Link to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Arria 10 SoC Development Kit (Rev C or later) requires an FMC pin
+rework: move 4 zero-ohm resistors (R612 to R610, R613 to R611, R621 to
+R620, R633 to R632) to route FMC pins directly from the FPGA instead of
+the clock chip.</p>
+</div>
+<p>The Altera ADXCVR transceivers require re-calibration after the <a class="icon adi reference external" href="https://www.analog.com/AD9528" target="_blank">AD9528</a>
+clock chip is configured (software-driven, post-FPGA configuration).</p>
+</section>
+</section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
 <section id="block-diagram">
@@ -717,8 +762,12 @@ from the external DDR via DMA. The ADC data is sent to the DDR via DMA.</p>
 <section id="linux-device-driver">
 <h3>Linux Device Driver<a class="headerlink" href="#linux-device-driver" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad9371.c" target="_blank">drivers/iio/adc/ad9371.c</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad9371.c" target="_blank">AD9371 Linux Driver</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9528" target="_blank">AD9528</a> clock chip driver</p></li>
+<li><p>JESD204B RX/TX drivers</p></li>
+<li><p>AXI-ADXCVR high-speed transceiver drivers</p></li>
 </ul>
+<p>The IIO Oscilloscope can be used remotely for device control and monitoring.</p>
 </section>
 </section>
 <section id="more-information">

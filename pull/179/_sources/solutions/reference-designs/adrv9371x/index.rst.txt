@@ -48,6 +48,41 @@ Supported Carriers
      - Yes
      - Yes
 
+JESD204B Interface
+------------------
+
+The AD9371 uses a JESD204B serial interface to the FPGA. The default
+configuration uses a 4.9152 Gbps lane rate with a 122.88 MHz link clock.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Path
+     - Lanes
+     - Lane Rate
+   * - TX
+     - 4
+     - 4.9152 Gbps
+   * - RX
+     - 2
+     - 4.9152 Gbps
+   * - Observation RX
+     - 2
+     - 4.9152 Gbps
+
+Arria 10 SoC Notes
+~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
+   The Arria 10 SoC Development Kit (Rev C or later) requires an FMC pin
+   rework: move 4 zero-ohm resistors (R612 to R610, R613 to R611, R621 to
+   R620, R633 to R632) to route FMC pins directly from the FPGA instead of
+   the clock chip.
+
+The Altera ADXCVR transceivers require re-calibration after the :adi:`AD9528`
+clock chip is configured (software-driven, post-FPGA configuration).
+
 HDL Reference Design
 --------------------
 
@@ -70,7 +105,12 @@ Software Support
 Linux Device Driver
 ~~~~~~~~~~~~~~~~~~~
 
-- :git-linux:`drivers/iio/adc/ad9371.c`
+- :git-linux:`AD9371 Linux Driver <drivers/iio/adc/ad9371.c>`
+- :adi:`AD9528` clock chip driver
+- JESD204B RX/TX drivers
+- AXI-ADXCVR high-speed transceiver drivers
+
+The IIO Oscilloscope can be used remotely for device control and monitoring.
 
 More Information
 ----------------

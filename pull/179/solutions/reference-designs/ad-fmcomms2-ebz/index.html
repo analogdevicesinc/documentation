@@ -99,14 +99,36 @@
 <li><a class="reference internal" href="#applications">Applications</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#functional-overview">Functional Overview</a><ul>
+<li><a class="reference internal" href="#receive-path">Receive Path</a></li>
+<li><a class="reference internal" href="#transmit-path">Transmit Path</a></li>
+<li><a class="reference internal" href="#clocking">Clocking</a><ul>
+<li><a class="reference internal" href="#clock-options">Clock Options</a></li>
+<li><a class="reference internal" href="#crystal-specifications">Crystal Specifications</a></li>
+<li><a class="reference internal" href="#dcxo-tuning">DCXO Tuning</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#power-supply">Power Supply</a></li>
+<li><a class="reference internal" href="#digital-interface">Digital Interface</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#zc706-setup">ZC706 Setup</a></li>
+<li><a class="reference internal" href="#zedboard-setup">ZedBoard Setup</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
+<li><a class="reference internal" href="#architecture">Architecture</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#linux-drivers">Linux Drivers</a></li>
 <li><a class="reference internal" href="#device-trees">Device Trees</a></li>
+<li><a class="reference internal" href="#no-os-software">No-OS Software</a></li>
+<li><a class="reference internal" href="#ad9361-filter-design-wizard">AD9361 Filter Design Wizard</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -678,6 +700,157 @@ broad range of research, academic, industrial, and defense applications. The
 </ul>
 </section>
 </section>
+<section id="functional-overview">
+<h2>Functional Overview<a class="headerlink" href="#functional-overview" title="Link to this heading"></a></h2>
+<section id="receive-path">
+<h3>Receive Path<a class="headerlink" href="#receive-path" title="Link to this heading"></a></h3>
+<p>The AD9361 receive section consists of up to 2 direct conversion RF receive
+channels with fully integrated synthesizers (including loop filter). The receive
+chain is: LNA, Demodulator, LPF, ADC, Digital Filters.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Channels</p></td>
+<td><p>2 (direct conversion)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Noise Figure</p></td>
+<td><p>2.5 dB &#64; 1 GHz</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC</p></td>
+<td><p>Continuous-time sigma-delta, 640 MSPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Digital Filters</p></td>
+<td><p>128 complex taps, decimation 2-48x</p></td>
+</tr>
+<tr class="row-even"><td><p>Gain Control</p></td>
+<td><p>1 dB step size, 80 dB analog + 30 dB digital range</p></td>
+</tr>
+<tr class="row-odd"><td><p>RSSI</p></td>
+<td><p>On-chip temperature-corrected sensor</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="transmit-path">
+<h3>Transmit Path<a class="headerlink" href="#transmit-path" title="Link to this heading"></a></h3>
+<p>The AD9361 transmit section provides up to 2 direct conversion RF transmit
+channels with fully integrated synthesizers.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Channels</p></td>
+<td><p>2 (direct conversion)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAC</p></td>
+<td><p>320 MSPS</p></td>
+</tr>
+<tr class="row-even"><td><p>Digital Filters</p></td>
+<td><p>128 complex taps, interpolation 2-48x</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gain Control</p></td>
+<td><p>0.25 dB step size, 86 dB range</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="clocking">
+<h3>Clocking<a class="headerlink" href="#clocking" title="Link to this heading"></a></h3>
+<p>A 40 MHz crystal oscillator is provided on the board. All clocks are fully
+software programmable. The AD9361 contains three PLLs:</p>
+<ul class="simple">
+<li><p><strong>2 RF PLLs</strong> (Rx/Tx, identical): F_RFPLL = F_REF x (N_Integer +
+N_Fractional / 8388593). Step size at 40 MHz REF: 4.77 Hz.</p></li>
+<li><p><strong>1 Baseband PLL</strong>: F_BB = F_REF x (N_Integer + N_Fractional / 2088960).
+Step size at 40 MHz REF: 19.15 Hz.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Integer spur issues occur within +/-1.25% of integer boundary frequencies.</p>
+</div>
+<section id="clock-options">
+<h4>Clock Options<a class="headerlink" href="#clock-options" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>XTALN</strong>: External oscillator (10-80 MHz) for master clock sync in BTS
+applications</p></li>
+<li><p><strong>XTALP/XTALN</strong>: Dedicated crystal (19-50 MHz) with DCXO tuning for UE
+applications. DCXO tuning range: +/-60 ppm, resolution: 0.0125 ppm
+worst-case.</p></li>
+</ul>
+</section>
+<section id="crystal-specifications">
+<h4>Crystal Specifications<a class="headerlink" href="#crystal-specifications" title="Link to this heading"></a></h4>
+<p>The board uses an Epson TSX-3225 crystal with the following tolerance budget:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Initial Tolerance</p></td>
+<td><p>+/-10 ppm</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temperature Stability</p></td>
+<td><p>+/-15 ppm max</p></td>
+</tr>
+<tr class="row-even"><td><p>Aging</p></td>
+<td><p>+/-2 ppm max</p></td>
+</tr>
+<tr class="row-odd"><td><p>RMS Average (all effects)</p></td>
+<td><p>+/-18.1 ppm</p></td>
+</tr>
+<tr class="row-even"><td><p>Frequency Offset at 2.4 GHz</p></td>
+<td><p>+/-43.2 kHz</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dcxo-tuning">
+<h4>DCXO Tuning<a class="headerlink" href="#dcxo-tuning" title="Link to this heading"></a></h4>
+<p>The DCXO tuning uses an adjustable capacitor inside the AD9361 crystal tank
+circuit (XTALP pin), providing a tuning range of +/-60 ppm. Tuning can be
+performed manually or automated using the IIO Oscilloscope with SCPI.</p>
+<p>For automated tuning, a frequency counter (Hameg HM8123 or Agilent 53131A) is
+required. The measurement can be performed on the REFCLK (CLK_OUT pin on
+P202 header) or the RF output. Launch the oscilloscope with the
+<code class="docutils literal notranslate"><span class="pre">OSC_FORCE_PLUGIN=scpi</span></code> flag to enable the tuning interface.</p>
+</section>
+</section>
+<section id="power-supply">
+<h3>Power Supply<a class="headerlink" href="#power-supply" title="Link to this heading"></a></h3>
+<p>The board is powered entirely from the FPGA carrier board through the FMC
+connector. The power supply components include:</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADP1755" target="_blank">ADP1755</a>: Low dropout linear regulator (1.2 A, 1.6-3.6 V)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADP2164" target="_blank">ADP2164</a>: Step-down DC-DC regulator (6.5 V, 4 A)</p></li>
+</ul>
+</section>
+<section id="digital-interface">
+<h3>Digital Interface<a class="headerlink" href="#digital-interface" title="Link to this heading"></a></h3>
+<p>The AD9361 uses a 12-bit DDR parallel interface (LVDS mode) for data transfer
+to the FPGA. Full duplex operation supports up to 2x2 MIMO with a shared clock
+for TX and RX paths.</p>
+<ul class="simple">
+<li><p>SPI interface for control and configuration</p></li>
+<li><p>Control/Monitor signals for gain, sync, and state machine control</p></li>
+<li><p>Refer to the AD9361 Reference Manual (UG-570) for complete interface details</p></li>
+</ul>
+</section>
+</section>
 <section id="supported-carriers">
 <h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <div class="table-wrapper docutils container">
@@ -686,31 +859,121 @@ broad range of research, academic, industrial, and defense applications. The
 <tr class="row-odd"><th class="head"><p>Board</p></th>
 <th class="head"><p>HDL</p></th>
 <th class="head"><p>Linux</p></th>
+<th class="head"><p>No-OS</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZC702" target="_blank">ZC702</a></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
+<td><p>Yes</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></td>
+<td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZED" target="_blank">ZED</a></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
+<td><p>Yes</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a></p></td>
 <td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/AC701" target="_blank">AC701</a></p></td>
+<td><p>Yes</p></td>
+<td></td>
 <td><p>Yes</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Host PC (Windows or Linux)</p></li>
+<li><p>SD card with Kuiper Linux image (for Zynq platforms)</p></li>
+<li><p>USB keyboard and mouse</p></li>
+<li><p>HDMI display (Full HD)</p></li>
+<li><p>Antenna or SMA loopback cable</p></li>
+<li><p>Power supply as specified by the carrier board</p></li>
+<li><p>Ethernet cable (for remote IIO Oscilloscope access)</p></li>
+</ul>
+</section>
+<section id="zc706-setup">
+<h3>ZC706 Setup<a class="headerlink" href="#zc706-setup" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Insert the SD card with the Kuiper Linux image into the ZC706.</p></li>
+<li><p>Connect the AD-FMCOMMS2-EBZ to the FMC LPC connector (J5).</p></li>
+<li><p>Set boot jumpers (SW11): 1-Down, 2-Down, 3-Up, 4-Up, 5-Down.</p></li>
+<li><p>Connect HDMI, USB keyboard/mouse, and Ethernet.</p></li>
+<li><p>Power on the board.</p></li>
+<li><p>The DONE LED indicates FPGA programming is complete (~30 seconds).</p></li>
+<li><p>HDMI display appears approximately 60 seconds after power-on.</p></li>
+<li><p>IIO Oscilloscope launches automatically for RF transceiver control.</p></li>
+</ol>
+</section>
+<section id="zedboard-setup">
+<h3>ZedBoard Setup<a class="headerlink" href="#zedboard-setup" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Insert the SD card with the Kuiper Linux image.</p></li>
+<li><p>Connect the AD-FMCOMMS2-EBZ to the FMC LPC connector (J1).</p></li>
+<li><p>Set boot jumpers: JP7-JP11 for SD card boot, JP6 (MIO0) to GND.</p></li>
+<li><p>Set J18 for 1.8 V FMC bank voltage.</p></li>
+<li><p>Connect HDMI, USB keyboard/mouse, and Ethernet.</p></li>
+<li><p>Power on the board.</p></li>
+<li><p>Blue LED and green LED illuminate (~15 seconds), HDMI display follows
+(~30 seconds).</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To protect against ESD damage, consider using a plexiglass cover over the
+board with a 270 kOhm grounding resistor.</p>
+</div>
+<p>The board can also be accessed remotely over the network. By default, DHCP is
+enabled. A static IP can be configured using the <code class="docutils literal notranslate"><span class="pre">enable_static_ip.sh</span></code>
+script.</p>
+</section>
+</section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<p>The reference design is a processor-based (ARM Zynq, MicroBlaze, or NIOS II)
+embedded system with a self-contained AXI-Lite peripheral for the AD9361
+interface.</p>
+<section id="architecture">
+<h3>Architecture<a class="headerlink" href="#architecture" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Transmit Path</strong>: Internal DDS with programmable phase/frequency, or
+external DDR source via VDMA</p></li>
+<li><p><strong>Receive Path</strong>: PN monitoring for digital interface validation, optional
+DC filtering and I/Q offset correction, DDR write via DMA, optional
+offline FFT for spectrum analysis</p></li>
+<li><p><strong>Data Width</strong>: 12-bit DDR data paths, full duplex 2x2 MIMO</p></li>
+<li><p><strong>Multi-Core Support</strong>: AD-FMCOMMS5-EBZ uses 2 synchronized instances with
+common clock synchronization</p></li>
+</ul>
+</section>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -736,6 +999,65 @@ broad range of research, academic, industrial, and defense applications. The
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad9361-fmcomms2-3.dts" target="_blank">ZED DTS</a></p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dts" target="_blank">ZCU102 DTS</a></p></li>
 </ul>
+</section>
+<section id="no-os-software">
+<h3>No-OS Software<a class="headerlink" href="#no-os-software" title="Link to this heading"></a></h3>
+<p>The No-OS bare-metal software provides direct hardware access without a Linux
+operating system. Supported platforms include AC701, KC705, VC707, ZC702,
+ZC706, and ZedBoard.</p>
+<p>Console commands include control of TX/RX LO frequencies, sample rates,
+RF bandwidth, attenuation, gain control modes, FIR filter enable, and DDS
+tone generation.</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad9361" target="_blank">projects/ad9361</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/rf-transceiver/ad9361" target="_blank">drivers/rf-transceiver/ad9361</a></p></li>
+</ul>
+</section>
+<section id="ad9361-filter-design-wizard">
+<h3>AD9361 Filter Design Wizard<a class="headerlink" href="#ad9361-filter-design-wizard" title="Link to this heading"></a></h3>
+<p>The AD9361 Filter Design Wizard (MATLAB-based) allows design of transmitter
+and receiver FIR filters, accounting for magnitude and phase response from
+analog and digital filter stages.</p>
+<p>LTE preset profiles are available:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LTE Bandwidth</p></th>
+<th class="head"><p>Occupied RF BW</p></th>
+<th class="head"><p>Sample Rate</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1.4 MHz</p></td>
+<td><p>1.08 MHz</p></td>
+<td><p>1.92 MSPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>3 MHz</p></td>
+<td><p>2.7 MHz</p></td>
+<td><p>3.84 MSPS</p></td>
+</tr>
+<tr class="row-even"><td><p>5 MHz</p></td>
+<td><p>4.5 MHz</p></td>
+<td><p>7.68 MSPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>10 MHz</p></td>
+<td><p>9 MHz</p></td>
+<td><p>15.36 MSPS</p></td>
+</tr>
+<tr class="row-even"><td><p>15 MHz</p></td>
+<td><p>13.5 MHz</p></td>
+<td><p>23.04 MSPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>20 MHz</p></td>
+<td><p>18 MHz</p></td>
+<td><p>30.72 MSPS</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The filter wizard supports phase equalization (reducing passband group delay
+variance from 16.6 ns to 1.52 ns typical), FVTool integration, and direct
+target connection for uploading coefficients to Zynq boards.</p>
 </section>
 </section>
 <section id="more-information">

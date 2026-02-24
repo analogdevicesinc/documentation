@@ -10,6 +10,14 @@ The :adi:`AD7616` is a 16-bit, dual simultaneous sampling, data acquisition
 system (DAS) that operates from a single 5 V supply and supports bipolar input
 ranges of +/-10 V, +/-5 V, and +/-2.5 V.
 
+The AD7616 features 16 channels with dual 16-bit successive approximation
+ADCs, throughput up to 1 MSPS per channel pair, 90 dB SNR (92 dB with 2x
+oversampling), input clamp protection tolerating +/-20 V, 1 MOhm analog input
+impedance, on-chip filtering, and a 2.5 V reference buffer.
+
+Applications include powerline monitoring, protective relays, multiphase motor
+control, instrumentation and control systems, and data acquisition systems.
+
 The HDL reference design supports both parallel and serial interfaces. The
 parallel interface is controlled by the axi_ad7616 IP core, while the serial
 interface uses the SPI Engine Framework. Data is written into memory via DMA.
@@ -24,6 +32,58 @@ Supported Carriers
 
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
 - :xilinx:`ZC706`
+
+Quick Start
+-----------
+
+EVAL-AD7616 Jumper Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Jumper
+     - Position
+     - Description
+   * - SL1
+     - Unmounted
+     - Channel Sequencer Enable
+   * - SL2
+     - Unmounted
+     - RC Enable Input
+   * - SL3
+     - Mounted
+     - Selects 2 MISO mode
+   * - SL4
+     - Unmounted
+     - Oversampling Ratio Selection OS2
+   * - SL5
+     - Mounted
+     - Selects serial interface
+   * - SL6
+     - Unmounted
+     - Oversampling Ratio Selection OS1
+   * - SL7
+     - Unmounted
+     - Oversampling Ratio Selection OS0
+   * - LK40
+     - A
+     - Onboard 5V power supply selected
+   * - LK41
+     - A
+     - Onboard 3.3V power supply selected
+
+Building the HDL
+~~~~~~~~~~~~~~~~
+
+The interface type is selected at build time:
+
+- Serial interface: ``make SER_PAR_N=1``
+- Parallel interface: ``make SER_PAR_N=0``
+
+.. note::
+
+   For the SDP-I-FMC adapter, set VADJ on the carrier board to 3.3 V.
 
 HDL Reference Design
 --------------------
@@ -41,6 +101,23 @@ Block Diagrams
 
    AD7616-SDZ block diagram (parallel interface)
 
+CPU/Memory Interconnect Addresses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Instance
+     - Address
+   * - axi_ad7616_dma
+     - 0x44A30000
+   * - ad7616_pwm_gen
+     - 0x44B00000
+   * - spi_ad7616_axi_regmap
+     - 0x44A00000 (serial mode only)
+   * - axi_ad7616
+     - 0x44A80000 (parallel mode only)
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
@@ -54,6 +131,11 @@ No-OS Project
 
 - :git-no-OS:`projects/ad7616-sdz`
 - :git-no-OS:`drivers/adc/ad7616`
+
+The No-OS driver supports SPI and parallel interface modes, software and
+hardware operation modes, per-channel input range selection (+/-2.5 V, +/-5 V,
++/-10 V), oversampling ratios (2x through 128x), and channel sequencer
+configuration.
 
 More Information
 ----------------

@@ -34,6 +34,40 @@ time, it is suggested to get familiar with the single AD9361 based platforms
 (:ref:`AD-FMCOMMS2-EBZ <ad-fmcomms2-ebz>` or
 :ref:`AD-FMCOMMS3-EBZ <ad-fmcomms3-ebz>`) first.
 
+Multi-Chip Synchronization
+--------------------------
+
+Each AD9361 operates independently with its own baseband PLL. For MIMO
+applications, multi-chip synchronization (MCS) is required to align phase
+and timing between the two devices. The key requirements are:
+
+- A common reference oscillator for both AD9361 devices
+- MCS control logic to synchronize the baseband PLLs
+- Phase synchronization calibration after each power-up
+
+The AD9361 baseband PLLs synchronize from the reference clock input. The
+phase synchronization procedure is documented for different hardware revisions.
+
+Hardware Revisions
+~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Revision
+     - Notes
+   * - Rev-A/B
+     - Unmatched trace lengths, RF switches limited to < 900 MHz
+   * - Rev-C
+     - Phase-matched traces, improved RF switches for higher frequencies
+
+.. warning::
+
+   Rev-B has an errata: :adi:`ADF5355` floating AVDD pin requires rework fix.
+
+Interface voltage requirement: VDD_INTERFACE 1.71-2.625 V (1.8 V nominal
++/-5%).
+
 Supported Carriers
 ------------------
 
@@ -56,6 +90,10 @@ Supported Carriers
 HDL Reference Design
 --------------------
 
+The reference design uses two synchronized AD9361 instances with clock
+distribution and synchronization logic. It reuses the AD9361 reference design
+with multi-channel extensions.
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
@@ -71,9 +109,22 @@ Linux Drivers
 - :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
 - :git-linux:`AXI DAC DDS Linux Driver <drivers/iio/frequency/cf_axi_dds.c>`
 
+The AD9361 Linux IIO driver supports multi-instance operation for the dual
+AD9361 configuration. The IIO Oscilloscope includes a dedicated FMCOMMS5
+plugin for dual-device control.
+
+Additional tools and frameworks:
+
+- MATLAB/Simulink libiio clients
+- GNU Radio with MIMO support
+- Phased Array System Toolbox examples
+- Phase synchronization tools and calibration utilities
+- Array processing and beamforming examples
+
 More Information
 ----------------
 
+- :ref:`AD-FMCOMMS2-EBZ User Guide <ad-fmcomms2-ebz>`
 - :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
 - :adi:`AD9361 Product Page <AD9361>`
 

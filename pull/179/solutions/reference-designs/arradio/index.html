@@ -98,6 +98,13 @@
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#sockit-jumper-configuration">SoCKit Jumper Configuration</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#no-os-software">No-OS Software</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
@@ -649,7 +656,9 @@ integrated RF Agile Transceiver. It is similar to the
 <a class="reference internal" href="../ad-fmcomms2-ebz/index.html#ad-fmcomms2-ebz"><span class="std std-ref">AD-FMCOMMS2-EBZ</span></a>, except it uses an HSMC connector
 which connects to the Arrow SoCKit (Intel Cyclone V SoC).</p>
 <p>The board features a Johanson Technology 2450BL15B050E 2.45 GHz balun, so RF
-performance is optimized for the 2400 to 2500 MHz band.</p>
+performance is optimized for the 2400 to 2500 MHz band. RF performance may
+vary at other frequencies due to the balun characteristics; the balun can be
+swapped for different frequency applications.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The ARRADIO board is not a product of Analog Devices. Questions about
@@ -669,6 +678,78 @@ purchase or returns should go to Arrow.</p>
 (Intel Cyclone V SoC)</p></li>
 </ul>
 </section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Terasic C5 SoCKit FPGA carrier board</p></li>
+<li><p>ARRADIO board</p></li>
+<li><p>8 GB Micro-SD card with Kuiper Linux image</p></li>
+<li><p>USB keyboard and mouse</p></li>
+<li><p>USB OTG cable (for keyboard/mouse)</p></li>
+<li><p>VGA-compatible monitor</p></li>
+<li><p>Ethernet cable</p></li>
+<li><p>Micro-USB cable (for UART, 115200 baud, 8N1)</p></li>
+</ul>
+</section>
+<section id="sockit-jumper-configuration">
+<h3>SoCKit Jumper Configuration<a class="headerlink" href="#sockit-jumper-configuration" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Position</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CLOCKSEL0</p></td>
+<td><p>2-3</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLOCKSEL1</p></td>
+<td><p>2-3</p></td>
+</tr>
+<tr class="row-even"><td><p>BOOTSEL0</p></td>
+<td><p>2-3</p></td>
+</tr>
+<tr class="row-odd"><td><p>BOOTSEL1</p></td>
+<td><p>2-3</p></td>
+</tr>
+<tr class="row-even"><td><p>BOOTSEL2</p></td>
+<td><p>1-2</p></td>
+</tr>
+<tr class="row-odd"><td><p>JP2</p></td>
+<td><p>2.5 V or 1.8 V</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hardware-setup">
+<h3>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Insert the Micro-SD card with Kuiper Linux image.</p></li>
+<li><p>Connect the ARRADIO board to the HSMC connector on the SoCKit.</p></li>
+<li><p>Connect the VGA monitor, USB keyboard/mouse via OTG, and Ethernet.</p></li>
+<li><p>Set the jumpers as specified above.</p></li>
+<li><p>Connect the Micro-USB UART cable to the host PC.</p></li>
+<li><p>Connect the 12 V power supply and power on.</p></li>
+</ol>
+<p>The board can be used locally (VGA + USB keyboard/mouse) or remotely via
+Ethernet using the IIO Oscilloscope with URI <code class="docutils literal notranslate"><span class="pre">ip:&lt;board_ip&gt;</span></code>.</p>
+</section>
+<section id="no-os-software">
+<h3>No-OS Software<a class="headerlink" href="#no-os-software" title="Link to this heading"></a></h3>
+<p>The No-OS bare-metal driver supports two operating modes:</p>
+<ul class="simple">
+<li><p><strong>2R2T Mode</strong> (default): 2 Receive / 2 Transmit with AD9361 at 122 MHz
+interface clock. Build with <code class="docutils literal notranslate"><span class="pre">make</span></code> or <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DEFINE=2R2T</span></code>.</p></li>
+<li><p><strong>1R1T Mode</strong>: 1 Receive / 1 Transmit with AD9364 at 61 MHz interface
+clock. Build with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DEFINE=1R1T</span></code>.</p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/arradio" target="_blank">projects/arradio</a></p></li>
+</ul>
+</section>
+</section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
 <p>The HDL reference design is based on the
@@ -687,6 +768,14 @@ Intel Cyclone V SoC platform with HSMC interface.</p>
 <h3>Linux Device Driver<a class="headerlink" href="#linux-device-driver" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad9361.c" target="_blank">drivers/iio/adc/ad9361.c</a></p></li>
+</ul>
+<p>The following applications and tools are supported:</p>
+<ul class="simple">
+<li><p>IIO Oscilloscope with AD9361 control plugins (local or remote)</p></li>
+<li><p>MATLAB/Simulink integration via libiio</p></li>
+<li><p>GNU Radio support</p></li>
+<li><p>AD9361 Filter Design Wizard (MATLAB)</p></li>
+<li><p>Example applications: beacon frame receiver, QPSK, LTE, FM radio</p></li>
 </ul>
 </section>
 </section>

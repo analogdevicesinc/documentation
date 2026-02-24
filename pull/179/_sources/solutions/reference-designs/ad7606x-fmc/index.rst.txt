@@ -59,6 +59,36 @@ Block Diagram
 
    AD7606x-FMC block diagram (parallel interface)
 
+GPIO Signals
+~~~~~~~~~~~~
+
+PS7 EMIO offset = 54.
+
+.. list-table::
+   :header-rows: 1
+
+   * - GPIO Signal
+     - GPIO
+     - HDL GPIO EMIOn
+   * - adc_serpar
+     - 93
+     - 39
+   * - adc_refsel
+     - 92
+     - 38
+   * - adc_reset
+     - 91
+     - 37
+   * - adc_stby
+     - 90
+     - 36
+   * - adc_range
+     - 89-87
+     - 35-33
+   * - adc_os
+     - 86-84
+     - 32-30
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 

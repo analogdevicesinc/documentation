@@ -14,6 +14,31 @@ platform for prototype, evaluation, and reference design purposes.
 The ADRV9361-Z7035 is schematically and HDL-compatible with the
 :ref:`AD-FMCOMMS3-EBZ <ad-fmcomms3-ebz>`.
 
+Hardware Specifications
+-----------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Value
+   * - FPGA
+     - Xilinx Zynq XC7Z035 (dual-core ARM Cortex-A9 + PL)
+   * - RF Transceiver
+     - :adi:`AD9361` (70 MHz to 6 GHz, 200 kHz to 56 MHz channel bandwidth)
+   * - Memory
+     - 1 GB DDR3L (2x MT41K256M16HA-125), 256 Mbit quad-SPI NOR flash
+   * - DDR3L Speed
+     - 1,066 MT/s
+   * - Zynq Speed Grade
+     - -2 (low power, low speed bin)
+   * - Data Interface
+     - Dual parallel ports (P0, P1) in LVDS mode (DDR)
+   * - Max Data Rate
+     - 122.88 MSPS (AD9361 maximum)
+   * - Channels
+     - 2 Rx x 2 Tx
+
 Supported Devices
 -----------------
 
@@ -22,16 +47,27 @@ Supported Devices
 Supported Carriers
 ------------------
 
-- PZSDRCC-FMC (FMC Carrier)
-- PZSDRCC-BRK (Breakout Carrier)
-- PZSDRCC-PCIE (PCIe Carrier)
-- PZSDRCC-PackRF (PackRF Carrier)
+.. list-table::
+   :header-rows: 1
+
+   * - Carrier
+     - Description
+   * - PZSDRCC-FMC
+     - FMC Carrier
+   * - PZSDRCC-BRK
+     - Breakout Carrier
+   * - PZSDRCC-PCIE
+     - PCIe Carrier
+   * - PZSDRCC-PackRF
+     - PackRF Carrier
 
 HDL Reference Design
 --------------------
 
 The HDL reference design is the same as the
 :ref:`AD-FMCOMMS2-EBZ/AD-FMCOMMS3-EBZ <ad-fmcomms2-ebz>` reference design.
+The LVDS interface is configured for maximum data throughput and can be
+reconfigured to CMOS mode for alternate prototyping.
 
 HDL Source Code
 ~~~~~~~~~~~~~~~
@@ -45,6 +81,22 @@ Linux Device Driver
 ~~~~~~~~~~~~~~~~~~~
 
 - :git-linux:`drivers/iio/adc/ad9361.c`
+
+The following software tools and frameworks are supported:
+
+- IIO Oscilloscope with AD9361 control plugins (basic and advanced)
+- libiio streaming examples (MATLAB/Simulink)
+- GNU Radio support
+- AD9361 Filter Design Wizard (MATLAB)
+- MathWorks RF Blockset models
+- No-OS bare-metal driver
+
+Quick Start
+-----------
+
+Pre-built Kuiper Linux images are available for SD card boot. Applications
+include QPSK, LTE, ADS-B airplane tracking, beacon receiver, and FM radio
+reception via HDMI monitor.
 
 More Information
 ----------------

@@ -40,6 +40,131 @@ Applications
 - Electronic test and measurement equipment
 - General purpose data acquisition
 
+Functional Overview
+-------------------
+
+Receive Path
+~~~~~~~~~~~~
+
+The AD9361 receive section consists of up to 2 direct conversion RF receive
+channels with fully integrated synthesizers (including loop filter). The receive
+chain is: LNA, Demodulator, LPF, ADC, Digital Filters.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Value
+   * - Channels
+     - 2 (direct conversion)
+   * - Noise Figure
+     - 2.5 dB @ 1 GHz
+   * - ADC
+     - Continuous-time sigma-delta, 640 MSPS
+   * - Digital Filters
+     - 128 complex taps, decimation 2-48x
+   * - Gain Control
+     - 1 dB step size, 80 dB analog + 30 dB digital range
+   * - RSSI
+     - On-chip temperature-corrected sensor
+
+Transmit Path
+~~~~~~~~~~~~~
+
+The AD9361 transmit section provides up to 2 direct conversion RF transmit
+channels with fully integrated synthesizers.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Value
+   * - Channels
+     - 2 (direct conversion)
+   * - DAC
+     - 320 MSPS
+   * - Digital Filters
+     - 128 complex taps, interpolation 2-48x
+   * - Gain Control
+     - 0.25 dB step size, 86 dB range
+
+Clocking
+~~~~~~~~
+
+A 40 MHz crystal oscillator is provided on the board. All clocks are fully
+software programmable. The AD9361 contains three PLLs:
+
+- **2 RF PLLs** (Rx/Tx, identical): F_RFPLL = F_REF x (N_Integer +
+  N_Fractional / 8388593). Step size at 40 MHz REF: 4.77 Hz.
+- **1 Baseband PLL**: F_BB = F_REF x (N_Integer + N_Fractional / 2088960).
+  Step size at 40 MHz REF: 19.15 Hz.
+
+.. note::
+
+   Integer spur issues occur within +/-1.25% of integer boundary frequencies.
+
+Clock Options
+^^^^^^^^^^^^^
+
+- **XTALN**: External oscillator (10-80 MHz) for master clock sync in BTS
+  applications
+- **XTALP/XTALN**: Dedicated crystal (19-50 MHz) with DCXO tuning for UE
+  applications. DCXO tuning range: +/-60 ppm, resolution: 0.0125 ppm
+  worst-case.
+
+Crystal Specifications
+^^^^^^^^^^^^^^^^^^^^^^
+
+The board uses an Epson TSX-3225 crystal with the following tolerance budget:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Value
+   * - Initial Tolerance
+     - +/-10 ppm
+   * - Temperature Stability
+     - +/-15 ppm max
+   * - Aging
+     - +/-2 ppm max
+   * - RMS Average (all effects)
+     - +/-18.1 ppm
+   * - Frequency Offset at 2.4 GHz
+     - +/-43.2 kHz
+
+DCXO Tuning
+^^^^^^^^^^^^
+
+The DCXO tuning uses an adjustable capacitor inside the AD9361 crystal tank
+circuit (XTALP pin), providing a tuning range of +/-60 ppm. Tuning can be
+performed manually or automated using the IIO Oscilloscope with SCPI.
+
+For automated tuning, a frequency counter (Hameg HM8123 or Agilent 53131A) is
+required. The measurement can be performed on the REFCLK (CLK_OUT pin on
+P202 header) or the RF output. Launch the oscilloscope with the
+``OSC_FORCE_PLUGIN=scpi`` flag to enable the tuning interface.
+
+Power Supply
+~~~~~~~~~~~~
+
+The board is powered entirely from the FPGA carrier board through the FMC
+connector. The power supply components include:
+
+- :adi:`ADP1755`: Low dropout linear regulator (1.2 A, 1.6-3.6 V)
+- :adi:`ADP2164`: Step-down DC-DC regulator (6.5 V, 4 A)
+
+Digital Interface
+~~~~~~~~~~~~~~~~~
+
+The AD9361 uses a 12-bit DDR parallel interface (LVDS mode) for data transfer
+to the FPGA. Full duplex operation supports up to 2x2 MIMO with a shared clock
+for TX and RX paths.
+
+- SPI interface for control and configuration
+- Control/Monitor signals for gain, sync, and state machine control
+- Refer to the AD9361 Reference Manual (UG-570) for complete interface details
+
 Supported Carriers
 ------------------
 
@@ -49,21 +174,105 @@ Supported Carriers
    * - Board
      - HDL
      - Linux
+     - No-OS
    * - :xilinx:`ZC702`
+     - Yes
      - Yes
      - Yes
    * - :xilinx:`ZC706`
      - Yes
      - Yes
+     - Yes
    * - :xilinx:`ZED`
+     - Yes
      - Yes
      - Yes
    * - :xilinx:`ZCU102`
      - Yes
      - Yes
+     - Yes
+   * - :xilinx:`KC705`
+     - Yes
+     - Yes
+     - Yes
+   * - :xilinx:`KCU105`
+     - Yes
+     - Yes
+     - Yes
+   * - :xilinx:`VC707`
+     - Yes
+     - Yes
+     - Yes
+   * - :xilinx:`AC701`
+     - Yes
+     -
+     - Yes
+
+Quick Start
+-----------
+
+Prerequisites
+~~~~~~~~~~~~~
+
+- Host PC (Windows or Linux)
+- SD card with Kuiper Linux image (for Zynq platforms)
+- USB keyboard and mouse
+- HDMI display (Full HD)
+- Antenna or SMA loopback cable
+- Power supply as specified by the carrier board
+- Ethernet cable (for remote IIO Oscilloscope access)
+
+ZC706 Setup
+~~~~~~~~~~~~
+
+#. Insert the SD card with the Kuiper Linux image into the ZC706.
+#. Connect the AD-FMCOMMS2-EBZ to the FMC LPC connector (J5).
+#. Set boot jumpers (SW11): 1-Down, 2-Down, 3-Up, 4-Up, 5-Down.
+#. Connect HDMI, USB keyboard/mouse, and Ethernet.
+#. Power on the board.
+#. The DONE LED indicates FPGA programming is complete (~30 seconds).
+#. HDMI display appears approximately 60 seconds after power-on.
+#. IIO Oscilloscope launches automatically for RF transceiver control.
+
+ZedBoard Setup
+~~~~~~~~~~~~~~
+
+#. Insert the SD card with the Kuiper Linux image.
+#. Connect the AD-FMCOMMS2-EBZ to the FMC LPC connector (J1).
+#. Set boot jumpers: JP7-JP11 for SD card boot, JP6 (MIO0) to GND.
+#. Set J18 for 1.8 V FMC bank voltage.
+#. Connect HDMI, USB keyboard/mouse, and Ethernet.
+#. Power on the board.
+#. Blue LED and green LED illuminate (~15 seconds), HDMI display follows
+   (~30 seconds).
+
+.. tip::
+
+   To protect against ESD damage, consider using a plexiglass cover over the
+   board with a 270 kOhm grounding resistor.
+
+The board can also be accessed remotely over the network. By default, DHCP is
+enabled. A static IP can be configured using the ``enable_static_ip.sh``
+script.
 
 HDL Reference Design
 --------------------
+
+The reference design is a processor-based (ARM Zynq, MicroBlaze, or NIOS II)
+embedded system with a self-contained AXI-Lite peripheral for the AD9361
+interface.
+
+Architecture
+~~~~~~~~~~~~
+
+- **Transmit Path**: Internal DDS with programmable phase/frequency, or
+  external DDR source via VDMA
+- **Receive Path**: PN monitoring for digital interface validation, optional
+  DC filtering and I/Q offset correction, DDR write via DMA, optional
+  offline FFT for spectrum analysis
+- **Data Width**: 12-bit DDR data paths, full duplex 2x2 MIMO
+- **Multi-Core Support**: AD-FMCOMMS5-EBZ uses 2 synchronized instances with
+  common clock synchronization
 
 HDL Source Code
 ~~~~~~~~~~~~~~~
@@ -87,6 +296,58 @@ Device Trees
 - :git-linux:`ZC706 DTS <arch/arm/boot/dts/xilinx/zynq-zc706-adv7511-ad9361-fmcomms2-3.dts>`
 - :git-linux:`ZED DTS <arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad9361-fmcomms2-3.dts>`
 - :git-linux:`ZCU102 DTS <arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dts>`
+
+No-OS Software
+~~~~~~~~~~~~~~
+
+The No-OS bare-metal software provides direct hardware access without a Linux
+operating system. Supported platforms include AC701, KC705, VC707, ZC702,
+ZC706, and ZedBoard.
+
+Console commands include control of TX/RX LO frequencies, sample rates,
+RF bandwidth, attenuation, gain control modes, FIR filter enable, and DDS
+tone generation.
+
+- :git-no-OS:`projects/ad9361`
+- :git-no-OS:`drivers/rf-transceiver/ad9361`
+
+AD9361 Filter Design Wizard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The AD9361 Filter Design Wizard (MATLAB-based) allows design of transmitter
+and receiver FIR filters, accounting for magnitude and phase response from
+analog and digital filter stages.
+
+LTE preset profiles are available:
+
+.. list-table::
+   :header-rows: 1
+
+   * - LTE Bandwidth
+     - Occupied RF BW
+     - Sample Rate
+   * - 1.4 MHz
+     - 1.08 MHz
+     - 1.92 MSPS
+   * - 3 MHz
+     - 2.7 MHz
+     - 3.84 MSPS
+   * - 5 MHz
+     - 4.5 MHz
+     - 7.68 MSPS
+   * - 10 MHz
+     - 9 MHz
+     - 15.36 MSPS
+   * - 15 MHz
+     - 13.5 MHz
+     - 23.04 MSPS
+   * - 20 MHz
+     - 18 MHz
+     - 30.72 MSPS
+
+The filter wizard supports phase equalization (reducing passband group delay
+variance from 16.6 ns to 1.52 ns typical), FVTool integration, and direct
+target connection for uploading coefficients to Zynq boards.
 
 More Information
 ----------------
