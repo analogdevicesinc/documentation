@@ -6,18 +6,48 @@ ADRV9009-ZU11EG User Guide
 Introduction
 ------------
 
-The ADRV9009-ZU11EG HDL reference design is built around the Zynq UltraScale+
-MPSoC. The design integrates two :adi:`ADRV9009` wideband RF transceivers with
-a total of 8 transmit, 4 receive, and 4 observation/sniffer data paths via
-JESD204B interface.
+The :adi:`ADRV9009-ZU11EG` is a highly integrated RF System-on-Module
+(RF-SOM) based on the Analog Devices :adi:`ADRV9009` and the Xilinx Zynq
+UltraScale+ MPSoC (ZU11EG). The RF-SOM is a platform for evaluation and
+prototyping. To use the RF-SOM, a carrier board is required. The Analog
+Devices ADRV2CRR-FMC carrier board is designed for this purpose.
 
-The PS provides SDIO, UART, Ethernet, SPI, USB 3.0, QSPI, and DisplayPort
-control modules. Two PL DDR4 (32-bit @ 1200 MHz) modules can be used as
-offload FIFOs.
+An additional RF transceiver board (:ref:`AD-FMCOMMS8-EBZ <ad-fmcomms8-ebz>`)
+can be fitted to the carrier to expand the system up to 8 Tx and Rx radio
+channels.
 
-Additional transceiver lanes are available for PCIe Gen3 x8, 10 Gb Ethernet,
-and 40 Gb Ethernet simultaneously. A full FMC HPC connector enables extending
-the system with another two ADRV9009 devices.
+High-Level Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Two ADRV9009 devices providing:
+
+  - Quad transmitters / Quad receivers
+  - Quad input observation receiver for DPD
+  - Max Rx BW: 200 MHz
+  - Max tunable Tx synthesis BW: 450 MHz
+  - Max observation Rx BW: 450 MHz
+  - Fully integrated fractional-N RF synthesizers
+  - Multi-chip phase synchronization for all RF LO and baseband clocks
+  - Tuning range: 75 MHz to 6000 MHz
+
+- Zynq UltraScale+ ZU11EG:
+
+  - Quad-core ARM Cortex-A53 (up to 1.5 GHz)
+  - Dual-core Cortex-R5 real-time processors
+  - Mali-400 MP2 GPU (up to 667 MHz)
+  - PCIe Gen2 x4, 2x USB 3.0, SATA 3.1, DisplayPort, 4x Gigabit Ethernet
+  - 653k system logic cells (16 nm FinFET+)
+
+- On-board memory:
+
+  - PS: 4 GB DDR4 (x64) with ECC
+  - PL: Two independent banks of 2 GB DDR4 (x32) for RF data
+  - 1 Gbit serial flash for image storage
+  - Removable SD card
+
+- On-SOM peripherals: Ethernet PHY, USB 2.0 PHY, uSD card holder
+- Storage temperature: -40 C to +65 C
+- Operating temperature for prototyping with supplied heatsink: +25 C
 
 Supported Devices
 -----------------
@@ -29,13 +59,140 @@ Supported Carriers
 
 - ADRV2CRR-FMC Carrier Board
 
+Hardware
+--------
+
+Connector Interface
+~~~~~~~~~~~~~~~~~~~
+
+The interface to the ADRV9009-ZU11EG consists of two SAMTEC SEARAY 400-pin
+female connectors (P1 and P2).
+
+**P1 Connector:**
+
+- 24x GTH transceiver lanes with reference clock inputs
+- Reference clock and synchronization inputs for on-board :adi:`HMC7044`
+  clock generator
+- Analog and digital I/O signals from two on-board ADRV9009 transceivers
+- Dedicated SPI bus for ADRV9009 and HMC7044
+- ZU11EG programmable logic GPIOs
+- Power fault signals (PWR_FAULT1, PWR_FAULT2)
+
+**P2 Connector:**
+
+- ZU11EG PL GPIOs and PS MIO pins
+- ZU11EG GTR lanes
+- SD 3.01 memory card interface
+- MDI interface to Marvell 88E1512 Ethernet PHY
+- USB 2.0 interface to Microchip USB3320C PHY
+- ZU11EG JTAG interface and configuration pins
+- I2C interface for :adi:`ADM1266` power sequencer
+- Power good signals and 12 V power input
+
+Power
+~~~~~
+
+The ADRV9009-ZU11EG is powered from a single 12 V supply (12 V +/- 8%,
+120 W). The board features:
+
+- :adi:`ADM1177` hot-swap controller for safe board insertion, with digital
+  current and voltage monitoring via 12-bit ADC over I2C
+- :adi:`ADM1266` voltage sequencer/supervisor that monitors input voltage,
+  controls power-up sequence, supervises internal supplies, and monitors
+  on-board temperature (PWR_FAULT1 at 65 C, shutdown at 90 C)
+
+Interfaces
+~~~~~~~~~~
+
+- **RGMII Ethernet:** On-board Marvell 88E1512 10/100/1000 Mbps PHY
+  connected to GEM3 controller
+- **USB:** USB 2.0 via on-board USB3320 ULPI transceiver; USB 3.0 via
+  PS-GTR transceivers
+- **Gigabit serial:** PS-GTR (up to 6 Gb/s) for USB 3.0, SGMII, DisplayPort;
+  GTH (up to 12.5 Gb/s) for additional JESD lanes, 100 Gb Ethernet, PCIe
+- **SD card:** Compatible with SD 3.01, UHS-I speeds, SDXC capacity format.
+  On-board uSD connector with option for carrier SD card via multiplexer.
+
+Thermal Considerations
+~~~~~~~~~~~~~~~~~~~~~~
+
+The RF-SOM requires active cooling with an AMD-type SP3/TR4/sTRX4 socket
+cooler. Without a fan, the RF-SOM will shut down within minutes under normal
+operating conditions due to overtemperature protection at 90 C.
+
+ADRV2CRR-FMC Carrier Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ADRV2CRR-FMC carrier board provides common high-speed I/O ports for
+evaluating the ADRV9009-ZU11EG RF-SOM. It includes a 12 V, 145 W power
+supply that powers the complete prototyping platform.
+
+**Boot Mode Configuration:**
+
+Slide switches S13-S16 select the boot source:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Mode Pins [3:0]
+     - Boot Source
+   * - 0000
+     - JTAG
+   * - 0010
+     - Quad-SPI (32b)
+   * - 1110
+     - SD1 (3.0)
+
+**FMC Connector:**
+
+The carrier includes a standard ANSI/VITA 57.1 FMC HPC connector (P1) with:
+
+- 10 serial transceiver lanes, 2x reference clocks
+- 34 differential I/O pairs, 2 differential clocks
+- JTAG, I2C interfaces
+
+FMC HA and HB positions carry RF reference clock, synchronization, and
+ADRV9009 I/O signals for adding extra transceivers via the
+:ref:`AD-FMCOMMS8-EBZ <ad-fmcomms8-ebz>`.
+
+**Additional Connectors:**
+
+- I/O expansion connector (P25): 12 single-ended GPIOs (PL bank 65, 1.8 V)
+- PMOD connector (P10): 2x6 pin, 3.3 V, with FXLA108 level translator
+
 HDL Reference Design
 --------------------
 
+The HDL reference design is built around the Zynq UltraScale+ quad
+Cortex-A53 MPCore processors. The PS provides SDIO, UART, Ethernet, SPI,
+USB 3.0, QSPI, and DisplayPort control modules.
+
+The two ADRV9009 digital interfaces are handled by the JESD204B physical,
+data link, and transport layer IPs. The JESD204B lanes are shared among the
+8 transmit, 4 receive, and 4 observation/sniffer receive data paths. The
+cores are programmable through an AXI-Lite interface.
+
+Two PL DDR4 (32-bit @ 1200 MHz) modules can be used as offload FIFOs.
+Additional transceiver lanes are available to implement PCIe Gen3 x8, 10 Gb
+Ethernet, and 40 Gb Ethernet simultaneously. A full FMC HPC connector
+enables extending the system with another two ADRV9009 devices.
+
+Digital Interface
+~~~~~~~~~~~~~~~~~
+
 The digital interface consists of 8 transmit, 4 receive, and 4
-observation/sniffer lanes running up to 9.8 Gbps. The DAC data may be sourced
-from an internal data generator (DDS or pattern) or from the external DDR via
-DMA. The ADC data is sent to the DDR via DMA.
+observation/sniffer lanes running up to 9.8 Gbps. The transceivers interface
+to the cores at 256 bits @ 245 MHz in the transmit path and 128 bits @
+245 MHz for the receive and observation paths.
+
+- **TX Interface:** DAC data may be sourced from an internal data generator
+  (DDS or pattern) or from external DDR via DMA. The UNPACK IP
+  (util_upack) allows transferring data from the DMA to a reduced number of
+  channels at a higher rate.
+- **RX Interface:** ADC data is sent to DDR via DMA. The PACK IP
+  (util_cpack) allows capturing only a subset of channels.
+- **OBS Interface:** Observation data is sent to DDR via DMA with similar
+  PACK IP support.
 
 Block Diagrams
 ~~~~~~~~~~~~~~
@@ -55,9 +212,40 @@ HDL Source Code
 
 - :git-hdl:`projects/adrv9009zu11eg`
 
+Multi-SOM Synchronization
+--------------------------
+
+Multiple ADRV9009-ZU11EG RF-SOMs can be synchronized together for complex
+multi-stream applications with deterministic latency. Synchronization is
+accomplished by phase-aligning the SYSREF and REFCLK signals using
+:adi:`HMC7044` high-performance jitter attenuators. Phase alignment is
+achieved by pulsed SYNC or RFSYNC inputs, which can be extended to multiple
+clock tree stages.
+
+Two synchronization architectures are supported:
+
+- **Clock Distribution:** The first-stage HMC7044 generates and distributes
+  the clock. Lower-stage HMC7044 devices act as fanout buffers. Easier to
+  manage and lower power, but requires routing high-frequency clock signals.
+- **Reference Distribution:** All HMC7044 stages have active PLLs working
+  as clock generators and jitter cleaners, synchronized by the SYNC input.
+  Provides ultralow jitter and reduces coupling risk.
+
+With a single HMC7044 synchronization board, up to three carriers (twelve
+ADRV9009 transceivers) can be synchronized.
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/adrv9009.c`
+
 More Information
 ----------------
 
+- :ref:`AD-FMCOMMS8-EBZ User Guide <ad-fmcomms8-ebz>`
 - :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
 - :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
 

@@ -29,8 +29,12 @@ Features
 
   - Quad transmitters / Quad receivers
   - Quad input observation receiver for DPD
-  - Max Rx BW: 200 MHz, Max Tx synthesis BW: 450 MHz
+  - Max Rx BW: 200 MHz
+  - Max tunable Tx synthesis BW: 450 MHz
+  - Max observation Rx BW: 450 MHz
   - Tuning range: 75 MHz to 6000 MHz
+  - Fully integrated fractional-N RF synthesizers
+  - Multi-chip phase synchronization for all RF LO and baseband clocks
 
 - Multi-chip phase synchronization using :adi:`HMC7044`
 - FMC HPC compatible interface
@@ -43,8 +47,73 @@ Supported Devices
 Supported Carriers
 ------------------
 
-- :xilinx:`ZCU102`
-- :ref:`ADRV9009-ZU11EG <adrv9009zu11eg>` (via ADRV2CRR-FMC carrier)
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :xilinx:`ZCU102`
+     - Yes
+     - Yes
+   * - :ref:`ADRV9009-ZU11EG <adrv9009zu11eg>` (via ADRV2CRR-FMC)
+     - Yes
+     - Yes
+   * - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10/sx.html>`
+     - Yes
+     - Yes
+
+Quick Start
+-----------
+
+Prerequisites
+~~~~~~~~~~~~~
+
+- AD-FMCOMMS8-EBZ evaluation board
+- One of the supported carrier boards
+- ADI Kuiper Linux SD card image
+- Host PC with Ethernet connection for IIO Oscilloscope remote mode
+
+Hardware Setup (ADRV9009-ZU11EG)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When used with the ADRV9009-ZU11EG and ADRV2CRR-FMC carrier:
+
+#. Connect the AD-FMCOMMS8-EBZ to the FMC HPC connector on the ADRV2CRR-FMC
+#. Connect power supply (12 V, 145 W included with carrier kit)
+#. Connect UART (115200 baud) and Ethernet
+#. Insert SD card with Kuiper Linux image
+#. Set boot mode switches for SD card boot (S13-S16: 1110)
+#. Power on the system
+
+Hardware Setup (Arria 10 SoC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When used with the Arria 10 SoC Development Kit, six zero-ohm resistors
+must be moved on the AD-FMCOMMS8-EBZ board to accommodate the FMC pin
+connections on the Arria 10 carrier.
+
+Verifying Operation
+~~~~~~~~~~~~~~~~~~~
+
+After boot, verify the JESD204B link status:
+
+.. code-block:: bash
+
+   jesd_status
+
+Verify clock chip lock status using ``iio_attr``:
+
+.. code-block:: bash
+
+   iio_attr -d hmc7044 status
+
+Use IIO Oscilloscope in remote mode to capture and visualize data:
+
+.. code-block:: bash
+
+   # On host PC
+   osc
 
 HDL Reference Design
 --------------------

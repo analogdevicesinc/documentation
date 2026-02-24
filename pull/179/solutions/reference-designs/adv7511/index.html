@@ -97,14 +97,25 @@
 <li><a class="reference internal" href="#">ADV7511 User Guide</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
-<li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li><a class="reference internal" href="#supported-carriers">Supported Carriers</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
+<li><a class="reference internal" href="#functional-description">Functional Description</a><ul>
+<li><a class="reference internal" href="#video-path">Video Path</a></li>
+<li><a class="reference internal" href="#audio-path">Audio Path</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#block-diagrams">Block Diagrams</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
-<li><a class="reference internal" href="#no-os-project">No-OS Project</a></li>
+<li><a class="reference internal" href="#no-os-project">No-OS Project</a><ul>
+<li><a class="reference internal" href="#serial-setup">Serial Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -332,7 +343,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../ad-fmcmotcon1-ebz/index.html">AD-FMCMOTCON1-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ad-fmcmotcon2-ebz/index.html">AD-FMCMOTCON2-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms1-ebz/index.html">AD-FMCOMMS1-EBZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms11-ebz/index.html">AD-FMCOMMS11-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms11-ebz/index.html">AD-FMCOMMS11-EBZ User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms2-ebz/index.html">AD-FMCOMMS2-EBZ</a></li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
@@ -664,25 +675,162 @@ directly.</p>
 <section id="supported-carriers">
 <h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/AC701" target="_blank">AC701</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></li>
 <li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC702" target="_blank">ZC702</a></p></li>
 <li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></li>
 <li><p><a class="icon link reference external" href="https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/" target="_blank">ZedBoard</a></p></li>
 </ul>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>One of the supported carrier boards</p></li>
+<li><p>HDMI monitor</p></li>
+<li><p>UART terminal (Tera Term / Hyperterminal) at baud rate 115200</p></li>
+</ul>
+</section>
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<section id="functional-description">
+<h3>Functional Description<a class="headerlink" href="#functional-description" title="Link to this heading"></a></h3>
+<p>The reference design consists of two independent pcore modules for video
+and audio.</p>
+<section id="video-path">
+<h4>Video Path<a class="headerlink" href="#video-path" title="Link to this heading"></a></h4>
+<p>The video part consists of an AXI DMAC interface and the ADV7511 video
+interface. The ADV7511 interface uses a 16-bit YCbCr 4:2:2 format with
+separate synchronization signals. The DMA streams frame data to this core.
+The internal buffers are small (1 kB) and do not buffer any frames. Additional
+resources may cause loss of synchronization due to DDR bandwidth requirements.</p>
+<p>The video core supports any format through a set of parameter registers. The
+pixel clock is generated internal to the device and must be configured for
+the correct pixel frequency. A programmable color pattern is available for
+debug purposes. A zero-to-one transition on the enable bits triggers the
+corresponding action for HDMI enable and color pattern enable.</p>
+<p>The reference design defaults to 1080p video mode (148.5 MHz pixel clock).</p>
+<div class="table-wrapper docutils container" id="id1">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">1080p Video Timing Parameters</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HSYNC count</p></td>
+<td><p>Total horizontal pixel clocks</p></td>
+<td><p>2200</p></td>
+</tr>
+<tr class="row-odd"><td><p>HSYNC width</p></td>
+<td><p>Horizontal sync pulse width (pixel clocks)</p></td>
+<td><p>44</p></td>
+</tr>
+<tr class="row-even"><td><p>HSYNC DE min</p></td>
+<td><p>Start of active video (sync width + back porch)</p></td>
+<td><p>192 (44 + 148)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HSYNC DE max</p></td>
+<td><p>End of active video (sync + back porch + active)</p></td>
+<td><p>2112 (44 + 148 + 1920)</p></td>
+</tr>
+<tr class="row-even"><td><p>VSYNC count</p></td>
+<td><p>Total vertical pixel clocks</p></td>
+<td><p>1125</p></td>
+</tr>
+<tr class="row-odd"><td><p>VSYNC width</p></td>
+<td><p>Vertical sync pulse width (pixel clocks)</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>VSYNC DE min</p></td>
+<td><p>Start of active video (sync width + back porch)</p></td>
+<td><p>41 (5 + 36)</p></td>
+</tr>
+<tr class="row-odd"><td><p>VSYNC DE max</p></td>
+<td><p>End of active video (sync + back porch + active)</p></td>
+<td><p>1121 (5 + 36 + 1080)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="audio-path">
+<h4>Audio Path<a class="headerlink" href="#audio-path" title="Link to this heading"></a></h4>
+<p>The audio part consists of an AXI DMAC interface and the ADV7511 SPDIF audio
+interface. The audio clock is derived from the bus clock. A programmable
+register controls the division factor. Audio data is read from DDR as two
+16-bit words for left and right channels, then transmitted on the SPDIF frame.
+The reference design defaults to 48 kHz.</p>
+<div class="table-wrapper docutils container" id="id2">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Audio Registers (axi_spdif_tx)</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Address</p></th>
+<th class="head"><p>Bits</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x00</p></td>
+<td><p>[23:20]</p></td>
+<td><p>mode</p></td>
+<td><p>Sample format 0 to 8 (0 = 16-bit, 8 = 24-bit)</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x00</p></td>
+<td><p>[15:8]</p></td>
+<td><p>ratio</p></td>
+<td><p>Clock divider: transmit frequency = bus_clock / (1 + ratio)</p></td>
+</tr>
+<tr class="row-even"><td><p>0x00</p></td>
+<td><p>[1]</p></td>
+<td><p>txdata</p></td>
+<td><p>Transmit data buffer enable (1) or disable (0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x00</p></td>
+<td><p>[0]</p></td>
+<td><p>txenable</p></td>
+<td><p>Transmitter enable (1) or disable (0)</p></td>
+</tr>
+<tr class="row-even"><td><p>0x04</p></td>
+<td><p>[7:6]</p></td>
+<td><p>frequency</p></td>
+<td><p>Sample frequency: 0 = 44.1 kHz, 1 = 48 kHz, 2 = 32 kHz, 3 = SRC</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x04</p></td>
+<td><p>[2]</p></td>
+<td><p>pre-emphasis</p></td>
+<td><p>Pre-emphasis 50/15 us (1) or none (0)</p></td>
+</tr>
+<tr class="row-even"><td><p>0x04</p></td>
+<td><p>[1]</p></td>
+<td><p>copy</p></td>
+<td><p>Copy permitted (1) or inhibited (0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x04</p></td>
+<td><p>[0]</p></td>
+<td><p>audio</p></td>
+<td><p>Data format is non-audio (1) or audio (0)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
 <section id="block-diagrams">
 <h3>Block Diagrams<a class="headerlink" href="#block-diagrams" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id3">
 <img alt="../../../_images/adv7511_zynq_bd.svg" src="../../../_images/adv7511_zynq_bd.svg" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADV7511 Xilinx block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADV7511 Xilinx block diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id4">
 <img alt="../../../_images/adv7511_proc_bd.svg" src="../../../_images/adv7511_proc_bd.svg" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">ADV7511 processor block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">ADV7511 processor block diagram</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -697,9 +845,33 @@ directly.</p>
 <h2>Software Support<a class="headerlink" href="#software-support" title="Link to this heading"></a></h2>
 <section id="no-os-project">
 <h3>No-OS Project<a class="headerlink" href="#no-os-project" title="Link to this heading"></a></h3>
+<p>The no-OS software reference design uses the ADV7511 Transmitter Library,
+which provides APIs for configuring the HDMI TX hardware without low-level
+register access. The library also provides interrupt service routines, HDCP
+high-level control, and status information.</p>
+<p>The no-OS driver performs the following:</p>
+<ol class="arabic simple">
+<li><p>Initializes the HDMI core</p></li>
+<li><p>Initializes the ADV7511</p></li>
+<li><p>Transmits to an HDMI monitor an image whose resolution can be changed by
+typing a number from 0 to 6 in the terminal</p></li>
+<li><p>Transmits audio to the HDMI monitor</p></li>
+</ol>
 <ul class="simple">
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/adv7511" target="_blank">projects/adv7511</a></p></li>
 </ul>
+<section id="serial-setup">
+<h4>Serial Setup<a class="headerlink" href="#serial-setup" title="Link to this heading"></a></h4>
+<p>A UART terminal can be used to capture the output of the example program with
+the following settings:</p>
+<ul class="simple">
+<li><p>Baud Rate: 115200 bps</p></li>
+<li><p>Data: 8 bit</p></li>
+<li><p>Parity: None</p></li>
+<li><p>Stop bits: 1 bit</p></li>
+<li><p>Flow Control: None</p></li>
+</ul>
+</section>
 </section>
 </section>
 <section id="more-information">

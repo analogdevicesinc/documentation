@@ -6,39 +6,67 @@ ADRV9026 User Guide
 Introduction
 ------------
 
-The HDL reference design for the :adi:`ADRV9026` is an embedded system built
-around a processor core. The device digital interface is handled by the
-transceiver IP followed by the JESD204B and device specific cores. The cores
-are programmable through an AXI-Lite interface. The delineated data is then
-passed on to independent DMA cores for the transmit and receive paths.
+The :adi:`ADRV9026` is a highly integrated RF agile transceiver offering
+four independently controlled transmitters, dedicated observation receivers
+for monitoring each transmitter output, four independently controlled
+receivers, integrated synthesizers, and digital signal processing functions.
 
-The Rx links (ADC Path) operate with the following parameters:
-
-- Rx Deframer: L=4, M=4, F=4, S=1, N'=16
-- Sample Rate: 250 MSPS
-- JESD204B Lane Rate: 10 Gbps
-- CPLL
-
-The Tx links (DAC Path) operate with the following parameters:
-
-- Tx Framer: L=4, M=4, F=4, S=1, N'=16
-- Sample Rate: 250 MSPS
-- JESD204B Lane Rate: 10 Gbps
-- QPLL0
+The EVAL-ADRV9026/ADRV9029 evaluation boards are FMC mezzanine cards designed
+for use with compatible FPGA development boards. The :adi:`ADRV9029` uses the
+same driver infrastructure and evaluation board design.
 
 Supported Devices
 -----------------
 
 - :adi:`ADRV9026`
+- :adi:`ADRV9029`
 - :adi:`ADRV9025`
 
 Supported Carriers
 ------------------
 
-- :xilinx:`ZCU102` FMC1 Slot
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+     - No-OS
+   * - :xilinx:`ZCU102` (FMC1 Slot)
+     - Yes
+     - Yes
+     - Yes
+
+Prerequisites
+~~~~~~~~~~~~~
+
+- EVAL-ADRV9026 or EVAL-ADRV9029 evaluation board
+- One of the supported carrier boards
+- DisplayPort monitor, USB keyboard and mouse (for ARM/FPGA SoC platforms)
+- LAN cable and host PC (for FPGA-only solutions)
+- Internet connection for updating SD card contents
+- RF test equipment
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+The EVAL-ADRV9026/ADRV9029 boards connect to the HPC1 FMC connector (unless
+otherwise noted). The carrier setup requires:
+
+- Power: 12 VDC, 3 A max
+- UART: 115200 baud
+- Ethernet: for Linux
+- HDMI/DisplayPort: if available
+- JTAG: for no-OS
 
 HDL Reference Design
 --------------------
+
+The HDL reference design is an embedded system built around a processor core.
+The device digital interface is handled by the transceiver IP followed by the
+JESD204B and device-specific cores. The cores are programmable through an
+AXI-Lite interface. The delineated data is then passed on to independent DMA
+cores for the transmit and receive paths.
 
 Block Diagram
 ~~~~~~~~~~~~~
@@ -47,6 +75,45 @@ Block Diagram
    :align: center
 
    ADRV9026 JESD block diagram
+
+JESD204B Configuration
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Rx Links (ADC Path)
+   :header-rows: 1
+
+   * - Parameter
+     - Value
+   * - Rx Deframer (L, M, F, S, N')
+     - L=4, M=4, F=4, S=1, N'=16
+   * - Sample Rate
+     - 250 MSPS
+   * - RX_DEVICE_CLK
+     - 250 MHz (Lane Rate / 40)
+   * - REF_CLK
+     - 250 MHz (Lane Rate / 40)
+   * - JESD204B Lane Rate
+     - 10 Gbps
+   * - PLL
+     - CPLL
+
+.. list-table:: Tx Links (DAC Path)
+   :header-rows: 1
+
+   * - Parameter
+     - Value
+   * - Tx Framer (L, M, F, S, N')
+     - L=4, M=4, F=4, S=1, N'=16
+   * - Sample Rate
+     - 250 MSPS
+   * - TX_DEVICE_CLK
+     - 250 MHz (Lane Rate / 40)
+   * - REF_CLK
+     - 250 MHz (Lane Rate / 40)
+   * - JESD204B Lane Rate
+     - 10 Gbps
+   * - PLL
+     - QPLL0
 
 Clock Sources
 ~~~~~~~~~~~~~
@@ -60,6 +127,27 @@ HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`projects/adrv9026`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/adrv9025.c`
+
+IIO Devices
+~~~~~~~~~~~
+
+The following IIO devices are enumerated on a ZCU102 system:
+
+- **ad9528-1** - Clock generator
+- **adrv9025-phy** - Transceiver control
+- **axi-adrv9025-rx-hpc** - Receive data path (buffer capable)
+- **axi-adrv9025-tx-hpc** - Transmit data path (buffer capable)
+
+The main receivers RX1-RX4 are handled by the ``axi-adrv9025-rx-hpc`` IIO
+device with channels: voltage0_i/q through voltage3_i/q.
 
 More Information
 ----------------

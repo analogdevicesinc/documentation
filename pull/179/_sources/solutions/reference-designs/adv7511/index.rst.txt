@@ -26,12 +26,125 @@ Supported Devices
 Supported Carriers
 ------------------
 
+- :xilinx:`AC701`
+- :xilinx:`KC705`
+- :xilinx:`VC707`
 - :xilinx:`ZC702`
 - :xilinx:`ZC706`
 - `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`__
 
+Requirements
+~~~~~~~~~~~~
+
+- One of the supported carrier boards
+- HDMI monitor
+- UART terminal (Tera Term / Hyperterminal) at baud rate 115200
+
 HDL Reference Design
 --------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design consists of two independent pcore modules for video
+and audio.
+
+Video Path
+^^^^^^^^^^
+
+The video part consists of an AXI DMAC interface and the ADV7511 video
+interface. The ADV7511 interface uses a 16-bit YCbCr 4:2:2 format with
+separate synchronization signals. The DMA streams frame data to this core.
+The internal buffers are small (1 kB) and do not buffer any frames. Additional
+resources may cause loss of synchronization due to DDR bandwidth requirements.
+
+The video core supports any format through a set of parameter registers. The
+pixel clock is generated internal to the device and must be configured for
+the correct pixel frequency. A programmable color pattern is available for
+debug purposes. A zero-to-one transition on the enable bits triggers the
+corresponding action for HDMI enable and color pattern enable.
+
+The reference design defaults to 1080p video mode (148.5 MHz pixel clock).
+
+.. list-table:: 1080p Video Timing Parameters
+   :header-rows: 1
+
+   * - Parameter
+     - Description
+     - Value
+   * - HSYNC count
+     - Total horizontal pixel clocks
+     - 2200
+   * - HSYNC width
+     - Horizontal sync pulse width (pixel clocks)
+     - 44
+   * - HSYNC DE min
+     - Start of active video (sync width + back porch)
+     - 192 (44 + 148)
+   * - HSYNC DE max
+     - End of active video (sync + back porch + active)
+     - 2112 (44 + 148 + 1920)
+   * - VSYNC count
+     - Total vertical pixel clocks
+     - 1125
+   * - VSYNC width
+     - Vertical sync pulse width (pixel clocks)
+     - 5
+   * - VSYNC DE min
+     - Start of active video (sync width + back porch)
+     - 41 (5 + 36)
+   * - VSYNC DE max
+     - End of active video (sync + back porch + active)
+     - 1121 (5 + 36 + 1080)
+
+Audio Path
+^^^^^^^^^^
+
+The audio part consists of an AXI DMAC interface and the ADV7511 SPDIF audio
+interface. The audio clock is derived from the bus clock. A programmable
+register controls the division factor. Audio data is read from DDR as two
+16-bit words for left and right channels, then transmitted on the SPDIF frame.
+The reference design defaults to 48 kHz.
+
+.. list-table:: Audio Registers (axi_spdif_tx)
+   :header-rows: 1
+
+   * - Address
+     - Bits
+     - Name
+     - Description
+   * - 0x00
+     - [23:20]
+     - mode
+     - Sample format 0 to 8 (0 = 16-bit, 8 = 24-bit)
+   * - 0x00
+     - [15:8]
+     - ratio
+     - Clock divider: transmit frequency = bus_clock / (1 + ratio)
+   * - 0x00
+     - [1]
+     - txdata
+     - Transmit data buffer enable (1) or disable (0)
+   * - 0x00
+     - [0]
+     - txenable
+     - Transmitter enable (1) or disable (0)
+   * - 0x04
+     - [7:6]
+     - frequency
+     - Sample frequency: 0 = 44.1 kHz, 1 = 48 kHz, 2 = 32 kHz, 3 = SRC
+   * - 0x04
+     - [2]
+     - pre-emphasis
+     - Pre-emphasis 50/15 us (1) or none (0)
+   * - 0x04
+     - [1]
+     - copy
+     - Copy permitted (1) or inhibited (0)
+   * - 0x04
+     - [0]
+     - audio
+     - Data format is non-audio (1) or audio (0)
 
 Block Diagrams
 ~~~~~~~~~~~~~~
@@ -57,7 +170,32 @@ Software Support
 No-OS Project
 ~~~~~~~~~~~~~
 
+The no-OS software reference design uses the ADV7511 Transmitter Library,
+which provides APIs for configuring the HDMI TX hardware without low-level
+register access. The library also provides interrupt service routines, HDCP
+high-level control, and status information.
+
+The no-OS driver performs the following:
+
+#. Initializes the HDMI core
+#. Initializes the ADV7511
+#. Transmits to an HDMI monitor an image whose resolution can be changed by
+   typing a number from 0 to 6 in the terminal
+#. Transmits audio to the HDMI monitor
+
 - :git-no-OS:`projects/adv7511`
+
+Serial Setup
+^^^^^^^^^^^^
+
+A UART terminal can be used to capture the output of the example program with
+the following settings:
+
+- Baud Rate: 115200 bps
+- Data: 8 bit
+- Parity: None
+- Stop bits: 1 bit
+- Flow Control: None
 
 More Information
 ----------------

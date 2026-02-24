@@ -7,10 +7,12 @@ Introduction
 ------------
 
 The AD9208-DUAL-EBZ reference design is a processor-based (Microblaze)
-embedded system featuring two :adi:`AD9208` dual-channel ADCs. The device
-interfaces to the FPGA transceivers followed by the individual JESD204B and
-ADC cores. The cores are programmable through an AXI-Lite interface. The
-samples are passed to the system memory (DDR).
+embedded system featuring two :adi:`AD9208` dual-channel ADCs. The
+:adi:`AD9208` is a dual, 14-bit, 3 GSPS analog-to-digital converter (ADC)
+designed for wide bandwidth applications. The device interfaces to the FPGA
+transceivers followed by the individual JESD204B and ADC cores. The cores
+are programmable through an AXI-Lite interface. The samples are passed to
+the system memory (DDR).
 
 Supported Devices
 -----------------
@@ -25,20 +27,45 @@ Supported Carriers
 HDL Reference Design
 --------------------
 
-The design has two JESD receive chains each having 8 lanes at rate of
+The design has two JESD receive chains each having 8 lanes at a rate of
 15 Gbps. The JESD receive chain consists of a physical layer represented by
-an XCVR module, a link layer represented by an RX JESD LINK module, and
+an XCVR module, a link layer represented by an RX JESD LINK module, and a
 transport layer represented by a RX JESD TPL module.
 
 The links operate in Subclass 1 using the SYSREF signal to edge-align the
-internal local multiframe clock and to release the received data in the same
-moment from all lanes.
+internal local multiframe clock and to release the received data from all
+lanes simultaneously. This ensures that data from all channels is
+synchronized at the application layer.
 
-Both links are set for full bandwidth mode with the following parameters:
+Both transport layer components present 256 bits on their output on every
+clock cycle, representing 8 samples per converter. The two receive chains
+are merged together and transferred to the DDR with a single DMA. An ADC
+buffer stores 65k samples per converter in the fabric before transferring
+with the DMA.
 
-- Deframer: L=8, M=2, F=1, S=2, N'=16
-- JESD204B Lane Rate: 15 Gbps
-- Device Clock: 3000 MHz
+JESD204B Configuration
+~~~~~~~~~~~~~~~~~~~~~~
+
+Both links are set for full bandwidth mode and operate with the following
+parameters:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Value
+   * - Deframer (L, M, F, S, N')
+     - L=8, M=2, F=1, S=2, N'=16
+   * - GLBLCLK
+     - 375 MHz (Lane Rate / 40)
+   * - REFCLK
+     - 750 MHz (Lane Rate / 20)
+   * - SYSREF
+     - 1.46 MHz (DEVCLK / 2048)
+   * - DEVCLK
+     - 3000 MHz
+   * - JESD204B Lane Rate
+     - 15 Gbps
 
 Block Diagram
 ~~~~~~~~~~~~~
@@ -56,10 +83,22 @@ Clock Sources
 
    Clock sources diagram
 
+Both physical layer transceiver modules receive the same reference clock from
+the clock chip SCLKOUT8 output. The global clock (Lane Rate / 40) is received
+directly from the clock chip SCLKOUT9 output.
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`projects/ad9208_dual_ebz`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ad9208.c`
 
 More Information
 ----------------

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta content="The AD-FMCOMMS11-EBZ board is a system platform board for communication infrastructure applications that demonstrates the Direct to RF (DRF) transmitter and observation receiver architecture. Using high sample rate RFDAC(s) and RFADC(s), a number of components in previous generation transmitters can be eliminated, such as mixers, modulators, IF amplifiers and filters." name="description" />
 
-    <title>AD-FMCOMMS11-EBZ &#8212; System Level Documentation  documentation</title>
+    <title>AD-FMCOMMS11-EBZ User Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
     <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
@@ -94,16 +94,40 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">AD-FMCOMMS11-EBZ</a><ul>
+<li><a class="reference internal" href="#">AD-FMCOMMS11-EBZ User Guide</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#functional-overview">Functional Overview</a><ul>
+<li><a class="reference internal" href="#transmit-path">Transmit Path</a></li>
+<li><a class="reference internal" href="#receive-path">Receive Path</a></li>
+<li><a class="reference internal" href="#clock-management">Clock Management</a></li>
+<li><a class="reference internal" href="#power-supply">Power Supply</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hardware">Hardware</a><ul>
+<li><a class="reference internal" href="#board-specifications">Board Specifications</a></li>
+<li><a class="reference internal" href="#configuration-options">Configuration Options</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#hardware-setup-zc706">Hardware Setup (ZC706)</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
+<li><a class="reference internal" href="#jesd204b-configuration">JESD204B Configuration</a></li>
+<li><a class="reference internal" href="#lane-mapping">Lane Mapping</a></li>
+<li><a class="reference internal" href="#cpu-memory-interconnect-addresses">CPU/Memory Interconnect Addresses</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#linux-drivers">Linux Drivers</a></li>
 <li><a class="reference internal" href="#device-trees">Device Trees</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope-plugin">IIO Oscilloscope Plugin</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -331,7 +355,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../ad-fmcmotcon1-ebz/index.html">AD-FMCMOTCON1-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ad-fmcmotcon2-ebz/index.html">AD-FMCMOTCON2-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms1-ebz/index.html">AD-FMCOMMS1-EBZ</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">AD-FMCOMMS11-EBZ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AD-FMCOMMS11-EBZ User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms2-ebz/index.html">AD-FMCOMMS2-EBZ</a></li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
@@ -639,8 +663,10 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="ad-fmcomms11-ebz">
-<span id="id1"></span><h1>AD-FMCOMMS11-EBZ<a class="headerlink" href="#ad-fmcomms11-ebz" title="Link to this heading"></a></h1>
+  <section id="ad-fmcomms11-ebz-user-guide">
+<span id="ad-fmcomms11-ebz"></span><h1>AD-FMCOMMS11-EBZ User Guide<a class="headerlink" href="#ad-fmcomms11-ebz-user-guide" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>The AD-FMCOMMS11-EBZ board is a system platform board for communication
 infrastructure applications that demonstrates the Direct to RF (DRF)
 transmitter and observation receiver architecture. Using high sample rate
@@ -657,6 +683,222 @@ reference.</p>
 <p>The platform supports the frequency range 70 MHz to 6 GHz.</p>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms11-ebz/fmcomms11_image.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms11-ebz/fmcomms11_image.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms11-ebz/fmcomms11_image.png" width="500" />
 </a>
+<section id="functional-overview">
+<h3>Functional Overview<a class="headerlink" href="#functional-overview" title="Link to this heading"></a></h3>
+<p>The system consists of a transmit path, receive path, clock management and
+power supply.</p>
+<section id="transmit-path">
+<h4>Transmit Path<a class="headerlink" href="#transmit-path" title="Link to this heading"></a></h4>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/AD9162" target="_blank">AD9162</a></p></td>
+<td><p>High performance, 16-bit DAC that supports data rates to 6 GSPS.
+The DAC core is based on a quad-switch architecture coupled with a
+2x interpolator filter that enables an effective DAC update rate of
+up to 12 GSPS.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADL5240" target="_blank">ADL5240</a></p></td>
+<td><p>Digitally controlled variable gain amplifier (VGA) operating from
+100 MHz to 4000 MHz. Integrates a 20 dB gain amplifier with a 6-bit
+digital step attenuator with 31.5 dB control range in 0.5 dB steps.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="receive-path">
+<h4>Receive Path<a class="headerlink" href="#receive-path" title="Link to this heading"></a></h4>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/AD9625" target="_blank">AD9625</a></p></td>
+<td><p>12-bit monolithic sampling ADC that operates at conversion rates of
+up to 2.6 GSPS. Designed for sampling wide bandwidth analog signals
+up to the second Nyquist zone.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/HMC1119" target="_blank">HMC1119</a></p></td>
+<td><p>Broadband, highly accurate, 7-bit digital attenuator, operating from
+0.1 GHz to 6.0 GHz with 31.5 dB attenuation control range in
+0.25 dB steps.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="clock-management">
+<h4>Clock Management<a class="headerlink" href="#clock-management" title="Link to this heading"></a></h4>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADF4355" target="_blank">ADF4355</a></p></td>
+<td><p>Fractional-N or integer-N PLL frequency synthesizer. A series of
+frequency dividers permits operation from 54 MHz to 6800 MHz with an
+integrated VCO with fundamental output from 3400 MHz to 6800 MHz.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/HMC361" target="_blank">HMC361</a></p></td>
+<td><p>Low noise Divide-by-2 static divider operating from DC to 10 GHz
+input frequency. Low additive SSB phase noise of -148 dBc/Hz at
+100 kHz offset.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="power-supply">
+<h4>Power Supply<a class="headerlink" href="#power-supply" title="Link to this heading"></a></h4>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADM7170" target="_blank">ADM7170</a></p></td>
+<td><p>6.5 V, 500 mA, ultralow noise, high PSRR, fast transient response
+CMOS LDO</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADM7150" target="_blank">ADM7150</a></p></td>
+<td><p>800 mA, ultra low noise/high PSRR LDO</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADM7154" target="_blank">ADM7154</a></p></td>
+<td><p>600 mA, ultralow noise, high PSRR, RF linear regulator</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADP1740" target="_blank">ADP1740</a></p></td>
+<td><p>2 A, low VIN dropout, linear regulator</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADP1761" target="_blank">ADP1761</a></p></td>
+<td><p>1 A, low VIN, low noise, CMOS linear regulator</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADP2370" target="_blank">ADP2370</a></p></td>
+<td><p>High voltage, 1.2 MHz/600 kHz, 800 mA, low quiescent current buck
+regulator</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADP5073" target="_blank">ADP5073</a></p></td>
+<td><p>1.2 A, DC-to-DC inverting regulator</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADP2165" target="_blank">ADP2165</a></p></td>
+<td><p>5.5 V, 5 A, high efficiency, step-down DC-to-DC regulator with
+output tracking</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/AD7291" target="_blank">AD7291</a></p></td>
+<td><p>8-channel, I2C, 12-bit SAR ADC with temperature sensor (power level
+monitoring)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+<section id="hardware">
+<h2>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h2>
+<section id="board-specifications">
+<h3>Board Specifications<a class="headerlink" href="#board-specifications" title="Link to this heading"></a></h3>
+<p>The AD-FMCOMMS11-EBZ is a 12 layer board measuring 110 mm x 69 mm (not
+including SMA connectors). The mounting holes align with the ZC706 carrier
+board.</p>
+</section>
+<section id="configuration-options">
+<h3>Configuration Options<a class="headerlink" href="#configuration-options" title="Link to this heading"></a></h3>
+<p>Several solder links on the board allow optional clock reference
+configuration for the clock management unit, ADC and DAC.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Location</p></th>
+<th class="head"><p>Device Controlled</p></th>
+<th class="head"><p>Settings</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>JP1/JP2</p></td>
+<td><p>Differential clock reference for ADF4355</p></td>
+<td><p>A and COM</p></td>
+<td><p>Internal clock reference</p></td>
+</tr>
+<tr class="row-odd"><td><p>JP1/JP2</p></td>
+<td><p>Differential clock reference for ADF4355</p></td>
+<td><p>B and COM</p></td>
+<td><p>External clock reference</p></td>
+</tr>
+<tr class="row-even"><td><p>JP22/JP5</p></td>
+<td><p>Differential clock reference for DAC</p></td>
+<td><p>A and COM</p></td>
+<td><p>ADF4355 clock reference</p></td>
+</tr>
+<tr class="row-odd"><td><p>JP22/JP5</p></td>
+<td><p>Differential clock reference for DAC</p></td>
+<td><p>B and COM</p></td>
+<td><p>External clock reference</p></td>
+</tr>
+<tr class="row-even"><td><p>JP3/JP4</p></td>
+<td><p>Differential clock reference for ADC</p></td>
+<td><p>A and COM</p></td>
+<td><p>External clock reference</p></td>
+</tr>
+<tr class="row-odd"><td><p>JP3/JP4</p></td>
+<td><p>Differential clock reference for ADC</p></td>
+<td><p>B and COM</p></td>
+<td><p>HMC361 clock reference</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Additionally, several GPO and GPIO pins are brought to connector J2 on the
+bottom of the PCB. These pins allow configuration of the PA, LNA and SPDT
+switch on the board.</p>
+</section>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
+<p>The AD-FMCOMMS11-EBZ connects to the HPC FMC connector on the ZC706 carrier.</p>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Host PC (Windows or Linux) with SD card writer</p></li>
+<li><p>USB keyboard/mouse for the Zynq (USB hub may be needed)</p></li>
+<li><p>HDMI display (Full HD only)</p></li>
+<li><p>Antenna or SMA cable for crossing Tx to Rx</p></li>
+</ul>
+</section>
+<section id="hardware-setup-zc706">
+<h3>Hardware Setup (ZC706)<a class="headerlink" href="#hardware-setup-zc706" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Insert the SD card into the ZC706 SD card interface connector (J30)</p></li>
+<li><p>Plug the AD-FMCOMMS11-EBZ into the HPC connector (J37)</p></li>
+<li><p>Connect HDMI display to the HDMI Video Connector (P1)</p></li>
+<li><p>Connect USB mouse/keyboard to the USB 2.0 Micro-B connector (J49)</p></li>
+<li><p>Connect 12 V power supply to power input connector (J22) - do not power
+on yet</p></li>
+<li><p>Set boot mode switch SW11: position 1 down, 2 down, 3 up, 4 up, 5 down</p></li>
+<li><p>Power on and wait ~30 seconds for the DONE LED to turn green</p></li>
+<li><p>Wait another ~30 seconds for the HDMI display to become active</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a persistent file system. Please shut down properly using
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">shutdown</span> <span class="pre">-h</span> <span class="pre">now</span></code> instead of just turning off the power switch.</p>
+</div>
+</section>
+</section>
 <section id="supported-carriers">
 <h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <div class="table-wrapper docutils container">
@@ -682,21 +924,130 @@ reference.</p>
 (ARM). The high speed digital interface of the converters is handled by the
 JESD204B framework. Due to the system’s memory interface bandwidth limitation,
 there are intermediary buffers in both TX and RX data paths, in order to save
-and push data using high data rates.</p>
+and push data using high data rates. On the ZC706 carrier board, the RX
+buffer depth is 1 Gbyte and the TX buffer depth is 1 Mbyte. These depths
+can be swapped if required.</p>
 <p>By default the <a class="icon adi reference external" href="https://www.analog.com/AD9162" target="_blank">AD9162</a> is configured in complex mode with 8 lanes, and
 the <a class="icon adi reference external" href="https://www.analog.com/AD9625" target="_blank">AD9625</a> is configured in generic operation mode with 8 lanes. Both
 JESD204 interfaces run in Subclass 0.</p>
-<p>The digital interface consists of 8 transmit and 8 receive lanes running at
-9.83 Gbps and 4.92 Gbps respectively. The data is sent or received based on
-the configuration of separate transmit and receive chains.</p>
+<p>Other configurations can be used, but the user must ensure that all parties
+(clock chip, converters and FPGA JESD204 IPs) are reconfigured accordingly.</p>
 <section id="block-diagram">
 <h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id1">
 <img alt="../../../_images/fmcomms11_bd.svg" src="../../../_images/fmcomms11_bd.svg" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD-FMCOMMS11-EBZ block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD-FMCOMMS11-EBZ block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+</section>
+<section id="jesd204b-configuration">
+<h3>JESD204B Configuration<a class="headerlink" href="#jesd204b-configuration" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container" id="id2">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">TX JESD204B Parameters (DAC Path)</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Number of Lanes (L)</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number of Converters (M)</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Samples per Frame (S)</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sample Width (N/N’)</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-even"><td><p>Lane Rate</p></td>
+<td><p>9.83 Gbps</p></td>
+</tr>
+<tr class="row-odd"><td><p>Core Clock</p></td>
+<td><p>245.76 MHz</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">RX JESD204B Parameters (ADC Path)</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Number of Lanes (L)</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number of Converters (M)</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Samples per Frame (S)</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sample Width (N/N’)</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-even"><td><p>Lane Rate</p></td>
+<td><p>4.92 Gbps</p></td>
+</tr>
+<tr class="row-odd"><td><p>Core Clock</p></td>
+<td><p>122.88 MHz</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="lane-mapping">
+<h3>Lane Mapping<a class="headerlink" href="#lane-mapping" title="Link to this heading"></a></h3>
+<p>To relax PCB design constraints, the physical lanes are not connected
+directly to the logical lanes. Both ADC and DAC sides use the same
+remapping scheme: the n-th logical lane is mapped to the <code class="docutils literal notranslate"><span class="pre">{0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">7,</span>
+<span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">5}</span></code> physical lane.</p>
+</section>
+<section id="cpu-memory-interconnect-addresses">
+<h3>CPU/Memory Interconnect Addresses<a class="headerlink" href="#cpu-memory-interconnect-addresses" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Instance</p></th>
+<th class="head"><p>Address</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>axi_ad9162_xcvr</p></td>
+<td><p>0x44A6_0000</p></td>
+</tr>
+<tr class="row-odd"><td><p>axi_ad9162_core</p></td>
+<td><p>0x44A0_0000</p></td>
+</tr>
+<tr class="row-even"><td><p>axi_ad9162_jesd</p></td>
+<td><p>0x44A9_0000</p></td>
+</tr>
+<tr class="row-odd"><td><p>axi_ad9162_dma</p></td>
+<td><p>0x7C42_0000</p></td>
+</tr>
+<tr class="row-even"><td><p>axi_ad9625_xcvr</p></td>
+<td><p>0x44A5_0000</p></td>
+</tr>
+<tr class="row-odd"><td><p>axi_ad9625_core</p></td>
+<td><p>0x44A1_0000</p></td>
+</tr>
+<tr class="row-even"><td><p>axi_ad9625_jesd</p></td>
+<td><p>0x44AA_0000</p></td>
+</tr>
+<tr class="row-odd"><td><p>axi_ad9625_dma</p></td>
+<td><p>0x7C40_0000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
@@ -720,6 +1071,52 @@ the configuration of separate transmit and receive chains.</p>
 <h3>Device Trees<a class="headerlink" href="#device-trees" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx/zynq-zc706-adv7511-fmcomms11.dts" target="_blank">ZC706 DTS</a></p></li>
+</ul>
+</section>
+<section id="iio-oscilloscope-plugin">
+<h3>IIO Oscilloscope Plugin<a class="headerlink" href="#iio-oscilloscope-plugin" title="Link to this heading"></a></h3>
+<p>The FMCOMMS11 plugin for the IIO Oscilloscope is divided into five sections:</p>
+<p><strong>ADC</strong></p>
+<ul class="simple">
+<li><p><strong>Sampling frequency (MHz):</strong> Displays the sample rate of the ADC</p></li>
+<li><p><strong>Input Scales / Reference:</strong> Sets the scale of the signal input</p></li>
+<li><p><strong>Channel 0 Test mode:</strong> Controls the JESD204B interface test injection
+points</p></li>
+</ul>
+<p><strong>Input Attenuator</strong></p>
+<ul class="simple">
+<li><p><strong>Gain (dB):</strong> Controls RX signal attenuation</p></li>
+</ul>
+<p><strong>DDS (axi-ad9162-hpc)</strong></p>
+<p>The plugin provides several options for how transmitted data is generated.
+It is possible to use the built-in two tone Direct Digital Synthesizer (DDS)
+to transmit a bi-tonal signal on channels I and Q of the DAC, or to use
+the Direct Memory Access (DMA) facility to transmit custom data from a file.</p>
+<p>Available DDS modes:</p>
+<ul class="simple">
+<li><p><strong>One CW Tone</strong> - One continuous wave tone outputted. The same signal with
+90 degree phase offset is outputted on Channel Q.</p></li>
+<li><p><strong>Two CW Tone</strong> - Two continuous wave tones with configurable frequencies,
+amplitudes and phases for both tones.</p></li>
+<li><p><strong>Independent I/Q Control</strong> - Full independent control of frequencies,
+amplitudes and phases for both tones on both I and Q channels.</p></li>
+<li><p><strong>DAC Buffer Output</strong> - Transmit custom data loaded from a file
+(.txt or .mat). Data files are available in the IIO Oscilloscope waveforms
+directory.</p></li>
+<li><p><strong>Disable</strong> - Both DDS and DMA are disabled, DAC channels stop
+transmitting.</p></li>
+</ul>
+<p><strong>DAC</strong></p>
+<ul class="simple">
+<li><p><strong>Sampling frequency (MHz):</strong> Displays the sample rate of the DAC</p></li>
+<li><p><strong>NCO Frequency (MHz):</strong> Sets the frequency for NCO to enable digital
+frequency shifts with near infinite precision</p></li>
+<li><p><strong>Filter Settings:</strong> Enable/disable finite impulse response filter with
+85 dB digital attenuation that implements 2x NRZ mode</p></li>
+</ul>
+<p><strong>Output VGA</strong></p>
+<ul class="simple">
+<li><p><strong>Gain (dB):</strong> Sets the TX gain output</p></li>
 </ul>
 </section>
 </section>
