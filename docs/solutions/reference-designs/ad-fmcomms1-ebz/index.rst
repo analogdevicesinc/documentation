@@ -1,0 +1,68 @@
+.. _ad-fmcomms1-ebz:
+
+AD-FMCOMMS1-EBZ
+================
+
+.. warning::
+
+   The :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` board has
+   been retired and is no longer available for sale. Support has been
+   discontinued, with the latest tested release being **2016_R1**. The HDL
+   project has been removed from the main branch but is still available in the
+   :git-hdl:`hdl_2016_r1 <hdl_2016_r1:projects/fmcomms1>` release branch.
+
+The :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` high-speed
+analog module is designed to showcase the latest generation high-speed data
+converters. It provides the analog front-end for a wide range of
+compute-intensive FPGA-based radio applications.
+
+.. image:: fmcomms1_top.jpg
+   :align: center
+   :width: 400
+
+Introduction
+------------
+
+The AD-FMCOMMS1-EBZ is an analog front-end hardware platform that addresses a
+broad range of research, academic, industrial, and defense applications. It
+enables RF applications from 400 MHz to 4 GHz. The module is customizable to a
+wide range of frequencies by software without any hardware changes, providing
+options for GPS or IEEE 1588 synchronization, and MIMO configurations.
+
+Features
+~~~~~~~~
+
+- General purpose design suitable for any application
+- Software tunable across wide frequency range (400 MHz to 4 GHz) with
+  125 MHz channel bandwidth (250 MSPS ADC, 1 GSPS DAC)
+- RF section bypass for baseband sampling
+- Phase and frequency synchronization on both transmit and receive paths
+- LPC FMC compatible
+- Powered from single FMC connector
+- Supports MIMO radio, with less than 1 sample sync on both ADC and DAC
+- Includes schematics, layout, BOM, HDL, Linux drivers and application
+  software
+
+Applications
+~~~~~~~~~~~~
+
+- Wireless communications demonstration and learning tool
+- Remote radio head
+- Software-defined radio
+- Satellite modems
+- Test and measurement equipment
+- Radar and advanced imaging
+- General purpose data acquisition
+
+.. toctree::
+   :hidden:
+
+   hardware
+   quickstart
+   software
+
+Support
+-------
+
+If you have any questions regarding the AD-FMCOMMS1-EBZ feel free to ask on
+the :ez:`FPGA Reference Designs Forum <fpga>`.
