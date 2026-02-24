@@ -1,0 +1,100 @@
+.. _adrv9001:
+
+ADRV9001/ADRV9002 User Guide
+==============================
+
+Introduction
+------------
+
+The :adi:`ADRV9002` is a highly integrated, dual narrow/wideband RF transceiver
+with integrated digital front end (DFE) designed for mission critical
+communications. This design allows controlling, receiving, and transmitting
+sample streams from/to an ADRV9001/ADRV9002 device through two independent
+source synchronous interfaces.
+
+The design supports both CMOS and LVDS interfaces (selectable at build time),
+and SDR or DDR modes in CMOS mode, as well as one or two lane mode in LVDS.
+Mode selection is runtime configurable.
+
+Supported Devices
+-----------------
+
+- :adi:`ADRV9002`
+- :adi:`ADRV9001`
+
+Supported Carriers
+------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :intel:`Arria 10 SoC
+       <content/www/us/en/products/details/fpga/development-kits/arria/10-sx.html>`
+     - Yes
+     - Yes
+   * - :xilinx:`ZC706`
+     - Yes
+     - Yes
+   * - :xilinx:`ZCU102`
+     - Yes
+     - Yes
+   * - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+     - Yes
+     - Yes
+
+HDL Reference Design
+--------------------
+
+Build Parameters
+~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Default
+     - Description
+   * - CMOS_LVDS_N
+     - 0
+     - Interface type: 0 - LVDS, 1 - CMOS
+
+The design has two receive paths and two transmit paths. One of the receive
+paths (Rx12) has four channels and the other (Rx2) two channels. These can
+work independently with two active channels each, or with just the Rx12 path
+having four active channels while Rx2 is disabled.
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: adrv9002_bd.png
+   :align: center
+
+   ADRV9001/ADRV9002 block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adrv9001`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/navassa`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
