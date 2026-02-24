@@ -1,0 +1,264 @@
+.. _dc2677a:
+
+DC2677A User Guide
+==================
+
+Introduction
+------------
+
+Demonstration circuit 2677A (DC2677A) is a reference design for robust
+industrial data acquisition applications for the :adi:`LTC2358-18`. The
+LTC2358-18 is capable of high voltage measurements with a large input common
+range. The DC2677A implements input protection that allows up to 400 V of
+continuous input protection, combined with gas discharge tubes for surge
+protection.
+
+This reference design includes the LTC2358-18 SAR ADC, :adi:`ADA4522-2` dual
+zero-drift operational amplifier, and an :adi:`LT6658` dual-output, high
+current reference for sensor excitation.
+
+The digital interface is an HSMC (high-speed mezzanine connector), compatible
+with Intel Cyclone V SoC evaluation boards that support 3.3 V CMOS I/O.
+
+Supported Devices
+-----------------
+
+- :adi:`LTC2358-18`
+
+Supported Carriers
+------------------
+
+- `Cyclone V SoC Development Kit
+  <https://www.arrow.com/en/products/sockit/arrow-development-tools>`__
+
+Hardware Requirements
+---------------------
+
+- :adi:`DC2677A` evaluation board
+- `Cyclone V SoC Development Kit
+  <https://www.arrow.com/en/products/sockit/arrow-development-tools>`__
+- Power supply of +16 V/+18 V and -16 V/-18 V for the DC2677A
+- Power supply of 12 V for the carrier board
+- SD card (at least 16 GB) with the
+  :doc:`Kuiper Linux </linux/kuiper/index>`
+- USB cable (Mini-B to A) for the Cyclone V SoC Development Kit
+
+HDL Reference Design
+--------------------
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: dc2677a_block_diagram.svg
+   :align: center
+
+   DC2677A block diagram
+
+IP Cores Used
+~~~~~~~~~~~~~
+
+- :git-hdl:`library/axi_ltc235x`
+- :git-hdl:`library/axi_pwm_gen`
+- :git-hdl:`library/util_pack/util_cpack2`
+- :git-hdl:`library/axi_dmac`
+
+CPU/Memory Interconnect Addresses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Instance
+     - Address
+   * - axi_ltc235x
+     - 0xff320000
+   * - adc_pwm_gen
+     - 0xff340000
+   * - axi_adc_dma
+     - 0xff300000
+
+Interrupts
+~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Instance name
+     - HDL
+     - Linux Cyclone V
+     - Actual Cyclone V
+   * - video_dmac
+     - 4
+     - 44
+     - 76
+   * - axi_adc_dma
+     - 2
+     - 42
+     - 74
+   * - sys_spi
+     - 1
+     - 41
+     - 73
+   * - sys_gpio_bd
+     - 0
+     - 40
+     - 72
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/dc2677a`
+
+Building the HDL Project
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The design is built upon ADI's generic HDL reference design framework. ADI
+does not distribute pre-built bitstream files, so the project must be built
+from source. Clone the HDL repository and, with the correct tools installed,
+navigate to the project directory and run ``make``:
+
+.. code-block:: bash
+
+   cd hdl/projects/dc2677a/c5soc
+   make
+
+Running ``make`` with no parameters builds the project using the default
+parameters (CMOS mode for LTC2358-18). The available build parameters are:
+
+.. list-table::
+   :header-rows: 1
+
+   * - LVDS_CMOS_N
+     - LTC235X_FAMILY
+     - Description
+   * - 0
+     - 0
+     - CMOS mode (default), LTC2358-18 (default)
+   * - 1
+     - 0
+     - LVDS mode, LTC2358-18
+   * - 0
+     - 1
+     - CMOS mode, LTC2358-16
+   * - 0
+     - 2
+     - CMOS mode, LTC2357-18
+   * - 0
+     - 3
+     - CMOS mode, LTC2357-16
+   * - 0
+     - 4
+     - CMOS mode, LTC2353-18
+   * - 0
+     - 5
+     - CMOS mode, LTC2353-16
+
+To build for LVDS mode:
+
+.. code-block:: bash
+
+   make LVDS_CMOS_N=1
+
+To build for LTC2358-16:
+
+.. code-block:: bash
+
+   make LTC235X_FAMILY=1
+
+To build for LVDS mode with LTC2358-16:
+
+.. code-block:: bash
+
+   make LVDS_CMOS_N=1 LTC235X_FAMILY=1
+
+System Setup
+------------
+
+.. figure:: dc2677a_c5soc_setup.png
+   :align: center
+
+   DC2677A and Cyclone V SoCKit hardware setup
+
+Cyclone V SoCKit Jumper Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: c5sockit_clocksel.png
+   :align: center
+
+   Clock select jumper settings
+
+.. figure:: c5sockit_bootsel.png
+   :align: center
+
+   Boot select jumper settings
+
+.. list-table::
+   :header-rows: 1
+
+   * -
+     - J15 (CLOCKSEL0)
+     - J16 (CLOCKSEL1)
+     - J17 (BOOTSEL0)
+     - J19 (BOOTSEL1)
+     - J18 (BOOTSEL2)
+   * - Position
+     - 2-3
+     - 2-3
+     - 1-2
+     - 2-3
+     - 1-2
+
+.. figure:: c5sockit_jp2.png
+   :align: center
+
+   JP2 voltage selection
+
+.. list-table::
+   :header-rows: 1
+
+   * - JP2
+   * - 3.3 V
+
+.. figure:: c5sockit_sw6.png
+   :align: center
+
+   SW6 MSEL switch settings
+
+.. list-table::
+   :header-rows: 1
+
+   * -
+     - SW 6.1 (MSEL0)
+     - SW 6.2 (MSEL1)
+     - SW 6.3 (MSEL2)
+     - SW 6.4 (MSEL3)
+     - SW 6.5 (MSEL4)
+   * - Position
+     - 0
+     - 1
+     - x
+     - 0
+     - 0
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ltc2358.c`
+
+More Information
+----------------
+
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- :adi:`DC2677A Demo Manual <media/en/technical-documentation/user-guides/DC2677A_UG-1387.pdf>`
+- `Cyclone V SoCKit User Manual
+  <https://static6.arrow.com/aropdfconversion/5c33d9eb515437106f70057c3ec33dc26bc35205/sockit_user_manual.pdf>`__
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
