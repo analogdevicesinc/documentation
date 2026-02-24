@@ -6,7 +6,7 @@ Required Hardware
 
 - **Development kit**: :adi:`AD-SWIOT1L-SL` Software-configurable Analog and Digital I/O with 10BASE-T1L
 - **Power supplies**: 24V power supply at minimum 2A
-- **Programmer**: :adi:`MAX32625PICO` or any other similar programmer supporting the swd interface
+- **Programmer**: :adi:`MAX32625PICO` or any other similar programmer supporting the SWD interface
 
 System Setup
 ------------
