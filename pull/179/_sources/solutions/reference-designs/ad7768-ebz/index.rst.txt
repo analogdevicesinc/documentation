@@ -1,0 +1,57 @@
+.. _ad7768-ebz:
+
+AD7768-EVB User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD7768` is an 8-channel simultaneous sampling sigma-delta ADC with a
+modulator and digital filter per channel, enabling synchronized sampling of AC
+and DC signals.
+
+The :adi:`AD7768` achieves 108 dB dynamic range at a maximum input bandwidth
+of 110.8 kHz, combined with typical performance of +/- 2 ppm integral
+nonlinearity (INL), +/- 50 uV offset error, and +/- 30 ppm gain error.
+
+The AD7768 has three power modes:
+
+- Fast mode: 256 kSPS maximum, 110.8 kHz input bandwidth, 51.5 mW per channel
+- Median mode: 128 kSPS maximum, 55.4 kHz input bandwidth, 27.5 mW per
+  channel
+- Low power mode: 32 kSPS maximum, 13.8 kHz input bandwidth, 9.375 mW per
+  channel
+
+Supported Devices
+-----------------
+
+- :adi:`AD7768`
+
+HDL Design Description
+----------------------
+
+.. figure:: ad7768evb_fmc_hdl.svg
+   :align: center
+
+   AD7768-EVB HDL block diagram
+
+The HDL architecture comprises a serial data path that enables all the ADC
+channels and a parallel data path, so that the user can enable only the
+desired channels.
+
+HDL Downloads
+~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad7768evb`
+
+No-OS Downloads
+~~~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/ad7768-evb`
+- :git-no-OS:`drivers/adc/ad7768`
+
+Support
+-------
+
+If you have any questions regarding the AD7768-EVB feel free to ask on
+the :ez:`FPGA Reference Designs Forum <fpga>`.

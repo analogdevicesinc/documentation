@@ -1,0 +1,77 @@
+.. _ad9467-fmc:
+
+AD9467-FMC User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD9467` is a 16-bit, monolithic, IF sampling analog-to-digital
+converter (ADC) with a conversion rate of up to 250 MSPS. This reference design
+includes a data capture interface and the external DDR-DRAM interface for
+sample storage. It allows programming the device and monitoring its internal
+status registers. The board also provides other options to drive the clock and
+analog inputs of the ADC. This can be done by programming the :adi:`AD9517-4`
+clock chip and/or setting up the ADL5565 differential amplifier respectively.
+
+The LVDS interface captures and buffers data from the ADC. The DMA interface
+then transfers the samples to the external DDR-DRAM. The capture is initiated
+by software.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9467`
+
+Supported Carriers
+------------------
+
+- :xilinx:`KC705` LPC Slot
+- `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`__
+
+HDL Reference Design
+--------------------
+
+Block Diagrams
+~~~~~~~~~~~~~~
+
+.. figure:: ad9467_fmc_bd.svg
+   :align: center
+
+   AD9467-FMC Xilinx block diagram
+
+.. figure:: ad9467_fmc_card.svg
+   :align: center
+
+   AD9467-FMC card block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad9467_fmc`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/ad9467`
+- :git-no-OS:`drivers/adc/ad9467`
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ad9467.c`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

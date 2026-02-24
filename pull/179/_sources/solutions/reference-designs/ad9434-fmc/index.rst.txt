@@ -1,0 +1,64 @@
+.. _ad9434-fmc:
+
+AD9434-FMC User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD9434` is a 12-bit monolithic sampling analog-to-digital converter
+(ADC) optimized for high performance, low power, and ease of use. The part
+operates at up to 500 MSPS conversion rate and is optimized for outstanding
+dynamic performance in wideband carrier and broadband systems. All necessary
+functions, including a sample-and-hold and voltage reference, are included on
+the chip to provide a complete signal conversion solution.
+
+This reference design includes a data capture interface and the external
+DDR-DRAM interface for sample storage. It allows programming the device and
+monitoring its internal status registers. The board also provides options to
+drive the clock and analog inputs of the ADC.
+
+The LVDS interface captures and buffers data from the ADC using ISERDES
+primitives, capturing 4 samples wide at 1/4th of the ADC clock (125 MHz at
+500 MHz ADC clock). The DMA interface then transfers the samples to the
+external DDR-DRAM.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9434`
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZC706` LPC Slot
+- `ZEDBOARD <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+  LPC Slot
+
+HDL Reference Design
+--------------------
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: ad9434_fmc_bd.svg
+   :align: center
+
+   AD9434-FMC block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad9434_fmc`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

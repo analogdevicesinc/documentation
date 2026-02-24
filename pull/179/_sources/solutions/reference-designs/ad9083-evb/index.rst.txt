@@ -1,0 +1,92 @@
+.. _ad9083-evb:
+
+AD9083-EVB User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD9083` is a 16-bit, 16-channel with 125 MHz bandwidth per channel
+(2 GSPS total) analog-to-digital converter (ADC) featuring an on-chip
+programmable, single-pole antialiasing filter and termination resistor that is
+designed for low power, small size, and ease of use.
+
+The dual ADC cores feature a multistage, differential pipelined architecture
+with integrated output error correction logic. Each ADC features wide
+bandwidth inputs supporting a variety of user-selectable input ranges.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9083`
+
+Supported Carriers
+------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :xilinx:`ZCU102`
+     - Yes
+     - Yes
+   * - :intel:`Arria 10 SoC
+       <content/www/us/en/products/details/fpga/development-kits/arria/10-sx.html>`
+     - Yes
+     - Yes
+
+HDL Reference Design
+--------------------
+
+The AD9083_EVB reference design is a processor-based embedded system. The
+design consists of a receive chain that transports captured samples from the
+ADC to the system memory (DDR). Before transferring the data to DDR, the
+samples are stored in a buffer implemented on block RAMs from the FPGA fabric.
+
+The link operates with the following parameters:
+
+- Deframer: L=4, M=16, F=8, S=1, N'=16
+- JESD204B Lane Rate: 10 Gbps
+- ADC Clock: 2000 MHz
+- JESD204B Subclass 0
+
+Block Diagrams
+~~~~~~~~~~~~~~
+
+.. figure:: ad9083_evb_xilinx.svg
+   :align: center
+
+   Xilinx block diagram
+
+.. figure:: ad9083_evb_a10soc.svg
+   :align: center
+
+   Intel block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad9083_evb`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/ad9083`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

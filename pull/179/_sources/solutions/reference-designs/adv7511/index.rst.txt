@@ -1,0 +1,72 @@
+.. _adv7511:
+
+ADV7511 User Guide
+==================
+
+Introduction
+------------
+
+The :adi:`ADV7511` is a 225 MHz High-Definition Multimedia Interface (HDMI)
+transmitter. It is part of several Xilinx evaluation boards. This reference
+design provides the video and audio interface between the FPGA and the ADV7511
+on board. The video uses a 16-bit 4:2:2 YCbCr interface (except VC707 which
+uses a 36-bit 4:4:4 RGB interface) and the audio uses a single-bit SPDIF
+interface.
+
+The reference design reads 24 bits of RGB data from DDR and performs color
+space conversion (RGB to YCbCr) and down sampling (4:4:4 to 4:2:2). If
+bypassed, the lower 16 bits of DDR data are passed to the HDMI interface
+directly.
+
+Supported Devices
+-----------------
+
+- :adi:`ADV7511`
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZC702`
+- :xilinx:`ZC706`
+- `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`__
+
+HDL Reference Design
+--------------------
+
+Block Diagrams
+~~~~~~~~~~~~~~
+
+.. figure:: adv7511_zynq_bd.svg
+   :align: center
+
+   ADV7511 Xilinx block diagram
+
+.. figure:: adv7511_proc_bd.svg
+   :align: center
+
+   ADV7511 processor block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adv7511`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/adv7511`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

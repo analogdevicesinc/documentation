@@ -1,0 +1,86 @@
+.. _adrv9371x:
+
+ADRV9371x User Guide
+=====================
+
+Introduction
+------------
+
+The HDL reference design for the :adi:`ADRV9371` is an embedded system built
+around a processor core (ARM, NIOS-II, or Microblaze). The device digital
+interface is handled by the transceiver IP followed by the JESD204B and device
+specific cores. The JESD204B lanes are shared among the 4 transmit, 4 receive,
+and 2 observation/sniffer receive data paths by the same set of transceivers
+within the IP. The cores are programmable through an AXI-Lite interface. The
+delineated data is then passed on to independent DMA cores for the transmit,
+receive, and observation/sniffer paths.
+
+The digital interface consists of 4 transmit, 2 receive, and 2
+observation/sniffer lanes running up to 6 Gbps (default is 4 Gbps). The DAC
+data may be sourced from an internal data generator (DDS, pattern, or PRBS) or
+from the external DDR via DMA. The ADC data is sent to the DDR via DMA.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9371`
+
+Supported Carriers
+------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :intel:`Arria 10 SoC
+       <content/www/us/en/products/details/fpga/development-kits/arria/10-sx.html>`
+     - Yes
+     - Yes
+   * - :xilinx:`KCU105`
+     - Yes
+     - Yes
+   * - :xilinx:`ZC706`
+     - Yes
+     - Yes
+   * - :xilinx:`ZCU102`
+     - Yes
+     - Yes
+
+HDL Reference Design
+--------------------
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: adrv9371_bd.svg
+   :align: center
+
+   ADRV9371x block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adrv9371x`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ad9371.c`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

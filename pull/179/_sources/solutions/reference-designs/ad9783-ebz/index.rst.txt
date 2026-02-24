@@ -1,0 +1,55 @@
+.. _ad9783-ebz:
+
+AD9783-EBZ User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD9783` includes pin-compatible, high dynamic range, dual
+digital-to-analog converters (DACs) with 16-bit resolution and a sample rate
+of up to 500 MSPS. The device includes specific features for direct conversion
+transmit applications, including gain and offset compensation, interfacing
+seamlessly with analog quadrature modulators.
+
+The reference design consists of a DDS module and an LVDS interface. The
+AD9783-EBZ evaluation board connects to the carrier through a DAC-FMC
+interposer board.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9783`
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZCU102` (via DAC-FMC interposer board)
+
+HDL Reference Design
+--------------------
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: ad9783_zcu102_bd.jpg
+   :align: center
+
+   AD9783-EBZ block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad9783_ebz`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

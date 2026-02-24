@@ -1,0 +1,82 @@
+.. _ad9656-fmc:
+
+AD9656-FMC User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD9656` is a quad 16-bit, 125 MSPS analog-to-digital converter (ADC)
+with an on-chip sample and hold circuit designed for low cost, low power, small
+size, and ease of use. The AD9656EBZ board is built around the AD9656 chip and
+pairs with a carrier board through an FMC connector. The ADC chip uses the
+JESD204B protocol to transfer the data to the carrier board. The SPI protocol
+is used by the carrier board to configure the parameters from the register file
+of the ADC and the two clock chips.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9656`
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZCU102`
+
+HDL Reference Design
+--------------------
+
+The reference design is a processor-based ARM embedded system. The cores are
+programmable through an AXI-Lite interface. The data path consists of a DMA
+interface for the receive path.
+
+The digital interface consists of 4 receive lanes running at 2.5 Gbps. The
+transceivers interface to the cores at 128 bits @ 62.5 MHz. The data is
+received based on the configuration (programmable) from separate receive chains.
+
+The ADC data is sent to the DDR via DMA. The core also supports PN monitoring
+at the sample level. This is different from the JESD204B specific PN sequence.
+
+The device control and monitor signals are interfaced to a GPIO module. The SPI
+signals are controlled by a separate AXI-based SPI core.
+
+Block Diagrams
+~~~~~~~~~~~~~~
+
+.. figure:: ad9656_block_diagram.png
+   :align: center
+
+   AD9656 block diagram
+
+.. figure:: xilinx_block_diagram.png
+   :align: center
+
+   Xilinx block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad9656_fmc`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/ad9656_fmc`
+- :git-no-OS:`drivers/adc/ad9656`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

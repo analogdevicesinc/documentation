@@ -1,0 +1,74 @@
+.. _ad9213-dual-ebz:
+
+AD9213-DUAL-EBZ User Guide
+===========================
+
+Introduction
+------------
+
+The AD9213-DUAL-EBZ reference design is a processor-based (ARM) embedded
+system featuring two :adi:`AD9213` ADCs. The device interfaces to the FPGA
+transceivers followed by the individual JESD204B and ADC cores. The cores are
+programmable through an AXI-Lite interface. The samples are initially captured
+in a FIFO buffer and then passed to the system memory (DDR).
+
+The user can capture up to 1048576 samples per channel if both channels are
+selected, or 2097152 per channel if only one channel is selected.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9213`
+
+Supported Carriers
+------------------
+
+- :intel:`Stratix 10 SoC Dev Kit
+  <content/www/us/en/products/details/fpga/development-kits/stratix/10-sx.html>`
+
+HDL Reference Design
+--------------------
+
+The design has two JESD receive chains each having 16 lanes at rate of
+12.5 Gbps. The links operate in Subclass 1 using the SYSREF signal for
+synchronization.
+
+Both links are set for full bandwidth mode with the following parameters:
+
+- Deframer: L=32, M=2, F=2, S=16, N'=16
+- JESD204B Lane Rate: 12.5 Gbps
+- Device Clock: 10000 MHz
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: s10soc_ad9213_dual_ebz.png
+   :align: center
+
+   AD9213-DUAL-EBZ block diagram
+
+Clock Sources
+~~~~~~~~~~~~~
+
+.. figure:: ad9213_s10soc_clocking.png
+   :align: center
+
+   Clock sources diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad9213_dual_ebz`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the core
+with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

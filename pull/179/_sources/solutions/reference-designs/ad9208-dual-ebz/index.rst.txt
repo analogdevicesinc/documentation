@@ -1,0 +1,75 @@
+.. _ad9208-dual-ebz:
+
+AD9208-DUAL-EBZ User Guide
+===========================
+
+Introduction
+------------
+
+The AD9208-DUAL-EBZ reference design is a processor-based (Microblaze)
+embedded system featuring two :adi:`AD9208` dual-channel ADCs. The device
+interfaces to the FPGA transceivers followed by the individual JESD204B and
+ADC cores. The cores are programmable through an AXI-Lite interface. The
+samples are passed to the system memory (DDR).
+
+Supported Devices
+-----------------
+
+- :adi:`AD9208`
+
+Supported Carriers
+------------------
+
+- :xilinx:`VCU118` FMC+ Slot
+
+HDL Reference Design
+--------------------
+
+The design has two JESD receive chains each having 8 lanes at rate of
+15 Gbps. The JESD receive chain consists of a physical layer represented by
+an XCVR module, a link layer represented by an RX JESD LINK module, and
+transport layer represented by a RX JESD TPL module.
+
+The links operate in Subclass 1 using the SYSREF signal to edge-align the
+internal local multiframe clock and to release the received data in the same
+moment from all lanes.
+
+Both links are set for full bandwidth mode with the following parameters:
+
+- Deframer: L=8, M=2, F=1, S=2, N'=16
+- JESD204B Lane Rate: 15 Gbps
+- Device Clock: 3000 MHz
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: vcu118_ad9208_dual_ebz.png
+   :align: center
+
+   AD9208-DUAL-EBZ block diagram
+
+Clock Sources
+~~~~~~~~~~~~~
+
+.. figure:: ad9208_vcu118_clocking.png
+   :align: center
+
+   Clock sources diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad9208_dual_ebz`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the core
+with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

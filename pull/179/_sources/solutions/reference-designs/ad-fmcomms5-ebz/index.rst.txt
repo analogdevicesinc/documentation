@@ -1,0 +1,84 @@
+.. _ad-fmcomms5-ebz:
+
+AD-FMCOMMS5-EBZ
+================
+
+The :adi:`AD-FMCOMMS5-EBZ` is an FMC board featuring two :adi:`AD9361` RF
+Agile Transceivers, designed to demonstrate how to design a platform based on
+multiple devices for MIMO applications. For systems requiring more than two
+input or two output channels, multiple AD9361 devices and a common reference
+oscillator are required.
+
+The AD9361 provides the capability to accept an external reference clock and
+synchronize operation with other devices using simple control logic. Each
+AD9361 includes its own baseband PLL that generates sampling and data clocks
+from the reference clock input, so an additional control mechanism is required
+to synchronize multiple devices.
+
+.. note::
+
+   The AD-FMCOMMS5-EBZ uses a dual FMC connector. This means the base board
+   requires two adjacent FMC connectors. Suitable base boards are ZC702,
+   ZC706, and ZCU102.
+
+Introduction
+------------
+
+For many Broadband Wireless Access (BWA) systems, MIMO operation and RF
+beamforming are proven techniques for maximizing throughput and efficient
+spectrum utilization. The AD-FMCOMMS5-EBZ provides 4 Rx and 4 Tx channels
+using two synchronized :adi:`AD9361` devices.
+
+If you are just starting a design, or investigating the AD9361 for the first
+time, it is suggested to get familiar with the single AD9361 based platforms
+(:ref:`AD-FMCOMMS2-EBZ <ad-fmcomms2-ebz>` or
+:ref:`AD-FMCOMMS3-EBZ <ad-fmcomms3-ebz>`) first.
+
+Supported Carriers
+------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :xilinx:`ZC702`
+     - Yes
+     - Yes
+   * - :xilinx:`ZC706`
+     - Yes
+     - Yes
+   * - :xilinx:`ZCU102`
+     - Yes
+     - Yes
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/fmcomms5`
+
+Software Support
+----------------
+
+Linux Drivers
+~~~~~~~~~~~~~
+
+- :git-linux:`AD9361 Linux Driver <drivers/iio/adc/ad9361.c>`
+- :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
+- :git-linux:`AXI DAC DDS Linux Driver <drivers/iio/frequency/cf_axi_dds.c>`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :adi:`AD9361 Product Page <AD9361>`
+
+Support
+-------
+
+If you have any questions regarding the AD-FMCOMMS5-EBZ feel free to ask on
+the :ez:`FPGA Reference Designs Forum <fpga>`.

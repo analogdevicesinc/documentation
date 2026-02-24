@@ -1,0 +1,56 @@
+.. _ad9265-fmc:
+
+AD9265-FMC User Guide
+=====================
+
+.. warning::
+
+   Support for the AD9265-FMC is discontinued starting with the 2022_R2 Kuiper
+   Linux release. It will not be supported in future releases. The HDL project
+   source code is still available on the main branch.
+
+Introduction
+------------
+
+The :adi:`AD9265` is a 16-bit, 125 MSPS analog-to-digital converter (ADC)
+featuring a wide bandwidth differential sample-and-hold analog input amplifier
+supporting a variety of user-selectable input ranges. This reference design
+includes a data capture interface and the external DDR-DRAM interface for
+sample storage. It allows programming the device and monitoring its internal
+status registers.
+
+The board provides three possible clock paths for clocking the AD9265:
+
+- External passive clock (default)
+- Optional active clock path using the AD9517
+- Optional oscillator
+
+Supported Devices
+-----------------
+
+- :adi:`AD9265`
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZC706` LPC Slot
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad9265_fmc`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

@@ -1,0 +1,94 @@
+.. _ad-fmcomms4-ebz:
+
+AD-FMCOMMS4-EBZ
+================
+
+The :adi:`AD-FMCOMMS4-EBZ` is an FMC board for the :adi:`AD9364`, a highly
+integrated RF Agile Transceiver. The purpose of the AD-FMCOMMS4-EBZ is to
+provide an RF platform to software developers and system architects who want
+a single platform which operates over a wide tuning range (70 MHz to 6 GHz).
+
+The AD-FMCOMMS4-EBZ board is very similar to the
+:ref:`AD-FMCOMMS2-EBZ <ad-fmcomms2-ebz>` and
+:ref:`AD-FMCOMMS3-EBZ <ad-fmcomms3-ebz>` boards with only one exception:
+rather than the :adi:`AD9361` (which is 2 Rx, 2 Tx), it uses the :adi:`AD9364`,
+a lower cost 1 Rx, 1 Tx device. The AD-FMCOMMS4-EBZ includes both types of
+external baluns: one targeted for wider tuning range applications (Minicircuits
+TCM1-63AX+), and ones which provide optimized performance for 2.4 GHz.
+
+Introduction
+------------
+
+The :adi:`AD9364` provides the following capabilities:
+
+- Continuous frequency coverage from 70 MHz to 6.0 GHz
+- Up to 56 MHz of instantaneous bandwidth
+- 1 x 1 transceiver (1 Rx, 1 Tx)
+- Integrated 12-bit DACs and ADCs
+- Integrated frequency synthesizers
+- Integrated digital filtering and calibration
+
+Since much of the FMCOMMS2/3/4 share a common device and infrastructure,
+the HDL reference design is shared. See the
+:ref:`AD-FMCOMMS2-EBZ <ad-fmcomms2-ebz>` for the full HDL reference design
+documentation.
+
+Supported Carriers
+------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :xilinx:`ZC702`
+     - Yes
+     - Yes
+   * - :xilinx:`ZC706`
+     - Yes
+     - Yes
+   * - :xilinx:`ZED`
+     - Yes
+     - Yes
+   * - :xilinx:`ZCU102`
+     - Yes
+     - Yes
+
+HDL Reference Design
+--------------------
+
+The AD-FMCOMMS4-EBZ shares the HDL reference design with the
+:ref:`AD-FMCOMMS2-EBZ <ad-fmcomms2-ebz>`.
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/fmcomms2`
+
+Software Support
+----------------
+
+Linux Drivers
+~~~~~~~~~~~~~
+
+- :git-linux:`AD9361 Linux Driver <drivers/iio/adc/ad9361.c>`
+- :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
+- :git-linux:`AXI DAC DDS Linux Driver <drivers/iio/frequency/cf_axi_dds.c>`
+
+Device Trees
+~~~~~~~~~~~~
+
+- :git-linux:`ZC706 DTS <arch/arm/boot/dts/xilinx/zynq-zc706-adv7511-ad9364-fmcomms4.dts>`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :adi:`AD9364 Product Page <AD9364>`
+
+Support
+-------
+
+If you have any questions regarding the AD-FMCOMMS4-EBZ feel free to ask on
+the :ez:`FPGA Reference Designs Forum <fpga>`.

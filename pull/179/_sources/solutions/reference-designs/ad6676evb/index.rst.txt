@@ -1,0 +1,83 @@
+.. _ad6676evb:
+
+AD6676EVB User Guide
+====================
+
+Introduction
+------------
+
+The :adi:`AD6676` is a wideband IF receiver subsystem that combines an IF
+amplifier, antialiasing filter, 16-bit ADC, and digital signal processing
+blocks (NCO, quadrature digital downconverter, decimation, and AGC) into a
+single chip.
+
+The AD6676EVB evaluation board provides all of the support circuitry required
+to operate the AD6676 in its various modes and configurations. The board
+interfaces to the carrier through an FMC connector.
+
+Features
+~~~~~~~~
+
+- High instantaneous dynamic range (IIP up to 36 dBm, NSD as low as
+  -159 dBFS/Hz)
+- On-chip digital signal processing including NCO, quadrature DDC, decimation,
+  and AGC
+- JESD204B single or dual lane outputs
+- SPI interface for setup and control
+- On-board LDO regulator powered through the FMC interface
+
+Supported Devices
+-----------------
+
+- :adi:`AD6676`
+
+Supported Carriers
+------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :xilinx:`VC707`
+     - Yes
+     - Yes
+   * - :xilinx:`ZC706`
+     - Yes
+     - Yes
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad6676evb`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/ad6676-ebz`
+- :git-no-OS:`drivers/adc/ad6676`
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ad6676.c`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
