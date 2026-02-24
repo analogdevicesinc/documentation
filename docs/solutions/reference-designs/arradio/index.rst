@@ -1,0 +1,235 @@
+.. _arradio:
+
+ARRADIO User Guide
+==================
+
+Introduction
+------------
+
+The `ARRADIO <https://www.arrow.com/en/products/arradio/terasic-technologies>`__
+board is an HSMC board by Arrow and Terasic for the :adi:`AD9361`, a highly
+integrated RF Agile Transceiver. It is similar to the
+:ref:`AD-FMCOMMS2-EBZ <ad-fmcomms2-ebz>`, except it uses an HSMC connector
+which connects to the Arrow SoCKit (Intel Cyclone V SoC).
+
+.. figure:: sockit_arradio.jpg
+   :align: center
+
+   Arrow SoCKit with ARRADIO board
+
+The board features a Johanson Technology
+`2450BL15B050E <https://www.johansontechnology.com/datasheets/baluns/JTI_Balun-2450BL15B050_12-03.pdf>`__
+2.45 GHz balun, so RF performance is optimized for the 2400 to 2500 MHz band.
+The platform is primarily intended for hardware and RF investigation and
+bring-up of various waveforms at the frequency of interest. The balun can be
+swapped for different frequency applications (see the
+:ref:`AD-FMCOMMS2-EBZ <ad-fmcomms2-ebz>` configuration options).
+
+.. note::
+
+   The ARRADIO board is not a product of Analog Devices. Questions about
+   purchase or returns should go to
+   `Arrow <https://www.arrow.com/en/products/arradio/terasic-technologies>`__.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9361`
+
+Supported Carriers
+------------------
+
+- `Arrow SoCKit <https://www.arrow.com/en/products/sockit/arrow-development-tools>`__
+  (Intel Cyclone V SoC)
+
+Quick Start
+-----------
+
+Prerequisites
+~~~~~~~~~~~~~
+
+Required hardware:
+
+- `Terasic C5 SoCKit <https://www.arrow.com/en/products/sockit/arrow-development-tools>`__
+  FPGA carrier board
+- `ARRADIO <https://www.arrow.com/en/products/arradio/terasic-technologies>`__
+  board
+- 8 GB Micro-SD card with :doc:`Kuiper Linux </linux/kuiper/index>` image
+- USB keyboard and mouse
+- USB OTG cable (for keyboard/mouse)
+- VGA-compatible monitor
+- Ethernet cable
+- Micro-USB cable (for UART, 115200 baud, 8N1)
+
+Required software:
+
+- Host PC (Linux recommended)
+- UART terminal application (PuTTY, Tera Term, Minicom, etc.)
+- `IIO Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__
+
+SoCKit Jumper Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Setting
+     - Position
+   * - CLOCKSEL0
+     - 2-3
+   * - CLOCKSEL1
+     - 2-3
+   * - BOOTSEL0
+     - 2-3
+   * - BOOTSEL1
+     - 2-3
+   * - BOOTSEL2
+     - 1-2
+   * - JP2
+     - 2.5 V or 1.8 V
+
+.. list-table::
+   :header-rows: 1
+
+   * - SW6
+     - MSEL0
+     - MSEL1
+     - MSEL2
+     - MSEL3
+     - MSEL4
+     - CODEC_SEL
+   * - **POS**
+     - 0
+     - 1
+     - 0
+     - 1
+     - 0
+     - 0
+
+Creating the Micro-SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Download the :doc:`Kuiper Linux image </linux/kuiper/index>`
+and flash it to the Micro-SD card. After flashing, copy the ARRADIO boot
+files to the BOOT partition:
+
+.. code-block:: bash
+
+   cd /media/<user>/BOOT/socfpga_cyclone5_sockit_arradio
+   sudo cp socfpga.dtb /media/<user>/BOOT/
+   sudo cp zImage /media/<user>/BOOT/
+   sudo cp u-boot.scr /media/<user>/BOOT/
+   sudo cp soc_system.rbf /media/<user>/BOOT/
+   sudo dd if=preloader_bootloader.img of=/dev/sdX3
+   sync
+
+Replace ``/dev/sdX3`` with the raw partition of your SD card.
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+#. Insert the Micro-SD card with Kuiper Linux image.
+#. Connect the ARRADIO board to the HSMC connector on the SoCKit.
+#. Connect the VGA monitor, USB keyboard/mouse via OTG, and Ethernet.
+#. Set the jumpers as specified in the tables above.
+#. Connect the Micro-USB UART cable to the host PC.
+#. Connect the 12 V power supply and power on.
+
+Using IIO Oscilloscope
+~~~~~~~~~~~~~~~~~~~~~~
+
+**Local mode**: Interact directly via the VGA display, USB keyboard, and mouse
+connected to the SoCKit.
+
+**Remote mode**: Connect via Ethernet from a host PC:
+
+#. Open a UART terminal at 115200 baud (8N1).
+#. Run ``ifconfig`` on the board to obtain its IP address.
+#. On the host PC, launch IIO Oscilloscope and enter ``ip:<board_ip>`` in the
+   URI field.
+
+.. important::
+
+   This is a persistent file system. Always shut down properly using
+   ``sudo shutdown -h now`` rather than removing power directly.
+
+No-OS Software
+--------------
+
+The No-OS bare-metal driver supports two operating modes:
+
+- **2R2T Mode** (default): 2 Receive / 2 Transmit with AD9361 at 122 MHz
+  interface clock. Build with ``make`` or ``make DEFINE=2R2T``.
+- **1R1T Mode**: 1 Receive / 1 Transmit with AD9364 at 61 MHz interface
+  clock. Build with ``make DEFINE=1R1T``.
+
+Building from source requires cloning the HDL and No-OS repositories, then
+building each project:
+
+.. code-block:: bash
+
+   git clone https://github.com/analogdevicesinc/hdl
+   git clone https://github.com/analogdevicesinc/no-OS
+
+   # Build HDL project
+   make -C hdl/projects/arradio/c5soc
+
+   # Build No-OS project (2R2T mode)
+   make -C no-OS/arradio/c5soc
+
+   # Build No-OS project (1R1T mode)
+   make -C no-OS/arradio/c5soc DEFINE=1R1T
+
+.. note::
+
+   After the first build, the mode selection is remembered for subsequent
+   builds (until a clean). Always verify the compiler flags
+   (``-DAD9361_DEVICE=1 -DAD9364_DEVICE=0`` for 2R2T, or
+   ``-DAD9361_DEVICE=0 -DAD9364_DEVICE=1`` for 1R1T) match your desired mode.
+
+HDL Reference Design
+--------------------
+
+The HDL reference design is based on the
+:ref:`AD-FMCOMMS2-EBZ <ad-fmcomms2-ebz>` reference design adapted for the
+Intel Cyclone V SoC platform with HSMC interface.
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/arradio`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`AD9361 Linux Driver <drivers/iio/adc/ad9361.c>`
+
+Device Tree
+~~~~~~~~~~~
+
+- :git-linux:`SoCKit ARRADIO DTS <arch/arm/boot/dts/intel/socfpga/socfpga_cyclone5_sockit_arradio.dts>`
+
+The following applications and tools are supported:
+
+- IIO Oscilloscope with AD9361 control plugins (local or remote)
+- MATLAB/Simulink integration via libiio
+- GNU Radio support
+- AD9361 Filter Design Wizard (MATLAB)
+- Example applications: beacon frame receiver, QPSK, LTE, FM radio
+
+More Information
+----------------
+
+- :ref:`AD-FMCOMMS2-EBZ User Guide <ad-fmcomms2-ebz>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- :adi:`AD9361 Product Page <AD9361>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
