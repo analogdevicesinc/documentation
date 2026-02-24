@@ -1,0 +1,77 @@
+.. _ad-fmcdaq2-ebz quickstart microblaze:
+
+AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide
+=============================================================
+
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ on:
+
+- :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
+- :xilinx:`KCU105 <products/boards-and-kits/kcu105.html>`
+- :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
+
+Required Software
+-----------------
+
+- Bitfile and Linux ELF image.
+- Xilinx ISE Microprocessor Debugger (XMD) is sufficient for the demo.
+- A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 (8N1).
+
+Required Hardware
+-----------------
+
+- Xilinx KC705 or KCU105 or VC707
+- AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ FMC Board.
+- Micro / Mini-USB Cable
+
+.. esd-warning::
+
+Testing
+-------
+
+- Connect the AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ FMC board to the FPGA carrier, on
+  the HPC FMC connector.
+- Connect USB JTAG (Micro USB) to your host PC.
+- Turn on the power switch on the FPGA board.
+- Open XMD console to configure the FPGA and download the elf image.
+
+.. collapsible:: Complete kernel boot log
+
+   ::
+
+      # Early console on uartlite at 0x40600000
+      bootconsole [earlyser0] enabled
+      Ramdisk addr 0x00000000, Compiled-in FDT at 8031cda8
+      Linux version 3.17.0-126658-g6807aea ...
+      ...
+      Welcome to Buildroot
+      buildroot login: root #
+
+IIO Oscilloscope Remote
+-----------------------
+
+Please see also the
+:doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` page.
+
+The IIO Oscilloscope application can be used to connect to another platform that
+has a connected device in order to configure the device and read data from it.
+
+Build and start osc on a network enabled Linux host.
+
+Once the application is launched goto Settings -> Connect and enter the IP
+address of the target in the popup window.
+
+.. figure:: connect.png
+   :alt: Connect Window
+
+   Connect Window
+
+.. figure:: plot_window.png
+   :alt: Plot
+
+   Plot
+
+.. figure:: daq2_plugin.png
+   :alt: DAQ2 plugin
+
+   DAQ2 plugin

@@ -1,0 +1,126 @@
+.. _ad-fmcdaq2-ebz quickstart a10soc:
+
+AD-FMCDAQ2-EBZ Arria10 SoC Development Kit Quick Start Guide
+==============================================================
+
+Requirements
+------------
+
+- :adi:`AD-FMCDAQ2-EBZ`
+
+  - 2x SMA cable for analog signal loopback (optional, but recommended)
+
+- :intel:`Arria10 SoC Development Kit
+  <content/www/us/en/products/details/fpga/arria/10.html>`
+  (Rev. C or later)
+
+  - Power-supply
+  - USB mini cable for serial console (optional, but recommended)
+  - Ethernet cable for network connectivity (optional, but recommended)
+
+- SD card with latest ADI Linux image
+
+Creating / Configuring the SD Card
+-----------------------------------
+
+:doc:`Create SD Image (it is a single image for all
+boards) </linux/kuiper/index>`.
+
+Hardware Setup
+--------------
+
+FMC Pin Connection Configuration Change
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To be compatible with the AD-FMCDAQ2-EBZ the Arria10 SoC Development Kit
+requires a minor rework.
+
+In the default configuration of the Arria10 SoC Development Kit some of the FMC
+header pins are connected to a dedicated clock chip. To be compatible with the
+AD-FMCDAQ2-EBZ these pins need to be connected directly to the FPGA.
+
+The connection of those pins can be changed by moving the position of four zero
+Ohm resistors:
+
+- R612 to R610
+- R613 to R611
+- R621 to R620
+- R633 to R632
+
+These resistors can be found on the backside of the Arria10 SoC Development Kit
+underneath the FMC A connector (J29). The following picture shows the required
+configuration to be compatible with the AD-FMCDAQ2-EBZ.
+
+.. figure:: a10soc_fmc_rework.jpg
+   :alt: A10 SoC FMC Rework
+   :width: 600
+
+   Required resistor rework for AD-FMCDAQ2-EBZ compatibility
+
+Connections
+-----------
+
+- Insert the AD-FMCDA2-EBZ board into the FMC A (J29) header of the Arria10 SoC
+  Development Kit
+- Both the HPS (J26) and FPGA (J27) memory module must be installed on the
+  Arria10 SoC Development Kit.
+- For network connectivity connect a Ethernet cable to the right most Ethernet
+  port (J5).
+- For the serial console connect a USB cable to UART1 (J10).
+- Insert the microSD card into the microSD card slot.
+
+All jumpers and switches on the Arria10 SoC Development Kit should be in the
+:intel:`default position
+<content/www/us/en/docs/programmable/683735/current/boot-select.html>`
+configuring the board for SD card boot.
+
+.. figure:: a10soc_daq2.jpg
+   :alt: AD-FMCDAQ2-EBZ on Arria10 SoC Dev Kit
+   :width: 600
+
+   AD-FMCDAQ2-EBZ connected to Arria10 SoC Development Kit
+
+.. esd-warning::
+
+Booting the System
+------------------
+
+After turning on the power switch the following messages should appear on the
+serial console.
+
+.. collapsible:: Complete kernel boot log
+
+   ::
+
+      U-Boot 2014.10 (Aug 23 2017 - 05:49:00)
+
+      CPU   : Altera SOCFPGA Arria 10 Platform
+      BOARD : Altera SOCFPGA Arria 10 Dev Kit
+      I2C:    ready
+      DRAM:   WARNING: Caches not enabled
+      ...
+
+      Starting kernel ...
+
+      Uncompressing Linux... done, booting the kernel.
+      ...
+
+      Welcome to Linaro 14.04 (GNU/Linux ...)
+
+      root@analog:~#
+
+Once the boot process has completed you'll be greeted with command prompt. As a
+quick check if the AD-FMCDAQ2-EBZ was correctly recognized run the ``iio_info``
+command and filter for the registered devices.
+
+.. code-block:: console
+
+   root@analog:~# iio_info | grep iio:device
+   iio:device0: ad9523-1
+   iio:device1: axi-ad9680-hpc (buffer capable)
+   iio:device2: axi-ad9144-hpc (buffer capable)
+
+If the Arria 10 SoC Development Kit is connected to a network with a DHCP server
+the IP address assigned to the board appears on the LCD. Alternatively you can
+query the IP address by running ``ifconfig eth0`` on the command line. To
+manually assign an IP address run ``ifconfig eth0 <IP_ADDR>``.
