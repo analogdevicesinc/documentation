@@ -1,0 +1,53 @@
+.. _ad469x-fmc:
+
+AD469x-FMC User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD4696` / :adi:`AD4695` are 16-bit, 16-channel (or 4-channel),
+multiplexed SAR ADCs with Easy Drive features and a high-Z input stage.
+
+The HDL reference design uses the SPI Engine Framework for interfacing with the
+ADC and DMA for data transfer to system memory.
+
+Supported Devices
+-----------------
+
+- :adi:`AD4695`
+- :adi:`AD4696`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad469x_evb`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/ad469x_fmcz`
+- :git-no-OS:`drivers/adc/ad469x`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

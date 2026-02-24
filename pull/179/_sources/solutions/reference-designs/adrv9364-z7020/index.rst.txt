@@ -1,0 +1,61 @@
+.. _adrv9364-z7020:
+
+ADRV9364-Z7020 User Guide
+==========================
+
+Introduction
+------------
+
+The :adi:`ADRV9364` is a System-On-Module (SOM) based on the Xilinx Zynq-7000
+All Programmable SoC and the :adi:`AD9364` RF Agile Transceiver. Operating over
+a wide tuning range (70 MHz to 6 GHz), it provides an RF platform for
+prototyping, evaluation, and as a reference design for production.
+
+The ADRV9364-Z7020 is schematically and HDL-compatible with the
+:ref:`AD-FMCOMMS4-EBZ <ad-fmcomms4-ebz>`.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9364`
+
+Supported Carriers
+------------------
+
+- PZSDRCC-FMC (FMC Carrier)
+- PZSDRCC-BRK (Breakout Carrier)
+- PZSDRCC-PCIE (PCIe Carrier)
+- PZSDRCC-PackRF (PackRF Carrier)
+
+HDL Reference Design
+--------------------
+
+The HDL reference design is based on the
+:ref:`AD-FMCOMMS4-EBZ <ad-fmcomms4-ebz>` reference design using the
+AD9364 (1Rx, 1Tx variant of AD9361).
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adrv9364z7020`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ad9361.c`
+
+More Information
+----------------
+
+- :ref:`AD-FMCOMMS4-EBZ User Guide <ad-fmcomms4-ebz>`
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

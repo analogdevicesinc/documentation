@@ -1,0 +1,43 @@
+.. _ad4630-fmc:
+
+AD4630-FMC User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD4630-24` is a dual-channel, 24-bit, 2 MSPS precision SAR ADC with
+Easy Drive features. It provides excellent dynamic range and is designed for
+high-precision measurement applications.
+
+Supported Devices
+-----------------
+
+- :adi:`AD4630-24`
+- :adi:`AD4030-24`
+- :adi:`AD4630-16`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad4630_fmc`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

@@ -1,0 +1,42 @@
+.. _cn0363:
+
+CN0363 User Guide
+==================
+
+Introduction
+------------
+
+The CN0363 is a colorimeter reference design that uses the :adi:`ADPD1080`
+photometric front end with the :adi:`AD5201` digital potentiometer and the
+:adi:`ADA4961` amplifier. It provides precision color measurement using
+multiple LED wavelengths.
+
+Supported Devices
+-----------------
+
+- :adi:`ADPD1080`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/cn0363`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

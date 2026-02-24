@@ -1,0 +1,41 @@
+.. _cn0506:
+
+CN0506 User Guide
+==================
+
+Introduction
+------------
+
+The CN0506 is a reference design featuring the :adi:`ADIN1300` robust,
+industrial, low power 10/100/1000Base-T Ethernet PHY. The design supports
+multiple interface modes including MII, RMII, and RGMII.
+
+Supported Devices
+-----------------
+
+- :adi:`ADIN1300`
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZC706`
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/cn0506`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

@@ -1,0 +1,68 @@
+.. _ad7616-sdz:
+
+AD7616-SDZ User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD7616` is a 16-bit, dual simultaneous sampling, data acquisition
+system (DAS) that operates from a single 5 V supply and supports bipolar input
+ranges of +/-10 V, +/-5 V, and +/-2.5 V.
+
+The HDL reference design supports both parallel and serial interfaces. The
+parallel interface is controlled by the axi_ad7616 IP core, while the serial
+interface uses the SPI Engine Framework. Data is written into memory via DMA.
+
+Supported Devices
+-----------------
+
+- :adi:`AD7616`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+- :xilinx:`ZC706`
+
+HDL Reference Design
+--------------------
+
+Block Diagrams
+~~~~~~~~~~~~~~
+
+.. figure:: ad7616_serial_hdl.svg
+   :align: center
+
+   AD7616-SDZ block diagram (serial interface)
+
+.. figure:: ad7616_parallel_hdl.svg
+   :align: center
+
+   AD7616-SDZ block diagram (parallel interface)
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad7616_sdz`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/ad7616-sdz`
+- :git-no-OS:`drivers/adc/ad7616`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

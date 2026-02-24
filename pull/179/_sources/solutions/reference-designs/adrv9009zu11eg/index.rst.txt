@@ -1,0 +1,69 @@
+.. _adrv9009zu11eg:
+
+ADRV9009-ZU11EG User Guide
+===========================
+
+Introduction
+------------
+
+The ADRV9009-ZU11EG HDL reference design is built around the Zynq UltraScale+
+MPSoC. The design integrates two :adi:`ADRV9009` wideband RF transceivers with
+a total of 8 transmit, 4 receive, and 4 observation/sniffer data paths via
+JESD204B interface.
+
+The PS provides SDIO, UART, Ethernet, SPI, USB 3.0, QSPI, and DisplayPort
+control modules. Two PL DDR4 (32-bit @ 1200 MHz) modules can be used as
+offload FIFOs.
+
+Additional transceiver lanes are available for PCIe Gen3 x8, 10 Gb Ethernet,
+and 40 Gb Ethernet simultaneously. A full FMC HPC connector enables extending
+the system with another two ADRV9009 devices.
+
+Supported Devices
+-----------------
+
+- :adi:`ADRV9009`
+
+Supported Carriers
+------------------
+
+- ADRV2CRR-FMC Carrier Board
+
+HDL Reference Design
+--------------------
+
+The digital interface consists of 8 transmit, 4 receive, and 4
+observation/sniffer lanes running up to 9.8 Gbps. The DAC data may be sourced
+from an internal data generator (DDS or pattern) or from the external DDR via
+DMA. The ADC data is sent to the DDR via DMA.
+
+Block Diagrams
+~~~~~~~~~~~~~~
+
+.. figure:: adrv9009_zu11eg_hdl.svg
+   :align: center
+
+   ADRV9009-ZU11EG system block diagram
+
+.. figure:: adrv9009_zu11eg_datapath.svg
+   :align: center
+
+   ADRV9009-ZU11EG data path diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adrv9009zu11eg`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

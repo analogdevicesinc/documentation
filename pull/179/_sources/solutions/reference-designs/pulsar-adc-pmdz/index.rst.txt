@@ -1,0 +1,47 @@
+.. _pulsar-adc-pmdz:
+
+PulSAR ADC PMOD User Guide
+============================
+
+Introduction
+------------
+
+The PulSAR ADC PMOD evaluation boards provide a low-cost way to evaluate the
+ADI PulSAR family of precision SAR ADCs using PMOD-compatible carrier boards.
+
+The HDL reference design uses the SPI Engine Framework for interfacing with
+the ADC via the PMOD connector.
+
+Supported Devices
+-----------------
+
+- :adi:`AD7942`
+- :adi:`AD7946`
+- :adi:`AD7988-1`
+- :adi:`AD7685`
+- :adi:`AD7687`
+- :adi:`AD7691`
+- :adi:`AD7693`
+- :adi:`AD7980`
+- :adi:`AD7982`
+- :adi:`AD7984`
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/pulsar_adc`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

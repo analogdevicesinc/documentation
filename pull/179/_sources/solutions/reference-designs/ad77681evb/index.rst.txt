@@ -1,0 +1,50 @@
+.. _ad77681evb:
+
+AD7768-1-EVB User Guide
+========================
+
+Introduction
+------------
+
+The :adi:`AD7768-1` is a low power, high performance, 24-bit sigma-delta ADC
+that offers a wide dynamic range with simultaneous 50/60 Hz rejection. It is
+the single-channel variant of the :adi:`AD7768` family.
+
+Supported Devices
+-----------------
+
+- :adi:`AD7768-1`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad77681evb`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`drivers/adc/ad7768-1`
+
+More Information
+----------------
+
+- :ref:`AD7768-EVB User Guide <ad7768-ebz>`
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

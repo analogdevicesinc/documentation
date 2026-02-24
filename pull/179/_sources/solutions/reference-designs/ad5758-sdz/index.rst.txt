@@ -1,0 +1,50 @@
+.. _ad5758-sdz:
+
+AD5758-SDZ User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD5758` is a single-channel, voltage and current output digital-to-
+analog converter (DAC) that operates with a power supply range from a single
+supply of +4.5 V to +60 V or a dual supply of +/-4.5 V to +/-33 V.
+
+Supported Devices
+-----------------
+
+- :adi:`AD5758`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad5758_sdz`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/ad5758-sdz`
+- :git-no-OS:`drivers/dac/ad5758`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

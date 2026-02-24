@@ -1,0 +1,41 @@
+.. _ad5766-sdz:
+
+AD5766-SDZ User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD5766` is a 16-channel, 16-bit voltage output digital-to-analog
+converter (DAC). It operates from a single 5 V supply and can produce
+programmable output voltage ranges.
+
+Supported Devices
+-----------------
+
+- :adi:`AD5766`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad5766_sdz`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

@@ -1,0 +1,46 @@
+.. _ad4858-fmc:
+
+AD4858-FMC User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD4858` is an 8-channel, 20-bit, 1 MSPS per channel simultaneous
+sampling SAR ADC with Easy Drive features.
+
+The HDL reference design supports both CMOS and LVDS interface modes. It uses
+the SPI Engine Framework for device configuration and DMA for data transfer.
+
+Supported Devices
+-----------------
+
+- :adi:`AD4858`
+- :adi:`AD4857`
+- :adi:`AD4856`
+- :adi:`AD4855`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad485x_fmcz`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

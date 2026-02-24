@@ -1,0 +1,77 @@
+.. _ad-fmcomms8-ebz:
+
+AD-FMCOMMS8-EBZ User Guide
+============================
+
+Introduction
+------------
+
+The :adi:`AD-FMCOMMS8-EBZ
+<en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad-fmcomms8-ebz.html>`
+is an integrated RF design containing two :adi:`ADRV9009` wideband
+transceivers. By connecting to a compatible FPGA development board that
+supports FMC HPC mechanical connector and JESD204B bus interface, it can be
+used for evaluation and prototyping with up to 4 transmit and receive channels
+that can be synchronized in phase and frequency.
+
+It can also be used with the :ref:`ADRV9009-ZU11EG <adrv9009zu11eg>` RF-SOM
+system for up to 8 phase and frequency synchronized transmit and receive
+channels.
+
+.. image:: fmcomms8_top.png
+   :align: center
+   :width: 400
+
+Features
+~~~~~~~~
+
+- Two ADRV9009 devices providing:
+
+  - Quad transmitters / Quad receivers
+  - Quad input observation receiver for DPD
+  - Max Rx BW: 200 MHz, Max Tx synthesis BW: 450 MHz
+  - Tuning range: 75 MHz to 6000 MHz
+
+- Multi-chip phase synchronization using :adi:`HMC7044`
+- FMC HPC compatible interface
+
+Supported Devices
+-----------------
+
+- :adi:`ADRV9009`
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZCU102`
+- :ref:`ADRV9009-ZU11EG <adrv9009zu11eg>` (via ADRV2CRR-FMC carrier)
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/fmcomms8`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/adrv9009.c`
+
+More Information
+----------------
+
+- :ref:`ADRV9009-ZU11EG User Guide <adrv9009zu11eg>`
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

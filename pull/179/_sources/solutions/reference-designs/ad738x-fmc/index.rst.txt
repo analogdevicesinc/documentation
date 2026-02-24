@@ -1,0 +1,55 @@
+.. _ad738x-fmc:
+
+AD738x-FMC User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD7380` / :adi:`AD7381` are dual simultaneous sampling, 16-bit /
+14-bit SAR ADCs with a throughput rate of up to 4 MSPS per channel.
+
+The HDL reference design uses the SPI Engine Framework for interfacing with the
+ADC and DMA for data transfer to system memory.
+
+Supported Devices
+-----------------
+
+- :adi:`AD7380`
+- :adi:`AD7381`
+- :adi:`AD7383`
+- :adi:`AD7386`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad738x_fmc`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/ad738x_fmcz`
+- :git-no-OS:`drivers/adc/ad738x`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

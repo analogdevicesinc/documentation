@@ -1,0 +1,77 @@
+.. _ad7606x-fmc:
+
+AD7606x-FMC User Guide
+=======================
+
+Introduction
+------------
+
+The EVAL-AD7606B-FMCZ and EVAL-AD7606C-18 evaluation boards are designed to
+help users evaluate the features of the :adi:`AD7606B`, :adi:`AD7606C-16`, and
+:adi:`AD7606C-18` analog-to-digital converters (ADCs).
+
+The data path of the HDL design supports both parallel and serial interfaces:
+
+- The parallel interface is controlled by the axi_ad7606x IP core
+- The serial interface is controlled by the SPI Engine Framework
+- Data is written into memory by a DMA (axi_dmac core)
+- All control pins of the device are driven by GPIOs
+
+Supported Devices
+-----------------
+
+- :adi:`AD7606B`
+- :adi:`AD7606C-16`
+- :adi:`AD7606C-18`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+Build Parameters
+~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Default
+     - Description
+   * - DEV_CONFIG
+     - 0
+     - Device selection: 0 - AD7606B, 1 - AD7606C-16, 2 - AD7606C-18
+   * - SIMPLE_STATUS_CRC
+     - 0
+     - ADC read mode: 0 - Simple, 1 - STATUS, 2 - CRC, 3 - STATUS_CRC
+   * - EXT_CLK
+     - 0
+     - External clock option: 0 - No, 1 - Yes
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: ad7606x_parallel_hdl.svg
+   :align: center
+
+   AD7606x-FMC block diagram (parallel interface)
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad7606x_fmc`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

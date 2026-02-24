@@ -1,0 +1,75 @@
+.. _adrv9026:
+
+ADRV9026 User Guide
+====================
+
+Introduction
+------------
+
+The HDL reference design for the :adi:`ADRV9026` is an embedded system built
+around a processor core. The device digital interface is handled by the
+transceiver IP followed by the JESD204B and device specific cores. The cores
+are programmable through an AXI-Lite interface. The delineated data is then
+passed on to independent DMA cores for the transmit and receive paths.
+
+The Rx links (ADC Path) operate with the following parameters:
+
+- Rx Deframer: L=4, M=4, F=4, S=1, N'=16
+- Sample Rate: 250 MSPS
+- JESD204B Lane Rate: 10 Gbps
+- CPLL
+
+The Tx links (DAC Path) operate with the following parameters:
+
+- Tx Framer: L=4, M=4, F=4, S=1, N'=16
+- Sample Rate: 250 MSPS
+- JESD204B Lane Rate: 10 Gbps
+- QPLL0
+
+Supported Devices
+-----------------
+
+- :adi:`ADRV9026`
+- :adi:`ADRV9025`
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZCU102` FMC1 Slot
+
+HDL Reference Design
+--------------------
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: adrv9026_jesd_bd.png
+   :align: center
+
+   ADRV9026 JESD block diagram
+
+Clock Sources
+~~~~~~~~~~~~~
+
+.. figure:: adrv9026_clocking.png
+   :align: center
+
+   Clock sources diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adrv9026`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

@@ -1,0 +1,60 @@
+.. _dc2677a:
+
+DC2677A User Guide
+==================
+
+Introduction
+------------
+
+Demonstration circuit 2677A (DC2677A) is a reference design for robust
+industrial data acquisition applications for the :adi:`LTC2358-18`. The
+LTC2358-18 is capable of high voltage measurements with a large input common
+range. The DC2677A implements input protection that allows up to 400 V of
+continuous input protection, combined with gas discharge tubes for surge
+protection.
+
+This reference design includes the LTC2358-18 SAR ADC, :adi:`ADA4522-2` dual
+zero-drift operational amplifier, and an :adi:`LT6658` dual-output, high
+current reference for sensor excitation.
+
+The digital interface is an HSMC (high-speed mezzanine connector), compatible
+with Intel Cyclone V SoC evaluation boards.
+
+Supported Devices
+-----------------
+
+- :adi:`LTC2358-18`
+
+Supported Carriers
+------------------
+
+- `Cyclone V SoC Development Kit
+  <https://www.arrow.com/en/products/sockit/arrow-development-tools>`__
+
+HDL Reference Design
+--------------------
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: dc2677a_block_diagram.svg
+   :align: center
+
+   DC2677A block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/dc2677a`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

@@ -1,0 +1,42 @@
+.. _ad9209-fmca-ebz:
+
+AD9209-FMCA-EBZ User Guide
+============================
+
+Introduction
+------------
+
+The :adi:`AD9209` is a dual-channel, 12-bit, 4 GSPS RF analog-to-digital
+converter (ADC) designed for wideband applications. The AD9209-FMCA-EBZ
+evaluation board interfaces to an FPGA carrier through an FMC+ connector.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9209`
+
+Supported Carriers
+------------------
+
+- :xilinx:`VCU118` FMC+ Slot
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad9209_fmca_ebz`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B/C High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

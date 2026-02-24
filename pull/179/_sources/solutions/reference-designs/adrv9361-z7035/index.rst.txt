@@ -1,0 +1,61 @@
+.. _adrv9361-z7035:
+
+ADRV9361-Z7035 User Guide
+==========================
+
+Introduction
+------------
+
+The :adi:`ADRV9361-Z7035` is a System-On-Module (SOM) based on the Xilinx
+Zynq-7000 All Programmable SoC and the :adi:`AD9361` RF Agile Transceiver.
+Operating over a wide tuning range (70 MHz to 6 GHz), it provides an RF
+platform for prototype, evaluation, and reference design purposes.
+
+The ADRV9361-Z7035 is schematically and HDL-compatible with the
+:ref:`AD-FMCOMMS3-EBZ <ad-fmcomms3-ebz>`.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9361`
+
+Supported Carriers
+------------------
+
+- PZSDRCC-FMC (FMC Carrier)
+- PZSDRCC-BRK (Breakout Carrier)
+- PZSDRCC-PCIE (PCIe Carrier)
+- PZSDRCC-PackRF (PackRF Carrier)
+
+HDL Reference Design
+--------------------
+
+The HDL reference design is the same as the
+:ref:`AD-FMCOMMS2-EBZ/AD-FMCOMMS3-EBZ <ad-fmcomms2-ebz>` reference design.
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adrv9361z7035`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ad9361.c`
+
+More Information
+----------------
+
+- :ref:`AD-FMCOMMS2-EBZ User Guide <ad-fmcomms2-ebz>`
+- :ref:`AD-FMCOMMS3-EBZ User Guide <ad-fmcomms3-ebz>`
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

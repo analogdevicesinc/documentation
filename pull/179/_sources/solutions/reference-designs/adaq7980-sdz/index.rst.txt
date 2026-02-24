@@ -1,0 +1,52 @@
+.. _adaq7980-sdz:
+
+ADAQ7980-SDZ User Guide
+========================
+
+Introduction
+------------
+
+The :adi:`ADAQ7980` is a 16-bit, 1 MSPS data acquisition system in a module
+(SiP) that integrates a SAR ADC, a low noise fully differential ADC driver
+amplifier, a stable reference buffer, and a high performance regulator.
+
+The HDL reference design uses the SPI Engine Framework for interfacing with the
+ADC and DMA for data transfer to system memory.
+
+Supported Devices
+-----------------
+
+- :adi:`ADAQ7980`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adaq7980_sdz`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/adaq7980_sdz`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

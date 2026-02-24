@@ -1,0 +1,65 @@
+.. _arradio:
+
+ARRADIO User Guide
+==================
+
+Introduction
+------------
+
+The `ARRADIO <https://www.arrow.com/en/products/arradio/terasic-technologies>`__
+board is an HSMC board by Arrow and Terasic for the :adi:`AD9361`, a highly
+integrated RF Agile Transceiver. It is similar to the
+:ref:`AD-FMCOMMS2-EBZ <ad-fmcomms2-ebz>`, except it uses an HSMC connector
+which connects to the Arrow SoCKit (Intel Cyclone V SoC).
+
+The board features a Johanson Technology 2450BL15B050E 2.45 GHz balun, so RF
+performance is optimized for the 2400 to 2500 MHz band.
+
+.. note::
+
+   The ARRADIO board is not a product of Analog Devices. Questions about
+   purchase or returns should go to Arrow.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9361`
+
+Supported Carriers
+------------------
+
+- `Arrow SoCKit <https://www.arrow.com/en/products/sockit/arrow-development-tools>`__
+  (Intel Cyclone V SoC)
+
+HDL Reference Design
+--------------------
+
+The HDL reference design is based on the
+:ref:`AD-FMCOMMS2-EBZ <ad-fmcomms2-ebz>` reference design adapted for the
+Intel Cyclone V SoC platform with HSMC interface.
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/arradio`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ad9361.c`
+
+More Information
+----------------
+
+- :ref:`AD-FMCOMMS2-EBZ User Guide <ad-fmcomms2-ebz>`
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
