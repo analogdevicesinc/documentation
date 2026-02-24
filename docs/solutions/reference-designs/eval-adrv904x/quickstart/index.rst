@@ -48,7 +48,7 @@ The supported OS are:
    - - :xilinx:`ZCU102`
      - Yes
      - Yes
-     - No
+     - Yes
 
 Hardware Setup
 -------------------------------------------------------------------------------

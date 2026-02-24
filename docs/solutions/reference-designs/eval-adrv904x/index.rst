@@ -42,7 +42,8 @@ Features:
 
   - Integrated Digital Front-End (DFE) with CFR and digital pre-distortion
   - ARM Cortex-A55 quad-core processor for DFE algorithms (DPD, CLGC, VSWR)
-  - JESD204B and JESD204C digital interface
+  - JESD204B and JESD204C digital interface with fixed and floating-point
+    data format support
   - Zero-IF (ZIF) architecture
 
 - Complete ADRV9040/ADRV9044 radio cards for evaluation
@@ -99,6 +100,7 @@ Table of contents
    - :ref:`adrv904x block-diagram`
 
      - :adi:`ADRV9040 product page <ADRV9040>`
+     - :adi:`ADRV9044 product page <ADRV9044>`
      - :adi:`Full data sheet and chip design package <en/products/adrv9040.html>`
 
    - Hardware in the Loop / How to design your own custom BaseBand
@@ -120,7 +122,9 @@ Table of contents
            - :dokuwiki:`AD9528 Low Jitter Clock Generator Linux driver <resources/tools-software/linux-drivers/iio-pll/ad9528>`
            - :dokuwiki:`AXI-DMAC DMA Controller Linux driver <resources/tools-software/linux-drivers/axi-dmac>`
            - :dokuwiki:`ADRV904x Linux device driver <resources/tools-software/linux-drivers/iio-transceiver/adrv904x>`
-             (in-tree at :git-linux:`drivers/iio/adc/adrv904x/adrv904x.c`)
+             (not yet mainlined; source at
+             :git-linux:`staging/koror_support:drivers/iio/adc/koror/adrv904x.c`)
+             and :dokuwiki:`how to customize it <resources/tools-software/linux-drivers/iio-transceiver/adrv904x-customization>`
 
         #. About the device tree:
 
@@ -145,8 +149,8 @@ Block diagram
 -------------------------------------------------------------------------------
 
 The ADRV9040/ADRV9044 features a zero-IF (ZIF) architecture that provides
-wide bandwidth with dynamic range suitable for non-contiguous multicarrier
-applications. The transceiver includes:
+wide bandwidth with dynamic range suitable for contiguous and non-contiguous
+multicarrier applications. The transceiver includes:
 
 - 8 transmitter channels with integrated DACs and DPD/CFR
 - 8 receiver channels with integrated ADCs

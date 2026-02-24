@@ -170,3 +170,62 @@ appears as an additional device:
 To use the NLS profile, copy ``system.dtb`` built from
 ``zynqmp-zcu102-rev10-adrv904x-nls.dts`` and ``DeviceProfileTest_NLS.bin``
 renamed to ``DeviceProfileTest.bin`` to the SD card boot partition.
+
+Using no-OS as software
+-------------------------------------------------------------------------------
+
+Necessary files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following files are needed for the system to boot:
+
+- HDL boot file: ``system_top.xsa``
+- no-OS project: :git-no-os:`projects/adrv904x`
+
+Instructions on how to build the boot files from source can be found here:
+
+- :external+no-OS:doc:`projects/rf-transceiver/adrv904x`. More no-OS build
+  details at :external+no-OS:doc:`build_guide`.
+- :external+hdl:ref:`adrv904x`. More HDL build details at
+  :external+hdl:ref:`build_hdl`.
+
+Required Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- AMD Xilinx Vivado and Vitis (downloading Vitis from
+  `here <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`_
+  will include Vivado as well)
+- An UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
+
+Required Hardware
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- AMD Xilinx :xilinx:`ZCU102` Rev 1.0 FPGA board and its power supply
+- :adi:`EVAL-ADRV904x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv904x.html>` FMC evaluation board
+- 2x Micro-USB cables, one for UART and one for JTAG
+- (Optional) USB keyboard & mouse and a HDMI-compatible monitor
+
+More details as to why you need these, can be found at
+:ref:`adrv904x prerequisites`.
+
+.. note::
+
+   In Vitis IDE, set the HEAP size to ``0x800000`` and add the math library
+   (``-lm``) to the GCC linker flags. The evaluation board connects to the
+   **FMC HPC1** connector on the ZCU102.
+
+Demo applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Three demo applications are available in the no-OS project, selected via
+Makefile variables:
+
+- **Basic example**: Initializes all components and enables the JESD204 link.
+  The transmitter outputs a DDS waveform with default parameters.
+- **DMA example**: Transmits sinewave patterns via DMA from lookup tables and
+  captures receive data to memory for analysis (exportable as CSV).
+- **IIO example**: Launches an IIOD server on the board, allowing connection
+  via an IIO client such as :ref:`iio-oscilloscope` to configure the
+  transceiver and capture data. The IIOD server runs at 921600 baud.
+
+Only one example can be active at a time.
