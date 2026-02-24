@@ -20,7 +20,8 @@ needs_extensions = {
     'adi_doctools': '0.4.33'
 }
 
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
+                    'solutions/reference-designs/common/zcu102-zynqmp-setup.rst']
 source_suffix = '.rst'
 
 # -- External docs configuration ----------------------------------------------
