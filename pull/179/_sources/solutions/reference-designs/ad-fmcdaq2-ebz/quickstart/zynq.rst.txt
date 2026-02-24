@@ -1,0 +1,107 @@
+.. _ad-fmcdaq2-ebz quickstart zynq:
+
+AD-FMCDAQ2-EBZ Zynq ZC706 Quick Start Guide
+==============================================
+
+This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the AD-FMCDAQ2-EBZ on:
+
+- `ZC706 <https://www.xilinx.com>`__ (rev 1.1 or higher)
+
+Requirements
+------------
+
+- You need a Host PC (Windows or Linux).
+- You need a SD card writer connected to above PC (Supported USB SD
+  readers/writers are OK).
+- USB to UART cable
+- [Optional] USB keyboard/mouse for the Zynq Device
+- [Optional] HDMI Display (monitor or TV FULL HD only)
+
+Creating / Configuring the SD Card
+-----------------------------------
+
+:doc:`Create SD Image for Zynq Boards (it is a single image for all
+boards) </linux/kuiper/index>`.
+
+Setting up the hardware (ZC706)
+-------------------------------
+
+You will need to:
+
+1. Get the `ZC706 <https://www.xilinx.com>`__:
+
+   1. Insert the SD-CARD into the SD Card Interface Connector (J30)
+   2. Plug the AD-FMCDAQ2-EBZ into the HPC Connector
+   3. Plug your HDMI display device into the HDMI Video Connector (P1)
+   4. Plug your USB mouse/keyboard into the USB 2.0 ULPI Controller,
+      w/Micro-B Connector (J49)
+   5. Plug the Power Supply into 12V Power input connector (J22) (DO NOT
+      turn the device on).
+   6. Set the jumpers: The main one is: SW11 - Big Blue Switch in the
+      middle, which controls the Boot Mode, it needs to be set: 1: Down,
+      2: Down, 3: Up, 4: Up, 5: Down. Other Jumpers can be checked via
+      looking at the picture. (click the picture to make it bigger)
+   7. Turn it on.
+   8. Wait ~30 seconds for the "DONE" LED to turn green. This is above
+      the power switch.
+   9. Wait another ~30 seconds for the HDMI display device to start
+      showing signs of life.
+
+Alternatively, you can connect to board using USB-to-UART cable (using for
+example ``TeraTerm``). Check network IP (for example by running ``ifconfig``
+command), run ``enable_dummy_display.sh`` and then you can also connect by VNC
+without using a monitor.
+
+.. collapsible:: Boot Log
+
+   ::
+
+      U-Boot 2018.01-21439-gd244ce5 (Jul 29 2021 - 16:31:12 +0100) Xilinx Zynq ZC706, Build: jenkins-development-build_uboot-1
+
+      Model: Zynq ZC706 Development Board
+      Board: Xilinx Zynq
+      Silicon: v3.1
+      I2C:   ready
+      DRAM:  ECC disabled 1 GiB
+      MMC:   sdhci@e0100000: 0 (SD)
+      SF: Detected s25fl128s_64k with page size 512 Bytes, erase size 128 KiB, total 32 MiB
+      *** Warning - bad CRC, using default environment
+
+      In:    serial@e0001000
+      Out:   serial@e0001000
+      Err:   serial@e0001000
+      Net:   ZYNQ GEM: e000b000, phyaddr 7, interface rgmii-id
+      eth0: ethernet@e000b000
+      reading uEnv.txt
+      407 bytes read in 12 ms (32.2 KiB/s)
+      Importing environment from SD ...
+      Hit any key to stop autoboot:  0
+      ...
+      Starting kernel ...
+
+      Booting Linux on physical CPU 0x0
+      Linux version 5.10.0-98156-g6b62b86d3dc7 ...
+      ...
+      ad9208 spi0.2: ad9680 PLL LOCKED
+      ad9208 spi0.2: ad9680 Rev. 2 Grade 10 (API 1.0.1) probed
+      cf_axi_dds 44a04000.axi-ad9144-hpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.01.b) ...
+      cf_axi_adc 44a10000.axi-ad9680-hpc: ADI AIM (10.01.b) ... probed ADC AD9680 as MASTER
+      ...
+
+      Welcome to Kuiper GNU/Linux 11.2 (bullseye)!
+
+      analog login: root (automatic login)
+
+      root@analog:~#
+
+After booting process is complete, you can open IIO-Oscilloscope. Learn more
+about it from the
+:doc:`IIO Oscilloscope page </software/iio-oscilloscope/index>`.
+You can interact with the IIO-Osc GUI either directly or over the network.
+
+Even though this is Linux, this is a persistent file system. Care should be
+taken not to corrupt the file system -- please shut down things, don't just turn
+off the power switch. You can shut down the board from terminal as well with
+
+``sudo shutdown -h now`` or ``sudo poweroff``

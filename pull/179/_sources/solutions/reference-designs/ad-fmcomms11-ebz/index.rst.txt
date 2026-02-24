@@ -1,0 +1,96 @@
+.. _ad-fmcomms11-ebz:
+
+AD-FMCOMMS11-EBZ
+=================
+
+The AD-FMCOMMS11-EBZ board is a system platform board for communication
+infrastructure applications that demonstrates the Direct to RF (DRF)
+transmitter and observation receiver architecture. Using high sample rate
+RFDAC(s) and RFADC(s), a number of components in previous generation
+transmitters can be eliminated, such as mixers, modulators, IF amplifiers
+and filters.
+
+It is composed of the multi-GSPS RF ADC :adi:`AD9625` and DAC :adi:`AD9162`.
+The transmit path contains a balun, low pass filter, gain block and variable
+attenuation to produce an output appropriate for a power amplifier module.
+Along the observation path, the PA output is coupled back into the board
+through a variable attenuator, a balun and finally the ADC. Clock management
+is taken care of on board; all the necessary clocks are generated from a
+reference.
+
+The platform supports the frequency range 70 MHz to 6 GHz.
+
+.. image:: fmcomms11_image.png
+   :align: center
+   :width: 500
+
+Supported Carriers
+------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :xilinx:`ZC706`
+     - Yes
+     - Yes
+
+HDL Reference Design
+--------------------
+
+The HDL reference design is an embedded system built around a processor core
+(ARM). The high speed digital interface of the converters is handled by the
+JESD204B framework. Due to the system's memory interface bandwidth limitation,
+there are intermediary buffers in both TX and RX data paths, in order to save
+and push data using high data rates.
+
+By default the :adi:`AD9162` is configured in complex mode with 8 lanes, and
+the :adi:`AD9625` is configured in generic operation mode with 8 lanes. Both
+JESD204 interfaces run in Subclass 0.
+
+The digital interface consists of 8 transmit and 8 receive lanes running at
+9.83 Gbps and 4.92 Gbps respectively. The data is sent or received based on
+the configuration of separate transmit and receive chains.
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: fmcomms11_bd.svg
+   :align: center
+
+   AD-FMCOMMS11-EBZ block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/fmcomms11`
+
+Software Support
+----------------
+
+Linux Drivers
+~~~~~~~~~~~~~
+
+- :git-linux:`AD9625 Linux Driver <drivers/iio/adc/ad9467.c>`
+- :git-linux:`AD9162 Linux Driver <drivers/iio/frequency/ad9162.c>`
+- :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
+- :git-linux:`AXI DAC DDS Linux Driver <drivers/iio/frequency/cf_axi_dds.c>`
+
+Device Trees
+~~~~~~~~~~~~
+
+- :git-linux:`ZC706 DTS <arch/arm/boot/dts/xilinx/zynq-zc706-adv7511-fmcomms11.dts>`
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+If you have any questions regarding the AD-FMCOMMS11-EBZ feel free to ask on
+the :ez:`FPGA Reference Designs Forum <fpga>`.

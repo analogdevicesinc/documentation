@@ -1,0 +1,135 @@
+.. _ad-fmcjesdadc1-ebz:
+
+AD-FMCJESDADC1-EBZ
+===================
+
+.. warning::
+
+   Support for the AD-FMCJESDADC1-EBZ is discontinued starting with the
+   2022_R2 ADI Kuiper Linux release and it will not be supported in future
+   releases. The last release with pre-built files is **2021_r2**. Check the
+   :doc:`Kuiper Linux </linux/kuiper/index>` page for all releases.
+   The HDL project source code can still be found on the
+   :git-hdl:`hdl_2021_r2 <hdl_2021_r2:projects/fmcjesdadc1>` release branch.
+
+The :adi:`AD-FMCJESDADC1-EBZ` is a high speed data acquisition board
+(4 channels at 245.76 MSPS), in an FMC form factor which supports the
+JESD204B high speed serial interface. This board meets all the FMC
+specifications in terms of mechanical size and mounting hole locations.
+
+This board is targeted to use the ADI reference designs that work with both
+Altera and Xilinx development systems.
+
+.. image:: ad-fmcjesdadc1-ebz_top.png
+   :align: center
+   :width: 400
+
+.. image:: ad-fmcjesdadc1-ebz_bottom.png
+   :align: center
+   :width: 400
+
+Contains
+--------
+
+The card contains:
+
+- :adi:`AD9250` two 14-bit ADCs with sampling speeds of up to 250 MSPS,
+  with a JESD204B digital interface
+- :adi:`AD9517-1` multi-output clock distribution device with subpicosecond
+  jitter performance, along with an on-chip PLL and VCO
+- :adi:`ADP151` ultralow noise, low dropout linear regulator, 2.2 V to 5.5 V,
+  up to 200 mA output current
+- :adi:`ADP1753` low dropout linear regulator, 1.6 V to 3.6 V input, up to
+  800 mA output current
+- :adi:`AD7291` 12-bit, low power, 8-channel, SAR ADC with internal
+  temperature sensor
+- :adi:`ADP2301` compact, constant-frequency, current-mode, step-down
+  DC-to-DC regulator
+- :adi:`ADG3304` bidirectional logic level translator with four channels
+
+Supported Devices
+-----------------
+
+- :adi:`AD9250`
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZC706` HPC Slot
+
+HDL Reference Design
+--------------------
+
+The reference design is built on a Microblaze-based system. The reference
+design consists of a single JESD204B core and two identical instances of
+AD9250 cores. The AD9250 core consists of three functional modules: the ADC
+interface, a PN9/PN23 monitor, and a DMA interface. The ADC interface
+captures and buffers data from the JESD204B core. The DMA interface then
+transfers the samples to the external DDR-DRAM.
+
+Block Diagrams
+~~~~~~~~~~~~~~
+
+.. figure:: ad-fmcjesdadc1-ebz.svg
+   :align: center
+
+   AD-FMCJESDADC1-EBZ block diagram
+
+.. figure:: fmcjesdadc1_xilinx.svg
+   :align: center
+
+   Xilinx block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`hdl_2021_r2:projects/fmcjesdadc1/zc706`
+
+Clocking
+--------
+
+The AD-FMCJESDADC1-EBZ uses the :adi:`AD9517-0`. This is a small
+(7.0 mm x 6.75 mm), low power (~1.4 W) multi-output clock distribution
+function with subpicosecond jitter performance, along with an on-chip PLL and
+VCO. It is driven by a single 30.72 MHz crystal, and generates the necessary
+clocks for the system (2.4576 GHz, 245.760 MHz, 30.72 MHz).
+
+Specifications
+--------------
+
+The AD-FMCJESDADC1-EBZ board's primary purpose is to easily understand,
+validate, and verify the JESD204B interface with various FPGA manufacturers.
+
+When putting things into the small FMC form factor, various tradeoffs were
+made which limit the performance to the first Nyquist zone. The specific
+transformer used (Minicircuits TC4-1W) is specified from 3 to 800 MHz, but is
+only linear in terms of insertion loss and input return loss within +/- 0.5 dB
+from 10 to 100 MHz.
+
+Software Support
+----------------
+
+Linux Drivers
+~~~~~~~~~~~~~
+
+- :git-linux:`AD9250 Linux Driver <drivers/iio/adc/ad9467.c>`
+- :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
+
+Eye Scan
+~~~~~~~~
+
+The JESD204B eye scan for this board can be found at
+:dokuwiki:`JESD Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`.
+
+More Information
+----------------
+
+- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the core
+with Analog Devices components (ADC, DAC, Video, Audio, etc) via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

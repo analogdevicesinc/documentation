@@ -1,0 +1,94 @@
+.. _ad-fmcdaq2-ebz quickstart zcu102:
+
+AD-FMCDAQ2-EBZ ZynqMP ZCU102 Quick Start Guide
+=================================================
+
+This guide provides some quick instructions (still takes awhile to
+download, and set things up) on how to setup the AD-FMCDAQ2-EBZ on
+`ZCU102 <https://www.xilinx.com>`__.
+
+Prerequisites
+-------------
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+- `Xilinx ZCU102 <https://www.xilinx.com>`__ Rev 1.0 or later board
+- :adi:`AD-FMCDAQ2-EBZ` FMC board
+- An 8 GB SD card
+- USB keyboard mouse and a Display Port compatible monitor
+- Ethernet cable
+- 1 x Micro-USB cable
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+- You need a Host PC (Windows or Linux)
+- A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
+- `IIO Scope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__
+
+Creating / Configuring the SD Card
+-----------------------------------
+
+:doc:`Create SD Image for ZynqMP Boards (it is a single image for all
+boards) </linux/kuiper/index>`.
+
+In this case the root of 'BOOT' should contain:
+
+- An Image file for ZynqMP (from zynqmp-common folder)
+- A ``BOOT.BIN`` specific to your AD-FMCDAQ2-EBZ + ZCU102
+- A ``system.dtb`` for ZynqMP specific to your AD-FMCDAQ2-EBZ + ZCU102
+
+Setting up the hardware (ZCU102)
+---------------------------------
+
+You will need to:
+
+- Get the `Xilinx ZCU102 <https://www.xilinx.com>`__
+- Insert the SD-CARD into the SD Card Interface Connector (J100)
+- Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier HPC0 FMC0 socket
+- Plug your Display Port monitor device into the Display Port Video Connector
+  (P11)
+- Plug your USB mouse/keyboard into the USB 2.0 ULPI Controller, w/Micro-B
+  Connector (J83)
+- Plug the Power Supply into 12V Power input connector (J52) (DO NOT turn
+  the device on)
+- Set the jumpers of SW6 - which controls the Boot Mode: 1: **on**, 2: **off**,
+  3: **off**, 4: **off**
+- Turn it on
+- Wait ~30 seconds for the "DONE" LED to turn green. This is near the SD Card
+  Interface Connector
+
+Booting the SD Card
+-------------------
+
+Local IIO Oscilloscope
+~~~~~~~~~~~~~~~~~~~~~~
+
+Ignore your PC, and now interact on the USB mouse/keyboard on the ZynqMP device.
+
+.. image:: scope_zcu102_fmcdaq2_.png
+
+Remote IIO Oscilloscope
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- Disconnect the USB mouse/keyboard from the USB 2.0 ULPI Controller, w/Micro-B
+  Connector (J83).
+- Connect USB UART J83 (Micro USB) to your host PC.
+- Plug your ethernet cable into the RJ45 ethernet connector (P12)
+- Observe kernel and serial console messages on your UART terminal (use the
+  first ttyUSB or COM port registered)
+- Run the ifconfig command on your UART terminal and get your board IP
+- Open IIO Scope application and type ``ip:<board_ip>`` in the URI tab.
+
+Even though this is Linux, this is a persistent file system. Care should be
+taken not to corrupt the file system -- please shut down things, don't just turn
+off the power switch. You can do this from the terminal as well with
+``sudo shutdown -h now``.
+
+More Information
+----------------
+
+- :doc:`AD-FMCDAQ2-EBZ User Guide </solutions/reference-designs/ad-fmcdaq2-ebz/index>`
+- :doc:`AD-FMCDAQ2-EBZ HDL Reference Design
+  </solutions/reference-designs/ad-fmcdaq2-ebz/reference_hdl>`

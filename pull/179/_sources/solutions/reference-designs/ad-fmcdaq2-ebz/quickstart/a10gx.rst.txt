@@ -1,0 +1,149 @@
+.. _ad-fmcdaq2-ebz quickstart a10gx:
+
+AD-FMCDAQ2-EBZ Arria 10 GX Quick Start Guide
+===============================================
+
+.. note::
+
+   Support for the A10GX carrier is discontinued and will not be
+   supported in future releases.
+
+This guide provides some quick instructions on how to setup the AD-FMCDAQ2-EBZ
+on the
+`A10GX <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`__
+board.
+
+Prerequisites
+-------------
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+- `A10GX <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`__
+  board
+- :adi:`AD-FMCDAQ2-EBZ` FMC board
+- Ethernet cable
+- Micro-USB cable
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+- You need a Host PC (Windows)
+- Intel Quartus 21.2
+- Bitfile and Linux ELF image
+- `IIO Scope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__
+
+Setting up the hardware (A10GX)
+-------------------------------
+
+You will need to:
+
+- Get the A10GX board.
+- Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier **FMC1**
+  socket (J1).
+- Connect the USB JTAG J3 (Micro USB) to your Host PC.
+- Connect the Ethernet cable.
+- Plug the Power Supply into 12V Power input connector (DC Input).
+- Turn it on.
+
+Programming the FPGA
+--------------------
+
+Nios II Command Shell is used to program the FPGA. To run Nios II Command Shell
+navigate to ``C:\intelFPGA_pro\21.2\nios2eds`` and start
+``Nios II Command Shell.bat``. Windows Subsystem for Linux (WSL) needs to be
+installed in order to run Nios II Command Shell.
+
+After starting the Command Shell, navigate to the path where the pre-build
+images are saved. For example:
+
+.. code-block:: console
+
+   $ cd /mnt/c/Users/ladace/Downloads/a10gx_daq2_2019_r2/
+
+Programming FPGA bitfile image
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To flash the bitfile pre-build image, **nios2-configure-sof** command is used.
+For example:
+
+.. code-block:: console
+
+   $ nios2-configure-sof daq2_a10gx.sof
+   Searching for SOF file:
+   in .
+     daq2_a10gx.sof
+
+   Info: *******************************************************************
+   Info: Running Quartus Prime Programmer
+   Info: Command: quartus_pgm --no_banner --mode=jtag -o p;./daq2_a10gx.sof
+   Info (213045): Using programming cable "USB-BlasterII [USB-1]"
+   Info (213011): Using programming file ./daq2_a10gx.sof with checksum 0x312984DD for device 10AX115S2F45@1
+   Info (209060): Started Programmer operation at Thu Dec  9 15:10:50 2021
+   Info (209016): Configuring device index 1
+   Info (209017): Device 1 contains JTAG ID code 0x02E060DD
+   Info (209007): Configuration succeeded -- 1 device(s) configured
+   Info (209011): Successfully performed operation(s)
+   Info (209061): Ended Programmer operation at Thu Dec  9 15:11:05 2021
+   Info: Quartus Prime Programmer was successful. 0 errors, 0 warnings
+       Info: Peak virtual memory: 1829 megabytes
+       Info: Processing ended: Thu Dec  9 15:11:05 2021
+       Info: Elapsed time: 00:00:22
+       Info: System process ID: 20500
+
+Programming Linux image
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+To flash the Linux pre-build image, **nios2-download** command is used. For
+example:
+
+.. code-block:: console
+
+   $ nios2-download -g zImage
+   Using cable "USB-BlasterII [USB-1]", device 1, instance 0x00
+   Pausing target processor: OK
+   Initializing CPU cache (if present)
+   OK
+   Downloaded 5468KB in 6.1s (896.3KB/s)
+   Verified OK
+   Starting processor at address 0xC4000000
+
+Nios II Terminal
+~~~~~~~~~~~~~~~~
+
+To start the Nios II Terminal use the **nios2-terminal.exe** command.
+
+.. collapsible:: Complete kernel boot log
+
+   ::
+
+      $ nios2-terminal.exe
+      nios2-terminal: connected to hardware target using JTAG UART on cable
+      nios2-terminal: "USB-BlasterII [USB-1]", device 1, instance 0
+      nios2-terminal: (Use the IDE stop button or Ctrl-C to terminate)
+
+      Linux version 4.19.0-g17f4223 ...
+      ...
+      Welcome to Buildroot
+      buildroot login:
+
+IIO Oscilloscope
+----------------
+
+To connect the board to IIO Scope start the IIO Oscilloscope application and go
+to **Settings** menu and then press **Connect**. From **Select or Discover
+libIIO Context** select **Manual** and enter the URI in the following format
+``ip:<your_board_ip>``. Press the **Refresh** button and then **Connect**.
+
+To determine the IP of the board, in Nios II Command Shell login using **root**
+and password **analog**. Then run the **ifconfig** command.
+
+To plot the captured waveforms go to **File** menu then click **New Plot**.
+Select the channels to plot and then click **Capture / Stop** button.
+
+More Information
+----------------
+
+- :doc:`AD-FMCDAQ2-EBZ User Guide </solutions/reference-designs/ad-fmcdaq2-ebz/index>`
+- :doc:`AD-FMCDAQ2-EBZ HDL Reference Design
+  </solutions/reference-designs/ad-fmcdaq2-ebz/reference_hdl>`

@@ -1,0 +1,82 @@
+.. _ad-fmcdaq2-ebz quickstart:
+
+AD-FMCDAQ2-EBZ Quick Start Guides
+==================================
+
+The Quick Start Guides provide a simple step by step instruction on how to do an
+initial system setup for the AD-FMCDAQ2-EBZ boards on various FPGA development
+boards. They will discuss how to program the bitstream, run a no-OS program or
+boot a Linux distribution.
+
+Supported Carriers
+------------------
+
+The AD-FMCDAQ2-EBZ is, by definition a "FPGA mezzanine card" (FMC), that means
+it needs a carrier to plug into. The carriers we support are:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+
+   * - Board
+     - Quickstart Guide
+   * - :intel:`Arria10 SoC Dev Kit <content/www/us/en/products/details/fpga/arria/10.html>`
+     - :doc:`quickstart/a10soc`
+   * - :intel:`Arria10 GX FPGA Dev Kit <content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`
+     - :doc:`quickstart/a10gx`
+   * - `KC705 <https://www.xilinx.com>`__
+     - :doc:`quickstart/microblaze`
+   * - `KCU105 <https://www.xilinx.com>`__
+     - :doc:`quickstart/microblaze`
+   * - `VC707 <https://www.xilinx.com>`__
+     - :doc:`quickstart/microblaze`
+   * - `ZC706 <https://www.xilinx.com>`__
+     - :doc:`quickstart/zynq`
+   * - `ZCU102 <https://www.xilinx.com>`__
+     - :doc:`quickstart/zcu102`
+
+The supported OS are:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 25 25 25
+
+   * - Board
+     - HDL
+     - Linux Software
+     - No-OS Software
+   * - :intel:`Arria10 SoC Dev Kit <content/www/us/en/products/details/fpga/arria/10.html>`
+     - YES
+     - YES
+     - NO
+   * - :intel:`Arria10 GX FPGA Dev Kit <content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`
+     - NO (only until hdl_2021_r1 branch)
+     - NO
+     - NO
+   * - `KC705 <https://www.xilinx.com>`__
+     - YES
+     - YES
+     - YES
+   * - `KCU105 <https://www.xilinx.com>`__
+     - YES
+     - YES
+     - YES
+   * - `VC707 <https://www.xilinx.com>`__
+     - NO (only until hdl_2018_r2 branch)
+     - NO
+     - NO
+   * - `ZC706 <https://www.xilinx.com>`__
+     - YES
+     - YES
+     - YES
+   * - `ZCU102 <https://www.xilinx.com>`__
+     - YES
+     - YES
+     - YES
+
+Hardware Setup
+--------------
+
+In most carriers, the AD-FMCDAQ2-EBZ board connects to the HPC connector (unless
+otherwise noted). The carrier setup requires power, UART (115200), ethernet
+(Linux), HDMI (if available) and/or JTAG (no-OS) connections.

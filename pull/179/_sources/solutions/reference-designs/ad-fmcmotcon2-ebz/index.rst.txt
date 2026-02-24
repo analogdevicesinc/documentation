@@ -1,0 +1,69 @@
+.. _ad-fmcmotcon2-ebz:
+
+AD-FMCMOTCON2-EBZ
+==================
+
+.. warning::
+
+   The :adi:`AD-FMCMOTCON2-EBZ
+   <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-FMCMOTCON2.html#eb-overview>`
+   board has been retired and is no longer available for sale. Support has been
+   discontinued. The HDL project has been removed from the main branch but is
+   still available in the
+   :git-hdl:`hdl_2018_r2 <hdl_2018_r2:projects/motcon2_fmc>` release branch.
+
+The :adi:`AD-FMCMOTCON2-EBZ
+<en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Eval-FMCMOTCON2.html#eb-overview>`
+is a complete motor drive system on an FMC board. It provides efficient and
+high dynamic control of three phase PMSM, BLDC, induction, and stepper motors
+up to 48 V and 20 A. Two motors can be driven at the same time, each motor
+having its separate power supply.
+
+.. image:: mc2_system.jpg
+   :align: center
+   :width: 500
+
+Introduction
+------------
+
+The kit consists of two boards: a controller board and a drive board. The
+system incorporates high quality power supplies, reliable power/control/
+feedback signal isolation, accurate measurement of motor current and voltage
+signals, high speed interfaces for control signals to allow fast controller
+response, industrial Ethernet high speed interfaces, single ended Hall,
+differential Hall, encoder and resolver interfaces, digital position sensors
+interface, and flexible control with an FPGA/SoC interface.
+
+The **AD-DYNO2-EBZ** dynamometer is provided as an extension of the drive
+system. This is a dynamically adjustable load system that can be used to test
+real-time motor control performance.
+
+This platform is intended to be used as a prototyping system to verify the
+hardware and the control algorithms before moving to the production stage.
+
+HDL Reference Design
+--------------------
+
+The reference design is based on the ZedBoard. It contains HDL blocks for
+interfacing with the various components of the motor control hardware:
+
+- **Current Monitor** - Implements the communication with the :adi:`AD7401`
+  sigma delta modulators and SINC3 filters for demodulating the 1-bit
+  digital stream
+- **Controller** - Implements the interface to the IP control blocks in the
+  system, basic six point drive of the motor
+- **Speed Detector** - Implements the algorithm for converting Hall, BEMF and
+  Encoder signals into speed and position data
+- **GMII to RGMII** - Converts the GMII interface from the Ethernet cores
+  to RGMII interface available on the FMC Controller Board
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`hdl_2018_r2:projects/motcon2_fmc`
+
+Support
+-------
+
+If you have any questions regarding the AD-FMCMOTCON2-EBZ feel free to ask on
+the :ez:`FPGA Reference Designs Forum <fpga>`.
