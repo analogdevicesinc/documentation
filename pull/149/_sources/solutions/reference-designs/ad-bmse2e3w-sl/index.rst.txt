@@ -8,7 +8,7 @@ Click on the file below to download:
 
 .. admonition:: Download
 
-   :download:`AD-BMSE2E3W-SL QuickStart Guide (pdf) <AD-BMSE2E3W-SL-UG-2245.pdf>`
+   :download:`AD-BMSE2E3W-SL QuickStart Guide (pdf) <ad-bmse2e3w-sl-ug-2245.pdf>`
 
 Overview
 --------
@@ -68,7 +68,7 @@ System Architecture
    AD-BMSE2E3W-SL Simplified Block Diagram
 
 .. csv-table:: Specifications
-   :file: Specifications.csv
+   :file: specifications.csv
    :widths: 20, 10, 10, 10, 10, 40
    :header-rows: 1
 
@@ -89,7 +89,7 @@ Components and Connections
    Hardware Components and Connections
 
 .. csv-table:: Hardware Part Functions
-   :file: Components.csv
+   :file: components.csv
    :widths: 5, 25, 70
    :header-rows: 1
 

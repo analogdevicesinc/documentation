@@ -35,7 +35,7 @@ After the first second the maximum di/dt is limited to 10mA/ms.
 More details can be found in APL Port Profile Specification or the
 IEC TS 63444 standard.
 
-.. figure:: Power-up.png
+.. figure:: power-up.png
    :width: 600 px
    :alt: Illustrative Current Step Characteristics During Power-up
 
@@ -59,7 +59,7 @@ and VCORE(MIN) = 1.05V.
 
 .. clear-content::
 
-.. figure:: MCU_sequence.png
+.. figure:: mcu_sequence.png
    :width: 600 px
    :alt: Power Up and Power Down Requirements of MAX32690
 
@@ -74,7 +74,7 @@ failing the charge requirement on the spike from the large peak
 current it might generate, and may cause other failures on the
 reference design.
 
-.. figure:: Hot_input1.png
+.. figure:: hot_input1.png
    :width: 700 px
 
    Hot Input LINE_P Current Capture w/ REG_3V5, SUP_3V3, ISO_3V3
@@ -102,7 +102,7 @@ never exceed 55.56mA. The reference design has passed the APL port
 profile current step characteristics requirement for start-up during
 hot-plug scenario.
 
-.. figure:: Hot_input2.png
+.. figure:: hot_input2.png
    :width: 700 px
 
    Hot Input LINE_P Current Capture w/ REG_3V5, LINE_P, LOAD_P Voltages
@@ -133,13 +133,13 @@ the time distance between 1V8 and 1V1 is 3.2ms. The sequence is in
 correct order for start-up, which is 3V3 first, 1V8 second and 1V1
 third or last.
 
-.. figure:: Hot-Input3.png
+.. figure:: hot-input3.png
    :width: 700 px
    :alt: Hot Input Power-up Sequence of 3V3, 1V8 and 1V1
 
    Hot Input Power-up Sequence of 3V3, 1V8 and 1V1
 
-.. figure:: Zoom_hot_input3.png
+.. figure:: zoom_hot_input3.png
    :width: 700 px
    :alt: Zoomed Power-up Sequence for 1V8 and 1V1
 

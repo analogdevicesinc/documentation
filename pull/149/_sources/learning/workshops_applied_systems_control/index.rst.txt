@@ -26,14 +26,14 @@ workshop, a slide deck is provided here:
 
 .. admonition:: Download
 
-   :download:`Applied Systems Control Slide Deck <../workshops_applied_systems_control/Applied_Systems_Control_Workshop.pptx>`
+   :download:`Applied Systems Control Slide Deck <../workshops_applied_systems_control/applied_systems_control_workshop.pptx>`
 
 A complete booklet of the hands-on activity is also provided, either as a companion to
 following the tutorial yourself:
 
 .. admonition:: Download
 
-   :download:`Applied Systems Control Booklet <../workshops_applied_systems_control/Applied_Systems_Control_Workshop_Booklet.pdf>`
+   :download:`Applied Systems Control Booklet <../workshops_applied_systems_control/applied_systems_control_workshop_booklet.pdf>`
 
 
 Theoretical content

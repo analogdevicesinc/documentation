@@ -13,7 +13,7 @@ AD9361 Wideband Software Defined Radio Board.
 The :adi:`AD-FMCOMMS3-EBZ` is an FMC board for the
 :adi:`AD9361`, a highly integrated RF Agile Transceiver™. 
 While the complete chip level design package can be found
-on the :download:`the ADI website <AD9361_Design_File_Package.zip>`.
+on the :download:`the ADI website <ad9361_design_file_package.zip>`.
 Information on the card, and how to use it, the design package that
 surrounds it, and the software which can make it work, can be found
 here.
@@ -37,7 +37,7 @@ The :adi:`AD-FMCOMMS3-EBZ` board is very similar to the
 board with only one exception, the Rx/Tx RF differential to single ended
 transformer. The AD-FMCOMMS3-EBZ is more targetted for wider tuning
 range applications, that is why we use the
-:download:`TCM1-63AX+ <TCM1-63AX+.pdf>` from
+:download:`TCM1-63AX+ <tcm1-63ax+.pdf>` from
 Mini-Circuits as the RF transformer of choice. We affectionately call
 the AD-FMCOMMS3-EBZ the “Software Engineers” platform, and the
 :adi:`AD-FMCOMMS2-EBZ`, the “RF Engineers” platform to denote 

@@ -39,7 +39,7 @@ This tutorial is also designed to be presented as a live, hands-on workshop; a s
 
 .. ADMONITION:: Download
 
-   :download:`Slide Deck: ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors <ADI_Software_Infrastructure_for_ADCs_DACs_Sensors.pptx>`
+   :download:`Slide Deck: ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors <adi_software_infrastructure_for_adcs_dacs_sensors.pptx>`
 
 A complete video run-through will also be provided, either as a companion to following the tutorial yourself, or to practice before presenting as a hands-on workshop. This video is a placeholder for the time being, but many of the concepts apply directly to this workshop:
 
@@ -62,7 +62,7 @@ Materials
 - ADALM2000 Multi-function USB instrument
    - ADALM2000 will be referred to as "m2k"
 - Either 1k series resistors, or 2k/3k attenuators between the M2k and AD4080
-    - `Design files for a minimal attenuator / filter board used in initial worshop <https://github.com/trupples/ftc2024-ad4080-addon/tree/main/minimal>`_
+    - `Design files for a minimal attenuator / filter board used in initial workshop <https://github.com/trupples/ftc2024-ad4080-addon/tree/main/minimal>`_
 
 Hardware setup
 ~~~~~~~~~~~~~~
@@ -135,7 +135,7 @@ Boot up the Raspberry Pi and connect to the internet. Code and setup scripts for
 
    Re-host code and setup scripts, perhaps in the analogdevicesinc/education_tools repo.
 
-Open a termial and run the following commands:
+Open a terminal and run the following commands:
 
 ::
 
@@ -161,7 +161,7 @@ Communication with the various data converter sources and sinks is done through 
 There are three IIO contexts in our setup:
 - The Raspberry Pi itself, whose backend is local. It has two IIO devices: an internal temperature sensor and a supply voltage monitor
 - The ST Nucleo-H563ZI,whose backend is serial. It has one IIO device: the AD4080
-- The ADALM2000, whose backend is either USB or netowrk. It has several IIO devices: the XADC housekeeping ADCs on the FPGA, the AD9963 ADC/DAC, and custom peripherals (triggering, waveform generation, DMAs) in the FPGA.
+- The ADALM2000, whose backend is either USB or network. It has several IIO devices: the XADC housekeeping ADCs on the FPGA, the AD9963 ADC/DAC, and custom peripherals (triggering, waveform generation, DMAs) in the FPGA.
 
 Let's use the ``iio_info`` utility to display information about...
 
@@ -233,7 +233,7 @@ Let's use the ``iio_info`` utility to display information about...
         
         iio_info -u serial:/dev/ttyACM0,230400,8n1
 
-The iio_info utility is handy for debugging setups, making sure contexts are available, and checking that devices are recognized. There are other command line utilities for reading and writing individual attributtes, reading and writing data to DMA buffers, but they're not very convenient for interactive use.
+The iio_info utility is handy for debugging setups, making sure contexts are available, and checking that devices are recognized. There are other command line utilities for reading and writing individual attributes, reading and writing data to DMA buffers, but they're not very convenient for interactive use.
 
 Exercise 2: Scopy (2.0!)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -309,7 +309,7 @@ Observe the SINC5+Comp filter's step response. Set the FILTER_SEL attribute to *
 Exercise 3: Python and the Thonny IDE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Most examples in this workshop are Python scripts. Thonny is a Python IDE and will allow you to edit and run them easily. Launch Thony from the start menu:
+Most examples in this workshop are Python scripts. Thonny is a Python IDE and will allow you to edit and run them easily. Launch Thonny from the start menu:
 
 .. image:: thonny_open.png
     :width: 20 em
@@ -328,7 +328,7 @@ Performance metrics with Genalyzer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Stop the M2k waveform generator and close Scopy, because this demo will generate
-a signal programaticaly. In Thonny, load
+a signal programmatically. In Thonny, load
 **Desktop/ftc24-ws/hello_genalyzer/m2k_source_ad4080_sink.py**
 and Run:
 

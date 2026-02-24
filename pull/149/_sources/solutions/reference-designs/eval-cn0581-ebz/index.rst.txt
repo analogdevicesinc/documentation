@@ -424,7 +424,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-  :download:`EVAL-CN0581-EBZ Design & Integration Files <CN0581-designsupport.zip>`
+  :download:`EVAL-CN0581-EBZ Design & Integration Files <cn0581-designsupport.zip>`
 
   - Schematics
   - PCB Layout

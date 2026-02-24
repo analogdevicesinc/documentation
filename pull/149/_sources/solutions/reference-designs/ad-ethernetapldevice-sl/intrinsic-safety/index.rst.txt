@@ -54,7 +54,7 @@ Other than the classical considerations for intrinsic safety component
 selection, such power ratings, distances or temperature coefficients, special
 attention has been paid to the blocks highlighted in the diagram.
 
-.. figure:: IS-block-analysis.png
+.. figure:: is-block-analysis.png
    :width: 900 px
    :alt: AD-EthernetAPLDevice-SL Board
 
@@ -81,7 +81,7 @@ verify that the energy stored by the inductor is within allowable limits at
 different conditions. Maximum allowable energy is 20uJ
 for Ex ia IIC Ga equipment or device.
 
-.. figure:: CM-choke.png
+.. figure:: cm-choke.png
    :width: 600 px
    :alt: CM choke
 
@@ -102,7 +102,7 @@ energy. The light-blue highlights on the simplified circuit below indicates
 the protection parts or “barriers” that prevent excess energy which protect
 against explosion, more information can be learned on IEC 60079-11.
 
-.. figure:: APL_frontend.png
+.. figure:: apl_frontend.png
    :width: 800 px
    :alt: APL Front End Circuit with LT8440 Power Conditioner
 

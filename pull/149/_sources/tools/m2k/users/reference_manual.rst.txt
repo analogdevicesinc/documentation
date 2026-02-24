@@ -59,7 +59,7 @@ Python programs.
 
       Figure 1.2 ADALM2000 (side 2)
 
-.. figure:: ../images/adalm2000_pinout.png
+.. figure:: ../images/adalm2000-pin-wires.png
    :width: 700px
    :alt: ADALM2000 pinout
 
