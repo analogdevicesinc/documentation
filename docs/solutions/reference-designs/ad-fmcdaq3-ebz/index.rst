@@ -1,0 +1,506 @@
+.. _ad-fmcdaq3-ebz:
+
+AD-FMCDAQ3-EBZ
+===============
+
+The :adi:`AD-FMCDAQ3-EBZ
+<en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-FMCDAQ3-EBZ.html#eb-overview>`
+is an FMC board for the high speed DAC :adi:`AD9152` and ADC :adi:`AD9680`.
+It is a data acquisition platform that connects the analog world using FMC to
+the FPGA.
+
+.. image:: fmcdaq3_top.png
+   :align: center
+   :width: 500
+
+Introduction
+------------
+
+The AD-FMCDAQ3-EBZ module is comprised of the :adi:`AD9680` dual, 14-bit,
+1.25 GSPS, JESD204B ADC, the :adi:`AD9152` dual, 16-bit, 2.5 GSPS, JESD204B
+DAC, the :adi:`AD9528` clock, and power management components. It is clocked
+by an internally generated carrier platform via the FMC connector, comprising a
+completely self contained data acquisition and signal synthesis prototyping
+platform. In an FMC footprint (84 mm x 69 mm), the module's combination of
+wideband data conversion, clocking, and power closely approximates real-world
+hardware and software for system prototyping and design, with no compromise in
+signal chain performance.
+
+Features
+~~~~~~~~
+
+- Includes schematics, layout, BOM, Gerber files, HDL, Linux drivers, IIO
+  Oscilloscope
+- FMC-compatible form factor
+- Powered from single FMC connector
+- Provides two channels of ADC and two channels of DAC with full
+  synchronization capabilities
+
+AD9680-1250 ADC
+~~~~~~~~~~~~~~~
+
+- JESD204B (subclass 1) 4-lane coded serial digital outputs
+- SFDR: 80 dBc at 1.0 GHz AIN, 1.0 GSPS
+- Noise density: -154 dBFS/Hz at 1.0 GSPS
+- 2 GHz of usable analog input full power bandwidth
+- Two integrated DDCs per channel
+
+AD9152 DAC
+~~~~~~~~~~
+
+- JESD204B (subclass 1) coded serial digital outputs
+- Supports complex signal bandwidths up to 800 MHz
+- 6-carrier GSM IMD = 75 dBc at 75 MHz IF
+- SFDR = 85 dBc (BW = 300 MHz) at DC IF
+- Selectable 2x, 4x, 8x interpolation filters
+
+Applications
+~~~~~~~~~~~~
+
+- Electronic test and measurement equipment
+- General-purpose software radios
+- Radar systems
+- Ultra wideband satellite receivers
+- Signals intelligence (SIGINT)
+- Point to point communication systems
+- DOCSIS 3.0 CMTS and HFC networks
+- Multiple input/multiple output (MIMO) radios
+- Automated test equipment
+
+Supported Carriers
+------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+     - No-OS
+   * - :xilinx:`KCU105 <products/boards-and-kits/kcu105.html>`
+     - Yes
+     - Yes
+     - Yes
+   * - :xilinx:`VCU118 <products/boards-and-kits/vcu118.html>`
+     - Yes
+     - Yes
+     - Yes
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
+     - Yes
+     - Yes
+     - Yes
+   * - :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`
+     - Yes
+     - Yes
+     - Yes
+
+Quick Start
+-----------
+
+The AD-FMCDAQ3-EBZ connects to the HPC connector of the carrier board.
+The carrier setup requires power, UART (115200), Ethernet (Linux), HDMI
+(if available) and/or JTAG (No-OS) connections.
+
+.. image:: daq3_zc706_setup.jpg
+   :align: center
+   :width: 500
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+- SD card (8 GB or larger) imaged with the latest
+  :doc:`Kuiper Linux </linux/kuiper/index>` release
+- A UART terminal (PuTTY / Tera Term / Minicom), baud rate 115200 (8N1)
+
+ZCU102
+~~~~~~
+
+SD Card Boot Files
+++++++++++++++++++
+
+Copy the following files into the SD card **BOOT** partition:
+
+- **Image** from ``zynqmp-common`` folder
+- **BOOT.BIN** specific to AD-FMCDAQ3-EBZ + ZCU102
+- **system.dtb** specific to AD-FMCDAQ3-EBZ + ZCU102
+
+Hardware Setup
+++++++++++++++
+
+#. Insert the SD card into the SD Card Interface Connector (J100).
+#. Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **HPC0**
+   (FMC0) socket.
+#. Plug your DisplayPort monitor into the Display Port Video Connector
+   (P11).
+#. Plug your USB keyboard and mouse into the USB 2.0 connector (J83).
+#. Plug the power supply into the 12 V power input connector (J52).
+   **Do not turn the device on yet.**
+#. Set the boot mode jumpers on SW6: position 1 **ON**, positions 2-4
+   **OFF**.
+#. Turn on the power switch. Wait approximately 30 seconds for the
+   DONE LED to turn green.
+
+ZC706
+~~~~~
+
+SD Card Boot Files
+++++++++++++++++++
+
+Create an SD card image using the latest
+:doc:`Kuiper Linux </linux/kuiper/index>` release for Zynq boards.
+
+Hardware Setup
+++++++++++++++
+
+#. Insert the SD card into the SD Card Interface Connector (J30).
+#. Connect the AD-FMCDAQ3-EBZ FMC board to the HPC Connector.
+#. Plug your HDMI display device into the HDMI Video Connector (P1).
+#. Plug your USB keyboard/mouse into the USB 2.0 connector (J49).
+#. Plug the power supply into the 12 V power input connector (J22).
+   **Do not turn the device on yet.**
+#. Set boot mode switch SW11: 1: Down, 2: Down, 3: Up, 4: Up, 5: Down.
+#. Turn on the power switch. Wait approximately 30 seconds for the
+   DONE LED to turn green, then another 30 seconds for the HDMI display.
+
+.. note::
+
+   The ZC706 is built around an XC7Z045 FFG900 -2 FPGA, which means the
+   design will be overclocked when configured for 1233 MSPS. In a production
+   design, an XC7Z045 FFG900 -3 FPGA should be used, or the lane rate should
+   be within the supported range for the specific FPGA.
+
+KCU105
+~~~~~~
+
+The KCU105 uses a MicroBlaze soft processor and requires JTAG programming.
+
+Required Hardware
++++++++++++++++++
+
+- :xilinx:`KCU105 <products/boards-and-kits/kcu105.html>` Rev 1.0 or later
+- AD-FMCDAQ3-EBZ FMC board
+- Ethernet cable
+- 2 x Micro-USB cables (UART + JTAG)
+
+Hardware Setup
+++++++++++++++
+
+#. Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC1** HPC
+   socket (**J22**).
+#. Connect USB UART (J4) and USB JTAG (J87) to the host PC.
+#. Set pin 6 of SW15 to 0 and pin 5 to 0 for JTAG boot mode.
+#. Plug the power supply into the 12 V power input connector (J15) and
+   turn on.
+#. Program the FPGA via XSCT or the provided TCL script and load the
+   MicroBlaze Linux image.
+#. After boot, log in with user ``root`` and password ``analog``.
+#. Use ``ifconfig`` to obtain the board IP address and connect via the
+   IIO Oscilloscope remotely.
+
+VCU118
+~~~~~~
+
+The VCU118 uses a MicroBlaze soft processor and requires JTAG programming.
+
+Required Hardware
++++++++++++++++++
+
+- :xilinx:`VCU118 <products/boards-and-kits/vcu118.html>` Rev 1.0 or later
+- AD-FMCDAQ3-EBZ FMC board
+- Ethernet cable
+- 2 x Micro-USB cables (UART + JTAG)
+
+Hardware Setup
+++++++++++++++
+
+#. Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC+**
+   socket (J22).
+#. Connect USB UART (J4) and USB JTAG (J106) to the host PC.
+#. Set the jumpers of SW16 (JTAG mode): 1: **OFF**, 2: **ON**, 3: **OFF**,
+   4: **ON**.
+#. Plug the power supply into the 12 V power input connector (J15) and
+   turn on.
+#. Program the FPGA via XSCT or the provided TCL script and load the
+   MicroBlaze Linux image.
+#. After boot, log in with user ``root`` and password ``analog``.
+#. Verify the IIO devices are present:
+
+   .. code-block:: bash
+
+      iio_info | grep iio:device
+
+   Expected devices: ``axi-ad9152-hpc``, ``ad9528``, ``axi-ad9680-hpc``,
+   ``ad7291``.
+
+#. Use ``ifconfig`` to obtain the board IP address and connect via the
+   IIO Oscilloscope remotely.
+
+IIO Oscilloscope
+~~~~~~~~~~~~~~~~
+
+The :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` application
+can be used to interact with the platform either locally or remotely:
+
+- **Local** (Zynq / ZynqMP only): Connect a display and USB keyboard/mouse
+  directly to the carrier. The IIO Oscilloscope application launches
+  automatically on the desktop.
+- **Remote**: Connect USB UART to your host PC and plug an Ethernet
+  cable into the carrier RJ45 connector. Use ``ifconfig`` on the UART
+  terminal to obtain the board IP address, then connect using the IIO
+  Oscilloscope on your host PC via **Settings > Connect** with the URI
+  ``ip:<board_ip>``.
+
+.. note::
+
+   This is a persistent filesystem. Always shut down properly from the
+   terminal (``sudo shutdown -h now``) before disconnecting power, otherwise
+   the SD card may be corrupted.
+
+Hardware
+--------
+
+Components
+~~~~~~~~~~
+
+The FMC board includes the following products by Analog Devices:
+
+- :adi:`AD9680` 14-bit, 1250 MSPS, dual JESD204B ADC
+- :adi:`AD9152` dual, 16-bit, 2500 MSPS, JESD204B DAC
+- :adi:`AD9528` JESD204B clock generator with 14 LVDS/HSTL outputs
+- :adi:`ADP2384` 20 V, 4 A, synchronous, step-down DC-to-DC regulator
+- :adi:`ADP7104` 20 V, 500 mA, low noise, CMOS LDO
+- :adi:`ADP150` ultralow noise, 150/200 mA LDO
+- :adi:`ADP1741` 2 A, low Vin, low dropout, CMOS linear regulator
+- :adi:`ADP1755` low Vin, 1.2 A LDO
+- :adi:`ADM7154` 600 mA, ultralow noise, high PSRR, RF linear regulator
+- :adi:`AD7291` 8-channel, I2C, 12-bit SAR ADC for voltage monitoring
+
+Parts List
+~~~~~~~~~~
+
+.. image:: parts_list.png
+   :align: center
+   :width: 500
+
+Board Size
+~~~~~~~~~~
+
+The size of the board (not including the SMA connectors) is 3.12 inches by
+2.72 inches (approximately 79 mm x 69 mm).
+
+Functional Overview
+~~~~~~~~~~~~~~~~~~~
+
+The system consists of four functional partitions: transmit path, receive
+path, clocking, and power supply.
+
+.. figure:: fmcdaq3_block_diagram.jpg
+   :align: center
+   :width: 600
+
+   AD-FMCDAQ3-EBZ functional block diagram
+
+**Transmit**
+
+The reference design generates the signals for :adi:`AD9152` either from an
+internal DDS or external memory (via VDMA). The internal DDS consists of four
+independent signal generators with programmable phase offset and frequency.
+These four signal generators are paired to create two tones that are
+interleaved and driven to the DAC.
+
+**Receive**
+
+The reference design transfers the received data from the :adi:`AD9680` to DDR
+via DMA. An optional off-line FFT core may be used to generate a spectrum
+plot.
+
+**Clocking**
+
+The system is clocked through an on-board crystal (100 MHz). The clock path
+mainly consists of the :adi:`AD9528` which up-converts this signal to
+~3.7 GHz, and then divides this back down to any integer divider of this
+~3.7 GHz output.
+
+The default reference design uses the following configuration:
+
+- Crystal generates a fixed clock frequency of 100 MHz
+- AD9528 creates:
+
+  - 1233 MHz for the DAC sample rate
+  - 1233 MHz for the ADC sample rate
+  - 616 MHz for the reference clocks to the FPGA
+
+These clocks can be changed. The :adi:`AD9528` drives both the ADC and DAC.
+The AD9528 has various clock banks. For more details, download the
+:adi:`AD9528 evaluation board software <EVAL-AD9528>` and explore the
+different settings.
+
+**Power**
+
+The board receives all power from the FPGA board through the FMC connector.
+The monitoring function of the board's DC voltages is accomplished using the
+:adi:`AD7291` SAR ADC.
+
+.. figure:: fmcdaq3_monitoring_adc.jpg
+   :align: center
+   :width: 600
+
+   AD7291 voltage monitoring block diagram
+
+The VADJ pin from the FMC connector is used for supplying the translators
+VCCA voltage. Supported voltage values of this pin are: 1.2 V / 1.5 V /
+1.8 V / 2.5 V / 3.3 V.
+
+**Front-end Design**
+
+For differential to single-ended conversion and for minimizing 2nd harmonic
+distortion in transmitting and receiving, a double-balun configuration is used
+for the TX and RX front-end interface. For more topology detail and design
+insights, refer to:
+
+- `Wideband A/D Converter Front-End Design Considerations: When to Use a Double Transformer Configuration <https://www.analog.com/en/analog-dialogue/articles/wideband-a-d-converter-front-end-design-considerations.html>`__
+- `Wideband A/D Converter Front-End Design Considerations II: Amplifier- or Transformer Drive for the ADC? <https://www.analog.com/en/analog-dialogue/articles/wideband-adc-design-considerations-2.html>`__
+- `Transformer-Coupled Front-End for Wideband A/D Converters <https://www.analog.com/en/analog-dialogue/articles/transformer-coupled-front-end-a-d-converters.html>`__
+
+HDL Reference Design
+--------------------
+
+The reference design is a processor based (ARM, Nios II or Microblaze)
+embedded system. The device interfaces are shared by the same set of
+transceivers followed by the individual JESD204B and ADC/DAC cores. The
+cores are programmable through an AXI-lite interface. The data path consists
+of independent DMA interfaces for the transmit and receive paths.
+
+Block Diagrams
+~~~~~~~~~~~~~~
+
+.. figure:: ad-fmcdaq3-ebz.svg
+   :align: center
+
+   AD-FMCDAQ3-EBZ block diagram
+
+.. figure:: daq3_xilinx_2.svg
+   :align: center
+
+   Xilinx block diagram
+
+.. figure:: daq3_intel_2.svg
+   :align: center
+
+   Intel block diagram
+
+Digital Interface
+~~~~~~~~~~~~~~~~~
+
+The digital interface consists of 4 transmit and 4 receive lanes running at
+12.33 Gbps (default). The transceivers then interface to the cores at
+128 bits at 308.25 MHz. The data is sent or received based on the
+configuration (programmable) from separate transmit and receive chains.
+
+DAC Interface
+~~~~~~~~~~~~~
+
+The DAC data may be sourced from an internal data generator (DDS, pattern or
+PRBS) or from the external DDR via DMA. The internal DDS phase and frequency
+are programmable.
+
+ADC Interface
+~~~~~~~~~~~~~
+
+The ADC data is sent to the DDR via DMA. The core also supports PN monitoring
+at the sample level. This is different from the JESD204B specific PN sequence
+(though they both use the same equation).
+
+Control and SPI
+~~~~~~~~~~~~~~~
+
+The device control and monitor signals are interfaced to a GPIO module.
+The SPI signals are controlled by a separate AXI based SPI core.
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/daq3`
+
+Software Support
+----------------
+
+Linux Drivers
+~~~~~~~~~~~~~
+
+Analog Devices provides full Linux support for the AD-FMCDAQ3-EBZ.
+Descriptions of the individual Linux device drivers:
+
+- :git-linux:`AD9680 Linux Driver <drivers/iio/adc/ad9680.c>`
+- :git-linux:`AD9528 Clock Linux Driver <drivers/iio/frequency/ad9528.c>`
+- :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
+- :git-linux:`AXI DAC DDS Linux Driver <drivers/iio/frequency/cf_axi_dds.c>`
+- :dokuwiki:`JESD204B/C Transmit Linux Driver </resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+- :dokuwiki:`JESD204B/C Receive Linux Driver </resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+- :dokuwiki:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+
+Device Trees
+~~~~~~~~~~~~
+
+- :git-linux:`ZC706 DTS <arch/arm/boot/dts/xilinx/zynq-zc706-adv7511-fmcdaq3.dts>`
+- :git-linux:`ZCU102 DTS <arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-fmcdaq3.dts>`
+
+No-OS Project
+~~~~~~~~~~~~~
+
+The no-OS bare-metal software supports the following carriers:
+
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
+- :xilinx:`KCU105 <products/boards-and-kits/kcu105.html>`
+
+Building and running the no-OS project requires building the HDL first.
+The build flow is developed around GNU make. The prerequisites are that
+``vivado`` (or ``quartus``) and ``make`` can be run from a shell.
+
+Building the HDL:
+
+.. code-block:: bash
+
+   cd hdl/projects/daq3/kcu105
+   make
+
+   cd hdl/projects/daq3/zc706
+   make
+
+Building the no-OS software:
+
+.. code-block:: bash
+
+   cd no-OS/fmcdaq3/kcu105
+   make
+
+   cd no-OS/fmcdaq3/zc706
+   make
+
+Running the no-OS software (requires JTAG and UART connections):
+
+.. code-block:: bash
+
+   cd no-OS/fmcdaq3/kcu105
+   make run
+
+The best place to start in the no-OS code is the main function in
+``fmcdaq3.c``. It shows how individual components of the data path chain are
+initialized and programmed for the application.
+
+- :git-no-OS:`projects/fmcdaq3`
+
+More Information
+----------------
+
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- `JESD204B High-Speed Serial Interface Support <https://analogdevicesinc.github.io/hdl/library/jesd204/index.html>`__
+- :dokuwiki:`AD9528 Linux Driver Documentation </resources/tools-software/linux-drivers/iio-pll/ad9528>`
+- :dokuwiki:`AD9680 Linux Driver Documentation </resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+- :dokuwiki:`AD9152 Linux Driver Documentation </resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+
+Support
+-------
+
+If you have any questions regarding the AD-FMCDAQ3-EBZ feel free to ask on
+the :ez:`FPGA Reference Designs Forum <fpga>`.
