@@ -1,0 +1,180 @@
+.. _ad-fmcadc2-ebz:
+
+AD-FMCADC2-EBZ
+===============
+
+.. warning::
+
+   Support for the AD-FMCADC2-EBZ is discontinued starting with the 2022_R2
+   ADI Kuiper Linux release and it will not be supported in future releases.
+   The last release with pre-built files is **2021_r2**. Check the
+   :doc:`Kuiper Linux </linux/kuiper/index>` page for all releases.
+   The HDL project source code can still be found on the
+   :git-hdl:`hdl_2021_r2 <hdl_2021_r2:projects/fmcadc2>` release branch.
+
+The :adi:`AD-FMCADC2-EBZ` is a high speed data acquisition board featuring
+the :adi:`AD9625` single channel ADC at 2500 MSPS, in an FMC form factor
+which supports the JESD204B high speed serial interface. This board meets most
+of the FMC specifications in terms of mechanical size, mounting hole locations,
+and more.
+
+The :adi:`AD9625` is a 12-bit monolithic sampling analog-to-digital converter
+(ADC) that operates at conversion rates of up to 2.5 GSPS. This product is
+designed for sampling wide bandwidth analog signals up to the second Nyquist
+zone. The combination of wide input bandwidth, high sampling rate, and excellent
+linearity of the AD9625 is ideally suited for spectrum analyzers, data
+acquisition systems, and a wide assortment of military electronics
+applications, such as radar and jamming/antijamming measures.
+
+The card is mechanically (width/depth, but not height) and electrically
+compliant to the FMC standard (ANSI/VITA 57.1).
+
+This board is targeted to use the ADI reference designs that work with Xilinx
+development systems. ADI provides complete source (HDL and software) to
+recreate those projects, but may not provide enough information to port this to
+a custom platform.
+
+.. image:: ad-fmcadc2-ebz-photo.jpg
+   :align: center
+   :width: 420
+
+Contains
+--------
+
+The card contains:
+
+- :adi:`AD9625` 12-bit ADC with sampling speeds of up to 2500 MSPS, with a
+  JESD204B digital interface.
+- :adi:`ADP7104` 20 V, 500 mA, low noise, CMOS LDO
+- :adi:`ADP1753` low dropout linear regulator, 1.6 V to 3.6 V input, up to
+  800 mA output current
+- :adi:`ADP2119` 2 A, 1.2 MHz, synchronous step-down DC-to-DC regulator
+- :adi:`ADP1741` 2 A, low Vin, low dropout, CMOS linear regulator
+- :adi:`ADR280` ultralow power high PSRR voltage reference
+
+Note for Revision C
+--------------------
+
+If you have a revision C board as indicated in etch next to the white scratch
+pad area of the PCB, it is recommended to write to the Serial Output Adjust
+Register. If you are using the reference design this is done for you. Otherwise
+when you configure the AD9625 it is suggested that you increase the serial
+output emphasis by writing to register 0x015 bits 5:4 either 10 or 11.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9625`
+
+Supported Carriers
+------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
+     - Yes (HPC Slot)
+     - Yes
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
+     - Yes (HPC Slot)
+     - Yes
+
+HDL Reference Design
+--------------------
+
+The reference design includes the device data capture via the JESD204B serial
+interface and the SPI interface. The samples are written to the external
+DDR-DRAM. It allows programming the device and monitoring its internal
+registers via SPI.
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`hdl_2021_r2:projects/fmcadc2/zc706`
+- :git-hdl:`hdl_2021_r2:projects/fmcadc2/vc707`
+
+Specifications
+--------------
+
+The AD-FMCADC2-EBZ board's primary purpose is to quickly and easily connect to
+an FMC carrier platform and start collecting data using the AD9625. The board
+is designed to be easy to use. Out of the box the board will self power and
+self clock when connected to an FMC carrier. The only other required equipment
+is your chosen signal source to provide an input signal to "Ain".
+
+This rapid prototyping board also has 4 vertically mounted SMA connectors.
+These are labeled SYSREF IN and SYSREF OUT. These are to enable
+synchronization of multiple AD-FMCADC2-EBZ boards together using
+characteristics of the JESD204B high speed serial interface between the AD9625
+and FPGA.
+
+Clocking
+~~~~~~~~
+
+The AD-FMCADC2-EBZ provides multiple options for clocking the AD9625. The
+default configuration of the board clocks the ADC using an on-board 2.5 GHz,
+low noise, crystal oscillator. This oscillator is then routed through a wide
+band transformer producing the differential clock for the ADC.
+
+Alternatively, the oscillator can be disconnected and an external clock source
+connected by only changing two components on the board. A single ended clock
+connected to the CLK+ input would then be routed through the transformer in
+the same way.
+
+Finally, the option exists to connect a differential clock to the board using
+both the CLK+ and CLK- inputs. Then referencing the schematic, make the
+component changes to directly route the differential input bypassing the
+transformer.
+
+Front End
+~~~~~~~~~
+
+The AD-FMCADC2-EBZ uses a passive front end designed for very wide bandwidth.
+A single ended input needs to be provided to "Ain". A 500 kHz to 6 GHz
+broadband balun then converts the input signal to differential.
+
+Software Support
+----------------
+
+Linux Drivers
+~~~~~~~~~~~~~
+
+- :git-linux:`AD9625 Linux Driver <drivers/iio/adc/ad9467.c>`
+- :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
+- :dokuwiki:`JESD204B/C Receive Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+- :dokuwiki:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+
+Eye Scan
+~~~~~~~~
+
+The JESD204B eye scan for this board can be found at
+:dokuwiki:`JESD Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`.
+
+Bare Metal Software
+~~~~~~~~~~~~~~~~~~~
+
+For bare metal (no-OS) development, the required software tools include the
+Xilinx Vivado and SDK toolchain. A UART terminal (e.g., Tera Term) at
+115200 baud (8N1) is required for console output.
+
+After building the HDL project in Vivado, the Xilinx SDK can be used to create
+an empty application project, then import the no-OS source files into the
+``src`` folder. The project can be debugged using the Vivado Hardware Manager
+and the integrated logic analyzer (ILA) debug cores.
+
+More Information
+----------------
+
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- `JESD204B High-Speed Serial Interface Support <https://analogdevicesinc.github.io/hdl/library/jesd204/index.html>`__
+- :doc:`AD-FMCADC2-EBZ User Guide </solutions/reference-designs/ad-fmcadc2-ebz/index>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the core
+with Analog Devices components (ADC, DAC, Video, Audio, etc) via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
