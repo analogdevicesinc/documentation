@@ -1,0 +1,333 @@
+.. _adv7511:
+
+ADV7511 User Guide
+==================
+
+Introduction
+------------
+
+The :adi:`ADV7511` is a 225 MHz High-Definition Multimedia Interface (HDMI)
+transmitter. It is part of several Xilinx evaluation boards. This reference
+design provides the video and audio interface between the FPGA and the ADV7511
+on board. The video uses a 16-bit 4:2:2 YCbCr interface (except VC707 which
+uses a 36-bit 4:4:4 RGB interface) and the audio uses a single-bit SPDIF
+interface.
+
+The digital video interface contains an HDMI 1.4- and a DVI 1.0-compatible
+transmitter and supports all HDTV formats (including 1080p with 12-bit Deep
+Color). The ADV7511 supports HEAC (ARC), 3D video, x.v.Color, high bit rate
+audio, and programmable AVI InfoFrames. With the inclusion of HDCP, the ADV7511
+allows secure transmission of protected content as specified by the HDCP 1.4
+protocol.
+
+The ADV7511 supports both S/PDIF and 8-channel I2S audio. Its high fidelity
+8-channel I2S can transmit either stereo or 7.1 surround audio up to 768 kHz.
+The S/PDIF can carry compressed audio including Dolby Digital, DTS, and THX.
+
+The reference design reads 24 bits of RGB data from DDR and performs color
+space conversion (RGB to YCbCr) and down sampling (4:4:4 to 4:2:2). If
+bypassed, the lower 16 bits of DDR data are passed to the HDMI interface
+directly.
+
+Supported Devices
+-----------------
+
+- :adi:`ADV7511`
+- :adi:`ADV7511W`
+- :adi:`ADV7513`
+
+Supported Carriers
+------------------
+
+- :xilinx:`AC701 <products/boards-and-kits/ek-a7-ac701-g.html>`
+- :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
+- :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
+- :xilinx:`ZC702 <products/boards-and-kits/ek-z7-zc702-g.html>`
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+Requirements
+~~~~~~~~~~~~
+
+- One of the supported carrier boards
+- HDMI monitor
+- HDMI cable
+- UART terminal (Tera Term / Hyperterminal) at baud rate 115200
+
+Quick Start
+-----------
+
+The following steps set up the system with the no-OS reference design:
+
+#. Connect an HDMI cable between the board HDMI output and the HDMI monitor.
+   Turn on the carrier board.
+#. Build the HDL project following the
+   `Building HDL instructions <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`__.
+#. Choose the carrier board in software by uncommenting the appropriate define
+   in the ``src/app_config.h`` file (for example ``#define PLATFORM_ZED`` for
+   the ZedBoard).
+
+   .. figure:: adv7511_platform_selection.png
+      :align: center
+
+      Platform selection in app_config.h
+
+#. Build the no-OS software project following the
+   `no-OS build instructions <https://github.com/analogdevicesinc/no-OS/wiki>`__.
+#. If programming was successful, messages will appear on the UART terminal.
+
+.. figure:: adv7511_lib_test.png
+   :align: center
+
+   No-OS ADV7511 HDMI transmitter application terminal output
+
+The reference design demonstrates how to:
+
+- Initialize the ADV7511 HDMI transmitter
+- Check the current AVR operating mode and set the AV mute state accordingly
+- Display an image and play a sound through the HDMI output
+
+HDL Reference Design
+--------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design consists of two independent pcore modules for video
+and audio.
+
+Video Path
+^^^^^^^^^^
+
+The video part consists of an AXI DMAC interface and the ADV7511 video
+interface. The ADV7511 interface uses a 16-bit YCbCr 4:2:2 format with
+separate synchronization signals. The DMA streams frame data to this core.
+The internal buffers are small (1 kB) and do not buffer any frames. Additional
+resources may cause loss of synchronization due to DDR bandwidth requirements.
+
+The video core supports any format through a set of parameter registers. The
+pixel clock is generated internal to the device and must be configured for
+the correct pixel frequency. A programmable color pattern is available for
+debug purposes. A zero-to-one transition on the enable bits triggers the
+corresponding action for HDMI enable and color pattern enable.
+
+A color pattern register provides a quick check of any RGB values on the
+monitor. If enabled, the register data is used as the pixel data for the
+entire frame.
+
+The reference design defaults to 1080p video mode (148.5 MHz pixel clock).
+
+.. list-table:: 1080p Video Timing Parameters
+   :header-rows: 1
+
+   * - Parameter
+     - Description
+     - Value
+   * - HSYNC count
+     - Total horizontal pixel clocks
+     - 2200
+   * - HSYNC width
+     - Horizontal sync pulse width (pixel clocks)
+     - 44
+   * - HSYNC DE min
+     - Start of active video (sync width + back porch)
+     - 192 (44 + 148)
+   * - HSYNC DE max
+     - End of active video (sync + back porch + active)
+     - 2112 (44 + 148 + 1920)
+   * - VSYNC count
+     - Total vertical pixel clocks
+     - 1125
+   * - VSYNC width
+     - Vertical sync pulse width (pixel clocks)
+     - 5
+   * - VSYNC DE min
+     - Start of active video (sync width + back porch)
+     - 41 (5 + 36)
+   * - VSYNC DE max
+     - End of active video (sync + back porch + active)
+     - 1121 (5 + 36 + 1080)
+
+Audio Path
+^^^^^^^^^^
+
+The audio part consists of an AXI DMAC interface and the ADV7511 SPDIF audio
+interface. The audio clock is derived from the bus clock. A programmable
+register controls the division factor. Audio data is read from DDR as two
+16-bit words for left and right channels, then transmitted on the SPDIF frame.
+The reference design defaults to 48 kHz.
+
+.. list-table:: Audio Registers (axi_spdif_tx)
+   :header-rows: 1
+
+   * - Address
+     - Bits
+     - Name
+     - Description
+   * - 0x00
+     - [23:20]
+     - mode
+     - Sample format 0 to 8 (0 = 16-bit, 8 = 24-bit)
+   * - 0x00
+     - [15:8]
+     - ratio
+     - Clock divider: transmit frequency = bus_clock / (1 + ratio)
+   * - 0x00
+     - [1]
+     - txdata
+     - Transmit data buffer enable (1) or disable (0)
+   * - 0x00
+     - [0]
+     - txenable
+     - Transmitter enable (1) or disable (0)
+   * - 0x04
+     - [7:6]
+     - frequency
+     - Sample frequency: 0 = 44.1 kHz, 1 = 48 kHz, 2 = 32 kHz, 3 = SRC
+   * - 0x04
+     - [2]
+     - pre-emphasis
+     - Pre-emphasis 50/15 us (1) or none (0)
+   * - 0x04
+     - [1]
+     - copy
+     - Copy permitted (1) or inhibited (0)
+   * - 0x04
+     - [0]
+     - audio
+     - Data format is non-audio (1) or audio (0)
+
+.. note::
+
+   For AXI-Lite byte addresses, multiply the register address by 4.
+
+Block Diagrams
+~~~~~~~~~~~~~~
+
+.. figure:: adv7511_zynq_bd.svg
+   :align: center
+
+   ADV7511 Xilinx block diagram
+
+.. figure:: adv7511_proc_bd.svg
+   :align: center
+
+   ADV7511 processor block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adv7511`
+
+Software Support
+----------------
+
+No-OS Project
+~~~~~~~~~~~~~
+
+The no-OS software reference design uses the ADV7511 Transmitter Library,
+which provides APIs for configuring the HDMI TX hardware without low-level
+register access. The library also provides interrupt service routines, HDCP
+high-level control, and status information.
+
+The no-OS driver performs the following:
+
+#. Initializes the HDMI core
+#. Initializes the ADV7511
+#. Transmits to an HDMI monitor an image whose resolution can be changed by
+   typing a number from 0 to 6 in the terminal
+#. Transmits audio to the HDMI monitor
+
+- :git-no-OS:`projects/adv7511`
+
+Serial Setup
+^^^^^^^^^^^^
+
+A UART terminal can be used to capture the output of the example program with
+the following settings:
+
+- Baud Rate: 115200 bps
+- Data: 8 bit
+- Parity: None
+- Stop bits: 1 bit
+- Flow Control: None
+
+.. figure:: adv7511_uart.png
+   :align: center
+
+   ADV7511 UART terminal output showing video resolution options
+
+Linux Driver
+~~~~~~~~~~~~
+
+The ADV7511 Linux driver is implemented as a DRM (Direct Rendering Manager)
+encoder bridge driver. In a typical board design the ADV7511 is used as an
+HDMI encoder frontend for a SoC or FPGA with a graphics core. Implementing
+the driver as a DRM bridge allows it to be reused across different platforms.
+
+The driver also supports audio via HDMI by implementing an ASoC codec driver,
+enabling reuse across a variety of platforms.
+
+The driver is mainlined in the Linux kernel:
+
+- :git-linux:`DRM bridge driver <drivers/gpu/drm/bridge/adv7511>`
+
+Supported devices:
+
+- :adi:`ADV7511`
+- :adi:`ADV7511W`
+- :adi:`ADV7513`
+- :adi:`ADV7533`
+- :adi:`ADV7535`
+
+Kernel Configuration
+^^^^^^^^^^^^^^^^^^^^
+
+The ADV7511 driver depends on ``CONFIG_DRM`` and ``CONFIG_I2C``.
+Enable it under:
+
+.. code-block:: text
+
+   Device Drivers  --->
+       Graphics support  --->
+           <*> Direct Rendering Manager  --->
+           ...
+           <*> ADV7511 encoder
+
+ASoC Audio
+^^^^^^^^^^
+
+The codec driver registers one DAI: ``adv7511``.
+
+.. list-table:: Supported DAI Formats
+   :header-rows: 1
+
+   * - Format
+     - Supported
+   * - I2S (SND_SOC_DAIFMT_I2S)
+     - Yes
+   * - Right Justified (SND_SOC_DAIFMT_RIGHT_J)
+     - Yes
+   * - Left Justified (SND_SOC_DAIFMT_LEFT_J)
+     - Yes
+   * - S/PDIF (SND_SOC_DAIFMT_SPDIF)
+     - Yes
+   * - Normal bit/frameclock (SND_SOC_DAIFMT_NB_NF)
+     - Yes
+   * - Inverted bitclock, normal frameclock (SND_SOC_DAIFMT_IB_NF)
+     - Yes
+   * - Codec bit/frameclock slave (SND_SOC_DAIFMT_CBS_CFS)
+     - Yes
+
+More Information
+----------------
+
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- :dokuwiki:`Linux with HDMI video output on the ZED and ZC702 boards </resources/tools-software/linux-drivers/platforms/zynq>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
