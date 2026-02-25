@@ -1,0 +1,72 @@
+.. _eval-m355-ardz-int:
+
+EVAL-M355-ARDZ-INT
+===================
+
+ADuCM355 Arduino Interposer.
+
+Overview
+--------
+
+The EVAL-M355-ARDZ-INT is an interposer board for connecting :adi:`ADuCM355`
+based sensor boards to the :adi:`EVAL-ADICUP3029` development board or any
+equivalent Arduino MCU controller board. The interposer supports up to four
+ADuCM355 sensor daughter boards simultaneously for testing functionality and
+performance in a controlled evaluation environment.
+
+Compatible sensor boards include the :ref:`EVAL-CN0428-EBZ <eval-cn0428-ebz>`
+(water quality sensor) and :ref:`EVAL-CN0429-EBZ <eval-cn0429-ebz>` (gas
+sensor).
+
+Required Equipment
+------------------
+
+- EVAL-M355-ARDZ-INT interposer board
+- :adi:`EVAL-ADICUP3029` development board
+- ADuCM355 sensor daughter boards (up to 4)
+- Micro-USB cable
+- Standard 10-pin ARM JTAG/SWD ribbon cable (for debugging)
+
+Hardware Setup
+--------------
+
+- Provides 3.3 V power supply to ADuCM355 sensor boards.
+- **S1** (SWD_DEBUG_CH_SW) -- Switch matrix for channel selection and
+  independent debugging/programming of each sensor board.
+- **S2** -- Protocol selector switch (UART/I2C/SPI).
+- **DS1--DS4** -- LED indicators identifying which sensor board is being
+  accessed.
+- **P10** -- SWD/JTAG debugging connector for 10-pin ARM ribbon cable.
+- **P7, P9** -- SPI communication connectors.
+- **P7** -- I2C communication connector.
+- **P8** -- UART communication connector.
+
+Software Setup
+--------------
+
+ADuCM355 sensor boards come preloaded with SPI communication protocol.
+Combined firmware for CN0428 and CN0429 applications is available on GitHub.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-M355-ARDZ-INT Design & Integration Files
+   <https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/eval-m355-ardz-int-designsupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADuCM355 Product Page <ADUCM355>`
+- :adi:`EVAL-ADICUP3029 Product Page <EVAL-ADICUP3029>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
