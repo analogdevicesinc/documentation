@@ -8,39 +8,260 @@ Isolated 2-Channel Simultaneous Sampling DAQ.
 Overview
 --------
 
-:adi:`CN0393` is a bank-isolated, 2-channel, 16-bit, 500 kSPS simultaneous
-sampling data acquisition system featuring uModule technology. The system
-achieves high channel density with isolation between the bank and the digital
-backplane while delivering exceptional performance.
+:adi:`CN0393` is a two-channel bank-isolated data acquisition (DAQ) system,
+with a multi-ADC simultaneous sampling architecture. The system uses
+:adi:`ADAQ7988` analog-to-digital converters in daisy-chain mode with
+:adi:`ADuM3150` isolators and :adi:`ADuM3470` for DC-to-DC conversion. Each
+channel includes :adi:`AD8251` programmable gain instrumentation amplifiers.
 
-The circuit uses two :adi:`ADAQ7988` 16-bit 500 kSPS uModule data acquisition
-systems in daisy-chain mode, the :adi:`AD8251` programmable gain
-instrumentation amplifier, the :adi:`ADuM3470` quad-channel digital isolator
-with integrated PWM controller, the :adi:`ADuM3150` high-speed digital isolator
-with trimmed delay clock, and the :adi:`ADR4550` 5.0 V precision voltage
-reference.
+The design provides digital bank isolation to protect backend circuitry and
+reduce ground loop interference. Multiple DAQ signal chains operate per ground
+plane with fewer digital isolation devices than channel-to-channel isolated
+systems. The :adi:`ADR4550` 5.0 V precision voltage reference provides the
+ADC reference.
 
 Required Equipment
 ------------------
 
-- EVAL-CN0393-FMCZ evaluation board
-- :adi:`EVAL-SDP-CH1Z` controller board
-- Power supply
-- Signal source
+- EVAL-CN0393-FMCZ circuit evaluation board (160-pin FMC connector interface)
+- :adi:`EVAL-SDP-CH1Z` (SDP-H1) controller board
+- CN0393 Evaluation Software
+- +12 V DC switched-mode power supply
+- USB Type A to Mini-B cable
+- Low distortion, low noise signal source(s)
+- PC with USB port running Windows XP, Vista (32-bit), or Windows 7/8/10
+  (32-bit) with .NET 4.0 framework
+
+Software Installation
+---------------------
+
+Install the evaluation software **before** connecting the hardware to ensure
+drivers are available when the board is first detected.
+
+1. Download and unzip the CN0393 Evaluation Software package. Run
+   ``setup.exe``.
+
+   .. figure:: cn0393install1.png
+      :align: center
+      :width: 500
+
+      Software installer welcome screen
+
+2. Select the destination directory and review the installation details before
+   proceeding.
+
+   .. figure:: cn0393install2.png
+      :align: center
+      :width: 500
+
+      Destination directory selection
+
+3. Complete the CN0393 software installation. The ADI SDP Drivers
+   (version 2.2.118.111) install automatically.
+
+   .. figure:: cn0393install3.png
+      :align: center
+      :width: 500
+
+      SDP driver installation
+
+4. Close the installation wizard upon completion. Verify installation through
+   Windows Device Manager -- the board appears under **ADI Development Tools**.
+
+   .. figure:: cn0393install4.png
+      :align: center
+      :width: 500
+
+      Device Manager verification
 
 Hardware Setup
 --------------
 
-- FMC connector interface to the SDP-CH1Z controller board.
-- Programmable gain settings: ±10 V, ±5 V, ±2.5 V, ±1.25 V input ranges.
-- Daisy-chain ADC mode with up to 40 MHz serial clock.
-- Input circuit protection included.
+The EVAL-CN0393-FMCZ evaluation hardware features an isolation trench that
+separates two ground planes. Ensure proper ground connections and avoid bridging
+isolated planes.
 
-Software Setup
---------------
+1. Connect **P1** on the EVAL-CN0393-FMCZ to **J4** on the EVAL-SDP-CH1Z via
+   the 160-pin FMC connector.
+2. Connect the +12 V power supply to the EVAL-SDP-CH1Z via the +12V_VIN jack.
+   Power delivery occurs through the FMC connector but remains inactive until
+   the software configures the hardware.
+3. Connect the hardware to the PC via USB cable.
+4. Verify the connection through Device Manager (the board appears under
+   **ADI Development Tools**).
 
-The evaluation software provides data acquisition, spectral analysis, and
-channel configuration for both simultaneous sampling channels.
+Software Operation
+------------------
+
+USB Connection
+~~~~~~~~~~~~~~
+
+Hardware detection occurs automatically upon software launch when properly
+connected. Connection failure triggers a popup offering rescan or standalone
+mode options. Successful connection displays "Hardware Connection and
+Initialization Complete" in the status bar.
+
+Configure Tab
+~~~~~~~~~~~~~
+
+The Configure tab provides the primary controls for data acquisition:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Control
+     - Description
+   * - Single Capture
+     - Executes one conversion set with sample count specified by the
+       Num Samples parameter.
+   * - Continuous Capture
+     - Performs repeated conversion sets until stopped.
+   * - Num Samples
+     - Determines the number of conversions per channel execution.
+   * - Status
+     - Displays operational information and software version details.
+   * - Reference Voltage (V)
+     - Set to the actual board reference voltage (default 5 V using
+       :adi:`ADR4550`).
+   * - Sampling Rate (kSPS)
+     - Configurable up to 500 kSPS maximum.
+   * - SCK Freq (MHz)
+     - Serial clock frequency, up to 40 MHz maximum.
+   * - CA Gain / CB Gain
+     - Software-controlled gain settings for channels A and B via the
+       :adi:`AD8251` gain address pins. Hardware updates occur immediately
+       upon new gain selection, with the status bar displaying current settings
+       and the CA/CB Input Range indicators updating accordingly.
+   * - Flash LED
+     - Activates the STATUS LED on the SDP-H1.
+
+**Input Range Configuration:**
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 20
+
+   * - Gain
+     - Input Range
+   * - 1
+     - ±10 V
+   * - 2
+     - ±5 V
+   * - 4
+     - ±2.5 V
+   * - 8
+     - ±1.25 V
+
+Waveform Tab
+~~~~~~~~~~~~
+
+The Waveform display presents time-domain results with configurable axes:
+
+- **Codes Selector** -- Y-axis shows raw :adi:`ADAQ7988` output codes.
+- **Volts Selector** -- Y-axis displays calculated input voltages.
+- **Samples Selector** -- X-axis shows sample numbers.
+- **Time Selector** -- X-axis displays time in microseconds.
+
+Analysis metrics include:
+
+- Peak-to-peak amplitude
+- Maximum and minimum amplitudes
+- Mean voltage
+- Standard deviation
+- Fundamental frequency
+
+Histogram Tab
+~~~~~~~~~~~~~
+
+The histogram displays the occurrence frequency of output codes with the
+following metrics:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Metric
+     - Description
+   * - Max/Min Code
+     - Highest and lowest output values with corresponding voltages.
+   * - Mean Code
+     - Average output value.
+   * - Transition Noise
+     - Noise measurement of results.
+   * - RMS
+     - Root-mean-square voltage calculation.
+   * - LSB
+     - Equivalent voltage change resulting in one-bit code change.
+   * - Histogram Width
+     - Total span of histogram data.
+
+FFT Tab
+~~~~~~~
+
+Frequency-domain analysis provides the following measurements:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Metric
+     - Description
+   * - Max/Min Amplitude
+     - Peak voltage values and codes.
+   * - Fund. Frequency
+     - Fundamental signal frequency.
+   * - Fund. Amplitude
+     - Fundamental amplitude in dB relative to full-scale.
+   * - Dynamic Range
+     - Input signal range measurement.
+   * - SNR
+     - Signal-to-noise ratio.
+   * - THD
+     - Total harmonic distortion.
+   * - SINAD
+     - Signal-to-noise-and-distortion ratio.
+   * - SFDR
+     - Spurious-free dynamic range.
+   * - Noise Floor
+     - Background noise level in dB.
+
+Summary Tab
+~~~~~~~~~~~
+
+Consolidates waveform, histogram, and FFT plots in a single view with all
+analysis metrics from the individual tabs combined for comprehensive signal
+evaluation.
+
+Menu Options
+~~~~~~~~~~~~
+
+**File Menu:**
+
+- **Reconnect to SDP** (Ctrl+L) -- Reestablishes USB connection.
+- **Load Data** (Ctrl+L) -- Imports previously saved ``.tsv`` result files.
+- **Save Data** (Ctrl+S) -- Exports current software state and conversion
+  results in ``.tsv`` format for external analysis tool integration.
+- **Save Image** (Ctrl+I) -- Captures a JPEG image of the current view.
+- **Exit** (Ctrl+Q) -- Closes the application.
+
+**Edit Menu:**
+
+- **Reinitialize Default Values** -- Restores all settings to defaults.
+
+**Help Menu:**
+
+- Links to Analog Devices website, CN0393 product page, user guide, context
+  help, and version information.
+
+Standalone Operation
+~~~~~~~~~~~~~~~~~~~~
+
+The software supports saving raw conversion results and control states in
+``.tsv`` format. Previously saved files can be loaded for offline analysis and
+visualization without hardware connection. This standalone mode activates when
+the user selects Cancel during hardware detection or upon connection loss,
+enabling full plotting and analysis capabilities.
 
 Documents
 ---------
@@ -65,6 +286,7 @@ Additional Information
 - :adi:`ADAQ7988 Product Page <ADAQ7988>`
 - :adi:`AD8251 Product Page <AD8251>`
 - :adi:`ADuM3470 Product Page <ADUM3470>`
+- :adi:`ADuM3150 Product Page <ADUM3150>`
 - :adi:`ADR4550 Product Page <ADR4550>`
 
 Help and Support
