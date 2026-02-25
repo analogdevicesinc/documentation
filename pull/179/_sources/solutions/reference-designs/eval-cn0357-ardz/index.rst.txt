@@ -1,0 +1,104 @@
+.. _eval-cn0357-ardz:
+
+EVAL-CN0357-ARDZ
+================
+
+Single-Supply, Low Noise, Portable Gas Detector Using an Electrochemical
+Sensor.
+
+Overview
+--------
+
+:adi:`CN0357` is a single-supply, low noise, portable gas detector using an
+electrochemical sensor. The Alphasense CO-AX Carbon Monoxide sensor is used
+in this example. Electrochemical sensors offer several advantages for
+instruments that detect or measure the concentration of many toxic gases.
+Most sensors are gas specific and have usable resolutions under one part per
+million (ppm) of gas concentration.
+
+The circuit uses the :adi:`ADA4528-2` dual auto-zero amplifier, which has a
+maximum offset voltage of 2.5 uV at room temperature and an industry-leading
+5.6 uV/sqrt(Hz) of voltage noise density. In addition, the :adi:`AD5270`
+programmable rheostat is used rather than a fixed transimpedance resistor,
+allowing for rapid prototyping of different gas sensor systems without
+changing the bill of materials.
+
+The :adi:`ADR3412` precision, low noise, micropower reference establishes the
+1.2 V common-mode, pseudo ground reference voltage with 0.1% accuracy and
+8 ppm/degC drift. For applications where measuring fractions of ppm gas
+concentration is important, using the :adi:`ADA4528-2` and the :adi:`ADR3412`
+makes the circuit performance suitable for interfacing with a 16-bit ADC,
+such as the :adi:`AD7790`.
+
+Simplified Schematic
+~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0357-simplified_schematic.png
+   :width: 800 px
+   :align: center
+
+   CN0357 Simplified Schematic
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-SDP-CB1Z` Controller Board (SDP-B Board)
+- :adi:`EVAL-CN0357-PMDZ` Evaluation Board (CN0357 Board)
+- :adi:`SDP-PMD-IB1Z` Interposer Board (SDP to Pmod Interposer Board)
+- :adi:`EVAL-CFTL-6V-PWRZ` (+6V Power Supply) or equivalent
+- PC running Windows with USB port
+- USB Type A to USB Type mini-B cable
+
+Hardware Setup
+--------------
+
+.. figure:: cn0357-hardware1.jpg
+   :width: 600 px
+   :align: center
+
+   CN0357 Hardware Setup
+
+#. Connect the EVAL-CN0357-PMDZ (CN0357 Board) to the SDP-PMD-IB1Z (SDP to
+   Pmod Interposer Board) via the 12-Pin connector.
+#. Connect the SDP-PMD-IB1Z (SDP to Pmod Interposer Board) to the
+   EVAL-SDP-CB1Z (SDP-B Board) via the 120-Pin connector.
+#. Connect the EVAL-CFTL-6V-PWRZ (+6V DC Power Supply) to the Barrel Jack at
+   J1 on the SDP-PMD-IB1Z (SDP to Pmod Interposer Board).
+#. Connect the USB cable to J1 of the EVAL-SDP-CB1Z (SDP-B Board).
+
+Using the Evaluation Software
+------------------------------
+
+#. Install the CN0357 Evaluation Software using the setup.exe installer from
+   the downloaded software package.
+#. Open the CN0357.exe application from the default installation location.
+#. The software will connect to the board automatically.
+#. Click the **Run** button to start data collection.
+#. Click the **Stop** button when acquisition is complete.
+
+The software provides the following controls:
+
+- **Run/Stop** -- Start and stop data acquisition.
+- **Save Data** -- Save collected data to a tab-delimited ASCII spreadsheet
+  file.
+- **Clear Data** -- Clear all data collected from the chart history.
+- **Sensor Type** -- Select Oxidation (sink) or Reduction (source) depending
+  on the sensor type.
+- **Feedback Selector** -- Choose between the Rheostat (:adi:`AD5270`) or a
+  fixed resistor for the transimpedance amplifier feedback.
+- **Buffer Mode** -- Enable or disable the ADC input buffers.
+
+More Information and Useful Links
+---------------------------------
+
+- :adi:`CN0357 Circuit Note Page <CN0357>`
+- :adi:`ADA4528-2 Product Page <ADA4528-2>`
+- :adi:`AD5270 Product Page <AD5270>`
+- :adi:`ADR3412 Product Page <ADR3412>`
+- :adi:`AD7790 Product Page <AD7790>`
+
+Help and Support
+~~~~~~~~~~~~~~~~
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

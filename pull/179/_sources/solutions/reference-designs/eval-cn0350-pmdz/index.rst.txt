@@ -1,0 +1,153 @@
+.. _eval-cn0350-pmdz:
+
+EVAL-CN0350-PMDZ
+=================
+
+Charge Input Data Acquisition System for Piezoelectric Sensors.
+
+Overview
+--------
+
+:adi:`CN0350` provides a robust and complete solution for processing charge
+input signals into digital code, for acceleration and shock measurements where
+piezoelectric sensors with charge output are used. The design solution is
+optimized for high precision and low cost measurement, using only two active
+devices, and has a total error less than 0.25% FSR after calibration over a
++/-10 degrees C temperature range.
+
+The circuit incorporates the :adi:`AD8608` quad op-amp and the :adi:`AD7091R`
+12-bit successive approximation (SAR) ADC to convert the charge output from
+piezoelectric sensors into digital code. The circuit has a 12-pin PMOD
+connector on board, which can be used for connection to a microprocessor or
+FPGA.
+
+.. figure:: cn0350_hw_375.jpg
+   :align: center
+   :width: 400
+
+   EVAL-CN0350-PMDZ Evaluation Board
+
+.. figure:: cn0350_overview_fig_1.png
+   :align: center
+
+   Charge Input Single Supply Data Acquisition System for Piezoelectric Sensors
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-SDP-CB1Z` Controller Board (SDP-B Board)
+- :adi:`EVAL-CN0350-PMDZ <CN0350>` Evaluation Board
+- :adi:`EVAL-CFTL-6V-PWRZ` +6 V Power Supply or equivalent
+- :adi:`SDP-PMD-IB1Z` SDP-to-PMOD Interposer Board
+- Voltage source (signal generator)
+- Multimeter (to measure the input current)
+- `CN0350 Evaluation Software
+  <https://www.analog.com/CN0350>`__
+- PC with USB type A port (Windows XP SP2 or later)
+- USB type A to USB type mini-B cable
+
+General Setup
+-------------
+
+- The :adi:`EVAL-CFTL-6V-PWRZ` (+6 V DC Power Supply) powers the
+  :adi:`SDP-PMD-IB1Z` (Interposer Board) via the DC barrel jack.
+- The :adi:`SDP-PMD-IB1Z` (Interposer Board) connects to the
+  :adi:`EVAL-SDP-CB1Z` (SDP-B Board) via the 120-pin connector A.
+- The :adi:`EVAL-SDP-CB1Z` (SDP-B Board) connects to the PC via the USB cable.
+- The EVAL-CN0350-PMDZ connects to the Interposer Board via the 12-pin header
+  PMOD connector (J2 and J3).
+- The voltage generator connects to the EVAL-CN0350-PMDZ via the terminal
+  block J1.
+
+.. figure:: cn0350_general_setup.png
+   :align: center
+
+   CN0350 General Test Setup
+
+Using the Evaluation Software
+------------------------------
+
+Software Controls
+~~~~~~~~~~~~~~~~~
+
+The CN0350 evaluation software provides the following controls and indicators:
+
+- **Acquire Data Button** -- collects conversion data and displays it in
+  the graph.
+- **Clear Data Button** -- clears all collected data from the graph history.
+- **Save Data Button** -- saves captured data to a tab-delimited ASCII
+  spreadsheet file. The units of the saved data depend on the chosen graph
+  units.
+- **Numerical Indicator** -- displays the current reading value.
+- **Graph Units Radio Buttons** -- selects between pC, mV, ADC Codes, and g.
+- **ADC Settings** -- configures the SPI communication sample rate and number
+  of samples.
+- **Calibrate Button** -- initiates board calibration.
+- **Calibration Coulombs Control** -- sets the input coulombs in pC for
+  calibration.
+- **Sensor Sensitivity Control** -- sets the sensor sensitivity in pC/g for
+  displaying acceleration data.
+
+Calibrating the Board
+~~~~~~~~~~~~~~~~~~~~~
+
+For calibration, an adjustable-amplitude, low-impedance output voltage source
+with sine wave output is required. The amount of input charge is determined by
+the formula Q = Ccal * Vin. A 1 nF capacitor is populated on the board for
+calibration; additional capacitors can be added in parallel using TP1 and TP2.
+
+.. note::
+
+   The output voltage of the charge amplifier must not exceed the input range
+   of the ADC. For a 1 nF calibration capacitor, do not apply more than 1 V
+   to the input of the board.
+
+#. Establish a USB connection.
+#. Click the **Calibrate System** tab.
+#. Set the **Calibration Coulombs Control** to the coulombs that will be
+   applied during calibration.
+#. Press the **Calibrate** button.
+#. Apply the coulombs to the input and click **OK** when ready.
+#. Remove the input source and click **OK** to complete calibration.
+
+Acquiring Data
+~~~~~~~~~~~~~~
+
+Once calibrated, the board can capture data from real piezoelectric sensors.
+Connect the positive end of the sensor to **POS** and the negative end to
+**NEG** on the board. Adjust the **Sensor Sensitivity Control** to match the
+sensor's sensitivity for acceleration display in g.
+
+#. Establish a USB connection.
+#. Click the **Acquire Data** button.
+
+Saving Data
+~~~~~~~~~~~
+
+#. Capture data as described above.
+#. Click the **Save Data** button.
+#. Choose a file location and name, then click **OK**.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `CN0350 Design & Integration Files <https://www.analog.com/CN0350>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD8608 Product Page <AD8608>`
+- :adi:`AD7091R Product Page <AD7091R>`
+- :adi:`CN0350 Circuit Note <CN0350>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

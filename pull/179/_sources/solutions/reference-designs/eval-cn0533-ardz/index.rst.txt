@@ -1,0 +1,106 @@
+.. _eval-cn0533-ardz:
+
+EVAL-CN0533-ARDZ
+================
+
+MEMS Accelerometer Vibration Sensing with 4-20 mA Current Loop Interface.
+
+Overview
+--------
+
+.. figure:: eval-cn0533-ardz.jpg
+   :width: 400 px
+   :align: center
+
+   EVAL-CN0533-EBZ Evaluation Board
+
+The :adi:`EVAL-CN0533-EBZ <CN0533>` is a MEMS accelerometer
+(:adi:`ADXL1002`) vibration sensing solution with included analog 4-20 mA
+current loop interface circuitry, suitable for condition-based monitoring
+(CbM) applications. The 4-20 mA current loop has been an industry analog
+signaling standard since the 1950s. The main advantage of this signal
+standard is that there is virtually no attenuation over long cables,
+therefore providing more robustness in EMI-prone environments such as
+industrial and factory settings.
+
+This reference design enables utilization of high-bandwidth, ultra-low noise
+MEMS accelerometers on legacy 4-20 mA data acquisition (DAQ) systems for
+CbM applications.
+
+Hardware Setup
+--------------
+
+Sensor Connections
+~~~~~~~~~~~~~~~~~~
+
+The EVAL-CN0533-EBZ is straightforward to set up. A cable, power supply
+(12 V to 24 V), and a 4-20 mA receiver are needed.
+
+#. Solder a triple twisted wire or shielded cable to the EVAL-CN0533-EBZ PCB.
+   Connect the ground line to GND, 4-20 mA output current to IOUT, and 12 V
+   supply to VCC.
+#. Supply the EVAL-CN0533-EBZ with 12 V, and connect the other end of the
+   IOUT and GND cables to a 4-20 mA receiver such as National Instruments
+   NI-9203.
+
+   .. note::
+
+      Some 4-20 mA receivers have an integrated voltage supply that can be
+      used instead of an external 12 V supply. Alternatively, an accurate and
+      temperature-stable resistor along with a voltage DAQ system may be used
+      instead of a current DAQ. The resistance value should be selected
+      according to the input voltage range of the DAQ.
+
+#. Set the acceleration sensitivity to 128 uA/g on the DAQ or vibration
+   measurement equipment. The sensitivity scale of the :adi:`ADXL1002` may
+   slightly vary from part to part, and can be calibrated using the gravity
+   field or other reference sensors.
+#. The EVAL-CN0533-EBZ is ready for experiment.
+
+Mechanical Mounting
+~~~~~~~~~~~~~~~~~~~
+
+The :adi:`ADXL1002` accelerometer used in this design is an ultra-low noise
+and high-bandwidth sensor. To achieve the best performance, a proper
+mechanical design is required to deliver the vibration signal from the
+measurement point to the sensor. Careful consideration in the design of the
+EVAL-CN0533-EBZ PCB has been taken to avoid vibration signal distortion due
+to mechanical resonance of the PCB structure.
+
+The :adi:`EVAL-XLMOUNT1` mechanical interface is optimized to have a 3 dB
+flat mechanical response of up to 20 kHz. By using the EVAL-XLMOUNT1, the
+vibration signal is adequately coupled with the sensor.
+
+#. Using four 4-40 3/8" screws, securely mount the EVAL-CN0533-EBZ to the
+   EVAL-XLMOUNT1 mechanical interface. For optimum performance, use all four
+   screws.
+#. Firmly mount the EVAL-XLMOUNT1 to the vibration platform or shaker table
+   using an M6 or similar diameter screw. Ensure that the sensitivity
+   direction of the :adi:`ADXL1002` is aligned with the platform's main
+   vibration direction.
+#. Follow the steps for proper sensor connection outlined above.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+`EVAL-CN0533-EBZ Design & Integration Files <https://www.analog.com/cn0533-designsupport>`__
+
+- Schematics
+- PCB Layout
+- Bill of Materials
+- Allegro Project
+
+More Information and Useful Links
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :adi:`CN0533 Circuit Note Page <CN0533>`
+- :adi:`ADXL1002 Product Page <ADXL1002>`
+- :adi:`AD5749 Product Page <AD5749>`
+- :adi:`LT6654 Product Page <LT6654>`
+- :adi:`EVAL-XLMOUNT1 Mechanical Interface <EVAL-XLMOUNT1>`
+
+Help and Support
+~~~~~~~~~~~~~~~~
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

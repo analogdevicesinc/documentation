@@ -1,0 +1,241 @@
+.. _eval-cn0349-pmdz:
+
+EVAL-CN0349-PMDZ
+=================
+
+Conductivity and Temperature Measurement System with Isolation.
+
+Overview
+--------
+
+:adi:`CN0349` provides a robust and complete solution for processing
+conductivity and temperature inputs into digital code. The design solution is
+optimized for high precision and low cost measurement, using five active
+devices, and has a total error less than 1% FSR after calibration. The output
+of the circuit is fully isolated, and therefore ground-loop interference is
+effectively reduced, making it ideal for industrial applications.
+
+The circuit incorporates the :adi:`AD5934` 12-bit impedance converter,
+:adi:`ADG715` octal SPST switch, :adi:`AD8606` rail-to-rail op-amp,
+:adi:`ADuM5000` isolated DC-DC converter, and :adi:`ADuM1250` dual I2C
+isolator to convert the conductivity and temperature inputs to digital code.
+
+The circuit has an 8-pin Digilent Pmod I2C interface connector on board, which
+can be used for connection to a microprocessor or FPGA.
+
+.. figure:: cn0349_hw_375.jpg
+   :align: center
+   :width: 400
+
+   EVAL-CN0349-PMDZ Evaluation Board
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-SDP-CB1Z` Controller Board (SDP-B Board)
+- :adi:`EVAL-CN0349-PMDZ <CN0349>` Evaluation Board
+- :adi:`EVAL-CFTL-6V-PWRZ` +6 V Power Supply or equivalent
+- :adi:`SDP-PMD-IB1Z` SDP-to-PMOD Interposer Board
+- Resistance decade box (e.g. IET RS-200) or real conductivity cell with
+  integrated Pt100 sensor (e.g. Sensorex CS200TC-PT1)
+- `CN0349 Evaluation Software
+  <https://www.analog.com/CN0349>`__
+- PC with USB type A port (Windows 7 64-bit or later)
+- USB type A to USB type mini-B cable
+
+General Setup
+-------------
+
+- The :adi:`EVAL-CFTL-6V-PWRZ` (+6 V DC Power Supply) powers the
+  :adi:`SDP-PMD-IB1Z` (Interposer Board) via the DC barrel jack.
+- The :adi:`SDP-PMD-IB1Z` (Interposer Board) connects to the
+  :adi:`EVAL-SDP-CB1Z` (SDP-B Board) via the 120-pin connector A.
+- The :adi:`EVAL-SDP-CB1Z` (SDP-B Board) connects to the PC via the USB cable.
+- The EVAL-CN0349-PMDZ connects to the Interposer Board via the 8-pin header
+  Digilent Pmod I2C interface connector (J2 on both boards).
+- The resistance decade box or conductivity cell connects to the
+  EVAL-CN0349-PMDZ via the terminal block J1.
+
+.. figure:: cn0349_general_setup.png
+   :align: center
+
+   CN0349 General Test Setup
+
+Hardware Interface
+------------------
+
+The EVAL-CN0349-PMDZ uses a standard Digilent Pmod 8-pin I2C connector
+interface (J2) to communicate with the host.
+
+.. list-table::
+   :header-rows: 1
+
+   * - J2 Pin
+     - Pin Function
+     - Mnemonic
+   * - Pin 1
+     - Serial Clock
+     - SCL
+   * - Pin 2
+     - Serial Clock
+     - SCL
+   * - Pin 3
+     - Serial Data
+     - SDA
+   * - Pin 4
+     - Serial Data
+     - SDA
+   * - Pin 5
+     - Digital Ground
+     - DGND
+   * - Pin 6
+     - Digital Ground
+     - DGND
+   * - Pin 7
+     - Digital Power
+     - VDD
+   * - Pin 8
+     - Digital Power
+     - VDD
+
+The CN0349 board accepts both +3.3 V +/-10% or +5 V +/-10% power supplies.
+The minimum current requirement is 300 mA.
+
+Using the Evaluation Software
+------------------------------
+
+Software Controls
+~~~~~~~~~~~~~~~~~
+
+The CN0349 evaluation software provides the following controls and indicators:
+
+- **Measure Button** -- performs a measurement procedure and displays data.
+- **Impedance Indicator** -- displays the measured input impedance in ohms.
+- **Conductivity Indicator** -- displays the measured conductivity in mS/cm.
+- **Conductivity Temperature Compensated Indicator** -- displays
+  temperature-compensated conductivity in mS/cm.
+- **Temperature Indicator** -- displays the measured temperature in degrees C
+  using an external Pt100 RTD sensor.
+- **Cell Constant Control** -- applies the cell constant for the conductivity
+  probe.
+- **Temperature Coefficient Control** -- applies the temperature coefficient
+  of the solution.
+- **Offset Control** -- applies offset correction to the measured conductivity.
+- **Measurement Range Radio Buttons** -- selects the input measurement range.
+- **Calibrate Button** -- initiates board calibration.
+- **Calibration Resistances Controls** -- sets the values for the three
+  on-board calibration resistances (R3, R4, R7).
+
+Calibrating the Board
+~~~~~~~~~~~~~~~~~~~~~
+
+#. Establish a USB connection.
+#. Click the **Calibrate System** tab.
+#. Press the **Calibrate** button.
+#. Wait for calibration to finish; a pop-up window indicates progress.
+#. Click **OK** when calibration is complete.
+
+Measuring Data
+~~~~~~~~~~~~~~
+
+#. Establish a USB connection.
+#. Choose the appropriate **Probe Corrections** settings.
+#. Select the **Measurement Range**.
+#. Click the **Measure** button.
+#. Wait for the measurement to complete and click **OK**.
+
+Software Recommendations
+-------------------------
+
+When developing custom application code with the EVAL-CN0349-PMDZ, the
+following requirements must be adhered to:
+
+Input Signal Setting
+~~~~~~~~~~~~~~~~~~~~
+
+The :adi:`AD5934` excitation voltage and PGA must use the following settings:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Part
+     - I2C Address
+     - Register Address
+     - Register Data
+     - Description
+   * - AD5934
+     - 0x0D
+     - 0x80
+     - 0x01
+     - Excitation Voltage 2.0 Vp-p, Internal PGA=1
+
+System Calibration
+~~~~~~~~~~~~~~~~~~
+
+The :adi:`ADG715` controls the conductivity calibration. At least one of the
+following calibration settings must be used. Two calibration points per range
+is recommended:
+
+.. list-table::
+   :header-rows: 1
+
+   * - I2C Data
+     - Function
+     - Description
+   * - 0x09
+     - High Range Cal 1
+     - Rfb=R9=100 ohm, Rcal=R3=100 ohm
+   * - 0x11
+     - High Range Cal 2
+     - Rfb=R9=100 ohm, Rcal=R4=1 kohm
+   * - 0x12
+     - Low Range Cal 1
+     - Rfb=R8=1 kohm, Rcal=R4=1 kohm
+   * - 0x22
+     - Low Range Cal 2
+     - Rfb=R8=1 kohm, Rcal=R7=10 kohm
+
+Measurement Ranges
+~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Range
+     - Conductivity Value
+   * - Low Range
+     - 1 uS to 1 mS
+   * - High Range
+     - 1 mS to 1 S
+
+.. note::
+
+   The board must be calibrated before measurement. Calibration theory and
+   calculations are described in the :adi:`CN0349` circuit note.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `CN0349 Design & Integration Files <https://www.analog.com/CN0349>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD5934 Product Page <AD5934>`
+- :adi:`ADG715 Product Page <ADG715>`
+- :adi:`AD8606 Product Page <AD8606>`
+- :adi:`ADuM5000 Product Page <ADUM5000>`
+- :adi:`ADuM1250 Product Page <ADUM1250>`
+- :adi:`CN0349 Circuit Note <CN0349>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
