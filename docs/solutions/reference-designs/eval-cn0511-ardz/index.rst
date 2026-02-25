@@ -1,0 +1,314 @@
+.. _eval-cn0511-ardz:
+
+EVAL-CN0511-RPIZ
+================
+
+DC to 5.5 GHz RF Signal Generator.
+
+Overview
+--------
+
+:adi:`CN0511` is an entirely self-contained DC to 5.5 GHz signal generator. It
+only requires a Raspberry Pi (RPi) to operate. The RF digital-to-analog
+converter (DAC), controlled using a 100 MHz Serial Peripheral Interface (SPI)
+from the RPi, allows for single tone, phase coherent, and fast frequency
+hopping across the spectrum. All clocking requirements are generated using an
+on-board crystal, so no external clock source is needed. All necessary power
+rails are converted from the RPi into the various supply voltage requirements
+of the RF signal generator.
+
+The system is designed to simplify input requirements, optimize signal paths,
+and reduce external cables and components. This circuit can act as standalone
+laboratory equipment or be incorporated as a module into automatic test
+equipment. Its small size makes it particularly attractive when multiple
+channels are required. This Raspberry Pi compatible solution makes high speed
+signal generation more accessible and economical.
+
+.. figure:: cn0511_board.png
+   :width: 500 px
+   :align: center
+
+   EVAL-CN0511-RPIZ Evaluation Board
+
+Features
+--------
+
+- Supports RF signal synthesis up to 5.5 GHz
+- +/-0.5 dB calibrated output power across the operating bandwidth (0 dBm to
+  -40 dBm)
+- High dynamic range and signal reconstruction bandwidth
+- Fully supports zero intermediate frequency (IF) and other DC-coupled
+  applications
+- On-board free-running 122.88 MHz precision oven-controlled crystal
+  oscillator (OCXO)
+- Low output ripple with low output capacitance
+
+Hardware Configuration
+----------------------
+
+Block Terminal Assignments
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: block_terminal_assignment_v2.png
+   :width: 500 px
+   :align: center
+
+   EVAL-CN0511-RPIZ Block Terminal Assignments
+
+- Connector **P1** -- Terminal block for optional external +5 V input supply.
+- Connector **P2** -- 40-pin connector for Raspberry Pi.
+- Connector **P3** -- Terminal block for optional external +3.3 V input supply.
+- Connector **P4** -- Fan connector for the :adi:`AD9166`.
+- Connector **J1** -- RF output from the EVAL-CN0511-RPIZ.
+- Connector **J2** -- Optional external clock reference RF input.
+
+Onboard Clock Reference
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The CN0511 reference design board is supplied with an ultra low phase noise
+CMOS, voltage-controlled crystal clock oscillator. Solder jumper JP1
+configures different settings for the clock source. The default position of JP1
+is set at A-COM, which is the onboard clocking option.
+
+.. figure:: clock_source.png
+   :align: center
+
+   EVAL-CN0511-RPIZ Clock Source Schematic Diagram
+
+External Clock Reference Option
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+An external clock reference can be used to improve system noise performance.
+The external option supports up to a 500 MHz clock source input connected
+through the on-board SMA port (J2). To use the external single-ended reference
+input (REFIN), connect a single-ended low noise source to REFIN and set solder
+link JP1 to B-COM.
+
+RF Output
+~~~~~~~~~
+
+A spectrum analyzer can be used to observe the generated RF output from J1 on
+the EVAL-CN0511-RPIZ.
+
+.. figure:: cn0511_sma_input_output_v2.jpg
+   :width: 600 px
+   :align: center
+
+   RF Output and Optional External Clock Input Connections
+
+Connecting the Fan
+~~~~~~~~~~~~~~~~~~
+
+The :adi:`AD9166` is a high power device that can dissipate nearly 4 W
+depending on the application and configuration. The EVAL-CN0511-RPIZ has a high
+cooling requirement; therefore, the fan should always be on to regulate the
+temperature below 60 degrees Celsius.
+
+.. figure:: heat_sink_v2.jpg
+   :width: 600 px
+   :align: center
+
+   CN0511 Fan and Thermal Management
+
+Input Supply
+~~~~~~~~~~~~
+
+Power to the EVAL-CN0511-RPIZ comes directly from the Raspberry Pi +5 V supply
+provided by the USB cable. An optional +5 V external supply is available
+through the two-pole screw terminal (P1). Only one input power supply is
+required, and the Raspberry Pi USB cable is the recommended method.
+
+.. figure:: cn0511_power_supply_options.png
+   :width: 600 px
+   :align: center
+
+   CN0511 Input Power Supply Connection Options
+
+System Setup
+------------
+
+Equipment Required
+~~~~~~~~~~~~~~~~~~
+
+**Hardware**
+
+- EVAL-CN0511-RPIZ Circuit Evaluation Board
+- Raspberry Pi 3B or higher version
+- 5 V, 2.5 A power supply or higher with micro USB connector
+- SMA cable
+- 16 GB or larger SD card
+- USB keyboard and mouse
+- HDMI to HDMI cable
+- Monitor with HDMI port
+
+**Software**
+
+- :ref:`ADI Kuiper Linux <kuiper>`
+
+.. figure:: cn0511_block_diagram.jpg
+   :align: center
+
+   CN0511 Functional System Block Diagram
+
+Running the System
+~~~~~~~~~~~~~~~~~~
+
+#. Connect the EVAL-CN0511-RPIZ to the Raspberry Pi through the 40-pin
+   connector.
+
+   .. figure:: cn0511_rpi_v1.jpg
+      :width: 600 px
+      :align: center
+
+      Hardware Connection of EVAL-CN0511-RPIZ and Raspberry Pi
+
+#. Burn the SD card with the ADI Kuiper Linux image. Insert the SD card into
+   the designated slot on the Raspberry Pi.
+#. Connect the system to a monitor using an HDMI cable through the mini HDMI
+   connector on the Raspberry Pi.
+#. Connect a USB keyboard and mouse to the RPi through the USB ports.
+#. Connect the RF load/signal analyzer to the output connector (J1).
+#. Power on the RPi by plugging in a 5 V power supply with micro-USB
+   connector.
+#. Open the terminal and configure the device tree overlay file. Make sure to
+   reboot the RPi after saving the ``config.txt`` file.
+
+.. figure:: sample_setup_v2.jpg
+   :width: 600 px
+   :align: center
+
+   CN0511 Complete System Setup
+
+Software Setup
+--------------
+
+The SD card should be loaded with :ref:`ADI Kuiper Linux <kuiper>`, a
+distribution based on Raspbian from the Raspberry Pi Foundation. It
+incorporates Linux device drivers for ADI products as well as tools and
+software products designed for ease of use.
+
+Configuring the SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+For the Linux kernel to identify the device connected to the expansion header,
+update the device tree overlay. The overlay file is already included in the SD
+card and just needs to be configured for the EVAL-CN0511-RPIZ.
+
+Follow the hardware configuration procedure in the :ref:`Kuiper Linux <kuiper>`
+documentation, setting the overlay to:
+
+.. code-block:: bash
+
+   dtoverlay=rpi-cn0511
+
+Save the file and reboot:
+
+.. code-block:: bash
+
+   sudo reboot
+
+Application Software
+---------------------
+
+IIO Oscilloscope
+~~~~~~~~~~~~~~~~
+
+The EVAL-CN0511-RPIZ can be evaluated using :ref:`IIO Oscilloscope
+<iio-oscilloscope>`. The CN0511 plug-in tab provides a simple user interface to
+control the EVAL-CN0511-RPIZ as a signal generator.
+
+.. figure:: iio_scope_v1.jpg
+   :width: 600 px
+   :align: center
+
+   IIO Oscilloscope with CN0511 Plug-in
+
+**Single Tone Mode:**
+
+- **Frequency (MHz)** -- Set the desired output signal frequency.
+- **Amplitude (dB)** -- Adjust the RF signal amplitude.
+- **Enter** -- Provides a calibrated RF signal output.
+
+**DAC Amplifier:**
+
+- **Enable** -- Enable/Disable the :adi:`AD9166` RF signal output.
+
+**Debug Tab:**
+
+Provides direct access to IIO device and channel attributes, as well as the
+registers of the CN0511 components.
+
+**DMM Tab:**
+
+Provides temperature readings for :adi:`ADF4372` and :adi:`AD9166` using
+internal temperature sensors.
+
+PyADI-IIO
+~~~~~~~~~~
+
+:ref:`PyADI-IIO <pyadi-iio>` is a Python abstraction module for ADI hardware
+with IIO drivers. This module provides device-specific APIs built on top of
+the libIIO Python bindings.
+
+Running the Example
+^^^^^^^^^^^^^^^^^^^
+
+#. Connect the EVAL-CN0511-RPIZ to the Raspberry Pi.
+#. Open a terminal and navigate to the examples folder in the *pyadi-iio*
+   directory.
+#. Run the example script:
+
+   .. code-block:: bash
+
+      python3 cn0511_example.py
+
+.. figure:: cn0511_example_output.jpg
+   :width: 600 px
+   :align: center
+
+   CN0511 Python Example Output
+
+GitHub link for the Python sample script:
+:git-pyadi-iio:`CN0511 Python Example <examples/cn0511_example.py>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0511-RPIZ Design & Integration Files <https://www.analog.com/cn0511-DesignSupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
+
+Reference Software
+-------------------
+
+- :ref:`PyADI-IIO <pyadi-iio>`
+- :ref:`IIO Oscilloscope <iio-oscilloscope>`
+- :ref:`Kuiper Linux <kuiper>`
+
+More Information and Useful Links
+---------------------------------
+
+- :adi:`CN0511 Circuit Note Page <CN0511>`
+- :adi:`AD9166 Product Page <AD9166>`
+- :adi:`ADF4372 Product Page <ADF4372>`
+- :adi:`LTC2928 Product Page <LTC2928>`
+- :adi:`LTM8045 Product Page <LTM8045>`
+- :adi:`AD5693 Product Page <AD5693>`
+- :adi:`ADP5073 Product Page <ADP5073>`
+- :adi:`ADP7183 Product Page <ADP7183>`
+- :adi:`ADM7150 Product Page <ADM7150>`
+- :adi:`ADM7154 Product Page <ADM7154>`
+- :adi:`ADP1761 Product Page <ADP1761>`
+- :adi:`LT3090 Product Page <LT3090>`
+- :adi:`LTM4622 Product Page <LTM4622>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`ez/reference-designs`.
