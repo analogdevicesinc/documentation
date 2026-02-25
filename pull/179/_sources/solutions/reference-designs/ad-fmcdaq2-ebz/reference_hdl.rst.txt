@@ -1,5 +1,11 @@
 .. _ad-fmcdaq2-ebz reference_hdl:
 
+AD-FMCDAQ2-EBZ HDL Reference Design
+=====================================
+
+For the latest HDL reference design source code and documentation, please refer
+to the :git-hdl:`DAQ2 HDL project <projects/daq2>`.
+
 Functional Overview
 -------------------
 

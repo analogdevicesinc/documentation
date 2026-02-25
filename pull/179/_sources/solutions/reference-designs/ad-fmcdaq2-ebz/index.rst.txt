@@ -18,9 +18,13 @@ be found here.
 The purpose of the :adi:`AD-FMCDAQ2-EBZ` is a data
 acquisition platform that connects the analog world using FMC to the FPGA.
 
-.. image:: software/linux/ad-fmcdaq2-ebz_zc706.png
+.. figure:: software/linux/ad-fmcdaq2-ebz_zc706.png
    :align: center
    :width: 500
+
+   AD-FMCDAQ2-EBZ on a ZC706 carrier
+
+.. esd-warning::
 
 .. toctree::
    :hidden:

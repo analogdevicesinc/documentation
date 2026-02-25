@@ -300,12 +300,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -726,7 +721,15 @@ Ohm resistors:</p>
 <li><p>R633 to R632</p></li>
 </ul>
 <p>These resistors can be found on the backside of the Arria10 SoC Development Kit
-underneath the FMC A connector (J29).</p>
+underneath the FMC A connector (J29). The following picture shows the required
+configuration to be compatible with the AD-FMCDAQ2-EBZ.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/a10soc_fmc_rework.jpg"><img alt="A10 SoC FMC Rework" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/a10soc_fmc_rework.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Required resistor rework for AD-FMCDAQ2-EBZ compatibility</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="connections">
@@ -744,7 +747,18 @@ port (J5).</p></li>
 <p>All jumpers and switches on the Arria10 SoC Development Kit should be in the
 <a class="icon link reference external" href="https://www.intel.com/content/www/us/en/docs/programmable/683735/current/boot-select.html" target="_blank">default position</a>
 configuring the board for SD card boot.</p>
-</section>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/a10soc_daq2.jpg"><img alt="AD-FMCDAQ2-EBZ on Arria10 SoC Dev Kit" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/a10soc_daq2.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD-FMCDAQ2-EBZ connected to Arria10 SoC Development Kit</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div><div class="esd-warning docutils container">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div></section>
 <section id="booting-the-system">
 <h2>Booting the System<a class="headerlink" href="#booting-the-system" title="Link to this heading"></a></h2>
 <p>After turning on the power switch the following messages should appear on the

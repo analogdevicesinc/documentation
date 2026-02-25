@@ -18,8 +18,21 @@ which supports the JESD204B high speed serial interface. This board meets most
 of the FMC specifications in terms of mechanical size, mounting hole locations,
 and more.
 
+The :adi:`AD9625` is a 12-bit monolithic sampling analog-to-digital converter
+(ADC) that operates at conversion rates of up to 2.5 GSPS. This product is
+designed for sampling wide bandwidth analog signals up to the second Nyquist
+zone. The combination of wide input bandwidth, high sampling rate, and excellent
+linearity of the AD9625 is ideally suited for spectrum analyzers, data
+acquisition systems, and a wide assortment of military electronics
+applications, such as radar and jamming/antijamming measures.
+
+The card is mechanically (width/depth, but not height) and electrically
+compliant to the FMC standard (ANSI/VITA 57.1).
+
 This board is targeted to use the ADI reference designs that work with Xilinx
-development systems.
+development systems. ADI provides complete source (HDL and software) to
+recreate those projects, but may not provide enough information to port this to
+a custom platform.
 
 .. image:: ad-fmcadc2-ebz-photo.jpg
    :align: center
@@ -56,8 +69,18 @@ Supported Devices
 Supported Carriers
 ------------------
 
-- :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>` HPC Slot
-- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>` HPC Slot
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
+     - Yes (HPC Slot)
+     - Yes
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
+     - Yes (HPC Slot)
+     - Yes
 
 HDL Reference Design
 --------------------
@@ -121,6 +144,8 @@ Linux Drivers
 
 - :git-linux:`AD9625 Linux Driver <drivers/iio/adc/ad9467.c>`
 - :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
+- :dokuwiki:`JESD204B/C Receive Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+- :dokuwiki:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
 
 Eye Scan
 ~~~~~~~~
@@ -128,11 +153,24 @@ Eye Scan
 The JESD204B eye scan for this board can be found at
 :dokuwiki:`JESD Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`.
 
+Bare Metal Software
+~~~~~~~~~~~~~~~~~~~
+
+For bare metal (no-OS) development, the required software tools include the
+Xilinx Vivado and SDK toolchain. A UART terminal (e.g., Tera Term) at
+115200 baud (8N1) is required for console output.
+
+After building the HDL project in Vivado, the Xilinx SDK can be used to create
+an empty application project, then import the no-OS source files into the
+``src`` folder. The project can be debugged using the Vivado Hardware Manager
+and the integrated logic analyzer (ILA) debug cores.
+
 More Information
 ----------------
 
 - `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 - `JESD204B High-Speed Serial Interface Support <https://analogdevicesinc.github.io/hdl/library/jesd204/index.html>`__
+- :dokuwiki:`AD-FMCADC2-EBZ User Guide <resources/eval/user-guides/ad-fmcadc2-ebz>`
 
 Support
 -------

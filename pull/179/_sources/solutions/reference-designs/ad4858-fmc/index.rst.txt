@@ -10,11 +10,12 @@ The :adi:`AD4858` is a 20-bit, low noise, 8-channel simultaneous sampling
 successive approximation register (SAR) ADC with buffered differential, wide
 common range picoamp inputs.
 
-The EVAL-AD4858 supports pin-selectable SPI CMOS and LVDS serial interfaces.
-In CMOS mode, applications may employ between 1-8 lanes of serial output data,
-allowing the user to optimize bus width and data throughput. In LVDS mode, pins
-SDO+/-, SCKI+/- and SCKO+/- function as differential serial data input, clock
-output and clock input pins respectively (from the FPGA's point of view).
+The :adi:`EVAL-AD4858` evaluation board supports pin-selectable SPI CMOS and
+LVDS serial interfaces. In CMOS mode, applications may employ between 1-8 lanes
+of serial output data, allowing the user to optimize bus width and data
+throughput. In LVDS mode, pins SDO+/-, SCKI+/- and SCKO+/- function as
+differential serial data input, clock output and clock input pins respectively
+(from the FPGA's point of view).
 
 Supported Devices
 -----------------
@@ -33,6 +34,18 @@ Supported Carriers
 
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
 
+Hardware Requirements
+---------------------
+
+- :adi:`EVAL-AD4858` evaluation board
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+- Signal generator
+- 1x Ethernet cable
+- 1x Micro-B USB cable for UART connectivity (optional)
+- 1x SD card (at least 16 GB); follow the
+  :dokuwiki:`Kuiper Linux guide <resources/tools-software/linux-software/kuiper-linux>`
+  to set up the card
+
 HDL Reference Design
 --------------------
 
@@ -48,6 +61,13 @@ Build Parameters
    * - LVDS_CMOS_N
      - 0
      - Interface type: 0 - CMOS, 1 - LVDS
+
+To build the project, navigate to the
+:git-hdl:`projects/ad485x_fmcz/zed <projects/ad485x_fmcz/zed>` directory and
+run the ``make`` command with the desired configuration:
+
+- CMOS version: ``make LVDS_CMOS_N=0``
+- LVDS version: ``make LVDS_CMOS_N=1``
 
 Block Diagram
 ~~~~~~~~~~~~~
@@ -73,12 +93,23 @@ Depending on the configuration used (CMOS or LVDS), the clock scheme differs.
 Due to limitations of the evaluation board, an internal clock from the FPGA is
 used:
 
-- In LVDS mode: ``external_clk`` = 200 MHz, ``external_fast_clk`` = 400 MHz
-- In CMOS mode: ``external_clk`` = 100 MHz
+.. figure:: ad4858_fmcz_clock_path.jpg
+   :align: center
+
+   AD4858-FMC clock path
+
+- In LVDS mode: ``external_clk`` = 200 MHz (F_CLK0),
+  ``external_fast_clk`` = 400 MHz (F_CLK1)
+- In CMOS mode: ``external_clk`` = 100 MHz (F_CLK0)
 
 For custom systems where the AD4858 chip is used, it is recommended to use an
 external clock rather than a clock from the FPGA as done in this reference
 design.
+
+For more details regarding the MMCM clock frequencies, refer to
+:xilinx:`UG472 (7 Series Clocking) <content/dam/xilinx/support/documents/user_guides/ug472_7Series_Clocking.pdf>`
+and
+:xilinx:`UG572 (UltraScale/+ Clocking) <support/documents/user_guides/ug572-ultrascale-clocking.pdf>`.
 
 Limitations
 ^^^^^^^^^^^
@@ -90,6 +121,15 @@ formats.
 
 If maximum conversion rate of 400 MHz is required, only the 20-bit packet
 format can be used.
+
+IP List
+^^^^^^^
+
+- :git-hdl:`AXI_AD485x <library/axi_ad485x>`
+- :git-hdl:`AXI_PWM_GEN <library/axi_pwm_gen>`
+- :git-hdl:`AXI_CLKGEN <library/axi_clkgen>`
+- :git-hdl:`AXI_DMAC <library/axi_dmac>`
+- :git-hdl:`UTIL_CPACK2 <library/util_pack/util_cpack2>`
 
 CPU/Memory Interconnect Addresses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,15 +148,53 @@ CPU/Memory Interconnect Addresses
    * - adc_clkgen
      - 0x4400_0000
 
+Interrupts
+^^^^^^^^^^
+
+.. list-table::
+   :header-rows: 1
+
+   * - Instance
+     - HDL
+     - Linux Zynq
+     - Actual Zynq
+   * - ad4858_dma
+     - 10
+     - 54
+     - 86
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`projects/ad485x_fmcz`
 
+System Setup
+------------
+
+.. figure:: ad4858_fmcz_zed_setup.jpg
+   :align: center
+
+   AD4858-FMC ZedBoard system setup
+
+Connections:
+
+- AD4858-FMCZ connected to the FMC port of the ZedBoard
+- 1x Micro-B USB cable for UART connectivity on the ZedBoard
+- 1x Ethernet cable for network connectivity
+
+A signal generator is needed to provide analog input. For example, an
+:adi:`ADALM2000` with a
+`BNC adapter board <https://wiki.analog.com/university/tools/m2k/accessories/bnc>`__
+can be used as a signal generator. Connect 2x BNC to SMA cables from the
+SMA0+/- connectors on the AD4858-FMCZ to the W1/W2 connectors on the BNC
+adapter board.
+
 More Information
 ----------------
 
 - `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- :git-hdl:`AD4858-FMC HDL Project <projects/ad485x_fmcz>`
+- :dokuwiki:`How to prepare an SD card <resources/tools-software/linux-software/kuiper-linux>`
 
 Support
 -------

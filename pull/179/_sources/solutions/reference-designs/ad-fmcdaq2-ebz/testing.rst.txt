@@ -16,7 +16,7 @@ Temperature
 ~~~~~~~~~~~
 
 The ``ad7291.in_temp0_raw`` is the raw results from the AD7291 - which is
-0.25°C. 80 refers to 80 steps of 0.25°C or 20°C, and 160 refers to 40°C. This
+0.25 deg C. 80 refers to 80 steps of 0.25 deg C or 20 deg C, and 160 refers to 40 deg C. This
 allows the tests to be done in a normal lab setting.
 
 Voltage
@@ -25,7 +25,7 @@ Voltage
 This section requires checking the schematics.
 Specifically, sheet 7 shows how the AD7291 is connected. 1% resistors connect
 various voltages, and things are divided down to ensure that the voltage levels
-don’t exceed full scale.
+don't exceed full scale.
 
 The explanation of how the valid ranges are calculated is similar to the same
 tests for the FMComms boards.
@@ -66,7 +66,7 @@ Required hardware
 - FMCDAQ2/3
 - RF loopback cables (2x)
 - External monitor connected to the Raspberry Pi via micro HDMI
-- Keyboard and mouse (with USB hub if they aren’t part of a combo device)
+- Keyboard and mouse (with USB hub if they aren't part of a combo device)
 - Ethernet cable (needs to be plugged between Raspberry Pi and carrier)
 - QR code scanner
 - DAQ2/DAQ3 test SD Card
@@ -74,6 +74,12 @@ Required hardware
 
 Required setup
 --------------
+
+.. figure:: daq3-setup.png
+   :alt: Test Setup
+   :width: 600
+
+   Test setup overview
 
 1. Attach the RF loopback cables to the board. The images at the bottom of the
    page show the correct placement for each type of AD-FMCDAQ board.
@@ -88,28 +94,38 @@ Required setup
 
 Make sure to connect to your WIFI Network before testing. You can exit the test
 window by pressing CTRL+C in order to access the connection. Reboot the system
-in order to return to the test window. 
+in order to return to the test window.
 
 Test process
 ------------
 
 Firstly, make sure all the required steps from the setup explained above are
 completed. Once the setup is ready, testing should be done using the following
-steps: - Power the carrier board and the Raspberry Pi. The following screen will
-appear once the system has booted.  - The testing sequence can be
-started by selecting one of the menu items. **In order to start testing, an
-Ethernet cable should be connected between Raspberry Pi and DUT**.
+steps:
 
-- **Test 1** for FMCDAQ3
+- Power the carrier board and the Raspberry Pi. The following screen will
+  appear once the system has booted.
 
-- **Test 2** for FMCDAQ2
+  .. image:: fmcdaq3-startup-screen.png
+
+- The testing sequence can be started by selecting one of the menu items. **In
+  order to start testing, an Ethernet cable should be connected between
+  Raspberry Pi and DUT**.
+
+  - **Test 1** for FMCDAQ3
+  - **Test 2** for FMCDAQ2
 
 - At the beginning of every test, the connection with DUT is checked. If the
   connection is correctly established, the following message will be printed.
-- Use the scanner to scan the QR code on the board
+
+  .. image:: fmcdaq3-eth-err.png
+
+- Use the scanner to scan the QR code on the board.
 
 - If one of the tests failed, the FAILED message will be printed as in the
-  screen capture below: 
+  screen capture below:
+
+  .. image:: fmcdaq3-failed.png
 
 - In case of a failed test, the tester can repeat the test immediately. The test
   can be repeated an undefined number of times.
@@ -117,7 +133,7 @@ Ethernet cable should be connected between Raspberry Pi and DUT**.
 - After completing the test, power off the carrier by typing 4. After several
   seconds, power off the carrier board using the physical switch.
 
-- Remove the DAQ2/3 card and place the heatsink according to the pictures below
+- Remove the DAQ2/3 card and place the heatsink according to the pictures below.
 
 - In order to power off the Raspberry Pi, please type 3 and enter.
 
@@ -127,7 +143,31 @@ corrupted. First select item 4 to power off the carrier. After a few seconds,
 turn off the switch. After the ZC706 is off, the Raspberry Pi can be turned off
 selecting item 3.
 
-.. todo::
+Cable placement
+~~~~~~~~~~~~~~~
 
-   Cable placement and heatsink placement images were not available during wiki
-   migration.
+.. list-table::
+   :header-rows: 0
+
+   * - .. image:: daq2_connection.png
+          :width: 400
+     - .. image:: daq3_connection.png
+          :width: 400
+   * - FMCDAQ2
+     - FMCDAQ3
+
+Heatsink placement
+~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 0
+
+   * - .. image:: daq2_heatsink.png
+          :width: 250
+     - .. image:: daq3_heatsink_top.png
+          :width: 250
+     - .. image:: daq3_heatsink_bottom.png
+          :width: 250
+   * - FMCDAQ2
+     - FMCDAQ3 top
+     - FMCDAQ3 bottom

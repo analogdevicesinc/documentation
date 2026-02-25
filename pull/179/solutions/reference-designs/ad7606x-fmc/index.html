@@ -102,7 +102,13 @@
 <li><a class="reference internal" href="#build-parameters">Build Parameters</a></li>
 <li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
 <li><a class="reference internal" href="#gpio-signals">GPIO Signals</a></li>
+<li><a class="reference internal" href="#interrupts">Interrupts</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software">Software</a><ul>
+<li><a class="reference internal" href="#linux-driver">Linux Driver</a></li>
+<li><a class="reference internal" href="#no-os-driver">No-OS Driver</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -304,12 +310,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -690,9 +691,9 @@ Content on this topic
 <span id="ad7606x-fmc"></span><h1>AD7606x-FMC User Guide<a class="headerlink" href="#ad7606x-fmc-user-guide" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>The EVAL-AD7606B-FMCZ and EVAL-AD7606C-18 evaluation boards are designed to
-help users evaluate the features of the <a class="icon adi reference external" href="https://www.analog.com/AD7606B" target="_blank">AD7606B</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7606C-16" target="_blank">AD7606C-16</a>, and
-<a class="icon adi reference external" href="https://www.analog.com/AD7606C-18" target="_blank">AD7606C-18</a> analog-to-digital converters (ADCs).</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7606B-FMCZ" target="_blank">EVAL-AD7606B-FMCZ</a> and <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7606C-18" target="_blank">EVAL-AD7606C-18</a> evaluation boards are
+designed to help users evaluate the features of the <a class="icon adi reference external" href="https://www.analog.com/AD7606B" target="_blank">AD7606B</a>,
+<a class="icon adi reference external" href="https://www.analog.com/AD7606C-16" target="_blank">AD7606C-16</a>, and <a class="icon adi reference external" href="https://www.analog.com/AD7606C-18" target="_blank">AD7606C-18</a> analog-to-digital converters (ADCs).</p>
 <p>The data path of the HDL design supports both parallel and serial interfaces:</p>
 <ul class="simple">
 <li><p>The parallel interface is controlled by the axi_ad7606x IP core</p></li>
@@ -717,6 +718,9 @@ help users evaluate the features of the <a class="icon adi reference external" h
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<p>The design is built upon ADI’s generic HDL reference design framework. For an
+in-depth presentation of the HDL design framework, refer to the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/introduction.html" target="_blank">ADI Reference Designs HDL User Guide</a>.</p>
 <section id="build-parameters">
 <h3>Build Parameters<a class="headerlink" href="#build-parameters" title="Link to this heading"></a></h3>
 <div class="table-wrapper docutils container">
@@ -743,6 +747,13 @@ help users evaluate the features of the <a class="icon adi reference external" h
 </tbody>
 </table>
 </div>
+<p>Before board power-up, choose the device type, operation mode, and clocking
+option. Depending on the operation mode, hardware modifications may be needed
+on the board and/or Tcl script. Examples:</p>
+<ul class="simple">
+<li><p>For the <strong>AD7606C-16</strong> device: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DEV_CONFIG=1</span></code></p></li>
+<li><p>For <strong>STATUS</strong> operation mode: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">SIMPLE_STATUS_CRC=1</span></code></p></li>
+</ul>
 </section>
 <section id="block-diagram">
 <h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
@@ -793,6 +804,26 @@ help users evaluate the features of the <a class="icon adi reference external" h
 </table>
 </div>
 </section>
+<section id="interrupts">
+<h3>Interrupts<a class="headerlink" href="#interrupts" title="Link to this heading"></a></h3>
+<p>Below are the Programmable Logic interrupts used in this project.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Instance</p></th>
+<th class="head"><p>HDL</p></th>
+<th class="head"><p>Linux ZynqMP</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>axi_ad7606x_dma</p></td>
+<td><p>13</p></td>
+<td><p>109</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -800,10 +831,30 @@ help users evaluate the features of the <a class="icon adi reference external" h
 </ul>
 </section>
 </section>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h2>
+<section id="linux-driver">
+<h3>Linux Driver<a class="headerlink" href="#linux-driver" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad7606.c" target="_blank">AD7606 Linux driver</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad7606_spi.c" target="_blank">AD7606 SPI interface</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad7606_par.c" target="_blank">AD7606 parallel interface</a></p></li>
+</ul>
+</section>
+<section id="no-os-driver">
+<h3>No-OS Driver<a class="headerlink" href="#no-os-driver" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/ad7606" target="_blank">AD7606 No-OS driver</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad7606x-fmc" target="_blank">AD7606x-FMC No-OS project</a></p></li>
+</ul>
+</section>
+</section>
 <section id="more-information">
 <h2>More Information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/introduction.html" target="_blank">ADI Reference Designs HDL User Guide</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/ad7606x_fmc" target="_blank">AD7606x-FMC HDL Project</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/axi_ad7606x" target="_blank">AXI_AD7606x IP Core</a></p></li>
 </ul>
 </section>
 <section id="support">

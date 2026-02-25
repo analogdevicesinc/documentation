@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The reference design is a processor based (ARM or Microblaze/Nios2) embedded system. A functional block diagram of the system is given below for both Xilinx and Altera FPGAs. The device interfaces are shared by the same set of transceivers followed by the individual JESD204B and ADC/DAC pcores. The cores are programmable through an AXI-lite interface. The data path consists of independent DMA interfaces for the transmit and receive paths." name="description" />
+<meta content="For the latest HDL reference design source code and documentation, please refer to the DAQ2 HDL project." name="description" />
 
-    <title>Functional Overview &#8212; System Level Documentation  documentation</title>
+    <title>AD-FMCDAQ2-EBZ HDL Reference Design &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
     <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
@@ -94,7 +94,8 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Functional Overview</a><ul>
+<li><a class="reference internal" href="#">AD-FMCDAQ2-EBZ HDL Reference Design</a><ul>
+<li><a class="reference internal" href="#functional-overview">Functional Overview</a><ul>
 <li><a class="reference internal" href="#ad-fmcdaq2-ebz-block-diagram">AD-FMCDAQ2-EBZ block diagram</a></li>
 <li><a class="reference internal" href="#xilinx-block-diagram">Xilinx block diagram</a></li>
 <li><a class="reference internal" href="#altera-block-diagram">Altera block diagram</a></li>
@@ -108,6 +109,8 @@
 <li><a class="reference internal" href="#adc-interface">ADC Interface</a></li>
 <li><a class="reference internal" href="#control-and-spi">Control and SPI</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+</ul>
+</li>
 </ul>
 
         </nav>
@@ -303,12 +306,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -685,8 +683,12 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="functional-overview">
-<span id="ad-fmcdaq2-ebz-reference-hdl"></span><h1>Functional Overview<a class="headerlink" href="#functional-overview" title="Link to this heading"></a></h1>
+  <section id="ad-fmcdaq2-ebz-hdl-reference-design">
+<span id="ad-fmcdaq2-ebz-reference-hdl"></span><h1>AD-FMCDAQ2-EBZ HDL Reference Design<a class="headerlink" href="#ad-fmcdaq2-ebz-hdl-reference-design" title="Link to this heading"></a></h1>
+<p>For the latest HDL reference design source code and documentation, please refer
+to the <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/daq2" target="_blank">DAQ2 HDL project</a>.</p>
+<section id="functional-overview">
+<h2>Functional Overview<a class="headerlink" href="#functional-overview" title="Link to this heading"></a></h2>
 <p>The reference design is a processor based (ARM or Microblaze/Nios2) embedded
 system. A functional block diagram of the system is given below for both Xilinx
 and Altera FPGAs. The device interfaces are shared by the same set of
@@ -694,7 +696,7 @@ transceivers followed by the individual JESD204B and ADC/DAC pcores. The cores
 are programmable through an AXI-lite interface. The data path consists of
 independent DMA interfaces for the transmit and receive paths.</p>
 <section id="ad-fmcdaq2-ebz-block-diagram">
-<h2>AD-FMCDAQ2-EBZ block diagram<a class="headerlink" href="#ad-fmcdaq2-ebz-block-diagram" title="Link to this heading"></a></h2>
+<h3>AD-FMCDAQ2-EBZ block diagram<a class="headerlink" href="#ad-fmcdaq2-ebz-block-diagram" title="Link to this heading"></a></h3>
 <figure class="align-default" id="id1">
 <img alt="AD-FMCDAQ2-EBZ Block Diagram" src="../../../_images/ad-fmcdaq2-ebz_1.svg" />
 <figcaption>
@@ -703,7 +705,7 @@ independent DMA interfaces for the transmit and receive paths.</p>
 </figure>
 </section>
 <section id="xilinx-block-diagram">
-<h2>Xilinx block diagram<a class="headerlink" href="#xilinx-block-diagram" title="Link to this heading"></a></h2>
+<h3>Xilinx block diagram<a class="headerlink" href="#xilinx-block-diagram" title="Link to this heading"></a></h3>
 <figure class="align-default" id="id2">
 <img alt="Xilinx HDL Block Diagram" src="../../../_images/daq2_xilinx_2.svg" />
 <figcaption>
@@ -712,7 +714,7 @@ independent DMA interfaces for the transmit and receive paths.</p>
 </figure>
 </section>
 <section id="altera-block-diagram">
-<h2>Altera block diagram<a class="headerlink" href="#altera-block-diagram" title="Link to this heading"></a></h2>
+<h3>Altera block diagram<a class="headerlink" href="#altera-block-diagram" title="Link to this heading"></a></h3>
 <figure class="align-default" id="id3">
 <img alt="Altera HDL Block Diagram" src="../../../_images/daq2_intel.svg" />
 <figcaption>
@@ -722,13 +724,13 @@ independent DMA interfaces for the transmit and receive paths.</p>
 </section>
 </section>
 <section id="digital-interface">
-<h1>Digital Interface<a class="headerlink" href="#digital-interface" title="Link to this heading"></a></h1>
+<h2>Digital Interface<a class="headerlink" href="#digital-interface" title="Link to this heading"></a></h2>
 <p>The digital interface consists of 4 transmit and 4 receive lanes running at
 10Gbps (default). The transceivers then interfaces to the cores at
 <a class="reference external" href="mailto:128bits&#37;&#52;&#48;250MHz">128bits<span>&#64;</span>250MHz</a>. The data is sent or received based on the configuration
 (programmable) from separate transmit and receive chains.</p>
 <section id="altera-specific">
-<h2>Altera specific<a class="headerlink" href="#altera-specific" title="Link to this heading"></a></h2>
+<h3>Altera specific<a class="headerlink" href="#altera-specific" title="Link to this heading"></a></h3>
 <p>When using Qsys, implementing JESD204B protocol requires several IPs. AVL_XCVR
 is a wrapper which instantiates all the required IPs and configures them
 according to the desired data rate. One AVL_XCVR must be instantiated for the
@@ -746,24 +748,24 @@ stable and before taking AXI_XCVR cores out of reset.</p>
 </section>
 </section>
 <section id="dac-interface">
-<h1>DAC Interface<a class="headerlink" href="#dac-interface" title="Link to this heading"></a></h1>
+<h2>DAC Interface<a class="headerlink" href="#dac-interface" title="Link to this heading"></a></h2>
 <p>The DAC data may be sourced from an internal data generator (DDS, pattern or
 PRBS) or from the external DDR via DMA. The internal DDS phase and frequency are
 programmable.</p>
 </section>
 <section id="adc-interface">
-<h1>ADC Interface<a class="headerlink" href="#adc-interface" title="Link to this heading"></a></h1>
+<h2>ADC Interface<a class="headerlink" href="#adc-interface" title="Link to this heading"></a></h2>
 <p>The ADC data is sent to the DDR via DMA. The core also supports PN monitoring at
 the sample level. This is different from the JESD204B specific PN sequence
 (though they both claim to be from the same equation).</p>
 </section>
 <section id="control-and-spi">
-<h1>Control and SPI<a class="headerlink" href="#control-and-spi" title="Link to this heading"></a></h1>
+<h2>Control and SPI<a class="headerlink" href="#control-and-spi" title="Link to this heading"></a></h2>
 <p>The device control and monitor signals are interfaced to a GPIO module. The SPI
 signals are controlled by a separate AXI based SPI core.</p>
 </section>
 <section id="supported-carriers">
-<h1>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h1>
+<h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <p>These are the supported carriers for the HDL - not the complete package
 (software and HDL). Typically the software lags behind the HDL, so if you don’t
 see the these listed on the main project page - it is not yet done.</p>
@@ -782,6 +784,7 @@ see the these listed on the main project page - it is not yet done.</p>
 <li><p><a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/arria/10.html" target="_blank">Arria 10 SoC Development Kit</a></p></li>
 <li><p><a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html" target="_blank">Arria 10 GX FPGA Development Kit</a></p></li>
 </ul>
+</section>
 </section>
 
 

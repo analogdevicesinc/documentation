@@ -294,12 +294,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/reference_hdl.html">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/reference_hdl.html#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/reference_hdl.html#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/reference_hdl.html#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/reference_hdl.html#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/reference_hdl.html">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcdaq2-ebz/software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -959,6 +954,7 @@ developers get up and running fast.</p>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcadc2-ebz/index.html#software-support">Software Support</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcadc2-ebz/index.html#linux-drivers">Linux Drivers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcadc2-ebz/index.html#eye-scan">Eye Scan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcadc2-ebz/index.html#bare-metal-software">Bare Metal Software</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcadc2-ebz/index.html#more-information">More Information</a></li>
@@ -1118,6 +1114,16 @@ developers get up and running fast.</p>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#kit-contents">Kit Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#system-setup">System Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#evaluation-software">Evaluation Software</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#iio-oscilloscope">IIO Oscilloscope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#lidar-plugin">LIDAR Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#jesd-link-monitoring">JESD Link Monitoring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#distance-measurements">Distance Measurements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#laser-safety">Laser Safety</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#software-support">Software Support</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#more-information">More Information</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmclidar1-ebz/index.html#support">Support</a></li>
@@ -1311,7 +1317,23 @@ developers get up and running fast.</p>
 <li class="toctree-l2"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html">AD-FMCOMMS5-EBZ</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#multi-chip-synchronization">Multi-Chip Synchronization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#clock-distribution">Clock Distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#mcs-software">MCS Software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#when-mcs-must-be-repeated">When MCS Must Be Repeated</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#rf-phase-synchronization">RF Phase Synchronization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#internal-los-fpga-correction">Internal LOs + FPGA Correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#when-phase-calibration-must-be-repeated">When Phase Calibration Must Be Repeated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#external-lo-adf5355">External LO (ADF5355)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#hardware">Hardware</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#hardware-revisions">Hardware Revisions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#i-o-voltage">I/O Voltage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#phase-performance">Phase Performance</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#supported-carriers">Supported Carriers</a></li>
@@ -1321,6 +1343,10 @@ developers get up and running fast.</p>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#software-support">Software Support</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#linux-drivers">Linux Drivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#device-trees">Device Trees</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#iio-oscilloscope-plugin">IIO Oscilloscope Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#phase-synchronization-procedure-iio-oscilloscope">Phase Synchronization Procedure (IIO-Oscilloscope)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#additional-software-and-tools">Additional Software and Tools</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad-fmcomms5-ebz/index.html#more-information">More Information</a></li>
@@ -1949,12 +1975,14 @@ developers get up and running fast.</p>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#supported-devices">Supported Devices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#hardware-requirements">Hardware Requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#hdl-reference-design">HDL Reference Design</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#build-parameters">Build Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#block-diagram">Block Diagram</a></li>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#system-setup">System Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#more-information">More Information</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad4858-fmc/index.html#support">Support</a></li>
 </ul>
@@ -2081,7 +2109,13 @@ developers get up and running fast.</p>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad7606x-fmc/index.html#build-parameters">Build Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad7606x-fmc/index.html#block-diagram">Block Diagram</a></li>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad7606x-fmc/index.html#gpio-signals">GPIO Signals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad7606x-fmc/index.html#interrupts">Interrupts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad7606x-fmc/index.html#hdl-source-code">HDL Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad7606x-fmc/index.html#software">Software</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad7606x-fmc/index.html#linux-driver">Linux Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/ad7606x-fmc/index.html#no-os-driver">No-OS Driver</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/ad7606x-fmc/index.html#more-information">More Information</a></li>
@@ -2887,16 +2921,19 @@ developers get up and running fast.</p>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#quick-start">Quick Start</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#sockit-jumper-configuration">SoCKit Jumper Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#creating-the-micro-sd-card">Creating the Micro-SD Card</a></li>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#hardware-setup">Hardware Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#no-os-software">No-OS Software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#using-iio-oscilloscope">Using IIO Oscilloscope</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#no-os-software">No-OS Software</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#hdl-reference-design">HDL Reference Design</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#software-support">Software Support</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#linux-device-driver">Linux Device Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#device-tree">Device Tree</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="solutions/reference-designs/arradio/index.html#more-information">More Information</a></li>

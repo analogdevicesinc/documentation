@@ -306,12 +306,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -695,6 +690,13 @@ Content on this topic
 <p>Support for the A10GX carrier is discontinued and will not be
 supported in future releases.</p>
 </div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/arria10-fpga_daq2.jpg"><img alt="AD-FMCDAQ2-EBZ on Arria10 GX FPGA Dev Kit" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/arria10-fpga_daq2.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD-FMCDAQ2-EBZ on Arria10 GX FPGA Development Kit</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>This guide provides some quick instructions on how to setup the AD-FMCDAQ2-EBZ
 on the
 <a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html" target="_blank">A10GX</a>
@@ -724,6 +726,13 @@ board</p></li>
 <section id="setting-up-the-hardware-a10gx">
 <h2>Setting up the hardware (A10GX)<a class="headerlink" href="#setting-up-the-hardware-a10gx" title="Link to this heading"></a></h2>
 <p>You will need to:</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/arria10-fpga-kit.jpg"><img alt="Arria10 GX FPGA Dev Kit Board Layout" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/arria10-fpga-kit.jpg" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Arria10 GX FPGA Development Kit board layout</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Get the A10GX board.</p></li>
 <li><p>Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier <strong>FMC1</strong>
@@ -733,7 +742,11 @@ socket (J1).</p></li>
 <li><p>Plug the Power Supply into 12V Power input connector (DC Input).</p></li>
 <li><p>Turn it on.</p></li>
 </ul>
-</section>
+<div><div class="esd-warning docutils container">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div></section>
 <section id="programming-the-fpga">
 <h2>Programming the FPGA<a class="headerlink" href="#programming-the-fpga" title="Link to this heading"></a></h2>
 <p>Nios II Command Shell is used to program the FPGA. To run Nios II Command Shell
@@ -817,8 +830,22 @@ libIIO Context</strong> select <strong>Manual</strong> and enter the URI in the 
 <code class="docutils literal notranslate"><span class="pre">ip:&lt;your_board_ip&gt;</span></code>. Press the <strong>Refresh</strong> button and then <strong>Connect</strong>.</p>
 <p>To determine the IP of the board, in Nios II Command Shell login using <strong>root</strong>
 and password <strong>analog</strong>. Then run the <strong>ifconfig</strong> command.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/iioscope_connect.jpg"><img alt="IIO Oscilloscope Connect" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/iioscope_connect.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">IIO Oscilloscope connection window</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>To plot the captured waveforms go to <strong>File</strong> menu then click <strong>New Plot</strong>.
 Select the channels to plot and then click <strong>Capture / Stop</strong> button.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/iioscope_newplot.png"><img alt="IIO Oscilloscope New Plot" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/iioscope_newplot.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">IIO Oscilloscope captured waveforms</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="more-information">
 <h2>More Information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>

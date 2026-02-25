@@ -8,6 +8,9 @@ set things up) on how to setup the AD-FMCDAQ2-EBZ on:
 
 - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>` (rev 1.1 or higher)
 
+.. image:: ../software/linux/ad-fmcdaq2-ebz_zc706.png
+   :width: 500
+
 Requirements
 ------------
 
@@ -23,6 +26,8 @@ Creating / Configuring the SD Card
 
 :doc:`Create SD Image for Zynq Boards (it is a single image for all
 boards) </linux/kuiper/index>`.
+
+.. esd-warning::
 
 Setting up the hardware (ZC706)
 -------------------------------

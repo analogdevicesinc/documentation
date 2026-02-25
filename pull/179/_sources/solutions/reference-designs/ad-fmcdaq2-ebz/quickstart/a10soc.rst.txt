@@ -48,7 +48,14 @@ Ohm resistors:
 - R633 to R632
 
 These resistors can be found on the backside of the Arria10 SoC Development Kit
-underneath the FMC A connector (J29).
+underneath the FMC A connector (J29). The following picture shows the required
+configuration to be compatible with the AD-FMCDAQ2-EBZ.
+
+.. figure:: a10soc_fmc_rework.jpg
+   :alt: A10 SoC FMC Rework
+   :width: 600
+
+   Required resistor rework for AD-FMCDAQ2-EBZ compatibility
 
 Connections
 -----------
@@ -66,6 +73,14 @@ All jumpers and switches on the Arria10 SoC Development Kit should be in the
 :intel:`default position
 <content/www/us/en/docs/programmable/683735/current/boot-select.html>`
 configuring the board for SD card boot.
+
+.. figure:: a10soc_daq2.jpg
+   :alt: AD-FMCDAQ2-EBZ on Arria10 SoC Dev Kit
+   :width: 600
+
+   AD-FMCDAQ2-EBZ connected to Arria10 SoC Development Kit
+
+.. esd-warning::
 
 Booting the System
 ------------------

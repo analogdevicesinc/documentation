@@ -97,7 +97,23 @@
 <li><a class="reference internal" href="#">AD-FMCOMMS5-EBZ</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#multi-chip-synchronization">Multi-Chip Synchronization</a><ul>
+<li><a class="reference internal" href="#clock-distribution">Clock Distribution</a></li>
+<li><a class="reference internal" href="#mcs-software">MCS Software</a></li>
+<li><a class="reference internal" href="#when-mcs-must-be-repeated">When MCS Must Be Repeated</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rf-phase-synchronization">RF Phase Synchronization</a><ul>
+<li><a class="reference internal" href="#internal-los-fpga-correction">Internal LOs + FPGA Correction</a></li>
+<li><a class="reference internal" href="#when-phase-calibration-must-be-repeated">When Phase Calibration Must Be Repeated</a></li>
+<li><a class="reference internal" href="#external-lo-adf5355">External LO (ADF5355)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hardware">Hardware</a><ul>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#hardware-revisions">Hardware Revisions</a></li>
+<li><a class="reference internal" href="#i-o-voltage">I/O Voltage</a></li>
+<li><a class="reference internal" href="#configuration-options">Configuration Options</a></li>
+<li><a class="reference internal" href="#phase-performance">Phase Performance</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
@@ -107,6 +123,10 @@
 </li>
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#linux-drivers">Linux Drivers</a></li>
+<li><a class="reference internal" href="#device-trees">Device Trees</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope-plugin">IIO Oscilloscope Plugin</a></li>
+<li><a class="reference internal" href="#phase-synchronization-procedure-iio-oscilloscope">Phase Synchronization Procedure (IIO-Oscilloscope)</a></li>
+<li><a class="reference internal" href="#additional-software-and-tools">Additional Software and Tools</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -308,12 +328,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -697,11 +712,8 @@ Agile Transceivers, designed to demonstrate how to design a platform based on
 multiple devices for MIMO applications. For systems requiring more than two
 input or two output channels, multiple AD9361 devices and a common reference
 oscillator are required.</p>
-<p>The AD9361 provides the capability to accept an external reference clock and
-synchronize operation with other devices using simple control logic. Each
-AD9361 includes its own baseband PLL that generates sampling and data clocks
-from the reference clock input, so an additional control mechanism is required
-to synchronize multiple devices.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms5-ebz/fmcomms5-loopback.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms5-ebz/fmcomms5-loopback.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms5-ebz/fmcomms5-loopback.jpg" width="500" />
+</a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The AD-FMCOMMS5-EBZ uses a dual FMC connector. This means the base board
@@ -714,6 +726,11 @@ ZC706, and ZCU102.</p>
 beamforming are proven techniques for maximizing throughput and efficient
 spectrum utilization. The AD-FMCOMMS5-EBZ provides 4 Rx and 4 Tx channels
 using two synchronized <a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a> devices.</p>
+<p>The purpose of the AD-FMCOMMS5-EBZ is to provide a platform which demonstrates
+how to connect and synchronize (at the RF side) multiple AD9361s for MIMO
+applications. To help with algorithm and array processing development, there
+are a variety of resources available, from MIMO encoding/decoding IP blocks to
+<a class="icon link reference external" href="https://www.mathworks.com/products/phased-array.html" target="_blank">MATLAB Phased Array System Toolbox</a>.</p>
 <p>If you are just starting a design, or investigating the AD9361 for the first
 time, it is suggested to get familiar with the single AD9361 based platforms
 (<a class="reference internal" href="../ad-fmcomms2-ebz/index.html#ad-fmcomms2-ebz"><span class="std std-ref">AD-FMCOMMS2-EBZ</span></a> or
@@ -721,16 +738,155 @@ time, it is suggested to get familiar with the single AD9361 based platforms
 </section>
 <section id="multi-chip-synchronization">
 <h2>Multi-Chip Synchronization<a class="headerlink" href="#multi-chip-synchronization" title="Link to this heading"></a></h2>
-<p>Each AD9361 operates independently with its own baseband PLL. For MIMO
-applications, multi-chip synchronization (MCS) is required to align phase
-and timing between the two devices. The key requirements are:</p>
+<figure class="align-center" id="id2">
+<img alt="../../../_images/ad9361.svg" src="../../../_images/ad9361.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD9361 simplified block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The AD9361 utilizes a fractional-N synthesizer in the baseband PLL block to
+generate the desired sample rate. This synthesizer generates the ADC sample
+clock, DAC sample clock, and baseband digital clocks from any reference clock
+in the specified frequency range.</p>
+<p>For MIMO systems requiring more than two input or two output channels, multiple
+AD9361 devices and a common reference oscillator are required. Each AD9361
+includes its own baseband PLL that generates sampling and data clocks from the
+reference clock input, so an additional control mechanism is required to
+synchronize multiple devices.</p>
+<section id="clock-distribution">
+<h3>Clock Distribution<a class="headerlink" href="#clock-distribution" title="Link to this heading"></a></h3>
+<p>On the AD-FMCOMMS5-EBZ, an <a class="icon adi reference external" href="https://www.analog.com/ADCLK846" target="_blank">ADCLK846</a> (U301) Clock Fanout Buffer accepts
+a 40 MHz Rakon oscillator (Y301) and drives:</p>
 <ul class="simple">
-<li><p>A common reference oscillator for both AD9361 devices</p></li>
-<li><p>MCS control logic to synchronize the baseband PLLs</p></li>
-<li><p>Phase synchronization calibration after each power-up</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">XTALN_A</span></code> to the “A” AD9361 device (XTALN pin floating per datasheet)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">XTALN_B</span></code> to the “B” AD9361 device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REF_CLK_FMC</span></code> back to the FMC connector</p></li>
 </ul>
-<p>The AD9361 baseband PLLs synchronize from the reference clock input. The
-phase synchronization procedure is documented for different hardware revisions.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">SYNC_IN</span></code> pin on the AD9361 is driven directly from the FPGA,
+length-matched to both AD9361 devices, so the edge hits both parts at the same
+time. The total number of devices that can be connected in parallel is limited
+only by the drive capability of the clock and logic signals.</p>
+</section>
+<section id="mcs-software">
+<h3>MCS Software<a class="headerlink" href="#mcs-software" title="Link to this heading"></a></h3>
+<p>From a software perspective, MCS requires programming a few registers in the
+correct order and asserting <code class="docutils literal notranslate"><span class="pre">SYNC_IN</span></code> at the right time.</p>
+<p><strong>Linux</strong>: The
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/libad9361-iio" target="_blank">libad9361-iio</a> helper
+library manages the MCS sequence. The implementation is in
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/libad9361-iio/blob/master/ad9361_multichip_sync.c" target="_blank">ad9361_multichip_sync.c</a>.</p>
+<p><strong>No-OS</strong>: Before initializing the parts, set
+<code class="docutils literal notranslate"><span class="pre">AD9361_InitParam.gpio_sync</span></code> accordingly. After initialization, call
+<code class="docutils literal notranslate"><span class="pre">ad9361_do_mcs(phy_master,</span> <span class="pre">phy_slave)</span></code> to synchronize both devices.</p>
+</section>
+<section id="when-mcs-must-be-repeated">
+<h3>When MCS Must Be Repeated<a class="headerlink" href="#when-mcs-must-be-repeated" title="Link to this heading"></a></h3>
+<p>Any change that can affect device synchronization requires repeating the MCS
+sequence:</p>
+<ul class="simple">
+<li><p>Baseband PLL (BBPLL) rate changes (device data rates)</p></li>
+<li><p>FIR Filter enable/disable when the BBPLL must change</p></li>
+<li><p>Changing either Tx or Rx LO settings</p></li>
+</ul>
+</section>
+</section>
+<section id="rf-phase-synchronization">
+<h2>RF Phase Synchronization<a class="headerlink" href="#rf-phase-synchronization" title="Link to this heading"></a></h2>
+<p>The AD9361 does not include internal RF synchronization. The ability to
+synchronize the internal RF local oscillators requires external assistance.
+There are two methods to solve this:</p>
+<ol class="arabic simple">
+<li><p><strong>Internal LOs + FPGA correction</strong>: Measure the phase difference in the
+internal LOs and correct in the FPGA</p></li>
+<li><p><strong>External LO</strong>: Use an external LO signal (e.g., <a class="icon adi reference external" href="https://www.analog.com/ADF5355" target="_blank">ADF5355</a>)</p></li>
+</ol>
+<section id="internal-los-fpga-correction">
+<h3>Internal LOs + FPGA Correction<a class="headerlink" href="#internal-los-fpga-correction" title="Link to this heading"></a></h3>
+<p>The FMCOMMS5 board includes two <a class="icon adi reference external" href="https://www.analog.com/ADG918" target="_blank">ADG918</a> wide band (-3 dB at 4 GHz)
+switches that connect either Tx1B from either AD9361 device to Rx1C on either
+AD9361 device. This allows four different measurement states:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head stub"><p>Output \ Input</p></th>
+<th class="head"><p>Device A (Rx1C)</p></th>
+<th class="head"><p>Device B (Rx1C)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>Device A (Tx1B)</p></th>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>2</strong></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Device B (Tx1B)</p></th>
+<td><p><strong>3</strong></p></td>
+<td><p><strong>4</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These states are controlled by 2 GPIO pins from the FPGA (<code class="docutils literal notranslate"><span class="pre">CAL_SW_1</span></code> and
+<code class="docutils literal notranslate"><span class="pre">CAL_SW_2</span></code>).</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms5-ebz/switches.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms5-ebz/switches.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD-FMCOMMS5-EBZ calibration switch matrix</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Using these switches, the phase difference between the two receivers can be
+measured using a common transmitter reference. The HDL reference design
+includes a loopback path for time-domain alignment between Rx and Tx. The
+phase correction is applied through internal phase shifters in the HDL
+reference design’s ADC and DAC cores.</p>
+<p>The calibration procedures are implemented in both IIO-Oscilloscope and in the
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/libad9361-iio/blob/master/ad9361_fmcomms5_phase_sync.c" target="_blank">libad9361 phase sync library</a>.</p>
+</section>
+<section id="when-phase-calibration-must-be-repeated">
+<h3>When Phase Calibration Must Be Repeated<a class="headerlink" href="#when-phase-calibration-must-be-repeated" title="Link to this heading"></a></h3>
+<p>Phase calibration must be repeated after any change that can cause the RF LOs
+to go out of phase:</p>
+<ul class="simple">
+<li><p>Changes to the internal RX/TX RFPLLs (LOs)</p></li>
+<li><p>After MCS is performed</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>TDD mode (where the LOs get turned off) cannot be used with RF-level phase
+coherency. Users should keep the LOs on by using FDD mode.</p>
+</div>
+</section>
+<section id="external-lo-adf5355">
+<h3>External LO (ADF5355)<a class="headerlink" href="#external-lo-adf5355" title="Link to this heading"></a></h3>
+<p>When using an external LO such as the <a class="icon adi reference external" href="https://www.analog.com/ADF5355" target="_blank">ADF5355</a> on the FMCOMMS5, the
+transceiver still has a random phase relation, but it is limited to a 0 or
+180 degree offset. This offset is due to the input divider on the external LO
+input pins and cannot be bypassed. The phase relationship is randomized when
+the transceivers are power cycled or the external LO power drops below a
+certain threshold.</p>
+<p><strong>Rev C</strong>: The <a class="icon adi reference external" href="https://www.analog.com/ADF5355" target="_blank">ADF5355</a> is populated on the board. Select the appropriate
+device tree on the SD Card to enable control via IIO. An <a class="icon adi reference external" href="https://www.analog.com/HMC744" target="_blank">HMC744</a> buffer
+distributes the LO to both AD9361 devices.</p>
+<p><strong>Rev B</strong>: The board has layout provisions for the ADF5355. In the interim, an
+external LO signal can be injected into J302 via the Inphi 13617 distributor.</p>
+</section>
+</section>
+<section id="hardware">
+<h2>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h2>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<p><strong>Rev C</strong>:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.analog.com/media/en/reference-design-documentation/design-integration-files/ad-fmcomms5-ebz-designsupport.zip" target="_blank">AD-FMCOMMS5-EBZ Design &amp; Integration Files</a>
+(Schematic, PCB Layout, Bill of Materials, Allegro Project)</p></li>
+</ul>
+<p><strong>Rev B</strong>:</p>
+<ul class="simple">
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz/fmcomms5_schematic.pdf" target="_blank">Rev B Schematic</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz/fmcomms5-bom.xls" target="_blank">Rev B BOM</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz/fmcomms5_build.zip" target="_blank">Rev B Build Files</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz/fmcomms5_revb.7z" target="_blank">Rev B Allegro Board File</a></p></li>
+</ul>
+</section>
 <section id="hardware-revisions">
 <h3>Hardware Revisions<a class="headerlink" href="#hardware-revisions" title="Link to this heading"></a></h3>
 <div class="table-wrapper docutils container">
@@ -752,10 +908,69 @@ phase synchronization procedure is documented for different hardware revisions.<
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Rev-B has an errata: <a class="icon adi reference external" href="https://www.analog.com/ADF5355" target="_blank">ADF5355</a> floating AVDD pin requires rework fix.</p>
+<p>Rev-B has an errata: <a class="icon adi reference external" href="https://www.analog.com/ADF5355" target="_blank">ADF5355</a> pin 5 (AVDD) is a floating node. The
+fix is to short pin 5 (AVDD) with pin 4 (CE) to make a connection to
+VDD_EXT_LO_3P3.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms5-ebz/fmcomms5_rework.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms5-ebz/fmcomms5_rework.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD-FMCOMMS5-EBZ Rev B ADF5355 rework</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </div>
-<p>Interface voltage requirement: VDD_INTERFACE 1.71-2.625 V (1.8 V nominal
-+/-5%).</p>
+</section>
+<section id="i-o-voltage">
+<h3>I/O Voltage<a class="headerlink" href="#i-o-voltage" title="Link to this heading"></a></h3>
+<p>The AD-FMCOMMS5-EBZ (AD9361) assumes a VDD_INTERFACE voltage between 1.71 V
+and 2.625 V (1.8 V to 2.5 V +/- 5%). On your FPGA carrier board, ensure that
+VADJ is between these levels.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Setting VADJ to 3.3 V will damage the part.</p>
+</div>
+</section>
+<section id="configuration-options">
+<h3>Configuration Options<a class="headerlink" href="#configuration-options" title="Link to this heading"></a></h3>
+<p><strong>RF Ports</strong></p>
+<p>By default the FMCOMMS5 is configured with Minicircuits
+<a class="icon link reference external" href="http://www.minicircuits.com/pdfs/TCM1-63AX+.pdf" target="_blank">TCM1-63AX+</a> baluns on the
+Rx1A, Rx2A, Rx1C, Tx1A, Tx2A, and Tx1B channels. This wideband balun allows
+tuning across the entire 6 GHz range of the AD9361, although performance may
+be compromised at some frequencies.</p>
+<p><strong>Reference Clock</strong></p>
+<p>By default the FMCOMMS5 uses a Rakon 40 MHz RXO3225M as the reference clock,
+distributed by the <a class="icon adi reference external" href="https://www.analog.com/ADCLK846" target="_blank">ADCLK846</a> to both <a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a> devices, the
+<a class="icon adi reference external" href="https://www.analog.com/ADF5355" target="_blank">ADF5355</a>, and back to the FMC connector. The on-board reference can be
+bypassed by placing C301 (0.1 uF) and removing R360, then injecting an
+external reference into J301 (50 ohm terminated). The level must not exceed
+the <a class="icon adi reference external" href="https://www.analog.com/ADCLK846" target="_blank">ADCLK846</a> input conditions (1.8 V p-p). If the reference clock
+frequency is changed, the device tree must be updated accordingly.</p>
+<p><strong>External PLL (Rev C)</strong></p>
+<p>The on-board <a class="icon adi reference external" href="https://www.analog.com/ADF5355" target="_blank">ADF5355</a> LO signal normally flows through C331 and C332
+(C390 and R350 are DNI). To bypass the ADF5355 and use an external LO,
+rotate C332 by 90 degrees onto the C390 pad and remove C331 placing R350. An
+external reference can then be injected into J302. The level must not exceed
+the <a class="icon adi reference external" href="https://www.analog.com/HMC744" target="_blank">HMC744</a> input conditions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The hardware modifications involve tiny 0402 (1 x 0.5 mm) components and
+should be performed by skilled professionals only.</p>
+</div>
+</section>
+<section id="phase-performance">
+<h3>Phase Performance<a class="headerlink" href="#phase-performance" title="Link to this heading"></a></h3>
+<p>Traces between baluns and SMAs are not phase-matched on Rev-A and Rev-B, which
+can cause phase misalignment. This is corrected on Rev-C. The phase offset
+from trace mismatches can be estimated using:</p>
+<blockquote>
+<div><p>phase = 360 * D * f / c</p>
+</div></blockquote>
+<p>where D is the trace length difference in meters, f is the frequency in Hz,
+and c is the speed of light in FR4 (approximately 15 cm/ns). Board files for
+each revision provide the actual trace lengths.</p>
+<p>These phase estimates can be used to correct for trace mismatches through the
+internal phase shifters in the HDL reference design’s ADC and DAC cores using
+the <code class="docutils literal notranslate"><span class="pre">calibphase</span></code> properties.</p>
 </section>
 </section>
 <section id="supported-carriers">
@@ -806,16 +1021,71 @@ with multi-channel extensions.</p>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/cf_axi_adc_core.c" target="_blank">AXI ADC HDL Linux Driver</a></p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/frequency/cf_axi_dds.c" target="_blank">AXI DAC DDS Linux Driver</a></p></li>
 </ul>
-<p>The AD9361 Linux IIO driver supports multi-instance operation for the dual
-AD9361 configuration. The IIO Oscilloscope includes a dedicated FMCOMMS5
-plugin for dual-device control.</p>
-<p>Additional tools and frameworks:</p>
+</section>
+<section id="device-trees">
+<h3>Device Trees<a class="headerlink" href="#device-trees" title="Link to this heading"></a></h3>
 <ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx/zynq-zc702-adv7511-ad9361-fmcomms5.dts" target="_blank">ZC702 DTS</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx/zynq-zc706-adv7511-ad9361-fmcomms5.dts" target="_blank">ZC706 DTS</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9361-fmcomms5.dts" target="_blank">ZCU102 DTS</a></p></li>
+</ul>
+</section>
+<section id="iio-oscilloscope-plugin">
+<h3>IIO Oscilloscope Plugin<a class="headerlink" href="#iio-oscilloscope-plugin" title="Link to this heading"></a></h3>
+<p>The IIO Oscilloscope includes a dedicated FMCOMMS5 plugin for dual-device
+control. The plugin view is divided into four sections:</p>
+<ul class="simple">
+<li><p><strong>Device Global Settings</strong>: ENSM mode, calibration mode, rate governor,
+FIR filter configuration, path rates, and DCXO tuning. These settings apply
+to both AD9361 devices.</p></li>
+<li><p><strong>Receive Chain</strong>: RF bandwidth, sampling rate, RF port select, LO
+frequency, fastlock mode, tracking calibrations (quadrature, RF DC, BB DC),
+hardware gain, RSSI, and gain control mode.</p></li>
+<li><p><strong>Transmit Chain</strong>: RF bandwidth, sampling rate, RF port select, LO
+frequency, fastlock mode, and per-channel TX attenuation (0 to -89.75 dB
+in 0.25 dB steps).</p></li>
+<li><p><strong>FPGA Settings</strong>: DDS mode selection (one/two CW tones, independent I/Q,
+DAC buffer, disabled), tone parameters (frequency, scale, phase), and RX
+phase rotation.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the main capture window, channels must be enabled in I/Q pairs
+(e.g., voltage0 and voltage1). The number of enabled pairs must be equal
+between both devices. Channels voltage0-3 correspond to Device A, and
+voltage4-7 correspond to Device B.</p>
+</div>
+</section>
+<section id="phase-synchronization-procedure-iio-oscilloscope">
+<h3>Phase Synchronization Procedure (IIO-Oscilloscope)<a class="headerlink" href="#phase-synchronization-procedure-iio-oscilloscope" title="Link to this heading"></a></h3>
+<p>For Rev-A and Rev-B boards, low LO frequencies are recommended due to severe
+attenuation from onboard RF switches above 1 GHz.</p>
+<ol class="arabic simple">
+<li><p>Ensure the default driver configuration is active (remove
+<code class="docutils literal notranslate"><span class="pre">~/.osc_profile.ini</span></code> and reboot). Default: 30.72 MSPS, 18.00 MHz RF
+bandwidth, all LOs at 2.4 GHz.</p></li>
+<li><p>From the FMCOMMS5 panel, match all LOs to the same frequency for all four
+data paths.</p></li>
+<li><p>Disable all receiver trackings: Quadrature, RF DC, and BB DC.</p></li>
+<li><p>Put all receivers into <strong>manual</strong> Gain Control Mode with equal gain levels.</p></li>
+<li><p>From the FMComms2/3/4/5 Advanced panel, select the FMComms5 tab and click
+<strong>Reset Calibration</strong>.</p></li>
+<li><p>Click <strong>MCS Sync</strong>.</p></li>
+<li><p>Click <strong>Calibrate</strong> to launch the procedure.</p></li>
+<li><p>After calibration completes, disable Quadrature tracking again to maintain
+minimal ambiguity over time.</p></li>
+</ol>
+</section>
+<section id="additional-software-and-tools">
+<h3>Additional Software and Tools<a class="headerlink" href="#additional-software-and-tools" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/libad9361-iio" target="_blank">libad9361-iio</a>:
+Multi-chip sync and phase sync helper library</p></li>
 <li><p>MATLAB/Simulink libiio clients</p></li>
 <li><p>GNU Radio with MIMO support</p></li>
-<li><p>Phased Array System Toolbox examples</p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/phased-array.html" target="_blank">Phased Array System Toolbox</a>
+examples</p></li>
 <li><p>Phase synchronization tools and calibration utilities</p></li>
-<li><p>Array processing and beamforming examples</p></li>
 </ul>
 </section>
 </section>

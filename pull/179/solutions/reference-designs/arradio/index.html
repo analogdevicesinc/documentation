@@ -101,16 +101,19 @@
 <li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
 <li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li><a class="reference internal" href="#sockit-jumper-configuration">SoCKit Jumper Configuration</a></li>
+<li><a class="reference internal" href="#creating-the-micro-sd-card">Creating the Micro-SD Card</a></li>
 <li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#no-os-software">No-OS Software</a></li>
+<li><a class="reference internal" href="#using-iio-oscilloscope">Using IIO Oscilloscope</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#no-os-software">No-OS Software</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#linux-device-driver">Linux Device Driver</a></li>
+<li><a class="reference internal" href="#device-tree">Device Tree</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -312,12 +315,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -703,14 +701,24 @@ board is an HSMC board by Arrow and Terasic for the <a class="icon adi reference
 integrated RF Agile Transceiver. It is similar to the
 <a class="reference internal" href="../ad-fmcomms2-ebz/index.html#ad-fmcomms2-ebz"><span class="std std-ref">AD-FMCOMMS2-EBZ</span></a>, except it uses an HSMC connector
 which connects to the Arrow SoCKit (Intel Cyclone V SoC).</p>
-<p>The board features a Johanson Technology 2450BL15B050E 2.45 GHz balun, so RF
-performance is optimized for the 2400 to 2500 MHz band. RF performance may
-vary at other frequencies due to the balun characteristics; the balun can be
-swapped for different frequency applications.</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/arradio/sockit_arradio.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/arradio/sockit_arradio.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Arrow SoCKit with ARRADIO board</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The board features a Johanson Technology
+<a class="icon link reference external" href="https://www.johansontechnology.com/datasheets/baluns/JTI_Balun-2450BL15B050_12-03.pdf" target="_blank">2450BL15B050E</a>
+2.45 GHz balun, so RF performance is optimized for the 2400 to 2500 MHz band.
+The platform is primarily intended for hardware and RF investigation and
+bring-up of various waveforms at the frequency of interest. The balun can be
+swapped for different frequency applications (see the
+<a class="reference internal" href="../ad-fmcomms2-ebz/index.html#ad-fmcomms2-ebz"><span class="std std-ref">AD-FMCOMMS2-EBZ</span></a> configuration options).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The ARRADIO board is not a product of Analog Devices. Questions about
-purchase or returns should go to Arrow.</p>
+purchase or returns should go to
+<a class="icon link reference external" href="https://www.arrow.com/en/products/arradio/terasic-technologies" target="_blank">Arrow</a>.</p>
 </div>
 </section>
 <section id="supported-devices">
@@ -730,15 +738,24 @@ purchase or returns should go to Arrow.</p>
 <h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
 <section id="prerequisites">
 <h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h3>
+<p>Required hardware:</p>
 <ul class="simple">
-<li><p>Terasic C5 SoCKit FPGA carrier board</p></li>
-<li><p>ARRADIO board</p></li>
-<li><p>8 GB Micro-SD card with Kuiper Linux image</p></li>
+<li><p><a class="icon link reference external" href="https://www.arrow.com/en/products/sockit/arrow-development-tools" target="_blank">Terasic C5 SoCKit</a>
+FPGA carrier board</p></li>
+<li><p><a class="icon link reference external" href="https://www.arrow.com/en/products/arradio/terasic-technologies" target="_blank">ARRADIO</a>
+board</p></li>
+<li><p>8 GB Micro-SD card with <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux" target="_blank">Kuiper Linux</a> image</p></li>
 <li><p>USB keyboard and mouse</p></li>
 <li><p>USB OTG cable (for keyboard/mouse)</p></li>
 <li><p>VGA-compatible monitor</p></li>
 <li><p>Ethernet cable</p></li>
 <li><p>Micro-USB cable (for UART, 115200 baud, 8N1)</p></li>
+</ul>
+<p>Required software:</p>
+<ul class="simple">
+<li><p>Host PC (Linux recommended)</p></li>
+<li><p>UART terminal application (PuTTY, Tera Term, Minicom, etc.)</p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases" target="_blank">IIO Oscilloscope</a></p></li>
 </ul>
 </section>
 <section id="sockit-jumper-configuration">
@@ -772,6 +789,46 @@ purchase or returns should go to Arrow.</p>
 </tbody>
 </table>
 </div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>SW6</p></th>
+<th class="head"><p>MSEL0</p></th>
+<th class="head"><p>MSEL1</p></th>
+<th class="head"><p>MSEL2</p></th>
+<th class="head"><p>MSEL3</p></th>
+<th class="head"><p>MSEL4</p></th>
+<th class="head"><p>CODEC_SEL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>POS</strong></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="creating-the-micro-sd-card">
+<h3>Creating the Micro-SD Card<a class="headerlink" href="#creating-the-micro-sd-card" title="Link to this heading"></a></h3>
+<p>Download the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux" target="_blank">Kuiper Linux image</a>
+and flash it to the Micro-SD card. After flashing, copy the ARRADIO boot
+files to the BOOT partition:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/media/&lt;user&gt;/BOOT/socfpga_cyclone5_sockit_arradio
+sudo<span class="w"> </span>cp<span class="w"> </span>socfpga.dtb<span class="w"> </span>/media/&lt;user&gt;/BOOT/
+sudo<span class="w"> </span>cp<span class="w"> </span>zImage<span class="w"> </span>/media/&lt;user&gt;/BOOT/
+sudo<span class="w"> </span>cp<span class="w"> </span>u-boot.scr<span class="w"> </span>/media/&lt;user&gt;/BOOT/
+sudo<span class="w"> </span>cp<span class="w"> </span>soc_system.rbf<span class="w"> </span>/media/&lt;user&gt;/BOOT/
+sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>preloader_bootloader.img<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/sdX3
+sync
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">/dev/sdX3</span></code> with the raw partition of your SD card.</p>
 </section>
 <section id="hardware-setup">
 <h3>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
@@ -779,24 +836,60 @@ purchase or returns should go to Arrow.</p>
 <li><p>Insert the Micro-SD card with Kuiper Linux image.</p></li>
 <li><p>Connect the ARRADIO board to the HSMC connector on the SoCKit.</p></li>
 <li><p>Connect the VGA monitor, USB keyboard/mouse via OTG, and Ethernet.</p></li>
-<li><p>Set the jumpers as specified above.</p></li>
+<li><p>Set the jumpers as specified in the tables above.</p></li>
 <li><p>Connect the Micro-USB UART cable to the host PC.</p></li>
 <li><p>Connect the 12 V power supply and power on.</p></li>
 </ol>
-<p>The board can be used locally (VGA + USB keyboard/mouse) or remotely via
-Ethernet using the IIO Oscilloscope with URI <code class="docutils literal notranslate"><span class="pre">ip:&lt;board_ip&gt;</span></code>.</p>
+</section>
+<section id="using-iio-oscilloscope">
+<h3>Using IIO Oscilloscope<a class="headerlink" href="#using-iio-oscilloscope" title="Link to this heading"></a></h3>
+<p><strong>Local mode</strong>: Interact directly via the VGA display, USB keyboard, and mouse
+connected to the SoCKit.</p>
+<p><strong>Remote mode</strong>: Connect via Ethernet from a host PC:</p>
+<ol class="arabic simple">
+<li><p>Open a UART terminal at 115200 baud (8N1).</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> on the board to obtain its IP address.</p></li>
+<li><p>On the host PC, launch IIO Oscilloscope and enter <code class="docutils literal notranslate"><span class="pre">ip:&lt;board_ip&gt;</span></code> in the
+URI field.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is a persistent file system. Always shut down properly using
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">shutdown</span> <span class="pre">-h</span> <span class="pre">now</span></code> rather than removing power directly.</p>
+</div>
+</section>
 </section>
 <section id="no-os-software">
-<h3>No-OS Software<a class="headerlink" href="#no-os-software" title="Link to this heading"></a></h3>
+<h2>No-OS Software<a class="headerlink" href="#no-os-software" title="Link to this heading"></a></h2>
 <p>The No-OS bare-metal driver supports two operating modes:</p>
 <ul class="simple">
 <li><p><strong>2R2T Mode</strong> (default): 2 Receive / 2 Transmit with AD9361 at 122 MHz
 interface clock. Build with <code class="docutils literal notranslate"><span class="pre">make</span></code> or <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DEFINE=2R2T</span></code>.</p></li>
 <li><p><strong>1R1T Mode</strong>: 1 Receive / 1 Transmit with AD9364 at 61 MHz interface
 clock. Build with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DEFINE=1R1T</span></code>.</p></li>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/arradio" target="_blank">projects/arradio</a></p></li>
 </ul>
-</section>
+<p>Building from source requires cloning the HDL and No-OS repositories, then
+building each project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/hdl
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/no-OS
+
+<span class="c1"># Build HDL project</span>
+make<span class="w"> </span>-C<span class="w"> </span>hdl/projects/arradio/c5soc
+
+<span class="c1"># Build No-OS project (2R2T mode)</span>
+make<span class="w"> </span>-C<span class="w"> </span>no-OS/arradio/c5soc
+
+<span class="c1"># Build No-OS project (1R1T mode)</span>
+make<span class="w"> </span>-C<span class="w"> </span>no-OS/arradio/c5soc<span class="w"> </span><span class="nv">DEFINE</span><span class="o">=</span>1R1T
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After the first build, the mode selection is remembered for subsequent
+builds (until a clean). Always verify the compiler flags
+(<code class="docutils literal notranslate"><span class="pre">-DAD9361_DEVICE=1</span> <span class="pre">-DAD9364_DEVICE=0</span></code> for 2R2T, or
+<code class="docutils literal notranslate"><span class="pre">-DAD9361_DEVICE=0</span> <span class="pre">-DAD9364_DEVICE=1</span></code> for 1R1T) match your desired mode.</p>
+</div>
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
@@ -815,7 +908,13 @@ Intel Cyclone V SoC platform with HSMC interface.</p>
 <section id="linux-device-driver">
 <h3>Linux Device Driver<a class="headerlink" href="#linux-device-driver" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad9361.c" target="_blank">drivers/iio/adc/ad9361.c</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad9361.c" target="_blank">AD9361 Linux Driver</a></p></li>
+</ul>
+</section>
+<section id="device-tree">
+<h3>Device Tree<a class="headerlink" href="#device-tree" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/intel/socfpga/socfpga_cyclone5_sockit_arradio.dts" target="_blank">SoCKit ARRADIO DTS</a></p></li>
 </ul>
 <p>The following applications and tools are supported:</p>
 <ul class="simple">
@@ -832,6 +931,7 @@ Intel Cyclone V SoC platform with HSMC interface.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../ad-fmcomms2-ebz/index.html#ad-fmcomms2-ebz"><span class="std std-ref">AD-FMCOMMS2-EBZ User Guide</span></a></p></li>
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/introduction.html" target="_blank">ADI Reference Designs HDL User Guide</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361 Product Page</a></p></li>
 </ul>
 </section>
 <section id="support">

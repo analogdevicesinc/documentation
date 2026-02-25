@@ -6,9 +6,9 @@ AD7606x-FMC User Guide
 Introduction
 ------------
 
-The EVAL-AD7606B-FMCZ and EVAL-AD7606C-18 evaluation boards are designed to
-help users evaluate the features of the :adi:`AD7606B`, :adi:`AD7606C-16`, and
-:adi:`AD7606C-18` analog-to-digital converters (ADCs).
+The :adi:`EVAL-AD7606B-FMCZ` and :adi:`EVAL-AD7606C-18` evaluation boards are
+designed to help users evaluate the features of the :adi:`AD7606B`,
+:adi:`AD7606C-16`, and :adi:`AD7606C-18` analog-to-digital converters (ADCs).
 
 The data path of the HDL design supports both parallel and serial interfaces:
 
@@ -32,6 +32,10 @@ Supported Carriers
 HDL Reference Design
 --------------------
 
+The design is built upon ADI's generic HDL reference design framework. For an
+in-depth presentation of the HDL design framework, refer to the
+`ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__.
+
 Build Parameters
 ~~~~~~~~~~~~~~~~
 
@@ -50,6 +54,13 @@ Build Parameters
    * - EXT_CLK
      - 0
      - External clock option: 0 - No, 1 - Yes
+
+Before board power-up, choose the device type, operation mode, and clocking
+option. Depending on the operation mode, hardware modifications may be needed
+on the board and/or Tcl script. Examples:
+
+- For the **AD7606C-16** device: ``make DEV_CONFIG=1``
+- For **STATUS** operation mode: ``make SIMPLE_STATUS_CRC=1``
 
 Block Diagram
 ~~~~~~~~~~~~~
@@ -89,15 +100,48 @@ PS7 EMIO offset = 54.
      - 86-84
      - 32-30
 
+Interrupts
+~~~~~~~~~~
+
+Below are the Programmable Logic interrupts used in this project.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Instance
+     - HDL
+     - Linux ZynqMP
+   * - axi_ad7606x_dma
+     - 13
+     - 109
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`projects/ad7606x_fmc`
 
+Software
+--------
+
+Linux Driver
+~~~~~~~~~~~~
+
+- :git-linux:`AD7606 Linux driver <drivers/iio/adc/ad7606.c>`
+- :git-linux:`AD7606 SPI interface <drivers/iio/adc/ad7606_spi.c>`
+- :git-linux:`AD7606 parallel interface <drivers/iio/adc/ad7606_par.c>`
+
+No-OS Driver
+~~~~~~~~~~~~~
+
+- :git-no-OS:`AD7606 No-OS driver <drivers/adc/ad7606>`
+- :git-no-OS:`AD7606x-FMC No-OS project <projects/ad7606x-fmc>`
+
 More Information
 ----------------
 
 - `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- :git-hdl:`AD7606x-FMC HDL Project <projects/ad7606x_fmc>`
+- :git-hdl:`AXI_AD7606x IP Core <library/axi_ad7606x>`
 
 Support
 -------

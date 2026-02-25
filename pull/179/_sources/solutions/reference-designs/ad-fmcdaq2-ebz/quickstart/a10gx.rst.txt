@@ -8,6 +8,12 @@ AD-FMCDAQ2-EBZ Arria 10 GX Quick Start Guide
    Support for the A10GX carrier is discontinued and will not be
    supported in future releases.
 
+.. figure:: arria10-fpga_daq2.jpg
+   :alt: AD-FMCDAQ2-EBZ on Arria10 GX FPGA Dev Kit
+   :width: 600
+
+   AD-FMCDAQ2-EBZ on Arria10 GX FPGA Development Kit
+
 This guide provides some quick instructions on how to setup the AD-FMCDAQ2-EBZ
 on the
 `A10GX <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`__
@@ -38,6 +44,12 @@ Setting up the hardware (A10GX)
 
 You will need to:
 
+.. figure:: arria10-fpga-kit.jpg
+   :alt: Arria10 GX FPGA Dev Kit Board Layout
+   :width: 400
+
+   Arria10 GX FPGA Development Kit board layout
+
 - Get the A10GX board.
 - Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier **FMC1**
   socket (J1).
@@ -45,6 +57,8 @@ You will need to:
 - Connect the Ethernet cable.
 - Plug the Power Supply into 12V Power input connector (DC Input).
 - Turn it on.
+
+.. esd-warning::
 
 Programming the FPGA
 --------------------
@@ -138,8 +152,20 @@ libIIO Context** select **Manual** and enter the URI in the following format
 To determine the IP of the board, in Nios II Command Shell login using **root**
 and password **analog**. Then run the **ifconfig** command.
 
+.. figure:: iioscope_connect.jpg
+   :alt: IIO Oscilloscope Connect
+   :width: 600
+
+   IIO Oscilloscope connection window
+
 To plot the captured waveforms go to **File** menu then click **New Plot**.
 Select the channels to plot and then click **Capture / Stop** button.
+
+.. figure:: iioscope_newplot.png
+   :alt: IIO Oscilloscope New Plot
+   :width: 600
+
+   IIO Oscilloscope captured waveforms
 
 More Information
 ----------------

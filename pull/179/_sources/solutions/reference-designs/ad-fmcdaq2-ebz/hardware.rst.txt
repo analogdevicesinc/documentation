@@ -6,6 +6,15 @@ AD-FMCDAQ2-EBZ Hardware
 Picture and Main Components
 ---------------------------
 
+.. figure:: daq2_part_breakdown.png
+   :alt: AD-FMCDAQ2-EBZ Part Breakdown
+   :width: 800
+
+   AD-FMCDAQ2-EBZ Part Breakdown
+
+Outline
+-------
+
 For those that don't want to load up the Allegro viewer, here is a basic
 outline/component placements of the board.
 

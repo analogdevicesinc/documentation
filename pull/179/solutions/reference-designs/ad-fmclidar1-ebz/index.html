@@ -110,6 +110,21 @@
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#kit-contents">Kit Contents</a></li>
+<li><a class="reference internal" href="#system-setup">System Setup</a></li>
+<li><a class="reference internal" href="#evaluation-software">Evaluation Software</a><ul>
+<li><a class="reference internal" href="#iio-oscilloscope">IIO Oscilloscope</a></li>
+<li><a class="reference internal" href="#lidar-plugin">LIDAR Plugin</a><ul>
+<li><a class="reference internal" href="#sequencer-settings">Sequencer Settings</a></li>
+<li><a class="reference internal" href="#laser-pulse-generator-settings">Laser Pulse Generator Settings</a></li>
+<li><a class="reference internal" href="#afe-settings">AFE Settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jesd-link-monitoring">JESD Link Monitoring</a></li>
+<li><a class="reference internal" href="#distance-measurements">Distance Measurements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#laser-safety">Laser Safety</a></li>
 <li><a class="reference internal" href="#software-support">Software Support</a></li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
@@ -310,12 +325,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -733,6 +743,9 @@ used for developing software and algorithms for a broad range of applications.</
 to host</p></li>
 <li><p>Wrappers for MATLAB, Python</p></li>
 <li><p>LiDAR specific API for system control and data acquisition</p></li>
+<li><p>Platform development environment support includes Industry standard Linux
+Industrial I/O (IIO) applications, MATLAB, Simulink, custom C/C++, Python,
+and C# applications</p></li>
 <li><p>HDL reference designs and drivers to allow zero day development</p></li>
 </ul>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/highlevel_blk_dig.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/highlevel_blk_dig.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/highlevel_blk_dig.png" width="500" />
@@ -748,20 +761,115 @@ ADC and clocking control for the full system. The FMC compliant connector
 interface means that this board can be connected to the user’s preferred FPGA
 development board. The Laser board and AFE board connect directly to this
 board.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/daq_board.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/daq_board.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/daq_board.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">DAQ Board block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD9094" target="_blank">AD9094</a> is a quad, 8-bit, 1 GSPS ADC. It supports JESD204B lane
+rates up to 15 Gbps, four integrated wideband decimation filters, numerically
+controlled oscillator blocks, and is programmable via an SPI interface.</p>
+<p>The IC selection for clock signal generation ensures low phase-noise,
+programmable delays for proper deterministic latency, and low power
+consumption. The <a class="icon adi reference external" href="https://www.analog.com/ADF4360-7" target="_blank">ADF4360-7</a> is a PLL which takes a crystal-generated
+25 MHz input and outputs a low phase-noise 1 GHz clock signal. This signal is
+then fed to an <a class="icon adi reference external" href="https://www.analog.com/AD9528" target="_blank">AD9528</a>, which outputs five clock signals as required by
+the ADC and the JESD204B interface. The AD9528 can divide frequencies and/or
+delay clock signals, thus ensuring synchronization for deterministic latency.
+The AD9528 is used in buffer mode to reduce power consumption; in this mode the
+internal PLLs are disabled and the AD9528 acts as a clock distribution chip.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/daq_clocking.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/daq_clocking.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/daq_clocking.jpg" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">DAQ Board clocking scheme</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The stringent noise challenges posed by the 1 GSPS analog-to-digital
+conversion are met by ultralow noise regulators such as the <a class="icon adi reference external" href="https://www.analog.com/ADP7156" target="_blank">ADP7156</a> and
+<a class="icon adi reference external" href="https://www.analog.com/ADP7159" target="_blank">ADP7159</a>. All the power for this board is derived from the 3.3 V and
+12 V supplies coming off the FPGA board via the FMC connector.</p>
+<p>The ADC input creates a 100 Ohm differential impedance. The external components
+account for the equivalent circuit of the analog inputs of the ADC. The user
+has the option to add capacitors to filter out both differential and common mode
+noise voltages.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/adc_input.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/adc_input.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/adc_input.jpg" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">ADC input equivalent circuit</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The DAQ board meets the VITA 57 design specs for width but not for length.</p>
 </section>
 <section id="laser-board">
 <h3>Laser Board<a class="headerlink" href="#laser-board" title="Link to this heading"></a></h3>
 <p>The laser board is mated to the AFE board for mechanical mounting on an
 optional tripod stand. It is then connected electrically to the DAQ board
-using the cable provided. It contains 4 individual lasers with appropriate
-precision driver and power components for accurate firing of the lasers.</p>
+using the cable provided. It contains four
+<a class="icon link reference external" href="https://www.osram.com/ecat/Radial%20Smart%20Laser%20SPL%20LL90_3/com/en/class_pim_web_catalog_103489/global/prd_pim_device_2220017/" target="_blank">Osram SPL LL90_3</a>
+Radial Smart Lasers.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/laser_board.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/laser_board.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/laser_board.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Laser Board block diagram</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>All lasers are driven simultaneously for an increase in beam strength giving
+longer range. A PWM signal generated by the FPGA carrier board with
+programmable pulse width and frequency is used to control the lasers. The signal
+is generated on the FPGA as LVDS to make it less susceptible to noise as it
+travels from the FPGA to the Laser board through the DAQ board and the ribbon
+cable. It is converted on the Laser board to single-ended mode using the
+<a class="icon adi reference external" href="https://www.analog.com/ADN4691E" target="_blank">ADN4691E</a>, an M-LVDS transceiver. The single-ended signal is then fed to
+the <a class="icon adi reference external" href="https://www.analog.com/ADP3634" target="_blank">ADP3634</a>, a high current, dual high-speed driver. Each output can
+source up to 4 A and the typical rise and fall times are 10 ns at a 2.2 nF
+load.</p>
+<p>The drive signal can be fed back to the ADC for time-of-flight reference. An
+<a class="icon adi reference external" href="https://www.analog.com/ADA4930-1" target="_blank">ADA4930-1</a>, a very low noise, low distortion, high speed differential
+amplifier, is used for the single-ended to differential conversion.</p>
+<p>An external power supply is used to power the lasers. The kit comes with a
+12 V at 4 A supply. For safety reasons the power to the lasers is turned on
+only by pressing the S1 switch.</p>
 </section>
 <section id="afe-board">
 <h3>AFE Board<a class="headerlink" href="#afe-board" title="Link to this heading"></a></h3>
-<p>The AFE board contains a 16 channel APD from First Sensor and four ADI
-LTC6561 quad channel TIAs with necessary power and timing signal chains.
-Custom optics can be fitted to the board using industry standard mounting
-adapters based on individual use cases.</p>
+<p>The AFE board receives the optical reflected signal, converts it to an
+electrical signal, and transfers it to the ADC on the DAQ board.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/afe_board.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/afe_board.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/afe_board.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">AFE Board block diagram</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The optical signal is converted using a 16 channel
+<a class="icon link reference external" href="https://www.first-sensor.com/en/products/optical-sensors/detectors/avalanche-photodiode-arrays-apd-arrays/" target="_blank">APD array from First Sensor</a>.
+The 16 current outputs are fed to four <a class="icon adi reference external" href="https://www.analog.com/LTC6561" target="_blank">LTC6561</a> low-noise, four-channel
+transimpedance amplifiers (TIA) with 220 MHz bandwidth. They feature 74 kOhm
+transimpedance gain and 30 uA linear input current range. The measurement range
+can be increased from 30 uA to at least 3 mA. An internal 4-to-1 MUX is used
+to select the output channel. The output voltage is single-ended and swings
+2 Vpp.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_tia_signal_chain.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_tia_signal_chain.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_tia_signal_chain.jpg" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">AFE Board signal chain</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The single-ended output is converted to a differential voltage using an
+<a class="icon adi reference external" href="https://www.analog.com/ADA4950-1" target="_blank">ADA4950-1</a>. The differential gain is set to 1 and the appropriate common
+mode voltage (Vcm) is applied. A negative feedback circuit featuring the
+<a class="icon adi reference external" href="https://www.analog.com/LT6016" target="_blank">LT6016</a> rail-to-rail input operational amplifiers and the <a class="icon adi reference external" href="https://www.analog.com/ADR3525" target="_blank">ADR3525</a>
+low power, high precision CMOS voltage reference reduces the no-signal
+differential voltage. The <a class="icon adi reference external" href="https://www.analog.com/LT8331" target="_blank">LT8331</a> is used to generate the bias voltage
+for the APD, which is programmable between -120 V and -300 V. Additionally, the
+APD temperature is measured, enabling the adjustment of the bias voltage for
+maximum APD SNR regardless of temperature.</p>
 </section>
 </section>
 <section id="supported-carriers">
@@ -801,6 +909,166 @@ adapters based on individual use cases.</p>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/hdl_2021_r1/projects/ad_fmclidar1_ebz/a10soc" target="_blank">projects/ad_fmclidar1_ebz/a10soc</a></p></li>
 </ul>
 </section>
+</section>
+<section id="kit-contents">
+<h2>Kit Contents<a class="headerlink" href="#kit-contents" title="Link to this heading"></a></h2>
+<p>The development kit is delivered with an SD card containing the evaluation
+software and a set of accessories required to assemble the system:</p>
+<ul class="simple">
+<li><p>8 x SMA cables to connect the AFE and Laser boards analog output signals to
+the DAQ board ADC inputs</p></li>
+<li><p>2 x ribbon cables to connect the AFE and Laser boards digital signals to the
+DAQ board</p></li>
+<li><p>12 V at 4 A power supply for the Laser board and power cables</p></li>
+<li><p><a class="icon link reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=LA1951-B" target="_blank">Plano-Convex Lens, 1”, f = 25.4 mm, AR Coating: 650-1050 nm</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=SM1L15" target="_blank">SM1 Lens Tube, 1.50” Thread Depth</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=SM1L10" target="_blank">SM1 Lens Tube, 1” Thread Depth</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=SM1RR" target="_blank">Retaining Ring for stackable lens mount</a></p></li>
+<li><p>SD card with the evaluation software for the supported FPGA carrier boards</p></li>
+</ul>
+</section>
+<section id="system-setup">
+<h2>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h2>
+<p>To get the system up and running:</p>
+<ol class="arabic simple">
+<li><p>Connect the DAQ board to the FMC HPC connector on the FPGA carrier board.</p></li>
+<li><p>Connect the ribbon cables between the DAQ board and the Laser and AFE
+boards. The DAQ board has silkscreen labels next to the AFE and Laser board
+connectors indicating which board each corresponds to.</p></li>
+<li><p>Connect the SMA cables between the DAQ and the AFE board. Match the TIA
+outputs with the ADC inputs using the labeling on the SMA connectors so
+that they have the same letter (A, B, C, D). Ensure that P (positive) and N
+(negative) are matched between the boards.</p></li>
+<li><p>Optionally connect one of the ADC channels to sample the laser drive signal
+by connecting the SMA outputs of the Laser board to an ADC channel.</p></li>
+<li><p>Insert the lens into the 1.5” lens tube with the spherical surface pointing
+outwards. Position the lens such that the top of the spherical surface is
+aligned with the edge of the tube. Use the retaining ring to lock the lens
+in place. The 1” tube can be screwed on in front of the lens to limit the
+field of view.</p></li>
+<li><p>Connect the external 12 V power supply to the Laser board.</p></li>
+<li><p>Prepare the SD card: copy all files from
+<code class="docutils literal notranslate"><span class="pre">BOOT/zynq-zc706-adv7511-fmclidar1</span></code> onto the root of the SD card.</p></li>
+<li><p>Plug the SD card into the FPGA carrier board and connect an HDMI monitor,
+USB keyboard, and mouse.</p></li>
+<li><p>Power up the FPGA board. After booting, press the S1 switch on the Laser
+board to power the lasers.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To prevent SD card corruption at system power down, run
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">shutdown</span> <span class="pre">-h</span> <span class="pre">now</span></code> before removing power.</p>
+</div>
+</section>
+<section id="evaluation-software">
+<h2>Evaluation Software<a class="headerlink" href="#evaluation-software" title="Link to this heading"></a></h2>
+<section id="iio-oscilloscope">
+<h3>IIO Oscilloscope<a class="headerlink" href="#iio-oscilloscope" title="Link to this heading"></a></h3>
+<p>After boot the
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope" target="_blank">IIO Oscilloscope</a>
+starts, allowing configuration of the system, data capture, and visualization.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_iio_scope_plot.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_iio_scope_plot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_iio_scope_plot.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">IIO Oscilloscope data capture window</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The main window allows setting the length of data captures and selecting the
+ADC channels to display. The capture length must always be set to a multiple of
+256 to match the internal data bus length. There are 5 channels under the
+<code class="docutils literal notranslate"><span class="pre">axi-ad9094-hpc</span></code> device: 4 data channels (<code class="docutils literal notranslate"><span class="pre">voltage0</span></code> to <code class="docutils literal notranslate"><span class="pre">voltage3</span></code>) and
+a 5th channel (<code class="docutils literal notranslate"><span class="pre">voltage4</span></code>) showing the MUX selections of the 4 TIAs on the
+AFE board.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_voltage4_format.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_voltage4_format.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Voltage4 channel encoding format (2 bits per TIA for CHSEL0 and CHSEL1)</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="lidar-plugin">
+<h3>LIDAR Plugin<a class="headerlink" href="#lidar-plugin" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_iio_scope_plugin.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_iio_scope_plugin.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidar_iio_scope_plugin.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">IIO Oscilloscope LIDAR plugin</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="sequencer-settings">
+<h4>Sequencer Settings<a class="headerlink" href="#sequencer-settings" title="Link to this heading"></a></h4>
+<p>A TIA channel sequencer implemented in the LIDAR HDL design controls the MUX
+selection independently for all TIAs. The sequencer can run in <strong>auto</strong> mode,
+changing the MUX selection at every data capture based on the sequence specified
+in the Auto Config section. In <strong>manual</strong> mode, the 4 Manual Channel controls
+correspond to the 4 TIAs (U2 through U5) with values in the range 0-3. The
+Pulse Delay setting controls the delay between the TIA channel change and the
+next laser pulse, accounting for TIA settling time.</p>
+</section>
+<section id="laser-pulse-generator-settings">
+<h4>Laser Pulse Generator Settings<a class="headerlink" href="#laser-pulse-generator-settings" title="Link to this heading"></a></h4>
+<p>The HDL design contains a pulse generator that precisely controls the timing of
+the laser pulses. The generator must be enabled before starting data capture
+because captures are triggered by laser pulses. Two parameters can be
+controlled: pulse frequency and width, which together define the total optical
+power of the system.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The system was certified for Eye Safety Class 1 with 20 ns pulse width and
+50 kHz laser settings. Operating above these settings voids the Class 1
+certification. Laser safety glasses (e.g.,
+<a class="icon link reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=LG2" target="_blank">LG2</a>) should be
+worn at all times regardless of the laser setting.</p>
+</div>
+</section>
+<section id="afe-settings">
+<h4>AFE Settings<a class="headerlink" href="#afe-settings" title="Link to this heading"></a></h4>
+<p>The APD on the AFE board needs a negative bias voltage in the range -120 V to
+-200 V, controlled through the APD Bias setting. The TIA output signal offset
+can be compensated via the Tilt control, which helps bring the signal close to 0
+and maximize the ADC range.</p>
+</section>
+</section>
+<section id="jesd-link-monitoring">
+<h3>JESD Link Monitoring<a class="headerlink" href="#jesd-link-monitoring" title="Link to this heading"></a></h3>
+<p>At system startup the
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/jesd_eye_scan" target="_blank">JESD 204B Eye Scan</a>
+application starts to allow monitoring the status of the JESD204B link to the
+AD9094 on the DAQ board.</p>
+</section>
+<section id="distance-measurements">
+<h3>Distance Measurements<a class="headerlink" href="#distance-measurements" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://github.com/analogdevicesinc/pyadi-iio/blob/main/examples/lidar.py" target="_blank">lidar.py</a>
+is a standalone GUI application developed on top of Analog Devices’
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/pyadi-iio" target="_blank">pyadi-iio</a> library.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidarpy_gui_screenshot.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidarpy_gui_screenshot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmclidar1-ebz/lidarpy_gui_screenshot.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">lidar.py GUI for distance measurement</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Besides displaying the received signals, lidar.py can configure all the
+relevant board parameters, including the Pulse Width, APD Bias, Tilt Voltage,
+Sequencer Settings, and the parameters used to generate the reference signal.
+This reference signal is then used to approximate and display the distance to
+the first object the LiDAR laser is pointed at.</p>
+<p>For the distance measurement, a correlation method is used. A single square
+pulse signal with the configured pulse width is filtered with a FIR filter to
+obtain a reference signal approximation. The Filter Length and Filter Cutoff
+Frequency can be adjusted in real time to improve measurement accuracy. Each
+displayed distance is a mean of the last 10 measurements to smooth out
+variations.</p>
+</section>
+</section>
+<section id="laser-safety">
+<h2>Laser Safety<a class="headerlink" href="#laser-safety" title="Link to this heading"></a></h2>
+<p>This device complies with International Standards IEC 60825-1:2014 and 2007 for
+a Class 1 laser product. This device also complies with 21 CFR 1040.10 and
+1040.11 except for deviations pursuant to Laser Notice No. 50, dated
+June 24, 2007. Only use software and firmware updates that are specifically
+provided for this solution.</p>
 </section>
 <section id="software-support">
 <h2>Software Support<a class="headerlink" href="#software-support" title="Link to this heading"></a></h2>

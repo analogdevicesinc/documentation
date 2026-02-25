@@ -104,7 +104,11 @@
 <li><a class="reference internal" href="#required-software">Required Software</a></li>
 <li><a class="reference internal" href="#required-hardware">Required hardware</a></li>
 <li><a class="reference internal" href="#required-setup">Required setup</a></li>
-<li><a class="reference internal" href="#test-process">Test process</a></li>
+<li><a class="reference internal" href="#test-process">Test process</a><ul>
+<li><a class="reference internal" href="#cable-placement">Cable placement</a></li>
+<li><a class="reference internal" href="#heatsink-placement">Heatsink placement</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -302,12 +306,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference_hdl.html">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference_hdl.html#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference_hdl.html#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference_hdl.html#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference_hdl.html#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_hdl.html">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -695,7 +694,7 @@ errors.</p>
 <section id="temperature">
 <h3>Temperature<a class="headerlink" href="#temperature" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">ad7291.in_temp0_raw</span></code> is the raw results from the AD7291 - which is
-0.25°C. 80 refers to 80 steps of 0.25°C or 20°C, and 160 refers to 40°C. This
+0.25 deg C. 80 refers to 80 steps of 0.25 deg C or 20 deg C, and 160 refers to 40 deg C. This
 allows the tests to be done in a normal lab setting.</p>
 </section>
 <section id="voltage">
@@ -752,6 +751,13 @@ FMCDAQ3</a></p></li>
 </section>
 <section id="required-setup">
 <h2>Required setup<a class="headerlink" href="#required-setup" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3-setup.png"><img alt="Test Setup" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3-setup.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Test setup overview</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p>Attach the RF loopback cables to the board. The images at the bottom of the
 page show the correct placement for each type of AD-FMCDAQ board.</p></li>
@@ -772,23 +778,34 @@ in order to return to the test window.</p>
 <h2>Test process<a class="headerlink" href="#test-process" title="Link to this heading"></a></h2>
 <p>Firstly, make sure all the required steps from the setup explained above are
 completed. Once the setup is ready, testing should be done using the following
-steps: - Power the carrier board and the Raspberry Pi. The following screen will
-appear once the system has booted.  - The testing sequence can be
-started by selecting one of the menu items. <strong>In order to start testing, an
-Ethernet cable should be connected between Raspberry Pi and DUT</strong>.</p>
+steps:</p>
+<ul>
+<li><p>Power the carrier board and the Raspberry Pi. The following screen will
+appear once the system has booted.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/fmcdaq3-startup-screen.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/fmcdaq3-startup-screen.png" />
+</li>
+<li><p>The testing sequence can be started by selecting one of the menu items. <strong>In
+order to start testing, an Ethernet cable should be connected between
+Raspberry Pi and DUT</strong>.</p>
 <ul class="simple">
 <li><p><strong>Test 1</strong> for FMCDAQ3</p></li>
 <li><p><strong>Test 2</strong> for FMCDAQ2</p></li>
+</ul>
+</li>
 <li><p>At the beginning of every test, the connection with DUT is checked. If the
-connection is correctly established, the following message will be printed.</p></li>
-<li><p>Use the scanner to scan the QR code on the board</p></li>
+connection is correctly established, the following message will be printed.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/fmcdaq3-eth-err.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/fmcdaq3-eth-err.png" />
+</li>
+<li><p>Use the scanner to scan the QR code on the board.</p></li>
 <li><p>If one of the tests failed, the FAILED message will be printed as in the
-screen capture below:</p></li>
+screen capture below:</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/fmcdaq3-failed.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/fmcdaq3-failed.png" />
+</li>
 <li><p>In case of a failed test, the tester can repeat the test immediately. The test
 can be repeated an undefined number of times.</p></li>
 <li><p>After completing the test, power off the carrier by typing 4. After several
 seconds, power off the carrier board using the physical switch.</p></li>
-<li><p>Remove the DAQ2/3 card and place the heatsink according to the pictures below</p></li>
+<li><p>Remove the DAQ2/3 card and place the heatsink according to the pictures below.</p></li>
 <li><p>In order to power off the Raspberry Pi, please type 3 and enter.</p></li>
 </ul>
 <p>When testing is finished, ZC706 and the Raspberry Pi should always be powered
@@ -796,11 +813,48 @@ off from terminal before power is unplugged, otherwise the SD cards can be
 corrupted. First select item 4 to power off the carrier. After a few seconds,
 turn off the switch. After the ZC706 is off, the Raspberry Pi can be turned off
 selecting item 3.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Cable placement and heatsink placement images were not available during wiki
-migration.</p>
+<section id="cable-placement">
+<h3>Cable placement<a class="headerlink" href="#cable-placement" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq2_connection.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq2_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq2_connection.png" width="400" />
+</a>
+</td>
+<td><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3_connection.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3_connection.png" width="400" />
+</a>
+</td>
+</tr>
+<tr class="row-even"><td><p>FMCDAQ2</p></td>
+<td><p>FMCDAQ3</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</section>
+<section id="heatsink-placement">
+<h3>Heatsink placement<a class="headerlink" href="#heatsink-placement" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq2_heatsink.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq2_heatsink.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq2_heatsink.png" width="250" />
+</a>
+</td>
+<td><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3_heatsink_top.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3_heatsink_top.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3_heatsink_top.png" width="250" />
+</a>
+</td>
+<td><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3_heatsink_bottom.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3_heatsink_bottom.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/daq3_heatsink_bottom.png" width="250" />
+</a>
+</td>
+</tr>
+<tr class="row-even"><td><p>FMCDAQ2</p></td>
+<td><p>FMCDAQ3 top</p></td>
+<td><p>FMCDAQ3 bottom</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 </section>
 

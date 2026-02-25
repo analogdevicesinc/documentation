@@ -98,17 +98,21 @@
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li><a class="reference internal" href="#hardware-requirements">Hardware Requirements</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#build-parameters">Build Parameters</a></li>
 <li><a class="reference internal" href="#block-diagram">Block Diagram</a><ul>
 <li><a class="reference internal" href="#clock-scheme">Clock Scheme</a></li>
 <li><a class="reference internal" href="#limitations">Limitations</a></li>
+<li><a class="reference internal" href="#ip-list">IP List</a></li>
 <li><a class="reference internal" href="#cpu-memory-interconnect-addresses">CPU/Memory Interconnect Addresses</a></li>
+<li><a class="reference internal" href="#interrupts">Interrupts</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#system-setup">System Setup</a></li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
 </ul>
@@ -308,12 +312,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -697,11 +696,12 @@ Content on this topic
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD4858" target="_blank">AD4858</a> is a 20-bit, low noise, 8-channel simultaneous sampling
 successive approximation register (SAR) ADC with buffered differential, wide
 common range picoamp inputs.</p>
-<p>The EVAL-AD4858 supports pin-selectable SPI CMOS and LVDS serial interfaces.
-In CMOS mode, applications may employ between 1-8 lanes of serial output data,
-allowing the user to optimize bus width and data throughput. In LVDS mode, pins
-SDO+/-, SCKI+/- and SCKO+/- function as differential serial data input, clock
-output and clock input pins respectively (from the FPGA’s point of view).</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD4858" target="_blank">EVAL-AD4858</a> evaluation board supports pin-selectable SPI CMOS and
+LVDS serial interfaces. In CMOS mode, applications may employ between 1-8 lanes
+of serial output data, allowing the user to optimize bus width and data
+throughput. In LVDS mode, pins SDO+/-, SCKI+/- and SCKO+/- function as
+differential serial data input, clock output and clock input pins respectively
+(from the FPGA’s point of view).</p>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
@@ -720,6 +720,19 @@ output and clock input pins respectively (from the FPGA’s point of view).</p>
 <h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
+</ul>
+</section>
+<section id="hardware-requirements">
+<h2>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD4858" target="_blank">EVAL-AD4858</a> evaluation board</p></li>
+<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
+<li><p>Signal generator</p></li>
+<li><p>1x Ethernet cable</p></li>
+<li><p>1x Micro-B USB cable for UART connectivity (optional)</p></li>
+<li><p>1x SD card (at least 16 GB); follow the
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux" target="_blank">Kuiper Linux guide</a>
+to set up the card</p></li>
 </ul>
 </section>
 <section id="hdl-reference-design">
@@ -742,6 +755,13 @@ output and clock input pins respectively (from the FPGA’s point of view).</p>
 </tbody>
 </table>
 </div>
+<p>To build the project, navigate to the
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/ad485x_fmcz/zed" target="_blank">projects/ad485x_fmcz/zed</a> directory and
+run the <code class="docutils literal notranslate"><span class="pre">make</span></code> command with the desired configuration:</p>
+<ul class="simple">
+<li><p>CMOS version: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">LVDS_CMOS_N=0</span></code></p></li>
+<li><p>LVDS version: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">LVDS_CMOS_N=1</span></code></p></li>
+</ul>
 </section>
 <section id="block-diagram">
 <h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
@@ -762,13 +782,24 @@ different files are used for the project.</p>
 <p>Depending on the configuration used (CMOS or LVDS), the clock scheme differs.
 Due to limitations of the evaluation board, an internal clock from the FPGA is
 used:</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4858-fmc/ad4858_fmcz_clock_path.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4858-fmc/ad4858_fmcz_clock_path.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD4858-FMC clock path</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
-<li><p>In LVDS mode: <code class="docutils literal notranslate"><span class="pre">external_clk</span></code> = 200 MHz, <code class="docutils literal notranslate"><span class="pre">external_fast_clk</span></code> = 400 MHz</p></li>
-<li><p>In CMOS mode: <code class="docutils literal notranslate"><span class="pre">external_clk</span></code> = 100 MHz</p></li>
+<li><p>In LVDS mode: <code class="docutils literal notranslate"><span class="pre">external_clk</span></code> = 200 MHz (F_CLK0),
+<code class="docutils literal notranslate"><span class="pre">external_fast_clk</span></code> = 400 MHz (F_CLK1)</p></li>
+<li><p>In CMOS mode: <code class="docutils literal notranslate"><span class="pre">external_clk</span></code> = 100 MHz (F_CLK0)</p></li>
 </ul>
 <p>For custom systems where the AD4858 chip is used, it is recommended to use an
 external clock rather than a clock from the FPGA as done in this reference
 design.</p>
+<p>For more details regarding the MMCM clock frequencies, refer to
+<a class="icon link reference external" href="https://www.xilinx.com/content/dam/xilinx/support/documents/user_guides/ug472_7Series_Clocking.pdf" target="_blank">UG472 (7 Series Clocking)</a>
+and
+<a class="icon link reference external" href="https://www.xilinx.com/support/documents/user_guides/ug572-ultrascale-clocking.pdf" target="_blank">UG572 (UltraScale/+ Clocking)</a>.</p>
 </section>
 <section id="limitations">
 <h4>Limitations<a class="headerlink" href="#limitations" title="Link to this heading"></a></h4>
@@ -778,6 +809,16 @@ time is maximum (715 ns) is not achievable with the 24 and 32-bit packet
 formats.</p>
 <p>If maximum conversion rate of 400 MHz is required, only the 20-bit packet
 format can be used.</p>
+</section>
+<section id="ip-list">
+<h4>IP List<a class="headerlink" href="#ip-list" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/axi_ad485x" target="_blank">AXI_AD485x</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/axi_pwm_gen" target="_blank">AXI_PWM_GEN</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/axi_clkgen" target="_blank">AXI_CLKGEN</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/axi_dmac" target="_blank">AXI_DMAC</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/util_pack/util_cpack2" target="_blank">UTIL_CPACK2</a></p></li>
+</ul>
 </section>
 <section id="cpu-memory-interconnect-addresses">
 <h4>CPU/Memory Interconnect Addresses<a class="headerlink" href="#cpu-memory-interconnect-addresses" title="Link to this heading"></a></h4>
@@ -805,6 +846,27 @@ format can be used.</p>
 </table>
 </div>
 </section>
+<section id="interrupts">
+<h4>Interrupts<a class="headerlink" href="#interrupts" title="Link to this heading"></a></h4>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Instance</p></th>
+<th class="head"><p>HDL</p></th>
+<th class="head"><p>Linux Zynq</p></th>
+<th class="head"><p>Actual Zynq</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ad4858_dma</p></td>
+<td><p>10</p></td>
+<td><p>54</p></td>
+<td><p>86</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
@@ -813,10 +875,33 @@ format can be used.</p>
 </ul>
 </section>
 </section>
+<section id="system-setup">
+<h2>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4858-fmc/ad4858_fmcz_zed_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4858-fmc/ad4858_fmcz_zed_setup.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD4858-FMC ZedBoard system setup</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Connections:</p>
+<ul class="simple">
+<li><p>AD4858-FMCZ connected to the FMC port of the ZedBoard</p></li>
+<li><p>1x Micro-B USB cable for UART connectivity on the ZedBoard</p></li>
+<li><p>1x Ethernet cable for network connectivity</p></li>
+</ul>
+<p>A signal generator is needed to provide analog input. For example, an
+<a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> with a
+<a class="icon link reference external" href="https://wiki.analog.com/university/tools/m2k/accessories/bnc" target="_blank">BNC adapter board</a>
+can be used as a signal generator. Connect 2x BNC to SMA cables from the
+SMA0+/- connectors on the AD4858-FMCZ to the W1/W2 connectors on the BNC
+adapter board.</p>
+</section>
 <section id="more-information">
 <h2>More Information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/introduction.html" target="_blank">ADI Reference Designs HDL User Guide</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/ad485x_fmcz" target="_blank">AD4858-FMC HDL Project</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux" target="_blank">How to prepare an SD card</a></p></li>
 </ul>
 </section>
 <section id="support">

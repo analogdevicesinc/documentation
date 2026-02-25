@@ -305,12 +305,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html">Functional Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#digital-interface">Digital Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#dac-interface">DAC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#adc-interface">ADC Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#control-and-spi">Control and SPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_hdl.html">AD-FMCDAQ2-EBZ HDL Reference Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
@@ -689,6 +684,13 @@ Content on this topic
             
   <section id="ad-fmcdaq2-ebz-zynqmp-zcu102-quick-start-guide">
 <span id="ad-fmcdaq2-ebz-quickstart-zcu102"></span><h1>AD-FMCDAQ2-EBZ ZynqMP ZCU102 Quick Start Guide<a class="headerlink" href="#ad-fmcdaq2-ebz-zynqmp-zcu102-quick-start-guide" title="Link to this heading"></a></h1>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/zcu102_fmcdaq2.jpg"><img alt="AD-FMCDAQ2-EBZ on ZCU102" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/zcu102_fmcdaq2.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD-FMCDAQ2-EBZ mounted on ZCU102 carrier</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>This guide provides some quick instructions (still takes awhile to
 download, and set things up) on how to setup the AD-FMCDAQ2-EBZ on
 <a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html" target="_blank">ZCU102</a>.</p>
@@ -744,7 +746,11 @@ the device on)</p></li>
 <li><p>Wait ~30 seconds for the “DONE” LED to turn green. This is near the SD Card
 Interface Connector</p></li>
 </ul>
-</section>
+<div><div class="esd-warning docutils container">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div></section>
 <section id="booting-the-sd-card">
 <h2>Booting the SD Card<a class="headerlink" href="#booting-the-sd-card" title="Link to this heading"></a></h2>
 <section id="local-iio-oscilloscope">
@@ -754,15 +760,19 @@ Interface Connector</p></li>
 </section>
 <section id="remote-iio-oscilloscope">
 <h3>Remote IIO Oscilloscope<a class="headerlink" href="#remote-iio-oscilloscope" title="Link to this heading"></a></h3>
-<ul class="simple">
+<ul>
 <li><p>Disconnect the USB mouse/keyboard from the USB 2.0 ULPI Controller, w/Micro-B
 Connector (J83).</p></li>
 <li><p>Connect USB UART J83 (Micro USB) to your host PC.</p></li>
 <li><p>Plug your ethernet cable into the RJ45 ethernet connector (P12)</p></li>
 <li><p>Observe kernel and serial console messages on your UART terminal (use the
 first ttyUSB or COM port registered)</p></li>
-<li><p>Run the ifconfig command on your UART terminal and get your board IP</p></li>
-<li><p>Open IIO Scope application and type <code class="docutils literal notranslate"><span class="pre">ip:&lt;board_ip&gt;</span></code> in the URI tab.</p></li>
+<li><p>Run the ifconfig command on your UART terminal and get your board IP</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/ifconfig_zcu102.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/ifconfig_zcu102.png" />
+</li>
+<li><p>Open IIO Scope application and type <code class="docutils literal notranslate"><span class="pre">ip:&lt;board_ip&gt;</span></code> in the URI tab.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/scope_connection_zcu102_fmcdaq2_.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcdaq2-ebz/quickstart/scope_connection_zcu102_fmcdaq2_.png" />
+</li>
 </ul>
 <p>Even though this is Linux, this is a persistent file system. Care should be
 taken not to corrupt the file system – please shut down things, don’t just turn
