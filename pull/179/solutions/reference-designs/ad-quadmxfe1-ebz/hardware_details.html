@@ -139,7 +139,10 @@
 <li><a class="reference internal" href="#earlier-systems">Earlier Systems</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#layout">Layout</a></li>
+<li><a class="reference internal" href="#layout">Layout</a><ul>
+<li><a class="reference internal" href="#description-of-fpga-builds">Description of FPGA Builds</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1102,7 +1105,8 @@ total current draw and voltage of the board.</p>
 <span id="quadmxfe-power-supplies"></span><h2>Power Supplies<a class="headerlink" href="#power-supplies" title="Link to this heading"></a></h2>
 <p>The Quad-MxFE Evaluation Board develops all RF and digital rails from +12V
 through the 6-terminal Power Connector. The kit also includes a compatible AC
-adaptor. The Power Connector is a Molex 39301060 dual-row, right-angle header.</p>
+adaptor. The Power Connector is a Molex 39301060 dual-row, right-angle header. A 5A
+reverse polarity protection Schottky diode is connected between ground and +12V.</p>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/labeled_conn.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/labeled_conn.png" />
 <div class="table-wrapper docutils container" id="id16">
 <table class="docutils align-default" id="id16">
@@ -1315,7 +1319,8 @@ systems are the broad-market released systems.</p>
 <h2>Layout<a class="headerlink" href="#layout" title="Link to this heading"></a></h2>
 <p>Layout board files are provided to the customer after purchase of the Quad-MxFE
 Platform. These files have been developed using Cadence Allegro tools and are in
-the format of a .brd file.</p>
+the format of a .brd file. Detailed electromagnetic simulations were performed on
+the layout to ensure optimum RF performance in such a dense channel footprint.</p>
 <p>A few highlights of the board layout include:</p>
 <ul class="simple">
 <li><p>600 mils Channel-to-Channel Spacing</p></li>
@@ -1323,6 +1328,14 @@ the format of a .brd file.</p>
 <li><p>Board Footprint: 10.2” x 4.5”</p></li>
 <li><p>&gt;2,500 Components</p></li>
 </ul>
+<section id="description-of-fpga-builds">
+<h3>Description of FPGA Builds<a class="headerlink" href="#description-of-fpga-builds" title="Link to this heading"></a></h3>
+<p>A full listing of the supported modes, device trees, and build configurations is
+available on the <a class="reference internal" href="reference_hdl.html"><span class="doc">HDL Reference Design</span></a> page. The build
+files should be downloaded from the <a class="reference internal" href="quick_start.html#quadmxfe-downloads"><span class="std std-ref">Downloads</span></a> section
+and can be programmed using the Xilinx Software Command Line Tool (XSCT) or
+MATLAB <code class="docutils literal notranslate"><span class="pre">LoadVcu118Code</span></code> function.</p>
+</section>
 </section>
 </section>
 

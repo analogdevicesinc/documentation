@@ -8,6 +8,11 @@ This guide provides step by step instructions on how to set up the
 
 - :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` Rev 1.0 or later
 
+Instructions on how to build the ZynqMP / MPSoC Linux kernel and device trees
+from source can be found at
+:git-linux:`arch/arm64/boot/dts/xilinx` and in the
+`ADI Linux build guide <https://analogdevicesinc.github.io/linux/build/generic/zynqmp.html>`__.
+
 Required Software
 -----------------
 
@@ -85,6 +90,9 @@ For MIMO mode, these devices should be present:
            iio:device2: axi-adrv9002-rx-lpc (buffer capable)
            iio:device3: axi-adrv9002-core-tdd-lpc
            iio:device4: axi-adrv9002-tx-lpc (buffer capable)
+
+For more details on device modes (independent vs MIMO), see the
+:git-linux:`ADRV9002 Linux driver documentation <drivers/iio/adc/navassa>`.
 
 pyadi-iio
 ~~~~~~~~~

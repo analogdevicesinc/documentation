@@ -59,7 +59,11 @@ is that both interfaces run at the same rate.
 FMC Locations
 -------------
 
-- ZCU102 — FMC0
+- :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` — HPC0 (FMC0)
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>` — LPC FMC (CMOS only)
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__ — FMC (CMOS only)
+- :intel:`Arria 10 SoC
+  <content/www/us/en/products/details/fpga/development-kits/arria/10-sx.html>` — FMCA (CMOS only)
 
 DAC Interface
 -------------

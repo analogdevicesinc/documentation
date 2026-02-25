@@ -240,6 +240,17 @@ modified, preferably while the core is in reset.
 .. [2] ADRV9001 data port transmit/receive 8-bit data symbols. In case of
    8-bit data symbols, aligned MSBs are used.
 
+The following equations describe the relationship between the interface
+parameters:
+
+- ``MaxDataLaneRate = MaxSampleRateIQ * 16 * 2 / DataLanesPerChannel``
+- ``MaxClockRate = MaxDataLaneRate / (1 + (DataType == DDR))``
+- ``UserInterfaceClock = MaxClockRate / InternalDivider``
+- ``DDS_Rate = 32 / (DataLanesPerChannel * (1 + (DataType == DDR)) * InternalDivider)``
+
+Where ``InternalDivider`` is implementation-specific: for Xilinx CMOS and LVDS
+the value is 4; for Intel CMOS the value is 1.
+
 Since the user interface clock is an integer multiple (DDS Rate column) of the
 max sample rate, the interface toward the user logic has a valid qualifier
 which is not active on every clock cycle.

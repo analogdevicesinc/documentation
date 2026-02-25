@@ -376,7 +376,8 @@ Power Supplies
 
 The Quad-MxFE Evaluation Board develops all RF and digital rails from +12V
 through the 6-terminal Power Connector. The kit also includes a compatible AC
-adaptor. The Power Connector is a Molex 39301060 dual-row, right-angle header.
+adaptor. The Power Connector is a Molex 39301060 dual-row, right-angle header. A 5A
+reverse polarity protection Schottky diode is connected between ground and +12V.
 
 .. image:: labeled_conn.png
    :align: center
@@ -599,7 +600,8 @@ Layout
 
 Layout board files are provided to the customer after purchase of the Quad-MxFE
 Platform. These files have been developed using Cadence Allegro tools and are in
-the format of a .brd file.
+the format of a .brd file. Detailed electromagnetic simulations were performed on
+the layout to ensure optimum RF performance in such a dense channel footprint.
 
 A few highlights of the board layout include:
 
@@ -607,3 +609,12 @@ A few highlights of the board layout include:
 - 300 mils RF Connector Spacing
 - Board Footprint: 10.2" x 4.5"
 - >2,500 Components
+
+Description of FPGA Builds
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A full listing of the supported modes, device trees, and build configurations is
+available on the :doc:`HDL Reference Design <reference_hdl>` page. The build
+files should be downloaded from the :ref:`Downloads <quadmxfe-downloads>` section
+and can be programmed using the Xilinx Software Command Line Tool (XSCT) or
+MATLAB ``LoadVcu118Code`` function.

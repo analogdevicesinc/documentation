@@ -294,6 +294,12 @@ Supported Build Configurations
 
 If parameter not specified the default value applies.
 
+Software Considerations
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- **ADC crossbar config**: Not required; this is handled in the HDL.
+- **DAC crossbar config**: Not required; this is handled in the HDL.
+
 Configuration names are encoded as ``<B_C>_<TX_MODE>_<RX_MODE>`` where ``B``
 is for 8B/10B (JESD204B) and ``C`` for 64B66B (JESD204C).
 

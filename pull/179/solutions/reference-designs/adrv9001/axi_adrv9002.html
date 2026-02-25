@@ -987,6 +987,16 @@ modified, preferably while the core is in reset.</p>
 8-bit data symbols, aligned MSBs are used.</p>
 </aside>
 </aside>
+<p>The following equations describe the relationship between the interface
+parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxDataLaneRate</span> <span class="pre">=</span> <span class="pre">MaxSampleRateIQ</span> <span class="pre">*</span> <span class="pre">16</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">/</span> <span class="pre">DataLanesPerChannel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxClockRate</span> <span class="pre">=</span> <span class="pre">MaxDataLaneRate</span> <span class="pre">/</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">(DataType</span> <span class="pre">==</span> <span class="pre">DDR))</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UserInterfaceClock</span> <span class="pre">=</span> <span class="pre">MaxClockRate</span> <span class="pre">/</span> <span class="pre">InternalDivider</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DDS_Rate</span> <span class="pre">=</span> <span class="pre">32</span> <span class="pre">/</span> <span class="pre">(DataLanesPerChannel</span> <span class="pre">*</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">(DataType</span> <span class="pre">==</span> <span class="pre">DDR))</span> <span class="pre">*</span> <span class="pre">InternalDivider)</span></code></p></li>
+</ul>
+<p>Where <code class="docutils literal notranslate"><span class="pre">InternalDivider</span></code> is implementation-specific: for Xilinx CMOS and LVDS
+the value is 4; for Intel CMOS the value is 1.</p>
 <p>Since the user interface clock is an integer multiple (DDS Rate column) of the
 max sample rate, the interface toward the user logic has a valid qualifier
 which is not active on every clock cycle.</p>

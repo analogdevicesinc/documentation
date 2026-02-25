@@ -685,6 +685,10 @@ Content on this topic
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html" target="_blank">ZCU102</a> Rev 1.0 or later</p></li>
 </ul>
+<p>Instructions on how to build the ZynqMP / MPSoC Linux kernel and device trees
+from source can be found at
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm64/boot/dts/xilinx" target="_blank">arch/arm64/boot/dts/xilinx</a> and in the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/build/generic/zynqmp.html" target="_blank">ADI Linux build guide</a>.</p>
 <section id="required-software">
 <h2>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h2>
 <ul class="simple">
@@ -760,6 +764,8 @@ ttyUSB or COM port registered).</p></li>
 <span class="go">        iio:device4: axi-adrv9002-tx-lpc (buffer capable)</span>
 </pre></div>
 </div>
+<p>For more details on device modes (independent vs MIMO), see the
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/navassa" target="_blank">ADRV9002 Linux driver documentation</a>.</p>
 </section>
 <section id="pyadi-iio">
 <h3>pyadi-iio<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h3>

@@ -96,7 +96,9 @@
           <ul>
 <li><a class="reference internal" href="#">ADRV9001/ADRV9002 Quick Start Guides</a><ul>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a><ul>
+<li><a class="reference internal" href="#cmos-only-operation">CMOS-Only Operation</a></li>
 <li><a class="reference internal" href="#supported-environments">Supported Environments</a></li>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#hardware-setup">Hardware Setup</a><ul>
@@ -738,6 +740,20 @@ section ‘LVDS and LVDS_25’ and Table 1-43.</p>
 synchronous interfaces.</p>
 </aside>
 </aside>
+<section id="cmos-only-operation">
+<h3>CMOS-Only Operation<a class="headerlink" href="#cmos-only-operation" title="Link to this heading"></a></h3>
+<p>On the ZC706 and ZedBoard platforms the FMC connectors map to HR (High Range)
+IO banks. The HR banks have a limitation that when using the LVDS I/O standard
+the bank VCCO voltage must be set to 2.5V. However, the <a class="icon adi reference external" href="https://www.analog.com/ADRV9001" target="_blank">ADRV9001</a>
+evaluation board uses IO supplies of 1.8V and does not have level shifters for
+the single-ended lines. Therefore the VCCO of the banks (VADJ) must be set to
+1.8V, restricting operation to CMOS mode only. For more information on this
+limitation, refer to the
+<a class="icon link reference external" href="https://docs.amd.com/v/u/en-US/ug471_7Series_SelectIO" target="_blank">7 Series SelectIO guide</a>
+section ‘LVDS and LVDS_25’ and Table 1-43.</p>
+<p>See the <a class="reference internal" href="reference_hdl.html"><span class="doc">HDL Reference Design</span></a> for details on building
+the design with <code class="docutils literal notranslate"><span class="pre">CMOS_LVDS_N=1</span></code> for CMOS interface.</p>
+</section>
 <section id="supported-environments">
 <h3>Supported Environments<a class="headerlink" href="#supported-environments" title="Link to this heading"></a></h3>
 <div class="table-wrapper docutils container">
@@ -778,6 +794,19 @@ synchronous interfaces.</p>
 </tbody>
 </table>
 </div>
+</section>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h3>
+<p>As a minimum to begin evaluating the <a class="icon adi reference external" href="https://www.analog.com/ADRV9002" target="_blank">ADRV9002</a>, you need:</p>
+<ul class="simple">
+<li><p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9002" target="_blank">EVAL-ADRV9002</a> FMC card.</p></li>
+<li><p>One of the supported carrier platforms listed above.</p></li>
+<li><p>A way to interact with the platform: UART terminal, Ethernet connection,
+and optionally a DisplayPort or HDMI monitor with USB keyboard and mouse.</p></li>
+<li><p>An internet connection to download or update the <a class="reference internal" href="../../../linux/kuiper/index.html"><span class="doc">Kuiper Linux</span></a>
+SD card image.</p></li>
+<li><p>RF test equipment for signal evaluation.</p></li>
+</ul>
 </section>
 </section>
 <section id="hardware-setup">

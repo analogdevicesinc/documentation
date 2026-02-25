@@ -45,6 +45,22 @@ which means it needs a carrier to plug into. The supported carriers are:
 .. [3] Not supported due to sub-optimal mapping of clock pins from the source
    synchronous interfaces.
 
+CMOS-Only Operation
+~~~~~~~~~~~~~~~~~~~
+
+On the ZC706 and ZedBoard platforms the FMC connectors map to HR (High Range)
+IO banks. The HR banks have a limitation that when using the LVDS I/O standard
+the bank VCCO voltage must be set to 2.5V. However, the :adi:`ADRV9001`
+evaluation board uses IO supplies of 1.8V and does not have level shifters for
+the single-ended lines. Therefore the VCCO of the banks (VADJ) must be set to
+1.8V, restricting operation to CMOS mode only. For more information on this
+limitation, refer to the
+`7 Series SelectIO guide <https://docs.amd.com/v/u/en-US/ug471_7Series_SelectIO>`__
+section 'LVDS and LVDS_25' and Table 1-43.
+
+See the :doc:`HDL Reference Design <reference_hdl>` for details on building
+the design with ``CMOS_LVDS_N=1`` for CMOS interface.
+
 Supported Environments
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -77,6 +93,19 @@ Supported Environments
      - Yes
      - N/A
      - 2020_R1
+
+Prerequisites
+~~~~~~~~~~~~~
+
+As a minimum to begin evaluating the :adi:`ADRV9002`, you need:
+
+- The :adi:`EVAL-ADRV9002` FMC card.
+- One of the supported carrier platforms listed above.
+- A way to interact with the platform: UART terminal, Ethernet connection,
+  and optionally a DisplayPort or HDMI monitor with USB keyboard and mouse.
+- An internet connection to download or update the :doc:`Kuiper Linux </linux/kuiper/index>`
+  SD card image.
+- RF test equipment for signal evaluation.
 
 Hardware Setup
 --------------

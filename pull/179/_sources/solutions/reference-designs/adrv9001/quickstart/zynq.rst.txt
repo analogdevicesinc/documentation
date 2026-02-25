@@ -8,6 +8,11 @@ This guide provides step by step instructions on how to set up the
 
 - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>` Rev 1.2 or later
 
+Instructions on how to build the Zynq Linux kernel and device trees from source
+can be found at
+:git-linux:`arch/arm/boot/dts/xilinx` and in the
+`ADI Linux build guide <https://analogdevicesinc.github.io/linux/build/generic/zynq.html>`__.
+
 LVDS Support
 ~~~~~~~~~~~~
 
@@ -54,7 +59,9 @@ Testing
 
 .. warning::
 
-   Before executing below steps, **VADJ must be set to 1.8V**.
+   Before executing below steps, **VADJ must be set to 1.8V**. Instructions
+   for reprogramming the VADJ on the ZC706 can be found in the
+   `Xilinx support article <https://support.xilinx.com/s/article/56811?language=en_US>`__.
 
 On the ADRV9002 card, there is a red LED close to the FMC connector. This LED
 indicates if VADJ voltage exceeded 2.0V. If the LED does not turn off after a
@@ -92,6 +99,12 @@ These devices should be present after a successful boot:
            iio:device2: axi-adrv9002-rx-lpc (buffer capable)
            iio:device3: axi-adrv9002-core-tdd-lpc
            iio:device4: axi-adrv9002-tx-lpc (buffer capable)
+
+.. note::
+
+   The ZC706 configuration uses a single R1T1 interface due to CMOS-only
+   limitations. For more details on device modes (independent vs MIMO), see
+   the :git-linux:`ADRV9002 Linux driver documentation <drivers/iio/adc/navassa>`.
 
 pyadi-iio
 ~~~~~~~~~

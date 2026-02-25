@@ -97,18 +97,29 @@
 <li><a class="reference internal" href="#">AD-FMCMOTCON1-EBZ</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#added-value">Added Value</a></li>
+<li><a class="reference internal" href="#motor-control-background">Motor Control Background</a></li>
 <li><a class="reference internal" href="#interfaces">Interfaces</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#hardware">Hardware</a><ul>
+<li><a class="reference internal" href="#controller-board-ad-fmcmotcon1-ebz">Controller Board (AD-FMCMOTCON1-EBZ)</a><ul>
 <li><a class="reference internal" href="#controller-board-key-parts">Controller Board Key Parts</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#low-voltage-drive-board-ad-drvlv1-ebz">Low Voltage Drive Board (AD-DRVLV1-EBZ)</a></li>
 <li><a class="reference internal" href="#dynamometer-ad-dyno1-ebz">Dynamometer (AD-DYNO1-EBZ)</a></li>
 <li><a class="reference internal" href="#adc-fpga-interface">ADC FPGA Interface</a></li>
 <li><a class="reference internal" href="#position-and-speed-sensor-fpga-interface">Position and Speed Sensor FPGA Interface</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li><a class="reference internal" href="#supported-carrier">Supported Carrier</a></li>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
+<li><a class="reference internal" href="#linux-on-zynq-quick-start">Linux on Zynq Quick Start</a></li>
+<li><a class="reference internal" href="#ise-project-with-chipscope-quick-start">ISE Project with Chipscope Quick Start</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#vivado-design-generation">Vivado Design Generation</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
@@ -117,7 +128,11 @@
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#linux-iio-drivers">Linux IIO Drivers</a></li>
 <li><a class="reference internal" href="#iio-oscilloscope">IIO Oscilloscope</a></li>
-<li><a class="reference internal" href="#simulink-models">Simulink Models</a></li>
+<li><a class="reference internal" href="#simulink-models">Simulink Models</a><ul>
+<li><a class="reference internal" href="#foc-controller-axi-lite-registers">FOC Controller AXI-Lite Registers</a></li>
+<li><a class="reference internal" href="#foc-controller-interface-signals">FOC Controller Interface Signals</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#qdesys-motor-control-ip">QDESYS Motor Control IP</a></li>
 </ul>
 </li>
@@ -747,6 +762,56 @@ applications</p></li>
 <li><p>Example reference designs for Xilinx FPGAs and Simulink from MathWorks</p></li>
 </ul>
 </section>
+<section id="added-value">
+<h3>Added Value<a class="headerlink" href="#added-value" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Complete control solution showing how to integrate hardware for power,
+isolation, measurement, and control</p></li>
+<li><p>Increased control flexibility due to FPGA interfacing capabilities</p></li>
+<li><p>Increased versatility to control different types of motors</p></li>
+<li><p>Example reference designs showing how to use the control solution with
+Xilinx FPGAs and Simulink from MathWorks</p></li>
+</ul>
+</section>
+<section id="motor-control-background">
+<h3>Motor Control Background<a class="headerlink" href="#motor-control-background" title="Link to this heading"></a></h3>
+<p>A motor drive is a system that varies the motor electrical input power to
+control the shaft torque, speed, or position. Motor drives can be classified
+as:</p>
+<ul class="simple">
+<li><p><strong>Application specific drive</strong> – designed to run a specific motor in a
+specific application (e.g., variable speed pump drive)</p></li>
+<li><p><strong>Standard drive</strong> – general-purpose motor speed controller for a variety
+of motors within a given power range</p></li>
+<li><p><strong>Servo drive</strong> – delivers accurate and high dynamic control of position,
+speed, or torque down to zero speed; typically used in automation</p></li>
+<li><p><strong>High performance servos</strong> – best in class accuracy and connectivity;
+typically used in CNC and pick-and-place machines</p></li>
+</ul>
+<p><strong>Brushed DC Motor Control</strong></p>
+<p>The Brushed DC motor is the simplest type to control. The most common
+technique to vary the applied voltage is Pulse Width Modulation (PWM), where
+constant-amplitude voltage pulses of varying widths are applied to the motor.
+A single transistor and diode can control speed (proportional to ON duty
+cycle, positive torque only). An H-bridge power circuit enables four-quadrant
+control with forward/reverse motion and braking.</p>
+<p><strong>Brushless DC Motor Control</strong></p>
+<p>BLDC motor windings generate a trapezoidal back EMF synchronized to the rotor
+magnet position. Hall effect sensors detect the rotor position and indicate
+the flat-top portion for each winding’s back EMF. Two commutation schemes are
+supported:</p>
+<ul class="simple">
+<li><p><strong>Star connection</strong> – For any one segment, two windings are in the flat-top
+portion. Electronic control leaves one winding open, connects one to the
+lower DC rail, and controls the third with PWM. The PWM fill factor controls
+motor speed.</p></li>
+<li><p><strong>Delta connection</strong> – Two windings connect to the positive voltage supply
+and a third connects to the negative supply. PWM fill factor controls speed.</p></li>
+</ul>
+<p><strong>Sensorless control</strong> can be achieved by detecting BEMF zero crossings for
+each phase. This lowers system cost and increases reliability but cannot
+reliably detect zero crossings at low motor speeds.</p>
+</section>
 <section id="interfaces">
 <h3>Interfaces<a class="headerlink" href="#interfaces" title="Link to this heading"></a></h3>
 <p>The controller board provides the following interfaces:</p>
@@ -764,8 +829,16 @@ applications</p></li>
 </section>
 <section id="hardware">
 <h2>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h2>
+<section id="controller-board-ad-fmcmotcon1-ebz">
+<h3>Controller Board (AD-FMCMOTCON1-EBZ)<a class="headerlink" href="#controller-board-ad-fmcmotcon1-ebz" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/controller_block_diagram_simplified.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/controller_block_diagram_simplified.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Controller board simplified block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="controller-board-key-parts">
-<h3>Controller Board Key Parts<a class="headerlink" href="#controller-board-key-parts" title="Link to this heading"></a></h3>
+<h4>Controller Board Key Parts<a class="headerlink" href="#controller-board-key-parts" title="Link to this heading"></a></h4>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -813,11 +886,11 @@ applications</p></li>
 </tr>
 <tr class="row-odd"><td><p>Multiplexers</p></td>
 <td><p><a class="icon adi reference external" href="https://www.analog.com/ADG704" target="_blank">ADG704</a></p></td>
-<td><p>CMOS, low voltage 2.5 Ω 4-channel multiplexer</p></td>
+<td><p>CMOS, low voltage 2.5 Ohm 4-channel multiplexer</p></td>
 </tr>
 <tr class="row-even"><td><p>Multiplexers</p></td>
 <td><p><a class="icon adi reference external" href="https://www.analog.com/ADG759" target="_blank">ADG759</a></p></td>
-<td><p>CMOS low voltage, 3 Ω 4-channel multiplexer</p></td>
+<td><p>CMOS low voltage, 3 Ohm 4-channel multiplexer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Ethernet</p></td>
 <td><p>88E1512</p></td>
@@ -827,8 +900,15 @@ applications</p></li>
 </table>
 </div>
 </section>
+</section>
 <section id="low-voltage-drive-board-ad-drvlv1-ebz">
 <h3>Low Voltage Drive Board (AD-DRVLV1-EBZ)<a class="headerlink" href="#low-voltage-drive-board-ad-drvlv1-ebz" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/lv_block_diagram_simplified.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/lv_block_diagram_simplified.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Low voltage drive board simplified block diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The drive board connects to the controller board and provides:</p>
 <ul class="simple">
 <li><p>Power stage for Brushed DC / BLDC / PMSM / Stepper motors up to 48 V and 18 A</p></li>
@@ -841,6 +921,12 @@ applications</p></li>
 </section>
 <section id="dynamometer-ad-dyno1-ebz">
 <h3>Dynamometer (AD-DYNO1-EBZ)<a class="headerlink" href="#dynamometer-ad-dyno1-ebz" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/dyno_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/dyno_diagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Dynamometer system block diagram</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The AD-DYNO1-EBZ dynamometer drive system provides:</p>
 <ul class="simple">
 <li><p>Two BLDC motors connected in a dyno setup</p></li>
@@ -888,17 +974,28 @@ conditions the analog signals and sends clean digital signals to the FPGA.</p>
 </section>
 <section id="quick-start">
 <h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
-<p>Supported Carrier: ZedBoard (Rev C or later).</p>
-<p>Required hardware:</p>
+<section id="supported-carrier">
+<h3>Supported Carrier<a class="headerlink" href="#supported-carrier" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a>
+(Rev C or later).</p>
+</section>
+<section id="required-hardware">
+<h3>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>AD-FMCMOTCON1-EBZ controller board</p></li>
 <li><p>AD-DRVLV1-EBZ low voltage drive board</p></li>
 <li><p>ZedBoard</p></li>
 <li><p>24 V, 3 A capable lab power supply</p></li>
+<li><p>USB keyboard and mouse for the Zynq device</p></li>
+<li><p>HDMI display (monitor or TV)</p></li>
 <li><p>AD-DYNO1-EBZ dynamometer (optional)</p></li>
 </ul>
-<p>Setup steps:</p>
+</section>
+<section id="linux-on-zynq-quick-start">
+<h3>Linux on Zynq Quick Start<a class="headerlink" href="#linux-on-zynq-quick-start" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
+<li><p>Create an SD card image following the
+<a class="reference internal" href="../../../linux/kuiper/index.html"><span class="doc">Kuiper Linux</span></a> instructions.</p></li>
 <li><p>Connect the low voltage drive board to the controller board.</p></li>
 <li><p>Connect the controller + drive board assembly to the FMC connector of the
 ZedBoard.</p></li>
@@ -906,39 +1003,110 @@ ZedBoard.</p></li>
 encoder use, connect pins one-to-one with the P7 connector.</p></li>
 <li><p>Connect the motor to P1 and the lab power supply to P4.</p></li>
 <li><p>Ensure the emergency stop button P2 is pressed before powering on.</p></li>
-<li><p>Create an SD card image following the
-<a class="reference internal" href="../../../linux/kuiper/index.html"><span class="doc">Kuiper Linux</span></a>
-and boot the ZedBoard.</p></li>
-<li><p>After programming, release the emergency stop button P2 and press the reset
-switch S1 for a few seconds to start the motor.</p></li>
+<li><p>Boot the ZedBoard from the SD card.</p></li>
+<li><p>After boot, the IIO Oscilloscope application launches on the HDMI display.</p></li>
+<li><p>Release the emergency stop button P2 and press the reset switch S1 for a
+few seconds to start the motor.</p></li>
 <li><p>Use the IIO Oscilloscope application for monitoring and control (see the
 <a class="reference internal" href="#software-support">Software Support</a> section below).</p></li>
 </ol>
+<p>This platform uses a persistent file system. Always perform a clean shutdown
+before removing power:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>shutdown<span class="w"> </span>-h<span class="w"> </span>now
+</pre></div>
+</div>
+</section>
+<section id="ise-project-with-chipscope-quick-start">
+<h3>ISE Project with Chipscope Quick Start<a class="headerlink" href="#ise-project-with-chipscope-quick-start" title="Link to this heading"></a></h3>
+<p>This flow uses the Xilinx ISE 14.6 HDL project with Chipscope Pro 14.6 for
+manual control and monitoring without Linux.</p>
+<ol class="arabic simple">
+<li><p>Follow the hardware setup steps above (steps 2–6).</p></li>
+<li><p>Program the FPGA with the <code class="docutils literal notranslate"><span class="pre">top.bit</span></code> bitstream from the ISE project using
+the iMPACT tool.</p></li>
+<li><p>Open the Chipscope project for monitoring and control.</p></li>
+</ol>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/chipscope.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/chipscope.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Chipscope interface overview</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Chipscope interface is divided into four sections:</p>
+<p><strong>Section A – Control Parameters:</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Width</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PWM</p></td>
+<td><p>32</p></td>
+<td><p>PWM value (must be between 0x480 and 0x800)</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAIN</p></td>
+<td><p>2</p></td>
+<td><p>ADC signal chain amplification (0=x1, 1=x4, 2=x2, 3=x8)</p></td>
+</tr>
+<tr class="row-even"><td><p>RUN_MOTOR</p></td>
+<td><p>1</p></td>
+<td><p>Start / Stop the motor</p></td>
+</tr>
+<tr class="row-odd"><td><p>STAR_MOTOR</p></td>
+<td><p>1</p></td>
+<td><p>1 for star-wired motors, 0 for delta-wired motors</p></td>
+</tr>
+<tr class="row-even"><td><p>CW_DIR</p></td>
+<td><p>1</p></td>
+<td><p>1 for clockwise, 0 for counter-clockwise</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Section B – Monitoring signals:</strong> IA, IB, IT (from both controller and
+drive boards), VBUS, SPEED (in 100 ns units between Hall state changes), and
+POSITION (Hall sensor reading).</p>
+<p><strong>Section C</strong> – Graphical speed plot.</p>
+<p><strong>Section D</strong> – Current and voltage waveform plots.</p>
+</section>
 </section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
 <p>Two HDL reference designs are provided targeting different use cases:</p>
 <ul class="simple">
-<li><p><strong>Xilinx ISE HDL Project + Chipscope Interface</strong> - Simple design for manual
-control and monitoring of system parameters through Chipscope</p></li>
-<li><p><strong>HDL Project for Linux</strong> - Complex design with AXI Lite and AXI streaming
+<li><p><strong>Xilinx ISE HDL Project + Chipscope Interface</strong> – Simple design for manual
+control and monitoring of system parameters through Chipscope. The design
+contains ADC interface, motor controller, and speed sensor interface blocks,
+all connected to Chipscope ILA and VIO modules.</p></li>
+<li><p><strong>HDL Project for Linux</strong> – Design with AXI Lite and AXI Streaming
 interfaces, infrastructure for Linux support, and integration of
-automatically generated HDL code for Simulink designed motor controller</p></li>
+automatically generated HDL code for the Simulink-designed motor controller.</p></li>
 </ul>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/mc_design.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/mc_design.png" />
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/mc_design.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/mc_design.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Linux-targeted HDL reference design block diagram</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The Linux-targeted HDL design contains the following blocks:</p>
 <ul class="simple">
-<li><p><strong>ADC Interface</strong> - Communicates with the <a class="icon adi reference external" href="https://www.analog.com/AD7401" target="_blank">AD7401</a> sigma-delta
+<li><p><strong>ADC Interface</strong> – Communicates with the <a class="icon adi reference external" href="https://www.analog.com/AD7401" target="_blank">AD7401</a> sigma-delta
 modulators and implements SINC3 filters for demodulating the 1-bit stream.
 Exposes AXI Lite registers and an AXI Streaming interface for DMA data
 transfer.</p></li>
-<li><p><strong>Controller Interface</strong> - Interfaces to IP control blocks and streams
+<li><p><strong>Controller Interface</strong> – Interfaces to IP control blocks and streams
 real-time data to the application layer via AXI Streaming and DMA.</p></li>
-<li><p><strong>MathWorks FOC IP</strong> - FOC controller model provided by MathWorks,
+<li><p><strong>MathWorks FOC IP</strong> – FOC controller model provided by MathWorks,
 integrated as a standalone IP core packaged using the Simulink Workflow
 Advisor. Exposes AXI-Lite control registers, encoder input, current
-measurement data, inverter control, and monitoring signals.</p></li>
-<li><p><strong>Position and Speed Processing</strong> - Converts Hall, BEMF, and Encoder signals
+measurement data, inverter control, and monitoring signals. All monitoring
+signals connect to the Controller Interface IP for observation from the
+Linux IIO Oscilloscope application. The AXI-Lite registers can be directly
+accessed through a UIO driver in the ADI Linux distribution for Zynq.</p></li>
+<li><p><strong>Position and Speed Processing</strong> – Converts Hall, BEMF, and Encoder signals
 into speed and position data. Exposes AXI Lite registers and AXI Streaming
 interface for DMA.</p></li>
 </ul>
@@ -1065,7 +1233,7 @@ ad-mc-adc2@40530000 {
 <p>The ADI IIO Oscilloscope application is used for monitoring and controlling the
 AD-FMCMOTCON1-EBZ board when using the Linux operating system. Two main tabs
 are used: <strong>Capture</strong> and <strong>Motor Control</strong>.</p>
-<p><strong>Capture — Current Monitoring</strong></p>
+<p><strong>Capture – Current Monitoring</strong></p>
 <p>Two sets of <a class="icon adi reference external" href="https://www.analog.com/AD7401A" target="_blank">AD7401A</a> ADCs provide current monitoring:</p>
 <ul class="simple">
 <li><p>Controller board ADCs (<code class="docutils literal notranslate"><span class="pre">ad-mc-adc</span></code>): in_voltage0 = Ia, in_voltage1 = Ib,
@@ -1074,12 +1242,12 @@ drive board; amplification controlled by GPO0 and GPO1 pins.</p></li>
 <li><p>Drive board ADCs (<code class="docutils literal notranslate"><span class="pre">ad-mc-adc2</span></code>): in_voltage0 = Ia, in_voltage1 = Ib,
 in_voltage2 = It (no preamplification).</p></li>
 </ul>
-<p><strong>Capture — Speed Monitoring</strong></p>
+<p><strong>Capture – Speed Monitoring</strong></p>
 <p>The speed IP monitors the number of counts (in 10 ns units) between two motor
 commutations. To display speed in RPM, enable the 1/x option and multiply by
 25,000,000.</p>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/mc_speed_sc.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/mc_speed_sc.png" />
-<p><strong>Capture — FOC Controller Monitoring</strong></p>
+<p><strong>Capture – FOC Controller Monitoring</strong></p>
 <p>The MathWorks FOC IP exposes the following monitoring signals:</p>
 <ul class="simple">
 <li><p>voltage_0 / voltage_1: Phase A / B voltage</p></li>
@@ -1089,7 +1257,7 @@ commutations. To display speed in RPM, enable the 1/x option and multiply by
 <li><p>voltage_6 / voltage_7: d / q current</p></li>
 </ul>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/mc_full_sc.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/mc_full_sc.png" />
-<p><strong>Motor Control — Manual Control</strong></p>
+<p><strong>Motor Control – Manual Control</strong></p>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/mc_manual_ctrl.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/mc_manual_ctrl.png" />
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -1117,7 +1285,7 @@ commutations. To display speed in RPM, enable the 1/x option and multiply by
 </tbody>
 </table>
 </div>
-<p><strong>Motor Control — MathWorks FOC Controller</strong></p>
+<p><strong>Motor Control – MathWorks FOC Controller</strong></p>
 <p>When the MathWorks FOC controller is selected, the <code class="docutils literal notranslate"><span class="pre">foc_script.sh</span></code> script
 (located under <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/</span></code>) controls operation:</p>
 <ol class="arabic simple">
@@ -1136,7 +1304,14 @@ generated from a MathWorks Simulink model. The controller is designed in
 Simulink and the corresponding HDL code is generated using the MathWorks HDL
 Coder. The controller model is packaged into an IP core using the Simulink
 Workflow Advisor.</p>
-<p>FOC Controller AXI-Lite Registers:</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/foc_simulink.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcmotcon1-ebz/foc_simulink.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Top-level diagram of the FOC controller Simulink model</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="foc-controller-axi-lite-registers">
+<h4>FOC Controller AXI-Lite Registers<a class="headerlink" href="#foc-controller-axi-lite-registers" title="Link to this heading"></a></h4>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -1211,6 +1386,126 @@ Workflow Advisor.</p>
 </tbody>
 </table>
 </div>
+</section>
+<section id="foc-controller-interface-signals">
+<h4>FOC Controller Interface Signals<a class="headerlink" href="#foc-controller-interface-signals" title="Link to this heading"></a></h4>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Signal</p></th>
+<th class="head"><p>Direction</p></th>
+<th class="head"><p>Width</p></th>
+<th class="head"><p>Format</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>adc_current1</p></td>
+<td><p>I</p></td>
+<td><p>18</p></td>
+<td><p>Signed fixed 18.17</p></td>
+<td><p>Phase A current measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p>adc_current2</p></td>
+<td><p>I</p></td>
+<td><p>18</p></td>
+<td><p>Signed fixed 18.17</p></td>
+<td><p>Phase B current measurement</p></td>
+</tr>
+<tr class="row-even"><td><p>encoder_a</p></td>
+<td><p>I</p></td>
+<td><p>1</p></td>
+<td><p>Boolean</p></td>
+<td><p>Encoder channel A</p></td>
+</tr>
+<tr class="row-odd"><td><p>encoder_b</p></td>
+<td><p>I</p></td>
+<td><p>1</p></td>
+<td><p>Boolean</p></td>
+<td><p>Encoder channel B</p></td>
+</tr>
+<tr class="row-even"><td><p>encoder_index</p></td>
+<td><p>I</p></td>
+<td><p>1</p></td>
+<td><p>Boolean</p></td>
+<td><p>Encoder index</p></td>
+</tr>
+<tr class="row-odd"><td><p>pwm_a</p></td>
+<td><p>O</p></td>
+<td><p>1</p></td>
+<td><p>Boolean</p></td>
+<td><p>Phase A PWM control signal</p></td>
+</tr>
+<tr class="row-even"><td><p>pwm_b</p></td>
+<td><p>O</p></td>
+<td><p>1</p></td>
+<td><p>Boolean</p></td>
+<td><p>Phase B PWM control signal</p></td>
+</tr>
+<tr class="row-odd"><td><p>pwm_c</p></td>
+<td><p>O</p></td>
+<td><p>1</p></td>
+<td><p>Boolean</p></td>
+<td><p>Phase C PWM control signal</p></td>
+</tr>
+<tr class="row-even"><td><p>mon_phase_voltage_a</p></td>
+<td><p>O</p></td>
+<td><p>32</p></td>
+<td><p>Signed fixed 32.12</p></td>
+<td><p>Phase A voltage in Volts</p></td>
+</tr>
+<tr class="row-odd"><td><p>mon_phase_voltage_b</p></td>
+<td><p>O</p></td>
+<td><p>32</p></td>
+<td><p>Signed fixed 32.12</p></td>
+<td><p>Phase B voltage in Volts</p></td>
+</tr>
+<tr class="row-even"><td><p>mon_phase_current_a</p></td>
+<td><p>O</p></td>
+<td><p>32</p></td>
+<td><p>Signed fixed 32.15</p></td>
+<td><p>Phase A current in Amps</p></td>
+</tr>
+<tr class="row-odd"><td><p>mon_phase_current_b</p></td>
+<td><p>O</p></td>
+<td><p>32</p></td>
+<td><p>Signed fixed 32.15</p></td>
+<td><p>Phase B current in Amps</p></td>
+</tr>
+<tr class="row-even"><td><p>mon_rotor_position</p></td>
+<td><p>O</p></td>
+<td><p>32</p></td>
+<td><p>Signed fixed 32.14</p></td>
+<td><p>Rotor mechanical position in radians</p></td>
+</tr>
+<tr class="row-odd"><td><p>mon_electrical_position</p></td>
+<td><p>O</p></td>
+<td><p>32</p></td>
+<td><p>Signed fixed 32.14</p></td>
+<td><p>Rotor electrical position in radians</p></td>
+</tr>
+<tr class="row-even"><td><p>mon_rotor_velocity</p></td>
+<td><p>O</p></td>
+<td><p>32</p></td>
+<td><p>Signed fixed 32.8</p></td>
+<td><p>Rotor velocity in rad/s</p></td>
+</tr>
+<tr class="row-odd"><td><p>mon_d_current</p></td>
+<td><p>O</p></td>
+<td><p>32</p></td>
+<td><p>Signed fixed 32.15</p></td>
+<td><p>d current in Amps</p></td>
+</tr>
+<tr class="row-even"><td><p>mon_q_current</p></td>
+<td><p>O</p></td>
+<td><p>32</p></td>
+<td><p>Signed fixed 32.15</p></td>
+<td><p>q current in Amps</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 <section id="qdesys-motor-control-ip">
 <h3>QDESYS Motor Control IP<a class="headerlink" href="#qdesys-motor-control-ip" title="Link to this heading"></a></h3>

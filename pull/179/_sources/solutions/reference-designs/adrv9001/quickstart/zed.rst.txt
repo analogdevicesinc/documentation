@@ -9,6 +9,11 @@ This guide provides step by step instructions on how to set up the
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
   Rev C or later
 
+Instructions on how to build the Zynq Linux kernel and device trees from source
+can be found at
+:git-linux:`arch/arm/boot/dts/xilinx` and in the
+`ADI Linux build guide <https://analogdevicesinc.github.io/linux/build/generic/zynq.html>`__.
+
 LVDS Support
 ~~~~~~~~~~~~
 
@@ -110,6 +115,9 @@ These devices should be present after a successful boot:
            iio:device5: axi-adrv9002-core-tdd2-lpc
            iio:device6: axi-adrv9002-tx-lpc (buffer capable)
            iio:device7: axi-adrv9002-tx2-lpc (buffer capable)
+
+For more details on device modes (independent vs MIMO), see the
+:git-linux:`ADRV9002 Linux driver documentation <drivers/iio/adc/navassa>`.
 
 pyadi-iio
 ~~~~~~~~~

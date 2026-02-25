@@ -390,6 +390,30 @@ Instructions and Overview
   The first eight channels correspond to the first device, second eight to the
   second device, etc.
 
+Device to Channel Mapping (Rev. B/C Platforms)
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+.. list-table::
+   :header-rows: 1
+
+   * - IIO Device
+     - SPI / MxFE
+     - Channels
+   * - axi-ad9081-rx-0
+     - spi0.0 --- MxFE U48
+     - voltage0_i (idx 0) through voltage3_q (idx 7)
+   * - axi-ad9081-rx-1
+     - spi0.1 --- MxFE U49
+     - voltage4_i (idx 8) through voltage7_q (idx 15)
+   * - axi-ad9081-rx-2
+     - spi0.2 --- MxFE U61
+     - voltage8_i (idx 16) through voltage11_q (idx 23)
+   * - axi-ad9081-rx-3
+     - spi0.3 --- MxFE U76
+     - voltage12_i (idx 24) through voltage15_q (idx 31)
+
+All channels are formatted as ``le:S16/16>>0`` (signed 16-bit little-endian).
+
 .. note::
 
    In Frequency Domain view channels can be only enabled pairwise (I+Q). Not
@@ -438,6 +462,26 @@ and dropdown options.
 
 IIO devices ``axi-ad9081-tx-3`` and ``axi-ad9081-rx-3`` can also access the
 AXI_CORE register space of the transport layer core.
+
+Useful IIO Commands
+~~~~~~~~~~~~~~~~~~~
+
+The ``iio_attr`` and ``iio_info`` commands can be used locally on the target or
+remotely from a host PC. When using the remote backend, install
+`libiio <https://github.com/analogdevicesinc/libiio/releases>`__ for your
+platform.
+
+IIO device names can be listed using ``iio_attr``:
+
+.. code-block:: console
+
+   $ iio_attr -u ip:<target-ip> -i
+
+**Example**: Change main NCO frequency on a channel:
+
+.. code-block:: console
+
+   $ iio_attr -u ip:<target-ip> -i -c axi-ad9081-rx-3 voltage0_i main_nco_frequency 1200000000
 
 MATLAB Support
 --------------

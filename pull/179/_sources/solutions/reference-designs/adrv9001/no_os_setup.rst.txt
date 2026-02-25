@@ -73,6 +73,10 @@ The corresponding driver files can be found at:
    ├── devices
    └── third_party
 
+The Navassa API (the transceiver's control API provided by Analog Devices) can
+be found under the ``common``, ``devices``, and ``third_party`` directories
+within the driver path above.
+
 - :git-no-OS:`No-OS project <projects/adrv9001>`
 - :git-no-OS:`No-OS driver <drivers/rf-transceiver/navassa>`
 
@@ -86,8 +90,20 @@ is used, this has to be specified in the make command:
 
    make LVDS=y
 
+For detailed build instructions, see the
+`no-OS Build Guide <https://analogdevicesinc.github.io/no-OS/build_guides/build_guide.html>`__.
+
 Demo Applications
 -----------------
+
+The no-OS project includes two demo application types:
+
+- **Headless mode** (``headless.c``) -- configures the ADRV9002 and runs a
+  simple loopback test without any host interface.
+- **IIOD demo** (``app_iio.c``) -- implements a tinyIIOD server that exposes
+  the ADRV9002 channels over USB or network. This allows the
+  :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` application (or
+  any IIO client) to connect, configure the device, and stream data.
 
 Make sure to connect your :adi:`EVAL-ADRV9002` board to the correct FMC
 connector on the carrier you use:

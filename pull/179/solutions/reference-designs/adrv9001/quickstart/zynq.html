@@ -685,6 +685,10 @@ Content on this topic
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html" target="_blank">ZC706</a> Rev 1.2 or later</p></li>
 </ul>
+<p>Instructions on how to build the Zynq Linux kernel and device trees from source
+can be found at
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx" target="_blank">arch/arm/boot/dts/xilinx</a> and in the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/build/generic/zynq.html" target="_blank">ADI Linux build guide</a>.</p>
 <section id="lvds-support">
 <h2>LVDS Support<a class="headerlink" href="#lvds-support" title="Link to this heading"></a></h2>
 <p>According to the
@@ -730,7 +734,9 @@ directly on the SD card <code class="docutils literal notranslate"><span class="
 <h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Before executing below steps, <strong>VADJ must be set to 1.8V</strong>.</p>
+<p>Before executing below steps, <strong>VADJ must be set to 1.8V</strong>. Instructions
+for reprogramming the VADJ on the ZC706 can be found in the
+<a class="icon link reference external" href="https://support.xilinx.com/s/article/56811?language=en_US" target="_blank">Xilinx support article</a>.</p>
 </div>
 <p>On the ADRV9002 card, there is a red LED close to the FMC connector. This LED
 indicates if VADJ voltage exceeded 2.0V. If the LED does not turn off after a
@@ -766,6 +772,12 @@ socket.</p></li>
 <span class="go">        iio:device3: axi-adrv9002-core-tdd-lpc</span>
 <span class="go">        iio:device4: axi-adrv9002-tx-lpc (buffer capable)</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ZC706 configuration uses a single R1T1 interface due to CMOS-only
+limitations. For more details on device modes (independent vs MIMO), see
+the <a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/navassa" target="_blank">ADRV9002 Linux driver documentation</a>.</p>
 </div>
 </section>
 <section id="pyadi-iio">

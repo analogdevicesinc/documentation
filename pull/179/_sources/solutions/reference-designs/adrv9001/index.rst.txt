@@ -29,6 +29,14 @@ and the software which can make it work can be found here.
 
    ADRV9002 Evaluation Board
 
+Naming Conventions
+------------------
+
+The ADRV9001 is a family designator assigned to the System Development User
+Guide (UG-1828 for ADRV9002, ADRV9003, ADRV9004, and upcoming additional
+family members). Throughout this documentation, the ADRV9001 designator may be
+used to refer to either :adi:`ADRV9002`, ADRV9003, or ADRV9004.
+
 .. toctree::
    :hidden:
 
@@ -61,6 +69,7 @@ Table of contents
    #. `Transceiver Toolbox for MATLAB and Simulink <https://github.com/analogdevicesinc/TransceiverToolbox>`__
    #. `pyadi-iio <https://analogdevicesinc.github.io/pyadi-iio/>`__
    #. `IIO Command Line Tools <https://github.com/analogdevicesinc/libiio>`__
+   #. `GNU Radio <https://github.com/analogdevicesinc/gr-iio>`__
 
 #. Embedded Resources
 

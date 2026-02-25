@@ -686,6 +686,10 @@ Content on this topic
 <li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a>
 Rev C or later</p></li>
 </ul>
+<p>Instructions on how to build the Zynq Linux kernel and device trees from source
+can be found at
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx" target="_blank">arch/arm/boot/dts/xilinx</a> and in the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/build/generic/zynq.html" target="_blank">ADI Linux build guide</a>.</p>
 <section id="lvds-support">
 <h2>LVDS Support<a class="headerlink" href="#lvds-support" title="Link to this heading"></a></h2>
 <p>According to the
@@ -784,6 +788,8 @@ jumpers JP2 and JP3.</p>
 <span class="go">        iio:device7: axi-adrv9002-tx2-lpc (buffer capable)</span>
 </pre></div>
 </div>
+<p>For more details on device modes (independent vs MIMO), see the
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/navassa" target="_blank">ADRV9002 Linux driver documentation</a>.</p>
 </section>
 <section id="pyadi-iio">
 <h2>pyadi-iio<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h2>

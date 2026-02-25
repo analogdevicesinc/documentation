@@ -127,11 +127,15 @@
 <li><a class="reference internal" href="#software-architecture-overview">Software Architecture Overview</a></li>
 <li><a class="reference internal" href="#iio-oscilloscope">IIO Oscilloscope</a><ul>
 <li><a class="reference internal" href="#instructions-and-overview">Instructions and Overview</a><ul>
+<li><a class="reference internal" href="#device-to-channel-mapping-rev-b-c-platforms">Device to Channel Mapping (Rev. B/C Platforms)</a><ul>
 <li><a class="reference internal" href="#the-plugin-window">The Plugin Window</a></li>
 <li><a class="reference internal" href="#loading-custom-waveform">Loading Custom Waveform</a></li>
 <li><a class="reference internal" href="#the-debug-plugin">The Debug Plugin</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#useful-iio-commands">Useful IIO Commands</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#matlab-support">MATLAB Support</a></li>
@@ -1172,6 +1176,37 @@ followed by the <code class="docutils literal notranslate"><span class="pre">Ok<
 The first eight channels correspond to the first device, second eight to the
 second device, etc.</p></li>
 </ul>
+<section id="device-to-channel-mapping-rev-b-c-platforms">
+<h4>Device to Channel Mapping (Rev. B/C Platforms)<a class="headerlink" href="#device-to-channel-mapping-rev-b-c-platforms" title="Link to this heading"></a></h4>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>IIO Device</p></th>
+<th class="head"><p>SPI / MxFE</p></th>
+<th class="head"><p>Channels</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>axi-ad9081-rx-0</p></td>
+<td><p>spi0.0 — MxFE U48</p></td>
+<td><p>voltage0_i (idx 0) through voltage3_q (idx 7)</p></td>
+</tr>
+<tr class="row-odd"><td><p>axi-ad9081-rx-1</p></td>
+<td><p>spi0.1 — MxFE U49</p></td>
+<td><p>voltage4_i (idx 8) through voltage7_q (idx 15)</p></td>
+</tr>
+<tr class="row-even"><td><p>axi-ad9081-rx-2</p></td>
+<td><p>spi0.2 — MxFE U61</p></td>
+<td><p>voltage8_i (idx 16) through voltage11_q (idx 23)</p></td>
+</tr>
+<tr class="row-odd"><td><p>axi-ad9081-rx-3</p></td>
+<td><p>spi0.3 — MxFE U76</p></td>
+<td><p>voltage12_i (idx 24) through voltage15_q (idx 31)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>All channels are formatted as <code class="docutils literal notranslate"><span class="pre">le:S16/16&gt;&gt;0</span></code> (signed 16-bit little-endian).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In Frequency Domain view channels can be only enabled pairwise (I+Q). Not
@@ -1179,7 +1214,7 @@ more than 2 frequency plots can be enabled in the same window. However
 multiple (independent) plot windows can be opened.</p>
 </div>
 <section id="the-plugin-window">
-<h4>The Plugin Window<a class="headerlink" href="#the-plugin-window" title="Link to this heading"></a></h4>
+<h5>The Plugin Window<a class="headerlink" href="#the-plugin-window" title="Link to this heading"></a></h5>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/image2019-12-4_13-14-41.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/image2019-12-4_13-14-41.png" />
 <p>OSC will instantiate multiple notebook plugin tabs on the main window. One for
 each device <code class="docutils literal notranslate"><span class="pre">AD9081-X</span></code> with an additional Debug plugin.</p>
@@ -1188,7 +1223,7 @@ core (<code class="docutils literal notranslate"><span class="pre">axi-ad9081-tx
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/image2019-12-4_13-20-29.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/image2019-12-4_13-20-29.png" />
 </section>
 <section id="loading-custom-waveform">
-<h4>Loading Custom Waveform<a class="headerlink" href="#loading-custom-waveform" title="Link to this heading"></a></h4>
+<h5>Loading Custom Waveform<a class="headerlink" href="#loading-custom-waveform" title="Link to this heading"></a></h5>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/image2019-12-4_13-24-46.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/image2019-12-4_13-24-46.png" />
 <p>Set DDS mode to <code class="docutils literal notranslate"><span class="pre">DAC</span> <span class="pre">Buffer</span> <span class="pre">Output</span></code>, select a file, hit <code class="docutils literal notranslate"><span class="pre">Load</span></code> button.
 Optionally set a scale, and select the channels.</p>
@@ -1199,7 +1234,7 @@ simultaneously.</p>
 </div>
 </section>
 <section id="the-debug-plugin">
-<h4>The Debug Plugin<a class="headerlink" href="#the-debug-plugin" title="Link to this heading"></a></h4>
+<h5>The Debug Plugin<a class="headerlink" href="#the-debug-plugin" title="Link to this heading"></a></h5>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/image2019-12-4_13-29-56.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/image2019-12-4_13-29-56.png" />
 <p>Under <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Selection</span></code>, select the IIO device to debug/control. In the
 <code class="docutils literal notranslate"><span class="pre">Register</span></code> section select source <code class="docutils literal notranslate"><span class="pre">SPI</span></code>, check <code class="docutils literal notranslate"><span class="pre">Detailed</span> <span class="pre">Register</span> <span class="pre">Map</span></code> and
@@ -1208,6 +1243,22 @@ and dropdown options.</p>
 <p>IIO devices <code class="docutils literal notranslate"><span class="pre">axi-ad9081-tx-3</span></code> and <code class="docutils literal notranslate"><span class="pre">axi-ad9081-rx-3</span></code> can also access the
 AXI_CORE register space of the transport layer core.</p>
 </section>
+</section>
+</section>
+<section id="useful-iio-commands">
+<h3>Useful IIO Commands<a class="headerlink" href="#useful-iio-commands" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">iio_attr</span></code> and <code class="docutils literal notranslate"><span class="pre">iio_info</span></code> commands can be used locally on the target or
+remotely from a host PC. When using the remote backend, install
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/libiio/releases" target="_blank">libiio</a> for your
+platform.</p>
+<p>IIO device names can be listed using <code class="docutils literal notranslate"><span class="pre">iio_attr</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>iio_attr<span class="w"> </span>-u<span class="w"> </span>ip:&lt;target-ip&gt;<span class="w"> </span>-i
+</pre></div>
+</div>
+<p><strong>Example</strong>: Change main NCO frequency on a channel:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>iio_attr<span class="w"> </span>-u<span class="w"> </span>ip:&lt;target-ip&gt;<span class="w"> </span>-i<span class="w"> </span>-c<span class="w"> </span>axi-ad9081-rx-3<span class="w"> </span>voltage0_i<span class="w"> </span>main_nco_frequency<span class="w"> </span><span class="m">1200000000</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="matlab-support">

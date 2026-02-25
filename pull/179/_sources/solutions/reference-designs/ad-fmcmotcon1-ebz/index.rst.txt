@@ -57,6 +57,59 @@ Features
 - High speed industrial Ethernet interface
 - Example reference designs for Xilinx FPGAs and Simulink from MathWorks
 
+Added Value
+~~~~~~~~~~~
+
+- Complete control solution showing how to integrate hardware for power,
+  isolation, measurement, and control
+- Increased control flexibility due to FPGA interfacing capabilities
+- Increased versatility to control different types of motors
+- Example reference designs showing how to use the control solution with
+  Xilinx FPGAs and Simulink from MathWorks
+
+Motor Control Background
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A motor drive is a system that varies the motor electrical input power to
+control the shaft torque, speed, or position. Motor drives can be classified
+as:
+
+- **Application specific drive** -- designed to run a specific motor in a
+  specific application (e.g., variable speed pump drive)
+- **Standard drive** -- general-purpose motor speed controller for a variety
+  of motors within a given power range
+- **Servo drive** -- delivers accurate and high dynamic control of position,
+  speed, or torque down to zero speed; typically used in automation
+- **High performance servos** -- best in class accuracy and connectivity;
+  typically used in CNC and pick-and-place machines
+
+**Brushed DC Motor Control**
+
+The Brushed DC motor is the simplest type to control. The most common
+technique to vary the applied voltage is Pulse Width Modulation (PWM), where
+constant-amplitude voltage pulses of varying widths are applied to the motor.
+A single transistor and diode can control speed (proportional to ON duty
+cycle, positive torque only). An H-bridge power circuit enables four-quadrant
+control with forward/reverse motion and braking.
+
+**Brushless DC Motor Control**
+
+BLDC motor windings generate a trapezoidal back EMF synchronized to the rotor
+magnet position. Hall effect sensors detect the rotor position and indicate
+the flat-top portion for each winding's back EMF. Two commutation schemes are
+supported:
+
+- **Star connection** -- For any one segment, two windings are in the flat-top
+  portion. Electronic control leaves one winding open, connects one to the
+  lower DC rail, and controls the third with PWM. The PWM fill factor controls
+  motor speed.
+- **Delta connection** -- Two windings connect to the positive voltage supply
+  and a third connects to the negative supply. PWM fill factor controls speed.
+
+**Sensorless control** can be achieved by detecting BEMF zero crossings for
+each phase. This lowers system cost and increases reliability but cannot
+reliably detect zero crossings at low motor speeds.
+
 Interfaces
 ~~~~~~~~~~
 
@@ -75,8 +128,16 @@ All control and feedback signals are fully isolated.
 Hardware
 --------
 
+Controller Board (AD-FMCMOTCON1-EBZ)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: controller_block_diagram_simplified.png
+   :align: center
+
+   Controller board simplified block diagram
+
 Controller Board Key Parts
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -113,16 +174,21 @@ Controller Board Key Parts
      - 8-channel bidirectional level translator
    * - Multiplexers
      - :adi:`ADG704`
-     - CMOS, low voltage 2.5 Ω 4-channel multiplexer
+     - CMOS, low voltage 2.5 Ohm 4-channel multiplexer
    * - Multiplexers
      - :adi:`ADG759`
-     - CMOS low voltage, 3 Ω 4-channel multiplexer
+     - CMOS low voltage, 3 Ohm 4-channel multiplexer
    * - Ethernet
      - 88E1512
      - Marvell integrated 10/100/1000 Mbps EEE transceiver
 
 Low Voltage Drive Board (AD-DRVLV1-EBZ)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: lv_block_diagram_simplified.png
+   :align: center
+
+   Low voltage drive board simplified block diagram
 
 The drive board connects to the controller board and provides:
 
@@ -135,6 +201,11 @@ The drive board connects to the controller board and provides:
 
 Dynamometer (AD-DYNO1-EBZ)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: dyno_diagram.png
+   :align: center
+
+   Dynamometer system block diagram
 
 The AD-DYNO1-EBZ dynamometer drive system provides:
 
@@ -184,60 +255,133 @@ conditions the analog signals and sends clean digital signals to the FPGA.
 Quick Start
 -----------
 
-Supported Carrier: ZedBoard (Rev C or later).
+Supported Carrier
+~~~~~~~~~~~~~~~~~~
 
-Required hardware:
+`ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+(Rev C or later).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
 
 - AD-FMCMOTCON1-EBZ controller board
 - AD-DRVLV1-EBZ low voltage drive board
 - ZedBoard
 - 24 V, 3 A capable lab power supply
+- USB keyboard and mouse for the Zynq device
+- HDMI display (monitor or TV)
 - AD-DYNO1-EBZ dynamometer (optional)
 
-Setup steps:
+Linux on Zynq Quick Start
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Connect the low voltage drive board to the controller board.
-2. Connect the controller + drive board assembly to the FMC connector of the
+1. Create an SD card image following the
+   :doc:`Kuiper Linux </linux/kuiper/index>` instructions.
+2. Connect the low voltage drive board to the controller board.
+3. Connect the controller + drive board assembly to the FMC connector of the
    ZedBoard.
-3. Insert the 6-pin Hall connector into P7 (pin 1 is the empty slot). For
+4. Insert the 6-pin Hall connector into P7 (pin 1 is the empty slot). For
    encoder use, connect pins one-to-one with the P7 connector.
-4. Connect the motor to P1 and the lab power supply to P4.
-5. Ensure the emergency stop button P2 is pressed before powering on.
-6. Create an SD card image following the
-   :doc:`Kuiper Linux </linux/kuiper/index>`
-   and boot the ZedBoard.
-7. After programming, release the emergency stop button P2 and press the reset
-   switch S1 for a few seconds to start the motor.
-8. Use the IIO Oscilloscope application for monitoring and control (see the
-   `Software Support`_ section below).
+5. Connect the motor to P1 and the lab power supply to P4.
+6. Ensure the emergency stop button P2 is pressed before powering on.
+7. Boot the ZedBoard from the SD card.
+8. After boot, the IIO Oscilloscope application launches on the HDMI display.
+9. Release the emergency stop button P2 and press the reset switch S1 for a
+   few seconds to start the motor.
+10. Use the IIO Oscilloscope application for monitoring and control (see the
+    `Software Support`_ section below).
+
+This platform uses a persistent file system. Always perform a clean shutdown
+before removing power:
+
+.. code-block:: bash
+
+   sudo shutdown -h now
+
+ISE Project with Chipscope Quick Start
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This flow uses the Xilinx ISE 14.6 HDL project with Chipscope Pro 14.6 for
+manual control and monitoring without Linux.
+
+1. Follow the hardware setup steps above (steps 2--6).
+2. Program the FPGA with the ``top.bit`` bitstream from the ISE project using
+   the iMPACT tool.
+3. Open the Chipscope project for monitoring and control.
+
+.. figure:: chipscope.png
+   :align: center
+
+   Chipscope interface overview
+
+The Chipscope interface is divided into four sections:
+
+**Section A -- Control Parameters:**
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Width
+     - Description
+   * - PWM
+     - 32
+     - PWM value (must be between 0x480 and 0x800)
+   * - GAIN
+     - 2
+     - ADC signal chain amplification (0=x1, 1=x4, 2=x2, 3=x8)
+   * - RUN_MOTOR
+     - 1
+     - Start / Stop the motor
+   * - STAR_MOTOR
+     - 1
+     - 1 for star-wired motors, 0 for delta-wired motors
+   * - CW_DIR
+     - 1
+     - 1 for clockwise, 0 for counter-clockwise
+
+**Section B -- Monitoring signals:** IA, IB, IT (from both controller and
+drive boards), VBUS, SPEED (in 100 ns units between Hall state changes), and
+POSITION (Hall sensor reading).
+
+**Section C** -- Graphical speed plot.
+
+**Section D** -- Current and voltage waveform plots.
 
 HDL Reference Design
 --------------------
 
 Two HDL reference designs are provided targeting different use cases:
 
-- **Xilinx ISE HDL Project + Chipscope Interface** - Simple design for manual
-  control and monitoring of system parameters through Chipscope
-- **HDL Project for Linux** - Complex design with AXI Lite and AXI streaming
+- **Xilinx ISE HDL Project + Chipscope Interface** -- Simple design for manual
+  control and monitoring of system parameters through Chipscope. The design
+  contains ADC interface, motor controller, and speed sensor interface blocks,
+  all connected to Chipscope ILA and VIO modules.
+- **HDL Project for Linux** -- Design with AXI Lite and AXI Streaming
   interfaces, infrastructure for Linux support, and integration of
-  automatically generated HDL code for Simulink designed motor controller
+  automatically generated HDL code for the Simulink-designed motor controller.
 
-.. image:: mc_design.png
+.. figure:: mc_design.png
    :align: center
+
+   Linux-targeted HDL reference design block diagram
 
 The Linux-targeted HDL design contains the following blocks:
 
-- **ADC Interface** - Communicates with the :adi:`AD7401` sigma-delta
+- **ADC Interface** -- Communicates with the :adi:`AD7401` sigma-delta
   modulators and implements SINC3 filters for demodulating the 1-bit stream.
   Exposes AXI Lite registers and an AXI Streaming interface for DMA data
   transfer.
-- **Controller Interface** - Interfaces to IP control blocks and streams
+- **Controller Interface** -- Interfaces to IP control blocks and streams
   real-time data to the application layer via AXI Streaming and DMA.
-- **MathWorks FOC IP** - FOC controller model provided by MathWorks,
+- **MathWorks FOC IP** -- FOC controller model provided by MathWorks,
   integrated as a standalone IP core packaged using the Simulink Workflow
   Advisor. Exposes AXI-Lite control registers, encoder input, current
-  measurement data, inverter control, and monitoring signals.
-- **Position and Speed Processing** - Converts Hall, BEMF, and Encoder signals
+  measurement data, inverter control, and monitoring signals. All monitoring
+  signals connect to the Controller Interface IP for observation from the
+  Linux IIO Oscilloscope application. The AXI-Lite registers can be directly
+  accessed through a UIO driver in the ADI Linux distribution for Zynq.
+- **Position and Speed Processing** -- Converts Hall, BEMF, and Encoder signals
   into speed and position data. Exposes AXI Lite registers and AXI Streaming
   interface for DMA.
 
@@ -285,7 +429,7 @@ high-speed data transfer using multiple multiplexed data channels.
      - CH1: Speed measurement
    * - **ad-mc-ctrl**
      - Motor controller block
-     - CH1–CH8: Controller monitoring signals
+     - CH1--CH8: Controller monitoring signals
 
 Example device tree entries for the motor control IIO drivers:
 
@@ -362,7 +506,7 @@ The ADI IIO Oscilloscope application is used for monitoring and controlling the
 AD-FMCMOTCON1-EBZ board when using the Linux operating system. Two main tabs
 are used: **Capture** and **Motor Control**.
 
-**Capture — Current Monitoring**
+**Capture -- Current Monitoring**
 
 Two sets of :adi:`AD7401A` ADCs provide current monitoring:
 
@@ -372,7 +516,7 @@ Two sets of :adi:`AD7401A` ADCs provide current monitoring:
 - Drive board ADCs (``ad-mc-adc2``): in_voltage0 = Ia, in_voltage1 = Ib,
   in_voltage2 = It (no preamplification).
 
-**Capture — Speed Monitoring**
+**Capture -- Speed Monitoring**
 
 The speed IP monitors the number of counts (in 10 ns units) between two motor
 commutations. To display speed in RPM, enable the 1/x option and multiply by
@@ -381,7 +525,7 @@ commutations. To display speed in RPM, enable the 1/x option and multiply by
 .. image:: mc_speed_sc.png
    :align: center
 
-**Capture — FOC Controller Monitoring**
+**Capture -- FOC Controller Monitoring**
 
 The MathWorks FOC IP exposes the following monitoring signals:
 
@@ -394,7 +538,7 @@ The MathWorks FOC IP exposes the following monitoring signals:
 .. image:: mc_full_sc.png
    :align: center
 
-**Motor Control — Manual Control**
+**Motor Control -- Manual Control**
 
 .. image:: mc_manual_ctrl.png
    :align: center
@@ -413,9 +557,9 @@ The MathWorks FOC IP exposes the following monitoring signals:
    * - Controller Type
      - Selects between Manual PWM drive or MathWorks FOC controller
    * - PWM
-     - In manual mode, sets PWM between 50%–100%
+     - In manual mode, sets PWM between 50%--100%
 
-**Motor Control — MathWorks FOC Controller**
+**Motor Control -- MathWorks FOC Controller**
 
 When the MathWorks FOC controller is selected, the ``foc_script.sh`` script
 (located under ``/usr/local/bin/``) controls operation:
@@ -436,7 +580,13 @@ Simulink and the corresponding HDL code is generated using the MathWorks HDL
 Coder. The controller model is packaged into an IP core using the Simulink
 Workflow Advisor.
 
-FOC Controller AXI-Lite Registers:
+.. figure:: foc_simulink.png
+   :align: center
+
+   Top-level diagram of the FOC controller Simulink model
+
+FOC Controller AXI-Lite Registers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -496,6 +646,103 @@ FOC Controller AXI-Lite Registers:
      - Signed fixed 19.14
      - R
      - Error between actual and encoder electrical position
+
+FOC Controller Interface Signals
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :header-rows: 1
+
+   * - Signal
+     - Direction
+     - Width
+     - Format
+     - Description
+   * - adc_current1
+     - I
+     - 18
+     - Signed fixed 18.17
+     - Phase A current measurement
+   * - adc_current2
+     - I
+     - 18
+     - Signed fixed 18.17
+     - Phase B current measurement
+   * - encoder_a
+     - I
+     - 1
+     - Boolean
+     - Encoder channel A
+   * - encoder_b
+     - I
+     - 1
+     - Boolean
+     - Encoder channel B
+   * - encoder_index
+     - I
+     - 1
+     - Boolean
+     - Encoder index
+   * - pwm_a
+     - O
+     - 1
+     - Boolean
+     - Phase A PWM control signal
+   * - pwm_b
+     - O
+     - 1
+     - Boolean
+     - Phase B PWM control signal
+   * - pwm_c
+     - O
+     - 1
+     - Boolean
+     - Phase C PWM control signal
+   * - mon_phase_voltage_a
+     - O
+     - 32
+     - Signed fixed 32.12
+     - Phase A voltage in Volts
+   * - mon_phase_voltage_b
+     - O
+     - 32
+     - Signed fixed 32.12
+     - Phase B voltage in Volts
+   * - mon_phase_current_a
+     - O
+     - 32
+     - Signed fixed 32.15
+     - Phase A current in Amps
+   * - mon_phase_current_b
+     - O
+     - 32
+     - Signed fixed 32.15
+     - Phase B current in Amps
+   * - mon_rotor_position
+     - O
+     - 32
+     - Signed fixed 32.14
+     - Rotor mechanical position in radians
+   * - mon_electrical_position
+     - O
+     - 32
+     - Signed fixed 32.14
+     - Rotor electrical position in radians
+   * - mon_rotor_velocity
+     - O
+     - 32
+     - Signed fixed 32.8
+     - Rotor velocity in rad/s
+   * - mon_d_current
+     - O
+     - 32
+     - Signed fixed 32.15
+     - d current in Amps
+   * - mon_q_current
+     - O
+     - 32
+     - Signed fixed 32.15
+     - q current in Amps
 
 QDESYS Motor Control IP
 ~~~~~~~~~~~~~~~~~~~~~~~~

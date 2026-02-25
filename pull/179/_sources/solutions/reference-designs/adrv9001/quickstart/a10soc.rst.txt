@@ -113,6 +113,12 @@ These devices should be present after a successful boot:
            iio:device1: axi-adrv9002-rx-lpc (buffer capable)
            iio:device2: axi-adrv9002-tx-lpc (buffer capable)
 
+.. note::
+
+   The Arria 10 SoC configuration uses a single R1T1 interface. For more
+   details on device modes, see the
+   :git-linux:`ADRV9002 Linux driver documentation <drivers/iio/adc/navassa>`.
+
 pyadi-iio
 ~~~~~~~~~
 

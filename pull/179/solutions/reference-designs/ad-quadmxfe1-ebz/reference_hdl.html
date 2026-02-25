@@ -106,6 +106,7 @@
 </li>
 <li><a class="reference internal" href="#block-design-parameters">Block Design Parameters</a><ul>
 <li><a class="reference internal" href="#supported-build-configurations">Supported Build Configurations</a></li>
+<li><a class="reference internal" href="#software-considerations">Software Considerations</a></li>
 <li><a class="reference internal" href="#testcase-m8-l4">Testcase M8, L4</a></li>
 <li><a class="reference internal" href="#testcase-dac-m16-l4-adc-m8-l2">Testcase DAC M16,L4 ADC M8,L2</a></li>
 <li><a class="reference internal" href="#clock-sources">Clock Sources</a></li>
@@ -996,6 +997,13 @@ and other environmental variables.</p>
 </table>
 </div>
 <p>If parameter not specified the default value applies.</p>
+</section>
+<section id="software-considerations">
+<h3>Software Considerations<a class="headerlink" href="#software-considerations" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>ADC crossbar config</strong>: Not required; this is handled in the HDL.</p></li>
+<li><p><strong>DAC crossbar config</strong>: Not required; this is handled in the HDL.</p></li>
+</ul>
 <p>Configuration names are encoded as <code class="docutils literal notranslate"><span class="pre">&lt;B_C&gt;_&lt;TX_MODE&gt;_&lt;RX_MODE&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">B</span></code>
 is for 8B/10B (JESD204B) and <code class="docutils literal notranslate"><span class="pre">C</span></code> for 64B66B (JESD204C).</p>
 <div class="table-wrapper docutils container" id="id1">
