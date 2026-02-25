@@ -1,0 +1,131 @@
+.. _eval-cn0254-sdpz:
+
+EVAL-CN0254-SDPZ
+=================
+
+Isolated 16-Bit, 250 kSPS, 8-Channel Data Acquisition System.
+
+Overview
+--------
+
+:adi:`CN0254` is a cost-effective, highly integrated 16-bit, 250 kSPS,
+8-channel data acquisition system that digitizes +/-10 V industrial level
+signals. The circuit features 2500 V rms isolation between the measurement
+circuit and the host controller, and is powered from a single isolated
+PWM-controlled 5 V supply.
+
+The :adi:`AD7689` 16-bit PulSAR ADC provides 8-channel input with a built-in
+sequencer, multiplexer, reference buffer, and temperature sensor. The
+:adi:`AD8608` quad op-amp inverts, level-shifts, and attenuates the +/-10 V
+input to 0--4.096 V for the ADC. The :adi:`AD8605` serves as an external
+reference buffer, and the :adi:`ADuM3471` provides quad-channel digital
+isolation with an integrated PWM controller and transformer driver.
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-CN0254-SDPZ <CN0254>` evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- CN0254 Evaluation Software
+- +6 V DC power supply (500 mA)
+- USB Type-A to USB Mini-B cable
+- PC with Windows XP, Windows Vista (32-bit), or Windows 7 (32-bit)
+
+Hardware Setup
+--------------
+
+Block Assignments
+~~~~~~~~~~~~~~~~~
+
+- **J1** -- 120-pin SDP connector
+- **CN2** -- +6 V power supply input terminal
+- **J2** -- Multi-channel analog input terminal
+- **J3** -- Test point for SPI data lines
+
+Test Setup
+~~~~~~~~~~
+
+#. Connect the 120-pin connector on the EVAL-CN0254-SDPZ to **CON A** on the
+   :adi:`EVAL-SDP-CB1Z`.
+#. Set the DC output supply to 6 V and turn the supply off.
+#. With power off, connect the 6 V supply to **CN2**.
+#. Turn on the power supply, then connect the SDP board to the PC via USB.
+
+.. important::
+
+   Do not connect the USB cable before turning on the DC power supply.
+
+Software Setup
+--------------
+
+Installing the Software
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Extract **CN0254_Evaluation_Software.zip** and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path
+      ``C:\Program Files (x86)\Analog Devices\CN0254\``.
+
+#. Click **Next** through the installation review page.
+#. Click **Next** to start installation.
+#. The ADI SDP Drivers installer will execute automatically. Close all other
+   applications before proceeding.
+#. Set the SDP Drivers installation location (default:
+   ``C:\Program Files\Analog Devices\SDP\Drivers``).
+#. Complete the installation and click **Finish**.
+
+Using the Evaluation Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Open **CN0254.exe** from the installation directory.
+#. Select the correct connector and click **Connect**.
+#. Calibrate the device in the Calibration tab.
+#. Select desired settings (signal ranges, scan mode, etc.).
+#. Press **Start** to begin data acquisition.
+#. Press **Save Data** to export data to a tab-delimited ASCII file.
+
+Software Tabs
+~~~~~~~~~~~~~
+
+- **Multi-Channel tab** -- Per-channel plot options, display format (raw/voltage),
+  graph controls with zoom and pan.
+- **Single Channel tab** -- Time domain (ADC codes vs. time), frequency domain
+  (FFT), histogram, and signal parameters (SFDR, etc.).
+- **Calibration tab** -- Precision voltage inputs, EEPROM calibration storage,
+  and factory default recovery.
+- **S/W Version Info tab** -- Flash LED, read firmware version.
+
+Documents
+---------
+
+- :adi:`CN0254 Circuit Note <CN0254>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0254-SDPZ Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0254-DesignSupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - PADS Project
+
+Additional Information
+----------------------
+
+- :adi:`AD7689 Product Page <AD7689>`
+- :adi:`AD8608 Product Page <AD8608>`
+- :adi:`AD8605 Product Page <AD8605>`
+- :adi:`ADuM3471 Product Page <ADUM3471>`
+- :adi:`ADP3336 Product Page <ADP3336>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

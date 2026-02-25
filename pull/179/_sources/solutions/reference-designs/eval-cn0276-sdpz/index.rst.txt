@@ -1,0 +1,188 @@
+.. _eval-cn0276-sdpz:
+
+EVAL-CN0276-SDPZ
+=================
+
+High Performance Resolver-to-Digital Converter Circuit.
+
+Overview
+--------
+
+:adi:`CN0276` is a high performance 10-bit to 16-bit resolver-to-digital
+converter (RDC) circuit. The system converts the modulated output of a resolver
+to digital output. The :adi:`AD2S1210` provides an integrated solution for
+accurately measuring angular position and velocity with a resolver.
+
+In the system, the :adi:`AD2S1210` generates programmable excitation signals.
+The :adi:`AD8692` and :adi:`AD8397` compose a third-order Butterworth low-pass
+filter and power amplifier. The resolver's excitation signal has two amplitude
+options, chosen by the power supply voltage automatically. The output signals
+of the resolver pass through a third-order Butterworth low-pass filter made by
+the :adi:`AD8694` to the :adi:`AD2S1210` inputs. Both transmit and receive
+filters improve the performance of the RDC and filter out noise to increase EMC
+characteristics.
+
+The maximum tracking rate of the RDC is 3125 rps in 10-bit mode
+(resolution = 21 arc min) and 156.25 rps in 16-bit mode
+(resolution = 19.8 arc sec).
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-SDP-CB1Z` evaluation board (SDP-B board)
+- :adi:`EVAL-CN0276-SDPZ <CN0276>` evaluation board
+- Resolver (e.g., TS2620N21E11 from Tamagawa Seiki)
+- Adjustable DC power supply: +6 V to +12 V, >500 mA
+- USB Type-A to USB Mini-B cable
+- PC with Windows 7 SP1 (x86/x64) or later, Intel Core 2 GHz or faster,
+  4 GB RAM, 8 GB disk space, .NET Framework 4.5
+
+Hardware Setup
+--------------
+
+General Setup
+~~~~~~~~~~~~~
+
+- The EVAL-CN0276-SDPZ connects to the :adi:`EVAL-SDP-CB1Z` via the 120-pin
+  connector CON A.
+- Use the adjustable DC power supply to power the EVAL-CN0276-SDPZ via the
+  **J4** connector.
+- The :adi:`EVAL-SDP-CB1Z` connects to the PC via USB cable.
+- The resolver connects to the EVAL-CN0276-SDPZ via the 6-pin header at
+  **J3**.
+
+Resolver Wiring (J3)
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - J3 Pin
+     - Signal
+     - TS2620N21E11 Wire
+   * - 1
+     - COS
+     - Red
+   * - 2
+     - COSLO
+     - Black
+   * - 3
+     - SINLO
+     - Blue
+   * - 4
+     - SIN
+     - Yellow
+   * - 5
+     - EXC
+     - Red/White
+   * - 6
+     - nEXC
+     - Yellow/White
+
+.. note::
+
+   If a different resolver is used, the wiring may differ from the table above.
+
+Power Supply Wiring (J4)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - J4 Pin
+     - Type
+   * - 1
+     - VCC
+   * - 2
+     - GND
+
+Software Setup
+--------------
+
+Installing the Software
+~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Extract the file **CN0276_Evaluation_Software.zip** and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path ``C:\Program Files\Analog Devices\``
+      (32-bit) or ``C:\Program Files (x86)\Analog Devices\`` (64-bit).
+
+#. Click **Next** to view the installation review page.
+#. Click **Next** to start the installation. The installer for the ADI SDP
+   Drivers will execute automatically.
+#. Press **Next** to set the installation location for the SDP Drivers.
+#. Press **Next** to install the SDP Drivers and complete installation. Click
+   **Finish** when done.
+
+Using the Evaluation Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Open **CN0276.exe** from the installation directory.
+#. Click the **Connect** button to establish a USB connection to the SDP-B
+   board.
+#. Upon success, the System Status String Indicator will display the SDP-B
+   board serial number.
+
+.. important::
+
+   After powering on the EVAL-CN0276-SDPZ, the configuration data must be
+   written to the :adi:`AD2S1210` before the first run.
+
+Capturing Data
+~~~~~~~~~~~~~~
+
+#. Establish a USB connection.
+#. Write the configuration data to the :adi:`AD2S1210`.
+#. Set the number of samples.
+#. Click the **Start** button.
+#. Conversion halts when the sample count is reached or the **Stop** button is
+   pressed.
+
+Software Controls
+~~~~~~~~~~~~~~~~~
+
+- **Connect/Disconnect** -- Toggle SDP-B board USB connection.
+- **Start** -- Begin collecting conversion data.
+- **Stop** -- Stop data collection.
+- **Samples setting** -- Set the number of samples per acquisition.
+- **Run mode** -- Enable persistent running mode.
+- **Data Analyze tab** -- Histogram of acquired data.
+- **RDC Output tab** -- Real-time position and velocity indicators.
+- **RDC Configuration tab** -- Read/write :adi:`AD2S1210` internal registers.
+- **SDP Information tab** -- SDP-B board information.
+
+Documents
+---------
+
+- `AD2S1210 Data Sheet
+  <https://www.analog.com/media/en/technical-documentation/data-sheets/AD2S1210.pdf>`__
+- :adi:`CN0276 Circuit Note <CN0276>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0276-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0276-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD2S1210 Product Page <AD2S1210>`
+- :adi:`AD8692 Product Page <AD8692>`
+- :adi:`AD8397 Product Page <AD8397>`
+- :adi:`AD8694 Product Page <AD8694>`
+- :adi:`EVAL-SDP-CB1Z Product Page <EVAL-SDP-CB1Z>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

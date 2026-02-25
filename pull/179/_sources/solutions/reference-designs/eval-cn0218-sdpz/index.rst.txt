@@ -1,0 +1,143 @@
+.. _eval-cn0218-sdpz:
+
+EVAL-CN0218-SDPZ
+=================
+
+High Common-Mode Voltage Current Shunt Monitor.
+
+Overview
+--------
+
+:adi:`CN0218` is a circuit that monitors current in systems with high positive
+common-mode DC voltages up to +500 V with less than 0.2% error. The load
+current passes through an external shunt resistor, and the circuit is designed
+for a full-scale shunt voltage of 500 mV at maximum load current.
+
+The :adi:`AD8212` high common-mode voltage current shunt monitor supports up to
+65 V natively, extended to over 500 V with an external PNP transistor. The
+:adi:`AD8605` provides rail-to-rail signal conditioning, the :adi:`AD7171`
+16-bit sigma-delta ADC digitizes the measurement, and the :adi:`ADuM5402`
+provides 2500 V rms galvanic isolation with an isolated +3.3 V supply. The
+:adi:`ADR381` provides a 2.500 V precision voltage reference.
+
+.. warning::
+
+   This is a high voltage circuit. Do not operate unless qualified to handle
+   high voltage circuitry.
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-CN0218-SDPZ <CN0218>` evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- CN0218 Evaluation Software
+- +6 V DC power supply or +6 V wall wart
+- USB Type-A to USB Mini-B cable
+- External shunt resistor (max 500 mV at max load current)
+- Electronic load for testing
+- PC with Windows 7 (32-bit), Windows Vista (32-bit), or Windows XP
+
+Hardware Setup
+--------------
+
+Block Assignments
+~~~~~~~~~~~~~~~~~
+
+- **J1** -- SDP 120-pin connector
+- **J2** -- +6 V barrel connector (wall wart input)
+- **J3** -- +6 V DC power supply terminal
+- **J5** -- Input terminals for shunt resistor and load to ground
+- **TP31, TP32** -- GND_ISO access points
+
+Test Setup
+~~~~~~~~~~
+
+#. Connect the 120-pin connector on the EVAL-CN0218-SDPZ to **CON A** on the
+   :adi:`EVAL-SDP-CB1Z`.
+#. Connect the shunt resistor across the input terminals with the load to
+   ground.
+#. With power off, connect the +6 V power supply to the "+6V" and "GND" pins
+   (or use a +6 V wall wart with the barrel connector).
+#. Connect the USB cable from the PC to the USB mini connector on the SDP
+   board.
+#. Apply power to the +6 V supply.
+#. Launch the evaluation software.
+
+.. important::
+
+   Connect system ground and PCB isolated ground (use TP31 and TP32 for
+   GND_ISO) to guarantee correct voltage levels and operation.
+
+Software Setup
+--------------
+
+Installing the Software
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Extract **CN0218_Evaluation_Software.zip** and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path
+      ``C:\Program Files (x86)\Analog Devices\CN0218\``.
+
+#. Click **Next** through the installation review page.
+#. Click **Next** to start installation.
+#. The ADI SDP Drivers installer will execute automatically. Close all other
+   applications before proceeding.
+#. Set the SDP Drivers installation location (default:
+   ``C:\Program Files\Analog Devices\SDP\Drivers``).
+#. Click **Install** and **Finish** to complete.
+
+Using the Evaluation Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Open **CN0218.exe** from the installation directory.
+#. Click the **Connect** button to establish a connection.
+#. Upon success, control data acquisition via the software buttons.
+#. Output data is displayed in the graph; edit display via plot options.
+#. Click **Disconnect** when finished.
+
+Software Controls
+~~~~~~~~~~~~~~~~~
+
+- **Connect** -- Initiate connection between the CN0218 and SDP-B boards.
+- **Reset and Disconnect** -- Reset and end connection.
+- **Stop** -- Stop data collection.
+- **Test Setup tab** -- Shows shunt voltage vs. samples with Start Sampling,
+  Clear Data, and Save Data buttons.
+- **Configure tab** -- Flash LED on SDP controller, read CN0218 firmware.
+- **Plot Options** -- Edit display settings (interpolation, color, etc.).
+
+Documents
+---------
+
+- :adi:`CN0218 Circuit Note <CN0218>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0218-SDPZ Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0218-DesignSupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - PADS Project
+
+Additional Information
+----------------------
+
+- :adi:`AD8212 Product Page <AD8212>`
+- :adi:`AD7171 Product Page <AD7171>`
+- :adi:`ADuM5402 Product Page <ADUM5402>`
+- :adi:`AD8605 Product Page <AD8605>`
+- :adi:`ADR381 Product Page <ADR381>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

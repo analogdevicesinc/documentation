@@ -1,0 +1,102 @@
+.. _eval-cn0300-sdpz:
+
+EVAL-CN0300-SDPZ
+=================
+
+Closed-Loop Thermocouple Measurement System with 4--20 mA Output.
+
+Overview
+--------
+
+:adi:`CN0300` is a complete closed-loop precision analog microcontroller
+thermocouple measurement system with 4 mA to 20 mA output. The circuit uses
+the :adi:`ADuCM360` microcontroller to demonstrate thermocouple and RTD
+amplification and sampling using its internal programmable gain amplifier (PGA)
+and high-performance ADC. The DAC output controls a 4--20 mA transmitter
+interface, demonstrating the integration of amplifier, ADC, CPU, DAC, and
+op-amp in a single chip.
+
+Required Equipment
+------------------
+
+- EVAL-CN0300-EB1Z evaluation board
+- CN0300 Evaluation Software
+- USB-SWD/UART board
+- USB cable
+- T-type thermocouple
+- Current meter (connected in series with 12 V supply)
+- 12 V DC power supply
+- PC with Windows XP SP2, Windows Vista, or Windows 7; Intel Pentium 1 GHz,
+  512 MB RAM, 1 GB disk space
+
+Hardware Setup
+--------------
+
+#. Connect the EVAL-CN0300-EB1Z board to the USB-SWD/UART board.
+#. Connect the 12 V power supply to **J3** with the current meter in series.
+#. Short the inputs at **J2** together.
+#. Connect the USB-SWD/UART board to the PC via USB cable.
+
+Software Setup
+--------------
+
+Driver Installation
+~~~~~~~~~~~~~~~~~~~~
+
+#. Install USB drivers for the USB-SWD/UART board (FTDI CDM 2.04.06 for
+   Windows XP, or download from `FTDI <https://ftdichip.com/drivers/>`__ for
+   other operating systems).
+#. Determine the COM port allocation in Windows Device Manager.
+
+Verifying Operation
+~~~~~~~~~~~~~~~~~~~~
+
+#. Press the reset button on the EVAL-CN0300-EB1Z.
+#. Open a serial terminal (e.g., HyperTerminal) configured to 9600 baud,
+   8 data bits, no parity, 1 stop bit.
+#. Verify the output matches the expected DAC current readings.
+
+DAC Calibration (Optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Open the **CM3WSD.exe** application.
+#. Load the **CN0300_test.hex** firmware and configure for the
+   :adi:`ADuCM360`.
+#. Select the correct COM port (9600 baud).
+#. Hold the **SD** button while pressing and releasing **RESET** to enter
+   download mode.
+#. Program and verify the firmware.
+#. Open a serial terminal (9600 baud, 8 data bits, no parity, 1 stop bit).
+#. Calibrate the DAC to 4 mA using the ``1``/``0`` keys.
+#. Calibrate the DAC to 20 mA.
+#. Load the **CN0300_Final.hex** firmware (without calibration function) for
+   production use.
+
+Documents
+---------
+
+- :adi:`CN0300 Circuit Note <CN0300>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0300-EB1Z Design & Integration Files
+   <https://www.analog.com/cn0300-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADuCM360 Product Page <ADUCM360>`
+- :adi:`CN0300 Circuit Note <CN0300>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

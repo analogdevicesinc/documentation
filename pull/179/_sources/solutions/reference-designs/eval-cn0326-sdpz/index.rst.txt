@@ -1,0 +1,176 @@
+.. _eval-cn0326-sdpz:
+
+EVAL-CN0326-SDPZ
+=================
+
+Isolated Low Power pH Sensor Signal Conditioner and Digitizer.
+
+Overview
+--------
+
+:adi:`CN0326` is a completely isolated low power pH sensor signal conditioner
+and digitizer with automatic temperature compensation for high accuracy. The
+circuit gives 0.5% accurate pH readings for pH values from 0 to 14 with
+greater than 14 bits of noise-free code resolution and is suitable for a
+variety of industrial applications such as chemical, food processing, water,
+and waste water analysis.
+
+This circuit supports a wide variety of pH sensors that have very high internal
+resistance ranging from 1 MOhm to several TOhm. Digital signal and power
+isolation provides immunity to noise and transient voltages often encountered
+in harsh industrial environments.
+
+Required Equipment
+------------------
+
+**Hardware**
+
+- :adi:`EVAL-CN0326-PMDZ` evaluation board
+- :adi:`EVAL-SDP-CB1Z` evaluation board (SDP-B board)
+- :adi:`SDP-PMD-IB1Z` interposer board
+- +6 V DC power supply (EVAL-CFTL-6V-PWRZ)
+- USB Type-A to USB Mini-B cable
+- pH probe with BNC connector
+- RTD sensor with RCA connector
+
+**Software**
+
+- `CN0326 Evaluation Software
+  <https://swdownloads.analog.com/cse/cftl/CN0326/2.0.0/CN0326_Evaluation_Software.zip>`__
+  (also supplied on CD)
+
+**Minimum PC Requirements**
+
+- Windows XP SP2, Windows Vista, or Windows 7
+- Intel Pentium processor (x86 compatible), 1 GHz or faster
+- 512 MB RAM, 2 GB available disk space
+- .NET Framework 3.5
+
+Hardware Setup
+--------------
+
+#. Plug the mini end of the USB cable into connector **J1** of the
+   :adi:`EVAL-SDP-CB1Z` and connect the other end to the PC. Verify that
+   *ADI Development Tools* appears in Device Manager.
+#. Remove the jumper across **JP1** on the :adi:`SDP-PMD-IB1Z`.
+#. Connect the 120-pin connector of the :adi:`SDP-PMD-IB1Z` to the connector
+   marked **CON A** on the :adi:`EVAL-SDP-CB1Z`. Secure with nylon hardware.
+#. Connect the EVAL-CFTL-6V-PWRZ to **J1** barrel jack of the
+   :adi:`SDP-PMD-IB1Z`, and **wait 10 seconds** before continuing.
+#. Connect the 12-pin right-angle male pin header of the :adi:`EVAL-CN0326-PMDZ`
+   to the 12-pin right-angle female pin header of the :adi:`SDP-PMD-IB1Z`.
+#. Connect the pH probe to **J1** on the :adi:`EVAL-CN0326-PMDZ`.
+#. Connect the RTD sensor to **P1** on the :adi:`EVAL-CN0326-PMDZ`.
+#. Place the jumper across **JP1** on the :adi:`SDP-PMD-IB1Z`, positioned to
+   +3.3 V.
+#. Verify *ADI Development Tools* still appears in Device Manager.
+
+Software Setup
+--------------
+
+Installing the Software
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Extract the file **CN0326 Eval Software.zip** and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path ``C:\Program Files\Analog Devices\CN0326\``
+      and all National Instruments products to
+      ``C:\Program Files\National Instruments\``.
+
+#. Click **Next** to view the installation review page.
+#. Click **Next** to start the installation.
+#. The ADI SDP Drivers installer will execute automatically.
+
+   .. note::
+
+      Close all other applications before clicking **Next** to avoid requiring
+      a reboot.
+
+#. Set the SDP Drivers installation location (default recommended).
+#. Press **Next** to complete the installation. Click **Finish** when done.
+
+Using the Evaluation Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Launch **CN0326.exe** from the installation directory and press the
+   **Connect** button.
+#. A prompt confirms the SDP is ready to acquire data. The remaining controls
+   become enabled.
+#. Press **Run** to start data acquisition.
+
+Software Controls
+~~~~~~~~~~~~~~~~~
+
+- **System Controls**
+
+  - **Connect** -- Configures the :adi:`AD7793` by writing to necessary
+    registers.
+  - **Run** -- Polls the data ready bit and displays pH and temperature
+    readings.
+  - **Save Data** -- Saves all displayed chart data.
+  - **Clear Data** -- Clears all displayed chart data.
+
+- **Data Graph** -- Waveform chart displaying pH and temperature readings.
+
+- **Calibration Settings** -- Two-point linear interpolation calibration with
+  NIST standard or custom buffer solution tables.
+
+- **Measured Results** -- Displays pH reading, corresponding voltage, and
+  slope (mV/pH).
+
+- **Continuous Temperature Compensation** -- Enable/disable continuous
+  temperature compensation.
+
+- **Data Rate** -- Modify data acquisition rate.
+
+Calibration
+~~~~~~~~~~~
+
+.. note::
+
+   A minimum of two buffer solutions of different pH values are required. One
+   should be pH 7 for zero-point compensation. The second should have a pH
+   value near the anticipated measuring range. Values should differ by at least
+   2 pH units. Allow the pH probe to stabilize before taking readings.
+
+#. **Step 1** -- Immerse the pH probe and temperature sensor into pH 7 buffer
+   solution. Click **Remove Offset Voltage** once the reading stabilizes.
+#. **Step 2** -- Rinse the electrode with deionized water, immerse in the
+   second buffer solution. Select the buffer solution temperature coefficient
+   table source (NIST or custom). Click **Calibration Point 1**.
+#. **Step 3** -- Rinse, immerse in the third buffer solution (if needed).
+   Select the table source. Click **Calibration Point 2**.
+
+Documents
+---------
+
+- :adi:`CN0326 Circuit Note <CN0326>`
+- `AD7793 Data Sheet
+  <https://www.analog.com/media/en/technical-documentation/data-sheets/AD7793.pdf>`__
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0326-PMDZ Design & Integration Files
+   <https://www.analog.com/cn0326-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7793 Product Page <AD7793>`
+- :adi:`EVAL-SDP-CB1Z Product Page <EVAL-SDP-CB1Z>`
+- :adi:`SDP-PMD-IB1Z Product Page <SDP-PMD-IB1Z>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

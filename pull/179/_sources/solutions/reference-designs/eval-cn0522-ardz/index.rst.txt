@@ -1,0 +1,112 @@
+.. _eval-cn0522-ardz:
+
+EVAL-CN0522-ARDZ
+=================
+
+USB-Powered 915 MHz ISM Band RF Power Amplifier.
+
+Overview
+--------
+
+:adi:`CN0522` is a USB-powered, 915 MHz ISM band RF power amplifier circuit
+evaluation board. The design uses the :adi:`ADL5605` RF amplifier with
+:adi:`LTM8045` power supply module and :adi:`ADT6402` temperature switch for
+thermal protection.
+
+The board is a compact 6-layer PCB (25.4 mm x 37.0 mm) with 3 oz copper
+cladding and IPC-4101/4103 laminates. Multiple plated vias filled with
+conductive epoxy provide improved thermal performance.
+
+Features
+--------
+
+- USB-powered +5 V input
+- 915 MHz ISM band operation
+- Maximum output power: +30 dBm
+- Maximum input power: +15 dBm (with SAW filter and AC coupling)
+- Over-temperature protection via :adi:`ADT6402`
+- Compact form factor
+
+Required Equipment
+------------------
+
+- EVAL-CN0522-EBZ circuit evaluation board
+- `ADALM-PLUTO <https://www.analog.com/ADALM-PLUTO>`__ (for signal generation)
+- +5 V DC power supply (recommended: 1 A minimum)
+- RF load (antenna recommended)
+- SMA coaxial cables
+
+Board Layout
+------------
+
+- **J1** -- RF input (male SMA), max +15 dBm
+- **J2** -- RF output (female SMA), max +30 dBm
+- **P1** -- Power supply input (micro-USB), +5 V DC
+- **DS1** -- Green LED (power indicator)
+- **DS2** -- Red LED (over-temperature indicator)
+- **JP1, JP2** -- Temperature trip point solder jumpers
+
+.. warning::
+
+   Do NOT directly connect RFOUT (J2) to ADALM-PLUTO Rx input. The maximum
+   safe input to ADALM-PLUTO is +2.5 dBm.
+
+Hardware Setup
+--------------
+
+#. Connect +5 V DC power to the micro-USB port **P1**. The green LED (DS1)
+   will illuminate.
+#. Connect the ADALM-PLUTO Tx port to the RF input plug **J1**.
+#. Connect the RF load (antenna) to the RF output connector **J2**.
+
+Temperature Trip Point Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :adi:`ADT6402` temperature switch trip point is configured via solder
+jumpers JP1 and JP2, providing 6 usable settings in the 55 °C to 70 °C range.
+
+.. note::
+
+   Due to high RF thermal dissipation, the first three and last three
+   temperature trip point options should not be used.
+
+Software
+--------
+
+Signal generation is performed using the ADALM-PLUTO software tools. Refer to
+the `ADALM-PLUTO documentation <https://www.analog.com/ADALM-PLUTO>`__ for
+setup and usage instructions.
+
+Documents
+---------
+
+- :adi:`CN0522 Circuit Note <CN0522>`
+- `ADL5605 Data Sheet
+  <https://www.analog.com/media/en/technical-documentation/data-sheets/ADL5605.pdf>`__
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0522-EBZ Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0522-DesignSupport.zip>`__
+
+   - Schematics
+   - Bill of Materials
+   - Gerber Files
+   - Allegro Layout
+   - Assembly Drawing
+
+Additional Information
+----------------------
+
+- :adi:`ADL5605 Product Page <ADL5605>`
+- :adi:`LTM8045 Product Page <LTM8045>`
+- :adi:`ADT6402 Product Page <ADT6402>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
