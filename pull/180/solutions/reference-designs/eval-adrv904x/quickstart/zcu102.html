@@ -119,6 +119,7 @@
 <li><a class="reference internal" href="#id2">Required Software</a></li>
 <li><a class="reference internal" href="#id3">Required Hardware</a></li>
 <li><a class="reference internal" href="#demo-applications">Demo applications</a></li>
+<li><a class="reference internal" href="#switching-between-use-cases">Switching between use cases</a></li>
 </ul>
 </li>
 </ul>
@@ -896,6 +897,40 @@ via an IIO client such as <a class="reference internal" href="../../../../softwa
 transceiver and capture data. The IIOD server runs at 921600 baud.</p></li>
 </ul>
 <p>Only one example can be active at a time.</p>
+</section>
+<section id="switching-between-use-cases">
+<h3>Switching between use cases<a class="headerlink" href="#switching-between-use-cases" title="Link to this heading"></a></h3>
+<p>Since no-OS runs bare-metal without a file system, all profile and firmware
+data is compiled into the binary as C headers in
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/adrv904x/src/common/firmware" target="_blank">projects/adrv904x/src/common/firmware</a>.</p>
+<p>The entire device configuration for a given use case is contained in the
+profile binary (<code class="docutils literal notranslate"><span class="pre">DeviceProfileTest.bin</span></code>), which is generated using the ADI
+evaluation software (see the <em>ADRV904x Evaluation System User Guide</em>). The
+stream image (<code class="docutils literal notranslate"><span class="pre">stream_image.bin</span></code>) is also specific to a configuration.
+The firmware files (<code class="docutils literal notranslate"><span class="pre">ADRV9040_FW.bin</span></code>, <code class="docutils literal notranslate"><span class="pre">ADRV9040_DFE_CALS_FW.bin</span></code>) are
+typically static and supplied by ADI.</p>
+<p>Radio control and JESD204 parameters (LO frequencies, channel masks, lane
+rates) are set directly in
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/adrv904x/src/common/initdata.c" target="_blank">projects/adrv904x/src/common/initdata.c</a>
+as C structs (<code class="docutils literal notranslate"><span class="pre">deviceInitStruct</span></code>, <code class="docutils literal notranslate"><span class="pre">utilityInit</span></code>).</p>
+<p>To switch to a different use case:</p>
+<ol class="arabic">
+<li><p>Generate the new <code class="docutils literal notranslate"><span class="pre">DeviceProfileTest.bin</span></code> and <code class="docutils literal notranslate"><span class="pre">stream_image.bin</span></code> using
+the ADI evaluation software.</p></li>
+<li><p>Convert each binary to a C header using <code class="docutils literal notranslate"><span class="pre">xxd</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xxd<span class="w"> </span>-i<span class="w"> </span>DeviceProfileTest.bin<span class="w"> </span>&gt;<span class="w"> </span>DeviceProfileTest.h
+xxd<span class="w"> </span>-i<span class="w"> </span>stream_image.bin<span class="w"> </span>&gt;<span class="w"> </span>stream_image.h
+</pre></div>
+</div>
+</li>
+<li><p>Copy the generated headers into
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/adrv904x/src/common/firmware" target="_blank">projects/adrv904x/src/common/firmware</a>,
+replacing the existing files.</p></li>
+<li><p>If radio control or JESD204 parameters also changed, update the
+corresponding fields in <code class="docutils literal notranslate"><span class="pre">initdata.c</span></code> (<code class="docutils literal notranslate"><span class="pre">deviceInitStruct</span></code> and
+<code class="docutils literal notranslate"><span class="pre">utilityInit</span></code>).</p></li>
+<li><p>Rebuild the project.</p></li>
+</ol>
 </section>
 </section>
 </section>
