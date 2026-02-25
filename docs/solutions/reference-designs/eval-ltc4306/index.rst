@@ -1,0 +1,416 @@
+.. _eval-ltc4306:
+
+EVAL-LTC4306-PMDZ User Guide
+=============================
+
+Introduction
+------------
+
+.. image:: eval-ltc4306-pmdz-angle-web.png
+   :align: right
+   :width: 250px
+
+The :adi:`EVAL-LTC4306` features the :adi:`LTC4306`, a 4-channel, 2-wire I2C
+bus and SMBus-compatible multiplexer with bus buffers that provide capacitive
+isolation between the upstream bus and downstream buses.
+
+This evaluation board provides 6-pin PMOD connectors for upstream and downstream
+connection for compatibility with PMOD form factors such as the
+:adi:`EVAL-ADICUP3029`, an Arduino-based wireless development platform for
+Internet of Things applications based on an ultralow power ARM Cortex-M3
+processor.
+
+The :adi:`EVAL-LTC4306` comes with PMOD connectors and 10 k\ |ohm| pull-up
+resistors on both the upstream and downstream side, and a 0.1 |mu|\ F bypass
+capacitor on the upstream side. The user also has the option to add a 6-pin,
+2.54 mm pitch pin header for connection to the GPIO pins for added
+functionality. Test points can be added at various locations on the board for
+fault monitoring, and additional bypass capacitors (0805 size footprint) can be
+placed on the upstream and downstream side for adequate bypassing on power
+supply lines.
+
+.. |ohm| unicode:: U+2126
+.. |mu| unicode:: U+00B5
+
+Supported Devices
+-----------------
+
+- :adi:`LTC4306`
+
+Special Features
+----------------
+
+- **4 selectable downstream buses**: Nested addressing possible when used as a
+  mux.
+- **Disconnect from stuck bus**: Allows the master to resume connection if one
+  of the downstream buses is stuck low.
+- **2-wire bus buffers**: Breaks up the upstream and downstream side into two
+  buses; also breaks up the capacitance.
+- **Buffer supply independence**: Level shifting is possible; 2-wire buses can
+  be pulled up to supply voltages ranging from 2.7 V to 5.5 V, independent of
+  the :adi:`LTC4306` VCC voltage.
+- **Slew-limited rise time accelerators**: Help reduce rise time, allowing the
+  use of longer cables with less reflection and larger bus pull-up resistors for
+  better noise margin.
+- **2-wire bus hot swap**: Prevents 2-wire bus corruption during live insertion
+  and removal from a backplane.
+- **Fault reporting**: Helps the master find and resolve system faults
+  efficiently. ALERT pins on upstream and downstream buses.
+- **Mass write address**: One command to all :adi:`LTC4306` devices can be
+  issued at the same time using the special address (1011101).
+- **27 distinct I2C addresses**: Via 3 address pins (ADR0, ADR1, ADR2).
+
+General Operation
+-----------------
+
+.. figure:: figure_1.png
+   :align: center
+
+   EVAL-LTC4306-PMDZ setup
+
+Connect the master/host controller's SDA and SCL pins to the :adi:`LTC4306`'s
+SDAIN and SCLIN pins (upstream bus pins) via the P1 PMOD connector. VCCIN
+(supply voltage of the :adi:`LTC4306`) can be anywhere from 2.7 V to 5.5 V.
+
+The host controller on the upstream side first addresses and configures the
+:adi:`LTC4306` via I2C commands by writing to register 3 (see page 9 of the
+datasheet) to connect the upstream bus to one or more of the four downstream
+buses. Once communication is established, a master on the upstream 2-wire bus
+(SDAIN, SCLIN) can connect to any combination of downstream buses through the
+:adi:`LTC4306`'s bus buffers and multiplexers/switches. The same device address
+can be used on multiple downstream buses.
+
+Each downstream bus can be powered separately using its own VCC pin
+(VCC1--VCC4 on the schematic) on the P5--P11 connectors. This allows the
+:adi:`LTC4306` to be used as a level shifter.
+
+To power all downstream buses from the :adi:`LTC4306`'s supply voltage, insert
+jumpers JP1 and JP2 in both A and B positions:
+
+- JP1 position A connects the upstream voltage to the first downstream bus
+  (SCL1, SDA1).
+- JP1 position B connects the upstream voltage to the second downstream bus
+  (SCL2, SDA2).
+
+The ENABLE pin, when pulled low, resets the :adi:`LTC4306` to its default
+register state and disables communication. Communication is re-established when
+ENABLE is released high. By default, it is pulled up to VCCIN by a 10 k\ |ohm|
+resistor. The 2nd pin of the P1 PMOD connector can be used to drive ENABLE low.
+
+When the upstream bus is connected to one or more downstream buses, the READY
+pin voltage is pulled high to VCC. When the upstream bus is disconnected from
+all downstream buses, the READY voltage is low and the red RDY LED lights up.
+
+The default jumper setting for ADR0, ADR1, and ADR2 connects all address pins
+to VCCIN, setting the :adi:`LTC4306` address to **0xAA**. To set a different
+address, configure the jumpers according to Table 1 of the datasheet on page 13
+(left position = L, middle position = NC, right position = H; disconnect = NC
+for all 3 jumpers).
+
+.. important::
+
+   - Do not activate rise time accelerators on buses whose pull-up supply
+     voltages are lower than VCC.
+   - Ensure logic low voltages forced on all clock and data pins are < 0.4 V.
+   - When activating multiple downstream buses powered from separate supplies,
+     the :adi:`LTC4306`'s VCC voltage must be less than or equal to the lowest
+     downstream bus pull-up supply voltage.
+   - Power supply voltages must not exceed 5.5 V.
+
+Connectors
+~~~~~~~~~~
+
+.. figure:: connectors.png
+   :align: center
+
+   EVAL-LTC4306-PMDZ connector map
+
+Jumpers
+~~~~~~~
+
+.. figure:: jumpers.png
+   :align: center
+
+   EVAL-LTC4306-PMDZ jumper settings
+
+LEDs
+~~~~
+
+.. figure:: leds.png
+   :align: center
+
+   EVAL-LTC4306-PMDZ LED descriptions
+
+Test Points
+~~~~~~~~~~~
+
+.. figure:: testpoints.png
+   :align: center
+
+   EVAL-LTC4306-PMDZ test point locations
+
+Getting Started
+---------------
+
+To evaluate the performance of the :adi:`LTC4306`:
+
+#. Power up the upstream side of the board and the :adi:`LTC4306` via the P1.6
+   pin. Connect P1.5 to GND and P1.4 and P1.3 to SDA and SCL of the host
+   controller respectively. If the host controller is available in a PMOD form
+   factor, plug the P1 PMOD connector into the six pin PMOD host connector.
+#. Power up the downstream buses 1--4 using separate power supplies or from the
+   upstream side. To power all buses from the upstream voltage supply, place both
+   jumpers JP1 and JP2 in A and B positions.
+#. Configure jumpers JP6--JP8 to set the desired I2C address for the
+   :adi:`LTC4306` according to Table 1 on page 13 of the datasheet. By default,
+   the address 0xAA is selected.
+#. Connect the SCLx and SDAx of the desired downstream bus to the SCL and SDA
+   pins of the peripheral/slave device.
+#. To close all FET switches and enable communication to all downstream buses,
+   send an SMBus write command to set bits 4, 5, 6, and 7 of register 3 to 1.
+#. Any slave on downstream buses 1--4 can now be addressed seamlessly, with
+   data transparently transmitted from the controller to the peripheral devices.
+#. To experiment with more features of the :adi:`LTC4306`, use the SMBus Read
+   Byte and Write Byte protocols in conjunction with the register definitions
+   on pages 8 and 9 of the datasheet.
+
+No-OS Driver
+-------------
+
+The :git-no-OS:`LTC4306 no-OS driver <main:drivers/io-expander/ltc4306>`
+provides support for the :adi:`LTC4306` I2C/SMBus multiplexer. The driver
+handles device initialization, address generation, channel configuration,
+GPIO control, and fault status readout.
+
+No-OS Project
+--------------
+
+The :git-no-OS:`eval-ltc4306 project <main:projects/eval-ltc4306>` provides
+a basic example that demonstrates the :adi:`LTC4306` multiplexer functionality.
+
+No-OS Supported Platforms
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Maxim Platform (MAX32666FTHR)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Required Hardware
+"""""""""""""""""
+
+- :adi:`EVAL-LTC4306`
+- :adi:`MAX9611PMB1` (one or more, connected to downstream channels)
+- :adi:`MAX32666FTHR`
+
+.. figure:: ltc4306_max.png
+   :align: center
+
+   EVAL-LTC4306 with MAX32666FTHR platform
+
+Required Connections
+""""""""""""""""""""
+
+The :adi:`MAX32666FTHR` does not have a PMOD interface. Use Dupont
+female-female cables to make the required connections:
+
+.. list-table::
+   :header-rows: 1
+
+   * - EVAL-LTC4306 Pin Number (P3)
+     - MAX32666 Pin Number
+     - Function
+     - Mnemonic
+   * - VCC
+     - 3V3
+     - 3.3 V Supply (for IO)
+     - 3V3
+   * - GND
+     - GND
+     - Board Ground
+     - GND
+   * - SCLIN
+     - SCL
+     - Serial Clock
+     - SCL
+   * - SDAIN
+     - SDA
+     - Serial Data
+     - SDA
+
+Once the boards are connected, attach the :adi:`MAX9611PMB1` peripherals to
+the :adi:`LTC4306` channels via the PMOD connectors.
+
+UART settings for the Maxim platform:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Value
+   * - Speed
+     - 57600
+   * - Data Bits
+     - 8
+   * - Stop Bits
+     - 1
+   * - Parity
+     - None
+   * - Flow Control
+     - None
+
+ADuCM3029 Platform (EVAL-ADICUP3029)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Required Hardware
+"""""""""""""""""
+
+- :adi:`EVAL-LTC4306`
+- :adi:`MAX9611PMB1` (one or more, connected to downstream channels)
+- :adi:`EVAL-ADICUP3029`
+
+.. figure:: ltc4306_aducm.png
+   :align: center
+
+   EVAL-LTC4306 with EVAL-ADICUP3029 platform
+
+Required Connections
+""""""""""""""""""""
+
+Connect the :adi:`EVAL-LTC4306` via the :adi:`EVAL-ADICUP3029`'s PMOD I2C
+headers (8 pins, P9). Once connected, attach the :adi:`MAX9611PMB1` peripherals
+to one or more channels. Secure the connections to ensure proper and continuous
+operation of the setup.
+
+UART settings for the ADuCM3029 platform:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Value
+   * - Speed
+     - 115200
+   * - Data Bits
+     - 8
+   * - Stop Bits
+     - 1
+   * - Parity
+     - None
+   * - Flow Control
+     - None
+
+Build Setup
+^^^^^^^^^^^
+
+For instructions on building the no-OS project, refer to the
+:dokuwiki:`No-OS Build Guide <resources/no-os/build>`.
+
+Basic Example
+~~~~~~~~~~~~~
+
+The basic example initializes the :adi:`LTC4306` driver and a MAX5380 DAC
+driver for the downstream devices. It performs the following sequence:
+
+#. Generates the I2C address based on the ADR0/ADR1/ADR2 pin settings (default
+   0xAA with all pins tied to VCCIN).
+#. Configures GPIO1 and GPIO2 as outputs and blinks the green GPIO LEDs 16
+   times.
+#. Iterates through each downstream channel, selecting it, writing a DAC
+   voltage, then deselecting it. This produces a staircase waveform on each
+   channel, offset from the others.
+
+Source code:
+:git-no-OS:`projects/eval-ltc4306/src/examples/basic <main:projects/eval-ltc4306/src/examples/basic>`.
+
+Example serial output:
+
+.. code-block:: text
+
+   LTC4306 GPIO LED's will blink 16 times:
+   LTC4306 configure the 2 attached MAX5380 DAC's:
+   DAC 1: 0.1600  0.2600  0.3600  0.4600  0.5600  0.6600  0.7600  0.8600  0.9600
+   DAC 2: 0.6600  0.7600  0.8600  0.9600  1.0600  1.1600  1.2600  1.3600  1.4600
+
+.. figure:: ltc4306_project_serial.png
+   :align: center
+
+   Serial terminal output from the basic example
+
+Example scope output with two :adi:`MAX9611PMB1` peripherals connected to
+channels 1 and 2:
+
+.. figure:: ltc4306_project_scope_shot.png
+   :align: center
+
+   Oscilloscope capture of dual-channel DAC staircase waveforms
+
+.. list-table::
+   :header-rows: 1
+
+   * - Legend
+     - Description
+   * - Orange
+     - Channel 1
+   * - Purple
+     - Channel 2
+   * - Time
+     - 20 ms/div
+   * - Amplitude
+     - 500 mV/div
+
+Hardware Output Verification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To verify the hardware output when using the example code:
+
+#. Connect the :adi:`EVAL-LTC4306` to the microcontroller board following the
+   required connections described above.
+#. Connect the :adi:`MAX9611PMB1` peripherals to the corresponding channels
+   (check the ``LTC4306_NUM_DOWNSTREAM`` variable in ``basic_example.c``).
+#. Build and load the example .hex file to the microcontroller board.
+#. Reset or reconnect the microcontroller board.
+#. Observe the :adi:`EVAL-LTC4306`'s green GPIO LEDs blink (default: 16 times).
+#. Connect each :adi:`MAX9611PMB1` output to an oscilloscope channel.
+#. For proper operation, a sawtooth wave offset from each other should be seen
+   (e.g., 500 mV offset between Ch1 and Ch2).
+
+The example project runs sequentially and continuously repeats until power is
+removed.
+
+Linux Driver
+-------------
+
+The :adi:`LTC4306` is supported by a mainlined Linux I2C mux driver. When
+loaded, the driver registers the :adi:`LTC4306` as an I2C multiplexer, allowing
+downstream I2C buses to be accessed transparently through the standard Linux
+I2C subsystem.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Function
+     - File
+   * - Driver
+     - :git-linux:`drivers/i2c/muxes/i2c-mux-ltc4306.c`
+   * - Devicetree binding
+     - :git-linux:`Documentation/devicetree/bindings/i2c/i2c-mux-ltc4306.txt`
+
+More Information
+-----------------
+
+- :adi:`LTC4306 Product Page <LTC4306>`
+- :adi:`EVAL-LTC4306 Product Page <EVAL-LTC4306>`
+- :git-no-OS:`LTC4306 no-OS Driver <main:drivers/io-expander/ltc4306>`
+- :git-no-OS:`eval-ltc4306 no-OS Project <main:projects/eval-ltc4306>`
+- :git-linux:`LTC4306 Linux Driver <drivers/i2c/muxes/i2c-mux-ltc4306.c>`
+- `Technical Article: Multiplexer Provides Address Expansion, Bus Buffering,
+  and Fault Management
+  <https://www.analog.com/en/technical-articles/multiplexer-provides-address-expansion-bus-buffering-and-fault-management.html>`__
+- `Understanding I2C, PMBus, and SMBus
+  <https://www.analog.com/en/analog-dialogue/articles/i2c-communication-protocol-understanding-i2c-primer-pmbus-and-smbus.html>`__
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`Interface Forum <interface>`.
