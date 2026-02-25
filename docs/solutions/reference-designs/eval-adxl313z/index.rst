@@ -1,0 +1,362 @@
+.. _eval-adxl313z:
+
+EVAL-ADXL313Z
+=============
+
+Evaluating the ADXL312/ADXL313/ADXL314 MEMS Accelerometers.
+
+Supported Evaluation Boards
+----------------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Evaluation Board
+     - Accelerometer
+     - Range
+     - Description
+   * - :adi:`EVAL-ADXL312Z`
+     - :adi:`ADXL312`
+     - |+-| 1.5g / |+-| 3g / |+-| 6g / |+-| 12g
+     - Digital output, low power
+   * - :adi:`EVAL-ADXL313Z`
+     - :adi:`ADXL313`
+     - |+-| 0.5g / |+-| 1g / |+-| 2g / |+-| 4g
+     - Ultralow power
+   * - :adi:`EVAL-ADXL314Z`
+     - :adi:`ADXL314`
+     - |+-| 200g
+     - High-g range
+
+.. |+-| unicode:: U+00B1
+
+Overview
+--------
+
+.. image:: eval-adxl312z-angle-web.png
+   :align: right
+   :width: 200px
+
+The :adi:`EVAL-ADXL312Z`, :adi:`EVAL-ADXL313Z`, and :adi:`EVAL-ADXL314Z` are
+simple breakout boards that enable easy connection of the mounted accelerometer
+into an existing system. Each board provides access to the accelerometer's
+digital interface through a 10-pin header connector.
+
+.. image:: eval-adxl313z-top-web.png
+   :align: right
+   :width: 200px
+
+Hardware Specifications
+-----------------------
+
+Power Supply Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The breakout boards must be supplied with a voltage between 2.0 V and 3.6 V.
+The host system should be capable of providing a 3.3 V supply.
+
+Digital Interface (SPI 3-Wire)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The accelerometer breakout boards use a 10-pin connector (P1) for SPI 3-wire
+communication:
+
+.. list-table::
+   :header-rows: 1
+
+   * - P1 Pin Number
+     - Pin Function
+     - Mnemonic
+   * - Pin 1
+     - Supply Voltage
+     - VS
+   * - Pin 2
+     - Digital Interface Supply Voltage
+     - VDDIO
+   * - Pin 3
+     - Not Connected
+     - NC
+   * - Pin 4
+     - Not Connected
+     - NC
+   * - Pin 5
+     - Serial Data Output
+     - SDO
+   * - Pin 6
+     - Serial Data Input
+     - SDI
+   * - Pin 7
+     - Serial Communications Clock
+     - SCLK
+   * - Pin 8
+     - Chip Select
+     - CS
+   * - Pin 9
+     - Ground
+     - GND
+   * - Pin 10
+     - Interrupt 1 Output
+     - INT1
+
+No-OS Driver
+-------------
+
+The :git-no-OS:`ADXL313 no-OS driver <main:drivers/accel/adxl313>` provides
+support for all three accelerometer variants (ADXL312, ADXL313, ADXL314). The
+driver handles device initialization, configuration, self-test, FIFO
+management, and data readout.
+
+When initializing the driver, specify the correct device type to match the
+accelerometer on your breakout board:
+
+- ``ID_ADXL312`` for the :adi:`EVAL-ADXL312Z`
+- ``ID_ADXL313`` for the :adi:`EVAL-ADXL313Z`
+- ``ID_ADXL314`` for the :adi:`EVAL-ADXL314Z`
+
+No-OS Project
+--------------
+
+The :git-no-OS:`eval-adxl313z project <main:projects/eval-adxl313z>` provides
+two example configurations: a basic terminal example and an IIO server example.
+
+STM32 Platform
+~~~~~~~~~~~~~~
+
+Required Hardware
+^^^^^^^^^^^^^^^^^
+
+- :adi:`EVAL-ADXL312Z` / :adi:`EVAL-ADXL313Z` / :adi:`EVAL-ADXL314Z`
+- `NUCLEO-F401RE <https://www.st.com/en/evaluation-tools/nucleo-f401re.html>`__
+
+Required Connections
+^^^^^^^^^^^^^^^^^^^^
+
+The following table shows the connections between the accelerometer breakout
+board and the
+`NUCLEO-F401RE <https://www.st.com/en/evaluation-tools/nucleo-f401re.html>`__
+used in this project example:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Pin No.
+     - NUCLEO-F401RE Pin
+     - Function (breakout board)
+     - Mnemonic
+   * - Pin 1
+     - POWER 3.3V
+     - Supply Voltage
+     - VS
+   * - Pin 2
+     - POWER 3.3V
+     - Digital Interface Supply Voltage
+     - VDDIO
+   * - Pin 5
+     - PA6
+     - Serial Data Output
+     - SDO
+   * - Pin 6
+     - PA7
+     - Serial Data Input
+     - SDI
+   * - Pin 7
+     - PB3
+     - Serial Clock
+     - SCLK
+   * - Pin 8
+     - PA4
+     - Chip Select
+     - CS
+   * - Pin 9
+     - GND
+     - Ground
+     - GND
+   * - Pin 10
+     - PA10
+     - Interrupt 1
+     - INT1
+
+Build Setup
+^^^^^^^^^^^
+
+For instructions on building the no-OS project, refer to the
+`No-OS Build Guide <https://analogdevicesinc.github.io/no-OS/build_guide.html>`__.
+
+Basic Example
+~~~~~~~~~~~~~
+
+To build the basic example, set the following in the project Makefile:
+
+.. code-block:: makefile
+
+   # Select the example you want to enable by choosing y for enabling and n for disabling
+   BASIC_EXAMPLE = y
+   IIO_EXAMPLE = n
+
+The basic example initializes the ADXL313 driver in 3-wire SPI mode, performs a
+self-test routine, configures the device, and periodically reads the FIFO
+contents. The measured acceleration data (x, y, z axes in m/s\ :sup:`2`) and
+interrupt status flags are printed to the terminal via the UART serial
+connection.
+
+Source code:
+:git-no-OS:`projects/eval-adxl313z/src/examples/basic <main:projects/eval-adxl313z/src/examples/basic>`.
+
+IIO Example
+~~~~~~~~~~~
+
+To build the IIO example, set the following in the project Makefile:
+
+.. code-block:: makefile
+
+   # Select the example you want to enable by choosing y for enabling and n for disabling
+   BASIC_EXAMPLE = n
+   IIO_EXAMPLE = y
+
+The IIO example launches a TINYIIOD server on the board, allowing connection
+from an IIO client such as IIO Oscilloscope. Through this interface, the user
+can configure the accelerometer and view measured data on a plot.
+
+For more information about the IIO framework, refer to:
+
+- `No-OS IIO Application <https://analogdevicesinc.github.io/no-OS/>`__
+- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+
+The IIO Oscilloscope provides several views:
+
+- **Connection view**: Detects the accelerometer device over UART after
+  connecting to the serial port.
+- **Simple view**: Displays real-time acceleration data from all three axes.
+  Rotating the accelerometer shows the gravitational component shifting between
+  axes (approximately 9.8 m/s\ :sup:`2` on the axis aligned with gravity).
+- **Debug view**: Lists all IIO attributes for each channel. Attributes such as
+  calibration bias, range, sampling frequency, and scale can be modified. Note
+  that range and scale cannot be changed for the :adi:`ADXL314`.
+- **Plot view**: Shows raw acceleration values over time. Movement of the
+  device produces visible spikes in the data.
+
+Source code:
+:git-no-OS:`projects/eval-adxl313z/src/examples/iio_example <main:projects/eval-adxl313z/src/examples/iio_example>`.
+
+Linux IIO Driver
+-----------------
+
+The ADXL312, ADXL313, and ADXL314 are supported by a mainlined Linux IIO
+driver targeting serial interface accelerometers. The driver supports both SPI
+and I2C communication.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Function
+     - File
+   * - Core driver
+     - :git-linux:`drivers/iio/accel/adxl313_core.c`
+   * - SPI driver
+     - :git-linux:`drivers/iio/accel/adxl313_spi.c`
+   * - I2C driver
+     - :git-linux:`drivers/iio/accel/adxl313_i2c.c`
+   * - Header
+     - :git-linux:`drivers/iio/accel/adxl313.h`
+   * - Devicetree binding
+     - :git-linux:`Documentation/devicetree/bindings/iio/accel/adi,adxl313.yaml`
+
+Devicetree Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Required devicetree properties:
+
+- ``compatible``: Must match the device, e.g. ``"adi,adxl313"`` or
+  ``"adi,adxl314"``.
+- ``reg``: The I2C address or SPI chip select number for the device.
+
+Required properties for SPI bus usage:
+
+- ``spi-max-frequency``: Maximum SPI clock frequency.
+
+Optional properties:
+
+- ``interrupts``: A list of interrupt specifiers.
+
+Example SPI devicetree node:
+
+.. code-block:: dts
+
+   #include <dt-bindings/gpio/gpio.h>
+   #include <dt-bindings/interrupt-controller/irq.h>
+   spi {
+       #address-cells = <1>;
+       #size-cells = <0>;
+
+       accelerometer@0 {
+           compatible = "adi,adxl313";
+           reg = <0>;
+           spi-max-frequency = <5000000>;
+           interrupt-parent = <&gpio0>;
+           interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+           interrupt-names = "INT1";
+       };
+   };
+
+Example I2C devicetree node:
+
+.. code-block:: dts
+
+   #include <dt-bindings/gpio/gpio.h>
+   #include <dt-bindings/interrupt-controller/irq.h>
+   i2c0 {
+       #address-cells = <1>;
+       #size-cells = <0>;
+
+       accelerometer@53 {
+           compatible = "adi,adxl313";
+           reg = <0x53>;
+           interrupt-parent = <&gpio0>;
+           interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+           interrupt-names = "INT1";
+       };
+   };
+
+IIO Sysfs Attributes
+~~~~~~~~~~~~~~~~~~~~~
+
+When the driver is loaded, the following attributes are available under the
+corresponding IIO device directory:
+
+``in_accel_x_raw``, ``in_accel_y_raw``, ``in_accel_z_raw``
+   Raw unscaled acceleration measurement for each axis.
+
+``in_accel_scale``
+   Scale factor to convert raw values to m/s\ :sup:`2`.
+   The actual acceleration is computed as:
+   ``accel = in_accel_*_raw * in_accel_scale`` (m/s\ :sup:`2`).
+
+``in_accel_x_calibbias``, ``in_accel_y_calibbias``, ``in_accel_z_calibbias``
+   Per-axis calibration bias offset.
+
+``in_accel_sampling_frequency``
+   The current sampling frequency of the device in Hz.
+
+``in_accel_sampling_frequency_available``
+   List of available sampling frequencies:
+   6.25, 12.5, 25, 50, 100, 200, 400, 800, 1600, 3200 Hz.
+
+More Information
+-----------------
+
+- :adi:`ADXL312 Product Page <ADXL312>`
+- :adi:`ADXL313 Product Page <ADXL313>`
+- :adi:`ADXL314 Product Page <ADXL314>`
+- :adi:`EVAL-ADXL312Z Product Page <EVAL-ADXL312Z>`
+- :adi:`EVAL-ADXL313Z Product Page <EVAL-ADXL313Z>`
+- :adi:`EVAL-ADXL314Z Product Page <EVAL-ADXL314Z>`
+- :git-no-OS:`ADXL313 no-OS Driver <main:drivers/accel/adxl313>`
+- :git-no-OS:`eval-adxl313z no-OS Project <main:projects/eval-adxl313z>`
+- :git-linux:`ADXL313 Linux Driver <drivers/iio/accel/adxl313_core.c>`
+
+Support
+--------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`MEMS Sensors Forum <mems>`.
