@@ -1,0 +1,124 @@
+.. _eval-cn0532-ebz:
+
+EVAL-CN0532-EBZ
+================
+
+MEMS Accelerometer Vibration Sensing with IEPE-Compatible Interface.
+
+Overview
+--------
+
+The :adi:`EVAL-CN0532-EBZ <CN0532>` is a MEMS accelerometer
+(:adi:`ADXL1002`) vibration sensing solution with included IEPE-compatible
+interface circuitry at 12.5 V bias, plus/minus 2 V output swing, and 4 mA
+current consumption. It is suitable for Condition-based Monitoring (CbM)
+applications.
+
+Since piezoelectric sensors are predominantly used in CbM applications, IEPE
+is the de facto standard in the CbM vibration sensing ecosystem. The IEPE
+interface, also commercially known as ICP, is a 2-wire protocol (signal and
+ground). In this protocol, a data logger supplies a constant current via the
+signal line to the vibration sensor and the sensor modulates the voltage
+according to the measurand, typically between 10 V and 30 V.
+
+This reference design enables a direct IEPE piezoelectric sensor replacement
+with benefits of high bandwidth, temperature stability, and ultralow noise
+MEMS accelerometers. This allows customers to easily evaluate an IEPE MEMS
+accelerometer solution for CbM applications on the same ICP piezoelectric
+sensor platform.
+
+.. figure:: cn0532_board.png
+   :align: center
+   :width: 250
+
+   EVAL-CN0532-EBZ Evaluation Board
+
+Hardware Setup
+--------------
+
+Sensor Connections
+~~~~~~~~~~~~~~~~~~
+
+The EVAL-CN0532-EBZ is straightforward to set up. A cable and an ICP signal
+conditioner (or an IEPE-compatible DAQ, or a current source) are needed. For
+electrical setup:
+
+#. Solder a twin twisted wire, coaxial, or shielded cable to the
+   EVAL-CN0532-EBZ printed circuit board (PCB). Connect the ground line to
+   GND and the supply/signal line to ACC. The output voltage increases for
+   positive acceleration in the positive sensitivity axis direction.
+
+#. Connect the other end of the cable to one of the following:
+
+   - An ICP signal conditioner (e.g. PCB 482C64)
+   - An IEPE-compatible vibration measurement device (such as LMS SCADAS from
+     Siemens or CompactDAQ from National Instruments)
+   - A current source (e.g. Keithley 6220) set to 4 mA output current and
+     16 V max voltage
+
+   .. figure:: cn0532_current_source.png
+      :align: center
+      :width: 300
+
+      EVAL-CN0532-EBZ with Current Source Setup
+
+   When using a current source, without an external acceleration, the IEPE
+   output should be approximately 12 V. In this setup the DC level is not
+   removed.
+
+#. Set the acceleration sensitivity (40 mV/G) on the vibration measurement
+   equipment. The sensitivity scale of the :adi:`ADXL1002` may slightly vary
+   from part to part. The ADXL1002 can be calibrated using a gravity field
+   or other reference sensors.
+
+Mechanical Mounting
+~~~~~~~~~~~~~~~~~~~
+
+The accelerometer used in this reference design, :adi:`ADXL1002`, is an
+ultralow noise and high bandwidth sensor. To achieve the best performance,
+proper mechanical design is required to deliver the vibration signal from the
+measurement point to the sensor.
+
+Careful consideration in the design of the EVAL-CN0532-EBZ PCB has been taken
+to avoid vibration signal distortion to the sensor due to mechanical resonance
+of the PCB structure. To best deliver the vibration signal, the
+:adi:`EVAL-XLMOUNT1` mechanical interface has been designed with a 3 dB flat
+mechanical response of up to 20 kHz.
+
+To use the EVAL-XLMOUNT1 with the EVAL-CN0532-EBZ:
+
+#. Using four 4-40 3/8 inch screws, securely mount the EVAL-CN0532-EBZ to the
+   EVAL-XLMOUNT1 mechanical interface. For optimum performance, use all four
+   screws.
+#. Firmly mount the EVAL-XLMOUNT1 to the vibration platform or shaker table
+   using an M6 or similar diameter screw. Ensure that the sensitivity direction
+   of the ADXL1002 is aligned with the platform's main vibration direction.
+#. Follow the steps for proper sensor connection outlined above.
+
+.. video:: https://www.youtube.com/watch?v=sUwh0gXCF5I
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0532-EBZ Design & Integration Files
+   <https://www.analog.com/cn0532-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
+
+Additional Information and Useful Links
+----------------------------------------
+
+- :adi:`CN0532 Product Page <CN0532>`
+- :adi:`ADXL1002 Product Page <ADXL1002>`
+- :adi:`EVAL-XLMOUNT1 Product Page <EVAL-XLMOUNT1>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the :ez:`/`.
