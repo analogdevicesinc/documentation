@@ -1,0 +1,287 @@
+.. _eval-cn0203-sdpz:
+
+EVAL-CN0203-SDPZ
+=================
+
+Flexible Programmable Analog Output.
+
+Overview
+--------
+
+:adi:`CN0203` is a full-function, flexible, programmable analog output solution
+with only two analog components and meets most requirements for programmable
+logic controller (PLC) and distributed control system (DCS) applications. It
+provides all the typical current and voltage output ranges with 16-bit
+resolution and no missing codes, 0.05% linearity, and less than 0.1% output
+error. Furthermore, it also contains key features for industrial applications,
+such as on-chip output fault detection, CRC checking to prevent packet error
+(PEC), and flexible power-up options, making it an ideal choice for robust
+industrial control systems. No external precision resistors or calibration
+routines are needed to maintain consistent performance in mass production,
+thereby making it ideal for PLC or DCS modules.
+
+The :adi:`AD5750-1` is a single-channel, low-cost, precision voltage/current
+output driver developed to meet the requirements of industrial process control
+applications. The voltage output range can be programmed for the standard
+output ranges for PLC and DCS applications: 0 V to 5 V, 0 V to 10 V, -5 V to
++5 V, and -10 V to +10 V. A 20% overrange setting is also provided for the
+standard ranges, giving the following options: 0 V to 6 V, 0 V to 12 V, -6 V
+to +6 V, and -12 V to +12 V. The current output, which is provided on a
+separate pin, can be programmed for the ranges of 4 mA to 20 mA, 0 mA to
+20 mA, -20 mA to +20 mA, 0 mA to 24 mA, and -24 mA to +24 mA. The unipolar
+ranges have a 2% overrange setting. The voltage and current output pins can be
+tied together to configure the end system as a single-channel output if
+desired.
+
+The :adi:`AD5660`-1 is a single-channel, low-cost, low-power, rail-to-rail
+voltage buffered output nanoDAC integrated with an on-chip 1.25 V, 5 ppm/C
+reference. The AD5660-1 incorporates a power-on reset circuit to ensure that
+the DAC output powers up to 0 V and remains there until a valid write command
+takes place. The output voltage range of the AD5660-1 is 0 V to 2.5 V, which
+matches the input range of the :adi:`AD5750-1`. In addition, the reference
+output voltage of the AD5660-1 is 1.25 V, which precisely matches the
+reference input requirement of the AD5750-1.
+
+The CN0203 needs +15 V, -15 V and +6 V power supply inputs and thus requires
+a triple output DC power supply. The board also connects to ADI's System
+Demonstration Platform (SDP).
+
+.. figure:: cn0203-hw-1024.jpg
+   :width: 600px
+   :align: center
+
+   EVAL-CN0203-SDPZ Evaluation Board
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-CN0203-SDPZ <CN0203>` evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- CN0203 Evaluation Software
+- +/-25 V/1 A triple output DC power supply (Agilent E3631A or equivalent,
+  requires +15 V, -15 V, and +6 V)
+- Digital multimeter for verification (optional, Agilent 34401A)
+- USB cable
+- PC with USB interface running Windows 7 or higher
+
+Hardware Setup
+--------------
+
+Block Assignments
+~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0203-hw-1024_-_edited.jpg
+   :width: 600px
+   :align: center
+
+   EVAL-CN0203-SDPZ Block Assignments
+
+- The EVAL-CN0203-SDPZ (CN0203 Board) connects to the :adi:`EVAL-SDP-CB1Z`
+  (SDP-B Board) via the 120-pin connector (SDP-B CONN).
+- The :adi:`EVAL-SDP-CB1Z` (SDP-B Board) connects to the PC via the USB
+  cable.
+- Terminal block **CN1** is the +/-15 V power supply input.
+- Terminal block **CN2** is the +6 V power supply input.
+- Terminal block **CN3** is for the voltage output measurement.
+
+  - **Optionally**, if **JP3** and **JP4** are open, **VSENSE+** and
+    **VSENSE-** can be connected across a selected branch in the load circuit
+    for feedback. **VSENSE-** should be within +/-3.0 V of GND.
+
+- Terminal block **CN4** is for the current output measurement.
+
+.. important::
+
+   Power on the EVAL-CN0203-SDPZ through the triple output power supply and
+   the SDP-B board through the PC **separately** before connecting the two
+   boards together.
+
+Jumper Settings
+~~~~~~~~~~~~~~~
+
+See the table below for the jumper settings. Values in red are the default
+settings for the EVAL-CN0203-SDPZ.
+
+.. figure:: cn0203_table2_4.jpg
+   :width: 600px
+   :align: center
+
+   EVAL-CN0203-SDPZ Jumper Settings
+
+Software Setup
+--------------
+
+Installing the Software
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Extract **CN0203 Evaluation Software** and open **setup.exe**.
+
+   .. note::
+
+      It is recommended to install the software to the default path
+      ``C:\Program Files (x86)\Analog Devices\CN0203\`` and all National
+      Instruments products to ``C:\Program Files\National Instruments\``.
+
+   .. figure:: 7-27-2017_10-18-25_am.png
+      :width: 600px
+
+      CN0203 installer welcome screen
+
+#. Press **Next** to view the National Instruments Software License Agreement.
+
+   .. figure:: 7-27-2017_10-18-49_am.png
+      :width: 600px
+
+      National Instruments Software License Agreement
+
+#. Select the option which **accepts** the License Agreement and press
+   **Next** to view the installation review page.
+
+   .. figure:: 7-27-2017_10-19-16_am.png
+      :width: 600px
+
+      Installation review page
+
+#. Press **Next** to start the installation.
+
+   .. figure:: 7-27-2017_10-20-21_am.png
+      :width: 600px
+
+      Installation progress
+
+#. Upon completion of the CN0203 Evaluation Software installation, the
+   installer for the ADI SDP Drivers will execute.
+
+   .. note::
+
+      It is recommended to close all other applications before clicking
+      **Next**. This will make it possible to update relevant system files
+      without having to reboot your computer.
+
+   .. figure:: 7-27-2017_10-21-00_am.png
+      :width: 600px
+
+      ADI SDP Drivers installer
+
+#. Press **Next** to set the installation location for the SDP Drivers.
+
+   .. note::
+
+      It is recommended to install the drivers to the default path
+      ``C:\Program Files\Analog Devices\SDP\Drivers``.
+
+   .. figure:: 7-27-2017_10-21-13_am.png
+      :width: 600px
+
+      SDP Drivers installation location
+
+#. Press **Next** to install the SDP Drivers. When prompted by Windows
+   Security, press **Install**.
+
+   .. figure:: 7-27-2017_10-22-01_am.png
+      :width: 600px
+
+      Windows Security prompt for SDP Drivers
+
+#. Press **Finish** to complete the installation.
+
+   .. figure:: 7-27-2017_10-22-23_am.png
+      :width: 600px
+
+      Installation complete
+
+Using the Evaluation Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Main Window
+^^^^^^^^^^^
+
+.. figure:: 7-27-2017_10-29-07_am.png
+   :width: 600px
+   :align: center
+
+   CN0203 Evaluation Software Main Window
+
+The evaluation software provides the following controls and sections:
+
+**Title Bar:**
+
+- **Connect** button -- Starts the connection with the CN0203 evaluation
+  board.
+- **Disconnect** button -- Ends the connection with the CN0203 evaluation
+  board.
+
+**System Configuration:**
+
+- **Connector** -- Selects which 120-pin connection of the SDP-B board to
+  use.
+- **SCLK (Hz)** -- Sets the SPI clock frequency used by the evaluation
+  board.
+
+**AD5750-1 Configuration:**
+
+- **JP1 Configuration** -- Sets the SPI address of the AD5750-1 based on the
+  position of JP1.
+- **Range Select** -- Sets the voltage/current output range.
+- **Toggle CLEAR** -- Sets the outputs to the zero/midscale voltage value or
+  the minimum value of the selected current range.
+
+**AD5750-1 Error Indicator:**
+
+- **Vout Fault** -- There is a short circuit on the VOUT pin.
+- **Iout Fault** -- There is an open circuit on the IOUT pin.
+- **Over Temp** -- The AD5750-1 core temperature exceeds 150 degrees C.
+- **PEC Error** -- CRC-8 error checking detected an interface error.
+
+**Output Setting:**
+
+- **Write AD5660-1** -- Writes the hexadecimal value in the left field to the
+  AD5660-1 output voltage.
+- **Reset AD5750-1** -- Resets the AD5750-1 to its power-on state.
+
+**Quit** -- Exits the software application.
+
+Running the System
+^^^^^^^^^^^^^^^^^^
+
+#. Open the **CN0203.exe** application from the default installation
+   location.
+#. Set the correct connector and SCLK settings for the board in the System
+   Configuration section.
+#. Click the **Connect** button.
+#. Upon successful connection, select the desired range of output on the
+   Range Select drop-down menu.
+#. Input a hex value equivalent of the desired output level in the Output
+   Setting section.
+#. Click **Write AD5660-1**.
+#. Click **Disconnect** if finished.
+
+Documents
+---------
+
+- :adi:`CN0203 Circuit Note <CN0203>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0203-SDPZ Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0203-DesignSupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - PADS Project
+
+Additional Information
+----------------------
+
+- :adi:`AD5750-1 Product Page <AD5750-1>`
+- :adi:`AD5660 Product Page <AD5660>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
