@@ -1,0 +1,118 @@
+.. _eval-cn0270-sdpz:
+
+EVAL-CN0270-SDPZ
+=================
+
+4--20 mA Transmitter with HART Communication.
+
+Overview
+--------
+
+:adi:`CN0270` is a complete 4--20 mA transmitter with HART (Highway Addressable
+Remote Transducer) communication. The circuit uses the :adi:`AD5420` 16-bit
+4--20 mA current source DAC and the :adi:`AD5700` low power HART modem.
+
+The system supports multiple process control current loop standards (4--20 mA,
+0--20 mA, 0--24 mA) and adheres to HART physical layer specifications. The
+evaluation board includes an onboard :adi:`ADuCM360` microcontroller and
+complies with the double PMOD form factor for external processor compatibility.
+
+Required Equipment
+------------------
+
+- EVAL-CN0270-EB1Z evaluation board
+- USB-SWD/UART-EMUZ board (included with kit)
+- CN0270 Evaluation Software
+- DC power supply (24 V recommended, 12 V to 36 V compatible)
+- Multimeter
+- USB Type-A to USB Mini-B cable
+- PC with Windows XP, Vista, or Windows 7
+
+Hardware Setup
+--------------
+
+- **P1** -- Terminal block for board supply (+24 V DC recommended)
+- **P3** -- Terminal block for current loop output
+
+Jumper Configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Jumper
+     - Setting
+     - Function
+   * - P2
+     - OPEN
+     - Disconnects 499 Ohm load
+   * - P2
+     - SHORT
+     - Connects 499 Ohm load resistor
+   * - PMOD
+     - OPEN
+     - Onboard processor + J-Link control
+   * - PMOD
+     - SHORT
+     - External processor via PMOD
+   * - XTAL
+     - Position 1
+     - On-chip oscillator
+   * - XTAL
+     - Position 0
+     - 3.6864 MHz crystal
+
+Software Setup
+--------------
+
+#. Extract **CN0270 Eval Software.zip** and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path
+      ``C:\Program Files\Analog Devices\CN0270\``.
+
+#. Install ADuCM360 and Segger J-Link drivers.
+
+Software Windows
+~~~~~~~~~~~~~~~~~
+
+- **Main Window** -- Output current control, DAC code hex input, test current
+  enable/disable, :adi:`AD5420` configuration access, HART modem window
+  access, HART activity indicator, reset, and status bar.
+- **AD5420 Configuration** -- Output enable, output range selection, digital
+  slew rate control (enable, step size, update rate).
+- **HART Modem Window** -- Receive buffer (HART Page and Raw modes), transmit
+  buffer (HART Page for automatic formatting, Raw for manual data entry),
+  copy from RX to TX function.
+
+Documents
+---------
+
+- :adi:`CN0270 Circuit Note <CN0270>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0270-EB1Z Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0270-DesignSupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD5420 Product Page <AD5420>`
+- :adi:`AD5700 Product Page <AD5700>`
+- :adi:`AD5700-1 Product Page <AD5700-1>`
+- :adi:`ADuCM360 Product Page <ADUCM360>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

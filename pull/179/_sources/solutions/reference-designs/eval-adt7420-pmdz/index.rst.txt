@@ -1,0 +1,59 @@
+.. _eval-adt7420-pmdz:
+
+EVAL-ADT7420-PMDZ
+==================
+
+High-Accuracy Digital Temperature Sensor.
+
+Overview
+--------
+
+The :adi:`EVAL-ADT7420-PMDZ` is a PMOD form-factor evaluation board for the
+:adi:`ADT7420` high-accuracy digital temperature sensor. The sensor provides
+16-bit ADC resolution (0.0078 deg C) with an internal band gap reference and
+I2C interface.
+
+Address selection pins A0 and A1 support four possible I2C addresses. Alert
+outputs include CT (critical temperature) and INT (threshold alerts) pins.
+
+Required Equipment
+------------------
+
+- EVAL-ADT7420-PMDZ evaluation board
+- PMOD-compatible development platform (:adi:`EVAL-ADICUP3029`, Raspberry Pi,
+  or compatible)
+- Power supply: 2.7--5.5 V (typical 3.3 V)
+- For Raspberry Pi: 5 V Micro-USB power supply and
+  :ref:`PMD-RPI-INTZ <pmd-rpi-intz>` adapter
+
+Hardware Setup
+--------------
+
+- PMOD form factor with 6-pin or 8-pin I2C connector.
+- I2C interface with 4 possible addresses via A0/A1 pins.
+- Open-drain alert outputs (INT, CT) for temperature threshold monitoring.
+- Compatible with EVAL-ADICUP3029, Raspberry Pi (via PMD-RPI-INTZ adapter),
+  and other PMOD hosts.
+
+Software Setup
+--------------
+
+no-OS drivers are available for the EVAL-ADICUP3029 platform. On Linux (e.g.,
+Raspberry Pi), the ``adt7x10`` kernel driver provides IIO framework integration.
+Data visualization is supported via IIO Oscilloscope and PyADI-IIO.
+
+Documents
+---------
+
+- :adi:`ADT7420 Datasheet <ADT7420>`
+
+Additional Information
+----------------------
+
+- :adi:`ADT7420 Product Page <ADT7420>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

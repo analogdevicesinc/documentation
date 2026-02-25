@@ -1,0 +1,77 @@
+.. _eval-cn0411-ardz:
+
+EVAL-CN0411-ARDZ
+=================
+
+Total Dissolved Solids Measurement System.
+
+Overview
+--------
+
+:adi:`CN0411` is a total dissolved solids (TDS) measurement system using direct
+conductivity measurement. The circuit measures conductivity from 1 uS to 0.1 S
+and accommodates 2-wire conductivity probes with cell constants from 0.01 to 10.
+Temperature compensation is provided via 100 Ohm or 1000 Ohm 2-wire RTD.
+
+The circuit uses the :adi:`AD5683R` 16-bit SPI voltage DAC, :adi:`ADG884`
+ultra-low on-resistance dual SPDT switch, :adi:`ADG1608` 16:1 multiplexer,
+:adi:`AD8220` low-input current JFET instrumentation amplifier, :adi:`AD8628`
+zero-drift rail-to-rail op-amp, and the :adi:`AD7124-8` low-noise 24-bit
+sigma-delta ADC.
+
+Required Equipment
+------------------
+
+- EVAL-CN0411-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP360` development board
+- Conductivity probe (BNC or terminal block connection)
+- RTD sensor (Pt100 or Pt1000)
+- USB cable
+
+Hardware Setup
+--------------
+
+- **J1** -- BNC connector for conductivity probes.
+- **P2** -- Terminal block for conductivity probe (alternative to BNC).
+- **P3** -- Terminal block for RTD sensor.
+- **PRB_SEL** -- Jumper for probe selection.
+- **P6** -- Signal input select jumper.
+- **CS_ADC, CS_DAC** -- Chip select jumpers for stacking multiple boards.
+
+Software Setup
+--------------
+
+The demo firmware provides zero-scale and reference-resistor calibration,
+auto-ranging for gain resistance selection, and configurable excitation
+frequency (94 Hz for uS range, 2.4 kHz for mS+ range). Temperature
+coefficient presets for NaCl (2.14) and KCl (1.88) are included.
+
+Documents
+---------
+
+- :adi:`CN0411 Circuit Note <CN0411>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0411-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0411-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7124-8 Product Page <AD7124-8>`
+- :adi:`AD5683R Product Page <AD5683R>`
+- :adi:`AD8220 Product Page <AD8220>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

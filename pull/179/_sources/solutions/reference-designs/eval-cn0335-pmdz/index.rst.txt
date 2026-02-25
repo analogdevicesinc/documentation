@@ -1,0 +1,76 @@
+.. _eval-cn0335-pmdz:
+
+EVAL-CN0335-PMDZ
+=================
+
+Isolated ±10 V Voltage-to-Digital Converter.
+
+Overview
+--------
+
+:adi:`CN0335` is a robust solution for ±10 V voltage-to-digital conversion with
+signal isolation. The circuit achieves total unadjusted error less than 0.1% FSR
+using only three active devices and is optimized for high precision, low cost
+industrial measurement applications.
+
+The circuit uses the :adi:`AD8606` precision op-amp for signal conditioning,
+the :adi:`AD7091R` 12-bit SAR ADC for digitization, and the :adi:`ADuM5401`
+quad-channel digital isolator with integrated isolated power supply.
+
+Required Equipment
+------------------
+
+- EVAL-CN0335-PMDZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- SDP-PMD-IB1Z (SDP-to-PMOD interposer board)
+- EVAL-CFTL-6V-PWRZ (+6 V power supply) or equivalent
+- USB cable
+- Voltage source or signal generator (±10 V range)
+- Multimeter for input current measurement
+
+Hardware Setup
+--------------
+
+- Connect +6 V DC power supply to barrel jack J1 of the interposer board.
+- Connect the 120-pin connector on the interposer to CON A on the SDP-B board.
+- Connect the EVAL-CN0335-PMDZ to the SDP-PMD-IB1Z via 12-pin PMOD connectors
+  (J1 and J3).
+- Connect ±10 V source to terminal block J2 on the CN0335 board.
+
+Software Setup
+--------------
+
+The evaluation software provides real-time data acquisition with Run/Stop
+controls, data clearing, and save functions. The calibration tab enables
+system calibration using two ±10 V input points for best performance. Data
+is exported as tab-delimited ASCII spreadsheet files.
+
+Documents
+---------
+
+- :adi:`CN0335 Circuit Note <CN0335>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0335-PMDZ Design & Integration Files
+   <https://www.analog.com/cn0335-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD8606 Product Page <AD8606>`
+- :adi:`AD7091R Product Page <AD7091R>`
+- :adi:`ADuM5401 Product Page <ADUM5401>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

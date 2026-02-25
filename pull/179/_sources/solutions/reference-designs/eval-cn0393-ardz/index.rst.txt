@@ -1,0 +1,74 @@
+.. _eval-cn0393-ardz:
+
+EVAL-CN0393-FMCZ
+=================
+
+Isolated 2-Channel Simultaneous Sampling DAQ.
+
+Overview
+--------
+
+:adi:`CN0393` is a bank-isolated, 2-channel, 16-bit, 500 kSPS simultaneous
+sampling data acquisition system featuring uModule technology. The system
+achieves high channel density with isolation between the bank and the digital
+backplane while delivering exceptional performance.
+
+The circuit uses two :adi:`ADAQ7988` 16-bit 500 kSPS uModule data acquisition
+systems in daisy-chain mode, the :adi:`AD8251` programmable gain
+instrumentation amplifier, the :adi:`ADuM3470` quad-channel digital isolator
+with integrated PWM controller, the :adi:`ADuM3150` high-speed digital isolator
+with trimmed delay clock, and the :adi:`ADR4550` 5.0 V precision voltage
+reference.
+
+Required Equipment
+------------------
+
+- EVAL-CN0393-FMCZ evaluation board
+- :adi:`EVAL-SDP-CH1Z` controller board
+- Power supply
+- Signal source
+
+Hardware Setup
+--------------
+
+- FMC connector interface to the SDP-CH1Z controller board.
+- Programmable gain settings: ±10 V, ±5 V, ±2.5 V, ±1.25 V input ranges.
+- Daisy-chain ADC mode with up to 40 MHz serial clock.
+- Input circuit protection included.
+
+Software Setup
+--------------
+
+The evaluation software provides data acquisition, spectral analysis, and
+channel configuration for both simultaneous sampling channels.
+
+Documents
+---------
+
+- :adi:`CN0393 Circuit Note <CN0393>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0393-FMCZ Design & Integration Files
+   <https://www.analog.com/cn0393-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADAQ7988 Product Page <ADAQ7988>`
+- :adi:`AD8251 Product Page <AD8251>`
+- :adi:`ADuM3470 Product Page <ADUM3470>`
+- :adi:`ADR4550 Product Page <ADR4550>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

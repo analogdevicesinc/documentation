@@ -1,0 +1,96 @@
+.. _eval-cn0196-sdpz:
+
+EVAL-CN0196-SDPZ
+=================
+
+Isolated H-Bridge Gate Driver with PWM Control.
+
+Overview
+--------
+
+:adi:`CN0196` is an H-bridge composed of high-power switching N-channel MOSFETs
+controlled by low-voltage logic signals with galvanic isolation between control
+and power sides. Applications include motor control, power conversion,
+lighting, audio amplifiers, and uninterruptible power supplies (UPS).
+
+The :adi:`ADG787` provides low-voltage CMOS level translation, the
+:adi:`ADuM7234` is an isolated half-bridge gate driver with iCoupler technology
+(4 A peak drive current), and the :adi:`ADuCM360` ARM7-based precision analog
+microcontroller provides integrated PWM control.
+
+Required Equipment
+------------------
+
+- EVAL-CN0196-EB1Z circuit evaluation board
+- EVAL-ADuC7061-MKZ evaluation board
+- +12 V DC supply or battery, 10 A capacity
+- Load (e.g., Coilcraft SER2014-402 power inductor)
+- Oscilloscope with current probe
+- USB cable
+- PC with Windows XP, Vista, or Windows 7 (32-bit)
+
+Hardware Setup
+--------------
+
+#. Connect controlling signals from the EVAL-ADuC7061 to the CN0196 board per
+   the jumper configuration.
+#. Set jumpers: **LK1** (pins 1-2), **LK2** (pins 2-3), **LK3** (pins 1-2),
+   short **LK4**.
+#. Apply the +12 V power supply to **J4** on the CN0196 board.
+#. Connect the USB cable from the PC to the USB mini connector on the
+   EVAL-ADuC7061-MKZ.
+#. Connect the inductor load between **OUT1** and **OUT2** of **J3**.
+
+Software Setup
+--------------
+
+#. Extract **CN0196 Eval Software.zip** and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path
+      ``C:\Program Files\Analog Devices\CN0196\``.
+
+#. Download firmware using the **ARMWSD.exe** tool.
+#. Configure the ADuC7061 in Device Manager and set the serial port to
+   9600 baud.
+#. Flash the **PWM Generator for EVAL-CN0196-EB1Z.hex** firmware.
+
+Software Controls
+~~~~~~~~~~~~~~~~~
+
+- PWM pulse width (up to 12.8 ms) and PWM interval
+- Start/Stop control
+- High/Low side shot controls
+- VDD control (up to 20 V)
+- Inductor control (up to 100 mH)
+
+Documents
+---------
+
+- :adi:`CN0196 Circuit Note <CN0196>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0196-EB1Z Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0196-DesignSupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADG787 Product Page <ADG787>`
+- :adi:`ADuM7234 Product Page <ADUM7234>`
+- :adi:`ADuCM360 Product Page <ADUCM360>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

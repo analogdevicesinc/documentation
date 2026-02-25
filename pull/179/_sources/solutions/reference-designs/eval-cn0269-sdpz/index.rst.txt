@@ -1,0 +1,65 @@
+.. _eval-cn0269-sdpz:
+
+EVAL-CN0269-SDPZ
+=================
+
+Precision Sigma-Delta ADC Measurement System.
+
+Overview
+--------
+
+:adi:`CN0269` is a precision measurement system based on the :adi:`AD7705`
+sigma-delta ADC with integrated signal conditioning for industrial sensor
+applications.
+
+The circuit uses the :adi:`AD7705` 16-bit sigma-delta ADC with programmable
+gain amplifier and low-power operation.
+
+Required Equipment
+------------------
+
+- EVAL-CN0269-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- ±15 V dual power supply
+- USB cable
+
+Hardware Setup
+--------------
+
+- Connect the EVAL-CN0269-SDPZ to the SDP-B board via the 120-pin connector.
+- Apply ±15 V power to the designated power terminals.
+- Connect USB cable from SDP-B board to PC.
+
+Software Setup
+--------------
+
+The evaluation software provides data acquisition, configuration, and data
+export capabilities through a graphical user interface.
+
+Documents
+---------
+
+- :adi:`CN0269 Circuit Note <CN0269>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0269-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0269-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7705 Product Page <AD7705>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

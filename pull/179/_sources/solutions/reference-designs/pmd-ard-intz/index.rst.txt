@@ -1,0 +1,58 @@
+.. _pmd-ard-intz:
+
+PMD-ARD-INTZ
+=============
+
+Arduino PMOD Adapter Board.
+
+Overview
+--------
+
+The PMD-ARD-INTZ is an Arduino interface adapter board enabling up to four PMOD
+modules to interface with :adi:`EVAL-ADICUP3029`, :adi:`EVAL-ADICUP360`, or any
+equivalent Arduino MCU board. The board provides two SPI PMODs, one I2C PMOD,
+and one configurable (SPI or UART) PMOD port with bidirectional voltage level
+translation on each port.
+
+The board uses the :adi:`LT1763` voltage regulators (3.3 V and 5 V) for
+optional independent power supply via barrel jack input.
+
+Required Equipment
+------------------
+
+- PMD-ARD-INTZ adapter board
+- Arduino Uno-compatible MCU board (:adi:`EVAL-ADICUP3029` or
+  :adi:`EVAL-ADICUP360`)
+- PMOD devices (SPI, I2C, or UART compatible)
+- Optional: external DC power supply 7--13 V (for barrel jack)
+
+Hardware Setup
+--------------
+
+- **P11, P12, P13** -- Expanded SPI PMOD ports (2 SPI + 1 configurable
+  SPI/UART).
+- **P16** -- I2C PMOD port (backward compatible with 2x4 and 1x6 connectors).
+- **S1** -- Power source selection: ARD (from MCU headers) or LDO (from barrel
+  jack).
+- **P4, P5, P6, P7** -- Logic voltage selection shunts per port (3.3 V or
+  5 V).
+- **JP1--JP5** -- Reset logic configuration (active low or active high).
+- **DS1** -- Power indicator LED.
+
+Software Setup
+--------------
+
+The voltage level translation is transparent to software. Standard SPI, I2C,
+and UART drivers for the target MCU platform are used directly.
+
+Additional Information
+----------------------
+
+- :adi:`EVAL-ADICUP3029 Product Page <EVAL-ADICUP3029>`
+- :adi:`EVAL-ADICUP360 Product Page <EVAL-ADICUP360>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

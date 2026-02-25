@@ -1,0 +1,68 @@
+.. _eval-cn0289-sdpz:
+
+EVAL-CN0289-SDPZ
+=================
+
+Loop-Powered 4--20 mA Pressure Sensor Transmitter.
+
+Overview
+--------
+
+:adi:`CN0289` is a robust 2-wire loop-powered current transmitter that converts
+the differential voltage output from a pressure sensor to a 4--20 mA current
+output. The circuit is optimized for bridge-based voltage or current-driven
+pressure sensors with only four active devices, achieving less than 1% total
+unadjusted error. Loop supply voltage range is 12 V to 36 V.
+
+The input is ESD-protected and rated for over-voltage conditions.
+
+Required Equipment
+------------------
+
+- EVAL-CN0289-EB1Z evaluation board
+- Power supply: +7 V to +24 V (minimum 7 V for headroom)
+- Agilent 3458A or equivalent current meter
+- Differential pressure sensor (e.g., NXP pressure sensors) or dual-channel
+  DC signal source for simulation
+
+Hardware Setup
+--------------
+
+- **J1** -- 4-channel screw terminal for bridge-type sensor connection
+  (Vsense and V/Iforce pins)
+- **J2** -- Power supply connection (+7 V to +24 V)
+- **S1** -- Switch for selecting voltage vs. current drive mode
+
+  - Voltage drive: VDRIVE = 10 V, supply must be >10.2 V
+  - Current drive: supply must be >11.2 V minimum
+
+- **R7** -- 250 Ohm series load resistor (desolderable for external load)
+
+.. note::
+
+   No evaluation software is required. This is a hardware evaluation board
+   with direct measurements via a current meter or multimeter.
+
+Documents
+---------
+
+- :adi:`CN0289 Circuit Note <CN0289>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0289-EB1Z Design & Integration Files
+   <https://www.analog.com/cn0289-designsupport>`__
+
+   - Schematics
+   - PCB Layout Gerbers
+   - Bill of Materials
+   - Assembly Drawing
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

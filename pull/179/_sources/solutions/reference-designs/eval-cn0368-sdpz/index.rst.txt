@@ -1,0 +1,79 @@
+.. _eval-cn0368-sdpz:
+
+EVAL-CN0368-SDPZ
+=================
+
+Magneto-Resistive Rotational Position Measurement.
+
+Overview
+--------
+
+:adi:`CN0368` is a contactless angle measurement solution using anisotropic
+magneto-resistive (AMR) technology. The circuit provides better than 0.2 degree
+accuracy for rotational and linear position measurements (0.002 inch / 2 mil
+accuracy). It is ideal for brushless DC motor control and high-speed
+non-contact position sensing applications.
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-CN0368-SDPZ <CN0368>` evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- USB Type-A to USB Mini-B cable
+- EVAL-CFTL-6V-PWRZ +6 V power supply or 0--6 V DC power supply
+- Diametrically magnetized neodymium magnet (for rotational testing)
+- Neodymium magnet approximately 2 inches in length (for linear testing)
+- PC with Windows XP SP2, Vista, or Windows 7; .NET 3.5, 512 MB RAM
+
+Hardware Setup
+--------------
+
+#. Connect the +6 V power supply to the evaluation board.
+#. Mount magnets for rotational or linear position testing.
+#. Connect the 120-pin connector on the CN0368 board to **CON A** on the
+   :adi:`EVAL-SDP-CB1Z`.
+#. Connect the USB cable from the PC to the SDP-B board.
+
+Software Setup
+--------------
+
+#. Extract the CN0368 Evaluation Software and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path
+      ``C:\Program Files\Analog Devices\CN0368\``.
+
+#. Complete the installation wizard and SDP Drivers installation.
+
+Calibration Methods
+~~~~~~~~~~~~~~~~~~~~
+
+- **Single Temperature Calibration** -- Manual offset calculation before angle
+  measurement.
+- **Multiple Temperature Calibration** -- Temperature-compensated measurements
+  at two temperature points.
+- **Dynamic Calibration** -- Real-time offset calculation during rotation.
+
+Documents
+---------
+
+- :adi:`CN0368 Circuit Note <CN0368>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0368-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0368-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

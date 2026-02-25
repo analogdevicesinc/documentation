@@ -1,0 +1,77 @@
+.. _eval-cn0370-ardz:
+
+EVAL-CN0370-PMDZ
+=================
+
+Low Noise LED Current Source Driver.
+
+Overview
+--------
+
+:adi:`CN0370` is a single-supply, low noise LED current source driver controlled
+by a 16-bit DAC. The circuit maintains ±1 LSB integral and differential
+nonlinearity with 0.1 Hz to 10 Hz noise of less than 45 nA peak-to-peak for
+20 mA full-scale output current.
+
+The circuit uses the :adi:`AD5542A` 16-bit serial-input voltage-output DAC, the
+:adi:`ADA4500-2` single-supply dual low-power op-amp with zero-crossover
+distortion and rail-to-rail input, and the :adi:`ADR4525` 2.5 V high-precision
+low-noise voltage reference.
+
+Required Equipment
+------------------
+
+- EVAL-CN0370-PMDZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- SDP-PMD-IB1Z (SDP-to-PMOD interposer board)
+- 6 V wall wart power supply
+- USB cable
+- Agilent 34401A multimeter or equivalent
+
+Hardware Setup
+--------------
+
+- Connect 120-pin connector J4 on the interposer to CON A on the SDP-B board
+  with JP1 set to +5.0 V.
+- Connect the EVAL-CN0370-PMDZ to PMOD connector J3 on the interposer.
+- Connect +6 V wall wart to connector J1 of the interposer board.
+- LED_SUPPLY can use PMOD supply (default) or external VEXT (0 to +20 V max).
+- Test points VCC and AGND for voltage measurements.
+
+Software Setup
+--------------
+
+The evaluation software provides two input modes: Current Mode for adjusting
+output current via slider or text box, and Code Mode for writing exact DAC
+codes. The external resistor parameter R_LIMIT (default 124 Ohm) can be
+configured in the GUI.
+
+Documents
+---------
+
+- :adi:`CN0370 Circuit Note <CN0370>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0370-PMDZ Design & Integration Files
+   <https://www.analog.com/cn0370-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD5542A Product Page <AD5542A>`
+- :adi:`ADA4500-2 Product Page <ADA4500-2>`
+- :adi:`ADR4525 Product Page <ADR4525>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

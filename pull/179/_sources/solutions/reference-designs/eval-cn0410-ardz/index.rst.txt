@@ -1,0 +1,73 @@
+.. _eval-cn0410-ardz:
+
+EVAL-CN0410-ARDZ
+=================
+
+Smart Agriculture LED Current Source Driver.
+
+Overview
+--------
+
+:adi:`CN0410` is an Arduino-compatible shield optimized for smart agriculture
+applications, providing precise current control for up to three LED channels.
+The system supports isoSPI communication for multi-board control over distances
+up to 100 meters.
+
+The circuit uses the :adi:`AD5686` 16-bit unbuffered voltage-output DAC for
+LED current control and the :adi:`LT6820` SPI repeater for long-distance
+multi-drop communication between stacked boards.
+
+Required Equipment
+------------------
+
+- EVAL-CN0410-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP3029` controller board
+- USB cable
+- LED load (e.g., CFTL-LED-BAR with up to 500 mA per channel)
+- Optional: cooling fans for currents above 500 mA
+
+Hardware Setup
+--------------
+
+- **P1, P6, P9** -- LED connectors with cathode and anode terminals for
+  3 independent channels.
+- **P21** -- Chip select configuration (GPIO 8, 9, or 10).
+- **P2, P5, P7** -- Master/Slave mode jumpers for multi-board operation.
+- **S2** -- Master/Slave mode switch.
+- Transmit/Receive connectors for isoSPI multi-drop configuration.
+
+Software Setup
+--------------
+
+The CN0410 demo software runs on the :adi:`EVAL-ADICUP3029` platform and
+provides per-channel LED current control via serial interface.
+
+Documents
+---------
+
+- :adi:`CN0410 Circuit Note <CN0410>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0410-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0410-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD5686 Product Page <AD5686>`
+- :adi:`LT6820 Product Page <LT6820>`
+- :adi:`EVAL-ADICUP3029 Product Page <EVAL-ADICUP3029>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

@@ -1,0 +1,59 @@
+.. _eval-ad5770r-pmdz:
+
+EVAL-AD5770R-PMDZ
+==================
+
+6-Channel Current Output DAC.
+
+Overview
+--------
+
+The :adi:`EVAL-AD5770R-PMDZ` is a minimalist SPI PMOD evaluation board for the
+:adi:`AD5770R` 6-channel, 14-bit, multi-range current output DAC. The board
+provides a low-cost alternative to the fully-featured evaluation board with
+direct DAC output access.
+
+Channel 0 can sink up to 60 mA. Output ranges are configurable per channel:
+IDAC0 supports 0--300 mA, -60--0 mA, or -60--300 mA; IDAC1--2 support
+0--140 mA or 0--250 mA; IDAC3--5 support 0--45 mA or 0--100 mA.
+
+Required Equipment
+------------------
+
+- EVAL-AD5770R-PMDZ evaluation board
+- SPI PMOD-compatible development board (:adi:`EVAL-ADICUP3029`)
+- External power supplies for PVDDx pins
+- Optional: external reference voltage supply (internal ±1.25 V available)
+
+Hardware Setup
+--------------
+
+- **P1** -- SPI digital interface connector to controller.
+- **P5** -- Supply pins (AVDD/DVDD/IOVDD, VREF, current output common).
+- **P6** -- PVDD pins and current output connections (IDAC0--IDAC5).
+- Connectors P5 and P6 are left unsoldered for custom wiring.
+- Test vias available for debugging.
+- Internal output monitor multiplexer for diagnostics.
+
+Software Setup
+--------------
+
+PMOD demo software is available for the EVAL-ADICUP3029 platform. Device
+configuration is performed through SPI register programming per the AD5770R
+datasheet.
+
+Documents
+---------
+
+- :adi:`AD5770R Datasheet <AD5770R>`
+
+Additional Information
+----------------------
+
+- :adi:`AD5770R Product Page <AD5770R>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

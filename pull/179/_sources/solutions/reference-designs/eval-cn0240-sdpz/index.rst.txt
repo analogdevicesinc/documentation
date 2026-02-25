@@ -1,0 +1,86 @@
+.. _eval-cn0240-sdpz:
+
+EVAL-CN0240-SDPZ
+=================
+
+Bidirectional High Voltage Current Measurement.
+
+Overview
+--------
+
+:adi:`CN0240` is a circuit for monitoring bidirectional current from sources
+with DC voltages up to ±270 V with less than 1% linearity error. The system
+measures current through an external shunt resistor with approximately 100 mV
+maximum shunt voltage at full load.
+
+The circuit uses the :adi:`AD629` difference amplifier for high common-mode
+voltage rejection (up to 270 V), :adi:`AD8622` dual precision rail-to-rail
+op-amp (gain of 100), :adi:`AD8475` fully-differential attenuating amplifier
+(gain of 0.4), :adi:`AD7170` 12-bit sigma-delta ADC, :adi:`ADuM5402`
+quad-channel digital isolator for galvanic isolation, and the :adi:`ADR435`
+precision XFET voltage reference.
+
+Required Equipment
+------------------
+
+- EVAL-CN0240-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- +6 V power supply (1 A)
+- Dual power supply: +15 V and -15 V
+- USB cable
+- External shunt resistor (100 mV max at full load)
+- Source voltage and electronic load
+
+.. warning::
+
+   This is a high voltage circuit (up to ±270 V). Only qualified professionals
+   should operate this equipment.
+
+Hardware Setup
+--------------
+
+- **J1** -- 120-pin SDP connector.
+- **J2** -- +6 V barrel connector (wall wart input).
+- **J3** -- +6 V DC power supply input.
+- **J4** -- High voltage input terminals (±270 V max) for shunt resistor.
+- **J5** -- ±15 V supply input.
+- System ground and PCB isolated ground must be connected (test points 31
+  and 32) for correct operation.
+
+Software Setup
+--------------
+
+The evaluation software provides data acquisition, error calculation, and
+graphing functions for bidirectional current measurement.
+
+Documents
+---------
+
+- :adi:`CN0240 Circuit Note <CN0240>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0240-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0240-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD629 Product Page <AD629>`
+- :adi:`AD8622 Product Page <AD8622>`
+- :adi:`AD8475 Product Page <AD8475>`
+- :adi:`ADuM5402 Product Page <ADUM5402>`
+- :adi:`ADR435 Product Page <ADR435>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

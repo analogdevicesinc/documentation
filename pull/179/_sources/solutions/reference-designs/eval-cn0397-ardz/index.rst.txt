@@ -1,0 +1,68 @@
+.. _eval-cn0397-ardz:
+
+EVAL-CN0397-ARDZ
+=================
+
+Smart Agriculture Light Sensor.
+
+Overview
+--------
+
+:adi:`CN0397` is an Arduino-compatible shield optimized for smart agriculture
+using wavelength-specific photodiodes. The system detects red, blue, and green
+light regions to measure the photosynthetic response of plants.
+
+The circuit uses the :adi:`AD8500` low-power precision CMOS op-amp (1 pA input
+bias current) configured as a transimpedance amplifier and the :adi:`AD7798`
+3-channel, low-noise, 16-bit sigma-delta ADC.
+
+Required Equipment
+------------------
+
+- EVAL-CN0397-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP360` or :adi:`EVAL-ADICUP3029` development board
+- USB cable
+
+Hardware Setup
+--------------
+
+- Supports two photodiode footprints: Everlight (default, 620 nm red, 550 nm
+  green, 470 nm blue) or Hamamatsu S7505-01 3-channel RGB color sensor.
+- Chip select configurable to GPIO pins 8, 9, or 10 (default CS1 to GPIO 10).
+- Gain resistor and filter capacitor spacers (RB_SPACER, RG_SPACER, RR_SPACER,
+  CB_SPACER, CG_SPACER, CR_SPACER) for sensor customization.
+
+Software Setup
+--------------
+
+The demo firmware provides real-time light intensity measurement across three
+spectral channels via serial terminal output.
+
+Documents
+---------
+
+- :adi:`CN0397 Circuit Note <CN0397>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0397-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0397-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD8500 Product Page <AD8500>`
+- :adi:`AD7798 Product Page <AD7798>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

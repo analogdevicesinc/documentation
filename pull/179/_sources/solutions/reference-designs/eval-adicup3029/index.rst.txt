@@ -1,0 +1,60 @@
+.. _eval-adicup3029:
+
+EVAL-ADICUP3029
+================
+
+IoT Development Platform.
+
+Overview
+--------
+
+The :adi:`EVAL-ADICUP3029` is an Arduino Uno form-factor compatible development
+and prototyping platform based on the :adi:`ADuCM3029` 32-bit ARM Cortex-M3
+microcontroller. The board is designed for IoT applications with integrated
+Wi-Fi and Bluetooth 5.0 capabilities.
+
+The platform supports a wide range of PMOD and Arduino shield add-on boards
+for sensors, data acquisition, and communication.
+
+Required Equipment
+------------------
+
+- EVAL-ADICUP3029 development board
+- Micro-USB cable for power and programming
+- Optional: PMOD sensor boards (EVAL-ADT7420-PMDZ, EVAL-ADXRS290-PMDZ,
+  EVAL-AD5770R-PMDZ, etc.)
+- Optional: Arduino shield boards (EVAL-CN0394-ARDZ, EVAL-CN0395-ARDZ,
+  EVAL-CN0396-ARDZ, etc.)
+
+Hardware Setup
+--------------
+
+- Arduino Uno form-factor with standard header layout.
+- **P8** -- Standard PMOD connectors for sensor modules.
+- On-board Wi-Fi and Bluetooth 5.0 modules.
+- Micro-USB connector for power, programming, and serial communication.
+- Firmware can be flashed via drag-and-drop USB storage mode.
+
+Software Setup
+--------------
+
+CrossCore Embedded Studios (free Eclipse-based IDE from Analog Devices) is the
+primary development environment. ADuCM302x on-chip peripheral drivers and
+device driver software packs are available for supported sensors and
+peripherals.
+
+Documents
+---------
+
+- :adi:`EVAL-ADICUP3029 Product Page <EVAL-ADICUP3029>`
+
+Additional Information
+----------------------
+
+- :adi:`ADuCM3029 Product Page <ADUCM3029>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

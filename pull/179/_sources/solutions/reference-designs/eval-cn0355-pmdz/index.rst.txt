@@ -1,0 +1,74 @@
+.. _eval-cn0355-pmdz:
+
+EVAL-CN0355-PMDZ
+=================
+
+Bridge Sensor Signal Conditioner.
+
+Overview
+--------
+
+:adi:`CN0355` is a low-power signal conditioner for bridge-type sensors such as
+pressure sensors and load cells. The ratiometric design achieves accuracy
+independent of voltage reference with only three ICs and less than 1 mA current
+(excluding bridge current).
+
+The circuit processes full-scale signals from 10 mV to 1 V using an internal
+PGA and provides a dedicated temperature compensation channel. The :adi:`AD7793`
+24-bit sigma-delta ADC performs the digitization.
+
+Required Equipment
+------------------
+
+- EVAL-CN0355-PMDZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- SDP-PMD-IB1Z (SDP-to-PMOD interposer board)
+- +6 V DC power supply
+- USB cable
+- Bridge-type transducer (e.g., Honeywell NSCSANN600MGUNV)
+- 2/3/4-wire RTD sensor (optional, for temperature compensation)
+
+Hardware Setup
+--------------
+
+- **JP1** -- Jumper for +3.3 V PMOD output.
+- **P1** -- Pressure transducer connection.
+- **P2** -- RTD sensor connection (can be shorted at P9 if unused).
+- **P5, P6, P7** -- Bridge-type voltage drive configuration jumpers.
+- **P3, P4** -- RTD configuration jumpers for 2/3/4-wire modes.
+- **P8** -- Wall wart power connection.
+
+Software Setup
+--------------
+
+The evaluation software supports two calibration methods: 2-point calibration
+using datasheet values (no temperature oven required) and 4-point calibration
+requiring a temperature oven and pressure source for highest accuracy.
+
+Documents
+---------
+
+- :adi:`CN0355 Circuit Note <CN0355>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0355-PMDZ Design & Integration Files
+   <https://www.analog.com/cn0355-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7793 Product Page <AD7793>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

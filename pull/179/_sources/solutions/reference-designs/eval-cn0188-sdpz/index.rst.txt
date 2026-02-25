@@ -1,0 +1,75 @@
+.. _eval-cn0188-sdpz:
+
+EVAL-CN0188-SDPZ
+=================
+
+Current Monitoring for -48 V Systems.
+
+Overview
+--------
+
+:adi:`CN0188` monitors current in individual channels of -48 V systems to
+better than 1% accuracy, operating on a single +3.3 V supply.
+
+The circuit uses the :adi:`AD7171` very low power 16-bit sigma-delta ADC,
+the :adi:`ADuM5402` quad-channel digital isolator for optional galvanic
+isolation, the :adi:`ADA4051-2` CMOS micropower zero-drift op-amp, and the
+:adi:`ADR381` precision 2.5 V band gap voltage reference.
+
+Required Equipment
+------------------
+
+- EVAL-CN0188-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- +6 V DC power supply or wall wart
+- USB cable
+- Shunt resistor (50 mV max at maximum load current)
+- Electronic load
+
+Hardware Setup
+--------------
+
+- Connect the CN0188 board to the SDP-B board via the 120-pin CON A connector.
+- Connect shunt resistor across the input terminals with load to ground.
+- Apply +6 V power via the +6 V and GND pins (or barrel connector for wall
+  wart).
+- System ground and PCB isolated ground must be connected (test points 31
+  and 32) for correct operation.
+
+Software Setup
+--------------
+
+The evaluation software provides shunt voltage input (in millivolts),
+temperature setting for test conditions, data acquisition with sample/remove/
+save controls, and measurement output display.
+
+Documents
+---------
+
+- :adi:`CN0188 Circuit Note <CN0188>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0188-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0188-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7171 Product Page <AD7171>`
+- :adi:`ADuM5402 Product Page <ADUM5402>`
+- :adi:`ADA4051-2 Product Page <ADA4051-2>`
+- :adi:`ADR381 Product Page <ADR381>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

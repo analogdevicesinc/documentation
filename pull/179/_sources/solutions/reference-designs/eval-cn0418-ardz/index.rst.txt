@@ -1,0 +1,59 @@
+.. _eval-cn0418-ardz:
+
+EVAL-CN0418-ARDZ
+=================
+
+Analog Sensor Interface.
+
+Overview
+--------
+
+:adi:`CN0418` is an analog sensor interface circuit in Arduino shield form
+factor, designed for the :adi:`EVAL-ADICUP3029` platform. The system provides
+precision analog signal conditioning and digitization for industrial sensor
+applications.
+
+Required Equipment
+------------------
+
+- EVAL-CN0418-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP3029` development board
+- Analog sensors
+- USB cable
+
+Hardware Setup
+--------------
+
+- Connect the EVAL-CN0418-ARDZ shield to the EVAL-ADICUP3029 board via the
+  Arduino headers.
+- Connect analog sensors to the designated input terminals.
+- Connect USB from the EVAL-ADICUP3029 to PC.
+
+Software Setup
+--------------
+
+The demo firmware provides sensor data acquisition and output via serial
+terminal interface.
+
+Documents
+---------
+
+- :adi:`CN0418 Circuit Note <CN0418>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0418-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0418-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

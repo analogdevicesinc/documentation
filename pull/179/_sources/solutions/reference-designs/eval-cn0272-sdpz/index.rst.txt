@@ -1,0 +1,93 @@
+.. _eval-cn0272-sdpz:
+
+EVAL-CN0272-SDPZ
+=================
+
+High-Speed Photodiode Signal Conditioning with Dark Current Compensation.
+
+Overview
+--------
+
+:adi:`CN0272` is a high-speed photodiode signal conditioning circuit with dark
+current compensation. The circuit converts current from a high-speed silicon
+PIN photodiode and drives the inputs of a 20 MSPS ADC.
+
+The design offers spectral sensitivity from 400 nm to 1050 nm with 49 nA
+photocurrent sensitivity, 91 dB dynamic range, and 2 MHz bandwidth. It
+consumes only 40 mA from +/-5 V supplies, making it suitable for portable
+high-speed, high-resolution light intensity applications such as pulse oximetry
+and analog opto-isolators.
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-CN0272-SDPZ <CN0272>` evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- EVAL-CFTL-6V-PWRZ +6 V power supply
+- CN0272 Evaluation Software
+- USB Type-A to USB Mini-B cable
+- Light source (400 nm to 1050 nm)
+- SMB connector (optional, for external photodiode bias voltage)
+- PC with Windows XP SP2 (32-bit), 1 GHz processor, 512 MB RAM
+
+Hardware Setup
+--------------
+
+- The CN0272 board connects to the SDP-B board via the 120-pin connector
+  (**J4** to **CON A**).
+- The SDP-B board connects to the PC via USB cable.
+- Connect the +6 V supply to the barrel jack or screw terminal on the CN0272
+  board.
+- **JP1** -- Photodiode bias selection: onboard -5 V or external voltage (up
+  to 15 V via **J2** SMB connector).
+
+Software Setup
+--------------
+
+#. Extract **CN0272 Eval Software.zip** and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path
+      ``C:\Program Files\Analog Devices\CN0272\``.
+
+#. Complete the installation wizard, including SDP and ADuCM360 drivers.
+
+Using the Evaluation Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- **SDP Connector Dropdown** -- Select connector A or B.
+- **Connect to SDP-B Board** -- Establish USB connection.
+- **Take Snapshot(s)** -- Collect single or multiple snapshots at 20 MSPS.
+- **Save Snapshot(s)** -- Export data to tab-delimited ASCII spreadsheet.
+- **Acquisition Mode** -- Single or multiple snapshots (1 to 65,536).
+- **Snapshot Delay** -- 1 to 65,536 ms between captures.
+- **Tabs** -- Photocurrent Results, Histogram Results, Configure.
+
+Documents
+---------
+
+- :adi:`CN0272 Circuit Note <CN0272>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0272-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0272-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`EVAL-SDP-CB1Z Product Page <EVAL-SDP-CB1Z>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

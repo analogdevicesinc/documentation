@@ -1,0 +1,95 @@
+.. _eval-cn0271-sdpz:
+
+EVAL-CN0271-SDPZ
+=================
+
+Thermocouple Signal Conditioning with Cold Junction Compensation.
+
+Overview
+--------
+
+:adi:`CN0271` is a complete thermocouple signal conditioning circuit with cold
+junction compensation followed by a 16-bit sigma-delta ADC. It provides a
+low-cost solution for measuring K-type thermocouple temperatures.
+
+The :adi:`AD8495` thermocouple amplifier provides cold junction compensation
+with a 5 mV/°C output. The :adi:`AD8476` differential amplifier conditions the
+signal level, and the :adi:`AD7790` 16-bit sigma-delta ADC digitizes the
+measurement.
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- :adi:`EVAL-CN0271-SDPZ <CN0271>` evaluation board
+- EVAL-CFTL-6V-PWRZ +6 V power supply
+- CN0271 Evaluation Software
+- USB Type-A to USB Mini-B cable
+- K-type thermocouple millivolt source
+- K-type thermocouple male-to-male cable
+- PC with Windows XP SP2 or later, 1 GHz processor, 512 MB RAM
+
+Hardware Setup
+--------------
+
+- The CN0271 board connects to the SDP-B board via the 120-pin connector at
+  **J3** to **CON A**.
+- Power supply connects via the DC barrel jack at **J5** or screw terminal at
+  **J4**.
+- The SDP-B board connects to the PC via USB cable.
+- The thermocouple connects via connector **J1**.
+
+Software Setup
+--------------
+
+Installing the Software
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Extract **CN0271 SDP Eval Software.zip** and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path
+      ``C:\Program Files\Analog Devices\CN0271\``.
+
+#. Complete the installation wizard and SDP Drivers installation.
+
+Using the Evaluation Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- **Connect/Reconnect** -- Establish USB connection to the SDP-B board.
+- **Sample acquisition** -- Real-time data collection with configurable update
+  rate (default 120 Hz).
+- **Save Data** -- Export to tab-delimited ASCII spreadsheet.
+- **Configuration** -- Update rate, burnout current, buffer mode, and channel
+  selection.
+
+Documents
+---------
+
+- :adi:`CN0271 Circuit Note <CN0271>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0271-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0271-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD8495 Product Page <AD8495>`
+- :adi:`AD8476 Product Page <AD8476>`
+- :adi:`AD7790 Product Page <AD7790>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

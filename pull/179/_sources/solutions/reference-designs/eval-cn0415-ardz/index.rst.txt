@@ -1,0 +1,80 @@
+.. _eval-cn0415-ardz:
+
+EVAL-CN0415-ARDZ
+=================
+
+PWM Solenoid Driver.
+
+Overview
+--------
+
+:adi:`CN0415` is a robust pulse-width modulation (PWM) solenoid driver circuit
+in Arduino shield form factor. The system provides accurate, closed-loop current
+control for 2-state solenoid applications such as motion control, latches,
+clamps, brakes, clutches, and proportional valves.
+
+The circuit uses the :adi:`LTC4367` supply supervisor, :adi:`LTC4441` gate
+driver, :adi:`LTC2312-14` 14-bit ADC, :adi:`LT1671` op-amp, :adi:`LT3433`
+switching regulator, :adi:`ADG3304` logic level translator, and the
+:adi:`AD8210` current sense amplifier.
+
+Required Equipment
+------------------
+
+- EVAL-CN0415-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP3029` development board
+- 6--24 V power supply (up to 3 A)
+- Solenoid actuator (24 V max, 3 A max)
+- USB cable
+- PC with serial terminal software
+
+Hardware Setup
+--------------
+
+- **DS1--DS4** -- LED indicators for power and fault detection.
+- **P2** -- Chip select configuration (GPIO pins 6, 2, 1).
+- **P34** -- PWM selection (GPIO pins 7-7, 7-6, 7-4).
+- **JP1** -- Current monitor offset.
+- **JP2** -- ADC selection.
+- **JP3** -- Vcc supply configuration.
+- **JP5** -- Burst-mode enable.
+- **JP8** -- Overcurrent latch-off control.
+- **P6, P7** -- Hardware fault detection pins.
+
+Software Setup
+--------------
+
+The command-line interface (CLI) via serial UART provides independent control
+of initial pull-in current, pull-in time delay, and hold current. PWM duty
+cycle and frequency are directly adjustable, and programmable dither current
+reduces mechanical stiction.
+
+Documents
+---------
+
+- :adi:`CN0415 Circuit Note <CN0415>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0415-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0415-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD8210 Product Page <AD8210>`
+- :adi:`LTC4367 Product Page <LTC4367>`
+- :adi:`LTC2312-14 Product Page <LTC2312-14>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

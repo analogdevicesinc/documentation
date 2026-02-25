@@ -1,0 +1,67 @@
+.. _eval-cn0346-pmdz:
+
+EVAL-CN0346-PMDZ
+=================
+
+Capacitive Relative Humidity Measurement.
+
+Overview
+--------
+
+:adi:`CN0346` is a contactless, capacitive-based relative humidity (RH)
+measurement solution providing 2% RH accuracy over the full 0--100% RH range.
+The system is ideal for HVAC, telecom cabinets, incubators, and
+industrial/medical applications.
+
+The circuit integrates a capacitive humidity sensor with temperature
+compensation circuitry and ADC signal conversion for direct digital readout.
+
+Required Equipment
+------------------
+
+- EVAL-CN0346-PMDZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- SDP-PMD-IB1Z (SDP-to-PMOD interposer board)
+- +6 V power supply
+- USB cable
+- Boveda calibration packs or humidity-controlled environment (for calibration)
+
+Hardware Setup
+--------------
+
+- Connect EVAL-CN0346-PMDZ to SDP-B board via the interposer and 120-pin
+  connector.
+- Apply +6 V power.
+- Place sensor in humidity-controlled environment for calibration.
+
+Software Setup
+--------------
+
+The evaluation software provides real-time humidity readout with a calibration
+tab for entering minimum and maximum humidity points and corresponding
+capacitance values. CAPDAC value calculation is supported for sensor
+optimization. An external LCR meter can be used to measure sensor capacitance
+for calibration reference.
+
+Documents
+---------
+
+- :adi:`CN0346 Circuit Note <CN0346>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0346-PMDZ Design & Integration Files
+   <https://www.analog.com/cn0346-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

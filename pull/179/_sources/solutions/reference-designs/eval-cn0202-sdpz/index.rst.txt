@@ -1,0 +1,80 @@
+.. _eval-cn0202-sdpz:
+
+EVAL-CN0202-SDPZ
+=================
+
+Flexible Programmable Analog Output with Precision Reference.
+
+Overview
+--------
+
+:adi:`CN0202` is a full-function, flexible, programmable analog output solution
+for PLC and DCS applications with 16-bit resolution, 0.05% linearity, and
+industrial-grade protection features.
+
+The circuit uses the :adi:`AD5750` single-channel precision voltage/current
+output driver, the :adi:`AD5662` single-channel nanoDAC with rail-to-rail
+buffered output, and the :adi:`ADR444` 4.096 V precision voltage reference.
+
+Required Equipment
+------------------
+
+- EVAL-CN0202-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- Triple-output DC power supply (+15 V, -15 V, +6 V)
+- USB cable
+- Digital multimeter for verification (optional)
+
+Hardware Setup
+--------------
+
+- **CN1** -- Terminal block for ±15 V power supply input.
+- **CN2** -- Terminal block for +6 V power supply input.
+- **CN3** -- Terminal block for voltage output.
+- **CN4** -- Terminal block for current output.
+- Jumper settings at P1, JP1, JP3, and JP4 for configuration.
+
+Voltage output ranges: 0--5 V, 0--10 V, ±5 V, ±10 V (with 20% overrange).
+Current output ranges: 4--20 mA, 0--20 mA, ±20 mA, 0--24 mA, ±24 mA
+(with 2% overrange options).
+
+.. important::
+
+   Power the CN0202 and SDP-B boards separately before connecting them.
+
+Software Setup
+--------------
+
+The evaluation software provides AD5750 configuration with range selection,
+output setting via hex value input, and fault indicators for Vout, Iout,
+over temperature, and PEC error conditions.
+
+Documents
+---------
+
+- :adi:`CN0202 Circuit Note <CN0202>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0202-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0202-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD5750 Product Page <AD5750>`
+- :adi:`AD5662 Product Page <AD5662>`
+- :adi:`ADR444 Product Page <ADR444>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

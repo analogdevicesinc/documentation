@@ -1,0 +1,75 @@
+.. _eval-cn0274-sdpz:
+
+EVAL-CN0274-SDPZ
+=================
+
+Ultra-Low Power Motion Switch.
+
+Overview
+--------
+
+:adi:`CN0274` is an ultra-low power standalone motion switch using a tri-axis
+accelerometer for activity/inactivity detection to control power distribution.
+The system enables battery-operated motion-activated applications with minimal
+standby current.
+
+The circuit uses the :adi:`ADXL362` tri-axis ultra-low power digital
+accelerometer with integrated activity/inactivity detection and the
+:adi:`ADP195` logic-controlled high-side power switch, communicating via SPI.
+
+Required Equipment
+------------------
+
+- EVAL-CN0274-SDPZ evaluation board
+- EVAL-SDP-CS1Z controller board (SDP-S board)
+- 2 AAA batteries or +3.0 V supply
+- USB cable
+
+Hardware Setup
+--------------
+
+- Insert two AAA batteries with correct polarity into the connector on the
+  bottom of the EVAL-CN0274-SDPZ.
+- Connect the EVAL-SDP-CS1Z and EVAL-CN0274-SDPZ using the 120-pin
+  connectors.
+- Connect USB cable from EVAL-SDP-CS1Z (J2) to PC.
+
+Software Setup
+--------------
+
+The evaluation software provides real-time acceleration data plotting with
+X/Y/Z axis display controls. Configuration parameters include activity
+threshold, inactivity threshold, inactivity time (in samples), and measurement
+range (±2g, ±4g, ±8g).
+
+LED indicator shows device state: green for active, red for inactive. Data can
+be saved while the display is running.
+
+Documents
+---------
+
+- :adi:`CN0274 Circuit Note <CN0274>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0274-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0274-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADXL362 Product Page <ADXL362>`
+- :adi:`ADP195 Product Page <ADP195>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

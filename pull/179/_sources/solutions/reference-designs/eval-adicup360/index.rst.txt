@@ -1,0 +1,58 @@
+.. _eval-adicup360:
+
+EVAL-ADICUP360
+===============
+
+Precision Analog Microcontroller Development Platform.
+
+Overview
+--------
+
+The :adi:`EVAL-ADICUP360` is an Arduino Uno form-factor development and
+prototyping platform based on the :adi:`ADuCM360` precision analog
+microcontroller with dual 24-bit sigma-delta ADCs and ARM Cortex-M3 processor.
+
+The board supports a wide range of Arduino shield add-on boards for sensor
+conditioning, data acquisition, and environmental monitoring applications.
+
+Required Equipment
+------------------
+
+- EVAL-ADICUP360 development board
+- Micro-USB cable for power and programming
+- Optional: Arduino shield boards (EVAL-CN0216-ARDZ, EVAL-CN0338-ARDZ,
+  EVAL-CN0394-ARDZ, EVAL-CN0396-ARDZ, EVAL-CN0397-ARDZ, EVAL-CN0398-ARDZ,
+  EVAL-ADXL362-ARDZ, etc.)
+
+Hardware Setup
+--------------
+
+- **DEBUG USB** -- Micro-USB port for programming and debugging.
+- **USER USB** -- Micro-USB port for serial communication.
+- Arduino Uno form-factor with standard header layout.
+- Configurable jumper settings for different shield configurations.
+- Supports both drag-and-drop binary programming and CrossCore Embedded Studio
+  development.
+
+Software Setup
+--------------
+
+CrossCore Embedded Studio (free Eclipse-based IDE from Analog Devices) is the
+primary development environment. The ADuCM36x Device Family Pack (DFP) and
+CMSIS ARM Pack are required for development.
+
+Documents
+---------
+
+- :adi:`EVAL-ADICUP360 Product Page <EVAL-ADICUP360>`
+
+Additional Information
+----------------------
+
+- :adi:`ADuCM360 Product Page <ADUCM360>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

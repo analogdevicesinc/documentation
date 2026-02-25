@@ -1,0 +1,73 @@
+.. _eval-cn0354-pmdz:
+
+EVAL-CN0354-PMDZ
+=================
+
+Low Power 4-Channel Thermocouple Measurement.
+
+Overview
+--------
+
+:adi:`CN0354` is a flexible, 4-channel, low power thermocouple measurement
+circuit with cold junction compensation (0--50 deg C range). The system achieves
+noise-free resolution better than 0.1 deg C with overall power consumption
+less than 8 mW.
+
+The circuit uses the :adi:`ADG1609` CMOS multiplexer for channel selection,
+the :adi:`AD8495` precision instrumentation amplifier for thermocouple signal
+conditioning, and the :adi:`AD7787` 24-bit sigma-delta ADC for digitization.
+
+Required Equipment
+------------------
+
+- EVAL-CN0354-PMDZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- SDP-PMD-IB1Z (SDP-to-PMOD interposer board)
+- EVAL-CFTL-6V-PWRZ (+6 V power supply) or equivalent
+- USB cable
+- K-type thermocouple sources and wire
+
+Hardware Setup
+--------------
+
+- 4 thermocouple inputs at isothermal block P2.
+- Reference thermocouple (+TREF-) placed near U4.
+- 120-pin connectors for board stacking with interposer.
+- Measurement range: -25 deg C to +400 deg C.
+
+Software Setup
+--------------
+
+The evaluation software provides real-time temperature data with non-linearity
+correction reducing error to less than 0.5 deg C over 900 deg C range. Data
+export and multi-channel display are supported via the GUI.
+
+Documents
+---------
+
+- :adi:`CN0354 Circuit Note <CN0354>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0354-PMDZ Design & Integration Files
+   <https://www.analog.com/cn0354-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADG1609 Product Page <ADG1609>`
+- :adi:`AD8495 Product Page <AD8495>`
+- :adi:`AD7787 Product Page <AD7787>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

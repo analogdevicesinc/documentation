@@ -1,0 +1,70 @@
+.. _eval-cn0178-sdpz:
+
+EVAL-CN0178-SDPZ
+=================
+
+Wideband RF Power Detector.
+
+Overview
+--------
+
+:adi:`CN0178` measures RMS signal strength of RF signals with varying crest
+factors over approximately 65 dB dynamic range, operating from 50 MHz to 9 GHz.
+
+The circuit uses the :adi:`ADL5902` TruPwr RF power detector (50 MHz to 9 GHz,
+-62 dBm to +3 dBm input range) and the :adi:`AD7466` 12-bit high-speed
+successive approximation ADC (200 kSPS).
+
+Required Equipment
+------------------
+
+- EVAL-CN0178-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- +6 V power supply or wall wart
+- USB cable
+- RF signal source
+- Coaxial RF cable with SMA connectors
+
+Hardware Setup
+--------------
+
+- Connect 120-pin connector on EVAL-CN0178-SDPZ to CON A on SDP-B board.
+- **J1** -- +6 V terminal block.
+- **J2** -- +6 V barrel connector for wall wart.
+- **J3** -- SMA connector for RF input.
+
+Software Setup
+--------------
+
+The evaluation software provides 4-point calibration using known signal levels,
+data acquisition with sample/remove/clear/save controls, and analysis with
+XY plot of ADC code vs. output error.
+
+Documents
+---------
+
+- :adi:`CN0178 Circuit Note <CN0178>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0178-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0178-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADL5902 Product Page <ADL5902>`
+- :adi:`AD7466 Product Page <AD7466>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

@@ -1,0 +1,54 @@
+.. _pmd-rpi-intz:
+
+PMD-RPI-INTZ
+=============
+
+Raspberry Pi PMOD Adapter Board.
+
+Overview
+--------
+
+The PMD-RPI-INTZ is an add-on adapter board (HAT-compatible) for Raspberry Pi
+that provides interfaces for up to 4 PMOD boards (2 SPI, 2 I2C), 1 QuikEval
+demo board, and 1 DC1613A-compatible demo board. An ID EEPROM enables
+auto-configuration.
+
+Required Equipment
+------------------
+
+- PMD-RPI-INTZ adapter board
+- Raspberry Pi (40-pin GPIO header compatible)
+- PMOD devices (SPI or I2C compatible, 3.3 V logic only)
+- Optional: QuikEval or DC1613A demo boards
+
+Hardware Setup
+--------------
+
+- **P1, P2** -- SPI PMOD connectors (2x6 female headers).
+- **P3, P4** -- I2C PMOD connectors (2x6 female headers).
+- **P5** -- QuikEval demo board connector with SPI/I2C switch (SW1).
+- **P6** -- DC1613A-compatible connector.
+- **P9** -- 40-pin Raspberry Pi GPIO connector.
+
+.. note::
+
+   No level translation is provided. Only 3.3 V compatible devices are
+   supported.
+
+Software Setup
+--------------
+
+Linux device drivers for PMOD devices are supported via the IIO framework.
+Auto-configuration is enabled via the ID EEPROM. Compatible with PyADI-IIO
+and IIO Oscilloscope for data visualization.
+
+Additional Information
+----------------------
+
+- :adi:`PMD-RPI-INTZ Product Page <PMD-RPI-INTZ>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

@@ -1,0 +1,72 @@
+.. _eval-cn0251-sdpz:
+
+EVAL-CN0251-SDPZ
+=================
+
+Flexible Wide Dynamic Range Signal Conditioner.
+
+Overview
+--------
+
+:adi:`CN0251` is a flexible signal conditioning circuit for processing signals
+of wide dynamic range (several mV to 20 V peak-to-peak), with programmable gain
+amplifier and level shifting.
+
+The circuit uses the :adi:`AD7192` precision sigma-delta ADC with programmable
+gain and the :adi:`AD8475` fully-differential attenuating amplifier for signal
+conditioning.
+
+Required Equipment
+------------------
+
+- EVAL-CN0251-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- +6 V power supply
+- ±15 V dual power supply
+- USB cable
+- :adi:`ADALM2000` measuring instrument (optional, for signal generation)
+
+Hardware Setup
+--------------
+
+- **J5** -- 120-pin connector to SDP-B board.
+- **J3** -- +6 V power supply screw terminals.
+- **J4** -- ±15 V power supply screw terminals.
+- **JP1, JP2** -- Configure analog inputs (single-ended or differential).
+- **JP3, JP4** -- Configure AD8475 gain (0.4x or 0.8x).
+
+Software Setup
+--------------
+
+The evaluation software provides channel selection, input range configuration,
+display units conversion, and data export to tab-delimited ASCII files. Signal
+generation can be driven by the ADALM2000 with Scopy software.
+
+Documents
+---------
+
+- :adi:`CN0251 Circuit Note <CN0251>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0251-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0251-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7192 Product Page <AD7192>`
+- :adi:`AD8475 Product Page <AD8475>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

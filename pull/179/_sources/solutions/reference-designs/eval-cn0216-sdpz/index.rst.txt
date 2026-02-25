@@ -1,0 +1,72 @@
+.. _eval-cn0216-sdpz:
+
+EVAL-CN0216-ARDZ
+=================
+
+Precision Weigh Scale Signal Conditioner.
+
+Overview
+--------
+
+:adi:`CN0216` is a precision weigh scale signal conditioning system using
+24-bit sigma-delta ADC technology with ultra-low noise amplifiers. The circuit
+achieves 15.3-bit noise-free code resolution for 10 mV full-scale load cell
+output.
+
+The circuit uses the :adi:`AD7791` low-power buffered 24-bit sigma-delta ADC
+and the :adi:`ADA4528-2` dual external zero-drift amplifiers for signal
+amplification.
+
+Required Equipment
+------------------
+
+- EVAL-CN0216-ARDZ evaluation board (Arduino shield)
+- Arduino Uno or :adi:`EVAL-ADICUP360` development board
+- USB cable (Mini-B)
+- DC power supply (+5 V via VIN connector)
+- Load cell (4-wire or 6-wire, e.g., Tedea-Huntleigh Model 1042)
+
+Hardware Setup
+--------------
+
+- Power must be applied via the VIN connector on the Arduino header (>5 V
+  required for bridge drive; USB alone is insufficient).
+- Sensor connector accepts 8-pin connector for load cell wiring (±Excitation,
+  ±Signal, ±Sense pins).
+- **P1, P2** -- Jumpers for 4-wire or 6-wire load cell configuration.
+- Chip select configurable to Digital Pin 8, 9, or 10.
+
+Software Setup
+--------------
+
+Demo software is available for both the ADICUP360 and Arduino Uno platforms,
+providing real-time weight measurement and calibration.
+
+Documents
+---------
+
+- :adi:`CN0216 Circuit Note <CN0216>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0216-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0216-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7791 Product Page <AD7791>`
+- :adi:`ADA4528-2 Product Page <ADA4528-2>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

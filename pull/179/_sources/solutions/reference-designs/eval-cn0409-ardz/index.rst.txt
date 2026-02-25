@@ -1,0 +1,74 @@
+.. _eval-cn0409-ardz:
+
+EVAL-CN0409-ARDZ
+=================
+
+Water Turbidity Measurement System.
+
+Overview
+--------
+
+:adi:`CN0409` uses the :adi:`ADPD105` photometric front end with an 860 nm
+infrared LED and silicon PIN photodiode network to measure water turbidity
+levels from 0 to 1000 FTU (Formazin Turbidity Units). The system supports two
+ISO 7027 turbidity measurement standards (ratio and non-ratio methods) plus the
+GLI method.
+
+With three-point calibration, typical accuracy is +/-0.50 FTU or +/-5% of
+reading (whichever is greater), with a 0.05 FTU noise level. The photodiodes
+are positioned at 90 degrees and 180 degrees to the LED for nephelometric and
+transmission measurements respectively.
+
+Required Equipment
+------------------
+
+- EVAL-CN0409-ARDZ evaluation board
+- :adi:`EVAL-ADICUP3029` controller board (or ADICUP360)
+- PC with USB support
+- LaMotte-style test vials
+- Calibration solutions (e.g., HI88703-11, Oakton T100, or Cole Parmer kit)
+
+Hardware Setup
+--------------
+
+- IR LEDs and photodiode detectors (DS1, DS2) positioned at 90 degrees and
+  180 degrees.
+- Mechanical vial holder for LaMotte-style test vials.
+- Shield attaches to the :adi:`EVAL-ADICUP3029` controller board.
+
+Software Setup
+--------------
+
+The ADICUP3029 + CN0409 Demo software is available for turbidity measurement
+and calibration. Calibration points can be set using standard solutions at
+values such as 0.10, 15.0, 100, 750, and 2000 NTU.
+
+Documents
+---------
+
+- :adi:`CN0409 Circuit Note <CN0409>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0409-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0409-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
+
+Additional Information
+----------------------
+
+- :adi:`ADPD105 Product Page <ADPD105>`
+- :adi:`EVAL-ADICUP3029 Product Page <EVAL-ADICUP3029>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

@@ -1,0 +1,72 @@
+.. _eval-cn0235-sdpz:
+
+EVAL-CN0235-SDPZ
+=================
+
+Isolated Lithium Ion Battery Monitoring System.
+
+Overview
+--------
+
+:adi:`CN0235` is a fully isolated lithium ion battery monitoring system for
+monitoring individual cells in battery stacks to enhance efficiency, prolong
+battery life, and ensure safety.
+
+The circuit uses the :adi:`AD7280A` 6-channel primary monitor ADC for cell
+voltage measurement and the :adi:`AD8280` 6-channel secondary monitor and
+protection system for redundant safety monitoring.
+
+Required Equipment
+------------------
+
+- EVAL-CN0235-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- +6 V wall wart power supply
+- USB cable
+- Lithium ion battery stack
+
+Hardware Setup
+--------------
+
+- Connect the CN0235 board to the SDP-B board via the 120-pin SMD connector.
+- Power the board via +6 V wall wart through barrel jack.
+- Battery stack connects to VIN0--VIN6 (single device) or VIN7--VIN12
+  (dual device configuration).
+- Multiple jumpers configure AD8280 and AD7280A settings (thermistor type,
+  alarm selection, deglitch time, cell count).
+
+Software Setup
+--------------
+
+The evaluation software provides real-time ADC reads, hardware/software power
+down modes, AD8280 control, and data saving. Tabs for voltage, temperature,
+AD7280A configuration, and advanced settings are available.
+
+Documents
+---------
+
+- :adi:`CN0235 Circuit Note <CN0235>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0235-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0235-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7280A Product Page <AD7280A>`
+- :adi:`AD8280 Product Page <AD8280>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

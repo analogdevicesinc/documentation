@@ -1,0 +1,75 @@
+.. _eval-cn0590-ardz:
+
+EVAL-CN0590-EBZ
+================
+
+Galvanic Isolation of USB High Speed Type-C.
+
+Overview
+--------
+
+:adi:`CN0590` provides a completely isolated connection between a USB 2.0 host
+and a USB 2.0 device. The system is rated up to 2.5 kV RMS isolation voltage
+per UL 1577 with 3.1 mm system creepage and clearance, suitable for functional
+isolation or basic/reinforced 300 V RMS Cat II isolation per IEC 61010 and
+IEC 62368.
+
+The circuit uses the :adi:`ADuM3166` USB 2.0 high-speed digital isolator for
+data isolation, the :adi:`ADuM3070` regulated DC-to-DC isolated power supply
+controller with external transformer for power isolation, the :adi:`MAX77958`
+USB Type-C controller, :adi:`MAX20333` power path selector, :adi:`ADuM1252`
+bidirectional I2C isolator, and :adi:`MAX14606` dual power source management
+ICs with reverse polarity, overvoltage, and overcurrent protections.
+
+Required Equipment
+------------------
+
+- EVAL-CN0590-EBZ evaluation board
+- USB Type-C cables
+- USB 2.0 host and device
+
+Hardware Setup
+--------------
+
+- USB Type-C receptacle on primary side for host connection.
+- USB Type-C receptacle on secondary side for optional external power.
+- High efficiency 2.5 W isolated power (no external power required for
+  standard operation).
+- Automatic power path selection with integrated protections.
+- Small form factor with 2.5 kV RMS isolation.
+
+Software Setup
+--------------
+
+No evaluation software is required. The board operates transparently as a
+USB 2.0 high-speed isolated retimer between host and device.
+
+Documents
+---------
+
+- :adi:`CN0590 Circuit Note <CN0590>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0590-EBZ Design & Integration Files
+   <https://www.analog.com/cn0590-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADuM3166 Product Page <ADUM3166>`
+- :adi:`ADuM3070 Product Page <ADUM3070>`
+- :adi:`MAX77958 Product Page <MAX77958>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

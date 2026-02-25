@@ -1,0 +1,77 @@
+.. _eval-cn0343-sdpz:
+
+EVAL-CN0343-SDPZ
+=================
+
+Ultrasonic Distance Measurement System.
+
+Overview
+--------
+
+:adi:`CN0343` is a completely self-contained ultrasonic distance sensor
+combining a precision transmitter, sensitive analog receiver, and precision
+analog microcontroller to provide distance measurements. The system achieves
+approximately 50 cm to 10 m range with about 2 cm resolution, with built-in
+temperature compensation via the :adi:`ADuC7126` integrated temperature sensor.
+
+The :adi:`ADuC7126` precision analog microcontroller provides integrated ADC
+and temperature sensing. Multiple units can communicate via RS-485 using the
+:adi:`ADM3483` transceiver.
+
+Required Equipment
+------------------
+
+- EVAL-CN0343-EB1Z evaluation board
+- EVAL-CFTL-6V-PWRZ +6 V power supply or equivalent
+- PC with USB interface (optional, for firmware development)
+- SEGGER J-Link debug probe (optional, for firmware programming)
+- Keil Embedded Development Tools IDE (optional, for custom firmware)
+
+Hardware Setup
+--------------
+
+- **J1** -- Power supply connector (+6 V DC input)
+- **J2** -- RS-485 communication interface connector (twisted pair, half-duplex)
+- **J3** -- :adi:`ADuC7126` JTAG/SWD debug interface (20-pin, J-Link compatible)
+- **R1** -- LCD contrast adjustment potentiometer
+- Six tactile buttons: UP, DOWN, LEFT, RIGHT, OK, CANCEL
+
+Software
+--------
+
+The CN0343 operates in standalone mode with built-in LCD display and button
+navigation (SPLASH, MEASURING, MENU, SETTINGS states). Multiple units can
+connect via RS-485 network (address range 1--255, baud rates 75 bps to
+250 kbps). Custom firmware can be developed with Keil IDE and debugged via
+SEGGER J-Link.
+
+Documents
+---------
+
+- :adi:`CN0343 Circuit Note <CN0343>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0343-EB1Z Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0343-DesignSupport.zip>`__
+
+   - Schematics
+   - Gerber Files
+   - PADS Layout
+   - Bill of Materials
+   - Source Code
+
+Additional Information
+----------------------
+
+- :adi:`ADuC7126 Product Page <ADUC7126>`
+- :adi:`ADM3483 Product Page <ADM3483>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

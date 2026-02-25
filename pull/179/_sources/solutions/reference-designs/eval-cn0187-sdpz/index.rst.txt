@@ -1,0 +1,74 @@
+.. _eval-cn0187-sdpz:
+
+EVAL-CN0187-SDPZ
+=================
+
+RF Power Measurement with Crest Factor.
+
+Overview
+--------
+
+:adi:`CN0187` is a crest factor, peak, and RMS RF power measurement circuit
+optimized for high speed, low power, and single 3.3 V supply operation. The
+system measures peak and RMS power at RF frequencies from 450 MHz to 6 GHz
+over approximately 45 dB dynamic range.
+
+The circuit uses the :adi:`AD629` difference amplifier, :adi:`AD8622` dual
+precision rail-to-rail op-amp, :adi:`AD8475` fully-differential attenuating
+amplifier, :adi:`AD7170` 12-bit sigma-delta ADC, :adi:`ADuM5402` quad-channel
+digital isolator, and the :adi:`ADR435` precision voltage reference.
+
+Required Equipment
+------------------
+
+- EVAL-CN0187-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- +6 V power supply or wall wart
+- USB cable
+- RF signal source (>6 GHz capable)
+- Coaxial RF cable with SMA connectors
+
+Hardware Setup
+--------------
+
+- Connect 120-pin connector from EVAL-CN0187-SDPZ to CON A on SDP-B board.
+- Connect RF signal source via SMA RF input connector.
+- Apply +6 V power to the +6 V and GND pins (or use barrel jack with wall
+  wart).
+
+Software Setup
+--------------
+
+The evaluation software provides calibration, power measurement, and graphical
+output in dBm, Vrms, and crest factor units.
+
+Documents
+---------
+
+- :adi:`CN0187 Circuit Note <CN0187>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0187-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0187-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD629 Product Page <AD629>`
+- :adi:`AD8622 Product Page <AD8622>`
+- :adi:`AD8475 Product Page <AD8475>`
+- :adi:`ADuM5402 Product Page <ADUM5402>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

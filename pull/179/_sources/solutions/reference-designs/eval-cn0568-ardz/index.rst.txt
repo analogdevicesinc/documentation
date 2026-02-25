@@ -1,0 +1,76 @@
+.. _eval-cn0568-ardz:
+
+EVAL-CN0568-ARDZ
+=================
+
+Ultra-Fast Switching PLL and Quadband VCO Frequency Synthesizer.
+
+Overview
+--------
+
+:adi:`CN0568` is a complete frequency synthesizer solution with quadband VCO
+and ultra-fast switching PLL, including supply regulators and control circuitry
+with phase resync capability.
+
+The circuit uses the :adi:`ADF41513` PLL frequency synthesizer, quadband VCOs
+(:adi:`HMC8074`, :adi:`HMC8362`, or :adi:`HMC8364`), the :adi:`LT3045` linear
+regulator, and the :adi:`ADG1604` multiplexer.
+
+Required Equipment
+------------------
+
+- EVAL-CN0568-ARDZ evaluation board (mounted on SDP-K1)
+- SDP-K1 controller board
+- Spectrum analyzer
+- 50 Ohm RF/microwave cable with 2.92 mm connectors
+- BNC to SMA adapters
+- USB cable
+
+Hardware Setup
+--------------
+
+- Evaluation board mounts to the Arduino header of the SDP-K1.
+- **J1** -- +5 V power connection (current limit 200 mA).
+- **V+SMA** -- +25 V connection (current limit 20 mA).
+- **RFOUT** -- 50 Ohm 2.92 mm RF output to spectrum analyzer.
+- Dual board configuration possible via stacked Arduino header connection.
+
+Software Setup
+--------------
+
+The evaluation software provides graphical control with reference configuration,
+frequency and phase control, hop function for frequency hopping between two
+frequencies, and advanced PLL settings. Firmware is loaded by drag-and-drop of
+the .hex file to the SDP-K1 drive.
+
+Documents
+---------
+
+- :adi:`CN0568 Circuit Note <CN0568>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0568-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0568-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADF41513 Product Page <ADF41513>`
+- :adi:`HMC8074 Product Page <HMC8074>`
+- :adi:`HMC8362 Product Page <HMC8362>`
+- :adi:`LT3045 Product Page <LT3045>`
+- :adi:`ADG1604 Product Page <ADG1604>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

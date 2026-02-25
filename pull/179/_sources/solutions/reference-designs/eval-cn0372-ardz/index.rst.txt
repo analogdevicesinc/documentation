@@ -1,0 +1,71 @@
+.. _eval-cn0372-ardz:
+
+EVAL-CN0372-ARDZ
+=================
+
+Precision Waveform Generator with Energy Harvesting.
+
+Overview
+--------
+
+:adi:`CN0372` is an evaluation board for a precision waveform generator
+solution with battery-backed standalone operation, programmable amplitude and
+frequency control, and integrated power management.
+
+The circuit uses the :adi:`AD7091R-5` 12-bit SAR ADC, :adi:`ADA4805-1` low
+power op-amp, :adi:`ADP5090` ultralow power energy harvester, and
+:adi:`ADP1607` boost converter. A CR2032 battery provides optional standalone
+cold-start operation.
+
+Required Equipment
+------------------
+
+- EVAL-CN0372-ARDZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- USB connection to PC
+- CR2032 battery (optional, for standalone operation)
+
+Hardware Setup
+--------------
+
+- CR2032 battery connector for input/cold start of the :adi:`ADP5090` boost
+  converter.
+- 120-pin connector to SDP-B board.
+- Switch configuration for selecting operating modes.
+
+Software Setup
+--------------
+
+The GUI software provides waveform generation control, programmable amplitude
+and frequency display, and FFT spectral analysis.
+
+Documents
+---------
+
+- :adi:`CN0372 Circuit Note <CN0372>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0372-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0372-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7091R-5 Product Page <AD7091R-5>`
+- :adi:`ADA4805-1 Product Page <ADA4805-1>`
+- :adi:`ADP5090 Product Page <ADP5090>`
+- :adi:`ADP1607 Product Page <ADP1607>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

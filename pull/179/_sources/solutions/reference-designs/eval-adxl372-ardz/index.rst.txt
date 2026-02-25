@@ -1,0 +1,60 @@
+.. _eval-adxl372-ardz:
+
+EVAL-ADXL372-ARDZ
+==================
+
+Ultralow Power Impact Measurement.
+
+Overview
+--------
+
+The :adi:`EVAL-ADXL372-ARDZ` is an Arduino shield evaluation board for the
+:adi:`ADXL372` ultralow power, 3-axis, ±200g MEMS accelerometer. The sensor
+draws only 22 uA at 3200 Hz ODR and operates in an "Instant On" mode, remaining
+powered down until an impact event triggers measurement.
+
+The ADXL372 provides 12-bit output data at 100 mg/LSB scale factor with deep
+FIFO, activity detection modes, and multimode operation via SPI interface.
+
+Required Equipment
+------------------
+
+- EVAL-ADXL372-ARDZ evaluation board (Arduino shield)
+- Arduino Uno Rev 3 or :adi:`EVAL-ADICUP3029` development board
+- USB cable
+
+Hardware Setup
+--------------
+
+- Plug the EVAL-ADXL372-ARDZ shield onto the Arduino Uno or ADICUP3029 by
+  matching POWER, ANALOG, DIGI0, DIGI1 connectors.
+- Configure jumpers P10, P11, P12 to Pin 1-2 positions.
+- Connect USB cable from the base board to PC.
+- INT1 on Pin 7, INT2 on Pin 5.
+
+Software Setup
+--------------
+
+For Arduino Uno, load the ADXL372_example sketch via the Arduino IDE.
+Activity threshold (ACT_VALUE) and inactivity timer (INACT_TIMER) are
+configurable in ADXL372.h. Serial output at 9600 baud. Source code is
+available on GitHub.
+
+For EVAL-ADICUP3029, use CrossCore Embedded Studios with the ADXL372 demo
+project.
+
+Documents
+---------
+
+- :adi:`ADXL372 Datasheet <ADXL372>`
+
+Additional Information
+----------------------
+
+- :adi:`ADXL372 Product Page <ADXL372>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

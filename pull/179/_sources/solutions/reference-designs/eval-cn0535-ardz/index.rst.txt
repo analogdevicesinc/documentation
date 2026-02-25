@@ -1,0 +1,80 @@
+.. _eval-cn0535-ardz:
+
+EVAL-CN0535-FMCZ
+=================
+
+High-Performance Flexible Data Acquisition System.
+
+Overview
+--------
+
+:adi:`CN0535` is a flexible, wide-bandwidth data acquisition platform with
+programmable gain amplifier, precision analog filtering, and 24-bit SAR ADC
+optimized for both AC and DC measurements. The system features low
+input-referred noise and high common-mode rejection for demanding sensor
+applications.
+
+The :adi:`AD7768-1` 24-bit sigma-delta ADC provides the measurement, the
+:adi:`LTC6373` programmable gain instrumentation amplifier sets the input range,
+the :adi:`ADA4945-1` differential ADC driver conditions the signal, and the
+:adi:`ADR444` provides the precision voltage reference. Power management uses
+the :adi:`ADP2300` buck converter, :adi:`ADP7182` LDO, and :adi:`LT3095`
+ultralow noise LDO.
+
+Required Equipment
+------------------
+
+- EVAL-CN0535-FMCZ circuit evaluation board
+- EVAL-SDP-CH1Z system demonstration platform board
+- 12 V DC power supply
+- USB cable
+- Signal source (e.g., AP2700 signal generator)
+
+Hardware Setup
+--------------
+
+- **J3, J4** -- SMB connectors for differential input signals.
+- **P7** -- Pin header for direct wire connections.
+- **S2** -- Gain configuration switch for system gain/attenuation selection
+  (0.5 V to 12 V input ranges).
+- ADC driver mode configuration switch for :adi:`ADA4945-1` buffer settings.
+
+Software Setup
+--------------
+
+The :adi:`AD7768-1` evaluation board software provides a comprehensive GUI for
+ADC register configuration (input/reference buffer control, digital filter
+selection, MCLK divider, fast/median/low power modes), FFT spectral analysis,
+and time-domain waveform display.
+
+Documents
+---------
+
+- :adi:`CN0535 Circuit Note <CN0535>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0535-FMCZ Design & Integration Files
+   <https://www.analog.com/cn0535-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7768-1 Product Page <AD7768-1>`
+- :adi:`LTC6373 Product Page <LTC6373>`
+- :adi:`ADA4945-1 Product Page <ADA4945-1>`
+- :adi:`ADR444 Product Page <ADR444>`
+- :adi:`ADP2300 Product Page <ADP2300>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

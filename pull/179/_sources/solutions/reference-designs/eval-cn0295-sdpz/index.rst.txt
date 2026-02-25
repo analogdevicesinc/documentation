@@ -1,0 +1,70 @@
+.. _eval-cn0295-sdpz:
+
+EVAL-CN0295-SDPZ
+=================
+
+Flexible 4--20 mA Pressure Sensor Transmitter.
+
+Overview
+--------
+
+:adi:`CN0295` is a flexible 4 mA to 20 mA pressure sensor transmitter that
+converts the differential voltage output from a pressure sensor to a 4--20 mA
+current output. The circuit is optimized for bridge-based voltage or current
+driven pressure sensors with total unadjusted error less than 1%. Loop supply
+voltage range is 7 V to 36 V.
+
+The input is ESD-protected and rated for over-voltage conditions. The circuit
+supports both voltage drive and current drive modes selectable via switch S1.
+
+Required Equipment
+------------------
+
+- EVAL-CN0295-EB1Z evaluation board
+- Power supply: +7 V to +24 V
+- Agilent 3458A or equivalent current meter
+- Differential pressure sensor or equivalent dual-channel DC signal source
+
+Hardware Setup
+--------------
+
+- **J3** -- 4-channel screw terminal for bridge-type sensor connection (Vsense
+  and V/Iforce pins).
+- **J2** -- Power supply connection (+7 V to +24 V, minimum 7 V for headroom).
+- **S1** -- Switch for selecting voltage vs. current drive mode.
+
+  - Voltage drive: VDRIVE = 10 V, supply must be >10.2 V.
+  - Current drive: supply must be >11.2 V minimum.
+
+- **R14** -- 500 Ohm onboard load resistor (desolderable for custom load).
+- **P1** -- Terminal block for output voltage measurement across 250 Ohm series
+  resistor.
+- **J1** -- Male header for shunt current measurement.
+
+.. note::
+
+   No evaluation software is required. This is a hardware evaluation board
+   with direct measurements via a current meter or multimeter.
+
+Documents
+---------
+
+- :adi:`CN0295 Circuit Note <CN0295>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0295-EB1Z Design & Integration Files
+   <https://www.analog.com/cn0295-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

@@ -1,0 +1,81 @@
+.. _eval-cn0396-ardz:
+
+EVAL-CN0396-ARDZ
+=================
+
+Portable Electrochemical Gas Detector.
+
+Overview
+--------
+
+:adi:`CN0396` is a single-supply, low noise portable gas detector using a
+4-electrode electrochemical sensor for simultaneous detection of two distinct
+gases. The system interfaces with a CO-H2S sensor for combined carbon monoxide
+and hydrogen sulfide measurement.
+
+The circuit uses the :adi:`ADA4528-2` dual auto-zero amplifier for low-noise
+signal conditioning, the :adi:`AD5270` programmable rheostat for sensor biasing,
+the :adi:`ADR3412` precision low-noise voltage reference, the :adi:`AD7790`
+16-bit sigma-delta ADC, and the :adi:`ADT7310` 16-bit digital temperature
+sensor.
+
+Required Equipment
+------------------
+
+- EVAL-CN0396-ARDZ evaluation board
+- :adi:`EVAL-ADICUP360` development board or Arduino R3 compatible processor
+- 4-electrode electrochemical gas sensor (CO-H2S sensor included)
+- 6 V power supply or USB
+- USB cable
+- PC with serial terminal software (PuTTY, Tera Term, or similar)
+
+Hardware Setup
+--------------
+
+- Connect the evaluation board to the microprocessor using the Arduino R3
+  headers (POWER, ANALOG, DIGI0, DIGI1, ICSP).
+- Connect the electrochemical sensor to socket M1.
+- Ensure 5 V, IOREF, and GND pins are connected from the ANALOG header.
+- Configurable chip select pins: D9/D10 for AD7790, D5/D6 for AD5270,
+  D3/D4 for ADT7310.
+
+Software Setup
+--------------
+
+The system uses serial terminal output for real-time gas concentration
+monitoring. The ADICUP360 Eclipse IDE provides the development environment
+for firmware customization.
+
+Pin-compatible sensor alternatives include the Alphasense SOH-A2 and
+DD-Scientific GS+4DT sensors.
+
+Documents
+---------
+
+- :adi:`CN0396 Circuit Note <CN0396>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0396-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0396-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADA4528-2 Product Page <ADA4528-2>`
+- :adi:`AD5270 Product Page <AD5270>`
+- :adi:`AD7790 Product Page <AD7790>`
+- :adi:`ADT7310 Product Page <ADT7310>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

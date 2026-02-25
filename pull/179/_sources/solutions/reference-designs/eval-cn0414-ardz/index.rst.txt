@@ -1,0 +1,61 @@
+.. _eval-cn0414-ardz:
+
+EVAL-CN0414-ARDZ
+=================
+
+RTD Temperature Measurement.
+
+Overview
+--------
+
+:adi:`CN0414` is an RTD (Resistance Temperature Detector) measurement circuit
+with precision temperature sensing capabilities, designed as an Arduino shield
+for the :adi:`EVAL-ADICUP3029` platform.
+
+The system provides high-accuracy temperature measurement using Pt100 or Pt1000
+RTD sensors with signal conditioning and 24-bit ADC conversion.
+
+Required Equipment
+------------------
+
+- EVAL-CN0414-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP3029` development board
+- Pt100 or Pt1000 RTD sensor
+- USB cable
+
+Hardware Setup
+--------------
+
+- Connect the EVAL-CN0414-ARDZ shield to the EVAL-ADICUP3029 board via the
+  Arduino headers.
+- Connect the RTD sensor to the designated terminal block.
+- Connect USB from the EVAL-ADICUP3029 to PC.
+
+Software Setup
+--------------
+
+The demo firmware provides real-time temperature readout via serial terminal
+interface with RTD linearization and cold junction compensation.
+
+Documents
+---------
+
+- :adi:`CN0414 Circuit Note <CN0414>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0414-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0414-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

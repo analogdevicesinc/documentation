@@ -1,0 +1,77 @@
+.. _eval-cn0338-ardz:
+
+EVAL-CN0338-ARDZ
+=================
+
+NDIR Thermopile-Based CO2 Gas Sensor.
+
+Overview
+--------
+
+:adi:`CN0338` is a complete thermopile-based gas sensor using the nondispersive
+infrared (NDIR) principle, optimized for CO2 sensing. The system can measure
+the concentration of various gases by using thermopiles with different optical
+filters. No chemical reaction occurs, producing no toxic byproducts.
+
+The circuit uses the :adi:`ADuCM360` precision analog microcontroller with dual
+24-bit sigma-delta ADCs and ARM Cortex-M3 processor, the :adi:`AD8629`
+zero-drift precision op-amp (22 nV/sqrt(Hz) noise) for amplifying thermopile
+outputs, the :adi:`ADA4528-1` zero-drift precision op-amp, and the
+:adi:`ADP7105` LDO regulator.
+
+Required Equipment
+------------------
+
+- EVAL-CN0338-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP360` development board
+- External wall power supply (for lamp)
+- USB cable
+
+Hardware Setup
+--------------
+
+- Lamp connected via DS1 connector with external power supply.
+- Light tube (PVC piping) mounted in rectangular section, secured with tie
+  wraps.
+- Sensor board mounted vertically and plugged into the shield board via
+  headers J1--J4.
+- UART communication on P0.1 and P0.2 ports (USER USB or DEBUG USB).
+
+Software Setup
+--------------
+
+The firmware provides two calibration methods: standard Beer-Lambert and
+modified Beer-Lambert calibration. Measurement range is 0% to 100% CO2
+concentration. A temperature compensation algorithm eliminates temperature
+drift. A pulsed light source synchronized with the ADC sampling rate minimizes
+low-frequency drift and flicker noise errors.
+
+Documents
+---------
+
+- :adi:`CN0338 Circuit Note <CN0338>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0338-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0338-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADuCM360 Product Page <ADUCM360>`
+- :adi:`AD8629 Product Page <AD8629>`
+- :adi:`ADA4528-1 Product Page <ADA4528-1>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

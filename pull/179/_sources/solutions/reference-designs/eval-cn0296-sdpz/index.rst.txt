@@ -1,0 +1,73 @@
+.. _eval-cn0296-sdpz:
+
+EVAL-CN0296-SDPZ
+=================
+
+Multi-Channel Sound Bar Audio System.
+
+Overview
+--------
+
+:adi:`CN0296` is a low-cost, high-performance sound bar system that accepts
+analog stereo audio input and outputs up to eight channels of audio with
+discrete processing on each channel. The system is ideal for small docking
+stations and portable media devices.
+
+The circuit uses the :adi:`ADAU1761` low-power stereo audio codec with
+integrated SigmaDSP and the :adi:`SSM2518` digital-input class-D audio power
+amplifier (2 W per channel at 4 Ohm).
+
+Required Equipment
+------------------
+
+- EVAL-CN0296-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- +5 V DC power supply
+- USB cable
+- 4 Ohm or 8 Ohm speakers (rated 2 W minimum)
+
+Hardware Setup
+--------------
+
+- Connect the CN0296 board to the SDP-B board via the 120-pin connector.
+- **J2** -- Wall wart power connection on CN0296 board.
+- **P6, P11** -- Configuration jumpers.
+- Speakers connect to the designated male headers.
+- USB Mini-B (J2) on SDP-B board to PC.
+
+Software Setup
+--------------
+
+The evaluation software provides audio effects control including spatializer,
+superbass, loudness, and test tone. Volume, bass, treble, and per-channel mute
+controls are available. Custom ADAU1761 algorithms can be loaded via
+SigmaStudio.
+
+Documents
+---------
+
+- :adi:`CN0296 Circuit Note <CN0296>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0296-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0296-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADAU1761 Product Page <ADAU1761>`
+- :adi:`SSM2518 Product Page <SSM2518>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

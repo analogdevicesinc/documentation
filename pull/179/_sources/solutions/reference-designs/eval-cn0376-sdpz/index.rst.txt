@@ -1,0 +1,108 @@
+.. _eval-cn0376-sdpz:
+
+EVAL-CN0376-SDPZ
+=================
+
+Dual-Channel Isolated Thermocouple/RTD Input for PLC/DCS.
+
+Overview
+--------
+
+:adi:`CN0376` is a dual-channel, channel-to-channel isolated thermocouple or
+RTD input suitable for programmable logic controllers (PLC) and distributed
+control systems (DCS). Each channel accepts either thermocouple or RTD input.
+The system is powered from a standard 24 V bus supply and features
+PMOD-compatible headers for compatibility with external development platforms.
+
+The :adi:`AD7124-4` 24-bit sigma-delta ADC provides the measurement with a
+programmable gain array (PGA) and voltage reference. The :adi:`ADuM5010`
+provides isolated power via isoPower technology, the :adi:`ADuM1441` provides
+micropower SPI isolation, and the :adi:`ADP2441` steps down the 24 V bus to
+5 V.
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-CN0376-SDPZ <CN0376>` evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- DC power supply (+12 V to +24 V)
+- RTD sensors (PT100 or PT1000) and/or thermocouple
+- CN0376 Evaluation Software
+- USB Type-A to USB Mini-B cable
+- PC with Windows Vista or Windows 7 (32-bit), 1 GHz processor, 1 GB RAM
+
+Hardware Setup
+--------------
+
+- **P1** -- Sensor input (RTD or thermocouple) for Channel 1
+- **P2** -- Sensor input (RTD or thermocouple) for Channel 2
+- **P3** -- Power supply input (+5.5 V to +36 V DC)
+- **P4** -- PMOD-compatible SPI header for Channel 1
+- **P5** -- PMOD-compatible SPI header for Channel 2
+- **PWR_SEL** -- Jumper for selecting power source (EXT for terminal block P3,
+  or PMOD for +3.3 V)
+
+Sensor Connection Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- **2-Wire RTD** -- Connect RTD to AIN+/AIN-, short IEXC to AIN+, short
+  RETURN to AIN-.
+- **3-Wire RTD** -- Connect RTD to AIN+, AIN-, and RETURN; short IEXC to AIN+.
+- **4-Wire RTD** -- Connect to IEXC, AIN+, AIN-, and RETURN terminals.
+- **Thermocouple** -- Connect to AIN+ and AIN- terminals.
+
+Software Setup
+--------------
+
+#. Extract **CN0376_Evaluation_Software.zip** and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path
+      ``C:\Program Files\Analog Devices\CN0376\``.
+
+#. Complete the installation wizard and SDP Drivers installation.
+
+Software Tabs
+~~~~~~~~~~~~~
+
+- **Main Tab** -- Run/Stop, Clear Data, Save Data, Reset, temperature
+  displays, RTD resistance/TC voltage, cold junction compensation, chart.
+- **Histogram Tab** -- Channel selection, histogram analysis, code spread,
+  peak-to-peak resolution.
+- **Configuration Tab** -- Input type selection (PT100, PT1000, thermocouple),
+  RTD connection mode, power mode, filter type, sampling rate.
+- **Advanced Configuration Tab** -- Excitation current, burnout current, PGA
+  gain control.
+- **Error Flags Tab** -- ADC error indicators.
+
+Documents
+---------
+
+- :adi:`CN0376 Circuit Note <CN0376>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0376-SDPZ Design & Integration Files
+   <https://www.analog.com/CN0376-DesignSupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7124-4 Product Page <AD7124-4>`
+- :adi:`ADuM5010 Product Page <ADUM5010>`
+- :adi:`ADuM1441 Product Page <ADUM1441>`
+- :adi:`ADP2441 Product Page <ADP2441>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

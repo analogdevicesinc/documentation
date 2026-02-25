@@ -1,0 +1,82 @@
+.. _eval-cn0551-ebz:
+
+EVAL-CN0551-EBZ
+================
+
+USB-Powered 433 MHz RF Power Amplifier.
+
+Overview
+--------
+
+:adi:`CN0551` is a USB-powered, 433.92 MHz RF power amplifier evaluation board
+designed for use with the :adi:`ADALM-PLUTO` platform, featuring compact form
+factor and integrated thermal protection.
+
+The circuit uses the :adi:`ADL5324` RF power amplifier, :adi:`AD8353` RF driver
+amplifier, :adi:`ADT6401` temperature switch for thermal protection,
+:adi:`ADG901` RF switch, :adi:`ADP196` power management IC, :adi:`ADM7160`
+voltage regulator, and the :adi:`LTM4693` power module.
+
+Required Equipment
+------------------
+
+- EVAL-CN0551-EBZ evaluation board
+- :adi:`ADALM-PLUTO` RF platform
+- +5 V power supply via Micro-USB (minimum 0.5 A)
+- RF signal source (max -3 dBm input)
+- RF load (antenna or 50 Ohm termination for up to +27 dBm output)
+- SMA coaxial cables (50 Ohm)
+
+Hardware Setup
+--------------
+
+- **J1** -- Male SMA RF input connector.
+- **J2** -- Female SMA RF output connector.
+- **P1** -- Micro-USB port for +5 V power input.
+- **JP1, JP2** -- Temperature threshold selection jumpers for ADT6401 trip
+  points (+65 deg C to +115 deg C, 10 deg C hysteresis).
+- Two LED indicators: POWER (green, +5 V present) and TOVER (red, thermal
+  shutdown active).
+- Four-layer PCB with coplanar waveguide RF traces at 50 Ohm impedance.
+
+.. warning::
+
+   Do not connect RFOUT directly to ADALM-PLUTO Rx (max +2.5 dBm input
+   tolerance). Use an appropriate attenuator.
+
+Software Setup
+--------------
+
+The board integrates with the ADALM-PLUTO platform for software-driven
+amplifier control via the host PC.
+
+Documents
+---------
+
+- :adi:`CN0551 Circuit Note <CN0551>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0551-EBZ Design & Integration Files
+   <https://www.analog.com/cn0551-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADL5324 Product Page <ADL5324>`
+- :adi:`AD8353 Product Page <AD8353>`
+- :adi:`ADT6401 Product Page <ADT6401>`
+- :adi:`ADALM-PLUTO Product Page <ADALM-PLUTO>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

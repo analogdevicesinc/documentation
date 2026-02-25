@@ -1,0 +1,105 @@
+.. _eval-cn0150-sdpz:
+
+EVAL-CN0150-SDPZ
+=================
+
+RF Power Measurement Circuit (1 MHz to 8 GHz).
+
+Overview
+--------
+
+:adi:`CN0150` is an RF power measurement circuit operating at frequencies from
+1 MHz to 8 GHz with approximately 60 dB measurement range. The output is a
+12-bit ADC digital code with an integrated reference and simple two-point
+system calibration in the digital domain.
+
+The :adi:`AD8318` demodulating logarithmic amplifier provides detection from
+1 MHz to 8 GHz with +/-1 dB error. The :adi:`AD7887` 12-bit ADC (125 kSPS)
+digitizes the detector output, and the :adi:`ADR421` provides a precision
+voltage reference.
+
+Required Equipment
+------------------
+
+- EVAL-CN0150A-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- CN0150A Evaluation Software
+- +6 V power supply or wall wart
+- RF signal source
+- Coaxial RF cable with SMA connectors
+- USB Type-A to USB Mini-B cable
+- PC with Windows 7, Vista, or XP (32-bit)
+
+Hardware Setup
+--------------
+
+#. Connect the 120-pin connector on the CN0150A board to **CON A** on the
+   :adi:`EVAL-SDP-CB1Z`.
+#. Connect the RF signal source via the SMA connector.
+#. With power off, connect the +6 V power supply.
+#. Apply power, then connect the USB cable from the PC to the SDP board.
+
+.. important::
+
+   Apply power before connecting the USB cable.
+
+Software Setup
+--------------
+
+Installing the Software
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Extract **CN0150_Evaluation_Software.zip** and run **setup.exe**.
+
+   .. note::
+
+      Install to the default path
+      ``C:\Program Files (x86)\Analog Devices\CN0150\``.
+
+#. Complete the installation wizard and SDP Drivers installation.
+
+Using the Evaluation Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- **Connect/Reset** -- Establish or reset the USB connection.
+- **Sample Data Graph** -- Real-time data display.
+- **Test Setup tab** -- Data acquisition and calibration controls.
+- **Configure tab** -- SDP connector selection, SCLK frequency, voltage
+  reference selection.
+
+Calibration
+~~~~~~~~~~~
+
+Apply two known signal levels (in the -50 dBm to -10 dBm range), measure the
+ADC codes, and calculate slope and intercept for converting unknown
+measurements.
+
+Documents
+---------
+
+- :adi:`CN0150 Circuit Note <CN0150>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0150A-SDPZ Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0150-DesignSupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD8318 Product Page <AD8318>`
+- :adi:`AD7887 Product Page <AD7887>`
+- :adi:`ADR421 Product Page <ADR421>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

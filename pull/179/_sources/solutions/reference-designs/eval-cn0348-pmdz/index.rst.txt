@@ -1,0 +1,77 @@
+.. _eval-cn0348-pmdz:
+
+EVAL-CN0348-PMDZ
+=================
+
+Precision 16-Bit Digital-to-Analog Converter.
+
+Overview
+--------
+
+:adi:`CN0348` provides precision 16-bit digital-to-analog conversion with wide
+dynamic signal range in a single-supply system. The circuit achieves
+industry-leading 16-bit integral nonlinearity (INL) of +/-1 LSB and
+differential nonlinearity (DNL) of +/-1 LSB with guaranteed monotonicity.
+
+The :adi:`AD5541A` 16-bit voltage output DAC provides the conversion, the
+:adi:`ADR4550` supplies a precision 5 V voltage reference, and the
+:adi:`ADA4500-2` rail-to-rail output buffer amplifier (with zero crossover
+distortion) drives the output.
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- :adi:`EVAL-CN0348-SDPZ <CN0348>` evaluation board
+- CN0348 Evaluation Software
+- USB Type-A to USB Mini-B cable
+- SMB connector
+- PC with Windows XP SP2, Vista, or Windows 7; 1 GHz processor, 512 MB RAM
+- Optional: Agilent 3458A multimeter + GPIB-USB HS controller for INL/DNL
+
+Hardware Setup
+--------------
+
+- Connect the SDP-B board to the CN0348 board via the 120-pin connector.
+- Connect +6 V and analog ground to the CN0348 board at **J1**.
+- Connect the USB cable from the SDP board to the PC.
+- Connect **Vout** (**J3**) to a multimeter for voltage measurements.
+- For INL/DNL testing, connect Vout to an Agilent 3458A via GPIB-USB.
+
+Software Setup
+--------------
+
+Install the CN0348 Evaluation Software and ADI SDP Drivers. The software
+provides LDAC control, DIN code input, output visualization via LED indicators,
+transfer function graphs, and INL/DNL measurement graphs. For INL/DNL data
+collection, install the NI GPIB controller driver (NI-488.2).
+
+Documents
+---------
+
+- :adi:`CN0348 Circuit Note <CN0348>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0348-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0348-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD5541A Product Page <AD5541A>`
+- :adi:`ADR4550 Product Page <ADR4550>`
+- :adi:`ADA4500-2 Product Page <ADA4500-2>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

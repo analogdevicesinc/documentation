@@ -1,0 +1,78 @@
+.. _eval-cn0287-sdpz:
+
+EVAL-CN0287-SDPZ
+=================
+
+Isolated 4-Channel Temperature Measurement System.
+
+Overview
+--------
+
+:adi:`CN0287` is a completely isolated 4-channel temperature measurement
+circuit supporting all thermocouple types and RTD (2--10 kOhm) with cold
+junction compensation. It achieves 0.1 °C accuracy for RTD measurements and
+0.05 °C for Type-K thermocouples, with 2500 V isolated SPI-compatible digital
+I/O.
+
+The :adi:`AD7193` 4-channel 24-bit sigma-delta ADC provides the measurement
+with an on-chip PGA. The :adi:`ADT7310` 16-bit digital temperature sensor
+provides cold-junction compensation, and the :adi:`ADM3483` RS-485 transceiver
+provides the isolated interface.
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-CN0287-SDPZ <CN0287>` evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- EVAL-CFTL-6V-PWRZ +6 V DC power supply
+- CN0287 Evaluation Software
+- USB Mini-B to Type-A cable
+- Temperature sensors: PT100/PT1000 (RTD) or Type J/K/T/S thermocouples
+- PC with Windows XP SP2 or later, 1 GHz processor, 512 MB RAM
+
+Hardware Setup
+--------------
+
+- The CN0287 board connects to the SDP-B board via the 120-pin connector.
+- **J2** -- DC barrel jack for +6 V power supply.
+- **CN5** -- Screw terminal alternative for +6 V power.
+- Jumper settings configure sensor type: RTD wiring (2-wire, 3-wire, or
+  4-wire) or thermocouple input.
+
+Software Setup
+--------------
+
+Install the CN0287 Evaluation Software. The software provides Configuration,
+Temperature, Temperature Graph, and S/W Version tabs with alarm settings,
+channel enable/disable, sensor type selection, and advanced settling controls.
+
+Documents
+---------
+
+- :adi:`CN0287 Circuit Note <CN0287>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0287-SDPZ Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0287-DesignSupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - PADS Project
+
+Additional Information
+----------------------
+
+- :adi:`AD7193 Product Page <AD7193>`
+- :adi:`ADT7310 Product Page <ADT7310>`
+- :adi:`ADM3483 Product Page <ADM3483>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

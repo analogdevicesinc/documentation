@@ -1,0 +1,73 @@
+.. _eval-cn0395-ardz:
+
+EVAL-CN0395-ARDZ
+=================
+
+Volatile Organic Compound (VOC) Detector.
+
+Overview
+--------
+
+:adi:`CN0395` is a single-supply 16-bit volatile organic compound (VOC) detector
+using a metal oxide sensor. The Arduino-compatible shield provides precise
+sensor heating element control and configurable sensing for air quality
+measurement applications.
+
+The circuit uses the :adi:`ADN8810` current-output DAC for precise sensor heater
+control. Compatible metal oxide sensors include the Figaro TGS8100 (included by
+default) and the Alphasense VOC-MF1.
+
+Required Equipment
+------------------
+
+- EVAL-CN0395-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP360` development board or Arduino R3 compatible processor
+- USB cable
+- PC with USB port
+
+Hardware Setup
+--------------
+
+- Arduino R3 shield form factor, compatible with 5 V or 3.3 V processor boards.
+- ENCOMP pin jumper settings for output voltage compliance (position 2-3 for
+  <2 V, tie to +5 V for >2 V).
+- **P2** -- Current path selection header (RCAL1 at 71.5 Ohm or 10 Ohm, or
+  RH+ for heating resistor).
+- Screw terminal P8 available for custom sensor wiring.
+- Sense resistor spacers (R17_SPACER, R19_SPACER) allow for different sensor
+  types.
+
+Software Setup
+--------------
+
+The CN0395 demo software runs on the ADICUP360 platform and provides sensor
+heating profile control and VOC concentration measurement via serial output.
+
+Documents
+---------
+
+- :adi:`CN0395 Circuit Note <CN0395>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0395-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0395-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADN8810 Product Page <ADN8810>`
+- :adi:`EVAL-ADICUP360 Product Page <EVAL-ADICUP360>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

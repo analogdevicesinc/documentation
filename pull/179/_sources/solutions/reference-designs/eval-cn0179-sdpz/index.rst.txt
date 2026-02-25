@@ -1,0 +1,75 @@
+.. _eval-cn0179-sdpz:
+
+EVAL-CN0179-PMDZ
+=================
+
+4--20 mA Current Loop Transmitter.
+
+Overview
+--------
+
+:adi:`CN0179` is a 4 mA to 20 mA current loop transmitter for industrial
+process control systems, offering a low-power solution for noise-immune
+long-distance data transmission.
+
+The circuit uses the :adi:`AD8657` low-power dual op-amp, the :adi:`AD5641`
+10-bit DAC, and the :adi:`ADR02` precision voltage reference.
+
+Required Equipment
+------------------
+
+- EVAL-CN0179-PMDZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- SDP-PMD-IB1Z (SDP-to-PMOD interposer board)
+- +6 V wall wart power supply
+- +18 V DC power supply for loop power
+- USB cable
+- Current meter (for Iout measurement)
+
+Hardware Setup
+--------------
+
+- Connect 120-pin connector on SDP-PMD-IB1Z to CON A on the SDP-B board.
+- Set header JP1 shunt for +3.3 V output on the interposer.
+- Connect the EVAL-CN0179-PMDZ to the 12-pin female header on the interposer.
+- **P1** -- DC power connector for +18 V loop supply.
+- **J1** -- Header shunt for voltage measurement across load.
+- Connect current meter in series with Iout terminal block.
+
+Software Setup
+--------------
+
+The evaluation software supports two modes: Normal Operation (100 uA max DAC
+current) and Power Down Mode (0.5 uA typical). DAC code entry (0x000 to 0x3FF)
+and output current entry (0--20 mA) controls are provided with LED status
+indicators.
+
+Documents
+---------
+
+- :adi:`CN0179 Circuit Note <CN0179>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0179-PMDZ Design & Integration Files
+   <https://www.analog.com/cn0179-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD8657 Product Page <AD8657>`
+- :adi:`AD5641 Product Page <AD5641>`
+- :adi:`ADR02 Product Page <ADR02>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

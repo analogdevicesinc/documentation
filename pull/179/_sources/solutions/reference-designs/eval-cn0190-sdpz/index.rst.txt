@@ -1,0 +1,75 @@
+.. _eval-cn0190-sdpz:
+
+EVAL-CN0190-SDPZ
+=================
+
+Multivoltage Power System Reference.
+
+Overview
+--------
+
+:adi:`CN0190` is a reference solution for multivoltage power systems with 12
+output power rails, delivering approximately 78% overall efficiency with about
+25 W output power. The system demonstrates overvoltage, undervoltage, and
+overcurrent detection/protection, sequencing, and power margining control.
+
+The circuit uses the :adi:`ADM1178` for overvoltage/overcurrent detection and
+hot-swap control, and the :adi:`ADM1066` for power supply monitoring and
+sequencing control across all 12 rails. Multiple switching regulators and LDOs
+provide output voltages ranging from +3.3 V to ±15 V.
+
+Required Equipment
+------------------
+
+- EVAL-CN0190-EB1Z evaluation board
+- DC power supply: 6--14 V input
+- Oscilloscope (e.g., Tektronix TDS3034B) for sequencing verification
+- Electronic load (e.g., Agilent N3302A)
+- Digital multimeter
+- USB cable for programming interface
+
+Hardware Setup
+--------------
+
+- **Connector 1** -- Input: 6--14 V DC.
+- **Connectors 2--13** -- 12 output power rails with various topologies
+  (synchronous buck, LDO, inverted buck/boost, Sepic-Cuk).
+- **Connector 15** -- I2C programming interface (SCLK, SDA, GND).
+- Output voltages range from +3.3 V (2 A) to ±15 V (0.1 A).
+- ADM1066 comes pre-programmed with all outputs active simultaneously.
+
+Software Setup
+--------------
+
+The SuperSequencer evaluation software and prog106x application software
+provide ADM1066 EEPROM programming and custom sequencing configuration via
+I2C interface.
+
+Documents
+---------
+
+- :adi:`CN0190 Circuit Note <CN0190>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0190-EB1Z Design & Integration Files
+   <https://www.analog.com/cn0190-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADM1178 Product Page <ADM1178>`
+- :adi:`ADM1066 Product Page <ADM1066>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

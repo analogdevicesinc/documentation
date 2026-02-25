@@ -1,0 +1,67 @@
+.. _eval-cn0337-sdpz:
+
+EVAL-CN0337-SDPZ
+=================
+
+RTD Temperature Sensor Solution.
+
+Overview
+--------
+
+:adi:`CN0337` is a complete RTD measurement solution providing temperature
+sensing using Pt100 or Pt1000 RTD sensors with direct digital conversion and
+integrated signal isolation for robust industrial operation.
+
+The circuit uses the :adi:`AD8608` precision op-amp for signal conditioning and
+the :adi:`AD7091R` 12-bit SAR ADC for digitization, connected via an SDP-B
+platform or PMOD-compatible interface.
+
+Required Equipment
+------------------
+
+- EVAL-CN0337-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- USB connection to PC
+- RTD sensor (Pt100 or Pt1000)
+
+Hardware Setup
+--------------
+
+- 12-pin PMOD connector for external microprocessor/FPGA connection.
+- 120-pin connector to SDP-B board interface.
+- Integrated RTD sensor interface with isolation.
+
+Software Setup
+--------------
+
+The evaluation software GUI provides real-time temperature data collection,
+chart visualization, and spreadsheet export capabilities.
+
+Documents
+---------
+
+- :adi:`CN0337 Circuit Note <CN0337>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0337-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0337-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD8608 Product Page <AD8608>`
+- :adi:`AD7091R Product Page <AD7091R>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

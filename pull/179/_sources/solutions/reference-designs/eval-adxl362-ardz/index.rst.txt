@@ -1,0 +1,58 @@
+.. _eval-adxl362-ardz:
+
+EVAL-ADXL362-ARDZ
+==================
+
+Ultralow Power 3-Axis Accelerometer.
+
+Overview
+--------
+
+The :adi:`EVAL-ADXL362-ARDZ` is an Arduino shield evaluation board for the
+:adi:`ADXL362` ultralow power, 3-axis MEMS accelerometer. The sensor draws
+less than 2 uA at 100 Hz ODR and includes an integrated temperature sensor,
+activity/inactivity detection, and an NHD-C12832A1Z-NSW-BBW 128x32 LCD
+display for real-time data visualization.
+
+Required Equipment
+------------------
+
+- EVAL-ADXL362-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP360` development board
+- Micro-USB cable
+- CrossCore Embedded Studio (2.7.0 or higher)
+
+Hardware Setup
+--------------
+
+- Configure jumpers on the EVAL-ADICUP360 base board per the reference
+  configuration.
+- Set LCD_CS_SEL jumper on the shield (recommended P1.4 to avoid conflicts
+  with BM pin).
+- Plug the EVAL-ADXL362-ARDZ shield into the EVAL-ADICUP360 board.
+- Power via the DEBUG USB port (P14).
+
+Software Setup
+--------------
+
+The demo firmware reads X, Y, Z acceleration every 500 ms and displays values
+in mG on the LCD. Motion detection zones (UP, DOWN, RIGHT, LEFT, CENTER) are
+shown, with LCD sleep mode after 10 seconds of inactivity. Configuration
+parameters include temperature units, calibration values, scan rate, and
+activity/inactivity thresholds in ADXL362.h.
+
+Documents
+---------
+
+- :adi:`ADXL362 Datasheet <ADXL362>`
+
+Additional Information
+----------------------
+
+- :adi:`ADXL362 Product Page <ADXL362>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

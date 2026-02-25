@@ -1,0 +1,80 @@
+.. _eval-cn0398-ardz:
+
+EVAL-CN0398-ARDZ
+=================
+
+Soil Moisture, pH, and Temperature Measurement.
+
+Overview
+--------
+
+:adi:`CN0398` is a single-supply, low-power, high-precision solution for soil
+moisture (capacitive), pH, and temperature measurements with temperature
+compensation. The system uses capacitive soil moisture sensors that are
+insensitive to water salinity and do not corrode over time.
+
+The circuit uses the :adi:`AD7124-8` 24-bit sigma-delta ADC, :adi:`ADR3433`
+precision voltage reference, :adi:`ADP7118` CMOS low-dropout linear regulator,
+and the :adi:`ADA4661-2` dual precision rail-to-rail op-amp.
+
+Required Equipment
+------------------
+
+- EVAL-CN0398-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP360` development board
+- 7--12 V / 1 A DC power supply
+- 3-wire capacitive moisture sensor (e.g., Vegetronix VH400 or Decagon EC-5)
+- pH sensor with BNC connector (e.g., Atlas Scientific pH probe)
+- Pt100 RTD for temperature
+- USB cable
+- PC with serial terminal software
+
+Hardware Setup
+--------------
+
+- **J1** -- BNC connector for high-impedance pH probe.
+- **P2** -- 3-wire moisture sensor connector (selectable 3.3 V or 5 V supply
+  via jumpers P8/P10).
+- **P1** -- RTD connector supporting 2-wire, 3-wire, and 4-wire configurations
+  (Pt100/Pt1000, 500 uA excitation current).
+- **P5** -- Chip select configurable to GPIO pins 8, 9, or 10 (default
+  GPIO 10).
+- **P8** -- Output voltage selection (3.3 V or 5 V).
+- **P10** -- Power supply selection (5 V or 7--12 V input).
+
+Software Setup
+--------------
+
+The demo firmware provides three independent measurement channels with
+precision biasing for the pH probe (internal bias voltage generator), soil
+moisture measurement (0--3 V range), and temperature compensation via RTD.
+
+Documents
+---------
+
+- :adi:`CN0398 Circuit Note <CN0398>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0398-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0398-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7124-8 Product Page <AD7124-8>`
+- :adi:`ADR3433 Product Page <ADR3433>`
+- :adi:`ADA4661-2 Product Page <ADA4661-2>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

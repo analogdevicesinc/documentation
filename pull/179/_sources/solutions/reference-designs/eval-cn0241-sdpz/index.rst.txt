@@ -1,0 +1,73 @@
+.. _eval-cn0241-sdpz:
+
+EVAL-CN0241-SDPZ
+=================
+
+High-Side Current Sensing with Overvoltage Protection.
+
+Overview
+--------
+
+:adi:`CN0241` is a high-side current sensing circuit with input overvoltage
+protection, using an overvoltage-protected op-amp as a difference amplifier
+for monitoring current in systems up to 32 V.
+
+The circuit uses the :adi:`ADA4096-2` overvoltage-protected op-amp (32 V
+protection), the :adi:`ADP3336` adjustable low-dropout 500 mA linear regulator,
+and the :adi:`AD7920` 12-bit SAR ADC for digitization.
+
+Required Equipment
+------------------
+
+- EVAL-CN0241-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- DC power supply: 6 V / 1 A
+- DC power supply: 5 V / 2.5 A (for load circuit)
+- 2 Ohm / 12 W load resistor
+- USB cable
+
+Hardware Setup
+--------------
+
+- Connect the CN0241 board to the SDP-B board via the 120-pin connector.
+- Apply 6 V power to the +6 V and GND pins (or wall wart to J5).
+- Apply 5 V / 2.5 A to +VIN and GND on J1.
+- Connect 2 Ohm / 12 W load resistor to LOAD and GND on J1.
+- **J2** -- SPI breakout header.
+
+Software Setup
+--------------
+
+The evaluation software provides AD7920 mode configuration (power-down between
+conversions or normal operation), data acquisition with ADC codes vs. samples
+display, histogram analysis, and data save functionality.
+
+Documents
+---------
+
+- :adi:`CN0241 Circuit Note <CN0241>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0241-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0241-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADA4096-2 Product Page <ADA4096-2>`
+- :adi:`AD7920 Product Page <AD7920>`
+- :adi:`ADP3336 Product Page <ADP3336>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

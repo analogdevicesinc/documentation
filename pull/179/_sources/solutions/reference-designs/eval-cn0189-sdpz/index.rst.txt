@@ -1,0 +1,71 @@
+.. _eval-cn0189-sdpz:
+
+EVAL-CN0189-SDPZ
+=================
+
+Dual-Axis Tilt Measurement System.
+
+Overview
+--------
+
+:adi:`CN0189` is a tilt measurement circuit using a dual-axis accelerometer
+for applications requiring precise angle measurement. The system provides
+continuous conversion mode with real-time angle readout and supports four-point
+calibration for accuracy optimization.
+
+The circuit uses the :adi:`ADXL203` polysilicon surface-micromachined
+accelerometer, the :adi:`AD8608` quad op-amp for signal buffering and level
+shifting, and the :adi:`AD7887` 12-bit SAR ADC for digitization.
+
+Required Equipment
+------------------
+
+- EVAL-CN0189-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- EVAL-CFTL-6V-PWRZ (+6 V power supply) or equivalent
+- USB cable
+
+Hardware Setup
+--------------
+
+- 120-pin male/female connectors for stacking with SDP-B board.
+- DC barrel jack at J3 for +6 V power supply.
+- USB Mini-B at J2 for PC connection.
+
+Software Setup
+--------------
+
+The evaluation software provides continuous conversion mode with real-time
+angle measurement and single sample mode for calibration. A four-point
+calibration procedure enables offset and sensitivity adjustment, with
+manual coefficient input also supported.
+
+Documents
+---------
+
+- :adi:`CN0189 Circuit Note <CN0189>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0189-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0189-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADXL203 Product Page <ADXL203>`
+- :adi:`AD8608 Product Page <AD8608>`
+- :adi:`AD7887 Product Page <AD7887>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

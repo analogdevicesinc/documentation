@@ -1,0 +1,70 @@
+.. _eval-cn0194-sdpz:
+
+EVAL-CN0194-SDPZ
+=================
+
+Galvanically Isolated High Speed ADC.
+
+Overview
+--------
+
+:adi:`CN0194` provides galvanic isolation for high speed, high accuracy
+simultaneous sampling analog-to-digital conversion applications. The system
+supports time-domain, frequency-domain, and histogram analysis.
+
+The circuit uses the :adi:`AD7685` 16-bit SAR ADC (no missing codes,
+2.3--5.5 V supply, low power) with galvanic isolation for safe measurement
+in high-voltage environments.
+
+Required Equipment
+------------------
+
+- EVAL-CN0194-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- Adjustable DC power supply: 6--12 V, 500 mA minimum
+- USB cable
+- Signal source for AIN1 and AIN2 inputs
+
+Hardware Setup
+--------------
+
+- Connect the EVAL-CN0194-SDPZ to the SDP-B board via the 120-pin CON A
+  connector.
+- **J1, J2** -- +6 V power supply connectors.
+- Diodes D3, D4, D7 light up when power is applied correctly.
+- Input signals connect to AIN1 and AIN2 test points.
+
+Software Setup
+--------------
+
+The evaluation software provides time-domain waveform display, frequency-domain
+FFT analysis (THD, SNR), histogram view, and data capture/save functionality.
+Sample rate and number of samples are configurable.
+
+Documents
+---------
+
+- :adi:`CN0194 Circuit Note <CN0194>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0194-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0194-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7685 Product Page <AD7685>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

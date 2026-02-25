@@ -1,0 +1,83 @@
+.. _eval-cn0203-sdpz:
+
+EVAL-CN0203-SDPZ
+=================
+
+Flexible Programmable Analog Output.
+
+Overview
+--------
+
+:adi:`CN0203` is a full-function, flexible, programmable analog output solution
+for PLC and DCS applications with 16-bit resolution, 0.05% linearity, and less
+than 0.1% total output error. The circuit uses only two analog components and
+supports ±15 V supply rails for bipolar voltage output ranges.
+
+The circuit uses the :adi:`AD5750-1` single-channel precision voltage/current
+output driver and the :adi:`AD5660` single-channel low-power 16-bit nanoDAC with
+integrated 1.25 V reference.
+
+Required Equipment
+------------------
+
+- EVAL-CN0203-SDPZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- ±25 V/1 A triple-output DC power supply (Agilent E3631A or equivalent,
+  requires +15 V, -15 V, and +6 V)
+- USB cable
+- Digital multimeter for verification (optional)
+
+Hardware Setup
+--------------
+
+- **CN1** -- Terminal block for ±15 V power supply input.
+- **CN2** -- Terminal block for +6 V power supply input.
+- **CN3** -- Terminal block for voltage output measurement (optionally
+  VSENSE+/VSENSE- for remote sense feedback if JP3/JP4 are open; VSENSE-
+  must be within ±3.0 V of GND).
+- **CN4** -- Terminal block for current output measurement.
+
+Voltage output ranges: 0--5 V, 0--10 V, ±5 V, ±10 V (with 20% overrange:
+0--6 V, 0--12 V, ±6 V, ±12 V). Current output ranges: 4--20 mA, 0--20 mA,
+±20 mA, 0--24 mA, ±24 mA (with 2% overrange options).
+
+.. important::
+
+   Power the CN0203 and SDP-B boards separately before connecting them.
+
+Software Setup
+--------------
+
+The evaluation software provides AD5750-1 configuration with JP1 position
+setting, range selection, CLEAR toggle, and output setting via hex value input.
+Error indicators for Vout Fault, Iout Fault, Over Temperature, and PEC Error
+are displayed in the GUI.
+
+Documents
+---------
+
+- :adi:`CN0203 Circuit Note <CN0203>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0203-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0203-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD5750-1 Product Page <AD5750-1>`
+- :adi:`AD5660 Product Page <AD5660>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

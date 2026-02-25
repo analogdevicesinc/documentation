@@ -1,0 +1,87 @@
+.. _eval-cn0185-sdpz:
+
+EVAL-CN0185-SDPZ
+=================
+
+Analog-to-Analog Isolator with 2500 V RMS Isolation.
+
+Overview
+--------
+
+:adi:`CN0185` is a complete low-cost implementation of an analog-to-analog
+isolator providing 2500 V RMS isolation (1 minute, UL 1577). The design is
+based on sigma-delta modulation with digital isolation and active analog
+filtering, achieving 0.05% linearity.
+
+The :adi:`AD7400A` second-order sigma-delta modulator provides a digitally
+isolated 1-bit output. The :adi:`AD8646` dual low-noise rail-to-rail op-amp
+implements a fourth-order active reconstruction filter. The :adi:`ADuM5000`
+provides the isolated power supply.
+
+This circuit is suitable for motor control, shunt current monitoring, and as an
+alternative to optoisolator-based isolation systems.
+
+Required Equipment
+------------------
+
+- EVAL-CN0185-EB1Z evaluation board
+- +6 V DC power supply
+- Multifunction calibrator (DC source), e.g., Fluke 5700A
+- Digital multimeter, e.g., Agilent 3458A (8.5 digits)
+- Spectrum analyzer, e.g., Agilent 4396B
+- Function generator, e.g., Agilent 33250A
+- Oscilloscope
+
+Hardware Setup
+--------------
+
+- Connect +6 V power supply to power terminal **J4** (screw terminal).
+- Connect DC source or function generator to analog input SMB connectors
+  (**J1** positive, **J2** negative).
+- Connect measurement equipment to output SMB connector **J3** or test point
+  **OUT**.
+- Configure jumpers **LK1** and **LK2** to connect or ground input signals as
+  needed.
+
+.. note::
+
+   No evaluation software is required. This is a hardware evaluation board
+   with direct measurements via external instruments.
+
+Test Procedures
+~~~~~~~~~~~~~~~
+
+- **DC Input Voltage Measurements** -- Apply DC voltages and measure output
+  for linearity verification.
+- **Frequency Response Measurements** -- Apply a sinewave with +/-20 mV
+  amplitude (40 mV p-p), 0 V DC offset, and sweep frequency.
+
+Documents
+---------
+
+- :adi:`CN0185 Circuit Note <CN0185>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0185-EB1Z Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0185-DesignSupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7400A Product Page <AD7400A>`
+- :adi:`AD8646 Product Page <AD8646>`
+- :adi:`ADuM5000 Product Page <ADUM5000>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

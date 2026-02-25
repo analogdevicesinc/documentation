@@ -1,0 +1,76 @@
+.. _eval-cn0385-ardz:
+
+EVAL-CN0385-ARDZ
+=================
+
+Multi-Channel Precision Data Acquisition System.
+
+Overview
+--------
+
+:adi:`CN0385` is an 8-channel precision data acquisition front end with
+programmable gain instrumentation amplifier and 18-bit SAR ADC, supporting both
+single-ended and differential input signals.
+
+The circuit uses the :adi:`ADG5207` fault-protected multiplexer for channel
+selection, the :adi:`AD8251` programmable gain instrumentation amplifier (PGIA)
+with gains of 0.4, 0.8, 1.6, and 3.2, the :adi:`AD8475` precision differential
+ADC driver, and the :adi:`AD4003` 18-bit, 2 MSPS precision SAR ADC.
+
+Required Equipment
+------------------
+
+- EVAL-CN0385-ARDZ evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- USB cable
+- PC with USB port
+- 9 V DC adapter or bench power supply
+- Precision signal generators or DC sources
+
+Hardware Setup
+--------------
+
+- **J1** -- 120-pin connector to SDP-B board.
+- **J2** -- Jumper to select external 9 V adapter or bench DC supply.
+- **P3** -- Power supply input connector.
+- Input channels support single-ended and differential configurations with
+  multiplexed channel sequencing.
+
+Software Setup
+--------------
+
+The CN0385 evaluation software provides a comprehensive GUI with waveform
+display, FFT spectral analysis, histogram display, and ADC register control.
+The sequencer mode enables multi-channel sampling from channel 1 to the
+configured last channel.
+
+Documents
+---------
+
+- :adi:`CN0385 Circuit Note <CN0385>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0385-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0385-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD4003 Product Page <AD4003>`
+- :adi:`AD8251 Product Page <AD8251>`
+- :adi:`AD8475 Product Page <AD8475>`
+- :adi:`ADG5207 Product Page <ADG5207>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

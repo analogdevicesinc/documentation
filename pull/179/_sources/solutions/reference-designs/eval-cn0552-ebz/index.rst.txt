@@ -1,0 +1,68 @@
+.. _eval-cn0552-ebz:
+
+EVAL-CN0552-PMDZ
+=================
+
+Capacitance-to-Digital Converter.
+
+Overview
+--------
+
+:adi:`CN0552` is a capacitance-to-digital converter evaluation board with I2C
+interface for capacitive sensor applications, featuring adjustable data rates
+and integrated temperature measurement.
+
+The circuit uses the :adi:`AD7746` capacitance-to-digital converter with
+adjustable output data rate (9.1 SPS to 90.9 SPS), optimized 16.1 SPS setting
+for 50 Hz and 60 Hz noise rejection, and integrated temperature measurement
+(0.1 deg C resolution, ±2 deg C accuracy).
+
+Required Equipment
+------------------
+
+- EVAL-CN0552-PMDZ evaluation board
+- PMOD-compatible I2C host platform
+- Micro-USB power supply (2.7--5.5 V I/O voltage)
+
+Hardware Setup
+--------------
+
+- **P8, P13** -- PMOD connectors (8-pin through-hole) for analog/digital I/O.
+- I2C interface for communication with host platforms.
+- Compact form factor: 25.40 mm x 60.25 mm.
+- Supports I/O voltage range: 2.7 V to 5.5 V.
+
+Software Setup
+--------------
+
+A Linux-based demo system is available with SD card image configuration.
+Software-configurable data rates, filters, temperature compensation, and
+system calibration are supported.
+
+Documents
+---------
+
+- :adi:`CN0552 Circuit Note <CN0552>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0552-PMDZ Design & Integration Files
+   <https://www.analog.com/cn0552-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7746 Product Page <AD7746>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

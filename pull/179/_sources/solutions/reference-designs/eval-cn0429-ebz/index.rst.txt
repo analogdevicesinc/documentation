@@ -1,0 +1,82 @@
+.. _eval-cn0429-ebz:
+
+EVAL-CN0429-EBZ
+================
+
+Environmental Gas Sensor Hub.
+
+Overview
+--------
+
+:adi:`CN0429` is a multi-sensor environmental monitoring platform supporting
+electrochemical gas sensing and temperature/humidity measurement. The system
+uses the :adi:`ADuCM355` precision analog microcontroller with integrated
+firmware and serial command-line interface for sensor configuration and data
+acquisition.
+
+The EVAL-CN0429-EBZ works together with the :ref:`eval-cn0428-ebz` water
+quality sensor board, sharing the same :adi:`EVAL-ADICUP3029` host controller
+and EVAL-M355-ARDZ-INT shield.
+
+Required Equipment
+------------------
+
+**Hardware**
+
+- EVAL-CN0429-EBZ evaluation board
+- Electrochemical gas sensor module
+- Temperature and humidity sensor module
+- :adi:`EVAL-ADICUP3029` controller board
+- EVAL-M355-ARDZ-INT Arduino shield
+- USB cable
+- PC with serial terminal software
+
+**Software**
+
+- Serial terminal software (PuTTY, Tera Term, or similar)
+- ADuCM355 firmware
+
+Hardware Setup
+--------------
+
+- Mount the sensor board onto the EVAL-M355-ARDZ-INT shield using the included
+  hardware.
+- Plug the shield into the :adi:`EVAL-ADICUP3029`.
+- Connect the gas sensor to the appropriate connector.
+- Connect USB for power and serial communication.
+
+Software Setup
+--------------
+
+The system uses a serial command-line interface at 115200 bps for sensor
+configuration, real-time data reading, and diagnostic functions. Type ``help``
+and press Enter to see available commands.
+
+Documents
+---------
+
+- :adi:`CN0429 Circuit Note <CN0429>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0429-EBZ Design & Integration Files
+   <https://www.analog.com/cn0429-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADuCM355 Product Page <ADUCM355>`
+- :adi:`EVAL-ADICUP3029 Product Page <EVAL-ADICUP3029>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

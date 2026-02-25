@@ -1,0 +1,80 @@
+.. _eval-cn0225-sdpz:
+
+EVAL-CN0225-SDPZ
+=================
+
+Industrial Signal Digitization Analog Front End (+/-10 V).
+
+Overview
+--------
+
+:adi:`CN0225` is a complete analog front end for digitizing +/-10 V industrial
+level signals with a 16-bit differential input PulSAR ADC. The circuit provides
+a high impedance instrumentation amplifier input with high CMR, level shifting,
+attenuation, and differential conversion using only two active analog
+components.
+
+The :adi:`AD8295` precision instrumentation amplifier provides the high
+impedance input, the :adi:`AD8275` level translator and ADC driver conditions
+the signal, the :adi:`AD7687` 16-bit differential PulSAR ADC digitizes it, and
+the :adi:`ADR431` provides a 2.5 V XFET reference.
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-CN0225-SDPZ <CN0225>` evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- CN0225 Evaluation Software
+- Agilent E3631A triple output DC power supply (+15 V, -15 V, +6 V)
+- Low distortion signal source
+- USB Type-A to USB Mini-B cable
+- PC with Windows 7 or higher
+
+Hardware Setup
+--------------
+
+- **J1** -- +/- analog signal input (terminal block)
+- **J2** -- +6 V power supply input
+- **J3** -- +/-15 V power supply input
+- **J4** -- SPI test points
+- 120-pin connector to SDP-B board
+
+Software Setup
+--------------
+
+Install the CN0225 SDP Evaluation Software. Connect the CN0225 board to the
+SDP-B controller, power the board with the triple output supply before
+connecting to the PC via USB. The software provides time domain, frequency
+domain, and histogram display tabs for ADC data analysis.
+
+Documents
+---------
+
+- :adi:`CN0225 Circuit Note <CN0225>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0225-SDPZ Design & Integration Files
+   <https://www.analog.com/CN0225-DesignSupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - PADS Project
+
+Additional Information
+----------------------
+
+- :adi:`AD7687 Product Page <AD7687>`
+- :adi:`AD8295 Product Page <AD8295>`
+- :adi:`AD8275 Product Page <AD8275>`
+- :adi:`ADR431 Product Page <ADR431>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

@@ -1,0 +1,52 @@
+.. _cftl-led-bar:
+
+CFTL-LED-BAR
+=============
+
+RGB LED Light Bar.
+
+Overview
+--------
+
+The CFTL-LED-BAR is a circuit-from-the-lab LED bar board containing LEDs with
+3 different spectral outputs: 627 nm (red), 530 nm (green), and 470 nm (blue).
+Each channel contains a string of up to four LEDs in series rated for currents
+up to 1 A.
+
+Recommended LEDs: Lumileds LXM5-PD01 (red), LXML-PM01-0080 (green), and
+LXML-PB02 (blue).
+
+Required Equipment
+------------------
+
+- CFTL-LED-BAR board
+- DC power supply (voltage dependent on LED count and channel)
+- Current-limiting driver circuit (e.g., :ref:`EVAL-CN0410-ARDZ
+  <eval-cn0410-ardz>`)
+
+Hardware Setup
+--------------
+
+- **P1, P5, P9** -- Screw terminal connectors for red, green, and blue
+  channels (pin 1: anode, pin 2: cathode).
+- 3-pin headers per LED: placing shunt on +XLEDN adds LED to series string;
+  placing shunt on GND terminates the string.
+- Typical forward voltages per LED: red 2.9 V, green 3.21 V, blue 2.95 V.
+- Full 4-LED string voltages: red 11.6 V, green 12.84 V, blue 11.80 V.
+
+.. note::
+
+   This is a hardware-only device with no evaluation software. Use with the
+   :ref:`EVAL-CN0410-ARDZ <eval-cn0410-ardz>` 3-channel LED driver for
+   programmable control.
+
+Additional Information
+----------------------
+
+- :ref:`EVAL-CN0410-ARDZ LED Driver <eval-cn0410-ardz>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

@@ -1,0 +1,73 @@
+.. _eval-cn0560-ardz:
+
+EVAL-CN0560-FMCZ
+=================
+
+High Precision Wide Bandwidth Current Measurement.
+
+Overview
+--------
+
+:adi:`CN0560` is a complete, wide-range current measurement system suitable
+for power characterization, ATE, and power analyzers. The system provides
+accuracy, bandwidth, and drift performance at the level of benchtop test
+equipment in a compact form factor for continuous monitoring.
+
+The circuit uses the :adi:`ADAQ23878` uModule DAQ (15 MSPS SAR ADC),
+:adi:`ADA4898-1` low-noise op-amp, :adi:`LT5400` quad matched precision
+resistor, :adi:`AD8421` low-power instrumentation amplifier, :adi:`ADG5209`
+high-voltage latch-up proof multiplexer for current range selection, and the
+:adi:`LTC6655` precision voltage reference.
+
+Required Equipment
+------------------
+
+- EVAL-CN0560-FMCZ evaluation board
+- :adi:`EVAL-SDP-CH1Z` controller board
+- Power supply
+- Current source or device under test
+
+Hardware Setup
+--------------
+
+- FMC connector interface to the SDP-CH1Z controller board.
+- Selectable current input ranges with protection: 10 A, 10 mA, and 10 uA.
+- 15 MSPS sample rate with oversampling enabling up to 111 dB dynamic range.
+- Isolated power supply via :adi:`LTM8049` isolated uModule DC-DC converter.
+
+Software Setup
+--------------
+
+The evaluation software provides data acquisition with configurable
+oversampling for trading off between noise and bandwidth.
+
+Documents
+---------
+
+- :adi:`CN0560 Circuit Note <CN0560>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0560-FMCZ Design & Integration Files
+   <https://www.analog.com/cn0560-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADAQ23878 Product Page <ADAQ23878>`
+- :adi:`ADA4898-1 Product Page <ADA4898-1>`
+- :adi:`AD8421 Product Page <AD8421>`
+- :adi:`LTC6655 Product Page <LTC6655>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

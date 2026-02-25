@@ -1,0 +1,58 @@
+.. _eval-adxrs290-pmdz:
+
+EVAL-ADXRS290-PMDZ
+===================
+
+MEMS Dual-Axis Gyroscope.
+
+Overview
+--------
+
+The :adi:`EVAL-ADXRS290-PMDZ` is a PMOD form-factor evaluation board for the
+:adi:`ADXRS290` high-performance MEMS pitch-and-roll dual-axis in-plane angular
+rate sensor (gyroscope). The sensor provides ±100 deg/s full-scale range,
+200 LSB/(deg/s) sensitivity, and 0.004 deg/s/sqrt(Hz) noise floor.
+
+Output is in 16-bit two's complement format with programmable high-pass and
+low-pass filters via SPI interface (maximum clock: 12 MHz).
+
+Required Equipment
+------------------
+
+- EVAL-ADXRS290-PMDZ evaluation board
+- PMOD-compatible development platform (:adi:`EVAL-ADICUP3029` or Raspberry Pi)
+- For EVAL-ADICUP3029: CrossCore Embedded Studios IDE
+- For Raspberry Pi: Linux environment with IIO tools and
+  :ref:`PMD-RPI-INTZ <pmd-rpi-intz>` adapter
+
+Hardware Setup
+--------------
+
+- Standard expanded SPI PMOD port.
+- 4-wire SPI communication as peripheral (slave) device.
+- Compatible with EVAL-ADICUP3029 (P8 connector) and Raspberry Pi
+  (via PMD-RPI-INTZ adapter).
+- 3.3 V logic levels.
+
+Software Setup
+--------------
+
+no-OS drivers and prebuilt hex files are available for the EVAL-ADICUP3029
+platform. On Linux, IIO framework drivers provide integration with IIO
+Oscilloscope and PyADI-IIO for data visualization and analysis.
+
+Documents
+---------
+
+- :adi:`ADXRS290 Datasheet <ADXRS290>`
+
+Additional Information
+----------------------
+
+- :adi:`ADXRS290 Product Page <ADXRS290>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
