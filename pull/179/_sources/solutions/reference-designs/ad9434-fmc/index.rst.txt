@@ -56,10 +56,71 @@ Block Diagram
 
    AD9434-FMC block diagram
 
+CPU/Memory Interconnects
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Instance
+     - Zynq Address
+   * - axi_ad9434
+     - 0x44A0_0000
+   * - axi_ad9434_dma
+     - 0x44A3_0000
+
+SPI Connections
+~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - SPI Type
+     - SPI Manager Instance
+     - SPI Subordinate
+     - CSB
+   * - PS
+     - SPI 0
+     - AD9517
+     - 1
+   * - PS
+     - SPI 0
+     - AD9434BCPZ
+     - 0
+
+Interrupts
+~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Instance Name
+     - HDL
+     - Linux Zynq
+     - Actual Zynq
+   * - axi_ad9434_dma
+     - 13
+     - 57
+     - 89
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`projects/ad9434_fmc`
+
+Software Support
+----------------
+
+Linux Driver
+~~~~~~~~~~~~
+
+The AD9434 is supported by the AD9467 family Linux IIO driver.
+
+Driver and device tree source files:
+
+- :git-linux:`drivers/iio/adc/ad9467.c`
+- :git-linux:`arch/arm/boot/dts/xilinx/zynq-zc706-adv7511-ad9434-fmc-500ebz.dts`
+- :git-linux:`arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad9434-fmc-500ebz.dts`
 
 Evaluating the AD9434 (SDP-H1)
 -------------------------------
@@ -279,6 +340,68 @@ Troubleshooting
   Frequency** setting in the ADC Data Capture block.
 - For LVPECL and LVDS configurations using the :adi:`AD9517-4`, reset the
   board and redo the SPIController settings.
+
+Evaluating the AD9434 (FPGA)
+----------------------------
+
+The AD9434-FMC-500EBZ can also be evaluated using an FPGA carrier board
+running Linux with IIO Oscilloscope.
+
+Equipment Needed
+~~~~~~~~~~~~~~~~
+
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>` or
+  `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+- AD9434-FMC-500EBZ board (the default setup uses the on-board clock)
+- SD card (at least 16 GB) with
+  `ADI Kuiper Linux <https://analogdevicesinc.github.io/wiki/software/linux/kuiper_linux/>`__
+- Signal generator (for data)
+- 1 x SMA cable
+- 1 x Ethernet cable
+- A UART terminal (Tera Term or similar), baud rate 115200
+
+Hardware Configuration
+~~~~~~~~~~~~~~~~~~~~~~
+
+**ZC706:** Set the SW11 boot switch to **0110** (left to right) to boot from
+the SD card. Set VADJ to **2.5 V**.
+
+**ZedBoard:** Place the VADJ jumper on **2.5 V**.
+
+Configure the AD9434-FMC-500EBZ board jumpers:
+
+- **P100**: Pins 1 and 2 (selects the internal oscillator clock source)
+- **J300**: Pins 3 and 4 (PD and AGND)
+- **P400**: Pins 5 and 6
+- **P300**: No configuration required
+
+Quick Start
+~~~~~~~~~~~
+
+1. Connect the AD9434-FMC board to the FMC-LPC connector of the carrier
+   board.
+2. Connect the power source, Ethernet cable, and USB cable for UART
+   communication.
+3. Program the SD card with the latest
+   `ADI Kuiper Linux <https://analogdevicesinc.github.io/wiki/software/linux/kuiper_linux/>`__
+   image. Copy the appropriate **BOOT.BIN** and **devicetree.dtb** files to the
+   boot partition.
+4. Insert the SD card and power on the carrier board.
+5. After the system boots, find the IP address from the UART console.
+6. Open **IIO Oscilloscope** and choose manual connection. Enter
+   ``ip:<your_ip_address>`` and click **Refresh**.
+7. Click **File > New Plot** to create a new plot. Connect a signal generator
+   to the analog input and verify the captured signal.
+
+.. figure:: ad9434_zc706_setup.png
+   :align: center
+
+   AD9434-FMC with ZC706 setup
+
+.. figure:: ad9434_zc706_10mhz_1000samples.png
+   :align: center
+
+   IIO Oscilloscope capture: 10 MHz input, 1000 samples
 
 More Information
 ----------------

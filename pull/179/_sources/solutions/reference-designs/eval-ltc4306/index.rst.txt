@@ -376,6 +376,24 @@ To verify the hardware output when using the example code:
 The example project runs sequentially and continuously repeats until power is
 removed.
 
+Linux Driver
+-------------
+
+The :adi:`LTC4306` is supported by a mainlined Linux I2C mux driver. When
+loaded, the driver registers the :adi:`LTC4306` as an I2C multiplexer, allowing
+downstream I2C buses to be accessed transparently through the standard Linux
+I2C subsystem.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Function
+     - File
+   * - Driver
+     - :git-linux:`drivers/i2c/muxes/i2c-mux-ltc4306.c`
+   * - Devicetree binding
+     - :git-linux:`Documentation/devicetree/bindings/i2c/i2c-mux-ltc4306.txt`
+
 More Information
 -----------------
 
@@ -383,6 +401,7 @@ More Information
 - :adi:`EVAL-LTC4306 Product Page <EVAL-LTC4306>`
 - :git-no-OS:`LTC4306 no-OS Driver <main:drivers/io-expander/ltc4306>`
 - :git-no-OS:`eval-ltc4306 no-OS Project <main:projects/eval-ltc4306>`
+- :git-linux:`LTC4306 Linux Driver <drivers/i2c/muxes/i2c-mux-ltc4306.c>`
 - `Technical Article: Multiplexer Provides Address Expansion, Bus Buffering,
   and Fault Management
   <https://www.analog.com/en/technical-articles/multiplexer-provides-address-expansion-bus-buffering-and-fault-management.html>`__

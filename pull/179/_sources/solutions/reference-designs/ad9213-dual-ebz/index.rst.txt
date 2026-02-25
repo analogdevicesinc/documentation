@@ -24,6 +24,27 @@ interleaving. The :adi:`LTC6955` low jitter fanout clock buffer and the
 :adi:`LTC6952` JESD204B clock generation and distribution IC enable a clocking
 architecture built for multi-channel scalability.
 
+The platform allows users to direct-sample L, S, and C bands, all while
+supporting up to 8 GHz of instantaneous bandwidth per channel. It is a
+complete reference design from RF to bits: RF layouts, clocking architectures,
+power distribution network designs, and a full software stack (HDL to MATLAB).
+The design is intended to be plug-and-play out of the box, enabling a
+reduction in design and prototype cycle time.
+
+Operation Modes
+~~~~~~~~~~~~~~~
+
+The AD9213-DUAL-EBZ supports two primary operation modes:
+
+- **Synchronized 10G Mode** -- Both AD9213 ADCs operate independently at
+  10 GSPS with multi-chip synchronization (MCS). Data can be captured and
+  plotted from each AD9213 separately or simultaneously.
+- **Interleaved 20G Mode** -- The two AD9213 ADCs are interleaved to achieve
+  an effective 20 GSPS sample rate. The sample clock to one AD9213 is inverted
+  with respect to the other, and the two devices must be gain- and
+  timing-aligned. In this mode, voltage 0 (channel 0) represents the combined
+  interleaved data from both converters.
+
 Features
 ~~~~~~~~
 
@@ -153,6 +174,8 @@ Software Requirements
   <https://www.intel.com/content/www/us/en/software-kit/661657/intel-quartus-prime-pro-edition-design-software-version-19-3-for-windows.html>`__
 - `PuTTY <https://www.putty.org>`__
 - :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+- `VisualAnalog <https://www.analog.com/en/design-center/interactive-design-tools/visualanalog.html>`__
+  (optional, for frequency domain analysis with ADI-provided canvas files)
 
 Board Setup
 ~~~~~~~~~~~
@@ -211,16 +234,80 @@ Configure the Stratix 10 SX SoC board switches as follows:
      - OFF
      - ON
 
-Program an SD card (16 GB minimum) with the
-:doc:`Kuiper Linux </linux/kuiper/index>`
-and place the provided ``socfpga_stratix10_socdk.dtb``, ``u-boot.itb``, and
-the appropriate ``Image`` file into the top-level directory of the BOOT
-partition.
+SD Card Preparation
+~~~~~~~~~~~~~~~~~~~
 
-Program the FPGA using Quartus Prime Programmer with the provided ``.sof``
-file. The board runs at login ``root`` with password ``analog``. Use IIO
-Oscilloscope to connect to the board by entering ``ip:<board-ip>`` in the URL
-field on the Connect tab.
+1. Program a blank SD card (16 GB minimum) with the
+   :doc:`Kuiper Linux </linux/kuiper/index>` image.
+2. Once the image is written, eject and re-insert the SD card.
+3. Place the provided ``socfpga_stratix10_socdk.dtb`` and ``u-boot.itb`` files
+   into the top-level directory (BOOT partition) of the SD card.
+4. Additionally, place the appropriate ``Image`` file into the BOOT partition:
+
+   - For **Synchronized 10G Mode**: use the image from the ``Dual 10G Image``
+     folder.
+   - For **Interleaved 20G Mode**: use the image from the
+     ``Single 20G Image`` folder.
+
+5. Insert the SD card into the Stratix 10 SX SoC board.
+
+FPGA Programming
+~~~~~~~~~~~~~~~~
+
+1. Connect a mini-USB cable from the Stratix 10 board to the host PC for JTAG.
+2. Open Intel Quartus Prime Programmer 19.3.
+3. The software should detect the Stratix 10 SoC Evaluation Board automatically
+   in the Hardware Setup section. If it does not appear, select it manually.
+4. Click **Add File**, navigate to the ADI-provided FPGA binary (``.sof``
+   file), and click **Open**.
+5. Click **Start** and wait for the programmer to complete.
+
+.. note::
+
+   Programming the FPGA also triggers the Linux boot on the HPS. The PuTTY
+   COM console provides updates on the progress of the boot.
+
+Connecting to the Board
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Set up a serial COM port connection using PuTTY at 115200 baud to monitor
+   the boot process.
+2. Once the boot and initialization scripts have completed, obtain the board's
+   IP address by running ``ifconfig`` in the console.
+3. Open IIO Oscilloscope, go to the **Connect** tab, select **manual**, enter
+   ``ip:<board-ip>`` in the URL field, and click **Refresh**.
+4. All IIO devices on the evaluation board (including both AD9213s and the
+   clock chips) will appear. Click **Connect**.
+5. Use the plotting window to capture data from one AD9213 at a time or from
+   both simultaneously. Time domain and frequency domain captures are
+   available.
+
+The board runs at login ``root`` with password ``analog``.
+
+For **Interleaved 20G Mode**, an SSH connection to the board is also required
+to run SPI scripts for gain and timing alignment. Open PuTTY with SSH as the
+connection type, use the board's IP address, and port 22.
+
+Using VisualAnalog
+~~~~~~~~~~~~~~~~~~
+
+For more detailed frequency domain analysis, VisualAnalog can be used with
+ADI-provided canvas files:
+
+1. Install `libiio <https://github.com/analogdevicesinc/libiio/releases>`__
+   (required for the IIO Client block in VisualAnalog).
+2. Open the appropriate VisualAnalog canvas:
+
+   - **Synchronized 10G Mode**: ``Dual9213_IIOScope_FFT.vac``
+   - **Interleaved 20G Mode**: ``Dual9213_Interleaved20G_FFT.vac``
+
+3. Open the IIO Client module settings and enter the IP address of the
+   Stratix 10 board, set the sampling frequency and sample size, and enable
+   the desired channels.
+4. Click **Play** to capture FFTs.
+
+For Interleaved 20G Mode, before capturing data, ensure the two AD9213s are
+gain- and timing-aligned using the ADI-provided calibration scripts.
 
 More Information
 ----------------

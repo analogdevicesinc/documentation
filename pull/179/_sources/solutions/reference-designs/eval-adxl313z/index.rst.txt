@@ -238,6 +238,109 @@ The IIO Oscilloscope provides several views:
 Source code:
 :git-no-OS:`projects/eval-adxl313z/src/examples/iio_example <main:projects/eval-adxl313z/src/examples/iio_example>`.
 
+Linux IIO Driver
+-----------------
+
+The ADXL312, ADXL313, and ADXL314 are supported by a mainlined Linux IIO
+driver targeting serial interface accelerometers. The driver supports both SPI
+and I2C communication.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Function
+     - File
+   * - Core driver
+     - :git-linux:`drivers/iio/accel/adxl313_core.c`
+   * - SPI driver
+     - :git-linux:`drivers/iio/accel/adxl313_spi.c`
+   * - I2C driver
+     - :git-linux:`drivers/iio/accel/adxl313_i2c.c`
+   * - Header
+     - :git-linux:`drivers/iio/accel/adxl313.h`
+   * - Devicetree binding
+     - :git-linux:`Documentation/devicetree/bindings/iio/accel/adi,adxl313.yaml`
+
+Devicetree Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Required devicetree properties:
+
+- ``compatible``: Must match the device, e.g. ``"adi,adxl313"`` or
+  ``"adi,adxl314"``.
+- ``reg``: The I2C address or SPI chip select number for the device.
+
+Required properties for SPI bus usage:
+
+- ``spi-max-frequency``: Maximum SPI clock frequency.
+
+Optional properties:
+
+- ``interrupts``: A list of interrupt specifiers.
+
+Example SPI devicetree node:
+
+.. code-block:: dts
+
+   #include <dt-bindings/gpio/gpio.h>
+   #include <dt-bindings/interrupt-controller/irq.h>
+   spi {
+       #address-cells = <1>;
+       #size-cells = <0>;
+
+       accelerometer@0 {
+           compatible = "adi,adxl313";
+           reg = <0>;
+           spi-max-frequency = <5000000>;
+           interrupt-parent = <&gpio0>;
+           interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+           interrupt-names = "INT1";
+       };
+   };
+
+Example I2C devicetree node:
+
+.. code-block:: dts
+
+   #include <dt-bindings/gpio/gpio.h>
+   #include <dt-bindings/interrupt-controller/irq.h>
+   i2c0 {
+       #address-cells = <1>;
+       #size-cells = <0>;
+
+       accelerometer@53 {
+           compatible = "adi,adxl313";
+           reg = <0x53>;
+           interrupt-parent = <&gpio0>;
+           interrupts = <0 IRQ_TYPE_LEVEL_HIGH>;
+           interrupt-names = "INT1";
+       };
+   };
+
+IIO Sysfs Attributes
+~~~~~~~~~~~~~~~~~~~~~
+
+When the driver is loaded, the following attributes are available under the
+corresponding IIO device directory:
+
+``in_accel_x_raw``, ``in_accel_y_raw``, ``in_accel_z_raw``
+   Raw unscaled acceleration measurement for each axis.
+
+``in_accel_scale``
+   Scale factor to convert raw values to m/s\ :sup:`2`.
+   The actual acceleration is computed as:
+   ``accel = in_accel_*_raw * in_accel_scale`` (m/s\ :sup:`2`).
+
+``in_accel_x_calibbias``, ``in_accel_y_calibbias``, ``in_accel_z_calibbias``
+   Per-axis calibration bias offset.
+
+``in_accel_sampling_frequency``
+   The current sampling frequency of the device in Hz.
+
+``in_accel_sampling_frequency_available``
+   List of available sampling frequencies:
+   6.25, 12.5, 25, 50, 100, 200, 400, 800, 1600, 3200 Hz.
+
 More Information
 -----------------
 
@@ -249,3 +352,11 @@ More Information
 - :adi:`EVAL-ADXL314Z Product Page <EVAL-ADXL314Z>`
 - :git-no-OS:`ADXL313 no-OS Driver <main:drivers/accel/adxl313>`
 - :git-no-OS:`eval-adxl313z no-OS Project <main:projects/eval-adxl313z>`
+- :git-linux:`ADXL313 Linux Driver <drivers/iio/accel/adxl313_core.c>`
+
+Support
+--------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`MEMS Sensors Forum <mems>`.

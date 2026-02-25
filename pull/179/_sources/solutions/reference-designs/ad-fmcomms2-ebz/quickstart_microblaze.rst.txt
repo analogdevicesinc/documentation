@@ -42,14 +42,36 @@ Hardware Setup
 Loading the Design
 -------------------
 
-Use the XSCT console to download the bitstream and ELF image to the FPGA
-board. The steps are similar to other MicroBlaze-based ADI reference designs:
+Use the XSCT/XSDB console (included with Vivado/Vitis) to download the
+bitstream and ELF image to the FPGA board.
 
-#. Open the XSCT console.
-#. Connect to the target board.
-#. Download the bitstream (``.bit`` file).
-#. Download the Linux ELF image (``.elf`` file).
-#. The system will boot into Buildroot Linux.
+.. code-block:: none
+
+   # Connect to the target board
+   connect
+
+   # For KC705:
+   targets -set -filter {name =~ "xc7k325t"}
+   fpga -f system_top.bit
+   after 2000
+   targets -set -filter {name =~ "MicroBlaze*"}
+   dow simpleImage.kc705_fmcomms2-3
+   con
+
+   # For VC707:
+   targets -set -filter {name =~ "xc7vx485t"}
+   fpga -f system_top.bit
+   after 2000
+   targets -set -filter {name =~ "MicroBlaze*"}
+   dow simpleImage.vc707_fmcomms2-3
+   con
+
+.. note::
+
+   Bitstream and ELF images can be obtained from the ADI Kuiper Linux
+   release or built from source using the ADI HDL and Linux repositories.
+   The ``simpleImage`` ELF files contain the Linux kernel, devicetree, and
+   root filesystem in a single file.
 
 Expected Boot Messages
 ----------------------
@@ -68,7 +90,19 @@ messages to look for:
 - ``Starting IIO Server Daemon`` confirms the IIO daemon is running and ready
   for remote connections.
 
-After boot completes, log in with username ``root`` (default password: ``analog``).
+After boot completes, log in with username ``root`` (default password:
+``analog``).
+
+Networking
+~~~~~~~~~~
+
+The MicroBlaze platform uses the Xilinx EmaClite Ethernet controller. The
+system is configured with DHCP by default. If a direct Ethernet connection is
+used, a static IP can be set:
+
+.. code-block:: bash
+
+   ifconfig eth0 192.168.1.10 netmask 255.255.255.0
 
 IIO Oscilloscope Remote
 -----------------------

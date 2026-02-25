@@ -1,0 +1,134 @@
+.. _ad-t1lusb-ebz:
+
+AD-T1LUSB2.0-EBZ
+=================
+
+USB 2.0 to 10BASE-T1L Interface Board.
+
+General Description
+-------------------
+
+.. figure:: ad-t1lusb2.0-ebz.png
+   :width: 300 px
+   :align: right
+
+   AD-T1LUSB2.0-EBZ Board
+
+The :adi:`AD-T1LUSB2.0-EBZ <ad-t1lusb20-ebz>` is an interface board that
+bridges USB 2.0 connectivity with 10BASE-T1L industrial Ethernet. It connects
+a USB Ethernet Controller and MAC (LAN9500A) through MII to the
+:adi:`ADIN1100` PHY, providing a simple out-of-the-box solution for developing
+and testing 10BASE-T1L networks.
+
+The board operates without an external power supply, powered directly from the
+USB bus, making it ready for use immediately upon connection.
+
+Features
+~~~~~~~~
+
+- USB 2.0 to 10BASE-T1L interface
+- LAN9500A USB Ethernet Controller connected via MII to :adi:`ADIN1100` PHY
+- On-board EEPROM for MAC configuration storage
+- Status LEDs for link indication and user-programmable PHY flags
+- Bus-powered operation (no external power supply required)
+- Plug-and-play operation on Windows and Linux
+
+Applications
+~~~~~~~~~~~~
+
+- Industrial Ethernet application development
+- Building automation systems
+- 10BASE-T1L network testing and evaluation
+
+Block Diagram
+-------------
+
+.. figure:: block_diagram.png
+   :width: 600 px
+
+   AD-T1LUSB2.0-EBZ Block Diagram
+
+The board architecture consists of the LAN9500A USB Ethernet Controller/MAC
+connected through MII to the :adi:`ADIN1100` 10BASE-T1L PHY, with an EEPROM
+for persistent MAC address storage and status LEDs for visual link indication.
+
+Package Contents
+----------------
+
+.. figure:: package_contents.png
+   :width: 500 px
+
+   AD-T1LUSB2.0-EBZ Package Contents
+
+System Setup
+------------
+
+The AD-T1LUSB2.0-EBZ is designed for immediate use. Connect the board to a USB
+port on your host computer and to a 10BASE-T1L device using a twisted-pair
+cable.
+
+The board is compatible with systems featuring 10BASE-T1L interfaces, such as:
+
+- :doc:`AD-SWIOT1L-SL </solutions/reference-designs/ad-swiot1l-sl/index>` --
+  Software-configurable Analog and Digital I/O with 10BASE-T1L
+
+- :doc:`AD-APARD32690-SL </solutions/reference-designs/ad-apard32690-sl/index>` --
+  Arduino form-factor MAX32690 development platform
+
+.. figure:: setup_swiot1l.png
+   :width: 500 px
+
+   Setup with AD-SWIOT1L-SL
+
+.. figure:: setup_apard32690.png
+   :width: 500 px
+
+   Setup with AD-APARD32690-SL
+
+.. important::
+
+   The AD-T1LUSB2.0-EBZ transmits and receives data only. Any connected
+   10BASE-T1L device requiring power must be supplied externally.
+
+Network Verification
+--------------------
+
+When connected via USB, the board creates a new network interface on the host
+computer and automatically receives an IPv4 address.
+
+**Windows:**
+
+Open a command prompt and run:
+
+::
+
+   ipconfig
+
+**Linux:**
+
+Open a terminal and run:
+
+::
+
+   ip addr
+
+Verify connectivity to the remote device by running a ``ping`` command to the
+IP address of the connected 10BASE-T1L device.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   :adi:`AD-T1LUSB2.0-EBZ Design Support Package <AD-T1LUSB2.0-EBZ-DesignSupport>`
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the :ez:`Reference Designs <reference-designs>` community on EngineerZone.

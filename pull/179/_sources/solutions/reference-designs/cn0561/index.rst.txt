@@ -216,11 +216,20 @@ Linux Driver and HDL Reference Design
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The EVAL-CN0561-ARDZ is also supported by an HDL reference design targeting
-FPGA carrier boards. The following carriers are supported:
+FPGA carrier boards. The HDL design uses the SPI Engine Framework to interface
+with the :adi:`AD4134` ADC in slave mode, with the FPGA generating both DCLK
+and ODR signals. The following carriers are supported:
 
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__ on FMC slot
 - `Cora Z7S <https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development>`__ on Arduino-type headers
 - `DE10-Nano <https://www.intel.com/content/www/us/en/developer/topic-technology/edge-5g/hardware/fpga-de10-nano.html>`__
+
+When using the HDL reference design, the following jumper positions are
+required on the EVAL-CN0561-ARDZ:
+
+- P10: Mounted (ASRC mode)
+- P13: Position 1-2 (on-board +/-15 V supply)
+- P15: Position 1-2 (on-board +/-15 V supply)
 
 **HDL Reference Design**
 
@@ -253,5 +262,12 @@ More Information and Useful Links
 - :adi:`ADG3308 Product Page <ADG3308>`
 - :adi:`LT3092 Product Page <LT3092>`
 - :adi:`LTC6373 Product Page <LTC6373>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
 
 .. esd-warning::

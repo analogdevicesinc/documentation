@@ -73,6 +73,54 @@ HDL Source Code
 Software Support
 ----------------
 
+Linux Driver
+~~~~~~~~~~~~
+
+The :adi:`AD9083` is a 16-channel, 125 MHz bandwidth, continuous time
+sigma-delta (CTSD) ADC. The 16 ADC cores feature a first-order CTSD modulator
+architecture with integrated background nonlinearity correction logic and
+self-cancelling dither. Each ADC has a signal processing tile containing a
+cascaded integrator comb (CIC) filter, a quadrature digital downconverter
+(DDC) with multiple FIR decimation filters, or up to three quadrature DDC
+channels with averaging decimation filters for data gating applications.
+
+Users can configure the Subclass 1 JESD204B based high-speed serialized
+output in a variety of lane configurations (up to four), depending on the DDC
+configuration and the acceptable lane rate of the receiving logic device.
+
+The AD9083 Linux IIO driver depends on **SPI**.
+
+Kernel configuration (``make menuconfig``):
+
+.. code-block:: none
+
+   Device Drivers  --->
+     <*> Industrial I/O support --->
+       --- Industrial I/O support
+       -*-   Enable ring buffer support within IIO
+       -*-     Industrial I/O lock free software ring
+       -*-   Enable triggered sampling support
+
+             *** Direct Digital Synthesis ***
+         [--snip--]
+
+         <*>   Analog Devices CoreFPGA AXI DDS driver
+         <*>   Analog Devices AD9083 16-Channel, 125 MHz Bandwidth, JESD204B ADC
+
+         [--snip--]
+
+Driver and device tree source files:
+
+- :git-linux:`drivers/iio/adc/ad9083.c`
+- :git-linux:`drivers/iio/adc/ad9083` (API driver)
+- :git-linux:`arch/arm64/boot/dts/xilinx/adi-ad9083-fmc-ebz.dtsi`
+- :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9083-fmc-ebz.dts`
+
+Related driver files:
+
+- :git-linux:`drivers/iio/adc/cf_axi_adc_core.c`
+- :git-linux:`drivers/iio/adc/cf_axi_adc.h`
+
 No-OS Project
 ~~~~~~~~~~~~~
 

@@ -37,11 +37,16 @@ connector. The evaluation board includes:
 - A 5 V external precision voltage reference
 - Flexible input wiring configuration via jumpers (COM, pseudo-differential,
   fully differential)
-- An RESET pin that can be connected to an FPGA GPIO for hardware reset
+- A RESET pin that can be connected to an FPGA GPIO for hardware reset
 
 A typical test setup consists of the EVAL-AD4696FMCZ connected to a ZedBoard.
 An :adi:`ADALM2000` (M2K) can be used to generate analog input signals via
 coax cables with SMA connectors.
+
+.. figure:: eval-ad4696fmcz-zedboard-m2k.jpg
+   :align: center
+
+   Typical EVAL-AD4696FMCZ + ZedBoard + ADALM2000 test setup
 
 HDL Reference Design
 --------------------
@@ -83,6 +88,56 @@ upstream Linux kernel.
 - :git-linux:`drivers/iio/adc/ad4695.c`
 - :git-linux:`Documentation/devicetree/bindings/iio/adc/adi,ad4695.yaml`
 
+.. note::
+
+   In order to achieve the maximum sample rate, using a SPI offload such as the
+   AXI SPI Engine is required.
+
+Enabling the Driver
+^^^^^^^^^^^^^^^^^^^
+
+Pre-compiled kernels from ADI should have this driver already enabled. If
+building your own kernel, enable it using the ``CONFIG_AD4695`` option:
+
+.. code-block:: none
+
+   Device Drivers  --->
+     Industrial I/O support  --->
+       Analog to digital converters  --->
+         Analog Devices AD4695 and similar ADCs driver
+
+Sysfs Attributes
+^^^^^^^^^^^^^^^^
+
+After the driver probes successfully, the voltage measurement channels are
+available as IIO channels. Each voltage input provides the following
+attributes:
+
+- ``in_voltageX_raw`` - Reading this triggers a single conversion and returns
+  the result.
+- ``in_voltageX_scale`` - Based on the reference voltage, this value converts
+  ``raw`` to millivolts.
+- ``in_voltageX_offset`` - The common mode voltage in raw units.
+
+The measured voltage is calculated as: ``(raw + offset) * scale``.
+
+The internal temperature sensor is available via the ``in_temp`` channel with
+similar ``in_temp_scale`` and ``in_temp_offset`` attributes for converting to
+millidegrees Celsius.
+
+Calibration
+^^^^^^^^^^^
+
+The AD469x family has per-channel calibration features for adjusting offset and
+gain:
+
+- ``in_voltageX_calibbias`` - Adjusts the offset calibration for channel X.
+- ``in_voltageX_calibscale`` - Adjusts the gain calibration for channel X.
+- ``in_voltageX_calibbias_available`` - Shows the range of allowable offset
+  values.
+- ``in_voltageX_calibscale_available`` - Shows the range of allowable gain
+  values.
+
 Device Trees
 ~~~~~~~~~~~~
 
@@ -92,7 +147,7 @@ The default devicetree is for the EVAL-AD4696FMCZ board with the FMC connector
 using default jumper positions, compiled with ``make SPI_4WIRE=0``.
 
 Devicetree Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ADC is represented as a child node of the SPI controller. The
 ``compatible`` property selects the specific chip variant.
@@ -132,6 +187,22 @@ SPI bus node (SPI offload wiring):
 For standard SPI wiring (no offload), the CS line is connected to both the CS
 and CNV pins on the ADC, so ``cnv-gpios`` and ``pwms`` are omitted.
 
+Reference Supply Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are two ways to supply a reference voltage:
+
+- **External reference** - Provide the ``ref-supply`` property and omit
+  ``refin-supply``. This is the default on the evaluation board (5 V external
+  reference). Optionally, the ``adi,no-ref-high-z`` flag disables Reference
+  Input High-Z Mode and the ``adi,no-ref-current-limit`` flag disables
+  Overvoltage Reduced Current Mode.
+- **Internal reference buffer** - Provide the ``refin-supply`` property and
+  omit ``ref-supply`` and ``adi,no-ref-high-z``.
+
+Channel Configuration
+^^^^^^^^^^^^^^^^^^^^^
+
 Channel configuration allows specifying the common-mode reference for each
 input. By default, all inputs are pseudo-differential referenced to REFGND:
 
@@ -159,10 +230,13 @@ input. By default, all inputs are pseudo-differential referenced to REFGND:
        bipolar;
    };
 
+If the application requires the High-Z Mode feature to be disabled for a
+channel, add the ``adi,no-high-z`` flag to that channel node.
+
 Quick Start
 -----------
 
-Software setup
+Software Setup
 ~~~~~~~~~~~~~~
 
 ADI provides a :doc:`Kuiper Linux </linux/kuiper/index>`
@@ -183,6 +257,31 @@ Read a single sample (triggers a single conversion):
 
    root@analog:~# cat /sys/bus/iio/devices/iio:device1/in_voltage0_raw
    32734
+
+Buffered Capture
+~~~~~~~~~~~~~~~~
+
+The buffer interface is available in the ``buffer0`` sysfs directory for
+efficiently reading multiple samples.
+
+.. list-table:: Buffered Capture: SPI Offload vs Standard SPI
+   :header-rows: 1
+
+   * - Feature
+     - With SPI Offload
+     - Without SPI Offload
+   * - Sample data width
+     - Always 32-bit
+     - 32-bit with oversampling, 16-bit without
+   * - Sample rate control
+     - ``in_voltage0_sampling_frequency`` attribute
+     - Requires manual trigger configuration (e.g., ``hrtimer``)
+   * - Maximum rate
+     - Achievable (with proper wiring)
+     - Limited by Linux host CPU
+   * - Channel restrictions
+     - At least 2 voltage channels must be enabled
+     - No restrictions
 
 Buffered capture with SPI offload (minimum 2 voltage channels required):
 
@@ -211,6 +310,9 @@ IIO Oscilloscope
 capture and visualize ADC samples. For setups with SPI offload support, set
 the sample rate via the *Debug* tab by selecting the device, an input voltage
 channel, and the ``sampling_frequency`` attribute.
+
+For setups without SPI offload support, a trigger source must be configured
+manually and cannot be controlled via the IIO Oscilloscope application.
 
 More Information
 ----------------

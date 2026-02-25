@@ -78,11 +78,28 @@ For remote access:
 The FMCOMMS2 plugin provides control of TX/RX LO frequencies, sample rates,
 RF bandwidth, gain control, DDS tone generation, and FIR filter management.
 
+Building from Source
+--------------------
+
+Instructions for building the ZynqMP / MPSoC Linux kernel and devicetrees from
+source:
+
+- `Building the ZynqMP boot image BOOT.BIN
+  <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- :doc:`Kuiper Linux </linux/kuiper/index>` for SD card image creation
+
+Networking
+----------
+
+By default, DHCP is enabled. A static IP can be configured using the
+``enable_static_ip.sh`` script:
+
+.. code-block:: bash
+
+   enable_static_ip.sh <ip_address> eth0
+
 .. note::
 
-   By default, DHCP is enabled. A static IP can be configured using the
-   ``enable_static_ip.sh`` script:
-
-   .. code-block:: bash
-
-      enable_static_ip.sh <ip_address> eth0
+   The ``enable_static_ip.sh`` script fixes the IP address of the desired
+   Ethernet adapter and prevents the onboard network manager from changing it.
+   This is required for directly connected Ethernet cables without DHCP servers.

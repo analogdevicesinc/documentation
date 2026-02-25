@@ -18,7 +18,9 @@ JESD204B high speed serial interface. This board meets all the FMC
 specifications in terms of mechanical size and mounting hole locations.
 
 This board is targeted to use the ADI reference designs that work with both
-Altera and Xilinx development systems.
+Altera and Xilinx development systems. The analog I/O on this board uses
+micro-miniature coaxial (MMCX) connectors. To connect to SMA-based test
+equipment, an adapter such as the Molex 89761-6810 is needed.
 
 .. image:: ad-fmcjesdadc1-ebz_top.png
    :align: center
@@ -166,8 +168,27 @@ in the first Nyquist zone.
 Quick Start
 -----------
 
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`,
+  :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`, or
+  :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>` board
+- AD-FMCJESDADC1-EBZ FMC board
+- Signal generators for ADC inputs
+- USB keyboard/mouse and HDMI display (for ZC706)
+- USB JTAG cable (Micro USB) for KC705/VC707
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+- :doc:`Kuiper Linux </linux/kuiper/index>` (for ZC706)
+- Pre-built MicroBlaze bitfile and Linux ELF image (for KC705/VC707)
+- A UART terminal (Tera Term or similar), baud rate 115200 (8N1)
+- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+
 ZC706 (Zynq, Linux)
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 1. Prepare a Kuiper Linux SD card following the instructions at
    :doc:`Kuiper Linux </linux/kuiper/index>`. This generic image supports the
@@ -175,10 +196,18 @@ ZC706 (Zynq, Linux)
 2. Insert the SD card into the ZC706 SD card slot (J30).
 3. Plug the AD-FMCJESDADC1-EBZ into the HPC FMC connector (J37).
 4. Connect an HDMI display to the HDMI video connector (P1).
-5. Set boot mode switch SW11: pins 1-2 Down, 3-4 Up, 5 Down.
-6. Connect power and turn on the board.
-7. Wait approximately 30 seconds for the DONE LED to turn green, then
+5. Connect a USB keyboard/mouse to the USB 2.0 connector (J21).
+6. Set boot mode switch SW11: pins 1-2 Down, 3-4 Up, 5 Down.
+7. Connect the power supply to the 12 V power input connector (J22) and
+   turn on the board.
+8. Wait approximately 30 seconds for the DONE LED to turn green, then
    another 30 seconds for the HDMI display to show the desktop.
+
+.. note::
+
+   The specifications of the AD9250 converter are better than most signal
+   generators. Spurs or performance issues may result from an insufficiently
+   clean source signal.
 
 Once the system has booted, the IIO Oscilloscope application can be used
 to visualize ADC data:
@@ -193,14 +222,49 @@ KC705 / VC707 (MicroBlaze, Linux)
 
 1. Download the pre-built MicroBlaze bitfile and Linux ELF image for the
    target board.
-2. Connect the AD-FMCJESDADC1-EBZ to the HPC connector of the KC705 or
-   VC707.
+2. Connect the AD-FMCJESDADC1-EBZ to the HPC connector of the KC705
+   (HPC slot) or VC707 (FMC1 HPC connector).
 3. Connect a USB JTAG cable (Micro USB) to the host PC.
 4. Power on the FPGA board.
-5. Use Xilinx ISE Microprocessor Debugger (XMD) to load the bitfile and
-   ELF image. Set the UART terminal to 115200 baud (8N1).
-6. After boot, connect the IIO Oscilloscope on a host PC to the target's
-   IP address via Settings → Connect.
+5. Open the XMD console to configure the FPGA and download the ELF image.
+   Set the UART terminal to 115200 baud (8N1).
+6. After boot, the board will obtain an IP address via DHCP. Connect the
+   IIO Oscilloscope on a network-enabled host PC to the target's IP address
+   via Settings -> Connect.
+
+.. note::
+
+   The IIO Oscilloscope can be used remotely by building and running the
+   application on a network-enabled Linux host and connecting to the target
+   board's IP address.
+
+FMC-176 Compatibility
+---------------------
+
+The reference design is also compatible with the 4DSP FMC-176 board and its
+variations. The FMC-176 is a high speed data acquisition (4 ADC channels at
+250 MSPS) and conversion (2 DAC channels at 5.6 GSPS) card, featuring two
+:adi:`AD9250` and two :adi:`AD9129` DACs.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Part Number
+     - ADC Channels
+     - DAC Channels
+   * - FMC-176
+     - 4 (2x AD9250)
+     - 2 (2x AD9129)
+   * - FMC-230
+     -
+     - 2 (2x AD9129)
+   * - AD-FMCJESDADC1-EBZ
+     - 4 (2x AD9250)
+     -
+
+To fully support both DACs of the FMC-176, a carrier must have a fully
+populated HPC connector. The KC705 does not have a fully populated HPC
+connector, so only one DAC channel is available on that carrier.
 
 Software Support
 ----------------
@@ -210,6 +274,12 @@ Linux Drivers
 
 - :git-linux:`AD9250 Linux Driver <drivers/iio/adc/ad9467.c>`
 - :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
+
+No-OS Drivers
+~~~~~~~~~~~~~
+
+- :git-no-OS:`JESD204B Driver <drivers/axi_core/jesd204>`
+- :git-no-OS:`Xilinx Platform Drivers <drivers/platform/xilinx>`
 
 Eye Scan
 ~~~~~~~~
@@ -233,10 +303,17 @@ input waveforms.
 To use Visual Analog with the ZC706:
 
 1. Ensure both the ZC706 and the host PC running Visual Analog are on the
-   same network (crossover cable or common network with DHCP).
+   same network. This can be done using a crossover cable or by plugging both
+   into a common network with DHCP.
 2. Find the IP address of the ZC706 by opening a terminal on the board
    (Ctrl+Alt+T) and running ``ip addr show``.
 3. Enter this IP address in the IIO client settings within Visual Analog.
+
+.. figure:: iio_command_client_settings.png
+   :align: center
+   :width: 300
+
+   IIO client settings in Visual Analog
 
 More Information
 ----------------

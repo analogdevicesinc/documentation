@@ -74,6 +74,29 @@ The delay controller module (``up_delay_cntrl``) allows dynamic reconfiguration
 of the IDELAYE2 blocks. This compensates for trace differences between data lines
 on the PCB.
 
+Configuration Parameters
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Description
+     - Default Value
+   * - ``ID``
+     - Core ID, should be unique for each ADAQ8092 IP in the system
+     - 0
+   * - ``DEVICE_TYPE``
+     - Selects between 7 Series (1), Ultrascale (2), or Ultrascale+ (3) devices
+     - 0
+   * - ``ADC_DATAPATH_DISABLE``
+     - If set, datapath processing is bypassed and output data is taken directly
+       from the ADAQ8092
+     - 0
+   * - ``IO_DELAY_GROUP``
+     - The delay group name set for the delay controller
+     - ``"adc_if_delay_group"``
+
 Design Guidelines
 ~~~~~~~~~~~~~~~~~
 

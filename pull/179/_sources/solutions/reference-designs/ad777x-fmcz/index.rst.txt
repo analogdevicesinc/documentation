@@ -48,6 +48,11 @@ Supported Devices
 - :adi:`AD7771`
 - :adi:`AD7779`
 
+Evaluation Boards
+~~~~~~~~~~~~~~~~~
+
+- :adi:`EVAL-AD7770-AD7779`
+
 Supported Carriers
 ------------------
 
@@ -86,6 +91,66 @@ IP Cores Used
    * - util_cpack2
      - ad777x_adc_pack
      - Channel packing (8 channels, 32-bit samples)
+
+AXI_AD777x Interface
+~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+   :widths: 15 20 15 50
+
+   * - Interface
+     - Pin
+     - Type
+     - Description
+   * - ADC data
+     - ``clk_in``
+     - input
+     - Input clock
+   * -
+     - ``ready_in``
+     - input
+     - Input ready signal
+   * -
+     - ``data_in[3:0]``
+     - input
+     - Serial input data (1, 2, or 4 lanes active)
+   * -
+     - ``sync_adc_miso``
+     - input
+     - Synchronization input signal
+   * -
+     - ``sync_adc_mosi``
+     - output
+     - Synchronization output signal
+   * -
+     - ``adc_dovf``
+     - input
+     - Data overflow input from the DMA
+   * - FIFO
+     - ``adc_clk``
+     - output
+     - Clock domain for the core modules
+   * -
+     - ``adc_rst``
+     - output
+     - Output reset on the ``adc_clk`` domain
+   * -
+     - ``adc_enable_*``
+     - output
+     - Channel enable, activated by software
+   * -
+     - ``adc_valid_*``
+     - output
+     - Valid data available on the bus
+   * -
+     - ``adc_data_*[31:0]``
+     - output
+     - Channel output data
+   * -
+     - ``adc_crc_ch_mismatch[7:0]``
+     - output
+     - Per-channel CRC mismatch flags
 
 Memory Map
 ~~~~~~~~~~
@@ -175,6 +240,56 @@ buffer support for continuous data capture from all 8 channels.
 
 - :git-linux:`drivers/iio/adc/ad7768.c`
 - :git-linux:`arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7768.dts`
+
+Device Tree
+^^^^^^^^^^^
+
+Required properties:
+
+- ``compatible``: Must be one of ``"adi,ad7768"`` or ``"adi,ad7768-4"``
+- ``reg``: SPI chip select number for the device
+- ``clocks``: Phandle to master clock of the device
+- ``clock-names``: Must be ``"mclk"``
+- ``spi-max-frequency``: Maximum SPI frequency
+- ``dmas``: DMA specifier, consisting of a phandle to the DMA controller node
+- ``dma-names``: Must be ``"rx"``
+- ``vref-supply``: Phandle to the regulator for ADC reference voltage
+
+Optional properties:
+
+- ``reset-gpios``: Reset GPIO
+- ``adi,data-lines``: Number of DOUTx pins on which channel data is output
+  (default: 1). This value is determined by the configuration of the
+  FORMAT pins, which are read on power-up.
+
+IIO Attributes
+^^^^^^^^^^^^^^
+
+Once the driver is loaded, the IIO device is accessible at
+``/sys/bus/iio/devices/iio:deviceX/``. Key attributes include:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 35 65
+
+   * - Attribute
+     - Description
+   * - ``name``
+     - Device name (``ad7768``)
+   * - ``in_voltage_scale``
+     - Scale factor to convert raw values to millivolts
+   * - ``sampling_frequency``
+     - Current sampling frequency
+   * - ``sampling_frequency_available``
+     - Available sampling frequencies
+   * - ``power_mode``
+     - Current power mode
+   * - ``power_mode_available``
+     - Available power modes
+   * - ``filter_type``
+     - Current digital filter type
+   * - ``filter_type_available``
+     - Available digital filter types
 
 No-OS Driver
 ~~~~~~~~~~~~

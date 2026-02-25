@@ -125,9 +125,77 @@ There are two options for powering the AD9208-DUAL-EBZ board:
 Software Requirements
 ~~~~~~~~~~~~~~~~~~~~~
 
+- A Linux host PC
 - Xilinx Vivado 2019.1 or later
 - UART terminal (e.g. TeraTerm)
 - :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+
+Building the HDL Project
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   cd hdl/projects/ad9208_dual_ebz/vcu118
+   make
+
+For general build prerequisites and instructions, refer to the
+`Building HDL projects <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`__
+guide.
+
+Building the Linux Kernel
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The design runs MicroBlaze Linux. Build the kernel and devicetree with:
+
+.. code-block:: bash
+
+   make simpleImage.vcu118_dual_ad9208
+
+For instructions on building MicroBlaze Linux from source, see
+:doc:`/linux/kuiper/index`.
+
+Programming the Board
+~~~~~~~~~~~~~~~~~~~~~
+
+Gather the ``system_top.bit`` from the HDL build and the
+``simpleImage.vcu118_dual_ad9208`` from the Linux build into a working
+directory. Program the board using XSCT or a similar tool:
+
+.. code-block:: bash
+
+   xsct% connect
+   xsct% fpga -f system_top.bit
+   xsct% after 1000
+   xsct% target 3
+   xsct% dow simpleImage.vcu118_dual_ad9208.strip
+   xsct% after 1000
+   xsct% con
+   xsct% disconnect
+
+After the system boots, the following IIO devices should be present:
+
+.. code-block:: bash
+
+   # iio_info | grep iio:device
+           iio:device0: hmc7044
+           iio:device1: axi-ad9208-0-hpc (buffer capable)
+           iio:device2: axi-ad9208-1-hpc
+
+Capturing Data with IIO Oscilloscope
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From the UART console, determine the IP address assigned by the DHCP
+server (or manually assign one). Launch
+:doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` on the host
+PC and connect to the board's IP address.
+
+When the device is configured into **JESD Subclass 1** (default), the
+two JESD links are synchronized and there is no phase difference between
+the input channels.
+
+When the device is configured into **JESD Subclass 0**, the two links
+are not synchronized and phase differences between channels may be
+observed.
 
 Software Support
 ----------------
@@ -136,6 +204,13 @@ Linux Device Driver
 ~~~~~~~~~~~~~~~~~~~
 
 - :git-linux:`drivers/iio/adc/ad9208.c`
+
+Device Trees
+~~~~~~~~~~~~
+
+- :git-linux:`arch/microblaze/boot/dts/adi-dual-ad9208.dtsi`
+- :git-linux:`arch/microblaze/boot/dts/vcu118_dual_ad9208.dts`
+- :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9208.dts`
 
 Evaluating the AD9208 with ACE
 -------------------------------

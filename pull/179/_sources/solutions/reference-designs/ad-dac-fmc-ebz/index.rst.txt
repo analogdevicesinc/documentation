@@ -13,6 +13,7 @@ HDL Source Code
 ---------------
 
 - :git-hdl:`projects/dac_fmc_ebz`
+- `DAC FMC EBZ HDL Project Documentation <https://analogdevicesinc.github.io/hdl/projects/dac_fmc_ebz/index.html>`__
 
 Software Support
 ----------------
@@ -31,46 +32,46 @@ have been validated in hardware.
      - Arria 10 SoC
      - Linux Driver
    * - :adi:`EVAL-AD9135`
-     - :dokuwiki:`EVAL-AD9135 <resources/eval/dpg/eval-ad9136>`
+     - `EVAL-AD9135 <https://wiki.analog.com/resources/eval/dpg/eval-ad9136>`__
      -
      -
      -
      -
    * - :adi:`EVAL-AD9136`
-     - :dokuwiki:`EVAL-AD9136 <resources/eval/dpg/eval-ad9136>`
+     - `EVAL-AD9136 <https://wiki.analog.com/resources/eval/dpg/eval-ad9136>`__
      -
      -
      -
      -
    * - :adi:`EVAL-AD9144`
-     - :dokuwiki:`EVAL-AD9144 <resources/eval/dpg/eval-ad9144>`
+     - `EVAL-AD9144 <https://wiki.analog.com/resources/eval/dpg/eval-ad9144>`__
      - :git-linux:`dts <arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9144-fmc-ebz.dts>`
      -
      -
      -
    * - :adi:`EVAL-AD9152`
-     - :dokuwiki:`EVAL-AD9152 <resources/eval/dpg/eval-ad9152>`
+     - `EVAL-AD9152 <https://wiki.analog.com/resources/eval/dpg/eval-ad9152>`__
      -
      -
      -
      -
    * - :adi:`EVAL-AD9154`
-     - :dokuwiki:`EVAL-AD9154 <resources/eval/dpg/eval-ad9154>`
+     - `EVAL-AD9154 <https://wiki.analog.com/resources/eval/dpg/eval-ad9154>`__
      - :git-linux:`dts <arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9154-fmc-ebz.dts>`
      -
      -
      -
    * - :adi:`EVAL-AD916x <eval-AD916x>`
-     - :dokuwiki:`EVAL-AD916x <resources/eval/dpg/eval-ad9162>`
+     - `EVAL-AD916x <https://wiki.analog.com/resources/eval/dpg/eval-ad9162>`__
      -
      -
      -
      -
    * - :adi:`EVAL-AD917x <eval-AD9172>`
-     - :dokuwiki:`EVAL-AD917x <resources/eval/dpg/eval-ad9172>`
+     - `EVAL-AD917x <https://wiki.analog.com/resources/eval/dpg/eval-ad9172>`__
      - :git-linux:`dts <arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9172-fmc-ebz-mode4.dts>`
      - :git-linux:`dts <arch/arm/boot/dts/xilinx/zynq-zc706-adv7511-ad9172-fmc-ebz.dts>`
-     - :git-linux:`dts <2019_R1_altera:arch/arm/boot/dts/socfpga_arria10_socdk_ad9172_fmc.dts>`
+     - :git-linux:`dts <arch/arm/boot/dts/intel/socfpga/socfpga_arria10_socdk_ad9136_fmc_ebz.dts>`
      - :git-linux:`AD9172 <drivers/iio/frequency/ad9172.c>`
 
 Supported Carriers
@@ -676,8 +677,8 @@ AD9173/AD9175 Supported Modes
      - 11
      - 16
 
-Software Support
-----------------
+Linux Drivers
+-------------
 
 - :git-linux:`AD9172 Linux Driver <drivers/iio/frequency/ad9172.c>`
 - :git-linux:`AXI DAC DDS Linux Driver <drivers/iio/frequency/cf_axi_dds.c>`
@@ -695,3 +696,5 @@ Support
 Analog Devices will provide limited online support for anyone using the core
 with Analog Devices components (ADC, DAC, Video, Audio, etc) via the
 :ez:`FPGA Reference Designs Forum <fpga>`.
+
+.. esd-warning::

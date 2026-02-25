@@ -115,6 +115,58 @@ Below are the Programmable Logic interrupts used in this project.
      - 13
      - 109
 
+AXI_AD7606x IP Core
+~~~~~~~~~~~~~~~~~~~
+
+The ``axi_ad7606x`` IP core interfaces the :adi:`AD7606B`, :adi:`AD7606C-16`,
+and :adi:`AD7606C-18` devices using the FPGA parallel data interface and
+provides a FIFO interface for the DMA.
+
+.. list-table:: IP Core Configuration Parameters
+   :header-rows: 1
+
+   * - Name
+     - Default
+     - Description
+   * - ``ID``
+     - 0
+     - Core ID, used when multiple cores are instantiated in a system
+   * - ``DEV_CONFIG``
+     - 0
+     - Device selection: 0 - AD7606B, 1 - AD7606C-16, 2 - AD7606C-18
+   * - ``ADC_TO_DMA_N_BITS``
+     - 16
+     - Number of bits transmitted to DMA: 16 for AD7606B/C-16, 32 for
+       AD7606C-18
+   * - ``ADC_N_BITS``
+     - 16
+     - Number of bits per device: 16 for AD7606B/C-16, 18 for AD7606C-18
+   * - ``ADC_READ_MODE``
+     - 0
+     - ADC read mode: 0 - Simple, 1 - STATUS, 2 - CRC, 3 - CRC_STATUS
+   * - ``EXTERNAL_CLK``
+     - 0
+     - External clock option for the ADC clock: 0 - No, 1 - Yes
+
+The IP core can be configured in various operation modes through the device
+register map. The ``adc_config_ctrl`` signal in the ``up_adc_common`` module
+controls register access: bit 1 selects read (1) or write (0), and bit 0
+enables the read/write operation.
+
+For the AD7606x register mode, the parallel interface uses: DB[15] for
+read (0) or write (1) selection, DB[14:8] for the register address, and
+DB[7:0] for register data. The WR_N and RD_N signals control write and read
+requests to the device.
+
+.. note::
+
+   For the :adi:`AD7606C-18`, the DB pin numbering is offset by +2 compared
+   to the :adi:`AD7606B` and :adi:`AD7606C-16` (e.g., DB0 on AD7606B/C-16
+   corresponds to DB2 on AD7606C-18).
+
+For detailed IP core documentation, refer to the
+`AXI_AD7606x IP core documentation <https://analogdevicesinc.github.io/hdl/library/axi_ad7606x/index.html>`__.
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 

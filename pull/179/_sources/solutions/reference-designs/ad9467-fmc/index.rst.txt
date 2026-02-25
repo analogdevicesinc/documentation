@@ -59,6 +59,39 @@ Block Diagrams
 
    AD9467-FMC card block diagram
 
+Clock Selection
+~~~~~~~~~~~~~~~
+
+The AD9467-FMC-250EBZ board provides three possible clock paths for the
+:adi:`AD9467`:
+
+**Default clock input:**
+  The default clock path uses a transformer-coupled circuit with a high
+  bandwidth 1:1 impedance ratio transformer (T201). The clock input (J201)
+  is 50 Ohm terminated and AC-coupled for single-ended sine wave inputs.
+
+**Crystal oscillator (Y200):**
+  The board can be clocked from the on-board low phase noise 250 MHz
+  oscillator (Vectron VCC6-QCD-250M000). To use this option, install C205
+  and C206, remove C202, and set jumper P200 to the **On** position.
+
+**Clock generator (AD9517-4):**
+  A differential LVPECL or LVDS clock can be generated using the on-board
+  :adi:`AD9517-4`. Populate C304 and C305 (LVPECL) or C306 and C307
+  (LVDS) with 0.1 uF capacitors, and remove C209 and C210 to disconnect
+  the default clock path.
+
+Design Notes
+~~~~~~~~~~~~
+
+- The PN9/PN23 sequences used in the reference design are **not** compatible
+  with O.150. They follow the same polynomial equations but only the MSB is
+  inverted.
+- The AD9467 drives the interleaved first byte (D15:D1) on the rising edge
+  and second byte (D14:D0) on the falling edge of the DCO clock. At certain
+  frequencies, captured data may appear reversed. If this occurs, try setting
+  the "capture select" bit (register 0x0A, bit 0).
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
@@ -77,6 +110,12 @@ Linux Device Driver
 ~~~~~~~~~~~~~~~~~~~
 
 - :git-linux:`drivers/iio/adc/ad9467.c`
+
+Device Trees
+~~~~~~~~~~~~
+
+- :git-linux:`arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad9467-fmc-250ebz.dts`
+- :git-linux:`arch/microblaze/boot/dts/kc705_ad9467_fmc.dts`
 
 Evaluating the AD9467 (SDP-H1)
 -------------------------------

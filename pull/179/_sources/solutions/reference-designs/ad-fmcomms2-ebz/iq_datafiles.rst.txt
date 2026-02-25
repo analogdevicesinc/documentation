@@ -192,6 +192,35 @@ Example Waveforms
      - Text
      - 30.72 MSPS
      - QPSK with pulse shaping
+   * - sinewave_0.3.mat
+     - MATLAB
+     - Any
+     - Sine wave at 30% of full scale (1 channel, duplicated to both TX)
+   * - sinewave_0.3_2ch.mat
+     - MATLAB
+     - Any
+     - Sine wave at 30% of full scale (2 independent channels)
+   * - sinewave_0.6.mat
+     - MATLAB
+     - Any
+     - Sine wave at 60% of full scale (1 channel, duplicated to both TX)
+   * - sinewave_0.6_2ch.mat
+     - MATLAB
+     - Any
+     - Sine wave at 60% of full scale (2 independent channels)
+   * - sinewave_0.9.mat
+     - MATLAB
+     - Any
+     - Sine wave at 90% of full scale (1 channel, duplicated to both TX)
+   * - sinewave_0.9_2ch.mat
+     - MATLAB
+     - Any
+     - Sine wave at 90% of full scale (2 independent channels)
+
+These waveforms are provided with IIO Oscilloscope for demonstration purposes
+and can be loaded into different devices. However, they are generally not meant
+for transceiver characterization or demodulation. For such tasks, creating
+custom waveforms using tools such as MATLAB is recommended.
 
 .. note::
 

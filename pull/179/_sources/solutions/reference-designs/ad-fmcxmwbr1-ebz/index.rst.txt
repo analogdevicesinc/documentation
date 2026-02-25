@@ -223,6 +223,47 @@ Provides access to all power rails generated on the bridge board.
 
    Output power connector (P11) pinout
 
+Quick Start
+-----------
+
+The AD-FMCXMWBR1-EBZ is a dual-board kit. The FMC Bridge Board (AD-FMCBRIDGE1A)
+plugs into the FMC connector on the carrier, while the Protoplate Interface Board
+(AD-FMCBRIDGE1B) mounts on a 32x32 X-Microwave prototype plate and connects to
+the bridge board via the included ribbon and power cables.
+
+The board supports three setup modes:
+
+FMC Carrier Setup (ADRV9009-ZU11EG)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Set up the :ref:`ADRV9009-ZU11EG <adrv9009zu11eg>` base system on the
+   ADRV2CRR-FMC carrier following its quick start guide.
+#. Connect Ethernet from the ADRV2CRR-FMC carrier to your network.
+#. Attach a DisplayPort monitor to the carrier board.
+#. Connect a USB OTG adapter with a USB hub for keyboard and peripherals.
+#. Insert the AD-FMCXMWBR1-EBZ into the FMC HPC connector.
+#. Use the provided ribbon and power cables to connect the bridge board to the
+   protoplate and your X-Microwave setup.
+#. Power on the carrier board.
+
+X-Microwave Controller Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The P10 connector provides a 40-pin header compatible with both the X-Microwave
+controller and a Raspberry Pi. Connect the X-Microwave controller or Raspberry
+Pi to P10 using a 40-pin ribbon cable. The provided cables then link the
+protoplate to your X-Microwave prototype plate.
+
+.. note::
+
+   The FMC (P1) and Raspberry Pi/X-MW Controller (P10) interfaces cannot be
+   used simultaneously.
+
+.. note::
+
+   The adjustable power supplies (potentiometer-controlled) default to their
+   maximum output values at power-up.
+
 Supported Carriers
 ------------------
 
@@ -248,10 +289,26 @@ HDL Source Code
 
 - :git-hdl:`projects/adrv9009zu11eg/adrv2crr_fmcxmwbr1`
 
+Software Support
+----------------
+
+The Linux reference design exposes the following interfaces on the
+ADRV9009-ZU11EG + ADRV2CRR-FMC platform:
+
+- **2x AXI SPI** cores (accessible as ``/dev/spidevX.Y``), supporting devices
+  such as the :adi:`AD5721R` DAC
+- **2x AXI I2C** cores, supporting devices such as the :adi:`AD7291` ADC
+- **AXI GPIO** controller, providing access to 8 GPIO lines via
+  ``/sys/class/gpio``
+
+IIO devices enumerated on a typical boot include SPI-connected DACs and
+I2C-connected ADCs, accessible through the standard Linux IIO subsystem.
+
 More Information
 ----------------
 
 - :ref:`ADRV9009-ZU11EG User Guide <adrv9009zu11eg>`
+- :ref:`ADRV2CRR-FMC Carrier User Guide <adrv2crr-fmc>`
 - `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 
 Support

@@ -216,3 +216,10 @@ More Information
 - :git-no-OS:`MAX11205PMB1 No-OS Project <projects/max11205pmb1>`
 - :git-no-OS:`MAX11205 No-OS Driver <drivers/adc/max11205>`
 - :git-linux:`MAX11205 Linux Driver <drivers/iio/adc/max11205.c>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`EngineerZone <data-converters>`.

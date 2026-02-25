@@ -71,6 +71,27 @@ active lanes. The interface module also implements a parallel CRC check
 algorithm. The data from the interface module is processed by the ADC channel
 module.
 
+The top module instantiates the AD7768 interface module, the ADC channel
+register map, the ADC common register map, and the AXI handling interface. The
+ADC common register map allows basic monitoring and control of the ADC, while
+the ADC channel register map enables per-channel monitoring and control.
+
+IP Core Configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Description
+     - Default Value
+   * - ``ID``
+     - Core ID, should be unique for each AD7768 IP in the system
+     - 0
+   * - ``NUM_CHANNELS``
+     - Number of ADC channels (8 for AD7768, 4 for AD7768-4)
+     - 8
+
 Block Diagram
 ~~~~~~~~~~~~~
 

@@ -256,6 +256,70 @@ To verify the hardware output when running the example:
 The example project runs sequentially and continuously repeats until power is
 removed.
 
+Linux IIO Driver
+-----------------
+
+The :adi:`LTC2672` is supported by a Linux IIO DAC driver. The driver exposes
+five current output channels with per-channel scale, offset, raw, and power-down
+attributes. Toggle mode can be configured on individual channels for fast
+switching between two DAC codes without SPI transactions.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Function
+     - File
+   * - Driver
+     - :git-linux:`drivers/iio/dac/ltc2664.c`
+   * - Devicetree binding
+     - :git-linux:`Documentation/devicetree/bindings/iio/dac/adi,ltc2672.yaml`
+
+Devicetree Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Required devicetree properties:
+
+- ``compatible``: Must be ``"adi,ltc2672"``.
+- ``reg``: The SPI chip select number.
+- ``spi-max-frequency``: Maximum SPI clock frequency.
+- ``vcc-supply``: Analog supply voltage input.
+- ``iovcc-supply``: Digital input/output supply voltage.
+- ``v-neg-supply``: Negative supply voltage input.
+- Channel nodes with ``reg``, ``output-range-microamp``, and optionally
+  ``adi,toggle-mode`` properties.
+
+Optional devicetree properties:
+
+- ``ref-supply``: External reference voltage supply regulator. Only set if an
+  external reference voltage is connected to the REF pin.
+
+IIO Sysfs Attributes
+~~~~~~~~~~~~~~~~~~~~~
+
+When the driver is loaded, the following per-channel attributes are available
+for each of the five current output channels:
+
+``out_currentY_raw``
+   Raw (unscaled) output current value for channel Y.
+
+``out_currentY_scale``
+   Scale factor in microamps per LSB. The output current is computed as:
+   ``I = (out_currentY_raw + out_currentY_offset) * out_currentY_scale`` (uA).
+
+``out_currentY_offset``
+   Offset to be applied to the raw value before scaling.
+
+``out_currentY_powerdown``
+   Writing 1 causes channel Y to enter power-down mode. Writing 0 restores
+   normal operation.
+
+``out_currentY_powerdown_mode``
+   The power-down mode (e.g. ``42kohm_to_gnd``).
+
+For channels configured in toggle mode, additional attributes
+``out_currentY_raw0``, ``out_currentY_raw1``, ``out_currentY_toggle_en``, and
+``out_currentY_symbol`` are available.
+
 More Information
 ----------------
 
@@ -263,6 +327,7 @@ More Information
 - :adi:`LTC2672`
 - :git-no-OS:`DC2903A No-OS Project <projects/dc2903a>`
 - :git-no-OS:`LTC2672 No-OS Driver <drivers/dac/ltc2672>`
+- :git-linux:`LTC2672 Linux Driver <drivers/iio/dac/ltc2664.c>`
 
 Support
 -------

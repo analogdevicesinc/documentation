@@ -17,8 +17,18 @@ carrier board package includes a power supply, a heatsink for the RF-SOM
 heat spreader plate, and the necessary cables and adapters to get up and
 running.
 
-For information on getting started and links to the system software, see the
+For information on getting started, system software, and quick start guides,
+see the
 :doc:`ADRV9009-ZU11EG user guide </solutions/reference-designs/adrv9009zu11eg/index>`.
+
+The :adi:`ADRV2CRR-FMC` includes the following key features:
+
+- Single 12 V input powering the complete prototyping platform
+- ANSI/VITA 57.1 FMC HPC connector with 10 JESD204B transceiver lanes
+- USB 3.0, USB 2.0, Gigabit Ethernet, DisplayPort, and PCIe interfaces
+- QSFP+ and SFP+ cages for high-speed optical connectivity
+- SD card slot, JTAG connector, and UART for debug
+- PMOD and IO expansion connectors for prototyping
 
 Power Input
 -----------
@@ -135,6 +145,21 @@ the PMOD signals to connect these to the 1.8 V referenced ZU11EG PL banks. The
 FXLA108 has auto direction sensing and may not work properly with some signals,
 such as bidirectional SPI data lines or open-drain signals.
 
+Additional I/O
+--------------
+
+The carrier board also provides the following high-speed and general-purpose
+interfaces:
+
+- **USB 3.0** --- USB Type-C connector for SuperSpeed data transfer
+- **USB 2.0** --- Micro-USB connector for UART console access
+- **Gigabit Ethernet** --- Two RJ-45 connectors (M1: SGMII, M2: RGMII)
+- **DisplayPort** --- Full-size DisplayPort output (P2)
+- **PCIe** --- x4 PCIe Gen2 edge connector (P17)
+- **QSFP+** --- Cage for 4-lane transceiver module (P3)
+- **SFP+** --- Cage for single-lane transceiver module (P4)
+- **Audio** --- 3.5 mm line-in (P5) and line-out (P6) jacks
+
 Interfaces
 ----------
 
@@ -167,12 +192,24 @@ The HDL reference design for the ADRV9009-ZU11EG system is available at:
 
 - :git-hdl:`projects/adrv9009zu11eg`
 
+Software Support
+----------------
+
+Software support for the ADRV9009-ZU11EG system is described in the
+:doc:`ADRV9009-ZU11EG user guide </solutions/reference-designs/adrv9009zu11eg/index>`.
+The following software resources are available:
+
+- :git-linux:`ADRV9009 Linux Driver <drivers/iio/adc/adrv9009.c>`
+- `ADRV9009-ZU11EG HDL Project Documentation <https://analogdevicesinc.github.io/hdl/projects/adrv9009zu11eg/index.html>`__
+- `IIO Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope>`__
+
 More Information
 ----------------
 
 - :doc:`ADRV9009-ZU11EG User Guide </solutions/reference-designs/adrv9009zu11eg/index>`
 - :ref:`AD-FMCOMMS8-EBZ User Guide <ad-fmcomms8-ebz>`
 - `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- :adi:`ADRV2CRR-FMC Product Page <ADRV2CRR-FMC>`
 
 Support
 -------

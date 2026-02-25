@@ -99,6 +99,96 @@ HDL Source Code
 
 - :git-hdl:`projects/adrv9371x`
 
+Quick Start Guide
+-----------------
+
+Hardware Requirements
+~~~~~~~~~~~~~~~~~~~~~
+
+- FPGA carrier board (see supported carriers table above)
+- :adi:`EVAL-ADRV9371 <EVAL-ADRV9371>` FMC board
+- 2 x SMA cable for analog signal loopback (optional, but recommended)
+- Power supply for the carrier board
+- Micro-USB cable for serial console
+- Ethernet cable for network connectivity
+- SD card with latest ADI Linux image (for Arria 10 SoC)
+
+Software Requirements
+~~~~~~~~~~~~~~~~~~~~~
+
+- Intel Quartus 21.2 or later (for Intel carriers) / Xilinx Vivado (for
+  Xilinx carriers)
+- UART terminal (e.g. PuTTY, TeraTerm), baud rate 115200
+- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+
+Hardware Setup (Arria 10 SoC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Insert the EVAL-ADRV9371 board into the **FMC A** (J29) header of the
+   Arria 10 SoC Development Kit.
+2. Ensure both the HPS (J26) and FPGA (J27) memory modules are installed.
+3. Connect an Ethernet cable to the right-most Ethernet port (J5).
+4. Connect a USB cable to UART1 (J10) for serial console access.
+5. Insert the microSD card with the ADI Linux image into the microSD card
+   slot.
+6. All jumpers and switches on the board should be in the default position
+   for SD card boot.
+7. Connect the power supply and turn on the board.
+
+Preparing the SD Card (Arria 10 SoC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Download the `ADI Kuiper Linux <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`__
+   image and flash it to an SD card.
+2. Copy the boot files from the ``socfpga_arria10_socdk_adrv9371`` directory
+   to the SD card BOOT partition:
+
+   - ``fit_spl_fpga.itb``
+   - ``socfpga_arria10_socdk_sdmmc.dtb``
+   - ``u-boot.img``
+   - ``zImage`` (from the ``socfpga_arria10-common`` folder)
+   - ``extlinux.conf`` in the ``extlinux`` folder
+
+3. Write ``u-boot-splx4.sfp`` from the same folder to the third SD card
+   partition.
+
+Verifying Operation
+~~~~~~~~~~~~~~~~~~~
+
+Once the system boots, run the following command to verify the
+EVAL-ADRV9371 devices are detected:
+
+.. code-block:: bash
+
+   iio_info | grep iio:device
+
+Expected output:
+
+.. code-block:: text
+
+   iio:device0: 0-0014
+   iio:device1: 0-0016
+   iio:device2: ad9528-1
+   iio:device3: ad9371-phy
+   iio:device4: axi-ad9371-rx-obs-hpc (buffer capable)
+   iio:device5: axi-ad9371-tx-hpc (buffer capable)
+   iio:device6: axi-ad9371-rx-hpc (buffer capable)
+
+Using IIO Oscilloscope
+~~~~~~~~~~~~~~~~~~~~~~
+
+The :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` application
+can be used remotely for device control, monitoring, and data capture.
+
+1. Determine the board IP address from the serial console using
+   ``ifconfig eth0``, or check the LCD display if connected to a DHCP
+   network.
+2. On the host PC, launch IIO Oscilloscope and go to **Settings > Connect**.
+3. Select **Manual** and enter the URI: ``ip:<board_ip_address>``.
+4. Click **Refresh**, then **Connect**.
+5. To plot captured waveforms, go to **File > New Plot**, select the
+   desired channels, and click **Capture / Stop**.
+
 Software Support
 ----------------
 
@@ -110,13 +200,24 @@ Linux Device Driver
 - JESD204B RX/TX drivers
 - AXI-ADXCVR high-speed transceiver drivers
 
-The IIO Oscilloscope can be used remotely for device control and monitoring.
+Device Trees
+~~~~~~~~~~~~
+
+Xilinx:
+
+- :git-linux:`arch/arm/boot/dts/xilinx/zynq-zc706-adv7511-adrv9371.dts`
+- :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-adrv9371.dts`
+
+Intel:
+
+- :git-linux:`arch/arm/boot/dts/intel/socfpga/socfpga_arria10_socdk_adrv9371.dts`
 
 More Information
 ----------------
 
 - `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 - `JESD204B High-Speed Serial Interface Support <https://analogdevicesinc.github.io/hdl/library/jesd204/index.html>`__
+- :adi:`AD9371 Product Page <AD9371>`
 
 Support
 -------

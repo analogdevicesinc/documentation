@@ -125,6 +125,17 @@ broad range of research, academic, industrial, and defense applications. The
 - Integrated digital filtering and calibration
 - SPI access for all device registers
 
+Specifications & Features
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- General purpose design suitable for any application
+- Software tunable across wide frequency range (70 MHz to 6 GHz)
+- Less than 200 kHz to 56 MHz channel bandwidth
+- Powered from a single FMC connector
+- Supports MIMO radio, with less than 1 sample sync on both ADC and DAC
+- Includes schematics, layout, BOM, HDL, Linux drivers, and application software
+- SPI access for all device registers
+
 Applications
 ~~~~~~~~~~~~
 
@@ -421,6 +432,25 @@ Device Trees
 - :git-linux:`ZED DTS <arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad9361-fmcomms2-3.dts>`
 - :git-linux:`ZCU102 DTS <arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dts>`
 
+Linux Applications
+~~~~~~~~~~~~~~~~~~
+
+- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` -- graphical tool
+  for device control, waveform capture, and spectrum analysis
+- `libiio <https://github.com/analogdevicesinc/libiio>`__ -- C library for
+  interfacing with IIO devices locally or over the network
+- `pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`__ -- Python
+  interfaces for ADI hardware
+
+Data Streaming Tools
+~~~~~~~~~~~~~~~~~~~~
+
+- `Analog Devices Transceiver Toolbox
+  <https://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html>`__
+  -- MATLAB/Simulink streaming support for AD9361 platforms
+- `GNU Radio <https://github.com/analogdevicesinc/gr-iio>`__ -- GNU Radio
+  IIO blocks for real-time signal processing
+
 No-OS Software
 ~~~~~~~~~~~~~~
 
@@ -428,7 +458,7 @@ The No-OS bare-metal software provides direct hardware access without a Linux
 operating system. Supported platforms include AC701, KC705, VC707, ZC702,
 ZC706, and ZedBoard.
 
-For detailed No-OS serial commands and setup information, see
+For detailed No-OS API reference and serial commands, see
 :doc:`no_os_software`.
 
 - :git-no-OS:`projects/ad9361`

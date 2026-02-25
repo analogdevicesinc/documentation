@@ -317,6 +317,19 @@ HDL Source Code
 
 - :git-hdl:`projects/ad9656_fmc`
 
+Building the HDL Project
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The design is built upon ADI's generic HDL reference design framework. ADI
+does not distribute pre-built bitstream files, so the project must be built
+from source. Clone the HDL repository and, with the correct tools installed,
+navigate to the project directory and run ``make``:
+
+.. code-block:: bash
+
+   cd hdl/projects/ad9656_fmc/zcu102
+   make
+
 Software Support
 ----------------
 
@@ -325,6 +338,22 @@ No-OS Project
 
 - :git-no-OS:`projects/ad9656_fmc`
 - :git-no-OS:`drivers/adc/ad9656`
+
+The No-OS project provides bare metal support for the AD9656-FMC. The
+following driver components are used:
+
+- :git-no-OS:`AD9656 driver <drivers/adc/ad9656>`
+- :git-no-OS:`AXI ADC core driver <drivers/axi_core/axi_adc_core>`
+- :git-no-OS:`AXI DMAC driver <drivers/axi_core/axi_dmac>`
+- :git-no-OS:`JESD204 driver <drivers/axi_core/jesd204>`
+- :git-no-OS:`Xilinx platform drivers <drivers/platform/xilinx>`
+
+To set up the software:
+
+#. Clone the No-OS GitHub repository
+#. Build the project located at ``projects/ad9656_fmc``
+#. Follow the instructions in the
+   `ADI No-OS build guide <https://analogdevicesinc.github.io/no-OS/doxygen/build_guides.html>`__
 
 More Information
 ----------------
