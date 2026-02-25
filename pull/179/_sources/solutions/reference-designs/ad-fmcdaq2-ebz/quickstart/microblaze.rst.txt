@@ -6,9 +6,9 @@ AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide
 This guide provides some quick instructions (still takes awhile to download, and
 set things up) on how to setup the AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ on:
 
-- `KC705 <https://www.xilinx.com>`__
-- `KCU105 <https://www.xilinx.com>`__
-- `VC707 <https://www.xilinx.com>`__
+- :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
+- :xilinx:`KCU105 <products/boards-and-kits/kcu105.html>`
+- :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
 
 Required Software
 -----------------

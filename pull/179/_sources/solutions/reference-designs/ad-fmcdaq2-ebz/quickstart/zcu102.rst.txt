@@ -5,7 +5,7 @@ AD-FMCDAQ2-EBZ ZynqMP ZCU102 Quick Start Guide
 
 This guide provides some quick instructions (still takes awhile to
 download, and set things up) on how to setup the AD-FMCDAQ2-EBZ on
-`ZCU102 <https://www.xilinx.com>`__.
+:xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`.
 
 Prerequisites
 -------------
@@ -13,7 +13,7 @@ Prerequisites
 Required Hardware
 ~~~~~~~~~~~~~~~~~
 
-- `Xilinx ZCU102 <https://www.xilinx.com>`__ Rev 1.0 or later board
+- :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` Rev 1.0 or later board
 - :adi:`AD-FMCDAQ2-EBZ` FMC board
 - An 8 GB SD card
 - USB keyboard mouse and a Display Port compatible monitor
@@ -44,7 +44,7 @@ Setting up the hardware (ZCU102)
 
 You will need to:
 
-- Get the `Xilinx ZCU102 <https://www.xilinx.com>`__
+- Get the :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`
 - Insert the SD-CARD into the SD Card Interface Connector (J100)
 - Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier HPC0 FMC0 socket
 - Plug your Display Port monitor device into the Display Port Video Connector

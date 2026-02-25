@@ -6,7 +6,7 @@ AD-FMCDAQ2-EBZ Zynq ZC706 Quick Start Guide
 This guide provides some quick instructions (still takes awhile to download, and
 set things up) on how to setup the AD-FMCDAQ2-EBZ on:
 
-- `ZC706 <https://www.xilinx.com>`__ (rev 1.1 or higher)
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>` (rev 1.1 or higher)
 
 Requirements
 ------------
@@ -29,7 +29,7 @@ Setting up the hardware (ZC706)
 
 You will need to:
 
-1. Get the `ZC706 <https://www.xilinx.com>`__:
+1. Get the :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`:
 
    1. Insert the SD-CARD into the SD Card Interface Connector (J30)
    2. Plug the AD-FMCDAQ2-EBZ into the HPC Connector

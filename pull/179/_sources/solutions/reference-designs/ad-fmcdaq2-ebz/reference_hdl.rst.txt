@@ -91,13 +91,13 @@ see the these listed on the main project page - it is not yet done.
 
 Our recommended platforms are the Zynq based systems:
 
-- `ZC706 <https://www.xilinx.com>`__
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
 
 but it also works on the following fabric only systems:
 
-- `KC705 <https://www.xilinx.com>`__
-- `KCU105 <https://www.xilinx.com>`__
-- `VC707 <https://www.xilinx.com>`__
+- :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
+- :xilinx:`KCU105 <products/boards-and-kits/kcu105.html>`
+- :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
 
 For Altera systems:
 

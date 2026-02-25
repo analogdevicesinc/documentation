@@ -24,15 +24,15 @@ it needs a carrier to plug into. The carriers we support are:
      - :doc:`quickstart/a10soc`
    * - :intel:`Arria10 GX FPGA Dev Kit <content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`
      - :doc:`quickstart/a10gx`
-   * - `KC705 <https://www.xilinx.com>`__
+   * - :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
      - :doc:`quickstart/microblaze`
-   * - `KCU105 <https://www.xilinx.com>`__
+   * - :xilinx:`KCU105 <products/boards-and-kits/kcu105.html>`
      - :doc:`quickstart/microblaze`
-   * - `VC707 <https://www.xilinx.com>`__
+   * - :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
      - :doc:`quickstart/microblaze`
-   * - `ZC706 <https://www.xilinx.com>`__
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
      - :doc:`quickstart/zynq`
-   * - `ZCU102 <https://www.xilinx.com>`__
+   * - :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`
      - :doc:`quickstart/zcu102`
 
 The supported OS are:
@@ -53,23 +53,23 @@ The supported OS are:
      - NO (only until hdl_2021_r1 branch)
      - NO
      - NO
-   * - `KC705 <https://www.xilinx.com>`__
+   * - :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
      - YES
      - YES
      - YES
-   * - `KCU105 <https://www.xilinx.com>`__
+   * - :xilinx:`KCU105 <products/boards-and-kits/kcu105.html>`
      - YES
      - YES
      - YES
-   * - `VC707 <https://www.xilinx.com>`__
+   * - :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
      - NO (only until hdl_2018_r2 branch)
      - NO
      - NO
-   * - `ZC706 <https://www.xilinx.com>`__
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
      - YES
      - YES
      - YES
-   * - `ZCU102 <https://www.xilinx.com>`__
+   * - :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`
      - YES
      - YES
      - YES
