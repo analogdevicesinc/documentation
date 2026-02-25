@@ -1,0 +1,313 @@
+.. _eval-cn0150-sdpz:
+
+EVAL-CN0150-SDPZ
+=================
+
+RF Power Measurement Circuit (1 MHz to 8 GHz).
+
+Overview
+--------
+
+:adi:`CN0150 <CN0150>` is a circuit that measures RF power at any frequency
+from 1 MHz to 8 GHz over a range of approximately 60 dB. The measurement
+result is provided as a digital code at the output of a 12-bit ADC with serial
+interface and integrated reference. The output of the RF detector has a
+glueless interface to the ADC and uses most of the ADC's input range without
+further adjustment. A simple two-point system calibration is performed in the
+digital domain.
+
+The :adi:`AD8318` is a demodulating logarithmic amplifier, capable of
+accurately converting an RF input signal to a corresponding decibel-scaled
+output voltage. It employs the progressive compression technique over a
+cascaded amplifier chain, each stage of which is equipped with a detector cell.
+It maintains accurate log conformance for signals of 1 MHz to 6 GHz and
+provides useful operation to 8 GHz. The input range is typically 60 dB
+(re: 50 ohm) with error less than +/-1 dB and provides a typical output
+voltage temperature stability of +/-0.5 dB.
+
+The :adi:`AD7887` is a high speed, low power, 12-bit ADC that operates from a
+single 2.7 V to 5.25 V power supply. It is capable of 125 kSPS throughput rate.
+The output coding is straight binary, and the part is capable of converting
+full power signals of up to 2.5 MHz. The ADC can be configured for either dual
+or single channel operation via the on-chip control register. There is a
+default single-channel mode that allows the AD7887 to be operated as a
+read-only ADC, simplifying the control logic.
+
+The EVAL-CN0150-SDPZ board connects to ADI's System Demonstration Platform
+(SDP) and is powered by a +6 V supply or +6 V wall wart.
+
+.. figure:: cn0150-hw-1024.jpg
+   :align: center
+   :width: 600px
+
+   EVAL-CN0150-SDPZ Evaluation Board
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-CN0150A-SDPZ <EVAL-CN0150A-SDPZ>` evaluation board
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B Board)
+- CN0150A Evaluation Software
+- +6 V power supply or +6 V wall wart
+- PC with Windows 7 (32-bit), Windows Vista (32-bit), or Windows XP;
+  USB interface
+- RF signal source
+- Coaxial RF cable with SMA connectors
+
+General Setup
+-------------
+
+Block Assignments
+~~~~~~~~~~~~~~~~~
+
+.. figure:: 10.png
+   :align: center
+   :width: 600px
+
+   EVAL-CN0150-SDPZ Block Diagram
+
+- The EVAL-CN0150-SDPZ (CN0150 Board) connects to the :adi:`EVAL-SDP-CB1Z`
+  (SDP-B Board) via the 120-pin connector.
+- The SDP-B Board connects to the PC via the USB cable.
+- Terminal block **J1** is the +6 V power supply input.
+- Terminal block **J2** is the +6 V barrel connector for wall wart supply.
+- **J3** is the SMA connector for RF input.
+
+Test Setup
+~~~~~~~~~~
+
+.. figure:: cn0150_test_setup.png
+   :align: center
+   :width: 600px
+
+   EVAL-CN0150-SDPZ Test Setup
+
+#. Connect the 120-pin connector on the :adi:`EVAL-CN0150A-SDPZ` to the
+   connector marked "CON A" on the :adi:`EVAL-SDP-CB1Z`.
+#. Connect the RF signal source to the EVAL-CN0150A-SDPZ via the SMA RF input
+   connector.
+#. With power to the supply off, connect a +6 V power supply to the pins
+   marked "+6V" and "GND" on the board. Alternatively, a +6 V wall wart can
+   be connected to the barrel connector.
+#. Connect the USB cable supplied with the SDP board to the USB port on the PC.
+#. Apply power to the +6 V supply (or wall wart).
+#. Launch the evaluation software.
+#. Connect the USB cable from the PC to the USB mini connector on the SDP
+   board.
+
+.. important::
+
+   Do **not** connect the USB cable to the Mini-USB connector on the SDP board
+   before turning on the dc power supply for the EVAL-CN0150-SDPZ.
+
+Calibration
+~~~~~~~~~~~
+
+Because the slope and intercept of the system vary from device to device, a
+system level calibration is **required**.
+
+#. Apply two known signal levels PIN_1 and PIN_2 close to the endpoints of the
+   AD8318 linear input range. Note that they should be well within the linear
+   operating range of the device (**-50 dBm to -10 dBm for this device**).
+
+   .. figure:: 14.png
+      :align: center
+      :width: 400px
+
+      Calibration Input Range
+
+#. Measure the corresponding output codes CODE_1 and CODE_2 from the ADC.
+#. Calculate the calibration coefficients using the following equations:
+
+   - **SLOPE_ADC** = (CODE_2 - CODE_1) / (PIN_2 - PIN_1)
+   - **INTERCEPT** = PIN_2 - (CODE_2 / SLOPE_ADC)
+
+#. These are used to calculate the unknown input power level, PIN, when
+   operating in the field:
+
+   - **PIN** = (CODE_OUT / SLOPE_ADC) + INTERCEPT
+
+Installing the Evaluation Software
+-----------------------------------
+
+#. Extract the file **CN0150_Evaluation_Software.zip** and open **setup.exe**.
+
+   .. note::
+
+      It is recommended to install the CN0150 Evaluation Software to the
+      default path ``C:\Program Files (x86)\Analog Devices\CN0150\`` and all
+      National Instruments products to ``C:\Program Files\National Instruments\``.
+
+   .. figure:: 1.png
+      :align: center
+      :width: 500px
+
+      CN0150 Software Installer
+
+#. Accept the license agreement to proceed.
+
+   .. figure:: 2.png
+      :align: center
+      :width: 500px
+
+      License Agreement
+
+#. Click **Next** to view the installation review page.
+
+   .. figure:: 3.png
+      :align: center
+      :width: 500px
+
+      Installation Review
+
+#. Click **Next** to start the installation.
+
+   .. figure:: 4.png
+      :align: center
+      :width: 500px
+
+      Installation Progress
+
+#. Upon completion, the ADI SDP Drivers installer will execute.
+
+   .. note::
+
+      Close all other applications before clicking "Next" to allow system file
+      updates without rebooting.
+
+   .. figure:: 5.png
+      :align: center
+      :width: 500px
+
+      SDP Drivers Installer
+
+#. Press **Next** to set the installation location for the SDP Drivers.
+
+   .. note::
+
+      Recommended path: ``C:\Program Files\Analog Devices\SDP\Drivers``
+
+   .. figure:: 6.png
+      :align: center
+      :width: 500px
+
+      SDP Drivers Installation Location
+
+#. Press **Install** to install the SDP Drivers. Click **Finish** when done.
+
+   .. figure:: 8.png
+      :align: center
+      :width: 500px
+
+      Installation Complete
+
+Using the Evaluation Software
+------------------------------
+
+Main Window
+~~~~~~~~~~~
+
+.. figure:: 11.png
+   :align: center
+   :width: 700px
+
+   CN0150 Evaluation Software Main Window
+
+The evaluation software provides the following controls and displays:
+
+#. **Connect** button -- Starts the connection between the CN0150 Evaluation
+   Board and SDP-B Controller Board.
+#. **Reset and Disconnect** button -- Resets and ends the connection.
+#. **Sample Data Graph** tab -- Shows the XY plot of ADC code and output error
+   (%) versus input signal power. Contains plot options for interpolation and
+   color settings.
+#. **Test Setup** tab:
+
+   .. figure:: 12.png
+      :align: center
+      :width: 600px
+
+      Test Setup Tab
+
+   - **Data Acquisition** controls:
+
+     - **Input Power** -- Indicate input signal power level
+     - **Frequency** -- Indicate input signal frequency
+     - **Temperature** -- Temperature test level condition
+     - **Acquire Data** -- Start acquisition of measurement data
+     - **Clear Data** -- Clear the current measurement data
+     - **Save Data to File** -- Save measurement data to file
+     - **Increment Amount** -- Increment value of input power level
+     - **Average Value** -- Read only; ADC conversion value
+     - **Sample size** -- Desired sampling size for ADC
+     - **Remove Last** -- Remove last reading from the graph
+     - **Auto-increment** -- Enable auto increment of input power level
+
+   - **Calibration** controls:
+
+     - **PIN_1** -- First known input power level close to endpoints of AD8318
+       linear input range
+     - **PIN_2** -- Second known input power level
+     - **Slope (ADC Code/dBm)** -- Slope of the transfer curve of AD8318
+       (-24 mV/dB nominal)
+     - **Intercept (ADC Code)** -- X-axis intercept with a unit of dBm
+
+#. **Configure** tab:
+
+   .. figure:: 15.png
+      :align: center
+      :width: 600px
+
+      Configure Tab
+
+   - **SDP Connector** -- Selects which 120-pin connection of the SDP-B Board
+     to use
+   - **SCLK Frequency** -- Sets the SPI clock frequency
+   - **AD7887 Voltage Reference** -- Select between internal or external 2.5 V
+     reference
+   - **SPI Byte to Write** -- Buffer for SPI write transfer
+   - **Flash LED** -- Flashes the LED on the SDP controller board
+   - **Read Firmware** -- Reads the firmware of CN0150 Evaluation Board
+
+Running the System
+~~~~~~~~~~~~~~~~~~
+
+#. Open the **CN0150.exe** application from the default installation location.
+#. Set the correct connector and click the **Connect** button.
+#. Upon successful connection, calibrate the device in the **Test Setup** tab.
+#. After proper calibration, set the correct input parameters.
+#. Start acquisition of measurement data through the **Acquire Data** button.
+#. To manipulate the data, use **Clear Data** and **Save Data to File**
+   buttons.
+#. Click **Reset and Disconnect** when finished.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0150-SDPZ Design & Integration Files
+   <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0150-DesignSupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - PADS project
+
+Documents
+---------
+
+- :adi:`CN0150 Circuit Note <CN0150>`
+
+Additional Information
+----------------------
+
+- :adi:`AD8318 Product Page <AD8318>`
+- :adi:`AD7887 Product Page <AD7887>`
+- :adi:`ADR421 Product Page <ADR421>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
