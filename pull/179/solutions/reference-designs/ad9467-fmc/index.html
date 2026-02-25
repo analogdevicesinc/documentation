@@ -95,7 +95,10 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AD9467-FMC User Guide</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
@@ -106,6 +109,27 @@
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#no-os-project">No-OS Project</a></li>
 <li><a class="reference internal" href="#linux-device-driver">Linux Device Driver</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluating-the-ad9467-sdp-h1">Evaluating the AD9467 (SDP-H1)</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#software-needed">Software Needed</a></li>
+<li><a class="reference internal" href="#typical-measurement-setup">Typical Measurement Setup</a></li>
+<li><a class="reference internal" href="#configuring-the-board">Configuring the Board</a></li>
+<li><a class="reference internal" href="#visualanalog-setup">VisualAnalog Setup</a></li>
+<li><a class="reference internal" href="#spicontroller-setup">SPIController Setup</a></li>
+<li><a class="reference internal" href="#obtaining-an-fft">Obtaining an FFT</a></li>
+<li><a class="reference internal" href="#ad9517-4-configuration-optional">AD9517-4 Configuration (Optional)</a></li>
+<li><a class="reference internal" href="#troubleshooting-sdp-h1">Troubleshooting (SDP-H1)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluating-the-ad9467-zedboard-linux">Evaluating the AD9467 (ZedBoard + Linux)</a><ul>
+<li><a class="reference internal" href="#id1">Equipment Needed</a></li>
+<li><a class="reference internal" href="#id2">Software Needed</a></li>
+<li><a class="reference internal" href="#preparing-the-sd-card">Preparing the SD Card</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#ace-software-setup">ACE Software Setup</a></li>
+<li><a class="reference internal" href="#id3">Obtaining an FFT</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -703,6 +727,22 @@ clock chip and/or setting up the ADL5565 differential amplifier respectively.</p
 <p>The LVDS interface captures and buffers data from the ADC. The DMA interface
 then transfers the samples to the external DDR-DRAM. The capture is initiated
 by software.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9467-fmc/ad9467_board.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9467-fmc/ad9467_board.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD9467-FMC-250EBZ evaluation board</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Full featured evaluation board for the <a class="icon adi reference external" href="https://www.analog.com/AD9467" target="_blank">AD9467</a></p></li>
+<li><p>SPI interface for setup and control</p></li>
+<li><p>Uses 12 V supply; 3.3 V from the FMC connection</p></li>
+<li><p>Internal and external reference options</p></li>
+<li><p>VisualAnalog and SPI Controller software interfaces</p></li>
+</ul>
+</section>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
@@ -721,16 +761,16 @@ by software.</p>
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
 <section id="block-diagrams">
 <h3>Block Diagrams<a class="headerlink" href="#block-diagrams" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id5">
 <img alt="../../../_images/ad9467_fmc_bd.svg" src="../../../_images/ad9467_fmc_bd.svg" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD9467-FMC Xilinx block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD9467-FMC Xilinx block diagram</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id6">
 <img alt="../../../_images/ad9467_fmc_card.svg" src="../../../_images/ad9467_fmc_card.svg" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD9467-FMC card block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD9467-FMC card block diagram</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -757,10 +797,340 @@ by software.</p>
 </ul>
 </section>
 </section>
+<section id="evaluating-the-ad9467-sdp-h1">
+<h2>Evaluating the AD9467 (SDP-H1)<a class="headerlink" href="#evaluating-the-ad9467-sdp-h1" title="Link to this heading"></a></h2>
+<p>This section describes how to evaluate the AD9467-FMC-250EBZ board using
+the <a class="icon adi reference external" href="https://www.analog.com/SDP-H1" target="_blank">EVAL-SDP-CH1Z</a> (SDP-H1) data capture board with
+VisualAnalog and SPIController software on a Windows PC.</p>
+<section id="equipment-needed">
+<h3>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9467" target="_blank">AD9467</a> (AD9467-FMC-250EBZ) evaluation board</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/SDP-H1" target="_blank">EVAL-SDP-CH1Z</a> (SDP-H1) data capture board</p></li>
+<li><p>Analog signal source and antialiasing filter</p></li>
+<li><p>Sample clock source</p></li>
+<li><p>12 V, 2.5 A switching power supply</p></li>
+<li><p>USB 2.0 cable (Mini-B)</p></li>
+<li><p>PC running Windows</p></li>
+</ul>
+</section>
+<section id="software-needed">
+<h3>Software Needed<a class="headerlink" href="#software-needed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.analog.com/en/design-center/interactive-design-tools/visualanalog.html" target="_blank">VisualAnalog</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.analog.com/en/design-center/interactive-design-tools/spicontroller.html" target="_blank">SPI Controller</a></p></li>
+</ul>
+</section>
+<section id="typical-measurement-setup">
+<h3>Typical Measurement Setup<a class="headerlink" href="#typical-measurement-setup" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9467-fmc/ad9467_datacapture.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9467-fmc/ad9467_datacapture.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Evaluation board connection – AD9467-FMC-250EBZ (left) and
+SDP-H1 (right)</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="configuring-the-board">
+<h3>Configuring the Board<a class="headerlink" href="#configuring-the-board" title="Link to this heading"></a></h3>
+<p>Before using the software for testing, configure the evaluation board
+as follows:</p>
+<ol class="arabic simple">
+<li><p>Connect the AD9467-FMC-250EBZ evaluation board to the SDP-H1 data capture
+board as shown in the figure above.</p></li>
+<li><p>Connect one 12 V, 2.5 A switching power supply to the SDP-H1 board.
+Connect the Mini-B USB port of the SDP-H1 board to the PC with the
+supplied USB cable.</p></li>
+<li><p>The SDP-H1 should appear in the Windows Device Manager. If it does not,
+unplug all USB devices, reinstall SPIController and VisualAnalog, and
+restart the hardware setup from step 1.</p></li>
+<li><p>On the ADC evaluation board, provide a clean, low jitter 250 MHz clock
+source to connector <strong>J201</strong> and set the amplitude to 16 dBm. This is the
+ADC sample clock.</p></li>
+<li><p>On the ADC evaluation board, provide a clean, low jitter signal to
+connector <strong>J100</strong>. Use a shielded, RG-58, 50 Ohm coaxial cable. For best
+results, use a narrow-band band-pass filter with 50 Ohm terminations and
+an appropriate center frequency.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When connecting the ADC clock and analog source, use clean signal
+generators with low phase noise, such as Rohde &amp; Schwarz SMA or HP8644B
+signal generators or equivalent.</p>
+</div>
+</section>
+<section id="visualanalog-setup">
+<h3>VisualAnalog Setup<a class="headerlink" href="#visualanalog-setup" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Start <strong>VisualAnalog</strong>.</p></li>
+<li><p>On the <strong>New Canvas</strong> window, select <strong>ADC &gt; Single &gt; AD9467 &gt; FFT</strong>.</p></li>
+<li><p>If VisualAnalog opens with a collapsed view, click the <strong>Expand Display</strong>
+icon.</p></li>
+<li><p>Click the <strong>Settings</strong> button in the <strong>ADC Data Capture</strong> block.</p></li>
+<li><p>On the <strong>General</strong> tab, set the clock frequency to <strong>250 MHz</strong> (or the
+actual clock frequency being used).</p></li>
+<li><p>Click on the <strong>Capture Board</strong> tab and browse to the <code class="docutils literal notranslate"><span class="pre">ad9467_sdp_h1.bin</span></code>
+file. Click the <strong>Program</strong> button. The <strong>FPGA_DONE</strong> LED should
+illuminate on the SDP-H1 board.</p></li>
+<li><p>Click <strong>OK</strong>.</p></li>
+</ol>
+</section>
+<section id="spicontroller-setup">
+<h3>SPIController Setup<a class="headerlink" href="#spicontroller-setup" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Start <strong>SPIController</strong>.</p></li>
+<li><p>Select the <code class="docutils literal notranslate"><span class="pre">AD9467_16Bit_250MSspiR03.cfg</span></code> file if prompted.</p></li>
+<li><p>If necessary, click <strong>File &gt; Cfg Open</strong> and load
+<code class="docutils literal notranslate"><span class="pre">AD9467_16Bit_250MSspiR03.cfg</span></code>.</p></li>
+<li><p>To enable SPI communications, click <strong>Config &gt; Controller Dialog</strong> and
+uncheck the <strong>SDO Active</strong> button.</p></li>
+</ol>
+</section>
+<section id="obtaining-an-fft">
+<h3>Obtaining an FFT<a class="headerlink" href="#obtaining-an-fft" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Click the <strong>Run</strong> button in VisualAnalog. The captured data should appear
+similar to the figure below.</p></li>
+<li><p>Adjust the amplitude of the input signal so that the fundamental is at the
+desired level (examine the <strong>Fund Power</strong> reading in the left panel of the
+FFT window). Usually about 16 dBm of signal power from the signal
+generator produces a -1 dBFS fundamental signal.</p></li>
+<li><p>To save the FFT plot, click the <strong>Float Form</strong> button in the FFT window,
+then use <strong>File &gt; Save Form As</strong> to save it.</p></li>
+</ol>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9467-fmc/sma_100a_5mhz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9467-fmc/sma_100a_5mhz.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">AD9467-FMC-250EBZ FFT at 5 MHz analog input</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="ad9517-4-configuration-optional">
+<h3>AD9517-4 Configuration (Optional)<a class="headerlink" href="#ad9517-4-configuration-optional" title="Link to this heading"></a></h3>
+<p>The AD9467-FMC-250EBZ is configured from the factory to use an external
+clock connected to J201. Alternatively, the board can be configured to use
+the on-board 250 MHz oscillator and <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a> clock generator to
+produce the 250 MSPS clock input.</p>
+<p><strong>Hardware modifications:</strong></p>
+<ul class="simple">
+<li><p>Remove: R209, R210, C209, C210</p></li>
+<li><p>Add: C205, C206, C300, C301, C304, C305</p></li>
+<li><p>Set jumper P200 to the <strong>On</strong> position</p></li>
+</ul>
+<p><strong>Setup instructions:</strong></p>
+<ol class="arabic simple">
+<li><p>Ensure that a clock source is <strong>not</strong> connected to J201.</p></li>
+<li><p>Configure SPIController and VisualAnalog as described above.</p></li>
+<li><p>Launch a second instance of <strong>SPIController</strong>.</p></li>
+<li><p>Load the <code class="docutils literal notranslate"><span class="pre">AD9517spiR03.cfg</span></code> configuration file.</p></li>
+<li><p>Click <strong>Config &gt; Controller Dialog</strong>, select <strong>2</strong> under <strong>FIFO Chip
+Sel#</strong>, then click <strong>Apply</strong> and <strong>OK</strong>.</p></li>
+<li><p>Click <strong>File &gt; Macro Group Open</strong> and select the
+<code class="docutils literal notranslate"><span class="pre">configure_ad9517_AD9467-FMC-250EBZ.mgp</span></code> file.</p></li>
+<li><p>Check the <strong>Enable</strong> checkbox and click <strong>Run Macros</strong>.</p></li>
+<li><p>Verify that LED CR300 is illuminated on the AD9467-FMC-250EBZ board.</p></li>
+<li><p>Click the <strong>Run</strong> button in VisualAnalog to obtain an FFT.</p></li>
+</ol>
+</section>
+<section id="troubleshooting-sdp-h1">
+<h3>Troubleshooting (SDP-H1)<a class="headerlink" href="#troubleshooting-sdp-h1" title="Link to this heading"></a></h3>
+<p><strong>FFT plot appears abnormal:</strong></p>
+<ul class="simple">
+<li><p>If a normal noise floor is visible when the signal generator is
+disconnected, the ADC may be overdriven. Reduce the input level.</p></li>
+<li><p>In <strong>VisualAnalog</strong>, click <strong>Settings</strong> in the <strong>Input Formatter</strong> block
+and verify that <strong>Number Format</strong> is set to the correct encoding (offset
+binary by default).</p></li>
+</ul>
+<p><strong>FFT appears normal but performance is poor:</strong></p>
+<ul class="simple">
+<li><p>Verify that an appropriate band-pass filter is used on the analog input.</p></li>
+<li><p>Verify that the signal generators for clock and analog input are clean
+(low phase noise).</p></li>
+<li><p>If using non-coherent sampling, change the analog input frequency slightly,
+or use coherent frequencies.</p></li>
+<li><p>Verify that the SPI configuration file matches the product being evaluated.</p></li>
+<li><p>Ensure there is no extra stress or torque on the clock and analog input
+connectors.</p></li>
+</ul>
+<p><strong>FFT window remains blank after clicking Run:</strong></p>
+<ul class="simple">
+<li><p>Verify that the evaluation board is securely connected to the SDP-H1.</p></li>
+<li><p>Verify that the FPGA has been programmed by checking that the <strong>FPGA_DONE</strong>
+LED is illuminated on the SDP-H1. If not, reprogram the FPGA through
+VisualAnalog. If the LED still does not illuminate, disconnect the USB
+and power cord for 15 seconds, reconnect, and repeat the setup process.</p></li>
+<li><p>Verify the correct FPGA bin file was used.</p></li>
+<li><p>Verify that the correct sample rate is configured in the <strong>ADC Data
+Capture</strong> block settings.</p></li>
+<li><p>Ensure that the ADC has a valid clock input.</p></li>
+</ul>
+</section>
+</section>
+<section id="evaluating-the-ad9467-zedboard-linux">
+<h2>Evaluating the AD9467 (ZedBoard + Linux)<a class="headerlink" href="#evaluating-the-ad9467-zedboard-linux" title="Link to this heading"></a></h2>
+<p>This section describes how to evaluate the AD9467-FMC-250EBZ board using
+a <a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a>
+with ADI Kuiper Linux and the ACE Generic IIO plugin.</p>
+<section id="id1">
+<h3>Equipment Needed<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9467" target="_blank">AD9467</a> (AD9467-FMC-250EBZ) evaluation board</p></li>
+<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
+<li><p>Analog signal source and antialiasing filter</p></li>
+<li><p>Sample clock source</p></li>
+<li><p>2 x SMA cables</p></li>
+<li><p>12 V / 5 A power supply with AC adapter</p></li>
+<li><p>SD card (16 GB or larger)</p></li>
+<li><p>2 x USB-A to Micro-USB-B cables</p></li>
+<li><p>PC running Windows 10 or later</p></li>
+<li><p>(Optional) Gigabit Ethernet cable</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Software Needed<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux" target="_blank">ADI Kuiper Linux</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html" target="_blank">ACE Software</a>
+with the <strong>ADGenericIIO</strong> plugin</p></li>
+</ul>
+</section>
+<section id="preparing-the-sd-card">
+<h3>Preparing the SD Card<a class="headerlink" href="#preparing-the-sd-card" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Download the
+<a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux" target="_blank">ADI Kuiper Linux image</a>.</p></li>
+<li><p>Verify the image integrity using a checksum tool such as WinMD5.</p></li>
+<li><p>Format the SD card using
+<a class="icon link reference external" href="https://www.sdcardformatter.com/" target="_blank">SD Card Formatter</a> if needed.</p></li>
+<li><p>Flash the ADI Kuiper Linux image to the SD card using
+<a class="icon link reference external" href="https://sourceforge.net/projects/win32diskimager/" target="_blank">Win32DiskImager</a>
+or a similar tool.</p></li>
+<li><p>After flashing, copy the following files to the root directory (BOOT FAT32
+partition) of the SD card:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">target/zynq-zed-adv7511-ad9467-fmc-250ebz/BOOT.BIN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">target/zynq-zed-adv7511-ad9467-fmc-250ebz/devicetree.dtb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">target/zynq-common/uImage</span></code></p></li>
+</ul>
+</li>
+<li><p>Safely eject the SD card.</p></li>
+</ol>
+</section>
+<section id="hardware-setup">
+<h3>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9467-fmc/ad9467_evaluation_board_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9467-fmc/ad9467_evaluation_board_connection.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">AD9467-FMC-250EBZ (right) and ZedBoard (left) setup</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic">
+<li><p>On the ZedBoard, set the boot mode jumpers for <strong>SD card boot</strong>:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jumper</p></th>
+<th class="head"><p>Position</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>JP7</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>JP8</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>JP9</p></td>
+<td><p>3V3</p></td>
+</tr>
+<tr class="row-odd"><td><p>JP10</p></td>
+<td><p>3V3</p></td>
+</tr>
+<tr class="row-even"><td><p>JP11</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p>Insert the SD card into the ZedBoard SD card slot (<strong>J12</strong>).</p></li>
+<li><p>Connect the AD9467-FMC-250EBZ to the ZedBoard FMC connector (<strong>J1</strong>).</p></li>
+<li><p>Connect the 12 V / 5 A power supply to the ZedBoard barrel jack (<strong>J20</strong>).</p></li>
+<li><p>On the AD9467-FMC-250EBZ, provide a clean, low jitter 250 MHz clock source
+to connector <strong>J201</strong> at 16 dBm.</p></li>
+<li><p>Provide a clean analog input signal to connector <strong>J100</strong>. For best
+results, use a narrow-band band-pass filter with 50 Ohm terminations.</p></li>
+<li><p>Connect a USB-A to Micro-USB-B cable from the PC to the ZedBoard USB-UART
+port (<strong>J14</strong>) for terminal access.</p></li>
+<li><p>Turn on the power switch (<strong>SW8</strong>). The green Power LED (<strong>LD13</strong>) should
+illuminate, followed by the blue Done LED (<strong>LD12</strong>) after boot completes.</p></li>
+<li><p>For device connectivity, either:</p>
+<ul class="simple">
+<li><p>Connect another USB cable to USB-OTG port (<strong>J13</strong>), or</p></li>
+<li><p>Connect a Gigabit Ethernet cable to port <strong>J11</strong>.</p></li>
+</ul>
+</li>
+<li><p>If using USB-OTG, open a terminal emulator (such as PuTTY) with the
+serial configuration: baud rate 115200, 8 data bits, 1 stop bit, no
+parity, no flow control. Then enable the USB-OTG port:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>usb_otg.sh<span class="w"> </span><span class="nb">enable</span>
+usb_otg.sh<span class="w"> </span>status
+reboot
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="ace-software-setup">
+<h3>ACE Software Setup<a class="headerlink" href="#ace-software-setup" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Install
+<a class="icon link reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html" target="_blank">ACE Software</a>
+if not already installed.</p></li>
+<li><p>Open the <strong>Plug-In Manager</strong> in ACE and install the <strong>ADGenericIIO</strong>
+plugin from the <strong>Available Packages</strong> list.</p></li>
+<li><p>Return to the ACE <strong>Home</strong> screen. The connected hardware should be
+detected automatically.</p></li>
+<li><p>Click the detected hardware, then in the <strong>System</strong> tab uncheck
+<strong>Operate without Hardware</strong> and click <strong>Acquire</strong>.</p></li>
+<li><p>Return to <strong>Home</strong>, click the detected hardware again, then click <strong>Find
+Devices</strong>. Select device <strong>cf-ad9467-core-lpc</strong>, click <strong>Get IIO Info</strong>,
+and click <strong>Go to Detected Chip</strong>.</p></li>
+</ol>
+</section>
+<section id="id3">
+<h3>Obtaining an FFT<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Set the signal sources:</p>
+<ul class="simple">
+<li><p>Clock input: 250 MHz at 16 dBm on <strong>J201</strong></p></li>
+<li><p>Analog input: desired frequency on <strong>J100</strong></p></li>
+</ul>
+</li>
+<li><p>In ACE, set the <strong>Sampling Frequency</strong> to <strong>250000000</strong>.</p></li>
+<li><p>Verify SPI communication by reading register <strong>0x00</strong> under <strong>Direct
+Register Access</strong> (expected default value: <strong>0x18</strong>).</p></li>
+<li><p>Click <strong>Proceed to Analysis</strong> and set the sample frequency to <strong>250 MHz</strong>.</p></li>
+<li><p>Click <strong>FFT</strong>, then <strong>Run Once</strong> to perform a single capture. Adjust the
+analog input signal level until the fundamental power reaches
+approximately <strong>-1 dBFS</strong>.</p></li>
+<li><p>To save results, click the <strong>Export</strong> button in the <strong>Results</strong> tab.</p></li>
+</ol>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9467-fmc/ad9467_fft.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9467-fmc/ad9467_fft.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">AD9467-FMC-250EBZ sample FFT capture using ACE on ZedBoard</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
 <section id="more-information">
 <h2>More Information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/introduction.html" target="_blank">ADI Reference Designs HDL User Guide</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9467" target="_blank">AD9467 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4 Product Page</a></p></li>
 </ul>
 </section>
 <section id="support">

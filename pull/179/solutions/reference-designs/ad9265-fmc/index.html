@@ -95,9 +95,24 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AD9265-FMC User Guide</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#typical-measurement-setup">Typical Measurement Setup</a><ul>
+<li><a class="reference internal" href="#hardware-configuration">Hardware Configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-setup">Software Setup</a><ul>
+<li><a class="reference internal" href="#setting-up-the-adc-data-capture">Setting Up the ADC Data Capture</a></li>
+<li><a class="reference internal" href="#setting-up-the-spi-controller">Setting Up the SPI Controller</a></li>
+<li><a class="reference internal" href="#adjusting-the-input-signal">Adjusting the Input Signal</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
@@ -705,6 +720,17 @@ status registers.</p>
 <li><p>Optional active clock path using the AD9517</p></li>
 <li><p>Optional oscillator</p></li>
 </ul>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Full featured evaluation board for the <a class="icon adi reference external" href="https://www.analog.com/AD9265" target="_blank">AD9265</a></p></li>
+<li><p>SPI interface for setup and control</p></li>
+<li><p>External, on-board oscillator, and <a class="icon adi reference external" href="https://www.analog.com/AD9517" target="_blank">AD9517</a> clocking options</p></li>
+<li><p>Balun/transformer or amplifier input drive option</p></li>
+<li><p>LDO regulator or switching power supply options</p></li>
+<li><p>VisualAnalog and SPI controller software interfaces</p></li>
+</ul>
+</section>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
@@ -718,6 +744,137 @@ status registers.</p>
 <li><p><a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html" target="_blank">ZC706</a> LPC Slot</p></li>
 </ul>
 </section>
+<section id="equipment-needed">
+<h2>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Analog signal source (such as Rohde &amp; Schwarz SMA 100A Signal Generator)</p></li>
+<li><p>Antialiasing filter (narrow-band band-pass filter with 50 ohm terminations)</p></li>
+<li><p>Sample clock source (if not using the on-board oscillator)</p></li>
+<li><p>12 V power supply</p></li>
+<li><p>1-meter SMA cable</p></li>
+<li><p>PC running Windows</p></li>
+<li><p>USB Mini-B cable</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9265" target="_blank">AD9265</a> evaluation board (AD9265-FMC-125EBZ)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">SDP</a> System Development Platform Kit (EVAL-SDP-CH1Z)</p></li>
+</ul>
+</section>
+<section id="typical-measurement-setup">
+<h2>Typical Measurement Setup<a class="headerlink" href="#typical-measurement-setup" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9265-fmc/ad9265_fmc_125ebz_typical_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9265-fmc/ad9265_fmc_125ebz_typical_setup.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Evaluation board connection – AD9265-FMC-125EBZ (left) and
+EVAL-SDP-CH1Z SDP-H1 (right)</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="hardware-configuration">
+<h3>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h3>
+<p>Before using the software for testing, configure the evaluation board as
+follows:</p>
+<ol class="arabic simple">
+<li><p>Connect the evaluation board to the data capture board, as shown in the
+figure above.</p></li>
+<li><p>Connect one 12 V switching power supply to the EVAL-SDP-CH1Z SDP-H1 board.</p></li>
+<li><p>Connect the SDP-H1 board to the PC with a USB cable (connect to J1).</p></li>
+<li><p>To use the on-board clock, connect Pin 1 and Pin 3 on P2. If using an
+external clock signal, remove the connector on P2 and use a clean signal
+generator connected to J201.</p></li>
+<li><p>On the ADC evaluation board, use a clean signal generator with low phase
+noise to provide an input signal to the input channel (J100). Use a 1 m,
+shielded, RG-58, 50 ohm coaxial cable. For best results, use a narrow-band,
+band-pass filter with 50 ohm terminations and an appropriate center
+frequency.</p></li>
+</ol>
+</section>
+</section>
+<section id="software-setup">
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
+<p>Two software tools are used to configure and capture data from the AD9265:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.analog.com/en/design-center/interactive-design-tools/visualanalog.html" target="_blank">VisualAnalog</a>
+– sets up the data capture and displays FFT results</p></li>
+<li><p><a class="icon link reference external" href="https://www.analog.com/en/design-center/interactive-design-tools/spicontroller.html" target="_blank">SPIController</a>
+– configures the ADC registers via SPI</p></li>
+</ul>
+<section id="setting-up-the-adc-data-capture">
+<h3>Setting Up the ADC Data Capture<a class="headerlink" href="#setting-up-the-adc-data-capture" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Start VisualAnalog.</p></li>
+<li><p>Select <strong>AD9265</strong> and double-click <strong>FFT</strong> in the New Canvas window.</p></li>
+<li><p>Click <strong>Settings</strong> under the <strong>ADC Data Capture</strong> section.</p></li>
+<li><p>Set the device to <strong>AD9265</strong>.</p></li>
+<li><p>Navigate to <strong>Capture Board</strong> and browse for the FPGA image file
+(<code class="docutils literal notranslate"><span class="pre">ad9265_sdph1.bin</span></code>).</p></li>
+<li><p>Click <strong>Program</strong> and verify that LED0 on the SDP-H1 lights up. Then click
+<strong>OK</strong>.</p></li>
+</ol>
+</section>
+<section id="setting-up-the-spi-controller">
+<h3>Setting Up the SPI Controller<a class="headerlink" href="#setting-up-the-spi-controller" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Start SPIController.</p></li>
+<li><p>If a message appears saying “Read Test Failure”, select <strong>Ignore</strong>.</p></li>
+<li><p>Click <strong>File &gt; Cfg Open</strong> and select the file named
+<code class="docutils literal notranslate"><span class="pre">ad9265_16bit_125MSspiR03.cfg</span></code>.</p></li>
+<li><p>If a second “Read Test Failure” message appears, select <strong>Ignore</strong> again.</p></li>
+<li><p>Click <strong>Config &gt; Controller Dialog</strong>.</p></li>
+<li><p>Deselect <strong>SDO Active</strong> and click <strong>OK</strong>.</p></li>
+<li><p>Click <strong>Read Chip ID</strong> and <strong>Read Chip Grade</strong> to verify communication.</p></li>
+<li><p>Return to VisualAnalog and click the <strong>Play</strong> button to begin data capture.</p></li>
+</ol>
+</section>
+<section id="adjusting-the-input-signal">
+<h3>Adjusting the Input Signal<a class="headerlink" href="#adjusting-the-input-signal" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Adjust the amplitude of the input signal so that the fundamental is at
+approximately -1.0 dBFS. Examine the <strong>Fund Power</strong> reading in the left
+panel of the <strong>VisualAnalog Graph - AD9265 Average FFT</strong> window.</p></li>
+<li><p>Click the disk icon within the <strong>Graph</strong> window to save the performance plot
+data as a .csv file for further analysis.</p></li>
+</ol>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9265-fmc/ad9265_typical_window.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9265-fmc/ad9265_typical_window.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">VisualAnalog FFT graph window showing typical AD9265 performance</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h3>
+<p><strong>If the FFT plot appears abnormal:</strong></p>
+<ul class="simple">
+<li><p>If you see a normal noise floor when you disconnect the signal generator
+from the analog input, ensure you are not overdriving the ADC. Reduce the
+input level if necessary.</p></li>
+<li><p>In VisualAnalog, click the <strong>Settings</strong> button in the <strong>Input Formatter</strong>
+block. Check that <strong>Number Format</strong> is set to the correct encoding (offset
+binary by default).</p></li>
+</ul>
+<p><strong>If the FFT appears normal but performance is poor:</strong></p>
+<ul class="simple">
+<li><p>Make sure that an appropriate band-pass filter is used on the analog input.</p></li>
+<li><p>Make sure that the signal generators for the clock and analog input are clean
+(low phase noise).</p></li>
+<li><p>Change the analog input frequency slightly if noncoherent sampling is being
+used, or use coherent frequencies.</p></li>
+<li><p>Make sure the SPI configuration file matches the product being evaluated.</p></li>
+<li><p>Make sure there is no extra stress or torque on the clock and analog input
+connectors.</p></li>
+</ul>
+<p><strong>If the FFT window remains blank after Run is clicked:</strong></p>
+<ul class="simple">
+<li><p>Make sure the evaluation board is securely connected to the SDP-H1 board.</p></li>
+<li><p>Make sure the FPGA has been programmed by verifying that the <strong>FPGA_DONE</strong>
+LED is illuminated on the SDP-H1 board. If not, reprogram the FPGA through
+VisualAnalog. If the LED still does not illuminate, disconnect the USB and
+power cord for 15 seconds, reconnect, and repeat the setup process.</p></li>
+<li><p>Make sure the correct FPGA bin file was used.</p></li>
+<li><p>Verify that the correct sample rate is programmed. Click <strong>Settings</strong> in the
+<strong>ADC Data Capture</strong> block and confirm the <strong>Clock Frequency</strong> is correct.</p></li>
+<li><p>Ensure the ADC has a valid clock input.</p></li>
+</ul>
+</section>
+</section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
 <section id="hdl-source-code">
@@ -730,6 +887,7 @@ status registers.</p>
 <section id="more-information">
 <h2>More Information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9265" target="_blank">AD9265 Product Page</a></p></li>
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/introduction.html" target="_blank">ADI Reference Designs HDL User Guide</a></p></li>
 </ul>
 </section>

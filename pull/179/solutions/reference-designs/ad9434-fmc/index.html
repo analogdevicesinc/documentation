@@ -95,12 +95,30 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AD9434-FMC User Guide</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluating-the-ad9434-sdp-h1">Evaluating the AD9434 (SDP-H1)</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#software-needed">Software Needed</a></li>
+<li><a class="reference internal" href="#typical-measurement-setup">Typical Measurement Setup</a></li>
+<li><a class="reference internal" href="#configuring-the-board">Configuring the Board</a></li>
+<li><a class="reference internal" href="#setting-up-the-adc-data-capture">Setting Up the ADC Data Capture</a></li>
+<li><a class="reference internal" href="#setting-up-the-spi-controller">Setting Up the SPI Controller</a></li>
+<li><a class="reference internal" href="#obtaining-an-fft">Obtaining an FFT</a></li>
+<li><a class="reference internal" href="#clock-configuration-options">Clock Configuration Options</a><ul>
+<li><a class="reference internal" href="#using-spicontroller-for-ad9517-4">Using SPIController for AD9517-4</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -702,6 +720,17 @@ drive the clock and analog inputs of the ADC.</p>
 primitives, capturing 4 samples wide at 1/4th of the ADC clock (125 MHz at
 500 MHz ADC clock). The DMA interface then transfers the samples to the
 external DDR-DRAM.</p>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Full featured evaluation board for the <a class="icon adi reference external" href="https://www.analog.com/AD9434" target="_blank">AD9434</a></p></li>
+<li><p>SPI interface for setup and control</p></li>
+<li><p>External, on-board oscillator, and <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a> clocking options</p></li>
+<li><p>Balun/transformer or amplifier input drive option</p></li>
+<li><p>LDO regulator or switching power supply options</p></li>
+<li><p>VisualAnalog and SPI Controller software interfaces</p></li>
+</ul>
+</section>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
@@ -713,7 +742,7 @@ external DDR-DRAM.</p>
 <h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html" target="_blank">ZC706</a> LPC Slot</p></li>
-<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZEDBOARD</a>
+<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a>
 LPC Slot</p></li>
 </ul>
 </section>
@@ -735,10 +764,247 @@ LPC Slot</p></li>
 </ul>
 </section>
 </section>
+<section id="evaluating-the-ad9434-sdp-h1">
+<h2>Evaluating the AD9434 (SDP-H1)<a class="headerlink" href="#evaluating-the-ad9434-sdp-h1" title="Link to this heading"></a></h2>
+<section id="equipment-needed">
+<h3>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9434" target="_blank">AD9434</a> (AD9434-FMC-500EBZ) evaluation board</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/SDP-H1" target="_blank">EVAL-SDP-CH1Z</a> (SDP-H1) data capture board</p></li>
+<li><p>Analog signal source (preferably Rohde &amp; Schwarz SMA 100A signal generator)</p></li>
+<li><p>Antialiasing filter (narrow-band band-pass filter with 50 Ohm terminations)</p></li>
+<li><p>Sample clock source (if not using the on-board oscillator)</p></li>
+<li><p>12 V power supply</p></li>
+<li><p>1 m SMA cable</p></li>
+<li><p>USB Mini-B cable</p></li>
+<li><p>PC running Windows</p></li>
+</ul>
+</section>
+<section id="software-needed">
+<h3>Software Needed<a class="headerlink" href="#software-needed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.analog.com/en/design-center/interactive-design-tools/visualanalog.html" target="_blank">VisualAnalog</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.analog.com/en/design-center/interactive-design-tools/spicontroller.html" target="_blank">SPI Controller</a></p></li>
+</ul>
+</section>
+<section id="typical-measurement-setup">
+<h3>Typical Measurement Setup<a class="headerlink" href="#typical-measurement-setup" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9434-fmc/ad9434_fmc_500ebz_typical_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9434-fmc/ad9434_fmc_500ebz_typical_setup.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Evaluation board connection – AD9434-FMC-500EBZ (left) and
+EVAL-SDP-CH1Z SDP-H1 (right)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="configuring-the-board">
+<h3>Configuring the Board<a class="headerlink" href="#configuring-the-board" title="Link to this heading"></a></h3>
+<p>Before using the software for testing, configure the evaluation board
+as follows:</p>
+<ol class="arabic simple">
+<li><p>Connect the AD9434-FMC-500EBZ evaluation board to the SDP-H1 data capture
+board as shown in the figure above.</p></li>
+<li><p>Connect one 12 V switching power supply to the SDP-H1 board.</p></li>
+<li><p>Connect the SDP-H1 board to the PC with a USB cable (connector J1).</p></li>
+<li><p>To use the on-board clock, short pins 1 and 2 on header P1.</p></li>
+<li><p>On the ADC evaluation board, use a clean signal generator with low phase
+noise to provide an input signal to the input channel (J100). Use a 1 m,
+shielded, RG-58, 50 Ohm coaxial cable to connect the signal generator.
+For best results, use a narrow-band band-pass filter with 50 Ohm
+terminations and an appropriate center frequency.</p></li>
+<li><p>If using an external clock signal, remove the jumper on P1 and connect
+a clean signal generator to J201.</p></li>
+</ol>
+</section>
+<section id="setting-up-the-adc-data-capture">
+<h3>Setting Up the ADC Data Capture<a class="headerlink" href="#setting-up-the-adc-data-capture" title="Link to this heading"></a></h3>
+<p>After configuring the board, set up the ADC data capture using VisualAnalog:</p>
+<ol class="arabic simple">
+<li><p>Start <strong>VisualAnalog</strong>.</p></li>
+<li><p>Select <strong>AD9434</strong> and double-click <strong>FFT</strong> to create a new canvas.</p></li>
+<li><p>Click <strong>Settings</strong> under the <strong>ADC Data Capture</strong> block.</p></li>
+<li><p>Set the device to <strong>Default</strong> in the General tab.</p></li>
+<li><p>Navigate to the <strong>Capture Board</strong> tab and browse for the FPGA image file
+(<code class="docutils literal notranslate"><span class="pre">ad9434_sdph1.bin</span></code>).</p></li>
+<li><p>Click <strong>Program</strong> and verify that LED0 on the SDP-H1 lights up, then
+click <strong>OK</strong>.</p></li>
+</ol>
+</section>
+<section id="setting-up-the-spi-controller">
+<h3>Setting Up the SPI Controller<a class="headerlink" href="#setting-up-the-spi-controller" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Start <strong>SPIController</strong>.</p></li>
+<li><p>If a <strong>Read Test Failure</strong> message appears, select <strong>Ignore</strong>.</p></li>
+<li><p>Click <strong>File &gt; Cfg Open</strong> and load the file
+<code class="docutils literal notranslate"><span class="pre">ad9434_12bit_500MSspiR03.cfg</span></code>.</p></li>
+<li><p>If another <strong>Read Test Failure</strong> message appears, select <strong>Ignore</strong> again.</p></li>
+<li><p>Click <strong>Config &gt; Controller Dialog</strong>.</p></li>
+<li><p>Uncheck <strong>SDO Active</strong> and click <strong>OK</strong>.</p></li>
+<li><p>Click <strong>Read Chip ID</strong> and <strong>Read Chip Grade</strong> to verify the SPI
+communication.</p></li>
+</ol>
+</section>
+<section id="obtaining-an-fft">
+<h3>Obtaining an FFT<a class="headerlink" href="#obtaining-an-fft" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Go back to <strong>VisualAnalog</strong> and click the <strong>Play</strong> button.</p></li>
+<li><p>Adjust the amplitude of the input signal so that the fundamental is at
+approximately <strong>-1.0 dBFS</strong>. Verify by examining the <strong>Fund Power</strong> reading
+in the left panel of the <strong>VisualAnalog Graph – AD9434 Average FFT</strong>
+window.</p></li>
+<li><p>Click the disk icon within the <strong>Graph</strong> window to save the performance
+data as a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p></li>
+</ol>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9434-fmc/ad9434_typical_fft.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9434-fmc/ad9434_typical_fft.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD9434-FMC-500EBZ typical FFT capture</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="clock-configuration-options">
+<h3>Clock Configuration Options<a class="headerlink" href="#clock-configuration-options" title="Link to this heading"></a></h3>
+<p>The AD9434-FMC-500EBZ board supports several clock configurations: external
+signal generator, on-board oscillator (CCS575S Crystek SAW clock oscillator),
+LVPECL, and LVDS. The LVPECL and LVDS options use the <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a> as
+a clock buffer with its internal VCO in clock distribution mode.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9434-fmc/ad9434_clock_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9434-fmc/ad9434_clock_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">AD9434 clocking setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9434-fmc/ad9434_snr_performance.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9434-fmc/ad9434_snr_performance.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">AD9434 SNR performance using different clock configurations</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The external signal generator provides the best SNR performance due to having
+the lowest clock jitter. The CCS575S oscillator ranks second, followed by
+LVPECL (960 mVpp swing) and LVDS (3.5 mA current setting). As a trade-off,
+the external signal generator has higher material cost and resource
+requirements, while the <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a> configurations offer the lowest
+cost with slightly reduced performance.</p>
+<div class="table-wrapper docutils container" id="id6">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Component changes for different clock configurations</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Clock Configuration</p></th>
+<th class="head"><p>Install</p></th>
+<th class="head"><p>Uninstall</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>External Signal Generator</p></td>
+<td><p>As shipped</p></td>
+<td><p>As shipped</p></td>
+</tr>
+<tr class="row-odd"><td><p>Oscillator</p></td>
+<td><p>R209, P1 (shunt)</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>LVPECL</p></td>
+<td><p>R208, R307, R308, C300, C311, C304, C305</p></td>
+<td><p>C209, C210</p></td>
+</tr>
+<tr class="row-odd"><td><p>LVDS</p></td>
+<td><p>R208, C306, C307</p></td>
+<td><p>C209, C210, R311</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For LVPECL and LVDS configurations, appropriate charge pump filter circuit
+values are necessary for optimized clock buffer performance from the
+<a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a>. Simulate the <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a> using
+<a class="icon link reference external" href="https://www.analog.com/en/design-center/adisimclk.html" target="_blank">ADIsimCLK</a>
+to determine the appropriate values.</p>
+<section id="using-spicontroller-for-ad9517-4">
+<h4>Using SPIController for AD9517-4<a class="headerlink" href="#using-spicontroller-for-ad9517-4" title="Link to this heading"></a></h4>
+<p>After configuring SPIController for AD9434 using FIFO Select 1, a second
+instance of SPIController is needed for the <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a>:</p>
+<ol class="arabic simple">
+<li><p>Start another <strong>SPIController</strong> instance.</p></li>
+<li><p>If a <strong>Read Test Failure</strong> message appears, select <strong>Ignore</strong>.</p></li>
+<li><p>Click <strong>File &gt; Cfg Open</strong> and load the file <code class="docutils literal notranslate"><span class="pre">AD9517spiR03.cfg</span></code>.</p></li>
+<li><p>If another <strong>Read Test Failure</strong> message appears, select <strong>Ignore</strong> again.</p></li>
+<li><p>Click <strong>Config &gt; Controller Dialog</strong>.</p></li>
+<li><p>Set <strong>FIFO Chip Sel#</strong> to <strong>2</strong>, uncheck <strong>SDO Active</strong>, then click <strong>OK</strong>.</p></li>
+<li><p>Go to the <strong>Global</strong> tab and click <strong>Reset</strong>.</p></li>
+<li><p>Configure the <strong>PLL</strong> tab to the desired settings.</p></li>
+<li><p>In the <strong>Output</strong> tab, configure either LVPECL or LVDS:</p>
+<ul class="simple">
+<li><p><strong>LVPECL</strong>: configure <strong>Output3 LVPECL (0x0F5)</strong>, set the differential
+voltage swing and power mode to <strong>Normal Operation</strong>. Set the remaining
+LVPECL outputs to <strong>Safe LVPECL power-down</strong> and power down all LVDS
+outputs.</p></li>
+<li><p><strong>LVDS</strong>: configure <strong>Output5 (0x141)</strong>, uncheck <strong>Power-down Output</strong>,
+set output polarity to <strong>CMOS = A, CMOS B = N, LVDS = N</strong> and LVDS
+output current level to <strong>3.5 mA at 100 Ohms</strong>. Set all LVPECL outputs
+to <strong>Safe LVPECL power-down</strong>.</p></li>
+</ul>
+</li>
+<li><p>Configure the desired divider settings (LVPECL or LVDS divider).</p></li>
+<li><p>For internal VCO mode, set the <strong>VCO divider</strong> to the desired value and
+set <strong>Input to VCO divider</strong> to <strong>VCO</strong>.</p></li>
+<li><p>Go back to the <strong>PLL</strong> tab (<strong>PLL CTRL 3 (0x18)</strong>) and click
+<strong>VCO Cal Now</strong>.</p></li>
+<li><p>Click <strong>Update DUT from Controller</strong> and wait for LED CR300 to illuminate.
+Insert a REFCLK at J201 for the PLL in the <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a> to lock.</p></li>
+<li><p>Go back to <strong>VisualAnalog</strong> and verify that an FFT can be produced using
+the configured clock source.</p></li>
+</ol>
+</section>
+</section>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h3>
+<p><strong>FFT plot appears abnormal:</strong></p>
+<ul class="simple">
+<li><p>If a normal noise floor is visible when the signal generator is disconnected,
+the ADC may be overdriven. Reduce the input level.</p></li>
+<li><p>In <strong>VisualAnalog</strong>, click <strong>Settings</strong> in the <strong>Input Formatter</strong> block and
+verify that <strong>Number Format</strong> is set to the correct encoding (offset binary
+by default).</p></li>
+</ul>
+<p><strong>FFT appears normal but performance is poor:</strong></p>
+<ul class="simple">
+<li><p>Verify that an appropriate band-pass filter is used on the analog input.</p></li>
+<li><p>Verify that the signal generators for clock and analog input are clean
+(low phase noise).</p></li>
+<li><p>Change the analog input frequency slightly if non-coherent sampling is used,
+or use coherent frequencies.</p></li>
+<li><p>Verify that the SPI configuration file matches the product being evaluated.</p></li>
+<li><p>Ensure there is no extra stress or torque on the clock and analog input
+connectors.</p></li>
+</ul>
+<p><strong>FFT window remains blank after clicking Run:</strong></p>
+<ul class="simple">
+<li><p>Verify that the evaluation board is securely connected to the SDP-H1 board.</p></li>
+<li><p>Verify that the FPGA has been programmed by checking that the <strong>FPGA_DONE</strong>
+LED is illuminated on the SDP-H1 board. If not, reprogram the FPGA through
+VisualAnalog. If the LED still does not illuminate, disconnect the USB and
+power cord for 15 seconds, reconnect, and repeat the setup process.</p></li>
+<li><p>Verify the correct FPGA bin file was used.</p></li>
+<li><p>Verify that the correct sample rate is configured. Click <strong>Settings</strong> in the
+<strong>ADC Data Capture</strong> block and check the <strong>Clock Frequency</strong> setting.</p></li>
+<li><p>Ensure that the ADC has a valid clock input.</p></li>
+</ul>
+<p><strong>Analog input frequency does not match in VisualAnalog:</strong></p>
+<ul class="simple">
+<li><p>Check the clock frequency at the ADC and ensure it matches the <strong>Clock
+Frequency</strong> setting in the ADC Data Capture block.</p></li>
+<li><p>For LVPECL and LVDS configurations using the <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a>, reset the
+board and redo the SPIController settings.</p></li>
+</ul>
+</section>
+</section>
 <section id="more-information">
 <h2>More Information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/introduction.html" target="_blank">ADI Reference Designs HDL User Guide</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9434" target="_blank">AD9434 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4 Product Page</a></p></li>
 </ul>
 </section>
 <section id="support">

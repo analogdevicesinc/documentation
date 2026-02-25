@@ -151,6 +151,180 @@ MATLAB. Common tools include:
 - :ref:`iio-oscilloscope` — GUI for visualizing IIO device data (FFT, time domain)
 - :external+pyadi-iio:doc:`index` — Python bindings for IIO devices
 
+Evaluation with ACE Software
+-----------------------------
+
+The :adi:`AD9082` evaluation board is designed to work with the ADS9-V2EBZ
+FPGA-based data capture board and the
+`ACE <https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`__
+(Analysis, Control, Evaluation) software platform from Analog Devices.
+
+Equipment Needed
+~~~~~~~~~~~~~~~~
+
+- PC running Windows with a USB 3.0 port
+- AD9082-FMCA-EBZ evaluation board
+- ADS9-V2EBZ FPGA-based data capture board
+- USB 3.0 cable (Type-A to Type-B)
+- Low phase-noise signal generator for ADC input
+- Low phase-noise clock source (if using external direct clock mode)
+- SMA and SMP cables as required
+
+Required Documents
+~~~~~~~~~~~~~~~~~~
+
+- :adi:`AD9082 Datasheet <media/en/technical-documentation/data-sheets/AD9082.pdf>`
+- :adi:`UG-1578, AD9081/AD9082 Device User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
+- :adi:`UG-1829, Evaluation Board User Guide <media/en/technical-documentation/user-guides/eval-ad9081-9082-9986-9988-ug-1829.pdf>`
+
+ACE Plugin Installation
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Download and install
+   `ACE <https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`__
+   if not already installed.
+2. Download the AD9081/AD9082 ACE plugin from the
+   :adi:`EVAL-AD9082 software section <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9082.html#eb-relatedsoftware>`
+   or install it via ACE's Plugin Manager (Tools > Manage Plug-Ins).
+3. Connect the ADS9-V2EBZ to the PC via a USB 3.0 cable and power it on.
+4. Launch ACE. The AD9081/AD9082 plugin icon should appear on the start page
+   if the hardware is detected.
+
+.. figure:: ace_start_page.png
+   :align: center
+   :width: 250
+
+   ACE start page showing the MxFE plugin
+
+5. Click the plugin icon to open the Board View. Click "Program FPGA Image"
+   to load the FPGA bitstream for communicating with the evaluation board.
+
+.. figure:: ace_board_view.png
+   :align: center
+   :width: 500
+
+   ACE Board View for the AD9081/AD9082 evaluation board
+
+Clocking Modes
+~~~~~~~~~~~~~~
+
+The evaluation board supports two clocking modes:
+
+- **On-board clocking (HMC7044 + on-chip PLL)**: The on-board 100 MHz crystal
+  oscillator feeds the HMC7044 clock chip, which generates the DAC/ADC clocks
+  and FPGA SERDES reference clocks. This is the default mode and requires no
+  external clock source.
+- **External direct clock**: An external clock source is connected directly to
+  the MxFE device, bypassing the HMC7044 and on-chip PLL. This mode supports
+  a wider range of operating configurations but requires external
+  instrumentation.
+
+Refer to
+:adi:`UG-1829 <media/en/technical-documentation/user-guides/eval-ad9081-9082-9986-9988-ug-1829.pdf>`
+for details on switching between clocking modes.
+
+Setting Up a Narrowband Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following procedure configures the :adi:`AD9082` in a single-band
+250 MSPS I/Q data rate setup with direct RF sampling. The on-board HMC7044
+and on-chip PLL provide the DAC and ADC clocks.
+
+.. figure:: narrowband_setup.png
+   :align: center
+   :width: 600
+
+   Narrowband mode setup block diagram
+
+**Configuring the device in ACE:**
+
+1. Open ACE and click the AD9081/AD9082 plugin icon.
+2. Double-click the chip block in the Board View to open the Chip View.
+3. In the Quick Configuration section, set the parameters as shown in the
+   figures below. The steps are numbered in sequence.
+
+.. figure:: 3_chip_setup1.png
+   :align: center
+   :width: 400
+
+   Quick Configuration step 1: JESD204 setup
+
+.. figure:: 4_chip_setup2.png
+   :align: center
+   :width: 400
+
+   Quick Configuration step 2: clock configuration
+
+.. figure:: 5_chip_setup3.png
+   :align: center
+   :width: 400
+
+   Quick Configuration step 3: ADC/DAC configuration
+
+.. figure:: 6_chip_setup4.png
+   :align: center
+   :width: 400
+
+   Quick Configuration step 4: NCO and DDC/DUC configuration
+
+4. Click **Apply**.
+
+.. image:: 7_Apply.png
+   :align: center
+   :width: 200
+
+5. Wait several seconds for ACE and the ADS9-V2EBZ hardware to configure the
+   device. When configuration is complete, the Chip View displays the status
+   readouts.
+
+.. figure:: 8_chip_view_after_apply.png
+   :align: center
+   :width: 500
+
+   Chip View status readouts after successful configuration
+
+**Capturing an ADC FFT:**
+
+6. Click **Proceed to Analysis** to open the Analysis view.
+7. With no input signal connected, capture an FFT to verify the noise floor.
+
+.. figure:: 9_analysis_view.png
+   :align: center
+   :width: 500
+
+   Analysis view showing a no-input FFT
+
+8. Connect a signal generator to any ADC input. Set the frequency to
+   3.207 GHz (the NCO is tuned to 3.2 GHz). Adjust the amplitude to achieve
+   approximately -1 dBFS at the ADC input.
+
+**Setting up DAC output with DPG Lite:**
+
+9. Open DPG Downloader Lite. Select a Single Tone waveform and configure the
+   GUI for the desired output frequency.
+10. Press the **Play** button to enable the DAC output.
+11. Use an SMA cable to connect a DAC output to an ADC input on the
+    evaluation board for an external loopback test. Capture the FFT in ACE
+    to verify the DAC output.
+
+Setting Up a Wideband Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The wideband mode configures the :adi:`AD9082` in a single-band 1000 MSPS
+I/Q data rate setup with direct RF sampling. The setup procedure is similar
+to the narrowband case, with different Quick Configuration parameters.
+
+.. figure:: wideband_setup.png
+   :align: center
+   :width: 600
+
+   Wideband mode setup block diagram
+
+In the Quick Configuration section, set the JESD204 parameters for the higher
+data rate and update the clock configuration accordingly. Click **Apply** and
+wait for the device to be configured. Then proceed to DPG Lite setup and ADC
+FFT capture as described in the narrowband procedure above.
+
 ADC Performance Note
 --------------------
 
@@ -205,6 +379,13 @@ Board Not Functioning Properly
 - Verify the evaluation board is firmly seated in the FMC connector.
 - After ACE programs the FPGA, power is supplied to the evaluation board.
   Confirm that all power-rail LEDs are lit.
+
+.. figure:: ceboard_power_rail_led.jpg
+   :align: center
+   :width: 500
+
+   LEDs denoting power to the various rails on the evaluation board
+
 - Verify the eRPC server connected successfully: the Chip Info UID should
   read a non-zero value. If UID reads 0x0, power-cycle the board and restart
   all software.
@@ -220,12 +401,26 @@ Unable to Capture Data After Device Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If only four of six LEDs are lit on the FPGA board after device setup, data
-capture may have failed. When using an external direct clock:
+capture may have failed.
+
+.. figure:: ads9v2_unsuccessful_capture.jpg
+   :align: center
+   :width: 400
+
+   LED status on ADS9-V2EBZ following an unsuccessful data capture
+
+When using an external direct clock:
 
 - Verify the clock and refclock frequencies are set as described in UG-1829.
 - Check all cable connections are secure.
 - If the problem persists, open DPG Lite, download a tone, then retry capture.
   A successful capture shows all LEDs lit.
+
+.. figure:: ads9v2_successful_capture.jpg
+   :align: center
+   :width: 400
+
+   LED status on ADS9-V2EBZ following a successful data capture
 
 HMC7044 Configuration Error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -233,8 +428,17 @@ HMC7044 Configuration Error
 The "HMC7044 Configuration Error" appears in ACE when the selected mode
 requires a reference frequency that cannot be generated from the on-board
 100 MHz crystal oscillator via the HMC7044. Not all modes in UG-1578 are
-achievable with the on-board clocking. To use such modes, switch to an
-external direct clock, which bypasses the HMC7044.
+achievable with the on-board clocking.
+
+.. figure:: hmc7044_config_error.png
+   :align: center
+   :width: 500
+
+   HMC7044 Configuration Error (REFCLK value cannot be supported using a
+   100 MHz crystal oscillator)
+
+To use such modes, switch to an external direct clock, which bypasses the
+HMC7044.
 
 ACE Does Not Auto-Detect Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

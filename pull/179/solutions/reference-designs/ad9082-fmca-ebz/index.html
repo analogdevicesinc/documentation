@@ -114,6 +114,15 @@
 <li><a class="reference internal" href="#software-tools">Software Tools</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#evaluation-with-ace-software">Evaluation with ACE Software</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#required-documents">Required Documents</a></li>
+<li><a class="reference internal" href="#ace-plugin-installation">ACE Plugin Installation</a></li>
+<li><a class="reference internal" href="#clocking-modes">Clocking Modes</a></li>
+<li><a class="reference internal" href="#setting-up-a-narrowband-mode">Setting Up a Narrowband Mode</a></li>
+<li><a class="reference internal" href="#setting-up-a-wideband-mode">Setting Up a Wideband Mode</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#adc-performance-note">ADC Performance Note</a></li>
 <li><a class="reference internal" href="#programmable-filter-pfilt">Programmable Filter (PFILT)</a></li>
 <li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
@@ -847,22 +856,206 @@ MATLAB. Common tools include:</p>
 </ul>
 </section>
 </section>
+<section id="evaluation-with-ace-software">
+<h2>Evaluation with ACE Software<a class="headerlink" href="#evaluation-with-ace-software" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a> evaluation board is designed to work with the ADS9-V2EBZ
+FPGA-based data capture board and the
+<a class="icon link reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html" target="_blank">ACE</a>
+(Analysis, Control, Evaluation) software platform from Analog Devices.</p>
+<section id="equipment-needed">
+<h3>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>PC running Windows with a USB 3.0 port</p></li>
+<li><p>AD9082-FMCA-EBZ evaluation board</p></li>
+<li><p>ADS9-V2EBZ FPGA-based data capture board</p></li>
+<li><p>USB 3.0 cable (Type-A to Type-B)</p></li>
+<li><p>Low phase-noise signal generator for ADC input</p></li>
+<li><p>Low phase-noise clock source (if using external direct clock mode)</p></li>
+<li><p>SMA and SMP cables as required</p></li>
+</ul>
+</section>
+<section id="required-documents">
+<h3>Required Documents<a class="headerlink" href="#required-documents" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/AD9082.pdf" target="_blank">AD9082 Datasheet</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf" target="_blank">UG-1578, AD9081/AD9082 Device User Guide</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad9081-9082-9986-9988-ug-1829.pdf" target="_blank">UG-1829, Evaluation Board User Guide</a></p></li>
+</ul>
+</section>
+<section id="ace-plugin-installation">
+<h3>ACE Plugin Installation<a class="headerlink" href="#ace-plugin-installation" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Download and install
+<a class="icon link reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html" target="_blank">ACE</a>
+if not already installed.</p></li>
+<li><p>Download the AD9081/AD9082 ACE plugin from the
+<a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9082.html#eb-relatedsoftware" target="_blank">EVAL-AD9082 software section</a>
+or install it via ACE’s Plugin Manager (Tools &gt; Manage Plug-Ins).</p></li>
+<li><p>Connect the ADS9-V2EBZ to the PC via a USB 3.0 cable and power it on.</p></li>
+<li><p>Launch ACE. The AD9081/AD9082 plugin icon should appear on the start page
+if the hardware is detected.</p></li>
+</ol>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ace_start_page.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ace_start_page.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ace_start_page.png" width="250" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ACE start page showing the MxFE plugin</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>Click the plugin icon to open the Board View. Click “Program FPGA Image”
+to load the FPGA bitstream for communicating with the evaluation board.</p></li>
+</ol>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ace_board_view.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ace_board_view.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ace_board_view.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">ACE Board View for the AD9081/AD9082 evaluation board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="clocking-modes">
+<h3>Clocking Modes<a class="headerlink" href="#clocking-modes" title="Link to this heading"></a></h3>
+<p>The evaluation board supports two clocking modes:</p>
+<ul class="simple">
+<li><p><strong>On-board clocking (HMC7044 + on-chip PLL)</strong>: The on-board 100 MHz crystal
+oscillator feeds the HMC7044 clock chip, which generates the DAC/ADC clocks
+and FPGA SERDES reference clocks. This is the default mode and requires no
+external clock source.</p></li>
+<li><p><strong>External direct clock</strong>: An external clock source is connected directly to
+the MxFE device, bypassing the HMC7044 and on-chip PLL. This mode supports
+a wider range of operating configurations but requires external
+instrumentation.</p></li>
+</ul>
+<p>Refer to
+<a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad9081-9082-9986-9988-ug-1829.pdf" target="_blank">UG-1829</a>
+for details on switching between clocking modes.</p>
+</section>
+<section id="setting-up-a-narrowband-mode">
+<h3>Setting Up a Narrowband Mode<a class="headerlink" href="#setting-up-a-narrowband-mode" title="Link to this heading"></a></h3>
+<p>The following procedure configures the <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a> in a single-band
+250 MSPS I/Q data rate setup with direct RF sampling. The on-board HMC7044
+and on-chip PLL provide the DAC and ADC clocks.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/narrowband_setup.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/narrowband_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/narrowband_setup.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Narrowband mode setup block diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Configuring the device in ACE:</strong></p>
+<ol class="arabic simple">
+<li><p>Open ACE and click the AD9081/AD9082 plugin icon.</p></li>
+<li><p>Double-click the chip block in the Board View to open the Chip View.</p></li>
+<li><p>In the Quick Configuration section, set the parameters as shown in the
+figures below. The steps are numbered in sequence.</p></li>
+</ol>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/3_chip_setup1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/3_chip_setup1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/3_chip_setup1.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Quick Configuration step 1: JESD204 setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/4_chip_setup2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/4_chip_setup2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/4_chip_setup2.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Quick Configuration step 2: clock configuration</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/5_chip_setup3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/5_chip_setup3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/5_chip_setup3.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Quick Configuration step 3: ADC/DAC configuration</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/6_chip_setup4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/6_chip_setup4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/6_chip_setup4.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Quick Configuration step 4: NCO and DDC/DUC configuration</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Click <strong>Apply</strong>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/7_Apply.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/7_Apply.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/7_Apply.png" width="200" />
+</a>
+<ol class="arabic simple" start="5">
+<li><p>Wait several seconds for ACE and the ADS9-V2EBZ hardware to configure the
+device. When configuration is complete, the Chip View displays the status
+readouts.</p></li>
+</ol>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/8_chip_view_after_apply.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/8_chip_view_after_apply.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/8_chip_view_after_apply.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Chip View status readouts after successful configuration</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Capturing an ADC FFT:</strong></p>
+<ol class="arabic simple" start="6">
+<li><p>Click <strong>Proceed to Analysis</strong> to open the Analysis view.</p></li>
+<li><p>With no input signal connected, capture an FFT to verify the noise floor.</p></li>
+</ol>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/9_analysis_view.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/9_analysis_view.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/9_analysis_view.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Analysis view showing a no-input FFT</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="8">
+<li><p>Connect a signal generator to any ADC input. Set the frequency to
+3.207 GHz (the NCO is tuned to 3.2 GHz). Adjust the amplitude to achieve
+approximately -1 dBFS at the ADC input.</p></li>
+</ol>
+<p><strong>Setting up DAC output with DPG Lite:</strong></p>
+<ol class="arabic simple" start="9">
+<li><p>Open DPG Downloader Lite. Select a Single Tone waveform and configure the
+GUI for the desired output frequency.</p></li>
+<li><p>Press the <strong>Play</strong> button to enable the DAC output.</p></li>
+<li><p>Use an SMA cable to connect a DAC output to an ADC input on the
+evaluation board for an external loopback test. Capture the FFT in ACE
+to verify the DAC output.</p></li>
+</ol>
+</section>
+<section id="setting-up-a-wideband-mode">
+<h3>Setting Up a Wideband Mode<a class="headerlink" href="#setting-up-a-wideband-mode" title="Link to this heading"></a></h3>
+<p>The wideband mode configures the <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a> in a single-band 1000 MSPS
+I/Q data rate setup with direct RF sampling. The setup procedure is similar
+to the narrowband case, with different Quick Configuration parameters.</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/wideband_setup.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/wideband_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/wideband_setup.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Wideband mode setup block diagram</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the Quick Configuration section, set the JESD204 parameters for the higher
+data rate and update the clock configuration accordingly. Click <strong>Apply</strong> and
+wait for the device to be configured. Then proceed to DPG Lite setup and ADC
+FFT capture as described in the narrowband procedure above.</p>
+</section>
+</section>
 <section id="adc-performance-note">
 <h2>ADC Performance Note<a class="headerlink" href="#adc-performance-note" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a> ADC noise performance depends on the operating configuration.
 When the DACs are active (transceiver mode), ADC noise is higher than in
 receive-only mode. The figures below show the ADC FFT at 2.7 GHz (-1 dBFS)
 under each condition:</p>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id11">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ad9082_2p7ghz_adconlyfft.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ad9082_2p7ghz_adconlyfft.png" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">2.7 GHz -1 dBFS tone: AD9082 configured in receive-only mode</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">2.7 GHz -1 dBFS tone: AD9082 configured in receive-only mode</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id12">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ad9082_2p7ghz_trxmodefft.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ad9082_2p7ghz_trxmodefft.png" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">2.7 GHz -1 dBFS tone: AD9082 configured as a transceiver (DACs ON)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">2.7 GHz -1 dBFS tone: AD9082 configured as a transceiver (DACs ON)</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -899,6 +1092,15 @@ coefficients.</p>
 <li><p>Verify the evaluation board is firmly seated in the FMC connector.</p></li>
 <li><p>After ACE programs the FPGA, power is supplied to the evaluation board.
 Confirm that all power-rail LEDs are lit.</p></li>
+</ul>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ceboard_power_rail_led.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ceboard_power_rail_led.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ceboard_power_rail_led.jpg" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">LEDs denoting power to the various rails on the evaluation board</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
 <li><p>Verify the eRPC server connected successfully: the Chip Info UID should
 read a non-zero value. If UID reads 0x0, power-cycle the board and restart
 all software.</p></li>
@@ -915,21 +1117,45 @@ all software.</p></li>
 <section id="unable-to-capture-data-after-device-setup">
 <h3>Unable to Capture Data After Device Setup<a class="headerlink" href="#unable-to-capture-data-after-device-setup" title="Link to this heading"></a></h3>
 <p>If only four of six LEDs are lit on the FPGA board after device setup, data
-capture may have failed. When using an external direct clock:</p>
+capture may have failed.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ads9v2_unsuccessful_capture.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ads9v2_unsuccessful_capture.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ads9v2_unsuccessful_capture.jpg" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">LED status on ADS9-V2EBZ following an unsuccessful data capture</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>When using an external direct clock:</p>
 <ul class="simple">
 <li><p>Verify the clock and refclock frequencies are set as described in UG-1829.</p></li>
 <li><p>Check all cable connections are secure.</p></li>
 <li><p>If the problem persists, open DPG Lite, download a tone, then retry capture.
 A successful capture shows all LEDs lit.</p></li>
 </ul>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ads9v2_successful_capture.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ads9v2_successful_capture.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/ads9v2_successful_capture.jpg" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">LED status on ADS9-V2EBZ following a successful data capture</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="hmc7044-configuration-error">
 <h3>HMC7044 Configuration Error<a class="headerlink" href="#hmc7044-configuration-error" title="Link to this heading"></a></h3>
 <p>The “HMC7044 Configuration Error” appears in ACE when the selected mode
 requires a reference frequency that cannot be generated from the on-board
 100 MHz crystal oscillator via the HMC7044. Not all modes in UG-1578 are
-achievable with the on-board clocking. To use such modes, switch to an
-external direct clock, which bypasses the HMC7044.</p>
+achievable with the on-board clocking.</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/hmc7044_config_error.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/hmc7044_config_error.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9082-fmca-ebz/hmc7044_config_error.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">HMC7044 Configuration Error (REFCLK value cannot be supported using a
+100 MHz crystal oscillator)</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>To use such modes, switch to an external direct clock, which bypasses the
+HMC7044.</p>
 </section>
 <section id="ace-does-not-auto-detect-hardware">
 <h3>ACE Does Not Auto-Detect Hardware<a class="headerlink" href="#ace-does-not-auto-detect-hardware" title="Link to this heading"></a></h3>

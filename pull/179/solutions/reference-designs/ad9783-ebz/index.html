@@ -98,11 +98,22 @@
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li><a class="reference internal" href="#evaluation-setup">Evaluation Setup</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#software-needed">Software Needed</a></li>
+<li><a class="reference internal" href="#typical-setup">Typical Setup</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#quick-start-guide">Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#using-the-adl5375-modulator">Using the ADL5375 Modulator</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
 </ul>
@@ -696,10 +707,16 @@ seamlessly with analog quadrature modulators.</p>
 <p>The reference design consists of a DDS module and an LVDS interface. The
 AD9783-EBZ evaluation board connects to the carrier through a DAC-FMC
 interposer board.</p>
+<p>This evaluation guide describes both the hardware and software setup needed
+to characterize the <a class="icon adi reference external" href="https://www.analog.com/AD9780" target="_blank">AD9780</a>/<a class="icon adi reference external" href="https://www.analog.com/AD9781" target="_blank">AD9781</a>/<a class="icon adi reference external" href="https://www.analog.com/AD9783" target="_blank">AD9783</a> 12-/14-/16-bit,
+500 MSPS high-speed digital-to-analog converters using the AD9783-DPG2-EBZ
+evaluation board with the ADS7-V2 or SDP-H1 controller boards.</p>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9780" target="_blank">AD9780</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9781" target="_blank">AD9781</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD9783" target="_blank">AD9783</a></p></li>
 </ul>
 </section>
@@ -709,14 +726,64 @@ interposer board.</p>
 <li><p><a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html" target="_blank">ZCU102</a> (via DAC-FMC interposer board)</p></li>
 </ul>
 </section>
+<section id="evaluation-setup">
+<h2>Evaluation Setup<a class="headerlink" href="#evaluation-setup" title="Link to this heading"></a></h2>
+<section id="equipment-needed">
+<h3>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AD9783-DPG2-EBZ evaluation board</p></li>
+<li><p>SDP-H1 (EVAL-SDP-CH1Z) board or ADS7-V2 (ADS7-V2EBZ) board</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD-DAC-FMC" target="_blank">AD-DAC-FMC-ADP</a> high-speed DAC evaluation board to FMC
+adapter board</p></li>
+<li><p>5 Vdc, 1 A power supply for the evaluation board</p></li>
+<li><p>High-frequency continuous wave generator (clock source)</p></li>
+<li><p>Signal/spectrum analyzer</p></li>
+<li><p>2 x SMA cables</p></li>
+<li><p>2 x banana plug cables</p></li>
+<li><p>PC with ACE and DPG Lite software</p></li>
+</ul>
+<p><strong>Additional items for SDP-H1 evaluation kit:</strong></p>
+<ul class="simple">
+<li><p>12 Vdc, 1 A wall adapter</p></li>
+<li><p>2 x USB-A to USB-Mini cables</p></li>
+</ul>
+<p><strong>Additional items for ADS7-V2 evaluation kit:</strong></p>
+<ul class="simple">
+<li><p>12 Vdc power supply with power cord</p></li>
+<li><p>USB-A to USB-B cable</p></li>
+</ul>
+</section>
+<section id="software-needed">
+<h3>Software Needed<a class="headerlink" href="#software-needed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html" target="_blank">Analysis | Control | Evaluation (ACE)</a></p></li>
+<li><p>DPG Lite (recommended; installed with ACE)</p></li>
+</ul>
+</section>
+<section id="typical-setup">
+<h3>Typical Setup<a class="headerlink" href="#typical-setup" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ad9783_with_sdp-h1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ad9783_with_sdp-h1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-AD978x with SDP-H1</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ad9783_with_ads7.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ad9783_with_ads7.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-AD978x with ADS7-V2</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
 <section id="block-diagram">
 <h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id3">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ad9783_zcu102_bd.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ad9783_zcu102_bd.jpg" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD9783-EBZ block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD9783-EBZ block diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -727,10 +794,131 @@ interposer board.</p>
 </ul>
 </section>
 </section>
+<section id="quick-start-guide">
+<h2>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Attach the AD9783-DPG2-EBZ to the controller board’s (SDP-H1 or ADS7-V2)
+FMC connector using the <a class="icon adi reference external" href="https://www.analog.com/AD-DAC-FMC" target="_blank">AD-DAC-FMC-ADP</a> adapter board.</p></li>
+<li><p>Connect the controller board (SDP-H1 or ADS7-V2) to the PC via USB and to
+a <strong>12 V power supply</strong>.</p></li>
+<li><p>Connect the evaluation board to the PC via USB and to a <strong>5 Vdc, 1 A power
+supply</strong> on <strong>P5</strong> and <strong>P6</strong>. Refer to the setup figures above.</p></li>
+<li><p>Connect a continuous wave generator for clock input to <strong>SMA J1</strong> and the
+DAC output from <strong>SMA J5</strong> (IOUT1P) or <strong>SMA J9</strong> (IOUT2P) to a
+signal/spectrum analyzer.</p></li>
+<li><p>Set the clock input to <strong>200 MHz</strong>, <strong>3 dBm</strong>.</p></li>
+<li><p>Open ACE. The board will be automatically recognized by the software.
+Click the plugin. If the board is not auto-detected, install the AD9783
+ACE plugin manually.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ace_board_detect.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ace_board_detect.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">AD9783 plugin detected in ACE</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>On the ACE Board View, double-click the AD9783 block to access the
+Chip View.</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ace_gui.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ace_gui.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">AD9783 Chip View in ACE</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>The default register values are displayed. Values can be changed on the
+Chip View GUI or via the <strong>Memory Map</strong> for registers not available in the
+GUI. Once the desired values are set, click <strong>Apply Changes</strong> and then
+<strong>Read All</strong> in the upper-right window.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ace_apply.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ace_apply.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Apply Changes and Read All buttons</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Start DPG Lite. The controller board (SDP-H1 or ADS7-V2), the device part
+number, and clock frequency should be displayed.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ad9783_dpg_window_sdp-h1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ad9783_dpg_window_sdp-h1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">DPG Lite session for EVAL-AD9783 with SDP-H1</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ad9783_dpg_window_ads7v2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/ad9783_dpg_window_ads7v2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">DPG Lite session for EVAL-AD9783 with ADS7-V2</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>In DPG Lite, from the <strong>Add Generator Waveforms</strong> pulldown menu, select
+<strong>Single Tone</strong> and apply the following settings:</p>
+<ul class="simple">
+<li><p><strong>Data Rate</strong>: 200 MHz</p></li>
+<li><p><strong>Desired Frequency</strong>: 16 MHz</p></li>
+<li><p><strong>DAC Resolution</strong>: 16 for <a class="icon adi reference external" href="https://www.analog.com/AD9783" target="_blank">AD9783</a>, 14 for <a class="icon adi reference external" href="https://www.analog.com/AD9781" target="_blank">AD9781</a>,
+12 for <a class="icon adi reference external" href="https://www.analog.com/AD9780" target="_blank">AD9780</a></p></li>
+<li><p>Uncheck <strong>Unsigned Data</strong></p></li>
+<li><p>Check <strong>Generate Complex Data (I &amp; Q)</strong></p></li>
+</ul>
+</li>
+<li><p>Select the I/Q tone from the <strong>I/Q Data Vector</strong> pulldown menu.</p></li>
+<li><p>Press the download arrow and then the play button. A spectrum similar to
+the figure below should appear on the signal/spectrum analyzer.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/c_ad9783_16mhz.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/c_ad9783_16mhz.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Spectrum output for AD9783: Fdac = 200 MSPS, Fout = 16 MHz</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+<section id="using-the-adl5375-modulator">
+<h3>Using the ADL5375 Modulator<a class="headerlink" href="#using-the-adl5375-modulator" title="Link to this heading"></a></h3>
+<p>By default, solder jumpers JP4, JP5, JP6, and JP7 are configured to route
+the DAC outputs to SMA J5 (IOUT1P) and J9 (IOUT2P). To connect the DAC
+output to the filter that feeds into the <a class="icon adi reference external" href="https://www.analog.com/ADL5375" target="_blank">ADL5375</a> modulator, reconfigure
+the solder jumpers as shown in the right side of the figure below. Source the
+desired LO frequency (e.g., 900 or 1800 MHz, 3 dBm) on SMA J2 (LO IN). The
+ADL5375 modulator output can be observed on SMA J6 (RF OUT).</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/jumper_config.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9783-ebz/jumper_config.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Left: DAC output configuration. Right: Modulator output configuration.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>If unexpected results occur, check the following:</p>
+<ul class="simple">
+<li><p>Verify the voltage rails of the evaluation board: P5 and P6 should be 5 V;
+TP3, TP5, and TP7 should be 3.3 V; TP9 and TP11 should be 1.8 V.</p></li>
+<li><p>Check that all three blue LEDs on the AD-DAC-FMC-ADP board are lit.
+Reconnect the board to the FMC connector of the controller board if the LEDs
+are not lit.</p></li>
+<li><p>Verify that the controller board (SDP-H1 or ADS7-V2) is being supplied
+properly by the 12 Vdc adapter. Some LEDs on the controller board should be
+lit.</p></li>
+<li><p>Perform a chip reset by pressing <strong>S2</strong> on the AD9783 evaluation board.</p></li>
+<li><p>Power cycle both the controller board and the AD9783 evaluation board.</p></li>
+<li><p>Probe <strong>C18</strong> and <strong>C19</strong> to verify that a clock signal is being sent to the
+DAC.</p></li>
+<li><p>Check that <strong>XD1</strong> is lit on the evaluation board. Reconnect or replace the
+USB cable if it is not lit.</p></li>
+<li><p>Disconnect and reconnect the controller board and AD9783 evaluation board.
+Reopen ACE and DPG Lite software.</p></li>
+</ul>
+</section>
 <section id="more-information">
 <h2>More Information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/introduction.html" target="_blank">ADI Reference Designs HDL User Guide</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9783" target="_blank">AD9783 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9781" target="_blank">AD9781 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9780" target="_blank">AD9780 Product Page</a></p></li>
 </ul>
 </section>
 <section id="support">
