@@ -3,68 +3,235 @@
 EV-FLOWMETER-ARDZ
 ==================
 
-Ultrasonic Time-of-Flight Flow Meter.
+Ultrasonic Time-of-Flight Flow Meter Sensor Node.
+
+.. figure:: ev-flowmeter-ardz_angle.png
+   :align: center
+
+   EV-FLOWMETER-ARDZ sensor node.
 
 Overview
 --------
 
-The EV-FLOWMETER-ARDZ is an ultrasonic time-of-flight flow measurement solution
-utilizing the :adi:`MAX35101` time-to-digital converter, designed for utility and
-industrial applications including heat meters, water meters, and gas meters.
+The EV-FLOWMETER-ARDZ sensor is an advanced and efficient solution for flow
+measurement, suitable for utility and industrial applications. The ultrasonic
+time-of-flight technology, coupled with the integrated functions of the
+:adi:`MAX35101 <MAX35101>` time-to-digital converter, addresses the limitations
+of mechanical flow meters and offers improved accuracy and longevity.
 
-Key features:
+Features
+--------
 
-- Time-to-digital accuracy: 20 ps
-- Measurement range: up to 8 ms
+- High accuracy flow measurement for billing and leak detection
+- Time-to-digital accuracy down to 20 ps
+- Measurement range up to 8 ms
 - Two single-stop channels
-- Support for up to four 2-wire PT1000/PT500 RTD sensors
-- Low power: 10 uA ToF measurement and <125 nA duty-cycled temperature
+- High accuracy temperature measurement for precise heat and flow calculations
+- Up to four 2-wire sensors
+- PT1000 and PT500 RTD support
+- Maximizes battery life with low device and overall system power
+- Low 10 uA ToF measurement and <125 nA duty-cycled temperature measurement
+- Event-timing mode reduces host microcontroller requirements
 
-Required Equipment
-------------------
+Applications
+------------
 
-- EV-FLOWMETER-ARDZ sensor node
-- :ref:`MAX32670-SX-ARDZ <ad-max32sxwise-sl>` base board
-- MAX32625PICO programmer with 10-pin ribbon cable
-- CR123A battery (3 V to 4.7 V, not included)
-- Micro-USB to USB cable
+- Ultrasonic heat meters
+- Ultrasonic water meters
+- Ultrasonic gas meters
+- Utility metering
+- Environmental monitoring
+
+Block Diagram
+-------------
+
+.. figure:: ev-flowmeter-ardz_block_diagram.png
+   :align: center
+
+   EV-FLOWMETER-ARDZ block diagram.
+
+Hardware Design
+---------------
+
+Components and Connections
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following standard connectors are provided on the board:
+
+- Launch up and down ultrasonic sensor terminal block headers
+- PT1000/500 platinum resistive temperature detectors (RTD) terminal block
+  headers
+- Arduino connector
+
+.. figure:: ev-flowmeter-ardz_peripherals_connections.png
+   :align: center
+
+   EV-FLOWMETER-ARDZ peripheral connectors.
+
+Sensor Probe
+~~~~~~~~~~~~
+
+The board accommodates general-purpose ultrasonic flow sensors. An example is
+the Flow Transducer with Pipe (Model: HS0003) from Audiowell Sensor Technology.
+
+.. figure:: flow_transducer_with_pipe.jpg
+   :align: center
+
+   Flow transducer with pipe (Audiowell HS0003).
+
+.. list-table:: HS0003 Flow Transducer Specifications
+   :header-rows: 1
+
+   * - Item
+     - Specification
+   * - Resonant Frequency
+     - 975 +/-30 kHz
+   * - Resonant Impedance
+     - <= 110 ohm
+   * - Static Capacitance
+     - 1350 +/-20% pF
+   * - Pressure Resistance
+     - 1.6 MPa
+   * - Permanent Flowrate
+     - 2.5 m3/h
+   * - Max Flowrate
+     - 5.0 m3/h
+   * - Min Flowrate
+     - 0.050 m3/h
+   * - Environmental Temperature
+     - +5 C to +55 C
+   * - Diameter
+     - DN20
+
+.. figure:: ev-flowmeter-ardz_probe_connections.png
+   :align: center
+
+   Ultrasonic probe connections to the EV-FLOWMETER-ARDZ terminal blocks.
+
+This board supports up to two 2-wire PT1000/500 platinum resistive temperature
+detectors (RTD).
+
+.. note::
+
+   An RTD sensor or a dummy sensor (1 kohm resistor) for each terminal is
+   required in order to run and capture the flow rate.
+
+Digital Interface (Arduino)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Arduino interface is a standardized digital interface for various digital
+communication protocols such as SPI, I2C, and UART.
+
+.. figure:: ev-flowmeter-ardz_digital_interface.png
+   :align: center
+
+   EV-FLOWMETER-ARDZ Arduino digital interface.
+
+Push Button
+~~~~~~~~~~~
+
+The board provides a button, S1, to test tamper detection through its CMOS
+digital input.
+
+.. figure:: ev-flowmeter-ardz_reset_button.png
+   :align: center
+
+   EV-FLOWMETER-ARDZ push button (S1).
+
+Integration with Base Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The EV-FLOWMETER-ARDZ integrates with the
+:ref:`MAX32670-SX-ARDZ <ad-max32sxwise-sl>` base board, which is a long-range
+wireless radio development platform. It enables low-power, long range
+proprietary radio communication suitable for customized heat/flow meters.
+
+System Setup
+------------
+
+Equipment Needed
+~~~~~~~~~~~~~~~~
+
+- One (1) :ref:`MAX32670-SX-ARDZ <ad-max32sxwise-sl>` base board
+- One (1) EV-FLOWMETER-ARDZ sensor node
+- One (1) MAX32625PICO rapid development platform with 10-pin ribbon cable
+- CR123A battery or equivalent external DC power supply (+3 V to +4.7 V)
+- One (1) micro-USB to USB cable
 - Host PC (Windows 10 or later)
-- Flow transducer probe (e.g., Audiowell HS0003)
-- PT1000/PT500 RTD sensors or 1 kohm dummy resistors
 
 Hardware Setup
---------------
+~~~~~~~~~~~~~~
 
-- **Ultrasonic connectors** -- Launch up/down sensor terminal blocks for flow
-  transducer probe connection.
-- **Temperature connectors** -- PT1000/PT500 RTD terminal blocks.
-- **S1** -- Push button for tamper detection input.
-- **DS3** -- Battery power indicator LED (on base board).
-- Standard Arduino headers (SPI/I2C/UART compatible).
+1. Insert one CR123A battery (3 V to 4.7 V) into the battery holder (BT1
+   connector) of the MAX32670-SX-ARDZ base board. Make sure to check the
+   battery polarity in the BT1 connector. The DS3 LED will light up indicating
+   that the battery has been inserted correctly and that power is provided to
+   the base board.
 
-Software Setup
---------------
+.. figure:: base_board_with_battery.png
+   :align: center
 
-Firmware is specifically designed for the MAX32670-SX-ARDZ base board. The
-MAX32625PICO programmer requires firmware image
-``max32625_max32670evkit_if_crc_swd_v1.0.3.bin``.
+   MAX32670-SX-ARDZ base board with CR123A battery installed.
+
+2. Connect the EV-FLOWMETER-ARDZ sensor node to the MAX32670-SX-ARDZ base
+   board by aligning the corresponding Arduino headers on each board.
+
+.. figure:: hardware_setup.png
+   :align: center
+
+   EV-FLOWMETER-ARDZ connected to the MAX32670-SX-ARDZ base board.
+
+3. Connect the MAX32625PICO programming adapter to the MAX32670-SX-ARDZ base
+   board through the 10-pin ribbon cable.
+
+.. figure:: max32670-sx-ardz_to_maxpico.png
+   :align: center
+
+   MAX32625PICO connected to the MAX32670-SX-ARDZ base board via 10-pin
+   ribbon cable.
+
+4. Connect the MAX32625PICO programming adapter to the host PC using the
+   micro-USB to USB cable.
+
+Firmware Setup
+~~~~~~~~~~~~~~
+
+The MAX32625PICO programming adapter requires a specific firmware image to
+program the MAX32670-SX-ARDZ base board.
+
+To flash the firmware:
+
+1. Press and hold the button on the MAX32625PICO. Do not release the button
+   until the MAINTENANCE drive is mounted.
+2. Release the button once the MAINTENANCE drive is mounted.
+3. Drag and drop the firmware image
+   ``max32625_max32670evkit_if_crc_swd_v1.0.3.bin`` to the MAINTENANCE drive.
+4. After a few seconds, the MAINTENANCE drive will disappear and be replaced
+   by a drive named DAPLINK.
+
+.. figure:: max32625pico_maxdap.png
+   :align: center
+
+   MAX32625PICO with DAPLINK drive mounted after firmware update.
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 
 .. admonition:: Download
 
-   `EV-FLOWMETER-ARDZ Design & Integration Files
+   `EV-FLOWMETER-ARDZ Design & Integration Files (Rev. A)
    <https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/ev-flowmeter-ardz-designsupport.zip>`__
 
    - Schematics
    - PCB Layout
    - Bill of Materials
+   - Fabrication Files
 
 Additional Information
 ----------------------
 
 - :adi:`MAX35101 Product Page <MAX35101>`
+- :ref:`MAX32670-SX-ARDZ Base Board User Guide <ad-max32sxwise-sl>`
 
 Help and Support
 ----------------

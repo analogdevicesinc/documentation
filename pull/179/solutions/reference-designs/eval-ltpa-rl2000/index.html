@@ -96,9 +96,54 @@
           <ul>
 <li><a class="reference internal" href="#">EVAL-LTPA-RL2000</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#specifications">Specifications</a></li>
+<li><a class="reference internal" href="#about-efficiency-measurements">About Efficiency Measurements</a></li>
+<li><a class="reference internal" href="#hardware-interface">Hardware Interface</a><ul>
+<li><a class="reference internal" href="#usb-c-connector">USB-C Connector</a></li>
+<li><a class="reference internal" href="#terminals">Terminals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a><ul>
+<li><a class="reference internal" href="#setup-requirements">Setup Requirements</a></li>
+<li><a class="reference internal" href="#connection-procedure">Connection Procedure</a></li>
+<li><a class="reference internal" href="#example-setup-using-the-lt8642s-demo-board">Example Setup Using the LT8642S Demo Board</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#typical-applications">Typical Applications</a><ul>
+<li><a class="reference internal" href="#basic-setup">Basic Setup</a></li>
+<li><a class="reference internal" href="#basic-setup-with-servo-voltage">Basic Setup with Servo Voltage</a></li>
+<li><a class="reference internal" href="#basic-setup-with-micro-power-dut">Basic Setup with Micro-Power DUT</a></li>
+<li><a class="reference internal" href="#basic-setup-with-negative-output-voltages">Basic Setup with Negative Output Voltages</a></li>
+<li><a class="reference internal" href="#setup-for-duts-with-multiple-power-inputs">Setup for DUTs with Multiple Power Inputs</a></li>
+<li><a class="reference internal" href="#setup-for-higher-load-currents-30-a">Setup for Higher Load Currents (&gt;30 A)</a></li>
+<li><a class="reference internal" href="#setup-for-low-output-voltages">Setup for Low Output Voltages</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#making-an-efficiency-plot-measurement">Making an Efficiency Plot Measurement</a><ul>
+<li><a class="reference internal" href="#step-1-run-a-dc-sweep">Step 1: Run a DC Sweep</a></li>
+<li><a class="reference internal" href="#step-2-rename-the-measurements">Step 2: Rename the Measurements</a></li>
+<li><a class="reference internal" href="#step-3-edit-the-title">Step 3: Edit the Title</a></li>
+<li><a class="reference internal" href="#step-4-add-a-text-annotation">Step 4: Add a Text Annotation</a></li>
+<li><a class="reference internal" href="#step-5-saving-results">Step 5: Saving Results</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-interface">Software Interface</a><ul>
+<li><a class="reference internal" href="#rl2000-control-panel">RL2000 Control Panel</a><ul>
+<li><a class="reference internal" href="#power-loss-and-efficiency-measurements">Power Loss and Efficiency Measurements</a></li>
+<li><a class="reference internal" href="#meter-selection">Meter Selection</a></li>
+<li><a class="reference internal" href="#input-meter-readings">Input Meter Readings</a></li>
+<li><a class="reference internal" href="#output-meter-readings">Output Meter Readings</a></li>
+<li><a class="reference internal" href="#meter-settings">Meter Settings</a></li>
+<li><a class="reference internal" href="#status-bar">Status Bar</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dc-sweep-measurement-and-graph-setup">DC Sweep Measurement and Graph Setup</a><ul>
+<li><a class="reference internal" href="#dc-sweep-measurement-setup">DC Sweep Measurement Setup</a></li>
+<li><a class="reference internal" href="#dc-sweep-graph-setup">DC Sweep Graph Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
 </ul>
@@ -912,82 +957,939 @@ Content on this topic
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The EVAL-LTPA-RL2000 is a portable, USB efficiency meter based on the
-LTpowerAnalyzer that allows plotting DC efficiency and power loss of a DC-DC
-power supply across multiple values of load current. The device functions as a
-standalone efficiency measurement instrument without dependency on the ADALM2000
-or main <a class="reference internal" href="../eval-ltpa-kit/index.html#eval-ltpa-kit"><span class="std std-ref">EVAL-LTPA-KIT</span></a> board.</p>
-<p>Key specifications:</p>
+LTpowerAnalyzer that allows you to plot DC efficiency and power loss of a DC-DC
+power supply, across multiple values of load current. This instrument operates
+independently and does not require the ADALM2000 or the
+<a class="reference internal" href="../eval-ltpa-kit/index.html#eval-ltpa-kit"><span class="std std-ref">EVAL-LTPA-KIT</span></a> main board.</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/eval-ltpa-rl2000_angle-evaluation-board.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/eval-ltpa-rl2000_angle-evaluation-board.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-LTPA-RL2000 efficiency meter</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Key capabilities:</p>
 <ul class="simple">
-<li><p>Dual ±125 V DC voltmeters (±0.01% + 0.01% accuracy)</p></li>
-<li><p>30 A DC current meter with programmable 0–5 V voltage drop
-(±0.025% + 0.01% accuracy)</p></li>
-<li><p>30 A (150 W max) DC current load with internal temperature sensing</p></li>
-<li><p>Rear-mounted cooling fan with 70 °C shutdown protection</p></li>
-<li><p>Current meter range: 10 uA to 30 A</p></li>
+<li><p>Two ±125 V DC voltmeters for input/output voltage measurement</p></li>
+<li><p>30 A DC current meter with programmable 0–5 V voltage drop for power supply
+input</p></li>
+<li><p>30 A (150 W max) DC current load for power supply output</p></li>
+<li><p>Internal temperature sensing with rear-mounted cooling fan</p></li>
+<li><p>Thermal protection for high-power applications (70 °C shutdown)</p></li>
 <li><p>USB-C interface for data and power</p></li>
 </ul>
 </section>
-<section id="required-equipment">
-<h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>EVAL-LTPA-RL2000 efficiency meter</p></li>
-<li><p>Device under test (DUT)</p></li>
-<li><p>DC power supply</p></li>
-<li><p>USB-C cable</p></li>
-<li><p>Short connecting cables (recommended to minimize parasitics)</p></li>
-<li><p>Host PC with LTpowerAnalyzer software</p></li>
-</ul>
+<section id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Units</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Voltmeters</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Input DC Voltage Range</p></td>
+<td><p>±125</p></td>
+<td></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Resolution</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>mV</p></td>
+</tr>
+<tr class="row-odd"><td><p>Input Impedance</p></td>
+<td><p>2</p></td>
+<td></td>
+<td><p>MOhm</p></td>
+</tr>
+<tr class="row-even"><td><p>Accuracy <a class="footnote-reference brackets" href="#id6" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.01 + 0.01</p></td>
+<td></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Current Meter</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Input DC Current Range</p></td>
+<td><p>10 x 10<sup>-6</sup></p></td>
+<td><p>30</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Resolution (10 uA range)</p></td>
+<td></td>
+<td><p>10</p></td>
+<td><p>nA</p></td>
+</tr>
+<tr class="row-even"><td><p>Resolution (100 uA range)</p></td>
+<td></td>
+<td><p>10</p></td>
+<td><p>nA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Resolution (1 mA range)</p></td>
+<td></td>
+<td><p>100</p></td>
+<td><p>nA</p></td>
+</tr>
+<tr class="row-even"><td><p>Resolution (10 mA range)</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>uA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Resolution (100 mA range)</p></td>
+<td></td>
+<td><p>10</p></td>
+<td><p>uA</p></td>
+</tr>
+<tr class="row-even"><td><p>Resolution (1 A range)</p></td>
+<td></td>
+<td><p>100</p></td>
+<td><p>uA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Resolution (10 A range)</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>mA</p></td>
+</tr>
+<tr class="row-even"><td><p>Resolution (30 A range)</p></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Accuracy <a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.025 + 0.01</p></td>
+<td></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Servo Voltage Accuracy <a class="footnote-reference brackets" href="#id6" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.01 + 0.01</p></td>
+<td></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shutdown Temperature</p></td>
+<td><p>70</p></td>
+<td></td>
+<td><p>°C</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Current Load</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DC Load Current Range</p></td>
+<td><p>10 x 10<sup>-6</sup></p></td>
+<td><p>30</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>Accuracy <a class="footnote-reference brackets" href="#id6" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>0.025 + 0.01</p></td>
+<td></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Load Voltage</p></td>
+<td></td>
+<td><p>75</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Load Power</p></td>
+<td></td>
+<td><p>150</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shutdown Temperature</p></td>
+<td><p>70</p></td>
+<td></td>
+<td><p>°C</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id3">2</a>,<a role="doc-backlink" href="#id4">3</a>,<a role="doc-backlink" href="#id5">4</a>)</span>
+<p>Accuracy specification: ± (% of reading + % of range)</p>
+</aside>
+</aside>
+</section>
+<section id="about-efficiency-measurements">
+<h2>About Efficiency Measurements<a class="headerlink" href="#about-efficiency-measurements" title="Link to this heading"></a></h2>
+<p>Efficiency is calculated as the ratio of a power supply’s output power to its
+input power. Simply put, it is a measure of how much of the input power can be
+converted into useful output and supplied to the load.</p>
+<p>Efficiency is a critical parameter for evaluating power supply design
+performance. Excessive power loss increases energy consumption and unwanted heat
+dissipation. Low efficiency results in shorter battery life and higher board
+temperatures.</p>
+<p>To measure efficiency:</p>
+<ol class="arabic simple">
+<li><p>Determine input power and output power by measuring the respective voltages
+and currents.</p></li>
+<li><p>Efficiency varies with load current (e.g., ~92% at 10 A versus significantly
+less at light loads).</p></li>
+<li><p>It is essential to plot efficiency across multiple load current values for a
+complete characterization.</p></li>
+</ol>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/32._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/32._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Example efficiency plot</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The generic test setup uses a programmable current load to sweep the output
+current of the device under test (DUT). An ammeter measures the input current
+while two voltmeters monitor the input and output voltages. From these
+measurements, input power, output power, efficiency, and power loss can be
+calculated.</p>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/31._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/31._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Efficiency test setup diagram</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="hardware-interface">
+<h2>Hardware Interface<a class="headerlink" href="#hardware-interface" title="Link to this heading"></a></h2>
+<section id="usb-c-connector">
+<h3>USB-C Connector<a class="headerlink" href="#usb-c-connector" title="Link to this heading"></a></h3>
+<p>The USB-C interface connects to the host PC for power and data communication.
+The LTpowerAnalyzer software automatically detects the RL2000 efficiency meter
+and displays its control interface window during start-up.</p>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/eval-ltpa-rl2000_front-evaluation-board.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/eval-ltpa-rl2000_front-evaluation-board.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">EVAL-LTPA-RL2000 front panel</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="terminals">
+<h3>Terminals<a class="headerlink" href="#terminals" title="Link to this heading"></a></h3>
+<p>The EVAL-LTPA-RL2000 has four pairs of terminals:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Terminal Pair</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Current 1</p></td>
+<td><p>Current Meter (±) Terminals. Measures input supply current of DUT.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Voltage 1</p></td>
+<td><p>Voltmeter 1 (±) Terminals. Measures input supply voltage of DUT.</p></td>
+</tr>
+<tr class="row-even"><td><p>Voltage 2</p></td>
+<td><p>Voltmeter 2 (±) Terminals. Measures output voltage of DUT.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Current 2</p></td>
+<td><p>Current Load (±) Terminals. Programmable load for DUT.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<p><strong>Terminal Pairs:</strong></p>
+<section id="setup-requirements">
+<h3>Setup Requirements<a class="headerlink" href="#setup-requirements" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p><strong>Current 1</strong> – Input supply current measurement (±).</p></li>
-<li><p><strong>Voltage 1</strong> – Input supply voltage (±).</p></li>
-<li><p><strong>Voltage 2</strong> – Output voltage (±).</p></li>
-<li><p><strong>Current 2</strong> – Programmable load (±).</p></li>
-<li><p><strong>USB-C</strong> – Powers the device and enables PC communication.</p></li>
+<li><p>EVAL-LTPA-RL2000 (LTpowerAnalyzer RL2000 Efficiency Meter)</p></li>
+<li><p>Device Under Test (e.g., LT8642S Demo Board)</p></li>
+<li><p>DC Power Supply</p></li>
 </ul>
-<p><strong>Connection Procedure:</strong></p>
-<ol class="arabic simple">
-<li><p>Connect Current 1 between power source (+) and DUT input (+).</p></li>
-<li><p>Connect Voltage 1 across DUT input pins.</p></li>
-<li><p>Connect Voltage 2 across DUT output pins.</p></li>
-<li><p>Connect Current 2 across DUT output pins as programmable load.</p></li>
-<li><p>Connect USB-C cable to PC.</p></li>
-</ol>
+<p>It is recommended to use short cables to connect the RL2000 to the DUT to
+minimize parasitics.</p>
+<figure class="align-center" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/33._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/33._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Hardware setup overview</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>The LTpowerAnalyzer software provides a dedicated RL2000 control panel with
-real-time power loss and efficiency measurements, meter selection with LED
-identification, input/output voltage and current readouts, servo voltage control,
-voltmeter current compensation for leakage correction, and adjustable sample
-rate and settling time.</p>
-<p><strong>DC Sweep Measurement:</strong></p>
+<section id="connection-procedure">
+<h3>Connection Procedure<a class="headerlink" href="#connection-procedure" title="Link to this heading"></a></h3>
+<p><strong>Step 1:</strong> Connect the Current 1 terminals between the (+) terminal of the
+input power source and the (+) input of the DUT. This monitors the input
+current.</p>
+<p><strong>Step 2:</strong> Connect the Voltage 1 terminals across the (+) and (-) input pins
+of the DUT. This measures the voltage at the input.</p>
+<p><strong>Step 3:</strong> Connect the Voltage 2 terminals across the (+) and (-) output pins
+of the DUT. This measures the voltage at the output.</p>
+<p><strong>Step 4:</strong> Connect the Current 2 terminals across the (+) and (-) output pins
+of the DUT. This serves as the programmable load for sweeping the output
+current.</p>
+<p><strong>Step 5:</strong> Connect a USB-C cable from your PC to the USB port on the RL2000 to
+complete the setup.</p>
+</section>
+<section id="example-setup-using-the-lt8642s-demo-board">
+<h3>Example Setup Using the LT8642S Demo Board<a class="headerlink" href="#example-setup-using-the-lt8642s-demo-board" title="Link to this heading"></a></h3>
+<p>The following diagram shows the hardware setup using the LT8642S demo board
+(included with the <a class="reference internal" href="../eval-ltpa-kit/index.html#eval-ltpa-kit"><span class="std std-ref">EVAL-LTPA-KIT</span></a>) as the DUT.</p>
+<figure class="align-center" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/37._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/37._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Example setup using the LT8642S demo board</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="typical-applications">
+<h2>Typical Applications<a class="headerlink" href="#typical-applications" title="Link to this heading"></a></h2>
+<section id="basic-setup">
+<h3>Basic Setup<a class="headerlink" href="#basic-setup" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id16">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/25._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/25._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Basic efficiency measurement setup</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="basic-setup-with-servo-voltage">
+<h3>Basic Setup with Servo Voltage<a class="headerlink" href="#basic-setup-with-servo-voltage" title="Link to this heading"></a></h3>
+<p>This example demonstrates how the input voltage (V1) remains relatively stable
+when the servo voltage is enabled.</p>
+<figure class="align-center" id="id17">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/26._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/26._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Basic setup with servo voltage enabled</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="basic-setup-with-micro-power-dut">
+<h3>Basic Setup with Micro-Power DUT<a class="headerlink" href="#basic-setup-with-micro-power-dut" title="Link to this heading"></a></h3>
+<p>For low-power DUTs, leakage currents into Voltage 1 and Voltage 2 can skew
+current measurements. The RL2000 can compensate for this in the software by
+calculating the leakage currents and removing them from the measured currents,
+as well as adding settling time to allow the load current time to stabilize.</p>
+<figure class="align-center" id="id18">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/34._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/34._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Basic setup with micro-power DUT</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="basic-setup-with-negative-output-voltages">
+<h3>Basic Setup with Negative Output Voltages<a class="headerlink" href="#basic-setup-with-negative-output-voltages" title="Link to this heading"></a></h3>
+<p>The RL2000 is also capable of measuring negative voltages.</p>
+<figure class="align-center" id="id19">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/30._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/30._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Setup for negative output voltage measurement</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="setup-for-duts-with-multiple-power-inputs">
+<h3>Setup for DUTs with Multiple Power Inputs<a class="headerlink" href="#setup-for-duts-with-multiple-power-inputs" title="Link to this heading"></a></h3>
+<p>This example shows how to use two RL2000s to measure the efficiency of a DUT
+with two input supplies. In this test case, the output power measurement of the
+top RL2000 is disabled in the software.</p>
+<figure class="align-center" id="id20">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/28._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/28._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Setup for DUTs with multiple power inputs</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="setup-for-higher-load-currents-30-a">
+<h3>Setup for Higher Load Currents (&gt;30 A)<a class="headerlink" href="#setup-for-higher-load-currents-30-a" title="Link to this heading"></a></h3>
+<p>Load currents up to 60 A can be achieved by sharing the load current between two
+RL2000s connected in parallel. In this test case, the input power measurement of
+the top RL2000 is disabled in the software.</p>
+<figure class="align-center" id="id21">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/29._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/29._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Setup for higher load currents using two RL2000s in parallel</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="setup-for-low-output-voltages">
+<h3>Setup for Low Output Voltages<a class="headerlink" href="#setup-for-low-output-voltages" title="Link to this heading"></a></h3>
+<p>At low output voltages, the current load may not produce accurate load current
+depending on settings. An easy way to compensate for this is to use a second
+supply to bias the output with a negative voltage.</p>
+<figure class="align-center" id="id22">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/35._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/35._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Setup for low output voltages (schematic)</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id23">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/36._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/36._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Setup for low output voltages (wiring)</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="making-an-efficiency-plot-measurement">
+<h2>Making an Efficiency Plot Measurement<a class="headerlink" href="#making-an-efficiency-plot-measurement" title="Link to this heading"></a></h2>
+<p>This section provides a step-by-step guide for using the DC Sweep feature of
+the LTpowerAnalyzer software to create an efficiency plot.</p>
+<figure class="align-center" id="id24">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/14._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/14._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">LTpowerAnalyzer software status bar showing RL2000 connection</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Check the status bar at the bottom of the main window to confirm the RL2000
+efficiency meter connection with no errors. The DC sweep is done entirely by the
+RL2000 without the M2K, main board, or current probe.</p>
+<section id="step-1-run-a-dc-sweep">
+<h3>Step 1: Run a DC Sweep<a class="headerlink" href="#step-1-run-a-dc-sweep" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Click on the <strong>DC Sweep</strong> tab.</p></li>
+<li><p>Select the meter for sweeping load current. If multiple RL2000s are
+connected, use the <strong>Blink Led</strong> function to identify the selected meter.</p></li>
+<li><p>Set start and end values for the sweep.</p></li>
+<li><p>Select the sweep rate (<strong>Logarithmic</strong> or <strong>Linear</strong>).</p></li>
+<li><p>Set the number of data points per decade (logarithmic) or intervals (linear).</p></li>
+<li><p>Click the <strong>Run</strong> button to start the load current sweep and efficiency
+measurement.</p></li>
+<li><p>When complete, select measurement data (efficiency, power loss, etc.) for Y1
+and Y2 axes. Adjust graph settings as needed.</p></li>
+</ol>
+<figure class="align-center" id="id25">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/17._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/17._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">DC Sweep measurement setup and graph</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-2-rename-the-measurements">
+<h3>Step 2: Rename the Measurements<a class="headerlink" href="#step-2-rename-the-measurements" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Click on the <strong>DATA</strong> tab on the right.</p></li>
+<li><p>Click on the Name value to change. Type the desired waveform name and press
+<strong>ENTER</strong> or <strong>RETURN</strong>.</p></li>
+</ol>
+<p>The legend will automatically be updated to the new name.</p>
+<figure class="align-center" id="id26">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/10._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/10._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Renaming measurement waveforms</span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-3-edit-the-title">
+<h3>Step 3: Edit the Title<a class="headerlink" href="#step-3-edit-the-title" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Right-click on the graph and select <strong>Edit Title</strong>.</p></li>
+<li><p>Type in the new title.</p></li>
+<li><p>Click the <strong>OK</strong> button.</p></li>
+</ol>
+<p>The plot title will be automatically updated to the new title.</p>
+<figure class="align-center" id="id27">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/18._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/18._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">Editing the plot title</span><a class="headerlink" href="#id27" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id28">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/19._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/19._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">Updated plot title</span><a class="headerlink" href="#id28" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-4-add-a-text-annotation">
+<h3>Step 4: Add a Text Annotation<a class="headerlink" href="#step-4-add-a-text-annotation" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Right-click on the graph and select <strong>Add Text Annotation</strong>.</p></li>
+<li><p>Type in the text annotations.</p></li>
+<li><p>Click the <strong>OK</strong> button.</p></li>
+</ol>
+<p>Select the new annotation by placing the cursor over it and then left-click. The
+annotation can then be resized and moved as needed.</p>
+<figure class="align-center" id="id29">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/20._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/20._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 20 </span><span class="caption-text">Adding a text annotation</span><a class="headerlink" href="#id29" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id30">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/21._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/21._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 21 </span><span class="caption-text">Editing the annotation text</span><a class="headerlink" href="#id30" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id31">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/22._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/22._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 22 </span><span class="caption-text">Annotation placed on the graph</span><a class="headerlink" href="#id31" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-5-saving-results">
+<h3>Step 5: Saving Results<a class="headerlink" href="#step-5-saving-results" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Select the <strong>Save</strong> option in the File tab: <strong>File &gt; Save</strong>.</p></li>
+<li><p>Enter the file name of the saved data.</p></li>
+<li><p>Click <strong>Save</strong>. A Data File type will save the setup and the data.</p></li>
+</ol>
+<p>The Setup File type will only save the setup.</p>
+<figure class="align-center" id="id32">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/23._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/23._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 23 </span><span class="caption-text">Save dialog</span><a class="headerlink" href="#id32" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id33">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/24._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/24._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 24 </span><span class="caption-text">Save file name entry</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="software-interface">
+<h2>Software Interface<a class="headerlink" href="#software-interface" title="Link to this heading"></a></h2>
+<section id="rl2000-control-panel">
+<h3>RL2000 Control Panel<a class="headerlink" href="#rl2000-control-panel" title="Link to this heading"></a></h3>
+<p>The RL2000 control panel automatically appears as a separate window in the
+LTpowerAnalyzer software when an efficiency meter is connected.</p>
+<figure class="align-center" id="id34">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/1._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/1._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 25 </span><span class="caption-text">RL2000 control panel</span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="power-loss-and-efficiency-measurements">
+<h4>Power Loss and Efficiency Measurements<a class="headerlink" href="#power-loss-and-efficiency-measurements" title="Link to this heading"></a></h4>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Measurement</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input Power</p></td>
+<td><p>Total input power of the device under test.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output Power</p></td>
+<td><p>Total output power of the device under test.</p></td>
+</tr>
+<tr class="row-even"><td><p>Power Loss</p></td>
+<td><p>Total power loss of the device under test.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Efficiency</p></td>
+<td><p>Efficiency of the device under test.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="meter-selection">
+<h4>Meter Selection<a class="headerlink" href="#meter-selection" title="Link to this heading"></a></h4>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Control</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Select Meter</p></td>
+<td><p>Selects the meter being actively controlled by the interface. Meters are
+numbered by the order of connection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Blink Led</p></td>
+<td><p>Blinks front panel LED. Used to identify the selected meter when multiple
+RL2000s are connected.</p></td>
+</tr>
+<tr class="row-even"><td><p>Reset</p></td>
+<td><p>Returns all meter settings to default values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Info</p></td>
+<td><p>Displays information about the meter (hardware/firmware versions, serial
+number, serial port, etc.).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="input-meter-readings">
+<h4>Input Meter Readings<a class="headerlink" href="#input-meter-readings" title="Link to this heading"></a></h4>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Reading</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input Voltage</p></td>
+<td><p>DC input voltage of DUT. Measured across Voltage 1 terminals.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Input Current</p></td>
+<td><p>DC input current of DUT. Measured through Current 1 terminals.</p></td>
+</tr>
+<tr class="row-even"><td><p>Input Power</p></td>
+<td><p>DC input power of DUT. Calculated using Voltage 1 and Current 1
+measurements.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Efficiency (checkbox)</p></td>
+<td><p>Input power measurement enable. Adds input power reading to total used in
+power loss and efficiency calculations.</p></td>
+</tr>
+<tr class="row-even"><td><p>VM Comp</p></td>
+<td><p>Voltmeter current compensation enable. Applies offset to input current
+reading to compensate for leakage current through Voltage 1 terminals.
+Improves measurement accuracy at low current values.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="output-meter-readings">
+<h4>Output Meter Readings<a class="headerlink" href="#output-meter-readings" title="Link to this heading"></a></h4>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Reading</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output Voltage</p></td>
+<td><p>DC output voltage of DUT. Measured across Voltage 2 terminals.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output Current</p></td>
+<td><p>DC output current of DUT. Measured through Current 2 terminals.</p></td>
+</tr>
+<tr class="row-even"><td><p>Output Power</p></td>
+<td><p>DC output power of DUT. Calculated using Voltage 2 and Current 2
+measurements.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Efficiency (checkbox)</p></td>
+<td><p>Output power measurement enable. Adds output power reading to total used
+in power loss and efficiency calculations.</p></td>
+</tr>
+<tr class="row-even"><td><p>VM Comp</p></td>
+<td><p>Voltmeter current compensation enable. Applies offset to output current
+reading to compensate for leakage current through Voltage 2 terminals.
+Improves measurement accuracy at low current values.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="meter-settings">
+<h4>Meter Settings<a class="headerlink" href="#meter-settings" title="Link to this heading"></a></h4>
+<p><strong>Sample Rate:</strong> Selects the measurement speed of the internal converters.
+Higher speed settings are faster, but result in a noisier measurement.</p>
+<p><strong>Settling Time:</strong> Sets the amount of time to wait for the load current to
+settle before performing a measurement.</p>
+<p><strong>Servo Voltage:</strong> Sets the amount of voltage drop across the input current
+meter (Current 1). The servo voltage enable checkbox activates the servo voltage
+function for the input current meter.</p>
+<p><strong>Load Current:</strong> Sets the amount of output current drawn by the current load
+(Current 2).</p>
 <ul class="simple">
-<li><p>Logarithmic or linear sweep modes</p></li>
-<li><p>Configurable start/end current (1 uA to 30 A)</p></li>
-<li><p>Points per decade/interval adjustment (1–200)</p></li>
-<li><p>Real-time graphing with configurable X/Y axes</p></li>
-<li><p>Data export capability</p></li>
+<li><p><strong>Zero:</strong> Resets the load current setting to zero amperes.</p></li>
+<li><p><strong>Enable:</strong> Current load enable checkbox to activate Current 2.</p></li>
+<li><p><strong>Share:</strong> Current share enable checkbox to automatically divide load current
+equally among all connected meters.</p></li>
 </ul>
-<p><strong>Typical Applications:</strong></p>
-<ul class="simple">
-<li><p>Basic efficiency measurement</p></li>
-<li><p>Servo voltage for stable input measurements</p></li>
-<li><p>Micro-power DUT testing with leakage compensation</p></li>
-<li><p>Negative output voltage measurement</p></li>
-<li><p>Multiple input supply measurement (dual RL2000 configuration)</p></li>
-<li><p>High current testing up to 60 A (parallel dual RL2000s)</p></li>
-<li><p>Low output voltage testing with bias compensation</p></li>
-</ul>
+</section>
+<section id="status-bar">
+<h4>Status Bar<a class="headerlink" href="#status-bar" title="Link to this heading"></a></h4>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Status</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Error</p></td>
+<td><p>Error code if a problem occurs during operation. Displays “No Error” if
+functioning properly.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temperature</p></td>
+<td><p>Internal temperature of current meter and load. Fan activates
+automatically at 32 °C. Shutdown occurs at 70 °C.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="dc-sweep-measurement-and-graph-setup">
+<h3>DC Sweep Measurement and Graph Setup<a class="headerlink" href="#dc-sweep-measurement-and-graph-setup" title="Link to this heading"></a></h3>
+<p>The measurement setup is on the left side of the DC Sweep window. Click on the
+<strong>GRAPH</strong> tab on the right to bring up the graph setup.</p>
+<figure class="align-center" id="id35">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/13._rl2000.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-rl2000/13._rl2000.png" />
+<figcaption>
+<p><span class="caption-number">Figure 26 </span><span class="caption-text">DC Sweep measurement and graph setup</span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="dc-sweep-measurement-setup">
+<h4>DC Sweep Measurement Setup<a class="headerlink" href="#dc-sweep-measurement-setup" title="Link to this heading"></a></h4>
+<p><strong>RL2000 Section:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Control</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Select Meter</p></td>
+<td><p>Selects the meter for sweeping load current. Meters are numbered by the
+order of connection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Blink Led</p></td>
+<td><p>Blinks front panel LED to identify the selected meter when multiple
+RL2000s are connected.</p></td>
+</tr>
+<tr class="row-even"><td><p>Reset</p></td>
+<td><p>Returns all meter settings to default values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Info</p></td>
+<td><p>Displays meter information (hardware/firmware versions, serial number,
+serial port, etc.).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Sweep Section:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Range</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Start Current</p></td>
+<td><p>1 uA to 30 A</p></td>
+<td><p>Sets the initial load current value in the DC sweep.</p></td>
+</tr>
+<tr class="row-odd"><td><p>End Current</p></td>
+<td><p>1 uA to 30 A</p></td>
+<td><p>Sets the final load current value in the DC sweep.</p></td>
+</tr>
+<tr class="row-even"><td><p>Points Per Decade / Total Intervals</p></td>
+<td><p>1 to 200</p></td>
+<td><p>Sets number of points per decade for logarithmic sweeps, or number of
+intervals for linear sweeps.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Log</p></td>
+<td><p>—</p></td>
+<td><p>Logarithmic sweep. Sweeps load current values in logarithmic scale.</p></td>
+</tr>
+<tr class="row-even"><td><p>Linear</p></td>
+<td><p>—</p></td>
+<td><p>Linear sweep. Sweeps load current values in linear scale.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Run / Stop</p></td>
+<td><p>—</p></td>
+<td><p>Triggers start of DC sweep. Click again to stop a sweep in progress.</p></td>
+</tr>
+<tr class="row-even"><td><p>Append</p></td>
+<td><p>—</p></td>
+<td><p>Append data checkbox. Check to plot next sweep on existing graph.
+Unchecked erases previous graphs.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dc-sweep-graph-setup">
+<h4>DC Sweep Graph Setup<a class="headerlink" href="#dc-sweep-graph-setup" title="Link to this heading"></a></h4>
+<p><strong>X Axis:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Range</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Minimum</p></td>
+<td><p>1 uA to 100 A</p></td>
+<td><p>Lower bound for X-axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maximum</p></td>
+<td><p>1 uA to 100 A</p></td>
+<td><p>Upper bound for X-axis.</p></td>
+</tr>
+<tr class="row-even"><td><p>AutoScale</p></td>
+<td><p>—</p></td>
+<td><p>X-axis data automatically scaled.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Log</p></td>
+<td><p>—</p></td>
+<td><p>X-axis data plotted using log-10 scale.</p></td>
+</tr>
+<tr class="row-even"><td><p>Increments</p></td>
+<td><p>1 to 20 divisions</p></td>
+<td><p>Number of major divisions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Y1 Axis:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Range</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data</p></td>
+<td><p>—</p></td>
+<td><p>Parameter plotted on Y1 axis <a class="footnote-reference brackets" href="#id9" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Minimum</p></td>
+<td><p>-1000 to 990</p></td>
+<td><p>Lower bound for Y1-axis.</p></td>
+</tr>
+<tr class="row-even"><td><p>Maximum</p></td>
+<td><p>-990 to 1000</p></td>
+<td><p>Upper bound for Y1-axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AutoScale</p></td>
+<td><p>—</p></td>
+<td><p>Y1-axis data automatically scaled.</p></td>
+</tr>
+<tr class="row-even"><td><p>Log</p></td>
+<td><p>—</p></td>
+<td><p>Y1-axis data plotted using log-10 scale.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Increments</p></td>
+<td><p>1 to 20 divisions</p></td>
+<td><p>Number of major divisions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Y2 Axis:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Range</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data</p></td>
+<td><p>—</p></td>
+<td><p>Parameter plotted on Y2 axis <a class="footnote-reference brackets" href="#id9" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Minimum</p></td>
+<td><p>-1000 to 990</p></td>
+<td><p>Lower bound for Y2-axis.</p></td>
+</tr>
+<tr class="row-even"><td><p>Maximum</p></td>
+<td><p>-990 to 1000</p></td>
+<td><p>Upper bound for Y2-axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AutoScale</p></td>
+<td><p>—</p></td>
+<td><p>Y2-axis data automatically scaled.</p></td>
+</tr>
+<tr class="row-even"><td><p>Log</p></td>
+<td><p>—</p></td>
+<td><p>Y2-axis data plotted using log-10 scale.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Increments</p></td>
+<td><p>1 to 20 divisions</p></td>
+<td><p>Number of major divisions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id7">1</a>,<a role="doc-backlink" href="#id8">2</a>)</span>
+<p>Parameters available for Y1 and Y2 axes: Input Voltage (V1), Input
+Current (I1), Output Voltage (V2), Output Current (I2), Efficiency, Input
+Power (Power1), Output Power (Power2), Power Loss, Load Current (Iload).</p>
+</aside>
+</aside>
+</section>
+</section>
 </section>
 <section id="additional-information">
 <h2>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-LTPA-RL2000" target="_blank">EVAL-LTPA-RL2000 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-LTPA-KIT" target="_blank">EVAL-LTPA-KIT Product Page</a></p></li>
+<li><p><a class="reference internal" href="../eval-ltpa-kit/index.html#eval-ltpa-kit"><span class="std std-ref">EVAL-LTPA-KIT Overview</span></a></p></li>
 </ul>
 </section>
 <section id="help-and-support">

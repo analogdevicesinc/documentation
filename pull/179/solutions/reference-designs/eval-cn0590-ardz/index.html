@@ -96,9 +96,9 @@
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0590-EBZ</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#board-components">Board Components</a></li>
 <li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#setup-and-test">Setup and Test</a></li>
 <li><a class="reference internal" href="#documents">Documents</a></li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
@@ -911,43 +911,148 @@ Content on this topic
   <section id="eval-cn0590-ebz">
 <span id="eval-cn0590-ardz"></span><h1>EVAL-CN0590-EBZ<a class="headerlink" href="#eval-cn0590-ebz" title="Link to this heading"></a></h1>
 <p>Galvanic Isolation of USB High Speed Type-C.</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0590-ardz/eval-cn0590-ebz_angle.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0590-ardz/eval-cn0590-ebz_angle.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0590-EBZ evaluation board</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p><a class="icon adi reference external" href="https://www.analog.com/CN0590" target="_blank">CN0590</a> provides a completely isolated connection between a USB 2.0 host
-and a USB 2.0 device. The system is rated up to 2.5 kV RMS isolation voltage
-per UL 1577 with 3.1 mm system creepage and clearance, suitable for functional
-isolation or basic/reinforced 300 V RMS Cat II isolation per IEC 61010 and
-IEC 62368.</p>
-<p>The circuit uses the <a class="icon adi reference external" href="https://www.analog.com/ADuM3166" target="_blank">ADuM3166</a> USB 2.0 high-speed digital isolator for
-data isolation, the <a class="icon adi reference external" href="https://www.analog.com/ADuM3070" target="_blank">ADuM3070</a> regulated DC-to-DC isolated power supply
-controller with external transformer for power isolation, the <a class="icon adi reference external" href="https://www.analog.com/MAX77958" target="_blank">MAX77958</a>
-USB Type-C controller, <a class="icon adi reference external" href="https://www.analog.com/MAX20333" target="_blank">MAX20333</a> power path selector, <a class="icon adi reference external" href="https://www.analog.com/ADuM1252" target="_blank">ADuM1252</a>
-bidirectional I2C isolator, and <a class="icon adi reference external" href="https://www.analog.com/MAX14606" target="_blank">MAX14606</a> dual power source management
-ICs with reverse polarity, overvoltage, and overcurrent protections.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0590" target="_blank">CN0590</a> is a plug and play USB 2.0 high-speed isolator that
+can be used with any modern Type-C device supporting USB 2 connectivity. The
+circuit provides a completely isolated connection between a USB 2.0 host and a
+USB 2.0 device.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0590-ardz/cn0590_simplified_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0590-ardz/cn0590_simplified_block_diagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0590 simplified block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The CN0590 supports fully compatible power and signal isolation up to 2.5 W and
+480 Mbps, respectively, as mandated by the USB 2 standard. The system is rated
+up to 2.5 kVRMS isolation voltage per UL 1577 and features a system creepage
+and clearance of 3.1 mm, limited by the <a class="icon adi reference external" href="https://www.analog.com/ADuM3070" target="_blank">ADuM3070</a>. This system is
+suitable for functional isolation or basic and reinforced 300 VRMS CAT II
+isolation applications according to IEC 61010 and IEC 62368 standards in many
+industrial, energy, and instrumentation applications.</p>
+<p>The circuit uses the following key components:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADuM3166" target="_blank">ADuM3166</a></p></td>
+<td><p>USB 2.0 high-speed digital isolator for data isolation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADuM3070" target="_blank">ADuM3070</a></p></td>
+<td><p>Regulated DC-to-DC isolated power supply controller with external
+transformer for power isolation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/MAX77958" target="_blank">MAX77958</a></p></td>
+<td><p>USB Type-C PD controller</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/MAX20333" target="_blank">MAX20333</a></p></td>
+<td><p>Power path selector</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADuM1252" target="_blank">ADuM1252</a></p></td>
+<td><p>Bidirectional I2C isolator</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/MAX14606" target="_blank">MAX14606</a></p></td>
+<td><p>Dual power source management IC with reverse polarity, overvoltage, and
+overcurrent protections</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="board-components">
+<h2>Board Components<a class="headerlink" href="#board-components" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0590-ardz/cn0590_board_image.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0590-ardz/cn0590_board_image.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-CN0590-EBZ board component placement</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Designator</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>P1</p></td>
+<td><p>USB Type-C connector — USB host plug (connect host controller here)</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2</p></td>
+<td><p>USB Type-C connector — auxiliary</p></td>
+</tr>
+<tr class="row-even"><td><p>P4</p></td>
+<td><p>USB Type-C connector — secondary side</p></td>
+</tr>
+<tr class="row-odd"><td><p>P5</p></td>
+<td><p>USB Type-C connector — secondary side</p></td>
+</tr>
+<tr class="row-even"><td><p>P6</p></td>
+<td><p>USB Type-C connector — USB peripheral port (connect peripheral here)</p></td>
+</tr>
+<tr class="row-odd"><td><p>P7</p></td>
+<td><p>USB Type-C connector — external battery / power input</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>EVAL-CN0590-EBZ evaluation board</p></li>
-<li><p>USB Type-C cables</p></li>
-<li><p>USB 2.0 host and device</p></li>
+<li><p>Host PC with High-Speed USB 2.0 support</p></li>
+<li><p>USB flash drive with High-Speed USB 2.0 support</p></li>
+<li><p>USB Type-C cable supporting both power and data signaling</p></li>
+<li><p>Type-C male to Type-A female adapter</p></li>
 </ul>
 </section>
-<section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>USB Type-C receptacle on primary side for host connection.</p></li>
-<li><p>USB Type-C receptacle on secondary side for optional external power.</p></li>
-<li><p>High efficiency 2.5 W isolated power (no external power required for
-standard operation).</p></li>
-<li><p>Automatic power path selection with integrated protections.</p></li>
-<li><p>Small form factor with 2.5 kV RMS isolation.</p></li>
-</ul>
-</section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
+<section id="setup-and-test">
+<h2>Setup and Test<a class="headerlink" href="#setup-and-test" title="Link to this heading"></a></h2>
 <p>No evaluation software is required. The board operates transparently as a
 USB 2.0 high-speed isolated retimer between host and device.</p>
+<p>To test the USB 2.0 functionality of the EVAL-CN0590-EBZ, follow the steps
+below:</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0590-ardz/high_speed_data_transfer_test_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0590-ardz/high_speed_data_transfer_test_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">High-speed data transfer test setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Using the Type-C to Type-A adapter, connect the USB flash drive to <strong>P6</strong> of
+the EVAL-CN0590-EBZ.</p></li>
+<li><p>Connect the Type-C USB cable to <strong>P1</strong> of the EVAL-CN0590-EBZ and then the
+other end of the cable to the computer USB port. Wait for the USB flash
+drive to be detected on the computer.</p></li>
+<li><p>Validate the speed of the USB flash drive using a USB device tree viewer.
+The screenshot below shows an example device tree of a high-speed USB
+device.</p></li>
+</ol>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0590-ardz/high-speed_device_connection_speed.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0590-ardz/high-speed_device_connection_speed.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Example USB Device Tree Viewer screen for a high-speed USB device</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="documents">
 <h2>Documents<a class="headerlink" href="#documents" title="Link to this heading"></a></h2>
@@ -964,6 +1069,7 @@ USB 2.0 high-speed isolated retimer between host and device.</p>
 <li><p>Schematics</p></li>
 <li><p>PCB Layout</p></li>
 <li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
 </ul>
 </div>
 </section>
@@ -973,6 +1079,9 @@ USB 2.0 high-speed isolated retimer between host and device.</p>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADUM3166" target="_blank">ADuM3166 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADUM3070" target="_blank">ADuM3070 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/MAX77958" target="_blank">MAX77958 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/MAX20333" target="_blank">MAX20333 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADUM1252" target="_blank">ADuM1252 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/MAX14606" target="_blank">MAX14606 Product Page</a></p></li>
 </ul>
 </section>
 <section id="help-and-support">

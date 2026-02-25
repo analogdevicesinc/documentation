@@ -95,10 +95,29 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EV-STRUCTURAL-ARDZ</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#applications">Applications</a></li>
+<li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hardware-design">Hardware Design</a><ul>
+<li><a class="reference internal" href="#components-and-connections">Components and Connections</a><ul>
+<li><a class="reference internal" href="#digital-interface-arduino">Digital Interface (Arduino)</a></li>
+<li><a class="reference internal" href="#sensor-devices">Sensor Devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system-integration">System Integration</a><ul>
+<li><a class="reference internal" href="#phase-1-hardware-setup">PHASE 1: Hardware Setup</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#setup-procedure">Setup Procedure</a></li>
+<li><a class="reference internal" href="#flashing-the-max32625pico-firmware">Flashing the MAX32625PICO Firmware</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
@@ -912,65 +931,228 @@ Content on this topic
 <p>Vibration Sensor for Structural Health Monitoring.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p>The EV-STRUCTURAL-ARDZ is a vibration sensor evaluation board integrating
-multiple sensors for structural health monitoring and motion detection
-applications. The board combines the <a class="icon adi reference external" href="https://www.analog.com/ADXL343" target="_blank">ADXL343</a> 3-axis MEMS accelerometer,
-the <a class="icon adi reference external" href="https://www.analog.com/ADIS16203" target="_blank">ADIS16203</a> programmable 360-degree inclinometer, and the
-<a class="icon adi reference external" href="https://www.analog.com/MAX30210" target="_blank">MAX30210</a> digital temperature sensor.</p>
-<p>Key features:</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EV-STRUCTURAL-ARDZ" target="_blank">EV-STRUCTURAL-ARDZ</a> is a vibration sensor evaluation board that uses
+the <a class="icon adi reference external" href="https://www.analog.com/ADXL343" target="_blank">ADXL343</a> digital output MEMS accelerometer and the <a class="icon adi reference external" href="https://www.analog.com/ADIS16203" target="_blank">ADIS16203</a>
+programmable 360-degree inclinometer. Aside from providing vibration data, this
+board also features the <a class="icon adi reference external" href="https://www.analog.com/MAX30210" target="_blank">MAX30210</a> digital temperature sensor which gives
+the option to shut down sensitive machines and equipment for smart motor sensing
+applications. This vibration sensor can also detect if the horizontal position
+of the sensor changes, which points towards a collapse of the structure where
+the sensor was deployed.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/ev-structural-ardz.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/ev-structural-ardz.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/ev-structural-ardz.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EV-STRUCTURAL-ARDZ sensor board</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Temperature Sensor</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>±0.1 °C accuracy from +20 °C to +50 °C</p></td>
+</tr>
+<tr class="row-odd"><td><p>±0.15 °C accuracy from -20 °C to +85 °C</p></td>
+</tr>
+<tr class="row-even"><td><p>High and low temperature alarms</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Accelerometer</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Built-in motion detection features make tap, double-tap, activity,
+inactivity, and free-fall detection trivial</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multipurpose accelerometer with 10- to 13-bit resolution for use in a
+wide variety of applications</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Inclinometer</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Digital self-test function</p></td>
+</tr>
+<tr class="row-even"><td><p>Configurable alarm function</p></td>
+</tr>
+<tr class="row-odd"><td><p>±180 output format option</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="applications">
+<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>Motion detection: tap, double-tap, activity detection, and free-fall sensing
-(ADXL343, 10–13 bit resolution)</p></li>
-<li><p>Tilt sensing with ±180 degree output format (ADIS16203, self-test and
-configurable alarms)</p></li>
-<li><p>Temperature monitoring with ±0.1 °C accuracy from +20 °C to +50 °C
-(MAX30210, high/low alarms)</p></li>
+<li><p>Smart motor sensor</p></li>
+<li><p>Tilt sensing, inclinometers</p></li>
+<li><p>Platform control, stabilization, and leveling</p></li>
+<li><p>Motion/position measurement</p></li>
+<li><p>Monitor/alarm devices (security, medical, safety)</p></li>
 </ul>
 </section>
-<section id="required-equipment">
-<h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
+<section id="block-diagram">
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/ev-structural-ardz_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/ev-structural-ardz_block_diagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EV-STRUCTURAL-ARDZ block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="hardware-design">
+<h2>Hardware Design<a class="headerlink" href="#hardware-design" title="Link to this heading"></a></h2>
+<section id="components-and-connections">
+<h3>Components and Connections<a class="headerlink" href="#components-and-connections" title="Link to this heading"></a></h3>
+<section id="digital-interface-arduino">
+<h4>Digital Interface (Arduino)<a class="headerlink" href="#digital-interface-arduino" title="Link to this heading"></a></h4>
+<p>The Arduino interface is a standardized digital interface for various digital
+communication protocols such as SPI, I2C, and UART. These interface types were
+standardized by Arduino, which is a hardware and software company. Complete
+details on the Arduino specification can be found on the
+<a class="icon link reference external" href="https://www.arduino.cc/en/hardware" target="_blank">Arduino Hardware page</a>.</p>
+<p>The pin map for the Arduino pins is described in the schematic diagram below.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/ev-structural-ardz_revb.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/ev-structural-ardz_revb.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/ev-structural-ardz_revb.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EV-STRUCTURAL-ARDZ Rev. B board layout</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="sensor-devices">
+<h4>Sensor Devices<a class="headerlink" href="#sensor-devices" title="Link to this heading"></a></h4>
+<p>The board comes with the <a class="icon adi reference external" href="https://www.analog.com/ADXL343" target="_blank">ADXL343</a> 3-Axis MEMS Accelerometer,
+<a class="icon adi reference external" href="https://www.analog.com/ADIS16203" target="_blank">ADIS16203</a> Programmable 360-degree Inclinometer, and <a class="icon adi reference external" href="https://www.analog.com/MAX30210" target="_blank">MAX30210</a>
+±0.1 °C Accurate, 16-Bit Digital I2C Temperature Sensor.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/ev-structural-ardz_revb2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/ev-structural-ardz_revb2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">EV-STRUCTURAL-ARDZ sensor component layout</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="system-integration">
+<h2>System Integration<a class="headerlink" href="#system-integration" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EV-STRUCTURAL-ARDZ" target="_blank">EV-STRUCTURAL-ARDZ</a> can be used with the
+<a class="reference internal" href="../ad-max32sxwise-sl/index.html#ad-max32sxwise-sl"><span class="std std-ref">MAX32670-SX-ARDZ</span></a> Base Board, which is a long-range
+wireless radio development platform based on the MAX32670 ultralow power ARM
+Cortex-M4 microcontroller and SX1261 RF transceiver.</p>
+<p>Using these platforms together enables users to design solutions based on
+low-power, long range proprietary radio communication technique.</p>
+<section id="phase-1-hardware-setup">
+<h3>PHASE 1: Hardware Setup<a class="headerlink" href="#phase-1-hardware-setup" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This setup only applies for the MAX32670-SX-ARDZ Base Board. Users may use a
+different base board or microcontroller, however the firmware built for this
+demo application cannot be used as this is specifically designed for the
+MAX32670-SX-ARDZ.</p>
+</div>
+<section id="equipment-needed">
+<h4>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li><p>EV-STRUCTURAL-ARDZ sensor node</p></li>
-<li><p><a class="reference internal" href="../ad-max32sxwise-sl/index.html#ad-max32sxwise-sl"><span class="std std-ref">MAX32670-SX-ARDZ</span></a> base board</p></li>
-<li><p>MAX32625PICO programming adapter with 10-pin ribbon cable</p></li>
-<li><p>CR123A battery (3 V to 4.7 V)</p></li>
-<li><p>Micro-USB to USB cable</p></li>
+<li><p>One (1) <a class="icon adi reference external" href="https://www.analog.com/MAX32670-SX-ARDZ" target="_blank">MAX32670-SX-ARDZ</a> Base Board</p></li>
+<li><p>One (1) <a class="icon adi reference external" href="https://www.analog.com/EV-STRUCTURAL-ARDZ" target="_blank">EV-STRUCTURAL-ARDZ</a> Sensor Node</p></li>
+<li><p>One (1) MAX32625PICO Rapid Development Platform with 10-pin ribbon cable</p></li>
+<li><p>One (1) CR123A Battery or any equivalent external DC power supply (+3 V to
++4.7 V). <strong>Note that this is not included in the kit.</strong></p></li>
+<li><p>One (1) Micro USB to USB cable</p></li>
 <li><p>Host PC (Windows 10 or later)</p></li>
 </ul>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/hardware_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/hardware_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Complete hardware setup with base board, sensor node, and programming adapter</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
-<section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
-<li><p>Insert CR123A battery into BT1 connector. <strong>DS3</strong> LED indicates correct
-polarity.</p></li>
-<li><p>Align Arduino headers and connect the sensor node to the base board.</p></li>
-<li><p>Connect MAX32625PICO programmer via 10-pin ribbon cable.</p></li>
-<li><p>Connect MAX32625PICO to host PC via micro-USB cable.</p></li>
+<section id="setup-procedure">
+<h4>Setup Procedure<a class="headerlink" href="#setup-procedure" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>Insert one CR123A battery (3 V to 4.7 V) into the battery holder (BT1
+connector) of the <a class="icon adi reference external" href="https://www.analog.com/MAX32670-SX-ARDZ" target="_blank">MAX32670-SX-ARDZ</a> Base Board.</p>
+<p><strong>Make sure to check for the battery polarity in the BT1 connector, refer to
+the figure below. The DS3 LED will light up indicating that you have inserted
+the battery correctly and that power is provided to the base board.</strong></p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/base_board_with_battery.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/base_board_with_battery.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Battery installation on the MAX32670-SX-ARDZ base board</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EV-STRUCTURAL-ARDZ" target="_blank">EV-STRUCTURAL-ARDZ</a> Sensor Node to
+the <a class="icon adi reference external" href="https://www.analog.com/MAX32670-SX-ARDZ" target="_blank">MAX32670-SX-ARDZ</a> Base Board by aligning the
+corresponding Arduino headers on each board.</p></li>
+<li><p>Connect the MAX32625PICO programming adapter to the
+<a class="icon adi reference external" href="https://www.analog.com/MAX32670-SX-ARDZ" target="_blank">MAX32670-SX-ARDZ</a> Base Board through the 10-pin
+ribbon cable.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Make sure that the MAX32625PICO programming adapter has been flashed with
+the correct firmware image before connecting it to the MAX32670-SX-ARDZ
+Base Board.</p>
+</div>
+</li>
 </ol>
 </section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>Program the MAX32625PICO by drag-and-drop firmware loading to the MAINTENANCE
-drive. Firmware is specifically designed for the MAX32670-SX-ARDZ base board.</p>
+<section id="flashing-the-max32625pico-firmware">
+<h4>Flashing the MAX32625PICO Firmware<a class="headerlink" href="#flashing-the-max32625pico-firmware" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>Download the firmware image:
+<code class="docutils literal notranslate"><span class="pre">max32625_max32670evkit_if_crc_swd_v1.0.3.bin</span></code></p></li>
+<li><p>Do not connect the MAX32625PICO to the
+<a class="icon adi reference external" href="https://www.analog.com/MAX32670-SX-ARDZ" target="_blank">MAX32670-SX-ARDZ</a> Base Board yet.</p></li>
+<li><p>Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.</p></li>
+<li><p>Press the button on the MAX32625PICO. <strong>Do not release the button until the
+MAINTENANCE drive is mounted.</strong></p></li>
+<li><p>Release the button once the MAINTENANCE drive is mounted.</p></li>
+<li><p>Drag and drop the firmware image to the MAINTENANCE drive.</p></li>
+<li><p>After a few seconds, the MAINTENANCE drive will disappear and be replaced by
+a drive named DAPLINK. This indicates that the process is complete and the
+MAX32625PICO can now be used to flash the firmware of the
+<a class="icon adi reference external" href="https://www.analog.com/MAX32670-SX-ARDZ" target="_blank">MAX32670-SX-ARDZ</a> Base Board.</p></li>
+<li><p>Connect the MAX32625PICO programming adapter to the Host PC using the micro
+USB to USB cable.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/max32670-sx-ardz_to_maxpico.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-structural-ardz/max32670-sx-ardz_to_maxpico.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">MAX32670-SX-ARDZ connected to MAX32625PICO programming adapter</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+<p>Once you have completed this setup, proceed to PHASE 2 found in the
+<a class="reference internal" href="../ad-max32sxwise-sl/index.html#ad-max32sxwise-sl"><span class="std std-ref">AD-MAX32SXWISE-SL Software User Guide</span></a>.</p>
+</section>
+</section>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
 <h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
-<p><a class="icon link reference external" href="https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/ev-structural-ardz-designsupport.zip" target="_blank">EV-STRUCTURAL-ARDZ Design &amp; Integration Files</a></p>
+<p><a class="icon link reference external" href="https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/ev-structural-ardz-designsupport.zip" target="_blank">EV-STRUCTURAL-ARDZ Design Support Package (Rev. B)</a></p>
 <ul class="simple">
-<li><p>Schematics</p></li>
-<li><p>PCB Layout</p></li>
+<li><p>Schematic</p></li>
 <li><p>Bill of Materials</p></li>
+<li><p>PCB Layout</p></li>
+<li><p>Fabrication Files</p></li>
 </ul>
 </div>
 </section>
 <section id="additional-information">
 <h2>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EV-STRUCTURAL-ARDZ" target="_blank">EV-STRUCTURAL-ARDZ Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADXL343" target="_blank">ADXL343 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADIS16203" target="_blank">ADIS16203 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/MAX30210" target="_blank">MAX30210 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/MAX32670-SX-ARDZ" target="_blank">MAX32670-SX-ARDZ Product Page</a></p></li>
 </ul>
 </section>
 <section id="help-and-support">

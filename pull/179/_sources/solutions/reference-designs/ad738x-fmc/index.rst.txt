@@ -193,6 +193,95 @@ Normal averaging oversampling is supported via the
 enables oversampling, and writing 1 disables it. When oversampling is enabled,
 the resolution boost feature of the chip is also turned on.
 
+.. note::
+
+   The resolution boost changes the ``scan_type`` for buffered reads. Older
+   versions of libiio do not expect this to change, so you may need to
+   restart ``iiod`` after enabling oversampling for correct data interpretation.
+
+Trigger Management
+^^^^^^^^^^^^^^^^^^
+
+**SPI Offload Trigger:** When using the chip with a SPI controller that has
+offload capabilities (such as the SPI Engine in the HDL reference design),
+``in_voltage_sampling_frequency`` and
+``in_voltage_sampling_frequency_available`` attributes control the hardware
+trigger frequency. No manual trigger setup is needed beyond setting the
+desired sample rate.
+
+.. note::
+
+   For single-ended chips, the effective sample rate is half of the
+   ``in_voltage_sampling_frequency`` value when all channels are enabled,
+   due to the input MUX switching between banks.
+
+**Conventional IIO Trigger:** When using a standard SPI controller, the
+driver supports hrtimer-based triggers for data capture:
+
+.. code-block:: console
+
+   # mkdir /sys/kernel/config/iio/triggers/hrtimer/trigger0
+   # echo 500 > /sys/bus/iio/devices/trigger0/sampling_frequency
+   # echo trigger0 > /sys/bus/iio/devices/iio:device0/trigger/current_trigger
+
+Buffer Management
+^^^^^^^^^^^^^^^^^
+
+The IIO buffer interface provides ``enable``, ``length``, and ``watermark``
+controls in the ``buffer`` subdirectory:
+
+- **length**: Get/set the number of sample sets held by the buffer.
+- **enable**: Enables/disables the buffer. Write last, after configuring length
+  and scan elements.
+
+Scan elements in the ``scan_elements`` directory control which channels are
+captured:
+
+- ``in_voltageX_en``: Enable/disable scan element (write 1/0)
+- ``in_voltageX_type``: Data storage format (e.g. ``s16/16>>0``)
+- ``in_voltageX_index``: Position of this element in the buffer
+
+.. note::
+
+   When using SPI offloading, **all** channels must be enabled for buffered
+   reads (except for single-ended chips, where half the channels from the
+   same MUX position may be enabled). Software timestamp attributes are not
+   present when using hardware triggers.
+
+Alert Output
+^^^^^^^^^^^^
+
+The ALERT output thresholds are accessed via event attributes:
+
+- ``events/in_thresh_falling_value``: Low threshold (raw units)
+- ``events/in_thresh_rising_value``: High threshold (raw units)
+- ``events/thresh_either_en``: Enable/disable the ALERT output pin
+
+Threshold values are in raw units. To set a specific voltage, account for
+``scale`` (and ``offset`` if present). For example, with a 3.3 V reference,
+the scale is 0.050354003 and the default rising threshold of 32768 corresponds
+to approximately 1650 mV.
+
+ADAQ Chip Gain Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ADAQ chips have a resistor network for each input that determines the
+amplifier gain. These are specified using channel properties in the device
+tree. The ``adi,gain-milli`` property is the gain multiplied by 1000 (e.g.,
+a gain of 0.3 is written as 300):
+
+.. code-block:: none
+
+   #address-cells = <1>;
+   #size-cells = <0>;
+
+   channel@0 {
+       reg = <0>;
+       adi,gain-milli = /bits/ 16 <300>;
+   };
+
+If any channel is omitted, the gain for that channel is assumed to be 1.0.
+
 More Information
 ----------------
 

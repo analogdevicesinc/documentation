@@ -97,7 +97,13 @@
 <li><a class="reference internal" href="#">EVAL-ADM3055E-ARDZ</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a><ul>
+<li><a class="reference internal" href="#power-supply-configuration">Power Supply Configuration</a></li>
+<li><a class="reference internal" href="#can-bus-connections">CAN Bus Connections</a></li>
+<li><a class="reference internal" href="#spi-chip-select-configuration-p2">SPI Chip Select Configuration (P2)</a></li>
+<li><a class="reference internal" href="#mode-control">Mode Control</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#software-setup">Software Setup</a></li>
 <li><a class="reference internal" href="#documents">Documents</a></li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
@@ -911,20 +917,34 @@ Content on this topic
   <section id="eval-adm3055e-ardz">
 <span id="id1"></span><h1>EVAL-ADM3055E-ARDZ<a class="headerlink" href="#eval-adm3055e-ardz" title="Link to this heading"></a></h1>
 <p>Isolated CAN FD Arduino Shield.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/img_20191202_092114.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/img_20191202_092114.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-ADM3055E-ARDZ board (top and bottom view)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p><a class="icon adi reference external" href="https://www.analog.com/CN0401" target="_blank">CN0401</a> is an Arduino Uno compatible isolated controller area network with
-flexible data rate (CAN FD) communications port. The board interfaces via SPI to
-development platforms and is built around the <a class="icon adi reference external" href="https://www.analog.com/ADM3055E" target="_blank">ADM3055E</a> CAN FD transceiver
-with integrated isolated DC-to-DC converter.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0401" target="_blank">CN0401 Circuit Note</a> is an Arduino Uno compatible isolated
+controller area network with flexible data rate (CAN FD) communications port.
+The board interfaces via SPI to development platforms and is built around the
+<a class="icon adi reference external" href="https://www.analog.com/ADM3055E" target="_blank">ADM3055E</a> CAN FD transceiver with integrated isolated DC-to-DC converter.</p>
 <p>Key features:</p>
 <ul class="simple">
 <li><p>CAN FD data rates up to 8 Mbps</p></li>
 <li><p>Reinforced signal and power isolation between node and CAN FD bus</p></li>
 <li><p>Switchable 120 ohm split termination with common-mode filtering</p></li>
-<li><p>Remote wake-up notification capability</p></li>
+<li><p>Reduced power standby mode with remote wake-up notification capability</p></li>
 <li><p>Backwards compatible with classical CAN networks</p></li>
+<li><p>Screw terminal or CiA 303-1 male 9-pin sub-D port for CAN bus connection</p></li>
+<li><p>No external bus power required (integrated DC-to-DC converter)</p></li>
 </ul>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/cn0401_silkscreen.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/cn0401_silkscreen.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-ADM3055E-ARDZ board silkscreen and component layout</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -937,29 +957,254 @@ with integrated isolated DC-to-DC converter.</p>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<p><strong>Power Supply Configuration:</strong></p>
-<ul class="simple">
-<li><p><strong>P20</strong> – Selects DC-to-DC converter power from Arduino 5 V or external
-supply.</p></li>
-<li><p><strong>P11</strong> – Selects logic supply from IOREF or external 2.7–5.5 V supply.</p></li>
-<li><p><strong>P6</strong> – Terminal block for external power connections.</p></li>
-</ul>
-<p><strong>CAN Bus Connections:</strong></p>
-<ul class="simple">
-<li><p>CAN bus terminal block (CANL, CANH, GND2).</p></li>
-<li><p>CiA 303-1 male 9-pin sub-D port.</p></li>
-</ul>
-<p><strong>SPI Chip Select Configuration (P2):</strong></p>
-<ul class="simple">
-<li><p>Positions support Arduino pins D10, D9, D8, or D7.</p></li>
-</ul>
-<p><strong>Control Features:</strong></p>
-<ul class="simple">
-<li><p><strong>P5</strong> – Silent mode control via Arduino D4.</p></li>
-<li><p><strong>P7</strong> – Interrupt configuration for service requests via Arduino D2.</p></li>
-<li><p><strong>P19</strong> – Slope control / full-speed mode selection.</p></li>
-</ul>
-<p>Always install shunts in P2, P11, P19, and P20 for proper operation.</p>
+<div class="admonition-important admonition">
+<p class="admonition-title">Important</p>
+<p>There should always be a shunt in jumper headers P2, P11, P19, and P20
+for the board to function properly.</p>
+</div>
+<section id="power-supply-configuration">
+<h3>Power Supply Configuration<a class="headerlink" href="#power-supply-configuration" title="Link to this heading"></a></h3>
+<p>The board power can be sourced from the Arduino host or from external supplies
+via the P6 terminal block.</p>
+<p><strong>P6 – External Supply Terminal Block:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 85.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>External DC-to-DC converter supply (5 V)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>External logic supply (2.7 V to 5.5 V)</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Ground</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>P20 – DC-to-DC Converter Power Source:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Jumper Position</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pins 1-2</p></td>
+<td><p>Sources 5 V from Arduino Uno header</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p20v1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p20v1.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><p>Pins 2-3</p></td>
+<td><p>Sources from external supply terminal block (P6, Pin 1)</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p20v2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p20v2.png" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>P11 – Logic Supply Source:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Jumper Position</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pins 1-2</p></td>
+<td><p>Sources from IOREF Arduino Uno header pin</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p11v1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p11v1.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><p>Pins 2-3</p></td>
+<td><p>Sources from external supply terminal block (P6, Pin 2, 2.7 V to 5.5 V)</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p11v2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p11v2.png" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="can-bus-connections">
+<h3>CAN Bus Connections<a class="headerlink" href="#can-bus-connections" title="Link to this heading"></a></h3>
+<p>The CAN bus can be connected via the screw terminal block or the CiA 303-1
+male 9-pin sub-D connector.</p>
+<p><strong>Terminal Block Pin Assignment:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 85.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>CANL</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>CANH</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>GND2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>CiA 303-1 Male 9-Pin Sub-D Pin Assignment:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 85.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>CANL</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>GND2</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>CANH</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pins 5 and 6 of the sub-D connector can optionally be configured to GND2
+via resistors R2 and R4.</p>
+</div>
+</section>
+<section id="spi-chip-select-configuration-p2">
+<h3>SPI Chip Select Configuration (P2)<a class="headerlink" href="#spi-chip-select-configuration-p2" title="Link to this heading"></a></h3>
+<p>The SPI chip select signal can be routed to one of four Arduino digital pins
+through the P2 header.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Jumper Position</p></th>
+<th class="head"><p>Arduino Pin</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pins 1-2</p></td>
+<td><p>D10</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p2v1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p2v1.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><p>Pins 3-4</p></td>
+<td><p>D9</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p2v2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p2v2.png" />
+</td>
+</tr>
+<tr class="row-even"><td><p>Pins 5-6</p></td>
+<td><p>D8</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p2v3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p2v3.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><p>Pins 7-8</p></td>
+<td><p>D7</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p2v4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p2v4.png" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="mode-control">
+<h3>Mode Control<a class="headerlink" href="#mode-control" title="Link to this heading"></a></h3>
+<p><strong>P5 – Silent Mode:</strong></p>
+<p>Installing a shunt on P5 allows the platform to set the <a class="icon adi reference external" href="https://www.analog.com/ADM3055E" target="_blank">ADM3055E</a>
+transceiver to silent mode (receive-only operation) via Arduino Uno header
+pin D4.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">P5 jumper (silent mode enable)</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>P7 – Interrupt:</strong></p>
+<p>A shunt must be installed on P7 to detect received CAN frames and
+notification that the remote wake-up pattern has been received. The interrupt
+signal is routed to Arduino Uno header pin D2.</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p7.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p7.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">P7 jumper (interrupt enable)</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>P19 – Operating Mode Selection:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Jumper Position</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pins 1-2</p></td>
+<td><p>Full speed mode (supports all data rates up to maximum)</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p19v1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p19v1.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><p>Pins 2-3</p></td>
+<td><p>Slope control mode (reduced slew rate for lower speeds)</p></td>
+<td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p19v2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adm3055e-ardz/p19v2.png" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Removing the P19 shunt places the transceiver into standby mode.</p>
+</div>
+</section>
 </section>
 <section id="software-setup">
 <h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
@@ -981,6 +1226,7 @@ CN0401 CAN FD communication support.</p>
 <li><p>Schematics</p></li>
 <li><p>PCB Layout</p></li>
 <li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
 </ul>
 </div>
 </section>

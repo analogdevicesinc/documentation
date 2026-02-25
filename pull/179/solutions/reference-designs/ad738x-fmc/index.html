@@ -110,6 +110,10 @@
 <li><a class="reference internal" href="#linux-device-tree">Linux Device Tree</a></li>
 <li><a class="reference internal" href="#iio-attributes">IIO Attributes</a></li>
 <li><a class="reference internal" href="#oversampling">Oversampling</a></li>
+<li><a class="reference internal" href="#trigger-management">Trigger Management</a></li>
+<li><a class="reference internal" href="#buffer-management">Buffer Management</a></li>
+<li><a class="reference internal" href="#alert-output">Alert Output</a></li>
+<li><a class="reference internal" href="#adaq-chip-gain-configuration">ADAQ Chip Gain Configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -1117,6 +1121,88 @@ available.</p>
 <code class="docutils literal notranslate"><span class="pre">in_voltage_oversampling_ratio</span></code> attribute. Writing a value greater than 1
 enables oversampling, and writing 1 disables it. When oversampling is enabled,
 the resolution boost feature of the chip is also turned on.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The resolution boost changes the <code class="docutils literal notranslate"><span class="pre">scan_type</span></code> for buffered reads. Older
+versions of libiio do not expect this to change, so you may need to
+restart <code class="docutils literal notranslate"><span class="pre">iiod</span></code> after enabling oversampling for correct data interpretation.</p>
+</div>
+</section>
+<section id="trigger-management">
+<h4>Trigger Management<a class="headerlink" href="#trigger-management" title="Link to this heading"></a></h4>
+<p><strong>SPI Offload Trigger:</strong> When using the chip with a SPI controller that has
+offload capabilities (such as the SPI Engine in the HDL reference design),
+<code class="docutils literal notranslate"><span class="pre">in_voltage_sampling_frequency</span></code> and
+<code class="docutils literal notranslate"><span class="pre">in_voltage_sampling_frequency_available</span></code> attributes control the hardware
+trigger frequency. No manual trigger setup is needed beyond setting the
+desired sample rate.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For single-ended chips, the effective sample rate is half of the
+<code class="docutils literal notranslate"><span class="pre">in_voltage_sampling_frequency</span></code> value when all channels are enabled,
+due to the input MUX switching between banks.</p>
+</div>
+<p><strong>Conventional IIO Trigger:</strong> When using a standard SPI controller, the
+driver supports hrtimer-based triggers for data capture:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>mkdir<span class="w"> </span>/sys/kernel/config/iio/triggers/hrtimer/trigger0
+<span class="gp"># </span><span class="nb">echo</span><span class="w"> </span><span class="m">500</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/bus/iio/devices/trigger0/sampling_frequency
+<span class="gp"># </span><span class="nb">echo</span><span class="w"> </span>trigger0<span class="w"> </span>&gt;<span class="w"> </span>/sys/bus/iio/devices/iio:device0/trigger/current_trigger
+</pre></div>
+</div>
+</section>
+<section id="buffer-management">
+<h4>Buffer Management<a class="headerlink" href="#buffer-management" title="Link to this heading"></a></h4>
+<p>The IIO buffer interface provides <code class="docutils literal notranslate"><span class="pre">enable</span></code>, <code class="docutils literal notranslate"><span class="pre">length</span></code>, and <code class="docutils literal notranslate"><span class="pre">watermark</span></code>
+controls in the <code class="docutils literal notranslate"><span class="pre">buffer</span></code> subdirectory:</p>
+<ul class="simple">
+<li><p><strong>length</strong>: Get/set the number of sample sets held by the buffer.</p></li>
+<li><p><strong>enable</strong>: Enables/disables the buffer. Write last, after configuring length
+and scan elements.</p></li>
+</ul>
+<p>Scan elements in the <code class="docutils literal notranslate"><span class="pre">scan_elements</span></code> directory control which channels are
+captured:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">in_voltageX_en</span></code>: Enable/disable scan element (write 1/0)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in_voltageX_type</span></code>: Data storage format (e.g. <code class="docutils literal notranslate"><span class="pre">s16/16&gt;&gt;0</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in_voltageX_index</span></code>: Position of this element in the buffer</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using SPI offloading, <strong>all</strong> channels must be enabled for buffered
+reads (except for single-ended chips, where half the channels from the
+same MUX position may be enabled). Software timestamp attributes are not
+present when using hardware triggers.</p>
+</div>
+</section>
+<section id="alert-output">
+<h4>Alert Output<a class="headerlink" href="#alert-output" title="Link to this heading"></a></h4>
+<p>The ALERT output thresholds are accessed via event attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">events/in_thresh_falling_value</span></code>: Low threshold (raw units)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">events/in_thresh_rising_value</span></code>: High threshold (raw units)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">events/thresh_either_en</span></code>: Enable/disable the ALERT output pin</p></li>
+</ul>
+<p>Threshold values are in raw units. To set a specific voltage, account for
+<code class="docutils literal notranslate"><span class="pre">scale</span></code> (and <code class="docutils literal notranslate"><span class="pre">offset</span></code> if present). For example, with a 3.3 V reference,
+the scale is 0.050354003 and the default rising threshold of 32768 corresponds
+to approximately 1650 mV.</p>
+</section>
+<section id="adaq-chip-gain-configuration">
+<h4>ADAQ Chip Gain Configuration<a class="headerlink" href="#adaq-chip-gain-configuration" title="Link to this heading"></a></h4>
+<p>ADAQ chips have a resistor network for each input that determines the
+amplifier gain. These are specified using channel properties in the device
+tree. The <code class="docutils literal notranslate"><span class="pre">adi,gain-milli</span></code> property is the gain multiplied by 1000 (e.g.,
+a gain of 0.3 is written as 300):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#address-cells = &lt;1&gt;;
+#size-cells = &lt;0&gt;;
+
+channel@0 {
+    reg = &lt;0&gt;;
+    adi,gain-milli = /bits/ 16 &lt;300&gt;;
+};
+</pre></div>
+</div>
+<p>If any channel is omitted, the gain for that channel is assumed to be 1.0.</p>
 </section>
 </section>
 </section>

@@ -107,6 +107,7 @@
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#linux-device-driver">Linux Device Driver</a></li>
 <li><a class="reference internal" href="#device-trees">Device Trees</a></li>
+<li><a class="reference internal" href="#driver-testing">Driver Testing</a></li>
 <li><a class="reference internal" href="#no-os-project">No-OS Project</a></li>
 </ul>
 </li>
@@ -984,6 +985,12 @@ mode, the AVDD1, AVDD2, and IOVDD supplies can run from a single 3.3 V rail.</p>
 The offload module is triggered by the DRDY (data ready) signal of the device.
 Because the board has two <a class="icon adi reference external" href="https://www.analog.com/AD7768-1" target="_blank">AD7768-1</a> devices, the data path consists of
 two separate SPI interfaces and GPIOs, and two DMAs for data stream capture.</p>
+<figure class="align-center" id="id1">
+<img alt="../../../_images/ad7768evb_fmc_hdl1.svg" src="../../../_images/ad7768evb_fmc_hdl1.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD7768-1-EVB HDL block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="building-the-hdl-project">
 <h3>Building the HDL Project<a class="headerlink" href="#building-the-hdl-project" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
@@ -1044,6 +1051,80 @@ available bandwidths</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">clocks</span></code>: Phandle to the MCLK clock source</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">interrupts</span></code>: Interrupt specifier for the DRDY signal</p></li>
 </ul>
+<p>Example device tree node:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>adc_vref: fixedregulator@0 {
+    compatible = &quot;regulator-fixed&quot;;
+    regulator-name = &quot;fixed-supply&quot;;
+    regulator-min-microvolt = &lt;4096000&gt;;
+    regulator-max-microvolt = &lt;4096000&gt;;
+    regulator-boot-on;
+};
+
+clocks {
+    ad7768_mclk: clock@0 {
+        #clock-cells = &lt;0&gt;;
+        compatible = &quot;fixed-clock&quot;;
+        clock-frequency = &lt;16384000&gt;;
+    };
+};
+
+&amp;spi0 {
+    #address-cells = &lt;1&gt;;
+    #size-cells = &lt;0&gt;;
+    status = &quot;okay&quot;;
+
+    ad7768@0 {
+        compatible = &quot;ad7768-1&quot;;
+        reg = &lt;0&gt;;
+        spi-max-frequency = &lt;16000000&gt;;
+        spi-cpol;
+        spi-cpha;
+        #interrupt-cells = &lt;2&gt;;
+        interrupts = &lt;25 0x2&gt;;
+        interrupt-parent = &lt;&amp;gpio&gt;;
+        vref-supply = &lt;&amp;adc_vref&gt;;
+        clocks = &lt;&amp;ad7768_mclk&gt;;
+        clock-names = &quot;mclk&quot;;
+    };
+};
+</pre></div>
+</div>
+</section>
+<section id="driver-testing">
+<h3>Driver Testing<a class="headerlink" href="#driver-testing" title="Link to this heading"></a></h3>
+<p>The measured voltage in millivolts is calculated as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>U = in_voltage0_raw * in_voltage_scale
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat<span class="w"> </span>in_voltage_scale
+<span class="go">0.000488281</span>
+<span class="gp"># </span>cat<span class="w"> </span>in_voltage0_raw
+<span class="go">2040915</span>
+</pre></div>
+</div>
+<p>This gives: 2040915 * 0.000488281 = 996.54 mV.</p>
+<p>To change the sampling frequency:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat<span class="w"> </span>sampling_frequency
+<span class="go">32000</span>
+<span class="gp"># </span><span class="nb">echo</span><span class="w"> </span><span class="m">256000</span><span class="w"> </span>&gt;<span class="w"> </span>sampling_frequency
+<span class="gp"># </span>cat<span class="w"> </span>sampling_frequency
+<span class="go">256000</span>
+</pre></div>
+</div>
+<p>To view and change the filter bandwidth:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat<span class="w"> </span>in_voltage_filter_low_pass_3db_frequency_available
+<span class="go">6528.000000, 8320.000000, 13760.000000</span>
+<span class="gp"># </span><span class="nb">echo</span><span class="w"> </span><span class="m">13760</span><span class="w"> </span>&gt;<span class="w"> </span>in_voltage_filter_low_pass_3db_frequency
+<span class="gp"># </span>cat<span class="w"> </span>in_voltage_filter_low_pass_3db_frequency
+<span class="go">13760.000000</span>
+</pre></div>
+</div>
+<p>The driver supports its own default trigger source <code class="docutils literal notranslate"><span class="pre">ad7768-1-dev0</span></code>. Buffer
+management uses the standard IIO buffer interface with <code class="docutils literal notranslate"><span class="pre">enable</span></code>, <code class="docutils literal notranslate"><span class="pre">length</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">watermark</span></code> controls, and scan elements for channel selection.</p>
+<p>Direct register access is available via debugfs at
+<code class="docutils literal notranslate"><span class="pre">/sys/kernel/debug/iio/iio:deviceX/direct_reg_access</span></code>.</p>
 </section>
 <section id="no-os-project">
 <h3>No-OS Project<a class="headerlink" href="#no-os-project" title="Link to this heading"></a></h3>

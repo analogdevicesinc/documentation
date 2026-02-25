@@ -72,6 +72,11 @@ The offload module is triggered by the DRDY (data ready) signal of the device.
 Because the board has two :adi:`AD7768-1` devices, the data path consists of
 two separate SPI interfaces and GPIOs, and two DMAs for data stream capture.
 
+.. figure:: ad7768evb_fmc_hdl.svg
+   :align: center
+
+   AD7768-1-EVB HDL block diagram
+
 Building the HDL Project
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -131,6 +136,93 @@ Device tree required properties:
 - ``vref-supply``: Phandle to the fixed voltage reference regulator
 - ``clocks``: Phandle to the MCLK clock source
 - ``interrupts``: Interrupt specifier for the DRDY signal
+
+Example device tree node:
+
+.. code-block:: none
+
+   adc_vref: fixedregulator@0 {
+       compatible = "regulator-fixed";
+       regulator-name = "fixed-supply";
+       regulator-min-microvolt = <4096000>;
+       regulator-max-microvolt = <4096000>;
+       regulator-boot-on;
+   };
+
+   clocks {
+       ad7768_mclk: clock@0 {
+           #clock-cells = <0>;
+           compatible = "fixed-clock";
+           clock-frequency = <16384000>;
+       };
+   };
+
+   &spi0 {
+       #address-cells = <1>;
+       #size-cells = <0>;
+       status = "okay";
+
+       ad7768@0 {
+           compatible = "ad7768-1";
+           reg = <0>;
+           spi-max-frequency = <16000000>;
+           spi-cpol;
+           spi-cpha;
+           #interrupt-cells = <2>;
+           interrupts = <25 0x2>;
+           interrupt-parent = <&gpio>;
+           vref-supply = <&adc_vref>;
+           clocks = <&ad7768_mclk>;
+           clock-names = "mclk";
+       };
+   };
+
+Driver Testing
+~~~~~~~~~~~~~~
+
+The measured voltage in millivolts is calculated as:
+
+.. code-block:: text
+
+   U = in_voltage0_raw * in_voltage_scale
+
+For example:
+
+.. code-block:: console
+
+   # cat in_voltage_scale
+   0.000488281
+   # cat in_voltage0_raw
+   2040915
+
+This gives: 2040915 * 0.000488281 = 996.54 mV.
+
+To change the sampling frequency:
+
+.. code-block:: console
+
+   # cat sampling_frequency
+   32000
+   # echo 256000 > sampling_frequency
+   # cat sampling_frequency
+   256000
+
+To view and change the filter bandwidth:
+
+.. code-block:: console
+
+   # cat in_voltage_filter_low_pass_3db_frequency_available
+   6528.000000, 8320.000000, 13760.000000
+   # echo 13760 > in_voltage_filter_low_pass_3db_frequency
+   # cat in_voltage_filter_low_pass_3db_frequency
+   13760.000000
+
+The driver supports its own default trigger source ``ad7768-1-dev0``. Buffer
+management uses the standard IIO buffer interface with ``enable``, ``length``,
+and ``watermark`` controls, and scan elements for channel selection.
+
+Direct register access is available via debugfs at
+``/sys/kernel/debug/iio/iio:deviceX/direct_reg_access``.
 
 No-OS Project
 ~~~~~~~~~~~~~

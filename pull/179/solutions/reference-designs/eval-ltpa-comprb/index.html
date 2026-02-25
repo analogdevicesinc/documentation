@@ -96,9 +96,15 @@
           <ul>
 <li><a class="reference internal" href="#">EVAL-LTPA-COMPRB</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#hardware-interface">Hardware Interface</a></li>
+<li><a class="reference internal" href="#basic-operation">Basic Operation</a><ul>
 <li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#step-by-step-procedure">Step-by-Step Procedure</a></li>
+<li><a class="reference internal" href="#example-setup">Example Setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#accuracy-and-limitations">Accuracy and Limitations</a></li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
 </ul>
@@ -909,75 +915,230 @@ Content on this topic
   <section id="eval-ltpa-comprb">
 <span id="id1"></span><h1>EVAL-LTPA-COMPRB<a class="headerlink" href="#eval-ltpa-comprb" title="Link to this heading"></a></h1>
 <p>LTpowerAnalyzer Compensation Probe.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-top.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-top.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-LTPA-COMPRB Board Photo</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p>The EVAL-LTPA-COMPRB is an optional companion board for the
-<a class="reference internal" href="../eval-ltpa-kit/index.html#eval-ltpa-kit"><span class="std std-ref">EVAL-LTPA-KIT</span></a>, designed to support optimization of loop
-compensation in power supply designs. It functions as a programmable substitute
-for series R-C networks in Type 2 compensators, enabling users to evaluate Bode
-plots and transient responses with different combinations of resistances and
-capacitances without soldering components directly to test circuits.</p>
-<p>Key features:</p>
+<p>The EVAL-LTPA-COMPRB is an optional companion board to the
+<a class="reference internal" href="../eval-ltpa-kit/index.html#eval-ltpa-kit"><span class="std std-ref">EVAL-LTPA-KIT</span></a>, and is designed to support the
+optimization of loop compensation in power supply designs. The board functions
+as a programmable substitute for the series R-C network in a Type 2
+compensator, and allows users to easily evaluate Bode plots and transient
+responses with different combinations of resistances and capacitances without
+soldering components directly to test circuits.</p>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>Programmable resistance: 500 ohm to 100 kohm</p></li>
-<li><p>Programmable capacitance: 10 pF to 39 nF</p></li>
+<li><p>500 Ohm to 100 kOhm programmable resistance range</p></li>
+<li><p>10 pF to 39 nF programmable capacitance range</p></li>
 <li><p>USB-C interface for data and power</p></li>
-<li><p>Compact form factor: 2.82 in x 1.25 in</p></li>
-<li><p>Digitally-controlled switches implementing parallel resistor/capacitor
-combinations approximating E96 resistor and E24 capacitor standards</p></li>
+<li><p>Small form-factor (2.82” x 1.25”) enables portable applications</p></li>
 </ul>
 </section>
+<section id="hardware-interface">
+<h2>Hardware Interface<a class="headerlink" href="#hardware-interface" title="Link to this heading"></a></h2>
+<p>The compensation terminals on the EVAL-LTPA-COMPRB are described in the table
+below.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-hardware-interface.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-hardware-interface.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-LTPA-COMPRB Hardware Interface</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Terminal</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>R</p></td>
+<td><p>Resistor Terminal. Connected to one end of the programmable resistor
+array.</p></td>
+</tr>
+<tr class="row-odd"><td><p>COM</p></td>
+<td><p>Common Terminal. Connected to the junction between the resistor and the
+capacitor arrays.</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>Capacitor Terminal. Connected to one end of the programmable capacitor
+array and its parasitic series resistance.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The equivalent circuit of the compensation probe is shown below.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-equivalent-circuit.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-equivalent-circuit.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-LTPA-COMPRB Equivalent Circuit</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="basic-operation">
+<h2>Basic Operation<a class="headerlink" href="#basic-operation" title="Link to this heading"></a></h2>
 <section id="required-equipment">
-<h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
+<h3>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>EVAL-LTPA-COMPRB compensation probe board</p></li>
+<li><p>EVAL-LTPA-COMPRB (LTpowerAnalyzer Compensation Probe)</p></li>
 <li><p><a class="reference internal" href="../eval-ltpa-kit/index.html#eval-ltpa-kit"><span class="std std-ref">EVAL-LTPA-KIT</span></a> (LTpowerAnalyzer Kit)</p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> Advanced Active Learning Module</p></li>
-<li><p>Device under test (e.g., LT8642S demo board)</p></li>
-<li><p>DC power supply</p></li>
+<li><p>Device Under Test (e.g., LT8642S demo board)</p></li>
+<li><p>DC Power Supply</p></li>
 <li><p>USB-C cable</p></li>
 <li><p>Host PC with LTpowerAnalyzer software</p></li>
 </ul>
 </section>
-<section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<p><strong>Compensation Terminals:</strong></p>
-<ul class="simple">
-<li><p><strong>R Terminal</strong> – Connects to programmable resistor array.</p></li>
-<li><p><strong>COM Terminal</strong> – Junction between resistor and capacitor arrays.</p></li>
-<li><p><strong>C Terminal</strong> – Connects to programmable capacitor array and parasitic
-series resistance.</p></li>
-</ul>
-<p>The board includes approximately 8 pF of PCB capacitance appearing in parallel
-with the device under test.</p>
-<p><strong>Connection Steps:</strong></p>
-<ol class="arabic simple">
-<li><p>Solder wires to appropriate terminals (R+COM for resistor-only, C+COM for
-capacitor-only, R+C for series network).</p></li>
-<li><p>Locate compensation components on DUT and verify they are unpopulated.</p></li>
-<li><p>Connect probe wires across component locations (typically at compensation
-pins like VC or COMP/ITH).</p></li>
-<li><p>Establish LTpowerAnalyzer hardware, ADALM2000, and DUT configuration.</p></li>
-<li><p>Connect USB-C cable to host PC.</p></li>
-<li><p>Launch LTpowerAnalyzer software – probe detection is automatic.</p></li>
-<li><p>Select desired resistance/capacitance values from dropdown menus.</p></li>
-<li><p>Execute Bode Plot measurements and adjust values for stability requirements.</p></li>
-</ol>
+<section id="step-by-step-procedure">
+<h3>Step-by-Step Procedure<a class="headerlink" href="#step-by-step-procedure" title="Link to this heading"></a></h3>
+<p><strong>Step 1:</strong> The EVAL-LTPA-COMPRB can function as either a programmable resistor
+(R and COM terminals), capacitor (C and COM terminals), or series
+resistor-capacitor network (R and C terminals), depending on how it is
+connected to your DUT.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The compensation probe has a PCB capacitance of approximately 8 pF, which
+appears connected in parallel with the DUT.</p>
+</div>
+<p><strong>Step 2:</strong> Identify where the compensation resistor and/or capacitor (whichever
+is being tuned using the probe) are on your DUT, and verify that the
+component(s) are not populated. Solder wires across the component locations.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The compensation probe should be placed as close as possible to the DUT, and
+any wires used must be kept short to minimize parasitic inductance and
+capacitance.</p>
+</div>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-location-example.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-location-example.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Example Compensation Component Location on DUT</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Step 3:</strong> Setup the LTpowerAnalyzer hardware, ADALM2000, and the DUT for Bode
+Plot measurement per the <a class="reference internal" href="../eval-ltpa-kit/index.html#eval-ltpa-kit"><span class="std std-ref">EVAL-LTPA-KIT</span></a> User Guide.
+Connect a DC power supply to the DUT input.</p>
+<p><strong>Step 4:</strong> Connect a USB cable from the host PC to the USB-C port on the
+EVAL-LTPA-COMPRB.</p>
+<p><strong>Step 5:</strong> Launch the LTpowerAnalyzer software. Upon launching, it will
+automatically check for any compensation probes that are connected to the host
+PC. If a probe is detected, a separate compensation probe control interface
+window will be opened automatically.</p>
+<p><strong>Step 6:</strong> Click on the drop-down menus for Resistance and Capacitance and
+select your desired setting for each. Upon selection, the probe’s embedded
+algorithm will automatically calculate and implement the best
+resistor/capacitor combination that will result in the closest value to your
+chosen setting.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-control-panel.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-control-panel.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">LTpowerAnalyzer Compensation Probe Control Panel</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Step 7:</strong> In the main LTpowerAnalyzer control interface, make a Bode Plot
+measurement and observe the loop gain with the programmed compensation values.
+Adjust the resistance and capacitance settings as needed to achieve the desired
+stability requirements.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-bode-plot-example.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-bode-plot-example.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Example Bode Plot Measurement with Compensation Probe</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>The LTpowerAnalyzer software includes a dedicated compensation probe control
-panel displaying selectable resistance and capacitance values, actual
-implemented values after algorithm optimization, and real-time Bode plot
-integration.</p>
-<p>Resistance and capacitance accuracy varies at higher and lower settings
-respectively due to the parallel component architecture.</p>
+<section id="example-setup">
+<h3>Example Setup<a class="headerlink" href="#example-setup" title="Link to this heading"></a></h3>
+<p>A hardware setup of the compensation probe is shown below for reference. This
+example uses the LT8642S demo board included with the
+<a class="reference internal" href="../eval-ltpa-kit/index.html#eval-ltpa-kit"><span class="std std-ref">EVAL-LTPA-KIT</span></a> as the device under test.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These photos were taken using an older version of the EVAL-LTPA-COMPRB with
+a green solder mask.</p>
+</div>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-example-application.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-example-application.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Example Application Setup</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-example-iso.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-example-iso.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Example Setup - Isometric View</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-example-top.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-example-top.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Example Setup - Top View</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="accuracy-and-limitations">
+<h2>Accuracy and Limitations<a class="headerlink" href="#accuracy-and-limitations" title="Link to this heading"></a></h2>
+<p>If the Compensation Probe is connected properly, the resulting Bode plots
+should be very similar to what would be captured had the compensation resistor
+and capacitor been soldered directly to the DUT. The following Bode plot
+comparisons demonstrate this at various resistance settings.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-bode-plot-comparison-13k.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-bode-plot-comparison-13k.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Bode Plot Comparison at 13 kOhm</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-bode-plot-comparison-26k.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-bode-plot-comparison-26k.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Bode Plot Comparison at 26 kOhm</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-bode-plot-comparison-52k.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-bode-plot-comparison-52k.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Bode Plot Comparison at 52 kOhm</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-bode-plot-comparison-100k.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-bode-plot-comparison-100k.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Bode Plot Comparison at 100 kOhm</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The hardware architecture of the Compensation Probe uses digitally-controlled
+switches to implement a parallel combination of resistors (or capacitors), with
+the total effective value used to emulate a standard E96 resistor (or E24
+capacitor). A limitation of this architecture is that the compensation
+resistance and capacitance becomes less accurate at higher and lower settings
+respectively. This is inherent to how parallel connections work, as there are
+simply fewer available resistors (or capacitors) that can be combined to produce
+a valid result at those settings.</p>
+<figure class="align-center" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-resistance-error.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-resistance-error.png" />
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Resistance Error Across Operating Range</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id16">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-capacitance-error.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-ltpa-comprb/eval-ltpa-comprb-capacitance-error.png" />
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Capacitance Error Across Operating Range</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="additional-information">
 <h2>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-LTPA-COMPRB" target="_blank">EVAL-LTPA-COMPRB Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-LTPA-KIT" target="_blank">EVAL-LTPA-KIT Product Page</a></p></li>
+<li><p><a class="reference internal" href="../eval-ltpa-kit/index.html#eval-ltpa-kit"><span class="std std-ref">EVAL-LTPA-KIT User Guide</span></a></p></li>
 </ul>
 </section>
 <section id="help-and-support">

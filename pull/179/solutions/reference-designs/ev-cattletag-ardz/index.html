@@ -96,9 +96,25 @@
           <ul>
 <li><a class="reference internal" href="#">EV-CATTLETAG-ARDZ</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#power-supply-options">Power Supply Options</a><ul>
+<li><a class="reference internal" href="#solar-panel-configuration">Solar Panel Configuration</a></li>
+<li><a class="reference internal" href="#arduino-host-power-configuration">Arduino Host Power Configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#arduino-connector-interface">Arduino Connector Interface</a></li>
 <li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a><ul>
+<li><a class="reference internal" href="#step-1-insert-battery">Step 1 – Insert Battery</a></li>
+<li><a class="reference internal" href="#step-2-connect-sensor-node">Step 2 – Connect Sensor Node</a></li>
+<li><a class="reference internal" href="#step-3-connect-programmer">Step 3 – Connect Programmer</a></li>
+<li><a class="reference internal" href="#step-4-connect-to-host-pc">Step 4 – Connect to Host PC</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-setup">Software Setup</a><ul>
+<li><a class="reference internal" href="#programming-the-max32625pico">Programming the MAX32625PICO</a></li>
+<li><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
@@ -912,20 +928,120 @@ Content on this topic
 <p>Solar-Powered Livestock Tracking Sensor.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p>The EV-CATTLETAG-ARDZ is an Arduino sensor board with a fully integrated
-solution for harvesting energy from single-/multi-cell solar sources with
-integrated battery charging and temperature sensing for livestock tracking
+<p>The EV-CATTLETAG-ARDZ is an Arduino-compatible sensor board with a fully
+integrated solution for harvesting energy from single-/multi-cell solar sources
+with integrated battery charging and temperature sensing for livestock tracking
 applications. The board combines the <a class="icon adi reference external" href="https://www.analog.com/MAX20361" target="_blank">MAX20361</a> power harvester, the
-<a class="icon adi reference external" href="https://www.analog.com/MAX20335" target="_blank">MAX20335</a> battery management system, and the <a class="icon adi reference external" href="https://www.analog.com/MAX30210" target="_blank">MAX30210</a> digital
-temperature sensor with a buzzer and vibration motor option.</p>
+<a class="icon adi reference external" href="https://www.analog.com/MAX20335" target="_blank">MAX20335</a> battery management system (BMS), and the <a class="icon adi reference external" href="https://www.analog.com/MAX30210" target="_blank">MAX30210</a> digital
+temperature sensor with a buzzer and optional vibration motor.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EV-CATTLETAG-ARDZ Evaluation Board</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The EV-CATTLETAG-ARDZ is designed to work with the
+<a class="reference internal" href="../ad-max32lrwise-sl/index.html#ad-max32lrwise-sl"><span class="std std-ref">MAX32670-LR-ARDZ</span></a> base board as part of the ADI
+Long Range Wireless Radio solution, enabling proprietary long-range
+communication techniques suitable for livestock monitoring applications.</p>
 <p>Applications include:</p>
 <ul class="simple">
-<li><p>Real-time livestock health monitoring</p></li>
-<li><p>Grazing animal location tracking</p></li>
-<li><p>Historical health trend analysis</p></li>
-<li><p>Breeding readiness monitoring</p></li>
-<li><p>Asset location, recovery, and traceability</p></li>
+<li><p>Real-time livestock health monitoring, enabling rapid treatment intervention</p></li>
+<li><p>Grazing animal location tracking to prevent loss and analyze grazing patterns</p></li>
+<li><p>Historical health trend analysis and disease tracking</p></li>
+<li><p>Breeding readiness and birth monitoring to optimize reproduction</p></li>
+<li><p>Asset location, recovery, traceability, inventory management, and theft
+prevention</p></li>
 </ul>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_block_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_block_diagram.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EV-CATTLETAG-ARDZ System Block Diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="power-supply-options">
+<h2>Power Supply Options<a class="headerlink" href="#power-supply-options" title="Link to this heading"></a></h2>
+<p>The EV-CATTLETAG-ARDZ supports multiple power source configurations.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_power_source_option.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_power_source_option.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_power_source_option.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Power Source Options</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper docutils container" id="id4">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Power Source Configurations</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>Connector</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Solar Panel</p></td>
+<td><p>P6</p></td>
+<td><p>Solar panel input used to recharge the lithium-ion battery connected to
+P8 or the 2x AAA battery holder</p></td>
+</tr>
+<tr class="row-odd"><td><p>External Power</p></td>
+<td><p>P8</p></td>
+<td><p>External power supply terminal block, 3 V to 4.2 V allowable input</p></td>
+</tr>
+<tr class="row-even"><td><p>2x AAA Battery</p></td>
+<td><p>Battery Holder</p></td>
+<td><p>Onboard 2x AAA battery holder</p></td>
+</tr>
+<tr class="row-odd"><td><p>Arduino Host Power</p></td>
+<td><p>Arduino Headers</p></td>
+<td><p>Power supplied directly from the host base board</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_power_supply_input.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_power_supply_input.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_power_supply_input.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Power Supply Input Connectors</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="solar-panel-configuration">
+<h3>Solar Panel Configuration<a class="headerlink" href="#solar-panel-configuration" title="Link to this heading"></a></h3>
+<p>The board includes an onboard solar panel input through the P6 terminal block.
+When using an external power source connected to P6, it is required to
+disconnect the onboard solar panel by removing resistor <strong>R30</strong>.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_solar_panel_option.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_solar_panel_option.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_solar_panel_option.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Solar Panel Option Configuration</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="arduino-host-power-configuration">
+<h3>Arduino Host Power Configuration<a class="headerlink" href="#arduino-host-power-configuration" title="Link to this heading"></a></h3>
+<p>When power is supplied directly from the host base board through the Arduino
+headers, it is required to remove resistor <strong>R84</strong> and place a 0 ohm resistor
+at <strong>R86</strong>.</p>
+</section>
+</section>
+<section id="arduino-connector-interface">
+<h2>Arduino Connector Interface<a class="headerlink" href="#arduino-connector-interface" title="Link to this heading"></a></h2>
+<p>The EV-CATTLETAG-ARDZ uses the standardized Arduino header interface, providing
+support for various digital communication protocols such as SPI, I2C, and UART.
+The board is designed to connect directly to the
+<a class="reference internal" href="../ad-max32lrwise-sl/index.html#ad-max32lrwise-sl"><span class="std std-ref">MAX32670-LR-ARDZ</span></a> base board via these headers.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_arduino_connector.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_arduino_connector.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/ev-cattletag-ardz_arduino_connector.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Arduino Connector Interface</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -940,37 +1056,92 @@ temperature sensor with a buzzer and vibration motor option.</p>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<p><strong>Power Supply Options:</strong></p>
-<ul class="simple">
-<li><p><strong>P6</strong> – Solar panel input terminal block (remove R30 for external sources).</p></li>
-<li><p><strong>P8</strong> – 3 V to 4.2 V external power terminal block.</p></li>
-<li><p><strong>Battery holder</strong> – 2x AAA batteries.</p></li>
-<li><p><strong>Arduino Power</strong> – Remove R84 and place 0 ohm resistor at R86.</p></li>
-</ul>
-<p><strong>Setup Sequence:</strong></p>
-<ol class="arabic simple">
-<li><p>Insert CR123A battery into BT1 connector. <strong>DS3</strong> LED confirms correct
-polarity.</p></li>
-<li><p>Connect EV-CATTLETAG-ARDZ to MAX32670-LR-ARDZ via Arduino headers.</p></li>
-<li><p>Connect MAX32625PICO programmer via 10-pin ribbon cable.</p></li>
-<li><p>Connect MAX32625PICO to host PC via micro-USB cable.</p></li>
-</ol>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/hardware_setup.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/hardware_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/hardware_setup.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Complete Hardware Setup</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="step-1-insert-battery">
+<h3>Step 1 – Insert Battery<a class="headerlink" href="#step-1-insert-battery" title="Link to this heading"></a></h3>
+<p>Insert a CR123A battery into the BT1 connector on the
+<a class="reference internal" href="../ad-max32lrwise-sl/index.html#ad-max32lrwise-sl"><span class="std std-ref">MAX32670-LR-ARDZ</span></a> base board. Verify correct polarity;
+the <strong>DS3</strong> LED illuminates to confirm correct installation.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/max32670-lr-ardz_with_battery.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/max32670-lr-ardz_with_battery.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/max32670-lr-ardz_with_battery.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">MAX32670-LR-ARDZ Base Board with CR123A Battery Installed</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-2-connect-sensor-node">
+<h3>Step 2 – Connect Sensor Node<a class="headerlink" href="#step-2-connect-sensor-node" title="Link to this heading"></a></h3>
+<p>Align the Arduino headers and connect the EV-CATTLETAG-ARDZ sensor node to the
+MAX32670-LR-ARDZ base board.</p>
+</section>
+<section id="step-3-connect-programmer">
+<h3>Step 3 – Connect Programmer<a class="headerlink" href="#step-3-connect-programmer" title="Link to this heading"></a></h3>
+<p>Connect the MAX32625PICO programming adapter to the base board via the 10-pin
+ribbon cable. Ensure the correct orientation of the ribbon cable connector.</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/max32670-lr-ardz_to_maxpico.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/max32670-lr-ardz_to_maxpico.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/max32670-lr-ardz_to_maxpico.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">MAX32670-LR-ARDZ Connected to MAX32625PICO Programmer</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-4-connect-to-host-pc">
+<h3>Step 4 – Connect to Host PC<a class="headerlink" href="#step-4-connect-to-host-pc" title="Link to this heading"></a></h3>
+<p>Connect the MAX32625PICO to the host PC using a micro-USB to USB cable.</p>
+</section>
 </section>
 <section id="software-setup">
 <h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>Program the MAX32625PICO by drag-and-drop firmware loading to the MAINTENANCE
-drive. The firmware image required is
-<code class="docutils literal notranslate"><span class="pre">max32625_max32670evkit_if_crc_swd_v1.0.3.bin</span></code>.</p>
+<section id="programming-the-max32625pico">
+<h3>Programming the MAX32625PICO<a class="headerlink" href="#programming-the-max32625pico" title="Link to this heading"></a></h3>
+<p>The MAX32625PICO requires a specific firmware image to program the MAX32670
+microcontroller on the base board. The required firmware image is
+<code class="docutils literal notranslate"><span class="pre">max32625_max32670evkit_if_crc_swd_v1.0.3.bin</span></code>
+(MAX32625PICO Firmware Image for MAX32670, v1.0.3 SWD).</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/max32625pico_maxdap.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/max32625pico_maxdap.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ev-cattletag-ardz/max32625pico_maxdap.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">MAX32625PICO Programming Adapter</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Follow these steps to load the firmware:</p>
+<ol class="arabic simple">
+<li><p>Do not connect the MAX32625PICO to the MAX32670-LR-ARDZ base board yet.</p></li>
+<li><p>Connect the MAX32625PICO to the host PC using a micro-USB to USB cable.</p></li>
+<li><p>Press and hold the button on the MAX32625PICO. <strong>Do not release the button
+until the MAINTENANCE drive is mounted.</strong></p></li>
+<li><p>Release the button once the MAINTENANCE drive appears.</p></li>
+<li><p>Drag and drop the firmware image file to the MAINTENANCE drive.</p></li>
+<li><p>After a few seconds, the MAINTENANCE drive will disappear and be replaced
+by a drive named <strong>DAPLINK</strong>, confirming successful firmware installation.</p></li>
+</ol>
+</section>
+<section id="next-steps">
+<h3>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h3>
+<p>After completing the hardware and software setup, proceed to PHASE 2 in the
+ADI Long Range Wireless Radio Software User Guide for firmware development
+and deployment.</p>
+</section>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
 <h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
-<p><a class="icon link reference external" href="https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/ev-cattletag-ardz-designsupport.zip" target="_blank">EV-CATTLETAG-ARDZ Design &amp; Integration Files</a></p>
+<p><a class="icon link reference external" href="https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/ev-cattletag-ardz-designsupport.zip" target="_blank">EV-CATTLETAG-ARDZ Design &amp; Integration Files (Rev C)</a></p>
 <ul class="simple">
 <li><p>Schematics</p></li>
 <li><p>PCB Layout</p></li>
 <li><p>Bill of Materials</p></li>
+<li><p>Fabrication Files</p></li>
 </ul>
 </div>
 </section>
