@@ -1,0 +1,495 @@
+.. _eval-adt7420-pmdz:
+
+EVAL-ADT7420-PMDZ
+==================
+
+High-Accuracy Digital Temperature Sensor PMOD.
+
+.. toctree::
+   :hidden:
+
+   software
+
+Overview
+--------
+
+The :adi:`EVAL-ADT7420-PMDZ` is a PMOD form-factor evaluation board for the
+:adi:`ADT7420`, a high-accuracy digital temperature sensor offering breakthrough
+performance over a wide industrial range. The sensor contains an internal band
+gap reference, a temperature sensor, and a 16-bit ADC to monitor and digitize
+the temperature to 0.0078 deg C resolution. By default, the ADC resolution is
+set to 13 bits (0.0625 deg C). The ADC resolution is user-programmable and can
+be changed through the serial interface.
+
+The ADT7420 is guaranteed to operate over supply voltages from 2.7 V to 5.5 V.
+Operating at 3.3 V, the average supply current is typically 210 uA. The device
+also has a shutdown mode that powers down the device and offers a shutdown
+current of typically 2.0 uA at 3.3 V. The ADT7420 is rated for operation over
+the -40 deg C to +150 deg C temperature range.
+
+Pin A0 and Pin A1 are available for address selection, giving the ADT7420 four
+possible I2C addresses. The CT pin is an open-drain output that becomes active
+when the temperature exceeds a programmable critical temperature limit. The INT
+pin is also an open-drain output that becomes active when the temperature
+exceeds a programmable limit. The INT pin and CT pin can operate in comparator
+and interrupt event modes.
+
+For general board details and purchasing information, visit the
+:adi:`EVAL-ADT7420-PMDZ product page <EVAL-ADT7420-PMDZ>`.
+
+.. figure:: eval-adt7420-pmdz.png
+   :align: center
+   :width: 350
+
+   EVAL-ADT7420-PMDZ Evaluation Board
+
+Hardware
+--------
+
+The PMOD board is small in size with dimensions approximately 1 inch in width
+by 1 inch in length.
+
+Power Supply Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When using the EVAL-ADT7420-PMDZ, the 3.3 V power comes directly from the host
+board it is connected to. The power from the host is generally capable of
+providing up to 100 mA at 3.3 V. For complete PMOD power specifications, refer
+to the
+`Digilent PMOD Interface Specification <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`__.
+
+The fastest way to confirm the EVAL-ADT7420-PMDZ board is powered is by
+checking whether the on-board power LED is illuminated.
+
+.. figure:: adt7420_power_led.png
+   :align: center
+   :width: 300
+
+   EVAL-ADT7420-PMDZ Power LED Location
+
+Digital Interface (PMOD)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The PMOD interface is a series of standardized digital interfaces for various
+digital communication protocols such as SPI, I2C, and UART. These interface
+types were standardized by Digilent, which is now a division of National
+Instruments.
+
+The specific interface used for the EVAL-ADT7420-PMDZ board is the extended
+I2C. ADI has adopted the extended I2C connector for all PMOD devices which have
+an I2C interface. It provides flexibility to add/daisy chain multiple I2C
+devices onto the same bus.
+
+.. list-table:: P1 Connector Pinout
+   :header-rows: 1
+
+   * - P1 Pin Number
+     - Pin Function
+     - Mnemonic
+   * - Pin 1
+     - Serial Clock
+     - SCL
+   * - Pin 2
+     - Serial Clock
+     - SCL
+   * - Pin 3
+     - Serial Data
+     - SDA
+   * - Pin 4
+     - Serial Data
+     - SDA
+   * - Pin 5
+     - Digital Ground
+     - DGND
+   * - Pin 6
+     - Digital Ground
+     - DGND
+   * - Pin 7
+     - Digital Power
+     - VDD
+   * - Pin 8
+     - Digital Power
+     - VDD
+
+Jumper Configuration and Solder Links
+--------------------------------------
+
+The EVAL-ADT7420-PMDZ has some optional modes of operation to increase
+flexibility when using multiple EVAL-ADT7420-PMDZ boards in a single system
+and to help alert the Over/Under/Critical temperature readings. Each
+configuration is explained below.
+
+ADT7420 I2C Address Selection Pins
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ADT7420 can have up to 4 unique I2C device addresses, depending on the
+logic level of Pins A1 and A0. The default configuration for the
+EVAL-ADT7420-PMDZ is for A1 and A0 to be tied low, so the default I2C address
+is 0x48.
+
+.. figure:: adt7420_i2c_layout.png
+   :align: center
+   :width: 300
+
+   ADT7420 I2C Address Selection Solder Links
+
+If you decide to change the I2C address, then you need to switch the position
+of the JP1 and JP2 solder links following the settings in the table below.
+
+.. list-table:: I2C Address Configuration
+   :header-rows: 1
+
+   * - JP1 Solder Link Position
+     - JP2 Solder Link Position
+     - A1 Logic Level
+     - A0 Logic Level
+     - I2C Device Address (Hex)
+   * - Pins 2 & 3 Shorted
+     - Pins 2 & 3 Shorted
+     - Low
+     - Low
+     - 0x48
+   * - Pins 2 & 3 Shorted
+     - Pins 1 & 2 Shorted
+     - Low
+     - High
+     - 0x49
+   * - Pins 1 & 2 Shorted
+     - Pins 2 & 3 Shorted
+     - High
+     - Low
+     - 0x4A
+   * - Pins 1 & 2 Shorted
+     - Pins 1 & 2 Shorted
+     - High
+     - High
+     - 0x4B
+
+ADT7420 Over/Under/Critical Temperature Alerts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ADT7420 has the capability of monitoring temperature and alerting users of
+Over/Under temperature conditions, as well as Critical temperature events.
+Access to these pins and functions are provided via the INT and CT connections
+on the board.
+
+.. figure:: adt7420_int_ct_layout.png
+   :align: center
+   :width: 300
+
+   ADT7420 INT and CT Pin Locations
+
+The temperatures are software-configurable, and all you need to do is monitor
+the INT (for Over/Under temp conditions) or CT (for Critical temp events) with
+respect to GND.
+
+Device Driver Support
+---------------------
+
+There are two device driver solutions provided for controlling the
+EVAL-ADT7420-PMDZ:
+
+1. **ADT7420 no-OS Driver**
+
+   The MAX32655FTHR and ADICUP3029 example applications use the ADT7420 no-OS
+   drivers and emulate the Linux IIO framework through the
+   `tinyiiod daemon library <https://github.com/analogdevicesinc/libtinyiiod>`__.
+   This driver is used in bare-metal applications, typically running on
+   low-power, embedded microcontrollers. The application communicates with the
+   host computer via the serial backend, over a USB-UART physical connection.
+   This facilitates rapid application development on a host computer,
+   independent from embedded code development.
+
+2. **ADT7420 Linux Driver**
+
+   The ADT7420 Linux driver (``drivers/hwmon/adt7x10.c``) is used in
+   applications running the Linux operating system, typically on larger
+   processors and SoC devices. The ADT7420 Linux driver uses the Industrial
+   Input/Output (IIO) framework, greatly simplifying the development of
+   application code via the cross-platform Libiio library, which is written in
+   C and includes bindings for Python, MATLAB, C#, and other languages.
+   Application code can run directly on the platform board, communicating with
+   the device over the local backend, or from a remote host over the network or
+   USB backends.
+
+System Setup Using ADICUP3029
+-----------------------------
+
+The EVAL-ADT7420-PMDZ can be used with the :adi:`EVAL-ADICUP3029`.
+
+Demo Requirements
+~~~~~~~~~~~~~~~~~
+
+Hardware:
+
+- :adi:`EVAL-ADICUP3029`
+- :adi:`EVAL-ADT7420-PMDZ`
+- Micro-USB to USB cable
+- PC or laptop with USB port
+
+Software:
+
+- `Prebuilt ADT7420 Hex File <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_adt7420.hex>`__
+- `ADuCM3029_demo_adt7420 Source Code <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_adt7420>`__
+
+There are two basic ways to program the ADICUP3029 with the software for the
+ADT7420:
+
+1. **Dragging and Dropping the .Hex to the DAPLINK drive** -- This is the
+   easiest way to get started with the reference design.
+2. **Building, Compiling, and Debugging using CCES** -- Importing the project
+   into CrossCore Embedded Studio allows you to change parameters and customize
+   the software to your application, but will require downloading the CrossCore
+   toolchain.
+
+Setting up the Hardware
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Connect the EVAL-ADT7420-PMDZ board at connector **P9** of the
+   EVAL-ADICUP3029.
+2. Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029, and
+   then connect it to a computer. The final setup should look similar to the
+   picture below.
+
+.. figure:: adt7420_adicup3029_setup.png
+   :align: center
+   :width: 800
+
+   EVAL-ADT7420-PMDZ with ADICUP3029 Setup
+
+3. Make sure the following switches are configured as shown below.
+
+.. figure:: switch_config.png
+   :align: center
+   :width: 900
+
+   ADICUP3029 Switch Configuration
+
+4. From your PC, open My Computer and look for the DAPLINK drive; if you see
+   this, then the drivers are complete and correct.
+
+.. figure:: daplink.jpg
+   :align: center
+   :width: 300
+
+   DAPLINK Drive
+
+5. Extract the provided .zip file. Drag and drop the Hex file to the DAPLINK
+   drive and your ADICUP3029 board will be programmed. The DS2 (red) LED will
+   blink rapidly.
+6. The DS2 will stop blinking and will stay ON once the programming is done.
+7. Temperature readings can be done through a terminal via PuTTY/Teraterm.
+
+System Setup Using MAX32655FTHR or MAX32650FTHR
+------------------------------------------------
+
+The :adi:`EVAL-ADT7420-PMDZ` can be used with the :adi:`MAX32655FTHR` and
+:adi:`MAX32650FTHR`.
+
+Demo Requirements
+~~~~~~~~~~~~~~~~~
+
+Hardware:
+
+- :adi:`MAX32655FTHR` or :adi:`MAX32650FTHR` (with MAX32625PICO)
+- :adi:`FTHR-PMD-INTZ`
+- :adi:`EVAL-ADT7420-PMDZ`
+- Micro-USB to USB cable
+- 10-pin ribbon cable (for MAX32650FTHR)
+- PC or laptop with USB port
+
+Software:
+
+- Pre-built hex files available in
+  `adt7420-pmdz.zip <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/adt7420-pmdz.zip>`__
+- PuTTY or other similar serial terminal software
+
+MAX32655FTHR Setup
+~~~~~~~~~~~~~~~~~~
+
+1. Connect MAX32655FTHR with the FTHR-PMD-INTZ. The MAXIM feather board should
+   have stacking headers where the interposer board will be connected.
+2. Connect EVAL-ADT7420-PMDZ to the FTHR-PMD-INTZ.
+
+.. list-table:: EVAL-ADT7420-PMDZ to FTHR-PMD-INTZ Connection
+   :header-rows: 1
+
+   * - EVAL-ADT7420-PMDZ
+     - FTHR-PMD-INTZ
+   * - Pin 1 and 2
+     - SCL_PMOD
+   * - Pin 3 and 4
+     - SDA_PMOD
+   * - Pin 5 and 6
+     - GND
+   * - Pin 7 and 8
+     - VCCY_I2C
+
+The final setup should look similar to the picture below.
+
+.. figure:: adt7420_max32655fthr.jpg
+   :align: center
+   :width: 600
+
+   EVAL-ADT7420-PMDZ with MAX32655FTHR Setup
+
+3. Power up the MAX32655FTHR by connecting it to your laptop using a micro-USB
+   cable.
+4. Open the file explorer. Drag-and-drop the pre-built hex file to the DAPLINK.
+   If the transfer was not completed, update the firmware for the DAPLINK.
+   Follow the steps at
+   `MAX32625PICO Firmware <https://github.com/MaximIntegrated/max32625pico-firmware-images/>`__.
+5. Open PuTTY or other similar software. Check the Device Manager to set the
+   correct COM port for the MAX32655FTHR. Set baud rate to **57600**.
+
+The expected output viewed in PuTTY is shown below.
+
+.. figure:: adt7420_max32655-updated.png
+   :align: center
+   :width: 400
+
+   MAX32655FTHR PuTTY Output
+
+MAX32650FTHR Setup
+~~~~~~~~~~~~~~~~~~
+
+1. Using a 10-pin ribbon cable, connect the MAX32625PICO to the MAX32650FTHR.
+
+.. figure:: max32650fthr_with_pico.png
+   :align: center
+   :width: 400
+
+   MAX32650FTHR with MAX32625PICO Connection
+
+2. Connect MAX32650FTHR to the FTHR-PMD-INTZ.
+3. Connect EVAL-ADT7420-PMDZ to the FTHR-PMD-INTZ (same pin mapping as above).
+
+The final setup should look similar to the picture below.
+
+.. figure:: adt7420_max32650fthr.jpg
+   :align: center
+   :width: 400
+
+   EVAL-ADT7420-PMDZ with MAX32650FTHR Setup
+
+4. Power up the MAX32650FTHR by connecting it to your laptop using micro-USB.
+   Connect MAX32625PICO to your laptop as well.
+5. Open the file explorer. Drag-and-drop the pre-built hex file to the DAPLINK.
+   If the transfer was not completed, update the firmware for the DAPLINK.
+   Follow the steps at
+   `MAX32625PICO Firmware <https://github.com/MaximIntegrated/max32625pico-firmware-images/>`__.
+6. Open PuTTY or similar software. Check the Device Manager to set the correct
+   COM port for the MAX32650FTHR. Set baud rate to **57600**.
+
+The expected output viewed in PuTTY is shown below.
+
+.. figure:: adt7420_max32650_0x48_hex_output.png
+   :align: center
+   :width: 400
+
+   MAX32650FTHR PuTTY Output
+
+System Setup Using Raspberry Pi
+-------------------------------
+
+The EVAL-ADT7420-PMDZ can be used with a Raspberry Pi.
+
+Demo Requirements
+~~~~~~~~~~~~~~~~~
+
+Hardware:
+
+- :adi:`EVAL-ADT7420-PMDZ`
+- :adi:`PMD-RPI-INTZ <PMD-RPI-INTZ>` (PMOD to Raspberry Pi adapter)
+- Raspberry Pi Zero, Zero W, 3B+, or 4
+- 16 GB (or larger) Class 10 (or faster) micro-SD card
+- 5 Vdc, 2.5 A power supply with micro-USB connector (USB-C for RPi 4)
+- User interface: HDMI monitor, keyboard, mouse, or host computer on same
+  network
+
+Software:
+
+- ADI Kuiper Linux image
+
+Loading Image on SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to boot the Raspberry Pi and control the EVAL-ADT7420-PMDZ, you will
+need to install ADI Kuiper Linux on an SD card. Complete instructions, including
+where to download the SD card image, how to write it to the SD card, and how to
+configure the system are provided on the Kuiper Linux page.
+
+Configuring the SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Follow the configuration procedure under **Configuring the SD Card for
+Raspberry Pi Projects** on the Kuiper Linux page, substituting the following
+line in ``config.txt``:
+
+.. code-block:: none
+
+   dtoverlay=rpi-adt7420
+
+Setting up the Hardware
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Connect the P9 of the PMOD to Raspberry Pi Interposer board at the male
+   header GPIO pin connector of the Raspberry Pi as shown below.
+
+.. figure:: interposer.png
+   :align: center
+   :width: 500
+
+   PMOD to Raspberry Pi Interposer Board Connection
+
+2. Connect the EVAL-ADT7420-PMDZ on the PMOD to Raspberry Pi Interposer board
+   via Port P3 or P4.
+
+.. figure:: adt7420_with_rpi.jpg
+   :align: center
+   :width: 300
+
+   EVAL-ADT7420-PMDZ Connected to Raspberry Pi
+
+3. Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned
+   SD card on the designated slot on the RPi.
+4. Connect the system to a monitor using an HDMI cable through the mini HDMI
+   connector on the RPi.
+5. Connect a USB keyboard and mouse to the RPi through the USB ports.
+6. Power on the RPi board by plugging in a 5 V power supply with a micro-USB
+   connector. The final setup should look similar to the picture below.
+
+.. figure:: adt7420_rpi_iio_output.png
+   :align: center
+   :width: 500
+
+   Raspberry Pi with EVAL-ADT7420-PMDZ Final Setup
+
+Software and Demo
+------------------
+
+For detailed software setup instructions including ADICUP3029 demo, Bluetooth
+output, and UART terminal configurations, see the
+:doc:`software` page.
+
+Documents
+---------
+
+- :adi:`ADT7420 Datasheet <ADT7420>`
+- `EVAL-ADT7420-PMDZ Design & Integration Files <https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/eval-adt7420-pmdz-designsupport.zip>`__
+  (Schematic, PCB Layout, Bill of Materials, Allegro Project)
+
+Additional Information
+----------------------
+
+- :adi:`ADT7420 Product Page <ADT7420>`
+- :adi:`EVAL-ADT7420-PMDZ Product Page <EVAL-ADT7420-PMDZ>`
+- `EVAL-ADT7420-PMDZ No-OS Projects <https://github.com/analogdevicesinc/no-OS/tree/master/projects/adt7420-pmdz>`__
+- `PyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`__
+- `IIO Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
