@@ -1,0 +1,421 @@
+.. _eval-ad5770r-pmdz:
+
+EVAL-AD5770R-PMDZ
+==================
+
+6-Channel, 14-Bit Current Output DAC PMOD.
+
+Overview
+--------
+
+The :adi:`EVAL-AD5770R-PMDZ` is a minimalist SPI PMOD board for the
+:adi:`AD5770R`. This module is designed as a low-cost alternative to the
+fully-featured AD5770R evaluation board and has no extra signal conditioning
+for the DAC.
+
+.. figure:: eval_ad5770r_pmdz_primary.png
+   :align: center
+
+   EVAL-AD5770R-PMDZ Board
+
+About the AD5770R
+~~~~~~~~~~~~~~~~~
+
+The :adi:`AD5770R` is a 6-channel, 14-bit, multi-range, current output DAC
+designed for use in communications systems, instrumentation, and industrial
+applications; specifically for photonics control and current mode biasing. It
+has 6 programmable output channels with 1 channel capable of sinking up to
+60 mA of current.
+
+.. figure:: ad5770r_functional_block_diagram.png
+   :align: center
+
+   AD5770R Functional Block Diagram
+
+Hardware
+--------
+
+Basic Hardware Setup
+~~~~~~~~~~~~~~~~~~~~
+
+This section contains the configuration and descriptions for each of the
+EVAL-AD5770R-PMDZ connectors, as well as how to make the necessary connections
+for proper operation. Connectors P5 and P6 are included with the board but left
+unsoldered. This gives the user the option of either using the provided
+connectors or directly soldering wires onto the board for their design.
+
+Connector P1 -- Digital Interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+P1 connects the digital pins of the AD5770R to a system board, e.g.
+EVAL-ADICUP3029. Test vias are provided for each of these pins which can be
+used for debugging purposes. For a full description of each digital pin, refer
+to the AD5770R datasheet.
+
+.. figure:: eval_ad5770r_pmdz_test_points.png
+   :align: center
+   :width: 200px
+
+   EVAL-AD5770R-PMDZ Test Points
+
+.. list-table:: Connector P1 Pinout
+   :header-rows: 1
+
+   * - Pin
+     - Function
+     - Description
+   * - 1
+     - CS
+     - Chip Select (active low)
+   * - 2
+     - MOSI
+     - SPI Data In
+   * - 3
+     - MISO
+     - SPI Data Out
+   * - 4
+     - SCLK
+     - SPI Clock
+   * - 5
+     - GND
+     - Ground
+   * - 6
+     - IOVDD
+     - I/O Supply Voltage
+   * - 7
+     - RESET
+     - Hardware Reset (active low)
+   * - 8
+     - ALARM
+     - Alarm Output
+   * - 9
+     - LDAC
+     - Load DAC (active low)
+   * - 10
+     - GPIO
+     - General Purpose I/O
+   * - 11
+     - GND
+     - Ground
+   * - 12
+     - IOVDD
+     - I/O Supply Voltage
+
+Connector P5 -- Power Supply
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The pins of connector P5 are mapped to the supply pins of the AD5770R. By
+default, the EVAL-AD5770R-PMDZ uses the supply voltage from the controller
+board for AVDD/DVDD and IOVDD.
+
+.. figure:: eval_ad5770r_pmdz_p5.png
+   :align: center
+
+   Connector P5
+
+.. figure:: eval_ad5770r_pmdz_p5_table.png
+   :align: center
+
+   Connector P5 Pinout
+
+An external power supply can be used for AVDD/DVDD instead of the system power
+if jumper P2 is open.
+
+.. figure:: eval_ad5770r_pmdz_p2.png
+   :align: center
+   :width: 200px
+
+   Jumper P2
+
+.. figure:: eval_ad5770r_pmdz_p2_table.png
+   :align: center
+
+   Jumper P2 Configuration
+
+.. important::
+
+   Below are the voltage ranges for the positive supplies:
+
+   - AVDD: 2.9 V to 5.5 V
+   - PVDDx: 0.8 V to AVDD - 0.4 V
+
+Unlike the AD5770R evaluation board, the EVAL-AD5770R-PMDZ has no onboard
+power solution for the PVDDx pins so these must be connected to external supply
+voltages. All PVDDx pins can be connected to the same supply; however, the
+supplied voltage should be enough so that the load voltages on each IDACx pin
+falls within the output compliance voltage of the corresponding channel (as
+specified in the AD5770R datasheet).
+
+.. tip::
+
+   **An example for single PVDDx supply:**
+
+   If PVDD0 to PVDD5 are all connected to +2.000 V, the maximum load voltage
+   for each channel would be:
+
+   - Channel 0: +1.550 V
+   - Channel 1: +1.725 V (140 mA; low headroom mode)
+   - Channel 1: +1.550 V (250 mA, 140 mA; low noise mode)
+   - Channels 2 to 5: +1.725 V
+
+Pin 3 of connector P5 is mapped to the VREF pin of the AD5770R. Connect a
+reference voltage to this pin if the DAC is configured to use an external
+reference. Alternatively, the internal +1.25 V reference can be made available
+on this pin for use as a system reference.
+
+Connector P6 -- Current Outputs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pins 5 to 6 of connector P6 are mapped to the current output pins of the
+AD5770R. The available output current ranges for each channel are as follows:
+
+- **IDAC0**: 0 to 300 mA, -60 to 0 mA, -60 to 300 mA
+- **IDAC1**: 0 to 140 mA, 0 to 250 mA
+- **IDAC2**: 0 to 55 mA, 0 to 150 mA
+- **IDAC3 to IDAC5**: 0 to 45 mA, 0 to 100 mA
+
+.. tip::
+
+   **Output Current Scaling:**
+
+   *To increase the output current range,* tie multiple IDAC channels together
+   to add their output currents. However, the load voltage must still fall
+   within the output compliance range of both pins.
+
+   *To decrease the output current range,* use the OUTPUT_RANGE_CHx register
+   as detailed in the AD5770R datasheet. The full scale current can only be
+   scaled down to 50% of its nominal value.
+
+.. figure:: eval_ad5770r_pmdz_p6.png
+   :align: center
+
+   Connector P6
+
+.. figure:: eval_ad5770r_pmdz_p6_table.png
+   :align: center
+
+   Connector P6 Pinout
+
+Jumpers P2, P3, P4
+^^^^^^^^^^^^^^^^^^^^
+
+**Jumper P2 -- AVDD/DVDD Supply Selection:**
+
+.. list-table::
+   :header-rows: 1
+
+   * - Position
+     - Description
+   * - Closed (default)
+     - AVDD/DVDD supplied from controller board IOVDD
+   * - Open
+     - AVDD/DVDD supplied from external supply via P5
+
+**Jumpers P3 and P4 -- Negative Supply:**
+
+If IDAC0 is configured to sink current, jumpers P3 and P4 should be open and
+external voltage supplies must be applied to the AVEE and PVEE pins on P6.
+
+.. figure:: eval_ad5770r_pmdz_p3_p4.png
+   :align: center
+   :width: 200px
+
+   Jumpers P3 and P4
+
+.. list-table::
+   :header-rows: 1
+
+   * - Jumper
+     - Position
+     - Description
+   * - P3
+     - Closed (default)
+     - AVEE tied to GND
+   * - P3
+     - Open
+     - AVEE supplied from external negative supply via P6
+   * - P4
+     - Closed (default)
+     - PVEE0 tied to GND
+   * - P4
+     - Open
+     - PVEE0 supplied from external negative supply via P6
+
+.. important::
+
+   Below are the voltage ranges for the negative supplies:
+
+   - AVEE: -3.0 V to 0 V
+   - PVEE0: AVEE to 0 V
+
+MUXOUT Monitor
+~~~~~~~~~~~~~~
+
+The internal output monitor multiplexer of the AD5770R is available on pin 13
+of P6. Depending on the values programmed into the MONITOR_SETUP register of
+the AD5770R, this pin can be used to monitor either the output compliance
+voltage or the output current of a selected IDAC channel, or the internal die
+temperature of the device. Refer to the AD5770R datasheet for how to translate
+the MUXOUT voltage into the aforementioned parameters.
+
+ADICUP3029 Demo Application
+----------------------------
+
+The **ADuCM3029_demo_ad5770rpmdz** project provides a solution to control the
+EVAL-AD5770R-PMDZ PMOD using a minimal CLI and the no-OS drivers for the
+EVAL-ADICUP3029 platform.
+
+The application builds upon the no-OS device and platform drivers and a minimal
+CLI module to provide a robust command set to set the range and output value of
+the channels.
+
+The program first initializes the hardware system as well as the driver
+handlers, then goes into the main process that implements the CLI process and
+waits for user commands. If a command is received, it is executed and the
+program returns to the main loop.
+
+Demo Requirements
+~~~~~~~~~~~~~~~~~
+
+Hardware:
+
+- :adi:`EVAL-ADICUP3029`
+- :adi:`EVAL-AD5770R-PMDZ`
+- Micro-USB to USB cable
+- PC or laptop with USB port
+
+Software:
+
+- `ADuCM3029_demo_ad5770rpmdz Source Code <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_ad5770rpmdz>`__
+- CrossCore Embedded Studio (2.9.1 or higher)
+- ADuCM302x DFP (3.2.0 or higher)
+- ADICUP3029 BSP (1.1.0 or higher)
+- Serial terminal program (PuTTY or Tera Term)
+
+Setting up the Hardware
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Connect EVAL-AD5770R-PMDZ board to the EVAL-ADICUP3029 using connector
+   **P8**.
+2. Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and
+   connect it to a computer.
+
+Obtaining the Software
+~~~~~~~~~~~~~~~~~~~~~~
+
+There are two basic ways to program the ADICUP3029 with the software for the
+AD5770R PMOD:
+
+1. **Dragging and Dropping the .Hex to the DAPLINK drive** -- This is the
+   easiest way to get started.
+2. **Building, Compiling, and Debugging using CCES** -- Allows customization
+   but requires downloading the CrossCore toolchain.
+
+The software for the ADuCM3029_demo_ad5770 demo can be found here:
+
+- `Prebuilt AD5770R PMOD Hex File <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_ad5770rpmdz.hex>`__
+- `ADuCM3029_demo_ad5770rpmdz Source Code <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_ad5770rpmdz>`__
+
+Serial Terminal Setup
+~~~~~~~~~~~~~~~~~~~~~
+
+A serial terminal is an application that runs on a PC or laptop that is used to
+display data and interact with a connected device. The device's UART peripheral
+is connected to a UART to USB interface IC, which appears as a traditional COM
+port on the host PC/laptop.
+
+Recommended serial terminal programs:
+
+- `Tera Term <https://ttssh2.osdn.jp/index.html.en>`__
+- `PuTTY <https://www.putty.org/>`__
+- `RealTerm <https://realterm.sourceforge.io/>`__
+
+The following parameters must be configured in the serial terminal program:
+
+.. code-block:: none
+
+   Select COM Port
+   Baud rate: 115200
+   Data: 8 bit
+   Parity: none
+   Stop: 1 bit
+   Flow Control: none
+
+.. tip::
+
+   If you see nothing in the serial terminal, try hitting the reset button on
+   the embedded development board.
+
+Available Commands
+~~~~~~~~~~~~~~~~~~
+
+Typing ``help`` or ``h`` after the initial calibration sequence will display
+the list of commands and their short versions. Below is the command list:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Command
+     - Description
+     - Example
+   * - ``h``
+     - Display available commands.
+     -
+   * - ``t``
+     - Set channels at production test levels.
+     -
+   * - ``sir``
+     - Set the input register of the chosen DAC channel.
+       <chan> = c0, c1, c2, c3, c4, c5.
+       <value> = 0 to 16383.
+     - ``sir c0 8192``
+   * - ``uo``
+     - Update the DAC output with the channel input registers value.
+       Uses the nLDAC GPIO if available, otherwise the SW register.
+     -
+   * - ``sc``
+     - Set the value of the chosen DAC channel.
+       <chan> = c0, c1, c2, c3, c4, c5.
+       <value> = 0 to 16383.
+     - ``sc c0 8192``
+   * - ``sr``
+     - Set the range of the DAC output channels.
+       <chan> = c0, c1, c2, c3, c4, c5.
+       <opt> = opt1 (ch0 and ch1 only), opt2, opt3.
+       Options correspond to datasheet values.
+     - ``sr c0 opt1``
+
+Project Structure
+~~~~~~~~~~~~~~~~~
+
+Beside the IDE generated sources the project structure is divided into high
+level software modules and low level software modules.
+
+The high level modules are in the **src** folder:
+
+- AD5770R device driver
+- CLI module
+- AD5770R_PMDZ module (application source)
+- ADuCM3029_demo_ad5770rpmdz.c (main file)
+
+The low level modules are the platform drivers and are included in the
+**platform_source** and **platform_include** folders.
+
+Design Files
+------------
+
+- `EVAL-AD5770R-PMDZ Design & Integration Files <https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/eval-ad5770r-pmdz-designsupport.zip>`__
+  (Schematic, PCB Layout, Bill of Materials, Allegro Project)
+
+Additional Information
+----------------------
+
+- :adi:`AD5770R Product Page <AD5770R>`
+- :adi:`EVAL-AD5770R Product Page <EVAL-AD5770R>`
+- `AD5770R FAQ <https://ez.analog.com/data_converters/precision_dacs/f/discussions/107299/ad5770r-faq>`__
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
