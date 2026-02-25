@@ -1,0 +1,417 @@
+.. _ad-fmcomms2-ebz-iq-datafiles:
+
+I/Q Data Files
+===============
+
+This page describes the I/Q data file formats supported by the IIO Oscilloscope
+DAC Buffer Output mode, and provides reference data files for several digital
+baseband modulation schemes with corresponding Simulink models.
+
+.. figure:: software/dac_buffer_output.png
+   :align: center
+
+   DAC Buffer Output mode in IIO Oscilloscope
+
+Data Formats
+------------
+
+MATLAB Format
+~~~~~~~~~~~~~
+
+The IIO Oscilloscope application uses the
+`MAT File I/O Library <https://sourceforge.net/projects/matio/>`__ to read
+MATLAB files.
+
+There are two ways to scale the data:
+
+- **Less than +/-1.0**: +/-1.0 will be assumed as full scale, so +/-0.5 will
+  come out as half scale.
+- **More than +/-1.0**: The max point in the data will be found, and this will
+  be assumed to be full scale.
+
+There are two ways to arrange the data:
+
+- Vectors of complex data
+- Vectors of real data (first vector is Q/real, second is I/imaginary)
+
+Binary Format
+~~~~~~~~~~~~~
+
+In binary format each I or Q word is in 16-bit signed format. The AD9361
+bus-width is 12-bit. Therefore Bit 11 becomes Bit 15 (shifted by 4, lower 4
+bits are ignored).
+
+.. list-table::
+   :header-rows: 1
+
+   * - Buffer Bit
+     - 15
+     - 14
+     - 13
+     - 12
+     - 11
+     - 10
+     - 9
+     - 8
+     - 7
+     - 6
+     - 5
+     - 4
+     - 3
+     - 2
+     - 1
+     - 0
+   * - AD9361 Bit
+     - 11
+     - 10
+     - 9
+     - 8
+     - 7
+     - 6
+     - 5
+     - 4
+     - 3
+     - 2
+     - 1
+     - 0
+     - X
+     - X
+     - X
+     - X
+
+An I and Q word together make up one complex symbol for one output channel.
+In the 2TX output configuration, a complete sample consists of two complex IQ
+symbols (one for each transmitter), making it 64-bit wide:
+
+.. list-table::
+   :header-rows: 1
+
+   * - TX 0
+     -
+     - TX 1
+     -
+   * - I0
+     - Q0
+     - I1
+     - Q1
+
+ASCII Format
+~~~~~~~~~~~~
+
+A valid ASCII file is prefixed with a ``TEXT`` magic string. Values are
+delimited by commas, spaces, or tabs. Samples are separated by rows.
+
+In a 2TX configuration, with only one symbol per line it will be repeated for
+the second TX:
+
+.. code-block::
+
+   TEXT
+   501.000000000	-1.000000000
+   405.000000000	294.000000000
+   155.000000000	476.000000000
+   -154.000000000	475.000000000
+   ...
+
+Two symbols per line (one for TX1 and TX2):
+
+.. code-block::
+
+   TEXT
+   0.0002274,0.0002274,0.0002274,-0.0002274
+   -0.002085,-0.002085,-0.002085,0.002085
+   -0.001768,-0.001768,-0.001768,0.001768
+   0.001351,0.001351,0.001351,-0.001351
+   ...
+
+The file is automatically scaled to full scale. The ``TEXTU`` option provides
+unscaled data with the following valid ranges:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - Range
+   * - FMCOMMS1
+     - +/- 32767.0
+   * - FMCOMMS2/3/4
+     - +/- 2047.0
+
+Example Waveforms
+-----------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 15 20 40
+
+   * - Filename
+     - File Type
+     - Suggested Sample Rate
+     - Description
+   * - 10.txt
+     - Text
+     - Any
+     - Basic IQ imbalance test waveform
+   * - 11.txt
+     - Text
+     - Any
+     - Basic IQ imbalance test waveform
+   * - 1M_10M_nyq.txt
+     - Text
+     - Any
+     - 10 point sine wave, 1 MHz tone @ 10 MSPS
+   * - LTE5.mat
+     - MATLAB
+     - 7.68 MSPS
+     - 5 MHz LTE waveform
+   * - LTE10.mat
+     - MATLAB
+     - 15.36 MSPS
+     - 10 MHz LTE waveform
+   * - LTE15.mat
+     - MATLAB
+     - 23.04 MSPS
+     - 15 MHz LTE waveform
+   * - LTE20.mat
+     - MATLAB
+     - 30.72 MSPS
+     - 20 MHz LTE waveform
+   * - msk_20M.txt
+     - Text
+     - 30.72 MSPS
+     - MSK waveform
+   * - qam16_20M.txt
+     - Text
+     - 30.72 MSPS
+     - 16-QAM waveform
+   * - qpsknofilt_30M.txt
+     - Text
+     - 30.72 MSPS
+     - QPSK without pulse shaping
+   * - qpskwithfilt_30.72M.txt
+     - Text
+     - 30.72 MSPS
+     - QPSK with pulse shaping
+
+.. note::
+
+   The modulated waveforms (QPSK, MSK, etc.) are designed to go through a
+   receiver design (root raised cosine decimator, equalization, frequency
+   compensation, retiming, etc.). Since there is no default receiver in the
+   ADI HDL design, looking at things with the IIO Oscilloscope will not show
+   clean constellations. This is expected and normal.
+
+QPSK Data Files
+---------------
+
+QPSK Without Pulse Shaping
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A QPSK transmission model without any pulse shaping filter. Since there are
+two independent channels on the TX paths, both are modeled identically.
+
+.. figure:: software/QPSKnofilt.png
+   :align: center
+
+   QPSK Simulink model without pulse shaping
+
+Without pulse shaping, the rectangular-pulse QPSK symbols occupy the entire
+signal bandwidth, potentially disturbing adjacent channels.
+
+.. figure:: software/resultnofilt.png
+   :align: center
+
+   QPSK spectrum without pulse shaping
+
+The generated data format uses one line per sample: ``I1, Q1, I2, Q2``, with
+the word ``TEXT`` on the first line.
+
+QPSK With Pulse Shaping
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+A root-raised cosine pulse-shaping filter is used to smooth the QPSK pulses in
+the time domain, limiting the signal bandwidth to 10 MHz.
+
+.. figure:: software/QPSKwithfilter.png
+   :align: center
+
+   QPSK Simulink model with pulse shaping
+
+.. figure:: software/resultwithfilt.png
+   :align: center
+
+   QPSK spectrum and constellations with pulse shaping
+
+Data Verification
+~~~~~~~~~~~~~~~~~
+
+Before verifying data in the IIO Oscilloscope, ensure the ADC and DAC sample
+rate is set to 30.72 MSPS.
+
+.. figure:: software/iiosetting_new.png
+   :align: center
+
+   IIO Oscilloscope sample rate settings
+
+Since there is no matched receive filter on the AD9361 receive path, the raw
+received constellation will not show a clean QPSK pattern:
+
+.. figure:: software/qpsk_osc_new.png
+   :align: center
+
+   Raw received QPSK in IIO Oscilloscope
+
+Use the **Save Data** function (File > Save As, select ``.mat`` format) to
+export data for verification in MATLAB with a matched receive filter:
+
+.. figure:: software/savedata.png
+   :align: center
+
+   Save data dialog
+
+After applying a matched receive filter and phase offset compensation in
+Simulink, the QPSK constellation is clearly verified:
+
+.. figure:: software/qpsk_waveform_verify_new.png
+   :align: center
+
+   Verified QPSK constellation in Simulink
+
+16-QAM Data Files
+-----------------
+
+A 16-QAM transmission model with root raised cosine pulse shaping:
+
+.. figure:: software/16QAM.png
+   :align: center
+
+   16-QAM Simulink model
+
+.. figure:: software/qam16.png
+   :align: center
+
+   Raw 16-QAM received in IIO Oscilloscope
+
+After matched filtering and phase compensation in Simulink:
+
+.. figure:: software/qam16_verified.png
+   :align: center
+
+   Verified 16-QAM constellation
+
+MSK Data Files
+--------------
+
+Minimum Shift Keying (MSK) transmission model with pulse shaping:
+
+.. figure:: software/msk.png
+   :align: center
+
+   MSK Simulink model
+
+.. figure:: software/msk_osc.png
+   :align: center
+
+   Raw MSK received in IIO Oscilloscope
+
+.. figure:: software/msk_receiver.png
+   :align: center
+
+   Verified MSK constellation
+
+LTE Data Files
+--------------
+
+LTE data generated from the MathWorks LTE PHY Downlink with Spatial
+Multiplexing example (``LTEPDSCHExample``). Requires Communications System
+Toolbox.
+
+.. figure:: software/LTE.png
+   :align: center
+
+   LTE Simulink model
+
+.. figure:: software/LTEspectrum.png
+   :align: center
+
+   LTE transmit and receive spectrum (10 MHz bandwidth)
+
+Sample C Code Application
+--------------------------
+
+A sample C application for generating binary I/Q waveform files:
+
+.. code-block:: c
+
+   #include <stdio.h>
+   #include <stdlib.h>
+   #include <stdint.h>
+   #include <unistd.h>
+   #include <math.h>
+
+   int main(int argc, char *argv[])
+   {
+       FILE *file;
+       int i, c, f = 10, j, d = 1;
+       unsigned int *buf;
+       double ampl;
+       short ipart, qpart;
+
+       while ((c = getopt(argc, argv, "f:a:s")) != -1)
+           switch (c) {
+           case 'f':
+               f = atoi(optarg);
+               break;
+           case 'a':
+               ampl = atof(optarg);
+               break;
+           case 's':
+               d = 0;
+               break;
+           default:
+               return 0;
+           }
+
+       buf = malloc(f * (d ? 8 : 4));
+
+       if (ampl > 1.0)
+           ampl = 1.0;
+       else if (ampl < 0.0)
+           ampl = 0.0;
+
+       /* AD9361 12-bit MSB aligned [(2^(12-1) - 1) * 16] */
+       ampl = ampl * 32767;
+
+       for (i = 0, j = 0; i < f; i++) {
+           ipart = ampl * sin(2 * M_PI * (double)i / (double)(f));
+           qpart = ampl * cos(2 * M_PI * (double)i / (double)(f));
+
+           buf[j++] = (ipart << 16) | (qpart & 0xFFFF);
+
+           if (d) /* Second Channel */
+               buf[j++] = (ipart << 16) | (qpart & 0xFFFF);
+       }
+
+       file = fopen(argv[optind], "w");
+       if (file == NULL) {
+           free(buf);
+           exit(EXIT_FAILURE);
+       }
+
+       fwrite(buf, (d ? 8 : 4), f, file);
+       fclose(file);
+       free(buf);
+
+       exit(EXIT_SUCCESS);
+   }
+
+Usage examples:
+
+.. code-block:: bash
+
+   # Full scale, 20 samples per period
+   gcc do_iq.c -o do_iq -lm
+   ./do_iq -a 1.0 -f 20 cw_fullscale_f20.bin
+
+   # Half scale, 20 samples per period
+   ./do_iq -a 0.5 -f 20 cw_halfscale_f20.bin

@@ -55,6 +55,8 @@ Supported Devices
 Supported Carriers
 ------------------
 
+- :xilinx:`KC705` HPC Slot
+- :xilinx:`VC707` HPC Slot (FMC1)
 - :xilinx:`ZC706` HPC Slot
 
 HDL Reference Design
@@ -66,6 +68,10 @@ AD9250 cores. The AD9250 core consists of three functional modules: the ADC
 interface, a PN9/PN23 monitor, and a DMA interface. The ADC interface
 captures and buffers data from the JESD204B core. The DMA interface then
 transfers the samples to the external DDR-DRAM.
+
+All cores have an AXI-Lite interface that allows control and monitoring of
+data generation and capture. The reference design also includes HDMI cores
+for GTX eye scan support.
 
 Block Diagrams
 ~~~~~~~~~~~~~~
@@ -83,7 +89,28 @@ Block Diagrams
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
+- :git-hdl:`hdl_2021_r2:projects/fmcjesdadc1/kc705`
+- :git-hdl:`hdl_2021_r2:projects/fmcjesdadc1/vc707`
 - :git-hdl:`hdl_2021_r2:projects/fmcjesdadc1/zc706`
+
+Changing ADC Sample Rates
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ADC sampling rate can vary from 40 MHz to 250 MHz. However, there are
+limitations imposed by the FPGA that may lower this range. In some cases,
+the cores may need to be regenerated for a different range. The reference
+design uses GTX (channel PLL) primitives and Xilinx's JESD204B core IP.
+The default design runs at 250 MHz clock (5 Gbps rate).
+
+The reference clock has a range of 60 MHz to 670 MHz, which limits the
+minimum sampling clock to 60 MHz. Though not recommended, it is possible to
+use the AD9517 to generate a 40 MHz sampling clock to the AD9250 and an
+80 MHz reference clock to the FPGA.
+
+The CPLL supports rates between 0.5 Gbps and 6.6 Gbps. The core may need
+to be reconfigured for rates below 3.2 Gbps (sampling rate 160 MHz). It is
+also possible to run the device on a single lane at a higher rate rather than
+two lanes at a lower rate to circumvent some line rate dependency issues.
 
 Clocking
 --------
@@ -93,6 +120,25 @@ The AD-FMCJESDADC1-EBZ uses the :adi:`AD9517-0`. This is a small
 function with subpicosecond jitter performance, along with an on-chip PLL and
 VCO. It is driven by a single 30.72 MHz crystal, and generates the necessary
 clocks for the system (2.4576 GHz, 245.760 MHz, 30.72 MHz).
+
+The ADIsimCLK tool reports the following data for the 245.760 MHz outputs
+driving the AD9250:
+
+.. code-block:: none
+
+   Broadband Jitter (>1kHz) = 516fs (rms)
+      SNR = 69.79dB ENOB = 11.63bits
+      at IF Freq = 100 MHz
+   Integrated Phase Noise from 100kHz to 1.25MHz
+     Timing Jitter = 304fs rms
+     Phase Jitter EVM = 0.05% rms
+     Phase Jitter = 0.027 degrees rms
+     ACI/ACR = -69.6dBc
+   Delay from Ref to OUT2 is 420ps
+
+This matches the datasheet performance when using the internal VCO. An
+external VCXO could decrease the jitter to approximately 54 fs rms, but
+this would violate the FMC height requirements.
 
 Specifications
 --------------
@@ -105,6 +151,56 @@ made which limit the performance to the first Nyquist zone. The specific
 transformer used (Minicircuits TC4-1W) is specified from 3 to 800 MHz, but is
 only linear in terms of insertion loss and input return loss within +/- 0.5 dB
 from 10 to 100 MHz.
+
+Front End
+---------
+
+The AD9250 datasheet recommends a Differential Double Balun Input
+Configuration for input frequencies in the second Nyquist zone and above.
+The AD-FMCJESDADC1-EBZ card uses a single differential transformer
+(Minicircuits TC4-1W) due to its smaller size (reduced footprint). This
+transformer is a good trade-off of size (3.8 mm x 3.8 mm x 3.8 mm), power
+(250 mW of RF), and impedance ratio (4:1 secondary/primary) for operation
+in the first Nyquist zone.
+
+Quick Start
+-----------
+
+ZC706 (Zynq, Linux)
+~~~~~~~~~~~~~~~~~~~
+
+1. Prepare a Kuiper Linux SD card following the instructions at
+   :doc:`Kuiper Linux </linux/kuiper/index>`. This generic image supports the
+   AD-FMCJESDADC1-EBZ on the ZC706.
+2. Insert the SD card into the ZC706 SD card slot (J30).
+3. Plug the AD-FMCJESDADC1-EBZ into the HPC FMC connector (J37).
+4. Connect an HDMI display to the HDMI video connector (P1).
+5. Set boot mode switch SW11: pins 1-2 Down, 3-4 Up, 5 Down.
+6. Connect power and turn on the board.
+7. Wait approximately 30 seconds for the DONE LED to turn green, then
+   another 30 seconds for the HDMI display to show the desktop.
+
+Once the system has booted, the IIO Oscilloscope application can be used
+to visualize ADC data:
+
+.. figure:: fmcjesdadc1-scope.png
+   :align: center
+
+   IIO Oscilloscope showing AD9250 ADC channels
+
+KC705 / VC707 (MicroBlaze, Linux)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Download the pre-built MicroBlaze bitfile and Linux ELF image for the
+   target board.
+2. Connect the AD-FMCJESDADC1-EBZ to the HPC connector of the KC705 or
+   VC707.
+3. Connect a USB JTAG cable (Micro USB) to the host PC.
+4. Power on the FPGA board.
+5. Use Xilinx ISE Microprocessor Debugger (XMD) to load the bitfile and
+   ELF image. Set the UART terminal to 115200 baud (8N1).
+6. After boot, connect the IIO Oscilloscope on a host PC to the target's
+   IP address via Settings → Connect.
 
 Software Support
 ----------------
@@ -121,9 +217,32 @@ Eye Scan
 The JESD204B eye scan for this board can be found at
 :dokuwiki:`JESD Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`.
 
+.. figure:: jesdadc1_eyescan.png
+   :align: center
+
+   JESD204B eye scan example
+
+Visual Analog
+~~~~~~~~~~~~~
+
+`VisualAnalog <https://www.analog.com/en/design-center/interactive-design-tools/visualanalog.html>`__
+is a software package combining simulation and data analysis tools with a
+graphical interface, allowing designers to measure ADC performance with real
+input waveforms.
+
+To use Visual Analog with the ZC706:
+
+1. Ensure both the ZC706 and the host PC running Visual Analog are on the
+   same network (crossover cable or common network with DHCP).
+2. Find the IP address of the ZC706 by opening a terminal on the board
+   (Ctrl+Alt+T) and running ``ip addr show``.
+3. Enter this IP address in the IIO client settings within Visual Analog.
+
 More Information
 ----------------
 
+- :dokuwiki:`AD-FMCJESDADC1-EBZ User Guide <resources/eval/user-guides/ad-fmcjesdadc1-ebz>`
+- `VITA FMC Standard <http://www.vita.com/fmc>`__
 - :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
 - :git-hdl:`JESD204B High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
 
@@ -133,3 +252,18 @@ Support
 Analog Devices will provide limited online support for anyone using the core
 with Analog Devices components (ADC, DAC, Video, Audio, etc) via the
 :ez:`FPGA Reference Designs Forum <fpga>`.
+
+For questions about the AD-FMCJESDADC1-EBZ hardware or the HDL reference
+design, use the :ez:`FPGA Reference Designs <community/fpga>` sub-community.
+
+For questions about the ADI Linux distribution, Linux drivers, or device
+trees, use the
+:ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>`
+sub-community.
+
+For questions about the no-OS drivers, use the
+:ez:`Microcontroller and No-OS Driver <community/linux-device-drivers/microcontroller-no-os-drivers>`
+sub-community.
+
+For general AD9250 questions, use the
+:ez:`High Speed ADCs <community/data_converters/high-speed_adcs>` sub-community.

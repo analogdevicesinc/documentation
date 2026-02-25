@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="1x ADQUADMXFE1EBZ Quad-MxFE instructions card" name="description" />
+
+    <title>Quad-MxFE Quick Start Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Quad-MxFE Software Quick Start Guide" href="quick_start.html" />
+    <link rel="prev" title="Quad-MxFE Prototyping Platform User Guide" href="index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Quad-MxFE Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a><ul>
+<li><a class="reference internal" href="#equipment-included-with-quad-mxfe-kits">Equipment Included with Quad MxFE Kits</a></li>
+<li><a class="reference internal" href="#equipment-included-with-calibration-board-kits-adquadmxfe-cal">Equipment Included with Calibration Board Kits (ADQUADMXFE-CAL)</a></li>
+<li><a class="reference internal" href="#required-additional-equipment">Required Additional Equipment</a></li>
+<li><a class="reference internal" href="#optional-but-helpful-equipment">Optional, But Helpful Equipment</a></li>
+<li><a class="reference internal" href="#test-setup">Test Setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-needed">Software Needed</a><ul>
+<li><a class="reference internal" href="#hdl-image">HDL/Image</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope-libiio">IIO Oscilloscope / LibIIO</a></li>
+<li><a class="reference internal" href="#putty">PuTTY</a></li>
+<li><a class="reference internal" href="#xilinx-software-command-line-tool-xsct">Xilinx Software Command Line Tool (XSCT)</a></li>
+<li><a class="reference internal" href="#matlab-2019b-or-2020a-optional">MATLAB 2019b or 2020a (Optional)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-start-bringup-with-hardware">Quick Start Bringup with Hardware</a><ul>
+<li><a class="reference internal" href="#general-board-power-up-programming-sequence">General Board Power Up/Programming Sequence</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#matlab-control-overview">MATLAB Control Overview</a><ul>
+<li><a class="reference internal" href="#controlling-quad-mxfe-with-matlab">Controlling Quad-MxFE With MATLAB</a></li>
+<li><a class="reference internal" href="#calboardvcu118-m">CalBoardVCU118.m</a></li>
+<li><a class="reference internal" href="#loadvcu118code-m">LoadVcu118Code.m</a></li>
+<li><a class="reference internal" href="#quadmxfe-simpletxrx-m">QuadMxFE_SimpleTxRx.m</a></li>
+<li><a class="reference internal" href="#quadmxfe-systemalignmentfir-m">QuadMxFE_SystemAlignmentFIR.m</a></li>
+<li><a class="reference internal" href="#quadmxfe-mcs-m">QuadMxFE_MCS.m</a></li>
+<li><a class="reference internal" href="#quadmxfe-adctodac-loopback-m">QuadMxFE_ADCtoDAC_Loopback.m</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debug">Debug</a><ul>
+<li><a class="reference internal" href="#no-blue-lights-visible-on-board">No Blue Lights Visible on Board</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul class="current">
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../active-bias-controllers/index.html">Active Bias Controllers</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../active-bias-controllers/hmc980.html">HMC980 Configuration Calculator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-dac-fmc-ebz/index.html">AD-DAC-FMC-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcadc2-ebz/index.html">AD-FMCADC2-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcadc3-ebz/index.html">AD-FMCADC3-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcadc4-ebz/index.html">AD-FMCADC4-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcdaq1-ebz/index.html">AD-FMCDAQ1-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../ad-fmcdaq2-ebz/index.html">AD-FMCDAQ2-EBZ</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/introduction.html">AD-FMCDAQ2-EBZ Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/quickstart.html">AD-FMCDAQ2-EBZ Quick Start Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/quickstart/zynq.html">AD-FMCDAQ2-EBZ Zynq ZC706 Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/quickstart/zcu102.html">AD-FMCDAQ2-EBZ ZynqMP ZCU102 Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/quickstart/microblaze.html">AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/quickstart/a10soc.html">AD-FMCDAQ2-EBZ Arria10 SoC Development Kit Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/quickstart/a10gx.html">AD-FMCDAQ2-EBZ Arria 10 GX Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html">Functional Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#digital-interface">Digital Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#dac-interface">DAC Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#adc-interface">ADC Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#control-and-spi">Control and SPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/reference_hdl.html#supported-carriers">Supported Carriers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software.html">Software for the AD-FMCDAQ2-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/baremetal.html">AD-FMCDAQ2-EBZ Bare Metal Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux.html">AD-FMCDAQ2-EBZ Linux Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux/zynq.html">AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ on Zynq ZC706</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux/microblaze.html">AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ on Microblaze</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux/applications.html">Linux Applications for the AD-FMDAQ2-EBZ/AD-FMDAQ3-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux/applications/iio_scope.html">AD-FMCDAQ2-EBZ/ AD-FMCDAQ3-EBZ IIO Oscilloscope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux/applications/libiio.html">libiio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/software/linux/applications/fru_dump.html">FRU EEPROM Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/clocking.html">AD-FMCDAQ2-EBZ Clocking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/testing.html">Production Testing of the AD-FMCDAQ2 / AD-FMCDAQ3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcdaq2-ebz/help_and_support.html">AD-FMCDAQ2-EBZ Help and Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcdaq3-ebz/index.html">AD-FMCDAQ3-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcjesdadc1-ebz/index.html">AD-FMCJESDADC1-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmclidar1-ebz/index.html">AD-FMCLIDAR1-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcmotcon1-ebz/index.html">AD-FMCMOTCON1-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcmotcon2-ebz/index.html">AD-FMCMOTCON2-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms1-ebz/index.html">AD-FMCOMMS1-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms11-ebz/index.html">AD-FMCOMMS11-EBZ User Guide</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../ad-fmcomms2-ebz/index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms2-ebz/card_specification.html">RF Card Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms2-ebz/quickstart_microblaze.html">MicroBlaze Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms2-ebz/quickstart_zynqmp.html">ZCU102 Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms2-ebz/no_os_software.html">No-OS Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms2-ebz/filter_wizard.html">AD9361 Filter Design Wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms2-ebz/iq_datafiles.html">I/Q Data Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms2-ebz/interface_timing.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms2-ebz/testing.html">Production Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms4-ebz/index.html">AD-FMCOMMS4-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms5-ebz/index.html">AD-FMCOMMS5-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-fmcomms6-ebz/index.html">AD-FMCOMMS6-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../ad-fmcomms8-ebz/index.html">AD-FMCOMMS8-EBZ User Guide</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms8-ebz/quickstart_a10soc.html">Arria 10 SoC Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-fmcomms8-ebz/testing.html">Production Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quad-MxFE Prototyping Platform User Guide</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Quad-MxFE Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quick_start.html">Quad-MxFE Software Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware_details.html">Quad-MxFE Board Hardware Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_hdl.html">AD-QUADMXFE1-EBZ HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multichip_sync.html">Multi-Chip Synchronization with the Quad-MxFE + Calibration Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calboard.html">Calibration Board</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad400x/index.html">AD40xx/ADAQ4001/ADAQ4003 User Guide</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ad4630-fmc/index.html">AD4630-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad469x-fmc/index.html">AD469x-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad4858-fmc/index.html">AD4858-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad5758-sdz/index.html">AD5758-SDZ User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad5766-sdz/index.html">AD5766-SDZ User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad6676evb/index.html">AD6676EVB User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad7134-fmc/index.html">AD7134-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad738x-fmc/index.html">AD738x-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad7405-fmc/index.html">AD7405-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad7606x-fmc/index.html">AD7606x-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad7616-sdz/index.html">AD7616-SDZ User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad7768-ebz/index.html">AD7768-EVB User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad77681evb/index.html">AD7768-1-EVB User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad9083-evb/index.html">AD9083-EVB User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad9208-dual-ebz/index.html">AD9208-DUAL-EBZ User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad9209-fmca-ebz/index.html">AD9209-FMCA-EBZ User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad9213-dual-ebz/index.html">AD9213-DUAL-EBZ User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad9265-fmc/index.html">AD9265-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad9434-fmc/index.html">AD9434-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad9467-fmc/index.html">AD9467-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad9656-fmc/index.html">AD9656-FMC User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ad9783-ebz/index.html">AD9783-EBZ User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adaq7980-sdz/index.html">ADAQ7980-SDZ User Guide</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../adrv9001/index.html">ADRV9001/ADRV9002 User Guide</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart.html">ADRV9001/ADRV9002 Quick Start Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zynqmp.html">ADRV9002 ZCU102 Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zynq.html">ADRV9002 ZC706 Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zed.html">ADRV9002 ZedBoard Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/a10soc.html">ADRV9002 Arria 10 SoC Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9001/reference_hdl.html">ADRV9001/ADRV9002 HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9001/axi_adrv9002.html">AXI ADRV9001/ADRV9002 Interface Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9001/no_os_setup.html">ADRV9002 No-OS System Level Design Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../adrv9009zu11eg/index.html">ADRV9009-ZU11EG User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adrv9026/index.html">ADRV9026 User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adrv9361-z7035/index.html">ADRV9361-Z7035 User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adrv9364-z7020/index.html">ADRV9364-Z7020 User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adrv9371x/index.html">ADRV9371x User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adv7511/index.html">ADV7511 User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arradio/index.html">ARRADIO User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cn0363/index.html">CN0363 User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cn0506/index.html">CN0506 User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dc2677a/index.html">DC2677A User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30-1" id="toctree-collapse-13-30-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-30-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31-1" id="toctree-collapse-13-31-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-31-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33" id="toctree-collapse-13-33"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-33"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33-1" id="toctree-collapse-13-33-1"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-33-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-34" id="toctree-collapse-13-34"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-34"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-35" id="toctree-collapse-13-35"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-35"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36" id="toctree-collapse-13-36"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-36"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pulsar-adc-pmdz/index.html">PulSAR ADC PMOD User Guide</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">Quad-MxFE Prototyping Platform User Guide</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="quad-mxfe-quick-start-guide">
+<span id="ad-quadmxfe1-ebz-quickbringup"></span><h1>Quad-MxFE Quick Start Guide<a class="headerlink" href="#quad-mxfe-quick-start-guide" title="Link to this heading"></a></h1>
+<section id="equipment-needed">
+<span id="quadmxfe-equipment-needed"></span><h2>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h2>
+<section id="equipment-included-with-quad-mxfe-kits">
+<h3>Equipment Included with Quad MxFE Kits<a class="headerlink" href="#equipment-included-with-quad-mxfe-kits" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>1x <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Quad-MxFE.html" target="_blank">ADQUADMXFE1EBZ Quad-MxFE</a> instructions card</p></li>
+<li><p>1x 12V, 9A+ Wall Supply and power cable</p></li>
+<li><p>2x MMCX-to-SMA cables. Used to test with equipment</p></li>
+<li><p>1x FMC+ Extender</p></li>
+<li><p>2x 6” MMCX-to-MMCX cables</p></li>
+<li><p>3x Board Standoffs</p></li>
+<li><p>4x Fan/Heat Sinks — <strong>Install Prior to First Use Per</strong>
+<a class="reference internal" href="hardware_details.html#quadmxfe-thermal-considerations"><span class="std std-ref">Fan Installation Directions</span></a></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See unboxing video here:
+<a class="icon adi reference external" href="https://www.analog.com/en/education/education-library/videos/6257116746001.html" target="_blank">Quad MxFE Unboxing Video</a></p>
+</div>
+</section>
+<section id="equipment-included-with-calibration-board-kits-adquadmxfe-cal">
+<h3>Equipment Included with Calibration Board Kits (ADQUADMXFE-CAL)<a class="headerlink" href="#equipment-included-with-calibration-board-kits-adquadmxfe-cal" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>1x <a class="reference internal" href="calboard.html"><span class="doc">ADQUADMXFE-CAL Calibration Board</span></a> instructions card</p></li>
+<li><p>1x 12V, 9A+ Wall Supply and power cable</p></li>
+<li><p>2x 3” MMCX-MMCX cables. Used to connect between Quad MxFE Board &amp;
+Calibration Board</p>
+<ul>
+<li><p>NOTE that you will need to purchase an additional 30 of these to interface
+to the Calibration Board/Quad MxFE board</p></li>
+</ul>
+</li>
+<li><p>4x Board Standoffs</p></li>
+<li><p>1x PMOD ribbon cable</p></li>
+<li><p>1x Male to male 0.1” 12 pin header for PMOD cable</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See unboxing video here:
+<a class="icon adi reference external" href="https://www.analog.com/en/education/education-library/videos/6257116696001.html" target="_blank">Calibration Board Unboxing</a></p>
+</div>
+</section>
+<section id="required-additional-equipment">
+<h3>Required Additional Equipment<a class="headerlink" href="#required-additional-equipment" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>1x 500 MHz Reference Oscillator or Waveform Generator</p></li>
+<li><p>1x Ethernet Cable</p></li>
+<li><p>1x USB to Ethernet Dongle</p></li>
+<li><p>2x USB Micro Cables</p></li>
+<li><p>50 Ohm SMA Cables — As Needed</p></li>
+<li><p>32x MMCX-MMCX cables (2 are provided with the ADQUADMXFE-CAL kit). Used to
+connect between Quad MxFE Board &amp; Calibration Board</p></li>
+<li><p>1x Fan</p></li>
+<li><p>1x <a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/vcu118.html" target="_blank">VCU118 FPGA Board</a></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not use the Ethernet cable that comes with the VCU118 board. It is a
+crossover cable and will not work with the platform.</p>
+</div>
+</section>
+<section id="optional-but-helpful-equipment">
+<h3>Optional, But Helpful Equipment<a class="headerlink" href="#optional-but-helpful-equipment" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>1x <a class="reference internal" href="calboard.html"><span class="doc">ADQUADMXFE-CAL 16Tx/16Rx Calibration Board</span></a> (Optional,
+Sold Separately) — Includes Power, PMOD Cabling, &amp; Board Standoffs</p></li>
+</ul>
+</section>
+<section id="test-setup">
+<h3>Test Setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/qmxfe_quadmxfeinterconnectivitydiagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/qmxfe_quadmxfeinterconnectivitydiagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Quad-MxFE interconnectivity diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="software-needed">
+<span id="quadmxfe-software-needed"></span><h2>Software Needed<a class="headerlink" href="#software-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="quick_start.html#quadmxfe-downloads"><span class="std std-ref">Supported Use Cases / Bitstreams Available For Download</span></a></p></li>
+<li><p><a class="reference internal" href="../../../software/iio-oscilloscope/index.html"><span class="doc">IIO Oscilloscope</span></a></p>
+<ul>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases" target="_blank">Latest IIO Oscilloscope release</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/libiio/releases" target="_blank">Latest Libiio release</a></p></li>
+</ul>
+</li>
+<li><p><a class="icon link reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank">PuTTY</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/support/download.html" target="_blank">Xilinx Vivado Toolchain</a></p></li>
+<li><p>MATLAB (Optional)</p></li>
+</ul>
+<section id="hdl-image">
+<h3>HDL/Image<a class="headerlink" href="#hdl-image" title="Link to this heading"></a></h3>
+<p>The required FPGA files and <code class="docutils literal notranslate"><span class="pre">.tcl</span></code> scripts can be downloaded from
+<a class="reference internal" href="quick_start.html#quadmxfe-downloads"><span class="std std-ref">the downloads section</span></a>.</p>
+<p>Once downloaded, unzip these files to a folder on the desktop called QuadMxFE
+(this directory will be used in XSCT).</p>
+</section>
+<section id="iio-oscilloscope-libiio">
+<h3>IIO Oscilloscope / LibIIO<a class="headerlink" href="#iio-oscilloscope-libiio" title="Link to this heading"></a></h3>
+<p>The main IIO interface is provided in the install of IIO Oscilloscope which uses
+LibIIO to communicate through IIO to the chips on the Quad MxFE board. The
+install process for IIO Oscilloscope and a walkthrough of opening the program can
+be found in the <a class="reference internal" href="quick_start.html"><span class="doc">Software Quick Start Guide</span></a>.</p>
+</section>
+<section id="putty">
+<h3>PuTTY<a class="headerlink" href="#putty" title="Link to this heading"></a></h3>
+<p>PuTTY helps to provide a view into the Linux and give additional controls and
+debug abilities. PuTTY can be downloaded from the
+<a class="icon link reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank">PuTTY Download Page</a>.
+Ensure that the proper version for the computer is downloaded.</p>
+<p>Once downloaded the COM port to the FPGA can be opened. This COM port can be
+identified through the device manager:</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/comport.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/comport.png" />
+<p>In PuTTY, this should be opened with a baudrate of 115200:</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/putty_comport.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/putty_comport.png" />
+</section>
+<section id="xilinx-software-command-line-tool-xsct">
+<h3>Xilinx Software Command Line Tool (XSCT)<a class="headerlink" href="#xilinx-software-command-line-tool-xsct" title="Link to this heading"></a></h3>
+<p>In order to program the FPGA, the Vitis/Vivado tool suite is required:
+<a class="icon link reference external" href="https://www.xilinx.com/support/download.html" target="_blank">Vivado Toolchain</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to grab Vitis 2020.2 or earlier. The 2020.3 version does not
+support the VCU118.</p>
+</div>
+<p>Grab the Self Extracting Web Installer from the full product installation
+section and run the installer. Choose the Vitis installation option which will
+include the Vivado install.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/vitis_install.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/vitis_install.png" />
+<p>The main tool used for programming the FPGA is the Xilinx Software Command Line
+Tool, included as part of the installation of the Xilinx Vitis platform.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xsct</span><span class="o">%</span> <span class="n">cd</span> <span class="n">Desktop</span><span class="o">/</span><span class="n">Quad_Mxfe_Files</span>
+<span class="n">xsct</span><span class="o">%</span> <span class="n">source</span> <span class="n">run</span><span class="o">.</span><span class="n">vcu118_quad_ad9081_204c_txmode_11_rxmode_4_revc</span><span class="o">.</span><span class="n">tcl</span>
+</pre></div>
+</div>
+</section>
+<section id="matlab-2019b-or-2020a-optional">
+<h3>MATLAB 2019b or 2020a (Optional)<a class="headerlink" href="#matlab-2019b-or-2020a-optional" title="Link to this heading"></a></h3>
+<p>MATLAB 2020a is the primary version that all the code is tested with.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>MATLAB 2020b IS NOT SUPPORTED.</p>
+</div>
+<p>MATLAB is used to exercise the board through LibIIO objects and provide higher
+level application functionality. Required toolboxes:</p>
+<ol class="arabic simple">
+<li><p>MATLAB Communications Toolbox</p></li>
+<li><p>DSP System Toolbox</p></li>
+<li><p>Signal Processing Toolbox</p></li>
+<li><p>Curve Fitting Toolbox</p></li>
+<li><p>Instrument Control Toolbox</p></li>
+<li><p>Communications Toolbox Support Package for Xilinx Zynq-Based Radio (installed
+through MATLAB Add-On Explorer)</p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/HighSpeedConverterToolbox" target="_blank">Analog Devices High Speed Converter Toolbox</a></p></li>
+</ol>
+</section>
+</section>
+<section id="quick-start-bringup-with-hardware">
+<h2>Quick Start Bringup with Hardware<a class="headerlink" href="#quick-start-bringup-with-hardware" title="Link to this heading"></a></h2>
+<p>This section assumes the following:</p>
+<ol class="arabic">
+<li><p>Standoffs have been attached to Quad MxFE board</p></li>
+<li><p>VCU118 and Quad MxFE have been attached via a FMC+ extender on the FMC+</p></li>
+<li><p>Ethernet cable has been connected to VCU118 and connected to USB to Ethernet</p></li>
+<li><p>USB to Ethernet dongle has IP address of <code class="docutils literal notranslate"><span class="pre">192.168.2.5</span></code>. For locally
+connected FPGAs (i.e. Ethernet cable from VCU118 to USB to Ethernet dongle),
+the Hostname is <code class="docutils literal notranslate"><span class="pre">192.168.2.1</span></code>.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/usb_to_ethernet.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/usb_to_ethernet.png" />
+</li>
+<li><p>2x micro USB cables have been connected to PC and VCU118 for JTAG and Serial</p></li>
+<li><p>All required software programs have been installed</p></li>
+<li><p>All FPGA images/script files have been downloaded and unzipped to a folder on
+the Desktop called QuadMxFE</p></li>
+<li><p>500 MHz ~0 dBm source has been attached to Quad MxFE central clock input SMA</p></li>
+<li><p>12V power bricks (&gt;8A for Quad MxFE and &gt;5A for VCU118) have been connected
+to boards</p></li>
+<li><p>Fans have been turned on</p></li>
+</ol>
+<section id="general-board-power-up-programming-sequence">
+<h3>General Board Power Up/Programming Sequence<a class="headerlink" href="#general-board-power-up-programming-sequence" title="Link to this heading"></a></h3>
+<p>The power up sequence is not difficult:</p>
+<ol class="arabic simple">
+<li><p>Power up the 500 MHz oscillator</p></li>
+<li><p>Power up the Quad MxFE Board</p></li>
+<li><p>Power on the VCU118 board</p></li>
+</ol>
+<p>Once these are powered up, program the FPGA:</p>
+<ol class="arabic">
+<li><p>Open PuTTY at the correct COM port and baudrate of 115200</p></li>
+<li><p>Open Xilinx Command Line Tool (XSCT). Open it from the Start Menu under
+Xilinx &gt; Xilinx Software Command Line Tool. Once the prompt is open, type:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Desktop\QuadMxFE</span></code></p></li>
+<li><p>Run the loading script for the particular build by typing the following in
+XSCT:
+<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">run.vcu118_quad_ad9081_204c_txmode_11_rxmode_4_revc.tcl</span></code></p></li>
+<li><p>Wait for the programming to finish in XSCT.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/running_fpgaload.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/running_fpgaload.png" />
+</li>
+<li><p>Wait for the build to boot completely by checking the PuTTY terminal window.
+Wait for the login prompt.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/putty_quad_mxfe.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/putty_quad_mxfe.png" />
+<p>Login credentials: Username: <code class="docutils literal notranslate"><span class="pre">root</span></code>, Password: <code class="docutils literal notranslate"><span class="pre">analog</span></code></p>
+</li>
+<li><p>At this point the FPGA has booted and all of the blue PLL lights should be
+illuminated. The FPGA is ready to be controlled from MATLAB or from IIO
+Oscilloscope.</p></li>
+</ol>
+</section>
+</section>
+<section id="matlab-control-overview">
+<span id="quadmxfe-matlab-control"></span><h2>MATLAB Control Overview<a class="headerlink" href="#matlab-control-overview" title="Link to this heading"></a></h2>
+<p>The Quad-MxFE Platform can be controlled via MATLAB using example scripts which
+are available as part of the
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/HighSpeedConverterToolbox" target="_blank">Analog Devices, Inc. High Speed Converter Toolbox</a>
+add-on. This add-on can either be manually downloaded from the Releases section
+of the GitHub page or downloaded and installed via MATLAB Add-On Explorer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to install via the download from GitHub as this is
+generally more up to date than the MATLAB Add-On Explorer page.</p>
+</div>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/github.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/github.png" />
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/matlab_addon_xilinx_zynqbased_radio_communications_toolbox.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/matlab_addon_xilinx_zynqbased_radio_communications_toolbox.png" />
+<p>Example scripts are located within the add-on install directory, which is usually
+located in the
+<code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;username&gt;\AppData\Roaming\MathWorks\MATLAB</span> <span class="pre">Add-Ons\Toolboxes</span></code>
+directory. The example scripts are specifically located in:
+<code class="docutils literal notranslate"><span class="pre">Analog</span> <span class="pre">Devices,</span> <span class="pre">Inc.</span> <span class="pre">High-Speed</span> <span class="pre">Converter</span> <span class="pre">Toolbox\hsx_examples\qmxfe</span></code></p>
+<section id="controlling-quad-mxfe-with-matlab">
+<h3>Controlling Quad-MxFE With MATLAB<a class="headerlink" href="#controlling-quad-mxfe-with-matlab" title="Link to this heading"></a></h3>
+<p>The control interface for the Quad-MxFE is implemented using standard system
+objects in MATLAB. Here is an example instantiation of the objects:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">tx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adi</span><span class="p">.</span><span class="n">QuadMxFE</span><span class="p">.</span><span class="n">Tx</span><span class="p">()</span>
+<span class="n">rx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adi</span><span class="p">.</span><span class="n">QuadMxFE</span><span class="p">.</span><span class="n">Rx</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="calboardvcu118-m">
+<span id="quadmxfe-calboardvcu118"></span><h3>CalBoardVCU118.m<a class="headerlink" href="#calboardvcu118-m" title="Link to this heading"></a></h3>
+<p>This folder also contains a driver file <code class="docutils literal notranslate"><span class="pre">CalBoardVCU118.m</span></code> for controlling the
+optional <a class="reference internal" href="calboard.html"><span class="doc">16 Tx / 16 Rx Calibration Board</span></a> via the VCU118 PMOD
+interface. This driver file allows the user to perform the following functions
+after instantiation using <code class="docutils literal notranslate"><span class="pre">CalibrationBoard</span> <span class="pre">=</span> <span class="pre">CalBoardVCU118</span></code>:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CalibrationBoard.ConfigureCombinedLoopback</span></code>: Loop Combined Tx Channels
+Back Into Combined Rx Path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CalibrationBoard.ConfigureAdjacentIndividualLoopback</span></code>: Loop Individual Tx
+Channels Back Into Adjacent Rx Path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CalibrationBoard.ConfigureTxOutSMA</span></code>: Send Combined Tx Channels Out
+<code class="docutils literal notranslate"><span class="pre">J502</span></code> SMA Connector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CalibrationBoard.ConfigureRxInFromSMA</span></code>: Send Combined Rx Input Into
+<code class="docutils literal notranslate"><span class="pre">J501</span></code> SMA Connector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CalibrationBoard.ConfigureTxOutToLTC5596</span></code>: Send Combined Tx Channel Signal
+Into LTC5596 Power Detector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CalibrationBoard.QueryAD8318_voltage</span></code>: Poll the AD8318 Power Detector
+Voltage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CalibrationBoard.QueryHMC948_voltage</span></code>: Poll the HMC948 Power Detector
+Voltage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CalibrationBoard.QueryLTC5596_voltage</span></code>: Poll the LTC5596 Power Detector
+Voltage</p></li>
+</ol>
+<p>If the user intends to use the Calibration Board, then be sure to enable
+<code class="docutils literal notranslate"><span class="pre">tx.CalibrationBoardAttached</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">rx.CalibrationBoardAttached</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p>
+</section>
+<section id="loadvcu118code-m">
+<h3>LoadVcu118Code.m<a class="headerlink" href="#loadvcu118code-m" title="Link to this heading"></a></h3>
+<p>For convenience, there is a function file <code class="docutils literal notranslate"><span class="pre">LoadVcu118Code.m</span></code> which allows the
+user to load new .tcl files via the MATLAB interface.
+<code class="docutils literal notranslate"><span class="pre">LoadVcu118Code(xsctpath,tclpath)</span></code> — first parameter: installed xsct.bat
+folder; second parameter: downloaded .run.tcl file location.</p>
+</section>
+<section id="quadmxfe-simpletxrx-m">
+<span id="quadmxfe-simpletxrx"></span><h3>QuadMxFE_SimpleTxRx.m<a class="headerlink" href="#quadmxfe-simpletxrx-m" title="Link to this heading"></a></h3>
+<p>The default test setup for this script uses the
+<a class="reference internal" href="calboard.html"><span class="doc">16Tx/16Rx Calibration Board</span></a> as shown below in which each Tx
+channel is looped back into the adjacent Rx channel after going through a 10 dB
+attenuator.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/script_test_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/script_test_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">SimpleTxRx test setup</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>This script demonstrates relatively simple MATLAB control of the system. It
+allows the user to configure the Tx and Rx aspects of the system by using the
+<code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">=</span> <span class="pre">adi.QuadMxFE.Tx</span></code> and <code class="docutils literal notranslate"><span class="pre">rx</span> <span class="pre">=</span> <span class="pre">adi.QuadMxFE.Rx</span></code> system objects. The script
+then loads transmit waveforms and captures receive data for all channels on the
+system. <strong>No Rx nor Tx calibration is performed, nor are any multi-chip
+synchronization algorithms.</strong></p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/screenshot_quadmxfe_systemalignmentfir.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/screenshot_quadmxfe_systemalignmentfir.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">SimpleTxRx output example</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Using this script as a basis, the user can:</p>
+<ol class="arabic simple">
+<li><p>Inject Custom Tx Waveforms: <code class="docutils literal notranslate"><span class="pre">tx(waveformDataMatrix)</span></code></p></li>
+<li><p>Change Tx NCO Frequencies: e.g. <code class="docutils literal notranslate"><span class="pre">tx.MainNCOFrequenciesChipA</span></code></p></li>
+<li><p>Change Tx NCO Phases: e.g. <code class="docutils literal notranslate"><span class="pre">tx.MainNCOPhasesChipA</span></code></p></li>
+<li><p>Capture Simultaneous Complex-Valued Rx Data: <code class="docutils literal notranslate"><span class="pre">rxData=rx()</span></code></p></li>
+<li><p>Change Rx NCO Frequencies: e.g. <code class="docutils literal notranslate"><span class="pre">rx.MainNCOFrequenciesChipA</span></code></p></li>
+<li><p>Change On-Board DSA Value: <code class="docutils literal notranslate"><span class="pre">rx.ExternalAttenuation</span></code></p></li>
+<li><p>Change Calibration Board Configuration</p></li>
+<li><p>Perform MxFE Register Reads/Writes</p></li>
+<li><p>Analyze and Post-Process Captured Waveforms</p></li>
+</ol>
+</section>
+<section id="quadmxfe-systemalignmentfir-m">
+<span id="quadmxfe-systemalignmentfir"></span><h3>QuadMxFE_SystemAlignmentFIR.m<a class="headerlink" href="#quadmxfe-systemalignmentfir-m" title="Link to this heading"></a></h3>
+<p>The default test setup uses the <a class="reference internal" href="calboard.html"><span class="doc">Calibration Board</span></a> in combined
+loopback mode.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Once the pFIRs have been enabled through this script, they will remain on and
+will cause problems if other non pFIR scripts are run. Therefore a complete
+platform reboot is required between running the pFIR script followed by any
+other MATLAB script.</p>
+</div>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/script_test_setup_combined_loopback.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/script_test_setup_combined_loopback.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">SystemAlignmentFIR test setup (combined loopback)</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>This script demonstrates MATLAB control of the programmable finite impulse
+response (pFIR) filters and NCO phase offsets in order to phase align all Rx and
+Tx channels in the system. It uses the on-system DSP blocks to phase-align the
+<a class="icon adi reference external" href="https://www.analog.com/ADF4371" target="_blank">ADF4371</a> device clocks, then phase-aligns all Tx channels and loads a
+broadband chirp waveform. It ends by also phase- and amplitude-aligning all Rx
+RF channels using the NCO phase offsets and pFIRs assigned to each Rx channel.</p>
+<p><strong>Figure 1</strong>: PLL phase alignment results.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/pll_phase_alignment_results.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/pll_phase_alignment_results.png" />
+<p><strong>Figure 2</strong>: Tx pulse phase alignment results.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/tx_pulse_phase_alignment.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/tx_pulse_phase_alignment.png" />
+<p><strong>Figure 3</strong>: pFIR alignment results — time domain ADC capture, chirp FFT,
+and amplitude and phase errors before and after Rx calibration.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/pfir_alignment_quadmxfe.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/pfir_alignment_quadmxfe.png" />
+<p><strong>Figure 4</strong>: Calculated error response of each Rx channel.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/pfir_error_response_quadmxfe.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/pfir_error_response_quadmxfe.png" />
+<p><strong>Figure 5</strong>: Designed pFIR magnitude and phase response.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/pfir_magnitude_phase_response_quadmxfe.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/pfir_magnitude_phase_response_quadmxfe.png" />
+<p><strong>Figure 6</strong>: Individual pFIR tap coefficients before and after quantization.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/pfir_tap_coefficients_quadmxfe.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/pfir_tap_coefficients_quadmxfe.png" />
+<p><strong>Figure 7</strong>: Combined Rx system performance using a single-tone waveform after
+all Rx channels are aligned.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/combined_rx_improvements_quadmxfe.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/combined_rx_improvements_quadmxfe.png" />
+</section>
+<section id="quadmxfe-mcs-m">
+<span id="quadmxfe-mcs-script"></span><h3>QuadMxFE_MCS.m<a class="headerlink" href="#quadmxfe-mcs-m" title="Link to this heading"></a></h3>
+<p>This script demonstrates MATLAB control of the multi-chip synchronization (MCS)
+algorithm. It allows the user to configure the Tx and Rx aspects of the system,
+load transmit waveforms, and capture receive data. The script uses on-system DSP
+blocks to align the device clocks and output/input RF channels using the NCO
+phase offsets. Finally, it plots the results and allows the user to save a .mat
+file containing the run results.</p>
+<p>The test setup is the same as that used for the QuadMxFE_SystemAlignmentFIR.m
+script. More information on MCS can be found in the
+<a class="reference internal" href="multichip_sync.html"><span class="doc">Multi-Chip Synchronization Guide</span></a>.</p>
+<p><strong>Figure 1</strong>: ADF4371 PLL/synthesizer calibration results.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/mcs_1.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/mcs_1.jpg" />
+<p><strong>Figure 2</strong>: Tx phase-alignment results using pulsed baseband waveform.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/mcs_2.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/mcs_2.jpg" />
+<p><strong>Figure 4</strong>: Full I/Q band chirp signal and CW signal results.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/mcs_3.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/mcs_3.jpg" />
+<p><strong>Figure 5</strong>: MCS results comparison between new and baseline NCO phase offsets.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/mcs_4.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/mcs_4.jpg" />
+</section>
+<section id="quadmxfe-adctodac-loopback-m">
+<span id="quadmxfe-adctodac-loopback"></span><h3>QuadMxFE_ADCtoDAC_Loopback.m<a class="headerlink" href="#quadmxfe-adctodac-loopback-m" title="Link to this heading"></a></h3>
+<p>The Quad-MxFE Platform is capable of configuring each <a class="icon adi reference external" href="https://www.analog.com/AD9081" target="_blank">AD9081</a> into a mode
+such that the digitized ADC output can be sent through the DDCs and looped back
+on-chip into the DUCs prior to being synthesized by the DACs. This allows the
+user to bypass the JESD204c digital interface and therefore achieve a
+low-latency loopback capability.</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/qmxfe_mxfe_loopback_path.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/qmxfe_mxfe_loopback_path.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">MxFE loopback path</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/qmxfe_script_test_setup_adctodac_loopback.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-quadmxfe1-ebz/quadmxfe/qmxfe_script_test_setup_adctodac_loopback.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">ADC-to-DAC loopback test setup</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="debug">
+<h2>Debug<a class="headerlink" href="#debug" title="Link to this heading"></a></h2>
+<section id="no-blue-lights-visible-on-board">
+<h3>No Blue Lights Visible on Board<a class="headerlink" href="#no-blue-lights-visible-on-board" title="Link to this heading"></a></h3>
+<p>If no blue lights are visible on the board, then the PLLs are not locked. The
+most likely cause of this is the lack of a 500 MHz source into J41. Check the
+input power and state of the source. It should be 500 MHz &#64; ~0 dBm. Once the
+500 MHz signal is verified, the FPGA programming must be rerun.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Quad-MxFE Prototyping Platform User Guide</a>
+    <a href="quick_start.html" title="Next document (Alt+Shift+RightArrow)" class="next">Quad-MxFE Software Quick Start Guide</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

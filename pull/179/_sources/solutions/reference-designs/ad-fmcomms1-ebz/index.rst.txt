@@ -145,6 +145,59 @@ consumes power.
 Three Pi attenuators (0 dB default) are included in the design: one in the
 receive chain (before the balun) and two in the transmit chain.
 
+I2C-to-SPI Bridge
+~~~~~~~~~~~~~~~~~~
+
+To stay within the LPC FMC pin count, the board uses a PIC microcontroller
+as an I2C-to-SPI bridge for device register access (SPI chip selects would
+exceed the LPC pin count).
+
+.. list-table:: I2C Slave Addresses
+   :header-rows: 1
+
+   * - FMC Connector
+     - I2C Address
+   * - HPC
+     - 0x58
+   * - LPC
+     - 0x59
+
+.. list-table:: SPI Device Map
+   :header-rows: 1
+
+   * - Device
+     - Chip Select
+     - SPI Mode
+     - Function
+   * - :adi:`AD8366`
+     - 6
+     - MODE_0, 3-Wire
+     - VGA
+   * - :adi:`AD9122`
+     - 0
+     - MODE_0
+     - DAC
+   * - :adi:`AD9523-1`
+     - 3
+     - MODE_0, 3-Wire
+     - Clock Distribution
+   * - :adi:`AD9548`
+     - 2
+     - MODE_0, 3-Wire
+     - Clock Sync
+   * - :adi:`AD9643`
+     - 1
+     - MODE_0, 3-Wire
+     - ADC
+   * - :adi:`ADF4351`
+     - 4
+     - MODE_0
+     - RX PLL
+   * - :adi:`ADF4351`
+     - 5
+     - MODE_0
+     - TX PLL
+
 Supported Carriers
 ------------------
 
@@ -153,6 +206,82 @@ Supported Carriers
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
 - :xilinx:`KC705`
 - :xilinx:`VC707`
+
+Quick Start
+-----------
+
+Quick start guides are available for:
+
+- **Zynq (ZC702, ZC706, ZedBoard)**: Write the Kuiper Linux SD card image,
+  insert the SD card, connect HDMI and USB keyboard/mouse, and power on.
+  The IIO Oscilloscope application launches automatically on the desktop.
+- **MicroBlaze (KC705, VC707)**: Download the bitstream and ELF image via
+  the XSCT console. Connect to IIO Oscilloscope remotely over the network.
+- **No-OS (baremetal)**: Build the HDL bitfile and generate the no-OS ELF
+  from the SDK sample program.
+
+.. note::
+
+   This is a persistent filesystem. Always shut down properly from the
+   terminal (``sudo shutdown -h now``) before disconnecting power, otherwise
+   the SD card may be corrupted.
+
+Digital Interface Timing Validation
+-----------------------------------
+
+Both the :adi:`AD9122` (DAC) and :adi:`AD9643` (ADC) have tight FPGA-to-converter
+digital interface timing requirements. The system software uses on-chip
+verification mechanisms to ensure reliable data transfer across voltage,
+temperature, and different carrier boards.
+
+AD9122 (DAC)
+~~~~~~~~~~~~
+
+The AD9122 provides timing verification via its on-chip Sample Error Detection
+(SED) circuitry. The SED compares input data samples captured at the digital
+input pins with comparison values loaded over SPI. Differences are detected
+and stored in error registers.
+
+The SED circuitry operates on four 16-bit input words (I0, Q0, I1, Q1) loaded
+to registers ``0x68``-``0x6F``. Three flag bits in register ``0x67`` indicate
+comparison results, and registers ``0x70``-``0x73`` accumulate per-bit error
+information.
+
+The system software loads a predetermined pattern, enables SED, and sends
+data over the high-speed interface. If errors are detected, the DCI (Data
+Clock Input) delay is adjusted using a programmable delay (350 ps to 925 ps).
+
+.. figure:: ad9122_dci.png
+   :align: center
+   :width: 400
+
+   AD9122 DCI delay adjustment
+
+.. note::
+
+   DCI delay adjustment compensates for clock-to-data skew but does not
+   resolve data pin-to-pin timing issues, which must be handled inside the
+   FPGA.
+
+AD9643 (ADC)
+~~~~~~~~~~~~
+
+The :adi:`AD9643` uses its built-in test mode register (``0x0D``) to generate
+known PN sequences (LFSR/PRBS) for timing verification. The ADC PN sequences
+use the following polynomials:
+
+- **Long**: x\ :sup:`16` + x\ :sup:`6`
+- **Short**: x\ :sup:`8` + x\ :sup:`6` + x\ :sup:`0`
+
+The HDL includes a PN monitor module that verifies the received sequence.
+When mismatches occur, the DCO (Data Clock Output) delay is adjusted via SPI
+register ``0x017``, providing a fine delay range from 100 ps to 3200 ps.
+
+.. figure:: ad9643_dco.png
+   :align: center
+   :width: 500
+
+   AD9643 DCO delay adjustment
 
 HDL Reference Design
 --------------------
@@ -180,15 +309,42 @@ Linux Drivers
 
 The following IIO subsystem drivers are used:
 
-- :adi:`AD9523-1`: PLL clock generator
-- :adi:`ADF4350`: Synthesizer/tuning
-- :adi:`AD8366`: Variable gain amplifier
-- :adi:`AD9643`: ADC digital interface
-- :adi:`AD9122`: DAC/DDS digital interface
+.. list-table::
+   :header-rows: 1
 
-Applications include IIO Oscilloscope (local or remote), shell scripts for
-command-line control, ``fru_dump`` for board info readback, and ``xcomm_cal``
-for calibration.
+   * - Device
+     - Driver
+     - Function
+   * - :adi:`AD9523-1`
+     - :git-linux:`drivers/iio/frequency/ad9523.c`
+     - PLL clock generator
+   * - :adi:`ADF4351`
+     - :git-linux:`drivers/iio/frequency/adf4350.c`
+     - Synthesizer / LO tuning
+   * - :adi:`AD8366`
+     - :git-linux:`drivers/iio/amplifiers/ad8366.c`
+     - Variable gain amplifier
+   * - :adi:`AD9643`
+     - :git-linux:`drivers/iio/adc/cf_axi_adc_core.c`
+     - ADC digital interface
+   * - :adi:`AD9122`
+     - :git-linux:`drivers/iio/frequency/cf_axi_dds.c`
+     - DAC / DDS interface
+   * - I2C-SPI Bridge
+     - :git-linux:`drivers/spi/spi-xcomm.c`
+     - PIC microcontroller bridge
+
+Linux Applications
+~~~~~~~~~~~~~~~~~~
+
+- **IIO Oscilloscope**: Full graphical interface for device control and data
+  capture. Can be used locally (HDMI + USB keyboard) or remotely over the
+  network.
+- **Shell scripts**: Command-line control of DDS frequencies, amplitudes, and
+  LO sweep via sysfs attributes.
+- **fru_dump**: Reads the FRU EEPROM for board identification and calibration
+  data.
+- **xcomm_cal**: Board calibration utility.
 
 I/Q Correction
 ~~~~~~~~~~~~~~

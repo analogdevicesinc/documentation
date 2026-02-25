@@ -105,6 +105,58 @@ The carrier setup requires power, UART (115200), Ethernet (Linux), HDMI
    :align: center
    :width: 500
 
+Required Software
+~~~~~~~~~~~~~~~~~
+
+- SD card (8 GB or larger) imaged with the latest
+  :doc:`Kuiper Linux </linux/kuiper/index>` release
+- A UART terminal (PuTTY / Tera Term / Minicom), baud rate 115200 (8N1)
+
+SD Card Boot Files (ZCU102)
++++++++++++++++++++++++++++
+
+Copy the following files into the SD card **BOOT** partition:
+
+- **Image** from ``zynqmp-common`` folder
+- **BOOT.BIN** specific to AD-FMCDAQ3-EBZ + ZCU102
+- **system.dtb** specific to AD-FMCDAQ3-EBZ + ZCU102
+
+Hardware Setup (ZCU102)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Insert the SD card into the SD Card Interface Connector (J100).
+#. Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **HPC0**
+   (FMC0) socket.
+#. Plug your DisplayPort monitor into the Display Port Video Connector
+   (P11).
+#. Plug your USB keyboard and mouse into the USB 2.0 connector (J83).
+#. Plug the power supply into the 12 V power input connector (J52).
+   **Do not turn the device on yet.**
+#. Set the boot mode jumpers on SW6: position 1 **ON**, positions 2-4
+   **OFF**.
+#. Turn on the power switch. Wait approximately 30 seconds for the
+   DONE LED to turn green.
+
+IIO Oscilloscope
+~~~~~~~~~~~~~~~~
+
+The :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` application
+can be used to interact with the platform either locally or remotely:
+
+- **Local**: Connect a DisplayPort monitor and USB keyboard/mouse
+  directly to the ZCU102. The IIO Oscilloscope application launches
+  automatically on the desktop.
+- **Remote**: Connect USB UART J83 to your host PC and plug an Ethernet
+  cable into the RJ45 connector (P12). Use ``ifconfig`` on the UART
+  terminal to obtain the board IP address, then connect using the IIO
+  Oscilloscope on your host PC via **Settings > Connect**.
+
+.. note::
+
+   This is a persistent filesystem. Always shut down properly from the
+   terminal (``sudo shutdown -h now``) before disconnecting power, otherwise
+   the SD card may be corrupted.
+
 Hardware
 --------
 
@@ -143,6 +195,12 @@ Functional Overview
 The system consists of four functional partitions: transmit path, receive
 path, clocking, and power supply.
 
+.. figure:: fmcdaq3_block_diagram.jpg
+   :align: center
+   :width: 600
+
+   AD-FMCDAQ3-EBZ functional block diagram
+
 **Transmit**
 
 The reference design generates the signals for :adi:`AD9152` either from an
@@ -178,6 +236,12 @@ The default reference design uses the following configuration:
 The board receives all power from the FPGA board through the FMC connector.
 The monitoring function of the board's DC voltages is accomplished using the
 :adi:`AD7291` SAR ADC.
+
+.. figure:: fmcdaq3_monitoring_adc.jpg
+   :align: center
+   :width: 600
+
+   AD7291 voltage monitoring block diagram
 
 The VADJ pin from the FMC connector is used for supplying the translators
 VCCA voltage. Supported voltage values of this pin are: 1.2 V / 1.5 V /

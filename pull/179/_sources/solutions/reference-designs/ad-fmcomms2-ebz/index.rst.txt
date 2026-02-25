@@ -17,6 +17,99 @@ uses a wideband transformer for broader tuning range applications.
    :align: center
    :width: 400
 
+.. toctree::
+   :hidden:
+
+   card_specification
+   quickstart_microblaze
+   quickstart_zynqmp
+   no_os_software
+   filter_wizard
+   iq_datafiles
+   interface_timing
+   testing
+
+Table of Contents
+-----------------
+
+#. :doc:`RF Card Specifications <card_specification>`
+#. :doc:`MicroBlaze Quick Start Guide <quickstart_microblaze>`
+#. :doc:`ZCU102 Quick Start Guide <quickstart_zynqmp>`
+#. :doc:`No-OS Software <no_os_software>`
+#. :doc:`AD9361 Filter Design Wizard <filter_wizard>`
+#. :doc:`I/Q Data Files <iq_datafiles>`
+#. :doc:`Digital Interface Timing Validation <interface_timing>`
+#. :doc:`Production Testing <testing>`
+
+AD936x Board Comparison
+-----------------------
+
+The AD-FMCOMMS2/3/4/5-EBZ and ARRADIO cards are high-speed analog modules
+designed to showcase the :adi:`AD9361` or :adi:`AD9364`, a high performance,
+highly integrated RF agile transceiver intended for use in RF applications such
+as 3G and 4G base station applications and software defined radios.
+
+The :adi:`AD9361` and :adi:`AD9364` operate in the 70 MHz to 6 GHz range,
+covering most licensed and unlicensed bands. The boards, due to discrete
+external components, may have less performance on some of the RF input/output
+connectors (for example, the FMCOMMS2 and specific connectors on the FMCOMMS5
+are specifically tuned to 2.4 GHz).
+
+The difference between the :adi:`AD9361` (2 Rx, 2 Tx) and :adi:`AD9364`
+(1 Rx, 1 Tx) is the number of channels. Software, HDL, pinout, etc. are all
+exactly the same.
+
+.. list-table:: Available Hardware
+   :header-rows: 1
+
+   * - Board
+     - AD936x Device
+     - Simultaneous Tx/Rx
+     - Tx Ranges
+     - Rx Ranges
+     - Connector
+   * - :ref:`ARRADIO <arradio>`
+     - 1 x AD9361
+     - 2 x 2
+     - 2 (2400-2500 MHz)
+     - 2 (2400-2500 MHz)
+     - HSMC
+   * - AD-FMCOMMS2-EBZ
+     - 1 x AD9361
+     - 2 x 2
+     - 2 (2400-2500 MHz)
+     - 2 (2400-2500 MHz)
+     - FMC-LPC
+   * - :ref:`AD-FMCOMMS3-EBZ <ad-fmcomms3-ebz>`
+     - 1 x AD9361
+     - 2 x 2
+     - 2 (70-6000 MHz)
+     - 2 (70-6000 MHz)
+     - FMC-LPC
+   * - :ref:`AD-FMCOMMS4-EBZ <ad-fmcomms4-ebz>`
+     - 1 x AD9364
+     - 1 x 1
+     - 1 (2400-2500 MHz) / 1 (70-6000 MHz)
+     - 1 (2400-2500 MHz) / 1 (70-6000 MHz)
+     - FMC-LPC
+   * - :ref:`AD-FMCOMMS5-EBZ <ad-fmcomms5-ebz>`
+     - 2 x AD9361
+     - 4 x 4
+     - 4 (2400-2500 MHz) / 4 (70-6000 MHz)
+     - 4 (2400-2500 MHz) / 4 (70-6000 MHz)
+     - 2 x FMC-LPC
+
+.. note::
+
+   While the AD9361 digital interface supports both LVDS and CMOS mode, all the
+   FMCOMMS boards have been verified in LVDS mode only. Configuring the digital
+   interface in CMOS mode is not tested nor supported on these platforms. This is
+   due to the purposefully weak CMOS drivers (to keep noise off the part as much
+   as possible) and the large capacitance of the FMC connector.
+
+   CMOS mode is known to work on platforms without connectors between the AD936x
+   and the digital baseband device (like PicoZed SDR).
+
 Introduction
 ------------
 
@@ -30,6 +123,7 @@ broad range of research, academic, industrial, and defense applications. The
 - Integrated 12-bit DACs and ADCs
 - Integrated frequency synthesizers
 - Integrated digital filtering and calibration
+- SPI access for all device registers
 
 Applications
 ~~~~~~~~~~~~
@@ -37,11 +131,21 @@ Applications
 - Wireless communications demonstration and learning tool
 - Remote radio head
 - Software-defined radio
+- Satellite modems
 - Electronic test and measurement equipment
+- Radar and advanced imaging
 - General purpose data acquisition
 
 Functional Overview
 -------------------
+
+.. figure:: cf_ad9361_zc706_bd.jpg
+   :align: center
+
+   AD-FMCOMMS2-EBZ functional block diagram
+
+The system consists of four functional partitions: receive path, transmit path,
+clocking, and power supply. The data path is fully integrated into the AD9361.
 
 Receive Path
 ~~~~~~~~~~~~
@@ -225,6 +329,11 @@ Prerequisites
 ZC706 Setup
 ~~~~~~~~~~~~
 
+.. figure:: cf_ad9361_setup.jpg
+   :align: center
+
+   ZC706 + FMCOMMS2 setup
+
 #. Insert the SD card with the Kuiper Linux image into the ZC706.
 #. Connect the AD-FMCOMMS2-EBZ to the FMC LPC connector (J5).
 #. Set boot jumpers (SW11): 1-Down, 2-Down, 3-Up, 4-Up, 5-Down.
@@ -237,6 +346,11 @@ ZC706 Setup
 ZedBoard Setup
 ~~~~~~~~~~~~~~
 
+.. figure:: quickstart/zed_setup.jpg
+   :align: center
+
+   ZedBoard + FMCOMMS2 setup
+
 #. Insert the SD card with the Kuiper Linux image.
 #. Connect the AD-FMCOMMS2-EBZ to the FMC LPC connector (J1).
 #. Set boot jumpers: JP7-JP11 for SD card boot, JP6 (MIO0) to GND.
@@ -246,6 +360,11 @@ ZedBoard Setup
 #. Blue LED and green LED illuminate (~15 seconds), HDMI display follows
    (~30 seconds).
 
+.. figure:: quickstart/zed_sw.png
+   :align: center
+
+   ZedBoard boot switch configuration
+
 .. tip::
 
    To protect against ESD damage, consider using a plexiglass cover over the
@@ -254,6 +373,11 @@ ZedBoard Setup
 The board can also be accessed remotely over the network. By default, DHCP is
 enabled. A static IP can be configured using the ``enable_static_ip.sh``
 script.
+
+Additional platform-specific quickstart guides:
+
+- :doc:`MicroBlaze (KC705/VC707) Quick Start Guide <quickstart_microblaze>`
+- :doc:`ZCU102 Quick Start Guide <quickstart_zynqmp>`
 
 HDL Reference Design
 --------------------
@@ -304,9 +428,8 @@ The No-OS bare-metal software provides direct hardware access without a Linux
 operating system. Supported platforms include AC701, KC705, VC707, ZC702,
 ZC706, and ZedBoard.
 
-Console commands include control of TX/RX LO frequencies, sample rates,
-RF bandwidth, attenuation, gain control modes, FIR filter enable, and DDS
-tone generation.
+For detailed No-OS serial commands and setup information, see
+:doc:`no_os_software`.
 
 - :git-no-OS:`projects/ad9361`
 - :git-no-OS:`drivers/rf-transceiver/ad9361`
@@ -316,7 +439,8 @@ AD9361 Filter Design Wizard
 
 The AD9361 Filter Design Wizard (MATLAB-based) allows design of transmitter
 and receiver FIR filters, accounting for magnitude and phase response from
-analog and digital filter stages.
+analog and digital filter stages. For the full walkthrough, see
+:doc:`filter_wizard`.
 
 LTE preset profiles are available:
 
@@ -349,11 +473,27 @@ The filter wizard supports phase equalization (reducing passband group delay
 variance from 16.6 ns to 1.52 ns typical), FVTool integration, and direct
 target connection for uploading coefficients to Zynq boards.
 
+RF Blockset Model
+~~~~~~~~~~~~~~~~~
+
+MathWorks provides two validated `RF Blockset
+<https://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html>`__
+models of the :adi:`AD9361` for Tx and Rx signal paths. These models can be
+used to iterate and evaluate designs prior to hardware implementation.
+
+Required MATLAB toolboxes: MATLAB, Simulink, Simscape, RF Toolbox, RF Blockset,
+Stateflow, Signal Processing Toolbox, DSP System Toolbox, Communications System
+Toolbox, and Fixed-Point Designer.
+
 More Information
 ----------------
 
 - :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
 - :adi:`AD9361 Product Page <AD9361>`
+- :doc:`RF Card Specifications <card_specification>`
+- :doc:`I/Q Data Files <iq_datafiles>`
+- :doc:`Digital Interface Timing Validation <interface_timing>`
+- :doc:`Production Testing <testing>`
 
 Support
 -------

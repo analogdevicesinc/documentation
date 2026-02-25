@@ -3,98 +3,96 @@
 ADRV9001/ADRV9002 User Guide
 ==============================
 
-Introduction
-------------
+.. image:: adrv9002_board.png
+   :align: center
+   :width: 500
 
-The :adi:`ADRV9002` is a highly integrated, dual narrow/wideband RF transceiver
-with integrated digital front end (DFE) designed for mission critical
-communications. This design allows controlling, receiving, and transmitting
-sample streams from/to an ADRV9001/ADRV9002 device through two independent
-source synchronous interfaces.
+The :adi:`EVAL-ADRV9002` (ADRV9002NP/W1/PCBZ, low band 30 MHz to 3 GHz) and
+:adi:`EVAL-ADRV9002` (ADRV9002NP/W2/PCBZ, high band 3 GHz to 6 GHz) are FMC
+radio cards for the :adi:`ADRV9002` highly integrated RF transceiver, offering
+dual channel transmitters and dual channel receivers, integrated synthesizers,
+and digital signal processing functions. The IC delivers a versatile combination
+of high performance and low power consumption required by battery powered radio
+equipment and can operate in both FDD and TDD modes. The ADRV9002 operates from
+30 MHz to 6000 MHz covering the VHF, licensed and unlicensed cellular bands, and
+ISM bands. The IC is capable of supporting both narrowband and wideband standards
+up to 40 MHz bandwidth on both receive and transmit.
 
-The design supports both CMOS and LVDS interfaces (selectable at build time),
-and SDR or DDR modes in CMOS mode, as well as one or two lane mode in LVDS.
-Mode selection is runtime configurable.
+While the complete chip level design package can be found on the
+:adi:`ADI web site <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`,
+information on the card and how to use it, the design package that surrounds it,
+and the software which can make it work can be found here.
 
-Supported Devices
+.. toctree::
+   :hidden:
+
+   quickstart
+   quickstart/zynqmp
+   quickstart/zynq
+   quickstart/zed
+   quickstart/a10soc
+   reference_hdl
+   axi_adrv9002
+   no_os_setup
+
+Table of contents
 -----------------
 
-- :adi:`ADRV9002`
-- :adi:`ADRV9001`
+#. :ref:`Getting Started <adrv9001-quickstart>`
 
-Supported Carriers
-------------------
+   #. :doc:`Quick Start Guides <quickstart>`
 
-.. list-table::
-   :header-rows: 1
+      #. :doc:`Linux on ZCU102 <quickstart/zynqmp>`
+      #. :doc:`Linux on ZC706 <quickstart/zynq>`
+      #. :doc:`Linux on ZedBoard <quickstart/zed>`
+      #. :doc:`Linux on Arria 10 SoC <quickstart/a10soc>`
 
-   * - Board
-     - HDL
-     - Linux
-   * - :intel:`Arria 10 SoC
-       <content/www/us/en/products/details/fpga/development-kits/arria/10-sx.html>`
-     - Yes
-     - Yes
-   * - :xilinx:`ZC706`
-     - Yes
-     - Yes
-   * - :xilinx:`ZCU102`
-     - Yes
-     - Yes
-   * - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
-     - Yes
-     - Yes
+   #. :doc:`Kuiper Linux </linux/kuiper/index>`
 
-HDL Reference Design
---------------------
+#. Software Solutions
 
-Build Parameters
-~~~~~~~~~~~~~~~~
+   #. :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+   #. `Transceiver Toolbox for MATLAB and Simulink <https://github.com/analogdevicesinc/TransceiverToolbox>`__
+   #. `pyadi-iio <https://analogdevicesinc.github.io/pyadi-iio/>`__
 
-.. list-table::
-   :header-rows: 1
+#. Embedded Resources
 
-   * - Parameter
-     - Default
-     - Description
-   * - CMOS_LVDS_N
-     - 0
-     - Interface type: 0 - LVDS, 1 - CMOS
+   #. :git-linux:`ADRV9002 Linux Device Driver <drivers/iio/adc/navassa>`
+   #. :doc:`No-OS System Level Design Setup <no_os_setup>`
 
-The design has two receive paths and two transmit paths. One of the receive
-paths (Rx12) has four channels and the other (Rx2) two channels. These can
-work independently with two active channels each, or with just the Rx12 path
-having four active channels while Rx2 is disabled.
+#. FPGA Resources
 
-Block Diagram
-~~~~~~~~~~~~~
+   #. :doc:`HDL Reference Design <reference_hdl>`
+   #. :doc:`AXI ADRV9002 Interface Core <axi_adrv9002>`
+   #. :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
 
-.. figure:: adrv9002_bd.png
-   :align: center
+#. Hardware Resources
 
-   ADRV9001/ADRV9002 block diagram
+   #. :adi:`ADRV9002 Product Page <ADRV9002>`
+   #. :adi:`Full Datasheet and Chip Design Package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
 
-HDL Source Code
-~~~~~~~~~~~~~~~
+#. Help and Support
 
-- :git-hdl:`projects/adrv9001`
+   #. :ez:`Design Support ADRV9001-ADRV9007 <wide-band-rf-transceivers/design-support-adrv9001-adrv9007>` — hardware technical support
+   #. :ez:`TES GUI Software Support ADRV9001-ADRV9007 <wide-band-rf-transceivers/tes-gui-software-support-adrv9001-adrv9007>` — evaluation system software support
+   #. :ez:`FPGA Reference Designs <fpga>` — HDL reference design questions
+   #. :ez:`Linux Software Drivers <linux-software-drivers>` — Linux distribution, drivers, and device tree questions
+   #. :ez:`Microcontroller No-OS Drivers <microcontroller-no-os-drivers>` — no-OS driver questions
 
-Software Support
-----------------
+Downloads
+---------
 
-Linux Device Driver
-~~~~~~~~~~~~~~~~~~~
+The latest boot files for ADRV9002 (for all supported carriers) can be found in
+the latest :doc:`Kuiper Linux </linux/kuiper/index>` release.
 
-- :git-linux:`drivers/iio/adc/navassa`
+Source code:
 
-More Information
-----------------
+- :git-linux:`Linux driver <drivers/iio/adc/navassa>`
+- :git-hdl:`HDL project <projects/adrv9001>`
+- :git-iio-oscilloscope:`IIO Oscilloscope plugin <plugins/adrv9002.c>`
+- `pyadi-iio example <https://github.com/analogdevicesinc/pyadi-iio/blob/main/examples/adrv9002_example.py>`__
 
-- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+Videos
+------
 
-Support
--------
-
-Analog Devices will provide limited online support for anyone using the
-reference design with Analog Devices components via the
-:ez:`FPGA Reference Designs Forum <fpga>`.
+- :adi:`ADRV9002: Narrow to Wide Band Integrated RF Transceiver <en/education/education-library/videos/6170462863001.html>`

@@ -15,6 +15,34 @@ in a FIFO buffer and then passed to the system memory (DDR).
 The user can capture up to 1048576 samples per channel if both channels are
 selected, or 2097152 per channel if only one channel is selected.
 
+The AD9213-DUAL-EBZ platform includes two :adi:`AD9213` single, 12-bit,
+10 GSPS radio frequency (RF) ADCs with the JESD204B interface. The two
+10 GSPS data converters can be interleaved to sample at 20 GSPS, enabled by
+their built-in multi-chip synchronization capability. The :adi:`ADF4377`
+ultra-low jitter dual output integer-N PLL with integrated VCO supports the
+interleaving. The :adi:`LTC6955` low jitter fanout clock buffer and the
+:adi:`LTC6952` JESD204B clock generation and distribution IC enable a clocking
+architecture built for multi-channel scalability.
+
+Features
+~~~~~~~~
+
+- 20 GSPS sample rate through interleaving supporting up to 8 GHz of
+  instantaneous bandwidth
+- Multi-chip synchronization (MCS) at 10 GSPS using a scalable reference
+  distribution architecture
+- Input network supporting a wide analog frequency range DC to 9 GHz
+- Compact layout scheme that can be quickly adopted into a customer application
+
+Applications
+~~~~~~~~~~~~
+
+- Electronic warfare (EW)
+- Electronic countermeasures (ECM/ECCM)
+- Radar
+- Instrumentation
+- Multi-channel wideband receivers
+
 Supported Devices
 -----------------
 
@@ -29,15 +57,45 @@ Supported Carriers
 HDL Reference Design
 --------------------
 
-The design has two JESD receive chains each having 16 lanes at rate of
-12.5 Gbps. The links operate in Subclass 1 using the SYSREF signal for
-synchronization.
+The design has two JESD receive chains each having 16 lanes at a rate of
+12.5 Gbps. The JESD receive chain consists of a physical layer represented by
+an XCVR module, a link layer represented by an RX JESD LINK module. The
+transport layer is common and is represented by a single RX JESD TPL module.
 
-Both links are set for full bandwidth mode with the following parameters:
+The links operate in Subclass 1 using the SYSREF signal to edge-align the
+internal local multiframe clock and to release the received data from all
+lanes simultaneously, ensuring that data from all channels is synchronized at
+the application layer.
 
-- Deframer: L=32, M=2, F=2, S=16, N'=16
-- JESD204B Lane Rate: 12.5 Gbps
-- Device Clock: 10000 MHz
+The transport layer component presents 1024 bits on its output on every clock
+cycle, representing 16 samples per converter. A custom packing module is
+implemented in the system top module because the typical AXI_PACK IP does not
+meet timing for this design. An ADC buffer stores 1024k samples per converter
+in the fabric before transferring with the DMA.
+
+JESD204B Configuration
+~~~~~~~~~~~~~~~~~~~~~~
+
+Both links are set for full bandwidth mode and operate with the following
+parameters:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Value
+   * - Deframer (L, M, F, S, N')
+     - L=32, M=2, F=2, S=16, N'=16
+   * - GLBLCLK
+     - 312.5 MHz (Lane Rate / 40)
+   * - REFCLK
+     - 312.5 MHz (Lane Rate / 20)
+   * - SYSREF
+     - 1.46 MHz (DEVCLK / 2048)
+   * - DEVCLK
+     - 10000 MHz
+   * - JESD204B Lane Rate
+     - 12.5 Gbps
 
 Block Diagram
 ~~~~~~~~~~~~~
@@ -55,10 +113,114 @@ Clock Sources
 
    Clock sources diagram
 
+Both physical layer transceiver modules receive two reference clocks from
+the LTC6952 OUT4-7 outputs. The global clock (Lane Rate / 40) is received
+from the OUT8 output and SYSREF is received from the OUT9 output of the
+LTC6952.
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`projects/ad9213_dual_ebz`
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ad9208.c`
+
+Quick Start Guide
+-----------------
+
+Hardware Requirements
+~~~~~~~~~~~~~~~~~~~~~
+
+- Intel Stratix 10 SX SoC Development Kit (1SX280HU2F50E1VGAS)
+- AD9213-DUAL-EBZ evaluation board
+- RF signal generator (analog signal source and 500 MHz reference clock)
+- RF power splitter for splitting the test tone to both ADC inputs
+- Phase-matched coaxial cables
+- RF balun for single-ended-to-differential conversion of the 500 MHz
+  reference clock
+- PC with Windows, one mini-USB, one micro-USB, and one Ethernet cable
+
+Software Requirements
+~~~~~~~~~~~~~~~~~~~~~
+
+- `Intel Quartus Prime Programmer 19.3 or later
+  <https://www.intel.com/content/www/us/en/software-kit/661657/intel-quartus-prime-pro-edition-design-software-version-19-3-for-windows.html>`__
+- `PuTTY <https://www.putty.org>`__
+- `IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`__
+
+Board Setup
+~~~~~~~~~~~
+
+Configure the Stratix 10 SX SoC board switches as follows:
+
+**SW1:**
+
+.. list-table::
+   :header-rows: 1
+
+   * - S10
+     - M10B
+     - FMCA
+     - FMCB
+     - PCIE
+     - MSTR0
+     - MSTR1
+     - MSTR2
+   * - OFF
+     - ON
+     - ON
+     - ON
+     - ON
+     - ON
+     - ON
+     - ON
+
+**SW2 (MSEL):**
+
+.. list-table::
+   :header-rows: 1
+
+   * - PIN1
+     - PIN2
+     - PIN3
+     - PIN4
+   * - ON
+     - ON
+     - ON
+     - OFF
+
+**SW3 (USR_DIPSW_FPGA):** All pins OFF.
+
+**SW4:**
+
+.. list-table::
+   :header-rows: 1
+
+   * - I2C FLAG
+     - DC_POWER CTRL
+     - FACTORY LOAD
+     - SECURITY MODE
+   * - ON
+     - OFF
+     - OFF
+     - ON
+
+Program an SD card (16 GB minimum) with the
+`ADI Kuiper Linux image <https://wiki.analog.com/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`__
+and place the provided ``socfpga_stratix10_socdk.dtb``, ``u-boot.itb``, and
+the appropriate ``Image`` file into the top-level directory of the BOOT
+partition.
+
+Program the FPGA using Quartus Prime Programmer with the provided ``.sof``
+file. The board runs at login ``root`` with password ``analog``. Use IIO
+Oscilloscope to connect to the board by entering ``ip:<board-ip>`` in the URL
+field on the Connect tab.
 
 More Information
 ----------------

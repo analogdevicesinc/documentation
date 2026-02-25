@@ -1,0 +1,93 @@
+.. _ad-fmcomms2-ebz-microblaze:
+
+MicroBlaze Quick Start Guide
+=============================
+
+This guide provides instructions on how to set up the AD-FMCOMMS2-EBZ on
+MicroBlaze-based FPGA carriers.
+
+Supported Carriers
+------------------
+
+- :xilinx:`KC705`
+- :xilinx:`VC707`
+
+Required Hardware
+-----------------
+
+- Xilinx KC705 or VC707 FPGA board
+- AD-FMCOMMS2-EBZ or AD-FMCOMMS3-EBZ FMC board
+- Micro / Mini-USB cable
+
+Required Software
+-----------------
+
+- Bitfile and Linux ELF image
+- Xilinx XSCT/XSDB console (part of Vivado/Vitis)
+- A UART terminal (Tera Term / PuTTY / Minicom), baud rate 115200 (8N1)
+
+Hardware Setup
+--------------
+
+#. Connect the AD-FMCOMMS2-EBZ FMC board to the FPGA carrier:
+
+   - **KC705**: LPC FMC connector
+   - **VC707**: FMC1 HPC connector
+
+#. Connect USB JTAG (Micro USB) to your host PC.
+#. Turn on the power switch on the FPGA board.
+#. Open the XSCT/XSDB console to configure the FPGA and download the ELF
+   image.
+
+Loading the Design
+-------------------
+
+Use the XSCT console to download the bitstream and ELF image to the FPGA
+board. The steps are similar to other MicroBlaze-based ADI reference designs:
+
+#. Open the XSCT console.
+#. Connect to the target board.
+#. Download the bitstream (``.bit`` file).
+#. Download the Linux ELF image (``.elf`` file).
+#. The system will boot into Buildroot Linux.
+
+Expected Boot Messages
+----------------------
+
+After loading, the UART terminal will display Linux kernel boot messages. Key
+messages to look for:
+
+- ``ad9361 spi0.0: ad9361_probe : AD936x Rev 2 successfully initialized``
+  confirms the AD9361 device was detected and initialized.
+- ``cf_axi_dds ... probed DDS AD9361`` confirms the AXI DAC DDS core is
+  operational.
+- ``cf_axi_adc ... probed ADC AD9361 as MASTER`` confirms the AXI ADC core is
+  operational.
+- ``axi_sysid ... [fmcomms2] on [kc705]`` confirms the correct HDL project
+  was loaded.
+- ``Starting IIO Server Daemon`` confirms the IIO daemon is running and ready
+  for remote connections.
+
+After boot completes, log in with username ``root`` (default password: ``analog``).
+
+IIO Oscilloscope Remote
+-----------------------
+
+The :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` application can
+be used to connect remotely to the MicroBlaze platform from a network-enabled
+Linux host.
+
+#. Build and start the IIO Oscilloscope on your host PC.
+#. Go to **Settings > Connect** and enter the IP address of the target in the
+   popup window.
+#. The FMCOMMS2 plugin will load, allowing control of the AD9361 transceiver.
+
+.. figure:: quickstart/fmcomms2-osc-plugin.png
+   :align: center
+
+   IIO Oscilloscope FMCOMMS2 plugin
+
+.. figure:: quickstart/fmcomms2-iio-osc.png
+   :align: center
+
+   IIO Oscilloscope capture display

@@ -160,6 +160,154 @@ ADRV9009 I/O signals for adding extra transceivers via the
 - I/O expansion connector (P25): 12 single-ended GPIOs (PL bank 65, 1.8 V)
 - PMOD connector (P10): 2x6 pin, 3.3 V, with FXLA108 level translator
 
+Quick Start
+-----------
+
+.. image:: adrv9009_zu11eg_setup.png
+   :align: center
+   :width: 600
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+- SD card (16 GB or larger) imaged with the latest
+  :doc:`Kuiper Linux </linux/kuiper/index>` release
+- A UART terminal (PuTTY / Tera Term / Minicom), baud rate 115200 (8N1)
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+- ADRV9009-ZU11EG SoM board
+- ADRV2CRR-FMC carrier board
+- Micro-USB cable
+- Ethernet cable
+- 12 V power supply (145 W, included with carrier kit)
+- Optionally: reference clock source, USB Type-C multiport hub, USB keyboard
+  and mouse, DisplayPort compatible monitor
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+#. Connect the ADRV9009-ZU11EG SoM to the ADRV2CRR-FMC carrier board.
+#. Connect the 12 V power supply to **P11**.
+#. Connect USB UART **P8** (Micro USB) to your host PC.
+#. Connect fan to **P9**.
+#. Insert SD card into socket **P15**.
+#. Configure the ADRV2CRR-FMC for SD boot using **S13**, **S14**, **S15**,
+   **S16**.
+#. Configure boot source using **S9** to boot from the carrier SD card.
+#. Turn on the power switch using **S12**.
+#. Optionally connect test and measurement equipment to U.FL RF ports.
+#. Observe kernel and serial console messages on your terminal (use the first
+   ttyUSB or COM port registered).
+
+Expected Boot Messages
+~~~~~~~~~~~~~~~~~~~~~~
+
+After power-on, the UART terminal will display U-Boot and Linux kernel boot
+messages. The key messages to look for:
+
+- ``adrv9009 spiX.0: adrv9009 Rev 192, ... successfully initialized via jesd204-fsm``
+  confirms both ADRV9009 devices initialized successfully.
+
+After boot completes, log in with:
+
+- Username: ``analog``
+- Password: ``analog``
+
+Verifying Operation
+~~~~~~~~~~~~~~~~~~~
+
+Verify all IIO devices are present:
+
+.. code-block:: bash
+
+   iio_info | grep iio:device
+
+Expected output:
+
+.. code-block::
+
+   iio:device0: ams
+   iio:device1: hmc7044-car
+   iio:device2: adm1177
+   iio:device3: hmc7044
+   iio:device4: adrv9009-phy
+   iio:device5: adrv9009-phy-b
+   iio:device6: axi-adrv9009-rx-obs-hpc (buffer capable)
+   iio:device7: axi-adrv9009-tx-hpc (buffer capable)
+   iio:device8: axi-adrv9009-rx-hpc (buffer capable)
+
+Verify clock chip lock status on the SoM:
+
+.. code-block:: bash
+
+   iio_attr -q -D hmc7044 status
+
+Expected output shows both PLLs locked:
+
+.. code-block::
+
+   --- PLL1 ---
+   Status: Locked
+   Using:  CLKIN1 @ 122880000 Hz
+   PFD:    7680 kHz
+   --- PLL2 ---
+   Status: Locked (Unsynchronized)
+   Frequency:      2949120000 Hz
+   SYSREF Status:  Valid & Locked
+   SYNC Status:    Unsynchronized
+   Lock Status:    PLL1 & PLL2 Locked
+
+Verify JESD204B link status:
+
+.. code-block:: bash
+
+   TERM=vt100 jesd_status -s
+
+Expected output shows all links enabled with DATA status:
+
+.. code-block::
+
+   (DEVICES) Found 3 JESD204 Link Layer peripherals
+
+   (0): 84a30000.axi-jesd204-tx
+   (1): 84a50000.axi-jesd204-rx
+   (2): 84a70000.axi-jesd204-rx
+
+   (STATUS)               (0)          (1)        (2)
+   Link is                 enabled      enabled    enabled
+   Link Status             DATA         DATA       DATA
+   Measured Link Clock     122.881      245.761    122.881
+   Reported Link Clock     122.880      245.760    122.880
+   Lane rate               4915.200     9830.400   4915.200
+   Lane rate / 40          122.880      245.760    122.880
+   LMFC rate               7.680        7.680      3.840
+   SYSREF captured         Yes          Yes        Yes
+   SYSREF alignment error  No           No         No
+   SYNC~                   deasserted
+
+.. note::
+
+   The default display output for this project uses DisplayPort (not HDMI).
+   If using a local display, ensure a DisplayPort monitor is connected.
+
+IIO Oscilloscope Remote
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` application
+can be used to connect remotely to the platform from a network-enabled Linux
+host.
+
+#. Build and start the IIO Oscilloscope on your host PC.
+#. Go to **Settings > Connect** and enter the IP address of the target.
+
+.. note::
+
+   This is a persistent filesystem. Always shut down properly from the
+   terminal (``sudo shutdown -h now``) before disconnecting power, otherwise
+   the SD card may be corrupted.
+
 HDL Reference Design
 --------------------
 

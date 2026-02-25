@@ -37,27 +37,101 @@ Supported Carriers
      - Yes
      - Yes
 
-Prerequisites
-~~~~~~~~~~~~~
+Quick Start
+-----------
 
+Required Software
+~~~~~~~~~~~~~~~~~
+
+- SD card (8 GB or larger) imaged with the latest
+  :doc:`Kuiper Linux </linux/kuiper/index>` release
+- A UART terminal (PuTTY / Tera Term / Minicom), baud rate 115200 (8N1)
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+- :xilinx:`ZCU102` Rev 1.0 or later
 - EVAL-ADRV9026 or EVAL-ADRV9029 evaluation board
-- One of the supported carrier boards
-- DisplayPort monitor, USB keyboard and mouse (for ARM/FPGA SoC platforms)
-- LAN cable and host PC (for FPGA-only solutions)
-- Internet connection for updating SD card contents
-- RF test equipment
+- Reference clock source
+- Micro-USB cable
+- Ethernet cable
+- Optionally: USB keyboard, mouse, and a DisplayPort compatible monitor
 
-Hardware Setup
-~~~~~~~~~~~~~~
+Hardware Setup (ZCU102)
+~~~~~~~~~~~~~~~~~~~~~~~
 
-The EVAL-ADRV9026/ADRV9029 boards connect to the HPC1 FMC connector (unless
-otherwise noted). The carrier setup requires:
+.. image:: ../images/adrv9026_zcu102_setup.jpg
+   :align: center
+   :width: 600
 
-- Power: 12 VDC, 3 A max
-- UART: 115200 baud
-- Ethernet: for Linux
-- HDMI/DisplayPort: if available
-- JTAG: for no-OS
+#. Connect the EVAL-ADRV9026/ADRV9029 board to the FPGA carrier **HPC1**
+   (FMC1) socket.
+#. Connect USB UART J83 (Micro USB) to your host PC.
+#. Insert the SD card into the slot.
+#. Configure ZCU102 for SD BOOT (mode SW6[4:1] switch in the position
+   **OFF, OFF, OFF, ON** as shown below).
+#. Turn on the power switch on the FPGA board.
+#. Observe kernel and serial console messages on your terminal (use the first
+   ttyUSB or COM port registered).
+
+.. image:: ../images/zcu102_1p0_bootmode.jpg
+   :align: center
+   :width: 400
+
+Expected Boot Messages
+~~~~~~~~~~~~~~~~~~~~~~
+
+After power-on, the UART terminal will display U-Boot and Linux kernel boot
+messages. The key message to look for:
+
+- ``adrv9025 spi1.0: adrv9025 Rev 176, Firmware 6.4.0.6 API version: 6.4.0.14 Stream version: 9.4.0.1 successfully initialized via jesd204-fsm``
+  confirms successful ADRV9025 initialization.
+
+After boot completes, log in with:
+
+- Username: ``analog``
+- Password: ``analog``
+
+Verifying Operation
+~~~~~~~~~~~~~~~~~~~
+
+Verify all IIO devices are present:
+
+.. code-block:: bash
+
+   iio_info | grep iio:device
+
+Expected output:
+
+.. code-block::
+
+   iio:device0: xilinx-ams
+   iio:device1: ad9528-1
+   iio:device2: adrv9025-phy
+   iio:device3: axi-adrv9025-rx-hpc (buffer capable)
+   iio:device4: axi-adrv9025-tx-hpc (buffer capable)
+
+Read the board FRU EEPROM for identification:
+
+.. code-block:: bash
+
+   fru-dump -b /sys/bus/i2c/devices/15-0050/eeprom
+
+IIO Oscilloscope Remote
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` application
+can be used to connect remotely to the platform from a network-enabled Linux
+host.
+
+#. Build and start the IIO Oscilloscope on your host PC.
+#. Go to **Settings > Connect** and enter the IP address of the target.
+
+.. note::
+
+   This is a persistent filesystem. Always shut down properly from the
+   terminal (``sudo shutdown -h now``) before disconnecting power, otherwise
+   the SD card may be corrupted.
 
 HDL Reference Design
 --------------------
@@ -134,7 +208,7 @@ Software Support
 Linux Device Driver
 ~~~~~~~~~~~~~~~~~~~
 
-- :git-linux:`drivers/iio/adc/adrv9025.c`
+- :git-linux:`drivers/iio/adc/adrv902x/adrv9025.c`
 
 IIO Devices
 ~~~~~~~~~~~

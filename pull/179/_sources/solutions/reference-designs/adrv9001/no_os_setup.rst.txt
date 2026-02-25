@@ -1,0 +1,106 @@
+.. _adrv9001-noos:
+
+ADRV9002 No-OS System Level Design Setup
+==========================================
+
+Supported Devices
+-----------------
+
+- :adi:`ADRV9002`
+
+Supported Carriers
+------------------
+
+- :xilinx:`ZCU102`
+- :xilinx:`ZC706`
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+Naming Conventions
+------------------
+
+The ADRV9001 is a family designator assigned to the System Development User
+Guide (UG-1828 for ADRV9002, ADRV9003, ADRV9004, and upcoming additional
+family members). Throughout this document, the ADRV9001 designator may be used
+to refer to either ADRV9002, ADRV9003, or ADRV9004.
+
+Project Layout and HDL Generation
+----------------------------------
+
+This is how the adrv9001 no-OS project is structured:
+
+.. code-block::
+
+   no-OS/projects/adrv9001
+   ├── Makefile
+   ├── src
+   │   ├── app
+   │   │   ├── app_iio.c
+   │   │   ├── app_iio.h
+   │   │   ├── headless.c
+   │   │   ├── ORxGainTable.h
+   │   │   ├── RxGainTable.h
+   │   │   └── TxAttenTable.h
+   │   ├── firmware
+   │   │   ├── Navassa_EvaluationFw.h
+   │   │   └── Navassa_Stream.h
+   │   └── hal
+   │       ├── adi_platform.h
+   │       ├── adi_platform_types.h
+   │       ├── no_os_platform.c
+   │       ├── no_os_platform.h
+   │       └── parameters.h
+   ├── src.mk
+   └── system_top.xsa / system_top.hdf
+
+Note the presence of the ``system_top.xsa`` or ``system_top.hdf`` file. In
+order to build this no-OS project, you need such a file present in the project
+directory. In case you do not have one, either obtain a pre-built file or build
+it yourself by following the :git-hdl:`Building HDL <docs/user_guide/build_hdl.rst>`
+guide.
+
+See more about the ADRV9002 HDL and options for building with CMOS or LVDS
+interface in the :doc:`HDL Reference Design <reference_hdl>`.
+
+The corresponding driver files can be found at:
+
+.. code-block::
+
+   no-OS/drivers/rf-transceiver/navassa/
+   ├── adrv9002.c
+   ├── adrv9002_conv.c
+   ├── adrv9002.h
+   ├── common
+   ├── devices
+   └── third_party
+
+- :git-no-OS:`No-OS project <projects/adrv9001>`
+- :git-no-OS:`No-OS driver <drivers/rf-transceiver/navassa>`
+
+Building
+--------
+
+By default, the digital interface is CMOS. In case an LVDS digital interface
+is used, this has to be specified in the make command:
+
+.. code-block:: bash
+
+   make LVDS=y
+
+Demo Applications
+-----------------
+
+Make sure to connect your :adi:`EVAL-ADRV9002` board to the correct FMC
+connector on the carrier you use:
+
+- :doc:`ZCU102 <quickstart/zynqmp>`
+- :doc:`ZC706 <quickstart/zynq>`
+- :doc:`ZedBoard <quickstart/zed>`
+
+Here is an example of IIO Oscilloscope connected to a no-OS Navassa IIOD demo
+with electrical loopbacks between TX1-RX1 and TX2-RX2.
+
+.. figure:: navassa-tinyiiod.jpg
+   :align: center
+   :width: 600
+
+   IIO Oscilloscope connected to a no-OS ADRV9002 IIOD demo

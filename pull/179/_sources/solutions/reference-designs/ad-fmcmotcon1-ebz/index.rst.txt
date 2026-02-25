@@ -35,6 +35,11 @@ The ADI FMC motor drive solution consists of the following products:
 - **AD-DYNO1-EBZ** - Dynamometer drive system. Acts as an electronically
   adjustable load with two BLDC motors connected in a dyno setup.
 
+The **AD-DYNO1-EBZ** dynamometer consists of two BLDC motors directly coupled
+through a rigid connection. One BLDC motor acts as a load controlled by the
+DYNO's embedded control system, while the second motor is driven by the
+AD-FMCMOTCON1-EBZ.
+
 This platform is intended to be used as a prototyping system to verify the
 hardware and the control algorithms before moving to the production stage.
 Example reference designs showing how to use the control solution with Xilinx
@@ -67,6 +72,145 @@ The controller board provides the following interfaces:
 
 All control and feedback signals are fully isolated.
 
+Hardware
+--------
+
+Controller Board Key Parts
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Category
+     - Part
+     - Description
+   * - Measurement
+     - :adi:`AD7401A`
+     - 5 kV rms isolated 2nd order sigma-delta modulator
+   * - Measurement
+     - :adi:`ADA4084-2`
+     - 30 V, low noise, rail-to-rail I/O, low power op amp
+   * - Measurement
+     - :adi:`AD8646`
+     - 24 MHz rail-to-rail dual op amp
+   * - Measurement
+     - :adi:`AD2S1210`
+     - Variable resolution 10-bit to 16-bit R/D converter with reference oscillator
+   * - Power
+     - :adi:`ADuM5000`
+     - isoPower integrated isolated DC-to-DC converter
+   * - Power
+     - :adi:`ADP1614`
+     - 1000 mA, 2.5 MHz buck-boost DC-to-DC converter
+   * - Power
+     - :adi:`ADM660`
+     - CMOS switched-capacitor voltage converter
+   * - Isolation
+     - :adi:`ADuM7640`
+     - Triple channel digital isolator
+   * - Voltage Translation
+     - :adi:`ADG3308`
+     - 8-channel bidirectional level translator
+   * - Multiplexers
+     - :adi:`ADG704`
+     - CMOS, low voltage 2.5 Ω 4-channel multiplexer
+   * - Multiplexers
+     - :adi:`ADG759`
+     - CMOS low voltage, 3 Ω 4-channel multiplexer
+   * - Ethernet
+     - 88E1512
+     - Marvell integrated 10/100/1000 Mbps EEE transceiver
+
+Low Voltage Drive Board (AD-DRVLV1-EBZ)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The drive board connects to the controller board and provides:
+
+- Power stage for Brushed DC / BLDC / PMSM / Stepper motors up to 48 V and 18 A
+- Integrated overcurrent protection
+- Current measurement using isolated ADCs (:adi:`AD7401A`)
+- Bus voltage, phase currents, and total current analog feedback signals
+- PGAs to maximize current measurement input range
+- BEMF zero-cross detection for sensorless control of PMSM or BLDC motors
+
+Dynamometer (AD-DYNO1-EBZ)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The AD-DYNO1-EBZ dynamometer drive system provides:
+
+- Two BLDC motors connected in a dyno setup
+- Electronically adjustable load set using onboard buttons and LCD
+- Programmable step and ramp load changes
+- Measurement and display of load motor phase currents and speed
+- External control using Analog Discovery
+
+ADC FPGA Interface
+~~~~~~~~~~~~~~~~~~
+
+The :adi:`AD7401` isolated sigma-delta modulators on the controller board use a
+two-wire signal interface with the FPGA:
+
+- 10 / 20 MHz clock input
+- 1-bit digital data stream output
+
+Data reconstruction uses a SINC3 filter. Typical filter output characteristics:
+
+- Output code: 16 bit
+- Sampling rate: 78 kHz
+
+The output code resolution and sampling rate can be controlled by changing the
+filter model and decimation ratio. Polyphase interpolation filters are used to
+increase the system sampling rate.
+
+Position and Speed Sensor FPGA Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A single digital interface supports multiple position sensor types:
+
+- Single-ended Hall
+- Differential Hall
+- BEMF
+- Encoder
+
+Three digital signals connect the hardware to the FPGA:
+
+- Hall A / BEMF A / Encoder Channel A
+- Hall B / BEMF B / Encoder Channel B
+- Hall C / BEMF C / Encoder Index
+
+Sensor selection is done with jumpers on the controller board. The hardware
+conditions the analog signals and sends clean digital signals to the FPGA.
+
+Quick Start
+-----------
+
+Supported Carrier: ZedBoard (Rev C or later).
+
+Required hardware:
+
+- AD-FMCMOTCON1-EBZ controller board
+- AD-DRVLV1-EBZ low voltage drive board
+- ZedBoard
+- 24 V, 3 A capable lab power supply
+- AD-DYNO1-EBZ dynamometer (optional)
+
+Setup steps:
+
+1. Connect the low voltage drive board to the controller board.
+2. Connect the controller + drive board assembly to the FMC connector of the
+   ZedBoard.
+3. Insert the 6-pin Hall connector into P7 (pin 1 is the empty slot). For
+   encoder use, connect pins one-to-one with the P7 connector.
+4. Connect the motor to P1 and the lab power supply to P4.
+5. Ensure the emergency stop button P2 is pressed before powering on.
+6. Create an SD card image following the
+   `Zynq SD card instructions <https://wiki.analog.com/resources/tools-software/linux-software/zynq_images>`__
+   and boot the ZedBoard.
+7. After programming, release the emergency stop button P2 and press the reset
+   switch S1 for a few seconds to start the motor.
+8. Use the IIO Oscilloscope application for monitoring and control (see the
+   `Software Support`_ section below).
+
 HDL Reference Design
 --------------------
 
@@ -78,6 +222,37 @@ Two HDL reference designs are provided targeting different use cases:
   interfaces, infrastructure for Linux support, and integration of
   automatically generated HDL code for Simulink designed motor controller
 
+.. image:: mc_design.png
+   :align: center
+
+The Linux-targeted HDL design contains the following blocks:
+
+- **ADC Interface** - Communicates with the :adi:`AD7401` sigma-delta
+  modulators and implements SINC3 filters for demodulating the 1-bit stream.
+  Exposes AXI Lite registers and an AXI Streaming interface for DMA data
+  transfer.
+- **Controller Interface** - Interfaces to IP control blocks and streams
+  real-time data to the application layer via AXI Streaming and DMA.
+- **MathWorks FOC IP** - FOC controller model provided by MathWorks,
+  integrated as a standalone IP core packaged using the Simulink Workflow
+  Advisor. Exposes AXI-Lite control registers, encoder input, current
+  measurement data, inverter control, and monitoring signals.
+- **Position and Speed Processing** - Converts Hall, BEMF, and Encoder signals
+  into speed and position data. Exposes AXI Lite registers and AXI Streaming
+  interface for DMA.
+
+Vivado Design Generation
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Start Vivado in GUI mode. Generate the project using the Vivado TCL console:
+
+.. code-block:: tcl
+
+   cd [project_path]/projects/motor_control/zed
+   source ./system_project.tcl
+
+This generates the complete system and creates the bitfile.
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
@@ -86,16 +261,249 @@ HDL Source Code
 Software Support
 ----------------
 
+Linux IIO Drivers
+~~~~~~~~~~~~~~~~~
+
 The Linux Industrial I/O (IIO) drivers for the motor control solution require
 the HDL cores to have a specified register map. A DMA interface is set up for
-high speed data transfer using multiple multiplexed data channels.
+high-speed data transfer using multiple multiplexed data channels.
 
-The following software tools are supported:
+.. list-table::
+   :header-rows: 1
 
-- Linux drivers for motor control with IIO Oscilloscope plugin for real-time
-  monitoring
-- MATLAB Simulink models for control algorithm development
-- QDESYS Motor Control IP integration
+   * - IIO Driver
+     - Description
+     - Channels
+   * - **ad-mc-adc**
+     - Controller board ADC driver
+     - CH1: Ia, CH2: Ib, CH3: It, CH4: Vbus
+   * - **ad-mc-adc2**
+     - Low voltage drive board ADC driver
+     - CH1: Ia, CH2: Ib, CH3: It
+   * - **ad-mc-speed**
+     - Speed and position processing block
+     - CH1: Speed measurement
+   * - **ad-mc-ctrl**
+     - Motor controller block
+     - CH1–CH8: Controller monitoring signals
+
+Example device tree entries for the motor control IIO drivers:
+
+.. code-block:: none
+
+   ad-mc-adc@40500000 {
+       compatible = "xlnx,axi-ad-mc-adc-1.00.a";
+       reg = <0x40500000 0x10000>;
+       dmas = <&axi_dma_0 0>;
+       dma-names = "ad-mc-adc-dma";
+   };
+
+   axi_dma_1: axidma1@40420000 {
+       compatible = "adi,axi-dmac-1.00.a";
+       reg = <0x40420000 0x10000>;
+       #dma-cells = <1>;
+       interrupts = <0 54 0>;
+       clocks = <&clkc 16>;
+       dma-channel {
+           adi,buswidth = <32>;
+           adi,type = <0>;
+       };
+   };
+
+   ad-mc-ctrl@40520000 {
+       compatible = "xlnx,axi-ad-mc-ctrl-1.00.a";
+       reg = <0x40520000 0x10000>;
+       dmas = <&axi_dma_1 0>;
+       dma-names = "ad-mc-ctrl-dma";
+   };
+
+   axi_dma_2: axidma2@40410000 {
+       compatible = "adi,axi-dmac-1.00.a";
+       reg = <0x40410000 0x10000>;
+       #dma-cells = <1>;
+       interrupts = <0 56 0>;
+       clocks = <&clkc 16>;
+       dma-channel {
+           adi,buswidth = <32>;
+           adi,type = <0>;
+       };
+   };
+
+   ad-mc-speed@40510000 {
+       compatible = "xlnx,axi-ad-mc-speed-1.00.a";
+       reg = <0x40510000 0x10000>;
+       dmas = <&axi_dma_2 0>;
+       dma-names = "ad-mc-speed-dma";
+   };
+
+   axi_dma_3: axidma3@40430000 {
+       compatible = "adi,axi-dmac-1.00.a";
+       reg = <0x40430000 0x10000>;
+       #dma-cells = <1>;
+       interrupts = <0 53 0>;
+       clocks = <&clkc 16>;
+       dma-channel {
+           adi,buswidth = <64>;
+           adi,type = <0>;
+       };
+   };
+
+   ad-mc-adc2@40530000 {
+       compatible = "xlnx,axi-ad-mc-adc-1.00.a";
+       reg = <0x40530000 0x10000>;
+       dmas = <&axi_dma_3 0>;
+       dma-names = "ad-mc-adc-dma";
+   };
+
+IIO Oscilloscope
+~~~~~~~~~~~~~~~~
+
+The ADI IIO Oscilloscope application is used for monitoring and controlling the
+AD-FMCMOTCON1-EBZ board when using the Linux operating system. Two main tabs
+are used: **Capture** and **Motor Control**.
+
+**Capture — Current Monitoring**
+
+Two sets of :adi:`AD7401A` ADCs provide current monitoring:
+
+- Controller board ADCs (``ad-mc-adc``): in_voltage0 = Ia, in_voltage1 = Ib,
+  in_voltage2 = It, in_voltage3 = Vbus. The signal is pre-amplified on the
+  drive board; amplification controlled by GPO0 and GPO1 pins.
+- Drive board ADCs (``ad-mc-adc2``): in_voltage0 = Ia, in_voltage1 = Ib,
+  in_voltage2 = It (no preamplification).
+
+**Capture — Speed Monitoring**
+
+The speed IP monitors the number of counts (in 10 ns units) between two motor
+commutations. To display speed in RPM, enable the 1/x option and multiply by
+25,000,000.
+
+.. image:: mc_speed_sc.png
+   :align: center
+
+**Capture — FOC Controller Monitoring**
+
+The MathWorks FOC IP exposes the following monitoring signals:
+
+- voltage_0 / voltage_1: Phase A / B voltage
+- voltage_2 / voltage_3: Phase A / B current
+- voltage_4: Rotor mechanical position
+- voltage_5: Rotor velocity
+- voltage_6 / voltage_7: d / q current
+
+.. image:: mc_full_sc.png
+   :align: center
+
+**Motor Control — Manual Control**
+
+.. image:: mc_manual_ctrl.png
+   :align: center
+
+.. list-table::
+   :header-rows: 1
+
+   * - Control
+     - Description
+   * - Run
+     - Starts the motor
+   * - Delta
+     - Selects between Star and Delta commutation sequence
+   * - Direction
+     - Selects clockwise or counterclockwise rotation
+   * - Controller Type
+     - Selects between Manual PWM drive or MathWorks FOC controller
+   * - PWM
+     - In manual mode, sets PWM between 50%–100%
+
+**Motor Control — MathWorks FOC Controller**
+
+When the MathWorks FOC controller is selected, the ``foc_script.sh`` script
+(located under ``/usr/local/bin/``) controls operation:
+
+1. Sets the FOC controller to open loop mode and waits for the user to start
+   the motor by clicking Run in IIO Scope.
+2. Calibrates encoder readings to remove the offset between actual electrical
+   position and encoder position.
+3. Sets the motor reference speed.
+4. Starts the FOC controller in closed loop mode.
+
+Simulink Models
+~~~~~~~~~~~~~~~
+
+The Vivado HDL design includes an integrated FOC and speed/torque controller
+generated from a MathWorks Simulink model. The controller is designed in
+Simulink and the corresponding HDL code is generated using the MathWorks HDL
+Coder. The controller model is packaged into an IP core using the Simulink
+Workflow Advisor.
+
+FOC Controller AXI-Lite Registers:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Register
+     - Address
+     - Format
+     - Type
+     - Description
+   * - axi_controller_mode
+     - 0x100
+     - 2-bit word
+     - W
+     - Operation mode: 3=open loop, 2=closed loop, 1=standby
+   * - axi_command
+     - 0x104
+     - Signed fixed 18.8
+     - W
+     - Motor reference speed in rad/s
+   * - axi_velocity_p_gain
+     - 0x108
+     - Signed fixed 18.16
+     - W
+     - Proportional gain of velocity PI controller
+   * - axi_velocity_i_gain
+     - 0x10C
+     - Signed fixed 18.15
+     - W
+     - Integral gain of velocity PI controller
+   * - axi_current_p_gain
+     - 0x110
+     - Signed fixed 18.10
+     - W
+     - Proportional gain of current PI controller
+   * - axi_current_i_gain
+     - 0x114
+     - Signed fixed 18.12
+     - W
+     - Integral gain of current PI controller
+   * - axi_open_loop_bias
+     - 0x118
+     - Signed fixed 18.14
+     - W
+     - Open loop control command bias
+   * - axi_open_loop_scalar
+     - 0x11C
+     - Signed fixed 18.16
+     - W
+     - Open loop control command gain
+   * - axi_encoder_zero_offset
+     - 0x120
+     - Signed fixed 18.14
+     - W
+     - Encoder offset
+   * - axi_electrical_pos_err
+     - 0x124
+     - Signed fixed 19.14
+     - R
+     - Error between actual and encoder electrical position
+
+QDESYS Motor Control IP
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+A Field Oriented Control (FOC) implementation for the AD-FMCMOTCON1-EBZ is
+available from `QDESYS <http://www.qdesys.com/>`__. The control algorithm is
+provided as a highly optimized IP core that can be integrated in the FPGA
+project.
 
 Support
 -------

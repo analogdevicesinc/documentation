@@ -14,6 +14,19 @@ receive raw ADC data, as well as configure the AD5201 digital potentiometer.
 The data received from the ADC is passed to a digital synchronous detector
 processing pipeline and written to system memory using DMA.
 
+The EVAL-CN0363-PMDZ is a dual-channel colorimeter featuring a modulated light
+source transmitter, programmable gain transimpedance amplifiers on each
+channel, and a very low noise 24-bit sigma-delta ADC. By using modulated light
+and digital synchronous detection rather than a constant (dc) source, the
+system strongly rejects any noise sources at frequencies other than the
+modulation frequency, providing excellent accuracy.
+
+The dual-channel circuit measures the ratio of light absorbed by the liquids
+in the sample and reference containers at three different wavelengths. This
+forms the basis of many chemical analysis and environmental monitoring
+instruments used to measure concentrations and characterize materials through
+absorption spectroscopy.
+
 .. figure:: colorimeter_block_diagram.png
    :align: center
 
@@ -30,6 +43,99 @@ Supported Carriers
 ------------------
 
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+Hardware
+--------
+
+Power Supply Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The EVAL-CN0363-PMDZ requires an external DC power supply in the range of 6 V
+to 12 V connected to the screw terminal on the board. The analog portion of
+the circuit is supplied by AVDD = 5 V from an ADP7102 low dropout regulator.
+The digital portion is supplied by IOVDD = 3.3 V from an ADP1720 low dropout
+regulator. Alternatively, IOVDD can be supplied from the PMOD connector VCC
+via a link option.
+
+.. figure:: cn0363_top_pwr.jpg
+   :align: center
+
+   EVAL-CN0363-PMDZ power connections
+
+The ZedBoard requires a separate 12 V DC power supply connected to its DC
+power jack.
+
+IOVDD can be selected using header JP1:
+
+- Pins 1-2 shorted: IOVDD sourced from the onboard regulator
+- Pins 2-3 shorted: IOVDD sourced from the PMOD interface
+
+.. figure:: cn0363_iovdd_1.jpg
+   :align: center
+
+   JP1 IOVDD selection
+
+Input Interface
+~~~~~~~~~~~~~~~
+
+The EVAL-CN0363-PMDZ accommodates two vials: one for the reference container
+and one for the sample container. A beamsplitter provides similar light to
+both vials. The system requires an initial calibration to compensate for
+misalignment and photodiode mismatch.
+
+.. figure:: cn0363_top_1.jpg
+   :align: center
+
+   EVAL-CN0363-PMDZ board with vial holder
+
+Digital Interface (PMOD)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The board uses the extended SPI PMOD interface to connect to the FPGA
+development board via the PMOD JA connector on the ZedBoard.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Pin Number
+     - Pin Function
+     - Mnemonic
+   * - P.1
+     - Chip Select
+     - AD_CS
+   * - P.2
+     - Gain Control-Reference
+     - GAIN0
+   * - P.3
+     - Data In
+     - AD_DIN
+   * - P.4
+     - Gain Control-Sample
+     - GAIN1
+   * - P.5
+     - Data Out
+     - AD_DOUT
+   * - P.6
+     - LED Select
+     - DA_CS
+   * - P.7
+     - Serial Clock
+     - AD_CLK
+   * - P.8
+     - LED Clock
+     - LED_CLK
+   * - P.9
+     - Digital Ground
+     - GND
+   * - P.10
+     - Digital Ground
+     - GND
+   * - P.11
+     - Digital Power
+     - VCC
+   * - P.12
+     - Digital Power
+     - VCC
 
 HDL Reference Design
 --------------------
@@ -74,17 +180,71 @@ The processing pipeline consists of the following stages:
    processing results, sending them to the DMA controller.
 
 Both filters are configured in a time-division-multiplexing configuration,
-sharing logic for filter output calculation between channels.
+sharing logic for filter output calculation between channels. This is possible
+because the ADC output data rate is 50 kHz while the FPGA pipeline runs at
+100 MHz, giving approximately 2000 clock cycles per high-pass filter result
+and 1000 clock cycles per low-pass filter result.
 
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`projects/cn0363`
 
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+- :git-linux:`drivers/iio/adc/ad7173.c`
+
+Quick Start Guide
+-----------------
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+The required hardware for the EVAL-CN0363-PMDZ system:
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+  Rev C or later
+- EVAL-CN0363-PMDZ board
+- Two vials: one filled with distilled water (reference) and one with the
+  sample liquid under test
+- SD card (8 GB minimum) preloaded with the
+  `ADI Kuiper Linux image <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`__
+- 12 V DC power supply for the ZedBoard
+- 6 V to 12 V DC power supply for the EVAL-CN0363-PMDZ
+- HDMI monitor and USB keyboard/mouse
+
+Connect the system as follows:
+
+#. Connect the PMOD JA connector of the ZedBoard to the PMOD connector on
+   the EVAL-CN0363-PMDZ
+#. Connect USB mouse and keyboard to the ZedBoard (J13)
+#. Connect the 12 V power supply to the ZedBoard (J20)
+#. Set the ZedBoard VADJ jumper to 3.3 V
+#. Insert the SD card into the ZedBoard (J12)
+#. Connect the HDMI monitor to the ZedBoard (J9)
+#. Connect the 6 V to 12 V power supply to the EVAL-CN0363-PMDZ screw
+   terminal
+
+Boot (JP7-JP11) and MIO0 (JP6) jumpers must be set to SD card boot mode.
+Install jumpers JP2 and JP3 to enable USB peripheral devices.
+
+Starting the System
+~~~~~~~~~~~~~~~~~~~
+
+Power on the ZedBoard by setting the main power switch (SW8). After a few
+seconds the blue DONE LED (LD12) will illuminate. After approximately
+30 seconds the system boots and the colorimeter application can be launched
+from the Applications Menu under the "Other" section.
+
 More Information
 ----------------
 
 - :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- :adi:`CN0363 Circuit Note <CN0363>`
 
 Support
 -------

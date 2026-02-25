@@ -36,10 +36,17 @@ interface, and flexible control with an FPGA/SoC interface.
 
 The **AD-DYNO2-EBZ** dynamometer is provided as an extension of the drive
 system. This is a dynamically adjustable load system that can be used to test
-real-time motor control performance.
+real-time motor control performance. It consists of two BLDC motors directly
+coupled through a rigid connection. One BLDC motor acts as a load controlled
+by the DYNO's embedded control system, while the second motor is driven by the
+AD-FMCMOTCON2-EBZ. The load can also be driven by the AD-FMCMOTCON2-EBZ to
+implement dynamic load profiles.
 
 This platform is intended to be used as a prototyping system to verify the
 hardware and the control algorithms before moving to the production stage.
+
+The controller and drive boards are provided as a kit and cannot be purchased
+separately. They are both distributed under the AD-FMCMOTCON2-EBZ part number.
 
 Interfaces
 ~~~~~~~~~~
@@ -57,6 +64,133 @@ The controller board provides the following interfaces for dual motor control:
 - BEMF zero-cross detection for sensorless motor control
 - Reverse voltage protection and integrated overcurrent protection
 
+Hardware
+--------
+
+Controller Board Key Parts
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: controller_block_diagram_simplified.png
+   :align: center
+
+.. list-table::
+   :header-rows: 1
+
+   * - Category
+     - Part
+     - Description
+   * - Measurement
+     - :adi:`AD8137`
+     - Differential ADC driver
+   * - Measurement
+     - :adi:`AD8646`
+     - 24 MHz rail-to-rail dual op amp
+   * - Measurement
+     - :adi:`AD2S1210`
+     - Variable resolution 10-bit to 16-bit R/D converter with reference oscillator
+   * - Power
+     - :adi:`ADuM5000`
+     - isoPower integrated isolated DC-to-DC converter
+   * - Power
+     - :adi:`ADP1614`
+     - 1000 mA, 2.5 MHz buck-boost DC-to-DC converter
+   * - Isolation
+     - :adi:`ADuM7640`
+     - 1 kV RMS six-channel digital isolator
+   * - Isolation
+     - :adi:`ADuM1400`
+     - Quad channel digital isolator
+   * - Isolation
+     - :adi:`ADM2486`
+     - Isolated RS-485 transceiver
+   * - Isolation
+     - :adi:`ADuM1250`
+     - Hot-swappable dual I2C isolator
+   * - Voltage Translation
+     - :adi:`ADG3308`
+     - 8-channel bidirectional level translator
+   * - Multiplexers
+     - :adi:`ADG759`
+     - CMOS low voltage, 3 Ω 4-channel multiplexer
+   * - Communication
+     - :adi:`ADN4662`
+     - Single, 3 V, CMOS, LVDS differential line receiver
+   * - Ethernet
+     - 88E1512
+     - Marvell integrated 10/100/1000 Mbps EEE transceiver
+
+Low Voltage Drive Board (AD-DRVLV2-EBZ)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The drive board connects to the controller board and provides:
+
+- Power stage for motors up to 48 V and 20 A, driving two motors simultaneously
+- Supported motor types: BLDC, PMSM, Brushed DC, Stepper (bipolar/unipolar)
+- High frequency drive stage using ADI isolated gate drivers
+- Integrated overcurrent and reverse voltage protection
+- Current and voltage measurement using isolated ADCs
+
+  - Current measurement on 2 phases for 2 motors
+  - DC link voltage measurement
+
+- BEMF zero-cross detection for sensorless control of PMSM or BLDC motors
+- Separate voltage supplies for the 2 motors
+
+Dynamometer (AD-DYNO2-EBZ)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The AD-DYNO2-EBZ dynamometer drive system provides:
+
+- Two BLDC motors connected in a dyno setup
+- Electronically adjustable load set using onboard buttons and LCD
+- Programmable step and ramp load changes
+- Measurement and display of load motor phase currents and speed
+- External control and monitoring interface
+
+ADC FPGA Interface
+~~~~~~~~~~~~~~~~~~
+
+The :adi:`AD7403` isolated sigma-delta modulators on the controller board use a
+two-wire signal interface with the FPGA:
+
+- 10 / 20 MHz clock input
+- 1-bit digital data stream output
+
+Data reconstruction uses a SINC3 filter. Typical filter output characteristics:
+
+- Output code: 16 bit
+- Sampling rate: 78 kHz
+
+The output code resolution and sampling rate can be controlled by changing the
+filter model and decimation ratio. Polyphase interpolation filters are used to
+increase the system sampling rate.
+
+Quick Start
+-----------
+
+Supported Carrier: ZedBoard (Rev C or later).
+
+Required hardware:
+
+- AD-FMCMOTCON2-EBZ kit (controller board + AD-DRVLV2-EBZ drive board)
+- ZedBoard
+- Lab power supply (up to 48 V, 20 A)
+- AD-DYNO2-EBZ dynamometer (optional)
+
+Setup steps:
+
+1. Connect the drive board to the controller board.
+2. Connect the controller + drive board assembly to the FMC connector of the
+   ZedBoard.
+3. Connect motors and power supply to the drive board.
+4. Create an SD card image following the
+   `Zynq SD card instructions <https://wiki.analog.com/resources/tools-software/linux-software/zynq_images>`__
+   and boot the ZedBoard.
+5. Use the IIO Oscilloscope application for monitoring and control (see the
+   `Software Support`_ section below).
+6. To shut down, use ``sudo shutdown -h now`` from the terminal rather than
+   switching off the power directly.
+
 HDL Reference Design
 --------------------
 
@@ -65,13 +199,28 @@ interfacing with the various components of the motor control hardware:
 
 - **Current Monitor** - Implements the communication with the :adi:`AD7401`
   sigma delta modulators and SINC3 filters for demodulating the 1-bit
-  digital stream
+  digital stream. Exposes AXI Lite registers and a FIFO/DMA interface for
+  streaming real-time data. An ADC PACK IP allows 1, 2, or all channels to
+  stream data at a time.
 - **Controller** - Implements the interface to the IP control blocks in the
-  system, basic six point drive of the motor
+  system, basic six point drive of the motor. A FIFO/DMA interface allows
+  streaming real-time data. An ADC PACK block allows 1, 2, 4, or all
+  channels to stream simultaneously.
 - **Speed Detector** - Implements the algorithm for converting Hall, BEMF and
   Encoder signals into speed and position data
-- **GMII to RGMII** - Converts the GMII interface from the Ethernet cores
-  to RGMII interface available on the FMC Controller Board
+- **GMII to RGMII** - Converts the GMII interface from the two Ethernet cores
+  of the PS7 block to RGMII interface available on the FMC controller board.
+  The IP allows RX pins to reside on different I/O banks.
+- **I2C** - Two I2C interfaces connected to the FMC board
+
+.. image:: motorcontrolrev2.jpg
+   :align: center
+
+Vivado Design Generation
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Build the project following the
+`ADI Reference Designs HDL User Guide <https://wiki.analog.com/resources/fpga/docs/hdl>`__.
 
 HDL Source Code
 ~~~~~~~~~~~~~~~
@@ -81,12 +230,225 @@ HDL Source Code
 Software Support
 ----------------
 
-The following software tools are supported:
+Linux IIO Drivers
+~~~~~~~~~~~~~~~~~
 
-- Linux drivers for motor control with IIO Oscilloscope plugin
-- Xilinx Zynq Intelligent Drives support from Simulink
-- QDESYS Motor Control IP and EtherCAT design support
-- MathWorks design algorithms
+The Linux Industrial I/O (IIO) drivers for the motor control solution require
+the HDL cores to have a specified register map. A DMA interface is set up for
+high-speed data transfer using multiple multiplexed data channels. The
+FMCMOTCON2 design supports two motors simultaneously through paired drivers.
+
+.. list-table::
+   :header-rows: 1
+
+   * - IIO Driver
+     - Channel
+     - Description
+   * - **ad-mc-adc**
+     - voltage1
+     - Motor 1 Ia ADC raw data
+   * -
+     - voltage2
+     - Motor 1 Ib ADC raw data
+   * -
+     - voltage3
+     - Motor 1 VBus ADC raw data
+   * - **ad-mc-adc-m2**
+     - voltage1
+     - Motor 2 Ia ADC raw data
+   * -
+     - voltage2
+     - Motor 2 Ib ADC raw data
+   * -
+     - voltage3
+     - Motor 2 VBus ADC raw data
+   * - **ad-mc-speed**
+     - voltage0
+     - Motor 1 speed (counts in 10 ns units between commutations)
+   * - **ad-mc-speed-m2**
+     - voltage0
+     - Motor 2 speed (counts in 10 ns units between commutations)
+   * - **ad-mc-ctrl**
+     - —
+     - Motor 1 controller (not used as capture channel)
+   * - **ad-mc-ctrl-m2**
+     - —
+     - Motor 2 controller (not used as capture channel)
+
+To display speed in RPM, enable the 1/x option and multiply by 25,000,000.
+
+Example device tree entries for the motor control IIO drivers:
+
+.. code-block:: none
+
+   &fpga_axi {
+       ad-mc-speed@40410000 {
+           compatible = "xlnx,axi-ad-mc-speed-1.00.a";
+           reg = <0x40410000 0x10000>;
+           dmas = <&ad_mc_speed_dma 0>;
+           dma-names = "ad-mc-speed-dma";
+       };
+       ad_mc_speed_dma: dma@40510000 {
+           compatible = "adi,axi-dmac-1.00.a";
+           reg = <0x40510000 0x10000>;
+           #dma-cells = <1>;
+           interrupts = <0 57 0>;
+           clocks = <&clkc 15>;
+           dma-channel {
+               adi,buswidth = <32>;
+               adi,type = <0>;
+           };
+       };
+
+       ad-mc-adc@40420000 {
+           compatible = "xlnx,axi-ad-mc-adc-1.00.a";
+           reg = <0x40420000 0x10000>;
+           dmas = <&ad_mc_adc_dma 0>;
+           dma-names = "ad-mc-adc-dma";
+       };
+       ad_mc_adc_dma: dma@40520000 {
+           compatible = "adi,axi-dmac-1.00.a";
+           reg = <0x40520000 0x10000>;
+           #dma-cells = <1>;
+           interrupts = <0 54 0>;
+           clocks = <&clkc 15>;
+           dma-channel {
+               adi,buswidth = <64>;
+               adi,type = <0>;
+           };
+       };
+
+       ad-mc-ctrl@40430000 {
+           compatible = "xlnx,axi-ad-mc-ctrl-1.00.a";
+           reg = <0x40430000 0x10000>;
+           dmas = <&ad_mc_ctrl_dma 0>;
+           dma-names = "ad-mc-ctrl-dma";
+       };
+       ad_mc_ctrl_dma: dma@40530000 {
+           compatible = "adi,axi-dmac-1.00.a";
+           reg = <0x40530000 0x10000>;
+           #dma-cells = <1>;
+           interrupts = <0 53 0>;
+           clocks = <&clkc 15>;
+           dma-channel {
+               adi,buswidth = <256>;
+               adi,type = <0>;
+           };
+       };
+
+       ad-mc-speed-m2@40440000 {
+           compatible = "xlnx,axi-ad-mc-speed-1.00.a";
+           reg = <0x40440000 0x10000>;
+           dmas = <&ad_mc_speed_dma_m2 0>;
+           dma-names = "ad-mc-speed-dma";
+       };
+       ad_mc_speed_dma_m2: dma@40540000 {
+           compatible = "adi,axi-dmac-1.00.a";
+           reg = <0x40540000 0x10000>;
+           #dma-cells = <1>;
+           interrupts = <0 52 0>;
+           clocks = <&clkc 15>;
+           dma-channel {
+               adi,buswidth = <32>;
+               adi,type = <0>;
+           };
+       };
+
+       ad-mc-adc-m2@40450000 {
+           compatible = "xlnx,axi-ad-mc-adc-1.00.a";
+           reg = <0x40450000 0x10000>;
+           dmas = <&ad_mc_adc_dma_m2 0>;
+           dma-names = "ad-mc-adc-dma";
+       };
+       ad_mc_adc_dma_m2: dma@40550000 {
+           compatible = "adi,axi-dmac-1.00.a";
+           reg = <0x40550000 0x10000>;
+           #dma-cells = <1>;
+           interrupts = <0 36 0>;
+           clocks = <&clkc 15>;
+           dma-channel {
+               adi,buswidth = <64>;
+               adi,type = <0>;
+           };
+       };
+
+       ad-mc-ctrl-m2@40460000 {
+           compatible = "xlnx,axi-ad-mc-ctrl-1.00.a";
+           reg = <0x40460000 0x10000>;
+           dmas = <&ad_mc_ctrl_dma_m2 0>;
+           dma-names = "ad-mc-ctrl-dma";
+       };
+       ad_mc_ctrl_dma_m2: dma@40560000 {
+           compatible = "adi,axi-dmac-1.00.a";
+           reg = <0x40560000 0x10000>;
+           #dma-cells = <1>;
+           interrupts = <0 35 0>;
+           clocks = <&clkc 15>;
+           dma-channel {
+               adi,buswidth = <256>;
+               adi,type = <0>;
+           };
+       };
+   };
+
+   &spi0 {
+       status = "okay";
+       ad2s1210@0 {
+           compatible = "ad2s1210";
+           reg = <0>;
+           spi-cpha;
+           spi-max-frequency = <1000000>;
+           sample-gpios = <&gpio 86 0>;
+           adi,entirely-configuration-mode-enable;
+       };
+   };
+
+IIO Oscilloscope
+~~~~~~~~~~~~~~~~
+
+The ADI IIO Oscilloscope application is used for monitoring and controlling the
+AD-FMCMOTCON2-EBZ board when using the Linux operating system.
+
+**Signals Monitoring**
+
+The IIO Oscilloscope allows monitoring of current, voltage, speed, and control
+signals from the system.
+
+.. image:: mc_iio_signals.png
+   :align: center
+
+**Motor Control — Manual Control**
+
+This dialog allows control of both motors in manual mode by directly specifying
+the PWM fill factor used to control the 3-phase inverters. Motors are driven
+using a 6-step commutation algorithm.
+
+.. image:: mc_manual_ctrl.png
+   :align: center
+
+.. list-table::
+   :header-rows: 1
+
+   * - Control
+     - Description
+   * - Run
+     - Starts the motor
+   * - Delta
+     - Selects between Star and Delta commutation sequence
+   * - Direction
+     - Selects clockwise or counterclockwise rotation
+   * - PWM
+     - In manual mode, sets PWM between 50%–100%
+
+QDESYS Motor Control IP
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+`QDESYS <http://www.qdesys.com/>`__ provides the following reference designs
+for the AD-FMCMOTCON2-EBZ:
+
+- EtherCAT design showing how to do real-time motor control over the network
+- A high performance Field Oriented Controller (FOC) implemented as a highly
+  optimized IP core that can be integrated in the FPGA project
 
 Support
 -------
