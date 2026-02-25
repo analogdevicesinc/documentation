@@ -388,7 +388,7 @@ Quick Start
 .. note::
 
    If the SD card needs to be re-imaged, instructions are available in the
-   :dokuwiki:`ADI Kuiper Linux <resources/tools-software/linux-software/adi-kuiper_images_for_ace>`
+   `ADI Kuiper Linux <https://wiki.analog.com/resources/tools-software/linux-software/adi-kuiper_images_for_ace>`__
    documentation.
 
 System Operational Constraints
