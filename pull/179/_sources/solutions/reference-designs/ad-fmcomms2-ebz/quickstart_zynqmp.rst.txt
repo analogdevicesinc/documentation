@@ -4,12 +4,12 @@ ZCU102 Quick Start Guide
 =========================
 
 This guide provides instructions on how to set up the AD-FMCOMMS2-EBZ on
-the Xilinx :xilinx:`ZCU102` Zynq UltraScale+ MPSoC evaluation board.
+the Xilinx :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` Zynq UltraScale+ MPSoC evaluation board.
 
 Required Hardware
 -----------------
 
-- Xilinx :xilinx:`ZCU102` board
+- Xilinx :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` board
 - AD-FMCOMMS2-EBZ or AD-FMCOMMS3-EBZ FMC board
 - Micro-USB cable (for UART)
 - SD card (16 GB or larger)

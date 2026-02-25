@@ -11,8 +11,8 @@ Supported Devices
 Supported Carriers
 ------------------
 
-- :xilinx:`ZCU102`
-- :xilinx:`ZC706`
+- :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
 
 Naming Conventions
@@ -55,7 +55,7 @@ This is how the adrv9001 no-OS project is structured:
 Note the presence of the ``system_top.xsa`` or ``system_top.hdf`` file. In
 order to build this no-OS project, you need such a file present in the project
 directory. In case you do not have one, either obtain a pre-built file or build
-it yourself by following the :git-hdl:`Building HDL <docs/user_guide/build_hdl.rst>`
+it yourself by following the `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`__
 guide.
 
 See more about the ADRV9002 HDL and options for building with CMOS or LVDS

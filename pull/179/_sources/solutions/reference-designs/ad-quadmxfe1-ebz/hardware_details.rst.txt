@@ -319,7 +319,7 @@ JESD204 Link Establishment References
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - :doc:`HDL Reference Design <reference_hdl>`
-- :git-hdl:`JESD204B/C High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+- `JESD204B/C High-Speed Serial Interface Support <https://analogdevicesinc.github.io/hdl/library/jesd204/index.html>`__
 
 FMC+ Pinout
 ~~~~~~~~~~~~

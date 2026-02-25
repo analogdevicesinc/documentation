@@ -212,7 +212,7 @@ The required hardware for the EVAL-CN0363-PMDZ system:
 - Two vials: one filled with distilled water (reference) and one with the
   sample liquid under test
 - SD card (8 GB minimum) preloaded with the
-  `ADI Kuiper Linux image <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`__
+  :doc:`Kuiper Linux </linux/kuiper/index>`
 - 12 V DC power supply for the ZedBoard
 - 6 V to 12 V DC power supply for the EVAL-CN0363-PMDZ
 - HDMI monitor and USB keyboard/mouse
@@ -243,7 +243,7 @@ from the Applications Menu under the "Other" section.
 More Information
 ----------------
 
-- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 - :adi:`CN0363 Circuit Note <CN0363>`
 
 Support

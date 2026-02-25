@@ -244,7 +244,7 @@ More Information
 
 - :ref:`AD-FMCOMMS2-EBZ User Guide <ad-fmcomms2-ebz>`
 - :ref:`AD-FMCOMMS3-EBZ User Guide <ad-fmcomms3-ebz>`
-- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 
 Support
 -------

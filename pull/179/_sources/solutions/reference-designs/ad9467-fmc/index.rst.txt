@@ -26,8 +26,8 @@ Supported Devices
 Supported Carriers
 ------------------
 
-- :xilinx:`KC705` LPC Slot
-- `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`__
+- :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>` LPC Slot
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
 
 HDL Reference Design
 --------------------
@@ -67,7 +67,7 @@ Linux Device Driver
 More Information
 ----------------
 
-- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 
 Support
 -------

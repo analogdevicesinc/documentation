@@ -64,7 +64,7 @@ Table of contents
 
    #. :doc:`HDL Reference Design <reference_hdl>`
    #. :doc:`AXI ADRV9002 Interface Core <axi_adrv9002>`
-   #. :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+   #. `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 
 #. Hardware Resources
 

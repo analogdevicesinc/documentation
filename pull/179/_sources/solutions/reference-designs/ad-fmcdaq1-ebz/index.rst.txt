@@ -73,19 +73,19 @@ Supported Carriers
      - HDL
      - Linux
      - No-OS
-   * - :xilinx:`KC705`
+   * - :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
      - Yes
      - Yes
      - Yes
-   * - :xilinx:`KCU105`
+   * - :xilinx:`KCU105 <products/boards-and-kits/kcu105.html>`
      - Yes
      - Yes
      - Yes
-   * - :xilinx:`VC707`
+   * - :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
      - Yes
      - Yes
      - Yes
-   * - :xilinx:`ZC706`
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
      - Yes
      - Yes
      - Yes

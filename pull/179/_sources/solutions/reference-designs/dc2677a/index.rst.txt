@@ -40,7 +40,7 @@ Hardware Requirements
 - Power supply of +16 V/+18 V and -16 V/-18 V for the DC2677A
 - Power supply of 12 V for the carrier board
 - SD card (at least 16 GB) with the
-  `ADI Kuiper Linux image <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`__
+  :doc:`Kuiper Linux </linux/kuiper/index>`
 - USB cable (Mini-B to A) for the Cyclone V SoC Development Kit
 
 HDL Reference Design
@@ -251,7 +251,7 @@ Linux Device Driver
 More Information
 ----------------
 
-- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 - :adi:`DC2677A Demo Manual <media/en/technical-documentation/user-guides/DC2677A_UG-1387.pdf>`
 - `Cyclone V SoCKit User Manual
   <https://static6.arrow.com/aropdfconversion/5c33d9eb515437106f70057c3ec33dc26bc35205/sockit_user_manual.pdf>`__

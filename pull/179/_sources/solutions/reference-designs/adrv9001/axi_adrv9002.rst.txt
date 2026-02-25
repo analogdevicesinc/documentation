@@ -6,7 +6,7 @@ AXI ADRV9001/ADRV9002 Interface Core
 .. note::
 
    The latest IP core documentation can be found at
-   :git-hdl:`library/axi_adrv9001/index.rst <docs/library/axi_adrv9001/index.rst>`.
+   `library/axi_adrv9001/index.rst <https://analogdevicesinc.github.io/hdl/library/axi_adrv9001/index.html>`__.
 
 Block Diagram
 -------------
@@ -310,7 +310,7 @@ of the ADRV9001 can be tuned by software to optimize sampling.
 More Information
 ----------------
 
-- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 
 Support
 -------

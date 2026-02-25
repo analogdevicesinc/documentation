@@ -20,10 +20,10 @@ which means it needs a carrier to plug into. The supported carriers are:
    * - Board
      - CMOS Interface
      - LVDS Interface
-   * - :xilinx:`ZCU102`
+   * - :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`
      - Yes
      - Yes
-   * - :xilinx:`ZC706`
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
      - Yes (VADJ 1.8V) [1]_
      - N/A [2]_
    * - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
@@ -56,12 +56,12 @@ Supported Environments
      - Linux
      - No-OS
      - Min. Release
-   * - :xilinx:`ZCU102`
+   * - :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`
      - Yes
      - Yes
      - Yes
      - 2019_R2
-   * - :xilinx:`ZC706`
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
      - Yes
      - Yes
      - Yes

@@ -165,7 +165,7 @@ Quick Start
 Software setup
 ~~~~~~~~~~~~~~
 
-ADI provides a `Kuiper Linux <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`__
+ADI provides a :doc:`Kuiper Linux </linux/kuiper/index>`
 distribution with pre-built kernel images that include the AD4695 driver. Flash
 Kuiper Linux to an SD card and boot the ZedBoard from it.
 
@@ -215,7 +215,7 @@ channel, and the ``sampling_frequency`` attribute.
 More Information
 ----------------
 
-- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 - `AD4695 Linux Kernel Documentation <https://docs.kernel.org/iio/ad4695.html>`__
 - :adi:`EVAL-AD4696FMCZ User Guide <en/technical-documentation/user-guides/eval-ad4696fmcz-ug-1882.pdf>`
 

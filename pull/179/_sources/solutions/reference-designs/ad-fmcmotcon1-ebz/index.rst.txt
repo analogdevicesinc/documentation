@@ -204,7 +204,7 @@ Setup steps:
 4. Connect the motor to P1 and the lab power supply to P4.
 5. Ensure the emergency stop button P2 is pressed before powering on.
 6. Create an SD card image following the
-   `Zynq SD card instructions <https://wiki.analog.com/resources/tools-software/linux-software/zynq_images>`__
+   :doc:`Kuiper Linux </linux/kuiper/index>`
    and boot the ZedBoard.
 7. After programming, release the emergency stop button P2 and press the reset
    switch S1 for a few seconds to start the motor.

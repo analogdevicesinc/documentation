@@ -6,7 +6,7 @@ ADRV9002 ZC706 Quick Start Guide
 This guide provides step by step instructions on how to set up the
 :adi:`EVAL-ADRV9002` (ADRV9002NP/W1/PCBZ and ADRV9002NP/W2/PCBZ) on:
 
-- :xilinx:`ZC706` Rev 1.2 or later
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>` Rev 1.2 or later
 
 LVDS Support
 ~~~~~~~~~~~~
@@ -37,7 +37,7 @@ Required Software
 Required Hardware
 -----------------
 
-- :xilinx:`ZC706` Rev 1.2 or later board
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>` Rev 1.2 or later board
 - :adi:`EVAL-ADRV9002` FMC board
 - Reference clock source
 - Mini-USB cable

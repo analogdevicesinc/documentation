@@ -184,7 +184,7 @@ Setup steps:
    ZedBoard.
 3. Connect motors and power supply to the drive board.
 4. Create an SD card image following the
-   `Zynq SD card instructions <https://wiki.analog.com/resources/tools-software/linux-software/zynq_images>`__
+   :doc:`Kuiper Linux </linux/kuiper/index>`
    and boot the ZedBoard.
 5. Use the IIO Oscilloscope application for monitoring and control (see the
    `Software Support`_ section below).
@@ -220,7 +220,7 @@ Vivado Design Generation
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Build the project following the
-`ADI Reference Designs HDL User Guide <https://wiki.analog.com/resources/fpga/docs/hdl>`__.
+`ADI HDL Reference Designs <https://analogdevicesinc.github.io/hdl/>`__.
 
 HDL Source Code
 ~~~~~~~~~~~~~~~

@@ -6,7 +6,7 @@ ADRV9002 ZCU102 Quick Start Guide
 This guide provides step by step instructions on how to set up the
 :adi:`EVAL-ADRV9002` (ADRV9002NP/W1/PCBZ and ADRV9002NP/W2/PCBZ) on:
 
-- :xilinx:`ZCU102` Rev 1.0 or later
+- :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` Rev 1.0 or later
 
 Required Software
 -----------------
@@ -18,7 +18,7 @@ Required Software
 Required Hardware
 -----------------
 
-- :xilinx:`ZCU102` Rev 1.0 or later board
+- :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` Rev 1.0 or later board
 - :adi:`EVAL-ADRV9002` FMC board
 - Reference clock source
 - Micro-USB cable

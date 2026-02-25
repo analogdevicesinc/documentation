@@ -66,12 +66,12 @@ Evaluation Boards
 HDL Design Description
 ----------------------
 
-In the :git-hdl:`HDL Reference Designs User Guide <docs/user_guide/introduction.rst>`
+In the `HDL Reference Designs User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 can be found an in-depth presentation and instructions about the HDL design in
 general.
 
 The reference design uses the standard
-:git-hdl:`SPI Engine Framework <docs/library/spi_engine/index.rst>`
+`SPI Engine Framework <https://analogdevicesinc.github.io/hdl/library/spi_engine/index.html>`__
 with an integrated pulse generator, which will provide the required conversion
 rate for the ADC.
 
@@ -82,7 +82,7 @@ In order to build the HDL design the user has to go through the following steps:
 #. Clone the HDL GitHub repository (the project is located at
    :git-hdl:`projects/ad40xx_fmc`)
 #. Set up the required sampling rate (see caption **Design Configuration**)
-#. Build the project (see :git-hdl:`Building HDL <docs/user_guide/build_hdl.rst>`)
+#. Build the project (see `Building HDL <https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html>`__)
 
 Design Configuration
 ~~~~~~~~~~~~~~~~~~~~

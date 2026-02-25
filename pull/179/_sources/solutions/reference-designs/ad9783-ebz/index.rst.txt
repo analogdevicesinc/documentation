@@ -24,7 +24,7 @@ Supported Devices
 Supported Carriers
 ------------------
 
-- :xilinx:`ZCU102` (via DAC-FMC interposer board)
+- :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` (via DAC-FMC interposer board)
 
 HDL Reference Design
 --------------------
@@ -45,7 +45,7 @@ HDL Source Code
 More Information
 ----------------
 
-- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 
 Support
 -------

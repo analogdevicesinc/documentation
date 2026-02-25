@@ -9,8 +9,8 @@ MicroBlaze-based FPGA carriers.
 Supported Carriers
 ------------------
 
-- :xilinx:`KC705`
-- :xilinx:`VC707`
+- :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
+- :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
 
 Required Hardware
 -----------------

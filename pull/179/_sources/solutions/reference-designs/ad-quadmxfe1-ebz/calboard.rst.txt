@@ -20,7 +20,7 @@ Features
 - On-Board Log Power Detectors With :adi:`AD5592R` Output To VCU118 Over PMOD
 - On-Board Power Regulation from Single 12V Power Adapter (Included)
 
-Below is the full integrated system including the Xilinx :xilinx:`VCU118`,
+Below is the full integrated system including the Xilinx :xilinx:`VCU118 <products/boards-and-kits/vcu118.html>`,
 ADQUADMXFE1EBZ, and ADQUADMXFE-CAL in full operation. For LED identification
 please see :ref:`Calibration Board LED Information <quadmxfe-calboard-leds>`, or
 :ref:`Quad MxFE LED Information <quadmxfe-features>`.
@@ -37,7 +37,7 @@ calibration board addition kit that pairs with the
 This board directly aligns with the 16 Rx and 16 Tx ports on the output of the
 Quad MxFE and includes power detectors and loopback configurations for the
 system-level calibration of the Quad MxFE. The board contains a PMOD 2A
-interface that connects the :xilinx:`VCU118` Evaluation Board from Xilinx. A DIP
+interface that connects the :xilinx:`VCU118 <products/boards-and-kits/vcu118.html>` Evaluation Board from Xilinx. A DIP
 switch and multi-channel ADC/DAC, :adi:`AD5592R`, are also included for
 additional control and power readings. The goal of this kit is to enable users to
 demonstrate combined-channel dynamic range, spurious, and phase noise
@@ -95,7 +95,7 @@ Equipment Needed
 - Board Standoffs
 - VCU118 FPGA Board (optional)
 
-  - :xilinx:`VCU118`
+  - :xilinx:`VCU118 <products/boards-and-kits/vcu118.html>`
 
 - Quad MxFE Board (optional)
 

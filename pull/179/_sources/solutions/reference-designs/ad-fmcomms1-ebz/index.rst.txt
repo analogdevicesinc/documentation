@@ -201,11 +201,11 @@ exceed the LPC pin count).
 Supported Carriers
 ------------------
 
-- :xilinx:`ZC702`
-- :xilinx:`ZC706`
+- :xilinx:`ZC702 <products/boards-and-kits/ek-z7-zc702-g.html>`
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
-- :xilinx:`KC705`
-- :xilinx:`VC707`
+- :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
+- :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
 
 Quick Start
 -----------

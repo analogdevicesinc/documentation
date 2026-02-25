@@ -6,7 +6,7 @@ AD-QUADMXFE1-EBZ HDL Reference Design
 .. note::
 
    The latest HDL documentation can be found at
-   :git-hdl:`projects/ad_quadmxfe1_ebz/index.rst <docs/projects/ad_quadmxfe1_ebz/index.rst>`.
+   `projects/ad_quadmxfe1_ebz <https://analogdevicesinc.github.io/hdl/projects/ad_quadmxfe1_ebz/index.html>`__.
 
 Functional Overview
 -------------------
@@ -40,7 +40,7 @@ HDL Source Code
 Supported Carriers
 ------------------
 
-- :xilinx:`VCU118` FMC+ Slot
+- :xilinx:`VCU118 <products/boards-and-kits/vcu118.html>` FMC+ Slot
 
 Software Support
 ----------------
@@ -53,7 +53,7 @@ Building the HDL
 To build the HDL, first clone the repo. Change the directory to the
 ``projects/ad_quadmxfe1_ebz`` folder and run the make command. For information
 on how to change branches and more detailed steps of the build process, refer to
-:git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`.
+`ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__.
 This generates the .bit file used to load the platform.
 
 Building the Corresponding Linux Image
@@ -484,8 +484,8 @@ control GPIOs:
 More Information
 ----------------
 
-- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
-- :git-hdl:`JESD204B/C High-Speed Serial Interface Support <docs/library/jesd204/index.rst>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- `JESD204B/C High-Speed Serial Interface Support <https://analogdevicesinc.github.io/hdl/library/jesd204/index.html>`__
 
 Support
 -------

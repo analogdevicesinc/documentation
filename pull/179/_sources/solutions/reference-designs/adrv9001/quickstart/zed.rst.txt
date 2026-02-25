@@ -92,7 +92,7 @@ board lifetime and potentially causing permanent damage to the IC.
 
    For more detailed information on ZedBoard jumper settings, check the
    *ZedBoard Hardware User Guide* available on the
-   `ZedBoard doc page <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard>`__.
+   `ZedBoard doc page <https://digilent.com/reference/programmable-logic/zedboard/start>`__.
 
 Expected IIO Devices
 ~~~~~~~~~~~~~~~~~~~~

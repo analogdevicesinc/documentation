@@ -19,7 +19,7 @@ The Quad-MxFE System Development Platform highlights a complete system solution.
 It is intended as a testbed for demonstrating multi-chip synchronization as well
 as the implementation of system level calibrations, beamforming algorithms, and
 other signal processing algorithms. The system is designed to mate with a
-:xilinx:`VCU118` Evaluation Board from Xilinx, which features the Virtex
+:xilinx:`VCU118 <products/boards-and-kits/vcu118.html>` Evaluation Board from Xilinx, which features the Virtex
 UltraScale+ XCVU9P FPGA, with provided reference software, HDL code, and MATLAB
 system-level interfacing.
 
@@ -29,7 +29,7 @@ system-level calibration algorithms, or otherwise more easily demonstrate
 power-up phase determinism in situations pertinent to their own use case. The
 Calibration Board also allows the user to demonstrate combined-channel dynamic
 range, spurious, and phase noise improvements and can also be controlled via a
-free MATLAB add-on when connected to the PMOD interface of the :xilinx:`VCU118`.
+free MATLAB add-on when connected to the PMOD interface of the :xilinx:`VCU118 <products/boards-and-kits/vcu118.html>`.
 
 The system can be used to enable quick time-to-market development programs for
 applications like:
@@ -104,7 +104,7 @@ Features
 
 - Multi-channel, wideband system development platform for the :adi:`AD9081`
   :adi:`MxFE <en/products/digital-to-analog-converters/high-speed-da-converters/mixed-signal-frontends.html>`
-- Mates with Xilinx :xilinx:`VCU118` Evaluation Board (Not Included)
+- Mates with Xilinx :xilinx:`VCU118 <products/boards-and-kits/vcu118.html>` Evaluation Board (Not Included)
 - 16x RF Receive (Rx) Channels (32x Digital Rx Channels)
 
   - Total 16x 1.5GSPS to 4GSPS ADC
@@ -162,7 +162,7 @@ The Quad-MxFE System Evaluation Board highlights a complete system solution. It
 is intended as a testbed for demonstrating multi-chip synchronization as well as
 implementation of system level calibrations, beam forming algorithms, and other
 signal processing algorithms. The board is designed to mate with a
-:xilinx:`VCU118` Evaluation Board from Xilinx, which features the Virtex
+:xilinx:`VCU118 <products/boards-and-kits/vcu118.html>` Evaluation Board from Xilinx, which features the Virtex
 UltraScale+ XCVU9P FPGA, with provided reference software and HDL code.
 
 High-Level Block Diagram
@@ -176,7 +176,7 @@ High-Level Block Diagram
 System Integration
 ~~~~~~~~~~~~~~~~~~
 
-Below is the full integrated system including the :xilinx:`VCU118`,
+Below is the full integrated system including the :xilinx:`VCU118 <products/boards-and-kits/vcu118.html>`,
 ADQUADMXFE1EBZ, and :doc:`ADQUADMXFE-CAL <calboard>` in full operation.
 
 .. image:: quadfull_edit.jpg

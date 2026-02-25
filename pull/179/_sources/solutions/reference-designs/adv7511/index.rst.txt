@@ -26,12 +26,12 @@ Supported Devices
 Supported Carriers
 ------------------
 
-- :xilinx:`AC701`
-- :xilinx:`KC705`
-- :xilinx:`VC707`
-- :xilinx:`ZC702`
-- :xilinx:`ZC706`
-- `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`__
+- :xilinx:`AC701 <products/boards-and-kits/ek-a7-ac701-g.html>`
+- :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
+- :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
+- :xilinx:`ZC702 <products/boards-and-kits/ek-z7-zc702-g.html>`
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
 
 Requirements
 ~~~~~~~~~~~~
@@ -200,7 +200,7 @@ the following settings:
 More Information
 ----------------
 
-- :git-hdl:`ADI Reference Designs HDL User Guide <docs/user_guide/introduction.rst>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 
 Support
 -------
