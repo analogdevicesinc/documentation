@@ -1,0 +1,213 @@
+.. _adaq8092-fmc:
+
+ADAQ8092-FMC User Guide
+=======================
+
+Introduction
+------------
+
+The :adi:`ADAQ8092` is a 14-bit, 105 MSPS, high-speed dual-channel data
+acquisition (DAQ) µModule solution. The device incorporates signal conditioning,
+an analog-to-digital (ADC) driver, a voltage reference, and an ADC in a single
+package via system in package (SiP) technology. µModule solutions simplify the
+development of high-speed data acquisition systems by transferring the design
+burden, component selection, optimization, and layout from the designer to the
+device. The ADAQ8092 enables a 6x footprint reduction.
+
+The :adi:`EVAL-ADAQ8092` evaluation board interfaces to an FPGA carrier through
+an FMC connector, providing a complete platform for evaluating the ADAQ8092 in
+high-speed data acquisition applications.
+
+Supported Devices
+-----------------
+
+- :adi:`ADAQ8092`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+The HDL reference design implements the ``axi_adaq8092`` IP core, which
+interfaces the ADAQ8092 ADC in DDR LVDS/CMOS or SDR CMOS mode. A DMA is used
+to move captured data from the IP core output to system memory. The FPGA
+carries out all configuration of the ADC registers via SPI.
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: block_diagram_adaq8092.svg
+   :align: center
+
+   AXI_ADAQ8092 Block Diagram
+
+FPGA IP Core
+~~~~~~~~~~~~
+
+The ``axi_adaq8092`` IP core provides the following features:
+
+- AXI-based configuration
+- DC filtering
+- Configurable line delays
+- Digital output randomize output mode decoding
+- Alternate bit polarity output mode decoding
+- Vivado compatible
+
+The IP core top module instantiates:
+
+- An LVDS/CMOS interface module
+- Channel 1 and channel 2 processing modules
+- ADC common register map
+- AXI handling interface
+- Delay control module
+
+The LVDS/CMOS interface module uses IO block primitives to handle input signals.
+The input clock is routed to a clock distribution primitive that drives all ADC
+processing circuitry. Data signals are passed through IDELAYE2 primitives so that
+each line can be delayed independently via the delay controller register map.
+Latency between input and output of the interface module is 3 clock cycles.
+
+The channel processing module implements:
+
+- Digital output randomize output mode decoding
+- Alternate bit polarity output mode decoding
+- Data format conversion
+- DC filter
+- ADC channel register map
+
+The delay controller module (``up_delay_cntrl``) allows dynamic reconfiguration
+of the IDELAYE2 blocks. This compensates for trace differences between data lines
+on the PCB.
+
+Configuration Parameters
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Description
+     - Default Value
+   * - ``ID``
+     - Core ID, should be unique for each ADAQ8092 IP in the system
+     - 0
+   * - ``DEVICE_TYPE``
+     - Selects between 7 Series (1), Ultrascale (2), or Ultrascale+ (3) devices
+     - 0
+   * - ``ADC_DATAPATH_DISABLE``
+     - If set, datapath processing is bypassed and output data is taken directly
+       from the ADAQ8092
+     - 0
+   * - ``IO_DELAY_GROUP``
+     - The delay group name set for the delay controller
+     - ``"adc_if_delay_group"``
+
+Design Guidelines
+~~~~~~~~~~~~~~~~~
+
+The control of the ADAQ8092 chip is done through a SPI interface or parallel
+interface, which is needed at system level.
+
+The ADC interface signals must be connected directly to the top file of the
+design, as IO primitives are part of the IP.
+
+The example design uses a DMA to move the data from the output of the IP to
+memory. If the data needs to be processed in HDL before being moved to memory,
+it can be done at the output of the IP (at system level) or inside of the ADC
+channel module (at IP level).
+
+Detailed Architecture
+~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: arhitecture_adaq8092-lvds_ddr.svg
+   :align: center
+
+   AXI_ADAQ8092 DDR LVDS IP Architecture
+
+.. figure:: arhitecture_adaq8092-cmos_ddr.svg
+   :align: center
+
+   AXI_ADAQ8092 DDR CMOS IP Architecture
+
+.. figure:: arhitecture_adaq8092-cmos_sdr.svg
+   :align: center
+
+   AXI_ADAQ8092 SDR CMOS IP Architecture
+
+HDL IP Core Documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- `AXI ADAQ8092 IP core documentation <https://analogdevicesinc.github.io/hdl/library/axi_adaq8092/index.html>`__
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adaq8092_fmc`
+- :git-hdl:`library/axi_adaq8092`
+
+Software Support
+----------------
+
+Linux Driver
+~~~~~~~~~~~~
+
+The ADAQ8092 Linux IIO driver is an SPI-bus driver and can currently only be
+instantiated via device tree.
+
+Required device tree properties:
+
+- ``compatible``: Should always be ``"adi,adaq8092"``
+- ``reg``: SPI slave select number
+
+Kernel configuration (``make menuconfig``):
+
+.. code-block:: none
+
+   Device Drivers  --->
+     <*> Industrial I/O support --->
+       --- Industrial I/O support
+       -*-   Enable ring buffer support within IIO
+       -*-     Industrial I/O lock free software ring
+       -*-   Enable triggered sampling support
+
+             *** Analog to digital converters ***
+         [--snip--]
+
+         <*>   Analog Devices ADAQ8092 uModule Data Acquisition Module
+
+         [--snip--]
+
+The ADAQ8092 Linux driver depends on **SPI**.
+
+Driver and device tree source files:
+
+- :git-linux:`drivers/iio/adc/adaq8092.c`
+- :git-linux:`arch/arm/boot/dts/xilinx/zynq-zed-adv7511-adaq8092.dts`
+
+Related driver files:
+
+- :git-linux:`drivers/iio/adc/cf_axi_adc_core.c`
+- :git-linux:`drivers/iio/adc/cf_axi_adc.h`
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/adaq8092_fmc`
+
+More Information
+----------------
+
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- :adi:`ADAQ8092 Product Page <ADAQ8092>`
+- :adi:`EVAL-ADAQ8092 Evaluation Board <EVAL-ADAQ8092>`
+- :xilinx:`Zynq-7000 SoC Overview <support/documentation/data_sheets/ds190-Zynq-7000-Overview.pdf>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
