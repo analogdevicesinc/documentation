@@ -1,0 +1,80 @@
+.. _adaq23875:
+
+ADAQ23875 User Guide
+====================
+
+Introduction
+------------
+
+The :adi:`ADAQ23875` is a high-speed, 18-bit, 15 MSPS data acquisition
+µModule system that integrates a precision SAR ADC (based on the
+:adi:`LTC2387-18` core), a precision reference, a reference buffer, and a
+high-bandwidth ADC driver into a single system-in-package (SiP). The ADAQ23875
+is part of the Low Harmonic Interleaving (LHI) family of high-speed SAR ADCs,
+which enables multi-channel interleaving while maintaining low harmonic
+distortion.
+
+By integrating critical signal chain components into a compact package, the
+ADAQ23875 simplifies board-level design, reduces overall solution size, and
+provides optimized performance that would otherwise require extensive design
+effort with discrete components.
+
+Supported Devices
+-----------------
+
+- :adi:`ADAQ23875`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+The HDL reference design implements the ``axi_ltc2387`` IP core, which provides
+a parallel LVDS data interface to the ADAQ23875 ADC. The captured data is
+moved from the IP core output to system memory via a DMA engine.
+
+HDL IP Core Documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- `AXI LTC2387 IP core documentation <https://analogdevicesinc.github.io/hdl/library/axi_ltc2387/index.html>`__
+
+HDL Project Documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- `ADAQ23875 HDL project documentation <https://analogdevicesinc.github.io/hdl/projects/adaq23875/index.html>`__
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/adaq23875`
+- :git-hdl:`library/axi_ltc2387`
+
+Software Support
+----------------
+
+Linux Driver
+~~~~~~~~~~~~
+
+The ADAQ23875 uses the LTC2387 Linux IIO driver, which provides buffered data
+capture and sampling frequency control through the IIO subsystem.
+
+Driver and device tree source files:
+
+- :git-linux:`drivers/iio/adc/ltc2387.c`
+- :git-linux:`arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ltc2387.dts`
+
+More Information
+----------------
+
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- :adi:`ADAQ23875 Product Page <ADAQ23875>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

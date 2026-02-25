@@ -1,0 +1,104 @@
+.. _ad7091r5:
+
+EVAL-AD7091R-5SDZ User Guide
+=============================
+
+Introduction
+------------
+
+The :adi:`AD7091R-5` is a 12-bit, 4-channel, ultralow power, successive
+approximation analog-to-digital converter (ADC). It operates from a single
+2.7 V to 5.25 V power supply and features an I2C-compatible interface. The
+low power consumption makes it ideal for portable and battery-powered
+applications, while the 4 input channels provide multichannel data acquisition
+capability.
+
+Supported Devices
+-----------------
+
+- :adi:`AD7091R-5`
+
+Evaluation Board
+----------------
+
+- :adi:`EVAL-AD7091R-5SDZ`
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: ad7091r5_bd.png
+   :align: center
+
+   AD7091R-5 block diagram
+
+Hardware Configuration
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: ad7091r5.jpg
+   :align: center
+
+   EVAL-AD7091R-5SDZ hardware configuration
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+The AD7091R-5 is supported by the Linux IIO ADC subsystem. The driver depends
+on ``CONFIG_I2C``.
+
+- :git-linux:`drivers/iio/adc/ad7091r5.c`
+- :git-linux:`drivers/iio/adc/ad7091r-base.c`
+
+Kernel Configuration
+~~~~~~~~~~~~~~~~~~~~
+
+Enable the driver via ``make menuconfig``:
+
+.. code-block:: none
+
+   Device Drivers --->
+       <*> Industrial I/O support --->
+           Analog to digital converters --->
+               <*> Analog Devices AD7091R5 ADC driver
+
+Device Tree
+~~~~~~~~~~~
+
+Required properties:
+
+- **compatible**: Must be ``"adi,ad7091r5"``.
+- **reg**: I2C address for the device.
+
+Optional properties:
+
+- **vref-supply**: phandle to a regulator for the external VREF supply. If no
+  external VREF is supplied, this property should be omitted.
+
+Example device tree entry:
+
+.. code-block:: none
+
+   adc@2f {
+       compatible = "adi,ad7091r5";
+       reg = <0x2F>;
+   };
+
+No-OS Driver
+~~~~~~~~~~~~~
+
+- :git-no-OS:`drivers/adc/ad7091r5`
+
+More Information
+----------------
+
+- :adi:`AD7091R-5 Product Page <AD7091R-5>`
+- :adi:`EVAL-AD7091R-5SDZ Evaluation Board <EVAL-AD7091R-5SDZ>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`Linux Software Drivers <linux-software-drivers>` sub-community.
