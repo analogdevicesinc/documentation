@@ -97,11 +97,24 @@
 <li><a class="reference internal" href="#">AD7768-EVB User Guide</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
-<li><a class="reference internal" href="#hdl-design-description">HDL Design Description</a><ul>
-<li><a class="reference internal" href="#hdl-downloads">HDL Downloads</a></li>
-<li><a class="reference internal" href="#no-os-downloads">No-OS Downloads</a></li>
+<li><a class="reference internal" href="#evaluation-boards">Evaluation Boards</a></li>
+<li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
+<li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
+<li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
+<li><a class="reference internal" href="#building-the-hdl-project">Building the HDL Project</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#software-support">Software Support</a><ul>
+<li><a class="reference internal" href="#linux-device-driver">Linux Device Driver</a><ul>
+<li><a class="reference internal" href="#linux-device-tree">Linux Device Tree</a></li>
+<li><a class="reference internal" href="#iio-attributes">IIO Attributes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#no-os-project">No-OS Project</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-information">More Information</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
 </ul>
 </li>
@@ -473,7 +486,7 @@ Content on this topic
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adrv2crr-fmc/index.html">ADRV2CRR-FMC Carrier Board</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../adrv9001/index.html">ADRV9001/ADRV9002 User Guide</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../adrv9001/index.html">ADRV9001/ADRV9002 Prototyping Platform User Guide</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart.html">ADRV9001/ADRV9002 Quick Start Guides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zynqmp.html">ADRV9002 ZCU102 Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zynq.html">ADRV9002 ZC706 Quick Start Guide</a></li>
@@ -692,6 +705,10 @@ and DC signals.</p>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD7768" target="_blank">AD7768</a> achieves 108 dB dynamic range at a maximum input bandwidth
 of 110.8 kHz, combined with typical performance of +/- 2 ppm integral
 nonlinearity (INL), +/- 50 uV offset error, and +/- 30 ppm gain error.</p>
+<p>The AD7768 user can trade off input bandwidth, output data rate, and power
+dissipation, and select one of three power modes to optimize for noise targets
+and power consumption. The flexibility of the AD7768 allows it to become a
+reusable platform for low power DC and high performance AC measurement modules.</p>
 <p>The AD7768 has three power modes:</p>
 <ul class="simple">
 <li><p>Fast mode: 256 kSPS maximum, 110.8 kHz input bandwidth, 51.5 mW per channel</p></li>
@@ -700,6 +717,18 @@ channel</p></li>
 <li><p>Low power mode: 32 kSPS maximum, 13.8 kHz input bandwidth, 9.375 mW per
 channel</p></li>
 </ul>
+<p>The AD7768 offers extensive digital filtering capabilities, such as a wideband,
+low +/- 0.005 dB pass-band ripple, antialiasing low-pass filter with sharp
+roll-off, and 105 dB attenuation at the Nyquist frequency.</p>
+<p>Frequency domain measurements can use the wideband linear phase filter. This
+filter has a flat pass band (+/- 0.005 dB ripple) from DC to 102.4 kHz at
+256 kSPS, from DC to 51.2 kHz at 128 kSPS, or from DC to 12.8 kHz at
+32 kSPS.</p>
+<p>The AD7768 also offers sinc response via a sinc5 filter, a low latency path
+for low bandwidth, and low noise measurements. The wideband and sinc5 filters
+can be selected and run on a per channel basis.</p>
+<p>Within these filter options, the user can improve the dynamic range by
+selecting from decimation rates of x32, x64, x128, x256, x512, and x1024.</p>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
@@ -707,35 +736,154 @@ channel</p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD7768" target="_blank">AD7768</a></p></li>
 </ul>
 </section>
-<section id="hdl-design-description">
-<h2>HDL Design Description<a class="headerlink" href="#hdl-design-description" title="Link to this heading"></a></h2>
+<section id="evaluation-boards">
+<h2>Evaluation Boards<a class="headerlink" href="#evaluation-boards" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7768" target="_blank">EVAL-AD7768</a></p></li>
+</ul>
+</section>
+<section id="supported-carriers">
+<h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
+</ul>
+</section>
+<section id="hdl-reference-design">
+<h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
+<p>The HDL architecture comprises a serial data path that enables all the ADC
+channels and a parallel data path, so that the user can enable only the
+desired channels.</p>
+<p>The reference design uses the <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/axi_ad7768" target="_blank">AXI AD7768 IP core</a>
+to interface the AD7768 ADC. Data is deserialized according to the number of
+active lanes. The interface module also implements a parallel CRC check
+algorithm. The data from the interface module is processed by the ADC channel
+module.</p>
+<section id="block-diagram">
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
 <figure class="align-center" id="id1">
 <img alt="../../../_images/ad7768evb_fmc_hdl.svg" src="../../../_images/ad7768evb_fmc_hdl.svg" />
 <figcaption>
 <p><span class="caption-number">Figure 1 </span><span class="caption-text">AD7768-EVB HDL block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>The HDL architecture comprises a serial data path that enables all the ADC
-channels and a parallel data path, so that the user can enable only the
-desired channels.</p>
-<section id="hdl-downloads">
-<h3>HDL Downloads<a class="headerlink" href="#hdl-downloads" title="Link to this heading"></a></h3>
+</section>
+<section id="hdl-source-code">
+<h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/ad7768evb" target="_blank">projects/ad7768evb</a></p></li>
 </ul>
 </section>
-<section id="no-os-downloads">
-<h3>No-OS Downloads<a class="headerlink" href="#no-os-downloads" title="Link to this heading"></a></h3>
+<section id="building-the-hdl-project">
+<h3>Building the HDL Project<a class="headerlink" href="#building-the-hdl-project" title="Link to this heading"></a></h3>
+<p>The design is built upon ADI’s generic HDL reference design framework. ADI
+does not distribute pre-built bitstream files, so the project must be built
+from source. Clone the HDL repository and, with the correct tools installed,
+navigate to the project directory and run <code class="docutils literal notranslate"><span class="pre">make</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>hdl/projects/ad7768evb/zed
+make
+</pre></div>
+</div>
+</section>
+</section>
+<section id="software-support">
+<h2>Software Support<a class="headerlink" href="#software-support" title="Link to this heading"></a></h2>
+<section id="linux-device-driver">
+<h3>Linux Device Driver<a class="headerlink" href="#linux-device-driver" title="Link to this heading"></a></h3>
+<p>The AD7768 Linux driver is an IIO (Industrial I/O) subsystem driver targeting
+the AD7768 and AD7768-4 precision ADCs.</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad7768.c" target="_blank">drivers/iio/adc/ad7768.c</a></p></li>
+</ul>
+<section id="linux-device-tree">
+<h4>Linux Device Tree<a class="headerlink" href="#linux-device-tree" title="Link to this heading"></a></h4>
+<p>Required device tree properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">compatible</span></code>: Must be one of <code class="docutils literal notranslate"><span class="pre">&quot;adi,ad7768&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;adi,ad7768-4&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reg</span></code>: SPI chip select number for the device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clocks</span></code>: phandle to master clock of the device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clock-names</span></code>: Must be <code class="docutils literal notranslate"><span class="pre">&quot;mclk&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dmas</span></code>: DMA specifier, consisting of a phandle to DMA controller node</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dma-names</span></code>: Must be <code class="docutils literal notranslate"><span class="pre">&quot;rx&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vref-supply</span></code>: phandle to the regulator for ADC reference voltage</p></li>
+</ul>
+<p>Optional properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">reset-gpios</span></code>: Reset GPIO</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adi,data-lines</span></code>: Number of DOUTx pins channels data is output on
+(default: 1). This value is determined by the configuration of the AD7768
+FORMATx pins, which are read on power-up.</p></li>
+</ul>
+<p>Example device tree:</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7768.dts" target="_blank">arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7768.dts</a></p></li>
+</ul>
+</section>
+<section id="iio-attributes">
+<h4>IIO Attributes<a class="headerlink" href="#iio-attributes" title="Link to this heading"></a></h4>
+<p>Once the driver is loaded, the following IIO attributes are available at
+<code class="docutils literal notranslate"><span class="pre">/sys/bus/iio/devices/iio:deviceX/</span></code>:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">in_voltage_scale</span></code></p></td>
+<td><p>Scale to apply to raw values to obtain millivolts</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">power_mode</span></code></p></td>
+<td><p>Current power consumption mode of the ADC core</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">power_mode_available</span></code></p></td>
+<td><p>Available power mode options</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sampling_frequency</span></code></p></td>
+<td><p>Current sampling frequency</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sampling_frequency_available</span></code></p></td>
+<td><p>Available sampling frequency options</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">filter_type</span></code></p></td>
+<td><p>Current digital filter type</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">filter_type_available</span></code></p></td>
+<td><p>Available filter type options</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="no-os-project">
+<h3>No-OS Project<a class="headerlink" href="#no-os-project" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad7768-evb" target="_blank">projects/ad7768-evb</a></p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/ad7768" target="_blank">drivers/adc/ad7768</a></p></li>
 </ul>
+<p>The No-OS project provides bare metal support for the AD7768-EVB. To set up
+the software:</p>
+<ol class="arabic simple">
+<li><p>Clone the No-OS GitHub repository</p></li>
+<li><p>Build the project located at <code class="docutils literal notranslate"><span class="pre">projects/ad7768-evb</span></code></p></li>
+<li><p>Follow the instructions in the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/doxygen/build_guides.html" target="_blank">ADI No-OS build guide</a></p></li>
+</ol>
 </section>
+</section>
+<section id="more-information">
+<h2>More Information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/introduction.html" target="_blank">ADI Reference Designs HDL User Guide</a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/axi_ad7768/index.html" target="_blank">AXI AD7768 IP Core Documentation</a></p></li>
+</ul>
 </section>
 <section id="support">
 <h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
-<p>If you have any questions regarding the AD7768-EVB feel free to ask on
-the <a class="icon ez reference external" href="https://ez.analog.com/fpga" target="_blank">FPGA Reference Designs Forum</a>.</p>
+<p>Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+<a class="icon ez reference external" href="https://ez.analog.com/fpga" target="_blank">FPGA Reference Designs Forum</a>.</p>
 </section>
 </section>
 

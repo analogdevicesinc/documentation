@@ -97,9 +97,31 @@
 <li><a class="reference internal" href="#">AD4630-FMC User Guide</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
-<li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li><a class="reference internal" href="#evaluation-boards">Evaluation Boards</a></li>
+<li><a class="reference internal" href="#supported-carriers">Supported Carriers</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#evaluation-board-kit-contents">Evaluation Board Kit Contents</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-board-revisions">Evaluation Board Revisions</a><ul>
+<li><a class="reference internal" href="#eval-ad4630-24-16fmcz-rev-c-obsolete">EVAL-AD4630-24/16FMCZ Rev C (Obsolete)</a></li>
+<li><a class="reference internal" href="#eval-ad4630-24-16fmcz-rev-e-current">EVAL-AD4630-24/16FMCZ Rev E (Current)</a></li>
+<li><a class="reference internal" href="#eval-ad4030-24fmcz-rev-a-b">EVAL-AD4030-24FMCZ Rev A/B</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#evaluation-board-hardware">Evaluation Board Hardware</a><ul>
-<li><a class="reference internal" href="#analog-front-end">Analog Front End</a></li>
+<li><a class="reference internal" href="#power-supplies-rev-c-rev-a-b">Power Supplies (Rev C / Rev A/B)</a></li>
+<li><a class="reference internal" href="#power-supplies-rev-e">Power Supplies (Rev E)</a></li>
+<li><a class="reference internal" href="#reference-circuit">Reference Circuit</a></li>
+<li><a class="reference internal" href="#clock-circuit">Clock Circuit</a></li>
+<li><a class="reference internal" href="#analog-front-end">Analog Front End</a><ul>
+<li><a class="reference internal" href="#afe-component-changes-rev-c-rev-a-b">AFE Component Changes (Rev C / Rev A/B)</a></li>
+<li><a class="reference internal" href="#afe-component-changes-rev-e">AFE Component Changes (Rev E)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
 <li><a class="reference internal" href="#system-operational-constraints">System Operational Constraints</a></li>
 </ul>
 </li>
@@ -108,7 +130,9 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
+<li><a class="reference internal" href="#ace-software">ACE Software</a></li>
 <li><a class="reference internal" href="#linux-device-driver">Linux Device Driver</a></li>
+<li><a class="reference internal" href="#pyadi-iio">pyadi-iio</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -483,7 +507,7 @@ Content on this topic
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adrv2crr-fmc/index.html">ADRV2CRR-FMC Carrier Board</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../adrv9001/index.html">ADRV9001/ADRV9002 User Guide</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../adrv9001/index.html">ADRV9001/ADRV9002 Prototyping Platform User Guide</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart.html">ADRV9001/ADRV9002 Quick Start Guides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zynqmp.html">ADRV9002 ZCU102 Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zynq.html">ADRV9002 ZC706 Quick Start Guide</a></li>
@@ -705,7 +729,9 @@ dual channel, 24-bit or 16-bit SAR ADCs, while the <a class="icon adi reference 
 single channel, 24-bit precision SAR ADC supporting up to 2 MSPS.</p>
 <p>The evaluation boards are designed for use with the ZedBoard. The ZedBoard
 controls data capture and buffering, and connects to the evaluation board via
-an FMC LPC connector.</p>
+an FMC LPC connector. The ZedBoard hosts a Xilinx Zynq-7000 SoC with dual
+ARM Cortex-A9 processors and programmable FPGA fabric. It communicates with
+the PC through USB or Ethernet.</p>
 </section>
 <section id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
@@ -715,23 +741,308 @@ an FMC LPC connector.</p>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD4630-16" target="_blank">AD4630-16</a></p></li>
 </ul>
 </section>
+<section id="evaluation-boards">
+<h2>Evaluation Boards<a class="headerlink" href="#evaluation-boards" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4630-24.html" target="_blank">EVAL-AD4630-24</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4630-16.html" target="_blank">EVAL-AD4630-16</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4030-24.html" target="_blank">EVAL-AD4030-24</a></p></li>
+</ul>
+</section>
 <section id="supported-carriers">
 <h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
 </ul>
+<section id="equipment-needed">
+<h3>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>PC with Windows 7 or Windows 10 operating system</p></li>
+<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a>
+with 12 V wall adapter power supply</p></li>
+<li><p>Precision signal source</p></li>
+<li><p>SMA cable(s)</p></li>
+<li><p>Recommended: band-pass filter centered on the test signal frequency</p></li>
+</ul>
+</section>
+<section id="evaluation-board-kit-contents">
+<h3>Evaluation Board Kit Contents<a class="headerlink" href="#evaluation-board-kit-contents" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ, or EVAL-AD4630-16FMCZ evaluation
+board</p></li>
+<li><p>Micro-SD memory card (with adapter) containing system board boot software
+and Linux OS</p></li>
+<li><p>Optional: ZedBoard (system controller board)</p></li>
+</ul>
+</section>
+</section>
+<section id="evaluation-board-revisions">
+<h2>Evaluation Board Revisions<a class="headerlink" href="#evaluation-board-revisions" title="Link to this heading"></a></h2>
+<p>Two different evaluation board revisions exist for the AD4630-24 and AD4630-16:</p>
+<section id="eval-ad4630-24-16fmcz-rev-c-obsolete">
+<h3>EVAL-AD4630-24/16FMCZ Rev C (Obsolete)<a class="headerlink" href="#eval-ad4630-24-16fmcz-rev-c-obsolete" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/eval-ad4630-16_top.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/eval-ad4630-16_top.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/eval-ad4630-16_top.jpg" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ, Rev C</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Two differential input channels with SMA connectors</p></li>
+<li><p>High precision buffered band gap 5 V reference (<a class="icon adi reference external" href="https://www.analog.com/LTC6655" target="_blank">LTC6655</a>)</p></li>
+<li><p>Configurable AFE with <a class="icon adi reference external" href="https://www.analog.com/ADA4896-2" target="_blank">ADA4896-2</a> (dual buffer) or <a class="icon adi reference external" href="https://www.analog.com/ADA4945-1" target="_blank">ADA4945-1</a>
+(fully differential amplifier)</p></li>
+<li><p>Optional 100 MHz clock source for FPGA and ADC</p></li>
+<li><p>Full power supply solution from 12 V via FMC connector</p></li>
+</ul>
+</section>
+<section id="eval-ad4630-24-16fmcz-rev-e-current">
+<h3>EVAL-AD4630-24/16FMCZ Rev E (Current)<a class="headerlink" href="#eval-ad4630-24-16fmcz-rev-e-current" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/cb-ad464030-24fmcz_top-evaluation-board.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/cb-ad464030-24fmcz_top-evaluation-board.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/cb-ad464030-24fmcz_top-evaluation-board.jpg" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ, Rev E</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Rev E boards have a date code greater than DC&gt;2435.</p>
+<ul class="simple">
+<li><p>Two differential input channels with SMA connectors</p></li>
+<li><p>High precision, low power, low noise 5 V reference (<a class="icon adi reference external" href="https://www.analog.com/ADR4550" target="_blank">ADR4550</a>), with
+option to mount <a class="icon adi reference external" href="https://www.analog.com/LTC6655" target="_blank">LTC6655</a></p></li>
+<li><p>Configurable AFE with <a class="icon adi reference external" href="https://www.analog.com/ADA4896-2" target="_blank">ADA4896-2</a> (multiple input configurations) or
+<a class="icon adi reference external" href="https://www.analog.com/ADA4945-1" target="_blank">ADA4945-1</a> (fully differential amplifier)</p></li>
+<li><p>Optional 100 MHz clock source for FPGA and ADC</p></li>
+<li><p>Improved power supply solution from 12 V via FMC connector</p></li>
+<li><p>Extra connectors for external power supply</p></li>
+</ul>
+</section>
+<section id="eval-ad4030-24fmcz-rev-a-b">
+<h3>EVAL-AD4030-24FMCZ Rev A/B<a class="headerlink" href="#eval-ad4030-24fmcz-rev-a-b" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/eval-ad4030-24_top.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/eval-ad4030-24_top.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/eval-ad4030-24_top.jpg" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-AD4030-24FMCZ, Rev A/B</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>One differential input channel with SMA connectors</p></li>
+<li><p>High precision buffered band gap 5 V reference (<a class="icon adi reference external" href="https://www.analog.com/LTC6655" target="_blank">LTC6655</a>)</p></li>
+<li><p>Configurable AFE with <a class="icon adi reference external" href="https://www.analog.com/ADA4896-2" target="_blank">ADA4896-2</a> (dual buffer) or <a class="icon adi reference external" href="https://www.analog.com/ADA4945-1" target="_blank">ADA4945-1</a>
+(fully differential amplifier)</p></li>
+<li><p>Optional 100 MHz clock source for FPGA and ADC</p></li>
+<li><p>Full power supply solution from 12 V via FMC connector</p></li>
+</ul>
+</section>
 </section>
 <section id="evaluation-board-hardware">
 <h2>Evaluation Board Hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h2>
-<p>The evaluation board includes:</p>
-<ul class="simple">
-<li><p>Two differential input channels with SMA connectors (AD4630-24/16) or one
-differential input channel (AD4030-24)</p></li>
-<li><p>A high precision voltage reference (<a class="icon adi reference external" href="https://www.analog.com/ADR4550" target="_blank">ADR4550</a> or <a class="icon adi reference external" href="https://www.analog.com/LTC6655" target="_blank">LTC6655</a>)</p></li>
-<li><p>A configurable analog front end (AFE) supporting multiple driver topologies</p></li>
-<li><p>An optional 100 MHz clock source for the FPGA and ADC</p></li>
-<li><p>Full power supply solution from 12 V supplied through the FMC connector</p></li>
-</ul>
+<section id="power-supplies-rev-c-rev-a-b">
+<h3>Power Supplies (Rev C / Rev A/B)<a class="headerlink" href="#power-supplies-rev-c-rev-a-b" title="Link to this heading"></a></h3>
+<p>The primary 12 V supply comes from the ZedBoard through the FMC connector.
+Each voltage rail is brought out to turrets for easy measurement. A bench
+supply can be used to drive these turrets for manual powering when current
+measurements are required.</p>
+<div class="table-wrapper docutils container" id="id4">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">On-board power supplies (Rev C / Rev A/B)</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Power Supply</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Min (V)</p></th>
+<th class="head"><p>Max (V)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>+12V</p></td>
+<td><p>Primary supply via FMC connector</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>Ground connection</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>+3.3V</p></td>
+<td><p>Digital logic supply</p></td>
+<td><p>3.26</p></td>
+<td><p>3.33</p></td>
+</tr>
+<tr class="row-odd"><td><p>+1.8V</p></td>
+<td><p>ADC supply</p></td>
+<td><p>1.77</p></td>
+<td><p>1.81</p></td>
+</tr>
+<tr class="row-even"><td><p>VIO</p></td>
+<td><p>ADC digital I/O supply</p></td>
+<td><p>1.8</p></td>
+<td><p>1.87</p></td>
+</tr>
+<tr class="row-odd"><td><p>+5V</p></td>
+<td><p>ADC supply</p></td>
+<td><p>5.26</p></td>
+<td><p>5.4</p></td>
+</tr>
+<tr class="row-even"><td><p>REFIN</p></td>
+<td><p>ADC reference input</p></td>
+<td><p>4.95</p></td>
+<td><p>5.05</p></td>
+</tr>
+<tr class="row-odd"><td><p>VAMP+</p></td>
+<td><p>Positive amplifier supply</p></td>
+<td><p>5.36</p></td>
+<td><p>5.47</p></td>
+</tr>
+<tr class="row-even"><td><p>VAMP-</p></td>
+<td><p>Negative amplifier supply</p></td>
+<td><p>-3.5</p></td>
+<td><p>-3.28</p></td>
+</tr>
+<tr class="row-odd"><td><p>VP1</p></td>
+<td><p>Switcher input (5.7 V)</p></td>
+<td><p>5.45</p></td>
+<td><p>5.75</p></td>
+</tr>
+<tr class="row-even"><td><p>REF</p></td>
+<td><p>ADC reference output</p></td>
+<td><p>4.95</p></td>
+<td><p>5.05</p></td>
+</tr>
+<tr class="row-odd"><td><p>EN</p></td>
+<td><p>Power supply enable</p></td>
+<td><p>1.75</p></td>
+<td><p>1.85</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="power-supplies-rev-e">
+<h3>Power Supplies (Rev E)<a class="headerlink" href="#power-supplies-rev-e" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container" id="id5">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">On-board power supplies (Rev E)</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Power Supply</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Min (V)</p></th>
+<th class="head"><p>Max (V)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>+12V</p></td>
+<td><p>Primary supply via FMC connector</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>Ground connection</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>+3.3V</p></td>
+<td><p>Digital logic supply</p></td>
+<td><p>3.26</p></td>
+<td><p>3.33</p></td>
+</tr>
+<tr class="row-odd"><td><p>+1.8V</p></td>
+<td><p>ADC supply</p></td>
+<td><p>1.77</p></td>
+<td><p>1.81</p></td>
+</tr>
+<tr class="row-even"><td><p>VIO</p></td>
+<td><p>ADC digital I/O supply</p></td>
+<td><p>1.77</p></td>
+<td><p>1.81</p></td>
+</tr>
+<tr class="row-odd"><td><p>+5.4V</p></td>
+<td><p>ADC supply</p></td>
+<td><p>5.34</p></td>
+<td><p>5.46</p></td>
+</tr>
+<tr class="row-even"><td><p>REFIN</p></td>
+<td><p>ADC reference input</p></td>
+<td><p>4.95</p></td>
+<td><p>5.05</p></td>
+</tr>
+<tr class="row-odd"><td><p>VAMP+</p></td>
+<td><p>Positive amplifier supply</p></td>
+<td><p>6.35</p></td>
+<td><p>6.5</p></td>
+</tr>
+<tr class="row-even"><td><p>VAMP-</p></td>
+<td><p>Negative amplifier supply</p></td>
+<td><p>-3.35</p></td>
+<td><p>-3.28</p></td>
+</tr>
+<tr class="row-odd"><td><p>VP1</p></td>
+<td><p>Switcher input (7.5 V)</p></td>
+<td><p>7.425</p></td>
+<td><p>7.575</p></td>
+</tr>
+<tr class="row-even"><td><p>REF</p></td>
+<td><p>ADC reference output</p></td>
+<td><p>4.95</p></td>
+<td><p>5.05</p></td>
+</tr>
+<tr class="row-odd"><td><p>EN</p></td>
+<td><p>Power supply enable</p></td>
+<td><p>1.75</p></td>
+<td><p>1.85</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/powertree.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/powertree.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Power tree for EVAL-AD4630-24/16FMCZ Rev E</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="reference-circuit">
+<h3>Reference Circuit<a class="headerlink" href="#reference-circuit" title="Link to this heading"></a></h3>
+<p><strong>Rev C / Rev A/B:</strong> The on-board <a class="icon adi reference external" href="https://www.analog.com/LTC6655" target="_blank">LTC6655</a> provides a 5 V reference to
+the ADC. It drives the REFIN pin through an R-C filter (R=100 Ohm, C=1 uF)
+that reduces low frequency noise.</p>
+<p><strong>Rev E:</strong> The on-board <a class="icon adi reference external" href="https://www.analog.com/ADR4550" target="_blank">ADR4550</a> provides a 5 V reference. It drives the
+REFIN pin through an R-C filter (R=100 Ohm, C=22 uF). There is also an option
+to mount the <a class="icon adi reference external" href="https://www.analog.com/LTC6655" target="_blank">LTC6655</a> or LTC6655LN reference.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/ad4630_ref_ckt.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/ad4630_ref_ckt.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Reference circuit (Rev C / Rev A/B; AD4630-24 shown, applies to all parts)</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/reference2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/reference2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Reference circuit (Rev E; AD4630-24 shown, applies to all parts)</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>To use an external reference that drives the internal buffer, attach it to the
+EXT REF SMA connector. The internal buffer can be bypassed by attaching an
+external reference to the REF turret on the board.</p>
+</section>
+<section id="clock-circuit">
+<h3>Clock Circuit<a class="headerlink" href="#clock-circuit" title="Link to this heading"></a></h3>
+<p>The ZedBoard uses a 100 MHz reference clock to generate its internal clocks
+and the sample clock for the ADC. An on-board 100 MHz, low-jitter crystal
+oscillator provides this clock as the default configuration.</p>
+<p>To use an external clock source, remove the appropriate resistor (R55 for
+Rev C, R1 for Rev E) and connect an external clock source to the CLK IN SMA
+connector. The external clock frequency must be 100 MHz or less, and the
+external clock level should be 10 to 12 dBm.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/eval-ad4630-24_clk_ckt.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad4630-fmc/eval-ad4630-24_clk_ckt.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Clock circuit (Rev C; AD4630-24 shown, applies to all parts)</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
 <section id="analog-front-end">
 <h3>Analog Front End<a class="headerlink" href="#analog-front-end" title="Link to this heading"></a></h3>
 <p>The evaluation board has a flexible driver network supporting multiple
@@ -739,20 +1050,133 @@ topologies:</p>
 <ul class="simple">
 <li><p><strong>Differential Amplifier (default)</strong> - <a class="icon adi reference external" href="https://www.analog.com/ADA4945-1" target="_blank">ADA4945-1</a> fully differential
 amplifier driving the ADC with unity gain. Supports single-ended and
-differential sources.</p></li>
+differential sources. Best distortion performance. No changes required from
+default configuration.</p></li>
 <li><p><strong>Dual Buffer</strong> - <a class="icon adi reference external" href="https://www.analog.com/ADA4896-2" target="_blank">ADA4896-2</a> dual unity gain buffer for best noise
-performance due to low voltage and current noise (1 nV/rtHz and 2.8 pA/rtHz).</p></li>
+performance due to low voltage and current noise (1 nV/rtHz and 2.8 pA/rtHz).
+Offers 10 MOhm common mode input impedance.</p></li>
 <li><p><strong>Buffer with Gain</strong> - Combination of ADA4896-2 and ADA4945-1 for
 applications requiring high input impedance with gain.</p></li>
 <li><p><strong>Direct Drive</strong> - Allows the ADC to be driven directly from the SMA
 connectors for evaluation with external driver configurations.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ADA4945-1 driver on the evaluation board preserves the differential
+value of IN+ - IN- but inverts the signal polarity injected to the ADC.
+If a positive DC signal is applied, connect it to IN_A/B-. A negative DC
+signal should be connected to IN_A/B+ to preserve polarity.</p>
+</div>
+<section id="afe-component-changes-rev-c-rev-a-b">
+<h4>AFE Component Changes (Rev C / Rev A/B)<a class="headerlink" href="#afe-component-changes-rev-c-rev-a-b" title="Link to this heading"></a></h4>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Configuration</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Required Changes from Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Differential Amplifier</p></td>
+<td><p>Best distortion</p></td>
+<td><p>No changes required</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dual Buffer</p></td>
+<td><p>Best noise</p></td>
+<td><p>Remove: R10, R12, R119, R120, R121, R122 (Ch A); R20, R22, R123, R124,
+R125, R126 (Ch B). Install: R31, R33, R47, R49 (Ch A); R60, R62, R75,
+R78 (Ch B)</p></td>
+</tr>
+<tr class="row-even"><td><p>Buffer with Gain</p></td>
+<td><p>High impedance + gain</p></td>
+<td><p>Remove: R120, R121 (Ch A); R124, R125 (Ch B). Install: R31, R127, R28,
+R47, R128, R43 (Ch A); R60, R129, R57, R78, R130, R72 (Ch B)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Direct Drive</p></td>
+<td><p>External driver eval</p></td>
+<td><p>Remove: R10, R12, R119, R122 (Ch A); R20, R22, R123, R126 (Ch B).
+Install: R28, R29, R120, R121, R43, R44 (Ch A); R124, R57, R58, R125,
+R72, R73 (Ch B)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
+<section id="afe-component-changes-rev-e">
+<h4>AFE Component Changes (Rev E)<a class="headerlink" href="#afe-component-changes-rev-e" title="Link to this heading"></a></h4>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Configuration</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Required Changes from Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Differential Amplifier</p></td>
+<td><p>Best distortion</p></td>
+<td><p>No changes required</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dual Buffer</p></td>
+<td><p>Best noise</p></td>
+<td><p>Remove: R17, R23, R19, R25, R42, R45, R44, R48. Install: R114, R108,
+R112, R106, R139, R136, R137, R134</p></td>
+</tr>
+<tr class="row-even"><td><p>Buffer with VOCM</p></td>
+<td><p>High impedance + DC offset</p></td>
+<td><p>Remove: R17, R23, R19, R25, R42, R45, R44, R48. Install: R114, R108,
+R112, R106, R139, R136, R137, R134, R120, R119, R103, R102, R142,
+R141, R132, R131</p></td>
+</tr>
+<tr class="row-odd"><td><p>Direct Drive</p></td>
+<td><p>External driver eval</p></td>
+<td><p>Remove: R17, R23, R19, R25, R42, R45, R44, R48. Install: R121, R118,
+R104, R105, R143, R140, R133, R130</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Ensure the ZedBoard VADJ SELECT jumper is set to <strong>2.5 V</strong>.</p></li>
+<li><p>Insert the Kuiper Linux SD card into the SD card slot on the ZedBoard.</p></li>
+<li><p>Set the ZedBoard boot configuration jumpers for SD card boot.</p></li>
+<li><p>Connect the evaluation board to the FMC connector on the ZedBoard.</p></li>
+<li><p>Connect a USB cable from the PC to J13 (USB OTG) and the power supply
+to J20 (DC input).</p></li>
+<li><p>Slide SW8 (POWER) to the ON position. The green LD13 (POWER) LED should
+turn on. The blue LD12 (DONE) and red LD0 LEDs should start blinking after
+approximately 20-30 seconds, indicating the boot process is complete.</p></li>
+<li><p>Connect the desired input signal to the appropriate SMA connectors on the
+evaluation board.</p></li>
+<li><p>Launch the ACE software or connect via IIO.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the SD card needs to be re-imaged, instructions are available in the
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/adi-kuiper_images_for_ace" target="_blank">ADI Kuiper Linux</a>
+documentation.</p>
+</div>
 <section id="system-operational-constraints">
 <h3>System Operational Constraints<a class="headerlink" href="#system-operational-constraints" title="Link to this heading"></a></h3>
-<div class="table-wrapper docutils container" id="id1">
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Maximum sampling rate by device configuration</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id10">
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Maximum sampling rate by device configuration</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Clocking Mode</p></th>
 <th class="head"><p>Lane Mode</p></th>
@@ -826,11 +1250,42 @@ AD4630/AD4030 device.</p>
 </section>
 <section id="software-support">
 <h2>Software Support<a class="headerlink" href="#software-support" title="Link to this heading"></a></h2>
+<section id="ace-software">
+<h3>ACE Software<a class="headerlink" href="#ace-software" title="Link to this heading"></a></h3>
+<p>The ADI <a class="icon link reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html" target="_blank">ACE</a>
+application provides a plug-and-play evaluation experience with the ZedBoard,
+enabling quick board configuration, data capture, and analysis (time and
+frequency domain).</p>
+</section>
 <section id="linux-device-driver">
 <h3>Linux Device Driver<a class="headerlink" href="#linux-device-driver" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad4630.c" target="_blank">drivers/iio/adc/ad4630.c</a></p></li>
 </ul>
+</section>
+<section id="pyadi-iio">
+<h3>pyadi-iio<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h3>
+<p>The <a class="icon link reference external" href="https://analogdevicesinc.github.io/pyadi-iio/" target="_blank">pyadi-iio</a> library
+provides Python bindings for the AD4630/AD4030 family. Example scripts are
+available in the
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/ad4630" target="_blank">source repository</a>.</p>
+<p>A basic usage example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adi</span>
+
+<span class="n">device_name</span> <span class="o">=</span> <span class="s2">&quot;ad4630-24&quot;</span>
+
+<span class="c1"># Instantiate ADC (Ethernet connection)</span>
+<span class="n">adc</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">ad4630</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;ip:analog.local&quot;</span><span class="p">,</span> <span class="n">device_name</span><span class="o">=</span><span class="n">device_name</span><span class="p">)</span>
+<span class="c1"># For USB connection, use: uri=&quot;usb:x.x.x&quot; (from iio_info -s)</span>
+
+<span class="c1"># Configure</span>
+<span class="n">adc</span><span class="o">.</span><span class="n">rx_buffer_size</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">12</span>
+<span class="n">adc</span><span class="o">.</span><span class="n">sample_rate</span> <span class="o">=</span> <span class="mi">2000000</span>
+
+<span class="c1"># Capture data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">rx</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="more-information">
@@ -844,6 +1299,8 @@ AD4630/AD4030 device.</p>
 <p>Analog Devices will provide limited online support for anyone using the
 reference design with Analog Devices components via the
 <a class="icon ez reference external" href="https://ez.analog.com/fpga" target="_blank">FPGA Reference Designs Forum</a>.</p>
+<p>For precision ADC questions, visit the
+<a class="icon ez reference external" href="https://ez.analog.com/data_converters/precision_adcs" target="_blank">Precision ADCs Forum</a>.</p>
 </section>
 </section>
 

@@ -17,13 +17,20 @@ for the :adi:`AD7386`, :adi:`AD7387`, and :adi:`AD7388`. The AD7380 family has
 optional integrated on-chip oversampling blocks to improve dynamic range and
 reduce noise at lower bandwidths. An internal 2.5 V reference is included.
 
+Alternatively, an external reference up to 3.3 V can be used. The conversion
+process and data acquisition use standard control inputs allowing for easy
+interfacing to microprocessors or DSPs. It is compatible with 1.8 V, 2.5 V, and
+3.3 V interfaces, using a separate logic supply.
+
 Applications:
 
 - Motor control position feedback
 - Motor control current sense
 - Data acquisition systems
+- EDFA applications
 - I and Q demodulation
 - SONAR
+- Power quality
 
 Supported Devices
 -----------------
@@ -42,6 +49,15 @@ Supported Devices
 - :adi:`AD4684`
 - :adi:`AD4685`
 
+Evaluation Boards
+-----------------
+
+- :adi:`EVAL-AD7380FMCZ`
+- :adi:`EVAL-AD7381FMCZ`
+- :adi:`EVAL-AD7386FMCZ`
+- :adi:`EVAL-AD7383FMCZ`
+- :adi:`EVAL-AD7380-4FMCZ`
+
 Supported Carriers
 ------------------
 
@@ -52,6 +68,19 @@ HDL Reference Design
 
 The reference design uses the standard SPI Engine Framework with an integrated
 pulse generator, which provides the required conversion rate for the ADC.
+
+Building the HDL Project
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The design is built upon ADI's generic HDL reference design framework. ADI
+does not distribute pre-built bitstream files, so the project must be built
+from source. Clone the HDL repository and, with the correct tools installed,
+navigate to the project directory and run ``make``:
+
+.. code-block:: bash
+
+   cd hdl/projects/ad738x_fmc/zed
+   make
 
 HDL Source Code
 ~~~~~~~~~~~~~~~
@@ -67,10 +96,102 @@ No-OS Project
 - :git-no-OS:`projects/ad738x_fmcz`
 - :git-no-OS:`drivers/adc/ad738x`
 
+The No-OS project provides bare metal support for the AD738x-FMC evaluation
+boards. The No-OS driver provides the following key capabilities:
+
+- Device initialization and removal
+- Internal or external reference selection
+- Power down mode control (normal or full power-down)
+- Oversampling configuration (normal or rolling average mode, ratios from x2
+  to x32, with 16-bit or 18-bit resolution)
+- Conversion mode selection (one-wire or two-wire SPI output)
+- Software and hardware device reset
+- Single conversion readback
+
+To set up the software:
+
+#. Clone the No-OS GitHub repository
+#. Build the project located at ``projects/ad738x_fmcz``
+#. Follow the instructions in the
+   `ADI No-OS build guide <https://analogdevicesinc.github.io/no-OS/doxygen/build_guides.html>`__
+
 Linux Device Driver
 ~~~~~~~~~~~~~~~~~~~
 
+The AD738x Linux driver is an IIO (Industrial I/O) subsystem driver targeting
+dual and quad channel serial interface ADCs from the AD7380 family.
+
 - :git-linux:`drivers/iio/adc/ad7380.c`
+
+Linux Device Tree
+^^^^^^^^^^^^^^^^^
+
+A complete example device tree for the EVAL-AD7380FMCZ evaluation board can be
+found in the ADI Linux source code. This can be adapted for other evaluation
+boards by changing the ``compatible`` property:
+
+- :git-linux:`arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7380.dts`
+
+Required device tree properties:
+
+- ``compatible``: Must be set to the specific chip, e.g. ``"adi,ad7380"``
+- ``reg``: SPI chip select number
+- ``spi-max-frequency``: Maximum SPI clock rate (use datasheet max if wiring
+  permits)
+- ``spi-cpol``: Must be set for correct clock polarity
+- ``vcc-supply``: VCC power supply
+- ``vlogic-supply``: Logic power supply
+
+Reference supply configuration:
+
+- ``refio-supply``: External reference on the REFIO pin (omit to use
+  internal reference)
+- ``refin-supply``: Used for AD7380-4 and ADAQ chips which require an extra
+  supply on the REFIN pin
+
+For SPI offloading support (required for maximum throughput), add:
+
+- ``adi,num-sdi``: Number of SDI lines, must match the ``NUM_OF_SDI`` compile
+  option used when building the FPGA bitstream
+
+IIO Attributes
+^^^^^^^^^^^^^^
+
+Once the driver is loaded, the following IIO attributes are available at
+``/sys/bus/iio/devices/iio:deviceX/``:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Attribute
+     - Description
+   * - ``in_voltageX_raw``
+     - Raw unscaled voltage measurement on channel X
+   * - ``in_voltage_scale``
+     - Scale to apply to raw values to obtain millivolts
+   * - ``in_voltage_sampling_frequency``
+     - Sampling frequency (when using SPI offload)
+   * - ``in_voltage_sampling_frequency_available``
+     - Maximum available sample rate
+   * - ``in_voltage_oversampling_ratio``
+     - Current oversampling ratio (1 = disabled)
+   * - ``in_voltage_oversampling_ratio_available``
+     - Available oversampling ratios (1, 2, 4, 8, 16, 32)
+
+The measured voltage in millivolts is calculated as:
+
+   ``voltage_mV = in_voltageX_raw * in_voltage_scale``
+
+For pseudo-differential chips, an ``in_voltageX_offset`` attribute is also
+available.
+
+Oversampling
+^^^^^^^^^^^^
+
+Normal averaging oversampling is supported via the
+``in_voltage_oversampling_ratio`` attribute. Writing a value greater than 1
+enables oversampling, and writing 1 disables it. When oversampling is enabled,
+the resolution boost feature of the chip is also turned on.
 
 More Information
 ----------------

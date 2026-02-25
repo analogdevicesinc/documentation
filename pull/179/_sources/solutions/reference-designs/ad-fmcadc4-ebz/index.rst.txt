@@ -33,7 +33,14 @@ of the devices on board quickly and easily by providing a seamless interface
 to an FMC carrier platform and running the reference design on the carrier
 FPGA. The board is designed to self power and self clock when connected to the
 FMC carrier. The analog signals (up to four) are connected to J301A, J301B,
-J301C and J301D.
+J301C and J301D. This rapid prototyping board can also be synchronized across
+channels.
+
+.. figure:: ad-fmcadc4-ebz-bottom.jpg
+   :align: center
+   :width: 500
+
+   AD-FMCADC4-EBZ bottom view
 
 Devices
 ~~~~~~~
@@ -59,6 +66,12 @@ Crystek. This feature can be disconnected and an external reference can be
 applied through J901. When referencing the schematic make sure the proper
 component changes are made in order to directly route the input into the
 AD9528.
+
+The :adi:`AD9528` clock generator is configured to produce the following
+default clocks:
+
+- **ADC sampling clock:** 1000 MHz for both :adi:`AD9680` devices
+- **FPGA reference clock:** 500 MHz for the JESD204B transceiver cores
 
 Analog Front End
 ~~~~~~~~~~~~~~~~
@@ -91,17 +104,69 @@ interface and the SPI interface. The samples are written to the external
 DDR-DRAM. It allows programming the device and monitoring its internal
 registers via SPI.
 
+The design uses ADI's JESD204B IP core which must be programmed to match the
+device settings (frame count, byte count, scrambling, etc.). The transceiver
+cores are initialized with DRP access and the JESD204B link is brought up by
+checking PLL lock status through to SYNC de-assertion.
+
 HDL Source Code
 ~~~~~~~~~~~~~~~
 
 - :git-hdl:`hdl_2018_r2:projects/fmcadc4/zc706`
 
+No-OS Application
+-----------------
+
+The HDL reference design is built around a processor as in an embedded system.
+A No-OS application is available that demonstrates the design without a full
+operating system. The application performs the following initialization
+sequence:
+
+#. Configure GPIOs and bring the :adi:`AD9528` clock generator out of reset.
+#. Program the :adi:`AD9528` to output the desired clocks and SYSREF signals
+   (default: 1 GHz for the :adi:`AD9680`, 500 MHz for the FPGA).
+#. Initialize the transceiver cores (DRP access only).
+#. Initialize both :adi:`AD9680` devices and verify PLL lock status.
+#. Program the JESD204B IP to match device settings (frame count, byte count,
+   scrambling).
+#. Bring up the transceivers and verify the link (PLL lock through SYNC
+   de-assertion).
+#. Bring the individual ADC cores out of reset.
+#. Run PRBS verification to confirm link integrity at the sample level.
+#. Capture data to DDR-DRAM.
+
+The No-OS source code can be built using the following steps:
+
+#. Clone the `No-OS repository <https://github.com/analogdevicesinc/no-OS>`__.
+#. Checkout the release branch matching the HDL release (see
+   `HDL release notes <https://github.com/analogdevicesinc/hdl/releases>`__).
+#. Navigate to the ``fmcadc4/zc706`` directory.
+#. Run ``make`` (optionally specify the HDF file path with
+   ``make HDF-FILE=<path>/system_top.hdf``).
+#. Run ``make run`` to download the HDL bitstream and software ELF via JTAG.
+#. Run ``make capture`` to read captured samples from RAM (saved as CSV files).
+
+Upon successful execution, the UART terminal should display::
+
+   QPLL ENABLE
+   Rx link is enabled
+   Measured Link Clock: 250 MHz
+   Link status: DATA
+   SYSREF captured: Yes
+   adc_setup adc core initialized (1000 MHz).
+   adc_setup adc core initialized (1000 MHz).
+   RX capture done.
+
 Software Support
 ----------------
+
+Linux Drivers
+~~~~~~~~~~~~~
 
 - :git-linux:`AD9680 Linux Driver <drivers/iio/adc/ad9680.c>`
 - :git-linux:`ADA4961 Linux Driver <drivers/iio/amplifiers/ad8366.c>`
 - :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
+- :git-linux:`JESD204B Receive Linux Driver <drivers/iio/jesd204/axi_jesd204_rx.c>`
 
 More Information
 ----------------

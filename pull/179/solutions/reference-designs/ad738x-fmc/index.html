@@ -97,14 +97,21 @@
 <li><a class="reference internal" href="#">AD738x-FMC User Guide</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
+<li><a class="reference internal" href="#evaluation-boards">Evaluation Boards</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
+<li><a class="reference internal" href="#building-the-hdl-project">Building the HDL Project</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#no-os-project">No-OS Project</a></li>
-<li><a class="reference internal" href="#linux-device-driver">Linux Device Driver</a></li>
+<li><a class="reference internal" href="#linux-device-driver">Linux Device Driver</a><ul>
+<li><a class="reference internal" href="#linux-device-tree">Linux Device Tree</a></li>
+<li><a class="reference internal" href="#iio-attributes">IIO Attributes</a></li>
+<li><a class="reference internal" href="#oversampling">Oversampling</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -479,7 +486,7 @@ Content on this topic
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adrv2crr-fmc/index.html">ADRV2CRR-FMC Carrier Board</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../adrv9001/index.html">ADRV9001/ADRV9002 User Guide</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../adrv9001/index.html">ADRV9001/ADRV9002 Prototyping Platform User Guide</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart.html">ADRV9001/ADRV9002 Quick Start Guides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zynqmp.html">ADRV9002 ZCU102 Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zynq.html">ADRV9002 ZC706 Quick Start Guide</a></li>
@@ -701,13 +708,19 @@ pseudo-differential for the <a class="icon adi reference external" href="https:/
 for the <a class="icon adi reference external" href="https://www.analog.com/AD7386" target="_blank">AD7386</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7387" target="_blank">AD7387</a>, and <a class="icon adi reference external" href="https://www.analog.com/AD7388" target="_blank">AD7388</a>. The AD7380 family has
 optional integrated on-chip oversampling blocks to improve dynamic range and
 reduce noise at lower bandwidths. An internal 2.5 V reference is included.</p>
+<p>Alternatively, an external reference up to 3.3 V can be used. The conversion
+process and data acquisition use standard control inputs allowing for easy
+interfacing to microprocessors or DSPs. It is compatible with 1.8 V, 2.5 V, and
+3.3 V interfaces, using a separate logic supply.</p>
 <p>Applications:</p>
 <ul class="simple">
 <li><p>Motor control position feedback</p></li>
 <li><p>Motor control current sense</p></li>
 <li><p>Data acquisition systems</p></li>
+<li><p>EDFA applications</p></li>
 <li><p>I and Q demodulation</p></li>
 <li><p>SONAR</p></li>
+<li><p>Power quality</p></li>
 </ul>
 </section>
 <section id="supported-devices">
@@ -728,6 +741,16 @@ reduce noise at lower bandwidths. An internal 2.5 V reference is included.</p>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD4685" target="_blank">AD4685</a></p></li>
 </ul>
 </section>
+<section id="evaluation-boards">
+<h2>Evaluation Boards<a class="headerlink" href="#evaluation-boards" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7380FMCZ" target="_blank">EVAL-AD7380FMCZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7381FMCZ" target="_blank">EVAL-AD7381FMCZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7386FMCZ" target="_blank">EVAL-AD7386FMCZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7383FMCZ" target="_blank">EVAL-AD7383FMCZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7380-4FMCZ" target="_blank">EVAL-AD7380-4FMCZ</a></p></li>
+</ul>
+</section>
 <section id="supported-carriers">
 <h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <ul class="simple">
@@ -738,6 +761,17 @@ reduce noise at lower bandwidths. An internal 2.5 V reference is included.</p>
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
 <p>The reference design uses the standard SPI Engine Framework with an integrated
 pulse generator, which provides the required conversion rate for the ADC.</p>
+<section id="building-the-hdl-project">
+<h3>Building the HDL Project<a class="headerlink" href="#building-the-hdl-project" title="Link to this heading"></a></h3>
+<p>The design is built upon ADI’s generic HDL reference design framework. ADI
+does not distribute pre-built bitstream files, so the project must be built
+from source. Clone the HDL repository and, with the correct tools installed,
+navigate to the project directory and run <code class="docutils literal notranslate"><span class="pre">make</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>hdl/projects/ad738x_fmc/zed
+make
+</pre></div>
+</div>
+</section>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -753,12 +787,111 @@ pulse generator, which provides the required conversion rate for the ADC.</p>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad738x_fmcz" target="_blank">projects/ad738x_fmcz</a></p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/ad738x" target="_blank">drivers/adc/ad738x</a></p></li>
 </ul>
+<p>The No-OS project provides bare metal support for the AD738x-FMC evaluation
+boards. The No-OS driver provides the following key capabilities:</p>
+<ul class="simple">
+<li><p>Device initialization and removal</p></li>
+<li><p>Internal or external reference selection</p></li>
+<li><p>Power down mode control (normal or full power-down)</p></li>
+<li><p>Oversampling configuration (normal or rolling average mode, ratios from x2
+to x32, with 16-bit or 18-bit resolution)</p></li>
+<li><p>Conversion mode selection (one-wire or two-wire SPI output)</p></li>
+<li><p>Software and hardware device reset</p></li>
+<li><p>Single conversion readback</p></li>
+</ul>
+<p>To set up the software:</p>
+<ol class="arabic simple">
+<li><p>Clone the No-OS GitHub repository</p></li>
+<li><p>Build the project located at <code class="docutils literal notranslate"><span class="pre">projects/ad738x_fmcz</span></code></p></li>
+<li><p>Follow the instructions in the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/doxygen/build_guides.html" target="_blank">ADI No-OS build guide</a></p></li>
+</ol>
 </section>
 <section id="linux-device-driver">
 <h3>Linux Device Driver<a class="headerlink" href="#linux-device-driver" title="Link to this heading"></a></h3>
+<p>The AD738x Linux driver is an IIO (Industrial I/O) subsystem driver targeting
+dual and quad channel serial interface ADCs from the AD7380 family.</p>
 <ul class="simple">
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad7380.c" target="_blank">drivers/iio/adc/ad7380.c</a></p></li>
 </ul>
+<section id="linux-device-tree">
+<h4>Linux Device Tree<a class="headerlink" href="#linux-device-tree" title="Link to this heading"></a></h4>
+<p>A complete example device tree for the EVAL-AD7380FMCZ evaluation board can be
+found in the ADI Linux source code. This can be adapted for other evaluation
+boards by changing the <code class="docutils literal notranslate"><span class="pre">compatible</span></code> property:</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7380.dts" target="_blank">arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7380.dts</a></p></li>
+</ul>
+<p>Required device tree properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">compatible</span></code>: Must be set to the specific chip, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;adi,ad7380&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reg</span></code>: SPI chip select number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spi-max-frequency</span></code>: Maximum SPI clock rate (use datasheet max if wiring
+permits)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spi-cpol</span></code>: Must be set for correct clock polarity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vcc-supply</span></code>: VCC power supply</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vlogic-supply</span></code>: Logic power supply</p></li>
+</ul>
+<p>Reference supply configuration:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">refio-supply</span></code>: External reference on the REFIO pin (omit to use
+internal reference)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">refin-supply</span></code>: Used for AD7380-4 and ADAQ chips which require an extra
+supply on the REFIN pin</p></li>
+</ul>
+<p>For SPI offloading support (required for maximum throughput), add:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">adi,num-sdi</span></code>: Number of SDI lines, must match the <code class="docutils literal notranslate"><span class="pre">NUM_OF_SDI</span></code> compile
+option used when building the FPGA bitstream</p></li>
+</ul>
+</section>
+<section id="iio-attributes">
+<h4>IIO Attributes<a class="headerlink" href="#iio-attributes" title="Link to this heading"></a></h4>
+<p>Once the driver is loaded, the following IIO attributes are available at
+<code class="docutils literal notranslate"><span class="pre">/sys/bus/iio/devices/iio:deviceX/</span></code>:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">in_voltageX_raw</span></code></p></td>
+<td><p>Raw unscaled voltage measurement on channel X</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">in_voltage_scale</span></code></p></td>
+<td><p>Scale to apply to raw values to obtain millivolts</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">in_voltage_sampling_frequency</span></code></p></td>
+<td><p>Sampling frequency (when using SPI offload)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">in_voltage_sampling_frequency_available</span></code></p></td>
+<td><p>Maximum available sample rate</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">in_voltage_oversampling_ratio</span></code></p></td>
+<td><p>Current oversampling ratio (1 = disabled)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">in_voltage_oversampling_ratio_available</span></code></p></td>
+<td><p>Available oversampling ratios (1, 2, 4, 8, 16, 32)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The measured voltage in millivolts is calculated as:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">voltage_mV</span> <span class="pre">=</span> <span class="pre">in_voltageX_raw</span> <span class="pre">*</span> <span class="pre">in_voltage_scale</span></code></p>
+</div></blockquote>
+<p>For pseudo-differential chips, an <code class="docutils literal notranslate"><span class="pre">in_voltageX_offset</span></code> attribute is also
+available.</p>
+</section>
+<section id="oversampling">
+<h4>Oversampling<a class="headerlink" href="#oversampling" title="Link to this heading"></a></h4>
+<p>Normal averaging oversampling is supported via the
+<code class="docutils literal notranslate"><span class="pre">in_voltage_oversampling_ratio</span></code> attribute. Writing a value greater than 1
+enables oversampling, and writing 1 disables it. When oversampling is enabled,
+the resolution boost feature of the chip is also turned on.</p>
+</section>
 </section>
 </section>
 <section id="more-information">

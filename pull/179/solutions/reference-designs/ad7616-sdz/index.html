@@ -97,20 +97,35 @@
 <li><a class="reference internal" href="#">AD7616-SDZ User Guide</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
-<li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
-<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li><a class="reference internal" href="#evaluation-boards">Evaluation Boards</a></li>
+<li><a class="reference internal" href="#supported-carriers">Supported Carriers</a><ul>
+<li><a class="reference internal" href="#other-required-hardware">Other Required Hardware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#zedboard-setup">ZedBoard Setup</a><ul>
+<li><a class="reference internal" href="#required-software">Required Software</a></li>
 <li><a class="reference internal" href="#eval-ad7616-jumper-configuration">EVAL-AD7616 Jumper Configuration</a></li>
 <li><a class="reference internal" href="#building-the-hdl">Building the HDL</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sdp-k1-setup">SDP-K1 Setup</a><ul>
+<li><a class="reference internal" href="#eval-ad7616-jumper-configuration-sdp-k1">EVAL-AD7616 Jumper Configuration (SDP-K1)</a></li>
+<li><a class="reference internal" href="#fly-wire-connections">Fly-Wire Connections</a></li>
+<li><a class="reference internal" href="#building-and-flashing-sdp-k1">Building and Flashing (SDP-K1)</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#block-diagrams">Block Diagrams</a></li>
 <li><a class="reference internal" href="#cpu-memory-interconnect-addresses">CPU/Memory Interconnect Addresses</a></li>
+<li><a class="reference internal" href="#pl-interrupts">PL Interrupts</a></li>
+<li><a class="reference internal" href="#gpio-signals">GPIO Signals</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#no-os-project">No-OS Project</a></li>
+<li><a class="reference internal" href="#no-os-driver-api">No-OS Driver API</a></li>
+<li><a class="reference internal" href="#no-os-iio-driver">No-OS IIO Driver</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
@@ -485,7 +500,7 @@ Content on this topic
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adrv2crr-fmc/index.html">ADRV2CRR-FMC Carrier Board</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../adrv9001/index.html">ADRV9001/ADRV9002 User Guide</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../adrv9001/index.html">ADRV9001/ADRV9002 Prototyping Platform User Guide</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart.html">ADRV9001/ADRV9002 Quick Start Guides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zynqmp.html">ADRV9002 ZCU102 Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../adrv9001/quickstart/zynq.html">ADRV9002 ZC706 Quick Start Guide</a></li>
@@ -717,15 +732,54 @@ interface uses the SPI Engine Framework. Data is written into memory via DMA.</p
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD7616" target="_blank">AD7616</a></p></li>
 </ul>
 </section>
-<section id="supported-carriers">
-<h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
+<section id="evaluation-boards">
+<h2>Evaluation Boards<a class="headerlink" href="#evaluation-boards" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
-<li><p><a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html" target="_blank">ZC706</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7616" target="_blank">EVAL-AD7616</a></p></li>
 </ul>
 </section>
-<section id="quick-start">
-<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
+<section id="supported-carriers">
+<h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Carrier</p></th>
+<th class="head"><p>Setup Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></td>
+<td><p>FPGA + Linux</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html" target="_blank">ZC706</a></p></td>
+<td><p>FPGA + Linux</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a></p></td>
+<td><p>Microcontroller (No-OS)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="other-required-hardware">
+<h3>Other Required Hardware<a class="headerlink" href="#other-required-hardware" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-SDP-I-FMC.html" target="_blank">SDP-I-FMC</a>
+interposer when using ZedBoard</p></li>
+<li><p><a class="icon link reference external" href="https://www.st.com/en/development-tools/stlink-v3set.html" target="_blank">STLINK-V3</a>
+debugger/programmer when using <a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a></p></li>
+</ul>
+</section>
+</section>
+<section id="zedboard-setup">
+<h2>ZedBoard Setup<a class="headerlink" href="#zedboard-setup" title="Link to this heading"></a></h2>
+<section id="required-software">
+<h3>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Xilinx tools matching the version in the
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/hdl/releases" target="_blank">HDL releases</a></p></li>
+<li><p>A UART terminal (e.g. Tera Term or PuTTY) with baud rate set to 115200</p></li>
+</ul>
+</section>
 <section id="eval-ad7616-jumper-configuration">
 <h3>EVAL-AD7616 Jumper Configuration<a class="headerlink" href="#eval-ad7616-jumper-configuration" title="Link to this heading"></a></h3>
 <div class="table-wrapper docutils container">
@@ -790,20 +844,135 @@ interface uses the SPI Engine Framework. Data is written into memory via DMA.</p
 </div>
 </section>
 </section>
+<section id="sdp-k1-setup">
+<h2>SDP-K1 Setup<a class="headerlink" href="#sdp-k1-setup" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad7616-sdz/ad7616_sdp-k1_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad7616-sdz/ad7616_sdp-k1_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad7616-sdz/ad7616_sdp-k1_setup.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-AD7616 connected to SDP-K1 via fly-wire</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7616" target="_blank">EVAL-AD7616</a> is connected to <a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a> via fly-wire. An
+<a class="icon link reference external" href="https://www.st.com/en/development-tools/stlink-v3set.html" target="_blank">STLINK-V3</a>
+is required to flash the SDP-K1. Power both the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7616" target="_blank">EVAL-AD7616</a> and
+<a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a> via the barrel jack connector.</p>
+<section id="eval-ad7616-jumper-configuration-sdp-k1">
+<h3>EVAL-AD7616 Jumper Configuration (SDP-K1)<a class="headerlink" href="#eval-ad7616-jumper-configuration-sdp-k1" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jumper</p></th>
+<th class="head"><p>Position</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SL1</p></td>
+<td><p>Unmounted</p></td>
+<td><p>Channel Sequencer Enable</p></td>
+</tr>
+<tr class="row-odd"><td><p>SL2</p></td>
+<td><p>Unmounted</p></td>
+<td><p>RC Enable Input</p></td>
+</tr>
+<tr class="row-even"><td><p>SL3</p></td>
+<td><p>Unmounted</p></td>
+<td><p>Selects 1 MISO mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>SL4</p></td>
+<td><p>Unmounted</p></td>
+<td><p>Oversampling Ratio Selection OS2</p></td>
+</tr>
+<tr class="row-even"><td><p>SL5</p></td>
+<td><p>Mounted</p></td>
+<td><p>Selects serial interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>SL6</p></td>
+<td><p>Unmounted</p></td>
+<td><p>Oversampling Ratio Selection OS1</p></td>
+</tr>
+<tr class="row-even"><td><p>SL7</p></td>
+<td><p>Unmounted</p></td>
+<td><p>Oversampling Ratio Selection OS0</p></td>
+</tr>
+<tr class="row-odd"><td><p>LK40</p></td>
+<td><p>A</p></td>
+<td><p>Onboard 5V power supply selected</p></td>
+</tr>
+<tr class="row-even"><td><p>LK41</p></td>
+<td><p>A</p></td>
+<td><p>Onboard 3.3V power supply selected</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="fly-wire-connections">
+<h3>Fly-Wire Connections<a class="headerlink" href="#fly-wire-connections" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EVAL-AD7616</p></th>
+<th class="head"><p>SDP-K1 Arduino</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SCLK</p></td>
+<td><p>D13</p></td>
+</tr>
+<tr class="row-odd"><td><p>DB10/SDI</p></td>
+<td><p>D11</p></td>
+</tr>
+<tr class="row-even"><td><p>DB12/SDOA</p></td>
+<td><p>D12</p></td>
+</tr>
+<tr class="row-odd"><td><p>CS</p></td>
+<td><p>D10</p></td>
+</tr>
+<tr class="row-even"><td><p>CONVST</p></td>
+<td><p>D5</p></td>
+</tr>
+<tr class="row-odd"><td><p>RESET</p></td>
+<td><p>D7</p></td>
+</tr>
+<tr class="row-even"><td><p>BUSY</p></td>
+<td><p>D6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="building-and-flashing-sdp-k1">
+<h3>Building and Flashing (SDP-K1)<a class="headerlink" href="#building-and-flashing-sdp-k1" title="Link to this heading"></a></h3>
+<p>To build the No-OS project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+</pre></div>
+</div>
+<p>To flash the firmware:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>run
+</pre></div>
+</div>
+<p>The project provides an IIO device over the serial interface at 230400 baud.
+Use <a class="icon link reference external" href="https://analogdevicesinc.github.io/iio-oscilloscope/" target="_blank">IIO Oscilloscope</a>
+to view captured data. For further details, refer to the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/build/" target="_blank">No-OS Build Guide</a>.</p>
+</section>
+</section>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
 <section id="block-diagrams">
 <h3>Block Diagrams<a class="headerlink" href="#block-diagrams" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id2">
 <img alt="../../../_images/ad7616_serial_hdl.svg" src="../../../_images/ad7616_serial_hdl.svg" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD7616-SDZ block diagram (serial interface)</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD7616-SDZ block diagram (serial interface)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id3">
 <img alt="../../../_images/ad7616_parallel_hdl.svg" src="../../../_images/ad7616_parallel_hdl.svg" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD7616-SDZ block diagram (parallel interface)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD7616-SDZ block diagram (parallel interface)</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -833,6 +1002,77 @@ interface uses the SPI Engine Framework. Data is written into memory via DMA.</p
 </table>
 </div>
 </section>
+<section id="pl-interrupts">
+<h3>PL Interrupts<a class="headerlink" href="#pl-interrupts" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Instance</p></th>
+<th class="head"><p>HDL Interrupt</p></th>
+<th class="head"><p>Linux PS7 Interrupt</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>axi_ad7616</p></td>
+<td><p>10</p></td>
+<td><p>106 (parallel mode only)</p></td>
+</tr>
+<tr class="row-odd"><td><p>spi_ad7616</p></td>
+<td><p>12</p></td>
+<td><p>108 (serial mode only)</p></td>
+</tr>
+<tr class="row-even"><td><p>axi_ad7616_dma</p></td>
+<td><p>13</p></td>
+<td><p>109</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="gpio-signals">
+<h3>GPIO Signals<a class="headerlink" href="#gpio-signals" title="Link to this heading"></a></h3>
+<p>PS7 EMIO offset = 54</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>GPIO Signal</p></th>
+<th class="head"><p>GPIO</p></th>
+<th class="head"><p>HDL GPIO EMIOn</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>adc_reset_n</p></td>
+<td><p>97</p></td>
+<td><p>43</p></td>
+</tr>
+<tr class="row-odd"><td><p>adc_hw_rngsel</p></td>
+<td><p>96-95</p></td>
+<td><p>42-41</p></td>
+</tr>
+<tr class="row-even"><td><p>adc_os</p></td>
+<td><p>94-92</p></td>
+<td><p>40-38</p></td>
+</tr>
+<tr class="row-odd"><td><p>adc_seq_en</p></td>
+<td><p>91</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-even"><td><p>adc_burst</p></td>
+<td><p>90</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-odd"><td><p>adc_chsel</p></td>
+<td><p>89-87</p></td>
+<td><p>35-33</p></td>
+</tr>
+<tr class="row-even"><td><p>adc_crcen</p></td>
+<td><p>86</p></td>
+<td><p>32</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <section id="hdl-source-code">
 <h3>HDL Source Code<a class="headerlink" href="#hdl-source-code" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -845,13 +1085,93 @@ interface uses the SPI Engine Framework. Data is written into memory via DMA.</p
 <section id="no-os-project">
 <h3>No-OS Project<a class="headerlink" href="#no-os-project" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad7616-sdz" target="_blank">projects/ad7616-sdz</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad7616-sdz" target="_blank">projects/ad7616-sdz</a> (ZedBoard)</p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad7616-st" target="_blank">projects/ad7616-st</a> (SDP-K1)</p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/ad7616" target="_blank">drivers/adc/ad7616</a></p></li>
 </ul>
 <p>The No-OS driver supports SPI and parallel interface modes, software and
 hardware operation modes, per-channel input range selection (+/-2.5 V, +/-5 V,
 +/-10 V), oversampling ratios (2x through 128x), and channel sequencer
 configuration.</p>
+</section>
+<section id="no-os-driver-api">
+<h3>No-OS Driver API<a class="headerlink" href="#no-os-driver-api" title="Link to this heading"></a></h3>
+<p>The following table summarizes the key functions provided by the AD7616 No-OS
+driver:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_setup</span></code></p></td>
+<td><p>Initialize the device</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_read</span></code> / <code class="docutils literal notranslate"><span class="pre">ad7616_write</span></code></p></td>
+<td><p>SPI read/write from/to device</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_read_mask</span></code> / <code class="docutils literal notranslate"><span class="pre">ad7616_write_mask</span></code></p></td>
+<td><p>SPI read/write using a bitmask</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_reset</span></code></p></td>
+<td><p>Perform a full device reset</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_set_range</span></code></p></td>
+<td><p>Set analog input range for a channel</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_set_mode</span></code></p></td>
+<td><p>Set operation mode (software or hardware)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_set_oversampling_ratio</span></code></p></td>
+<td><p>Set the oversampling ratio</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_read_data_serial</span></code></p></td>
+<td><p>Read conversion data in serial mode</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_select_channel_source</span></code></p></td>
+<td><p>Select input source for a channel</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_setup_sequencer</span></code></p></td>
+<td><p>Configure the channel sequencer</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_disable_sequencer</span></code></p></td>
+<td><p>Disable the channel sequencer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="no-os-iio-driver">
+<h3>No-OS IIO Driver<a class="headerlink" href="#no-os-iio-driver" title="Link to this heading"></a></h3>
+<p>The AD7616 IIO driver provides IIO-compatible device access for use with tools
+such as IIO Oscilloscope and pyadi-iio:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_iio_init</span></code></p></td>
+<td><p>Initialize AD7616 for IIO interfacing</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ad7616_iio_remove</span></code></p></td>
+<td><p>Remove AD7616 IIO device</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 <section id="more-information">
@@ -865,6 +1185,8 @@ configuration.</p>
 <p>Analog Devices will provide limited online support for anyone using the
 reference design with Analog Devices components via the
 <a class="icon ez reference external" href="https://ez.analog.com/fpga" target="_blank">FPGA Reference Designs Forum</a>.</p>
+<p>For microcontroller and No-OS driver questions, visit the
+<a class="icon ez reference external" href="https://ez.analog.com/microcontroller-no-os-drivers" target="_blank">Microcontroller No-OS Drivers Forum</a>.</p>
 </section>
 </section>
 
