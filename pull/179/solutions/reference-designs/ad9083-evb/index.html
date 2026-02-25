@@ -107,6 +107,27 @@
 <li><a class="reference internal" href="#no-os-project">No-OS Project</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#evaluation-using-the-ads8-v3ebz-capture-board">Evaluation Using the ADS8-V3EBZ Capture Board</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#board-design-and-integration-files">Board Design and Integration Files</a></li>
+<li><a class="reference internal" href="#microzed-setup">MicroZed Setup</a></li>
+<li><a class="reference internal" href="#ace-plugin-installation">ACE Plugin Installation</a></li>
+<li><a class="reference internal" href="#ad9083-plugin-overview">AD9083 Plugin Overview</a></li>
+<li><a class="reference internal" href="#evaluation-examples">Evaluation Examples</a><ul>
+<li><a class="reference internal" href="#wide-bandwidth-real-output-mode">Wide Bandwidth Real Output Mode</a></li>
+<li><a class="reference internal" href="#narrow-bandwidth-complex-output-mode">Narrow Bandwidth Complex Output Mode</a></li>
+<li><a class="reference internal" href="#precision-time-domain-mode">Precision Time Domain Mode</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#external-trigger">External Trigger</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#board-not-functioning-properly">Board Not Functioning Properly</a></li>
+<li><a class="reference internal" href="#no-spi-communication-with-ads8-v3ebz">No SPI Communication with ADS8-V3EBZ</a></li>
+<li><a class="reference internal" href="#board-fails-to-capture-data">Board Fails to Capture Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
 </ul>
@@ -771,6 +792,533 @@ samples are stored in a buffer implemented on block RAMs from the FPGA fabric.</
 <ul class="simple">
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad9083" target="_blank">projects/ad9083</a></p></li>
 </ul>
+</section>
+</section>
+<section id="evaluation-using-the-ads8-v3ebz-capture-board">
+<h2>Evaluation Using the ADS8-V3EBZ Capture Board<a class="headerlink" href="#evaluation-using-the-ads8-v3ebz-capture-board" title="Link to this heading"></a></h2>
+<p>The AD9083EBZ evaluation board is evaluated using the ADS8-V3EBZ FPGA-based
+data capture board and the
+<a class="icon adi reference external" href="https://www.analog.com/design-center/evaluation-hardware-and-software/ace-software.html" target="_blank">ACE</a>
+software.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/AD9083EBZ-ADS8-V3EBZTOP-ethernet.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/AD9083EBZ-ADS8-V3EBZTOP-ethernet.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD9083EBZ evaluation board and ADS8-V3EBZ data capture board</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="equipment-needed">
+<h3>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h3>
+<p><strong>Hardware</strong></p>
+<ul class="simple">
+<li><p>AD9083EBZ evaluation board</p></li>
+<li><p>ADS8-V3EBZ high-speed carrier card</p></li>
+<li><p>High quality analog signal source</p></li>
+<li><p>Bandpass filter for the analog signal source</p></li>
+<li><p>PC running Windows with admin privileges and an available Ethernet and USB
+port</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The AD9083 PLL reference clock, FPGA reference clock, and FPGA global
+clock are provided by the on-board <a class="icon adi reference external" href="https://www.analog.com/AD9528" target="_blank">AD9528</a> JESD204B clock generator.</p>
+</div>
+<p><strong>Software</strong></p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/design-center/evaluation-hardware-and-software/ace-software.html" target="_blank">ACE</a></p></li>
+</ul>
+<p><strong>Helpful Documents</strong></p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9083" target="_blank">AD9083 Data Sheet</a></p></li>
+<li><p><a class="icon link reference external" href="https://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf" target="_blank">ACE User Manual</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/application-notes/AN-835.pdf" target="_blank">AN-835: Understanding High Speed ADC Testing and Evaluation</a></p></li>
+</ul>
+</section>
+<section id="board-design-and-integration-files">
+<h3>Board Design and Integration Files<a class="headerlink" href="#board-design-and-integration-files" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Schematics: <code class="docutils literal notranslate"><span class="pre">02_059760b.pdf</span></code></p></li>
+<li><p>Layout files: <code class="docutils literal notranslate"><span class="pre">ad9083ebz_revc.zip</span></code></p></li>
+<li><p>Bill of materials: <code class="docutils literal notranslate"><span class="pre">05-059760-01-c.zip</span></code></p></li>
+</ul>
+<p>These files can be obtained by contacting
+<a class="icon adi reference external" href="https://www.analog.com/en/about-adi/landing-pages/001/contact-us-sales-support.html" target="_blank">Analog Devices Sales</a>.</p>
+</section>
+<section id="microzed-setup">
+<h3>MicroZed Setup<a class="headerlink" href="#microzed-setup" title="Link to this heading"></a></h3>
+<p>Before evaluating the AD9083, the Ethernet interface to the MicroZed board on
+the ADS8-V3EBZ must be configured.</p>
+<p><strong>MicroSD Card Installation</strong></p>
+<ol class="arabic simple">
+<li><p>Locate the microSD card labeled <code class="docutils literal notranslate"><span class="pre">ADS8-HSx</span></code> from the ADS8-V3EBZ packaging.</p></li>
+<li><p>Connect the microSD card to the MicroZed board (contacts facing up).</p></li>
+<li><p>Verify that the MicroZed board is seated properly on the ADS8-V3EBZ.</p></li>
+</ol>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/sd-card-location.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/sd-card-location.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">MicroSD card slot on the MicroZed board</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Network Interface Configuration</strong></p>
+<ol class="arabic simple">
+<li><p>Ensure the connections to the ADS8-V3EBZ are as shown in the setup figure
+above. It is not necessary to connect the AD9083EBZ evaluation board at this
+stage.</p></li>
+<li><p>Connect one end of an Ethernet cable directly to the PC Ethernet port (or a
+USB-to-Ethernet adapter) and the other end to the MicroZed board.</p></li>
+<li><p>Power on the ADS8-V3EBZ board. Allow up to 10 seconds for the MicroZed
+board to boot.</p></li>
+<li><p>Open the local area connection settings:</p>
+<ul class="simple">
+<li><p><strong>Windows 7</strong>: Start Menu &gt; Control Panel &gt; Network and Sharing Center &gt;
+Change adapter settings</p></li>
+<li><p><strong>Windows 10</strong>: Start Menu &gt; Settings &gt; Network &amp; Internet &gt; Change
+adapter options</p></li>
+</ul>
+</li>
+<li><p>If the Local Area Connection icon does not appear, disconnect and
+reconnect the Ethernet cable to the MicroZed board.</p></li>
+<li><p>Double-click the Local Area Connection icon.</p></li>
+<li><p>Click <strong>Properties</strong>, select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong>,
+and click <strong>Properties</strong>.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">192.168.0.1</span></code> in the IP address field and ensure the subnet mask
+is <code class="docutils literal notranslate"><span class="pre">255.255.255.0</span></code>.</p></li>
+<li><p>Click <strong>OK</strong>.</p></li>
+</ol>
+</section>
+<section id="ace-plugin-installation">
+<h3>ACE Plugin Installation<a class="headerlink" href="#ace-plugin-installation" title="Link to this heading"></a></h3>
+<p>Download and install the ACE software from the
+<a class="icon adi reference external" href="https://www.analog.com/design-center/evaluation-hardware-and-software/ace-software.html" target="_blank">ACE web page</a>.
+After installation, install the AD9083 evaluation board plugin using one of
+the following methods.</p>
+<p><strong>Installation from ACE</strong></p>
+<ol class="arabic simple">
+<li><p>Open ACE from the Start menu: All Programs &gt; Analog Devices &gt; ACE.</p></li>
+<li><p>In the left pane, click <strong>Plug-in Manager</strong> to open the Manage Plug-ins
+window.</p></li>
+<li><p>Click the <strong>Available Packages</strong> dropdown menu.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">AD9083</span></code> in the search bar to find the appropriate board plugin.</p></li>
+<li><p>Select the AD9083 plugin and click <strong>Install Selected</strong>.</p></li>
+<li><p>Click <strong>Close</strong>.</p></li>
+</ol>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/manage_plugins.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/manage_plugins.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">ACE Manage Plug-ins window</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Installation from the Web</strong></p>
+<ol class="arabic">
+<li><p>Ensure that the ACE software is installed.</p></li>
+<li><p>On the
+<a class="icon adi reference external" href="https://www.analog.com/design-center/evaluation-hardware-and-software/ace-software.html" target="_blank">ACE web page</a>,
+navigate to the ACE Evaluation Board Plug-ins section and search for
+<code class="docutils literal notranslate"><span class="pre">AD9083</span></code>.</p></li>
+<li><p>Click the AD9083 board plugin to download it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If using Internet Explorer, the downloaded file extension may be
+<code class="docutils literal notranslate"><span class="pre">.zip</span></code>. Right-click the file and rename the extension to <code class="docutils literal notranslate"><span class="pre">.acezip</span></code>.</p>
+</div>
+</li>
+<li><p>Double-click the <code class="docutils literal notranslate"><span class="pre">.acezip</span></code> file to automatically install the plugin.</p></li>
+<li><p>Close ACE after the plugin installation completes.</p></li>
+</ol>
+</section>
+<section id="ad9083-plugin-overview">
+<h3>AD9083 Plugin Overview<a class="headerlink" href="#ad9083-plugin-overview" title="Link to this heading"></a></h3>
+<p>The AD9083 plugin allows the user to evaluate the <a class="icon adi reference external" href="https://www.analog.com/AD9083" target="_blank">AD9083</a> via the
+AD9083EBZ evaluation board. The AD9083EBZ provides the power and clocking
+necessary to evaluate the 16-channel ADC. The power delivery network is
+powered by a <a class="icon adi reference external" href="https://www.analog.com/LTM8074" target="_blank">LTM8074</a> 1.2A Silent Switcher uModule Regulator, and
+clocking is provided by an <a class="icon adi reference external" href="https://www.analog.com/AD9528" target="_blank">AD9528</a> JESD204B clock generator with an
+on-board 100 MHz VCXO reference.</p>
+<p>The plugin configures the AD9083 using the API. Commands are generated by the
+plugin, downloaded to the MicroZed, which in turn configures the AD9083. The
+plugin also configures the AD9528 using the clocking requirements from the
+Startup Wizard.</p>
+<p>To begin, ensure the board is connected as shown in the setup figure and that
+the ADS8-V3EBZ board is powered on before opening ACE. The plugin appears in
+the <strong>Attached Hardware</strong> section of the ACE GUI.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/attached-hardware.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/attached-hardware.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">AD9083EBZ in the ACE Attached Hardware section</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Board View</strong></p>
+<p>Double-clicking the board icon in the Attached Hardware section opens the
+AD9083EBZ board view. The board view enables quick setup of the AD9083 using
+the <strong>STARTUP WIZARD</strong> pane. It may take several moments for the board view to
+initialize.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/ad9083_-_2_narrow_bw_mode_startup_wizzard.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/ad9083_-_2_narrow_bw_mode_startup_wizzard.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">AD9083EBZ board view with Startup Wizard</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Chip View</strong></p>
+<p>Double-clicking the AD9083 icon in the board view opens the chip view. The
+chip view enables customization of the AD9083 beyond the functions available
+in the board view.</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/ad9083_-_4_narrow_bw_mode_ad9083.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/ad9083_-_4_narrow_bw_mode_ad9083.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">AD9083 chip view</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="evaluation-examples">
+<h3>Evaluation Examples<a class="headerlink" href="#evaluation-examples" title="Link to this heading"></a></h3>
+<p>The AD9083 can be configured in many different modes. The following sections
+provide examples of several configurations.</p>
+<section id="wide-bandwidth-real-output-mode">
+<h4>Wide Bandwidth Real Output Mode<a class="headerlink" href="#wide-bandwidth-real-output-mode" title="Link to this heading"></a></h4>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sample rate</p></td>
+<td><p>2 GSPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>On-chip PLL reference</p></td>
+<td><p>250 MHz (from on-board AD9528)</p></td>
+</tr>
+<tr class="row-even"><td><p>fINMAX</p></td>
+<td><p>100 MHz (sample rate / 20)</p></td>
+</tr>
+<tr class="row-odd"><td><p>fC</p></td>
+<td><p>800 MHz</p></td>
+</tr>
+<tr class="row-even"><td><p>VMAX</p></td>
+<td><p>2.0 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>RTERM</p></td>
+<td><p>100 Ohm</p></td>
+</tr>
+<tr class="row-even"><td><p>EN_HP</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Backoff</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>CIC decimator</p></td>
+<td><p>Bypass</p></td>
+</tr>
+<tr class="row-odd"><td><p>Use mixer</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>Decimate by J</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Transport (L, M, F, S, N’, K)</p></td>
+<td><p>4, 16, 6, 1, 12, 32</p></td>
+</tr>
+<tr class="row-even"><td><p>Lane configuration</p></td>
+<td><p>4 lanes at 15 Gbps each</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>To run this configuration:</p>
+<ol class="arabic simple">
+<li><p>Configure the AD9083 and AD9528 using the AD9083EBZ Startup Wizard with
+the parameters listed above.</p></li>
+<li><p>Click <strong>Apply</strong>. Allow several moments for the configuration to complete.</p></li>
+<li><p>Navigate to <strong>Analysis</strong>.</p></li>
+<li><p>Click <strong>Run Once</strong>.</p></li>
+</ol>
+<figure class="align-center" id="id9">
+<img alt="../../../_images/wide_BW_mode.PNG" src="../../../_images/wide_BW_mode.PNG" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">AD9083EBZ Wide Bandwidth Real Output Mode typical FFT</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="narrow-bandwidth-complex-output-mode">
+<h4>Narrow Bandwidth Complex Output Mode<a class="headerlink" href="#narrow-bandwidth-complex-output-mode" title="Link to this heading"></a></h4>
+<p>This configuration is suitable for applications such as phased-array radar.
+The output bandwidth is +/- 12.7187 MHz. This example uses an analog input
+frequency of 70.5 MHz and an NCO frequency of 70.3125 MHz.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sample rate</p></td>
+<td><p>2 GSPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>On-chip PLL reference</p></td>
+<td><p>250 MHz (from on-board AD9528)</p></td>
+</tr>
+<tr class="row-even"><td><p>fINMAX</p></td>
+<td><p>100 MHz (sample rate / 20)</p></td>
+</tr>
+<tr class="row-odd"><td><p>fC</p></td>
+<td><p>800 MHz</p></td>
+</tr>
+<tr class="row-even"><td><p>VMAX</p></td>
+<td><p>2.0 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>RTERM</p></td>
+<td><p>100 Ohm</p></td>
+</tr>
+<tr class="row-even"><td><p>EN_HP</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Backoff</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>NCO0/mixer (complex data), FTW</p></td>
+<td><p>70.3125 MHz</p></td>
+</tr>
+<tr class="row-odd"><td><p>CIC decimator</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>Decimate by J</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>Transport (L, M, F, S, N’, K)</p></td>
+<td><p>2, 32, 32, 1, 16, 32</p></td>
+</tr>
+<tr class="row-even"><td><p>Lane configuration</p></td>
+<td><p>2 lanes at 10 Gbps each</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>To run this configuration:</p>
+<ol class="arabic simple">
+<li><p>Configure the AD9083 and AD9528 using the AD9083EBZ Startup Wizard with
+the parameters listed above.</p></li>
+<li><p>Click <strong>Apply</strong>. Allow several moments for the configuration to complete.</p></li>
+<li><p>Navigate to <strong>Analysis</strong>.</p></li>
+<li><p>Click <strong>Run Once</strong>.</p></li>
+</ol>
+<figure class="align-center" id="id10">
+<img alt="../../../_images/narrow_BW_mode.PNG" src="../../../_images/narrow_BW_mode.PNG" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">AD9083EBZ Narrow Bandwidth Complex Output Mode typical FFT</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="precision-time-domain-mode">
+<h4>Precision Time Domain Mode<a class="headerlink" href="#precision-time-domain-mode" title="Link to this heading"></a></h4>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sample rate</p></td>
+<td><p>1 GSPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>On-chip PLL reference</p></td>
+<td><p>125 MHz (from on-board AD9528)</p></td>
+</tr>
+<tr class="row-even"><td><p>VMAX</p></td>
+<td><p>1.8 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>RTERM</p></td>
+<td><p>100 Ohm</p></td>
+</tr>
+<tr class="row-even"><td><p>fC</p></td>
+<td><p>800 MHz</p></td>
+</tr>
+<tr class="row-odd"><td><p>High Performance Mode</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>Fin Max</p></td>
+<td><p>50 MHz (sample rate / 20)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Backoff</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC Channels</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bypass CIC</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>CIC decimator</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Use Mixer</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>Decimate by J</p></td>
+<td><p>Bypass (Decimate by 1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>jtx_subclasv_cfg</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Lanes (L)</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Virtual Converters (M)</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-even"><td><p>Octets/Frame per Lane (F)</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bits Packed (NP)</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>Resolution Bits (N)</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frames in a multi-frame (K)</p></td>
+<td><p>32</p></td>
+</tr>
+<tr class="row-even"><td><p>Lane configuration</p></td>
+<td><p>3 lanes at 10 Gbps each</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>To run this configuration:</p>
+<ol class="arabic simple">
+<li><p>Configure the AD9083 and AD9528 using the AD9083EBZ Startup Wizard with
+the parameters listed above.</p></li>
+<li><p>Click <strong>Apply</strong>. Allow several moments for the configuration to complete.</p></li>
+<li><p>Navigate to <strong>Analysis</strong>.</p></li>
+<li><p>Click <strong>Run Once</strong>.</p></li>
+</ol>
+<figure class="align-center" id="id11">
+<img alt="../../../_images/ad9083_PTD.PNG" src="../../../_images/ad9083_PTD.PNG" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">AD9083EBZ Precision Time Domain Mode typical FFT</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="external-trigger">
+<h3>External Trigger<a class="headerlink" href="#external-trigger" title="Link to this heading"></a></h3>
+<p>SMA connector J2 on the ADS8-V3EBZ can be used as an optional trigger to
+control the data capture start time. The trigger requires a 1.8 V active-high
+pulse width longer than one period of the FPGA internal peripheral clock
+(50 MHz).</p>
+<p>To enable the external trigger:</p>
+<ol class="arabic">
+<li><p>Click <strong>Navigate to FPGA SPI</strong> on the block diagram of the AD9083 chip
+view.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/navigate_to_fpga_spi.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/navigate_to_fpga_spi.png" />
+</li>
+<li><p>Click the <strong>+</strong> sign next to Address (Hex) <code class="docutils literal notranslate"><span class="pre">0x0106</span></code>.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/0106.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/0106.png" />
+</li>
+<li><p>Click the <strong>0</strong> on the same row as <code class="docutils literal notranslate"><span class="pre">ext_trig_en</span></code>. The value changes
+to <strong>1</strong>.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/ext_trig_en.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/ext_trig_en.png" />
+</li>
+<li><p>Click <strong>Apply Changes</strong>.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/apply_changes.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad9083-evb/apply_changes.png" />
+</li>
+</ol>
+<p>SMA connector J3 is normally used as a system ready indicator, signaling that
+the FPGA is ready to accept an external trigger. To capture data, click
+<strong>Run Once</strong> as normal. Capture begins when a 1.8 V pulse is detected on
+connector J2 of the ADS8-V3EBZ.</p>
+</section>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h3>
+<section id="board-not-functioning-properly">
+<h4>Board Not Functioning Properly<a class="headerlink" href="#board-not-functioning-properly" title="Link to this heading"></a></h4>
+<p>A board component may have been rendered inoperable by ESD, removing a jumper
+during powered operation, accidental shorting while probing, or similar causes.
+Check the supply domain voltages on the power adapter board while powered:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Domain</p></th>
+<th class="head"><p>Test Point</p></th>
+<th class="head"><p>Approx. Voltage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>12V_IN</p></td>
+<td><p>TP19</p></td>
+<td><p>12 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>V1P0V</p></td>
+<td><p>TP6</p></td>
+<td><p>1.0 V</p></td>
+</tr>
+<tr class="row-even"><td><p>V1P8V</p></td>
+<td><p>TP14</p></td>
+<td><p>1.8 V</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="no-spi-communication-with-ads8-v3ebz">
+<h4>No SPI Communication with ADS8-V3EBZ<a class="headerlink" href="#no-spi-communication-with-ads8-v3ebz" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Ensure the USB cable has a good connection on both the ADS8-V3EBZ board and
+the PC. Try another USB port if needed; some PCs work best with a USB 3.0
+port.</p></li>
+<li><p>The ADS8-V3EBZ should appear in the PC Device Manager.</p></li>
+<li><p>Verify that the FPGA on the ADS8-V3EBZ has been programmed. A lit
+<code class="docutils literal notranslate"><span class="pre">FPGA_DONE</span></code> LED (DS15) on the top of the ADS8-V3EBZ and a powered fan are
+good indicators.</p></li>
+<li><p>Check the common-mode voltage on the JESD204B traces. On the evaluation
+board, the common-mode voltage should be approximately 0.5 V. On the
+ADS8-V3EBZ, it should be around 0.8 V.</p></li>
+<li><p>To test SPI operation, read and write to register <code class="docutils literal notranslate"><span class="pre">0x000A</span></code> (Scratch Pad
+Register) using the ACE Register Debugger. If the register reads back the
+same value written to it, SPI is operational.</p>
+<ul>
+<li><p>All registers reading back as <code class="docutils literal notranslate"><span class="pre">0xFF</span></code> or <code class="docutils literal notranslate"><span class="pre">0x00</span></code> may indicate no SPI
+communication.</p></li>
+<li><p>Register <code class="docutils literal notranslate"><span class="pre">0x0000</span></code> (SPI Configuration A) reading back <code class="docutils literal notranslate"><span class="pre">0x81</span></code> may
+indicate the FPGA on the ADS8-V3EBZ has not been programmed.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="board-fails-to-capture-data">
+<h4>Board Fails to Capture Data<a class="headerlink" href="#board-fails-to-capture-data" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Ensure the board is functioning properly and SPI communication is
+successful (see previous troubleshooting tips).</p></li>
+<li><p>Check the signal generator input on connector J20. Using SPI, read the
+on-chip PLL Lock Detect register <code class="docutils literal notranslate"><span class="pre">0xD44</span></code> to verify the PLL is locked.
+Place a differential oscilloscope probe on the clock pins to confirm the
+clock signal reaches the chip.</p></li>
+<li><p>Check the JESD204B PLL Locked indicator or register <code class="docutils literal notranslate"><span class="pre">0x301F</span></code> (PLL
+Status). If the indicator in the plugin chip view is green, or if the
+register reads back <code class="docutils literal notranslate"><span class="pre">0x80</span></code>, the PLL is locked. If it is not locked:</p>
+<ul>
+<li><p>Restart the evaluation board setup (power-cycle the FPGA, start a new
+session in ACE) by following the instructions from the beginning.</p></li>
+<li><p>Ensure that P3 (Power Down / Standby jumper) is not jumped.</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 </section>
 <section id="more-information">

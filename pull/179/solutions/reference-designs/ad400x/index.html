@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="This document describes the No-OS software used to control the AD4003 part and includes an example of how to initialize a AD4003 part." name="description" />
+<meta content="This document describes the AD400x/ADAQ4003 reference design, including the No-OS software used to control the AD4003 part, HDL design configuration, and a Linux-based evaluation guide using IIO Oscilloscope." name="description" />
 
     <title>AD40xx/ADAQ4001/ADAQ4003 User Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -102,14 +102,39 @@
 </li>
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#evaluation-boards">Evaluation Boards</a></li>
+<li><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
 <li><a class="reference internal" href="#hdl-design-description">HDL Design Description</a><ul>
 <li><a class="reference internal" href="#design-configuration">Design Configuration</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#no-os-software-setup">No-OS Software Setup</a></li>
 <li><a class="reference internal" href="#no-os-driver-description">No-OS Driver Description</a><ul>
 <li><a class="reference internal" href="#functions-declarations">Functions Declarations</a></li>
 <li><a class="reference internal" href="#types-declarations">Types Declarations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux-evaluation-guide">Linux Evaluation Guide</a><ul>
+<li><a class="reference internal" href="#linux-supported-platforms">Linux Supported Platforms</a><ul>
+<li><a class="reference internal" href="#coraz7-platform">CoraZ7 Platform</a></li>
+<li><a class="reference internal" href="#zedboard-platform">ZedBoard Platform</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-required">Software Required</a></li>
+<li><a class="reference internal" href="#quick-start-guide">Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#flash-kuiper-linux-to-the-sd-card">Flash Kuiper Linux to the SD Card</a></li>
+<li><a class="reference internal" href="#configuring-the-sd-card">Configuring the SD Card</a><ul>
+<li><a class="reference internal" href="#getting-boot-bin-from-the-hdl-project">Getting BOOT.BIN from the HDL Project</a></li>
+<li><a class="reference internal" href="#getting-uimage-and-devicetree-dtb-from-the-linux-project">Getting uImage and devicetree.dtb from the Linux Project</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#application-software">Application Software</a><ul>
+<li><a class="reference internal" href="#dmm-tab">DMM Tab</a></li>
+<li><a class="reference internal" href="#debug-tab">Debug Tab</a></li>
+<li><a class="reference internal" href="#buffered-data-capture">Buffered Data Capture</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#hdl-downloads">HDL Downloads</a></li>
@@ -697,8 +722,9 @@ Content on this topic
 <span id="ad400x"></span><h1>AD40xx/ADAQ4001/ADAQ4003 User Guide<a class="headerlink" href="#ad40xx-adaq4001-adaq4003-user-guide" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>This document describes the No-OS software used to control the AD4003 part and
-includes an example of how to initialize a AD4003 part.</p>
+<p>This document describes the AD400x/ADAQ4003 reference design, including the
+No-OS software used to control the AD4003 part, HDL design configuration, and
+a Linux-based evaluation guide using IIO Oscilloscope.</p>
 </section>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
@@ -753,6 +779,14 @@ and reduces TTM.</p>
 <h2>Evaluation Boards<a class="headerlink" href="#evaluation-boards" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD400x-FMCZ" target="_blank">EVAL-AD400x-FMCZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADAQ40xx" target="_blank">EVAL-ADAQ40xx</a></p></li>
+</ul>
+</section>
+<section id="supported-platforms">
+<h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
+<li><p><a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development/" target="_blank">CoraZ7</a></p></li>
 </ul>
 </section>
 <section id="hdl-design-description">
@@ -800,10 +834,10 @@ file to the required values:</p>
 </div>
 </section>
 </section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>In order to perform the software setup the user has to go through the following
-steps:</p>
+<section id="no-os-software-setup">
+<h2>No-OS Software Setup<a class="headerlink" href="#no-os-software-setup" title="Link to this heading"></a></h2>
+<p>In order to perform the No-OS software setup the user has to go through the
+following steps:</p>
 <ol class="arabic simple">
 <li><p>Confirm that you have the right tools (the reference design requires XSDK)</p></li>
 <li><p>Clone the No-OS GitHub repository (the project is located at
@@ -883,10 +917,222 @@ mode a buffer is loaded with a user specified number.</p>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p><strong>HW Platform(s):</strong></p>
+</section>
+</section>
+<section id="linux-evaluation-guide">
+<h2>Linux Evaluation Guide<a class="headerlink" href="#linux-evaluation-guide" title="Link to this heading"></a></h2>
+<p>This section describes how to evaluate <a class="icon adi reference external" href="https://www.analog.com/ADAQ4003" target="_blank">ADAQ4003</a> and AD400x family
+devices using Linux on the supported platforms.</p>
+<section id="linux-supported-platforms">
+<h3>Linux Supported Platforms<a class="headerlink" href="#linux-supported-platforms" title="Link to this heading"></a></h3>
+<section id="coraz7-platform">
+<h4>CoraZ7 Platform<a class="headerlink" href="#coraz7-platform" title="Link to this heading"></a></h4>
+<p><strong>Hardware Required</strong></p>
 <ul class="simple">
-<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADAQ40xx" target="_blank">EVAL-ADAQ40xx</a></p></li>
+<li><p><a class="icon link reference external" href="https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development/" target="_blank">CoraZ7</a>
+board</p></li>
+<li><p>A signal generator (in this guide <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> is used)</p></li>
+<li><p>16 GB (or larger) Class 10 (or faster) micro-SD card</p></li>
+<li><p>2x Micro-USB cable</p></li>
+<li><p>Ethernet cable</p></li>
+<li><p>A host computer (Linux or Windows)</p></li>
 </ul>
+<p><strong>Setting up the Hardware</strong></p>
+<p>The connections for the setup with CoraZ7 are the following:</p>
+<ul class="simple">
+<li><p>Connect <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADAQ40xx" target="_blank">EVAL-ADAQ40xx</a> to the JA PMOD port on CoraZ7.</p></li>
+<li><p>Connect the host computer to CoraZ7 using a Micro-USB cable.</p></li>
+<li><p>Connect the host computer to <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> using a Micro-USB cable.</p></li>
+<li><p>Connect <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> probes to <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADAQ40xx" target="_blank">EVAL-ADAQ40xx</a>.</p></li>
+</ul>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> probes do not plug directly into the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADAQ40xx" target="_blank">EVAL-ADAQ40xx</a>
+ADC inputs. To work around this, you can use the ADALM2000 BNC Adapter Board
+with additional probes to make a tight connection.</p>
+<p>Alternatively, you can use long PCB header pins to adapt <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a>
+female probes to male probes which can then connect to J1 and J2 internal
+connections. For the external part of the ADC connectors, carefully curled
+jumper wires may do the trick.</p>
+<figure class="align-default" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad400x/m2k_probe_adapt.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad400x/m2k_probe_adapt.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADALM2000 probe adaptation using PCB header pins</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad400x/adaq4003_input_adapt.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad400x/adaq4003_input_adapt.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-ADAQ40xx input adaptation</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADAQ40xx" target="_blank">EVAL-ADAQ40xx</a> configuration measures (IN+ - IN-) as (J2 - J1).
+Connect <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> W1 to <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADAQ40xx" target="_blank">EVAL-ADAQ40xx</a> J1, <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> W2 to
+J2, and <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADAQ40xx" target="_blank">EVAL-ADAQ40xx</a> J1, J2 outer connectors to <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> GND.
+With that, <a class="icon adi reference external" href="https://www.analog.com/ADAQ4003" target="_blank">ADAQ4003</a> readings will convert <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> W2 - W1 which
+we will configure in Scopy as CH2 - CH1.</p>
+<figure class="align-default" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad400x/adaq4003-adalm2000-cora-setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad400x/adaq4003-adalm2000-cora-setup.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">ADAQ4003 with ADALM2000 and CoraZ7 setup</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="zedboard-platform">
+<h4>ZedBoard Platform<a class="headerlink" href="#zedboard-platform" title="Link to this heading"></a></h4>
+<p><strong>Hardware Required</strong></p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD400x-FMCZ" target="_blank">EVAL-AD400x-FMCZ</a> or <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADAQ40xx" target="_blank">EVAL-ADAQ40xx</a></p></li>
+<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a>
+Rev D or later</p></li>
+<li><p>A signal generator (in this guide <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> is used)</p></li>
+<li><p>16 GB (or larger) Class 10 (or faster) micro-SD card</p></li>
+<li><p>Micro-USB cable</p></li>
+<li><p>12 Vdc, 3 A power supply</p></li>
+<li><p>Ethernet cable</p></li>
+<li><p>User interface setup (choose one):</p>
+<ul>
+<li><p>HDMI monitor, keyboard, and mouse plugged directly into the ZedBoard</p></li>
+<li><p>Host Linux/Mac/Windows computer on the same network as the ZedBoard</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-default" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad400x/adaq4003_test_zed_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad400x/adaq4003_test_zed_setup.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">ADAQ4003 test setup with ZedBoard</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="software-required">
+<h3>Software Required<a class="headerlink" href="#software-required" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a> Image</p></li>
+<li><p>A UART terminal (GNU screen, Picocom, Minicom, PuTTY, etc.), baud rate
+115200 (8N1)</p></li>
+<li><p><a class="reference internal" href="../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/university/tools/m2k/scopy" target="_blank">Scopy</a></p></li>
+</ul>
+</section>
+<section id="quick-start-guide">
+<h3>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h3>
+<section id="flash-kuiper-linux-to-the-sd-card">
+<h4>Flash Kuiper Linux to the SD Card<a class="headerlink" href="#flash-kuiper-linux-to-the-sd-card" title="Link to this heading"></a></h4>
+<p>Install <a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a> to the SD card. Step-by-step imaging guides are available
+for
+<a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/zynq_images/linux_hosts" target="_blank">Linux hosts</a>
+and
+<a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/zynq_images/windows_hosts" target="_blank">Windows hosts</a>.</p>
+</section>
+<section id="configuring-the-sd-card">
+<h4>Configuring the SD Card<a class="headerlink" href="#configuring-the-sd-card" title="Link to this heading"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Linux support for <a class="icon adi reference external" href="https://www.analog.com/ADAQ4003" target="_blank">ADAQ4003</a> and similar ADC devices was introduced in
+January 2024. Any <a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a> release after that date will have support
+built in.</p>
+</div>
+<p>If using older <a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a> releases where no <code class="docutils literal notranslate"><span class="pre">zynq-coraz7s-adaq4003</span></code> or
+<code class="docutils literal notranslate"><span class="pre">zynq-zed-adv7511-ad4020</span></code> directory is available, use the boot files from
+the table below or follow the subsequent subsections to obtain <code class="docutils literal notranslate"><span class="pre">BOOT.BIN</span></code>,
+<code class="docutils literal notranslate"><span class="pre">uImage</span></code>, and <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code> files.</p>
+<p>Follow the <strong>Configuring the SD Card for FPGA Projects</strong> section of the
+<a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a> page.</p>
+<p>Copy the following files onto the BOOT partition to configure the SD card:</p>
+<ul class="simple">
+<li><p><strong>BOOT.BIN</strong> – Binary blob file which includes the first stage boot loader
+and FPGA bitstream.</p></li>
+<li><p><strong>devicetree.dtb</strong> – Binary blob containing the specification of what
+hardware is present in the system.</p></li>
+<li><p><strong>uImage</strong> – Linux kernel image that provides operating system
+functionality.</p></li>
+</ul>
+<section id="getting-boot-bin-from-the-hdl-project">
+<h5>Getting BOOT.BIN from the HDL Project<a class="headerlink" href="#getting-boot-bin-from-the-hdl-project" title="Link to this heading"></a></h5>
+<p>To achieve high performance with <a class="icon adi reference external" href="https://www.analog.com/ADAQ4003" target="_blank">ADAQ4003</a>, the hardware platform must
+have an integrated FPGA. To configure the FPGA to properly support
+<a class="icon adi reference external" href="https://www.analog.com/ADAQ4003" target="_blank">ADAQ4003</a>, ADI engineers provide
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/hdl" target="_blank">HDL reference projects</a> from
+which the <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/pulsar_adc_pmdz" target="_blank">pulsar_adc_pmdz project</a> is
+used.</p>
+<p>If there is no directory with boot files for your platform of choice under the
+SD BOOT partition, follow the build instructions on the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html" target="_blank">Building HDL</a>
+page to build the pulsar project and generate a <code class="docutils literal notranslate"><span class="pre">BOOT.BIN</span></code> file.</p>
+</section>
+<section id="getting-uimage-and-devicetree-dtb-from-the-linux-project">
+<h5>Getting uImage and devicetree.dtb from the Linux Project<a class="headerlink" href="#getting-uimage-and-devicetree-dtb-from-the-linux-project" title="Link to this heading"></a></h5>
+<p>If there is no directory with boot files for your platform of choice under the
+SD BOOT partition, follow the
+<a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-build/generic/zynq" target="_blank">Linux build guide</a>
+to build a new Linux kernel image and device tree blob. After that, replace the
+<a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a> image with the newly built <code class="docutils literal notranslate"><span class="pre">uImage</span></code> and copy the proper
+<code class="docutils literal notranslate"><span class="pre">.dtb</span></code> file for your platform (either <code class="docutils literal notranslate"><span class="pre">zynq-coraz7s-adaq4003.dtb</span></code> or
+<code class="docutils literal notranslate"><span class="pre">zynq-zed-adv7511-ad4020.dtb</span></code>) from <code class="docutils literal notranslate"><span class="pre">arch/arm/boot/dts/</span></code> to the BOOT
+partition as <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code>.</p>
+</section>
+</section>
+</section>
+<section id="application-software">
+<h3>Application Software<a class="headerlink" href="#application-software" title="Link to this heading"></a></h3>
+<p><a class="icon adi reference external" href="https://www.analog.com/ADAQ4003" target="_blank">ADAQ4003</a> can be managed with <a class="reference internal" href="../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a>, which provides
+interfaces for configuring and retrieving data from IIO devices. After
+installing IIO Oscilloscope on the host computer, open the application and
+connect to the IIO context provided by the <a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper</span></a> installation running
+on the target platform. Both the host machine and the target board must be on
+the same network for IIO Oscilloscope to find the correct context.</p>
+<section id="dmm-tab">
+<h4>DMM Tab<a class="headerlink" href="#dmm-tab" title="Link to this heading"></a></h4>
+<p>A quick way of getting data after connecting to the IIO context is to access
+the DMM (Digital MultiMeter) tab where single-shot readings from the ADC are
+displayed.</p>
+<figure class="align-default" id="id5">
+<img alt="../../../_images/iio_osc_conn_adaq4003.gif" src="../../../_images/iio_osc_conn_adaq4003.gif" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">IIO Oscilloscope connection and DMM tab</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="debug-tab">
+<h4>Debug Tab<a class="headerlink" href="#debug-tab" title="Link to this heading"></a></h4>
+<p>Users can inspect <a class="icon adi reference external" href="https://www.analog.com/ADAQ4003" target="_blank">ADAQ4003</a> attributes such as the sampling frequency in
+the Debug tab. Edit the value field then click the write button to change
+device parameters.</p>
+<figure class="align-default" id="id6">
+<img alt="../../../_images/iio_osc_adaq4003_attr.gif" src="../../../_images/iio_osc_adaq4003_attr.gif" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Inspecting ADAQ4003 attributes in the Debug tab</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="buffered-data-capture">
+<h4>Buffered Data Capture<a class="headerlink" href="#buffered-data-capture" title="Link to this heading"></a></h4>
+<p><a class="icon adi reference external" href="https://www.analog.com/ADAQ4003" target="_blank">ADAQ4003</a> is a differential ADC and thus converts the difference between
+its positive and negative inputs. The <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> can be used to set
+different input waveforms to evaluate <a class="icon adi reference external" href="https://www.analog.com/ADAQ4003" target="_blank">ADAQ4003</a> performance. Install
+<a class="icon link reference external" href="https://wiki.analog.com/university/tools/m2k/scopy" target="_blank">Scopy</a> on the host
+computer to configure <a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> output channels.</p>
+<p>For a simple test, set a 100 Hz square wave in channel W1 and a 1 kHz sine wave
+in channel W2. The difference can then be read with <a class="icon adi reference external" href="https://www.analog.com/ADAQ4003" target="_blank">ADAQ4003</a> and the
+resulting waveform plotted with IIO Oscilloscope.</p>
+<figure class="align-default" id="id7">
+<img alt="../../../_images/iio_osc_adaq4003_buff.gif" src="../../../_images/iio_osc_adaq4003_buff.gif" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Buffered data capture with 100 Hz square wave (W1) and 1 kHz sine wave (W2)</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The next example shows the effect of increasing the sample rate on
+characterizing a waveform. With W1 set as a 20 kHz square wave and W2 as a
+200 kHz sine wave: at 1 MSPS, the transition from low to high is barely
+visible. At 2 MSPS, the resulting waveform is much clearer and the transition
+effect is apparent.</p>
+<figure class="align-default" id="id8">
+<img alt="../../../_images/iio_osc_adaq4003_buff_2msps.gif" src="../../../_images/iio_osc_adaq4003_buff_2msps.gif" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Buffered data capture at 2 MSPS showing improved waveform characterization</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 </section>
 <section id="hdl-downloads">
