@@ -229,3 +229,44 @@ Makefile variables:
   transceiver and capture data. The IIOD server runs at 921600 baud.
 
 Only one example can be active at a time.
+
+Switching between use cases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since no-OS runs bare-metal without a file system, all profile and firmware
+data is compiled into the binary as C headers in
+:git-no-os:`projects/adrv904x/src/common/firmware <projects/adrv904x/src/common/firmware>`.
+
+The entire device configuration for a given use case is contained in the
+profile binary (``DeviceProfileTest.bin``), which is generated using the ADI
+evaluation software (see the *ADRV904x Evaluation System User Guide*). The
+stream image (``stream_image.bin``) is also specific to a configuration.
+The firmware files (``ADRV9040_FW.bin``, ``ADRV9040_DFE_CALS_FW.bin``) are
+typically static and supplied by ADI.
+
+Radio control and JESD204 parameters (LO frequencies, channel masks, lane
+rates) are set directly in
+:git-no-os:`projects/adrv904x/src/common/initdata.c <projects/adrv904x/src/common/initdata.c>`
+as C structs (``deviceInitStruct``, ``utilityInit``).
+
+To switch to a different use case:
+
+#. Generate the new ``DeviceProfileTest.bin`` and ``stream_image.bin`` using
+   the ADI evaluation software.
+
+#. Convert each binary to a C header using ``xxd``:
+
+   .. code-block:: bash
+
+      xxd -i DeviceProfileTest.bin > DeviceProfileTest.h
+      xxd -i stream_image.bin > stream_image.h
+
+#. Copy the generated headers into
+   :git-no-os:`projects/adrv904x/src/common/firmware <projects/adrv904x/src/common/firmware>`,
+   replacing the existing files.
+
+#. If radio control or JESD204 parameters also changed, update the
+   corresponding fields in ``initdata.c`` (``deviceInitStruct`` and
+   ``utilityInit``).
+
+#. Rebuild the project.
