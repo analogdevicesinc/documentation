@@ -26,6 +26,12 @@ The circuit will survive up to 100 V reverse connection to a power source, with
 a green LED indicating correct input polarity and a red LED indicating reverse
 polarity.
 
+.. figure:: picture1.png
+   :align: center
+   :width: 500px
+
+   EVAL-CN0509-EBZ board
+
 Features
 --------
 
@@ -50,6 +56,12 @@ Required Equipment
 
 Board Layout
 ------------
+
+.. figure:: block_dia.png
+   :align: center
+   :width: 600px
+
+   EVAL-CN0509-EBZ block diagram
 
 - **P1** -- Screw terminal block for input supply
 - **P2** -- USB output connectors for load (two ports)
@@ -97,6 +109,12 @@ Test Points
 USB Output Connectors
 ~~~~~~~~~~~~~~~~~~~~~
 
+.. figure:: usb_stack.png
+   :align: center
+   :width: 600px
+
+   USB output connectors
+
 The board provides a dual-port stacked USB Type-A connector:
 
 - **Bottom receptacle** -- Includes a USB Dedicated Charging Port (DCP)
@@ -106,6 +124,12 @@ The board provides a dual-port stacked USB Type-A connector:
 
 Hardware Setup
 --------------
+
+.. figure:: setup_2.png
+   :align: center
+   :width: 850px
+
+   Test setup
 
 #. Connect the input DC supply to **P1** on the EVAL-CN0509-EBZ.
 
@@ -139,6 +163,12 @@ Hardware Setup
    charging current if the voltage on the load drops below a certain level.
    The maximum charging current on the P2 lower port that CN0509 can provide
    is available when the output voltage to the load is greater than 5 V.
+
+.. figure:: max_curr.png
+   :align: center
+   :width: 200px
+
+   Maximum charging current on P2 lower port
 
 Documents
 ---------

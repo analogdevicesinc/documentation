@@ -654,7 +654,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -1060,8 +1060,18 @@ precision-converters-firmware repository for the SDP-K1 controller board:</p>
 <section id="hdl-reference-design">
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
 <p>The AD469x-EVB no-OS project requires the HDL bitstream from the AD469x HDL
-reference design. For full details on the HDL design, block diagram, and Linux
-driver support, see <a class="reference internal" href="../ad469x-fmc/index.html"><span class="doc">AD469x-FMC User Guide</span></a>.</p>
+reference design. The design uses the standard SPI Engine Framework to interface
+the AD4696 ADC in single SDO mode. The SPI offload module, triggered by the
+BUSY signal of the device, captures continuous data streams at maximum data
+rate.</p>
+<figure class="align-center" id="id1">
+<img alt="../../../_images/ad469x_hdl.svg" src="../../../_images/ad469x_hdl.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD469x-EVB HDL block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>For full details on the HDL design, Linux driver support, and device tree
+configuration, see <a class="reference internal" href="../ad469x-fmc/index.html"><span class="doc">AD469x-FMC User Guide</span></a>.</p>
 <ul class="simple">
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/ad469x_evb" target="_blank">projects/ad469x_evb</a></p></li>
 </ul>

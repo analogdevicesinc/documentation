@@ -62,9 +62,9 @@ General Setup
 - The :adi:`EVAL-SDP-CB1Z` (**SDP-B Board**) connects to the PC via the USB
   cable.
 
-.. figure:: cn0287_test_setup.png
+.. figure:: hardware_connection_with_label.png
 
-   CN0287 Test Setup
+   Hardware Connection
 
 Installing the Software
 ------------------------
@@ -80,8 +80,22 @@ Installing the Software
       and all National Instruments products to
       **C:\\Program Files\\National Instruments\\**.
 
+   .. figure:: software_installation_1.png
+
+      CN0287 Software Installation - Setup Wizard
+
 #. Click **Next** to view the installation review page.
+
+   .. figure:: software_installation_2.png
+
+      CN0287 Software Installation - Review Page
+
 #. Click **Next** to start the installation.
+
+   .. figure:: software_installation_3.png
+
+      CN0287 Software Installation - Progress
+
 #. Upon completion of the installation of the **CN0287 SDP Eval Software**, the
    installer for the **ADI SDP Drivers** will execute.
 
@@ -91,6 +105,10 @@ Installing the Software
       **Next**. This will make it possible to update relevant system files
       without having to reboot your computer.
 
+   .. figure:: software_installation_4.png
+
+      ADI SDP Drivers Installation
+
 #. Press **Next** to set the installation location for the **SDP Drivers**.
 
    .. note::
@@ -98,11 +116,27 @@ Installing the Software
       It is recommended that you install the drivers to the default directory
       path **C:\\Program Files\\Analog Devices\\SDP\\Drivers**.
 
+   .. figure:: software_installation_5.png
+
+      SDP Drivers Installation Location
+
 #. Press **Next** to install the SDP Drivers and complete the installation of
    all software. Click **Finish** when done.
 
+   .. figure:: software_installation_6.png
+
+      SDP Drivers Installation Complete
+
 Connecting the Hardware
 ------------------------
+
+.. figure:: cn0287_test_setup.png
+
+   CN0287 Test Setup
+
+.. figure:: jumpersetting.png
+
+   Connector Configuration and Jumper Placements
 
 #. Connect the :adi:`EVAL-CN0287-SDPZ <CN0287>` (CN0287 Board) to
    :adi:`EVAL-SDP-CB1Z` (SDP Board) through the 120-pin SMD connector.
@@ -122,6 +156,10 @@ Using the Evaluation Software
 
 Software Front Panel
 ~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: sw_frontpanel_4.png
+
+   CN0287 Evaluation Software Front Panel
 
 The software front panel contains the following controls and indicators:
 
@@ -151,6 +189,10 @@ The software front panel contains the following controls and indicators:
      board the software is currently connected with and some additional
      functions.
 
+   .. figure:: software_swversion_tab.png
+
+      SW/Version Info Tab
+
 #. **Configuration Block for All Channels** -- All the configuration items,
    explained in detail in the following sections.
 #. **System Status String Indicator** -- This indicator displays a message to
@@ -158,12 +200,20 @@ The software front panel contains the following controls and indicators:
 #. **System Status LED Indicator** -- This indicator displays the current state
    of the software in the form of an LED. There are three status LED colors:
 
-   - Inactive
-   - Busy
-   - Error
+   - |inactive_led| Inactive
+   - |busy_led| Busy
+   - |error_led| Error
+
+   .. |inactive_led| image:: cn0272-software-inactive.png
+   .. |busy_led| image:: cn0272-software-busy.png
+   .. |error_led| image:: cn0272-software-error.png
 
 Configuration Tab
 ~~~~~~~~~~~~~~~~~~
+
+.. figure:: channel_configuration_2.png
+
+   Channel Configuration
 
 The Configuration Tab provides the following controls for each channel:
 
@@ -175,6 +225,10 @@ The Configuration Tab provides the following controls for each channel:
 #. **Advanced Settling Button** -- When this button is pressed, a window named
    **"CH[x] Advanced Settling"** pops up with more detailed settings for
    channel [x] (where [x] is the channel number 1, 2, 3, or 4).
+
+   .. figure:: advanced_settling_with_notes.png
+
+      CH[x] Advanced Setting Pop-up Window
 
    .. note::
 
@@ -194,8 +248,16 @@ The Configuration Tab provides the following controls for each channel:
    **"CH[x] Calibration"** pops up. Follow the tips on the pop-up window to
    calibrate the current channel correctly.
 
+   .. figure:: calibration_pop_up_windows.png
+
+      CH[x] Calibration Pop-up Window
+
 Temperature Tab
 ~~~~~~~~~~~~~~~~
+
+.. figure:: channeltemperature_with_label.png
+
+   Temperature Tab Display
 
 The Temperature Tab displays the following information for each channel:
 
@@ -239,6 +301,10 @@ The Temperature Tab displays the following information for each channel:
 Temperature Graph Tab
 ~~~~~~~~~~~~~~~~~~~~~~
 
+.. figure:: sw_frontpanel_temepraturegraphtab_withlabel.png
+
+   Temperature Graph Tab Display
+
 The Temperature Graph Tab displays the following for each channel:
 
 #. **CH [x]** -- Channel Number of the graph below.
@@ -264,6 +330,11 @@ Establishing a USB Connection Link
 
 #. Select the connector to use from the **SDP Connector Dropdown Menu**.
 #. Click the **Connect Button**. A window with a progress bar will load.
+
+   .. figure:: cn0272-software-wait.png
+
+      Connection Progress Bar
+
 #. Upon success, the **System Status String Indicator** will display
    *SDP-B Ready to Acquire Data*.
 

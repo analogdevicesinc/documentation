@@ -25,7 +25,12 @@ in conjunction with the current input channels to form a HART-compatible,
 connectivity to the multiple current input channels. The :adi:`ADuM5411` and
 :adi:`ADuM3151` provide digital line and power isolation. The :adi:`ADP2441`
 36 V step-down dc-to-dc regulator accepts an industrial standard 24 V supply
-and steps it down to 7.5 V for the system.
+(with wide tolerance on the input voltage) and steps it down to 7.5 V for the
+system.
+
+This user guide describes how to use the :adi:`EVAL-ADICUP3029` and evaluation
+software to configure and collect data from the EVAL-CN0414-ARDZ evaluation
+board.
 
 .. figure:: images/cn0414_board.png
    :align: center
@@ -36,7 +41,7 @@ and steps it down to 7.5 V for the system.
 Simplified Functional Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. figure:: images/cn0414_block_diagram.png
+.. figure:: images/cn0414_simplified_block_diagram.png
    :align: center
    :width: 600
 

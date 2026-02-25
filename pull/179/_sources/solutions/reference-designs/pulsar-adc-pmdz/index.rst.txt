@@ -12,6 +12,11 @@ performance from 14-bits up to 18-bits with throughputs ranging from 100 kSPS
 to 1.3 MSPS. The boards are designed to demonstrate the ADC's performance and
 to provide an easy digital interface for a variety of system applications.
 
+.. figure:: pulsar_pmod.jpg
+   :align: center
+
+   PulSAR ADC PMOD evaluation board
+
 Applications
 ~~~~~~~~~~~~
 
@@ -104,6 +109,11 @@ order to enable the amplifiers to provide zero and full scale inputs to the ADC,
 external power supplies of -2.5 V, GND, and 7.5 V are needed. These supplies
 provide the power for the entire PMOD board.
 
+.. figure:: pmod_power_supplies.png
+   :align: center
+
+   PulSAR ADC PMOD power supply connections
+
 Input Connectors
 ~~~~~~~~~~~~~~~~
 
@@ -112,6 +122,11 @@ has two SMB connectors for positive (+) and negative (-) inputs to the
 converter. Each converter has a combination of single-ended, differential, or
 pseudo-differential inputs; consult the device datasheet for details.
 
+.. figure:: vin.png
+   :align: center
+
+   PulSAR ADC PMOD analog input connectors
+
 Digital Interface (PMOD)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -119,6 +134,11 @@ The PMOD interface uses the extended SPI configuration. Each of the PulSAR
 PMOD boards is hardware configured in a 3-wire mode with no busy indicator.
 The signals between the converter and the processor are CNV (chip select),
 SCLK (serial clock), and MISO (serial data out).
+
+.. figure:: pmod_pinout.png
+   :align: center
+
+   PulSAR ADC PMOD digital interface pinout
 
 Supported Carriers
 ------------------

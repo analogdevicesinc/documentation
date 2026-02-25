@@ -653,7 +653,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -962,11 +962,19 @@ Business/Enterprise/Ultimate editions</p></li>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Connect the EVAL-CN0300-EB1Z board to the USB-SWD/UART board.</p></li>
 <li><p>Connect a 12 V power supply to <strong>J3</strong>. Make sure to connect a current
 meter in series with the 12 V terminal. Short the inputs at <strong>J2</strong>
-together.</p></li>
+together.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-hardware-test-setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-hardware-test-setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-hardware-test-setup.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Hardware test setup</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Connect the USB-SWD/UART board to your PC via a USB cable (ensure the
 driver is installed correctly).</p></li>
 </ol>
@@ -976,49 +984,132 @@ driver is installed correctly).</p></li>
 <ol class="arabic">
 <li><p>Determine the COM port your PC has allocated to the USB-SWD/UART board.
 Go to <strong>Settings &gt; Control Panel &gt; System &gt; Hardware &gt; Device Manager</strong>
-to find the allocated COM port.</p></li>
+to find the allocated COM port.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-pc-device-manager.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-pc-device-manager.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Device Manager showing the allocated COM port</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Press the reset button on the EVAL-CN0300-EB1Z board. The following should
 appear on the HyperTerminal window. The current reading on the current
 meter should match the value <strong>Expected DAC Current</strong> on the screen.</p>
 <p>Configure HyperTerminal for the appropriate COM port with the following
 settings: 9600 baud rate, 8 data bits, no parity, 1 stop bit, no flow
 control.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-hyperterminal4.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-hyperterminal4.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">HyperTerminal output after reset</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 </ol>
 </section>
 <section id="calibrating-the-dac-optional">
 <h2>Calibrating the DAC (Optional)<a class="headerlink" href="#calibrating-the-dac-optional" title="Link to this heading"></a></h2>
 <p>This procedure is only needed if a recalibration is desired.</p>
-<ol class="arabic simple">
-<li><p>Open the application <strong>CM3WSD.exe</strong>.</p></li>
+<ol class="arabic">
+<li><p>Open the application <strong>CM3WSD.exe</strong>.</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CM3WSD application</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Using the <strong>Browse</strong> tab, select the file <strong>CN0300_test.hex</strong>.</p></li>
 <li><p>Select the <strong>Configure</strong> tab and select the <a class="icon adi reference external" href="https://www.analog.com/ADUCM360" target="_blank">ADuCM360</a> in
-the <strong>Parts</strong> tab.</p></li>
+the <strong>Parts</strong> tab.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd1.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Selecting the ADuCM360 in the Parts tab</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Select the <strong>Comms</strong> tab. Select the appropriate COM port as determined
-previously. A baud rate of 9600 is fine.</p></li>
-<li><p>Select the <strong>Command</strong> tab. Enable the <strong>Program and Verify</strong> tabs.</p></li>
+previously. A baud rate of 9600 is fine.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd2.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Comms tab with COM port and baud rate settings</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Select the <strong>Command</strong> tab. Enable the <strong>Program and Verify</strong> tabs.</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd3.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Command tab with Program and Verify enabled</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Force the part into download mode: hold the <strong>SD</strong> button on the
 EVAL-CN0300-EB1Z board while pressing and releasing the <strong>RESET</strong> button.</p></li>
-<li><p>Click the <strong>Start</strong> button on CM3WSD.</p></li>
+<li><p>Click the <strong>Start</strong> button on CM3WSD.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd4.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd4.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">CM3WSD download progress</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Close CM3WSD and open <strong>HyperTerminal</strong> on your PC.</p></li>
 <li><p>Set HyperTerminal for the appropriate COM port: 9600 baud rate, 8 data
 bits, no parity, 1 stop bit, no flow control.</p></li>
-<li><p>Press reset. The calibration interface should appear on the terminal.</p></li>
+<li><p>Press reset. The calibration interface should appear on the terminal.</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-hyperterminal.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-hyperterminal.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">HyperTerminal calibration interface after reset</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Your current meter should report a value close to 4 mA. If it does not,
 follow the instructions on the HyperTerminal screen to calibrate the DAC
 output to 4 mA by pressing the <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code> keys accordingly. Ensure
 you select the HyperTerminal screen before pressing 1 or 0.</p></li>
 <li><p>Press Return when the current meter reports 4 mA.</p></li>
-<li><p>Repeat the previous step for the 20 mA calibration.</p></li>
+<li><p>Repeat the previous step for the 20 mA calibration.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-hyperterminal1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-hyperterminal1.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">HyperTerminal 20 mA calibration</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>After calibration, the program will continuously output temperature and
 current data. The final temperature reported should be within a few
 degrees C of the expected ambient temperature (+/-5 C is acceptable since
-the ADC is not fully calibrated).</p></li>
+the ADC is not fully calibrated).</p>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-hyperterminal2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-hyperterminal2.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Continuous temperature and current output</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Temporarily disconnect the COM port from HyperTerminal by pressing the
-phone icon.</p></li>
+phone icon.</p>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-hyperterminal3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-hyperterminal3.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Disconnecting the COM port in HyperTerminal</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Repeat steps 2 through 10, except this time select the file
 <strong>CN0300_Final.hex</strong>. This file is very similar to the test program except
-it does not call the DAC calibration function.</p></li>
+it does not call the DAC calibration function.</p>
+<figure class="align-center" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd5.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0300-sdpz/cn0300-software-wsd5.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Loading CN0300_Final.hex in CM3WSD</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Close CM3WSD. Return to HyperTerminal and select <strong>Connect</strong> by pressing
 the phone icon.</p></li>
 </ol>

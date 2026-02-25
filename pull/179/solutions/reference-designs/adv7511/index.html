@@ -671,7 +671,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -986,18 +986,31 @@ directly.</p>
 <section id="quick-start">
 <h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
 <p>The following steps set up the system with the no-OS reference design:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Connect an HDMI cable between the board HDMI output and the HDMI monitor.
 Turn on the carrier board.</p></li>
 <li><p>Build the HDL project following the
 <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html" target="_blank">Building HDL instructions</a>.</p></li>
 <li><p>Choose the carrier board in software by uncommenting the appropriate define
 in the <code class="docutils literal notranslate"><span class="pre">src/app_config.h</span></code> file (for example <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">PLATFORM_ZED</span></code> for
-the ZedBoard).</p></li>
+the ZedBoard).</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/adv7511/adv7511_platform_selection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/adv7511/adv7511_platform_selection.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Platform selection in app_config.h</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Build the no-OS software project following the
 <a class="icon link reference external" href="https://github.com/analogdevicesinc/no-OS/wiki" target="_blank">no-OS build instructions</a>.</p></li>
 <li><p>If programming was successful, messages will appear on the UART terminal.</p></li>
 </ol>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/adv7511/adv7511_lib_test.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/adv7511/adv7511_lib_test.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">No-OS ADV7511 HDMI transmitter application terminal output</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The reference design demonstrates how to:</p>
 <ul class="simple">
 <li><p>Initialize the ADV7511 HDMI transmitter</p></li>
@@ -1027,9 +1040,9 @@ corresponding action for HDMI enable and color pattern enable.</p>
 monitor. If enabled, the register data is used as the pixel data for the
 entire frame.</p>
 <p>The reference design defaults to 1080p video mode (148.5 MHz pixel clock).</p>
-<div class="table-wrapper docutils container" id="id1">
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">1080p Video Timing Parameters</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">1080p Video Timing Parameters</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
 <th class="head"><p>Description</p></th>
@@ -1080,9 +1093,9 @@ interface. The audio clock is derived from the bus clock. A programmable
 register controls the division factor. Audio data is read from DDR as two
 16-bit words for left and right channels, then transmitted on the SPDIF frame.
 The reference design defaults to 48 kHz.</p>
-<div class="table-wrapper docutils container" id="id2">
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Audio Registers (axi_spdif_tx)</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id4">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Audio Registers (axi_spdif_tx)</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Address</p></th>
 <th class="head"><p>Bits</p></th>
@@ -1142,16 +1155,16 @@ The reference design defaults to 48 kHz.</p>
 </section>
 <section id="block-diagrams">
 <h3>Block Diagrams<a class="headerlink" href="#block-diagrams" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="id5">
 <img alt="../../../_images/adv7511_zynq_bd.svg" src="../../../_images/adv7511_zynq_bd.svg" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADV7511 Xilinx block diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">ADV7511 Xilinx block diagram</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id4">
+<figure class="align-center" id="id6">
 <img alt="../../../_images/adv7511_proc_bd.svg" src="../../../_images/adv7511_proc_bd.svg" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">ADV7511 processor block diagram</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">ADV7511 processor block diagram</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -1192,6 +1205,12 @@ the following settings:</p>
 <li><p>Stop bits: 1 bit</p></li>
 <li><p>Flow Control: None</p></li>
 </ul>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/adv7511/adv7511_uart.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/adv7511/adv7511_uart.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">ADV7511 UART terminal output showing video resolution options</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="linux-driver">
@@ -1229,9 +1248,9 @@ Enable it under:</p>
 <section id="asoc-audio">
 <h4>ASoC Audio<a class="headerlink" href="#asoc-audio" title="Link to this heading"></a></h4>
 <p>The codec driver registers one DAI: <code class="docutils literal notranslate"><span class="pre">adv7511</span></code>.</p>
-<div class="table-wrapper docutils container" id="id5">
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Supported DAI Formats</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id8">
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Supported DAI Formats</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Format</p></th>
 <th class="head"><p>Supported</p></th>

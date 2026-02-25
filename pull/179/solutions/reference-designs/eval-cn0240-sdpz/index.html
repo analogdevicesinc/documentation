@@ -98,7 +98,7 @@
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
 <li><a class="reference internal" href="#hardware-setup">Hardware Setup</a><ul>
-<li><a class="reference internal" href="#board-connections">Board Connections</a></li>
+<li><a class="reference internal" href="#block-assignments">Block Assignments</a></li>
 <li><a class="reference internal" href="#test-setup">Test Setup</a></li>
 </ul>
 </li>
@@ -657,7 +657,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -949,6 +949,12 @@ XFET voltage reference, which features low noise, high accuracy, and low
 temperature drift performance.</p>
 <p>The EVAL-CN0240-SDPZ board connects to ADI’s System Demonstration Platform
 (SDP) and is powered by a +6 V supply or +6 V wall wart.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/cn0240-hw-1024.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/cn0240-hw-1024.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0240-SDPZ Evaluation Board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -975,16 +981,22 @@ required precautions for working with high voltage circuits.</p>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<section id="board-connections">
-<h3>Board Connections<a class="headerlink" href="#board-connections" title="Link to this heading"></a></h3>
+<section id="block-assignments">
+<h3>Block Assignments<a class="headerlink" href="#block-assignments" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0240 Functional Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>The EVAL-CN0240-SDPZ (CN-0240 board) connects to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a>
 (SDP-B board) via the 120-pin connector.</p></li>
 <li><p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> (SDP-B board) connects to the PC via the USB cable.</p></li>
 </ul>
-<div class="table-wrapper docutils container" id="id2">
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Terminal Block Assignments</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id4">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Terminal Block Assignments</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Connector</p></th>
 <th class="head"><p>Function</p></th>
@@ -1015,6 +1027,12 @@ required precautions for working with high voltage circuits.</p>
 </section>
 <section id="test-setup">
 <h3>Test Setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/9.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/9.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0240 Test Setup Diagram</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p>Connect the 120-pin connector on the EVAL-CN0240-SDPZ evaluation board to
 the connector marked <strong>CON A</strong> on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> evaluation (SDP)
@@ -1053,9 +1071,29 @@ default directory path
 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Analog</span> <span class="pre">Devices\CN0240\</span></code> and all National
 Instruments products to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>.</p>
 </div>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CN0240 Evaluation Software Installer</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Click <strong>Next</strong> to view the installation review page.</p></li>
-<li><p>Click <strong>Next</strong> to start the installation.</p></li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Installation Review Page</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to start the installation.</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Installation Progress</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion of the CN0240 Evaluation Software installation, the
 installer for the ADI SDP Drivers will execute.</p>
 <div class="admonition note">
@@ -1064,6 +1102,12 @@ installer for the ADI SDP Drivers will execute.</p>
 <strong>Next</strong>. This will make it possible to update relevant system files
 without having to reboot your computer.</p>
 </div>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">ADI SDP Drivers Installer</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to set the installation location for the SDP Drivers.</p>
 <div class="admonition note">
@@ -1071,20 +1115,45 @@ without having to reboot your computer.</p>
 <p>It is recommended that you install the drivers to the default directory
 path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\SDP\Drivers</span></code>.</p>
 </div>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/6.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">SDP Drivers Installation Location</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Install</strong> to install the SDP Drivers and complete the installation
-of all software. Click <strong>Finish</strong> when done.</p></li>
+of all software. Click <strong>Finish</strong> when done.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/7.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/7.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">SDP Drivers Installation Complete</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="using-the-evaluation-software">
 <h3>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/10.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/10.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">CN0240 Evaluation Software Main Window</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Main Window Controls:</strong></p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p><strong>Connect</strong> – Starts the connection between the CN0240 evaluation board and
 the SDP-B controller board.</p></li>
 <li><p><strong>Disconnect</strong> – Ends the connection between the CN0240 evaluation board
 and the SDP-B controller board.</p></li>
 <li><p><strong>Data Acquisition Controls:</strong></p>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/11.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/11.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Data Acquisition Controls</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>Select SDP Connector</strong> – Selects which 120-pin connection of the SDP-B
 board to use.</p></li>
@@ -1098,12 +1167,24 @@ board to use.</p></li>
 </li>
 <li><p><strong>Sample Data Graph Tab</strong> – Shows the XY plot of ADC code and output error
 (%) with respect to the shunt voltage.</p>
+<figure class="align-center" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/14.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/14.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Sample Data Graph Tab</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>Plot Options</strong> – Edit plot display and options such as interpolation
 and color of output waveform.</p></li>
 </ul>
 </li>
 <li><p><strong>Configure Tab:</strong></p>
+<figure class="align-center" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/13.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0240-sdpz/13.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Configure Tab</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>SDP Connector</strong> – Selects which 120-pin connection of the SDP-B board
 to use.</p></li>

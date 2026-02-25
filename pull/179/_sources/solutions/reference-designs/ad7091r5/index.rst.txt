@@ -127,6 +127,16 @@ The driver also supports threshold events for each channel, with configurable
 high and low limits and hysteresis. When enabled, the ALERT/BUSY/GPO0 pin
 signals an out-of-range condition.
 
+.. figure:: ad7091r5_iio_terminal.jpg
+   :align: center
+
+   Reading AD7091R-5 IIO data via the Linux terminal
+
+.. figure:: ad7091r5_iio_plot.jpg
+   :align: center
+
+   AD7091R-5 data capture using the ADI IIO Oscilloscope
+
 No-OS Driver
 ~~~~~~~~~~~~~
 

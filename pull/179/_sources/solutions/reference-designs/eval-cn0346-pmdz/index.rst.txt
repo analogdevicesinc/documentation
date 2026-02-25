@@ -48,15 +48,43 @@ Software Installation
    Software to the default directory path
    ``C:\Program Files\Analog Devices\CN0341\`` and all National Instruments
    products to ``C:\Program Files\National Instruments\``.
+
+   .. figure:: destination_directory.png
+      :width: 600px
+      :align: center
+
+      Destination directory selection
+
 #. Press **Next**.
+
+   .. figure:: begin_install.png
+      :width: 600px
+      :align: center
+
+      Begin installation
+
 #. Press **Next**.
 #. Upon completion of the CN0341 SDP Eval Software installation, the ADI SDP
    Drivers installer will execute. Follow the on-screen prompts to install the
    drivers. It is recommended to close all other applications before clicking
    **Next** so that relevant system files can be updated without a reboot.
 #. Press **Next**.
+
+   .. figure:: sdp_drivers.png
+      :width: 500px
+      :align: center
+
+      ADI SDP Drivers installer
+
 #. Install the drivers to the default directory path
    ``C:\Program Files\Analog Devices\SDP\Drivers\``.
+
+   .. figure:: sdp_drivers_location.png
+      :width: 500px
+      :align: center
+
+      SDP drivers install location
+
 #. Press **Install** to complete the installation of all software necessary to
    evaluate the EVAL-CN0346-SDPZ.
 
@@ -66,8 +94,12 @@ Opening and Enabling the Evaluation Software
 #. Launch the executable found at
    ``C:\Program Files\Analog Devices\CN0346`` and press the **Connect**
    button.
-#. The software displays a real-time humidity readout along with a calibration
-   tab for system configuration.
+
+   .. figure:: software.jpg
+      :width: 600px
+      :align: center
+
+      CN0346 evaluation software main window
 
 Calibration Procedure
 ---------------------
@@ -84,6 +116,12 @@ The following is a step-by-step guide for calibrating the EVAL-CN0346-SDPZ:
    values into the software.
 #. Input the calculated CAPDAC value into the box found at the bottom of the
    Calibration tab.
+
+   .. figure:: software-calibration_tab.jpg
+      :width: 600px
+      :align: center
+
+      Calibration tab for humidity and capacitance values
 
 Documents
 ---------

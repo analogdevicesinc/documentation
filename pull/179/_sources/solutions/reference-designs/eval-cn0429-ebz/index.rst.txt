@@ -28,6 +28,12 @@ connected to the potentiostat circuit and how it is biased and measured. Common
 interchangeably. The integration of this signal chain dramatically reduces cost,
 size, complexity, and power consumption at the sensor node.
 
+.. figure:: cn0429_complete_setup_no_sensors.jpg
+   :align: center
+   :width: 600px
+
+   EVAL-CN0429-EBZ complete setup without sensors
+
 Features
 --------
 
@@ -45,6 +51,22 @@ The gas sensing system uses three boards:
 - **EVAL-CN0429-EBZ** -- Gas sensor daughter board (up to four)
 - **EVAL-M355-ARDZ-INT** -- Arduino shield interposer board
 - :adi:`EVAL-ADICUP3029` -- Host controller board
+
+.. figure:: shield_board.jpg
+   :align: center
+
+   EVAL-M355-ARDZ-INT Arduino Shield Board
+
+.. figure:: eval-adicup3029-angle.jpg
+   :align: center
+
+   EVAL-ADICUP3029 Board
+
+.. figure:: cn-0429_daughterboard.jpg
+   :align: center
+   :width: 200px
+
+   EVAL-CN0429-EBZ Gas Sensor Daughter Board
 
 Documents Needed
 ----------------
@@ -81,6 +103,12 @@ To set up the circuit for evaluation, consider the following steps:
 #. Connect the system to the PC using a USB cable.
 #. Connect the sensors to the dedicated connectors on the EVAL-CN0429-EBZ.
 
+.. figure:: cn0429_blockdiagram.png
+   :align: center
+   :width: 600px
+
+   CN0429 test setup functional block diagram
+
 Hardware Setup
 --------------
 
@@ -89,6 +117,12 @@ Connecting the Electrochemical Gas Sensor
 
 The CN0429 is compatible with electrochemical gas sensors in "4-series" form
 factor. 2-, 3- and 4-electrode sensors are supported.
+
+.. figure:: cn0429_gas_sensor_dimensions.png
+   :align: center
+   :width: 600px
+
+   4-series electrochemical gas sensor dimensions
 
 Examples of sensors supported by this reference design:
 
@@ -118,12 +152,23 @@ The connector used on the CN0429 board is Samtec SFM-107-02-L-D. The mating
 connector is either TFM-107-02-L-D (surface mount) or TFM-107-01-L-D
 (through hole).
 
+.. figure:: cn0429_p1_pinout.png
+   :align: center
+   :width: 400px
+
+   P1 connector pinout
+
 Switch Configurations
 ~~~~~~~~~~~~~~~~~~~~~
 
 **EVAL-M355-ARDZ-INT Arduino Shield Board (S1 and S2)**
 
 There are two switches present on the EVAL-M355-ARDZ-INT board:
+
+.. figure:: sheild_board_switch.jpg
+   :align: center
+
+   EVAL-M355-ARDZ-INT switch locations (S1 and S2)
 
 - **S1** -- Selects which channel on the EVAL-M355-ARDZ-INT is currently
   programmable. This is only needed/used when flashing custom firmware onto the
@@ -134,6 +179,12 @@ There are two switches present on the EVAL-M355-ARDZ-INT board:
 **EVAL-ADICUP3029 Board (S1 through S5)**
 
 There are 5 switches present on the :adi:`EVAL-ADICUP3029` board:
+
+.. figure:: 3029_switch.jpg
+   :align: center
+   :width: 600px
+
+   EVAL-ADICUP3029 switch locations (S1 through S5)
 
 - **S2** -- Routes the UART signals (Tx/Rx) from the ADuCM3029 and has three
   options: USB, Arduino, and WiFi. While in USB mode, the board communicates
@@ -190,6 +241,13 @@ To download the binary file onto the ADICUP3029 board, follow this procedure:
    `download <https://os.mbed.com/handbook/Windows-serial-configuration>`__
    and install the mbed driver.
 #. Verify that you can see a "DAPLINK" device in "This PC".
+
+   .. figure:: cn0429_fw_download.jpg
+      :align: center
+      :width: 600px
+
+      DAPLINK device visible in Windows file explorer
+
 #. Copy and paste or drag and drop the ``ADuCM3029_demo_cn0428_cn0429.hex``
    file onto the DAPLINK device/folder. This downloads the firmware onto the
    ADICUP3029 board.
@@ -213,7 +271,24 @@ their PC to communicate with the board. The recommended software is PuTTY.
    microcontroller board into the PC. When the board is detected it will
    appear in Device Manager, displaying as USB Serial Device, along with which
    COM port it is connected to.
+
+   .. figure:: devicesman1_unplugged.jpg
+      :align: center
+
+      Device Manager before board is connected
+
+   .. figure:: device_manager_connected.jpg
+      :align: center
+
+      Device Manager after board is detected
+
 #. Note the port number of the USB Serial Device (e.g., COM5).
+
+   .. figure:: putty_properties.jpg
+      :align: center
+
+      USB Serial Device properties showing speed of 115200
+
 #. Open PuTTY and configure the following settings:
 
    - **Connection type**: Serial
@@ -221,6 +296,22 @@ their PC to communicate with the board. The recommended software is PuTTY.
    - **Speed**: 115200
 
 #. Under Terminal settings, configure local echo and line editing as needed.
+
+   .. figure:: putty3.jpg
+      :align: center
+
+      PuTTY session configuration
+
+   .. figure:: putty_terminal.jpg
+      :align: center
+
+      PuTTY terminal settings
+
+   .. figure:: sessions1.jpg
+      :align: center
+
+      PuTTY serial connection settings
+
 #. Under Serial settings (under Connection), verify the speed is 115200.
 #. Click **Open** to launch the terminal.
 #. After the PuTTY terminal launches, type ``help`` and press Enter to see the
@@ -397,6 +488,12 @@ bit).
 Once the system is programmed and connected to the PC, connect to it using the
 serial terminal application. The system is automatically initialized upon
 power-up and will print an initialization report.
+
+.. figure:: cn0429_init.png
+   :align: center
+   :width: 600px
+
+   System initialization report example
 
 .. note::
 
@@ -763,6 +860,12 @@ Use this global command to start reading gas sensor data from all sensors:
 
 The data is read back as a continuous stream.
 
+.. figure:: cn0429_readsensors.png
+   :align: center
+   :width: 600px
+
+   Sensor data continuous stream output
+
 **Stop Reading Gas Sensor Data**
 
 Data stream can be stopped at any time using the ``stopread`` command:
@@ -843,12 +946,24 @@ The results of the EIS test are comma delimited to enable importing the data
 to Microsoft Excel or similar tool for further processing. Bode magnitude and
 Bode phase values are printed for every measured frequency.
 
+.. figure:: cn0429_eis.png
+   :align: center
+   :width: 600px
+
+   EIS test results (Bode magnitude and phase)
+
 To obtain the **full set** of results including all magnitudes and impedances,
 use the following command:
 
 .. code-block:: none
 
    readeisfull
+
+.. figure:: cn0429_eisfull.png
+   :align: center
+   :width: 800px
+
+   Full EIS results including all magnitudes and impedances
 
 The full set of EIS results contains the following values:
 
@@ -914,6 +1029,12 @@ Test execution procedure:
 
 The pulse test results are comma delimited to enable importing the data to
 Microsoft Excel or similar tool for further processing.
+
+.. figure:: cn0429_pulse.png
+   :align: center
+   :width: 600px
+
+   Bias voltage pulse test results
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------

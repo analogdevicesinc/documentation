@@ -661,7 +661,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -961,8 +961,21 @@ supplies available in the market.</p>
 <h2>Evaluation Board Hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h2>
 <section id="primary-side">
 <h3>Primary Side<a class="headerlink" href="#primary-side" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-top.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-top.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Top View of EVAL-CN0551-EBZ</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="rfin-plug-j1">
 <h4>RFIN Plug (J1)<a class="headerlink" href="#rfin-plug-j1" title="Link to this heading"></a></h4>
+<figure class="align-right" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-rfin.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-rfin.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-rfin.png" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">RFIN Port</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The RF input to the evaluation board must be connected to the male SMA
 connector <strong>J1</strong>.</p>
 <div class="admonition warning">
@@ -973,6 +986,13 @@ input level to avoid damaging the circuit.</p>
 </section>
 <section id="rfout-port-j2">
 <h4>RFOUT Port (J2)<a class="headerlink" href="#rfout-port-j2" title="Link to this heading"></a></h4>
+<figure class="align-right" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-rfout.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-rfout.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-rfout.png" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">RFOUT Port</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The RF output of the evaluation board must be connected to the female SMA
 connector <strong>J2</strong>.</p>
 <div class="admonition warning">
@@ -984,13 +1004,20 @@ attenuator if necessary to avoid damage.</p>
 </section>
 <section id="led-indicators-power-and-tover">
 <h4>LED Indicators (POWER and TOVER)<a class="headerlink" href="#led-indicators-power-and-tover" title="Link to this heading"></a></h4>
+<figure class="align-right" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-led.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-led.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-led.png" style="width: 100px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">LED Indicators</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The evaluation board uses two LEDs to indicate its current status. The green
 LED (POWER) lights up when power is present on the board; the red LED (TOVER)
 lights up when the amplifier circuit is disabled due to the board temperature
 exceeding the temperature switch trip point.</p>
-<div class="table-wrapper docutils container" id="id2">
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">LED Indications of Board Status</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id6">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">LED Indications of Board Status</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>POWER</p></th>
 <th class="head"><p>TOVER</p></th>
@@ -1016,6 +1043,13 @@ exceeding the temperature switch trip point.</p>
 </section>
 <section id="power-supply-connector-p1">
 <h4>Power Supply Connector (P1)<a class="headerlink" href="#power-supply-connector-p1" title="Link to this heading"></a></h4>
+<figure class="align-right" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-usb.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-usb.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-usb.png" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Micro-USB Port</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>A +5 V power supply must be connected to the VCC line through the micro-USB
 port <strong>P1</strong>.</p>
 <div class="admonition note">
@@ -1031,15 +1065,28 @@ least 0.5 A to ensure full functionality.</p>
 </section>
 <section id="secondary-side">
 <h3>Secondary Side<a class="headerlink" href="#secondary-side" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-bottom.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-bottom.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Bottom View of EVAL-CN0551-EBZ</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="changing-the-temperature-switch-trip-point-jp1-and-jp2">
 <h4>Changing the Temperature Switch Trip Point (JP1 and JP2)<a class="headerlink" href="#changing-the-temperature-switch-trip-point-jp1-and-jp2" title="Link to this heading"></a></h4>
+<figure class="align-right" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-jumpers.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-jumpers.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/eval-cn0551-ebz-jumpers.png" style="width: 100px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">ADT6401 Jumper Settings</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The trip point of the temperature switch can be set using the solder jumpers
 <strong>JP1</strong> and <strong>JP2</strong>, as shown in the table below. When the board temperature
 reaches the trip point, the <a class="icon adi reference external" href="https://www.analog.com/ADT6401" target="_blank">ADT6401</a> will disable the supply voltage to
 the amplifier stages.</p>
-<div class="table-wrapper docutils container" id="id3">
-<table class="docutils align-default" id="id3">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Selecting a Trip Point for the ADT6401</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id10">
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Selecting a Trip Point for the ADT6401</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>JP1 Setting</p></th>
 <th class="head"><p>JP2 Setting</p></th>
@@ -1107,6 +1154,18 @@ used.</p>
 </section>
 <section id="connecting-the-eval-cn0551-ebz-to-the-adalm-pluto">
 <h2>Connecting the EVAL-CN0551-EBZ to the ADALM-PLUTO<a class="headerlink" href="#connecting-the-eval-cn0551-ebz-to-the-adalm-pluto" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/cn0417.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/cn0417.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0551-ebz/cn0417.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Connecting the evaluation board to the ADALM-PLUTO</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An EVAL-CN0417-EBZ is shown in this picture. However, the same connections
+also apply for the EVAL-CN0551-EBZ.</p>
+</div>
 <p>To properly operate the EVAL-CN0551-EBZ using the <a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a>, follow
 the steps below:</p>
 <ol class="arabic simple">

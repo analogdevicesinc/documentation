@@ -36,6 +36,14 @@ interfaces the ADAQ8092 ADC in DDR LVDS/CMOS or SDR CMOS mode. A DMA is used
 to move captured data from the IP core output to system memory. The FPGA
 carries out all configuration of the ADC registers via SPI.
 
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: block_diagram_adaq8092.svg
+   :align: center
+
+   AXI_ADAQ8092 Block Diagram
+
 FPGA IP Core
 ~~~~~~~~~~~~
 
@@ -110,6 +118,24 @@ The example design uses a DMA to move the data from the output of the IP to
 memory. If the data needs to be processed in HDL before being moved to memory,
 it can be done at the output of the IP (at system level) or inside of the ADC
 channel module (at IP level).
+
+Detailed Architecture
+~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: arhitecture_adaq8092-lvds_ddr.svg
+   :align: center
+
+   AXI_ADAQ8092 DDR LVDS IP Architecture
+
+.. figure:: arhitecture_adaq8092-cmos_ddr.svg
+   :align: center
+
+   AXI_ADAQ8092 DDR CMOS IP Architecture
+
+.. figure:: arhitecture_adaq8092-cmos_sdr.svg
+   :align: center
+
+   AXI_ADAQ8092 SDR CMOS IP Architecture
 
 HDL IP Core Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

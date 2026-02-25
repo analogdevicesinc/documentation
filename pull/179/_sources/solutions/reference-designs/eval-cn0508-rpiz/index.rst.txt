@@ -25,6 +25,12 @@ transient response, remains in regulation during short-circuit, and stays cool
 with no bulky heat sinks. It can be coupled with an AC/DC converter or powered
 from a DC source.
 
+.. figure:: dsc04840.png
+   :width: 500px
+   :align: center
+
+   EVAL-CN0508-RPIZ Circuit Evaluation Board
+
 Features
 --------
 
@@ -64,6 +70,18 @@ Required Equipment
 Board Layout
 ------------
 
+.. figure:: top1.png
+   :width: 550px
+   :align: center
+
+   EVAL-CN0508-RPIZ Circuit Evaluation Board Top View
+
+.. figure:: side1.png
+   :width: 450px
+   :align: center
+
+   EVAL-CN0508-RPIZ Circuit Evaluation Board Side View
+
 - **P1** -- Screw terminal block for input supply
 - **P2** -- 5.5 mm x 2.5 mm barrel jack for input supply
 - **P3** -- 40-pin connector for Raspberry Pi
@@ -75,6 +93,12 @@ Board Layout
 
 Running the System
 ------------------
+
+.. figure:: bd_1.png
+   :width: 500px
+   :align: center
+
+   Test Setup Functional Block Diagram
 
 #. Set solder jumpers for the desired settings.
 #. Complete the hardware setup. Ensure the input supply, Raspberry Pi, load,
@@ -98,6 +122,12 @@ Running the System
 
 Solder Jumper Configuration
 ----------------------------
+
+.. figure:: assembly_top6.png
+   :width: 1000px
+   :align: center
+
+   EVAL-CN0508-RPIZ Evaluation Board Solder Jumper Guide
 
 -VCC: Negative VCC Supply
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -244,16 +274,42 @@ Raspberry Pi Connection
 
 #. Connect a mini HDMI to HDMI adapter on the Raspberry Pi Zero W and connect
    to an external monitor.
+
+   .. figure:: hdmi_2.png
+      :width: 300px
+      :align: center
+
+      Hardware connection of Raspberry Pi to Monitor Display
+
 #. Connect a micro-USB to USB Type-A female adapter on the RPi USB port. Attach
    a USB hub with keyboard and mouse.
+
+   .. figure:: micro.png
+      :width: 300px
+      :align: center
+
+      Hardware connection of Input Devices to Raspberry Pi
+
 #. Connect the Raspberry Pi to EVAL-CN0508-RPIZ through **P3** (40-pin
    connector), either directly on the bottom side or via a ribbon cable.
+
+   .. figure:: rpi3.png
+      :width: 600px
+      :align: center
+
+      Hardware connection of EVAL-CN0508-RPIZ and Raspberry Pi Zero W
 
 Input Supply
 ~~~~~~~~~~~~
 
 Connect power through **P1** (screw terminal) or **P2** (barrel jack). Use only
 one input. Maximum input rating: 40 V, 3 A (120 W).
+
+.. figure:: supply1.png
+   :width: 700px
+   :align: center
+
+   Hardware Connection of Input Power Supply to EVAL-CN0508-RPIZ
 
 Output Connections
 ~~~~~~~~~~~~~~~~~~
@@ -262,11 +318,29 @@ Connect a resistive load, electronic load, or multimeter to output banana jacks
 **P7** (positive) and **P8** (ground). Ensure the load's power consumption will
 not cause overheating.
 
+.. figure:: out1.png
+   :width: 400px
+   :align: center
+
+   EVAL-CN0508-RPIZ Evaluation Board Output Connections
+
+.. figure:: load1.png
+   :width: 550px
+   :align: center
+
+   EVAL-CN0508-RPIZ Evaluation Board Connected to a Load
+
 Fan Connection
 ~~~~~~~~~~~~~~
 
 If either regulator's temperature reaches 60 °C or above, the 5 V fan output on
 **P12** turns on.
+
+.. figure:: fan1.png
+   :width: 600px
+   :align: center
+
+   Hardware Connection of EVAL-CN0508-RPIZ to a Fan
 
 Software Setup
 --------------
@@ -308,6 +382,12 @@ IIO Oscilloscope Plugin
 EVAL-CN0508-RPIZ allows electronic control of the output voltage and display of
 diagnostics through the :adi:`AD7124-4` ADC, all accessible via the CN0508
 plugin in IIO Oscilloscope.
+
+.. figure:: iioscope_508_032021.jpg
+   :width: 500px
+   :align: center
+
+   Graphical User Interface (GUI) window of ADI IIO Oscilloscope
 
 - **DAC output** -- Set a value from 0 to 65535 to vary the DAC output voltage.
 - **Temperature Monitor** -- Shows temperature readings of the two :adi:`LT3081`

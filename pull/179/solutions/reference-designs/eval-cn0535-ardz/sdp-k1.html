@@ -653,7 +653,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -982,6 +982,20 @@ be installed to enable use of the EVAL-CN0535-FMCZ with the SDP-K1.</p>
 </tbody>
 </table>
 </div>
+<p>The following figures show the board setup for SDP-K1, highlighting the
+component locations on both sides of the board.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/board_top.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/board_top.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0535-FMCZ board top side – SDP-K1 component locations</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/board_bot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/board_bot.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0535-FMCZ board bottom side – SDP-K1 component locations</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="sdp-k1-connection">
 <h3>SDP-K1 Connection<a class="headerlink" href="#sdp-k1-connection" title="Link to this heading"></a></h3>
@@ -989,6 +1003,12 @@ be installed to enable use of the EVAL-CN0535-FMCZ with the SDP-K1.</p>
 SDP-K1 only requires a single Standard-A to type-C USB cable to connect to the
 PC. Both the orange Connected LED and green SYS PWR LED should light on the
 SDP-K1 if connected correctly.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/setup_block_diagram2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/setup_block_diagram2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0535 board mounted on the SDP-K1 via Arduino headers</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For SDP-K1 Rev E and below, a 6 V wall-wart power supply is needed on P15.</p>
@@ -999,11 +1019,30 @@ SDP-K1 if connected correctly.</p>
 <h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
 <section id="importing-the-eval-cn0535-fmcz-mbed-example-program">
 <h3>Importing the EVAL-CN0535-FMCZ MBED Example Program<a class="headerlink" href="#importing-the-eval-cn0535-fmcz-mbed-example-program" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>If the user does not have an mbed online account, create one at
 <a class="icon link reference external" href="https://ide.mbed.com/" target="_blank">https://ide.mbed.com/</a>.</p></li>
 <li><p>After having an account, open the example program for EVAL-CN0535-FMCZ at
-<a class="icon link reference external" href="https://os.mbed.com/teams/AnalogDevices/code/EVAL-CN0535-FMCZ/" target="_blank">https://os.mbed.com/teams/AnalogDevices/code/EVAL-CN0535-FMCZ/</a>.</p></li>
+<a class="icon link reference external" href="https://os.mbed.com/teams/AnalogDevices/code/EVAL-CN0535-FMCZ/" target="_blank">https://os.mbed.com/teams/AnalogDevices/code/EVAL-CN0535-FMCZ/</a>.</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/mbed_link.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/mbed_link.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">MBED example program page</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/mbed_link_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/mbed_link_2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Import program into compiler</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/mbed_link_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/mbed_link_3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">MBED online compiler with imported program</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Import the program into the mbed online compiler.</p></li>
 <li><p>Compile and download the binary to the SDP-K1.</p></li>
 </ol>
@@ -1012,21 +1051,48 @@ SDP-K1 if connected correctly.</p>
 <h3>Connecting to a Serial Terminal Application<a class="headerlink" href="#connecting-to-a-serial-terminal-application" title="Link to this heading"></a></h3>
 <p>In order to communicate with the board using the SDP-K1, the user needs to
 install a serial terminal software on their PC. It is recommended to use PuTTY.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Open Device Manager through the Windows control panel and plug the
 microcontroller board into the PC. When the board is detected it will appear
 in Device Manager, displaying as USB Serial Device with the assigned COM
-port number.</p></li>
+port number.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/device_manager.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/device_manager.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/device_manager.png" style="width: 450px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Windows Device Manager showing the SDP-K1 as USB Serial Device</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Open the serial terminal application and enter the correct values:</p>
 <ul class="simple">
 <li><p><strong>Serial line</strong>: COM port noted from Device Manager</p></li>
 <li><p><strong>Speed</strong>: 115200</p></li>
 </ul>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/putty1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/putty1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">PuTTY session configuration</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/putty2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/putty2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">PuTTY terminal configuration</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Under the Terminal tab, configure local echo and line editing as needed.</p></li>
 <li><p>Click <strong>Open</strong> to connect.</p></li>
 <li><p>Upon connection, the interface menu should appear. If not, press the reset
-button on the microcontroller board to bring up the command menu.</p></li>
+button on the microcontroller board to bring up the command menu.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/putty_terminal.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/putty_terminal.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">CN0535 serial terminal command menu</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1043,9 +1109,9 @@ prompting the user to make another choice.</p></li>
 <p>The following table shows every command along with a brief description. Some
 commands have recommended settings for optimal results for narrow bandwidth
 measurements of 32 kHz.</p>
-<div class="table-wrapper colwidths-given docutils container" id="id2">
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">CN0535 + SDP-K1 Command Set</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id12">
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">CN0535 + SDP-K1 Command Set</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 8.0%" />
 <col style="width: 35.0%" />

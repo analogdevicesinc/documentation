@@ -21,6 +21,11 @@ for performing the single-ended-to-differential conversion, and the
 :adi:`AD4003`, an 18-bit, 2 MSPS Precision ADC. Gain configurations of 0.4,
 0.8, 1.6, and 3.2 are available.
 
+.. figure:: cn0385_1_simplifiedcircuitschematic.png
+   :align: center
+
+   Simplified circuit schematic
+
 The maximum sample rate of the system is 2 MSPS in Turbo Mode for single
 channel continuous sampling. The channel switching logic is synchronous to the
 ADC conversions, and the maximum channel switching rate is 1.5 MHz. Channel
@@ -54,6 +59,11 @@ General Setup
 - The included +9 V power supply connects to P3 on the EVAL-CN0385-FMCZ board.
 - The :adi:`EVAL-SDP-CH1Z <SDP>` SDP-H1 Board connects to the PC via the USB
   cable.
+
+.. figure:: cn0385_2_generalsetupblockdiagram.png
+   :align: center
+
+   General setup block diagram
 
 Connecting the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,14 +101,64 @@ Installing the Software
 #. Download the `CN0385 Evaluation Software
    <https://www.analog.com/CN0385>`__ and unzip the
    **CN0385_Evaluation_Software.zip** folder and run **setup.exe**.
+
+   .. figure:: cn0385_3_install1.png
+      :align: center
+
+      Extracting the evaluation software
+
+   .. figure:: cn0385_4_install2.png
+      :align: center
+
+      Running setup.exe
+
+   .. figure:: cn0385_5_install3.png
+      :align: center
+
+      Installation wizard welcome screen
+
 #. Click **Next** to view the installation review page.
+
+   .. figure:: cn0385_6_install4.png
+      :align: center
+
+      Installation review page
+
 #. Click **Next** to start the installation.
+
+   .. figure:: cn0385_7_install5.png
+      :align: center
+
+      Installation in progress
+
 #. Upon completion of the installation of the **CN0385 Evaluation Software**,
    click **Next** for the installer of the **ADI SDP Drivers** to execute.
    (The SDP drivers include an installation of the .NET 4.0 framework.)
+
+   .. figure:: cn0385_8_install6.png
+      :align: center
+
+      CN0385 software installation complete
+
 #. Press **Next** to set the installation location for the **SDP Drivers**.
+
+   .. figure:: cn0385_9_sdpinstallation1.png
+      :align: center
+
+      SDP Drivers installation location
+
+   .. figure:: cn0385_10_sdpinstallation2.png
+      :align: center
+
+      SDP Drivers installation ready
+
 #. Press **Install** to install the **SDP Drivers** and complete the
    installation of all software. Click **Close** when done.
+
+   .. figure:: cn0385_11_sdpinstallation3.png
+      :align: center
+
+      SDP Drivers installation complete
 
 Using the Evaluation Software
 ------------------------------
@@ -108,6 +168,11 @@ Software Control and Indicator Descriptions
 
 Configuration Tab
 ^^^^^^^^^^^^^^^^^
+
+.. figure:: cn0385_12_configtab.png
+   :align: center
+
+   Configuration tab
 
 - **External REF (V)** -- Determines the value of the reference voltage used in
   calculations and analysis by the software. Affects aspects of the Waveform and
@@ -144,6 +209,11 @@ Configuration Tab
 Waveform Tab
 ^^^^^^^^^^^^^
 
+.. figure:: cn0385_13_waveformtab.png
+   :align: center
+
+   Waveform tab
+
 - **Waveform Plot** -- Displays the Waveform of the sampled data.
 - **Waveform Graph Palette** -- Sets the display range of the Multi-Channel
   Waveform Plot.
@@ -154,6 +224,11 @@ Waveform Tab
 
 Multi-Channel Tab
 ^^^^^^^^^^^^^^^^^^
+
+.. figure:: cn0385_14_multi-channeltab.png
+   :align: center
+
+   Multi-Channel tab
 
 - **Multi-Channel Waveform Plot** -- Displays the data readback from each of the
   active and visible channels in the conversion sequence.
@@ -172,12 +247,22 @@ Multi-Channel Tab
 Histogram Tab
 ^^^^^^^^^^^^^^
 
+.. figure:: cn0385_15_histogramtab.png
+   :align: center
+
+   Histogram tab
+
 - **Histogram Plot** -- Displays the occurrences of the sampled codes.
 - **Waveform Graph Palette** -- Sets the display range of the Histogram Plot.
 - **Histogram Analysis** -- Calculation of the captured samples.
 
 FFT Tab
 ^^^^^^^^
+
+.. figure:: cn0385_16_ffttab.png
+   :align: center
+
+   FFT tab
 
 - **FFT Spectrum Plot** -- Displays the FFT frequency response of the sampled
   codes.
@@ -225,6 +310,11 @@ Establishing a USB Connection Link
    appear with options to reattempt the connection. Selecting **Rescan** will
    attempt to establish the USB connection again.
 
+   .. figure:: cn0385_17_connectionfailure.png
+      :align: center
+
+      Connection failure dialog
+
 Configuring a Conversion Sequence
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -262,9 +352,30 @@ tab, the **Histogram** tab, the **FFT** tab and the **Summary** tab.
 #. Select the **Multi-Channel** tab to view every channel's data on a single
    plot. The **Multi-Channel Selectors** set the visibility of each channel's
    data.
+
+   .. figure:: cn0385_18_multichanneldata.png
+      :align: center
+
+      Multi-channel data view
+
 #. Select the **Waveform** tab to view the sampled channel's data or analysis
    results in non-sequencer mode. The **Histogram** and **FFT** sub-tabs show
    the dc and ac analysis.
+
+   .. figure:: cn0385_19_singlechannelwaveformdata.png
+      :align: center
+
+      Single channel waveform data
+
+   .. figure:: cn0385_20_singlechannelhistodata.png
+      :align: center
+
+      Single channel histogram data
+
+   .. figure:: cn0385_21_singlechannelfftdata.png
+      :align: center
+
+      Single channel FFT data
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------

@@ -98,14 +98,17 @@
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
 <li><a class="reference internal" href="#general-setup">General Setup</a></li>
+<li><a class="reference internal" href="#connecting-the-hardware">Connecting the Hardware</a></li>
 <li><a class="reference internal" href="#hardware-interface">Hardware Interface</a></li>
 <li><a class="reference internal" href="#using-the-evaluation-software">Using the Evaluation Software</a><ul>
+<li><a class="reference internal" href="#establishing-a-usb-connection">Establishing a USB Connection</a></li>
 <li><a class="reference internal" href="#software-controls">Software Controls</a></li>
 <li><a class="reference internal" href="#calibrating-the-board">Calibrating the Board</a></li>
 <li><a class="reference internal" href="#measuring-data">Measuring Data</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#software-recommendations">Software Recommendations</a><ul>
+<li><a class="reference internal" href="#digital-communication">Digital Communication</a></li>
 <li><a class="reference internal" href="#input-signal-setting">Input Signal Setting</a></li>
 <li><a class="reference internal" href="#system-calibration">System Calibration</a></li>
 <li><a class="reference internal" href="#measurement-ranges">Measurement Ranges</a></li>
@@ -659,7 +662,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -936,11 +939,20 @@ effectively reduced, making it ideal for industrial applications.</p>
 isolator to convert the conductivity and temperature inputs to digital code.</p>
 <p>The circuit has an 8-pin Digilent Pmod I2C interface connector on board, which
 can be used for connection to a microprocessor or FPGA.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0349" target="_blank">CN0349</a> circuit note discusses the design steps needed to optimize
+the circuit for a specific measuring range including accuracy analysis and
+component selection considerations.</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_hw_375.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_hw_375.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_hw_375.jpg" width="400" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0349-PMDZ Evaluation Board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<img alt="../../../_images/cn0349_00_1024.gif" src="../../../_images/cn0349_00_1024.gif" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0349 Functional Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -971,12 +983,77 @@ Digilent Pmod I2C interface connector (J2 on both boards).</p></li>
 <li><p>The resistance decade box or conductivity cell connects to the
 EVAL-CN0349-PMDZ via the terminal block J1.</p></li>
 </ul>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="id4">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_general_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_general_setup.png" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0349 General Test Setup</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0349 General Test Setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+</section>
+<section id="connecting-the-hardware">
+<h2>Connecting the Hardware<a class="headerlink" href="#connecting-the-hardware" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CFTL-6V-PWRZ" target="_blank">EVAL-CFTL-6V-PWRZ</a> (+6 V DC Power Supply) to the barrel
+jack J1 of the <a class="icon adi reference external" href="https://www.analog.com/SDP-PMD-IB1Z" target="_blank">SDP-PMD-IB1Z</a> (Interposer Board). Make sure the jumper
+is positioned as shown below.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_1.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Power supply connected to the Interposer Board</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the 120-pin connector on the <a class="icon adi reference external" href="https://www.analog.com/SDP-PMD-IB1Z" target="_blank">SDP-PMD-IB1Z</a> (Interposer Board)
+to the 120-pin connector marked <strong>CON A</strong> on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a>
+(SDP-B Board).</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_2.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Interposer Board connected to the SDP-B Board</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the USB cable supplied with the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> (SDP-B Board)
+to the USB port on the PC and the SDP Board.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_3.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">USB cable connected to the SDP-B Board</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Verify that the SDP drivers are loaded properly. Open the Device Manager
+and check if the SDP Board is recognized. If not, repeat the previous
+steps.</p>
+</div>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_3a.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_3a.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Device Manager showing the SDP-B Board recognized</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the EVAL-CN0349-PMDZ (CN0349 Board) to the <a class="icon adi reference external" href="https://www.analog.com/SDP-PMD-IB1Z" target="_blank">SDP-PMD-IB1Z</a>
+(Interposer Board) via the 8-pin header Digilent Pmod I2C interface
+connector.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_connecthw_4.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">EVAL-CN0349-PMDZ connected to the Interposer Board</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the resistance decade box or conductivity cell to <strong>pin 4</strong> and
+<strong>pin 5</strong> of the J1 terminal block on the EVAL-CN0349-PMDZ. If a
+conductivity cell with integrated Pt100 sensor is used, the sensor should be
+wired to <strong>pin 3</strong> and <strong>pin 2</strong> of J1. <strong>Pin 1</strong> can be used to wire the
+ground shield of the conductivity cell.</p></li>
+</ol>
 </section>
 <section id="hardware-interface">
 <h2>Hardware Interface<a class="headerlink" href="#hardware-interface" title="Link to this heading"></a></h2>
@@ -1028,39 +1105,114 @@ interface (J2) to communicate with the host.</p>
 </div>
 <p>The CN0349 board accepts both +3.3 V +/-10% or +5 V +/-10% power supplies.
 The minimum current requirement is 300 mA.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The power supply for the CN0349 must provide the required current with
+minimum voltage drop. Please make sure the host has the same I/O level
+standard as the CN0349 board. Otherwise, permanent damage to the CN0349
+may occur.</p>
+</div>
 </section>
 <section id="using-the-evaluation-software">
 <h2>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h2>
+<section id="establishing-a-usb-connection">
+<h3>Establishing a USB Connection<a class="headerlink" href="#establishing-a-usb-connection" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Follow the instructions to properly install the software and connect the
+hardware as described in the previous sections.</p></li>
+<li><p>Open the file named <strong>CN0349.exe</strong> in the installation directory or the
+shortcut in the Start menu.</p></li>
+<li><p>The software should connect to the board automatically. If the hardware is
+not recognized by the PC, the Hardware Select window will appear, indicating
+that the software is waiting for a proper hardware connection. After
+connecting the hardware, the list in the window will populate. Choose the
+connected hardware and click <strong>Select</strong>.</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_establishing_connection_3a.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_establishing_connection_3a.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Hardware Select dialog waiting for SDP-B Board connection</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Upon success, the <strong>System Status String Indicator</strong> will display
+<em>SDP Board Ready to Acquire Data</em>.</p></li>
+</ol>
+</section>
 <section id="software-controls">
 <h3>Software Controls<a class="headerlink" href="#software-controls" title="Link to this heading"></a></h3>
 <p>The CN0349 evaluation software provides the following controls and indicators:</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_using_sw_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_using_sw_1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">CN0349 Evaluation Software – Main Tab</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
-<li><p><strong>Measure Button</strong> – performs a measurement procedure and displays data.</p></li>
-<li><p><strong>Impedance Indicator</strong> – displays the measured input impedance in ohms.</p></li>
-<li><p><strong>Conductivity Indicator</strong> – displays the measured conductivity in mS/cm.</p></li>
-<li><p><strong>Conductivity Temperature Compensated Indicator</strong> – displays
-temperature-compensated conductivity in mS/cm.</p></li>
-<li><p><strong>Temperature Indicator</strong> – displays the measured temperature in degrees C
-using an external Pt100 RTD sensor.</p></li>
-<li><p><strong>Cell Constant Control</strong> – applies the cell constant for the conductivity
-probe.</p></li>
-<li><p><strong>Temperature Coefficient Control</strong> – applies the temperature coefficient
-of the solution.</p></li>
-<li><p><strong>Offset Control</strong> – applies offset correction to the measured conductivity.</p></li>
-<li><p><strong>Measurement Range Radio Buttons</strong> – selects the input measurement range.</p></li>
-<li><p><strong>Calibrate Button</strong> – initiates board calibration.</p></li>
-<li><p><strong>Calibration Resistances Controls</strong> – sets the values for the three
-on-board calibration resistances (R3, R4, R7).</p></li>
+<li><p><strong>1 – Measure Button</strong> – performs a measurement procedure and displays data
+in the measurement indicators.</p></li>
+<li><p><strong>2 – Control Tabs</strong> – switches between the Main, Calibrate System,
+Register Value, and SDP Revision panels.</p></li>
+<li><p><strong>3 – Impedance Indicator</strong> – displays the measured input impedance in
+ohms.</p></li>
+<li><p><strong>4 – Conductivity Indicator</strong> – displays the measured conductivity in
+mS/cm. The result depends on the applied probe corrections (7) and (9).</p></li>
+<li><p><strong>5 – Conductivity Temperature Compensated Indicator</strong> – displays
+temperature-compensated conductivity in mS/cm according to the chosen
+temperature coefficient (8).</p></li>
+<li><p><strong>6 – Temperature Indicator</strong> – displays the measured temperature in
+degrees C using an external Pt100 RTD sensor.</p></li>
+<li><p><strong>7 – Cell Constant Control</strong> – applies the cell constant for the
+conductivity probe.</p></li>
+<li><p><strong>8 – Temperature Coefficient Control</strong> – applies the temperature
+coefficient of the solution.</p></li>
+<li><p><strong>9 – Offset Control</strong> – applies offset correction to the measured
+conductivity. If offset correction is not needed, leave this control at
+0 mS/cm.</p></li>
+<li><p><strong>10 – Measurement Range Radio Buttons</strong> – selects the input measurement
+range.</p></li>
+<li><p><strong>11 – Measurement Range Indicator</strong> – shows the limits of the chosen input
+measurement range.</p></li>
+<li><p><strong>12 – System Status String Indicator</strong> – displays a message to the user
+detailing the current state of the software.</p></li>
+<li><p><strong>13 – System Status LED Indicator</strong> – displays the current state of the
+software in the form of an LED (Inactive, Busy, Error, or Waiting for user
+action).</p></li>
+</ul>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_using_sw_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_using_sw_2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">CN0349 Evaluation Software – Calibrate System Tab</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>14 – Calibrate Button</strong> – initiates board calibration.</p></li>
+<li><p><strong>15 – Calibration Resistances Controls</strong> – sets the values for the three
+on-board calibration resistances (R3, R4, R7). Change these values only if
+different calibration resistances are populated on the board.</p></li>
 </ul>
 </section>
 <section id="calibrating-the-board">
 <h3>Calibrating the Board<a class="headerlink" href="#calibrating-the-board" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Establish a USB connection.</p></li>
 <li><p>Click the <strong>Calibrate System</strong> tab.</p></li>
 <li><p>Press the <strong>Calibrate</strong> button.</p></li>
-<li><p>Wait for calibration to finish; a pop-up window indicates progress.</p></li>
-<li><p>Click <strong>OK</strong> when calibration is complete.</p></li>
+<li><p>Wait for calibration to finish; a pop-up window indicates progress.</p>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_cal_procedure_steps_5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_cal_procedure_steps_5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Calibration in progress</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>OK</strong> when calibration is complete.</p>
+<figure class="align-center" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_cal_procedure_steps_5a.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0349-pmdz/cn0349_cal_procedure_steps_5a.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Calibration finished</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="measuring-data">
@@ -1071,13 +1223,34 @@ on-board calibration resistances (R3, R4, R7).</p></li>
 <li><p>Select the <strong>Measurement Range</strong>.</p></li>
 <li><p>Click the <strong>Measure</strong> button.</p></li>
 <li><p>Wait for the measurement to complete and click <strong>OK</strong>.</p></li>
+<li><p>After clicking <strong>OK</strong>, the indicators will present the measured data.</p></li>
 </ol>
 </section>
 </section>
 <section id="software-recommendations">
 <h2>Software Recommendations<a class="headerlink" href="#software-recommendations" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There are several important restrictions that must be addressed when
+developing custom application code using the EVAL-CN0349-PMDZ. If you do
+not follow these requirements, your results will likely be incorrect or
+erroneous.</p>
+</div>
 <p>When developing custom application code with the EVAL-CN0349-PMDZ, the
 following requirements must be adhered to:</p>
+<section id="digital-communication">
+<h3>Digital Communication<a class="headerlink" href="#digital-communication" title="Link to this heading"></a></h3>
+<p>The I2C communication protocol must be designed carefully. The maximum I2C
+speed and timing is limited by the <a class="icon adi reference external" href="https://www.analog.com/ADG715" target="_blank">ADG715</a> and the <a class="icon adi reference external" href="https://www.analog.com/AD5934" target="_blank">AD5934</a>. The
+maximum I2C clock speed for both parts is 400 kHz. The host I2C timing and
+speed must meet the requirements of both the ADG715 and AD5934.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On the EVAL-CN0349-PMDZ evaluation board, the ADG715 I2C address is set to
+<strong>0x48</strong>, and the AD5934 I2C address is <strong>0x0D</strong>. Make sure the host I2C bus
+has no devices that share these addresses.</p>
+</div>
+</section>
 <section id="input-signal-setting">
 <h3>Input Signal Setting<a class="headerlink" href="#input-signal-setting" title="Link to this heading"></a></h3>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD5934" target="_blank">AD5934</a> excitation voltage and PGA must use the following settings:</p>
@@ -1134,6 +1307,14 @@ is recommended:</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The hardware limitations in the CN0349 board need to be considered carefully
+when writing the software. If other settings for AD5934 and ADG715 outside
+the limits described above are used, the AD5934 ADC input must not be
+saturated. The AD5934 ADC reference is AVDD2=3.3 V which determines the
+input range.</p>
 </div>
 </section>
 <section id="measurement-ranges">

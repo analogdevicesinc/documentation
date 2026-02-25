@@ -54,6 +54,12 @@ Thus, external 64 V, 1500 W transient voltage suppressors (TVS); a 50 mA,
 circuit board to provide higher voltage ESD protection, 50 mA overcurrent, and
 64 V overvoltage protection.
 
+.. figure:: cn0204_board.jpg
+   :width: 600px
+   :align: center
+
+   EVAL-CN0204-SDPZ evaluation board
+
 Required Equipment
 ------------------
 
@@ -70,6 +76,12 @@ Hardware Setup
 
 Block Assignments
 ~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0204_block_diagram.png
+   :width: 600px
+   :align: center
+
+   EVAL-CN0204-SDPZ block assignments
 
 - The EVAL-CN0204-SDPZ (CN0204 Board) connects to the :adi:`EVAL-SDP-CB1Z`
   (SDP-B Board) via the 120-pin connector (SDP CONN).
@@ -97,8 +109,16 @@ Block Assignments
 Jumper Settings
 ~~~~~~~~~~~~~~~
 
-Refer to the CN0204 circuit note for the complete jumper settings table.
-Default settings are configured for standard operation. Key jumpers include:
+See the table in the image below for the jumper settings. Values in red are
+the default settings for the EVAL-CN0204-SDPZ.
+
+.. figure:: cn0204_jumper_settings.jpg
+   :width: 600px
+   :align: center
+
+   EVAL-CN0204-SDPZ jumper settings
+
+Key jumpers include:
 
 - **JP1** -- SPI address configuration for the AD5751.
 - **JP3** -- VSENSE+ configuration (closed by default for local sense).
@@ -117,8 +137,25 @@ Installing the Software
       ``C:\Program Files (x86)\Analog Devices\CN0204\`` and all National
       Instruments products to ``C:\Program Files\National Instruments\``.
 
+   .. figure:: cn0204_install_step1.png
+      :width: 600px
+
+      CN0204 installer welcome screen
+
 #. Press **Next** to view the installation review page.
+
+   .. figure:: cn0204_install_step2.png
+      :width: 600px
+
+      Installation review page
+
 #. Press **Next** to start the installation.
+
+   .. figure:: cn0204_install_step3.png
+      :width: 600px
+
+      Installation progress
+
 #. Upon completion of the CN0204 Evaluation Software installation, the
    installer for the ADI SDP Drivers will execute.
 
@@ -128,6 +165,11 @@ Installing the Software
       **Next**. This will make it possible to update relevant system files
       without having to reboot your computer.
 
+   .. figure:: cn0204_sdp_drivers.png
+      :width: 600px
+
+      ADI SDP Drivers installer
+
 #. Press **Next** to set the installation location for the SDP Drivers.
 
    .. note::
@@ -135,15 +177,37 @@ Installing the Software
       It is recommended to install the drivers to the default path
       ``C:\Program Files\Analog Devices\SDP\Drivers``.
 
+   .. figure:: cn0204_driver_directory.png
+      :width: 600px
+
+      SDP Drivers installation directory
+
 #. Press **Next** to install the SDP Drivers. When prompted by Windows
    Security, press **Install**.
+
+   .. figure:: cn0204_windows_security.png
+      :width: 600px
+
+      Windows Security driver installation prompt
+
 #. Press **Finish** to complete the installation.
+
+   .. figure:: cn0204_install_complete.png
+      :width: 600px
+
+      Installation complete
 
 Using the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Main Window
 ^^^^^^^^^^^
+
+.. figure:: cn0204_software_main.jpg
+   :width: 600px
+   :align: center
+
+   CN0204 evaluation software main window
 
 The evaluation software provides the following controls and sections:
 

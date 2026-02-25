@@ -664,7 +664,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -956,6 +956,13 @@ phase resync capability.</p>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/cn0568_board.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/cn0568_board.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/cn0568_board.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0568-ARDZ evaluation board.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The evaluation board mounts to the Arduino header of the SDP-K1 controller
 board.</p>
 <ul class="simple">
@@ -966,15 +973,52 @@ board.</p>
 </section>
 <section id="software-installation">
 <h2>Software Installation<a class="headerlink" href="#software-installation" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Download the software folder from the <a class="icon adi reference external" href="https://www.analog.com/CN0568" target="_blank">CN0568</a> product page.</p></li>
 <li><p>Double-click on the <code class="docutils literal notranslate"><span class="pre">CN0548.exe</span></code> self-extracting installer to start the
 installation process.</p></li>
 <li><p>Follow the installation windows that appear to install the software in the
-default location.</p></li>
+default location.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer1.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer1.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Installation wizard welcome screen.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer3.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer3.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Installation directory selection.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer4.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer4.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer4.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Installation progress.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer5.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer5.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer5.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Installation complete.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>After the CN0568 software has been installed, an installation window for the
 SDP drivers will appear. If the SDP drivers have not previously been
-installed on the machine, proceed with this installation step.</p></li>
+installed on the machine, proceed with this installation step.</p>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer_sdpdrivers6.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer_sdpdrivers6.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/installer_sdpdrivers6.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">SDP drivers installation window.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Load the custom firmware to the SDP-K1 board by dragging and dropping the
 <code class="docutils literal notranslate"><span class="pre">SDP_K1_release.hex</span></code> file (contained within the software download folder)
 to the SDP-K1 drive listed in the Devices and Drives of “This PC” within
@@ -996,6 +1040,13 @@ register directly.</p></li>
 <li><p><strong>Log window</strong> – Shows the most recent transactions to the user. A log can
 be saved of all activity in a session.</p></li>
 </ol>
+<figure class="align-default" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/software_structure.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/software_structure.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Software interface structure showing graphical control, register, and log
+regions.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="device-connection">
 <h3>Device Connection<a class="headerlink" href="#device-connection" title="Link to this heading"></a></h3>
 <p>The device connection tab is displayed first after executing the software
@@ -1047,6 +1098,12 @@ Hop Function tab. <strong>VCO Freq. A</strong> and <strong>VCO Freq. B</strong> 
 that the user specifies for the hop. The dwell time at each frequency is input
 in the <strong>Time Delay</strong> field. A frequency hop is started by pressing the
 <strong>Start</strong> button and stopped using the <strong>Stop</strong> button.</p>
+<figure class="align-default" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/hopfunction.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/hopfunction.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Hop Function tab interface.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="dual-board-control">
 <h4>Dual Board Control<a class="headerlink" href="#dual-board-control" title="Link to this heading"></a></h4>
 <p>A dual board configuration can be used when two boards of the same VCO variant
@@ -1055,6 +1112,12 @@ first be selected in the Board Configuration section prior to establishing a
 software connection. When using the dual board configuration, the user can
 select which board is being controlled through SPI writes using the <strong>Board
 Select</strong> drop-down box on the upper right within the Main Controls tab.</p>
+<figure class="align-default" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/boardselect.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/boardselect.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Board Select drop-down for dual board configuration.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>To use the dual board configuration, one of the boards needs to be
 reconfigured to receive SPI on a different LE signal line. To do this, remove
 <strong>R41</strong> on the upper board of the stack and install <strong>R42</strong> instead.</p>
@@ -1071,7 +1134,13 @@ the register map section of the <a class="icon adi reference external" href="htt
 </section>
 <section id="evaluation-procedure">
 <h2>Evaluation Procedure<a class="headerlink" href="#evaluation-procedure" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
+<figure class="align-default" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/setup_circuit_note1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/setup_circuit_note1.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">EVAL-CN0568-ARDZ evaluation setup.</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic">
 <li><p>Download and install the <a class="icon adi reference external" href="https://www.analog.com/CN0568" target="_blank">CN0568</a> board software from the product page.</p></li>
 <li><p>Set up the evaluation board with:</p>
 <ul class="simple">
@@ -1092,10 +1161,23 @@ to RFIN of the spectrum analyzer.</p></li>
 <li><p>The current drawn on the +5 V supply should be between 150–180 mA.</p></li>
 <li><p>The current drawn on the +25 V supply should be approximately 4 mA.</p></li>
 </ul>
+<figure class="align-default" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/software_image.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/software_image.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">CN0568 software interface after initialization.</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>In the spectrum analyzer instrument, set up a phase noise measurement.</p></li>
 <li><p>Input the first test frequency for the variant used in the <strong>VCO Out</strong> box
-and press <strong>Update Frequency</strong>.</p></li>
+and press <strong>Update Frequency</strong>.</p>
+<figure class="align-default" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/updatefrequency.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0568-ardz/updatefrequency.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Update Frequency control in the software interface.</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Wait until the instrument locks to the output frequency and displays the
 phase noise profile on screen. Note the phase noise at offsets of 100 kHz,
 1 MHz, and 10 MHz.</p></li>

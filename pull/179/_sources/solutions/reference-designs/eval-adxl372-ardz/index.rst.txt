@@ -36,12 +36,22 @@ The EVAL-ADXL372-ARDZ shield is designed in Arduino Uno R3 form factor,
 making it compatible with the :ref:`EVAL-ADICUP3029 <eval-adicup3029>`
 development platform as well as standard Arduino Uno R3 base boards.
 
+.. figure:: top_adxl_int_together.png
+   :align: center
+
+   EVAL-ADXL372-ARDZ shield with EVAL-ADXL372Z-PIN assembled together.
+
 Connectors and Jumper Configuration
 -------------------------------------
 
 The EVAL-ADXL372-ARDZ shield has four jumpers (P10, P11, P12, P13) to
 increase flexibility when stacking systems together. Each jumper and its
 purpose is described below.
+
+.. figure:: eval-adxl-ardz-int_jumper_select.png
+   :align: center
+
+   EVAL-ADXL372-ARDZ jumper locations.
 
 ADXL_CS_SELECT (P10)
 ~~~~~~~~~~~~~~~~~~~~~
@@ -112,6 +122,11 @@ sensor. Be careful when connecting the EVAL-ADXL372Z-PIN with the
 EVAL-ADXL-ARDZ-INT to make sure that all the signals go to the correct pin
 of connectors P5 and P2.
 
+.. figure:: eval-adxl-ardz-int_direct_connection.png
+   :align: center
+
+   EVAL-ADXL372-ARDZ direct mounting connector locations (P5 and P2).
+
 .. list-table:: Direct Mounting Connector Pinout
    :header-rows: 1
    :widths: 30 35 35
@@ -135,6 +150,11 @@ of connectors P5 and P2.
      - CS
      - INT1
 
+.. figure:: top_adxl_int_separate.png
+   :align: center
+
+   EVAL-ADXL372-ARDZ shield and EVAL-ADXL372Z-PIN board separated.
+
 Ribbon Cable Connection (P7 and P1)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -143,6 +163,11 @@ via a ribbon cable. This allows for remotely mounting the sensor when you
 cannot have the rest of the electronics on the unit being sensed. Because
 this is a cabled option, you could also use other digital-output accelerometer
 devices with the EVAL-ADXL-ARDZ-INT such as the ADXL346/46 or the ADXL355/57.
+
+.. figure:: eval-adxl-ardz-int_cable_connection.png
+   :align: center
+
+   EVAL-ADXL372-ARDZ ribbon cable connector locations (P7 and P1).
 
 .. list-table:: Ribbon Cable Connector Pinout
    :header-rows: 1
@@ -230,12 +255,23 @@ Setting Up the Hardware
 
 1. Set switch **S2** to **USB Arduino** function in order to view data over
    UART. The UART baud rate is **9600** baud.
+
+.. figure:: adicup3029_s2_switch.jpg
+   :align: center
+
+   EVAL-ADICUP3029 S2 switch set to USB Arduino position.
+
 2. Place the **EVAL-ADXL372-ARDZ-INT** on top of the **EVAL-ADICUP3029**.
 3. Make sure the jumpers **P10, P11, P12** are configured as follows:
 
    - P10 -- Pin 1-2
    - P11 -- Pin 1-2
    - P12 -- Pin 1-2
+
+.. figure:: eval_adxl_ardz_int_jumpers.jpg
+   :align: center
+
+   EVAL-ADXL372-ARDZ jumper configuration for the ADICUP3029 demo.
 
 4. Plug in the micro-USB cable into the (P10) USB port on the EVAL-ADICUP3029,
    and the other end into the PC or laptop.
@@ -270,15 +306,40 @@ required. The UART configuration is:
    Stop: 1 bit
    Flow Control: none
 
+.. figure:: serial_terminal_capture.png
+   :align: center
+
+   ADXL372 serial terminal output showing impact data.
+
 Smart Device Output
 ~~~~~~~~~~~~~~~~~~~~
 
 Open up the IoTNode app on your iOS smart phone or tablet:
 
+.. figure:: iotnode_app_main.png
+   :align: center
+   :width: 400
+
+   IoTNode application main screen.
+
 1. Press the **Scan** button on the bottom left corner for the app to start
    searching for Bluetooth devices.
+
+.. figure:: iotnode_app_scan.png
+   :align: center
+   :width: 400
+
+   IoTNode application scanning for Bluetooth devices.
+
 2. Once the device is visible, press **Connect** to access the information
    provided over Bluetooth.
+
+.. figure:: iotnode_app_connected.png
+   :align: center
+   :width: 400
+
+   IoTNode application displaying impact acceleration data.
+
 3. After connecting and generating enough acceleration (minimum of **10 g**
    on any axis), information will be displayed on the application. To generate
    this high value of acceleration, tap the board against your hand (do not
@@ -286,6 +347,11 @@ Open up the IoTNode app on your iOS smart phone or tablet:
 
 Project Structure
 ~~~~~~~~~~~~~~~~~~
+
+.. figure:: adxl372_project_structure.png
+   :align: center
+
+   ADXL372 demo project structure diagram.
 
 The project is structured in 3 layers:
 

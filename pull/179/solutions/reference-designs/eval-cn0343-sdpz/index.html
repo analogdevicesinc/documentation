@@ -666,7 +666,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -962,6 +962,12 @@ custom firmware)</p></li>
 <li><p><strong>J2</strong> – RS-485 communication interface connector</p></li>
 <li><p><strong>J3</strong> – <a class="icon adi reference external" href="https://www.analog.com/ADUC7126" target="_blank">ADuC7126</a> JTAG/SWD debug interface connector</p></li>
 </ul>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/cn0343_connectors.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/cn0343_connectors.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0343 board connector locations</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="power-supply-connections">
 <h3>Power Supply Connections<a class="headerlink" href="#power-supply-connections" title="Link to this heading"></a></h3>
 <p>The CN0343 <strong>J1</strong> connector is used for the power supply with the
@@ -973,6 +979,12 @@ make sure all the necessary connectors are connected well and firm.</p>
 <p>The <strong>J2</strong> connector on the CN0343 is used for the RS-485 communication
 interface. The CN0343 RS-485 interface works in half-duplex mode; only one
 twisted pair cable is needed to build the RS-485 network.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/cn0343_rs485.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/cn0343_rs485.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0343 RS-485 connector (J2) pin mapping</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The RS-485 interface has limitations on the total number of devices in the
@@ -985,6 +997,12 @@ interface characteristics, refer to the <a class="icon adi reference external" h
 <p>The <strong>J3</strong> connector on the CN0343 is used for the <a class="icon adi reference external" href="https://www.analog.com/ADUC7126" target="_blank">ADuC7126</a>
 MCU JTAG debug and firmware programming. The CN0343 <strong>J3</strong> JTAG 20-pin 0.1
 inch pitch connector pinout is compatible with the <a class="icon link reference external" href="https://www.segger.com/products/debug-probes/j-link" target="_blank">SEGGER J-Link debug probe</a>.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/cn0343_jtag.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/cn0343_jtag.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0343 JTAG/SWD connector (J3) pin mapping</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="usage-instructions">
@@ -1001,6 +1019,12 @@ information output, and six tactile buttons for user input.</p>
 <p>In this section, <em>press button</em> or <em>button pressed</em> means a single click of
 the tactile button.</p>
 </div>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/cn0343_usage.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/cn0343_usage.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CN0343 LCD, buttons, and contrast potentiometer (R1)</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the CN0343 powers up with the beep and the LCD screen appears murky or
@@ -1145,6 +1169,12 @@ using Keil or J-Link, refer to the links above.</p>
 <section id="software-development-environment">
 <h3>Software Development Environment<a class="headerlink" href="#software-development-environment" title="Link to this heading"></a></h3>
 <p>After downloading and installing the <a class="icon link reference external" href="http://www.keil.com/" target="_blank">Keil Embedded Development Tools for ARM</a>, open the Keil software IDE.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/keil_open.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/keil_open.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Opening the CN0343 project in Keil IDE</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>To open the CN0343 source code in Keil IDE:</p>
 <ol class="arabic simple">
 <li><p>Click the <strong>Open</strong> button.</p></li>
@@ -1158,6 +1188,12 @@ using Keil or J-Link, refer to the links above.</p>
 <h3>Downloading Firmware to the CN0343<a class="headerlink" href="#downloading-firmware-to-the-cn0343" title="Link to this heading"></a></h3>
 <p>After software development, to download the binary firmware to the internal
 flash of <a class="icon adi reference external" href="https://www.analog.com/ADUC7126" target="_blank">ADuC7126</a>:</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/keil_download.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0343-sdpz/keil_download.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Building and downloading firmware in Keil IDE</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p>Click the <strong>Build All</strong> button. Wait for the build to finish.</p></li>
 <li><p>Click the <strong>Load</strong> button. Wait for the download to finish.</p></li>

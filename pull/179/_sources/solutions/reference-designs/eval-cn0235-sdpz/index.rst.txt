@@ -59,6 +59,11 @@ General Setup
 - The CN0235 Board is powered by a +6 V wall wart via the DC barrel jack.
 - The SDP-B Board connects to the PC via the USB cable.
 
+.. figure:: cn0235_general_setup.png
+   :align: center
+
+   CN0235 general setup
+
 .. list-table:: General Setup Callouts
    :header-rows: 1
    :widths: 10 90
@@ -129,6 +134,11 @@ Jumper Configuration
 Connecting the Hardware
 -----------------------
 
+.. figure:: cn0235_hardware.jpg
+   :align: center
+
+   CN0235 hardware setup
+
 #. Connect the :adi:`EVAL-CN0235-SDPZ <EVAL-CN0235-SDPZ>` to the
    :adi:`EVAL-SDP-CB1Z` (SDP Board) through the 120-pin SMD connector. Nylon
    hardware should be used to firmly secure the two boards, using the holes
@@ -155,14 +165,36 @@ Software Installation
       all National Instruments products to
       ``C:\Program Files\National Instruments\``.
 
+   .. figure:: cn0235-software-1.png
+      :align: center
+
+      CN0235 software installer
+
 #. Click **Next** to view the installation review page.
+
+   .. figure:: cn0235-software-2.png
+      :align: center
+
+      Installation review page
+
 #. Click **Next** to start the installation.
+
+   .. figure:: cn0235-software-3.png
+      :align: center
+
+      Installation progress
+
 #. Upon completion, the installer for the **ADI SDP Drivers** will execute.
 
    .. note::
 
       Close all other applications before clicking **Next** to allow updating
       relevant system files without rebooting.
+
+   .. figure:: cn0235-software-4.png
+      :align: center
+
+      SDP Drivers installer start
 
 #. Press **Next** to set the installation location for the SDP Drivers.
 
@@ -171,14 +203,29 @@ Software Installation
       It is recommended to install the drivers to the default directory path
       ``C:\Program Files\Analog Devices\SDP\Drivers``.
 
+   .. figure:: cn0235-sdp_installer-1.png
+      :align: center
+
+      SDP Drivers installation location
+
 #. Press **Next** to install the SDP Drivers and complete the installation.
    Click **Finish** when done.
+
+   .. figure:: cn0235-sdp_installer-2.png
+      :align: center
+
+      SDP Drivers installation complete
 
 Using the Evaluation Software
 -----------------------------
 
 Software Front Panel
 ~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0235_sw_frontpanel.png
+   :align: center
+
+   CN0235 evaluation software front panel
 
 The evaluation software front panel provides the following controls and
 indicators:
@@ -208,64 +255,220 @@ indicators:
 Control Tabs
 ~~~~~~~~~~~~
 
-The software provides several control tabs:
+Voltage (Codes) Tab
+^^^^^^^^^^^^^^^^^^^
 
-- **Voltage (Codes)** / **Voltage (Volts)** -- Display voltage readings for
-  each channel in either ADC code or voltage format. Both tabs provide two
-  display modes:
+The voltage (code format) tab features two types of display:
 
-  - **Tank Display** -- Bar-like comparison showing the latest reading for
-    each lithium ion battery cell.
-  - **Graph Display** -- Line chart showing cell behavior over time with a
-    plot navigator and additional graph functions (pointer, plot view modifier,
-    manual plot navigator). Right-click on the graph for additional plot and
-    data control features.
+**Tank Display**
 
-- **Temperature (Codes)** / **Temperature (Volts)** -- Display temperature
-  readings from the thermistor inputs in either ADC code or voltage format.
-  Both tabs provide the same tank and graph display modes as the voltage tabs.
+.. figure:: cn0235_voltagecodes_tank_display.png
+   :align: center
 
-- **Configure AD7280A** -- Provides the following configuration options:
+   Voltage (Codes) tank display
 
-  #. **Force Update** -- Updates the AD7280A configuration.
-  #. **Voltage and Temperature Thresholds** -- Sets ceiling and floor values
-     for voltage and temperature that determine when warning indicators
-     activate.
-  #. **Conversion Averaging** -- Sets the AD7280A's conversion averaging
-     feature where acquisition and conversion of each cell input is repeated
-     before results are read back through the SPI interface.
-  #. **Acquisition Time** -- Sets the time required to acquire an input signal.
-     Calculated as: tACQ = 10 x ((Rsource + R) x C), where R = 300 ohm,
-     C = 15 pF, and Rsource is any extra source impedance. See the AD7280A
-     datasheet page 21 for details.
-  #. **Self-Test AD7280A** -- Initiates the self-test conversion to verify ADC
-     and reference buffer operation. The self-test result varies between
-     Code 970 and Code 990.
-  #. **Cell Balance Outputs** -- Sets the cell balance output of the AD7280A
-     to drive external transistor gates, providing 0 V or 5 V output with
-     respect to the negative terminal of the battery cell being balanced.
-  #. **Cell Balance Timers** -- Sets the on-time of each cell balance output.
-     Timer may be set from 0 minutes to 36.9 minutes with 71.5-second
-     resolution.
-  #. **Thermistor Term Resistor** -- Sets if the thermistor termination pin
-     AUXterm will be used. Due to settling time requirements, this option
-     should only be used when the acquisition time is set to 1.6 us.
+The tank display provides the ADC code equivalent of the reading in bar-like
+comparison for each channel. This type of display provides the latest reading
+of the lithium ion battery cells.
 
-- **Advanced** -- Allows the user to read/write to the :adi:`AD7280A`
-  registers:
+**Graph Display**
 
-  #. **Dev0 and Dev1 Register Address** -- Lists register addresses and
-     current content.
-  #. **Read Register** -- Updates the register address array of both devices.
-  #. **Write Register** -- Writes a new value to a specified register.
+.. figure:: cn0235_voltagecodes_graph_display.png
+   :align: center
 
-  .. warning::
+   Voltage (Codes) graph display
 
-     Read and understand the AD7280A and AD8280 datasheets before writing new
-     values to registers.
+The graphical display tab provides the user with more features or options for
+the reading analysis.
 
-- **SDP Firmware Release Info** -- Displays the SDP board firmware version
-  currently in use.
+#. **Codes vs Sample graph** -- This plot provides the user with the behavior
+   of each cell in a form of a line chart, enabling the user to picture out the
+   current behavior of each lithium ion cell with time.
+#. **Latest channel code value** -- Similar to the tank display, this is the
+   latest reading of the lithium ion battery cells by the AD7280A.
+#. **Plot navigator** -- Allows the user to see the history of the battery
+   reading.
+#. **Additional graph functions** -- The three additional functions act as a
+   pointer, plot view modifier, and manual plot navigator respectively.
+
+A right-click on the graph will give the user additional plot and data control
+features.
+
+.. figure:: cn0235_graph_display_rightclick.png
+   :align: center
+
+   Graph display right-click context menu
+
+Voltage (Volts) Tab
+^^^^^^^^^^^^^^^^^^^
+
+The voltage (volts format) tab features two types of display:
+
+**Tank Display**
+
+.. figure:: cn0235_voltagevolts_tank_display.png
+   :align: center
+
+   Voltage (Volts) tank display
+
+The tank display provides the ADC voltage equivalent of the reading in bar-like
+comparison for each channel. This type of display provides the latest reading
+of the lithium ion battery cells.
+
+**Graph Display**
+
+.. figure:: cn0235_voltagevolts_graph_display.png
+   :align: center
+
+   Voltage (Volts) graph display
+
+The graphical display tab provides the user with more features or options for
+the measurement analysis.
+
+#. **Codes vs Sample graph** -- This plot provides the user with the behavior
+   of each cell in a form of a line chart, enabling the user to picture out the
+   current behavior of each lithium ion cell with time.
+#. **Latest channel code value** -- Similar to the tank display, this is the
+   latest reading of the lithium ion battery cells by the AD7280A.
+#. **Plot navigator** -- Allows the user to see the history of the battery
+   reading.
+#. **Additional graph functions** -- The three additional functions act as a
+   pointer, plot view modifier, and manual plot navigator respectively.
+
+Temperature (Codes) Tab
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The temperature (codes format) tab features two types of display:
+
+**Tank Display**
+
+.. figure:: cn0235_tempcodes_tank_display.png
+   :align: center
+
+   Temperature (Codes) tank display
+
+The tank display provides the ADC code temperature reading of the thermistor
+in bar-like comparison for each channel. This type of display provides the
+latest reading of the lithium ion battery cells.
+
+**Graph Display**
+
+.. figure:: cn0235_tempcodes_graph_display.png
+   :align: center
+
+   Temperature (Codes) graph display
+
+The graphical display tab provides the user with more features or options for
+the reading analysis.
+
+#. **Codes vs Sample graph** -- This plot provides the user with the behavior
+   of each cell in a form of a line chart, enabling the user to picture out the
+   current behavior of each lithium ion cell with time.
+#. **Latest channel code value** -- Similar to the tank display, this is the
+   latest reading of the lithium ion battery cells by the AD7280A.
+#. **Plot navigator** -- Allows the user to see the history of the battery
+   reading.
+#. **Additional graph functions** -- The three additional functions act as a
+   pointer, plot view modifier, and manual plot navigator respectively.
+
+Temperature (Volts) Tab
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The temperature (volts format) tab features two types of display:
+
+**Tank Display**
+
+.. figure:: cn0235_tempvolts_tank_display.png
+   :align: center
+
+   Temperature (Volts) tank display
+
+The tank display provides the ADC voltage equivalent of the thermistor reading
+in bar-like comparison for each channel. This type of display provides the
+latest reading of the lithium ion battery cells.
+
+**Graph Display**
+
+.. figure:: cn0235_tempvolts_graph_display.png
+   :align: center
+
+   Temperature (Volts) graph display
+
+The graphical display tab provides the user with more features or options for
+the measurement analysis.
+
+#. **Codes vs Sample graph** -- This plot provides the user with the behavior
+   of each cell in a form of a line chart, enabling the user to picture out the
+   current behavior of each lithium ion cell with time.
+#. **Latest channel code value** -- Similar to the tank display, this is the
+   latest reading of the lithium ion battery cells by the AD7280A.
+#. **Plot navigator** -- Allows the user to see the history of the battery
+   reading.
+#. **Additional graph functions** -- The three additional functions act as a
+   pointer, plot view modifier, and manual plot navigator respectively.
+
+Configure AD7280A Tab
+^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: cn0235_config_ad7280a.png
+   :align: center
+
+   AD7280A configuration tab
+
+#. **Force Update** -- Updates the AD7280A configuration.
+#. **Voltage and Temperature Thresholds** -- Sets ceiling and floor values
+   for voltage and temperature that determine when warning indicators
+   activate.
+#. **Conversion Averaging** -- Sets the AD7280A's conversion averaging
+   feature where acquisition and conversion of each cell input is repeated
+   before results are read back through the SPI interface.
+#. **Acquisition Time** -- Sets the time required to acquire an input signal.
+   Calculated as: tACQ = 10 x ((Rsource + R) x C), where R = 300 ohm,
+   C = 15 pF, and Rsource is any extra source impedance. See the AD7280A
+   datasheet page 21 for details.
+#. **Self-Test AD7280A** -- Initiates the self-test conversion to verify ADC
+   and reference buffer operation. The self-test result varies between
+   Code 970 and Code 990.
+#. **Cell Balance Outputs** -- Sets the cell balance output of the AD7280A
+   to drive external transistor gates, providing 0 V or 5 V output with
+   respect to the negative terminal of the battery cell being balanced.
+#. **Cell Balance Timers** -- Sets the on-time of each cell balance output.
+   Timer may be set from 0 minutes to 36.9 minutes with 71.5-second
+   resolution.
+#. **Thermistor Term Resistor** -- Sets if the thermistor termination pin
+   AUXterm will be used. Due to settling time requirements, this option
+   should only be used when the acquisition time is set to 1.6 us.
+
+Advanced Tab
+^^^^^^^^^^^^
+
+.. figure:: cn0235_advanced.png
+   :align: center
+
+   Advanced register read/write tab
+
+The advanced tab allows the user to read/write to the :adi:`AD7280A`
+registers:
+
+#. **Dev0 and Dev1 Register Address** -- Lists register addresses and
+   current content.
+#. **Read Register** -- Updates the register address array of both devices.
+#. **Write Register** -- Writes a new value to a specified register.
+
+.. warning::
+
+   Read and understand the AD7280A and AD8280 datasheets before writing new
+   values to registers.
+
+SDP Firmware Release Info Tab
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: cn0235_firmware_info.png
+   :align: center
+
+   SDP firmware release information
+
+Provides the SDP board firmware version currently in use.
 
 Warning Indicators
 ~~~~~~~~~~~~~~~~~~

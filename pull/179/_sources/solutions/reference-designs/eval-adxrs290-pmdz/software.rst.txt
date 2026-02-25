@@ -110,16 +110,40 @@ Make sure to download/update to the latest version of
 2. Press refresh to display available IIO Devices. Once adxrs290 appears, press
    connect.
 
+.. figure:: iio_osc_connection.jpg
+   :align: center
+   :width: 200px
+
+   IIO Oscilloscope Connection Dialog
+
 **Debug Panel:**
 The Debug panel allows you to directly access the attributes of the device.
+
+.. figure:: adxrs290_debug.png
+   :align: center
+   :width: 400px
+
+   ADXRS290 Debug Panel
 
 **DMM Panel:**
 Access the DMM panel to see the instantaneous reading of the X and Y angular
 velocities.
 
+.. figure:: adxrs290_dmm-2.png
+   :align: center
+   :width: 400px
+
+   ADXRS290 DMM Panel
+
 **Waveform Panel:**
 The Waveform panel (Capture window) displays the real-time waveform of the
 ADXRS290 response.
+
+.. figure:: iio_osc_graph.jpg
+   :align: center
+   :width: 400px
+
+   ADXRS290 Waveform Capture
 
 .. note::
 
@@ -204,9 +228,27 @@ Running the Example
 
       D:\pyadi-iio\examples>python adxrs290.py
 
+   .. figure:: adxrs290_output.png
+      :align: center
+      :width: 700px
+
+      Output on Terminal
+
 5. You can opt to see a real-time plot of the ADXRS290 output. To do this, open
    ``adxrs290.py`` and set ``enable_plot`` to ``True``. A plot will pop up
    after running the code.
+
+   .. figure:: adxrs290_enable-plot.png
+      :align: center
+      :width: 500px
+
+      Enable Plot Setting
+
+   .. figure:: adxrs290_plot.png
+      :align: center
+      :width: 500px
+
+      ADXRS290 Real-Time Plot
 
 Video Guides
 ~~~~~~~~~~~~
@@ -325,6 +367,12 @@ Serial Terminal Output
 
 The user must press the reset button on ADICUP3029 each time they want to
 display the results.
+
+.. figure:: example_serial_output.png
+   :align: center
+   :width: 600px
+
+   Example Serial Terminal Output
 
 Digital Communications
 ~~~~~~~~~~~~~~~~~~~~~~

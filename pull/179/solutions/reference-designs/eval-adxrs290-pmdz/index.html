@@ -664,7 +664,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -931,12 +931,26 @@ Content on this topic
 </div>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/eval-adxrs290-pmdz.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/eval-adxrs290-pmdz.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/eval-adxrs290-pmdz.png" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-ADXRS290-PMDZ Evaluation Board</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXRS290-PMDZ" target="_blank">EVAL-ADXRS290-PMDZ</a> is a simple PMOD form-factor evaluation board for
 the <a class="icon adi reference external" href="https://www.analog.com/ADXRS290" target="_blank">ADXRS290</a>, a high-performance MEMS pitch-and-roll (dual-axis in-plane)
 angular rate sensor (gyroscope) designed for use in stabilization applications.</p>
 <p>The solution senses and digitizes the <strong>X-axis</strong> and <strong>Y-axis</strong> (also called
 <strong>roll</strong> and <strong>pitch</strong>) angular rates, producing a positive reading for
 clockwise rotation about the x-axis and y-axis.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/roll_and_pitch.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/roll_and_pitch.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/roll_and_pitch.png" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Roll and Pitch Axes</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The ADXRS290 provides an output full-scale range of +/-100 deg/s with a
 sensitivity of 200 LSB/(deg/s). Its resonating disk sensor structure enables
 angular rate measurement about the axes normal to the sides of the package
@@ -946,6 +960,13 @@ exhibits a low noise floor of 0.004 deg/s/sqrt(Hz) and features programmable
 high-pass and low-pass filters.</p>
 <p>The ADXRS290 communicates via 4-wire SPI and operates as a peripheral (slave)
 device, with a maximum clock frequency of 12 MHz.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/spi_comm.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/spi_comm.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/spi_comm.png" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">SPI Communication Interface</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="features">
 <h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
@@ -971,9 +992,9 @@ device, with a maximum clock frequency of 12 MHz.</p>
 <h3>Digital Interface (PMOD)<a class="headerlink" href="#digital-interface-pmod" title="Link to this heading"></a></h3>
 <p>Digital communication on the EVAL-ADXRS290-PMDZ is accomplished using a
 standard expanded SPI PMOD port.</p>
-<div class="table-wrapper docutils container" id="id4">
-<table class="docutils align-default" id="id4">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Connector P1 Pinout</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id7">
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Connector P1 Pinout</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Description</p></th>
 <th class="head"><p>Pin(s)</p></th>
@@ -1030,6 +1051,13 @@ be used for both the EVAL-ADXRS290-PMDZ on Raspberry Pi and on ADICUP3029.</p>
 <section id="system-setup-using-adicup3029">
 <h2>System Setup Using ADICUP3029<a class="headerlink" href="#system-setup-using-adicup3029" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXRS290-PMDZ" target="_blank">EVAL-ADXRS290-PMDZ</a> can be used with the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a>.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_architecture.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_architecture.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_architecture.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">ADXRS290 ADICUP3029 System Architecture</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="demo-requirements">
 <h3>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h3>
 <p>Hardware:</p>
@@ -1061,13 +1089,35 @@ but requires downloading the CrossCore toolchain.</p></li>
 <li><p>Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and
 connect it to a computer.</p></li>
 </ol>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/pmodtoadicup_v2.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/pmodtoadicup_v2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/pmodtoadicup_v2.jpg" style="width: 900px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">EVAL-ADXRS290-PMDZ Connected to EVAL-ADICUP3029</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="flashing-the-firmware">
 <h3>Flashing the Firmware<a class="headerlink" href="#flashing-the-firmware" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adicup3029_settings.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adicup3029_settings.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adicup3029_settings.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">EVAL-ADICUP3029 Switch Settings</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic">
 <li><p>Make sure the switches on the EVAL-ADICUP3029 are in the correct positions.</p></li>
 <li><p>Connect the ADICUP3029 to the PC host via micro-USB cable.</p></li>
-<li><p>From your PC, open My Computer and look for the DAPLINK drive.</p></li>
+<li><p>From your PC, open My Computer and look for the DAPLINK drive.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/daplink_in_mycomputer.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/daplink_in_mycomputer.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/daplink_in_mycomputer.jpg" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">DAPLINK Drive in My Computer</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Extract the provided zip file. For this demo use the
 <strong>adxrs290-pmdz_aducm3029_iio_uart.hex</strong>. Drag and drop this Hex file to the
 DAPLINK drive. The DS2 (red) LED will blink rapidly.</p></li>
@@ -1126,6 +1176,13 @@ Raspberry Pi</strong> on the Kuiper Linux page, substituting the following line 
 </section>
 <section id="id3">
 <h3>Setting up the Hardware<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/rpi_pmod_con.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/rpi_pmod_con.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/rpi_pmod_con.jpg" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Raspberry Pi to PMOD Connection</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The I/O pins of the Raspberry Pi board are only 3.3 V tolerant. Any
@@ -1142,6 +1199,13 @@ connector on the RPi.</p></li>
 <li><p>Power on the RPi board by plugging in a 5 V power supply with a micro-USB
 connector.</p></li>
 </ol>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/system_con.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/system_con.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/system_con.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Complete Raspberry Pi System Setup</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="software-and-demo">

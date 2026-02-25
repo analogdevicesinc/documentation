@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="This page describes the demo software for the EVAL-CN0396-ARDZ dual toxic gas detector system running on the EVAL-ADICUP360 platform." name="description" />
+<meta content="This page describes the demo software for the EVAL-CN0396-ARDZ dual toxic gas detector system." name="description" />
 
     <title>Software &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,16 +95,23 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">Software</a><ul>
+<li><a class="reference internal" href="#adicup360-demo">ADICUP360 Demo</a><ul>
 <li><a class="reference internal" href="#general-description">General Description</a></li>
-<li><a class="reference internal" href="#demo-requirements">Demo Requirements</a><ul>
-<li><a class="reference internal" href="#hardware">Hardware</a></li>
-<li><a class="reference internal" href="#id1">Software</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#demo-requirements">Demo Requirements</a></li>
 <li><a class="reference internal" href="#obtaining-the-source-code">Obtaining the Source Code</a></li>
 <li><a class="reference internal" href="#configuring-the-software-parameters">Configuring the Software Parameters</a></li>
 <li><a class="reference internal" href="#serial-terminal-output">Serial Terminal Output</a></li>
 <li><a class="reference internal" href="#project-structure">Project Structure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#arduino-uno-demo">Arduino Uno Demo</a><ul>
+<li><a class="reference internal" href="#id1">General Description</a></li>
+<li><a class="reference internal" href="#id2">Demo Requirements</a></li>
+<li><a class="reference internal" href="#id3">Obtaining the Source Code</a></li>
+<li><a class="reference internal" href="#id4">Configuring the Software Parameters</a></li>
+<li><a class="reference internal" href="#id5">Serial Terminal Output</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -650,7 +657,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -913,9 +920,11 @@ Content on this topic
   <section id="software">
 <span id="eval-cn0396-ardz-software"></span><h1>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h1>
 <p>This page describes the demo software for the <a class="reference internal" href="index.html#eval-cn0396-ardz"><span class="std std-ref">EVAL-CN0396-ARDZ</span></a> dual
-toxic gas detector system running on the EVAL-ADICUP360 platform.</p>
+toxic gas detector system.</p>
+<section id="adicup360-demo">
+<h2>ADICUP360 Demo<a class="headerlink" href="#adicup360-demo" title="Link to this heading"></a></h2>
 <section id="general-description">
-<h2>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h2>
+<h3>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h3>
 <p>The <strong>ADuCM360_demo_cn0396</strong> is a dual toxic gas detector demo project for the
 EVAL-ADICUP360 base board with the EVAL-CN0396-ARDZ shield, created using
 CrossCore Embedded Studios IDE.</p>
@@ -943,11 +952,17 @@ temperature.</p>
 type. These values will need to be updated when using a different sensor
 than the one provided.</p>
 </div>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_demo_3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_demo_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_demo_3.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Serial terminal output showing gas concentration readings.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="demo-requirements">
-<h2>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h2>
-<section id="hardware">
-<h3>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h3>
+<h3>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h3>
+<p><strong>Hardware:</strong></p>
 <ul class="simple">
 <li><p>EVAL-ADICUP360</p></li>
 <li><p>EVAL-CN0396-ARDZ</p></li>
@@ -955,9 +970,7 @@ than the one provided.</p>
 <li><p>Micro USB to USB cable</p></li>
 <li><p>PC or laptop with a USB port</p></li>
 </ul>
-</section>
-<section id="id1">
-<h3>Software<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p><strong>Software:</strong></p>
 <ul class="simple">
 <li><p>ADuCM360_demo_cn0396 software</p></li>
 <li><p>CrossCore Embedded Studio (2.7.0 or higher)</p></li>
@@ -966,9 +979,8 @@ than the one provided.</p>
 <li><p>Serial terminal program (such as PuTTY or Tera Term)</p></li>
 </ul>
 </section>
-</section>
 <section id="obtaining-the-source-code">
-<h2>Obtaining the Source Code<a class="headerlink" href="#obtaining-the-source-code" title="Link to this heading"></a></h2>
+<h3>Obtaining the Source Code<a class="headerlink" href="#obtaining-the-source-code" title="Link to this heading"></a></h3>
 <p>There are two ways to program the ADICUP360 with the CN0396 software:</p>
 <ol class="arabic simple">
 <li><p><strong>Drag and Drop</strong> – Drag and drop the .bin file to the MBED drive. This is
@@ -989,7 +1001,7 @@ build, compile, and debug. This allows parameter customization.</p></li>
 </div>
 </section>
 <section id="configuring-the-software-parameters">
-<h2>Configuring the Software Parameters<a class="headerlink" href="#configuring-the-software-parameters" title="Link to this heading"></a></h2>
+<h3>Configuring the Software Parameters<a class="headerlink" href="#configuring-the-software-parameters" title="Link to this heading"></a></h3>
 <p>The following parameters can be configured in <code class="docutils literal notranslate"><span class="pre">CN0396.h</span></code>:</p>
 <p><strong>Sensor Range</strong> – Maximum value of gas concentration (ppm) detectable by each
 electrode:</p>
@@ -1014,7 +1026,7 @@ electrode:</p>
 </div>
 </section>
 <section id="serial-terminal-output">
-<h2>Serial Terminal Output<a class="headerlink" href="#serial-terminal-output" title="Link to this heading"></a></h2>
+<h3>Serial Terminal Output<a class="headerlink" href="#serial-terminal-output" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Flash the program to the EVAL-ADICUP360.</p></li>
 <li><p>Switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).</p></li>
@@ -1033,14 +1045,14 @@ Flow Control: none
 concentration, H2S concentration, ADC values, and sensor data.</p>
 </section>
 <section id="project-structure">
-<h2>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h2>
+<h3>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h3>
 <p>The <strong>ADuCM360_demo_cn0396</strong> is a C project which uses the ADuCM36x C/C++
 Project structure.</p>
-<figure class="align-default" id="id2">
+<figure class="align-center" id="id7">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_software_dir.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_software_dir.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_software_dir.png" style="width: 250px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0396 demo project structure.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0396 demo project structure.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The project contains:</p>
@@ -1066,6 +1078,83 @@ clock for peripherals</p></li>
 <li><p><strong>system.rteconfig</strong> – Peripheral component selection, startup, and ARM
 CMSIS files</p></li>
 </ul>
+</section>
+</section>
+<section id="arduino-uno-demo">
+<h2>Arduino Uno Demo<a class="headerlink" href="#arduino-uno-demo" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>General Description<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>The <strong>CN0396_example</strong> is a dual toxic gas detector demo project for the
+Arduino Uno base board with the EVAL-CN0396-ARDZ shield, created using the
+Arduino IDE.</p>
+<p>The CN0396_example application reads the temperature value from the ADT7310
+and ADC values for each gas channel (CO and H2S), processes the values, and
+makes all necessary conversions to provide gas concentrations. A UART interface
+(9600 baud rate and 8-bit data length) is used to send the results to a
+terminal window.</p>
+</section>
+<section id="id2">
+<h3>Demo Requirements<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p><strong>Hardware:</strong></p>
+<ul class="simple">
+<li><p>Arduino Uno Rev 3</p></li>
+<li><p>EVAL-CN0396-ARDZ</p></li>
+<li><p>Type B to Type A USB cable</p></li>
+<li><p>PC or laptop with a USB port</p></li>
+</ul>
+<p><strong>Software:</strong></p>
+<ul class="simple">
+<li><p>CN0396_example sketch</p></li>
+<li><p>Arduino IDE</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Obtaining the Source Code<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon link reference external" href="https://github.com/analogdevicesinc/arduino/tree/master/Arduino%20Uno%20R3/examples/CN0396_example" target="_blank">CN0396_example at GitHub</a></p>
+</div>
+</section>
+<section id="id4">
+<h3>Configuring the Software Parameters<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>Configure the ADC gain value in <code class="docutils literal notranslate"><span class="pre">CN0396.h</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define ADC_GAIN      AD7798_GAIN_1</span>
+</pre></div>
+</div>
+<p>Configure the ADC samples/second value in <code class="docutils literal notranslate"><span class="pre">CN0396.h</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define ADC_SPS        0x05  </span><span class="c1">//50SPS</span>
+</pre></div>
+</div>
+<p>Set the refresh time in <code class="docutils literal notranslate"><span class="pre">CN0396.h</span></code> (how often to display output values on
+the terminal, in ms):</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define DISPLAY_REFRESH        500   </span><span class="c1">//[msec]</span>
+</pre></div>
+</div>
+<p>Set CO range for the sensor in <code class="docutils literal notranslate"><span class="pre">CN0396.h</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define MAX_CO_SENS  (100 * pow(10, -9))</span>
+<span class="cp">#define CO_SENS      (75 * pow(10, -9))    </span><span class="cm">/* Sensitivity nA/ppm CO 50 to 100 */</span>
+<span class="cp">#define CO_RANGE     1000 </span><span class="cm">/* Range ppm CO limit of performance warranty 1,000 */</span>
+</pre></div>
+</div>
+<p>Set H2S range for the sensor in <code class="docutils literal notranslate"><span class="pre">CN0396.h</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define MAX_H2S_SENS (1000 * pow(10, -9))</span>
+<span class="cp">#define H2S_SENS     (800 * pow(10, -9)) </span><span class="cm">/* Sensitivity nA/ppm  H2S 450 to 900 */</span>
+<span class="cp">#define H2S_RANGE    200  </span><span class="cm">/* Range ppm H2S limit of performance warranty 200 */</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>Serial Terminal Output<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>Configure the serial terminal with the following settings:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Select COM Port
+Baud rate: 9600
+Data: 8 bit
+Parity: none
+Stop: 1 bit
+Flow Control: none
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 

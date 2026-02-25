@@ -104,7 +104,10 @@
 <li><a class="reference internal" href="#available-commands">Available Commands</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#obtaining-the-software">Obtaining the Software</a></li>
+<li><a class="reference internal" href="#obtaining-the-software">Obtaining the Software</a><ul>
+<li><a class="reference internal" href="#using-crosscore-embedded-studio">Using CrossCore Embedded Studio</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#project-structure">Project Structure</a></li>
 </ul>
 </li>
@@ -651,7 +654,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -1027,14 +1030,29 @@ value of the external reference.</p>
 <h2>Outputting Data<a class="headerlink" href="#outputting-data" title="Link to this heading"></a></h2>
 <section id="serial-terminal-configuration">
 <h3>Serial Terminal Configuration<a class="headerlink" href="#serial-terminal-configuration" title="Link to this heading"></a></h3>
+<p>A serial terminal application is used to display data and interact with the
+EVAL-CN0414-ARDZ through the EVAL-ADICUP3029’s USB-to-UART interface.
+Recommended terminal programs include <a class="icon link reference external" href="https://www.putty.org/" target="_blank">PuTTY</a>,
+<a class="icon link reference external" href="https://ttssh2.osdn.jp/index.html.en" target="_blank">Tera Term</a>, or
+<a class="icon link reference external" href="https://realterm.sourceforge.io/" target="_blank">RealTerm</a>.</p>
 <p>Configure the serial terminal with the following settings:</p>
 <ul class="simple">
+<li><p><strong>COM Port</strong>: Check your device manager after plugging in the USB cable to
+identify the assigned COM port</p></li>
 <li><p><strong>Baud rate</strong>: 115200</p></li>
 <li><p><strong>Data bits</strong>: 8</p></li>
 <li><p><strong>Parity</strong>: None</p></li>
 <li><p><strong>Stop bits</strong>: 1</p></li>
 <li><p><strong>Flow Control</strong>: None</p></li>
 </ul>
+<p>Additionally, enable <strong>Implicit CR in every LF</strong> and <strong>Implicit LF in every
+CR</strong> in your terminal settings. Enable <strong>local echo</strong> and <strong>local line editing</strong>
+so that you can see what you type and correct mistakes.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you see nothing in the serial terminal after connecting, try pressing
+the reset button on the EVAL-ADICUP3029 development board.</p>
+</div>
 </section>
 <section id="available-commands">
 <h3>Available Commands<a class="headerlink" href="#available-commands" title="Link to this heading"></a></h3>
@@ -1152,15 +1170,28 @@ can cause unpredictable behavior.</p></td>
 the CN0414:</p>
 <ol class="arabic simple">
 <li><p><strong>Drag and Drop</strong> – Copy the <code class="docutils literal notranslate"><span class="pre">.hex</span></code> file to the DAPLINK drive. This is
-the easiest way to get started.</p></li>
+the easiest way to get started with the reference design. Using the drag
+and drop method, the software is a version that Analog Devices creates for
+testing and evaluation purposes.</p></li>
 <li><p><strong>Build and Debug using CCES</strong> – Import the project into CrossCore Embedded
-Studio to customize the software.</p></li>
+Studio to customize the software. This approach allows you to change
+parameters and adapt the software to fit your needs, but requires
+downloading the CrossCore toolchain.</p></li>
 </ol>
-<p><strong>Downloads:</strong></p>
+<div class="admonition-downloads admonition">
+<p class="admonition-title">Downloads</p>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0414.hex" target="_blank">Prebuilt CN0414 Hex File</a></p></li>
 <li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0414" target="_blank">CN0414 Source Code</a></p></li>
 </ul>
+</div>
+<section id="using-crosscore-embedded-studio">
+<h3>Using CrossCore Embedded Studio<a class="headerlink" href="#using-crosscore-embedded-studio" title="Link to this heading"></a></h3>
+<p>The official tool promoted for use with the EVAL-ADICUP3029 is CrossCore
+Embedded Studio (CCES). For detailed instructions on importing this demo
+project into CCES and configuring a debug session, refer to the
+EVAL-ADICUP3029 tools documentation.</p>
+</section>
 </section>
 <section id="project-structure">
 <h2>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h2>

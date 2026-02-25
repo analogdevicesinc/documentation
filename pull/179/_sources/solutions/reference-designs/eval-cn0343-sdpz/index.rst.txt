@@ -41,6 +41,11 @@ The CN0343 has three connectors:
 - **J2** -- RS-485 communication interface connector
 - **J3** -- :adi:`ADuC7126 <ADUC7126>` JTAG/SWD debug interface connector
 
+.. figure:: cn0343_connectors.png
+   :align: center
+
+   CN0343 board connector locations
+
 Power Supply Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -55,6 +60,11 @@ The **J2** connector on the CN0343 is used for the RS-485 communication
 interface. The CN0343 RS-485 interface works in half-duplex mode; only one
 twisted pair cable is needed to build the RS-485 network.
 
+.. figure:: cn0343_rs485.png
+   :align: center
+
+   CN0343 RS-485 connector (J2) pin mapping
+
 .. note::
 
    The RS-485 interface has limitations on the total number of devices in the
@@ -68,6 +78,11 @@ The **J3** connector on the CN0343 is used for the :adi:`ADuC7126 <ADUC7126>`
 MCU JTAG debug and firmware programming. The CN0343 **J3** JTAG 20-pin 0.1
 inch pitch connector pinout is compatible with the `SEGGER J-Link debug probe
 <https://www.segger.com/products/debug-probes/j-link>`__.
+
+.. figure:: cn0343_jtag.png
+   :align: center
+
+   CN0343 JTAG/SWD connector (J3) pin mapping
 
 Usage Instructions
 ------------------
@@ -87,6 +102,11 @@ The CN0343 has six tactile buttons: **UP**, **DOWN**, **LEFT**, **RIGHT**,
 
    In this section, *press button* or *button pressed* means a single click of
    the tactile button.
+
+.. figure:: cn0343_usage.png
+   :align: center
+
+   CN0343 LCD, buttons, and contrast potentiometer (R1)
 
 .. note::
 
@@ -231,6 +251,11 @@ Software Development Environment
 After downloading and installing the `Keil Embedded Development Tools for ARM
 <http://www.keil.com/>`__, open the Keil software IDE.
 
+.. figure:: keil_open.png
+   :align: center
+
+   Opening the CN0343 project in Keil IDE
+
 To open the CN0343 source code in Keil IDE:
 
 #. Click the **Open** button.
@@ -246,6 +271,11 @@ Downloading Firmware to the CN0343
 
 After software development, to download the binary firmware to the internal
 flash of :adi:`ADuC7126 <ADUC7126>`:
+
+.. figure:: keil_download.png
+   :align: center
+
+   Building and downloading firmware in Keil IDE
 
 #. Click the **Build All** button. Wait for the build to finish.
 #. Click the **Load** button. Wait for the download to finish.

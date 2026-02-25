@@ -662,7 +662,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -1009,14 +1009,42 @@ creation (see previous section).</p></li>
 <li><p>Press refresh to display available IIO Devices. Once adxrs290 appears, press
 connect.</p></li>
 </ol>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/iio_osc_connection.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/iio_osc_connection.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/iio_osc_connection.jpg" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">IIO Oscilloscope Connection Dialog</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Debug Panel:</strong>
 The Debug panel allows you to directly access the attributes of the device.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_debug.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_debug.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_debug.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">ADXRS290 Debug Panel</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>DMM Panel:</strong>
 Access the DMM panel to see the instantaneous reading of the X and Y angular
 velocities.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_dmm-2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_dmm-2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_dmm-2.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">ADXRS290 DMM Panel</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Waveform Panel:</strong>
 The Waveform panel (Capture window) displays the real-time waveform of the
 ADXRS290 response.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/iio_osc_graph.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/iio_osc_graph.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/iio_osc_graph.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">ADXRS290 Waveform Capture</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The readings from the DMM panel will freeze upon activation of the real-time
@@ -1092,10 +1120,32 @@ depending on whether you are using the RPi board or the ADICUP3029.</p></li>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>D:<span class="se">\p</span>yadi-iio<span class="se">\e</span>xamples&gt;python<span class="w"> </span>adxrs290.py
 </pre></div>
 </div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_output.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_output.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_output.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Output on Terminal</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>You can opt to see a real-time plot of the ADXRS290 output. To do this, open
 <code class="docutils literal notranslate"><span class="pre">adxrs290.py</span></code> and set <code class="docutils literal notranslate"><span class="pre">enable_plot</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>. A plot will pop up
-after running the code.</p></li>
+after running the code.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_enable-plot.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_enable-plot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_enable-plot.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Enable Plot Setting</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_plot.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_plot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/adxrs290_plot.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">ADXRS290 Real-Time Plot</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 </section>
@@ -1210,14 +1260,21 @@ Flow Control: none
 </div>
 <p>The user must press the reset button on ADICUP3029 each time they want to
 display the results.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/example_serial_output.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/example_serial_output.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxrs290-pmdz/example_serial_output.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Example Serial Terminal Output</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="digital-communications">
 <h3>Digital Communications<a class="headerlink" href="#digital-communications" title="Link to this heading"></a></h3>
 <p>Digital communication on the EVAL-ADXRS290-PMDZ is accomplished using a
 standard expanded SPI PMOD port.</p>
-<div class="table-wrapper docutils container" id="id1">
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Connector P1 Pinout</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id9">
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Connector P1 Pinout</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Description</p></th>
 <th class="head"><p>Pin(s)</p></th>

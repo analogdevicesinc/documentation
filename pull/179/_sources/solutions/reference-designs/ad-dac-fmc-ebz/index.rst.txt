@@ -87,7 +87,10 @@ Block Diagram
 
 The data path and clock domains are depicted on the below diagram.
 
-.. image:: dac_fmc_ebz_1.svg
+.. figure:: dac_fmc_ebz_1.svg
+   :align: center
+
+   DAC FMC EBZ Data Path and Clock Domains
 
 The data to be sent to DAC can have multiple sources:
 

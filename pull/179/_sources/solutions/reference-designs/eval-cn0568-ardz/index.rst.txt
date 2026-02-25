@@ -35,6 +35,11 @@ Required Equipment
 Hardware Setup
 --------------
 
+.. figure:: cn0568_board.jpg
+   :width: 600px
+
+   EVAL-CN0568-ARDZ evaluation board.
+
 The evaluation board mounts to the Arduino header of the SDP-K1 controller
 board.
 
@@ -50,9 +55,36 @@ Software Installation
    installation process.
 #. Follow the installation windows that appear to install the software in the
    default location.
+
+   .. figure:: installer1.jpg
+      :width: 400px
+
+      Installation wizard welcome screen.
+
+   .. figure:: installer3.jpg
+      :width: 400px
+
+      Installation directory selection.
+
+   .. figure:: installer4.jpg
+      :width: 400px
+
+      Installation progress.
+
+   .. figure:: installer5.jpg
+      :width: 400px
+
+      Installation complete.
+
 #. After the CN0568 software has been installed, an installation window for the
    SDP drivers will appear. If the SDP drivers have not previously been
    installed on the machine, proceed with this installation step.
+
+   .. figure:: installer_sdpdrivers6.jpg
+      :width: 400px
+
+      SDP drivers installation window.
+
 #. Load the custom firmware to the SDP-K1 board by dragging and dropping the
    ``SDP_K1_release.hex`` file (contained within the software download folder)
    to the SDP-K1 drive listed in the Devices and Drives of "This PC" within
@@ -73,6 +105,11 @@ The interface used to control the circuit has three regions:
    register directly.
 #. **Log window** -- Shows the most recent transactions to the user. A log can
    be saved of all activity in a session.
+
+.. figure:: software_structure.png
+
+   Software interface structure showing graphical control, register, and log
+   regions.
 
 Device Connection
 ~~~~~~~~~~~~~~~~~
@@ -133,6 +170,10 @@ that the user specifies for the hop. The dwell time at each frequency is input
 in the **Time Delay** field. A frequency hop is started by pressing the
 **Start** button and stopped using the **Stop** button.
 
+.. figure:: hopfunction.png
+
+   Hop Function tab interface.
+
 Dual Board Control
 ^^^^^^^^^^^^^^^^^^^
 
@@ -142,6 +183,10 @@ first be selected in the Board Configuration section prior to establishing a
 software connection. When using the dual board configuration, the user can
 select which board is being controlled through SPI writes using the **Board
 Select** drop-down box on the upper right within the Main Controls tab.
+
+.. figure:: boardselect.png
+
+   Board Select drop-down for dual board configuration.
 
 To use the dual board configuration, one of the boards needs to be
 reconfigured to receive SPI on a different LE signal line. To do this, remove
@@ -158,6 +203,10 @@ the register map section of the :adi:`ADF41513` data sheet.
 
 Evaluation Procedure
 ---------------------
+
+.. figure:: setup_circuit_note1.jpg
+
+   EVAL-CN0568-ARDZ evaluation setup.
 
 #. Download and install the :adi:`CN0568` board software from the product page.
 #. Set up the evaluation board with:
@@ -178,9 +227,18 @@ Evaluation Procedure
    - The current drawn on the +5 V supply should be between 150--180 mA.
    - The current drawn on the +25 V supply should be approximately 4 mA.
 
+   .. figure:: software_image.png
+
+      CN0568 software interface after initialization.
+
 #. In the spectrum analyzer instrument, set up a phase noise measurement.
 #. Input the first test frequency for the variant used in the **VCO Out** box
    and press **Update Frequency**.
+
+   .. figure:: updatefrequency.png
+
+      Update Frequency control in the software interface.
+
 #. Wait until the instrument locks to the output frequency and displays the
    phase noise profile on screen. Note the phase noise at offsets of 100 kHz,
    1 MHz, and 10 MHz.

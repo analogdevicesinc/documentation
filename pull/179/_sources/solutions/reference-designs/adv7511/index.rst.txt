@@ -66,9 +66,20 @@ The following steps set up the system with the no-OS reference design:
 #. Choose the carrier board in software by uncommenting the appropriate define
    in the ``src/app_config.h`` file (for example ``#define PLATFORM_ZED`` for
    the ZedBoard).
+
+   .. figure:: adv7511_platform_selection.png
+      :align: center
+
+      Platform selection in app_config.h
+
 #. Build the no-OS software project following the
    `no-OS build instructions <https://github.com/analogdevicesinc/no-OS/wiki>`__.
 #. If programming was successful, messages will appear on the UART terminal.
+
+.. figure:: adv7511_lib_test.png
+   :align: center
+
+   No-OS ADV7511 HDMI transmitter application terminal output
 
 The reference design demonstrates how to:
 
@@ -240,6 +251,11 @@ the following settings:
 - Parity: None
 - Stop bits: 1 bit
 - Flow Control: None
+
+.. figure:: adv7511_uart.png
+   :align: center
+
+   ADV7511 UART terminal output showing video resolution options
 
 Linux Driver
 ~~~~~~~~~~~~

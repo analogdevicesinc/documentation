@@ -43,8 +43,19 @@ Evaluation Board Hardware
 Primary Side
 ~~~~~~~~~~~~
 
+.. figure:: eval-cn0551-ebz-top.png
+   :align: center
+
+   Top View of EVAL-CN0551-EBZ
+
 RFIN Plug (J1)
 ^^^^^^^^^^^^^^
+
+.. figure:: eval-cn0551-ebz-rfin.png
+   :align: right
+   :width: 150px
+
+   RFIN Port
 
 The RF input to the evaluation board must be connected to the male SMA
 connector **J1**.
@@ -57,6 +68,12 @@ connector **J1**.
 RFOUT Port (J2)
 ^^^^^^^^^^^^^^^
 
+.. figure:: eval-cn0551-ebz-rfout.png
+   :align: right
+   :width: 150px
+
+   RFOUT Port
+
 The RF output of the evaluation board must be connected to the female SMA
 connector **J2**.
 
@@ -68,6 +85,12 @@ connector **J2**.
 
 LED Indicators (POWER and TOVER)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: eval-cn0551-ebz-led.png
+   :align: right
+   :width: 100px
+
+   LED Indicators
 
 The evaluation board uses two LEDs to indicate its current status. The green
 LED (POWER) lights up when power is present on the board; the red LED (TOVER)
@@ -93,6 +116,12 @@ exceeding the temperature switch trip point.
 Power Supply Connector (P1)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: eval-cn0551-ebz-usb.png
+   :align: right
+   :width: 150px
+
+   Micro-USB Port
+
 A +5 V power supply must be connected to the VCC line through the micro-USB
 port **P1**.
 
@@ -108,8 +137,19 @@ port **P1**.
 Secondary Side
 ~~~~~~~~~~~~~~
 
+.. figure:: eval-cn0551-ebz-bottom.png
+   :align: center
+
+   Bottom View of EVAL-CN0551-EBZ
+
 Changing the Temperature Switch Trip Point (JP1 and JP2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: eval-cn0551-ebz-jumpers.png
+   :align: right
+   :width: 100px
+
+   ADT6401 Jumper Settings
 
 The trip point of the temperature switch can be set using the solder jumpers
 **JP1** and **JP2**, as shown in the table below. When the board temperature
@@ -168,6 +208,17 @@ the amplifier stages.
 
 Connecting the EVAL-CN0551-EBZ to the ADALM-PLUTO
 ---------------------------------------------------
+
+.. figure:: cn0417.png
+   :align: center
+   :width: 400px
+
+   Connecting the evaluation board to the ADALM-PLUTO
+
+.. note::
+
+   An EVAL-CN0417-EBZ is shown in this picture. However, the same connections
+   also apply for the EVAL-CN0551-EBZ.
 
 To properly operate the EVAL-CN0551-EBZ using the :adi:`ADALM-PLUTO`, follow
 the steps below:

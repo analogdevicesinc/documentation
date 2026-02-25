@@ -59,6 +59,11 @@ Power Rails Efficiency Measurements
 The test setup for power rails efficiency measurements uses the following
 configuration:
 
+.. figure:: block.png
+   :align: center
+
+   Test setup functional block diagram for power rails efficiency measurements
+
 .. admonition:: Efficiency Formula
 
    Efficiency = P\ :sub:`OUT` / P\ :sub:`IN` = (V\ :sub:`OUT` x
@@ -73,6 +78,12 @@ configuration:
 Ripple and Transient Response Measurements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. figure:: block2.png
+   :align: center
+
+   Test setup functional block diagram for ripple and transient response
+   measurements
+
 For ripple and transient response measurements:
 
 - Channel A of the oscilloscope monitors the output voltage of the module.
@@ -83,6 +94,11 @@ For ripple and transient response measurements:
 
 Connectors and Jumper Configurations
 ------------------------------------
+
+.. figure:: boardwithdes.png
+   :align: center
+
+   EVAL-CN0190-EB1Z board connectors and jumper layout
 
 Input Power
 ~~~~~~~~~~~
@@ -153,8 +169,13 @@ Switch Matrix
 ~~~~~~~~~~~~~
 
 To select the VDD/VEE outputs on Connector 12 and Connector 13, the switch
-matrix must be configured. Refer to the switch matrix table printed on the
-evaluation board PCB to select the desired output voltages.
+matrix must be configured. Use the following table to select the desired output
+voltages:
+
+.. figure:: sw1.png
+   :align: center
+
+   Switch matrix configuration for VDD/VEE output selection
 
 I2C Programming Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,14 +218,30 @@ Driver Installation
 2. Open the file ``setup.exe`` located at the path
    ``\ADMxxxx Run-Time Installer\Installer\Volume\setup.exe``.
 
+   .. figure:: usb1.png
+      :align: center
+
+      USB-SDP-CABLEZ driver setup
+
    .. note::
 
       It is recommended that you install the software to the default directory.
 
 3. Follow the on-screen prompts to install the software.
+
+   .. figure:: usb2.png
+      :align: center
+
+      USB-SDP-CABLEZ driver installation prompts
+
 4. Plug in the USB-SDP-CABLEZ into your PC using the USB cable.
 5. Windows will automatically find the new hardware (USB-SDP-CABLEZ) plugged
    into the PC.
+
+   .. figure:: newdevice.png
+      :align: center
+
+      Windows new hardware detection for USB-SDP-CABLEZ
 
 Sequencer Software Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -212,15 +249,67 @@ Sequencer Software Installation
 1. Open the file ``setup.exe`` located at the path
    ``\SuperSequencer Apps SW Installer\Volume\setup.exe``.
 
+   .. figure:: soft1.png
+      :align: center
+
+      SuperSequencer software setup
+
    .. note::
 
       It is recommended that you install the SuperSequencer evaluation software
       to the default directory path ``C:\Program Files\``.
 
 2. Follow the on-screen prompts to install the software.
+
+   .. figure:: soft2.png
+      :align: center
+
+      SuperSequencer installation wizard
+
+   .. figure:: soft3.png
+      :align: center
+
+      SuperSequencer license agreement
+
+   .. figure:: soft4.png
+      :align: center
+
+      SuperSequencer installation directory selection
+
+   .. figure:: soft5.png
+      :align: center
+
+      SuperSequencer installation complete
+
 3. Install Graphviz.
+
+   .. figure:: soft6.png
+      :align: center
+
+      Graphviz installation
+
 4. Upon completion, follow the on-screen prompts to install the prog106x Setup
    Application Software.
+
+   .. figure:: soft7.png
+      :align: center
+
+      prog106x setup wizard
+
+   .. figure:: soft8.png
+      :align: center
+
+      prog106x license agreement
+
+   .. figure:: soft9.png
+      :align: center
+
+      prog106x installation directory selection
+
+   .. figure:: soft10.png
+      :align: center
+
+      prog106x installation complete
 
 .. note::
 
@@ -241,9 +330,27 @@ strategy and generate a new Intel hex file for the ADM1066. To generate a new
 hex file:
 
 1. Open ``SuperSequencerSoftwareEval.exe`` installed on the PC.
+
+   .. figure:: sequencer_icon.png
+      :align: center
+
+      SuperSequencer software icon
+
 2. Assuming all new configurations and controls have been set in the software,
    go to **File** and click **Save Settings to File**.
+
+   .. figure:: savesettings.png
+      :align: center
+
+      Save Settings to File menu option
+
 3. Select **Create Intel Hex File** and click **Save**.
+
+   .. figure:: hexfile.png
+      :align: center
+
+      Create Intel Hex File dialog
+
 4. Once saving is completed, the new hex file is ready to be downloaded to the
    ADM1066.
 
@@ -255,6 +362,11 @@ Downloading Firmware for ADM1066
 
 2. Plug the USB-to-I2C converter dongle into the USB port on the PC. Plug the
    other end of the cable into JP1 on the right side of the EVAL-CN0190-EB1Z.
+
+   .. figure:: usbtosdp.png
+      :align: center
+
+      USB-SDP-CABLEZ connected to the EVAL-CN0190-EB1Z
 
    .. note::
 
@@ -269,6 +381,11 @@ Downloading Firmware for ADM1066
 
 4. Open the Command Prompt (``C:\Windows\System32\cmd.exe``).
 
+   .. figure:: cmd.png
+      :align: center
+
+      Windows Command Prompt
+
 5. In the command prompt, enter:
 
    .. code-block:: none
@@ -282,8 +399,13 @@ Downloading Firmware for ADM1066
       The hex file name may differ depending on the user's custom
       configuration.
 
-6. The on-chip EEPROM of ADM1066 is successfully programmed if the download
-   completes without errors after several seconds.
+6. The on-chip EEPROM of ADM1066 is successfully programmed if the screen
+   displays the following output after several seconds.
+
+   .. figure:: program.png
+      :align: center
+
+      Successful ADM1066 EEPROM programming output
 
 7. Remove power or turn off the power supply, then re-apply power to make the
    ADM1066 update the program from the embedded EEPROM.

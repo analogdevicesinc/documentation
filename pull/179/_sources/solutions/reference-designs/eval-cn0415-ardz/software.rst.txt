@@ -60,6 +60,13 @@ The combined ADC code with respect to current sense:
 signal is driven by the ADICUP3029's PWM peripheral, allowing the effective
 voltage across the solenoid to be varied.
 
+The software implements several functions with the sense and actuator blocks.
+PWM frequency and duty cycle can be controlled directly. This mode of operation
+would normally be combined with an outer feedback loop in a control system. One
+example would be a system in which the solenoid controls air pressure, that is
+in turn measured by a pressure sensor, which is then used to determine a new
+duty cycle value that brings the pressure closer to the desired setpoint.
+
 PID Controller
 ~~~~~~~~~~~~~~
 

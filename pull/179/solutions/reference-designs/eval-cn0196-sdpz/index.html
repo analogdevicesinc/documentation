@@ -657,7 +657,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -930,6 +930,12 @@ The circuit also provides galvanic isolation between the control side and power
 side. This circuit can be used in motor control, power conversion with embedded
 control interface, lighting, audio amplifiers, and uninterruptible power
 supplies (UPS).</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_board.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_board.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0196-EB1Z Evaluation Board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>Modern microprocessors and micro converters are generally low power and operate
 on low supply voltages. Source and sink current for 2.5 V CMOS logic outputs
 ranges from uA to mA. Driving an H-bridge switching 12 V with a 4 A peak
@@ -956,10 +962,10 @@ be up to 85 A, which is limited by the maximum allowable MOSFET current.</p>
 microcontroller with integrated pulse width modulated (PWM) controllers that
 have outputs that can be configured to drive an H-bridge after suitable level
 translation and conditioning.</p>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id3">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_block_diagram.png" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0196 Test Setup Functional Block Diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0196 Test Setup Functional Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -993,6 +999,12 @@ EVAL-ADuC7061-MKZ board.</p></li>
 </section>
 <section id="connectors-and-jumper-configurations">
 <h3>Connectors and Jumper Configurations<a class="headerlink" href="#connectors-and-jumper-configurations" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_connectors.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_connectors.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-CN0196-EB1Z Connectors and Jumper Locations</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Switch S1</strong>: ON state provides isolated side PWM pulses; OFF state makes the
 PWM disappear.</p>
 <p><strong>Jumper Link LK1</strong>: Shorting pin 1 and 2 sets the source terminal of the
@@ -1079,33 +1091,86 @@ the default directory path
 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\CN0196\</span></code> and all National Instruments
 products to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>.</p>
 </div>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_license_agreement.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_license_agreement.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CN0196 Software License Agreement</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Follow the on-screen prompts to install the software.</p></li>
 </ol>
 </section>
 <section id="downloading-firmware-to-eval-aduc7061-mkz">
 <h3>Downloading Firmware to EVAL-ADuC7061-MKZ<a class="headerlink" href="#downloading-firmware-to-eval-aduc7061-mkz" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Connect the EVAL-ADuC7061-MKZ to the PC using a USB cable, then find the
-COM port assigned to this board in the Device Manager.</p></li>
+COM port assigned to this board in the Device Manager.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_device_manager.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_device_manager.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Device Manager Showing USB Serial Port Assignment</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Open the software <strong>ARMWSD.exe</strong> located in the ARMWSD folder, or at
-<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\CN0196\ARMWSD\ARMWSD.exe</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\CN0196\ARMWSD\ARMWSD.exe</span></code>.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_armwsd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_armwsd.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">ARMWSD Firmware Download Tool</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Click the <strong>Configure</strong> button. Go to the <strong>Parts</strong> tab and select
 <strong>ADuC7061</strong>. Go to the <strong>Comms</strong> tab and set the serial port according to
 the port number indicated in the PC Device Manager and set the baud rate
-to 9600.</p></li>
-<li><p>Change to the <strong>Commands</strong> tab and set the Flash and Run selection.</p></li>
+to 9600.</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_armwsd_configure.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_armwsd_configure.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">ARMWSD Configure Dialog – Parts and Comms Tabs</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Change to the <strong>Commands</strong> tab and set the Flash and Run selection.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_armwsd_commands.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_armwsd_commands.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">ARMWSD Configure Dialog – Commands Tab</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>After setting the configuration, click <strong>Browse</strong> and select the file
 <strong>PWM Generator for EVAL-CN0196-EB1Z.hex</strong> found in the EVAL-ADuC7061-MKZ
 Firmware folder. Then click <strong>Start</strong>. A message will tell how to download
 the firmware: press <strong>S2</strong> on the EVAL-ADuC7061-MKZ and hold it down, then
 click <strong>S1</strong> on the EVAL-ADuC7061-MKZ. After the downloading process shows
-“Flashing Complete”, click the <strong>Run</strong> button.</p></li>
+“Flashing Complete”, click the <strong>Run</strong> button.</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_armwsd_download.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_armwsd_download.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">ARMWSD Firmware Download and Flashing Process</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="using-the-evaluation-software">
 <h3>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h3>
 <p>The evaluation software front panel provides the following controls:</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_software_pwm.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_software_pwm.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">CN0196 Evaluation Software – PWM Configuration Tab</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_software_load.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0196-sdpz/cn0196_software_load.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">CN0196 Evaluation Software – Load Configuration Tab</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Section 1 – Connection Controls</strong></p>
 <ul class="simple">
 <li><p><strong>Connect</strong> – Sets up connection between EVAL-CN0196-EB1Z and

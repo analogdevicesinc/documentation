@@ -653,7 +653,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -933,6 +933,13 @@ relationship to Earth ground is unknown.</p>
 <p>The circuit will survive up to 100 V reverse connection to a power source, with
 a green LED indicating correct input polarity and a red LED indicating reverse
 polarity.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/picture1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/picture1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/picture1.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0509-EBZ board</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="features">
 <h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
@@ -960,6 +967,13 @@ power pack) and a USB charging cable for the device</p></li>
 </section>
 <section id="board-layout">
 <h2>Board Layout<a class="headerlink" href="#board-layout" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/block_dia.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/block_dia.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/block_dia.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0509-EBZ block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>P1</strong> – Screw terminal block for input supply</p></li>
 <li><p><strong>P2</strong> – USB output connectors for load (two ports)</p></li>
@@ -1026,6 +1040,13 @@ peak current limit to 3.7 A.</p></td>
 </section>
 <section id="usb-output-connectors">
 <h3>USB Output Connectors<a class="headerlink" href="#usb-output-connectors" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/usb_stack.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/usb_stack.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/usb_stack.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">USB output connectors</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The board provides a dual-port stacked USB Type-A connector:</p>
 <ul class="simple">
 <li><p><strong>Bottom receptacle</strong> – Includes a USB Dedicated Charging Port (DCP)
@@ -1037,6 +1058,13 @@ manufacturers.</p></li>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/setup_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/setup_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/setup_2.png" style="width: 850px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Test setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic">
 <li><p>Connect the input DC supply to <strong>P1</strong> on the EVAL-CN0509-EBZ.</p>
 <div class="admonition warning">
@@ -1072,6 +1100,13 @@ charging current if the voltage on the load drops below a certain level.
 The maximum charging current on the P2 lower port that CN0509 can provide
 is available when the output voltage to the load is greater than 5 V.</p>
 </div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/max_curr.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/max_curr.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0509-ardz/max_curr.png" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Maximum charging current on P2 lower port</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="documents">
 <h2>Documents<a class="headerlink" href="#documents" title="Link to this heading"></a></h2>

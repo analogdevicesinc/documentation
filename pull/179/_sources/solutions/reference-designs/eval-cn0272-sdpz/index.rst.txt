@@ -73,8 +73,28 @@ Software Installation
       all National Instruments products to
       ``C:\Program Files\National Instruments\``.
 
+   .. figure:: cn0272-install1.png
+      :width: 500 px
+      :align: center
+
+      CN0272 Software Installer
+
 #. Click **Next** to view the installation review page.
+
+   .. figure:: cn0272-install2.png
+      :width: 500 px
+      :align: center
+
+      Installation Review Page
+
 #. Click **Next** to start the installation.
+
+   .. figure:: cn0272-install3.png
+      :width: 500 px
+      :align: center
+
+      Installation in Progress
+
 #. Upon completion of the CN0272 SDP Eval Software installation, the installer
    for the **ADI SDP Drivers** will execute.
 
@@ -83,6 +103,12 @@ Software Installation
       Close all other applications before clicking **Next** to allow updating
       relevant system files without rebooting.
 
+   .. figure:: cn0272-install4.png
+      :width: 500 px
+      :align: center
+
+      ADI SDP Drivers Installer
+
 #. Press **Next** to set the installation location for the SDP Drivers.
 
    .. note::
@@ -90,8 +116,20 @@ Software Installation
       It is recommended to install the drivers to the default directory path
       ``C:\Program Files\Analog Devices\SDP\Drivers``.
 
+   .. figure:: cn0272-install5.png
+      :width: 500 px
+      :align: center
+
+      SDP Drivers Installation Location
+
 #. Press **Next** to install the SDP Drivers and complete the installation.
    Click **Finish** when done.
+
+   .. figure:: cn0272-install6.png
+      :width: 500 px
+      :align: center
+
+      SDP Drivers Installation Complete
 
 Connecting the Hardware
 -----------------------
@@ -207,10 +245,15 @@ Software Controls and Indicators
 #. **System Status LED Indicator** -- Displays the current software state as
    a colored LED:
 
-   - **Grey**: Inactive
-   - **Yellow**: Busy
-   - **Blue**: ADC in Power-Down
-   - **Red**: Error
+   - |inactive| Inactive
+   - |busy| Busy
+   - |powerdown| ADC in Power-Down
+   - |error| Error
+
+   .. |inactive| image:: cn0272-software-inactive.png
+   .. |busy| image:: cn0272-software-busy.png
+   .. |powerdown| image:: cn0272-software-powerdown.png
+   .. |error| image:: cn0272-software-error.png
 
 Establishing a USB Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -226,6 +269,12 @@ Establishing a USB Connection
 #. Select the connector from the **SDP Connector Dropdown Menu**.
 #. Click the **Connect to SDP-B Board Button**. A progress bar window will
    load.
+
+   .. figure:: cn0272-software-wait.png
+      :align: center
+
+      USB Connection Progress Bar
+
 #. Upon success, the System Status String Indicator displays
    *SDP-B Ready to Take Snapshot(s)*.
 
@@ -266,6 +315,12 @@ Saving a Single Snapshot to a Spreadsheet File
 #. Capture a single snapshot.
 #. Click the **Save Snapshot(s)** button.
 #. Select either **Microamps (uA)** or **ADC Codes**.
+
+   .. figure:: cn0272-software-save_units.png
+      :align: center
+
+      Save Units Selection Dialog
+
 #. Click **OK**.
 #. Browse to the save location, name the file, and click **OK**.
 
@@ -286,6 +341,12 @@ Saving Multiple Snapshots to a Spreadsheet File
      save.
 
 #. Select either **Microamps (uA)** or **ADC Codes**.
+
+   .. figure:: cn0272-software-save_full.png
+      :align: center
+
+      Save Multiple Snapshots Dialog
+
 #. Click **OK**.
 #. Browse to the save location, name the file, and click **OK**.
 

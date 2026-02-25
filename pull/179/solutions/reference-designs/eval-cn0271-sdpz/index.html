@@ -659,7 +659,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -1107,7 +1107,13 @@ the data collected.</p></li>
 <li><p><strong>System Status String Indicator</strong> – Displays a message detailing the
 current state of the software.</p></li>
 <li><p><strong>System Status LED Indicator</strong> – Displays the current state of the
-software in the form of an LED (Inactive, Busy, or Error).</p></li>
+software in the form of an LED. There are three status LED colors:</p>
+<ul class="simple">
+<li><p><img alt="inactive" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0271-sdpz/cn0272-software-inactive.png" /> Inactive</p></li>
+<li><p><img alt="busy" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0271-sdpz/cn0272-software-busy.png" /> Busy</p></li>
+<li><p><img alt="error" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0271-sdpz/cn0272-software-error.png" /> Error</p></li>
+</ul>
+</li>
 <li><p><strong>Update Rate Radio Buttons</strong> – Used to change the output word rate of the
 <a class="icon adi reference external" href="https://www.analog.com/AD7790" target="_blank">AD7790</a>. The default value is 120 Hz.</p></li>
 <li><p><strong>Burnout Current Radio Buttons</strong> – When enabled, the 100 nA current
@@ -1163,7 +1169,14 @@ hardware as described in the previous sections.</p></li>
 </div>
 </li>
 <li><p>Click the <strong>Connect/Reconnect Button</strong>. A window with a progress bar will
-load.</p></li>
+load.</p>
+<figure class="align-default" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0271-sdpz/cn0271-software-wait.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0271-sdpz/cn0271-software-wait.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">USB connection progress bar</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon success, the System Status String Indicator will display
 <em>SDP Board Ready to Acquire Data</em>.</p></li>
 </ol>

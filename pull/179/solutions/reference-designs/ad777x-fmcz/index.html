@@ -103,7 +103,9 @@
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#ip-cores-used">IP Cores Used</a></li>
+<li><a class="reference internal" href="#axi-ad777x-block-diagram">AXI_AD777x Block Diagram</a></li>
 <li><a class="reference internal" href="#axi-ad777x-interface">AXI_AD777x Interface</a></li>
+<li><a class="reference internal" href="#axi-ad777x-detailed-architecture">AXI_AD777x Detailed Architecture</a></li>
 <li><a class="reference internal" href="#memory-map">Memory Map</a></li>
 <li><a class="reference internal" href="#gpio-signals">GPIO Signals</a></li>
 <li><a class="reference internal" href="#design-guidelines">Design Guidelines</a></li>
@@ -667,7 +669,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -994,6 +996,12 @@ DMA transfer. The AD777x is controlled via the Zynq-7000 SPI 0 interface.</p>
 includes a parallel CRC check algorithm for data integrity validation. The
 core provides real-time access to per-channel data headers and CRC mismatch
 flags.</p>
+<figure class="align-center" id="id1">
+<img alt="../../../_images/ad7768evb_fmc_hdl1.svg" src="../../../_images/ad7768evb_fmc_hdl1.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD777x-FMCZ HDL system block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="ip-cores-used">
 <h3>IP Cores Used<a class="headerlink" href="#ip-cores-used" title="Link to this heading"></a></h3>
 <div class="table-wrapper docutils container">
@@ -1020,6 +1028,15 @@ flags.</p>
 </tbody>
 </table>
 </div>
+</section>
+<section id="axi-ad777x-block-diagram">
+<h3>AXI_AD777x Block Diagram<a class="headerlink" href="#axi-ad777x-block-diagram" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<img alt="../../../_images/block_diagram_ad777x.svg" src="../../../_images/block_diagram_ad777x.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AXI_AD777x IP core block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="axi-ad777x-interface">
 <h3>AXI_AD777x Interface<a class="headerlink" href="#axi-ad777x-interface" title="Link to this heading"></a></h3>
@@ -1102,6 +1119,15 @@ flags.</p>
 </tbody>
 </table>
 </div>
+</section>
+<section id="axi-ad777x-detailed-architecture">
+<h3>AXI_AD777x Detailed Architecture<a class="headerlink" href="#axi-ad777x-detailed-architecture" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<img alt="../../../_images/architecture_ad777x.svg" src="../../../_images/architecture_ad777x.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AXI_AD777x IP core detailed architecture</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="memory-map">
 <h3>Memory Map<a class="headerlink" href="#memory-map" title="Link to this heading"></a></h3>

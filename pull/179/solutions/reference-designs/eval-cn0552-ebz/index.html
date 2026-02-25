@@ -96,11 +96,44 @@
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0552-PMDZ</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
-<li><a class="reference internal" href="#documents">Documents</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#connectors-and-configuration">Connectors and Configuration</a><ul>
+<li><a class="reference internal" href="#input-output-connections">Input/Output Connections</a></li>
+<li><a class="reference internal" href="#digital-communications">Digital Communications</a></li>
+<li><a class="reference internal" href="#solder-jumpers">Solder Jumpers</a></li>
+<li><a class="reference internal" href="#test-points">Test Points</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#device-driver-support">Device Driver Support</a></li>
+<li><a class="reference internal" href="#general-setup-using-adicup3029">General Setup Using ADICUP3029</a><ul>
+<li><a class="reference internal" href="#demo-requirements">Demo Requirements</a></li>
+<li><a class="reference internal" href="#setting-up-the-hardware">Setting up the Hardware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-setup-using-raspberry-pi">General Setup Using Raspberry Pi</a><ul>
+<li><a class="reference internal" href="#id1">Demo Requirements</a></li>
+<li><a class="reference internal" href="#loading-image-on-sd-card">Loading Image on SD Card</a></li>
+<li><a class="reference internal" href="#configuring-the-sd-card">Configuring the SD Card</a></li>
+<li><a class="reference internal" href="#id2">Setting up the Hardware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-adicup3029-and-raspberry-pi">Software (ADICUP3029 and Raspberry Pi)</a><ul>
+<li><a class="reference internal" href="#connection">Connection</a></li>
+<li><a class="reference internal" href="#iio-commands">IIO Commands</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope">IIO Oscilloscope</a><ul>
+<li><a class="reference internal" href="#debug-panel">Debug Panel</a></li>
+<li><a class="reference internal" href="#dmm-panel">DMM Panel</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pyadi-iio">PyADI-IIO</a><ul>
+<li><a class="reference internal" href="#running-the-example">Running the Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+<li><a class="reference internal" href="#documents">Documents</a></li>
+<li><a class="reference internal" href="#reference-demos-and-software">Reference Demos and Software</a></li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
 </ul>
@@ -648,7 +681,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -913,42 +946,575 @@ Content on this topic
 <p>Capacitance-to-Digital Converter.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p><a class="icon adi reference external" href="https://www.analog.com/CN0552" target="_blank">CN0552</a> is a capacitance-to-digital converter evaluation board with I2C
-interface for capacitive sensor applications, featuring adjustable data rates
-and integrated temperature measurement.</p>
-<p>The circuit uses the <a class="icon adi reference external" href="https://www.analog.com/AD7746" target="_blank">AD7746</a> capacitance-to-digital converter with
-adjustable output data rate (9.1 SPS to 90.9 SPS), optimized 16.1 SPS setting
-for 50 Hz and 60 Hz noise rejection, and integrated temperature measurement
-(0.1 deg C resolution, ±2 deg C accuracy).</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0552" target="_blank">EVAL-CN0552-PMDZ</a> is a
+<a class="icon link reference external" href="https://reference.digilentinc.com/pmod/start" target="_blank">PMOD</a> form-factor evaluation
+board for the <a class="icon adi reference external" href="https://www.analog.com/AD7746" target="_blank">AD7746</a>, a high resolution, sigma-delta capacitance-to-digital
+converter (CDC). The architecture features inherent high resolution (24-bit no
+missing codes, up to 21-bit effective resolution), high linearity (±0.01%),
+and high accuracy (±4 fF factory calibrated).</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/actual_hardware.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/actual_hardware.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/actual_hardware.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0552-PMDZ</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0552" target="_blank">CN0552 Circuit Note</a> has two capacitive inputs with each
+channel configurable as single-ended or differential. The capacitance input
+range is ±4.096 pF at a maximum bulk capacitance of 17 pF but is capable of
+extending up to ±50 pF with a maximum bulk capacitance of 200 pF which can be
+balanced by a programmable on-chip, digital-to-capacitance converter (CAPDAC).</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/cn0552_block_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/cn0552_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/cn0552_block_diagram.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0552 Block Diagram</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The output data rate is adjustable from 9.1 SPS to 90.9 SPS, with the 16.1 SPS
+setting providing strong rejection of both 50 Hz and 60 Hz power line noise.
+The CDC also provides temperature measurement with a resolution of 0.1 deg C
+and accuracy of ±2 deg C for temperature compensation and system calibration.</p>
+<p>The CN0552 is compatible with I2C PMOD platform boards, with an I/O voltage
+from 2.7 V to 5.5 V.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/i2c_con.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/i2c_con.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/i2c_con.png" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">I2C Connection</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
-<section id="required-equipment">
-<h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>EVAL-CN0552-PMDZ evaluation board</p></li>
-<li><p>PMOD-compatible I2C host platform</p></li>
-<li><p>Micro-USB power supply (2.7–5.5 V I/O voltage)</p></li>
+<li><p>Interfaces to single or differential floating sensors</p></li>
+<li><p>Resolution down to 4 aF (up to 21 ENOB)</p></li>
+<li><p>Accuracy: 4 fF</p></li>
+<li><p>Linearity: 0.01%</p></li>
+<li><p>Common mode (not changing) capacitance up to 17 pF</p></li>
+<li><p>Full-scale (changing) capacitance range: ±4 pF</p></li>
+<li><p>Tolerant of parasitic capacitance to ground up to 60 pF</p></li>
+<li><p>Update rate: 10 Hz to 90 Hz</p></li>
+<li><p>Simultaneous 50 Hz and 60 Hz rejection at 16 Hz</p></li>
 </ul>
 </section>
-<section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<section id="connectors-and-configuration">
+<h2>Connectors and Configuration<a class="headerlink" href="#connectors-and-configuration" title="Link to this heading"></a></h2>
+<p>By default, the EVAL-CN0552-PMDZ is configured to be controlled and powered
+from the PMOD connector using standard connections.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/eval-cn0552-pmdztop-edited.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/eval-cn0552-pmdztop-edited.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/eval-cn0552-pmdztop-edited.png" style="width: 650px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">EVAL-CN0552-PMDZ Connector Layout</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="input-output-connections">
+<h3>Input/Output Connections<a class="headerlink" href="#input-output-connections" title="Link to this heading"></a></h3>
+<p>All the analog and digital input/output pins available on the EVAL-CN0552-PMDZ
+are brought out to two separate 8-row 0.1” through-hole connectors P8 and P13.</p>
+<div class="table-wrapper docutils container" id="id7">
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Connector P8</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Pin(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EXCA</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXCB</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>EXC_EXTENDED</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>REFIN_POS</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>REFIN_NEG</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>CIN1_NEG</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>CIN1_POS</p></td>
+<td><p>8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container" id="id8">
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Connector P13</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Pin(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GND</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>VDD</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>GND</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>VIN_NEG</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>VIN_POS</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>CIN2_NEG</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>CIN2_POS</p></td>
+<td><p>8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="digital-communications">
+<h3>Digital Communications<a class="headerlink" href="#digital-communications" title="Link to this heading"></a></h3>
+<p>The digital communication on the EVAL-CN0552-PMDZ is accomplished using a
+standard I2C PMOD port.</p>
+<div class="table-wrapper docutils container" id="id9">
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Connector P2</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Pin(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>INT</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>RST</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>SCL</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>SDA</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>GND</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOVDD</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="solder-jumpers">
+<h3>Solder Jumpers<a class="headerlink" href="#solder-jumpers" title="Link to this heading"></a></h3>
+<p>Eight solder jumpers are available at the bottom of the board to change the
+operating modes. See the schematic for more details.</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/eval-cn0552-pmdztop-web.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/eval-cn0552-pmdztop-web.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/eval-cn0552-pmdztop-web.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">EVAL-CN0552-PMDZ Solder Jumpers</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id11">
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Solder Jumper Configuration</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 60.0%" />
+<col style="width: 15.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description and Default Connection</p></th>
+<th class="head"><p>Solder Jumper</p></th>
+<th class="head"><p>Default Position</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ADC SDA connection (pull-up SDA to VDD)</p></td>
+<td><p>P1</p></td>
+<td><p>Shorted</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC SCL connection (pull-up SCL to VDD)</p></td>
+<td><p>P7</p></td>
+<td><p>Shorted</p></td>
+</tr>
+<tr class="row-even"><td><p>Extended Excitation Enable (connect A1 OUT to P8 pin 3)</p></td>
+<td><p>P14</p></td>
+<td><p>Shorted</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC REFIN(-) connection (connect GND and P8 pin 5)</p></td>
+<td><p>P3</p></td>
+<td><p>Open</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC REFIN(+) connection (connect GND and P8 pin 4)</p></td>
+<td><p>P9</p></td>
+<td><p>Open</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC CIN1(-) connection (connect GND to P8 pin 7)</p></td>
+<td><p>P4</p></td>
+<td><p>Open</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC CIN1(+) connection (connect GND to P8 pin 8)</p></td>
+<td><p>P10</p></td>
+<td><p>Open</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC CIN2(-) connection (connect GND to P13 pin 7)</p></td>
+<td><p>P5</p></td>
+<td><p>Open</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC CIN2(+) connection (connect GND to P13 pin 8)</p></td>
+<td><p>P11</p></td>
+<td><p>Open</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC VIN(-) connection (connect GND to P13 pin 4)</p></td>
+<td><p>P6</p></td>
+<td><p>Open</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC VIN(+) connection (connect GND to P13 pin 5)</p></td>
+<td><p>P12</p></td>
+<td><p>Open</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="test-points">
+<h3>Test Points<a class="headerlink" href="#test-points" title="Link to this heading"></a></h3>
+<p>Four test points are available to probe the I2C interface.</p>
+</section>
+</section>
+<section id="device-driver-support">
+<h2>Device Driver Support<a class="headerlink" href="#device-driver-support" title="Link to this heading"></a></h2>
+<p>There are two device driver solutions provided for controlling the
+EVAL-CN0552-PMDZ:</p>
+<ol class="arabic simple">
+<li><p><strong>EVAL-ADICUP3029</strong> – The ADICUP3029 example application uses the AD7746
+no-OS driver and emulates the Linux IIO framework through the tinyiiod
+daemon library. The application communicates with the host computer via the
+serial backend, over a USB-UART physical connection. This facilitates rapid
+application development on a host computer, independent from embedded code
+development.</p></li>
+<li><p><strong>Raspberry Pi</strong> – The Linux driver uses the Industrial Input/Output (IIO)
+framework, greatly simplifying the development of application code via the
+cross-platform libiio library, which is written in C and includes bindings
+for Python, MATLAB, C#, and other languages. Application code can run
+directly on the platform board, communicating with the device over the local
+backend, or from a remote host over the network or USB backends.</p></li>
+</ol>
+<p>Similarly, utility software such as iio_info, IIO Oscilloscope, and PyADI-IIO
+can be used for both the EVAL-CN0552-PMDZ on Raspberry Pi and on ADICUP3029.</p>
+</section>
+<section id="general-setup-using-adicup3029">
+<h2>General Setup Using ADICUP3029<a class="headerlink" href="#general-setup-using-adicup3029" title="Link to this heading"></a></h2>
+<p>The EVAL-CN0552-PMDZ can be used with the EVAL-ADICUP3029.</p>
+<section id="demo-requirements">
+<h3>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h3>
+<p><strong>Hardware:</strong></p>
 <ul class="simple">
-<li><p><strong>P8, P13</strong> – PMOD connectors (8-pin through-hole) for analog/digital I/O.</p></li>
-<li><p>I2C interface for communication with host platforms.</p></li>
-<li><p>Compact form factor: 25.40 mm x 60.25 mm.</p></li>
-<li><p>Supports I/O voltage range: 2.7 V to 5.5 V.</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0552" target="_blank">EVAL-CN0552-PMDZ</a></p></li>
+<li><p>Two 2 pF ceramic capacitors</p></li>
+<li><p>Micro-USB to USB cable</p></li>
+<li><p>PC or laptop with USB port</p></li>
+</ul>
+<p><strong>Software:</strong></p>
+<p>There are two ways to program the ADICUP3029 with the software for the CN0552:</p>
+<ol class="arabic simple">
+<li><p>Dragging and dropping the .hex file to the DAPLINK drive</p></li>
+<li><p>Building, compiling, and debugging using CCES</p></li>
+</ol>
+<p>Using the drag and drop method, the software will be a version that Analog
+Devices creates for testing and evaluation purposes. This is the easiest way to
+get started with the reference design.</p>
+<p>Importing the project into CrossCore allows you to change parameters and
+customize the software to fit your needs, but will be more advanced and will
+require you to download the CrossCore toolchain.</p>
+<p>The software for the ADICUP3029_CN0552 demo can be found here:</p>
+<ul class="simple">
+<li><p>Prebuilt CN0552 Hex File:
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/releases/download/last_commit/cn0552.zip" target="_blank">ADuCM3029_demo_cn0552.hex</a></p></li>
+<li><p>Complete CN0552 Source Files:
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/cn0552" target="_blank">ADuCM3029_demo_cn0552 Source Code</a></p></li>
+</ul>
+<p>To build the project from the source, follow the instructions in the
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/no-OS/wiki" target="_blank">no-OS wiki</a>.</p>
+</section>
+<section id="setting-up-the-hardware">
+<h3>Setting up the Hardware<a class="headerlink" href="#setting-up-the-hardware" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Connect the EVAL-CN0552-PMDZ board at connector <strong>P9</strong> of the
+EVAL-ADICUP3029.</p></li>
+<li><p>Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029
+and connect it to a computer. The final setup should look similar to the
+picture below.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/pmod-toadicup.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/pmod-toadicup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/pmod-toadicup.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Hardware Setup (ADICUP3029)</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Make sure the following switches are configured as shown in the table below.</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/switch_config.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/switch_config.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/switch_config.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Switch Configuration</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>From your PC, open My Computer and look for the DAPLINK drive. If you see
+this then the drivers are complete and correct.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/daplink.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/daplink.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/daplink.jpg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">DAPLINK Drive</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Simply extract the provided zip file. Once extracted, you will see the
+pre-built hex file for the CN0552 demo. Then drag and drop this hex file to
+the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2
+(red) LED will blink rapidly.</p></li>
+<li><p>The DS2 will stop blinking and will stay ON once the programming is done.</p></li>
+<li><p>For demo purposes, place a 2 pF capacitor between the EXCA pin and the
+CIN1(+) pin on the PMOD board. This will be your first channel. Then, place
+another 2 pF capacitor between EXCB pin and the CIN2(+) pin on the PMOD
+board. This will be your second channel.</p></li>
+</ol>
+</section>
+</section>
+<section id="general-setup-using-raspberry-pi">
+<h2>General Setup Using Raspberry Pi<a class="headerlink" href="#general-setup-using-raspberry-pi" title="Link to this heading"></a></h2>
+<p>The EVAL-CN0552-PMDZ can be used with a Raspberry Pi.</p>
+<section id="id1">
+<h3>Demo Requirements<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p><strong>Hardware:</strong></p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0552" target="_blank">EVAL-CN0552-PMDZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMOD to Raspberry Pi Adapter (PMD-RPI-INTZ)</a></p></li>
+<li><p>Raspberry Pi Zero, Zero W, 3B+, or 4</p></li>
+<li><p>16 GB (or larger) Class 10 (or faster) micro-SD card</p></li>
+<li><p>5 Vdc, 2.5 A power supply with micro USB connector (USB-C power supply for
+Raspberry Pi 4)</p></li>
+<li><p>User interface setup (choose one):</p>
+<ul>
+<li><p>HDMI monitor, keyboard, mouse plugged directly into Raspberry Pi</p></li>
+<li><p>Host Windows/Linux/Mac computer on the same network as Raspberry Pi</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Software:</strong></p>
+<ul class="simple">
+<li><p>ADI Kuiper Linux</p></li>
 </ul>
 </section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>A Linux-based demo system is available with SD card image configuration.
-Software-configurable data rates, filters, temperature compensation, and
-system calibration are supported.</p>
+<section id="loading-image-on-sd-card">
+<h3>Loading Image on SD Card<a class="headerlink" href="#loading-image-on-sd-card" title="Link to this heading"></a></h3>
+<p>In order to control the EVAL-CN0552-PMDZ from the Raspberry Pi, you will need
+to install ADI Kuiper Linux on an SD card. Complete instructions, including
+where to download the SD card image, how to write it to the SD card, and how to
+configure the system are provided in the Kuiper Linux documentation.</p>
+<p>Write the image and follow the system configuration procedure.</p>
 </section>
-<section id="documents">
-<h2>Documents<a class="headerlink" href="#documents" title="Link to this heading"></a></h2>
+<section id="configuring-the-sd-card">
+<h3>Configuring the SD Card<a class="headerlink" href="#configuring-the-sd-card" title="Link to this heading"></a></h3>
+<p>Follow the Hardware Configuration procedure under <strong>Preparing the Image:
+Raspberry Pi</strong> in the Kuiper Linux documentation, substituting the following
+line in <code class="docutils literal notranslate"><span class="pre">config.txt</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">dtoverlay</span><span class="o">=</span>rpi-cn0552
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>Setting up the Hardware<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>To set up the circuit for evaluation, consider the following steps:</p>
+<ol class="arabic">
+<li><p>Connect P9 of the <strong>PMOD to Raspberry Pi Interposer</strong> board at the male
+header GPIO pin connector of the Raspberry Pi as shown below.</p>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/interposer.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/interposer.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/interposer.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">PMOD to Raspberry Pi Interposer Connection</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the EVAL-CN0552-PMDZ on the PMOD to Raspberry Pi Interposer board
+either via Port P3 or P4.</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/pmod-interposer.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/pmod-interposer.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/pmod-interposer.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">EVAL-CN0552-PMDZ on Interposer Board</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned
+SD card on the designated slot on the Raspberry Pi.</p></li>
+<li><p>Connect the system to a monitor using an HDMI cable through the mini HDMI
+connector on the Raspberry Pi.</p></li>
+<li><p>Connect a USB keyboard and mouse to the Raspberry Pi through the USB ports.</p></li>
+<li><p>Power on the Raspberry Pi board by plugging in a 5 V power supply with a
+micro-USB connector. The final setup should look similar to the picture
+below.</p>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/overall_setup.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/overall_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/overall_setup.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Overall Setup (Raspberry Pi)</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+</section>
+<section id="software-adicup3029-and-raspberry-pi">
+<h2>Software (ADICUP3029 and Raspberry Pi)<a class="headerlink" href="#software-adicup3029-and-raspberry-pi" title="Link to this heading"></a></h2>
+<section id="connection">
+<h3>Connection<a class="headerlink" href="#connection" title="Link to this heading"></a></h3>
+<p>To connect your device, the software must create a context. The context
+creation depends on the backend used and the platform where the
+EVAL-CN0552-PMDZ is attached. Two platforms are currently supported: Raspberry
+Pi using ADI Kuiper Linux and the ADICUP3029 running the no-OS AD7746 demo
+project. The user needs to supply a URI which will be used in the context
+creation.</p>
+<p>The libiio library is used for interfacing with IIO devices. Install the
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/libiio/releases" target="_blank">libiio package</a> on
+your machine.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">iio_info</span></code> command is part of the libiio package and reports all IIO
+attributes. Upon installation, enter the command on the terminal to access it.</p>
+<p><strong>For Raspberry Pi direct local access:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info
+</pre></div>
+</div>
+<p><strong>For Windows machine connected to Raspberry Pi:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>ip:&lt;ip<span class="w"> </span>address<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>rpi&gt;
+</pre></div>
+</div>
+<p><strong>For Windows machine connected to ADICUP3029:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>serial:&lt;serial<span class="w"> </span>port&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0552" target="_blank">CN0552 Circuit Note</a></p></li>
+<li><p>For Raspberry Pi: The Windows machine and the Raspberry Pi board should
+be connected to the same network.</p></li>
+<li><p>For ADICUP3029 on Windows: Check the port via Device Manager in the
+Ports (COM &amp; LPT) section (e.g., <code class="docutils literal notranslate"><span class="pre">iio_info</span> <span class="pre">-u</span> <span class="pre">serial:COM4</span></code>).</p></li>
+<li><p>For ADICUP3029 on Linux: Check the <code class="docutils literal notranslate"><span class="pre">/dev/</span></code> directory for the device
+(e.g., <code class="docutils literal notranslate"><span class="pre">iio_info</span> <span class="pre">-u</span> <span class="pre">serial:/dev/ttyUSB0</span></code>).</p></li>
 </ul>
+</div>
+</section>
+<section id="iio-commands">
+<h3>IIO Commands<a class="headerlink" href="#iio-commands" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">iio_attr</span></code> command reads and writes IIO attributes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span><span class="o">[</span>OPTION<span class="o">]</span>...
+</pre></div>
+</div>
+<p>To look at the context attributes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_attr<span class="w"> </span>-a<span class="w"> </span>-C
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">iio_reg</span></code> command reads or writes SPI or I2C registers in an IIO device.
+This is generally not needed for end applications, but can be useful in
+debugging drivers. Note that you need to specify a context using the <code class="docutils literal notranslate"><span class="pre">-u</span></code>
+qualifier when not directly accessing the device via Raspberry Pi or when using
+the ADICUP3029 platform.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_reg<span class="w"> </span>-u<span class="w"> </span>&lt;context&gt;<span class="w"> </span>&lt;device&gt;<span class="w"> </span>&lt;register&gt;<span class="w"> </span><span class="o">[</span>&lt;value&gt;<span class="o">]</span>
+</pre></div>
+</div>
+<p>To read the device ID (register 0x02) of an AD7746 interfaced via Raspberry Pi
+from a Windows machine:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_reg<span class="w"> </span>-u<span class="w"> </span>ip:&lt;ip<span class="w"> </span>address&gt;<span class="w"> </span>ad7746<span class="w"> </span>0x02
+</pre></div>
+</div>
+</section>
+<section id="iio-oscilloscope">
+<h3>IIO Oscilloscope<a class="headerlink" href="#iio-oscilloscope" title="Link to this heading"></a></h3>
+<p>Make sure to download/update to the latest version of
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases" target="_blank">IIO Oscilloscope</a>.</p>
+<ol class="arabic">
+<li><p>Once done with the installation or update, open the application. Supply a
+URI for context creation (see the Connection section above).</p></li>
+<li><p>Press refresh to display available IIO devices. Once <code class="docutils literal notranslate"><span class="pre">ad7746</span></code> appears,
+press connect.</p>
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/osc.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/osc.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/osc.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">AD7746 IIO Oscilloscope Configuration</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+<section id="debug-panel">
+<h4>Debug Panel<a class="headerlink" href="#debug-panel" title="Link to this heading"></a></h4>
+<p>Below is the Debug panel of AD7746 where you can directly access the attributes
+of the device.</p>
+<figure class="align-center" id="id19">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/debug_panel.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/debug_panel.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/debug_panel.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">AD7746 Debug Panel</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="dmm-panel">
+<h4>DMM Panel<a class="headerlink" href="#dmm-panel" title="Link to this heading"></a></h4>
+<p>Access the DMM panel to see the instantaneous reading of the input capacitances
+and the device temperature.</p>
+<figure class="align-center" id="id20">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/dmm_readings.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/dmm_readings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/dmm_readings.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">AD7746 DMM Panel</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="pyadi-iio">
+<h3>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h3>
+<p>PyADI-IIO is a Python abstraction module for ADI hardware with IIO drivers to
+make them easier to use. This module provides device-specific APIs built on top
+of the current libiio Python bindings. These interfaces try to match the driver
+naming as much as possible without the need to understand the complexities of
+libiio and IIO.</p>
+<section id="running-the-example">
+<h4>Running the Example<a class="headerlink" href="#running-the-example" title="Link to this heading"></a></h4>
+<p>After installing and configuring PyADI-IIO on your machine, you are ready to
+run Python script examples. Run the <code class="docutils literal notranslate"><span class="pre">ad7746.py</span></code> found in the examples folder.</p>
+<figure class="align-center" id="id21">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/python_script.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/python_script.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0552-ebz/python_script.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">PyADI-IIO Example Output</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
 <h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
@@ -959,8 +1525,23 @@ system calibration are supported.</p>
 <li><p>Schematics</p></li>
 <li><p>PCB Layout</p></li>
 <li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
 </ul>
 </div>
+</section>
+<section id="documents">
+<h2>Documents<a class="headerlink" href="#documents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/CN0552" target="_blank">CN0552 Circuit Note</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.analog.com/media/en/technical-documentation/application-notes/AN-1585.pdf" target="_blank">AN-1585 Application Note</a></p></li>
+</ul>
+</section>
+<section id="reference-demos-and-software">
+<h2>Reference Demos and Software<a class="headerlink" href="#reference-demos-and-software" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/no-OS/wiki" target="_blank">CN0552 no-OS Build Instruction Guide</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/cn0552" target="_blank">CN0552 no-OS Device Drivers</a></p></li>
+</ul>
 </section>
 <section id="additional-information">
 <h2>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h2>

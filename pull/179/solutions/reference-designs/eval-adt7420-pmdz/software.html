@@ -655,7 +655,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -1002,11 +1002,32 @@ creation (see previous section).</p></li>
 <li><p>Press refresh to display available IIO Devices. Once ADT7420 appears, press
 connect.</p></li>
 </ol>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_iio_osc.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_iio_osc.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_iio_osc.png" width="300" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADT7420 IIO Oscilloscope Configuration</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Debug Panel:</strong>
 The Debug panel allows you to directly access the device attributes.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_iio_debug_panel.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_iio_debug_panel.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_iio_debug_panel.png" width="300" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">ADT7420 IIO Oscilloscope Debug Panel</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>DMM Panel:</strong>
 Access the DMM panel to see the instantaneous reading of the ADT7420
 temperature reading.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_iio_dmm_panel.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_iio_dmm_panel.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_iio_dmm_panel.png" width="300" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">ADT7420 IIO Oscilloscope DMM Panel</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="pyadi-iio">
 <h3>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h3>
@@ -1034,6 +1055,14 @@ maxim platform before running:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>D:<span class="se">\p</span>yadi-iio<span class="se">\e</span>xamples&gt;python<span class="w"> </span>adt7420_example.py
 </pre></div>
 </div>
+<p>Press enter and you will get readings similar to the output below.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_pyadiio_example_max32650.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_pyadiio_example_max32650.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adt7420-pmdz/adt7420_pyadiio_example_max32650.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">PyADI-IIO ADT7420 Example Output</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>Python example script on GitHub:
 <a class="icon link reference external" href="https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/adt7420_example.py" target="_blank">adt7420_example.py</a></p>
 </section>
@@ -1059,9 +1088,9 @@ output is directed to the console window (debug mode) or serial terminal
 <li><p>Serial Terminal Program (such as PuTTY or Tera Term)</p></li>
 <li><p>IoTNode Smart Device App</p></li>
 </ul>
-<div class="table-wrapper docutils container" id="id1">
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Launch Configuration</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id5">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Launch Configuration</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Data Output Destination</p></th>
 <th class="head"><p>Connected to Debugger</p></th>

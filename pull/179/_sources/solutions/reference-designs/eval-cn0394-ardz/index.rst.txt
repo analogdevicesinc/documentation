@@ -25,8 +25,15 @@ with dual sigma-delta ADCs and ARM Cortex-M3 core. The internal ADC has
 channel is used for RTD measurements, while the second channel measures
 thermocouple changes.
 
+.. figure:: cn0394_front.jpg
+   :width: 650px
+   :align: center
+
+   EVAL-CN0394-ARDZ board (front view).
+
 .. figure:: cn0394_demo_1.png
    :width: 650px
+   :align: center
 
    EVAL-CN0394-ARDZ connected to EVAL-ADICUP360.
 

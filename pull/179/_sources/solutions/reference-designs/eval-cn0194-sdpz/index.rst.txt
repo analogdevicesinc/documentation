@@ -20,6 +20,7 @@ is versatile and allows monitoring of multiple channels through daisy chaining.
 
 .. figure:: cn0194-00-1024_sch.png
    :width: 600px
+   :align: center
 
    CN0194 circuit schematic
 
@@ -74,10 +75,25 @@ Installing the Software
       (in 32-bit OS) or ``C:\Program Files (x86)\National Instruments\`` (in
       64-bit OS).
 
+   .. figure:: software_1.jpg
+      :align: center
+
+      CN0194 evaluation software installation wizard
+
 #. Click **Next** to view the installation review page.
+
+   .. figure:: software_2.jpg
+      :align: center
+
+      Installation review page
 
 #. Click **Next** to start the installation. After the installation, the
    installer for the **ADI SDP Drivers** will execute.
+
+   .. figure:: software_3.jpg
+      :align: center
+
+      ADI SDP Drivers installer
 
 #. Press **Next** to set the installation location for the **SDP Drivers**.
 
@@ -87,8 +103,18 @@ Installing the Software
       path ``C:\Program Files\Analog Devices\SDP\DriversR2\`` (in 32-bit OS) or
       ``C:\Program Files (x86)\Analog Devices\SDP\DriversR2\`` (in 64-bit OS).
 
+   .. figure:: software_4.jpg
+      :align: center
+
+      SDP Drivers installation location
+
 #. Press **Next** to install the **SDP Drivers** and complete the installation
    of all software. Click **Finish** when done.
+
+   .. figure:: software_5.jpg
+      :align: center
+
+      SDP Drivers installation complete
 
 Using the Evaluation Software
 ------------------------------
@@ -98,6 +124,7 @@ Software Control and Indicator Descriptions
 
 .. figure:: software_use.jpg
    :width: 800px
+   :align: center
 
    CN0194 evaluation software main window
 
@@ -201,6 +228,11 @@ Establishing a USB Connection Link
       OS).
 
 #. Click the **Connect Button**. A window with a progress bar will load.
+
+   .. figure:: software_connect.png
+      :align: center
+
+      USB connection progress dialog
 
 #. Upon success, the **System Status String Indicator** will display the SDP
    board serial number.

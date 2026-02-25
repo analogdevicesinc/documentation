@@ -107,6 +107,7 @@
 <li><a class="reference internal" href="#heater-mode-rh">Heater Mode (RH)</a></li>
 <li><a class="reference internal" href="#sensor-resistance-mode-rs">Sensor Resistance Mode (RS)</a></li>
 <li><a class="reference internal" href="#factory-calibration">Factory Calibration</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a></li>
 <li><a class="reference internal" href="#project-structure">Project Structure</a></li>
 </ul>
 </li>
@@ -653,7 +654,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -1017,6 +1018,12 @@ Flow Control: none
 <h2>Heater Mode (RH)<a class="headerlink" href="#heater-mode-rh" title="Link to this heading"></a></h2>
 <p>The user can choose from the following subroutines which determine the heater
 current (IH):</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/rh_mode.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/rh_mode.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Heater mode subroutine selection in serial terminal</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>voltage</strong> – Sets the heater voltage to a constant voltage VH (default
 VH = 1.8 V). The relationship between heater resistance RH and heater current
 IH or heater voltage VH is nonlinear. The software runs several iterations in
@@ -1061,12 +1068,24 @@ routine.</p></li>
 <li><p><strong>ADC data</strong> – Raw data read from ADC (hex)</p></li>
 <li><p><strong>Ro</strong> – Sensor resistance measured in clean air</p></li>
 </ul>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/constant_voltage.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/constant_voltage.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Constant voltage heater mode output in serial terminal</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>At power up, the application starts in constant current mode and sets the
 default current to 8 mA. It is assumed that the measurement circuit is placed
 in clean air, so the sensor resistance in clean air (Ro) is measured and
 stored. After each heater measurement mode change, it is assumed the board is
 in clean air and the Ro value is updated, because Ro is a function of heater
 temperature.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/power_up.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/power_up.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Power-up default output showing constant current mode at 8 mA</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="sensor-resistance-mode-rs">
 <h2>Sensor Resistance Mode (RS)<a class="headerlink" href="#sensor-resistance-mode-rs" title="Link to this heading"></a></h2>
@@ -1077,6 +1096,12 @@ ADG884.</p>
 <p>In the background, the application runs the gain-ranging algorithm and
 determines RS and the gas concentration (C) measured in PPM (parts per
 million).</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/rs_mode_new.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/rs_mode_new.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Sensor resistance mode output with RS and gas concentration readings</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>RS reading can also be initiated by typing <code class="docutils literal notranslate"><span class="pre">operation</span> <span class="pre">RS</span></code>, which performs the
 same function as pressing the ENTER key.</p>
 </section>
@@ -1096,14 +1121,42 @@ once.</p>
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">c</span></code> key when ready.</p></li>
 <li><p>Power off then power on.</p></li>
 </ol>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/calibrate_w.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/calibrate_w.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Factory calibration write procedure in serial terminal</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>From this point on, K1 is stored in permanent memory and applied to all
 currents. To read the gain correction factor from memory, type <code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">r</span></code>.</p>
-<p>Type <code class="docutils literal notranslate"><span class="pre">help</span></code> to see the available commands.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/calibrate_read.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/calibrate_read.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Reading the gain correction factor from memory</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Link to this heading"></a></h2>
+<p>Type <code class="docutils literal notranslate"><span class="pre">help</span></code> to see the available commands:</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/help.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/help.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Help command showing available serial terminal commands</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="project-structure">
 <h2>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h2>
 <p>The <strong>ADuCM360_demo_cn0395</strong> project uses the ADuCM36x C/C++ Project
 structure.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/proj_struct.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/proj_struct.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/proj_struct.jpg" width="340" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">ADuCM360_demo_cn0395 project structure in CrossCore Embedded Studio</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The project contains:</p>
 <ul class="simple">
 <li><p>System initialization – disabling watchdog, setting system clock, enabling

@@ -12,12 +12,19 @@ General Description
 
 The **ADuCM360_demo_cn0394** is a temperature measurement demo project which
 uses thermocouple measurement with the EVAL-ADICUP360 base board and the
-EVAL-CN0394-ARDZ shield.
+EVAL-CN0394-ARDZ shield, created using the GNU ARM Eclipse Plug-ins in Eclipse
+environment.
 
 The EVAL-CN0394-ARDZ shield uses the internal ADC from the ADuCM360
 microcontroller which has 2 channels available, 24-bit resolution with PGA and
 reference. The first channel is used for RTD measurements, while the second
 channel measures thermocouple changes.
+
+.. figure:: cn0394_demo_1.png
+   :width: 650px
+   :align: center
+
+   EVAL-CN0394-ARDZ connected to EVAL-ADICUP360.
 
 The EVAL-CN0394-ARDZ board has 4 thermocouple ports (**P1** to **P4**) and 4
 Pt1000 RTDs (**R1** to **R4**) close to each thermocouple socket for cold
@@ -33,10 +40,21 @@ data to a terminal window.
 
 The user can enable/disable calibration on each channel separately. If
 calibration is enabled, the user is informed when calibration is completed;
-otherwise, the user is informed that calibration is disabled.
+otherwise, the user is informed that calibration is disabled (see
+``USE_RTD_CALIBRATION`` and ``USE_TH_CALIBRATION`` parameters).
 
-Warning messages are displayed if the final linearized temperature for the
-selected thermocouple is out of the boundaries.
+Before starting the measurement, it is required to set up the thermocouple
+types for each port (check ``P1_TYPE`` to ``P4_TYPE``). Based on those settings
+the output data is calculated and displayed in the terminal window continuously,
+considering the data refresh parameter (see ``DISPLAY_REFRESH``). Warning
+messages are displayed if the final linearized temperature for the selected
+thermocouple is out of the boundaries.
+
+.. figure:: cn0391_demo_6.png
+   :width: 750px
+   :align: center
+
+   Serial terminal output showing thermocouple temperature measurements.
 
 Temperature Measurement and Linearization Algorithm
 ----------------------------------------------------
@@ -59,29 +77,51 @@ Cold Junction Measurement
 
 For cold junction temperature measurement, the **PT1000 RTD method** is used.
 Cold junction reading from each RTD channel is used to calculate RTD
-resistance.
+resistance:
+
+.. figure:: cn0391_demo_5.png
+   :width: 550px
+   :align: center
+
+   RTD resistance calculation formula.
 
 The PT1000 RTD is ideally 1000 Ohm at 0 degrees C. There are two separate
 equations used for linearization depending on the calculated resistance:
 
 **1. RTD resistance > 1000 Ohm:**
 
-Uses the Callendar-Van Dusen equation for positive temperatures.
+.. figure:: cn0391_demo_3.png
+   :width: 800px
+   :align: center
+
+   Callendar-Van Dusen equation for positive temperatures.
 
 **2. RTD resistance <= 1000 Ohm:**
 
-Uses the extended Callendar-Van Dusen equation for negative temperatures.
+.. figure:: cn0391_demo_4.png
+   :width: 800px
+   :align: center
+
+   Extended Callendar-Van Dusen equation for negative temperatures.
 
 Thermocouple Measurement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For thermocouple temperature linearization, standard NIST equations are used.
-The thermocouple type used dictates the formulas needed for linearization.
+For thermocouple temperature linearization, standard
+`NIST equations <http://srdata.nist.gov/its90/download/download.html>`__
+are used. The thermocouple type used dictates the formulas needed for
+linearization.
 
 First, the cold junction temperature is converted to a cold junction voltage.
 This conversion uses a standard polynomial formula. The formula is the same for
 all thermocouple types; however, the coefficient values depend on the
 thermocouple type.
+
+.. figure:: cn0391_demo_7.png
+   :width: 800px
+   :align: center
+
+   NIST polynomial formula for cold junction voltage conversion.
 
 The final thermocouple voltage is calculated using the thermocouple voltage
 read on the thermocouple channel and adding the converted cold junction
@@ -97,7 +137,13 @@ voltage:
      Vcj      = cold junction voltage calculated using NIST formula
 
 For the final linearized temperature value, the second polynomial formula
-provided by the NIST standard is used.
+provided by the NIST standard is used:
+
+.. figure:: cn0391_demo_8.png
+   :width: 800px
+   :align: center
+
+   NIST polynomial formula for final linearized temperature.
 
 Demo Requirements
 -----------------
@@ -173,8 +219,11 @@ Serial Terminal Output
    Stop: 2 bit
    Flow Control: none
 
-The output data refreshes in the console window at the rate of the
-``DISPLAY_REFRESH`` parameter.
+.. figure:: cn0391_demo_6.png
+   :width: 750px
+   :align: center
+
+   Serial terminal output with thermocouple temperature data.
 
 Project Structure
 -----------------
@@ -184,6 +233,7 @@ Project structure.
 
 .. figure:: cn0394_demo_3.png
    :width: 300px
+   :align: center
 
    CN0394 demo project structure.
 

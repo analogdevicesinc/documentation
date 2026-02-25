@@ -105,6 +105,12 @@ for evaluation purposes.
    output.
 #. A 3 kOhm resistor at R_bridge simulates the bridge-type sensor impedance.
 
+.. figure:: cn0295_r6.png
+   :width: 100px
+   :align: right
+
+   Resistor R6 location on the PCB
+
 .. note::
 
    For bridge resistances lower than 5 kOhm, the drive voltage can be
@@ -168,6 +174,12 @@ the screw-type terminal block (**P1**).
 
    The 2-pin male header (**J1**) must be populated before doing a voltage
    measurement across the terminal block (**P1**).
+
+.. figure:: cn0295_r14.png
+   :width: 100px
+   :align: right
+
+   R14, J1, and P1 locations on the PCB
 
 Current Measurement
 ^^^^^^^^^^^^^^^^^^^

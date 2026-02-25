@@ -99,9 +99,11 @@
 <li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
+<li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
 <li><a class="reference internal" href="#fpga-ip-core">FPGA IP Core</a></li>
 <li><a class="reference internal" href="#configuration-parameters">Configuration Parameters</a></li>
 <li><a class="reference internal" href="#design-guidelines">Design Guidelines</a></li>
+<li><a class="reference internal" href="#detailed-architecture">Detailed Architecture</a></li>
 <li><a class="reference internal" href="#hdl-ip-core-documentation">HDL IP Core Documentation</a></li>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
 </ul>
@@ -658,7 +660,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -951,6 +953,15 @@ high-speed data acquisition applications.</p>
 interfaces the ADAQ8092 ADC in DDR LVDS/CMOS or SDR CMOS mode. A DMA is used
 to move captured data from the IP core output to system memory. The FPGA
 carries out all configuration of the ADC registers via SPI.</p>
+<section id="block-diagram">
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id1">
+<img alt="../../../_images/block_diagram_adaq8092.svg" src="../../../_images/block_diagram_adaq8092.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AXI_ADAQ8092 Block Diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
 <section id="fpga-ip-core">
 <h3>FPGA IP Core<a class="headerlink" href="#fpga-ip-core" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">axi_adaq8092</span></code> IP core provides the following features:</p>
@@ -1029,6 +1040,27 @@ design, as IO primitives are part of the IP.</p>
 memory. If the data needs to be processed in HDL before being moved to memory,
 it can be done at the output of the IP (at system level) or inside of the ADC
 channel module (at IP level).</p>
+</section>
+<section id="detailed-architecture">
+<h3>Detailed Architecture<a class="headerlink" href="#detailed-architecture" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<img alt="../../../_images/arhitecture_adaq8092-lvds_ddr.svg" src="../../../_images/arhitecture_adaq8092-lvds_ddr.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AXI_ADAQ8092 DDR LVDS IP Architecture</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<img alt="../../../_images/arhitecture_adaq8092-cmos_ddr.svg" src="../../../_images/arhitecture_adaq8092-cmos_ddr.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AXI_ADAQ8092 DDR CMOS IP Architecture</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<img alt="../../../_images/arhitecture_adaq8092-cmos_sdr.svg" src="../../../_images/arhitecture_adaq8092-cmos_sdr.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">AXI_ADAQ8092 SDR CMOS IP Architecture</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="hdl-ip-core-documentation">
 <h3>HDL IP Core Documentation<a class="headerlink" href="#hdl-ip-core-documentation" title="Link to this heading"></a></h3>

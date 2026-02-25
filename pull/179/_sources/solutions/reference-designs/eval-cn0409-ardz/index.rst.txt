@@ -26,6 +26,12 @@ for applications where accurate, robust, and non-contact turbidity measurements
 are critical. Applications include chemical analysis and monitoring natural
 bodies of water, wastewater, and drinking water.
 
+.. figure:: adicup360_cn0409_stacked.jpg
+   :width: 600px
+   :align: center
+
+   EVAL-CN0409-ARDZ stacked on the EVAL-ADICUP360 controller board.
+
 Turbidity Measurement
 ---------------------
 
@@ -51,6 +57,12 @@ increase within this range, the 90 degree detector receives a linearly
 proportional amount of scattered light. This method is also known as the
 non-ratio ISO 7027 because of the use of just one detector.
 
+.. figure:: cn0409_iso7027_nonratio_config.png
+   :width: 300px
+   :align: center
+
+   ISO 7027 non-ratio measurement configuration.
+
 Ratio Measurement Method (Medium to High Turbidity)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -61,6 +73,12 @@ light scattering distribution that results in a higher intensity forward
 scattered light. The ISO 7027 ratio method of the CN0409 uses the ratio of the
 90 degree detector and the 180 degree detector to measure turbidity levels of
 theoretically up to 4,000 FTU.
+
+.. figure:: cn0409_iso7027_ratio_config.png
+   :width: 300px
+   :align: center
+
+   ISO 7027 ratio measurement configuration.
 
 .. note::
 
@@ -100,9 +118,21 @@ backwards to allow placement of the vial holder. Once in place, carefully bend
 the photodiodes and LEDs into the holes of the vial holder until they are snug
 and secure.
 
+.. figure:: cn0409_holder_mounted_led_pd.jpg
+   :width: 300px
+   :align: center
+
+   LEDs and photodiodes mounted in the vial holder.
+
 The vial holder should be screwed into the EVAL-CN0409-ARDZ board by lining up
 the holes in the vial holder with the holes in the board, using the screws
 provided.
+
+.. figure:: cn0409_holder_screwed_in.jpg
+   :width: 300px
+   :align: center
+
+   Vial holder screwed into the EVAL-CN0409-ARDZ board.
 
 Test Vials
 ----------
@@ -116,6 +146,12 @@ obtaining accurate turbidity measurements.
    It is recommended to use `LaMotte test vials
    <https://www.coleparmer.com/i/lamotte-0290-6-turbidity-sample-test-tubes-vials-6-pk/0556366>`__
    as the size fits into the CN0409 board vial holder.
+
+.. figure:: test_vial_example.png
+   :width: 300px
+   :align: center
+
+   Example LaMotte-style test vial.
 
 The following items are critical to the success of proper turbidity vial
 preparation and measurement techniques:

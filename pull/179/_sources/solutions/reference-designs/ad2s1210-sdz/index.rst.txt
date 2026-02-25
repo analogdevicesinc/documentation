@@ -193,6 +193,11 @@ partition to configure the SD card:
 Setting Up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+.. figure:: zedboard.png
+   :align: center
+
+   ZedBoard top view with key connectors labeled
+
 1. Insert the SD card into the SD card interface connector (J12) on the ZedBoard.
 2. Connect the EVAL-AD2S1210SDZ board to the SDP adapter and plug it into the
    ZedBoard FMC connector.
@@ -202,6 +207,12 @@ Setting Up the Hardware
    power on yet.
 6. Set the ZedBoard boot mode jumpers to boot from SD card, and ensure the
    VADJ jumper is set to 3.3 V.
+
+   .. figure:: jumpers_boot_sd_zedboard.jpg
+      :align: center
+
+      ZedBoard boot mode jumper configuration for SD card boot
+
 7. Connect oscilloscope probes to the SMB connectors on the evaluation board.
 8. Power on the ZedBoard and wait approximately 30 seconds for the DONE LED
    to turn blue.
@@ -328,6 +339,11 @@ the AD2S1210 channels. Download the latest version from the
 
 After installation, open the application, supply the target URI, press
 **Refresh** to display available IIO devices, and press **Connect**.
+
+.. figure:: iio_connect.png
+   :align: center
+
+   IIO Oscilloscope connection dialog
 
 More Information
 ----------------

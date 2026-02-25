@@ -658,7 +658,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -941,6 +941,12 @@ noise, wide bandwidth track-and-hold amplifier which can handle input
 frequencies in excess of 3 MHz.</p>
 <p>The EVAL-CN0178-SDPZ board connects to ADI’s System Demonstration Platform
 (SDP) and is powered by a +6 V supply or +6 V wall wart.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178-hw-1024.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178-hw-1024.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0178-SDPZ evaluation board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -959,6 +965,12 @@ USB interface</p></li>
 <h2>General Setup<a class="headerlink" href="#general-setup" title="Link to this heading"></a></h2>
 <section id="block-assignments">
 <h3>Block Assignments<a class="headerlink" href="#block-assignments" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_block_diagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0178 system block diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>The EVAL-CN0178-SDPZ (CN0178 Board) connects to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a>
 (SDP-B Board) via the 120-pin connector.</p></li>
@@ -970,6 +982,12 @@ USB interface</p></li>
 </section>
 <section id="test-setup">
 <h3>Test Setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_test_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_test_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0178 test setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p>Connect the 120-pin connector on the EVAL-CN0178-SDPZ to the connector
 marked “CON A” on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a>.</p></li>
@@ -996,9 +1014,16 @@ before turning on the dc power supply for the EVAL-CN0178-SDPZ.</p>
 system level calibration is <strong>required</strong>. For this board, a 4-point calibration
 is used to correct for some non-linearity in the RF detector’s transfer
 function, particularly at the low end.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Apply four known signal levels to the ADL5902. These should be well within
-the linear operating range of the device.</p></li>
+the linear operating range of the device.</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_transfer_function.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_transfer_function.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">ADL5902 RF detector transfer function</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Measure the corresponding output codes from the ADC.</p></li>
 <li><p>Calculate SLOPE and INTERCEPT calibration coefficients using the following
 equations:</p>
@@ -1031,31 +1056,76 @@ be used.</p></li>
 default path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Analog</span> <span class="pre">Devices\CN0178\</span></code> and all
 National Instruments products to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>.</p>
 </div>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">CN0178 evaluation software installer</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Click <strong>Next</strong> to view the installation review page.</p></li>
-<li><p>Click <strong>Next</strong> to start the installation.</p></li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Installation review page</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to start the installation.</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Installation progress</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion, the ADI SDP Drivers installer will execute.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Close all other applications before clicking “Next” to allow system file
 updates without rebooting.</p>
 </div>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">SDP Drivers installer</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to set the installation location for the SDP Drivers.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Recommended path: <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\SDP\Drivers</span></code></p>
 </div>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">SDP Drivers installation path</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Press <strong>Install</strong> to install the SDP Drivers. Click <strong>Finish</strong> when done.</p></li>
+<li><p>Press <strong>Install</strong> to install the SDP Drivers. Click <strong>Finish</strong> when done.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_install_6.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">SDP Drivers installation complete</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="using-the-evaluation-software">
 <h2>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h2>
 <section id="main-window">
 <h3>Main Window<a class="headerlink" href="#main-window" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_software_main.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_software_main.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">CN0178 evaluation software main window</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The evaluation software provides the following controls and displays:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p><strong>Connect</strong> button – Starts the connection between the CN0178 Evaluation
 Board and SDP-B Controller Board.</p></li>
 <li><p><strong>Disconnect</strong> button – Ends the connection.</p></li>
@@ -1064,6 +1134,12 @@ use.</p></li>
 <li><p><strong>Input Power</strong> – Indicate input signal power level.</p></li>
 <li><p><strong>Frequency</strong> – Indicate input signal frequency.</p></li>
 <li><p><strong>Data Acquisition</strong> controls:</p>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_software_data_acq.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_software_data_acq.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Data acquisition controls</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>Sample Data</strong> – Start acquisition of measurement data</p></li>
 <li><p><strong>Remove Data Point</strong> – Remove a data point from samples</p></li>
@@ -1073,7 +1149,14 @@ use.</p></li>
 </li>
 <li><p><strong>Sample Data Graph</strong> tab – Shows the XY plot of ADC code and output error
 (%) with respect to the input power. Contains plot options for
-interpolation and color settings.</p></li>
+interpolation and color settings.</p>
+<figure class="align-center" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_data_graph.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_data_graph.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Sample data graph tab</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p><strong>Calibration</strong> tab:</p>
 <ul class="simple">
 <li><p><strong>Calibration Inputs</strong> – Four-point input power levels used for
@@ -1084,6 +1167,12 @@ coefficients based on four-point input power levels</p></li>
 </ul>
 </li>
 <li><p><strong>Administration</strong> tab:</p>
+<figure class="align-center" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_admin_tab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0178-sdpz/cn0178_admin_tab.png" />
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Administration tab</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>Read Firmware</strong> – Reads the firmware of the evaluation board</p></li>
 <li><p><strong>Flash LED</strong> – Flashes the LED on the SDP controller board</p></li>

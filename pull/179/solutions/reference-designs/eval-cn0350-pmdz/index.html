@@ -98,11 +98,15 @@
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
 <li><a class="reference internal" href="#general-setup">General Setup</a></li>
+<li><a class="reference internal" href="#installing-the-software">Installing the Software</a></li>
+<li><a class="reference internal" href="#connecting-the-hardware">Connecting the Hardware</a></li>
 <li><a class="reference internal" href="#using-the-evaluation-software">Using the Evaluation Software</a><ul>
-<li><a class="reference internal" href="#software-controls">Software Controls</a></li>
-<li><a class="reference internal" href="#calibrating-the-board">Calibrating the Board</a></li>
+<li><a class="reference internal" href="#software-control-and-indicator-descriptions">Software Control and Indicator Descriptions</a></li>
+<li><a class="reference internal" href="#establishing-a-usb-connection-link">Establishing a USB Connection Link</a></li>
+<li><a class="reference internal" href="#calibrating-the-cn0350-board">Calibrating the CN0350 Board</a></li>
+<li><a class="reference internal" href="#calibration-procedure-steps">Calibration Procedure Steps</a></li>
 <li><a class="reference internal" href="#acquiring-data">Acquiring Data</a></li>
-<li><a class="reference internal" href="#saving-data">Saving Data</a></li>
+<li><a class="reference internal" href="#saving-data-to-a-spreadsheet-file">Saving Data to a Spreadsheet File</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
@@ -653,7 +657,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -923,12 +927,20 @@ input signals into digital code, for acceleration and shock measurements where
 piezoelectric sensors with charge output are used. The design solution is
 optimized for high precision and low cost measurement, using only two active
 devices, and has a total error less than 0.25% FSR after calibration over a
-+/-10 degrees C temperature range.</p>
-<p>The circuit incorporates the <a class="icon adi reference external" href="https://www.analog.com/AD8608" target="_blank">AD8608</a> quad op-amp and the <a class="icon adi reference external" href="https://www.analog.com/AD7091R" target="_blank">AD7091R</a>
-12-bit successive approximation (SAR) ADC to convert the charge output from
-piezoelectric sensors into digital code. The circuit has a 12-pin PMOD
-connector on board, which can be used for connection to a microprocessor or
-FPGA.</p>
++/-10 degrees C temperature range. The accuracy depends on the calibration.</p>
+<p>The circuit shown in Figure 1 incorporates the <a class="icon adi reference external" href="https://www.analog.com/AD8608" target="_blank">AD8608</a> quad op-amp and the
+<a class="icon adi reference external" href="https://www.analog.com/AD7091R" target="_blank">AD7091R</a> 12-bit successive approximation (SAR) ADC to convert the charge
+output from piezoelectric sensors into digital code.</p>
+<p>The circuit has a 12-pin PMOD connector on board, which can be used for
+connection to a microprocessor or FPGA.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0350" target="_blank">CN0350 Circuit Note</a> discusses the design steps needed to
+optimize the circuit for a specific bandwidth including noise analysis and
+component selection considerations.</p>
+<p>The performance of the circuit can be demonstrated with the use of the Analog
+Devices <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> controller board and <a class="icon adi reference external" href="https://www.analog.com/SDP-PMD-IB1Z" target="_blank">SDP-PMD-IB1Z</a>
+SDP-to-PMOD interposer board, both optional purchase items. This user guide
+discusses how to use the evaluation software to collect data from the
+EVAL-CN0350-PMDZ evaluation board.</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_hw_375.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_hw_375.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_hw_375.jpg" width="400" />
 </a>
@@ -939,7 +951,8 @@ FPGA.</p>
 <figure class="align-center" id="id3">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_overview_fig_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_overview_fig_1.png" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">Charge Input Single Supply Data Acquisition System for Piezoelectric Sensors</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Charge Input Single Supply Data Acquisition System for Piezoelectric Sensors
+(All Connections and Decoupling Not Shown)</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -952,9 +965,18 @@ FPGA.</p>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/SDP-PMD-IB1Z" target="_blank">SDP-PMD-IB1Z</a> SDP-to-PMOD Interposer Board</p></li>
 <li><p>Voltage source (signal generator)</p></li>
 <li><p>Multimeter (to measure the input current)</p></li>
-<li><p><a class="icon link reference external" href="https://www.analog.com/CN0350" target="_blank">CN0350 Evaluation Software</a></p></li>
-<li><p>PC with USB type A port (Windows XP SP2 or later)</p></li>
-<li><p>USB type A to USB type mini-B cable</p></li>
+<li><p><a class="icon link reference external" href="https://www.analog.com/CN0350" target="_blank">CN0350 Evaluation Software</a>
+(supplied with provided CD in kit)</p></li>
+<li><p>PC with the following minimum requirements:</p>
+<ul>
+<li><p>Windows XP Service Pack 2 (32-bit)</p></li>
+<li><p>USB type A port</p></li>
+<li><p>Processor rated at 1 GHz or faster</p></li>
+<li><p>512 MB RAM and 500 MB available hard disk space</p></li>
+</ul>
+</li>
+<li><p>USB type A to USB type mini-B cable (provided with the
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> Controller Board)</p></li>
 </ul>
 </section>
 <section id="general-setup">
@@ -977,68 +999,387 @@ block J1.</p></li>
 </figcaption>
 </figure>
 </section>
+<section id="installing-the-software">
+<h2>Installing the Software<a class="headerlink" href="#installing-the-software" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Load the evaluation software by placing the CN0350 evaluation software disc
+in the CD drive of the PC. You can also download the most up-to-date copy of
+the evaluation software from the
+<a class="icon link reference external" href="https://www.analog.com/CN0350" target="_blank">CN0350 product page</a>. Open the file
+<code class="docutils literal notranslate"><span class="pre">setup.exe</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended that you install the CN0350 Evaluation Software to the
+default directory path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\CN0350\</span></code> and all
+National Instruments products to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>.</p>
+</div>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_installing_sw_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_installing_sw_1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CN0350 Software Installer Welcome Screen</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_installing_sw_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_installing_sw_2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Installation Review Page</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to start the installation.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_installing_sw_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_installing_sw_3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Installation Progress</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Upon completion of the installation of the CN0350 Evaluation Software, the
+installer for the ADI SDP Drivers will execute.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended that you close all other applications before clicking
+<strong>Next</strong>. This will make it possible to update relevant system files
+without having to reboot your computer.</p>
+</div>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_installing_sw_4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_installing_sw_4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">ADI SDP Drivers Installer</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Press <strong>Next</strong> to set the installation location for the SDP Drivers.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended that you install the drivers to the default directory
+path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\SDP\DriversR2</span></code>.</p>
+</div>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/installing_sw_5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/installing_sw_5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">SDP Drivers Installation Location</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Press <strong>Next</strong> to install the SDP Drivers and complete the installation of
+all software. Click <strong>Finish</strong> when done.</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_installing_sw_6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_installing_sw_6.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">SDP Drivers Installation Complete</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/installing_sw_6a.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/installing_sw_6a.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Installation Finished</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="connecting-the-hardware">
+<h2>Connecting the Hardware<a class="headerlink" href="#connecting-the-hardware" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CFTL-6V-PWRZ" target="_blank">EVAL-CFTL-6V-PWRZ</a> (+6 V DC Power Supply) to the barrel
+jack <strong>J1</strong> of the <a class="icon adi reference external" href="https://www.analog.com/SDP-PMD-IB1Z" target="_blank">SDP-PMD-IB1Z</a> (Interposer Board) as depicted below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure that the jumper is positioned as shown below.</p>
+</div>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_1.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Power Supply Connection to Interposer Board</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the 120-pin connector on the <a class="icon adi reference external" href="https://www.analog.com/SDP-PMD-IB1Z" target="_blank">SDP-PMD-IB1Z</a> (Interposer Board)
+to the 120-pin connector marked <strong>CON A</strong> on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a>
+(SDP-B Board).</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_2.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Interposer Board to SDP-B Board Connection</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the USB cable supplied with the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> (SDP-B Board)
+to the USB port on the PC and the SDP Board.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_3.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">USB Connection to SDP-B Board</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Verify that the SDP Drivers are loaded properly. Open the Device Manager
+and check if the SDP Board is recognized. If not, repeat steps 1–3.</p>
+</div>
+<figure class="align-center" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_3a.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_3a.png" />
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Device Manager Showing SDP Board</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the EVAL-CN0350-PMDZ (CN0350 Board) to the <a class="icon adi reference external" href="https://www.analog.com/SDP-PMD-IB1Z" target="_blank">SDP-PMD-IB1Z</a>
+(Interposer Board) via the 12-pin header PMOD connector.</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_connecthw_4.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">CN0350 Board Connected to Interposer Board</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the input voltage generator to J1 Terminal Block located on the
+EVAL-CN0350-PMDZ (CN0350 Board). The positive end of the voltage generator
+has to be wired to the input marked with <strong>CAL</strong> and the negative end of the
+voltage generator has to be wired to the input marked with <strong>NEG</strong>.</p></li>
+<li><p>After a proper connection of the hardware to the PC, the CN0350 Evaluation
+Software can be used to calibrate the board and capture data.</p></li>
+</ol>
+</section>
 <section id="using-the-evaluation-software">
 <h2>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h2>
-<section id="software-controls">
-<h3>Software Controls<a class="headerlink" href="#software-controls" title="Link to this heading"></a></h3>
+<section id="software-control-and-indicator-descriptions">
+<h3>Software Control and Indicator Descriptions<a class="headerlink" href="#software-control-and-indicator-descriptions" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id17">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">CN0350 Evaluation Software – Acquire Data Tab</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id18">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">CN0350 Evaluation Software – Calibrate System Tab</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id19">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">CN0350 Evaluation Software – SDP Revision Tab</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The CN0350 evaluation software provides the following controls and indicators:</p>
+<ol class="arabic">
+<li><p><strong>Acquire Data Button</strong> – When this button is pressed, the SDP-B Board will
+collect conversion data and present it in the graph.</p></li>
+<li><p><strong>Clear Data Button</strong> – When this button is pressed, the software will clear
+all data collected from the graph history.</p></li>
+<li><p><strong>Save Data Button</strong> – When this button is pressed, the software will save
+the captured data to a tab-delimited ASCII spreadsheet file. The units of the
+saved data depend on the chosen graph units (6).</p></li>
+<li><p><strong>Control Tabs</strong>:</p>
 <ul class="simple">
-<li><p><strong>Acquire Data Button</strong> – collects conversion data and displays it in
-the graph.</p></li>
-<li><p><strong>Clear Data Button</strong> – clears all collected data from the graph history.</p></li>
-<li><p><strong>Save Data Button</strong> – saves captured data to a tab-delimited ASCII
-spreadsheet file. The units of the saved data depend on the chosen graph
-units.</p></li>
-<li><p><strong>Numerical Indicator</strong> – displays the current reading value.</p></li>
-<li><p><strong>Graph Units Radio Buttons</strong> – selects between pC, mV, ADC Codes, and g.</p></li>
-<li><p><strong>ADC Settings</strong> – configures the SPI communication sample rate and number
-of samples.</p></li>
-<li><p><strong>Calibrate Button</strong> – initiates board calibration.</p></li>
-<li><p><strong>Calibration Coulombs Control</strong> – sets the input coulombs in pC for
-calibration.</p></li>
-<li><p><strong>Sensor Sensitivity Control</strong> – sets the sensor sensitivity in pC/g for
-displaying acceleration data.</p></li>
+<li><p><em>Acquire Data Main</em> – Clicking this tab brings the data collection graph
+to the front.</p></li>
+<li><p><em>Calibrate System</em> – Clicking this tab brings the system calibration
+settings to the front.</p></li>
+<li><p><em>SDP Revision</em> – Clicking this tab brings the SDP board information
+window to the front.</p></li>
 </ul>
+</li>
+<li><p><strong>Numerical Indicator</strong> – Displays the current reading value. The value
+units depend on the chosen graph units (6).</p></li>
+<li><p><strong>Graph Units Radio Buttons</strong> – Determines the units of the data displayed
+in the graph and the numerical indicator.</p></li>
+<li><p><strong>ADC Settings</strong> – Controls the SPI communication settings. The
+<strong>Sample Rate (Hz)</strong> control determines the conversion frequency and the
+<strong>Samples</strong> control determines the number of samples to be captured when
+clicking the Acquire Data button. The maximum sample rate is set to 620 kHz
+and the maximum samples are set to 1M. Changing these controls automatically
+changes the x-axis time on the graph.</p></li>
+<li><p><strong>Graph</strong> – Displays the collected data. The units on the graph depend on
+the chosen graph units (6).</p></li>
+<li><p><strong>Graph Controls</strong> – Allow the user to zoom in, zoom out, and pan through
+the collected data.</p></li>
+<li><p><strong>System Status String Indicator</strong> – Displays a message to the user
+detailing the current state of the software.</p></li>
+<li><p><strong>System Status LED Indicator</strong> – Displays the current state of the software
+in the form of an LED. There are four status LED colors:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_12inactive.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_12inactive.png" />
+</td>
+<td><p>Inactive</p></td>
+</tr>
+<tr class="row-even"><td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_12busy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_12busy.png" />
+</td>
+<td><p>Busy</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_12error.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_12error.png" />
+</td>
+<td><p>Error</p></td>
+</tr>
+<tr class="row-even"><td><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_12waiting.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_using_sw_12waiting.png" />
+</td>
+<td><p>Waiting for user action</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p><strong>Calibration Coulombs Numerical Control</strong> – Set this control to the input
+coulombs in pC, used to calibrate the board.</p></li>
+<li><p><strong>Calibrate Button</strong> – Pressing this button initiates a calibration of the
+board. After pressing this button, follow the instructions to calibrate the
+board.</p></li>
+<li><p><strong>Sensor Sensitivity Numerical Control</strong> – Used if a real piezoelectric
+sensor is used to capture data. Set the sensor sensitivity in pC/g here to be
+able to display correctly the captured data as acceleration (g). Another
+calibration is not needed for that purpose.</p></li>
+<li><p><strong>SDP Firmware Revision</strong> – Read-only data. After the connection is
+established with the SDP Board, the basic information for the controller can
+be found here.</p></li>
+</ol>
 </section>
-<section id="calibrating-the-board">
-<h3>Calibrating the Board<a class="headerlink" href="#calibrating-the-board" title="Link to this heading"></a></h3>
-<p>For calibration, an adjustable-amplitude, low-impedance output voltage source
-with sine wave output is required. The amount of input charge is determined by
-the formula Q = Ccal * Vin. A 1 nF capacitor is populated on the board for
-calibration; additional capacitors can be added in parallel using TP1 and TP2.</p>
+<section id="establishing-a-usb-connection-link">
+<h3>Establishing a USB Connection Link<a class="headerlink" href="#establishing-a-usb-connection-link" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Follow the instructions to properly install the software and connect the
+hardware as described in the previous sections.</p></li>
+<li><p>Open the file named <code class="docutils literal notranslate"><span class="pre">CN0350.exe</span></code> in the installation directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the software was installed to the default location it will be found at
+<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\CN0350\CN0350.exe</span></code>.</p>
+</div>
+</li>
+<li><p>The software should connect to the board automatically. If the hardware is
+not recognized by the PC, a window will appear indicating that the software
+is waiting for proper hardware connection. If that happens, perform the
+hardware connection procedure described in the previous section. After
+connecting the hardware, the list in the window will populate. Choose the
+connected hardware and click <strong>Select</strong>.</p>
+<figure class="align-center" id="id20">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_establishing_connection_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_establishing_connection_3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">Hardware Connection Selection Dialog</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Upon success, the <strong>System Status String Indicator</strong> will display
+<em>SDP Board Ready to Acquire Data</em>.</p></li>
+</ol>
+</section>
+<section id="calibrating-the-cn0350-board">
+<h3>Calibrating the CN0350 Board<a class="headerlink" href="#calibrating-the-cn0350-board" title="Link to this heading"></a></h3>
+<p>For calibration, an adjustable amplitude and frequency low-impedance output
+voltage source is required with sine wave output. The power supply voltage
+source has to be very well isolated from the circuit (the computer).</p>
+<p>Connect the voltage source (voltage generator) as shown in the figure below.
+The positive end of the voltage source is wired to the <strong>CAL</strong> input of the
+board. The negative end is wired to the <strong>NEG</strong> input. With the described
+configuration the board can be calibrated for various input ranges by changing
+the amplitude of the voltage source or the calibration capacitance.</p>
+<p>The amount of the input charge is determined by the formula Q = Ccal * Vin. The
+figure below shows a calibration configuration for 1000 pC at the input of the
+board (Vin = 1 V, Ccal = 1 nF). Note that a 1 nF capacitor is populated on the
+board, but you can use TP1 and TP2 to add an additional capacitor in parallel.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The output voltage of the charge amplifier must not exceed the input range
 of the ADC. For a 1 nF calibration capacitor, do not apply more than 1 V
-to the input of the board.</p>
+to the input of the board (Vout = Q/C2). If you need to calibrate the system
+for more than 1000 pC, add an external capacitor in parallel to C2 using TP3
+and TP4.</p>
 </div>
-<ol class="arabic simple">
-<li><p>Establish a USB connection.</p></li>
+<figure class="align-center" id="id21">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_calibrating_fig2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_calibrating_fig2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 20 </span><span class="caption-text">Calibration Configuration for 1000 pC Input</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="calibration-procedure-steps">
+<h3>Calibration Procedure Steps<a class="headerlink" href="#calibration-procedure-steps" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Establish a USB Connection Link.</p></li>
 <li><p>Click the <strong>Calibrate System</strong> tab.</p></li>
 <li><p>Set the <strong>Calibration Coulombs Control</strong> to the coulombs that will be
-applied during calibration.</p></li>
+applied to the board during calibration.</p></li>
 <li><p>Press the <strong>Calibrate</strong> button.</p></li>
-<li><p>Apply the coulombs to the input and click <strong>OK</strong> when ready.</p></li>
-<li><p>Remove the input source and click <strong>OK</strong> to complete calibration.</p></li>
+<li><p>A pop-up window appears. Apply the coulombs to the input of the board as
+described and click <strong>OK</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you press <strong>Cancel</strong> at this point you will exit the calibration
+procedure but the board will not be able to capture data properly.</p>
+</div>
+</li>
+<li><p>A second pop-up window appears. Remove the input voltage source from the
+board input. When ready, press <strong>OK</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you press <strong>Cancel</strong> the board will still not be calibrated.</p>
+</div>
+</li>
 </ol>
+<figure class="align-center" id="id22">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_cal_procedure_steps_6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_cal_procedure_steps_6.png" />
+<figcaption>
+<p><span class="caption-number">Figure 21 </span><span class="caption-text">Calibration Step – Apply Input Coulombs</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id23">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_cal_procedure_steps_6a.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_cal_procedure_steps_6a.png" />
+<figcaption>
+<p><span class="caption-number">Figure 22 </span><span class="caption-text">Calibration Step – Remove Input Source</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="acquiring-data">
 <h3>Acquiring Data<a class="headerlink" href="#acquiring-data" title="Link to this heading"></a></h3>
-<p>Once calibrated, the board can capture data from real piezoelectric sensors.
-Connect the positive end of the sensor to <strong>POS</strong> and the negative end to
-<strong>NEG</strong> on the board. Adjust the <strong>Sensor Sensitivity Control</strong> to match the
-sensor’s sensitivity for acceleration display in g.</p>
+<p>Once calibrated, the board can be used to capture data from real piezoelectric
+sensors. The positive end of the piezoelectric sensor should be wired to <strong>POS</strong>
+on the board and the negative to <strong>NEG</strong>. In order to display the result from
+the sensor as acceleration (g), adjust the <strong>Sensor Sensitivity Control</strong> to
+equal the sensitivity of the sensor.</p>
+<p>Another method to demonstrate the functionality of the board is to use the
+voltage generator connected to the calibration input. By changing the input
+voltage amplitude or the calibration capacitor, various input coulombs can be
+provided to the input of the board.</p>
 <ol class="arabic simple">
-<li><p>Establish a USB connection.</p></li>
+<li><p>Establish a USB Connection Link.</p></li>
 <li><p>Click the <strong>Acquire Data</strong> button.</p></li>
 </ol>
 </section>
-<section id="saving-data">
-<h3>Saving Data<a class="headerlink" href="#saving-data" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
+<section id="saving-data-to-a-spreadsheet-file">
+<h3>Saving Data to a Spreadsheet File<a class="headerlink" href="#saving-data-to-a-spreadsheet-file" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Establish a USB Connection Link.</p></li>
 <li><p>Capture data as described above.</p></li>
-<li><p>Click the <strong>Save Data</strong> button.</p></li>
-<li><p>Choose a file location and name, then click <strong>OK</strong>.</p></li>
+<li><p>Click the <strong>Save Data</strong> button.</p>
+<figure class="align-center" id="id24">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_saving_data_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0350-pmdz/cn0350_saving_data_3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 23 </span><span class="caption-text">Save Data Dialog</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click the <strong>OK</strong> button.</p></li>
+<li><p>Browse to the directory location where the spreadsheet file is to be saved.</p></li>
+<li><p>Name the file.</p></li>
+<li><p>Click the <strong>OK</strong> button.</p></li>
+<li><p>Open with Notepad or similar. The saved data shows the collected data
+according to the chosen <strong>Graph Units Radio Buttons</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The software saves the spreadsheet file as ASCII text with columns
+separated by tabs.</p>
+</div>
+</li>
 </ol>
 </section>
 </section>

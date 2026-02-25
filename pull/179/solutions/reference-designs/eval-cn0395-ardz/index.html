@@ -95,11 +95,12 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0395-ARDZ</a><ul>
+<li><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
 <li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
 <li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
 <li><a class="reference internal" href="#documents">Documents</a></li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
-<li><a class="reference internal" href="#additional-information">Additional Information</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
 </ul>
 </li>
@@ -646,7 +647,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -909,18 +910,37 @@ Content on this topic
   <section id="eval-cn0395-ardz">
 <span id="id1"></span><h1>EVAL-CN0395-ARDZ<a class="headerlink" href="#eval-cn0395-ardz" title="Link to this heading"></a></h1>
 <p>Volatile Organic Compound (VOC) Detector.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/CN0395" target="_blank">EVAL-CN0395-ARDZ</a> is an Arduino-compatible, single-supply,
+16-bit volatile organic compound (VOC) detector using a metal oxide sensor.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../../_images/cn395_00_1024.gif"><img alt="../../../_images/cn395_00_1024.gif" src="../../../_images/cn395_00_1024.gif" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0395-ARDZ functional block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="toctree-wrapper compound">
 </div>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="hardware.html"><span class="doc">Hardware Guide</span></a></p></li>
+<li><p><a class="reference internal" href="software.html"><span class="doc">Software Demo</span></a></p></li>
+</ol>
+</section>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p><a class="icon adi reference external" href="https://www.analog.com/CN0395" target="_blank">CN0395</a> is an Arduino-compatible, single-supply, 16-bit volatile organic
-compound (VOC) detector using a metal oxide sensor. The circuit provides
-precise sensor heating element control and configurable sensing for air quality
-measurement applications.</p>
-<p>CN0395 measures indoor air quality by utilizing a metal oxide sensor to detect
-gases composed of volatile organic compounds. The sensor is composed of a
+<p><a class="icon adi reference external" href="https://www.analog.com/CN0395" target="_blank">CN0395</a> measures indoor air quality by utilizing a metal oxide sensor to
+detect gases composed of volatile organic compounds. The sensor is composed of a
 heating resistor and a sensing resistor. When the sense resistor is heated, its
 value changes as a function of the concentrations of different gases.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/eval-cn0395-ardz.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/eval-cn0395-ardz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0395-ardz/eval-cn0395-ardz.jpg" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">EVAL-CN0395-ARDZ evaluation board</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The circuit uses the <a class="icon adi reference external" href="https://www.analog.com/ADN8810" target="_blank">ADN8810</a> current-output DAC to precisely control the
 current running through the sensor to achieve within 1% voltage accuracy needed
 for the heating element. The <a class="icon adi reference external" href="https://www.analog.com/AD7988-1" target="_blank">AD7988-1</a> 16-bit SAR ADC measures the heater
@@ -934,6 +954,15 @@ element at a specific temperature optimal for sensing.</p>
 <p>The hardware also includes a Sensirion SHT-30 temperature and humidity sensor
 on the I2C bus for temperature compensation, since the TGS8100 sensor has
 temperature and humidity dependency.</p>
+</section>
+<section id="supported-devices">
+<h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADN8810" target="_blank">ADN8810</a> – Programmable Current Source DAC</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD7988-1" target="_blank">AD7988-1</a> – 16-bit SAR ADC</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADG884" target="_blank">ADG884</a> – Analog Switch</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADG758" target="_blank">ADG758</a> – 8-Channel Multiplexer</p></li>
+</ul>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -964,16 +993,6 @@ For software demo and operating modes, see <a class="reference internal" href="s
 <li><p>Allegro Project</p></li>
 </ul>
 </div>
-</section>
-<section id="additional-information">
-<h2>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p><a class="icon adi reference external" href="https://www.analog.com/ADN8810" target="_blank">ADN8810 Product Page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/AD7988-1" target="_blank">AD7988-1 Product Page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/ADG884" target="_blank">ADG884 Product Page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/ADG758" target="_blank">ADG758 Product Page</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP360" target="_blank">EVAL-ADICUP360 Product Page</a></p></li>
-</ul>
 </section>
 <section id="help-and-support">
 <h2>Help and Support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h2>

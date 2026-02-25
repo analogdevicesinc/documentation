@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Precision Weigh Scale Signal Conditioner." name="description" />
+<meta content="Precision Weigh Scale Signal Conditioning System." name="description" />
 
-    <title>EVAL-CN0216-ARDZ &#8212; System Level Documentation  documentation</title>
+    <title>EVAL-CN0216-SDPZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
     <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
@@ -94,11 +94,46 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">EVAL-CN0216-ARDZ</a><ul>
+<li><a class="reference internal" href="#">EVAL-CN0216-SDPZ</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#evaluation-with-sdp-b-controller-board">Evaluation with SDP-B Controller Board</a><ul>
 <li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#general-setup">General Setup</a></li>
+<li><a class="reference internal" href="#installing-the-software">Installing the Software</a></li>
+<li><a class="reference internal" href="#connecting-the-hardware">Connecting the Hardware</a></li>
+<li><a class="reference internal" href="#using-the-evaluation-software">Using the Evaluation Software</a><ul>
+<li><a class="reference internal" href="#software-control-and-indicator-descriptions">Software Control and Indicator Descriptions</a></li>
+<li><a class="reference internal" href="#establishing-a-usb-connection">Establishing a USB Connection</a></li>
+<li><a class="reference internal" href="#capturing-data">Capturing Data</a></li>
+<li><a class="reference internal" href="#calibrating-the-load-cell">Calibrating the Load Cell</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-with-eval-adicup360">Evaluation with EVAL-ADICUP360</a><ul>
+<li><a class="reference internal" href="#demo-requirements-adicup360">Demo Requirements (ADICUP360)</a></li>
+<li><a class="reference internal" href="#setting-up-the-hardware-adicup360">Setting Up the Hardware (ADICUP360)</a></li>
+<li><a class="reference internal" href="#obtaining-the-source-code-adicup360">Obtaining the Source Code (ADICUP360)</a></li>
+<li><a class="reference internal" href="#configuring-the-software-adicup360">Configuring the Software (ADICUP360)</a></li>
+<li><a class="reference internal" href="#serial-terminal-output-adicup360">Serial Terminal Output (ADICUP360)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-with-arduino-uno">Evaluation with Arduino Uno</a><ul>
+<li><a class="reference internal" href="#demo-requirements-arduino">Demo Requirements (Arduino)</a></li>
+<li><a class="reference internal" href="#setting-up-the-hardware-arduino">Setting Up the Hardware (Arduino)</a></li>
+<li><a class="reference internal" href="#obtaining-the-source-code-arduino">Obtaining the Source Code (Arduino)</a></li>
+<li><a class="reference internal" href="#serial-terminal-output-arduino">Serial Terminal Output (Arduino)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#eval-cn0216-ardz-hardware-details">EVAL-CN0216-ARDZ Hardware Details</a><ul>
+<li><a class="reference internal" href="#connectors-and-jumper-configurations">Connectors and Jumper Configurations</a><ul>
+<li><a class="reference internal" href="#sensor-connector">Sensor Connector</a></li>
+<li><a class="reference internal" href="#ref-sel-bridge-configuration">REF SEL / Bridge Configuration</a></li>
+<li><a class="reference internal" href="#chip-select">Chip Select</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#documents">Documents</a></li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
@@ -648,7 +683,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -908,44 +943,678 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="eval-cn0216-ardz">
-<span id="eval-cn0216-sdpz"></span><h1>EVAL-CN0216-ARDZ<a class="headerlink" href="#eval-cn0216-ardz" title="Link to this heading"></a></h1>
-<p>Precision Weigh Scale Signal Conditioner.</p>
+  <section id="eval-cn0216-sdpz">
+<span id="id1"></span><h1>EVAL-CN0216-SDPZ<a class="headerlink" href="#eval-cn0216-sdpz" title="Link to this heading"></a></h1>
+<p>Precision Weigh Scale Signal Conditioning System.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p><a class="icon adi reference external" href="https://www.analog.com/CN0216" target="_blank">CN0216</a> is a precision weigh scale signal conditioning system using
-24-bit sigma-delta ADC technology with ultra-low noise amplifiers. The circuit
-achieves 15.3-bit noise-free code resolution for 10 mV full-scale load cell
-output.</p>
-<p>The circuit uses the <a class="icon adi reference external" href="https://www.analog.com/AD7791" target="_blank">AD7791</a> low-power buffered 24-bit sigma-delta ADC
-and the <a class="icon adi reference external" href="https://www.analog.com/ADA4528-2" target="_blank">ADA4528-2</a> dual external zero-drift amplifiers for signal
-amplification.</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/CN0216" target="_blank">CN0216</a> is a precision weigh scale signal conditioning system. It uses
+the <a class="icon adi reference external" href="https://www.analog.com/AD7791" target="_blank">AD7791</a>, a low power buffered 24-bit sigma-delta ADC along with two
+external <a class="icon adi reference external" href="https://www.analog.com/ADA4528-1" target="_blank">ADA4528-1</a> zero-drift amplifiers. This solution allows for high
+DC gain with a single supply.</p>
+<p>Ultralow noise, low offset voltage, and low drift amplifiers are used at the
+front end for amplification of the low-level signal from the load cell. The
+circuit yields 15.3-bit noise-free code resolution for a load cell with a
+full-scale output of 10 mV.</p>
+<p>This circuit allows great flexibility in designing a custom low-level signal
+conditioning front end that gives the user the ability to easily optimize the
+overall transfer function of the combined sensor-amplifier-converter circuit.
+The <a class="icon adi reference external" href="https://www.analog.com/AD7791" target="_blank">AD7791</a> maintains good performance over the complete output data
+range, from 9.5 Hz to 120 Hz, which allows it to be used in weigh scale
+applications that operate at various low speeds.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_simplified_schematic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_simplified_schematic.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0216 Simplified Schematic</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The EVAL-CN0216 circuit board is available in three form factors:</p>
+<ul class="simple">
+<li><p><strong>EVAL-CN0216-SDPZ</strong> – connects to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> System
+Demonstration Platform via 120-pin connector</p></li>
+<li><p><strong>EVAL-CN0216-ARDZ</strong> – Arduino shield form factor for use with Arduino Uno
+or <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP360" target="_blank">EVAL-ADICUP360</a></p></li>
+<li><p><strong>EVAL-CN0216-PMDZ</strong> – Pmod form factor</p></li>
+</ul>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_board_photo.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_board_photo.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_board_photo.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0216-ARDZ Board (Rev C)</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The EVAL-CN0216-ARDZ is powered from the <strong>VIN</strong> connector on the Arduino
+Uno header. The bridge drive voltage requires more than 5 V to power the
+bridge. Therefore an external DC power supply (7 V to 12 V) must be
+connected through the DC power connector for proper functionality. The board
+will not work properly if powered only from USB.</p>
+</div>
 </section>
+<section id="evaluation-with-sdp-b-controller-board">
+<h2>Evaluation with SDP-B Controller Board<a class="headerlink" href="#evaluation-with-sdp-b-controller-board" title="Link to this heading"></a></h2>
 <section id="required-equipment">
-<h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
+<h3>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>EVAL-CN0216-ARDZ evaluation board (Arduino shield)</p></li>
-<li><p>Arduino Uno or <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP360" target="_blank">EVAL-ADICUP360</a> development board</p></li>
-<li><p>USB cable (Mini-B)</p></li>
-<li><p>DC power supply (+5 V via VIN connector)</p></li>
-<li><p>Load cell (4-wire or 6-wire, e.g., Tedea-Huntleigh Model 1042)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> Controller Board (SDP-B Board)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0216-SDPZ" target="_blank">EVAL-CN0216-SDPZ</a> Evaluation Board (CN-0216 Board)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-CFTL-6V-PWRZ" target="_blank">EVAL-CFTL-6V-PWRZ</a> (+6 V Power Supply) or equivalent</p></li>
+<li><p>CN0216 Evaluation Software</p></li>
+<li><p>PC with USB Type A port (Windows XP SP2 32-bit or later, 1 GHz processor,
+512 MB RAM, 500 MB available disk space)</p></li>
+<li><p>USB Type A to USB Type Mini-B cable</p></li>
+<li><p>Tedea-Huntleigh Model 1042 Load Cell (or any compatible 4-wire or 6-wire
+load cell)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any 4-wire or 6-wire load cells can be used with the CN-0216 Board. This
+guide was written with the Tedea-Huntleigh Model 1042 in mind.</p>
+</div>
+</section>
+<section id="general-setup">
+<h3>General Setup<a class="headerlink" href="#general-setup" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0216-SDPZ" target="_blank">EVAL-CN0216-SDPZ</a> (CN-0216 Board) connects to the
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> (SDP-B Board) via the 120-pin connector.</p></li>
+<li><p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-CFTL-6V-PWRZ" target="_blank">EVAL-CFTL-6V-PWRZ</a> (+6 V DC Power Supply) powers the CN-0216
+Board via the DC barrel jack.</p></li>
+<li><p>The SDP-B Board connects to the PC via the USB cable.</p></li>
+<li><p>The load cell connects to the CN-0216 Board via the 8-pin header.</p></li>
+</ul>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_test_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_test_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-CN0216-SDPZ Test Setup with SDP-B Board</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="installing-the-software">
+<h3>Installing the Software<a class="headerlink" href="#installing-the-software" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Extract the file <strong>CN0216 Eval Software.zip</strong> and open the file
+<strong>setup.exe</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended that you install the CN0216 Evaluation Software to the
+default directory path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\CN0216\</span></code> and
+all National Instruments products to
+<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>.</p>
+</div>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CN0216 Software Installation Wizard</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Installation Review</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to start the installation.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Installation Progress</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Upon completion of the CN0216 Evaluation Software installation, the
+installer for the ADI SDP Drivers will execute.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended that you close all other applications before clicking
+<strong>Next</strong>. This will make it possible to update relevant system files
+without having to reboot your computer.</p>
+</div>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">ADI SDP Driver Installation</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Press <strong>Next</strong> to set the installation location for the SDP Drivers.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is recommended that you install the drivers to the default directory
+path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\SDP\Drivers</span></code>.</p>
+</div>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">SDP Driver Installation Path</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Press <strong>Next</strong> to install the SDP Drivers and complete the installation of
+all software. Click <strong>Finish</strong> when done.</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_install_step6.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Installation Complete</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="connecting-the-hardware">
+<h3>Connecting the Hardware<a class="headerlink" href="#connecting-the-hardware" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Connect the load cell to the <strong>8-pin header</strong> of the EVAL-CN0216-SDPZ
+(CN-0216 Board) as depicted below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a different load cell is used other than the Tedea-Huntleigh Model
+1042, the wiring schematic will be different.</p>
+</div>
+</li>
+</ol>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_wiring_table.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_wiring_table.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Load Cell Wiring Pin Assignment</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_wiring_schematic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_wiring_schematic.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Tedea-Huntleigh Model 1042 Wiring Schematic</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="using-the-evaluation-software">
+<h3>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h3>
+<section id="software-control-and-indicator-descriptions">
+<h4>Software Control and Indicator Descriptions<a class="headerlink" href="#software-control-and-indicator-descriptions" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_software_main.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_software_main.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">CN0216 Evaluation Software – Main Tab</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_software_calibrate.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_software_calibrate.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">CN0216 Evaluation Software – Calibrate System Tab</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The software interface provides the following controls and indicators:</p>
+<ol class="arabic simple">
+<li><p><strong>Connect/Reconnect Button</strong> – Establishes a USB connection between the
+SDP-B Board and the CN-0216 Board. A connection must be made before using
+any other software features.</p></li>
+<li><p><strong>Run Button</strong> – Starts collecting conversion data and displays
+acquisitions in the chart.</p></li>
+<li><p><strong>Stop Button</strong> – Stops data collection from the CN-0216 Board.</p></li>
+<li><p><strong>Clear Chart Button</strong> – Clears all collected data from the chart history.</p></li>
+<li><p><strong>Control Tabs</strong>:</p>
+<ul class="simple">
+<li><p><em>Main</em> – Displays the data collection chart.</p></li>
+<li><p><em>Calibrate System</em> – Displays system configuration settings.</p></li>
+</ul>
+</li>
+<li><p><strong>Current Weight Numerical Indicator</strong> – Displays the mass (in grams)
+on the load cell.</p></li>
+<li><p><strong>Chart Controls</strong> – Allow zooming in, zooming out, and panning through
+the collected data.</p></li>
+<li><p><strong>Select Units Radio Buttons</strong> – Determines the Y-axis units of the
+data displayed in the chart.</p></li>
+<li><p><strong>System Status String Indicator</strong> – Displays a message detailing the
+current state of the software.</p></li>
+<li><p><strong>System Status LED Indicator</strong> – Displays the current state of the
+software as a colored LED:</p>
+<ul class="simple">
+<li><p><img alt="led_inactive" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_led_inactive.png" /> Inactive</p></li>
+<li><p><img alt="led_busy" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_led_busy.png" /> Busy</p></li>
+<li><p><img alt="led_error" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_led_error.png" /> Error</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="11">
+<li><p><strong>Calibration Weight Numerical Control</strong> – Set this to the weight of the
+object used to calibrate the load cell.</p></li>
+<li><p><strong>Calibrate Button</strong> – Initiates the calibration of the load cell.</p></li>
+<li><p><strong>ADC Mode Radio Buttons</strong> – Sets the mode of the <a class="icon adi reference external" href="https://www.analog.com/AD7791" target="_blank">AD7791</a>. The
+default value is <em>Unbuffered Mode</em>:</p>
+<ul class="simple">
+<li><p><em>Buffered Mode</em> – Turns the on-chip analog input channel buffer ON.</p></li>
+<li><p><em>Unbuffered Mode</em> – Turns the on-chip analog input channel buffer OFF.</p></li>
+</ul>
+</li>
+<li><p><strong>ADC Channel Select Radio Buttons</strong> – Selects the analog input channel
+of the <a class="icon adi reference external" href="https://www.analog.com/AD7791" target="_blank">AD7791</a> for conversion. The default value is <em>AIN(+)-AIN(-)</em>:</p>
+<ul class="simple">
+<li><p><em>AIN(+)-AIN(-)</em> – Normal operation.</p></li>
+<li><p><em>AIN(-)-AIN(-)</em> – Shorts the analog input channels.</p></li>
+<li><p><em>Vdd Monitor</em> – Monitors the Vdd pin voltage. The voltage is attenuated
+by 5 and converted using an internal 1.17 V reference.</p></li>
+</ul>
+</li>
+<li><p><strong>Update Rate Radio Buttons</strong> – Changes the output word rate of the
+<a class="icon adi reference external" href="https://www.analog.com/AD7791" target="_blank">AD7791</a>. The default value is <em>9.5 Hz</em>.</p></li>
+<li><p><strong>Configure ADC Button</strong> – Applies the current ADC Mode, Channel Select,
+and Update Rate settings to the <a class="icon adi reference external" href="https://www.analog.com/AD7791" target="_blank">AD7791</a>.</p></li>
+</ol>
+</section>
+<section id="establishing-a-usb-connection">
+<h4>Establishing a USB Connection<a class="headerlink" href="#establishing-a-usb-connection" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>Follow the instructions to properly install the software and connect the
+hardware as described in the previous sections.</p></li>
+<li><p>Open the file named <strong>CN0216.exe</strong> in the installation directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the software was installed to the default location it will be found at
+<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\CN0216\CN0216.exe</span></code>.</p>
+</div>
+</li>
+<li><p>Click the <strong>Connect/Reconnect Button</strong>. A window with a progress bar will
+load.</p>
+<figure class="align-center" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_software_wait.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_software_wait.png" />
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">SDP-B Board Connection Progress</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Upon success, the System Status String Indicator will display <em>SDP Board
+Ready to Acquire Data</em>.</p></li>
+</ol>
+</section>
+<section id="capturing-data">
+<h4>Capturing Data<a class="headerlink" href="#capturing-data" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Establish a USB Connection Link.</p></li>
+<li><p>Click the <strong>Run Button</strong>.</p></li>
+<li><p>Click the <strong>Stop Button</strong> when acquisition is complete.</p></li>
+</ol>
+</section>
+<section id="calibrating-the-load-cell">
+<h4>Calibrating the Load Cell<a class="headerlink" href="#calibrating-the-load-cell" title="Link to this heading"></a></h4>
+<ol class="arabic">
+<li><p>Establish a USB Connection Link.</p></li>
+<li><p>Click the <strong>Calibrate System</strong> control tab.</p></li>
+<li><p>Set the <strong>Calibration Weight Numerical Control</strong> to the weight (in grams)
+of the object to be used for calibration.</p></li>
+<li><p>Place the calibration weight on the load cell.</p></li>
+<li><p>Click the <strong>Calibrate Button</strong> and wait for calibration to complete.</p>
+<figure class="align-center" id="id16">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_calibrate_wait.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_calibrate_wait.png" />
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Calibration in Progress</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Remove the calibration weight when prompted to do so.</p>
+<figure class="align-center" id="id17">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_calibrate_continue.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_calibrate_continue.png" />
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">Calibration Prompt to Remove Weight</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click the <strong>Continue Button</strong>.</p></li>
+<li><p>Wait for the second calibration phase to complete.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="evaluation-with-eval-adicup360">
+<h2>Evaluation with EVAL-ADICUP360<a class="headerlink" href="#evaluation-with-eval-adicup360" title="Link to this heading"></a></h2>
+<p>The <strong>ADuCM360_demo_cn0216</strong> is a weigh scale measurement demo project for the
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP360" target="_blank">EVAL-ADICUP360</a> base board with the EVAL-CN0216-ARDZ shield, created
+using the CrossCore Embedded Studios IDE.</p>
+<p>The CN0216 circuit translates resistance changes on the bridge into very small
+voltages. The bridge is excited by a regulated 5 V, which determines the
+full-scale range of the bridge output. Those values are passed through very low
+noise, auto-zero amplifiers to remove as many error sources as possible before
+being gained up to levels compatible with the ADC. The 24-bit ADC value is
+received via the SPI interface of the EVAL-ADICUP360 board.</p>
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_hw_stacked.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_hw_stacked.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_hw_stacked.jpg" style="width: 550px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">EVAL-CN0216-ARDZ Shield Stacked on EVAL-ADICUP360 Board</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="demo-requirements-adicup360">
+<h3>Demo Requirements (ADICUP360)<a class="headerlink" href="#demo-requirements-adicup360" title="Link to this heading"></a></h3>
+<p>Hardware:</p>
+<ul class="simple">
+<li><p>EVAL-ADICUP360</p></li>
+<li><p>EVAL-CN0216-ARDZ</p></li>
+<li><p>Precision weight set</p></li>
+<li><p>4-wire or 6-wire Wheatstone bridge weigh scale</p></li>
+<li><p>Micro USB to USB cable</p></li>
+<li><p>PC or laptop with a USB port</p></li>
+</ul>
+<p>Software:</p>
+<ul class="simple">
+<li><p>ADuCM360_demo_cn0216 software</p></li>
+<li><p>CrossCore Embedded Studio (2.7.0 or higher)</p></li>
+<li><p>ADuCM36x DFP (1.0.2 or higher)</p></li>
+<li><p>CMSIS ARM Pack (4.3.0 or higher)</p></li>
+<li><p>Serial terminal program (such as PuTTY or Tera Term)</p></li>
 </ul>
 </section>
-<section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<section id="setting-up-the-hardware-adicup360">
+<h3>Setting Up the Hardware (ADICUP360)<a class="headerlink" href="#setting-up-the-hardware-adicup360" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Set the jumpers and switches on the EVAL-ADICUP360 as shown below. The
+important jumpers/switches are highlighted in red.</p>
+<figure class="align-center" id="id19">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_hw_config.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_hw_config.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_hw_config.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">EVAL-ADICUP360 Jumper Configuration for CN0216</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Connect the <strong>EVAL-CN0216-ARDZ</strong> to the Arduino connectors <strong>P2, P5, P6,
+P7, P8</strong> of the <strong>EVAL-ADICUP360</strong> board.</p></li>
+<li><p>Connect the weigh scale to the EVAL-CN0216-ARDZ via the sensor connector
+(see the <a class="reference internal" href="#cn0216-sensor-connector-section"><span class="std std-ref">EVAL-CN0216-ARDZ Hardware Details</span></a> section for pinout details).</p></li>
+<li><p>Connect an acceptable 7 V to 12 V power supply into the <strong>P11</strong> barrel jack
+of the EVAL-ADICUP360.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is extremely important to plug in an acceptable power supply to the
+barrel jack <strong>P11</strong> for the EVAL-CN0216-ARDZ. The boards will not work if
+you try only to power from the DEBUG_USB or the USER_USB.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Plug the USB cable from the PC to the EVAL-ADICUP360 via the Debug USB
+(P14).</p></li>
+</ol>
+</section>
+<section id="obtaining-the-source-code-adicup360">
+<h3>Obtaining the Source Code (ADICUP360)<a class="headerlink" href="#obtaining-the-source-code-adicup360" title="Link to this heading"></a></h3>
+<p>There are two ways to program the ADICUP360 with the CN0216 software:</p>
+<ol class="arabic simple">
+<li><p><strong>Drag and drop</strong> the <code class="docutils literal notranslate"><span class="pre">.bin</span></code> file to the MBED drive – this is the
+easiest way to get started with the reference design.</p></li>
+<li><p><strong>Build, compile, and debug</strong> using CrossCore Embedded Studio (CCES) –
+allows customization of software parameters.</p></li>
+</ol>
+<p>The software for the ADuCM360_demo_cn0216 demo can be found at:</p>
 <ul class="simple">
-<li><p>Power must be applied via the VIN connector on the Arduino header (&gt;5 V
-required for bridge drive; USB alone is insufficient).</p></li>
-<li><p>Sensor connector accepts 8-pin connector for load cell wiring (±Excitation,
-±Signal, ±Sense pins).</p></li>
-<li><p><strong>P1, P2</strong> – Jumpers for 4-wire or 6-wire load cell configuration.</p></li>
-<li><p>Chip select configurable to Digital Pin 8, 9, or 10.</p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP360/releases" target="_blank">Prebuilt CN0216 Bin File</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP360/tree/master/projects/ADuCM360_demo_cn0216" target="_blank">ADuCM360_demo_cn0216 Source Code</a></p></li>
 </ul>
 </section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>Demo software is available for both the ADICUP360 and Arduino Uno platforms,
-providing real-time weight measurement and calibration.</p>
+<section id="configuring-the-software-adicup360">
+<h3>Configuring the Software (ADICUP360)<a class="headerlink" href="#configuring-the-software-adicup360" title="Link to this heading"></a></h3>
+<p>Set the reference voltage in the <code class="docutils literal notranslate"><span class="pre">AD7791.h</span></code> file (in volts):</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define VREF       5         </span><span class="cm">/* The board default value is 5V */</span>
+</pre></div>
+</div>
+<p>Configure the full-scale calibration weight in the <code class="docutils literal notranslate"><span class="pre">CN0216.h</span></code> file
+(in grams):</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define CAL_WEIGHT     1000</span>
+</pre></div>
+</div>
+</section>
+<section id="serial-terminal-output-adicup360">
+<h3>Serial Terminal Output (ADICUP360)<a class="headerlink" href="#serial-terminal-output-adicup360" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Flash the program to the EVAL-ADICUP360.</p></li>
+<li><p>Switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).</p></li>
+<li><p>Configure the serial terminal program with the following settings:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Baud rate:    9600
+Data:         8 bit
+Parity:       none
+Stop:         1 bit
+Flow Control: none
+</pre></div>
+</div>
+<p>At the start of the project, a calibration of the upper and lower input range
+of the weigh scale is performed to remove both offset and gain errors, providing
+the most accurate measurements possible:</p>
+<ul class="simple">
+<li><p>The program will prompt for a <strong>zero-scale calibration</strong> – ensure nothing is
+on the scale, then press <strong>&lt;ENTER&gt;</strong> (takes approximately 5 seconds).</p></li>
+<li><p>Next, the program will prompt to add the <strong>calibration weight</strong> to the scale,
+then press <strong>&lt;ENTER&gt;</strong> for the full-scale calibration (approximately
+5 seconds). Measurements are averaged over 100 samples and stored as
+calibration coefficients.</p></li>
+<li><p>Once calibration is complete, weight measurements are displayed each time
+<strong>&lt;ENTER&gt;</strong> is pressed.</p></li>
+</ul>
+<figure class="align-center" id="id20">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_putty_output.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_putty_output.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_putty_output.png" style="width: 550px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">Serial Terminal Output Showing Weight Measurements</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="evaluation-with-arduino-uno">
+<h2>Evaluation with Arduino Uno<a class="headerlink" href="#evaluation-with-arduino-uno" title="Link to this heading"></a></h2>
+<p>The <strong>CN0216_example</strong> is a weigh scale measurement demo project for the
+Arduino Uno base board with the EVAL-CN0216-ARDZ shield, created using the
+Arduino IDE.</p>
+<section id="demo-requirements-arduino">
+<h3>Demo Requirements (Arduino)<a class="headerlink" href="#demo-requirements-arduino" title="Link to this heading"></a></h3>
+<p>Hardware:</p>
+<ul class="simple">
+<li><p>Arduino Uno Rev 3</p></li>
+<li><p>EVAL-CN0216-ARDZ</p></li>
+<li><p>4-wire or 6-wire Wheatstone bridge weigh scale</p></li>
+<li><p>Type B to Type A USB cable</p></li>
+<li><p>PC or laptop with a USB port</p></li>
+</ul>
+<p>Software:</p>
+<ul class="simple">
+<li><p>CN0216_example sketch</p></li>
+<li><p>Arduino IDE</p></li>
+</ul>
+</section>
+<section id="setting-up-the-hardware-arduino">
+<h3>Setting Up the Hardware (Arduino)<a class="headerlink" href="#setting-up-the-hardware-arduino" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Plug the <strong>EVAL-CN0216-ARDZ</strong> shield on top of the <strong>Arduino Uno</strong> by
+matching up the <strong>POWER, ANALOG, DIGI0, DIGI1</strong> connectors. The boards
+should only plug together one way, preventing reverse connections.</p></li>
+<li><p>Connect the weigh scale to the EVAL-CN0216-ARDZ via the sensor connector
+(see the <a class="reference internal" href="#cn0216-sensor-connector-section"><span class="std std-ref">EVAL-CN0216-ARDZ Hardware Details</span></a> section for pinout details).</p></li>
+<li><p>Connect an acceptable 7 V to 12 V power supply into the power jack of the
+Arduino Uno.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is extremely important to plug in an acceptable power supply to the
+power jack for the EVAL-CN0216-ARDZ. The boards will not work if you try
+only to power from USB.</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Plug the Type B USB cable into the USB port on the Arduino Uno and the
+other end into the PC or laptop.</p></li>
+</ol>
+</section>
+<section id="obtaining-the-source-code-arduino">
+<h3>Obtaining the Source Code (Arduino)<a class="headerlink" href="#obtaining-the-source-code-arduino" title="Link to this heading"></a></h3>
+<p>The source code for the CN0216_example can be found at:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/arduino/tree/master/Arduino%20Uno%20R3/examples/CN0216_example" target="_blank">CN0216_example at GitHub</a></p></li>
+</ul>
+</section>
+<section id="serial-terminal-output-arduino">
+<h3>Serial Terminal Output (Arduino)<a class="headerlink" href="#serial-terminal-output-arduino" title="Link to this heading"></a></h3>
+<p>Configure the serial terminal with the following settings:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Baud rate:    9600
+Data:         8 bit
+Parity:       none
+Stop:         1 bit
+Flow Control: none
+</pre></div>
+</div>
+<p>The calibration procedure and output format are the same as described in the
+ADICUP360 section above.</p>
+</section>
+</section>
+<section id="eval-cn0216-ardz-hardware-details">
+<span id="cn0216-sensor-connector-section"></span><h2>EVAL-CN0216-ARDZ Hardware Details<a class="headerlink" href="#eval-cn0216-ardz-hardware-details" title="Link to this heading"></a></h2>
+<section id="connectors-and-jumper-configurations">
+<span id="cn0216-connectors-section"></span><h3>Connectors and Jumper Configurations<a class="headerlink" href="#connectors-and-jumper-configurations" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id21">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_connectors.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_connectors.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_connectors.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 20 </span><span class="caption-text">EVAL-CN0216-ARDZ Connector and Jumper Locations</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="sensor-connector">
+<h4>Sensor Connector<a class="headerlink" href="#sensor-connector" title="Link to this heading"></a></h4>
+<p>The sensor connector accepts an 8-pin header for load cell wiring.</p>
+<figure class="align-center" id="id22">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_sensor_connector.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_sensor_connector.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_sensor_connector.png" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 21 </span><span class="caption-text">Sensor Connector Pinout</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper docutils container" id="id23">
+<table class="docutils align-center" id="id23">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Sensor Connector Pin Assignment</span><a class="headerlink" href="#id23" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Number</p></th>
+<th class="head"><p>Pin Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pin 1</p></td>
+<td><p>Not Used</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 2</p></td>
+<td><ul class="simple">
+<li><p>Excitation</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Pin 3</p></td>
+<td><ul class="simple">
+<li><p>Signal</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Pin 4</p></td>
+<td><ul class="simple">
+<li><p>Sense</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Pin 5</p></td>
+<td><ul class="simple">
+<li><p>Sense</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Pin 6</p></td>
+<td><ul class="simple">
+<li><p>Signal</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Pin 7</p></td>
+<td><ul class="simple">
+<li><p>Excitation</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Pin 8</p></td>
+<td><p>Not Used</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-center" id="id24">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_wiring_schematic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_wiring_schematic.png" />
+<figcaption>
+<p><span class="caption-number">Figure 22 </span><span class="caption-text">Tedea-Huntleigh Model 1042 Wiring to Sensor Connector</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="ref-sel-bridge-configuration">
+<h4>REF SEL / Bridge Configuration<a class="headerlink" href="#ref-sel-bridge-configuration" title="Link to this heading"></a></h4>
+<p>These jumpers allow the circuit to be configured for use with 4-wire or 6-wire
+load cells.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any 4-wire or 6-wire load cells can be used with the EVAL-CN0216-ARDZ. The
+Tedea-Huntleigh Model 1042 load cell was used during testing.</p>
+</div>
+<p><strong>6-Wire Configuration:</strong></p>
+<figure class="align-center" id="id25">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_ref_sel_6wire.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_ref_sel_6wire.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_ref_sel_6wire.png" style="width: 100px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 23 </span><span class="caption-text">P1/P2 Jumper Position for 6-Wire Load Cell</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>P1</strong> – Connects ADC REFIN+ to Sensor +Sense pin</p></li>
+<li><p><strong>P2</strong> – Connects ADC REFIN- to Sensor -Sense pin</p></li>
+</ul>
+<p><strong>4-Wire Configuration:</strong></p>
+<figure class="align-center" id="id26">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_ref_sel_4wire.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_ref_sel_4wire.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_ref_sel_4wire.png" style="width: 100px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 24 </span><span class="caption-text">P1/P2 Jumper Position for 4-Wire Load Cell</span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>P1</strong> – Connects ADC REFIN+ to 5 V supply</p></li>
+<li><p><strong>P2</strong> – Connects ADC REFIN- to GND</p></li>
+</ul>
+</section>
+<section id="chip-select">
+<h4>Chip Select<a class="headerlink" href="#chip-select" title="Link to this heading"></a></h4>
+<p>These jumpers allow changing the pin mapping of the <a class="icon adi reference external" href="https://www.analog.com/AD7791" target="_blank">AD7791</a> chip select
+line to different Arduino digital pins.</p>
+<figure class="align-center" id="id27">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_cs_sel_pin10.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_cs_sel_pin10.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_cs_sel_pin10.png" style="width: 100px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 25 </span><span class="caption-text">CS – Arduino Digital Pin 10</span><a class="headerlink" href="#id27" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id28">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_cs_sel_pin9.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_cs_sel_pin9.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_cs_sel_pin9.png" style="width: 100px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 26 </span><span class="caption-text">CS – Arduino Digital Pin 9</span><a class="headerlink" href="#id28" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id29">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_cs_sel_pin8.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_cs_sel_pin8.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0216-sdpz/cn0216_cs_sel_pin8.png" style="width: 100px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 27 </span><span class="caption-text">CS – Arduino Digital Pin 8</span><a class="headerlink" href="#id29" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If using an EVAL-CN0216-ARDZ board prior to Rev C, install a 0-ohm resistor
+to resistor pads R7, R8, or R9 instead:</p>
+<ul class="simple">
+<li><p><strong>R7</strong> – Arduino Digital Pin 8</p></li>
+<li><p><strong>R8</strong> – Arduino Digital Pin 9</p></li>
+<li><p><strong>R9</strong> – Arduino Digital Pin 10</p></li>
+</ul>
+</div>
+</section>
+</section>
 </section>
 <section id="documents">
 <h2>Documents<a class="headerlink" href="#documents" title="Link to this heading"></a></h2>
@@ -957,11 +1626,14 @@ providing real-time weight measurement and calibration.</p>
 <h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
+<p><a class="icon link reference external" href="https://www.analog.com/cn0216-designsupport" target="_blank">EVAL-CN0216-SDPZ Design &amp; Integration Files</a></p>
 <p><a class="icon link reference external" href="https://www.analog.com/cn0216-designsupport" target="_blank">EVAL-CN0216-ARDZ Design &amp; Integration Files</a></p>
 <ul class="simple">
 <li><p>Schematics</p></li>
 <li><p>PCB Layout</p></li>
 <li><p>Bill of Materials</p></li>
+<li><p>Gerber Files</p></li>
+<li><p>Allegro/PADS Board File</p></li>
 </ul>
 </div>
 </section>
@@ -969,7 +1641,10 @@ providing real-time weight measurement and calibration.</p>
 <h2>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD7791" target="_blank">AD7791 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADA4528-1" target="_blank">ADA4528-1 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADA4528-2" target="_blank">ADA4528-2 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP360" target="_blank">EVAL-ADICUP360 Product Page</a></p></li>
 </ul>
 </section>
 <section id="help-and-support">

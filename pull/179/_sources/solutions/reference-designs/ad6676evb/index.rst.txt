@@ -188,6 +188,32 @@ Once the driver is loaded, the following IIO attributes are available at
    * - ``in_voltage_test_mode``
      - Interface test mode (off, checkerboard, pn23, pn9, ramp, etc.)
 
+The IIO Oscilloscope application can be used to interact with the AD6676
+IIO device driver and visualize captured data. The screenshot below shows
+the IIO Oscilloscope connected to the AD6676EVB.
+
+.. figure:: ad6676_osc_screenshot.png
+   :align: center
+
+   AD6676 IIO Oscilloscope capture
+
+JESD204B Interface Testing
+""""""""""""""""""""""""""
+
+The JESD204B serial interface can be verified using eye scan measurements.
+The following figures show example eye diagram results for Lane 0 and Lane 1
+of the AD6676EVB JESD204B link.
+
+.. figure:: ad6676_lane0_bert.png
+   :align: center
+
+   AD6676 JESD204B eye scan -- Lane 0
+
+.. figure:: ad6676_lane1_bert.png
+   :align: center
+
+   AD6676 JESD204B eye scan -- Lane 1
+
 No-OS Project
 ~~~~~~~~~~~~~
 

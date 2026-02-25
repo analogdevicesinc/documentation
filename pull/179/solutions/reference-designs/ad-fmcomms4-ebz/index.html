@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD-FMCOMMS4-EBZ is an FMC board for the AD9364, a highly integrated RF Agile Transceiver. The purpose of the AD-FMCOMMS4-EBZ is to provide an RF platform to software developers and system architects who want a single platform which operates over a wide tuning range (70 MHz to 6 GHz)." name="description" />
+<meta content="AD9364 Wideband Software Defined Radio Board." name="description" />
 
     <title>AD-FMCOMMS4-EBZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -95,7 +95,30 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AD-FMCOMMS4-EBZ</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#functional-overview">Functional Overview</a><ul>
+<li><a class="reference internal" href="#ad9364">AD9364</a><ul>
+<li><a class="reference internal" href="#receive">Receive</a></li>
+<li><a class="reference internal" href="#transmit">Transmit</a></li>
+<li><a class="reference internal" href="#clocking">Clocking</a></li>
+<li><a class="reference internal" href="#spi">SPI</a></li>
+<li><a class="reference internal" href="#control-monitor">Control/Monitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hardware">Hardware</a><ul>
+<li><a class="reference internal" href="#board-photo-and-main-components">Board Photo and Main Components</a></li>
+<li><a class="reference internal" href="#balun-selection">Balun Selection</a></li>
+<li><a class="reference internal" href="#i-o-voltage">I/O Voltage</a></li>
+<li><a class="reference internal" href="#board-dimensions">Board Dimensions</a></li>
+<li><a class="reference internal" href="#power">Power</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#rf-loopback">RF Loopback</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
 <li><a class="reference internal" href="#hdl-reference-design">HDL Reference Design</a><ul>
 <li><a class="reference internal" href="#hdl-source-code">HDL Source Code</a></li>
@@ -104,9 +127,12 @@
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#linux-drivers">Linux Drivers</a></li>
 <li><a class="reference internal" href="#device-trees">Device Trees</a></li>
+<li><a class="reference internal" href="#software-applications">Software Applications</a></li>
+<li><a class="reference internal" href="#design-resources">Design Resources</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information">More Information</a></li>
+<li><a class="reference internal" href="#warning">Warning</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
 </ul>
 </li>
@@ -653,7 +679,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -915,35 +941,219 @@ Content on this topic
             
   <section id="ad-fmcomms4-ebz">
 <span id="id1"></span><h1>AD-FMCOMMS4-EBZ<a class="headerlink" href="#ad-fmcomms4-ebz" title="Link to this heading"></a></h1>
+<p>AD9364 Wideband Software Defined Radio Board.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/ad-fmcomms4-ebz.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/ad-fmcomms4-ebz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/ad-fmcomms4-ebz.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD-FMCOMMS4-EBZ evaluation board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS4-EBZ" target="_blank">AD-FMCOMMS4-EBZ</a> is an FMC board for the <a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364</a>, a highly
-integrated RF Agile Transceiver. The purpose of the AD-FMCOMMS4-EBZ is to
-provide an RF platform to software developers and system architects who want
-a single platform which operates over a wide tuning range (70 MHz to 6 GHz).</p>
+integrated RF Agile Transceiver. While the complete chip level design package
+can be found on the
+<a class="icon adi reference external" href="https://www.analog.com/en/rfif-components/rfif-transceivers/products/AD9361-Integrated-RF-Agile-Transceiver-Design-Res/fca.html" target="_blank">ADI website</a>,
+information on the card, and how to use it, the design package that surrounds
+it, and the software which can make it work, can be found here.</p>
+<p>The purpose of the AD-FMCOMMS4-EBZ is to provide an RF platform to software
+developers, system architects, etc, who want a single platform which operates
+over a much wider tuning range (70 MHz – 6 GHz).</p>
 <p>The AD-FMCOMMS4-EBZ board is very similar to the
 <a class="reference internal" href="../ad-fmcomms2-ebz/index.html#ad-fmcomms2-ebz"><span class="std std-ref">AD-FMCOMMS2-EBZ</span></a> and
-<a class="reference internal" href="../ad-fmcomms3-ebz/index.html#ad-fmcomms3-ebz"><span class="std std-ref">AD-FMCOMMS3-EBZ</span></a> boards with only one exception:
-rather than the <a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a> (which is 2 Rx, 2 Tx), it uses the <a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364</a>,
-a lower cost 1 Rx, 1 Tx device. The AD-FMCOMMS4-EBZ includes both types of
-external baluns: one targeted for wider tuning range applications (Minicircuits
-TCM1-63AX+), and ones which provide optimized performance for 2.4 GHz.</p>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364</a> provides the following capabilities:</p>
+<a class="reference internal" href="../ad-fmcomms3-ebz/index.html#ad-fmcomms3-ebz"><span class="std std-ref">AD-FMCOMMS3-EBZ</span></a> boards with only one exception,
+rather than the <a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a> (which is 2 Rx, 2 Tx), it uses the
+<a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364</a>, a lower cost 1 Rx, 1 Tx device. The AD-FMCOMMS4-EBZ includes
+both types of external baluns, one targeted for wider tuning range applications
+(Minicircuits TCM1-63AX+), and ones which provide optimized performance for
+2.4 GHz.</p>
+<p>Since much of the FMCOMMS2/3/4 share a common device and infrastructure, much
+of the documentation is the same.</p>
+<section id="functional-overview">
+<h2>Functional Overview<a class="headerlink" href="#functional-overview" title="Link to this heading"></a></h2>
+<p>A functional block diagram of the system is given below. The system consists of
+four functional partitions – receive path, transmit path, clocking, and power
+supply. The data path is fully integrated into the <a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364</a>. The key
+features of the receive and transmit paths are listed below. Please refer to the
+device data sheet for more details.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/ad9364_block_diagram.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/ad9364_block_diagram.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/ad9364_block_diagram.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD-FMCOMMS4-EBZ system block diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="ad9364">
+<h3>AD9364<a class="headerlink" href="#ad9364" title="Link to this heading"></a></h3>
+<section id="receive">
+<h4>Receive<a class="headerlink" href="#receive" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li><p>Continuous frequency coverage from 70 MHz to 6.0 GHz</p></li>
-<li><p>Up to 56 MHz of instantaneous bandwidth</p></li>
-<li><p>1 x 1 transceiver (1 Rx, 1 Tx)</p></li>
-<li><p>Integrated 12-bit DACs and ADCs</p></li>
-<li><p>Integrated frequency synthesizers</p></li>
-<li><p>Integrated digital filtering and calibration</p></li>
+<li><p>Supports 1 direct conversion RF receive channel</p></li>
+<li><p>Fully integrated synthesizers (including loop filter)</p></li>
+<li><p>Data path consists of LNA, Demodulator, LPF, ADC and digital filters</p></li>
+<li><p>AGC, Quadrature calibration and DC offset calibration</p></li>
+<li><p>Noise Figure: 2.5 dB at 1 GHz</p></li>
+<li><p>ADC: Continuous time sigma-delta, 640 MSPS</p></li>
+<li><p>Digital Filters: 128 complex taps, decimation between 2 and 48</p></li>
+<li><p>Gain: 1 dB step size, 80 dB analog range, 30 dB digital range
+(post ADC scaling)</p></li>
+<li><p>On-chip sensor for temperature-corrected RSSI</p></li>
 </ul>
-<p>Since much of the FMCOMMS2/3/4 share a common device and infrastructure,
-the HDL reference design is shared. See the
-<a class="reference internal" href="../ad-fmcomms2-ebz/index.html#ad-fmcomms2-ebz"><span class="std std-ref">AD-FMCOMMS2-EBZ</span></a> for the full HDL reference design
-documentation.</p>
+</section>
+<section id="transmit">
+<h4>Transmit<a class="headerlink" href="#transmit" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Supports 1 direct conversion RF transmit channel</p></li>
+<li><p>Fully integrated synthesizers (including loop filter)</p></li>
+<li><p>Data path consists of digital filters, DAC and Modulators</p></li>
+<li><p>Digital Filters: 128 complex taps, interpolation between 2 and 48</p></li>
+<li><p>Gain: 0.25 dB step size, 86 dB range</p></li>
+<li><p>DAC: 320 MSPS</p></li>
+</ul>
+</section>
+<section id="clocking">
+<h4>Clocking<a class="headerlink" href="#clocking" title="Link to this heading"></a></h4>
+<p>The clocks are managed by the device and are software programmable. Please refer
+to the device data sheet for the various clocks within the device. The board
+provides a 40 MHz crystal for the AD9364.</p>
+</section>
+<section id="spi">
+<h4>SPI<a class="headerlink" href="#spi" title="Link to this heading"></a></h4>
+<p>The SPI signals are directly passed to the FMC connector.</p>
+</section>
+<section id="control-monitor">
+<h4>Control/Monitor<a class="headerlink" href="#control-monitor" title="Link to this heading"></a></h4>
+<p>The device allows real-time control via dedicated pins. These signals are passed
+to the FMC connector. The functionality of these pins are programmable and
+includes gain, synchronization, state machine control, etc. Please refer to the
+data sheet for more details.</p>
+<p>The device also allows real-time monitoring of internal signals via another set
+of dedicated pins. Again, these signals are passed to the FMC connector. The
+internal signals are multiplexed into these pins, and details of which are best
+described in the data sheet.</p>
+</section>
+</section>
+</section>
+<section id="hardware">
+<h2>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h2>
+<section id="board-photo-and-main-components">
+<h3>Board Photo and Main Components<a class="headerlink" href="#board-photo-and-main-components" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/fmcomms4_locations.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/fmcomms4_locations.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/fmcomms4_locations.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD-FMCOMMS4-EBZ component locations</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The AD-FMCOMMS4-EBZ uses the same PCB design as the
+<a class="reference internal" href="../ad-fmcomms2-ebz/index.html#ad-fmcomms2-ebz"><span class="std std-ref">AD-FMCOMMS2-EBZ</span></a> but is populated with the
+<a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364</a> instead of the <a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a>.</p>
+</section>
+<section id="balun-selection">
+<h3>Balun Selection<a class="headerlink" href="#balun-selection" title="Link to this heading"></a></h3>
+<p>The Rev C board includes two types of baluns:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Balun</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Frequency Range</p></th>
+<th class="head"><p>Connected To</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Johanson Technology 2450BL15B050E</p></td>
+<td><p>2.45 GHz Balun</p></td>
+<td><p>2400 – 2500 MHz</p></td>
+<td><p>RXB Input, TXB Output</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mini-Circuits TCM1-63AX+</p></td>
+<td><p>Wideband Transformer</p></td>
+<td><p>70 MHz – 6 GHz</p></td>
+<td><p>RXA Input, TXA Output</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="i-o-voltage">
+<h3>I/O Voltage<a class="headerlink" href="#i-o-voltage" title="Link to this heading"></a></h3>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364</a> requires a VDD_INTERFACE voltage between 1.71 V and 2.625 V
+(1.8 to 2.5 V +/- 5%).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Setting the I/O voltage to 3.3 V will damage the part.</p>
+</div>
+</section>
+<section id="board-dimensions">
+<h3>Board Dimensions<a class="headerlink" href="#board-dimensions" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/fmcomms4_dimensions.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/fmcomms4_dimensions.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/fmcomms4_dimensions.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">AD-FMCOMMS4-EBZ board dimensions</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The AD-FMCOMMS4-EBZ is a 10 layer board using the standard VITA 57.1 FMC LPC
+form factor.</p>
+</section>
+<section id="power">
+<h3>Power<a class="headerlink" href="#power" title="Link to this heading"></a></h3>
+<p>The board receives all the power from the FPGA carrier board through the FMC
+connector. Key power components:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADP1755" target="_blank">ADP1755</a></p></td>
+<td><p>Low dropout linear regulator, 1.2 A, 1.6 to 3.6 V</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADP2164" target="_blank">ADP2164</a></p></td>
+<td><p>High efficiency step-down DC-to-DC regulator, 6.5 V, 4 A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h3>
+<p>To get started with the AD-FMCOMMS4-EBZ, you will need:</p>
+<ul class="simple">
+<li><p>AD-FMCOMMS4-EBZ FMC board</p></li>
+<li><p>A supported FPGA carrier board (see <a class="reference internal" href="#fmcomms4-carriers"><span class="std std-ref">Supported Carriers</span></a>)</p></li>
+<li><p>Two SMA cables for RF loopback testing</p></li>
+<li><p>A micro-USB cable for UART console access</p></li>
+<li><p>A power supply for the carrier board</p></li>
+</ul>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/ad9364_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/ad9364_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/ad9364_setup.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">AD-FMCOMMS4-EBZ connected to a carrier board</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="rf-loopback">
+<h3>RF Loopback<a class="headerlink" href="#rf-loopback" title="Link to this heading"></a></h3>
+<p>For initial testing and verification, a simple loopback configuration connects
+the Tx output to the Rx input.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/fmcomms4-loopback.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/fmcomms4-loopback.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad-fmcomms4-ebz/fmcomms4-loopback.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">AD-FMCOMMS4-EBZ RF loopback configuration</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 <section id="supported-carriers">
-<h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
+<span id="fmcomms4-carriers"></span><h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -989,7 +1199,7 @@ documentation.</p>
 <section id="linux-drivers">
 <h3>Linux Drivers<a class="headerlink" href="#linux-drivers" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad9361.c" target="_blank">AD9361 Linux Driver</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/ad9361.c" target="_blank">AD9361/AD9364 Linux Driver</a></p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/cf_axi_adc_core.c" target="_blank">AXI ADC HDL Linux Driver</a></p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/frequency/cf_axi_dds.c" target="_blank">AXI DAC DDS Linux Driver</a></p></li>
 </ul>
@@ -997,7 +1207,39 @@ documentation.</p>
 <section id="device-trees">
 <h3>Device Trees<a class="headerlink" href="#device-trees" title="Link to this heading"></a></h3>
 <ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx/adi-fmcomms4.dtsi" target="_blank">AD9364 FMCOMMS4 DTSI</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx/zynq-zc702-adv7511-ad9364-fmcomms4.dts" target="_blank">ZC702 DTS</a></p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx/zynq-zc706-adv7511-ad9364-fmcomms4.dts" target="_blank">ZC706 DTS</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad9364-fmcomms4.dts" target="_blank">ZedBoard DTS</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-ad9364-fmcomms4.dts" target="_blank">ZCU102 DTS</a></p></li>
+</ul>
+</section>
+<section id="software-applications">
+<h3>Software Applications<a class="headerlink" href="#software-applications" title="Link to this heading"></a></h3>
+<p>The following software applications and frameworks are supported with the
+AD-FMCOMMS4-EBZ:</p>
+<ul class="simple">
+<li><p><strong>IIO Oscilloscope</strong>: GUI application for data capture and visualization</p></li>
+<li><p><strong>AD936X Control Plugin</strong>: IIO Oscilloscope plugin for AD9364 device
+configuration</p></li>
+<li><p><strong>AD936X Advanced Plugin</strong>: Advanced IIO Oscilloscope plugin for detailed
+AD9364 control</p></li>
+<li><p><strong>libiio</strong>: C/C++ library for interfacing with IIO devices</p></li>
+<li><p><strong>pyadi-iio</strong>: Python interfaces for IIO devices</p></li>
+<li><p><strong>GNU Radio</strong>: Software radio framework support</p></li>
+<li><p><strong>MATLAB/Simulink</strong>: Transceiver Toolbox for streaming data into/out of
+MATLAB</p></li>
+</ul>
+</section>
+<section id="design-resources">
+<h3>Design Resources<a class="headerlink" href="#design-resources" title="Link to this heading"></a></h3>
+<p>When designing with the AD9364, the following resources may be useful:</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364 Product Page</a> – full datasheet and ordering information</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad9361_design_files" target="_blank">AD9361/AD9364 Design Files</a> – chip level design
+package</p></li>
+<li><p>No-OS Driver – bare-metal driver for platforms without an operating system</p></li>
+<li><p>HDL Reference Design – the FPGA-based baseband design</p></li>
 </ul>
 </section>
 </section>
@@ -1006,8 +1248,17 @@ documentation.</p>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/introduction.html" target="_blank">ADI Reference Designs HDL User Guide</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcomms4-ebz" target="_blank">AD-FMCOMMS4-EBZ Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/education/education-library/software-defined-radio-for-engineers.html" target="_blank">SDR For Engineers</a></p></li>
 </ul>
 </section>
+<section id="warning">
+<h2>Warning<a class="headerlink" href="#warning" title="Link to this heading"></a></h2>
+<div><div class="esd-warning docutils container">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div></section>
 <section id="support">
 <h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <p>If you have any questions regarding the AD-FMCOMMS4-EBZ feel free to ask on

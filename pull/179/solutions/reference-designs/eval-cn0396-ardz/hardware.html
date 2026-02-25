@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="This page describes the hardware setup and connector configuration for the EVAL-CN0396-ARDZ shield board used with the EVAL-ADICUP360 development platform." name="description" />
+<meta content="This page describes the hardware setup and connector configuration for the EVAL-CN0396-ARDZ shield board." name="description" />
 
     <title>Hardware &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -101,7 +101,8 @@
 <li><a class="reference internal" href="#chip-select-configuration">Chip Select Configuration</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#setting-up-the-hardware">Setting Up the Hardware</a></li>
+<li><a class="reference internal" href="#setting-up-with-eval-adicup360">Setting Up with EVAL-ADICUP360</a></li>
+<li><a class="reference internal" href="#setting-up-with-arduino-uno">Setting Up with Arduino Uno</a></li>
 </ul>
 </li>
 </ul>
@@ -647,7 +648,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -910,8 +911,7 @@ Content on this topic
   <section id="hardware">
 <span id="eval-cn0396-ardz-hardware"></span><h1>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h1>
 <p>This page describes the hardware setup and connector configuration for the
-<a class="reference internal" href="index.html#eval-cn0396-ardz"><span class="std std-ref">EVAL-CN0396-ARDZ</span></a> shield board used with the EVAL-ADICUP360 development
-platform.</p>
+<a class="reference internal" href="index.html#eval-cn0396-ardz"><span class="std std-ref">EVAL-CN0396-ARDZ</span></a> shield board.</p>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
 <ul class="simple">
@@ -926,6 +926,13 @@ connected.</p></li>
 </section>
 <section id="connectors-sensors-and-configurations">
 <h2>Connectors, Sensors, and Configurations<a class="headerlink" href="#connectors-sensors-and-configurations" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_board_label_wiki.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_board_label_wiki.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_board_label_wiki.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0396-ARDZ board connectors and component layout.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="gas-sensors">
 <h3>Gas Sensors<a class="headerlink" href="#gas-sensors" title="Link to this heading"></a></h3>
 <p>The evaluation board comes packaged with an Alphasense COH-A2 sensor. Sockets
@@ -937,9 +944,16 @@ are provided for easy installation of the sensor.</p>
 <li><p>DD-Scientific GS+4DT</p></li>
 </ul>
 <p><strong>Sensor Socket Connection:</strong></p>
-<div class="table-wrapper docutils container" id="id1">
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Sensor Socket Pin Mapping</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/sensorsocket.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/sensorsocket.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/sensorsocket.png" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Sensor socket pin layout.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Sensor Socket Pin Mapping</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Pin Name</p></th>
 <th class="head"><p>Description</p></th>
@@ -1031,18 +1045,55 @@ digital temperature sensor:</p>
 </div>
 </section>
 </section>
-<section id="setting-up-the-hardware">
-<h2>Setting Up the Hardware<a class="headerlink" href="#setting-up-the-hardware" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
-<li><p>Set the jumpers/switches on the EVAL-ADICUP360 base board for programming
-mode.</p></li>
+<section id="setting-up-with-eval-adicup360">
+<h2>Setting Up with EVAL-ADICUP360<a class="headerlink" href="#setting-up-with-eval-adicup360" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>To program the base board, set the jumpers/switches as shown in the figure
+below. The important jumpers/switches are highlighted in red.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0216_hw_config.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0216_hw_config.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0216_hw_config.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-ADICUP360 jumper/switch configuration for programming mode.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Connect the <strong>EVAL-CN0396-ARDZ</strong> to the Arduino connectors <strong>P2, P5, P6,
 P7, P8</strong> of the <strong>EVAL-ADICUP360</strong> board.</p></li>
-<li><p>Set the jumpers on the EVAL-CN0396-ARDZ board for the desired chip select
-configuration.</p></li>
+<li><p>Set the jumpers on the EVAL-CN0396-ARDZ board as shown in the figure below.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_demo_4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_demo_4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_demo_4.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">EVAL-CN0396-ARDZ jumper configuration.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
 Debug USB (P14).</p></li>
 </ol>
+</section>
+<section id="setting-up-with-arduino-uno">
+<h2>Setting Up with Arduino Uno<a class="headerlink" href="#setting-up-with-arduino-uno" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Plug the <strong>EVAL-CN0396-ARDZ</strong> shield on top of the <strong>Arduino Uno</strong>
+development board by matching up the <strong>POWER, ANALOG, DIGI0, DIGI1</strong>
+connectors. The boards should only plug together one way, preventing
+reverse connections.</p></li>
+<li><p>Connect your electrochemical gas sensor to the EVAL-CN0396-ARDZ via
+<strong>M1</strong>.</p></li>
+<li><p>Set the jumpers on the EVAL-CN0396-ARDZ board as shown in the jumper
+configuration figure above.</p></li>
+<li><p>Plug in the Type B USB cable into the USB port on the Arduino Uno, and
+the other end into the PC or laptop.</p></li>
+</ol>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_arduino_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_arduino_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0396-ardz/cn0396_arduino_setup.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">EVAL-CN0396-ARDZ shield mounted on Arduino Uno.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 

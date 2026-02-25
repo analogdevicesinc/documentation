@@ -665,7 +665,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -977,6 +977,12 @@ with N3300A</p></li>
 <h3>Power Rails Efficiency Measurements<a class="headerlink" href="#power-rails-efficiency-measurements" title="Link to this heading"></a></h3>
 <p>The test setup for power rails efficiency measurements uses the following
 configuration:</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/block.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/block.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Test setup functional block diagram for power rails efficiency measurements</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition-efficiency-formula admonition">
 <p class="admonition-title">Efficiency Formula</p>
 <p>Efficiency = P<sub>OUT</sub> / P<sub>IN</sub> = (V<sub>OUT</sub> x
@@ -992,6 +998,13 @@ window of the Agilent E3631A DC power supply.</p></li>
 </section>
 <section id="ripple-and-transient-response-measurements">
 <h3>Ripple and Transient Response Measurements<a class="headerlink" href="#ripple-and-transient-response-measurements" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/block2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/block2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Test setup functional block diagram for ripple and transient response
+measurements</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>For ripple and transient response measurements:</p>
 <ul class="simple">
 <li><p>Channel A of the oscilloscope monitors the output voltage of the module.</p></li>
@@ -1004,6 +1017,12 @@ frequency.</p></li>
 </section>
 <section id="connectors-and-jumper-configurations">
 <h2>Connectors and Jumper Configurations<a class="headerlink" href="#connectors-and-jumper-configurations" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/boardwithdes.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/boardwithdes.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">EVAL-CN0190-EB1Z board connectors and jumper layout</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="input-power">
 <h3>Input Power<a class="headerlink" href="#input-power" title="Link to this heading"></a></h3>
 <p>Connector 1 accepts the input supply, which should be between +6 V and +14 V.</p>
@@ -1093,8 +1112,14 @@ frequency.</p></li>
 <section id="switch-matrix">
 <h3>Switch Matrix<a class="headerlink" href="#switch-matrix" title="Link to this heading"></a></h3>
 <p>To select the VDD/VEE outputs on Connector 12 and Connector 13, the switch
-matrix must be configured. Refer to the switch matrix table printed on the
-evaluation board PCB to select the desired output voltages.</p>
+matrix must be configured. Use the following table to select the desired output
+voltages:</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/sw1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/sw1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Switch matrix configuration for VDD/VEE output selection</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="i2c-programming-interface">
 <h3>I2C Programming Interface<a class="headerlink" href="#i2c-programming-interface" title="Link to this heading"></a></h3>
@@ -1135,15 +1160,35 @@ want to create your own custom power sequencing/monitoring solution.</p>
 <li><p>Install the USB-SDP-CABLEZ driver.</p></li>
 <li><p>Open the file <code class="docutils literal notranslate"><span class="pre">setup.exe</span></code> located at the path
 <code class="docutils literal notranslate"><span class="pre">\ADMxxxx</span> <span class="pre">Run-Time</span> <span class="pre">Installer\Installer\Volume\setup.exe</span></code>.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/usb1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/usb1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">USB-SDP-CABLEZ driver setup</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is recommended that you install the software to the default directory.</p>
 </div>
 </li>
-<li><p>Follow the on-screen prompts to install the software.</p></li>
+<li><p>Follow the on-screen prompts to install the software.</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/usb2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/usb2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">USB-SDP-CABLEZ driver installation prompts</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Plug in the USB-SDP-CABLEZ into your PC using the USB cable.</p></li>
 <li><p>Windows will automatically find the new hardware (USB-SDP-CABLEZ) plugged
-into the PC.</p></li>
+into the PC.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/newdevice.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/newdevice.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Windows new hardware detection for USB-SDP-CABLEZ</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="sequencer-software-installation">
@@ -1151,16 +1196,79 @@ into the PC.</p></li>
 <ol class="arabic">
 <li><p>Open the file <code class="docutils literal notranslate"><span class="pre">setup.exe</span></code> located at the path
 <code class="docutils literal notranslate"><span class="pre">\SuperSequencer</span> <span class="pre">Apps</span> <span class="pre">SW</span> <span class="pre">Installer\Volume\setup.exe</span></code>.</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">SuperSequencer software setup</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is recommended that you install the SuperSequencer evaluation software
 to the default directory path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\</span></code>.</p>
 </div>
 </li>
-<li><p>Follow the on-screen prompts to install the software.</p></li>
-<li><p>Install Graphviz.</p></li>
+<li><p>Follow the on-screen prompts to install the software.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">SuperSequencer installation wizard</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">SuperSequencer license agreement</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">SuperSequencer installation directory selection</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">SuperSequencer installation complete</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Install Graphviz.</p>
+<figure class="align-center" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft6.png" />
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Graphviz installation</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion, follow the on-screen prompts to install the prog106x Setup
-Application Software.</p></li>
+Application Software.</p>
+<figure class="align-center" id="id16">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft7.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft7.png" />
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">prog106x setup wizard</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id17">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft8.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft8.png" />
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">prog106x license agreement</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id18">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft9.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft9.png" />
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">prog106x installation directory selection</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id19">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft10.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/soft10.png" />
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">prog106x installation complete</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1177,11 +1285,32 @@ of state diagrams for the ADM1066.</p>
 <p>Super Sequencer evaluation software enables the user to create a new control
 strategy and generate a new Intel hex file for the ADM1066. To generate a new
 hex file:</p>
-<ol class="arabic simple">
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">SuperSequencerSoftwareEval.exe</span></code> installed on the PC.</p></li>
+<ol class="arabic">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">SuperSequencerSoftwareEval.exe</span></code> installed on the PC.</p>
+<figure class="align-center" id="id20">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/sequencer_icon.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/sequencer_icon.png" />
+<figcaption>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">SuperSequencer software icon</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Assuming all new configurations and controls have been set in the software,
-go to <strong>File</strong> and click <strong>Save Settings to File</strong>.</p></li>
-<li><p>Select <strong>Create Intel Hex File</strong> and click <strong>Save</strong>.</p></li>
+go to <strong>File</strong> and click <strong>Save Settings to File</strong>.</p>
+<figure class="align-center" id="id21">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/savesettings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/savesettings.png" />
+<figcaption>
+<p><span class="caption-number">Figure 20 </span><span class="caption-text">Save Settings to File menu option</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Select <strong>Create Intel Hex File</strong> and click <strong>Save</strong>.</p>
+<figure class="align-center" id="id22">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/hexfile.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/hexfile.png" />
+<figcaption>
+<p><span class="caption-number">Figure 21 </span><span class="caption-text">Create Intel Hex File dialog</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Once saving is completed, the new hex file is ready to be downloaded to the
 ADM1066.</p></li>
 </ol>
@@ -1193,6 +1322,12 @@ ADM1066.</p></li>
 root directory on Disk C: (e.g., <code class="docutils literal notranslate"><span class="pre">C:\ADM1066_SuperSequencing_REVB.hex</span></code>).</p></li>
 <li><p>Plug the USB-to-I2C converter dongle into the USB port on the PC. Plug the
 other end of the cable into JP1 on the right side of the EVAL-CN0190-EB1Z.</p>
+<figure class="align-center" id="id23">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/usbtosdp.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/usbtosdp.png" />
+<figcaption>
+<p><span class="caption-number">Figure 22 </span><span class="caption-text">USB-SDP-CABLEZ connected to the EVAL-CN0190-EB1Z</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Make sure the marks for the signals of JP1 on the PCB match the marks on
@@ -1205,7 +1340,14 @@ the USB-SDP-CABLEZ:</p>
 </div>
 </li>
 <li><p>Turn on the power supply to the EVAL-CN0190-EB1Z.</p></li>
-<li><p>Open the Command Prompt (<code class="docutils literal notranslate"><span class="pre">C:\Windows\System32\cmd.exe</span></code>).</p></li>
+<li><p>Open the Command Prompt (<code class="docutils literal notranslate"><span class="pre">C:\Windows\System32\cmd.exe</span></code>).</p>
+<figure class="align-center" id="id24">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/cmd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/cmd.png" />
+<figcaption>
+<p><span class="caption-number">Figure 23 </span><span class="caption-text">Windows Command Prompt</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>In the command prompt, enter:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>prog106x download 6A c:\ADM1066_SuperSequencing_REVB.hex
 </pre></div>
@@ -1217,8 +1359,15 @@ the USB-SDP-CABLEZ:</p>
 configuration.</p>
 </div>
 </li>
-<li><p>The on-chip EEPROM of ADM1066 is successfully programmed if the download
-completes without errors after several seconds.</p></li>
+<li><p>The on-chip EEPROM of ADM1066 is successfully programmed if the screen
+displays the following output after several seconds.</p>
+<figure class="align-center" id="id25">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/program.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0190-sdpz/program.png" />
+<figcaption>
+<p><span class="caption-number">Figure 24 </span><span class="caption-text">Successful ADM1066 EEPROM programming output</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Remove power or turn off the power supply, then re-apply power to make the
 ADM1066 update the program from the embedded EEPROM.</p></li>
 </ol>

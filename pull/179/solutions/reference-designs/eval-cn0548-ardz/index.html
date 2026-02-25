@@ -669,7 +669,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -957,6 +957,13 @@ between the host computer and measurement system grounds. When paired with the
 can easily communicate with the CN0548 over the industry-standard Industrial
 Input/Output (IIO) libiio library, which includes bindings for C, C#, MATLAB,
 Python, and LabVIEW.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/block_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/block_diagram.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0548 System Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="features">
 <h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -973,11 +980,11 @@ Python, and LabVIEW.</p>
 </section>
 <section id="onboard-configuration">
 <h2>Onboard Configuration<a class="headerlink" href="#onboard-configuration" title="Link to this heading"></a></h2>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/cn0548_high_resolution_photo.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/cn0548_high_resolution_photo.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/cn0548_high_resolution_photo.jpg" style="width: 800px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0548-ARDZ Board Photo with Jumper Locations</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-CN0548-ARDZ Board Photo with Jumper Locations</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <section id="configuring-the-input-voltage-polarity-and-current-direction">
@@ -985,9 +992,9 @@ Python, and LabVIEW.</p>
 <p>Before using the CN0548, the user must know the expected inputs and configure
 the board accordingly. The polarity as well as the direction of the inputs is
 an important aspect that should be noted by the user.</p>
-<div class="table-wrapper docutils container" id="id4">
-<table class="docutils align-default" id="id4">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Maximum Input Rating by Configuration</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id5">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Maximum Input Rating by Configuration</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Mode</p></th>
 <th class="head"><p>Minimum Input</p></th>
@@ -1022,6 +1029,13 @@ shorted to the GND pin.</p></li>
 <li><p>For a <strong>bipolar</strong> and <strong>bidirectional</strong> setting, the jumpers should be
 connected to the 2.048 V pin.</p></li>
 </ul>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/mode_jumper.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/mode_jumper.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/mode_jumper.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Voltage Polarity and Current Direction Jumper Configuration</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="configuring-the-absolute-input-voltage-range">
 <h3>Configuring the Absolute Input Voltage Range<a class="headerlink" href="#configuring-the-absolute-input-voltage-range" title="Link to this heading"></a></h3>
@@ -1030,9 +1044,9 @@ attenuating difference amplifier allowing it to have an adjustable input
 voltage range feature. The onboard jumpers P1, P3, P10, P8, P9, P11 should be
 configured accordingly to achieve the desired maximum voltage range for finer
 voltage resolution.</p>
-<div class="table-wrapper docutils container" id="id5">
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Gain Jumper Configuration</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id7">
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Gain Jumper Configuration</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Max Range</p></th>
 <th class="head"><p>P1</p></th>
@@ -1087,6 +1101,13 @@ voltage resolution.</p>
 </tbody>
 </table>
 </div>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/gain_jumper.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/gain_jumper.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/gain_jumper.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Gain Jumper Configuration Guide</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="chip-select">
 <h3>Chip Select<a class="headerlink" href="#chip-select" title="Link to this heading"></a></h3>
@@ -1094,6 +1115,13 @@ voltage resolution.</p>
 stacked with other shields. By default, jumper P15 is shunted but this can be
 modified accordingly depending on the shields stacked and the user’s
 application.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/chip_select.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/chip_select.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/chip_select.png" style="width: 550px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Chip Select Jumper Configuration</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="demo-requirements">
@@ -1162,6 +1190,13 @@ the CCES quickstart guide.</p></li>
 <h4>Code Configuration Notes<a class="headerlink" href="#code-configuration-notes" title="Link to this heading"></a></h4>
 <p>When generating a custom hex file, there are two important attributes from the
 AD7798/AD7799 family that must be configured:</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/cces.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/cces.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/cces.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">CCES Code Snippet Showing Polarity and Gain Configuration</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>Polarity</strong> – It is important to set the polarity of the ADC according to
 your configuration and application. When the polarity is set to unipolar,
@@ -1209,18 +1244,42 @@ script. Using a terminal, navigate to the location of the file and run:</p>
 </div>
 </li>
 <li><p>Upon running the script, general reminders regarding board usage will be
-displayed. Read the reminders and press Enter to proceed.</p></li>
+displayed. Read the reminders and press Enter to proceed.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/reminder.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/reminder.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/reminder.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Board Usage Reminders Displayed at Script Startup</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>The board has a memory feature that allows quick configuration using the
 settings from the last session. If no session record file is found, a new
-configuration will be started.</p></li>
+configuration will be started.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/new_overview.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/new_overview.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/new_overview.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">New Session Configuration Prompt</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Specify the expected voltage and current inputs (unipolar or bipolar for
 voltage, unidirectional or bidirectional for current). A jumper map window
 will be created corresponding to the settings. Close the jumper window
-after configuring the board jumpers.</p></li>
+after configuring the board jumpers.</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/sample_configuration.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/sample_configuration.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/sample_configuration.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Sample Jumper Configuration Map Generated by the Script</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Configure the software settings as prompted:</p>
-<div class="table-wrapper docutils container" id="id6">
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Software Configuration Options</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id14">
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Software Configuration Options</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Setting</p></th>
 <th class="head"><p>Description</p></th>
@@ -1251,15 +1310,46 @@ after configuring the board jumpers.</p></li>
 </li>
 <li><p>Enter the port where the ADICUP3029 is connected. If the port is found, the
 sample code is ready to parse readings from the board. Press Enter to start
-board operation.</p></li>
+board operation.</p>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/software_config.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/software_config.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/software_config.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Software Configuration and COM Port Selection</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 <p>Regardless of whether the plot window is enabled, board readings will be
 continuously displayed in the terminal.</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/readings.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/readings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/readings.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Real-Time Board Readings Displayed in the Terminal</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the following two figures, the CN0548 was used to monitor the performance of
+a 5 V regulator.</p>
 <p><strong>Tracking Mode</strong> displays all data points in the plot. This allows the user to
 observe the overall characteristic of the signal being measured. However, the
 plot will continue to compress as more data points are added.</p>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/tracking.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/tracking.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/tracking.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Tracking Mode – All Data Points Displayed</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Non-tracking Mode</strong> displays only the most recent measurements as configured
 by the user, providing a more refined view of the signal.</p>
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/non-tracking.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/non-tracking.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/non-tracking.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Non-Tracking Mode – Most Recent Samples Displayed</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The plot windows are created using the matplotlib package. You can save a copy
 of the displayed waveform at any point in time using the matplotlib save
 function.</p>
@@ -1271,6 +1361,13 @@ CSV file will be created in the same folder where the sample code is located
 and follows the naming scheme <code class="docutils literal notranslate"><span class="pre">CN0548_[timestamp]</span></code>. Data is automatically
 written upon parsing, so even if the program is prematurely terminated, all
 parsed data is recorded.</p>
+<figure class="align-center" id="id19">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/csv_file.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/csv_file.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/csv_file.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">CSV Data Logging Output File</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="memory-feature">
 <h4>Memory Feature<a class="headerlink" href="#memory-feature" title="Link to this heading"></a></h4>
@@ -1278,6 +1375,13 @@ parsed data is recorded.</p>
 the setup from the previous session. This is done by saving all user input and
 creating a <code class="docutils literal notranslate"><span class="pre">session_record</span></code> text file in the same directory where the sample
 code is located.</p>
+<figure class="align-center" id="id20">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/old_overview.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/old_overview.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/old_overview.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">Previous Session Detected – Memory Feature Prompt</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The contents of the session record file are not encrypted and are easily
 understandable. Each line begins with a number corresponding to a certain
 setting. For instance, 1 corresponds to the Unipolar-Unidirectional mode and 2
@@ -1285,9 +1389,23 @@ corresponds to the Bipolar-Bidirectional mode. If only a minor aspect of the
 setup needs to be changed (for example, switching between tracking and
 non-tracking mode, adjusting the sampling rate, or enabling data logging), the
 user can edit the <code class="docutils literal notranslate"><span class="pre">session_record</span></code> file directly.</p>
+<figure class="align-center" id="id21">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/session_record.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/session_record.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/session_record.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Session Record File Contents</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The program detects whether the set of specifications in the session record is
 valid. If the configuration is invalid, the program proceeds as usual and
 assumes no session record file was detected.</p>
+<figure class="align-center" id="id22">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/session_record_detected.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/session_record_detected.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0548-ardz/session_record_detected.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">Session Record Detected Confirmation</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 </section>

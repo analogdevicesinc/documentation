@@ -169,7 +169,15 @@ Software Control and Indicator Descriptions
 #. **System Status String Indicator** -- Displays a message detailing the
    current state of the software.
 #. **System Status LED Indicator** -- Displays the current state of the
-   software in the form of an LED (Inactive, Busy, or Error).
+   software in the form of an LED. There are three status LED colors:
+
+   - |inactive| Inactive
+   - |busy| Busy
+   - |error| Error
+
+   .. |inactive| image:: cn0272-software-inactive.png
+   .. |busy| image:: cn0272-software-busy.png
+   .. |error| image:: cn0272-software-error.png
 #. **Update Rate Radio Buttons** -- Used to change the output word rate of the
    :adi:`AD7790`. The default value is 120 Hz.
 #. **Burnout Current Radio Buttons** -- When enabled, the 100 nA current
@@ -223,6 +231,11 @@ Establishing a USB Connection Link
 
 #. Click the **Connect/Reconnect Button**. A window with a progress bar will
    load.
+
+   .. figure:: cn0271-software-wait.png
+
+      USB connection progress bar
+
 #. Upon success, the System Status String Indicator will display
    *SDP Board Ready to Acquire Data*.
 

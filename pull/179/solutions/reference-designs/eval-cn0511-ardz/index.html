@@ -674,7 +674,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -979,6 +979,13 @@ oscillator (OCXO)</p></li>
 <h2>Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h2>
 <section id="block-terminal-assignments">
 <h3>Block Terminal Assignments<a class="headerlink" href="#block-terminal-assignments" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/block_terminal_assignment_v2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/block_terminal_assignment_v2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/block_terminal_assignment_v2.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0511-RPIZ Block Terminal Assignments</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Connector <strong>P1</strong> – Terminal block for optional external +5 V input supply.</p></li>
 <li><p>Connector <strong>P2</strong> – 40-pin connector for Raspberry Pi.</p></li>
@@ -994,6 +1001,12 @@ oscillator (OCXO)</p></li>
 CMOS, voltage-controlled crystal clock oscillator. Solder jumper JP1
 configures different settings for the clock source. The default position of JP1
 is set at A-COM, which is the onboard clocking option.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/clock_source.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/clock_source.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-CN0511-RPIZ Clock Source Schematic Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="external-clock-reference-option">
 <h4>External Clock Reference Option<a class="headerlink" href="#external-clock-reference-option" title="Link to this heading"></a></h4>
 <p>An external clock reference can be used to improve system noise performance.
@@ -1007,6 +1020,13 @@ link JP1 to B-COM.</p>
 <h3>RF Output<a class="headerlink" href="#rf-output" title="Link to this heading"></a></h3>
 <p>A spectrum analyzer can be used to observe the generated RF output from J1 on
 the EVAL-CN0511-RPIZ.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_sma_input_output_v2.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_sma_input_output_v2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_sma_input_output_v2.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">RF Output and Optional External Clock Input Connections</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="connecting-the-fan">
 <h3>Connecting the Fan<a class="headerlink" href="#connecting-the-fan" title="Link to this heading"></a></h3>
@@ -1014,6 +1034,13 @@ the EVAL-CN0511-RPIZ.</p>
 depending on the application and configuration. The EVAL-CN0511-RPIZ has a high
 cooling requirement; therefore, the fan should always be on to regulate the
 temperature below 60 degrees Celsius.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/heat_sink_v2.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/heat_sink_v2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/heat_sink_v2.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">CN0511 Fan and Thermal Management</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="input-supply">
 <h3>Input Supply<a class="headerlink" href="#input-supply" title="Link to this heading"></a></h3>
@@ -1021,6 +1048,13 @@ temperature below 60 degrees Celsius.</p>
 provided by the USB cable. An optional +5 V external supply is available
 through the two-pole screw terminal (P1). Only one input power supply is
 required, and the Raspberry Pi USB cable is the recommended method.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_power_supply_options.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_power_supply_options.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_power_supply_options.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">CN0511 Input Power Supply Connection Options</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="system-setup">
@@ -1042,18 +1076,26 @@ required, and the Raspberry Pi USB cable is the recommended method.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../../linux/kuiper/index.html#kuiper"><span class="std std-ref">ADI Kuiper Linux</span></a></p></li>
 </ul>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id7">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_block_diagram.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_block_diagram.jpg" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0511 Functional System Block Diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">CN0511 Functional System Block Diagram</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="running-the-system">
 <h3>Running the System<a class="headerlink" href="#running-the-system" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Connect the EVAL-CN0511-RPIZ to the Raspberry Pi through the 40-pin
-connector.</p></li>
+connector.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_rpi_v1.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_rpi_v1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_rpi_v1.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Hardware Connection of EVAL-CN0511-RPIZ and Raspberry Pi</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Burn the SD card with the ADI Kuiper Linux image. Insert the SD card into
 the designated slot on the Raspberry Pi.</p></li>
 <li><p>Connect the system to a monitor using an HDMI cable through the mini HDMI
@@ -1065,6 +1107,13 @@ connector.</p></li>
 <li><p>Open the terminal and configure the device tree overlay file. Make sure to
 reboot the RPi after saving the <code class="docutils literal notranslate"><span class="pre">config.txt</span></code> file.</p></li>
 </ol>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/sample_setup_v2.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/sample_setup_v2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/sample_setup_v2.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">CN0511 Complete System Setup</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="software-setup">
@@ -1095,6 +1144,13 @@ documentation, setting the overlay to:</p>
 <h3>IIO Oscilloscope<a class="headerlink" href="#iio-oscilloscope" title="Link to this heading"></a></h3>
 <p>The EVAL-CN0511-RPIZ can be evaluated using <a class="reference internal" href="../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a>. The CN0511 plug-in tab provides a simple user interface to
 control the EVAL-CN0511-RPIZ as a signal generator.</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/iio_scope_v1.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/iio_scope_v1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/iio_scope_v1.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">IIO Oscilloscope with CN0511 Plug-in</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Single Tone Mode:</strong></p>
 <ul class="simple">
 <li><p><strong>Frequency (MHz)</strong> – Set the desired output signal frequency.</p></li>
@@ -1129,6 +1185,13 @@ directory.</p></li>
 </div>
 </li>
 </ol>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_example_output.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_example_output.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0511-ardz/cn0511_example_output.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">CN0511 Python Example Output</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>GitHub link for the Python sample script:
 <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/cn0511_example.py" target="_blank">CN0511 Python Example</a></p>
 </section>

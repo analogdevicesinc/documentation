@@ -113,7 +113,12 @@
 </li>
 <li><a class="reference internal" href="#connecting-the-eval-cn0522-ebz-to-the-adalm-pluto">Connecting the EVAL-CN0522-EBZ to the ADALM-PLUTO</a></li>
 <li><a class="reference internal" href="#documents">Documents</a></li>
-<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a><ul>
+<li><a class="reference internal" href="#assembly-drawing">Assembly Drawing</a></li>
+<li><a class="reference internal" href="#board-dimensions">Board Dimensions</a></li>
+<li><a class="reference internal" href="#design-files">Design Files</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
 </ul>
@@ -661,7 +666,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -959,8 +964,22 @@ to use most +5 V wall-wart power supplies available in the market.</p>
 <h2>Evaluation Board Hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h2>
 <section id="primary-side">
 <h3>Primary Side<a class="headerlink" href="#primary-side" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_revb_primary_with_labels.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_revb_primary_with_labels.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_revb_primary_with_labels.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Top View of EVAL-CN0522-EBZ</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="rfin-plug-j1">
 <h4>RFIN Plug (J1)<a class="headerlink" href="#rfin-plug-j1" title="Link to this heading"></a></h4>
+<figure class="align-right" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_j1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_j1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_j1.png" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">RFIN Plug (J1)</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The RF input to the evaluation board must be connected to the male SMA
 connector <strong>J1</strong>.</p>
 <div class="admonition warning">
@@ -971,6 +990,13 @@ higher input level to avoid damaging the circuit.</p>
 </section>
 <section id="rfout-port-j2">
 <h4>RFOUT Port (J2)<a class="headerlink" href="#rfout-port-j2" title="Link to this heading"></a></h4>
+<figure class="align-right" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_j2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_j2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_j2.png" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">RFOUT Port (J2)</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The RF output of the evaluation board is available at the female SMA connector
 <strong>J2</strong>.</p>
 <div class="admonition warning">
@@ -982,7 +1008,21 @@ attenuator if necessary to avoid damage.</p>
 </section>
 <section id="led-indicators-ds1-and-ds2">
 <h4>LED Indicators (DS1 and DS2)<a class="headerlink" href="#led-indicators-ds1-and-ds2" title="Link to this heading"></a></h4>
+<figure class="align-right" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_ds1-ds2_led_.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_ds1-ds2_led_.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_ds1-ds2_led_.png" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">LED Indicators (DS1 and DS2)</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The evaluation board uses two LEDs to indicate its current status:</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_ds1-ds2_table.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_ds1-ds2_table.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_ds1-ds2_table.png" style="width: 350px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">DS1 and DS2 LED Status Table</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="table-wrapper colwidths-given docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -1013,8 +1053,22 @@ exceeding the temperature switch trip point</p></td>
 </section>
 <section id="secondary-side">
 <h3>Secondary Side<a class="headerlink" href="#secondary-side" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_revb_secondary_with_labels.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_revb_secondary_with_labels.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_revb_secondary_with_labels.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Bottom View of EVAL-CN0522-EBZ</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="power-supply-connector-p1">
 <h4>Power Supply Connector (P1)<a class="headerlink" href="#power-supply-connector-p1" title="Link to this heading"></a></h4>
+<figure class="align-right" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_p1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_p1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_p1.png" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Power Supply Connector (P1)</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>A +5 V power supply must be connected to the VCC line through the micro-USB
 port <strong>P1</strong>.</p>
 <div class="admonition note">
@@ -1028,10 +1082,24 @@ recommended to use a power supply with a maximum current rating of at least
 </section>
 <section id="changing-the-adt6402-trip-point-jp1-and-jp2">
 <h4>Changing the ADT6402 Trip Point (JP1 and JP2)<a class="headerlink" href="#changing-the-adt6402-trip-point-jp1-and-jp2" title="Link to this heading"></a></h4>
+<figure class="align-right" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_jp1-jp2_temp_switch_.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_jp1-jp2_temp_switch_.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_jp1-jp2_temp_switch_.png" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">JP1 and JP2 Solder Jumpers</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The evaluation board includes the <a class="icon adi reference external" href="https://www.analog.com/ADT6402" target="_blank">ADT6402</a> temperature switch to disable
 the amplifier when the board temperature reaches a trip point. The trip point
 can be set using the solder jumpers <strong>JP1</strong> and <strong>JP2</strong>, as shown in the table
 below.</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_jp1-jp2_table.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_jp1-jp2_table.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_jp1-jp2_table.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">ADT6402 Trip Point Configuration Table</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="table-wrapper colwidths-given docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -1077,6 +1145,13 @@ range listed above are recommended.</p>
 </section>
 <section id="connecting-the-eval-cn0522-ebz-to-the-adalm-pluto">
 <h2>Connecting the EVAL-CN0522-EBZ to the ADALM-PLUTO<a class="headerlink" href="#connecting-the-eval-cn0522-ebz-to-the-adalm-pluto" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0417.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0417.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0417.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">EVAL-CN0522-EBZ Connected to the ADALM-PLUTO</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>To properly operate the EVAL-CN0522-EBZ using the <a class="icon adi reference external" href="https://www.analog.com/ADALM-PLUTO" target="_blank">ADALM-PLUTO</a>, follow
 the steps below:</p>
 <ol class="arabic simple">
@@ -1104,6 +1179,28 @@ can safely handle is +2.5 dBm.</p>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
 <h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
+<section id="assembly-drawing">
+<h3>Assembly Drawing<a class="headerlink" href="#assembly-drawing" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_assembly_drawing.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_assembly_drawing.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_assembly_drawing.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">EVAL-CN0522-EBZ Assembly Drawing</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="board-dimensions">
+<h3>Board Dimensions<a class="headerlink" href="#board-dimensions" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_dimensions.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_dimensions.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0522-ardz/cn0522_dimensions.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">EVAL-CN0522-EBZ Board Dimensions</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="design-files">
+<h3>Design Files<a class="headerlink" href="#design-files" title="Link to this heading"></a></h3>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="icon link reference external" href="https://www.analog.com/media/en/reference-design-documentation/design-integration-files/CN0522-DesignSupport.zip" target="_blank">EVAL-CN0522-EBZ Design &amp; Integration Files</a></p>
@@ -1115,6 +1212,7 @@ can safely handle is +2.5 dBm.</p>
 <li><p>Assembly Drawing</p></li>
 </ul>
 </div>
+</section>
 </section>
 <section id="additional-information">
 <h2>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h2>

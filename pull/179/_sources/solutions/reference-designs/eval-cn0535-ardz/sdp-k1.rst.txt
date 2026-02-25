@@ -61,6 +61,19 @@ be installed to enable use of the EVAL-CN0535-FMCZ with the SDP-K1.
      - Y1
      - SIT8008BI-21-33E-16.38400G
 
+The following figures show the board setup for SDP-K1, highlighting the
+component locations on both sides of the board.
+
+.. figure:: board_top.png
+   :align: center
+
+   EVAL-CN0535-FMCZ board top side -- SDP-K1 component locations
+
+.. figure:: board_bot.png
+   :align: center
+
+   EVAL-CN0535-FMCZ board bottom side -- SDP-K1 component locations
+
 SDP-K1 Connection
 ~~~~~~~~~~~~~~~~~~
 
@@ -68,6 +81,11 @@ The CN0535 board is mounted on the SDP-K1 board via the Arduino headers. The
 SDP-K1 only requires a single Standard-A to type-C USB cable to connect to the
 PC. Both the orange Connected LED and green SYS PWR LED should light on the
 SDP-K1 if connected correctly.
+
+.. figure:: setup_block_diagram2.png
+   :align: center
+
+   CN0535 board mounted on the SDP-K1 via Arduino headers
 
 .. note::
 
@@ -83,6 +101,22 @@ Importing the EVAL-CN0535-FMCZ MBED Example Program
    https://ide.mbed.com/.
 #. After having an account, open the example program for EVAL-CN0535-FMCZ at
    https://os.mbed.com/teams/AnalogDevices/code/EVAL-CN0535-FMCZ/.
+
+   .. figure:: mbed_link.png
+      :align: center
+
+      MBED example program page
+
+   .. figure:: mbed_link_2.png
+      :align: center
+
+      Import program into compiler
+
+   .. figure:: mbed_link_3.png
+      :align: center
+
+      MBED online compiler with imported program
+
 #. Import the program into the mbed online compiler.
 #. Compile and download the binary to the SDP-K1.
 
@@ -96,15 +130,37 @@ install a serial terminal software on their PC. It is recommended to use PuTTY.
    microcontroller board into the PC. When the board is detected it will appear
    in Device Manager, displaying as USB Serial Device with the assigned COM
    port number.
+
+   .. figure:: device_manager.png
+      :align: center
+      :width: 450px
+
+      Windows Device Manager showing the SDP-K1 as USB Serial Device
+
 #. Open the serial terminal application and enter the correct values:
 
    - **Serial line**: COM port noted from Device Manager
    - **Speed**: 115200
 
+   .. figure:: putty1.png
+      :align: center
+
+      PuTTY session configuration
+
+   .. figure:: putty2.png
+      :align: center
+
+      PuTTY terminal configuration
+
 #. Under the Terminal tab, configure local echo and line editing as needed.
 #. Click **Open** to connect.
 #. Upon connection, the interface menu should appear. If not, press the reset
    button on the microcontroller board to bring up the command menu.
+
+   .. figure:: putty_terminal.png
+      :align: center
+
+      CN0535 serial terminal command menu
 
 .. note::
 

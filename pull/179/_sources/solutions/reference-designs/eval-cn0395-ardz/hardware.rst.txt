@@ -13,6 +13,12 @@ shield form factor and is compatible with either 5 V or 3.3 V processor boards.
 Connectors and Jumper Configurations
 -------------------------------------
 
+.. figure:: jumper_config.jpg
+   :align: center
+   :width: 600
+
+   EVAL-CN0395-ARDZ jumper and connector configuration
+
 Headers
 ~~~~~~~
 
@@ -123,8 +129,15 @@ temperature and humidity sensor (Sensirion SHT-30).
 Setting Up the Hardware
 -----------------------
 
-1. Set the jumpers/switches on the EVAL-ADICUP360 base board for programming
-   mode.
+1. To program the base board, set the jumpers/switches as shown in the figure
+   below. The important jumpers/switches are highlighted in red.
+
+   .. figure:: cn0216_hw_config.png
+      :align: center
+      :width: 600
+
+      EVAL-ADICUP360 jumper and switch configuration for programming
+
 2. Connect the **EVAL-CN0395-ARDZ** to the Arduino connectors **P2, P5, P6,
    P7, P8** of the **EVAL-ADICUP360** board.
 3. Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the

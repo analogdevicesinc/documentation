@@ -73,6 +73,11 @@ includes a parallel CRC check algorithm for data integrity validation. The
 core provides real-time access to per-channel data headers and CRC mismatch
 flags.
 
+.. figure:: ad7768evb_fmc_hdl.svg
+   :align: center
+
+   AD777x-FMCZ HDL system block diagram
+
 IP Cores Used
 ~~~~~~~~~~~~~
 
@@ -91,6 +96,14 @@ IP Cores Used
    * - util_cpack2
      - ad777x_adc_pack
      - Channel packing (8 channels, 32-bit samples)
+
+AXI_AD777x Block Diagram
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: block_diagram_ad777x.svg
+   :align: center
+
+   AXI_AD777x IP core block diagram
 
 AXI_AD777x Interface
 ~~~~~~~~~~~~~~~~~~~~
@@ -151,6 +164,14 @@ AXI_AD777x Interface
      - ``adc_crc_ch_mismatch[7:0]``
      - output
      - Per-channel CRC mismatch flags
+
+AXI_AD777x Detailed Architecture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: architecture_ad777x.svg
+   :align: center
+
+   AXI_AD777x IP core detailed architecture
 
 Memory Map
 ~~~~~~~~~~

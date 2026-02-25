@@ -14,11 +14,17 @@ converter (CDC). The architecture features inherent high resolution (24-bit no
 missing codes, up to 21-bit effective resolution), high linearity
 (plus/minus 0.01%), and high accuracy (plus/minus 4 fF factory calibrated).
 
-.. figure:: eval-cn0552-pmdztop-web.png
-   :width: 500 px
+.. figure:: actual_hardware.jpg
+   :width: 200 px
    :align: center
 
-   EVAL-CN0552-PMDZ Solder Jumper Locations
+   EVAL-CN0552-PMDZ
+
+.. figure:: cn0552_block_diagram.png
+   :width: 600 px
+   :align: center
+
+   CN0552 Block Diagram
 
 The CN0552 has two capacitive inputs with each channel that can be configured
 as single-ended or differential. The capacitance input range is plus/minus
@@ -34,6 +40,12 @@ calibration.
 
 The CN0552 is compatible with I2C PMOD platform boards, with an I/O voltage
 from 2.7 V to 5.5 V.
+
+.. figure:: i2c_con.png
+   :width: 300 px
+   :align: center
+
+   I2C Connection
 
 Features
 ~~~~~~~~
@@ -59,6 +71,12 @@ CN0552 Inputs/Outputs Connections
 
 All the analog and digital input/output pins available on the EVAL-CN0552-PMDZ
 are brought out to two separate 8-row 0.1" through-hole connectors P8 and P13.
+
+.. figure:: eval-cn0552-pmdztop-edited.png
+   :width: 650 px
+   :align: center
+
+   EVAL-CN0552-PMDZ Board Layout with Connector Locations
 
 .. list-table:: Connector P8
    :header-rows: 1
@@ -133,6 +151,12 @@ Solder Jumpers
 
 Eight solder jumpers are available at the bottom of the board to change the
 operating modes. See the schematic for more details.
+
+.. figure:: eval-cn0552-pmdztop-web.png
+   :width: 500 px
+   :align: center
+
+   EVAL-CN0552-PMDZ Solder Jumper Locations
 
 .. list-table::
    :header-rows: 1
@@ -238,13 +262,33 @@ There are two ways to program the ADICUP3029 with the CN0552 software:
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+.. figure:: pmod-toadicup.png
+   :width: 900 px
+   :align: center
+
+   EVAL-CN0552-PMDZ Connected to EVAL-ADICUP3029
+
 #. Connect the EVAL-CN0552-PMDZ board at connector P9 of the EVAL-ADICUP3029.
 #. Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and
    connect it to a computer.
 #. Ensure the on-board switches of the EVAL-ADICUP3029 are configured as shown
-   in the ADICUP3029 documentation.
+   below.
+
+   .. figure:: switch_config.png
+      :width: 900 px
+      :align: center
+
+      EVAL-ADICUP3029 Switch Configuration
+
 #. Open My Computer and look for the DAPLINK drive. If the drive appears, the
    drivers are installed correctly.
+
+   .. figure:: daplink.jpg
+      :width: 300 px
+      :align: center
+
+      DAPLINK Drive Detection
+
 #. Extract the provided zip file and drag and drop the hex file to the DAPLINK
    drive. The DS2 (red) LED will blink rapidly during programming and will stay
    ON once programming is complete.
@@ -301,6 +345,18 @@ line in ``config.txt``:
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. figure:: interposer.png
+   :width: 500 px
+   :align: center
+
+   PMOD to Raspberry Pi Interposer Board
+
+.. figure:: pmod-interposer.png
+   :width: 300 px
+   :align: center
+
+   EVAL-CN0552-PMDZ Mounted on Interposer Board
+
 #. Connect the P9 of the PMOD to Raspberry Pi Interposer board at the male
    header GPIO pin connector of the Raspberry Pi.
 #. Connect the EVAL-CN0552-PMDZ on the PMOD to Raspberry Pi Interposer board
@@ -312,6 +368,12 @@ Setting up the Hardware
 #. Connect a USB keyboard and mouse to the Raspberry Pi through the USB ports.
 #. Power on the Raspberry Pi board by plugging in a 5 V power supply with a
    micro-USB connector.
+
+.. figure:: overall_setup.png
+   :width: 600 px
+   :align: center
+
+   Complete Raspberry Pi System Setup
 
 Software
 --------
@@ -410,11 +472,29 @@ Download or update to the latest version of
 #. Press **Refresh** to display available IIO devices.
 #. Once ``ad7746`` appears, press **Connect**.
 
+.. figure:: osc.png
+   :width: 200 px
+   :align: center
+
+   IIO Oscilloscope AD7746 Configuration
+
 **Debug Panel** -- The Debug panel of AD7746 provides direct access to the
 device attributes.
 
+.. figure:: debug_panel.png
+   :width: 400 px
+   :align: center
+
+   AD7746 Debug Panel
+
 **DMM Panel** -- The DMM panel displays instantaneous readings of the input
 capacitances and the device temperature.
+
+.. figure:: dmm_readings.png
+   :width: 400 px
+   :align: center
+
+   AD7746 DMM Panel Readings
 
 PyADI-IIO
 ~~~~~~~~~~
@@ -440,6 +520,12 @@ in the examples folder:
    python examples/ad7746.py
 
 This will print capacitance and temperature readings to the console.
+
+.. figure:: python_script.png
+   :width: 500 px
+   :align: center
+
+   PyADI-IIO AD7746 Example Output
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------

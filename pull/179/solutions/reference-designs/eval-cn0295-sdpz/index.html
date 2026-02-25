@@ -664,7 +664,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -1031,6 +1031,13 @@ voltage at the instrumentation amplifier input, simulating the sensor
 output.</p></li>
 <li><p>A 3 kOhm resistor at R_bridge simulates the bridge-type sensor impedance.</p></li>
 </ol>
+<figure class="align-right" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_r6.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_r6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_r6.png" style="width: 100px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Resistor R6 location on the PCB</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For bridge resistances lower than 5 kOhm, the drive voltage can be
@@ -1042,11 +1049,11 @@ decreased to 5 V using a buffer configuration by removing resistor <strong>R6</s
 <h3>Sensor Drive<a class="headerlink" href="#sensor-drive" title="Link to this heading"></a></h3>
 <p>The circuit can be switched between current and voltage drive configurations
 by moving <strong>S1</strong> to the position labeled on the PCB.</p>
-<figure class="align-center" id="id7">
+<figure class="align-center" id="id8">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_switch.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_switch.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_switch.png" style="width: 300px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 6 </span><span class="caption-text">S1 switch for voltage/current drive selection</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">S1 switch for voltage/current drive selection</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <section id="voltage-drive-configuration">
@@ -1076,11 +1083,11 @@ is dependent on the configuration of the drive circuit for the bridge.</p>
 <h3>Output Measurements<a class="headerlink" href="#output-measurements" title="Link to this heading"></a></h3>
 <p>The output of the system can be measured in two ways: direct output current
 measurement or voltage output through the series resistor.</p>
-<figure class="align-center" id="id8">
+<figure class="align-center" id="id9">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_measurements.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_measurements.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_measurements.png" style="width: 500px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 7 </span><span class="caption-text">CN0295 output measurement connections</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">CN0295 output measurement connections</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <section id="voltage-measurement">
@@ -1092,6 +1099,13 @@ the screw-type terminal block (<strong>P1</strong>).</p>
 <p>The 2-pin male header (<strong>J1</strong>) must be populated before doing a voltage
 measurement across the terminal block (<strong>P1</strong>).</p>
 </div>
+<figure class="align-right" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_r14.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_r14.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0295-sdpz/cn0295_r14.png" style="width: 100px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">R14, J1, and P1 locations on the PCB</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="current-measurement">
 <h4>Current Measurement<a class="headerlink" href="#current-measurement" title="Link to this heading"></a></h4>

@@ -45,6 +45,11 @@ it functions at a lower internal clock frequency. It contains a sigma-delta ADC
 with one differential input and one single-ended input, either of which can be
 buffered or unbuffered after passing through a multiplexer.
 
+.. figure:: block_diagram.png
+   :align: center
+
+   CN0354 Functional Block Diagram
+
 Required Equipment
 ------------------
 
@@ -85,6 +90,11 @@ Hardware Setup
    short out the positive and negative terminal of any unused channel at the
    isothermal block **P2** in order to avoid the :adi:`AD8495` from railing.
 
+.. figure:: test_setup.png
+   :align: center
+
+   EVAL-CN0354-PMDZ Test Setup
+
 Software Setup
 --------------
 
@@ -99,8 +109,25 @@ Installing the Software
       default directory path ``C:\Program Files\Analog Devices\CN0354\`` and all
       National Instruments products to ``C:\Program Files\National Instruments\``.
 
+   .. figure:: software_install_welcome.png
+      :align: center
+
+      CN0354 Evaluation Software installer welcome screen
+
 #. Click **Next** to view the installation review page.
+
+   .. figure:: software_install_review.png
+      :align: center
+
+      Installation review page
+
 #. Click **Next** to start the installation.
+
+   .. figure:: software_install_progress.png
+      :align: center
+
+      Installation progress
+
 #. Upon completion of the CN0354 Evaluation Software installation, the
    installer for the ADI SDP Drivers will execute.
 
@@ -110,12 +137,22 @@ Installing the Software
       **Next**. This will make it possible to update relevant system files
       without having to reboot your computer.
 
+   .. figure:: sdp_driver_install_welcome.png
+      :align: center
+
+      ADI SDP Drivers installer
+
 #. Press **Next** to set the installation location for the SDP Drivers.
 
    .. note::
 
       It is recommended that you install the drivers to the default directory
       path ``C:\Program Files\Analog Devices\SDP\Drivers``.
+
+   .. figure:: sdp_driver_install_location.png
+      :align: center
+
+      SDP Drivers installation location
 
 #. Press **Next** to install the SDP Drivers and complete the installation of
    all software. Click **Finish** when done.
@@ -125,6 +162,11 @@ Using the Evaluation Software
 
 Software Control and Indicator Descriptions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: gui_start_sampling.png
+   :align: center
+
+   CN0354 Evaluation Software -- Start Sampling tab
 
 #. **Start Sampling** -- When pressed, the SDP-B board makes a USB connection
    to the CN-0354 board automatically. Once a USB connection is established,
@@ -155,7 +197,13 @@ Software Control and Indicator Descriptions
    the data collected.
 #. **System Status String and LED Indicators** -- Display the current state of
    the software (Inactive, Busy, or Error).
-#. **Temperature Range Dropdown Select** -- Used to change the temperature
+
+.. figure:: gui_system_configuration.png
+   :align: center
+
+   CN0354 Evaluation Software -- System Configuration tab
+
+9. **Temperature Range Dropdown Select** -- Used to change the temperature
    range of the system. The default value is 5 deg C to 880 deg C.
 #. **Header Setting Tab Display** -- Shows the proper P1 header setting. The
    red box indicates where the shunt should be placed.

@@ -23,6 +23,11 @@ without an FPGA, CPLD, or high speed processor. The counter can be programmed
 to count up or count down for sequentially sampling multiple channels, or can
 be loaded with a fixed binary word for sampling a single channel.
 
+.. figure:: cn0269-symlified-schematic.png
+   :align: center
+
+   CN0269 simplified schematic
+
 Required Equipment
 ------------------
 
@@ -48,6 +53,11 @@ General Setup
   The DC power supply +/-12 V connects to **CN1** on the EVAL-CN0269-SDPZ.
 - The **EVAL-SDP-CB1Z** SDP-B board connects to the PC via the USB cable.
 
+.. figure:: cn0287_test_setup.png
+   :align: center
+
+   CN0269 test setup
+
 Installing the Software
 ------------------------
 
@@ -61,9 +71,24 @@ Installing the Software
       **C:\\Program Files\\Analog Devices\\CN0269\\** and all National
       Instruments products to **C:\\Program Files\\National Instruments\\**.
 
+   .. figure:: sw_setup_1.png
+      :align: center
+
+      CN0269 SDP evaluation software installer
+
 2. Click **Next** to view the installation review page.
 
+   .. figure:: sw_setup_2.png
+      :align: center
+
+      Installation review page
+
 3. Click **Next** to start the installation.
+
+   .. figure:: sw_setup_3.png
+      :align: center
+
+      Installation progress
 
 4. Upon completion of the installation of the **CN0269 SDP Eval Software**,
    the installer for the **ADI SDP Drivers** will execute.
@@ -74,6 +99,11 @@ Installing the Software
       **Next**. This will make it possible to update relevant system files
       without having to reboot your computer.
 
+   .. figure:: sw_setup_4.png
+      :align: center
+
+      ADI SDP Drivers installer
+
 5. Press **Next** to set the installation location for the **SDP Drivers**.
 
    .. note::
@@ -81,8 +111,18 @@ Installing the Software
       It is recommended that you install the drivers to the default directory
       path **C:\\Program Files\\Analog Devices\\SDP\\Drivers**.
 
+   .. figure:: sw_setup_5.png
+      :align: center
+
+      SDP Drivers installation location
+
 6. Press **Next** to install the **SDP Drivers** and complete the installation
    of all software. Click **Finish** when done.
+
+   .. figure:: sw_setup_6.png
+      :align: center
+
+      SDP Drivers installation complete
 
 Connecting the Hardware
 -----------------------
@@ -93,6 +133,11 @@ Connecting the Hardware
 2. Set the **JP3** and **JP4** jumpers on EVAL-CN0269-SDPZ to select the input
    range and connect the signal correctly according to the pin definition.
 
+   .. figure:: signal_connection_1.png
+      :align: center
+
+      Signal connection and pin definition
+
 3. Connect the USB cable to the SDP-B board and leave the other side of the
    cable unconnected.
 
@@ -100,6 +145,11 @@ Connecting the Hardware
    turn on the DC power supply to power up the board.
 
 5. Connect the USB cable to the PC.
+
+   .. figure:: hardware_connection.png
+      :align: center
+
+      Hardware connection overview
 
 Using the Evaluation Software
 -----------------------------
@@ -140,6 +190,11 @@ The evaluation software provides the following controls:
      detail than the Multi-Channel Tab.
    - **SDP Information** -- The firmware version of the SDP-B board is shown
      on this tab.
+
+   .. figure:: sw_info.png
+      :align: center
+
+      SDP Information tab
 
 5. **Configuration Items** -- All items used to control the EVAL-CN0269-SDPZ
    board.
@@ -310,6 +365,32 @@ Establishing a USB Connection
 
 5. Upon success, the **System Status String Indicator** will display
    *SDP-B Ready to Acquire Data(s)*.
+
+Making a Single Capture
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Establish a USB connection link.
+
+2. Select *Single Capture* as the **Capture Mode**.
+
+3. Set the sample frequency in **Sample Rate/CH (Hz)**.
+
+4. Set the number of samples in **Samples/CH**.
+
+5. Click **Start Acquisition**.
+
+Making Continuous Capture
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Establish a USB connection link.
+
+2. Select *Continuous Capture* as the **Capture Mode**.
+
+3. Set the sample frequency in **Sample Rate/CH (Hz)**.
+
+4. Set the number of samples in **Samples/CH**.
+
+5. Click **Start Acquisition**.
 
 Documents
 ---------

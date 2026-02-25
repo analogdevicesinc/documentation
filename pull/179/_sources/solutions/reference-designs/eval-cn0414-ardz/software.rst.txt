@@ -117,13 +117,30 @@ Outputting Data
 Serial Terminal Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+A serial terminal application is used to display data and interact with the
+EVAL-CN0414-ARDZ through the EVAL-ADICUP3029's USB-to-UART interface.
+Recommended terminal programs include `PuTTY <https://www.putty.org/>`__,
+`Tera Term <https://ttssh2.osdn.jp/index.html.en>`__, or
+`RealTerm <https://realterm.sourceforge.io/>`__.
+
 Configure the serial terminal with the following settings:
 
+- **COM Port**: Check your device manager after plugging in the USB cable to
+  identify the assigned COM port
 - **Baud rate**: 115200
 - **Data bits**: 8
 - **Parity**: None
 - **Stop bits**: 1
 - **Flow Control**: None
+
+Additionally, enable **Implicit CR in every LF** and **Implicit LF in every
+CR** in your terminal settings. Enable **local echo** and **local line editing**
+so that you can see what you type and correct mistakes.
+
+.. tip::
+
+   If you see nothing in the serial terminal after connecting, try pressing
+   the reset button on the EVAL-ADICUP3029 development board.
 
 Available Commands
 ~~~~~~~~~~~~~~~~~~
@@ -206,16 +223,28 @@ There are two basic ways to program the ADICUP3029 with the software for
 the CN0414:
 
 #. **Drag and Drop** -- Copy the ``.hex`` file to the DAPLINK drive. This is
-   the easiest way to get started.
+   the easiest way to get started with the reference design. Using the drag
+   and drop method, the software is a version that Analog Devices creates for
+   testing and evaluation purposes.
 #. **Build and Debug using CCES** -- Import the project into CrossCore Embedded
-   Studio to customize the software.
+   Studio to customize the software. This approach allows you to change
+   parameters and adapt the software to fit your needs, but requires
+   downloading the CrossCore toolchain.
 
-**Downloads:**
+.. admonition:: Downloads
 
-- `Prebuilt CN0414 Hex File
-  <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0414.hex>`__
-- `CN0414 Source Code
-  <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0414>`__
+   - `Prebuilt CN0414 Hex File
+     <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0414.hex>`__
+   - `CN0414 Source Code
+     <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0414>`__
+
+Using CrossCore Embedded Studio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The official tool promoted for use with the EVAL-ADICUP3029 is CrossCore
+Embedded Studio (CCES). For detailed instructions on importing this demo
+project into CCES and configuring a debug session, refer to the
+EVAL-ADICUP3029 tools documentation.
 
 Project Structure
 -----------------

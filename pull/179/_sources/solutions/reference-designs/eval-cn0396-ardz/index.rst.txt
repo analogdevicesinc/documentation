@@ -22,10 +22,11 @@ several advantages for instruments that detect or measure the concentration of
 many toxic gases. Most sensors are gas-specific and have usable resolutions
 under one part per million (ppm) of gas concentration.
 
-.. figure:: cn0396_demo_1.png
-   :width: 650px
+.. figure:: cn0396_board_wiki.png
+   :align: center
+   :width: 600px
 
-   EVAL-CN0396-ARDZ connected to EVAL-ADICUP360.
+   EVAL-CN0396-ARDZ evaluation board.
 
 The circuit uses the :adi:`ADA4528-2` dual auto-zero amplifier, which has a
 maximum offset voltage of 2.5 uV at room temperature and an industry-leading
@@ -48,6 +49,12 @@ effects on the sensor.
 The EVAL-CN0396-ARDZ shield is designed to be compatible with the Arduino R3
 shield form factor and is compatible with either 5 V or 3.3 V processor
 boards.
+
+.. figure:: cn0396_demo_1.png
+   :align: center
+   :width: 650px
+
+   EVAL-CN0396-ARDZ connected to EVAL-ADICUP360.
 
 Required Equipment
 ------------------

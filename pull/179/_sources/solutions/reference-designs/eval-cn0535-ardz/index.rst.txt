@@ -42,6 +42,11 @@ rate, which can be tailor fitted to specific system requirements. The system's
 analog filter rejects frequencies at multiples of the sampling frequency,
 eliminating aliasing concerns.
 
+.. figure:: block_diagram.jpg
+   :align: center
+
+   CN0535 system block diagram
+
 Key components:
 
 - :adi:`AD7768-1` -- 24-bit sigma-delta ADC
@@ -68,6 +73,11 @@ Equipment Required
 Hardware Connection
 ~~~~~~~~~~~~~~~~~~~
 
+.. figure:: hardware_setup.jpg
+   :align: center
+
+   EVAL-CN0535-FMCZ hardware setup overview
+
 To begin using the evaluation board, take the following steps:
 
 #. Ensure the EVAL-SDP-CH1Z system demonstration platform board is disconnected
@@ -77,6 +87,13 @@ To begin using the evaluation board, take the following steps:
 #. Connect the EVAL-SDP-CH1Z system demonstration platform board to the
    EVAL-CN0535-FMCZ reference design board. The J4 connector of the
    EVAL-SDP-CH1Z connects to the receiving socket, P1, on the EVAL-CN0535-FMCZ.
+
+   .. figure:: cn0535_sdp_connection.jpg
+      :align: center
+      :width: 400px
+
+      SDP-CH1Z to CN0535 board connection
+
 #. Ensure the evaluation boards are connected firmly together by screwing them
    together.
 #. Connect the 12 V DC supply to the EVAL-SDP-CH1Z system demonstration
@@ -87,7 +104,29 @@ To begin using the evaluation board, take the following steps:
    subfolder in the Programs menu.
 #. Connect the differential input to the SMB connectors (J3 and J4). P7 can
    also be used as a connection for the input if the source uses wires.
+
+   .. figure:: input_port.jpg
+      :align: center
+      :width: 400px
+
+      Differential input connections (J3, J4, and P7)
+
 #. Click the **Sample** button on the AD7768-1 evaluation software.
+
+Below are measured values with a 5.9 Vpp sine input from an AP2700 signal
+source.
+
+.. figure:: fft.jpg
+   :align: center
+   :width: 400px
+
+   FFT measurement result
+
+.. figure:: time_domain.jpg
+   :align: center
+   :width: 400px
+
+   Time domain waveform measurement
 
 System Gain Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,6 +134,11 @@ System Gain Configuration
 Select the gain by configuring the switch (S2) on the EVAL-CN0535-FMCZ board.
 The following table shows the system gain and the corresponding input voltage
 ranges.
+
+.. figure:: system_gain_config.jpg
+   :align: center
+
+   System gain configuration switch (S2) settings
 
 .. list-table:: System Gain and Input Voltage Ranges
    :header-rows: 1
@@ -132,23 +176,61 @@ Select the ADC driver mode by configuring the switch (S2) on the
 EVAL-CN0535-FMCZ board. The :adi:`ADA4945-1` can be set to full power mode or
 low power mode.
 
+.. figure:: adc_driver_config.jpg
+   :align: center
+
+   ADC driver (ADA4945-1) configuration switch settings
+
 Software GUI Setup
 ------------------
 
 GUI Main Window
 ~~~~~~~~~~~~~~~
 
+.. figure:: gui_main.jpg
+   :align: center
+   :width: 600px
+
+   AD7768-1 evaluation software GUI main window
+
 The main window of the GUI allows the user to configure the following settings
 on the ADC:
 
 #. **Buffer Control** -- Allows the user to configure the internal ADC input and
    reference buffers.
+
+   .. figure:: buffer.jpg
+      :align: center
+      :width: 400px
+
+      Buffer control settings
+
 #. **Digital Filter Control** -- Allows the user to select the digital filter
    setting of the ADC.
+
+   .. figure:: filter.jpg
+      :align: center
+      :width: 400px
+
+      Digital filter control settings
+
 #. **MCLK DIV** -- Allows the user to configure the MCLK divider setting on the
    ADC.
+
+   .. figure:: mclk.jpg
+      :align: center
+      :width: 400px
+
+      MCLK divider settings
+
 #. **Power Mode** -- Sets the power mode setting on the ADC. The user can select
    from Fast, Median, and Low power mode settings.
+
+   .. figure:: pwrmd.jpg
+      :align: center
+      :width: 400px
+
+      Power mode settings
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------

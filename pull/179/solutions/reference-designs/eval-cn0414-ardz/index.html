@@ -648,7 +648,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -929,7 +929,11 @@ in conjunction with the current input channels to form a HART-compatible,
 connectivity to the multiple current input channels. The <a class="icon adi reference external" href="https://www.analog.com/ADuM5411" target="_blank">ADuM5411</a> and
 <a class="icon adi reference external" href="https://www.analog.com/ADuM3151" target="_blank">ADuM3151</a> provide digital line and power isolation. The <a class="icon adi reference external" href="https://www.analog.com/ADP2441" target="_blank">ADP2441</a>
 36 V step-down dc-to-dc regulator accepts an industrial standard 24 V supply
-and steps it down to 7.5 V for the system.</p>
+(with wide tolerance on the input voltage) and steps it down to 7.5 V for the
+system.</p>
+<p>This user guide describes how to use the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> and evaluation
+software to configure and collect data from the EVAL-CN0414-ARDZ evaluation
+board.</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_board.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_board.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_board.png" width="500" />
 </a>
@@ -940,7 +944,7 @@ and steps it down to 7.5 V for the system.</p>
 <section id="simplified-functional-block-diagram">
 <h3>Simplified Functional Block Diagram<a class="headerlink" href="#simplified-functional-block-diagram" title="Link to this heading"></a></h3>
 <figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_block_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_block_diagram.png" width="600" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_simplified_block_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_simplified_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_simplified_block_diagram.png" width="600" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0414 Simplified Functional Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
@@ -973,7 +977,10 @@ and steps it down to 7.5 V for the system.</p>
 <li class="toctree-l3"><a class="reference internal" href="software.html#available-commands">Available Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="software.html#obtaining-the-software">Obtaining the Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html#obtaining-the-software">Obtaining the Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="software.html#using-crosscore-embedded-studio">Using CrossCore Embedded Studio</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="software.html#project-structure">Project Structure</a></li>
 </ul>
 </li>

@@ -97,6 +97,8 @@
 <li><a class="reference internal" href="#">EVAL-CN0536-ARDZ</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a><ul>
 <li><a class="reference internal" href="#simplified-block-diagram">Simplified Block Diagram</a></li>
+<li><a class="reference internal" href="#board-pinout">Board Pinout</a></li>
+<li><a class="reference internal" href="#system-overview">System Overview</a></li>
 <li><a class="reference internal" href="#features">Features</a></li>
 </ul>
 </li>
@@ -654,7 +656,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -950,6 +952,41 @@ radiation levels increase.</p>
 </figcaption>
 </figure>
 </section>
+<section id="board-pinout">
+<h3>Board Pinout<a class="headerlink" href="#board-pinout" title="Link to this heading"></a></h3>
+<p>The figure below shows the pins used as well as their corresponding functions.
+The output pin for the Geiger pulse can be set in four different locations,
+allowing flexibility in case other shields are used together with the CN0536.
+By default, JP1 is shorted and the Geiger pulse is read from GPIO33. Some pins
+have specific alternate functions; all other unlabeled pins are free to be used.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/pinout.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/pinout.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/pinout.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-CN0536-ARDZ Board Pinout</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="system-overview">
+<h3>System Overview<a class="headerlink" href="#system-overview" title="Link to this heading"></a></h3>
+<p>The CN0536 system supports data transfer via UART or over Wi-Fi to an MQTT
+server for remote monitoring. A sample Python script is available to plot MQTT
+data into a graph with a radiation threshold.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_system_overview.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_system_overview.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_system_overview.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CN0536 System Overview (UART and MQTT Data Paths)</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_software_flow.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_software_flow.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_software_flow.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">CN0536 Software Flow Diagram</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
 <section id="features">
 <h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -977,37 +1014,136 @@ radiation levels increase.</p>
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
 <p>This section outlines how to configure the EVAL-CN0536-ARDZ to accommodate
 different types of GM tubes.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Check the GM tube pin configurations. Refer to the product datasheet and
-note the operating voltage of the GM tube to be used.</p></li>
+note the operating voltage of the GM tube to be used.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_polarities.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_polarities.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_polarities.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">GM Tube Polarities</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Measure the set resistance at pins 2 and 3 of the potentiometer R9 and
-adjust it to achieve the desired value.</p></li>
+adjust it to achieve the desired value. Refer to the figure below for pin
+location.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/adjusting_the_potentiometer_r9.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/adjusting_the_potentiometer_r9.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/adjusting_the_potentiometer_r9.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Adjusting the Potentiometer (R9)</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Solder the GM tube to the EVAL-CN0536-ARDZ and ensure proper grounding.
-For stability and safety, secure the sensor to the board using a cable tie.</p></li>
+For stability and safety, secure the sensor to the board using a cable tie.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_with_gm_tube.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_with_gm_tube.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_with_gm_tube.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">CN0536 with GM Tube: (a) Unsoldered (b) Soldered</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="setup-and-test">
 <h2>Setup and Test<a class="headerlink" href="#setup-and-test" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_with_adicup3029.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_with_adicup3029.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_with_adicup3029.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">EVAL-CN0536-ARDZ with GM Tube Combined with the EVAL-ADICUP3029</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>Follow these steps to evaluate the EVAL-CN0536-ARDZ (with installed GM tube)
 and the associated software:</p>
-<ol class="arabic simple">
-<li><p>Connect the EVAL-CN0536-ARDZ on top of the EVAL-ADICUP3029 platform board.</p></li>
+<ol class="arabic">
+<li><p>Connect the EVAL-CN0536-ARDZ on top of the EVAL-ADICUP3029 platform board.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_adicup3029_connection.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_adicup3029_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_adicup3029_connection.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">CN0536 with GM Tube and EVAL-ADICUP3029 Connection</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Connect the EVAL-ADICUP3029 to the PC using the micro-USB cable provided.</p></li>
 <li><p>From the PC, drag and drop the prebuilt <code class="docutils literal notranslate"><span class="pre">ADuCM3029_demo_cn0536_uart.hex</span></code>
 file onto the DAPLink drive.</p></li>
 <li><p>Open the serial terminal program (for example, Tera Term or PuTTY).</p></li>
 <li><p>Connect the EVAL-ADICUP3029 using the COM port it was assigned to and set
-the baud rate to 115200.</p></li>
+the baud rate to 115200.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/tera_term_serial_monitor.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/tera_term_serial_monitor.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/tera_term_serial_monitor.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Using Tera Term as Serial Monitor with Baud Rate Set to 115200</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Place the radioactive source near the Geiger-Mueller tube and observe the
-terminal output.</p></li>
+terminal output.</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_uranium_ore_test.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_uranium_ore_test.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_uranium_ore_test.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">EVAL-CN0536-ARDZ Connected to the EVAL-ADICUP3029 Next to a Uranium Ore
+Sample</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_mounted.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_mounted.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/cn0536_mounted.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">EVAL-CN0536-ARDZ Mounted on the EVAL-ADICUP3029 Platform Board</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="supported-gm-tubes">
 <h2>Supported GM Tubes<a class="headerlink" href="#supported-gm-tubes" title="Link to this heading"></a></h2>
-<p>The CN0536 was tested with several different GM tubes. Adjusting the R_pot
-configurations ensures that each GM tube operates correctly and efficiently.
-Supported tubes include the SI-29BG, SBT-10A, 7129, 7121, 7124, and SBT-11A,
-each with different sensitivity levels and operating voltage ranges.</p>
+<p>The CN0536 was tested with several different GM tubes. The figures below
+present the sensors’ sensitivity levels, materials used, and operating ranges.</p>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_sensor_tubes.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_sensor_tubes.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_sensor_tubes.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Geiger-Mueller Sensor Tubes</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tubes_specifications.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tubes_specifications.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tubes_specifications.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Geiger-Mueller Tubes Specifications</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Adjusting the R<sub>pot</sub> configurations ensures that each GM tube operates
+correctly and efficiently. Test results with different GM tubes are shown below.</p>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tube_7129_test.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tube_7129_test.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tube_7129_test.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">GM Tube 7129: (a) Serial Display (b) CN0536 with GM Tube and EVAL-ADICUP3029</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tube_7121_test.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tube_7121_test.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tube_7121_test.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">GM Tube 7121: (a) Serial Display (b) CN0536 with GM Tube and EVAL-ADICUP3029</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id19">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tube_7124_test.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tube_7124_test.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0536-ardz/gm_tube_7124_test.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">GM Tube 7124: (a) Serial Display (b) CN0536 with GM Tube and EVAL-ADICUP3029</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
 <h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>

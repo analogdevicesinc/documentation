@@ -4,8 +4,7 @@ Hardware
 ========
 
 This page describes the hardware setup and connector configuration for the
-:ref:`eval-cn0396-ardz` shield board used with the EVAL-ADICUP360 development
-platform.
+:ref:`eval-cn0396-ardz` shield board.
 
 Hardware Setup
 --------------
@@ -20,6 +19,12 @@ Hardware Setup
 
 Connectors, Sensors, and Configurations
 -----------------------------------------
+
+.. figure:: cn0396_board_label_wiki.png
+   :align: center
+   :width: 600px
+
+   EVAL-CN0396-ARDZ board connectors and component layout.
 
 Gas Sensors
 ~~~~~~~~~~~
@@ -36,6 +41,12 @@ are provided for easy installation of the sensor.
 - DD-Scientific GS+4DT
 
 **Sensor Socket Connection:**
+
+.. figure:: sensorsocket.png
+   :align: center
+   :width: 200px
+
+   Sensor socket pin layout.
 
 .. list-table:: Sensor Socket Pin Mapping
    :header-rows: 1
@@ -102,14 +113,51 @@ digital temperature sensor:
    * - Jumper Pin 2 and Pin 3
      - D3
 
-Setting Up the Hardware
------------------------
+Setting Up with EVAL-ADICUP360
+-------------------------------
 
-1. Set the jumpers/switches on the EVAL-ADICUP360 base board for programming
-   mode.
+1. To program the base board, set the jumpers/switches as shown in the figure
+   below. The important jumpers/switches are highlighted in red.
+
+   .. figure:: cn0216_hw_config.png
+      :align: center
+      :width: 500px
+
+      EVAL-ADICUP360 jumper/switch configuration for programming mode.
+
 2. Connect the **EVAL-CN0396-ARDZ** to the Arduino connectors **P2, P5, P6,
    P7, P8** of the **EVAL-ADICUP360** board.
-3. Set the jumpers on the EVAL-CN0396-ARDZ board for the desired chip select
-   configuration.
+
+3. Set the jumpers on the EVAL-CN0396-ARDZ board as shown in the figure below.
+
+   .. figure:: cn0396_demo_4.png
+      :align: center
+      :width: 600px
+
+      EVAL-CN0396-ARDZ jumper configuration.
+
 4. Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
    Debug USB (P14).
+
+Setting Up with Arduino Uno
+----------------------------
+
+1. Plug the **EVAL-CN0396-ARDZ** shield on top of the **Arduino Uno**
+   development board by matching up the **POWER, ANALOG, DIGI0, DIGI1**
+   connectors. The boards should only plug together one way, preventing
+   reverse connections.
+
+2. Connect your electrochemical gas sensor to the EVAL-CN0396-ARDZ via
+   **M1**.
+
+3. Set the jumpers on the EVAL-CN0396-ARDZ board as shown in the jumper
+   configuration figure above.
+
+4. Plug in the Type B USB cable into the USB port on the Arduino Uno, and
+   the other end into the PC or laptop.
+
+.. figure:: cn0396_arduino_setup.jpg
+   :align: center
+   :width: 500px
+
+   EVAL-CN0396-ARDZ shield mounted on Arduino Uno.

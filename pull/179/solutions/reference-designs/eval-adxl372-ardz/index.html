@@ -666,7 +666,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -956,12 +956,24 @@ device switches to normal operating mode fast enough to record the event.</p>
 <p>The EVAL-ADXL372-ARDZ shield is designed in Arduino Uno R3 form factor,
 making it compatible with the <a class="reference internal" href="../eval-adicup3029/index.html#eval-adicup3029"><span class="std std-ref">EVAL-ADICUP3029</span></a>
 development platform as well as standard Arduino Uno R3 base boards.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/top_adxl_int_together.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/top_adxl_int_together.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-ADXL372-ARDZ shield with EVAL-ADXL372Z-PIN assembled together.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="connectors-and-jumper-configuration">
 <h2>Connectors and Jumper Configuration<a class="headerlink" href="#connectors-and-jumper-configuration" title="Link to this heading"></a></h2>
 <p>The EVAL-ADXL372-ARDZ shield has four jumpers (P10, P11, P12, P13) to
 increase flexibility when stacking systems together. Each jumper and its
 purpose is described below.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/eval-adxl-ardz-int_jumper_select.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/eval-adxl-ardz-int_jumper_select.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-ADXL372-ARDZ jumper locations.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="adxl-cs-select-p10">
 <h3>ADXL_CS_SELECT (P10)<a class="headerlink" href="#adxl-cs-select-p10" title="Link to this heading"></a></h3>
 <div class="table-wrapper colwidths-given docutils container">
@@ -1069,9 +1081,15 @@ connection and allows for the Arduino shield to directly include the ADXL372
 sensor. Be careful when connecting the EVAL-ADXL372Z-PIN with the
 EVAL-ADXL-ARDZ-INT to make sure that all the signals go to the correct pin
 of connectors P5 and P2.</p>
-<div class="table-wrapper colwidths-given docutils container" id="id2">
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Direct Mounting Connector Pinout</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/eval-adxl-ardz-int_direct_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/eval-adxl-ardz-int_direct_connection.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-ADXL372-ARDZ direct mounting connector locations (P5 and P2).</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id5">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Direct Mounting Connector Pinout</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 35.0%" />
@@ -1107,6 +1125,12 @@ of connectors P5 and P2.</p>
 </tbody>
 </table>
 </div>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/top_adxl_int_separate.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/top_adxl_int_separate.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">EVAL-ADXL372-ARDZ shield and EVAL-ADXL372Z-PIN board separated.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="ribbon-cable-connection-p7-and-p1">
 <h3>Ribbon Cable Connection (P7 and P1)<a class="headerlink" href="#ribbon-cable-connection-p7-and-p1" title="Link to this heading"></a></h3>
@@ -1115,9 +1139,15 @@ via a ribbon cable. This allows for remotely mounting the sensor when you
 cannot have the rest of the electronics on the unit being sensed. Because
 this is a cabled option, you could also use other digital-output accelerometer
 devices with the EVAL-ADXL-ARDZ-INT such as the ADXL346/46 or the ADXL355/57.</p>
-<div class="table-wrapper colwidths-given docutils container" id="id3">
-<table class="docutils align-default" id="id3">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Ribbon Cable Connector Pinout</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/eval-adxl-ardz-int_cable_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/eval-adxl-ardz-int_cable_connection.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">EVAL-ADXL372-ARDZ ribbon cable connector locations (P7 and P1).</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id8">
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Ribbon Cable Connector Pinout</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 35.0%" />
@@ -1214,6 +1244,14 @@ output)</p></li>
 <ol class="arabic simple">
 <li><p>Set switch <strong>S2</strong> to <strong>USB Arduino</strong> function in order to view data over
 UART. The UART baud rate is <strong>9600</strong> baud.</p></li>
+</ol>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/adicup3029_s2_switch.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/adicup3029_s2_switch.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">EVAL-ADICUP3029 S2 switch set to USB Arduino position.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
 <li><p>Place the <strong>EVAL-ADXL372-ARDZ-INT</strong> on top of the <strong>EVAL-ADICUP3029</strong>.</p></li>
 <li><p>Make sure the jumpers <strong>P10, P11, P12</strong> are configured as follows:</p>
 <ul class="simple">
@@ -1222,6 +1260,14 @@ UART. The UART baud rate is <strong>9600</strong> baud.</p></li>
 <li><p>P12 – Pin 1-2</p></li>
 </ul>
 </li>
+</ol>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/eval_adxl_ardz_int_jumpers.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/eval_adxl_ardz_int_jumpers.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">EVAL-ADXL372-ARDZ jumper configuration for the ADICUP3029 demo.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
 <li><p>Plug in the micro-USB cable into the (P10) USB port on the EVAL-ADICUP3029,
 and the other end into the PC or laptop.</p></li>
 </ol>
@@ -1254,15 +1300,46 @@ Stop: 1 bit
 Flow Control: none
 </pre></div>
 </div>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/serial_terminal_capture.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/serial_terminal_capture.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">ADXL372 serial terminal output showing impact data.</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="smart-device-output">
 <h3>Smart Device Output<a class="headerlink" href="#smart-device-output" title="Link to this heading"></a></h3>
 <p>Open up the IoTNode app on your iOS smart phone or tablet:</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/iotnode_app_main.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/iotnode_app_main.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/iotnode_app_main.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">IoTNode application main screen.</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p>Press the <strong>Scan</strong> button on the bottom left corner for the app to start
 searching for Bluetooth devices.</p></li>
+</ol>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/iotnode_app_scan.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/iotnode_app_scan.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/iotnode_app_scan.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">IoTNode application scanning for Bluetooth devices.</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
 <li><p>Once the device is visible, press <strong>Connect</strong> to access the information
 provided over Bluetooth.</p></li>
+</ol>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/iotnode_app_connected.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/iotnode_app_connected.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/iotnode_app_connected.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">IoTNode application displaying impact acceleration data.</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
 <li><p>After connecting and generating enough acceleration (minimum of <strong>10 g</strong>
 on any axis), information will be displayed on the application. To generate
 this high value of acceleration, tap the board against your hand (do not
@@ -1271,6 +1348,12 @@ apply excessive force to avoid damaging the device).</p></li>
 </section>
 <section id="project-structure">
 <h3>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/adxl372_project_structure.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-adxl372-ardz/adxl372_project_structure.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">ADXL372 demo project structure diagram.</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The project is structured in 3 layers:</p>
 <ul class="simple">
 <li><p><strong>Hardware layer</strong> – ADXL372</p></li>

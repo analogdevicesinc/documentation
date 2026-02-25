@@ -5,6 +5,12 @@ EVAL-CN0335-PMDZ
 
 Isolated +/-10 V Single Supply Analog-to-Digital Conversion System.
 
+.. figure:: cn0335_hw_375.jpg
+   :align: center
+   :width: 375px
+
+   EVAL-CN0335-PMDZ evaluation board
+
 Overview
 --------
 
@@ -19,6 +25,12 @@ The circuit incorporates the :adi:`AD8606 <AD8606>` precision op-amp, the
 :adi:`AD7091R <AD7091R>` 12-bit successive approximation (SAR) ADC, and the
 :adi:`ADuM5401 <ADUM5401>` digital isolator with integrated isolated power
 supply to create a standard +/-10 V measurement system.
+
+.. figure:: overview_fig_1.png
+   :align: center
+
+   +/-10 V single supply analog-to-digital conversion with isolation
+   (all connections and decoupling not shown)
 
 The circuit has a 12-pin PMOD connector on board, which can be used for
 connection to a customer microprocessor or FPGA. The :adi:`CN0335 Circuit Note
@@ -61,6 +73,11 @@ General Setup
 - The +/-10 V source (voltage generator) connects to the EVAL-CN0335-PMDZ
   (CN0335 board) via the terminal block **J2**.
 
+.. figure:: general_setup.png
+   :align: center
+
+   General hardware setup
+
 Installing the Software
 ------------------------
 
@@ -75,9 +92,24 @@ Installing the Software
       **C:\\Program Files\\Analog Devices\\CN0335\\** and all National
       Instruments products to **C:\\Program Files\\National Instruments\\**.
 
+   .. figure:: installing_sw_1.png
+      :align: center
+
+      CN0335 evaluation software installer
+
 2. Click **Next** to view the installation review page.
 
+   .. figure:: installing_sw_2.png
+      :align: center
+
+      Installation review page
+
 3. Click **Next** to start the installation.
+
+   .. figure:: installing_sw_3.png
+      :align: center
+
+      Installation progress
 
 4. Upon completion of the installation of the **CN0335 Evaluation Software**,
    the installer for the **ADI SDP Drivers** will execute.
@@ -88,6 +120,11 @@ Installing the Software
       **Next**. This will make it possible to update relevant system files
       without having to reboot your computer.
 
+   .. figure:: installing_sw_4.png
+      :align: center
+
+      ADI SDP Drivers installer
+
 5. Press **Next** to set the installation location for the **SDP Drivers**.
 
    .. note::
@@ -95,8 +132,23 @@ Installing the Software
       It is recommended that you install the drivers to the default directory
       path **C:\\Program Files\\Analog Devices\\SDP\\DriversR2**.
 
+   .. figure:: installing_sw_5.png
+      :align: center
+
+      SDP Drivers installation location
+
 6. Press **Next** to install the **SDP Drivers** and complete the installation
    of all software. Click **Finish** when done.
+
+   .. figure:: installing_sw_6.png
+      :align: center
+
+      SDP Drivers installation progress
+
+   .. figure:: installing_sw_6a.png
+      :align: center
+
+      Installation complete
 
 Connecting the Hardware
 ------------------------
@@ -108,28 +160,78 @@ Connecting the Hardware
 
       Make sure that the jumper is positioned as shown on the board label.
 
+   .. figure:: connecthw_1.png
+      :align: center
+      :width: 600px
+
+      Connecting the +6 V power supply to the interposer board
+
 2. Connect the 120-pin connector on the SDP-PMD-IB1Z (interposer board) to the
    120-pin connector marked **CON A** on the EVAL-SDP-CB1Z (SDP-B board).
 
+   .. figure:: connecthw_2.png
+      :align: center
+      :width: 600px
+
+      Connecting the interposer board to the SDP-B board
+
 3. Connect the USB cable supplied with the EVAL-SDP-CB1Z (SDP-B board) to the
    USB port on the PC and the SDP board.
+
+   .. figure:: connecthw_3.png
+      :align: center
+      :width: 600px
+
+      Connecting the USB cable to the SDP-B board
 
    .. note::
 
       Verify that the SDP drivers are loaded properly. Open the Device Manager
       and check if the SDP board is recognized. If not, repeat steps 1--3.
 
+   .. figure:: connecthw_3a.png
+      :align: center
+
+      SDP board recognized in Device Manager
+
 4. Connect the EVAL-CN0335-PMDZ (CN0335 board) to the SDP-PMD-IB1Z
    (interposer board) via the 12-pin header PMOD connector.
 
+   .. figure:: connecthw_4.png
+      :align: center
+      :width: 600px
+
+      Connecting the CN0335 board to the interposer board
+
 5. Connect the input voltage source to the **J2** terminal block. The polarity
    is marked on the board.
+
+   .. figure:: connecthw_5.png
+      :align: center
+      :width: 600px
+
+      Connecting the input voltage source to terminal block J2
 
 Using the Evaluation Software
 ------------------------------
 
 Software Control and Indicator Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: using_sw_1.png
+   :align: center
+
+   CN0335 evaluation software -- main controls
+
+.. figure:: using_sw_2.png
+   :align: center
+
+   CN0335 evaluation software -- calibration and indicators
+
+.. figure:: using_sw_3.png
+   :align: center
+
+   CN0335 evaluation software -- SDP revision information
 
 1. **Connect/Reconnect Button** -- Makes a USB connection between the SDP-B
    board and the CN0335 board. A connection to the SDP-B board must be made to
@@ -170,10 +272,15 @@ Software Control and Indicator Descriptions
 12. **System Status LED Indicator** -- Displays the current state of the
     software as an LED with four status colors:
 
-    - **Inactive** (grey)
-    - **Busy** (yellow)
-    - **Error** (red)
-    - **Waiting for user action** (green)
+    - |inactive| **Inactive**
+    - |busy| **Busy**
+    - |error| **Error**
+    - |waiting| **Waiting for user action**
+
+    .. |inactive| image:: using_sw_12inactive.png
+    .. |busy| image:: using_sw_12busy.png
+    .. |error| image:: using_sw_12error.png
+    .. |waiting| image:: using_sw_12waiting.png
 
 13. **Calibrate System Controls** -- Allow the user to calibrate the CN0335
     board. Two voltage inputs in the range +/-10 V are required. For best
@@ -199,6 +306,11 @@ Establishing a USB Connection
 
 3. Click the **Connect/Reconnect Button**. A window with a progress bar will
    load.
+
+   .. figure:: establishing_connection_3.png
+      :align: center
+
+      USB connection progress bar
 
 4. Upon success, the **System Status String Indicator** will display
    *SDP Board Ready to Acquire Data*.
@@ -230,6 +342,12 @@ Saving Data to a Spreadsheet File
 1. Establish a USB connection link.
 2. Capture data.
 3. Click the **Save Data Button**.
+
+   .. figure:: saving_data_3.png
+      :align: center
+
+      Save data dialog
+
 4. Click the **OK Button**.
 5. Browse to the directory location where the spreadsheet file is to be saved.
 6. Name the file.

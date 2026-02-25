@@ -658,7 +658,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -947,6 +947,13 @@ default single-channel mode that allows the AD7887 to be operated as a
 read-only ADC, simplifying the control logic.</p>
 <p>The EVAL-CN0150-SDPZ board connects to ADI’s System Demonstration Platform
 (SDP) and is powered by a +6 V supply or +6 V wall wart.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/cn0150-hw-1024.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/cn0150-hw-1024.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/cn0150-hw-1024.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0150-SDPZ Evaluation Board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -965,6 +972,13 @@ USB interface</p></li>
 <h2>General Setup<a class="headerlink" href="#general-setup" title="Link to this heading"></a></h2>
 <section id="block-assignments">
 <h3>Block Assignments<a class="headerlink" href="#block-assignments" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/10.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/10.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/10.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0150-SDPZ Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>The EVAL-CN0150-SDPZ (CN0150 Board) connects to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a>
 (SDP-B Board) via the 120-pin connector.</p></li>
@@ -976,6 +990,13 @@ USB interface</p></li>
 </section>
 <section id="test-setup">
 <h3>Test Setup<a class="headerlink" href="#test-setup" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/cn0150_test_setup.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/cn0150_test_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/cn0150_test_setup.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-CN0150-SDPZ Test Setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p>Connect the 120-pin connector on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0150A-SDPZ" target="_blank">EVAL-CN0150A-SDPZ</a> to the
 connector marked “CON A” on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a>.</p></li>
@@ -1000,10 +1021,18 @@ before turning on the dc power supply for the EVAL-CN0150-SDPZ.</p>
 <h3>Calibration<a class="headerlink" href="#calibration" title="Link to this heading"></a></h3>
 <p>Because the slope and intercept of the system vary from device to device, a
 system level calibration is <strong>required</strong>.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Apply two known signal levels PIN_1 and PIN_2 close to the endpoints of the
 AD8318 linear input range. Note that they should be well within the linear
-operating range of the device (<strong>-50 dBm to -10 dBm for this device</strong>).</p></li>
+operating range of the device (<strong>-50 dBm to -10 dBm for this device</strong>).</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/14.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/14.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/14.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Calibration Input Range</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Measure the corresponding output codes CODE_1 and CODE_2 from the ADC.</p></li>
 <li><p>Calculate the calibration coefficients using the following equations:</p>
 <ul class="simple">
@@ -1030,32 +1059,92 @@ operating in the field:</p>
 default path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Analog</span> <span class="pre">Devices\CN0150\</span></code> and all
 National Instruments products to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>.</p>
 </div>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/1.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">CN0150 Software Installer</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Accept the license agreement to proceed.</p></li>
-<li><p>Click <strong>Next</strong> to view the installation review page.</p></li>
-<li><p>Click <strong>Next</strong> to start the installation.</p></li>
+<li><p>Accept the license agreement to proceed.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/2.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">License Agreement</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/3.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Installation Review</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to start the installation.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/4.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Installation Progress</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion, the ADI SDP Drivers installer will execute.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Close all other applications before clicking “Next” to allow system file
 updates without rebooting.</p>
 </div>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/5.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/5.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">SDP Drivers Installer</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to set the installation location for the SDP Drivers.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Recommended path: <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\SDP\Drivers</span></code></p>
 </div>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/6.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/6.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">SDP Drivers Installation Location</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Press <strong>Install</strong> to install the SDP Drivers. Click <strong>Finish</strong> when done.</p></li>
+<li><p>Press <strong>Install</strong> to install the SDP Drivers. Click <strong>Finish</strong> when done.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/8.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/8.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/8.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Installation Complete</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="using-the-evaluation-software">
 <h2>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h2>
 <section id="main-window">
 <h3>Main Window<a class="headerlink" href="#main-window" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/11.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/11.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/11.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">CN0150 Evaluation Software Main Window</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The evaluation software provides the following controls and displays:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p><strong>Connect</strong> button – Starts the connection between the CN0150 Evaluation
 Board and SDP-B Controller Board.</p></li>
 <li><p><strong>Reset and Disconnect</strong> button – Resets and ends the connection.</p></li>
@@ -1063,6 +1152,13 @@ Board and SDP-B Controller Board.</p></li>
 (%) versus input signal power. Contains plot options for interpolation and
 color settings.</p></li>
 <li><p><strong>Test Setup</strong> tab:</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/12.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/12.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/12.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Test Setup Tab</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>Data Acquisition</strong> controls:</p>
 <ul>
@@ -1092,6 +1188,13 @@ linear input range</p></li>
 </ul>
 </li>
 <li><p><strong>Configure</strong> tab:</p>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/15.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/15.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0150-sdpz/15.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Configure Tab</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>SDP Connector</strong> – Selects which 120-pin connection of the SDP-B Board
 to use</p></li>

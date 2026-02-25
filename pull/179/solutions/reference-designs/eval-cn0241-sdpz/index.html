@@ -659,7 +659,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -949,6 +949,13 @@ The <a class="icon adi reference external" href="https://www.analog.com/AD7920" 
 powered up. The <a class="icon adi reference external" href="https://www.analog.com/ADA4096-2" target="_blank">ADA4096-2</a> requires only 120 uA under operational
 conditions. When operating at 5 V, this is only 0.6 mW. The <a class="icon adi reference external" href="https://www.analog.com/ADP3336" target="_blank">ADP3336</a>
 draws only 1 uA in the shutdown mode.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-hw-1024.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-hw-1024.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-hw-1024.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0241-SDPZ evaluation board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -967,6 +974,13 @@ draws only 1 uA in the shutdown mode.</p>
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
 <section id="block-assignments">
 <h3>Block Assignments<a class="headerlink" href="#block-assignments" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-hw-1024_l.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-hw-1024_l.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-hw-1024_l.jpg" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0241-SDPZ block assignments</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p>Connect <a class="icon adi reference external" href="https://www.analog.com/CN0241" target="_blank">EVAL-CN0241-SDPZ</a> <strong>(CN0241 Board)</strong> to the
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> <strong>(SDP-B Board)</strong> via the 120-pin
@@ -978,6 +992,13 @@ in place of the 6 V power supply.</p></li>
 the 2 Ohm / 12 W load resistor to LOAD and GND on <strong>J1</strong>.</p></li>
 <li><p><strong>J2</strong> is for SPI breakout.</p></li>
 </ol>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-06-1024_setup.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-06-1024_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-06-1024_setup.png" style="width: 550px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-CN0241-SDPZ test setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="installing-the-evaluation-software">
@@ -992,10 +1013,41 @@ default directory path <code class="docutils literal notranslate"><span class="p
 and all National Instruments products to
 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>.</p>
 </div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-1.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CN0241 installer welcome screen</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Click <strong>Next</strong> and accept the license agreement.</p></li>
-<li><p>Click <strong>Next</strong> to view the installation review page.</p></li>
-<li><p>Click <strong>Next</strong> to start the installation.</p></li>
+<li><p>Click <strong>Next</strong> and accept the license agreement.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-2.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">License agreement</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-3.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Installation review</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to start the installation.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-4.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Installation progress</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion of the installation of the <strong>CN0241 Evaluation Software</strong>,
 the installer for the ADI SDP Drivers will execute.</p>
 <div class="admonition note">
@@ -1004,6 +1056,13 @@ the installer for the ADI SDP Drivers will execute.</p>
 <strong>Next</strong>. This will make it possible to update relevant system files
 without having to reboot your computer.</p>
 </div>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-5.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-5.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">SDP Drivers installer</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Click <strong>Next</strong> to set the installation location for the <strong>SDP Drivers</strong>.</p>
 <div class="admonition note">
@@ -1011,10 +1070,33 @@ without having to reboot your computer.</p>
 <p>It is recommended that you install the drivers to the default directory
 path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\SDP\Drivers</span></code>.</p>
 </div>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-6.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-6.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">SDP Drivers installation location</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Click <strong>Next</strong> to install the <strong>SDP Drivers</strong>. When prompted by Windows
-Security, press <strong>Install</strong>.</p></li>
-<li><p>Click <strong>Finish</strong> to complete the installation.</p></li>
+Security, press <strong>Install</strong>.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-7.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-7.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-7.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Windows Security driver prompt</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Finish</strong> to complete the installation.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-8.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-8.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-8.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Installation complete</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="running-the-system">
@@ -1039,6 +1121,13 @@ to be measured.</p></li>
 <h2>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h2>
 <section id="main-window">
 <h3>Main Window<a class="headerlink" href="#main-window" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-main.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-main.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-main.jpg" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">CN0241 evaluation software main window</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="table-wrapper colwidths-given docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -1079,16 +1168,32 @@ Controller Board.</p></td>
 </div>
 <section id="display-tabs">
 <h4>Display Tabs<a class="headerlink" href="#display-tabs" title="Link to this heading"></a></h4>
-<ul class="simple">
+<ul>
 <li><p><strong>Sample Data Tab</strong> – Shows the acquired measurement data in terms of ADC
 codes with respect to the samples. By right-clicking within the area, more
 functions can be viewed. Graph palette can be hidden by deselecting it and
-other items can be added such as plot legend, scale legend, etc.</p></li>
+other items can be added such as plot legend, scale legend, etc.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-sd.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-sd.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-sd.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Sample Data tab</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p><strong>Histogram Tab</strong> – Shows the acquired measurement data in terms of number
 of counts with respect to the ADC codes. The same right-click functions are
-available as in the Sample Data tab.</p></li>
+available as in the Sample Data tab.</p>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-h.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-h.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-h.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Histogram tab</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p><strong>Configure Tab</strong> – Contains the following controls:</p>
-<ul>
+<ul class="simple">
 <li><p><strong>AD7920 Mode</strong> – Can choose between two modes:</p>
 <ul>
 <li><p><strong>Power Down Between Conversions</strong></p></li>
@@ -1098,6 +1203,13 @@ available as in the Sample Data tab.</p></li>
 <li><p><strong>Read Firmware</strong> – Reads the firmware of the CN0241 Evaluation Board.</p></li>
 <li><p><strong>Flash LED</strong> – Flashes the LED on the SDP controller board.</p></li>
 </ul>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-c.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-c.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0241-sdpz/cn0241-c.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Configure tab</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 </ul>
 </section>

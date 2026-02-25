@@ -1,5 +1,9 @@
 .. _eval-cn0348-pmdz:
 
+.. |black_led| image:: black_led_button.png
+.. |green_led| image:: green_led_button.png
+.. |red_led| image:: red_led_button.png
+
 EVAL-CN0348-PMDZ
 =================
 
@@ -18,6 +22,11 @@ maintain the linearity of the :adi:`AD5541A` over its input digital code and
 provide a wide dynamic output range. The combination of parts provides
 industry-leading 16-bit integral nonlinearity (INL) of +/-1 LSB and
 differential nonlinearity (DNL) of +/-1 LSB with guaranteed monotonicity.
+
+.. figure:: cn0348_simplified_schematic.png
+   :align: center
+
+   CN0348 simplified schematic
 
 Required Equipment
 ------------------
@@ -58,7 +67,17 @@ Installing the Software
       all National Instruments products to
       ``C:\Program Files\National Instruments\``.
 
+   .. figure:: cn0348-install1.png
+      :align: center
+
+      CN0348 SDP Evaluation Software destination directory
+
 #. Click **Next** to view the installation review page.
+
+   .. figure:: cn0348-install2.png
+      :align: center
+
+      CN0348 installation review page
 
 #. Click **Next** to start the installation.
 
@@ -71,10 +90,20 @@ Installing the Software
       **Next**. This will make it possible to update relevant system files
       without having to reboot your computer.
 
+   .. figure:: cn0348-install3.png
+      :align: center
+
+      ADI SDP Drivers setup wizard
+
 #. Click **Next** to set the installation location for the **SDP Drivers**.
 
    It is recommended that you install the drivers to the default directory
    path ``C:\Program Files\Analog Devices\SDP\DriversR2``.
+
+   .. figure:: cn0348-install4.png
+      :align: center
+
+      SDP Drivers install location
 
 #. Click **Next** to install the **SDP Drivers** and complete the installation
    of all software.
@@ -84,6 +113,11 @@ Using the Evaluation Software
 
 Software Control and Indicator Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: software1.png
+   :align: center
+
+   CN0348 evaluation software main window
 
 The evaluation software provides the following controls and indicators:
 
@@ -100,9 +134,14 @@ The evaluation software provides the following controls and indicators:
    message detailing the current state of the software. The LED indicator
    displays the current state in the form of a colored LED:
 
-   - Black: Inactive
-   - Green: Busy
-   - Red: Error
+   - |black_led| Black: Inactive
+   - |green_led| Green: Busy
+   - |red_led| Red: Error
+
+   .. figure:: software2.png
+      :align: center
+
+      CN0348 evaluation software -- INL/DNL measurement controls
 
 #. **Code Step Control** -- Enter the code step between each digital input to
    be written to the DAC.
@@ -120,8 +159,18 @@ The evaluation software provides the following controls and indicators:
 #. **INL / DNL Measurement Graphs** -- Display the INL and DNL vs. input
    digital code when data collection is done.
 
+   .. figure:: software3.png
+      :align: center
+
+      INL and DNL measurement graphs
+
 #. **Transfer Function Graph** -- Shows the transfer function of the DAC
    output voltage vs. input digital code.
+
+   .. figure:: software4.png
+      :align: center
+
+      Transfer function graph
 
 #. **SDP Board Firmware Information** -- Provides up-to-date information on
    the SDP board firmware.

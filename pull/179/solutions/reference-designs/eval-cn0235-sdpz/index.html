@@ -105,7 +105,16 @@
 <li><a class="reference internal" href="#software-installation">Software Installation</a></li>
 <li><a class="reference internal" href="#using-the-evaluation-software">Using the Evaluation Software</a><ul>
 <li><a class="reference internal" href="#software-front-panel">Software Front Panel</a></li>
-<li><a class="reference internal" href="#control-tabs">Control Tabs</a></li>
+<li><a class="reference internal" href="#control-tabs">Control Tabs</a><ul>
+<li><a class="reference internal" href="#voltage-codes-tab">Voltage (Codes) Tab</a></li>
+<li><a class="reference internal" href="#voltage-volts-tab">Voltage (Volts) Tab</a></li>
+<li><a class="reference internal" href="#temperature-codes-tab">Temperature (Codes) Tab</a></li>
+<li><a class="reference internal" href="#temperature-volts-tab">Temperature (Volts) Tab</a></li>
+<li><a class="reference internal" href="#configure-ad7280a-tab">Configure AD7280A Tab</a></li>
+<li><a class="reference internal" href="#advanced-tab">Advanced Tab</a></li>
+<li><a class="reference internal" href="#sdp-firmware-release-info-tab">SDP Firmware Release Info Tab</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#warning-indicators">Warning Indicators</a></li>
 </ul>
 </li>
@@ -658,7 +667,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-CN0235-SDPZ</a></li>
@@ -974,9 +983,15 @@ to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-
 <li><p>The CN0235 Board is powered by a +6 V wall wart via the DC barrel jack.</p></li>
 <li><p>The SDP-B Board connects to the PC via the USB cable.</p></li>
 </ul>
-<div class="table-wrapper colwidths-given docutils container" id="id2">
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">General Setup Callouts</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_general_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_general_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0235 general setup</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">General Setup Callouts</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 10.0%" />
 <col style="width: 90.0%" />
@@ -1018,11 +1033,11 @@ the SDP board to AD7280A devices.</p></td>
 </div>
 <section id="jumper-configuration">
 <h3>Jumper Configuration<a class="headerlink" href="#jumper-configuration" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_jumper_config.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_jumper_config.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_jumper_config.png" style="width: 200px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD8280 Jumper Configurations</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD8280 Jumper Configurations</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="table-wrapper colwidths-given docutils container">
@@ -1076,6 +1091,12 @@ the AD8280 datasheet page 19 table 5.</p></td>
 </section>
 <section id="connecting-the-hardware">
 <h2>Connecting the Hardware<a class="headerlink" href="#connecting-the-hardware" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_hardware.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_hardware.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0235 hardware setup</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0235-SDPZ" target="_blank">EVAL-CN0235-SDPZ</a> to the
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> (SDP Board) through the 120-pin SMD connector. Nylon
@@ -1103,15 +1124,41 @@ default directory path <code class="docutils literal notranslate"><span class="p
 all National Instruments products to
 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>.</p>
 </div>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-software-1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-software-1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CN0235 software installer</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Click <strong>Next</strong> to view the installation review page.</p></li>
-<li><p>Click <strong>Next</strong> to start the installation.</p></li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-software-2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-software-2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Installation review page</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to start the installation.</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-software-3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-software-3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Installation progress</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion, the installer for the <strong>ADI SDP Drivers</strong> will execute.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Close all other applications before clicking <strong>Next</strong> to allow updating
 relevant system files without rebooting.</p>
 </div>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-software-4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-software-4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">SDP Drivers installer start</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to set the installation location for the SDP Drivers.</p>
 <div class="admonition note">
@@ -1119,15 +1166,34 @@ relevant system files without rebooting.</p>
 <p>It is recommended to install the drivers to the default directory path
 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\SDP\Drivers</span></code>.</p>
 </div>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-sdp_installer-1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-sdp_installer-1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">SDP Drivers installation location</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to install the SDP Drivers and complete the installation.
-Click <strong>Finish</strong> when done.</p></li>
+Click <strong>Finish</strong> when done.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-sdp_installer-2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235-sdp_installer-2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">SDP Drivers installation complete</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="using-the-evaluation-software">
 <h2>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h2>
 <section id="software-front-panel">
 <h3>Software Front Panel<a class="headerlink" href="#software-front-panel" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_sw_frontpanel.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_sw_frontpanel.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">CN0235 evaluation software front panel</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The evaluation software front panel provides the following controls and
 indicators:</p>
 <ol class="arabic simple">
@@ -1156,24 +1222,158 @@ both devices in codes and volts format. The file may be saved as .txt or
 </section>
 <section id="control-tabs">
 <h3>Control Tabs<a class="headerlink" href="#control-tabs" title="Link to this heading"></a></h3>
-<p>The software provides several control tabs:</p>
-<ul>
-<li><p><strong>Voltage (Codes)</strong> / <strong>Voltage (Volts)</strong> – Display voltage readings for
-each channel in either ADC code or voltage format. Both tabs provide two
-display modes:</p>
-<ul class="simple">
-<li><p><strong>Tank Display</strong> – Bar-like comparison showing the latest reading for
-each lithium ion battery cell.</p></li>
-<li><p><strong>Graph Display</strong> – Line chart showing cell behavior over time with a
-plot navigator and additional graph functions (pointer, plot view modifier,
-manual plot navigator). Right-click on the graph for additional plot and
-data control features.</p></li>
-</ul>
-</li>
-<li><p><strong>Temperature (Codes)</strong> / <strong>Temperature (Volts)</strong> – Display temperature
-readings from the thermistor inputs in either ADC code or voltage format.
-Both tabs provide the same tank and graph display modes as the voltage tabs.</p></li>
-<li><p><strong>Configure AD7280A</strong> – Provides the following configuration options:</p>
+<section id="voltage-codes-tab">
+<h4>Voltage (Codes) Tab<a class="headerlink" href="#voltage-codes-tab" title="Link to this heading"></a></h4>
+<p>The voltage (code format) tab features two types of display:</p>
+<p><strong>Tank Display</strong></p>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_voltagecodes_tank_display.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_voltagecodes_tank_display.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Voltage (Codes) tank display</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The tank display provides the ADC code equivalent of the reading in bar-like
+comparison for each channel. This type of display provides the latest reading
+of the lithium ion battery cells.</p>
+<p><strong>Graph Display</strong></p>
+<figure class="align-center" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_voltagecodes_graph_display.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_voltagecodes_graph_display.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Voltage (Codes) graph display</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The graphical display tab provides the user with more features or options for
+the reading analysis.</p>
+<ol class="arabic simple">
+<li><p><strong>Codes vs Sample graph</strong> – This plot provides the user with the behavior
+of each cell in a form of a line chart, enabling the user to picture out the
+current behavior of each lithium ion cell with time.</p></li>
+<li><p><strong>Latest channel code value</strong> – Similar to the tank display, this is the
+latest reading of the lithium ion battery cells by the AD7280A.</p></li>
+<li><p><strong>Plot navigator</strong> – Allows the user to see the history of the battery
+reading.</p></li>
+<li><p><strong>Additional graph functions</strong> – The three additional functions act as a
+pointer, plot view modifier, and manual plot navigator respectively.</p></li>
+</ol>
+<p>A right-click on the graph will give the user additional plot and data control
+features.</p>
+<figure class="align-center" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_graph_display_rightclick.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_graph_display_rightclick.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Graph display right-click context menu</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="voltage-volts-tab">
+<h4>Voltage (Volts) Tab<a class="headerlink" href="#voltage-volts-tab" title="Link to this heading"></a></h4>
+<p>The voltage (volts format) tab features two types of display:</p>
+<p><strong>Tank Display</strong></p>
+<figure class="align-center" id="id16">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_voltagevolts_tank_display.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_voltagevolts_tank_display.png" />
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Voltage (Volts) tank display</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The tank display provides the ADC voltage equivalent of the reading in bar-like
+comparison for each channel. This type of display provides the latest reading
+of the lithium ion battery cells.</p>
+<p><strong>Graph Display</strong></p>
+<figure class="align-center" id="id17">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_voltagevolts_graph_display.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_voltagevolts_graph_display.png" />
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Voltage (Volts) graph display</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The graphical display tab provides the user with more features or options for
+the measurement analysis.</p>
+<ol class="arabic simple">
+<li><p><strong>Codes vs Sample graph</strong> – This plot provides the user with the behavior
+of each cell in a form of a line chart, enabling the user to picture out the
+current behavior of each lithium ion cell with time.</p></li>
+<li><p><strong>Latest channel code value</strong> – Similar to the tank display, this is the
+latest reading of the lithium ion battery cells by the AD7280A.</p></li>
+<li><p><strong>Plot navigator</strong> – Allows the user to see the history of the battery
+reading.</p></li>
+<li><p><strong>Additional graph functions</strong> – The three additional functions act as a
+pointer, plot view modifier, and manual plot navigator respectively.</p></li>
+</ol>
+</section>
+<section id="temperature-codes-tab">
+<h4>Temperature (Codes) Tab<a class="headerlink" href="#temperature-codes-tab" title="Link to this heading"></a></h4>
+<p>The temperature (codes format) tab features two types of display:</p>
+<p><strong>Tank Display</strong></p>
+<figure class="align-center" id="id18">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_tempcodes_tank_display.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_tempcodes_tank_display.png" />
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">Temperature (Codes) tank display</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The tank display provides the ADC code temperature reading of the thermistor
+in bar-like comparison for each channel. This type of display provides the
+latest reading of the lithium ion battery cells.</p>
+<p><strong>Graph Display</strong></p>
+<figure class="align-center" id="id19">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_tempcodes_graph_display.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_tempcodes_graph_display.png" />
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Temperature (Codes) graph display</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The graphical display tab provides the user with more features or options for
+the reading analysis.</p>
+<ol class="arabic simple">
+<li><p><strong>Codes vs Sample graph</strong> – This plot provides the user with the behavior
+of each cell in a form of a line chart, enabling the user to picture out the
+current behavior of each lithium ion cell with time.</p></li>
+<li><p><strong>Latest channel code value</strong> – Similar to the tank display, this is the
+latest reading of the lithium ion battery cells by the AD7280A.</p></li>
+<li><p><strong>Plot navigator</strong> – Allows the user to see the history of the battery
+reading.</p></li>
+<li><p><strong>Additional graph functions</strong> – The three additional functions act as a
+pointer, plot view modifier, and manual plot navigator respectively.</p></li>
+</ol>
+</section>
+<section id="temperature-volts-tab">
+<h4>Temperature (Volts) Tab<a class="headerlink" href="#temperature-volts-tab" title="Link to this heading"></a></h4>
+<p>The temperature (volts format) tab features two types of display:</p>
+<p><strong>Tank Display</strong></p>
+<figure class="align-center" id="id20">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_tempvolts_tank_display.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_tempvolts_tank_display.png" />
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">Temperature (Volts) tank display</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The tank display provides the ADC voltage equivalent of the thermistor reading
+in bar-like comparison for each channel. This type of display provides the
+latest reading of the lithium ion battery cells.</p>
+<p><strong>Graph Display</strong></p>
+<figure class="align-center" id="id21">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_tempvolts_graph_display.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_tempvolts_graph_display.png" />
+<figcaption>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">Temperature (Volts) graph display</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The graphical display tab provides the user with more features or options for
+the measurement analysis.</p>
+<ol class="arabic simple">
+<li><p><strong>Codes vs Sample graph</strong> – This plot provides the user with the behavior
+of each cell in a form of a line chart, enabling the user to picture out the
+current behavior of each lithium ion cell with time.</p></li>
+<li><p><strong>Latest channel code value</strong> – Similar to the tank display, this is the
+latest reading of the lithium ion battery cells by the AD7280A.</p></li>
+<li><p><strong>Plot navigator</strong> – Allows the user to see the history of the battery
+reading.</p></li>
+<li><p><strong>Additional graph functions</strong> – The three additional functions act as a
+pointer, plot view modifier, and manual plot navigator respectively.</p></li>
+</ol>
+</section>
+<section id="configure-ad7280a-tab">
+<h4>Configure AD7280A Tab<a class="headerlink" href="#configure-ad7280a-tab" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id22">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_config_ad7280a.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_config_ad7280a.png" />
+<figcaption>
+<p><span class="caption-number">Figure 20 </span><span class="caption-text">AD7280A configuration tab</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p><strong>Force Update</strong> – Updates the AD7280A configuration.</p></li>
 <li><p><strong>Voltage and Temperature Thresholds</strong> – Sets ceiling and floor values
@@ -1199,8 +1399,16 @@ resolution.</p></li>
 AUXterm will be used. Due to settling time requirements, this option
 should only be used when the acquisition time is set to 1.6 us.</p></li>
 </ol>
-</li>
-<li><p><strong>Advanced</strong> – Allows the user to read/write to the <a class="icon adi reference external" href="https://www.analog.com/AD7280A" target="_blank">AD7280A</a>
+</section>
+<section id="advanced-tab">
+<h4>Advanced Tab<a class="headerlink" href="#advanced-tab" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id23">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_advanced.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_advanced.png" />
+<figcaption>
+<p><span class="caption-number">Figure 21 </span><span class="caption-text">Advanced register read/write tab</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The advanced tab allows the user to read/write to the <a class="icon adi reference external" href="https://www.analog.com/AD7280A" target="_blank">AD7280A</a>
 registers:</p>
 <ol class="arabic simple">
 <li><p><strong>Dev0 and Dev1 Register Address</strong> – Lists register addresses and
@@ -1213,10 +1421,17 @@ current content.</p></li>
 <p>Read and understand the AD7280A and AD8280 datasheets before writing new
 values to registers.</p>
 </div>
-</li>
-<li><p><strong>SDP Firmware Release Info</strong> – Displays the SDP board firmware version
-currently in use.</p></li>
-</ul>
+</section>
+<section id="sdp-firmware-release-info-tab">
+<h4>SDP Firmware Release Info Tab<a class="headerlink" href="#sdp-firmware-release-info-tab" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id24">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_firmware_info.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0235-sdpz/cn0235_firmware_info.png" />
+<figcaption>
+<p><span class="caption-number">Figure 22 </span><span class="caption-text">SDP firmware release information</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Provides the SDP board firmware version currently in use.</p>
+</section>
 </section>
 <section id="warning-indicators">
 <h3>Warning Indicators<a class="headerlink" href="#warning-indicators" title="Link to this heading"></a></h3>

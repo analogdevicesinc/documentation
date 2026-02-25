@@ -665,7 +665,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -945,6 +945,12 @@ characteristics.</p>
 <p>The maximum tracking rate of the RDC is 3125 rps in 10-bit mode
 (resolution = 21 arc min) and 156.25 rps in 16-bit mode
 (resolution = 19.8 arc sec).</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/system.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/system.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0276 system block diagram.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -982,6 +988,12 @@ cable.</p></li>
 <li><p>The resolver connects to the EVAL-CN0276-SDPZ via the 6-pin header at
 <strong>J3</strong>.</p></li>
 </ul>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/testdraft.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/testdraft.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">General test setup diagram.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="connecting-the-hardware">
 <h3>Connecting the Hardware<a class="headerlink" href="#connecting-the-hardware" title="Link to this heading"></a></h3>
@@ -1068,10 +1080,30 @@ default directory path <code class="docutils literal notranslate"><span class="p
 Instruments products to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>
 (32-bit) or <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\National</span> <span class="pre">Instruments\</span></code> (64-bit).</p>
 </div>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/softwareinstall1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/softwareinstall1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0276 evaluation software installer welcome screen.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Click <strong>Next</strong> to view the installation review page.</p></li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/softwareinstall2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/softwareinstall2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Installation review page.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Click <strong>Next</strong> to start the installation. After the installation, the
-installer for the ADI SDP Drivers will execute.</p></li>
+installer for the ADI SDP Drivers will execute.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/softwareinstall3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/softwareinstall3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">ADI SDP Drivers installer.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Press <strong>Next</strong> to set the installation location for the SDP Drivers.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1079,9 +1111,22 @@ installer for the ADI SDP Drivers will execute.</p></li>
 path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\SDP\DriversR2\</span></code> (32-bit) or
 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Analog</span> <span class="pre">Devices\SDP\DriversR2\</span></code> (64-bit).</p>
 </div>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/softwareinstall4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/softwareinstall4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">SDP Drivers installation location.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to install the SDP Drivers and complete the installation of
-all software. Click <strong>Finish</strong> when done.</p></li>
+all software. Click <strong>Finish</strong> when done.</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/softwareinstall5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/softwareinstall5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">SDP Drivers installation complete.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="using-the-evaluation-software">
@@ -1099,7 +1144,14 @@ hardware as described in the previous sections.</p></li>
 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Analog</span> <span class="pre">Devices\CN0276\CN0276.exe</span></code> (64-bit).</p>
 </div>
 </li>
-<li><p>Click the <strong>Connect</strong> button. A window with a progress bar will load.</p></li>
+<li><p>Click the <strong>Connect</strong> button. A window with a progress bar will load.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/software4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/software4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">USB connection progress window.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon success, the System Status String Indicator will display the SDP-B
 board serial number.</p></li>
 </ol>
@@ -1122,6 +1174,24 @@ conversion will halt.</p></li>
 </section>
 <section id="software-control-and-indicator-descriptions">
 <h4>Software Control and Indicator Descriptions<a class="headerlink" href="#software-control-and-indicator-descriptions" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/slide1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/slide1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Evaluation software interface overview (1 of 3).</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/slide2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/slide2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Evaluation software interface overview (2 of 3).</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/slide3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0276-sdpz/slide3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Evaluation software interface overview (3 of 3).</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
 <li><p><strong>Connect/Disconnect Button</strong> – Toggles the SDP-B board USB connection
 to the CN-0276 board. A connection to the SDP-B board must be made to use

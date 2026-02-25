@@ -16,6 +16,12 @@ processor, and Flash/EE memory on a single chip. The platform has an
 Arduino-Due compatible form factor and has two additional PMOD connectors.
 It is accompanied by an Eclipse-based development environment.
 
+.. figure:: eval-adicup360_ecosystem.png
+   :align: center
+
+   EVAL-ADICUP360 ecosystem overview showing the platform board, compatible
+   shields, GitHub repository, and development environment
+
 Key Features
 ~~~~~~~~~~~~~
 
@@ -43,6 +49,12 @@ The EVAL-ADICUP360 base board consists of two basic blocks:
   software development toolchain to program and debug the ADuCM360
   microcontroller part.
 
+.. figure:: eval-adicup360_board.png
+   :align: center
+
+   EVAL-ADICUP360 base board layout (Rev 1.1) showing all components,
+   connectors, and key functional blocks
+
 Connectors
 ~~~~~~~~~~~
 
@@ -55,6 +67,13 @@ The following connectors are populated on the base board:
 - **PMOD_SPI** -- 12-pin SPI PMOD connector
 - **PMOD_I2C** -- 8-pin I2C PMOD connector
 - **Six Arduino connectors** -- Arduino-Due compatible headers
+
+.. figure:: eval-adicup360_connectors.png
+   :align: center
+
+   EVAL-ADICUP360 connector locations -- Arduino PWMH, PWML, Communication,
+   Power, ADCL, ADCH headers, PMOD_SPI, PMOD_I2C, DEBUG USB, USER USB, and
+   DC power jack
 
 .. list-table:: PWMH Connector Pinout
    :header-rows: 1
@@ -149,6 +168,14 @@ The following connectors are populated on the base board:
 Jumper Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
+The board has several configurable jumpers. The image below highlights their
+locations on the PCB.
+
+.. figure:: eval-adicup360_jumpers.png
+   :align: center
+
+   EVAL-ADICUP360 jumper locations -- P12, REFnSel, J1, J2, J3, J4, and J5
+
 **Jumper P12**
 
 .. list-table::
@@ -184,14 +211,50 @@ ADuCM360 are connected either to the Arduino headers or to the USB/serial
 interface. This provides maximum flexibility for different shield
 configurations.
 
+.. figure:: eval-adicup360_switches.png
+   :align: center
+
+   EVAL-ADICUP360 DIP switch locations (S1, S2, S3, S4) for USB/connector
+   multiplexing
+
+The schematic below shows the signal routing architecture of the four
+multiplexer switches. S1 and S3 route the UART0 RX/TX signals (P0.1, P0.2)
+between the Arduino PWMH/SPI header and the DEBUG USB. S2 and S4 route the
+UART1 TX/RX signals (P0.6, P0.7) between the Arduino PWML header and the
+USER USB.
+
+.. figure:: eval-adicup360_switch_schematic.png
+   :align: center
+
+   Switch multiplexer schematic -- S1/S3 route UART0 between Arduino PWMH
+   and DEBUG USB; S2/S4 route UART1 between Arduino PWML and USER USB
+
 Buttons
 ~~~~~~~~
 
 The EVAL-ADICUP360 has two push buttons:
 
+.. figure:: eval-adicup360_buttons.png
+   :align: center
+
+   EVAL-ADICUP360 button locations -- RESET and BOOT (user) buttons
+
 - **RESET** -- Resets the ADuCM360 microcontroller
 - **USER** -- User-configurable button connected to P0.5/CTS/IRQ1 (active
   low, directly tied to ADuCM360)
+
+Getting Started
+~~~~~~~~~~~~~~~~
+
+To begin using the EVAL-ADICUP360, connect the DEBUG USB port to your
+computer. The board will enumerate as a mass storage device (MBED drive) and
+a debug COM port.
+
+.. figure:: eval-adicup360_setup.png
+   :align: center
+
+   EVAL-ADICUP360 hardware setup -- connect via DEBUG USB for programming
+   and debugging
 
 Tools and Software
 -------------------

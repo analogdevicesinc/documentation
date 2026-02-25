@@ -17,6 +17,11 @@ side. This circuit can be used in motor control, power conversion with embedded
 control interface, lighting, audio amplifiers, and uninterruptible power
 supplies (UPS).
 
+.. figure:: cn0196_board.png
+   :align: center
+
+   EVAL-CN0196-EB1Z Evaluation Board
+
 Modern microprocessors and micro converters are generally low power and operate
 on low supply voltages. Source and sink current for 2.5 V CMOS logic outputs
 ranges from uA to mA. Driving an H-bridge switching 12 V with a 4 A peak
@@ -82,6 +87,11 @@ General Setup
 
 Connectors and Jumper Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0196_connectors.png
+   :align: center
+
+   EVAL-CN0196-EB1Z Connectors and Jumper Locations
 
 **Switch S1**: ON state provides isolated side PWM pulses; OFF state makes the
 PWM disappear.
@@ -157,6 +167,11 @@ Software and Driver Installation
       ``C:\Program Files\Analog Devices\CN0196\`` and all National Instruments
       products to ``C:\Program Files\National Instruments\``.
 
+   .. figure:: cn0196_license_agreement.png
+      :align: center
+
+      CN0196 Software License Agreement
+
 #. Follow the on-screen prompts to install the software.
 
 Downloading Firmware to EVAL-ADuC7061-MKZ
@@ -164,13 +179,37 @@ Downloading Firmware to EVAL-ADuC7061-MKZ
 
 #. Connect the EVAL-ADuC7061-MKZ to the PC using a USB cable, then find the
    COM port assigned to this board in the Device Manager.
+
+   .. figure:: cn0196_device_manager.png
+      :align: center
+
+      Device Manager Showing USB Serial Port Assignment
+
 #. Open the software **ARMWSD.exe** located in the ARMWSD folder, or at
    ``C:\Program Files\Analog Devices\CN0196\ARMWSD\ARMWSD.exe``.
+
+   .. figure:: cn0196_armwsd.png
+      :align: center
+
+      ARMWSD Firmware Download Tool
+
 #. Click the **Configure** button. Go to the **Parts** tab and select
    **ADuC7061**. Go to the **Comms** tab and set the serial port according to
    the port number indicated in the PC Device Manager and set the baud rate
    to 9600.
+
+   .. figure:: cn0196_armwsd_configure.png
+      :align: center
+
+      ARMWSD Configure Dialog -- Parts and Comms Tabs
+
 #. Change to the **Commands** tab and set the Flash and Run selection.
+
+   .. figure:: cn0196_armwsd_commands.png
+      :align: center
+
+      ARMWSD Configure Dialog -- Commands Tab
+
 #. After setting the configuration, click **Browse** and select the file
    **PWM Generator for EVAL-CN0196-EB1Z.hex** found in the EVAL-ADuC7061-MKZ
    Firmware folder. Then click **Start**. A message will tell how to download
@@ -178,10 +217,25 @@ Downloading Firmware to EVAL-ADuC7061-MKZ
    click **S1** on the EVAL-ADuC7061-MKZ. After the downloading process shows
    "Flashing Complete", click the **Run** button.
 
+   .. figure:: cn0196_armwsd_download.png
+      :align: center
+
+      ARMWSD Firmware Download and Flashing Process
+
 Using the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The evaluation software front panel provides the following controls:
+
+.. figure:: cn0196_software_pwm.png
+   :align: center
+
+   CN0196 Evaluation Software -- PWM Configuration Tab
+
+.. figure:: cn0196_software_load.png
+   :align: center
+
+   CN0196 Evaluation Software -- Load Configuration Tab
 
 **Section 1 -- Connection Controls**
 

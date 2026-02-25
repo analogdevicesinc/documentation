@@ -26,6 +26,11 @@ The maximum tracking rate of the RDC is 3125 rps in 10-bit mode
 (resolution = 21 arc min) and 156.25 rps in 16-bit mode
 (resolution = 19.8 arc sec).
 
+.. figure:: system.png
+   :align: center
+
+   CN0276 system block diagram.
+
 Required Equipment
 ------------------
 
@@ -59,6 +64,11 @@ General Setup
   cable.
 - The resolver connects to the EVAL-CN0276-SDPZ via the 6-pin header at
   **J3**.
+
+.. figure:: testdraft.png
+   :align: center
+
+   General test setup diagram.
 
 Connecting the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,9 +139,26 @@ Installing the Software
       Instruments products to ``C:\Program Files\National Instruments\``
       (32-bit) or ``C:\Program Files (x86)\National Instruments\`` (64-bit).
 
+   .. figure:: softwareinstall1.png
+      :align: center
+
+      CN0276 evaluation software installer welcome screen.
+
 #. Click **Next** to view the installation review page.
+
+   .. figure:: softwareinstall2.png
+      :align: center
+
+      Installation review page.
+
 #. Click **Next** to start the installation. After the installation, the
    installer for the ADI SDP Drivers will execute.
+
+   .. figure:: softwareinstall3.png
+      :align: center
+
+      ADI SDP Drivers installer.
+
 #. Press **Next** to set the installation location for the SDP Drivers.
 
    .. note::
@@ -140,8 +167,18 @@ Installing the Software
       path ``C:\Program Files\Analog Devices\SDP\DriversR2\`` (32-bit) or
       ``C:\Program Files (x86)\Analog Devices\SDP\DriversR2\`` (64-bit).
 
+   .. figure:: softwareinstall4.png
+      :align: center
+
+      SDP Drivers installation location.
+
 #. Press **Next** to install the SDP Drivers and complete the installation of
    all software. Click **Finish** when done.
+
+   .. figure:: softwareinstall5.png
+      :align: center
+
+      SDP Drivers installation complete.
 
 Using the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -160,6 +197,12 @@ Establishing a USB Connection Link
       ``C:\Program Files (x86)\Analog Devices\CN0276\CN0276.exe`` (64-bit).
 
 #. Click the **Connect** button. A window with a progress bar will load.
+
+   .. figure:: software4.png
+      :align: center
+
+      USB connection progress window.
+
 #. Upon success, the System Status String Indicator will display the SDP-B
    board serial number.
 
@@ -180,6 +223,21 @@ Capturing Data
 
 Software Control and Indicator Descriptions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: slide1.png
+   :align: center
+
+   Evaluation software interface overview (1 of 3).
+
+.. figure:: slide2.png
+   :align: center
+
+   Evaluation software interface overview (2 of 3).
+
+.. figure:: slide3.png
+   :align: center
+
+   Evaluation software interface overview (3 of 3).
 
 #. **Connect/Disconnect Button** -- Toggles the SDP-B board USB connection
    to the CN-0276 board. A connection to the SDP-B board must be made to use

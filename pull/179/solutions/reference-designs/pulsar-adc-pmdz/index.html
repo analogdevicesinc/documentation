@@ -663,7 +663,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -932,6 +932,12 @@ ADI PulSAR family of precision SAR ADCs. These low power ADCs offer very high
 performance from 14-bits up to 18-bits with throughputs ranging from 100 kSPS
 to 1.3 MSPS. The boards are designed to demonstrate the ADC’s performance and
 to provide an easy digital interface for a variety of system applications.</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pulsar-adc-pmdz/pulsar_pmod.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pulsar-adc-pmdz/pulsar_pmod.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">PulSAR ADC PMOD evaluation board</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="applications">
 <h3>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -941,9 +947,9 @@ to provide an easy digital interface for a variety of system applications.</p>
 <li><p>Medical instruments</p></li>
 <li><p>Process controls</p></li>
 </ul>
-<div class="table-wrapper docutils container" id="id1">
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Supported PulSAR ADC PMOD Boards</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<div class="table-wrapper docutils container" id="id2">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Supported PulSAR ADC PMOD Boards</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Product</p></th>
 <th class="head"><p>Resolution</p></th>
@@ -1043,6 +1049,12 @@ of the host platform.</p>
 order to enable the amplifiers to provide zero and full scale inputs to the ADC,
 external power supplies of -2.5 V, GND, and 7.5 V are needed. These supplies
 provide the power for the entire PMOD board.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pulsar-adc-pmdz/pmod_power_supplies.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pulsar-adc-pmdz/pmod_power_supplies.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">PulSAR ADC PMOD power supply connections</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="input-connectors">
 <h3>Input Connectors<a class="headerlink" href="#input-connectors" title="Link to this heading"></a></h3>
@@ -1050,6 +1062,12 @@ provide the power for the entire PMOD board.</p>
 has two SMB connectors for positive (+) and negative (-) inputs to the
 converter. Each converter has a combination of single-ended, differential, or
 pseudo-differential inputs; consult the device datasheet for details.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pulsar-adc-pmdz/vin.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pulsar-adc-pmdz/vin.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">PulSAR ADC PMOD analog input connectors</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="digital-interface-pmod">
 <h3>Digital Interface (PMOD)<a class="headerlink" href="#digital-interface-pmod" title="Link to this heading"></a></h3>
@@ -1057,6 +1075,12 @@ pseudo-differential inputs; consult the device datasheet for details.</p>
 PMOD boards is hardware configured in a 3-wire mode with no busy indicator.
 The signals between the converter and the processor are CNV (chip select),
 SCLK (serial clock), and MISO (serial data out).</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pulsar-adc-pmdz/pmod_pinout.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pulsar-adc-pmdz/pmod_pinout.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">PulSAR ADC PMOD digital interface pinout</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="supported-carriers">
@@ -1069,10 +1093,10 @@ SCLK (serial clock), and MISO (serial data out).</p>
 <h2>HDL Reference Design<a class="headerlink" href="#hdl-reference-design" title="Link to this heading"></a></h2>
 <section id="block-diagram">
 <h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id6">
 <img alt="../../../_images/pulsar_adc_pmod_hdl.svg" src="../../../_images/pulsar_adc_pmod_hdl.svg" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">PulSAR ADC PMOD block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">PulSAR ADC PMOD block diagram</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The reference design uses the standard SPI Engine Framework with an integrated

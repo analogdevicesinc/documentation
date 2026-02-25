@@ -657,7 +657,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -937,6 +937,12 @@ low-power, low-noise voltage reference that provides a precise 2.5 V reference
 voltage for the DAC.</p>
 <p>The evaluation board has provisions to read the output voltage of the DAC and
 an option to use an external supply voltage for the LED.</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/cn0370.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/cn0370.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0370-PMDZ evaluation board</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -954,18 +960,51 @@ Windows 7 (32-bit)</p></li>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/cn0370-1.1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/cn0370-1.1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0370 system block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic">
 <li><p>Connect the 120-pin connector <strong>J4</strong> on the SDP-PMD-IB1Z interposer board
 to the connector marked <strong>CON A</strong> on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> (SDP)
-evaluation board. Place the shunt on <strong>JP1</strong> in the +5.0 V configuration.</p></li>
+evaluation board. Place the shunt on <strong>JP1</strong> in the +5.0 V configuration.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/cn0370-2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/cn0370-2.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">SDP-PMD-IB1Z interposer board connected to EVAL-SDP-CB1Z</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Connect the EVAL-CN0370-PMDZ to the PMOD connector <strong>J3</strong> on the
-interposer board.</p></li>
+interposer board.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/cn0370-3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/cn0370-3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">EVAL-CN0370-PMDZ connected to PMOD connector J3</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Connect a +6 V wall wart supply to connector <strong>J1</strong> of the interposer
-board.</p></li>
+board.</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/cn0370-4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/cn0370-4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Power supply connected to connector J1</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Use the USB cable to connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a> to the PC.</p></li>
 </ol>
 <section id="board-connections">
 <h3>Board Connections<a class="headerlink" href="#board-connections" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/eval-cn0370-pmdz-1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/eval-cn0370-pmdz-1.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">EVAL-CN0370-PMDZ board connection points</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The EVAL-CN0370-PMDZ board has the following connection points:</p>
 <ul class="simple">
 <li><p><strong>LED_SUPPLY</strong> – The supply for the LED. It can be taken from the PMOD
@@ -979,14 +1018,49 @@ range: 0 to +20 V max).</p></li>
 </section>
 <section id="installing-the-software">
 <h2>Installing the Software<a class="headerlink" href="#installing-the-software" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Extract the file <strong>CN0370_Evaluation_Software.zip</strong> and open the file
-<strong>setup.exe</strong>.</p></li>
-<li><p>Click <strong>Next</strong> to view the installation review page.</p></li>
-<li><p>Click <strong>Next</strong> to begin the installation.</p></li>
+<strong>setup.exe</strong>.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">CN0370 Evaluation Software installer</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Installation review page</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to begin the installation.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Installation in progress</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion of the installation of the CN0370 Evaluation Software, the
-installer for the <strong>ADI SDP Drivers</strong> will execute.</p></li>
-<li><p>Click <strong>Next</strong> to set the installation location for the SDP Drivers.</p></li>
+installer for the <strong>ADI SDP Drivers</strong> will execute.</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">ADI SDP Drivers installer</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to set the installation location for the SDP Drivers.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">SDP Drivers installation location</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Press <strong>Install</strong> to install the SDP Drivers and complete the installation
 of all software. Click <strong>Close</strong> when done.</p></li>
 </ol>
@@ -995,6 +1069,12 @@ of all software. Click <strong>Close</strong> when done.</p></li>
 <h2>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h2>
 <section id="main-tab-controls">
 <h3>Main Tab Controls<a class="headerlink" href="#main-tab-controls" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-gui.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0370-ardz/sw-gui.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">CN0370 Evaluation Software main tab</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The evaluation software provides the following controls:</p>
 <ol class="arabic simple">
 <li><p><strong>Write Data</strong> – This button is used to write the data into the DAC.</p></li>

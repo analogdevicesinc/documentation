@@ -54,6 +54,13 @@ Hardware Setup
 #. Connect a 12 V power supply to **J3**. Make sure to connect a current
    meter in series with the 12 V terminal. Short the inputs at **J2**
    together.
+
+   .. figure:: cn0300-hardware-test-setup.jpg
+      :width: 500px
+      :align: center
+
+      Hardware test setup
+
 #. Connect the USB-SWD/UART board to your PC via a USB cable (ensure the
    driver is installed correctly).
 
@@ -64,6 +71,11 @@ Verifying Operation
    Go to **Settings > Control Panel > System > Hardware > Device Manager**
    to find the allocated COM port.
 
+   .. figure:: cn0300-pc-device-manager.jpg
+      :align: center
+
+      Device Manager showing the allocated COM port
+
 #. Press the reset button on the EVAL-CN0300-EB1Z board. The following should
    appear on the HyperTerminal window. The current reading on the current
    meter should match the value **Expected DAC Current** on the screen.
@@ -72,6 +84,11 @@ Verifying Operation
    settings: 9600 baud rate, 8 data bits, no parity, 1 stop bit, no flow
    control.
 
+   .. figure:: cn0300-software-hyperterminal4.jpg
+      :align: center
+
+      HyperTerminal output after reset
+
 Calibrating the DAC (Optional)
 -------------------------------
 
@@ -79,20 +96,45 @@ This procedure is only needed if a recalibration is desired.
 
 #. Open the application **CM3WSD.exe**.
 
+   .. figure:: cn0300-software-wsd.jpg
+      :align: center
+
+      CM3WSD application
+
 #. Using the **Browse** tab, select the file **CN0300_test.hex**.
 
 #. Select the **Configure** tab and select the :adi:`ADuCM360 <ADUCM360>` in
    the **Parts** tab.
 
+   .. figure:: cn0300-software-wsd1.jpg
+      :align: center
+
+      Selecting the ADuCM360 in the Parts tab
+
 #. Select the **Comms** tab. Select the appropriate COM port as determined
    previously. A baud rate of 9600 is fine.
 
+   .. figure:: cn0300-software-wsd2.jpg
+      :align: center
+
+      Comms tab with COM port and baud rate settings
+
 #. Select the **Command** tab. Enable the **Program and Verify** tabs.
+
+   .. figure:: cn0300-software-wsd3.jpg
+      :align: center
+
+      Command tab with Program and Verify enabled
 
 #. Force the part into download mode: hold the **SD** button on the
    EVAL-CN0300-EB1Z board while pressing and releasing the **RESET** button.
 
 #. Click the **Start** button on CM3WSD.
+
+   .. figure:: cn0300-software-wsd4.jpg
+      :align: center
+
+      CM3WSD download progress
 
 #. Close CM3WSD and open **HyperTerminal** on your PC.
 
@@ -100,6 +142,11 @@ This procedure is only needed if a recalibration is desired.
    bits, no parity, 1 stop bit, no flow control.
 
 #. Press reset. The calibration interface should appear on the terminal.
+
+   .. figure:: cn0300-software-hyperterminal.jpg
+      :align: center
+
+      HyperTerminal calibration interface after reset
 
 #. Your current meter should report a value close to 4 mA. If it does not,
    follow the instructions on the HyperTerminal screen to calibrate the DAC
@@ -110,17 +157,37 @@ This procedure is only needed if a recalibration is desired.
 
 #. Repeat the previous step for the 20 mA calibration.
 
+   .. figure:: cn0300-software-hyperterminal1.jpg
+      :align: center
+
+      HyperTerminal 20 mA calibration
+
 #. After calibration, the program will continuously output temperature and
    current data. The final temperature reported should be within a few
    degrees C of the expected ambient temperature (+/-5 C is acceptable since
    the ADC is not fully calibrated).
 
+   .. figure:: cn0300-software-hyperterminal2.jpg
+      :align: center
+
+      Continuous temperature and current output
+
 #. Temporarily disconnect the COM port from HyperTerminal by pressing the
    phone icon.
+
+   .. figure:: cn0300-software-hyperterminal3.jpg
+      :align: center
+
+      Disconnecting the COM port in HyperTerminal
 
 #. Repeat steps 2 through 10, except this time select the file
    **CN0300_Final.hex**. This file is very similar to the test program except
    it does not call the DAC calibration function.
+
+   .. figure:: cn0300-software-wsd5.jpg
+      :align: center
+
+      Loading CN0300_Final.hex in CM3WSD
 
 #. Close CM3WSD. Return to HyperTerminal and select **Connect** by pressing
    the phone icon.

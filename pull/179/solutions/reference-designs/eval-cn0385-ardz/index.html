@@ -668,7 +668,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -944,6 +944,12 @@ instrumentation amplifier (PGIA), the <a class="icon adi reference external" hre
 for performing the single-ended-to-differential conversion, and the
 <a class="icon adi reference external" href="https://www.analog.com/AD4003" target="_blank">AD4003</a>, an 18-bit, 2 MSPS Precision ADC. Gain configurations of 0.4,
 0.8, 1.6, and 3.2 are available.</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_1_simplifiedcircuitschematic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_1_simplifiedcircuitschematic.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Simplified circuit schematic</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The maximum sample rate of the system is 2 MSPS in Turbo Mode for single
 channel continuous sampling. The channel switching logic is synchronous to the
 ADC conversions, and the maximum channel switching rate is 1.5 MHz. Channel
@@ -977,6 +983,12 @@ the desired power, reference, and signal chain configuration.</p></li>
 <li><p>The <a class="icon adi reference external" href="https://www.analog.com/SDP" target="_blank">EVAL-SDP-CH1Z</a> SDP-H1 Board connects to the PC via the USB
 cable.</p></li>
 </ul>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_2_generalsetupblockdiagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_2_generalsetupblockdiagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">General setup block diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="connecting-the-hardware">
 <h3>Connecting the Hardware<a class="headerlink" href="#connecting-the-hardware" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
@@ -1018,17 +1030,77 @@ board.</p></li>
 </section>
 <section id="installing-the-software">
 <h2>Installing the Software<a class="headerlink" href="#installing-the-software" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Download the <a class="icon link reference external" href="https://www.analog.com/CN0385" target="_blank">CN0385 Evaluation Software</a> and unzip the
-<strong>CN0385_Evaluation_Software.zip</strong> folder and run <strong>setup.exe</strong>.</p></li>
-<li><p>Click <strong>Next</strong> to view the installation review page.</p></li>
-<li><p>Click <strong>Next</strong> to start the installation.</p></li>
+<strong>CN0385_Evaluation_Software.zip</strong> folder and run <strong>setup.exe</strong>.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_3_install1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_3_install1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Extracting the evaluation software</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_4_install2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_4_install2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Running setup.exe</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_5_install3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_5_install3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Installation wizard welcome screen</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_6_install4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_6_install4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Installation review page</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to start the installation.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_7_install5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_7_install5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Installation in progress</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion of the installation of the <strong>CN0385 Evaluation Software</strong>,
 click <strong>Next</strong> for the installer of the <strong>ADI SDP Drivers</strong> to execute.
-(The SDP drivers include an installation of the .NET 4.0 framework.)</p></li>
-<li><p>Press <strong>Next</strong> to set the installation location for the <strong>SDP Drivers</strong>.</p></li>
+(The SDP drivers include an installation of the .NET 4.0 framework.)</p>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_8_install6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_8_install6.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">CN0385 software installation complete</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Press <strong>Next</strong> to set the installation location for the <strong>SDP Drivers</strong>.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_9_sdpinstallation1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_9_sdpinstallation1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">SDP Drivers installation location</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_10_sdpinstallation2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_10_sdpinstallation2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">SDP Drivers installation ready</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Press <strong>Install</strong> to install the <strong>SDP Drivers</strong> and complete the
-installation of all software. Click <strong>Close</strong> when done.</p></li>
+installation of all software. Click <strong>Close</strong> when done.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_11_sdpinstallation3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_11_sdpinstallation3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">SDP Drivers installation complete</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="using-the-evaluation-software">
@@ -1037,6 +1109,12 @@ installation of all software. Click <strong>Close</strong> when done.</p></li>
 <h3>Software Control and Indicator Descriptions<a class="headerlink" href="#software-control-and-indicator-descriptions" title="Link to this heading"></a></h3>
 <section id="configuration-tab">
 <h4>Configuration Tab<a class="headerlink" href="#configuration-tab" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_12_configtab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_12_configtab.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Configuration tab</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>External REF (V)</strong> – Determines the value of the reference voltage used in
 calculations and analysis by the software. Affects aspects of the Waveform and
@@ -1073,6 +1151,12 @@ Continuous Capture is depressed.</p></li>
 </section>
 <section id="waveform-tab">
 <h4>Waveform Tab<a class="headerlink" href="#waveform-tab" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_13_waveformtab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_13_waveformtab.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Waveform tab</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>Waveform Plot</strong> – Displays the Waveform of the sampled data.</p></li>
 <li><p><strong>Waveform Graph Palette</strong> – Sets the display range of the Multi-Channel
@@ -1085,6 +1169,12 @@ conversions are calculated based on the value of VREF in the Configuration Tab.<
 </section>
 <section id="multi-channel-tab">
 <h4>Multi-Channel Tab<a class="headerlink" href="#multi-channel-tab" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_14_multi-channeltab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_14_multi-channeltab.png" />
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Multi-Channel tab</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>Multi-Channel Waveform Plot</strong> – Displays the data readback from each of the
 active and visible channels in the conversion sequence.</p></li>
@@ -1103,6 +1193,12 @@ in channel sequencer mode.</p></li>
 </section>
 <section id="histogram-tab">
 <h4>Histogram Tab<a class="headerlink" href="#histogram-tab" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_15_histogramtab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_15_histogramtab.png" />
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Histogram tab</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>Histogram Plot</strong> – Displays the occurrences of the sampled codes.</p></li>
 <li><p><strong>Waveform Graph Palette</strong> – Sets the display range of the Histogram Plot.</p></li>
@@ -1111,6 +1207,12 @@ in channel sequencer mode.</p></li>
 </section>
 <section id="fft-tab">
 <h4>FFT Tab<a class="headerlink" href="#fft-tab" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id16">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_16_ffttab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_16_ffttab.png" />
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">FFT tab</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>FFT Spectrum Plot</strong> – Displays the FFT frequency response of the sampled
 codes.</p></li>
@@ -1148,7 +1250,7 @@ Software in a pop-up.</p></li>
 </section>
 <section id="establishing-a-usb-connection-link">
 <h3>Establishing a USB Connection Link<a class="headerlink" href="#establishing-a-usb-connection-link" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Verify that the SDP drivers are properly installed (see <strong>Installing the
 Software</strong>).</p></li>
 <li><p>Ensure that the CN0385 Evaluation Hardware and the SDP-H1 Controller Board
@@ -1160,7 +1262,14 @@ evaluation software will automatically establish a connection with the SDP-H1
 Controller Board.</p></li>
 <li><p>If the software does not detect the CN0385 Evaluation Hardware, a pop-up will
 appear with options to reattempt the connection. Selecting <strong>Rescan</strong> will
-attempt to establish the USB connection again.</p></li>
+attempt to establish the USB connection again.</p>
+<figure class="align-center" id="id17">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_17_connectionfailure.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_17_connectionfailure.png" />
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Connection failure dialog</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="configuring-a-conversion-sequence">
@@ -1195,13 +1304,39 @@ sequences until stopped.</p></li>
 <p>After capturing samples or loading a previous set of conversion results, the
 data and analysis items for each channel can be viewed using the <strong>Waveform</strong>
 tab, the <strong>Histogram</strong> tab, the <strong>FFT</strong> tab and the <strong>Summary</strong> tab.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Select the <strong>Multi-Channel</strong> tab to view every channel’s data on a single
 plot. The <strong>Multi-Channel Selectors</strong> set the visibility of each channel’s
-data.</p></li>
+data.</p>
+<figure class="align-center" id="id18">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_18_multichanneldata.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_18_multichanneldata.png" />
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">Multi-channel data view</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Select the <strong>Waveform</strong> tab to view the sampled channel’s data or analysis
 results in non-sequencer mode. The <strong>Histogram</strong> and <strong>FFT</strong> sub-tabs show
-the dc and ac analysis.</p></li>
+the dc and ac analysis.</p>
+<figure class="align-center" id="id19">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_19_singlechannelwaveformdata.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_19_singlechannelwaveformdata.png" />
+<figcaption>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">Single channel waveform data</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id20">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_20_singlechannelhistodata.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_20_singlechannelhistodata.png" />
+<figcaption>
+<p><span class="caption-number">Figure 20 </span><span class="caption-text">Single channel histogram data</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id21">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_21_singlechannelfftdata.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0385-ardz/cn0385_21_singlechannelfftdata.png" />
+<figcaption>
+<p><span class="caption-number">Figure 21 </span><span class="caption-text">Single channel FFT data</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 </section>

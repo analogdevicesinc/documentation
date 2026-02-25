@@ -660,7 +660,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -959,6 +959,13 @@ reference input requirement of the AD5750-1.</p>
 <p>The CN0203 needs +15 V, -15 V and +6 V power supply inputs and thus requires
 a triple output DC power supply. The board also connects to ADI’s System
 Demonstration Platform (SDP).</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/cn0203-hw-1024.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/cn0203-hw-1024.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/cn0203-hw-1024.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0203-SDPZ Evaluation Board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -977,6 +984,13 @@ requires +15 V, -15 V, and +6 V)</p></li>
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
 <section id="block-assignments">
 <h3>Block Assignments<a class="headerlink" href="#block-assignments" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/cn0203-hw-1024_-_edited.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/cn0203-hw-1024_-_edited.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/cn0203-hw-1024_-_edited.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0203-SDPZ Block Assignments</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>The EVAL-CN0203-SDPZ (CN0203 Board) connects to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-SDP-CB1Z" target="_blank">EVAL-SDP-CB1Z</a>
 (SDP-B Board) via the 120-pin connector (SDP-B CONN).</p></li>
@@ -1002,13 +1016,15 @@ boards together.</p>
 </section>
 <section id="jumper-settings">
 <h3>Jumper Settings<a class="headerlink" href="#jumper-settings" title="Link to this heading"></a></h3>
-<p>Refer to the CN0203 circuit note for the complete jumper settings table.
-Default settings are configured for standard operation. Key jumpers include:</p>
-<ul class="simple">
-<li><p><strong>JP1</strong> – SPI address configuration for the AD5750-1.</p></li>
-<li><p><strong>JP3, JP4</strong> – VSENSE+/VSENSE- configuration (closed by default for
-local sense).</p></li>
-</ul>
+<p>See the table below for the jumper settings. Values in red are the default
+settings for the EVAL-CN0203-SDPZ.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/cn0203_table2_4.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/cn0203_table2_4.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/cn0203_table2_4.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">EVAL-CN0203-SDPZ Jumper Settings</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="software-setup">
@@ -1023,11 +1039,42 @@ local sense).</p></li>
 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Analog</span> <span class="pre">Devices\CN0203\</span></code> and all National
 Instruments products to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>.</p>
 </div>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-18-25_am.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-18-25_am.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-18-25_am.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">CN0203 installer welcome screen</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Press <strong>Next</strong> to view the National Instruments Software License Agreement.</p></li>
+<li><p>Press <strong>Next</strong> to view the National Instruments Software License Agreement.</p>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-18-49_am.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-18-49_am.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-18-49_am.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">National Instruments Software License Agreement</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Select the option which <strong>accepts</strong> the License Agreement and press
-<strong>Next</strong> to view the installation review page.</p></li>
-<li><p>Press <strong>Next</strong> to start the installation.</p></li>
+<strong>Next</strong> to view the installation review page.</p>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-19-16_am.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-19-16_am.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-19-16_am.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Installation review page</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Press <strong>Next</strong> to start the installation.</p>
+<figure class="align-default" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-20-21_am.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-20-21_am.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-20-21_am.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Installation progress</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion of the CN0203 Evaluation Software installation, the
 installer for the ADI SDP Drivers will execute.</p>
 <div class="admonition note">
@@ -1036,6 +1083,13 @@ installer for the ADI SDP Drivers will execute.</p>
 <strong>Next</strong>. This will make it possible to update relevant system files
 without having to reboot your computer.</p>
 </div>
+<figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-21-00_am.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-21-00_am.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-21-00_am.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">ADI SDP Drivers installer</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to set the installation location for the SDP Drivers.</p>
 <div class="admonition note">
@@ -1043,16 +1097,46 @@ without having to reboot your computer.</p>
 <p>It is recommended to install the drivers to the default path
 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\SDP\Drivers</span></code>.</p>
 </div>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-21-13_am.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-21-13_am.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-21-13_am.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">SDP Drivers installation location</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to install the SDP Drivers. When prompted by Windows
-Security, press <strong>Install</strong>.</p></li>
-<li><p>Press <strong>Finish</strong> to complete the installation.</p></li>
+Security, press <strong>Install</strong>.</p>
+<figure class="align-default" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-22-01_am.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-22-01_am.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-22-01_am.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Windows Security prompt for SDP Drivers</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Press <strong>Finish</strong> to complete the installation.</p>
+<figure class="align-default" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-22-23_am.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-22-23_am.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-22-23_am.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Installation complete</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="using-the-evaluation-software">
 <h3>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h3>
 <section id="main-window">
 <h4>Main Window<a class="headerlink" href="#main-window" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-29-07_am.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-29-07_am.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0203-sdpz/7-27-2017_10-29-07_am.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">CN0203 Evaluation Software Main Window</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The evaluation software provides the following controls and sections:</p>
 <p><strong>Title Bar:</strong></p>
 <ul class="simple">

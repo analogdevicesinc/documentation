@@ -119,9 +119,21 @@ Required Equipment
 Hardware Setup
 --------------
 
+.. figure:: cn0326fig11.jpg
+   :align: center
+
+   EVAL-CN0326-PMDZ hardware connection setup
+
 #. Plug the mini end of the USB cable into connector **J1** of the
    :adi:`EVAL-SDP-CB1Z` and connect the other end to the PC. Verify that
    *ADI Development Tools* appears in Device Manager.
+
+   .. figure:: device_manager.png
+      :align: center
+      :width: 500px
+
+      ADI Development Tools in Device Manager
+
 #. Remove the jumper across **JP1** on the :adi:`SDP-PMD-IB1Z`.
 #. Connect the 120-pin connector of the :adi:`SDP-PMD-IB1Z` to the connector
    marked **CON A** on the :adi:`EVAL-SDP-CB1Z`. Secure with nylon hardware
@@ -137,6 +149,12 @@ Hardware Setup
 #. Verify *ADI Development Tools* still appears in Device Manager. If not,
    repeat from step 1.
 
+   .. figure:: device_manager.png
+      :align: center
+      :width: 500px
+
+      ADI Development Tools in Device Manager
+
 Software Setup
 --------------
 
@@ -151,8 +169,25 @@ Installing the Software
       default directory path ``C:\Program Files\Analog Devices\CN0326\`` and all
       National Instruments products to ``C:\Program Files\National Instruments\``.
 
+   .. figure:: fig1.jpg
+      :align: center
+
+      CN0326 Evaluation Software setup wizard
+
 #. Click **Next** to view the installation review page.
+
+   .. figure:: fig2.jpg
+      :align: center
+
+      Installation review page
+
 #. Click **Next** to start the installation.
+
+   .. figure:: fig3.jpg
+      :align: center
+
+      Installation progress
+
 #. Upon completion of the CN0326 Evaluation Software installation, the
    installer for the ADI SDP Drivers will execute.
 
@@ -162,6 +197,11 @@ Installing the Software
       **Next**. This will make it possible to update relevant system files
       without having to reboot your computer.
 
+   .. figure:: fig4.jpg
+      :align: center
+
+      ADI SDP Drivers installer
+
 #. Press **Next** to set the installation location for the SDP Drivers.
 
    .. note::
@@ -169,11 +209,26 @@ Installing the Software
       It is recommended that you install the drivers to the default directory
       path ``C:\Program Files\Analog Devices\SDP\Drivers``.
 
+   .. figure:: fig5.jpg
+      :align: center
+
+      SDP Drivers installation location
+
 #. Press **Next** to install the SDP Drivers and complete the installation of
    all software. Click **Finish** when done.
 
+   .. figure:: fig7.jpg
+      :align: center
+
+      SDP Drivers installation complete
+
 Opening and Enabling the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: fig9.jpg
+   :align: center
+
+   CN0326 Evaluation Software main window
 
 #. Launch the executable found at ``C:\Program Files\Analog Devices\CN0326``
    and press the **Connect** button.
@@ -184,6 +239,11 @@ Opening and Enabling the Evaluation Software
 
 Using the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: circuit_note_fig_9.jpg
+   :align: center
+
+   CN0326 Evaluation Software GUI overview
 
 The following are the available software controls grouped by their location in
 the software GUI:

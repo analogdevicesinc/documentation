@@ -110,12 +110,30 @@ Make sure to download/update to the latest version of
 2. Press refresh to display available IIO Devices. Once ADT7420 appears, press
    connect.
 
+.. figure:: adt7420_iio_osc.png
+   :align: center
+   :width: 300
+
+   ADT7420 IIO Oscilloscope Configuration
+
 **Debug Panel:**
 The Debug panel allows you to directly access the device attributes.
+
+.. figure:: adt7420_iio_debug_panel.png
+   :align: center
+   :width: 300
+
+   ADT7420 IIO Oscilloscope Debug Panel
 
 **DMM Panel:**
 Access the DMM panel to see the instantaneous reading of the ADT7420
 temperature reading.
+
+.. figure:: adt7420_iio_dmm_panel.png
+   :align: center
+   :width: 300
+
+   ADT7420 IIO Oscilloscope DMM Panel
 
 PyADI-IIO
 ~~~~~~~~~~
@@ -152,6 +170,14 @@ maxim platform before running:
 .. code-block:: bash
 
    D:\pyadi-iio\examples>python adt7420_example.py
+
+Press enter and you will get readings similar to the output below.
+
+.. figure:: adt7420_pyadiio_example_max32650.png
+   :align: center
+   :width: 600
+
+   PyADI-IIO ADT7420 Example Output
 
 Python example script on GitHub:
 `adt7420_example.py <https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/adt7420_example.py>`__

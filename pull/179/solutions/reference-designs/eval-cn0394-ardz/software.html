@@ -655,7 +655,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -924,11 +924,19 @@ EVAL-ADICUP360 platform.</p>
 <h2>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h2>
 <p>The <strong>ADuCM360_demo_cn0394</strong> is a temperature measurement demo project which
 uses thermocouple measurement with the EVAL-ADICUP360 base board and the
-EVAL-CN0394-ARDZ shield.</p>
+EVAL-CN0394-ARDZ shield, created using the GNU ARM Eclipse Plug-ins in Eclipse
+environment.</p>
 <p>The EVAL-CN0394-ARDZ shield uses the internal ADC from the ADuCM360
 microcontroller which has 2 channels available, 24-bit resolution with PGA and
 reference. The first channel is used for RTD measurements, while the second
 channel measures thermocouple changes.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0394_demo_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0394_demo_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0394_demo_1.png" style="width: 650px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">EVAL-CN0394-ARDZ connected to EVAL-ADICUP360.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The EVAL-CN0394-ARDZ board has 4 thermocouple ports (<strong>P1</strong> to <strong>P4</strong>) and 4
 Pt1000 RTDs (<strong>R1</strong> to <strong>R4</strong>) close to each thermocouple socket for cold
 junction compensation. It supports all 8 types of thermocouple: T, J, K, E, S,
@@ -941,9 +949,21 @@ start bit, 8-bit data length, no parity bits, and 2 stop bits) is used to send
 data to a terminal window.</p>
 <p>The user can enable/disable calibration on each channel separately. If
 calibration is enabled, the user is informed when calibration is completed;
-otherwise, the user is informed that calibration is disabled.</p>
-<p>Warning messages are displayed if the final linearized temperature for the
-selected thermocouple is out of the boundaries.</p>
+otherwise, the user is informed that calibration is disabled (see
+<code class="docutils literal notranslate"><span class="pre">USE_RTD_CALIBRATION</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_TH_CALIBRATION</span></code> parameters).</p>
+<p>Before starting the measurement, it is required to set up the thermocouple
+types for each port (check <code class="docutils literal notranslate"><span class="pre">P1_TYPE</span></code> to <code class="docutils literal notranslate"><span class="pre">P4_TYPE</span></code>). Based on those settings
+the output data is calculated and displayed in the terminal window continuously,
+considering the data refresh parameter (see <code class="docutils literal notranslate"><span class="pre">DISPLAY_REFRESH</span></code>). Warning
+messages are displayed if the final linearized temperature for the selected
+thermocouple is out of the boundaries.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_6.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_6.png" style="width: 750px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Serial terminal output showing thermocouple temperature measurements.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="temperature-measurement-and-linearization-algorithm">
 <h2>Temperature Measurement and Linearization Algorithm<a class="headerlink" href="#temperature-measurement-and-linearization-algorithm" title="Link to this heading"></a></h2>
@@ -961,22 +981,50 @@ with the voltage generated by the thermocouple.</p>
 <h3>Cold Junction Measurement<a class="headerlink" href="#cold-junction-measurement" title="Link to this heading"></a></h3>
 <p>For cold junction temperature measurement, the <strong>PT1000 RTD method</strong> is used.
 Cold junction reading from each RTD channel is used to calculate RTD
-resistance.</p>
+resistance:</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_5.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_5.png" style="width: 550px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">RTD resistance calculation formula.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The PT1000 RTD is ideally 1000 Ohm at 0 degrees C. There are two separate
 equations used for linearization depending on the calculated resistance:</p>
 <p><strong>1. RTD resistance &gt; 1000 Ohm:</strong></p>
-<p>Uses the Callendar-Van Dusen equation for positive temperatures.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_3.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Callendar-Van Dusen equation for positive temperatures.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>2. RTD resistance &lt;= 1000 Ohm:</strong></p>
-<p>Uses the extended Callendar-Van Dusen equation for negative temperatures.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_4.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Extended Callendar-Van Dusen equation for negative temperatures.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="thermocouple-measurement">
 <h3>Thermocouple Measurement<a class="headerlink" href="#thermocouple-measurement" title="Link to this heading"></a></h3>
-<p>For thermocouple temperature linearization, standard NIST equations are used.
-The thermocouple type used dictates the formulas needed for linearization.</p>
+<p>For thermocouple temperature linearization, standard
+<a class="icon link reference external" href="http://srdata.nist.gov/its90/download/download.html" target="_blank">NIST equations</a>
+are used. The thermocouple type used dictates the formulas needed for
+linearization.</p>
 <p>First, the cold junction temperature is converted to a cold junction voltage.
 This conversion uses a standard polynomial formula. The formula is the same for
 all thermocouple types; however, the coefficient values depend on the
 thermocouple type.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_7.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_7.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_7.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">NIST polynomial formula for cold junction voltage conversion.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The final thermocouple voltage is calculated using the thermocouple voltage
 read on the thermocouple channel and adding the converted cold junction
 voltage:</p>
@@ -989,7 +1037,14 @@ Where:
 </pre></div>
 </div>
 <p>For the final linearized temperature value, the second polynomial formula
-provided by the NIST standard is used.</p>
+provided by the NIST standard is used:</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_8.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_8.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_8.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">NIST polynomial formula for final linearized temperature.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="demo-requirements">
@@ -1066,18 +1121,23 @@ Stop: 2 bit
 Flow Control: none
 </pre></div>
 </div>
-<p>The output data refreshes in the console window at the rate of the
-<code class="docutils literal notranslate"><span class="pre">DISPLAY_REFRESH</span></code> parameter.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_6.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0391_demo_6.png" style="width: 750px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Serial terminal output with thermocouple temperature data.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="project-structure">
 <h2>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h2>
 <p>The <strong>ADuCM360_demo_cn0394</strong> is a C project that uses the ADuCM36x C/C++
 Project structure.</p>
-<figure class="align-default" id="id2">
+<figure class="align-center" id="id10">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0394_demo_3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0394_demo_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0394-ardz/cn0394_demo_3.png" style="width: 300px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0394 demo project structure.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">CN0394 demo project structure.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The project contains:</p>

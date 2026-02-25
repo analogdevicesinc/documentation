@@ -96,9 +96,17 @@
           <ul>
 <li><a class="reference internal" href="#">EVAL-M355-ARDZ-INT</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#product-overview">Product Overview</a></li>
+<li><a class="reference internal" href="#sensor-connector">Sensor Connector</a></li>
+<li><a class="reference internal" href="#power-rails">Power Rails</a></li>
+<li><a class="reference internal" href="#switch-matrix">Switch Matrix</a></li>
+<li><a class="reference internal" href="#digital-communication-interfaces">Digital Communication Interfaces</a></li>
+<li><a class="reference internal" href="#swd-jtag-connector">SWD/JTAG Connector</a></li>
+<li><a class="reference internal" href="#debug-programming-channel-selector">Debug/Programming Channel Selector</a></li>
+<li><a class="reference internal" href="#communication-protocol-selector">Communication Protocol Selector</a></li>
+<li><a class="reference internal" href="#hardware-setup-procedure">Hardware Setup Procedure</a></li>
+<li><a class="reference internal" href="#aducm355-compatible-boards">ADuCM355 Compatible Boards</a></li>
+<li><a class="reference internal" href="#software">Software</a></li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
@@ -647,7 +655,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -912,44 +920,240 @@ Content on this topic
 <p>ADuCM355 Arduino Interposer.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p>The EVAL-M355-ARDZ-INT is an interposer board for connecting <a class="icon adi reference external" href="https://www.analog.com/ADuCM355" target="_blank">ADuCM355</a>
-based sensor boards to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> development board or any
-equivalent Arduino MCU controller board. The interposer supports up to four
-ADuCM355 sensor daughter boards simultaneously for testing functionality and
-performance in a controlled evaluation environment.</p>
-<p>Compatible sensor boards include the <a class="reference internal" href="../eval-cn0428-ebz/index.html#eval-cn0428-ebz"><span class="std std-ref">EVAL-CN0428-EBZ</span></a>
-(water quality sensor) and <a class="reference internal" href="../eval-cn0429-ebz/index.html#eval-cn0429-ebz"><span class="std std-ref">EVAL-CN0429-EBZ</span></a> (gas
-sensor).</p>
+<p>The Arduino interface can be found on many microprocessor development platforms
+and is a great way to begin prototyping a design. The
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-M355-ARDZ-INT" target="_blank">EVAL-M355-ARDZ-INT</a> was developed to enable quick and easy connection of
+the <a class="icon adi reference external" href="https://www.analog.com/ADuCM355" target="_blank">ADuCM355</a> based sensor boards to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a>
+development board or any equivalent Arduino MCU controller board. This allows
+for testing the functionality as well as the performance of the circuit using a
+controlled evaluation environment.</p>
 </section>
-<section id="required-equipment">
-<h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
+<section id="product-overview">
+<h2>Product Overview<a class="headerlink" href="#product-overview" title="Link to this heading"></a></h2>
+<p>ADuCM355 base Sensor Shield Board Interface Connectors:</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/pin_header.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/pin_header.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADuCM355 sensor shield board interface connectors (P1–P4)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Check if connectors P1, P2, P3 and P4 were correctly installed. The notch
+found for all headers should be at the bottom left near the header number 14
+of the silk screen.</p>
+</div>
+<p>Arduino Shield Board Interface Connectors:</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/arduino_shield_board_actual.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/arduino_shield_board_actual.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-M355-ARDZ-INT interposer board – Arduino shield board interface</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The EVAL-M355-ARDZ-INT interposer board was developed to quickly and easily
+connect to the ADICUP3029 development board or any equivalent Arduino MCU
+controller board.</p>
+</section>
+<section id="sensor-connector">
+<h2>Sensor Connector<a class="headerlink" href="#sensor-connector" title="Link to this heading"></a></h2>
+<p>The EVAL-M355-ARDZ-INT takes customized connectors to the ADuCM355 sensor surf
+boards, and allows up to four channels of sensor boards to be used with the
+EVAL-ADICUP3029 platform. Because the ADICUP3029 is an Arduino form factor
+compatible development board, many other equivalent Arduino form factor
+compatible development boards can also be used simply by writing custom code.
+Below is the pinout of the custom connector of the sensor surf boards.</p>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/sensor_board_connector_header.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/sensor_board_connector_header.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Sensor board connector header pinout</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="power-rails">
+<h2>Power Rails<a class="headerlink" href="#power-rails" title="Link to this heading"></a></h2>
+<p>The EVAL-M355-ARDZ-INT provides 3.3 V power supply to ADuCM355 base sensor
+shield board modules from the ADICUP3029 development board or any equivalent
+Arduino MCU controller board.</p>
+</section>
+<section id="switch-matrix">
+<h2>Switch Matrix<a class="headerlink" href="#switch-matrix" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/swithch_matrix_actual.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/swithch_matrix_actual.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Switch matrix (S1) on the EVAL-M355-ARDZ-INT</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="digital-communication-interfaces">
+<h2>Digital Communication Interfaces<a class="headerlink" href="#digital-communication-interfaces" title="Link to this heading"></a></h2>
+<p>The EVAL-M355-ARDZ-INT can accommodate up to four ADuCM355 sensor surf boards
+at the same time. The software and hardware support communications via:</p>
 <ul class="simple">
-<li><p>EVAL-M355-ARDZ-INT interposer board</p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> development board</p></li>
-<li><p>ADuCM355 sensor daughter boards (up to 4)</p></li>
-<li><p>Micro-USB cable</p></li>
-<li><p>Standard 10-pin ARM JTAG/SWD ribbon cable (for debugging)</p></li>
+<li><p><strong>SPI</strong> – Available on P7 and P9</p></li>
+<li><p><strong>I2C</strong> – Available on P7</p></li>
+<li><p><strong>UART</strong> – Available on P8</p></li>
 </ul>
+<p>Arduino shield boards follow a standard pinout for the Arduino form factor
+compatible development boards.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/arduino_schematic_config.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/arduino_schematic_config.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Arduino shield board interface schematic configuration</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
-<section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<section id="swd-jtag-connector">
+<h2>SWD/JTAG Connector<a class="headerlink" href="#swd-jtag-connector" title="Link to this heading"></a></h2>
+<p>The debugger from the ADICUP3029 can be used and can be linked to the
+interposer board through the SWD_DEBUG connector (P10). The user can use a
+standard 10-pin ARM JTAG/SWD ribbon cable to connect the ADICUP3029 debugger
+to the interposer board.</p>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/aducm3029_to_daughter_board_swd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/aducm3029_to_daughter_board_swd.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">ADuCM3029 to daughter board SWD connection diagram</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/jtag_swd_10_connector.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/jtag_swd_10_connector.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">10-pin JTAG/SWD connector pinout</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/swd_debugger_connectors_actual_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/swd_debugger_connectors_actual_1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">SWD debugger connectors on the EVAL-M355-ARDZ-INT</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>There is a way to cut the SWD traces on the ADICUP3029 board right at the
+breakaway section of the board. By cutting the traces for the SWD_DIO, SWD_CLK
+and SWD_RST located near P12, the user can program both the ADICUP3029 and
+M355-INT boards without losing the ability to stream serial data back to the
+USB port. There are two traces on the top of the board that must be cut using a
+knife, and one trace found at the bottom of the ADICUP3029 (the outermost
+trace).</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/adicup3029_primary_cut.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/adicup3029_primary_cut.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">ADICUP3029 primary SWD trace cuts (top side)</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/adicup3029_secondary_cut.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/adicup3029_secondary_cut.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">ADICUP3029 secondary SWD trace cut (bottom side)</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="debug-programming-channel-selector">
+<h2>Debug/Programming Channel Selector<a class="headerlink" href="#debug-programming-channel-selector" title="Link to this heading"></a></h2>
+<p>The EVAL-M355-ARDZ-INT can accommodate up to four ADuCM355 sensor surf boards
+and communicate with these boards at the same time through SPI communication
+protocol. Debugging and programming is done independently for each channel by
+configuring the switch matrix labeled SWD_DEBUG_CH_SW (S1) found on the
+silkscreen of the interposer board, with a corresponding LED indicator
+identifying which sensor board is being accessed.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>SWD_DEBUG_CH_SW</p></th>
+<th class="head"><p>LED</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CH1</p></td>
+<td><p>DS1</p></td>
+</tr>
+<tr class="row-odd"><td><p>CH2</p></td>
+<td><p>DS2</p></td>
+</tr>
+<tr class="row-even"><td><p>CH3</p></td>
+<td><p>DS3</p></td>
+</tr>
+<tr class="row-odd"><td><p>CH4</p></td>
+<td><p>DS4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="communication-protocol-selector">
+<h2>Communication Protocol Selector<a class="headerlink" href="#communication-protocol-selector" title="Link to this heading"></a></h2>
+<p>By default the ADuCM355 sensor surf boards come preloaded with SPI
+communication protocol back to the ADICUP3029.</p>
+<p>Sensor shield boards can also communicate either through UART or I2C depending
+on the firmware loaded on the sensor surf board and on the switch (S2) located
+on the EVAL-M355-ARDZ-INT.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The software and the hardware must be set to the same digital communication
+protocol in order to correctly receive and display data.</p>
+</div>
+</section>
+<section id="hardware-setup-procedure">
+<h2>Hardware Setup Procedure<a class="headerlink" href="#hardware-setup-procedure" title="Link to this heading"></a></h2>
+<p>If you are using the ADICUP3029 development board with the EVAL-M355-ARDZ-INT
+adaptor board, use the following setup procedure:</p>
+<ol class="arabic simple">
+<li><p>Set the SWD_DEBUG_CH_SW (S1) of the EVAL-M355-ARDZ-INT initially to CH1.</p></li>
+<li><p>Set the UART switch (S2) on the EVAL-ADICUP3029 to the “USB” position in
+order to stream data back to the serial terminal.</p></li>
+<li><p>Place the EVAL-M355-ARDZ-INT on top of the EVAL-ADICUP3029.</p></li>
+</ol>
+<figure class="align-center" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/shield_board_to_adicup_connections_actual.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/shield_board_to_adicup_connections_actual.png" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">EVAL-M355-ARDZ-INT placed on top of EVAL-ADICUP3029</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Place the desired number of ADuCM355 sensor daughter boards on top of the
+interposer board (up to 4).</p></li>
+</ol>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/sensor_shield_connections_actual.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-m355-ardz-int/sensor_shield_connections_actual.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">ADuCM355 sensor daughter boards connected to the interposer</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>Plug in the EVAL-ADICUP3029 into the USB port of the computer using the
+micro-USB cable. You may need to wait for the ADICUP3029 device drivers to
+install if this is the first time the device is plugged in.</p></li>
+</ol>
+</section>
+<section id="aducm355-compatible-boards">
+<h2>ADuCM355 Compatible Boards<a class="headerlink" href="#aducm355-compatible-boards" title="Link to this heading"></a></h2>
+<p>The following table lists current ADuCM355 base sensor shield boards offered
+by Analog Devices that connect to the EVAL-M355-ARDZ-INT adaptor board.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Board</p></th>
+<th class="head"><p>Application</p></th>
+<th class="head"><p>EVAL-ADICUP3029 Software</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../eval-cn0428-ebz/index.html#eval-cn0428-ebz"><span class="std std-ref">EVAL-CN0428-EBZ</span></a></p></td>
+<td><p>Water Quality</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../eval-cn0429-ebz/index.html#eval-cn0429-ebz"><span class="std std-ref">EVAL-CN0429-EBZ</span></a></p></td>
+<td><p>Gas Sensor</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h2>
+<p>Combined firmware for CN0428 and CN0429 applications is available on GitHub:</p>
 <ul class="simple">
-<li><p>Provides 3.3 V power supply to ADuCM355 sensor boards.</p></li>
-<li><p><strong>S1</strong> (SWD_DEBUG_CH_SW) – Switch matrix for channel selection and
-independent debugging/programming of each sensor board.</p></li>
-<li><p><strong>S2</strong> – Protocol selector switch (UART/I2C/SPI).</p></li>
-<li><p><strong>DS1–DS4</strong> – LED indicators identifying which sensor board is being
-accessed.</p></li>
-<li><p><strong>P10</strong> – SWD/JTAG debugging connector for 10-pin ARM ribbon cable.</p></li>
-<li><p><strong>P7, P9</strong> – SPI communication connectors.</p></li>
-<li><p><strong>P7</strong> – I2C communication connector.</p></li>
-<li><p><strong>P8</strong> – UART communication connector.</p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0428_cn0429" target="_blank">EVAL-ADICUP3029 Source Code for CN0428 and CN0429</a></p></li>
 </ul>
-</section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>ADuCM355 sensor boards come preloaded with SPI communication protocol.
-Combined firmware for CN0428 and CN0429 applications is available on GitHub.</p>
 </section>
 <section id="schematic-pcb-layout-bill-of-materials">
 <h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
@@ -960,6 +1164,7 @@ Combined firmware for CN0428 and CN0429 applications is available on GitHub.</p>
 <li><p>Schematics</p></li>
 <li><p>PCB Layout</p></li>
 <li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
 </ul>
 </div>
 </section>

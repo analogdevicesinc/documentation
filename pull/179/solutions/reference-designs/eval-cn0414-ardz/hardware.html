@@ -652,7 +652,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -925,7 +925,14 @@ the GND terminal, or left floating if an external earth connection is not used.<
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_supply.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_supply.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_supply.png" width="500" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">Main Power Supply Setup and P3 Terminal Description</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Main Power Supply Setup</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_p3_description.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_p3_description.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_p3_description.png" width="300" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">P3 Terminal Description</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -941,35 +948,53 @@ and can support voltage and current inputs in the following ranges:</p>
 <li><p>4 mA to 20 mA</p></li>
 <li><p>0 mA to 20 mA</p></li>
 </ul>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_p6_p9_description.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_p6_p9_description.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_p6_p9_description.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">P6 and P9 Analog Input Terminal Description</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="adc-and-hart-chip-select-jumper-configurations-p1-and-p2">
 <h2>ADC and HART Chip Select Jumper Configurations (P1 and P2)<a class="headerlink" href="#adc-and-hart-chip-select-jumper-configurations-p1-and-p2" title="Link to this heading"></a></h2>
 <section id="single-board-configuration">
 <h3>Single Board Configuration<a class="headerlink" href="#single-board-configuration" title="Link to this heading"></a></h3>
-<p>If only a single board is used, connect jumpers P1 and P2 as shown in the
-table below.</p>
+<p>If only a single board is used, connect jumpers P1 and P2 by shorting pin 1
+and pin 2 on each header. This bypasses the decoder and directly selects the
+ADC and HART chips.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>P2 Jumper Position</p></th>
+<tr class="row-odd"><th class="head"><p>P2 (HART) Position</p></th>
 <th class="head"><p>P2 Description</p></th>
-<th class="head"><p>P2 Mode</p></th>
-<th class="head"><p>P1 Jumper Position</p></th>
+<th class="head"><p>P1 (ADC CS) Position</p></th>
 <th class="head"><p>P1 Description</p></th>
-<th class="head"><p>P1 Mode</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Pin 1 &amp; Pin 2</p></td>
 <td><p>Skip decoder</p></td>
-<td><p>Single</p></td>
 <td><p>Pin 1 &amp; Pin 2</p></td>
 <td><p>Skip decoder</p></td>
-<td><p>Single</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/hart_selection_single_j.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/hart_selection_single_j.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/hart_selection_single_j.png" width="200" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">P2 Jumper Position – Single Board (HART Select)</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cs_selection_single_j.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cs_selection_single_j.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cs_selection_single_j.png" width="200" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">P1 Jumper Position – Single Board (ADC CS Select)</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="multiple-boards-stacked">
 <h3>Multiple Boards Stacked<a class="headerlink" href="#multiple-boards-stacked" title="Link to this heading"></a></h3>
@@ -982,29 +1007,34 @@ board.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>P2 Position</p></th>
+<tr class="row-odd"><th class="head"><p>Board</p></th>
+<th class="head"><p>P2 (HART) Position</p></th>
 <th class="head"><p>P2 Address</p></th>
-<th class="head"><p>P1 Position</p></th>
+<th class="head"><p>P1 (ADC CS) Position</p></th>
 <th class="head"><p>P1 Address</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Pin 4 &amp; Pin 6</p></td>
+<tr class="row-even"><td><p>Board 0</p></td>
+<td><p>Pin 4 &amp; Pin 6</p></td>
 <td><p>AIN2:AIN3 = 00</p></td>
 <td><p>Pin 4 &amp; Pin 6</p></td>
 <td><p>AIN0:AIN1 = 00</p></td>
 </tr>
-<tr class="row-odd"><td><p>Pin 3 &amp; Pin 5</p></td>
+<tr class="row-odd"><td><p>Board 1</p></td>
+<td><p>Pin 3 &amp; Pin 5</p></td>
 <td><p>AIN2:AIN3 = 01</p></td>
 <td><p>Pin 3 &amp; Pin 5</p></td>
 <td><p>AIN0:AIN1 = 01</p></td>
 </tr>
-<tr class="row-even"><td><p>Pin 7 &amp; Pin 5</p></td>
+<tr class="row-even"><td><p>Board 2</p></td>
+<td><p>Pin 7 &amp; Pin 5</p></td>
 <td><p>AIN2:AIN3 = 10</p></td>
 <td><p>Pin 7 &amp; Pin 5</p></td>
 <td><p>AIN0:AIN1 = 10</p></td>
 </tr>
-<tr class="row-odd"><td><p>Pin 8 &amp; Pin 6</p></td>
+<tr class="row-odd"><td><p>Board 3</p></td>
+<td><p>Pin 8 &amp; Pin 6</p></td>
 <td><p>AIN2:AIN3 = 11</p></td>
 <td><p>Pin 8 &amp; Pin 6</p></td>
 <td><p>AIN0:AIN1 = 11</p></td>
@@ -1012,11 +1042,11 @@ board.</p>
 </tbody>
 </table>
 </div>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_silkscreen_top.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_silkscreen_top.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_silkscreen_top.png" width="500" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0414 Top Silkscreen with Jumper Locations</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">CN0414 Top Silkscreen with Jumper Locations (P1, P2)</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -1024,9 +1054,12 @@ board.</p>
 <section id="eeprom-address-configuration">
 <h2>EEPROM Address Configuration<a class="headerlink" href="#eeprom-address-configuration" title="Link to this heading"></a></h2>
 <p>For multiple boards configuration, it is <strong>mandatory</strong> to set a different
-EEPROM address for each board. On software initialization, the system
-configuration (how many boards, what type, and at what address) will be
+EEPROM address for each board. In this way, on software initialization, the
+system configuration (how many boards, what type, and at what address) will be
 determined.</p>
+<p>The EEPROM address is set using the three solder jumpers P10, P11, and P12.
+Each jumper can be set to either pin 2 &amp; pin 3 (default) or pin 2 &amp; pin 1.
+The following table shows all eight possible address combinations:</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -1083,7 +1116,9 @@ determined.</p>
 <section id="eeprom-write-protection-configuration-jp1">
 <h3>EEPROM Write Protection Configuration (JP1)<a class="headerlink" href="#eeprom-write-protection-configuration-jp1" title="Link to this heading"></a></h3>
 <p>If only a single board is being used, ensure that JP1 solder jumper is shorting
-pins 2 and 3. If multiple boards are used, short pins 1 and 2.</p>
+pins 2 and 3 (write protection enabled). If multiple boards are used, short
+pins 1 and 2 (write protection disabled), allowing the EEPROM to be written
+with board identification data.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -1101,11 +1136,25 @@ pins 2 and 3. If multiple boards are used, short pins 1 and 2.</p>
 </tbody>
 </table>
 </div>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/jp1_s_d.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/jp1_s_d.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/jp1_s_d.png" width="200" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">JP1 Solder Jumper – Single Board (WP Enabled)</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/jp1_m_d.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/jp1_m_d.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/jp1_m_d.png" width="200" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">JP1 Solder Jumper – Multi Board (WP Disabled)</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id9">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_silkscreen_bottom.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_silkscreen_bottom.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_silkscreen_bottom.png" width="500" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0414 Bottom Silkscreen with JP1 Location</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">CN0414 Bottom Silkscreen with JP1 and EEPROM Address Jumper Locations</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -1117,11 +1166,11 @@ pins 2 and 3. If multiple boards are used, short pins 1 and 2.</p>
 <li><p><strong>Power LED</strong> – On whenever the board is powered</p></li>
 <li><p><strong>Error LED</strong> – Off by default</p></li>
 </ul>
-<figure class="align-center" id="id4">
+<figure class="align-center" id="id10">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_power_led.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_power_led.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0414-ardz/images/cn0414_power_led.png" width="400" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 4 </span><span class="caption-text">Power and Error LED Indicators</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Power and Error LED Indicators</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>

@@ -106,6 +106,8 @@
 <li><a class="reference internal" href="#multi-channel-tab">Multi-Channel Tab</a></li>
 <li><a class="reference internal" href="#single-channel-tab">Single Channel Tab</a></li>
 <li><a class="reference internal" href="#establishing-a-usb-connection">Establishing a USB Connection</a></li>
+<li><a class="reference internal" href="#making-a-single-capture">Making a Single Capture</a></li>
+<li><a class="reference internal" href="#making-continuous-capture">Making Continuous Capture</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#documents">Documents</a></li>
@@ -657,7 +659,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -934,6 +936,12 @@ counter provides a cost-effective way to realize channel-to-channel switching
 without an FPGA, CPLD, or high speed processor. The counter can be programmed
 to count up or count down for sequentially sampling multiple channels, or can
 be loaded with a fixed binary word for sampling a single channel.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269-symlified-schematic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269-symlified-schematic.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0269 simplified schematic</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -963,6 +971,12 @@ via the 120-pin connector.</p></li>
 The DC power supply +/-12 V connects to <strong>CN1</strong> on the EVAL-CN0269-SDPZ.</p></li>
 <li><p>The <strong>EVAL-SDP-CB1Z</strong> SDP-B board connects to the PC via the USB cable.</p></li>
 </ul>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0287_test_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0287_test_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">CN0269 test setup</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="installing-the-software">
 <h2>Installing the Software<a class="headerlink" href="#installing-the-software" title="Link to this heading"></a></h2>
@@ -976,9 +990,29 @@ to the default directory path
 <strong>C:\Program Files\Analog Devices\CN0269\</strong> and all National
 Instruments products to <strong>C:\Program Files\National Instruments\</strong>.</p>
 </div>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0269 SDP evaluation software installer</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Click <strong>Next</strong> to view the installation review page.</p></li>
-<li><p>Click <strong>Next</strong> to start the installation.</p></li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Installation review page</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to start the installation.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_3.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Installation progress</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion of the installation of the <strong>CN0269 SDP Eval Software</strong>,
 the installer for the <strong>ADI SDP Drivers</strong> will execute.</p>
 <div class="admonition note">
@@ -987,6 +1021,12 @@ the installer for the <strong>ADI SDP Drivers</strong> will execute.</p>
 <strong>Next</strong>. This will make it possible to update relevant system files
 without having to reboot your computer.</p>
 </div>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">ADI SDP Drivers installer</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to set the installation location for the <strong>SDP Drivers</strong>.</p>
 <div class="admonition note">
@@ -994,33 +1034,60 @@ without having to reboot your computer.</p>
 <p>It is recommended that you install the drivers to the default directory
 path <strong>C:\Program Files\Analog Devices\SDP\Drivers</strong>.</p>
 </div>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">SDP Drivers installation location</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to install the <strong>SDP Drivers</strong> and complete the installation
-of all software. Click <strong>Finish</strong> when done.</p></li>
+of all software. Click <strong>Finish</strong> when done.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_setup_6.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">SDP Drivers installation complete</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="connecting-the-hardware">
 <h2>Connecting the Hardware<a class="headerlink" href="#connecting-the-hardware" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Connect <strong>J1</strong> of the EVAL-CN0269-SDPZ (CN0269 board) to <strong>CON A</strong> of the
 EVAL-SDP-CB1Z (SDP-B board).</p></li>
 <li><p>Set the <strong>JP3</strong> and <strong>JP4</strong> jumpers on EVAL-CN0269-SDPZ to select the input
-range and connect the signal correctly according to the pin definition.</p></li>
+range and connect the signal correctly according to the pin definition.</p>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/signal_connection_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/signal_connection_1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Signal connection and pin definition</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Connect the USB cable to the SDP-B board and leave the other side of the
 cable unconnected.</p></li>
 <li><p>Connect the +6 V DC power to <strong>CN2</strong> and +/-12 V DC power to <strong>CN1</strong> and
 turn on the DC power supply to power up the board.</p></li>
-<li><p>Connect the USB cable to the PC.</p></li>
+<li><p>Connect the USB cable to the PC.</p>
+<figure class="align-center" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/hardware_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/hardware_connection.png" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Hardware connection overview</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 <section id="using-the-evaluation-software">
 <h2>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h2>
 <section id="software-overview">
 <h3>Software Overview<a class="headerlink" href="#software-overview" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id12">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269_sw_fp_label.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269_sw_fp_label.png" />
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0269 evaluation software front panel</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">CN0269 evaluation software front panel</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The evaluation software provides the following controls:</p>
@@ -1050,6 +1117,12 @@ detail than the Multi-Channel Tab.</p></li>
 <li><p><strong>SDP Information</strong> – The firmware version of the SDP-B board is shown
 on this tab.</p></li>
 </ul>
+<figure class="align-center" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_info.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/sw_info.png" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">SDP Information tab</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p><strong>Configuration Items</strong> – All items used to control the EVAL-CN0269-SDPZ
 board.</p></li>
@@ -1060,28 +1133,28 @@ software configuration.</p></li>
 current state of the software.</p></li>
 <li><p><strong>System Status LED Indicator</strong> – Displays the current state of the
 software as an LED with four status colors:</p>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="id14">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269-software-busy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269-software-busy.png" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">Busy</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Busy</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="id15">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269-software-error.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269-software-error.png" />
 <figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">Error</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Error</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id16">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269-software-inactive.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269-software-inactive.png" />
 <figcaption>
-<p><span class="caption-number">Figure 4 </span><span class="caption-text">Inactive</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Inactive</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id17">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269-software-wait.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269-software-wait.png" />
 <figcaption>
-<p><span class="caption-number">Figure 5 </span><span class="caption-text">Waiting for user action</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">Waiting for user action</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -1145,10 +1218,10 @@ current configuration.</p></li>
 </section>
 <section id="multi-channel-tab">
 <h3>Multi-Channel Tab<a class="headerlink" href="#multi-channel-tab" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id7">
+<figure class="align-center" id="id18">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269_sw_mulch_label.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269_sw_mulch_label.png" />
 <figcaption>
-<p><span class="caption-number">Figure 6 </span><span class="caption-text">Multi-Channel Tab view</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Multi-Channel Tab view</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
@@ -1177,10 +1250,10 @@ displays it on the Multi-Channel Graph.</p></li>
 </section>
 <section id="single-channel-tab">
 <h3>Single Channel Tab<a class="headerlink" href="#single-channel-tab" title="Link to this heading"></a></h3>
-<figure class="align-center" id="id8">
+<figure class="align-center" id="id19">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269_sw_singlech_label.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0269-sdpz/cn0269_sw_singlech_label.png" />
 <figcaption>
-<p><span class="caption-number">Figure 7 </span><span class="caption-text">Single Channel Tab view</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">Single Channel Tab view</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
@@ -1223,6 +1296,26 @@ at <strong>C:\Program Files\Analog Devices\CN0269\CN0269.exe</strong>.</p>
 will load.</p></li>
 <li><p>Upon success, the <strong>System Status String Indicator</strong> will display
 <em>SDP-B Ready to Acquire Data(s)</em>.</p></li>
+</ol>
+</section>
+<section id="making-a-single-capture">
+<h3>Making a Single Capture<a class="headerlink" href="#making-a-single-capture" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Establish a USB connection link.</p></li>
+<li><p>Select <em>Single Capture</em> as the <strong>Capture Mode</strong>.</p></li>
+<li><p>Set the sample frequency in <strong>Sample Rate/CH (Hz)</strong>.</p></li>
+<li><p>Set the number of samples in <strong>Samples/CH</strong>.</p></li>
+<li><p>Click <strong>Start Acquisition</strong>.</p></li>
+</ol>
+</section>
+<section id="making-continuous-capture">
+<h3>Making Continuous Capture<a class="headerlink" href="#making-continuous-capture" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Establish a USB connection link.</p></li>
+<li><p>Select <em>Continuous Capture</em> as the <strong>Capture Mode</strong>.</p></li>
+<li><p>Set the sample frequency in <strong>Sample Rate/CH (Hz)</strong>.</p></li>
+<li><p>Set the number of samples in <strong>Samples/CH</strong>.</p></li>
+<li><p>Click <strong>Start Acquisition</strong>.</p></li>
 </ol>
 </section>
 </section>

@@ -109,7 +109,10 @@
 <li><a class="reference internal" href="#software-support">Software Support</a><ul>
 <li><a class="reference internal" href="#linux-device-driver">Linux Device Driver</a><ul>
 <li><a class="reference internal" href="#linux-device-tree">Linux Device Tree</a></li>
-<li><a class="reference internal" href="#iio-attributes">IIO Attributes</a></li>
+<li><a class="reference internal" href="#iio-attributes">IIO Attributes</a><ul>
+<li><a class="reference internal" href="#jesd204b-interface-testing">JESD204B Interface Testing</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#no-os-project">No-OS Project</a></li>
@@ -662,7 +665,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -1155,6 +1158,33 @@ enabled.</p></td>
 </tbody>
 </table>
 </div>
+<p>The IIO Oscilloscope application can be used to interact with the AD6676
+IIO device driver and visualize captured data. The screenshot below shows
+the IIO Oscilloscope connected to the AD6676EVB.</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad6676evb/ad6676_osc_screenshot.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad6676evb/ad6676_osc_screenshot.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD6676 IIO Oscilloscope capture</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="jesd204b-interface-testing">
+<h5>JESD204B Interface Testing<a class="headerlink" href="#jesd204b-interface-testing" title="Link to this heading"></a></h5>
+<p>The JESD204B serial interface can be verified using eye scan measurements.
+The following figures show example eye diagram results for Lane 0 and Lane 1
+of the AD6676EVB JESD204B link.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad6676evb/ad6676_lane0_bert.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad6676evb/ad6676_lane0_bert.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD6676 JESD204B eye scan – Lane 0</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad6676evb/ad6676_lane1_bert.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad6676evb/ad6676_lane1_bert.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD6676 JESD204B eye scan – Lane 1</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 </section>
 <section id="no-os-project">

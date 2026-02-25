@@ -46,6 +46,12 @@ The CN0203 needs +15 V, -15 V and +6 V power supply inputs and thus requires
 a triple output DC power supply. The board also connects to ADI's System
 Demonstration Platform (SDP).
 
+.. figure:: cn0203-hw-1024.jpg
+   :width: 600px
+   :align: center
+
+   EVAL-CN0203-SDPZ Evaluation Board
+
 Required Equipment
 ------------------
 
@@ -63,6 +69,12 @@ Hardware Setup
 
 Block Assignments
 ~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0203-hw-1024_-_edited.jpg
+   :width: 600px
+   :align: center
+
+   EVAL-CN0203-SDPZ Block Assignments
 
 - The EVAL-CN0203-SDPZ (CN0203 Board) connects to the :adi:`EVAL-SDP-CB1Z`
   (SDP-B Board) via the 120-pin connector (SDP-B CONN).
@@ -87,12 +99,14 @@ Block Assignments
 Jumper Settings
 ~~~~~~~~~~~~~~~
 
-Refer to the CN0203 circuit note for the complete jumper settings table.
-Default settings are configured for standard operation. Key jumpers include:
+See the table below for the jumper settings. Values in red are the default
+settings for the EVAL-CN0203-SDPZ.
 
-- **JP1** -- SPI address configuration for the AD5750-1.
-- **JP3, JP4** -- VSENSE+/VSENSE- configuration (closed by default for
-  local sense).
+.. figure:: cn0203_table2_4.jpg
+   :width: 600px
+   :align: center
+
+   EVAL-CN0203-SDPZ Jumper Settings
 
 Software Setup
 --------------
@@ -108,10 +122,33 @@ Installing the Software
       ``C:\Program Files (x86)\Analog Devices\CN0203\`` and all National
       Instruments products to ``C:\Program Files\National Instruments\``.
 
+   .. figure:: 7-27-2017_10-18-25_am.png
+      :width: 600px
+
+      CN0203 installer welcome screen
+
 #. Press **Next** to view the National Instruments Software License Agreement.
+
+   .. figure:: 7-27-2017_10-18-49_am.png
+      :width: 600px
+
+      National Instruments Software License Agreement
+
 #. Select the option which **accepts** the License Agreement and press
    **Next** to view the installation review page.
+
+   .. figure:: 7-27-2017_10-19-16_am.png
+      :width: 600px
+
+      Installation review page
+
 #. Press **Next** to start the installation.
+
+   .. figure:: 7-27-2017_10-20-21_am.png
+      :width: 600px
+
+      Installation progress
+
 #. Upon completion of the CN0203 Evaluation Software installation, the
    installer for the ADI SDP Drivers will execute.
 
@@ -121,6 +158,11 @@ Installing the Software
       **Next**. This will make it possible to update relevant system files
       without having to reboot your computer.
 
+   .. figure:: 7-27-2017_10-21-00_am.png
+      :width: 600px
+
+      ADI SDP Drivers installer
+
 #. Press **Next** to set the installation location for the SDP Drivers.
 
    .. note::
@@ -128,15 +170,37 @@ Installing the Software
       It is recommended to install the drivers to the default path
       ``C:\Program Files\Analog Devices\SDP\Drivers``.
 
+   .. figure:: 7-27-2017_10-21-13_am.png
+      :width: 600px
+
+      SDP Drivers installation location
+
 #. Press **Next** to install the SDP Drivers. When prompted by Windows
    Security, press **Install**.
+
+   .. figure:: 7-27-2017_10-22-01_am.png
+      :width: 600px
+
+      Windows Security prompt for SDP Drivers
+
 #. Press **Finish** to complete the installation.
+
+   .. figure:: 7-27-2017_10-22-23_am.png
+      :width: 600px
+
+      Installation complete
 
 Using the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Main Window
 ^^^^^^^^^^^
+
+.. figure:: 7-27-2017_10-29-07_am.png
+   :width: 600px
+   :align: center
+
+   CN0203 Evaluation Software Main Window
 
 The evaluation software provides the following controls and sections:
 

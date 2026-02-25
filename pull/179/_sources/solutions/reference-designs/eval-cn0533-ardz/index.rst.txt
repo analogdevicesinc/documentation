@@ -38,7 +38,15 @@ The EVAL-CN0533-EBZ is straightforward to set up. A cable, power supply
 
 #. Solder a triple twisted wire or shielded cable to the EVAL-CN0533-EBZ
    printed circuit board (PCB). Connect the ground line to GND, the 4-20 mA
-   output current to IOUT, and the 12 V supply to VCC.
+   output current to IOUT, and the 12 V supply to VCC as shown in the figure
+   below.
+
+   .. figure:: cn0533_connections.jpg
+      :width: 300 px
+      :align: center
+
+      EVAL-CN0533-EBZ sensor connection points (GND, IOUT, VCC)
+
 #. Supply the EVAL-CN0533-EBZ with 12 V, and connect the other end of the
    IOUT and GND cables to a 4-20 mA receiver such as National Instruments
    NI-9203.

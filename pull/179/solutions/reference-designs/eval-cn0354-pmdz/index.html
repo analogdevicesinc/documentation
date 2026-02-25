@@ -656,7 +656,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -952,6 +952,12 @@ output data rate user configurable. This can reduce current consumption because
 it functions at a lower internal clock frequency. It contains a sigma-delta ADC
 with one differential input and one single-ended input, either of which can be
 buffered or unbuffered after passing through a multiplexer.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/block_diagram.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0354 Functional Block Diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
@@ -995,6 +1001,12 @@ placed as close to <strong>U4</strong> as possible.</p></li>
 short out the positive and negative terminal of any unused channel at the
 isothermal block <strong>P2</strong> in order to avoid the <a class="icon adi reference external" href="https://www.analog.com/AD8495" target="_blank">AD8495</a> from railing.</p>
 </div>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/test_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/test_setup.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0354-PMDZ Test Setup</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="software-setup">
 <h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
@@ -1008,9 +1020,29 @@ isothermal block <strong>P2</strong> in order to avoid the <a class="icon adi re
 default directory path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\CN0354\</span></code> and all
 National Instruments products to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\National</span> <span class="pre">Instruments\</span></code>.</p>
 </div>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/software_install_welcome.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/software_install_welcome.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">CN0354 Evaluation Software installer welcome screen</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Click <strong>Next</strong> to view the installation review page.</p></li>
-<li><p>Click <strong>Next</strong> to start the installation.</p></li>
+<li><p>Click <strong>Next</strong> to view the installation review page.</p>
+<figure class="align-center" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/software_install_review.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/software_install_review.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Installation review page</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click <strong>Next</strong> to start the installation.</p>
+<figure class="align-center" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/software_install_progress.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/software_install_progress.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Installation progress</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Upon completion of the CN0354 Evaluation Software installation, the
 installer for the ADI SDP Drivers will execute.</p>
 <div class="admonition note">
@@ -1019,6 +1051,12 @@ installer for the ADI SDP Drivers will execute.</p>
 <strong>Next</strong>. This will make it possible to update relevant system files
 without having to reboot your computer.</p>
 </div>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/sdp_driver_install_welcome.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/sdp_driver_install_welcome.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">ADI SDP Drivers installer</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to set the installation location for the SDP Drivers.</p>
 <div class="admonition note">
@@ -1026,6 +1064,12 @@ without having to reboot your computer.</p>
 <p>It is recommended that you install the drivers to the default directory
 path <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\SDP\Drivers</span></code>.</p>
 </div>
+<figure class="align-center" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/sdp_driver_install_location.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/sdp_driver_install_location.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">SDP Drivers installation location</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Press <strong>Next</strong> to install the SDP Drivers and complete the installation of
 all software. Click <strong>Finish</strong> when done.</p></li>
@@ -1035,6 +1079,12 @@ all software. Click <strong>Finish</strong> when done.</p></li>
 <h3>Using the Evaluation Software<a class="headerlink" href="#using-the-evaluation-software" title="Link to this heading"></a></h3>
 <section id="software-control-and-indicator-descriptions">
 <h4>Software Control and Indicator Descriptions<a class="headerlink" href="#software-control-and-indicator-descriptions" title="Link to this heading"></a></h4>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/gui_start_sampling.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/gui_start_sampling.png" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">CN0354 Evaluation Software – Start Sampling tab</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ol class="arabic">
 <li><p><strong>Start Sampling</strong> – When pressed, the SDP-B board makes a USB connection
 to the CN-0354 board automatically. Once a USB connection is established,
@@ -1066,6 +1116,14 @@ channels.</p></li>
 the data collected.</p></li>
 <li><p><strong>System Status String and LED Indicators</strong> – Display the current state of
 the software (Inactive, Busy, or Error).</p></li>
+</ol>
+<figure class="align-center" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/gui_system_configuration.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0354-pmdz/gui_system_configuration.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">CN0354 Evaluation Software – System Configuration tab</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic" start="9">
 <li><p><strong>Temperature Range Dropdown Select</strong> – Used to change the temperature
 range of the system. The default value is 5 deg C to 880 deg C.</p></li>
 <li><p><strong>Header Setting Tab Display</strong> – Shows the proper P1 header setting. The

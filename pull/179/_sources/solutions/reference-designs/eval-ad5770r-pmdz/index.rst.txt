@@ -13,6 +13,11 @@ The :adi:`EVAL-AD5770R-PMDZ` is a minimalist SPI PMOD board for the
 fully-featured AD5770R evaluation board and has no extra signal conditioning
 for the DAC.
 
+.. figure:: eval_ad5770r_pmdz_primary.png
+   :align: center
+
+   EVAL-AD5770R-PMDZ Board
+
 About the AD5770R
 ~~~~~~~~~~~~~~~~~
 
@@ -21,6 +26,11 @@ designed for use in communications systems, instrumentation, and industrial
 applications; specifically for photonics control and current mode biasing. It
 has 6 programmable output channels with 1 channel capable of sinking up to
 60 mA of current.
+
+.. figure:: ad5770r_functional_block_diagram.png
+   :align: center
+
+   AD5770R Functional Block Diagram
 
 Hardware
 --------
@@ -41,6 +51,12 @@ P1 connects the digital pins of the AD5770R to a system board, e.g.
 EVAL-ADICUP3029. Test vias are provided for each of these pins which can be
 used for debugging purposes. For a full description of each digital pin, refer
 to the AD5770R datasheet.
+
+.. figure:: eval_ad5770r_pmdz_test_points.png
+   :align: center
+   :width: 200px
+
+   EVAL-AD5770R-PMDZ Test Points
 
 .. list-table:: Connector P1 Pinout
    :header-rows: 1
@@ -92,8 +108,29 @@ The pins of connector P5 are mapped to the supply pins of the AD5770R. By
 default, the EVAL-AD5770R-PMDZ uses the supply voltage from the controller
 board for AVDD/DVDD and IOVDD.
 
+.. figure:: eval_ad5770r_pmdz_p5.png
+   :align: center
+
+   Connector P5
+
+.. figure:: eval_ad5770r_pmdz_p5_table.png
+   :align: center
+
+   Connector P5 Pinout
+
 An external power supply can be used for AVDD/DVDD instead of the system power
 if jumper P2 is open.
+
+.. figure:: eval_ad5770r_pmdz_p2.png
+   :align: center
+   :width: 200px
+
+   Jumper P2
+
+.. figure:: eval_ad5770r_pmdz_p2_table.png
+   :align: center
+
+   Jumper P2 Configuration
 
 .. important::
 
@@ -149,6 +186,16 @@ AD5770R. The available output current ranges for each channel are as follows:
    as detailed in the AD5770R datasheet. The full scale current can only be
    scaled down to 50% of its nominal value.
 
+.. figure:: eval_ad5770r_pmdz_p6.png
+   :align: center
+
+   Connector P6
+
+.. figure:: eval_ad5770r_pmdz_p6_table.png
+   :align: center
+
+   Connector P6 Pinout
+
 Jumpers P2, P3, P4
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -168,6 +215,12 @@ Jumpers P2, P3, P4
 
 If IDAC0 is configured to sink current, jumpers P3 and P4 should be open and
 external voltage supplies must be applied to the AVEE and PVEE pins on P6.
+
+.. figure:: eval_ad5770r_pmdz_p3_p4.png
+   :align: center
+   :width: 200px
+
+   Jumpers P3 and P4
 
 .. list-table::
    :header-rows: 1

@@ -656,7 +656,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -950,6 +950,12 @@ adding overall noise and distortion into the system.</p>
 rate, which can be tailor fitted to specific system requirements. The system’s
 analog filter rejects frequencies at multiples of the sampling frequency,
 eliminating aliasing concerns.</p>
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/block_diagram.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/block_diagram.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">CN0535 system block diagram</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>Key components:</p>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD7768-1" target="_blank">AD7768-1</a> – 24-bit sigma-delta ADC</p></li>
@@ -976,14 +982,28 @@ eliminating aliasing concerns.</p>
 </section>
 <section id="hardware-connection">
 <h3>Hardware Connection<a class="headerlink" href="#hardware-connection" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/hardware_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/hardware_setup.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">EVAL-CN0535-FMCZ hardware setup overview</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>To begin using the evaluation board, take the following steps:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Ensure the EVAL-SDP-CH1Z system demonstration platform board is disconnected
 from the PC. Install the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7768-1" target="_blank">AD7768-1 evaluation board software</a>. Restart the PC after the software installation is
 complete.</p></li>
 <li><p>Connect the EVAL-SDP-CH1Z system demonstration platform board to the
 EVAL-CN0535-FMCZ reference design board. The J4 connector of the
-EVAL-SDP-CH1Z connects to the receiving socket, P1, on the EVAL-CN0535-FMCZ.</p></li>
+EVAL-SDP-CH1Z connects to the receiving socket, P1, on the EVAL-CN0535-FMCZ.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/cn0535_sdp_connection.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/cn0535_sdp_connection.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/cn0535_sdp_connection.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">SDP-CH1Z to CN0535 board connection</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Ensure the evaluation boards are connected firmly together by screwing them
 together.</p></li>
 <li><p>Connect the 12 V DC supply to the EVAL-SDP-CH1Z system demonstration
@@ -993,18 +1013,48 @@ prompted by the operating system.</p></li>
 <li><p>Launch the AD7768-1 evaluation board software from the Analog Devices
 subfolder in the Programs menu.</p></li>
 <li><p>Connect the differential input to the SMB connectors (J3 and J4). P7 can
-also be used as a connection for the input if the source uses wires.</p></li>
+also be used as a connection for the input if the source uses wires.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/input_port.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/input_port.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/input_port.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Differential input connections (J3, J4, and P7)</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Click the <strong>Sample</strong> button on the AD7768-1 evaluation software.</p></li>
 </ol>
+<p>Below are measured values with a 5.9 Vpp sine input from an AP2700 signal
+source.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/fft.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/fft.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/fft.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">FFT measurement result</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/time_domain.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/time_domain.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/time_domain.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Time domain waveform measurement</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 <section id="system-gain-configuration">
 <h3>System Gain Configuration<a class="headerlink" href="#system-gain-configuration" title="Link to this heading"></a></h3>
 <p>Select the gain by configuring the switch (S2) on the EVAL-CN0535-FMCZ board.
 The following table shows the system gain and the corresponding input voltage
 ranges.</p>
-<div class="table-wrapper colwidths-given docutils container" id="id1">
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">System Gain and Input Voltage Ranges</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<figure class="align-center" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/system_gain_config.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/system_gain_config.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">System gain configuration switch (S2) settings</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id8">
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">System Gain and Input Voltage Ranges</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 28.6%" />
 <col style="width: 28.6%" />
@@ -1054,23 +1104,68 @@ ranges.</p>
 <p>Select the ADC driver mode by configuring the switch (S2) on the
 EVAL-CN0535-FMCZ board. The <a class="icon adi reference external" href="https://www.analog.com/ADA4945-1" target="_blank">ADA4945-1</a> can be set to full power mode or
 low power mode.</p>
+<figure class="align-center" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/adc_driver_config.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/adc_driver_config.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">ADC driver (ADA4945-1) configuration switch settings</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="software-gui-setup">
 <h2>Software GUI Setup<a class="headerlink" href="#software-gui-setup" title="Link to this heading"></a></h2>
 <section id="gui-main-window">
 <h3>GUI Main Window<a class="headerlink" href="#gui-main-window" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/gui_main.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/gui_main.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/gui_main.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">AD7768-1 evaluation software GUI main window</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The main window of the GUI allows the user to configure the following settings
 on the ADC:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p><strong>Buffer Control</strong> – Allows the user to configure the internal ADC input and
-reference buffers.</p></li>
+reference buffers.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/buffer.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/buffer.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/buffer.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Buffer control settings</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p><strong>Digital Filter Control</strong> – Allows the user to select the digital filter
-setting of the ADC.</p></li>
+setting of the ADC.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/filter.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/filter.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/filter.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Digital filter control settings</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p><strong>MCLK DIV</strong> – Allows the user to configure the MCLK divider setting on the
-ADC.</p></li>
+ADC.</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/mclk.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/mclk.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/mclk.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">MCLK divider settings</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p><strong>Power Mode</strong> – Sets the power mode setting on the ADC. The user can select
-from Fast, Median, and Low power mode settings.</p></li>
+from Fast, Median, and Low power mode settings.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/pwrmd.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/pwrmd.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/eval-cn0535-ardz/pwrmd.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Power mode settings</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 </ol>
 </section>
 </section>

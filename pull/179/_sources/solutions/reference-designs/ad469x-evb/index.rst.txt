@@ -156,8 +156,18 @@ HDL Reference Design
 --------------------
 
 The AD469x-EVB no-OS project requires the HDL bitstream from the AD469x HDL
-reference design. For full details on the HDL design, block diagram, and Linux
-driver support, see :doc:`/solutions/reference-designs/ad469x-fmc/index`.
+reference design. The design uses the standard SPI Engine Framework to interface
+the AD4696 ADC in single SDO mode. The SPI offload module, triggered by the
+BUSY signal of the device, captures continuous data streams at maximum data
+rate.
+
+.. figure:: ad469x_hdl.svg
+   :align: center
+
+   AD469x-EVB HDL block diagram
+
+For full details on the HDL design, Linux driver support, and device tree
+configuration, see :doc:`/solutions/reference-designs/ad469x-fmc/index`.
 
 - :git-hdl:`projects/ad469x_evb`
 

@@ -18,19 +18,33 @@ eval board is a 400 MHz to 4.4 GHz receiver based on the :adi:`AD9652` dual
 16-bit ADC, the :adi:`ADL5566` high dynamic range RF/IF dual differential
 amplifier, and the :adi:`ADL5380` quadrature demodulator.
 
-.. image:: fmcomms6_top.jpg
+.. figure:: top_view_main_page.png
    :align: center
-   :width: 400
+   :width: 500
+
+   AD-FMCOMMS6-EBZ evaluation board
 
 Introduction
 ------------
 
 This is an I and Q demodulation approach to direct conversion (also known as
-homodyne or zero IF) receiver architecture. The topology provides image
-rejection and early implementation of the differential signal environment.
-There is an amplification stage to maintain the full-scale input to the ADC.
-The local oscillator and ADC clock are on-board and share the same reference
-signal to prevent smearing.
+homodyne or zero IF) receiver architecture. Direct conversion radios perform
+just one frequency translation compared to a super-heterodyne receiver that can
+perform several frequency translations. One frequency translation is
+advantageous because it:
+
+- Reduces receiver complexity and the number of stages needed, increasing
+  performance and reducing power consumption
+- Avoids image rejection issues and unwanted mixing
+
+This topology provides image rejection and early implementation of the
+differential signal environment. There is an amplification stage to maintain the
+full-scale input to the ADC. The local oscillator and ADC clock are on-board and
+share the same reference signal to prevent smearing. The form factor is VITA57
+compliant and all of the DC power is routed from the data capture board through
+an FMC connector. This evaluation board demonstrates a high performance receiver
+signal chain aimed at military and commercial radar using "commercial off the
+shelf" (COTS) components.
 
 The overall circuit has a bandwidth of 220 MHz with a passband flatness of
 +/- 1.0 dB. The SNR and SFDR measured at an IF of 145 MHz are 64 dB and
@@ -47,6 +61,43 @@ Contains
 - :adi:`AD9517-4` multi-output clock distribution with on-chip PLL and VCO
 - :adi:`ADF4351` fractional-N/integer-N PLL frequency synthesizer
 - :adi:`ADM7150` low dropout linear regulator, 4.5 V to 16 V, up to 800 mA
+
+Hardware
+--------
+
+Main Components
+~~~~~~~~~~~~~~~
+
+.. figure:: main_components.jpg
+   :align: center
+   :width: 600
+
+   AD-FMCOMMS6-EBZ main components
+
+Component Placement
+~~~~~~~~~~~~~~~~~~~
+
+For those that don't want to load up the Allegro viewer, here is a basic
+outline/component placement of the board.
+
+.. figure:: fmcomms6_top.jpg
+   :align: center
+   :width: 400
+
+   AD-FMCOMMS6-EBZ component placement outline
+
+Board Dimensions
+~~~~~~~~~~~~~~~~
+
+The size of the board (not including the SMA connectors, which project beyond
+the edge of the board) is 3.42 inches by 2.72 inches (or about 89 mm x 69 mm).
+This exceeds the FMC specifications of 84 mm x 69 mm.
+
+.. figure:: fmcomms6_dim.jpg
+   :align: center
+   :width: 400
+
+   AD-FMCOMMS6-EBZ board dimensions
 
 HDL Reference Design
 --------------------

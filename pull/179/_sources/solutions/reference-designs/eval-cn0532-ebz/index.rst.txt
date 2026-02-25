@@ -95,6 +95,8 @@ To use the EVAL-XLMOUNT1 with the EVAL-CN0532-EBZ:
    of the ADXL1002 is aligned with the platform's main vibration direction.
 #. Follow the steps for proper sensor connection outlined above.
 
+.. video:: https://www.youtube.com/watch?v=sUwh0gXCF5I
+
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 

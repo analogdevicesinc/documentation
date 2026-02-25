@@ -26,6 +26,11 @@ voltage for the DAC.
 The evaluation board has provisions to read the output voltage of the DAC and
 an option to use an external supply voltage for the LED.
 
+.. figure:: cn0370.jpg
+   :align: center
+
+   EVAL-CN0370-PMDZ evaluation board
+
 Required Equipment
 ------------------
 
@@ -42,20 +47,45 @@ Required Equipment
 Hardware Setup
 --------------
 
+.. figure:: cn0370-1.1.png
+   :align: center
+
+   CN0370 system block diagram
+
 #. Connect the 120-pin connector **J4** on the SDP-PMD-IB1Z interposer board
    to the connector marked **CON A** on the :adi:`EVAL-SDP-CB1Z` (SDP)
    evaluation board. Place the shunt on **JP1** in the +5.0 V configuration.
 
+   .. figure:: cn0370-2.jpg
+      :align: center
+
+      SDP-PMD-IB1Z interposer board connected to EVAL-SDP-CB1Z
+
 #. Connect the EVAL-CN0370-PMDZ to the PMOD connector **J3** on the
    interposer board.
 
+   .. figure:: cn0370-3.png
+      :align: center
+
+      EVAL-CN0370-PMDZ connected to PMOD connector J3
+
 #. Connect a +6 V wall wart supply to connector **J1** of the interposer
    board.
+
+   .. figure:: cn0370-4.png
+      :align: center
+
+      Power supply connected to connector J1
 
 #. Use the USB cable to connect the :adi:`EVAL-SDP-CB1Z` to the PC.
 
 Board Connections
 ~~~~~~~~~~~~~~~~~~
+
+.. figure:: eval-cn0370-pmdz-1.jpg
+   :align: center
+
+   EVAL-CN0370-PMDZ board connection points
 
 The EVAL-CN0370-PMDZ board has the following connection points:
 
@@ -72,14 +102,39 @@ Installing the Software
 #. Extract the file **CN0370_Evaluation_Software.zip** and open the file
    **setup.exe**.
 
+   .. figure:: sw-1.png
+      :align: center
+
+      CN0370 Evaluation Software installer
+
 #. Click **Next** to view the installation review page.
 
+   .. figure:: sw-2.png
+      :align: center
+
+      Installation review page
+
 #. Click **Next** to begin the installation.
+
+   .. figure:: sw-3.png
+      :align: center
+
+      Installation in progress
 
 #. Upon completion of the installation of the CN0370 Evaluation Software, the
    installer for the **ADI SDP Drivers** will execute.
 
+   .. figure:: sw-4.png
+      :align: center
+
+      ADI SDP Drivers installer
+
 #. Click **Next** to set the installation location for the SDP Drivers.
+
+   .. figure:: sw-5.png
+      :align: center
+
+      SDP Drivers installation location
 
 #. Press **Install** to install the SDP Drivers and complete the installation
    of all software. Click **Close** when done.
@@ -89,6 +144,11 @@ Using the Evaluation Software
 
 Main Tab Controls
 ~~~~~~~~~~~~~~~~~~
+
+.. figure:: sw-gui.png
+   :align: center
+
+   CN0370 Evaluation Software main tab
 
 The evaluation software provides the following controls:
 

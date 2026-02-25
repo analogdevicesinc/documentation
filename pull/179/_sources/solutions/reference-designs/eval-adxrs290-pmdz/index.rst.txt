@@ -13,6 +13,12 @@ MEMS Dual-Axis Gyroscope PMOD.
 Overview
 --------
 
+.. figure:: eval-adxrs290-pmdz.png
+   :align: center
+   :width: 200px
+
+   EVAL-ADXRS290-PMDZ Evaluation Board
+
 The :adi:`EVAL-ADXRS290-PMDZ` is a simple PMOD form-factor evaluation board for
 the :adi:`ADXRS290`, a high-performance MEMS pitch-and-roll (dual-axis in-plane)
 angular rate sensor (gyroscope) designed for use in stabilization applications.
@@ -20,6 +26,12 @@ angular rate sensor (gyroscope) designed for use in stabilization applications.
 The solution senses and digitizes the **X-axis** and **Y-axis** (also called
 **roll** and **pitch**) angular rates, producing a positive reading for
 clockwise rotation about the x-axis and y-axis.
+
+.. figure:: roll_and_pitch.png
+   :align: center
+   :width: 200px
+
+   Roll and Pitch Axes
 
 The ADXRS290 provides an output full-scale range of +/-100 deg/s with a
 sensitivity of 200 LSB/(deg/s). Its resonating disk sensor structure enables
@@ -31,6 +43,12 @@ high-pass and low-pass filters.
 
 The ADXRS290 communicates via 4-wire SPI and operates as a peripheral (slave)
 device, with a maximum clock frequency of 12 MHz.
+
+.. figure:: spi_comm.png
+   :align: center
+   :width: 300px
+
+   SPI Communication Interface
 
 Features
 --------
@@ -110,6 +128,12 @@ System Setup Using ADICUP3029
 
 The :adi:`EVAL-ADXRS290-PMDZ` can be used with the :adi:`EVAL-ADICUP3029`.
 
+.. figure:: adxrs290_architecture.png
+   :align: center
+   :width: 400px
+
+   ADXRS290 ADICUP3029 System Architecture
+
 Demo Requirements
 ~~~~~~~~~~~~~~~~~
 
@@ -142,12 +166,31 @@ Setting up the Hardware
 2. Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and
    connect it to a computer.
 
+.. figure:: pmodtoadicup_v2.jpg
+   :align: center
+   :width: 900px
+
+   EVAL-ADXRS290-PMDZ Connected to EVAL-ADICUP3029
+
 Flashing the Firmware
 ~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: adicup3029_settings.jpg
+   :align: center
+   :width: 600px
+
+   EVAL-ADICUP3029 Switch Settings
 
 1. Make sure the switches on the EVAL-ADICUP3029 are in the correct positions.
 2. Connect the ADICUP3029 to the PC host via micro-USB cable.
 3. From your PC, open My Computer and look for the DAPLINK drive.
+
+   .. figure:: daplink_in_mycomputer.jpg
+      :align: center
+      :width: 200px
+
+      DAPLINK Drive in My Computer
+
 4. Extract the provided zip file. For this demo use the
    **adxrs290-pmdz_aducm3029_iio_uart.hex**. Drag and drop this Hex file to the
    DAPLINK drive. The DS2 (red) LED will blink rapidly.
@@ -209,6 +252,12 @@ Raspberry Pi** on the Kuiper Linux page, substituting the following line in
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. figure:: rpi_pmod_con.jpg
+   :align: center
+   :width: 800px
+
+   Raspberry Pi to PMOD Connection
+
 .. important::
 
    The I/O pins of the Raspberry Pi board are only 3.3 V tolerant. Any
@@ -223,6 +272,12 @@ Setting up the Hardware
 4. Connect a USB keyboard and mouse to the RPi through the USB ports.
 5. Power on the RPi board by plugging in a 5 V power supply with a micro-USB
    connector.
+
+.. figure:: system_con.jpg
+   :align: center
+   :width: 600px
+
+   Complete Raspberry Pi System Setup
 
 Software and Demo
 ------------------

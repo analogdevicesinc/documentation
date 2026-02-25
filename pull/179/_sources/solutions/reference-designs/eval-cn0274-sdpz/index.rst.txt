@@ -27,6 +27,10 @@ Required Equipment
 - Power supply: 2 AAA batteries or +3.0 V supply
 - 1 USB Type-A plug to USB Mini-B plug cable
 
+.. figure:: cn0274-setupdiagram.jpg
+
+   EVAL-CN0274-SDPZ system setup diagram
+
 Minimum PC/System Requirements
 -------------------------------
 
@@ -45,9 +49,21 @@ Installing the Evaluation Software
    ``C:\Program Files\Analog Devices\CN0274\`` and all National Instruments
    products to ``C:\Program Files\National Instruments\``.
 
+   .. figure:: cn0274-evaluation_software-destination_directory-1.jpg
+
+      CN0274 evaluation software destination directory
+
 #. Press **Next** to proceed through the installation wizard.
 
+   .. figure:: cn0274-evaluation_software-destination_directory-2.jpg
+
+      CN0274 evaluation software installation wizard
+
 #. Press **Next** to start the installation.
+
+   .. figure:: cn0274-evaluation_software-installation_complete.jpg
+
+      CN0274 evaluation software installation complete
 
 #. Press **Next** to complete the evaluation software installation.
 
@@ -60,6 +76,14 @@ Installing the Evaluation Software
       It is recommended that you close all other applications before clicking
       **Next**. This will make it possible to update relevant system files
       without having to reboot your computer.
+
+   .. figure:: cn0274-sdpdrivers-setup_wizard.jpg
+
+      ADI SDP Drivers setup wizard
+
+   .. figure:: cn0274-sdpdrivers-destination_directory.jpg
+
+      ADI SDP Drivers destination directory
 
 #. Press **Next** to proceed with the SDP driver installation.
 
@@ -90,6 +114,21 @@ Hardware Setup
    :adi:`EVAL-CN0274-SDPZ <EVAL-CN0274-SDPZ>` PCBs using the 120-pin male and
    female connectors found on the respective boards.
 
+   .. figure:: cn0274-hardware-notconnected-sdps-cn0274.jpg
+      :width: 200px
+
+      EVAL-SDP-CS1Z and EVAL-CN0274-SDPZ before connection
+
+   .. figure:: cn0274-hardware-displaying_connectors.jpg
+      :width: 200px
+
+      120-pin connectors on the evaluation boards
+
+   .. figure:: cn0274-hardware-connectorscloseup.jpg
+      :width: 200px
+
+      Close-up of the 120-pin connectors
+
    .. figure:: cn0274-hardware-connected-sdps-cn0274.jpg
       :width: 200px
 
@@ -110,10 +149,18 @@ Opening and Enabling the Evaluation Software
 #. Launch the executable found at ``C:\Program Files\Analog Devices\CN0274``
    and press the **Connect** button.
 
+   .. figure:: cn0274-evaluation_software-front_panel.jpg
+
+      CN0274 evaluation software front panel
+
 #. After pressing the **Connect** button, a prompt will appear informing the
    user if the accelerometer was properly configured. Press **Ok** and the
    software is ready to use. If the accelerometer is not configured properly,
    disconnect the entire setup and start over.
+
+   .. figure:: cn0274-evaluation_software-accelerometer_configuration_successful.jpg
+
+      Accelerometer configuration successful prompt
 
 Using the Evaluation Software
 ------------------------------

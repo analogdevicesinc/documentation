@@ -43,8 +43,20 @@ Evaluation Board Hardware
 Primary Side
 ~~~~~~~~~~~~
 
+.. figure:: cn0522_revb_primary_with_labels.png
+   :width: 600px
+   :align: center
+
+   Top View of EVAL-CN0522-EBZ
+
 RFIN Plug (J1)
 ^^^^^^^^^^^^^^
+
+.. figure:: cn0522_j1.png
+   :width: 200px
+   :align: right
+
+   RFIN Plug (J1)
 
 The RF input to the evaluation board must be connected to the male SMA
 connector **J1**.
@@ -56,6 +68,12 @@ connector **J1**.
 
 RFOUT Port (J2)
 ^^^^^^^^^^^^^^^
+
+.. figure:: cn0522_j2.png
+   :width: 200px
+   :align: right
+
+   RFOUT Port (J2)
 
 The RF output of the evaluation board is available at the female SMA connector
 **J2**.
@@ -69,7 +87,19 @@ The RF output of the evaluation board is available at the female SMA connector
 LED Indicators (DS1 and DS2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: cn0522_ds1-ds2_led_.png
+   :width: 200px
+   :align: right
+
+   LED Indicators (DS1 and DS2)
+
 The evaluation board uses two LEDs to indicate its current status:
+
+.. figure:: cn0522_ds1-ds2_table.png
+   :width: 350px
+   :align: center
+
+   DS1 and DS2 LED Status Table
 
 .. list-table::
    :header-rows: 1
@@ -89,8 +119,20 @@ The evaluation board uses two LEDs to indicate its current status:
 Secondary Side
 ~~~~~~~~~~~~~~
 
+.. figure:: cn0522_revb_secondary_with_labels.png
+   :width: 600px
+   :align: center
+
+   Bottom View of EVAL-CN0522-EBZ
+
 Power Supply Connector (P1)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: cn0522_p1.png
+   :width: 150px
+   :align: right
+
+   Power Supply Connector (P1)
 
 A +5 V power supply must be connected to the VCC line through the micro-USB
 port **P1**.
@@ -106,10 +148,22 @@ port **P1**.
 Changing the ADT6402 Trip Point (JP1 and JP2)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: cn0522_jp1-jp2_temp_switch_.png
+   :width: 150px
+   :align: right
+
+   JP1 and JP2 Solder Jumpers
+
 The evaluation board includes the :adi:`ADT6402` temperature switch to disable
 the amplifier when the board temperature reaches a trip point. The trip point
 can be set using the solder jumpers **JP1** and **JP2**, as shown in the table
 below.
+
+.. figure:: cn0522_jp1-jp2_table.png
+   :width: 500px
+   :align: center
+
+   ADT6402 Trip Point Configuration Table
 
 .. list-table::
    :header-rows: 1
@@ -141,6 +195,12 @@ below.
 Connecting the EVAL-CN0522-EBZ to the ADALM-PLUTO
 ---------------------------------------------------
 
+.. figure:: cn0417.png
+   :width: 400px
+   :align: center
+
+   EVAL-CN0522-EBZ Connected to the ADALM-PLUTO
+
 To properly operate the EVAL-CN0522-EBZ using the :adi:`ADALM-PLUTO`, follow
 the steps below:
 
@@ -167,6 +227,27 @@ Documents
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
+
+Assembly Drawing
+~~~~~~~~~~~~~~~~
+
+.. figure:: cn0522_assembly_drawing.png
+   :width: 400px
+   :align: center
+
+   EVAL-CN0522-EBZ Assembly Drawing
+
+Board Dimensions
+~~~~~~~~~~~~~~~~
+
+.. figure:: cn0522_dimensions.png
+   :width: 800px
+   :align: center
+
+   EVAL-CN0522-EBZ Board Dimensions
+
+Design Files
+~~~~~~~~~~~~
 
 .. admonition:: Download
 

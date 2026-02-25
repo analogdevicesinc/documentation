@@ -114,6 +114,11 @@ Heater Mode (RH)
 The user can choose from the following subroutines which determine the heater
 current (IH):
 
+.. figure:: rh_mode.jpg
+   :align: center
+
+   Heater mode subroutine selection in serial terminal
+
 **voltage** -- Sets the heater voltage to a constant voltage VH (default
 VH = 1.8 V). The relationship between heater resistance RH and heater current
 IH or heater voltage VH is nonlinear. The software runs several iterations in
@@ -162,12 +167,22 @@ After the routine completes, the application displays the measured values:
 - **ADC data** -- Raw data read from ADC (hex)
 - **Ro** -- Sensor resistance measured in clean air
 
+.. figure:: constant_voltage.jpg
+   :align: center
+
+   Constant voltage heater mode output in serial terminal
+
 At power up, the application starts in constant current mode and sets the
 default current to 8 mA. It is assumed that the measurement circuit is placed
 in clean air, so the sensor resistance in clean air (Ro) is measured and
 stored. After each heater measurement mode change, it is assumed the board is
 in clean air and the Ro value is updated, because Ro is a function of heater
 temperature.
+
+.. figure:: power_up.jpg
+   :align: center
+
+   Power-up default output showing constant current mode at 8 mA
 
 Sensor Resistance Mode (RS)
 ----------------------------
@@ -180,6 +195,11 @@ ADG884.
 In the background, the application runs the gain-ranging algorithm and
 determines RS and the gas concentration (C) measured in PPM (parts per
 million).
+
+.. figure:: rs_mode_new.png
+   :align: center
+
+   Sensor resistance mode output with RS and gas concentration readings
 
 RS reading can also be initiated by typing ``operation RS``, which performs the
 same function as pressing the ENTER key.
@@ -202,16 +222,40 @@ Procedure:
 3. Press ``c`` key when ready.
 4. Power off then power on.
 
+.. figure:: calibrate_w.jpg
+   :align: center
+
+   Factory calibration write procedure in serial terminal
+
 From this point on, K1 is stored in permanent memory and applied to all
 currents. To read the gain correction factor from memory, type ``calibrate r``.
 
-Type ``help`` to see the available commands.
+.. figure:: calibrate_read.jpg
+   :align: center
+
+   Reading the gain correction factor from memory
+
+Available Commands
+------------------
+
+Type ``help`` to see the available commands:
+
+.. figure:: help.jpg
+   :align: center
+
+   Help command showing available serial terminal commands
 
 Project Structure
 -----------------
 
 The **ADuCM360_demo_cn0395** project uses the ADuCM36x C/C++ Project
 structure.
+
+.. figure:: proj_struct.jpg
+   :align: center
+   :width: 340
+
+   ADuCM360_demo_cn0395 project structure in CrossCore Embedded Studio
 
 The project contains:
 

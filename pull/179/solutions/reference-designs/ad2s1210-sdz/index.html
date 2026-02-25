@@ -664,7 +664,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0235-sdpz/index.html">EVAL-CN0235-SDPZ</a></li>
@@ -1142,7 +1142,13 @@ partition to configure the SD card:</p>
 </section>
 <section id="setting-up-the-hardware">
 <h3>Setting Up the Hardware<a class="headerlink" href="#setting-up-the-hardware" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
+<figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad2s1210-sdz/zedboard.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad2s1210-sdz/zedboard.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ZedBoard top view with key connectors labeled</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic">
 <li><p>Insert the SD card into the SD card interface connector (J12) on the ZedBoard.</p></li>
 <li><p>Connect the EVAL-AD2S1210SDZ board to the SDP adapter and plug it into the
 ZedBoard FMC connector.</p></li>
@@ -1151,7 +1157,14 @@ ZedBoard FMC connector.</p></li>
 <li><p>Plug the 12 V power supply into the power input connector (J20) — do not
 power on yet.</p></li>
 <li><p>Set the ZedBoard boot mode jumpers to boot from SD card, and ensure the
-VADJ jumper is set to 3.3 V.</p></li>
+VADJ jumper is set to 3.3 V.</p>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad2s1210-sdz/jumpers_boot_sd_zedboard.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad2s1210-sdz/jumpers_boot_sd_zedboard.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">ZedBoard boot mode jumper configuration for SD card boot</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
 <li><p>Connect oscilloscope probes to the SMB connectors on the evaluation board.</p></li>
 <li><p>Power on the ZedBoard and wait approximately 30 seconds for the DONE LED
 to turn blue.</p></li>
@@ -1286,6 +1299,12 @@ the AD2S1210 channels. Download the latest version from the
 <a class="icon link reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases" target="_blank">IIO Oscilloscope releases page</a>.</p>
 <p>After installation, open the application, supply the target URI, press
 <strong>Refresh</strong> to display available IIO devices, and press <strong>Connect</strong>.</p>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad2s1210-sdz/iio_connect.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/ad2s1210-sdz/iio_connect.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">IIO Oscilloscope connection dialog</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="more-information">

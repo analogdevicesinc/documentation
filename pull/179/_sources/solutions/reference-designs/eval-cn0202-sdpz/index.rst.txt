@@ -45,6 +45,11 @@ The EVAL-CN0202-SDPZ board connects to ADI's System Demonstration Platform
 (SDP) and is powered by a triple output DC power supply of +15 V, -15 V and
 6 V.
 
+.. figure:: cn0202-hw-1024.jpg
+   :align: center
+
+   EVAL-CN0202-SDPZ evaluation board
+
 Required Equipment
 ------------------
 
@@ -62,6 +67,11 @@ Hardware Setup
 
 Block Assignments
 ~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0202_block_diagram.png
+   :align: center
+
+   EVAL-CN0202-SDPZ block diagram
 
 - The EVAL-CN0202-SDPZ (CN-0202 Board) connects to the :adi:`EVAL-SDP-CB1Z`
   (SDP-B Board) via the 120-pin connector.
@@ -87,13 +97,13 @@ Block Assignments
 Jumper Settings
 ~~~~~~~~~~~~~~~
 
-Refer to the CN0202 circuit note for the complete jumper settings table.
-Default settings are configured for standard operation. Key jumpers include:
+See the table in the image below for the jumper settings. Values in red are
+the default settings for the EVAL-CN0202-SDPZ.
 
-- **P1** -- AD5750 configuration.
-- **JP1** -- SPI address configuration for the AD5750.
-- **JP3, JP4** -- VSENSE+/VSENSE- configuration (closed by default for
-  local sense).
+.. figure:: cn0202_jumper_settings.png
+   :align: center
+
+   EVAL-CN0202-SDPZ jumper settings
 
 Software Setup
 --------------
@@ -109,8 +119,25 @@ Installing the Software
       ``C:\Program Files (x86)\Analog Devices\CN0202\`` and all National
       Instruments products to ``C:\Program Files\National Instruments\``.
 
+   .. figure:: cn0202_install_step1.png
+      :align: center
+
+      CN0202 evaluation software installer
+
 #. Click **Next** to view the installation review page.
+
+   .. figure:: cn0202_install_step2.png
+      :align: center
+
+      Installation review page
+
 #. Click **Next** to start the installation.
+
+   .. figure:: cn0202_install_step3.png
+      :align: center
+
+      Installation in progress
+
 #. Upon completion of the CN-0202 Evaluation Software installation, the
    installer for the ADI SDP Drivers will execute.
 
@@ -120,6 +147,11 @@ Installing the Software
       **Next**. This will make it possible to update relevant system files
       without having to reboot your computer.
 
+   .. figure:: cn0202_install_step4.png
+      :align: center
+
+      ADI SDP Drivers installer
+
 #. Press **Next** to set the installation location for the SDP Drivers.
 
    .. note::
@@ -127,14 +159,29 @@ Installing the Software
       It is recommended to install the drivers to the default path
       ``C:\Program Files\Analog Devices\SDP\Drivers``.
 
+   .. figure:: cn0202_install_step5.png
+      :align: center
+
+      SDP Drivers installation location
+
 #. Press **Next** to install the SDP Drivers and complete the installation.
    Click **Finish** when done.
+
+   .. figure:: cn0202_install_step6.png
+      :align: center
+
+      Installation complete
 
 Using the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Main Tab
 ^^^^^^^^
+
+.. figure:: cn0202_software_interface.png
+   :align: center
+
+   CN0202 evaluation software main tab
 
 The evaluation software provides the following controls and sections:
 
