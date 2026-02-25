@@ -1,0 +1,382 @@
+.. _eval-cn0548-ardz:
+
+EVAL-CN0548-ARDZ
+=================
+
+Isolated Current and Voltage Measurement Arduino Shield.
+
+Overview
+--------
+
+Testing and evaluating power systems in industrial and communications settings
+often requires multiple voltage and current measurements. Individual supplies
+may be referenced to different grounds, have either positive or negative
+polarity, or may be galvanically isolated with respect to other power domains.
+Such scenarios necessitate either individual floating multimeters, or
+multichannel meters with per-channel isolation, which are physically cumbersome
+and expensive.
+
+.. figure:: cn0548_high_resolution_photo_3d_view.jpg
+   :width: 650 px
+   :align: center
+
+   EVAL-CN0548-ARDZ Evaluation Board (3D View)
+
+The :adi:`EVAL-CN0548-ARDZ <CN0548>` is a complete, isolated current and
+voltage measurement system for industrial, telecommunications, instrumentation,
+and automated test equipment (ATE) applications. The system is galvanically
+isolated from the host controller and will tolerate up to plus/minus 250 V
+between the host computer and measurement system grounds. When paired with the
+:adi:`EVAL-ADICUP3029` and open-source firmware example, application software
+can easily communicate with the CN0548 over the industry-standard Industrial
+Input/Output (IIO) libiio library, which includes bindings for C, C#, MATLAB,
+Python, and LabVIEW.
+
+Features
+~~~~~~~~
+
+- Absolute maximum input rating of 80 V, 14 A
+- Configurable voltage and current setting
+- 16-bit ADC resolution with adjustable output data rate
+- Serial peripheral interface (SPI) digital output
+- Galvanic isolation from host controller
+- 3.3 V and 5 V compatible
+- Arduino form factor
+- Chip Select (CS) remappable (can be stacked with other shields)
+
+Onboard Configuration
+---------------------
+
+.. figure:: cn0548_high_resolution_photo.jpg
+   :width: 800 px
+   :align: center
+
+   EVAL-CN0548-ARDZ Board Photo with Jumper Locations
+
+Configuring the Input Voltage Polarity and Current Direction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Before using the CN0548, the user must know the expected inputs and configure
+the board accordingly. The polarity as well as the direction of the inputs is
+an important aspect that should be noted by the user.
+
+.. list-table:: Maximum Input Rating by Configuration
+   :header-rows: 1
+
+   * - Mode
+     - Minimum Input
+     - Maximum Input
+   * - Unipolar
+     - 0 V
+     - 80 V
+   * - Bipolar
+     - -40 V
+     - 40 V
+   * - Unidirectional
+     - 0 A
+     - 14 A
+   * - Bidirectional
+     - -10 A
+     - 10 A
+
+Jumper connections P12 and P13 configure the input current setting while
+jumpers P7 and P14 configure the input voltage setting:
+
+- For a **unipolar** and **unidirectional** setting, the jumpers should be
+  shorted to the GND pin.
+- For a **bipolar** and **bidirectional** setting, the jumpers should be
+  connected to the 2.048 V pin.
+
+Configuring the Absolute Input Voltage Range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The CN0548 is equipped with a precision wide voltage range, gain-selectable
+attenuating difference amplifier allowing it to have an adjustable input
+voltage range feature. The onboard jumpers P1, P3, P10, P8, P9, P11 should be
+configured accordingly to achieve the desired maximum voltage range for finer
+voltage resolution.
+
+.. list-table:: Gain Jumper Configuration
+   :header-rows: 1
+
+   * - Max Range
+     - P1
+     - P3
+     - P10
+     - P8
+     - P9
+     - P11
+   * - 80 V
+     - Open
+     - Vin-
+     - Vin+
+     - Open
+     - Vin+
+     - Vin-
+   * - 40 V
+     - Vin+
+     - Open
+     - Open
+     - Vin-
+     - Open
+     - Open
+   * - 27 V
+     - Vin-
+     - Open
+     - Vin+
+     - Vin+
+     - Open
+     - Vin-
+   * - 20 V
+     - Open
+     - Vin+
+     - Open
+     - Open
+     - Vin-
+     - Open
+   * - 16 V
+     - Open
+     - Open
+     - Vin+
+     - Open
+     - Open
+     - Vin-
+
+Chip Select
+~~~~~~~~~~~
+
+The CN0548 has a remappable Chip Select feature allowing the board to be
+stacked with other shields. By default, jumper P15 is shunted but this can be
+modified accordingly depending on the shields stacked and the user's
+application.
+
+Demo Requirements
+-----------------
+
+A sample code for the board is already provided. The following is the list of
+items needed in order to run the given script.
+
+**Hardware**
+
+- EVAL-CN0548-ARDZ
+- :adi:`EVAL-ADICUP3029`
+- Micro-USB to USB cable
+- PC or laptop with a USB port
+
+**Software**
+
+- Pre-built HEX file (see below)
+- Python 3.7 or later
+- `CN0548_simple_plot.py example script
+  <https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/cn0548>`__
+- Recommended IDEs: Visual Studio Code, Anaconda, or PyCharm
+
+Setting up the Hardware
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Attach the EVAL-CN0548-ARDZ shield to the EVAL-ADICUP3029.
+#. Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and
+   connect it to a computer.
+
+Flashing the Firmware
+~~~~~~~~~~~~~~~~~~~~~~
+
+The easiest way to get started with the CN0548 board is by using the pre-built
+hex file for the EVAL-ADICUP3029:
+
+#. Ensure the on-board switches of the EVAL-ADICUP3029 are configured as shown
+   in the ADICUP3029 documentation.
+#. Connect the ADICUP3029 to the PC host via micro-USB cable.
+#. From the PC, open My Computer and look for the DAPLINK drive. If the drive
+   appears, the drivers are installed correctly.
+#. Download the hex file corresponding to the input mode you configured. Simply
+   drag and drop the hex file to the DAPLINK drive. The DS2 (red) LED will
+   blink rapidly. It will stop blinking and stay ON once programming is
+   complete.
+#. Disconnect then reconnect the EVAL-ADICUP3029 to the host computer.
+
+**Pre-built hex files:**
+
+- `ADuCM3029_demo_cn0548_demo_unipolar.hex
+  <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0548_demo_unipolar.hex>`__
+- `ADuCM3029_demo_cn0548_demo_bipolar.hex
+  <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0548_demo_bipolar.hex>`__
+
+**Source code:**
+
+- `CN0548 CCES Project
+  <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0548>`__
+
+Using CrossCore Embedded Studio
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For advanced applications, import the project into CrossCore Embedded Studio
+(CCES) to explore the board capabilities in detail and create a customized
+project:
+
+#. Open CrossCore Embedded Studio and import the project into your workspace.
+#. Once ready, generate your own hex file or use a debug session by following
+   the CCES quickstart guide.
+
+Code Configuration Notes
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When generating a custom hex file, there are two important attributes from the
+AD7798/AD7799 family that must be configured:
+
+- **Polarity** -- It is important to set the polarity of the ADC according to
+  your configuration and application. When the polarity is set to unipolar,
+  effectively restricting the user to follow the polarity of the terminals, the
+  maximum bit resolution of the ADC is used in its conversion. When set to
+  bipolar, the effective bit resolution is (n-1) bits where n is the maximum bit
+  resolution of the ADC.
+
+- **Gain** -- The gain attribute corresponds to the internal gain of the ADC. A
+  user can apply an internal gain to the ADC allowing the differential ADC
+  input to be amplified. This feature can be useful when dealing with small
+  signals, but applying an internal gain effectively decreases the input rating
+  of the board. It is highly recommended to consult the ADC datasheet before
+  creating a customized hex file.
+
+PyADI-IIO
+~~~~~~~~~~
+
+PyADI-IIO is a Python abstraction module for ADI hardware with IIO drivers to
+make them easier to use. This module provides device-specific APIs built on
+top of the current libiio Python bindings. These interfaces try to match the
+driver naming as much as possible without the need to understand the
+complexities of libiio and IIO.
+
+For more information on setting up PyADI-IIO, refer to the
+:dokuwiki:`PyADI-IIO documentation
+</resources/tools-software/linux-software/pyadi-iio>`.
+
+Running the Example
+~~~~~~~~~~~~~~~~~~~~
+
+The sample code includes several useful features:
+
+- A simple graphic aid to help configure board jumpers for the desired
+  specification
+- Numerical readings display
+- Built-in data logging to CSV
+- Real-time plotting
+- Memory feature to reuse the previous session's configuration
+
+Starting a New Session
+^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Download the `CN0548_simple_plot.py
+   <https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/cn0548>`__
+   script. Using a terminal, navigate to the location of the file and run:
+
+   .. code-block:: bash
+
+      python CN0548_simple_plot.py
+
+#. Upon running the script, general reminders regarding board usage will be
+   displayed. Read the reminders and press Enter to proceed.
+
+#. The board has a memory feature that allows quick configuration using the
+   settings from the last session. If no session record file is found, a new
+   configuration will be started.
+
+#. Specify the expected voltage and current inputs (unipolar or bipolar for
+   voltage, unidirectional or bidirectional for current). A jumper map window
+   will be created corresponding to the settings. Close the jumper window
+   after configuring the board jumpers.
+
+#. Configure the software settings as prompted:
+
+   .. list-table:: Software Configuration Options
+      :header-rows: 1
+
+      * - Setting
+        - Description
+      * - Voltage/Current Mode
+        - Unipolar/Bipolar and Unidirectional/Bidirectional
+      * - Maximum Voltage Range
+        - 16 V, 20 V, 27 V, 40 V, or 80 V
+      * - Sampling Rate
+        - ADC output data rate
+      * - Data Logging
+        - Enable or disable CSV logging
+      * - Plot Mode
+        - Tracking or non-tracking display
+      * - COM Port
+        - Serial port where the ADICUP3029 is connected
+
+#. Enter the port where the ADICUP3029 is connected. If the port is found, the
+   sample code is ready to parse readings from the board. Press Enter to start
+   board operation.
+
+Regardless of whether the plot window is enabled, board readings will be
+continuously displayed in the terminal.
+
+**Tracking Mode** displays all data points in the plot. This allows the user to
+observe the overall characteristic of the signal being measured. However, the
+plot will continue to compress as more data points are added.
+
+**Non-tracking Mode** displays only the most recent measurements as configured
+by the user, providing a more refined view of the signal.
+
+The plot windows are created using the matplotlib package. You can save a copy
+of the displayed waveform at any point in time using the matplotlib save
+function.
+
+Data Logging
+^^^^^^^^^^^^^
+
+The data logging feature logs all measurements into a CSV file. If enabled, the
+CSV file will be created in the same folder where the sample code is located
+and follows the naming scheme ``CN0548_[timestamp]``. Data is automatically
+written upon parsing, so even if the program is prematurely terminated, all
+parsed data is recorded.
+
+Memory Feature
+^^^^^^^^^^^^^^^
+
+The memory feature allows the user to quickly configure the sample code using
+the setup from the previous session. This is done by saving all user input and
+creating a ``session_record`` text file in the same directory where the sample
+code is located.
+
+The contents of the session record file are not encrypted and are easily
+understandable. Each line begins with a number corresponding to a certain
+setting. For instance, 1 corresponds to the Unipolar-Unidirectional mode and 2
+corresponds to the Bipolar-Bidirectional mode. If only a minor aspect of the
+setup needs to be changed (for example, switching between tracking and
+non-tracking mode, adjusting the sampling rate, or enabling data logging), the
+user can edit the ``session_record`` file directly.
+
+The program detects whether the set of specifications in the session record is
+valid. If the configuration is invalid, the program proceeds as usual and
+assumes no session record file was detected.
+
+Schematic, PCB Layout, Bill of Materials
+-----------------------------------------
+
+.. admonition:: Download
+
+   `CN0548 Design & Integration Files
+   <https://www.analog.com/cn0548-DesignSupport>`__
+
+   - Schematics
+   - Bill of Materials
+   - Gerber Files
+   - Allegro Project
+
+Additional Information and Useful Links
+-----------------------------------------
+
+- :adi:`CN0548 Circuit Note <CN0548>`
+- :adi:`AD7799 Product Page <AD7799>`
+- :adi:`LT3999 Product Page <LT3999>`
+- :adi:`ADuM5028 Product Page <ADuM5028>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`EngineerZone <ez/reference-designs>`.

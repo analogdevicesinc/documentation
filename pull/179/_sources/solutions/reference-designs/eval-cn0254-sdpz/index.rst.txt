@@ -9,17 +9,36 @@ Overview
 --------
 
 :adi:`CN0254` is a cost-effective, highly integrated 16-bit, 250 kSPS,
-8-channel data acquisition system that digitizes +/-10 V industrial level
-signals. The circuit features 2500 V rms isolation between the measurement
-circuit and the host controller, and is powered from a single isolated
-PWM-controlled 5 V supply.
+8-channel data acquisition system that can digitize +/-10 V industrial level
+signals. The circuit also provides 2500 V rms isolation between the
+measurement circuit and the host controller, and the entire circuit is
+powered from a single isolated PWM-controlled 5 V supply.
 
-The :adi:`AD7689` 16-bit PulSAR ADC provides 8-channel input with a built-in
-sequencer, multiplexer, reference buffer, and temperature sensor. The
-:adi:`AD8608` quad op-amp inverts, level-shifts, and attenuates the +/-10 V
-input to 0--4.096 V for the ADC. The :adi:`AD8605` serves as an external
-reference buffer, and the :adi:`ADuM3471` provides quad-channel digital
-isolation with an integrated PWM controller and transformer driver.
+The :adi:`AD7689` 16-bit, 8-channel, 250 kSPS PulSAR ADC contains all the
+necessary components for the multichannel low-power data acquisition system.
+It includes a 16-bit SAR ADC, an 8-channel low crosstalk multiplexer, a low
+drift reference and buffer, a temperature sensor, a selectable one-pole
+filter, and a channel sequencer. The sequencer is useful for continuously
+scanning channels, and a microcontroller or FPGA is not required to control
+channel switching.
+
+The :adi:`AD8605` and :adi:`AD8608` are low-cost single and quad rail-to-rail
+input and output CMOS amplifiers. The :adi:`AD8608` inverts, level shifts, and
+attenuates the +/-10 V input signal so that it matches the input range of the
+ADC, which is 0 V to +4.096 V when using a +4.096 V reference and a +5 V
+single supply. The :adi:`AD8605` acts as an external reference buffer to
+provide sufficient driving ability for level shifting. Both feature very low
+offset voltage, low input voltage and current noise, and wide signal
+bandwidth, therefore making them good choices for a wide variety of
+applications.
+
+The :adi:`ADuM3471 <ADUM3471>` is a quad-channel digital isolator with an
+integrated PWM controller and transformer driver for an isolated dc-to-dc
+converter. It provides the isolated 5 V, 2 W power for the circuit as well
+as isolates the digital signals at the SPI interface.
+
+The EVAL-CN0254-SDPZ board connects to ADI's System Demonstration Platform
+(SDP) and is powered by a 6 V power supply.
 
 Required Equipment
 ------------------
@@ -27,7 +46,7 @@ Required Equipment
 - :adi:`EVAL-CN0254-SDPZ <CN0254>` evaluation board
 - :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
 - CN0254 Evaluation Software
-- +6 V DC power supply (500 mA)
+- DC power supply (6 V, 500 mA)
 - USB Type-A to USB Mini-B cable
 - PC with Windows XP, Windows Vista (32-bit), or Windows 7 (32-bit)
 
@@ -37,23 +56,28 @@ Hardware Setup
 Block Assignments
 ~~~~~~~~~~~~~~~~~
 
-- **J1** -- 120-pin SDP connector
-- **CN2** -- +6 V power supply input terminal
-- **J2** -- Multi-channel analog input terminal
-- **J3** -- Test point for SPI data lines
+- The EVAL-CN0254-SDPZ (CN0254 Board) connects to the :adi:`EVAL-SDP-CB1Z`
+  (SDP-B Board) via the 120-pin connector.
+- The :adi:`EVAL-SDP-CB1Z` (SDP-B Board) connects to the PC via the USB
+  cable.
+- Terminal block **CN2** is the +6 V power supply input.
+- Terminal block **J2** is for the multiple channels analog input.
+- Jumper **J3** is the test point for SPI data lines.
 
 Test Setup
 ~~~~~~~~~~
 
-#. Connect the 120-pin connector on the EVAL-CN0254-SDPZ to **CON A** on the
-   :adi:`EVAL-SDP-CB1Z`.
-#. Set the DC output supply to 6 V and turn the supply off.
-#. With power off, connect the 6 V supply to **CN2**.
-#. Turn on the power supply, then connect the SDP board to the PC via USB.
+#. Connect the 120-pin connector on the EVAL-CN0254-SDPZ to the connector
+   marked **CON A** on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board.
+#. After setting the DC output supply to 6 V output, turn the supply off.
+#. With power to the supply off, connect 6 V to **CN2**.
+#. Turn on the power supply and then connect the SDP to the PC by using
+   the USB-to-miniUSB cable.
 
 .. important::
 
-   Do not connect the USB cable before turning on the DC power supply.
+   Do not connect the USB cable to the Mini-USB connector on the SDP board
+   before turning on the DC power supply for the EVAL-CN0254-SDPZ.
 
 Software Setup
 --------------
@@ -65,37 +89,124 @@ Installing the Software
 
    .. note::
 
-      Install to the default path
-      ``C:\Program Files (x86)\Analog Devices\CN0254\``.
+      It is recommended to install the software to the default path
+      ``C:\Program Files (x86)\Analog Devices\CN0254\`` and all National
+      Instruments products to ``C:\Program Files\National Instruments\``.
 
-#. Click **Next** through the installation review page.
-#. Click **Next** to start installation.
-#. The ADI SDP Drivers installer will execute automatically. Close all other
-   applications before proceeding.
-#. Set the SDP Drivers installation location (default:
-   ``C:\Program Files\Analog Devices\SDP\Drivers``).
-#. Complete the installation and click **Finish**.
+#. Click **Next** to view the installation review page.
+#. Click **Next** to start the installation.
+#. Upon completion of the CN0254 Evaluation Software installation, the
+   installer for the ADI SDP Drivers will execute.
+
+   .. note::
+
+      It is recommended to close all other applications before clicking
+      **Next**. This will make it possible to update relevant system files
+      without having to reboot your computer.
+
+#. Press **Next** to set the installation location for the SDP Drivers.
+
+   .. note::
+
+      It is recommended to install the drivers to the default path
+      ``C:\Program Files\Analog Devices\SDP\Drivers``.
+
+#. Press **Next** to install the SDP Drivers and complete the installation.
+   Click **Finish** when done.
 
 Using the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Open **CN0254.exe** from the installation directory.
-#. Select the correct connector and click **Connect**.
-#. Calibrate the device in the Calibration tab.
-#. Select desired settings (signal ranges, scan mode, etc.).
-#. Press **Start** to begin data acquisition.
-#. Press **Save Data** to export data to a tab-delimited ASCII file.
+Main Window
+^^^^^^^^^^^
 
-Software Tabs
-~~~~~~~~~~~~~
+The evaluation software main window provides the following controls and
+indicators:
 
-- **Multi-Channel tab** -- Per-channel plot options, display format (raw/voltage),
-  graph controls with zoom and pan.
-- **Single Channel tab** -- Time domain (ADC codes vs. time), frequency domain
-  (FFT), histogram, and signal parameters (SFDR, etc.).
-- **Calibration tab** -- Precision voltage inputs, EEPROM calibration storage,
-  and factory default recovery.
-- **S/W Version Info tab** -- Flash LED, read firmware version.
+- **Connect** -- Starts the connection between the CN0254 evaluation board
+  and the SDP-B controller board.
+- **Disconnect** -- Ends the connection between the CN0254 evaluation board
+  and the SDP-B controller board.
+- **Start** -- Starts acquisition of measurement data.
+- **Save Data** -- Saves the data collected to a tab-delimited ASCII
+  spreadsheet file.
+
+General Control Section
+"""""""""""""""""""""""
+
+- **Connector** -- Selects which 120-pin connection of the SDP-B board to
+  use.
+- **Input Signal Range** -- Selects the range of analog signal input.
+- **Sample Rate/CH** -- Sets the desired sample rate per channel.
+- **Samples/CH** -- Sets the number of samples to be taken per channel.
+- **Scan mode** -- Selects between single or multiple channel data
+  acquisition.
+- **Channel Setting for Scan mode** -- Selects which channel(s) to use for
+  data acquisition.
+- **Capture Mode** -- Chooses between single or continuous capturing of data.
+- **Bandwidth** -- Selects bandwidth for the low-pass filter in the ADC that
+  reduces undesirable aliasing effects and limits noise from the driving
+  circuitry.
+- **Phase Compensation** checkbox -- Compensates unbalanced differential
+  input voltages to the comparator.
+- **Calibration** checkbox -- Turns calibration on/off.
+
+Multi-Channel Tab
+"""""""""""""""""
+
+- **Plot options per channel** -- Edits plot display and options like
+  interpolation and color of the output waveform.
+- **Display Format** -- Selects the y-axis of the plotted graph between raw
+  data or voltage.
+- **Graph Controls** -- Allows the user to zoom in, zoom out, and pan
+  through the data collected.
+- **Scale Fit Setting** -- Allows user to autoscale the output on the graph.
+
+Single Channel Tab
+""""""""""""""""""
+
+- **Time Domain** tab -- Shows the acquired measurement data in terms of ADC
+  codes with respect to time.
+- **Frequency Domain** tab -- Plots the FFT of the ADC samples with the
+  amplitude in dB of the full scale ADC value.
+- **Histogram** tab -- Plots the number of occurrences of ADC sample values.
+- **Signal Parameters** -- Read only. Shows parameters such as SFDR of the
+  signal chosen through the radio buttons on the right side of the user
+  interface.
+
+Calibration Tab
+"""""""""""""""
+
+- **Precision Voltages** -- Sets the low and high precision voltages to be
+  used for calibration.
+- **Input Range** -- Selects the range of analog signal input.
+- **Overwrite EEPROM** checkbox -- If selected, precision voltage parameters
+  will be saved into EEPROM after calibration is complete.
+- **Calibrate** -- Starts calibration of the device.
+- **Recover to Default Value** -- Recovers the original default values of
+  precision voltages of the device from the EEPROM.
+- **Write Factory Default** -- Writes precision voltages from calibration to
+  an array in EEPROM and sets them as the factory default values.
+
+S/W Version Info Tab
+""""""""""""""""""""
+
+- **Flash LED** -- Flashes the LED on the SDP controller board.
+- **Read Firmware** -- Reads the firmware of the CN0254 evaluation board.
+
+Running the System
+^^^^^^^^^^^^^^^^^^
+
+#. Open the **CN0254.exe** application from the default installation
+   location.
+#. Set the correct connector and click the **Connect** button.
+#. Upon successful connection, calibrate the device in the Calibration tab
+   by following the instructions indicated.
+#. After proper calibration, select the desired settings like signal ranges
+   and scan mode.
+#. Press the **Start** button.
+#. If you want to save the data to file, press the **Save Data** button.
+#. Click **Quit** to exit the software.
 
 Documents
 ---------
@@ -120,6 +231,7 @@ Additional Information
 
 - :adi:`AD7689 Product Page <AD7689>`
 - :adi:`AD8608 Product Page <AD8608>`
+- :adi:`AD8609 Product Page <AD8609>`
 - :adi:`AD8605 Product Page <AD8605>`
 - :adi:`ADuM3471 Product Page <ADUM3471>`
 - :adi:`ADP3336 Product Page <ADP3336>`

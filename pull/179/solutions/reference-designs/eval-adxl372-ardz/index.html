@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Ultralow Power Impact Measurement." name="description" />
+<meta content="Ultralow Power, +/-200 g, 3-Axis MEMS Accelerometer Arduino Shield." name="description" />
 
     <title>EVAL-ADXL372-ARDZ &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -96,9 +96,28 @@
           <ul>
 <li><a class="reference internal" href="#">EVAL-ADXL372-ARDZ</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#connectors-and-jumper-configuration">Connectors and Jumper Configuration</a><ul>
+<li><a class="reference internal" href="#adxl-cs-select-p10">ADXL_CS_SELECT (P10)</a></li>
+<li><a class="reference internal" href="#adxl-int1-select-p11">ADXL_INT1_SELECT (P11)</a></li>
+<li><a class="reference internal" href="#adxl-int2-select-p12">ADXL_INT2_SELECT (P12)</a></li>
+<li><a class="reference internal" href="#voltage-translator-vddio-select-p13">VOLTAGE TRANSLATOR VDDIO SELECT (P13)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#connecting-mounting-the-adxl372">Connecting/Mounting the ADXL372</a><ul>
+<li><a class="reference internal" href="#direct-mounting-p5-and-p2">Direct Mounting (P5 and P2)</a></li>
+<li><a class="reference internal" href="#ribbon-cable-connection-p7-and-p1">Ribbon Cable Connection (P7 and P1)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#design-and-integration-files">Design and Integration Files</a></li>
+<li><a class="reference internal" href="#adicup3029-high-impact-detection-demo-bluetooth">ADICUP3029 High Impact Detection Demo (Bluetooth)</a><ul>
+<li><a class="reference internal" href="#demo-requirements">Demo Requirements</a></li>
+<li><a class="reference internal" href="#setting-up-the-hardware">Setting Up the Hardware</a></li>
+<li><a class="reference internal" href="#obtaining-the-software">Obtaining the Software</a></li>
+<li><a class="reference internal" href="#serial-terminal-output">Serial Terminal Output</a></li>
+<li><a class="reference internal" href="#smart-device-output">Smart Device Output</a></li>
+<li><a class="reference internal" href="#project-structure">Project Structure</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#documents">Documents</a></li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
@@ -556,14 +575,10 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ad5770r-pmdz/index.html">EVAL-AD5770R-PMDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="../eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33" id="toctree-collapse-13-33"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-33"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33-1" id="toctree-collapse-13-33-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-33-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32-1" id="toctree-collapse-13-32-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-32-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
@@ -573,10 +588,10 @@ Content on this topic
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-34" id="toctree-collapse-13-34"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-34"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33" id="toctree-collapse-13-33"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-33"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-34-1" id="toctree-collapse-13-34-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-34-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33-1" id="toctree-collapse-13-33-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-33-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
@@ -585,7 +600,7 @@ Content on this topic
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-35" id="toctree-collapse-13-35"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-35"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-34" id="toctree-collapse-13-34"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-34"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
@@ -593,40 +608,46 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-adicup360/index.html">EVAL-ADICUP360</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adm3055e-ardz/index.html">EVAL-ADM3055E-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adpd4100-ardz/index.html">EVAL-ADPD4100-ARDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36" id="toctree-collapse-13-36"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-36"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-35" id="toctree-collapse-13-35"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-35"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36-1" id="toctree-collapse-13-36-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-36-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-35-1" id="toctree-collapse-13-35-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-35-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37" id="toctree-collapse-13-37"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-37"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36" id="toctree-collapse-13-36"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-36"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37-1" id="toctree-collapse-13-37-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-37-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36-1" id="toctree-collapse-13-36-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-36-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-38" id="toctree-collapse-13-38"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-38"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37" id="toctree-collapse-13-37"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-37"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9032/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9032/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-38-1" id="toctree-collapse-13-38-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-38-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37-1" id="toctree-collapse-13-37-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-37-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-adt7420-pmdz/index.html">EVAL-ADT7420-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-38" id="toctree-collapse-13-38"/><div class="collapse"><a class="reference internal" href="../eval-adt7420-pmdz/index.html">EVAL-ADT7420-PMDZ</a><label for="toctree-collapse-13-38"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adt7420-pmdz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl313z/index.html">EVAL-ADXL313Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl357bz/index.html">EVAL-ADXL357BZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl362-ardz/index.html">EVAL-ADXL362-ARDZ</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-ADXL372-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-adxrs290-pmdz/index.html">EVAL-ADXRS290-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-39" id="toctree-collapse-13-39"/><div class="collapse"><a class="reference internal" href="../eval-adxrs290-pmdz/index.html">EVAL-ADXRS290-PMDZ</a><label for="toctree-collapse-13-39"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adxrs290-pmdz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0150-sdpz/index.html">EVAL-CN0150-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0178-sdpz/index.html">EVAL-CN0178-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0179-sdpz/index.html">EVAL-CN0179-PMDZ</a></li>
@@ -640,6 +661,11 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0202-sdpz/index.html">EVAL-CN0202-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0203-sdpz/index.html">EVAL-CN0203-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0204-sdpz/index.html">EVAL-CN0204-SDPZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-40" id="toctree-collapse-13-40"/><div class="collapse"><a class="reference internal" href="../eval-cn0216-ardz/index.html">EVAL-CN0216-ARDZ</a><label for="toctree-collapse-13-40"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
@@ -649,7 +675,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0251-sdpz/index.html">EVAL-CN0251-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0254-sdpz/index.html">EVAL-CN0254-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0269-sdpz/index.html">EVAL-CN0269-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0270-sdpz/index.html">EVAL-CN0270-SDPZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0270-sdpz/index.html">EVAL-CN0270-EB1Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0271-sdpz/index.html">EVAL-CN0271-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0272-sdpz/index.html">EVAL-CN0272-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0274-sdpz/index.html">EVAL-CN0274-SDPZ</a></li>
@@ -661,11 +687,23 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0296-sdpz/index.html">EVAL-CN0296-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0300-sdpz/index.html">EVAL-CN0300-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0301-ardz/index.html">EVAL-CN0301-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0326-sdpz/index.html">EVAL-CN0326-SDPZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-41" id="toctree-collapse-13-41"/><div class="collapse"><a class="reference internal" href="../eval-cn0326-sdpz/index.html">EVAL-CN0326-PMDZ</a><label for="toctree-collapse-13-41"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0326-sdpz/software.html">ADICUP360/ADICUP3029 Demo</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0335-pmdz/index.html">EVAL-CN0335-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0336-ardz/index.html">EVAL-CN0336-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-42" id="toctree-collapse-13-42"/><div class="collapse"><a class="reference internal" href="../eval-cn0337-pmdz/index.html">EVAL-CN0337-PMDZ</a><label for="toctree-collapse-13-42"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0337-pmdz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0337-pmdz/software.html">Software Demo</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0337-sdpz/index.html">EVAL-CN0337-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0338-ardz/index.html">EVAL-CN0338-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-43" id="toctree-collapse-13-43"/><div class="collapse"><a class="reference internal" href="../eval-cn0338-ardz/index.html">EVAL-CN0338-ARDZ</a><label for="toctree-collapse-13-43"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0338-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0338-ardz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0343-sdpz/index.html">EVAL-CN0343-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0346-pmdz/index.html">EVAL-CN0346-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0348-pmdz/index.html">EVAL-CN0348-PMDZ</a></li>
@@ -678,28 +716,69 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0368-sdpz/index.html">EVAL-CN0368-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0370-ardz/index.html">EVAL-CN0370-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0371-sdpz/index.html">EVAL-CN0371-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0372-ardz/index.html">EVAL-CN0372-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0372-ardz/index.html">EVAL-CN0372-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0376-ardz/index.html">EVAL-CN0376-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0376-sdpz/index.html">EVAL-CN0376-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0385-ardz/index.html">EVAL-CN0385-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0385-ardz/index.html">EVAL-CN0385-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0393-ardz/index.html">EVAL-CN0393-FMCZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0394-ardz/index.html">EVAL-CN0394-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0395-ardz/index.html">EVAL-CN0395-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0396-ardz/index.html">EVAL-CN0396-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0397-ardz/index.html">EVAL-CN0397-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0398-ardz/index.html">EVAL-CN0398-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-44" id="toctree-collapse-13-44"/><div class="collapse"><a class="reference internal" href="../eval-cn0394-ardz/index.html">EVAL-CN0394-ARDZ</a><label for="toctree-collapse-13-44"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0394-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0394-ardz/software.html">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-45" id="toctree-collapse-13-45"/><div class="collapse"><a class="reference internal" href="../eval-cn0395-ardz/index.html">EVAL-CN0395-ARDZ</a><label for="toctree-collapse-13-45"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0395-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0395-ardz/software.html">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-46" id="toctree-collapse-13-46"/><div class="collapse"><a class="reference internal" href="../eval-cn0396-ardz/index.html">EVAL-CN0396-ARDZ</a><label for="toctree-collapse-13-46"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0396-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0396-ardz/software.html">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-47" id="toctree-collapse-13-47"/><div class="collapse"><a class="reference internal" href="../eval-cn0397-ardz/index.html">EVAL-CN0397-ARDZ</a><label for="toctree-collapse-13-47"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0397-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0397-ardz/software.html">Software Demos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-48" id="toctree-collapse-13-48"/><div class="collapse"><a class="reference internal" href="../eval-cn0398-ardz/index.html">EVAL-CN0398-ARDZ</a><label for="toctree-collapse-13-48"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0398-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0398-ardz/software.html">Software Demos</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0409-ardz/index.html">EVAL-CN0409-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0410-ardz/index.html">EVAL-CN0410-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0411-ardz/index.html">EVAL-CN0411-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0414-ardz/index.html">EVAL-CN0414-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0415-ardz/index.html">EVAL-CN0415-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-49" id="toctree-collapse-13-49"/><div class="collapse"><a class="reference internal" href="../eval-cn0410-ardz/index.html">EVAL-CN0410-ARDZ</a><label for="toctree-collapse-13-49"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0410-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0410-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-50" id="toctree-collapse-13-50"/><div class="collapse"><a class="reference internal" href="../eval-cn0411-ardz/index.html">EVAL-CN0411-ARDZ</a><label for="toctree-collapse-13-50"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0411-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0411-ardz/software.html">Software Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-51" id="toctree-collapse-13-51"/><div class="collapse"><a class="reference internal" href="../eval-cn0414-ardz/index.html">EVAL-CN0414-ARDZ</a><label for="toctree-collapse-13-51"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0414-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0414-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-52" id="toctree-collapse-13-52"/><div class="collapse"><a class="reference internal" href="../eval-cn0415-ardz/index.html">EVAL-CN0415-ARDZ</a><label for="toctree-collapse-13-52"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0415-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0415-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0416-ardz/index.html">EVAL-CN0416-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0418-ardz/index.html">EVAL-CN0418-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-53" id="toctree-collapse-13-53"/><div class="collapse"><a class="reference internal" href="../eval-cn0418-ardz/index.html">EVAL-CN0418-ARDZ</a><label for="toctree-collapse-13-53"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0418-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0418-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0422-ardz/index.html">EVAL-CN0422-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0428-ebz/index.html">EVAL-CN0428-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0429-ebz/index.html">EVAL-CN0429-EBZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-39" id="toctree-collapse-13-39"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-39"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-54" id="toctree-collapse-13-54"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-54"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
@@ -718,24 +797,29 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0532-ebz/index.html">EVAL-CN0532-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0533-ardz/index.html">EVAL-CN0533-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0535-ardz/index.html">EVAL-CN0535-FMCZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-55" id="toctree-collapse-13-55"/><div class="collapse"><a class="reference internal" href="../eval-cn0535-ardz/index.html">EVAL-CN0535-FMCZ</a><label for="toctree-collapse-13-55"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0535-ardz/sdp-k1.html">CN0535 + SDP-K1</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0536-ardz/index.html">EVAL-CN0536-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0537-ardz/index.html">EVAL-CN0537-ARDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-40" id="toctree-collapse-13-40"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-40"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-56" id="toctree-collapse-13-56"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-56"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-40-1" id="toctree-collapse-13-40-1"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-40-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-56-1" id="toctree-collapse-13-56-1"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-56-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0548-ardz/index.html">EVAL-CN0548-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0548-ebz/index.html">EVAL-CN0548-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0551-ebz/index.html">EVAL-CN0551-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0552-ebz/index.html">EVAL-CN0552-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0552-pmdz/index.html">EVAL-CN0552-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
@@ -751,7 +835,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-41" id="toctree-collapse-13-41"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-41"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-57" id="toctree-collapse-13-57"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-57"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
 </ul>
@@ -761,14 +845,14 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0590-ardz/index.html">EVAL-CN0590-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-42" id="toctree-collapse-13-42"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-42"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-58" id="toctree-collapse-13-58"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-58"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ltc4306/index.html">EVAL-LTC4306-PMDZ User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ltpa-comprb/index.html">EVAL-LTPA-COMPRB</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-43" id="toctree-collapse-13-43"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-43"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-59" id="toctree-collapse-13-59"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-59"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
 </ul>
@@ -844,42 +928,359 @@ Content on this topic
             
   <section id="eval-adxl372-ardz">
 <span id="id1"></span><h1>EVAL-ADXL372-ARDZ<a class="headerlink" href="#eval-adxl372-ardz" title="Link to this heading"></a></h1>
-<p>Ultralow Power Impact Measurement.</p>
+<p>Ultralow Power, +/-200 g, 3-Axis MEMS Accelerometer Arduino Shield.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL372-ARDZ" target="_blank">EVAL-ADXL372-ARDZ</a> is an Arduino shield evaluation board for the
-<a class="icon adi reference external" href="https://www.analog.com/ADXL372" target="_blank">ADXL372</a> ultralow power, 3-axis, ±200g MEMS accelerometer. The sensor
-draws only 22 uA at 3200 Hz ODR and operates in an “Instant On” mode, remaining
-powered down until an impact event triggers measurement.</p>
-<p>The ADXL372 provides 12-bit output data at 100 mg/LSB scale factor with deep
-FIFO, activity detection modes, and multimode operation via SPI interface.</p>
-</section>
-<section id="required-equipment">
-<h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
+<a class="icon adi reference external" href="https://www.analog.com/ADXL372" target="_blank">ADXL372</a> ultralow power, 3-axis, +/-200 g MEMS accelerometer. The
+ADXL372 consumes only 22 uA at a 3200 Hz output data rate (ODR) and is
+designed for IoT applications such as:</p>
 <ul class="simple">
-<li><p>EVAL-ADXL372-ARDZ evaluation board (Arduino shield)</p></li>
-<li><p>Arduino Uno Rev 3 or <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> development board</p></li>
-<li><p>USB cable</p></li>
+<li><p>Impact and shock detection</p></li>
+<li><p>Asset health assessment</p></li>
+<li><p>Portable Internet of Things (IoT) edge nodes</p></li>
+<li><p>Concussion and head trauma detection</p></li>
+</ul>
+<p>In addition to its ultralow power consumption, the ADXL372 has many features
+to enable impact detection while providing system-level power reduction. The
+device includes a deep multimode output FIFO, several activity detection
+modes, and a method for capturing only the peak acceleration of
+over-threshold events.</p>
+<p>Two additional lower power modes with interrupt-driven wake-up features are
+available for monitoring motion during periods of inactivity. In <strong>wake-up
+mode</strong>, acceleration data can be averaged to obtain a low enough output noise
+to trigger on low-g thresholds. In <strong>instant-on mode</strong>, the ADXL372 consumes
+only 1.4 uA while continuously monitoring the environment for impacts. When
+an impact event that exceeds the internally set threshold is detected, the
+device switches to normal operating mode fast enough to record the event.</p>
+<p>The EVAL-ADXL372-ARDZ shield is designed in Arduino Uno R3 form factor,
+making it compatible with the <a class="reference internal" href="../eval-adicup3029/index.html#eval-adicup3029"><span class="std std-ref">EVAL-ADICUP3029</span></a>
+development platform as well as standard Arduino Uno R3 base boards.</p>
+</section>
+<section id="connectors-and-jumper-configuration">
+<h2>Connectors and Jumper Configuration<a class="headerlink" href="#connectors-and-jumper-configuration" title="Link to this heading"></a></h2>
+<p>The EVAL-ADXL372-ARDZ shield has four jumpers (P10, P11, P12, P13) to
+increase flexibility when stacking systems together. Each jumper and its
+purpose is described below.</p>
+<section id="adxl-cs-select-p10">
+<h3>ADXL_CS_SELECT (P10)<a class="headerlink" href="#adxl-cs-select-p10" title="Link to this heading"></a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Configuration</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pin 1-2</p></td>
+<td><p>Routes ADXL372 CS pin to CS_1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 2-3</p></td>
+<td><p>Routes ADXL372 CS pin to CS_2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="adxl-int1-select-p11">
+<h3>ADXL_INT1_SELECT (P11)<a class="headerlink" href="#adxl-int1-select-p11" title="Link to this heading"></a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Configuration</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pin 1-2</p></td>
+<td><p>Connects ADXL372 INT1 pin to INT1_A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 2-3</p></td>
+<td><p>Connects ADXL372 INT1 pin to INT1_B</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="adxl-int2-select-p12">
+<h3>ADXL_INT2_SELECT (P12)<a class="headerlink" href="#adxl-int2-select-p12" title="Link to this heading"></a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Configuration</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pin 1-2</p></td>
+<td><p>Connects ADXL372 INT2 pin to INT2_A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 2-3</p></td>
+<td><p>Connects ADXL372 INT2 pin to INT2_B</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="voltage-translator-vddio-select-p13">
+<h3>VOLTAGE TRANSLATOR VDDIO SELECT (P13)<a class="headerlink" href="#voltage-translator-vddio-select-p13" title="Link to this heading"></a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Configuration</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pin 1-2</p></td>
+<td><p>Connects ADXL VDDIO to the 3.3V Arduino pin</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin 2-3</p></td>
+<td><p>Connects ADXL VDDIO to the IOREF Arduino pin</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="connecting-mounting-the-adxl372">
+<h2>Connecting/Mounting the ADXL372<a class="headerlink" href="#connecting-mounting-the-adxl372" title="Link to this heading"></a></h2>
+<section id="direct-mounting-p5-and-p2">
+<h3>Direct Mounting (P5 and P2)<a class="headerlink" href="#direct-mounting-p5-and-p2" title="Link to this heading"></a></h3>
+<p>Connectors P5 and P2 are designed to be directly interfaced with the
+EVAL-ADXL372Z-PIN evaluation board. This creates a mechanically strong
+connection and allows for the Arduino shield to directly include the ADXL372
+sensor. Be careful when connecting the EVAL-ADXL372Z-PIN with the
+EVAL-ADXL-ARDZ-INT to make sure that all the signals go to the correct pin
+of connectors P5 and P2.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id2">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Direct Mounting Connector Pinout</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Number</p></th>
+<th class="head"><p>P5 Signal Name</p></th>
+<th class="head"><p>P2 Signal Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PIN 1</p></td>
+<td><p>DGND</p></td>
+<td><p>+3.3V</p></td>
+</tr>
+<tr class="row-odd"><td><p>PIN 2</p></td>
+<td><p>SCLK</p></td>
+<td><p>IOREF</p></td>
+</tr>
+<tr class="row-even"><td><p>PIN 3</p></td>
+<td><p>MOSI</p></td>
+<td><p>DGND</p></td>
+</tr>
+<tr class="row-odd"><td><p>PIN 4</p></td>
+<td><p>MISO</p></td>
+<td><p>INT2</p></td>
+</tr>
+<tr class="row-even"><td><p>PIN 5</p></td>
+<td><p>CS</p></td>
+<td><p>INT1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ribbon-cable-connection-p7-and-p1">
+<h3>Ribbon Cable Connection (P7 and P1)<a class="headerlink" href="#ribbon-cable-connection-p7-and-p1" title="Link to this heading"></a></h3>
+<p>Connectors P7 and P1 are designed to interface with the EVAL-ADXL372Z-PIN
+via a ribbon cable. This allows for remotely mounting the sensor when you
+cannot have the rest of the electronics on the unit being sensed. Because
+this is a cabled option, you could also use other digital-output accelerometer
+devices with the EVAL-ADXL-ARDZ-INT such as the ADXL346/46 or the ADXL355/57.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Ribbon Cable Connector Pinout</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Number</p></th>
+<th class="head"><p>P7 Signal Name</p></th>
+<th class="head"><p>P1 Signal Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PIN 1</p></td>
+<td><p>SCLK</p></td>
+<td><p>+3.3V</p></td>
+</tr>
+<tr class="row-odd"><td><p>PIN 2</p></td>
+<td><p>MOSI</p></td>
+<td><p>IOREF</p></td>
+</tr>
+<tr class="row-even"><td><p>PIN 3</p></td>
+<td><p>MISO</p></td>
+<td><p>DGND</p></td>
+</tr>
+<tr class="row-odd"><td><p>PIN 4</p></td>
+<td><p>CS</p></td>
+<td><p>DATA_RDY</p></td>
+</tr>
+<tr class="row-even"><td><p>PIN 5</p></td>
+<td><p>SDA</p></td>
+<td><p>INT1</p></td>
+</tr>
+<tr class="row-odd"><td><p>PIN 6</p></td>
+<td><p>SCL</p></td>
+<td><p>INT2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="design-and-integration-files">
+<h2>Design and Integration Files<a class="headerlink" href="#design-and-integration-files" title="Link to this heading"></a></h2>
+<p><a class="icon link reference external" href="https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/eval-adxl372-ardz-designsupport.zip" target="_blank">EVAL-ADXL372-ARDZ Design &amp; Integration Files</a></p>
+<ul class="simple">
+<li><p>Schematic</p></li>
+<li><p>PCB Layout</p></li>
+<li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
 </ul>
 </section>
-<section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<section id="adicup3029-high-impact-detection-demo-bluetooth">
+<h2>ADICUP3029 High Impact Detection Demo (Bluetooth)<a class="headerlink" href="#adicup3029-high-impact-detection-demo-bluetooth" title="Link to this heading"></a></h2>
+<p>This demo uses the EVAL-ADXL372-ARDZ along with the
+<a class="reference internal" href="../eval-adicup3029/index.html#eval-adicup3029"><span class="std std-ref">EVAL-ADICUP3029</span></a> to create an impact measurement
+application. The ADXL372 is configured to operate in “Instant On” mode, which
+means that the device is powered down until the sensor records an impact event
+that triggers a threshold. Once that level is surpassed, the ADXL372
+automatically goes into measurement mode to capture the rest of the impact
+event.</p>
+<p>The EVAL-ADICUP3029 is designed for IoT applications and comes with an
+on-board <strong>Bluetooth 5.0</strong> module. The ADuCM3029 is placed in “Flexi” mode to
+optimize its ultra-low power consumption and can only be woken up from an
+external interrupt that comes from the ADXL372 impact sensor. At that point
+the ADuCM3029 is placed into full power mode to perform the necessary
+application tasks, before being placed back into “Flexi” mode.</p>
+<p>The data is sent via Bluetooth 5.0 to an iOS smart device, where all the max
+impact data can be read.</p>
+<p>Both boards and all components are used in their respective low power modes
+to optimize the solution’s battery life.</p>
+<section id="demo-requirements">
+<h3>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h3>
+<p>Hardware:</p>
 <ul class="simple">
-<li><p>Plug the EVAL-ADXL372-ARDZ shield onto the Arduino Uno or ADICUP3029 by
-matching POWER, ANALOG, DIGI0, DIGI1 connectors.</p></li>
-<li><p>Configure jumpers P10, P11, P12 to Pin 1-2 positions.</p></li>
-<li><p>Connect USB cable from the base board to PC.</p></li>
-<li><p>INT1 on Pin 7, INT2 on Pin 5.</p></li>
+<li><p><a class="reference internal" href="../eval-adicup3029/index.html#eval-adicup3029"><span class="std std-ref">EVAL-ADICUP3029</span></a></p></li>
+<li><p>EVAL-ADXL372-ARDZ</p></li>
+<li><p>Micro-USB to USB cable</p></li>
+<li><p>PC or laptop with a USB port</p></li>
+<li><p>iOS smart phone/tablet (optional, for Bluetooth display)</p></li>
+</ul>
+<p>Software:</p>
+<ul class="simple">
+<li><p>ADuCM3029_Asset_Health demo software</p></li>
+<li><p>CrossCore Embedded Studio (2.6.0 or higher)</p></li>
+<li><p>ADuCM302x DFP (2.0.0 or higher)</p></li>
+<li><p>ADICUP3029 BSP (1.0.0 or higher)</p></li>
+<li><p>iOS IoTNode App (optional)</p></li>
+<li><p>Serial terminal program such as PuTTY or Tera Term (optional, for UART
+output)</p></li>
 </ul>
 </section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>For Arduino Uno, load the ADXL372_example sketch via the Arduino IDE.
-Activity threshold (ACT_VALUE) and inactivity timer (INACT_TIMER) are
-configurable in ADXL372.h. Serial output at 9600 baud. Source code is
-available on GitHub.</p>
-<p>For EVAL-ADICUP3029, use CrossCore Embedded Studios with the ADXL372 demo
-project.</p>
+<section id="setting-up-the-hardware">
+<h3>Setting Up the Hardware<a class="headerlink" href="#setting-up-the-hardware" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Set switch <strong>S2</strong> to <strong>USB Arduino</strong> function in order to view data over
+UART. The UART baud rate is <strong>9600</strong> baud.</p></li>
+<li><p>Place the <strong>EVAL-ADXL372-ARDZ-INT</strong> on top of the <strong>EVAL-ADICUP3029</strong>.</p></li>
+<li><p>Make sure the jumpers <strong>P10, P11, P12</strong> are configured as follows:</p>
+<ul class="simple">
+<li><p>P10 – Pin 1-2</p></li>
+<li><p>P11 – Pin 1-2</p></li>
+<li><p>P12 – Pin 1-2</p></li>
+</ul>
+</li>
+<li><p>Plug in the micro-USB cable into the (P10) USB port on the EVAL-ADICUP3029,
+and the other end into the PC or laptop.</p></li>
+</ol>
+</section>
+<section id="obtaining-the-software">
+<h3>Obtaining the Software<a class="headerlink" href="#obtaining-the-software" title="Link to this heading"></a></h3>
+<p>There are two basic ways to program the ADICUP3029 with the software for
+the ADXL372:</p>
+<ol class="arabic simple">
+<li><p><strong>Drag and Drop</strong> – Drag the prebuilt <code class="docutils literal notranslate"><span class="pre">.hex</span></code> file to the DAPLink drive.
+This is the easiest way to get started with the reference design.</p></li>
+<li><p><strong>Build and Debug</strong> – Import the project into CrossCore Embedded Studio
+to customize the software parameters.</p></li>
+</ol>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_Asset_Health.hex" target="_blank">ADuCM3029_Asset_Health.hex (prebuilt)</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_Asset_Health" target="_blank">ADuCM3029_Asset_Health Source Code</a></p></li>
+</ul>
+</section>
+<section id="serial-terminal-output">
+<h3>Serial Terminal Output<a class="headerlink" href="#serial-terminal-output" title="Link to this heading"></a></h3>
+<p>To establish connection over UART, a micro-USB cable connected to the board
+and a serial console program like <a class="icon link reference external" href="http://www.putty.org/" target="_blank">PuTTY</a> are
+required. The UART configuration is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>COM Port: &lt;Select your COM port&gt;
+Baud rate: 9600
+Data: 8 bit
+Parity: none
+Stop: 1 bit
+Flow Control: none
+</pre></div>
+</div>
+</section>
+<section id="smart-device-output">
+<h3>Smart Device Output<a class="headerlink" href="#smart-device-output" title="Link to this heading"></a></h3>
+<p>Open up the IoTNode app on your iOS smart phone or tablet:</p>
+<ol class="arabic simple">
+<li><p>Press the <strong>Scan</strong> button on the bottom left corner for the app to start
+searching for Bluetooth devices.</p></li>
+<li><p>Once the device is visible, press <strong>Connect</strong> to access the information
+provided over Bluetooth.</p></li>
+<li><p>After connecting and generating enough acceleration (minimum of <strong>10 g</strong>
+on any axis), information will be displayed on the application. To generate
+this high value of acceleration, tap the board against your hand (do not
+apply excessive force to avoid damaging the device).</p></li>
+</ol>
+</section>
+<section id="project-structure">
+<h3>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h3>
+<p>The project is structured in 3 layers:</p>
+<ul class="simple">
+<li><p><strong>Hardware layer</strong> – ADXL372</p></li>
+<li><p><strong>Communication layer</strong> – SPI interface between sensor and MCU</p></li>
+<li><p><strong>Application layer</strong> – ADuCM3029 and EM9304 BLE</p></li>
+</ul>
+<p>The ADXL372 transmits data to the ADuCM3029 controller through the
+Communication layer. The data is processed and sent over BLE to a mobile
+device.</p>
+</section>
 </section>
 <section id="documents">
 <h2>Documents<a class="headerlink" href="#documents" title="Link to this heading"></a></h2>
@@ -891,6 +1292,8 @@ project.</p>
 <h2>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADXL372" target="_blank">ADXL372 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL372-ARDZ" target="_blank">EVAL-ADXL372-ARDZ Product Page</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029 GitHub Repository</a></p></li>
 </ul>
 </section>
 <section id="help-and-support">

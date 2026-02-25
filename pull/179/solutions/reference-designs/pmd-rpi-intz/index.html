@@ -95,10 +95,19 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">PMD-RPI-INTZ</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#evaluation-kit-contents">Evaluation Kit Contents</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adapter-board-hardware">Adapter Board Hardware</a><ul>
+<li><a class="reference internal" href="#spi-pmod-connectors-p1-and-p2">SPI Pmod Connectors (P1 and P2)</a></li>
+<li><a class="reference internal" href="#i2c-pmod-connectors-p3-and-p4">I2C Pmod Connectors (P3 and P4)</a></li>
+<li><a class="reference internal" href="#quikeval-demo-board-connector-and-spi-i2c-switch-p5-and-sw1">QuikEval Demo Board Connector and SPI/I2C Switch (P5 and SW1)</a></li>
+<li><a class="reference internal" href="#dc1613a-compatible-demo-board-connector-p6">DC1613A-Compatible Demo Board Connector (P6)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#changing-the-raspberry-pi-gpio-assignments">Changing the Raspberry Pi GPIO Assignments</a></li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
 <li><a class="reference internal" href="#help-and-support">Help and Support</a></li>
 </ul>
@@ -555,14 +564,10 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ad5770r-pmdz/index.html">EVAL-AD5770R-PMDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="../eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33" id="toctree-collapse-13-33"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-33"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33-1" id="toctree-collapse-13-33-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-33-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32-1" id="toctree-collapse-13-32-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-32-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
@@ -572,10 +577,10 @@ Content on this topic
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-34" id="toctree-collapse-13-34"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-34"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33" id="toctree-collapse-13-33"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-33"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-34-1" id="toctree-collapse-13-34-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-34-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33-1" id="toctree-collapse-13-33-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-33-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
@@ -584,7 +589,7 @@ Content on this topic
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-35" id="toctree-collapse-13-35"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-35"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-34" id="toctree-collapse-13-34"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-34"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
@@ -592,40 +597,46 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-adicup360/index.html">EVAL-ADICUP360</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adm3055e-ardz/index.html">EVAL-ADM3055E-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adpd4100-ardz/index.html">EVAL-ADPD4100-ARDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36" id="toctree-collapse-13-36"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-36"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-35" id="toctree-collapse-13-35"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-35"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36-1" id="toctree-collapse-13-36-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-36-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-35-1" id="toctree-collapse-13-35-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-35-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37" id="toctree-collapse-13-37"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-37"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36" id="toctree-collapse-13-36"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-36"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37-1" id="toctree-collapse-13-37-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-37-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36-1" id="toctree-collapse-13-36-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-36-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-38" id="toctree-collapse-13-38"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-38"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37" id="toctree-collapse-13-37"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-37"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9032/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9032/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-38-1" id="toctree-collapse-13-38-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-38-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37-1" id="toctree-collapse-13-37-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-37-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-adt7420-pmdz/index.html">EVAL-ADT7420-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-38" id="toctree-collapse-13-38"/><div class="collapse"><a class="reference internal" href="../eval-adt7420-pmdz/index.html">EVAL-ADT7420-PMDZ</a><label for="toctree-collapse-13-38"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adt7420-pmdz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl313z/index.html">EVAL-ADXL313Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl357bz/index.html">EVAL-ADXL357BZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl362-ardz/index.html">EVAL-ADXL362-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl372-ardz/index.html">EVAL-ADXL372-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-adxrs290-pmdz/index.html">EVAL-ADXRS290-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-39" id="toctree-collapse-13-39"/><div class="collapse"><a class="reference internal" href="../eval-adxrs290-pmdz/index.html">EVAL-ADXRS290-PMDZ</a><label for="toctree-collapse-13-39"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adxrs290-pmdz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0150-sdpz/index.html">EVAL-CN0150-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0178-sdpz/index.html">EVAL-CN0178-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0179-sdpz/index.html">EVAL-CN0179-PMDZ</a></li>
@@ -639,6 +650,11 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0202-sdpz/index.html">EVAL-CN0202-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0203-sdpz/index.html">EVAL-CN0203-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0204-sdpz/index.html">EVAL-CN0204-SDPZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-40" id="toctree-collapse-13-40"/><div class="collapse"><a class="reference internal" href="../eval-cn0216-ardz/index.html">EVAL-CN0216-ARDZ</a><label for="toctree-collapse-13-40"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
@@ -648,7 +664,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0251-sdpz/index.html">EVAL-CN0251-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0254-sdpz/index.html">EVAL-CN0254-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0269-sdpz/index.html">EVAL-CN0269-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0270-sdpz/index.html">EVAL-CN0270-SDPZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0270-sdpz/index.html">EVAL-CN0270-EB1Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0271-sdpz/index.html">EVAL-CN0271-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0272-sdpz/index.html">EVAL-CN0272-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0274-sdpz/index.html">EVAL-CN0274-SDPZ</a></li>
@@ -660,11 +676,23 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0296-sdpz/index.html">EVAL-CN0296-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0300-sdpz/index.html">EVAL-CN0300-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0301-ardz/index.html">EVAL-CN0301-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0326-sdpz/index.html">EVAL-CN0326-SDPZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-41" id="toctree-collapse-13-41"/><div class="collapse"><a class="reference internal" href="../eval-cn0326-sdpz/index.html">EVAL-CN0326-PMDZ</a><label for="toctree-collapse-13-41"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0326-sdpz/software.html">ADICUP360/ADICUP3029 Demo</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0335-pmdz/index.html">EVAL-CN0335-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0336-ardz/index.html">EVAL-CN0336-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-42" id="toctree-collapse-13-42"/><div class="collapse"><a class="reference internal" href="../eval-cn0337-pmdz/index.html">EVAL-CN0337-PMDZ</a><label for="toctree-collapse-13-42"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0337-pmdz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0337-pmdz/software.html">Software Demo</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0337-sdpz/index.html">EVAL-CN0337-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0338-ardz/index.html">EVAL-CN0338-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-43" id="toctree-collapse-13-43"/><div class="collapse"><a class="reference internal" href="../eval-cn0338-ardz/index.html">EVAL-CN0338-ARDZ</a><label for="toctree-collapse-13-43"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0338-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0338-ardz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0343-sdpz/index.html">EVAL-CN0343-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0346-pmdz/index.html">EVAL-CN0346-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0348-pmdz/index.html">EVAL-CN0348-PMDZ</a></li>
@@ -677,28 +705,69 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0368-sdpz/index.html">EVAL-CN0368-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0370-ardz/index.html">EVAL-CN0370-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0371-sdpz/index.html">EVAL-CN0371-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0372-ardz/index.html">EVAL-CN0372-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0372-ardz/index.html">EVAL-CN0372-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0376-ardz/index.html">EVAL-CN0376-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0376-sdpz/index.html">EVAL-CN0376-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0385-ardz/index.html">EVAL-CN0385-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0385-ardz/index.html">EVAL-CN0385-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0393-ardz/index.html">EVAL-CN0393-FMCZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0394-ardz/index.html">EVAL-CN0394-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0395-ardz/index.html">EVAL-CN0395-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0396-ardz/index.html">EVAL-CN0396-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0397-ardz/index.html">EVAL-CN0397-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0398-ardz/index.html">EVAL-CN0398-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-44" id="toctree-collapse-13-44"/><div class="collapse"><a class="reference internal" href="../eval-cn0394-ardz/index.html">EVAL-CN0394-ARDZ</a><label for="toctree-collapse-13-44"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0394-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0394-ardz/software.html">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-45" id="toctree-collapse-13-45"/><div class="collapse"><a class="reference internal" href="../eval-cn0395-ardz/index.html">EVAL-CN0395-ARDZ</a><label for="toctree-collapse-13-45"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0395-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0395-ardz/software.html">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-46" id="toctree-collapse-13-46"/><div class="collapse"><a class="reference internal" href="../eval-cn0396-ardz/index.html">EVAL-CN0396-ARDZ</a><label for="toctree-collapse-13-46"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0396-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0396-ardz/software.html">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-47" id="toctree-collapse-13-47"/><div class="collapse"><a class="reference internal" href="../eval-cn0397-ardz/index.html">EVAL-CN0397-ARDZ</a><label for="toctree-collapse-13-47"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0397-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0397-ardz/software.html">Software Demos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-48" id="toctree-collapse-13-48"/><div class="collapse"><a class="reference internal" href="../eval-cn0398-ardz/index.html">EVAL-CN0398-ARDZ</a><label for="toctree-collapse-13-48"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0398-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0398-ardz/software.html">Software Demos</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0409-ardz/index.html">EVAL-CN0409-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0410-ardz/index.html">EVAL-CN0410-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0411-ardz/index.html">EVAL-CN0411-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0414-ardz/index.html">EVAL-CN0414-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0415-ardz/index.html">EVAL-CN0415-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-49" id="toctree-collapse-13-49"/><div class="collapse"><a class="reference internal" href="../eval-cn0410-ardz/index.html">EVAL-CN0410-ARDZ</a><label for="toctree-collapse-13-49"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0410-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0410-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-50" id="toctree-collapse-13-50"/><div class="collapse"><a class="reference internal" href="../eval-cn0411-ardz/index.html">EVAL-CN0411-ARDZ</a><label for="toctree-collapse-13-50"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0411-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0411-ardz/software.html">Software Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-51" id="toctree-collapse-13-51"/><div class="collapse"><a class="reference internal" href="../eval-cn0414-ardz/index.html">EVAL-CN0414-ARDZ</a><label for="toctree-collapse-13-51"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0414-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0414-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-52" id="toctree-collapse-13-52"/><div class="collapse"><a class="reference internal" href="../eval-cn0415-ardz/index.html">EVAL-CN0415-ARDZ</a><label for="toctree-collapse-13-52"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0415-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0415-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0416-ardz/index.html">EVAL-CN0416-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0418-ardz/index.html">EVAL-CN0418-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-53" id="toctree-collapse-13-53"/><div class="collapse"><a class="reference internal" href="../eval-cn0418-ardz/index.html">EVAL-CN0418-ARDZ</a><label for="toctree-collapse-13-53"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0418-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0418-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0422-ardz/index.html">EVAL-CN0422-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0428-ebz/index.html">EVAL-CN0428-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0429-ebz/index.html">EVAL-CN0429-EBZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-39" id="toctree-collapse-13-39"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-39"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-54" id="toctree-collapse-13-54"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-54"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
@@ -717,24 +786,29 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0532-ebz/index.html">EVAL-CN0532-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0533-ardz/index.html">EVAL-CN0533-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0535-ardz/index.html">EVAL-CN0535-FMCZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-55" id="toctree-collapse-13-55"/><div class="collapse"><a class="reference internal" href="../eval-cn0535-ardz/index.html">EVAL-CN0535-FMCZ</a><label for="toctree-collapse-13-55"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0535-ardz/sdp-k1.html">CN0535 + SDP-K1</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0536-ardz/index.html">EVAL-CN0536-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0537-ardz/index.html">EVAL-CN0537-ARDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-40" id="toctree-collapse-13-40"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-40"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-56" id="toctree-collapse-13-56"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-56"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-40-1" id="toctree-collapse-13-40-1"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-40-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-56-1" id="toctree-collapse-13-56-1"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-56-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0548-ardz/index.html">EVAL-CN0548-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0548-ebz/index.html">EVAL-CN0548-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0551-ebz/index.html">EVAL-CN0551-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0552-ebz/index.html">EVAL-CN0552-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0552-pmdz/index.html">EVAL-CN0552-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
@@ -750,7 +824,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-41" id="toctree-collapse-13-41"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-41"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-57" id="toctree-collapse-13-57"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-57"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
 </ul>
@@ -760,14 +834,14 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0590-ardz/index.html">EVAL-CN0590-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-42" id="toctree-collapse-13-42"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-42"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-58" id="toctree-collapse-13-58"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-58"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ltc4306/index.html">EVAL-LTC4306-PMDZ User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ltpa-comprb/index.html">EVAL-LTPA-COMPRB</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-43" id="toctree-collapse-13-43"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-43"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-59" id="toctree-collapse-13-59"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-59"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
 </ul>
@@ -846,40 +920,986 @@ Content on this topic
 <p>Raspberry Pi PMOD Adapter Board.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p>The PMD-RPI-INTZ is an add-on adapter board (HAT-compatible) for Raspberry Pi
-that provides interfaces for up to 4 PMOD boards (2 SPI, 2 I2C), 1 QuikEval
-demo board, and 1 DC1613A-compatible demo board. An ID EEPROM enables
-auto-configuration.</p>
-</section>
-<section id="required-equipment">
-<h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a> is an add-on adapter board for the Raspberry Pi that
+allows interfacing with up to 4 Pmod boards (2 SPI devices, 2 I2C devices),
+1 QuikEval demo board and 1 <a class="icon adi reference external" href="https://www.analog.com/DC1613A" target="_blank">DC1613A</a>-compatible demonstration board.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_angle.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_angle.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_angle.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">PMD-RPI-INTZ adapter board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a> follows the standard Raspberry Pi HAT mechanical
+specifications, minus the cutouts for the camera and display flexis. An ID
+EEPROM is also included on the board to allow auto-configuration.</p>
+<section id="evaluation-kit-contents">
+<h3>Evaluation Kit Contents<a class="headerlink" href="#evaluation-kit-contents" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>PMD-RPI-INTZ adapter board</p></li>
-<li><p>Raspberry Pi (40-pin GPIO header compatible)</p></li>
-<li><p>PMOD devices (SPI or I2C compatible, 3.3 V logic only)</p></li>
-<li><p>Optional: QuikEval or DC1613A demo boards</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a> Adapter Board</p></li>
 </ul>
 </section>
-<section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p><strong>P1, P2</strong> – SPI PMOD connectors (2x6 female headers).</p></li>
-<li><p><strong>P3, P4</strong> – I2C PMOD connectors (2x6 female headers).</p></li>
-<li><p><strong>P5</strong> – QuikEval demo board connector with SPI/I2C switch (SW1).</p></li>
-<li><p><strong>P6</strong> – DC1613A-compatible connector.</p></li>
-<li><p><strong>P9</strong> – 40-pin Raspberry Pi GPIO connector.</p></li>
-</ul>
+</section>
+<section id="adapter-board-hardware">
+<h2>Adapter Board Hardware<a class="headerlink" href="#adapter-board-hardware" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_top_labels.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_top_labels.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_top_labels.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">PMD-RPI-INTZ board top view with component labels</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There is no level translation provided on the <a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a>. Only
+connect devices that operate with 3.3 V logic levels. Do not apply higher
+logic levels on the IO pins to avoid damaging the Raspberry Pi.</p>
+</div>
+<section id="spi-pmod-connectors-p1-and-p2">
+<h3>SPI Pmod Connectors (P1 and P2)<a class="headerlink" href="#spi-pmod-connectors-p1-and-p2" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_spi_pmod_connectors.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_spi_pmod_connectors.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_spi_pmod_connectors.png" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">SPI Pmod connectors P1 and P2</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Pmod devices that use the SPI interface should be connected to either of the
+two 2x6 female headers located on the left-hand side of the
+<a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a>. Each header pin is connected to a Raspberry Pi GPIO pin
+through the 40-pin connector (P9).</p>
+<p>The table below lists the default Raspberry Pi GPIO pin assignments for the P1
+pins and their corresponding functions.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id5">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">SPI Pmod Connector #1 (P1) Pinout</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 30.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Number</p></th>
+<th class="head"><p>Default Raspberry Pi Pin Assignment</p></th>
+<th class="head"><p>Pin Function on the PMD-RPI-INTZ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin 24 (GPIO8) <sup>1</sup></p></td>
+<td><p><strong>SPI Pmod #1 CS1.</strong> SPI Chip Select #1 from the Raspberry Pi to the
+Pmod device.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin 19 (SPI0 MOSI) <sup>2</sup></p></td>
+<td><p><strong>MOSI.</strong> SPI Data from the Raspberry Pi to the Pmod device.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Pin 21 (SPI0 MISO) <sup>2</sup></p></td>
+<td><p><strong>MISO.</strong> SPI Data from the Pmod device to the Raspberry Pi.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin 23 (SPI0 SCLK) <sup>2</sup></p></td>
+<td><p><strong>SCLK.</strong> SPI Clock from the Raspberry Pi to the Pmod device.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>3V3 Power</p></td>
+<td><p><strong>SPI Pmod #1 VCC.</strong> Connected to the 3.3 V Regulator Output of the
+Raspberry Pi.</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Pin 35 (GPIO19)</p></td>
+<td><p><strong>SPI Pmod #1 INT.</strong> Interrupt Signal from the Pmod device to the
+Raspberry Pi.</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Pin 40 (GPIO21)</p></td>
+<td><p><strong>SPI Pmod #1 RESET.</strong> Reset Signal from the Raspberry Pi to the Pmod
+device.</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>Pin 38 (GPIO20)</p></td>
+<td><p><strong>SPI Pmod #1 CS2.</strong> SPI Chip Select #2 from the Raspberry Pi to the
+Pmod device.</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>Pin 12 (GPIO18)</p></td>
+<td><p><strong>SPI Pmod #1 CS3.</strong> SPI Chip Select #3 from the Raspberry Pi to the
+Pmod device.</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>3V3 Power</p></td>
+<td><p><strong>SPI Pmod #1 VCC.</strong> Connected to the 3.3 V Regulator Output of the
+Raspberry Pi.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><sup>1</sup> IO pin shared with the QuikEval Demo Board Connector (P5).</div>
+<div class="line"><sup>2</sup> IO pins shared with the SPI Pmod Connector #2 (P2) and the QuikEval
+Demo Board Connector (P5).</div>
+</div>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_spi_pmod_labels.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_spi_pmod_labels.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_spi_pmod_labels.png" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">SPI Pmod connector pin labels</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Similarly, the table below lists the default Raspberry Pi GPIO pin assignments
+for the P2 pins and their corresponding functions.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id7">
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">SPI Pmod Connector #2 (P2) Pinout</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 30.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Number</p></th>
+<th class="head"><p>Default Raspberry Pi Pin Assignment</p></th>
+<th class="head"><p>Pin Function on the PMD-RPI-INTZ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin 26 (GPIO7)</p></td>
+<td><p><strong>SPI Pmod #2 CS1.</strong> SPI Chip Select #1 from the Raspberry Pi to the
+Pmod device.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin 19 (SPI0 MOSI) <sup>1</sup></p></td>
+<td><p><strong>MOSI.</strong> SPI Data from the Raspberry Pi to the Pmod device.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Pin 21 (SPI0 MISO) <sup>1</sup></p></td>
+<td><p><strong>MISO.</strong> SPI Data from the Pmod device to the Raspberry Pi.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin 23 (SPI0 SCLK) <sup>1</sup></p></td>
+<td><p><strong>SCLK.</strong> SPI Clock from the Raspberry Pi to the Pmod device.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>3V3 Power</p></td>
+<td><p><strong>SPI Pmod #2 VCC.</strong> Connected to the 3.3 V Regulator Output of the
+Raspberry Pi.</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Pin 22 (GPIO25)</p></td>
+<td><p><strong>SPI Pmod #2 INT.</strong> Interrupt Signal from the Pmod device to the
+Raspberry Pi.</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Pin 32 (GPIO12)</p></td>
+<td><p><strong>SPI Pmod #2 RESET.</strong> Reset Signal from the Raspberry Pi to the Pmod
+device.</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>Pin 29 (GPIO5)</p></td>
+<td><p><strong>SPI Pmod #2 CS2.</strong> SPI Chip Select #2 from the Raspberry Pi to the
+Pmod device.</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>Pin 31 (GPIO6)</p></td>
+<td><p><strong>SPI Pmod #2 CS3.</strong> SPI Chip Select #3 from the Raspberry Pi to the
+Pmod device.</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>3V3 Power</p></td>
+<td><p><strong>SPI Pmod #2 VCC.</strong> Connected to the 3.3 V Regulator Output of the
+Raspberry Pi.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><sup>1</sup> IO pins shared with the SPI Pmod Connector #1 (P1) and the QuikEval
+Demo Board Connector (P5).</p>
+</section>
+<section id="i2c-pmod-connectors-p3-and-p4">
+<h3>I2C Pmod Connectors (P3 and P4)<a class="headerlink" href="#i2c-pmod-connectors-p3-and-p4" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_i2c_pmod_connectors.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_i2c_pmod_connectors.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_i2c_pmod_connectors.png" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">I2C Pmod connectors P3 and P4</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Pmod devices that use the I2C interface should be connected to either of the
+two 2x6 female headers located on the lower side of the <a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a>.
+Each header pin is connected to a Raspberry Pi GPIO pin through the 40-pin
+connector (P9).</p>
+<p>The table below lists the default Raspberry Pi GPIO pin assignments for the P3
+pins and their corresponding functions.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id9">
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">I2C Pmod Connector #1 (P3) Pinout</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 30.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Numbers</p></th>
+<th class="head"><p>Default Raspberry Pi Pin Assignment</p></th>
+<th class="head"><p>Pin Function on the PMD-RPI-INTZ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1 &amp; 7</p></td>
+<td><p>Pin 37 (GPIO26)</p></td>
+<td><p><strong>I2C Pmod #1 INT.</strong> Interrupt Signal from the Pmod device to the
+Raspberry Pi.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2 &amp; 8</p></td>
+<td><p>Pin 33 (GPIO13)</p></td>
+<td><p><strong>I2C Pmod #1 RESET.</strong> Reset Signal from the Raspberry Pi to the Pmod
+device.</p></td>
+</tr>
+<tr class="row-even"><td><p>3 &amp; 9</p></td>
+<td><p>Pin 5 (I2C SCL) <sup>1</sup></p></td>
+<td><p><strong>SCL.</strong> I2C Clock from the Raspberry Pi to the Pmod device.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4 &amp; 10</p></td>
+<td><p>Pin 3 (I2C SDA) <sup>1</sup></p></td>
+<td><p><strong>SDA.</strong> I2C Data from the Raspberry Pi to the Pmod device.</p></td>
+</tr>
+<tr class="row-even"><td><p>5 &amp; 11</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>6 &amp; 12</p></td>
+<td><p>3V3 Power</p></td>
+<td><p><strong>I2C Pmod #1 VCC.</strong> Connected to the 3.3 V Regulator Output of the
+Raspberry Pi.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><sup>1</sup> IO pins shared with the I2C Pmod Connector #2 (P4), the QuikEval Demo
+Board Connector (P5) and the <a class="icon adi reference external" href="https://www.analog.com/DC1613A" target="_blank">DC1613A</a>-Compatible Demo Board Connector
+(P6).</p>
+<p>Similarly, the table below lists the default Raspberry Pi GPIO pin assignments
+for the P4 pins and their corresponding functions.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id10">
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">I2C Pmod Connector #2 (P4) Pinout</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 30.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Numbers</p></th>
+<th class="head"><p>Default Raspberry Pi Pin Assignment</p></th>
+<th class="head"><p>Pin Function on the PMD-RPI-INTZ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1 &amp; 7</p></td>
+<td><p>Pin 13 (GPIO27)</p></td>
+<td><p><strong>I2C Pmod #2 INT.</strong> Interrupt Signal from the Pmod device to the
+Raspberry Pi.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2 &amp; 8</p></td>
+<td><p>Pin 11 (GPIO17)</p></td>
+<td><p><strong>I2C Pmod #2 RESET.</strong> Reset Signal from the Raspberry Pi to the Pmod
+device.</p></td>
+</tr>
+<tr class="row-even"><td><p>3 &amp; 9</p></td>
+<td><p>Pin 5 (I2C SCL) <sup>1</sup></p></td>
+<td><p><strong>SCL.</strong> I2C Clock from the Raspberry Pi to the Pmod device.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4 &amp; 10</p></td>
+<td><p>Pin 3 (I2C SDA) <sup>1</sup></p></td>
+<td><p><strong>SDA.</strong> I2C Data from the Raspberry Pi to the Pmod device.</p></td>
+</tr>
+<tr class="row-even"><td><p>5 &amp; 11</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>6 &amp; 12</p></td>
+<td><p>3V3 Power</p></td>
+<td><p><strong>I2C Pmod #2 VCC.</strong> Connected to the 3.3 V Regulator Output of the
+Raspberry Pi.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><sup>1</sup> IO pins shared with the I2C Pmod Connector #1 (P3), the QuikEval Demo
+Board Connector (P5) and the <a class="icon adi reference external" href="https://www.analog.com/DC1613A" target="_blank">DC1613A</a>-Compatible Demo Board Connector
+(P6).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>No level translation is provided. Only 3.3 V compatible devices are
-supported.</p>
+<p><strong>Connecting Hardware Designed for Digilent I2C Pmod Interface Specification
+Ver. 1.0.0:</strong></p>
+<p>Version 1.0.0 of the Digilent Pmod Interface Specification required 2x4
+headers to be used for I2C devices; Pmod boards that follow this old standard
+should be connected to either P3 or P4 as shown below:</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_i2c_pmod_2x4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_i2c_pmod_2x4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_i2c_pmod_2x4.png" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Connecting old 2x4 I2C Pmod devices</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </div>
 </section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>Linux device drivers for PMOD devices are supported via the IIO framework.
-Auto-configuration is enabled via the ID EEPROM. Compatible with PyADI-IIO
-and IIO Oscilloscope for data visualization.</p>
+<section id="quikeval-demo-board-connector-and-spi-i2c-switch-p5-and-sw1">
+<h3>QuikEval Demo Board Connector and SPI/I2C Switch (P5 and SW1)<a class="headerlink" href="#quikeval-demo-board-connector-and-spi-i2c-switch-p5-and-sw1" title="Link to this heading"></a></h3>
+<p>QuikEval demonstration boards should be connected to the 14-pin shrouded header
+through a <a class="icon adi reference external" href="https://www.analog.com/CA2440" target="_blank">CA2440</a> ribbon cable (included with each demo board). Each
+header pin is connected to a Raspberry Pi GPIO pin through the 40-pin connector
+(P9).</p>
+<p>The table below lists the default Raspberry Pi GPIO pin assignments for the P5
+pins and their corresponding functions.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_quikeval_connector.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_quikeval_connector.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_quikeval_connector.png" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">QuikEval demo board connector P5</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id13">
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">QuikEval Demo Board Connector (P5) Pinout</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 30.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Number</p></th>
+<th class="head"><p>Default Raspberry Pi Pin Assignment</p></th>
+<th class="head"><p>Pin Function on the PMD-RPI-INTZ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>5V Power</p></td>
+<td><p><strong>QuikEval Demo Board Auxiliary Power.</strong> Normally connected to 5 V but
+external power can be applied using JP1 and EXT_V+.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>3V3 Power</p></td>
+<td><p><strong>QuikEval Demo Board VCCIO.</strong> Connected to the 3.3 V Regulator Output
+of the Raspberry Pi.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin 23 (SPI0 SCLK) <sup>1</sup> or Pin 5 (I2C1 SCL) <sup>2</sup></p></td>
+<td><p><strong>SCLK (SPI)</strong> or <strong>SCL (I2C).</strong> Select the appropriate clock pin for
+the demo board using SW1.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Pin 21 (SPI0 MISO) <sup>1</sup></p></td>
+<td><p><strong>MISO.</strong> SPI Data from the Pmod device to the Raspberry Pi.</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Pin 24 (GPIO8) <sup>1</sup></p></td>
+<td><p><strong>QuikEval Demo Board CS.</strong> SPI Chip Select Signal from the Raspberry
+Pi to the demo board.</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Pin 19 (SPI0 MOSI) <sup>1</sup> or Pin 3 (I2C1 SDA) <sup>2</sup></p></td>
+<td><p><strong>MOSI (SPI)</strong> or <strong>SDA (I2C).</strong> Select the appropriate data pin for
+the demo board using SW1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>Pin 3 (I2C1 SDA) <sup>2</sup></p></td>
+<td><p><strong>QuikEval Demo Board EESDA.</strong> I2C Data exchanged between the
+Raspberry Pi and the demo board EEPROM.</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>5V Power</p></td>
+<td><p><strong>QuikEval Demo Board EEVCC.</strong> Connected to the 5 V Input Power of
+the Raspberry Pi. Used to supply power to the demo board EEPROM.</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>Pin 5 (I2C1 SCL) <sup>2</sup></p></td>
+<td><p><strong>QuikEval Demo Board EESCL.</strong> I2C Clock from the Raspberry Pi to the
+demo board EEPROM.</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>Pin 15 (GPIO22)</p></td>
+<td><p><strong>QuikEval Demo Board GPIO.</strong> Actual function depends on the demo
+board.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><sup>1</sup> IO pins shared with the SPI Pmod Connector #1 (P1) and the SPI Pmod
+Connector #2 (P2).</div>
+<div class="line"><sup>2</sup> IO pins shared with the I2C Pmod Connector #1 (P3), the I2C Pmod
+Connector #2 (P4) and the <a class="icon adi reference external" href="https://www.analog.com/DC1613A" target="_blank">DC1613A</a>-Compatible Demo Board Connector (P6).</div>
+</div>
+<p>QuikEval demonstration boards will use either the SPI or the I2C interface,
+depending on the model. Change the setting of the slide switch SW1 accordingly.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_sw1.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_sw1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_sw1.jpg" style="width: 150px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">SW1 SPI/I2C selection switch</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some QuikEval demonstration boards have the option of being powered via an
+auxiliary power pin (Pin 1 of P6). To accomplish this with the
+<a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a>, connect an external power supply to EXT_V+ and change
+the setting of the solder jumper JP1.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id15">
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">JP1 Configuration</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>JP1 Setting</p></th>
+<th class="head"><p>EXT_V+ Configuration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Open (Default)</p></td>
+<td><p>Tied to +5 V power supply of the Raspberry Pi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shorted</p></td>
+<td><p>Can use an external power supply via the EXT_V+ test point</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="dc1613a-compatible-demo-board-connector-p6">
+<h3>DC1613A-Compatible Demo Board Connector (P6)<a class="headerlink" href="#dc1613a-compatible-demo-board-connector-p6" title="Link to this heading"></a></h3>
+<p><a class="icon adi reference external" href="https://www.analog.com/DC1613A" target="_blank">DC1613A</a>-Compatible demonstration boards should be connected to the
+12-pin shrouded header above P4. Each header pin is connected to a Raspberry Pi
+GPIO pin through the 40-pin connector (P9).</p>
+<p>The table below lists the default Raspberry Pi GPIO pin assignments for the P6
+pins and their corresponding functions.</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_psm_connector.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_psm_connector.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_psm_connector.png" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">DC1613A-compatible demo board connector P6</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id17">
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">DC1613A-Compatible Demo Board Connector (P6) Pinout</span><a class="headerlink" href="#id17" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 30.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Number</p></th>
+<th class="head"><p>Default Raspberry Pi Pin Assignment</p></th>
+<th class="head"><p>Pin Function on the PMD-RPI-INTZ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>5V Power</p></td>
+<td><p><strong>DC1613A-Compatible Demo Board AUXP.</strong> Connected to the 5 V Input
+Power of the Raspberry Pi. Used to supply power to the demo board
+EEPROM.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin 3 (I2C1 SDA) <sup>1</sup></p></td>
+<td><p><strong>SDA.</strong> PMBus Data from the Raspberry Pi to the demo board. Connected
+to I2C1 SDA.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin 5 (I2C1 SCL) <sup>1</sup></p></td>
+<td><p><strong>SCL.</strong> PMBus Clock from the Raspberry Pi to the demo board. Connected
+to I2C1 SCL.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>3V3 Power</p></td>
+<td><p><strong>DC1613A-Compatible Demo Board LGKPWR.</strong> Connected to the 3.3 V
+Regulator Output of the Raspberry Pi.</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Pin 7 (GPIO4)</p></td>
+<td><p><strong>ALERTB.</strong> PMBus/SMBus Interrupt Signal from the demo board to the
+Raspberry Pi.</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Pin 16 (GPIO23) <sup>2</sup></p></td>
+<td><p><strong>DC1613A-Compatible Demo Board GPIO_1.</strong> Actual function depends on
+the demo board.</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Pin 18 (GPIO24) <sup>2</sup></p></td>
+<td><p><strong>DC1613A-Compatible Demo Board GPIO_2.</strong> Actual function depends on
+the demo board.</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>Pin 36 (GPIO16) <sup>2</sup></p></td>
+<td><p><strong>DC1613A-Compatible Demo Board OUTEN.</strong> Enable Signal from the
+Raspberry Pi to the demo board.</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>GND</p></td>
+<td><p><strong>Ground</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>Pin 5 (I2C1 SCL) <sup>1</sup></p></td>
+<td><p><strong>DC1613A-Compatible Demo Board AUXEESCL.</strong> I2C Clock from the
+Raspberry Pi to the demo board EEPROM.</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>Pin 3 (I2C1 SDA) <sup>1</sup></p></td>
+<td><p><strong>DC1613A-Compatible Demo Board AUXSDA.</strong> I2C Data exchanged between
+the Raspberry Pi and the demo board EEPROM.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><sup>1</sup> IO pins shared with the I2C Pmod Connector #1 (P3), the I2C Pmod
+Connector #2 (P4) and the QuikEval Demo Board Connector (P5).</div>
+<div class="line"><sup>2</sup> IO pins normally disconnected from the Raspberry Pi. Short the
+appropriate solder pads between P10 and P11 to enable these pins.</div>
+</div>
+</section>
+</section>
+<section id="changing-the-raspberry-pi-gpio-assignments">
+<h2>Changing the Raspberry Pi GPIO Assignments<a class="headerlink" href="#changing-the-raspberry-pi-gpio-assignments" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a> maps the GPIO pins of the Raspberry Pi as shown in the
+table below. For easy access to these signals, the evaluation board uses a
+stacking header for the Raspberry Pi connector.</p>
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_rpi_connector.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_rpi_connector.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_rpi_connector.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Raspberry Pi 40-pin connector (P9)</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id19">
+<table class="docutils align-default" id="id19">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Raspberry Pi Connector (P9) Pinout</span><a class="headerlink" href="#id19" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 31.2%" />
+<col style="width: 12.5%" />
+<col style="width: 6.2%" />
+<col style="width: 6.2%" />
+<col style="width: 12.5%" />
+<col style="width: 31.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Function on the PMD-RPI-INTZ</p></th>
+<th class="head"><p>GPIO Pin</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>GPIO Pin</p></th>
+<th class="head"><p>Pin Function on the PMD-RPI-INTZ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3.3 V Power</p></td>
+<td><p>3V3 Power</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>5V Power</p></td>
+<td><p>5 V Power</p></td>
+</tr>
+<tr class="row-odd"><td><p>I2C SDA</p></td>
+<td><p>GPIO 2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5V Power</p></td>
+<td><p>5 V Power</p></td>
+</tr>
+<tr class="row-even"><td><p>I2C SCL</p></td>
+<td><p>GPIO 3</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>Ground</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>PMBus/SMBus ALERTB</p></td>
+<td><p>GPIO 4</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>GPIO 14</p></td>
+<td><p>No connection</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>Ground</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>GPIO 15</p></td>
+<td><p>No connection</p></td>
+</tr>
+<tr class="row-odd"><td><p>I2C Pmod #2 RESET</p></td>
+<td><p>GPIO 17</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td><p>GPIO 18</p></td>
+<td><p>SPI Pmod #1 CS3</p></td>
+</tr>
+<tr class="row-even"><td><p>I2C Pmod #2 INT</p></td>
+<td><p>GPIO 27</p></td>
+<td><p>13</p></td>
+<td><p>14</p></td>
+<td><p>Ground</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>QuikEval Demo Board GPIO</p></td>
+<td><p>GPIO 22</p></td>
+<td><p>15</p></td>
+<td><p>16</p></td>
+<td><p>GPIO 23</p></td>
+<td><p>DC1613A-Compatible Demo Board GPIO_1</p></td>
+</tr>
+<tr class="row-even"><td><p>3.3 V Supply Voltage</p></td>
+<td><p>3V3 Power</p></td>
+<td><p>17</p></td>
+<td><p>18</p></td>
+<td><p>GPIO 24</p></td>
+<td><p>DC1613A-Compatible Demo Board GPIO_2</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI MOSI</p></td>
+<td><p>GPIO 10</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+<td><p>Ground</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-even"><td><p>SPI MISO</p></td>
+<td><p>GPIO 9</p></td>
+<td><p>21</p></td>
+<td><p>22</p></td>
+<td><p>GPIO 25</p></td>
+<td><p>SPI Pmod #2 INT</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI SCLK</p></td>
+<td><p>GPIO 11</p></td>
+<td><p>23</p></td>
+<td><p>24</p></td>
+<td><p>GPIO 8</p></td>
+<td><p>SPI Pmod #1 CS1 &amp; QuikEval Demo Board CS</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>Ground</p></td>
+<td><p>25</p></td>
+<td><p>26</p></td>
+<td><p>GPIO 7</p></td>
+<td><p>SPI Pmod #2 CS1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ID EEPROM SDA</p></td>
+<td><p>GPIO 0</p></td>
+<td><p>27</p></td>
+<td><p>28</p></td>
+<td><p>GPIO 1</p></td>
+<td><p>ID EEPROM SCL</p></td>
+</tr>
+<tr class="row-even"><td><p>SPI Pmod #2 CS2</p></td>
+<td><p>GPIO 5</p></td>
+<td><p>29</p></td>
+<td><p>30</p></td>
+<td><p>Ground</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI Pmod #2 CS3</p></td>
+<td><p>GPIO 6</p></td>
+<td><p>31</p></td>
+<td><p>32</p></td>
+<td><p>GPIO 12</p></td>
+<td><p>SPI Pmod #2 RESET</p></td>
+</tr>
+<tr class="row-even"><td><p>I2C Pmod #1 RESET</p></td>
+<td><p>GPIO 13</p></td>
+<td><p>33</p></td>
+<td><p>34</p></td>
+<td><p>Ground</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI Pmod #1 INT</p></td>
+<td><p>GPIO 19</p></td>
+<td><p>35</p></td>
+<td><p>36</p></td>
+<td><p>GPIO 16</p></td>
+<td><p>DC1613A-Compatible Demo Board OUTEN</p></td>
+</tr>
+<tr class="row-even"><td><p>I2C Pmod #1 INT</p></td>
+<td><p>GPIO 26</p></td>
+<td><p>37</p></td>
+<td><p>38</p></td>
+<td><p>GPIO 20</p></td>
+<td><p>SPI Pmod #1 CS2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ground</p></td>
+<td><p>Ground</p></td>
+<td><p>39</p></td>
+<td><p>40</p></td>
+<td><p>GPIO 21</p></td>
+<td><p>SPI Pmod #1 RESET</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The adapter board is designed so that most of these IO signals pass through the
+rows of test points and solder jumpers at the center. This way, if a different
+set of GPIO pin assignments is needed (or desired), the default connections can
+be changed by simply removing the appropriate solder jumper(s) and then placing
+a wire between the test points of interest.</p>
+<p>Refer to the pictures and tables below for the signal names available on each
+test point. Raspberry Pi GPIO pins are connected to P8 and P10; PMD-RPI-INTZ
+Pmod and demo board pins are connected to P7 and P11.</p>
+<figure class="align-center" id="id20">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_gpio_jumpers.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_gpio_jumpers.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_gpio_jumpers.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">GPIO jumper block P7/P8</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id21">
+<table class="docutils align-default" id="id21">
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">P8/P7 Jumper Assignments</span><a class="headerlink" href="#id21" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 13.3%" />
+<col style="width: 20.0%" />
+<col style="width: 13.3%" />
+<col style="width: 40.0%" />
+<col style="width: 13.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>P8 Pin</p></th>
+<th class="head"><p>Raspberry Pi GPIO</p></th>
+<th class="head"><p>Jumper</p></th>
+<th class="head"><p>PMD-RPI-INTZ Signal</p></th>
+<th class="head"><p>P7 Pin</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>GPIO 4</p></td>
+<td><p>JP2</p></td>
+<td><p>PMBus/SMBus ALERTB</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>GPIO 17</p></td>
+<td><p>JP3</p></td>
+<td><p>I2C Pmod #2 RESET</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>GPIO 27</p></td>
+<td><p>JP4</p></td>
+<td><p>I2C Pmod #2 INT</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>GPIO 22</p></td>
+<td><p>JP5</p></td>
+<td><p>QuikEval Demo Board GPIO</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>GPIO 10</p></td>
+<td><p>JP6</p></td>
+<td><p>SPI MOSI</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>GPIO 9</p></td>
+<td><p>JP7</p></td>
+<td><p>SPI MISO</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>GPIO 11</p></td>
+<td><p>JP8</p></td>
+<td><p>SPI SCLK</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>GPIO 5</p></td>
+<td><p>JP9</p></td>
+<td><p>SPI Pmod #2 CS2</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>GPIO 6</p></td>
+<td><p>JP10</p></td>
+<td><p>SPI Pmod #2 CS3</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>GPIO 13</p></td>
+<td><p>JP11</p></td>
+<td><p>I2C Pmod #1 RESET</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>GPIO 19</p></td>
+<td><p>JP12</p></td>
+<td><p>SPI Pmod #1 INT</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>GPIO 26</p></td>
+<td><p>JP13</p></td>
+<td><p>I2C Pmod #1 INT</p></td>
+<td><p>12</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-center" id="id22">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_gpio_jumpers_2.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_gpio_jumpers_2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/wiki-migration/docs/solutions/reference-designs/pmd-rpi-intz/pmd-rpi-intz_gpio_jumpers_2.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">GPIO jumper block P10/P11</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container" id="id23">
+<table class="docutils align-default" id="id23">
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">P10/P11 Jumper Assignments</span><a class="headerlink" href="#id23" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 13.3%" />
+<col style="width: 20.0%" />
+<col style="width: 13.3%" />
+<col style="width: 40.0%" />
+<col style="width: 13.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>P10 Pin</p></th>
+<th class="head"><p>Raspberry Pi GPIO</p></th>
+<th class="head"><p>Jumper</p></th>
+<th class="head"><p>PMD-RPI-INTZ Signal</p></th>
+<th class="head"><p>P11 Pin</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>GPIO 14</p></td>
+<td><p>JP14</p></td>
+<td><p>No connection</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>GPIO 15</p></td>
+<td><p>JP15</p></td>
+<td><p>No connection</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>GPIO 18</p></td>
+<td><p>JP16</p></td>
+<td><p>SPI Pmod #1 CS3</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>GPIO 23</p></td>
+<td><p>JP17</p></td>
+<td><p>DC1613A-Compatible Demo Board GPIO_1</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>GPIO 24</p></td>
+<td><p>JP18</p></td>
+<td><p>DC1613A-Compatible Demo Board GPIO_2</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>GPIO 25</p></td>
+<td><p>JP19</p></td>
+<td><p>SPI Pmod #2 INT</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>GPIO 8</p></td>
+<td><p>JP20</p></td>
+<td><p>SPI Pmod #1 CS1 &amp; QuikEval Demo Board CS</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>GPIO 7</p></td>
+<td><p>JP21</p></td>
+<td><p>SPI Pmod #2 CS1</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>GPIO 12</p></td>
+<td><p>JP22</p></td>
+<td><p>SPI Pmod #2 RESET</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>GPIO 16</p></td>
+<td><p>JP23</p></td>
+<td><p>DC1613A-Compatible Demo Board OUTEN</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>GPIO 20</p></td>
+<td><p>JP24</p></td>
+<td><p>SPI Pmod #1 CS2</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>GPIO 21</p></td>
+<td><p>JP25</p></td>
+<td><p>SPI Pmod #1 RESET</p></td>
+<td><p>12</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
+<p><a class="icon link reference external" href="https://www.analog.com/media/en/reference-design-documentation/design-integration-files/pmd-rpi-intz-designsupport.zip" target="_blank">PMD-RPI-INTZ Design &amp; Integration Files</a></p>
+<ul class="simple">
+<li><p>Schematic</p></li>
+<li><p>PCB Layout</p></li>
+<li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
+</ul>
 </section>
 <section id="additional-information">
 <h2>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h2>

@@ -36,9 +36,9 @@ Sensor Connections
 The EVAL-CN0533-EBZ is straightforward to set up. A cable, power supply
 (12 V to 24 V), and a 4-20 mA receiver are needed.
 
-#. Solder a triple twisted wire or shielded cable to the EVAL-CN0533-EBZ PCB.
-   Connect the ground line to GND, 4-20 mA output current to IOUT, and 12 V
-   supply to VCC.
+#. Solder a triple twisted wire or shielded cable to the EVAL-CN0533-EBZ
+   printed circuit board (PCB). Connect the ground line to GND, the 4-20 mA
+   output current to IOUT, and the 12 V supply to VCC.
 #. Supply the EVAL-CN0533-EBZ with 12 V, and connect the other end of the
    IOUT and GND cables to a 4-20 mA receiver such as National Instruments
    NI-9203.
@@ -80,27 +80,34 @@ vibration signal is adequately coupled with the sensor.
    vibration direction.
 #. Follow the steps for proper sensor connection outlined above.
 
+Documents
+---------
+
+- :adi:`CN0533 Circuit Note <CN0533>`
+
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 
-`EVAL-CN0533-EBZ Design & Integration Files <https://www.analog.com/cn0533-designsupport>`__
+.. admonition:: Download
 
-- Schematics
-- PCB Layout
-- Bill of Materials
-- Allegro Project
+   `EVAL-CN0533-EBZ Design & Integration Files
+   <https://www.analog.com/cn0533-designsupport>`__
 
-More Information and Useful Links
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+   - Allegro Project
 
-- :adi:`CN0533 Circuit Note Page <CN0533>`
+Additional Information
+----------------------
+
 - :adi:`ADXL1002 Product Page <ADXL1002>`
 - :adi:`AD5749 Product Page <AD5749>`
 - :adi:`LT6654 Product Page <LT6654>`
 - :adi:`EVAL-XLMOUNT1 Mechanical Interface <EVAL-XLMOUNT1>`
 
 Help and Support
-~~~~~~~~~~~~~~~~
+----------------
 
 For questions and more information about this product, connect with us through
 the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

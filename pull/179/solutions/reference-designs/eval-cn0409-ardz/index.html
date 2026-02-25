@@ -14,7 +14,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="EVAL-CN0410-ARDZ" href="../eval-cn0410-ardz/index.html" />
-    <link rel="prev" title="EVAL-CN0398-ARDZ" href="../eval-cn0398-ardz/index.html" />
+    <link rel="prev" title="Software Demos" href="../eval-cn0398-ardz/software.html" />
    
   
   
@@ -96,9 +96,33 @@
           <ul>
 <li><a class="reference internal" href="#">EVAL-CN0409-ARDZ</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#required-equipment">Required Equipment</a></li>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#turbidity-measurement">Turbidity Measurement</a><ul>
+<li><a class="reference internal" href="#non-ratio-measurement-method-low-turbidity">Non-Ratio Measurement Method (Low Turbidity)</a></li>
+<li><a class="reference internal" href="#ratio-measurement-method-medium-to-high-turbidity">Ratio Measurement Method (Medium to High Turbidity)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#required-equipment">Required Equipment</a><ul>
+<li><a class="reference internal" href="#hardware">Hardware</a></li>
+<li><a class="reference internal" href="#software">Software</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vial-holder">Vial Holder</a></li>
+<li><a class="reference internal" href="#test-vials">Test Vials</a><ul>
+<li><a class="reference internal" href="#cleaning-procedure">Cleaning Procedure</a></li>
+<li><a class="reference internal" href="#indexing-vials">Indexing Vials</a></li>
+<li><a class="reference internal" href="#measurement-procedure">Measurement Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#calibration-solutions">Calibration Solutions</a></li>
+<li><a class="reference internal" href="#hardware-setup-adicup360">Hardware Setup (ADICUP360)</a><ul>
+<li><a class="reference internal" href="#calibration-procedure">Calibration Procedure</a></li>
+<li><a class="reference internal" href="#software-demo-procedure">Software Demo Procedure</a></li>
+<li><a class="reference internal" href="#serial-terminal-configuration">Serial Terminal Configuration</a></li>
+<li><a class="reference internal" href="#obtaining-the-source-code">Obtaining the Source Code</a></li>
+<li><a class="reference internal" href="#outputting-data">Outputting Data</a></li>
+<li><a class="reference internal" href="#project-structure">Project Structure</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#documents">Documents</a></li>
 <li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 <li><a class="reference internal" href="#additional-information">Additional Information</a></li>
@@ -557,14 +581,10 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ad5770r-pmdz/index.html">EVAL-AD5770R-PMDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="../eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33" id="toctree-collapse-13-33"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-33"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33-1" id="toctree-collapse-13-33-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-33-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32-1" id="toctree-collapse-13-32-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-32-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
@@ -574,10 +594,10 @@ Content on this topic
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-34" id="toctree-collapse-13-34"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-34"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33" id="toctree-collapse-13-33"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-33"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ad9084/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-34-1" id="toctree-collapse-13-34-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-34-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-33-1" id="toctree-collapse-13-33-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9084/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-33-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-ad9084/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
@@ -586,7 +606,7 @@ Content on this topic
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-35" id="toctree-collapse-13-35"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-35"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-34" id="toctree-collapse-13-34"/><div class="collapse"><a class="reference internal" href="../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-34"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
@@ -594,40 +614,46 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-adicup360/index.html">EVAL-ADICUP360</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adm3055e-ardz/index.html">EVAL-ADM3055E-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adpd4100-ardz/index.html">EVAL-ADPD4100-ARDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36" id="toctree-collapse-13-36"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-36"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-35" id="toctree-collapse-13-35"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-35"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36-1" id="toctree-collapse-13-36-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-36-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-35-1" id="toctree-collapse-13-35-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-35-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37" id="toctree-collapse-13-37"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-37"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36" id="toctree-collapse-13-36"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-36"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37-1" id="toctree-collapse-13-37-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-37-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-36-1" id="toctree-collapse-13-36-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-36-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-38" id="toctree-collapse-13-38"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-38"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37" id="toctree-collapse-13-37"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-37"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9032/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-adrv9032/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-38-1" id="toctree-collapse-13-38-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-38-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-37-1" id="toctree-collapse-13-37-1"/><div class="collapse"><a class="reference internal" href="../eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-37-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-adt7420-pmdz/index.html">EVAL-ADT7420-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-38" id="toctree-collapse-13-38"/><div class="collapse"><a class="reference internal" href="../eval-adt7420-pmdz/index.html">EVAL-ADT7420-PMDZ</a><label for="toctree-collapse-13-38"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adt7420-pmdz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl313z/index.html">EVAL-ADXL313Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl357bz/index.html">EVAL-ADXL357BZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl362-ardz/index.html">EVAL-ADXL362-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-adxl372-ardz/index.html">EVAL-ADXL372-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-adxrs290-pmdz/index.html">EVAL-ADXRS290-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-39" id="toctree-collapse-13-39"/><div class="collapse"><a class="reference internal" href="../eval-adxrs290-pmdz/index.html">EVAL-ADXRS290-PMDZ</a><label for="toctree-collapse-13-39"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-adxrs290-pmdz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0150-sdpz/index.html">EVAL-CN0150-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0178-sdpz/index.html">EVAL-CN0178-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0179-sdpz/index.html">EVAL-CN0179-PMDZ</a></li>
@@ -641,6 +667,11 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0202-sdpz/index.html">EVAL-CN0202-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0203-sdpz/index.html">EVAL-CN0203-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0204-sdpz/index.html">EVAL-CN0204-SDPZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-40" id="toctree-collapse-13-40"/><div class="collapse"><a class="reference internal" href="../eval-cn0216-ardz/index.html">EVAL-CN0216-ARDZ</a><label for="toctree-collapse-13-40"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0216-ardz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0216-sdpz/index.html">EVAL-CN0216-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0218-sdpz/index.html">EVAL-CN0218-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0225-sdpz/index.html">EVAL-CN0225-SDPZ</a></li>
@@ -650,7 +681,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0251-sdpz/index.html">EVAL-CN0251-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0254-sdpz/index.html">EVAL-CN0254-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0269-sdpz/index.html">EVAL-CN0269-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0270-sdpz/index.html">EVAL-CN0270-SDPZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0270-sdpz/index.html">EVAL-CN0270-EB1Z</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0271-sdpz/index.html">EVAL-CN0271-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0272-sdpz/index.html">EVAL-CN0272-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0274-sdpz/index.html">EVAL-CN0274-SDPZ</a></li>
@@ -662,11 +693,23 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0296-sdpz/index.html">EVAL-CN0296-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0300-sdpz/index.html">EVAL-CN0300-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0301-ardz/index.html">EVAL-CN0301-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0326-sdpz/index.html">EVAL-CN0326-SDPZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-41" id="toctree-collapse-13-41"/><div class="collapse"><a class="reference internal" href="../eval-cn0326-sdpz/index.html">EVAL-CN0326-PMDZ</a><label for="toctree-collapse-13-41"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0326-sdpz/software.html">ADICUP360/ADICUP3029 Demo</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0335-pmdz/index.html">EVAL-CN0335-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0336-ardz/index.html">EVAL-CN0336-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-42" id="toctree-collapse-13-42"/><div class="collapse"><a class="reference internal" href="../eval-cn0337-pmdz/index.html">EVAL-CN0337-PMDZ</a><label for="toctree-collapse-13-42"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0337-pmdz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0337-pmdz/software.html">Software Demo</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0337-sdpz/index.html">EVAL-CN0337-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0338-ardz/index.html">EVAL-CN0338-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-43" id="toctree-collapse-13-43"/><div class="collapse"><a class="reference internal" href="../eval-cn0338-ardz/index.html">EVAL-CN0338-ARDZ</a><label for="toctree-collapse-13-43"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0338-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0338-ardz/software.html">Software</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0343-sdpz/index.html">EVAL-CN0343-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0346-pmdz/index.html">EVAL-CN0346-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0348-pmdz/index.html">EVAL-CN0348-PMDZ</a></li>
@@ -679,28 +722,69 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0368-sdpz/index.html">EVAL-CN0368-SDPZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0370-ardz/index.html">EVAL-CN0370-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0371-sdpz/index.html">EVAL-CN0371-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0372-ardz/index.html">EVAL-CN0372-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0372-ardz/index.html">EVAL-CN0372-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0376-ardz/index.html">EVAL-CN0376-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0376-sdpz/index.html">EVAL-CN0376-SDPZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0385-ardz/index.html">EVAL-CN0385-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0385-ardz/index.html">EVAL-CN0385-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0393-ardz/index.html">EVAL-CN0393-FMCZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0394-ardz/index.html">EVAL-CN0394-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0395-ardz/index.html">EVAL-CN0395-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0396-ardz/index.html">EVAL-CN0396-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0397-ardz/index.html">EVAL-CN0397-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0398-ardz/index.html">EVAL-CN0398-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-44" id="toctree-collapse-13-44"/><div class="collapse"><a class="reference internal" href="../eval-cn0394-ardz/index.html">EVAL-CN0394-ARDZ</a><label for="toctree-collapse-13-44"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0394-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0394-ardz/software.html">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-45" id="toctree-collapse-13-45"/><div class="collapse"><a class="reference internal" href="../eval-cn0395-ardz/index.html">EVAL-CN0395-ARDZ</a><label for="toctree-collapse-13-45"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0395-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0395-ardz/software.html">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-46" id="toctree-collapse-13-46"/><div class="collapse"><a class="reference internal" href="../eval-cn0396-ardz/index.html">EVAL-CN0396-ARDZ</a><label for="toctree-collapse-13-46"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0396-ardz/hardware.html">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0396-ardz/software.html">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-47" id="toctree-collapse-13-47"/><div class="collapse"><a class="reference internal" href="../eval-cn0397-ardz/index.html">EVAL-CN0397-ARDZ</a><label for="toctree-collapse-13-47"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0397-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0397-ardz/software.html">Software Demos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-48" id="toctree-collapse-13-48"/><div class="collapse"><a class="reference internal" href="../eval-cn0398-ardz/index.html">EVAL-CN0398-ARDZ</a><label for="toctree-collapse-13-48"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0398-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0398-ardz/software.html">Software Demos</a></li>
+</ul>
+</li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-CN0409-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0410-ardz/index.html">EVAL-CN0410-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0411-ardz/index.html">EVAL-CN0411-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0414-ardz/index.html">EVAL-CN0414-ARDZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0415-ardz/index.html">EVAL-CN0415-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-49" id="toctree-collapse-13-49"/><div class="collapse"><a class="reference internal" href="../eval-cn0410-ardz/index.html">EVAL-CN0410-ARDZ</a><label for="toctree-collapse-13-49"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0410-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0410-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-50" id="toctree-collapse-13-50"/><div class="collapse"><a class="reference internal" href="../eval-cn0411-ardz/index.html">EVAL-CN0411-ARDZ</a><label for="toctree-collapse-13-50"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0411-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0411-ardz/software.html">Software Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-51" id="toctree-collapse-13-51"/><div class="collapse"><a class="reference internal" href="../eval-cn0414-ardz/index.html">EVAL-CN0414-ARDZ</a><label for="toctree-collapse-13-51"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0414-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0414-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-52" id="toctree-collapse-13-52"/><div class="collapse"><a class="reference internal" href="../eval-cn0415-ardz/index.html">EVAL-CN0415-ARDZ</a><label for="toctree-collapse-13-52"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0415-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0415-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0416-ardz/index.html">EVAL-CN0416-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0418-ardz/index.html">EVAL-CN0418-ARDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-53" id="toctree-collapse-13-53"/><div class="collapse"><a class="reference internal" href="../eval-cn0418-ardz/index.html">EVAL-CN0418-ARDZ</a><label for="toctree-collapse-13-53"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0418-ardz/hardware.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0418-ardz/software.html">Software Guide</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0422-ardz/index.html">EVAL-CN0422-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0428-ebz/index.html">EVAL-CN0428-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0429-ebz/index.html">EVAL-CN0429-EBZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-39" id="toctree-collapse-13-39"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-39"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-54" id="toctree-collapse-13-54"/><div class="collapse"><a class="reference internal" href="../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-54"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
@@ -719,24 +803,29 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0532-ebz/index.html">EVAL-CN0532-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0533-ardz/index.html">EVAL-CN0533-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eval-cn0535-ardz/index.html">EVAL-CN0535-FMCZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-55" id="toctree-collapse-13-55"/><div class="collapse"><a class="reference internal" href="../eval-cn0535-ardz/index.html">EVAL-CN0535-FMCZ</a><label for="toctree-collapse-13-55"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-cn0535-ardz/sdp-k1.html">CN0535 + SDP-K1</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0536-ardz/index.html">EVAL-CN0536-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0537-ardz/index.html">EVAL-CN0537-ARDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-40" id="toctree-collapse-13-40"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-40"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-56" id="toctree-collapse-13-56"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-56"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-40-1" id="toctree-collapse-13-40-1"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-40-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-56-1" id="toctree-collapse-13-56-1"/><div class="collapse"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-56-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0548-ardz/index.html">EVAL-CN0548-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0548-ebz/index.html">EVAL-CN0548-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0551-ebz/index.html">EVAL-CN0551-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0552-ebz/index.html">EVAL-CN0552-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eval-cn0552-pmdz/index.html">EVAL-CN0552-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
@@ -752,7 +841,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-41" id="toctree-collapse-13-41"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-41"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-57" id="toctree-collapse-13-57"/><div class="collapse"><a class="reference internal" href="../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-57"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
 </ul>
@@ -762,14 +851,14 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-cn0590-ardz/index.html">EVAL-CN0590-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-42" id="toctree-collapse-13-42"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-42"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-58" id="toctree-collapse-13-58"/><div class="collapse"><a class="reference internal" href="../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-58"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-isomax/software_guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ltc4306/index.html">EVAL-LTC4306-PMDZ User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eval-ltpa-comprb/index.html">EVAL-LTPA-COMPRB</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-43" id="toctree-collapse-13-43"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-43"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-59" id="toctree-collapse-13-59"/><div class="collapse"><a class="reference internal" href="../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-59"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
 </ul>
@@ -848,40 +937,291 @@ Content on this topic
 <p>Water Turbidity Measurement System.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p><a class="icon adi reference external" href="https://www.analog.com/CN0409" target="_blank">CN0409</a> uses the <a class="icon adi reference external" href="https://www.analog.com/ADPD105" target="_blank">ADPD105</a> photometric front end with an 860 nm
-infrared LED and silicon PIN photodiode network to measure water turbidity
-levels from 0 to 1000 FTU (Formazin Turbidity Units). The system supports two
-ISO 7027 turbidity measurement standards (ratio and non-ratio methods) plus the
-GLI method.</p>
-<p>With three-point calibration, typical accuracy is +/-0.50 FTU or +/-5% of
-reading (whichever is greater), with a 0.05 FTU noise level. The photodiodes
-are positioned at 90 degrees and 180 degrees to the LED for nephelometric and
-transmission measurements respectively.</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/CN0409" target="_blank">CN0409</a> uses the <a class="icon adi reference external" href="https://www.analog.com/ADPD105" target="_blank">ADPD105</a> photometric front end and a network of
+860 nm infrared emitters and silicon PIN photodiodes to achieve a water
+turbidity measurement system. The system can measure low to high water turbidity
+levels ranging from 0 FTU to 1000 FTU (limited by available solution). The IR
+LED and photodiode network is arranged to support two of the most recognized
+turbidity measurement standards – ISO 7027 (both ratio and non-ratio methods)
+and the GLI method.</p>
+<p>With three-point calibration, the typical accuracy that the system can achieve
+is +/-0.50 FTU or +/-5% of the reading, whichever is greater. This accuracy
+combined with the 0.05 FTU noise level makes the measurements obtained using
+this system very reliable.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADPD105" target="_blank">ADPD105</a>’s ambient light rejection feature makes this circuit ideal
+for applications where accurate, robust, and non-contact turbidity measurements
+are critical. Applications include chemical analysis and monitoring natural
+bodies of water, wastewater, and drinking water.</p>
+</section>
+<section id="turbidity-measurement">
+<h2>Turbidity Measurement<a class="headerlink" href="#turbidity-measurement" title="Link to this heading"></a></h2>
+<p>The International Organization for Standardization (ISO) developed a design
+standard known as ISO 7027 Water Quality – Determination of Turbidity, which
+is best known for its requirement of a monochromatic light source. Most
+instruments that comply with this standard use an 860 nm LED light source and a
+primary detector at an angle of 90 degrees. Additional detection angles are
+allowed, such as a detector at an angle of 180 degrees, to increase the range
+of measurable turbidity levels.</p>
+<p>The CN0409 hardware allows for the measurement of both 90 degrees and
+180 degrees scattering measurements.</p>
+<section id="non-ratio-measurement-method-low-turbidity">
+<h3>Non-Ratio Measurement Method (Low Turbidity)<a class="headerlink" href="#non-ratio-measurement-method-low-turbidity" title="Link to this heading"></a></h3>
+<p>For turbidities between 0 FTU and 40 FTU, the 90 degree detector provides the
+most linear response to scattering. At low turbidity levels, the particles are
+much smaller than the wavelength of incident light; therefore, they exhibit a
+symmetrical scattering distribution. As the number and size of suspended solids
+increase within this range, the 90 degree detector receives a linearly
+proportional amount of scattered light. This method is also known as the
+non-ratio ISO 7027 because of the use of just one detector.</p>
+</section>
+<section id="ratio-measurement-method-medium-to-high-turbidity">
+<h3>Ratio Measurement Method (Medium to High Turbidity)<a class="headerlink" href="#ratio-measurement-method-medium-to-high-turbidity" title="Link to this heading"></a></h3>
+<p>Higher turbidity levels in the range of 40 FTU to 4,000 FTU require an
+additional detector to obtain the same linear response as the non-ratio method.
+Larger particles present in these types of solutions exhibit an asymmetrical
+light scattering distribution that results in a higher intensity forward
+scattered light. The ISO 7027 ratio method of the CN0409 uses the ratio of the
+90 degree detector and the 180 degree detector to measure turbidity levels of
+theoretically up to 4,000 FTU.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The CN0409 solution has only been validated up to 1000 FTU.</p>
+</div>
+</section>
 </section>
 <section id="required-equipment">
 <h2>Required Equipment<a class="headerlink" href="#required-equipment" title="Link to this heading"></a></h2>
+<section id="hardware">
+<h3>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>EVAL-CN0409-ARDZ evaluation board</p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> controller board (or ADICUP360)</p></li>
-<li><p>PC with USB support</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP360" target="_blank">EVAL-ADICUP360</a> or <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> controller board</p></li>
+<li><p>Micro-USB to USB cable</p></li>
+<li><p>PC or laptop with USB port</p></li>
 <li><p>LaMotte-style test vials</p></li>
-<li><p>Calibration solutions (e.g., HI88703-11, Oakton T100, or Cole Parmer kit)</p></li>
+<li><p>Turbidity calibration solutions (0.02 FTU, 100 FTU, and 800 FTU)</p></li>
+<li><p>Turbidity test solutions (e.g. 10 FTU, 15 FTU, 100 FTU, 1000 FTU)</p></li>
 </ul>
 </section>
-<section id="hardware-setup">
-<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<section id="software">
+<h3>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>IR LEDs and photodiode detectors (DS1, DS2) positioned at 90 degrees and
-180 degrees.</p></li>
-<li><p>Mechanical vial holder for LaMotte-style test vials.</p></li>
-<li><p>Shield attaches to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> controller board.</p></li>
+<li><p>ADuCM360_demo_cn0409 software</p></li>
+<li><p>CrossCore Embedded Studio (2.7.0 or higher)</p></li>
+<li><p>ADuCM36x DFP (1.0.2 or higher)</p></li>
+<li><p>CMSIS ARM Pack (4.3.0 or higher)</p></li>
+<li><p>Serial terminal program (such as PuTTY or Tera Term)</p></li>
 </ul>
 </section>
-<section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
-<p>The ADICUP3029 + CN0409 Demo software is available for turbidity measurement
-and calibration. Calibration points can be set using standard solutions at
-values such as 0.10, 15.0, 100, 750, and 2000 NTU.</p>
+</section>
+<section id="vial-holder">
+<h2>Vial Holder<a class="headerlink" href="#vial-holder" title="Link to this heading"></a></h2>
+<p>The turbidity calibration and sample vials are held in a mechanical holder that
+is specifically milled for the LaMotte-style test vial.</p>
+<p>The photodiodes (DS1 and DS2) and LEDs (D1 and D2) should be bent slightly
+backwards to allow placement of the vial holder. Once in place, carefully bend
+the photodiodes and LEDs into the holes of the vial holder until they are snug
+and secure.</p>
+<p>The vial holder should be screwed into the EVAL-CN0409-ARDZ board by lining up
+the holes in the vial holder with the holes in the board, using the screws
+provided.</p>
+</section>
+<section id="test-vials">
+<h2>Test Vials<a class="headerlink" href="#test-vials" title="Link to this heading"></a></h2>
+<p>The test vials are one of the biggest sources of measurement error within a
+turbidity system and therefore one of the most important factors to consider in
+obtaining accurate turbidity measurements.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to use <a class="icon link reference external" href="https://www.coleparmer.com/i/lamotte-0290-6-turbidity-sample-test-tubes-vials-6-pk/0556366" target="_blank">LaMotte test vials</a>
+as the size fits into the CN0409 board vial holder.</p>
+</div>
+<p>The following items are critical to the success of proper turbidity vial
+preparation and measurement techniques:</p>
+<section id="cleaning-procedure">
+<h3>Cleaning Procedure<a class="headerlink" href="#cleaning-procedure" title="Link to this heading"></a></h3>
+<p>To obtain the most accurate results when taking measurements, the following
+process should be followed:</p>
+<ul class="simple">
+<li><p>Test vials <strong>MUST</strong> be meticulously cleaned:</p>
+<ol class="arabic simple">
+<li><p>Wash the vials with soap and deionized water.</p></li>
+<li><p>Soak the sample vial in hydrochloric acid solution.</p></li>
+<li><p>Rinse with ultra-filtered deionized water.</p></li>
+<li><p>Polish with silicone oil.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="indexing-vials">
+<h3>Indexing Vials<a class="headerlink" href="#indexing-vials" title="Link to this heading"></a></h3>
+<p>Test vials must also be indexed. After the cleaning process, the vial is used
+to measure a very low turbidity solution.</p>
+<ul class="simple">
+<li><p>Use a calibrated FTU solution to ensure that the index is properly assessed
+and assigned.</p></li>
+</ul>
+<p>The position with the lowest measured turbidity should be indexed and this
+position should be used for succeeding measurements.</p>
+<ul class="simple">
+<li><p>If possible, use a properly indexed test vial for all subsequent
+measurements to ensure the system is working and calibrated properly.</p></li>
+</ul>
+</section>
+<section id="measurement-procedure">
+<h3>Measurement Procedure<a class="headerlink" href="#measurement-procedure" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Fill a clean test vial (see cleaning procedure above) with up to 10 mL of
+the solution under test.</p></li>
+<li><p>Allow sufficient time for bubbles to escape before placing the cap. This can
+be done by letting the solution stand for several minutes to allow the
+bubbles to vacate.</p></li>
+<li><p>Wipe the test vial with a lint-free cloth before inserting into the on-board
+test vial holder to make sure it is free from fingerprints. Make sure to
+hold the test vial by the cap when placing it in the holder.</p></li>
+</ol>
+</section>
+</section>
+<section id="calibration-solutions">
+<h2>Calibration Solutions<a class="headerlink" href="#calibration-solutions" title="Link to this heading"></a></h2>
+<p>Calibration solutions are an important baseline to ensure that your measurement
+system is working appropriately. They are needed to perform the calibration
+calculations and routines within the software, providing accurate turbidity
+measurements.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The turbidity calibration solutions used in the evaluation are:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://hannainst.com/turbidity-calibration-standards-for-hi88703-and-hi83414-hi88703-11.html" target="_blank">HI88703-11</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.coleparmer.com/i/oakton-t100-replacement-turbidity-calibration-kit/3563552" target="_blank">Oakton T100</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.johnmorrisgroup.com/AU/Product/48740/Cole-Parmer-Turbidity-Standards-Pack" target="_blank">Cole Parmer kit</a></p></li>
+</ul>
+</div>
+<p>The calibration solution sets allow testing and characterization at many
+different data points and comparison of results against many different available
+products on the market. Available calibration solution values within these kits
+include:</p>
+<ul class="simple">
+<li><p>0.10, 15.0, 100, 750, and 2000 NTU</p></li>
+<li><p>0.02, 20.0, 100, and 800 NTU</p></li>
+<li><p>0.5, 10, and 40 NTU</p></li>
+</ul>
+</section>
+<section id="hardware-setup-adicup360">
+<h2>Hardware Setup (ADICUP360)<a class="headerlink" href="#hardware-setup-adicup360" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>To program the base board, set the jumpers/switches as described in the
+EVAL-ADICUP360 user guide.</p></li>
+<li><p>Connect the EVAL-CN0409-ARDZ to the Arduino connectors <strong>P2</strong>, <strong>P5</strong>,
+<strong>P6</strong>, <strong>P7</strong>, <strong>P8</strong> of the EVAL-ADICUP360 board.</p></li>
+<li><p>Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
+Debug USB (<strong>P14</strong>).</p></li>
+</ol>
+<section id="calibration-procedure">
+<h3>Calibration Procedure<a class="headerlink" href="#calibration-procedure" title="Link to this heading"></a></h3>
+<p>When the project is being run for the first time, a calibration procedure is
+required in order to achieve high-accuracy results. The user must follow the
+steps described in the UART terminal when the application is started.</p>
+<p>The user has the option to modify the solutions that are used for calibrating
+the device. Any values can be used for the calibration points, but a proper
+distribution along the 0–1000 NTU range must be taken into account.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The calibration values can be edited in the <code class="docutils literal notranslate"><span class="pre">CN0409.h</span></code> file inside the
+include folder within the project structure.</p>
+</div>
+<p>After the calibration sequence is done at least once, the calibration
+coefficients are saved in the controller flash memory and will be used the
+next time when calibration is not performed. The calibration can be repeated
+as desired. If the program is run for the first time and a calibration routine
+is not done, the program will prompt the user to manually input calibration
+coefficients.</p>
+</section>
+<section id="software-demo-procedure">
+<h3>Software Demo Procedure<a class="headerlink" href="#software-demo-procedure" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Fill a clean test vial with up to 10 mL of the solution under test.</p></li>
+<li><p>Allow sufficient time for bubbles to escape before placing the cap.</p></li>
+<li><p>Wipe the test vial with a lint-free cloth before inserting into the on-board
+test vial holder.</p></li>
+<li><p>Open the serial terminal program (e.g. PuTTY) and press the reset button on
+the EVAL-ADICUP360.</p></li>
+<li><p>Follow the on-screen prompt for calibration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For first-time use, it is required to perform calibration by pressing the
+<strong>y</strong> key. For subsequent measurements, press the <strong>n</strong> key to skip
+calibration.</p>
+</div>
+</li>
+<li><p>Three-point calibration will be performed using 0.02 FTU, 100 FTU, and
+800 FTU. Wait for the on-screen prompt before placing each solution.</p></li>
+<li><p>After calibration, place the solution to be measured as prompted on the
+screen.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to hold the test vial by the cap when placing it in the holder.</p>
+</div>
+</section>
+<section id="serial-terminal-configuration">
+<h3>Serial Terminal Configuration<a class="headerlink" href="#serial-terminal-configuration" title="Link to this heading"></a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>COM Port: (select the correct port)
+Baud rate: 9600
+Data: 8 bit
+Parity: none
+Start: 1 bit
+Stop: 2 bit
+Flow Control: none
+</pre></div>
+</div>
+</section>
+<section id="obtaining-the-source-code">
+<h3>Obtaining the Source Code<a class="headerlink" href="#obtaining-the-source-code" title="Link to this heading"></a></h3>
+<p>There are two basic ways to program the ADICUP360 with the software for the
+CN0409:</p>
+<ol class="arabic simple">
+<li><p><strong>Drag and drop</strong> – Drag and drop the <code class="docutils literal notranslate"><span class="pre">.bin</span></code> file to the MBED drive.
+This is the easiest way to get started with the reference design.</p></li>
+<li><p><strong>Build and debug</strong> – Import the project into CrossCore Embedded Studio
+to change parameters and customize the software.</p></li>
+</ol>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><strong>Prebuilt CN0409 Bin File</strong></p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0409.bin" target="_blank">ADuCM360_demo_cn0409.bin</a></p></li>
+</ul>
+<p><strong>Complete CN0409 Source Files</strong></p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP360/tree/master/projects/ADuCM360_demo_cn0409" target="_blank">ADuCM360_demo_cn0409 Source Code</a></p></li>
+</ul>
+</div>
+</section>
+<section id="outputting-data">
+<h3>Outputting Data<a class="headerlink" href="#outputting-data" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Flash the program to the EVAL-ADICUP360.</p></li>
+<li><p>Switch the USB cable from the DEBUG USB (<strong>P14</strong>) to the USER USB
+(<strong>P13</strong>).</p></li>
+<li><p>Configure the serial terminal program with the UART settings listed above.</p></li>
+</ol>
+</section>
+<section id="project-structure">
+<h3>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h3>
+<p>The <strong>ADuCM360_demo_cn0409</strong> is a C++ project that uses the ADuCM36x C/C++
+project structure.</p>
+<p>This project contains: system initialization, setting system clock, enabling
+clock for peripherals; I2C interface, UART via P0.6/P0.7; UART read/write
+functions; memory read/write functions; and turbidity calculations.</p>
+<p>In the <strong>src</strong> and <strong>include</strong> folders you will find the source and header files
+related to the CN0409 software application:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Communication.cpp/h</span></code> – Contains UART and I2C specific data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CN0409.cpp/h</span></code> – Contains the turbidity calculation functions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Flash.cpp/h</span></code> – Provides memory management.</p></li>
+</ul>
+</section>
 </section>
 <section id="documents">
 <h2>Documents<a class="headerlink" href="#documents" title="Link to this heading"></a></h2>
@@ -907,6 +1247,7 @@ values such as 0.10, 15.0, 100, 750, and 2000 NTU.</p>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADPD105" target="_blank">ADPD105 Product Page</a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP360" target="_blank">EVAL-ADICUP360 Product Page</a></p></li>
 </ul>
 </section>
 <section id="help-and-support">
@@ -920,7 +1261,7 @@ the Analog Devices <a class="icon ez reference external" href="https://ez.analog
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../eval-cn0398-ardz/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">EVAL-CN0398-ARDZ</a>
+    <a href="../eval-cn0398-ardz/software.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Software Demos</a>
     <a href="../eval-cn0410-ardz/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVAL-CN0410-ARDZ</a>
               </div>
           

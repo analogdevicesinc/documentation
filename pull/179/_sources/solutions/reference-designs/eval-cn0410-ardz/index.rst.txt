@@ -3,44 +3,40 @@
 EVAL-CN0410-ARDZ
 =================
 
-Smart Agriculture LED Current Source Driver.
+3-Channel LED Current Source Driver for Smart Agriculture.
 
 Overview
 --------
 
 :adi:`CN0410` is an Arduino-compatible shield optimized for smart agriculture
-applications, providing precise current control for up to three LED channels.
-The system supports isoSPI communication for multi-board control over distances
-up to 100 meters.
+applications, providing precise current control for up to three independent LED
+channels. The :adi:`EVAL-CN0410-ARDZ <CN0410>` is used together with the
+CFTL-LED-BAR, which contains LEDs with specific wavelengths that plants utilize
+for photosynthesis.
 
-The circuit uses the :adi:`AD5686` 16-bit unbuffered voltage-output DAC for
-LED current control and the :adi:`LT6820` SPI repeater for long-distance
-multi-drop communication between stacked boards.
+The circuit is a complete 3-channel, single-supply, 16-bit unbuffered voltage
+output DAC system that maintains +/-2 LSB integral and differential nonlinearity
+by utilizing a CMOS DAC. The voltage-to-current conversion stage controls the
+amount of current passing through each LED using a MOSFET in its configuration.
+The circuit also includes an isoSPI repeater that allows multiple boards to be
+controlled with a single master over distances up to 100 meters.
 
-Required Equipment
-------------------
+.. figure:: images/cn0410_board.jpg
+   :align: center
+   :width: 500
 
-- EVAL-CN0410-ARDZ evaluation board (Arduino shield)
-- :adi:`EVAL-ADICUP3029` controller board
-- USB cable
-- LED load (e.g., CFTL-LED-BAR with up to 500 mA per channel)
-- Optional: cooling fans for currents above 500 mA
+   EVAL-CN0410-ARDZ Evaluation Board
 
-Hardware Setup
---------------
+Key Components
+~~~~~~~~~~~~~~
 
-- **P1, P6, P9** -- LED connectors with cathode and anode terminals for
-  3 independent channels.
-- **P21** -- Chip select configuration (GPIO 8, 9, or 10).
-- **P2, P5, P7** -- Master/Slave mode jumpers for multi-board operation.
-- **S2** -- Master/Slave mode switch.
-- Transmit/Receive connectors for isoSPI multi-drop configuration.
+- :adi:`AD5686` -- 16-bit, quad-channel voltage output DAC
+- :adi:`LT6820` -- isoSPI repeater for long-distance multi-drop communication
 
-Software Setup
---------------
+.. toctree::
 
-The CN0410 demo software runs on the :adi:`EVAL-ADICUP3029` platform and
-provides per-channel LED current control via serial interface.
+   hardware
+   software
 
 Documents
 ---------
@@ -58,6 +54,7 @@ Schematic, PCB Layout, Bill of Materials
    - Schematics
    - PCB Layout
    - Bill of Materials
+   - Allegro Project
 
 Additional Information
 ----------------------

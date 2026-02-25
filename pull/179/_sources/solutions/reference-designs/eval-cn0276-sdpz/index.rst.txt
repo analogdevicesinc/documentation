@@ -30,12 +30,20 @@ Required Equipment
 ------------------
 
 - :adi:`EVAL-SDP-CB1Z` evaluation board (SDP-B board)
-- :adi:`EVAL-CN0276-SDPZ <CN0276>` evaluation board
+- :adi:`EVAL-CN0276-SDPZ <CN0276>` evaluation board (CN-0276 board)
 - Resolver (e.g., TS2620N21E11 from Tamagawa Seiki)
 - Adjustable DC power supply: +6 V to +12 V, >500 mA
 - USB Type-A to USB Mini-B cable
-- PC with Windows 7 SP1 (x86/x64) or later, Intel Core 2 GHz or faster,
-  4 GB RAM, 8 GB disk space, .NET Framework 4.5
+- PC with the following requirements:
+
+  - Microsoft Windows 7 with SP1 (x86 or x64), or later
+  - Intel Core processor (x86 or x64 compatible), 2 GHz or faster
+  - At least 4 GB RAM and 8 GB available hard disk space
+  - .NET Framework 4.5 or later
+  - Microsoft Visual C++ 2010 SP1 Redistributable
+  - SDP EEPROM Programmer software (supplied with CD)
+  - CN0276 Programming File (supplied with CD)
+  - CN0276 SDP Evaluation Software (supplied with CD)
 
 Hardware Setup
 --------------
@@ -43,16 +51,28 @@ Hardware Setup
 General Setup
 ~~~~~~~~~~~~~
 
-- The EVAL-CN0276-SDPZ connects to the :adi:`EVAL-SDP-CB1Z` via the 120-pin
-  connector CON A.
+- The EVAL-CN0276-SDPZ (CN-0276 board) connects to the :adi:`EVAL-SDP-CB1Z`
+  (SDP-B board) via the 120-pin connector CON A.
 - Use the adjustable DC power supply to power the EVAL-CN0276-SDPZ via the
   **J4** connector.
-- The :adi:`EVAL-SDP-CB1Z` connects to the PC via USB cable.
+- The :adi:`EVAL-SDP-CB1Z` (SDP-B board) connects to the PC via the USB
+  cable.
 - The resolver connects to the EVAL-CN0276-SDPZ via the 6-pin header at
   **J3**.
 
+Connecting the Hardware
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Connect the resolver to **J3** of the EVAL-CN0276-SDPZ as depicted in the
+wiring table below.
+
+.. note::
+
+   If a different resolver is used other than the TS2620N21E11, the wiring
+   schematic may be different.
+
 Resolver Wiring (J3)
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -79,12 +99,8 @@ Resolver Wiring (J3)
      - nEXC
      - Yellow/White
 
-.. note::
-
-   If a different resolver is used, the wiring may differ from the table above.
-
 Power Supply Wiring (J4)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -102,26 +118,48 @@ Software Setup
 Installing the Software
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Extract the file **CN0276_Evaluation_Software.zip** and run **setup.exe**.
+#. Extract the file **CN0276_Evaluation_Software.zip** and open the file
+   **setup.exe**.
 
    .. note::
 
-      Install to the default path ``C:\Program Files\Analog Devices\``
-      (32-bit) or ``C:\Program Files (x86)\Analog Devices\`` (64-bit).
+      It is recommended that you install the CN0276 Evaluation Software to the
+      default directory path ``C:\Program Files\Analog Devices\`` (32-bit) or
+      ``C:\Program Files (x86)\Analog Devices\`` (64-bit), and all National
+      Instruments products to ``C:\Program Files\National Instruments\``
+      (32-bit) or ``C:\Program Files (x86)\National Instruments\`` (64-bit).
 
 #. Click **Next** to view the installation review page.
-#. Click **Next** to start the installation. The installer for the ADI SDP
-   Drivers will execute automatically.
+#. Click **Next** to start the installation. After the installation, the
+   installer for the ADI SDP Drivers will execute.
 #. Press **Next** to set the installation location for the SDP Drivers.
-#. Press **Next** to install the SDP Drivers and complete installation. Click
-   **Finish** when done.
+
+   .. note::
+
+      It is recommended that you install the drivers to the default directory
+      path ``C:\Program Files\Analog Devices\SDP\DriversR2\`` (32-bit) or
+      ``C:\Program Files (x86)\Analog Devices\SDP\DriversR2\`` (64-bit).
+
+#. Press **Next** to install the SDP Drivers and complete the installation of
+   all software. Click **Finish** when done.
 
 Using the Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Open **CN0276.exe** from the installation directory.
-#. Click the **Connect** button to establish a USB connection to the SDP-B
-   board.
+Establishing a USB Connection Link
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Follow the instructions to properly install the software and connect the
+   hardware as described in the previous sections.
+#. Open the file named **CN0276.exe** in the installation directory.
+
+   .. note::
+
+      If the software was installed to the default location it will be found at
+      ``C:\Program Files\Analog Devices\CN0276\CN0276.exe`` (32-bit) or
+      ``C:\Program Files (x86)\Analog Devices\CN0276\CN0276.exe`` (64-bit).
+
+#. Click the **Connect** button. A window with a progress bar will load.
 #. Upon success, the System Status String Indicator will display the SDP-B
    board serial number.
 
@@ -131,27 +169,49 @@ Using the Evaluation Software
    written to the :adi:`AD2S1210` before the first run.
 
 Capturing Data
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
-#. Establish a USB connection.
+#. Establish a USB connection link.
 #. Write the configuration data to the :adi:`AD2S1210`.
 #. Set the number of samples.
 #. Click the **Start** button.
-#. Conversion halts when the sample count is reached or the **Stop** button is
-   pressed.
+#. When the sample count is reached or the **Stop** button is pressed, the
+   conversion will halt.
 
-Software Controls
-~~~~~~~~~~~~~~~~~
+Software Control and Indicator Descriptions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- **Connect/Disconnect** -- Toggle SDP-B board USB connection.
-- **Start** -- Begin collecting conversion data.
-- **Stop** -- Stop data collection.
-- **Samples setting** -- Set the number of samples per acquisition.
-- **Run mode** -- Enable persistent running mode.
-- **Data Analyze tab** -- Histogram of acquired data.
-- **RDC Output tab** -- Real-time position and velocity indicators.
-- **RDC Configuration tab** -- Read/write :adi:`AD2S1210` internal registers.
-- **SDP Information tab** -- SDP-B board information.
+#. **Connect/Disconnect Button** -- Toggles the SDP-B board USB connection
+   to the CN-0276 board. A connection to the SDP-B board must be made to use
+   the software.
+#. **Start Button** -- Begins collecting conversion data and presents the
+   acquisitions in the chart.
+#. **Stop Button** -- Stops collecting data from the CN-0276 board.
+#. **Samples Setting** -- Sets the number of samples for each acquisition.
+#. **Run Mode Setting** -- Enables persistent running mode of RDC samples.
+#. **Control Tabs**
+
+   - **Data Analyze** -- Shows the acquired data analyzed result in histogram.
+   - **RDC Output** -- Includes two indicators showing the position and
+     velocity output of the RDC, updated in real time when the RDC is
+     converting.
+   - **RDC Configuration** -- Read and write the internal registers of the
+     :adi:`AD2S1210`.
+   - **SDP Information** -- Shows the SDP-B board information when USB
+     connection is available.
+
+#. **SDP Status String Indicator** -- Displays a message from the SDP-B board.
+#. **RDC Working Status LED** -- Shows the RDC working status; when the RDC
+   is converting this LED lights up, otherwise it is off.
+#. **Position Indicator** -- Displays the RDC position output in hexadecimal.
+#. **Velocity Indicator** -- Displays the RDC velocity output in revolutions
+   per second (rps).
+#. **Configuration Write to AD2S1210** -- These values will be written to the
+   AD2S1210 registers when the Write Configuration button is pressed.
+#. **AD2S1210 Register Value** -- Read back values of the AD2S1210 registers.
+#. **AD2S1210 Fault LED** -- Shows the fault status of the AD2S1210.
+#. **Write Configuration Button** -- Writes the configuration area values to
+   the AD2S1210 registers.
 
 Documents
 ---------

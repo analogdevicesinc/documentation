@@ -3,51 +3,73 @@
 EVAL-CN0396-ARDZ
 =================
 
-Portable Electrochemical Gas Detector.
+Portable Electrochemical Dual Toxic Gas Detector.
+
+.. toctree::
+   :hidden:
+
+   hardware
+   software
 
 Overview
 --------
 
-:adi:`CN0396` is a single-supply, low noise portable gas detector using a
+:adi:`CN0396` is a single-supply, low-noise portable gas detector using a
 4-electrode electrochemical sensor for simultaneous detection of two distinct
-gases. The system interfaces with a CO-H2S sensor for combined carbon monoxide
-and hydrogen sulfide measurement.
+gases. The Alphasense COH-A2 sensor, which detects carbon monoxide (CO) and
+hydrogen sulfide (H2S), is used in this example. Electrochemical sensors offer
+several advantages for instruments that detect or measure the concentration of
+many toxic gases. Most sensors are gas-specific and have usable resolutions
+under one part per million (ppm) of gas concentration.
 
-The circuit uses the :adi:`ADA4528-2` dual auto-zero amplifier for low-noise
-signal conditioning, the :adi:`AD5270` programmable rheostat for sensor biasing,
-the :adi:`ADR3412` precision low-noise voltage reference, the :adi:`AD7790`
-16-bit sigma-delta ADC, and the :adi:`ADT7310` 16-bit digital temperature
-sensor.
+.. figure:: cn0396_demo_1.png
+   :width: 650px
+
+   EVAL-CN0396-ARDZ connected to EVAL-ADICUP360.
+
+The circuit uses the :adi:`ADA4528-2` dual auto-zero amplifier, which has a
+maximum offset voltage of 2.5 uV at room temperature and an industry-leading
+5.6 uV/sqrt(Hz) of voltage noise density. The :adi:`AD5270` programmable
+rheostat is used rather than a fixed transimpedance resistor, allowing for
+rapid prototyping of different gas sensor systems without changing the bill of
+materials.
+
+The :adi:`ADR3412` precision, low-noise, micropower reference establishes the
+1.2 V common-mode pseudo ground reference voltage with 0.1% accuracy and
+8 ppm/degrees C drift. For applications where measuring fractions of ppm gas
+concentration is important, using the ADA4528-2 and the ADR3412 makes the
+circuit performance suitable for interfacing with a 16-bit ADC, such as the
+:adi:`AD7790`.
+
+An :adi:`ADT7310` 16-bit digital SPI temperature sensor is also included to
+monitor environmental temperature, allowing for correction of temperature
+effects on the sensor.
+
+The EVAL-CN0396-ARDZ shield is designed to be compatible with the Arduino R3
+shield form factor and is compatible with either 5 V or 3.3 V processor
+boards.
 
 Required Equipment
 ------------------
 
+**Hardware:**
+
 - EVAL-CN0396-ARDZ evaluation board
 - :adi:`EVAL-ADICUP360` development board or Arduino R3 compatible processor
 - 4-electrode electrochemical gas sensor (CO-H2S sensor included)
-- 6 V power supply or USB
-- USB cable
-- PC with serial terminal software (PuTTY, Tera Term, or similar)
+- Power supply: 6 V or 6 V wall wart (not needed if plugged into PC via USB)
+- Environmental chamber and calibration gases (for calibration)
+- Precision current sources (alternative to actual sensor and gases)
 
-Hardware Setup
---------------
+**Software:**
 
-- Connect the evaluation board to the microprocessor using the Arduino R3
-  headers (POWER, ANALOG, DIGI0, DIGI1, ICSP).
-- Connect the electrochemical sensor to socket M1.
-- Ensure 5 V, IOREF, and GND pins are connected from the ANALOG header.
-- Configurable chip select pins: D9/D10 for AD7790, D5/D6 for AD5270,
-  D3/D4 for ADT7310.
+- PC with a USB port and Windows 7 (32-bit) or higher
+- ADICUP360 Eclipse IDE
+- CN0396 demo software
+- Serial terminal software (PuTTY, Tera Term, or similar)
 
-Software Setup
---------------
-
-The system uses serial terminal output for real-time gas concentration
-monitoring. The ADICUP360 Eclipse IDE provides the development environment
-for firmware customization.
-
-Pin-compatible sensor alternatives include the Alphasense SOH-A2 and
-DD-Scientific GS+4DT sensors.
+For detailed hardware setup and connector configuration, see :doc:`hardware`.
+For software demo and configuration, see :doc:`software`.
 
 Documents
 ---------
@@ -65,6 +87,7 @@ Schematic, PCB Layout, Bill of Materials
    - Schematics
    - PCB Layout
    - Bill of Materials
+   - Allegro Project
 
 Additional Information
 ----------------------
@@ -73,6 +96,7 @@ Additional Information
 - :adi:`AD5270 Product Page <AD5270>`
 - :adi:`AD7790 Product Page <AD7790>`
 - :adi:`ADT7310 Product Page <ADT7310>`
+- :adi:`ADR3412 Product Page <ADR3412>`
 
 Help and Support
 ----------------

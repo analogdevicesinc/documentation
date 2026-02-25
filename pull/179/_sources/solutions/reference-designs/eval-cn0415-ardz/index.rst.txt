@@ -3,51 +3,46 @@
 EVAL-CN0415-ARDZ
 =================
 
-PWM Solenoid Driver.
+Robust PWM Solenoid Driver with Closed-Loop Current Control.
 
 Overview
 --------
 
 :adi:`CN0415` is a robust pulse-width modulation (PWM) solenoid driver circuit
-in Arduino shield form factor. The system provides accurate, closed-loop current
-control for 2-state solenoid applications such as motion control, latches,
-clamps, brakes, clutches, and proportional valves.
+in an Arduino shield form factor. Target applications include motion control,
+latches, clamps, brakes, clutches, proportional gas valves, proportional liquid
+valves, and other industrial applications. The circuit provides accurate,
+closed-loop current control in 2-state solenoid applications, allowing
+low-voltage solenoids to be used over a wide range of supply voltages,
+tolerating overvoltage and undervoltage transient conditions caused by
+cold-cranking and load-dump conditions.
 
-The circuit uses the :adi:`LTC4367` supply supervisor, :adi:`LTC4441` gate
-driver, :adi:`LTC2312-14` 14-bit ADC, :adi:`LT1671` op-amp, :adi:`LT3433`
-switching regulator, :adi:`ADG3304` logic level translator, and the
-:adi:`AD8210` current sense amplifier.
+Initial pull-in current, pull-in time delay, and hold current are independently
+adjustable in software, greatly reducing power consumption in applications
+where the solenoid is continuously energized. In proportional valve
+applications, PWM duty cycle and frequency can be directly controlled by an
+external PID controller, and a dither current with programmable frequency and
+amplitude can be enabled to reduce mechanical stiction.
 
-Required Equipment
-------------------
+.. figure:: images/cn0415_board.png
+   :align: center
+   :width: 500
 
-- EVAL-CN0415-ARDZ evaluation board (Arduino shield)
-- :adi:`EVAL-ADICUP3029` development board
-- 6--24 V power supply (up to 3 A)
-- Solenoid actuator (24 V max, 3 A max)
-- USB cable
-- PC with serial terminal software
+   EVAL-CN0415-ARDZ Evaluation Board
 
-Hardware Setup
---------------
+Simplified Functional Block Diagram
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- **DS1--DS4** -- LED indicators for power and fault detection.
-- **P2** -- Chip select configuration (GPIO pins 6, 2, 1).
-- **P34** -- PWM selection (GPIO pins 7-7, 7-6, 7-4).
-- **JP1** -- Current monitor offset.
-- **JP2** -- ADC selection.
-- **JP3** -- Vcc supply configuration.
-- **JP5** -- Burst-mode enable.
-- **JP8** -- Overcurrent latch-off control.
-- **P6, P7** -- Hardware fault detection pins.
+.. figure:: images/cn0415_block_diagram.png
+   :align: center
+   :width: 600
 
-Software Setup
---------------
+   CN0415 Simplified Functional Block Diagram
 
-The command-line interface (CLI) via serial UART provides independent control
-of initial pull-in current, pull-in time delay, and hold current. PWM duty
-cycle and frequency are directly adjustable, and programmable dither current
-reduces mechanical stiction.
+.. toctree::
+
+   hardware
+   software
 
 Documents
 ---------
@@ -63,15 +58,21 @@ Schematic, PCB Layout, Bill of Materials
    <https://www.analog.com/cn0415-designsupport>`__
 
    - Schematics
-   - PCB Layout
    - Bill of Materials
+   - Gerber Files
+   - Assembly Files
 
 Additional Information
 ----------------------
 
 - :adi:`AD8210 Product Page <AD8210>`
 - :adi:`LTC4367 Product Page <LTC4367>`
+- :adi:`LTC4441 Product Page <LTC4441>`
 - :adi:`LTC2312-14 Product Page <LTC2312-14>`
+- :adi:`LT1671 Product Page <LT1671>`
+- :adi:`LT3433 Product Page <LT3433>`
+- :adi:`ADG3304 Product Page <ADG3304>`
+- :adi:`EVAL-ADICUP3029 Product Page <EVAL-ADICUP3029>`
 
 Help and Support
 ----------------

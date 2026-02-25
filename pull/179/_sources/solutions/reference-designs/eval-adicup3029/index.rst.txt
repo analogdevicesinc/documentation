@@ -3,55 +3,351 @@
 EVAL-ADICUP3029
 ================
 
-IoT Development Platform.
+Ultra-Low Power ARM Cortex-M3 IoT Development Platform.
 
 Overview
 --------
 
-The :adi:`EVAL-ADICUP3029` is an Arduino Uno form-factor compatible development
-and prototyping platform based on the :adi:`ADuCM3029` 32-bit ARM Cortex-M3
-microcontroller. The board is designed for IoT applications with integrated
-Wi-Fi and Bluetooth 5.0 capabilities.
+The :adi:`EVAL-ADICUP3029` is an Arduino Uno form factor compatible platform
+based on the industry-leading ultra-low power :adi:`ADuCM3029 <ADUCM3029>`
+32-bit ARM Cortex-M3 microcontroller. The platform is designed to be a
+development and prototyping vehicle to get customer ideas from concept to
+production with minimal risk and faster time to market.
 
-The platform supports a wide range of PMOD and Arduino shield add-on boards
-for sensors, data acquisition, and communication.
+The EVAL-ADICUP3029 is designed for IoT (Internet of Things) applications in
+mind, and therefore comes with on-board **Wi-Fi** and **Bluetooth 5.0**
+capabilities. A free version of CrossCore Embedded Studios (an Eclipse-based
+Analog Devices Interactive Development Environment) is supplied to the
+customer for debugging and application development. Add-on hardware modules,
+MCU drivers, and software application examples help form a complete ecosystem
+that customers can leverage into their final product.
 
-Required Equipment
-------------------
+Key Features
+~~~~~~~~~~~~~
 
-- EVAL-ADICUP3029 development board
-- Micro-USB cable for power and programming
-- Optional: PMOD sensor boards (EVAL-ADT7420-PMDZ, EVAL-ADXRS290-PMDZ,
-  EVAL-AD5770R-PMDZ, etc.)
-- Optional: Arduino shield boards (EVAL-CN0394-ARDZ, EVAL-CN0395-ARDZ,
-  EVAL-CN0396-ARDZ, etc.)
+- :adi:`ADuCM3029 <ADUCM3029>` ultra-low power ARM Cortex-M3 microcontroller
+- On-board **Bluetooth 5.0** module (EM9304)
+- On-board **Wi-Fi** module (ESP8266)
+- Arduino Uno Rev3 compatible connectors
+- 12-pin SPI PMOD connector
+- 8-pin I2C PMOD connector
+- 4-pin I2C Grove connector
+- DAPLink interface for drag-and-drop programming
+- On-board SWD debugger (Freescale MK20DX128)
+- DC power jack (7V to 12V) or USB powered
+- Ultra-low power measurement capabilities
 
-Hardware Setup
---------------
+Base Board Hardware
+--------------------
 
-- Arduino Uno form-factor with standard header layout.
-- **P8** -- Standard PMOD connectors for sensor modules.
-- On-board Wi-Fi and Bluetooth 5.0 modules.
-- Micro-USB connector for power, programming, and serial communication.
-- Firmware can be flashed via drag-and-drop USB storage mode.
+The EVAL-ADICUP3029 base board consists of two basic blocks:
 
-Software Setup
---------------
+- An ultra-low power, 32-bit ARM Cortex-M3 processor, on a single-chip
+  **ADuCM3029 microcontroller**.
+- An on-board serial wire download (SWD) interface, implemented with the
+  **Freescale MK20DX128 microcontroller**. This block allows the Freescale
+  device to act as an on-board debugger, so you do not need additional
+  external hardware to program or debug your ADuCM3029 applications.
 
-CrossCore Embedded Studios (free Eclipse-based IDE from Analog Devices) is the
-primary development environment. ADuCM302x on-chip peripheral drivers and
-device driver software packs are available for supported sensors and
-peripherals.
+Peripheral Connectors
+~~~~~~~~~~~~~~~~~~~~~~
+
+The following standard connectors are provided on the base board for use with
+external add-on modules:
+
+- **DC Power Jack** -- Core positive, accepts +7V to +12V DC supply voltage
+- **USB** -- Used for flash programming and debug interface; also provides a
+  virtual serial port connection to ADuCM3029 microcontroller
+- **PMOD_SPI** -- 12-pin SPI PMOD connector
+- **PMOD_I2C** -- 8-pin I2C PMOD connector
+- **Grove Connector** -- 4-pin I2C Grove connector
+- **Arduino Connectors** -- Arduino Uno Rev3 compatible connectors
+
+.. list-table:: Arduino DIO High Connector Pinout
+   :header-rows: 1
+   :widths: 10 15 35 15
+
+   * - Pin
+     - Pin Name
+     - ADuCM3029 Pin Function
+     - Port No.
+   * - 1
+     - SCL
+     - I2C0_SCL/GPIO04
+     - P0_04
+   * - 2
+     - SDA
+     - I2C0_SDA/GPIO05
+     - P0_05
+   * - 3
+     - AREF
+     - VREF+
+     -
+   * - 4
+     - AGND
+     - AGND (Analog ground)
+     -
+   * - 5
+     - SCLK
+     - SPI0_CLK/SPT0_BCLK/GPIO00
+     - P0_00
+   * - 6
+     - MISO
+     - SPI0_MISO/SPT0_BD0/GPIO02
+     - P0_02
+   * - 7
+     - MOSI
+     - SPI0_MOSI/SPT0_BFS/GPIO01
+     - P0_01
+   * - 8
+     - CS
+     - SPI0_CS1/SYS_CLKIN/SPI1_CS3/GPIO26
+     - P1_10
+   * - 9
+     - RDY
+     - SPI0_RDY/GPIO30
+     - P1_14
+   * - 10
+     - IO28
+     - GPIO28
+     - P1_12
+
+.. list-table:: Arduino DIO Low Connector Pinout
+   :header-rows: 1
+   :widths: 10 15 35 15
+
+   * - Pin
+     - Pin Name
+     - ADuCM3029 Pin Function
+     - Port No.
+   * - 1
+     - IO08
+     - BPR0_TONE_N/GPIO08
+     - P0_08
+   * - 2
+     - IO27
+     - TMR1_OUT/GPIO27
+     - P1_11
+   * - 3
+     - IO33
+     - XINT0_WAKE3/TMR2_OUT/GPIO33
+     - P2_01
+   * - 4
+     - IO09
+     - BPR0_TONE_P/SPI2_CS1/GPIO09
+     - P0_09
+   * - 5
+     - IO13
+     - XINT0_WAKE2/GPIO13
+     - P0_13
+   * - 6
+     - IO15
+     - XINT0_WAKE0/GPIO15
+     - P0_15
+   * - 7
+     - TX
+     - UART0_TX/GPIO10
+     - P0_10
+   * - 8
+     - RX
+     - UART0_RX/GPIO11
+     - P0_11
+
+Wireless Connectivity Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Bluetooth Low Energy Chipset**
+
+The EVAL-ADICUP3029 has an on-board EM9304 Bluetooth 5.0 chipset. This
+module enables Bluetooth Low Energy communication with smart devices for
+data visualization and control.
+
+**Wi-Fi Module**
+
+The EVAL-ADICUP3029 supports the ESP8266 Wi-Fi module, which connects via
+the P1 connector. This enables MQTT-based communication over TCP/IP for
+cloud connectivity applications.
+
+UART Switch (S2)
+~~~~~~~~~~~~~~~~~
+
+The S2 switch selects the UART routing on the board:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Position
+     - Function
+   * - USB Arduino
+     - Routes UART to USB for serial terminal output
+   * - WiFi
+     - Routes UART to the Wi-Fi module (ESP8266)
+
+Power Switch (S1)
+~~~~~~~~~~~~~~~~~~
+
+The S1 switch selects the power source:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Position
+     - Function
+   * - USB
+     - Board powered from USB connection
+   * - DC
+     - Board powered from DC power jack (7V to 12V)
+
+Push Buttons
+~~~~~~~~~~~~~
+
+The EVAL-ADICUP3029 has two push buttons:
+
+- **S3** -- Reset button for the ADuCM3029
+- **S4** -- User-configurable button connected to GPIO
+
+Power Consumption Measurement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The board includes provisions for measuring the power consumption of the
+ADuCM3029 microcontroller. By removing a shorting jumper, a current meter
+can be inserted into the power supply path to accurately measure the current
+draw.
+
+Stand-Alone Mode
+~~~~~~~~~~~~~~~~~
+
+The EVAL-ADICUP3029 can operate in stand-alone mode by powering the board
+from the DC power jack or a battery. In this mode, the DAPLink debugger
+is not active and the board runs the last programmed application
+autonomously.
+
+Tools and Software
+-------------------
+
+CrossCore Embedded Studio
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CrossCore Embedded Studio (CCES) is the primary development environment for
+the EVAL-ADICUP3029. It is a free Eclipse-based IDE from Analog Devices that
+provides:
+
+- Project creation, build, and debug support
+- ADuCM302x Device Family Pack (DFP) with on-chip peripheral drivers
+- ADICUP3029 Board Support Package (BSP)
+- Sensor application software driver packs
+
+Required software versions:
+
+- CrossCore Embedded Studio 2.6.0 or higher
+- ADuCM302x DFP 2.0.0 or higher
+- ADICUP3029 BSP 1.0.0 or higher
+
+The EVAL-ADICUP3029 is also supported by third-party IDEs including IAR
+Embedded Workbench and Keil MDK.
+
+Programming Methods
+~~~~~~~~~~~~~~~~~~~~
+
+There are two ways to program the EVAL-ADICUP3029:
+
+1. **Drag and Drop** -- The simplest method. Connect the board via USB and
+   drag the prebuilt ``.hex`` file to the DAPLink drive that appears on your
+   computer.
+2. **Build, Compile, and Debug** -- Import the project into CrossCore
+   Embedded Studio for full control over software customization and debugging.
+
+Hardware Drivers and USB Storage Modes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After connecting the EVAL-ADICUP3029 to a computer via USB, the DAPLink
+interface provides:
+
+- A mass storage device for drag-and-drop programming
+- A serial port for UART communication
+- An SWD debug interface for CrossCore Embedded Studio
+
+Compatible Shield and PMOD Boards
+-----------------------------------
+
+The EVAL-ADICUP3029 supports a wide range of Arduino shield and PMOD
+expansion boards. The following boards have demo software and documentation
+available:
+
+Accelerometer and Motion Sensing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :ref:`EVAL-ADXL362-ARDZ <eval-adxl362-ardz>` -- Ultralow power 3-axis
+  MEMS accelerometer (Wi-Fi demo)
+- :ref:`EVAL-ADXL372-ARDZ <eval-adxl372-ardz>` -- Ultralow power +/-200 g
+  impact sensor (Bluetooth demo)
+- :ref:`EVAL-ADXL313Z <eval-adxl313z>` -- Low power 3-axis accelerometer
+- :ref:`EVAL-ADXRS290-PMDZ <eval-adxrs290-pmdz>` -- Dual-axis MEMS gyroscope
+  (CLI demo)
+
+Temperature and Environmental Sensing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :ref:`EVAL-ADT7420-PMDZ <eval-adt7420-pmdz>` -- High accuracy digital
+  temperature sensor
+
+Analog/Digital Conversion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :ref:`EVAL-AD5592R-PMDZ <eval-ad5592r-pmdz>` -- Configurable 8-channel
+  ADC/DAC
+- :ref:`EVAL-AD5593R-PMDZ <eval-ad5593r-pmdz>` -- Configurable 8-channel
+  ADC/DAC (I2C)
+- :ref:`EVAL-AD5770R-PMDZ <eval-ad5770r-pmdz>` -- 6-channel DAC for
+  photonics control
+- :adi:`EVAL-AD7124-8-PMDZ <EVAL-AD7124-8PMDZ>` -- 8-channel 24-bit
+  sigma-delta ADC
+
+Gas and Chemical Sensing
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :ref:`EVAL-CN0357-ARDZ <eval-cn0357-ardz>` -- CO toxic gas measurement
+  (Bluetooth demo)
+- :ref:`EVAL-CN0397-ARDZ <eval-cn0397-ardz>` -- Visible light
+  detection/measurement
+- :ref:`EVAL-CN0398-ARDZ <eval-cn0398-ardz>` -- Soil moisture and pH
+  measurement (Wi-Fi demo)
+- :ref:`EVAL-CN0428-EBZ <eval-cn0428-ebz>` -- Water conductivity and pH
+  measurement
+- :ref:`EVAL-CN0537-ARDZ <eval-cn0537-ardz>` -- UL 217 smoke detector
+
+Industrial/PLC
+~~~~~~~~~~~~~~~
+
+- :ref:`EVAL-CN0410-ARDZ <eval-cn0410-ardz>` -- Programmable 3-channel LED
+  driver
+- :ref:`EVAL-CN0414-ARDZ <eval-cn0414-ardz>` -- PLC/DCS analog input module
+  with HART
+- :ref:`EVAL-CN0415-ARDZ <eval-cn0415-ardz>` -- Robust solenoid measurement
+  system
+- :ref:`EVAL-CN0418-ARDZ <eval-cn0418-ardz>` -- PLC/DCS analog output module
+  with HART
+
+Precision Measurement
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- :ref:`EVAL-CN0531-PMDZ <eval-cn0531-pmdz>` -- +/-5V 20-bit DC control
+- :ref:`EVAL-CN0536-ARDZ <eval-cn0536-ardz>` -- Radiation measurement
+- :ref:`EVAL-CN0503-ARDZ <eval-cn0503-ardz>` -- Optical liquid analysis
+
+Design and Integration Files
+------------------------------
+
+- `EVAL-ADICUP3029 Schematics and Layout <https://www.analog.com/media/en/reference-design-documentation/design-integration-files/eval-adicup3029-designsupport.zip>`__
+- `EVAL-ADICUP3029 GitHub Repository <https://github.com/analogdevicesinc/EVAL-ADICUP3029>`__
 
 Documents
 ---------
 
+- :adi:`ADuCM3029 Datasheet <ADUCM3029>`
 - :adi:`EVAL-ADICUP3029 Product Page <EVAL-ADICUP3029>`
-
-Additional Information
-----------------------
-
-- :adi:`ADuCM3029 Product Page <ADUCM3029>`
 
 Help and Support
 ----------------

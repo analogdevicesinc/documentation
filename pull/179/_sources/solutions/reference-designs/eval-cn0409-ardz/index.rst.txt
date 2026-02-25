@@ -8,40 +8,305 @@ Water Turbidity Measurement System.
 Overview
 --------
 
-:adi:`CN0409` uses the :adi:`ADPD105` photometric front end with an 860 nm
-infrared LED and silicon PIN photodiode network to measure water turbidity
-levels from 0 to 1000 FTU (Formazin Turbidity Units). The system supports two
-ISO 7027 turbidity measurement standards (ratio and non-ratio methods) plus the
-GLI method.
+:adi:`CN0409` uses the :adi:`ADPD105` photometric front end and a network of
+860 nm infrared emitters and silicon PIN photodiodes to achieve a water
+turbidity measurement system. The system can measure low to high water turbidity
+levels ranging from 0 FTU to 1000 FTU (limited by available solution). The IR
+LED and photodiode network is arranged to support two of the most recognized
+turbidity measurement standards -- ISO 7027 (both ratio and non-ratio methods)
+and the GLI method.
 
-With three-point calibration, typical accuracy is +/-0.50 FTU or +/-5% of
-reading (whichever is greater), with a 0.05 FTU noise level. The photodiodes
-are positioned at 90 degrees and 180 degrees to the LED for nephelometric and
-transmission measurements respectively.
+With three-point calibration, the typical accuracy that the system can achieve
+is +/-0.50 FTU or +/-5% of the reading, whichever is greater. This accuracy
+combined with the 0.05 FTU noise level makes the measurements obtained using
+this system very reliable.
+
+The :adi:`ADPD105`'s ambient light rejection feature makes this circuit ideal
+for applications where accurate, robust, and non-contact turbidity measurements
+are critical. Applications include chemical analysis and monitoring natural
+bodies of water, wastewater, and drinking water.
+
+Turbidity Measurement
+---------------------
+
+The International Organization for Standardization (ISO) developed a design
+standard known as ISO 7027 Water Quality -- Determination of Turbidity, which
+is best known for its requirement of a monochromatic light source. Most
+instruments that comply with this standard use an 860 nm LED light source and a
+primary detector at an angle of 90 degrees. Additional detection angles are
+allowed, such as a detector at an angle of 180 degrees, to increase the range
+of measurable turbidity levels.
+
+The CN0409 hardware allows for the measurement of both 90 degrees and
+180 degrees scattering measurements.
+
+Non-Ratio Measurement Method (Low Turbidity)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For turbidities between 0 FTU and 40 FTU, the 90 degree detector provides the
+most linear response to scattering. At low turbidity levels, the particles are
+much smaller than the wavelength of incident light; therefore, they exhibit a
+symmetrical scattering distribution. As the number and size of suspended solids
+increase within this range, the 90 degree detector receives a linearly
+proportional amount of scattered light. This method is also known as the
+non-ratio ISO 7027 because of the use of just one detector.
+
+Ratio Measurement Method (Medium to High Turbidity)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Higher turbidity levels in the range of 40 FTU to 4,000 FTU require an
+additional detector to obtain the same linear response as the non-ratio method.
+Larger particles present in these types of solutions exhibit an asymmetrical
+light scattering distribution that results in a higher intensity forward
+scattered light. The ISO 7027 ratio method of the CN0409 uses the ratio of the
+90 degree detector and the 180 degree detector to measure turbidity levels of
+theoretically up to 4,000 FTU.
+
+.. note::
+
+   The CN0409 solution has only been validated up to 1000 FTU.
 
 Required Equipment
 ------------------
 
+Hardware
+~~~~~~~~
+
 - EVAL-CN0409-ARDZ evaluation board
-- :adi:`EVAL-ADICUP3029` controller board (or ADICUP360)
-- PC with USB support
+- :adi:`EVAL-ADICUP360` or :adi:`EVAL-ADICUP3029` controller board
+- Micro-USB to USB cable
+- PC or laptop with USB port
 - LaMotte-style test vials
-- Calibration solutions (e.g., HI88703-11, Oakton T100, or Cole Parmer kit)
+- Turbidity calibration solutions (0.02 FTU, 100 FTU, and 800 FTU)
+- Turbidity test solutions (e.g. 10 FTU, 15 FTU, 100 FTU, 1000 FTU)
 
-Hardware Setup
---------------
+Software
+~~~~~~~~
 
-- IR LEDs and photodiode detectors (DS1, DS2) positioned at 90 degrees and
-  180 degrees.
-- Mechanical vial holder for LaMotte-style test vials.
-- Shield attaches to the :adi:`EVAL-ADICUP3029` controller board.
+- ADuCM360_demo_cn0409 software
+- CrossCore Embedded Studio (2.7.0 or higher)
+- ADuCM36x DFP (1.0.2 or higher)
+- CMSIS ARM Pack (4.3.0 or higher)
+- Serial terminal program (such as PuTTY or Tera Term)
 
-Software Setup
---------------
+Vial Holder
+-----------
 
-The ADICUP3029 + CN0409 Demo software is available for turbidity measurement
-and calibration. Calibration points can be set using standard solutions at
-values such as 0.10, 15.0, 100, 750, and 2000 NTU.
+The turbidity calibration and sample vials are held in a mechanical holder that
+is specifically milled for the LaMotte-style test vial.
+
+The photodiodes (DS1 and DS2) and LEDs (D1 and D2) should be bent slightly
+backwards to allow placement of the vial holder. Once in place, carefully bend
+the photodiodes and LEDs into the holes of the vial holder until they are snug
+and secure.
+
+The vial holder should be screwed into the EVAL-CN0409-ARDZ board by lining up
+the holes in the vial holder with the holes in the board, using the screws
+provided.
+
+Test Vials
+----------
+
+The test vials are one of the biggest sources of measurement error within a
+turbidity system and therefore one of the most important factors to consider in
+obtaining accurate turbidity measurements.
+
+.. note::
+
+   It is recommended to use `LaMotte test vials
+   <https://www.coleparmer.com/i/lamotte-0290-6-turbidity-sample-test-tubes-vials-6-pk/0556366>`__
+   as the size fits into the CN0409 board vial holder.
+
+The following items are critical to the success of proper turbidity vial
+preparation and measurement techniques:
+
+Cleaning Procedure
+~~~~~~~~~~~~~~~~~~
+
+To obtain the most accurate results when taking measurements, the following
+process should be followed:
+
+- Test vials **MUST** be meticulously cleaned:
+
+  #. Wash the vials with soap and deionized water.
+  #. Soak the sample vial in hydrochloric acid solution.
+  #. Rinse with ultra-filtered deionized water.
+  #. Polish with silicone oil.
+
+Indexing Vials
+~~~~~~~~~~~~~~
+
+Test vials must also be indexed. After the cleaning process, the vial is used
+to measure a very low turbidity solution.
+
+- Use a calibrated FTU solution to ensure that the index is properly assessed
+  and assigned.
+
+The position with the lowest measured turbidity should be indexed and this
+position should be used for succeeding measurements.
+
+- If possible, use a properly indexed test vial for all subsequent
+  measurements to ensure the system is working and calibrated properly.
+
+Measurement Procedure
+~~~~~~~~~~~~~~~~~~~~~
+
+#. Fill a clean test vial (see cleaning procedure above) with up to 10 mL of
+   the solution under test.
+#. Allow sufficient time for bubbles to escape before placing the cap. This can
+   be done by letting the solution stand for several minutes to allow the
+   bubbles to vacate.
+#. Wipe the test vial with a lint-free cloth before inserting into the on-board
+   test vial holder to make sure it is free from fingerprints. Make sure to
+   hold the test vial by the cap when placing it in the holder.
+
+Calibration Solutions
+---------------------
+
+Calibration solutions are an important baseline to ensure that your measurement
+system is working appropriately. They are needed to perform the calibration
+calculations and routines within the software, providing accurate turbidity
+measurements.
+
+.. note::
+
+   The turbidity calibration solutions used in the evaluation are:
+
+   - `HI88703-11
+     <https://hannainst.com/turbidity-calibration-standards-for-hi88703-and-hi83414-hi88703-11.html>`__
+   - `Oakton T100
+     <https://www.coleparmer.com/i/oakton-t100-replacement-turbidity-calibration-kit/3563552>`__
+   - `Cole Parmer kit
+     <https://www.johnmorrisgroup.com/AU/Product/48740/Cole-Parmer-Turbidity-Standards-Pack>`__
+
+The calibration solution sets allow testing and characterization at many
+different data points and comparison of results against many different available
+products on the market. Available calibration solution values within these kits
+include:
+
+- 0.10, 15.0, 100, 750, and 2000 NTU
+- 0.02, 20.0, 100, and 800 NTU
+- 0.5, 10, and 40 NTU
+
+Hardware Setup (ADICUP360)
+--------------------------
+
+#. To program the base board, set the jumpers/switches as described in the
+   EVAL-ADICUP360 user guide.
+#. Connect the EVAL-CN0409-ARDZ to the Arduino connectors **P2**, **P5**,
+   **P6**, **P7**, **P8** of the EVAL-ADICUP360 board.
+#. Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the
+   Debug USB (**P14**).
+
+Calibration Procedure
+~~~~~~~~~~~~~~~~~~~~~
+
+When the project is being run for the first time, a calibration procedure is
+required in order to achieve high-accuracy results. The user must follow the
+steps described in the UART terminal when the application is started.
+
+The user has the option to modify the solutions that are used for calibrating
+the device. Any values can be used for the calibration points, but a proper
+distribution along the 0--1000 NTU range must be taken into account.
+
+.. note::
+
+   The calibration values can be edited in the ``CN0409.h`` file inside the
+   include folder within the project structure.
+
+After the calibration sequence is done at least once, the calibration
+coefficients are saved in the controller flash memory and will be used the
+next time when calibration is not performed. The calibration can be repeated
+as desired. If the program is run for the first time and a calibration routine
+is not done, the program will prompt the user to manually input calibration
+coefficients.
+
+Software Demo Procedure
+~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Fill a clean test vial with up to 10 mL of the solution under test.
+#. Allow sufficient time for bubbles to escape before placing the cap.
+#. Wipe the test vial with a lint-free cloth before inserting into the on-board
+   test vial holder.
+#. Open the serial terminal program (e.g. PuTTY) and press the reset button on
+   the EVAL-ADICUP360.
+#. Follow the on-screen prompt for calibration.
+
+   .. note::
+
+      For first-time use, it is required to perform calibration by pressing the
+      **y** key. For subsequent measurements, press the **n** key to skip
+      calibration.
+
+#. Three-point calibration will be performed using 0.02 FTU, 100 FTU, and
+   800 FTU. Wait for the on-screen prompt before placing each solution.
+#. After calibration, place the solution to be measured as prompted on the
+   screen.
+
+.. note::
+
+   Make sure to hold the test vial by the cap when placing it in the holder.
+
+Serial Terminal Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+   COM Port: (select the correct port)
+   Baud rate: 9600
+   Data: 8 bit
+   Parity: none
+   Start: 1 bit
+   Stop: 2 bit
+   Flow Control: none
+
+Obtaining the Source Code
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are two basic ways to program the ADICUP360 with the software for the
+CN0409:
+
+#. **Drag and drop** -- Drag and drop the ``.bin`` file to the MBED drive.
+   This is the easiest way to get started with the reference design.
+#. **Build and debug** -- Import the project into CrossCore Embedded Studio
+   to change parameters and customize the software.
+
+.. admonition:: Download
+
+   **Prebuilt CN0409 Bin File**
+
+   - `ADuCM360_demo_cn0409.bin
+     <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0409.bin>`__
+
+   **Complete CN0409 Source Files**
+
+   - `ADuCM360_demo_cn0409 Source Code
+     <https://github.com/analogdevicesinc/EVAL-ADICUP360/tree/master/projects/ADuCM360_demo_cn0409>`__
+
+Outputting Data
+~~~~~~~~~~~~~~~~
+
+#. Flash the program to the EVAL-ADICUP360.
+#. Switch the USB cable from the DEBUG USB (**P14**) to the USER USB
+   (**P13**).
+#. Configure the serial terminal program with the UART settings listed above.
+
+Project Structure
+~~~~~~~~~~~~~~~~~~
+
+The **ADuCM360_demo_cn0409** is a C++ project that uses the ADuCM36x C/C++
+project structure.
+
+This project contains: system initialization, setting system clock, enabling
+clock for peripherals; I2C interface, UART via P0.6/P0.7; UART read/write
+functions; memory read/write functions; and turbidity calculations.
+
+In the **src** and **include** folders you will find the source and header files
+related to the CN0409 software application:
+
+- ``Communication.cpp/h`` -- Contains UART and I2C specific data.
+- ``CN0409.cpp/h`` -- Contains the turbidity calculation functions.
+- ``Flash.cpp/h`` -- Provides memory management.
 
 Documents
 ---------
@@ -66,6 +331,7 @@ Additional Information
 
 - :adi:`ADPD105 Product Page <ADPD105>`
 - :adi:`EVAL-ADICUP3029 Product Page <EVAL-ADICUP3029>`
+- :adi:`EVAL-ADICUP360 Product Page <EVAL-ADICUP360>`
 
 Help and Support
 ----------------
