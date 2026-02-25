@@ -1,0 +1,91 @@
+.. _eval-adm3055e-ardz:
+
+EVAL-ADM3055E-ARDZ
+===================
+
+Isolated CAN FD Arduino Shield.
+
+Overview
+--------
+
+:adi:`CN0401` is an Arduino Uno compatible isolated controller area network with
+flexible data rate (CAN FD) communications port. The board interfaces via SPI to
+development platforms and is built around the :adi:`ADM3055E` CAN FD transceiver
+with integrated isolated DC-to-DC converter.
+
+Key features:
+
+- CAN FD data rates up to 8 Mbps
+- Reinforced signal and power isolation between node and CAN FD bus
+- Switchable 120 ohm split termination with common-mode filtering
+- Remote wake-up notification capability
+- Backwards compatible with classical CAN networks
+
+Required Equipment
+------------------
+
+- EVAL-ADM3055E-ARDZ evaluation board (Arduino shield)
+- :adi:`EVAL-ADICUP3029` development board or Arduino Uno compatible platform
+- CAN FD capable devices for bus communication
+- USB cable
+
+Hardware Setup
+--------------
+
+**Power Supply Configuration:**
+
+- **P20** -- Selects DC-to-DC converter power from Arduino 5 V or external
+  supply.
+- **P11** -- Selects logic supply from IOREF or external 2.7--5.5 V supply.
+- **P6** -- Terminal block for external power connections.
+
+**CAN Bus Connections:**
+
+- CAN bus terminal block (CANL, CANH, GND2).
+- CiA 303-1 male 9-pin sub-D port.
+
+**SPI Chip Select Configuration (P2):**
+
+- Positions support Arduino pins D10, D9, D8, or D7.
+
+**Control Features:**
+
+- **P5** -- Silent mode control via Arduino D4.
+- **P7** -- Interrupt configuration for service requests via Arduino D2.
+- **P19** -- Slope control / full-speed mode selection.
+
+Always install shunts in P2, P11, P19, and P20 for proper operation.
+
+Software Setup
+--------------
+
+Demo software is available for the :adi:`EVAL-ADICUP3029` platform with
+CN0401 CAN FD communication support.
+
+Documents
+---------
+
+- :adi:`CN0401 Circuit Note <CN0401>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-ADM3055E-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0401-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADM3055E Product Page <ADM3055E>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

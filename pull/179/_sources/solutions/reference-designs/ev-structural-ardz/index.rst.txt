@@ -1,0 +1,74 @@
+.. _ev-structural-ardz:
+
+EV-STRUCTURAL-ARDZ
+===================
+
+Vibration Sensor for Structural Health Monitoring.
+
+Overview
+--------
+
+The EV-STRUCTURAL-ARDZ is a vibration sensor evaluation board integrating
+multiple sensors for structural health monitoring and motion detection
+applications. The board combines the :adi:`ADXL343` 3-axis MEMS accelerometer,
+the :adi:`ADIS16203` programmable 360-degree inclinometer, and the
+:adi:`MAX30210` digital temperature sensor.
+
+Key features:
+
+- Motion detection: tap, double-tap, activity detection, and free-fall sensing
+  (ADXL343, 10--13 bit resolution)
+- Tilt sensing with ±180 degree output format (ADIS16203, self-test and
+  configurable alarms)
+- Temperature monitoring with ±0.1 °C accuracy from +20 °C to +50 °C
+  (MAX30210, high/low alarms)
+
+Required Equipment
+------------------
+
+- EV-STRUCTURAL-ARDZ sensor node
+- :ref:`MAX32670-SX-ARDZ <ad-max32sxwise-sl>` base board
+- MAX32625PICO programming adapter with 10-pin ribbon cable
+- CR123A battery (3 V to 4.7 V)
+- Micro-USB to USB cable
+- Host PC (Windows 10 or later)
+
+Hardware Setup
+--------------
+
+1. Insert CR123A battery into BT1 connector. **DS3** LED indicates correct
+   polarity.
+2. Align Arduino headers and connect the sensor node to the base board.
+3. Connect MAX32625PICO programmer via 10-pin ribbon cable.
+4. Connect MAX32625PICO to host PC via micro-USB cable.
+
+Software Setup
+--------------
+
+Program the MAX32625PICO by drag-and-drop firmware loading to the MAINTENANCE
+drive. Firmware is specifically designed for the MAX32670-SX-ARDZ base board.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EV-STRUCTURAL-ARDZ Design & Integration Files
+   <https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/ev-structural-ardz-designsupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADXL343 Product Page <ADXL343>`
+- :adi:`ADIS16203 Product Page <ADIS16203>`
+- :adi:`MAX30210 Product Page <MAX30210>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

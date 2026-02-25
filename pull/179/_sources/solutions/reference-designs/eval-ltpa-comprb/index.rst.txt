@@ -1,0 +1,85 @@
+.. _eval-ltpa-comprb:
+
+EVAL-LTPA-COMPRB
+=================
+
+LTpowerAnalyzer Compensation Probe.
+
+Overview
+--------
+
+The EVAL-LTPA-COMPRB is an optional companion board for the
+:ref:`EVAL-LTPA-KIT <eval-ltpa-kit>`, designed to support optimization of loop
+compensation in power supply designs. It functions as a programmable substitute
+for series R-C networks in Type 2 compensators, enabling users to evaluate Bode
+plots and transient responses with different combinations of resistances and
+capacitances without soldering components directly to test circuits.
+
+Key features:
+
+- Programmable resistance: 500 ohm to 100 kohm
+- Programmable capacitance: 10 pF to 39 nF
+- USB-C interface for data and power
+- Compact form factor: 2.82 in x 1.25 in
+- Digitally-controlled switches implementing parallel resistor/capacitor
+  combinations approximating E96 resistor and E24 capacitor standards
+
+Required Equipment
+------------------
+
+- EVAL-LTPA-COMPRB compensation probe board
+- :ref:`EVAL-LTPA-KIT <eval-ltpa-kit>` (LTpowerAnalyzer Kit)
+- :adi:`ADALM2000` Advanced Active Learning Module
+- Device under test (e.g., LT8642S demo board)
+- DC power supply
+- USB-C cable
+- Host PC with LTpowerAnalyzer software
+
+Hardware Setup
+--------------
+
+**Compensation Terminals:**
+
+- **R Terminal** -- Connects to programmable resistor array.
+- **COM Terminal** -- Junction between resistor and capacitor arrays.
+- **C Terminal** -- Connects to programmable capacitor array and parasitic
+  series resistance.
+
+The board includes approximately 8 pF of PCB capacitance appearing in parallel
+with the device under test.
+
+**Connection Steps:**
+
+1. Solder wires to appropriate terminals (R+COM for resistor-only, C+COM for
+   capacitor-only, R+C for series network).
+2. Locate compensation components on DUT and verify they are unpopulated.
+3. Connect probe wires across component locations (typically at compensation
+   pins like VC or COMP/ITH).
+4. Establish LTpowerAnalyzer hardware, ADALM2000, and DUT configuration.
+5. Connect USB-C cable to host PC.
+6. Launch LTpowerAnalyzer software -- probe detection is automatic.
+7. Select desired resistance/capacitance values from dropdown menus.
+8. Execute Bode Plot measurements and adjust values for stability requirements.
+
+Software Setup
+--------------
+
+The LTpowerAnalyzer software includes a dedicated compensation probe control
+panel displaying selectable resistance and capacitance values, actual
+implemented values after algorithm optimization, and real-time Bode plot
+integration.
+
+Resistance and capacitance accuracy varies at higher and lower settings
+respectively due to the parallel component architecture.
+
+Additional Information
+----------------------
+
+- :adi:`EVAL-LTPA-COMPRB Product Page <EVAL-LTPA-COMPRB>`
+- :adi:`EVAL-LTPA-KIT Product Page <EVAL-LTPA-KIT>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

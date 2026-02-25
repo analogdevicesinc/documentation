@@ -1,0 +1,93 @@
+.. _eval-ltpa-rl2000:
+
+EVAL-LTPA-RL2000
+=================
+
+Portable USB Efficiency Meter.
+
+Overview
+--------
+
+The EVAL-LTPA-RL2000 is a portable, USB efficiency meter based on the
+LTpowerAnalyzer that allows plotting DC efficiency and power loss of a DC-DC
+power supply across multiple values of load current. The device functions as a
+standalone efficiency measurement instrument without dependency on the ADALM2000
+or main :ref:`EVAL-LTPA-KIT <eval-ltpa-kit>` board.
+
+Key specifications:
+
+- Dual ±125 V DC voltmeters (±0.01% + 0.01% accuracy)
+- 30 A DC current meter with programmable 0--5 V voltage drop
+  (±0.025% + 0.01% accuracy)
+- 30 A (150 W max) DC current load with internal temperature sensing
+- Rear-mounted cooling fan with 70 °C shutdown protection
+- Current meter range: 10 uA to 30 A
+- USB-C interface for data and power
+
+Required Equipment
+------------------
+
+- EVAL-LTPA-RL2000 efficiency meter
+- Device under test (DUT)
+- DC power supply
+- USB-C cable
+- Short connecting cables (recommended to minimize parasitics)
+- Host PC with LTpowerAnalyzer software
+
+Hardware Setup
+--------------
+
+**Terminal Pairs:**
+
+- **Current 1** -- Input supply current measurement (±).
+- **Voltage 1** -- Input supply voltage (±).
+- **Voltage 2** -- Output voltage (±).
+- **Current 2** -- Programmable load (±).
+- **USB-C** -- Powers the device and enables PC communication.
+
+**Connection Procedure:**
+
+1. Connect Current 1 between power source (+) and DUT input (+).
+2. Connect Voltage 1 across DUT input pins.
+3. Connect Voltage 2 across DUT output pins.
+4. Connect Current 2 across DUT output pins as programmable load.
+5. Connect USB-C cable to PC.
+
+Software Setup
+--------------
+
+The LTpowerAnalyzer software provides a dedicated RL2000 control panel with
+real-time power loss and efficiency measurements, meter selection with LED
+identification, input/output voltage and current readouts, servo voltage control,
+voltmeter current compensation for leakage correction, and adjustable sample
+rate and settling time.
+
+**DC Sweep Measurement:**
+
+- Logarithmic or linear sweep modes
+- Configurable start/end current (1 uA to 30 A)
+- Points per decade/interval adjustment (1--200)
+- Real-time graphing with configurable X/Y axes
+- Data export capability
+
+**Typical Applications:**
+
+- Basic efficiency measurement
+- Servo voltage for stable input measurements
+- Micro-power DUT testing with leakage compensation
+- Negative output voltage measurement
+- Multiple input supply measurement (dual RL2000 configuration)
+- High current testing up to 60 A (parallel dual RL2000s)
+- Low output voltage testing with bias compensation
+
+Additional Information
+----------------------
+
+- :adi:`EVAL-LTPA-RL2000 Product Page <EVAL-LTPA-RL2000>`
+- :adi:`EVAL-LTPA-KIT Product Page <EVAL-LTPA-KIT>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

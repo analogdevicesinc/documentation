@@ -1,0 +1,84 @@
+.. _ev-cattletag-ardz:
+
+EV-CATTLETAG-ARDZ
+==================
+
+Solar-Powered Livestock Tracking Sensor.
+
+Overview
+--------
+
+The EV-CATTLETAG-ARDZ is an Arduino sensor board with a fully integrated
+solution for harvesting energy from single-/multi-cell solar sources with
+integrated battery charging and temperature sensing for livestock tracking
+applications. The board combines the :adi:`MAX20361` power harvester, the
+:adi:`MAX20335` battery management system, and the :adi:`MAX30210` digital
+temperature sensor with a buzzer and vibration motor option.
+
+Applications include:
+
+- Real-time livestock health monitoring
+- Grazing animal location tracking
+- Historical health trend analysis
+- Breeding readiness monitoring
+- Asset location, recovery, and traceability
+
+Required Equipment
+------------------
+
+- EV-CATTLETAG-ARDZ sensor node
+- :ref:`MAX32670-LR-ARDZ <ad-max32lrwise-sl>` base board
+- MAX32625PICO programming adapter with 10-pin ribbon cable
+- CR123A battery (3 V to 4.7 V) or equivalent external DC supply
+- Micro-USB to USB cable
+- Host PC (Windows 10 or later)
+
+Hardware Setup
+--------------
+
+**Power Supply Options:**
+
+- **P6** -- Solar panel input terminal block (remove R30 for external sources).
+- **P8** -- 3 V to 4.2 V external power terminal block.
+- **Battery holder** -- 2x AAA batteries.
+- **Arduino Power** -- Remove R84 and place 0 ohm resistor at R86.
+
+**Setup Sequence:**
+
+1. Insert CR123A battery into BT1 connector. **DS3** LED confirms correct
+   polarity.
+2. Connect EV-CATTLETAG-ARDZ to MAX32670-LR-ARDZ via Arduino headers.
+3. Connect MAX32625PICO programmer via 10-pin ribbon cable.
+4. Connect MAX32625PICO to host PC via micro-USB cable.
+
+Software Setup
+--------------
+
+Program the MAX32625PICO by drag-and-drop firmware loading to the MAINTENANCE
+drive. The firmware image required is
+``max32625_max32670evkit_if_crc_swd_v1.0.3.bin``.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EV-CATTLETAG-ARDZ Design & Integration Files
+   <https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/ev-cattletag-ardz-designsupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`MAX20361 Product Page <MAX20361>`
+- :adi:`MAX20335 Product Page <MAX20335>`
+- :adi:`MAX30210 Product Page <MAX30210>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

@@ -1,0 +1,73 @@
+.. _ev-flowmeter-ardz:
+
+EV-FLOWMETER-ARDZ
+==================
+
+Ultrasonic Time-of-Flight Flow Meter.
+
+Overview
+--------
+
+The EV-FLOWMETER-ARDZ is an ultrasonic time-of-flight flow measurement solution
+utilizing the :adi:`MAX35101` time-to-digital converter, designed for utility and
+industrial applications including heat meters, water meters, and gas meters.
+
+Key features:
+
+- Time-to-digital accuracy: 20 ps
+- Measurement range: up to 8 ms
+- Two single-stop channels
+- Support for up to four 2-wire PT1000/PT500 RTD sensors
+- Low power: 10 uA ToF measurement and <125 nA duty-cycled temperature
+
+Required Equipment
+------------------
+
+- EV-FLOWMETER-ARDZ sensor node
+- :ref:`MAX32670-SX-ARDZ <ad-max32sxwise-sl>` base board
+- MAX32625PICO programmer with 10-pin ribbon cable
+- CR123A battery (3 V to 4.7 V, not included)
+- Micro-USB to USB cable
+- Host PC (Windows 10 or later)
+- Flow transducer probe (e.g., Audiowell HS0003)
+- PT1000/PT500 RTD sensors or 1 kohm dummy resistors
+
+Hardware Setup
+--------------
+
+- **Ultrasonic connectors** -- Launch up/down sensor terminal blocks for flow
+  transducer probe connection.
+- **Temperature connectors** -- PT1000/PT500 RTD terminal blocks.
+- **S1** -- Push button for tamper detection input.
+- **DS3** -- Battery power indicator LED (on base board).
+- Standard Arduino headers (SPI/I2C/UART compatible).
+
+Software Setup
+--------------
+
+Firmware is specifically designed for the MAX32670-SX-ARDZ base board. The
+MAX32625PICO programmer requires firmware image
+``max32625_max32670evkit_if_crc_swd_v1.0.3.bin``.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EV-FLOWMETER-ARDZ Design & Integration Files
+   <https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/ev-flowmeter-ardz-designsupport.zip>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`MAX35101 Product Page <MAX35101>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.
