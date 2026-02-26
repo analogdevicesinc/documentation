@@ -11,3 +11,5 @@ pyvenv.cfg
 share/
 .github/styles/write-good
 docs/managed
+.vscode
+pyproject.toml

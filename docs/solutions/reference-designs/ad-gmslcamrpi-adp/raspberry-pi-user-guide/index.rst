@@ -11,11 +11,12 @@ Required Hardware
 - :adi:`AD-GMSLCAMRPI-ADP# GMSL EV Kit Adapter Board <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-gmslcamrpi-adp.html>`
 - :adi:`MAX96724 GMSL Deserializer Evaluation Kit <en/products/max96724.html>`
 - :adi:`MAX96717 GMSL Serializer Evaluation Kit <en/products/max96717.html>` or *GMSL camera*
-- `Raspberry Pi 4 Model B <https://www.raspberrypi.com/products/raspberry-pi-4-model-b>`__ *(2GB of RAM or more preferred)*
+- `Raspberry Pi 4 Model B <https://www.raspberrypi.com/products/raspberry-pi-4-model-b>`__ *(2GB of RAM or more preferred)* or `Raspberry Pi 5 <https://www.raspberrypi.com/products/raspberry-pi-5>`__ *(2GB of RAM or more preferred)*
 
 **Supported Image Sensors & Cameras**
 
 - `IMX219 Raspberry Pi Camera Module 2 <https://www.raspberrypi.com/products/camera-module-v2/>`__
+- `Digilent Pcam 5C (OV5640) <https://digilent.com/shop/pcam-5c-5-mp-fixed-focus-color-camera-module/>`__
 
 **Cables**
 
@@ -23,18 +24,31 @@ Required Hardware
 
    Do not use the 15-pin ribbon cable included with the Raspberry Pi camera since that is an opposite sided cable.
 
+*Raspberry Pi 4:*
+
 - 15-Pin Type A (**same side**) Flexible Ribbon Cable, P/N: MP-FFCA10152003A or `similar <https://www.amazon.com/dp/B07RVD2MZV>`__
 - 22-Pin Type B (**opposite side**) Flexible Ribbon Cable, P/N: MP-FFCA05222002B or `similar <https://www.amazon.com/dp/B07S1BSPYD>`__
 - FAKRA Jack to FAKRA Jack coaxial cable, provided in EV kits
 
-.. figure:: adaptor_block_diagram.png
+.. figure:: RPI4/adaptor_block_diagram.png
 
-   GMSL Signal Chain
+   GMSL Signal Chain - Raspberry Pi 4
+
+*Raspberry Pi 5:*
+
+- 15-Pin Type A (**same side**) Flexible Ribbon Cable, P/N: MP-FFCA10152003A or `similar <https://www.amazon.com/dp/B07RVD2MZV>`__
+- 22-Pin Type B (**opposite side**) Flexible Ribbon Cable, P/N: MP-FFCA05222002B or `similar <https://www.amazon.com/dp/B07S1BSPYD>`__
+- 22-Pin Type A (**same side**) Flexible Ribbon Cable, P/N: MP-FFCA05222002A or `similar <https://www.amazon.com/dp/B07RVD2GBP>`__
+- FAKRA Jack to FAKRA Jack coaxial cable, provided in EV kits
+
+.. figure:: RPI5/adaptor_block_diagram.png
+
+   GMSL Signal Chain - Raspberry Pi 5
 
 Board Modifications
 -------------------
 
-Using the procedure to :dokuwiki:`Set CFG Pin Levels <products/gmsl/gui/tools/set_cfg_pin_levels>`, configure the SerDess
+Using the procedure to :dokuwiki:`Set CFG Pin Levels <products/gmsl/gui/tools/set_cfg_pin_levels>`, configure the SerDes
 pair as follows:
 
 ======== ============================= ==============================
@@ -55,25 +69,25 @@ board, please visit the respective datasheet documentation:
 
 **GMSL Deserializer Evaluation Kit**
 
-- Slide the **SW5** switches to the ON position to enable I2C communication over the CSI bus.
-- Remove the **J18** and **J19** jumpers to allow the RPi to become the Main host controller for the I2C lines.
-- Make sure the **J3** is set as default **2-3** position to enable POC.
+- Slide the **SW5** switches to the ON position to enable I2C communication over the CSI bus
+- Remove the **J18** and **J19** jumpers to allow the RPi to become the Main host controller for the I2C lines
+- Make sure the **J3** is set as default **2-3** position to enable POC
 
-     .. figure:: gmsl_deserializer_sw5.jpg
-        :width: 200 px
+  .. figure:: gmsl_deserializer_sw5.jpg
+     :width: 200 px
 
-        SW5 Switch for Enabling I2C
+     SW5 Switch for Enabling I2C
 
 - Bridge **R88** - provides VDDIO to the adapter
 
-     .. figure:: deserializer_resistors.jpg
-        :width: 200 px
+  .. figure:: deserializer_resistors.jpg
+     :width: 200 px
 
-        R88 for VDDIO Provision
+     R88 for VDDIO Provision
 
 **GMSL Serializer Evaluation Kit**
 
-- Place a jumper on the **J10** connector to enable power over the coaxial cable.
+- Place a jumper on the **J10** connector to enable power over the coaxial cable
 
   .. figure:: serializer_mods_j10.png
      :width: 200 px
@@ -92,9 +106,9 @@ board, please visit the respective datasheet documentation:
 **AD-GMSLCAMRPI-ADP# Adapter**
 
 - Configure the switch **S2** on the GMSL Serializer adapter for CAM1 on
-  connector **P9**.
+  connector **P9**
 - Configure the switch **S1** on the GMSL Deserializer adapter for CAM2 on
-  connector **P6** and slide switch **S3** towards connector **P6**.
+  connector **P6** and slide switch **S3** towards connector **P6**
 
 **Serializer Adapter**
 
@@ -134,23 +148,21 @@ board.
 
    Connect the 15-pin Ribbon Cable to the GMSL Adapter Board (opposite side)
 
-On the other side of the 15- to 22-pin adapter board, connect the 22-pin ribbon
+On the other side of the 15- to 22-pin adapter board, connect the 22-pin opposite-sided ribbon
 cable.
-
-.. note:: This is an opposite sided flex cable, please ensure it matches the orientation in the picture.
 
 .. figure:: step2.png
    :width: 350 px
 
-   Connect the 22-pin Ribbon Cable to the GMSL Adapter Board
+   Connect the 22-pin Opposite-Sided Ribbon Cable to the GMSL Adapter Board
 
-Connect the other end of the 22-pin ribbon cable into the EV Kit adapter board
+Connect the other end of the 22-pin opposite-sided ribbon cable into the EV Kit adapter board
 **P9** connector.
 
 .. figure:: step3.png
    :width: 400 px
 
-   Connect the 22-pin Ribbon Cable to the EV Kit Adapter Board (opposite side)
+   Connect the 22-pin Opposite-Sided Ribbon Cable to the EV Kit Adapter Board (opposite side)
 
 Lastly, connect the EV kit adapter board to the MAX96717 EV Kit.
 
@@ -162,10 +174,12 @@ Lastly, connect the EV kit adapter board to the MAX96717 EV Kit.
 MAX96724 Deserializer EV Kit Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+**Raspberry Pi 4**
+
 Starting with the Raspberry Pi 4B, connect the 15-pin ribbon cable to the CSI
 input connector.
 
-.. figure:: step5.png
+.. figure:: RPI4/step5.png
    :width: 200 px
 
    Connect the 15-pin Ribbon Cable to the Raspberry Pi
@@ -173,41 +187,40 @@ input connector.
 Connect the other end of the 15-pin ribbon cable into the 15- to 22-pin adapter
 board.
 
-.. figure:: step6.png
+.. figure:: RPI4/step6.png
    :width: 300 px
 
    Connect the 15-pin ribbon cable into the GMSL Adapter Board (opposite side)
 
-On the other side of the 15-to-22 pin adapter board, connect the 22-pin ribbon
-cable. **Note:** This is an opposite sided flex cable, please ensure it matches
-the orientation in the picture.
+On the other side of the 15-to-22 pin adapter board, connect the 22-pin opposite-sided ribbon
+cable.
 
-.. figure:: step7.png
+.. figure:: RPI4/step7.png
    :width: 350 px
 
-   Connect the 22-pin Ribbon Cable to the GMSL Adapter Board
+   Connect the 22-pin Opposite-Sided Ribbon Cable to the GMSL Adapter Board
 
-Connect the other end of the 22-pin ribbon cable into the EV kit adapter board
-**P8** connector.
+Connect the other end of the 22-pin opposite-sided ribbon cable into the EV kit adapter board
+**P6** connector.
 
-.. figure:: step8.png
+.. figure:: RPI4/step8.png
    :width: 400 px
 
-   Connect the 22-pin Ribbon Cable to the EV Kit Adapter Board
+   Connect the 22-pin Opposite-Sided Ribbon Cable to the EV Kit Adapter Board
 
 Lastly, connect the EV kit adapter board to the MAX96724 EV kit.
 
-.. figure:: step9.png
+.. figure:: RPI4/step9.png
    :width: 600 px
 
    Connect the EV Kit Adapter Board to the MAX96724 Deserializer EV Kit
 
-With both sides of the SerDes devices connected up, the last step it to connect
+With both sides of the SerDes devices connected up, the last step is to connect
 the two sides together with the coax cable. The MAX96717 serializer only has one
 connection. The MAX96724 deserializer has 4 inputs so connect the coax cable to
 link A (INA) on **J7**.
 
-.. figure:: gmsl_full_system_config.png
+.. figure:: RPI4/gmsl_full_system_config.png
    :width: 600 px
 
    Full GMSL System Setup
@@ -216,38 +229,121 @@ Connect power to the 12V barrel jack **J1** of the MAX96724 deserializer. If
 utilizing the GMSL GUI, also connect the micro USB cable to **J6** of the
 MAX96724 deserializer EV kit.
 
-Raspberry Pi 4 Configuration
+**Raspberry Pi 5**
+
+Starting with the Raspberry Pi 5, connect the 22-pin same-sided ribbon cable to the CSI
+input connector on **J3**.
+
+.. figure:: RPI5/step5.png
+   :width: 200 px
+
+   Connect the 22-pin Same-Sided Ribbon Cable to the Raspberry Pi
+
+Connect the other end of the 22-pin same-sided ribbon cable into the EV kit adapter board
+**P6** connector.
+
+.. figure:: RPI5/step6.png
+   :width: 400 px
+
+   Connect the 22-pin Same-Sided Ribbon Cable to the EV Kit Adapter Board
+
+Lastly, connect the EV kit adapter board to the MAX96724 EV kit.
+
+.. figure:: RPI5/step7.png
+   :width: 600 px
+
+   Connect the EV Kit Adapter Board to the MAX96724 Deserializer EV Kit
+
+With both sides of the SerDes devices connected up, the last step is to connect
+the two sides together with the coax cable. The MAX96717 serializer only has one
+connection. The MAX96724 deserializer has 4 inputs so connect the coax cable to
+link A (INA) on **J7**.
+
+.. figure:: RPI5/gmsl_full_system_config.png
+   :width: 600 px
+
+   Full GMSL System Setup
+
+Connect power to the 12V barrel jack **J1** of the MAX96724 deserializer. If
+utilizing the GMSL GUI, also connect the micro USB cable to **J6** of the
+MAX96724 deserializer EV kit.
+
+Raspberry Pi Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Connect the USB-C power supply to the Raspberry Pi 4 connector.
-- Connect the HDMI cable from the monitor to the Raspberry Pi micro HDMI connector.
-- Write the Raspberry Pi latest SD card image on a 8 GB (or more) SD card.
-- Plug the SD card into the Raspberry Pi 4 SD card slot.
-- Connect a USB mouse and keyboard to the Raspberry Pi 4.
-  It’s possible to use either a mouse & keyboard combo or a separate mouse and keyboard.
+- Connect the USB-C power supply to the Raspberry Pi connector
+- Connect the HDMI cable from the monitor to the Raspberry Pi micro HDMI connector
+- Write the Raspberry Pi latest SD card image on an 8 GB (or more) SD card
+- Plug the SD card into the Raspberry Pi SD card slot
+- Connect a USB mouse and keyboard to the Raspberry Pi (it is possible to use either a mouse & keyboard combo or a separate mouse and keyboard)
 
 Running the Evaluation Application
 ----------------------------------
 
-Once Linux boots, you’ll see on the HDMI monitor the Linux desktop and on the top
-left corner a shortcut to the script named **video_cfg.sh**. Double-clicking on
-the icon will start the media-ctl configuration script to connect to the V4L2
-media pipeline. It may not appear that anything happens but the script runs in
-background without any pop-ups.
+Once Linux boots, you will see the Linux desktop on the HDMI monitor. Double-click
+the **Home** icon and navigate to the **Workspace** folder. Right-click inside this
+folder and select the **Open Terminal Here** option. Inside the terminal, type the
+following command and hit Enter:
+
+.. shell::
+
+   $ ./video_cfg.sh
 
 .. figure:: rpi_video_cfg.png
 
    Raspberry Pi Video Configuration Script
 
-After the script runs, double-click on the Qt V4L2 test Utility icon to start
-the video capture application. A window will open then press the green play
-button to start video capturing.
+This script configures the Linux V4L2 (Video4Linux2) media pipeline for a GMSL
+multi-camera system on a Raspberry Pi:
+
+.. code-block:: bash
+
+   #!/bin/bash
+
+   CAM_LIST="cam0"
+   CAM_MODEL="imx219"
+   PYV4L2_PATH="/home/analog/Workspace/pyv4l2"
+   DT_MODEL_PATH="/proc/device-tree/model"
+
+   if [[ $(cat $DT_MODEL_PATH | tr -d '\0') =~ "Raspberry Pi 4" ]]; then
+      echo "Running on RPI4"
+      RPI_MODEL="rpi4"
+   elif [[ $(cat $DT_MODEL_PATH | tr -d '\0') =~ "Raspberry Pi 5" ]]; then
+      echo "Running on RPI5"
+      RPI_MODEL="rpi5"
+   else
+      echo "Unknown platform"
+      exit 0
+   fi
+
+   $PYV4L2_PATH/utils/cam.py -c -p "$RPI_MODEL"-gmsl-"$CAM_MODEL":$CAM_LIST
+
+The following variables can be changed (if needed) inside the script:
+
+   - ``CAM_LIST`` (specifies the list of cameras in the setup): 
+                                                              - ``cam0`` (default)
+                                                              - ``cam0,cam1``
+                                                              - ``cam0,cam1,cam2``
+                                                              - ``cam0,cam1,cam2,cam3``
+                                                              - ``cam1,cam2``
+                                                              - ``cam0,cam3``
+   - ``CAM_MODEL`` (specifies the model of the camera): 
+                                                      - ``imx219`` (default)
+                                                      - ``ov5640``
+
+The model of the Raspberry Pi does not need to be explicitly specified because the script detects it automatically.
+
+After the script is done running, click on **Applications** (found in the top
+left corner), which will open a dropdown list of items. From this list, select
+**Multimedia** and then **Qt V4L2 test Utility** in order to start the video
+capture application. After the application opens, press the green play button
+to start capturing video.
 
 .. figure:: rpi_qv4l2.png
 
-   Video Capture Button
+   Video Capture Utility
 
-The capture window will look like below.
+The capture window will look as shown below.
 
 .. figure:: rpi_running_qv4l2.png
 
@@ -262,9 +358,9 @@ The capture window will look like below.
 Power-off Sequence
 ~~~~~~~~~~~~~~~~~~
 
-- Open a terminal and type **sudo poweroff**. This will safely power off the Raspberry Pi 4 and ensure that the SD card is properly unmounted.
-- Remove the power supply from the Raspberry Pi 4.
-- Remove the power supply from the MAX96724 EV kit.
+- Open a terminal and type **sudo poweroff**. This will safely power off the Raspberry Pi and ensure that the SD card is properly unmounted
+- Remove the power supply from the Raspberry Pi
+- Remove the power supply from the MAX96724 EV kit
 
 Getting the Software
 --------------------
@@ -279,21 +375,21 @@ Tips for Troubleshooting
 There are a few key commands in the Linux environment that can help identify if
 the expected connections and communications have been made.
 
-#. In the Linux environment, you can check to see if the Rpi I2C is detecting
-   the GMSL boards by sending a I2C detect command [#f1]_ as follows:
+#. In the Linux environment, you can check to see if the RPi I2C is detecting
+   the GMSL boards by sending an I2C detect command [#f1]_ as follows:
 
    .. shell::
 
       $sudo i2cdetect -y 10
 
-   The Result should look as follows in the terminal:
+   The result should look as follows in the terminal, if using the IMX camera:
 
    .. shell::
       :group: kuiper-gmsl
       :show-user:
 
       $sudo i2cdetect -y 10
-       [sudo] password for analog:
+      [sudo] password for analog:
             0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
        00:                         -- -- -- -- -- -- -- --
        10: UU -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -304,12 +400,32 @@ the expected connections and communications have been made.
        60: -- -- -- -- 64 -- -- -- -- -- -- -- -- -- -- --
        70: -- -- -- -- -- -- -- --
 
-#. You can also confirm that the video for Linux application is detecting the
+   Or, as follows, if using the Pcam camera:
+
+   .. shell::
+      :group: kuiper-gmsl
+      :show-user:
+
+      $sudo i2cdetect -y 10
+      [sudo] password for analog:
+            0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+       00:                         -- -- -- -- -- -- -- --
+       10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+       20: -- -- -- -- -- -- -- UU -- -- -- -- -- -- -- --
+       30: -- -- -- -- -- -- -- -- -- -- -- -- 3c -- -- --
+       40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+       50: 50 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+       60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+       70: -- -- -- -- -- -- -- --
+
+#. You can also confirm that the *Video for Linux* application is detecting the
    camera and GMSL devices by using the following command:
 
    .. shell::
 
       $v4l2-ctl --list-devices
+
+   **Raspberry Pi 4**
 
    The response should look like the following:
 
@@ -345,7 +461,51 @@ the expected connections and communications have been made.
            /dev/video19
            /dev/media0
 
-   The key is to identify the **unicam** output, which correspond to the Raspberry Pi
-   camera setup.
+   .. note::
+
+      For Raspberry Pi 4, the key idea is to identify the **unicam** output, which corresponds to the Raspberry Pi
+      camera setup.
+
+   **Raspberry Pi 5**
+
+   The response should look like the following:
+
+   .. shell::
+
+      $v4l2-ctl --list-devices
+      pispbe (platform:1000880000.pisp_be):
+            /dev/video20
+            /dev/video21
+            /dev/video22
+            /dev/video23
+            /dev/video24
+            /dev/video25
+            /dev/video26
+            /dev/video27
+            /dev/video28
+            /dev/video29
+            /dev/video30
+            /dev/video31
+            /dev/video32
+            /dev/video33
+            /dev/video34
+            /dev/video35
+            /dev/media0
+            /dev/media1
+
+      rp1-cfe (platform:1f00110000.csi):
+            /dev/video0
+            /dev/video1
+            /dev/video2
+            /dev/video3
+            /dev/video4
+            /dev/video5
+            /dev/video6
+            /dev/video7
+            /dev/media3
+
+      rpi-hevc-dec (platform:rpi-hevc-dec):
+            /dev/video19
+            /dev/media2
 
 .. [#f1] More information about these commands found at `mankier.com/8/i2cdetect <https://www.mankier.com/8/i2cdetect>`__.
