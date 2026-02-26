@@ -220,7 +220,7 @@ can configure the accelerometer and view measured data on a plot.
 For more information about the IIO framework, refer to:
 
 - :dokuwiki:`No-OS IIO Application <resources/tools-software/no-os-software/iio>`
-- :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`
+- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
 
 The IIO Oscilloscope provides several views:
 

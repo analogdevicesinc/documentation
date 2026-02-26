@@ -54,7 +54,7 @@ Required hardware:
   FPGA carrier board
 - `ARRADIO <https://www.arrow.com/en/products/arradio/terasic-technologies>`__
   board
-- 8 GB Micro-SD card with :dokuwiki:`Kuiper Linux <resources/tools-software/linux-software/kuiper-linux>` image
+- 8 GB Micro-SD card with :doc:`Kuiper Linux </linux/kuiper/index>` image
 - USB keyboard and mouse
 - USB OTG cable (for keyboard/mouse)
 - VGA-compatible monitor
@@ -109,7 +109,7 @@ SoCKit Jumper Configuration
 Creating the Micro-SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download the :dokuwiki:`Kuiper Linux image <resources/tools-software/linux-software/kuiper-linux>`
+Download the :doc:`Kuiper Linux image </linux/kuiper/index>`
 and flash it to the Micro-SD card. After flashing, copy the ARRADIO boot
 files to the BOOT partition:
 

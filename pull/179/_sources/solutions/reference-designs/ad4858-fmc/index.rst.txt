@@ -43,7 +43,7 @@ Hardware Requirements
 - 1x Ethernet cable
 - 1x Micro-B USB cable for UART connectivity (optional)
 - 1x SD card (at least 16 GB); follow the
-  :dokuwiki:`Kuiper Linux guide <resources/tools-software/linux-software/kuiper-linux>`
+  :doc:`Kuiper Linux guide </linux/kuiper/index>`
   to set up the card
 
 HDL Reference Design
@@ -194,7 +194,7 @@ More Information
 
 - `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
 - :git-hdl:`AD4858-FMC HDL Project <projects/ad485x_fmcz>`
-- :dokuwiki:`How to prepare an SD card <resources/tools-software/linux-software/kuiper-linux>`
+- :doc:`How to prepare an SD card </linux/kuiper/index>`
 
 Support
 -------

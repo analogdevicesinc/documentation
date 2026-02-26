@@ -177,7 +177,7 @@ Loading the SD Card Image
 To boot the ZedBoard and control the EVAL-AD2S1210SDZ, install ADI Kuiper Linux
 on an SD card. Complete instructions, including where to download the SD card
 image, how to write it to the SD card, and how to configure the system are
-provided on the :dokuwiki:`Kuiper Linux page <resources/tools-software/linux-software/kuiper-linux>`.
+provided on the :doc:`Kuiper Linux page </linux/kuiper/index>`.
 
 Configuring the SD Card
 ~~~~~~~~~~~~~~~~~~~~~~~~

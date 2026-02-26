@@ -166,7 +166,7 @@ To build the IIO example, set the following in the Makefile:
 For more information, see the
 :dokuwiki:`IIO No-OS documentation <resources/tools-software/no-os-software/iio>`
 and the
-:dokuwiki:`IIO Oscilloscope documentation <resources/tools-software/linux-software/iio_oscilloscope>`.
+:doc:`IIO Oscilloscope documentation </software/iio-oscilloscope/index>`.
 
 Linux IIO Driver
 ----------------

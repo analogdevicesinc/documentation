@@ -7,7 +7,7 @@ IIO Oscilloscope
 ----------------
 
 After boot the
-:dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`
+:doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
 starts, allowing configuration of the system, data capture, and visualization.
 
 .. figure:: lidar_iio_scope_plot.png
