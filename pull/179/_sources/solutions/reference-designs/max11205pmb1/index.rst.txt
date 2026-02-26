@@ -82,7 +82,7 @@ provides reference projects for microcontroller platforms that cannot run Linux.
 * :git-no-OS:`MAX11205PMB1 No-OS project <projects/max11205pmb1>`
 
 For more information about No-OS, see the
-:dokuwiki:`No-OS documentation <resources/no-os>`.
+`No-OS documentation <https://analogdevicesinc.github.io/no-OS/>`__.
 
 Supported Platform
 ~~~~~~~~~~~~~~~~~~
@@ -164,7 +164,7 @@ To build the IIO example, set the following in the Makefile:
    57600 from the IIO Oscilloscope serial connection interface.
 
 For more information, see the
-:dokuwiki:`IIO No-OS documentation <resources/tools-software/no-os-software/iio>`
+`IIO No-OS documentation <https://analogdevicesinc.github.io/no-OS/>`__
 and the
 :doc:`IIO Oscilloscope documentation </software/iio-oscilloscope/index>`.
 

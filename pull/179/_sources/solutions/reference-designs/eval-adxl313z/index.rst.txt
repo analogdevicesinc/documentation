@@ -180,7 +180,7 @@ Build Setup
 ^^^^^^^^^^^
 
 For instructions on building the no-OS project, refer to the
-:dokuwiki:`No-OS Build Guide <resources/no-os/build>`.
+`No-OS Build Guide <https://analogdevicesinc.github.io/no-OS/build_guide.html>`__.
 
 Basic Example
 ~~~~~~~~~~~~~
@@ -219,7 +219,7 @@ can configure the accelerometer and view measured data on a plot.
 
 For more information about the IIO framework, refer to:
 
-- :dokuwiki:`No-OS IIO Application <resources/tools-software/no-os-software/iio>`
+- `No-OS IIO Application <https://analogdevicesinc.github.io/no-OS/>`__
 - :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
 
 The IIO Oscilloscope provides several views:
