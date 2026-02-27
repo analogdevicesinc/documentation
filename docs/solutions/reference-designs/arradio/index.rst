@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/arradio
+
 .. _arradio:
 
 ARRADIO User Guide
