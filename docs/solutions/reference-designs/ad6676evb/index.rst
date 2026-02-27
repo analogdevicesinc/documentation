@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/ad6676-wideband_rx_subsystem_ad6676ebz
+
 .. _ad6676evb:
 
 AD6676EVB User Guide
