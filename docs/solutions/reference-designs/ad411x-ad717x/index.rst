@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/tools-software/product-support-software/ad717x_ad411x_mbed_example
+
 .. _ad411x-ad717x:
 
 AD411x/AD717x Console Application
