@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/aducm355_arduino_interposer
+
 .. _eval-m355-ardz-int:
 
 EVAL-M355-ARDZ-INT
