@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/tools-software/product-support-software/ad5770r_aducm410_iar_example
+
 .. _eval-ad5770r-pmdz:
 
 EVAL-AD5770R-PMDZ
