@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/dpg/eval-ad9783
+
 .. _ad9783-ebz:
 
 AD9783-EBZ User Guide
