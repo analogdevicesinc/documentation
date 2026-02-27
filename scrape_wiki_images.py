@@ -142,16 +142,8 @@ def scrape_page(args):
     return page_url, images
 
 
-def write_excel(rows, output_file):
-    """Write results to Excel. rows = list of (page_url, image_name, image_url)."""
-    wb = openpyxl.Workbook()
-    ws = wb.active
-    ws.title = "Wiki Images"
-
-    # Header
-    ws.append(["Wiki Page URL", "Image Name", "Image URL"])
-
-    # Style header
+def style_header(ws, col_widths):
+    """Apply bold white-on-dark-blue styling to header row and set column widths."""
     from openpyxl.styles import Font, PatternFill, Alignment
     header_font = Font(bold=True, color="FFFFFF")
     header_fill = PatternFill("solid", fgColor="1F4E79")
@@ -159,20 +151,73 @@ def write_excel(rows, output_file):
         cell.font = header_font
         cell.fill = header_fill
         cell.alignment = Alignment(horizontal="center")
-
-    for row in rows:
-        ws.append(row)
-
-    # Auto-fit column widths (approximate)
-    col_widths = [80, 60, 100]
     for i, width in enumerate(col_widths, start=1):
         ws.column_dimensions[openpyxl.utils.get_column_letter(i)].width = width
-
-    # Freeze header row
     ws.freeze_panes = "A2"
 
+
+def build_shared_images(rows):
+    """
+    From all_rows, find images referenced on more than one wiki page.
+    Returns a list of (image_name, image_url, wiki_page_1, wiki_page_2, …)
+    sorted by number of pages descending.
+    """
+    from collections import defaultdict
+    # Key by image_url so the same file isn't double-counted per URL
+    img_pages = defaultdict(lambda: {"image_name": "", "pages": set()})
+    for page_url, image_name, image_url in rows:
+        img_pages[image_url]["image_name"] = image_name
+        img_pages[image_url]["pages"].add(page_url)
+
+    # Keep only images that appear on 2+ pages
+    shared = [
+        (data["image_name"], image_url, sorted(data["pages"]))
+        for image_url, data in img_pages.items()
+        if len(data["pages"]) > 1
+    ]
+    # Sort by number of pages descending
+    shared.sort(key=lambda x: len(x[2]), reverse=True)
+    return shared
+
+
+def write_excel(rows, output_file):
+    """
+    Write two sheets to Excel:
+      Sheet 1 – 'Wiki Images': every (page_url, image_name, image_url) row.
+      Sheet 2 – 'Shared Images': images referenced on 2+ pages, one row per image,
+                 with page URLs spread across columns.
+    rows = list of (page_url, image_name, image_url)
+    """
+    wb = openpyxl.Workbook()
+
+    # --- Sheet 1: all image references ---
+    ws1 = wb.active
+    ws1.title = "Wiki Images"
+    ws1.append(["Wiki Page URL", "Image Name", "Image URL"])
+    style_header(ws1, [80, 60, 100])
+    for row in rows:
+        ws1.append(list(row))
+
+    # --- Sheet 2: shared images (referenced on 2+ pages) ---
+    shared = build_shared_images(rows)
+    print(f"Images referenced on 2+ pages: {len(shared)}", flush=True)
+
+    ws2 = wb.create_sheet(title="Shared Images")
+    # Dynamic header: fixed columns + Wiki Page 1, Wiki Page 2, …
+    max_pages = max(len(s[2]) for s in shared) if shared else 0
+    header = ["Image Name", "Image URL", "Page Count"] + [
+        f"Wiki Page {i+1}" for i in range(max_pages)
+    ]
+    ws2.append(header)
+    # Column widths: name=60, url=100, count=12, then 80 per page column
+    col_widths = [60, 100, 12] + [80] * max_pages
+    style_header(ws2, col_widths)
+
+    for image_name, image_url, pages in shared:
+        ws2.append([image_name, image_url, len(pages)] + pages)
+
     wb.save(output_file)
-    print(f"\nSaved: {output_file}", flush=True)
+    print(f"Saved: {output_file}", flush=True)
 
 
 def main():
