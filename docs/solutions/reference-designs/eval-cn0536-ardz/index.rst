@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0536
+
 .. _eval-cn0536-ardz:
 
 EVAL-CN0536-ARDZ
