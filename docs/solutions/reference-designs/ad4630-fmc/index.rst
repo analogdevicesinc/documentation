@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/ad4030-24-eval-board
+
 .. _ad4630-fmc:
 
 AD4630-FMC User Guide
