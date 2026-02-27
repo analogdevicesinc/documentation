@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/ad400x-eval-board
+
 .. _ad400x:
 
 AD40xx/ADAQ4001/ADAQ4003 User Guide
