@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/university/tools/lab_hw/adalm_buck
+
 .. _adalm-buck-ardz:
 
 ADALM-BUCK-ARDZ
