@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad2s1210_sdz
+
 .. _ad2s1210-sdz:
 
 EVAL-AD2S1210SDZ User Guide
