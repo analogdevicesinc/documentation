@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/ad9467-fmc-250ebz
+
 .. _ad9467-fmc:
 
 AD9467-FMC User Guide
