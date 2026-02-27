@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-adicup360/hardware/cn0398
+
 .. _eval-cn0398-ardz:
 
 EVAL-CN0398-ARDZ
