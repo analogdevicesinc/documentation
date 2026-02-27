@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcmotcon1-ebz
+
 .. _ad-fmcmotcon1-ebz:
 
 AD-FMCMOTCON1-EBZ
