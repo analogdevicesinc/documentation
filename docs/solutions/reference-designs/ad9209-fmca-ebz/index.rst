@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/fpga/docs/hdl/downloads_2022_r2
+
 .. _ad9209-fmca-ebz:
 
 AD9209-FMCA-EBZ User Guide
