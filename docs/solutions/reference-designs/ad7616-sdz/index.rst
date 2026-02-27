@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad7616-sdz
+
 .. _ad7616-sdz:
 
 AD7616-SDZ User Guide
