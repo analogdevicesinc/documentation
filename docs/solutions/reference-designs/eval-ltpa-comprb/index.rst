@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-ltpa-comprb
+
 .. _eval-ltpa-comprb:
 
 EVAL-LTPA-COMPRB
