@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0428-cn0429-programming-with-custom-firmware
+
 .. _eval-cn0429-ebz:
 
 EVAL-CN0429-EBZ
