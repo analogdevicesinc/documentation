@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/adaq7980-sdz
+
 .. _adaq7980-sdz:
 
 ADAQ7980-SDZ User Guide
