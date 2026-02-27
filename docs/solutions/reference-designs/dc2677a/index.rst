@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/dc2677a
+
 .. _dc2677a:
 
 DC2677A User Guide
