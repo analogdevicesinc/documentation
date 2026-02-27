@@ -156,10 +156,53 @@ def style_header(ws, col_widths):
     ws.freeze_panes = "A2"
 
 
+def common_path_ancestor(pages):
+    """
+    Given a list of wiki page URLs, compute the common path ancestor of their
+    parent directories and return it as '<common_ancestor>/images'.
+
+    Example:
+      pages = ['https://wiki.analog.com/user-guide/work/A',
+               'https://wiki.analog.com/user-guide/B']
+      parent dirs → ['user-guide/work', 'user-guide']
+      common ancestor segments → ['user-guide']
+      result → 'user-guide/images'
+
+    If the common ancestor is the root (empty), returns 'images'.
+    """
+    from urllib.parse import urlparse
+
+    # Get the parent directory of each page path (strip the page name = last segment)
+    dirs = []
+    for p in pages:
+        path = urlparse(p).path.strip("/")
+        segments = path.split("/")
+        # parent = all segments except the last (the page name itself)
+        parent_segments = segments[:-1] if len(segments) > 1 else []
+        dirs.append(parent_segments)
+
+    # Find common prefix segment-by-segment
+    if not dirs:
+        return "images"
+    common = dirs[0]
+    for d in dirs[1:]:
+        # Zip and keep only matching leading segments
+        new_common = []
+        for a, b in zip(common, d):
+            if a == b:
+                new_common.append(a)
+            else:
+                break
+        common = new_common
+
+    ancestor = "/".join(common)
+    return f"{ancestor}/images" if ancestor else "images"
+
+
 def build_shared_images(rows):
     """
     From all_rows, find images referenced on more than one wiki page.
-    Returns a list of (image_name, image_url, wiki_page_1, wiki_page_2, …)
+    Returns a list of (image_name, image_url, common_ancestor, pages_list)
     sorted by number of pages descending.
     """
     from collections import defaultdict
@@ -170,13 +213,15 @@ def build_shared_images(rows):
         img_pages[image_url]["pages"].add(page_url)
 
     # Keep only images that appear on 2+ pages
-    shared = [
-        (data["image_name"], image_url, sorted(data["pages"]))
-        for image_url, data in img_pages.items()
-        if len(data["pages"]) > 1
-    ]
+    shared = []
+    for image_url, data in img_pages.items():
+        if len(data["pages"]) > 1:
+            pages = sorted(data["pages"])
+            ancestor = common_path_ancestor(pages)
+            shared.append((data["image_name"], image_url, ancestor, pages))
+
     # Sort by number of pages descending
-    shared.sort(key=lambda x: len(x[2]), reverse=True)
+    shared.sort(key=lambda x: len(x[3]), reverse=True)
     return shared
 
 
@@ -204,17 +249,17 @@ def write_excel(rows, output_file):
 
     ws2 = wb.create_sheet(title="Shared Images")
     # Dynamic header: fixed columns + Wiki Page 1, Wiki Page 2, …
-    max_pages = max(len(s[2]) for s in shared) if shared else 0
-    header = ["Image Name", "Image URL", "Page Count"] + [
+    max_pages = max(len(s[3]) for s in shared) if shared else 0
+    header = ["Image Name", "Image URL", "Page Count", "Common Ancestor Path"] + [
         f"Wiki Page {i+1}" for i in range(max_pages)
     ]
     ws2.append(header)
-    # Column widths: name=60, url=100, count=12, then 80 per page column
-    col_widths = [60, 100, 12] + [80] * max_pages
+    # Column widths: name=60, url=100, count=12, ancestor=60, then 80 per page column
+    col_widths = [60, 100, 12, 60] + [80] * max_pages
     style_header(ws2, col_widths)
 
-    for image_name, image_url, pages in shared:
-        ws2.append([image_name, image_url, len(pages)] + pages)
+    for image_name, image_url, ancestor, pages in shared:
+        ws2.append([image_name, image_url, len(pages), ancestor] + pages)
 
     wb.save(output_file)
     print(f"Saved: {output_file}", flush=True)

@@ -30,16 +30,16 @@ shared = build_shared_images(rows)
 print(f"Images referenced on 2+ pages: {len(shared)}", flush=True)
 
 ws2 = wb.create_sheet(title="Shared Images")
-max_pages = max(len(s[2]) for s in shared) if shared else 0
-header = ["Image Name", "Image URL", "Page Count"] + [
+max_pages = max(len(s[3]) for s in shared) if shared else 0
+header = ["Image Name", "Image URL", "Page Count", "Common Ancestor Path"] + [
     f"Wiki Page {i+1}" for i in range(max_pages)
 ]
 ws2.append(header)
-col_widths = [60, 100, 12] + [80] * max_pages
+col_widths = [60, 100, 12, 60] + [80] * max_pages
 style_header(ws2, col_widths)
 
-for image_name, image_url, pages in shared:
-    ws2.append([image_name, image_url, len(pages)] + pages)
+for image_name, image_url, ancestor, pages in shared:
+    ws2.append([image_name, image_url, len(pages), ancestor] + pages)
 
 wb.save(INPUT_FILE)
 print(f"Done. Saved: {INPUT_FILE}", flush=True)
