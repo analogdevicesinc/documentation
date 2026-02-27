@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/university/tools/lab_hw/adalm-sr1
+
 .. _adalm-sr1:
 
 ADALM-SR1
