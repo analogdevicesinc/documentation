@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad7768-1
+
 .. _ad77681evb:
 
 AD7768-1-EVB User Guide
