@@ -196,6 +196,9 @@ def assign_folder(image_url):
     # Depth-3 categories: resources/eval, resources/fpga, resources/tools-software
     DEPTH3 = {"eval", "fpga", "tools-software"}
 
+    # Normalise typo variant: 'user-guide' → 'user-guides'
+    ALIASES = {"user-guide": "user-guides"}
+
     if not segments:
         return "images"
 
@@ -213,7 +216,8 @@ def assign_folder(image_url):
             return "resources/images"
         sub = segments[1]  # eval, fpga, tools-software, etc.
         if sub in DEPTH3 and len(segments) >= 3:
-            folder = f"resources/{sub}/{segments[2]}/images"
+            sub3 = ALIASES.get(segments[2], segments[2])
+            folder = f"resources/{sub}/{sub3}/images"
         else:
             folder = f"resources/{sub}/images"
 
