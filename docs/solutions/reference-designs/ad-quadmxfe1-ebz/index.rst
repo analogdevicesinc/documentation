@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad_quadmxfe1_ebz/ad_quadmxfe1_ebz_hdl
+
 .. _ad-quadmxfe1-ebz:
 
 Quad-MxFE Prototyping Platform User Guide
