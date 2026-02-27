@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0560
+
 .. _eval-cn0560-ardz:
 
 EVAL-CN0560-FMCZ
