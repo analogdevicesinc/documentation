@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcxmwbr1-ebz
+
 .. _ad-fmcxmwbr1-ebz:
 
 AD-FMCXMWBR1-EBZ User Guide
