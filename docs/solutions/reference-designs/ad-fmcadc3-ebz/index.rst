@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcadc3-ebz
+
 .. _ad-fmcadc3-ebz:
 
 AD-FMCADC3-EBZ
