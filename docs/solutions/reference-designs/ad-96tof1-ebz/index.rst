@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-96tof1-ebz
+
 .. _ad-96tof1-ebz:
 
 AD-96TOF1-EBZ
