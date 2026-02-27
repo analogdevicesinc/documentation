@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0552
+
 .. _eval-cn0552-pmdz:
 
 EVAL-CN0552-PMDZ
