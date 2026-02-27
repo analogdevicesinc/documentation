@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_fmca_ebz_hdl
+
 .. _ad9082-fmca-ebz:
 
 AD9082-FMCA-EBZ User Guide
