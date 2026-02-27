@@ -156,6 +156,74 @@ def style_header(ws, col_widths):
     ws.freeze_panes = "A2"
 
 
+def assign_folder(image_url):
+    """
+    Given an image URL, return the destination folder path (relative, no leading slash)
+    where the image should be downloaded, or None if the image should be skipped.
+
+    Rules:
+      - /lib/ images (site chrome) → None (skip)
+      - external hosts (not wiki.analog.com) → None (skip)
+      - /_media/resources/eval/*       → resources/eval/<sub>/images
+      - /_media/resources/fpga/*       → resources/fpga/<sub>/images
+      - /_media/resources/tools-software/* → resources/tools-software/<sub>/images
+      - /_media/university/*           → university/<sub>/images
+      - /_media/resources/<other>/*    → resources/<other>/images
+      - anything else under /_media/   → images  (root catch-all)
+
+    A path segment that contains '.' is treated as a filename artifact and is
+    ignored when determining the folder depth.
+    """
+    if not image_url:
+        return None
+
+    parsed = urlparse(image_url)
+
+    # Skip non-wiki or lib/chrome images
+    if parsed.netloc != "wiki.analog.com":
+        return None
+    if parsed.path.startswith("/lib/"):
+        return None
+    if "/_media/" not in parsed.path:
+        return None
+
+    # Strip query string and /_media/ prefix, then split into segments
+    inner = parsed.path.replace("/_media/", "")
+    # Remove filename (last segment); also skip any segment that looks like a filename
+    segments = [s for s in inner.split("/") if s and "." not in s]
+    # segments is now the folder path components only (no filename, no dot-artifacts)
+
+    # Depth-3 categories: resources/eval, resources/fpga, resources/tools-software
+    DEPTH3 = {"eval", "fpga", "tools-software"}
+
+    if not segments:
+        return "images"
+
+    top = segments[0]  # 'resources' or 'university' or other
+
+    if top == "university":
+        # depth-2: university/<sub>
+        if len(segments) >= 2:
+            folder = f"university/{segments[1]}/images"
+        else:
+            folder = "university/images"
+
+    elif top == "resources":
+        if len(segments) < 2:
+            return "resources/images"
+        sub = segments[1]  # eval, fpga, tools-software, etc.
+        if sub in DEPTH3 and len(segments) >= 3:
+            folder = f"resources/{sub}/{segments[2]}/images"
+        else:
+            folder = f"resources/{sub}/images"
+
+    else:
+        # Any other top-level namespace under _media
+        folder = f"{top}/images"
+
+    return folder
+
+
 def common_path_ancestor(pages):
     """
     Given a list of wiki page URLs, compute the common path ancestor of their
