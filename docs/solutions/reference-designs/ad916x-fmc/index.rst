@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/dpg/ad916x-fmcx-ebz
+
 .. _ad916x-fmc:
 
 AD916x-FMC User Guide
