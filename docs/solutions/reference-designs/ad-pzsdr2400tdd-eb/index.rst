@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-pzsdr2400tdd-eb
+
 .. _ad-pzsdr2400tdd-eb:
 
 AD-PZSDR2400TDD-EB
