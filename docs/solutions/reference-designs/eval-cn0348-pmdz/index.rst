@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0348
+
 .. _eval-cn0348-pmdz:
 
 .. |black_led| image:: black_led_button.png
