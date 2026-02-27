@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods
+
 .. _pulsar-adc-pmdz:
 
 PulSAR ADC PMOD User Guide
