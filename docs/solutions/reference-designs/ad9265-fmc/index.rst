@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/ad9265-fmc-125ebz
+
 .. _ad9265-fmc:
 
 AD9265-FMC User Guide
