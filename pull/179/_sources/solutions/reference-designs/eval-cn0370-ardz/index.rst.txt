@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0370
+
 .. _eval-cn0370-ardz:
 
 EVAL-CN0370-PMDZ

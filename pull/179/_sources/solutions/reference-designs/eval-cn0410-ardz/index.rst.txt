@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/arduino-uno/reference_designs/demo_cn0410
+
 .. _eval-cn0410-ardz:
 
 EVAL-CN0410-ARDZ

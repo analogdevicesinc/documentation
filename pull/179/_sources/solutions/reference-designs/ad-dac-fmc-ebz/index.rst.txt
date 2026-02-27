@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-dac-fmc-ebz
+
 .. _ad-dac-fmc-ebz:
 
 AD-DAC-FMC-EBZ

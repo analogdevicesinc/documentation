@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0301
+
 .. _eval-cn0301-ardz:
 
 EVAL-CN0301-SDPZ

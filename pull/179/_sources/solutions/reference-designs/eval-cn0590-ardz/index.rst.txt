@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0590
+
 .. _eval-cn0590-ardz:
 
 EVAL-CN0590-EBZ

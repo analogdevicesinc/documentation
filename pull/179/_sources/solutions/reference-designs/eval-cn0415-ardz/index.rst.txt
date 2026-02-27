@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029/hardware/cn0415
+
 .. _eval-cn0415-ardz:
 
 EVAL-CN0415-ARDZ

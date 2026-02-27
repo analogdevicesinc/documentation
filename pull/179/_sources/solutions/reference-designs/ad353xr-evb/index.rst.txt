@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad353xr
+
 .. _ad353xr-evb:
 
 AD353xR-EVB User Guide

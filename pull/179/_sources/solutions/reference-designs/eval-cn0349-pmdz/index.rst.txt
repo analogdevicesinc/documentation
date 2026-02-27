@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0349
+
 .. _eval-cn0349-pmdz:
 
 EVAL-CN0349-PMDZ

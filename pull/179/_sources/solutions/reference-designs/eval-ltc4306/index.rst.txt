@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-ltc4306/no-os-setup
+
 .. _eval-ltc4306:
 
 EVAL-LTC4306-PMDZ User Guide

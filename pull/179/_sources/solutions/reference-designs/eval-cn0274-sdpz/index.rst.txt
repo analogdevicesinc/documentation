@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0274
+
 .. _eval-cn0274-sdpz:
 
 EVAL-CN0274-SDPZ

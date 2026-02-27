@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/tools-software/product-support-software/ad4696_mbed_iio_application
+
 .. _ad469x-fmc:
 
 AD469x-FMC User Guide

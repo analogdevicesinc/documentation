@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/ad9434fmc-500ebz
+
 .. _ad9434-fmc:
 
 AD9434-FMC User Guide

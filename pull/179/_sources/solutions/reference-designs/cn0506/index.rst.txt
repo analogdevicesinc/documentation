@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0506
+
 .. _cn0506:
 
 CN0506 User Guide

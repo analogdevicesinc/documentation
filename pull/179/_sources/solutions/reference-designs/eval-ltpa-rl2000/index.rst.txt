@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-ltpa-rl2000
+
 .. _eval-ltpa-rl2000:
 
 EVAL-LTPA-RL2000

@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-gmsl2eth-sl
+
 .. _ad-gmsl2eth-sl:
 
 AD-GMSL2ETH-SL

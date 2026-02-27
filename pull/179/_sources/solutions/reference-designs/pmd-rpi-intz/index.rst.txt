@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pmd-rpi-intz
+
 .. _pmd-rpi-intz:
 
 PMD-RPI-INTZ

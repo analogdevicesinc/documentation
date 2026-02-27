@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-cn0363-pmdz
+
 .. _cn0363:
 
 CN0363 User Guide

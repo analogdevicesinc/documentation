@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1
+
 .. _max11205pmb1:
 
 MAX11205PMB1

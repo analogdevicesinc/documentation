@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0300
+
 .. _eval-cn0300-sdpz:
 
 EVAL-CN0300-SDPZ

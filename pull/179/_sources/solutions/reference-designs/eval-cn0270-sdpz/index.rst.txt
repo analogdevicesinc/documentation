@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/cn0270
+
 .. _eval-cn0270-sdpz:
 
 EVAL-CN0270-EB1Z

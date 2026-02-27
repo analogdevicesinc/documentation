@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/fpga/xilinx/adv7511
+
 .. _adv7511:
 
 ADV7511 User Guide

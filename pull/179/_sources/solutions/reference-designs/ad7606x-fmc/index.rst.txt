@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad7606x-fmc/hdl
+
 .. _ad7606x-fmc:
 
 AD7606x-FMC User Guide

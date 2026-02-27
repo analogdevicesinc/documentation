@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad9208_dual_ebz/ad9208_dual_ebz_hdl
+
 .. _ad9208-dual-ebz:
 
 AD9208-DUAL-EBZ User Guide

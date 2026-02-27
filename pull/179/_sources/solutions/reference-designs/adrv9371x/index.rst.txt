@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/adrv9371x/quickstart/a10gx
+
 .. _adrv9371x:
 
 ADRV9371x User Guide

@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-freqcvt1-ebz
+
 .. _ad-freqcvt1-ebz:
 
 AD-FREQCVT1-EBZ

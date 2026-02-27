@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad4134/hdl
+
 .. _ad4134-fmc:
 
 AD4134-FMC User Guide

@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad7091r5
+
 .. _ad7091r5:
 
 EVAL-AD7091R-5SDZ User Guide

@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/admx6001_analog_devices_wiki
+
 ADMX6001-EBZ
 ============
 

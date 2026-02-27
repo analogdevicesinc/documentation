@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cftl-led-bar
+
 .. _cftl-led-bar:
 
 CFTL-LED-BAR

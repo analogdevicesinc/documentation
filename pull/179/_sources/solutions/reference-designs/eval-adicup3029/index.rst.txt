@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029
+
 .. _eval-adicup3029:
 
 EVAL-ADICUP3029

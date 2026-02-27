@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/pmods/adt7420
+
 .. _eval-adt7420-pmdz:
 
 EVAL-ADT7420-PMDZ

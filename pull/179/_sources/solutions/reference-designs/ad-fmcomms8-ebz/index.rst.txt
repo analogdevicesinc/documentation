@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms8-ebz
+
 .. _ad-fmcomms8-ebz:
 
 AD-FMCOMMS8-EBZ User Guide

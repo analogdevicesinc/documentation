@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/adrv9025
+
 .. _adrv9026:
 
 ADRV9026/ADRV9029 Prototyping Platform User Guide

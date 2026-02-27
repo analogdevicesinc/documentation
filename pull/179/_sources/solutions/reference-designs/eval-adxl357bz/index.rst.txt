@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/inertial-mems/accelerometers/adxl354_355
+
 .. _eval-adxl357bz:
 
 EVAL-ADXL357BZ

@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guide/adaq23876/adaq23878
+
 .. _adaq23876:
 
 ADAQ23876/ADAQ23878 User Guide

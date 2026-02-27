@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/eval-adpd410x
+
 .. _eval-adpd4100-ardz:
 
 EVAL-ADPD4100-ARDZ

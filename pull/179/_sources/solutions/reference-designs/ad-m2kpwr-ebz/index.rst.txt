@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/university/tools/m2k/accessories/power
+
 .. _ad-m2kpwr-ebz:
 
 AD-M2KPWR-EBZ

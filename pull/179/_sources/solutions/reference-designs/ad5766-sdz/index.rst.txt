@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/tools-software/uc-drivers/ad5766
+
 .. _ad5766-sdz:
 
 AD5766-SDZ User Guide

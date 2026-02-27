@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/ad9695-1300ebz
+
 .. _ad9695-fmc:
 
 AD9695-FMC User Guide

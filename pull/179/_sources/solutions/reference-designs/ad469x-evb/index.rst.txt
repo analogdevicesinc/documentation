@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad469x
+
 .. _ad469x-evb:
 
 AD469x-EVB No-OS Project

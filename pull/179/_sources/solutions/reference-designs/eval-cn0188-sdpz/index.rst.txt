@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0188
+
 .. _eval-cn0188-sdpz:
 
 EVAL-CN0188-SDPZ

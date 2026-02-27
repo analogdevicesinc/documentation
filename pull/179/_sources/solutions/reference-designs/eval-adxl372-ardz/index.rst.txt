@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029/hardware/adxl372
+
 .. _eval-adxl372-ardz:
 
 EVAL-ADXL372-ARDZ

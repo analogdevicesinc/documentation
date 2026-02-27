@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/dc2903a/no-os-setup
+
 .. _dc2903a:
 
 DC2903A User Guide

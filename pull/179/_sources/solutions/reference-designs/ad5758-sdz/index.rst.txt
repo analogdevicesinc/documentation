@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/demo/reference-designs/ad5758_adp1031
+
 .. _ad5758-sdz:
 
 AD5758-SDZ User Guide

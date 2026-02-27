@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/pmods/adxl362
+
 .. _eval-adxl362-ardz:
 
 EVAL-ADXL362-ARDZ

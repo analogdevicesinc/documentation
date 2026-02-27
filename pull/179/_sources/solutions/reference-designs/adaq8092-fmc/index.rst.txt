@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guide/adaq8092-eval-board
+
 .. _adaq8092-fmc:
 
 ADAQ8092-FMC User Guide

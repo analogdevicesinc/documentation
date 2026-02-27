@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0401
+
 .. _eval-adm3055e-ardz:
 
 EVAL-ADM3055E-ARDZ

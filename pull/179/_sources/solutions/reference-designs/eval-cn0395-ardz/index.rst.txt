@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/arduino-uno/reference_designs/demo_cn0395
+
 .. _eval-cn0395-ardz:
 
 EVAL-CN0395-ARDZ

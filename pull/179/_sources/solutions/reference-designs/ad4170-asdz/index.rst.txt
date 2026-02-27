@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad4170
+
 .. _ad4170-asdz:
 
 AD4170-ASDZ User Guide
