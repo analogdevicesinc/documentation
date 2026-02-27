@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmclidar1-ebz
+
 .. _ad-fmclidar1-ebz:
 
 AD-FMCLIDAR1-EBZ
