@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz
+
 .. _ad-fmcomms5-ebz:
 
 AD-FMCOMMS5-EBZ
