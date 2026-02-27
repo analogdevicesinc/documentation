@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0511
+
 .. _eval-cn0511-ardz:
 
 EVAL-CN0511-RPIZ
