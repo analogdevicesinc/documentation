@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0584
+
 .. _ad777x-fmcz:
 
 AD777x-FMCZ User Guide
