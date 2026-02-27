@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/pmd-ard-intz
+
 .. _pmd-ard-intz:
 
 PMD-ARD-INTZ
