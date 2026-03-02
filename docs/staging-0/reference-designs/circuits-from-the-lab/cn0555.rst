@@ -168,9 +168,7 @@ Firmware Loading
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/pluto_firmware_update.jpg
       :width: 600px
 
-     .. note::
-
-        Figure 7. Copying Pluto Firmware to the Pluto Mass Storage Device
+      Figure 7. Copying Pluto Firmware to the Pluto Mass Storage Device
 
 #. This will cause LED1 to blink rapidly. This means that programming is taking
    place. Do not remove power (or USB) while the device is blinking rapidly. It
@@ -182,9 +180,7 @@ Firmware Loading
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/eject_pluto.jpg
       :width: 300px
 
-     .. note::
-
-        Figure 8. Ejection of Pluto Mass Storage Device
+      Figure 8. Ejection of Pluto Mass Storage Device
 
 #. Now, the USB cable can be safely disconnected from the PC.
 
@@ -201,9 +197,7 @@ Updating to the AD9364
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/username_and_password.jpg
       :width: 400px
 
-     .. note::
-
-        Figure 9. Serial Terminal Configuration
+      Figure 9. Serial Terminal Configuration
 
 #. To change parameters to the :adi:`AD9364` configuration, enter the following
    commands line by line:
@@ -216,9 +210,7 @@ Updating to the AD9364
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/command_line_to_update_ad9364.jpg
       :width: 400px
 
-     .. note::
-
-        Figure 10. AD9364 Configuration
+      Figure 10. AD9364 Configuration
 
 #. Eject (don"t unplug) the Pluto mass storage device.
 #. Then, the USB cable can be safely disconnected from the PC.

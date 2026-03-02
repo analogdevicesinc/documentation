@@ -1,6 +1,6 @@
 .. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-ltpa-kit
 
-.. _eval-ltpa-kit:
+.. _eval-ltpa-kit-DUPLICATED:
 
 NO TITLE
 ========
@@ -262,37 +262,25 @@ scrape away an opening in the solder mask on the board, then solder the probe
 directly to the board using a piece of solder braid folded at a 90-degree angle
 on either side to provide a strong mechanical connection.
 
-.. note::
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/minus_side_solder_braid_connection.png
+   :width: 300px
 
-   .. list-table::
+   Minus Side Solder Braid Connection
 
-      * -
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/plus_side_solder_braid_connection.png
+   :width: 300px
 
-      .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/minus_side_solder_braid_connection.png
-         :width: 300px
+   Plus Side Solder Braid Connection
 
-        Minus Side Solder Braid Connection
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/low_current_turret_connection.png
+   :width: 200px
 
-        -
+   Low Current Turret Connection
 
-         .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/plus_side_solder_braid_connection.png
-            :width: 300px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/socket_connection.png
+   :width: 250px
 
-           Plus Side Solder Braid Connection
-
-      * -
-
-      .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/low_current_turret_connection.png
-         :width: 200px
-
-        Low Current Turret Connection
-
-        -
-
-         .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/socket_connection.png
-            :width: 250px
-
-           Socket Connection
+   Socket Connection
 
 For smaller currents, the probe can be connected via turrets or wire to the
 board. The current probe can also be mated with the 60-pin surface mount

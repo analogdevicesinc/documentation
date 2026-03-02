@@ -177,24 +177,24 @@ The low level modules are the platform drivers and are included in the
 Configuring the Software Parameters
 -----------------------------------
 
-- Gyroscope range setting - *ADXRS290_RANGE* parameter - 2, 4, or 8 are
-  acceptable values to set the [g] range for the ADXRS290 (*ADXRS290.h*).
+Gyroscope range setting - *ADXRS290_RANGE* parameter - 2, 4, or 8 are
+acceptable values to set the [g] range for the ADXRS290 (*ADXRS290.h*).
 
 ::
 
    #define ADXRS290_SENSE        2
 
--  Sensor activity and inactivity thresholds - *ACT_VALUE* and *INACT_VALUE*
-  paramaters used to determine at which acceleration values the sensor can react
-  at sleep/wake-up commands (*ADXRS290.h*):
+Sensor activity and inactivity thresholds - *ACT_VALUE* and *INACT_VALUE*
+paramaters used to determine at which acceleration values the sensor can react
+at sleep/wake-up commands (*ADXRS290.h*):
 
 ::
 
    #define ACT_VALUE          50
    #define INACT_VALUE        50
 
--  Sensor activity and inactivity time - *ACT_TIMER* and *INACT_TIMER*
-  paramaters used to determine sleep/wake-up intervals(*ADXRS290.h*):
+Sensor activity and inactivity time - *ACT_TIMER* and *INACT_TIMER*
+paramaters used to determine sleep/wake-up intervals(*ADXRS290.h*):
 
 ::
 
@@ -284,4 +284,4 @@ Reference Demos & Software
 - `ADXRS290 No-OS Build Instruction Guide <https://github.com/analogdevicesinc/no-OS/wiki>`__
 - :git-no-OS:`ADXRS290 No-OS Drivers <projects/adxrs290-pmdz+>`
 
-// End of Document //
+

@@ -19,7 +19,7 @@ After following the instructions in the Software Installation Procedures section
 
 Follow the below 2 steps to configure the Evaluation and SDP Boards:
 
-#.  Connect the SDP-B board to Connector A or Connector B on the
+#. Connect the SDP-B board to Connector A or Connector B on the
    EVAL-AD7124-xASDZ evaluation board. Screw the two boards together using the
    plastic screw and washer set included in the evaluation board kit to connect
    the boards firmly together.

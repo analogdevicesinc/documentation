@@ -35,9 +35,9 @@ Below is presented a short description of all the functions provided in the API:
    :header-rows: 1
 
    * - Device Global Settings
-     -
-
-\|
+     - Description
+   * - See code below
+     - See function descriptions in the code section
 
 .. code:: c
 
@@ -51,7 +51,7 @@ Below is presented a short description of all the functions provided in the API:
        the AD9361 current state in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -65,7 +65,7 @@ Below is presented a short description of all the functions provided in the API:
        (SLEEP, ALERT, FDD, PINCTRL). Returns 0 in case of success, negative
        error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -80,7 +80,7 @@ Below is presented a short description of all the functions provided in the API:
        otherwise.
    * - Receive Chain Settings
 
-\|
+
 
 .. code:: c
 
@@ -94,7 +94,7 @@ Below is presented a short description of all the functions provided in the API:
        number (0, 1) and the RF gain. Returns 0 in case of success, negative
        error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -108,7 +108,7 @@ Below is presented a short description of all the functions provided in the API:
        desired channel (0, 1) and a variable to store the RF gain. Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -121,7 +121,7 @@ Below is presented a short description of all the functions provided in the API:
        the AD9361 current state and the desired bandwidth in Hz. Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -134,7 +134,7 @@ Below is presented a short description of all the functions provided in the API:
        contains the AD9361 current state and a variable to store the bandwidth
        value in Hz. Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -147,7 +147,7 @@ Below is presented a short description of all the functions provided in the API:
        contains the AD9361 current state and the desired sampling frequency in
        Hz. Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -161,7 +161,7 @@ Below is presented a short description of all the functions provided in the API:
        frequency value in Hz. Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -174,7 +174,7 @@ Below is presented a short description of all the functions provided in the API:
        the AD9361 current state and the desired LO frequency in Hz. Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -188,7 +188,7 @@ Below is presented a short description of all the functions provided in the API:
        frequency value in Hz. Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -201,7 +201,7 @@ Below is presented a short description of all the functions provided in the API:
        (INT_LO, EXT_LO). Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -215,7 +215,7 @@ Below is presented a short description of all the functions provided in the API:
        1) and a variable to store the RSSI. Returns 0 in case of success,
        negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -230,7 +230,7 @@ Below is presented a short description of all the functions provided in the API:
        GAIN_FASTATTACK_AGC, GAIN_SLOWATTACK_AGC, GAIN_HYBRID_AGC). Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -244,7 +244,7 @@ Below is presented a short description of all the functions provided in the API:
        desired channel (0, 1) and a variable to store the gain control mode.
        Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -257,7 +257,7 @@ Below is presented a short description of all the functions provided in the API:
        that contains the AD9361 current state and the FIR filter configuration.
        Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -270,7 +270,7 @@ Below is presented a short description of all the functions provided in the API:
        and the location for storing the FIR filter configuration. Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -283,7 +283,7 @@ Below is presented a short description of all the functions provided in the API:
        contains the AD9361 current state and the option (ENABLE, DISABLE).
        Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -296,7 +296,7 @@ Below is presented a short description of all the functions provided in the API:
        that contains the AD9361 current state and the enable/disable status
        buffer. Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -309,7 +309,7 @@ Below is presented a short description of all the functions provided in the API:
        that contains the AD9361 current state and the option (ENABLE,
        DISABLE).Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -323,7 +323,7 @@ Below is presented a short description of all the functions provided in the API:
        status buffer.Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -336,7 +336,7 @@ Below is presented a short description of all the functions provided in the API:
        structure that contains the AD9361 current state and the option (ENABLE,
        DISABLE).Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -350,7 +350,7 @@ Below is presented a short description of all the functions provided in the API:
        status buffer.Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -363,7 +363,7 @@ Below is presented a short description of all the functions provided in the API:
        structure that contains the AD9361 current state and the option (ENABLE,
        DISABLE).Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -377,7 +377,7 @@ Below is presented a short description of all the functions provided in the API:
        status buffer.Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -390,7 +390,7 @@ Below is presented a short description of all the functions provided in the API:
        B_BALANCED, C_BALANCED, A_N, A_P, B_N, B_P, C_N, C_P, TX_MON1, TX_MON2,
        TX_MON1_2). Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -403,7 +403,7 @@ Below is presented a short description of all the functions provided in the API:
        selected port value. Returns 0 in case of success, negative error code
        otherwise. Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -417,7 +417,7 @@ Below is presented a short description of all the functions provided in the API:
        the AD9361 current state and the profile number (0 - 7). Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -431,7 +431,7 @@ Below is presented a short description of all the functions provided in the API:
        structure that contains the AD9361 current state and the profile number
        (0 - 7). Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -446,7 +446,7 @@ Below is presented a short description of all the functions provided in the API:
        7) and the Fastlock profile program data (val0,val1,val2,…,val15).
        Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -461,7 +461,7 @@ Below is presented a short description of all the functions provided in the API:
        profile data. Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -473,7 +473,7 @@ Below is presented a short description of all the functions provided in the API:
        that contains the AD9361 current state and the option (ON, OFF). Returns
        0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -487,7 +487,7 @@ Below is presented a short description of all the functions provided in the API:
        code otherwise.
    * - Transmit Chain Settings
 
-\|
+
 
 .. code:: c
 
@@ -503,7 +503,7 @@ Below is presented a short description of all the functions provided in the API:
        desired channel number (0, 1) and the attenuation in dB. Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -519,7 +519,7 @@ Below is presented a short description of all the functions provided in the API:
        desired channel (0, 1) and a variable to store the attenuation value in
        dB. Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -532,7 +532,7 @@ Below is presented a short description of all the functions provided in the API:
        the AD9361 current state and the desired bandwidth in Hz. Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -545,7 +545,7 @@ Below is presented a short description of all the functions provided in the API:
        contains the AD9361 current state and a variable to store the bandwidth
        value in Hz. Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -558,7 +558,7 @@ Below is presented a short description of all the functions provided in the API:
        contains the AD9361 current state and the desired sampling frequency in
        Hz. Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -572,7 +572,7 @@ Below is presented a short description of all the functions provided in the API:
        frequency value in Hz. Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -585,7 +585,7 @@ Below is presented a short description of all the functions provided in the API:
        the AD9361 current state and the desired LO frequency in Hz. Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -599,7 +599,7 @@ Below is presented a short description of all the functions provided in the API:
        frequency value in Hz. Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -612,7 +612,7 @@ Below is presented a short description of all the functions provided in the API:
        (INT_LO, EXT_LO). Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -625,7 +625,7 @@ Below is presented a short description of all the functions provided in the API:
        that contains the AD9361 current state and the FIR filter configuration.
        Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -638,7 +638,7 @@ Below is presented a short description of all the functions provided in the API:
        filter configuration. Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -651,7 +651,7 @@ Below is presented a short description of all the functions provided in the API:
        contains the AD9361 current state and the option (ENABLE, DISABLE).
        Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -664,7 +664,7 @@ Below is presented a short description of all the functions provided in the API:
        that contains the AD9361 current state and the enable/disable status
        buffer. Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -680,7 +680,7 @@ Below is presented a short description of all the functions provided in the API:
        1) and a variable to store the RSSI. Returns 0 in case of success,
        negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -692,7 +692,7 @@ Below is presented a short description of all the functions provided in the API:
        contains the AD9361 current state and the desired port (TXA, TXB).
        Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -705,7 +705,7 @@ Below is presented a short description of all the functions provided in the API:
        selected port. Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -717,7 +717,7 @@ Below is presented a short description of all the functions provided in the API:
        that contains the AD9361 current state and the desired mode (ENABLE,
        DISABLE). Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -730,7 +730,7 @@ Below is presented a short description of all the functions provided in the API:
        storing the selected mode. Returns 0 in case of success, negative error
        code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -742,7 +742,7 @@ Below is presented a short description of all the functions provided in the API:
        contains the AD9361 current state and the profile number (0 - 7). Returns
        0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -754,7 +754,7 @@ Below is presented a short description of all the functions provided in the API:
        that contains the AD9361 current state and the profile number (0 - 7).
        Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -768,7 +768,7 @@ Below is presented a short description of all the functions provided in the API:
        Fastlock profile program data (val0,val1,val2,…,val15). Returns 0 in case
        of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -783,7 +783,7 @@ Below is presented a short description of all the functions provided in the API:
        profile data. Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -795,7 +795,7 @@ Below is presented a short description of all the functions provided in the API:
        that contains the AD9361 current state and the desired option (ON, OFF).
        Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -808,7 +808,7 @@ Below is presented a short description of all the functions provided in the API:
        store the selected option. Returns 0 in case of success, negative error
        code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -823,7 +823,7 @@ Below is presented a short description of all the functions provided in the API:
        contains the AD9361 current state, the RX and the TX clocks. Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -839,7 +839,7 @@ Below is presented a short description of all the functions provided in the API:
        clock frequencies. Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -853,7 +853,7 @@ Below is presented a short description of all the functions provided in the API:
        1x1; 2 - 2x2). Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -866,7 +866,7 @@ Below is presented a short description of all the functions provided in the API:
        the AD9361 slave current state. Returns 0 in case of success, negative
        error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -878,7 +878,7 @@ Below is presented a short description of all the functions provided in the API:
        that contains the AD9361 current state and the desired option (ENABLE,
        DISABLE). Returns 0 in case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -891,7 +891,7 @@ Below is presented a short description of all the functions provided in the API:
        (HIGHEST_OSR, NOMINAL_OSR). Returns 0 in case of success, negative error
        code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -904,7 +904,7 @@ Below is presented a short description of all the functions provided in the API:
        OSR rate governor. Returns 0 in case of success, negative error code
        otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -918,7 +918,7 @@ Below is presented a short description of all the functions provided in the API:
        overwrite (set to zero). Returns 0 in case of success, negative error
        code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -931,7 +931,7 @@ Below is presented a short description of all the functions provided in the API:
        configuration and the TX FIR filter configuration. Returns 0 in case of
        success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -943,7 +943,7 @@ Below is presented a short description of all the functions provided in the API:
        the AD9361 current state and the DCXO coarse tuning value. Returns 0 in
        case of success, negative error code otherwise.
 
-\|
+
 
 .. code:: c
 
@@ -954,8 +954,6 @@ Below is presented a short description of all the functions provided in the API:
    * - Does DCXO fine tuning. Receives as parameters a structure that contains
        the AD9361 current state and the DCXO fine tuning value. Returns 0 in
        case of success, negative error code otherwise.
-
-\|
 
 .. code:: c
 
@@ -1473,17 +1471,15 @@ Analog Devices github.
    - KC705 HDL Reference Design for Vivado: :git-hdl:`projects/fmcomms2/kc705`
    - VC707 HDL Reference Design for Vivado: :git-hdl:`projects/fmcomms2/vc707`
 
-**HDL Reference Designs for FMCOMMS5** ::
+**HDL Reference Designs for FMCOMMS5**
 
-   ***ZC702 HDL Reference Design for Vivado:
+ZC702 HDL Reference Design for Vivado:
 
-**\ :git-hdl:`projects/fmcomms5/zc702`
+:git-hdl:`projects/fmcomms5/zc702`
 
-::
+ZC706 HDL Reference Design for Vivado:
 
-   ***ZC706 HDL Reference Design for Vivado:
-
-**\ :git-hdl:`projects/fmcomms5/zc706`
+:git-hdl:`projects/fmcomms5/zc706`
 
 More Information
 ----------------

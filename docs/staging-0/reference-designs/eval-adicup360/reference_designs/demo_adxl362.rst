@@ -88,7 +88,7 @@ Setting up the hardware
 
    .. note::
 
-   It"s is recommended to select P1.4 pin for LCD_CS_SEL when using ADXL362 shield with ADICUP360 base board because P2.2 is also the BM pin and it can create problems in debug session.
+      It"s is recommended to select P1.4 pin for LCD_CS_SEL when using ADXL362 shield with ADICUP360 base board because P2.2 is also the BM pin and it can create problems in debug session.
 
 #. Plug the EVAL-ADXL362-ARDZ shield in the EVAL-ADICUP360 base board.
 #. Power EVAL-ADICUP360 base board via the DEBUG USB port (P14).

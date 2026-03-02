@@ -35,7 +35,7 @@ based board) and Arduino Uno R3 base boards.
 Getting Started Video
 ---------------------
 
-.. figure:: analogTV>4807248650001
+.. todo:: .. figure: analogTV>4807248650001
 
 Connectors and Jumper configuration
 -----------------------------------
@@ -54,19 +54,14 @@ ADXL_CS_SEL
 
    * - Configuration
      - Function
-     -
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/horizontal_jumper_12.png
-      :width: 125px
+          :width: 125px
 
- -
-   Routes ADXL362 CS pin to P0.3/IRQ0/CS1
- -
+     - Routes ADXL362 CS pin to P0.3/IRQ0/CS1
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/horizontal_jumper_23.png
-      :width: 125px
+          :width: 125px
 
- -
-   Routes ADXL362 CS pin to P0.4/RTS/IRQ1
- -
+     - Routes ADXL362 CS pin to P0.4/RTS/IRQ1
 
 LCD_CS_SEL
 ~~~~~~~~~~
@@ -76,19 +71,14 @@ LCD_CS_SEL
 
    * - Configuration
      - Function
-     -
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/horizontal_jumper_12.png
-      :width: 125px
+          :width: 125px
 
- -
-   Connects LCD CS pin to P2.2/BM
- -
+     - Connects LCD CS pin to P2.2/BM
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/horizontal_jumper_23.png
-      :width: 125px
+          :width: 125px
 
- -
-   Connects LCD CS pin to P1.4/PWM2/MISO0.
- -
+     - Connects LCD CS pin to P1.4/PWM2/MISO0.
 
 ADXL_INT_SEL
 ~~~~~~~~~~~~
@@ -98,19 +88,14 @@ ADXL_INT_SEL
 
    * - Configuration
      - Function
-     -
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/vertical_jumper_12.png
-      :width: 65px
+          :width: 65px
 
- -
-   Connects ADXL362 Interrupt pin 1 (INT1) to P1.0/IRQ3
- -
+     - Connects ADXL362 Interrupt pin 1 (INT1) to P1.0/IRQ3
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/vertical_jumper_23.png
-      :width: 65px
+          :width: 65px
 
- -
-   Connects ADXL362 Interrupt pin 2 (INT2) to P1.0/IRQ3.
- -
+     - Connects ADXL362 Interrupt pin 2 (INT2) to P1.0/IRQ3.
 
 LDC_RST_SEL
 ~~~~~~~~~~~
@@ -120,19 +105,14 @@ LDC_RST_SEL
 
    * - Configuration
      - Function
-     -
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/horizontal_jumper_12.png
-      :width: 125px
+          :width: 125px
 
- -
-   Connects LCD Reset to IOREF
- -
+     - Connects LCD Reset to IOREF
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/horizontal_jumper_23.png
-      :width: 125px
+          :width: 125px
 
- -
-   Connects LCD Reset to pin P1.1/IRQ4
- -
+     - Connects LCD Reset to pin P1.1/IRQ4
 
 Schematics, PCB Layout, Bill of Materials
 -----------------------------------------
@@ -163,4 +143,4 @@ Registration
    :reg:`Register <EVAL-ADXL362-ARDZ?&v=RevD>` to receive all these great
    benefits and more!
 
-// End of Document //
+

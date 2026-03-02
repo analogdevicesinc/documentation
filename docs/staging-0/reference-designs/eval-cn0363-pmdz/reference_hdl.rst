@@ -199,4 +199,4 @@ For building the EVAL-CN0363-PMDZ HDL reference design follow the
 More Information
 ----------------
 
-- `EVAL-CN0363-PMDZ User Guide <>`__
+- EVAL-CN0363-PMDZ User Guide

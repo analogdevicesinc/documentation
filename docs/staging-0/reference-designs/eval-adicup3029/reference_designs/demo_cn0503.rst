@@ -436,4 +436,4 @@ Hardware User Guide and Demo Guides
 - :dokuwiki:`Optical Platform: Turbidity Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ) </resources/eval/user-guides/circuits-from-the-lab/cn0503/turbidity>`
 - :dokuwiki:`Optical Platform: Nitrate Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ) </resources/eval/user-guides/circuits-from-the-lab/cn0503/nitrate-measurement>`
 
-// End of Document //
+

@@ -51,10 +51,8 @@ Downloads
 
 .. admonition:: Download
 
-   - :git-hdl:`Vivado ADI Libraries <library+>`
-   - :git-hdl:`Vivado Motor Control 2 Reference Design <projects/motcon2_fmc+>`
-
-   ::
+   - :git-hdl:`Vivado ADI Libraries <library>`
+   - :git-hdl:`Vivado Motor Control 2 Reference Design <projects/motcon2_fmc>`
 
 Setting up Linux
 ----------------

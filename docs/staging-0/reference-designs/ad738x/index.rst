@@ -115,8 +115,8 @@ Functions Declarations
 
    * - Function
      - Description
-
-\|
+   * - See code below
+     - See function descriptions in the code section
 
 .. code:: c
 
@@ -126,7 +126,7 @@ Functions Declarations
 
    * - Initialize the device.
 
-\|
+
 
 .. code:: c
 
@@ -136,7 +136,7 @@ Functions Declarations
 
    * - Free the resources allocated by ad738x_init().
 
-\|
+
 
 .. code:: c
 
@@ -146,7 +146,7 @@ Functions Declarations
 
    * - Enable internal or external reference.
 
-\|
+
 
 .. code:: c
 
@@ -156,7 +156,7 @@ Functions Declarations
 
    * - Device power down.
 
-\|
+
 
 .. code:: c
 
@@ -167,7 +167,7 @@ Functions Declarations
    * - Sets the oversampling mode in the device (os_mode). Sets the oversampling
        ratio (osr). Sets the size of the conversion result data (res)
 
-\|
+
 
 .. code:: c
 
@@ -177,7 +177,7 @@ Functions Declarations
 
    * - Device reset over SPI.
 
-\|
+
 
 .. code:: c
 
@@ -188,7 +188,7 @@ Functions Declarations
    * - Select if ADC A and ADC B output on both SDOA and SDOB lines (two wire
        mode) or only on on the SDOA line.
 
-\|
+
 
 .. code:: c
 
@@ -198,7 +198,7 @@ Functions Declarations
 
    * - Read conversion result from device.
 
-\|
+
 
 .. code:: c
 
@@ -208,7 +208,7 @@ Functions Declarations
 
    * - SPI write to device using a mask.
 
-\|
+
 
 .. code:: c
 
@@ -218,7 +218,7 @@ Functions Declarations
 
    * - Write to device.
 
-\|
+
 
 .. code:: c
 
@@ -230,8 +230,6 @@ Functions Declarations
 
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
-
-\|
 
 .. code:: c
 
@@ -290,20 +288,17 @@ Types Declarations
            ad738x_ref_sel          ref_sel;
    } ad738x_init_param;
 
-\|
 
 HDL Downloads
 -------------
 
 .. admonition:: Download
 
-   -
-
-    .. figure:: :git-hdl:`projects/ad738x_fmc`
+   :git-hdl:`projects/ad738x_fmc`
 
 No-OS Downloads
 ---------------
 
 .. admonition:: Download
 
-   - :git-no-OS:`ad738x No-OS Project <tree/master/projects/ad738x_fmcz+>`
+   :git-no-OS:`ad738x No-OS Project <projects/ad738x_fmcz>`

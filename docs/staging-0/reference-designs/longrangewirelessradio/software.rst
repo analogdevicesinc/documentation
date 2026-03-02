@@ -24,39 +24,21 @@ Requirements
 
 -  Host PC (Windows 10 or later) with administrator access
 
-::
-
-   * [[https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net462-web-installer | Microsoft .Net Framework 4.6.2]]
+   * `Microsoft .Net Framework 4.6.2 <https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net462-web-installer>`__
    * 1920 by 1080 or greater screen resolution, recommended
-
-::
-
    * with downloaded:
+   * :dokuwiki:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) </resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`
+   * :dokuwiki:`ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) </resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`
+   * `UART serial monitor <http://sourceforge.net/project/showfiles.php?group>`__
+   * `Balena Etcher <https://etcher.balena.i>`__
+   * `Chirpstack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.htm>`__
 
-::
-
-   * {{:resources:eval:user-guides:longrangewirelessradio:ad-max32wise-slz_firmware.zip | AD-MAX32WISE-SLZ Firmware (Rel1.0.0)}}
-
-::
-
-   *
-     {{:resources:eval:user-guides:longrangewirelessradio:wireless_sensor_hub.zip | ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3)}}
-
-::
-
-   * [[http://sourceforge.net/project/showfiles.php?group_id=67297|UART serial monitor]]
-   * [[https://etcher.balena.io|Balena Etcher]] image writing tool
-   * [[https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html|Chirpstack Gateway OS]]
-*
-  [[https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734|RAK5146
-  PiHAT Kit]] consisting of
+* `AK5146 PiHAT Kit <https://store.rakwireless.com/products/rak5146-kit?variant=4157798816173>`__
 * One (1) RAK5146 SPI module
 * One (1) RAK5146 PiHAT
 * Long range and GPS antenna
 * Spacers and nuts kit for secure mounting of the PiHAT
-* One (1)
-  [[https://www.raspberrypi.com/products/raspberry-pi-4-model-b/|Raspberry Pi
-  4]] with 5V Type-C Power supply
+* One (1) `Raspberry Pi 4  <https://www.raspberrypi.com/products/raspberry-pi-4-model-b>`__  with 5V Type-C Power supply.
 * One (1) Micro SD card
 * One (1) LAN cable
 * One (1) Micro USB to USB cable
@@ -74,19 +56,19 @@ PHASE 2: Firmware Setup
 
    **This setup uses the Real Term serial monitor, but other UART serial
    terminals may also be used.**
-      Real Term requires .NET framework to be installed on the Host PC to
-      function properly. Make sure to install this requirement before using this
-      serial terminal:
-      `.NET Framework 4.6.2 <https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net462-web-installer>`__
+
+   Real Term requires .NET framework to be installed on the Host PC to
+   function properly. Make sure to install this requirement before using this
+   serial terminal:
+   `.NET Framework 4.6.2 <https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net462-web-installer>`__
 
 #. Download the
    :download:`https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip`
- and extract the file to a known location.
-#. Double-click on the \ **AD-MAX32WISE-SLZ-Rel1.0.0.exe.**\  and follow the
+   and extract the file to a known location.
+#. Double-click on the \ **AD-MAX32WISE-SLZ-Rel1.0.0.exe.**  and follow the
    installation prompts.
 
-#. Go to \ **C:\\Analog
-   Devices\\AD-MAX32WISE-SLZ-Rel1.0.0\\Software\\ad_max32wise_src\\bin**\  and
+#. Go to **C:\\AnalogDevices\\AD-MAX32WISE-SLZ-Rel1.0.0\\Software\\ad_max32wise_src\\bin** and
    find the firmware you need to load based on the chosen sensor node.
    The firmware folder should contain the BIN, ELF, and HEX file.
 
@@ -102,19 +84,20 @@ PHASE 2: Firmware Setup
    sure there is no **FAIL.TXT** file. In case there is, repeat the drag and
    drop step.
 #. Reset the Base Board by pressing the **S1** reset button.
-#. Open the UART serial monitor to check if the firmware has been loaded correctly. Make sure to use the following settings: .. note::
+#. Open the UART serial monitor to check if the firmware has been loaded
+   correctly. Make sure to use the following settings:
 
    - Ports: Take note of the COM port used by checking the Device Manager
 
    - Baud Rates and Ports: set to 921600
 
-    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/2.png
-       :width: 600px
+     .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/2.png
+        :width: 600px
 
    - Display formatting: set to ANSI
 
-    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/1.png
-       :width: 600px
+     .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/1.png
+        :width: 600px
 
 #. Once configured, open the serial monitor.
 
@@ -125,8 +108,6 @@ PHASE 2: Firmware Setup
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/deveui.png
       :width: 600px
-
---------------
 
 PHASE 3: Gateway Setup
 ----------------------
@@ -153,8 +134,7 @@ Requirements
 Hardware
 ^^^^^^^^
 
--
-  `RAK5146 PiHAT Kit <https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734>`__
+- `RAK5146 PiHAT Kit <https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734>`__
   consisting of
 
   - RAK5146 SPI module
@@ -193,7 +173,7 @@ Documentation
 3.1 Hardware Assembly of the Concentrator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-\ **What is a Concentrator?**
+**What is a Concentrator?**
 
 A concentrator is an essential part of any gateway because it enables the
 reception and transmission of data packets from and to the end devices. It can
@@ -227,9 +207,11 @@ Follow below steps to setup the concentrator hardware:
 3.2 Imaging the SD Card with ChirpStack OS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Download the `Chirpstack Gateway OS version 4.1.1 or latest <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__ .. tip::
+#. Download the `Chirpstack Gateway OS version 4.1.1 or latest <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__
 
-   This setup uses the Raspberry Pi 4B Full Image
+   .. tip::
+
+      This setup uses the Raspberry Pi 4B Full Image
 
 #. Download and install `Balena Etcher <https://etcher.balena.io>`__ image
    writing tool. Note that this setup uses the Balena Etcher tool for writing
@@ -237,14 +219,14 @@ Follow below steps to setup the concentrator hardware:
 #. Run the Balena Etcher tool.
 #. Insert the micro SD card into the Host PC.
 
-#. Click \ **Flash from file**\  from the options shown in the interface.
+#. Click **Flash from file** from the options shown in the interface.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/flashing_sd_card.png
       :width: 600px
 
 #. Navigate to the location where the downloaded Chirpstack Gateway OS is saved.
 #. Select target and choose the targeted micro SD card drive.
-#. Click \ **Flash**\  to start the burning process of the image in the chosen
+#. Click **Flash** to start the burning process of the image in the chosen
    SD card.
 
 #. Wait until it is done.
@@ -273,9 +255,11 @@ Follow below steps to setup the concentrator hardware:
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/chirpstack_wifi.png
       :width: 400px
 
-     .. tip::
+      ChirpStack WiFi
 
-   When prompted to enter password, use **ChirpStackAP** (case-sensitive)
+   .. tip::
+
+      When prompted to enter password, use **ChirpStackAP** (case-sensitive)
 
 #. Access the ChirpStack open network and check its assigned IP Address through
    SSH connection. Open CMD on the Host PC.
@@ -293,24 +277,30 @@ Follow below steps to setup the concentrator hardware:
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ssh_password_input.png
       :width: 600px
 
-     .. note::
+      SSH Password Input
 
-   Chirpstack details
+   .. note::
 
-   **Username: admin
+      Chirpstack details
 
-   Password: admin
+      **Username:** admin
 
-   StaticIP: 192.168.0.1*\*
+      **Password:** admin
+
+      **StaticIP:** 192.168.0.1
 
 #. Once connected, check the assigned ChirpStack IP by typing \ **ifconfig**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/chirpstack_ip.png
       :width: 600px
 
-#. This will show all configs, look for \ **eth0**\  and save the IP address assigned to it. .. tip::
+#. This will show all configs, look for \ **eth0**  and save the IP address assigned to it.
 
-   In this example, the IP assigned is **169.254.117.207**. By saving the assigned IP, you"ll be able to establish an SSH connection on your machine without having to connect through the ChirpStack open network.
+   .. tip::
+
+      In this example, the IP assigned is **169.254.117.207**. By saving the
+      assigned IP, you"ll be able to establish an SSH connection on your machine
+      without having to connect through the ChirpStack open network.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/eth0_ip.png
       :width: 600px
@@ -347,8 +337,6 @@ Follow below steps to setup the concentrator hardware:
 If you have properly configured the gateway and installed the required SD card
 image, then you are ready to use the ChirpStack Network Server.
 
---------------
-
 PHASE 4: Setting up a Self-Hosted Application Server
 ----------------------------------------------------
 
@@ -373,7 +361,7 @@ Requirements
    ensuring it falls within a universally understood range of ports that are not
    commonly used for standard purposes elsewhere.
 
-#. Access Advance Firewall settings in your computer. |\||
+#. Access Advance Firewall settings in your computer.
 
 #. Create a new Inbound Rule.
 
@@ -406,7 +394,7 @@ Requirements
 4.2 Installing the GUI and Accessing the Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#.  Download and extract the
+#. Download and extract the
    :download:`https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip`
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/extracting_file.png
@@ -432,10 +420,12 @@ Requirements
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ip_address.png
       :width: 700px
 
-#. Use the assigned ChirpStack IP address saved earlier to access its configuration interface. .. tip::
+#. Use the assigned ChirpStack IP address saved earlier to access its configuration interface.
+   .. tip::
 
-   In this example, it is \ **169.254.117.207**
-   If you haven"t saved the IP address, revisit Steps 3 to 7 in :dokuwiki:`Gateway Configuration section </resources/eval/user-guides/longrangewirelessradio/software#3.3_gateway_configuration>`
+      In this example, it is **169.254.117.207**
+      If you haven"t saved the IP address, revisit Steps 3 to 7 in
+      :dokuwiki:`Gateway Configuration section </resources/eval/user-guides/longrangewirelessradio/software#3.3_gateway_configuration>`
 
 #. Add the ChirpStack Port (8080) to the end of IP address. Open a page in the
    browser using the \ **URL 169.254.117.207:8080**
@@ -448,8 +438,6 @@ Requirements
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/log_in_page.png
       :width: 600px
-
---------------
 
 PHASE 5: Connecting a Sensor Node to the Gateway
 ------------------------------------------------
@@ -466,34 +454,36 @@ device-profile. In general, it is a good practice to create separate
 device-profiles for different types of devices (sensor nodes). A device-profile
 contains the capabilities of your device.
 
-#.  Once you are in the ChirpStack landing page, navigate to the \
-   **Applications tab**\ .
+#. Once you are in the ChirpStack landing page, navigate to the \
+   **Applications tab** .
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/landing_page.png
       :width: 600px
 
-#. Click \ **Device profiles**\  under the \ **Tenant**\  category, as shown
+#. Click **Device profiles**  under the **Tenant**  category, as shown
    below.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/software/gate_way_setup/device_profile.png
       :width: 200px
 
-#. Click on the \ **Add device profile**\  button.
+#. Click on the \ **Add device profile**  button.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/software/gate_way_setup/add_device_profile.png
       :width: 800px
 
-#. Answer all required information under the \ **General**\  tab, and then click \ **Submit**\  once done. For the Name, enter the desired sensor node name. .. note::
+#. Answer all required information under the \ **General**  tab, and then click \ **Submit**  once done. For the Name, enter the desired sensor node name.
 
-   The following shows the other configuration required to add a sensor node:
+   .. note::
 
-   - Region: AU915
-   - Region Configuration: AU915 (channels 0-7 +64)
-   - MAC Version: LoRaWAN 1.0.4
-   - Regional parameters revision: A
-   - ADR algorithm: Default ADR algorithm (LoRa only)
-   - Expected uplink interval (sec): 10
-   - Device-status request frequency (req/day): 8640
+      The following shows the other configuration required to add a sensor node:
+
+      - Region: AU915
+      - Region Configuration: AU915 (channels 0-7 +64)
+      - MAC Version: LoRaWAN 1.0.4
+      - Regional parameters revision: A
+      - ADR algorithm: Default ADR algorithm (LoRa only)
+      - Expected uplink interval (sec): 10
+      - Device-status request frequency (req/day): 8640
 
     .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/add_device_profile_example.png
        :width: 1500px
@@ -501,14 +491,14 @@ contains the capabilities of your device.
 5.2 Enrolling Device Applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. After adding a device, click the \ **Applications**\  option under Tenant.
+#. After adding a device, click the \ **Applications**  option under Tenant.
 
-#. Click on the \ **Add application**\  button.
+#. Click on the \ **Add application**  button.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/add_application_button.png
       :width: 600px
 
-#. Write the desired Application Name on the space provided. Hit \ **Submit**\
+#. Write the desired Application Name on the space provided. Hit \ **Submit**
    once done.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/submit_application.png
@@ -544,7 +534,7 @@ contains the capabilities of your device.
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/device_details.png
    :width: 600px
 
-5. Once done, click \ **Submit**\ .
+5. Once done, click \ **Submit** .
 
 .. tip::
 
@@ -552,9 +542,9 @@ contains the capabilities of your device.
    see a **JoinRequest** message followed by a **JoinAccept** message.
 
    If you do not see a JoinRequest and JoinAccept, click on the \ **Flush OTAA
-   devices**\  button.
+   devices**  button.
 
-6. Enter the \ **Application key**\  and hit \ **Submit**\  once done. .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/app_key.png
+6. Enter the \ **Application key**  and hit \ **Submit**  once done. .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/app_key.png
    :width: 600px
 
 .. tip::
@@ -567,7 +557,7 @@ contains the capabilities of your device.
 5.3 Setting up Local Host URL for the Application Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Once you are in Applications tab, select and open \ **WiSe_Sensors**\ .
+#. Once you are in Applications tab, select and open \ **WiSe_Sensors** .
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_applications.png
       :width: 600px
@@ -583,9 +573,11 @@ contains the capabilities of your device.
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/integrations.png
       :width: 600px
 
-#. Change the Event Endpoint URL to the IP of the adapter your gateway is connected. .. tip::
+#. Change the Event Endpoint URL to the IP of the adapter your gateway is connected.
 
-   In this example, it is the IP of the Apple Network Adapter, which is http://169.254.178.157:5050/api/data/post.
+   .. tip::
+
+      In this example, it is the IP of the Apple Network Adapter, which is http://169.254.178.157:5050/api/data/post.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/endpoint_event_url_1.png
       :width: 600px
@@ -617,54 +609,50 @@ After you have successfully added a device (sensor node) and an application in
 the Chirpstack network, you will be able to view the graphical representation of
 the data collected by the sensor, as shown in the example below:
 
-::
+ .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_smart_motor_sensor.png
 
-   ***Smart Motor Sensor GUI** \\ {{ :resources:eval:user-guides:longrangewirelessradio:gui_smart_motor_sensor.png?1000 |}}
+    Smart Motor Sensor GUI
 
-::
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_flow_meter_sensor.png
 
-   ***Flow Meter Sensor GUI** \\ {{
-   :resources:eval:user-guides:longrangewirelessradio:gui_flow_meter_sensor.png?1000 |}}
+   Flow Meter Sensor GUI
 
-::
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_e-meter_sensor.png
 
-   ***E-meter Sensor GUI** \\ {{ :resources:eval:user-guides:longrangewirelessradio:gui_e-meter_sensor.png?1000 |}} 
+   E-meter Sensor GUI
 
-::
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_cattletag.png?1000
 
-   ***Cattle Tag Sensor GUI** \\ {{
-   :resources:eval:user-guides:longrangewirelessradio:gui_cattletag.png?1000 |}}
-
---------------
+   Cattle Tag Sensor GUI
 
 FAQs
 ====
 
-.. note::
+**Q. Why is the serial application not responding after opening the port?**
 
-   **Q. Why is the serial application not responding after opening the port?**\
-   ​ A. It usually happens whenever the power of the base board is not enough to
-   operate the board.
+A. It usually happens whenever the power of the base board is not enough to
+operate the board.
 
-   **Q. Can we use other gateways aside from ChirpStack?** A. Customers are not
-   limited to use ChirpStack gateway, it is possible to use other gateways
-   available in the market.
+**Q. Can we use other gateways aside from ChirpStack?**
 
-   **Q. What maximum number a gateway can handle?** A. It depends on the
-   channels available per assigned region and the time division set by the user
-   on sending data from the nodes to gateway.
+A. Customers are not limited to use ChirpStack gateway, it is possible to use
+other gateways available in the market.
 
-   **Q. Is there another way to see the GUI without using the local setup?** A.
-   The GUI can also be accessed through cloud service, but it is not supported
-   by ADI.
+**Q. What maximum number a gateway can handle?**
 
-   **Q. What is the maximum distance the gateway and nodes can communicate?** A.
-   The gateway and nodes" maximum and effective range may vary depending on the
-   modulation parameters, transmit power, antenna gain, environmental
-   conditions, and obstacles present in the communication path. In practice, it
-   can reach several kilometers in rural areas with a clear line of sight. The
-   effective range may be shorter in urban areas where obstacle and interference
-   are present.
+A. It depends on the channels available per assigned region and the time
+division set by the user on sending data from the nodes to gateway.
 
-.. |\|| image:: /resources/eval/user-guides/longrangewirelessradio/advance_firewall_settings.png
-   :width: 700px
+**Q. Is there another way to see the GUI without using the local setup?**
+
+A. The GUI can also be accessed through cloud service, but it is not supported
+by ADI.
+
+**Q. What is the maximum distance the gateway and nodes can communicate?**
+
+A. The gateway and nodes" maximum and effective range may vary depending on the
+modulation parameters, transmit power, antenna gain, environmental
+conditions, and obstacles present in the communication path. In practice, it
+can reach several kilometers in rural areas with a clear line of sight. The
+effective range may be shorter in urban areas where obstacle and interference
+are present.

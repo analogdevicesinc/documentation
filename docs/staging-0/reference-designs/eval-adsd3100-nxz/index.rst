@@ -103,15 +103,11 @@ What is included in the kit?
 
    .. list-table::
 
-      * -
+      * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adsd3100_noenc.png
+             :width: 200px
 
-      .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adsd3100_noenc.png
-         :width: 200px
-
-        -
-
-         .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adsd3100_w_enc.png
-            :width: 200px
+        - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adsd3100_w_enc.png
+             :width: 200px
 
    the stand is *not* included.
 

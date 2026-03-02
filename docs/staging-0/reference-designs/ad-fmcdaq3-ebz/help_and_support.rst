@@ -9,7 +9,7 @@ If you have any questions regarding the
 :adi:`AD-FMCDAQ3-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-FMCDAQ3-EBZ.html#eb-overview>`
 or are experiencing any problems while using the AD-FMCDAQ3-EBZ or while
 following any of the AD-FMCDAQ3-EBZ user guides feel free to ask us a question.
-Questions can be asked on our `EngineerZone support community <ez>>`__.
+Questions can be asked on our `EngineerZone support community <https://ez.analog.com/>`__.
 
 For questions regarding the AD-FMCDAQ3-EBZ hardware or the HDL reference design
 please state them in the :ez:`FPGA Reference Designs <community/fpga>`

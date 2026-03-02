@@ -17,8 +17,6 @@ Transmit
 
 Key component:
 
-.. list-table::
-
    * - :adi:`AD9152`
      - Dual, 16-Bit, 2500 MSPS, TxDAC+® Digital-to-Analog JESD204B Converter
        with offset, phase and gain compensation.
@@ -34,8 +32,6 @@ Receive
 
 Key component:
 
-.. list-table::
-
    * - :adi:`AD9680`
      - 14-Bit, 1250 MSPS, Dual Analog-to-Digital JESD204B Converter (ADC).
 
@@ -46,8 +42,6 @@ Clocking
 --------
 
 Key component:
-
-.. list-table::
 
    * - :adi:`AD9528`
      - Low Jitter Clock Generator (1MHz to 1.25GHz) with 14 Outputs.
@@ -81,8 +75,6 @@ given below.
 :download:`https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/hardware/220309_fmcdaq3_power.zip`
 
 Key components in the power tree:
-
-.. list-table::
 
    * - :adi:`ADP2384`
      - 4A, 20V step-down switcher.

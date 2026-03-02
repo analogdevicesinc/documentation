@@ -189,5 +189,3 @@ modes from the ``Test Mode`` tab. Select the relevant test mode to configure and
 ``Execute Test``. In the ``Activity log`` the register writes can be observed.
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/4_-_adin1200_gui_screenshot.png
-
---------------

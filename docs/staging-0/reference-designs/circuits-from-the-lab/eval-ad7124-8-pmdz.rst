@@ -279,4 +279,4 @@ Registration
    :reg:`Register <EVAL-AD7124-8-PMDZ?&v=RevB>` to receive all these great
    benefits and more!
 
-// End of Document //
+

@@ -125,7 +125,7 @@ The files that need to be present on the sdcard ``BOOT`` partition are:
 - ``system.dtb``
 - ``boot.scr``
 
-| Copy the ``BOOT.BIN``, ``boot.scr`` and ``system.dtb`` from the
+Copy the ``BOOT.BIN``, ``boot.scr`` and ``system.dtb`` from the
 ``versal-vck190-reva-ad9081`` directory. Copy the ``Image`` from the
 ``versal-common`` directory.
 

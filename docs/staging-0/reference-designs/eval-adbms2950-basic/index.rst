@@ -31,16 +31,16 @@ Features
 - Fully featured evaluation board for ADBMS2950B
 - Bidirectional high accuracy current measurement with on-board shunt
 
-::
-
-   * Increased input range overcurrent measurement and alert
+* Increased input range overcurrent measurement and alert
 * Battery stack measurements such as
- * Battery stack voltage monitoring
- * Isolation measurement
- * Pre-charge monitoring
- * Fuse monitoring
- * Charger monitoring
- * Link voltage monitoring
+
+  * Battery stack voltage monitoring
+  * Isolation measurement
+  * Pre-charge monitoring
+  * Fuse monitoring
+  * Charger monitoring
+  * Link voltage monitoring
+
 * Includes two isoSPI ports for daisy chain and reversible isoSPI support. The
   isoSPI connections can be done via simple DuraClik connectors.
 
@@ -212,8 +212,6 @@ System Architecture
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adbms2950b.png
    :width: 600px
 
---------------
-
 Components and Connections
 --------------------------
 
@@ -261,8 +259,12 @@ that are transformed into the input ranges of the V1ADC and V2ADC.
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/hv2_acess.png
    :width: 400px
 
-  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/hv3_acess.png
-     :width: 400px
+   HV2 Access
+
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/hv3_acess.png
+   :width: 400px
+
+   HV3 Access
 
 The HV2 and HV3 inputs enable the monitoring of high voltages in the battery
 system, such as LINK, FUSE, PRECHG and DCFC HV2 and HV3 are mapped to the
@@ -338,50 +340,50 @@ Overcurrent Outputs in Low-Voltage Domain
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/oca_ocb_lv_domain.png
    :width: 400px
 
-.. note::
+   OCA OCB Low-Voltage Domain
 
-   2kB On-Board EEPROM
-   ~~~~~~~~~~~~~~~~~~~
+2kB On-Board EEPROM
+~~~~~~~~~~~~~~~~~~~
 
-   The EVAL-ADBMS2950-BASIC features a Microchip 24LC02B 2kB I2C EEPROM
-   connected to the ADBMS2950B"s on-chip peripheral controller interface via
-   pins GPIO3 and GPIO4.
+The EVAL-ADBMS2950-BASIC features a Microchip 24LC02B 2kB I2C EEPROM
+connected to the ADBMS2950B"s on-chip peripheral controller interface via
+pins GPIO3 and GPIO4.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eeprom_on_board.png
-      :width: 200px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eeprom_on_board.png
+   :width: 200px
 
-   The on-board EEPROM may be used as a persistent data storage, e.g., shunt
-   resistor calibration information.
+   On-Board EEPROM
 
-   isoSPI™ Connectors
-   ~~~~~~~~~~~~~~~~~~
+The on-board EEPROM may be used as a persistent data storage, e.g., shunt
+resistor calibration information.
 
-   The EVAL-ADBMS2950-BASIC features 2 transformer-isolated isoSPI™ connectors
-   enabling fully redundant reversible isoSPI™ functionality.
+isoSPI™ Connectors
+~~~~~~~~~~~~~~~~~~
 
-   The isoSPI™ DuraClik cable supplied with the EVAL-ADBMS2950-BASIC may be
-   plugged into any of the connectors J8 or J9, marked isoA and isoB,
-   respectively.
+The EVAL-ADBMS2950-BASIC features 2 transformer-isolated isoSPI™ connectors
+enabling fully redundant reversible isoSPI™ functionality.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/iso-spi.png
-      :width: 400px
+The isoSPI™ DuraClik cable supplied with the EVAL-ADBMS2950-BASIC may be
+plugged into any of the connectors J8 or J9, marked isoA and isoB,
+respectively.
 
-   An evaluation board featuring another ADBMS2950B or ADBMS6830B device may be
-   connected to the second isoSPI™ connector to build an isoSPI™ daisy-chain.
-   Due to the reversible isoSPI feature, swapping connection from isoA to isoB
-   is also possible.
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/iso-spi.png
+   :width: 400px
 
-.. note::
+   IsoSPI Connectors
 
-   Voltage Sense Overview
-   ~~~~~~~~~~~~~~~~~~~~~~
+An evaluation board featuring another ADBMS2950B or ADBMS6830B device may be
+connected to the second isoSPI™ connector to build an isoSPI™ daisy-chain.
+Due to the reversible isoSPI feature, swapping connection from isoA to isoB
+is also possible.
 
-   Below table shows the assignments of the voltage inputs to the ADBMS2950B
-   pins and ADCs.
+Voltage Sense Overview
+~~~~~~~~~~~~~~~~~~~~~~
 
-   <WRAP>
+Below table shows the assignments of the voltage inputs to the ADBMS2950B
+pins and ADCs.
 
-   .. list-table::
+.. list-table::
 
       * - **Name**
         - **Enable**
@@ -416,41 +418,37 @@ Overcurrent Outputs in Low-Voltage Domain
         - V9
         - V2ADC
 
-</WRAP>
+Remote Shunt
+~~~~~~~~~~~~
 
-.. note::
+The EVAL-ADBMS2950-BASIC features unpopulated filter and protection circuitry
+for evaluation of remote shunt operation as per the ADBMS2950B data sheet.
 
-   Remote Shunt
-   ~~~~~~~~~~~~
+In order to convert an EVAL-ADBMS2950-BASIC for remote shunt sensing, run
+through the following modifications:
 
-   The EVAL-ADBMS2950-BASIC features unpopulated filter and protection circuitry
-   for evaluation of remote shunt operation as per the ADBMS2950B data sheet.
+On-board Shunt Removal
+^^^^^^^^^^^^^^^^^^^^^^
 
-   In order to convert an EVAL-ADBMS2950-BASIC for remote shunt sensing, run
-   through the following modifications:
+Remove the sense shunt resistor and solder on wires between the sense pads
+and the remote shunt.
 
-   On-board Shunt Removal
-   ^^^^^^^^^^^^^^^^^^^^^^
+Common-mode Choke Bypass
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-   Remove the sense shunt resistor and solder on wires between the sense pads
-   and the remote shunt.
+Cut the bypass traces of the footprints for the common-mode chokes. In the
+board schematics, you can find these at CURRENT SENSE SHUNT > optional common
+mode filter.
 
-   Common-mode Choke Bypass
-   ^^^^^^^^^^^^^^^^^^^^^^^^
+Populate the common-mode chokes. The EVAL-ADBMS2950-BASIC was designed to
+accept a Würth Elektronik WE-SL2 SMT Common-mode Line Filter.
 
-   Cut the bypass traces of the footprints for the common-mode chokes. In the
-   board schematics, you can find these at CURRENT SENSE SHUNT > optional common
-   mode filter.
+TVS Protection Diodes
+^^^^^^^^^^^^^^^^^^^^^
 
-   Populate the common-mode chokes. The EVAL-ADBMS2950-BASIC was designed to
-   accept a Würth Elektronik WE-SL2 SMT Common-mode Line Filter.
-
-   TVS Protection Diodes
-   ^^^^^^^^^^^^^^^^^^^^^
-
-   Unpopulated footprints for TVS diodes in SOT-23 package are located on the
-   bottom layer of the EVAL-ADBMS2950-BASIC. The respective part in the
-   schematics is located at CURRENT SENSE SHUNT > Optional TVS for remote shunt.
+Unpopulated footprints for TVS diodes in SOT-23 package are located on the
+bottom layer of the EVAL-ADBMS2950-BASIC. The respective part in the
+schematics is located at CURRENT SENSE SHUNT > Optional TVS for remote shunt.
 
 Power Supply
 ~~~~~~~~~~~~
@@ -495,23 +493,27 @@ Power Supply
 Hardware Setup
 --------------
 
-.. note::
+Attachment of Cable Lugs to Shunt Resistor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   Attachment of Cable Lugs to Shunt Resistor
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The cable lugs must be attached to the shunt resistor with high force using a
+wrench on the top. When doing so, a wrench should also be attached to the hex
+screw head at the bottom to prevent it from rotating and thus putting too
+much force on the PCB.
 
-   The cable lugs must be attached to the shunt resistor with high force using a
-   wrench on the top. When doing so, a wrench should also be attached to the hex
-   screw head at the bottom to prevent it from rotating and thus putting too
-   much force on the PCB.
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/attaching_cable_lugs_to_shunt_resistor.png
+   :width: 600px
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/attaching_cable_lugs_to_shunt_resistor.png
-      :width: 600px
+   Attaching Cable Lugs to Shunt Resistor
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/attaching_cable_lugs_to_shunt_resistor_2.png
-      :width: 600px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/attaching_cable_lugs_to_shunt_resistor_2.png
+   :width: 600px
 
-   <WRAP important> The contact surfaces of the shunt resistor and cable lugs
+   Attaching Cable Lugs to Shunt Resistor (Detail)
+
+.. important::
+
+   The contact surfaces of the shunt resistor and cable lugs
    should be polished and cleaned before attaching them. Oxidation and residue
    may increase contact resistance and heat dissipation.
 
@@ -535,8 +537,6 @@ screwdriver, insert the wire and tighten the clamp as shown below:
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms2950-basic_connecting_high_voltage_input_clamps.png
    :width: 1000px
-
---------------
 
 Resources
 ---------
@@ -569,5 +569,3 @@ Help and Support
 
    For questions and more information, please visit the
    :ez:`Analog Devices EngineerZone Support Community <reference-designs>`.
-
-*End of Document*

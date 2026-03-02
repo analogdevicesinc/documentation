@@ -71,7 +71,7 @@ Installing ACE
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/softwareprocedures/4170_ace_plugin_page_6.png
       :width: 400px
 
-#.  When the installation is complete, click Next >, and then click Finish to
+#. When the installation is complete, click Next >, and then click Finish to
    complete the installation process
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/softwareprocedures/4170_ace_plugin_page_7.png
@@ -105,7 +105,7 @@ downloading AD4170 Plugin:
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/4170_ace_plugin_download_page_3.png
       :width: 400px
 
-#.  The AD4170 Plugin will download to you Download Location setup in your
+#. The AD4170 Plugin will download to you Download Location setup in your
    browser.
 
 AD417x Plugin Install

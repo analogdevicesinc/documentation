@@ -21,7 +21,7 @@ With this wizard, users can perform the following tasks:
   all the filters, including both digital and analog filters.
 
 For information about the transmit and receive paths consult
-`AD9361, AD9363, AD9364 transceiver outline <>resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`__.
+:dokuwiki:`AD9361, AD9363, AD9364 transceiver outline </resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`.
 This also includes information on alternative solutions for programming the
 transceiver"s filters.
 
@@ -30,7 +30,7 @@ Videos
 
 Here is a brief introduction on why everyone needs to, and how to use this tool.
 
-.. figure:: analogTV>3845680080001
+.. todo:: .. figure: ahttps://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/nalogTV>3845680080001
 
 .. todo:: .. include: /resources/eval/user-guides/ad-fmcomms2-ebz/downloads.rst
 
@@ -174,7 +174,7 @@ these filters can be designed (manually) they are not included as defaults.
 In addition, you can also save your favorite parameter settings in this list,
 such as ``foobar (Rx & Tx)`` shown in the figure.
 
-.. figure:: 1start.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/1start.png
    :width: 600px
 
 Assume that you choose the ``LTE10 (Rx & Tx)`` profile, after you click it, all
@@ -184,7 +184,7 @@ frequency specifications, and AD936x clock settings. If you are satisfied with
 all the parameters, you can go ahead and click ``Design Filter`` to start the
 design.
 
-.. figure:: 2basic.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/2basic.png
    :width: 600px
 
 As soon as the design process completes, you will see a magnitude plot displayed
@@ -202,7 +202,7 @@ The MathWorks. For your convenience, we provide this tool on two different
 frequency scales. One is from 0 Hz to half of the data rate, the other is from 0
 Hz up to half of the converter rate.
 
-.. figure:: 3basicdesign.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/3basicdesign.png
    :width: 600px
 
 If you are mainly interested in pass band, click the top button, it will open
@@ -210,7 +210,7 @@ the following three figures:
 
 - Magnitude response of half band filters and HB + designed FIR filter.
 
-.. figure:: fvtooldatarate.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/fvtooldatarate.png
    :width: 600px
 
 - Magnitude Response of the designed FIR only. Besides the magnitude response,
@@ -219,13 +219,13 @@ the following three figures:
   response, impulse response, poles/zeros and etc. It will enable you to have a
   better understanding of the designed FIR.
 
-.. figure:: 6fironly.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/6fironly.png
    :width: 600px
 
 - Overall group delay on pass band. For your convenience, the group delay
   variance has been calculated and indicated on the figure.
 
-.. figure:: 5fvt2.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/5fvt2.png
    :width: 600px
 
 If you are interested in the whole frequency band, click the bottom button, it
@@ -236,7 +236,7 @@ will open the following figure:
   by using the ``Zoom In/Out`` functions on the toolbar (as highlighted in
   square).
 
-.. figure:: 4fvt1.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/4fvt1.png
    :width: 600px
 
 .. note::
@@ -256,7 +256,7 @@ GUI.
   mfilt.cascade object named ``AD9361_Tx_Filter_object`` or
   ``AD9361_Rx_Filter_object`` depending on whether it is on Tx or Rx.
 
-.. figure:: 7save2ws.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/7save2ws.png
    :width: 600px
 
 .. note::
@@ -273,7 +273,7 @@ GUI.
   the IIO Oscilloscope application  [2]_, you can save the FIR coefficients by
   clicking ``Coefficients to ftr File`` button, as shown in the figure below.
 
-.. figure:: fig7.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/fig7.png
    :width: 600px
 
 .. note::
@@ -285,7 +285,7 @@ GUI.
 After that, a window will pop up, asking you to specify the name and the
 location of the ftr file, as shown in the figure below.
 
-.. figure:: 8savecoeff.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/8savecoeff.png
    :width: 600px
 
 If you plan to use the Filter Design Wizard with a zyqn-based platform, there
@@ -296,7 +296,7 @@ are in the ``Target (Zynq Board)`` portion of the GUI.
   target. In Linux system, it can be easily found by the ``ifconfig`` command.
   Then, click the ``Connect to Target`` button.
 
-.. figure:: 13connecttozynq.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/13connecttozynq.png
    :width: 600px
 
 - Read clock settings: If a target is detected at the specified IP address, the
@@ -304,14 +304,14 @@ are in the ``Target (Zynq Board)`` portion of the GUI.
   you want to overwrite the current clock settings with the ones belong to the
   target, you can click this button.
 
-.. figure:: 14readclock.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/14readclock.png
    :width: 600px
 
 - Save FIR coefficients to the target: If an FIR filter is designed for the
   target, the FIR coefficients can be saved directly to the target by clicking
   the ``Coefficients to Target`` button, as shown in the picture below.
 
-.. figure:: 15tozynq.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/15tozynq.png
    :width: 600px
 
 Advanced Functions
@@ -322,14 +322,17 @@ observe the FIR filter. If you would like to have more control and
 functionality, you can turn on the ``Advanced`` option, as shown in the figure
 below, which provides you with several more advanced options.
 
-.. figure:: 9advanced.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/9advanced.png
    :width: 600px
 
-::
+*Phase Equalization: If you would like to have the FIR filter do phase
+equalization, you can turn on the "Phase Equalization" option, as shown in the
+figure below. The main purpose of the phase equalization is to reduce the pass
+band group delay*variance* brought by analog filters, digital filters and FIR
+filter, so that for signals at different frequencies, they will be delayed by
+an almost identical amount when going through the filter chain.
 
-   *Phase Equalization: If you would like to have the FIR filter do phase equalization, you can turn on the "Phase Equalization" option, as shown in the figure below. The main purpose of the phase equalization is to reduce the pass band group delay*variance* brought by analog filters, digital filters and FIR filter, so that for signals at different frequencies, they will be delayed by an almost identical amount when going through the filter chain.
-
-.. figure:: 10targetdelay.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/10targetdelay.png
    :width: 600px
 
 After you click ``Design Filter``, the phase equalization part of the FIR design
@@ -343,7 +346,7 @@ Please note the phase equalization process may take a few minutes, depending on
 the performance of your PC, since it tries to find a best target delay which
 yields the minimum group delay variance.
 
-.. figure:: 10pheq.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/10pheq.png
    :width: 600px
 
 - Astop (FIR): This is a new parameter in magnitude specifications. It specifies
@@ -370,7 +373,7 @@ yields the minimum group delay variance.
   minimum order design. Comparing the FIR Taps in the Results portion, it is
   decreased from 128 to 105 if the AD936x FIR is not used.
 
-.. figure:: 11usefir.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/11usefir.png
    :width: 600px
 
 - Generate HDL: Following the previous step, if you decide to have the FIR
@@ -382,7 +385,7 @@ yields the minimum group delay variance.
   generated. In the end, by clicking ``Generate``, the HDL will be generated for
   you.
 
-.. figure:: 12createhdl.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/12createhdl.png
    :width: 600px
 
 Toolbar
@@ -391,7 +394,7 @@ Toolbar
 The icons shown on the toolbar below provide a shortcut to some frequently used
 functions.
 
-.. figure:: 13toolbar.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/13toolbar.png
    :width: 600px
 
 From left to right, the first four icons are related to filter parameter
@@ -478,7 +481,7 @@ Transmit
 
 According to AD9361 Filter Guide, the TX signal path is as following:
 
-.. figure:: txfilter.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/txfilter.png
 
 The digital and analog paths are separated by DAC. Before DAC, there are four
 digital filters. The first one (PROG TX FIR) is a programmable poly-phase FIR
@@ -492,7 +495,7 @@ Receive
 
 According to AD9361 Filter Guide, the RX signal path is as following:
 
-.. figure:: rxfilter.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/rxfilter.png
 
 The analog and digital paths are separated by ADC. Before ADC, there are two
 low-pass analog filters. After ADC, there are three digital filters with fixed
@@ -538,7 +541,7 @@ the fvtool on HB1,
 
 and you will get:
 
-.. figure:: HB1.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/HB1.png
    :width: 600px
 
 Key Steps in Design
@@ -789,30 +792,20 @@ after the tests complete:
 
 ::
 
-   Name                         Passed    Failed    Incomplete    Duration      Details
-_____________________________________________    ______    ______    __________
-________    ____________
+                       Name                          Passed    Failed    Incomplete    Duration    Details
+    _____________________________________________    ______    ______    __________    ________    ____________
 
-'FilterDesignerTests/testRXMEX'                  true      false     false
-160.63      [1x1 struct]
-'FilterDesignerTests/testRXEQMEX'                true      false     false
-14.787      [1x1 struct]
-'FilterDesignerTests/testRXNonStandardFIRMEX'    true      false     false
-18.38      [1x1 struct]
-'FilterDesignerTests/testRXDLL'                  true      false     false
-15.854      [1x1 struct]
-'FilterDesignerTests/testRXNonStandardFIRDLL'    true      false     false
-33.401      [1x1 struct]
-'FilterDesignerTests/testTXMEX'                  true      false     false
-7.6336      [1x1 struct]
-'FilterDesignerTests/testTXEQMEX'                true      false     false
-8.5157      [1x1 struct]
-'FilterDesignerTests/testTXNonStandardFIRMEX'    true      false     false
-16.03      [1x1 struct]
-'FilterDesignerTests/testTXDLL'                  true      false     false
-8.2624      [1x1 struct]
-'FilterDesignerTests/testTXNonStandardFIRDLL'    true      false     false
-26.961      [1x1 struct]
+    'FilterDesignerTests/testRXMEX'                  true      false     false         160.63      [1x1 struct]
+    'FilterDesignerTests/testRXEQMEX'                true      false     false         14.787      [1x1 struct]
+    'FilterDesignerTests/testRXNonStandardFIRMEX'    true      false     false          18.38      [1x1 struct]
+    'FilterDesignerTests/testRXDLL'                  true      false     false         15.854      [1x1 struct]
+    'FilterDesignerTests/testRXNonStandardFIRDLL'    true      false     false         33.401      [1x1 struct]
+    'FilterDesignerTests/testTXMEX'                  true      false     false         7.6336      [1x1 struct]
+    'FilterDesignerTests/testTXEQMEX'                true      false     false         8.5157      [1x1 struct]
+    'FilterDesignerTests/testTXNonStandardFIRMEX'    true      false     false          16.03      [1x1 struct]
+    'FilterDesignerTests/testTXDLL'                  true      false     false         8.2624      [1x1 struct]
+    'FilterDesignerTests/testTXNonStandardFIRDLL'    true      false     false         26.961      [1x1 struct]
+
 
 These tests evaluate the numerical output of the generated designer with respect
 to the original designer. Usage of these tests can be helpful if modification of

@@ -24,7 +24,7 @@ EEPROM is also included on the board to allow auto-configuration.
 
    **Evaluation Kit Contents:**
 
-   - :adi:`PMD-RPI-INTZ` Adapter Board (:cart:`Buy <PMD-RPI-INTZ>`)
+   - :adi:`PMD-RPI-INTZ` Adapter Board (Buy: PMD-RPI-INTZ)
 
 Adapter Board Hardware
 ----------------------

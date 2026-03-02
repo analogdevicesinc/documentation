@@ -56,8 +56,8 @@ Using Actual Sensor
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0289/cn0289_sensor_interface.png
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0289/cn0289_sensor_interface_table.png
-      :width: 400px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0289/cn0289_sensor_interface_table.png
+   :width: 400px
 
 #. A differential output bridge type sensor should be attached to a 4 channel
    screw terminal block (J1) labeled with SUPPLYSNS on the PCB.
@@ -170,13 +170,9 @@ SCHEMATICS, PCB LAYOUT, BILL OF MATERIALS
 .. admonition:: Download
 
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0289/eval-cn0289-eb1z-cadenceschematic-reva.pdf`
- (PDF)
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0289/eval-cn0289-eb1z-bom-reva.xls`
-\ (Excel)
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0289/eval-cn0289-eb1z-gbr-reva.zip`
-\ (ZIP)
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0289/eval-cn0289-eb1z-assemblydrawing-reva.pdf`
-\ (PDF)
 
 Registration
 ------------
@@ -188,4 +184,3 @@ Registration
    :reg:`Register <EVAL-CN0289-EB1Z?&v=RevB>` to receive all these great
    benefits and more!
 
-// End of Document //

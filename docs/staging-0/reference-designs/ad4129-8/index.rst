@@ -124,24 +124,20 @@ Visit the software guide chapter
 `here <http://wiki.analog.com/resources/eval/user-guides/ad4129-8/softwareguide>`__
 **Contents of the Software guide**:
 
-#. :dokuwiki:`Ace Plugin </resources/eval/user-guides/ad4129-8/softwareprocedures#ace_plugin>`
-
-::
-
-   - [[resources:eval:user-guides:ad4129-8:softwareprocedures#ace_plugin_install_guide|Ace Plugin Install]]
-   - [[resources:eval:user-guides:ad4129-8:softwareprocedures#ace_software_operation|Ace Plugin Operation]]
-   - [[resources:eval:user-guides:AD4129-8:softwareprocedures:demo_modes|Visit the demo mode section here]]
-       - [[resources:eval:user-guides:AD4129-8:softwareprocedures:demo_modes#noise_test_demo|Noise Test Demo]]
-       - [[resources:eval:user-guides:AD4129-8:softwareprocedures:demo_modes#wire_rtd_demo|2 Wire RTD Demo]]
-       - [[resources:eval:user-guides:AD4129-8:softwareprocedures:demo_modes#wire_rtd_demo1|3 Wire RTD Demo]]
-       - [[resources:eval:user-guides:AD4129-8:softwareprocedures:demo_modes#wire_rtd_demo2|4 Wire RTD Demo]]
-       - [[resources:eval:user-guides:AD4129-8:softwareprocedures:demo_modes#thermocouple_demo|Thermocouple Demo]]
-       - [[resources:eval:user-guides:AD4129-8:softwareprocedures:demo_modes#thermistor_demo|Thermistor Demo]]
-       - [[resources:eval:user-guides:AD4129-8:softwareprocedures:demo_modes#wire_bridge_demo|4 Wire Bridge Demo]]
-       - [[resources:eval:user-guides:AD4129-8:softwareprocedures:demo_modes#wire_bridge_demo1|6 Wire Bridge Demo]]
-- [[resources:eval:user-guides:ad4129-8:softwareprocedures:afm|Active Functional
-  Model Guide]]
-- [[:resources:eval:user-guides:ad4129:mbed_iio_app|AD4129 Firmware]]
+- :dokuwiki:`Ace Plugin </resources/eval/user-guides/ad4129-8/softwareprocedures#ace_plugin>`
+- :dokuwiki:`Ace Plugin Install <resources/eval/user-guides/ad4129-8/softwareprocedures#ace_plugin_install_guide>`
+- :dokuwiki:`Ace Plugin Operation <resources/eval/user-guides/ad4129-8/softwareprocedures#ace_software_operation>`
+- :dokuwiki:`Visit the demo mode section here <resources/eval/user-guides/AD4129-8/softwareprocedures/demo_modes>`
+- :dokuwiki:`Noise Test Demo <resources/eval/user-guides/AD4129-8/softwareprocedures/demo_modes#noise_test_demo>`
+- :dokuwiki:`2 Wire RTD Demo <resources/eval/user-guides/AD4129-8/softwareprocedures/demo_modes#wire_rtd_demo>`
+- :dokuwiki:`3 Wire RTD Demo <resources/eval/user-guides/AD4129-8/softwareprocedures/demo_modes#wire_rtd_demo1>`
+- :dokuwiki:`4 Wire RTD Demo <resources/eval/user-guides/AD4129-8/softwareprocedures/demo_modes#wire_rtd_demo2>`
+- :dokuwiki:`Thermocouple Demo <resources/eval/user-guides/AD4129-8/softwareprocedures/demo_modes#thermocouple_demo>`
+- :dokuwiki:`Thermistor Demo <resources/eval/user-guides/AD4129-8/softwareprocedures/demo_modes#thermistor_demo>`
+- :dokuwiki:`4 Wire Bridge Demo <resources/eval/user-guides/AD4129-8/softwareprocedures/demo_modes#wire_bridge_demo>`
+- :dokuwiki:`6 Wire Bridge Demo <resources/eval/user-guides/AD4129-8/softwareprocedures/demo_modes#wire_bridge_demo1>`
+- :dokuwiki:`Active Functional Model Guide <resources/eval/user-guides/ad4129-8/softwareprocedures/afm>`
+- :dokuwiki:`AD4129 Firmware </resources/eval/user-guides/ad4129/mbed_iio_app>`
 
 FIFO
 ====

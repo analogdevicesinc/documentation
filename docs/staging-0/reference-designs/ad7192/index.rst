@@ -84,27 +84,27 @@ Getting started
 
    #. **Option A:** Connect the EVAL-AD7192ASDZ to the EVAL-SDP-CK1Z
 
-::
+ Using the 120 pin connector
 
-   - Using the 120 pin connector
 *  Screw the two boards together using the plastic screw-washer set included in
-  the evaluation board kit to ensure that the boards are connected firmly
-  together.
+   the evaluation board kit to ensure that the boards are connected firmly
+   together.
 
-::
+ Using the Arduino Connectors
 
-   - Using the Arduino Connectors  {{  :resources:eval:user-guides:sdp_connect.png?400  |  }}
+ .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/sdp_connect.png
 
-::
+ **Option B:** Connect the EVAL-AD7192ASDZ to the EVAL-SDP-CB1Z
 
-   - **Option B:** Connect the EVAL-AD7192ASDZ to the EVAL-SDP-CB1Z
-* Using the 120 pin connector
-    *  Screw the two boards together using the plastic screw-washer set included
-      in the evaluation board kit to ensure that the boards are connected firmly
-      together.
-- If using Windows® XP, it may be needed to search for the controller board
-  drivers. Choose to automatically search for the drivers for the controller
-  board if prompted by the operating system.
+#. Using the 120 pin connector
+
+   * Screw the two boards together using the plastic screw-washer set included
+     in the evaluation board kit to ensure that the boards are connected firmly
+     together.
+
+#. If using Windows® XP, it may be needed to search for the controller board
+   drivers. Choose to automatically search for the drivers for the controller
+   board if prompted by the operating system.
 
 #. Launch the ACE plugin from the **Analog Devices** subfolder in the
    **Programs** Menu.
@@ -125,7 +125,7 @@ Hardware Guide
 
 #. :dokuwiki:`Set-up Procedures </resources/eval/user-guides/ad7192/hardwareguide#set-up_procedures>`
 #. :dokuwiki:`Block Diagram </resources/eval/user-guides/ad7192/hardwareguide#block_diagram>`
-#.  :dokuwiki:`Hardware Link Options </resources/eval/user-guides/ad7192/hardwareguide#hardware_link_options>`
+#. :dokuwiki:`Hardware Link Options </resources/eval/user-guides/ad7192/hardwareguide#hardware_link_options>`
 #. :dokuwiki:`On Board Connections </resources/eval/user-guides/ad7192/hardwareguide#on_board_connections>`
 #. :dokuwiki:`Power Supplies </resources/eval/user-guides/ad7192/hardwareguide#power_supplies>`
 #. :dokuwiki:`Serial Interface </resources/eval/user-guides/ad7192/hardwareguide#serial_interface>`
@@ -138,18 +138,15 @@ Software Guide
 --------------
 
 :dokuwiki:`Visit the software guide chapter here </resources/eval/user-guides/AD7192/softwareguide>`
+
 **Contents of the Hardware guide:**
 
-#. :dokuwiki:`Ace Plugin </resources/eval/user-guides/AD7192/softwareguide#ace_plugin>`
+- :dokuwiki:`Ace Plugin </resources/eval/user-guides/AD7192/softwareguide#ace_plugin>`
+- :dokuwiki:`Ace Plugin Install <resources/eval/user-guides/AD7192/softwareguide#ace_plugin_install_guide>`
+- :dokuwiki:`Ace Plugin Operation <resources/eval/user-guides/AD7192/softwareguide#ace_software_operation>`
+- :dokuwiki:`Ace Plugin Demo Modes <resources/eval/user-guides/AD7192/softwareguide#AD7192_demo_modes>`
+- :dokuwiki:`Low Noise Test Demo <resources/eval/user-guides/AD7192/softwareguide/demo_modes#low_noise_test_demo>`
+- Weigh Scale Demo
+- :dokuwiki:`Virtual Eval Guide <resources/eval/user-guides/ad7192/softwareguide#virtual_eval_guide>`
+- :dokuwiki:`AD7192 Firmware </resources/tools-software/product-support-software/ad719x_mbed_iio_application>`
 
-::
-
-   - [[resources:eval:user-guides:AD7192:softwareguide#ace_plugin_install_guide|Ace Plugin Install]]
-   - [[resources:eval:user-guides:AD7192:softwareguide#ace_software_operation|Ace Plugin Operation]]
-   - [[resources:eval:user-guides:AD7192:softwareguide#AD7192_demo_modes|Ace Plugin Demo Modes]]
-       - [[resources:eval:user-guides:AD7192:softwareguide:demo_modes#low_noise_test_demo|Low Noise Test Demo]]
-       - Weigh Scale Demo
-- [[resources:eval:user-guides:ad7192:softwareguide#virtual_eval_guide|Virtual
-  Eval Guide]]
--
-  [[:resources:tools-software:product-support-software:ad719x_mbed_iio_application|AD7192 Firmware]]

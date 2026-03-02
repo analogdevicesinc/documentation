@@ -32,7 +32,7 @@ compared to the intensity of the incident light will be proportional to the
 amount of the fluorescent substance in the sample. An effective way of
 performing this is by using the setup shown below.
 
-| Light is emitted from an LED at 365 nm wavelength. It then passes through a
+Light is emitted from an LED at 365 nm wavelength. It then passes through a
 beam-splitter, which directs some of the incident light to a reference
 photodiode detector for sampling. Quinine in the sample fluoresces due to the
 365 nm light and emits ~450 nm light. Another photodiode detector, sensitive to
@@ -40,8 +40,11 @@ blue light frequencies, is positioned at 90 degrees from the light path to
 measure the intensity. This placement decreases the effects of the light emitted
 from the source LED. Additionally, a monochromatic filter is placed in front of
 the detector to further isolate the measurement.
-| .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fluorescence_path.png
+
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fluorescence_path.png
    :width: 600px
+
+   Fluorescence Path
 
 Demo Requirements
 -----------------
@@ -82,10 +85,13 @@ The following is a list of items needed to replicate this demo.
 Setting up the EVAL-ADPD410X-ARDZ
 ---------------------------------
 
-| Configure the onboard jumper header and solder jumper connections, as shown
+Configure the onboard jumper header and solder jumper connections, as shown
 below.
-| .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fl_adpd410x_jumperconn.jpg
+
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fl_adpd410x_jumperconn.jpg
    :width: 400px
+
+   ADPD410X Jumper Connections
 
 .. list-table::
    :header-rows: 1
@@ -132,10 +138,13 @@ configuration on the table below.
    * - POWER (S5)
      - WALL/USB
 
-| Connect the :adi:`EVAL-ADPD410x-ARDZ` to the :adi:`EVAL-ADICUP3029` using the
+Connect the :adi:`EVAL-ADPD410x-ARDZ` to the :adi:`EVAL-ADICUP3029` using the
 headers, as shown below.
-| .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/arduinoconnection.jpg
+
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/arduinoconnection.jpg
    :width: 400px
+
+   Arduino Connection
 
 Firmware Setup
 --------------
@@ -159,7 +168,7 @@ Drive. (See
 Optical Path Setup
 ------------------
 
-| The demo utilizes an optical path similar to the one used by :adi:`CN0503`,
+The demo utilizes an optical path similar to the one used by :adi:`CN0503`,
 but only for a single channel. The single path base and cuvette holder are
 available as 3D-printable designs () and can also be ordered using Shapeways.
 
@@ -181,11 +190,14 @@ available as 3D-printable designs () and can also be ordered using Shapeways.
 Hardware Connection
 -------------------
 
-| Connect the 365 nm LED Board, Transmit Photodiode Board, and Fluorescence
+Connect the 365 nm LED Board, Transmit Photodiode Board, and Fluorescence
 Photodiode Board to the prototyping connectors of the :adi:`EVAL-ADPD410x-ARDZ`,
 as shown below.
-| .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_connection.png
+
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_connection.png
    :width: 600px
+
+   Demo Connection
 
 Software Setup
 --------------

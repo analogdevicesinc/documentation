@@ -41,11 +41,9 @@ Required Equipment
 - ±15V Dual Power Supply
 - :dokuwiki:`CN-0251 Evaluation Software <ftp://ftp.analog.com/pub/cftl/CN0251/>`
 - :adi:`ADALM2000 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM2000.html>`
-- :external+scopy:docs:`index`
+- :external+scopy:doc:`index`
 
-::
-
-   * {{ :resources:eval:user-guides:circuits-from-the-lab:cn0251:siggen.zip |Scopy Project File}}
+   - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/siggen.zip`
 
 - PC with the following *Minimum Requirements*
 
@@ -122,7 +120,7 @@ Getting Started with ADALM2000 and Scopy
 #. Use the USB Type-A to USB Micro-B cable to connect the
    :adi:`ADALM2000 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM2000.html#eb-overview>`
    to the PC. A detailed guide on how to start ADALM2000 and install
-   :external+scopy:docs:`index` can be found
+   :external+scopy:doc:`index` can be found
    :dokuwiki:`here </university/tools/m2k/users>`.
 
 #. Upon connecting the ADALM2000 to Scopy, load the project file named
@@ -146,49 +144,64 @@ Software Control and Indicator Descriptions
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/cn0251-software.png
 
-::
+**Connect/Reconnect Button**
+When this button is pressed, the SDP-B Board makes a USB connection to the
+CN-0288 Board.  A connection to the SDP-B Board must be made to use the
+software.
 
-   -**Connect/Reconnect Button**
-   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0288 Board.  A connection to the SDP-B Board must be made to use the software.
-   -**Capture Data Button**
-   * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
-   -**Save Data Button**
-   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
-   -**Control Tabs**
-   * __Data__ - Clicking this tab brings the data collection chart to the front.
-   * __Analysis__ - Clicking this tab brings the data analysis histogram to the front.
-   * __Configure System__ - Clicking this tab brings the system configuration control to the front.
-   * __SDP Board Information__ - Clicking this tab brings the SDP Board Information indicators to the front.
-   -**Input Channel Drop-Down Menu**
-   * Clicking this drop-down menu selects the channel to capture data from.
-   -**Input Range Drop-Down Menu**
-   * Clicking this drop-down menu selects the analog input voltage range for the channel selected by the Input Range Drop-Down Menu .
-   -**AD8475 Gain Indicator**
+**Capture Data Button**
+When this button is pressed, the SDP-B Board will collect conversion data and
+present the acquisitions in the chart.
 
-- This indicator displays the gain setting required from the :adi:`AD8475`.
-  .. important::
+**Save Data Button**
+When this button is pressed, the software will save the data collected to a tab
+delimited ASCII spreadsheet file.
 
-     Jumpers JP3 and JP4 on the :adi:`EVAL-CN0251-SDPZ` (CN-0251 Board) must be populated to reflect the value displayed by this indicator
+**Control Tabs**
 
-::
+- *Data* - Clicking this tab brings the data collection chart to the front.
+- *Analysis* - Clicking this tab brings the data analysis histogram to the
+  front.
+- *Configure System* - Clicking this tab brings the system configuration
+  control to the front.
+- *SDP Board Information* - Clicking this tab brings the SDP Board Information
+  indicators to the front.
 
-   -**AD7192 Gain Indicator**
-   * This indicator displays the gain currently programmed into the
-     [[adi>AD7192|AD7192]].
-   -**Samples to Capture Control**
-   * This numerical control sets the number of samples to capture once the
-     Capture Data Button is pressed.
-   -**Display Unit Drop-Down Menu**
-   * Clicking this drop-down menu allows you to select chart y-axis units to
-     display.
-   -**Chart Controls**
-   * These controls allow the user to zoom-in, zoom-out, and pan through the
-     data collected.
-   -**System Status String Indicator**
-   * This indicator displays a message to the user detailing the current state
-     of the software.
+**Input Channel Drop-Down Menu**
+Clicking this drop-down menu selects the channel to capture data from.
 
---------------
+**Input Range Drop-Down Menu**
+Clicking this drop-down menu selects the analog input voltage range for the
+channel selected by the Input Range Drop-Down Menu .
+
+
+**AD8475 Gain Indicator**:
+This indicator displays the gain setting required from the :adi:`AD8475`.
+
+.. important::
+
+   Jumpers JP3 and JP4 on the :adi:`EVAL-CN0251-SDPZ` (CN-0251 Board) must be
+   populated to reflect the value displayed by this indicator
+
+**AD7192 Gain Indicator**:
+This indicator displays the gain currently programmed into the
+:adi:`AD7192 <AD7192>`.
+
+**Samples to Capture Control**:
+This numerical control sets the number of samples to capture once the
+Capture Data Button is pressed.
+
+**Display Unit Drop-Down Menu**:
+Clicking this drop-down menu allows you to select chart y-axis units to
+display.
+
+**Chart Controls**:
+These controls allow the user to zoom-in, zoom-out, and pan through the
+data collected.
+
+**System Status String Indicator**:
+This indicator displays a message to the user detailing the current state
+of the software.
 
 Establishing a USB Connection Link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -196,9 +209,10 @@ Establishing a USB Connection Link
 #. Follow the instructions to properly install the software and connect the
    hardware as described in the previous sections.
 #. Open the file named **CN0251.exe** in the installation directory.
+
    .. note::
 
-   If the software was installed to the default location it will be found at
+      If the software was installed to the default location it will be found at
       **C:\\Program Files\\Analog Devices\\CN0251\\CN0251.exe**
 
 #. Click the **Connect/Reconnect Button**. A window with a progress bar will
@@ -209,8 +223,6 @@ Establishing a USB Connection Link
 #. Upon success, the **System Status String Indicator** will display *Ready to
    Capture Data*
 
---------------
-
 Capturing Data
 ~~~~~~~~~~~~~~
 
@@ -219,9 +231,13 @@ Capturing Data
 
 #. Click the **Input Range Drop-Down Menu** to select the range of the analog
    input voltage.
+
    .. important::
 
-   Changing this control will change the **AD8475 Gain Indicator**. Please ensure that **JP3** and **JP4** on the :adi:`EVAL-CN0251-SDPZ` **(CN-0251 Board)** are populated to reflect the gain displayed by the **AD8475 Gain Indicator**.
+      Changing this control will change the **AD8475 Gain Indicator**. Please
+      ensure that **JP3** and **JP4** on the :adi:`EVAL-CN0251-SDPZ` **(CN-0251
+      Board)** are populated to reflect the gain displayed by the **AD8475 Gain
+      Indicator**.
 
 #. Input the number of samples to capture into the **Samples to Capture
    Control**

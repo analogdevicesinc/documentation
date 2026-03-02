@@ -22,9 +22,7 @@ the system"s crucial parameters.
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/block_diagram.jpg
    :width: 600px
 
-.. note::
-
-   *Figure 1. System Architecture *
+   Figure 1. System Architecture
 
 The conventional approach of powering up and powering down of GaN amplifiers
 involves using multiple bench power supplies and manually turning them on and
@@ -346,9 +344,7 @@ Hardware Setup
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/hw_setup.jpg
    :width: 700px
 
-.. note::
-
-   *Figure 5. Setting up the hardware *
+   Figure 5. Setting up the hardware
 
 #. First, connect the 10-pin SWD debug cable to port P6 of the PA Array Board.
 #. Next is to connect the other end of the SWD debug cable to the MAX32625 Pico.
@@ -363,9 +359,7 @@ Hardware Setup
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/daplink.jpg
       :width: 300px
 
-     .. note::
-
-        Figure 6. DAPLINK Drive
+      Figure 6. DAPLINK Drive
 
 #. Connect the positive terminal of the +48V Power Supply to port P2.1.
 #. Then, connect the negative terminal to port P2.2. Do not turn-on the power
@@ -387,51 +381,38 @@ Software Setup
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_dashboard.png
    :width: 600px
 
-.. note::
-
-   *Figure 7. Dashboard*
+   Figure 7. Dashboard
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_home.png
    :width: 600px
 
-.. note::
-
-   *Figure 8. Monitor and Control Panel *
+   Figure 8. Monitor and Control Panel
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des1.png
    :width: 600px
 
-.. note::
-
-   *Figure 9. GUI Overview*
+   Figure 9. GUI Overview
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des2.png
    :width: 600px
 
-.. note::
-
-   *Figure 10. GUI Historical Graph *
+   Figure 10. GUI Historical Graph
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des3.png
    :width: 600px
 
-.. note::
-
-   *Figure 11. GUI Device Group *
+   Figure 11. GUI Device Group
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_des4.png
    :width: 600px
 
-.. note::
-
-   *Figure 12. GUI Control Group *
+   Figure 12. GUI Control Group
 
 Basic Operation
 ^^^^^^^^^^^^^^^
 
-- Now that we are finished setting up the hardware and firmware. We will begin
-  to measure the timing response of each AD3552R DAC"s.
-
+#. Now that we are finished setting up the hardware and firmware. We will begin
+   to measure the timing response of each AD3552R DAC"s.
 #. Let"s start to measure the settling time of the DAC on the GaN gate pins
    (VGC2, VGP2, VG1, VG2).
 #. Connect a 10nF capacitive load on each GAN gate pins (VGC2, VGP2, VG1, VG2)
@@ -440,8 +421,8 @@ Basic Operation
    must connect in parallel to each of the capacitor pins.
 #. Now, set the required configurations of the oscilloscope:
 
-- -3V on rising edge trigger value.
-- 1us/div and 2V/div.
+   - -3V on rising edge trigger value.
+   - 1us/div and 2V/div.
 
 #. Refer to Figure 5 for the complete hardware setup.
 #. Upon board boot-up, the default voltages on the GaN gate pins are the
@@ -461,9 +442,7 @@ Basic Operation
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gan1_gan2_set.jpg
       :width: 400px
 
-     .. note::
-
-        Figure 7. Setting the GaN gate voltages through GUI
+      Figure 7. Setting the GaN gate voltages through GUI
 
 #. Once the voltages are entered, press the set button. Do this process on each
    of the GaN gates to replicate the oscilloscope result.
@@ -474,30 +453,22 @@ Basic Operation
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc2_pwr_up_time.png
       :width: 500px
 
-     .. note::
+      Figure 7. VGC2 Voltage Time Response
 
-        Figure 7. VGC2 Voltage Time Response*
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp2_pwr_up_time.png
+      :width: 500px
 
-        .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp2_pwr_up_time.png
-           :width: 500px
+      Figure 8. VGP2 Voltage Time Response
 
-          .. note::
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_up_time.png
+      :width: 500px
 
-             Figure 8. VGP2 Voltage Time Response*
+      Figure 9. VG1 Voltage Time Response
 
-             .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_up_time.png
-                :width: 500px
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_up_time.png
+      :width: 500px
 
-               .. note::
-
-                  Figure 9. VG1 Voltage Time Response*
-
-                  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_up_time.png
-                     :width: 500px
-
-                    .. note::
-
-                       Figure 10. VG2 Voltage Time Response
+      Figure 10. VG2 Voltage Time Response
 
 #. Let"s measure this time the DAC voltage transition of the LDMOS gate pins
    (VGC1, VGP1).
@@ -515,10 +486,8 @@ Basic Operation
 - VGC1: +3.8V
 - VGP1: +1.9V
 
- .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/ldmos_set.jpg
-    :width: 200px
-
-   .. note::
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/ldmos_set.jpg
+      :width: 200px
 
       Figure 7. Setting the LDMOS gate voltages through GUI
 
@@ -530,16 +499,12 @@ Basic Operation
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc1_pwr_up_time.png
       :width: 500px
 
-     .. note::
+      Figure 11. VGC1 Voltage Time Response
 
-        Figure 11. VGC1 Voltage Time Response*
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp1_pwr_up_time.png
+      :width: 500px
 
-        .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp1_pwr_up_time.png
-           :width: 500px
-
-          .. note::
-
-             Figure 12. VGP1 Voltage Time Response
+      Figure 12. VGP1 Voltage Time Response
 
 #. At this point, all the gate pins are in the normal operating voltage state.
    We are now ready to measure the voltage transition from normal operating to
@@ -559,10 +524,8 @@ Basic Operation
 - VG1: -5V
 - VG2: -5V
 
- .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/pinch_off_set.jpg
-    :width: 600px
-
-   .. note::
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/pinch_off_set.jpg
+      :width: 600px
 
       Figure 7. Setting the GaN gate voltages through GUI
 
@@ -572,49 +535,39 @@ Basic Operation
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc2_pwr_dwn_time.png
       :width: 500px
 
-     .. note::
+      Figure 13. VGC2 Voltage Time Response
 
-        Figure 13. VGC2 Voltage Time Response*
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp2_pwr_dwn_time.png
+      :width: 500px
 
-        .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp2_pwr_dwn_time.png
-           :width: 500px
-
-          .. note::
-
-   *Figure 14. VGP2 Voltage Time Response*
+      Figure 14. VGP2 Voltage Time Response
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_dwn_time.png
       :width: 500px
 
-     .. note::
+      Figure 15. VG1 Voltage Time Response
 
-        Figure 15. VG1 Voltage Time Response*
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_dwn_time.png
+      :width: 500px
 
-        .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vg1_vg2_pwr_dwn_time.png
-           :width: 500px
+      Figure 16. VG2 Voltage Time Response
 
-          .. note::
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc1_pwr_dwn_time.png
+      :width: 500px
 
-             Figure 16. VG2 Voltage Time Response*
+      Figure 17. VGC1 Voltage Time Response
 
-             .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgc1_pwr_dwn_time.png
-                :width: 500px
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp1_pwr_dwn_time.png
+      :width: 500px
 
-               .. note::
+      Figure 18. VGP1 Voltage Time Response
 
-                  Figure 17. VGC1 Voltage Time Response*
+   .. note::
 
-                  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/vgp1_pwr_dwn_time.png
-                     :width: 500px
-
-                    .. note::
-
-                       Figure 18. VGP1 Voltage Time Response*.. note::
-
-   Please note that the capacitor value used in the feedback loop of the
-   trans-impedance amplifier is 100 pF. The relationship between speed and
-   oscillation ripple is inversely proportional. We can achieve a faster
-   settling time but must sacrifice a much cleaner oscillation, and vice versa.
+      Please note that the capacitor value used in the feedback loop of the
+      trans-impedance amplifier is 100 pF. The relationship between speed and
+      oscillation ripple is inversely proportional. We can achieve a faster
+      settling time but must sacrifice a much cleaner oscillation, and vice versa.
 
 #. We are done capturing the voltage transition from power-up and power-down.
    Now, we will capture the time it takes from when the fault is detected until
@@ -628,9 +581,7 @@ Basic Operation
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/flag_time.png
       :width: 500px
 
-     .. note::
-
-        Figure 19. LTC7000 -> MCU GPIO Fault Flag Time
+      Figure 19. LTC7000 -> MCU GPIO Fault Flag Time
 
 #. Follow the below steps:
 #. Place the positive terminal of the oscilloscope probe into the provided wire
@@ -640,9 +591,7 @@ Basic Operation
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/fault_setup.jpg
       :width: 500px
 
-     .. note::
-
-        Figure 20. Fault Detection Time Measurement Setup
+      Figure 20. Fault Detection Time Measurement Setup
 
 #. Set the required oscilloscope settings.
 
@@ -657,9 +606,7 @@ Basic Operation
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/mcu_time.png
       :width: 500px
 
-     .. note::
-
-        Figure 21. MCU Processing Time
+      Figure 21. MCU Processing Time
 
 #. On the GUI, it will notify the user that a fault event occurred and show a
    warning message as in the image below.
@@ -667,9 +614,7 @@ Basic Operation
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/fault_detected.jpg
       :width: 500px
 
-     .. note::
-
-        Figure 21. Warning Message
+      Figure 21. Warning Message
 
 #. Also, the GUI is capable of logging and displaying the fault event time and
    on which device it occurs.
@@ -677,9 +622,7 @@ Basic Operation
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/fault_log.jpg
       :width: 300px
 
-     .. note::
-
-        Figure 21. Fault Logging
+      Figure 21. Fault Logging
 
 #. The overall time from LTC7000 fault detection up to the DAC pinch-off voltage
    is shown on the Fault Event Time Summary below.
@@ -795,21 +738,21 @@ measurements. We can send a separate firmware if necessary.
 -7V to -1.2V DAC Settling Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The DAC output voltage settling time from -7V pinch-off to -1.2V is 2.31us. See the image below. .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/-7vto-1.2v.png
+The DAC output voltage settling time from -7V pinch-off to -1.2V is 2.31us. See the image below.
+
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/-7vto-1.2v.png
    :width: 500px
 
-  .. note::
-
-     Figure 22. -7V to -1.2V DAC Settling Time
+   Figure 22. -7V to -1.2V DAC Settling Time
 
 -1.2V to -7V DAC Settling Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The DAC output voltage settling time from -1.2V pinch-off to -2V is 2.31us. See the image below. .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/-1.2vto-7v.png
+The DAC output voltage settling time from -1.2V pinch-off to -2V is 2.31us. See the image below.
+
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/-1.2vto-7v.png
    :width: 500px
 
-  .. note::
-
-     Figure 23. -1.2V to -7V DAC Settling Time
+   Figure 23. -1.2V to -7V DAC Settling Time
 
 *End of Document*

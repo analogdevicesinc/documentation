@@ -74,4 +74,4 @@ manual installation to install the pack.
 
    `ADuCM4050_DFP Pack 1.0.0 <http://download.analog.com/tools/EZBoards/ADuCM4050/Releases/DeviceFamilyPack/Release_1.0.0/ADuCM4x50_Device_Family_Pack-Rel1.0.0.zip>`__
 
-// End of Document //
+

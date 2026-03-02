@@ -17,13 +17,10 @@ applications.
 - :adi:`ADF7023 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7023.html>`
 - :adi:`ADF7024 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7024.html>`
 - :adi:`ADF7030-1 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7030-1.html>`
-
-::
-
-   *[[adi>en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7242.html|ADF7242]]
-* BTLE - available on board and can be communicated via SPI interface
-* WIFI - provision to support
-  [[http://espressif.com/en/products/hardware/esp8266ex/overview|ESP8266]] via
+- :adi:`ADF7242 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7242.html>`
+- BTLE - available on board and can be communicated via SPI interface
+- WIFI - provision to support
+  `ESP8266 <http://espressif.com/en/products/hardware/esp8266ex/overview>`__ via
   UART (not available in the kit)
 
 This user guide describes the connector pin out, power options and jumper
@@ -683,14 +680,8 @@ Schematics, PCB layout, Bill of materials
    EV-COG-BLEINTP1Z Rev A Design and Integration Files
 
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/02-046704-01-a-1_2_.pdf`
- (PDF)
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/05-046704-01-a.zip`
- (zip)
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/09-046704-01a.zip`
- (Zip)
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/09-046704-01a.zip`
- (Zip)
-
-End Document
 
 :dokuwiki:`Back </resources/eval/user-guides/ev-cog-ad3029lz>`

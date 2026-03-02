@@ -27,30 +27,36 @@ Features and Specification
 
 - Efficient low power network
 
-::
-
-   *  Low power IEEE802.15.4g/e wireless network with time synchronized channel hopping (TSCH)—no collisions and no lengthy receive waits
-   * Lowest power consumption per node with star and extended star network topology configuration.
-   * Reliable end-to-end communications with acknowledgements
+*  Low power IEEE802.15.4g/e wireless network with time synchronized channel hopping (TSCH)—no collisions and no lengthy receive waits
+* Lowest power consumption per node with star and extended star network topology configuration.
+* Reliable end-to-end communications with acknowledgements
 * Long range
- * Typical range of 500 m (2 hop and confguration setting dependent)
+
+  * Typical range of 500 m (2 hop and confguration setting dependent)
+
 * Data rate and frequency
- *  High throughput (4 pks/sec at 1 kB per packet)
- *  Fast network join time (for example, 256 motes in 47 sec)
- *  Low latency—minimum of 5 sec network loop cycle
- *  ISM frequency band support (433,868,915,920 MHz)
- *  Multiple data rate support (37.5 kbps to 300 kbps)
- *  On-demand bandwidth allocation (for example, up to 1 MB per node/1 hr)
+
+  * High throughput (4 pks/sec at 1 kB per packet)
+  * Fast network join time (for example, 256 motes in 47 sec)
+  * Low latency—minimum of 5 sec network loop cycle
+  * ISM frequency band support (433,868,915,920 MHz)
+  * Multiple data rate support (37.5 kbps to 300 kbps)
+  * On-demand bandwidth allocation (for example, up to 1 MB per node/1 hr)
+
 * Supported modes:
- * Master mode (on-chip applications)
- * Slave mode (application coprocessor)
+
+  * Master mode (on-chip applications)
+  * Slave mode (application coprocessor)
+
 * Current consumption:
- * Active: <10 µA ave. (3 updates of 1 kB packets/day case)
- * Sleep: <1.5 µA
+
+  * Active: <10 µA ave. (3 updates of 1 kB packets/day case)
+  * Sleep: <1.5 µA
+
 * FCC and ARIB STD T108 regulation test feature support integrated
 * Supports OTA (over-the-air) update
 * Reliable scheduling of alert messages from any or all motes
-* Sample software available for Linux® or [[adi>ADuCM4050]] -based gateways with
+* Sample software available for Linux® or :adi:`ADuCM4050` -based gateways with
   various backhaul connectivity options
 
 Software Package
@@ -81,16 +87,15 @@ Binary Installer
 Source Installer
 ~~~~~~~~~~~~~~~~
 
-::
+- This software pack contains source code to develop application on RapidNet IP Protocol.
+- Follow these steps to download "RapidNet IP" source package
 
-   - This software pack contains source code to develop application on RapidNet IP Protocol.
-   - Follow these steps to download "RapidNet IP" source package
-     - Click www.analog.com/SRF to go to Analog devices software request form, to request the source installer.
-     - Fill required details.
-     - Under 'Target Hardware', select 'Ultra Low Power Microcontroller'
-     - Under 'Software requested' section, check 'RapidNet IP'.
-     - Click 'SUBMIT' button available at the bottom of the page.
-     - You will receive an e-mail notification with a download link.
+  - Click www.analog.com/SRF to go to Analog devices software request form, to request the source installer.
+  - Fill required details.
+  - Under 'Target Hardware', select 'Ultra Low Power Microcontroller'
+  - Under 'Software requested' section, check 'RapidNet IP'.
+  - Click 'SUBMIT' button available at the bottom of the page.
+  - You will receive an e-mail notification with a download link.
 
 RapidNet IP Module
 ------------------
@@ -134,8 +139,7 @@ about the particular board.
 - :dokuwiki:`EV-COG-AD3029LZ </resources/eval/user-guides/ev-cog-ad3029lz>` -
   development platform for Analog Devices Ultra Low Power Microcontroller
   :adi:`ADuCM3029`
--
-  :dokuwiki:`EV-DNG-RFMOD-9001Z </resources/eval/user-guides/ev-dng-rfmod-9001z>`
+- :dokuwiki:`EV-DNG-RFMOD-9001Z </resources/eval/user-guides/ev-dng-rfmod-9001z>`
   - USB Dongle which acts as Border Router for RapidNet IP Network (902-958MHz)
 - :dokuwiki:`EV-COG-ADF7023-9Z </resources/eval/user-guides/ev-cog-adf7023-9z>`
   - :adi:`ADF7023-J` Connectivity Cog (902-958MHz)
@@ -157,8 +161,7 @@ about the particular board.
 - :dokuwiki:`EV-COG-AD3029LZ </resources/eval/user-guides/ev-cog-ad3029lz>` -
   development platform for Analog Devices Ultra Low Power Microcontroller
   :adi:`ADuCM3029`
--
-  :dokuwiki:`EV-DNG-RFMOD-9001Z </resources/eval/user-guides/ev-dng-rfmod-9001z>`
+- :dokuwiki:`EV-DNG-RFMOD-9001Z </resources/eval/user-guides/ev-dng-rfmod-9001z>`
   - USB Dongle which acts as Border Router for RapidNet IP Network (902-958MHz)
 
 Additional Resources

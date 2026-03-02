@@ -22,9 +22,9 @@ Below is presented a short description of all the functions provided in the API:
    :header-rows: 1
 
    * - Device Global Settings
-     -
-
-\|
+     - Description
+   * - See code below
+     - See function descriptions in the code section
 
 .. code:: c
 

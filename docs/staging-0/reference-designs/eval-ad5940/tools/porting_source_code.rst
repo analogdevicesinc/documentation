@@ -13,7 +13,11 @@ document details the steps involved.
 Source Code Structure
 ---------------------
 
-This section describes the file structure for the firmware examples. The following image is a capture from the AD5940_BIA example project opened in Keil IDE.\ .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/folder_structure.png
+This section describes the file structure for the firmware examples. The
+following image is a capture from the AD5940_BIA example project opened in Keil
+IDE.
+
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/folder_structure.png
    :width: 300px
 
 - AD5940Lib
@@ -51,12 +55,11 @@ This section describes the file structure for the firmware examples. The followi
 
 - CMSIS
 
-::
-
-   * This is the CMSIS pack for the selected MCU. This CMSIS pack should be imported for the particular MCU and should not be edited
+* This is the CMSIS pack for the selected MCU. This CMSIS pack should be imported for the particular MCU and should not be edited
 * Device
-   * This folder has the startup file for the chosen MCU and should not be
-     edited.
+
+  * This folder has the startup file for the chosen MCU and should not be
+    edited.
 
 Porting Functions in ADICUP3029Port.c
 -------------------------------------

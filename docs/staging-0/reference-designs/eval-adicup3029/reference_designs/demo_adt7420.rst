@@ -19,7 +19,7 @@ PMOD which is a 16-bit ambient temperature sensor. It requires no calibration.
 Demo Video
 ----------
 
-.. figure:: analogTV>5554821977001
+.. todo:: .. figure: analogTV>5554821977001
 
 Demo Requirements
 -----------------
@@ -262,4 +262,4 @@ More Information
 
 .. todo:: .. include: /resources/eval/user-guides/eval-adicup3029/reference_designs/ble_packet.rst
 
-// End of Document //
+

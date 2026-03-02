@@ -76,21 +76,16 @@ Reading Samples from the ADC
 The evaluation board is set up to use the external 2.5 V on-board reference
 (ADR4525). To read samples from the ADC, do the following:
 
-#. The value in the Refin1(+/−) field on the Configuration tab is set to 2.5 V
-   by default to use the external 2.5 V on-board reference (ADR4525). If a
-   different reference is used to the AD4170, the Refin1(+/−) field should be
-   updated accordingly. (The analysis results are based on the value set in this
-   input field.)
-
+- The value in the Refin1(+/−) field on the Configuration tab is set to 2.5 V
+  by default to use the external 2.5 V on-board reference (ADR4525). If a
+  different reference is used to the AD4170, the Refin1(+/−) field should be
+  updated accordingly. (The analysis results are based on the value set in this
+  input field.)
 - Information on the reference choice can be viewed in the
   :dokuwiki:`Reference Options Tab </resources/eval/user-guides/ad4170/hardwareguide#reference_options>`
-
-#. When selecting Run Once, a batch of samples is read when clicking the button;
-   the batch size is set by the value in the Samples field.
-
-::
-
-   - When selecting Run Continuous, the software performs a continuous capture from the ADC by clicking the Run Once button. Click the Stop Capture button again to stop capturing data.
+- When selecting Run Once, a batch of samples is read when clicking the button;
+  the batch size is set by the value in the Samples field.
+- When selecting Run Continuous, the software performs a continuous capture from the ADC by clicking the Run Once button. Click the Stop Capture button again to stop capturing data.
 - Use the navigation tools within each graph to control the cursor, zooming, and
   panning.
 

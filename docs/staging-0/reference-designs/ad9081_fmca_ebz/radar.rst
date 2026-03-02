@@ -139,16 +139,16 @@ fork/branch, which is fairly close to master:
 
    # Note, you should adjust the cmake build command according to your local environment! This one was created to work with my environment
    mkdir -p build
-   cmake -DCMAKE_INSTALL_PREFIX=/usr/local 
-       -DPYTHON_EXECUTABLE=$(which python3) 
-       -DPYTHON_INCLUDE_DIR=/usr/include/python3.9 
-       -DPYTHON_LIBRARY=/usr/lib/libpython3.9.so 
-       -DGR_PYTHON_DIR=/usr/lib/python3.9/site-packages 
-       -DENABLE_GRC=ON 
-       -DENABLE_GR_QTGUI=ON 
-       -DQWT_LIBRARIES=/usr/lib/libqwt.so 
-       -DCMAKE_BUILD_TYPE=Debug 
-       -B build 
+   cmake -DCMAKE_INSTALL_PREFIX=/usr/local
+       -DPYTHON_EXECUTABLE=$(which python3)
+       -DPYTHON_INCLUDE_DIR=/usr/include/python3.9
+       -DPYTHON_LIBRARY=/usr/lib/libpython3.9.so
+       -DGR_PYTHON_DIR=/usr/lib/python3.9/site-packages
+       -DENABLE_GRC=ON
+       -DENABLE_GR_QTGUI=ON
+       -DQWT_LIBRARIES=/usr/lib/libqwt.so
+       -DCMAKE_BUILD_TYPE=Debug
+       -B build
        -S .
 
    make -C build -j$(nproc)
@@ -173,13 +173,13 @@ quite similar:
 
    # Make sure this build command matches that of your GNU Radio installation!
    mkdir -p build
-   cmake -DCMAKE_INSTALL_PREFIX=:`usr/local+` 
-       -DPYTHON_EXECUTABLE=$(which python3) 
-       -DPYTHON_INCLUDE_DIR=/usr/include/python3.9 
-       -DPYTHON_LIBRARY=/usr/lib/libpython3.9.so 
-       -DGR_PYTHON_DIR=/usr/lib/python3.9/site-packages 
-       -DCMAKE_BUILD_TYPE=Debug 
-       -B build 
+   cmake -DCMAKE_INSTALL_PREFIX=:`usr/local+`
+       -DPYTHON_EXECUTABLE=$(which python3)
+       -DPYTHON_INCLUDE_DIR=/usr/include/python3.9
+       -DPYTHON_LIBRARY=/usr/lib/libpython3.9.so
+       -DGR_PYTHON_DIR=/usr/lib/python3.9/site-packages
+       -DCMAKE_BUILD_TYPE=Debug
+       -B build
        -S .
 
    make -C build

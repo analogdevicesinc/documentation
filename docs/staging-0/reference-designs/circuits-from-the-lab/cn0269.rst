@@ -64,9 +64,15 @@ Installing the Software
 
 #. Extract the file **CN0269 SDP Eval Software.zip** and open the file
    **setup.exe**.
+
    .. tip::
 
-   It is recommended that you install the :dokuwiki:`CN0269 SDP Evaluation Software <ftp://ftp.analog.com/pub/cftl/CN0269/>` to the default directory path **C:\\Program Files\\Analog Devices\\CN0269\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
+      It is recommended that you install the
+      `CN0269 SDP Evaluation Software <ftp://ftp.analog.com/pub/cftl/CN0269/>`__
+      to the default directory path
+      **C:\\Program Files\\Analog Devices\\CN0269\\**
+      and all National Instruments products to
+      **C:\\Program Files\\National Instruments\\**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_setup_1.png
       :width: 600px
@@ -85,7 +91,9 @@ Installing the Software
    installer for the **ADI SDP Drivers** will execute.
    .. tip::
 
-   It is recommended that you close all other applications before clicking **``Next``**. This will make it possible to update relevant system files without having to reboot your computer.
+      It is recommended that you close all other applications before clicking
+      **``Next``**. This will make it possible to update relevant system files
+      Without having to reboot your computer.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_setup_4.png
       :width: 600px
@@ -93,8 +101,8 @@ Installing the Software
 #. Press **``Next``** to set the installation location for the **SDP Drivers**.
    .. tip::
 
-   It is recommended that you install the drivers to the default directory path
-      **C:\\Program Files\\Analog Devices\\SDP\\Drivers**
+      It is recommended that you install the drivers to the default directory
+      path **C:\\Program Files\\Analog Devices\\SDP\\Drivers**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0269/sw_setup_5.png
       :width: 600px
@@ -376,10 +384,12 @@ Establishing a USB Connection Link
 #. Follow the instructions to properly install the software and connect the
    hardware as described in the previous sections.
 #. Open the file named **CN0269.exe** in the installation directory.
+
    .. note::
 
-   If the software was installed to the default location it will be found at
+      If the software was installed to the default location it will be found at
       **C:\\Program Files\\Analog Devices\\CN0269\\CN0269.exe**
+
 #. Select the connector to use from the **SDP Connector Dropdown Menu**.
 
 #. Click the **Connect to SDP-B Board Button**. A window with a progress bar

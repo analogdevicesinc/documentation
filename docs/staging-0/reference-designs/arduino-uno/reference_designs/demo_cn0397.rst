@@ -91,7 +91,7 @@ Setting up the Hardware
   connections.
 
 #. Connect a jumper on **P1** between position **1-2** on EVAL-CN0397-ARDZ.
-#.  Plug in the Type B USB cable into the USB port on the Arduino Uno, and the
+#. Plug in the Type B USB cable into the USB port on the Arduino Uno, and the
    other end into the PC or laptop.
 
 Obtaining the Source Code
@@ -195,4 +195,4 @@ For more information on how to use the tool basics, please check out the
    To download the Arduino tools, check out the
    `Arduino software page. <https://www.arduino.cc/en/Main/Software>`__
 
-// End of Document //
+

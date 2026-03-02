@@ -66,19 +66,23 @@ General Setup
 - The :adi:`EVAL-CFTL-LVDT <CN0288>` (LVDT) connects to the
   :adi:`EVAL-CN0288-SDPZ` (CN-0288 Board) via the 6-pin header at J3 .
 
-|
-| .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-test_setup.png
 
---------------
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-test_setup.png
 
 Installing the Software
 -----------------------
 
 #. Extract the file **CN0288 Eval Software.zip** and open the file
    **setup.exe**.
+
    .. tip::
 
-   It is recommended that you install the `CN-0288 Evaluation Software <http://swdownloads.analog.com/cse/cftl/CN0288/1.0.2/CN0288_Evaluation_Software.zip>`__ to the default directory path **C:\\Program Files\\Analog Devices\\CN0288\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
+      It is recommended that you install the
+      `CN-0288 Evaluation Software <http://swdownloads.analog.com/cse/cftl/CN0288/1.0.2/CN0288_Evaluation_Software.zip>`__
+      to the default directory path
+      **C:\\Program Files\\Analog Devices\\CN0288\\**
+      and all National Instruments products to
+      **C:\\Program Files\\National Instruments\\**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0288/CN0288-install1.png
 
@@ -92,16 +96,19 @@ Installing the Software
 
 #. Upon completion of the installation of the **CN-0288 Evaluation Software**,
    the installer for the **ADI SDP Drivers** will execute.
+
    .. tip::
 
-   It is recommended that you close all other applications before clicking **``Next``**. This will make it possible to update relevant system files without having to reboot your computer.
+      It is recommended that you close all other applications before clicking
+      **``Next``**. This will make it possible to update relevant system files
+      without having to reboot your computer.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0288/CN0288-install4.png
 
 #. Press **``Next``** to set the installation location for the **SDP Drivers**.
    .. tip::
 
-   It is recommended that you install the drivers to the default directory path
+      It is recommended that you install the drivers to the default directory path
       **C:\\Program Files\\Analog Devices\\SDP\\Drivers**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0288/CN0288-install5.png
@@ -111,16 +118,16 @@ Installing the Software
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0288/CN0288-install6.png
 
---------------
-
 Connecting the Hardware
 -----------------------
 
 #. Connect the :adi:`EVAL-CFTL-LVDT <CN0288>` **(LVDT)** to **J3** of the
    :adi:`EVAL-CN0288-SDPZ` **(CN-0288 Board)** as depicted below.
+
    .. tip::
 
-   If a different LVDT is used other than the E-100 LVDT from Measurement Specialties, Inc the wiring schematic will be different!
+      If a different LVDT is used other than the E-100 LVDT from Measurement
+      Specialties, Inc the wiring schematic will be different!
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0288/cn0288-wiring_table.png
 
@@ -205,9 +212,10 @@ Establishing a USB Connection Link
 #. Follow the instructions to properly install the software and connect the
    hardware as described in the previous sections.
 #. Open the file named **CN0288.exe** in the installation directory.
+
    .. note::
 
-   If the software was installed to the default location it will be found at
+      If the software was installed to the default location it will be found at
       **C:\\Program Files\\Analog Devices\\CN0288\\CN0288.exe**
 
 #. Click the **Connect/Reconnect Button**. A window with a progress bar will

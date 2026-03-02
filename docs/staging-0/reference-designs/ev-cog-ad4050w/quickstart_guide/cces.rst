@@ -43,8 +43,7 @@ Software Packs and Driver Setup
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/import_existing_packs_icon.jpg
 
-      .
-      :dokuwiki:`Refer for more details </resources/ev/user-guides/ev-cog-ad4050lz/tools/cces_guide?&#how_to_install_packs_for_cces>`.
+   :dokuwiki:`Refer for more details </resources/ev/user-guides/ev-cog-ad4050lz/tools/cces_guide?&#how_to_install_packs_for_cces>`.
 
 #. Select all the packs and import. This will install the packs. Ignore the
    warnings seen on the console window. In order to remove these warnings,
@@ -67,8 +66,6 @@ Running an Example Project
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/pack_manager.jpg
 
-      .
-
 #. Select EV-COG-AD4050LZ from the Boards tab on the Left panel. (see below
    image)
 
@@ -83,8 +80,6 @@ Running an Example Project
 #. Under Project Explorer select button_press example, click build icon
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/build_icon.jpg
-
-      .
 
 #. Click on Debug icon
 

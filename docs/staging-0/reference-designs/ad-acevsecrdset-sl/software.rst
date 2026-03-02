@@ -118,9 +118,7 @@ Resources
 
    - :git-no-OS:`Github resources <tree/master/projects/ad-acevsecrdset-sl+>`
 
-   *It is recommended to update the firmware to the latest firmware release.
-
---------------
+   It is recommended to update the firmware to the latest firmware release.
 
 Flashing and debugging the firmware for the AD-ACEVSECRDSET-SL using the max32625pico
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,7 +161,7 @@ board from 230V AC through the just attached cable.
 Step 4 Flashing the firmware to the board
 '''''''''''''''''''''''''''''''''''''''''
 
-| If the :adi:`max32625pico` is not connected to the PC USB port connect it. The
+If the :adi:`max32625pico` is not connected to the PC USB port connect it. The
 DAPLINK should appear as a storage device on the PC. Open the DAPLINK. Two files
 should already be present as seen in the following image.
 

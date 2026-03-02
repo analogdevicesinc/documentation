@@ -36,16 +36,14 @@ Booting the SD Card
 #. ignore your PC, and now interact on the USB mouse/keyboard on the Zynq device
 #. You should see one screen:
 
-::
+   .. figure:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/iio_scope.png
 
-   - IIO Scope tool: \\ {{:resources:fpga:xilinx:fmc:ad-fmcomms1-ebz:iio_scope.png?200|}}
+      IIO Scope tool
 
-::
+   Learn more about the :ref:`iio-oscilloscope`
 
-   - Learn more about the
-     [[:resources:tools-software:linux-software:iio_oscilloscope|IIO Scope]].
-- You are now done with booting from the SD card. You can interact with the GUI
-  either over the network, or with the HDMI monitor/USB keyboard mouse.
+#. You are now done with booting from the SD card. You can interact with the GUI
+   either over the network, or with the HDMI monitor/USB keyboard mouse.
 
 Using IIO SCOPE for AD-FMCMOTCON2-EBZ
 -------------------------------------

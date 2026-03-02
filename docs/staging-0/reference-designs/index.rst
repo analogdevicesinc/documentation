@@ -1,4 +1,4 @@
-.. _reference-designs-staging:
+.. _reference-designs-staging-0:
 
 Reference Designs (Staging)
 ===========================
@@ -15,6 +15,5 @@ Reference Designs (Staging)
    */*
    */*/*
    */*/*/*
-   */*/*/*/*
 
 
