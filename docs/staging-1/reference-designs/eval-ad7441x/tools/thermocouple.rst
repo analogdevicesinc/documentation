@@ -35,7 +35,7 @@ pins where the thermocouple is connected. The temperature at the thermocouple is
 calculated using a combination of the thermocouple and cold junction
 measurements.
 
-.. figure:: Thermocouple config.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/thermocouple_config.png
 
    Figure 1: AD74413R configured for thermocouple measurements
 
@@ -48,15 +48,14 @@ point for the thermocouple. Figure 2 shows a snapshot from the AD74413R
 evaluation board. This circuit shows the implementation required to use the
 AD74413R to determine T\ :sub:`COLD_JUNC`, the cold junction temperature:
 
-::
+* The reference voltage to the AD74413R is applied to the top of a resistor divider. The resistor divider is made up of a 33kΩ resistor, R64 and a 33kΩ thermistor, RT1.
+* The resistance of the thermistor is proportional to the ambient temperature. The resultant voltage is measured from the tap-off point in the middle of the divider, which is connected to the LVIN pin. The LVIN pin can be measured by the ADC in a 2.5V range, which is set by the reference provided.
+* The resistance of the thermistor can be calculated from the measured ADC_CODE, using the following equation:
+  R:sub:`RT1` = -(33000* ADC_CODE) / (ADC_CODE – 65535)
+* Vishay provide a resistance to temperature tool to interpret the thermistor temperature at any given resistance.
+  This can be found at https://www.vishay.com/thermistors/ntc-rt-calculator/.
 
-   *The reference voltage to the AD74413R is applied to the top of a resistor divider. The resistor divider is made up of a 33kΩ resistor, R64 and a 33kΩ thermistor, RT1.
-   *The resistance of the thermistor is proportional to the ambient temperature. The resultant voltage is measured from the tap-off point in the middle of the divider, which is connected to the LVIN pin. The LVIN pin can be measured by the ADC in a 2.5V range, which is set by the reference provided.
-   *The resistance of the thermistor can be calculated from the measured ADC_CODE, using the following equation:
-     R<sub>RT1</sub> = -(33000* ADC_CODE) / (ADC_CODE – 65535)
-   *Vishay provide a resistance to temperature tool to interpret the thermistor temperature at any given resistance. This can be found at [[https://www.vishay.com/thermistors/ntc-rt-calculator/]].
-
-.. figure:: thermocouple sch snapshot.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/thermocouple_sch_snapshot.png
 
    Figure 2: LVIN schematic configuration
 
@@ -86,17 +85,22 @@ Register Writes
 The following is a set of register writes required to take thermocouple & cold
 junction temperature measurements.
 
-::
+* Enable Voltage Input mode on Channel A and set ADC range to ±104.16mV
 
-   *Enable Voltage Input mode on Channel A and set ADC range to ±104.16mV
-     *Write 0x0003 to CH_FUNC_SETUP register (address: 0x01)
-     *Write 0x0080 to ADC_CONFIG register (address: 0x05)
-   *Assign the LVIN pin to the Diagnostic 0 channel
-     *Write 0x000E to the DIAG_ASSIGN register (address: 0x24)
-   *Enable ADC for continuous conversions on Channel A and Diagnostic Channel 0.
-     *Write 0x0211 to the ADC_CONV_CTRL register (address: 0x23) to enable continuous conversions on the ADC
-   *Read ADC result (Thermocouple voltage) from ADC_RESULT register (address: 0x26)
-     *Read the Diagnostic 0 result from the DIAG_RESULT register (address: 0x2A)
+  * Write 0x0003 to CH_FUNC_SETUP register (address: 0x01)
+  * Write 0x0080 to ADC_CONFIG register (address: 0x05)
+
+* Assign the LVIN pin to the Diagnostic 0 channel
+
+  * Write 0x000E to the DIAG_ASSIGN register (address: 0x24)
+
+* Enable ADC for continuous conversions on Channel A and Diagnostic Channel 0.
+
+  * Write 0x0211 to the ADC_CONV_CTRL register (address: 0x23) to enable continuous conversions on the ADC
+
+* Read ADC result (Thermocouple voltage) from ADC_RESULT register (address: 0x26)
+
+  * Read the Diagnostic 0 result from the DIAG_RESULT register (address: 0x2A)
 
 Open Wire Detect
 ----------------

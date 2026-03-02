@@ -124,22 +124,15 @@ HDL Downloads
 
 .. admonition:: Download
 
-   -
-
-    .. figure:: :git-hdl:`projects/ad9083_evb`
+   :git-hdl:`projects/ad9083_evb`
 
 Software sources
 ----------------
 
 .. admonition:: Download
 
-   -
-
-    .. figure:: :git-linux
-
-   -
-
-    .. figure:: https::`/github.com/analogdevicesinc/no-OS/tree/main/projects/ad9083+`
+   :git-linux:`/`
+   :git-no-OS:`projects/ad9083`
 
 More Information
 ~~~~~~~~~~~~~~~~

@@ -69,7 +69,7 @@ Installing ACE
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_6.png
       :width: 400px
 
-#.  When the installation is complete, click Next >, and then click Finish to
+#. When the installation is complete, click Next >, and then click Finish to
    complete the installation process
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_7.png

@@ -77,19 +77,15 @@ The included DUT,\ **LT8642S Demo Board**, features a 16-pin male header for
 easy interfacing with the LTpowerAnalyzer"s interposer board. The demo board may
 be connected to the interface board of the LTpowerAnalyzer via a ribbon cable.
 
-.. list-table::
-
-   * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/dut_board.png
-      :width: 600px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/dut_board.png
+   :width: 600px
 
    LT8642S DUT Board
- -
 
-  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/sample_ribbon_cable_connection_from_the_demo_board_to_the_ltpoweranalyzer.png
-     :width: 300px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/sample_ribbon_cable_connection_from_the_demo_board_to_the_ltpoweranalyzer.png
+   :width: 300px
 
-   Sample ribbon cable connection
-   from the Demo Board to the LTpowerAnalyzer
+   Sample ribbon cable connection from the Demo Board to the LTpowerAnalyzer
    (via the Interface A Board)
 
 However, other DUTs do not have a native support for these interfaces. Below is
@@ -141,20 +137,15 @@ ensure there are no shorts.
 
 .. note::
 
-   .. list-table::
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_injection_connection.jpg
+      :width: 300px
 
-      * -
+      OUT+, T+, IN+, T- Connection
 
-      .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_injection_connection.jpg
-         :width: 300px
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_gnd_connection.jpg
+      :width: 300px
 
-          OUT+, T+, IN+, T- Connection
-        -
-
-         .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_gnd_connection.jpg
-            :width: 300px
-
-          GND, OUT-, IN- Connection
+      GND, OUT-, IN- Connection
 
 \ **3. Prepare the system for measurements**
 
@@ -215,40 +206,29 @@ mask, thus making it challenging to swap current probes.
 
 .. note::
 
-   .. list-table::
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/soldermask.jpg
+      :width: 300px
 
-      * -
+      Scrape off the Solder Mask
 
-      .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/soldermask.jpg
-         :width: 300px
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/solderbraid.jpg
+      :width: 300px
 
-        Scrape off the Solder Mask
-
-        -
-
-         .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/solderbraid.jpg
-            :width: 300px
-
-           90-degree Solder Braid
+      90-degree Solder Braid
 
 2. Solder in the LB3058A Current Source.
 
 .. note::
 
-   .. list-table::
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/currentprobeback.jpg
+      :width: 300px
 
-      * -
+      Current Probe Front View
 
-      .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/currentprobeback.jpg
-         :width: 300px
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/currentprobefront.jpg
+      :width: 300px
 
-          Current Probe Front View
-        -
-
-         .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/currentprobefront.jpg
-            :width: 300px
-
-          Current Probe Back View
+      Current Probe Back View
 
 3. Connect the Vout+ and Vout- wires to the terminal block and plug in the
    14-pin ribbon cable.

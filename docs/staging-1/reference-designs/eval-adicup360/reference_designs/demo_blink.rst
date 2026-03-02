@@ -51,7 +51,7 @@ Setting up the hardware
 ADICUP360 + Demo Blink Video
 ----------------------------
 
-.. figure:: analogTV>4784514204001
+.. todo:: .. figure: analogTV>4784514204001
 
 Obtaining the source code
 -------------------------

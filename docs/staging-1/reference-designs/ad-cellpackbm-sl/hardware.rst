@@ -292,14 +292,14 @@ Setup
 
 #. Choose between two options for powering the EVAL-ADBMS2950-BASIC:
 
--  Supply 5 V to J1 and set the current limit to 200 mA. The
-  EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode and ~100 mA in active mode.
-  The image below depicts the current measurement in idle mode.
-
- .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/idle_current.png
-    :width: 400px
-
-- Alternatively, power it using a micro-USB cable connected to J10.
+   - Supply 5 V to J1 and set the current limit to 200 mA. The
+     EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode and ~100 mA in active mode.
+     The image below depicts the current measurement in idle mode.
+   
+    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/idle_current.png
+       :width: 400px
+   
+   - Alternatively, power it using a micro-USB cable connected to J10.
 
 #. Attach the MAX32625PICO programmer to the SDP-K1 using the 10-pin ribbon SWD
    cable. Observe correct polarity when connecting the SWD cable.
@@ -382,13 +382,13 @@ Test
 #. In the Files column, select the **ADBMS6830-ADBMS2950.json**. This action
    will load a preconfigured sequence into the tool.
 
--  Click on Initialization Sequence followed by General Initialization under the
-  Sequences column to load the defined sequences from the
-  ADBMS6830-ADBMS2950.json file into the tool.
-- Next, select Loop Sequence and then click on General Readback Loop under the
-  Sequences column. This action loads the loop sequence defined in the
-  ADBMS6830-ADBMS2950.json file into the tool.
-- Finally, click on Start Freerun to initiate the freerun mode.
+   - Click on Initialization Sequence followed by General Initialization under the
+     Sequences column to load the defined sequences from the
+     ADBMS6830-ADBMS2950.json file into the tool.
+   - Next, select Loop Sequence and then click on General Readback Loop under the
+     Sequences column. This action loads the loop sequence defined in the
+     ADBMS6830-ADBMS2950.json file into the tool.
+   - Finally, click on Start Freerun to initiate the freerun mode.
 
 #. During free run mode, the Initialization Sequence is performed once
    initially. Subsequently, the loop sequence continues to run continuously

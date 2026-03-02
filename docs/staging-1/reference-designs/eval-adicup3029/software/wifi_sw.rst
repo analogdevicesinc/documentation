@@ -61,4 +61,4 @@ The software pack can be downloaded in several ways.
 
    :git-EVAL-ADICUP3029:`Wi-Fi Software Pack 1.0.1 <cmsis-packs/ADI-WifiSoftware+>`
 
-// End of Document //
+

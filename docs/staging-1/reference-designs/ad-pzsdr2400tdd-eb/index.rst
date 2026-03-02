@@ -53,7 +53,7 @@ should be. If you have any questions, feel free to
 
 #. :dokuwiki:`Help and Support <ad-pzsdr2400TDD-eb/help_and_support>`
 
-.. figure:: analogTV>4840956066001
+.. todo:: .. figure: analogTV>4840956066001
 
 Warning
 -------

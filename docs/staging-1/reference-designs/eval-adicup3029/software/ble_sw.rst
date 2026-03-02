@@ -61,4 +61,4 @@ The software pack can be downloaded in several ways.
 
    :git-EVAL-ADICUP3029:`ADI_BLESoftware Pack 1.0.1 <cmsis-packs/ADI-BleSoftware+>`
 
-// End of Document //
+

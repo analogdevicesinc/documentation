@@ -35,8 +35,6 @@ establish trip points for the over/undervoltages. Each cell channel contains
 programmable deglitching (D/G) circuitry to avoid alarming from transient input
 levels.
 
---------------
-
 Required Equipment
 ~~~~~~~~~~~~~~~~~~
 
@@ -56,8 +54,6 @@ Required Equipment
   - 512 MB RAM and 2 GB available hard disk space
   - .NET 3.5 Framework
 
---------------
-
 General Setup
 ~~~~~~~~~~~~~
 
@@ -71,37 +67,32 @@ General Setup
 
    Figure 1: CN0235 general setup
 
-#.  **SDP USB connection** – Connect to PC through USB Type A to mini-USB.
-#.  **Jumper Configuration** – Sets AD8280 and AD7280A configuration. Jumper
+#. **SDP USB connection** – Connect to PC through USB Type A to mini-USB.
+#. **Jumper Configuration** – Sets AD8280 and AD7280A configuration. Jumper
    configuration setting is explained further on the next section.
 
-#.  **VIN0 to VIN6** – Lithium Ion battery stacks input. This connector is used
+#. **VIN0 to VIN6** – Lithium Ion battery stacks input. This connector is used
    when only one device is required.
+
    .. note::
 
-   Please see
-
-   .. figure:: http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf
-
+      Please see
+      http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf
       page 17 and page 22 for proper battery connection for different number of cells.
 
-#.  **VIN7 to VIN12** – Lithium Ion battery stacks input. This connector is used
+#. **VIN7 to VIN12** – Lithium Ion battery stacks input. This connector is used
    when two devices are required for the application.
+
    .. note::
 
-   Please see
-
-   .. figure:: http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf
-
+      http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf
       page 18 for proper battery cell connection using two devices.
 
-#.  **Power Supply** – The board may be powered up using a +6V wall-wart
+#. **Power Supply** – The board may be powered up using a +6V wall-wart
    connected to the barrel jack or using an external power supply configured to
    +6V.
-#.  **SPI breakout pins** – These are the breakout pins of the digital lines
+#. **SPI breakout pins** – These are the breakout pins of the digital lines
    coming from the SDP board to AD7280A devices.
-
---------------
 
 Jumper Configuration
 ~~~~~~~~~~~~~~~~~~~~
@@ -172,9 +163,15 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
 #. Extract the file **CN0235 Eval Software.zip** and open the file
    **setup.exe**.
+
    .. tip::
 
-   It is recommended that you install the :dokuwiki:`CN0235 Evaluation Software <ftp://ftp.analog.com/pub/cftl/CN0235/>` to the default directory path **C:\\Program Files\\Analog Devices\\CN0235\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
+      It is recommended that you install the
+      `CN0235 Evaluation Software <ftp://ftp.analog.com/pub/cftl/CN0235/>`__
+      to the default directory path
+      **C:\\Program Files\\Analog Devices\\CN0235\\**
+      and all National Instruments products to
+      **C:\\Program Files\\National Instruments\\**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235-software-1.png
 
@@ -188,16 +185,20 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
 #. Upon completion of the installation of the **CN0235 Evaluation Software**,
    the installer for the **ADI SDP Drivers** will execute.
+
    .. tip::
 
-   It is recommended that you close all other applications before clicking **``Next``**. This will make it possible to update relevant system files without having to reboot your computer.
+      It is recommended that you close all other applications before clicking
+      **Next**. This will make it possible to update relevant system files
+      without having to reboot your computer.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235-software-4.png
 
 #. Press **``Next``** to set the installation location for the **SDP Drivers**.
+
    .. tip::
 
-   It is recommended that you install the drivers to the default directory path
+      It is recommended that you install the drivers to the default directory path
       **C:\\Program Files\\Analog Devices\\SDP\\Drivers**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235-sdp_installer-1.png
@@ -207,23 +208,28 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235-sdp_installer-2.png
 
---------------
-
 Connecting the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0235/cn0235_hardware.jpg
 
-::
-
-   ***Step 1**. Connect the [[adi>EVAL-CN0235-SDPZ|EVAL-CN0235-SDPZ]] to [[adi>en/system-demonstration-platform/evaluation/index.html|EVAL-SDP-CB1Z]](SDP Board) through the 120-pin SMD connector. Nylon hardware should be used to firmly secure the two boards, using the holes provided at the ends of the 120-pin connectors.
-   ***Step 2**. Do the jumper setting correctly based on desired setting for evaluation based on the jumper configuration provided on [[/resources/eval/user-guides/circuits-from-the-lab/cn0179#jumper_configuration|Jumper Configuration section]].
-   ***Step 3**. Plug the mini-USB side of the cable into the mini-USB connector J1 on [[adi>en/system-demonstration-platform/evaluation/index.html|SDP Board]] and leave the other side of the cable(USB Type A) floated.
-   ***Step 4**. Connect the battery stack on J1 and J2 based on the number of cells configured by the jumper SEL0 and SEL1. Refer to the jumper configuration on [[/resources/eval/user-guides/circuits-from-the-lab/cn0179#general_setup|General Setup section]].
-   ***Step 5**. Plug in the wallwart and connect it to the barrel jack connector of the [[adi>EVAL-CN0235-SDPZ|EVAL-CN0235-SDPZ]] .
-   ***Step 6**. Connect the USB-Type-A side of the USB cable to the PC.
-
---------------
+***Step 1**. Connect the :adi:`EVAL-CN0235-SDPZ` to
+:adi:`EVAL-SDP-CB1Z <en/system-demonstration-platform/evaluation/index.html>`
+(SDP Board) through the 120-pin SMD connector. Nylon hardware should be used to
+firmly secure the two boards, using the holes provided at the ends of the
+120-pin connectors.
+***Step 2**. Do the jumper setting correctly based on desired setting for
+evaluation based on the jumper configuration provided on
+:dokuwiki:`Jumper Configuration section <resources/eval/user-guides/circuits-from-the-lab/cn0179#jumper_configuration>`.
+***Step 3**. Plug the mini-USB side of the cable into the mini-USB connector J1
+on :adi:`SDP Board <en/system-demonstration-platform/evaluation/index.html>` and
+leave the other side of the cable(USB Type A) floated.
+***Step 4**. Connect the battery stack on J1 and J2 based on the number of
+cells configured by the jumper SEL0 and SEL1. Refer to the jumper configuration
+on :dokuwiki:`General Setup <section/resources/eval/user-guides/circuits-from-the-lab/cn0179#general_setup>`.
+***Step 5**. Plug in the wallwart and connect it to the barrel jack connector
+of the :adi:`EVAL-CN0235-SDPZ`.
+***Step 6**. Connect the USB-Type-A side of the USB cable to the PC.
 
 USING THE EVALUATION SOFTWARE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -235,81 +241,90 @@ Software Front Panel
 
 #. **Connect to SDP-B Board Button**
 
-- When this button is pressed, the SDP-B Board makes a USB connection to the
-  :adi:`CN0235 <EVAL-CN0235-SDPZ>`\ Board. A connection to the SDP-B Board must
-  be made to use the software.
+   - When this button is pressed, the SDP-B Board makes a USB connection to the
+     :adi:`CN0235 <EVAL-CN0235-SDPZ>`\ Board. A connection to the SDP-B Board must
+     be made to use the software.
 
 #. **Device Selector**
 
-- Selects the number of device to be activated.
+   - Selects the number of device to be activated.
 
 #. **Enable Real Time ADC Reads**
 
-- When this button is checked, continuous data acquisition by the ADC will
-  start.
+   - When this button is checked, continuous data acquisition by the ADC will
+     start.
 
 #. **Read ADC**
 
-- When this button is clicked, a single capture read will be performed by the
-  ADC.
+   - When this button is clicked, a single capture read will be performed by the
+     ADC.
 
 #. **Software Reset**
 
-- When this button is clicked, all the configuration changes on the evaluation
-  software will be revert back to its default state.
+   - When this button is clicked, all the configuration changes on the evaluation
+     software will be revert back to its default state.
 
 #. **Hardware PD**
 
-- Clicking this button will put :adi:`AD7280A` in to Full Power-Down mode,
-  meaning, both the analog and digital circuitry of the :adi:`AD7280A` will be
-  shut down, this in turn will only require 5uA maximum current. This button
-  will also disable :adi:`AD8280`.
+   - Clicking this button will put :adi:`AD7280A` in to Full Power-Down mode,
+     meaning, both the analog and digital circuitry of the :adi:`AD7280A` will be
+     shut down, this in turn will only require 5uA maximum current. This button
+     will also disable :adi:`AD8280`.
 
 #. **Software PD**
 
-- . Clicking this button will put :adi:`AD7280A` in to Software Power-Down mode
-  which requires only 3.8 mA maximum current. This button will also disable
-  :adi:`AD8280`.
+   - Clicking this button will put :adi:`AD7280A` in to Software Power-Down mode
+     which requires only 3.8 mA maximum current. This button will also disable
+     :adi:`AD8280`.
 
 #. **Software/Hardware PU**
 
-::
+   - Clicking this button will power up the :adi:`AD7280A <ad7280A>` when it"s
+     coming from a software power down or hardware power down mode. This button
+     will not enable the :adi:`AD8280 <AD8280>`.
 
-   *Clicking this button will power up the [[adi>ad7280A|AD7280A]] when it"s coming from a software power down or hardware power down mode. This button will not enable the [[adi>AD8280|AD8280]].
- - **Enable/Disable AD8280**
- * This button allows the user to enable or disable the secondary battery
-   monitoring and protection system.
- - **Self-Test AD8280**
- * Executes the self test feature of AD8280.
- - **Save Data to File**
- * This button will execute a save data command to record the Voltage and
-   Temperature reading of both devices in codes and volts format. The file may
-   be saved as .txt or .xls.
- - **Control Tabs**
- * __Voltage(Codes)/Voltage(Volts)__: Clicking either of these tabs brings out
-   the voltage reading on each device's channel in front. These tabs shows the
-   reading in either Codes or voltage format.
- * __Temperature(Codes)/Temperature(Volts)__: Clicking either of these tabs
-   brings out the temperature reading in front. These tabs shows the reading in
-   either Codes or voltage format.
- * __Configure AD7280A__: Clicking this tab will bring the AD7280A
-   configurations in front.
- * __Advanced__: Clicking this tab will bring out the advanced control for the
-   device in front.
- * __SDP Firmware Release Info__ Clicking this tab will bring out the firmware
-   information currently installed in the PC.
- - **AD7280A Configuration**
- * All control tabs will be explained with more detail on the next section.
- - **Warning indicators**
-   *__AD7280 Alert__: This is the primary monitor"s alert indicator. When the
-   voltage or temperature reading exceeded the user defined thresholds from the
-   AD7280A configuration, this LED will light up.
-   *__Under Voltage__: This is one of the secondary monitor"s alert indicator.
-   When the voltage or temperature reading exceeded the user defined floor
-   threshold, this LED will light up.
-   *__Over Voltage__: This is one of the secondary monitor"s alert indicator.
-   When the voltage or temperature reading exceeded the user defined ceiling
-   threshold, this LED will light up.
+   - **Enable/Disable AD8280**
+     This button allows the user to enable or disable the secondary battery
+     monitoring and protection system.
+
+   - **Self-Test AD8280**
+     Executes the self test feature of AD8280.
+
+   - **Save Data to File**
+     This button will execute a save data command to record the Voltage and
+     Temperature reading of both devices in codes and volts format. The file may
+     be saved as .txt or .xls.
+
+   - **Control Tabs**
+     *Voltage(Codes)/Voltage(Volts)*: Clicking either of these tabs brings out
+     the voltage reading on each device's channel in front. These tabs shows the
+     reading in either Codes or voltage format.
+
+     - *Temperature(Codes)/Temperature(Volts)*: Clicking either of these tabs
+       brings out the temperature reading in front. These tabs shows the reading in
+       either Codes or voltage format.
+       *Configure AD7280A*: Clicking this tab will bring the AD7280A
+       configurations in front.
+
+     - *Advanced*: Clicking this tab will bring out the advanced control for the
+       device in front.
+
+     - *SDP Firmware Release Info* Clicking this tab will bring out the firmware
+       information currently installed in the PC.
+
+   - **AD7280A Configuration**
+     All control tabs will be explained with more detail on the next section.
+
+   - **Warning indicators**
+     * *AD7280 Alert*: This is the primary monitor"s alert indicator. When the
+     voltage or temperature reading exceeded the user defined thresholds from the
+     AD7280A configuration, this LED will light up.
+     * *Under Voltage*: This is one of the secondary monitor"s alert indicator.
+     When the voltage or temperature reading exceeded the user defined floor
+     threshold, this LED will light up.
+     * *Over Voltage*: This is one of the secondary monitor"s alert indicator.
+     When the voltage or temperature reading exceeded the user defined ceiling
+     threshold, this LED will light up.
 
 --------------
 
@@ -585,16 +600,11 @@ registers.
 
 .. tip::
 
-   It is recommended to read
-
-   .. figure:: http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf
-
-      ,
-
-   .. figure:: http://www.analog.com/media/en/technical-documentation/data-sheets/AD8280.pdf
-
-      and :adi:`CN0235` and clearly understand the meaning and effect of the
-      configuration before writing a new value in the AD7280A"s register.
+   It is recommended to read the
+   `AD7280A datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD7280A.pdf>`__,
+   `AD8280 datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD8280.pdf>`__,
+   and :adi:`CN0235` and clearly understand the meaning and effect of the
+   configuration before writing a new value in the AD7280A"s register.
 
 |
 

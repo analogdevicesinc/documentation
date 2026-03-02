@@ -147,8 +147,8 @@ Functions Declarations
 
    * - Function
      - Description
-
-\|
+   * - ``int32_t ad400x_init(struct ad400x_dev **device, struct ad400x_init_param init_param)``
+     - Initialize the device
 
 .. code:: c
 
@@ -158,7 +158,7 @@ Functions Declarations
 
    * - Initialize the device.
 
-\|
+
 
 .. code:: c
 
@@ -168,7 +168,7 @@ Functions Declarations
 
    * - Free the resources allocated by ad400x_init().
 
-\|
+
 
 .. code:: c
 
@@ -178,7 +178,7 @@ Functions Declarations
 
    * - Read register.
 
-\|
+
 
 .. code:: c
 
@@ -188,7 +188,7 @@ Functions Declarations
 
    * - Write register.
 
-\|
+
 
 .. code:: c
 
@@ -200,8 +200,6 @@ Functions Declarations
 
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
-
-\|
 
 .. code:: c
 
@@ -231,8 +229,6 @@ Types Declarations
        bool en_status_bits;
    };
 
-\|
-
 **HW Platform(s):**
 
 - `ZedBoard <http://zedboard.org/product/zedboard>`__
@@ -242,15 +238,11 @@ HDL Downloads
 
 .. admonition:: Download
 
-   -
-
-    .. figure:: repo>hdl/tree/main/projects/pulsar_adc
+   :git-hdl:`projects/pulsar_adc`
 
 No-OS Downloads
 ---------------
 
 .. admonition:: Download
 
-   -
-
-    .. figure:: repo>no-OS/tree/main/drivers/adc/pulsar_adc
+   :git-no-OS:`drivers/adc/pulsar_adc`

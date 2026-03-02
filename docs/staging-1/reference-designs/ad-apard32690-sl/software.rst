@@ -146,8 +146,6 @@ System Setup
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-apard32690-sl/apard32690_system_setup.jpg
    :width: 600px
 
---------------
-
 Updating the AD-APARD32690-SL firmware
 --------------------------------------
 
@@ -166,9 +164,7 @@ MAX32625PICO.
 - Plug the micro USB cable into the PC.
 - Once you see the MAINTENANCE drive being mounted, you may release the button.
 
-::
-
-   {{ :resources:eval:user-guides:ad-swiot1l-sl:picture2.jpg?400 |}}
+  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-swiot1l-sl/picture2.jpg
 
 - Drag and drop (to the MAINTENANCE drive) the firmware image you previously
   downloaded.
@@ -198,11 +194,9 @@ The system is accompanied by an open-source software stack and associated
 collateral, enabling a complete experience from evaluation and prototyping all
 the way to production firmware and applications development.
 
-The :git-no-OS:`AD-APARD32690-SL firmware <tree/master/projects/apard32690+>` is
-based on Analog Devices" open-source no-OS framework, which includes all the
-tools required for embedded code development and debugging as well as libraries
+The :git-no-OS:`AD-APARD32690-SL firmware <projects/apard32690>` is based on
+Analog Devices" open-source no-OS framework, which includes all the tools
+required for embedded code development and debugging as well as libraries
 enabling host-side connectivity for system configuration and data transfer over
 the UART or the 10BASE-T1L interfaces. The firmware source code and related
 documentation can be found on the Analog Devices GitHub at the link above.
-
---------------

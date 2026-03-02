@@ -1,6 +1,6 @@
 .. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-isomax
 
-.. _eval-isomax:
+.. _eval-isomax-DUPLICATED:
 
 EVAL-ISOMAX User Guide
 ======================

@@ -37,8 +37,8 @@ of the range where the monitor locks.
    **bist_timing_analysis** shown below only does a 2D pretty print of all Clock
    and Data delays combinations on RX at a given baseband rate.
 
-   - ````o```` = PASS
-   - ````.```` = FAIL
+   - ``o`` = PASS
+   - ``.`` = FAIL
 
    After its done the REG6 content is restored and nothing is selected! If you
    want to re-trigger the digital interface tune algorithm please see below.
@@ -194,7 +194,7 @@ device.
 Additional debug information can be enabled by adding the BE_VERBOSE and
 BE_MOREVERBOSE flags in the ad9361_post_setup() function.
 
-.. code:: c
+::
 
    @@ -621,11 +621,11 @@ static int ad9361_post_setup(struct iio_dev *indio_dev)
            axiadc_write(st, ADI_REG_CHAN_CNTRL(i),

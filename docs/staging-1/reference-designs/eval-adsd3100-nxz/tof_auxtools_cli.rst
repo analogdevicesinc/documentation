@@ -644,4 +644,3 @@ depth_min/depth_max/ab_min/ab_max.
 - frame_x_depth_r_gray16.png
 - frame_x.ply
 
---------------

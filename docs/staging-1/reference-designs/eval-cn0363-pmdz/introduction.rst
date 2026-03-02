@@ -40,4 +40,4 @@ For a thorough circuit description, please visit
 More Information
 ----------------
 
-- `EVAL-CN0363-PMDZ User Guide <>`__
+.. - `EVAL-CN0363-PMDZ User Guide <>`__

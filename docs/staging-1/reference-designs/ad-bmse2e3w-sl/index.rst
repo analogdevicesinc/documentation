@@ -464,10 +464,8 @@ Follow below steps to set up the board for cell measurement:
    the last two terminals" input to low voltage or equivalent range of roughly
    1.4V per cell.
 
-.. list-table::
-
-   * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_emulator_pins.png
-      :width: 800px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_emulator_pins.png
+   :width: 800px
 
    **Hover mouse on this image and click CTRL twice to magnify**
 
@@ -489,7 +487,7 @@ Follow below steps to set up the board for cell measurement:
 
 .. note::
 
-   **By default (upon purchase), the AD-BMSE2E3W-SL board comes with a
+   By default (upon purchase), the AD-BMSE2E3W-SL board comes with a
    MAX32625PICO programmer adapter that is loaded with firmware image.
 
    Otherwise, if you are using a new MAX32625PICO programmer (that is not part
@@ -498,28 +496,25 @@ Follow below steps to set up the board for cell measurement:
    before connecting it to the AD-BMSE2E3W-SL board. If you do not know how to
    load the image, follow the instructions below:\**
 
-   <hidden **Click here to learn how to flash the firmware image in the
-   MAX32625PICO** >
+   .. collapsible:: How to flash the firmware image in the MAX32625PICO
 
-   #.  Download the firmware image:
-      :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32690 <raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin+>`
-   #.  Do not connect the MAX32625PICO to the AD-BMSE2E3W-SL Board yet.
-   #.  Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
+      #. Download the firmware image:
+         :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32690 <raw+bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`
+      #. Do not connect the MAX32625PICO to the AD-BMSE2E3W-SL Board yet.
+      #. Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
 
-   #.  Press the button on the MAX32625PICO. **(Do not release the button until
-      the MAINTENANCE drive is mounted)**.
+      #. Press the button on the MAX32625PICO. **(Do not release the button until
+         the MAINTENANCE drive is mounted)**.
 
-      .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
-         :width: 400px
+         .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+            :width: 400px
 
-   #.  Release the button once the MAINTENANCE drive is mounted.
-   #.  Drag and drop (to the MAINTENANCE drive) the firmware image.
-   #.  After a few seconds, the MAINTENANCE drive will disappear and be replaced
-      by a drive named DAPLINK. This indicates that the process is complete, and
-      the MAX32625PICO can now be used to flash the firmware of the
-      AD-BMSE2E3W-SL Board.
-
-   </hidden>
+      #. Release the button once the MAINTENANCE drive is mounted.
+      #. Drag and drop (to the MAINTENANCE drive) the firmware image.
+      #. After a few seconds, the MAINTENANCE drive will disappear and be replaced
+         by a drive named DAPLINK. This indicates that the process is complete, and
+         the MAX32625PICO can now be used to flash the firmware of the
+         AD-BMSE2E3W-SL Board.
 
 5. Connect the alligator clip cable (red) to the VBATTP Pin or the 3rd of Pin 17
    header of the DC2472A battery emulator. Then insert the other end of the

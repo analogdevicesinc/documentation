@@ -98,8 +98,8 @@ Functions Declarations
 
    * - Function
      - Description
-
-\|
+   * - ``int32_t adum7701_init(adum7701_dev **dev, adum7701_init_param init_param)``
+     - Initialize the device
 
 .. code:: c
 
@@ -109,7 +109,7 @@ Functions Declarations
 
    * - Initialize the device.
 
-\|
+
 
 .. code:: c
 
@@ -122,7 +122,7 @@ Functions Declarations
 Types Declarations
 ~~~~~~~~~~~~~~~~~~
 
-\|
+
 
 .. code:: c
 
@@ -138,27 +138,14 @@ Types Declarations
            gpio_init_param filter_reset;
    } adum7701_init_param;
 
-\|
+
 
 Downloads
 ---------
 
 .. admonition:: Download
 
-   -
-
-    .. figure:: :git-no-OS:`adum7701_fmc/adum7701.c`
-
-   -
-
-    .. figure:: :git-no-OS:`adum7701_fmc/adum7701.h`
-
-   -
-
-    .. figure:: :git-no-OS:`adum7701_fmc`
-
-   -
-
-    .. figure:: :git-hdl:`adum7701:/`
-
-bbbbbbbb
+   | :git-no-OS:`adum7701_fmc/adum7701.c`
+   | :git-no-OS:`adum7701_fmc/adum7701.h`
+   | :git-no-OS:`adum7701_fmc`
+   | :git-hdl:`adum7701:/`

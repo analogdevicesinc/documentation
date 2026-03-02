@@ -15,8 +15,6 @@ Transmit
 
 Key component:
 
-.. list-table::
-
    * - :adi:`AD9162`
      - The AD9162 is a high performance, 16-bit digital-to-analog converter
        (DAC) that supports data rates to 6 GSPS. The DAC core is based on a
@@ -24,8 +22,6 @@ Key component:
        enables an effective DAC update rate of up to 12 GSPS in some modes. The
        high dynamic range and bandwidth makes these DACs ideally suited for the
        most demanding high speed radio frequency (RF) DAC applications.
-
-.. list-table::
 
    * - :adi:`ADL5240`
      - The ADL5240 is a high performance, digitally controlled variable gain
@@ -40,8 +36,6 @@ Receive
 
 Key component:
 
-.. list-table::
-
    * - :adi:`AD9625`
      - The AD9625 is a 12-bit monolithic sampling analog-to-digital converter
        (ADC) that operates at conversion rates of up to 2.6 giga samples per
@@ -52,8 +46,6 @@ Key component:
        systems, and a wide assortment of military electronics applications, such
        as radar and jamming/antijamming measures.
 
-.. list-table::
-
    * - :adi:`HMC1119`
      - The HMC1119 is a broadband, highly accurate, 7-bit digital attenuator,
        operating from 0.1 GHz to 6.0 GHz with 31.5 dB attenuation control range
@@ -63,8 +55,6 @@ Clock
 -----
 
 Key component:
-
-.. list-table::
 
    * - :adi:`ADF4355`
      - The ADF4355 allows implementation of fractional-N or integer-N
@@ -78,8 +68,6 @@ Key component:
        isolation, the RF output stage can be muted. The mute function is both
        pin and software controllable.
 
-.. list-table::
-
    * - :adi:`HMC361`
      - The HMC361S8G(E) is a low noise Divide-by-2 Static Divider with InGaP
        GaAs HBT technology in an 8 lead surface mount plastic package. This
@@ -92,8 +80,6 @@ Power
 -----
 
 Key component:
-
-.. list-table::
 
    * - :adi:`ADM7170`
      - 6.5 V, 500 mA, Ultralow Noise, High PSRR, Fast Transient Response CMOS
@@ -129,8 +115,6 @@ Power Level Monitoring
 ----------------------
 
 Key component:
-
-.. list-table::
 
    * - :adi:`AD7291`
      - 8-Channel, I2C, 12-Bit SAR ADC with Temperature Sensor

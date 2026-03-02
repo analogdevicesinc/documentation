@@ -5,8 +5,6 @@
 Lab 4: Sidelobes and Beam Tapering
 ==================================
 
---------------
-
 Training Objective
 ------------------
 

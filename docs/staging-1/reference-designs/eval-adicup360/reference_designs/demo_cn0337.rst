@@ -181,36 +181,36 @@ The software for the **ADuCM360_demo_cn0337** demo can be found here:
 Configuring the Software Parameters
 -----------------------------------
 
-- Converter operation mode - :green:`AD7091R_OPERATION_MODE` - POWER_DOWN to
-  select power-down AD7091R mode of operation or NORMAL for normal mode
-  (*AD7091R.h*).
+Converter operation mode - :green:`AD7091R_OPERATION_MODE` - POWER_DOWN to
+select power-down AD7091R mode of operation or NORMAL for normal mode
+(*AD7091R.h*).
 
 ::
 
    #define AD7091R_OPERATION_MODE      POWER_DOWN
 
-- Converter scan time - :green:`SCAN_TIME` - how often (msec) to read conversion
-  results (*AD7091R.h*).
+Converter scan time - :green:`SCAN_TIME` - how often (msec) to read conversion
+results (*AD7091R.h*).
 
 ::
 
    #define SCAN_TIME          500
 
--  Converter reference voltage - :green:`VREF` - reference voltage (V) for
-  AD7091R converter (*AD7091R.h*).
+Converter reference voltage - :green:`VREF` - reference voltage (V) for
+AD7091R converter (*AD7091R.h*).
 
 ::
 
    #define VREF              2.5
 
-- RTD resistance calculation method - :green:`RTD_FORMULA` - this parameter can
-  be set as TRANSFER_FUNCTION or TWO_POINT_CALIBRATION (*CN0337.h*).
+RTD resistance calculation method - :green:`RTD_FORMULA` - this parameter can
+be set as TRANSFER_FUNCTION or TWO_POINT_CALIBRATION (*CN0337.h*).
 
 ::
 
    #define RTD_FORMULA     TRANSFER_FUNCTION
 
-- RTD parameters - all needed parameters for RTD calculations (*CN0337.h*).
+RTD parameters - all needed parameters for RTD calculations (*CN0337.h*).
 
 ::
 
@@ -299,4 +299,4 @@ The **RTE** folder contains device and system related files:
 - system.rteconfig - Allows the user to select the peripherial components they
   need, along with the startup and ARM cmsis files needed for the project.
 
-// End of Document //
+

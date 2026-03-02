@@ -33,31 +33,37 @@ EV-COG-AD4050LZ**
 
 #. :dokuwiki:`Introduction <ev-cog-ad4050w/introduction>`
 
-#.
-   :dokuwiki:`Software Packs & Board Support Package <ev-cog-ad4050w/packs_bsp>`:EV-COG-AD4050WZ software architecture is categorized into 2 groups as below.
+#. :dokuwiki:`Software Packs & Board Support Package <ev-cog-ad4050w/packs_bsp>`:
+   EV-COG-AD4050WZ software architecture is categorized into 2 groups as below.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/aducm4050.png
       :width: 400px
 
-::
+  - :dokuwiki:`Introduction <ev-cog-ad4050w/introduction>`
 
-   - [[.:ev-cog-ad4050lz:software:aducm4x50| Analog Devices ADuCM4x50 Device Support]]
-   - [[.:ev-cog-ad4050w:software:eval-cog-ad4050wz| Analog Devices EV-COG-AD4050 Off-Chip Drivers and Examples]]
-- [[.:ev-cog-ad4050w:quickstart|QuickStart Guide]]
-   -
-     [[resources:eval:user-guides:ev-cog-ad4050wz:quickstart_guide:cces|EV-COG-AD4050WZ with CrossCore Embedded Studio ]]
-   -
-     [[resources:eval:user-guides:ev-cog-ad4050wz:quickstart_guide:IAR|EV-COG-AD4050WZ with IAR Embedded Workbench for ARM ]]
-- [[.:ev-cog-ad4050w:hw_details| Hardware Details]]
-   - [[.:ev-cog-ad4050w:Cog_HW_UserGuide| EV-COG-AD4050WZ MCU Cog ]]
-           *[[.:ev-cog-ad3029lz: powermeasurement| Power Measurement on
-           EV-COG-AD4050WZ MCU COG]]
-- [[.:ev-cog-ad4050w:tools_driver| Development Tools & Driver]]
-   - [[resources:eval:user-guides:ev-cog-ad4050w:tools:cces_download|CrossCore
-     Embedded Studio Download & Install]]
-         *[[resources:ev:user-guides:ev-cog-ad4050w:tools:cces_guide|CrossCore
-         Embedded Studio Quickstart Userguide]]
-   - [[resources:eval:user-guides:ev-cog-ad4050lz:tools:hardware_usb|Driver
-     installation for on-board debugger (CMSIS-DAP)]]
-- [[.:ev-cog-ad4050w:example_project |Example Project ]]
-- [[.:ev-cog-ad4050lz:help_support|Help & Support]]
+  - :dokuwiki:`Software Packs & Board Support Package <ev-cog-ad4050w/packs_bsp>`/
+    EV-COG-AD4050WZ software architecture is categorized into 2 groups as below.
+
+    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/aducm4050.png
+
+    - :dokuwiki:` Analog Devices ADuCM4x50 Device Support <ev-cog-ad4050lz/software/aducm4x50>`
+    - :dokuwiki:` Analog Devices EV-COG-AD4050 Off-Chip Drivers and Examples <ev-cog-ad4050w/software/eval-cog-ad4050wz>`
+
+  - :dokuwiki:`QuickStart Guide <ev-cog-ad4050w/quickstart>`
+
+    - :dokuwiki:`EV-COG-AD4050WZ with CrossCore Embedded Studio  <resources/eval/user-guides/ev-cog-ad4050wz/quickstart_guide/cces>`
+    - :dokuwiki:`EV-COG-AD4050WZ with IAR Embedded Workbench for ARM  <resources/eval/user-guides/ev-cog-ad4050wz/quickstart_guide/IAR>`
+
+  - :dokuwiki:` Hardware Details <ev-cog-ad4050w/hw_details>`
+
+    - :dokuwiki:` EV-COG-AD4050WZ MCU Cog  <ev-cog-ad4050w/Cog_HW_UserGuide>`
+    - :dokuwiki:` Power Measurement on EV-COG-AD4050WZ MCU COG <ev-cog-ad3029lz/ powermeasurement>`
+
+  - :dokuwiki:` Development Tools & Driver <ev-cog-ad4050w/tools_driver>`
+
+    - :dokuwiki:`CrossCore Embedded Studio Download & Install <resources/eval/user-guides/ev-cog-ad4050w/tools/cces_download>`
+    - :dokuwiki:`CrossCore Embedded Studio Quickstart Userguide <resources/eval/user-guides/ev-cog-ad4050w/tools/cces_guide>`
+    - :dokuwiki:`Driver installation for on-board debugger (CMSIS-DAP) <resources/eval/user-guides/ev-cog-ad4050lz/tools/hardware_usb>`
+
+  - :dokuwiki:`Example Project <ev-cog-ad4050w/example_project>`
+  - :dokuwiki:`Help & Support <ev-cog-ad4050lz/help_support>`

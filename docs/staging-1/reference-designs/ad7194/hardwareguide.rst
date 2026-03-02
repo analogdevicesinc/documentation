@@ -19,26 +19,23 @@ section, set up the evaluation and SDP boards as detailed in this section.
 
 #. Connect the EVAL-AD7194ASDZ to the controller board
 
-   #. **Option A:** Connect the EVAL-AD7194ASDZ to the EVAL-SDP-CK1Z
+#. **Option A:** Connect the EVAL-AD7194ASDZ to the EVAL-SDP-CK1Z
 
-::
+   Using the 120 pin connector.
+   Screw the two boards together using the plastic screw-washer set included in
+   the evaluation board kit to ensure that the boards are connected firmly
+   together.
+   
+   Using the Arduino Connectors
+   
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/sdp_connect.png
 
-   - Using the 120 pin connector
-*  Screw the two boards together using the plastic screw-washer set included in
-  the evaluation board kit to ensure that the boards are connected firmly
-  together.
+#. **Option B:** Connect the EVAL-AD7194ASDZ to the EVAL-SDP-CB1Z
 
-::
-
-   - Using the Arduino Connectors {{ :resources:eval:user-guides:ad7190:sdp_connect.png?400 |}}
-
-::
-
-   - **Option B:** Connect the EVAL-AD7194ASDZ to the EVAL-SDP-CB1Z
-* Using the 120 pin connector
-    *  Screw the two boards together using the plastic screw-washer set included
-      in the evaluation board kit to ensure that the boards are connected firmly
-      together.
+   Using the 120 pin connector.
+   Screw the two boards together using the plastic screw-washer set included
+   in the evaluation board kit to ensure that the boards are connected firmly
+   together.
 
 Block Diagram
 -------------
@@ -342,14 +339,15 @@ except for SDO/RDY, which is an output).
 Serial communication options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. SDP-B board and the respective 120 pin SDP connector.
+SDP-B board and the respective 120 pin SDP connector.
 
-::
+When using the SDP-B connection (120 pin) The evaluation board connects via the
+serial peripheral interface (SPI) to the Blackfin®
+:adi:`ADSP-BF527 <en/products/adsp-bf527.html>` on the SDP-B board.
 
-   *When using the SDP-B connection (120 pin) The evaluation board connects via the serial peripheral interface (SPI) to the Blackfin® [[adi>en/products/adsp-bf527.html|ADSP-BF527]] on the SDP-B board.
- - Arduino connection SDP-K1
- - PMOD connector
- - Standalone mode
+- Arduino connection SDP-K1
+- PMOD connector
+- Standalone mode
 
 For an introduction to the Serial Peripheral Interface (SPI), click
 :adi:`here <en/analog-dialogue/articles/introduction-to-spi-interface.html>`
@@ -362,10 +360,10 @@ Reference Options
 
 #. **DEFAULT** :adi:`ADR4525 <en/products/adr4525.html>` On Board external
    reference on REFIN1+
-#.  :adi:`LTC6655LN-2.5/LTC6655LN-4.096 <en/products/ltc6655.html>` On Board
+#. :adi:`LTC6655LN-2.5/LTC6655LN-4.096 <en/products/ltc6655.html>` On Board
    external reference on REFIN+
 
-- Option to use ultra low noise reference
+**Option to use ultra low noise reference**
 
 #. External Reference on REFIN1+ Connector J1
 #. AVDD as Reference via R25
@@ -379,17 +377,18 @@ Software
 
 Board should be correctly connected to ACE
 
-::
+- **Option A:** Open AD7193 memory map
+  Search for the Configuration register
 
-   - **Option A:** Open AD7193 memory map
-     Search for the Configuration register
-    - Set the REFSEL[] to the desired reference source by using these bits
-         - **REFSEL[0]: External reference applied between REFIN1(+) and REFIN1(−).**
-         - **REFSEL[1]:External reference applied between P1/REFIN2(+) and P0/REFIN2(-) pins.**
-   - **Option B:** Open AD7194 Chip View
-      - Right click on ADC block
-      - Select Reference Source from the Reference Select option given as highlighted(1) below in the picture.
-      - Click on Apply Changes as highlighted(2) below.
+   - Set the REFSEL[] to the desired reference source by using these bits
+   - **REFSEL[0]: External reference applied between REFIN1(+) and REFIN1(−).**
+   - **REFSEL[1]:External reference applied between P1/REFIN2(+) and P0/REFIN2(-) pins.**
+
+- **Option B:** Open AD7194 Chip View
+
+   - Right click on ADC block
+   - Select Reference Source from the Reference Select option given as highlighted(1) below in the picture.
+   - Click on Apply Changes as highlighted(2) below.
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/refsel.png
    :width: 400px

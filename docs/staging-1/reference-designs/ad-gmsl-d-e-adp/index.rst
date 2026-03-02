@@ -1,9 +1,9 @@
 .. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-gmsl-d-e-adp
 
-.. _ad-gmsl-d-e-adp:
+.. _ad-gmsl-d-e-adp-DUPLICATED:
 
-AD-GMSL-D-E-ADP# User Guide
-===========================
+AD-GMSL-D-E-ADP
+===============
 
 .. important::
 
@@ -99,9 +99,11 @@ The installation steps are as follows:
 
 #. Connect the **AD-GMSL-D-E-ADP# GMSL adapter** to the Deserializer (EvKit)
    through the Samtec board-to-board connector.
-#. Make sure that **AD-GMSL-D-E-ADP# GMSL adapter** is firmly attached and evenly seated in the Samtec port. .. important::
+#. Make sure that **AD-GMSL-D-E-ADP# GMSL adapter** is firmly attached and evenly seated in the Samtec port.
 
-   Do not overtighten the screws as this may cause the EvKit PCB to bend.
+   .. important::
+
+      Do not overtighten the screws as this may cause the EvKit PCB to bend.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/attaching_ev_kit_to_the_adapter.png
       :width: 600px

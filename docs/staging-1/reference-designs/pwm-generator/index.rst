@@ -117,8 +117,8 @@ connect to the NUCLEO board:
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pwm-generator/pwm-generator-sig-1.jpg
    :width: 400px
 
-  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pwm-generator/pwm-generator-sig-2.jpg
-     :width: 400px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/pwm-generator/pwm-generator-sig-2.jpg
+   :width: 400px
 
 Finally, click on ``Apply`` to send the changes to the PWM generator, which will
 then take immediate effect. You can then ``Save`` and ``Load`` these settings

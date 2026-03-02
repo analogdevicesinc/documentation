@@ -11,32 +11,35 @@ show documentation and software downloads.
 
 ++++ ADIS1613x \|
 
-.. list-table::
+.. todo::
 
-   * - .. todo:: .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
+   .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
+      :start-after: .. start-adis1613x-overview
+      :end-before: .. end-adis1613x-overview
 
-   :start-after: .. start-adis1613x-overview
-   :end-before: .. end-adis1613x-overview
+.. todo::
 
-   * - .. todo:: .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
+   .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
+      :start-after: .. start-adis1613x-breakout-board
+      :end-before: .. end-adis1613x-breakout-board
 
-   :start-after: .. start-adis1613x-breakout-board
-   :end-before: .. end-adis1613x-breakout-board
+.. todo::
 
-   * - .. todo:: .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
+   .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
+      :start-after: .. start-adis1613x-supply-selection
+      :end-before: .. end-adis1613x-supply-selection
 
-   :start-after: .. start-adis1613x-supply-selection
-   :end-before: .. end-adis1613x-supply-selection
+.. todo::
 
-   * - .. todo:: .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
+   .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
+      :start-after: .. start-adis1613x-software-download
+      :end-before: .. end-adis1613x-software-download
 
-   :start-after: .. start-adis1613x-software-download
-   :end-before: .. end-adis1613x-software-download
+.. todo::
 
-   * - .. todo:: .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
-
-   :start-after: .. start-adisusb:-pc-evaluation
-   :end-before: .. end-adisusb:-pc-evaluation
+   .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
+      :start-after: .. start-adisusb:-pc-evaluation
+      :end-before: .. end-adisusb:-pc-evaluation
 
    * - .. todo:: .. include: /resources/eval/user-guides/inertial-mems/imu/legacy-eval.rst
 

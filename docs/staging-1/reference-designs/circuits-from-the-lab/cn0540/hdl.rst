@@ -69,23 +69,13 @@ HDL Downloads
 
 .. admonition:: Download
 
-   -
-
-    .. figure:: :git-hdl:`projects/cn0540`
+   :git-hdl:`projects/cn0540`
 
 Software sources
 ----------------
 
 .. admonition:: Download
 
-   -
-
-    .. figure:: :git-no-OS:`master:/`
-
-   -
-
-    .. figure:: :git-linux:`master:/`
-
-   -
-
-    .. figure:: :git-linux:`master:/`
+   | :git-no-OS:`/`
+   | :git-linux:`/`
+   | :git-linux:`/`

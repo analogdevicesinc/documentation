@@ -60,7 +60,7 @@ ADRV9029 transceiver
    :width: 600px
 
 On successful completion of ADRV9029 transceiver programming, the TES GUI will
-display a ``\ **Programmed Successfully**\ `` message on the bottom right hand
+display a **Programmed Successfully** message on the bottom right hand
 corner of the ADRV9029 TES GUI as shown below.
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_programmingsuccessful.png
@@ -75,25 +75,25 @@ EVALUATING DPD ON THE ADRV9029 TRANSCEIVER
   location where the file is stored through the ``File to Load`` window. Load
   the same Tx waveforms to all 4 transmitters.
 
-Adjust the digital scaling if required and hit the ``Submit`` button to load the
-waveform to the eval platform. Finally, click on the play button next to
-``Tones`` to start transmitting the waveform on the ADRV9029 Transceiver.
+  Adjust the digital scaling if required and hit the ``Submit`` button to load the
+  waveform to the eval platform. Finally, click on the play button next to
+  ``Tones`` to start transmitting the waveform on the ADRV9029 Transceiver.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_loadingtxwaveform.png
-   :width: 600px
+  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_loadingtxwaveform.png
+     :width: 600px
 
 - Turn on the PA and bring the PA to it"s rated power by adjusting the Tx Front
   End attenuation on the ADRV9029 Transceiver through the ``Tx Attenuation``
   setting under the Transmitter tab of ADRV9029 TES GUI.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_txattenadjust.png
-   :width: 400px
+  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_txattenadjust.png
+     :width: 400px
 
 - Adjust the ORx gain under the ``Obs Rx`` tab of the ADRV9029 GUI to ensure
   that the observation channel is not saturating.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_orx_setup.png
-   :width: 400px
+  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_orx_setup.png
+     :width: 400px
 
 - Browse to the DFE Tab in the ADRV9029 TES GUI. Load a DPD model by clicking
   the ``Load Model from file`` button in the ``DPD Model Setup`` User Interface.
@@ -106,34 +106,29 @@ waveform to the eval platform. Finally, click on the play button next to
   model for a particular PA, follow the instructions on the DPD Model
   Optimization page.
 
-::
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpd_modelload.png
 
-   {{ :resources:eval:user-guides:adrv9029:adrv9029_dpd_modelload.png?800 |}}
-
-* Configure "DPD Tracking Config" parameters (default values provide a good
+- Configure "DPD Tracking Config" parameters (default values provide a good
   starting point).
 
-   {{ :resources:eval:user-guides:adrv9029:adrv9029_dpdtrackingconfig.png?400
-   |}}
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdtrackingconfig.png
 
-* In the "DPD functions" window under the DFE Tab of ADRV9029 TES GUI, select
+- In the "DPD functions" window under the DFE Tab of ADRV9029 TES GUI, select
   desired Tx channel to apply settings(In this example Tx1 is selected).
-* Apply DPD model on the M and C tables using "Apply Model on Device from M
+- Apply DPD model on the M and C tables using "Apply Model on Device from M
   Table" and "Apply Model on Device from C Table" buttons. The C-Table is a low
   power model only applicable in DPD Mode 2.
-* Apply DPD tracking configuration by clicking on "Apply Tracking Config"
+- Apply DPD tracking configuration by clicking on "Apply Tracking Config"
   button.
-* Run Path Delay initial calibration using "Run Path Delay Init Cal" button.
-* Click "Enable DPD on selected channels (only)" to enable DPD Tracking.
+- Run Path Delay initial calibration using "Run Path Delay Init Cal" button.
+- Click "Enable DPD on selected channels (only)" to enable DPD Tracking.
 
-     {{
-     :resources:eval:user-guides:adrv9029:adrv9029_dpdtrackingcal_enable.png?400
-     |}}
+  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdtrackingcal_enable.png
 
 - Now the DPD tracking must be enabled and running. The DPD status can be
   monitored by selecting the Tx channel and clicking the ``Get DPD Status and
   Statistics`` button. Ensure that the error status returns ``No Error`` and the
   ``Iteration Count`` and ``Update Count`` fields are incrementing
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdstatus.png
-   :width: 300px
+  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdstatus.png
+     :width: 300px

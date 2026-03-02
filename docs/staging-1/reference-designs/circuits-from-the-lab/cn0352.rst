@@ -33,8 +33,6 @@ bandwidth of RS485.
    ADI MAKES NO GUARANTEES TO THE SAFETT AND TAKES NO RESPONSIBILITY TO ANY
    POTENTIAL SAFETY HAZARD DURING DEMONSTRATION.
 
---------------
-
 Required Equipment
 ------------------
 
@@ -54,8 +52,6 @@ Required Equipment
   Li-ion battery with integrated protection circuit is highly recommended)
 - Battery holder board in order to connect battery to EVAL-CN0352-EB1Z
   evaluation system.
-
---------------
 
 Evaluation System Setup
 -----------------------
@@ -446,73 +442,81 @@ Configuration Tab
 '''''''''''''''''
 
 For easy to do the operation and see the result, the **Configuration** block and
-**Battery Status**,\ **Test Procedule** on the same tab.
+**Battery Status**, **Test Procedule** on the same tab.
 
-- Configuration
+Configuration
 
-  - *Communication*
+* *Communication*
 
-::
+  * COM: Select the right COM Port on your PC that stand for the USB to RS485 adapter.
+  * Baudrate: Select the COM Port Baudrate. 115200 is recommended.
 
-   * //COM//: Select the right COM Port on your PC that stand for the USB to RS485 adapter.
-   * //Baudrate//: Select the COM Port Baudrate. 115200 is recommended.
-* //Testing Configuration//
- * //Charging Configuration//
-   * //Input Current Limitation//: The maximum current that going into the VIN
-     pin of [[adi>adp5065.html|ADP5065]]. See
-     {{http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf|ADP5065
-     Datasheet}} for more details.
-   * //Trickle Vlotage Threshold//: The charging voltage thershold of trickle
-     charge mode. Trickle Charging is a charging mode of
-     [[adi>adp5065.html|ADP5065]] with small charging current to reset the
-     battery pack protection circuit and lift the voltage to safe level for fast
-     charging. See
-     {{http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf|ADP5065
-     Datasheet}} for more details.
-   * //Trickle Current Threshold//: The charging current of trickle charge mode.
-     See
-     {{http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf|ADP5065
-     Datasheet}} for more details.
-   * //Fast Charge Current//: The configurable charing current during constant
-     current charging stage of [[adi>adp5065.html|ADP5065]]. See
-     {{http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf|ADP5065
-     Datasheet}} for more details.
-   * //Charge Termination Voltage//: The termination voltage of constant current
-     fast charging mode of [[adi>adp5065.html|ADP5065]]. See
-     {{http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf|ADP5065
-     Datasheet}} for more details.
-   * //Charge Termination Current//: The termination charging current of
-     constant voltage charging mode of [[adi>adp5065.html|ADP5065]]. See
-     {{http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf|ADP5065
-     Datasheet}} for more details.
- * //Discharging Configuration//: The maximum current that going into the VIN
-   pin of [[adi>adp5065.html|ADP5065]]. See
-   {{http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf|ADP5065
-   Datasheet}} for more details.
-   * //Step//: Discharging stage with configurable discharging current and
-     termination voltage.
-     * //Current//: Constant current of discharging stage.
-     * //Voltage//: Termination voltage of discharging stage.
-* Battery Status
- * //Battery Info//: Battery Informaiotn
-     * //Battery NO.//: Battery Serial Number. NO.1 is the 1st Channel on the
-       EVAL-CN0352-EB1Z with minimum Module ID. The value is from 0 to 2039.
-     * //Module ID//: The Module ID that have the current active battery
-       channel. The value is from 1 to 255.
-     * //Channel//: The channel number of current active battery channel. The
-       value is from 0 to 7.
-* Test Procedule : There are 7 status during the testing. The current status
-  will be highlighted.
- * //IDLE//: Idle status.
- * //Trickle//: Trickle charging status.
- * //Fast CC//: Constant Current Fast Charging Status.
- * //Fast CV//: Constant Voltage Fast Charging Status.
- * //Discharge Step//: Three stages for discharging process.
- * //Cycles//: Shows the number of how many charging-to-discharging cycles that
-   have been completed.
- * //Test Complete//: If the number of Cycles that has completed is equal to the
-   number set in Test Cycles in the configuration block, then the whole test is
-   completed.
+* *Testing Configuration*
+
+  * *Charging Configuration*
+
+* *Input Current Limitation*: The maximum current that going into the VIN
+  pin of :adi:`ADP5065`. See
+  :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
+  for more details.
+* *Trickle Vlotage Threshold*: The charging voltage thershold of trickle
+  charge mode. Trickle Charging is a charging mode of :adi`ADP5065` with small
+  charging current to reset the battery pack protection circuit and lift the
+  voltage to safe level for fast charging. See
+  :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
+  for more details.
+* *Trickle Current Threshold*: The charging current of trickle charge mode.
+  See
+  :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
+  Datasheet}} for more details.
+* *Fast Charge Current*: The configurable charing current during constant
+  current charging stage of :adi:`ADP5065`. See
+  :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
+  for more details.
+* *Charge Termination Voltage*: The termination voltage of constant current
+  fast charging mode of :adi:`ADP5065`. See
+  :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
+  for more details.
+* *Charge Termination Current*: The termination charging current of
+  constant voltage charging mode of :adi:`ADP5065`. See
+  :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
+  for more details.
+
+* *Discharging Configuration*: The maximum current that going into the VIN
+  pin of :adi:`ADP5065. See
+  :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
+  for more details.
+
+  * *Step*: Discharging stage with configurable discharging current and
+    termination voltage.
+  * *Current*: Constant current of discharging stage.
+  * *Voltage*: Termination voltage of discharging stage.
+
+**Battery Status**
+
+* *Battery Info*: Battery Informaiotn
+
+  * *Battery NO.*: Battery Serial Number. NO.1 is the 1st Channel on the
+    EVAL-CN0352-EB1Z with minimum Module ID. The value is from 0 to 2039.
+  * *Module ID*: The Module ID that have the current active battery
+    channel. The value is from 1 to 255.
+  * *Channel*: The channel number of current active battery channel. The
+    value is from 0 to 7.
+
+**Test Procedule**
+
+There are 7 status during the testing. The current status will be highlighted.
+
+- *IDLE*: Idle status.
+- *Trickle*: Trickle charging status.
+- *Fast CC*: Constant Current Fast Charging Status.
+- *Fast CV*: Constant Voltage Fast Charging Status.
+- *Discharge Step*: Three stages for discharging process.
+- *Cycles*: Shows the number of how many charging-to-discharging cycles that
+  have been completed.
+- *Test Complete*: If the number of Cycles that has completed is equal to the
+  number set in Test Cycles in the configuration block, then the whole test is
+  completed.
 
 Battery Plots
 '''''''''''''

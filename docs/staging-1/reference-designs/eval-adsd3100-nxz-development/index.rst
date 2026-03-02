@@ -355,9 +355,6 @@ Stage 2
    frame.getDataDetails(frameType, fDetails);
    g.write((char*)data1, fDetails.width* fDetails.height * sizeof(uint16_t));
    ...
-}
-
---------------
 
 first-frame.py
 --------------

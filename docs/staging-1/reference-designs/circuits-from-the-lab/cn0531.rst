@@ -50,10 +50,10 @@ Connectors and Configuration
    :header-rows: 1
 
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0531_bottom.jpg
-      :width: 600px
+          :width: 600px
 
- -
- -
+     -
+     -
    * - Supply options
      -
      -
@@ -155,4 +155,4 @@ Registration
    :reg:`Register <EVAL-CN0531-PMDZ?&v=RevB>` to receive all these great
    benefits and more!
 
-// End of Document //
+

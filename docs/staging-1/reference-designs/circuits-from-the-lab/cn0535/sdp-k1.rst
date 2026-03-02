@@ -67,7 +67,7 @@ Shown on below Figures the board setup for SDP-K1.
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/board_top.png
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/board_bot.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/board_bot.png
 
 SDP-K1
 ~~~~~~
@@ -94,11 +94,9 @@ Importing the EVAL-CN0535-FMCZ MBED Example program
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/mbed_link.png
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/mbed_link_2.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/mbed_link_2.png
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/mbed_link_3.png
-
--
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/mbed_link_3.png
 
 Connecting to a serial terminal application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -149,86 +147,61 @@ bandwidth measurements of 32 kHz.
 .. list-table::
    :header-rows: 1
 
-   * -
-     - Command
+   * - Command
      - Description
-
-.. list-table::
-
-   * - 1.
-     - Set LTC6373 PGIA Gain/Mode
+   * - 1. Set LTC6373 PGIA Gain/Mode
      - Change the :adi:`LTC6373` Gain or Mode. The available option are Shutdown
        mode and gains of 0.25 V/V, 0.5 V/V, 1 V/V, 2 V/V, 4 V/V, 8 V/V, 1 6V/V.
-   * - 2.
-     - Set ADA4945 FDA Power Mode
-     - Change the :adi:`ADA4945` Power Mode to:Full Power Mode or Low Power Mode
-       .
-   * - 3.
-     - Set AD7768-1 power mode
+   * - 2. Set ADA4945 FDA Power Mode
+     - Change the :adi:`ADA4945` Power Mode to: Full Power Mode or Low Power Mode.
+   * - 3. Set AD7768-1 power mode
      - Change the :adi:`AD7768-1` to Low, Median or Fast. Low power mode is
        recommended.
-   * - 4.
-     - Set AD7768-1 MCLK clock divider
+   * - 4. Set AD7768-1 MCLK clock divider
      - Change the :adi:`AD7768-1` clock divider to: /16, /8, /4 or /2. /16 is
        recommended.
-   * - 5.
-     - Set AD7768-1 filter type
+   * - 5. Set AD7768-1 filter type
      - Change the :adi:`AD7768-1` filter type used. Also allows for the
        oversampling ratio to be changed. Recommended is the Low ripple FIR
        Filter, oversampled by 32.
-   * - 6.
-     - Set AD7768-1 AIN buffers
+   * - 6. Set AD7768-1 AIN buffers
      - Adjust the :adi:`AD7768-1` buffers for both AIN+ and AIN-. It is
        recommended to turn on both AIN+ and AIN + precharge buffers.
-   * - 7.
-     - Set AD7768-1 REF buffers
+   * - 7. Set AD7768-1 REF buffers
      - Adjust the :adi:`AD7768-1` buffers for both REF+ and REF-. It is
        recommended to turn on both REF+ and REF- precharge REF buffers.
-   * - 8.
-     - Set AD7768-1 VCM output
+   * - 8. Set AD7768-1 VCM output
      - Choose the :adi:`AD7768-1` VCM output voltage, recommended is (AVDD1 –
        AVSS)/2.
-   * - 9.
-     - Set AD7768-1 data output mode
+   * - 9. Set AD7768-1 data output mode
      - Set the :adi:`AD7768-1` data output mode.
-   * - 10.
-     - Set AD7768-1 diagnostic mode
+   * - 10. Set AD7768-1 diagnostic mode
      - Change which diagnostic mode is used for the ADC.
-   * - 11.
-     - Set AD7768-1 Gains and Offsets
+   * - 11. Set AD7768-1 Gains and Offsets
      - Set :adi:`AD7768-1` Gain and Offset register.
-   * - 12.
-     - Read AD7768-1 master status
+   * - 12. Read AD7768-1 master status
      - Shows faults in :adi:`AD7768-1` master status register, allowing the user
        to pinpoint the source of problems.
-   * - 13.
-     - Read AD7768-1 desired register
+   * - 13. Read AD7768-1 desired register
      - Reads desire :adi:`AD7768-1` register.
-   * - 14.
-     - Read AD7768-1 data register
+   * - 14. Read AD7768-1 data register
      - Reads :adi:`AD7768-1` data register.
-   * - 15.
-     - Read AD7768-1 continuous mode data
+   * - 15. Read AD7768-1 continuous mode data
      - Reads Raw data from the ADC over a user-defined number of samples.
-   * - 16.
-     - Print AD7768-1 Continuous mode measured data
+   * - 16. Print AD7768-1 Continuous mode measured data
      - Prints previously read raw data to and converted into voltages, codes and
        read raw data the terminal. Logging the terminal will allow the user to
        use extract this data. Requires the "Read data" command to have been run.
-   * - 17.
-     - AD7768-1 Scratchpad Check
+   * - 17. AD7768-1 Scratchpad Check
      - Input an 8-bit number, if it is returned the ADC is interfacing with the
        software. This is a useful quick check for debugging and is good to run
        after setup.
-   * - 18.
-     - Reset AD7768-1 ADC
+   * - 18. Reset AD7768-1 ADC
      - Resets the ADC, either a soft reset over SPI or hard reset using the
        reset pin.
-   * - 19.
-     - Set to Board Default Config
+   * - 19. Set to Board Default Config
      - Set the board to default configurations.
-   * - 20.
-     - Update Vref and MCLK values
+   * - 20. Update Vref and MCLK values
      - Update the Vref and MCLK values.
 
 *End of Document*

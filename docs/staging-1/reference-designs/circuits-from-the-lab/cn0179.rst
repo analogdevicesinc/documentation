@@ -58,9 +58,15 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
 
 #. Extract the file **CN0179 Eval Software.zip** and open the file
    **setup.exe**.
+
    .. tip::
 
-   It is recommended that you install the :dokuwiki:`CN0179 Evaluation Software <ftp://ftp.analog.com/pub/cftl/CN0179/>` to the default directory path **C:\\Program Files\\Analog Devices\\CN0179\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
+      It is recommended that you install the
+      `CN0179 Evaluation Software <ftp://ftp.analog.com/pub/cftl/CN0179/>`
+      to the default directory path
+      **C:\\Program Files\\Analog Devices\\CN0179\\**
+      and all National Instruments products to
+      **C:\\Program Files\\National Instruments\\**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0179/cn0179-software-1.png
 
@@ -76,14 +82,17 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
    the installer for the **ADI SDP Drivers** will execute.
    .. tip::
 
-   It is recommended that you close all other applications before clicking **``Next``**. This will make it possible to update relevant system files without having to reboot your computer.
+      It is recommended that you close all other applications before clicking
+      **``Next``**. This will make it possible to update relevant system files
+      without having to reboot your computer.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0179/cn0179-software-4.png
 
 #. Press **``Next``** to set the installation location for the **SDP Drivers**.
+
    .. tip::
 
-   It is recommended that you install the drivers to the default directory path
+      It is recommended that you install the drivers to the default directory path
       **C:\\Program Files\\Analog Devices\\SDP\\Drivers**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0179/cn0179-sdp_installer-1.png
@@ -92,8 +101,6 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
    installation of all software. Click **``Finish``** when done.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0179/cn0179-sdp_installer-2.png
-
---------------
 
 PROCEDURES FOR CONNECTING THE HARDWARE
 --------------------------------------
@@ -137,8 +144,6 @@ OPENING AND ENABLING THE EVALUATION SOFTWARE
   is tristated and cannot be able to acquire data from the system. (Note: DAC
   register are unaffected when in power down mode).
 
---------------
-
 USING THE EVALUATION SOFTWARE
 -----------------------------
 
@@ -148,8 +153,6 @@ the Output Current while the other is for setting the DAC CODE.
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0179/cn0179-sofware-description.png
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0179/cn0179-sofware-description-0.png
-
---------------
 
 Descriptions:
 -------------
@@ -175,15 +178,15 @@ Descriptions:
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0179/cn0179-software-busy.png
 
-      - Busy
+      Busy
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0179/cn0179-software-inactive.png
 
-      - Inactive
+      Inactive
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0179/cn0179-software-error.png
 
-      - Error
+      Error
 
 #. **SDP Board Information** - provides details on the firmware version of the
    Blackfin used by the SDP board.
@@ -197,5 +200,3 @@ Registration
    videos, and more when you register your hardware.
    :reg:`Register <EVAL-CN0179-PMDZ?&v=Rev B>` to receive all these great
    benefits and more!
-
-// End of document //

@@ -80,7 +80,7 @@ Shock and Vibration
 
 - The
   :download:`https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/1510-107n_analog_devices_report.pdf`
- contains the results for MIL-STD-202G testing:
+  contains the results for MIL-STD-202G testing:
 - Method 201A:
 
   - Sinusoidal Vibration
@@ -113,7 +113,7 @@ Temperature
 
 The report listed above
 :download:`https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/1510-107n_analog_devices_report.pdf`
- also contains the results of MIL-STD-810G testing.
+also contains the results of MIL-STD-810G testing.
 
 The ADRV9361-Z7035 SDR 2X2 is rated for operation in the industrial temperature
 range (-40 to 85°C). Please take care to respect the individual device maximum

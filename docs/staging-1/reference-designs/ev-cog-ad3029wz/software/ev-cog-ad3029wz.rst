@@ -79,6 +79,6 @@ The software pack can be downloaded in several ways.
    #. `EV-COG-AD3029LZ BSP 3.1.0 (Latest) <http://download.analog.com/tools/EZBoards/COG_AD3029/Releases/AnalogDevices.EV-COG-AD3029LZ_BSP.3.1.0.pack>`__
    #. `EV-COG-AD3029LZ BSP 1.0.0 <http://download.analog.com/tools/EZBoards/COG_AD3029/Releases/AnalogDevices.EV-COG-AD3029LZ_BSP.1.0.0.pack>`__
 
-// End of Document //
+
 
 :dokuwiki:`Back </resources/eval/user-guides/ev-cog-ad3029lz>`

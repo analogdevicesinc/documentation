@@ -1,11 +1,12 @@
 .. imported from: https://wiki.analog.com/resources/eval/user-guides/adrv936x_rfsom/hardware
 
-======= ADRV936x RF SOM Hardware =======
+.. _adrv936x_rfsom hardware:
+
+ADRV936x RF SOM Hardware
+""""""""""""""""""""""""
 
 Whether you want to understand the changes between revisions, or just understand
 how to probe the PCB, this is where all the information should be.
-
-.. _adrv936x_rfsom hardware:
 
 ADRV936x - Mechanical
 =====================
@@ -41,18 +42,15 @@ between the ADRV9361-Z7035 and the ADRV9364-Z7020.
 
    The Footprint is common between the two parts:
 
-   ::
-
-        * {{:resources:eval:user-guides:adrv936x_rfsom:08_038702d_conn_dim.pdf|Mounting holes and physical dimensions}}
+   :dokuwiki:`Mounting holes and physical dimensions </resources/eval/user-guides/adrv936x_rfsom/08_038702d_conn_dim.pdf>`
 
    - Carrier Card Connector Dimensions:
 
-   ::
-
-        * {{:resources:eval:user-guides:adrv936x_rfsom:carrier_connector_locations.jpg?400|Connector Dimensions}}
+   :dokuwiki:`Connector Dimensions </resources/eval/user-guides/adrv936x_rfsom/carrier_connector_locations.jpg>`
 
    - ADRV9361-Z7035 Step file:
      :download:`https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/adrv9361-z7035.step.zip`
+
  A STEP-File is a widely used data exchange form of ISO 10303 which can
  represent 3D objects in Computer-aided design (CAD) and related information.
 
@@ -114,12 +112,10 @@ Why do a Rev D?
 ~~~~~~~~~~~~~~~
 
 - Improved the power structure and increased the 0.95V current from 2A to 6A
--  Added a
+- Added a
   `1000BASE-KX <https://en.wikipedia.org/wiki/Gigabit_Ethernet#1000BASE-KX>`__
   option for the Ethernet Phy (Ethernet Operation over Electrical Backplanes)
 - Improved the layout to accommodate the power changes.
-
---------------
 
 ADRV9364-Z7020 Hardware
 =======================
