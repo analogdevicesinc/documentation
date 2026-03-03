@@ -170,18 +170,27 @@ Build the doc and see the changes:
 
 .. shell::
 
-   ~/documentation/docs
-   $make html
+   ~/documentation
+   $ adoc serve --once
+
+Sphinx only rebuilds modified files, so subsequent builds are faster.
+If you encounter issues with the current build, try cleaning the cache with
+``cd docs ; make clean``.
 
 .. tip::
 
-   Sphinx only rebuilds modified files, so toctree changes may look like they
-   are not "applying" to the documentation.
-   Just rebuild the whole doc with ``make clean html`` if the output is confusing.
+   Use :external+doctools:ref:`serve sparse` to build only the pages you are
+   interested.
 
-Even better than having to run ``make html`` at every edit, you can leverage
-:external+doctools:ref:`author-mode` to have a live-updating instance of the doc,
-you just need to save the file and the build will be triggered automatically.
+   .. shell::
+
+      ~/documentation/docs
+      # Include only learning/**/* and solutions/**/*
+      $ adoc serve --once --sparse learning solutions
+
+:external+doctools:ref:`serve` also supports live-updating the doc (drop the
+``--once`` flag), you just need to save the file and the build will be
+triggered automatically.
 
 Adding images and other binary files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

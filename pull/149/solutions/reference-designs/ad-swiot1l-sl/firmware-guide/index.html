@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the EVAL-AD9084 evaluation board on various FPGA development boards. They will discuss how to program the bitstream, run a no-OS program or boot a Linux distribution." name="description" />
+<meta content="Development kit: AD-SWIOT1L-SL Software-configurable Analog and Digital I/O with 10BASE-T1L" name="description" />
 
-    <title>Quickstart &#8212; System Level Documentation  documentation</title>
+    <title>Firmware User Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
     <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="AD9084-FMCA-EBZ Virtex UltraScale+ VCU118/VCU128 Quick Start Guide" href="microblaze.html" />
-    <link rel="prev" title="Prerequisites" href="../prerequisites.html" />
+    <link rel="next" title="Software User Guide" href="../software-guide/index.html" />
+    <link rel="prev" title="Hardware User Guide" href="../hardware-guide/index.html" />
    
   
   
@@ -94,9 +94,14 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Quickstart</a><ul>
-<li><a class="reference internal" href="#supported-carriers">Supported carriers</a></li>
-<li><a class="reference internal" href="#supported-environments">Supported Environments</a></li>
+<li><a class="reference internal" href="#">Firmware User Guide</a><ul>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a><ul>
+<li><a class="reference internal" href="#system-setup">System Setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#updating-the-ad-swiot1l-sl-firmware">Updating the AD-SWIOT1L-SL Firmware</a></li>
+<li><a class="reference internal" href="#programming-the-ad-swiot1l-sl">Programming the AD-SWIOT1L-SL</a></li>
+<li><a class="reference internal" href="#building-your-own-firmware">Building Your Own Firmware</a></li>
 </ul>
 </li>
 </ul>
@@ -354,9 +359,10 @@ Content on this topic
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
@@ -370,13 +376,25 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17-1" id="toctree-collapse-13-17-1"/><div class="collapse"><a class="reference internal" href="../../ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-17-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../adalp2000/index.html">ADALP2000</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
@@ -386,31 +404,19 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20-1" id="toctree-collapse-13-20-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-20-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21-1" id="toctree-collapse-13-21-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-21-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21-1" id="toctree-collapse-13-21-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Quickstart</a><label for="toctree-collapse-13-21-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
-<li class="toctree-l4"><a class="reference internal" href="versal.html">Versal ACAP VCK190/VPK180</a></li>
-<li class="toctree-l4"><a class="reference internal" href="agilex.html">Intel Agilex 7 I-Series</a></li>
-<li class="toctree-l4"><a class="reference internal" href="new_usecase.html">Running a new JESD mode on hardware</a></li>
 </ul>
 </li>
 </ul>
@@ -447,10 +453,19 @@ Content on this topic
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
@@ -462,11 +477,11 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28-1" id="toctree-collapse-13-28-1"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-28-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
 </ul>
@@ -484,7 +499,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
 </ul>
@@ -492,12 +507,12 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/software_guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
 </ul>
@@ -572,214 +587,116 @@ Content on this topic
       <div class="documentwrapper">
         <div class="bodywrapper" id="top-anchor">
           <div class="body-header">
-  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD9084-FMCA-EBZ (Apollo)</a></li></ol></nav>
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-SWIOT1L-SL</a></li></ol></nav>
 </div>
           <div class="body" role="main">
             
-  <section id="quickstart">
-<span id="ad9084-quickstart"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading"></a></h1>
-<p>The Quick Start Guides provide a simple step by step instruction on how to do an
-initial system setup for the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9084" target="_blank">EVAL-AD9084</a> evaluation
-board on various FPGA development boards. They will discuss how to program the
-bitstream, run a no-OS program or boot a Linux distribution.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="microblaze.html">Virtex UltraScale+ VCU118/VCU128</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="microblaze.html#required-hardware">Required Hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="microblaze.html#required-software">Required Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="microblaze.html#building-the-hdl-project">Building the HDL project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="microblaze.html#build-the-linux-files">Build the Linux files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="microblaze.html#testing">Testing</a></li>
+  <section id="firmware-user-guide">
+<h1>Firmware User Guide<a class="headerlink" href="#firmware-user-guide" title="Link to this heading"></a></h1>
+<section id="required-hardware">
+<h2>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Development kit</strong>: <a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> Software-configurable Analog and Digital I/O with 10BASE-T1L</p></li>
+<li><p><strong>Power supplies</strong>: 24V power supply at minimum 2A</p></li>
+<li><p><strong>Programmer</strong>: <a class="icon adi reference external" href="https://www.analog.com/MAX32625PICO" target="_blank">MAX32625PICO</a> or any other similar programmer supporting the swd interface</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="versal.html">Versal ACAP VCK190/VPK180</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="versal.html#required-hardware">Required Hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="versal.html#required-software">Required Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="versal.html#building-the-hdl-project">Building the HDL project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="versal.html#building-the-linux-files">Building the Linux files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="versal.html#testing">Testing</a></li>
+<section id="system-setup">
+<h3>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Connect the AD-SWIOT1L-SL to the AD-T1LUSB2.0-EBZ using the single pair Ethernet cable.</p></li>
+<li><p>Connect the AD-T1LUSB2.0-EBZ to your PC using an usb cable.</p></li>
+<li><p>Connect the 24 V power supply to the AD-SWIOT1L-SL.</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="agilex.html">Intel Agilex 7 I-Series</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="agilex.html#required-hardware">Required Hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="agilex.html#required-software">Required Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="agilex.html#build-the-linux-files">Build the Linux files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="agilex.html#building-the-hdl-project">Building the HDL project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="agilex.html#programming-steps">Programming steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="agilex.html#testing">Testing</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="new_usecase.html">Running a new JESD mode on hardware</a></li>
-</ul>
-</div>
-<section id="supported-carriers">
-<span id="ad9084-carriers"></span><h2>Supported carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9084" target="_blank">EVAL-AD9084</a> is, by definition a “FPGA mezzanine card” (FMC),
-that means it needs a carrier to plug into.
-The carriers we support are:</p>
-<div class="table-wrapper docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Board</p></th>
-<th class="head"><p>AD9084-FMCA-EBZ</p></th>
-<th class="head"><p>Side A lanes</p></th>
-<th class="head"><p>Side B lanes</p></th>
-<th class="head"><p>FMC+ risers required</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a></p></td>
-<td><p>No</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a></p></td>
-<td><p>No</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></td>
-<td><p>No</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VCU118" target="_blank">VCU118</a></p></td>
-<td><p>Yes</p></td>
-<td><p>12</p></td>
-<td><p>12</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VCU128" target="_blank">VCU128</a></p></td>
-<td><p>Yes</p></td>
-<td><p>12</p></td>
-<td><p>12</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VCK190" target="_blank">VCK190</a></p></td>
-<td><p>Yes</p></td>
-<td><p>4</p></td>
-<td><p>4</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VPK180" target="_blank">VPK180</a></p></td>
-<td><p>Yes</p></td>
-<td><p>4</p></td>
-<td><p>4</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a></p></td>
-<td><p>No</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></td>
-<td><p>No</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/arria/10.html" target="_blank">Arria 10 SoC</a></p></td>
-<td><p>No</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10.html" target="_blank">Stratix 10 SoC</a></p></td>
-<td><p>No</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/agilex/7.html" target="_blank">Agilex 7 SoC I-Series</a></p></td>
-<td><p>Yes</p></td>
-<td><p>8</p></td>
-<td><p>8</p></td>
-<td><p>1</p></td>
-</tr>
-</tbody>
-</table>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/picture1.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/picture1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/picture1.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD-SWIOT1L-SL Hardware Setup</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/picture3.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/picture3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/picture3.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Connecting the <a class="icon adi reference external" href="https://www.analog.com/MAX32625PICO" target="_blank">MAX32625PICO</a> Programmer</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="clear-both break-after"></div><p>The system is accompanied by an open-source software stack and associated
+collateral, enabling a complete experience from evaluation and prototyping all
+the way to production firmware and applications development.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The system comes pre-programmed with a standard firmware. To work with
+<strong>Scopy</strong>, you need to flash the specific static ip firmware version.</p>
+<p><strong>Scopy</strong> will work only with the official
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/no-OS/releases/tag/swiot1l-v1.1.0" target="_blank">AD-SWIOT1L-SL firmware releases</a></p>
 </div>
 </section>
-<section id="supported-environments">
-<h2>Supported Environments<a class="headerlink" href="#supported-environments" title="Link to this heading"></a></h2>
-<p>The supported environments are:</p>
-<div class="table-wrapper docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Board</p></th>
-<th class="head"><p>HDL</p></th>
-<th class="head"><p>Linux Software</p></th>
-<th class="head"><p>No-OS Software</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VCU118" target="_blank">VCU118</a></p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>WIP</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VCU128" target="_blank">VCU128</a></p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>WIP</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VCK190" target="_blank">VCK190</a></p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>WIP</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VPK180" target="_blank">VPK180</a></p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>WIP</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/arria/10.html" target="_blank">Arria 10 SoC</a></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10.html" target="_blank">Stratix 10 SoC</a></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/agilex/7.html" target="_blank">Agilex 7 SoC I-Series</a></p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+</section>
+<section id="updating-the-ad-swiot1l-sl-firmware">
+<h2>Updating the AD-SWIOT1L-SL Firmware<a class="headerlink" href="#updating-the-ad-swiot1l-sl-firmware" title="Link to this heading"></a></h2>
+<p>To update the firmware on the AD-SWIOT1L-SL, the MAX32625PICO programmer is used as a swd interface to flash the new firmware image. The MAX32625PICO comes with a default bootloader that we need to replace.</p>
+<ol class="arabic">
+<li><p>Download the latest firmware for MAX32650FTHR: <a class="icon link reference external" href="https://github.com/analogdevicesinc/max32625pico-firmware-images/" target="_blank">MAX32625PICO firmware</a></p></li>
+<li><p>Set the MAX32625PICO in MAINTENANCE mode:</p>
+<ul>
+<li><p>Disconnect the MAX32625PICO from the PC and the AD-SWIOT1L-SL board.</p></li>
+<li><p>Plug the micro usb cable only in the MAX32625PICO.</p></li>
+<li><p>Keep the button on the MAX32625PICO pressed.</p></li>
+<li><p>Plug the micro usb cable into the PC.</p></li>
+<li><p>Once you see the MAINTENANCE drive being mounted, you may release the button.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/MAINTENANCE.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/MAINTENANCE.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/MAINTENANCE.jpg" style="width: 450px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Maintenance Mode - MAX32625PICO</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ul>
+</li>
+<li><p>Drag and drop (to the MAINTENANCE drive) the firmware image you previously downloaded.</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/picture1.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/picture1.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/picture1.jpg" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic simple">
+<li><p>After a few seconds, the MAINTENANCE drive will disappear and will be replaced
+by a drive named Daplink. Once this is done, the process is complete, and the
+MAX32625PICO may be used to flash the firmware on the AD-SWIOT1L-SL board.</p></li>
+</ol>
+</section>
+<section id="programming-the-ad-swiot1l-sl">
+<h2>Programming the AD-SWIOT1L-SL<a class="headerlink" href="#programming-the-ad-swiot1l-sl" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Connect the MAX32625PICO to the PC using the micro usb cable.</p></li>
+<li><p>Connect the MAX32625PICO to the AD-SWIOT1L-SL board using the 10-pin ribbon cable.</p></li>
+<li><p>Connect the 24 V power supply to the AD-SWIOT1L-SL. Make sure the board is powered up for the next steps.</p></li>
+</ul>
+<figure class="align-default" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/img_20230912_145550.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/m2k_review/docs/solutions/reference-designs/ad-swiot1l-sl/firmware-guide/img_20230912_145550.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">AD-SWIOT1L-SL Programming Setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>A Daplink should appear as mounted on your PC.</p></li>
+<li><p>Drag and drop the new firmware image into the Daplink drive. After a few
+seconds, the drive will be remounted.</p></li>
+<li><p>Check the Daplink directory and make sure there is no FAIL.TXT file. In case
+there is, repeat the drag and drop step. Otherwise, you may disconnect the
+MAX32625PICO from the AD-SWIOT1L-SL, since the firmware update is complete.</p></li>
+</ul>
+</section>
+<section id="building-your-own-firmware">
+<h2>Building Your Own Firmware<a class="headerlink" href="#building-your-own-firmware" title="Link to this heading"></a></h2>
+<p>The <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/swiot1l" target="_blank">AD-SWIOT1L-SL firmware</a> is
+based on Analog Devices’ open-source no-OS framework, which includes all the
+tools required for embedded code development and debugging as well as libraries
+enabling host-side connectivity for system configuration and data transfer over
+the uart the 10BASE-T1L interfaces. The firmware source code and related
+documentation can be found on the Analog Devices GitHub at the link above.</p>
 </section>
 </section>
 
@@ -787,8 +704,8 @@ The carriers we support are:</p>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../prerequisites.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Prerequisites</a>
-    <a href="microblaze.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD9084-FMCA-EBZ Virtex UltraScale+ VCU118/VCU128 Quick Start Guide</a>
+    <a href="../hardware-guide/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Hardware User Guide</a>
+    <a href="../software-guide/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Software User Guide</a>
               </div>
           
         </div>
