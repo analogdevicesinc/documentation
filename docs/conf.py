@@ -14,6 +14,7 @@ author = 'Analog Devices, Inc.'
 extensions = [
     "sphinx.ext.todo",
     "adi_doctools",
+    "sphinxcontrib.mermaid",
 ]
 
 needs_extensions = {
