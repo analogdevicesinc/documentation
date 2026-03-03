@@ -1,0 +1,62 @@
+.. _m2k devs:
+
+For Developers
+==============
+
+The people who typical read these pages are those who write custom software or
+HDL (for the FPGA) that run directly on the M2K device. This may put the M2K in
+different modes, and support different external USB devices (including USB/LAB,
+or USB/WiFi), extending the capabilities of the device, or completely changing
+the data that is transferred to the host. Since the goal of the project is to
+keep things as open as possible, the details on how to compile kernels, create
+bit files, assemble FIT files and load them into the device, should be found
+here.
+
+While we do have a few examples, and show how to re-create the default software
+loads, since this the hardware can be nearly a blank slate for your project, you
+can do anything you want.
+
+Content
+-------
+
+..
+   TODO Coming soon sections
+   Make sure all things are in ./devs
+
+#. Introduction *(Coming soon)*
+#. Hardware
+
+   #. Detailed Specifications *(Coming soon)*
+   #. :dokuwiki:`Schematics </university/tools/m2k/devs/hardware>`
+   #. Detailed Performance *(Coming soon)*
+   #. Accessing the Console\ *(Coming soon)* with the
+      :dokuwiki:`ADALM-JTAGUART </university/tools/uartjtag>` adapter
+   #. Accessing FPGA JTAG\ *(Coming soon)* with the
+      :dokuwiki:`ADALM-JTAGUART </university/tools/uartjtag>` adapter
+
+#. :external+hdl:doc:`index`
+
+   #. ``TODO :external+hdl:ref:`m2k```
+   #. :external+hdl:ref:`axi_ad9963`
+   #. :external+hdl:ref:`axi_adc_decimate`
+   #. :external+hdl:ref:`axi_dac_interpolate`
+   #. :external+hdl:ref:`axi_logic_analyzer`
+   #. :external+hdl:ref:`axi_adc_trigger`
+   #. :external+hdl:ref:`util_var_fifo`
+   #. :external+hdl:ref:`util_extract`
+
+#. Device Drivers
+
+   #. :dokuwiki:`AXI ADC HDL Linux Driver </resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+   #. :dokuwiki:`AXI DAC HDL Linux Driver </resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+   #. AXI DMAC Linux Driver
+   #. etc.
+
+#. Building the Firmware image from source
+
+   #. :ref:`pluto-m2k obtaining_the_sources`
+   #. :ref:`pluto-m2k building_the_image`
+
+#. :ref:`pluto-m2k usb_otg_host`
+#. :ref:`pluto-m2k firmware dfu_update`
+#. :ref:`pluto-m2k reboot`
