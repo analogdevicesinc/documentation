@@ -1,0 +1,12 @@
+﻿Jumper,Function,Default Setting
+P15,Input attenuation,"1-2 (5:3 attenuation, +/-5V full-scale)"
+P10,Positive FDA input,1-2 (Direct connection)
+P12,Negative FDA input,2-3 (Ground)
+P5,Filter RA,"1-2 (RAL, 12.k total)"
+P8,Filter RB,"1-2 (RBL, 1.2k)"
+P16,Filter CI,1-3 (not connected)
+P14,Filter CF,1-3 (not connected)
+P11,Gain select,1-3 (unity gain)
+P9,FDA Mode,1-2 (full power mode)
+"P29, P30",Extra CIN,Not installed
+P23,Ref Disturbance Bypass,Not installed
