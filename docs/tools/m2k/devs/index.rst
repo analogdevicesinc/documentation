@@ -3,6 +3,17 @@
 For Developers
 ==============
 
+.. image:: ../images/adalm2000.jpg
+   :align: right
+   :width: 400px
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :glob:
+
+   hardware
+
 The people who typical read these pages are those who write custom software or
 HDL (for the FPGA) that run directly on the M2K device. This may put the M2K in
 different modes, and support different external USB devices (including USB/LAB,
@@ -24,7 +35,7 @@ Content
    Make sure all things are in ./devs
 
 #. Introduction *(Coming soon)*
-#. Hardware
+#. :ref:`m2k hardware`
 
    #. Detailed Specifications *(Coming soon)*
    #. :dokuwiki:`Schematics </university/tools/m2k/devs/hardware>`
@@ -36,7 +47,7 @@ Content
 
 #. :external+hdl:doc:`index`
 
-   #. ``TODO :external+hdl:ref:`m2k```
+   #. :external+hdl:ref:`m2k`
    #. :external+hdl:ref:`axi_ad9963`
    #. :external+hdl:ref:`axi_adc_decimate`
    #. :external+hdl:ref:`axi_dac_interpolate`
