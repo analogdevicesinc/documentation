@@ -1,0 +1,10 @@
+﻿Connection,Function,Range
+P17,Fly-wire/m2k input,"Pin 1: +/-3 V, +/-5 V when P10 set to filter path"
+,,Pin 2: +/-3 V
+J1,IN+,"+/-3 V, +/-5 V when P10 set to filter path"
+J2,IN-,+/-3V
+P4,Phono input,"Left (tip): +/-3 V, +/-5 V when P10 set to filter path"
+,,Right: +/-3 V
+P24,Reference interference input,+/- 5V
+P6,FDA input,For monitoring only
+P7,FDA output,For monitoring only
