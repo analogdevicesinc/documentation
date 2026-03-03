@@ -13,7 +13,7 @@
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="EVAL-CN0359-EBZ" href="../../eval-cn0359-ebz/index.html" />
+    <link rel="next" title="EVAL-ADRV904x" href="../../eval-adrv904x/index.html" />
     <link rel="prev" title="Quick start" href="index.html" />
    
   
@@ -103,15 +103,19 @@
 <li><a class="reference internal" href="#creating-the-setup">Creating the setup</a></li>
 <li><a class="reference internal" href="#boot-messages">Boot messages</a></li>
 <li><a class="reference internal" href="#verifying-the-setup">Verifying the setup</a></li>
-<li><a class="reference internal" href="#using-iio-oscilloscope">Using IIO Oscilloscope</a></li>
-<li><a class="reference internal" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adi-iio-oscilloscope">ADI IIO Oscilloscope</a><ul>
+<li><a class="reference internal" href="#remote">Remote</a></li>
+<li><a class="reference internal" href="#locally">Locally</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-no-os">Using no-OS</a><ul>
-<li><a class="reference internal" href="#building-the-project">Building the project</a></li>
-<li><a class="reference internal" href="#running-the-project">Running the project</a></li>
+<li><a class="reference internal" href="#using-no-os-as-software">Using no-OS as software</a><ul>
+<li><a class="reference internal" href="#id1">Necessary files</a></li>
+<li><a class="reference internal" href="#id2">Required Software</a></li>
+<li><a class="reference internal" href="#id3">Required Hardware</a></li>
 </ul>
 </li>
 </ul>
@@ -141,15 +145,21 @@ Content on this topic
 
 </div>
 <div class="toc-tree">
-  <html>
-  <body><p class="caption" role="heading"><span class="caption-text">Product Categories</span></p>
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
 <ul>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
 <ul>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
@@ -176,7 +186,11 @@ Content on this topic
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
@@ -214,7 +228,11 @@ Content on this topic
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Devices</span></p>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
 <ul>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
@@ -255,7 +273,11 @@ Content on this topic
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
 <ul class="current">
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
@@ -439,10 +461,19 @@ Content on this topic
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
@@ -454,11 +485,11 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28-1" id="toctree-collapse-13-28-1"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-28-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
 </ul>
@@ -476,7 +507,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
 </ul>
@@ -484,12 +515,12 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/software_guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
 </ul>
@@ -498,7 +529,11 @@ Content on this topic
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
 <ul>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
@@ -509,7 +544,11 @@ Content on this topic
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
 <ul>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
@@ -533,7 +572,11 @@ Content on this topic
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
 <ul>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
@@ -542,8 +585,7 @@ Content on this topic
 <li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
 </ul>
-</body>
-</html>
+
 
 </div>
         </div>
@@ -566,7 +608,7 @@ Content on this topic
 Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
 </div>
 </div><p>This guide provides quick instructions on how to setup the
-<a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html" target="_blank">Eval-ADRV903x</a> on:</p>
+<a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html" target="_blank">EVAL-ADRV903x</a> on:</p>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a></p></li>
 </ul>
@@ -587,8 +629,6 @@ can build them manually.</p>
 here:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../../../linux/kernel/zynqmp.html#linux-kernel-zynqmp"><span class="std std-ref">Build ZynqMP / MPSoC Linux kernel and devicetree</span></a></p></li>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/adrv9032" target="_blank">ADRV9032 HDL project</a>. More HDL build details at
-<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
 </ul>
 </section>
 <section id="required-software">
@@ -603,7 +643,7 @@ here:</p>
 <h3>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>AMD Xilinx <a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> Rev 1.0 or later FPGA board and its power supply</p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html" target="_blank">Eval-ADRV903x</a> FMC evaluation board</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html" target="_blank">EVAL-ADRV903x</a> FMC evaluation board</p></li>
 <li><p>SD card with at least 16GB of memory</p></li>
 <li><p>Micro-USB cable (UART)</p></li>
 <li><p>LAN cable (Ethernet)</p></li>
@@ -618,7 +658,7 @@ here:</p>
 <h4>Creating the setup<a class="headerlink" href="#creating-the-setup" title="Link to this heading"></a></h4>
 <p>Follow the steps in this order, to avoid damaging the components:</p>
 <ol class="arabic">
-<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html" target="_blank">Eval-ADRV903x</a> FMC board to the
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html" target="_blank">EVAL-ADRV903x</a> FMC board to the
 ZCU102 <strong>HPC1</strong> FMC1 socket</p></li>
 <li><p>Insert SD card into the SD card socket on the FPGA</p></li>
 <li><p>Configure <a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> for SD card boot mode (mode SW6[4:1] switch in
@@ -720,67 +760,83 @@ analog login:
 <h4>Verifying the setup<a class="headerlink" href="#verifying-the-setup" title="Link to this heading"></a></h4>
 <p>After logging in, you can verify that the ADRV9032 device is properly detected
 by the Linux kernel:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if the IIO device is detected</span>
-iio_info<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>adrv903
-
-<span class="c1"># List IIO devices</span>
-ls<span class="w"> </span>/sys/bus/iio/devices/
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<p>You should see the ADRV9032/ADRV9032R device listed among the IIO devices.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>iio:device
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>iio:device0: xilinx-ams
+iio:device1: adrv903x-phy
+iio:device2: axi-adrv903x-rx-hpc (buffer capable)
+iio:device3: axi-adrv903x-tx-hpc (buffer capable)
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
 </section>
-<section id="using-iio-oscilloscope">
-<h4>Using IIO Oscilloscope<a class="headerlink" href="#using-iio-oscilloscope" title="Link to this heading"></a></h4>
-<p>If you connected a monitor, keyboard, and mouse, you can use the graphical
-interface:</p>
-<ol class="arabic simple">
-<li><p>Open IIO Oscilloscope from the desktop or application menu</p></li>
-<li><p>The application should automatically detect the ADRV9032 device</p></li>
-<li><p>Configure the transmitter and receiver settings as needed</p></li>
-<li><p>Capture and visualize data from the receivers</p></li>
-</ol>
+<section id="adi-iio-oscilloscope">
+<h3>ADI IIO Oscilloscope<a class="headerlink" href="#adi-iio-oscilloscope" title="Link to this heading"></a></h3>
+<p>You can connect to <a class="reference internal" href="../../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a> either remotely, or locally.</p>
+<section id="remote">
+<h4>Remote<a class="headerlink" href="#remote" title="Link to this heading"></a></h4>
+<p>The <a class="reference internal" href="../../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a> application can be used to connect to another
+platform that has a connected device, to configure the device and read data
+from it. This application is not for performance testing, but rather
+showcasing the basic features.</p>
+<p>Please see <a class="reference internal" href="../../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope documentation</span></a> for
+installation steps and more details.</p>
+<p>Build and start <code class="docutils literal notranslate"><span class="pre">osc</span></code> on a network-enabled Linux host.
+For Windows computers, open the application from the start menu.</p>
+<p>Once the application is launched, go to Settings &gt; Connect &gt; URI and type
+“ip:” then the IP address of the target in the pop-up window. This IP can
+be found out with a command from the previous section of this documentation.</p>
 </section>
-<section id="next-steps">
-<h4>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h4>
+<section id="locally">
+<h4>Locally<a class="headerlink" href="#locally" title="Link to this heading"></a></h4>
+<p>If you connected an HDMI monitor to your FPGA and a mouse and a keyboard
+(both on one dongle), you can navigate the ADI Kuiper Linux that is on the FPGA.</p>
+<p>Going to the top left corner icon (the menu icon), search for IIO Oscilloscope.
+Opening it will automatically connect to the setup and you can use the
+application.</p>
+</section>
+</section>
+</section>
+<section id="using-no-os-as-software">
+<h2>Using no-OS as software<a class="headerlink" href="#using-no-os-as-software" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>Necessary files<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>The following files are needed for the system to boot:</p>
 <ul class="simple">
-<li><p>Explore the device capabilities using the IIO tools</p></li>
-<li><p>Refer to the <a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/adrv903x-ug-2278.pdf" target="_blank">ADRV903x System Development User Guide</a>
-for detailed configuration and calibration procedures</p></li>
-<li><p>Use the Transceiver Toolbox for MATLAB/Simulink integration</p></li>
-<li><p>Develop custom applications using the libiio library</p></li>
+<li><p>HDL boot file: <code class="docutils literal notranslate"><span class="pre">system_top.xsa</span></code></p></li>
+<li><p>no-OS project: <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/adrv903x" target="_blank">projects/adrv903x</a></p></li>
+</ul>
+<p>Instructions on how to build the boot files from source can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/adrv903x" target="_blank">projects/adrv903x</a>. More no-OS build
+details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/build_guide.html" target="_blank" title="(in no-OS)"><span>No-OS Build Guide</span></a>.</p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/adrv9032" target="_blank">projects/adrv9032</a>. More HDL build details at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
 </ul>
 </section>
-</section>
-</section>
-<section id="using-no-os">
-<h2>Using no-OS<a class="headerlink" href="#using-no-os" title="Link to this heading"></a></h2>
-<p>The no-OS software provides a bare-metal implementation for the ADRV9032.</p>
-<section id="building-the-project">
-<h3>Building the project<a class="headerlink" href="#building-the-project" title="Link to this heading"></a></h3>
-<p>Instructions on how to build the no-OS project can be found here:</p>
+<section id="id2">
+<h3>Required Software<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/adrv9032" target="_blank">ADRV9032 HDL project</a></p></li>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/adrv9032" target="_blank">ADRV9032 no-OS project</a></p></li>
+<li><p>AMD Xilinx Vivado and Vitis (downloading Vitis from
+<a class="icon link reference external" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html" target="_blank">here</a>
+will include Vivado as well)</p></li>
+<li><p>An UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)</p></li>
 </ul>
 </section>
-<section id="running-the-project">
-<h3>Running the project<a class="headerlink" href="#running-the-project" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
-<li><p>Build the HDL project for ZCU102</p></li>
-<li><p>Build the no-OS project</p></li>
-<li><p>Program the FPGA using JTAG</p></li>
-<li><p>Load and run the no-OS application</p></li>
-<li><p>Use a UART terminal to interact with the application (115200 baud, 8N1)</p></li>
-</ol>
-<p>The no-OS application provides a command-line interface for:</p>
+<section id="id3">
+<h3>Required Hardware<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>Device initialization</p></li>
-<li><p>Configuration and calibration</p></li>
-<li><p>Register access</p></li>
-<li><p>Data path testing</p></li>
-<li><p>JESD204 link monitoring</p></li>
+<li><p>AMD Xilinx <a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> Rev 1.0 FPGA board and its power supply</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv903x.html" target="_blank">EVAL-ADRV903x</a> FMC evaluation board</p></li>
+<li><p>2x Micro-USB cables, one for UART and one for JTAG</p></li>
+<li><p>(Optional) USB keyboard &amp; mouse and a HDMI-compatible monitor</p></li>
 </ul>
-<p>For detailed information, refer to the <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/README.md" target="_blank">no-OS documentation</a>.</p>
+<p>More details as to why you need these, can be found at
+<a class="reference internal" href="../prerequisites.html#adrv9032-prerequisites"><span class="std std-ref">Prerequisites</span></a>.</p>
 </section>
 </section>
 </section>
@@ -790,7 +846,7 @@ for detailed configuration and calibration procedures</p></li>
               <div class="related">
                 &nbsp;
     <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Quick start</a>
-    <a href="../../eval-cn0359-ebz/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVAL-CN0359-EBZ</a>
+    <a href="../../eval-adrv904x/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVAL-ADRV904x</a>
               </div>
           
         </div>
