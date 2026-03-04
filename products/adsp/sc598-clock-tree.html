@@ -4,17 +4,452 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="This is a work in progress." name="description" />
+<meta content="Solid lines: Clock flow through dividers" name="description" />
 
-    <title>Introduction to Electronics &#8212; System Level Documentation  documentation</title>
+    <title>SC598 Clock Tree &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=a525f648" />
     <script async="async" src="../../_static/app.umd.js?v=fcf3088a"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("True" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll(".mermaid svg");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("True" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);</script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Embedded Baremetal" href="../workshops_embedded_baremetal/index.html" />
-    <link rel="prev" title="Software Defined Instrumentation" href="../workshops_software_defined_instrumentation/index.html" />
+    <link rel="next" title="Getting started" href="setup.html" />
+    <link rel="prev" title="Digital Signal Processors (ADSP)" href="index.html" />
    
   
   
@@ -94,15 +529,7 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Introduction to Electronics</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#theoretical-content">Theoretical content</a></li>
-<li><a class="reference internal" href="#hands-on-activity">Hands-on activity</a></li>
-<li><a class="reference internal" href="#slide-deck-booklet-and-additional-materials">Slide Deck, booklet and additional materials</a></li>
-<li><a class="reference internal" href="#takeaways">Takeaways</a></li>
-<li><a class="reference internal" href="#resources">Resources</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">SC598 Clock Tree</a></li>
 </ul>
 
         </nav>
@@ -132,10 +559,10 @@ Content on this topic
   <span class="caption-text">Product Categories</span>
 </p>
 
-<ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/setup.html">Getting started</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">Getting started</a></li>
 </ul>
 </li>
 </ul>
@@ -536,26 +963,26 @@ Content on this topic
   <span class="caption-text">Learning</span>
 </p>
 
-<ul class="current">
-<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="../demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction to Electronics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../workshops_embedded_linux/index.html">Embedded Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
 </ul>
 </li>
 </ul>
@@ -582,469 +1009,149 @@ Content on this topic
       <div class="documentwrapper">
         <div class="bodywrapper" id="top-anchor">
           <div class="body-header">
-  <nav class="breadcrumb"><ol><li><a href="../index.html">Learning! Tutorials, Workshops, Etc</a></li></ol></nav>
+  <nav class="breadcrumb"><ol><li><a href="index.html">Digital Signal Processors (ADSP)</a></li></ol></nav>
 </div>
           <div class="body" role="main">
             
-  <section id="introduction-to-electronics">
-<h1>Introduction to Electronics<a class="headerlink" href="#introduction-to-electronics" title="Link to this heading"></a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a work in progress.</p>
-</div>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>This workshop is designed for freshmen and second-year students who are passionate about electronics and electrical engineering. It aims to provide them with a comprehensive overview of the field.</p>
-<p>The content and structure are tailored to their current level of knowledge, introducing them to the fascinating world of electronics and microchips.</p>
-</section>
-<section id="theoretical-content">
-<h2>Theoretical content<a class="headerlink" href="#theoretical-content" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>Why choosing Electronics</p></li>
-<li><p>What is an IC and what role does it have</p></li>
-<li><p>What is a transistor and what role does it have</p></li>
-<li><p>ADALM2000 board overview</p></li>
+  <section id="sc598-clock-tree">
+<span id="adsp-sc598-clock-tree"></span><h1>SC598 Clock Tree<a class="headerlink" href="#sc598-clock-tree" title="Link to this heading"></a></h1>
+<pre  class="mermaid">
+        graph LR
+    Crystal[&quot;SYS_CLKIN0&lt;br/&gt;25 MHz&lt;br/&gt;(sc5xx.dtsi:80)&quot;]
+
+    subgraph CGU0[&quot;CGU0 - Main CGU (clk-adi-sc598.c:100-209)&quot;]
+        DF0[&quot;DF: ÷1&lt;br/&gt;25 MHz&quot;]
+        VCO0[&quot;VCO: ×80&lt;br/&gt;2000 MHz&lt;br/&gt;(CGU_CTL MSEL)&quot;]
+        PLL0[&quot;PLLCLK: ÷2&lt;br/&gt;1000 MHz&lt;br/&gt;(line 125-128)&quot;]
+
+        CCLK0_0[&quot;CCLK0_0&lt;br/&gt;500 MHz&lt;br/&gt;÷2 (CDIV)&quot;]
+        SYSCLK0[&quot;SYSCLK_0&lt;br/&gt;250 MHz&lt;br/&gt;÷4 (SYSSEL)&quot;]
+        DCLK0[&quot;DCLK_0&lt;br/&gt;333 MHz&lt;br/&gt;÷3 (DDIV)&quot;]
+        OCLK0[&quot;OCLK_0&lt;br/&gt;62.5 MHz&lt;br/&gt;÷16 (ODIV)&quot;]
+
+        SCLK0_0[&quot;SCLK0_0&lt;br/&gt;62.5 MHz&lt;br/&gt;÷4&quot;]
+        SCLK1_0[&quot;SCLK1_0&lt;br/&gt;125 MHz&lt;br/&gt;÷2&quot;]
+
+        CCLK2_0[&quot;CCLK2_0&lt;br/&gt;667 MHz&lt;br/&gt;VCO÷3 direct&lt;br/&gt;(line 158-161)&quot;]
+
+        DCLK0_HALF[&quot;DCLK_0_HALF&lt;br/&gt;167 MHz&lt;br/&gt;÷2 (line 223)&quot;]
+    end
+
+    subgraph CGU1[&quot;CGU1 - Secondary CGU (clk-adi-sc598.c:104-220)&quot;]
+        DF1[&quot;DF: ÷1&lt;br/&gt;25 MHz&quot;]
+        VCO1[&quot;VCO: ×64&lt;br/&gt;1600 MHz&quot;]
+        PLL1[&quot;PLLCLK: ÷2&lt;br/&gt;800 MHz&quot;]
+
+        CCLK0_1[&quot;CCLK0_1&lt;br/&gt;400 MHz&lt;br/&gt;÷2&quot;]
+        SYSCLK1[&quot;SYSCLK_1&lt;br/&gt;200 MHz&lt;br/&gt;÷4&quot;]
+        DCLK1[&quot;DCLK_1&lt;br/&gt;400 MHz&lt;br/&gt;÷2&quot;]
+        OCLK1[&quot;OCLK_1&lt;br/&gt;50 MHz&lt;br/&gt;÷16&quot;]
+
+        SCLK0_1[&quot;SCLK0_1&lt;br/&gt;50 MHz&lt;br/&gt;÷4&quot;]
+        SCLK1_1[&quot;SCLK1_1&lt;br/&gt;100 MHz&lt;br/&gt;÷2&quot;]
+
+        CCLK2_1[&quot;CCLK2_1&lt;br/&gt;533 MHz&lt;br/&gt;VCO÷3 direct&quot;]
+
+        SCLK1_1_HALF[&quot;SCLK1_1_HALF&lt;br/&gt;50 MHz&lt;br/&gt;÷2 (line 231)&quot;]
+    end
+
+    subgraph PLL3[&quot;3rd PLL - Optional DDR Source&lt;br/&gt;(clk-adi-sc598.c:108-111, clkinit.c:383-440)&quot;]
+        PLL3_VCO[&quot;VCO: ×64&lt;br/&gt;1600 MHz&quot;]
+        PLL3_OUT[&quot;3PLL_DDIV&lt;br/&gt;400 MHz&lt;br/&gt;÷2&quot;]
+        PLL3_DDR_SEL[&quot;DDR Mux&lt;br/&gt;(line 285-287)&lt;br/&gt;selects DCLK_0 or 3PLL&quot;]
+    end
+
+    subgraph CDU[&quot;CDU - Clock Distribution (0x3108F000)&quot;]
+        SHARC0[&quot;CLKO0: SHARC-FX&lt;br/&gt;500 MHz&lt;br/&gt;(CDU_CFG0)&quot;]
+        SHARC1[&quot;CLKO1: SHARC1&lt;br/&gt;500 MHz&lt;br/&gt;(CDU_CFG1)&quot;]
+        ARM[&quot;CLKO2: ARM&lt;br/&gt;533 MHz&lt;br/&gt;(CDU_CFG2)&quot;]
+        DDR[&quot;CLKO3: DDR&lt;br/&gt;333 MHz&lt;br/&gt;(CDU_CFG3)&quot;]
+        CAN[&quot;CLKO4: CAN&lt;br/&gt;50 MHz&lt;br/&gt;(CDU_CFG4)&quot;]
+        SPDIF[&quot;CLKO5: SPDIF&lt;br/&gt;125 MHz&lt;br/&gt;(CDU_CFG5)&quot;]
+        SPI[&quot;CLKO6: SPI&lt;br/&gt;62.5 MHz&lt;br/&gt;(CDU_CFG6)&quot;]
+        GIGE[&quot;CLKO7: GigE&lt;br/&gt;62.5 MHz&lt;br/&gt;(CDU_CFG7)&quot;]
+        LP[&quot;CLKO8: LP&lt;br/&gt;400 MHz&lt;br/&gt;(CDU_CFG8)&quot;]
+        LP_DDR[&quot;CLKO9: LP_DDR&lt;br/&gt;62.5 MHz&lt;br/&gt;(CDU_CFG9)&quot;]
+        OSPI[&quot;CLKO10: OSPI&lt;br/&gt;100 MHz&lt;br/&gt;(CDU_CFG10)&quot;]
+        TRACE[&quot;CLKO12: TRACE&lt;br/&gt;62.5 MHz&lt;br/&gt;(CDU_CFG12)&quot;]
+        EMMC[&quot;CLKO13: EMMC&lt;br/&gt;167 MHz&lt;br/&gt;(CDU_CFG13)&quot;]
+        EMMC_TMR[&quot;CLKO14: EMMC_TMR&lt;br/&gt;50 MHz&lt;br/&gt;(CDU_CFG14)&quot;]
+    end
+
+    Crystal --&gt; DF0
+    Crystal --&gt; DF1
+    Crystal --&gt; PLL3_VCO
+
+    DF0 --&gt; VCO0
+    VCO0 --&gt; PLL0
+    VCO0 --&gt; CCLK2_0
+
+    PLL0 --&gt; CCLK0_0
+    PLL0 --&gt; SYSCLK0
+    PLL0 --&gt; DCLK0
+    PLL0 --&gt; OCLK0
+
+    SYSCLK0 --&gt; SCLK0_0
+    SYSCLK0 --&gt; SCLK1_0
+    DCLK0 --&gt; DCLK0_HALF
+
+    DF1 --&gt; VCO1
+    VCO1 --&gt; PLL1
+    VCO1 --&gt; CCLK2_1
+
+    PLL1 --&gt; CCLK0_1
+    PLL1 --&gt; SYSCLK1
+    PLL1 --&gt; DCLK1
+    PLL1 --&gt; OCLK1
+
+    SYSCLK1 --&gt; SCLK0_1
+    SYSCLK1 --&gt; SCLK1_1
+    SCLK1_1 --&gt; SCLK1_1_HALF
+
+    PLL3_VCO --&gt; PLL3_OUT
+    PLL3_OUT --&gt; PLL3_DDR_SEL
+    DCLK0 --&gt; PLL3_DDR_SEL
+
+    CCLK0_0 -.-&gt; SHARC0
+    CCLK0_0 -.-&gt; SHARC1
+    CCLK2_1 -.-&gt; ARM
+    PLL3_DDR_SEL -.-&gt; DDR
+    OCLK1 -.-&gt; CAN
+    SCLK1_0 -.-&gt; SPDIF
+    SCLK0_0 -.-&gt; SPI
+    SCLK0_0 -.-&gt; GIGE
+    CCLK0_1 -.-&gt; LP
+    OCLK0 -.-&gt; LP_DDR
+    SCLK1_1 -.-&gt; OSPI
+    SCLK0_0 -.-&gt; TRACE
+    DCLK0_HALF -.-&gt; EMMC
+    SCLK1_1_HALF -.-&gt; EMMC_TMR
+
+    classDef cgu0 fill:#e1f5ff,stroke:#01579b,stroke-width:2px
+    classDef cgu1 fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef pll3 fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef cdu fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+
+    class CCLK0_0,SYSCLK0,DCLK0,OCLK0,SCLK0_0,SCLK1_0,CCLK2_0,DCLK0_HALF cgu0
+    class CCLK0_1,SYSCLK1,DCLK1,OCLK1,SCLK0_1,SCLK1_1,CCLK2_1,SCLK1_1_HALF cgu1
+    class PLL3_OUT pll3
+    class SHARC0,SHARC1,ARM,DDR,CAN,SPDIF,SPI,GIGE,LP,LP_DDR,OSPI,TRACE,EMMC,EMMC_TMR cdu
+    </pre><ul class="simple">
+<li><p><strong>Solid lines</strong>: Clock flow through dividers</p></li>
+<li><p><strong>Dashed lines</strong>: CDU mux selection to peripherals</p></li>
+<li><p><strong>Blue boxes</strong>: CGU0 outputs (Main CGU)</p></li>
+<li><p><strong>Orange boxes</strong>: CGU1 outputs (Secondary CGU)</p></li>
+<li><p><strong>Purple boxes</strong>: 3rd PLL outputs (DDR-specific)</p></li>
+<li><p><strong>Green boxes</strong>: CDU peripheral outputs</p></li>
 </ul>
-<p><strong>Why Electronics?</strong></p>
-<p>Every Electronics or Electrical Engineering student has received at least once the question: why did you choose electronics?
-How can one answer this question better than: Why not?</p>
-<ol class="arabic simple">
-<li><p>It offers diverse career opportunities:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Wireless Communications Engineer</p></li>
-<li><p>Network Engineer</p></li>
-<li><p>Electronics Design Engineer</p></li>
-<li><p>Embedded Systems Engineer</p></li>
-<li><p>Satellite Communications Engineer</p></li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p>It brings to table inovation and technological advancement</p></li>
-<li><p>It offers impactful contribution</p></li>
-<li><p>It offers continuous learning</p></li>
-</ol>
-<p><strong>What is an IC?</strong></p>
-<p>An integrated circuit (IC) is an assembly of electronic components in which hundreds to millions of transistors, resistors, and capacitors are interconnected and built up on a thin substrate of semiconductor material (usually silicon) to form a small chip or wafer. Integrated circuits are the building blocks for most electronic devices and equipment.</p>
-<p><cite>Applications</cite></p>
-<ul class="simple">
-<li><p>Consumer Electronics: Smartphones, computers, and home appliances.</p></li>
-<li><p>Industrial: Automation systems, robotics.</p></li>
-<li><p>Medical: Diagnostic equipment, wearable health devices.</p></li>
-<li><p>Automotive: Engine control units, infotainment systems.</p></li>
-</ul>
-<p><cite>Importance</cite></p>
-<ul class="simple">
-<li><p>Miniaturization of circuits.</p></li>
-<li><p>Increased reliability and performance.</p></li>
-<li><p>Cost efficiency.</p></li>
-</ul>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ic.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ic.png" width="500" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">ICs are everywhere</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/circuit.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/circuit.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/circuit.png" width="500" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">LSI – Large Scale Integration circuits compared to the corresponding prototype circuit 1970-1972</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><strong>Transistors - what kind of species is that?</strong></p>
-<p>A transistor is a miniature semiconductor that regulates or controls current or voltage flow in addition amplifying and generating these electrical signals and acting as a switch/gate for them</p>
-<ul class="simple">
-<li><p>why do we need them?</p></li>
-<li><p>how do they work?</p></li>
-<li><p>what are the commonly used types?</p></li>
-</ul>
-<p><cite>Applications</cite></p>
-<ul class="simple">
-<li><p>Analog Circuits: Amplifiers, oscillators.</p></li>
-<li><p>Digital Circuits: Logic gates, microprocessors.</p></li>
-<li><p>Power Electronics: Power supplies, motor controllers.</p></li>
-</ul>
-<figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/transistor.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/transistor.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/transistor.png" width="300" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">Transistor - the base of Electronics</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><cite>Functionality</cite></p>
-<ul class="simple">
-<li><p>Cut Off (“off”):  Emitter &gt; Base &lt; Collector</p></li>
-<li><p>Saturation (“on”): Emitter &lt; Base &gt; Collector</p></li>
-<li><p>Forward Active (“proportional”):  Emitter &lt; Base &lt; Collector</p></li>
-<li><p>Reverse Active (“negative proportional”):  Emitter &gt; Base &gt; Collector</p></li>
-</ul>
-<figure class="align-center" id="id4">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/vce_ib.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/vce_ib.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/vce_ib.png" width="300" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 4 </span><span class="caption-text">Output Characteristics - common emitter configuration</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><cite>How many transistors are needed to create a logic gate?</cite></p>
-<p>Logic gates built with transistors</p>
-<div class="grid" style="grid-template-columns: 50% 50%;"><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/and.png"><img alt="AND" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/and.png" width="280" />
-</a>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/not.png"><img alt="NOT" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/not.png" width="300" />
-</a>
-</div><p><cite>ADALM2000</cite></p>
-<p>The ADALM2000 (M2K) Advanced Active Learning Module is an affordable USB-powered data acquisition module, that can be used to introduce fundamentals of electrical engineering in a self or instructor lead setting.</p>
-<p>With 12-bit ADCs and DACs running at 100 MSPS, brings the power of high-performance lab equipment to the palm of your hand, enabling electrical engineering students and hobbyists to explore signals and systems into the tens of MHz without the cost and bulk associated with traditional lab gear.</p>
-<p>When coupled with Analog Devices’ Scopy™ graphical application software running on a computer, provides the user with high performance instrumentation.</p>
-<figure class="align-left">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/m2k.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/m2k.png" />
-</figure>
-<figure class="align-center" id="id5">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/scopy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/scopy.png" />
-<figcaption>
-<p><span class="caption-number">Figure 5 </span><span class="caption-text">M2k and Scopy software</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</section>
-<section id="hands-on-activity">
-<h2>Hands-on activity<a class="headerlink" href="#hands-on-activity" title="Link to this heading"></a></h2>
-<p>By the end of this workshop, you will learn:</p>
-<ul class="simple">
-<li><p>How to use a breadboard</p></li>
-<li><p>How to power on an IC</p></li>
-<li><p>How to read an IC pinout from datasheet</p></li>
-<li><p>How to use a desktop Oscilloscope and Signal generator channels by operating a Network Analyzer</p></li>
-<li><p>How to visualize a low pass filter characteristic / transfer function</p></li>
-<li><p>How to drive a transistor</p></li>
-<li><p>How to create a logic function for performing a specific task</p></li>
-</ul>
-<p><strong>Activities</strong></p>
-<ul class="simple">
-<li><p>Low pass filter transfer function</p></li>
-<li><p>Digital demo – traffic lights using logic gates</p></li>
-<li><p>Back to the analog world - Transistors</p></li>
-<li><p>Home made battery</p></li>
-</ul>
-<p><strong>Pre-requisites</strong></p>
-<ul class="simple">
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases" target="_blank">ADALM2000 drivers installation</a></p></li>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/scopy/releases/tag/v1.4.1" target="_blank">Install Scopy software</a></p></li>
-</ul>
-<p><strong>Hands-on activity 1 - Scope and Signal generator channels – Cascaded LP filters</strong></p>
-<p><em>Materials</em></p>
-<ul class="simple">
-<li><p>ADALM2000 Active Learning Module</p></li>
-<li><p>Solder-less breadboard, and jumper wire kit</p></li>
-<li><p>2 x 1 KΩ resistors</p></li>
-<li><p>2 x 0.1 uF capacitors (marked 104)</p></li>
-</ul>
-<p><strong>First Stage Filter</strong></p>
-<p><em>Hardware setup</em></p>
-<figure class="align-center" id="id6">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw.png" />
-<figcaption>
-<p><span class="caption-number">Figure 6 </span><span class="caption-text">Schematic for first stage filter</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id7">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb.png" />
-<figcaption>
-<p><span class="caption-number">Figure 7 </span><span class="caption-text">Breadboard connections for first stage filter</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>Steps</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Open Network Analyzer</p></li>
-<li><p>Set the sweep to logarithmic</p></li>
-<li><p>Set the start frequency to 100Hz and stop to 20kHz</p></li>
-<li><p>Set the magnitude axis between -50dB and 10dB</p></li>
-<li><p>Set the phase axis between -180 and 90 degrees</p></li>
-</ol>
-</div></blockquote>
-<figure class="align-center" id="id8">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves.png" />
-<figcaption>
-<p><span class="caption-number">Figure 8 </span><span class="caption-text">Results for Bode Diagram</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><strong>Second stage filter</strong></p>
-<figure class="align-left">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw1.png" />
-</figure>
-<figure class="align-center" id="id9">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb1.png" />
-<figcaption>
-<p><span class="caption-number">Figure 9 </span><span class="caption-text">Schematic and Breadboard connections</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>Steps:</p>
-<ol class="arabic simple">
-<li><p>Connect the Scope Channel 2 after the first RC group and do a single sweep</p></li>
-<li><p>Take a signal snapshot to preserve the result as a reference</p></li>
-<li><p>Connect the Scope Channel 2 after the second RC stage and perform another sweep</p></li>
-</ol>
-<figure class="align-center" id="id10">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves1.png" />
-<figcaption>
-<p><span class="caption-number">Figure 10 </span><span class="caption-text">Results for Bode Diagram</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><strong>Hands-on activity 2 - Traffic lights control</strong></p>
-<p>This demo will showcase the usage of logic gates to implement a logic function which describes the functionality of a well-known device: a traffic light.</p>
-<p><em>Materials</em></p>
-<ul class="simple">
-<li><p>ADALM2000 Active Learning Module</p></li>
-<li><p>Jumper wires</p></li>
-<li><p>1 SN74HC08N part</p></li>
-<li><p>1 SN74HC32N part</p></li>
-<li><p>1 SN74HC04N part</p></li>
-<li><p>1 Yellow LED</p></li>
-<li><p>1 Red LED</p></li>
-<li><p>1 Green LED</p></li>
-</ul>
-<p><em>Theory of operation</em></p>
-<p>Logic sequence of a traffic light is the one bellow:</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy.png" width="300" />
-</a>
-</figure>
-<p>You will use two logic inputs to control the traffic lights, those inputs are marked A and B, the sequence is the one bellow:</p>
-<figure class="align-center" id="id11">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy1.png" width="400" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 11 </span><span class="caption-text">Flow diagram</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>Truth table for the logic function that describes the traffic lights sequence</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2.png" width="400" />
-</a>
-</figure>
-<p><em>Hardware Setup</em></p>
-<p>The circuit functionality is represented in the schematic:</p>
-<figure class="align-center" id="id12">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2hw.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2hw.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2hw.png" width="300" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 12 </span><span class="caption-text">Schematic</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>Components Pinout</p>
-<div class="grid" style="grid-template-columns: 33% 33% 33%;"><figure class="align-default" id="id13">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc04n.png"><img alt="SN74HC04N" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc04n.png" width="300" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 13 </span><span class="caption-text">SN74HC04N</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id14">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc08n.png"><img alt="SN74HC08N" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc08n.png" width="300" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 14 </span><span class="caption-text">SN74HC04N</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id15">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/led.png"><img alt="LED" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/led.png" width="300" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 15 </span><span class="caption-text">LED Terminals</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-</div><p>Steps:</p>
-<ol class="arabic simple">
-<li><p>Place the ICs on the breadboard with each pin row on one side of the breadboard delimitator.</p></li>
-<li><p>Open Scopy application</p></li>
-<li><p>Open the Oscilloscope instrument</p></li>
-<li><p>Open the Power instrument</p></li>
-<li><p>Connect the V+ wire to pins 14 of the both ICs - VCC</p></li>
-<li><p>Connect GND pin of the M2K to pin 7 of both ICs</p></li>
-<li><p>Connect DIO 0 pin to SN74HC04N pin 1</p></li>
-<li><p>Connect DIO 0 pin to SN74HC08N pin 1</p></li>
-<li><p>Connect DIO 1 pin to SN74HC04N pin 3</p></li>
-<li><p>Connect DIO 1 pin to Y LED</p></li>
-<li><p>Connect SN74HC04N pin 2 to R LED</p></li>
-<li><p>Connect SN74HC04N pin 4 to SN74HC08N pin 2</p></li>
-<li><p>Connect SN74HC08N pin 3 to G LED</p></li>
-<li><p>Set the V+ to 3.3V and press the Enable button</p></li>
-</ol>
-<p><em>Results</em></p>
-<ul class="simple">
-<li><p>Open the Scopy Digital IO and Power instruments:</p></li>
-<li><p>Toggle the DIO0 and DIO1 digital pins according to the logical function truth table and verify the outputs match the table results</p></li>
-</ul>
-<figure class="align-center" id="id16">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy.png" width="400" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 16 </span><span class="caption-text">Scopy setup</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><strong>Challenge</strong></p>
-<ul class="simple">
-<li><p>Implement a logical OR function using SN74HC32N part from the kit</p></li>
-<li><p>Pinout:</p></li>
-</ul>
-<figure class="align-center" id="id17">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc32n.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc32n.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc32n.png" width="300" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 17 </span><span class="caption-text">Logical OR</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><strong>Hands-on activity 3 - NPN transistor characteristics</strong></p>
-<p>The demo will describe the output characteristics of a BJT NPN transistor using modern instrumentation tools.</p>
-<p><em>Materials</em></p>
-<ul class="simple">
-<li><p>ADALM2000 Active Learning Module</p></li>
-<li><p>Jumper wires</p></li>
-<li><p>1 - 100KΩResistor</p></li>
-<li><p>1 - 100ΩResistor</p></li>
-<li><p>1 - small signal NPN transistor - 2N3904</p></li>
-<li><p>1 - small signal PNP transistor - 2N3906</p></li>
-</ul>
-<p><em>Theory of operation</em></p>
-<p>2N2904 Pinout</p>
-<div class="grid" style="grid-template-columns: 50% 50%;"><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn.png"><img alt="pnp" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn.png" width="200" />
-</a>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn1.png"><img alt="SN74HC08N" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn1.png" width="200" />
-</a>
-</div><p><em>Hardware setup</em></p>
-<ul class="simple">
-<li><p>Place the transistor and resistors on the breadboard.</p></li>
-<li><p>Make the connections between ADALM2000 and circuit as shown below.</p></li>
-</ul>
-<figure class="align-center" id="id18">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn2.png" width="350" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 18 </span><span class="caption-text">ADALM2000 connections</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><em>Steps</em></p>
-<ol class="arabic simple">
-<li><p>Open Scopy application</p></li>
-<li><p>Create a CSV file with a column having integer values from 0 to 5(0, 1, 2, 3, 4), save it</p></li>
-<li><p>Open the Waveform generator instrument and select Channel 2, load the previously created csv file and make the setup:</p></li>
-</ol>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy1.png" width="600" />
-</a>
-</figure>
-<ol class="arabic simple" start="4">
-<li><p>Select Channel 1, make the setup below:</p></li>
-</ol>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy2.png" width="600" />
-</a>
-</figure>
-<ol class="arabic simple" start="5">
-<li><p>Open the scope and select the XY view</p></li>
-<li><p>Add a math channel with the following function: M1 = t0/100  - it represents the Ic current, given the 100 ohms collector resistor</p></li>
-</ol>
-<p><cite>Results</cite></p>
-<ol class="arabic simple" start="7">
-<li><p>Observe the output characteristics of the NPN transistor Ic = f(Vce)</p></li>
-</ol>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopyres.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopyres.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopyres.png" width="600" />
-</a>
-</figure>
-<p><strong>Challenge</strong></p>
-<ul class="simple">
-<li><p>Obtain the characteristics for a PNP transistor provided.</p></li>
-<li><p>The curve trace should look like the one in the image:</p></li>
-</ul>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopych.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopych.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopych.png" width="600" />
-</a>
-</figure>
-<p>Tips: you need to create another csv file for the base control signal of the transistor.</p>
-<p><strong>Hands-on activity 4 - Home made battery - instructor-led</strong></p>
-<p>This demo is instructor-led and intends to implement a proof of concept for a battery powered LED using unconventional materials.</p>
-<p><em>Materials:</em></p>
-<ul class="simple">
-<li><p>ADALM2000 Active Learning Module</p></li>
-<li><p>Jumper wires (wires with alligator clips will work best)</p></li>
-<li><p>3 lemons: large, fresh, “juicy” lemons work best.</p></li>
-<li><p>Zinc plated screws or nails</p></li>
-<li><p>Copper plated coins or copper nails or heavy gauge (14 or 12) copper wire.</p></li>
-<li><p>Red LED</p></li>
-</ul>
-<p><em>Hardware Setup</em></p>
-<ol class="arabic simple">
-<li><p>Insert a copper penny into a small cut or push a copper nail or heavy gauge wire into one side of the lemon.</p></li>
-<li><p>Push a galvanized (zinc coated) screw or nail into the other side of the lemon. The zinc and copper electrodes must not touch.</p></li>
-</ol>
-<figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo4.png" width="150" />
-</a>
-</figure>
-<p><em>Results</em></p>
-<p>You should be able to observe how the Red LED is lit by the 4 or more lemon-cells battery</p>
-</section>
-<section id="slide-deck-booklet-and-additional-materials">
-<h2>Slide Deck, booklet and additional materials<a class="headerlink" href="#slide-deck-booklet-and-additional-materials" title="Link to this heading"></a></h2>
-<p>Since this tutorial is also designed to be presented as a live, hands-on
-workshop, a slide deck is provided here:</p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/electronicsbasics_nov24.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Introduction</span> <span class="pre">to</span> <span class="pre">Electronics</span> <span class="pre">Slide</span> <span class="pre">Deck</span></code></a></p>
-</div>
-<p>A complete booklet of the hands-on activity is also provided, as a companion to
-following the tutorial yourself:</p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ebasics booklet.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Introduction</span> <span class="pre">to</span> <span class="pre">Electronics</span> <span class="pre">Booklet</span></code></a></p>
-</div>
-<p>Comma Separated Values file used for generating the base step voltage needed for the Transistor Characteristic demo:</p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p><code class="xref download docutils literal notranslate"><span class="pre">Base</span> <span class="pre">Voltage</span> <span class="pre">Values</span></code></p>
-</div>
-</section>
-<section id="takeaways">
-<h2>Takeaways<a class="headerlink" href="#takeaways" title="Link to this heading"></a></h2>
-<p>Electronics can be both fun and challenging, but it brings many satisfactions</p>
-<p>ADALM2000 is a very versatile tool suited to use in various applications:</p>
-<ul class="simple">
-<li><p>Lab setups</p></li>
-<li><p>Advanced measurements</p></li>
-<li><p>Learning platforms</p></li>
-<li><p>Research</p></li>
-</ul>
-</section>
-<section id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university" target="_blank">university</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/intro/real-voltage-sources" target="_blank">real-voltage-sources</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-4" target="_blank">electronics-lab-4</a></p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/engineering_discovery/lab_13" target="_blank">lab_13</a></p></li>
-</ul>
-<p><em>Specific hardware resources</em></p>
-<ul class="simple">
-<li><p><a class="icon link reference external" href="https://www.britannica.com/technology/integrated-circuit/Photolithography" target="_blank">https://www.britannica.com/technology/integrated-circuit/Photolithography</a></p></li>
-<li><p><a class="icon link reference external" href="https://learn.sparkfun.com/tutorials/transistors/all" target="_blank">https://learn.sparkfun.com/tutorials/transistors/all</a></p></li>
-</ul>
-<p><em>Inspiration</em></p>
-<ul class="simple">
-<li><p><a class="icon link reference external" href="https://www.arenasolutions.com/resources/glossary/integrated-circuit/" target="_blank">https://www.arenasolutions.com/resources/glossary/integrated-circuit/</a></p></li>
-<li><p><a class="icon link reference external" href="https://learn.sparkfun.com/tutorials/transistors/all" target="_blank">https://learn.sparkfun.com/tutorials/transistors/all</a></p></li>
-<li><p><a class="icon link reference external" href="https://www.electrical4u.com/transistor-characteristics/?utm_content=cmp-true" target="_blank">https://www.electrical4u.com/transistor-characteristics/?utm_content=cmp-true</a></p></li>
-<li><p><a class="icon link reference external" href="https://www.101computing.net/creating-logic-gates-using-transistors/" target="_blank">https://www.101computing.net/creating-logic-gates-using-transistors/</a></p></li>
-</ul>
-</section>
 </section>
 
 
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../workshops_software_defined_instrumentation/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Software Defined Instrumentation</a>
-    <a href="../workshops_embedded_baremetal/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Embedded Baremetal</a>
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Digital Signal Processors (ADSP)</a>
+    <a href="setup.html" title="Next document (Alt+Shift+RightArrow)" class="next">Getting started</a>
               </div>
           
         </div>
