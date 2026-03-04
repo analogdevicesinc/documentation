@@ -25,6 +25,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
                     'solutions/reference-designs/common/zcu102-zynqmp-setup.rst']
 source_suffix = '.rst'
 
+# -- Custom extensions configuration ------------------------------------------
+
+mermaid_d3_zoom = True
+
 # -- External docs configuration ----------------------------------------------
 
 interref_repos = [
