@@ -56,7 +56,7 @@ Features and Specification
 * FCC and ARIB STD T108 regulation test feature support integrated
 * Supports OTA (over-the-air) update
 * Reliable scheduling of alert messages from any or all motes
-* Sample software available for Linux® or [[adi>ADuCM4050]] -based gateways with
+* Sample software available for Linux® or :adi:`ADuCM4050` -based gateways with
   various backhaul connectivity options
 
 Software Package

@@ -339,14 +339,15 @@ except for SDO/RDY, which is an output).
 Serial communication options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. SDP-B board and the respective 120 pin SDP connector.
+SDP-B board and the respective 120 pin SDP connector.
 
-::
+When using the SDP-B connection (120 pin) The evaluation board connects via the
+serial peripheral interface (SPI) to the Blackfin®
+:adi:`ADSP-BF527 <en/products/adsp-bf527.html>` on the SDP-B board.
 
-   *When using the SDP-B connection (120 pin) The evaluation board connects via the serial peripheral interface (SPI) to the Blackfin® [[adi>en/products/adsp-bf527.html|ADSP-BF527]] on the SDP-B board.
- - Arduino connection SDP-K1
- - PMOD connector
- - Standalone mode
+- Arduino connection SDP-K1
+- PMOD connector
+- Standalone mode
 
 For an introduction to the Serial Peripheral Interface (SPI), click
 :adi:`here <en/analog-dialogue/articles/introduction-to-spi-interface.html>`

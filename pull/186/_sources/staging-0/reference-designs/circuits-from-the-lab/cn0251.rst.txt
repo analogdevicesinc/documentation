@@ -43,9 +43,7 @@ Required Equipment
 - :adi:`ADALM2000 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM2000.html>`
 - :external+scopy:doc:`index`
 
-::
-
-   * {{ :resources:eval:user-guides:circuits-from-the-lab:cn0251:siggen.zip |Scopy Project File}}
+   - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/siggen.zip`
 
 - PC with the following *Minimum Requirements*
 
@@ -146,49 +144,64 @@ Software Control and Indicator Descriptions
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0251/cn0251-software.png
 
-::
+**Connect/Reconnect Button**
+When this button is pressed, the SDP-B Board makes a USB connection to the
+CN-0288 Board.  A connection to the SDP-B Board must be made to use the
+software.
 
-   -**Connect/Reconnect Button**
-   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0288 Board.  A connection to the SDP-B Board must be made to use the software.
-   -**Capture Data Button**
-   * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
-   -**Save Data Button**
-   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
-   -**Control Tabs**
-   * __Data__ - Clicking this tab brings the data collection chart to the front.
-   * __Analysis__ - Clicking this tab brings the data analysis histogram to the front.
-   * __Configure System__ - Clicking this tab brings the system configuration control to the front.
-   * __SDP Board Information__ - Clicking this tab brings the SDP Board Information indicators to the front.
-   -**Input Channel Drop-Down Menu**
-   * Clicking this drop-down menu selects the channel to capture data from.
-   -**Input Range Drop-Down Menu**
-   * Clicking this drop-down menu selects the analog input voltage range for the channel selected by the Input Range Drop-Down Menu .
-   -**AD8475 Gain Indicator**
+**Capture Data Button**
+When this button is pressed, the SDP-B Board will collect conversion data and
+present the acquisitions in the chart.
 
-- This indicator displays the gain setting required from the :adi:`AD8475`.
-  .. important::
+**Save Data Button**
+When this button is pressed, the software will save the data collected to a tab
+delimited ASCII spreadsheet file.
 
-     Jumpers JP3 and JP4 on the :adi:`EVAL-CN0251-SDPZ` (CN-0251 Board) must be populated to reflect the value displayed by this indicator
+**Control Tabs**
 
-::
+- *Data* - Clicking this tab brings the data collection chart to the front.
+- *Analysis* - Clicking this tab brings the data analysis histogram to the
+  front.
+- *Configure System* - Clicking this tab brings the system configuration
+  control to the front.
+- *SDP Board Information* - Clicking this tab brings the SDP Board Information
+  indicators to the front.
 
-   -**AD7192 Gain Indicator**
-   * This indicator displays the gain currently programmed into the
-     [[adi>AD7192|AD7192]].
-   -**Samples to Capture Control**
-   * This numerical control sets the number of samples to capture once the
-     Capture Data Button is pressed.
-   -**Display Unit Drop-Down Menu**
-   * Clicking this drop-down menu allows you to select chart y-axis units to
-     display.
-   -**Chart Controls**
-   * These controls allow the user to zoom-in, zoom-out, and pan through the
-     data collected.
-   -**System Status String Indicator**
-   * This indicator displays a message to the user detailing the current state
-     of the software.
+**Input Channel Drop-Down Menu**
+Clicking this drop-down menu selects the channel to capture data from.
 
---------------
+**Input Range Drop-Down Menu**
+Clicking this drop-down menu selects the analog input voltage range for the
+channel selected by the Input Range Drop-Down Menu .
+
+
+**AD8475 Gain Indicator**:
+This indicator displays the gain setting required from the :adi:`AD8475`.
+
+.. important::
+
+   Jumpers JP3 and JP4 on the :adi:`EVAL-CN0251-SDPZ` (CN-0251 Board) must be
+   populated to reflect the value displayed by this indicator
+
+**AD7192 Gain Indicator**:
+This indicator displays the gain currently programmed into the
+:adi:`AD7192 <AD7192>`.
+
+**Samples to Capture Control**:
+This numerical control sets the number of samples to capture once the
+Capture Data Button is pressed.
+
+**Display Unit Drop-Down Menu**:
+Clicking this drop-down menu allows you to select chart y-axis units to
+display.
+
+**Chart Controls**:
+These controls allow the user to zoom-in, zoom-out, and pan through the
+data collected.
+
+**System Status String Indicator**:
+This indicator displays a message to the user detailing the current state
+of the software.
 
 Establishing a USB Connection Link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

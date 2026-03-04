@@ -18,15 +18,13 @@ incubators, and other industrial or medical applications.
 General Setup
 -------------
 
-::
-
-   *One [[adi>CN0346|EVAL-CN0346-SDPZ]] Evaluation Board
-   *One [[adi>EVAL-SDP-CB1Z|EVAL-SDP-CB1Z]] Evaluation board
-   *One [[adi>EVAL_SDP-PMOD|EVAL-SDP-PMOD]] Evaluation board
-   *One [[adi>CN0346|CN0346 Evaluation Software]]
-   *One USB Type-A plug to USB Mini-B plug cable.
-   *Boveda Calibration Packs or other Humidity controlled environment.
-   *6V Power Supply.
+* One :adi:`EVAL-CN0346-SDPZ <CN0346>` Evaluation Board
+* One :adi:`EVAL-SDP-CB1Z <EVAL-SDP-CB1Z>` Evaluation board
+* One :adi:`EVAL-SDP-PMOD <EVAL_SDP-PMOD>` Evaluation board
+* One :adi:`CN0346 Evaluation Software <CN0346>`
+* One USB Type-A plug to USB Mini-B plug cable.
+* Boveda Calibration Packs or other Humidity controlled environment.
+* 6V Power Supply.
 
 Minimum PC/System Requirements
 ------------------------------

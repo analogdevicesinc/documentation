@@ -488,6 +488,15 @@ Hardware Registration
    videos, and more when you :adi:`register <AD-RPI-T1LPSE-SL?&v=RevC>` your
    hardware.
 
+Sample Application
+------------------
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   */index
+
 Help and Support
 -------------------
 

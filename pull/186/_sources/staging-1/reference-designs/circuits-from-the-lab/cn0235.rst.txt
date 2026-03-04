@@ -241,81 +241,90 @@ Software Front Panel
 
 #. **Connect to SDP-B Board Button**
 
-- When this button is pressed, the SDP-B Board makes a USB connection to the
-  :adi:`CN0235 <EVAL-CN0235-SDPZ>`\ Board. A connection to the SDP-B Board must
-  be made to use the software.
+   - When this button is pressed, the SDP-B Board makes a USB connection to the
+     :adi:`CN0235 <EVAL-CN0235-SDPZ>`\ Board. A connection to the SDP-B Board must
+     be made to use the software.
 
 #. **Device Selector**
 
-- Selects the number of device to be activated.
+   - Selects the number of device to be activated.
 
 #. **Enable Real Time ADC Reads**
 
-- When this button is checked, continuous data acquisition by the ADC will
-  start.
+   - When this button is checked, continuous data acquisition by the ADC will
+     start.
 
 #. **Read ADC**
 
-- When this button is clicked, a single capture read will be performed by the
-  ADC.
+   - When this button is clicked, a single capture read will be performed by the
+     ADC.
 
 #. **Software Reset**
 
-- When this button is clicked, all the configuration changes on the evaluation
-  software will be revert back to its default state.
+   - When this button is clicked, all the configuration changes on the evaluation
+     software will be revert back to its default state.
 
 #. **Hardware PD**
 
-- Clicking this button will put :adi:`AD7280A` in to Full Power-Down mode,
-  meaning, both the analog and digital circuitry of the :adi:`AD7280A` will be
-  shut down, this in turn will only require 5uA maximum current. This button
-  will also disable :adi:`AD8280`.
+   - Clicking this button will put :adi:`AD7280A` in to Full Power-Down mode,
+     meaning, both the analog and digital circuitry of the :adi:`AD7280A` will be
+     shut down, this in turn will only require 5uA maximum current. This button
+     will also disable :adi:`AD8280`.
 
 #. **Software PD**
 
-- . Clicking this button will put :adi:`AD7280A` in to Software Power-Down mode
-  which requires only 3.8 mA maximum current. This button will also disable
-  :adi:`AD8280`.
+   - Clicking this button will put :adi:`AD7280A` in to Software Power-Down mode
+     which requires only 3.8 mA maximum current. This button will also disable
+     :adi:`AD8280`.
 
 #. **Software/Hardware PU**
 
-::
+   - Clicking this button will power up the :adi:`AD7280A <ad7280A>` when it"s
+     coming from a software power down or hardware power down mode. This button
+     will not enable the :adi:`AD8280 <AD8280>`.
 
-   *Clicking this button will power up the [[adi>ad7280A|AD7280A]] when it"s coming from a software power down or hardware power down mode. This button will not enable the [[adi>AD8280|AD8280]].
- - **Enable/Disable AD8280**
- * This button allows the user to enable or disable the secondary battery
-   monitoring and protection system.
- - **Self-Test AD8280**
- * Executes the self test feature of AD8280.
- - **Save Data to File**
- * This button will execute a save data command to record the Voltage and
-   Temperature reading of both devices in codes and volts format. The file may
-   be saved as .txt or .xls.
- - **Control Tabs**
- * __Voltage(Codes)/Voltage(Volts)__: Clicking either of these tabs brings out
-   the voltage reading on each device's channel in front. These tabs shows the
-   reading in either Codes or voltage format.
- * __Temperature(Codes)/Temperature(Volts)__: Clicking either of these tabs
-   brings out the temperature reading in front. These tabs shows the reading in
-   either Codes or voltage format.
- * __Configure AD7280A__: Clicking this tab will bring the AD7280A
-   configurations in front.
- * __Advanced__: Clicking this tab will bring out the advanced control for the
-   device in front.
- * __SDP Firmware Release Info__ Clicking this tab will bring out the firmware
-   information currently installed in the PC.
- - **AD7280A Configuration**
- * All control tabs will be explained with more detail on the next section.
- - **Warning indicators**
-   *__AD7280 Alert__: This is the primary monitor"s alert indicator. When the
-   voltage or temperature reading exceeded the user defined thresholds from the
-   AD7280A configuration, this LED will light up.
-   *__Under Voltage__: This is one of the secondary monitor"s alert indicator.
-   When the voltage or temperature reading exceeded the user defined floor
-   threshold, this LED will light up.
-   *__Over Voltage__: This is one of the secondary monitor"s alert indicator.
-   When the voltage or temperature reading exceeded the user defined ceiling
-   threshold, this LED will light up.
+   - **Enable/Disable AD8280**
+     This button allows the user to enable or disable the secondary battery
+     monitoring and protection system.
+
+   - **Self-Test AD8280**
+     Executes the self test feature of AD8280.
+
+   - **Save Data to File**
+     This button will execute a save data command to record the Voltage and
+     Temperature reading of both devices in codes and volts format. The file may
+     be saved as .txt or .xls.
+
+   - **Control Tabs**
+     *Voltage(Codes)/Voltage(Volts)*: Clicking either of these tabs brings out
+     the voltage reading on each device's channel in front. These tabs shows the
+     reading in either Codes or voltage format.
+
+     - *Temperature(Codes)/Temperature(Volts)*: Clicking either of these tabs
+       brings out the temperature reading in front. These tabs shows the reading in
+       either Codes or voltage format.
+       *Configure AD7280A*: Clicking this tab will bring the AD7280A
+       configurations in front.
+
+     - *Advanced*: Clicking this tab will bring out the advanced control for the
+       device in front.
+
+     - *SDP Firmware Release Info* Clicking this tab will bring out the firmware
+       information currently installed in the PC.
+
+   - **AD7280A Configuration**
+     All control tabs will be explained with more detail on the next section.
+
+   - **Warning indicators**
+     * *AD7280 Alert*: This is the primary monitor"s alert indicator. When the
+     voltage or temperature reading exceeded the user defined thresholds from the
+     AD7280A configuration, this LED will light up.
+     * *Under Voltage*: This is one of the secondary monitor"s alert indicator.
+     When the voltage or temperature reading exceeded the user defined floor
+     threshold, this LED will light up.
+     * *Over Voltage*: This is one of the secondary monitor"s alert indicator.
+     When the voltage or temperature reading exceeded the user defined ceiling
+     threshold, this LED will light up.
 
 --------------
 

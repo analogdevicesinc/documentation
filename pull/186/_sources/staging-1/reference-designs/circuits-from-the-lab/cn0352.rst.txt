@@ -33,8 +33,6 @@ bandwidth of RS485.
    ADI MAKES NO GUARANTEES TO THE SAFETT AND TAKES NO RESPONSIBILITY TO ANY
    POTENTIAL SAFETY HAZARD DURING DEMONSTRATION.
 
---------------
-
 Required Equipment
 ------------------
 
@@ -54,8 +52,6 @@ Required Equipment
   Li-ion battery with integrated protection circuit is highly recommended)
 - Battery holder board in order to connect battery to EVAL-CN0352-EB1Z
   evaluation system.
-
---------------
 
 Evaluation System Setup
 -----------------------
@@ -474,15 +470,15 @@ Configuration
   :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
   Datasheet}} for more details.
 * *Fast Charge Current*: The configurable charing current during constant
-  current charging stage of [[adi>adp5065.html|ADP5065]]. See
+  current charging stage of :adi:`ADP5065`. See
   :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
   for more details.
 * *Charge Termination Voltage*: The termination voltage of constant current
-  fast charging mode of [[adi>adp5065.html|ADP5065]]. See
+  fast charging mode of :adi:`ADP5065`. See
   :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
   for more details.
 * *Charge Termination Current*: The termination charging current of
-  constant voltage charging mode of [[adi>adp5065.html|ADP5065]]. See
+  constant voltage charging mode of :adi:`ADP5065`. See
   :adi:`ADP5065 <media/en/technical-documentation/data-sheets/ADP5065.pdf>`
   for more details.
 
