@@ -47,6 +47,8 @@ Functions Declarations
 
    * - Function
      - Description
+   * - ``int32_t ad6676_spi_read(struct ad6676_dev *dev, uint16_t reg_addr, uint8_t*reg_data);``
+     - SPI read from device.
 
 \|
 

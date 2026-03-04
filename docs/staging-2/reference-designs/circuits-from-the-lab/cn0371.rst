@@ -72,9 +72,15 @@ Installing the Software
 
 #. Extract the file **CN0371 Eval Software.zip** and open the file
    **setup.exe**.
+
    .. tip::
 
-   It is recommended that you install the :dokuwiki:`CN-0371 Evaluation Software <ftp://ftp.analog.com/pub/cftl/CN0371/>` to the default directory path **C:\\Program Files\\Analog Devices\\CN0371\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
+      It is recommended that you install the
+      :dokuwiki:`CN-0371 Evaluation Software <ftp://ftp.analog.com/pub/cftl/CN0371/>`
+      to the default directory path
+      **C:\\Program Files\\Analog Devices\\CN0371\\**
+      and all National Instruments products to
+      **C:\\Program Files\\National Instruments\\**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0371/CN0371-install1.png
       :width: 600px
@@ -93,15 +99,18 @@ Installing the Software
    the installer for the **ADI SDP Drivers** will execute.
    .. tip::
 
-   It is recommended that you close all other applications before clicking **``Next``**. This will make it possible to update relevant system files without having to reboot your computer.
+      It is recommended that you close all other applications before clicking
+      **``Next``**. This will make it possible to update relevant system files
+      without having to reboot your computer.
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0371/CN0371-install4.png
       :width: 600px
 
 #. Press **``Next``** to set the installation location for the **SDP Drivers**.
+
    .. tip::
 
-   It is recommended that you install the drivers to the default directory path
+      It is recommended that you install the drivers to the default directory path
       **C:\\Program Files\\Analog Devices\\SDP\\Drivers**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0371/CN0371-install5.png
@@ -110,16 +119,16 @@ Installing the Software
 #. Press **``Next``** to install the **SDP Drivers** and complete the
    installation of all software. Click **``Finish``** when done.
 
---------------
-
 Connecting the Hardware
 -----------------------
 
 #. Connect the :adi:`EVAL-CFTL-LVDT <CN0371>` **(LVDT)** to **J3** of the
    :adi:`EVAL-CN0371-SDPZ` **(CN-0371 Board)** as depicted below.
+
    .. tip::
 
-   If a different LVDT is used other than the E-100 LVDT from Measurement Specialties, Inc the wiring schematic will be different!
+      If a different LVDT is used other than the E-100 LVDT from Measurement
+      Specialties, Inc the wiring schematic will be different!
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-wiring_schematic.png
       :width: 600px

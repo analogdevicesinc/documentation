@@ -39,8 +39,7 @@ Hardware:
 
 #. `DE10-Nano FPGA Board <https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1046>`__
 #. `Class 10 16GB SD Card <https://www.amazon.com/gp/product/B073K14CVB/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1>`__
-#.
-   `USB OTG <https://www.amazon.com/Rankie-Female-Adapter-Convertor-3-Pack/dp/B00YOX4JU6/ref=sr_1_19?dchild=1&keywords=usb+otg+adapter&qid=1590089326&sr=8-19>`__
+#. `USB OTG <https://www.amazon.com/Rankie-Female-Adapter-Convertor-3-Pack/dp/B00YOX4JU6/ref=sr_1_19?dchild=1&keywords=usb+otg+adapter&qid=1590089326&sr=8-19>`__
    (micro USB to USB Type A female USB 2.0 Compatible)
 #. Wireless Keyboard and mouse with USB Dongle
 #. Male to male HDMI Cable
@@ -61,13 +60,10 @@ Setting up and Configuring the SD Card
 
 To prepare the SD-card for the DE10-Nano board:
 
-#. `ADI Kuiper Image for CN0540 <https://swdownloads.analog.com/cse/kuiper/cn0540.tar.gz>`__
-#. Validate, Format, and Flash the SD Card
-
-::
-
-   - [[/resources/tools-software/linux-software/zynq_images/windows_hosts| Format and flash the SD Card using Windows]]
-   - [[/resources/tools-software/linux-software/zynq_images/linux_hosts| Format and flash the SD Card using Linux]]
+- `ADI Kuiper Image for CN0540 <https://swdownloads.analog.com/cse/kuiper/cn0540.tar.gz>`__
+- Validate, Format, and Flash the SD Card
+- :dokuwiki:` Format and flash the SD Card using Windows </resources/tools-software/linux-software/zynq_images/windows_hosts>`
+- :dokuwiki:` Format and flash the SD Card using Linux </resources/tools-software/linux-software/zynq_images/linux_hosts>`
 
 Putting together the CN0549
 ---------------------------
@@ -136,9 +132,9 @@ Putting together the CN0549
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_stacked.jpg
       :width: 400px
 
-     Note, the CN0540 will make solid contact with the DE10-Nano even with the
-     plexiglass installed, so there is no need to remove that before connecting
-     the two boards together.
+    Note, the CN0540 will make solid contact with the DE10-Nano even with the
+    plexiglass installed, so there is no need to remove that before connecting
+    the two boards together.
 
 #. Connect the SMA cable from the CN0532 sensor board to the SMA connector on
    the CN0540 DAQ board.
@@ -229,8 +225,8 @@ Below is a picture of what the CN0540 IIO Plugin looks like.
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_controls.png
    :width: 400px
 
-  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_block_diagram.png
-     :width: 400px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_block_diagram.png
+   :width: 400px
 
 User interface
 ^^^^^^^^^^^^^^
@@ -313,7 +309,9 @@ domain plots. To obtain a FFT plot, do the following:
 #. Set the number of samples to 16384
 #. Set the averaging to 3
 
-You should see a nice plot like this when connected to the CN0532 sensor.\ .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_capture_cn0532.png
+You should see a nice plot like this when connected to the CN0532 sensor.
+
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_capture_cn0532.png
    :width: 500px
 
 Additional Information and Useful Links
@@ -345,4 +343,4 @@ Standalone Demo Kit
 
 - :dokuwiki:`Building a CN0549 Pelican Kit </resources/eval/user-guides/circuits-from-the-lab/cn0549/pelican_kit>`
 
-// End of Document //
+

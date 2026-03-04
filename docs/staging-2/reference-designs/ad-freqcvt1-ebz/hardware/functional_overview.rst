@@ -61,8 +61,6 @@ Power
 
 Key components:
 
-.. list-table::
-
    * - :adi:`ADP2370`
      - Buck regulator, 800mA, 3.2 to 15V
    * - :adi:`ADM7154`

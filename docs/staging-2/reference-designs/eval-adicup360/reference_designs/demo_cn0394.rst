@@ -113,8 +113,8 @@ voltage:
 ::
 
    Vtc - final voltage value for themocouple channel
-Vtc = Vtc_read + Vcj                         Vtc_read - voltage value measured
-on thermocouple channel
+   Vtc = Vtc_read + Vcj
+   Vtc_read - voltage value measured on thermocouple channel
    Vcj - cold junction voltage calculated using first NIST formula
 
 For the final linearized temperature value is used the second polynomial formula
@@ -289,4 +289,4 @@ The **RTE** folder contains device and system related files:
 - system.rteconfig - Allows the user to select the peripherial components they
   need, along with the startup and ARM cmsis files needed for the project.
 
-// End of Document //
+

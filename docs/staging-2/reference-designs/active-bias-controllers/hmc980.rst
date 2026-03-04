@@ -11,10 +11,8 @@ for HMC980
 
 :download:`https://wiki.analog.com/_media/resources/eval/user-guides/active-bias-controllers/hmc980.zip`
 
-.. figure:: https://wiki.analog.com/_media/{/resources/eval/user-guides/active-bias-controllers/hmc980_configuration_calculator.png
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/active-bias-controllers/hmc980_configuration_calculator.png
    :width: 400px
-
-  }
 
 --------------
 
@@ -50,13 +48,13 @@ Gain Blocks & Drivers
      - VG2
      - R4
      - R5
-   * - :::
+   * - Units
      - (V)
      - (V)
      - (kΩ)
      - (mA)
-     - :::
-     - :::
+     - N/A
+     - N/A
      - (kΩ)
      - (kΩ)
      - (V)
@@ -93,13 +91,13 @@ LNAs
      - VG2
      - R4
      - R5
-   * - :::
+   * - Units
      - (V)
      - (V)
      - (kΩ)
      - (mA)
-     - :::
-     - :::
+     - N/A
+     - N/A
      - (kΩ)
      - (kΩ)
      - (V)
@@ -196,13 +194,13 @@ Linear & Power
      - VG2
      - R4
      - R5
-   * - :::
+   * - Units
      - (V)
      - (V)
      - (kΩ)
      - (mA)
-     - :::
-     - :::
+     - N/A
+     - N/A
      - (kΩ)
      - (kΩ)
      - (V)
@@ -623,13 +621,13 @@ Wideband (Distributed)
      - VG2
      - R4
      - R5
-   * - :::
+   * - Units
      - (V)
      - (V)
      - (kΩ)
      - (mA)
-     - :::
-     - :::
+     - N/A
+     - N/A
      - (kΩ)
      - (kΩ)
      - (V)
@@ -882,13 +880,13 @@ Microwave & Optical Drivers
      - VG2
      - R4
      - R5
-   * - :::
+   * - Units
      - (V)
      - (V)
      - (kΩ)
      - (mA)
-     - :::
-     - :::
+     - N/A
+     - N/A
      - (kΩ)
      - (kΩ)
      - (V)

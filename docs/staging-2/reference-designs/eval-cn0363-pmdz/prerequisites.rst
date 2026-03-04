@@ -56,4 +56,4 @@ the *Jumper Settings* chapter.
 More Information
 ----------------
 
-- `EVAL-CN0363-PMDZ User Guide <>`__
+See the :adi:`CN0363` documentation.

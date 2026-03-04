@@ -2,15 +2,12 @@
 
 .. _eval-adtf3175-nxz:
 
-NO TITLE
-========
-
-adding .. admonition:: Download
-
-   :git-ToF:`Download the latest software package from here <releases/+>`
-
 EVAL-ADTF3175-NXZ
 -----------------
+
+.. admonition:: Download
+
+   :git-ToF:`Download the latest software package from here <releases/+>`
 
 Analog Devices 3D time of flight (ToF) camera products capture depth
 information, enabling advanced machine vision applications and allowing people
@@ -83,7 +80,7 @@ Modes of Operation
         -
         - ~15
 
-   *FPS is currently limited by CPU processing speed
+   FPS is currently limited by CPU processing speed
 
 What is included in the kit?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

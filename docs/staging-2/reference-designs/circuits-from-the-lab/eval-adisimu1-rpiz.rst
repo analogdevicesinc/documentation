@@ -266,8 +266,8 @@ The image below shows the proper mounting of IMU"s on Mounting Slot B.
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_b.jpg
    :width: 450px
 
-  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201216_202707.jpg
-     :width: 332px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201216_202707.jpg
+   :width: 332px
 
 Mounting Slot C
 ~~~~~~~~~~~~~~~
@@ -292,8 +292,8 @@ Below is an example of proper mounting of IMU"s on mounting hole C
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/adis_mounting_c.jpg
    :width: 400px
 
-  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201216_202543.jpg
-     :width: 420px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201216_202543.jpg
+   :width: 420px
 
 Mounting Slot F
 ~~~~~~~~~~~~~~~
@@ -325,8 +325,8 @@ Below is an image that show proper mounting of IMU"s on mounting slot F.
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_f.jpg
    :width: 400px
 
-  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/hole_f.jpg
-     :width: 460px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/hole_f.jpg
+   :width: 460px
 
 P7 Connection
 -------------
@@ -352,8 +352,8 @@ hex nuts as shown below:
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_i.jpg
    :width: 400px
 
-  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201211_212825.jpg
-     :width: 425px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201211_212825.jpg
+   :width: 425px
 
 Raspberry Pi Connector
 ----------------------

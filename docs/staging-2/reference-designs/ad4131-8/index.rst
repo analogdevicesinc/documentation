@@ -79,26 +79,23 @@ To begin using the evaluation board, do the following:
    ACE software (can be downloaded online). Restart the PC after the software
    installation is complete. (For complete software installation instructions,
    see the Evaluation Software section.)
+
 #. Connect the SDP-K1 board to the EVAL-AD4131-8WARDZ board.
 
-::
-
-   {{:resources:eval:user-guides:AD4131_new_eval_board_with_sdp_not_conencted_2.jpg?400|}}  {{:resources:eval:user-guides:AD4131_new_eval_board_with_sdp_conencted.jpg?400| *{{:resources:wechat_image_20210401114013.jpg?300|}}
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4131_new_eval_board_with_sdp_not_conencted_2.jpg
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4131_new_eval_board_with_sdp_conencted.jpg
+   .. figure:: https://wiki.analog.com/_media/resources/wechat_image_20210401114013.jpg
 
 #. Connect the SDP-K1 board to the PC using the supplied USB cable. Choose to
    automatically search for the drivers for the SDP-K1 board if prompted by the
    operating system.
 
-::
-
-   *{{:resources:eval:user-guides:20220308_110921.jpg?400|}}
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/20220308_110921.jpg
 
 #. From the Programs menu, go to the Analog Devices subfolder, and click ACE to
    launch the AD4131-8 ACE Plugin (see the Launching the Software section).
 
-::
-
-   *{{:resources:screenshot_2021-04-01_123406.png?400|}}
+   .. figure:: https://wiki.analog.com/_media/resources/screenshot_2021-04-01_123406.png
 
 Hardware Guide
 ==============
@@ -124,21 +121,6 @@ Visit the software guide chapter
 `here <http://wiki.analog.com/resources/eval/user-guides/AD4131-8/softwareguide>`__
 **Contents of the Software guide**:
 
-#. :dokuwiki:`Ace Plugin </resources/eval/user-guides/AD4131-8/softwareprocedures#ace_plugin>`
-
-::
-
-   - [[resources:eval:user-guides:AD4131-8:softwareprocedures#ace_plugin_install_guide|Ace Plugin Install]]
-   - [[resources:eval:user-guides:AD4131-8:softwareprocedures#ace_software_operation|Ace Plugin Operation]]
-   - [[resources:eval:user-guides:AD4131-8:softwareprocedures:demo_modes|Visit the demo mode section here]]
-       - [[resources:eval:user-guides:AD4131-8:softwareprocedures:demo_modes#noise_test_demo|Noise Test Demo]]
-       - [[resources:eval:user-guides:AD4131-8:softwareprocedures:demo_modes#wire_rtd_demo|2 Wire RTD Demo]]
-       - [[resources:eval:user-guides:AD4131-8:softwareprocedures:demo_modes#wire_rtd_demo1|3 Wire RTD Demo]]
-       - [[resources:eval:user-guides:AD4131-8:softwareprocedures:demo_modes#wire_rtd_demo2|4 Wire RTD Demo]]
-       - [[resources:eval:user-guides:AD4131-8:softwareprocedures:demo_modes#thermocouple_demo|Thermocouple Demo]]
-       - [[resources:eval:user-guides:AD4131-8:softwareprocedures:demo_modes#thermistor_demo|Thermistor Demo]]
-       - [[resources:eval:user-guides:AD4131-8:softwareprocedures:demo_modes#wire_bridge_demo|4 Wire Bridge Demo]]
-       - [[resources:eval:user-guides:AD4131-8:softwareprocedures:demo_modes#wire_bridge_demo1|6 Wire Bridge Demo]]
-- [[resources:eval:user-guides:AD4131-8:softwareprocedures:afm|Active Functional
-  Model Guide]]
-- [[:resources:eval:user-guides:AD4131:mbed_iio_app|AD4131 Firmware]]
+- :dokuwiki:`Ace Plugin </resources/eval/user-guides/AD4131-8/softwareprocedures#ace_plugin>`
+- :dokuwiki:`Active Functional Model Guide <resources/eval/user-guides/AD4131-8/softwareprocedures/afm>`
+- :dokuwiki:`AD4131 Firmware </resources/eval/user-guides/AD4131/mbed_iio_app>`

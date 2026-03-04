@@ -1,6 +1,6 @@
 .. imported from: https://wiki.analog.com/resources/eval/user-guides/ad9081/quickstart/a10soc
 
-.. _ad9081 quickstart a10soc:
+.. _ad9081 quickstart a10soc-DUPLICATED:
 
 AD9081 Arria10 SoC Development Kit Quick Start Guide
 ====================================================
@@ -41,7 +41,7 @@ Creating / Configuring the SD Card
 
 :ref:`kuiper`
 
--  Copy next boot files from :red:`\ ``socfpga_arria10_socdk_ad9081``\ `
+- Copy next boot files from :red:`\ ``socfpga_arria10_socdk_ad9081``\ `
   directory directly on SD Card ``BOOT`` partition :
 
   - ``fit_spl_fpga.itb``

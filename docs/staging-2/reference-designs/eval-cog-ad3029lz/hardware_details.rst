@@ -14,12 +14,6 @@ provided example demo software projects.
 
 The following boards are currently available:
 
-::
-
-   - [[resources:eval:user-guides:ev-cog-ad3029lz:cog_hw_userguide|EV-COG-AD3029LZ MCU Cog]]
-   - [[resources:eval:user-guides:ev-cog-bleintp1z| EV-COG-BLEINTP1Z Connectivity Cog]]
-   - [[resources:eval:user-guides:ev-gear-expander1z| EV-GEAR-EXPANDER1Z Expander Gear]]
-
-End Document
-
-:dokuwiki:`Back </resources/eval/user-guides/ev-cog-ad3029lz>`
+- :dokuwiki:`EV-COG-AD3029LZ MCU Cog <resources/eval/user-guides/ev-cog-ad3029lz/cog_hw_userguide>`
+- :dokuwiki:`EV-COG-BLEINTP1Z Connectivity Cog <resources/eval/user-guides/ev-cog-bleintp1z>`
+- :dokuwiki:`EV-GEAR-EXPANDER1Z Expander Gear <resources/eval/user-guides/ev-gear-expander1z>`

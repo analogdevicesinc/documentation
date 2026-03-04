@@ -37,80 +37,75 @@ should be. If you have any questions, feel free to
 
 - Gettings Started
 
-  #. :dokuwiki:`What you need to get started <adrv9002/prerequisites>`
-  #. :dokuwiki:`Quick Start Guides <adrv9002/quickstart>`
+  - :dokuwiki:`What you need to get started <adrv9002/prerequisites>`
+  - :dokuwiki:`Quick Start Guides <adrv9002/quickstart>`
 
-     #. :dokuwiki:`Linux on Zed Board <adrv9002/quickstart/zed>`
-     #. :dokuwiki:`Linux on ZC706 <adrv9002/quickstart/zynq>`
-     #. :dokuwiki:`Linux on ZCU102 <ADRV9002/quickstart/zynqmp>`
-     #. :dokuwiki:`Linux on Arria 10 SoC <adrv9002/quickstart/a10soc>`
-     #. :ref:`kuiper`
-     #. :ref:`kuiper`
+     - :dokuwiki:`Linux on Zed Board <adrv9002/quickstart/zed>`
+     - :dokuwiki:`Linux on ZC706 <adrv9002/quickstart/zynq>`
+     - :dokuwiki:`Linux on ZCU102 <ADRV9002/quickstart/zynqmp>`
+     - :dokuwiki:`Linux on Arria 10 SoC <adrv9002/quickstart/a10soc>`
+     - :ref:`kuiper`
 
 - Software Solutions
 
-::
+   - :dokuwiki:`IIO Scope <resources/tools-software/linux-software/iio_oscilloscope>`
 
-   - [[resources/tools-software/linux-software/iio_oscilloscope|IIO Scope]]
-     - [[resources:tools-software:linux-software:adrv9002_osc_main| ADRV9001/2 IIO Scope View]]
-     - [[resources:tools-software:linux-software:adrv9002_plugin|ADRV9001/2 Control IIO Scope Plugin]]
-   - [[:resources/tools-software/transceiver-toolbox|Transceiver Toolbox for MATLAB and Simulink]]
-   - [[/resources/tools-software/linux-software/gnuradio|GNU Radio]]
-   - [[:resources/tools-software/linux-software/pyadi-iio|Python Interfaces]]
-   - [[resources:tools-software:linux-software:libiio:cmd_line|IIO Command Line Tools]]
+     - :dokuwiki:`ADRV9001/2 IIO Scope View <resources/tools-software/linux-software/adrv9002_osc_main>`
+     - :dokuwiki:`ADRV9001/2 Control IIO Scope Plugin <resources/tools-software/linux-software/adrv9002_plugin>`
+
+   - :dokuwiki:`Transceiver Toolbox for MATLAB and Simulink </resources/tools-software/transceiver-toolbox>`
+   - :dokuwiki:`GNU Radio </resources/tools-software/linux-software/gnuradio>`
+   - :dokuwiki:`Python Interfaces </resources/tools-software/linux-software/pyadi-iio>`
+   - :dokuwiki:`IIO Command Line Tools <resources/tools-software/linux-software/libiio/cmd_line>`
    - Generic language support
-* Embedded Resources
-   - [[resources:tools-software:linux-drivers:iio-transceiver:adrv9002|
-     ADRV9001/2 Linux Device Driver]]
-   -
-     [[resources:tools-software:linux-drivers:iio-transceiver:adrv9002-customization|ADRV9001/2 Device Driver Customization]]
-   - [[resources:tools-software:linux-drivers:axi-dmac| AXI-DMAC DMA Controller
-     Linux Driver]]
-   - [[resources:tools-software:linux-drivers:iio-adc:axi-adc-hdl|AXI ADC HDL
-     Linux Driver]]
-   - [[resources:tools-software:linux-drivers:iio-dds:axi-dac-dds-hdl|AXI DAC
-     HDL Linux Driver]]
-   - [[.:ad-fmcomms2-ebz:software:linux:zynq_tips_tricks|Customizing the
-     devicetree on the target]]
-   - [[/resources/eval/user-guides/ADRV9002/no-os-setup|ADRV9001/2 No-OS System
-     Level Design Setup]]
-   - [[resources:tools-software:linux-build:generic:zynqmp|Building the ZynqMP /
-     MPSoC Linux kernel and devicetrees from source]]
-* FPGA Resources
-   - [[:resources/eval/user-guides/adrv9002/reference_hdl|HDL Reference Design]]
-     which you must use in your FPGA.
-   - [[:resources/eval/user-guides/adrv9002/axi_adrv9002|AXI_ADRV9002 Interface
-     Core]]
-   - [[resources:fpga:docs:hdl|ADI Reference Designs HDL User Guide]]
-   - [[:resources/tools-software/transceiver-toolbox|HDL Targeting From MATLAB
-     and Simulink]]
-* Hardware Resources
-   - [[adi>ADRV9002|ADRV9002 Product page]]
-   -
-     [[adi>en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html|Full Datasheet and chip design package]]
+
+- Embedded Resources
+
+   - :dokuwiki:`ADRV9001/2 Linux Device Driver <resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+   - :dokuwiki:`ADRV9001/2 Device Driver Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
+   - :dokuwiki:`AXI-DMAC DMA Controller Linux Driver <resources/tools-software/linux-drivers/axi-dmac>`
+   - :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+   - :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+   - :dokuwiki:`Customizing the devicetree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
+   - :dokuwiki:`ADRV9001/2 No-OS System Level Design Setup </resources/eval/user-guides/ADRV9002/no-os-setup>`
+   - :dokuwiki:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source <resources/tools-software/linux-build/generic/zynqmp>`
+
+- FPGA Resources
+
+   - :dokuwiki:`HDL Reference Design </resources/eval/user-guides/adrv9002/reference_hdl>` which you must use in your FPGA.
+   - :dokuwiki:`AXI_ADRV9002 Interface Core </resources/eval/user-guides/adrv9002/axi_adrv9002>`
+   - :dokuwiki:`ADI Reference Designs HDL User Guide <resources/fpga/docs/hdl>`
+   - :dokuwiki:`HDL Targeting From MATLAB and Simulink </resources/tools-software/transceiver-toolbox>`
+
+- Hardware Resources
+
+   - :adi:`ADRV9002 Product page <ADRV9002>`
+   - :adi:`Full Datasheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
 
 - :dokuwiki:`Help and Support <ad-fmcomms2-ebz/help_and_support>`
 - For Hardware technical support go to:
 
-  -  :ez:`Design Support Community ADRV9001-ADRV9007 <wide-band-rf-transceivers/design-support-adrv9001-adrv9007>`
+  - :ez:`Design Support Community ADRV9001-ADRV9007 <wide-band-rf-transceivers/design-support-adrv9001-adrv9007>`
 
 - For Evaluation System Software support (TES GUI, ADRV9001 API driver, etc.) go
   to:
 
-::
+  - :ez:`TES GUI Software Support Community ADRV9001-ADRV9007 <wide-band-rf-transceivers/tes-gui-software-support-adrv9001-adrv9007>`
 
-   * [[ez>wide-band-rf-transceivers/tes-gui-software-support-adrv9001-adrv9007 | TES GUI Software Support Community ADRV9001-ADRV9007 ]]
-* For questions regarding the HDL reference design please use the
-     * [[ez>community/fpga|FPGA Reference Designs]] sub-community.
-* For questions regarding the the ADI Linux distribution, the Linux drivers, or
+- For questions regarding the HDL reference design please use the
+
+  - :ez:`sub-community <community/fpga|FPGA Reference Designs>`.
+
+- For questions regarding the the ADI Linux distribution, the Linux drivers, or
   the device trees for the ADRV9001/2 based platforms, please use the
-   * [[ez>community/linux-device-drivers/linux-software-drivers|Linux Software
-     Drivers]] sub-community.
-* For questions regarding the no-OS drivers for ADRV9001/2, please use the
-   *
-     [[ez>community/linux-device-drivers/microcontroller-no-os-drivers|Microcontroller and No-OS Driver]] sub-community.
-* [[.:ad-fmcomms1-ebz:math|Additional Documentation about SDR Signal Chains -
-  The math behind the RF]]
+
+  - :ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>` sub-community.
+
+- For questions regarding the no-OS drivers for ADRV9001/2, please use the
+
+  * :ez:`Microcontroller and No-OS Driver <community/linux-device-drivers/microcontroller-no-os-drivers>` sub-community.
+
+- :dokuwiki:`Additional Documentation about SDR Signal Chains - The math behind the RF </resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 
 Downloads
 ---------
@@ -126,24 +121,21 @@ The latest boot files for adrv9002 (for all supported carriers) can be found in
 the latest Kuiper Image release (note one can choose between downloading the
 full image or just the boot partition):
 
-::
+- :ref:`kuiper`
 
-   *[[:resources:tools-software:linux-software:adi-kuiper_images:release_notes#release_image|Kuiper Image]]
+.. collapsible:: Older releases
 
-<hidden Older releases (Click to expand)>
+   - `ADRV9002_ZCU102_SDCARD_BOOT_FILES_JULY17.zip <http://swdownloads.analog.com/cse/tmp/ADRV9002_ZCU102_SDCARD_BOOT_FILES_JULY17.zip>`__
+   - `adrv9002_2019_r2_prerelease.zip <http://swdownloads.analog.com/cse/tmp/adrv9002_2019_r2_prerelease.zip>`__
+   - `adrv9002_B0_2019_r2_prerelease.zip <http://swdownloads.analog.com/cse/tmp/B0_2019_r2_pre_release_zcu102.zip>`__
+   - `adrv9002_B0_2019_r2_4_1_2021.zip <http://swdownloads.analog.com/cse/tmp/B0_2019_r2_4_1_2021_zcu102.zip>`__
 
-- `ADRV9002_ZCU102_SDCARD_BOOT_FILES_JULY17.zip <http://swdownloads.analog.com/cse/tmp/ADRV9002_ZCU102_SDCARD_BOOT_FILES_JULY17.zip>`__
-- `adrv9002_2019_r2_prerelease.zip <http://swdownloads.analog.com/cse/tmp/adrv9002_2019_r2_prerelease.zip>`__
-- `adrv9002_B0_2019_r2_prerelease.zip <http://swdownloads.analog.com/cse/tmp/B0_2019_r2_pre_release_zcu102.zip>`__
-- `adrv9002_B0_2019_r2_4_1_2021.zip <http://swdownloads.analog.com/cse/tmp/B0_2019_r2_4_1_2021_zcu102.zip>`__
+.. collapsible:: Source code
 
-</hidden> Source code have been posted on following branches on github, or has
-been already merged into master:
-
-- :git-linux:`drivers/iio/adc/navassa`
-- :git-hdl:`adrv9001_zcu102:projects/adrv9001`
-- :git-iio-oscilloscope:`plugins/adrv9002.c`
-- :git-pyadi-iio:`examples/adrv9002_example.py`
+   - :git-linux:`drivers/iio/adc/navassa`
+   - :git-hdl:`adrv9001_zcu102:projects/adrv9001`
+   - :git-iio-oscilloscope:`plugins/adrv9002.c`
+   - :git-pyadi-iio:`examples/adrv9002_example.py`
 
 Videos
 ------
@@ -158,7 +150,7 @@ Software Defined Radio using the Linux IIO Framework
 ADI Articles
 ~~~~~~~~~~~~
 
--  Four Quick Steps to Production: Using Model-Based Design for Software-Defined
+- Four Quick Steps to Production: Using Model-Based Design for Software-Defined
   Radio
 - :adi:`Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
 - :adi:`Part 2—Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`

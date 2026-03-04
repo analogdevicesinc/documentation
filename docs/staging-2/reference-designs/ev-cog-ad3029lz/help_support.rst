@@ -21,7 +21,7 @@ There are many things that can go wrong with an ecosystem this complex, but if
 you are having issues getting the board or software working, here are a few
 simple things you can try before contacting Analog Devices.
 
-#. Check the Power
+**Check the Power**
 
 - Do you have the USB cable plugged in? if yes, then check switch (S7) in USB
   position
@@ -29,7 +29,7 @@ simple things you can try before contacting Analog Devices.
 
   - Try replacing your batteries, and see if the board powers up.
 
-#. Program the EV-COG-AD3029LZ
+**Program the EV-COG-AD3029LZ**
 
 - Sometimes a flashed program doesn"t run properly or can make it difficult to
   run the debugger.
@@ -40,29 +40,31 @@ simple things you can try before contacting Analog Devices.
 - If drag and drop is not working, it may be necessary to erase the flash. To do
   so:
 
-::
+  - Download and install the CrossCore Serial Flash Programmer from here:
+    :adi:`en/design-center/processors-and-dsp/evaluation-and-development-software/crosscore-serial-flash-programmer.html#dsp-overview`.
+  - Make sure that the USB is connected and on UART header (P8) 1 & 2 and 7 & 8 are shorted.
+  - Power cycle the EV-COG-AD3029LZ board while holding down the boot switch.
+  - Select the mbed serial COM port in the CrossCore Serial Flash Programmer, and
+    erase the flash.
+  - Then try :dokuwiki:`drag and drop <resources/eval/user-guides/ev-cog-ad3029lz/tools/hardware_usb>`
+    a .HEX or .BIN file into flash
+  - If the mass erase didn't work, and you are trying to drag and drop a large
+    .BIN file on EV-COG-AD3029LZ hardware, it's possible that the mbed interface
+    file needs to be updated to support your application.
 
-   - Download and install the CrossCore Serial Flash Programmer from here: [[adi>en/design-center/processors-and-dsp/evaluation-and-development-software/crosscore-serial-flash-programmer.html#dsp-overview]].
-   - Make sure that the USB is connected and on UART header (P8) 1 & 2 and 7 & 8 are shorted.
-   - Power cycle the EV-COG-AD3029LZ board while holding down the boot switch.
-   - Select the mbed serial COM port in the CrossCore Serial Flash Programmer, and erase the flash.
-   - Then try [[resources:eval:user-guides:ev-cog-ad3029lz:tools:hardware_usb|drag and drop]] a .HEX or .BIN file into flash
-* If the mass erase didn't work, and you are trying to drag and drop a large
-  .BIN file on EV-COG-AD3029LZ hardware, it's possible that the mbed interface
-  file needs to be updated to support your application.
-   - Please visit the
-     [[resources:eval:user-guides:ev-cog-ad3029lz:tools:hardware_usb|Driver
-     Installation for On-board Debugger (CMSIS DAP)]]page in order to put the
-     board in update mode.
-   - Once you are in "maintenance mode" you should drag and drop the latest
-     interface file onto your maintenance drive.  That file can be downloaded at
-     the bottom of
-     [[resources:eval:user-guides:ev-cog-ad3029lz:tools:hardware_usb|Driver
-     Installation for On-board Debugger (CMSIS DAP)]].
+- Please visit the
+  :dokuwiki:`Driver Installation for On-board Debugger (CMSIS DAP) <resources/eval/user-guides/ev-cog-ad3029lz/tools/hardware_usb>`
+  page in order to put the board in update mode.
+- Once you are in "maintenance mode" you should drag and drop the latest
+  interface file onto your maintenance drive.  That file can be downloaded at
+  the bottom of
+  :dokuwiki:`Driver Installation for On-board Debugger (CMSIS DAP) <resources/eval/user-guides/ev-cog-ad3029lz/tools/hardware_usb>`.
+
 - Not receiving/transmitting data to the UART
-* Make sure that the UART header (P8) is positioned in the correct destination
-  to transmit/receive UART data.
-* JH6 is shorted.
+
+  * Make sure that the UART header (P8) is positioned in the correct
+    destination to transmit/receive UART data.
+  * JH6 is shorted.
 
 This is just a brief self-help guide to troubleshooting common issues. If you
 have other questions that need answering please direct those requests to the
@@ -114,6 +116,6 @@ EV-COG-AD3029LZ, either post a question or send an email.
 
   - :dokuwiki:`processor.tools.support@analog.com </mailto/processor.tools.support@analog.com>`
 
-// End of Document //
+
 
 :dokuwiki:`Back </resources/eval/user-guides/ev-cog-ad3029lz>`

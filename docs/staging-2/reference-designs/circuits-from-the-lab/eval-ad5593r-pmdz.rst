@@ -277,41 +277,41 @@ Setting up the Hardware
      .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5593r-pmod/ad5593_example_adicup.png
         :width: 600px
 
-     System Setup Using Raspberry Pi
-     -------------------------------
+System Setup Using Raspberry Pi
+--------------------------------
 
-     The **EVAL-AD5593R-PMDZ** can be used with a Raspberry Pi.
+The **EVAL-AD5593R-PMDZ** can be used with a Raspberry Pi.
 
-     Demo Requirements
-     ~~~~~~~~~~~~~~~~~
+Demo Requirements
+~~~~~~~~~~~~~~~~~
 
-     The following is a list of items needed in order to replicate this demo.
+The following is a list of items needed in order to replicate this demo.
 
-     - Hardware
+- Hardware
 
-       - :adi:`EVAL-AD5593R-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad5593r-pmdz.html>`
-       - :adi:`PMOD to Raspberry Pi Adapter (PMD-RPI-INTZ) <PMD-RPI-INTZ>`
-       - Raspberry PI Zero, Zero W, 3B+, or 4
-       - 16GB (or larger) Class 10 (or faster) micro-SD card
-       - 5Vdc, 2.5A power supply with micro USB connector (USB-C power supply for Raspberry Pi 4)
-       - User interface setup (choose one):
+  - :adi:`EVAL-AD5593R-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad5593r-pmdz.html>`
+  - :adi:`PMOD to Raspberry Pi Adapter (PMD-RPI-INTZ) <PMD-RPI-INTZ>`
+  - Raspberry PI Zero, Zero W, 3B+, or 4
+  - 16GB (or larger) Class 10 (or faster) micro-SD card
+  - 5Vdc, 2.5A power supply with micro USB connector (USB-C power supply for Raspberry Pi 4)
+  - User interface setup (choose one):
 
-         - HDMI monitor, keyboard, and mouse plugged directly into Raspberry Pi
-         - Host Windows/Linux/Mac computer on the same network as Raspberry Pi
+    - HDMI monitor, keyboard, and mouse plugged directly into Raspberry Pi
+    - Host Windows/Linux/Mac computer on the same network as Raspberry Pi
 
-     - Software
+- Software
 
-       - :ref:`kuiper`
+  - :ref:`kuiper`
 
-     Loading Image on SD Card
-     ~~~~~~~~~~~~~~~~~~~~~~~~
+Loading Image on SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-     In order to boot the Raspberry Pi and control the **EVAL-AD5593R-PMDZ**, you will need to install ADI Kuiper Linux on an SD card. Complete instructions, including where to download the SD card image, how to write it to the SD card, and how to configure the system are provided on the :ref:`kuiper`.
+In order to boot the Raspberry Pi and control the **EVAL-AD5593R-PMDZ**, you will need to install ADI Kuiper Linux on an SD card. Complete instructions, including where to download the SD card image, how to write it to the SD card, and how to configure the system are provided on the :ref:`kuiper`.
 
-     Configuring the SD Card
-     ~~~~~~~~~~~~~~~~~~~~~~~
+Configuring the SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-     Follow the configuration procedure under **Configuring the SD Card for Raspberry Pi Projects** on the :ref:`kuiper` page, substituting the following lines in **config.txt**:
+Follow the configuration procedure under **Configuring the SD Card for Raspberry Pi Projects** on the :ref:`kuiper` page, substituting the following lines in **config.txt**:
 
      ::
 
@@ -553,4 +553,4 @@ Registration
    :reg:`Register <EVAL-AD5593R-PMDZ?&v=RevC>` to receive all these great
    benefits and more!
 
-// End of Document //
+

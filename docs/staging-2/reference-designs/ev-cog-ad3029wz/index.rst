@@ -37,31 +37,28 @@ EV-COG-AD3029WZ and EV-COG-AD3029LZ**
 
    .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/drawing1-copy.png
 
-::
+   - :dokuwiki:`Analog Devices ADuCM302x Device Support Pack <resources/eval/user-guides/ev-cog-ad3029wz/software/aducm302x>`
+   - :dokuwiki:`Analog Devices EV-COG-AD3029WZ Off-Chip Drivers and Examples <resources/eval/user-guides/ev-cog-ad3029wz/software/ev-cog-ad3029wz>`
+   - :dokuwiki:`Analog Devices Sensor Drivers and Examples <resources/eval/user-guides/ev-cog-ad3029lz/software/sensor>`
+   - :dokuwiki:`Analog Devices Bluetooth Low Energy Software <resources/eval/user-guides/ev-cog-ad3029lz/software/connectivity>`
 
-   - [[resources:eval:user-guides:ev-cog-ad3029wz:software:aducm302x| Analog Devices ADuCM302x Device Support Pack]]
-   - [[resources:eval:user-guides:ev-cog-ad3029wz:software:ev-cog-ad3029wz| Analog Devices EV-COG-AD3029WZ Off-Chip Drivers and Examples]]
-   - [[resources:eval:user-guides:ev-cog-ad3029lz:software:sensor| Analog Devices Sensor Drivers and Examples]]
-   - [[resources:eval:user-guides:ev-cog-ad3029lz:software:connectivity| Analog Devices Bluetooth Low Energy Software]]
-- [[.:ev-cog-ad3029wz:quickstart_1|QuickStart Guide ]]
-   -
-     [[resources:eval:quickstart:ev-cog-ad3029wz:tools:cces_guide|EV-COG-AD3029WZ with CrossCore Embedded Studio ]]
-   -
-     [[resources:eval:user-guides:ev-cog-ad3029wz:tools:iar_guide|EV-COG-AD3029WZ with IAR Embedded Workbench for ARM]]
-   -
-     [[resources:eval:user-guides:ev-cog-ad3029wz:tools:other_ide|EV-COG-AD3029WZ Keil uVision IDE ]]
+- :dokuwiki:`QuickStart Guide </resources/eval/user-guides/ev-cog-ad3029wz/quickstart_1>`
+
+   - :dokuwiki:`EV-COG-AD3029WZ with CrossCore Embedded Studio  <resources/eval/quickstart/ev-cog-ad3029wz/tools/cces_guide>`
+   - :dokuwiki:`EV-COG-AD3029WZ with IAR Embedded Workbench for ARM <resources/eval/user-guides/ev-cog-ad3029wz/tools/iar_guide>`
+   - :dokuwiki:`EV-COG-AD3029WZ Keil uVision IDE  <resources/eval/user-guides/ev-cog-ad3029wz/tools/other_ide>`
 
 #. :dokuwiki:`Hardware Details <ev-cog-ad3029wz/hw_details>`
 
-::
+   - :dokuwiki:`EV-COG-AD3029WZ MCU Cog <resources/eval/user-guides/ev-cog-ad3029wz/cog_hw_userguide>`
 
-   - [[.:ev-cog-ad3029wz:Cog_HW_UserGuide| EV-COG-AD3029WZ MCU Cog ]]
-           *[[.:ev-cog-ad3029lz: powermeasurement| Power Measurement on EV-COG-AD3029WZ MCU COG]]
-- [[.:ev-cog-ad3029wz:tools_driver| Development Tools & Driver]]
-   - [[resources:eval:user-guides:ev-cog-ad3029wz:tools:cces_download|CrossCore
-     Embedded Studio Download & Install]]
-         *[[resources:eval:user-guides:ev-cog-ad3029lz:tools:cces_guide|CrossCore Embedded Studio Quickstart Userguide]]
-   - [[resources:eval:user-guides:ev-cog-ad3029lz:tools:hardware_usb|Driver
-     installation for on-board debugger (CMSIS-DAP)]]
-- [[.:ev-cog-ad4050w:example_project |Example Project ]]
-- [[.:ev-cog-ad4050lz:help_support|Help & Support]]
+     - :dokuwiki:`Power Measurement on EV-COG-AD3029WZ MCU COG <resources/eval/user-guides/ev-cog-ad3029lz/powermeasurement>`
+
+   - :dokuwiki:`Development Tools & Driver <resources/eval/user-guides/ev-cog-ad3029wz/tools_driver>`
+
+     - :dokuwiki:`CrossCore Embedded Studio Download & Install <resources/eval/user-guides/ev-cog-ad3029wz/tools/cces_download>`
+     - :dokuwiki:`CrossCore Embedded Studio Quickstart Userguide <resources/eval/user-guides/ev-cog-ad3029lz/tools/cces_guide>`
+     - :dokuwiki:`Driver installation for on-board debugger (CMSIS-DAP) <resources/eval/user-guides/ev-cog-ad3029lz/tools/hardware_usb>`
+
+   - :dokuwiki:`Example Project <resources/eval/user-guides/ev-cog-ad4050w/example_project>`
+   - :dokuwiki:`Help & Support <resources/eval/user-guides/ev-cog-ad4050lz/help_support>`

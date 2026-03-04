@@ -41,8 +41,8 @@ except it utilizes the HSMC connector which connects to the
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcadc2-ebz/rfc_top_01.jpg
    :width: 420px
 
-  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcadc2-ebz/rfc_bot_01.jpg
-     :width: 420px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcadc2-ebz/rfc_bot_01.jpg
+   :width: 420px
 
 Table of Contents
 -----------------

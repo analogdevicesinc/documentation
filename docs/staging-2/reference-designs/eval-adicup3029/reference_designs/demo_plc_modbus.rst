@@ -129,26 +129,11 @@ supported in the PLC/single-node DCS configuration, as both TX and RX signals
 are driven continuously. Both single-node and multi-node configurations can use
 half-duplex.
 
-.. list-table::
-   :header-rows: 1
-
-   * - ADALM-UARTJTAG Setup
-     -
-     -
-     -
-     -
-
-The CP2103 device must be programmed as follows to control the DE signal on the
+The ADALM-UARTJTAG Setup requires configuration. The CP2103 device must be programmed as follows to control the DE signal on the
 CN0416. Configure Silicon Labs Xpress Configurator as follows to program the
 device:
 
-.. list-table::
-
-   * - IO2 configuration
-     - Mode: Push-Pull, Alternate Function: RS-485, Active High
-     -
-     -
-     -
+Configure the IO2 as follows: Mode: Push-Pull, Alternate Function: RS-485, Active High.
 
 Once the CP2103 is programmed, unplug from the host computer and connect P1 on
 the ADALM-UARTJTAG to P11 on the CN0416 with a 2x5-socket, 100mil cable such as
@@ -206,16 +191,7 @@ Configuration for each node is similar, noting that each node must be set to a
 different address (via S1 on the CN0416) and the most distant node must have its
 termination enabled (via S6 or S7 on CN0416.)
 
-.. list-table::
-   :header-rows: 1
-
-   * - CN0416 Setup
-     -
-     -
-     -
-     -
-
-(Full-duplex only valid in a single-node system.)
+**CN0416 Setup** (Full-duplex only valid in a single-node system.)
 
 .. list-table::
    :header-rows: 1
@@ -1486,4 +1462,4 @@ functionality. This application allows to:
 
    Enter Option:
 
-// End of Document //
+

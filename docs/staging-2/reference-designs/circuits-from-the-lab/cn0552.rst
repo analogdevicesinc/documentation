@@ -298,31 +298,31 @@ Setting up the Hardware
    connect it to a computer. The final setup should look similar to the picture
    below.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/pmod-toadicup.png
-      :width: 900px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/pmod-toadicup.png
+   :width: 900px
 
-     .. note::
+.. note::
 
-        <fc>Figure 5. Hardware Setup</fc>
+   Figure 5. Hardware Setup
 
 #. Make sure the following switches are as shown from the table below.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/switch_config.png
-      :width: 900px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/switch_config.png
+   :width: 900px
 
-     .. note::
+.. note::
 
-        <fc>Figure 6. Switch Confuguration</fc>
+   Figure 6. Switch Confuguration
 
 #. From your PC, open My Computer and look for the DAPLINK drive, if you see
    this then the drivers are complete and correct.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/daplink.jpg
-      :width: 300px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/daplink.jpg
+   :width: 300px
 
-     .. note::
+.. note::
 
-        <fc>Figure 7. DAPLINK Drive</fc>
+   Figure 7. DAPLINK Drive
 
 #. Simply extract the provided zip file. Once extracted, you will see the
    pre-built hex file for the CN0552 demo. Then drag and drop this Hex file to
@@ -620,4 +620,4 @@ Registration
    :reg:`Register <EVAL-CN0552-PMDZ?&v=Rev B>` to receive all these great
    benefits and more!
 
-// End of Document //
+

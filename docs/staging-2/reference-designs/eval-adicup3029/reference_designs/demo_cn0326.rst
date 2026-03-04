@@ -218,7 +218,7 @@ Configuring the Software
 
    #define  USE_IOUT2         NO
 
--  Zero point tolerance - :green:`TOLERANCE` - tolerance used in Nernst equation
+- Zero point tolerance - :green:`TOLERANCE` - tolerance used in Nernst equation
   (*CN0326.h*).
 
 ::
@@ -296,4 +296,4 @@ the CrossCore Embedded Studios tools, please view our
 :dokuwiki:`How to configure the debug session </resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide#how_to_configure_the_debug_session_for_an_aducm3029_application>`
 section.
 
-// End of Document //
+

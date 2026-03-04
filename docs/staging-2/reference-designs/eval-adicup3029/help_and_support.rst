@@ -40,32 +40,39 @@ simple things you can try before contacting Analog Devices.
 - If drag and drop is not working, it may be necessary to erase the flash. To do
   so:
 
-::
+  - Download and install the CrossCore Serial Flash Programmer from here: [[adi>en/design-center/processors-and-dsp/evaluation-and-development-software/crosscore-serial-flash-programmer.html#dsp-overview]].
+  - Make sure that the USB is selected on the three way UART switch (S2).
+  - Power cycle the ADICUP3029 board while holding down the boot switch (S3)
+  - Select the mbed serial COM port in the CrossCore Serial Flash Programmer, and erase the flash.
+  - Then try
+    :dokuwiki`dragging and dropping <resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers#daplink_drive>`
+    a .HEX or .BIN file into flash
 
-   - Download and install the CrossCore Serial Flash Programmer from here: [[adi>en/design-center/processors-and-dsp/evaluation-and-development-software/crosscore-serial-flash-programmer.html#dsp-overview]].
-   - Make sure that the USB is selected on the three way UART switch (S2).
-   - Power cycle the ADICUP3029 board while holding down the boot switch (S3)
-   - Select the mbed serial COM port in the CrossCore Serial Flash Programmer, and erase the flash.
-   - Then try [[resources:eval:user-guides:eval-adicup3029:tools:adicup3029_hw_drivers#daplink_drive|dragging and dropping]] a .HEX or .BIN file into flash
-* If the mass erase didn't work, and you are trying to drag and drop a large
-  .BIN file on EVAL-ADICUP3029 Rev B hardware, it's possible that the mbed
-  interface file needs to be updated to support your application.
+#. If the mass erase didn't work, and you are trying to drag and drop a large
+   .BIN file on EVAL-ADICUP3029 Rev B hardware, it's possible that the mbed
+   interface file needs to be updated to support your application.
+
    - Please visit the
-     [[resources:eval:user-guides:eval-adicup3029:tools:adicup3029_hw_drivers#maintenance_drive|Maintenance Drive details]] page in order to put the board in update mode.
+     :dokuwiki:`Maintenance Drive details <resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers#maintenance_drive>`
+     page in order to put the board in update mode.
    - Once you are in "maintenance mode" you should drag and drop the latest
      interface file onto your maintenance drive.  That file can be downloaded at
      the bottom of
-     [[resources:eval:user-guides:eval-adicup3029:tools:adicup3029_hw_drivers|Maintenance Drive Page]].
-- Not receiving/transmitting data to the UART
-* Make sure that the UART switch (S2) is positioned in the correct destination
-  to transmit/receive UART data.
-- I'm trying to program/debug, but I'm getting errors.
-* Check the drives attached to your computer, do you see a mass storage device
-  called DAPLINK or Maintenance ?  If you see the Maintenance drive and your USB
-  is plugged in, then likely the ADuCM3029 isn't being powered, which means the
-  power switch (S5) is likely in the "BATT" position.  Flip it "WALL/USB" and
-  unplug/reconnect your USB cable to your computer, and try to programming
-  again.
+     :dokuwiki:`Maintenance Drive Page <resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>`.
+
+#. Not receiving/transmitting data to the UART
+
+   - Make sure that the UART switch (S2) is positioned in the correct destination
+     to transmit/receive UART data.
+
+#. I'm trying to program/debug, but I'm getting errors.
+
+   - Check the drives attached to your computer, do you see a mass storage device
+     called DAPLINK or Maintenance ?  If you see the Maintenance drive and your USB
+     is plugged in, then likely the ADuCM3029 isn't being powered, which means the
+     power switch (S5) is likely in the "BATT" position.  Flip it "WALL/USB" and
+     unplug/reconnect your USB cable to your computer, and try to programming
+     again.
 
 This is just a brief self-help guide to troubleshooting common issues. If you
 have other questions that need answering please direct those requests to the
@@ -125,4 +132,4 @@ EVAL-ADICUP3029, either post a question or send an email.
 
   - :dokuwiki:`processor.tools.support@analog.com </mailto/processor.tools.support@analog.com>`
 
-// End of Document //
+

@@ -75,9 +75,8 @@ Test setup
 Running the System
 ~~~~~~~~~~~~~~~~~~
 
-::
-
-   -After completing the setup, the [[adi>CN0417|EVAL-CN0417-EBZ Board]] will automatically turn on and output the amplified version of the input.
+After completing the setup, the :adi:`EVAL-CN0417-EBZ Board <CN0417>`
+will automatically turn on and output the amplified version of the input.
 
 Normal Operation
 ~~~~~~~~~~~~~~~~
@@ -149,5 +148,3 @@ Registration
    videos, and more when you register your hardware.
    :reg:`Register <EVAL-CN0417-EBZ?&v=RevC>` to receive all these great benefits
    and more!
-
-*End of Document*

@@ -38,29 +38,27 @@ following procedure is recommended
    is not installed in the above mentioned location, the user can download the
    DPD model library at this
    :download:`https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/dpdmodels.zip`
- and manually install the DPD library at the location **C:\\Program
- Files\\Analog Devices\\ADRV902x Transceiver Evaluation
- Software_x64_FULL\\Resources\\DpdModels** on your PC.
+   and manually install the DPD library at the location **C:\\Program
+   Files\\Analog Devices\\ADRV902x Transceiver Evaluation
+   Software_x64_FULL\\Resources\\DpdModels** on your PC.
 #. At this stage the user can download the DPD model sweep script provided by
    ADI at
-   :download:`https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdmodelsweep_sw6p0.zip`
-. The model sweep script automates the process of picking the most suitable
-model for the PA by iterating through the DPD model library and picking the DPD
-model that produces the least amount of error between pre-DPD actuator Tx and
-post PA observed ORx data.
+   :download:`https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdmodelsweep_sw6p0.zip`.
+   The model sweep script automates the process of picking the most suitable
+   model for the PA by iterating through the DPD model library and picking the DPD
+   model that produces the least amount of error between pre-DPD actuator Tx and
+   post PA observed ORx data.
 #. Load the script downloaded in Step 4 into the Iron Python tab of the ADRV9029
    TES GUI by clicking on **File->Load** in the Iron Python tab of the ADRV9029
    GUI as shown in the figure below and browsing to the location where you have
    stored the script on your PC.
 
-::
+   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_loadingscript.png
 
-   {{ :resources:eval:user-guides:adrv9029:adrv9029_loadingscript.png?direct |}}
-
-6. After loading the script, execute the script by clicking **Build->Run** in
+#. After loading the script, execute the script by clicking **Build->Run** in
    the Iron Python tab of ADRV9029 TES GUI
 
-7. At the end of execution of this script, the DPD model producing the least
+#. At the end of execution of this script, the DPD model producing the least
    amount of error will be logged as **C:\\Program Files\\Analog
    Devices\\ADRV9025 Transceiver Evaluation
    Software_x64_FULL\\Resources\\DpdModels\\DpdModelOptimized.txt.**

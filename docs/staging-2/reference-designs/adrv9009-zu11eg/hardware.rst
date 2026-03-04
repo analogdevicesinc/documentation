@@ -14,10 +14,6 @@ The **ADRV9009-ZU11EG RF-SOM** package includes:
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009_zu11eg/adrv9009_zu11eg_rfsom.png
 
---------------
-
---------------
-
 High level block diagram showing key components and IO routing
 ==============================================================
 
@@ -176,7 +172,7 @@ Blackbox Records can be accessed from the Monitor menu.
 
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/power_map.pdf`
 
-   .. important::
+.. important::
 
    Troubleshooting power down issue on X-GRADE: https://ez.analog.com/fpga/f/q-a/119706/adrv9009-zu11eg-adrv2crr-fmc_revb-auto-powerdown/356549
 

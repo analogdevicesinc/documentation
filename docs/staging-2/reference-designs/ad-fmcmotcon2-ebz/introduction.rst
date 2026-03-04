@@ -27,25 +27,14 @@ ADI FMC Motor Drive System v2 Introduction
    * - AD-FMCMOTCON2-EBZ
      - AD-DRVLV2-EBZ
      - AD-DYNO2-EBZ
-     -
-     -
-     -
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_ctrl_single.jpg
-      :width: 300px
+          :width: 300px
 
- -
+     - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_lv_single.jpg
+          :width: 400px
 
-  .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_lv_single.jpg
-     :width: 400px
-
- -
-
-  .. figure:: https://wiki.analog.com/_media//resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_dyno_single.jpg
-     :width: 300px
-
- -
- -
- -
+     - .. figure:: https://wiki.analog.com/_media//resources/eval/user-guides/ad-fmcmotcon2-ebz/mc2_dyno_single.jpg
+          :width: 300px
 
 .. note::
 
@@ -66,12 +55,11 @@ ADI FMC Motor Drive System v2 Introduction
 
 - Complete control solution showing how to integrate hardware for
 
-::
+  * Power
+  * Isolation
+  * Measurement
+  * Control
 
-   * Power
-   * Isolation
-   * Measurement
-   * Control
 * Increased control flexibility due to FPGA interfacing capabilities
 * Increased versatility to be able to control different types of motors
 * Example reference designs showing how to use the control solution with Xilinx

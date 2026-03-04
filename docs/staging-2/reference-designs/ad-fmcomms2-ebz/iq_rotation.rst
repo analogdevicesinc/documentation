@@ -227,38 +227,10 @@ delim{\|}{cos(psi)}{\|}}</m> and
 <m>Q prime(t)={I(t)*sin(psi) + Q(t)*cos(psi)}/{delim{\|}{sin(psi)}{\|} +
 delim{\|}{cos(psi)}{\|}}</m>,
 
-OR
-
-<m>I prime(t)=\ |}{sin(psi)}{\|} + delim{\|}{cos(psi)}{\||} - .. figure:: Q(t)*sin(psi)}/{delim{
-
-   }</m> and
-
-<m>Q prime(t)=\ .. figure:: I(t)*sin(psi)}/{delim{
-
-   } + .. figure:: Q(t)*cos(psi)}/{delim{
-
-   }</m>,
-
-Which makes the matrix:
-
-<m> [matrix{2}{1}\ .. figure:: I prime(t)} {Q prime(t)
-
-   ] = [matrix{2}{2} .. figure:: {cos(psi)}/{delim{
-
-   } .. figure:: -sin(psi)}/{delim{
-
-   } .. figure:: sin(psi)}/{delim{
-
-   } .. figure:: cos(psi)}/{delim{
-
-   }}] * [matrix{2}{1} .. figure:: I(t)} {Q(t)
-
-   ] </m>.
+This can also be expressed in matrix form.
 
 The above can be used directly, depending on what sort of functions your math
 library has available (sin, cos, tan) and the amount of rotation that you will
 allow (the above is for ±180 degrees). You can re-write in terms of other trig
 functions, but care must be taken to ensure that denominator never approaches
 zero.
-
-.. |}{sin(psi)}{\|} + delim{\|}{cos(psi)}{\|| image:: I(t)*cos(psi)}/{delim{

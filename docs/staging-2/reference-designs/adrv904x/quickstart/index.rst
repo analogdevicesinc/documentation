@@ -1,6 +1,6 @@
 .. imported from: https://wiki.analog.com/resources/eval/user-guides/adrv904x/quickstart
 
-.. _adrv904x quickstart:
+.. _adrv904x quickstart-DUPLICATED:
 
 ADRV904x Quick Start Guides
 ===========================

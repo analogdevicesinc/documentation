@@ -197,12 +197,13 @@ Pyadi-iio Installation
 Running the System
 ------------------
 
-::
+To run the GUI for the EVAL-CN0566-RPIZ, you need to run the following in the command line terminal:
 
-   -To run the GUI for the EVAL-CN0566-RPIZ, you need to run the following in the command line terminal: <code>
+.. code::
+
    cd <pyadi-iio directory>
    cd examples/phaser
-   python phaser_gui.py </code>
+   python phaser_gui.py
 
 #. After running the Phaser GUI, select **``Tracking``** in mode selection and
    select ``Lab 8. Monopulse Tracking`` on the middle lower part of the GUI.
@@ -232,8 +233,6 @@ For questions and more information, please visit the Analog Devices Engineer Zon
 Related Documents
 ~~~~~~~~~~~~~~~~~
 
-::
-
-   *[[:resources:eval:user-guides:circuits-from-the-lab:cn0566|EVAL-CN0566-RPIZ User Guide]]
-   *[[:resources:eval:user-guides:circuits-from-the-lab:cn0566:overview_setup|EVAL-CN0566-RPIZ Hardware User Guide]]
-   *[[:resources:eval:user-guides:circuits-from-the-lab:cn0566:software|EVAL-CN0566-RPIZ Software User Guide]]
+* :dokuwiki:`EVAL-CN0566-RPIZ User Guide </resources/eval/user-guides/circuits-from-the-lab/cn0566>`
+* :dokuwiki:`EVAL-CN0566-RPIZ Hardware User Guide </resources/eval/user-guides/circuits-from-the-lab/cn0566/overview_setup>`
+* :dokuwiki:`EVAL-CN0566-RPIZ Software User Guide </resources/eval/user-guides/circuits-from-the-lab/cn0566/software>`

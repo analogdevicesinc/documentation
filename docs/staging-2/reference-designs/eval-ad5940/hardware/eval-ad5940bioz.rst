@@ -165,10 +165,6 @@ Schematics, PCB Layout, Bill of Materials
    EVAL-AD5940BIOZ Rev B Design Files
 
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/hardware/02_049988b_top.pdf`
- (PDF)
-
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/hardware/08-049988-01-b.pdf`
-
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/hardware/eval-ad5940bioz_bom.xlsx`
-
    - :download:`https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/hardware/eval-ad5940bioz_fabrication.zip`

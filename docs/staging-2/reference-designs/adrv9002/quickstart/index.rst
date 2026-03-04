@@ -128,23 +128,18 @@ on its label.
 
    * - Label
      - Silicon Revision
-     -
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w1.png
 
-      - **B0**
-      -
+     - **B0**
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002_b0_np_w2.png
 
-      - **B0**
-      -
+     - **B0**
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002xbcz_c0_np_w1.png
 
-      - **C0**
-      -
+     - **C0**
    * - .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/adrv9002xbcz_c0_np_w2.png
 
-      - **C0**
-      -
+     - **C0**
 
 .. tip::
 

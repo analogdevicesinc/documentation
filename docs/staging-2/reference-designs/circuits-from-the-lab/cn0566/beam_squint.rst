@@ -5,8 +5,6 @@
 Lab 6: Beam Squint
 ==================
 
---------------
-
 Training Objective
 ------------------
 

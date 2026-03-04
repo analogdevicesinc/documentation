@@ -69,13 +69,13 @@ application.
      - Supply Voltage Input (2.2 V to 5.5 V)
    * - 2
      -
-     - :::
+     -
    * - 3
      - GND
      - Ground.
    * - 4
      -
-     - :::
+     -
    * - 5
      - NC
      - No connection.
@@ -99,13 +99,13 @@ application.
      - Ground.
    * - 12
      -
-     - :::
+     -
    * - 13
      - VBATT
      - 2.2 V to 5.5 V Supply.
    * - 14
      -
-     - :::
+     -
    * - 15
      - SWDIO
      - Serial Wire Debug Data. Connected to **P0.0** of the :adi:`MAX32660`.
@@ -147,7 +147,7 @@ application.
      - 2.2 V to 5.5 V Supply.
    * - 28
      -
-     - :::
+     -
 
 .. note::
 
@@ -232,7 +232,7 @@ the power source.
      - Function
    * - JP1
      - JP4
-     - :::
+     -
    * - 1:2
      - A/B
      - Input power is sourced from the carrier board via the **VBATT** pins. *Default*.
@@ -763,4 +763,4 @@ Hardware Registration
    :reg:`Register <EVAL-CN0583-SOM?&v=RevC>` to receive all these great benefits
    and more!
 
-// End of Document //
+
