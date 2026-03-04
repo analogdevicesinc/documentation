@@ -133,7 +133,7 @@ Equipment Needed
    (1) Attach the 5 heat sinks on the top layer of the board (Q4, Q5, Q6, Q7, and Q9),
    (2) the remaining 2 heat sinks on the bottom layer of the board (Q3 and Q8).
 
-Preparing the MCU
+Preparing the MCU ($$$$$$$$$)
 +++++++++++++++++
 
 By default (upon purchase), the AD+BMSE2E3W+SL board comes with a MAX32625PICO programmer adapter that is loaded with firmware image.
