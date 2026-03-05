@@ -101,14 +101,14 @@ Software Setup
       the following files to communicate with the FPGA platform properly using 
       the Analog Devices Linux Kuiper OS.
 
-   .. image:: ../images/screenshot_2021-11-26_195656.png
+   .. image:: ../images/zynq_boot_files.png
       :align: center
       :width: 500
 
 #. Safely eject the SD Card from your host PC and insert it into your ZCU102 
    SD Card Interface Connector (J30).
 
-   .. image:: ../images/sd_card_dsc0008.jpg
+   .. image:: ../images/zcu102_sdcard.jpg
       :align: center
       :width: 500
 

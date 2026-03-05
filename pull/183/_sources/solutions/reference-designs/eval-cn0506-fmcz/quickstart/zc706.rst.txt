@@ -6,7 +6,7 @@ CN0506 + ZC706 Quickstart
 This guide provides instructions on how to setup :adi:`CN0506` on the 
 :xilinx:`ZC706` platform.
 
-.. image:: ../images/v_dsc0048.jpg
+.. image:: ../images/zc706.jpg
    :align: center
    :width: 500
 
@@ -48,21 +48,21 @@ Hardware Setup
 #. Connect the EVAL-CN0506-FMCZ to the low pin count (LPC) FMC connector on the 
    ZC706 evaluation board.
 
-   .. image:: ../images/dsc0021.jpg
+   .. image:: ../images/zc706_cn0506.jpg
       :align: center
       :width: 500
 
 #. Connect the ZC706 USB-to-UART Bridge with Mini USB Connector (U52, J21) to 
    the host PC using a Mini USB cable.
 
-   .. image:: ../images/dsc0024.jpg
+   .. image:: ../images/zc706_usb.jpg
       :align: center
       :width: 500
 
 #. Connect the Ethernet cable in the CN0506 M1 or M2 Ethernet port depending on 
    your preference.
 
-   .. image:: ../images/v_dsc0053.jpg
+   .. image:: ../images/zc706_eth.jpg
       :align: center
       :width: 500
 
@@ -75,7 +75,7 @@ Hardware Setup
       Guide <support/documentation/boards_and_kits/zc706/ug954-zc706-eval-board-xc7z045-ap-soc.pdf>` 
       for detailed default jumper settings information.
 
-   .. image:: ../images/dsc0023.jpg
+   .. image:: ../images/zc706_power.jpg
       :align: center
       :width: 500
 
@@ -102,18 +102,16 @@ Software Setup
       the following files to communicate with the FPGA platform properly using 
       the Analog Devices Linux Kuiper OS.
 
-   .. image:: ../images/screenshot_2021-11-26_195656.png
+   .. image:: ../images/zynq_boot_files.png
       :align: center
       :width: 500
 
 #. Safely eject the SD Card from your host PC and insert it into your ZC706 
    SD Card Interface Connector (J30).
 
-   .. image:: ../images/dsc0016.jpg
+   .. image:: ../images/zc706_sdcard.jpg
       :align: center
       :width: 500
-
-#. The hardware and software setup is now done.
 
 Performing iPerf3
 -------------------------------------------------------------------------------
@@ -133,7 +131,7 @@ Performing iPerf3
    Host PC. Make sure the Host PC is also connected to the Internet using Wi-Fi 
    or Ethernet.
 
-   .. image:: ../images/v_dsc0063.jpg
+   .. image:: ../images/pc_connect.jpg
       :align: center
       :width: 500
 
