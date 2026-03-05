@@ -962,6 +962,68 @@ Channels:
   - {``voltage2_i``, ``voltage2_q``}: RX3
   - {``voltage3_i``, ``voltage3_q``}: RX4
 
+Updating boot files
+-------------------------------------------------------------------------------
+
+After building the boot files from source, the following three files must be
+placed in the ``mnt/sd_boot`` partition of the SD card:
+
+- ``BOOT.BIN`` — FPGA bitstream and U-Boot bootloader
+- ``Image`` — Linux kernel image
+- ``system.dtb`` — device tree blob, compiled from
+  :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-adrv9025.dts`
+  in the ADI Linux kernel repository
+
+The boot partition is mounted at ``mnt/sd_boot`` on Kuiper Linux.
+
+With the SD card connected to your host PC, create a mount point and mount
+the boot partition (replace ``/dev/sde`` with the actual device name of your
+SD card):
+
+.. code-block:: bash
+
+   sudo mkdir -p /mnt/sd_boot
+   sudo mount /dev/sde1 /mnt/sd_boot
+
+Copy the boot files from their directories on the Kuiper image to the root of
+the boot partition:
+
+.. code-block:: bash
+
+   sudo cp /mnt/sd_boot/zynqmp-zcu102-rev10-adrv9025/BOOT.BIN /mnt/sd_boot/BOOT.BIN
+   sudo cp /mnt/sd_boot/zynqmp-zcu102-rev10-adrv9025/system.dtb /mnt/sd_boot/system.dtb
+   sudo cp /mnt/sd_boot/zynqmp-common/Image /mnt/sd_boot/Image
+
+Sync and eject the SD card:
+
+.. code-block:: bash
+
+   sync
+   sudo eject /dev/sde
+
+Transferring files over SSH (board already booted)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the board is already running Kuiper Linux, you can update the boot files
+directly over SSH — without removing the SD card from the board.
+
+From your host PC, run:
+
+.. code-block:: bash
+
+   scp BOOT.BIN Image system.dtb root@<board-ip>:/boot/
+
+Replace ``<board-ip>`` with the IP address of the board. To find it, run
+``ifconfig`` in the board's serial terminal and look for the ``eth0 inet``
+address.
+
+After the transfer completes, sync and reboot the board for the changes to
+take effect:
+
+.. code-block:: bash
+
+   ssh root@<board-ip> "sync && reboot"
+
 Using no-OS as software
 -------------------------------------------------------------------------------
 
