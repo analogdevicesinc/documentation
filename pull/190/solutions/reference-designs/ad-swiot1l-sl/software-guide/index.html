@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Development kit: AD-SWIOT1L-SL Software-configurable Analog and Digital I/O with 10BASE-T1L" name="description" />
+
+    <title>Software User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="AD-SYNCHRONA14-EBZ" href="../../ad-synchrona14-ebz/index.html" />
+    <link rel="prev" title="Firmware User Guide" href="../firmware-guide/index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Software User Guide</a><ul>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a><ul>
+<li><a class="reference internal" href="#system-setup">System Setup</a></li>
+<li><a class="reference internal" href="#windows-user-guide">Windows User Guide</a><ul>
+<li><a class="reference internal" href="#configure-windows-network-adapter">Configure Windows Network Adapter</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux-user-guide">linux User Guide</a><ul>
+<li><a class="reference internal" href="#configure-linux-network-adapter">Configure linux Network Adapter</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-scopy-ad-swiot1l-sl-plugin">The Scopy AD-SWIOT1L-SL Plugin</a></li>
+<li><a class="reference internal" href="#using-the-iio-interface">Using the IIO interface</a><ul>
+<li><a class="reference internal" href="#swiot-device-configuration-overview">SWIOT device configuration overview</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#field-device-configuration-and-usage">Field Device Configuration and Usage</a><ul>
+<li><a class="reference internal" href="#swiot-virtual-device">SWIOT Virtual Device</a><ul>
+<li><a class="reference internal" href="#device-attributes">Device Attributes</a></li>
+<li><a class="reference internal" href="#configuration-example">Configuration Example</a></li>
+<li><a class="reference internal" href="#switching-contexts">Switching Contexts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#controlling-the-max14906">Controlling the MAX14906</a><ul>
+<li><a class="reference internal" href="#direct-register-access">Direct Register Access</a></li>
+<li><a class="reference internal" href="#using-channel-attributes">Using Channel Attributes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#controlling-the-ad74413r">Controlling the AD74413R</a><ul>
+<li><a class="reference internal" href="#id1">Direct Register Access</a></li>
+<li><a class="reference internal" href="#channel-configurations">Channel Configurations</a><ul>
+<li><a class="reference internal" href="#voltage-input">1. Voltage Input</a></li>
+<li><a class="reference internal" href="#current-output">2. Current Output</a></li>
+<li><a class="reference internal" href="#voltage-output">3. Voltage Output</a></li>
+<li><a class="reference internal" href="#current-input-externally-powered">4. Current Input Externally Powered</a></li>
+<li><a class="reference internal" href="#current-input-loop-powered">5. Current Input Loop Powered</a></li>
+<li><a class="reference internal" href="#current-input-loop-powered-with-hart-compatibility">6. Current Input Loop Powered with HART Compatibility</a></li>
+<li><a class="reference internal" href="#current-input-externally-powered-with-hart-compatibility">7. Current Input Externally Powered with HART Compatibility</a></li>
+<li><a class="reference internal" href="#resistance">8. Resistance</a></li>
+<li><a class="reference internal" href="#digital-input">9. Digital Input</a></li>
+<li><a class="reference internal" href="#digital-input-loop-powered">10. Digital Input Loop Powered</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sampling-data-from-the-ad74413r">Sampling Data from the AD74413R</a><ul>
+<li><a class="reference internal" href="#example-sampling-buffered-data">Example: Sampling Buffered Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-SWIOT1L-SL</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="software-user-guide">
+<h1>Software User Guide<a class="headerlink" href="#software-user-guide" title="Link to this heading"></a></h1>
+<section id="required-hardware">
+<h2>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Development kit</strong>: <a class="icon adi reference external" href="https://www.analog.com/AD-SWIOT1L-SL" target="_blank">AD-SWIOT1L-SL</a> Software-configurable Analog and Digital I/O with 10BASE-T1L</p></li>
+<li><p><strong>Power supplies</strong>: 24V power supply at minimum 2A</p></li>
+<li><p><strong>Programmer</strong>: <a class="icon adi reference external" href="https://www.analog.com/MAX32625PICO" target="_blank">MAX32625PICO</a> or any other similar programmer supporting the SWD interface</p></li>
+</ul>
+<section id="system-setup">
+<h3>System Setup<a class="headerlink" href="#system-setup" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Connect the AD-SWIOT1L-SL to the AD-T1LUSB2.0-EBZ using the single pair Ethernet cable.</p></li>
+<li><p>Connect the AD-T1LUSB2.0-EBZ to your PC using a usb cable</p></li>
+<li><p>Connect the 24 V power supply to the AD-SWIOT1L-SL.</p></li>
+</ul>
+</section>
+<section id="windows-user-guide">
+<h3>Windows User Guide<a class="headerlink" href="#windows-user-guide" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Connect the AD-SWIOT1L-SL to your Windows PC using the AD-T1LUSB2.0-EBZ.</p></li>
+</ul>
+<p>To communicate with the AD-SWIOT1L-SL board, you need to configure your Windows
+PC’s network adapter with a static ip address in the same subnet as the board e.g 192.168.97.1/24</p>
+<p>The AD-SWIOT1L-SL board uses the static ip address: <strong>192.168.97.40</strong></p>
+<section id="configure-windows-network-adapter">
+<h4>Configure Windows Network Adapter<a class="headerlink" href="#configure-windows-network-adapter" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Open the Control Panel and navigate to “Network and Internet”</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/1.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Select your Ethernet interface and click “Edit” to modify the ip settings</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/2.png" style="width: 300px;" />
+</a>
+</figure>
+<ol class="arabic" start="3">
+<li><p>Set the ip settings to manual and configure the following values:</p>
+<ul class="simple">
+<li><p><strong>ip address</strong>: 192.168.97.1</p></li>
+<li><p><strong>Subnet mask</strong>: 255.255.255.0</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/3.png" style="width: 300px;" />
+</a>
+</figure>
+<p>Save the changes and close the network settings.</p>
+</li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/4.png" style="width: 450px;" />
+</a>
+</figure>
+<ol class="arabic" start="4">
+<li><p>Open a command prompt and verify the new assigned ip address using the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ipconfig
+</pre></div>
+</div>
+</li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/5.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/5.png" style="width: 600px;" />
+</a>
+</figure>
+<ol class="arabic" start="5">
+<li><p>Ping the AD-SWIOT1L-SL board to verify connectivity:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ping<span class="w"> </span><span class="m">192</span>.168.97.40
+</pre></div>
+</div>
+</li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/6.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/6.png" style="width: 800px;" />
+</a>
+</figure>
+</section>
+</section>
+<section id="linux-user-guide">
+<h3>linux User Guide<a class="headerlink" href="#linux-user-guide" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Connect the AD-SWIOT1L-SL to your linux PC using the AD-T1LUSB2.0-EBZ</p></li>
+</ul>
+<p>To communicate with the AD-SWIOT1L-SL board, you need to configure your linux PC’s network
+adapter with a static IP address in the same subnet as the board e.g 192.168.97.1/24.</p>
+<section id="configure-linux-network-adapter">
+<h4>Configure linux Network Adapter<a class="headerlink" href="#configure-linux-network-adapter" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Identify the network interface corresponding to the AD-T1LUSB2.0-EBZ using the command:</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_1.png" style="width: 300px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Configure the network interface with a static ip address:</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_2.png" style="width: 400px;" />
+</a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_3.png" style="width: 400px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Verify you can ping the AD-SWIOT1L-SL board:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ping<span class="w"> </span><span class="m">192</span>.168.97.40
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/products-adsp/philip/openocd-release/docs/solutions/reference-designs/ad-swiot1l-sl/software-guide/linux_4.png" style="width: 450px;" />
+</a>
+</figure>
+</section>
+</section>
+<section id="the-scopy-ad-swiot1l-sl-plugin">
+<h3>The Scopy AD-SWIOT1L-SL Plugin<a class="headerlink" href="#the-scopy-ad-swiot1l-sl-plugin" title="Link to this heading"></a></h3>
+<p>For detailed information on how to use the AD-SWIOT1L-SL Scopy plugin, including
+configuration, operation modes, and available instruments, please refer to the
+comprehensive <a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/plugins/swiot1l/index.html" target="_blank">Scopy SWIOT1L Plugin Documentation</a>.</p>
+</section>
+<section id="using-the-iio-interface">
+<h3>Using the IIO interface<a class="headerlink" href="#using-the-iio-interface" title="Link to this heading"></a></h3>
+<p>The firmware is based on a no-OS implementation of the IIO framework from the linux kernel, which offers similar functionalities.
+Thus, the board may be configured through the use of pyadi-iio API.</p>
+<p>In order to get the pyadi-iio drivers follow the next steps:</p>
+<ol class="arabic">
+<li><p>Clone the pyadi-iio repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/pyadi-iio
+</pre></div>
+</div>
+</li>
+<li><p>Follow the installation steps provided in the <a class="icon link reference external" href="https://github.com/analogdevicesinc/pyadi-iio" target="_blank">pyadi-iio README</a>.</p>
+<blockquote>
+<div><p>### this might need changing once swiot is merged into main</p>
+</div></blockquote>
+</li>
+<li><p>Checkout the <a class="icon link reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/swiot" target="_blank">swiot branch</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>swiot
+</pre></div>
+</div>
+</li>
+<li><p>Install the pyadi-iio package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+</ol>
+<section id="swiot-device-configuration-overview">
+<h4>SWIOT device configuration overview<a class="headerlink" href="#swiot-device-configuration-overview" title="Link to this heading"></a></h4>
+<p>This section provides a high-level overview of how the firmware manages
+device configuration. Detailed field device usage information is presented in
+the following sections. When powered, the SWIOT1L board operates in one of
+two states, each identified by a distinct IIO context:</p>
+<ul>
+<li><p><strong>Config</strong>: All channels are in a high impedance state. Users can configure
+channel functions and route each SWIOT1L channel to either the MAX14906
+or AD74413R device using the swiot virtual device.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When entering this state from the runtime mode, some of the device
+configurations will reset. The configuration selected in this context
+will help in generating the runtime IIO context.</p>
+</div>
+</li>
+</ul>
+<p>Open the IIO context by running iio_info with the appropriate URI:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span>-u<span class="w"> </span>ip:192.168.97.40
+</pre></div>
+</div>
+<p>The iio context should look similar to this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Library<span class="w"> </span>version:<span class="w"> </span><span class="m">0</span>.24<span class="w"> </span><span class="o">(</span>git<span class="w"> </span>tag:<span class="w"> </span>c4498c2<span class="o">)</span>
+Compiled<span class="w"> </span>with<span class="w"> </span>backends:<span class="w"> </span><span class="nb">local</span><span class="w"> </span>xml<span class="w"> </span>ip<span class="w"> </span>usb<span class="w"> </span>serial
+IIO<span class="w"> </span>context<span class="w"> </span>created<span class="w"> </span>with<span class="w"> </span>network<span class="w"> </span>backend.
+Backend<span class="w"> </span>version:<span class="w"> </span><span class="m">1</span>.1<span class="w"> </span><span class="o">(</span>git<span class="w"> </span>tag:<span class="w"> </span><span class="m">0000000</span><span class="o">)</span>
+Backend<span class="w"> </span>description<span class="w"> </span>string:<span class="w"> </span><span class="m">192</span>.168.97.40<span class="w"> </span>no-OS<span class="w"> </span>swiot-rebase-lwip-eda9f736d-modified
+IIO<span class="w"> </span>context<span class="w"> </span>has<span class="w"> </span><span class="m">2</span><span class="w"> </span>attributes:
+<span class="w">   </span>ip,ip-addr:<span class="w"> </span><span class="m">192</span>.168.97.40
+<span class="w">   </span>uri:<span class="w"> </span>ip:192.168.97.40
+IIO<span class="w"> </span>context<span class="w"> </span>has<span class="w"> </span><span class="m">2</span><span class="w"> </span>devices:
+<span class="w">   </span>iio:device0:<span class="w"> </span>swiot
+<span class="w">      </span><span class="m">0</span><span class="w"> </span>channels<span class="w"> </span>found:
+<span class="w">      </span><span class="m">27</span><span class="w"> </span>device-specific<span class="w"> </span>attributes<span class="w"> </span>found:
+<span class="w">            </span>attr<span class="w">  </span><span class="m">0</span>:<span class="w"> </span>reset<span class="w"> </span>ERROR:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span>
+<span class="w">            </span>attr<span class="w">  </span><span class="m">1</span>:<span class="w"> </span>serial_id<span class="w"> </span>value:<span class="w"> </span>80a4-44044-1f003-2d8104ff-bf
+<span class="w">            </span>attr<span class="w">  </span><span class="m">2</span>:<span class="w"> </span>mode<span class="w"> </span>value:<span class="w"> </span>config
+<span class="w">            </span>attr<span class="w">  </span><span class="m">3</span>:<span class="w"> </span>mode_available<span class="w"> </span>value:<span class="w"> </span>config<span class="w"> </span>runtime
+<span class="w">            </span>attr<span class="w">  </span><span class="m">4</span>:<span class="w"> </span>identify<span class="w"> </span>ERROR:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span>
+<span class="w">            </span>attr<span class="w">  </span><span class="m">5</span>:<span class="w"> </span>ext_psu<span class="w"> </span>value:<span class="w"> </span><span class="m">1</span>
+<span class="w">            </span>attr<span class="w">  </span><span class="m">6</span>:<span class="w"> </span>signal_mse<span class="w"> </span>value:<span class="w"> </span><span class="m">32</span>
+<span class="w">            </span>attr<span class="w">  </span><span class="m">7</span>:<span class="w"> </span>ch0_enable<span class="w"> </span>value:<span class="w"> </span><span class="m">0</span>
+<span class="w">            </span>attr<span class="w">  </span><span class="m">8</span>:<span class="w"> </span>ch1_enable<span class="w"> </span>value:<span class="w"> </span><span class="m">0</span>
+<span class="w">            </span>attr<span class="w">  </span><span class="m">9</span>:<span class="w"> </span>ch2_enable<span class="w"> </span>value:<span class="w"> </span><span class="m">0</span>
+<span class="w">            </span>attr<span class="w"> </span><span class="m">10</span>:<span class="w"> </span>ch3_enable<span class="w"> </span>value:<span class="w"> </span><span class="m">0</span>
+<span class="w">            </span>attr<span class="w"> </span><span class="m">11</span>:<span class="w"> </span>ch0_function<span class="w"> </span>value:<span class="w"> </span>high_z
+<span class="w">            </span>attr<span class="w"> </span><span class="m">12</span>:<span class="w"> </span>ch1_function<span class="w"> </span>value:<span class="w"> </span>high_z
+<span class="w">            </span>attr<span class="w"> </span><span class="m">13</span>:<span class="w"> </span>ch2_function<span class="w"> </span>value:<span class="w"> </span>high_z
+<span class="w">            </span>attr<span class="w"> </span><span class="m">14</span>:<span class="w"> </span>ch3_function<span class="w"> </span>value:<span class="w"> </span>high_z
+<span class="w">            </span>attr<span class="w"> </span><span class="m">15</span>:<span class="w"> </span>ch0_device<span class="w"> </span>value:<span class="w"> </span>ad74413r
+<span class="w">            </span>attr<span class="w"> </span><span class="m">16</span>:<span class="w"> </span>ch1_device<span class="w"> </span>value:<span class="w"> </span>ad74413r
+<span class="w">            </span>attr<span class="w"> </span><span class="m">17</span>:<span class="w"> </span>ch2_device<span class="w"> </span>value:<span class="w"> </span>ad74413r
+<span class="w">            </span>attr<span class="w"> </span><span class="m">18</span>:<span class="w"> </span>ch3_device<span class="w"> </span>value:<span class="w"> </span>ad74413r
+<span class="w">            </span>attr<span class="w"> </span><span class="m">19</span>:<span class="w"> </span>ch0_function_available<span class="w"> </span>value:<span class="w"> </span>high_z<span class="w"> </span>voltage_out
+<span class="w">               </span>current_out<span class="w"> </span>voltage_in<span class="w"> </span>current_in_ext<span class="w"> </span>current_in_loop
+<span class="w">               </span>resistance<span class="w"> </span>digital_input<span class="w"> </span>digital_input_loop
+<span class="w">               </span>current_in_ext_hart<span class="w"> </span>current_in_loop_hart
+<span class="w">            </span>attr<span class="w"> </span><span class="m">20</span>:<span class="w"> </span>ch1_function_available<span class="w"> </span>value:<span class="w"> </span>high_z<span class="w"> </span>voltage_out
+<span class="w">               </span>current_out<span class="w"> </span>voltage_in<span class="w"> </span>current_in_ext<span class="w"> </span>current_in_loop
+<span class="w">               </span>resistance<span class="w"> </span>digital_input<span class="w"> </span>digital_input_loop
+<span class="w">               </span>current_in_ext_hart<span class="w"> </span>current_in_loop_hart
+<span class="w">            </span>attr<span class="w"> </span><span class="m">21</span>:<span class="w"> </span>ch2_function_available<span class="w"> </span>value:<span class="w"> </span>high_z<span class="w"> </span>voltage_out
+<span class="w">               </span>current_out<span class="w"> </span>voltage_in<span class="w"> </span>current_in_ext<span class="w"> </span>current_in_loop
+<span class="w">               </span>resistance<span class="w"> </span>digital_input<span class="w"> </span>digital_input_loop
+<span class="w">               </span>current_in_ext_hart<span class="w"> </span>current_in_loop_hart
+<span class="w">            </span>attr<span class="w"> </span><span class="m">22</span>:<span class="w"> </span>ch3_function_available<span class="w"> </span>value:<span class="w"> </span>high_z<span class="w"> </span>voltage_out
+<span class="w">               </span>current_out<span class="w"> </span>voltage_in<span class="w"> </span>current_in_ext<span class="w"> </span>current_in_loop
+<span class="w">               </span>resistance<span class="w"> </span>digital_input<span class="w"> </span>digital_input_loop
+<span class="w">               </span>current_in_ext_hart<span class="w"> </span>current_in_loop_hart
+<span class="w">            </span>attr<span class="w"> </span><span class="m">23</span>:<span class="w"> </span>ch0_device_available<span class="w"> </span>value:<span class="w"> </span>ad74413r<span class="w"> </span>max14906
+<span class="w">            </span>attr<span class="w"> </span><span class="m">24</span>:<span class="w"> </span>ch1_device_available<span class="w"> </span>value:<span class="w"> </span>ad74413r<span class="w"> </span>max14906
+<span class="w">            </span>attr<span class="w"> </span><span class="m">25</span>:<span class="w"> </span>ch2_device_available<span class="w"> </span>value:<span class="w"> </span>ad74413r<span class="w"> </span>max14906
+<span class="w">            </span>attr<span class="w"> </span><span class="m">26</span>:<span class="w"> </span>ch3_device_available<span class="w"> </span>value:<span class="w"> </span>ad74413r<span class="w"> </span>max14906
+<span class="w">      </span>No<span class="w"> </span>trigger<span class="w"> </span>assigned<span class="w"> </span>to<span class="w"> </span>device
+<span class="w">   </span>trigger0:<span class="w"> </span>sw_trig
+<span class="w">      </span><span class="m">0</span><span class="w"> </span>channels<span class="w"> </span>found:
+<span class="w">      </span>No<span class="w"> </span>trigger<span class="w"> </span>on<span class="w"> </span>this<span class="w"> </span>device
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Runtime</strong>: All channel functions are configured, and the devices are operational
+and out of reset. In this state, the devices can sample or output signals, report
+faults, and allow register read/write operations. Channel direction and functions
+remain fixed during runtime mode, except for the AD74413R’s diagnostic channels,
+which can still be modified.</p></li>
+</ul>
+</section>
+</section>
+<section id="field-device-configuration-and-usage">
+<h3>Field Device Configuration and Usage<a class="headerlink" href="#field-device-configuration-and-usage" title="Link to this heading"></a></h3>
+<p>This section details how the IIO interface may be used to configure
+and sample data from the field devices. The system has the following
+IIO devices:</p>
+<section id="swiot-virtual-device">
+<h4>SWIOT Virtual Device<a class="headerlink" href="#swiot-virtual-device" title="Link to this heading"></a></h4>
+<p>Field devices must have their channels configured before being used in the runtime context. This is done through the swiot virtual IIO device, which is present in both the config and runtime IIO contexts.</p>
+<section id="device-attributes">
+<h5>Device Attributes<a class="headerlink" href="#device-attributes" title="Link to this heading"></a></h5>
+<ul class="simple">
+<li><p><strong>reset</strong>: Write any value to reset the firmware. Cannot be read.</p></li>
+<li><p><strong>serial_id</strong>: Unique ID specific to the microcontroller. Read-only.</p></li>
+<li><p><strong>mode</strong>: Reflects the system’s state (config or runtime). Can be written to change state. Possible values are in <code class="docutils literal notranslate"><span class="pre">mode_available</span></code>. Writing the current state value is a no-op. Invalid values are ignored.</p></li>
+<li><p><strong>mode_available</strong>: Valid mode values: <code class="docutils literal notranslate"><span class="pre">config</span></code>, <code class="docutils literal notranslate"><span class="pre">runtime</span></code>.</p></li>
+<li><p><strong>identify</strong>: Write any value to blink LED2. Useful for identifying which board has a specific context (or IP) in a multi-board network.</p></li>
+<li><p><strong>ext_psu</strong>: Mirrors the external power supply switch. A value of 1 does not guarantee power supply connection or 156W capability. Read-only. Possible values:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: Field devices powered only by LT8304 (via 24V terminal block) and/or LTC9111 (via SPoE)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: MAX14906 powered directly by external power supply</p></li>
+</ul>
+</li>
+<li><p><strong>signal_mse</strong>: Single Pair Ethernet signal quality indicator. Read-only.</p></li>
+<li><p><strong>chX_enable</strong>: Channel-specific enable condition. X refers to the SWIOT1L terminal block channel number (0-based). When set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, the channel remains in high impedance state regardless of other attributes. Values: <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p><strong>chX_function</strong>: I/O function for a SWIOT1L terminal block channel. Specific to AD74413R or MAX14906 depending on <code class="docutils literal notranslate"><span class="pre">chX_device</span></code>. Possible values in <code class="docutils literal notranslate"><span class="pre">chX_function_available</span></code>. <strong>Important</strong>: Set <code class="docutils literal notranslate"><span class="pre">chX_device</span></code> first, as the value is validated when written. Otherwise <code class="docutils literal notranslate"><span class="pre">-EINVAL</span> <span class="pre">(-22)</span></code> is returned.</p></li>
+<li><p><strong>chX_function_available</strong>: Available values for <code class="docutils literal notranslate"><span class="pre">chX_function</span></code>. Read-only.</p></li>
+<li><p><strong>chX_device</strong>: Field device controlling the terminal block channel. Possible values in <code class="docutils literal notranslate"><span class="pre">chX_device_available</span></code>.</p></li>
+<li><p><strong>chX_device_available</strong>: Available values for <code class="docutils literal notranslate"><span class="pre">chX_device</span></code>: <code class="docutils literal notranslate"><span class="pre">ad74413r</span></code>, <code class="docutils literal notranslate"><span class="pre">max14906</span></code>.</p></li>
+</ul>
+</section>
+<section id="configuration-example">
+<h5>Configuration Example<a class="headerlink" href="#configuration-example" title="Link to this heading"></a></h5>
+<p>In the pyadi-iio example script, channel functions are configured using the <code class="docutils literal notranslate"><span class="pre">channel_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">channel_config</span></code>, and <code class="docutils literal notranslate"><span class="pre">channel_device</span></code> lists:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Possible values:</span>
+<span class="sd">- max14906 selected as device: input, output</span>
+<span class="sd">- ad74413r selected as device: voltage_out, current_out,</span>
+<span class="sd">  voltage_in, current_in_ext, current_in_loop,</span>
+<span class="sd">  resistance, digital_input, digital_input_loop,</span>
+<span class="sd">  current_in_ext_hart, current_in_loop_hart</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">channel_config</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;voltage_in&quot;</span><span class="p">,</span> <span class="s2">&quot;current_in_ext&quot;</span><span class="p">,</span> <span class="s2">&quot;current_out&quot;</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">]</span>
+<span class="c1"># Possible values: 0, 1</span>
+<span class="n">channel_enable</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="c1"># Possible values: &quot;ad74413r&quot;, &quot;max14906&quot;</span>
+<span class="n">channel_device</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ad74413r&quot;</span><span class="p">,</span> <span class="s2">&quot;ad74413r&quot;</span><span class="p">,</span> <span class="s2">&quot;ad74413r&quot;</span><span class="p">,</span> <span class="s2">&quot;max14906&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This configuration means:</p>
+<ul class="simple">
+<li><p><strong>Channel 1</strong>: Routed to AD74413R channel 1, measuring input voltage</p></li>
+<li><p><strong>Channel 2</strong>: Routed to AD74413R channel 2, measuring input current</p></li>
+<li><p><strong>Channel 3</strong>: Routed to AD74413R channel 3, measuring voltage from current-limited output</p></li>
+<li><p><strong>Channel 4</strong>: Routed to MAX14906 channel 4, configured as digital output</p></li>
+</ul>
+<p>To ensure config context is selected:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">swiot</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;config&quot;</span>
+</pre></div>
+</div>
+<p>Configuration sequence using swiot attributes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">swiot</span><span class="o">.</span><span class="n">ch0_device</span> <span class="o">=</span> <span class="n">channel_device</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch0_function</span> <span class="o">=</span> <span class="n">channel_config</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch0_enable</span> <span class="o">=</span> <span class="n">channel_enable</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch1_device</span> <span class="o">=</span> <span class="n">channel_device</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch1_function</span> <span class="o">=</span> <span class="n">channel_config</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch1_enable</span> <span class="o">=</span> <span class="n">channel_enable</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch2_device</span> <span class="o">=</span> <span class="n">channel_device</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch2_function</span> <span class="o">=</span> <span class="n">channel_config</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch2_enable</span> <span class="o">=</span> <span class="n">channel_enable</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch3_device</span> <span class="o">=</span> <span class="n">channel_device</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch3_function</span> <span class="o">=</span> <span class="n">channel_config</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">swiot</span><span class="o">.</span><span class="n">ch3_enable</span> <span class="o">=</span> <span class="n">channel_enable</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Set <code class="docutils literal notranslate"><span class="pre">chX_device</span></code> before <code class="docutils literal notranslate"><span class="pre">chX_function</span></code>, otherwise an error will occur.</p>
+</div>
+<p>The indexes in these lists correspond to the terminal block channel number (0-based).</p>
+<p>When channels are configured, the firmware automatically places the corresponding parallel channel in high impedance to avoid conflicts.</p>
+</section>
+<section id="switching-contexts">
+<h5>Switching Contexts<a class="headerlink" href="#switching-contexts" title="Link to this heading"></a></h5>
+<p>To switch from config to runtime mode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">swiot</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;runtime&quot;</span>
+</pre></div>
+</div>
+<p>After writing this attribute, the IIOD server restarts, causing the connection to drop and the IIO context to be destroyed. The new context must be recreated:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ad74413r</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">ad74413r</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="n">dev_uri</span><span class="p">)</span>
+<span class="n">max14906</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">max14906</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="n">dev_uri</span><span class="p">)</span>
+<span class="n">adt75</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">lm75</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="n">dev_uri</span><span class="p">)</span>
+<span class="n">swiot</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">swiot</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="n">dev_uri</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The runtime context also contains the field devices, which can be used to sample data.</p>
+</section>
+</section>
+<section id="controlling-the-max14906">
+<h4>Controlling the MAX14906<a class="headerlink" href="#controlling-the-max14906" title="Link to this heading"></a></h4>
+<section id="direct-register-access">
+<h5>Direct Register Access<a class="headerlink" href="#direct-register-access" title="Link to this heading"></a></h5>
+<p>Device registers can be read or written using the IIO direct register access interface:</p>
+<ul class="simple">
+<li><p><strong>Reading</strong>: <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">max14906.reg_read(0x1)</span></code></p></li>
+<li><p><strong>Writing</strong>: <code class="docutils literal notranslate"><span class="pre">max14906.reg_write(0x1,</span> <span class="pre">0xff)</span></code></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method should be used with caution as it overwrites firmware settings. Updating an existing value requires a read→apply mask→write sequence.</p>
+</div>
+</section>
+<section id="using-channel-attributes">
+<h5>Using Channel Attributes<a class="headerlink" href="#using-channel-attributes" title="Link to this heading"></a></h5>
+<p>The MAX14906 has the following IIO channels, corresponding to the 4 physical channels:</p>
+<p><strong>voltageX</strong> (input or output):</p>
+<ul>
+<li><p><strong>raw</strong>: <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>, representing low/high state. For outputs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max14906</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;voltage3&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">raw</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># or 0</span>
+</pre></div>
+</div>
+<p>Can be read in both input and output modes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">max14906</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;voltage3&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">raw</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>scale</strong>: Constant value of <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><strong>offset</strong>: Constant value of <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><strong>current_limit</strong> (output only): Set from predefined values in <code class="docutils literal notranslate"><span class="pre">current_limit_available</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max14906</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;voltage3&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">current_limit</span> <span class="o">=</span> <span class="mi">130</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>current_limit_available</strong>: <code class="docutils literal notranslate"><span class="pre">600</span></code>, <code class="docutils literal notranslate"><span class="pre">130</span></code>, <code class="docutils literal notranslate"><span class="pre">300</span></code>, <code class="docutils literal notranslate"><span class="pre">1200</span></code> (mA)</p></li>
+<li><p><strong>do_mode</strong> (output only): Configure output driver:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max14906</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;voltage3&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">do_mode</span> <span class="o">=</span> <span class="s2">&quot;High_side&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>do_mode_available</strong>: <code class="docutils literal notranslate"><span class="pre">High_side</span></code>, <code class="docutils literal notranslate"><span class="pre">High_side_2x_inrush</span></code>, <code class="docutils literal notranslate"><span class="pre">Push_pull_clamp</span></code>, <code class="docutils literal notranslate"><span class="pre">Push_pull</span></code></p></li>
+<li><p><strong>IEC_type</strong> (input only): Setup digital-IO input type</p></li>
+<li><p><strong>IEC_type_available</strong>: <code class="docutils literal notranslate"><span class="pre">Type_1_3</span></code>, <code class="docutils literal notranslate"><span class="pre">Type_2</span></code></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For comprehensive descriptions, refer to the MAX14906 datasheet.</p>
+</div>
+</section>
+</section>
+<section id="controlling-the-ad74413r">
+<h4>Controlling the AD74413R<a class="headerlink" href="#controlling-the-ad74413r" title="Link to this heading"></a></h4>
+<section id="id1">
+<h5>Direct Register Access<a class="headerlink" href="#id1" title="Link to this heading"></a></h5>
+<p>Device registers can be read or written using the IIO direct register access interface:</p>
+<ul class="simple">
+<li><p><strong>Reading</strong>: <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">ad74413r.reg_read(0x1)</span></code></p></li>
+<li><p><strong>Writing</strong>: <code class="docutils literal notranslate"><span class="pre">ad74413r.reg_write(0x1,</span> <span class="pre">0xff)</span></code></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method should be used with caution as it overwrites firmware settings.</p>
+</div>
+</section>
+<section id="channel-configurations">
+<h5>Channel Configurations<a class="headerlink" href="#channel-configurations" title="Link to this heading"></a></h5>
+<p>Each AD74413R channel can be configured with one of these functions: <code class="docutils literal notranslate"><span class="pre">voltage_out</span></code>, <code class="docutils literal notranslate"><span class="pre">current_out</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage_in</span></code>, <code class="docutils literal notranslate"><span class="pre">current_in_ext</span></code>, <code class="docutils literal notranslate"><span class="pre">current_in_loop</span></code>, <code class="docutils literal notranslate"><span class="pre">resistance</span></code>, <code class="docutils literal notranslate"><span class="pre">digital_input</span></code>, <code class="docutils literal notranslate"><span class="pre">digital_input_loop</span></code>, <code class="docutils literal notranslate"><span class="pre">current_in_ext_hart</span></code>, <code class="docutils literal notranslate"><span class="pre">current_in_loop_hart</span></code>.</p>
+<section id="voltage-input">
+<h6>1. Voltage Input<a class="headerlink" href="#voltage-input" title="Link to this heading"></a></h6>
+<p>Creates one IIO channel:</p>
+<p><strong>Input voltage:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0-8191 (DAC code). Vout = (raw + offset) × scale (mV)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Constant: 1.342 mV/LSB</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Constant: 0</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>sampling_frequency</p></td>
+<td><p>Samples per second (divided by enabled channels)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>sampling_frequency_available</p></td>
+<td><p>4800, 1200 (no filter); 20, 10 (filtered)</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="current-output">
+<h6>2. Current Output<a class="headerlink" href="#current-output" title="Link to this heading"></a></h6>
+<p>Creates two IIO channels:</p>
+<p><strong>Input voltage</strong> (measures voltage output by DAC):</p>
+<p>Same attributes as Voltage Input configuration above.</p>
+<p><strong>Output current:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0-8191 (DAC code). Iout = (raw + offset) × scale (mA)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Constant: 0.003051 mA/LSB</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Constant: 0</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_en</p></td>
+<td><p>Enable slew rate control (uses slew_rate and slew_step)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>slew_rate</p></td>
+<td><p>Configure DAC output slew rate</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_rate_available</p></td>
+<td><p>Available slew_rate values</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>slew_step</p></td>
+<td><p>Configure DAC output slew step</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_step_available</p></td>
+<td><p>Available slew_step values</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="voltage-output">
+<h6>3. Voltage Output<a class="headerlink" href="#voltage-output" title="Link to this heading"></a></h6>
+<p>Creates two IIO channels:</p>
+<p><strong>Input current</strong> (measures current output by DAC):</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0-65535 (ADC code). I = (raw + offset) × scale (mA). Positive = sourced, negative = sinked</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Constant: 0.000762951 mA/LSB</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Constant: -32768</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>sampling_frequency</p></td>
+<td><p>Samples per second (divided by enabled channels)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>sampling_frequency_available</p></td>
+<td><p>4800, 1200 (no filter); 20, 10 (filtered)</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Output voltage:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0-8191 (DAC code). Vout = (raw + offset) × scale (mV)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Constant: 1.22070 mV/LSB</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Constant: 0</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_en</p></td>
+<td><p>Enable slew rate control (uses slew_rate and slew_step)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>slew_rate</p></td>
+<td><p>Configure DAC output slew rate</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_rate_available</p></td>
+<td><p>Available slew_rate values</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>slew_step</p></td>
+<td><p>Configure DAC output slew step</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_step_available</p></td>
+<td><p>Available slew_step values</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="current-input-externally-powered">
+<h6>4. Current Input Externally Powered<a class="headerlink" href="#current-input-externally-powered" title="Link to this heading"></a></h6>
+<p>Creates one IIO channel:</p>
+<p><strong>Input current:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0-65535 (ADC code). I = (raw + offset) × scale (mA)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Constant: 0.000381476 mA/LSB</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Constant: 0</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>sampling_frequency</p></td>
+<td><p>Samples per second (divided by enabled channels)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>sampling_frequency_available</p></td>
+<td><p>4800, 1200 (no filter); 20, 10 (filtered)</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="current-input-loop-powered">
+<h6>5. Current Input Loop Powered<a class="headerlink" href="#current-input-loop-powered" title="Link to this heading"></a></h6>
+<p>Creates two IIO channels:</p>
+<p><strong>Input current</strong> (measures current sourced by AD74413R):</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0-65535 (ADC code). I = (raw + offset) × scale (mA)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Constant: 0.000381476 mA/LSB</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Constant: 0</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>sampling_frequency</p></td>
+<td><p>Samples per second (divided by enabled channels)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>sampling_frequency_available</p></td>
+<td><p>4800, 1200 (no filter); 20, 10 (filtered)</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Output current</strong> (sets current limit sourced by AD74413R):</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0-8191 (DAC code). Iout = (raw + offset) × scale (mA)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Constant: 0.003051 mA/LSB</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Constant: 0</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_en</p></td>
+<td><p>Enable slew rate control (uses slew_rate and slew_step)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>slew_rate</p></td>
+<td><p>Configure DAC output slew rate</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_rate_available</p></td>
+<td><p>Available slew_rate values</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>slew_step</p></td>
+<td><p>Configure DAC output slew step</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_step_available</p></td>
+<td><p>Available slew_step values</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="current-input-loop-powered-with-hart-compatibility">
+<h6>6. Current Input Loop Powered with HART Compatibility<a class="headerlink" href="#current-input-loop-powered-with-hart-compatibility" title="Link to this heading"></a></h6>
+<p>The channels and their attributes are the same as <strong>Current Input Loop Powered</strong> mode.</p>
+</section>
+<section id="current-input-externally-powered-with-hart-compatibility">
+<h6>7. Current Input Externally Powered with HART Compatibility<a class="headerlink" href="#current-input-externally-powered-with-hart-compatibility" title="Link to this heading"></a></h6>
+<p>The channels and their attributes are the same as <strong>Current Input Externally Powered</strong> mode.</p>
+</section>
+<section id="resistance">
+<h6>8. Resistance<a class="headerlink" href="#resistance" title="Link to this heading"></a></h6>
+<p>Creates one IIO channel:</p>
+<p><strong>Resistance:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0-65535 (raw ADC result register value)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>sampling_frequency</p></td>
+<td><p>Samples per second (divided by enabled channels)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>sampling_frequency_available</p></td>
+<td><p>4800, 1200 (no filter); 20, 10 (filtered)</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="digital-input">
+<h6>9. Digital Input<a class="headerlink" href="#digital-input" title="Link to this heading"></a></h6>
+<p>Creates one IIO channel:</p>
+<p><strong>Voltage input:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0 or 1 (comparator output)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Constant: 1</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Constant: 0</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>threshold</p></td>
+<td><p>Threshold value in millivolts for comparator</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>sampling_frequency</p></td>
+<td><p>Samples per second (divided by enabled channels)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>sampling_frequency_available</p></td>
+<td><p>4800, 1200 (no filter); 20, 10 (filtered)</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="digital-input-loop-powered">
+<h6>10. Digital Input Loop Powered<a class="headerlink" href="#digital-input-loop-powered" title="Link to this heading"></a></h6>
+<p>Creates two IIO channels:</p>
+<p><strong>Voltage input:</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0 or 1 (comparator output)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Constant: 1</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Constant: 0</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>threshold</p></td>
+<td><p>Threshold value in millivolts for comparator</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>sampling_frequency</p></td>
+<td><p>Samples per second (divided by enabled channels)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>sampling_frequency_available</p></td>
+<td><p>4800, 1200 (no filter); 20, 10 (filtered)</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Current output</strong> (sets current limit sourced by AD74413R):</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Shared</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>Value 0-8191 (DAC code). Iout = (raw + offset) × scale (mA)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Constant: 0.003051 mA/LSB</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>offset</p></td>
+<td><p>Constant: 0</p></td>
+<td><p>R</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_en</p></td>
+<td><p>Enable slew rate control (uses slew_rate and slew_step)</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>slew_rate</p></td>
+<td><p>Configure DAC output slew rate</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_rate_available</p></td>
+<td><p>Available slew_rate values</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>slew_step</p></td>
+<td><p>Configure DAC output slew step</p></td>
+<td><p>R/W</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>slew_step_available</p></td>
+<td><p>Available slew_step values</p></td>
+<td><p>R</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+<section id="sampling-data-from-the-ad74413r">
+<h4>Sampling Data from the AD74413R<a class="headerlink" href="#sampling-data-from-the-ad74413r" title="Link to this heading"></a></h4>
+<section id="example-sampling-buffered-data">
+<h5>Example: Sampling Buffered Data<a class="headerlink" href="#example-sampling-buffered-data" title="Link to this heading"></a></h5>
+<p>The following example demonstrates how to use pyadi-iio to sample buffered data from the AD74413R:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ad74413r</span><span class="o">.</span><span class="n">rx_enabled_channels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;voltage0&quot;</span><span class="p">]</span>
+<span class="n">ad74413r</span><span class="o">.</span><span class="n">sample_rate</span> <span class="o">=</span> <span class="mi">4800</span>
+<span class="n">ad74413r</span><span class="o">.</span><span class="n">rx_buffer_size</span> <span class="o">=</span> <span class="mi">4800</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ad74413r</span><span class="o">.</span><span class="n">rx</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can change the sampling channel to another input channel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ad74413r</span><span class="o">.</span><span class="n">rx_enabled_channels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;current0&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The channel must be configured appropriately in the SWIOT1L configuration. Samples are stored in the <code class="docutils literal notranslate"><span class="pre">data</span></code> array.</p>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../firmware-guide/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Firmware User Guide</a>
+    <a href="../../ad-synchrona14-ebz/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-SYNCHRONA14-EBZ</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
