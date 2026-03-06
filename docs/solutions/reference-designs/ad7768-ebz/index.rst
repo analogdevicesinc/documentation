@@ -1,0 +1,209 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad7768-ebz/software/baremetal
+
+.. _ad7768-ebz:
+
+AD7768-EVB User Guide
+=====================
+
+Introduction
+------------
+
+The :adi:`AD7768` is an 8-channel simultaneous sampling sigma-delta ADC with a
+modulator and digital filter per channel, enabling synchronized sampling of AC
+and DC signals.
+
+The :adi:`AD7768` achieves 108 dB dynamic range at a maximum input bandwidth
+of 110.8 kHz, combined with typical performance of +/- 2 ppm integral
+nonlinearity (INL), +/- 50 uV offset error, and +/- 30 ppm gain error.
+
+The AD7768 user can trade off input bandwidth, output data rate, and power
+dissipation, and select one of three power modes to optimize for noise targets
+and power consumption. The flexibility of the AD7768 allows it to become a
+reusable platform for low power DC and high performance AC measurement modules.
+
+The AD7768 has three power modes:
+
+- Fast mode: 256 kSPS maximum, 110.8 kHz input bandwidth, 51.5 mW per channel
+- Median mode: 128 kSPS maximum, 55.4 kHz input bandwidth, 27.5 mW per
+  channel
+- Low power mode: 32 kSPS maximum, 13.8 kHz input bandwidth, 9.375 mW per
+  channel
+
+The AD7768 offers extensive digital filtering capabilities, such as a wideband,
+low +/- 0.005 dB pass-band ripple, antialiasing low-pass filter with sharp
+roll-off, and 105 dB attenuation at the Nyquist frequency.
+
+Frequency domain measurements can use the wideband linear phase filter. This
+filter has a flat pass band (+/- 0.005 dB ripple) from DC to 102.4 kHz at
+256 kSPS, from DC to 51.2 kHz at 128 kSPS, or from DC to 12.8 kHz at
+32 kSPS.
+
+The AD7768 also offers sinc response via a sinc5 filter, a low latency path
+for low bandwidth, and low noise measurements. The wideband and sinc5 filters
+can be selected and run on a per channel basis.
+
+Within these filter options, the user can improve the dynamic range by
+selecting from decimation rates of x32, x64, x128, x256, x512, and x1024.
+
+Supported Devices
+-----------------
+
+- :adi:`AD7768`
+
+Evaluation Boards
+-----------------
+
+- :adi:`EVAL-AD7768`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+HDL Reference Design
+--------------------
+
+The HDL architecture comprises a serial data path that enables all the ADC
+channels and a parallel data path, so that the user can enable only the
+desired channels.
+
+The reference design uses the :git-hdl:`AXI AD7768 IP core <library/axi_ad7768>`
+to interface the AD7768 ADC. Data is deserialized according to the number of
+active lanes. The interface module also implements a parallel CRC check
+algorithm. The data from the interface module is processed by the ADC channel
+module.
+
+The top module instantiates the AD7768 interface module, the ADC channel
+register map, the ADC common register map, and the AXI handling interface. The
+ADC common register map allows basic monitoring and control of the ADC, while
+the ADC channel register map enables per-channel monitoring and control.
+
+IP Core Configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Description
+     - Default Value
+   * - ``ID``
+     - Core ID, should be unique for each AD7768 IP in the system
+     - 0
+   * - ``NUM_CHANNELS``
+     - Number of ADC channels (8 for AD7768, 4 for AD7768-4)
+     - 8
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. figure:: ad7768evb_fmc_hdl.svg
+   :align: center
+
+   AD7768-EVB HDL block diagram
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`projects/ad7768evb`
+
+Building the HDL Project
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The design is built upon ADI's generic HDL reference design framework. ADI
+does not distribute pre-built bitstream files, so the project must be built
+from source. Clone the HDL repository and, with the correct tools installed,
+navigate to the project directory and run ``make``:
+
+.. code-block:: bash
+
+   cd hdl/projects/ad7768evb/zed
+   make
+
+Software Support
+----------------
+
+Linux Device Driver
+~~~~~~~~~~~~~~~~~~~
+
+The AD7768 Linux driver is an IIO (Industrial I/O) subsystem driver targeting
+the AD7768 and AD7768-4 precision ADCs.
+
+- :git-linux:`drivers/iio/adc/ad7768.c`
+
+Linux Device Tree
+^^^^^^^^^^^^^^^^^
+
+Required device tree properties:
+
+- ``compatible``: Must be one of ``"adi,ad7768"`` or ``"adi,ad7768-4"``
+- ``reg``: SPI chip select number for the device
+- ``clocks``: phandle to master clock of the device
+- ``clock-names``: Must be ``"mclk"``
+- ``dmas``: DMA specifier, consisting of a phandle to DMA controller node
+- ``dma-names``: Must be ``"rx"``
+- ``vref-supply``: phandle to the regulator for ADC reference voltage
+
+Optional properties:
+
+- ``reset-gpios``: Reset GPIO
+- ``adi,data-lines``: Number of DOUTx pins channels data is output on
+  (default: 1). This value is determined by the configuration of the AD7768
+  FORMATx pins, which are read on power-up.
+
+Example device tree:
+
+- :git-linux:`arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7768.dts`
+
+IIO Attributes
+^^^^^^^^^^^^^^
+
+Once the driver is loaded, the following IIO attributes are available at
+``/sys/bus/iio/devices/iio:deviceX/``:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Attribute
+     - Description
+   * - ``in_voltage_scale``
+     - Scale to apply to raw values to obtain millivolts
+   * - ``power_mode``
+     - Current power consumption mode of the ADC core
+   * - ``power_mode_available``
+     - Available power mode options
+   * - ``sampling_frequency``
+     - Current sampling frequency
+   * - ``sampling_frequency_available``
+     - Available sampling frequency options
+   * - ``filter_type``
+     - Current digital filter type
+   * - ``filter_type_available``
+     - Available filter type options
+
+No-OS Project
+~~~~~~~~~~~~~
+
+- :git-no-OS:`projects/ad7768-evb`
+- :git-no-OS:`drivers/adc/ad7768`
+
+The No-OS project provides bare metal support for the AD7768-EVB. To set up
+the software:
+
+#. Clone the No-OS GitHub repository
+#. Build the project located at ``projects/ad7768-evb``
+#. Follow the instructions in the
+   `ADI No-OS build guide <https://analogdevicesinc.github.io/no-OS/doxygen/build_guides.html>`__
+
+More Information
+----------------
+
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- `AXI AD7768 IP Core Documentation <https://analogdevicesinc.github.io/hdl/library/axi_ad7768/index.html>`__
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

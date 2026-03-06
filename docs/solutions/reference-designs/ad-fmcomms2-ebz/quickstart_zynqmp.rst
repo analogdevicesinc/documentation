@@ -1,0 +1,105 @@
+.. _ad-fmcomms2-ebz-zcu102:
+
+ZCU102 Quick Start Guide
+=========================
+
+This guide provides instructions on how to set up the AD-FMCOMMS2-EBZ on
+the Xilinx :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` Zynq UltraScale+ MPSoC evaluation board.
+
+Required Hardware
+-----------------
+
+- Xilinx :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` board
+- AD-FMCOMMS2-EBZ or AD-FMCOMMS3-EBZ FMC board
+- Micro-USB cable (for UART)
+- SD card (16 GB or larger)
+
+Required Software
+-----------------
+
+- SD card image: latest :doc:`Kuiper Linux </linux/kuiper/index>` release
+- A UART terminal (PuTTY / Tera Term / Minicom), baud rate 115200 (8N1)
+
+SD Card Setup
+-------------
+
+#. Write the latest Kuiper Linux image to the SD card.
+#. Copy the following files into the **BOOT** partition of the SD card
+   (replace files if they already exist):
+
+   - **Image** file from ``zynqmp-common``
+   - **BOOT.BIN** from ``zynqmp-zcu102-rev10-ad936x-fmcomms2-3-4``
+   - **system.dtb** from ``zynqmp-zcu102-rev10-ad9361-fmcomms2-3``
+
+#. Safely eject the SD card.
+
+Hardware Setup
+--------------
+
+#. Connect the AD-FMCOMMS2-EBZ FMC board to the **HPC0** FMC socket on the
+   ZCU102.
+#. Connect USB UART (J83, Micro USB) to your host PC.
+#. Insert the SD card into the ZCU102 card slot.
+#. Configure the ZCU102 for SD boot (SW6 switches).
+#. Turn on the power switch on the FPGA board.
+#. Observe kernel and serial console messages on your terminal.
+
+Expected Boot Messages
+----------------------
+
+After power-on, the UART terminal will display U-Boot and Linux kernel boot
+messages. Key messages to look for:
+
+- ``ad9361 spi1.0: ad9361_probe : AD936x Rev 2 successfully initialized``
+  confirms successful AD9361 initialization.
+- ``cf_axi_dds ... probed DDS AD9361`` confirms the AXI DAC DDS core is
+  operational.
+- ``cf_axi_adc ... probed ADC AD9361 as MASTER`` confirms the AXI ADC core is
+  operational.
+
+After boot completes, log in with:
+
+- Username: ``analog``
+- Password: ``analog``
+
+IIO Oscilloscope
+----------------
+
+The IIO Oscilloscope application can be used locally (if HDMI is connected) or
+remotely over the network.
+
+For remote access:
+
+#. Determine the board's IP address (check UART console for DHCP assignment or
+   use ``ip addr``).
+#. Build and start the IIO Oscilloscope on your host PC.
+#. Go to **Settings > Connect** and enter the IP address.
+
+The FMCOMMS2 plugin provides control of TX/RX LO frequencies, sample rates,
+RF bandwidth, gain control, DDS tone generation, and FIR filter management.
+
+Building from Source
+--------------------
+
+Instructions for building the ZynqMP / MPSoC Linux kernel and devicetrees from
+source:
+
+- `Building the ZynqMP boot image BOOT.BIN
+  <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- :doc:`Kuiper Linux </linux/kuiper/index>` for SD card image creation
+
+Networking
+----------
+
+By default, DHCP is enabled. A static IP can be configured using the
+``enable_static_ip.sh`` script:
+
+.. code-block:: bash
+
+   enable_static_ip.sh <ip_address> eth0
+
+.. note::
+
+   The ``enable_static_ip.sh`` script fixes the IP address of the desired
+   Ethernet adapter and prevents the onboard network manager from changing it.
+   This is required for directly connected Ethernet cables without DHCP servers.

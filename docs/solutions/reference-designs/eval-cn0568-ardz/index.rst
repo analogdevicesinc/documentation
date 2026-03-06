@@ -1,0 +1,281 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0568
+
+.. _eval-cn0568-ardz:
+
+EVAL-CN0568-ARDZ
+=================
+
+Ultra-Fast Switching PLL and Quadband VCO Frequency Synthesizer.
+
+Overview
+--------
+
+:adi:`CN0568` demonstrates the performance of ADI's quadband VCOs with the
+:adi:`ADF41513` PLL device. The circuit design provides a complete frequency
+synthesizer solution including supply regulators and control circuitry with
+phase resync capability.
+
+The key components used in this circuit are:
+
+- :adi:`HMC8074`, :adi:`HMC8362`, or :adi:`HMC8364` quadband VCOs
+- :adi:`ADF41513` PLL frequency synthesizer
+- :adi:`LT3045` linear regulator
+- :adi:`ADG1604` multiplexer
+
+Required Equipment
+------------------
+
+- EVAL-CN0568-ARDZ evaluation board
+- SDP-K1 controller board
+- Spectrum analyzer
+- 1 x 50 Ohm RF/microwave cable with 2.92 mm connectors
+- 2 x BNC to SMA adapters
+- 2 x dual banana plug to BNC socket
+- 2 x 50 Ohm SMA DC cables
+- USB cable
+
+Hardware Setup
+--------------
+
+.. figure:: cn0568_board.jpg
+   :width: 600px
+
+   EVAL-CN0568-ARDZ evaluation board.
+
+The evaluation board mounts to the Arduino header of the SDP-K1 controller
+board.
+
+- **J1** -- +5 V power connection (set current limit to 200 mA)
+- **V+SMA** -- +25 V connection (set current limit to 20 mA)
+- **RFOUT** -- 50 Ohm 2.92 mm RF output to spectrum analyzer
+
+Software Installation
+---------------------
+
+#. Download the software folder from the :adi:`CN0568` product page.
+#. Double-click on the ``CN0548.exe`` self-extracting installer to start the
+   installation process.
+#. Follow the installation windows that appear to install the software in the
+   default location.
+
+   .. figure:: installer1.jpg
+      :width: 400px
+
+      Installation wizard welcome screen.
+
+   .. figure:: installer3.jpg
+      :width: 400px
+
+      Installation directory selection.
+
+   .. figure:: installer4.jpg
+      :width: 400px
+
+      Installation progress.
+
+   .. figure:: installer5.jpg
+      :width: 400px
+
+      Installation complete.
+
+#. After the CN0568 software has been installed, an installation window for the
+   SDP drivers will appear. If the SDP drivers have not previously been
+   installed on the machine, proceed with this installation step.
+
+   .. figure:: installer_sdpdrivers6.jpg
+      :width: 400px
+
+      SDP drivers installation window.
+
+#. Load the custom firmware to the SDP-K1 board by dragging and dropping the
+   ``SDP_K1_release.hex`` file (contained within the software download folder)
+   to the SDP-K1 drive listed in the Devices and Drives of "This PC" within
+   Windows Explorer. This step only needs to be done once as the image remains
+   on the board after removal of the USB cable.
+
+Software Interface
+------------------
+
+The interface used to control the circuit has three regions:
+
+#. **Graphical control region** -- Contains all the buttons and numeric
+   controls used to program the :adi:`ADF41513`.
+#. **Register region** -- If anything is changed in the graphical control
+   region, a register is highlighted in green. This indicates to the user that
+   the register must be written by pressing the corresponding **Write
+   Register** button. Some controls have a dedicated button to update the
+   register directly.
+#. **Log window** -- Shows the most recent transactions to the user. A log can
+   be saved of all activity in a session.
+
+.. figure:: software_structure.png
+
+   Software interface structure showing graphical control, register, and log
+   regions.
+
+Device Connection
+~~~~~~~~~~~~~~~~~
+
+The device connection tab is displayed first after executing the software
+interface. From here, the user selects the device variant and the device
+configuration (single board or multi-board). After these are selected, press
+the **Connect** button to establish a connection.
+
+Main Controls Tab
+~~~~~~~~~~~~~~~~~
+
+Reference Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+This section contains the controls associated with the reference frequency.
+
+**Reference Source**
+   By default, the board is configured to use the 100 MHz on-board reference
+   crystal oscillator. If a different frequency external reference is used,
+   change this control accordingly.
+
+**Reference Frequency**
+   This can only be changed if an external reference frequency is used. This
+   value must match the external frequency applied.
+
+**Divider and Doubler**
+   These can be used to change the PFD frequency accordingly on the
+   :adi:`ADF41513`.
+
+Frequency Control
+^^^^^^^^^^^^^^^^^^
+
+In the frequency control section, the VCO output frequency can be programmed by
+inputting the desired frequency in MHz. After inputting the frequency, press the
+**Update Frequency** button to update.
+
+Phase Control
+^^^^^^^^^^^^^
+
+The phase of an output signal can be incremented by specifying the value in the
+Phase Value field. The phase is calculated and can be updated by pressing the
+**Increment Phase** button.
+
+Phase resync is enabled by default within the initialization sequence. To set
+the phase resync time, set the CLK1 and CLK2 multipliers accordingly.
+
+.. note::
+
+   The phase resync time must be greater than the worst case lock time.
+
+Hop Function Tab
+~~~~~~~~~~~~~~~~
+
+A frequency hop can be performed continuously between 2 frequencies within the
+Hop Function tab. **VCO Freq. A** and **VCO Freq. B** are the two frequencies
+that the user specifies for the hop. The dwell time at each frequency is input
+in the **Time Delay** field. A frequency hop is started by pressing the
+**Start** button and stopped using the **Stop** button.
+
+.. figure:: hopfunction.png
+
+   Hop Function tab interface.
+
+Dual Board Control
+^^^^^^^^^^^^^^^^^^^
+
+A dual board configuration can be used when two boards of the same VCO variant
+are connected via a stacked connection from the Arduino-style header. This must
+first be selected in the Board Configuration section prior to establishing a
+software connection. When using the dual board configuration, the user can
+select which board is being controlled through SPI writes using the **Board
+Select** drop-down box on the upper right within the Main Controls tab.
+
+.. figure:: boardselect.png
+
+   Board Select drop-down for dual board configuration.
+
+To use the dual board configuration, one of the boards needs to be
+reconfigured to receive SPI on a different LE signal line. To do this, remove
+**R41** on the upper board of the stack and install **R42** instead.
+
+Other Functions
+^^^^^^^^^^^^^^^^
+
+Some of the basic register controls of the :adi:`ADF41513` have been included
+in the Other Functions tab of the software interface. These controls are related
+to lock detect settings, PLL settings, and the MUXOUT signal. For information
+about the functionality of each control, refer to registers 5, 6, 7, and 12 in
+the register map section of the :adi:`ADF41513` data sheet.
+
+Evaluation Procedure
+---------------------
+
+.. figure:: setup_circuit_note1.jpg
+
+   EVAL-CN0568-ARDZ evaluation setup.
+
+#. Download and install the :adi:`CN0568` board software from the product page.
+#. Set up the evaluation board with:
+
+   - +5 V connected to **J1** and +25 V connected to **V+SMA** of the DC
+     power supply (ensuring supply outputs are switched off).
+   - Set current limit of +5 V supply to 200 mA and set current limit of
+     +25 V supply to 20 mA.
+   - Evaluation board mounted to the Arduino header of the SDP-K1.
+   - USB cable connected to the host PC from the SDP-K1 board.
+   - 50 Ohm 2.92 mm RF cable connected from **RFOUT** of the evaluation board
+     to RFIN of the spectrum analyzer.
+
+#. Open the software and select the relevant part/board variant.
+#. Turn on the +5 V power supply, then turn on the +25 V power supply.
+#. Press the **Write Initialization Sequence** button to initialize the part.
+
+   - The current drawn on the +5 V supply should be between 150--180 mA.
+   - The current drawn on the +25 V supply should be approximately 4 mA.
+
+   .. figure:: software_image.png
+
+      CN0568 software interface after initialization.
+
+#. In the spectrum analyzer instrument, set up a phase noise measurement.
+#. Input the first test frequency for the variant used in the **VCO Out** box
+   and press **Update Frequency**.
+
+   .. figure:: updatefrequency.png
+
+      Update Frequency control in the software interface.
+
+#. Wait until the instrument locks to the output frequency and displays the
+   phase noise profile on screen. Note the phase noise at offsets of 100 kHz,
+   1 MHz, and 10 MHz.
+#. Repeat steps 7--8 for each test frequency listed in the :adi:`CN0568`
+   circuit note for the board variant being tested.
+
+Documents
+---------
+
+- :adi:`CN0568 Circuit Note <CN0568>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0568-ARDZ Design & Integration Files
+   <https://www.analog.com/cn0568-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`ADF41513 Product Page <ADF41513>`
+- :adi:`HMC8074 Product Page <HMC8074>`
+- :adi:`HMC8362 Product Page <HMC8362>`
+- :adi:`HMC8364 Product Page <HMC8364>`
+- :adi:`LT3045 Product Page <LT3045>`
+- :adi:`ADG1604 Product Page <ADG1604>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

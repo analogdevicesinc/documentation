@@ -1,0 +1,143 @@
+.. _ad-fmclidar1-ebz-software:
+
+Evaluation Software
+===================
+
+IIO Oscilloscope
+----------------
+
+After boot the
+:doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+starts, allowing configuration of the system, data capture, and visualization.
+
+.. figure:: lidar_iio_scope_plot.png
+   :align: center
+   :width: 600
+
+   IIO Oscilloscope data capture window
+
+The main window allows setting the length of data captures and selecting the
+ADC channels to display. The capture length must always be set to a multiple of
+256 to match the internal data bus length. There are 5 channels under the
+``axi-ad9094-hpc`` device: 4 data channels (``voltage0`` to ``voltage3``) and
+a 5th channel (``voltage4``) showing the MUX selections of the 4 TIAs on the
+AFE board.
+
+.. figure:: lidar_voltage4_format.png
+   :align: center
+
+   Voltage4 channel encoding format (2 bits per TIA for CHSEL0 and CHSEL1)
+
+LIDAR Plugin
+------------
+
+.. figure:: lidar_iio_scope_plugin.png
+   :align: center
+   :width: 400
+
+   IIO Oscilloscope LIDAR plugin
+
+Sequencer Settings
+~~~~~~~~~~~~~~~~~~
+
+A TIA channel sequencer implemented in the LIDAR HDL design controls the MUX
+selection independently for all TIAs. The sequencer can run in **auto** mode,
+changing the MUX selection at every data capture based on the sequence specified
+in the Auto Config section. In **manual** mode, the 4 Manual Channel controls
+correspond to the 4 TIAs (U2 through U5) with values in the range 0-3. The
+Pulse Delay setting controls the delay between the TIA channel change and the
+next laser pulse, accounting for TIA settling time.
+
+Laser Pulse Generator Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The HDL design contains a pulse generator that precisely controls the timing of
+the laser pulses. The generator must be enabled before starting data capture
+because captures are triggered by laser pulses. Two parameters can be
+controlled: pulse frequency and width, which together define the total optical
+power of the system.
+
+.. warning::
+
+   The system was certified for Eye Safety Class 1 with 20 ns pulse width and
+   50 kHz laser settings. Operating above these settings voids the Class 1
+   certification. Laser safety glasses (e.g.,
+   `LG2 <https://www.thorlabs.com/thorproduct.cfm?partnumber=LG2>`__) should be
+   worn at all times regardless of the laser setting.
+
+AFE Settings
+~~~~~~~~~~~~
+
+The APD on the AFE board needs a negative bias voltage in the range -120 V to
+-200 V, controlled through the APD Bias setting. The TIA output signal offset
+can be compensated via the Tilt control, which helps bring the signal close to 0
+and maximize the ADC range.
+
+JESD Link Monitoring
+--------------------
+
+At system startup the
+:dokuwiki:`JESD 204B Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
+application starts to allow monitoring the status of the JESD204B link to the
+AD9094 on the DAQ board.
+
+Distance Measurements
+---------------------
+
+`lidar.py <https://github.com/analogdevicesinc/pyadi-iio/blob/main/examples/lidar.py>`__
+is a standalone GUI application developed on top of Analog Devices'
+`pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`__ library.
+
+.. figure:: lidarpy_gui_screenshot.png
+   :align: center
+   :width: 600
+
+   lidar.py GUI for distance measurement
+
+Besides displaying the received signals, lidar.py can configure all the
+relevant board parameters, including the Pulse Width, APD Bias, Tilt Voltage,
+Sequencer Settings, and the parameters used to generate the reference signal.
+This reference signal is then used to approximate and display the distance to
+the first object the LiDAR laser is pointed at.
+
+For the distance measurement, a correlation method is used. A single square
+pulse signal with the configured pulse width is filtered with a FIR filter to
+obtain a reference signal approximation. The Filter Length and Filter Cutoff
+Frequency can be adjusted in real time to improve measurement accuracy. Each
+displayed distance is a mean of the last 10 measurements to smooth out
+variations.
+
+Laser Safety
+------------
+
+This device complies with International Standards IEC 60825-1:2014 and 2007 for
+a Class 1 laser product. This device also complies with 21 CFR 1040.10 and
+1040.11 except for deviations pursuant to Laser Notice No. 50, dated
+June 24, 2007. Only use software and firmware updates that are specifically
+provided for this solution.
+
+Software Support
+----------------
+
+.. image:: lidar_sw_fwrk.png
+   :align: center
+   :width: 500
+
+The LiDAR Prototyping Platform software framework is common across all
+hardware variants, developed with industry standard tools and interfaces.
+Support is provided to cover a broad base of operating systems used across
+different industry areas. There is a proven ADI JESD framework available to
+reduce development complexity and time, and guarantees deterministic transfer
+of data from the APD to the host processing system.
+
+More Information
+----------------
+
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- `JESD204B High-Speed Serial Interface Support <https://analogdevicesinc.github.io/hdl/library/jesd204/index.html>`__
+
+Support
+-------
+
+For questions and more information please ask on the
+:ez:`LiDAR Solutions Forum <depth-perception-ranging-technologies/lidar-solutions>`.

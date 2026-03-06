@@ -1,0 +1,425 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0269
+
+.. _eval-cn0269-sdpz:
+
+EVAL-CN0269-SDPZ
+=================
+
+High Performance Multi-Channel Data Acquisition System.
+
+Overview
+--------
+
+:adi:`CN0269 <CN0269>` is a high performance industrial signal level
+multi-channel data acquisition circuit that can process 16 channels of
+single-ended inputs or 8 channels of differential inputs with up to
+18-bit resolution.
+
+A single channel can be sampled at up to 1.33 MSPS with 18-bit resolution.
+A channel-to-channel switching rate of 250 kHz between all input channels
+provides 16-bit performance.
+
+The signal processing circuit combined with a simple 4-bit up-down binary
+counter provides a cost-effective way to realize channel-to-channel switching
+without an FPGA, CPLD, or high speed processor. The counter can be programmed
+to count up or count down for sequentially sampling multiple channels, or can
+be loaded with a fixed binary word for sampling a single channel.
+
+.. figure:: cn0269-symlified-schematic.png
+   :align: center
+
+   CN0269 simplified schematic
+
+Required Equipment
+------------------
+
+- :adi:`EVAL-CN0269-SDPZ <EVAL-CN0269-SDPZ>` evaluation board (CN0269 board)
+- :adi:`EVAL-SDP-CB1Z` controller board (SDP-B board)
+- :adi:`EVAL-CFTL-6V-PWRZ` power supply or equivalent +6 V DC supply
+- CN0269 SDP evaluation software (supplied on CD in kit)
+- USB Type-A to USB Mini-B cable
+- Signal generator for sine wave with +/-10 V Vpp and frequency up to 500 kHz
+- PC with the following minimum requirements:
+
+  - Windows XP Service Pack 2 (32-bit)
+  - USB Type-A port
+  - Processor rated at 1 GHz or faster
+  - 512 MB RAM and 500 MB available hard disk space
+
+General Setup
+-------------
+
+- The **EVAL-CN0269-SDPZ** board connects to the **EVAL-SDP-CB1Z** SDP-B board
+  via the 120-pin connector.
+- The DC power supply +6 V output connects to **CN2** on the EVAL-CN0269-SDPZ.
+  The DC power supply +/-12 V connects to **CN1** on the EVAL-CN0269-SDPZ.
+- The **EVAL-SDP-CB1Z** SDP-B board connects to the PC via the USB cable.
+
+.. figure:: cn0287_test_setup.png
+   :align: center
+
+   CN0269 test setup
+
+Installing the Software
+------------------------
+
+1. Extract the file **CN0269 SDP Eval Software.zip** and open the file
+   **setup.exe**.
+
+   .. note::
+
+      It is recommended that you install the CN0269 SDP evaluation software
+      to the default directory path
+      **C:\\Program Files\\Analog Devices\\CN0269\\** and all National
+      Instruments products to **C:\\Program Files\\National Instruments\\**.
+
+   .. figure:: sw_setup_1.png
+      :align: center
+
+      CN0269 SDP evaluation software installer
+
+2. Click **Next** to view the installation review page.
+
+   .. figure:: sw_setup_2.png
+      :align: center
+
+      Installation review page
+
+3. Click **Next** to start the installation.
+
+   .. figure:: sw_setup_3.png
+      :align: center
+
+      Installation progress
+
+4. Upon completion of the installation of the **CN0269 SDP Eval Software**,
+   the installer for the **ADI SDP Drivers** will execute.
+
+   .. note::
+
+      It is recommended that you close all other applications before clicking
+      **Next**. This will make it possible to update relevant system files
+      without having to reboot your computer.
+
+   .. figure:: sw_setup_4.png
+      :align: center
+
+      ADI SDP Drivers installer
+
+5. Press **Next** to set the installation location for the **SDP Drivers**.
+
+   .. note::
+
+      It is recommended that you install the drivers to the default directory
+      path **C:\\Program Files\\Analog Devices\\SDP\\Drivers**.
+
+   .. figure:: sw_setup_5.png
+      :align: center
+
+      SDP Drivers installation location
+
+6. Press **Next** to install the **SDP Drivers** and complete the installation
+   of all software. Click **Finish** when done.
+
+   .. figure:: sw_setup_6.png
+      :align: center
+
+      SDP Drivers installation complete
+
+Connecting the Hardware
+-----------------------
+
+1. Connect **J1** of the EVAL-CN0269-SDPZ (CN0269 board) to **CON A** of the
+   EVAL-SDP-CB1Z (SDP-B board).
+
+2. Set the **JP3** and **JP4** jumpers on EVAL-CN0269-SDPZ to select the input
+   range and connect the signal correctly according to the pin definition.
+
+   .. figure:: signal_connection_1.png
+      :align: center
+
+      Signal connection and pin definition
+
+3. Connect the USB cable to the SDP-B board and leave the other side of the
+   cable unconnected.
+
+4. Connect the +6 V DC power to **CN2** and +/-12 V DC power to **CN1** and
+   turn on the DC power supply to power up the board.
+
+5. Connect the USB cable to the PC.
+
+   .. figure:: hardware_connection.png
+      :align: center
+
+      Hardware connection overview
+
+Using the Evaluation Software
+-----------------------------
+
+Software Overview
+~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0269_sw_fp_label.png
+   :align: center
+
+   CN0269 evaluation software front panel
+
+The evaluation software provides the following controls:
+
+1. **Connect Button** -- Makes a USB connection between the SDP-B board and the
+   CN0269 board. A connection to the SDP-B board must be made to use the
+   software.
+
+2. **Start Acquisition Button** -- Starts data acquisition from the
+   EVAL-CN0269-SDPZ board.
+
+3. **Save Data Button** -- Saves the data to the same directory where the
+   application is installed.
+
+   .. note::
+
+      If the CN0269 SDP evaluation software is installed in the default
+      directory, the data files can be found in
+      **C:\\Program Files\\Analog Devices\\CN0269\\**.
+
+4. **Control Tabs**:
+
+   - **Configuration Tab** -- All configuration items through the SDP-B board
+     to the EVAL-CN0269-SDPZ board are organized on this tab.
+   - **Multi-Channel Tab** -- Shows all signals on one tab, convenient for
+     comparing signals from different channels.
+   - **Single Channel Tab** -- Shows the specific selected channel with more
+     detail than the Multi-Channel Tab.
+   - **SDP Information** -- The firmware version of the SDP-B board is shown
+     on this tab.
+
+   .. figure:: sw_info.png
+      :align: center
+
+      SDP Information tab
+
+5. **Configuration Items** -- All items used to control the EVAL-CN0269-SDPZ
+   board.
+
+6. **Hardware Configuration Diagram** -- Shows the correct hardware
+   configuration (jumper setting and signal connection) for the current
+   software configuration.
+
+7. **System Status String Indicator** -- Displays a message detailing the
+   current state of the software.
+
+8. **System Status LED Indicator** -- Displays the current state of the
+   software as an LED with four status colors:
+
+   .. figure:: cn0269-software-busy.png
+
+      Busy
+
+   .. figure:: cn0269-software-error.png
+
+      Error
+
+   .. figure:: cn0269-software-inactive.png
+
+      Inactive
+
+   .. figure:: cn0269-software-wait.png
+
+      Waiting for user action
+
+Configuration Tab
+~~~~~~~~~~~~~~~~~
+
+The Configuration Tab contains the following items:
+
+- **Connector Dropdown Menu** -- Selects which connector on the SDP-B board
+  the CN0269 board is connected to. Options are "Connector A" or "Connector B".
+  The connector must be selected before clicking the **Connect Button**.
+
+- **Signal Range Dropdown Menu** -- Selects the acceptable input range of the
+  EVAL-CN0269-SDPZ board. After selecting the input range, configure the
+  hardware according to the **Hardware Configuration Diagram**. Options are
+  -10 V to +10 V or -5 V to +5 V.
+
+- **Signal Type Dropdown Menu**:
+
+  - *8 Channels, Differential* -- Acquires 8-channel differential signals.
+    The signal definition under this configuration is different from
+    16-channel single-ended inputs.
+  - *16 Channels, Single-Ended* -- Acquires 16-channel single-ended signals.
+    The signal definition under this configuration is different from
+    8-channel differential inputs.
+
+- **Acquisition Mode Dropdown Menu**:
+
+  - *Single Channel* -- Collects data from a specific channel selected by
+    the user. The acquisition rate under Single Channel mode can be up to
+    1 MHz SPS.
+  - *All Channel Scan* -- Collects data from all channels (8 channels for
+    differential input signal and 16 channels for single-ended input signal).
+
+- **Select the Channel Dropdown Menu** -- Shown only when the Acquisition Mode
+  is "Single Channel". Allows selection of any channel for acquisition.
+
+- **Scan Sequence Dropdown Menu** -- Shown only when the Acquisition Mode is
+  "All Channel Scan". Selects the scan sequence between "CH0 to CH15"
+  ("CH0 to CH7") or "CH15 to CH0" ("CH7 to CH0").
+
+- **Sample Rate/CH (Hz)** -- Configures the sampling rate per channel. The
+  total sample rate is [Sample Rate/CH(Hz)] x [active channels]. The total
+  sampling rate cannot exceed 1 MHz SPS.
+
+- **Samples/CH** -- Sets the number of samples for each channel. The total
+  samples is [Samples/CH] x [active channels]. The total samples cannot exceed
+  1M.
+
+- **Capture Mode Dropdown Menu**:
+
+  - *Single Capture* -- The software stops after collecting the number of
+    samples configured in **Samples/CH**.
+  - *Continuous Capture* -- The software continues collecting data until the
+    **Stop Acquisition Button** is clicked.
+
+- **Phase Compensation Dropdown Menu** -- Compensates for the delay between
+  differential channels due to the acquisition delay.
+
+- **Hardware Configuration Block** -- Shows the correct hardware configuration
+  in terms of **Jumper Setting** and **Signal Definition** according to the
+  current configuration.
+
+Multi-Channel Tab
+~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0269_sw_mulch_label.png
+   :align: center
+
+   Multi-Channel Tab view
+
+1. **Multi-Channel Graph** -- Shows all signal plots on this display in the
+   time domain.
+
+2. **Channel Index** -- Shows the number and color of all active channels.
+
+3. **Graph Controls** -- Allow the user to zoom-in, zoom-out, and pan through
+   the snapshot displayed.
+
+4. **X, Y Scale Fit Setting**:
+
+   - *Autoscale* -- Scales the X/Y axis in every snapshot to display the plots
+     from all channels.
+   - *Autoscale Once* -- Scales the X/Y axis once for the previous snapshot
+     only.
+   - *Do not Autoscale* -- Never scales the X/Y axis.
+
+5. **Display Format**:
+
+   - *RAW Data* -- Shows the original binary data on the Multi-Channel Graph.
+   - *Voltage (V)* -- Converts the binary data to real voltage information and
+     displays it on the Multi-Channel Graph.
+
+Single Channel Tab
+~~~~~~~~~~~~~~~~~~
+
+.. figure:: cn0269_sw_singlech_label.png
+   :align: center
+
+   Single Channel Tab view
+
+1. **Time Domain Sub Tab** -- Shows the signal from the selected channel in the
+   time domain.
+
+2. **Frequency Domain** -- Shows the FFT plot of the signal from the selected
+   channel in the frequency domain.
+
+3. **Histogram** -- Shows the distribution status in the time domain for the
+   selected channel.
+
+4. **Dynamic Performance Analysis**:
+
+   - **SNR** -- Signal-to-Noise Ratio. The ratio of the rms value of the actual
+     input signal to the rms sum of all other spectral components below the
+     Nyquist frequency, excluding harmonics and DC. The amplitude of the
+     fundamental frequency is normalized to 1 for ADC performance
+     characterization. Value expressed in decibels.
+   - **SINAD** -- Signal-to-Noise-and-Distortion Ratio.
+   - **SFDR** -- Spurious Free Dynamic Range.
+   - **THD** -- Total Harmonic Distortion.
+   - **Sin/N** -- The SNR relative to the actual input signal amplitude.
+   - **Fund ampl** -- Fundamental Frequency Amplitude.
+
+Establishing a USB Connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Follow the instructions to properly install the software and connect the
+   hardware as described in the previous sections.
+
+2. Open the file named **CN0269.exe** in the installation directory.
+
+   .. note::
+
+      If the software was installed to the default location it will be found
+      at **C:\\Program Files\\Analog Devices\\CN0269\\CN0269.exe**.
+
+3. Select the connector to use from the **SDP Connector Dropdown Menu**.
+
+4. Click the **Connect to SDP-B Board Button**. A window with a progress bar
+   will load.
+
+5. Upon success, the **System Status String Indicator** will display
+   *SDP-B Ready to Acquire Data(s)*.
+
+Making a Single Capture
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Establish a USB connection link.
+
+2. Select *Single Capture* as the **Capture Mode**.
+
+3. Set the sample frequency in **Sample Rate/CH (Hz)**.
+
+4. Set the number of samples in **Samples/CH**.
+
+5. Click **Start Acquisition**.
+
+Making Continuous Capture
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Establish a USB connection link.
+
+2. Select *Continuous Capture* as the **Capture Mode**.
+
+3. Set the sample frequency in **Sample Rate/CH (Hz)**.
+
+4. Set the number of samples in **Samples/CH**.
+
+5. Click **Start Acquisition**.
+
+Documents
+---------
+
+- :adi:`CN0269 Circuit Note <CN0269>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+
+   `EVAL-CN0269-SDPZ Design & Integration Files
+   <https://www.analog.com/cn0269-designsupport>`__
+
+   - Schematics
+   - PCB Layout
+   - Bill of Materials
+
+Additional Information
+----------------------
+
+- :adi:`AD7908 Product Page <AD7908>`
+- :adi:`AD8271 Product Page <AD8271>`
+- :adi:`AD7982 Product Page <AD7982>`
+
+Help and Support
+----------------
+
+For questions and more information about this product, connect with us through
+the Analog Devices :ez:`EngineerZone <ez/reference-designs>`.

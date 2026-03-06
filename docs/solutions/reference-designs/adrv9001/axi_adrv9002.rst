@@ -1,0 +1,331 @@
+.. _adrv9001-axi:
+
+AXI ADRV9001/ADRV9002 Interface Core
+======================================
+
+.. note::
+
+   The latest IP core documentation can be found at
+   `library/axi_adrv9001/index.rst <https://analogdevicesinc.github.io/hdl/library/axi_adrv9001/index.html>`__.
+
+Block Diagram
+-------------
+
+.. figure:: axi_9002.png
+   :align: center
+
+   AXI ADRV9002 interface core block diagram
+
+Parameters
+----------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Default
+     - Description
+   * - CMOS_LVDS_N
+     - 0
+     - Source synchronous interface type: 0 — LVDS, 1 — CMOS
+   * - TDD_DISABLE
+     - 0
+     - Controls insertion of the TDD core. If set, the TDD controller will not
+       be part of the implementation.
+   * - DDS_DISABLE
+     - 0
+     - If resource utilization is a concern, setting this parameter removes the
+       dual tone DDS logic from the TX channels. This reduces resource
+       utilization significantly but loses the ability to generate a test tone.
+   * - INDEPENDENT_1R1T_SUPPORT
+     - 1
+     - | 0 — Rx2 (adc_2_*) and Tx2 (dac_2_*) data channels will be disabled;
+       | RX2 TPL, TX2 TPL cores are disabled.
+       | 1 — Allows independent control of Rx2/Tx2 PHY either from Rx12/Tx12
+       | TPL or Rx2/Tx2 TPL blocks.
+   * - COMMON_2R2T_SUPPORT
+     - 1
+     - | 0 — Puts the Rx12/Tx12 TPL in R1_MODE, having access only to
+       | Rx1/Tx1 PHYs.
+       | 1 — Allows Rx12/Tx12 TPL to operate in 2R 2T mode having control
+       | over Rx2/Tx2 PHY.
+   * - RX_USE_BUFG
+     - 0
+     - Used in case of Xilinx 7 series devices. If set, will insert a global
+       clock buffer on the RX clock path. Useful if user logic does not fit
+       in a clock region.
+   * - TX_USE_BUFG
+     - 0
+     - Used in case of Xilinx 7 series devices. If set, will insert a global
+       clock buffer on the TX clock path. Useful if user logic does not fit
+       in a clock region.
+   * - USE_RX_CLK_FOR_TX
+     - 0
+     - In case the received clock on the TX source synchronous interface is
+       not routed to clock capable pins, when setting this to 1 the RX clock
+       will be used to drive the TX interface.
+   * - IODELAY_CTRL
+     - 1
+     - Controls the instantiation of the IODELAY_CTRL primitive. Only one
+       IODELAY_CTRL per IO bank is allowed.
+   * - IO_DELAY_GROUP
+     - "dev_if_delay_group"
+     - Used in case of Xilinx devices. Identifier of the IODELAYCTRL cell.
+   * - FPGA_TECHNOLOGY
+     - 0
+     - Auto populated by IPI.
+   * - FPGA_FAMILY
+     - 0
+     - Auto populated by IPI.
+   * - SPEED_GRADE
+     - 0
+     - Auto populated by IPI.
+   * - DEV_PACKAGE
+     - 0
+     - Auto populated by IPI.
+
+Register Map
+------------
+
+The register map of the core contains instances of several generic register
+maps like ADC common, ADC channel, DAC common, DAC channel, etc. The following
+table presents the base addresses of each instance. The absolute address of a
+register should be calculated by adding the instance base address to the
+register's relative address.
+
+Register Map Base Addresses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - DWORD
+     - BYTE
+     - Name
+     - Description
+   * - 0x0000
+     - 0x0000
+     - RX1 BASE / COMMON / CHANNELS
+     - Base, ADC Common, and ADC Channel register maps
+   * - 0x0200
+     - 0x0800
+     - RX1 Delay Control
+     - IO Delay Control register map
+   * - 0x0400
+     - 0x1000
+     - RX2 BASE / COMMON / CHANNELS
+     - Base, ADC Common, and ADC Channel register maps
+   * - 0x0600
+     - 0x1800
+     - RX2 Delay Control
+     - IO Delay Control register map
+   * - 0x0800
+     - 0x2000
+     - TX1 BASE / COMMON / CHANNELS
+     - Base, DAC Common, and DAC Channel register maps
+   * - 0x1000
+     - 0x4000
+     - TX2 BASE / COMMON / CHANNELS
+     - Base, DAC Common, and DAC Channel register maps
+   * - 0x1200
+     - 0x4800
+     - TDD1
+     - Transceiver TDD Control register map
+   * - 0x1300
+     - 0x4C00
+     - TDD2
+     - Transceiver TDD Control register map
+
+Physical Interface
+------------------
+
+The following operation modes are supported by the physical layer. CMOS (CSSI)
+and LVDS (LSSI) selection is done through the ``CMOS_LVDS_N`` synthesis
+parameter. Other parameters (lanes, SDR/DDR, symbol size) can be runtime
+modified, preferably while the core is in reset.
+
+.. list-table::
+   :header-rows: 1
+
+   * - SSI Mode
+     - Data Lanes
+     - Serialization Factor
+     - Max Data Lane Rate (MHz)
+     - Max Clock Rate (MHz)
+     - Max Sample Rate I/Q (MHz)
+     - Data Type
+     - DDS Rate
+   * - CSSI 1-lane
+     - 1
+     - 32
+     - 80
+     - 80
+     - 2.5
+     - SDR
+     - 8
+   * - CSSI 1-lane
+     - 1
+     - 32
+     - 160
+     - 80
+     - 5
+     - DDR
+     - 4
+   * - CSSI 1-lane (16-bit) [1]_
+     - 1
+     - 16
+     - 80
+     - 80
+     - \-
+     - SDR
+     - 4
+   * - CSSI 1-lane (16-bit) [1]_
+     - 1
+     - 16
+     - 160
+     - 80
+     - \-
+     - DDR
+     - 2
+   * - CSSI 1-lane (8-bit) [2]_
+     - 1
+     - 8
+     - 80
+     - 80
+     - \-
+     - SDR
+     - 2
+   * - CSSI 1-lane (8-bit) [2]_
+     - 1
+     - 8
+     - 160
+     - 80
+     - \-
+     - DDR
+     - 1
+   * - CSSI 4-lane
+     - 4
+     - 8
+     - 80
+     - 80
+     - 10
+     - SDR
+     - 2
+   * - CSSI 4-lane
+     - 4
+     - 8
+     - 160
+     - 80
+     - 20
+     - DDR
+     - 1
+   * - LSSI 1-lane
+     - 1
+     - 32
+     - 983.04
+     - 491.52
+     - 30.72
+     - DDR
+     - 4
+   * - LSSI 2-lane
+     - 2
+     - 16
+     - 983.04
+     - 491.52
+     - 61.44
+     - DDR
+     - 2
+
+.. [1] ADRV9001 data port transmit/receive 16-bit data symbols.
+.. [2] ADRV9001 data port transmit/receive 8-bit data symbols. In case of
+   8-bit data symbols, aligned MSBs are used.
+
+The following equations describe the relationship between the interface
+parameters:
+
+- ``MaxDataLaneRate = MaxSampleRateIQ * 16 * 2 / DataLanesPerChannel``
+- ``MaxClockRate = MaxDataLaneRate / (1 + (DataType == DDR))``
+- ``UserInterfaceClock = MaxClockRate / InternalDivider``
+- ``DDS_Rate = 32 / (DataLanesPerChannel * (1 + (DataType == DDR)) * InternalDivider)``
+
+Where ``InternalDivider`` is implementation-specific: for Xilinx CMOS and LVDS
+the value is 4; for Intel CMOS the value is 1.
+
+Since the user interface clock is an integer multiple (DDS Rate column) of the
+max sample rate, the interface toward the user logic has a valid qualifier
+which is not active on every clock cycle.
+
+Configure DAC Common Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Register **0x0048 REG_CNTRL_2**:
+
+- [12:8] NUM_LANES — number of active lanes (1: CSSI 1-lane/LSSI 1-lane,
+  2: LSSI 2-lane, 4: CSSI 4-lane)
+- [14] SYMB_8_16B — select number of bits for symbol format (1: 8-bit,
+  0: 16-bit)
+- [15] SYMB_OP — select symbol data format mode
+- [16] SDR_DDR_N — interface type (1: SDR, 0: DDR)
+
+Register **0x004C REG_RATECNTRL**:
+
+- [7:0] RATE — must be set according to the DDS Rate column of the table above
+
+Configure ADC Common Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Register **0x0044 REG_CNTRL**:
+
+- [12:8] NUM_LANES — number of active lanes (1: CSSI 1-lane/LSSI 1-lane,
+  2: LSSI 2-lane, 4: CSSI 4-lane)
+- [14] SYMB_8_16B — select number of bits for symbol format (1: 8-bit,
+  0: 16-bit)
+- [15] SYMB_OP — select symbol data format mode
+- [16] SDR_DDR_N — interface type (1: SDR, 0: DDR)
+
+Requirements
+~~~~~~~~~~~~
+
+- Rx1 clock and Rx2 clock should be length matched.
+- Clock and data in SSI interface must be length matched.
+
+Xilinx Physical Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+RX Component Mode
+^^^^^^^^^^^^^^^^^
+
+For RX interfaces the source synchronous associated clock is used to sample
+the input data. Software configuration is required as described in the
+`Configure ADC Common Interface`_ section. Input delays of the FPGA or output
+delays of the ADRV9001 can be tuned by software to optimize sampling.
+
+.. figure:: rxcomponentmodephy.png
+   :align: center
+
+   RX component mode physical interface
+
+TX Using Dedicated Clock
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+For TX interfaces the clock received from the transceiver is used to drive
+the output data. Software configuration is required for clock rate selection
+as described in the `Configure DAC Common Interface`_ section. Input delays
+of the ADRV9001 can be tuned by software to optimize sampling.
+
+.. figure:: txcomponentmodephy.png
+   :align: center
+
+   TX component mode physical interface
+
+More Information
+----------------
+
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
