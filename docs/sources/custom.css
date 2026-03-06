@@ -21,17 +21,6 @@
     display: none;
 }
 
-/* Favicon for generic external links — replaces the default ::before icon */
-a.icon.link.has-favicon::before {
-    display: none;
-}
-a.icon.link.has-favicon img.favicon {
-    width: 16px;
-    height: 16px;
-    vertical-align: text-bottom;
-    margin-right: 4px;
-}
-
 body[data-theme="dark"] .sidebar-brand {
     color: #fff;
 }
