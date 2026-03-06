@@ -379,7 +379,7 @@ Design & Integration Files
 
 .. admonition:: Download
 
-   :download:`EVAL-ADBMS6830BMSW Design Support Package <EVAL-ADBMS6830BMSW-designsupport.zip>`
+   :download:`EVAL-ADBMS6830BMSW Design Support Package <eval-adbms6830bmsw-designsupport.zip>`
 
    - Schematic
    - PCB Layout

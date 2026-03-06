@@ -147,7 +147,7 @@ Equipment Needed
 - USB-C power supply (5V, minimum 2A)
 - Multimeter (for verification)
 
-.. figure:: Hardware-Setup.png
+.. figure:: hardware-setup.png
 
    AD-GMSL716MIPI-EVK Hardware Setup
 

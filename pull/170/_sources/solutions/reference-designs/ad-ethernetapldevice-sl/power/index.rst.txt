@@ -54,7 +54,7 @@ reference design with DIN-B form factor), we can slightly compromise
 the efficiency but making sure first that it won't violate the line
 current ceiling it can pull to the :adi:`LT8440`.
 
-.. figure:: Connection.png
+.. figure:: connection.png
    :alt: Source to Load Simplified 2-WISE/APL Port Connection
 
    Source to Load Simplified 2-WISE/APL Port Connection
@@ -77,14 +77,14 @@ is the summation of I_LOADP and I_SHUNT shown in Equation 1.
 
    I_LINEP = I_LOADP + I_SHUNTP (1)
 
-.. figure:: LT8440-simplify.png
+.. figure:: lt8440-simplify.png
    :alt: Simplified Partial Circuit of LT8440
 
    Simplified Partial Circuit of LT8440
 
 .. csv-table:: Line Voltage Threshold for sensed voltage between LINEA and
    LINEB (Excerpt only - incomplete table)
-   :file: Line_thresholds.csv
+   :file: line_thresholds.csv
 
 During Shunt Regulation Mode, the shunt pin of the LT8440 is
 conducting in which it satisfies Equation 1.
@@ -110,7 +110,7 @@ it will satisfy the ILINEP = 40.5mA (for Level 1) or ILINEP =
 
 .. csv-table:: Regulating Line Current during Shunt Regulation Mode (Excerpt
    only - incomplete table)
-   :file: Regulation.csv
+   :file: regulation.csv
 
 The LINEA and LINEB pins sensed the voltage on the input line and
 dictate the current regulation, the position in which the LINEA/B
@@ -137,7 +137,7 @@ work as intended.
 Figure 3 is the designed configuration for AD-EthernetAPLDevice-SL
 to pass the Intrinsic safety design certification.
 
-.. figure:: LT8440-connection.png
+.. figure:: lt8440-connection.png
    :alt: Required Frontend Design with Large Effective Capacitance &
          Inductance on the Load Side
 
@@ -162,7 +162,7 @@ worst case and select appropriate power parts for the power tree
 using the LTPOWERPLANNER for the Power Tree calculation.
 
 .. csv-table:: Power Budget at Estimated Full Load
-   :file: Power_estimation.csv
+   :file: power_estimation.csv
 
 In the power tree provided in Figure 8 based on estimated power
 budget at full load.
@@ -267,7 +267,7 @@ Characterizing the performance of the LT8440 Power Conditioner and
 the entire Power Tree, the following curves are captured at ambient
 temperature of 25 degrees Celsius (typical).
 
-.. figure:: LOAD_P.png
+.. figure:: load_p.png
    :width: 600 px
    :alt: LOAD_P (Load Side) and Shunt Parameters
 
@@ -291,7 +291,7 @@ at 12.7V line voltage which is approximately 139.46mW.
 The shunt and load side power are small enough to not violate the APL
 limit when adding the two parameters.
 
-.. figure:: Efficiency.png
+.. figure:: efficiency.png
    :width: 600 px
    :alt: Efficiency and Current of Power Tree
 
@@ -314,7 +314,7 @@ current and power, but those two parameters must not exceed what is
 indicated on the APL requirements like the 55.56mA maximum current at
 9V, and the 500mW limit for the entire line voltage range.
 
-.. figure:: Power_performance.png
+.. figure:: power_performance.png
    :width: 600 px
    :alt: LINE_P Power Performance at Normal Operation, Shorted and
          Opened Load
@@ -339,7 +339,7 @@ faulted/shorted, it did not exceed the maximum die power rating of
 therefore the LT8440 is doing its function as a power conditioner at
 normal operation and as a power limiter during fault scenario.
 
-.. figure:: Current_performance.png
+.. figure:: current_performance.png
    :width: 600 px
    :alt: LINE_P Current Performance at Normal Operation, Shorted and
          Opened Load

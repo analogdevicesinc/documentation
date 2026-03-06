@@ -37,14 +37,14 @@ Key Features
 - Open-source software stack with drivers and example applications
 - Zephyr RTOS support and integration with Code Fusion Studio
 
-.. figure:: COMB_TOP.png
+.. figure:: comb_top.png
    :width: 450 px
    :align: left
    :alt: AD-EthernetAPLDevice-SL Board
 
    AD-EthernetAPLDevice-SL Board
 
-.. figure:: APL_Hockeypuck_block_diagram.svg
+.. figure:: apl_hockeypuck_block_diagram.svg
    :width: 450 px
    :align: right
    :alt: Simplified Block Diagram
@@ -106,17 +106,17 @@ The board is fully supported in Code Fusion Studio {{ soon to be available }}
 Hardware Components and Connections
 -----------------------------------
 
-.. figure:: Power-connectors.png
+.. figure:: power-connectors.png
    :width: 600 px
 
    Power Board Connections
 
-.. figure:: IS-connector.png
+.. figure:: is-connector.png
    :width: 600 px
 
 Digital IS Board Connections
 
-.. figure:: non-IS-connectors.png
+.. figure:: non-is-connectors.png
    :width: 600 px
 
 Digital NON-IS Board Connections
@@ -163,7 +163,7 @@ Setup Instructions
 #. Apply power to the DEMO-ADIN1100D2Z (9V to 15V input). The
    AD-EthernetAPLDevice-SL will be powered via SPoE.
 
-.. figure:: Config.png
+.. figure:: config.png
    :width: 600 px
    :alt: Hardware Setup
 

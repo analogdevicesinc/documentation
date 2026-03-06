@@ -155,7 +155,7 @@ demo.
 - **Software**
 
   - PuTTY or other similar software
-  - :download:`ADuCM3029_demo_AD5593R.hex <ADuCM3029_demo_ad5592r_ad5593r.zip>`
+  - :download:`ADuCM3029_demo_AD5593R.hex <aducm3029_demo_ad5592r_ad5593r.zip>`
 
 .. important::
 
@@ -183,7 +183,7 @@ demo.
 
    Prebuilt AD5593R Hex File
 
-     - :download:`ADuCM3029_demo_AD5593R.hex <ADuCM3029_demo_ad5592r_ad5593r.zip>`
+     - :download:`ADuCM3029_demo_AD5593R.hex <aducm3029_demo_ad5592r_ad5593r.zip>`
 
    Complete AD5593R Source Files
 

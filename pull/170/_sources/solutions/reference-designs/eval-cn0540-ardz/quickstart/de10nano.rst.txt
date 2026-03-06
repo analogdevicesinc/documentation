@@ -3,7 +3,7 @@
 DE10-Nano Quickstart
 ===============================================================================
 
-.. image:: ../../images/DE10Nano.jpg
+.. image:: ../../images/de10nano.jpg
    :align: center
    :width: 500
 

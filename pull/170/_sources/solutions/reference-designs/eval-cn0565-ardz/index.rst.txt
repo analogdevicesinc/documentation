@@ -394,7 +394,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0565-ARDZ Design & Integration Files <CN0565-DesignSupport.zip>`
+   :download:`EVAL-CN0565-ARDZ Design & Integration Files <cn0565-designsupport.zip>`
 
    - Schematic
    - PCB Layout
