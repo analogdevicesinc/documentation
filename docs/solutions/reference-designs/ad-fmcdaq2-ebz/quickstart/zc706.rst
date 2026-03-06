@@ -1,0 +1,9 @@
+.. _fmcdaq2_ebz quickstart zc706:
+
+ZC706 Quick start
+===============================================================================
+
+This guide provides quick instructions on how to setup the
+:adi:`AD-FMCDAQ2-EBZ` on:
+
+- :xilinx:`ZC706` FMC HPC
