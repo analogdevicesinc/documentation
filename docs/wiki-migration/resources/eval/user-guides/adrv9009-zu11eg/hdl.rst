@@ -57,7 +57,7 @@ The device control and monitor signals are interfaced to a GPIO module. The SPI 
 Project Location
 ----------------
 
-The project is available at https://github.com/analogdevicesinc/hdl/tree/master/projects/adrv9009zu11eg
+The project is available at :git-hdl:`projects/adrv9009zu11eg`
 
 More Information
 ----------------

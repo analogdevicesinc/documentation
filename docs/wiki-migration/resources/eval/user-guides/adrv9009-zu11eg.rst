@@ -4,7 +4,7 @@ ADRV9009-ZU11EG RF System-on-Module
 Introduction
 ------------
 
-The `ADRV9009-ZU11EG <https://www.analog.com/ADRV9009-ZU11EG>`__ `Export Info <https://www.analog.com/ADRV9009-ZU11EG>`__ is a highly integrated RF System-On-Module(RF-SOM) based on the Analog Devices `ADRV9009 <https://www.analog.com/ADRV9009>`__ and Xilinx `Zynq UltraScale+ MPSoC <https://www.xilinx.com//products/silicon-devices/soc/zynq-ultrascale-mpsoc.html>`__. The RF-SOM is a platform for evaluation and prototyping. To use the RF-SOM a carrier board is required. The Analog Devices ADRV2CRR-FMC Carrier board is designed for this purpose. An additional RF Transceiver board can also be fitted to the carrier to further expand the system up to 8 Tx and Rx radio channels.
+The :adi:`ADRV9009-ZU11EG` :adi:`Export Info <ADRV9009-ZU11EG>` is a highly integrated RF System-On-Module(RF-SOM) based on the Analog Devices :adi:`ADRV9009` and Xilinx `Zynq UltraScale+ MPSoC <https://www.xilinx.com//products/silicon-devices/soc/zynq-ultrascale-mpsoc.html>`__. The RF-SOM is a platform for evaluation and prototyping. To use the RF-SOM a carrier board is required. The Analog Devices ADRV2CRR-FMC Carrier board is designed for this purpose. An additional RF Transceiver board can also be fitted to the carrier to further expand the system up to 8 Tx and Rx radio channels.
 
 **The RF-SOM box includes:**
 
@@ -110,7 +110,7 @@ Hardware Design Details
 Application Development
 -----------------------
 
-Multiple ADRV9009-ZU11EG’s can be synchronized together enabling a complete solution for complex multi-stream applications ensuring end-to-end deterministic latency. The ADRV9009 Transceivers include integrated LO and phase synchronization. Overall system frequency & phase synchronization is maintained with a clock tree structure using ADI high performance low jitter `HMC7044 <https://www.analog.com/HMC7044>`__ devices, making it ideal for applications requiring RF phase alignment with a large number of channels.
+Multiple ADRV9009-ZU11EG’s can be synchronized together enabling a complete solution for complex multi-stream applications ensuring end-to-end deterministic latency. The ADRV9009 Transceivers include integrated LO and phase synchronization. Overall system frequency & phase synchronization is maintained with a clock tree structure using ADI high performance low jitter :adi:`HMC7044` devices, making it ideal for applications requiring RF phase alignment with a large number of channels.
 
 The ADRV9009-ZU11EG has extensive I/O capability. Combined with the ADRV2CRR-FMC evaluation carrier board a variety of high speed I/O can be evaluated, including USB3, USB2, PCIe 3.0 x8, QSFP+, SFP+, 1Gb Ethernet x2, and CPRI capability. Please review the I/O functionality reference table provided in the :doc:`ADRV2CRR-FMC </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/adrv2crr-fmc_carrier_board>` homepage for more details on the functionality provided.
 
@@ -127,7 +127,7 @@ The ADRV9009-ZU11EG can be booted from the onboard SD card slot or the SD card s
 
 Users should check that they have the appropriate Vivado license in place to be able to use and build the reference HDL code provided for the Ultrascale+ MPSOC in the system.
 
-People who follow the flow that is outlined, have a much better experience with things. However, like many things, documentation is never as complete as it should be. If you have any questions, feel free to `ask <https://ez.analog.com/fpga>`__.
+People who follow the flow that is outlined, have a much better experience with things. However, like many things, documentation is never as complete as it should be. If you have any questions, feel free to :ez:`ask <fpga>`.
 
 -  Getting started with the ADRV9009-ZU11EG
 
@@ -156,9 +156,9 @@ People who follow the flow that is outlined, have a much better experience with 
 
    -  :doc:`Understanding the ADRV9009 </wiki-migration/resources/eval/user-guides/adrv9009/adrv9009>`
 
-      -  `ADRV9009 Product page <https://www.analog.com/ADRV9009>`__
-      -  `Full Datasheet and chip design package <https://www.analog.com/en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`__
-      -  `MATLAB Filter Wizard / Profile Generator for ADRV9009 <https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2.4.zip>`__
+      -  :adi:`ADRV9009 Product page <ADRV9009>`
+      -  :adi:`Full Datasheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
+      -  :adi:`MATLAB Filter Wizard / Profile Generator for ADRV9009 <media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2.4.zip>`
 
    -  Hardware in the Loop / How to design your own custom BaseBand
 
@@ -201,7 +201,7 @@ People who follow the flow that is outlined, have a much better experience with 
 Reference Material
 ------------------
 
-|image1| `Software Defined Radio for Engineers <https://www.analog.com/en/education/education-library/software-defined-radio-for-engineers.html>`__
+|image1| :adi:`Software Defined Radio for Engineers <en/education/education-library/software-defined-radio-for-engineers.html>`
 
 :doc:`Additional Documentation about SDR Signal Chains - The math behind the RF </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 
@@ -224,7 +224,7 @@ For questions and more information please contact us on the Analog Devices Engin
 
 .. hint::
 
-   `fpga <https://ez.analog.com/fpga>`__
+   :ez:`fpga`
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009_zu11eg/sdr_book.png

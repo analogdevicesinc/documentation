@@ -33,18 +33,18 @@ A additional ``SYNC`` signals is used to generate the synchronization event. If 
 +----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                                                                                                                                                                 |
 +==========+======================================================================================================================================================================================================================================================================================+
-| dts      | `zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-jesd204-fsm-multisom-primary.dts <https://github.com/analogdevicesinc/linux/blob/master/arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-jesd204-fsm-multisom-primary.dts>`__                       |
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-jesd204-fsm-multisom-primary.dts`                                                                                                                                                          |
 +----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-jesd204-fsm-multisom-secondary.dts <https://github.com/analogdevicesinc/linux/blob/master/arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-jesd204-fsm-multisom-secondary.dts>`__                   |
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-jesd204-fsm-multisom-secondary.dts`                                                                                                                                                        |
 +----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-primary.dts <https://github.com/analogdevicesinc/linux/blob/master/arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-primary.dts>`__     |
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-primary.dts`                                                                                                                                                 |
 +----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-secondary.dts <https://github.com/analogdevicesinc/linux/blob/master/arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-secondary.dts>`__ |
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-secondary.dts`                                                                                                                                               |
 +----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. warning::
 
-   Depending on the Linux/Devicetree version, the HMC7044 eval board got replaced by :doc:`AD-SYNCHRONA14-EBZ </wiki-migration/resources/eval/user-guides/ad-synchrona14-ebz>` please see here: `ff537311d1fc7dc20d43a198b44007c22f2e9779 <https://github.com/analogdevicesinc/linux/commit/ff537311d1fc7dc20d43a198b44007c22f2e9779>`__
+   Depending on the Linux/Devicetree version, the HMC7044 eval board got replaced by :doc:`AD-SYNCHRONA14-EBZ </wiki-migration/resources/eval/user-guides/ad-synchrona14-ebz>` please see here: :git-linux:`commit/ff537311d1fc7dc20d43a198b44007c22f2e9779`
 
    
    ::
@@ -94,9 +94,9 @@ Depending on your :doc:`ADRV2CRR-FMC </wiki-migration/resources/eval/user-guides
 +----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                                                                                                                                                                                     |
 +==========+==========================================================================================================================================================================================================================================================================================================+
-| dts      | `zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-primary-clockdist.dts <https://github.com/analogdevicesinc/linux/blob/master/arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-primary-clockdist.dts>`__     |
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-primary-clockdist.dts`                                                                                                                                                           |
 +----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-secondary-clockdist.dts <https://github.com/analogdevicesinc/linux/blob/master/arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-secondary-clockdist.dts>`__ |
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-secondary-clockdist.dts`                                                                                                                                                         |
 +----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Hardware setup
@@ -105,7 +105,7 @@ Hardware setup
 Required equipment
 ~~~~~~~~~~~~~~~~~~
 
--  `EVAL-HMC7044 <https://www.analog.com/EVAL-HMC7044>`__ circuit evaluation board
+-  :adi:`EVAL-HMC7044` circuit evaluation board
 -  2 x :doc:`ADRV9009-ZU11EG RF System-on-Module </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg>`
 
 EVAL-HMC7044 modifications
@@ -181,7 +181,7 @@ The System Clocking Tree Diagram is located here:
 
 |ADRV9009-ZU11EG Clock Tree|
 
-During multi-chip synchronization (MCS), which is a feature of the ADRV9009s, all baseband data from the converters is synchronized across transceiver chips. This requires specific sysrefs to be captured at each of the transceiver simultaneously. This will also create deterministic phase differences between transceivers, when RFPLL sync is enabled, as well. The individual API rights to the transceivers, clock chips, and their sequences are detailed in the rx method of the python class `adrv9009_zu11eg_multi.py <https://github.com/analogdevicesinc/pyadi-iio/blob/master/adi/adrv9009_zu11eg_multi.py>`__.
+During multi-chip synchronization (MCS), which is a feature of the ADRV9009s, all baseband data from the converters is synchronized across transceiver chips. This requires specific sysrefs to be captured at each of the transceiver simultaneously. This will also create deterministic phase differences between transceivers, when RFPLL sync is enabled, as well. The individual API rights to the transceivers, clock chips, and their sequences are detailed in the rx method of the python class :git-pyadi-iio:`adi/adrv9009_zu11eg_multi.py`.
 
 | For more information on:
 
@@ -217,7 +217,7 @@ Synchronization at the application layer across multiple FPGAs is achieved using
 Running the software
 ~~~~~~~~~~~~~~~~~~~~
 
-`examples/adrv9009_som_multi.py <https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/adrv9009_som_multi.py>`__
+:git-pyadi-iio:`examples/adrv9009_som_multi.py`
 
 ::
 

@@ -7,7 +7,7 @@ ADRV9009-ZU11EG Quick Start Guide
 
 This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the ADRV9009-ZU11EG on:
 
--  `ADRV2CRR-FMC <https://www.analog.com/ADRV2CRR-FMC>`__
+-  :adi:`ADRV2CRR-FMC`
 
 If you want to use it with FMCOMMS8, please refer to :doc:`FMCOMMS8 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcomms8-ebz/quick-start-guide>`
 

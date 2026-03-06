@@ -10,7 +10,7 @@ Information on getting started and links to access the system software provided 
 Power Input
 -----------
 
-The ADRV2CRR-FMC has a single 12V supply input, distributed to the internal power supplies and interface connectors. Included in the package is a 12V, 145W power supply, which powers the complete prototyping platform built out of `ADRV9009-ZU11EG <https://www.analog.com/ADRV9009-ZU11EG>`__, `ADRV2CRR-FMC <https://www.analog.com/ADRV2CRR-FMC>`__ and `AD-FMCOMMS8-EBZ <https://www.analog.com/AD-FMCOMMS8-EBZ>`__. There are four LEDs that show the status of the power supplies: PG_ALL, PG_SOM, PWR_FAULT1 and PWR_FAULT2. A detailed description of these signals is available in the :doc:`ADRV9009-ZU11EG RF-SOM Hardware Overview </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/hardware>` page.
+The ADRV2CRR-FMC has a single 12V supply input, distributed to the internal power supplies and interface connectors. Included in the package is a 12V, 145W power supply, which powers the complete prototyping platform built out of :adi:`ADRV9009-ZU11EG`, :adi:`ADRV2CRR-FMC` and :adi:`AD-FMCOMMS8-EBZ`. There are four LEDs that show the status of the power supplies: PG_ALL, PG_SOM, PWR_FAULT1 and PWR_FAULT2. A detailed description of these signals is available in the :doc:`ADRV9009-ZU11EG RF-SOM Hardware Overview </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/hardware>` page.
 
 --------------
 
@@ -64,7 +64,7 @@ The ADRV2CRR-FMC includes a standard ANSI/VITA 57.1 FMC high-pin count connector
 
 FMC HA and HB differential signals are not populated with user-defined digital IOs as specified in the FMC HPC standard. Instead, RF reference clock signals, synchronization signal, and ADRV9009 IOs are connected to these positions to enhance the capability of the P1 connector by providing the possibility:
 
--  to add extra ADRV9009 transceivers to the system, and synchronize these with the RF-SOM. This is accomplished with the `AD-FMCOMMS8-EBZ <https://www.analog.com/AD-FMCOMMS8-EBZ>`__
+-  to add extra ADRV9009 transceivers to the system, and synchronize these with the RF-SOM. This is accomplished with the :adi:`AD-FMCOMMS8-EBZ`
 -  to design custom RF boards that make use of the analog and digital ADRV9009 IOs.
 
 .. important::

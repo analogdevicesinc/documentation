@@ -30,15 +30,15 @@ P1 Connector:
 -------------
 
 -  24x GTH transceiver lanes MGTHTX_N/P, MGTHRXN/P; GTH Reference clock inputs MGTREFCLKN/P
--  Reference clock inputs for the on-board `HMC7044B <https://www.analog.com/HMC7044B>`__ clock generator
--  Synchronization input signal for the on-board `HMC7044B <https://www.analog.com/HMC7044B>`__ clock generator
--  Analog IO signals from the two on-board `ADRV9009 <https://www.analog.com/ADRV9009>`__ transceivers GPIO_3P3_x, AUXADC_x, RF_SYNTH_VTUNE, AUX_SYNTH_OUT, AUX_SYNTH_VTUNE
--  Digital IO signals from the two on-board `ADRV9009 <https://www.analog.com/ADRV9009>`__ transceivers GPIO_x, RX_Enable, TX_Enable. These signals are also connected internally to the ZU11EG PL.
--  Dedicated SPI bus for the two on-board `ADRV9009 <https://www.analog.com/ADRV9009>`__ and `HMC7044B <https://www.analog.com/HMC7044B>`__
+-  Reference clock inputs for the on-board :adi:`HMC7044B` clock generator
+-  Synchronization input signal for the on-board :adi:`HMC7044B` clock generator
+-  Analog IO signals from the two on-board :adi:`ADRV9009` transceivers GPIO_3P3_x, AUXADC_x, RF_SYNTH_VTUNE, AUX_SYNTH_OUT, AUX_SYNTH_VTUNE
+-  Digital IO signals from the two on-board :adi:`ADRV9009` transceivers GPIO_x, RX_Enable, TX_Enable. These signals are also connected internally to the ZU11EG PL.
+-  Dedicated SPI bus for the two on-board :adi:`ADRV9009` and :adi:`HMC7044B`
 -  Xilinx Ultrascale+ ZU11EG programmable logic GPIOs
 -  Power fault signals: PWR_FAULT1, PWR_FAULT2
 -  1.8V digital supply output. Should be used only for powering IO buffers.
--  `ADRV9009 <https://www.analog.com/ADRV9009>`__ auxiliary 3.3V voltage output VDDA3P3
+-  :adi:`ADRV9009` auxiliary 3.3V voltage output VDDA3P3
 
 P2 Connector:
 -------------
@@ -48,7 +48,7 @@ P2 Connector:
 -  ZU11EG GTR lanes
 -  SD 3.01 memory card interface, MDI interface to the on-board Marvell 88E1512 Ethernet PHY, USB 2.0 interface to the on-board Microchip USB3320C PHY
 -  ZU11EG JTAG interface; dedicated configuration pins: mode pins, PS_DONE, PS_INIT_B, PS_ERROR_OUT, PS_ERROR_STATUS, reset signals
--  I2C interface for programming the on-board `ADM1266 <https://www.analog.com/ADM1266>`__ power sequencer
+-  I2C interface for programming the on-board :adi:`ADM1266` power sequencer
 -  Power good signals: PG_SOM, PG_ALL
 -  12 V power input
 -  ZU11EG PL bank IO supply inputs VCCO_x, bank reference inputs VREF_x
@@ -78,7 +78,7 @@ The ADRV9009-ZU11EG is powered from a single 12V supply. Requirements for the su
 Hot Swap Controller
 -------------------
 
-ADRV9009-ZU11EG features a hot-swap controller `ADM1177 <https://www.analog.com/ADM1177>`__ that allows safe board insertion from a live back-plane. ADM1177 also comes with digital current and voltage monitoring via on-chip 12-bit analog-to-digital converter communicating through I2C interface with the processor. ADM1177 is available in Linux as a hardware monitor device and could be accessed using python to measure SOM's current consumption.
+ADRV9009-ZU11EG features a hot-swap controller :adi:`ADM1177` that allows safe board insertion from a live back-plane. ADM1177 also comes with digital current and voltage monitoring via on-chip 12-bit analog-to-digital converter communicating through I2C interface with the processor. ADM1177 is available in Linux as a hardware monitor device and could be accessed using python to measure SOM's current consumption.
 
 .. admonition:: Download
    :class: download
@@ -93,7 +93,7 @@ ADRV9009-ZU11EG features a hot-swap controller `ADM1177 <https://www.analog.com/
 Power Monitoring
 ================
 
-The `ADM1266 <https://www.analog.com/ADM1266>`__ voltage sequencer/supervisor is used to handle following tasks:
+The :adi:`ADM1266` voltage sequencer/supervisor is used to handle following tasks:
 
 -  Monitors 12V voltage input. If it exits the +/-4% (11.5V...12.5V) window PWR_FAULT2 signal will be asserted, if it exceeds +/-8% (11V...13V) the power to the RF-SOM will be switched off.
 -  Controls the power-up voltage sequence of the internal supplies. Asserts PG_SOM and monitors the incoming PG_ALL signal.
@@ -104,7 +104,7 @@ The `ADM1266 <https://www.analog.com/ADM1266>`__ voltage sequencer/supervisor is
 Power Fault Signals
 -------------------
 
-The two fault signals PWR_FAULT1 and PWR_FAULT2 are open-drain active high signals with internal 4.7K pull-ups to 1.8V. These are controlled by the `ADM1266 <https://www.analog.com/ADM1266>`__ as previously mentioned. The purpose of the fault signals is to prompt that either temperature or input voltage are close to the limit, and a power down is imminent. Once power is turned off the state of the fault signals will reset, and the cause of the shutdown can be found only by accessing the `ADM1266 <https://www.analog.com/ADM1266>`__ Blackbox.
+The two fault signals PWR_FAULT1 and PWR_FAULT2 are open-drain active high signals with internal 4.7K pull-ups to 1.8V. These are controlled by the :adi:`ADM1266` as previously mentioned. The purpose of the fault signals is to prompt that either temperature or input voltage are close to the limit, and a power down is imminent. Once power is turned off the state of the fault signals will reset, and the cause of the shutdown can be found only by accessing the :adi:`ADM1266` Blackbox.
 
 Power Good Signals
 ------------------
@@ -119,12 +119,12 @@ Reading the ADM1266 Blackbox Memory
 
 Following tools are needed to read the Blackbox records:
 
--  `ADI Power Studio <https://www.analog.com/en/design-center/adi-power-studio>`__ GUI Software
--  `EVAL-ADP-I2C-USB <https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADP-I2C-USB>`__ I2C USB dongle.
+-  :adi:`ADI Power Studio <en/design-center/adi-power-studio>` GUI Software
+-  :adi:`EVAL-ADP-I2C-USB <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADP-I2C-USB>` I2C USB dongle.
 
-The I2C dongle connects to the `ADM1266 <https://www.analog.com/ADM1266>`__ dedicated I2C interface signals SCL_ADM1266_3V3, SDA_ADM1266_3V3 accessible in connector P2.
+The I2C dongle connects to the :adi:`ADM1266` dedicated I2C interface signals SCL_ADM1266_3V3, SDA_ADM1266_3V3 accessible in connector P2.
 
-The image below shows how to connect the I2C USB dongle to P19 on the `ADRV2CRR-FMC <https://www.analog.com/ADRV2CRR-FMC>`__ carrier board.
+The image below shows how to connect the I2C USB dongle to P19 on the :adi:`ADRV2CRR-FMC` carrier board.
 
 
 |image4|
@@ -145,7 +145,7 @@ After connecting the I2C cable open the ADI Power Studio software, connect to th
    
    .. important::
 
-      Troubleshooting power down issue on X-GRADE: https://ez.analog.com/fpga/f/q-a/119706/adrv9009-zu11eg-adrv2crr-fmc_revb-auto-powerdown/356549
+      Troubleshooting power down issue on X-GRADE: :ez:`fpga/f/q-a/119706/adrv9009-zu11eg-adrv2crr-fmc_revb-auto-powerdown/356549`
 
    
 
@@ -253,7 +253,7 @@ Place BNC connector to provide access to input clock signals CLKIN0_HMC7044B_P/N
 ADM1266 Power Sequencer I2C Interface
 -------------------------------------
 
-In order to be able to access the Blackbox memory the ADM1266 I2C interface needs to be accessible. Place a 1x4pin, 2.54mm pitch, male header to mate with the `EVAL-ADP-I2C-USB <https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADP-I2C-USB>`__ dongle. Consult the Power Monitoring section for the connector pinout. The 4-th pin is VBUS and can be discarded.
+In order to be able to access the Blackbox memory the ADM1266 I2C interface needs to be accessible. Place a 1x4pin, 2.54mm pitch, male header to mate with the :adi:`EVAL-ADP-I2C-USB <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADP-I2C-USB>` dongle. Consult the Power Monitoring section for the connector pinout. The 4-th pin is VBUS and can be discarded.
 
 Active Cooler
 -------------
@@ -277,9 +277,9 @@ The following link includes detailed description on synchronization hardware and
 
 -  :doc:`ADRV9009-ZU11EG Multi-SOM Synchronization </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/syncronization>`.
 
-The synchronization of multiple `ADRV9009 <https://www.analog.com/ADRV9009>`__ is accomplished by phase aligning the SYSREF and REFCLK fed into the transceiver and the deterministic latency of the JESD204B data path interface. The phase aligning mechanism is built around the `HMC7044B <https://www.analog.com/HMC7044B>`__, a high-performance jitter attenuator, capable of generating 14 ultralow phase noise output frequencies. Phase alignment is achieved by the pulsed SYNC or RFSYNC inputs, giving the possibility to extend the clock tree to multiple stages.
+The synchronization of multiple :adi:`ADRV9009` is accomplished by phase aligning the SYSREF and REFCLK fed into the transceiver and the deterministic latency of the JESD204B data path interface. The phase aligning mechanism is built around the :adi:`HMC7044B`, a high-performance jitter attenuator, capable of generating 14 ultralow phase noise output frequencies. Phase alignment is achieved by the pulsed SYNC or RFSYNC inputs, giving the possibility to extend the clock tree to multiple stages.
 
-The complete prototyping system built out of `ADRV9009-ZU11EG <https://www.analog.com/ADRV9009-ZU11EG>`__, `ADRV2CRR-FMC <https://www.analog.com/ADRV2CRR-FMC>`__, `AD-FMCOMMS8-EBZ <https://www.analog.com/AD-FMCOMMS8-EBZ>`__ acts as a proof of concept for synchronizing multiple `ADRV9009 <https://www.analog.com/ADRV9009>`__ transceivers. The diagram below shows the clock tree for a synchronized system consisting of eight `ADRV9009 <https://www.analog.com/ADRV9009>`__ (2 carriers). With a single HMC7044B synchronization board there is the possibility of extending the number of carriers to three, totaling twelve `ADRV9009 <https://www.analog.com/ADRV9009>`__ transceivers. For extending this number multiple HMC7044B synchronization boards need to be cascaded.
+The complete prototyping system built out of :adi:`ADRV9009-ZU11EG`, :adi:`ADRV2CRR-FMC`, :adi:`AD-FMCOMMS8-EBZ` acts as a proof of concept for synchronizing multiple :adi:`ADRV9009` transceivers. The diagram below shows the clock tree for a synchronized system consisting of eight :adi:`ADRV9009` (2 carriers). With a single HMC7044B synchronization board there is the possibility of extending the number of carriers to three, totaling twelve :adi:`ADRV9009` transceivers. For extending this number multiple HMC7044B synchronization boards need to be cascaded.
 
 .. admonition:: Download
    :class: download
@@ -294,12 +294,12 @@ There are two ways of phase aligning the output clocks, by distributing directly
 Clock Distribution
 ------------------
 
-The clock generated by the first stage `HMC7044B <https://www.analog.com/HMC7044B>`__ is distributed throughout the clock tree. The `HMC7044B <https://www.analog.com/HMC7044B>`__ in the lower stages are acting only as fanout buffers. The synchronization is accomplished by pulses on the RFSYNC input. This architecture is easier to manage and is lower power, since only the first stage PLL and VCO are active. Since the high frequency clock signal needs to be distributed it might create routing problems.
+The clock generated by the first stage :adi:`HMC7044B` is distributed throughout the clock tree. The :adi:`HMC7044B` in the lower stages are acting only as fanout buffers. The synchronization is accomplished by pulses on the RFSYNC input. This architecture is easier to manage and is lower power, since only the first stage PLL and VCO are active. Since the high frequency clock signal needs to be distributed it might create routing problems.
 
 Reference Distribution
 ----------------------
 
-In reference distribution the PLLs inside the `HMC7044B <https://www.analog.com/HMC7044B>`__ stages are active and work as clock generators and jitter cleaners, being synchronized by the SYNC input. This architecture provides ultralow jitter and removes the risk of coupling of unwanted signals in the clock chain.
+In reference distribution the PLLs inside the :adi:`HMC7044B` stages are active and work as clock generators and jitter cleaners, being synchronized by the SYNC input. This architecture provides ultralow jitter and removes the risk of coupling of unwanted signals in the clock chain.
 
 The clocking map below shows the path for both clock and reference distribution. An example is shown for VCXO of 122.88MHz and internal VCO frequency of 2919.12MHz.
 
@@ -326,7 +326,7 @@ The ADRV9009-ZU11EG RF-SOM comes equipped with a custom designed heat spreader p
 
 The heat spreader is designed to accommodate an active cooler with an AMD type SP3/TR4/sTRX4 socket. There are two sets of threaded holes. When thermal sheet is added between heat plate and fan the set of holes with the smaller thread depth should be used for mounting the fan.
 
-The `ADRV2CRR-FMC <https://www.analog.com/ADRV2CRR-FMC>`__ kit includes a heatsink with fan for the ADRV9009-ZU11EG RF-SOM, and Würth Elektronik 39410 EMI gasket sheet, that acts both as thermal transfer material between plate and heatsink, and RF Shield/Absorber.
+The :adi:`ADRV2CRR-FMC` kit includes a heatsink with fan for the ADRV9009-ZU11EG RF-SOM, and Würth Elektronik 39410 EMI gasket sheet, that acts both as thermal transfer material between plate and heatsink, and RF Shield/Absorber.
 
 --------------
 

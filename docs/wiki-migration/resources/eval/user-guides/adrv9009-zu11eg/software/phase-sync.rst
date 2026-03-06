@@ -4,7 +4,7 @@ ADRV9009-ZU11EG Phase Synchronization
 Phase sync ADRV9009 feature
 ---------------------------
 
-`Sync script <https://github.com/analogdevicesinc/linux_image_ADI-scripts/blob/master/adrv9009_multichip_sync.sh>`__
+:git-linux_image_ADI-scripts:`Sync script <adrv9009_multichip_sync.sh>`
 
 DMA Gating
 ----------
