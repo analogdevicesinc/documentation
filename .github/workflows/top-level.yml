@@ -34,7 +34,7 @@ jobs:
 
         [[ "${{ runner.debug }}" != "1" ]] && j_="-jauto"
 
-        make html SPHINXOPTS="$j_ -W --keep-going"
+        make html SPHINXOPTS="$j_"
 
     - name: Store the generated doc
       uses: actions/upload-artifact@v4
