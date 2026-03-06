@@ -59,16 +59,7 @@ Optional Hardware
 Testing
 =======
 
-.. caution::
-
-   \ |esd_warning.png|\ All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as *4000V* readily accumulate on the human body or test equipment and can discharge without detection.
-
-   
-   Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device.
-
-
-.. |esd_warning.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/esd_warning.png
-   :width: 120px
+.. esd-warning::
 
 
 -  Connect the ``ADRV9009-ZU11EG`` System on Module to the ``ADRV2CRR-FMC`` carrier board.
