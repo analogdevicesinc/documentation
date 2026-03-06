@@ -46,6 +46,9 @@ interref_repos = [
 
 html_theme = 'cosmic'
 html_favicon = path.join("sources", "icon.svg")
+html_static_path = ['sources']
+html_css_files = ['custom.css']
+html_js_files = ['favicons.js']
 numfig = True
 numfig_per_doc = True
 
