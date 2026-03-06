@@ -13,7 +13,7 @@
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="SC598 Clock Tree" href="sc598-clock-tree.html" />
+    <link rel="next" title="Linux support" href="linux-support.html" />
     <link rel="prev" title="System Level Documentation" href="../../index.html" />
    
   
@@ -94,12 +94,7 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Digital Signal Processors (ADSP)</a><ul>
-<li><a class="reference internal" href="#linux-support">Linux support</a></li>
-<li><a class="reference internal" href="#upstream-forks">Upstream forks</a></li>
-<li><a class="reference internal" href="#adi-repositories">ADI repositories</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Digital Signal Processors (ADSP)</a></li>
 </ul>
 
         </nav>
@@ -131,8 +126,10 @@ Content on this topic
 
 <ul class="current">
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><a class="reference internal" href="sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-support.html">Linux support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use-cases.html">Use cases</a></li>
 </ul>
 </li>
 </ul>
@@ -585,8 +582,6 @@ Content on this topic
             
   <section id="digital-signal-processors-adsp">
 <span id="adsp"></span><h1>Digital Signal Processors (ADSP)<a class="headerlink" href="#digital-signal-processors-adsp" title="Link to this heading"></a></h1>
-<div class="toctree-wrapper compound">
-</div>
 <p>ADI has a large portfolio of <a class="icon adi reference external" href="https://www.analog.com/en/product-category/dsp.html" target="_blank">Digital Signal Processors</a>
 (see <a class="icon adi reference external" href="https://www.analog.com/en/parametricsearch/3020#/" target="_blank">Selection Table for Digital Signal Processors</a>).
 A subset of those processors include ARM Cortex cores and are prefixed with SC
@@ -650,129 +645,15 @@ Cortex-A5 and Cortex-A55 can also run 32-bit or 64-bit Linux respectively.</p>
 </tbody>
 </table>
 </div>
-<section id="linux-support">
-<h2>Linux support<a class="headerlink" href="#linux-support" title="Link to this heading"></a></h2>
-<p>ADI supports running Linux on all ADSP SoCs with Cortex-A5 and A55 cores.
-That includes the following repositories. New features are tracked in the
-<a class="icon link reference external" href="https://github.com/orgs/analogdevicesinc/projects/20/views/1" target="_blank">ADSP Github Project</a>
-and coordinated with the community during weekly public office hours at 17:00 CET
-on Thursdays using a
-<a class="icon link reference external" href="https://meet.jit.si/AnalogDevicesIncDigitalSignalProcessingOfficeHours" target="_blank">Jitsi meeting</a>.</p>
-<p>To set up new ADSP evaluation boards see <a class="reference internal" href="setup.html#adsp-setup"><span class="std std-ref">Getting Started</span></a>.</p>
-</section>
-<section id="upstream-forks">
-<h2>Upstream forks<a class="headerlink" href="#upstream-forks" title="Link to this heading"></a></h2>
-<p>The ADSP Linux team maintains branches based on upstream releases. Changes made
-to support ADI hardware is upstreamed as quickly as possible. Until those
-changes have been accepted upstream, they are maintained in the following ADI
-forks.</p>
-<p>Release versions include the upstream version and a ADI specific release number
-(e.g.  <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, …).</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>Deprecated <a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-linux/" target="_blank">ADI lnxdsp-linux repository</a>:</dt><dd><ul>
-<li><p>v4.19
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-linux/commits/release/yocto-1.0.0" target="_blank">Commits</a></p></li>
-<li><p>v5.4.183
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-linux/commits/release/yocto-2.1.0" target="_blank">Commits</a></p></li>
-<li><p>v5.15.78
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-linux/commits/release/yocto-3.1.0" target="_blank">Commits</a></p></li>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linux-support.html">Linux support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use-cases.html">Use cases</a></li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/" target="_blank">ADI Linux repository</a>:</dt><dd><ul>
-<li><p>v6.12.0:
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/commits/adsp-6.12.0-y" target="_blank">Commits</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/releases/tag/adsp-6.12.0-1" target="_blank">Release 1</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/releases/tag/6.12.0-2" target="_blank">Release 2</a></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<ul class="simple">
-<li><dl class="simple">
-<dt><a class="icon git reference external" href="https://github.com/analogdevicesinc/u-boot/" target="_blank">ADI u-boot repository</a></dt><dd><ul>
-<li><p>v2025.07:
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/u-boot/commits/adi-u-boot-2025.07.y" target="_blank">Commits</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/u-boot/releases/tag/v2025.07-1" target="_blank">Release 1</a></p></li>
-<li><p>v2025.10:
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/u-boot/commits/adi-u-boot-2025.10.y" target="_blank">Commits</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/u-boot/releases/tag/v2025.10-1" target="_blank">Release 1</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/u-boot/releases/tag/v2025.10-2" target="_blank">Release 2</a></p></li>
-<li><p>v2026.01:
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/u-boot/commits/adi-u-boot-2026.01.y" target="_blank">Commits</a></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><a class="icon git reference external" href="https://github.com/analogdevicesinc/buildroot/" target="_blank">ADI buildroot repository</a></dt><dd><ul>
-<li><p>v2025.05:
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/buildroot/commits/adi-2025.05.x" target="_blank">Commits</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/buildroot/releases/tag/2025.05-1" target="_blank">Release 1</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/buildroot/releases/tag/2025.05-2" target="_blank">Release 2</a></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/trusted-firmware-a/" target="_blank">ADI trusted-firmware-a repository</a></p></li>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/optee_os/" target="_blank">ADI optee_os repository</a></p></li>
-<li><dl class="simple">
-<dt><a class="icon git reference external" href="https://github.com/analogdevicesinc/openocd/" target="_blank">ADI openocd repository</a></dt><dd><ul>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/openocd/releases/tag/0.12.0-1.0.0" target="_blank">0.12.0-1.0.0</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/openocd/releases/tag/0.12.0-1.1.1" target="_blank">0.12.0-1.1.1</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/openocd/releases/tag/0.12.0-1.1.2" target="_blank">0.12.0-1.1.2</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/openocd/releases/tag/0.12.0-1.2.0" target="_blank">0.12.0-1.2.0</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/openocd/releases/tag/0.12.0-1.3.0" target="_blank">0.12.0-1.3.0</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/openocd/releases/tag/0.12.0-1.3.1" target="_blank">0.12.0-1.3.1</a></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="adi-repositories">
-<h2>ADI repositories<a class="headerlink" href="#adi-repositories" title="Link to this heading"></a></h2>
-<p>For Yocto support see <code class="docutils literal notranslate"><span class="pre">lxndsp-adi-meta</span></code> below.</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt><a class="icon git reference external" href="https://github.com/analogdevicesinc/adsp-ldr/" target="_blank">ADI adsp-ldr repository</a></dt><dd><ul>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/adsp-ldr/releases/tag/v1.0.0" target="_blank">v1.0.0</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/adsp-ldr/releases/tag/v1.0.1" target="_blank">v1.0.1</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/adsp-ldr/releases/tag/v1.0.2" target="_blank">v1.0.2</a></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-adi-meta/" target="_blank">ADI lnxdsp-adi-meta repository</a></dt><dd><ul>
-<li><p>Kirkstone:
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-adi-meta/releases/tag/3.0.0-rel" target="_blank">Release v3.0.0</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-adi-meta/releases/tag/3.1.0-rel" target="_blank">Release v3.1.0</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-adi-meta/releases/tag/3.1.1-rel" target="_blank">Release v3.1.1</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-adi-meta/releases/tag/3.1.2-rel" target="_blank">Release v3.1.2</a></p></li>
-<li><p>Scarthgap:
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-adi-meta/releases/tag/5.0.0-rel" target="_blank">Release v5.0.0</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-adi-meta/releases/tag/5.0.1-rel" target="_blank">Release v5.0.1</a></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/lnxdsp-repo-manifest/" target="_blank">ADI lnxdsp-repo-manifest repository</a></p></li>
-<li><dl class="simple">
-<dt><a class="icon git reference external" href="https://github.com/analogdevicesinc/br2-external/" target="_blank">ADI br2-external repository</a></dt><dd><ul>
-<li><p>v2025.05:
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/br2-external/releases/tag/2025.05-0.1.0" target="_blank">Release 0.1.0</a>
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/br2-external/releases/tag/2025.05-0.2.0" target="_blank">Release 0.2.0</a></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
+</div>
 </section>
 
 
@@ -780,7 +661,7 @@ forks.</p>
               <div class="related">
                 &nbsp;
     <a href="../../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">System Level Documentation</a>
-    <a href="sc598-clock-tree.html" title="Next document (Alt+Shift+RightArrow)" class="next">SC598 Clock Tree</a>
+    <a href="linux-support.html" title="Next document (Alt+Shift+RightArrow)" class="next">Linux support</a>
               </div>
           
         </div>
