@@ -52,6 +52,13 @@ Contents
    solutions/*/index
 
 .. toctree::
+   :caption: Staging
+   :maxdepth: 4
+   :glob:
+
+   staging-*/*/index
+
+.. toctree::
    :caption: University Program
    :maxdepth: 4
 
