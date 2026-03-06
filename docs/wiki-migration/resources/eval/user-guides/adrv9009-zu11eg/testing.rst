@@ -47,7 +47,7 @@ ADRV9009-ZU11EG SD card
 
 The SD card image used for production testing is based on official release of Zynq images and can be downloaded from :
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    
@@ -57,7 +57,7 @@ The SD card image used for production testing is based on official release of Zy
    
 
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    
@@ -67,7 +67,7 @@ The SD card image used for production testing is based on official release of Zy
    
 
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    
@@ -87,7 +87,7 @@ Raspberry PI SD card
 
 The SD image used is based on Raspbian with desktop. On top of that are installed the testing scripts. The image can be created starting from vanilla Raspbian or downloaded from:
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    
@@ -97,7 +97,7 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    
 
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    
@@ -107,7 +107,7 @@ The SD image used is based on Raspbian with desktop. On top of that are installe
    
 
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    

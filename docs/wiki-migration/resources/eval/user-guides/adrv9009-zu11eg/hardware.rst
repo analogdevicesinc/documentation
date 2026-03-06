@@ -54,7 +54,7 @@ P2 Connector:
 -  ZU11EG PL bank IO supply inputs VCCO_x, bank reference inputs VREF_x
 -  1.8V, 3.3V digital supply outputs. Should be used only for powering IO buffers.
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    P1 pinout overview: |image1| P2 pinout overview:
@@ -62,7 +62,7 @@ P2 Connector:
 
    |image2|
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    A detailed description of the connector interface for the complete system ADRV9009-ZU11EG and ADRV2CRR-FMC is located here: `ADRV9009-ZU11EG_Connector_Pinout <https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/adrv9009_zu11eg_connector_pinout_1.xlsx>`__
@@ -80,7 +80,7 @@ Hot Swap Controller
 
 ADRV9009-ZU11EG features a hot-swap controller `ADM1177 <https://www.analog.com/ADM1177>`__ that allows safe board insertion from a live back-plane. ADM1177 also comes with digital current and voltage monitoring via on-chip 12-bit analog-to-digital converter communicating through I2C interface with the processor. ADM1177 is available in Linux as a hardware monitor device and could be accessed using python to measure SOM's current consumption.
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    Python script to read ADRV9009-ZU11EG RF-SOM power consumption:
@@ -131,7 +131,7 @@ The image below shows how to connect the I2C USB dongle to P19 on the `ADRV2CRR-
 
 After connecting the I2C cable open the ADI Power Studio software, connect to the dongle and open the ADRV9009-ZU11EG RF-SOM project located below. The Blackbox Records can be accessed from the Monitor menu.
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    ADRV9009-ZU11EG RF-SOM ADI Power Studio project:
@@ -281,7 +281,7 @@ The synchronization of multiple `ADRV9009 <https://www.analog.com/ADRV9009>`__ i
 
 The complete prototyping system built out of `ADRV9009-ZU11EG <https://www.analog.com/ADRV9009-ZU11EG>`__, `ADRV2CRR-FMC <https://www.analog.com/ADRV2CRR-FMC>`__, `AD-FMCOMMS8-EBZ <https://www.analog.com/AD-FMCOMMS8-EBZ>`__ acts as a proof of concept for synchronizing multiple `ADRV9009 <https://www.analog.com/ADRV9009>`__ transceivers. The diagram below shows the clock tree for a synchronized system consisting of eight `ADRV9009 <https://www.analog.com/ADRV9009>`__ (2 carriers). With a single HMC7044B synchronization board there is the possibility of extending the number of carriers to three, totaling twelve `ADRV9009 <https://www.analog.com/ADRV9009>`__ transceivers. For extending this number multiple HMC7044B synchronization boards need to be cascaded.
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    The System Clocking Tree Diagram is located here:
@@ -303,7 +303,7 @@ In reference distribution the PLLs inside the `HMC7044B <https://www.analog.com/
 
 The clocking map below shows the path for both clock and reference distribution. An example is shown for VCXO of 122.88MHz and internal VCO frequency of 2919.12MHz.
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    The System Clock Map is located here:
@@ -333,7 +333,7 @@ The `ADRV2CRR-FMC <https://www.analog.com/ADRV2CRR-FMC>`__ kit includes a heatsi
 Supplementary Testing
 =====================
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    EMC testing has been carried out on the SOM. This may be useful as a reference for validation or qualification of custom designs. The report can be found here:
@@ -348,7 +348,7 @@ Supplementary Testing
 Mechanical Reference Material
 =============================
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    The X-Y Footprint is located here:

@@ -102,7 +102,7 @@ The following table outlines levels of functionality provided in software for th
 
 --------------
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    The Footprint is located here:
@@ -119,7 +119,7 @@ Revision Options
 
 These are X-GRADE options.
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    
@@ -130,7 +130,7 @@ These are X-GRADE options.
    
 
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    
@@ -141,7 +141,7 @@ These are X-GRADE options.
    
 
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    
@@ -151,7 +151,7 @@ These are X-GRADE options.
    
 
 
-.. admonition:: ⬇
+.. admonition:: Download
    :class: download
 
    
