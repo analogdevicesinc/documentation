@@ -1,0 +1,92 @@
+AD4630/AD4030 - No-OS Driver
+============================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD4630-24`
+-  :adi:`AD4630-16`
+-  :adi:`AD4030-24`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD4630-24 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4630-24.html>`
+-  :adi:`EVAL-AD4630-16 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4630-16.html>`
+-  :adi:`EVAL-AD4030-24 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4030-24.html>`
+
+Overview
+--------
+
+The :adi:`AD4630-24` is a two-channel, simultaneous sampling, Easy Drive, 2 MSPS successive approximation register (SAR) analog-to-digital converter (ADC). The :adi:`AD4030-24` is the single channel version. With a guaranteed maximum ±0.9 ppm INL and no missing codes at 24-bits, the :adi:`AD4630-24` and :adi:`AD4030-24` achieve unparalleled precision from −40°C to +125°C. The :adi:`AD4030-16` is a 16-bit dual channel version.
+
+A low-drift, internal precision reference buffer eases voltage reference sharing with other system circuitry. The AD4630-24 offers a typical dynamic range of 106 dB when using a 5 V reference. The AD4030-24 offers a typical dynamic range of 109dB using a 5 V reference. The low noise floor enables signal chains requiring less gain and lower power. A block averaging filter with programmable decimation ratio can increase dynamic range up to 153 dB and 155.5dB for the AD4030. The wide differential input and common mode ranges allow inputs to use the full ±VREF range without saturating, simplifying signal conditioning requirements and system calibration. The improved settling of the Easy Drive analog inputs broadens the selection of analog front-end components compatible with the :adi:`AD4630-24`, :adi:`AD4630-16` and :adi:`AD4030-24`. Both single-ended and differential signals are supported.
+
+The versatile Flexi-SPI serial interface eases host processor and ADC integration. A wide data clocking window, multiple SDO lanes, and optional DDR data clocking can reduce the serial clock to 10 MHz while operating at a sample rate of 2 MSPS. Echo clock mode and ADC master clock mode relax the timing requirements and simplify the use of digital isolators.
+
+The :adi:`AD4630-24`'s, :adi:`AD4630-16`'s and :adi:`AD4030-24`'s BGA package integrates all critical power supply and reference bypass capacitors, reducing the footprint and system component count, and lessening sensitivity to board layout.
+
+Applications:
+
+-  Automatic test equipment
+-  Digital control loops
+-  Medical instrumentation
+-  Seismology
+-  Semiconductor manufacturing
+-  Scientific instrumentation
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the :adi:`AD4630-24`, :adi:`AD4630-16` and :adi:`AD4030-24` parts, which may be used, without modifications, with any microcontroller.
+-  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the :adi:`AD4630-24` driver can be used exactly as it is provided.
+
+The Communication Driver must include SPI transmission methods and GPIO control methods.
+
+For the SPI method, the :adi:`AD4630-24`/:adi:`AD4630-16`/:adi:`AD4030-24` driver calls three functions:
+
+-  spi_init() - initializes the SPI communication peripheral.
+-  spi_remove() – frees memory allocated by the SPI communication driver.
+-  spi_write_and_read() – conduct information transfer with the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_driver_architecture.png
+   :align: center
+
+For the GPIO control methods, the :adi:`AD4630-24`/:adi:`AD4630-16`/:adi:`AD4030-24` driver calls four functions:
+
+-  gpio_get_optional() - initialize GPIO peripheral and allocate memory for one GPIO control.
+-  gpio_remove() - frees memory allocated by the GPIO control driver.
+-  gpio_direction_output() - set GPIO as output.
+-  gpio_set_value() - set GPIO to high/low state.
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+
+-  `AD463x Header file <http://analogdevicesinc.github.io/no-OS/ad463x_8h.html>`__
+-  `AD463x Source file <http://analogdevicesinc.github.io/no-OS/ad463x_8c.html>`__
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD463x Driver.|
+
+   -
+
+   |Header file of AD463x Driver.|
+
+.. |Implementation of AD463x Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad463x/ad463x`.c
+.. |Header file of AD463x Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad463x/ad463x`.h

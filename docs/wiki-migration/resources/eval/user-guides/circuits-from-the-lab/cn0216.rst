@@ -1,0 +1,265 @@
+CN-0216 Software User Guide
+===========================
+
+Overview
+--------
+
+:adi:`CN-0216 <CN0216>` is a precision weigh scale signal conditioning system. It uses the :adi:`AD7791`, a low power buffered 24-bit sigma-delta ADC along with two external :adi:`ADA4528-1` zero-drift amplifiers. This solution allows for high dc gain with a single supply.
+
+Ultralow noise, low offset voltage, and low drift amplifiers are used at the front end for amplification of the low-level signal from the load cell. The circuit yields 15.3 bit noise-free code resolution for a load cell with a full-scale output of 10 mV.
+
+This circuit allows great flexibility in designing a custom low-level signal conditioning front end that gives the user the ability to easily optimize the overall transfer function of the combined sensor-amplifier-converter circuit. The :adi:`AD7791` maintains good performance over the complete output data range, from 9.5 Hz to 120 Hz, which allows it to be used in weigh scale applications that operate at various low speeds.
+
+This user guide will discuss how to use the evaluation software to collect data from the :adi:`EVAL-CN0216-SDPZ` Evaluation Board **(CN-0216 Board)**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-simplified_schematic.png
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  :adi:`EVAL-CN0216-SDPZ` Evaluation Board (**CN-0216 Board**)
+-  :adi:`EVAL-CFTL-6V-PWRZ` **(+6V Power Supply)** or equivalent
+-  `CN0216 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0216>`__
+
+-  PC with the following *Minimum Requirements*
+
+   -  Windows XP Service Pack 2 (32-bit)
+   -  USB type A Port
+   -  Processor rated at 1GHz or faster
+   -  512 MB RAM and 500 MB available hard disk space
+
+-  USB type A to USB type mini-B cable
+-  Tedeah Huntleigh Model 1042 Load Cell
+
+|
+
+.. note::
+
+   | **NOTE** - Any 4 or 6 wire load cells can be used with the **CN-0216 Board**.
+   | This guide was written with the Tedeah Huntleigh Model 1042 in mind.
+
+
+General Setup
+-------------
+
+-  The :adi:`EVAL-CN0216-SDPZ` **(CN-0216 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
+-  The :adi:`EVAL-CFTL-6V-PWRZ` **(+6V DC Power Supply)** powers the :adi:`EVAL-CN0216-SDPZ` **(CN-0216 Board)** via the DC barrel jack
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  The Tedeah Huntleigh Model 1042 load cell connects to the :adi:`EVAL-CN0216-SDPZ` **(CN-0216 Board)** via the 8 pin header.
+
+|image1|
+
+--------------
+
+Installing the Software
+-----------------------
+
+-  Extract the file **CN0216 Eval Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0216 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0216>`__ to the default directory path **C:\\Program Files\\Analog Devices\\CN0216\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+\
+
+
+
+|image2|
+
+-  Click **Next** to view the installation review page
+
+|image3|
+
+   \* Click **Next** to start the installation
+
+   |image4|
+
+   \* Upon completion of the installation of the **CN0216 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image5|
+
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image6|
+
+-  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+|image7|
+
+--------------
+
+Connecting the Hardware
+-----------------------
+
+-  Connect the **Tedeah-Huntleigh (Model 1042)** Load Cell to **8-pin header** of the :adi:`EVAL-CN0216-SDPZ` **(CN-0216 Board)** as depicted below.
+
+.. tip::
+
+   \ **NOTE:** If a different Load Cell is used other than the
+
+   Tedeah-Huntleigh Model 1042, the wiring schematic will be different!
+
+
+|image8|\ |image9|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Software Control and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|image10| |image11|
+
+::
+
+   -**Connect/Reconnect Button**
+   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0216 Board.  A connection to the SDP-B Board must be made to use the software.   
+   -**Run Button**
+   * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
+   -**Stop Button**
+   * When this button is pressed, the software stop collecting data from the CN-0216 Board
+   -**Clear Chart Button**
+   * When this button is pressed, the software will clear all data collected from the chart history.
+   -**Control Tabs**
+   * __Main__ - Clicking this tab brings the data collection chart to the front.
+   * __Calibrate System__ - Clicking this tab bring the system configuration settings to the front.
+   -**Current Weight Numerical Indicator**
+   * This indicator displays the mass (in grams) on the load cell.
+   -**Chart Controls**
+   * These controls allow the user to zoom-in, zoom-out, and pan through the data collected.
+   -**Select Units Radio Buttons**
+   * This control determines the Y-Axis units of the data displayed in the chart. 
+   -**System Status String Indicator**
+   * This indicator displays a message to the user detailing the current state of the software.
+   -**System Status LED Indicator**
+   * This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0216:cn0216-software-inactive.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0216:cn0216-software-busy.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0216:cn0216-software-error.png?nolink&|}}Error\\ 
+   -**Calibration Weight Numerical Control**
+   * Set this control to the weight of the object used to calibrate the load cell.
+   -**Calibrate Button**
+   * Pressing this button initiates the calibration of the load cell.
+   -**ADC Mode Radio Buttons**
+   * This control is used to set the mode of the [[:adi:`AD7791|AD7791]]`.  The default value is __Unbuffered Mode__ and is highlighted in **bold** on the **Calibrate System Tab**.
+     * __Buffered Mode__ - Selecting this mode turns the on-chip analog input channel buffer of the [[:adi:`AD7791|AD7791]]` **ON**.
+     * __Unbuffered Mode__ - Selecting this radio button turns the on-chip analog input channel buffer of the [[:adi:`AD7791|AD7791]]` **OFF**.
+   -**ADC Channel Select Radio Buttons**
+   * This control is used to select the analog input channel of the [[:adi:`AD7791|AD7791]]` for conversion.  The default value is __AIN(+)-AIN(-)__ and is highlighted in **bold** on the **Calibrate System Tab**.
+     * __AIN(+)-AIN(-)__ - Selecting this radio button allows for normal operation of the [[:adi:`AD7791|AD7791]]`.  
+     * __AIN(-)-AIN(-)__ - Selecting this radio button shorts the analog input channels of the [[:adi:`AD7791|AD7791]]`.
+     * __Vdd Monitor__ - Selecting this radio button monitors the voltage applied to the Vdd pin of the [[:adi:`AD7791|AD7791]]`.  The voltage is attenuated by 5 and the resultant voltage is applied to the ∑-Δ modulator using an internal 1.17 V reference for analog to digital conversion.
+   -**Update Rate Radio Buttons**
+   * This control is used to change the output word rate of the [[:adi:`AD7791|AD7791]]`.  The default value is __9.5 Hz__ and is highlighted in **bold** on the **Calibrate System Tab**.
+   -**Configure ADC Button**
+   * When this button is pressed the current value of the **ADC Mode Radio Buttons**, **ADC Channel Select Radio Buttons**, and **Update Rate Radio Buttons** are used to configure the [[:adi:`AD7791|AD7791]]`.
+
+--------------
+
+Establishing a USB Connection Link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Follow the instructions to properly install the software and connect the hardware as described in the previous sections.
+-  Open the file named **CN0216.exe** in the installation directory.
+
+.. note::
+
+   \ **NOTE:** If the software was installed to the default location it will be found at
+
+   **C:\\Program Files\\Analog Devices\\CN0216\\CN0216.exe**\
+
+
+\* Click the **Connect/Reconnect Button**. A window with a progress bar will load.
+
+
+
+|image12|
+
+   \* Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
+
+Capturing Data
+~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Click the **Run Button**
+-  Click the **Stop Button** when acquisition is complete.
+
+Calibrating the Load Cell
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Click the **Calibrate System Control Tab**.
+-  Set the **Calibration Weight Numerical Control** to the weight (in grams) of the weight to be used for calibration.
+-  Place the calibration weight on the Load Cell.
+-  Click the **Calibrate Button** and Wait for calibration to complete.
+
+|image13|
+
+-  Remove the calibration weight when prompted to do so.
+
+|image14|
+
+   \* Click the **Continue Button**.
+-  Wait for calibration to complete.
+
+|image15|
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   `EVAL-CN0216-SDPZ Design & Integration Files <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-sdp-designsupport.zip>`__
+   
+   `EVAL-CN0216-PMDZ Design & Integration Files <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-pmod-designsupport.zip>`__
+   
+   `EVAL-CN0216-ARDZ Design & Integration Files <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216-arduino/cn0216-arduino-designsupport.zip>`__
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Gerber Files
+   -  Allegro/PADS Board File
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0216-SDPZ?&v=Rev A>`__ to receive all these great benefits and more!
+
+
+// End of document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-test_setup.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0216/CN0216-install1.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0216/CN0216-install2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0216/CN0216-install3.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-install4.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-install5.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0216/CN0216-install6.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-wiring_table.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-wiring_schematic.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-software.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-software2.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-software-wait.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-calibrate-wait.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-calibrate-continue.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216/cn0216-calibrate-wait.png

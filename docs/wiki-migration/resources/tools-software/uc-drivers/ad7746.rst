@@ -1,0 +1,104 @@
+AD7746 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7745`
+-  :adi:`AD7746`
+-  :adi:`AD7747`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7746EBZ`
+-  :adi:`EVAL-AD7747EBZ`
+
+Overview
+--------
+
+The :adi:`AD7745`/:adi:`AD7746` are a high resolution, Σ-Δ capacitance-to-digital converter (CDC). The capacitance to be measured is connected directly to the device inputs. The architecture fea-tures inherent high resolution (24-bit no missing codes, up to 21-bit effective resolution), high linearity (±0.01%), and high accuracy (±4 fF factory calibrated). The :adi:`AD7745`/:adi:`AD7746` capacitance input range is ±4 pF (changing), while it can accept up to 17 pF common-mode capacitance (not changing), which can be balanced by a programmable on-chip, digital-to-capacitance converter (CAPDAC).
+
+The :adi:`AD7745` has one capacitance input channel, while the :adi:`AD7746` has two channels. Each channel can be configured as single-ended or differential. The :adi:`AD7745`/:adi:`AD7746` are designed for floating capacitive sensors. For capacitive sensors with one plate connected to ground, the :adi:`AD7747` is recommended.
+
+The parts have an on-chip temperature sensor with a resolution of 0.1°C and accuracy of ±2°C. The on-chip voltage reference and the on-chip clock generator eliminate the need for any external components in capacitive sensor applications. The parts have a standard voltage input, which together with the differential reference input allows easy interface to an external temperature sensor, such as an RTD, thermistor, or diode.
+
+The :adi:`AD7745`/:adi:`AD7746` have a 2-wire, I2C-compatible serial interface. Both parts can operate with a single power supply from 2.7 V to 5.25 V. They are specified over the automotive temperature range of –40°C to +125°C and are housed in a 16-lead TSSOP package.
+
+Applications
+~~~~~~~~~~~~
+
+Automotive, Industrial and Medical Systems for:
+
+-  Pressure Measurement
+-  Position Sensors
+-  Level Sensors
+-  Flowmeters
+-  Humidity Sensors
+-  Impurity Detection
+
+Hardware setup
+--------------
+
+The board has a USB port that is by default used to power the board. To power the converter chip, depending on your controller logic level, you need to install a jumper in either the 3.3V or 5V positions of AVDD select header LK1.
+
+3.3V AVDD:
+
+
+|image1|
+
+5V AVDD:
+
+
+|image2|
+
+Once you've verified that the chip is powered correctly by measuring the AVDD-GND test points, you may proceed to connecting the SDA and SCL lines to your controller. Male pin headers are available at LK2.8 and LK2.6 respectively.
+
+
+|image3|
+
+Building the project
+--------------------
+
+Go to the ``no-OS/projects/ad7746-ebz`` directory and follow the build instructions below.
+
+.. include:: ../../no-os/build.rst
+
+Capacitive length sensor demo
+-----------------------------
+
+The demo application uses the stdout/stin over UART for user interaction. Thus you need to set up a serial terminal with the ``UART_BAUDRATE`` specified in the ``src/app/parameters.h`` file.
+
+Connect the serial terminal, run ``make run`` from the project folder and you should see the following demo application that you can interact with by hitting ENTER on the keyboard and by following the instructions:
+
+::
+
+   [INIT] AD7746 initialization ok.
+   [CALIB] 1. Remove the ruler and press ENTER. 
+   [CALIB] 2. Place ruler to 51mm (2inch) and press ENTER.
+   [DEMO] Move the ruler around, its position will is read and displayed every 2 seconds.
+   Position: 51 mm, Temperature: 23 *C
+   Position: 50 mm, Temperature: 23 *C
+   Position: 67 mm, Temperature: 23 *C
+   Position: 67 mm, Temperature: 23 *C
+   Position: 67 mm, Temperature: 23 *C
+   Position: 67 mm, Temperature: 23 *C
+   Position: 67 mm, Temperature: 23 *C
+   Position: 47 mm, Temperature: 23 *C
+   Position: 37 mm, Temperature: 23 *C
+   Position: 34 mm, Temperature: 23 *C
+   Position: 34 mm, Temperature: 23 *C
+   Position: 27 mm, Temperature: 23 *C
+   Position: 27 mm, Temperature: 23 *C
+
+Legacy driver
+-------------
+
+A legacy version of this driver and instructions for a Renesas microcontroller may be found at :doc:`this link </wiki-migration/resources/tools-software/uc-drivers/renesas/ad7746>`.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7746_eval_ebz-3v3.jpg
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7746_eval_ebz-5v.jpg
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7746_eval_ebz-conn.jpg
+   :width: 400px

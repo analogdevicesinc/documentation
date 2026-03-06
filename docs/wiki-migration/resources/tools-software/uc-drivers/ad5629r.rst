@@ -1,0 +1,218 @@
+AD5629R - Microcontroller No-OS Driver
+======================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5629R`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5629RSDZ`
+
+Overview
+--------
+
+The :adi:`AD5629R` device is a low power, octal, 12-bit, buffered voltage-output DACs. It operates from a single 2.7 V to 5.5 V supply and is guaranteed monotonic by design. The AD5629R has an on-chip reference with an internal gain of 2. The user can select the AD5629R with a 1.25 V 5 ppm/°C reference (AD5629R-1), giving a full-scale output range of 2.5 V, or a 2.5 V 5 ppm/°C reference AD5629R-2 and AD5629R-3), giving a full-scale output range of 5 V. The on-chip reference is off at power-up, allowing the use of an external reference. The internal reference is enabled via a software write. The part incorporates a power-on reset circuit that ensures that the DAC output powers up to 0 V and remains powered up at this level until a valid write takes place. The part contains a power-down feature that reduces the current consumption of the device to 400 nA at 5 V and provides software-selectable output loads while in power-down mode for any or all DAC channels.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5629R_sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD5629R part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5629R driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD5629R driver:
+
+-  I2C_Init() – initializes the communication peripheral.
+-  I2C_Write() – writes data to the device.
+-  I2C_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   I2C driver architecture
+
+
+The following functions are implemented in this version of AD5629R driver:
+
++------------------------------------------------------------+----------------------------------------------------------------+
+| Function                                                   | Description                                                    |
++============================================================+================================================================+
+| unsigned char AD5629R_Init(void)                           | Resets the device and performs several initializations.        |
++------------------------------------------------------------+----------------------------------------------------------------+
+| void AD5629R_PowerMode(unsigned char pwrMode)              | Sets the device in a specific power mode.                      |
++------------------------------------------------------------+----------------------------------------------------------------+
+| void AD5629R_Reset(void)                                   | Resets the device.                                             |
++------------------------------------------------------------+----------------------------------------------------------------+
+| void AD5629R_SetInputRegister(unsigned long registerValue) | Writes a 24-bit data-word to the Input Register of the device. |
++------------------------------------------------------------+----------------------------------------------------------------+
+| unsigned short AD5629R_GetRegisterValue(void)              | Reads the last register written by user.                       |
++------------------------------------------------------------+----------------------------------------------------------------+
+
+Downloads
+---------
+
+-  `AD5629R Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_generic.zip>`__
+-  `AD5629R RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_rl78g13.zip>`__
+-  `AD5629R RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_rx62n.zip>`__
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD5629R demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  :adi:`EVAL-AD5629RSDZ(ADI) <AD5629R>`
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+-  `Applilet4 for RL78G13 <https://www.renesas.com/us/en/software-tool/ap4-applilet>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD5629RSDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD5629RSDZ J6 connector Pin SCL   (SCL)    → YRDKRL78G13 J9  connector Pin 1
+     EVAL-AD5629RSDZ J7 connector Pin SDA   (SDA)    → YRDKRL78G13 J9  connector Pin 3
+     EVAL-AD5629RSDZ J8 connector Pin \LDAC (LDAC)   → YRDKRL78G13 J11 connector Pin 9
+     EVAL-AD5629RSDZ J9 connector Pin \CLR  (CLR)    → YRDKRL78G13 J11 connector Pin 10
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_rl78g13.jpg
+   :align: center
+
+Software Setup
+~~~~~~~~~~~~~~
+
+With the **Applilet3 for RL78G13** tool the following peripherals have to be configured:
+
+CSI10 (Clocked Serial Interface 10) – For the ST7579 LCD
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+
+-  Transfer mode setting: **Single transfer mode**
+-  Data length setting : **8 bits**
+-  Transfer direction setting: **MSB**
+-  Specification of data timing: **Type 1**
+-  Transfer rate setting – Clock mode: **Internal clock (master)**
+-  Transfer rate setting – Baudrate: **1000000** (bps)
+-  Interrupt setting – Transfer interrupt priority (INTCSI10): **Low**
+-  Uncheck the callback functions.
+
+TM00 (Timer 00) – For the DelayMs() function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configure TM00 as an interval timer:
+
+-  Interval timer setting - Interval value(16 bits): **1** ms
+-  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+
+Watchdog Timer
+^^^^^^^^^^^^^^
+
+Disable the watchdog timer:
+
+-  Choose for the Watchdog timer operation setting: **Unused** option.
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project powers-up all DAC channels, displays the content of the power register and starts to generate a saw-tooth wave.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_rl78g13_screen.jpg
+   :align: center
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/page>rl78g13_software_tutorial
+   :alt: page>rl78g13_software_tutorial
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD5629R demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+-  :adi:`EVAL-AD5629REBZ (ADI) <EVAL-AD5629R>`
+
+.. _required-software-1:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`__
+
+.. _hardware-setup-1:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD5629REBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     EVAL-AD5629RSDZ J6 connector Pin SCL   (SCL)    → YRDKRX62N J2  connector Pin 1
+     EVAL-AD5629RSDZ J7 connector Pin SDA   (SDA)    → YRDKRX62N J2  connector Pin 3
+     EVAL-AD5629RSDZ J8 connector Pin \LDAC (LDAC)   → YRDKRX62N J8 connector Pin 17
+     EVAL-AD5629RSDZ J9 connector Pin \CLR  (CLR)    → YRDKRX62N J8 connector Pin 25
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project: The reference project powers-up all DAC channels, displays the content of the power register and starts to generate a saw-tooth wave.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5629R_rx62n_screen.jpg
+   :align: center
+
+.. _software-project-setup-1:
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/page>rx62n_software_design
+   :alt: page>rx62n_software_design
+
+More information
+================
+
+.. image:: https://wiki.analog.com/_media/page>more-information
+   :alt: page>more-information
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/i2c_architecture.png
+

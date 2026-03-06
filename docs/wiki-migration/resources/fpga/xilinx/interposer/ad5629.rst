@@ -1,0 +1,229 @@
+AD5629R FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+=============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5629R`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5629RSDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD5629RSDZ <AD5629R>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD5629RSDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad5629.jpg
+   :alt: ad5629.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5629RSDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5629R_sdp1z.png
+   :alt: ad5629R_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`AD5629R` device is low power, octal, 12-bit, buffered voltage-output DAC. Device is guaranteed monotonic by design. The AD5629R has an on-chip reference with an internal gain of 2. The AD5629R-1 has a 1.25 V, 5 ppm/°C reference, giving a full-scale output range of 2.5 V. The AD5629R-2/AD5629R-3 have a 2.5 V 5 ppm/°C reference, giving a full-scale output range of 5 V depending on the option selected. Devices with 1.25 V reference selected operate from a single 2.7 V to 5.5 V supply. Devices with 2.5 V reference selected operate from 4.5 V to 5.5 V. The on-chip reference is off at power-up, allowing the use of an external reference. The internal reference is enabled via a software write. The parts incorporate a power-on reset circuit to ensure that the DAC output powers up to 0 V (AD5629R-1/AD5629R-2) or midscale (AD5629R-3) and remains powered up at this level until a valid write takes place. The part contains a power-down feature that reduces the current consumption of the device to 400 nA at 5 V and provides software-selectable output loads while in power-down mode for any or all DAC channels.
+
+The **EVAL-AD5629R** evaluation board is designed to help customers quickly prototype new AD5629R circuits and reduce design time. To power the AD5629R evaluation board supply 5V between the AVDD and AGND inputs for the analog supply.
+
+More information
+----------------
+
+-  :adi:`AD5629R Product Info <AD5629R>` - pricing, samples, datasheet
+-  `EVAL-AD5629R evaluation board user guide <https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5629R_ug.pdf>`__
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-AD5629R** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-AD5629R reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD5629R Driver:** :git-no-OS:`drivers/dac/ad5629r`
+   
+   -  **AD5629R Commands:** :git-no-OS:`device_commands/AD5629R`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+
+| Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+|
+
+.. important::
+
+   | To power on the EVAL-AD5629R evaluation board, you need to provide +5V supply voltage to J2 connector on the board.
+
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD5629R reference project for Xilinx KC705 FPGA board.
+
++--------------------+-----------------------------------------------------------------------------------------------+
+| Command            | Description                                                                                   |
++====================+===============================================================================================+
+| **help?**          | Displays all available commands.                                                              |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **reset!**         | Makes a power-on reset.                                                                       |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **powerMode=**     | Selects a given power mode for selected DAC. Accepted values:                                 |
+|                    | channel:                                                                                      |
+|                    | 0 .. 7 - selected DAC A .. H.                                                                 |
+|                    | power mode:                                                                                   |
+|                    | 0 - normal operation.                                                                         |
+|                    | 1 - 1KOhm to GND.                                                                             |
+|                    | 2 - 100KOhms to GND.                                                                          |
+|                    | 3 - three-state.                                                                              |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **powerMode?**     | Displays the power mode for one selected DAC. Accepted values:                                |
+|                    | channel:                                                                                      |
+|                    | 0 .. 7 - selected DAC A .. H.                                                                 |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **intRef=**        | Turns on/off the internal reference. Accepted values:                                         |
+|                    | 0 - turns off the internal reference.                                                         |
+|                    | 1 - turns on the internal reference.                                                          |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **intRef?**        | Displays the status of the internal reference.                                                |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **loadN=**         | Loads selected DAC register with a given value. Accepted values:                              |
+|                    | channel:                                                                                      |
+|                    | 0 .. 7 - selected DAC A .. H.                                                                 |
+|                    | 15 - all DACs.                                                                                |
+|                    | value:                                                                                        |
+|                    | 0 .. 4095 - value to be written in register.                                                  |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **updateN**        | Updates the selected DAC with the last value written in register. Accepted values:            |
+|                    | channel:                                                                                      |
+|                    | 0 .. 7 - selected DAC A .. H.                                                                 |
+|                    | 15 - all DACs.                                                                                |
+|                    | value:                                                                                        |
+|                    | 0 .. 4095 - value to be written in register.                                                  |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **loadNUpdateN**   | Loads and updates the selected DAC with a given value. Accepted values:                       |
+|                    | channel:                                                                                      |
+|                    | 0 .. 7 - selected DAC A .. H.                                                                 |
+|                    | 15 - all DACs.                                                                                |
+|                    | value:                                                                                        |
+|                    | 0 .. 4095 - value to be written in register.                                                  |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **loadNUpdateAll** | Loads the selected DAC with a given value and updates all DACs. Accepted values:              |
+|                    | channel:                                                                                      |
+|                    | 0 .. 7 - selected DAC A .. H.                                                                 |
+|                    | 15 - all DACs.                                                                                |
+|                    | value:                                                                                        |
+|                    | 0 .. 4095 - value to be written in register.                                                  |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **enLdacPin=**     | Enables/Disables the LDAC pin for selected DAC. Accepted values:                              |
+|                    | channel:                                                                                      |
+|                    | 0 .. 7 - selected DAC A .. H.                                                                 |
+|                    | value:                                                                                        |
+|                    | 1 - disable LDAC pin.                                                                         |
+|                    | 0 - enable LDAC pin.                                                                          |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **enLdacPin?**     | Displays the status(enabled or disabled) of the LDAC pin for a selected DAC. Accepted values: |
+|                    | channel:                                                                                      |
+|                    | 0 .. 7 - selected DAC A .. H.                                                                 |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **clrCode=**       | Loads Clear Code Register with specific clear code.                                           |
+|                    | Accepted values:                                                                              |
+|                    | 0 - clears code to zero scale when CLR pin goes from high to low.                             |
+|                    | 1 - clears code to midscale when CLR pin goes from high to low.                               |
+|                    | 2 - clears code to full scale when CLR pin goes from high to low.                             |
+|                    | 3 - no operation.                                                                             |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **clrCode?**       | Displays the active clear code.                                                               |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **ldacPin=**       | Sets the output value of LDAC pin. Accepted values:                                           |
+|                    | 0 - sets LDAC pin low.(default)                                                               |
+|                    | 1 - sets LDAC pin high.                                                                       |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **ldacPin?**       | Displays the value of LDAC pin.                                                               |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **clrPin=**        | Sets the output value of CLR pin. Accepted values:                                            |
+|                    | 0 - sets CLR pin low.                                                                         |
+|                    | 1 - sets CLR pin high.(default)                                                               |
++--------------------+-----------------------------------------------------------------------------------------------+
+| **clrPin?**        | Displays the value of CLR pin.                                                                |
++--------------------+-----------------------------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

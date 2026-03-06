@@ -1,0 +1,219 @@
+AD4140 - No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD4140`
+-  :adi:`AD4141`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD4140FMCZ`
+
+| 
+| ===== Overview ===== The :adi:`AD4140` / :adi:`AD4141` is a 24-bit, single and dual channel, low power, high performance, Σ-Δ analog-to-digital converter (ADC), with alias-free DC to 110kHz flat BW and up to 768ksps output data rate, targeting applications of precision measurement of both ac and dc signals.
+
+The :adi:`AD4140` / :adi:`AD4141` with its combination of easy to drive and alias-free property makes it possible to realize a high precision wide bandwidth measurement solution with very low signal chain footprint. The analog frontend simplification also leads :adi:`AD4140` / :adi:`AD4141` to have excellent channel to channel and device to device phase matching performance in a simultaneous sampling system.
+
+The :adi:`AD4140` / :adi:`AD4141` operates with a 3V to 3.6V analog supply, a 1.71V to 3.6V IO supply and a 2.5V nominal reference voltage. The device family supports two input types. The :adi:`AD4140` devices accept balanced fully differential input with a differential input range of ±2.5V, the :adi:`AD4141` devices accepts pseudo differential input with an input range of 0-5V
+
+Applications
+------------
+
+-  Electrical test and measurement
+-  Audio test
+-  3-phase power quality analysis
+-  Control and hardware in loop verification
+-  Sonar
+-  Condition and monitoring for predictive maintenance
+-  Acoustic and material science research and development
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== AD414x ADI No-OS driver =====
+
+Driver Source Code
+------------------
+
+The source code for the AD414x driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of AD4140 Driver|
+
+   -
+
+   |Implementation of AD4140 Driver|
+
+The AD414x driver also uses the ADI utility library, so make sure you add the necessary files to your project. The source code for the utility library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+| To use the AD414x No-OS Driver, you need to provide the specific implementation for the communication APIs as well as the specific data types to be used.
+| If SPI communication is chosen, these are the three functions to be called by the AD4140 driver and have to be implemented:
+
+.. container:: center box
+
+   
+   +--------------------------------+---------------------------------------------+
+   | Function                       | Description                                 |
+   +================================+=============================================+
+   | **no_os_spi_init()**           | initializes the communication peripheral.   |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_write_and_read()** | writes and reads data to/from the device.   |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_remove()**         | deinitializes the communication peripheral. |
+   +--------------------------------+---------------------------------------------+
+   
+
+
+And these are the two data types that have to be defined:
+
+.. container:: center box
+
+   
+   +--------------------------+----------------------------------------------------------+
+   | Function                 | Description                                              |
+   +==========================+==========================================================+
+   | **no_os_spi_desc**       | structure holding the SPI descriptor.                    |
+   +--------------------------+----------------------------------------------------------+
+   | **no_os_spi_init_param** | structure holding the parameters for SPI initialization. |
+   +--------------------------+----------------------------------------------------------+
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for SPI Communication APIs|
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD414x Header file <http://analogdevicesinc.github.io/no-OS//AD4140_8h.html>`__
+   -  `AD414x Source file <http://analogdevicesinc.github.io/no-OS//AD4140_8c.html>`__
+   
+
+
+Device Configuration
+--------------------
+
+| 
+| ^ Function ^ Description ^
+
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_spi_reg_read(struct ad414x_dev *dev,         | Read from device.                               |
+|        uint8_t reg_addr,                                      |                                                 |
+|        uint8_t *reg_data)``                                   |                                                 |
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_spi_reg_write(struct ad414x_dev *dev,        | Write to device.                                |
+|         uint8_t reg_addr,                                     |                                                 |
+|         uint8_t reg_data)``                                   |                                                 |
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_spi_write_mask(struct ad414x_dev *dev,       | SPI write to device using a mask.               |
+|         uint8_t reg_addr,                                     |                                                 |
+|         uint32_t mask,                                        |                                                 |
+|         uint8_t data)``                                       |                                                 |
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_dis_dc(struct ad414x_dev *dev)``             | Disable daisy chain mode.                       |
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_set_power_mode(struct ad414x_dev *dev,       | Device power mode control.                      |
+|         enum ad414x_power_mode mode)``                        |                                                 |
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_set_instruction_mode(struct ad414x_dev *dev, | Short instruction mode control.                 |
+|         enum ad414x_addr_mode mode)``                         |                                                 |
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_set_out_data_frame(struct ad414x_dev *dev,   | ADC conversion data output frame control.       |
+|         enum ad414x_adc_data_len adc_data_len,                |                                                 |
+|         enum ad414x_status_header status_header,              |                                                 |
+|         enum ad414x_crc_header crc_header)``                  |                                                 |
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_dout_format_config(struct ad414x_dev *dev,   | DOUTx output format configuration.              |
+|         enum ad414x_doutx_format format)``                    |                                                 |
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_dig_filter_sel_ch(struct ad414x_dev *dev,    | Digital filter type selection for each channel. |
+|         enum ad414x_dig_filter_sel filter,                    |                                                 |
+|         enum ad414x_channels ch)``                            |                                                 |
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_init(struct ad414x_dev **device,             | Initialize the device.                          |
+|         struct ad414x_init_param *init_param)``               |                                                 |
++---------------------------------------------------------------+-------------------------------------------------+
+| ``int32_t ad414x_remove(struct ad414x_dev *dev)``             | Free the resources allocated by ad414x_init().  |
++---------------------------------------------------------------+-------------------------------------------------+
+
+The driver has to be instantiated by using an initialization structure with the following composition:
+
+.. code:: c
+
+   /**
+     * @struct ad414x_init_param
+     * @brief ad414x driver initialization structure
+    */
+   struct ad414x_init_param {
+       /** SPI layer initialization structure. */
+       struct no_os_spi_init_param spi_init_prm;
+       /** RESET GPIO initialization structure. */
+       struct no_os_gpio_init_param *gpio_resetn;
+       /** PINBPI GPIO initialization structure. */
+       struct no_os_gpio_init_param *gpio_pinbspi;
+       /** PDN SYNC initialization structure. */
+       struct no_os_gpio_init_param *gpio_sync;
+       /** ID of supported device. */
+       enum ad414x_supported_dev_ids   dev_id;
+       /** Length of data in bits. */
+       enum ad414x_adc_data_len    adc_data_len;
+       /** Status option. */
+       enum ad414x_status_header   status_header;
+       /** CRC option. */
+       enum ad414x_crc_header      crc_header;
+       /** DOUT option. */
+       enum ad414x_doutx_format    format;
+       /** Addressing option. */
+       enum ad414x_addr_mode       addressing;
+       /** SPI layer handler if the SPI bus is shared with another device. In this
+        *  case the SPI should not be initialized again. */
+       struct no_os_spi_desc *spi_common_dev;
+   };
+
+.. |Header file of AD4140 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/AD414x/AD414x`.h
+.. |Implementation of AD4140 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/AD414x/AD414x`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h

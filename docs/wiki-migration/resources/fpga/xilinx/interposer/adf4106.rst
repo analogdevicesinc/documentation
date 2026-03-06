@@ -1,0 +1,152 @@
+ADF4106 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+=============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF4106`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADF4106SD1Z <EVAL-ADF4106>`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-ADF4106SD1Z <ADF4106>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-ADF4106SD1Z Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_adf4106.jpg
+   :alt: img_adf4106.jpg
+   :align: center
+   :width: 400px
+
+For component evaluation and performance purposes, as opposed to quick prototyping, the user is directed to Analog Devices :doc:`System Demonstration Platform </wiki-migration/resources/eval/sdp>` (**SDP**). The **SDP** consists of a:
+
+-  a controller board, like the :doc:`EVAL-SDP-CS1Z </wiki-migration/resources/eval/sdp/sdp-s>` **(SDP-S)**
+-  a compatible Analog Devices SDP :adi:`product evaluation board <sdp#exallist>`
+-  corresponding PC software
+
+The **EVAL-SDP-CS1Z** controller board is Serial Interfaces Only, low cost, reduced functionality controller board. It has a USB to Serial Engine at its core. It connects to the PC through a USB 2.0 high speed port. The SDP-S has a single 120 pin connector and exposes SPI, I2C and GPIO interfaces to connected SDP daughter boards.
+
+The **EVAL-ADF4106SD1Z** is designed to allow the user to evaluate the performance of the ADF4106 frequency synthesizer for phase-locked loops (PLLs). Figure 1 shows the board, which contains the ADF4106 synthesizer, an SMA connector for the reference input, power supplies, and an RF output. There is also a footprint for a loop filter and a VCO on board.
+
+The ADF4106 frequency synthesizer can be used to implement local oscillators in the up-conversion and down-conversion sections of wireless receivers and transmitters. It consists of a low noise, digital phase frequency detector (PFD), a precision charge pump, a programmable reference divider, programmable A counter and B counter, and a dual-modulus prescaler (P/P + 1). The A (6-bit) counter and B (13-bit) counter, in conjunction with the dual-modulus prescaler (P/P + 1), implement an N divider (N = BP + A). In addition, the 14-bit reference counter (R Counter) allows selectable REFIN frequencies at the PFD input. A complete phase-locked loop (PLL) can be implemented if the synthesizer is used with an external loop filter and voltage controlled oscillator (VCO). Its very high bandwidth means that frequency doublers can be eliminated in many high frequency systems, simplifying system architecture and reducing cost.
+
+More information
+----------------
+
+-  :adi:`ADF4106 Product Info <ADF4106>` - pricing, samples, datasheet
+-  :adi:`EVAL-ADF4106SD1Z evaluation board user guide </static/imported-files/user_guides/UG-159.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-ADF4106SD1Z** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **ADF4106 Driver:** :git-no-OS:`drivers/frequency/adf4106`
+   
+   -  **ADF4106 Commands:** :git-no-OS:`device_commands/ADF4106`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-ADF4106SD1Z reference project for Xilinx KC705 FPGA board.
+
++----------------+------------------------------------------------------------------------------------+
+| Command        | Description                                                                        |
++================+====================================================================================+
+| **help?**      | Displays all available commands.                                                   |
++----------------+------------------------------------------------------------------------------------+
+| **register=**  | Update the selected latch with the current set ups. Accepted value:                |
+|                | latch:                                                                             |
+|                | 0 - Reference latch                                                                |
+|                | 1 - N Counter Latch                                                                |
+|                | 2 - Function Latch                                                                 |
+|                | 3 - Initialization Latch                                                           |
+|                | value:                                                                             |
+|                | 24 bit values, you can find more information about the registers in the data sheet |
++----------------+------------------------------------------------------------------------------------+
+| **register?**  | Print the specified latch values in a human readable format. Accepted value:       |
+|                | latch:                                                                             |
+|                | 0 - Reference latch                                                                |
+|                | 1 - N Counter Latch                                                                |
+|                | 2 - Function Latch                                                                 |
+|                | 3 - Initialization Latch                                                           |
++----------------+------------------------------------------------------------------------------------+
+| **frequency=** | Set the VCO frequency. Accepted value:                                             |
+|                | 5 .. 6000 - betwwen 5Mhz and 6Ghz                                                  |
++----------------+------------------------------------------------------------------------------------+
+| **frequency?** | Print the actual VCO frequency.                                                    |
++----------------+------------------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

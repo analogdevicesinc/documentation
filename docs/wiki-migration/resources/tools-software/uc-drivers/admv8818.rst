@@ -1,0 +1,73 @@
+ADMV8818 - No-OS Driver
+=======================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADMV8818`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADMV8818`
+
+Overview
+--------
+
+The :adi:`ADMV8818` is a fully monolithic microwave integrated circuit (MMIC) that features a digitally selectable frequency of operation. The device features four independently controlled high-pass filters (HPFs) and four independently controlled low-pass filters (LPFs) that span the 2 GHz to 18 GHz frequency range. The flexible architecture of the :adi:`ADMV8818` allows the 3 dB cutoff frequency (f3dB) of the high-pass and low-pass filters to be controlled independently to generate up to 4 GHz of bandwidth. The digital logic control on each filter is 4 bits wide (16 states) and controls the on-chip reactive elements to adjust the f3dB. The typical insertion loss is 9 dB, and the wideband rejection is 35 dB, which is ideally suited for minimizing system harmonics. This tunable filter can be used as a smaller alternative to large switched filter banks and cavity tuned filters, and this device provides a dynamically adjustable solution in advanced communications applications.
+
+Applications:
+
+-  Test and measurement equipment
+-  Military radar, electronic warfare, and electronic countermeasures
+-  Satellite communications and space
+-  Industrial and medical equipment
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the :adi:`ADMV8818` part, which may be used, without modifications, with any microcontroller.
+-  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the :adi:`ADMV8818` driver can be used exactly as it is provided.
+
+The Communication Drivers must include the SPI transmission methods.
+
+For the SPI method, the :adi:`ADMV8818` driver calls three functions:
+
+-  spi_init() - initializes the SPI communication peripheral.
+-  spi_remove() – frees memory allocated by the SPI communication driver.
+-  spi_write_and_read() – conduct information transfer with the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_driver_architecture.png
+   :align: center
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+
+-  `ADMV8818 Header file <http://analogdevicesinc.github.io/no-OS/admv8818_8h.html>`__
+-  `ADMV8818 Source file <http://analogdevicesinc.github.io/no-OS/admv8818_8c.html>`__
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of ADMV8818 Driver.|
+
+   -
+
+   |Header file of ADMV8818 Driver.|
+
+.. |Implementation of ADMV8818 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/filter/admv8818/admv8818`.c
+.. |Header file of ADMV8818 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/filter/admv8818/admv8818`.h

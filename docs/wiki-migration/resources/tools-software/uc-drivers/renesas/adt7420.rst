@@ -1,0 +1,208 @@
+ADT7420 - No-OS Driver for Renesas Microcontroller Platforms
+============================================================
+
+.. include:: ../adt7420.rst
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `ADT7420 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/adt7420_generic.zip>`__
+   -  `ADT7420 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adt7420_rl78g13.zip>`__
+   -  `ADT7420 RX63N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adt7420_rx63n.zip>`__
+   -  \**ADT7420 Driver: \*\* :git-no-OS:`drivers/temperature/adt7420`
+   -  \**PmodTMP2 Demo for RL78G14: \*\* :git-no-OS:`Renesas/RL78G14/PmodTMP2`
+   -  \**RL78G14 Common Drivers: \*\* :git-no-OS:`Renesas/RL78G14/Common`
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the ADT7420 demonstration project on a Renesas RL78G13 platform using the PmodTMP2.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  `PmodTMP2 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-TMP2>`__
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodTMP2 has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     PmodTMP2 J1 connector Pin SCL → YRDKRL78G13 J9 connector Pin 1
+     PmodTMP2 J1 connector Pin SDA → YRDKRL78G13 J9 connector Pin 3
+     PmodTMP2 J1 connector Pin GND → YRDKRL78G13 J11 connector Pin 5
+     PmodTMP2 J1 connector Pin VCC → YRDKRL78G13 J11 connector Pin 6
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_tmp2_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project:
+
+-  reads the temperature from the device;
+-  displays the temperature on the LCD in degrees Celsius.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_tmp2_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`__
+
+
+Renesas RL78G14 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the ADT7420 demonstration project on a Renesas RL78G14 platform using the PmodTMP2.
+
+.. _required-hardware-1:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`__
+-  `PmodTMP2 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-TMP2>`__
+
+.. _required-software-1:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+-  The ADT7420 demonstration project for the Renesas RL78G14 platform.
+
+.. note::
+
+   The ADT7420 demonstration project for the Renesas RL78G14 platform consists of three parts: the **ADT7420 Driver**, the **PmodTMP2 Demo for RL78G14** and the **RL78G14 Common Drivers**.
+
+   
+   All three parts have to be downloaded.
+
+
+.. _hardware-setup-1:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodTMP2 has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G14:
+
+::
+
+     PmodTMP2 J1 connector Pin SCL → RDKRL78G14 J8 connector Pin 1
+     PmodTMP2 J1 connector Pin SDA → RDKRL78G14 J8 connector Pin 3
+     PmodTMP2 J1 connector Pin GND → RDKRL78G14 J11 connector Pin 5
+     PmodTMP2 J1 connector Pin VCC → RDKRL78G14 J11 connector Pin 6
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_tmp2_rl78g14.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project:
+
+-  reads the temperature from the device;
+-  displays the temperature on the LCD in degrees Celsius.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_tmp2_rl78g14_screen.jpg
+   :align: center
+
+.. _software-project-tutorial-1:
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`__
+
+
+Renesas RX63N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the ADT7420 demonstration project on a Renesas RX63N platform using the PmodTMP2.
+
+.. _required-hardware-2:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RX63N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx63n-yrdkrx63n-demonstration-kit-rx63n>`__
+-  PmodTMP2
+
+.. _required-software-2:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `High-performance Embedded Workshop for RX63N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`__
+-  `Renesas Peripheral Driver Library for RX63N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`__
+
+.. _hardware-setup-2:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodCDC1 has to be interfaced with the Renesas Demonstration Kit (RDK) for RX63N:
+
+::
+
+   PmodCDC1 J1 connector Pin SCL ? YRDKRX63N J2 connector Pin 1
+   PmodCDC1 J1 connector Pin SDA ? YRDKRX63N J2 connector Pin 3
+   PmodCDC1 J1 connector Pin GND ? YRDKRX63N J15 connector Pin 5
+   PmodCDC1 J1 connector Pin VCC ? YRDKRX63N J15 connector Pin 6
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_tmp2_rx63n.jpg
+   :align: center
+
+.. _reference-project-overview-2:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project reads the temperature from the device and displays it on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_tmp2_rx63n_screen.jpg
+   :align: center
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rx63n_software_design <https://wiki.analog.com/rx63n_software_design>`__
+
+
+More information
+================
+
+.. include:: ../more-information.rst

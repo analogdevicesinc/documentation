@@ -1,0 +1,261 @@
+EVAL-CN0523-EBZ User Guide
+==========================
+
+|
+
+.. important::
+
+   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+
+   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0523-ebz/index.html
+   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+
+
+Overview
+--------
+
+The :adi:`EVAL-CN0523-EBZ` is a USB-powered, RF power amplifier that is optimized for transmitting signal chains in the 5.8 GHz ISM band. Using two :adi:`HMC407` amplifiers cascaded together, the design provides a gain of 28 dB and return losses of more than 10 dB throughout its RF band of operation.
+
+An overtemperature management feature is implemented on the :adi:`EVAL-CN0523-EBZ` wherein the amplifiers are automatically disabled when the board temperature reaches a preset threshold, and it automatically returns to normal operation once the temperature falls below the hysteresis point.
+
+Designed to be used with the :adi:`ADALM-PLUTO`, or other software defined radio platform, the board features a small form factor, with dimensions of 25.4 mm × 50.8 mm x 1.5748 mm (PCB only). The RF input and output are designed with a 50 Ω impedance, enabling direct connection between the circuit and standard 50 Ω systems.
+
+A micro-USB connector is used for the input power, allowing the evaluation board to use most +5 V wall wart power supplies available in the market.
+
+
+|cn0523_simplified_block_diagram.png|
+
+.. container:: center
+
+   *<fc #000000>Figure 1. EVAL-CN0523-EBZ Block Diagram</fc>*
+
+
+--------------
+
+Reference Design Hardware
+-------------------------
+
+Primary Side
+~~~~~~~~~~~~
+
+|top_temp.jpg|
+
+.. container:: center
+
+   *<fc #000000>Figure 2. CN0523 Primary Side</fc>*
+
+
+SMA Connectors
+^^^^^^^^^^^^^^
+
+-  The SMA connectors are used for the RF input and output connections:
+
+   -  **J1** is the **RF Input** SMA male connector that would be connected to a radio or piece of RF equipment. The maximum RF input level of the :adi:`EVAL-CN0523-EBZ <CN0523>` is **+10 dBm**. Do not use a higher input level to avoid damaging the circuit.
+   -  **J2** is the **RF Output** SMA FEmale connector that would be connected to an antenna. The saturated output power (Psat) of :adi:`EVAL-CN0523-EBZ <CN0523>` is **+27 dBm**. Ensure that the RF load can handle the amplified RF signal. Use an RF attenuator if necessary to avoid damage.
+
+LED Indicators
+^^^^^^^^^^^^^^
+
+-  The reference design uses two LEDs to indicate its current status:
+
+.. container:: center round box
+
+   
+   =============================== ======= ================
+   LED Indications of Board Status         
+   =============================== ======= ================
+   **DS1**                         **DS2** **Board Status**
+   Off                             Off     No power
+   Off                             On      Normal operation
+   On                              On      Overtemperature
+   =============================== ======= ================
+   
+
+
+Secondary Side
+~~~~~~~~~~~~~~
+
+|bot_temp.jpg|
+
+.. container:: center
+
+   *<fc #000000>Figure 3. CN0523 Secondary Side</fc>*
+
+
+Power Supply Connector
+^^^^^^^^^^^^^^^^^^^^^^
+
+-  **P1** is the micro-USB port used to provide 5 V power to the board. The total typical supply current of the on-board RF amplifiers is 230 mA.
+
+Changing the Temperature Switch Trip Point (JP1, JP2, JP3)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  The trip point of the temperature switch can be set using the solder jumpers JP1, JP2, and JP3 as shown in the table below. When the board temperature reaches the trip point, the :adi:`ADT6401` will disable the two RF amplifiers.
+
+
+|image1|
+
+.. container:: center
+
+   *<fc #000000>Figure 4. ADT6401 Jumper Setting</fc>*
+
+
+.. container:: center round box
+
+   
+   +----------------------------------------+------------------+-----------------+----------------+
+   | Selecting a Trip Point for the ADT6401 |                  |                 |                |
+   +========================================+==================+=================+================+
+   | **JP1 Setting**                        | **JP2 Setting**  | **JP3 Setting** | **Trip Point** |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | 2 & 3                                  | 2 & 3            | 2 & 3           | +45°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | 1 & 2                                  | 2 & 3            | 2 & 3           | +55°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | No solder jumper                       | 2 & 3            | 2 & 3           | +65°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | 2 & 3                                  | 1 & 2            | 2 & 3           | +75°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | 1 & 2                                  | 1 & 2            | 2 & 3           | +85°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | No solder jumper                       | 1 & 2            | 2 & 3           | +95°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | 2 & 3                                  | 2 & 3            | 1 & 2           | +65°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | 1 & 2                                  | 2 & 3            | 1 & 2           | +75°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | No solder jumper                       | 2 & 3            | 1 & 2           | +85°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | 2 & 3                                  | 1 & 2            | 1 & 2           | +95°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | 2 & 3                                  | No solder jumper | 2 & 3           | +105°C         |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | 1 & 2                                  | No solder jumper | 2 & 3           | +115°C         |
+   +----------------------------------------+------------------+-----------------+----------------+
+   | No solder jumper                       | No solder jumper | 2 & 3           | +55°C          |
+   +----------------------------------------+------------------+-----------------+----------------+
+   
+
+
+.. important::
+
+   Due to the considerable thermal dissipation of the RF amplifiers, the last three options should not be used.
+
+
+--------------
+
+Getting Started
+---------------
+
+Required Equipment
+~~~~~~~~~~~~~~~~~~
+
+Hardware
+^^^^^^^^
+
+-  :adi:`EVAL-CN0523-EBZ`
+-  :adi:`ADALM-PLUTO`
+-  Two (2) micro-USB power adaptors or micro-USB to USB cables for powering :adi:`ADALM-PLUTO` and :adi:`EVAL-CN0523-EBZ`
+-  One (1) SMA male-to-male cable
+-  One (1) SMA 30 dB RF attenuator
+
+Firmware
+^^^^^^^^
+
+-  For the step-by-step procedure on how to update the Pluto Firmware, you can use this :doc:`user guide link </wiki-migration/university/tools/pluto/users/firmware>`. The latest firmware version for the **ADALM-PLUTO** can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   ADALM-PLUTO Firmware
+
+   
+   -  :git-plutosdr-fw:`Pluto version latest release <releases/latest>`
+   
+
+
+-  In order to properly operate the ADALM PLUTO, you need to setup and configure it. Follow the procedure through this :doc:`link </wiki-migration/university/tools/pluto/users/firmware>`.
+
+--------------
+
+Test Setup
+~~~~~~~~~~
+
+-  Connect directly the **TX port** of :adi:`ADALM-PLUTO` to the **RF Input (J1)** of the :adi:`EVAL-CN0523-EBZ <CN0523>`.
+-  Connect directly the **RX port** of the :adi:`ADALM-PLUTO` to a 30 dB attenuator.
+-  Connect **RF Output (J2)** of the :adi:`EVAL-CN0523-EBZ <CN0523>` to a 30 dB attenuator using a male-to-male SMA cable.
+-  Connect **P1** (micro-USB) connector of the :adi:`EVAL-CN0523-EBZ <CN0523>` into a PC USB port or a 5 V USB charger.
+-  Connect the micro-USB to USB cable to a PC/laptop and the other end to the :adi:`ADALM-PLUTO` data port.
+-  The DS2 LED of :adi:`EVAL-CN0523-EBZ` will automatically turn on, indicating that the board is powered on and is in operation.
+-  Refer to the image below for the full hardware setup.
+
+|image2|
+
+.. container:: center
+
+   *<fc #000000>Figure 5. EVAL-CN0523-EBZ Test Setup</fc>*
+
+
+.. warning::
+
+   **Warning:** Connecting the CN0523 directly to the PlutoSDR input (Rx) may result in an exceedance of its absolute maximum ratings of +2.5 dBm. Such an action may lead to permanent damage to the PlutoSDR. It is strongly recommended to use a **30 dB or 40 dB attenuator** at the RX input of the ADALM PLUTO to avoid incurring damage.
+
+   
+
+
+--------------
+
+More Information and Useful Links
+---------------------------------
+
+-  :adi:`CN0523 Product Page <CN0523>`
+-  :adi:`HMC407 Product Page <HMC407>`
+-  :adi:`ADT6401 Product Page <ADT6401>`
+-  :adi:`LT8364 Product Page <LT8364>`
+-  :adi:`ADM7150 Product Page <ADM7150>`
+-  :adi:`ADM7171 Product Page <ADM7171>`
+-  :doc:`ADALM-PLUTO Overview </wiki-migration/university/tools/pluto>`
+-  :doc:`Amplifiers for RF Transmission </wiki-migration/university/tools/pluto/users/amp>`
+-  :doc:`RF Amplifier Considerations </wiki-migration/university/tools/pluto/users/amp>`
+
+--------------
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0523-EBZ Design & Integration Files <cn0523-DesignSupport>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Gerber Files
+   -  Allegro Board File
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications and documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0523-EBZ?&v=Rev F>`__ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |cn0523_simplified_block_diagram.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/cn0523_simplified_block_diagram.png
+   :width: 600px
+.. |top_temp.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/top_temp.jpg
+   :width: 700px
+.. |bot_temp.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/bot_temp.jpg
+   :width: 700px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/jmp_settings.jpg
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0523/full_hw_setup.jpg
+   :width: 700px

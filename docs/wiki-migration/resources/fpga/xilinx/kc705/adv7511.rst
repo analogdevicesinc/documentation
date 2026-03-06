@@ -1,0 +1,215 @@
+ADV7511 Xilinx Evaluation Boards Reference Design
+=================================================
+
+Introduction
+------------
+
+The :adi:`ADV7511` is a 225 MHz High-Definition Multimedia Interface (HDMI®) transmitter. It is part of the `Artix-7 AC701 <https://www.xilinx.com/ac701>`__, `Kintex-7 KC705 <https://www.xilinx.com/kc705>`__, `Virtex-7 VC707 <https://www.xilinx.com/vc707>`__, `Zynq ZC702 <https://www.xilinx.com/zc702>`__, `Zynq ZC706 <https://www.xilinx.com/zc706>`__ and the `Zynq ZED <https://www.xilinx.com/products/boards-and-kits/1-8dyf-11.html>`__ evaluation boards. This reference design provides the video and audio interface between the FPGA and ADV7511 on board. The video uses a 16bit 422 YCbCr interface (except VC707 which uses 36bit 444 RGB interface) and the audio uses a single bit SPDIF interface.
+
+Supported Carriers
+------------------
+
+-  `AC701 <https://www.xilinx.com/AC701>`__
+-  `KC705 <https://www.xilinx.com/KC705>`__
+-  `VC707 <https://www.xilinx.com/VC707>`__
+-  `ZC702 <https://www.xilinx.com/ZC702>`__
+-  `ZC706 <https://www.xilinx.com/ZC706>`__
+-  `ZED Board <https://www.xilinx.com/products/boards-and-kits/1-8dyf-11.html>`__
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  AC701/KC705/VC707/ZC702/ZC706/Zed board.
+-  HDMI Monitor.
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  We upgrade the Xilinx tools on every release. The supported version number can be found in our :git-hdl:`git repository <tree/master>`.
+-  A UART terminal (Tera Term/Hyperterminal) - baud rate 115200
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following steps will get your system up and running.
+
+-  To begin, connect an HDMI cable between the board HDMI out and the HDMI monitor. After the hardware setup, turn the power on to the board.
+-  Download the :adi:`ADV7511 HDMI Transmitter Library <media/en/dsp-hardware-software/software-modules/ADV7511_API_Library.exe>` and install it. Go to the **installation folder -> Src** and copy the TX folder into the **no-OS repo folder -> projects -> adv7511**.
+-  Build the HDL project according to the :doc:`Building HDL wiki </wiki-migration/resources/fpga/docs/build>` and copy the resulting .hdf file to the **no-OS repo folder -> projects -> adv7511**.
+-  Choose the carrier board in the software by uncommenting the appropriate define in the **src/app_config.h** file. For example, if the Zedboard carrier is needed, uncomment the #define PLATFORM_ZED in the file.
+
+|image1|
+
+-  Build the software project according to the :git-no-OS:`Github wiki <wiki>`.50
+
+.. note::
+
+   If on Linux you would need Wine or similar compatibility layers for Windows to install the library.
+
+
+If programming was successful, you should be seeing messages appear on the terminal as shown in figure below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmc-imageon/adv7511_lib_test.png
+   :alt: Terminal
+   :width: 400px
+
+The reference design contains an example of how to:
+
+-  Initialize the ADV7511 High-Definition Multimedia Interface (HDMI®) transmitter.
+-  Check current AVR operating mode and depending on this result set the AV mute state.
+-  Display an image and play a sound.
+
+Using the reference design
+--------------------------
+
+Functional description
+~~~~~~~~~~~~~~~~~~~~~~
+
+Xilinx block diagram
+^^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmc-imageon/adv7511_zynq_2.svg
+   :alt: HDL Block Diagram
+   :width: 800px
+
+ADV7511 block diagram
+^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmc-imageon/adv7511_proc_1.svg
+   :alt: HDL Block Diagram
+   :width: 600px
+
+The reference design consists of two independent pcore modules.
+
+The video part consists of an AXI DMAC interface and the ADV7511 video interface. The ADV7511 interface consists of a 16bit YCbCr 422 with separate synchroinzation signals. The DMA streams frame data to this core. The internal buffers of this pcore are small (1k) and do NOT buffer any frames as such. Additional resources may cause loss of synchronization due to DDR bandwidth requirements. The video core is capable of supporting any formats through a set of parameter registers (given below). The pixel clock is generated internal to the device and must be configured for the correct pixel frequency. It also allows a programmable color pattern for debug purposes. A zero to one transition on the enable bits trigger the corresponding action for HDMI enable and color pattern enable.
+
+The reference design defaults to the 1080p video mode. Users may change the video settings by programming the following registers. The core requires a corresponding pixel clock to generate the video. This clock must be generated externally.
+
+| **HSYNC count**: is the total horizontal pixel clocks of the video, for 1080p this is 2200.
+| **HSYNC width**: is the pulse width in pixel clocks, for 1080p this is 44.
+| **HSYNC DE Minimum**: is the number of pixel clocks for the start of active video and is the sum of horizontal sync width and back porch, for 1080p this is 192 (44 + 148).
+| **HSYNC DE Maximum**: is the number of pixel clocks for the end of active video and is the sum of horizontal sync width, back porch and the active video count, for 1080p this is 2112 (44 + 148 + 1920).
+| **VSYNC count**: is the total vertical pixel clocks of the video, for 1080p this is 1125.
+| **VSYNC width**: is the pulse width in pixel clocks, for 1080p this is 5.
+| **VSYNC DE Minimum**: is the number of pixel clocks for the start of active video and is the sum of vertical sync width and back porch, for 1080p this is 41 (5 + 36).
+| **VSYNC DE Maximum**: is the number of pixel clocks for the end of active video and is the sum of vertical sync width, back porch and the active video count, for 1080p this is 1121 (5 + 36 + 1080).
+| Note that the pixel frequency for 1080p is 148.5MHz.
+
+The reference design reads 24bits of RGB data from DDR and performs color space conversion (RGB to YCbCr) and down sampling (444 to 422). If bypassed, the lower 16bits of DDR data is passed to the HDMI interface as it is.
+
+A color pattern register provides a quick check of any RGB values on the monitor. If enabled, the register data is used as the pixel data for the entire frame.
+
+The audio part consists of an AXI DMAC interface and the ADV7511 spdif audio interface. The audio clock is derived from the bus clock. A programmable register (see below) controls the division factor. The audio data is read from the DDR as two 16bit words for the left and right channels. It is then transmitted on the SPDIF frame. The sample frequency and format may be controlled using the registers below. The reference design defaults to 48KHz.
+
+Registers
+~~~~~~~~~
+
+Please refer to the regmap.txt file inside the pcores.
+
+Audio Registers (axi_spdif_tx)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+| QW Address\ :sup:`1`                           | Bits  | Default | Name         | Description                                                                         |
++================================================+=======+=========+==============+=====================================================================================+
+| 0x00                                           | 23:20 | 0       | mode         | Sample format 0 to 8 (0-16bit, 8-24bit).                                            |
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+|                                                | 15:8  | 0       | ratio        | Clock divider for the transmit frequency = bus_clock/(1+ratio).                     |
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+|                                                | 1     | 0       | txdata       | Transmit data buffer enable (0x1) or disable (0x0).                                 |
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+|                                                | 0     | 0       | txenable     | Transmitter enable (0x1) or disable (0x0).                                          |
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+| 0x01                                           | 7:6   | 0       | frequency    | Sample frequency 0(44.1KHz), 1(48KHz), 2(32KHz) or 3(sample rate converter) (RO).   |
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+|                                                | 3     | 0       | gstat        | Generation status original/commercially pre-recorded data (0x1) or none (0x0) (RO). |
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+|                                                | 2     | 0       | pre-emphasis | Pre-emphasis 50/15s (0x1) or none (0x0) (RO).                                       |
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+|                                                | 1     | 0       | copy         | Copy permitted (0x1) or inhibited (0x0) (RO).                                       |
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+|                                                | 0     | 0       | audio        | Data format is non-audio (0x1) or audio (0x0) (RO).                                 |
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+| 1. For AXI-Lite byte addresses, multiply by 4. |       |         |              |                                                                                     |
++------------------------------------------------+-------+---------+--------------+-------------------------------------------------------------------------------------+
+
+Using the Software Reference Design
+-----------------------------------
+
+The Software Reference Design uses the **ADV7511 Transmitter Library** which is a collection of APIs that provide a consistent interface to ADV7511. The library is a software layer that sits between the application and the TX hardware and it is intended to serve two purposes:
+
+-  Provide the application with a set of APIs that can be used to configure HDMI TX hardware without the need for low-level register access. This makes the application portable across different revisions of the hardware and even across different hardware modules.
+-  Provide basic services to aid the application in controlling the TX module, such as interrupt service routine, HDCP high-level control and status information.
+
+The documentation for the library's API can be accessed here: :doc:`ADV7511 Transmitter API Documentation </wiki-migration/resources/fpga/xilinx/adv7511>`
+
+The project contains 2 components: the Reference Design files and the ADV7511 Transmitter Library. All the components have to be downloaded from the links provided in the **Downloads** section.
+
+Serial Setup
+~~~~~~~~~~~~
+
+-  The no-OS drivers source code does the following actions:
+
+   -  Initializes the HDMI core;
+   -  Initializes the ADV7511 part;
+   -  Transmits to a HDMI capable monitor an image whoose resolution can be changed by typing in the terminal a number from 0 to 6;
+   -  Transmits to a HDMI capable monitor a sound.
+
+-  This is what is transmitted through UART:
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmc-imageon/adv7511_uart.png
+   :alt: UART
+   :align: center
+   :width: 400px
+
+As an alternative an UART terminal can be used to capture the output of the example program. The number of used UART port depends on the computer's configuration. The following settings must be used in the UART terminal:
+
+-  Baud Rate: 115200bps
+-  Data: 8 bit
+-  Parity: None
+-  Stop bits: 1 bit
+-  Flow Control: none
+
+Downloads
+---------
+
+| The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices Github.
+| **HDL Reference Designs:**
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**AC701 HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/ac701`
+   -  \**KC705 HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/kc705`
+   -  \**vC707 HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/vc707`
+   -  \**ZC702 HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/zc702`
+   -  \**ZC706 HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/zc706`
+   -  \**ZED HDL Reference Design for Vivado: \*\* :git-hdl:`projects/adv7511/zed`
+   
+
+
+**no-OS Software:**
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**ADV7511 Project: \*\* :git-no-OS:`projects/adv7511`
+   
+
+
+.. hint::
+
+   
+   -  Questions? :ez:`Ask Help & Support <community/fpga>`.
+   
+
+
+More information
+----------------
+
+-  :ez:`Ask questions about the FPGA reference design <community/fpga>`
+-  :doc:`Linux with HDMI video output on the ZED and ZC702 boards </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/kc705/example_soft_platform_choice.png

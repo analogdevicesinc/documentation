@@ -1,0 +1,27 @@
+The :adi:`AD7091R` is a 12-bit successive approximation analog-to-digital converter (ADC) that offers ultralow power consumption (typically 349 µA at 3 V and 1 MSPS) while achieving fast throughput rates (1 MSPS with a 50 MHz SCLK). The :adi:`AD7091R` uses advanced design and process techniques to achieve this very low power dissipation at high throughput rates. The part also features an on-chip, accurate 2.5 V reference.
+
+Operating from a single 2.7 V to 5.25 V power supply, the part contains a wide bandwidth track-and-hold amplifier that can handle input frequencies in excess of 7 MHz. The :adi:`AD7091R` also features an on-chip conversion clock and high speed serial interface. The conversion process and data acquisition are controlled using a CONVST signal and an internal oscillator.
+
+Applications
+============
+
+-  Instrumentation and Measurement
+
+   -  Battery and USB powered systems
+
+      -  Data acquisition systems
+      -  Handheld meters
+
+   -  Field Instruments
+
+-  Consumer
+
+   -  Battery powered devices
+
+-  Communications
+
+   -  Optical systems
+   -  Mobile communications
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad7091r_pmod_ad6.jpg
+   :align: center

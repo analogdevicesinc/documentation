@@ -1,0 +1,158 @@
+AD9122 Evaluation Board, DAC-FMC Interposer & Xilinx ML-605 Reference Design
+============================================================================
+
+Introduction
+------------
+
+The :adi:`AD9122` is a dual 16-bit, high dynamic range, digital-to-analog converter (DAC) that provides a sample rate of 1200MSPS. This reference design includes two DDS generators that drives both channels of the device. The programming is done via the USB-SPI interface.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9122 Evaluation Board <en/evaluation/eval-ad9122/eb.html>`
+-  :adi:`DAC FMC Interposer Board <en/evaluation/ad-dac-fmc/eb.html>`
+
+Supported Carriers
+------------------
+
+-  `ML605 <https://www.xilinx.com/ML605>`__
+
+Quick Start Guide
+-----------------
+
+The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal, ADI DAC software and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  ML605 board
+-  AD9122-M537x-EBZ board & Power supply
+-  DAC FMC interposer board
+-  Signal/Clock generator (1GHz)
+-  Spectrum Analyzer
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 13.2 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 57600.
+-  ADI DPG DAC Software Suite :adi:`available here <en/digital-to-analog-converters/da-converters/products/evaluation-boardstools/CU_eb_DPG_high_speed_DAC_eval_platform/resources/fca.html>`.
+
+Bit file
+~~~~~~~~
+
+-  Download the gzip file and extract the **sw/cf_ad9122_ebz.bit** file.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To begin make the following connections (see image below):
+
+-  Connect the AD9122-M537x-EBZ board to the FMC Interposer board.
+-  Connect the interposer board to the **FMC-LPC** connector of ML605 board.
+-  Connect power to ML605 and the AD9122-M537x-EBZ boards.
+-  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on ML605.
+-  Connect a USB cable to the AD9122-M537x-EBZ board.
+-  Connect an external clock source to AD9122-M537x-EBZ board's J1 SMA connector.
+-  Connect two spectrum analyzers to AD9122-M537x-EBZ board's J3 and J8 SMA connectors.
+
+Setup the clock source to be 1GHz. After the hardware setup, turn the power on to the ML605 and the AD9122-M537x-EBZ boards.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_setup.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+Start ADI- AD9122 SPI program (see screenshot below)-
+
+-  (1) change the interpolation to 2x.
+-  (2) click on "Run Forever" button.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_usb_spi.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+Start IMPACT, and initialze the JTAG chain. The program should recognize the Virtex 6 device (see screenshot below). Start a UART terminal (set to 57600 baud rate) and then program the device.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_impact.jpg
+   :alt: IMPACT
+   :width: 200px
+
+If programming was successful, you should be seeing messages appear on the terminal as shown in figure below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_uart.jpg
+   :alt: Terminal
+   :width: 200px
+
+After DDS is enabled, you should see the spectrum analyzer displaying the two tones (90MHz and 70MHz).
+
+|Terminal| |image1|
+
+Using the reference design
+--------------------------
+
+Functional description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design consists of two independent DDS modules and a lvds interface.
+
+The DDS module consists of a Xilinx IP core and a DDR-DDS. Internally the DDS runs at fDAC/3 clock. The DDR-DDS allows any pattern to be generated in the memory to be driven to the DAC. The output samples are interleaved and driven by the lvds interface.
+
+Registers
+~~~~~~~~~
+
+Please see the regmap.txt file in the pcore directory.
+
+Downloads
+---------
+
+FPGA Referece Designs:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**ML605 \*\* `cf_ad9122_ebz_edk_14_4_2013_03_12.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_edk_14_4_2013_03_12.tar.gz>`__
+   -  **Software** `cf_ad9122_ebz_edk_14_4_sw.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_edk_14_4_sw.tar.gz>`__
+   
+
+
+Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
+
+.. hint::
+
+   
+   -  Questions? :ez:`Ask Help & Support <fpga>`.
+   
+
+
+Tar file contents
+-----------------
+
+The tar file contains, in most cases, the following files and/or directories. To rebuild the reference design simply double click the XMP file and run the tool. To build SDK, select a workspace and use the C file to build the elf file. Please refer to `Xilinx EDK documentation <https://www.xilinx.com/support/documentation/dt_edk_edk13-2.htm>`__ for details.
+
++--------------------+------------------------------------------------------------------------------------------------------+
+| license.txt        | ADI license & copyright information.                                                                 |
++--------------------+------------------------------------------------------------------------------------------------------+
+| system.mhs         | MHS file.                                                                                            |
++--------------------+------------------------------------------------------------------------------------------------------+
+| system.xmp         | XMP file (use this file to build the reference design).                                              |
++--------------------+------------------------------------------------------------------------------------------------------+
+| data/              | UCF file and/or DDR MIG project files.                                                               |
++--------------------+------------------------------------------------------------------------------------------------------+
+| docs/              | Documentation files (Please note that this wiki page is the documentation for the reference design). |
++--------------------+------------------------------------------------------------------------------------------------------+
+| sw/                | Software (Xilinx SDK) & bit file(s).                                                                 |
++--------------------+------------------------------------------------------------------------------------------------------+
+| cf_lib/edk/pcores/ | Reference design core file(s) (Xilinx EDK).                                                          |
++--------------------+------------------------------------------------------------------------------------------------------+
+
+More information
+----------------
+
+-  `VITA's FMC info <http://www.vita.com/fmc>`__
+-  :ez:`Ask questions about the FPGA reference design <community/fpga>`
+
+.. |Terminal| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_spectrum_1.jpg
+   :width: 200px
+.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9122_ebz_spectrum_2.jpg
+   :width: 200px

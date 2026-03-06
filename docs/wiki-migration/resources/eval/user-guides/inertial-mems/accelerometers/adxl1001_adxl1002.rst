@@ -1,0 +1,12 @@
+ADXL1001 and ADXL1002 Breakout Board documentation:
+===================================================
+
+| :adi:`User Guide for the ADXL1001 and ADXL1002 Breakout Boards <media/en/technical-documentation/user-guides/EVAL-ADXL1001Z-1002Z-UG-1121.pdf>`\ *
+  --- ADXL1001 Breakout board files ---
+  * `ADXL1001 Rev 2 Breakout Board Schematic <https://wiki.analog.com/_media/mems/ADXL1001Z Eval Board Rev 2 - Schematic.pdf>`__
+| // `ADXL1001 Rev 2 Breakout Board Layout <https://wiki.analog.com/_media/mems/ADXL1001Z Eval Board Rev 2 - Layout.pdf>`__
+| --- ADXL1002 Breakout board files ---
+| // `ADXL1002 Rev 2 Breakout Board Schematic <https://wiki.analog.com/_media/mems/ADXL1002Z Eval Board Rev 2 - Schematic.pdf>`__
+| // `ADXL1002 Rev 2 Breakout Board Layout <https://wiki.analog.com/_media/mems/ADXL1002Z Eval Board Rev 2 - Layout.pdf>`__
+| IMPORTANT APPLICATION NOTE ABOUT PROPER EVALUATION TECHNIQUES
+| // `Application Note for ADXL1001 and ADXL1002 <https://wiki.analog.com/_media/mems/Reference document on achieving best noise performance with ADXL1002.pdf>`__

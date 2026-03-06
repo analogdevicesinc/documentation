@@ -1,0 +1,909 @@
+AD5706R IIO DAC Linux Driver
+============================
+
+Supported Devices
+-----------------
+
+This driver supports the
+
+-  :adi:`AD5706R` To be updated on release
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5706RARDZ` To be updated on release
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting multi-channel serial interface DACs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Source Code
+===========
+
+Status
+------
+
++-----------------------------------------------------------------------------+------------+
+| Source                                                                      | Mainlined? |
++=============================================================================+============+
+| `bitbucket <https://bitbucket.analog.com/scm/cos-apjc/ad5706r-linux.git>`__ | [No]       |
++-----------------------------------------------------------------------------+------------+
+
+\| To be updated upon merging on Linux Stream
+
+Files
+-----
+
++------------------------+-------------------------------------------------------------------------------------------------------------------+
+| Function               | File                                                                                                              |
++========================+===================================================================================================================+
+| driver DELETE_ME       | `ad5764.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5764.c>`__   |
++------------------------+-------------------------------------------------------------------------------------------------------------------+
+| driver update on merge | https://bitbucket.analog.com/projects/COS-APJC/repos/ad5706r-linux/browse/Source%20Files/ad5706r.c?at=dev_ad5706r |
++------------------------+-------------------------------------------------------------------------------------------------------------------+
+
+Devicetree
+----------
+
+Required devicetree properties for the AD5706R:
+
+-  compatible: Must be "adi,ad5706r"
+-  reg: SPI chip select number for the device
+-  spi-max-frequency: Max SPI frequency to use (< 5000000)
+-  pwms: The built in IP of a PWM Generator.
+
+Leave the FPGA AXI untouched, except 'label' which is equal to device property 'pwm-names'.
+
+Optional properties:
+
+-  dac-resetb-gpios: GPIO spec for the RESET pin. If specified, it will be asserted during driver probe.
+-  dac-mdX_a0-gpios: GPIO spec for Device 'X' Address bit 0 pin. Device number can be from 0-3.
+-  dac-mdX_a1-gpios: GPIO spec for Device 'X' Address bit 1 pin. Device number can be from 0-3.
+
+::
+
+   &fpga_axi {
+
+       axi_pwm_gen: pwm@0x44a00000 {
+           compatible = "adi,axi-pwmgen";
+           reg = <0x44a00000 0x1000>;
+           label = "ad5706r_ldacb";
+           #pwm-cells = <2>;
+           clocks = <&clkc 15>;
+       };
+   };
+
+   &adc {
+       
+           #io-channel-cells = <1>;    
+           xlnx,channels {
+                   #address-cells = <1>;
+                   #size-cells = <0>;
+                   channel@2 {
+                           reg = <2>;
+                           label = "adc_channel2";
+                   };
+           };
+   };
+           
+   &spi0 {
+       status = "okay";
+
+           io-channels = <&adc 9>;
+           io-channel-names = "mux_out_raw2";
+                   
+           
+       ad5706r: dac@0 {
+           compatible = "adi,ad5706r";
+           reg = <0>;
+           spi-max-frequency = <5000000>;
+                   
+           pwm-names = "ad5706r_ldacb";
+           pwms = <&axi_pwm_gen 0 0>;
+                   
+                   //address is 54+hdl GPIO Number
+                   dac-resetb-gpios = <&gpio0 86 GPIO_ACTIVE_LOW>;
+                   dac-shdn-gpios   = <&gpio0 87 GPIO_ACTIVE_HIGH>;
+                   dac-md0_a0-gpios = <&gpio0 88 GPIO_ACTIVE_HIGH>;
+                   dac-md0_a1-gpios = <&gpio0 89 GPIO_ACTIVE_HIGH>;
+                   dac-md1_a0-gpios = <&gpio0 90 GPIO_ACTIVE_HIGH>;
+                   dac-md1_a1-gpios = <&gpio0 91 GPIO_ACTIVE_HIGH>;
+                   dac-md2_a0-gpios = <&gpio0 92 GPIO_ACTIVE_HIGH>;
+                   dac-md2_a1-gpios = <&gpio0 93 GPIO_ACTIVE_HIGH>;
+                   dac-md3_a0-gpios = <&gpio0 94 GPIO_ACTIVE_HIGH>;
+                   dac-md3_a1-gpios = <&gpio0 95 GPIO_ACTIVE_HIGH>;
+               
+       };
+   };
+
+Adding Linux driver support
+===========================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           ...
+           <*>     Industrial I/O support --->
+               --- Industrial I/O support
+               ...
+               Digital to analog converters  ---> 
+                   ...
+                   <*> Analog Devices AD5706R DAC Driver
+                   ...
+               ...
+           ...
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
+      iio:device0  iio:device1  iio_sysfs_trigger
+      root@analog:/sys/bus/iio/devices# cd iio\:device1/
+      root@analog:/sys/bus/iio/devices/iio:device1# ls -l
+      total 0
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 addr_ascension
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 addr_ascension_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 dev_addr
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 hw_ldac_tg_pwm
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 hw_ldac_tg_pwm_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 hw_ldac_tg_state
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 hw_ldac_tg_state_available
+      -rw-r--r-- 1 root root 4096 Aug  4 17:17 hw_shutdown_state
+      -r--r--r-- 1 root root 4096 Aug  4 17:17 hw_shutdown_state_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 multi_dac_input_a
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 multi_dac_sw_ldac_trigger
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 mux_out_sel
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 mux_out_sel_available
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 name
+      lrwxrwxrwx 1 root root    0 Aug  4 15:17 of_node -> ../../../../../../../../firmware/devicetree/base/axi/spi@e0006000/dac@0
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_dither_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current0_dither_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_hw_active_edge
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current0_hw_active_edge_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_input_register_a
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_input_register_b
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_ldac_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current0_ldac_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_multi_dac_sel_ch
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current0_multi_dac_sel_ch_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_offset
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_output_state
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current0_output_state_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_range_sel
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current0_range_sel_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_raw
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_scale
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current0_toggle_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current0_toggle_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_dither_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current1_dither_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_hw_active_edge
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current1_hw_active_edge_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_input_register_a
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_input_register_b
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_ldac_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current1_ldac_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_multi_dac_sel_ch
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current1_multi_dac_sel_ch_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_offset
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_output_state
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current1_output_state_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_range_sel
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current1_range_sel_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_raw
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_scale
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current1_toggle_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current1_toggle_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_dither_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current2_dither_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_hw_active_edge
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current2_hw_active_edge_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_input_register_a
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_input_register_b
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_ldac_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current2_ldac_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_multi_dac_sel_ch
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current2_multi_dac_sel_ch_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_offset
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_output_state
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current2_output_state_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_range_sel
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current2_range_sel_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_raw
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_scale
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current2_toggle_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current2_toggle_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_dither_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current3_dither_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_hw_active_edge
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current3_hw_active_edge_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_input_register_a
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_input_register_b
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_ldac_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current3_ldac_trigger_chn_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_multi_dac_sel_ch
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current3_multi_dac_sel_ch_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_offset
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_output_state
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current3_output_state_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_range_sel
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current3_range_sel_available
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_raw
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_scale
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 out_current3_toggle_trigger_chn
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 out_current3_toggle_trigger_chn_available
+      drwxr-xr-x 2 root root    0 Aug  4 15:17 power
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 reference_volts
+      -rw-r--r-- 1 root root 4096 Aug  4 17:17 ref_select
+      -r--r--r-- 1 root root 4096 Aug  4 17:17 ref_select_available
+      -rw-r--r-- 1 root root 4096 Aug  4 17:17 sampling_frequency
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 single_instr
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 single_instr_available
+      lrwxrwxrwx 1 root root    0 Aug  4 15:17 subsystem -> ../../../../../../../../bus/iio
+      -rw-r--r-- 1 root root 4096 Aug  4 15:17 uevent
+      -r--r--r-- 1 root root 4096 Aug  4 15:17 waiting_for_supplier
+   
+
+
+Set automatic register address increment/decrement via 'addr_ascension'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/addr_ascension
+| During multiple register read or write, this sets the direction whether the next address is an increment or decrement of the previous.
+
+Available Values: decrement, increment
+
+Default: decrement
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo increment > addr_ascension
+      root@analog:/sys/bus/iio/devices/iio:device1# cat addr_ascension
+      increment
+   
+
+
+Show Current Selected Multi Drop SPI via 'dev_addr'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/dev_addr
+| Set the register value in which a device must match for proper SPI communication.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 2 > dev_addr
+      root@analog:/sys/bus/iio/devices/iio:device1# cat dev_addr
+      2
+   
+
+
+Start or stop the PWM via 'hw_ldac_tg_pwm'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/hw_ldac_tg_pwm
+| Start or stop the PWM feeding into the LDAC/TGP pin.
+
+Available Values: disabled, enabled
+
+Default: disabled
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo enabled > hw_ldac_tgp_pwm
+      root@analog:/sys/bus/iio/devices/iio:device1# cat hw_ldac_tgp_pwm
+      enabled
+   
+
+
+Set or toggle the LDAC/TGP pin via 'hw_ldac_tg_state'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/hw_ldac_tg_state
+| Set the value of the LDAC/TGP pin. Unlike the PWM this is a constant value. This overrides the setting of 'hw_ldac_tgp_pwm'.
+
+Available Values: low, high
+
+Default: low
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo high > hw_ldac_tg_state
+      root@analog:/sys/bus/iio/devices/iio:device1# cat hw_ldac_tg_state
+      high
+   
+
+
+Control Shutdown pin via 'hw_shutdown_state'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/hw_shutdown_state
+| Controls the SHDN pin via GPIO.
+
+Available Values: low high
+
+Default: low
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo high > hw_shutdown_state
+      root@analog:/sys/bus/iio/devices/iio:device1# cat hw_shutdown_state
+      high
+   
+
+
+Set the digital input fed via 'multi_dac_input_a'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/multi_dac_input_a
+| Set the signal input used by the multiple DAC channel mode selection feature.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 0x1234 > multi_dac_input_a
+      root@analog:/sys/bus/iio/devices/iio:device1# cat multi_dac_input_a
+      0x1234
+   
+
+
+Trigger the multiple DAC update feature via 'multi_dac_sw_ldac_trigger'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/multi_dac_sw_ldac_trigger
+| A software trigger for the multiple DAC update feature of the device. This is a write strobe, writing a 1 automatically clears it after a clock cycle.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 1 > multi_dac_sw_ldac_trigger
+      root@analog:/sys/bus/iio/devices/iio:device1# cat multi_dac_sw_ldac_trigger
+      0
+   
+
+
+Set the value appearing on the mux_out pin via 'mux_out_sel'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/mux_out_sel
+| Set which signal the Mux Out pin connects to. Y represent the channel number.
+
+Available Values: disable, agnd, avdd, vref, ioutY_vmon, ioutY_imon, pvddY, temp_sensorY, mux_in
+
+Default: disable
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo avdd > mux_out_sel
+      root@analog:/sys/bus/iio/devices/iio:device1# cat mux_out_sel
+      avdd
+   
+
+
+Show device name
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# cat name
+      ad5706r
+   
+
+
+Set a channel to Dither mode and trigger 1 pulse via 'dither_trigger_chn'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_dither_trigger_chn
+| Set the DAC outputs of a given channel.
+
+Available Values: none, hw_dither, sw_dither
+
+Default: hw_dither
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo sw_dither > out_current0_dither_trigger_chn
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current0_dither_trigger_chn
+      sw_dither 
+   
+
+
+Set each channels' active triggering edge via 'hw_active_edge'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_hw_active_edge
+| Set at which signal edge does the HW detect a trigger.
+
+Available Values: rising_edge, falling_edge, both_edges, no_edges
+
+Default: rising_edge
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo both_edges > out_current3_hw_active_edge
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current3_hw_active_edge
+      both_edges
+   
+
+
+Set the primary DAC input via 'input_register_a'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_input_register_a
+| Set the input for the primary register.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 0xabcd > out_current2_input_register_a
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current2_input_register_a
+      0xabcd 
+   
+
+
+Set the secondary/toggle DAC input via 'input_register_b'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_input_register_b
+| Set the input for the alternative register for toggle.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 0xfedc > out_current1_input_register_b
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current1_input_register_b
+      0xfedc 
+   
+
+
+Set a channel to LDAC mode and trigger 1 pulse via 'ldac_trigger_chn'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_ldac_trigger_chn
+| Set the DAC outputs of a given channel.
+
+Available Values: none, hw_ldac, sw_ldac
+
+Default: hw_ldac
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo sw_ldac > out_current0_ldac_trigger_chn
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current0_ldac_trigger_chn
+      sw_ldac 
+   
+
+
+Select if a channel is included in the multiple DAC update via 'multi_dac_sel_ch'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_multi_dac_sel_ch
+| Set each channel to be included in the multiple dac update feature.
+
+Available Values: exclude, include
+
+Default: exclude
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo include > out_current1_multi_dac_sel_ch
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current1_multi_dac_sel_ch
+      include
+   
+
+
+Show the offset value of the DAC device via 'offset'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_offset
+| Displays the offset used by channel Y
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current0_offset
+      0 
+   
+
+
+Set the channels' output state via 'output_state'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_output_state
+| Set the shutdown state of each channel.
+
+Available Values: normal_sw, shutdown_to_tristate_sw, shutdown_to_gnd_sw, normal_hw, shutdown_to_tristate_hw, shutdown_to_gnd_hw
+
+Default: normal_sw
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo normal > out_current0_output_state
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current0_output_state
+      normal
+   
+
+
+Set the channels' maximum current output via 'range_sel'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_range_sel
+| Set the range of the maximum output current of each channel.
+
+Available Values: 50mA, 150mA, 200mA, 300mA
+
+Default: 50mA
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 300mA > out_current2_range_sel
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current2_range_sel
+      300mA
+   
+
+
+Show the raw digitized value of the DAC device via 'raw'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_raw
+| Raw (unscaled, no bias etc.) output current for channel Y.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current0_raw
+      8481
+   
+
+
+Show the scale of the raw digitized value of the DAC device via 'scale'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_scale
+| Scale of the 'raw' attribute. Channel value = scale \* (raw + offset). Units in Nano. This value adjust depending on the value of 'range_sel' attribute.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current0_scale
+      762
+   
+
+
+Set a channel to Toggle mode and trigger 1 pulse via 'toggle_trigger_chn'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_currentY_toggle_trigger_chn
+| Set the channel into toggle mode and trigger it once.
+
+Available Values: none, hw_toggle, sw_toggle
+
+Default: hw_toggle
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo hw_toggle > out_current0_toggle_trigger_chn
+      root@analog:/sys/bus/iio/devices/iio:device1# cat out_current0_toggle_trigger_chn
+      hw_toggle
+   
+
+
+Set the reference voltage level used by the device via 'reference_volts'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/reference_volts
+| Set the reference volts used by the device. Units in mV.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 2500 > reference_volts
+      root@analog:/sys/bus/iio/devices/iio:device1# cat reference_volts
+      2500 
+   
+
+
+Select the reference selector via 'ref_select'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/ref_select
+| Set whether the Mux out buffer is enabled or disabled.
+
+Available Values: external internal
+
+Default: external
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo enabled > ref_select
+      root@analog:/sys/bus/iio/devices/iio:device1# cat ref_select
+      enabled 
+   
+
+
+Set the LDAC PWM Frequency via 'sampling_frequency'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/sampling_frequency
+| Set the sampling frequency to be used by the PWM. Units in Hz.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo 12500000 > sampling_frequency
+      root@analog:/sys/bus/iio/devices/iio:device1# cat sampling_frequency
+      12500000 
+   
+
+
+Set SPI instruction mode via 'single_instr'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/single_instr
+| Set the instruction mode of the device.
+
+Available Values: streaming, single_instruction
+
+Default: streaming
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1# echo single_instruction > single_instr
+      root@analog:/sys/bus/iio/devices/iio:device1# cat single_instr
+      single_instruction 
+   
+
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

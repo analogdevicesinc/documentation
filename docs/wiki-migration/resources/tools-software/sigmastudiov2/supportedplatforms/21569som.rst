@@ -1,0 +1,12 @@
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/supportedplatforms>`
+
+EV-21569-SOM
+============
+
+| 
+| Evaluation Hardware for ADSP-2156x SHARC Audio Processor family
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/supportedplatforms/EV-21569-SOMTOP.png
+   :width: 400px
+
+Find more details online - :adi:`EV-21569-SOM <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ev-21569-som.html>`

@@ -1,0 +1,63 @@
+ADF7023 - No-OS Driver for Renesas Microcontroller Platforms
+============================================================
+
+.. include:: ../adf7023.rst
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`__
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**ADF7023 Driver: \*\* :git-no-OS:`drivers/rf-transceiver/adf7023`
+   -  \**PmodRF3 Demo for RL78G14: \*\* :git-no-OS:`Renesas/RL78G14/PmodRF3`
+   -  \**RL78G14 Common Drivers: \*\* :git-no-OS:`Renesas/RL78G14/Common`
+   
+
+
+Renesas RL78G14 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the ADF7023 demonstration project on a Renesas RL78G14 platform using the PmodRF3.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`__
+-  PmodRF3
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+-  The ADF7023 demonstration project for the Renesas RL78G14 platform.
+
+.. note::
+
+   The ADF7023 demonstration project for the Renesas RL78G14 platform consists of three parts: the **ADF7023 Driver**, the **PmodRF3 Demo for RL78G14** and the **RL78G14 Common Drivers**.
+
+   
+   All three parts have to be downloaded.
+
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodAD6 has to be connected to the PMOD1 connector (see image below).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_rf3_rl78g14.jpg
+   :align: center
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`__
+

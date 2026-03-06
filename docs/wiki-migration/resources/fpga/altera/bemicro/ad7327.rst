@@ -1,0 +1,318 @@
+BeMicro FPGA Project for AD7327 with Nios driver
+================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7327`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7327SDZ`
+
+Overview
+========
+
+This lab presents the steps to setup an environment for using the :adi:`EVAL-AD7327SDZ` evaluation board together with the `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__ USB stick and the Nios II Embedded Development Suite (EDS). Below is presented a picture of the EVAL-AD7327SDZ Evaluation Board with the BeMicro SDK Platform.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7327_bemicro.jpg
+   :alt: ad7327_bemicro.jpg
+   :align: center
+   :width: 400px
+
+For component evaluation and performance purposes, as opposed to quick prototyping, the user is directed to use the part evaluation setup. This consists of:
+
+::
+
+   *1.  A controller board like the SDP-B ( EVAL-SDP-CS1Z)
+   *2.  The component SDP compatible product evaluation board
+   *3.  Corresponding PC software ( shipped with the product evaluation board)
+
+The SDP-B controller board is part of Analog Devices System Demonstration Platform (SDP). It provides a high speed USB 2.0 connection from the PC to the component evaluation board. The PC runs the evaluation software. Each evaluation board, which is an SDP compatible daughter board, includes the necessary installation file required for performance testing.
+
+**Note:** it is expected that the analog performance on the two platforms may differ.
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD7327SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7327_sdp1z.jpg
+   :alt: ad7327_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The :adi:`EVAL-AD7327SDZ` evaluation board is a member of a growing number of boards available for the **SDP**. It was designed to help customers evaluate performance or quickly prototype new **AD7327** circuits and reduce design time.
+
+The :adi:`AD7327` is an 8-Channel, 12-Bit plus Sign Successive Approximation ADC designed on the iCMOS (industrial CMOS) process. iCMOS is a process combining high voltage silicon with submicron CMOS and complementary bipolar technologies. It enables the development of a wide range of high performance analog ICs capable of 33 V operation in a footprint that no previous generation of high voltage parts could achieve. Unlike analog ICs using conventional CMOS processes, iCMOS components can accept bipolar input signals while providing increased performance, dramatically reduced power consumption, and reduced package size.
+
+The AD7327 can accept true bipolar Analog Input signals. The AD7327 has four software selectable inputs Ranges, ±10 V, ±5 V, ±2.5 V and 0 to 10 V. Each analog input channel can be independently programmed to one of the four input ranges. The Analog input channels on the AD7327 can be programmed to be Single-Ended, true Differential or Pseudo Differential.
+
+More information
+----------------
+
+-  :adi:`AD7327 Product Info <AD7327>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD7327SDZ` evaluation board user guide
+-  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__
+-  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Hardware Items
+--------------
+
+Below is presented the list of required hardware items:
+
+-  Arrow Electronics `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__ FPGA-based MCU Evaluation Board
+-  :adi:`BeMicro SDK/SDP Interposer <sdp-bemicro>` adapter board
+-  :adi:`EVAL-AD7327SDZ` evaluation board
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+
+Software Tools
+--------------
+
+Below is presented the list of required software tools:
+
+-  `Quartus II Web Edition <http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html>`__ design software v12.0sp2
+-  `Nios II EDS <https://www.altera.com/download/software/nios-ii>`__ v12.0sp2
+
+The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
+
+Downloads
+---------
+
+-  `Lab Design Files <https://wiki.analog.com/_media/{{/resources/fpga/altera/bemicro/ad7327_evalboardlab.zip>`__
+
+Extract the Lab Files
+---------------------
+
+Create a folder called “\ **ADIEvalBoardLab**\ ” on your PC and extract the **ad7327_evalboardlab.zip** archive to this folder. Make sure that there are **NO SPACES** in the directory path. After extracting the archive the following folders should be present in the **ADIEvalBoardLab** folder: **FPGA**, **Hdl** **Software**, **DataCapture**, **NiosCpu**.
+
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Folder**  | **Description**                                                                                                                                                                                                                                                                          |
++=============+==========================================================================================================================================================================================================================================================================================+
+| FPGA        | Contains all the files necessary to program the BeMicro FPGA board in order to run the evaluation project. By executing the script *program_fpga.bat* the FPGA will be programmed with the evaluation project. New NIOS II applications can be created using the files from this folder. |
+|             | The *ip* subfolder contains the AD7327 NIOS II peripheral's source code.                                                                                                                                                                                                                 |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Hdl         | Contains the source files for the AD7327 HDL driver:                                                                                                                                                                                                                                     |
+|             | - The *doc* subfolder contains a brief documentation for the driver.                                                                                                                                                                                                                     |
+|             | - The *src* subfolder contains the HDL source files.                                                                                                                                                                                                                                     |
+|             | - The *tb* folder contains the sources of the driver's testbench.                                                                                                                                                                                                                        |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| NiosCpu     | Contains the Quartus evaluation project source files . The *ip* subfolder contains the AD7327 Nios2 peripheral source code.                                                                                                                                                              |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Software    | Contains the source files of the Nios2 SBT evaluation project.                                                                                                                                                                                                                           |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DataCapture | Contains the script files used for data acquisition                                                                                                                                                                                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+.. note::
+
+   See `common_usb <https://wiki.analog.com/common_usb>`__
+
+
+AD7327 Evaluation Project Overview
+==================================
+
+The evaluation project contains all the source files needed to build a system that can be used to configure the AD7327 and capture data from it. The system consists of a Nios II softcore processor that is implemented in the FPGA found on the BeMicro board and a PC application. The softcore controls the communication with the Device Under Test (DUT) and the data capture process. The captured data is saved into the onchip RAM of the BeMicro board and aftwerwards it is read by the PC application and saved into a comma separated values (.csv) file that can be used for further data analysis.
+
+The following components are implemented in the FPGA design:
+
+============================= ========== ===
+Name                          Address    IRQ
+============================= ========== ===
+CPU                           0x00000800 -
+JTAG UART                     0x00000090 0
+uC-Probe UART                 0x000000A0 1
+EPCS FLASH CONTROLLER         0x00001800 2
+OnChip RAM                    0x00010000 -
+LED GPIO                      0x00000100 -
+GPIO                          0x00002080 -
+CTRL GPIO                     0x000020A0 -
+SYS ID                        0x00000040 -
+TIMER                         0x00000060 3
+AVALON MASTER                 -          -
+Main PLL                      0x00000080 -
+AD7327 0                      0x00000120 -
+**Table 1 System components**            
+============================= ========== ===
+
+The Nios II processor contains a peripheral that implements the communication protocol with the DUT. The peripheral is divided into three logical modules: a module which implements the interface with the Avalon bus and the communication with the onchip RAM, a module which implements an Avalon master interface which is used to write data directly in the onchip RAM and a module which is the actual driver of the DUT. The driver can also be used as standalone in FPGA designs which do not contain a softcore. Following is presented a block diagram of the HDL driver and a description of the driver's interface signals.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7327_block_diagram.png
+   :alt: HDL driver block diagram
+   :align: center
+   :width: 400px
+
+Table 2 describes the ports of the AD7327 HDL driver.
+
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Port                                        | Direction | Width | Description                                                                                                                                                                                                                                  |
++=============================================+===========+=======+==============================================================================================================================================================================================================================================+
+| **Clock and reset ports**                   |           |       |                                                                                                                                                                                                                                              |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| FPGA_CLK_I                                  | IN        | 1     | Main clock input                                                                                                                                                                                                                             |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CLK_I                                   | IN        | 1     | Main clock input                                                                                                                                                                                                                             |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| RESET_I                                     | IN        | 1     | Active low reset signal                                                                                                                                                                                                                      |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **IP control and data ports**               |           |       |                                                                                                                                                                                                                                              |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| WR_DATA_N_I                                 | IN        | 1     | Active low signal use to initiate a data write. The data to be written to the driver must be active on the DATA_I bus one clock cycle before this signal is set low and must be kept active until the DATA_WR_READY_O signal returns to high |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DATA_I                                      | IN        | 32    | Input bus used to receive the data to configure the operation of AD7327 driver                                                                                                                                                               |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DATA_O                                      | OUT       | 16    | Parallel bus to transfer the data to the upper module                                                                                                                                                                                        |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DATA_RD_READY_O                             | OUT       | 1     | Signals that at port DATA_O there is new data available                                                                                                                                                                                      |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DATA_WR_READY_O                             | OUT       | 1     | Signals that the write from upper module has been performed                                                                                                                                                                                  |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **External connectors**                     |           |       |                                                                                                                                                                                                                                              |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_SDO_I                                   | OUT       | 1     | The conversion result from the AD7327 is provided on this pin as a serial data stream                                                                                                                                                        |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_SDI_O                                   | OUT       | 1     | Data to be written to the control register of the AD7327 is provided on this pin                                                                                                                                                             |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_SCLK_O                                  | OUT       | 1     | This pin provides the serial clock for accessing data from the part. It is also used as the clock source for the conversion process of the AD7327                                                                                            |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CS_N_O                                  | OUT       | 1     | This pin provides the dual function of initiating conversions on the AD7327 and also frames the serial data transfer                                                                                                                         |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Table 2 AD7327 driver ports description** |           |       |                                                                                                                                                                                                                                              |
++---------------------------------------------+-----------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| The following figures present the timing diagram for the read and write operations for the AD7327 driver:
+| |Read operations time diagram|
+| |image1|
+
+| 
+| Table 3 describes the ports of the Avalon peripheral:
+
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Port                                            | Direction | Width | Description                                                                                                                                       |
++=================================================+===========+=======+===================================================================================================================================================+
+| **Clock and reset ports**                       |           |       |                                                                                                                                                   |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| CLK_I                                           | IN        | 1     | Main clock input                                                                                                                                  |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| RESET_I                                         | IN        | 1     | System reset                                                                                                                                      |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Avalon Slave Interface**                      |           |       |                                                                                                                                                   |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_WRITEDATA_I                              | IN        | 32    | Slave write data bus                                                                                                                              |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_WRITE_I                                  | IN        | 1     | Slave write data request                                                                                                                          |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_READ_I                                   | IN        | 1     | Slave read data request                                                                                                                           |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_ADDRESS_I                                | IN        | 2     | Slave address bus                                                                                                                                 |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_READDATA_O                               | OUT       | 32    | Slave read data bus                                                                                                                               |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Avalon Master Interface**                     |           |       |                                                                                                                                                   |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_WAITREQUEST                       | IN        | 1     | Master wait request signal                                                                                                                        |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_ADDRESS_O                         | OUT       | 32    | Master address bus                                                                                                                                |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_WRITE_O                           | OUT       | 1     | Master write signal                                                                                                                               |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_BYTEENABLE_O                      | OUT       | 4     | Master byte enable signals                                                                                                                        |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_WRITEDATA_O                       | OUT       | 32    | Master write data bus                                                                                                                             |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| **External connectors**                         |           |       |                                                                                                                                                   |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_SDO_I                                       | OUT       | 1     | The conversion result from the AD7327 is provided on this pin as a serial data stream                                                             |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_SDI_O                                       | OUT       | 1     | Data to be written to the control register of the AD7327 is provided on this pin                                                                  |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_SCLK_O                                      | OUT       | 1     | This pin provides the serial clock for accessing data from the part. It is also used as the clock source for the conversion process of the AD7327 |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CS_N_O                                      | OUT       | 1     | This pin provides the dual function of initiating conversions on the AD7327 and also frames the serial data transfer                              |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Table 3 Avalon peripheral ports description** |           |       |                                                                                                                                                   |
++-------------------------------------------------+-----------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Table 4 describes the registers of the Avalon peripheral:
+
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| Name                                                | Offset | Width | Access | Description                                                                                                 |
++=====================================================+========+=======+========+=============================================================================================================+
+| CONTROL_REGISTER                                    | 0      | 32    | RW     | Bit 0 is used to start data acquisition                                                                     |
+|                                                     |        |       |        | Bit 1 is used to initiate software reset of the core                                                        |
+|                                                     |        |       |        | Bit 2 is used to configure the Avalon write master core to write data to the same location                  |
+|                                                     |        |       |        | Bit 3 is used to write data to the AD7327 driver                                                            |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| ACQ_COUNT_REGISTER                                  | 1      | 32    | RW     | Register used to configure the number of samples to be acquired when acquisition is started                 |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| BASE_REGISTER                                       | 2      | 32    | RW     | Register used to configure the base address of the memory location where the acquired data is to be written |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| STATUS_REGISTER                                     | 3      | 32    | R      | Bit 0 is used to signal that the acquisition is complete                                                    |
+|                                                     |        |       |        | Bit 1 is used to signal that the internal memory buffer has been overflown                                  |
+|                                                     |        |       |        | Bit 2 is used to signal that the user has performed a read of an unavailable register                       |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| DUT_WRITE_REGISTER                                  | 4      | 32    | RW     | Data to be written to the ADC driver.                                                                       |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| **Table 4 Avalon peripheral registers description** |        |       |        |                                                                                                             |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+
+Quick Evaluation
+================
+
+
+.. note::
+
+   See `common_quick_evaluation <https://wiki.analog.com/common_quick_evaluation>`__
+
+
+NIOS II Software Design
+=======================
+
+
+.. note::
+
+   See `common_software_design <https://wiki.analog.com/common_software_design>`__
+
+
+Demonstration Project User Interface
+====================================
+
+After the FPGA is correctly programmed the data acquisition process can start by executing the data_capture.bat script. The data_capture.tcl file can be modified so for different configuration words to be programmed on the AD7327.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cmd_interface.png
+   :alt: Demonstration Project Command Interface
+   :align: center
+   :width: 500px
+
+If the resulting csv file is opened with Microsoft Excel, the data will be displayed on a different number of columns, each column corresponding to a channel.
+
+**Note:** If several consecutive data acquisitions are performed the captured data is appended to the **Acquisition.csv** file.
+
+Troubleshooting
+===============
+
+
+.. note::
+
+   See `troubleshooting12 <https://wiki.analog.com/troubleshooting12>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |Read operations time diagram| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/read_timing_ad7327.png
+   :width: 500px
+.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/write_timing_ad7327.png
+   :width: 500px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

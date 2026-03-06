@@ -1,0 +1,221 @@
+ADT7420 Pmod Xilinx FPGA Reference Design
+=========================================
+
+Introduction
+------------
+
+The :adi:`ADT7420` is a high accuracy digital temperature sensor offering breakthrough performance over a wide industrial range, housed in a 4 mm × 4 mm LFCSP package. It contains an internal band gap reference, a temperature sensor, and a 16-bit ADC to monitor and digitize the temperature to 0.0078°C resolution. The ADC resolution, by default, is set to 13 bits (0.0625°C). The ADC resolution is a user programmable mode that can be changed through the serial interface.
+
+**HW Platform(s):**
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+
+Quick Start Guide
+-----------------
+
+The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+-  `PmodTMP2 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-TMP2>`__
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with LX9 and/or Xilix tools, please visit
+
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__ for details.
+   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
+   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
+
+
+Avnet LX9 MicroBoard Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (ADT7420\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodTMP2 to J5 connector of LX9 board, pins 3 to 6 (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodTMP2.jpg
+   :alt: PmodTMP2 and LX-9
+   :width: 200px
+
+Digilent Nexys™3 Spartan-6 FPGA Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (ADT7420\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodTMP2 to JA connector of NEXYS3 board, pins 3 to 6 (see image below). You can use an extension cable for ease of use. . Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_nexys3.jpg
+   :alt: PmodTMP2 and Nexys™3
+   :width: 200px
+
+Avnet ZedBoard
+~~~~~~~~~~~~~~
+
+To begin, connect the PmodTMP2 to JC1 connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_zed.jpg
+   :alt: PmodTMP2 and ZedBoard
+   :width: 200px
+
+FPGA Configuration for Nexys3 and LX-9 MicroBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../adt7420/sw/ADT7420.bit).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodTMP2Impact.jpg
+   :alt: Programming FPGA in IMPACT
+   :width: 200px
+
+FPGA Configuration for ZedBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the **download.bat** script from the "../bin" folder downloaded from the github (see the links in the download section of the wiki page). The script will automatically configure the ZYNQ SoC and download the \*.elf file afterwards.
+
+.. tip::
+
+   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+
+
+If programming was successful, the **Main Menu** will apear in your UART terminal, as seen in the picture below. There are 10 options. Pressing [t], [r], [h], [l], [c], [y], [f], [s], [m] or [q] key will allow you to select the desired option.
+
+| |Main Menu|
+| **Read Temperature** will start printing temperatures read from the ADT7420. Pressing [m] at any time will stop the process and return to the Main Menu.
+
+| |Read Temperature|
+| **Set Resolution** allows choosing between 16 bit or 13 bit accuracy. The desired resolution is selected by pressing [1] or [2].
+
+| |Set Resolution|
+| **Set THigh** is used to set the upper temperature limit (for internal comparison purposes - when used as thermostat). The value entered is between 0x0000 and 0x1FFF for 13 bit resolution or between 0x0000 and 0xFFFF for 16 bit resolution. If entering less than 4 characters, you must press [Enter] in order to validate the result. If entering 4 characters, the result is automatically validated.
+
+| |Set T High|
+| **Set TLow** is used to set the lower temperature limit (for internal comparison purposes - when used as thermostat). The value entered is between 0x0000 and 0x1FFF for 13 bit resolution or between 0x0000 and 0xFFFF for 16 bit resolution. If entering less than 4 characters, you must press [Enter] in order to validate the result. If entering 4 characters, the result is automatically validated.
+
+| |Set T Low|
+| **Set TCrit** is used to set the critical temperature limit. The value entered is between 0x0000 and 0x1FFF for 13 bit resolution or between 0x0000 and 0xFFFF for 16 bit resolution. If entering less than 4 characters, you must press [Enter] in order to validate the result. If entering 4 characters, the result is automatically validated.
+
+| |Set T Crit|
+| **Set THyst** is used to set the hysteresis. The value entered is between 0x0000 and 0x000F. If entering less than 4 characters, you must press [Enter] in order to validate the result. If entering 4 characters, the result is automatically validated.
+
+| |Set T Hyst|
+| **Set Fault Queue** allow setting the number of fault events that have to take place before issuing an interrupt signal. Choosing the number of faults is done by pressing [1] to [4].
+
+| |Set fault queue|
+| **Display Settings** will display the current settings for the device (Resolution, THigh, TLow, TCrit, THyst, Number of faults, Alert Mode, CT pin and INT pin active values).
+
+| |Display current settings|
+| Pressing **[m]** will display the available options (main menu).
+
+Pressing **[q]** will exit the application.
+
+Using the reference design
+--------------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design is a SPI interface used to communicate with the device. The software programs the ADT7420s internal registers, and afterwards reads desired data from the device and prints it via UART.
+
+|
+
+.. important::
+
+
+| \* Connecting the PmodTMP2 to the boards using an extension cable provides ease of use.
+   
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   
+   |
+
+   |
+
+
+.. important::
+
+   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+
+   
+   .. code:: c
+   
+      // Select between PS7 or AXI Interface
+      #define USE_PS7      1
+      // SPI used in the design
+      #define USE_SPI      0
+      // I2C used in the design
+      #define USE_I2C      1
+      // Timer (+interrupts) used in the design
+      #define USE_TIMER    0
+      // External interrupts used in the design
+      #define USE_EXTERNAL     0
+      // GPIO used in the design
+      #define USE_GPIO         0
+   
+
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \**Avnet LX-9 MicroBoard: **
+     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adt7420_lx9.zip>`__\ **
+     **\ Digilent Nexys™3:**
+     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adt7420_nexys3.zip>`__\ **
+     **\ Avnet ZedBoard:\*\*
+   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   | \* :git-no-OS:`PmodTMP2 Driver Files <legacy/Pmods/PmodTMP2>`
+   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <legacy/Pmods/Common/sw>`
+   | \* :git-no-OS:`Programming Script <legacy/Pmods/PmodTMP2/bin>`
+   |
+
+
+More information
+----------------
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |Main Menu| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu1.jpg
+   :width: 600px
+.. |Read Temperature| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu2.jpg
+   :width: 600px
+.. |Set Resolution| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu3.jpg
+   :width: 600px
+.. |Set T High| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu4.jpg
+   :width: 600px
+.. |Set T Low| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu5.jpg
+   :width: 600px
+.. |Set T Crit| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu6.jpg
+   :width: 600px
+.. |Set T Hyst| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu7.jpg
+   :width: 600px
+.. |Set fault queue| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu8.jpg
+   :width: 600px
+.. |Display current settings| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodtmp2_menu9.jpg
+   :width: 600px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

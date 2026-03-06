@@ -1,0 +1,74 @@
+Supported Devices
+=================
+
+-  :adi:`AD7466`
+-  :adi:`AD7467`
+-  :adi:`AD7468`
+-  :adi:`AD7475`
+-  :adi:`AD7476`
+-  :adi:`AD7476A`
+-  :adi:`AD7477`
+-  :adi:`AD7477A`
+-  :adi:`AD7478`
+-  :adi:`AD7478A`
+-  :adi:`AD7495`
+
+Evaluation Boards
+=================
+
+-  `PmodAD1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1>`__
+-  :adi:`EVAL-AD7466`
+-  :adi:`EVAL-AD7476A`
+
+Reference Circuits
+==================
+
+-  :adi:`CN0178`
+
+Overview
+========
+
+.. include:: ../../pmods/ad7476.rst
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the AD74xx part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD74xx driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD74xx driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD74xx driver:
+
++------------------------------------------------------------------+--------------------------------------------------+
+| Function                                                         | Description                                      |
++==================================================================+==================================================+
+| char AD74xx_Init(char partNumber)                                | Initializes the device.                          |
++------------------------------------------------------------------+--------------------------------------------------+
+| void AD74xx_PowerDown(void)                                      | Powers down the device.                          |
++------------------------------------------------------------------+--------------------------------------------------+
+| void AD74xx_PowerUp(void)                                        | Powers up the device by performing a dummy read. |
++------------------------------------------------------------------+--------------------------------------------------+
+| unsigned short AD74xx_GetRegisterValue(void)                     | Reads the conversion value.                      |
++------------------------------------------------------------------+--------------------------------------------------+
+| float AD74xx_ConvertToVolts(unsigned short rawValue, float vRef) | Converts a raw sample to volts.                  |
++------------------------------------------------------------------+--------------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png

@@ -1,0 +1,603 @@
+CED1Z FPGA Project for AD7626 with Nios driver
+==============================================
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD7625_26EDZ <AD7626>` evaluation board together with the :adi:`EVAL-CED Converter Evaluation and Development (CED) Board <EVAL-CED>` and Nios II Embedded Development Suite (EDS) . Below is presented a picture of the EVAL-AD7626 Evaluation Board with the CED1 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1z_ad7626.png
+   :alt: ced1z_ad7626.png
+   :align: center
+   :width: 500px
+
+The CED1Z board is intended for use in evaluation, demonstration and development of systems using Analog Devices precision converters. It provides the necessary communications between the converter and the PC, programming or controlling the device, transmitting or receiving data over a USB link.
+
+The :adi:`AD7626` is a 16-bit, 10MSPS, charge redistribution successive approximation register (SAR) architecture, analog to-digital converter (ADC). SAR architecture allows unmatched performance both in noise – 92dB SNR - and in linearity 1LSB. The AD7626 contains a high speed 16-bit sampling ADC, an internal conversion clock, and an internal buffered reference.On the CNV edge, it samples the voltage difference between IN+ and IN- pins. The voltages on these pins swing in opposite phase between 0 V and REF. The 4.096V reference voltage, REF, can be generated internally or applied externally. All converted results are available on a single LVDS self-clocked or echoed-clock serial interface reducing external hardware connections. The AD7626 is housed in a 32-lead LFCSP (5mm by 5mm) with operation specified from -40°C to +85°C.
+
+The **EVAL-AD7625_26EDZ** is an evaluation board for the 32 lead AD7625 and AD7626 16-bit PulSAR® analog to digital converter. These low power ADCs offer very high performance of up to 6MSPS (AD7625) and 10MSPS(AD7626) throughput rates with flexible parallel interface on the 96-pin interface.
+
+More information
+----------------
+
+-  :adi:`AD7626 Product Info <AD7626>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD7625_26EDZ evaluation board user guide </static/imported-files/eval_boards/EVAL-AD7625_7626EDZ.pdf>`
+-  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Hardware Items
+--------------
+
+Below is presented the list of required hardware items:
+
+-  Analog Devices :adi:`EVAL-CED Converter Evaluation and Development (CED) Board <EVAL-CED>`
+-  `Terasic USB Blaster <http://www.terasic.com.tw/>`__
+-  **EVAL-AD7625_26EDZ** evaluation board
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+
+Software Tools
+--------------
+
+Below is presented the list of required software tools:
+
+-  `Quartus II Web Edition <http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html>`__ design software v11.0
+-  `Nios II EDS <https://www.altera.com/download/software/nios-ii>`__ v11.0
+
+The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
+
+Downloads
+---------
+
+-  `Evaluation Project Files <https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ad7626_evalboard.zip>`__
+
+Extract the Lab Files
+---------------------
+
+Create a folder called “\ **ADIEvalBoard**\ ” on your PC and extract the **ad7626_evalboard.zip** archive to this folder. Make sure that there are **NO SPACES** in the directory path. After extracting the archive the following folders should be present in the **ADIEvalBoard** folder: **EvalBoardFPGA**, **FPGA**, **Hdl**, **NiosCpu**, **Software**, **DataCapture**
+
++---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Folder**    | **Description**                                                                                                                                                                                                                                                       |
++===============+=======================================================================================================================================================================================================================================================================+
+| EvalBoardFPGA | Contains the reference project which is loaded on the EVAL-AD7625_26EDZ board. The AD7626.v and SCLK_Generator.v files contain the main ADC driver modules                                                                                                            |
++---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| FPGA          | Contains all the files necessary to program the CED1Z board in order to evaluate the ADC. By executing the script *program_fpga.bat* the FPGA will be programmed with the evaluation project. New Nios2 applications can be created using the files from this folder. |
+|               | The *ip* subfolder contains the HDL core for connecting the evaluation board to the CED1Z board , the software drivers for HAL in */hdl/src/HAL* and the AD7626 registers in */hdl/src/inc*                                                                           |
++---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Hdl           | Contains the source files for the AD7626 HDL driver:                                                                                                                                                                                                                  |
+|               | - The *doc* subfolder contains a brief documentation for the core.                                                                                                                                                                                                    |
+|               | - The *src* subfolder contains the HDL source files.                                                                                                                                                                                                                  |
+|               | - The *tb* folder contains the sources of the core's testbench                                                                                                                                                                                                        |
++---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| NiosCpu       | Contains the CED1Z Quartus evaluation project source files . The *ip* subfolder contains the AD7626 SOPC component                                                                                                                                                    |
++---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Software      | Contains the source files of the Nios2 SBT evaluation project                                                                                                                                                                                                         |
++---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DataCapture   | Contains the script files used for data acquisition                                                                                                                                                                                                                   |
++---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Install the USB-Blaster Device Driver
+-------------------------------------
+
+The USB Blaster is used to program the FPGA on the CED1Z board and also for data exchange between the system and a PC. To install the driver plug the Terasic USB Blaster into one of the PCs USB ports. Your Windows PC will find the new hardware and try to install the driver.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image007.png
+   :alt: image007.png
+   :align: center
+   :width: 350px
+
+Since Windows cannot locate the driver for the device the automatic installation will fail and the driver has to be installed manually. In the *Device Manager* right click on the **USB-Blaster** device and select **Update Driver Software**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image009.png
+   :alt: image009.png
+   :align: center
+   :width: 700px
+
+In the next dialog box select the option **Browse my computer for driver software**. A new dialog will open where it is possible to point to the driver’s location. Set the location to **altera\\11.0\\quartus\\drivers\\usb-blaster** and press **Next**.
+
+|image011.png|\ |image013.png|
+
+
+.. tip::
+
+   If Windows presents you with a message that the drivers have not passed Windows Logo testing, please click “\ **Install this driver software anyway**\ ”. Upon installation completion a message will be displayed to inform that the installation is finished.
+
+
+|image017.png|\ |image016.jpg|
+
+.. |image011.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image011.png
+   :width: 400px
+.. |image013.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image013.png
+   :width: 400px
+.. |image017.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image017.png
+   :width: 400px
+.. |image016.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image016.jpg
+   :width: 400px
+
+
+AD7626 Evaluation Project Overview
+==================================
+
+The evaluation project contains all the source files needed to build a system that can be used to configure the AD7626 and capture data from it. The system consists of a Nios II softcore processor that is implemented in the FPGA found on the CED1Z board and a PC application. The softcore controls the communication with the Device Under Test (DUT) and the data capture process. The captured data is saved into the SRAM of the CED1Z board and aftwerwards it is read by the PC application and saved into a comma separated values (.csv) file that can be used for further data analysis.
+
+FPGA Design
+-----------
+
+The following components are implemented in the FPGA design:
+
+============================= ========== ===
+Name                          Address    IRQ
+============================= ========== ===
+CPU                           0x00000800 -
+PLL                           0x00000000 -
+ONCHIP_MEM                    0x00002000 -
+LEDS                          0x00000010 -
+SYSID                         0x00000020 -
+SRAM                          0x00200000 -
+TRISTATE_BRIDGE_0             -          -
+UCPROBE_UART                  0x00000028 0
+JTAG_UART_0                   0x00000030 1
+SYS_TIMER                     0x00000040 2
+MM_CONSOLE_MASTER             -          -
+PWR_DATA                      0x00000060 -
+I2C_INT                       0x00000080 -
+PWR_EN_CLK                    0x000000a0 -
+AD7626_0                      0x000000c0 -
+**Table 1 System components**            
+============================= ========== ===
+
+The Nios II processor contains a peripheral that implements the communication protocol with the DUT. The peripheral is divided into three logical modules: a module which implements the interface with the Avalon bus and the communication with the SRAM, a module which implements an Avalon master interface which is used to write data directly in the SRAM and a module which communicates with the evaluation board. Following is presented a block diagram of the HDL core and a description of the interface signals.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ad7626_pinout.png
+   :alt: Avalon core pinout diagram
+   :align: center
+   :width: 500px
+
+Table 2 describes the port definitions of the Avalon peripheral:
+
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Port                         | Direction | Width | Description                                                                                                                                                       |
++==============================+===========+=======+===================================================================================================================================================================+
+| **Generic pins**             |           |       |                                                                                                                                                                   |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CLK_I                        | IN        | 1     | Main clock input                                                                                                                                                  |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| RESET_I                      | IN        | 1     | System reset                                                                                                                                                      |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Avalon Slave Interface**   |           |       |                                                                                                                                                                   |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_WRITEDATA_I           | IN        | 32    | Slave write data bus                                                                                                                                              |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_WRITE_I               | IN        | 1     | Slave write data request                                                                                                                                          |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_READ_I                | IN        | 1     | Slave read data request                                                                                                                                           |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_ADDRESS_I             | IN        | 2     | Slave address bus                                                                                                                                                 |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_READDATA_O            | OUT       | 32    | Slave read data bus                                                                                                                                               |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Avalon Master Interface**  |           |       |                                                                                                                                                                   |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_WAITREQUEST    | IN        | 1     | Master wait request signal                                                                                                                                        |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_ADDRESS_O      | OUT       | 32    | Master address bus                                                                                                                                                |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_BYTEENABLE_O   | OUT       | 2     | Master byte enable signals                                                                                                                                        |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_WRITEDATA_O    | OUT       | 16    | Master write data bus                                                                                                                                             |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **External connectors**      |           |       |                                                                                                                                                                   |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| BDB_IO                       | I/O       | 16    | Bidirectional data bus used to write/read data to/from the AD7625_26EDZ board                                                                                     |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| BBUSY_I                      | IN        | 1     | Signal that indicates the status of the conversion. Once the conversion is complete and the result is available in the output register, the BUSY output goes high |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| BRD_N_O                      | OUT       | 1     | Signal used by the CED1Z board to read data from the AD7625_26EDZ board                                                                                           |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| BWR_N_O                      | OUT       | 1     | Signal used by the CED1Z board to write data to the AD7625_26EDZ board                                                                                            |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| BADDR_O                      | OUT       | 3     | Used to select the register to be read from the AD7625_26EDZ board.                                                                                               |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| BRESET_O                     | OUT       | 1     | Used to reset the evaluation board                                                                                                                                |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Table 2 Port description** |           |       |                                                                                                                                                                   |
++------------------------------+-----------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Table 3 describes the registers of the Avalon peripheral:
+
++----------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| Name                             | Offset | Width | Access | Description                                                                                                                                     |
++==================================+========+=======+========+=================================================================================================================================================+
+| CONTROL_REGISTER                 | 0      | 32    | RW     | Bit 0 is used to start data acquisition                                                                                                         |
+|                                  |        |       |        | Bit 1 is used to initiate software reset of the core                                                                                            |
+|                                  |        |       |        | Bit 2 is used to configure the Avalon write master core to write data to the same location                                                      |
+|                                  |        |       |        | Bit 3 is used to write data to the AD7626 evaluation board                                                                                      |
++----------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ACQ_COUNT_REGISTER               | 1      | 32    | RW     | Register used to configure the number of samples to be acquired when acquisition is started                                                     |
++----------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| BASE_REGISTER                    | 2      | 32    | RW     | Register used to configure the base address of the memory location where the acquired data is to be written                                     |
++----------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| STATUS                           | 3      | 32    | R      | Bit 0 is used to signal that the acquisition is complete                                                                                        |
+|                                  |        |       |        | Bit 1 is used to signal that the internal memory buffer has been overflown                                                                      |
+|                                  |        |       |        | Bit 2 is used to signal that the user has performed a write of a read only register register                                                    |
++----------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| DUT_WRITE_REGISTER               | 4      | 32    | W      | Register used to perform writes on the device under test. Bits [15:0] are used for data and [20:16] are used as address. The rest are discarded |
++----------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Table 3 Register description** |        |       |        |                                                                                                                                                 |
++----------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+The follwing figure presents the timing diagram for the read operations from the AD7626 core.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ad7626_read_timing.png
+   :alt: Read operations time diagram
+   :align: center
+   :width: 500px
+
+AD7626 HDL driver for "Echoed-clock" mode
+-----------------------------------------
+
+In order to acquire data from the AD7626, several modules are implemented in the evaluation board FPGA.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ad7626edz_system.png
+   :alt: Evaluation board driver overview
+   :align: center
+   :width: 800px
+
+| This top view is used to show how to interconnect different modules to the system.
+| EN0 and EN1 are driven by user logic. Depending on the application they can be driven by HDL or connected directly to VDD/GND.
+| CNVST should be generated by user logic with a periodicity of at least 100ns for AD7626.
+| The driver is composed of two main modules, AD7626 and SCLK_Generator.
+| The AD7626 module is used to read serial data from the ADC, resynchornize it to the FPGA clock and send it to an upper module on a 16 bit bus.
+| The SCLK_Generator module generates the clock signal to be sent to the ADC. It also generates a signal used to synchronize the received data and one signal used to indicate to the evaluation board top module that new date has been acquired, synchronized and is ready to be read.
+
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+| Port                                               | Direction | Width | Description                                                            |
++====================================================+===========+=======+========================================================================+
+| **Generic pins**                                   |           |       |                                                                        |
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+| FAST_CLK_I                                         | IN        | 1     | 250 MHz clock                                                          |
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+| RESET_I                                            | IN        | 1     | Module reset                                                           |
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+| DCO_I                                              | IN        | 1     | Echoed clock from the AD7626                                           |
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+| ADC_RDY_I                                          | IN        | 1     | Signals that clock can be sent to the AD7626 in order to retrieve data |
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+| D_I                                                | IN        | 1     | Serial data from the AD7626. Sampled on the positive edge of DCO_I     |
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+| CLK_O                                              | OUT       | 1     | Clock signal sent to the AD7626 in order to retrieve data              |
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+| PAR_DATA_O                                         | OUT       | 16    | Bus used to transfer data to the EvalBoard_top module                  |
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+| PAR_DATA_RDY_O                                     | OUT       | 1     | Signals that data is ready to be read to the EvalBoard_top module      |
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+| **Table 3 Port description for the AD7626 module** |           |       |                                                                        |
++----------------------------------------------------+-----------+-------+------------------------------------------------------------------------+
+
++------------------------------------------------------------+-----------+-------+--------------------------------------------------------------------------+
+| Port                                                       | Direction | Width | Description                                                              |
++============================================================+===========+=======+==========================================================================+
+| **Generic pins**                                           |           |       |                                                                          |
++------------------------------------------------------------+-----------+-------+--------------------------------------------------------------------------+
+| FAST_CLK_I                                                 | IN        | 1     | 250MHz clock                                                             |
++------------------------------------------------------------+-----------+-------+--------------------------------------------------------------------------+
+| RESET_I                                                    | IN        | 1     | Module reset                                                             |
++------------------------------------------------------------+-----------+-------+--------------------------------------------------------------------------+
+| ADC_RDY_I                                                  | IN        | 1     | Signals that clock can be sent to the AD7626 in order to retrieve data   |
++------------------------------------------------------------+-----------+-------+--------------------------------------------------------------------------+
+| SLF_CLK_I                                                  | IN        | 1     | Signal which selects between Self clocked and Echoed clock mode          |
++------------------------------------------------------------+-----------+-------+--------------------------------------------------------------------------+
+| CLK_O                                                      | OUT       | 1     | Clock signal sent to the AD7626 in order to retrieve data                |
++------------------------------------------------------------+-----------+-------+--------------------------------------------------------------------------+
+| SYNC_EN_O                                                  | OUT       | 1     | Signal which indicates to the AD7626 that data synchronization can start |
++------------------------------------------------------------+-----------+-------+--------------------------------------------------------------------------+
+| ECHO_RDY_O                                                 | OUT       | 1     | Signals that data is ready to be retrieved to the EvalBoard_top module   |
++------------------------------------------------------------+-----------+-------+--------------------------------------------------------------------------+
+| **Table 4 Port description for the SCLK_Generator module** |           |       |                                                                          |
++------------------------------------------------------------+-----------+-------+--------------------------------------------------------------------------+
+
+Quick Evaluation
+================
+
+The next sections of this document present all the steps needed to create a fully functional project that can be used for evaluating the operation of the ADI platform. It is possible to skip these steps and load in the FPGA an image that contains a fully functional system that can be used for platform evalution. The first step of the quick evaluation process is to program the FPGA with the image provided in the lab files. Before the image can be loaded the Quartus II Web Edition tool or the Quartus II Programmer must be installed on your computer. To load the FPGA image you must first make sure that the USB cable is not connected to the CED1Z board. Connect the USB Blaster to the J6 connector of the CED1Z and power the board. Run the program_fpga.bat batch file located in the ADIEvalBoard/FPGA folder.
+
+The Evaluation Board design presented on this page is different than the default design loaded on the AD7626EDZ. In order to use the design from this page, the Evaluation Board FPGA must be reprogrammed. To reprogram the FPGA on the Evaluation board, the following steps must be followed, AFTER the CED1Z FPGA has been programmed using program_fpga.bat:
+
+-  1. Connect the USB-Blaster to the P2 port
+-  2. Start Quartus II, Start Tools ->Programmer
+-  3. Select Mode Active Serial Programming
+-  4. Press Add File and select EvalBoardFPGA\\AD7626.pof
+-  5. Check Program/Configure and Press Start.
+-  6. After the programming ends, power off the CED1Z and reprogramm it using program_fpga.bat as described above.
+
+In order to acquire data, follow the instructions in the **Evaluation Project Data Acquisition** section.
+
+NIOS II Software Design
+=======================
+
+This section presents the steps for developing a software application that will run on the **CED1Z** system and will be used for controlling and monitoring the operation of the ADI evaluation board.
+
+Create a new project using the NIOS II Software Build Tools for Eclipse
+-----------------------------------------------------------------------
+
+Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II EDS 11.0 -> Nios II 11.0 Software Build Tools for Eclipse (SBT)**.
+
+.. tip::
+
+   NOTE: Windows 7 users will need to right-click and select **Run as administrator**. Another method is to right-click and select **Properties** and click on the **Compatibility** tab and select the **Run This Program As An Administrator** checkbox, which will make this a permanent change.
+
+
+1. Initialize Eclipse workspace
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  When Eclipse first launches, a dialog box appears asking what directory it should use for its workspace. It is useful to have a separate Eclipse workspace associated with each hardware project that is created in SOPC Builder. Browse to the **ADIEvalBoard** directory and click **Make New Folder** to create a folder for the software project. Name the new folder “\ **eclipse_workspace**\ ”. After selecting the workspace directory, click **OK** and Eclipse will launch and the workbench will appear in the **Nios II** perspective.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseworkspace.png
+   :alt: eclipseworkspace.png
+   :align: center
+   :width: 800px
+
+2. Create a new software project in the SBT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Select **File -> New -> Nios II Application and BSP from Template**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image025.png
+   :alt: image025.png
+   :align: center
+   :width: 600px
+
+-  Click the **Browse** button in the **SOPC Information File Name** dialog box.
+-  Select the **uC.sopcinfo** file located in the **ADIEvalBoard/FPGA** directory.
+-  Set the name of the Application project to “\ **ADIEvalBoard**\ ”.
+-  Select the **Blank Project** template under **Project template**.
+-  Click the **Finish** button.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseblankproject.png
+   :alt: eclipseblankproject.png
+   :align: center
+   :width: 600px
+
+The tool will create two new software project directories. Each Nios II application has 2 project directories in the Eclipse workspace.
+
+-  The application software project itself - this where the application lives.
+-  The second is the **Board Support Package (BSP)** project associated with the main application software project. This project will build the system library drivers for the specific SOPC system. This project inherits the name from the main software project and appends “\ **\_bsp**\ ” to that.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojects.png
+   :alt: eclipseprojects.png
+   :align: center
+   :width: 300px
+
+Since you chose the blank project template, there are no source files in the application project directory at this time. The BSP contains a directory of software drivers as well as a system.h header file, system initialization source code and other software infrastructure.
+
+Configure the Board Support Package
+-----------------------------------
+
+-  Configure the board support package to specify the properties of this software system by using the **BSP Editor** tool. These properties include what interface should be used for *stdio* and *stderr* messages, the memory in which stack and heap should be allocated and whether an operating system or network stack should be included with this BSP.
+-  Right click on the **ADIEvalBoard_bsp** project and select **Nios II -> BSP Editor…** from the right-click menu.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspmenu.png
+   :alt: eclipsebspmenu.png
+   :align: center
+   :width: 600px
+
+The software project provided in this lab does not make use of an operating system. All *stdout*, *stdin* and *stderr* messages will be directed to the *jtag_uart*.
+
+-  Select the **Common** settings view. In the **Common** settings view, change the following settings:
+
+   -  Select the **jtag_uart_0** for *stdin*, *stdout* and *stderr* messages. Note that you have more than one choice.
+   -  Select **none** for the *sys_clk_timer* and *timestamp_timer*.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/cedzmainsettings.png
+   :alt: cedzmainsettings.png
+   :align: center
+   :width: 800px
+
+The memory used by the design is should be changed from OnChip ram to SRAM for the .text region.
+
+-  Select **Linker Script** tab.
+-  Change .text region **Linker Region Name** from **onchip_mem** to **sram**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1zlinkersettings.png
+   :alt: ced1zlinkersettings.png
+   :align: center
+   :width: 800px
+
+-  Select **File -> Save** to save the board support package configuration to the *settings.bsp* file.
+-  Click the **Generate** button to update the BSP.
+-  When the generate has completed, select **File -> Exit** to close the BSP Editor.
+
+Configure BSP Project Build Properties
+--------------------------------------
+
+In addition to the board support package settings configured using the **BSP Editor**, there are other compilation settings managed by the Eclipse environment such as compiler flags and optimization level.
+
+-  Right click on the **ADIEvalBoard_bsp** software project and select **Properties** from the right-click menu.
+-  On the left-hand menu, select **Nios II BSP Properties**.
+-  During compilation, the code may have various levels of optimization which is a tradeoff between code size and performance. Change the **Optimization level** setting to **Level 2**
+-  Since our software does not make use of C++, uncheck **Support C++**.
+-  Check the **Reduced device drivers** option
+-  Check the **Small C library** option
+-  Press **Apply** and **OK** to regenerate the BSP and close the **Properties** window.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspproperties.png
+   :alt: eclipsebspproperties.png
+   :align: center
+   :width: 500px
+
+Add source code to the project
+------------------------------
+
+In Windows Explorer locate the project directory which contains a directory called **Software**. In Windows Explorer select all the files and directories from the **Software** folder and drag and drop them into the Eclipse software project **ADIEvalBoard**.
+
+-  Select all the files and folders and drag them over the **ADIEvalBoard** project in the SBT window and drop the files onto the project folder.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsecopy.png
+   :alt: eclipsecopy.png
+   :align: center
+   :width: 800px
+
+-  A dialog box will appear to select the desired operation. Select the option **Copy files and folders** and press **OK**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image039.png
+   :alt: image039.png
+   :align: center
+
+-  This should cause the source files to be physically copied into the file system location of the software project directory and register these source files within the Eclipse workspace so that they appear in the Project Explorer file listing.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseproject.png
+   :alt: eclipseproject.png
+   :align: center
+
+Configure Application Project Build Properties
+----------------------------------------------
+
+Just as you configured the optimization level for the BSP project, you should set the optimization level for the application software project **ADIEvalBoard** as well.
+
+-  Right click on the **ADIEvalBoard** software project and select **Properties** from the right-click menu.
+-  On the left-hand menu, select the **Nios II Application Properties** tab
+-  Change the **Optimization level** setting to **Level 2**.
+-  Press **Apply** and **OK** to save the changes.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojproperties.png
+   :alt: eclipseprojproperties.png
+   :align: center
+   :width: 500px
+
+Define Application Include Directories
+--------------------------------------
+
+Application code can be conveniently organized in a directory structure. This section shows how to define these paths in the makefile.
+
+-  In the Eclipse environment double click on **my_include_paths.in** to open the file.
+-  Click the **Ctrl** and **A** keys to select all the text. Click the **Ctrl** and **C** keys to copy all the text.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseinclude.png
+   :alt: eclipseinclude.png
+   :align: center
+   :width: 500px
+
+-  Double click on **Makefile** to open the file.
+-  If you see the message shown here about resources being out of sync, right click on the **Makefile** and select **Refresh**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsemakefileoutofdate.png
+   :alt: eclipsemakefileoutofdate.png
+   :align: center
+
+-  Select the line **APP_INCLUDE_DIRS :=**
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image049.png
+   :alt: image049.png
+   :align: center
+
+-  Click the **Ctrl** and **V** keys to replace the selected line with the include paths.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsemakefileinclude.png
+   :alt: eclipsemakefileinclude.png
+   :align: center
+
+-  Click the **Ctrl** and **S** keys to save the **Makefile**.
+
+Compile, Download and Run the Software Project
+----------------------------------------------
+
+1. Build the Application and BSP Projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Right click the **ADIEvalBoard_bsp** software project and choose **Build Project** to build the board support package.
+-  When that build completes, right click the **ADIEvalBoard** application software project and choose **Build Project** to build the Nios II application.
+
+These 2 steps will compile and build the associated board support package, then the actual application software project itself. The result of the compilation process will be an *Executable and Linked Format (.elf)* file for the application, the **ADIEvalBoard.elf** file.
+
+|eclipsebuildbsp.png| |eclipsebuildproj.png|
+
+.. important::
+
+   In case an error appears at compile time with a description like : **//section .rodata loaded at [00400164,00400477] overlaps section .text loaded at [00400164,004054d7] //** the enable_alt_load_copy_exceptions option must be unchecked from BSP Editor -> Main -> Settings -> Advanced-> hal.linker
+
+
+2. Verify the Board Connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **CED1Z** hardware is designed with a *System ID* peripheral. This peripheral is assigned a unique value based on when the hardware design was last modified in the SOPC Builder tool. SOPC Builder also places this information in the *.sopcinfo* hardware description file. The BSP is built based on the information in the *.sopcinfo* file.
+
+-  Select the **ADIEvalBoard** application software project.
+-  Select **Run -> Run Configurations…**
+-  Select the **Nios II Hardware** configuration type.
+-  Press the **New** button to create a new configuration.
+-  Change the configuration name to **CED1Z** and click **Apply**.
+-  On the **Target Connection** tab, press the **Refresh Connections** button. You may need to expand the window or scroll to the right to see this button.
+-  Select the **jtag_uart_0** as the **Byte Stream Device** for *stdio*.
+-  Check the **Ignore mismatched system ID option**.
+-  Check the **Ignore mismatched system timestamp option**.
+
+|eclipserunconfig.png| |image059.png|
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/ignoreid.png
+   :alt: ignoreid.png
+   :align: center
+   :width: 800px
+
+3. Run the Software Project on the Target
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To run the software project on the Nios II processor:
+
+::
+
+    * Before running the the software project, the FPGA located on the CED1Z must be programmed with the Nios II system image. To program the FPGA run the //**ADIEvalBoard/FPGA/program_fpga.bat**// script.
+    * Press the **//Run//** button in the **//Run Configurations//** window. This will re-build the software project to create an up–to-date executable and then download the code into memory on the **CED1Z** hardware. The debugger resets the Nios II processor, and it executes the downloaded code. Note that the code is verified in memory before it is executed
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsestartprogram.png
+   :alt: eclipsestartprogram.png
+   :align: center
+   :width: 500px
+
+.. hint::
+
+   The code size and start address might be different than the ones displayed in the above screenshot.
+
+
+.. |eclipsebuildbsp.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildbsp.png
+   :width: 400px
+.. |eclipsebuildproj.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildproj.png
+   :width: 400px
+.. |eclipserunconfig.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipserunconfig.png
+   :width: 400px
+.. |image059.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image059.png
+   :width: 400px
+
+
+Evaluation Project Data Acquisition
+===================================
+
+In order to capture data from the ADC the following steps must be performed:
+
+-  Make sure that the **CED1Z FPGA** is properly programmed and the USB Blaster is connected to the CED1Z board.
+-  Execute **data_capture.bat** script. At this point 1 Mbyte of data will be acquired from the ADC and saved into the CED1Z SRAM memory. The data stored in the CED1Z SRAM memory is transfered to the PC through the JTAG-UART link provided by the USB Blaster. After the data is transferred to the PC it is converted to 2's Complement 16 bit values.
+-  The resulting data is saved into a comma separated values (.csv) file named **Acquisition.csv**, located in the same folder as the **data_capture.bat** file.
+-  The data capture status is also displayed in the opened command window as shown in the figure below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/cmd_interface.png
+   :alt: Demonstration Project Command Interface
+   :align: center
+   :width: 500px
+
+-  A new acquisition can be started by executing the **data_capture.bat** script.
+
+**Note:** If several consecutive data acquisitions are performed the captured data is appended to the **Acquisition.csv** file.
+
+.. _more-information-1:
+
+More information
+================
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

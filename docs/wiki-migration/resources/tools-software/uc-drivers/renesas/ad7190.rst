@@ -1,0 +1,231 @@
+AD7190 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7190`
+-  :adi:`AD7192`
+-  :adi:`AD7195`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7190EBZ`
+-  :adi:`EVAL-AD7192EBZ`
+-  :adi:`EVAL-AD7195EBZ`
+
+Overview
+--------
+
+The :adi:`AD7190`, :adi:`AD7192` and :adi:`AD7195` are low noise, complete analog front ends for high precision measurement applications. Devices contain a low noise, 24-bit sigma-delta (Σ-Δ) analog-to-digital converter (ADC). The on-chip low noise gain stage means that signals of small amplitude can be interfaced directly to the ADC. The :adi:`AD7195` contains ac excitation, which is used to remove dc-induced offsets from bridge sensors.
+
+Devices can be configured to have two differential inputs or four pseudo differential inputs. The on-chip channel sequencer allows several channels to be enabled, and the :adi:`AD7190`, :adi:`AD7192` and :adi:`AD7195` sequentially convert on each enabled channel. This simplifies communication with the parts. The on-chip 4.92 MHz clock can be used as the clock source to the ADC or, alternatively, an external clock or crystal can be used. The output data rate from the parts can be varied from 4.7 Hz to 4.8 kHz.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7190ebz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD7190 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7190 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7190 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD7190 driver:
+
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Function                                                                                                                                    | Description                                                              |
++=============================================================================================================================================+==========================================================================+
+| void AD7190_SetRegisterValue(unsigned char registerAddress, unsigned long registerValue, unsigned char bytesNumber, unsigned char modifyCS) | Writes data into a register.                                             |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| unsigned long AD7190_GetRegisterValue(unsigned char registerAddress, unsigned char bytesNumber, unsigned char modifyCS)                     | Reads the value of a register.                                           |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| unsigned char AD7190_Init(void)                                                                                                             | Initializes the SPI peripheral and checks if the AD7190 part is present. |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| void AD7190_Reset(void)                                                                                                                     | Resets the device.                                                       |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| void AD7190_SetPower(unsigned char pwrMode)                                                                                                 | Set device to idle or power-down.                                        |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| void AD7190_WaitRdyGoLow(void)                                                                                                              | Waits for RDY pin to go low.                                             |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| void AD7190_ChannelSelect(unsigned short channel)                                                                                           | Selects the channel to be enabled.                                       |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| void AD7190_Calibrate(unsigned char mode, unsigned char channel)                                                                            | Performs the given calibration to the specified channel.                 |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| void AD7190_RangeSetup(unsigned char polarity, unsigned char range)                                                                         | Selects the polarity of the conversion and the ADC input range.          |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| unsigned long AD7190_SingleConversion(void)                                                                                                 | Returns the result of a single conversion.                               |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| unsigned long AD7190_ContinuousReadAvg(unsigned char sampleNumber)                                                                          | Returns the average of several conversion results.                       |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| unsigned long AD7190_TemperatureRead(void)                                                                                                  | Read data from temperature sensor and converts it to Celsius degrees.    |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD7190 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7190_generic.zip>`__
+   -  `AD7190 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7190_rl78g13.zip>`__
+   -  `AD7190 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7190_rx62n.zip>`__
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7190 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  :adi:`EVAL-AD7190EBZ (Analog Devices) <EVAL-AD7190EBZ>`
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD7190EBZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD7190EBZ J2 connector Pin CS      →  YRDKRL78G13 J11 connector Pin 1
+     EVAL-AD7190EBZ J2 connector Pin DIN     →  YRDKRL78G13 J11 connector Pin 2
+     EVAL-AD7190EBZ J2 connector Pin DOUT    →  YRDKRL78G13 J11 connector Pin 3
+     EVAL-AD7190EBZ J2 connector Pin SCLK    →  YRDKRL78G13 J11 connector Pin 4
+     EVAL-AD7190EBZ J2 connector Pin AGND    →  YRDKRL78G13 J11 connector Pin 5
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7190ebz_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project:
+
+-  checks if the AD7190 part is present;
+-  configures the AD7190 part;
+-  reads data from single conversion;
+-  reads data from multiple conversions, calculates the average value and displays it;
+-  reads data from the temperature sensor and displays it in degrees Celsius.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7190ebz_rl78g13_screen.jpg
+   :align: center
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`__
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD7190 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+-  :adi:`EVAL-AD7190EBZ (ADI) <EVAL-AD7190EBZ>`
+
+.. _required-software-1:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`__
+
+.. _hardware-setup-1:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD7190EBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     EVAL-AD7190EBZ J2 connector Pin CS      →  YRDKRX62N J8 connector Pin 15
+     EVAL-AD7190EBZ J2 connector Pin DIN     →  YRDKRX62N J8 connector Pin 19
+     EVAL-AD7190EBZ J2 connector Pin DOUT    →  YRDKRX62N J8 connector Pin 22
+     EVAL-AD7190EBZ J2 connector Pin SCLK    →  YRDKRX62N J8 connector Pin 20
+     EVAL-AD7190EBZ J2 connector Pin AGND    →  YRDKRX62N J8 connector Pin 4
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7190_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project:
+
+-  checks if the AD7190 part is present;
+-  configures the AD7190 part;
+-  reads data from single conversion;
+-  reads data from multiple conversions, calculates the average value and displays it;
+-  reads data from the temperature sensor and displays it in degrees Celsius.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7190_rx62n_screen.jpg
+   :align: center
+
+.. _software-project-setup-1:
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`__
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`__
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

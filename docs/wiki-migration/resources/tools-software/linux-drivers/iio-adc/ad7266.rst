@@ -1,0 +1,446 @@
+AD7266 Differential/Single-Ended Input, Dual, Simultaneous Sampling, 2 MSPS, 12-Bit, 3-Channel SAR A/D Converter Linux Driver
+=============================================================================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7265`
+-  :adi:`AD7266`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0187`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7265EDZ`
+-  :adi:`EVAL-AD7266EDZ`
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting multi channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Source Code
+===========
+
+Status
+------
+
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Source                                                                                                     | Mainlined?                                                                                                 |
++============================================================================================================+============================================================================================================+
+| `git <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7266.c>`__ | `Yes <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7266.c>`__ |
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+Files
+-----
+
++----------+-----------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                        |
++==========+=============================================================================================================================+
+| driver   | `ad7266.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7266.c>`__             |
++----------+-----------------------------------------------------------------------------------------------------------------------------+
+| include  | `ad7266.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/platform_data/ad7266.h>`__ |
++----------+-----------------------------------------------------------------------------------------------------------------------------+
+
+Example platform device initialization
+======================================
+
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
+
+The AD7265/AD7266 supports different operating modes, which can be configured via external pins. To properly interpret the data from the chip the driver has to know which mode it is configured for. This is done using platform data. If the AD (address) pins of the chip are hook up to GPIOs to be able to change the sampled inputs at runtime the GPIOs can be specified via the platform data as well. If GPIOs are used the \`fixed_addr\` field must be set to false.
+
+.. code:: c
+
+
+   /*
+     * ad7266_range - AD7266 reference voltage range
+     * @AD7266_RANGE_VREF: Device is configured for input range 0V - VREF
+    *          (RANGE pin set to low)
+     * @AD7266_RANGE_2VREF: Device is configured for input range 0V - 2VREF
+    *          (RANGE pin set to high)
+    */
+   enum ad7266_range {
+       AD7266_RANGE_VREF,
+       AD7266_RANGE_2VREF,
+   };
+
+   /*
+     * ad7266_mode - AD7266 sample mode
+     * @AD7266_MODE_SINGLE_ENDED: Device is configured for single-ended mode
+    *              (SGL/DIFF pin set to high)
+     * @AD7266_MODE_PSEUDO_DIFF: Device is configured for pseudo differential mode
+    *              (SGL/DIFF pin set to low, AD0 pin set to high)
+     * @AD7266_MODE_PSEUDO_DIFF: Device is configured for full differential mode
+    *              (SGL/DIFF pin set to low, AD0 pin set to low)
+    */
+   enum ad7266_mode {
+       AD7266_MODE_SINGLE_ENDED,
+       AD7266_MODE_PSEUDO_DIFF,
+       AD7266_MODE_DIFF,
+   };
+
+   /* 
+     * ad7266_platform_data - Platform data for the AD7266 driver
+     * @range: Reference voltage range the device is configured for
+     * @mode: Sample mode the device is configured for
+     * @fixed_addr: Whether the AD pins are hard-wired
+     * @addr_gpios: GPIOs used for controlling the AD pins, only valid if fixed_addr
+    *      is set to false.
+    */
+   struct ad7266_platform_data {
+       enum ad7266_range range;
+       enum ad7266_mode mode;
+       bool fixed_addr;
+       unsigned int addr_gpios[3];
+   };
+
+.. code:: c
+
+   static struct ad7266_platform_data pdata = {
+       .range = AD7266_RANGE_2VREF,
+       .mode = AD7266_MODE_SINGLE_ENDED,
+       .fixed_addr = false,
+       .addr_gpios = { GPIO_PF6, GPIO_PF7, GPIO_PF8 },
+   };
+
+If no platform data is provided the driver assumes differential 0V-VREF operation with a fixed address. This corresponds to the following platform data.
+
+.. code:: c
+
+   static struct ad7266_platform_data ad7266_pdata_default = {
+       .range = AD7266_RANGE_VREF,
+       .mode = AD7266_MODE_DIFF,
+       .fixed_addr = true,
+   };
+
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`__
+
+
+Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+
+.. code:: c
+
+   static struct spi_board_info board_spi_board_info[] __initdata = {
+       {
+           .modalias = "ad7266",
+           .max_speed_hz = 1000000,     /* max spi clock (SCK) speed in HZ */
+           .bus_num = 0,
+           .chip_select = GPIO_PF10 + MAX_CTRL_CS, /* CS, change it for your board */
+           .platform_data = &ad7266_pdata, /* No spi_driver specific config */
+           .mode = SPI_MODE_2,
+       },
+   };
+
+.. code:: c
+
+   static int __init board_init(void)
+   {
+       [--snip--]
+
+       spi_register_board_info(board_spi_board_info, ARRAY_SIZE(board_spi_board_info));
+
+       [--snip--]
+
+       return 0;
+   }
+   arch_initcall(board_init);
+
+Adding Linux driver support
+===========================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+.. hint::
+
+   The AD7266 Driver depends on **CONFIG_SPI**
+
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           ...
+           <*>     Industrial I/O support --->
+               --- Industrial I/O support
+               ...
+               Analog to digital converters  ---> 
+                   ...
+                   <*>  Analog Devices AD7265/AD7266 ADC driver
+                   ...
+               ...
+           ...
+
+Hardware configuration
+======================
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/> **cd /sys/bus/iio/devices/**
+      root:/sys/bus/iio/devices> ls
+      iio:device0          trigger0
+   
+      root:/sys/bus/iio/devices> **cd iio:device0**
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.12/iio:device0> **ls -l**
+      drwxr-xr-x    2 root     root             0 Jan  1 04:03 buffer
+      -r--r--r--    1 root     root          4096 Jan  1 04:03 dev
+      -rw-r--r--    1 root     root          4096 Jan  1 04:03 in_voltage-voltage_scale
+      -r--r--r--    1 root     root          4096 Jan  1 04:03 in_voltage0-voltage1_raw
+      -r--r--r--    1 root     root          4096 Jan  1 04:03 in_voltage2-voltage3_raw
+      -r--r--r--    1 root     root          4096 Jan  1 04:03 in_voltage4-voltage5_raw
+      -r--r--r--    1 root     root          4096 Jan  1 04:03 in_voltage6-voltage7_raw
+      -r--r--r--    1 root     root          4096 Jan  1 04:03 in_voltage8-voltage9_raw
+      -r--r--r--    1 root     root          4096 Jan  1 04:03 in_voltage10-voltage11_raw
+      -r--r--r--    1 root     root          4096 Jan  1 04:03 name
+      drwxr-xr-x    2 root     root             0 Jan  1 04:03 power
+      drwxr-xr-x    2 root     root             0 Jan  1 04:03 scan_elements
+      lrwxrwxrwx    1 root     root             0 Jan  1 04:03 subsystem -> ../../../../../bus/iio
+      drwxr-xr-x    2 root     root             0 Jan  1 04:03 trigger
+      -rw-r--r--    1 root     root          4096 Jan  1 04:03 uevent
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.12/iio:device0>
+   
+
+
+Show device name
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.12/iio:device0> **cat name**
+      ad7266
+   
+
+
+Show scale for differential input channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| in_voltage-voltage_scale
+
+Scale to be applied to in_voltageY-voltageZ_raw in order to obtain the measured voltage in millivolts.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat in_voltage-voltage_scale**
+      0.610350
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
+   
+
+
+Show differential channel measurement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| in_voltageY-voltageZ_raw
+
+Raw unscaled voltage measurement on channel pair X-Z in differential mode
+
+=========================== ==========================
+ADC Input Pair              Channel name
+=========================== ==========================
+V\ :sub:`A1` - V\ :sub:`A2` in_voltage0-voltage1_raw
+V\ :sub:`B1` - V\ :sub:`B2` in_voltage2-voltage3_raw
+V\ :sub:`A2` - V\ :sub:`A3` in_voltage4-voltage5_raw
+V\ :sub:`B2` - V\ :sub:`B3` in_voltage7-voltage7_raw
+V\ :sub:`A4` - V\ :sub:`A5` in_voltage8-voltage9_raw
+V\ :sub:`B4` - V\ :sub:`B5` in_voltage10-voltage11_raw
+=========================== ==========================
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.12/iio:device0> **cat in_voltage0-voltage1_raw**
+      100
+   
+
+
+**U** = *in_voltage0-voltage1_raw \* in_voltage-voltage_scale* = 100 \* 0.610350 = **61.035 mV**
+
+Show scale for single-ended input channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| in_voltage_scale
+
+Scale to be applied to in_voltageY in order to obtain the measured voltage in millivolts.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat in_voltage_scale**
+      0.610350
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0>
+   
+
+
+Show single-ended channel measurement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| in_voltageY_raw
+
+Raw unscaled voltage measurement on channel in single ended mode
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.12/iio:device0> **cat in_voltage0_raw**
+      100
+   
+
+
+**U** = *in_voltage0 \* in_voltage_scale* = 100 \* 0.610350 = **61.035 mV**
+
+Trigger management
+------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0> **cat trigger/current_trigger** 
+      bfintmr3
+   
+
+
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+
+Every buffer implementation features a set of files:
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **length_align_bytes**
+| Using the high-speed interface. DMA buffers may have an alignment requirement for the buffer length. Newer versions of the kernel will report the alignment requirements associated with a device through the \`length_align_bytes\` property.
+
+| **scan_elements**
+| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0/scan_elements> **ls**
+      in_voltage0-voltage1_en     in_voltage2-voltage3_en
+      in_voltage0-voltage1_index  in_voltage2-voltage3_index
+      in_voltage0-voltage1_type   in_voltage2-voltage3_type
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/iio:device0/scan_elements>
+   
+
+
+| **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in_voltageX_type / in_voltageX-voltageY_type / timestamp_type:**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space. Form is [s|u]bits/storage-bits. s or u specifies if signed (2's complement) or unsigned. bits is the number of bits of data and storage-bits is the space (after padding) that it occupies in the buffer. Note that some devices will have additional information in the unused bits so to get a clean value, the bits value must be used to mask the buffer output value appropriately. The storage-bits value also specifies the data alignment. So u12/16 will be a unsigned 12 bit integer stored in a 16 bit location aligned to a 16 bit boundary. For other storage combinations this attribute will be extended appropriately.
+
+| **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
+
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

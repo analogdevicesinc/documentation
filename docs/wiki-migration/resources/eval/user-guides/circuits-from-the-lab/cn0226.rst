@@ -1,0 +1,30 @@
+CN0226 User Guide
+=================
+
+Overview
+--------
+
+| :adi:`CN0226` shown in Figure 1 is a complete low cost, low power mono audio amplifier with volume control, glitch reduction, and a 3 W Class-D output driver. The volume is controlled manually with a simple push-button interface to a 64-position digital potentiometer. An automatic store function retains the last volume setting, and an LED provides visual information of the maximum/minimum volume. The SSM2375 Class-D driver amplifier provides up to 3W output power into 3Ω load, with 93% power efficiency at 5 V, built-in pop-and-click suppression, and shutdown mode.
+| The circuit provides a pre-conditioning input stage, allowing compatibility with a wide range of audio input signals and can be powered with a cell battery.
+| {{ :resources:eval:user-guides:circuits-from-the-lab:cn0226:cn0226_figure1.png?nolink \|\ |image1|
+| *Figure 1. Audio Volume Control (Simplified Schematic: Decoupling and All Connections Not Shown)*
+| ===== General Setup===== The circuit is tested using standard audio test equipment and methods.
+| ===Equipment Needed===
+
+-  EVAL-CN0226-EB1Z Evaluation Board
+-  DC Power Supply (2.7 V to 5.5 V)
+-  Audio Precision 2700 Series Audio Analyzer or equivalent
+-  Audio Precision AUX-0025 Filter or equivalent
+
+Setup and Test
+--------------
+
+| The block diagram below shows the connections of the board and the hardware. Standard audio test methods are used to make the required measurements. The tests are specific to the signals in the audio band which ranges from 20 Hz to 22 kHz in frequency.
+| |<insert block diagram>|
+| An example is the distortion measurement. This test measures how much the output signal has changed compared to the input signal. See Figure X for an example of a THD + N (Total Harmonic Distortion + Noise) measurement on the circuit using 5 V power supply with 4 ohm + 15 uH load.
+| |<insert thd+n measurement>|
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0226/cn0226_figure1.png
+   :width: 200px
+.. |<insert block diagram>| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0226/cn0226_figure5.png
+.. |<insert thd+n measurement>| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0226/cn0226_figure3.png

@@ -1,0 +1,222 @@
+BeMicro FPGA Project for AD5270 with Nios driver
+================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5270`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5270SDZ`
+
+Overview
+========
+
+This lab presents the steps to setup an environment for using the :adi:`EVAL-AD5270SDZ` evaluation board together with the `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__ USB stick, the Nios II Embedded Development Suite (EDS) and the `Micrium μC-Probe <http://micrium.com/tools/ucprobe/overview/>`__ run-time monitoring tool. Below is presented a picture of the EVAL-AD5270SDZ Evaluation Board with the BeMicro SDK Platform.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5270_bemicro.png
+   :alt: ad5270_bemicro.png
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5270SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5270_sdp1z.png
+   :alt: ad5270_sdp1z.png
+   :align: center
+   :width: 400px
+
+The **EVAL-AD5270SDZ** evaluation board is a member of a growing number of boards available for the **SDP**. Designed to help customers evaluate performance or quickly prototype new **AD5270** circuits and reduce design time, the **EVAL-AD5270SDZ** evaluation board can operate in single-supply and dual-supply mode and incorporates an internal power supply powered from the USB.
+
+The :adi:`AD5270` is a single-channel, 1024-position digital rheostat with less than ±1% end-to-end resistor tolerance error and 50-time programmable memory. The AD5270 supports a dual-supply ±2.5 V to ±2.75 V operation and a single-supply 2.7 V to 5.5 V operation, making it suited for battery-powered applications and many other applications. The AD5270 uses a versatile 3-wire serial interface that operates at clock rates up to 50 MHz, and it is compatible with standard SPI, QSPI™, MICROWIRE™, and DSP interface standards.
+
+More information
+----------------
+
+-  :adi:`AD5270 Product Info <AD5270>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD5270SDZ evaluation board user guide </static/imported-files/user_guides/UG-094.pdf>`
+-  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__
+-  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`__
+-  `Micrium uC-Probe <http://micrium.com/tools/ucprobe/overview/>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Hardware Items
+--------------
+
+Below is presented the list of required hardware items:
+
+-  Arrow Electronics `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__ FPGA-based MCU Evaluation Board
+-  :adi:`BeMicro SDK/SDP Interposer <sdp-bemicro>` adapter board
+-  **EVAL-AD5270SDZ** evaluation board
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+
+Software Tools
+--------------
+
+Below is presented the list of required software tools:
+
+-  `Quartus II Web Edition <http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html>`__ design software v11.0
+-  `Nios II EDS <https://www.altera.com/download/software/nios-ii>`__ v11.0
+-  `uC-Probe <http://micrium.com/tools/ucprobe/trial/>`__ run-time monitoring tool, version 2.5
+
+The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
+
+The **Micrium uC/Probe Trial** version 2.5 is available via download from the web at http://micrium.com/tools/ucprobe/trial/. After installation add to the “Path” system variable the entry "*%QUARTUS_ROOTDIR%\\bin\\*\ “ on the third position in the list.
+
+Downloads
+---------
+
+-  `Lab Design Files <https://wiki.analog.com/_media/{{/resources/fpga/altera/bemicro/ad5270_evalboardlab.zip>`__
+
+Extract the Lab Files
+---------------------
+
+Create a folder called “\ **ADIEvalBoardLab**\ ” on your PC and extract the **ad5270_evalboardlab.zip** archive to this folder. Make sure that there are **NO SPACES** in the directory path. After extracting the archive the following folders should be present in the **ADIEvalBoardLab** folder: **FPGA**, **Software**, **ucProbeInterface**, **NiosCpu**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/labfolders.png
+   :alt: labfolders.png
+   :align: center
+   :width: 500px
+
+
+.. note::
+
+   See `common_usb <https://wiki.analog.com/common_usb>`__
+
+
+Quick Evaluation
+================
+
+
+.. note::
+
+   See `common_quick_eval <https://wiki.analog.com/common_quick_eval>`__
+
+
+FPGA Design
+===========
+
+
+.. note::
+
+   See `common_spi_i2c <https://wiki.analog.com/common_spi_i2c>`__
+
+
+NIOS II Software Design
+=======================
+
+
+.. note::
+
+   See `common <https://wiki.analog.com/common>`__
+
+
+uC-Probe Interface
+==================
+
+A notable challenge in embedded systems development is to overcome the lack of feedback that such systems typically provide. Many developers resort to blinking LEDs or instrumenting their code with *printf()* in order to determine whether or not their systems are running as expected. **Micrium** provides a unique tool named **μC-Probe** to assist these developers. With this tool, developers can effortlessly read and write the variables on a running embedded system. This section presents the steps required to install the **Micrium uC-Probe** software tool and to run the demonstration project for the ADI evaluation board. A description of the **uC-Probe** demonstration interface is provided.
+
+Configure uC-Probe
+------------------
+
+Launch **uC-Probe** from the **Start -> All Programs -> Micrium -> uC-Probe**.
+
+Select **uC-Probe** options.
+
+-  Click on the **uC-Probe** icon on the top left portion of the screen.
+-  Click on the **Options** button to open the dialog box.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeoptionsbtn.png
+   :alt: ucprobeoptionsbtn.png
+   :align: center
+   :width: 300px
+
+Set target board communication protocol as **JTAG UART**
+
+-  Click on the **Communication** tab icon on the top left portion of the dialog box
+-  Select the **JTAG UART** option.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image067.png
+   :alt: image067.png
+   :align: center
+   :width: 400px
+
+Setup **JTAG UART** communication settings
+
+-  Select the **JTAG-UART** option from the **Communication** tab.
+-  Press the **Open File** button to select the JTAG Debug Information file (**.jdi**)
+-  Navigate to the **ADIEvalBoardLab/FPGA** folder and select the BeMicroSDK.jdi file. Press Open.
+-  Type the value **1** in the the **Device Id** window.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeoptionsjtag.png
+   :alt: ucprobeoptionsjtag.png
+   :align: center
+   :width: 400px
+
+-  Select **uCProbe_uart(0)** from the **Instance Id** pulldown menu.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image073.png
+   :alt: image073.png
+   :align: center
+   :width: 400px
+
+-  Press **Apply** and **OK** to exit the options menu. The embedded target has two UARTs. **uC-Probe** will be communicating with the **uCProbe_uart**.
+
+Load and Run the Demonstration Project
+--------------------------------------
+
+-  Click the **Open** option from the **uC-Probe** menu and select the file **ADIEvalBoardLab/ucProbeInterface/AD5270_Interface.wsp**.
+
+|ucprobeopenfile.png| |ad5270interfaceopen.png|
+
+-  Before opening the interface **uC-Probe** will ask for a symbols file that must be associated with the interface. If the lab was done according to the steps provided in the **Quick Evaluation** section, select the file **ADIEvalBoardLab/ucProbeInterface/ADIEvalBoard.elf** to be loaded as a symbol file, otherwise select the file **ADIEvalBoardLab/FPGA/software/ADIEvalBoard/ADIEvalBoard.elf** to be loaded as a symbol file.
+
+|ucprobeopenelfquickeval.png|\ |ucprobeopenelfnormal.png|
+
+-  Run the demonstration project by pressing the **Play** button.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image081.png
+   :alt: image081.png
+   :align: center
+   :width: 400px
+
+Demonstration Project User Interface
+====================================
+
+The following figure presents the **uC-Probe** interface that can be used for monitoring and controlling the operation of the **EVAL-AD5270SDZ** evaluation board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5270interface.png
+   :alt: ad5270interface.png
+   :align: center
+   :width: 700px
+
+The communication with the board is activated / deactivated by toggling the **ON/OFF** switch. The **Activity** LED turns green when the communication is active. If the **ON/OFF** switch is set to **ON** and the **Activity** LED is **BLACK** it means that there is a communication problem with the board. See the **Troubleshooting** section for indications on how to fix the communication problems.
+
+The rheostat value is set by the **"Rheostat Value"** slider.
+
+
+.. note::
+
+   See `troubleshooting <https://wiki.analog.com/troubleshooting>`__
+
+
+.. |ucprobeopenfile.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenfile.png
+   :width: 400px
+.. |ad5270interfaceopen.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5270interfaceopen.png
+   :width: 400px
+.. |ucprobeopenelfquickeval.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenelfquickeval.png
+   :width: 400px
+.. |ucprobeopenelfnormal.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenelfnormal.png
+   :width: 400px

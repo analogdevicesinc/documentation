@@ -1,0 +1,5 @@
+ADRV9026 Block Diagram
+======================
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9026/adrv9026-29.png
+   :align: center

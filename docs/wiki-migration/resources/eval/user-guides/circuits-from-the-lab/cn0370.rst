@@ -1,0 +1,173 @@
+CN0370 Evaluation Board and Software User Guide
+===============================================
+
+Overview
+--------
+
+:adi:`CN0370` is a complete single-supply, low noise LED current source driver controlled by a 16-bit digital-to-analog converter (DAC). The system maintains ±1 LSB integral and differential nonlinearity and has a 0.1 Hz to 10 Hz noise of less than 45 nA p-p for a full-scale output current of 20 mA.
+
+:adi:`AD5542A` is a single supply, 16-bit, serial input, voltage output DAC that is used to control the voltage to current conversion. :adi:`ADA4500-2` is a single supply, dual low power amplifier with no zero-crossover distortion offering high linearity over the full, rail to rail common-mode input range. :adi:`ADA4500-2` is used to buffer the reference voltage of the DAC and is also used in a buffer configuration to convert the voltage output of the DAC into current. :adi:`ADR4525` is a high precision, low power, low noise voltage reference that is used to provide precise 2.5V reference voltage for the DAC.
+
+This user guide will discuss how to use the :adi:`EVAL-SDP-CB1Z`, :adi:`SDP-I-PMOD <SDP-PMD-IB1Z>` and the evaluation software to be able to write and collect data from :adi:`EVAL-CN070-PMDZ <EVAL-CN0370-SDPZ>`. The evaluation board has provisions to read the output voltage of the DAC and an option to use an external supply voltage for the LED.
+
+
+|image1|
+
+Required Equipment
+------------------
+
+-  PC with a USB port and Windows XP or Windows Vista
+
+   -  32-b(it), or Windows 7 (32-bit)
+
+-  EVAL-SDP-CB1Z SDP evaluation board
+-  PMD-SDP-IB1Z interposer board
+-  EVAL-CN0370-PMDZ circuit evaluation board
+-  CN-0370 evaluation software:
+
+   -  ftp://ftp.analog.com/pub/cftl/CN0370/
+
+-  Power supply: 6 V wall wart.
+-  Agilent 34401A Multimeter or equivalent.
+-  A GPIB-to-USB cable (Required only when taking linearity tests for the circuit).
+
+General Setup
+-------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/cn0370-1.1.png
+   :align: center
+
+-  Connect the 120-pin connector J4 on the PMD-SDP-IB1Z interposer board to the connector marked CON A on the EVAL-SDP-CB1Z (SDP) evaluation board. Shunt on JP1 to be place on the +5.0V configuration.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/cn0370-2.jpg
+   :align: center
+
+-  Connect the EVAL-CN0370-PMDZ to the PMOD connector J3.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/cn0370-3.png
+   :align: center
+
+-  Connect a +6V wall wart supply to the connector J1 of the interposer board.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/cn0370-4.png
+   :align: center
+
+-  The USB cable is used to connect EVAL-SDP-CB1Z to the PC.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/eval-cn0370-pmdz-1.jpg
+   :align: center
+
+-  LED_SUPPLY is the supply for the LED. It can be taken from the PMOD supply or an external voltage supply,VEXT. It is shorted by a shunt to PMOD by default.
+-  Test point VCC and AGDN are used to take voltage measurements.
+-  VEXT is used to supply an external voltage to the LED supply (Input range: +20max).
+
+Installing the Software
+-----------------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/sw-1.png
+   :align: center
+
+-  Extract the file CN0370_Evaluation_Software.zip and open the file setup.exe
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/sw-1.png
+   :align: center
+
+-  Click Next to view the installation review page
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/sw-2.png
+   :align: center
+
+-  Click Next to begin the installation
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/sw-3.png
+   :align: center
+
+-  Upon completion of the installation of the CN-0370 Evaluation Software, the installer for the ADI SDP Drivers will execute.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/sw-4.png
+   :align: center
+
+-  Click Next to set the installation location for the SDP Drivers
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/sw-5.png
+   :align: center
+
+-  Press Install to install the SDP Drivers and complete the installation of all software. Click Close when done.
+
+Using the Evaluation Software
+-----------------------------
+
+Main Tab
+~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/sw-gui.png
+   :align: center
+
+-  Write data
+
+   -  This button is used to write the data into the DAC
+
+-  Input Mode
+
+   -  This is a selector where the user can choose the input mode of changing the amount of current or changing the actual DAC code being written
+   -  Input Current Mode- the amount of current desired for the LED is adjusted and by pushing the Write Data button writes the data into the board.
+   -  Input Code Mode- the exact code is written on the Code box, and the amount of current output is automatically adjusted by pushing the Write Data button.
+
+-  External Resistor
+
+   -  Enable the external resistor if the resistor on R_LIMIT has been changed
+
+-  Iout
+
+   -  This control will enable the user to change the amount of current flowing through the LED
+
+-  R_limit
+
+   -  This is the value of the resistor that limits the amount of current through the LED, it is set to a default value of 124Ω
+
+Writing data
+~~~~~~~~~~~~
+
+Input Current Mode
+^^^^^^^^^^^^^^^^^^
+
+-  If the external resistor is replaced, enable the External Resistor button and write new value for the R_Limit.
+-  Select Input Current Mode.
+-  Adjust the amount of desired current by using the slider or the text box.
+-  Push the Write Data button to write the code to the board.
+
+Input Data Mode
+^^^^^^^^^^^^^^^
+
+-  If the external resistor is replaced, enable the External Resistor button and write new value for the R_Limit.
+-  Select the Input Code Mode.
+-  Write the exact code to be written in the Code text box.
+-  Push the Write Data button to write the code to the board.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0370-PMDZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0370-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Layout Files
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0370-PMDZ?&v=RevB>`__ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0370/cn0370.jpg

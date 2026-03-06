@@ -1,0 +1,287 @@
+AD5706R - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5706R`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5706RARDZ`
+
+| 
+| ===== Overview ===== The :adi:`AD5706R` is a 4-channel, 10-/12-/16-bit resolution, low noise, programmable current output, digital-to-analog converter (DAC) capable of multiple operating modes and output current ranges with high power efficiency. This is intended for photonics control and current mode biasing applications. The device incorporates a 2.5 V, on-chip voltage reference, die temperature, load DAC, toggle and dither functions, output monitoring functions, and reset functions.
+
+The :adi:`AD5706R` provides multiple programmable output current ranges up to 300 mA. With device addressable pins, it is possible to do an SPI transaction with up to four :adi:`AD5706R` on the same SPI bus.
+
+Each DAC operates with an independent positive power supply rails PVDDx from 1.65 V to 3.6 V, for optimizing power efficiency and thermal power dissipation. The :adi:`AD5706R` operates from a 2.9 V to 3.6 V AVDD supply and is specified over the −40 °C to +125 °C temperature range.
+
+Applications
+------------
+
+-  Photonics Control
+-  Optical Communications
+-  LED Driver Programmable Current Source
+-  Current Mode Biasing
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== AD5706R ADI No-OS driver =====
+
+Driver Source Code
+------------------
+
+The source code for the AD5706R driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of AD5706R Driver|
+
+   -
+
+   |Implementation of AD5706R Driver|
+
+The AD5706R driver also uses the ADI utility library, so make sure you add the necessary files to your project. The source code for the utility library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+| To use the AD5706R No-OS Driver, you need to provide the specific implementation for the communication APIs as well as the specific data types to be used.
+| If SPI communication is chosen, these are the three functions to be called by the AD5706R driver and have to be implemented:
+
+.. container:: center box
+
+   
+   +--------------------------------+---------------------------------------------+
+   | Function                       | Description                                 |
+   +================================+=============================================+
+   | **no_os_spi_init()**           | initializes the communication peripheral.   |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_write_and_read()** | writes and reads data to/from the device.   |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_remove()**         | deinitializes the communication peripheral. |
+   +--------------------------------+---------------------------------------------+
+   
+
+
+And these are the two data types that have to be defined:
+
+.. container:: center box
+
+   
+   +--------------------------+----------------------------------------------------------+
+   | Function                 | Description                                              |
+   +==========================+==========================================================+
+   | **no_os_spi_desc**       | structure holding the SPI descriptor.                    |
+   +--------------------------+----------------------------------------------------------+
+   | **no_os_spi_init_param** | structure holding the parameters for SPI initialization. |
+   +--------------------------+----------------------------------------------------------+
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for SPI Communication APIs|
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD5706R Header file <http://analogdevicesinc.github.io/no-OS//AD5706R_8h.html>`__
+   -  `AD5706R Source file <http://analogdevicesinc.github.io/no-OS//AD5706R_8c.html>`__
+   
+
+
+Device Configuration
+--------------------
+
+| 
+| ^ Function ^ Description ^
+
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_spi_reg_read(struct ad5706r_dev *dev,                    | Read from device.                               |
+|         uint32_t reg_addr,                                             |                                                 |
+|         uint16_t *reg_data)``                                          |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_spi_reg_read_multiple(struct ad5706r_dev *dev,           | Read multiple registers from device.            |
+|         uint32_t start_addr,                                           |                                                 |
+|         uint8_t count,                                                 |                                                 |
+|         uint8_t *buff)``                                               |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_spi_reg_write(struct ad5706r_dev *dev,                   | Write to device.                                |
+|         uint32_t reg_addr,                                             |                                                 |
+|         uint16_t reg_data)``                                           |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_spi_reg_write_multiple(struct ad5706r_dev *dev,          | Write multiple register data to device.         |
+|         uint32_t start_addr,                                           |                                                 |
+|         uint8_t count,                                                 |                                                 |
+|         uint8_t *buff)``                                               |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_spi_write_mask(struct ad5706r_dev *dev,                  | SPI write to device using a mask.               |
+|     uint32_t reg_addr,                                                 |                                                 |
+|     uint32_t mask,                                                     |                                                 |
+|     uint16_t data)``                                                   |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_reference(struct ad5706r_dev *dev,                   | Set reference voltage configuration.            |
+|     enum ad5706r_vref_select reference_selector)``                     |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_operating_mode(struct ad5706r_dev *dev,              | Set output operating mode of a channel.         |
+|     enum ad5706r_channels chan_sel,                                    |                                                 |
+|     enum ad5706r_output_op_mode op_mode)``                             |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_ch_output_range(struct ad5706r_dev *dev,             | Set output range of a channel.                  |
+|     enum ad5706r_channels chan_sel,                                    |                                                 |
+|     enum ad5706r_output_range range_sel)``                             |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_func_en(struct ad5706r_dev *dev,                         | Enable function generator.                      |
+|     uint16_t en_mask)``                                                |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_func_mode_select(struct ad5706r_dev *dev,                | Set Function generator mode.                    |
+|     enum ad5706r_channels chan_sel,                                    |                                                 |
+|     enum ad5706r_function_mode func_mode_sel)``                        |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_dither_period(struct ad5706r_dev *dev,               | Set period for dither function generator.       |
+|     enum ad5706r_channels ch,                                          |                                                 |
+|     enum ad5706r_dither_period period)``                               |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_hw_sw_ldac(struct ad5706r_dev *dev,                  | Set HW/SW LDAC.                                 |
+|     uint16_t mask_hw_sw_ldac)``                                        |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_sync_async_ldac(struct ad5706r_dev *dev,             | Set sync/async ldac configuration.              |
+|     uint16_t mask_ldac_sync_async)``                                   |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``ad5706r_set_ldac_config(struct ad5706r_dev *dev,                     | Set ldac config for single channel.             |
+|     enum ad5706r_channels chn,                                         |                                                 |
+|     enum ad5706r_dac_mode dac_mode,                                    |                                                 |
+|     struct ad5706r_ldac_settings *ldac_settings)``                     |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_multi_dac_sw_ldac_trigger(struct ad5706r_dev *dev)``     | Trigger Multi DAC SW LDAC.                      |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_multi_ldac_config(struct ad5706r_dev *dev,           | Set ldac config for multiple channels.          |
+|     uint16_t ch_mask,                                                  |                                                 |
+|     enum ad5706r_dac_mode dac_mode,                                    |                                                 |
+|     struct ad5706r_ldac_settings *ldac_settings)``                     |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_dac_a_value(struct ad5706r_dev *dev,                 | Set dac value on DAC input register A.          |
+|     enum ad5706r_channels chn,                                         |                                                 |
+|     uint16_t dac_value)``                                              |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_dac_b_value(struct ad5706r_dev *dev,                 | Set dac values on DAC input register B.         |
+|     enum ad5706r_channels chn,                                         |                                                 |
+|     uint16_t dac_value)``                                              |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_multi_dac_a_value(struct ad5706r_dev *dev,           | Set dac value on Multi DAC input register A.    |
+|     uint16_t dac_value)``                                              |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_mux_out_mode(struct ad5706r_dev *dev,                | Set the multiplexer output mode.                |
+|     enum ad5706r_mux_out_state mux_output_mode_sel)``                  |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_mux_out_select(struct ad5706r_dev *dev,              | Set the multiplexer output select register.     |
+|     enum ad5706r_mux_out_select mux_output_sel)``                      |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_hw_ldac_trigger(struct ad5706r_dev *dev)``               | HW LDAC trigger.                                |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_edge_trigger(struct ad5706r_dev *dev,                | Set LDAC/TGP/DCLK edge trigger.                 |
+|     enum ad5706r_channels chn,                                         |                                                 |
+|     enum ad5706r_ldac_edge_trig trig_edge)``                           |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_sw_ldac_trigger(struct ad5706r_dev *dev)``               | SW LDAC trigger.                                |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_sw_reset(struct ad5706r_dev *dev)``                      | Soft reset.                                     |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_hw_reset(struct ad5706r_dev *dev)``                      | Hard reset.                                     |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_device_config(struct ad5706r_dev *dev,                   | Configures the device.                          |
+|     struct ad5706r_init_param *init_param)``                           |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_set_device_spi(struct ad5706r_dev *dev,                  | Set SPI device settings.                        |
+|     struct ad5706r_device_spi_settings *spi_settings)``                |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_crc_enable(struct ad5706r_dev *dev, bool crc_enable)``   | Enable CRC.                                     |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_shdn_trigger(struct ad5706r_dev *dev, bool shdn_state)`` | Set SHDN pin state.                             |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_init(struct ad5706r_dev **device,                        | Initialize the device.                          |
+|     struct ad5706r_init_param *init_param)``                           |                                                 |
++------------------------------------------------------------------------+-------------------------------------------------+
+| ``int ad5706r_remove(struct ad5706r_dev *dev)``                        | Free the resources allocated by ad5706r_init(). |
++------------------------------------------------------------------------+-------------------------------------------------+
+
+The driver has to be instantiated by using an initialization structure with the following composition:
+
+.. code:: c
+
+   /**
+     * @struct ad5706r_init_param 
+     * @brief ad5706r driver initialization structure
+    */
+   struct ad5706r_init_param {
+       /* SPI */
+       struct no_os_spi_init_param *spi_init_prm;
+       /* GPIO */
+       struct no_os_gpio_init_param    *gpio_ldac_tgp;
+       struct no_os_gpio_init_param    *gpio_reset;
+       struct no_os_gpio_init_param    *gpio_shdn;
+       /** Reference voltage select */
+       enum ad5706r_vref_select    vref_enable;
+       /** Output operating mode. */
+       enum ad5706r_output_op_mode op_mode[AD5706R_NUM_CH];
+       /** Span option. */
+       enum ad5706r_output_range   range[AD5706R_NUM_CH];
+       /** CRC enable. */
+       bool                crc_en;
+       /* Device SPI Settings */
+       struct ad5706r_device_spi_settings  spi_cfg;
+       /* DAC Mode Initialization per channel */
+       enum ad5706r_dac_mode       dac_mode[AD5706R_NUM_CH];
+       /* LDAC Settings */
+       struct ad5706r_ldac_settings    ldac_cfg;
+       /* Device Address Settings */
+       uint8_t             dev_addr;
+       /* Monitor MUX Mode Setting */
+       enum ad5706r_mux_out_state  mux_out_mode;
+       /* Monitor MUX parameter select */
+       enum ad5706r_mux_out_select     mux_out_sel;
+   };
+
+.. |Header file of AD5706R Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad5706r/ad5706r`.h
+.. |Implementation of AD5706R Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad5706r/ad5706r`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h

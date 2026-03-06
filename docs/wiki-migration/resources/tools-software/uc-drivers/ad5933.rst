@@ -1,0 +1,69 @@
+Supported Devices
+=================
+
+-  :adi:`AD5933`
+
+Evaluation Boards
+=================
+
+-  `PmodIA <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-IA>`__
+
+Overview
+========
+
+.. include:: ../../pmods/ad5933.rst
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the AD5933 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5933 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD5933 driver:
+
+-  I2C_Init() – initializes the communication peripheral.
+-  I2C_Write() – writes data to the device.
+-  I2C_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   I2C driver architecture
+
+
+The following functions are implemented in this version of AD5933 driver:
+
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| Function                                                                                                            | Description                                                                                     |
++=====================================================================================================================+=================================================================================================+
+| char AD5933_Init(void)                                                                                              | Initializes the communication peripheral.                                                       |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_SetRegisterValue(unsigned char registerAddress, unsigned long registerValue, unsigned char bytesNumber) | Writes data into a register.                                                                    |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| unsigned long AD5933_GetRegisterValue(unsigned char registerAddress, unsigned char bytesNumber)                     | Reads the value of a register.                                                                  |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_Reset(void)                                                                                             | Resets the device.                                                                              |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_SetSystemClk(char clkSource, unsigned long extClkFreq)                                                  | Selects the source of the system clock.                                                         |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_SetRangeAndGain(char range, char gain)                                                                  | Selects the range and gain of the device.                                                       |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| float AD5933_GetTemperature(void)                                                                                   | Reads the temperature from the part and returns the data in degrees Celsius.                    |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_ConfigSweep(unsigned long startFreq, unsigned long incFreq, unsigned short incNum)                      | Configures the sweep parameters: Start frequency, Frequency increment and Number of increments. |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void AD5933_StartSweep(void)                                                                                        | Starts the sweep operation.                                                                     |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| double AD5933_CalculateGainFactor(unsigned long calibrationImpedance, unsigned char freqFunction)                   | Reads the real and the imaginary data and calculates the Gain Factor.                           |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| double AD5933_CalculateImpedance(double gainFactor, unsigned char freqFunction)                                     | Reads the real and the imaginary data and calculates the Impedance.                             |
++---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png

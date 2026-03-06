@@ -1,0 +1,167 @@
+AD5570 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5570`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5570SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD5570SDZ <AD5570>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD5570SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_ad5570.jpg
+   :alt: img_ad5570.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5570SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5570_sdp1z.png
+   :alt: ad5570_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`AD5570` is a single 16-bit serial input, voltage output DAC that operates from supply voltages of ±11.4 V up to ±16.5 V. Integral linearity (INL) and differential nonlinearity (DNL) are accurate to 1 LSB. During power-up, when the supply voltages are changing, VOUT is clamped to 0 V via a low impedance path.
+
+The **EVAL-AD5570** evaluation board is designed to help customers quickly prototype new AD5570 circuits and reduce design time.
+
+More information
+----------------
+
+-  :adi:`AD5570 Product Info <AD5570>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD5570SDZ evaluation board user guide </static/imported-files/user_guides/UG-384.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-AD5570** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-AD5570 reference project for Xilinx KC705 FPGA
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD5570 Driver:** :git-no-OS:`device_drivers/AD5570`
+   
+   -  **AD5570 Commands:** :git-no-OS:`device_commands/AD5570`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+
+| Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+|
+
+.. important::
+
+   | To power on the EVAL-AD5570 evaluation board, you need to provide external +12V VDD and -12V VSS supply voltage to J5 connector on the board. For more information see: :adi:`EVAL-AD5570SDZ evaluation board user guide </static/imported-files/user_guides/UG-384.pdf>`).
+
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD5570 reference project for Xilinx KC705 FPGA board.
+
++---------------+-------------------------------------------------------------------+
+| Command       | Description                                                       |
++===============+===================================================================+
+| **help?**     | Displays all available commands.                                  |
++---------------+-------------------------------------------------------------------+
+| **register=** | Loads the DAC input register with a given value. Accepted values: |
+|               | value:                                                            |
+|               | 0 .. 65535 - value to be written into the register.               |
++---------------+-------------------------------------------------------------------+
+| **ldacPin=**  | Sets the output value of LDAC pin. Accepted values:               |
+|               | 0 - sets LDAC pin low. (default)                                  |
+|               | 1 - sets LDAC pin high.                                           |
++---------------+-------------------------------------------------------------------+
+| **ldacPin?**  | Displays the value of LDAC pin.                                   |
++---------------+-------------------------------------------------------------------+
+| **clrPin=**   | Sets the output value of CLR pin. Accepted values:                |
+|               | 0 - sets CLR pin low.                                             |
+|               | 1 - sets CLR pin high. (default)                                  |
++---------------+-------------------------------------------------------------------+
+| **clrPin?**   | Displays the value of CLR pin.                                    |
++---------------+-------------------------------------------------------------------+
+| **pdPin=**    | Sets the output value of PD pin. Accepted values:                 |
+|               | 0 - sets PD pin low.                                              |
+|               | 1 - sets PD pin high. (default)                                   |
++---------------+-------------------------------------------------------------------+
+| **pdPin?**    | Displays the value of PD pin.                                     |
++---------------+-------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

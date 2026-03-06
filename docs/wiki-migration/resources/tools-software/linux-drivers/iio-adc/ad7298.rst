@@ -1,0 +1,439 @@
+AD7298 IIO Multi-Channel ADC Linux Driver
+=========================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7298`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7298SDZ`
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting multi channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Source Code
+===========
+
+Status
+------
+
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Source                                                                                                     | Mainlined?                                                                                                 |
++============================================================================================================+============================================================================================================+
+| `git <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7298.c>`__ | `Yes <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7298.c>`__ |
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+Files
+-----
+
++----------+-----------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                        |
++==========+=============================================================================================================================+
+| driver   | `ad7298.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7298.c>`__             |
++----------+-----------------------------------------------------------------------------------------------------------------------------+
+| include  | `ad7298.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/platform_data/ad7298.h>`__ |
++----------+-----------------------------------------------------------------------------------------------------------------------------+
+
+Example platform device initialization
+======================================
+
+For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.
+
+For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.
+
+
+The reference voltage may vary between boards and models. The platform_data for the device's "struct device" holds this information.
+
+.. code:: c
+
+   /**
+     * struct ad7298_platform_data - Platform data for the ad7298 ADC driver
+     * @ext_ref: Whether to use an external reference voltage.
+    **/
+   struct ad7298_platform_data {
+       bool ext_ref;
+   };
+
+.. code:: c
+
+   static struct ad7298_platform_data ad7298_pdata = {
+       .ext_ref = true,
+   };
+
+.. tip::
+
+   In case platform_data is not present or set to NULL, the driver will use the AD7298 internal reference.
+
+
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`__
+
+
+Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+
+.. code:: c
+
+   static struct spi_board_info board_spi_board_info[] __initdata = {
+   #if defined(CONFIG_AD7298) || \
+       defined(CONFIG_AD7298_MODULE)
+       {
+           .modalias = "ad7298",
+           .max_speed_hz = 1000000,     /* max spi clock (SCK) speed in HZ */
+           .bus_num = 0,
+           .chip_select = 3, /* CS, change it for your board */
+           .controller_data = &spi_ad7298_chip_info,
+           .mode = SPI_MODE_1,
+       },
+   #endif
+   };
+
+.. code:: c
+
+   static int __init board_init(void)
+   {
+       [--snip--]
+
+       spi_register_board_info(board_spi_board_info, ARRAY_SIZE(board_spi_board_info));
+
+       [--snip--]
+
+       return 0;
+   }
+   arch_initcall(board_init);
+
+Adding Linux driver support
+===========================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+.. hint::
+
+   The AD7298 Driver depends on **CONFIG_SPI**
+
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           <*>     Industrial I/O support --->
+               --- Industrial I/O support
+               *** Analog to digital converters ***
+               [--snip--]
+               <*>   Analog Devices AD7298 ADC driver
+               [--snip--]
+
+Hardware configuration
+======================
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/> **cd /sys/bus/iio/devices/**
+      root:/sys/bus/iio/devices> ls
+      device0                  device0:buffer0:access0  trigger0
+      device0:buffer0          device0:buffer0:event0
+   
+      root:/sys/bus/iio/devices> **cd device0**
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **ls -l**
+      drwxr-xr-x    5 root     root             0 Jan  1 00:00 device0:buffer0
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 in0_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 in1_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 in2_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 in3_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 in4_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 in5_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 in6_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 in7_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 in_scale
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 name
+      lrwxrwxrwx    1 root     root             0 Jan  1 00:00 subsystem -> ../../../../../bus/iio
+      -r--r--r--    1 root     root          4096 Jan  1 00:00 temp0_input
+      drwxr-xr-x    2 root     root             0 Jan  1 00:00 trigger
+      -rw-r--r--    1 root     root          4096 Jan  1 00:00 uevent
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0>
+   
+
+
+Show device name
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat name**
+      ad7298
+   
+
+
+Show internal temperature
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| Shows high accuracy band gap temperature sensor temperature in milli degrees Celsius.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat temp0_input**
+      29750
+   
+
+
+**T** = **29.75 °C**
+
+Show scale
+~~~~~~~~~~
+
+| **Description:**
+| scale to be applied to in0_raw in order to obtain the measured voltage in millivolts.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat in_scale**
+      0.610
+   
+
+
+Show channel 0 measurement
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| Raw unscaled voltage measurement on channel 0
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat in0_raw**
+      2158
+   
+
+
+**U** = *in0_raw \* in_scale* = 2158 \* 0.610 = **1316,38 mV**
+
+Trigger management
+------------------
+
+If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
+
+|
+
+.. hint::
+
+   **Trigger Consumers:**
+
+   | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
+
+
+**Description:** Read name of triggerY
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      irqtrig56
+   
+
+
+**Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ), to current trigger of deviceX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+   
+
+
+**Description:** Read current trigger source of deviceX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      irqtrig56
+   
+
+
+
+Available standalone trigger drivers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| name                                          | description                                                                   |
++===============================================+===============================================================================+
+| iio-trig-gpio                                 | Provides support for using GPIO pins as IIO triggers.                         |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| iio-trig-rtc                                  | Provides support for using periodic capable real time clocks as IIO triggers. |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-sysfs <iio-trig-sysfs>`__           | Provides support for using SYSFS entry as IIO triggers.                       |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-bfin-timer <iio-trig-bfin-timer>`__ | Provides support for using a Blackfin timer as IIO triggers.                  |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+
+Buffer management
+-----------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0/device0:buffer0> ls
+      **bytes_per_datum**          **enable**                   subsystem
+      device0:buffer0:access0  **length**                   uevent
+      device0:buffer0:event0   **scan_elements**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0/device0:buffer0>
+   
+
+
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+
+Every buffer implementation features a set of files:
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **length_align_bytes**
+| Using the high-speed interface. DMA buffers may have an alignment requirement for the buffer length. Newer versions of the kernel will report the alignment requirements associated with a device through the \`length_align_bytes\` property.
+
+| **scan_elements**
+| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0/device0:buffer0/scan_elements> **ls**
+      in0_en           in2_index        in5_en           in7_index
+      in0_index        in3_en           in5_index        in_type
+      in1_en           in3_index        in6_en           timestamp_en
+      in1_index        in4_en           in6_index        timestamp_index
+      in2_en           in4_index        in7_en           timestamp_type
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0/device0:buffer0/scan_elements>
+   
+
+
+| **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in_voltageX_type / in_voltageX-voltageY_type / timestamp_type:**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space. Form is [s|u]bits/storage-bits. s or u specifies if signed (2's complement) or unsigned. bits is the number of bits of data and storage-bits is the space (after padding) that it occupies in the buffer. Note that some devices will have additional information in the unused bits so to get a clean value, the bits value must be used to mask the buffer output value appropriately. The storage-bits value also specifies the data alignment. So u12/16 will be a unsigned 12 bit integer stored in a 16 bit location aligned to a 16 bit boundary. For other storage combinations this attribute will be extended appropriately.
+
+| **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
+
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

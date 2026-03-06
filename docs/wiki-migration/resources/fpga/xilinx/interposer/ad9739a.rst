@@ -1,0 +1,179 @@
+AD9739A Evaluation Board, DAC-FMC Interposer & Xilinx Reference Design
+======================================================================
+
+.. important::
+
+   We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad9739a_fmc/index.html\
+
+
+|
+
+.. warning::
+
+   \ **NOTE:**
+
+   | Support for the eval-ad9739a was discontinued starting with 2022_R2 Kuiper Linux release and it is not supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can be found on :git-hdl:`hdl_2021_r2 <projects/ad9739a_fmc>` release branch.
+
+
+Introduction
+------------
+
+The :adi:`AD9739A` is a 14-bit, 2.5GSPS high performance RF digital-to-analog converter (DAC) capable of synthesizing wideband signals from DC up to 3 GHz. This reference design includes a DDS generator that drives both ports of the device. The programming is done via the USB-SPI interface.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9739A Evaluation Board <en/digital-to-analog-converters/da-converters/ad9739a/products/EVAL-AD9739A/eb.html>`
+-  :adi:`DAC FMC Interposer Board <en/evaluation/ad-dac-fmc/eb.html>`
+
+Supported Carriers
+------------------
+
+-  `ML605 <https://www.xilinx.com/ML605>`__
+-  `KC705 <https://www.xilinx.com/KC705>`__
+-  `VC707 <https://www.xilinx.com/VC707>`__
+
+Quick Start Guide
+-----------------
+
+The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal, ADI DAC software and the programmer (IMPACT). The notes below refer to ML605, but the procedure is same for all the boards.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  ML605/KC705/VC707 board
+-  AD9739A-EBZ board & Power supply
+-  DAC FMC interposer board
+-  Signal/Clock generator (2.5GHz)
+-  Spectrum Analyzer
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 13.2 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 57600.
+-  ADI DPG DAC Software Suite :doc:`available here </wiki-migration/resources/eval/dpg/dacsoftwaresuite>`.
+
+Bit file
+~~~~~~~~
+
+-  Download the gzip file and extract the **sw/cf_ad9739a_ebz<board>.bit** file.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To begin make the following connections (see image below):
+
+-  Connect the AD9739A-EBZ board to the FMC Interposer board.
+-  Connect the interposer board to the **FMC-LPC** connector of ML605 board.
+-  Connect power to ML605 and the AD9739A-EBZ boards.
+-  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on ML605.
+-  Connect a USB cable to the AD9739A-EBZ board.
+-  Connect an external clock source to AD9739A-EBZ board's J3 SMA connector.
+-  Connect a spectrum analyzer to AD9739A-EBZ board's J1 SMA connector.
+
+Setup the clock source to be 2.5GHz. If you wish to run the device at a different clock rate, please change the SDK c program accordingly. After the hardware setup, turn the power on to the ML605 and the AD9739A-EBZ boards.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9739a_ebz_setup.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+Start ADI- AD9739A SPI program (see screenshot below)-
+
+-  (1) click on "Run Continously" button.
+-  (2) click on "MU_ENA" button.
+-  (3) make sure that "MU_LCK" has turned green.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9739a_ebz_usb_spi.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+Start IMPACT, and initialze the JTAG chain. The program should recognize the Virtex 6 device (see screenshot below). Start a UART terminal (set to 57600 baud rate) and then program the device.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9739a_ebz_impact.jpg
+   :alt: IMPACT
+   :width: 200px
+
+If programming was successful, you should be seeing messages appear on the terminal as shown in figure below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9739a_ebz_uart.jpg
+   :alt: Terminal
+   :width: 200px
+
+Now enable the receivers via the ADI- AD9739A SPI program (see screenshot above)-
+
+-  (4) click on "RCV_ENA" button.
+-  (5) click on "RCV_LOOP" button.
+-  (6) make sure that "RCV_LCK" and "RCV_TRACK" has turned green.
+
+After DDS is enabled, you should see the spectrum analyzer displaying the 300MHz tone.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9739a_ebz_spectrum.gif
+   :alt: Terminal
+   :width: 200px
+
+Using the reference design
+--------------------------
+
+Functional description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design consists of a DDS module and a lvds interface.
+
+The DDS module consists of a Xilinx DDS core and DDR based DDS. Internally the DDS runs at fDAC/3 clock. The output samples are interleaved and driven by the lvds interface.
+
+Registers
+~~~~~~~~~
+
+Refer to the regmap.txt file inside the pcore.
+
+Downloads
+---------
+
+FPGA Referece Designs:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**ML605 \*\* `cf_ad9739a_ebz_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9739a_ebz_edk_14_4_2013_03_08.tar.gz>`__
+   -  \**KC705 \*\* `cf_ad9739a_ebz_kc705_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9739a_ebz_kc705_edk_14_4_2013_03_08.tar.gz>`__
+   -  \**VC707 \*\* `cf_ad9739a_ebz_vc707_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9739a_ebz_vc707_edk_14_4_2013_03_08.tar.gz>`__
+   
+
+
+Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
+
+.. hint::
+
+   
+   -  Questions? :ez:`Ask Help & Support <community/fpga>`.
+   
+
+
+Tar file contents
+-----------------
+
+The tar file contains, in most cases, the following files and/or directories. To rebuild the reference design simply double click the XMP file and run the tool. To build SDK, select a workspace and use the C file to build the elf file. Please refer to `Xilinx EDK documentation <https://www.xilinx.com/support/documentation/dt_edk_edk13-2.htm>`__ for details.
+
++-------------------+------------------------------------------------------------------------------------------------------+
+| license.txt       | ADI license & copyright information.                                                                 |
++-------------------+------------------------------------------------------------------------------------------------------+
+| system.mhs        | MHS file.                                                                                            |
++-------------------+------------------------------------------------------------------------------------------------------+
+| system.xmp        | XMP file (use this file to build the reference design).                                              |
++-------------------+------------------------------------------------------------------------------------------------------+
+| data/             | UCF file and/or DDR MIG project files.                                                               |
++-------------------+------------------------------------------------------------------------------------------------------+
+| docs/             | Documentation files (Please note that this wiki page is the documentation for the reference design). |
++-------------------+------------------------------------------------------------------------------------------------------+
+| sw/               | Software (Xilinx SDK) & bit file(s).                                                                 |
++-------------------+------------------------------------------------------------------------------------------------------+
+| cf_lib/edk/pcores | The pcores directory.                                                                                |
++-------------------+------------------------------------------------------------------------------------------------------+
+
+More information
+----------------
+
+-  `VITA's FMC info <http://www.vita.com/fmc>`__
+-  :ez:`Ask questions about the FPGA reference design <community/fpga>`

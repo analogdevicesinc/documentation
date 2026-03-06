@@ -1,0 +1,250 @@
+:doc:`Click here to return to the Demo list </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list>`
+
+AD2437 XLR Platform Demo Examples
+=================================
+
+Sample Demo Setup with PC
+-------------------------
+
+Using SigmaStudio+ the A2B system can be directly controlled from a connected computer without involving a microcontroller or a DSP. This mode is helpful for quick testing of the capabilities of AD24xx without the need for a microcontroller in the system.
+
+
+|image1|
+
+.. container:: centeralign
+
+   \ **Figure:** Sample A2B demo configuration
+
+
+Connections
+~~~~~~~~~~~
+
+To run the sample demo, the following setup connections are to be made.
+
+Evaluation boards
+~~~~~~~~~~~~~~~~~
+
+A2B Evaluation boards shall be connected in the following order
+
+-  :doc:`EVAL-AD2437A1NZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Main) <–>\ :doc:`EVAL-AD2437B1NZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Sub 0) <–> :doc:`EVAL-AD2437B1NZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Sub 1) as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>`.
+-  Connect XLR cable between the A2B connector on the Main board and the “A” connector on the Sub 0 board.
+-  Connect XLR cable between the “B” connector on the Sub 0 board and the “A” connector on the Sub 1 board.
+-  Connect 24V 3A power supply to the power connector (P14) on :doc:`AD2437A1NZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` board.
+
+|image2|
+
+.. container:: centeralign
+
+   \ **Figure:** Eval Board Connections: AD2437 with XLR connectivity
+
+
+USBi
+~~~~
+
+-  Attach an USBi cable to the main board connector P6 as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>`. Other end of the cable should be connected to the PC.
+-  This connection is required to override the schematic for the main node SigmaDSP ADAU1452. The connection is also used to directly control A2B system when PC is used as the target processor.
+
+Audio In/out
+~~~~~~~~~~~~
+
+-  Connect audio sink (e.g., Headphones/speaker) to P25(Headphone DAC) on AD2437A1NZ main node.
+-  Connect audio sink (e.g., Headphones/speaker) to P7(DAC1 OUT) on AD2437B1NZ Sub node 0.
+-  Connect passive mono speaker to P16 and P17 on AD2437B1NZ Sub node 0
+-  Connect audio sink (e.g., Headphones/speaker) to P7(DAC1 OUT) on AD2437B1NZ Sub node 1.
+-  Connect audio source (e.g., mp3 player) to P4(ADC IN) on AD2437B1NZ Sub node 1.
+
+Sample demo with EV-SC594-SOM (Target mode)
+-------------------------------------------
+
+This section describes the steps to run the demo using EV-SC594-SOM with AD2437.
+
+.. note::
+
+   Running this demo requires CrossCore Embedded Studio to be installed on the machine. For details, refer :doc:`Software Requirements </wiki-migration/resources/tools-software/a2bv2/quickstartguide/systemrequirements>`\
+
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/sample_a2b_demo_configuration.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** Sample A2B demo configuration for target.
+
+
+.. _connections-1:
+
+Connections
+~~~~~~~~~~~
+
+The hardware connections to be done are described below.
+
+-  EV-SC594-SOM is mounted on Eval-AD2437A1NZ(Main) board.
+-  A2B Evaluation boards shall be connected in the following order
+   EV-SC594-SOM (Rev B) <-> :doc:`EVAL-AD2437A1NZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Main) <–>\ :doc:`EVAL-AD2437B1NZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Sub 0) <–> :doc:`EVAL-AD2437B1NZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Sub 1) as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>`.
+-  Connect XLR cable between the “B” connector on the Main board and the “A” connector on the Sub 0 board. Repeat the same connection between Sub 0 and Sub 1
+-  Connect 24V power supply to the power connector (P14) on Eval-AD2437A1NZ(Main) board.
+-  Attach JTAG to P1 on EV-SC594-SOM board and other end of JTAG to USB port of PC.
+-  Connect audio sink (e.g., Headphones/speaker) to P25(Headphone DAC) on AD2437A1NZ.
+-  Connect audio sink (e.g., Headphones/speaker) to P7(DAC1 OUT) on AD2437A1NZ Sub node 0.
+-  Connect passive mono speaker to P16 and P17 on AD2437A1NZ Sub node 0
+-  Connect audio sink (e.g., Headphones/speaker) to P7(DAC1 OUT) on AD2437A1NZ Sub node 1.
+-  Connect audio source (e.g., mp3 player) to P4(ADC IN) on AD2437A1NZ Sub node 1.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sc594-ad2437_setup.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** SC594-AD2437 XLR setup
+
+
+Running target framework on EV-SC594-SOM.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Ensure that the “Boot Mode” switch is set to 0 on the EV-SC594-SOM board.
+-  Connect the JTAG (ICE 1000 or ICE 2000) and power on the board with the setup as shown in :doc:`Setup </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` .
+-  Create Debug Session in CCES by clicking Run -> Debug Configurations -> Application with CrossCore Debugger -> Sharc -> SC594 -> Emulator -> ICE 1000 / 2000 -> Finish
+-  Select the SC59x dxe to be loaded and click Debug to start the session as shown below.
+-  In the Debug Window, Run F5 to execute sample demo.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/debug_configuration_sc59x.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** Debug Configuration – SC59x
+
+
+RJ45 Platform Demo Examples
+===========================
+
+.. _sample-demo-setup-with-pc-1:
+
+Sample Demo Setup with PC
+-------------------------
+
+Using SigmaStudio+ the A2B system can be directly controlled from a connected computer without involving a microcontroller or a DSP. This mode is helpful for quick testing of the capabilities of AD24xx without the need for a microcontroller in the system.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/sample_a2b_demo_configuration.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** Sample A2B demo configuration
+
+
+-  For PC Software setup, refer :doc:`Software Requirements </wiki-migration/resources/tools-software/a2bv2/quickstartguide/systemrequirements>` and for Hardware Setup refer :doc:`Hardware Setup AD2437 </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` . To run the sample demo, refer :doc:`Running the Sample Demo </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list>`.
+
+.. _connections-2:
+
+Connections
+~~~~~~~~~~~
+
+To run the sample demo, the following setup connections are to be made.
+
+.. _evaluation-boards-1:
+
+Evaluation boards
+~~~~~~~~~~~~~~~~~
+
+A2B Evaluation boards shall be connected in the following order
+
+-  :doc:`EVAL-AD2437A1MZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Main) <–>\ :doc:`EVAL-AD2437B1MZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Sub 0) <–> :doc:`EVAL-AD2437B1MZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Sub 1) as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>`.
+-  Connect RJ45 cable between the A2B connector on the Main board and the “A” connector on the Sub 0 board.
+-  Connect RJ45 cable between the “B” connector on the Sub 0 board and the “A” connector on the Sub 1 board.
+-  Connect 24V 3A power supply to the power connector (P11) on :doc:`AD2437A1MZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/eval_board_connections_ad2437rj45_high_power.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** Eval Board Connections: AD2437 with RJ45 connectivity
+
+
+.. _usbi-1:
+
+USBi
+~~~~
+
+-  Attach an USBi cable to the main board connector P30 as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>`. Other end of the cable should be connected to the PC.
+-  This connection is required to override the schematics for the main node SigmaDSP ADAU1452. The connection is also used to directly control A2B system when PC is used as the target processor.
+
+.. _audio-inout-1:
+
+Audio In/out
+~~~~~~~~~~~~
+
+-  Connect audio sink (e.g., Headphones/speaker) to P5(Headphone DAC) on AD2437A1MZ main node.
+-  Connect audio sink (e.g., Headphones/speaker) to P20(AUDIO OUT 1) on AD2437B1MZ Sub node 0.
+-  Connect passive mono speaker to P46 and P45 on AD2437A1MZ Sub node 0
+-  Connect audio sink (e.g., Headphones/speaker) to P20(AUDIO OUT 1) on AD2437B1MZ Sub node 1.
+-  Connect audio source (e.g., mp3 player) to P7(AUDIO IN 1) on AD2437A1MZ Sub node 1.
+
+.. _sample-demo-with-ev-sc594-som-target-mode-1:
+
+Sample demo with EV-SC594-SOM (Target mode)
+-------------------------------------------
+
+This section describes the steps to run the demo using EV-SC594-SOM with AD2437.
+
+.. note::
+
+   Running this demo requires CrossCore Embedded Studio to be installed on the machine. For details, refer :doc:`Software Requirements </wiki-migration/resources/tools-software/a2bv2/quickstartguide/systemrequirements>`\
+
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/sample_a2b_demo_configuration.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** Sample A2B demo configuration for target.
+
+
+.. _connections-3:
+
+Connections
+~~~~~~~~~~~
+
+The hardware connections to be done are described below.
+
+-  SC594 SOM is mounted on the EV-SOMCRR-EZKIT and Eval-AD2437A1MZ(Main) board is connected to J10 (A2B interface) on EV-SOMCRR-EZKIT.
+-  A2B Evaluation boards shall be connected in the following order
+   EV-SC594-SOM (Rev B) <-> :doc:`EVAL-AD2437A1MZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Main) <–>\ :doc:`EVAL-AD2437B1MZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Sub 0) <–> :doc:`EVAL-AD2437B1MZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` (Sub 1) as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>`.
+-  Connect RJ45 cable between the “B” connector on the Main board and the “A” connector on the Sub 0 board. Repeat the same connection between Sub 0 and Sub 1
+-  Connect 24V power supply to the power connector (P1) on Eval-AD2437A1MZ(Main) board.
+-  Connect 12V power supply to the power connector (P8) on EV-SOMCRR-EZKIT.
+-  Attach JTAG to P1 on EV-SC594-SOM board and other end of JTAG to USB port of PC.
+-  Connect audio sink (e.g., Headphones/speaker) to P5(Headphone DAC) on AD2437A1MZ main node.
+-  Connect audio sink (e.g., Headphones/speaker) to P20(AUDIO OUT 1) on AD2437B1MZ Sub node 0.
+-  Connect passive mono speaker to P46 and P45 on AD2437A1MZ Sub node 0
+-  Connect audio sink (e.g., Headphones/speaker) to P20(AUDIO OUT 1) on AD2437B1MZ Sub node 1.
+-  Connect audio source (e.g., mp3 player) to P7(AUDIO IN 1) on AD2437A1MZ Sub node 1.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sc594-ad2437_rj45setup.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** SC594-AD2437 RJ45 setup
+
+
+Running target framework on SC594 SOM.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Ensure that the “Boot Mode” switch is set to 0 on the EV-SC594-SOM board.
+-  Connect the JTAG (ICE 1000 or ICE 2000) and power on the board with the setup as shown in :doc:`Setup </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` .
+-  Create Debug Session in CCES by clicking Run -> Debug Configurations -> Application with CrossCore Debugger -> Sharc -> SC594 -> Emulator -> ICE 1000 / 2000 -> Finish
+-  Select the SC59x dxe to be loaded and click Debug to start the session as shown below.
+-  In the Debug Window, Run F5 to execute sample demo.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/debug_configuration_sc59x.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** Debug Configuration – SC59x
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/sample_a2b_demo_configuration.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/eval_board_connections._ad2437_high_power.png

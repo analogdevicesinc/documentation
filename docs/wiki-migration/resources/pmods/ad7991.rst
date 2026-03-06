@@ -1,0 +1,18 @@
+The :adi:`AD7991`/:adi:`AD7995`/:adi:`AD7999` are 12-/10-/8-bit, low power, successive approximation ADCs with an I2C®-compatible interface. Each part operates from a single 2.7 V to 5.5 V power supply and features a 1 μs conversion time.
+
+Each :adi:`AD7991`/:adi:`AD7995`/:adi:`AD7999` provides a 2-wire serial interface compatible with I2C interfaces. The :adi:`AD7991` and :adi:`AD7995` come in two versions and each version has an individual I2C address (see Table 8 of data sheet for address and part number selection). This allows two of the same devices to be connected to the same I2C bus. Both versions support standard, fast, and high speed I2C interface modes. The :adi:`AD7999` comes in one version.
+
+The :adi:`AD7991`/:adi:`AD7995`/:adi:`AD7999` normally remain in a shutdown state, powering up only for conversions. The conversion process is controlled by a command mode, during which each I2C read operation initiates a conversion and returns the result over the I2C bus.
+
+When four channels are used as analog inputs, the reference for the part is taken from VDD; this allows the widest dynamic input range to the ADC. Therefore, the analog input range to the ADC is 0 V to VDD. An external reference, applied through the VIN3/VREF input, can also be used with this part.
+
+Applications
+============
+
+-  System Monitoring
+-  Battery Powered Systems
+-  Data Acquisition
+-  Medical Instruments
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad7991_pmod_ad2.jpg
+   :align: center

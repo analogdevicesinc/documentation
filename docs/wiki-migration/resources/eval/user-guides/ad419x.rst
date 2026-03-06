@@ -1,0 +1,183 @@
+**\*AD419x**\ \* HDL Reference Design
+=====================================
+
+Overview
+--------
+
+**\*Some specifications about the board, the chip, etc. Typically the information found on the** :adi:`en/products` **website**\ \*
+
+The AD4190-4 is a low noise, completely integrated analog front end for high precision measurement applications. The device contains a low noise, 24-bit Σ-Δ analog-to-digital converter (ADC), and can be configured to have 4 differential inputs or 8 single-ended or pseudo differential inputs. The on-chip low noise stage ensures that signals of small amplitude can be interfaced directly to the ADC. The AD4190-4 establishes the highest degree of signal chain integration. The device contains a precision, low noise, low drift internal band gap reference and accepts an external differential reference, which can be internally buffered. Other key integrated features include programmable low drift excitation current sources, burnout currents, and a bias voltage generator, which sets the common-mode voltage of a channel to AVDD/2. The low-side power switch enables the user to power down bridge sensors between conversions, ensuring the absolute minimal power consumption of the system. The device also allows the user the option of operating with either an internal clock or an external clock.
+
+Supported devices
+-----------------
+
+AD419x Eval Board
+
+Supported carriers
+------------------
+
+`CoraZ7-07s FPGA Board <https://store.digilentinc.com/cora-z7-zynq-7000-single-core-and-dual-core-options-for-arm-fpga-soc-development/>`__
+
+`DE10-Nano FPGA Board <https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1046>`__
+
+Hardware requirements
+---------------------
+
+\**\* MENTION THESE \**\*
+
+-  Eval AD419x
+-  Other boards for connection like SDP-I-FMC, etc
+-  `CoraZ7-07s FPGA Board <https://store.digilentinc.com/cora-z7-zynq-7000-single-core-and-dual-core-options-for-arm-fpga-soc-development/>`__ or `DE10-Nano FPGA Board <https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1046>`__
+-  Ethernet cable (for network access)
+-  Micro USB to USB Type A for UART access
+-  1x SD card (at least 16GB); follow this guide
+-  Jumper Wires to tap SPI
+
+**\*THIS IS JUST AN EXAMPLE**\ \* to be deleted
+
+-  :adi:`AD9695-1300EBZ <AD9695>`
+-  `ZCU102 <https://www.xilinx.com/ZCU102>`__
+-  :doc:`AD-SYNCHRONA14-EBZ </wiki-migration/resources/eval/user-guides/ad-synchrona14-ebz>`
+-  :adi:`ADALM2000 (M2K) <en/ADALM2000.html>`
+-  :doc:`ADALM2000 BNC adapter board </wiki-migration/university/tools/m2k/accessories/bnc>`
+-  5 \* SMA to SMA cable
+-  Ethernet cable
+-  1x SD card (at least 16GB); follow :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+-  3 \* 50 Ohm DC to 12Ghz SMA Termination
+-  VADJ of Zedboard must be set to **2.5V**
+-  Jumpers P1 and P2 must be put in (1,2) position
+-  On ZCU102: switch 6 from SW15 must be put in ON position to be able to boot from SD card
+-  Power supply of 12V for the carrier
+
+Block design
+------------
+
+Block diagram
+~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/ad353xr_hdl_bd.svg
+   :alt: ad353xr_hdl_bd.svg
+   :width: 800px
+
+Clock scheme **\*IF IT APPLIES**\ \*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Description of components
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configurations
+^^^^^^^^^^^^^^
+
+Limitations
+^^^^^^^^^^^
+
+IP list
+~~~~~~~
+
+I2C connections
+~~~~~~~~~~~~~~~
+
+SPI connections
+~~~~~~~~~~~~~~~
+
+\**\* THIS IS JUST AN EXAMPLE \**\*
+
+========== ============== ================
+Signal     Coraz7s Pinout DE10 Nano Pinout
+========== ============== ================
+sclk       H15            AG18
+ss0/sync_n F16            AE19
+mosi/sdo   T12            AG15
+miso/sdi   W15            AF18
+========== ============== ================
+
+GPIOs
+~~~~~
+
++-----------+----------------+-------------------+------------------+---------------------+
+| Signal    | Coraz7s Pinout | Coraz7s GPIO Bits | DE10 Nano Pinout | DE10 Nano GPIO Bits |
++===========+================+===================+==================+=====================+
+| sync_in_n | V13            | gpio_o[32]        | AF20             | gpio_o[32]          |
++-----------+----------------+-------------------+------------------+---------------------+
+| rdy_n     | T14            | gpio_i[32]        | AE20             | gpio_i[32]          |
++-----------+----------------+-------------------+------------------+---------------------+
+| dig_aux2  | T15            | gpio_i[33]        | AE17             | gpio_i[33]          |
++-----------+----------------+-------------------+------------------+---------------------+
+
+CPU/Memory interconnects addresses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Interrupts
+~~~~~~~~~~
+
+Building the HDL project
+------------------------
+
+ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must `clone <https::`here </git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>` the HDL repository.
+
+Then go to the **\*PROJECT LOCATION WITHIN HDL (EX: projects/ad419x/coraz7s or projects/ad419x/de10nano)**\ \* location and run the make command by typing in your command prompt:
+
+**Linux/Cygwin**
+
+::
+
+   user@analog:~$ cd hdl/projects/ad419x/coraz7s
+   user@analog:~/hdl/projects/ad419x/coraz7s$ make
+
+| Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files.
+| A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
+
+System setup
+------------
+
+**\* Upload a picture of what your setup looks like.
+Attention: hide board labels (e.g., from AssetTiger) and other information that is ADI internal only.**\ \*
+
+\**\* PLESE KEEP THIS WHOLE SECTION AND ADAPT IT TO YOUR PROJECT, ESPECIALLY IF YOU HAVE EXTERNAL CLOCKS OR OTHER SIGNALS \**\*
+
+Connections
+~~~~~~~~~~~
+
+-  How the jumpers/switches should be set on the board/carrier
+
+   -  Coraz7s: Place a jumper on JP2, shorting the two pins together. Select JP3 connection depending on power supply source (USB or external).
+
+
+   |image1|
+
+   -  • DE10 nano: Adjust switch to FPGA configuration Mode.
+
+   |image2|
+
+-  On which FMC port should the board be placed
+-  Other changes to the board and the carrier
+
+Resources
+---------
+
+\**\* MENTION THESE \**\*
+
+-  Link to the project source code
+-  Links to the wiki documentation of the IPs that are used in this project
+-  Links to the Linux driver and devicetree source code and wiki documentation
+-  Links to the datasheets/schematics of the boards used in this wiki page
+
+More information
+----------------
+
+-  :doc:`How to prepare an SD card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` with boot files
+-  :doc:`ADI reference designs HDL user guide </wiki-migration/resources/fpga/docs/hdl>`
+-  :doc:`ADI HDL architecture </wiki-migration/resources/fpga/docs/arch>` wiki page
+-  :doc:`How to build an ADI HDL project </wiki-migration/resources/fpga/docs/build>`
+
+Support
+-------
+
+Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
+
+It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cora_hw_config.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/de10-nano_fpga_switch_matrix.png
+   :width: 800px

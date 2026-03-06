@@ -1,0 +1,179 @@
+CN-0507: A Complete 2-Port Network Analyzer on an Arduino Shield
+================================================================
+
+This reference design implements a complete 2-Port radio frequency (RF) Network Analyzer using a low-cost zero intermediate frequency (ZIF) architecture in an Arduino form factor, which is designed to plug into EVAL-ADICUP3029.
+
+
+|image1|
+
+--------------
+
+Setting Up the Hardware
+-----------------------
+
+-  Mount the CN-0507 shield over the EVAL-ADICUP3029.
+-  Connect the EVAL-ADICUP3029 to the Laptop using a micro USB cable.
+-  Connect a 6V DC power supply capable of supplying 1.5A to the CN-0507
+
+--------------
+
+Software GUI Setup
+------------------
+
+Firmware
+~~~~~~~~
+
+To use the software GUI, the firmware must first be loaded onto the EVAL-ADICUP3029.
+
+-  Download the hex file from the CN-0507 product page.
+-  If running an operating system older than Windows 10, install serial driver as in :doc:`1. Install mBed windows serial driver... </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/keil_iar_support>`
+-  You should see DAPLINK in your list of drives.
+
+|daplink.png|
+
+-  Copy the hex file to the DAPLINK drive to load the firmware to the EVAL-ADICUP3029. Note that the DAPLINK drive will disappear for a moment, then reappear after loading the firmware.
+
+GUI
+~~~
+
+-  Download the GUI zip archive from the CN-0507 product page.
+-  Extract the zip file to your PC.
+-  Look inside the extracted files and launch the \*\* adi-vna-app.exe \*\* executable.
+
+|exe.png|
+
+--------------
+
+The Software GUI
+----------------
+
+The included software GUI can be used for performing S-parameter measurements using the CN-0507 shield. The important parts of software GUI is shown in this figure.
+
+
+|palantir_gui_overview.png|
+
+How to use the GUI
+~~~~~~~~~~~~~~~~~~
+
+Connection
+^^^^^^^^^^
+
+After launching the software GUI. The connection window will be first shown. It lists all the available serial ports. To start using the GUI, choose the COM port of the EVAL-ADICUP3029 used. Have the baud rate set to the default, 115200, then click \*\* Connect \*\*. The connection window will automatically close after a successful connection.
+
+
+|connection_screen.png|
+
+Performing a Sweep
+^^^^^^^^^^^^^^^^^^
+
+First, make sure that port 1 and port 2 of the CN-0507 shield is already connected to the DUT. To perform a sweep, just click the \*\* Start Sweep \*\* button. This figure shows the magnitude plot from an open sweep with the default sweep setting values.
+
+
+|sweep_open_default_settings.png|
+
+The default settings have it set at 25 steps, with a start frequency of 1700 MHz, and a stop frequency of 3400 MHz. This range is set because this is the frequency range that the CN-0507 can handle. The number of steps can be chosen between the available value of 25, 50, 100, 500, and 1000 steps. The expected time per sweep is indicated at the right of the steps box. The S-parameters that will be plotted may also be selected at the **Sweep Settings** card. It is recommended to have all the S-parameters checked since it is also possible to hide a plot by clicking its legend at the top. By default, the magnitude plot is shown. To view the phase plot, click on the **Phase** option at the top.
+
+The Y-axis of the magnitude plot view can be adjusted using the **Adjust Y** buttons in **Plot Settings** located on the lower right of the GUI. Below that is the **Export Plots** button which will save the magnitude and phase values into a standard touchstone **.S2P** file.
+
+Averaging multiple sweeps can be enabled by checking the **Averaging** checkbox. The **Sweep Count** value determines how many sweeps to average. Take note that averaging multiple sweeps will take a longer time to finish.
+
+A calibrated sweep can also be performed by checking the **Use Calibration** checkbox. The appropriate calibration file must also be loaded after clicking the **Choose File** button. The sweep settings (start frequency, stop frequency, step size) of the calibration file must be the same with the sweep settings that will be performed. The next section discusses how to generate a calibration file.
+
+Generating a Calibration File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Generating a calibration file is necessary to perform calibrated sweeps. First, click the menu button located in the upper right corner of the GUI. Select the **Calibration** option to open the calibration window.
+
+The first tab, **Calibration Constants**, contains calibration kit constants and the sweep settings of the calibration file to be generated. These constants must be changed depending on the value of the calibration kit. A previously generated calibration file can also be loaded to fill the constants by clicking **Constants->Load From File**. When all the fields are filled out correctly, click the **Use Calibration Constants** button then go to the next tab.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/calibration_1st_tab.png
+   :alt: calibration_1st_tab.png
+   :align: center
+   :width: 500px
+
+The second tab, **DC Offsets** is used for the IQ demodulator DC offset correction. Click the **Measure** button to measure the DC offset voltages of the IQ demodulators. Wait for it to finish. After it is performed, go to the next tab.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/calibration_2nd_tab.png
+   :alt: calibration_2nd_tab.png
+   :align: center
+   :width: 500px
+
+The third tab, **Calibrate Port 1** is for calibrating port 1. Follow the instructions shown in that tab. For reflection measurements, connect an open terminator to port 1 then click the corresponding **Calibrate** button. Do this again for short and 50-ohm load terminators. For the isolation measurement, connect a 50-ohm load terminator on each port then click the corresponding **Calibrate** button. For the through measurement, connect port 1 and port using a thru then click the corresponding **Calibrate** button. Do this again for port 2 on the fourth tab, **Calibrate Port 2**. After all of these are performed, go to the fifth tab.
+
+|calibration_3rd_tab.png| |calibration_4th_tab.png|
+
+The fifth tab, **Save** is for saving all the performed calibration measurements with the sweep settings and the calibration constants used to a single file. After the things done on the previous tabs, the badges below **Port 1 Calibration** and **Port 2 Calibration** must be **Ready** and color green. With this, click the **Save Calibration Values** to save it into a JSON file. This file can now be used to perform a calibrated sweep.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/calibration_5th_tab.png
+   :alt: calibration_5th_tab.png
+   :align: center
+   :width: 500px
+
+Creating A new PC Applications
+------------------------------
+
+This would discuss on how the customers can make their own PC application that could communicate with the existing firmware using UART communication. This also includes the UART settings and communication protocols
+
+UART Configuration
+~~~~~~~~~~~~~~~~~~
+
+-  Baud rate: 115200
+-  8 bit
+-  No parity bits
+-  1 stop bit
+-  No flow control
+
+UART Communication Protocol
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The microcontroller waits for commands. The command list are listed on the table below. Once the microcontroller receives a command, it will perform what the command is supposed to do. After that, it will send back an output.
+
+UART Input Packet
+^^^^^^^^^^^^^^^^^
+
+The microcontroller expects an input packet as follows: The **header** contains the total size of the packet and the command hex code. If the command requires an input, the next bits after the header shall contain the input parameters. For example, a cmd_normal command with 1.7 GHz start frequency, 3.4 GHz stop frequency, 68 MHz step size, and port set to Port 1. More details can be found on the image below
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/uart_input_packet.png
+   :alt: uart_input_packet.png
+
+UART Output Packet
+^^^^^^^^^^^^^^^^^^
+
+The general output packet of the microcontroller has the 2 bytes header, 2 byte command, command output (size depends on the command) and the 2 bytes delimeter (0xAAAA). For more details please see the image below.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/uart_output_packet.png
+   :alt: uart_output_packet.png
+
+Command List
+^^^^^^^^^^^^
+
+The table below will show all the available commands with their respective hex code, input values and the return values.
+
+
+|uart_command_list.png|
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0507-ARDZ?&v=RevB>`__ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0507-topview.jpg
+.. |daplink.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sw_setup/daplink.png
+   :width: 500px
+.. |exe.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sw_setup/exe.png
+   :width: 500px
+.. |palantir_gui_overview.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/palantir_gui_overview.png
+.. |connection_screen.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/connection_screen.png
+   :width: 500px
+.. |sweep_open_default_settings.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sweep_open_default_settings.png
+   :width: 500px
+.. |calibration_3rd_tab.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/calibration_3rd_tab.png
+   :width: 500px
+.. |calibration_4th_tab.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/calibration_4th_tab.png
+   :width: 500px
+.. |uart_command_list.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/uart_command_list.png

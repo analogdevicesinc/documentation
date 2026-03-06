@@ -1,0 +1,242 @@
+BeMicro FPGA Project for AD5755 with Nios driver
+================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5755`
+-  :adi:`AD5755-1`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5755SDZ`
+-  :adi:`EVAL-AD5755-1SDZ`
+
+Overview
+========
+
+This lab presents the steps to setup an environment for using the :adi:`EVAL-AD5755SDZ` evaluation board together with the `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__ USB stick and the Nios II Embedded Development Suite (EDS). Below is presented a picture of the EVAL-AD5755SDZ Evaluation Board with the BeMicro SDK Platform.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5755_bemicro.png
+   :alt: ad5755_bemicro.png
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5755SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5755_sdp1z.png
+   :alt: ad5755_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`AD5755` is a quad, voltage and current output DAC that operates with a power supply range from −26.4 V to +33 V. On-chip dynamic power control minimizes package power dissipation in current mode. This is achieved by regulating the voltage on the output driver from 7.4 V to 29.5 V using a dc-to-dc boost converter optimized for minimum on chip power dissipation.
+
+The **EVAL-AD5755SDZ** evaluation board is designed to help customers quickly prototype new AD5755 circuits and reduce design time. To power the AD5755SDZ evaluation board supply +/-15V between the AVSS (-15V) and AVDD (+15V) inputs for the analog supply and 5V between PGND(0V) and AVCC(+5V) as DC-to-DC supply voltage.
+
+More information
+----------------
+
+-  :adi:`AD5755 Product Info <AD5755>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD5755SDZ evaluation board user guide </static/imported-files/user_guides/UG-244.pdf>`
+-  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__
+-  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Hardware Items
+--------------
+
+Below is presented the list of required hardware items:
+
+-  Arrow Electronics `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__ FPGA-based MCU Evaluation Board
+-  :adi:`BeMicro SDK/SDP Interposer <sdp-bemicro>` adapter board
+-  **EVAL-AD5755SDZ** evaluation board
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+
+Software Tools
+--------------
+
+Below is presented the list of required software tools:
+
+-  `Quartus II Web Edition <http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html>`__ design software v13.0
+-  `Nios II EDS <https://www.altera.com/download/software/nios-ii>`__ v13.0
+
+The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
+
+After installation add to the “Path” system variable the entry "*%QUARTUS_ROOTDIR%\\bin\\*\ “ on the third position in the list.
+
+Downloads
+---------
+
+-  `Lab Design Files <https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5755_evalboardlab.zip>`__
+
+Extract the Lab Files
+---------------------
+
+Create a folder called “\ **ADIEvalBoardLab**\ ” on your PC and extract the **ad5755_evalboardlab.zip** archive to this folder. Make sure that there are **NO SPACES** in the directory path. After extracting the archive the following folders should be present in the **ADIEvalBoardLab** folder: **FPGA**, **Software**, **NiosCpu**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/labfolder_console.png
+   :alt: labfolder_console.png
+   :align: center
+   :width: 500px
+
+
+.. note::
+
+   See `common_usb <https://wiki.analog.com/common_usb>`__
+
+
+Quick Evaluation
+================
+
+The next sections of this lab present all the steps needed to create a fully functional project that can be used for evaluating the operation of the ADI platform. It is possible to skip these steps and load into the FPGA an image that contains a fully functional system for the ADI platform evalution. The first step of the quick evaluation process is to program the FPGA with the image provided in the lab files. Before the image can be loaded the **Quartus II Web Edition** tool or the `Quartus II Programmer <https://www.altera.com/download/programming/quartus2/pq2-index.jsp>`__ must be installed on your computer.
+
+To load the FPGA image the first thing to do is to start a Nios2 Command Shell. To start the Nios II command shell on Windows platforms, on the Start menu, click \*\* All Programs \*\*. On the **All Programs** menu, on the **Altera 13.0 Web Edition** submenu, on the **Nios II EDS 13.0** submenu, click \*\* Nios II 13.0 Command Shell \*\*. The command shell is a Bourne-again shell (bash) with a pre-configured environment.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/nios2_cmd_shell.png
+   :alt: nios2_cmd_shell.png
+   :align: center
+   :width: 600px
+
+After the shell was started up, the first thing is to change the current path to project's directory path by typing the following command:
+
+\*\* cd /cygdrive/<*Disk Label*>/<*Project Path*>/AD5755/Console \*\* and hit Enter.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/nios2_cmd_cd.png
+   :alt: nios2_cmd_cd.png
+   :align: center
+   :width: 600px
+
+To configure the **BeMicroSDK** and run the software application have to run a bash script called program_bemicro.sh, this can be done by using the following command: **./program_bemicro.sh** and hit Enter. This script will configure the BeMicroSDK with the corresponding .sof file and will download and run the software application, and starts the stand-alone nios2-terminal.exe application.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/nios2_cmd_program.png
+   :alt: nios2_cmd_program.png
+   :align: center
+   :width: 500px
+
+If the last message is \*\* AD5755 OK \*\*, it means that the configuration was successful and the PC is connected to the device through JTAG-UART.
+
+The **AD5755** support the following commands, which can used to evaluate the **AD5755** converter:
+
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Command**   | **Description**                                                                                                                                                            |
++===============+============================================================================================================================================================================+
+| **help?**     | Display all available commands                                                                                                                                             |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **register?** | Get register value for a specified channel, the command has two arguments: register address and channel                                                                    |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **register=** | Set a register value, the command has four arguments: register type, which can be data or control, register address, channel number and the desired value                  |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **power?**    | Display the power state of the dc-to-dc converters, DAC and internal amplifiers for the selected channel. The command has one argument : channel                           |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **power=**    | Set up the power state of the dc-to-dc converters, DAC and internal amplifiers for the selected channel. The command has two arguments: channel and 1 for ON and 0 for OFF |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **range?**    | Display the range of the selected channel. The command has one argument : channel                                                                                          |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **range=**    | Set the range of the selected channel. Has two argument: channel and range                                                                                                 |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **voltage?**  | Display the output voltage of a specified channel. The command has one argument: channel                                                                                   |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **voltage=**  | Set the output voltage of a specified channel. The command using two arguments: channel and the desired value                                                              |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **current?**  | Display the output current of a specified channel. The command has one argument: channel                                                                                   |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **current=**  | Set the output current of a specified channel. The command using two arguments: channel and the desired value                                                              |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. tip::
+
+   Note: When using the standalone nios2-terminal for interfacing with the AD5755, it might happen that no characters are echoed from the console, and the backspace are ignored. In this case should be used the Nios II Terminal Console windows from the Nios II IDE to evaluate the device.
+
+
+FPGA Design
+===========
+
+
+.. note::
+
+   See `common_spi_i2c_console <https://wiki.analog.com/common_spi_i2c_console>`__
+
+
+NIOS II Software Design
+=======================
+
+
+.. note::
+
+   See `common_console <https://wiki.analog.com/common_console>`__
+
+
+Demonstration Project User Interface
+====================================
+
+This section presents the UART Terminal Interface, which helps the user to interact with the software application, that will run on the BeMicroSDK. The UART Terminal Interface can be started in two different way. First from Nios II command shell, by using the **programm_fpga.sh** script (for quick evolution) or from Nios II IDE after programming the **BeMicroSDK**.
+
+.. tip::
+
+   Note: When using the standalone nios2-terminal for interfacing with the AD5755, it might happen that no characters are echoed from the console, and the backspace are ignored. In this case should be used the Nios II Terminal Console windows from the Nios II IDE to evaluate the device.
+
+
+If the nios2-terminal connected to the device the message \*\* AD5755 OK \*\* should appear at the Nios II Console.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/nios2_console_ok.png
+   :alt: nios2_console_ok.png
+   :align: center
+   :width: 600px
+
+By using the command **help?**, can list out all the available commands for the current device, with a small description containing indications how to use them.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/nios2_console_help.png
+   :alt: nios2_console_help.png
+   :align: center
+   :width: 600px
+
+The **AD5755** support the following commands, which can used to evaluate the **AD5755** converter:
+
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Command**   | **Description**                                                                                                                                                            |
++===============+============================================================================================================================================================================+
+| **help?**     | Display all available commands                                                                                                                                             |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **register?** | Get register value for a specified channel, the command has two arguments: register address and channel                                                                    |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **register=** | Set a register value, the command has four arguments: register type, which can be data or control, register address, channel number and the desired value                  |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **power?**    | Display the power state of the dc-to-dc converters, DAC and internal amplifiers for the selected channel. The command has one argument : channel                           |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **power=**    | Set up the power state of the dc-to-dc converters, DAC and internal amplifiers for the selected channel. The command has two arguments: channel and 1 for ON and 0 for OFF |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **range?**    | Display the range of the selected channel. The command has one argument : channel                                                                                          |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **range=**    | Set the range of the selected channel. Has two argument: channel and range                                                                                                 |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **voltage?**  | Display the output voltage of a specified channel. The command has one argument: channel                                                                                   |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **voltage=**  | Set the output voltage of a specified channel. The command using two arguments: channel and the desired value                                                              |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **current?**  | Display the output current of a specified channel. The command has one argument: channel                                                                                   |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **current=**  | Set the output current of a specified channel. The command using two arguments: channel and the desired value                                                              |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

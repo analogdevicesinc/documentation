@@ -1,0 +1,276 @@
+AD469X HDL Reference Design
+===========================
+
+.. important::
+
+   We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad469x_evb/index.html\
+
+
+Overview
+--------
+
+The AD469X HDL reference design provides all the interfaces that are necessary to interact with the devices on the AD469X eval board.
+
+The design has a SPI Engine instance to control and acquire data from the AD4696 16-bit precisions ADC, providing support to capture continuous samples at maximum sampling rate. Currently the design supports the Zedboard.
+
+Used devices
+~~~~~~~~~~~~
+
+-  :adi:`AD4696`
+
+Supported FPGA carrier
+~~~~~~~~~~~~~~~~~~~~~~
+
+-  `Zedboard <https://store.digilentinc.com/zedboard-zynq-7000-arm-fpga-soc-development-board>`__
+
+HDL Design Description
+----------------------
+
+The design is built upon ADI's generic HDL reference design framework. In the :doc:`ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>` can be found an in-depth presentation and instructions about the HDL design framework in general.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/ad469x_hdl1.svg
+   :alt: spi engine block diagram
+
+The reference design uses the standard :doc:`SPI Engine Framework </wiki-migration/resources/fpga/peripherals/spi_engine>` to interface the AD4696 ADC in single SDO Mode. The SPI offload module, which can be used to capture continuous data stream at maximum data rate, is triggered by the BUSY signal of the device.
+
+In order to build the HDL design the user has to go through the following steps:
+
+-  Confirm that you have the right tools (see :git-hdl:`Release notes <releases>`)
+-  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
+-  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
+
+No-OS Driver Description
+------------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+---------------------------------------------------------------------+
+| Function                                                            | Description                                                         |
++=====================================================================+=====================================================================+
+| ``int32_t ad469x_spi_reg_read(struct ad469x_dev *dev,               | Read device register.                                               |
+|                 uint16_t reg_addr,                                  |                                                                     |
+|                 uint8_t *reg_data);``                               |                                                                     |
++---------------------------------------------------------------------+---------------------------------------------------------------------+
+| ``int32_t ad469x_spi_reg_write(struct ad469x_dev *dev,              | Write device register                                               |
+|                  uint16_t reg_addr,                                 |                                                                     |
+|                  uint8_t reg_data);``                               |                                                                     |
++---------------------------------------------------------------------+---------------------------------------------------------------------+
+| ``int32_t ad469x_spi_read_mask(struct ad469x_dev *dev,              | Read from device using a mask                                       |
+|                  uint16_t reg_addr,                                 |                                                                     |
+|                  uint8_t mask,                                      |                                                                     |
+|                  uint8_t *data);``                                  |                                                                     |
++---------------------------------------------------------------------+---------------------------------------------------------------------+
+| ``int32_t ad469x_spi_write_mask(struct ad469x_dev *dev,             | Write to device using a mask                                        |
+|                   uint16_t reg_addr,                                |                                                                     |
+|                   uint8_t mask,                                     |                                                                     |
+|                   uint8_t data);``                                  |                                                                     |
++---------------------------------------------------------------------+---------------------------------------------------------------------+
+| ``int32_t ad469x_read_data(struct ad469x_dev *dev,                  | Read data from device                                               |
+|              uint8_t channel,                                       |                                                                     |
+|              uint32_t *buf,                                         |                                                                     |
+|              uint16_t samples);``                                   |                                                                     |
++---------------------------------------------------------------------+---------------------------------------------------------------------+
+| ``int32_t ad469x_seq_read_data(struct ad469x_dev *dev,              | Read from device when converter has the channel sequencer activated |
+|                  uint32_t *buf,                                     |                                                                     |
+|                  uint16_t samples);``                               |                                                                     |
++---------------------------------------------------------------------+---------------------------------------------------------------------+
+| ``int32_t ad469x_set_channel_sequence(struct ad469x_dev *dev,       | Set channel sequence                                                |
+|                     enum ad469x_channel_sequencing seq);``          |                                                                     |
++---------------------------------------------------------------------+---------------------------------------------------------------------+
+| ``int32_t ad469x_std_sequence_ch(struct ad469x_dev *dev,            | Configure standard sequencer enabled channels                       |
+|                    uint16_t ch_mask);``                             |                                                                     |
++---------------------------------------------------------------------+---------------------------------------------------------------------+
+| ``int32_t ad469x_adv_sequence_set_num_slots(struct ad469x_dev *dev, | Configure advanced sequencer number of slots                        |
+|                            uint8_t num_slots);``                    |                                                                     |
++---------------------------------------------------------------------+---------------------------------------------------------------------+
+
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ``int32_t ad469x_adv_sequence_set_slot(struct ad469x_dev *dev,    | Advanced sequencer, assign channel to a slot                                            |
+|                      uint8_t slot,                                |                                                                                         |
+|                      uint8_t channel);``                          |                                                                                         |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ``int32_t ad469x_sequence_enable_temp(struct ad469x_dev *dev);``  | Enable temperature read at the end of the sequence, for standard and advance sequencer  |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ``int32_t ad469x_sequence_disable_temp(struct ad469x_dev *dev);`` | Disable temperature read at the end of the sequence, for standard and advance sequencer |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ``int32_t ad469x_adv_seq_osr(struct ad469x_dev *dev, uint16_t ch, | Configure over sampling ratio in advanced sequencer mode                                |
+|                enum ad469x_osr_ratios ratio);``                   |                                                                                         |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ``int32_t ad469x_std_seq_osr(struct ad469x_dev *dev,              | Configure over sampling ratio in standard sequencer mode                                |
+|                enum ad469x_osr_ratios ratio);``                   |                                                                                         |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ``int32_t ad469x_enter_conversion_mode(struct ad469x_dev *dev);`` | Enter conversion mode                                                                   |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ``int32_t ad469x_exit_conversion_mode(struct ad469x_dev *dev);``  | Exit conversion mode                                                                    |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ``int32_t ad469x_init(struct ad469x_dev **device,                 | Initialize the device                                                                   |
+|             struct ad469x_init_param *init_param);``              |                                                                                         |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ``int32_t ad469x_remove(struct ad469x_dev *dev);``                | Remove the device and release resources                                                 |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------------------------+
+
+
+| ``/**                                                                            |
+
+|   * @enum ad469x_channel_sequencing                                              |
+|   * @brief Channel sequencing modes                                              |
+|  */                                                                              |
+| enum ad469x_channel_sequencing {                                                 |
+|     /** Single cycle read */                                                     |
+|     AD469x_single_cycle,                                                         |
+|     /** Two cycle read */                                                        |
+|     AD469x_two_cycle,                                                            |
+|     /** Sequence trough channels, standard mode */                               |
+|     AD469x_standard_seq,                                                         |
+|     /** Sequence trough channels, advanced mode */                               |
+|     AD469x_advanced_seq,                                                         |
+| };                                                                               |
+|                                                                                  |
+| /**                                                                              |
+|   * @enum ad469x_busy_gp_sel                                                     |
+|   * @brief Busy state, possible general purpose pin selections                   |
+|   */                                                                             |
+| enum ad469x_busy_gp_sel {                                                        |
+|     /** Busy on gp0 */                                                           |
+|     AD469x_busy_gp0 = 0,                                                         |
+|     /** Busy on gp3 */                                                           |
+|     AD469x_busy_gp3 = 1,                                                         |
+| };                                                                               |
+|                                                                                  |
+| /**                                                                              |
+|   * @enum ad469x_reg_access                                                      |
+|   * @brief Register access modes                                                 |
+|   */                                                                             |
+| enum ad469x_reg_access {                                                         |
+|     AD469x_BYTE_ACCESS,                                                          |
+|     AD469x_WORD_ACCESS,                                                          |
+| };                                                                               |
+|                                                                                  |
+| /**                                                                              |
+|   * @enum ad469x_supported_dev_ids                                               |
+|   * @brief Supported devices                                                     |
+|   */                                                                             |
+| enum ad469x_supported_dev_ids {                                                  |
+|     ID_AD4695,                                                                   |
+|     ID_AD4696,                                                                   |
+|     ID_AD4697,                                                                   |
+| };                                                                               |
+|                                                                                  |
+| /**                                                                              |
+|   * @enum ad469x_osr_ratios                                                      |
+|   * @brief Supported oversampling ratios                                         |
+|   */                                                                             |
+| enum ad469x_osr_ratios {                                                         |
+|     AD469x_OSR_1,                                                                |
+|     AD469x_OSR_4,                                                                |
+|     AD469x_OSR_16,                                                               |
+|     AD469x_OSR_64                                                                |
+| };                                                                               |
+|                                                                                  |
+| /**                                                                              |
+|   * @struct ad469x_init_param                                                    |
+|   * @brief  Structure containing the init parameters needed by the ad469x device |
+|  */                                                                              |
+| struct ad469x_init_param {                                                       |
+|     /* SPI */                                                                    |
+|     spi_init_param      *spi_init;                                               |
+|     /* SPI module offload init */                                                |
+|     struct spi_engine_offload_init_param *offload_init_param;                    |
+|     /* PWM generator init structure */                                           |
+|     struct pwm_init_param   *trigger_pwm_init;                                   |
+|     /** RESET GPIO initialization structure. */                                  |
+|     struct gpio_init_param  *gpio_resetn;                                        |
+|     /* Clock gen for hdl design init structure */                                |
+|     struct axi_clkgen_init  *clkgen_init;                                        |
+|     /* Clock generator rate */                                                   |
+|     uint32_t        axi_clkgen_rate;                                             |
+|     /* Register access speed */                                                  |
+|     uint32_t        reg_access_speed;                                            |
+|     /* Register data width */                                                    |
+|     uint8_t     reg_data_width;                                                  |
+|     /* Capture data width */                                                     |
+|     uint8_t     capture_data_width;                                              |
+|     /* Device Settings */                                                        |
+|     enum ad469x_supported_dev_ids dev_id;                                        |
+|     /** Invalidate the Data cache for the given address range */                 |
+|     void (*dcache_invalidate_range)(uint32_t address, uint32_t bytes_count);     |
+| };                                                                               |
+|                                                                                  |
+| /**                                                                              |
+|   * @struct ad469x_dev                                                           |
+|   * @brief  Structure representing an ad469x device                              |
+|  */                                                                              |
+| struct ad469x_dev {                                                              |
+|     /* SPI descriptor */                                                         |
+|     spi_desc        *spi_desc;                                                   |
+|     /* Clock gen for hdl design structure */                                     |
+|     struct axi_clkgen   *clkgen;                                                 |
+|     /* Trigger conversion PWM generator descriptor */                            |
+|     struct pwm_desc     *trigger_pwm_desc;                                       |
+|     /* SPI module offload init */                                                |
+|     struct spi_engine_offload_init_param *offload_init_param;                    |
+|     /* Register access speed */                                                  |
+|     uint32_t        reg_access_speed;                                            |
+|     /* Register data width */                                                    |
+|     uint8_t     reg_data_width;                                                  |
+|     /* Capture data width */                                                     |
+|     uint8_t     capture_data_width;                                              |
+|     /* Device Settings */                                                        |
+|     enum ad469x_supported_dev_ids dev_id;                                        |
+|     /** RESET GPIO handler. */                                                   |
+|     struct gpio_desc    *gpio_resetn;                                            |
+|     /** Invalidate the Data cache for the given address range */                 |
+|     void (*dcache_invalidate_range)(uint32_t address, uint32_t bytes_count);     |
+|     /** Current channel sequence */                                              |
+|     enum ad469x_channel_sequencing ch_sequence;                                  |
+|     /** OSR resolution corresponding to each channel, when advanced              |
+|      * sequencer is selected. */                                                 |
+|     enum ad469x_osr_ratios adv_seq_osr_resol[AD469x_CHANNEL_NO];                 |
+|     /** Channel slots for advanced sequencer */                                  |
+|     uint8_t ch_slots[AD469x_SLOTS_NO];                                           |
+|     /** Temperature enabled for standard and advanced sequencer if set. */       |
+|     bool temp_enabled;                                                           |
+|     /** Number of active channel slots, for advanced sequencer */                |
+|     uint8_t num_slots;                                                           |
+| };``                                                                             |
++----------------------------------------------------------------------------------+
+
+HDL Downloads
+-------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |AD469X HDL Project.|
+
+Software sources
+----------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |No-OS Driver.|
+
+   -
+
+   |No-OS Project.|
+
+.. |AD469X HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/ad469x_fmc`
+.. |No-OS Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad469x`
+.. |No-OS Project.| image:: https://wiki.analog.com/_media/:git-no-OS:`projects/ad469x_fmcz`

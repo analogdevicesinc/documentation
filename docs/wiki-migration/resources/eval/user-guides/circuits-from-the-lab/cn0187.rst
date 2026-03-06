@@ -1,0 +1,296 @@
+CN0187 Crest Factor, Peak, and RMS RF Power Measurement Circuit Optimized for High Speed, Low Power, and Single 3.3 V Supply
+============================================================================================================================
+
+Overview
+--------
+
+The circuit measures peak and rms power at any RF frequency from 450 MHz to 6 GHz over a range of approximately 45 dB. The measurement results are converted to differential signals in order to eliminate noise and are provided as digital codes at the output of a 12-bit SAR ADC with serial interface and integrated reference. A simple twopoint calibration is performed in the digital domain.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/cn0187-hw-1024.jpg
+   :align: center
+   :width: 500px
+
+--------------
+
+General Setup
+-------------
+
+-  :adi:`EVAL-CN0187-SDPZ` Evaluation Board
+-  :adi:`EVAL-SDP-CB1Z` Evaluation Board
+-  `CN0187 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0187>`__
+
+   -  (supplied with provided CD in kit)
+
+-  Power supply: +6 V, or +6 V “wall wart”
+-  USB Type-A plug to USB Mini-B plug cable
+-  RF signal source (>6GHz)
+-  Coaxial RF cable with SMA connectors
+
+--------------
+
+Minimum PC/System Requirements
+------------------------------
+
+-  One PC with the following
+
+   -  Windows XP SP2, Windows Vista or Windows 7 Business/Enterprise/Ultimate editions
+   -  Intel Pentium processor (x86 compatible), 1GHz or faster
+   -  512 MB RAM and 2 GB available hard disk space
+   -  .NET 3.5 Framework
+
+--------------
+
+How to Install the Evaluation Software
+--------------------------------------
+
+-  Extract the file **CN0187 Eval Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0187 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0187>`__ to the default directory path **C:\\Program Files\\Analog Devices\\CN0187\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+\
+
+
+
+|image1|
+
+-  Click **Next** to view the installation review page\
+
+|image2|
+
+-  Click **Next** to start the installation\
+
+|image3|
+
+-  Upon completion of the installation of the **CN0187 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image4|
+
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+   \\\\
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+{{ :resources:eval:user-guides:circuits-from-the-lab:cn0326:fig5.jpg?direct \|\
+
+
+
+|fig5.jpg|
+
+-  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.{{ :resources:eval:user-guides:circuits-from-the-lab:cn0326:fig7.jpg?direct \|\
+
+|image5|
+
+--------------
+
+Connecting the Hardware
+-----------------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/cn0187_block_diagram_v1.png
+   :align: center
+
+-  Connect the 120-pin connector on the :adi:`EVAL-CN0187-SDPZ` circuit board to the connector marked “CON A” on the EVAL-SDP-CB1Z evaluation (SDP) board. Nylon hardware should be used to firmly secure the two boards, using the holes provided at the ends of the 120-pin connectors as depicted in the image below.
+-  Using an appropriate RF cable, connect the RF signal source to the :adi:`EVAL-CN0187-SDPZ` board via the SMA RF input connector.
+-  With power to the supply off, connect a +6 V power supply to the pins marked “+6 V” and “GND” on the board. If available, a +6 V "wall wart" can be connected to the barrel jack connector on the board and used in place of the +6 V power supply.
+-  Connect the USB cable, supplied along with the :adi:`EVAL-SDP-CB1Z` evaluation board, from the SDP board to the USB port on the PC.
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+The following software section will help describe the steps you will need to go through when using the hardware and software together. There are some nationalizations and calibrations which must be done, and then some commands and instructions on how to use the software. Please read carefully to completely understand how to use the demo. Below are the list of available software controls grouped according to their location in the software GUI:
+
+
+|image6|
+
+Calibration
+~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_calibration_intructions_v1.png
+   :align: center
+
+.. important::
+
+   Calibration procedure needs to be done for every change in frequency.
+
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/main_cal.png
+   :align: center
+
+::
+
+     -Input
+     * Input Power (dBm)
+       * value of a known power level input in dBm
+     * Frequency (MHz)
+       * value of a known frequency level input in MHz
+     * Acquire Data
+       * acquire the data from the provided input in the power and frequency level
+     * Remove List
+       * remove the last data that was provided in the input power and frequency level
+     * Calibrate Data
+       * execute the calibration process
+     * Clear Calibration
+       * clear the value from the previous settings
+     * Save Calibration File
+       * save the current value provided at the input for power and frequency level
+     * Load Calibration File
+       * load the desired saved calibrated settings
+   * Output
+     * Vrms (V)
+       * display the calculated RMS voltage output from the known power level and frequency input
+     * Peak (V)
+       * display the calculated peak voltage output from the known power level and frequency input
+     * Calibration Complete
+       * indicate a complete calibration process
+
+Measure Input Power
+~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/main_measure.png
+   :align: center
+
+.. important::
+
+   The board must be calibrated before Input Power can be measured
+
+
+-  List of Input Buttons
+
+   -  Acquire Data
+
+      -  acquired data from the device
+
+   -  Remove List
+
+      -  remove the last data read
+
+   -  Clear Data
+
+      -  set all the values from the display to 0
+
+   -  Save Data to File
+
+      -  save the values displayed
+
+   -  Peak-Hold Mode (Active Low)
+
+      -  hold the last value read from acquiring the data
+
+-  Output
+
+   -  Frequency (MHz)
+
+      -  display the acquired frequency in MHz
+
+   -  Input Power (dBm)
+
+      -  display the acquired input power in dBm
+
+   -  Input Power (Vrms)
+
+      -  display the acquired input RMS voltage value
+
+   -  Vrms (V)
+
+      -  display the calculated RMS voltage value
+
+   -  Peak (V)
+
+      -  display the calculated peak voltage value
+
+Advanced
+~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/main_advance.png
+   :align: center
+
+.. important::
+
+   Note: Do not modify these values unless you need to
+
+
+-  Sclk (Hz)
+
+   -  set the SPI clock reference
+
+-  /CS (Hz)
+
+   -  set the Chip select clock settings
+
+-  Sample Size
+
+   -  set the sample size
+
+Graphical Output
+~~~~~~~~~~~~~~~~
+
+|image7| |image8|
+
+.. note::
+
+   
+   -  dBm - output displayed in dBm
+   -  Vrms- output displayed in Vrms
+   
+
+
+|image9| |image10|
+
+.. note::
+
+   Crest factor is the peak amplitude of the waveform divided by the RMS value of the waveform
+
+
+Schematics, PCB Layout, Bill of Materials
+-----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/eval-cn0187-sdpz-padsschematic-revb.pdf>`__ (PDF)
+   -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/eval-cn0187-sdpz-bom-revb.xls>`__\ (Excel)
+   -  `Layout Gerbers <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/eval-cn0187-sdpz-gbr-revb.zip>`__\ (ZIP)
+   -  `Assembly Drawing <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/eval-cn0187-sdpz-assemblydrawing-revb.pdf>`__\ (PDF)
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0187-SDPZ?&v=Rev B>`__ to receive all these great benefits and more!
+
+
+// End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step4.png
+.. |fig5.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig5.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig7.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/calibrate.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_vrms.png
+   :width: 410px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_peak.png
+   :width: 410px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_crest.png
+   :width: 450px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/crest_factor_sample_output.png
+   :width: 380px

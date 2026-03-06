@@ -1,0 +1,790 @@
+Using ADE9178 for EV Charger Metrology Solution
+===============================================
+
+Introduction
+------------
+
+| This application note details the metrology component of a 22kW three phase AC Electric Vehicle Supply Equipment (EVSE) design. The metrology solution has been built around the ADE9178 metrology IC and ADE911x isolated, simultaneously sampling Σ-Δ ADCs. This part comes in a 2 (ADE9112) or 3 (ADE9113) channel variant. The phase currents are sensed using shunts, and the phase voltages are measured using resistor dividers. A MAX32672 micro-controller manages the ADE9178 over SPI communications. The design also features a residual current detector (RCD), 4-pole relay, LCD display, CF pulse output and non-volatile memory module (EEPROM).
+| This document provides details on how to reproduce this design. It also highlights the features of the ADE9178 metrology IC which are of particular use in an EVSE use case. These include PEN fault detection and stuck relay detection. For both of these, a detailed guide is included on how to setup the part to use the feature and interpret the results.
+
+Functional Block Diagram
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The high-level structure of the design is illustrated in the block diagram below. Dotted lines indicate the isolation barrier of the design. Protective earth is shown on the safe side. Current and voltage measurement on phases A, B and C is performed after the power supply circuitry ensuring the customer is not charged for power losses in the EVSE. It is performed after the relay, just before the connector to the EV. This means metrology should always be read as zero when the relay is open. Voltage is also measured before the relay on each phase. The difference between the two voltage measurements can be used to detect stuck relay events. Pen fault detection is also performed using these pre-relay potential dividers.
+
+|jever_block_diagram.png| *Figure 1: Functional Block Diagram*
+
+Analog Front-End Detailed Design
+--------------------------------
+
+| The analog front-end of the design consists of four ADCs. Three of the ADCs are 2 channel isolated ADE9112 parts. These are used to convert voltage and current measurements on phases A, B and C. On each of these ADCs, channel input pins IP and IM are connected to a 500μΩ shunt. Since maximum voltage range of input pins IP and IM is ±31.25mV, full-scale current inputs for the design are given by:
+| :math:`\displaystyle I_{FS} = (I_{ADCFS}/Shunt_{RES} \times \sqrt{2}) = (0.\frac{03125}{500} \times 10^{-6} \times \sqrt{2}) = 44.188A_{rms}`
+| The other channel input pins V1P and V1M are connected to a potential divider consisting of three 330kΩ resistors on the top of the divider and a 1kΩ resistor on the bottom giving a divider ratio of:
+| :math:`R2/R1+R2 = 1000/(1000+990 \times 10^3) = 0.001`
+
+| Therefore, since maximum voltage range of input pins V1P and V1M is ±1V in fully differential mode, theoretical full-scale voltage inputs for the design are given by:
+| :math:`\displaystyle V_{FS_T} = (V_{ADCFS}/Divider Ratio \times \sqrt{2}) = (\frac{1}{0}.001 \times \sqrt{2}) = 707V_{rms}`
+
+| However, this circuit is not configured in fully differential mode since V1M is tied to AGND. This is known as psuedo differential operation. The single-ended voltage range of input pins V1P and V1M is ±0.5V, which gives the actual allowable full-scale voltage inputs as:
+| :math:`\displaystyle V_{FS} = (V_{ADCFS}/Divider Ratio \times \sqrt{2}) = (0.\frac{5}{0}.001 \times \sqrt{2}) = 353.55V_{rms}`
+
+| We still use the theoretical maximum full-scale voltage of 707Vrms when calculating values for ADE9178 configuration registers, as we will see below.
+| The fourth ADC is a 3 channel isolated ADE9113 part. All three channels are connected to a potential divider for voltage measurement. V1P/ V1M and V2P/ V2M are connected to identical dividers to the ones connected to the 9112 ADCs, with real full-scale voltage 353.55Vrms. However, current channel input pins IP and IM have full-scale inputs of only ±31.25mV so using the same divider ratio would result in a much smaller voltage input range. Refer to ADE9113 datasheet for these specifications. Therefore, for the third divider we use a bottom resistor of 63.4Ω. This standard value gets us close to a full-scale range of 353.55Vrms. Divider ratio:
+| :math:`R2/R1+R2 = 63.4/(63.4+990 \times 10^3) = 64.036 \times 10^-6`
+
+Full-scale voltage is calculated as:
+
+:math:`\displaystyle V_{FS} = (I_{ADCFS}/Divider Ratio \times \sqrt{2}) = (0.\frac{03125}{64}.036 \times 10^-6 \times \sqrt{2}) = 345.073V_{rms}`
+
+| During the calibration phase we can ensure gain registers are set to give exact 353.55Vrms full-scale. For information on how to calibrate channels please refer to the ADE9178 Datasheet.
+| 1.8kΩ ferrite beads are used on certain ADC pins to suppress high frequency signals. Converted output signals from the ADCs are sent over SPI communications to the ADE9178 part. 10kΩ pull-up resistors are placed on the SPI lines. Reset pins from the ADCs and ADE9178 are all tied together in this design. Various decoupling capacitors should be installed. More details are given in the diagram below.
+
+|ade9178_test_circuit.png| *Figure 2: Analog Front-End Detailed Block Diagram*
+
+Pen Fault Detection
+-------------------
+
+Introduction to Pen Fault Detection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| In electrical installations, a Protective Earth to Neutral (PEN) fault refers to a fault condition involving the protective earth (PE) conductor, neutral conductor (N) and the combined PEN conductor. A PEN fault occurs when there is an open circuit or fault in the PEN conductors. This can happen due to damaged insulations, open circuits, etc. PEN faults can be hazardous as they can result in the loss of protective earth connection and cause exposed metal parts of the electrical installation to become live, which could cause electric shock. Therefore, for EVSE it is is important to identify PEN fault events and cut power to the installation for safety by opening the relay.
+| The BS7671:2018 is the British safety standard for electrical installation and wiring safety. This standard requires protection against pen fault. One way of implementing this is if the neutral to earth voltage of an installation exceeds 70Vrms, the EV charger must open its relays within 5 seconds to cut power to the system. Its important to note most other regions do not have a standard requiring PEN fault detection.
+| Currently, various methods are available in the market for detecting PEN faults. One approach involves directly measuring the fault voltage against an earth reference voltage by installing an earth electrode alongside the EV charger. Another solution measures the current in the PE conductor using a current transformer. In both cases, if the fault voltage/ current exceeds the set threshold specified above, the contactors are switched open minimising electric shock risk. However, these solutions add extra cost and complexity to the installation.
+| |pen_fault_explanation.png| *Figure 3: Explanation of PEN Fault*
+
+Solution from Analog Devices
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| The ADE9178 metrology IC has been designed to allow for simple PEN fault detection according to the BS7671:2018 standard. Unlike other options, ADI's solution does not introduce significant extra cost, weight or size to the system. Existing measurements from the ADE9178 already required for energy accumulation in the EV charger are used to calculate the fault voltage. A simplified circuit diagram of what we are measuring can be seen in figure 4.
+| |circuit_diagram.png| *Figure 4: Circuit Diagram Explaining ADI's Pen Fault Solution*
+
+| A 5-pole relay is shown here because switching earth, linked with the live conductors is required by the UK BS7671:2018 standard for PEN fault detection. In the general EVSE design shown in figure 1 we include a 4-pole relay and as a result the design does not support the BS7671:2018 regulation. Users can decide themselves the importance of installing a 5-pole relay and should consult the BS7671:2018 standard for the exact wording.
+| The method to calculate the fault voltage is as follows. For each ADC sample the following calculation is performed:
+| :math:`\displaystyle Vfault_RMS = RMS(\frac{VL1 + VL2 + VL3}{3})`
+
+| where VL1, VL2 and VL3 are the line to neutral voltages for each phase which are measured by the ADE9178. The metrology device calculates the RMS of Vfault over N cycles and if RMS of Vfault is over 70Vrms then an interrupt is raised to instruct the host MCU to open the relay.
+| The above formula only holds true when the three phases are balanced. As a result, we must also disconnect the device when there is a "significant voltage imbalance" between the phases. This edge case is covered in the BS7671:2018. Therefore, we also use the metrology device to measure phase-to-phase voltage. If the phase-to-phase RMS voltages go above/ below 15% of nominal, then the supply should be disconnected. This makes the solution robust.
+
+Setting up the ADE9178 Part for PEN Fault Detection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| Three data processing channels in ADE9178 are used for PEN fault detection: PEN_CHANA, PEN_CHANB and PEN_CHANC. The PEN channels can be configured using the PEN_CHANSELA, PEN_CHANSELB and PEN_CHANSELC bits in the PEN_CONFIG register. The PEN channels can be set to any of the 12 ADC channels: AV, BV, CV, AI, BI, CI, AUX0, AUX1, AUX2, AUX3, AUX4 and AUX5. We can see a diagram of how the channels are mapped in our application below.
+| |mapping.png| *Figure 5: Diagram of Channel Mapping between ADCs and ADE9178*
+
+| For our application we want to perform pen fault detection before the relay. Therefore, we use the voltage dividers on the phases connected to ADE9113 part (see figure 1 above). From detailed front-end diagram shown in figure 2 we can see that ADE9113 current channel is tied to phase A. From our mapping diagram this is tied to AUX3. So we use AUX3 to measure phase A pen fault.
+| Since ADE9113 V1 channel is tied to phase B we use AUX4 to measure phase B pen fault. Finally, since ADE9113 V2 channel is tied to phase C we use AUX5 to measure phase C pen fault.
+
+Every one cycle the following RMS values are calculated:
+
+-  VSUMRMSONE = (PEN_CHANA + PEN_CHANB + PEN_CHANC)/3
+-  VABRMSONE = PEN_CHANA - PEN_CHANB
+-  VACRMSONE = PEN_CHANA - PEN_CHANC
+-  VBCRMSONE = PEN_CHANB - PEN_CHANC
+
+| The period for any one of the PEN channels is calculated based on PEN_LP_SEL bits in the PEN_CONFIG register and is stored in the PEN_PERIOD register. This period value is used to calculate the PEN channel RMSONE measurements.
+| Separate RMS offset calibration values are provided for each PEN channel (VSUMRMSONEOS, VABRMSONEOS, VACRMSONEOS, VBCRMSONEOS).
+| For our EVSE application we configure PEN_CONFIG as follows:
+
+-  PEN_CHANSELA = 1001 = AUX3 Data Processing Path
+-  PEN_CHANSELB = 1010 = AUX4 Data Processing Path
+-  PEN_CHANSELC = 1011 = AUX5 Data Processing Path
+-  PEN_LP_SEL = 11 = Period based on Combined PEN Channels (AUX3 + AUX4 - AUX5)/2
+
+The PEN Fault output registers will then be calculated as follows:
+
+-  VSUMRMSONE = (AUX3 + AUX4 + AUX5)/3
+-  VABRMSONE = AUX3 - AUX4
+-  VACRMSONE = AUX3 - AUX5
+-  VBCRMSONE = AUX4 - AUX5
+-  PEN_PERIOD = Period of Combined PEN Channels
+
+| We now have all the necessary measurements to detect a PEN fault condition, based on the fault voltage (VSUMRMSONE) and the phase-to-phase voltages.
+
+Dips and Swells on PEN Fault Channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| We can now setup ADE9178 to detect dips and swells on PEN fault channels automatically if they exceed certain thresholds. If you recall, allowable thresholds set by the BS7671:2018 were 70Vrms for the Vfault value and above/ below 15% of nominal for phase-to-phase voltages. Nominal phase-to-phase voltages are 400Vrms.
+| The relevant configuration registers are shown in the table below. Swells can be detected based on VSUMRMSONE value while both dips and swells can be detected on the three phase-to-phase voltage RMS values (VABRMSONE, VACRMSONE and VBCRMSONE).
+
+**Table 1. PEN Fault Dip and Swell Configuration**
+
++---------------------------------+---------------------------------+-------------------------------+-------------------------------+
+| **Swell Level Config Register** | **Swell Cycle Config Register** | **Dip Level Config Register** | **Dip Cycle Config Register** |
++=================================+=================================+===============================+===============================+
+| VSUMSWELLONE_LVL                | VSUMSWELLONE_CYC                | -                             | -                             |
++---------------------------------+---------------------------------+-------------------------------+-------------------------------+
+| VABSWELLONE_LVL                 | VABSWELLONE_CYC                 | VABDIPONE_LVL                 | VABDIPONE_CYC                 |
++---------------------------------+---------------------------------+-------------------------------+-------------------------------+
+| VACSWELLONE_LVL                 | VACSWELLONE_CYC                 | VACDIPONE_LVL                 | VACDIPONE_CYC                 |
++---------------------------------+---------------------------------+-------------------------------+-------------------------------+
+| VBCSWELLONE_LVL                 | VBCSWELLONE_CYC                 | VBCDIPONE_LVL                 | VBCDIPONE_CYC                 |
++---------------------------------+---------------------------------+-------------------------------+-------------------------------+
+
+| The calculation for setting these configuration values is as follows.
+| For the "level" configuration values, we set them as a percentage of full-scale voltage of the application (in our case we use theoretical full-scale 707Vrms). Therefore, if we want to trigger a swell event when VSUMRMSONE (Vfault) goes above 70Vrms:
+
+:math:`Vrms/Vfst = 70V{rms}/707V{rms} = 0.099`
+
+:math:`RMS_{FSCODE} \times 0.099 = 107310840 \times 0.099 = 10623773`
+
+| where RMS_FS_CODE value can be found in the ADE9178 datasheet. This decimal value must be converted to hex before inputting to the part, which equals 0xA21B1D.
+| For setting a phase-to-phase swell level, for example VABRMSONE, we want to trigger a swell event when it exceeds +15% of nominal voltage. Nominal phase-to-phase voltages are 400V so 15% of that is 60V:
+
+:math:`Vrms/Vfst = 460V{rms}/707V{rms} = 0.6506`
+
+:math:`RMS_{FSCODE} \times 0.6506 = 107310840 \times 0.6506 = 69816432`
+
+| This equals 0x4295070 in hexadecimal. The same principle is followed when setting the phase-to-phase voltage level for dip events. We want to trigger a dip event when VABRMSONE drops below -15% of nominal voltage.
+| :math:`Vrms/Vfst = 340V{rms}/707V{rms} = 0.4809`
+
+:math:`RMS_{FSCODE} \times 0.4809 = 107310840 \times 0.4809 = 51605783`
+
+| This equals 0x3137117 in hexadecimal.
+| Setting the number of cycles is much more straightforward. This is the amount of cycles for which the PEN fault channel value must exceed the dip/swell condition before it is flagged. A single cycle is 20ms for frequency 50Hz. For example, setting number of cycles to 5 would represent 100ms. We must convert the desired number of cycles to hexadecimal before entering it into the part. If number of cycles is set to 0, this will default to 1 cycle (20ms). To set number of cycles to a reasonable value, refer to recommendation in the BS7671:2018 standard. Users should set number of cycles to avoid both oversensitivity and missing potential pen fault events.
+| Four status bits are provided for pen fault channel swells: VSUMSWELLONE, VABSWELLONE, VACSWELLONE and VBCSWELLONE. These are in the STATUS2 register.
+| Three status bits are provided for pen fault channel dips: VABDIPONE, VACDIPONE and VBCDIPONE. These are also in the STATUS2 register.
+| If desired, we can configure the part to generate interrupts on IRQ2 pin every time a PEN Fault condition is triggered. In our application IRQ2 is connected to the MCU which allows us to open the relay and disconnect the EV charger, in-line with the BS7671:2018 standard. To generate IRQ2 outputs, set DIP_SWELL_ONE_IRQ_MODE bit in CONFIG0 to 1 so that bits in the STATUS2 register are set only when entering or exiting the dip/swell condition. Also set relevant bits in the MASK2 register. See register map in ADE9178 datasheet for full details.
+
+Stuck Relay Detection
+---------------------
+
+Introduction to Stuck Relay Detection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| Power relays are electromechanical devices that are used to control the flow of electrical power in a circuit. A common use case for power relays is electric vehicle charging stations. Power relays consist of a coil which generates a magnetic field when a current flows through it, and a set of contacts that are mechanically switched by the magnetic field. When the coil is energised, contacts close and current flows through the relay and into the load. In our application the load is the EV. When the coil is de-energised the contacts open, the circuit is broken and the flow of current is stopped. This is controlled by the MAX32672 microcontroller.
+| |relay.png| *Figure 6: How an Electromechanical Relay Operates*
+
+| Analog Devices recommends the use of AHER3191 4-pole power relay from Panasonic for this design. We want to control the flow of power on all 3 phases plus neutral. It is compliant with relevant standards IEC 61851-1 and IEC 62955.
+| A well documented problem with relays of this kind is they can become "fused" or stuck in the connected position. Without some form of feedback, the user then has no knowledge that the relay is still connected and current may still be flowing. This poses an obvious safety risk. This section will explain how to setup ADE9178 to perform stuck relay detection which will feed input back to the user if the relay is fused shut.
+
+Setting up the ADE9178 Part for Stuck Relay Detection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| From figure 1 above, in our example design the relay is connected just before the metrology measurements are performed, but after the auxiliary voltage divider measurements input to the ADE9113 part.
+| When the relay is opened by the MAX32672 we do a check. Metrology phase voltage measurements should theoretically be 0Vrms since they are taken after the relay. To perform this check we take a measurement from the standard rmsone registers (AVRMSONE, BVRMSONE, CVRMSONE). If any of the phases have a voltage that is greater than 15% of nominal voltage (34.5Vrms) we indicate a stuck relay may have occurred.
+| Threshold level can be set by the user and should be chosen to avoid both oversensitivity and missing potential stuck relay events.
+
+Layout Information
+------------------
+
+EMC Guidelines
+""""""""""""""
+
+In order to comply with relevant standards, PCB must pass a variety of electromagnetic compatibility (EMC) tests outlined in the IEC standards. The recommendations below cover layout requirements in order to pass these tests and focus mainly on emissions.
+
+Emissions
+~~~~~~~~~
+
+Emissions refer to the electromagnetic energy that a device generates and releases into its environment during normal operation.
+
+It is found that in order to pass emissions tests a stitch cap is required on the internal layers of the board with a capacitance of 32.5pF. This is a minimum requirement. Increasing the stitch cap more will increase the capacitance and reduce the emissions further, at the cost of additional board area.
+
+This is made clear by the results shown below. Graphs of vertical and horizontal emissions results are shown for two stitch cap sizes. While the 32.5pF performs adequately, a 67pF stitch cap results in better emissions performance. The full table of results for the 32.5pF stitch cap is also shown, indicating headroom at each frequency.
+
+Isopower Emissions ADE9113x4 32.5pF
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|emissions_32.5pF.png| *Figure 7: ADE9113x4 with ADE9178 Prescan 0 Degrees, 3M Chamber, 32.5pF stitch cap*
+
+.. container:: centeralign
+
+   \ **Table 2. Radiated Emissions, 32.5pF stitch cap, Vertical and Horizontal, 30MHz to 1GHz**\
+
+
+.. container:: center
+
+   
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+   | **
+   
+   .. container:: centeralign
+
+      Polarity
+
+   
+   ** | **
+   
+   .. container:: centeralign
+
+      Frequency
+
+   
+   .. container:: centeralign
+
+      (MHz)
+
+   
+   ** | **
+   
+   .. container:: centeralign
+
+      CISPR32_ClassB
+
+   
+   .. container:: centeralign
+
+      Requirement
+
+   
+   .. container:: centeralign
+
+      (dBuV/m)
+
+   
+   ** | **
+   
+   .. container:: centeralign
+
+      QP
+
+   
+   .. container:: centeralign
+
+      (dBuV/m)
+
+   
+   ** | **
+   
+   .. container:: centeralign
+
+      Margin
+
+   
+   .. container:: centeralign
+
+      (dB)
+
+   
+   **
+
+
+   
+   | **Degrees** |
+
+   +=======================================+======================================================================+==================================================================================================================+==================================================================+==================================================================+=============+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      325.51
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 32.34                                                            | -14.66                                                           | 30          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      327.70
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 35.23                                                            | -11.77                                                           | 30          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      329.92
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 34.41                                                            | -12.59                                                           | 30          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      348.10
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 39.44                                                            | -7.56                                                            | 30          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      348.10
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 33.62                                                            | -13.38                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      350.08
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 31.51                                                            | -15.49                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      354.12
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 35.47                                                            | -11.53                                                           | 180         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      356.22
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 41.43                                                            | -5.57                                                            | 30          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      356.22
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 33.29                                                            | -13.71                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      360.15
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 41.08                                                            | -5.92                                                            | 60          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      360.24
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 35.49                                                            | -11.51                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      362.22
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 40.06                                                            | -6.94                                                            | 300         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      362.40
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 34.03                                                            | -12.97                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      364.56
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 35.52                                                            | -11.48                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      364.59
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 39.69                                                            | -7.31                                                            | 60          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      366.93
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 33.79                                                            | -13.21                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      368.76
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 34.88                                                            | -12.12                                                           | 300         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      368.85
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 31.91                                                            | -15.09                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      382.71
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 27.41                                                            | -19.59                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      397.32
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 31.41                                                            | -15.59                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+   
+
+
+Isopower Emissions ADE9113x4 67pF
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|67pF.jpg| *Figure 8: ADE9113x4 with ADE9178 Prescan 0 Degrees, 3M Chamber, 67pF stitch cap*
+
+This internal stitch capacitance has low inductance which means it performs better than external caps. The cap dielectric is required to be >0.4mm in compliance with IEC 62052-31:2015. A table of requirements for stackup and creepage/ clearance derived from the standard is shown below. Note that your requirements may be different to this table so please consult the full IEC standard to derive your own values.
+
+The thicker the dielectric is the larger the cap area required. Therefore, the recommendation is to keep the dielectric thickness between 0.4mm and 0.5mm.
+
+An image of the recommended board stackup is shown below with 0.508mm between board layers which adds headroom over the minimum requirement:
+
+|stackup.jpg| *Figure 9: Board Stackup*
+
+**Table 3. IEC62052-31:2015 Stackup and Creepage/Clearance Recommendations for Metering Applications**
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+| \*\ **\*^**\ Clearance (mm)\ **^**\ Creepage (mm)\ **^**\ Distance between layers, d (mm)\ **^**\ Distance between internal adjacent conductors , L (mm)*\* |
+
++=============================================================================================================================================================+
+
+| Basic Insulation                                                                                                                                            |
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| Reinforced Insulation                                                                                                                                       |
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+The images of the PCB layout below show the stitch cap dimensions used to get 32.5pF of capacitance. Using the measurements shown, we get a capacitor area of:
+
+:math:`A = 15.2mm \times 28.7mm = 437.3mm^2`
+
+We can then verify the capacitance is correct with the below formula:
+
+:math:`C = K \times E_0 \times A/D = 4.2 \times 8.854 \times 10^{-12} \times 437.3 \times 10^{-6}/0.5 \times 10^{-3} = 32.5pF`
+
+where:
+
+-  E0 is the permittivity of free space
+-  K is the dielectric constant of the material
+-  A is the overlapping surface area of the plates in m2
+-  D is the distance between the plates in m
+
+The images below also show the different board layers. The image on the left is of Layer 1 in red which carries the signals and Layer 2 in green which is AGND_1. Layer 2 makes up the top of the stitching cap. The image on the right highlights Layer 3 in purple which is DGND. Layer 3 extends under the ADE9112/3 to make up the bottom plate of the stitching cap. Therefore, where Layers 2 and 3 intersect forms the stitching cap.
+
+|stitch_cap.png| *Figure 10: PCB Layout showing Stitching Cap made up of Layers 2 and 3*
+
+VIA Placement
+~~~~~~~~~~~~~
+
+Through VIAs should be limited as much as possible. This is because the keep out zone around each VIA takes away from the PCB stitching cap area, reducing the capacitance. The images below take a detailed look at each VIA on the layout, specifying where they need to be placed. The figure below shows the ADE9113 ground VIAs. These need to be placed as close to the ADE9113 as possible.
+
+|via1.png| *Figure 11: VIAs around the ADE9113*
+
+The figure below shows the VIAs placed for decoupling purposes. These should be placed close to capacitors.
+
+|via2.png| *Figure 12: Decoupling VIAs*
+
+The final figure shows the VIAs used to ground the copper which shields the input traces. Without these VIAs there would be dangling copper pours on the layout.
+
+|via3.png| *Figure 13: VIAs used to ground the copper which shields the input traces*
+
+How to Utilise a Single PCB Design for Single-Phase & Three-Phase Configurations
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+| Through the use of different population options a single PCB design can be used in a single-phase configuration instead of three-phase. This may be useful for some customers.
+
+Physical Changes
+^^^^^^^^^^^^^^^^
+
+| Physical schematic/layout changes need to be made to the analog front-end as shown in figure 11. For a single-phase version, the following components should now be marked as do not install (DNI):
+
+-  Phase B ADE9112 and all surrounding components
+-  Phase C ADE9112 and all surrounding components
+-  ADE9113 Phase B and C voltage dividers since those phases are no longer present.
+
+| We use the ADE9113 for stuck relay detection and pen fault detection which is why we need to keep it but remove the phase B and C voltage dividers. If stuck relay detection/ pen fault is not required it is possible to remove the ADE9113 as well to further simplify and lower the cost of the design.
+| In terms of new components, A 0Ω link should be installed between phase A ADE9112 MISO pin and ADE9113 MOSI pin. This signal was previously routed through the other ADCs but now it goes directly to the ADE9113 as there are only two ADCs in the chain.
+| |ade9178_test_circuit_single_phase.png| *Figure 11: Analog Front-End Detailed Block Diagram for Single-Phase Configuration*
+
+General Configuration Changes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| In addition to physical changes, certain ADE9178 configuration registers need to be adjusted as well. In ADC_CONFIG register we need to change NUM_ADC bits to 2 instead of 4 which is the default.
+| The ADE9178 supports three voltage channels (AV, BV, CV), three current channels (AI, BI, CI) and 6 auxiliary channels (AUX0, AUX1..., AUX5). The part provides a multiplexer option to allow any ADC output to be redirected to any processing data path by writing appropriate slot number to ADC_REDIRECT0 and ADC_REDIRECT1 register.
+| For the original 4 ADC configuration, the ADC SPI frames will contain data in the following order shown in table 4. Also shown is the new 2 ADC configuration. As we can see from this table, data from the last ADC, the ADE9113, comes first.
+
+**Table 4. ADC Channel to ADE9178 Slot Mapping for 4 and 2 ADC Configurations**
+
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| **4 ADCs Connected (NUM_ADC = 0x4)** |             |              | **2 ADCs Connected (NUM_ADC = 0x2)** |             |              |
++======================================+=============+==============+======================================+=============+==============+
+| Phase                                | ADC Channel | ADE9178 SLOT | Phase                                | ADC Channel | ADE9178 Slot |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase A (ADE9113)                    | I           | SLOT0        | Phase A (ADE9113)                    | I           | SLOT0        |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase B (ADE9113)                    | V1          | SLOT1        | Phase B (ADE9113)                    | V1          | SLOT1        |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase C (ADE9113)                    | V2          | SLOT2        | Phase C (ADE9113)                    | V2          | SLOT2        |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase C                              | I           | SLOT3        | Phase A                              | I           | SLOT3        |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase C                              | V1          | SLOT4        | Phase A                              | V1          | SLOT4        |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase C                              | NC          | SLOT5        | Phase A                              | NC          | SLOT5        |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase B                              | I           | SLOT6        | Ignored                              | I           | SLOT6        |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase B                              | V1          | SLOT7        | Ignored                              | V1          | SLOT7        |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase B                              | NC          | SLOT8        | Ignored                              | NC          | SLOT8        |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase A                              | I           | SLOT9        | Ignored                              | I           | SLOT9        |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase A                              | V1          | SLOT10       | Ignored                              | V1          | SLOT10       |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+| Phase A                              | NC          | SLOT11       | Ignored                              | NC          | SLOT11       |
++--------------------------------------+-------------+--------------+--------------------------------------+-------------+--------------+
+
+Therefore, for a change in NUM_ADC, ADC_REDIRECT0 and ADC_REDIRECT1 which set which slots are assigned to which ADCs must be changed. For the 2 ADC configuration above: SLOT0, SLOT1 and SLOT2 remain unchanged. SLOT3 goes from being mapped to the current channel of phase C to the current channel of phase A. SLOT4 and SLOT5 are also now mapped to phase A.
+
+| The below table indicates ADC_REDIRECTx values for our default 4 ADC configuration and our 2 ADC single phase configuration. These settings ensure that the correct channels are assigned to the correct slots as shown in table 4 above. To see how these numbers are set, the register map and ADE9178 datasheet can be consulted.
+| **Table 5. ADCREDIRECTx Values for Three-Phase 4 ADC Configuration and Single-Phase 2 ADC Configuration**
+
+================= ======================= =======================
+**NUM_ADC Value** **ADC_REDIRECT0 Value** **ADC_REDIRECT1 Value**
+================= ======================= =======================
+0x4               0x6431D2A               0x410150B
+0x2               0x3FFFFC64              0x4107FE5
+================= ======================= =======================
+
+PEN Fault Configuration Changes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| The change from three-phase to single-phase configuration also requires some modification to the pen fault settings. Since phase B and phase C are no longer being measured, the three-phase Vfault formula above no longer holds. Additionally, phase-to-phase dip and swell events should no longer trigger a pen fault event since any phase-to-phase measurements referencing disabled B and C phases such as VAB, VAC will be incorrect. All configuration registers in table 1 should be set to their defaults (VSUMSWELLONE_LVL..., etc.) to prevent this.
+| For pen fault detection now we can simply use the AUX3RMSONE register since from our front-end diagram (figure 2) and mapping diagram (figure 5) we know this corresponds to the phase A measurement before the relay. According to the BS7671:2018 British safety standard, if the voltage between the line (phase A) and neutral conductors goes above 253Vrms or below 207Vrms then the EV charger should disconnect within 5 seconds.
+| As before we can configure dip/ swell registers so we trigger an interrupt if these conditions are breached. In this case we need to configure the AUX3SWELLONE_LVL, AUX3SWELLONE_CYC, AUX3DIPONE_LVL and AUX3DIPONE_CYC registers.
+| For the swell condition, we set AUX3SWELLONE_LVL to the following value, using theoretical full-scale in the calculation:
+
+:math:`Vrms/Vfst = 253V{rms}/707V{rms} = 0.3579`
+
+:math:`RMS_{FSCODE} \times 0.3579 = 107310840 \times 0.3579 = 38401191`
+
+which when converted into hex yields 0x249F4A7. Similarly, for the dip condition, we set AUX3DIPONE_LVL to the following value:
+
+:math:`Vrms/Vfst = 207V{rms}/707V{rms} = 0.2928`
+
+:math:`RMS_{FSCODE} \times 0.2928 = 107310840 \times 0.2928 = 31419157`
+
+| which when converted into hex gives 0x1DF6B15.
+| User can set number of cycles (AUX3SWELLONE_CYC, AUX3DIPONE_CYC) to a reasonable level by referring to recommendation in the BS7671:2018 standard. Users should set number of cycles to avoid both oversensitivity and missing potential pen fault events.
+| More details can be found in the ADE9178 datasheet and register map.
+
+.. |jever_block_diagram.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/jever_block_diagram.png
+   :width: 750px
+.. |ade9178_test_circuit.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9178_test_circuit.png
+   :width: 700px
+.. |pen_fault_explanation.png| image:: https://wiki.analog.com/_media/resources/app-notes/pen_fault_explanation.png
+   :width: 550px
+.. |circuit_diagram.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuit_diagram.png
+   :width: 550px
+.. |mapping.png| image:: https://wiki.analog.com/_media/resources/app-notes/mapping.png
+   :width: 400px
+.. |relay.png| image:: https://wiki.analog.com/_media/resources/app-notes/relay.png
+   :width: 300px
+.. |emissions_32.5pF.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/emissions_32.5pF.png
+   :width: 800px
+.. |67pF.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/67pF.jpg
+   :width: 600px
+.. |stackup.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/stackup.jpg
+   :width: 700px
+.. |stitch_cap.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stitch_cap.png
+   :width: 500px
+.. |via1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/via1.png
+   :width: 300px
+.. |via2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/via2.png
+   :width: 300px
+.. |via3.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/via3.png
+   :width: 300px
+.. |ade9178_test_circuit_single_phase.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9178_test_circuit_single_phase.png
+   :width: 700px

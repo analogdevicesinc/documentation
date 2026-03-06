@@ -1,0 +1,118 @@
+LTC2387 SAR ADC IIO Linux Driver
+================================
+
+Supported Devices
+-----------------
+
+-  :adi:`LTC2387-16`
+-  :adi:`LTC2387-18`
+-  :adi:`ADAQ23876`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`DC2588A-A`
+-  :adi:`DC2290A-A`
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting multi channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Status
+------
+
++-------------------------------------------------------------------------------------------+------------+
+| Source                                                                                    | Mainlined? |
++===========================================================================================+============+
+| :git-linux:`git <drivers/iio/adc/ltc2387.c>`                                              | [No]       |
++-------------------------------------------------------------------------------------------+------------+
+
+Files
+-----
+
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function            | File                                                                                                                                                                                  |
++=====================+=======================================================================================================================================================================================+
+| driver              | :git-linux:`drivers/iio/adc/ltc2387.c`                                                                                                                                                |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree bindings | :git-linux:`Documentation/devicetree/bindings/iio/adc/lltc,ltc2387.yaml <Documentation/devicetree/bindings/iio/adc/lltc%2Cltc2387.yaml>`                                              |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/# **cd /sys/bus/iio/devices/**
+      root@analog:/sys/bus/iio/devices# **ls**
+      iio:device0         trigger0
+   
+      root@analog:/sys/bus/iio/devices# **cd iio:device0**
+   
+      root@analog:/sys/bus/iio/devices/iio:device0> **ls -l**
+      drwxr-xr-x 2 root root    0 May 17 14:36 buffer
+      drwxr-xr-x 2 root root    0 May 17 14:36 buffer0
+      -r--r--r-- 1 root root 4096 May 17 14:36 dev
+      -r--r--r-- 1 root root 4096 May 17 14:36 name
+      lrwxrwxrwx 1 root root    0 May 17 14:36 of_node -> ../../../../../firmware/devicetree/base/fpga-axi@0/ltc2387@0
+      drwxr-xr-x 2 root root    0 May 17 14:36 power
+      -rw-r--r-- 1 root root 4096 May 17 14:36 sampling_frequency
+      drwxr-xr-x 2 root root    0 May 17 14:36 scan_elements
+      lrwxrwxrwx 1 root root    0 May 17 14:36 subsystem -> ../../../../../bus/iio
+      -rw-r--r-- 1 root root 4096 May 17 14:36 uevent
+   
+   
+      root@analog:/sys/bus/iio/devices/iio:device0#
+   
+
+
+Show device name
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
+      ltc2387
+   
+
+
+Get/Set sampling frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat sampling_frequency**
+      15000000
+      root@analog:/sys/bus/iio/devices/iio:device3# **echo 10000000 > sampling_frequency**
+      root@analog:/sys/bus/iio/devices/iio:device3# **cat sampling_frequency**
+      10000000
+   
+

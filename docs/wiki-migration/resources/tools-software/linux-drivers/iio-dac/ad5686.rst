@@ -1,0 +1,390 @@
+AD5686 IIO DAC Linux Driver
+===========================
+
+Supported Devices
+-----------------
+
+This driver supports the
+
+-  :adi:`AD5686R`
+-  :adi:`AD5685R`
+-  :adi:`AD5684R`
+
+Reference Circuits
+~~~~~~~~~~~~~~~~~~
+
+-  :adi:`CN0229`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5684RSDZ`
+-  :adi:`EVAL-AD5686RSDZ`
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting multi-channel serial interface DACs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Source Code
+===========
+
+Status
+------
+
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Source                                                                                                     | Mainlined?                                                                                                 |
++============================================================================================================+============================================================================================================+
+| `git <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5686.c>`__ | `Yes <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5686.c>`__ |
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+Files
+-----
+
++----------+-----------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                            |
++==========+=================================================================================================================+
+| driver   | `ad5686.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5686.c>`__ |
++----------+-----------------------------------------------------------------------------------------------------------------+
+| include  | `ad5686.h <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5686.h>`__ |
++----------+-----------------------------------------------------------------------------------------------------------------+
+
+Example platform device initialization
+======================================
+
+Specifying reference voltage via the regulator framework
+--------------------------------------------------------
+
+.. tip::
+
+   For applications using the internal reference specifying the reference voltage via the regulator framework is not mandatory.
+
+
+Below example specifies a 2.5 Volt reference for the SPI device 3 on SPI-Bus 0. (**spi0.3**)
+
+.. code:: c
+
+   #if defined(CONFIG_REGULATOR_FIXED_VOLTAGE) || defined(CONFIG_REGULATOR_FIXED_VOLTAGE_MODULE)
+   static struct regulator_consumer_supply ad5686_consumer_supplies[] = {
+       REGULATOR_SUPPLY("vcc", "spi0.3"),
+   };
+
+   static struct regulator_init_data stamp_avdd_reg_init_data = {
+       .constraints    = {
+           .name   = "2V5",
+           .valid_ops_mask = REGULATOR_CHANGE_STATUS,
+       },
+       .consumer_supplies = ad5686_consumer_supplies,
+       .num_consumer_supplies = ARRAY_SIZE(ad5686_consumer_supplies),
+   };
+
+   static struct fixed_voltage_config stamp_vdd_pdata = {
+       .supply_name    = "board-2V5",
+       .microvolts = 2500000,
+       .gpio       = -EINVAL,
+       .enabled_at_boot = 0,
+       .init_data  = &stamp_avdd_reg_init_data,
+   };
+   static struct platform_device brd_voltage_regulator = {
+       .name       = "reg-fixed-voltage",
+       .id     = -1,
+       .num_resources  = 0,
+       .dev        = {
+           .platform_data  = &stamp_vdd_pdata,
+       },
+   };
+   #endif
+
+.. code:: c
+
+   static struct platform_device *board_devices[] __initdata = {
+   #if defined(CONFIG_REGULATOR_FIXED_VOLTAGE) || defined(CONFIG_REGULATOR_FIXED_VOLTAGE_MODULE)
+       &brd_voltage_regulator
+   #endif
+   };
+
+.. code:: c
+
+   static int __init board_init(void)
+   {
+       [--snip--]
+
+       platform_add_devices(board_devices, ARRAY_SIZE(board_devices));
+
+       [--snip--]
+
+       return 0;
+   }
+   arch_initcall(board_init);
+
+Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.
+
+This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().
+
+For more information see: `spi-summary.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst>`__
+
+
+Depending on the converter IC used, you may need to set the modalias accordingly, matching your part name. It may also required to adjust max_speed_hz. Please consult the datasheet, for maximum spi clock supported by the device in question.
+
+.. code:: c
+
+   static struct spi_board_info board_spi_board_info[] __initdata = {
+   #if defined(CONFIG_AD5686) \
+       || defined(CONFIG_AD5686_MODULE)
+       {
+           .modalias = "ad5686",
+           .max_speed_hz = 1000000,     /* max spi clock (SCK) speed in HZ */
+           .bus_num = 0,
+           .chip_select = 3, /* CS, change it for your board */
+           .mode = SPI_MODE_1,
+       },
+   #endif
+   };
+
+.. code:: c
+
+   static int __init board_init(void)
+   {
+       [--snip--]
+
+       spi_register_board_info(board_spi_board_info, ARRAY_SIZE(board_spi_board_info));
+
+       [--snip--]
+
+       return 0;
+   }
+   arch_initcall(board_init);
+
+Adding Linux driver support
+===========================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+.. hint::
+
+   The AD5686 Driver depends on **CONFIG_SPI**
+
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           <*>     Industrial I/O support --->
+               --- Industrial I/O support
+                     *** Digital to analog convertors ***
+               [--snip--]
+               <*>   Analog Devices AD5686R/AD5685R/AD5684R DAC SPI driver
+               [--snip--]
+
+Hardware configuration
+======================
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/> **cd /sys/bus/iio/devices/**
+      root:/sys/bus/iio/devices> **ls**
+      device0
+   
+      root:/sys/bus/iio/devices> **cd device0**
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **ls -l**
+      -r--r--r--    1 root     root          4096 Jan  3 18:17 name
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage0_powerdown
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage0_powerdown_mode
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage0_raw
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage1_powerdown
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage1_powerdown_mode
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage1_raw
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage2_powerdown
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage2_powerdown_mode
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage2_raw
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage3_powerdown
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage3_powerdown_mode
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage3_raw
+      -r--r--r--    1 root     root          4096 Jan  3 18:17 out_voltage_powerdown_mode_available
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 out_voltage_scale
+      drwxr-xr-x    2 root     root             0 Jan  3 18:17 power
+      lrwxrwxrwx    1 root     root             0 Jan  3 18:17 subsystem -> ../../../../../bus/iio
+      -rw-r--r--    1 root     root          4096 Jan  3 18:17 uevent
+   
+
+
+Show device name
+^^^^^^^^^^^^^^^^
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat name**
+      ad5686
+   
+
+
+Show scale
+^^^^^^^^^^
+
+| **Description:**
+| scale to be applied to out_voltage0_raw in order to obtain voltage in millivolts.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat out_voltage_scale**
+      0.038140
+   
+
+
+Set channel Y output voltage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| **Description:**
+| /sys/bus/iio/devices/deviceX/out_voltageY_raw
+| Raw (unscaled, no bias etc.) output voltage for channel Y.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 10000 > out_voltage0_raw**
+   
+
+
+**U** = *out_voltage0_raw \* out_voltage_scale* = 10000 \* 0.038140 = **381.40 mV**
+
+List available power down modes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/sys/bus/iio/devices/deviceX/out_powerdown_mode_available
+
+| **Description:**
+| Lists all available output power down modes.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat out_voltage_powerdown_mode_available**
+      1kohm_to_gnd 100kohm_to_gnd three_state
+   
+
+
+Set channel Y power down mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/sys/bus/iio/devices/deviceX/out_voltageY_powerdown_mode
+
+| **Description:**
+| Specifies the output power down mode. DAC output stage is disconnected from the amplifier and
+
+============== ===========================================
+1kohm_to_gnd   connected to ground via an 1kOhm resistor
+100kohm_to_gnd connected to ground via an 100kOhm resistor
+three_state    left floating
+============== ===========================================
+
+For a list of available output power down options read out_voltageX_powerdown_mode_available.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo three_state > out_voltage0_powerdown_mode**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat out_voltage0_powerdown_mode**
+      three_state
+   
+
+
+Enable power down mode on output Y
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/sys/bus/iio/devices/deviceX/out_voltageY_powerdown
+
+| **Description:**
+| Writing 1 causes output Y to enter the power down mode specified by the corresponding out_voltageY_powerdown_mode. Clearing returns to normal operation. Y may be suppressed if all outputs are controlled together.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 1 > out_voltage0_powerdown**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat out_voltage0_powerdown**
+      1
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **echo 0 > out_voltage0_powerdown**
+      root:/sys/devices/platform/bfin-spi.0/spi0.3/device0> **cat out_voltage0_powerdown**
+      0
+   
+
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

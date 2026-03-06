@@ -1,0 +1,134 @@
+AD7490 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7490`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7490SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD7490SDZ <AD7490>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD7490SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7490.jpg
+   :alt: EVAL-AD7490SDZ and Xilinx KC705 board
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD7490SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7490_sdp1z.jpg
+   :alt: SDP-B Controller Board and EVAL-AD7490SDZ
+   :align: center
+   :width: 400px
+
+The **EVAL-AD7490SDZ** evaluation board is a member of a growing number of boards available for the **SDP**. It was designed to help customers evaluate performance or quickly prototype new **AD7490** circuits and reduce design time.
+
+The :adi:`AD7490` is a 12-bit high speed, low power, successive- approximation ADC. The part operates from a single 2.7 V to 5.25 V power supply and features throughput rates up to 1 MSPS. The part contains a low-noise, wide bandwidth track/hold amplifier that can handle input frequencies in excess of 1 MHz.
+
+More information
+----------------
+
+-  :adi:`AD7490 Product Info <AD7490>` - pricing, samples, datasheet
+-  EVAL-AD7490SDZ evaluation board user guide is included on the CD as part of the Evaluation Board Kit
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board rev C <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-AD7490SDZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.3
+-  A UART terminal (ex. TeraTerm / Hyperterminal).
+
+Downloads
+---------
+
+-  `Reference Design Files <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7490_evalboard.zip>`__
+
+The following table presents a short description the reference design archive contents.
+
++-------------+-------------------------------------------------------------------------------------------------------+
+| **Folder**  | **Description**                                                                                       |
++=============+=======================================================================================================+
+| Bit         | Contains the KC705 configuration file that can be used to program the system for quick evaluation.    |
++-------------+-------------------------------------------------------------------------------------------------------+
+| DataCapture | Contains the script used to read data from the ADC and save it into a file on the PC.                 |
++-------------+-------------------------------------------------------------------------------------------------------+
+| Hdl         | Contains the HDL driver for the AD7490 ADC.                                                           |
++-------------+-------------------------------------------------------------------------------------------------------+
+| Microblaze  | Contains the EDK 14.3 project for the Microblaze softcore that will be implemented in the KC705 FPGA. |
++-------------+-------------------------------------------------------------------------------------------------------+
+| Software    | Contains the source files of the software project that will be run by the Microblaze processor.       |
++-------------+-------------------------------------------------------------------------------------------------------+
+
+Run the Demonstration Project
+=============================
+
+Hardware Setup
+--------------
+
+.. important::
+
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+-  Start IMPACT, and double click “\ *Boundary Scan*\ ”. Right click and select *Initialize Chain*. The program should recognize the Kintex 7 device (see screenshot below).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/impact_config.png
+   :alt: impact_config.png
+   :align: center
+   :width: 300px
+
+-  Program the KC705 FPGA using the "*Bit/download.bit*" file provided in the reference design archive.
+-  Power the ADI evaluation board.
+-  Start a UART terminal and set the baud rate to 115200 bps.
+
+At this point everything is set up and it is possible to start the evaluation of the ADI hardware. To capture data from the ADC run the *data_capture.bat* script located in the *DataCapture* folder from the reference design .zip file. Every time the script is run a new batch of 8192 samples are read from the ADC at the ADC's maximum sampling rate and saved into the *Acquisition.csv* file located in the same folder as the data capture script. The data_capture.tcl file can be modified for different configuration words to be programmed on the AD7490. On the UART terminal messages will be displayed to show the status of the program running on the FPGA as shown in the picture below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/teraterm_adc.png
+   :alt: teraterm_adc.png
+   :align: center
+   :width: 400px
+
+If the resulting csv file is opened with Microsoft Excel, the data will be displayed on a different number of columns, each column corresponding to a channel.
+
+.. tip::
+
+   The first time the data capture script is run it is possible that an error will occur while the script is trying to connect to the system. Just run the script again and the error shouldn't appear anymore.
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+

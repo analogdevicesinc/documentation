@@ -1,0 +1,272 @@
+CN0254 Evaluation Board Guide
+=============================
+
+Overview
+--------
+
+:adi:`CN0254` is a cost effective, highly integrated 16-bit, 250 kSPS, 8-channel data acquisition system that can digitize ±10 V industrial level signals. The circuit also provides 2500 V rms isolation between the measurement circuit and the host controller, and the entire circuit is powered from a single isolated PWM controlled 5 V supply.
+
+The :adi:`AD7689` 16-bit, 8-channel, 250 kSPS PulSAR ADC contains all the necessary components for the multichannel low power data acquisition system. It includes a 16-bit SAR ADC, an 8-channel low crosstalk multiplexer, a low drift reference and buffer, a temperature sensor, a selectable one-pole filter, and a channel sequencer. The sequencer is useful for continuously scanning channels, and a microcontroller or FPGA is not required to control channel switching.
+
+The :adi:`AD8605` and :adi:`AD8608` are low cost single and quad rail-to-rail input and output CMOS amplifiers. The :adi:`AD8608` inverts, level shifts, and attenuates the ±10 V input signal so that it matches the input range of the ADC, which is 0 V to +4.096 V when using a +4.096 V reference and a +5 V single supply. The :adi:`AD8605` acts as an external reference buffer to provide sufficient driving ability for level shifting. Both feature very low offset voltage, low input voltage and current noise, and wide signal bandwidth, therefore making them good choices for a wide variety of applications.
+
+The :adi:`ADuM3471` is a quad-channel digital isolator with an integrated PWM controller and transformer driver for an isolated dc-to-dc converter. It provides the isolated 5 V, 2 W power for the circuit as well as isolates the digital signals at the SPI interface.
+
+| The EVAL-CN0254-SDPZ board connects to ADI’s System Demonstration Platform (SDP) and is powered by a 6 V power supply. |image1|
+| ----
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-CN0254-SDPZ Evaluation Board <EVAL-CN0254-SDPZ>`
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  `CN0254 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0254>`__
+-  DC Power Supply (6 V, 500 mA)
+-  PC with the following *Minimum Requirements*
+
+   -  Windows® XP, Windows Vista (32-bit), or Windows 7 (32-bit)
+
+      -  USB interface
+
+--------------
+
+General Setup
+-------------
+
+Block assignments
+~~~~~~~~~~~~~~~~~
+
+| |image2|
+| \* The :adi:`EVAL-CN0254-SDPZ` **(CN-0254 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
+
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  Terminal block **CN2** is the +6 V power supply input
+-  Terminal block **J2** is for the multiple channels analog input
+-  Jumper **J3** is the test point for SPI data lines
+
+| 
+| ==== Test setup ==== |image3|
+| \* Connect the 120-pin connector on the :adi:`EVAL-CN0254-SDPZ Evaluation Board <EVAL-CN0254-SDPZ>` to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board
+
+-  After setting the dc output supply to 6 V output, turn the supply off
+-  With power to the supply off, connect 6 V to CN2
+-  Turn on the power supply and then connect the SDP to the PC by using the USB-to-miniUSB cable
+
+| 
+|
+
+.. important::
+
+   Do **not** connect the USB cable to the Mini-USB connector on the SDP board before turning on the dc power supply for the **EVAL-CN0254-SDPZ**
+
+
+| 
+| ----
+
+Installing the Evaluation Software
+----------------------------------
+
+-  Extract the file **CN0254_Evaluation_Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0254 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0254>`__ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0254\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image4|
+
+-  Click **Next** to view the installation review page
+
+|image5|
+
+   \* Click **Next** to start the installation
+
+   |image6|
+
+   \* Upon completion of the installation of the **CN-0254 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image7|
+
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image8|
+
+   \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+   |image9|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Main Window
+~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/13.png
+   :align: center
+   :width: 700px
+
+-  **Connect** Button - Starts the connection between the :adi:`CN0254 Evaluation Board <CN0254>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`.
+-  **Disconnect** Button - ends the connection between the :adi:`CN0254 Evaluation Board <CN0254>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`
+-  **Start** Button - Start acquisition of measurement data
+-  **Save Data** - Save the data collected to a tab delimited ASCII spreadsheet file
+-  **General control** Section
+
+   -  **Connector** - Selects which 120-pin connection of the SDP-B Board to use
+
+      -  **Input Signal Range** - Select range of analog signal input
+      -  **Sample Rate/CH** - Set desired sample rate per channel
+      -  **Samples/CH** - Set number of samples to be taken per channel
+      -  **Scan mode** - Select between single or multiple channel data acquisition
+      -  **Channel Setting for Scan mode** - Select which channel/s to be used for data acquisition
+      -  **Capture Mode** - Choose between single or continuous capturing of data
+      -  **Bandwidth** - Select bandwidth for low-pass filter in ADC that reduces undesirable aliasing effects and limits the noise from the driving circuitry
+      -  **Phase Compensation** Checkbox - Compensate unbalanced differential input voltages to the comparator
+      -  **Calibration** Checkbox - Turn ON/OFF Calibratration
+
+-  **Multi-Channel** Tab
+
+
+|image10|
+
+   -  **Plot options per channel** - Edit plot display and options like interpolation and color of output waveform
+
+      -  **Display Format** - Select y-axis of plotted graph between RAW data or voltage
+      -  **Graph Controls** - Allow the user to zoon in, zoom out, and pan through the data collected
+      -  **Scale Fit Setting** - Allows user to or not to autoscale the output on the graph
+
+-  **Single Channel** Tab
+
+
+|image11|
+
+   -  **Time Domain** Tab - Shows the acquired measurement data in terms of ADC codes with respect to time
+
+      -  **Frequency Domain** Tab - Plots the FFT of the the ADC samples with the amplitudse in dB of the full scale ADC value
+      -  **Histogram** Tab - Plots the number of occurrences of ADC sample values
+      -  **Signal Parameters** - Read only. Shows parameters such as SFDR of the signal chosen through the radio buttons on the right side of user interface
+
+-  **Calibration** Tab - Contains the calibration instructions for the CN0254 Evaluation Board
+
+
+|image12|
+
+   -  **Precision Voltages** - Set the low and high precision voltages to be used for calibration
+
+      -  **Input Range** - Select range of analog signal input
+      -  **Overwrite EEPROM** Checkbox - If selected, precision voltage parameter will be saved into EEPROM after calibration is complete
+      -  **Calibrate** - Start calibration of the device
+      -  **Recover to Default Value** - Recover the original default values of precision voltages of the device from the EEPROM
+      -  **Write Factory Default** - Writes precision voltages from calibration to an array in EEPROM and sets them as the factory default values
+
+-  **S/W Version Info** Tab
+
+
+|image13|
+
+   -  **Flash LED** - Flashes the LED on the SDP controller board
+
+      -  **Read Firmware** - Reads the firmware of CN0254 Evaluation Board
+
+
+      | 
+
+Running the System
+~~~~~~~~~~~~~~~~~~
+
+::
+
+   -Open the CN0254.exe application from the default installation location
+   -Set the correct connector and click the Connect Button
+   -Upon successful connection, calibrate the device in the Calibration tab by following the instructions indicated 
+   -After proper calibration, select the desired settings like signal ranges and such
+   -Press the Start button
+   -If you want to save the data to file, press the Save Data button
+   -Click Quit to exit the software
+
+|
+
+| ----
+
+More Information and Useful Links
+---------------------------------
+
+-  `CN0254 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0254>`__
+-  :adi:`CN0254 Circuit Note Page <CN0254>`
+-  :adi:`CN0254 Design Support Package <CN0254 -DesignSupport>`
+-  :adi:`AD8605 Product Page <AD8605>`
+-  :adi:`AD8609 Product Page <AD8609>`
+-  :adi:`AD7689 Product Page <AD7689>`
+-  :adi:`ADUM3471 Product Page <ADUM3471>`
+-  :adi:`ADP3336 Product Page <ADP3336>`
+-  :adi:`AD8608 Product Page <AD8608>`
+
+::
+
+   * 
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0254-SDPZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0254-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  PADS project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0254-SDPZ?&v=Rev A>`__ to receive all these great benefits and more!
+
+
+// End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/cn0254-hw-1024.jpg
+   :width: 650px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/blockdia.png
+   :width: 650px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/11-2-2017_10-50-05_am.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/1.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/2.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/3.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/4.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/5.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/6.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/9.png
+   :width: 700px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/10.png
+   :width: 700px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/11.png
+   :width: 700px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/12.png
+   :width: 700px

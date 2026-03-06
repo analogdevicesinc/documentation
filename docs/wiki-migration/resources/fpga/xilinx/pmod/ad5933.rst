@@ -1,0 +1,401 @@
+AD5933 Pmod Xilinx FPGA Reference Design
+========================================
+
+Introduction
+------------
+
+The :adi:`AD5933` is a high precision impedance converter system solution that combines an on-board frequency generator with a 12-bit, 1 MSPS, analog-to-digital converter (ADC). The frequency generator allows an external complex impedance to be excited with a known frequency. The response signal from the impedance is sampled by the on-board ADC and a discrete Fourier transform (DFT) is processed by an on-board DSP engine. The DFT algorithm returns a real (R) and imaginary (I) data-word at each output frequency. Once calibrated, the magnitude of the impedance and relative phase of the impedance at each frequency point along the sweep is easily calculated. This is done off chip using the real and imaginary register contents, which can be read from the serial I2C interface.
+
+**HW Platform(s):**
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+
+Quick Start Guide
+-----------------
+
+The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+   \* `PmodIA (Digilent) <https://store.digilentinc.com/pmod-ia-impedance-analyzer>`__
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with LX9 and/or Xilix tools, please visit
+
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__ for details.
+   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
+   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
+
+
+Avnet LX9 MicroBoard Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD5933\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodIA to J5 connector of LX9 board, pins 3 to 6 (see image below). You must use an extension cable. . Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia.jpg
+   :alt: PmodIA and LX-9
+   :width: 200px
+
+Digilent Nexys™3 Spartan-6 FPGA Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD5933\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodIA to JA connector of Nexys™3 board, pins JA3 to JA6 (see image below). You must use an extension cable. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_nexys3.jpg
+   :alt: PmodIA and Nexys™3
+   :width: 200px
+
+Avnet ZedBoard
+~~~~~~~~~~~~~~
+
+To begin, connect the PmodIA to JC1 connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_zed.jpg
+   :alt: PmodIA and ZedBoard
+   :width: 400px
+
+FPGA Configuration for Nexys3 and LX-9 MicroBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad5933/sw/AD5933.bit).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodIAImpact.jpg
+   :alt: Programming FPGA in IMPACT
+   :width: 200px
+
+FPGA Configuration for ZedBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the **download.bat** script from the "../bin" folder downloaded from the github (see the links in the download section of the wiki page). The script will automatically configure the ZYNQ SoC and download the \*.elf file afterwards.
+
+.. tip::
+
+   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+
+
+If programming was successful, you should be seeing messages appear on the terminal window as shown in the figures below. After programming the AD5933 device, the program will automatically read the temperature value of the AD5933. Afterwards it will start a calibration process. Use a 47 Kohm resistor for this purpose. After calibration is complete, the user will be promped to change the 47 Kohm resistor with the desired component for measurement, and press [Enter] afterwards. The result of the measurement will be printed on the terminal window both in ohms and Kohms.
+
+|UART messeges| |image1| |image2|
+
+Using the reference design
+--------------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design is a consists of an IIC interface between the FPGA and the PmodIA. Functions for setting the frequency sweeps and other parameters can be found in AD5933.c, in the "sw" folder (../ad5933/sw/AD5933.c). If you desire to use another resistor for calibration purposes, you must change the "47000" parameter for the **AD5933_CalculateGainFactor** function in main.c with the value of your resistor.
+
+.. important::
+
+   
+   -  Connecting the PmodIA to the boards using an extension cable is mandatory.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  The default value for the calibration resistor is 47 Kohms. If another resistor is used for calibration, please modify the parameter value in main.c, **AD5933_CalculateGainFactor** function.
+   
+
+
+.. important::
+
+   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+
+   
+   .. code:: c
+   
+      // Select between PS7 or AXI Interface
+      #define USE_PS7      1
+      // SPI used in the design
+      #define USE_SPI      1
+      // I2C used in the design
+      #define USE_I2C      0
+      // Timer (+interrupts) used in the design
+      #define USE_TIMER    0
+      // External interrupts used in the design
+      #define USE_EXTERNAL     0
+      // GPIO used in the design
+      #define USE_GPIO         0
+   
+   If you encounter a compilation error regarding functions from "math.h", please follow the answer from Xilinx in order to enable the Math Libraries: http://www.xilinx.com/support/answers/52971.htm
+   
+
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \**Avnet LX-9 MicroBoard: **
+     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5933_lx9.zip>`__\ **
+     **\ Digilent Nexys™3:**
+     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5933_nexys3.zip>`__\ **
+     **\ Avnet ZedBoard:\*\*
+   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   | \* :git-no-OS:`PmodIA Driver Files <Pmods/PmodIA>`
+   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
+   | \* :git-no-OS:`Programming Script <Pmods/PmodIA/bin>`
+   |
+
+
+.. container:: hide
+
+   
+   Linux Device Driver
+   ===================
+   
+   Connect PmodIA to the JC1 connector of the ZedBoard (upper row of pins).
+   
+   Preparing the SD Card
+   ---------------------
+   
+   In order to prepare the SD Card for booting Linux on the ZedBoard:
+   
+   -  Download the device tree: :git-no-OS:`PmodIA Linux devicetree <Pmods/PmodIA/dts>`
+   -  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
+   
+      -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
+   
+   Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+   
+   There are 2 ways to test the driver.
+   
+   -  Using the terminal window
+   -  Using the ADI IIO Oscilloscope
+   
+   Using the terminal window
+   -------------------------
+   
+   Open a new terminal window by pressing **Ctrl+Alt+T**.
+   
+   Navigate to the location of the device and identify it using the following commands:
+   
+   ::
+   
+      cd /sys/bus/iio/devices/
+      ls
+      iio:device0 iio:device1
+      cd iio\:device0
+      cat name
+      ad5933
+   
+   If the **cat name** command doesn't return **ad5933**, then change the number of the iio:device, and check again.
+   
+   ::
+   
+      cd ..
+      cd iio\:device1
+      cat name
+   
+   To see the list of options that the AD5933 driver provides, type:
+   
+   ::
+   
+      ls
+      buffer                       out_voltage0_freq_increment   power
+      dev                          out_voltage0_freq_points      scan_elements
+      in_temp0_input               out_voltage0_freq_start       subsystem
+      in_voltage0_scale            out_voltage0_scale            uevent
+      in_voltage0_scale_available  out_voltage0_scale_available
+      name                         out_voltage0_settling_cycles
+   
+   Set sweep start frequency
+   ^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   **Description**: Frequency sweep start frequency in Hz.
+   
+   ::
+   
+      echo 15000 > out_voltage0_freq_start
+      cat out_voltage0_freq_start
+      14999
+   
+   Set frequency increment
+   ^^^^^^^^^^^^^^^^^^^^^^^
+   
+   **Description**: Frequency increment in Hz (step size) between consecutive frequency points along the sweep.
+   
+   ::
+   
+      echo 200 > out_voltage0_freq_increment
+   
+   Set number of frequency points
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   **Description**: Number of frequency points (steps) in the frequency sweep. This value, in conjunction with the outY_freq_start and the outY_freq_increment, determines the frequency sweep range for the sweep operation.
+   
+   ::
+   
+      echo 100 > out_voltage0_freq_points
+      cat out_voltage0_freq_points
+      100
+   
+   Set number of settling time cycles
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   **Description**: Number of output excitation cycles (settling time cycles) that are allowed to pass through the unknown impedance, after each frequency increment, and before the ADC is triggered to perform a conversion sequence of the response signal.
+   
+   ::
+   
+      echo 15 > out_voltage0_settling_cycles
+      cat out_voltage0_settling_cycles
+      15
+   
+   Show available output ranges
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   **Description**: List available output scales/ranges in millivolt.
+   
+   ::
+   
+      cat out_voltage0_scale_available
+      1980 970 383 198
+   
+   Set output range
+   ^^^^^^^^^^^^^^^^
+   
+   **Description**: Sets output scale/range in millivolt.
+   
+   ::
+   
+      echo 1980 > out_voltage0_scale
+      cat out_voltage0_scale
+      1980
+   
+   Show available input scales
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   **Description**: List available input scales. Programmable gain amplifier (PGA) options.
+   
+   ::
+   
+      cat in_voltage0_scale_available
+      1 0.2
+   
+   Set input scale
+   ^^^^^^^^^^^^^^^
+   
+   **Description**: Sets input scale. Controls programmable gain amplifier (PGA).
+   
+   ::
+   
+      echo 0.2 > in_voltage0_scale
+      cat in_voltage0_scale
+      0.2
+   
+   Show internal temperature
+   ^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   **Description**: Shows temperature in milli degrees Celsius.
+   
+   The on-chip temperature sensor allows an accurate measurement of the ambient device temperature. The measurement range of the sensor is −40°C to +125°C.
+   
+   ::
+   
+      cat in_temp0_input
+      25062
+   
+   Buffer Management
+   ^^^^^^^^^^^^^^^^^
+   
+   The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+   
+   Every buffer implementation features a set of files:
+   
+   ::
+   
+      cd buffer
+      ls
+      enable  length
+   
+   **length** Get/set the number of sample sets that may be held by the buffer.
+   
+   **enable** Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+   
+   ::
+   
+      cd scan_elements
+      ls
+      in_voltage0_imag_raw_en     in_voltage0_real_raw_en
+      in_voltage0_imag_raw_index  in_voltage0_real_raw_index
+      in_voltage0_imag_raw_type   in_voltage0_real_raw_type
+   
+   **scan_elements** The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+   
+   ::
+   
+      grep "" *
+      in_voltage0_imag_raw_en:1
+      in_voltage0_imag_raw_index:1
+      in_voltage0_imag_raw_type:le:s16/16>>0
+      in_voltage0_real_raw_en:1
+      in_voltage0_real_raw_index:0
+      in_voltage0_real_raw_type:le:s16/16>>0
+   
+   Buffer Example
+   ~~~~~~~~~~~~~~
+   
+   ::
+   
+      echo 15000 > out_voltage0_freq_start
+      echo 200 > out_voltage0_freq_increment
+      echo 100 > out_voltage0_freq_points
+      echo 512 > buffer/length
+      echo 1 > buffer/enable
+   
+   Data interpretation
+   ~~~~~~~~~~~~~~~~~~~
+   
+   ============= ================== ===================
+   index         datum              type
+   ============= ================== ===================
+   0             **Real Sample** f0 signed short 16-bit
+   1             **Imag Sample** f0 signed short 16-bit
+   [fn \* 2]     **Real Sample** fn signed short 16-bit
+   [fn \* 2] + 1 **Imag Sample** fn signed short 16-bit
+   ============= ================== ===================
+   
+   Z = **in_voltage0_real_raw** + i \* **in_voltage0_imag_raw**
+   
+   The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+
+
+More information
+----------------
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |UART messeges| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_menu1.jpg
+   :width: 600px
+.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_menu2.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_menu3.jpg
+   :width: 600px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

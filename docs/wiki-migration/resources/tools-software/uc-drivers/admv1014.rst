@@ -1,0 +1,72 @@
+ADMV1014 - No-OS Driver
+=======================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADMV1014`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADMV1014`
+
+Overview
+--------
+
+The :adi:`ADMV1014` is a silicon germanium (SiGe), wideband, microwave downconverter optimized for point to point microwave radio designs operating in the 24 GHz to 44 GHz frequency range. The downconverter offers two modes of frequency translation. The device is capable of direct quadrature demodulation to baseband inphase (I)/quadrature (Q) output signals, as well as image rejection downconversion to a complex intermediate frequency (IF) output carrier frequency. The baseband outputs can be dc-coupled, or, more typically, the I/Q outputs are ac-coupled with a sufficiently low high-pass corner frequency to ensure adequate demodulation accuracy. The serial port interface (SPI) allows fine adjustment of the quadrature phase to allow the user to optimize I/Q demodulation performance. Alternatively, the baseband I/Q outputs can be disabled, and the I/Q signals can be passed through an on-chip active balun to provide two single-ended complex IF outputs anywhere between 800 MHz and 6000 MHz. When used as an image rejecting downconverter, the unwanted image term is typically suppressed to better than 30 dBc below the wanted sideband. The ADMV1014 offers a flexible local oscillator (LO) system, including a frequency quadruple option allowing up to a 41 GHz range of LO input frequencies to cover a radio frequency (RF) input range as wide as 24 GHz to 44 GHz. A square law power detector is provided to allow monitoring of the power levels at the mixer inputs. The detector output provides closed-loop control of the RF input variable attenuator through an external op amp error integrator circuit option. The :adi:`ADMV1014` downconverter comes in a compact, thermally enhanced, 5 mm × 5 mm LGA package. The ADMV1014 operates over the −40°C to +85°C case temperature range.
+
+Applications:
+
+-  Point to point microwave radios
+-  Radar, electronic warfare systems
+-  Instrumentation, automatic test equipment (ATE)
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the :adi:`ADMV1014` part, which may be used, without modifications, with any microcontroller.
+-  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the :adi:`ADMV1014` driver can be used exactly as it is provided.
+
+The Communication Drivers must include the SPI transmission methods.
+
+For the SPI method, the :adi:`ADMV1014` driver calls three functions:
+
+-  spi_init() - initializes the SPI communication peripheral.
+-  spi_remove() – frees memory allocated by the SPI communication driver.
+-  spi_write_and_read() – conduct information transfer with the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_driver_architecture.png
+   :align: center
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+
+-  `ADMV1014 Header file <http://analogdevicesinc.github.io/no-OS/admv1014_8h.html>`__
+-  `ADMV1014 Source file <http://analogdevicesinc.github.io/no-OS/admv1014_8c.html>`__
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of ADMV1014 Driver.|
+
+   -
+
+   |Header file of ADMV1014 Driver.|
+
+.. |Implementation of ADMV1014 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/admv1014/admv1014`.c
+.. |Header file of ADMV1014 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/admv1014/admv1014`.h

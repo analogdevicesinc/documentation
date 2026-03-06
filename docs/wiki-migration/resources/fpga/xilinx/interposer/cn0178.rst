@@ -1,0 +1,166 @@
+CN0178 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADL5902`
+-  :adi:`AD7466`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0178`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-CN0178-SDPZ` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-CN0178-SDPZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0178.jpg
+   :alt: cn0178.jpg
+   :align: center
+   :width: 600px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0178-SDPZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0178_sdp1z.png
+   :alt: cn0178_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`CN0178` circuit uses the :adi:`ADL5902` TruPwr™ detector to measure the rms signal strength of RF signals with varying crest factors (peak-to-average ratio) over a dynamic range of approximately 65 dB and operates at frequencies from 50 MHz up to 9 GHz.
+
+The measurement result is provided as serial data at the output of a 12-bit ADC (:adi:`AD7466`).
+
+The :adi:`ADL5902` is a true rms responding power detector that has a 65 dB measurement range when driven with a single-ended 50 O source. This feature makes the ADL5902 frequency versatile by eliminating the need for a balun or any other form of external input tuning for operation up to 9 GHz. The ADL5902 provides a solution in a variety of high frequency systems requiring an accurate measurement of signal power. Requiring only a single supply of 5 V and a few capacitors, it is easy to use and capable of being driven single-ended or with a balun for differential input drive. The ADL5902 can operate from 50 MHz to 9 GHz and can accept inputs from -62 dBm to at least +3 dBm with large crest factors, such as GSM, CDMA, W-CDMA, TD-SCDMA, WiMAX, and LTE modulated signals.
+
+The :adi:`AD7466` is 12-bit, high speed, low power, successive approximation analog-to-digital converter (ADC). The part operates from a single 1.6 V to 3.6 V power supply and feature throughput rates up to 200 kSPS with low power dissipation. The part contains a low noise, wide bandwidth track-and-hold amplifier, which can handle input frequencies in excess of 3 MHz.
+
+The **EVAL-CN0178-SDP** board contains the circuit to be evaluated, as described in this note. To power the EVAL-CN0178C-SDP evaluation board supply +6V between the +6 V and GND inputs.
+
+More information
+----------------
+
+-  :adi:`CN0178 Info <CN0178>` - circuit note information
+-  :adi:`ADL5902 Product Info <ADL5902>` - pricing, samples, datasheet
+-  :adi:`AD7466 Product Info <AD7466>` - pricing, samples, datasheet
+-  :adi:`EVAL-CN0178-SDP evaluation board user guide <CN0178>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-CN0178-SDPZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-CN0178 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD7466 Driver:** :git-no-OS:`device_drivers/AD7466`
+   
+   -  **CN0178 Commands:** :git-no-OS:`device_commands/CN0178`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-CN0178 reference project for Xilinx KC705 FPGA board.
+
++------------------+---------------------------------------------------------------------------------------+
+| Command          | Description                                                                           |
++==================+=======================================================================================+
+| **help?**        | Displays all available commands.                                                      |
++------------------+---------------------------------------------------------------------------------------+
+| **calibration=** | Makes a four points calibration. Accepted values:                                     |
+|                  | power input1(lowest value):                                                           |
+|                  | -60 .. 0 - first point input power in [dBm].                                          |
+|                  | power input2:                                                                         |
+|                  | -60 .. 0 - second point input power in [dBm].                                         |
+|                  | power input3:                                                                         |
+|                  | -60 .. 0 - third point input power in [dBm].                                          |
+|                  | power input3(highest value):                                                          |
+|                  | -60 .. 0 - fourth point input power in [dBm].                                         |
++------------------+---------------------------------------------------------------------------------------+
+| **pinCalc?**     | Displays the calculated input power in [dBm].                                         |
++------------------+---------------------------------------------------------------------------------------+
+| **error?**       | Displays the error associated with the last input power calculation. Accepted values: |
+|                  | -60 .. 0 - true input power in [dBm].                                                 |
++------------------+---------------------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD7476 IIO Single channel Serial ADC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad7476a>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

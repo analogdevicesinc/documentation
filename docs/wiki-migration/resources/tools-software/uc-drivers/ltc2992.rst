@@ -1,0 +1,459 @@
+LTC2992 - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`LTC2992`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`DC2561A`
+
+| 
+| ===== Overview ===== The :adi:`LTC2992` is a rail-to-rail system monitor that measures current, voltage, and power of two supplies. It features an operating range of 2.7V to 100V and includes a shunt regulator for supplies above 100V.
+
+The voltage measurement range of 0V to 100V is independent of the input supply. Two ADCs simultaneously measure each supply’s current. A third ADC monitors the input voltages and four auxiliary external voltages. Each supply’s current and power is added for total system consumption. Minimum and maximum values are stored and an overrange alert with programmable thresholds minimizes the need for software polling.
+
+The internal amplifier can be used to limit the inrush current or to create a current source in a closed-loop system. The comparator can be used to monitor fault events for fast response.
+
+The LTC2992 I2C interface includes separate data input and output pins for use with standard or opto-isolated I2C connections. The LTC2992-1 has an inverted data output for use with inverting opto-isolator configurations.
+
+Applications
+------------
+
+-  Telecom Infrastructure
+-  Industrial Equipment
+-  Automotive
+-  Computer Systems and Servers
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of the ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== LTC2992 ADI No-OS driver =====
+
+Driver Source Code
+------------------
+
+The source code for LTC2992 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of LTC2992 Driver|
+
+   -
+
+   |Implementation of LTC2992 Driver|
+
+This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the utility library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+| To use the LTC2992 No-OS driver, you need to provide the specific implementation for the communication APIs and the specific types they use.
+|
+
+.. container:: center box
+
+   
+   ====================== ===========================================
+   **no_os_i2c_init()**   initializes the communication peripheral.
+   **no_os_i2c_write()**  writes data to the device.
+   **no_os_i2c_read()**   reads data from the device.
+   **no_os_i2c_remove()** deinitializes the communication peripheral.
+   ====================== ===========================================
+   
+
+
+There are two data types that have to be defined:
+
+.. container:: center box
+
+   
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_i2c_desc**       | structure holding the I2C descriptor                    |
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_i2c_init_param** | structure holding the parameters for I2C initialization |
+   +--------------------------+---------------------------------------------------------+
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for I2C Communication APIs|
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these link:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `LTC2992 Driver Documentation <https://analogdevicesinc.github.io/no-OS/doxygen/>`__
+   
+
+
+Device Configuration
+--------------------
+
+Driver Initialization
+^^^^^^^^^^^^^^^^^^^^^
+
+| The first API function to be called is **ltc2992_addr_gen** to generate the corresponding device's slave address. Once a proper address is generated, use the function **ltc2992_init** to initialize the device and make sure that it returns 0. This indicates a successful driver initialization.
+| === Device Address Generation === The :adi:`LTC2992` have the provision for multiple I2C slave addresses via the **ADR0** and **ADR1** pins. To generate the proper address, supply the voltage level going into pins **ADR0** and **ADR1** to the **ltc2992_addr_gen** function.
+
+.. note::
+
+   The header file of the :adi:`LTC2992` driver provides an enumeration for the valid **ADR0** and **ADR1** input voltage level values. There are a total of 9 valid slave address combinations that can be generated depending on the voltage level supplied to the address pin. For reference, refer to Table 3 of the :adi:`LTC2992` data sheet.
+
+
+Initialization settings
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The :adi:`LTC2992` must be configured such that ADC resolution and shunt resistor values are indicated in the **ltc2992_init_params** structure. Optionally, other parameters such as calibration mode, measurement mode, and voltage selection can also be set at initialization. Below are the parameters and their corresponding enumerations:
+
+
+| \*\* ADC resolution \*\*
+|
+
+.. container:: center box
+
+   
+   =================================== ===================================
+   LTC2992_RESOLUTION_12_BIT (Default) 12-bit resolution for VADC and IADC
+   LTC2992_RESOLUTION_8_BIT            8-bit resolution for VADC and IADC
+   =================================== ===================================
+
+   | \*\* Measurement mode \*\*
+|
+
+.. container:: center box
+
+   
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | LTC2992_MODE_CONTINUOUS (Default) | Continuous conversion                                                                                               |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | LTC2992_MODE_SNAPSHOT             | Initializes conversion on all three ADCs simultaneously. VADC converts the channel(s) per **ltc2992_snapshot_vsel** |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | LTC2992_MODE_SINGLE_CYCLE         | The VADC converts SENSE1+, SENSE2+, GPIO1, GPIO2, GPIO3, GPIO4 once and stops. The IADCs stop after one conversion. |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | LTC2992_MODE_SHUTDOWN             | Low-power shutdown mode                                                                                             |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+
+   | \*\* Calibration mode \*\*
+|
+
+.. container:: center box
+
+   
+   ================================== ==========================
+   LTC2992_CALIBRATE_ALWAYS (Default) Calibrate every conversion
+   LTC2992_CALIBRATE_ON_DEMAND        Calibrate on-demand
+   ================================== ==========================
+
+   | \*\* Continuous scan mode voltage select \*\*
+|
+
+.. container:: center box
+
+   
+   +---------------------------------+---------------------------------------------------+
+   | LTC2992_CONT_VSEL_ALL (Default) | Scan SENSE1+, SENSE2+, GPIO1, GPIO2, GPIO3, GPIO4 |
+   +---------------------------------+---------------------------------------------------+
+   | LTC2992_CONT_VSEL_SENSE_ONLY    | Scan SENSE1+, SENSE2+                             |
+   +---------------------------------+---------------------------------------------------+
+   | LTC2992_CONT_VSEL_GPIO1_GPIO2   | Scan GPIO1, GPIO2                                 |
+   +---------------------------------+---------------------------------------------------+
+   | LTC2992_CONT_VSEL_GPIOS_ONLY    | Scan GPIO1, GPIO2, GPIO3, GPIO4                   |
+   +---------------------------------+---------------------------------------------------+
+
+   | \*\* Snapshot mode voltage select \*\*
+|
+
+.. container:: center box
+
+   
+   ================================== =====================
+   LTC2992_SNAP_VSEL_SENSE1 (Default) Scan SENSE1+
+   LTC2992_SNAP_VSEL_SENSE2           Scan SENSE2+
+   LTC2992_SNAP_VSEL_GPIO1            Scan GPIO1
+   LTC2992_SNAP_VSEL_GPIO2            Scan GPIO2
+   LTC2992_SNAP_VSEL_GPIO3            Scan GPIO3
+   LTC2992_SNAP_VSEL_GPIO4            Scan GPIO4
+   LTC2992_SNAP_VSEL_SENSE1_SENSE2    Scan SENSE1+, SENSE2+
+   LTC2992_SNAP_VSEL_GPIO1_GPIO2      Scan GPIO1, GPIO2
+   ================================== =====================
+   
+
+
+Once these settings are set, the user may now perform power readings.
+
+| <note / important> The **shunt_resistor** in milli-ohms must be set to be greater than zero. </WRAP>
+
+Voltage, Current and Power readings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| The :adi:`LTC2992` voltage, current and power monitoring features are exposed via the following functions:
+|
+
+.. container:: center box
+
+   
+   ======================= ========================================
+   **ltc2992_get_voltage** Read bus voltage in a sense channel
+   **ltc2992_get_vshunt**  Read shunt voltage in a sense channel
+   **ltc2992_get_current** Read bus current along a sense channel
+   **ltc2992_get_power**   Read bus power output in a sense channel
+   ======================= ========================================
+
+   | Some device data can be obtained by specifying the measurement channel:
+|
+
+.. container:: center box
+
+   
+   +----------------------------+-----------------------------------------------------------------------------------------------+
+   | **ltc2992_get_sum**        | Read the shunt voltage sum or power sum of both sense channels                                |
+   +----------------------------+-----------------------------------------------------------------------------------------------+
+   | **ltc2992_get_sense_data** | Read data at a SENSE channel. Measured channel must be specified i.e. voltage, current, power |
+   +----------------------------+-----------------------------------------------------------------------------------------------+
+   | **ltc2992_get_max_data**   | Read maximum sense data recorded at a SENSE channel                                           |
+   +----------------------------+-----------------------------------------------------------------------------------------------+
+   | **ltc2992_get_min_data**   | Read minimum sense data at a SENSE channel                                                    |
+   +----------------------------+-----------------------------------------------------------------------------------------------+
+
+   | Note the valid measurement channel is defined by the following enumerations:
+|
+
+.. container:: center box
+
+   
+   =============== ==========================================
+   LTC2992_VOLTAGE Bus voltage
+   LTC2992_VSHUNT  Shunt voltage
+   LTC2992_CURRENT Current
+   LTC2992_POWER   Power
+   LTC2992_ISUM    Sum of the shunt voltages of both channels
+   LTC2992_PSUM    Power sum of both channels
+   =============== ==========================================
+
+   | and the SENSE bus channels below:
+|
+
+.. container:: center box
+
+   
+   ============== ===============
+   LTC2992_SENSE1 SENSE1+ channel
+   LTC2992_SENSE2 SENSE2+ channel
+   ============== ===============
+   
+
+
+Alert and Thresholds
+^^^^^^^^^^^^^^^^^^^^
+
+| The :adi:`LTC2992` can be configured to assert alert when a voltage, current or power readings reaches a maximum or minimum threshold limit. To enable alert, the **ltc2992_set_alert** can be used. This requires an **enum ltc2992_alert_value** parameter defined below:
+|
+
+.. container:: center box
+
+   
+   ========================= =======================================
+   LTC2992_ALERT_DISABLE_ALL Disable all alerts.
+   LTC2992_ALERT_ENABLE_UV   Enable undervalue alert.
+   LTC2992_ALERT_ENABLE_OV   Enable overvalue alert.
+   LTC2992_ALERT_ENABLE_ALL  Enable undervalue and overvalue alerts.
+   ========================= =======================================
+
+   | Threshold limits can then be set using the **ltc2992_set_max_thresh** and **ltc2992_set_min_thresh** functions. Fault statuses can be polled by calling **ltc2992_get_fault** adn can also be cleared by **ltc2992_clear_fault**. A fault status is defined by the enumeration below:
+|
+
+.. container:: center box
+
+   
+   +--------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | LTC2992_FAULT_NONE       | No fault occurred                                                                                                        |
+   +--------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | LTC2992_FAULT_UNDERVALUE | Undervalue fault occurred                                                                                                |
+   +--------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | LTC2992_FAULT_OVERVALUE  | Overvalue fault occurred                                                                                                 |
+   +--------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | LTC2992_FAULT_ALL        | Both fault occurred. Cannot occur simultaneously, and will only occur if fault status is not cleared on the first event. |
+   +--------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   
+
+
+General Purpose Input Output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| The :adi:`LTC2992` also features GPIOs that can be configured as a general purpose output, logic input or data converter input. GPIO3 can be used as a data ready signal which pulses low when ADC data becomes available. GPIO4 can be used as an alert pin which allows interrupt-based fault monitoring. An alert pin can be configured as an interrupt input using the **alert_gpio_init** parameter at initialization.
+| A GPIO pin is defined by the following enumeration:
+|
+
+.. container:: center box
+
+   
+   ============= =====
+   LTC2992_GPIO1 GPIO1
+   LTC2992_GPIO2 GPIO2
+   LTC2992_GPIO3 GPIO3
+   LTC2992_GPIO4 GPIO4
+   ============= =====
+
+   | with output states defined by:
+|
+
+.. container:: center box
+
+   
+   ============================ ========================
+   LTC2992_GPIO_OUTPUT_HI_Z     Output at high impedance
+   LTC2992_GPIO_OUTPUT_PULL_LOW Output is pulled low
+   ============================ ========================
+
+   | The driver allows the user to optionally enable GPIO access by setting the **LTC2992_USE_GPIO** macro to 1. Once set, the following functions are exposed.
+|
+
+.. container:: center box
+
+   
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_get_gpio_data**       | Get data from a GPIO data converter                         |
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_get_gpio_max_data**   | Get maximum data from a GPIO data converter                 |
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_get_gpio_min_data**   | Get minimum data from a GPIO data converter                 |
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_set_gpio_max_thresh** | Set upper threshold level in a GPIO                         |
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_set_gpio_min_thresh** | Set lower threshold level in a GPIO                         |
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_set_gpio_alert**      | Enable alert when GPIO level reaches beyond threshold limit |
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_get_gpio_fault**      | Get GPIO fault status                                       |
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_clear_gpio_fault**    | Clear GPIO fault status                                     |
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_reset_alert_pin**     | Reset alert pin (GPI04) status                              |
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_get_gpio_state**      | Get GPIO state                                              |
+   +---------------------------------+-------------------------------------------------------------+
+   | **ltc2992_set_gpio_output**     | Set GPIO output                                             |
+   +---------------------------------+-------------------------------------------------------------+
+   
+
+
+| 
+| ==== Driver Initialization Example ====
+
+Example Initialization Using Maxim SDK as Platform
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+       int ret;
+       uint32_t voltage_data;
+       uint32_t current_data;
+
+       struct max_i2c_init_param max32655_i2c_extras = {
+           .vssel = MXC_GPIO_VSSEL_VDDIOH,
+       };
+
+       struct ltc2992_init_param ltc2992_ip = {
+           .i2c_init = {
+               .device_id = 1,
+               .max_speed_hz = MXC_I2C_STD_MODE,
+               .extra = &max32655_i2c_extras,
+               .platform_ops = &max_i2c_ops,
+           },
+           .shunt_resistor = 10,
+           .alert_clear = true,
+           .alert_gpio_init = {
+               .number = -1, // Disable alert pin
+           },
+           .resolution = LTC2992_RESOLUTION_12_BIT,
+       };
+
+       ret = ltc2992_addr_gen(&ltc2992_ip, LTC2992_ADR_NC, LTC2992_ADR_NC);
+       if (ret)
+           return ret;
+
+       ret = ltc2992_init(&dev, &ltc2992_ip);
+       if (ret)
+           return ret;
+
+       ret = ltc2992_set_alert(dev, LTC2992_SENSE1, LTC2992_VOLTAGE, LTC2992_ALERT_ENABLE_ALL);
+       if (ret)
+           return ret;
+
+       ret = ltc2992_set_alert(dev, LTC2992_SENSE2, LTC2992_VOLTAGE, LTC2992_ALERT_ENABLE_ALL);
+       if (ret)
+           return ret;
+
+       ret = ltc2992_set_max_thresh(dev, LTC2992_SENSE1, LTC2992_VOLTAGE, 55000);
+       if (ret)
+           return ret;
+
+       ret = ltc2992_set_min_thresh(dev, LTC2992_SENSE1, LTC2992_VOLTAGE, 10000);
+       if (ret)
+           return ret;
+
+       ret = ltc2992_set_max_thresh(dev, LTC2992_SENSE2, LTC2992_VOLTAGE, 55000);
+       if (ret)
+           return ret;
+
+       ret = ltc2992_set_max_thresh(dev, LTC2992_SENSE2, LTC2992_VOLTAGE, 10000);
+       if (ret)
+           return ret;
+
+       while (1) {
+           ret = ltc2992_get_voltage(dev, LTC2992_SENSE1, &voltage_data);
+           if (ret)
+               return ret;
+
+           ret = ltc2992_get_current(dev, LTC2992_SENSE2, &current_data);
+           if (ret)
+               return ret;
+
+           no_os_mdelay(2000);
+       }
+
+| 
+
+.. |Header file of LTC2992 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/power/ltc2992/ltc2992`.h
+.. |Implementation of LTC2992 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/power/ltc2992/ltc2992`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h

@@ -1,0 +1,433 @@
+AD5760/AD5780/AD5790 Quick Start Guide
+======================================
+
+\*\* Single, 16-/18-/20-Bit, Voltage Output DACs, SPI Interface \*\*
+
+Features
+--------
+
+-  High relative accuracy (INL): ±2 LSB maximum (20-bit :adi:`ad5790`)
+-  8 nV/√Hz output noise spectral density
+-  0.1 LSB long-term linearity error stability (20-bit :adi:`ad5790`)
+-  ±0.018 ppm/°C gain error temperature coefficient
+-  2.5 μs output voltage settling time
+-  3.5 nV-sec midscale glitch impulse
+-  Integrated precision reference buffers
+-  Operating temperature range: −40°C to +125°C
+-  4 mm × 5 mm LFCSP package
+-  Wide power supply range of up to ±16.5 V
+-  35 MHz Schmitt triggered digital interface
+-  1.8 V compatible digital interface
+
+Functional Block Diagram
+------------------------
+
+|image1|
+
+.. container:: CENTERALIGN
+
+   //Figure 1. //
+
+
+
+Pin Configuration
+-----------------
+
+| 
+|
+
+.. container:: CENTERALIGN
+
+   \ |image2|\
+
+
+|
+
+.. container:: CENTERALIGN
+
+   \ *Figure 2. 24-Lead LFCSP Pin Configuration*
+
+
+
+| **Table 1. Function Descriptions for Quick Start**
+| ^ Mnemonic ^ Description ^
+
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| V\ :sub:`OUT`         | Analog output voltage.                                                                                                          |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| V\ :sub:`REFP`        | Positive reference voltage input. Connect a voltage in the range of 5 V to V\ :sub:`DD` - 2.5 V.                                |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| V\ :sub:`DD`          | Positive analog supply connection. Connect a voltage in the range of 7.5 V to 16.5 V. V\ :sub:`DD` must be decoupled to AGND.   |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :math:`overlineRESET` | Active low reset. Asserting this pin returns the DAC to its power-on status.                                                    |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :math:`overlineCLR`   | Active low input. Asserting this pin sets the DAC register to a user defined value and updates the DAC output.                  |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :math:`overlineLDAC`  | Active low load DAC logic input. This is used to update the DAC register and, consequently, the analog output.                  |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| V\ :sub:`CC`          | Digital supply. Connect a voltage in the range of 2.7 V to 5.5 V. V\ :sub:`CC` must be decoupled to DGND.                       |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| IOV\ :sub:`CC`        | Digital interface supply. Voltage range is from 1.71 V to 5.5 V.                                                                |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| SDO                   | Serial data output.                                                                                                             |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| SDIN                  | Serial data input.                                                                                                              |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| SCLK                  | Serial clock input.                                                                                                             |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :math:`overlineSYNC`  | Level triggered control input (active low). This is the frame synchronization signal for the input data.                        |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| DGND                  | Ground reference for digital circuitry.                                                                                         |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| V\ :sub:`REFN`        | Negative reference voltage input. Connect a voltage in the range of V\ :sub:`SS` + 2.5 V to 0 V.                                |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| V\ :sub:`SS`          | Negative analog supply connection. Connect a voltage in the range of -16.5 V to -2.5 V. V\ :sub:`SS` must be decoupled to AGND. |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| AGND                  | Ground reference for analog circuitry.                                                                                          |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| R\ :sub:`FB`          | Feedback connection for external amplifier.                                                                                     |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| INV                   | Inverting input connection for external amplifier.                                                                              |
++-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+| 
+
+Hardware Control Pins Truth Table
+---------------------------------
+
+|
+
+| **Table 2. Hardware Control Pins Truth Table**
+
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| /LDAC       | /CLR        | /RESET      | Function                                                                              |
++=============+=============+=============+=======================================================================================+
+| X\ :sup:`1` | X\ :sup:`1` | 0           | DAC in reset mode. The device cannot be programmed.                                   |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| X\ :sup:`1` | X\ :sup:`1` | ⇑\ :sup:`2` | DAC is returned to its power-on state. All registers are set to their default values. |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| 0           | 0           | 1           | DAC register loaded with the clearcode register value and output set accordingly.     |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| 0           | 1           | 1           | Output set according to the DAC register value.                                       |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| 1           | 0           | 1           | DAC register loaded with the clearcode register value and output set accordingly.     |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| ⇓\ :sup:`3` | 1           | 1           | Output set according to the DAC register value.                                       |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| ⇓\ :sup:`3` | 0           | 1           | Output remains at the clearcode register value.                                       |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| ⇑\ :sup:`2` | 1           | 1           | Output remains set according to the DAC register value.                               |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| ⇑\ :sup:`2` | 0           | 1           | Output remains at the clearcode register value.                                       |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| 1           | ⇓\ :sup:`3` | 1           | DAC register loaded with the clearcode register value and output set accordingly.     |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| 0           | ⇓\ :sup:`3` | 1           | DAC register loaded with the clearcode register value and output set accordingly.     |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| 1           | ⇑\ :sup:`2` | 1           | Output remains at the clearcode register value.                                       |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+| 0           | ⇑\ :sup:`2` | 1           | Output set according to the DAC register value.                                       |
++-------------+-------------+-------------+---------------------------------------------------------------------------------------+
+
+| :sup:`1` X is don't care.
+| :sup:`2` ⇑ is rising edge.
+| :sup:`3` ⇓ is falling edge.
+| ===== Input Shift Register Contents =====
+| |image3|
+
+.. container:: CENTERALIGN
+
+   //Figure 3. Input Shift Register Contents //
+
+
+| 
+| **Table 3. Register Address Definitions**
+
++------------------+------------------+----+----+----------------------------------------+
+| :::              | Register Address |    |    |                                        |
++==================+==================+====+====+========================================+
+| Read/Write (R/W) | C2               | C1 | C0 | Description                            |
++------------------+------------------+----+----+----------------------------------------+
+| X\ :sup:`1`      | 0                | 0  | 0  | No operation                           |
++------------------+------------------+----+----+----------------------------------------+
+| 0                | 0                | 0  | 1  | Write to the DAC register              |
++------------------+------------------+----+----+----------------------------------------+
+| 0                | 0                | 1  | 0  | Write to the control register          |
++------------------+------------------+----+----+----------------------------------------+
+| 0                | 0                | 1  | 1  | Write to the clearcode register        |
++------------------+------------------+----+----+----------------------------------------+
+| 0                | 1                | 0  | 0  | Write to the software control register |
++------------------+------------------+----+----+----------------------------------------+
+| 1                | 0                | 0  | 1  | Read from the DAC register             |
++------------------+------------------+----+----+----------------------------------------+
+| 1                | 0                | 1  | 0  | Read from the control register         |
++------------------+------------------+----+----+----------------------------------------+
+| 1                | 0                | 1  | 1  | Read from the clearcode register       |
++------------------+------------------+----+----+----------------------------------------+
+
+| :sup:`1` X = don't care.
+
+Control Register
+~~~~~~~~~~~~~~~~
+
+|
+
+| |image4|
+
+.. container:: CENTERALIGN
+
+   //Figure 4. Control Register //
+
+
+| **Table 4. Control Register Functions**
+
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Bit Name             | Description                             |                                                                                                                                                                   |
++======================+=========================================+===================================================================================================================================================================+
+| RBUF                 | Output amplifier configuration control. |                                                                                                                                                                   |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | **Setting**                             | **Function**                                                                                                                                                      |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 0                                       | Internal amplifier powered up.                                                                                                                                    |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 1 (default)                             | Internal amplifier powered down.                                                                                                                                  |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| OPGND                | Output ground clamp control.            |                                                                                                                                                                   |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | **Setting**                             | **Function**                                                                                                                                                      |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 0                                       | DAC output clamp to ground removed and DAC placed in normal mode.                                                                                                 |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 1 (default)                             | DAC output clamped to ground and DAC placed in tristate mode.                                                                                                     |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DACTRI               | DAC tristate control.                   |                                                                                                                                                                   |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | **Setting**                             | **Function**                                                                                                                                                      |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 0                                       | DAC in normal operating mode.                                                                                                                                     |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 1 (default)                             | DAC in tristate mode.                                                                                                                                             |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| BIN/2sC              | DAC register coding selection.          |                                                                                                                                                                   |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | \**Setting **\|**\ Function*\*          |                                                                                                                                                                   |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 0 (default)                             | DAC register uses twos complement coding.                                                                                                                         |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 1                                       | DAC register uses offset binary coding.                                                                                                                           |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| SDODIS               | SDO pin enable/disable control.         |                                                                                                                                                                   |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | **Setting**                             | **Function**                                                                                                                                                      |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 0 (default)                             | SDO pin enabled.                                                                                                                                                  |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 1                                       | SDO pin disabled (tristate).                                                                                                                                      |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| R/ :math:`overlineW` | Read/write select bit.                  |                                                                                                                                                                   |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | **Setting**                             | **Function**                                                                                                                                                      |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 0                                       | :adi:`ad5760`/:adi:`ad5780`/:adi:`ad5790` addressed for a write operation.                                                                                        |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :::                  | 1                                       | :adi:`ad5760`/:adi:`ad5780`/:adi:`ad5790` addressed for a read operation.                                                                                         |
++----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| 
+| ====Software Control Register====
+
+| 
+| |image5|
+
+.. container:: CENTERALIGN
+
+   //Figure 5. Software Control Register *
+
+
+*\ **Table 5. Software Control Register Functions**\ *^Bit Name ^Description ^ \|LDAC\ 1 \|Setting this bit to 1 updates the DAC register and, consequently, the DAC output.\| \|CLR\ 2 \|Setting this bit to 1 sets the DAC register to a user defined value and updates the DAC output.\| \|RESET \|Setting this bit to 1 returns the* :adi:`ad5760`\ */*\ :adi:`ad5780`\ */*\ :adi:`ad5790` *device to its power-on state.\| 1 The LDAC function has no effect when the :math:`overlineCLR` pin is low. Refer to Table 2 in the* :doc:`Hardware Control Pins Truth Table </wiki-migration/resources/quick-start/ad5760>` *section for further details.
+  2 The CLR function has no effect when the :math:`overlineLDAC` pin is low. Refer to Table 2 in the* :doc:`Hardware Control Pins Truth Table </wiki-migration/resources/quick-start/ad5760>` *section for further details.
+  ===== Transfer Function =====
+  :math:`V_OUT = (V_REFP - V_REFN) \times D/2^N + V_REFN`
+  where:
+  *\ V\ :sub:`REFN`// is the negative voltage applied at the V\ :sub:`REFN` input pin.
+| *V\ REFP* is the positive voltage applied at the V\ :sub:`REFP` input pin.
+| *D* is the 16-bit (:adi:`ad5760`), 18-bit (:adi:`ad5780`), or 20-bit (:adi:`ad5790`) code programmed to the DAC.
+| *N* is the number of bits.
+| ===== Example 1: Initializing and Writing to the DAC Register =====
+| === Initializing the DAC ===
+
+.. tip::
+
+   
+   To initialize the part,
+   
+   -  Because this initialization is a write to the part, set the R/ :math:`overlineW` bit to a Logic 0.
+   -  Keep the default mode for SDODIS and RBUF.
+   -  To write in binary coding, select BIN/2sC = 1.
+   -  Set DACTRI = 0 and OPGND = 0 to place the DAC in normal operating mode and remove the DAC output clamp to ground, respectively.
+   
+   | Write the following over the serial interface: 0010 0000 0000 0000 0001 0010 (R/ :math:`overlineW` bit, three register address bits, 20 data bits).
+   | See Table 6 and Figure 6.
+   | **Table 6. Bit Settings to Initialize and Write to the Part**
+   
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Bit(s)  | Bit Name             | Setting | Description                                                                                                                                                      |
+   +=========+======================+=========+==================================================================================================================================================================+
+   | 23      | R/ :math:`overlineW` | 0       | :adi:`ad5760`/:adi:`ad5780`/:adi:`ad5790` addressed for a write operation |
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | [22:20] | C2, C1, C0           | 010     | Write to the control register                                                                                                                                    |
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | 5       | SDODIS               | 0       | The SDO pin enabled for future readings from the part                                                                                                            |
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | 4       | BIN/2sC              | 1       | Offset binary coding                                                                                                                                             |
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | 3       | DACTRI               | 0       | Place the DAC in normal operating mode                                                                                                                           |
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | 2       | OPGND                | 0       | Remove the DAC output clamp to ground                                                                                                                            |
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | 1       | RBUF                 | 1       | The internal amplifier powered down                                                                                                                              |
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   
+   |
+   
+   .. important::
+
+      To write in binary coding, set BIN/2sC = 1.
+
+      | The default coding is twos complement. The same 24-bit data impacts the values that the user writes to or reads from the part in a different way depending on the coding selected. The user must verify the coding used by writing to the control register or reading back from it.
+
+   
+
+
+| |image6|
+
+.. container:: CENTERALIGN
+
+   \ *Figure 6. Initializing the Part*\
+
+
+| === Writing to the DAC Register ===
+
+.. tip::
+
+   To write a midscale code to the DAC register,
+
+   
+   -  Set R/ :math:`overlineW` = 0 to select the write option from the read/write bit.
+   -  Set C[2:0] = 001 for the correspondent register address.
+   -  Set D[19:0], the data bits, for a midscale code.
+   
+   | The 24-bit data to write over the serial interface is as follows:
+   | 16-bit :adi:`ad5760`: 0001 1000 0000 0000 0000 XXXX
+   | 18-bit :adi:`ad5780`: 0001 1000 0000 0000 0000 00XX
+   | 20-bit :adi:`ad5790`: 0001 1000 0000 0000 0000 0000
+   | where X = don't care.
+   | See Table 7 and Figure 7.
+   | **Table 7. Bit Settings to Write to DAC Register**
+   
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Bit(s)  | Bit Name             | Setting | Description                                                                                                                                                      |
+   +=========+======================+=========+==================================================================================================================================================================+
+   | 23      | R/ :math:`overlineW` | 0       | :adi:`ad5760`/:adi:`ad5780`/:adi:`ad5790` addressed for a write operation |
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | [22:20] | C2, C1, C0           | 001     | Write to the DAC register                                                                                                                                        |
+   +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   
+   |
+
+
+| |image7|
+
+.. container:: CENTERALIGN
+
+   \ *Figure 7. Writing to the DAC Register*\
+
+
+| ===== Example 2: Clearing the DAC to a Defined Value =====
+| === Writing to the Clearcode Register ===
+
+.. tip::
+
+   To define the value at which the DAC output is set when the :math:`overlineCLR` pin or CLR bit in the software control register is asserted, write the desired code to the clearcode register.
+
+   | For a full-scale clear code, write the following over the serial interface:
+   | 16-bit :adi:`ad5760`: 0011 1111 1111 1111 1111 XXXX
+   | 18-bit :adi:`ad5780`: 0011 1111 1111 1111 1111 11XX
+   | 20-bit :adi:`ad5790`: 0011 1111 1111 1111 1111 1111
+   | where X = don't care.
+   | See Figure 8.
+
+
+| |image8|
+
+.. container:: CENTERALIGN
+
+   \ *Figure 8. Writing Full-Scale Code to the Clearcode Register*\
+
+
+| === Writing to the Software Control Register ===
+
+.. tip::
+
+   Set the CLR bit to a Logic 1 to set the DAC register to a user defined value and update the DAC output.
+
+   | Write the following over the serial interface: 0100 0000 0000 0000 0000 0010
+   | The user should see the DAC output value change to full-scale code.
+   | See Figure 9.
+
+
+| |image9|
+
+.. container:: CENTERALIGN
+
+   \ *Figure 9. Clearing the Part to a User Defined Value*\
+
+
+| === Reading from the Clearcode Register ===
+
+.. tip::
+
+   To confirm the clearcode value written to the part, read the data from the clearcode register (full scale for this example).
+
+   | Write the following over the serial interface:
+   | 1011 XXXX XXXX XXXX XXXX XXXX.
+   | where X = don't care.
+   | See Figure 10.
+   
+   .. important::
+
+      Note that this action is a read function. Therefore, set the R/ :math:`overlineW` bit = 1.
+
+
+      | D19 to D0, the data bits, are don't care bits because the intention is to read from the part and not to write to the part.
+
+   
+   |
+
+| |image10|
+
+.. container:: CENTERALIGN
+
+   \ *Figure 10. Reading from the Clearcode Register*\
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_block_diagram.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_pin_configuration.png
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_shift_register_contents.png
+   :width: 700px
+.. |image4| image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_control_register.png
+   :width: 700px
+.. |image5| image:: https://wiki.analog.com/_media/resources/quick-start/software_control_register_bueno.png
+   :width: 700px
+.. |image6| image:: https://wiki.analog.com/_media/resources/quick-start/example1_step1_ad5760_80_90.png
+   :width: 700px
+.. |image7| image:: https://wiki.analog.com/_media/resources/quick-start/example1_step2_ad5760_80_90.png
+   :width: 700px
+.. |image8| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step1.png
+   :width: 700px
+.. |image9| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step2.png
+   :width: 700px
+.. |image10| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step3.png
+   :width: 700px

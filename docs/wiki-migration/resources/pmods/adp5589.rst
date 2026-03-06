@@ -1,0 +1,8 @@
+The :adi:`ADP5589` is a 19 channel GPIO (General Purpose Input/Output) port expander with built-in keypad matrix decoder, programmable logic, reset logic, and PWM generator. The IC is capable of handling QWERTY size keyboards and GPIO expansion. I/O expander ICs are used in portable devices (phones, remote controls, & cameras) and non-portable applications (healthcare, industrial & instrumentation). I/O expanders can be used to increase the number of I/Os available to a processor or to reduce the number of I/Os required through interface connectors for front panel designs.
+
+The :adi:`ADP5589` handles all key scanning and decoding and can flag the main processor via an interrupt line that new key events have occurred. GPI changes and logic changes can also be tracked as events via the FIFO, eliminating the need to monitor different registers for event changes. The :adi:`ADP5589` is equipped with a FIFO to store up to 16 events. Events can be read back by the processor via an I2C-compatible interface.
+
+The :adi:`ADP5589` frees up the main processor from having to monitor the keypad, thereby reducing power consumption and/or increasing processor bandwidth for performing other functions. The programmable logic functions allow common logic requirements to be integrated as part of the GPIO expander, saving board area and cost. Reference software Linux driver is available.
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/adp5589_pmod_ioxp.jpg
+   :align: center

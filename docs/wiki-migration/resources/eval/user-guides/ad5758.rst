@@ -1,0 +1,260 @@
+AD5758 - Reference Design
+=========================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5758`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5758`
+
+Supported FPGA carrier board
+----------------------------
+
+-  `Zedboard <http://zedboard.org/product/zedboard>`__
+
+Overview
+--------
+
+The :adi:`AD5758` is a single-channel, voltage and current output digital-to-analog converter (DAC) that operates with a power supply range from −33 V minimum on AVSS to +33 V maximum on AVDD1 with a maximum operating voltage between the two rails of 60 V. On-chip DPC minimizes package power dissipation, which is achieved by regulating the supply voltage (VDPC+) to the VIOUT output driver circuitry from 5 V to 27 V using a buck dc-to-dc converter, optimized for minimum on-chip power dissipation. The CHART pin enables a HART signal to be coupled onto the current output.
+
+The device uses a versatile 4-wire serial peripheral interface (SPI) that operates at clock rates of up to 50 MHz and is compatible with standard SPI, QSPI™, MICROWIRE™, DSP, and micro-controller interface standards. The interface also features an optional SPI cyclic redundancy check (CRC) and a watchdog timer. The :adi:`AD5758` offers improved diagnostic features from its predecessors, such as output current monitoring and an integrated 12-bit diagnostic ADC. Additional robustness is provided by the inclusion of a fault protection switch on VIOUT, +VSENSE, and −VSENSE pins.
+
+Applications:
+
+-  Process control
+-  Actuator control
+-  PLC and DCS applications
+-  HART network connectivity
+
+HDL reference design
+--------------------
+
+The HDL project is only needed if the used carrier board is an FPGA board. The project uses a Zedboard and its hardware interfaces. There isn't any custom logic in the programmable side of the Zynq 7000 SoC. To clone or download the HDL repository, go the Download section of this wiki page.
+
+To find more information about how to create and build the project please visit the :doc:`HDL build guide </wiki-migration/resources/fpga/docs/build>`.
+
+To find more information about how to create the application project in Xilinx SDK please visit the following page: :doc:`/wiki-migration/resources/fpga/xilinx/software_setup`
+
+Driver Description
+------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| Function                                                                                                                      | Description                                                                  |
++===============================================================================================================================+==============================================================================+
+| ``static uint8_t ad5758_compute_crc8(uint8_t *data, uint8_t data_size)``                                                      | Compute CRC8 checksum.                                                       |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``static int32_t ad5758_spi_reg_read(struct ad5758_dev *dev, uint8_t reg_addr, uint16_t *reg_data);``                         | Read from device.                                                            |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``static int32_t ad5758_spi_reg_write(struct ad5758_dev *dev, uint8_t reg_addr, uint16_t reg_data);``                         | Write to device.                                                             |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``static int32_t ad5758_spi_write_mask(struct ad5758_dev *dev, uint8_t reg_addr, uint32_t mask, uint16_t data);``             | SPI write to device using a mask.                                            |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_set_crc(struct ad5758_dev *dev, uint8_t crc_en);``                                                           | Enable/disable SPI CRC function.                                             |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_wait_for_refresh_cycle(struct ad5758_dev *dev);``                                                            | Busy wait until CAL_MEM_UNREFRESHED bit in the DIGITAL_DIAG_RESULTS clears.  |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_soft_reset(struct ad5758_dev *dev);``                                                                        | Initiate a software reset.                                                   |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_calib_mem_refresh(struct ad5758_dev *dev);``                                                                 | Initiate a calibration memory refresh to the shadow registers.               |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_set_dc_dc_conv_mode(struct ad5758_dev *dev, enum ad5758_dc_dc_mode mode);``                                  | Configure the dc-to-dc controller mode.                                      |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_set_dc_dc_ilimit(struct ad5758_dev *dev, enum ad5758_dc_dc_ilimt ilimit);``                                  | Set the dc-to-dc converter current limit.                                    |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_fault_prot_switch_en(struct ad5758_dev *dev, uint8_t enable);``                                              | Enable/disable VIOUT Fault Protection Switch.                                |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_internal_buffers_en(struct ad5758_dev *dev, uint8_t enable);``                                               | Enable/disable Enable Internal Buffers.                                      |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_set_out_range(struct ad5758_dev *dev, enum ad5758_output_range range);``                                     | Select Output Range.                                                         |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_slew_rate_config(struct ad5758_dev *dev, enum ad5758_slew_rate_clk clk, uint8_t enable);``                   | Configure the slew rate by setting the clock and enable/disable the control. |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_dac_input_write(struct ad5758_dev *dev, uint16_t code);``                                                    | Write DAC data to the input register.                                        |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_dac_output_en(struct ad5758_dev *dev, uint8_t enable);``                                                     | Enable/disable VIOUT.                                                        |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_clear_dig_diag_flag(struct ad5758_dev *dev, enum ad5758_dig_diag_flags flag);``                              | Clear the error flags for the on-chip digital diagnostic features.           |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_set_clkout_config(struct ad5758_dev *dev, enum ad5758_clkout_config config, enum ad5758_clkout_freq freq);`` | Configure CLKOUT by setting the frequency and enabling/disabling the option. |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_select_adc_ip(struct ad5758_dev *dev, enum ad5758_adc_ip adc_ip_sel);``                                      | Select which node to multiplex to the ADC.                                   |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_select_adc_depth(struct ad5758_dev *dev, uint8_t num_of_channels);``                                         | Set depth of the sequencer.                                                  |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_set_adc_channel_input(struct ad5758_dev *dev, uint8_t channel, enum ad5758_adc_ip adc_ip_sel);``             | Load the desired channel into the sequencer with the adc input.              |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_set_adc_mode(struct ad5758_dev *dev, enum ad5758_adc_mode adc_mode, uint8_t enable);``                       | Configure the ADC into one of four modes of operation.                       |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``int32_t ad5758_init(struct ad5758_dev **device, struct ad5758_init_param init_param);``                                     | Set up the device from power-on or reset condition with the correct.         |
++-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------+
+
+
+| ``enum ad5758_dc_dc_mode {                   |
+
+|     DC_DC_POWER_OFF,                         |
+|     DPC_CURRENT_MODE,                        |
+|     DPC_VOLTAGE_MODE,                        |
+|     PPC_CURRENT_MODE,                        |
+| };                                           |
+|                                              |
+| enum ad5758_dig_diag_flags {                 |
+|     DIAG_SPI_CRC_ERR,                        |
+|     DIAG_SLIPBIT_ERR,                        |
+|     DIAG_SCLK_COUNT_ERR,                     |
+|     DIAG_INVALID_SPI_ACCESS_ERR = 4,         |
+|     DIAG_CAL_MEM_CRC_ERR,                    |
+|     DIAG_INVERSE_DAC_CHECK_ERR,              |
+|     DIAG_DAC_LATCH_MON_ERR = 8,              |
+|     DIAG_THREE_WI_RC_ERR,                    |
+|     DIAG_WDT_ERR = 11,                       |
+|     DIAG_ERR_3WI,                            |
+|     DIAG_RESET_OCCURRED,                     |
+| };                                           |
+|                                              |
+| enum ad5758_clkout_config {                  |
+|     CLKOUT_DISABLE,                          |
+|     CLKOUT_ENABLE,                           |
+| };                                           |
+|                                              |
+| enum ad5758_clkout_freq {                    |
+|     CLKOUT_FREQ_416_KHZ,                     |
+|     CLKOUT_FREQ_435_KHZ,                     |
+|     CLKOUT_FREQ_454_KHZ,                     |
+|     CLKOUT_FREQ_476_KHZ,                     |
+|     CLKOUT_FREQ_500_KHZ,                     |
+|     CLKOUT_FREQ_526_KHZ,                     |
+|     CLKOUT_FREQ_555_KHZ,                     |
+|     CLKOUT_FREQ_588_KHZ,                     |
+| };                                           |
+|                                              |
+| enum ad5758_slew_rate_clk {                  |
+|     SR_CLOCK_240_KHZ,                        |
+|     SR_CLOCK_200_KHZ,                        |
+|     SR_CLOCK_150_KHZ,                        |
+|     SR_CLOCK_128_KHZ,                        |
+|     SR_CLOCK_64_KHZ,                         |
+|     SR_CLOCK_32_KHZ,                         |
+|     SR_CLOCK_16_KHZ,                         |
+|     SR_CLOCK_8_KHZ,                          |
+|     SR_CLOCK_4_KHZ,                          |
+|     SR_CLOCK_2_KHZ,                          |
+|     SR_CLOCK_1_KHZ,                          |
+|     SR_CLOCK_512_HZ,                         |
+|     SR_CLOCK_256_HZ,                         |
+|     SR_CLOCK_128_HZ,                         |
+|     SR_CLOCK_64_HZ,                          |
+|     SR_CLOCK_16_HZ,                          |
+| };                                           |
+|                                              |
+| enum ad5758_dc_dc_ilimt {                    |
+|     ILIMIT_150_mA,                           |
+|     ILIMIT_200_mA,                           |
+|     ILIMIT_250_mA,                           |
+|     ILIMIT_300_mA,                           |
+|     ILIMIT_350_mA,                           |
+|     ILIMIT_400_mA,                           |
+| };                                           |
+|                                              |
+| enum ad5758_output_range {                   |
+|     RANGE_0V_5V,                             |
+|     RANGE_0V_10V,                            |
+|     RANGE_M5V_5V,                            |
+|     RANGE_M10V_10V,                          |
+|     RANGE_0mA_20mA = 8,                      |
+|     RANGE_0mA_24mA,                          |
+|     RANGE_4mA_24mA,                          |
+|     RANGE_M20mA_20mA,                        |
+|     RANGE_M24mA_24mA,                        |
+|     RANGE_M1mA_22mA,                         |
+| };                                           |
+|                                              |
+| enum ad5758_adc_ip {                         |
+|     ADC_IP_MAIN_DIE_TEMP,                    |
+|     ADC_IP_DCDC_DIE_TEMP,                    |
+|     ADC_IP_REFIN = 3,                        |
+|     ADC_IP_REF2,                             |
+|     ADC_IP_VSENSE = 13,                      |
+|     ADC_IP_MVSENSE,                          |
+|     ADC_IP_INT_AVCC = 20,                    |
+|     ADC_IP_REGOUT,                           |
+|     ADC_IP_VLOGIC,                           |
+|     ADC_IP_INT_CURR_MON_VOUT,                |
+|     ADC_IP_REFGND,                           |
+|     ADC_IP_AGND,                             |
+|     ADC_IP_DGND,                             |
+|     ADC_IP_VDPC,                             |
+|     ADC_IP_AVDD2,                            |
+|     ADC_IP_AVSS,                             |
+|     ADC_IP_DCDC_DIE_NODE,                    |
+|     ADC_IP_REFOUT,                           |
+| };                                           |
+|                                              |
+| enum ad5758_adc_mode {                       |
+|     ADC_MODE_KEY_SEQ = 2,                    |
+|     ADC_MODE_AUTO_SEQ,                       |
+|     ADC_MODE_SINGLE_CONV,                    |
+|     ADC_MODE_SINGLE_KEY_CONV,                |
+| };                                           |
+|                                              |
+| struct ad5758_dev {                          |
+|     /* SPI */                                |
+|     struct spi_desc *spi_desc;               |
+|         /* GPIO */                           |
+|         struct gpio_desc *reset_n;           |
+|         struct gpio_desc *ldac_n;            |
+|     /* Device Settings */                    |
+|     uint8_t crc_en;                          |
+|     enum ad5758_dc_dc_mode dc_dc_mode;       |
+| };                                           |
+|                                              |
+| struct ad5758_init_param {                   |
+|     /* SPI */                                |
+|     struct spi_init_param spi_init;          |
+|         /* GPIO */                           |
+|     struct gpio_init_param reset_n;          |
+|     struct gpio_init_param ldac_n;           |
+|     /* Device Settings */                    |
+|     uint8_t crc_en;                          |
+|     enum ad5758_dc_dc_mode dc_dc_mode;       |
+|     enum ad5758_clkout_config clkout_config; |
+|     enum ad5758_clkout_freq clkout_freq;     |
+|     enum ad5758_dc_dc_ilimt dc_dc_ilimt;     |
+|     enum ad5758_output_range output_range;   |
+|     enum ad5758_slew_rate_clk slew_rate_clk; |
+| };``                                         |
++----------------------------------------------+
+
+HDL Downloads
+-------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  :git-hdl:`HDL Reference Design <projects/ad5758_sdz>`
+   
+
+
+No-OS Downloads
+---------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  :git-no-OS:`No-OS Reference Design <projects/ad5758-sdz>`
+   -  :git-no-OS:`No-OS Drivers <drivers/dac/ad5758>`
+   
+

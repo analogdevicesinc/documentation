@@ -1,0 +1,208 @@
+nanoDAC+ No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5671R`
+-  :adi:`AD5672R`
+-  :adi:`AD5673R`
+-  :adi:`AD5674R`
+-  :adi:`AD5675`
+-  :adi:`AD5675R`
+-  :adi:`AD5676`
+-  :adi:`AD5676R`
+-  :adi:`AD5677R`
+-  :adi:`AD5679R`
+-  :adi:`AD5684`
+-  :adi:`AD5684R`
+-  :adi:`AD5685R`
+-  :adi:`AD5686`
+-  :adi:`AD5686R`
+-  :adi:`AD5694`
+-  :adi:`AD5694R`
+-  :adi:`AD5695R`
+-  :adi:`AD5696`
+-  :adi:`AD5681R`
+-  :adi:`AD5682R`
+-  :adi:`AD5683R`
+-  :adi:`AD5683`
+-  :adi:`AD5691R`
+-  :adi:`AD5692R`
+-  :adi:`AD5693R`
+-  :adi:`AD5693`
+
+Overview
+--------
+
+The :adi:`AD5673R`, :adi:`AD5674R`, :adi:`AD5676`, :adi:`AD5676R`, :adi:`AD5675`, :adi:`AD5675R`, :adi:`AD5677R`, :adi:`AD5679R`,\ :adi:`AD5686`, :adi:`AD5686R`, :adi:`AD5696`, :adi:`AD5696R` / :adi:`AD5685R`, :adi:`AD5695R` / :adi:`AD5672R`, :adi:`AD5671R`, :adi:`AD5684`, :adi:`AD5684R`, :adi:`AD5694`, :adi:`AD5694R`, :adi:`AD5681R`, :adi:`AD5682R`, :adi:`AD5683R`, :adi:`AD5683`, :adi:`AD5691R`, :adi:`AD5692R`, :adi:`AD5693R`, :adi:`AD5693` are low power, single-channel/octal/quad, 16-/14-/12-bit, buffered voltage output digital-to-analog converter (DAC). All devices operate from a single 2.7 V to 5.5 V supply and are guaranteed monotonic by design.
+
+The :adi:`AD5673R`, :adi:`AD5674R`, :adi:`AD5676`, :adi:`AD5676R`, :adi:`AD5675`, :adi:`AD5675R`, :adi:`AD5677R`, :adi:`AD5679R`,\ :adi:`AD5686`, :adi:`AD5686R`, :adi:`AD5696`, :adi:`AD5696R` / :adi:`AD5685R`, :adi:`AD5695R` / :adi:`AD5672R`, :adi:`AD5671R`, :adi:`AD5684`, :adi:`AD5684R`, :adi:`AD5694`, :adi:`AD5694R` include a gain select pin giving a full-scale output of 2.5 V (gain = 1) or 5 V (gain = 2).
+
+The :adi:`AD5673R`, :adi:`AD5674R`, :adi:`AD5676`, :adi:`AD5676R`, :adi:`AD5675`, :adi:`AD5675R`, :adi:`AD5672R`, :adi:`AD5671R`,\ :adi:`AD5677R`, :adi:`AD5679R`, :adi:`AD5686`, :adi:`AD5686R`, :adi:`AD5685R`, :adi:`AD5684`, :adi:`AD5684R`, :adi:`AD5695R`, :adi:`AD5694`, :adi:`AD5694R`, :adi:`AD5696`, :adi:`AD5696R`,\ :adi:`AD5681R`, :adi:`AD5682R`, :adi:`AD5683R`, :adi:`AD5683`, :adi:`AD5691R`, :adi:`AD5692R`, :adi:`AD5693R`, :adi:`AD5693` also incorporates a power-on reset circuit and a RSTSEL pin that ensures that the DAC outputs power up to zero scale or midscale and remain there until a valid write takes place. Each device contains a per channel power-down feature that reduces the current consumption of the device to 2 µA/2.5 µA / 4 µA while in power-down mode.
+
+The :adi:`AD5674R`, :adi:`AD5676`, :adi:`AD5676R`, :adi:`AD5672R`, :adi:`AD5679R`, :adi:`AD5686`, :adi:`AD5686R`, :adi:`AD5685R`, :adi:`AD5684`, :adi:`AD5684R`, :adi:`AD5681R`, :adi:`AD5682R`, :adi:`AD5683R`, :adi:`AD5683` employs a versatile serial peripheral interface (SPI) that operates at clock rates up to 50 MHz.
+
+The :adi:`AD5673R`, :adi:`AD5675`, :adi:`AD5675R`, :adi:`AD5677R`, :adi:`AD5695R`, :adi:`AD5671R`, :adi:`AD5694`, :adi:`AD5694R`, :adi:`AD5696`, :adi:`AD5696R`, :adi:`AD5691R`, :adi:`AD5692R`, :adi:`AD5693R`, :adi:`AD5693` use a versatile 2-wire serial interface that operates at clock rates up to 400 kHz.
+
+All devices contain a VLOGIC pin intended for 1.8 V/3 V/5 V logic.
+
+Applications:
+
+-  Optical transceivers
+-  Base-station power amplifiers
+-  Process control (programmable logic control [PLC] input/output cards)
+-  Industrial automation
+-  Data acquisition systems
+
+Driver Description
+------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| Function                                                                                                        | Description                                             |
++=================================================================================================================+=========================================================+
+| ``int32_t ad5686_init(struct ad5686_dev **device, struct ad5686_init_param init_param);``                       | Initialize the device.                                  |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``int32_t ad5686_remove(struct ad5686_dev *dev);``                                                              | Free the resources allocated by ad5686_init().          |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``uint16_t ad5686_set_shift_reg(struct ad5686_dev *dev, uint8_t command, uint8_t address, uint16_t data);``     | Write to input register.                                |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``void ad5686_write_register(struct ad5686_dev *dev, enum ad5686_dac_channels channel, uint16_t data);``        | Write to Input Register n (dependent on LDAC).          |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``void ad5686_update_register(struct ad5686_dev *dev, enum ad5686_dac_channels channel);``                      | Update DAC Register n with contents of Input Register n |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``void ad5686_write_update_register(struct ad5686_dev *dev, enum ad5686_dac_channels channel, uint16_t data);`` | Write to and update DAC channel n .                     |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``uint16_t ad5686_read_back_register(struct ad5686_dev *dev, enum ad5686_dac_channels channel);``               | Read back Input Register n.                             |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``void ad5686_power_mode(struct ad5686_dev *dev, enum ad5686_dac_channels channel, uint8_t mode);``             | Power down the selected channels.                       |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``void ad5686_ldac_mask(struct ad5686_dev *dev, enum ad5686_dac_channels channel, uint8_t enable);``            | Set up LDAC mask register.                              |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``void ad5686_software_reset(struct ad5686_dev *dev);``                                                         | Software reset (power-on reset)                         |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``void ad5686_internal_reference(struct ad5686_dev *dev, uint8_t value);``                                      | Write to Internal reference setup register              |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``void ad5686_daisy_chain_en(struct ad5686_dev *dev, uint8_t value);``                                          | Set up DCEN register (daisy-chain enable)               |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``void ad5686_read_back_en(struct ad5686_dev *dev, uint8_t value);``                                            | Set up readback register (readback enable)              |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| ``int32_t ad5686_gain_mode(struct ad5686_dev *dev, uint8_t value);``                                            | Set gain mode (AD5683 family specific)                  |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++-------------------------------------+
+
+
+| ``enum ad5686_type {                |
+
+|     ID_AD5671R,                     |
+|     ID_AD5672R,                     |
+|        ID_AD5673R,                  |
+|     ID_AD5674R,                     |
+|     ID_AD5675R,                     |
+|     ID_AD5676,                      |
+|     ID_AD5676R,                     |
+|        ID_AD5677R,                  |
+|     ID_AD5679R,                     |
+|     ID_AD5686,                      |
+|     ID_AD5684R,                     |
+|     ID_AD5685R,                     |
+|     ID_AD5686R,                     |
+|     ID_AD5694,                      |
+|     ID_AD5694R,                     |
+|     ID_AD5695R,                     |
+|     ID_AD5696,                      |
+|     ID_AD5696R,                     |
+|     ID_AD5681R,                     |
+|     ID_AD5682R,                     |
+|     ID_AD5683R,                     |
+|     ID_AD5683,                      |
+|     ID_AD5691R,                     |
+|     ID_AD5692R,                     |
+|     ID_AD5693R,                     |
+|     ID_AD5693                       |
+| };                                  |
+|                                     |
+| enum comm_type {                    |
+|     SPI,                            |
+|     I2C,                            |
+| };                                  |
+|                                     |
+| enum ad5686_dac_channels {          |
+|     AD5686_CH_0 = 0,                |
+|     AD5686_CH_1,                    |
+|     AD5686_CH_2,                    |
+|     AD5686_CH_3,                    |
+|     AD5686_CH_4,                    |
+|     AD5686_CH_5,                    |
+|     AD5686_CH_6,                    |
+|     AD5686_CH_7,                    |
+|     AD5686_CH_8,                    |
+|     AD5686_CH_9,                    |
+|     AD5686_CH_10,                   |
+|     AD5686_CH_11,                   |
+|     AD5686_CH_12,                   |
+|     AD5686_CH_13,                   |
+|     AD5686_CH_14,                   |
+|     AD5686_CH_15,                   |
+| };                                  |
+|                                     |
+| struct ad5686_chip_info {           |
+|     uint8_t     resolution;         |
+|     uint8_t     register_map;       |
+|     enum comm_type  communication;  |
+|     const uint32_t *channel_addr;   |
+| };                                  |
+|                                     |
+| struct ad5686_dev {                 |
+|     /* I2C */                       |
+|     i2c_desc    *i2c_desc;          |
+|     /* SPI */                       |
+|     spi_desc    *spi_desc;          |
+|     /* GPIO */                      |
+|     gpio_desc   *gpio_reset;        |
+|     gpio_desc   *gpio_ldac;         |
+|     /* Device Settings */           |
+|     enum ad5686_type    act_device; |
+|     uint32_t power_down_mask;       |
+|     uint32_t ldac_mask;             |
+| };                                  |
+|                                     |
+| struct ad5686_init_param {          |
+|     /* I2C */                       |
+|     i2c_init_param  i2c_init;       |
+|     /* SPI */                       |
+|     spi_init_param  spi_init;       |
+|     /* GPIO */                      |
+|     int8_t      gpio_reset;         |
+|     int8_t      gpio_ldac;          |
+|     /* Device Settings */           |
+|     enum ad5686_type    act_device; |
+| };``                                |
++-------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD5686 Driver.|
+
+   -
+
+   |Header file of AD5686 Driver.|
+
+.. |Implementation of AD5686 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5686/ad5686`.c
+.. |Header file of AD5686 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5686/ad5686`.h

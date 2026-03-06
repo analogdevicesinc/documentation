@@ -1,0 +1,144 @@
+CN0271 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7790`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0271`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-CN0271-SDPZ` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-CN0271-SDPZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0271.jpg
+   :alt: cn0271.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0271-SDPZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0271_sdp1z.jpg
+   :alt: cn0271_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The circuit from the **EVAL-CN0271-SDPZ** board is a complete thermocouple signal conditioning circuit with cold junction compensation followed by a 16-bit sigma-delta (Σ-Δ) analog-to-digital converter (ADC). The AD8495 thermocouple amplifier provides a simple, low cost solution for measuring K type thermocouple temperatures, including cold junction compensation. A fixed gain instrumentation amplifier in the :adi:`AD8495` amplifies the small thermocouple voltage to provide a 5 mV/°C output. The high common-mode rejection of the amplifier blocks commonmode noise that the long thermocouple leads can pick up. For additional protection, the high impedance inputs of the amplifier make it easy to add extra filtering. The :adi:`AD8476` differential amplifier provides the correct signal levels and common-mode voltage to drive the :adi:`AD7790` 16-bit, Σ-Δ ADC. The circuit provides a compact low cost solution for thermocouple signal conditioning and high resolution analog-to-digital conversion.
+
+The :adi:`AD7790` is a low power, complete analog front end for low frequency measurement applications. It contains a low noise 16-bit Σ-Δ ADC with one differential input that can be buffered or unbuffered along with a digital PGA, which allows gains of 1, 2, 4, and 8.
+
+More information
+----------------
+
+-  :adi:`CN0271 Product Info <CN0271>` - pricing, samples, datasheet
+-  :adi:`AD7790 Product Info <AD7790>` - pricing, samples, datasheet
+-  :adi:`EVAL-CN0271-SDPZ evaluation board user guide <CN0271>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-CN0271-SDPZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-CN0271 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD7790 Driver:** :git-no-OS:`device_drivers/AD7790`
+   
+   -  **CN0271 Commands:** :git-no-OS:`device_commands/CN0271`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-CN0271 reference project for Xilinx KC705 FPGA board.
+
+================ ======================================================
+Command          Description
+================ ======================================================
+**help?**        Displays all available commands.
+**adcCode?**     Displays the ADC Code.
+**temperature?** Displays the temperature measured by the thermocouple.
+**reset!**       Resets the serial interface with AD7790.
+================ ======================================================
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

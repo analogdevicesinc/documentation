@@ -1,0 +1,97 @@
+Demo Modes
+==========
+
+Hardware Link for Noise Demo Mode
+---------------------------------
+
++--------------+--------+------------------+------------------------------------------------------------------------------------+
+| Link Numbers | Colour | Default Position | Descirption                                                                        |
++==============+========+==================+====================================================================================+
+| LK7          | Black  | A                | DVDD voltage select:                                                               |
+|              |        |                  | Pos A: DVDD is connected to 3.3V                                                   |
+|              |        |                  | Pos B: DVDD is connected to AVDD                                                   |
++--------------+--------+------------------+------------------------------------------------------------------------------------+
+| LK8          | Black  | A                | IOVDD voltage select:                                                              |
+|              |        |                  | Pos A: sets IOVDD to 3.3v LDO supply                                               |
+|              |        |                  | Pos B: sets IOVDD to external source                                               |
++--------------+--------+------------------+------------------------------------------------------------------------------------+
+| LK9          | Black  | C                | AVDD voltage select:                                                               |
+|              |        |                  | Pos A: sets AVDD to 3.3v LDO supply                                                |
+|              |        |                  | Pos B: sets AVDD to external source                                                |
+|              |        |                  | Pos C: sets AVDD to 5V LDO Supply                                                  |
++--------------+--------+------------------+------------------------------------------------------------------------------------+
+| LK10         | Black  | Uninserted       | Used as external AVDD voltage connector for scp boards                             |
++--------------+--------+------------------+------------------------------------------------------------------------------------+
+| LK11         | Black  | Uninserted       | Used as external IOVDD voltage connector for scp boards                            |
++--------------+--------+------------------+------------------------------------------------------------------------------------+
+| LK12         | Black  | A                | Used for stacking of Eval boards. To select Eval board(CS_N):                      |
+|              |        |                  | Pos A(1-2): selects eval board 1 (CS_ARD_1)                                        |
+|              |        |                  | Pos B(2-3): selects eval board 2 (CS_ARD_2)                                        |
++--------------+--------+------------------+------------------------------------------------------------------------------------+
+| LK13         | Black  | Uninserted       | This link shorts AIN1 to AIN2. This is useful to perform noise tests on the AD7190 |
++--------------+--------+------------------+------------------------------------------------------------------------------------+
+
+Noise test Demo
+---------------
+
+-  **Warning:** The evaluation software and drivers must be installed before connecting the EVAL-AD4130-8WARDZ evaluation board and EVAL-SDP-CK1Z board to the USB port of the PC to ensure the PC correctly recognizes the evaluation system.
+
+If you have not set up the EVAL-AD4130-8WARDZ and controller board previously please go to the :doc:`Quick Start Guide </wiki-migration/resources/eval/user-guides/ad4130-8>`
+
+If you have not set up/installed the ACE plugin before please go to :doc:`Install Guide </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
+
+-  Double click the AD4130-8 Eval Board icon to open the AD4130-8 Eval Board view window. The demo wizard will be on the left, either as shown in the figure below (Label 1) or already expanded. Expand the wizard by clicking the arrow (Label 2).
+
+
+|image1|
+
+-  With the wizard expanded, select the noise test button (Label 3).
+-  The settings required for the demo are displayed to be viewed prior to writing to the AD4130-8 (Label 4). Click apply (Label 5) to write these settings to the board.
+-  The summary is then displayed once the write is complete (Label 1).
+
+|image2|
+
+-  From here navigate to the chip view by double-clicking the AD4130-8 chip (Label 2).
+-  To make further changes to the configuration click on the dark blue block in the chip view (Label 1) or double click the memory map option (Label 2)
+-  To begin capturing data double click the Analysis button (Label 3).
+
+|image3|
+
+-  To gather samples, change the Samples Count (Label 1) to the number of samples required, then click the Run Once button (Label 2) to acquire the samples from the ADC. The image below shows an example of the main window after running a noise test.\
+
+|image4|
+
+-  For more information on the Waveform window go to the software section :doc:`here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
+
+Reading Samples from the ADC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The evaluation board is set up to use the external 2.5 V on-board reference (ADR391). To read samples from the ADC, do the following:
+
+-  The value in the Refin1(+/−) field on the Configuration tab is set to 2.5 V by default to use the external 2.5 V on-board reference (ADR391). If a different reference is used to the AD4130-8, the Refin1(+/−) field should be updated accordingly. (The analysis results are based on the value set in this input field.)
+
+   -  Information on the reference choice can be viewed in the :doc:`Reference Options Tab </wiki-migration/resources/eval/user-guides/ad4130-8/hardwareguide>`
+
+-  When selecting Run Once, a batch of samples is read when clicking the button; the batch size is set by the value in the Samples field.
+
+   -  When selecting Run Continuous, the software performs a continuous capture from the ADC by clicking the Run Once button. Click the Stop Capture button again to stop capturing data.
+
+-  Use the navigation tools within each graph to control the cursor, zooming, and panning.
+
+.. _reading-samples-from-the-adc-1:
+
+Reading Samples from the ADC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Find the waveforms resulting from the gathered samples in the Analysis tab. The waveform graph shows each successive sample of the ADC output (input referred). The indicators beside this graph show the channels converting. The navigation tools allow you to control the cursor, zooming, and panning. You can also display the conversions as voltages or codes. Below the graph are parameters, such as peak-to-peak noise and rms noise, in the Results section for the current batch of samples. If there are several enabled analog input channels, you can select each enabled channel and the conversions through the analyzed channel using the Results Tab. To save the data into an Excel file, select the Export button from the Results Tab. A Save dialog box is displayed, prompting you to save the data to an appropriate folder location.
+
+--------------
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_summary.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_chip_view.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_data.png
+   :width: 600px

@@ -1,0 +1,158 @@
+EVAL-CN0216-ARDZ Shield
+=======================
+
+:adi:`CN-0216 <CN0216>` is a precision weigh scale signal conditioning system. It uses the :adi:`AD7791`, a low power buffered 24-bit sigma-delta ADC along with dual external :adi:`ADA4528-2` zero-drift amplifiers. This solution allows for high dc gain with a single supply.
+
+Ultralow noise, low offset voltage, and low drift amplifiers are used at the front end for amplification of the low-level signal from the load cell. The circuit yields 15.3 bit noise-free code resolution for a load cell with a full-scale output of 10 mV.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216revc_-_1.png
+   :align: left
+   :width: 500px
+
+   | This circuit allows great flexibility in designing a custom low-level signal conditioning front end that gives the user the ability to easily optimize the overall transfer function of the combined sensor-amplifier-converter circuit. The :adi:`AD7791` maintains good performance over the complete output data range, from 9.5 Hz to 120 Hz, which allows it to be used in weigh scale applications that operate at various low speeds.
+|
+
+.. important::
+
+   Extremely important to note that the **EVAL-CN0216-ARDZ** is powered from the **VIN** connector on the Arduino Uno header. This is because the bridge drive voltage of the EVAL-CN0216-ARDZ requires more than 5V to power the bridge. Therefore it is required to supply power from the baseboard through the DC power connector in order for proper functionality. The board will not work properly if you try only to power it from the USB.
+
+
+--------------
+
+Connectors and Jumper Configurations
+------------------------------------
+
+| |image1|
+
+Sensor Connector
+~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216-arduino/wiki_sensor_connection.png
+   :align: right
+   :width: 300px
+
+========== ============
+Pin Number Pin Function
+========== ============
+Pin 1      Not Used
+Pin 2      - Excitation
+Pin 3      + Signal
+Pin 4      - Sense
+Pin 5      + Sense
+Pin 6      - Signal
+Pin 7      + Excitation
+Pin 8      Not Used
+========== ============
+
+| |image2|
+
+REF SEL / Bridge Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| These set of jumpers allow the circuit to be configured for use with 4-wire or 6-wire load cells.
+
+.. note::
+
+   | **NOTE** - Any 4 or 6 wire load cells can be used with the **EVAL-CN0216-ARDZ**.
+   | The Tedeah Huntleigh Model 1042 load cell was used during testing.
+
+
+|image3|
+| Place jumpers/shunts as shown above for 6-wire resistive bridge configuration
+
+-  P1 - Connects ADC REFIN+ to Sensor +Sense pin
+-  P2 - Connects ADC REFIN- to Sensor -Sense pin
+
+| 
+| |image4|
+| Place jumpers/shunts as shown above for 4-wire resistive bridge configuration
+
+-  P1 - Connects ADC REFIN+ to 5V supply
+-  P2 - Connects ADC REFIN- to GND
+
+| 
+
+Chip Select
+~~~~~~~~~~~
+
+| This set of jumpers allows for changing the pin mapping of the AD7791 chip select line to different Arduino digital pins. Place jumper/shunt as shown to connect to the corresponding Digital IO pin
+| |image5| CS - Arduino **Digital Pin 10**
+| |image6| CS - Arduino **Digital Pin 9**
+| |image7| CS - Arduino **Digital Pin 8**
+
+.. note::
+
+   If using an EVAL-CN0216-ARDZ board prior to Rev.C:
+
+   | To change the CS pin, Install a 0-ohm resistor to resistor pads R7,R8 or R9
+   
+   -  R7 - Arduino **Digital Pin 8**
+   -  R8 - Arduino **Digital Pin 9**
+   -  R9 - Arduino **Digital Pin 10**
+   
+
+
+--------------
+
+Schematic, Bill of Materials, Gerber Files, Layout Files
+--------------------------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   EVAL-CN0216-ARDZ Rev C Files
+
+   
+   -  `Schematic PDF <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-cadanceschematic-revc.pdf>`__
+   -  `Layout PDF <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-cadencelayout-revc.pdf>`__
+   -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-bom-revc.xls>`__
+   -  `Allegro Files <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-cadencelibrary-revc.zip>`__
+   -  `Gerber Files <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-gbr-revc.zip>`__
+   
+   EVAL-CN0216-ARDZ Rev B Files
+   
+   -  `Schematic PDF <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-cadanceschematic-revb.pdf>`__
+   -  `Layout PDF <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-cadencelayout-revb.pdf>`__
+   -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-bom-revb.xls>`__
+   -  `Allegro Files <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-cadencelibrary-revb.zip>`__
+   -  `Gerber Files <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/eval-cn0216-ardz-gbr-revb.zip>`__
+   
+
+
+--------------
+
+Change Log
+----------
+
+RevB to RevC:
+
+-  U3 (from ADG3304BRUZ to NLSX4402FMUTCG)
+-  U4 added (NLSX4402FMUTCG)
+-  C19 and C20 added (0.1uF)
+-  R7, R8, R9 added to short MOSI, MISO, SCLK lines between ICSP and arduino D11, D12, D13
+-  AD7791_CS header added
+
+--------------
+
+Software
+--------
+
+-  :doc:`ADICUP360 + CN0216 Demo </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cn0216>`
+-  :doc:`Arduino Uno + CN0216 Demo </wiki-migration/resources/eval/user-guides/arduino-uno/reference_designs/demo_cn0216>`
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216revc_-_2.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0216-arduino/cn0216-wiring_schematic.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216_ref_sel_-_2.png
+   :width: 100px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216_ref_sel_-_1.png
+   :width: 100px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216_cs_sel_-_1.png
+   :width: 100px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216_cs_sel_-_2.png
+   :width: 100px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0216/cn0216_cs_sel_-_3.png
+   :width: 100px

@@ -1,0 +1,164 @@
+AD5755 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5755`
+-  :adi:`AD5755-1`
+-  :adi:`AD5757`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5755SDZ`
+-  :adi:`EVAL-AD5755-1SDZ`
+-  :adi:`EVAL-AD5757SDZ`
+
+Overview
+--------
+
+AD5755
+~~~~~~
+
+The :adi:`AD5755` is is a quad, voltage and current output DAC that operates with a power supply range from −26.4 V to +33 V. On-chip dynamic power control minimizes package power dissipation in current mode. This is achieved by regulating the voltage on the output driver from 7.4 V to 29.5 V using a dc-to-dc boost converter optimized for minimum on chip power dissipation.
+
+The part uses a versatile 3-wire serial interface that operates at clock rates of up to 30 MHz and is compatible with standard SPI, QSPI™, MICROWIRE™, DSP, and microcontroller inter-face standards. The interface also features optional CRC-8 packet error checking, as well as a watchdog timer that monitors activity on the interface.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5755_sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD5755 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5755 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD5755 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD5755 driver:
+
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| Function                                                                                                                  | Description                                                                                           |
++===========================================================================================================================+=======================================================================================================+
+| unsigned char AD5755_Init(void)                                                                                           | Initializes the device and powers-up all channels.                                                    |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| long AD5755_GetRegisterValue(unsigned char registerAddress)                                                               | Reads the value of a register.                                                                        |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| unsigned short AD5755_SetRegisterValue(unsigned char registerAddress, unsigned char channel, unsigned long registerValue) | Writes data into a register.                                                                          |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void AD5755_Software_Reset(void)                                                                                          | Performs a software reset to the device.                                                              |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void AD5755_WatchDogSetup(unsigned char wtdEnable, unsigned char timeout)                                                 | Enables/Disables watchdog timer and sets the timeout period.                                          |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void AD5755_FeedWatchDogTimer(void)                                                                                       | Writes a "service pulse" to the AD5755 watchdog timer when enabled.                                   |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void AD5755_SetControlRegisters(unsigned char ctrlRegAddress, unsigned char channel,unsigned short regValue)              | Configures one of the control registers.                                                              |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| unsigned char AD5755_CheckCrc(unsigned char\* data, unsigned char bytesNumber)                                            | Computes the CRC for a data buffer.                                                                   |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void AD5755_SetChannelPower(unsigned char channel, unsigned char pwrStatus)                                               | Allows power-up/down of the dc-to-dc converter, DAC and internal amplifiers for the selected channel. |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void AD5755_SetChannelRange(unsigned char channel, unsigned char range)                                                   | Sets the range of a channel.                                                                          |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void AD5755_ChannelClearEnable(unsigned char channel, unsigned char clearEn)                                              | Selects if the channel clears when CLEAR pin is activated.                                            |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void AD5755_SlewRateCtrl(char channel, char srEn, char updtFreq, char stepSize)                                           | Configures the Digital Slew Rate Control.                                                             |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| float AD5755_SetVoltage(unsigned char channel, float voltage)                                                             | Sets the output voltage of a channel.                                                                 |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| float AD5755_SetCurrent(unsigned char channel, float mACurrent)                                                           | Sets the output current of a channel.                                                                 |
++---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD5755 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5755_generic.zip>`__
+   -  `AD5755 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5755_rl78g13.zip>`__
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD5755 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  :adi:`EVAL-AD5755SDZ(ADI) <AD5755>`
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD5755SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD5755SDZ J11 Pin 1(DVDD)   → YRDKRL78G13 J11 connector Pin 6
+     EVAL-AD5755SDZ J11 Pin 2(DGND)   → YRDKRL78G13 J11 connector Pin 5
+     EVAL-AD5755SDZ J11 Pin 3(SYNC)   → YRDKRL78G13 J11 connector Pin 1
+     EVAL-AD5755SDZ J11 Pin 4(SCLK)   → YRDKRL78G13 J11 connector Pin 4
+     EVAL-AD5755SDZ J11 Pin 5(SDIN)   → YRDKRL78G13 J11 connector Pin 3
+     EVAL-AD5755SDZ J11 Pin 6(SDO)    → YRDKRL78G13 J11 connector Pin 2
+     EVAL-AD5755SDZ J11 Pin 7(LDAC)   → YRDKRL78G13 J11 connector Pin 9
+     EVAL-AD5755SDZ J11 Pin 8(CLEAR)  → YRDKRL78G13 J11 connector Pin 7
+     EVAL-AD5755SDZ J11 Pin 9(POC)    → YRDKRL78G13 J11 connector Pin 8
+     EVAL-AD5755SDZ J11 Pin 10(RESET) → YRDKRL78G13 J11 connector Pin 10
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5755_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project outputs a square signal on channel A, and DC voltage signals on channels B, C and D.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5755_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/page>rl78g13_software_tutorial_without_applilet3
+   :alt: page>rl78g13_software_tutorial_without_applilet3
+
+More information
+================
+
+.. image:: https://wiki.analog.com/_media/page>more-information
+   :alt: page>more-information
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+

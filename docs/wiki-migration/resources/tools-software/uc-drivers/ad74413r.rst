@@ -1,0 +1,438 @@
+AD74412R/AD74413R No-OS Driver
+==============================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD74412R <en/products/ad74413r.html>`
+-  :adi:`AD74413R <en/products/ad74413r.html>`
+
+Overview
+--------
+
+The :adi:`AD74413R <en/products/ad74413r.html>` is a quad-channel software configurable input/output solution for building and process control applications. The :adi:`AD74413R <en/products/ad74413r.html>` contains functionality for analog output, analog input, digital input, resistance temperature detector (RTD), and thermocouple measurements integrated into a single chip solution with a serial peripheral interface (SPI). The device features a 16-bit, Σ-Δ analog-to-digital converter (ADC) and four configurable, 13-bit digital-to-analog converters (DACs) to provide four configurable input/output channels and a suite of diagnostic functions. There are several modes related to the :adi:`AD74413R <en/products/ad74413r.html>`. These modes are voltage output, current output, voltage input, externally powered current input, loop powered current input, external RTD measurement, digital input logic, and loop powered digital input.
+
+The :adi:`AD74412R <en/products/ad74412r.html>` is functionally almost the same as the :adi:`AD74413R <en/products/ad74413r.html>`, but it lacks HART slew rate compatibility modes.
+
+Applications
+~~~~~~~~~~~~
+
+-  Building control systems
+-  Process control
+-  Industrial automation
+
+ADI No-OS
+---------
+
+The goal of ADI Microcontroller No-OS is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers** which can be used as a base for any microcontroller platform and also **example projects** which are using these drivers on various microcontroller platforms.
+
+For more information about ADI No-OS and supported microcontroller platforms see: :doc:`no-OS </wiki-migration/resources/no-os>`
+
+AD74413R No-OS Driver
+---------------------
+
+AD74413R Driver Source Code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The source code for the AD74413R can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of the AD74413R driver|
+
+   -
+
+   |Implementation of AD74413R driver|
+
+In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. You may either use one of the platforms already supported by No-OS, or you can implement the following functions for your custom platform.
+
+-  no_os_spi_init() – initializes the communication peripheral.
+-  no_os_spi_write_and_read() – writes and reads data to/from the device.
+-  no_os_spi_remove() – deinitializes the communication peripheral.
+
+And there are two data types that have to be defined:
+
+-  no_os_spi_desc - structure holding the SPI descriptor
+-  no_os_spi_init_param - structure holding the parameters for SPI initialization
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for SPI Communication APIs|
+
+   -
+
+   |Generic header file for I2C Communication APIs|
+
+AD74413R Driver Code Documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+
+-  `AD74413R Header file <http://analogdevicesinc.github.io/no-OS/ad74413r_8h.html>`__
+-  `AD74413R Source file <http://analogdevicesinc.github.io/no-OS/ad74413r_8c.html>`__
+
+AD74413R Device Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Driver Initialization
+^^^^^^^^^^^^^^^^^^^^^
+
+In order to use the device, you will have to provide support for the SPI communication protocol. The first function to be called is **ad74413r_init**, which should return 0 if the device is wired correctly.
+
+ADC sampling rate configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The sampling rate for an ADC channel may be set using the **ad74413r_set_adc_rate** function. This, however, only supports specific values:
+
+-  20 Hz, 4800Hz for the :adi:`AD74412R <en/products/ad74413r.html>`.
+-  20 Hz, 4800Hz, 10 Hz, 1200Hz (the last 2 are HART compatible) for the :adi:`AD74413R <en/products/ad74413r.html>`.
+
+Depending on the value set, a noise filter will be configured (or not). The opposite procedure is also possible using the **ad74413r_set_adc_rejection**.
+
+Operation mode configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Before this may be done, the a channel must be enabled, using the **ad74413r_set_adc_channel_enable** function. The :adi:`AD74412R <en/products/ad74413r.html>` has several operation modes, which can be set using the **ad74413r_set_channel_function** API. Depending on these, the ADC results may be interpreted in a different way:
+
+-  High impedance: input voltage measurement.
+-  Voltage input mode: input voltage measurement.
+-  Voltage output mode: output current measurement for a given voltage value.
+-  Current output mode: output voltage measurement for a given current value.
+-  Current input mode (externally powered and loop): input current measurement.
+-  Resistance measurement mode: resistance between the channel's inputs.
+-  Digital input logic mode: a GPO pin corresponding to the configured channel is set to low or high depending on the threshold level set.
+
+Threshold level configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The threshold for the GPO output value can be set using the **ad74413r_set_threshold** function. This value may have a maximum error of ~500mv. The range is fixed between 0-16V.
+
+Debounce mode configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The debounce mode takes effect when a channel is configured as a digital input. It can be set using the **ad74413r_set_debounce_mode** function. Also the signal settle time may be set with **ad74413r_set_debounce_time**.
+
+ADC conversion sequence configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ADC can be configured to either perform single or continuous conversions. This setting is specific for the whole device, meaning that individual channels won't be able to have different conversion modes.
+
+Device data measurement
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To get the value measured by the ADC, you may either use the **ad74413r_adc_get_value** function for single conversion results (these should be interpreted as having the measurement unit specific to the operation mode, as described above), or read the raw ADC result register using **ad74413r_reg_read** and interpret them yourself in continuous mode.
+
+DAC code configuration
+~~~~~~~~~~~~~~~~~~~~~~
+
+The DAC's output voltage can be set by writing it's code register using **ad74413r_set_channel_dac_code**. This is only valid if the channel is configured as voltage output.
+
+Debug information
+~~~~~~~~~~~~~~~~~
+
+There are some ways to get information about the device's state:
+
+-  Enable the status bits response using **ad74413r_set_info**. This will result in the device setting the first 7 bits of the communication frame to various flags based on it's error status.
+-  Read the live status register using **ad74413r_get_live**.
+-  Use the diagnostic channels, by enabling them (**ad74413r_set_diag_channel_enable**), and then setting their operation modes using **ad74413r_set_diag**.
+
+AD74413R driver initialization example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: C
+
+   int ret;
+   uint8_t val;
+   uint32_t dac_code;
+   uint16_t temp;
+   union ad74413r_live_status status;
+   struct ad74413r_desc *ad74413r_desc;
+   struct ad74413r_init_param ad74413r_ip = {
+           .chip_id = AD74412R,
+           .comm_param = ad74413r_spi_ip
+   };
+
+   struct ad74413r_decimal result[3];
+
+   ret = ad74413r_init(&ad74413r_desc, &ad74413r_ip);
+   if (ret)
+           goto error;
+
+   ret = ad74413r_clear_errors(ad74413r_desc);
+   if (ret)
+           goto error;
+
+   ret = ad74413r_set_adc_channel_enable(ad74413r_desc, AD74413R_CH_A, true);
+   if (ret)
+           goto error;
+
+   ret = ad74413r_set_channel_function(ad74413r_desc, AD74413R_CH_A,
+                                           AD74413R_DIGITAL_INPUT);
+   if (ret)
+           goto error;
+
+   /** Set the threshold voltage to 5V */
+   ret = ad74413r_set_threshold(ad74413r_desc, AD74413R_CH_A, 5000);
+   if (ret)
+           goto error;
+
+   /** The comparator output will be available on the GPO_A pin */
+   ret = ad74413r_set_gpo_config(ad74413r_desc, AD74413R_CH_A,
+                                   AD74413R_GPO_CONFIG_COMP);
+   if (ret)
+           goto error;
+
+   ret = ad74413r_set_adc_channel_enable(ad74413r_desc, AD74413R_CH_B, true);
+   if (ret)
+           goto error;
+
+   ret = ad74413r_set_channel_function(ad74413r_desc, AD74413R_CH_B,
+                                           AD74413R_VOLTAGE_IN);
+   if (ret)
+           goto error;
+
+   ret = ad74413r_set_adc_channel_enable(ad74413r_desc, AD74413R_CH_C, true);
+   if (ret)
+           goto error;
+
+   ret = ad74413r_set_channel_function(ad74413r_desc, AD74413R_CH_C,
+                                           AD74413R_VOLTAGE_OUT);
+   if (ret)
+           goto error;
+
+   ad74413r_dac_voltage_to_code(5000, &dac_code);
+   /** Set the DAC output on channel C to 5V */
+   ret = ad74413r_set_channel_dac_code(ad74413r_desc, AD74413R_CH_C, dac_code);
+   if (ret)
+           goto error;
+
+   ret = ad74413r_set_adc_channel_enable(ad74413r_desc, AD74413R_CH_D, true);
+   if (ret)
+           return ret;
+
+   /** Measure input current on channel D */
+   ret = ad74413r_set_channel_function(ad74413r_desc, AD74413R_CH_D,
+                                           AD74413R_CURRENT_IN_EXT);
+   if (ret)
+           return ret;
+
+   ret = ad74413r_set_diag_channel_enable(ad74413r_desc, AD74413R_CH_A, true);
+   if (ret)
+           goto error;
+
+   ret = ad74413r_set_diag(ad74413r_desc, AD74413R_CH_A, AD74413R_DIAG_TEMP);
+   if (ret)
+           goto error;
+
+   while (1) {
+           /* Clear the screen. */
+           pr_info("%c",27);
+           pr_info("%c",'[');
+           pr_info("%c",'2');
+           pr_info("%c",'J');
+
+           ret = ad74413r_gpo_get(ad74413r_desc, AD74413R_CH_A, &val);
+           if (ret)
+                   goto error;
+
+           for (uint32_t i = 0; i < 3; i++) {
+                   ret = ad74413r_adc_get_value(ad74413r_desc, AD74413R_CH_B + i, &result[i]);
+                   if (ret)
+                           goto error;
+           }
+
+           ret = ad74413r_get_live(ad74413r_desc, &status);
+           if (ret)
+                   goto error;
+
+           ret = ad74413r_get_temp(ad74413r_desc, AD74413R_CH_A, &temp);
+           if (ret)
+                   goto error;
+
+           pr_info("Channel A: GPO_A status %d (5V threshold)\n", val);
+           pr_info("Channel B: %ld"".%02lu mV (Voltage input)\n",
+                   (int32_t)result[0].integer,
+                   result[0].decimal);
+           pr_info("Channel C: %ld"".%02lu mA (Voltage output)\n",
+                   (int32_t)result[1].integer,
+                   result[1].decimal);
+           pr_info("Channel D: %ld"".%02lu mA (Current input)\n",
+                   (int32_t)result[2].integer,
+                   result[2].decimal);
+           pr_info("\nDiagnostic channel A: %d deg. C (die's temperature)\n", temp);
+
+           pr_info("\n================================================================================\n\n");
+
+           pr_info("Channel A fault: %d\n", status.status_bits.VI_ERR_A);
+           pr_info("Channel B fault: %d\n", status.status_bits.VI_ERR_B);
+           pr_info("Channel C fault: %d\n", status.status_bits.VI_ERR_C);
+           pr_info("Channel D fault: %d\n", status.status_bits.VI_ERR_D);
+
+           no_os_mdelay(1000);
+   }
+
+AD74413R IIO No-OS Driver
+-------------------------
+
+AD74413R IIO driver source code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The source and header files for the AD74413R IIO driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |AD74413R IIO driver source file|
+
+   -
+
+   |AD74413R IIO driver header file|
+
+AD74413R IIO driver code documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Source code documentation for the IIO driver is automatically generated using the Doxygen tool and it is available below:
+
+-  `AD74413R IIO Header file <http://analogdevicesinc.github.io/no-OS/iio__ad74413r_8h.html>`__
+-  `AD74413R IIO Source file <http://analogdevicesinc.github.io/no-OS/iio__ad74413r_8c.html>`__
+
+AD74413R IIO device configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Device attributes
+^^^^^^^^^^^^^^^^^
+
+There are no device specific attributes.
+
+Device channels
+^^^^^^^^^^^^^^^
+
+The device's IIO channels are dependent on the operation mode of physical channels. Because the IIO channels of a device cannot be dynamically changed, they are created based on the **ad74413r_iio_desc_init_param** parameter:
+
+::
+
+   struct ad74413r_iio_desc_init_param {
+       struct ad74413r_init_param *ad74413r_init_param;
+       struct ad74413r_channel_config channel_configs[AD74413R_N_CHANNELS];
+   };
+
+Depending on a physical channel's configuration, the IIO channels will be the following:
+
+-  High impedance: 1 input voltage channel
+-  Voltage output: 1 input current, 1 output voltage channels
+-  Current output: 1 input voltage, 1 output current channels
+-  Voltage input: 1 input voltage channel
+-  Current input (loop and external): 1 input current channel,
+-  Resistance: 1 input resistance channel,
+-  Digital input (loop and external): 1 input voltage channel
+
+ADC(input) channel attributes
+"""""""""""""""""""""""""""""
+
+Each channel has attributes that are different depending on the direction and type.
+
+An ADC channel that has the IIO_RESISTANCE type has the following attributes:
+
+-  raw - the raw measurement value read from the ADC
+-  sampling_frequency - the sampling frequency for the ADC. This value will be divided by the number of enabled channels.
+-  sampling_frequency_available - the list of available sampling frequency values.
+-  processed - the resistance value in milliohms.
+
+For IIO_VOLTAGE and IIO_CURRENT input channel types, the attributes are:
+
+-  raw - the raw measurement value read from the ADC.
+-  scale - the value that has to be applied to the raw attribute to get the real converted value in milli-units.
+-  offset - this value is the 0 referenced offset of the ADC's measurement range, which depends on the operation mode.
+-  sampling_frequency - the sampling frequency for the ADC. This value will be divided by the number of enabled channels.
+-  sampling_frequency_available - the list of available sampling frequency values.
+
+DAC(output) channel attributes
+""""""""""""""""""""""""""""""
+
+The output channels have the following attributes:
+
+-  raw - value to be written in the DAC code register (13 bit).
+-  scale - the value that has to be applied to the raw attribute to get the real converted value in milli-units.
+-  offset - has the value 0.
+
+Device buffers
+^^^^^^^^^^^^^^
+
+The AD74413R IIO device supports the usage of a data buffer for reading purposes.
+
+AD74413R IIO driver initialization example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: C
+
+   int ret;
+   uint8_t iio_data_buffer[400 * sizeof(uint32_t) * 8];
+   struct ad74413r_iio_desc *ad74413r_iio_desc;
+   struct ad74413r_iio_desc_init_param ad74413r_iio_ip;
+   struct iio_data_buffer buff = {
+           .buff = (void *)iio_data_buffer,
+           .size = 400 * sizeof(uint32_t) * 8
+   };
+   struct ad74413r_init_param ad74413r_ip = {
+           .chip_id = AD74412R,
+           .comm_param = ad74413r_spi_ip
+   };
+
+   ad74413r_iio_ip.ad74413r_init_param = &ad74413r_ip;
+   ad74413r_iio_ip.channel_configs[0] = (struct ad74413r_channel_config) {
+           .enabled = true,
+           .function = AD74413R_DIGITAL_INPUT
+   };
+   ad74413r_iio_ip.channel_configs[1] = (struct ad74413r_channel_config) {
+           .enabled = true,
+           .function = AD74413R_VOLTAGE_IN
+   };
+   ad74413r_iio_ip.channel_configs[2] = (struct ad74413r_channel_config) {
+           .enabled = true,
+           .function = AD74413R_VOLTAGE_OUT
+   };
+   ad74413r_iio_ip.channel_configs[3] = (struct ad74413r_channel_config) {
+           .enabled = true,
+           .function = AD74413R_CURRENT_IN_EXT
+   };
+
+   ret = ad74413r_iio_init(&ad74413r_iio_desc, &ad74413r_iio_ip);
+   if (ret)
+           return ret;
+           
+   struct iio_app_device iio_devices[] = {
+           {
+                   .name = "ad74413r",
+                   .dev = ad74413r_iio_desc,
+                   .dev_descriptor = ad74413r_iio_desc->iio_dev,
+                   .read_buff = &buff,
+           }
+   };
+
+   return iio_app_run(iio_devices, NO_OS_ARRAY_SIZE(iio_devices));
+
+.. |Header file of the AD74413R driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc-dac/ad74413r/ad74413r`.h
+.. |Implementation of AD74413R driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc-dac/ad74413r/ad74413r`.c
+.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
+.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h
+.. |AD74413R IIO driver source file| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc-dac/ad74413r/iio_ad74413r`.c
+.. |AD74413R IIO driver header file| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc-dac/ad74413r/iio_ad74413r`.h

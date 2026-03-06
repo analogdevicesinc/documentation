@@ -1,0 +1,65 @@
+EVAL-CN0501-ARDZ: 3-Axis Seismic Platform
+=========================================
+
+Hardware Setup
+--------------
+
+Materials Needed
+~~~~~~~~~~~~~~~~
+
+Power Supply Considerations and Configuration (P3)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Jumper Configurations
+~~~~~~~~~~~~~~~~~~~~~
+
+Sensors
+-------
+
+Accelerometer
+~~~~~~~~~~~~~
+
+Geophone
+~~~~~~~~
+
+Software Setup
+--------------
+
+Preparing Kuiper Linux
+~~~~~~~~~~~~~~~~~~~~~~
+
+| Download latest release of :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+| Format SD card :doc:`windows_hosts </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
+| Follow the steps on this wiki to install Kuiper on SD card :doc:`linux_hosts </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
+| ==== Preparing PyADI-IIO ==== Follow the steps on this wiki to install PyADI-IIO on your machine :doc:`pyadi-iio </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` Clone cn0501_test.py https://github.com/VCalinao/pyadi-iio/tree/cn0501/examples/cn0501
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   :adi:`EVAL-CN0xxx-ARDZ Design & Integration Files <cn0xxx-designsupport>`
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   -  <ADD other things specific to your project if desired>
+   
+
+
+Additional Information and Useful Links
+---------------------------------------
+
+-  https://github.com/VCalinao/pyadi-iio/tree/cn0501/examples/cn0501
+-  :adi:`CN0501 Circuit Note Page <CN0501>`
+-  :adi:`CN0501 Design Support Package <CN0501-DesignSupport>`
+-  :adi:`AD7768 Product Page <AD7768>`
+-  :adi:`ADXL1002 Product Page <ADXL1002>`
+
+Reference Demos & Software
+==========================
+
+// End of Document //

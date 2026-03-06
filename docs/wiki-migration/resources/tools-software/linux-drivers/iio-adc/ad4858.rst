@@ -1,0 +1,230 @@
+AD4858 Linux Driver
+===================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD4858`
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting single channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Example devicetree device initialization
+========================================
+
+::
+
+   // SPDX-License-Identifier: GPL-2.0
+   /dts-v1/;
+
+   #include "zynq-zed.dtsi"
+   #include "zynq-zed-adv7511.dtsi"
+   #include <dt-bindings/pwm/pwm.h>
+
+   / {
+       refin: regulator-vref {
+           compatible = "regulator-fixed";
+           regulator-name = "fixed-supply";
+           regulator-min-microvolt = <4096000>;
+           regulator-max-microvolt = <4096000>;
+           regulator-always-on;
+       };
+   };
+
+   &fpga_axi {
+       rx_dma: dmac@43e00000 {
+           compatible = "adi,axi-dmac-1.00.a";
+           reg = <0x43e00000 0x1000>;
+           #dma-cells = <1>;
+           interrupt-parent = <&intc>;
+           interrupts = <0 54 IRQ_TYPE_LEVEL_HIGH>;
+           clocks = <&clkc 15>;
+
+           adi,channels {
+               #size-cells = <0>;
+               #address-cells = <1>;
+
+               dma-channel@0 {
+                   reg = <0>;
+                   adi,source-bus-width = <256>;
+                   adi,source-bus-type = <2>;
+                   adi,destination-bus-width = <64>;
+                   adi,destination-bus-type = <0>;
+               };
+           };
+       };
+
+       ref_clk: clk@0x44000000 {
+           compatible = "adi,axi-clkgen-2.00.a";
+           reg = <0x44000000 0x10000>;
+           #clock-cells = <0>;
+           clocks = <&clkc 15>, <&clkc 16>;
+           clock-names = "s_axi_aclk", "clkin1";
+           clock-output-names = "ref_clk";
+       };
+
+       axi_pwm_gen: pwm@0x43d00000 {
+           compatible = "adi,axi-pwmgen";
+           reg = <0x43d00000 0x1000>;
+           label = "cnv";
+           #pwm-cells = <2>;
+           clocks = <&ref_clk>;
+       };
+
+       ad4858@0x43c00000 {
+           compatible = "adi,axi-adc-10.0.a";
+           reg = <0x43c00000 0x10000>;
+           dmas = <&rx_dma 0>;
+           dma-names = "rx";
+           spibus-connected = <&ad4858_phy>;
+       };
+   };
+
+   &spi0 {
+       status = "okay";
+
+       ad4858_phy: adc@0{
+           compatible = "adi,ad4858";
+           reg = <0>;
+           spi-max-frequency = <10000000>;
+           refin-supply = <&refin>;
+           clocks = <&ref_clk>;
+           clock-names = "scki";
+           dmas = <&rx_dma 0>;
+           dma-names = "rx";
+           pwms = <&axi_pwm_gen 0 0>;
+           pwm-names = "cnv";
+       };
+   };
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# **cd /sys/bus/iio/devices/**
+      root@analog:/sys/bus/iio/devices# **ls**
+      iio:device0
+      root@analog:/sys/bus/iio/devices# **cd iio:device0**
+      root@analog:/sys/bus/iio/devices/iio:device0# **ls -l**
+      total 0
+      drwxr-xr-x 2 root root    0 Jun 15 16:03 buffer
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 dev
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage0_calibbias
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage0_calibphase
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage0_hardwaregain
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 in_voltage0_label
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage0_scale
+      -rw-r--r-- 1 root root 4096 Jun 15 16:04 in_voltage0_softspan
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage1_calibbias
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage1_calibphase
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage1_hardwaregain
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 in_voltage1_label
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage1_scale
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage1_softspan
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage2_calibbias
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage2_calibphase
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage2_hardwaregain
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 in_voltage2_label
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage2_scale
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage2_softspan
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage3_calibbias
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage3_calibphase
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage3_hardwaregain
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 in_voltage3_label
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage3_scale
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage3_softspan
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage4_calibbias
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage4_calibphase
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage4_hardwaregain
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 in_voltage4_label
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage4_scale
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage4_softspan
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage5_calibbias
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage5_calibphase
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage5_hardwaregain
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 in_voltage5_label
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage5_scale
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage5_softspan
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage6_calibbias
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage6_calibphase
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage6_hardwaregain
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 in_voltage6_label
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage6_scale
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage6_softspan
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage7_calibbias
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage7_calibphase
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage7_hardwaregain
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 in_voltage7_label
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage7_scale
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage7_softspan
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 in_voltage_offset
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 name
+      lrwxrwxrwx 1 root root    0 Jun 15 16:03 of_node -> ../../../../../firmware/devicetree/base/fpga-axi@0/ad4858@0x43c00000
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 oversampling_ratio
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 oversampling_ratio_available
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 packet_format
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 packet_format_available
+      drwxr-xr-x 2 root root    0 Jun 15 16:03 power
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 sampling_frequency
+      drwxr-xr-x 2 root root    0 Jun 15 16:03 scan_elements
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 softspan_available
+      lrwxrwxrwx 1 root root    0 Jun 15 16:03 subsystem -> ../../../../../bus/iio
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 sync_start_enable
+      -r--r--r-- 1 root root 4096 Jun 15 16:03 sync_start_enable_available
+      -rw-r--r-- 1 root root 4096 Jun 15 16:03 uevent
+   
+
+
+Show device name
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
+      ad4858
+   
+
+
+Show channel scale and offset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If known for a device, offset to be added to <type>[Y]_raw prior to scaling by <type>[Y]_scale in order to obtain value in the <type> units as specified in <type>[Y]_raw documentation.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_voltage0_scale**
+      0.000003814
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_voltage_offset**
+      0
+   
+

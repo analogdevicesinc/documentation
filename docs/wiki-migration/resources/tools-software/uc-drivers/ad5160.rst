@@ -1,0 +1,51 @@
+Supported Devices
+=================
+
+-  :adi:`AD5160`
+
+Evaluation Boards
+=================
+
+-  `PmodDPOT <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DPOT>`__
+
+Overview
+========
+
+.. include:: ../../pmods/ad5160.rst
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the AD5160 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5160 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD5160 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD5160 driver:
+
++--------------------------------------+-----------------------------------------------+
+| Function                             | Description                                   |
++======================================+===============================================+
+| char AD5160_Init(void)               | Initializes the SPI communication peripheral. |
++--------------------------------------+-----------------------------------------------+
+| void AD5160_Set(unsigned char value) | Writes data to AD5160.                        |
++--------------------------------------+-----------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

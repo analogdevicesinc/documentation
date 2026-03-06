@@ -1,0 +1,125 @@
+CN0172 Software Evaluation User Guide
+=====================================
+
+Overview
+--------
+
+The function of the :adi:`CN0172` is to provide a high accuracy multi-channel thermocouple measurement solution. Achieving a precision thermocouple measurement requires a signal chain of precision components that will amplify the small thermocouple voltage, remove noise, correct non-linearity, and provide accurate reference junction compensation. The :adi:`AD7793` 24-bit sigma-delta ADC is used to measure thermocouple voltages while the :adi:`ADT7320` precision 16-bit digital temperature sensor is used to provide and provide reference junction compensation at ±0.25°C accuracy.
+
+General Setup
+-------------
+
+-  1x :adi:`EVAL-CN0172-SDPZ` Circuit Evaluation board
+-  1x :adi:`EVAL-SDP-CB1Z` Controller board
+-  1x SDP Breakout Board
+-  3x K-type thermocouples
+-  `CN0172 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0172>`__
+-  1 USB Type-A plug to USB Mini-B plug cable
+-  1x PC running Windows XP or higher
+
+Minimum PC/System Requirements
+------------------------------
+
+-  One PC with the following
+
+   -  Windows XP SP2, Windows Vista or Windows 7 Business/Enterprise/Ultimate editions
+   -  Intel Pentium processor (x86 compatible), 1GHz or faster
+   -  512 MB RAM and 2 GB available hard disk space
+   -  .NET 3.5 Framework
+
+How to Install the Evaluation Software
+--------------------------------------
+
+-  Download `CN0172 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0172>`__. Do not plug in the SDP until the drivers have been installed
+-  Extract the files within the file **CN0172 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0172 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0172\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+|image1|
+
+-  Press **“Next”**.\
+
+|image2|
+
+-  Press **“Next”**.\
+
+|image3|
+
+-  Upon completion of the installation of the **CN0172 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer. It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**\
+
+|image4|
+
+-  Press **“Next”**\
+
+|image5|
+
+-  Press **“Finish”** to install the Drivers and complete the installation of all software necessary to evaluate the **EVAL-CN0172-SDPZ**
+
+Step by Step Instruction for Connecting the Hardware
+----------------------------------------------------
+
+-  Ensure that the Breakout board and the EVAL-CN0172-SDPZ are wired up correctly. Connect the **EVAL-SDP-CB1Z** and the Multi-Channel **breakout board** using both 120 pin male and female connectors found on the respective boards.\
+
+
+|image6|
+
+-  Mount the SDP Board onto the breakout board.\
+
+|image7|
+
+-  Plug 3 K-type thermocouple wires into the thermocouple connector as shown.\
+
+|image8|
+
+-  Plug the mini end of the USB cable into connector J1 of the **EVAL-SDP-CB1Z** and connect the other end of the USB cable into the Laptop or PC.
+-  Wait for found new hardware wizard to appear and finish installation of SPD driver before opening the software.
+
+Opening and Enabling the Evaluation Software
+--------------------------------------------
+
+-  Launch the software which will be located in the analog devices folder in all programs.\
+
+
+|image9|
+
+-  After starting the application the user must click the **“Board Setup”** button. The user has the option to edit one or more of the following options:
+
+   -  **Thermocouple type** – User selects the correct thermocouple being used
+   -  **Temperature Unit** – Select temperature unit required
+   -  **Samples/reading** – changes the data acquisition rate
+   -  **AD7793 Gain** – Gain factor from 1 to 64 for the thermocouple output
+   -  **ADT7320 Resolution** – Choose between 13 or 16 bit resolution for cold junction reference
+   -  **ADT7320 calibration** – enables user to calibrate the ADT7320 temperature for greater accuracy
+   -  **Data logging status** – Enable to record temperature in location specified in save data to folder directory
+   -  **Save Data in Folder** – Directory for data storage
+
+-  Once the Board Setup is complete the user can obtain data by clicking the **“Start Data Acquisition”** button.\
+
+
+|image10|
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0172-SDPZ?&v=Rev B>`__ to receive all these great benefits and more!
+
+
+// End of document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_evaluation_software_driver_install.jpg
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_evaluation_software_driver_install1.jpg
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_evaluation_software_driver_install_complete.jpg
+   :width: 300px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_sdp_driver_install.jpg
+   :width: 300px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_sdp_driver_install_complete.jpg
+   :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_hardware_board_connection.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_hardware_board_connection1.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_hardware_board_connection2.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_evaluation_software_user_interface.jpg
+   :width: 300px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0172/cn0172_evaluation_software_user_interface1.jpg
+   :width: 300px

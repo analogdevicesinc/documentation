@@ -1,0 +1,279 @@
+AD7091R Pmod Xilinx FPGA Reference Design
+=========================================
+
+Introduction
+------------
+
+The :adi:`AD7091R` is a 12-bit, ultra low power, successive approximation ADC. The AD7091R operates from a single 2.7 V to 5.25 V power supply and is capable of achieving a sampling rate of 1 MSPS. The part contains a wide bandwidth track-and-hold amplifier that can handle input frequencies in excess of 7 MHz. The AD7091R also features an on-chip conversion clock, accurate reference and high-speed serial interface.
+
+**HW Platform(s):**
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+
+Quick Start Guide
+-----------------
+
+The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+-  `PmodAD6 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD6>`__
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with LX9 and/or Xilix tools, please visit
+
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__ for details.
+   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
+   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
+
+
+Avnet LX9 MicroBoard Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD7091R\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodAD6 to J5 connector of LX9 board, pins 1 to 6 (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad6.jpg
+   :alt: PmodAD6 and LX-9
+   :width: 200px
+
+Digilent Nexys™3 Spartan-6 FPGA Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD7091R\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodAD6 to JA connector of Nexys™3 board, pins JA1 to JA6 (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad6_nexys3.jpg
+   :alt: PmodAD6 and Nexys™3
+   :width: 200px
+
+Avnet ZedBoard
+~~~~~~~~~~~~~~
+
+To begin, connect the PmodAD6 to JD connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad6_zed.jpg
+   :alt: PmodAD6 and ZedBoard
+   :width: 200px
+
+FPGA Configuration for Nexys3 and LX-9 MicroBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad7091R/sw/AD7091R.bit).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodAD5impact.jpg
+   :alt: Programming FPGA in IMPACT
+   :width: 200px
+
+If programming was successful, you should be seeing messages appear on the terminal window as shown in the figures below. After programming the AD7091R, you will be asked you to set the value of VREF.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad6_menu1.jpg
+   :alt: UART messeges
+   :width: 600px
+
+If you use the default VREF(=2.5V) then just press [Enter] and the program will display the value of the input voltage. Pressing any key will perform another conversion and display the result.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad6_menu2.jpg
+   :alt: UART messeges
+   :width: 600px
+
+Here are some of the errors that can appear while trying to introduce a wrong value for VREF. If any value besides 1 to 9 is entered, an error message will be displayed. If a value higher than 5250 or lower than 2700 is entered, an error message will be displayed. If entering less than 4 characters, please press [Enter] in order to validate your input. If 4 characters are entered, the result is automatically validated.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad6_menu3.jpg
+   :alt: UART messeges
+   :width: 600px
+
+FPGA Configuration for ZedBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the **download.bat** script from the "../bin" folder downloaded from the github (see the links in the download section of the wiki page). The script will automatically configure the ZYNQ SoC and download the \*.elf file afterwards.
+
+.. tip::
+
+   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+
+
+If programming was successful, you should be seeing messages appear on the terminal window. The software is programmed with VRef = 2.5 V. If you wish to change Vref, you must modify its value in main.c.
+
+Using the reference design
+--------------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+Avnet LX-9 MicroBoard and Digilent Nexys3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The reference design is a custom SPI Interface, containing CS, SCLK, MISO, and a CONVST signal. The hardware SPI access allows receiving data from the AD7091R. The software programs the device, and afterwards, prints the input voltage value via UART.
+
+.. _avnet-zedboard-1:
+
+Avnet ZedBoard
+^^^^^^^^^^^^^^
+
+The reference design is a custom SPI Interface, containing CS, SCLK, MISO, and a CONVST signal. The hardware SPI access allows receiving data from the AD7091R. The software programs the device, and afterwards, using DMA, transfers 8192 samples and prints the input voltage value via UART.
+
+.. important::
+
+   
+   -  Connecting the PmodAD6 to the boards using an extension cable provides ease of use.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD6 must be removed and the external AVDD signal must be connected to J2 Pin 1. The range for AVDD is 2.7V ≤ AVDD ≤ 5.25V.
+   -  When using external VREF, connect the VREF signal to J2 Pin 3. The range for external VREF is 2.7V ≤ VREF ≤ AVDD.
+   
+
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \**Avnet LX-9 MicroBoard: **
+     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7091r_lx9.zip>`__\ **
+     **\ Digilent Nexys™3:**
+     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7091r_nexys3.zip>`__\ **
+     **\ Avnet ZedBoard:\*\*
+   | \* :git-no-OS:`XPS Project <Pmods/PmodAD6/cf_ad7091r_zed>`
+   | \* :git-no-OS:`AD7091R IPCore <Pmods/PmodAD6/cf_lib/edk/pcores/axi_ad7091r_v1_00_a>`
+   | \* :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
+   | \* :git-no-OS:`PmodAD6 Driver Files <Pmods/PmodAD6>`
+   | \* :git-no-OS:`Programming Script <Pmods/PmodAD6/bin>`
+   |
+
+
+.. container:: hide
+
+   
+   Linux Device Driver - Custom HDL PCore
+   ======================================
+   
+   Connect PmodAD6 to the JD1 connector of the ZedBoard (upper row of pins).
+   
+   Preparing the SD Card
+   ---------------------
+   
+   In order to prepare the SD Card for booting Linux on the ZedBoard:
+   
+   -  Download the device tree: :git-no-OS:`PmodAD6 Linux devicetree <Pmods/PmodAD6/dts/zynq-zed-adv7511-pmod-ad6-ipcore.dts>`
+   -  Download the Xilinx XPS project: :git-no-OS:`PmodAD6 Linux XPS Project <Pmods/PmodAD6/cf_ad7980_zed>`
+   -  Download the AD7091R IPcore: :git-no-OS:`AD7091R IPCore <Pmods/PmodAD6/cf_lib/edk/pcores/axi_ad7091r_v1_00_a>`
+      \* Download the project libraries: :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
+      \* Follow the instructions on the following wiki page, but use the device tree and project downloaded on the previous step
+   
+      -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
+   
+   Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+   
+   There are 2 ways to test the driver.
+   
+   -  Using the terminal window
+   -  Using the ADI IIO Oscilloscope
+   
+   Using the terminal window
+   -------------------------
+   
+   Open a new terminal window by pressing **Ctrl+Alt+T**.
+   
+   Navigate to the location of the device and identify it using the following commands:
+   
+   ::
+   
+      cd /sys/bus/iio/devices/
+      ls
+      iio:device0 iio:device1 trigger0
+      cd iio\:device0
+      cat name
+      AD7091R
+   
+   If the **cat name** command doesn't return **ad7091r**, then change the number of the iio:device, and check again.
+   
+   ::
+   
+      cd ..
+      cd iio\:device1
+      cat name
+   
+   To see the list of options that the AD7980 driver provides, type:
+   
+   ::
+   
+      ls
+      buffer  dev  name  power  scan_elements  subsystem  uevent
+   
+   To read the raw input voltage, type:
+   
+   ::
+   
+      cd buffer
+      echo 128 > length
+      echo 1 > enable
+      hexdump -x /dev/iio\:device0
+      0000000    0000    dc3e    0000    dc1b    0000    dc3f    0000    dc4a
+      0000010    0000    dc2c    0000    dc3e    0000    dc25    0000    dc3d
+      0000020    0000    dc38    0000    dc2f    0000    dc2c    0000    dc22
+      0000030    0000    dc03    0000    dc1a    0000    dbfe    0000    dbff
+      0000040    0000    dc25    0000    dc29    0000    dc22    0000    dc05
+      0000050    0000    dc20    0000    dc2a    0000    dc09    0000    dc2e
+      0000060    0000    dc12    0000    dc0c    0000    dc2c    0000    dc2b
+      0000070    0000    dc3b    0000    dc2f    0000    dc2a    0000    dc14
+   
+   .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7091r_custom_linaro_terminal.jpg
+      :alt: AD7091R Read Voltage from Terminal
+      :width: 600px
+   
+   The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+   
+   .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7091r_custom_linux_serial.jpg
+      :alt: AD7091R Read Voltage from Serial Terminal
+      :width: 600px
+   
+   Using the ADI IIO Oscilloscope
+   ------------------------------
+   
+   Install the ADI IIO Oscilloscope using the instructions from the following wiki page:
+   
+   -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+   
+   Launch the ADI IIO Oscilloscope.
+   
+   Select **AD7091R** from the **Device** drop-down menu. Set the desired number of samples in the **Sample Count** tab. Click the **Green Play Button** in order to start capturing and displaying data. Click **Stop** to stop the process.
+
+   
+   |AD7091R IIO Oscilloscope Plot|
+
+More information
+----------------
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |AD7091R IIO Oscilloscope Plot| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7091r_custom_iio_plot.jpg
+   :width: 600px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

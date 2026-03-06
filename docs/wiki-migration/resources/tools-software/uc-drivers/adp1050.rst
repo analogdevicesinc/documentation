@@ -1,0 +1,49 @@
+ADP1050 No-OS Driver
+====================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADP1050`
+
+Overview
+--------
+
+The :adi:`ADP1050` is an advanced digital controller with a PMBus™ interface targeting high density, high efficiency dc-to-dc power conversion. This controller implements voltage mode control with high speed, input voltage feedforward operation for enhanced transient and noise performance.
+
+The :adi:`ADP1050` has four programmable pulse-width modulation (PWM) outputs capable of controlling most high efficiency power supply topologies, with the added control of synchronous rectification (SR).
+
+GitHub Driver Documentation
+---------------------------
+
+Any other driver related documentation can be found on GitHub by following the next link:
+
+.. container:: round
+
+   
+   -
+
+
+   
+   |Documentation of ADP1050 Driver.|
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of ADP1050 Driver.|
+
+   -
+
+   |Header file of ADP1050 Driver.|
+
+.. |Documentation of ADP1050 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/power/adp1050/README`.rst
+.. |Implementation of ADP1050 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/power/adp1050/adp1050`.c
+.. |Header file of ADP1050 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/power/adp1050/adp1050`.h

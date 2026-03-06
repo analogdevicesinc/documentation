@@ -1,0 +1,221 @@
+AD7920 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7920`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0241`
+
+Overview
+--------
+
+The :adi:`AD7910`/:adi:`AD7920` are 10-bit and 12-bit, high speed, low power, successive-approximation ADCs respectively. The parts operate from a single 2.35 V to 5.25 V power supply and feature throughput rates up to 250 kSPS. The parts contain a low-noise, wide bandwidth track/hold amplifier, which can handle input frequencies in excess of 6 MHz. The AD7910/AD7920 use advanced design techniques to achieve very low power dissipation at high throughput rates.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7920.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD7920 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7920 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7920 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD7920 driver:
+
++----------------------------------------------+-----------------------------------------------+
+| Function                                     | Description                                   |
++==============================================+===============================================+
+| unsigned char AD7920_Init(void)              | Initializes the SPI communication peripheral. |
++----------------------------------------------+-----------------------------------------------+
+| unsigned short AD7920_GetRegisterValue(void) | Reads data from AD7920.                       |
++----------------------------------------------+-----------------------------------------------+
+
+Downloads
+---------
+
+-  `AD7920 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7920_generic.zip>`__
+-  `AD7920 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7920_rl78g13.zip>`__
+-  `AD7920 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7920_rx62n.zip>`__
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7920 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  :adi:`EVAL-CN0241-SDPZ`
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+-  `Applilet4 for RL78G13 <https://www.renesas.com/us/en/software-tool/ap4-applilet>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-CN0241-SDPZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-CN0241-SDPZ J2 connector Pin CS      →  YRDKRL78G13 J11 connector Pin 1
+     EVAL-CN0241-SDPZ J2 connector Pin DOUT    →  YRDKRL78G13 J11 connector Pin 3
+     EVAL-CN0241-SDPZ J2 connector Pin SCLK    →  YRDKRL78G13 J11 connector Pin 4
+     EVAL-CN0241-SDPZ J2 connector Pin AGND    →  YRDKRL78G13 J11 connector Pin 5
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7920_rl78g13.jpg
+   :align: center
+
+Software Setup
+~~~~~~~~~~~~~~
+
+With the **Applilet3 for RL78G13** tool the following peripherals have to be configured:
+
+CSI10 (Clocked Serial Interface 10) – For the AD7920 part and the ST7579 LCD
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+
+-  Transfer mode setting: **Single transfer mode**
+-  Data length setting : **8 bits**
+-  Transfer direction setting: **MSB**
+-  Specification of data timing: **Type 1**
+-  Transfer rate setting – Clock mode: **Internal clock (master)**
+-  Transfer rate setting – Baudrate: **1000000** (bps)
+-  Interrupt setting – Transfer interrupt priority (INTCSI10): **Low**
+-  Uncheck the callback functions.
+
+TM00 (Timer 00) – For the DelayMs() function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configure TM00 as an interval timer:
+
+-  Interval timer setting - Interval value(16 bits): **1** ms
+-  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+
+Watchdog Timer
+^^^^^^^^^^^^^^
+
+Disable the watchdog timer:
+
+-  Choose for the Watchdog timer operation setting: **Unused** option.
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project reads data from the AD7920 part and displays it on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7920_rl78g13_screen.jpg
+   :align: center
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`__
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD7920 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+-  :adi:`EVAL-CN0241-SDPZ (ADI) <EVAL-CN0241-SDPZ>`
+
+.. _required-software-1:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`__
+
+.. _hardware-setup-1:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-CN0241-SDPZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     EVAL-CN0241-SDPZ J2 connector Pin CS      →  YRDKRX62N J8 connector Pin 15
+     EVAL-CN0241-SDPZ J2 connector Pin DOUT    →  YRDKRX62N J8 connector Pin 22
+     EVAL-CN0241-SDPZ J2 connector Pin SCLK    →  YRDKRX62N J8 connector Pin 20
+     EVAL-CN0241-SDPZ J2 connector Pin AGND    →  YRDKRX62N J8 connector Pin 4
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7920_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project reads data from the AD7920 part and displays it on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7920_rx62n_screen.jpg
+   :align: center
+
+.. _software-project-setup-1:
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`__
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`__
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

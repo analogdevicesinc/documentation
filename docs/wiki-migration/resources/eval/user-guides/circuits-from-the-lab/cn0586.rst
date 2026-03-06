@@ -1,0 +1,365 @@
+EVAL-CN0586-ARDZ User Guide
+===========================
+
+Overview
+--------
+
+| The :adi:`EVAL-CN0586-ARDZ <CN0586>` contains the full signal chain of CN0586 which is a precision bipolar high voltage output drive solution, with up to 200V output span and digital interface isolation. The evaluation board operates from +/-15V external dual supply and has an on-board low drop-out (LDO), precision reference and High Voltage (HV) power solution for the various parts of the signal chain.
+| The EVAL-CN0586-ARDZ utilizes the :adi:`AD5754R`, 4-channel voltage output DAC, and the :adi:`ADHV4702-1`, low noise HV amplifier, in a configuration shown in the figure below capable of producing up to 200V span and 20mA current drive at the outputs. CN0586 includes safety features such as digital interface isolation, temperature or software-controlled shutdown, DAC output protection as discussed in the :adi:`CN0586 circuit note <CN0586>`.
+| |image1|
+| When paired with the Analog Devices Inc. :adi:`SDP-K1` board (EVAL-SDP-CK1Z) and the open-source firmware, the application software in Analysis|Control|Evaluation (:adi:`ACE`) can easily communicate with the EVAL-CN0586-ARDZ over the Linux Industrial Input/Ouput (IIO) library (:doc:`libiio </wiki-migration/software/linux/docs/iio/iio>`), which includes the bindings for C, C#, MATLAB, Python and LabVIEW. The firmware simplifies the device configurations and allows the user to choose from the predefined HV Output Ranges and set the output with a few clicks.
+
+Features
+~~~~~~~~
+
+-  Full featured evaluation board for CN0586
+-  Up to 200V Software Selectable Output Span
+-  +/-100V, and +200V Power Solution from 15V input
+-  On-board Precision Voltage Reference
+-  Arduino Uno form-factor
+-  Open-source firmware example
+-  Various safety features for High Voltage (HV)
+
+| 
+
+Simplified Block Diagram
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+| |image2|
+
+EVB Quick Start Procedures (ACE)
+--------------------------------
+
+Installing the Software
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The EVAL-CN0586-ARDZ can be used with the ACE evaluation software to access the device functions in its Linux Industrial Input/Output (IIO) based firmware for control and evaluation of the signal chain.
+
+The ACE installer includes the necessary SDP-K1 drivers and the Microsoft® .NET Framework 4 by default. The ACE software must be installed before connecting the SDP-K1 board to the USB port of the PC to ensure that the SDP-K1 board is recognized properly.
+
+.. warning::
+
+   Follow-up with ACE Team if automated firmware loading capability is already available. If not then a section dedicated to firmware loading should be added in this document
+
+
+Quick Setup Steps
+~~~~~~~~~~~~~~~~~
+
+.. important::
+
+   EVAL-CN0586-ARDZ includes High Voltage circuitry that can reach upto 200V or more. Do not attempt to adjust the jumpers and switch position while power is supplied to the EVAL-CN0586-ARDZ.
+
+
+-  Make sure the jumpers and the switch are set to the default positions as discussed in <<link to hardware config>>. Connect the evaluation board to the SDP-K1 board.
+-  Connect the external +/-15V power supplies to P1 as shown in Figure. Make sure that the board cover is attached for your safety and then turn on the power supplies.
+-  Connect the USB Type C cable between the SDP-K1 board and the PC.
+-  Run the ACE application. On the Start window, the EVAL-CN0586-ARDZ plugin should appear in the “Attached Hardware” section as shown in Figure.
+
+|ACE Main Window|
+
+   -  For first time setup, ACE would ask to install the plugin driver for CN0586.
+   -  If the EVAL-CN0586-ARDZ hardware does not appear in the attached hardware, reset the power supply, PC connection and the ACE software.
+
+-  Double click on the plugin to open the board view as shown below
+
+
+|ACE Board View Window|
+
+-  Choose the desired HV Output Range. Set HV Out State to Enabled and enter the desired HV output value.
+
+| 
+
+Hardware Configuration
+----------------------
+
+The following section discusses the functions of EVAL-CN0586-ARDZ input and output terminals. Figure below shows the basic hardware setup used for the quick start procedures. For further details on the hardware, please refer to the evaluation board schematic.
+
+| |image3|
+
+Input/Output Connectors
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Listed below are the external connectors available on the EVAL-CN0586-ARDZ. Locations are referenced in the HARDWARE Setup Diagram
+
++-----------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Reference | Connector Label            | Connector Type/Function                                                                                                                                        |
++===========+============================+================================================================================================================================================================+
+| A         | P1.1 (AVDD)                | Wire entry. Required external supply for the CN0586. (+/-15V, 100mA)                                                                                           |
+|           | P1.2 (GND) \\\\P1.3 (AVSS) |                                                                                                                                                                |
++-----------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| B         | P2                         | Wire Entry. Optional external supply for the AD5754R DVCC. (3.3V typical)                                                                                      |
++-----------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| C         | J2                         | SMA. Terminal for the HV Output (200V Span)                                                                                                                    |
++-----------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| D         | P3 (VOUTHV)                | 4MM connector (banana). Terminal for the HV Output (200V Span)                                                                                                 |
+|           | P4 (GND)                   |                                                                                                                                                                |
++-----------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| E         | P6 (VCCHV_EXT))            | 4MM connector (banana). Terminal for external HV supplies of the HV Driver, ADHV4702-1 (24V to 220V symmetrical and asymmetrical) See datasheet for more info. |
+|           | P7 (VSSHV_EXT)             |                                                                                                                                                                |
+|           | P8 (GND)                   |                                                                                                                                                                |
++-----------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| F         | P14, P15, P16, P17         | Headers. Terminal for SDP-K1 using Arduino Uno form factor                                                                                                     |
++-----------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| G         | P11                        | Headers. PMOD compatible digital control terminal                                                                                                              |
++-----------+----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| 
+
+LED Indicatiors
+~~~~~~~~~~~~~~~
+
++-----------+---------------------+---------------------------------------------------------------------------------+
+| Reference | LED Label           | LED turned ON Indication                                                        |
++===========+=====================+=================================================================================+
+| H         | DS1 (UCON PWR)      | SDP-K1 or any Arduino form factor controller board is connected and powered up. |
++-----------+---------------------+---------------------------------------------------------------------------------+
+| I         | DS2 (DAC PWR)       | *15V??* AVDD power is available.                                                |
++-----------+---------------------+---------------------------------------------------------------------------------+
+| J         | DS3 (HV PWR)        | On-board HV Power solution, LT8365, is powered up.                              |
++-----------+---------------------+---------------------------------------------------------------------------------+
+| K         | DS4 (HV DRIVER PWR) | HV Output Driver, ADHV47201-1, is powered up.                                   |
++-----------+---------------------+---------------------------------------------------------------------------------+
+
+| 
+
+Jumper Options
+~~~~~~~~~~~~~~
+
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Jumper Name | Description                                                                                                                                                 |
++=============+=============================================================================================================================================================+
+| JP1         | Selects the source for the reference input of the AD5754R                                                                                                   |
+|             | Pos A: On-board 2.5V reference via ADR441B (default)                                                                                                        |
+|             | Pos B: External reference via J1                                                                                                                            |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP2         | Selects the source for the digital supply, DVCC, of the AD5754R                                                                                             |
+|             | Pos A: On-board 3.3V LDO via AD7142 (default)                                                                                                               |
+|             | Pos B: External voltage source via P2                                                                                                                       |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP3         | Sets the value for the BIN/2sCOMP pin of the AD5754R which determines the coding scheme for bipolar output range.                                           |
+|             | Pos A: Pull-up to DVCC, Offset Binary coding (default)                                                                                                      |
+|             | Pos B: Pull-down to GND, two’s complement coding                                                                                                            |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP4         | Selects the source that controls the shutdown pin, /SD, of the ADHV4702-1.                                                                                  |
+|             | Pos A: DAC Channel D Output (default)                                                                                                                       |
+|             | Pos B: TMP pin of ADHV4702-1                                                                                                                                |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP5         | Selects the source for the positive supply, VCC, of the ADHV4702-1                                                                                          |
+|             | Pos A: On-board HV positive output, HV_VCC, via LT8365 (default)                                                                                            |
+|             | Pos B: External +15V voltage source, AVDD, via P1.1                                                                                                         |
+|             | Pos C: External HV source via P6                                                                                                                            |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP6         | Selects the source for the negative supply, VSS, of the ADHV4702-1                                                                                          |
+|             | Pos A: On-board HV negative output, HV_VSS, via LT8365 (default)                                                                                            |
+|             | Pos B: External -15V voltage source, AVDD, via P1.3                                                                                                         |
+|             | Pos C: External HV source via P7                                                                                                                            |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP7         | Configures the AD5754R DAC Channel A output connection.                                                                                                     |
+|             | Pos A: CFTL mode, output is connected to the HV Amplifier ADHV4702-1 (default)                                                                              |
+|             | Pos B: EVB mode, connects to the evaluation board provisions                                                                                                |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP8         | Configures the AD5754R DAC Channel B output connection.                                                                                                     |
+|             | Pos A: CFTL mode, output is connected to the HV Amplifier ADHV4702-1 (default)                                                                              |
+|             | Pos B: EVB mode, connects to the evaluation board provisions                                                                                                |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP9         | Configures the AD5754R DAC Channel C output connection.                                                                                                     |
+|             | Pos A: CFTL mode, output is connected to the HV Amplifier ADHV4702-1 (default)                                                                              |
+|             | Pos B: EVB mode, connects to the evaluation board provisions                                                                                                |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP10        | Configures the AD5754R DAC Channel D output connection.                                                                                                     |
+|             | Pos A: CFTL mode, output is connected to the HV Amplifier ADHV4702-1 (default)                                                                              |
+|             | Pos B: EVB mode, connects to the evaluation board provisions                                                                                                |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP11        | Configures feedback loop connection of the HV amplifier circuitry.                                                                                          |
+|             | Short: Feedback loop is closed. (default)                                                                                                                   |
+|             | Open: Feedback loop is open. Used for remote sensing or signal range extender application. See ADHV4702-1 Application Information section for more details. |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JP12        | Configures the supply for the on-board HV power supplies circuitry.                                                                                         |
+|             | Short: External +15V, AVDD, supply is connected. (default)                                                                                                  |
+|             | Open: Supply is disconnected.                                                                                                                               |
++-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| 
+
+Power Supplies
+~~~~~~~~~~~~~~
+
+| The eval board only requires an external +/-15V supplied to P1 to power all devices on board. There is a 3.3V LDO using the :adi:`AD7142` that is used to provide the digital supply for the DAC, AD5754R. A 2.5V precision reference, ADR441B, is also provided as an option for the DAC. A 2.5V reference, ADR441B, is also included to as a voltage reference source for the DAC.
+
+On-board HV Power Supply
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+A power solution capable of generating +/-100V or 0/+200V using the LT8365 is provided on-board for the EVAL-CN0586-ARDZ. There are two :adi:`LT8365` circuits each configured to generate the positive and negative high voltage supplies used to power the output drive circuitry. For more details on configuring the power solution, visit the Typical Applications section of the :adi:`LT8365` datasheet.
+
+For the EVAL-CN0586-ARDZ, the outputs of the on-board LT8365 circuits can be modified via the switch S1 as shown below.
+
+|
+
+.. important::
+
+   Important safety note:
+
+
+   | Do not adjust the switch position while power is supplied to the EVAL-CN0586-ARDZ. Make sure to set the desired on-board HV power supplies before powering up the system.
+
+
+================== =================
+S1 Switch Position HV Supply Outputs
+================== =================
+A                  HV VCC: +205V
+                   HV VSS: 0V, GND
+B (default)        HV VCC: +110V
+                   HV VSS: -110V
+================== =================
+
+|
+
+HV Driver Circuit Variation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As discussed in the common variations section of the :adi:`CN0586` circuit note, there are certain configurations for the HV Driver, :adi:`ADHV4702-1`. These configurations could allow for remote sensing or, higher current or voltage output. The EVAL-CN0586-ARDZ has an option, through **JP11**, to disconnect the feedback loop of the ADHV4702-1 circuit to make way for the special configurations. It is important to review the circuit connections and the product datasheet before configuring the default circuit of the ADHV4702-1.
+
+| |image4|
+
+Demonstration Software
+----------------------
+
+ACE Plugin User Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The EVAL-CN0586-ARDZ ACE plugin displays the attributes from the open source firmware of CN0586. These attributes contain command sequences sent to DAC for the specific function of the signal chain. The function of each attribute is discussed below.
+
+Additionally, running with ACE includes loading the latest firmware version onto the SDP-K1.
+
+| |image5|
+
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Attribute Name | Function/Description                                                                                                                                                                      |
++================+===========================================================================================================================================================================================+
+| hvout_state    | Enable/disable the HV Driver, ADHV4702-1. Default value: **Disabled**                                                                                                                     |
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| hvout_range    | Select from a list pre-defined HV Output Ranges. The ranges are based on the on-board HV Supplies. Changing ranges automatically sets hvout_state to disabled and sets hvout_volts to 0V. |
+|                | \* 0 to +100V                                                                                                                                                                             |
+|                | \* -100V to +100V (default)                                                                                                                                                               |
+|                | \* -50V to +50V                                                                                                                                                                           |
+|                | \* 0 to +200V                                                                                                                                                                             |
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| hvout_volts    | Sets the voltage value of the output of the signal chain.                                                                                                                                 |
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| 
+| === Waveform Generation with ACE ===
+
+.. note::
+
+   In Development
+
+
+   | 
+
+Python using PYADI-IIO
+~~~~~~~~~~~~~~~~~~~~~~
+
+`PyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`__ is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+
+|
+
+Python Drivers and libraries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this link. :doc:`Pyadi-iio Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+
+Python example codes and other useful files are included in the CN0586 Design files. For the CN0586 python example code, a list of required drivers and libraries can be found in the Requirements.txt file. Run the command prompt and enter the code below, replacing “/path/to” to the actual local path on your PC where the Requirements.txt file resides. <code> pip install -r /path/to/requirements.txt </code>
+
+
+| 
+
+Loading Firmware to the SDP-K1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When ACE is not used, the firmware must be manually loaded into the SDP-K1. To do so:
+
+-  Connect only the SDP-K1 to the PC.
+-  Download the latest firmware binary <link> and locate on your local drive.
+-  Right click on the binary file, and select send to > SDP-K1 (X:) where X is the drive id assigned to the SDP-K1
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0586/firmware_loading.png
+   :align: center
+   :width: 600px
+
+To confirm successful loading of the firmware, the LED1 (DS6) on the SDP-K1 should have a blinking red light when the EVAL-CN0586-ARDZ is not attached and powered up.
+
+|
+
+Running the python example code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After installing and configuring PYADI-IIO and the required drivers and libraries in your machine, you are now ready to run python script examples. The image below shows the terminal display when CN0586_examples.py from the example folder is executed.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0586/terminal.png
+   :align: center
+   :width: 600px
+
+The output of this particular example, could be viewed using an oscilloscope.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0586/sine_plot.png
+   :align: center
+   :width: 600px
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   :adi:`EVAL-CN0xxx-ARDZ Design & Integration Files <cn0xxx-designsupport>`
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   
+
+
+Additional Information and Useful Links
+---------------------------------------
+
+-  :git-EVAL-ADICUP3029:`CN0414 Demo Software <projects/ADuCM3029_demo_cn0414>`
+-  :adi:`CN0586 Circuit Note Page <CN0586>`
+-  :adi:`CN0586 Design Support Package <CN0586-DesignSupport>`
+-  :adi:`AD5754R Product Page <AD5754R>`
+-  :adi:`ADHV4702-1 Product Page <ADHV4702-1>`
+-  :adi:`LTC8365Product Page <LTC8365>`
+-  :adi:`ADuM4151Product Page <ADuM4151>`
+-  :adi:`EVAL-SDP-CK1Z Product Page <SDP-K1>`
+
+Reference Demos & Software
+--------------------------
+
+-  :git-pyadi-iio>`__
+-  `CN0586 IIO <https::`pyADI-IIO </github.com/analogdevicesinc/CN0586-iio>`???
+-  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+
+Hardware Registration (TBD)
+---------------------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0511-RPIZ?&v=RevD>`__ to receive all these great benefits and more! **TBD**
+
+
+// End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0586/board_photo.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0586/circuit_block_diagram.svg
+.. |ACE Main Window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0586/ace1_draft.png
+   :width: 600px
+.. |ACE Board View Window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0586/ace_board_view_-_attributes.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0586/hardware_setup.jpg
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0586/open-loop.svg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0586/ace_board_view_-_attributes.png
+   :width: 600px

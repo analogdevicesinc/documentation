@@ -1,0 +1,123 @@
+EVAL-CN0504-RPIZ Raspberry Pi Power over Ethernet HAT, PSE, and PD
+==================================================================
+
+Overview
+--------
+
+The :adi:`CN0504` is an add-on Power over Ethernet (PoE) application board for Raspberry Pi computers, including Raspberry Pi 3B+ and Raspberry Pi 4. It is used to power Raspberry Pi computers via an Ethernet cable with PoE Power Sourcing Equipment (PSE) and Powered Device capability that can facilitate building a network of multiple Raspberry Pi computers in a daisy-chain topology. This feature is useful for industrial Ethernet applications for automation and process control.
+
+Power is forwarded along the chain; the EVAL-CN0504-PDZ upstream Ethernet port acts as a PoE Powered Device (PD), providing power to the Raspberry Pi and the customer's additional circuitry. The downstream Ethernet port acts as a PoE Power Source Equipment (PSE), forwarding remaining power to the next device in chain. A standard Ethernet switch provides upstream and downstream data connections, and data to the Raspberry Pi itself. The switch IC will also support Link Layer Discovery Protocol (LLDP), allowing link-layer PoE negotiation.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0504/picture1.png
+   :align: center
+   :width: 500px
+
+Features
+--------
+
+-  Raspberry Pi 3 and 4 compatible
+-  Feature 2
+-  Feature 3
+
+--------------
+
+Documents Needed
+----------------
+
+-  :adi:`CN0504` Circuit Note
+
+Equipment Required
+------------------
+
+-  EVAL-CN0504-RPIZ Circuit Evaluation Board
+-  EVAL-CN0504-PSEZ Circuit Evaluation Board
+-  EVAL-CN0504-PDZ Circuit Evaluation Board
+-  DC power supply (55 V to 57 V)
+-  RJ45 Cable
+
+| 
+| ----
+
+Block Assignments
+-----------------
+
+| |image1|
+| \* Connector **P** is the ...
+
+-  Connector **P** is the ...
+-  Test point **TP** is the LTC7103 output voltage programming pin VPRG2. This pin is left floating to program the chip to have 12 V fixed output voltage.
+-  Test point **PGOOD** is the LTC7103 Open-Drain Power Good Output pin
+-  Test point **CLKOUT** is the LTC7103 Output clock signal pin
+-  Test point **IMON** is the LTC7103 Average Output Current Monitor pin. This pin generates a voltage between 0.4V and 1.3V that corresponds to an average output current between 0A and 2.5A.
+-  Test point **ICTRL** is the LTC7103 ICTRL pin that programs the average output current in constant current mode. This is left floating to set the average output current to 2.5A and the peak current limit to 3.7A
+-  Test point **TP6** is the voltage input to the LTC7103
+-  Test point **12V** is the 12V output voltage of the LTC7103
+-  Test point **GND1** is the ground relative to input supply
+-  Test point **VBUS** is the USB VBUS voltage which typically carries 5V
+-  Test point **D-** is the USB data+ signal
+-  Test point **D+** is the USB data- signal
+-  Test point **GND** is the isolated ground relative to output
+
+| 
+| ----
+
+Test setup
+~~~~~~~~~~
+
+| |image2|
+| \* Connect the input DC supply to P1 on :adi:`EVAL-CN0509-EBZ <CN0509>`. Ensure safe connection because it may deal with input voltages up to 100 V.
+
+| 
+| ==== Running the System ====
+
+-  Turn on DC supply.
+-  The circuit will determine if input connection is in correct polarity through lighting DS1 or DS2.
+
+   -   If DS1 (green LED) turns on, this means correct polarity on the input and circuit delivers up to 10W on P2 USB output ports.
+
+      -  If DS2 (red LED) illuminates, turn off the input supply, disconnect the power inputs, swap the power leads, and reconnect the supply outputs to P1.
+
+-  Connect the USB multimeter tester to the lower USB port on the EVAL-CN0509-EBZ.
+-  Connect a fast charge capable device to the USB multimeter tester using the charging cable of the device.
+-  You can check the USB multimeter tester and see if the device is pulling more than 500 mA but less than 2 A.
+-  Connect the USB multimeter tester to the upper USB port on the EVAL-CN0509-EBZ.
+-  You can check the USB multimeter tester and see if the device is pulling approximately 500 mA.
+-  Take note that each device has its own "charge controller circuitry" that might limit the charging current if the voltage on the load goes below a certain level. Shown below is the maximum charging current on P2 lower port that CN0509 can provide given that the output voltage to the load is greater than 5V.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/max_curr.png
+   :align: center
+   :width: 200px
+
+| 
+| ----
+
+More Information and Useful Links
+---------------------------------
+
+-  :adi:`CN0509 Circuit Note Page <CN0509>`
+-  :adi:`LTC7103 Product Page <LTC7103>`
+-  :adi:`LT8302 Product Page <LT8302>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0509-EBZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0509-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro project
+   -  LTSpice Simulations
+   
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0504/block_dia.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/setup_2.png
+   :width: 850px

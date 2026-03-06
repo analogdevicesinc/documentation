@@ -1,0 +1,313 @@
+EVAL-CN0190-EB1Z Overview
+=========================
+
+:adi:`CN0190` is a reference solution for multivoltage power systems. The design can easily be adapted to customer requirements and provides the most popular system voltages. The circuit uses an optimum combination of switching and linear regulators to provide an overall efficiency of approximately 78% when the outputs are fully loaded. Output power delivered under full load is approximately 25 W.
+
+The circuit supplies most of the typical power rails required for digital and analog circuits and also demonstrates an easy way to realize overvoltage, undervoltage, and overcurrent detection and protection. In addition, this module shows how to implement sequencing and power margining control.
+
+The circuit is flexible and can accept a wide input voltage range from 6 V to 14 V. This is possible because the highly efficient switching controllers and regulators used in the first stage of each power rail have correspondingly wide input ranges. The :adi:`ADM1178` block provides overvoltage and overcurrent detection and protection for the input supply, as well as hotswap control for the whole system. The :adi:`ADM1066` offers a single-chip solution for power supply monitoring and sequencing control for all of the 12 power rails and also margining control for the 3.3V(2A) rail.
+
+| 
+| |image1|
+
+| 
+
+Equipment Needed (Equivalents Can be Substituted)
+=================================================
+
+| 
+| \* Tektronix TDS3034B 4-channel 300 MHz color digital phosphor oscilloscope
+
+-  Tektronix P6139A, 500 MHz, 8 pF, 10 MΩ, 10× passive prob
+-  Agilent N3302A, 150 W, 0 A to 30 A, 0 V to 60 V electronic load module combined with N3300A
+-  Agilent E3631A, 0 V to 6 V, 5 A; 0 V to ±25 V, 1 A, triple output dc power supply
+-  Agilent 3458A, 8.5 digit digital multimeter
+-  Fluke 15B digital multimeter
+-  USB-SDP-CABLEZ
+-  PC (Windows 2000 or Windows XP) with USB interface
+
+Test Setup Functional Block Diagram
+-----------------------------------
+
+| 
+| ==== Power Rails Efficiency Measurements ====
+| |image2|
+|
+
+.. note::
+
+   Efficiency = POUT/PIN = (VOUT × IOUT) ÷ (VIN × IIN)
+
+   | - POUT can be calculated by multiplying VOUT by IOUT
+   | - VIN and IIN can be read directly from the display window of the Agilent E3631A dc power supply
+   | - Electronic load should be set to constant current mode
+
+
+| ==== Ripple and Transient Response Measurements ====
+| |image3|
+|
+
+.. note::
+
+   - Channel A of the oscilloscope monitors the output voltage of the module
+
+   | - Channel B monitors the voltage across the 0.1 Ω current sense resistor, which is proportional to the load current
+   | - Electronic load should be set to "switch" mode with preset amplitude and frequency
+   |
+
+
+| 
+
+Connectors and Jumper Configurations
+------------------------------------
+
+| 
+| |image4|
+
+Input Power
+~~~~~~~~~~~
+
+| Connector 1, and should be between +6V and +14V
+
+Output Power Options
+~~~~~~~~~~~~~~~~~~~~
+
++-----------------+------------------------------+----------------+---------------------+
+| Image Indicator | Voltage Output               | Current Output | Power Topology      |
++=================+==============================+================+=====================+
+| Connector 2     | +3.3V                        | 2A             | Synchronous Buck    |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 3     | +1.8V                        | 1A             | Synchronous Buck    |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 4     | +1.5V                        | 1A             | Synchronous Buck    |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 5     | +1.0V                        | 2A             | LDO                 |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 6     | +1.2V                        | 0.5A           | Synchronous Buck    |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 7     | +3.0V                        | 0.1A           | LDO                 |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 8     | -5.0V                        | 0.2A           | Inverted Buck/Boost |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 9     | +5.0V                        | 1A             | Synchronous Buck    |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 10    | +2.5V                        | 1A             | Synchronous Buck    |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 11    | +3.3V                        | 0.1A           | LDO                 |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 12    | VDD (+2.5V, +5V, +12V, +15V) | 0.1A           | Sepic-Cuk           |
++-----------------+------------------------------+----------------+---------------------+
+| Connector 13    | VEE (-2.5V, -5V, -12V, -15V) | 0.1A           | Sepic-Cuk           |
++-----------------+------------------------------+----------------+---------------------+
+
+Switch Matrix
+~~~~~~~~~~~~~
+
+-  To select the VDD/VEE outputs on Connector 12 and Connector 13, you must setup the switch matrix. Use the following table to select those outputs:
+
+| |image5|
+
+I2C Programming Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| I2C serial interface is on Connector 15 (1- SCLK, 2 - SDA, 3 - GND)
+
+Software and Driver Installation
+--------------------------------
+
+You can design your own control strategy and download it into the ADM1066 through this I2C bus connector(JP1) to make the power monitoring and sequencing control for your own custom application using the :adi:`ADM1066 <en/products/power-management/sequencing/digital-sequencers/adm1066.html>` Super Sequencer Evaluation Board Software and follow instructions below.
+
+To create a customer sequencing solution, and programming the ADM1066 you need to do the following:
+
+-  Download the USB-SDP-CABLEZ driver
+-  Install the *Super Sequencer Software*
+-  Install *Graphviz*
+-  Install the *prog106x Setup Application Software*
+-  Connect the USB-SDP-CABLEZ to the PC, and the other end to the EVAL-CN0190-EB1Z
+-  Download the custom .hex file to the EVAL-CN0190-EB1Z, using the Windows command prompt
+
+Step by step details are provided below.
+
+.. note::
+
+   The ADM1066 comes **pre-programmed out of the box** where ALL the power outputs are active at the same time. So you do NOT need to program the board if you do not want to. The only time you need to program this board is if you want to create your own customer power sequencing/monitoring solution.
+
+
+Driver Installation
+~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: Download
+   :class: download
+
+   Download the :adi:`USB-SDP-CABLEZ <media/en/evaluation-boards-kits/evaluation-software/ADMxxxx%20Run-time%20Installer.zip>` driver.
+
+
+-  Install the USB-SDP-CABLEZ driver
+-  Open the file setup.exe located at the path \\ADMxxxx Run-Time Installer\\Installer\\Volume\\setup.exe
+
+|image6|
+
+.. tip::
+
+   
+   It is recommended that you install the software to the default directory.
+
+
+-  Follow the on-screen prompts to install the software\
+
+
+
+|image7|
+
+-  Plug in the USB-SDP-CABLEZ into your PC or labtop using the USB cable.
+-  Windows will automatically find the new hardware(USB-SDP-CABLEZ) plugged the into the PC.\
+
+|image8|
+
+Sequencer Software Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: Download
+   :class: download
+
+   Download and Install the :adi:`SuperSequencer <media/en/evaluation-boards-kits/evaluation-software/SuperSequencer_EvaluationSoftwareInstaller_4.2.3.zip>` Application Software.
+
+
+-  Open the file setup.exe located at the path \\SuperSequencer Apps SW Installer\\Volume\\setup.exe\
+
+
+
+|image9|
+
+.. tip::
+
+   It is recommended that you install the SuperSequencer Evaluation Software to the default directory path C:\\Program Files\\
+
+
+-  Follow the on-screen prompts to install the software.
+   |image10|\ |image11|\ |image12|\ |image13|
+-  Install Graphviz.
+
+|image14|
+
+-  Upon completion, follow the on-screen promps to install the prog106x Setup Application Software
+   |image15|\ |image16|\ |image17|\ |image18|
+
+.. note::
+
+   Visit :adi:`Super Sequencer User Guide <media/en/technical-documentation/user-guides/UG-063.pdf>` and :adi:`Software Programming Tool <media/en/technical-documentation/user-guides/UG-049.pdf>` to know more about the Application Software and :adi:`Graphviz User Guide <media/en/technical-documentation/user-guides/AN-0975.pdf>` for automatic generation of state diagrams for ADM1066
+
+
+Using Super Sequencer Software
+------------------------------
+
+| Super Sequencer Evaluation Software enables the user to create new control strategy and generates new intel hex file for ADM1066. For detailed information about Super Sequencer features, visit :adi:`Super Sequencer User Guide <media/en/technical-documentation/user-guides/UG-063.pdf>`
+
+Generating new hex file using Super Sequencer Software
+
+-  Open SuperSequencerSoftwareEval.exe installed in PC
+
+
+|image19|
+
+-  Assuming all the new configurations and controls were already done on the software, on the main window go to File and click Save Settings to File
+
+|image20|
+
+-  Select Create Intel Hex File and click Save
+
+|image21|
+
+-  Once completed saving, you now have a new hex file to download to ADM1066
+
+Downloading Firmware for ADM1066
+--------------------------------
+
+-  Copy the eeprom file i.e. ADM1066_SuperSequencing_REVB.hex in the root directory on Disk C: (i.e. C:\\ADM1066_SuperSequencing_REVB.hex)
+-  Plug USB to I2C converter dongle into the USB port on your PC. Plug the other side of the cable into the JP1 on the right side of the EVAL-CN0190-EB1Z.\
+
+|image22|
+
+|
+
+.. note::
+
+   Make sure the marks for the signals of JP1 on the PCB match the marks on the USB-SDP-CABLEZ.
+
+   | Signal Connection:
+   | SCL<->SCL
+   | SDA<->SDA
+   | GND<->GND
+
+
+-  Turn on the power to the supply of EVAL-CN0190-EB1Z
+-  Open the Command Prompt (C:\\Windows\\System32\\cmd.exe)\
+
+|image23|
+
+-  In the cmd.exe, key the command ``prog106x download 6A c:\ADM1066_SuperSequencing_REVB.hex`` and Press Enter
+
+.. note::
+
+   ADM1066_SuperSequencing_REVB.hex file name might be different, depends on the user
+
+
+-  The on-chip EEPROM of ADM1066 is successfully programmed if the picture below is shown on the screen after several seconds.\
+
+
+
+|program.png|
+
+-  Remove power or turn off the power supply on (), then re-apply the power supply in order to make ADM1066 update the program from embedded EEPROM.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0190-EBZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0190-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  PADS project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0190-EB1Z?&v=Rev B>`__ to receive all these great benefits and more!
+
+
+// End of document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0190-hw-1024.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/block.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/block2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/boardwithdes.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sw1.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usb1.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usb2.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/newdevice.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft1.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft2.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft3.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft4.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft5.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft6.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft7.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft8.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft9.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft10.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sequencer_icon.png
+   :width: 300px
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/savesettings.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/hexfile.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usbtosdp.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cmd.png
+.. |program.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/program.png

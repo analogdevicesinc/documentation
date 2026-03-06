@@ -1,0 +1,21 @@
+The :adi:`ADF7023` is a very low power, high performance, highly integrated 2FSK/GFSK/OOK/MSK/GMSK transceiver designed for operation in the 862 MHz to 928 MHz and 431 MHz to 464 MHz frequency bands, which cover the worldwide license-free ISM bands at 433 MHz, 868 MHz, and 915 MHz. It is suitable for circuit applications that operate under the European ETSI EN300-220, the North American FCC (Part 15), the Chinese short-range wireless regulatory standards, or other similar regional standards. Data rates from 1 kbps to 300 kbps are supported.
+
+The transmit RF synthesizer contains a VCO and a low noise fractional-N PLL with an output channel frequency resolution of 400 Hz. The VCO operates at 2× or 4×, the fundamental frequency to reduce spurious emissions. The receive and transmit synthesizer bandwidths are automatically, and independently, configured to achieve optimum phase noise, modulation quality, and settling time. The transmitter output power is programmable from −20 dBm to +13.5 dBm, with automatic PA ramping to meet transient spurious specifications. The part possesses both single-ended and differential PAs, which allows for Tx antenna diversity.
+
+The receiver is exceptionally linear, achieving an IP3 specification of −12.2 dBm and −11.5 dBm at maximum gain and minimum gain, respectively, and an IP2 specification of 18.5 dBm and 27 dBm at maximum gain and minimum gain, respectively. The receiver achieves an interference blocking specification of 66 dB at ±2 MHz offset and 74 dB at ±10 MHz offset. Thus, the part is extremely resilient to the presence of interferers in spectrally noisy environments. The receiver features a novel, high speed, automatic frequency control (AFC) loop, allowing the PLL to find and correct any RF frequency errors in the recovered packet.
+
+A patent pending, image rejection calibration scheme is available through a program download. The algorithm does not require the use of an external RF source nor does it require any user intervention once initiated. The results of the calibration can be stored in nonvolatile memory for use on subsequent power-ups of the transceiver.
+
+Applications
+============
+
+-  Smart metering
+-  IEEE 802.15.4g
+-  Wireless MBUS
+-  Home automation
+-  Process and building control
+-  Wireless sensor networks (WSNs)
+-  Wireless healthcare
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/adf7023_pmod_rf3.jpg
+   :align: center

@@ -1,0 +1,155 @@
+ADF4157 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+=============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF4157`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADF4157SD1Z <en/rfif-components/pll-synthesizersvcos/adf4157/products/EVAL-ADF4157/eb.html>`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-ADF4157SD1Z <en/rfif-components/pll-synthesizersvcos/adf4157/products/EVAL-ADF4157/eb.html>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-ADF4157SD1Z Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_adf4156.jpg
+   :alt: img_adf4156.jpg
+   :align: center
+   :width: 400px
+
+For component evaluation and performance purposes, as opposed to quick prototyping, the user is directed to Analog Devices :doc:`System Demonstration Platform </wiki-migration/resources/eval/sdp>` (**SDP**). The **SDP** consists of a:
+
+-  a controller board, like the :doc:`EVAL-SDP-CS1Z </wiki-migration/resources/eval/sdp/sdp-s>` **(SDP-S)**
+-  a compatible Analog Devices SDP :adi:`product evaluation board <sdp#exallist>`
+-  corresponding PC software
+
+The **EVAL-SDP-CS1Z** controller board is Serial Interfaces Only, low cost, reduced functionality controller board. It has a USB to Serial Engine at its core. It connects to the PC through a USB 2.0 high speed port. The SDP-S has a single 120 pin connector and exposes SPI, I2C and GPIO interfaces to connected SDP daughter boards.
+
+The **EVAL-ADF4157SD1Z** is designed to allow the user to evaluate the performance of the ADF4157 frequency synthesizer for phase-locked loops (PLLs). Figure 1 shows the board, which contains the ADF4157 synthesizer, an SMA connector for the reference input, power supplies, and an RF output. There is also a footprint for a loop filter and a VCO on board.
+
+The ADF4157 is a 6 GHz fractional-N frequency synthesizer with a 25-bit fixed modulus, allowing subhertz frequency resolution at 6 GHz. It consists of a low noise digital phase frequency detector (PFD), a precision charge pump, and a programmable reference divider. There is a Σ-Δ based fractional interpolator to allow programmable fractional-N division. The INT and FRAC values define an overall N divider, N = INT + (FRAC/225). The ADF4157 features cycle slip reduction circuitry, which leads to faster lock times without the need for modifications to the loop filter.
+
+More information
+----------------
+
+-  :adi:`ADF4157 Product Info <ADF4157>` - pricing, samples, datasheet
+-  :adi:`EVAL-ADF4157SD1Z evaluation board user guide <media/en/technical-documentation/user-guides/UG-393.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-ADF4157SD1Z** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-ADF4157 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **ADF4157 Driver:** :git-no-OS:`drivers/frequency/adf4157`
+   
+   -  **ADF4157 Commands:** :git-no-OS:`device_commands/ADF4157`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-ADF4157 reference project for Xilinx KC705 FPGA board.
+
++----------------+---------------------------------------------------------------------+
+| Command        | Description                                                         |
++================+=====================================================================+
+| **help?**      | Displays all available commands.                                    |
++----------------+---------------------------------------------------------------------+
+| **frequency=** | Sets the desired output frequency in MHz. Accepted values:          |
+|                | 500 ... 6000 - desired output frequency in MHz.                     |
++----------------+---------------------------------------------------------------------+
+| **frequency?** | Displays the output frequency in MHz.                               |
++----------------+---------------------------------------------------------------------+
+| **register=**  | Sets the value of the desired register on 29 bits. Accepted values: |
+|                | register:                                                           |
+|                | 0 .. 4 - the selected register.                                     |
+|                | value:                                                              |
+|                | 0 .. 0x1FFFFFFF - the new value of the register.                    |
++----------------+---------------------------------------------------------------------+
+| **register?**  | Displays the value of the desired register. Accepted values:        |
+|                | 0 .. 4 - the selected register.                                     |
++----------------+---------------------------------------------------------------------+
+| **chsp?**      | Displays the calculated channel spacing.                            |
++----------------+---------------------------------------------------------------------+
+| **fract?**     | Displays the calculated fractional value.                           |
++----------------+---------------------------------------------------------------------+
+| **PFDfreq?**   | Displays the current PFD frequency in MHz.                          |
++----------------+---------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

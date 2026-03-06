@@ -1,0 +1,140 @@
+AD4170-4 Customer Evaluation Board User Guide
+=============================================
+
+The EVAL-AD4170-4ARDZ evaluation kit features the AD4170-4, a multiplexed sigma delta analog to digital converter (ADC) 5.5nV/rtHz ultra low noise core(gain=128), integrated PGA and programmable digital filter offering output data rates from 500ksps to 5sps.
+
+The PC software fully configures the AD4170-4 device register functionality and provides AC time domain analysis in the form of waveform graphs, histograms, and associated noise analysis for ADC performance evaluation. The AC analysis is also provided by the software, examples of which are; an FFT displaying the first 5 harmonics SNR, SFDR S/N+D and THD.
+
+The AD4170-4 Family
+-------------------
+
+The AD4170-4 family of ADCs offers the highest integration and feature set required in the design of a multi-sensor measurement and is truly a platform measurement device, combining ac and dc performance that enables instrumentation and industrial system designers to design across multiple measurement requirements for both isolated and non-isolated applications.
+
+All devices in the family offer excellent DC and AC performance. Where the AC performance is key, the input path is optimized to ensure the best performance can be captured. Here the integrated PGA can easily be bypassed if ultra low distortion measurement is required. The ultra low noise integrated PGA supports gains from X0,5 to X128, enabling an input span of +/- 2 \* VREF/gain – See the PGA section for more details. The AD4170-4 devices include a rich feature set from integrated low drift 5ppm/C reference, and key building blocks required for sensor excitation current and sensor biasing. The AD4170-4 has an an onboard programmable 12bit voltage out DAC that can also be used for sensor biasing or excitation, the family of parts offer an extremely robust and trusted measurement solution through the integration of a large number of of measurement diagnostics
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/chip_diagram.png
+   :align: center
+   :width: 600px
+
+Evaluation board Features
+-------------------------
+
+-  Full featured evaluation board for the AD4170-4
+-  PC control in conjunction with the system demonstration platform (EVAL-SDP-CK1Z)
+-  PC software for control and data analysis (time and frequency domain)
+-  Standalone capability
+
+Evaluation Kit
+--------------
+
+-  :adi:`EVAL-AD4170-4ARDZ Evaluation Board <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad4170-4.html#eb-overview>`
+-  :adi:`AD4170-4 Eval Guide Document <media/en/technical-documentation/user-guides/eval-ad4170-4-ug-2243.pdf>`
+
+Associated Software
+-------------------
+
+-  `AD4170 Device Drivers <https://developer.analog.com/software/drivers/linux/ad4170>`__
+-  ACE Plugin
+
+Related Documents
+-----------------
+
+-  :adi:`AD4170-4 Data Sheet <media/en/technical-documentation/data-sheets/ad4170-4.pdf>`
+
+Quick Start Guide
+=================
+
+The following steps highlight the process to begin using the evaluation board.
+
+Equipment Required
+------------------
+
+-  :adi:`EVAL-AD4170-4ARDZ evaluation board <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad4170-4.html>`
+-  PC running Windows with a USB2.0 port and software installed.
+-  Controller Board
+
+   -  Option A: :adi:`EVAL-SDP-CK1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-k1.html>` and a USB-C cable
+
+      -  Option B: :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-b.html>` and a Micro-USB cable
+
+Getting started
+---------------
+
+.. warning::
+
+   Ensure the SDP board is not connected to the USB port of the PC
+
+
+-  Install the :adi:`Ace Plugin <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html?doc=EVAL-AD7383FMCZ-ug-1770.pdf>`
+
+   -  :doc:`Ace Plugin Install guide available here </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
+
+-  Connect the EVAL-AD4170-4ARDZ to the controller board
+
+   -  Using the Arduino Connectors
+
+
+   |image1|
+
+-  If using Windows® XP, it may be needed to search for the controller board drivers. Choose to automatically search for the drivers for the controller board if prompted by the operating system.
+-  Launch the ACE plugin from the **Analog Devices** subfolder in the **Programs** Menu.\
+
+|image2|
+
+-  The :doc:`Noise Test Demo </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>` is a useful demo mode of the Ace Plugin software to ensure that the Evaluation board is communicating correctly with the Ace Plugin software.
+
+Hardware Guide
+==============
+
+| :doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+| **Contents of the Hardware guide:**
+
+-  :doc:`Set-up Procedures </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Block Diagram </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-   :doc:`Hardware Link Options </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`On Board Connections </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Power Supplies </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Serial Interface </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Reference Options </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`GPIOs </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Schematics </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Bill of Materials </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Sensor configurations </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`2 wire RTD </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`3 wire RTD </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`4 wire RTD </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Thermocouple </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Thermistor </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Loadcell with DC excitation </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Loadcell with AC excitation </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+-  :doc:`Accelerometer </wiki-migration/resources/eval/user-guides/ad4170/hardwareguide>`
+
+Software Guide
+==============
+
+| :doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
+| **Contents of the Hardware guide:**
+
+-  :doc:`Ace Plugin </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
+
+   -  :doc:`Ace Plugin Install </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
+
+      -  :doc:`Ace Plugin Operation </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
+      -  :doc:`Ace Plugin Demo Modes </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
+
+         -  :doc:`Noise Test Demo </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures/demo_modes>`
+
+            -  2 Wire RTD Demo
+            -  3 Wire RTD Demo
+            -  4 Wire RTD Demo
+            -  Thermocouple Demo
+            -  4 Wire Bridge Demo
+            -  Thermistor
+
+-  :doc:`Virtual Eval Guide </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
+-  :doc:`Firmware Install </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170_sdpk1_connections.png
+   :width: 650px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_plugin_open.png
+   :width: 300px

@@ -1,0 +1,1147 @@
+=======ADBT1000 System Demo User Guide=======
+
+Features
+========
+
+| Full featured system evaluation board for ADBT1000
+| Charge and discharge batteries under constant current (CC), constant voltage (CV), and
+| constant power (CP), discharge additionally allows constant resistance (CR)
+| Allows multiple charge and discharge configurations
+| Channels fully functional for Li-Ion cell formation and testing similar to real world
+| manufacturing equipment
+| Energy recycling capability
+| Intuitive Graphic User Interface (GUI) for easy configuration
+
+Evaluation Kit Contents
+=======================
+
+| 1 System Control Board
+| 4 Switching Power Modules
+
+Hardware Requirements
+=====================
+
+| Power Supply Capable of providing +/-15V
+| DC Bus Supply 12 to 36V
+| SPD-S Controller Board
+| Test Battery or an Electronic Load
+| Computer with installed Graphical User Interface for ADBT1000_Eval_Software
+
+General Description
+===================
+
+The ADBT1000 system demo evaluation kit is a recommended starting point for users building battery formation and test equipment based on the ADBT1000 Four Channel AFE, Digital Controller, and PWM for Battery Formation and Test. The system is composed of the ADBT1000 controller board, which has sockets for accommodating 4 switching power modules, and an SDP board as the host interface to run the software. The system has an intuitive graphic user interface (GUI), called KingWare, which serves as the user hub for configuration, evaluation, debugging, datalogging and rapid prototyping of the system demo board. The ADBT1000 datasheet should be consulted in conjunction with this user guide.
+
+Warning
+=======
+
+When testing this system with lithium-ion (Li-Ion) batteries, take care not to overcharge or over-discharge the batteries, or to sink/source more than the maximum current recommended by the manufacturer of the battery. Exceeding these ratings can not only damage the battery but can also cause it to explode or catch on fire.
+
+ADBT1000 Battery Testing and Formation Evaluation Board
+=======================================================
+
+| |System Demo Board Photograph|
+|
+
+.. container:: centeralign
+
+   *Figure 1. System Demo Board Photograph*\
+
+
+Simplified Block Diagram
+========================
+
+|image1|
+
+.. container:: centeralign
+
+   *Figure 2. System Demo Simplified Block Diagram*\
+
+
+Getting Started
+===============
+
+Powering The System
+-------------------
+
+The system requires the following power supplies:
+
+-  +/-15V for Auxiliary Power Input
+-  DC Bus Power Input of 12 to 36V, depending on application
+
+Board Connection Sequence
+-------------------------
+
+The following sequence is recommended for board operation. Refer to Figure 7 for the recommended test setup.
+
+-  Connect switching power modules(P6) to connectors J3 to J6 of the system control board (SCB).
+-  Connect the Device Under Test (electronic load or battery) to connector P5 on the switching power module.
+
+|2-wire Battery Connection|
+
+.. container:: centeralign
+
+   *Figure 3. 2-wire Battery Connection*\
+
+
+-  Connect the SDP-S controller to the System Control Board.
+
+
+
+|SDP-S Connection|
+
+.. container:: centeralign
+
+   *Figure 4. SDP-S Connection*\
+
+
+-  Connect power supplies of +/-15V to P5 of the system control board for the Auxiliary Power Input.
+
+
+
+|image2|
+
+.. container:: centeralign
+
+   *Figure 5. Auxiliary Power Supply Connection*\
+
+
+-  Connect power supplies for the DC bus voltage to P2 of the system control board. Connect an electronic load in parallel. Set the electronic load to CV mode at a level about 200mV above the DC bus voltage.
+
+
+
+|DC Bus Connection|
+
+.. container:: centeralign
+
+   *Figure 6. DC Bus Connection*\
+
+
+-  Turn on Auxiliary power, then DC bus voltage, then electronic load at DC bus.
+-  Connect the SDP-S board to the PC with the USB cable.
+-  Software can now be launched.//
+
+|image3|
+
+.. container:: centeralign
+
+   *Figure 7. ADBT1000 Test Setup*\
+
+
+//
+
+Evaluation Board Hardware
+=========================
+
+System Control Board
+--------------------
+
+The System Control Board (SCB) serves as the main controller of the system and houses the ADBT1000. Connectors J3 to J6 mate with the Switching Power Modules (SPM) to provide the PWM control signals for the MOSFET drivers, and to feedback the battery current and battery voltage signals to the SCB. This modular approach of the system gives the user flexibility in the design of the system. Provisions are available for using an external clock and an external reference on the board. The SCB uses auxiliary supplies of +/-15V to generate several supply rails which will power the onboard circuitry, as well as the switching power modules attached to it. The ratings of the DC Bus must be enough to provide the necessary current required to charge the batteries. The available supply rails are:
+
+-  +/-15V
+-  +/-12V
+-  +10V
+-  +5V
+-  +3.3V
+
+| |ADBT1000 System Control Board|
+
+.. container:: centeralign
+
+   *Figure 8. System Control Board*\
+
+
+   | Table 1 below shows the onboard connectors on the SCB and their corresponding functions.
+|
+
+.. container:: centeralign
+
+   **Table 1. SCB Connections and Functions**\
+
+
+   |image4|
+
+DC Bus Monitor
+~~~~~~~~~~~~~~
+
+| The DC Bus input provides the high side voltage for the half bridge on the switching power module. The DC bus monitor provides a way of feeding this voltage back to the ADBT1000 in a feedforward control mechanism to reduce effects of any sudden interference on the DC bus supply. However, this voltage must be scaled down before going into the ADBT1000. There are onboard resistor dividers which can be used for this purpose. Refer to Table 2 for the correct setting to keep the input to the ADC within range. The scaling factor is the effective resistor divider ratio required for a nominal to max DC bus voltage range given below.
+| Ensure that these jumpers are set up correctly according to the nominal bus voltage before powering up the system.
+|
+
+.. container:: centeralign
+
+   **Table 2. Jumper Settings for DC Bus Monitor**\
+
+
+   |image5|
+
+ISense Filter and VSense Buffer Provisions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The SCB has onboard provisions for the sensed battery voltages and currents from the switching power module. Each channel has the following provisions:
+
+-  Differential low pass filter provision for reducing any switching noise that may couple through the current sense resistor. The capacitors do not come preinstalled. The user should install the appropriate capacitor values to use the filter.
+-  Buffer amplifier to provide a high impedance interface to the battery.
+
+Switching Power Module
+----------------------
+
+| The Switching Power Module contains a bidirectional half bridge power FET configuration that enables charging and discharging of cells. Overvoltage, undervoltage and overcurrent protection is incorporated for the half-bridge FETs. A four (4) wire pluggable terminal block enables either a 4-wire or 2-wire connection to the battery. A two wire pluggable terminal block enables connecting to a thermistor. Each SPM is rated at 10A.
+| |image6|
+
+.. container:: centeralign
+
+   *Figure 9. Switching Power Module*\
+
+
+|
+
+.. container:: centeralign
+
+   **Table 3. SPM Jumper Functions and Configurations**\
+
+
+   |image7|
+
+Battery Voltage Detect
+~~~~~~~~~~~~~~~~~~~~~~
+
+| The switching power module includes a battery voltage detect feature, which is intended to sense when the battery is connected with a reverse polarity.
+| Short pins 2 and 3 of connector P1 to use this feature. When a battery is connected with a reverse polarity, the battery will be isolated from the PWM drive circuit. The battery voltage detection feature can be disabled by shorting pins 1 to 2 on connector P1. This may be necessary when charging and discharging outputs less than 500mV.
+| Warning: Do not apply more than -1.5V on the battery output or excessive currents can result.
+
+Thermistor Connection
+~~~~~~~~~~~~~~~~~~~~~
+
+| The board has a provision for connecting a thermistor to measure thermal effects on the board. This signal is routed to the SCB through connector P6 and is used as feedback to the ADBT1000. If a voltage is used to simulate a thermistor response, the correct polarity, shown in Figure 9 below must be observed.
+| |image8|
+
+.. container:: centeralign
+
+   *Figure 10. Thermistor Connection*\
+
+
+Evaluation Board Software
+=========================
+
+Installing the ADBT1000 GUI
+---------------------------
+
+| The ADBT1000 (Graphical User Interface) GUI can be downloaded from the ADBT1000 product page on the Analog Devices website.
+| Install the software to have access and control to the System Control Board (SCB) through the Analog Devices System Demonstration Platform (SDP). The default location for the software is "C:\\Program Files (x86)\\Analog Devices\\ADBT1000_Eval_Software"
+| This location contains the executable software and support files.
+
+Installation Steps
+~~~~~~~~~~~~~~~~~~
+
+-  Download the file from the ADBT1000 Product Page and unzip the file.
+
+
+|image9|
+
+.. container:: centeralign
+
+   *Figure 11. Choose Folder Location*\
+
+
+-  Run the ADBT1000_Eval_Software_setup.exe in the unzipped folder.
+-  The Setup Wizard will come up as in Figure 12 below. Click Next.
+
+|image10|
+
+.. container:: centeralign
+
+   *Figure 12. Start of Installation Wizard*\
+
+
+-  Accept the license agreement, then select the destination location for the software.
+
+
+
+|image11|
+
+.. container:: centeralign
+
+   *Figure 13. Choose Installation Location*\
+
+
+-  Select all components to be installed then click Next
+-  Choose whether to add a Desktop shortcut and click Next. When the Installation summary as shown in Figure 14 below comes up, click **Install**.
+
+|image12|
+
+.. container:: centeralign
+
+   *Figure 14. Summary of set Installation*\
+
+
+-  Wait for installation to complete. The software can then be launched.
+
+
+
+|image13|
+
+.. container:: centeralign
+
+   *Figure 15. Installation Finish*\
+
+
+Changing the Serial Peripheral Interface (SPI) Baud Rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The SDP can operate with a baud rate up to a maximum of 8MHz. The default frequency is set to 200kBaud. This can be changed once the software is installed. To change the baud rate;
+
+-  Find the device-config file in the path as shown in the Figure below.
+
+
+|image14|
+
+.. container:: centeralign
+
+   *Figure 16. Path for Device Configuration File*\
+
+
+-  Change the value in the variable “sclkFrequency” to 8000000 in order to run at the maximum baud rate.
+
+
+
+|image15|
+
+.. container:: centeralign
+
+   *Figure 17. Editing the SCLK Frequency*\
+
+
+KingWare Quick Start Up
+-----------------------
+
+Once KingWare is installed and the system is powered up, follow the proceeding steps to configure the board.
+
+-  To launch the software, click **Windows** and run the ADBT1000_Eval_Software or double click the shortcut icon created on the desktop during installation. The home page below should come up.
+
+
+|image16|
+
+.. container:: centeralign
+
+   *Figure 18. KingWare Home Page*\
+
+
+-  Click **Connect** to get started. Once the board is connected, click **Start** to proceed to configuring the system.
+-  Configure the settings for the application. Default values are also pre-loaded on the software. These can be found in Table 4 in the following section. |image17|\
+
+.. container:: centeralign
+
+   *Figure 19. Quick Setup Using KingWare*\
+
+
+-  Click **Continue** once the setup is complete. This will initiate a precharge operation and will load all the equivalent values onto the registers of the ADBT1000.
+-  When this is done, the user will be taken to the **Configure Channel** tab on KingWare. Input values for the Voltage limit, Current limit, Time limit, Current setpoint and Voltage setpoint.
+-  Click **Execute**. This will start system operation and the system will automatically start taking data. Switch to the **Live Data** tab to view battery current and voltage.
+
+|image18|
+
+.. container:: centeralign
+
+   *Figure 20. Example CC-CV Operation when Executed*\
+
+
+Using KingWare
+==============
+
+| There are several tabs in KingWare which allow the user to get full functionality of the board. These will be described in the following sections. Please note that the datasheet should be consulted when configuring and operating the board.
+| It is important to note that the software must be run with the jumpers in their desired configurations. If any settings, for example, the load or jumper settings, need to be changed, it is recommended that operation first be stopped and the GUI disconnected. After changes on the board are done, rerun the configuration settings. It is critical that jumper settings be changed while the power is off.
+
+General Functions
+-----------------
+
+The KingWare platform comes with general functions that will be usable throughout the evaluation.
+
+
+|image19|
+
+.. container:: centeralign
+
+   *Figure 21. ADBT1000 Connection*\
+
+
+Page Navigation
+~~~~~~~~~~~~~~~
+
+On KingWare, clicking on the Analog Devices logo will navigate the user back to the Home page.
+
+Device Connection
+~~~~~~~~~~~~~~~~~
+
+The LED on the ADBT1000 in Figure 22 indicates whether the device is connected or not. The green LED indicates that the device is connected. Clicking **Disconnect** will disconnect the device from the application. Conversely, clicking Connect will connect the device back to the application.
+
+
+|image20|
+
+.. container:: centeralign
+
+   *Figure 22. General Functions*\
+
+
+Stop Instructions
+~~~~~~~~~~~~~~~~~
+
+This can be used to stop all operation on the board. This will be useful if an error occurs during the run, for example, if some currents get too high.
+
+Bell Icon
+~~~~~~~~~
+
+| Clicking on the Bell icon will show the Activity Monitor, which logs all data writes and reads done by the tool. When new interrupts occur, a red dot will appear on the bell icon.
+| On the Activity Monitor drop-down, the user will be able to see all the events that have been done. This feature is useful for tracking procedures in the whole use of the system. |image21|
+
+.. container:: centeralign
+
+   *Figure 23. Activity Monitor*\
+
+
+Users can view entire log files by clicking the Show Full Logs hypertext on the upper right of the Activity Monitor. This will open a file explorer with the location of the csv file.
+
+Data Polling/Interrupt Polling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Data polling** indicates that the system is currently capturing current and voltage data from the device. The **Interrupt polling** button should be enabled if the user wants to receive interrupts from the device. This is enabled by default.
+
+Configuring the System
+----------------------
+
+| As discussed in the KingWare quick start section, to start operating the board, the user must fill in the required parameters on the **Configure Systems tab**. These parameters come pre-filled with default values upon installation. The default values for these settings can be seen in Table 4. However, the software stores the last programmed configuration, so when the settings are changed, these will be the default once the software is re-opened.
+| Clicking on the expand button on the right side of each parameter will show a dropdown menu that gives the user more options to customize the application. |image22|
+
+.. container:: centeralign
+
+   *Figure 24. Expand Button*\
+
+
+The user may also navigate through the configurations through the Up and Down arrow at the bottom of the page.
+
+
+
+|image23|
+
+.. container:: centeralign
+
+   *Figure 25. Navigation Button*\
+
+
+Once the parameters have been set with the desired values, pressing **Continue** will start a precharge operation and a write to the ADBT1000 registers. It will also bring the user to the **Configure Channel tab**. The **Continue** button will be enabled only if all the questions in the wizard are answered. If the user provides invalid values to any of the configurations or leaves any of them empty, the button will be disabled until all the configurations are answered.
+
+.. container:: centeralign
+
+   **Table 4. Default Configuration for System**\
+
+
+   |image24|
+
+Configuring Channels
+--------------------
+
+| The **Configure Channel tab** allows the user to visually configure and operate each channel of the system demo board. In this tab, the user can select charge, discharge, and rest modes, and set limits for the specific application. The battery, bus, and power stage buttons can be connected or isolated. On running the startup sequence, these buttons will be green, indicating that they are connected. The background of the container will be changed based on the instruction the user executes. Figure 27 depicts modes of Charge, Discharge, and Rest, respectively.
+| The modes of operation can be set in this tab. The user can choose to do a charge, discharge, or rest cycle. Upon choosing the preferred cycle, the user can choose the mode in the following dropdown: |image25|
+
+.. container:: centeralign
+
+   *Figure 26. Charge or Discharge Mode*\
+
+
+| |image26|
+
+.. container:: centeralign
+
+   *Figure 27. Example Channel Modes*\
+
+
+The ADBT1000 has two control loops per channel: the I-channel and the V-channel. The mode selected will determine which control loop is active. There are 32 modes in all for both charge and discharge cycles, however, the 4 basic modes are discussed below:
+| \* Constant Current (CC)
+| I-channel is in control, loop target will be set to ISET
+
+-  Constant Voltage (CV)
+   V-channel is in control, loop target will be set to VSET
+-  Constant Power (CP)
+   I-channel is in control, loop target will be set to PSET/VMEAS where PSET is the power setpoint
+-  Constant Resistance (CR)
+   I-channel is in control, loop target will be set to VMEAS*GSET where GSET is the conductance setpoint
+
+There are five variables that need to be set in order to execute an operation. These are enumerated below. Refer to the ADBT1000 datasheet for the description of these variables.
+
+-  Voltage Limit
+-  Current Limit
+-  Time Limit
+-  Voltage Setpoint
+-  Current Setpoint
+
+VMEAS determines where the measurement is being taken.
+
+-  BVP/BVN – actual battery voltage is being measured
+-  CVS/BVN – capacitor voltage is being measured
+
+| |image27|
+
+.. container:: centeralign
+
+   *Figure 28. Vmeas Options*\
+
+
+| When the modes and the limits are set, clicking Execute will start the cycle. During execution, the top right portion of each channel will display the actual measured battery voltage and battery current. |image28|
+
+.. container:: centeralign
+
+   *Figure 29. Measured Battery Voltage and Current*\
+
+
+| If the user wants to change any parameters, the changes can be made to the variables, but the changes will not apply until the user clicks **Update**. |image29|
+
+.. container:: centeralign
+
+   *Figure 30. Update Button*\
+
+
+| The channels are grouped based on the master slave configuration. By default, the channels are configured as Individual. The following section will discuss parallel configuration. |image30|
+
+.. container:: centeralign
+
+   *Figure 31. Header Channel Configuration*\
+
+
+Parallel Configuration
+~~~~~~~~~~~~~~~~~~~~~~
+
+| Multiple channels can work in parallel. Inside a group of multiple channels working in parallel, a channel will be declared as the master and will transmit IMEAS to the other channels. The master channel will operate as configured but the slave channels will operate in CC mode.
+| To operate in a parallel configuration, go to the **Configure Systems** tab. Under Channel Configurations, there are several options for the desired mode: Two Pair, Parallel, and Individual and Two Pair. The description of each is shown in Table 5. Parallel Configurations.
+|
+
+.. container:: centeralign
+
+   \**Table 5. Parallel Configurations \**
+
+
+   |image31|
+
+| After setting the mode, under Master Slave Configurations, choose which channels are to be configured as master or slave as in the figure below:
+| |image32|
+
+.. container:: centeralign
+
+   *Figure 32. Master and Slave Channel Configurations*\
+
+
+| Take note that when operating channels in parallel, the master should be connected in a 4-wire configuration, while the slave channels should be connected in a 2-wire configuration. Also, the current setpoint for the channels should be specified as the total of the desired charge current divided by the number of channels in parallel. Therefore, for 2 channels in parallel, the current setpoint will be half of the desired, and for all channels in parallel, the current setpoint is the total current divided by 4. The current displayed on the top right of the master channel will be the sum of all the channels.
+| Figure 33 shows an example for a two-pair configuration using Channels A and B. Note that only the master slave can be configured when in the **Configure Channel** tab. Example data is also shown in the figure. |image33|
+
+.. container:: centeralign
+
+   *Figure 33. Parallel Channel Configuration and Data*\
+
+
+Getting Live Data
+-----------------
+
+| The **Live Data** tab allows the user to monitor the currents and voltages on each channel of the system demo board. This provides an easy way to monitor the activity on each channel of the board. |image34|
+
+.. container:: centeralign
+
+   *Figure 34. Configure Live Data Tab*\
+
+
+| When the operation is executed from the channel configuration tab, the software will automatically start taking data. The plot below shows actual data taken on the software in CC-CV mode of operation. |image35|
+
+.. container:: centeralign
+
+   *Figure 35. Actual Data Showing CC-CV Operation*\
+
+
+| Data is not logged until the logging feature is enabled. To enable logging, click the gear on the top right portion of KingWare. Check the channels which need to be datalogged, and click **Start**. |image36|
+
+.. container:: centeralign
+
+   *Figure 36. Start Data Logging*\
+
+
+| Clicking on **show logs** hyperlink at the bottom of the options will open a folder where the csv files are stored.
+| The **Reset** button on the top right of the tab will reset all graphs in the Live Data page. On clicking this button, the application will ask for confirmation, and when the user chooses Yes, all data from the page will be cleared. The data is still stored on the disk if logging was enabled. |image37|
+
+.. container:: centeralign
+
+   *Figure 37. Reset Data Button*\
+
+
+Running Diagnostics
+-------------------
+
+| The **Diagnostics** tab allows the user to monitor the control functions for the system. An EIS analysis can be performed through this tab. |image38|\
+
+.. container:: centeralign
+
+   *Figure 38. Diagnostic Tab*\
+
+
+EIS Analysis
+~~~~~~~~~~~~
+
+| During EIS Analysis, users can provide required NCO & DEMOD values in the configuration tab, PID values in the PID tab, and Frequency type and values in the Frequency tab. The user can start the analysis only after enabling NCO & DEMOD.
+| The default values of PID will be fetched from the PID values provided in the Configure Systems wizard. Users can modify the default values and provide custom values.
+
+Instructions
+------------
+
+| The **Instruct** Tab allows executing instructions through scripts. |image39|
+
+.. container:: centeralign
+
+   *Figure 39. Instruct Tab*\
+
+
+Channel Card
+~~~~~~~~~~~~
+
+| There are 4 channel cards (apart from the Register Settings card) vertically arranged on the left side of the Instructions tab. Each card pertains to one channel in the device and displays high-level information about the channel.
+| Each card displays the execution state of the channel and has a drop-down to select the mode of execution. The card also displays whether the channel is a Master or a Slave. Clicking the channel card would open the channel editor, where the user can write instructions pertaining to that channel. |image40|
+
+.. container:: centeralign
+
+   *Figure 40. Channel Execution Mode*\
+
+
+| The user can edit only in master channels. Any change in the master channel is automatically reflected in the slave channels. The channel cards also display the latest channel interrupt. The interrupt messages will be cleared once the user clicks on any of the other channel cards. |image41|
+
+.. container:: centeralign
+
+   *Figure 41. Channel Card with Instruction Interrupt*\
+
+
+Channel Editor
+~~~~~~~~~~~~~~
+
+| The instruction commands supported are **Charge**, **Discharge**, **Rest**, **Halt**, and **Loop**. |image42|
+
+.. container:: centeralign
+
+   *Figure 42. Auto-Suggestion on Channel Editor*\
+
+
+| Clicking on the mode would fill the payloads of the particular mode. The payloads would be displayed with default values which the user can change. The black colored words indicate the payload keywords, while the blue colored words indicate the corresponding payload values which can be configured. |image43|
+
+.. container:: centeralign
+
+   *Figure 43. Mode with Payload*\
+
+
+| The register-field pop up would be displayed whenever the user clicks on payload values. This pop up allows user to change the payload values. The title of the pop up represents the name of the payload. The pop up contains the particular payload’s register field name, unit, field value and the bits representation. Upon hovering over one field, the related bits of the fields are highlighted in the bit wise section. Changing the field values in the pop up would change the corresponding field value in the editor and vice versa. |image44|
+
+.. container:: centeralign
+
+   *Figure 44. VLimit Register Field*\
+
+
+| Once the instructions are written in the editor, the user can click on the **Execute** button in case of automatic mode. Upon clicking the **Execute** button, the corresponding register writes for the instruction are written to the instruction memory registers and the instruction starts executing. |image45|
+
+.. container:: centeralign
+
+   *Figure 45. Execute Button*\
+
+
+| In the case of manual or semi-auto mode, the user needs to click on **Load Instruction** before executing. Clicking on the **Stop** button would stop the instruction execution. |image46|
+
+.. container:: centeralign
+
+   *Figure 46. Load Instruction Button*\
+
+
+| The user is prevented from navigating to the **Configure Channel** and **Configure Systems** page, as well as closing the tool when any of the channels is in the execution state.
+
+Execution Modes
+~~~~~~~~~~~~~~~
+
+The Instruction Tab supports three modes of execution: Manual, Semi-Auto, and Automatic. Each of these modes will be discussed in this section.
+
+Manual Mode
+^^^^^^^^^^^
+
+| In manual sequencing mode, the user can write multiple instructions in the editor and load the first set of instructions by clicking **Load Instruction**. On loading, the instruction is written into the next instruction area of the channel register map and grayed out. User can start the instruction execution by clicking **Execute**. The instruction pointer in the editor points to the next set of instructions. |image47|
+
+.. container:: centeralign
+
+   *Figure 47. Instructions in Manual Mode*\
+
+
+| It is expected that the user will write the next instruction and click **Load instruction** upon receiving **Instruction Done** or **Instruction Timeout** interrupt. The Execute button will be enabled, and upon clicking the button, it executes the next set of loaded instructions.
+
+Semi-Automatic Mode
+^^^^^^^^^^^^^^^^^^^
+
+| In semi-auto sequencing mode, the user needs to load the first set of instructions to the device by clicking the **Load Instruction** button. On loading, the first instruction set is grayed out and is written into the next instruction area of the channel register map. On clicking **Execute**, the self-clearing bit “START” is set, thus initiating the execution of this instruction. The instruction pointer in the editor points to the next set of instructions to be loaded.
+| It is expected that the user will write the next instruction and click the **Load instruction** button upon receiving **Instruction Done** or **Instruction Timeout** interrupt. On clicking the **Load Instruction** button, the next instruction is written to the next instruction register and the “NEXT_INSTR_READY” bit is set. |image48|
+
+.. container:: centeralign
+
+   *Figure 48. Instructions in Semi-Automatic Mode*\
+
+
+Automatic Mode
+^^^^^^^^^^^^^^
+
+| In auto sequencing mode, all instructions are programmed in instruction memory. On clicking **Execute**, the self-clearing bit “START” is set, thus initiating the execution of the instructions. The instructions are grayed out on execution. The memory address pointer is displayed at the top of the channel editor. **Sequence Completed interrupt** is generated when all instructions have been executed. |image49|
+
+.. container:: centeralign
+
+   *Figure 49. Instructions in Automatic Mode*\
+
+
+| User can stop the instruction execution by clicking the **Stop** button.
+
+Loop Instructions
+~~~~~~~~~~~~~~~~~
+
+| Loop instruction is supported only in automatic mode. The syntax of loop instruction: |image50|
+
+.. container:: centeralign
+
+   *Figure 50. Loop Instruction*\
+
+
+| The user can write charge, discharge, or rest instructions inside the loop. On clicking the **Execute** button, the first instruction will be executed. After the occurrence of **Instruction Done** interrupt, the next instruction will be executed. The loop restarts after completing the execution of all the instructions inside. The loop executes the instructions inside for the number of times indicated by the variable **count** in the syntax. |image51|
+
+.. container:: centeralign
+
+   *Figure 51. Loop Example*\
+
+
+| An example loop instruction was run and results can be seen on the Live Data tab. |image52|
+
+.. container:: centeralign
+
+   *Figure 52. Live Data for Loop Example*\
+
+
+Editor Features
+~~~~~~~~~~~~~~~
+
+| The register and the channel editors comprise the below features: |image53|
+
+.. container:: centeralign
+
+   *Figure 53. Editor Features*\
+
+
+| \* Undo/Redo – undo or redo the commands
+
+-  Open – open an existing file with the commands to be executed
+-  Save – save the executed commands to a text file in .txt format
+-  Delete – clears the editor content
+
+Activity Monitor
+~~~~~~~~~~~~~~~~
+
+| This monitor allows viewing the results of executed scripts, interrupts and warnings. User can view the results of channels either collectively or individually from the toggle button to the top right of the activity monitor. The channel selected in the toggle button corresponds to the active channel card. The monitor has support to filter events like ‘All events’, ‘Interrupts’ and ‘Warnings’. |image54|
+
+.. container:: centeralign
+
+   *Figure 54. Activity Monitor on Instruct Tab*\
+
+
+Registers Tab
+-------------
+
+| This page allows communication with the device registers through scripts. This page comprises a script editor and status editor. The script editor allows to type the script which has to be executed and the status editor allows to view the result of the executed script. Multiple read and write operations are supported. |image55|
+
+.. container:: centeralign
+
+   *Figure 55. Configure Register Tab*\
+
+
+| While clicking on the register value, a window having the field details of the respective register will appear. |image56|
+
+.. container:: centeralign
+
+   *Figure 56. Register Window*\
+
+
+| The header of the window represents the name of the register, and also contains the field name, size of the field and its controls.
+| From this window, field values and its bit representation of the respective field can be identified by hovering the field. On changing the value of the field, those changes will affect the register value in the script editor and vice versa.
+| The **Execute** button execute the script in the editor and updates the status in the status editor. This button will be enabled only if the scripts in the editor are valid.
+
+Help Tab
+--------
+
+| The Help tab provides the user with quick links to the user manual and quick start procedures for the system. |image57|
+
+.. container:: centeralign
+
+   *Figure 57. Help Tab*\
+
+
+Evaluation Board Schematics and Layout
+======================================
+
+.. _system-control-board-1:
+
+System Control Board
+--------------------
+
+| |image58|
+
+.. container:: centeralign
+
+   *Figure 58. ADBT1000 Connections*\
+
+
+| |image59|
+
+.. container:: centeralign
+
+   *Figure 59. Onboard Battery Monitor*\
+
+
+| |image60|
+
+.. container:: centeralign
+
+   *Figure 60. SPI Connections*\
+
+
+| |image61|
+
+.. container:: centeralign
+
+   *Figure 61. DC Bus Monitor Connections*\
+
+
+| |image62|
+
+.. container:: centeralign
+
+   *Figure 62. Power Section*\
+
+
+| |image63|
+
+.. container:: centeralign
+
+   *Figure 63. Current Sense Filter*\
+
+
+| |image64|
+
+.. container:: centeralign
+
+   *Figure 64. Voltage Sense Buffer*\
+
+
+| |image65|
+
+.. container:: centeralign
+
+   *Figure 65. Connections for SPM Sockets*\
+
+
+| |image66|
+
+.. container:: centeralign
+
+   *Figure 66. System Control Board Top Layer*\
+
+
+| |image67|
+
+.. container:: centeralign
+
+   *Figure 67. System Control Board Layer 1 Primary*\
+
+
+| |image68|
+
+.. container:: centeralign
+
+   *Figure 68. System Control Board Layer 2 Ground*\
+
+
+| |image69|
+
+.. container:: centeralign
+
+   *Figure 69. System Control Board Layer 3 Signal*\
+
+
+| |image70|
+
+.. container:: centeralign
+
+   *Figure 70. System Control Board Layer 4 Signal*\
+
+
+| |image71|
+
+.. container:: centeralign
+
+   *Figure 71. System Control Board Layer 5 Ground*\
+
+
+| |image72|
+
+.. container:: centeralign
+
+   *Figure 72. System Control Board Layer 6 Secondary*\
+
+
+.. _switching-power-module-1:
+
+Switching Power Module
+----------------------
+
+| |image73|
+
+.. container:: centeralign
+
+   *Figure 73. System Power Module*\
+
+
+| |image74|
+
+.. container:: centeralign
+
+   *Figure 74. Current Sense and Socket Connection*\
+
+
+| |image75|
+
+.. container:: centeralign
+
+   *Figure 75. Switching Power Module Silkscreen*\
+
+
+| |image76|
+
+.. container:: centeralign
+
+   *Figure 76. Switching Power Module Primary Layer*\
+
+
+| |image77|
+
+.. container:: centeralign
+
+   *Figure 77. Switching Power Module Ground Layer*\
+
+
+| |image78|
+
+.. container:: centeralign
+
+   *Figure 78. Switching Power Module Power Layer*\
+
+
+| |image79|
+
+.. container:: centeralign
+
+   *Figure 79. Switching Power Module Secondary Layer*\
+
+
+Bill of Materials
+=================
+
+|
+
+.. container:: centeralign
+
+   **Table 5. System Control Board**\
+
+
+|image80| |image81| |image82| |image83| |image84| |image85|
+|
+
+.. container:: centeralign
+
+   **Table 6. Switching Power Module**\
+
+
+|image86| |image87| |image88|
+| |image89|
+
+.. |System Demo Board Photograph| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000scb1kitangle.jpg
+   :width: 800px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_system_demo_simplified_block_diagram.svg
+.. |2-wire Battery Connection| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_two_wire_load_connection.jpg
+   :width: 300px
+.. |SDP-S Connection| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_sdp_s_connection.jpg
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_auxiliary_power_supply_connection.jpg
+   :width: 300px
+.. |DC Bus Connection| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dc_bus_connection.jpg
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_test_setup.svg
+   :width: 600px
+.. |ADBT1000 System Control Board| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_scb.jpg
+   :width: 700px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_scb_connections_and_functions.jpg
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt10000_jumper_setting_for_dc_bus_monitor.jpg
+   :width: 400px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_spm.jpg
+   :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_spm_jumper_function_and_configuration.jpg
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_thermistor_connection.jpg
+   :width: 300px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_choose_folder.svg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_start.svg
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_choose_location.svg
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_summary_set.svg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_finish.svg
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_path_for_device_config_file.svg
+   :width: 400px
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_editing_sclk.svg
+   :width: 400px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_home_page.svg
+   :width: 400px
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_quick_setup.svg
+   :width: 400px
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_example_cc-cv_operation.svg
+   :width: 200px
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_connection.jpg
+   :width: 400px
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_general_functions.jpg
+   :width: 400px
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_activity_monitor.svg
+   :width: 400px
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_expand_button.svg
+   :width: 400px
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_navigation_button.svg
+   :width: 200px
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_default_values.jpg
+   :width: 800px
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_charge_or_discharge_mode.svg
+   :width: 300px
+.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_example_channel_modes.svg
+   :width: 600px
+.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_vmeas_options.svg
+   :width: 300px
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_measured_battery_voltage_and_current.svg
+   :width: 300px
+.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_update_button.svg
+   :width: 300px
+.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_header_channel_configuration.svg
+   :width: 300px
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_parallel_configuration.jpg
+   :width: 800px
+.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_master_and_slave_channel_configuration.svg
+   :width: 400px
+.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_parallel_channel_configuration_and_data.svg
+   :width: 800px
+.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_configure_live_data.svg
+   :width: 800px
+.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_actual_data_showing_cc-cv_operation.svg
+   :width: 400px
+.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_start_of_datalogging.svg
+   :width: 200px
+.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_reset_data_button.svg
+   :width: 200px
+.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_diagnostic_tab.svg
+   :width: 800px
+.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instruct_tab.svg
+   :width: 800px
+.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_channel_execution_mode.svg
+   :width: 300px
+.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_channel_card_with_instruction_interrupt.svg
+   :width: 300px
+.. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_auto-suggestion_on_channel_editor.svg
+   :width: 600px
+.. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_mode_with_payload.svg
+   :width: 400px
+.. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_vlimit_register_field.svg
+   :width: 300px
+.. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_execute_button.svg
+   :width: 200px
+.. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_load_instruction_button.svg
+   :width: 200px
+.. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_manaul_mode.svg
+   :width: 600px
+.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_semi-automatic-mode.svg
+   :width: 600px
+.. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_automatic_mode.svg
+   :width: 600px
+.. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_loop_instruction.jpg
+   :width: 200px
+.. |image51| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_loop_example.svg
+   :width: 600px
+.. |image52| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_live_data_for_loop_example.jpg
+   :width: 600px
+.. |image53| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_editor_features.jpg
+   :width: 200px
+.. |image54| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_activity_monitor_on_instruct_tab.jpg
+   :width: 600px
+.. |image55| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_register_tab.svg
+   :width: 800px
+.. |image56| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_register_window.svg
+   :width: 400px
+.. |image57| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_help_tab.svg
+   :width: 800px
+.. |image58| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_adbt1000_connections.svg
+   :width: 800px
+.. |image59| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_on_board_battery_monitor.svg
+   :width: 450px
+.. |image60| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_spi_connections.svg
+   :width: 800px
+.. |image61| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_dc_bus_monitor_connection.svg
+.. |image62| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_power_sections.svg
+   :width: 800px
+.. |image63| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_current_sense_filter.svg
+   :width: 800px
+.. |image64| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_voltage_sense_buffers.svg
+   :width: 800px
+.. |image65| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_connections_for_spm_sockets.svg
+   :width: 800px
+.. |image66| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_top_layer.svg
+   :width: 600px
+.. |image67| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_1_primary.svg
+   :width: 600px
+.. |image68| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_2_ground.svg
+   :width: 600px
+.. |image69| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_3_signal.svg
+   :width: 600px
+.. |image70| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_4_signal.svg
+   :width: 600px
+.. |image71| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_5_ground.svg
+   :width: 600px
+.. |image72| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_6_secondary.svg
+   :width: 600px
+.. |image73| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_system_power_module.svg
+   :width: 800px
+.. |image74| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_current_sense_and_socket_connections.svg
+   :width: 600px
+.. |image75| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_silkscreen1.svg
+   :width: 600px
+.. |image76| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_primary_layer.svg
+   :width: 600px
+.. |image77| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_ground_layer.svg
+   :width: 600px
+.. |image78| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_power_layer.svg
+   :width: 600px
+.. |image79| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_secondary_layer.svg
+   :width: 600px
+.. |image80| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt100_bom_scb2.1.svg
+   :width: 797px
+.. |image81| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb3.svg
+   :width: 795px
+.. |image82| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb4.svg
+   :width: 798px
+.. |image83| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb5.svg
+   :width: 800px
+.. |image84| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb6.svg
+   :width: 800px
+.. |image85| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb7.svg
+   :width: 800px
+.. |image86| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm1.1.svg
+   :width: 800px
+.. |image87| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm2.svg
+   :width: 800px
+.. |image88| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm3.svg
+   :width: 800px
+.. |image89| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_copyright1.svg
+   :width: 800px

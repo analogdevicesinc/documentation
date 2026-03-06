@@ -1,0 +1,90 @@
+:doc:`Return to parent page </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/adsp-215xx_and_adsp-sc5xx>`
+
+EV-21568-SOM
+============
+
+Connections
+-----------
+
+| 
+| EV-21568-SOM with EV-SOM-CRR EZ-Kit Connections
+|
+
+.. container:: centeralign
+
+   \ |image1|\
+
+
+.. container:: centeralign
+
+   \ **Figure:** EV-21568-SOM Top View
+
+
+|
+
+.. container:: centeralign
+
+   \ |image2|\
+
+
+.. container:: centeralign
+
+   \ **Figure:** EV-21568-SOM Bottom View
+
+
+| =====Settings=====
+
+The board settings for running SigmaStudio+ EV-2156-SOM with EV-SOM-CRR EZ-Kit, using the Default Application is given in the below tables.
+
+====== =========================================================
+Switch Setting
+====== =========================================================
+SW1    BOOT Mode Switch Default Position 6 (SWCLK from LINKPORT)
+====== =========================================================
+
+| Switch Settings for EV-21568-SOM Board
+| ^ Jumper ^ Setting ^
+
+=== ====================================
+JP1 2-3 connected Power by SOM Connector
+=== ====================================
+
+| Jumper Settings for EV-21568-SOM Board
+| ^ Port ^ Setting ^
+
+== ==============================================
+P2 Debug port connected to ADZS-ICE-2000/ICE-1000
+== ==============================================
+
+| Port Settings for EV-21568-SOM Board
+| ^ Switch ^ Setting ^
+
++-----------+------------------------------------------------------------------+
+| SW1 (CRR) | 1 – ON, 2 – ON, 3 – ON, 4 – ON, 5 – ON, 6 – ON, 7 – OFF, 8 – OFF |
++-----------+------------------------------------------------------------------+
+
+| Switch Settings for EV-SOM-CRR EZ-Kit
+| ^ Jumper ^ Setting ^
+
+=== ================================
+P10 Not Connected (Open Device Mode)
+P6  1-2 Connected (3.3V to JTAG IO)
+=== ================================
+
+| Jumper Settings for EV-SOM-CRR EZ-Lite
+| ^ Port ^ Setting ^
+
+============================= ===============================
+P12                           Connected with SigmaStudio USBi
+P9                            Connected to Power
+J1(SOMCRR EZ-Lite) – J1 (SOM) Connected
+J2(SOMCRR EZ-Lite) – J2 (SOM) Connected
+J3(SOMCRR EZ-Lite) – J3 (SOM) Connected
+============================= ===============================
+
+Port Settings for EV-SOM-CRR EZ-Lite
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21568-som.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/gettingstarted/21568-som_back.png
+   :width: 600px

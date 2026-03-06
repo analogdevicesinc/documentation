@@ -1,0 +1,98 @@
+**Bold Text**\ ====== ADuM3160 FAQ Section ======
+
+The following is a listing of Frequently Asked Questions from our Technical Support teams for the ADuM3160 (2.5KV) and ADuM4160 (5KV) Full and Low Speed USB Digital Isolators
+
+FAQ Topics
+==========
+
+-  The ADuM4160 only isolates the signal path of USB interface. Can you recommend a suitable isolator for power line? Our product is USB bus-powered, not self-powered.
+-  What is the drive capability of the ADuM4160 on-chip regulator, do you have a specification?
+-  Can the ADUM4160 be used for USB-IF standard host isolation?
+-  Can I use the Vdd1 and Vdd2 of ADuM3160/4160 to supply current to other circuits on the board?
+-  What is the difference between the 2 USB isolation devices, ADUM4160/ADUM3160?
+-  Can ADUM4160 support OTG (On The Go) USB?
+-  Is there a difference between the upstream and downstream ports, can they be interchanged?
+-  Can ADuM3160/4160 still work if the connection of D+ and D- is reversed?
+-  The ADUM3160 must be connected directly to a PC USB output, and have to drive a USB cable and the USB peripheral. I want to know if I can use this part also in USB1.1 environment? Is it possible that the part can be used on the PC side and not in the peripheral side?
+-  Is there an IBIS model available for ADuM4160?
+
+====== FAQ Questions and Answers ======
+
+**Q1: The ADuM4160 only isolates the signal path of USB interface. Can you recommend a suitable isolator for power line? Our product is USB bus-powered, not self-powered?**
+
+For power isolation we can offer the ADuM5000 power module. This will work for low power peripherals, <100mA load @5V, but will not meet all of the requirements of USB power. The standby current is too high. Isolating power for a bus powered solution while meeting all of the requirements of the USB standard is very difficult to do without building a lot of control circuitry into the supply. In addition to have a really generic solution, the converter would need nearly 100% efficiency.
+
+If you do not require strict compliance and your power needs are modest, the ADuM5000 is a good option. You can evaluate the ADuM4160 and ADuM5000 with our USB evaluation board, which can be ordered from the product page.
+
+**Q2: What is the drive capability of the ADuM4160 on-chip regulator, do you have a specification?**
+
+It is sufficient to drive a standard USB cable load through the I/O, but there is little capacity to drive external loads from the regulator pin. It is recommended that the regulator pin be used for bypass only. We do not provide a spec for this pin because we do not want to encourage customers to use it as a general purpose regulator.
+
+\**Q3: Can the ADUM4160 be used for USB-IF standard host isolation? \*\*
+
+The ADuM4160 USB isolator is designed to isolate a peripheral port and keep the port compatible with the USB-IF standard. It does that job very well. It was not intended for host isolation.
+
+That being said, because this part was intended to drop into the USB line it has a peripheral type port and a host type port to allow it to interface with the peripheral port of the end point device. The downstream host port is side 2 of the device and it contains the proper pull downs and drive strength to provide host type communications. The only thing holding it back from isolating a host is that full compliance to the USB spec requires that a host auto-detect the speed of any peripheral plugged into it. The ADuM4160 was designed to operate at a single speed, set by hard wiring pins SPU and SPD. So it can be set up and will communicate as a host isolator at either low or full speed, but it will be a fixed speed device however it is set, and so does not meet all of the requirements of the USB-IF standard. For many customers this is adequate for their job and they use it in this way.
+
+So the ADUM4160 will function at either low speed or full speed USB (but only at whichever speed has been set by hardwiring of the SPU and SPD pins. The ADUM4160 does not support high speed USB and so it fails to pass high speed USB signals because it blocks handshaking signals that are used to negotiate that speed.
+
+The circuit note CN0158 describes a circuit implementation to isolate a host device. The hub chip chosen in this circuit note supports high speed operation, but this mode is not allowed by the normal operation of the ADuM4160. The upstream side of the hub controller can be thought of as a standard fixed speed peripheral port that can be easily isolated with the ADuM4160, whereas the speed of the downstream ports is handled by the hub controller. The hub controller converts peripherals of different speeds to match the upstream port speed so the hub solves the problem of adjusting the speed of the downstream ports to match the hardwired (low or full speed) setting on the ADUM4160.
+
+**Q4: Can I use the Vdd1 and Vdd2 of ADuM3160/4160 to supply current to other circuits on the board?**
+
+The Vddx supplies were never intended to supply power to other external circuits outside of allowing for external bypass capacitors and providing bias for the external pull-ups. We did not have enough extra capacity to provide a well regulated external supply of more than a few mA so that that mode of operation is not supported.
+
+**Q5: What is the difference between the 2 USB isolation devices, ADUM4160/ADUM3160?**
+
+There are two differences, insulation rating and operating power supply range.
+
+ADUM3160: Insulation Rating : 2.5kV rms , power supply: 4.0 V to 5.5 V operation ADUM4160: Insulation Rating : 5kV rms , power supply: 3.0 V to 5.5 V operation
+
+**Q6: Can ADUM4160 support OTG (On The Go) USB?**
+
+The ADuM4160 does not support On The Go. This part of the USB specification has modes where power is not present on the cable, and we can not pass signals to initiate communication if power is not present. We recommend dedicated host and peripheral ports if isolation is required.
+
+\**Q7: Is there a difference between the upstream and downstream ports, can they be interchanged? \*\*
+
+The upstream and downstream ports are defined by the presence of Pull-Up and Pull-Down reistors at the buffer. These components are internal to the ADuM3160/4160 and can not be disabled during normal operation. Reversing the upstrean and downstream ports would leave the host side with no pullup, and the peripheral side with double pull up resistors. This would probably make enumeration impossible. The upstream side must always be connected to a host and the downstream side must always be connected to a peripheral.
+
+The ADuM4160 can act as a single speed host interface, but the resistors will not let the part be turned around.
+
+**Q8: ADuM3160/4160 appears to work if the connection of D+ and D- are reversed. Is this possible?**
+
+The ADuM3160/4160 should not be able to work properly with incorrect D+ and D- line connections. The chip makes decisions about end of packet markers based on the idle state for the particular speed selection, it should get confused and say it can’t recognize the peripheral.
+
+It might work in the case where you also set the SPU and SPD pins to the wrong values as well.
+
+**Q9: The ADUM3160 must be connected directly to a PC USB output, and have to drive a USB cable and the USB peripheral. I want to know if I can use this part also in USB1.1 environment? Is it possible that the part can be used on the PC side and not in the peripheral side?**
+
+Yes, this part can be used to isolate a host like a laptop, with some limitations. The ADuM3160 only runs at a fixed speed, either low speed or full speed, set by the SPU and SPD pins. In order for a part to have full functionality as a host isolator, it has to change speed based on what device is plugged into the cable. So the ADuM3160 will work as a fixed speed host, but does not meet all of the requirements of the USB standard.
+
+Our part will be compatible with USB1.1
+
+**Q10: Is there an IBIS model available for ADuM4160?**
+
+Yes, see attached IBIS file
+
+Useful References from FAQs
+===========================
+
+**USB Isolation reference circuits:**
+
+USB Hub Isolation CN0158 : http://www.analog.com/en/circuits-from-the-lab/CN0158/vc.html
+
+USB Cable Isolation CN0159 : http://www.analog.com/en/circuits-from-the-lab/CN0159/vc.html
+
+USB Peripheral Isolation CN0160 : http://www.analog.com/en/circuits-from-the-lab/CN0160/vc.html
+
+**8mm Creepage Compliance :**
+
+Creepage Clearance: 8.3mm Creepage Packaging, Medical Requirements Creepage Video and Creepage FAQ, See foolowing web page: http://www.analog.com/en/interface-isolation/digital-isolators/products/8mm_creepage_packagng/fca.html
+
+**Layout Recommendations for Control of Radiated Emissions with ICoupler Devices:**
+
+Application AN-1109: http://www.analog.com/static/imported-files/application_notes/AN-1109.pdf
+
+**USB Isolation in Medical Applications:**
+
+Technical Article: http://www.ecnmag.com/articles/2010/03/simplify-usb-isolation-medical-applications

@@ -1,0 +1,6 @@
+Data Converter Overview
+=======================
+
+As Marlin is an Rx-heavy platform, an analog-to-digital converter is necessary that can handle 16-channel operation while maintaining low power consumption. The :adi:`AD9083` Analog-to-Digital Converter is ideal for this application, as it is a low power 16-channel continuous time Σ-Δ ADC with the ability to handle 16 channels at 125MHz bandwidth. It includes integrated DSP blocks that help to reduce the overall footprint of the Marlin system front end components and also features several power-down options that allow for power savings when needed. The configurable JESD204B interface reduces PCB complexity for the overall system as well. A key feature of the :adi:`AD9083` that is applicable to the Marlin platform specifically is the ability to support multi-device synchronization.
+
+For the Tx side, a :adi:`AD9106` Digital-to-Analog Converter is used which supports up to 180 MSPS sample rates while also having low power dissipation (typ. 315.25mW at 180MSPS). This DAC utilizes on-chip direct digital synthesizer (DDS) to generate complex waveforms. SPI ports on the :adi:`AD9106` allow for easy interfacing between the FPGA and the chip.

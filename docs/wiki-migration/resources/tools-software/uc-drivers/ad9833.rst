@@ -1,0 +1,153 @@
+AD9833 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9833`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD9833`
+
+Overview
+--------
+
+The :adi:`AD9833` is a low power, programmable waveform generator capable of producing sine, triangular, and square wave outputs. Waveform generation is required in various types of sensing, actuation, and time domain reflectometry (TDR) applications. The output frequency and phase are software programmable, allowing easy tuning. No external components are needed. The frequency registers are 28 bits; with a 25 MHz clock rate, resolution of 0.1 Hz can be achieved. Similarly, with a 1 MHz clock rate, the AD9833 can be tuned to 0.004 Hz resolution.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad9833.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD9833 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD9833 driver can be used exactly as it is provided. There are three functions which are called by the AD9833 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   Driver architecture
+
+
+The implementation of these three functions depends on the used microcontroller.
+
+The following functions are implemented in this version of AD7792 driver:
+
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Function                                                                          | Description                                                       |
++===================================================================================+===================================================================+
+| unsigned char AD9833_Init(void)                                                   | Initializes the SPI communication peripheral and resets the part. |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| void AD9833_Reset(void)                                                           | Sets the Reset bit of the AD9833.                                 |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| void AD9833_ClearReset(void)                                                      | Clears the Reset bit of the AD9833.                               |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| void AD9833_SetRegisterValue(unsigned short regValue)                             | Writes the value to a register.                                   |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| void AD9833_SetFrequency(unsigned short reg, unsigned long val)                   | Writes to the frequency registers.                                |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| void AD9833_SetPhase(unsigned short reg, unsigned short val)                      | Writes to the phase registers.                                    |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| void AD9833_Setup(unsigned short freq, unsigned short phase, unsigned short type) | Selects the Frequency,Phase and Waveform type.                    |
++-----------------------------------------------------------------------------------+-------------------------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  No-OS Driver:
+   
+      -
+
+   
+      |Implementation of AD9833 Driver.|
+
+      -
+
+      |Header file of AD9833 Driver.|
+
+   -  Older Drivers:
+   
+      -  `AD9833 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad9833_generic.zip>`__
+      -  `AD9833 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad9833_rx62n.zip>`__
+   
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD9833 demonstration project on a Renesas RX62N platform.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+-  :adi:`EVAL-AD9833 (ADI) <EVAL-AD9833>`
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/products/software-tools/tools/ide/hew.html>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD9833SDZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     EVAL-AD9833SDZ test point SDATA      → YRDKRX62N J8 connector Pin 19
+     EVAL-AD9833SDZ test point SCLK       → YRDKRX62N J8 connector Pin 20
+     EVAL-AD9833SDZ test point FSYNC      → YRDKRX62N J8 connector Pin 15
+     EVAL-AD9833SDZ J4 connector Pin AVDD → YRDKRX62N J8 connector Pin 3
+     EVAL-AD9833SDZ J3 connector Pin DVDD → YRDKRX62N J8 connector Pin 3
+     EVAL-AD9833SDZ J4 connector Pin AGND → YRDKRX62N J8 connector Pin 4
+     EVAL-AD9833SDZ J3 connector Pin DGND → YRDKRX62N J8 connector Pin 4
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad9833_rx62n.jpg
+   :align: center
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The demo program sets up the AD9833 part to output sinusoidal, triangle and square waves. The frequency and the type of the wave are displayed on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad9833_screen.jpg
+   :align: center
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/page>rx62n_software_design
+   :alt: page>rx62n_software_design
+
+More information
+================
+
+.. image:: https://wiki.analog.com/_media/page>more-information
+   :alt: page>more-information
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+.. |Implementation of AD9833 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/ad9833/ad9833`.c
+.. |Header file of AD9833 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/ad9833/ad9833`.h
+

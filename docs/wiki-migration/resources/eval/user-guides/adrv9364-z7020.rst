@@ -1,0 +1,102 @@
+ADRV9364-Z7020 System on Module (SOM) SDR
+=========================================
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed-sdr-1x1som/aes-z7pz-sdr1-g-front.jpg
+   :align: right
+   :width: 400px
+
+The :adi:`ADRV9364 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/wideband-transceivers-ic/adrv9364.html#product-samplebuy>` is built on a portfolio of highly integrated System-On-Module (SOMs) based on the Xilinx Zynq®-7000 All Programmable (AP)SoC. Built on the AD9364, it is schematically & HDL similar to the `ad-fmcomms4-ebz <https://wiki.analog.com/ad-fmcomms4-ebz>`__.
+
+The purpose of the SDR is to provide an RF platform to software developers, system architects, product developers, etc, who want a single platform which operates over a wide tuning range (70 MHz – 6 GHz) that is capable of being used for prototyping, evaluation, and as a reference design to help with production volume.
+
+Table of Contents
+-----------------
+
+-  :adi:`Purchase <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/wideband-transceivers-ic/ADRV9364.html>`
+-  :doc:`Introduction </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/introduction>`
+-  :doc:`RF SOM Hardware </wiki-migration/resources/eval/user-guides/adrv936x_rfsom/hardware>`
+-  :doc:`Tuning the system </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/hardware/tuning>`
+-  Use the PicoZed SDR Hardware to better understand the AD9364
+
+   -  :doc:`What you need to get started </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/prerequisites>`
+   -  :doc:`Quick Start Guides </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart>`
+
+      -  :doc:`Linux on PicoZed SDR </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zynq>`
+      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+
+   -  Linux Applications
+
+      -  :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+      -  :doc:`PicoZed SDR Control IIO Scope Plugin </wiki-migration/resources/tools-software/linux-software/fmcomms2_plugin>`
+      -  :doc:`PicoZed SDR Advanced Control IIO Scope Plugin </wiki-migration/resources/tools-software/linux-software/fmcomms2_advanced_plugin>`
+      -  :doc:`Command Line/Shell scripts </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/applications/shell_scripts>`
+
+   -  Push custom data into/out of the PicoZed SDR.
+
+      -  :doc:`Basic Data files and formats </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>`
+      -  :doc:`Create and analyze data files in MATLAB </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/datafiles>`
+      -  :doc:`Stream data into/out of MATLAB </wiki-migration/resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
+      -  :doc:`AD9361 libiio streaming example </wiki-migration/resources/tools-software/linux-software/libiio>`
+      -  :doc:`Python Support with AD9364 Interface Class </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+
+-  Design with the AD9364
+
+   -  :doc:`Understanding the AD9364 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`
+
+      -  :adi:`AD9364 Product page <AD9364>`
+      -  :adi:`Full Datasheet and chip design package <en/rfif-components/rfif-transceivers/products/AD9361-Integrated-RF-Agile-Transceiver-Design-Res/fca.html>`
+      -  :doc:`MATLAB Filter Design Wizard for AD9361 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/filters>`
+
+   -  Simulation
+
+      -  :doc:`MathWorks SimRF Models of the AD9361 </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/simrf>`
+
+   -  Hardware in the Loop / How to design your own custom BaseBand
+
+      -  MATLAB/Simulink Examples
+
+         -  :doc:`Stream data into/out of MATLAB </wiki-migration/resources/tools-software/linux-software/libiio/clients/fmcomms2_3_simulink>`
+         -  :doc:`Beacon Frame Receiver Example </wiki-migration/resources/tools-software/linux-software/libiio/clients/beacon_frame_receiver_simulink>`
+         -  :doc:`QPSK Transmit and Receive Example </wiki-migration/resources/tools-software/linux-software/libiio/clients/qpsk_example>`
+         -  :doc:`LTE Transmit and Receive Example </wiki-migration/resources/tools-software/linux-software/libiio/clients/lte_example>`
+         -  :doc:`ADS-B Airplane Tracking Example </wiki-migration/resources/tools-software/linux-software/libiio/clients/adsb_example>`
+
+      -  :doc:`GNU Radio </wiki-migration/resources/tools-software/linux-software/gnuradio>`
+      -  :doc:`FM Radio/Tuner </wiki-migration/resources/tools-software/fm-radio>` (listen to FM signals on the HDMI monitor)
+      -  :doc:`C example </wiki-migration/resources/tools-software/linux-software/libiio>`
+
+   -  Targeting
+
+      -  :doc:`Analog Devices BSP for MathWorks HDL Workflow Advisor </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/matlab_bsp>`
+
+   -  Complete Workflow
+
+      -  :doc:`ADS-B Airplane Tracking Tutorial </wiki-migration/resources/eval/user-guides/picozed_sdr/tutorials/adsb>`
+
+   -  Design a custom AD9364 based platform
+
+      -  :doc:`Linux software </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux>`
+
+         -  :doc:`Linux Device Driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
+         -  :doc:`Build the demo on ZC702, ZC706, or ZED from source </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq>`
+         -  :doc:`Build the demo on KC705 or VC707 for Microblaze from source </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/microblaze>`
+         -  :doc:`Build the 2014_R2 Release Linux kernel from source </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_2014r2>`
+         -  :doc:`Customizing the devicetree on the target </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
+
+      -  :doc:`No-OS Driver </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/baremetal>`
+      -  :doc:`HDL Reference Design </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/reference_hdl>` which you must use in your FPGA.
+
+         -  :doc:`Digital Interface Timing Validation </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/interface_timing_validation>`
+
+-  :doc:`Additional Documentation about SDR Signal Chains </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/additional_docs>`
+
+   -  :doc:`The math behind the RF </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/math>`
+
+-  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`
+
+Warning
+-------
+
+.. esd-warning::
+

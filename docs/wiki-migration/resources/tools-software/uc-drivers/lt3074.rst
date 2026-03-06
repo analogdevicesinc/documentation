@@ -1,0 +1,304 @@
+LT3074 - No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`LT3074`
+
+| 
+| ===== Overview ===== The LT3074 is a low voltage, ultra-low noise and ultra-fast transient response linear regulator with PMBus serial interface. The device supplies up to 3A with a typical dropout voltage of 45mV. A 4.7µF reference bypass capacitor decreases output voltage noise to 1.2μVRMS. The wide bandwidth and high PSRR permit the use of small ceramic capacitors, saving bulk capacitance and cost.
+
+PMBus control allows the user to set output current limit from 1A to 3A in discrete steps of 0.05A. PMBus telemetry feature provides information regarding the output voltage and current, input voltage, bias voltage and die temperature.
+
+Applications
+------------
+
+-  RF Power Supplies: PLLs, VCOs, Mixers, LNAs, PAs
+-  High Speed/High Precision Data Converters
+-  Low Noise Instrumentation
+-  Post-Regulator for Switching Supplies
+-  FPGA and DSP Power Supplies
+-  Medical Applications
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of the ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== LT3074 ADI No-OS driver =====
+
+Driver Source Code
+------------------
+
+The source code for LT3074 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of LT3074 Driver|
+
+   -
+
+   |Implementation of LT3074 Driver|
+
+This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the utility library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+To use the LT3074 No-OS driver, the following specific implementations for I2C communication must be provided:
+
+.. container:: center box
+
+   
+   ====================== ===========================================
+   **no_os_i2c_init()**   initializes the communication peripheral.
+   **no_os_i2c_write()**  writes data to the device.
+   **no_os_i2c_read()**   reads data from the device.
+   **no_os_i2c_remove()** deinitializes the communication peripheral.
+   ====================== ===========================================
+   
+
+
+And there are two data types that have to be defined:
+
+.. container:: center box
+
+   
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_i2c_desc**       | structure holding the I2C descriptor                    |
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_i2c_init_param** | structure holding the parameters for I2C initialization |
+   +--------------------------+---------------------------------------------------------+
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for I2C Communication APIs|
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `LT3074 Header file <https://wiki.analog.com/todo_link>`__
+   -  `LT3074 Source file <https://wiki.analog.com/todo_link>`__
+   
+
+
+Device Configuration
+--------------------
+
+Driver Initialization
+^^^^^^^^^^^^^^^^^^^^^
+
+The driver is initialized by instantiating an **lt3074_init_param** structure containing the **i2c_init** parameters.
+
+Output Voltage Margin Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Output voltage margin can be set by passing an **lt3074_margin_val** enumerator to the **margin_high** and **margin_low** parameters of the **lt3074_init_param**. Valid enumerations for margin setting can be seen below.
+
+.. container:: center box
+
+   
+   =========================== =================================
+   LT3074_MARGIN_PERCENTAGE_0  0% of the nominal output voltage
+   LT3074_MARGIN_PERCENTAGE_1  1% of the nominal output voltage
+   LT3074_MARGIN_PERCENTAGE_3  3% of the nominal output voltage
+   LT3074_MARGIN_PERCENTAGE_5  5% of the nominal output voltage
+   LT3074_MARGIN_PERCENTAGE_10 10% of the nominal output voltage
+   LT3074_MARGIN_PERCENTAGE_15 15% of the nominal output voltage
+   LT3074_MARGIN_PERCENTAGE_20 20% of the nominal output voltage
+   LT3074_MARGIN_PERCENTAGE_25 25% of the nominal output voltage
+   LT3074_MARGIN_PERCENTAGE_30 30% of the nominal output voltage
+   =========================== =================================
+   
+
+
+The margin registers can also be accessed using the **lt3074_set_margin** and the **lt3074_get_margin** functions of the driver.
+
+PMBus settings
+^^^^^^^^^^^^^^
+
+PMBus settings such as the **OPERATION**, **ON_OFF_CONFIG**, and **WRITE_PROTECT** can be configured using the **lt3074_update_settings** driver function. The **OPERATION** command is used to turn the unit on or off, to program the output voltage command source, and to set margin fault response. The **ON_OFF_CONFIG** controls the on/off state configuration of operation command. **WRITE_PROTECT** is used to control writing to the LT3074 registers and is used to provide protection against accidental writes. This can be set using the **lt3074_write_mode** enumeration below:
+
+.. container:: center box
+
+   
+   +----------------------------+--------------------------------------------------------------------------------------------+
+   | LT3074_WRITE_ENABLE_ALL    | Enable all writes                                                                          |
+   +----------------------------+--------------------------------------------------------------------------------------------+
+   | LT3074_WRITE_SETTINGS_ONLY | Disable all writes except to the WRITE_PROTECT, PAGE, OPERATION and ON_OFF_CONFIG commands |
+   +----------------------------+--------------------------------------------------------------------------------------------+
+   | LT3074_WRITE_PAGE_OP_ONLY  | Disable all writes except to the WRITE_PROTECT, PAGE and OPERATION commands                |
+   +----------------------------+--------------------------------------------------------------------------------------------+
+   | LT3074_WRITE_DISABLE_ALL   | Disable all writes except to the WRITE_PROTECT command                                     |
+   +----------------------------+--------------------------------------------------------------------------------------------+
+   
+
+
+Voltage, current, and temperature measurements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The driver exposes the following set of functions to allow the user to monitor the voltages, current and temperature of the regulator through the PMBus interface.
+
+.. container:: center box
+
+   
+   ======================= ====================================
+   **lt3074_read_vin()**   Reads regulator input voltage in mV
+   **lt3074_read_vout()**  Reads regulator output voltage in mV
+   **lt3074_read_iout()**  Reads regulator output current in mA
+   **lt3074_read_temp()**  Reads die temperature in milli-scale
+   **lt3074_read_vbias()** Reads regulator bias voltage in mV
+   ======================= ====================================
+   
+
+
+Overvalue and undervalue limits can also be accessed using the **lt3074_get_limit** and the **lt3074_set_limit** driver functions. The following limits can be read and set:
+
+.. container:: center box
+
+   
+   ========================== =================================
+   LT3074_VOUT_OV_WARN_LIMIT  Output overvoltage warning limit
+   LT3074_VOUT_UV_WARN_LIMIT  Output undervoltage warning limit
+   LT3074_IOUT_OC_FAULT_LIMIT Output overcurrent fault limit
+   LT3074_OT_WARN_LIMIT       Overtemperature warning limit
+   LT3074_VIN_OV_WARN_LIMIT   Input overvoltage warning limit
+   LT3074_VIN_UV_WARN_LIMIT   Input undervoltage warning limit
+   LT3074_VBIAS_OV_WARN_LIMIT Bias overvoltage warning limit
+   LT3074_VBIAS_UV_WARN_LIMIT Bias undervoltage warning limit
+   LT3074_IOUT_MIN_WARN_LIMIT Output undercurrent warning limit
+   ========================== =================================
+   
+
+
+Status monitoring
+^^^^^^^^^^^^^^^^^
+
+The PMBus interface features status register to provide a summary of the regulator state. The following status registers can be accessed using the **lt3074_get_status** function:
+
+.. container:: center box
+
+   
+   +----------------------------+------------------------------------------------------------+
+   | LT3074_STATUS_BYTE         | One-byte summary of most critical faults                   |
+   +----------------------------+------------------------------------------------------------+
+   | LT3074_STATUS_WORD         | Contains overall device fault summary                      |
+   +----------------------------+------------------------------------------------------------+
+   | LT3074_STATUS_VOUT         | Contains faults and warnings related to output voltage     |
+   +----------------------------+------------------------------------------------------------+
+   | LT3074_STATUS_IOUT         | Contains faults and warnings related to output current     |
+   +----------------------------+------------------------------------------------------------+
+   | LT3074_STATUS_INPUT        | Contains faults and warnings related to input voltage      |
+   +----------------------------+------------------------------------------------------------+
+   | LT3074_STATUS_TEMPERATURE  | Contains faults and warnings related to die temperature    |
+   +----------------------------+------------------------------------------------------------+
+   | LT3074_STATUS_CML          | Contains faults related to communication, memory and logic |
+   +----------------------------+------------------------------------------------------------+
+   | LT3074_STATUS_MFR_SPECIFIC | Contains warnings specific to LT3074                       |
+   +----------------------------+------------------------------------------------------------+
+   
+
+
+Fault clearing and Software reset
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The driver allows the user to clear all faults triggered using the **lt3074_clear_fault** function. Moreover, a power cycle reset can be performed in the software using the **lt3074_software_reset** function.
+
+PMBus Core Read/Write Operations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The driver supports sending any PMBus commands to any PMBus registers defined in the |header file|. The following PMBus operations are exposed for the users:
+
+.. container:: center box
+
+   
+   +------------------------------+----------------------------------------------------------------+
+   | **lt3074_send_byte()**       | Send a PMBus command to the device                             |
+   +------------------------------+----------------------------------------------------------------+
+   | **lt3074_read_byte_data()**  | Send a PMBus command then read a byte data from the device     |
+   +------------------------------+----------------------------------------------------------------+
+   | **lt3074_write_byte_data()** | Write a byte data to a PMBus register                          |
+   +------------------------------+----------------------------------------------------------------+
+   | **lt3074_read_word_data()**  | Send a PMBus command then read a two-byte data from the device |
+   +------------------------------+----------------------------------------------------------------+
+   | **lt3074_write_word_data()** | Write a word data to a PMBus register                          |
+   +------------------------------+----------------------------------------------------------------+
+   | **lt3074_read_block_data()** | Read nbytes of data from the PMBus command                     |
+   +------------------------------+----------------------------------------------------------------+
+   
+
+
+By default, packet error checking is enabled in PMBus transactions. To disable, set the header macro **LT3074_PEC_ENABLE** to 0.
+
+Driver Initialization Example
+-----------------------------
+
+Example Initialization Using Maxim SDK as Platform
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+     int ret;
+
+     struct max_i2c_init_param max32666_i2c_extras = {
+         .vssel = MXC_GPIO_VSSEL_VDDIOH,
+     };
+
+     struct lt3074_init_param lt3074_ip = {
+       .i2c_init = {
+         .device_id = 2,
+         .max_speed_hz = MXC_I2C_STD_MODE,
+         .slave_address = 0x1d,
+         .extra = &max32666_i2c_extras,
+         .platform_ops = &max_i2c_ops,
+       },
+       .margin_high = LT3074_MARGIN_PERCENTAGE_15,
+       .margin_low = LT3074_MARGIN_PERCENTAGE_15,
+     };
+
+     struct lt3074_dev *dev;
+       ret = lt3074_init(&dev, &lt3074_ip);
+       if (ret)
+           return ret;
+
+.. |Header file of LT3074 Driver| image:: https://wiki.analog.com/_media/link here
+.. |Implementation of LT3074 Driver| image:: https://wiki.analog.com/_media/link here
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h
+.. |header file| image:: https://wiki.analog.com/_media/todo link

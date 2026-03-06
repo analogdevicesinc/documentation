@@ -1,0 +1,165 @@
+Evaluating ADAQ23876 using ZedBoard
+===================================
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/eval-adaq23878fmczangle.jpg
+   :align: center
+   :width: 600px
+
+Requirements:
+-------------
+
+Hardware
+~~~~~~~~
+
+-  EVAL-ADAQ23876FMCZ evaluation board
+-  Zedboard (AES-Z7EV-7Z020-G)
+-  12V power supply
+-  Host PC running on Windows 10 or higher
+-  SD Card (16GB or larger)
+-  LAN Cable
+-  SMA Cable
+-  XLR to SMA adapter cable
+-  Audio Analyzer (Audio Precision© APX525) or other input source
+
+Software
+~~~~~~~~
+
+-  :doc:`Analog Devices Kuiper Linux image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+
+.. important::
+
+   Prior to powering up the set-up, make sure that the SD card is loaded with the latest version of the :doc:`Analog Devices Kuiper Linux image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+
+
+The Analog Devices Kuiper Linux image is an open-source, embedded Linux operating system based on Raspberry Pi OS. It incorporates Linux device drivers for ADI products as well as tools and other software products designed and created for ease of use.
+
+Access to the embedded system can be through ​a remote PC connected ​either via LAN cable or Wi-Fi. ​
+
+Getting Started
+---------------
+
+The following section contains the evaluation instructions for EVAL-ADAQ23876FMCZ evaluation board using IIO Oscilloscope.
+
+Loading Image in the SD Card
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To properly evaluate the :adi:`EVAL-ADAQ23876`, you need to ensure that the ADI Kuiper Linux is properly flashed on the SD card. Complete instructions on how to properly download, write and configure the image can be accessed at :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. Make sure to comply with the directions for preparing the image for ADAQ23876.
+
+SD Card Preparation
+~~~~~~~~~~~~~~~~~~~
+
+Follow these steps to prepare the SD Card,
+
+-  `Download the ADI Kuiper Image <:doc:`/wiki-migration/resources/tools-software/linux-software/kuiper-linux`>`__
+
+.. important::
+
+   Please use the image for CN0577.
+
+
+-  :doc:`Properly format and flash the SD Card (Windows) </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
+-  :doc:`Properly format and flash the SD Card (Linux) </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
+
+.. warning::
+
+   Ensure that the SD Card is configured for the correct FPGA project. You may refer to the steps identified in :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` to properly configure the image based on the correct FPGA project. Key files that need to be saved in the root folder are:
+
+   
+   -  BOOT.BIN
+   -  devicetree.dtb
+   -  uImage found in the zynq-common folder
+   
+
+
+Hardware Connection
+~~~~~~~~~~~~~~~~~~~
+
+|image1| Follow these steps to setup the complete system using **Audio Precision Audio Analyzer** as input source.
+
+-  Download and install the IIO Oscilloscope application that is suitable for the host PC.
+-  Flash the Analog Devices Kuiper Linux image on the SD card.
+-  Properly configure the SD card for :adi:`EVAL-ADAQ23876`.
+-  Insert the SD card into the ZedBoard.
+-  Attach the :adi:`EVAL-ADAQ23876` to the ZedBoard through the FMC pin connector.
+-  Power up the ZedBoard using the 12V cable.
+-  Connect the :adi:`EVAL-ADAQ23876` to the Audio Precision Audio Analyzer using the XLR to SMA adapter cable.
+-  Connect the Audio Precision Audio Analyzer USB cable to the PC.
+
+Once all steps are done, the IIO Oscilloscope software should run smoothly.
+
+Evaluating using IIO Oscilloscope
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: Download
+   :class: download
+
+   Make sure to download/update to the latest version of IIO-Oscilloscope.
+
+   
+   :git-iio-oscilloscope:`releases`
+
+
+-  Ensure that you are using the latest version of IIO Oscilloscope.
+-  Select the Refresh button to display the available IIO devices.\
+
+|image2|
+
+-  Once ltc2387 appears, select Connect.
+
+|image3|
+
+IIO Oscilloscope Capture Window
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Waveform Plot
+^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/waveform_plot.png
+   :align: center
+   :width: 600px
+
+FFT Plot
+^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/fft_plot.png
+   :align: center
+   :width: 600px
+
+To Start
+^^^^^^^^
+
+To obtain the FFT plot, follow the ff steps:
+
+-  Select "Frequency Domain" for the plot type
+
+
+|image4|
+
+-  Designate your preferred number of samples under FFT size
+
+|image5|
+
+-  Specify the window type to "Blackmann-Harris".
+
+|image6|
+
+-  Press run to view the result.
+
+|image7|
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guide/foldername/picture1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guide/refresh.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guide/connect2.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guide/plot_type.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guide/fft_size.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guide/window.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guide/picture9.png
+   :width: 600px

@@ -1,0 +1,340 @@
+Cross Core Embedded Studio Quickstart User Guide for EV-COG-AD3029WZ
+====================================================================
+
+.. note::
+
+   There is no separate tool chain or software packs for EV-COG-AD3029WZ, the tool chain and software packs for EV-COG-AD3029LZ is compatible with EV-COG-AD3029WZ, except some pin map changes
+
+
+This page describes how to use the ADuCM302x Device Family Pack (DFP) with CrossCore Embedded Studio (CCES) to create, import, build and debug applications for the ADuCM302x processor. The ADuCM302x MCU integrates an ARM Cortex-M3 processor with various on-chip peripherals within a single package.
+
+.. note::
+
+   ADuCM302x family has two versions of the device, ADuCM3027 and ADuCM3029, the DFP supports both these versions
+
+
+This page describes how to install and work with the Analog Devices ADuCM302x DFP to start developing applications for the EV-COG-AD3029WZ.
+
+Additional help documentation can be found by opening CCES and selecting "Help Contents" from the CCES Help menu.
+
+This page covers:
+
+-  How to install Packs for CCES
+-  How to create a new project for the ADuCM3029
+-  How to add startup code and core components to a new project for the ADuCM3029
+-  How to import existing projects into your workspace
+-  How to build projects for programming the ADuCM3029
+-  How to configure the Tools Settings used by an ADuCM3029 project
+-  How to configure the debug session for an ADuCM3029 application
+-  How to start and stop debugging an ADuCM3029 application
+-  How to create an Intel Hex (.hex) file from an ADuCM3029 application
+
+Workspace and Projects
+======================
+
+A CCES workspace is a folder (e.g. c:\\Users\\anon\\cces\\2.6.0) that contains project resources and metadata. When projects are created or imported, details about that project are stored in the workspace. The workspace metadata also includes preferences set through the CCES Preferences dialog box and IDE window layouts. By default, CCES creates new projects within your workspace folder.
+
+Each time you start CCES, you will be prompted for a workspace location. You can opt to default to a workspace directory by choosing to use a workspace directory as your default. You will not be prompted the next time you open CCES.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-workspace.png
+   :align: center
+
+How to install Packs for CCES
+-----------------------------
+
+There are two ways to install packs for CCES as follows.
+
+-  Toolchain's CMSIS Pack Manger
+-  Download to Local Directory
+
+Toolchain's CMSIS Pack Manger
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Follow below instructions to install packs using the CMSIS Pack Manager.
+
+-  Go to Windows -> Perspective -> Open Perspective -> Other...
+-  Select CMSIS Pack Manager and click OK.
+
+|image1|
+
+-  On the left hand side of the window, under devices tab, expand **Analog Devices**.
+-  Expand **ADuCM302x Series**
+-  Select **ADuCM3029**
+-  On right hand side, under packs tab, click **Install** on respective packs to be installed.
+
+|image2| This will install the packs in CCES toolchain.
+
+Download to Local Directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Please download the following packs to your local directory.
+
+-  `ARM CMSIS Pack <https://keilpack.azureedge.net/pack/ARM.CMSIS.5.1.0.pack>`__
+-  :doc:`Analog Devices ADuCM302x Device Support Pack </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/software/aducm302x>`
+-  :doc:`Analog Devices EV-COG-AD3029LZ Off-Chip Drivers and Examples </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/software/ev-cog-ad3029lz>`
+-  :doc:`Analog Devices Sensor Drivers and Examples </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/software/sensor>`
+-  :doc:`Analog Devices Bluetooth Low Energy Software </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/software/connectivity>`
+
+After downloading the .pack files, select the Import Packs button in the CMSIS Pack Manager's View, choose the .pack file as shown in the screenshot below and click Open.
+
+You will be prompted to accept a license agreement and after agreeing to it, Pack file will be installed into CrossCore Embedded Studio's CMSIS-Pack installation directory (e.g. C:\\Analog Devices\\CrossCore Embedded Studio 2.6.0\\ARM\\packs\\AnalogDevices).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/add_pack.jpg
+   :align: center
+
+ADuCM3029 Board Support Packs (BSP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+EV-COG-AD3029WZ/LZ Board Support Pack
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The EV-COG-AD3029LZ Board Support Pack (BSP) provides the drivers for off-chip peripherals which are on the EV-COG-AD3029LZ Evaluation Board and examples for peripherals on the ADcCM3029 processor. The drivers and examples in the BSP are designed to work with CrossCore Embedded Studio and the ADuCM302x Device Family Pack (DFP).
+
+For more information on the EV-COG-AD3029LZ BSP, please refer to the User's Guide in the Documents folder (e.g. C:\\Analog Devices\\CrossCore Embedded Studio 2.6.0\\ARM\\packs\\AnalogDevices\\EV-COG-AD3029LZ_BSP\\1.0.0\\Documents\\EV-COG-AD3029LZ_Users_Guide.pdf)
+
+ADI Sensor Software Pack
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ADI Sensor Software pack contains various sensor software components and associated examples. The examples in the sensor pack are designed to work with EV-COG-AD3029WZ board and associated sensor shields. ADI Sensor Software requires CrossCore Embedded Studio (CCES), ADuCM302x Device Family Pack (DFP) and EV-COG-AD3029LZ Board Support Pack (BSP).
+
+For more information on the ADI Sensor Software Pack, please refer to the User's Guide in the Documents folder (e.g. C:\\Analog Devices\\CrossCore Embedded Studio 2.6.0\\ARM\\packs\\AnalogDevices\\ADI-SensorSoftware\\1.0.0\\Documents\\SensorSoftware_Users_Guide.pdf)
+
+How to create a new project for the ADuCM3029
+---------------------------------------------
+
+A project for ADuCM3029 can be created using the New CrossCore Project Wizard. This wizard will guide you through the steps to create a new project.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-project-new.png
+   :align: center
+
+-  To create a new project, go to the menu bar and find *File -> New -> CrossCore Project*.
+-  Choose Processor family ARM and select Processor type ADuCM3029.
+-  Choose your Silicon revision (default is 1.0).
+
+   -  A *SILICON_REVISION* macro will be set in your project's Tools Settings, allowing you to conditionally check the silicon revision in your source code.
+
+-  Project configuration allows you to add additional Add-ins to your project, such as Pin Multiplexing and changing the template language for a generated main function etc.
+-  Finally, press *Finish* and the project will be created and you can begin writing your program.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-project-explorer.png
+   :align: center
+
+How to add startup code and core components to a new project for the ADuCM3029
+------------------------------------------------------------------------------
+
+An out-of-the-box ADuCM3029 project does not have startup code or a linker description file that maps code and data. It is necessary to add these components using the Run-time Environment (RTE) Configuration Editor.
+
+CrossCore Projects created for Analog Devices' Cortex-M based processors, such as ADuCM3029 include a system.rteconfig file. Opening this file within the IDE will open the RTE Configuration Editor. Components from the CMSIS-Pack, such as drivers and services, can be added to a project by selecting them in the editor and clicking Save.
+
+At minimum, a new ADuCM3029 project will require the Device::Startup, CMSIS::Core and Device::Global Configuration components to be added to the project.
+
+-  Double-click on the system.rteconfig to open the RTE Configuration Editor.
+-  Select Device::Startup, CMSIS::Core and Device::Global Configuration.
+-  Click Save (Ctrl+S)
+-  *You can also choose Device::Startup and click the Resolve button to add dependant components*
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-project-configure.png
+   :align: center
+
+How to import existing projects into your workspace
+---------------------------------------------------
+
+There are three(3) methods for importing existing projects:
+
+-  Examples that you have saved to a local drive on your PC.
+-  Examples that come with the ADuCM3029 Device Family Pack (DFP).
+-  Examples which are in the EV-COG-AD3029LZ GIT repository (most up to date content).
+
+How to Import Existing Projects Saved to a Local Drive
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Select *File \| Import...* from the CCES menu.
+-  A dialog will pop-up with several importing options, choose the *General \| Existing Projects into Workspace* option, and click Next
+-  Select *Browse* in the dialog window and search for the saved project which is on your local drive.
+-  (Optional) If the *Copy projects into workspace* option is checked, the project will be copied to your workspace folder and the newly copied project will be opened and used. This preserves the original version of the project.
+-  Click *Finish*
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-file-import.png
+   :align: center
+
+How to Import Examples that come with the ADuCM3029 Device Family Pack (DFP) or Board Support Packs (BSP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Examples are provided with the ADuCM3029 DFP and BSPs and can be opened from the CMSIS Pack Manager Perspective Examples View.
+
+-  Open CMSIS Pack Manager perspective by clicking "Open Perspective" icon on tool bar and selecting "CMSIS Pack Manager" in the Open Perspective window (or choose CMSIS Pack Manager perspective if already open).
+-  From the Examples View, select the example that you would like to open.
+-  Click the *Copy* Action button.
+-  A dialog will pop-up showing the location where the example will be copied to. Click *Copy* to copy and open the example project.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-cmsis-pack-example-200.png
+   :align: center
+
+The CCES Examples Browser can also be used to open examples by Help \| Browse Examples.
+
+-  Select ADuCM302x_DFP[x.y.z] in Product drop-down list, select the example and click Open example. Then the example will be copied to your workspace.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-example-browser.png
+   :align: center
+
+How to Import Existing Projects from the GIT Repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+( Note that at the time of writing, the EV-COG-AD3029LZ GIT repo. is work In Progress )
+
+-  Open the GIT perspective by clicking "Open Perspective" icon on tool bar and selecting "Git" in the Open Perspective window (or choose the GIT perspective if already open).
+-  Clone the Git repository which contains all the latest code and projects associated with the ADuCM3029. Populate the URI field with the following address.
+
+   -   **URL:** - https://github.com/analogdevicesinc/EV-COG-AD3029LZ.git
+   -  Click *Next*, *Next* and then *Finish*. There may be a pause while the branches are fetched.
+
+-  In the Git Repositories window, *Right Click* on the *Projects* folder and select *Import Projects...*
+-  Select *Import existing Eclipse projects*
+-  Click *Next* and then *Finish*
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-clone.png
+   :align: center
+
+How to build projects for programming the ADuCM3029
+---------------------------------------------------
+
+-  Open the C perspective by clicking "Open Perspective" icon on tool bar and selecting C in the Open Perspective window (or choose the C perspective if already open).
+-  Right click on the project and select the *Build Project*.
+
+   -  Or click the *Hammer* icon from the toolbar.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-project-build.png
+   :align: center
+
+How to configure the Tools Settings used by an ADuCM3029 project
+----------------------------------------------------------------
+
+-  Select the project in the Project Explorer View.
+-  Select the *Cog* icon from the View's toolbar.
+
+   -  Or right-click on the project, select *Properties* and choose *C/C++ Build \| Settings*.
+
+-  After configuring your project, click Apply and/or OK.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-project-tools-settings.png
+   :align: center
+
+How to configure the debug session for an ADuCM3029 application
+---------------------------------------------------------------
+
+You will need to create a launch configuration to debug your ADuCM3029 program.
+
+-  If you have already built a project, select that project in the Project Explorer View.
+-  Right-click on the project and choose *Debug As* and *Application with GDB and OpenOCD (Emulator)*
+-  In the *Target* tab, choose *Target (processor)* and in the drop-down select **Analog Devices ADuCM3029**
+-  In the *Target* tab, choose *Interface* and in the drop-down select **ARM CMSIS-DAP compliant adapter**
+-  In the *Main* tab, ensure that your project is selected in the *Project* entry box.
+
+   -  If the correct project is not populated, click the *Browse...* button and choose the project. Note that this is optional and you only need to choose a project if you want the IDE to search a project for the built binaries (programs), otherwise you can leave this entry blank.
+
+-  In the *Main* tab, ensure your binary (program) is selected in the *Application* entry box.
+
+   -  If the correct binary (program) is not populated, click on *Search Project...* and choose the binary (program) from those available in the chosen project.
+   -  If your binary (program) is not populated and it was not built from a project in your workspace (i.e. you have a pre-built binary), then click the *Browse...* button and search for your pre-built binary (program). Click *Open* when you have found and selected the pre-built binary (program).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-configuration.png
+   :align: center
+
+Hardware breakpoints are limited in your ADuCM3029 application
+==============================================================
+
+-  When you click Debug or Apply, you will be prompted with a dialog informing your the Hardware Breakpoints are limited. Click *Yes*. You can opt to not show this dialog again.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-hw-limited.png
+   :align: center
+
+How to start and stop debugging an ADuCM3029 application
+--------------------------------------------------------
+
+-  Ensure that you have connected your EV-COG-AD3029LZ board to your computer via the **USB** port (the micro USB connected closest to the DC barrel jack).
+-  If you are already in the Debug Configurations dialog, then click *Debug*.
+-  If you are in the C Perspective, then you can launch the last Debug session by clicking the *Beetle* Debug button on the toolbar.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-toolbar.png
+   :align: center
+
+-  You will be prompted to switch perspective to the Debug perspective. Click *Yes*. You can opt to not show this dialog again.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-perspective.png
+   :align: center
+
+-  If your binary (program) was built with semi-hosting enabled, then CCES will warn you that you need to re-build the program when you want to run the program without a debugger attached.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png
+   :align: center
+
+-  To disable semi-hosting in your program, visit your project Tools Settings.
+-  Change the *semi-hosting support* option under *Linker \| Libraries* to nosys.specs or None, depending on whether or not your program is currently using semi-hosting (e.g. printf).
+-  After configuring your project, click Apply and/or OK.
+-  Right click on the project and select the *Build Project*.
+
+   -  Or click the *Hammer* icon from the toolbar.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-spec.png
+   :align: right
+
+-  If this is the first time you have launched OpenOCD, the Windows Firewall may pop-up a window asking for access. Click on "*Allow Access*".
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-openocd-firewall.png
+   :align: center
+
+-  If everything goes fine, in the Console window, you will see a report without errors.
+
+   -  As a reference, the full text should be similar to:``Open On-Chip Debugger (OpenOCD) 0.9.0
+      Licensed under GNU GPL v2
+      Report bugs to <openocd-devel@lists.sourceforge.net>
+      0
+      Info : select transport "swd"
+      adapter speed: 1000 kHz
+      cortex_m reset_config sysresetreq
+      Info : CMSIS-DAP: SWD  Supported
+      Info : CMSIS-DAP: Interface Initialised (SWD)
+      Info : CMSIS-DAP: FW Version = 1.0
+      Info : SWCLK/TCK = 0 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+      Info : CMSIS-DAP: Interface ready
+      Info : clock speed 1000 kHz
+      Info : SWD IDCODE 0x2ba01477
+      Info : aducm3029.cpu: hardware has 2 breakpoints, 1 watchpoints
+      Info : CHIPID 0x0284
+      memory bus access delay set to 6 tck
+      adapter speed: 1000 kHz
+      Info : accepting 'gdb' connection on tcp/3333``
+
+-  Your program's execution is stopped automatically at the first breakpoint which is at the beginning of main() loop. You can use the debug functions and features of the CCES environment. (Such as stepping through, breakpoints, register reads, variable values, etc.)
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debugging.png
+   :align: center
+
+-  To terminate a debug session, click on the red *Stop* button on the toolbar.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-toolbar-stop.png
+   :align: center
+
+How to create an Intel Hex (.hex) file from an ADuCM3029 application
+--------------------------------------------------------------------
+
+-  Ensure that your program is built with semi-hosting disabled by visiting *Tools Settings \| Linker \| Libraries* and change *Semihosting support* to *nosys.specs* or *None*, depending on your application set-up.
+-  Rebuild your application.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-tools-semi-hosting.png
+   :align: center
+
+-  Convert your application into Intel Hex (.hex) format by visiting Tools Settings once more.
+-  Select the Build Steps tab.
+-  Add the following command to the *Post-build steps \| Command* entry box: ``arm-none-eabi-objcopy -O ihex ${ProjName} ${ProjName}.hex``
+-  Rebuild your application.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-tools-hex.png
+   :align: center
+
+*End of Document*
+
+:doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/download_packs_online.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/install_packs_online_new.png

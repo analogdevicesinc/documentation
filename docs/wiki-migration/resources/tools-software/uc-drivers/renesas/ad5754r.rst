@@ -1,0 +1,229 @@
+AD5754R - Microcontroller No-OS Driver
+======================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5754R`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5754REBZ`
+
+Overview
+--------
+
+The :adi:`AD5754R` is a quad, 16-bit serial input, voltage output, digital-to-analog converter (DAC). It operates from single supply voltages of +4.5 V up to +16.5 V or dual supply voltages from ±4.5 V up to ±16.5 V. Nominal full-scale output range is software selectable from +5 V, +10 V, +10.8 V, ±5 V, ±10 V, or ±10.8 V. Integrated output amplifiers, reference buffers, and proprietary power-up/power-down control circuitry are also provided.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5754rebz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD5754R part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5754R driver can be used exactly as it is provided. There are three functions which are called by the AD5754R driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   Driver architecture
+
+
+The implementation of these three functions depends on the used microcontroller.
+
+The following functions are implemented in this version of AD5754R driver:
+
++------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+| Function                                                                                                   | Description                                   |
++============================================================================================================+===============================================+
+| void AD5754R_SetRegisterValue(unsigned char regBits, unsigned char adrBits, unsigned short registerValue); | Writes data into a register.                  |
++------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+| unsigned short AD5754R_GetRegisterValue(unsigned char regBits, unsigned char adrBits);                     | Reads the value of a register.                |
++------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+| void AD5754R_SetPower(unsigned char dacChannel, unsigned char onOff);                                      | Enables/disables indicated DAC channels.      |
++------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+| void AD5754R_LoadDac(unsigned char dacChannel, unsigned short dacValue);                                   | Writes data into a DAC channel register.      |
++------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+| void AD5754R_RangeSelect(unsigned char dacChannel, unsigned char outputRange);                             | Selects the output range of a DAC channel.    |
++------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+| void AD5754R_ControlFunction(unsigned char option, unsigned char bitValue);                                | Selects an option of Control Register.        |
++------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+| unsigned char AD5754R_ReadAlertBits(void);                                                                 | Reads alert bits form Power Control Register. |
++------------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+
+Downloads
+---------
+
+-  `AD5754R Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5754r_generic.zip>`__
+-  `AD5754R RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5754r_rl78g13.zip>`__
+-  `AD5754R RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5754r_rx62n.zip>`__
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD5754R demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  :adi:`EVAL-AD5754REBZ (ADI) <EVAL-AD5754REBZ>`
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+-  `Applilet4 for RL78G13 <https://www.renesas.com/us/en/software-tool/ap4-applilet>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD5754REBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD5754REB J8 connector Pin 10(SYNC) → YRDKRL78G13 J11 connector Pin 1
+     EVAL-AD5754REB J8 connector Pin 7 (MOSI) → YRDKRL78G13 J11 connector Pin 2
+     EVAL-AD5754REB J8 connector Pin 1 (MISO) → YRDKRL78G13 J11 connector Pin 3
+     EVAL-AD5754REB J8 connector Pin 9 (SCLK) → YRDKRL78G13 J11 connector Pin 4
+     EVAL-AD5754REB J8 connector Pin 5 (GND)  → YRDKRL78G13 J11 connector Pin 5
+     EVAL-AD5754REB J8 connector Pin 6 (LDAC) → YRDKRL78G13 J11 connector Pin 9
+     EVAL-AD5754REB J8 connector Pin 4 (CLR)  → YRDKRL78G13 J11 connector Pin 10
+     EVAL-AD5754REB J9 connector AVDD         → +5V
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5754rebz_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project sets up the AD5754 part to output 2.5V on VOUTA connector
+
+Software Setup
+~~~~~~~~~~~~~~
+
+With the **Applilet3 for RL78G13** tool the following peripherals have to be configured:
+
+CSI10 (Clocked Serial Interface 10) – For the AD5754R part
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+
+-  Transfer mode setting: **Single transfer mode**
+-  Data length setting : **8 bits**
+-  Transfer direction setting: **MSB**
+-  Specification of data timing: **Type 1**
+-  Transfer rate setting – Clock mode: **Internal clock (master)**
+-  Transfer rate setting – Baudrate: **1000000** (bps)
+-  Interrupt setting – Transfer interrupt priority (INTCSI10): **Low**
+-  Uncheck the callback functions.
+
+Watchdog Timer
+^^^^^^^^^^^^^^
+
+Disable the watchdog timer:
+
+-  Choose for the Watchdog timer operation setting: **Unused** option.
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`__
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD5754 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  :adi:`EVAL-AD5754REBZ (ADI) <EVAL-AD5754REBZ>`
+
+.. _required-software-1:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`__
+-  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`__
+
+.. _hardware-setup-1:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD5754REBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     EVAL-AD5754REB J8 connector Pin 10(SYNC) → YRDKRX62N J8 connector Pin 15
+     EVAL-AD5754REB J8 connector Pin 7 (MOSI) → YRDKRX62N J8 connector Pin 19
+     EVAL-AD5754REB J8 connector Pin 1 (MISO) → YRDKRX62N J8 connector Pin 22
+     EVAL-AD5754REB J8 connector Pin 9 (SCLK) → YRDKRX62N J8 connector Pin 20
+     EVAL-AD5754REB J8 connector Pin 5 (GND)  → YRDKRX62N J8 connector Pin 4
+     EVAL-AD5754REB J8 connector Pin 6 (LDAC) → YRDKRX62N JN1 connector Pin 17
+     EVAL-AD5754REB J8 connector Pin 4 (CLR)  → YRDKRX62N JN1 connector Pin 16
+     EVAL-AD5754REB J9 connector AVDD         → +5V
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5754_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project sets up the AD5754 part to output 2.5V on VOUTA connector
+
+
+|image2|
+
+.. _software-project-setup-1:
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`__
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`__
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5754_rx62n_screen.jpg

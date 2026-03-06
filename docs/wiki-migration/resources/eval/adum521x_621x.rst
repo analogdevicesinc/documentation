@@ -1,0 +1,36 @@
+Evaluating the ADuM521x/ADuM621x 150mW isoPower Devices
+=======================================================
+
+FEATURES
+--------
+
+-  isoPower integrated, isolated dc-to-dc converter
+-  Regulated 3.15 V or 5.25 V output
+-  Up to 150 mW output power
+-  20-lead SSOP package with 5 mm creepage
+-  High temperature operation: 105°C
+-  High common-mode transient immunity: >25 kV/µs
+
+SUPPORTED MODELS
+----------------
+
+-  ADuM5210
+-  ADuM5211
+-  ADuM5212
+-  ADuM6210
+-  ADuM6211
+-  ADuM6212
+
+GENERAL DESCRIPTION
+-------------------
+
+The EVAL-ADuM5211EBZ supports the ADuM521x and ADuM621x 150mW isolated power modules. It provides a JEDEC standard SSOP20 pad layout as well as support for setting the desired output voltage, setting enable control and providing multiple positions for on board loads and bypass capacitors.
+
+isoPower devices employ high frequency high power switching circuits to enable power transfer across chip scale, air core transformers. The Evaluation board includes EMI mitigation recommendations from ADI applications note AN-0971. With the included techniques, this PCB and power module is capable of meeting the requirements of CICPER22 Class A or Class B depending on the voltage and load range.
+
+User guide: :doc:`Evaluating the ADuM521x/ADuM621x 150mW isoPower Devices </wiki-migration/resources/eval/adum521x_621x>`
+
+To order, please visit the supported models product pages.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/adum521x_board_flat_new_branded_fixed_2.jpg
+   :width: 200px

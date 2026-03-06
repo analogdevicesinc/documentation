@@ -1,0 +1,223 @@
+ADALM-PHASER (CN0566) Phased Array Exploration Platform
+=======================================================
+
+Introduction
+------------
+
+| Phased array communications and radar systems are finding increased use in a variety of applications. This places a greater importance on training engineers and rapidly prototyping new phased array concepts. However, both those imperatives have historically been difficult and expensive. That is why Analog Devices launched the ADALM-PHASER. It is a low cost, simplified phased array radar which allows real beamforming hardware to be used for education, project proposals, and even software development.
+| Most of the labs are run on a Python GUI, with several helper scripts. These can be run on a remote host computer, or directly on the phaser's Raspberry Pi computer with the addition of a keyboard, mouse, and display.
+| For more advanced application development, the Phaser is also supported in the MATLAB RF Microwave Toolbox. Equivalent MATLAB lab exercises are in development, and will be added below as they are completed.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phaser_with_topics.png
+   :align: center
+   :width: 600px
+
+Here is a brief video introduction to beamforming and the Phased Array Platform:
+
+.. container:: centeralign
+
+
+|youtube>dUn2_fiOh94|
+
+Quick Start Guide
+-----------------
+
+-  There are a few steps that need to be performed before diving into the lab exercises. Please visit the :doc:`Quick Start Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/quickstart>`.
+
+| 
+| ===== Phased Array Hardware =====
+
+-  To get acquainted with the hardware, see the :doc:`Phaser Hardware Overview </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/overview_setup>` page.
+
+Phased Array Software
+---------------------
+
+There are several pieces of software used with the CN0566 Phaser, including a user-friendly Graphical User Interface (GUI) and a number of command-line utilities. This page describes the various pieces of software:
+
+-  :doc:`Phaser Software guides (GUI and CLI utilities) </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/software>`
+-  :doc:`Phaser Software guide for MATLAB </wiki-migration/phaser_matlab>`
+
+Phased Array Assembly and Testing
+---------------------------------
+
+The phaser ships fully assembled and ready to go. Should you need to re-assemble a disassembled board, or do a quick functionality test, refer to this page:
+
+-  :doc:`CN0566 Assembly and Production Test </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/assy_prod_test>`
+
+Labs and Lectures
+-----------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phasers_to_fun.png
+   :align: center
+   :width: 800px
+
+The ADALM-PHASER is meant for you to experience, first hand, phased array beamforming and radar concepts. But to go along with the hardware, we’ve put together a series of short lectures followed by hands-on labs that you can perform with your own Phaser. A complete, printable lab manual is available here:
+
+.. admonition:: Download
+   :class: download
+
+   `Printable Phaser Lab Instructions (DOCX) <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phaser_lab_instructions_june14_2022_no_title.docx>`__
+
+   
+   `Printable Phaser Lab Instructions (PDF) <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phaser_lab_instructions_june14_2022_no_title.pdf>`__
+
+
+The expanded list of topics is as follows:
+
+-  Phaser Hardware Overview, Software Setup, and Frequency Plan
+
+   -  :doc:`Phaser Hardware Overview </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/overview_setup>`
+   -  Lecture Video
+
+      -
+
+
+      |youtube>-Vqbgf0MjPk|
+
+-  Basics of SDR and Beamforming Control
+
+   -  :doc:`Lab: Controlling the Phaser with Python </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/basic_example>`
+   -  :doc:`Lab: Controlling the Phaser with MATLAB </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/matlab_basic_example>`
+   -  Lecture Video
+
+      -
+
+
+      |youtube>jBGzOlThpRE|
+
+   -  Lab Video
+
+      -
+
+
+      |youtube>5lihNPh4Rm0|
+
+-  Phased Array Beam Steering
+
+   -  :doc:`Lab Material </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/steering_angle>`
+   -  Lecture and Lab Video
+
+      -
+
+
+      |youtube>AKmxmQUwYw0|
+
+-  Phased Array Antenna Patterns
+
+   -  :doc:`Lab Material </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/antenna_patterns>`
+   -  Lecture and Lab Video
+
+      -
+
+
+      |youtube>UQgmtWChNfM|
+
+-  Sidelobes and Beam Tapering
+
+   -  :doc:`Lab Material </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/sidelobes_tapering>`
+   -  Lecture and Lab Video
+
+      -
+
+
+      |youtube>be_5D4eNtCY|
+
+-  Grating Lobes
+
+   -  :doc:`Lab Material </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/grating_lobes>`
+   -  Lecture and Lab Video
+
+      -
+
+
+      |youtube>qksh4lGysbI|
+
+-  Beam Squint
+
+   -  :doc:`Lab Material </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/beam_squint>`
+   -  Lecture and Lab Video
+
+      -
+
+
+      |youtube>LYVD014ClZI|
+
+-  Quantization Sidelobes
+
+   -  Lecture and Lab Video
+
+      -
+
+
+      |youtube>51O5FLVZE4c|
+
+-  Analog, Digital, and Hybrid Beamforming
+
+   -  Lecture and Lab Video
+
+      -
+
+
+      |youtube>hMiJs2NdXZY|
+
+-  Monopulse Tracking
+
+   -  Lecture and Lab Video
+
+      -
+
+
+      |youtube>hZDopcNjVzY|
+
+-  Radar: Simple FMCW
+
+   -  Lecture and Lab Video
+
+      -
+
+
+      |youtube>CXSbLQgRFAA|
+
+-  Radar: CFAR, Range Normalization, Clutter Suppression, and Range/Velocity
+
+   -  Lab and Lecture Video
+
+      -
+
+
+      |youtube>igrN_wd_g74|
+
+Additional Resources
+--------------------
+
+This series is partially derived from several sources that also provide valuable background information.
+
+-  Analogue Dialogue Phased array paper series:
+
+   -  :adi:`Phased Array Antenna Patterns—Part 1: Linear Array Beam Characteristics and Array Factor <en/analog-dialogue/articles/phased-array-antenna-patterns-part1.html>`
+   -  :adi:`Phased Array Antenna Patterns—Part 2: Grating Lobes and Beam Squint <en/analog-dialogue/articles/phased-array-antenna-patterns-part2.html>`
+   -  :adi:`Phased Array Antenna Patterns—Part 3: Sidelobes and Tapering <en/analog-dialogue/articles/phased-array-antenna-patterns-part3.html>`
+
+More Information and Useful Links
+---------------------------------
+
+-  :adi:`CN0566 Product Page <CN0566>`
+-  :doc:`CN0566 Software Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/software>`
+-  :doc:`CN0566 Hardware Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/overview_setup>`
+
+*End of Document*
+
+.. |youtube>dUn2_fiOh94| image:: https://wiki.analog.com/_media/youtube>dUn2_fiOh94
+.. |youtube>-Vqbgf0MjPk| image:: https://wiki.analog.com/_media/youtube>-Vqbgf0MjPk
+.. |youtube>jBGzOlThpRE| image:: https://wiki.analog.com/_media/youtube>jBGzOlThpRE
+.. |youtube>5lihNPh4Rm0| image:: https://wiki.analog.com/_media/youtube>5lihNPh4Rm0
+.. |youtube>AKmxmQUwYw0| image:: https://wiki.analog.com/_media/youtube>AKmxmQUwYw0
+.. |youtube>UQgmtWChNfM| image:: https://wiki.analog.com/_media/youtube>UQgmtWChNfM
+.. |youtube>be_5D4eNtCY| image:: https://wiki.analog.com/_media/youtube>be_5D4eNtCY
+.. |youtube>qksh4lGysbI| image:: https://wiki.analog.com/_media/youtube>qksh4lGysbI
+.. |youtube>LYVD014ClZI| image:: https://wiki.analog.com/_media/youtube>LYVD014ClZI
+.. |youtube>51O5FLVZE4c| image:: https://wiki.analog.com/_media/youtube>51O5FLVZE4c
+.. |youtube>hMiJs2NdXZY| image:: https://wiki.analog.com/_media/youtube>hMiJs2NdXZY
+.. |youtube>hZDopcNjVzY| image:: https://wiki.analog.com/_media/youtube>hZDopcNjVzY
+.. |youtube>CXSbLQgRFAA| image:: https://wiki.analog.com/_media/youtube>CXSbLQgRFAA
+.. |youtube>igrN_wd_g74| image:: https://wiki.analog.com/_media/youtube>igrN_wd_g74

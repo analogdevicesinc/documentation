@@ -1,0 +1,164 @@
+AD9279 Evaluation Board, ADC-FMC Interposer & Xilinx ML605 Reference Design
+===========================================================================
+
+Introduction
+------------
+
+The :adi:`AD9279` is an eight channel variable gain amplifier (VGA) with a low noise preamplifier (LNA), an antialiasing filter (AAF), an analog-to-digital converter (ADC) and an I/Q demodulator with programmable phase rotation. It is a low cost, low power, small size device for applications in medical ultrasound and automotive radar. This reference design includes the device data capture and SPI interface. The samples are written to the external DDR-DRAM on ML605. It allows programming the device and monitoring it's internal registers via SPI. The reference design is based on ML605.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9279-65EBZ customer evaluation board <AD9279-65EBZ>`
+-  :adi:`ADC FMC Interposer board <en/evaluation/eval-adc-fmc-int/eb.html>`
+
+Supported Carriers
+------------------
+
+-  `ML605 <https://www.xilinx.com/ML605>`__
+
+Quick Start Guide
+-----------------
+
+The reference design has been tested with ML605. However it should be easily portable to other boards (KC705, VC707, ZC702 etc.). If you find portability issues please use the engineer zone for help. The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. The quick start bit file configures the AD9279 for all test modes and verifies the captured data accordingly. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  ML605 board
+-  AD9279-EBZ board & Power supply
+
+::
+
+     *[[https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9279-ebz.pdf|ad9279-ebz.pdf]]- evaluation board schematic
+   * ADC FMC interposer board
+   * Signal generator (clock, optional)
+   * Signal generator (analog input, for data capture)
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.1 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 57600.
+
+Bit file
+~~~~~~~~
+
+-  Download the gzip file and extract the **sw/cf_ad9279_ebz.bit** file.
+
+Board Modifications
+~~~~~~~~~~~~~~~~~~~
+
+If you have a Rev. A version of the FMC interposer board, please do the following modifications on the board.
+
+-  Populate R209 (0ohm) and make sure R211 is NOT populated.
+-  Insert (cut the traces) 33ohm resistors on U201 (UG3308) Y ports (pins 11 through 17).
+-  Make sure that R201 through R207 are NOT populated.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To begin make the following connections (see image below):
+
+-  Connect the AD9279-EBZ board to the FMC Interposer board.
+-  Connect the interposer board to the **FMC-HPC** connector of ML605 board.
+-  Connect power to ML605 and the AD9279-EBZ boards.
+-  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on ML605.
+-  The board uses a 65MHz oscillator (OSC501) as the clock source. If using an external clock source, remove R503, set jumper J501 to the OFF position and connect a clock source to J503. Set the clock source to 80MHz/0dBm.
+-  Connect a signal generator to channel A SMA connector. Set the signal source to 6MHz/-3dBm.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9279_ebz_setup.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+After the hardware setup, turn the power on to the ML605 and the AD9467-2x0EBZ boards. Start IMPACT, and initialze the JTAG chain. The program should recognize the Virtex 6 device (see screenshot below). Start a UART terminal (set to 57600 baud rate) and then program the device.
+
+If programming was successful, you should be seeing messages appear on the terminal as shown in figure below. After programming the AD9279, the program checks data capture on various test modes.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9279_ebz_uart.jpg
+   :alt: Terminal
+   :width: 200px
+
+After patterns and prbs sequences are verified, if no errors are present, you may use the chipscope busplot to see the captured signal (see below). The ADC data is available on pins [11:0] of the chipscope signal. Individual channels may be enabled through the processor. The reference design runs internally at 160MHz, so two samples will appear on chipscope for default capture of the signal. The capture may be qualified with the internal data select signal (set trigger to 0x01 as the storage condition).
+
+| Chipscope capture (raw):
+| |Chipscope Busplot (raw)|
+
+| Chipscope capture (storage qualified):
+| |Chipscope Busplot (qualified)|
+
+Using the reference design
+--------------------------
+
+The reference design is built on a microblaze based system parameterized for linux. The reference design consists of three functional modules, a LVDS interface, a PN9/PN23/PAT monitor and a DMA interface.
+
+The LVDS interface captures and buffers data from the ADC. The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software.
+
+Registers
+~~~~~~~~~
+
+Please refer to the regmap.txt file inside pcores.
+
+Good To Know
+~~~~~~~~~~~~
+
+The PN23 sequence is inverted, PN9 is not inverted.
+
+Downloads
+---------
+
+FPGA Referece Designs:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  **ML605 (source files)** `cf_ad9279_ebz_edk_14_4_2013_03_26.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9279_ebz_edk_14_4_2013_03_26.tar.gz>`__
+   -  **ML605 (bit/sw files)** `cf_ad9279_ebz_sw_14_4_2013_03_26.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9279_ebz_sw_14_4_2013_03_26.tar.gz>`__
+   
+
+
+Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
+
+.. hint::
+
+   
+   -  Questions? :ez:`Ask Help & Support <fpga>`.
+   
+
+
+Tar file contents
+-----------------
+
+The tar file contains, in most cases, the following files and/or directories. To rebuild the reference design simply double click the XMP file and run the tool. To build SDK, select a workspace and use the C file to build the elf file. Please refer to `Xilinx EDK documentation <https://www.xilinx.com/support/documentation/dt_edk_edk13-2.htm>`__ for details.
+
++-------------+------------------------------------------------------------------------------------------------------+
+| license.txt | ADI license & copyright information.                                                                 |
++-------------+------------------------------------------------------------------------------------------------------+
+| system.mhs  | MHS file.                                                                                            |
++-------------+------------------------------------------------------------------------------------------------------+
+| system.xmp  | XMP file (use this file to build the reference design).                                              |
++-------------+------------------------------------------------------------------------------------------------------+
+| data/       | UCF file and/or DDR MIG project files.                                                               |
++-------------+------------------------------------------------------------------------------------------------------+
+| docs/       | Documentation files (Please note that this wiki page is the documentation for the reference design). |
++-------------+------------------------------------------------------------------------------------------------------+
+| sw/         | Software (Xilinx SDK) & bit file(s).                                                                 |
++-------------+------------------------------------------------------------------------------------------------------+
+
+More information
+----------------
+
+-  `VITA's FMC info <http://www.vita.com/fmc>`__
+-  :ez:`Ask questions about the FPGA reference design <community/fpga>`
+
+   -  Example questions:
+
+
+   |//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |Chipscope Busplot (raw)| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9279_ebz_chipscope_1.jpg
+   :width: 200px
+.. |Chipscope Busplot (qualified)| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9279_ebz_chipscope_2.jpg
+   :width: 200px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

@@ -1,0 +1,134 @@
+EVAL-CN0522-EBZ User Guide
+==========================
+
+General Description
+-------------------
+
+| The :adi:`EVAL-CN0522-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0522.html>` is a 6-layer printed circuit board (PCB) that allows evaluation of the :adi:`CN0522` USB-powered, 915 MHz ISM Band RF power amplifier circuit. The board is fabricated with a 3 oz./3 oz. copper cladding and IPC-4101 (or IPC-4103) laminates and bonding materials. To improve the thermal performance, multiple plated vias are used in the design, which are filled with conductive epoxy.
+| Designed to be used with the :adi:`ADALM-PLUTO`, the :adi:`EVAL-CN0522-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0522.html>` features a small form-factor with dimensions of 25.4 mm × 36.957 mm x 1.5748 mm (PCB only). The evaluation board uses standard 50 Ω SMA coaxial connectors for its RF signal path — for easy integration with RF systems, a male connector is used for the RF input and and a female connector is used for the RF output. Coplanar waveguides are used for the RF traces on the board, which have a characteristic impedance of 50 Ω. A micro-USB connector is used for the input power, allowing the evaluation to use most +5 V wall-wart power supplies available in the market.
+|
+
+.. note::
+
+   **Evaluation Kit Contents:**
+
+   
+   -  :adi:`EVAL-CN0522-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0522.html>` Circuit Evaluation Board
+   
+   |
+
+
+| ===== Evaluation Board Hardware =====
+
+Primary Side
+~~~~~~~~~~~~
+
+| 
+| |Figure 2. Top View of EVAL-CN0522-EBZ|
+| === RFIN Plug (J1) === |image1| The RF input to the evaluation board must be connected to the male SMA connector J1.
+| *The maximum RF input to the* :adi:`EVAL-CN0522-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0522.html>` *is +15 dBm. Do not use a higher input level to avoid damaging the circuit.*
+| === RFOUT Port (J2) === |image2| The RF output of the evaluation board must be connected to the female SMA connector J2.
+| *The maximum RF output of the* :adi:`EVAL-CN0522-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0522.html>` *is +30 dBm. Ensure that the RF load to be driven can handle the amplified RF signal. Use an RF attenuator if necessary to avoid damage.*
+| === LED Indicators (DS1 and DS2)=== |image3| The evaluation board uses two LEDs to indicate its current status.
+| *The green LED (DS1) lights up when power is present on the board, the red LED (DS2) lights up when the amplifier is disabled due to the board temperature exceeding the temperature switch trip point.*
+| |image4|
+| ==== Secondary Side ====
+| |Figure 3. Bottom View of EVAL-CN0522-EBZ|
+| === Power Supply Connector (P1) === |image5| A +5 V power supply must be connected to the VCC line through the micro-USB port P1.
+| *The typical supply current of the on-board RF amplifier is 307 mA. However, this requirement becomes much higher at higher output power values (refer to Page 12, Figure 29 on the* :adi:`ADL5605` *datasheet). As such, it is recommended to use a power supply with a maximum current rating of at least 1 A for full functionality.*
+| === Changing the ADT6402 Trip Point (JP1 and JP2) === |image6| The evaluation board includes a temperature switch to disable the amplifier when the board temperature reaches a trip point.
+| *The trip point can be set using the solder jumpers JP1 and JP2, as shown in the table below.*
+| |image7|
+
+.. important::
+
+   Due to the high thermal dissipation of RF amplifiers, the first three and last three options should not be used.
+
+
+| ===== Connecting the EVAL-CN0522-EBZ to the ADALM-PLUTO =====
+| |image8|
+| To properly operate the :adi:`EVAL-CN0522-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0522.html>` using the :adi:`ADALM-PLUTO`, follow the steps below:
+
+-  Connect the 5 V DC power source to the micro-USB port P1. Upon applying power to the board, the green LED indicator DS1 will light up.
+-  Connect the Tx port of the :adi:`ADALM-PLUTO` to the RFIN plug J1. The RF signal will pass through an on-board SAW filter and AC-coupled to the RF amplifier input.
+-  Connect the RF load (usually an antenna) to the female SMA connector J2.
+
+| 
+|
+
+.. warning::
+
+   Warning: Do not directly connect the RFOUT port of the :adi:`EVAL-CN0522-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0522.html>` to the Rx port of the :adi:`ADALM-PLUTO`. The maximum RF input that the :adi:`ADALM-PLUTO` can safely handle is +2.5 dBm.
+
+
+   | ===== Evaluation Board Schematic, Artwork and Bill of Materials =====
+
+Assembly Drawing
+~~~~~~~~~~~~~~~~
+
+|
+
+| |image9|
+| ==== Board Dimensions ====
+| |image10|
+| ==== Schematic, Layout and Bill of Materials ====
+|
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0522-EBZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0522-DesignSupport.zip>`
+
+   
+   -  Schematic
+   -  Bill of Materials
+   -  Gerber Files
+   -  Allegro Layout Files
+   -  Assembly Drawing
+   
+   |
+
+
+| ===== More Information and Useful Links =====
+
+-  :adi:`CN0522 Circuit Note Page <CN0522>`
+-  :adi:`ADL5605 Product Page <ADL5605>`
+-  :adi:`LTM8045 Product Page <LTM8045>`
+-  :adi:`ADALM-PLUTO Product Page <ADALM-PLUTO>`
+-  :doc:`ADALM-PLUTO Overview </wiki-migration/university/tools/pluto>`
+-  :doc:`Amplifiers for RF Transmission on Analog Wiki </wiki-migration/university/tools/pluto/users/amp>`
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0522-EBZ?&v=RevB>`__ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |Figure 2. Top View of EVAL-CN0522-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_revb_primary_with_labels.png
+   :width: 600px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_j1.png
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_j2.png
+   :width: 200px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_ds1-ds2_led_.png
+   :width: 200px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_ds1-ds2_table.png
+   :width: 350px
+.. |Figure 3. Bottom View of EVAL-CN0522-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_revb_secondary_with_labels.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_p1.png
+   :width: 150px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_jp1-jp2_temp_switch_.png
+   :width: 150px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_jp1-jp2_table.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0417.png
+   :width: 400px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_assembly_drawing.png
+   :width: 400px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0522_dimensions.png
+   :width: 800px

@@ -1,0 +1,132 @@
+AD7887 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7887`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0150`
+
+Overview
+--------
+
+The AD7887 is a high speed, low power, 12-bit analog-to-digital converter (ADC) that operates from a single 2.7 V to 5.25 V power supply. The AD7887 is capable of 125 kSPS throughput rate. The input track-and-hold acquires a signal in 500 ns and features a single-ended sampling scheme. The output coding for the AD7887 is straight binary, and the part is capable of converting full power signals of up to 2.5 MHz.
+
+The AD7887 can be configured for either dual- or single-channel operation via the on-chip control register. There is a default single-channel mode that allows the AD7887 to be operated as a read-only ADC. In single-channel operation, there is one analog input (AIN0) and the AIN1/VREF pin assumes its VREF function. This VREF pin allows the user access to the part’s internal 2.5 V reference, or the VREF pin can be overdriven by an external reference to provide the reference voltage for the part. This external reference voltage has a range of 2.5 V to VDD. The analog input range on AIN0 is 0 to VREF.
+
+Applications
+~~~~~~~~~~~~
+
+-  Battery-powered systems (personal digital assistants, medical instruments, mobile communications)
+-  Instrumentation and control systems
+-  High speed modems
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7887.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RX63N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx63n-yrdkrx63n-demonstration-kit-rx63n>`__
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD7887 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7887 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7887 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD7887 driver:
+
++--------------------------------------------------+-------------------------------------------+
+| Function                                         | Description                               |
++==================================================+===========================================+
+| unsigned char AD7887_Init(void)                  | Initializes the AD7887 device.            |
++--------------------------------------------------+-------------------------------------------+
+| unsigned short AD7887_Read(unsigned char config) | Perform a read operation from the AD7887. |
++--------------------------------------------------+-------------------------------------------+
+
+Downloads
+---------
+
+-  `AD7887 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7887_generic.zip>`__
+-  `AD7887 RX63N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7887_rx63n.zip>`__
+
+Renesas RX63N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD7887 demonstration project on a Renesas RX63N platform.
+
+Required Hardware
+^^^^^^^^^^^^^^^^^
+
+-  `Renesas Demo Kit for RX63N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx63n-yrdkrx63n-demonstration-kit-rx63n>`__
+-  :adi:`EVAL-CN0150A-SDPZ(ADI) <EVAL-CN0150A-SDPZ>`
+
+Required Software
+^^^^^^^^^^^^^^^^^
+
+-  `High-performance Embedded Workshop for RX63N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`__
+-  `Renesas Peripheral Driver Library for RX63N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`__
+
+Hardware Setup
+^^^^^^^^^^^^^^
+
+An EVAL-CN0150A-SDPZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RX63N:
+
+::
+
+     EVAL-CN0150A-SDPZ testpoint TP13 (CS)      → YRDKRX63N J15 connector Pin 1
+     EVAL-CN0150A-SDPZ testpoint TP12 (MOSI)    → YRDKRX63N J15 connector Pin 2
+     EVAL-CN0150A-SDPZ testpoint TP11 (MISO)    → YRDKRX63N J15 connector Pin 3
+     EVAL-CN0150A-SDPZ testpoint TP10 (SCLK)    → YRDKRX63N J15 connector Pin 4
+     EVAL-CN0150A-SDPZ testpoint TP7  (GND)     → YRDKRX63N J15 connector Pin 5
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7887_rx63n.jpg
+   :align: center
+
+Reference Project Overview
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The reference project initializes the device, reads the ADC conversion result and displays it on the LCD.
+
+
+|image2|
+
+Software Project Setup
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. note::
+
+   See `rx63n_software_design <https://wiki.analog.com/rx63n_software_design>`__
+
+
+More information
+================
+
+.. include:: ../more-information.rst
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7887_rx63n_screen.jpg

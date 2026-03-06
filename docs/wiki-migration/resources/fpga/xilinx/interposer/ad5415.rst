@@ -1,0 +1,183 @@
+AD5415 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5415`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5415SDZ <EVAL-AD5415>`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD5415SDZ <AD5415>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD5415SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_ad5415.jpg
+   :alt: img_ad5415.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5415SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5415_sdp1z.png
+   :alt: ad5415_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`AD5415` is a CMOS, 12-bit, dual-channel, current output digital-to-analog converter. This device operates from a 2.5 V to 5.5 V power supply, making it suited to battery-powered applications and other applications. As a result of being manufactured on a CMOS submicron process, this part offers excellent 4-quadrant multiplication characteristics, with large-signal multiplying bandwidths of 10 MHz.
+
+The **EVAL-AD5415** evaluation board is designed to help customers quickly prototype new AD5415 circuits and reduce design time. The board requires ±12 V and +5 V supplies.
+
+More information
+----------------
+
+-  :adi:`AD5415 Product Info <AD5415>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD5415SDZ evaluation board user guide </static/imported-files/user_guides/UG-296.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-AD5415** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-AD5415 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD5415 Driver:** :git-no-OS:`device_drivers/AD5449`
+   
+   -  **AD5415 Commands:** :git-no-OS:`device_commands/AD5449`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+
+| Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+|
+
+.. important::
+
+   | To power on the EVAL-AD5415 evaluation board, you need to provide external +12V VDD and -12V VSS supply voltage used to power the output amplifier (for more information see: :adi:`EVAL-AD5415SDZ evaluation board user guide </static/imported-files/user_guides/UG-296.pdf>`) and a +5V supply used to power the DAC and transceivers.
+
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD5415 reference project for Xilinx KC705 FPGA board.
+
++--------------------+-------------------------------------------------------------------------+
+| Command            | Description                                                             |
++====================+=========================================================================+
+| **help?**          | Displays all available commands.                                        |
++--------------------+-------------------------------------------------------------------------+
+| **load=**          | Loads selected DAC input register with a given value. Accepted values:  |
+|                    | channel:                                                                |
+|                    | 0 - select DAC A input register.                                        |
+|                    | 1 - select DAC B input register.                                        |
+|                    | value:                                                                  |
+|                    | 0 .. 4095 - value to be written in register.                            |
++--------------------+-------------------------------------------------------------------------+
+| **loadAll=**       | Loads both DAC input registers. Accepted values:                        |
+|                    | 0 .. 4095 - value to be written in register.                            |
++--------------------+-------------------------------------------------------------------------+
+| **loadAndUpdate=** | Loads and updates the selected DAC with a given value. Accepted values: |
+|                    | channel:                                                                |
+|                    | 0 - select DAC A.                                                       |
+|                    | 1 - select DAC B.                                                       |
+|                    | value:                                                                  |
+|                    | 0 .. 4095 - value to be written in register.                            |
++--------------------+-------------------------------------------------------------------------+
+| **updateAll!**     | Updates both DAC outputs.                                               |
++--------------------+-------------------------------------------------------------------------+
+| **readback?**      | Reads from the selected DAC register. Accepted values:                  |
+|                    | channel:                                                                |
+|                    | 0 - read from DAC A.                                                    |
+|                    | 1 - read from DAC B.                                                    |
++--------------------+-------------------------------------------------------------------------+
+| **clearToZero!**   | Clears both DAC outputs to zero scale.                                  |
++--------------------+-------------------------------------------------------------------------+
+| **clearToMid!**    | Clears both DAC outputs to midscale.                                    |
++--------------------+-------------------------------------------------------------------------+
+| **ldacPin=**       | Sets the output value of LDAC pin. Accepted values:                     |
+|                    | 0 - sets LDAC pin low.(default)                                         |
+|                    | 1 - sets LDAC pin high.                                                 |
++--------------------+-------------------------------------------------------------------------+
+| **ldacPin?**       | Displays the value of LDAC pin.                                         |
++--------------------+-------------------------------------------------------------------------+
+| **clrPin=**        | Sets the output value of CLR pin. Accepted values:                      |
++--------------------+-------------------------------------------------------------------------+
+| **clrPin?**        | Displays the value of CLR pin.                                          |
++--------------------+-------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

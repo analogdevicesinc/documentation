@@ -1,0 +1,281 @@
+CN0292 -- Completely Isolated Robust 4-Channel Multiplexed Data Acquisition System for Industrial Level Signals (DEPRECATED)
+============================================================================================================================
+
+.. important::
+
+   This particular reference design has been **RETIRED** or **DEPRECATED**, which means it is no longer supported. This page is here for historical/reference purposes only.
+
+
+Overview
+--------
+
+The circuit of :adi:`CN-0292 <CN0292>` below is a completely isolated, robust, industrial, 4-channel data acquisition system that provides 16-bit, noise free code resolution and an automatic channel switching rate of up to 42 kSPS. The channel-to-channel crosstalk at 42 kSPS switching is less than 15 ppm FS (less than −90 dB) because of the unique selection of fast settling components in the multiplexed signal chain. The circuit acquires and digitizes standard industrial signal levels of ±5 V, ±10 V, 0 V to 10 V, and 0 mA to 20 mA. The input buffers also provide overvoltage protection, thereby eliminating the leakage errors associated with conventional Schottky diode protection circuits. Applications for the circuit include process control (PLC/DCS modules), battery testing, scientific multichannel instrumentation, and chromatography.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/cn0292_figure_1.png
+   :width: 690px
+
+General Setup and Equipment Required
+------------------------------------
+
+-  :adi:`EVAL-CN0292-SDZ <CN0292>` evaluation board
+-  :adi:`EVAL-SDP-CB1Z` Evaluation system demonstration platform
+-  `CN0292 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0292>`__
+-  5 V at 1 A dc power source, or wall wart
+-  Precision dc voltage source (Fluke 5700)
+-  Digital multimeter (Agilent 3458)
+-  Low noise, precision voltage source (a battery pack is recommended)
+-  PC running Windows® XP (SP2), Windows Vista, or Windows 7 (32-bit or 64-bit) with USB port
+
+Test Setup Functional Diagram:
+------------------------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_2.png
+   :align: center
+   :width: 500px
+
+Hardware Configuration Photo:
+-----------------------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_3.png
+   :align: center
+   :width: 700px
+
+Recommended Quick Start Guide:
+------------------------------
+
+-  Install EVAL-CN0292SDZ Software. Ensure the SDP board is disconnected from the USB port of the PC while installing the software. The PC must be restarted after the installation.
+-  Connect the EVAL-SDP-CB1Z board to EVAL-CN0292-SDZ board as shown above.
+-  Screwing the two boards together with the enclosed plastic screw-washer set will ensure the boards connect firmly together.
+-  Apply the external voltage of 5V to the power supply connector J14 of the EVAL-CN0292-SDZ board as shown in the figures above.
+-  Connect the SDP board to the PC via the USB cable.
+-  For Windows XP you may need to search for the SDP drivers. Choose to automatically search for the drivers for the SDP board if prompted by the operating system.
+-  Launch the EVAL-CN0292-SDZ software from the Analog Devices subfolder in the Programs menu.
+
+Hardware Link Options:
+----------------------
+
+The default link options are listed in Table 1. It is recommended to keep all links in their default position for optimized performance.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/table_1.png
+   :align: center
+   :width: 800px
+
+On-Board Connectors:
+--------------------
+
+Table 2.gives information on all the external connectors on the EVAL-CN0292-SDZ.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/table_2.png
+   :align: center
+   :width: 800px
+
+Power Supplies:
+---------------
+
+The evaluation board requires power from an external bench top supply, applied to J14. IsoPower circuit generates ±17V on the hot plane and are further regulated down to ±15V and 5V with LDO to supply measurement circuit. Each supply is decoupled where it enters the board and again at each device in accordance with the schematic.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/table_3.png
+   :align: center
+   :width: 800px
+
+Serial Interface
+----------------
+
+The CN0292 evaluation board connects via the SPI to the Blackfin ADSP-BF527 on the EVAL-SDP-CB1Z. There are four primary signals (CS, SCLK, DIN – all inputs, and one output from the ADC – DOUT/RDY. These signals are isolated from the connector using ADUM3471then connected to the 120-pin connector.
+
+Analog Inputs
+-------------
+
+The EVAL-CN0292-SDZ analog inputs should be applied to J2/J15. For voltage inputs connect input signal to any of the Vx – Gx pairs. For current inputs connect input signal to any of the Ix - Gx pairs and short each used Ix with adjacent Vx.
+
+Reference Options
+-----------------
+
+The EVAL-CN0292-SDZ includes an external 5 V reference. The AD7176-2 ADC includes an internal 2.5V reference. The default operation on AD7176-2 is to use the internal reference. However it is necessary to use external 5 V reference for measuring ±10 V input to the J2 connector. The reference used for conversions by the AN7176-2 is selected by choosing the reference in the SETUPCON registers associated with SETUP1, SETUP2, SETUP 3 and SETUP 4. Changing between the use of the internal reference and external reference can be achieved by accessing the AD7176-2 register map via the evaluation software.
+
+The following screen shot shows this register selection for conversion.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_4.png
+   :align: center
+   :width: 600px
+
+The following screen shot shows the ADCMODE register setting and enabling the internal reference.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_5.png
+   :align: center
+   :width: 600px
+
+Software Installation
+---------------------
+
+The EVAL-CN0292-SDZ evaluation software can be downloaded from ftp://ftp.analog.com/pub/cftl/CN0292/ . Click the setup.exe file from to run the install.
+
+Note: Install the evaluation software before connecting the evaluation board and EVAL-SDP-CB1Z board to the USB port of the PC to ensure that the evaluation system is correctly recognized when connected to the PC.
+
+There are two parts to the install:
+
+-  EVAL-CN0292-SDZ Evaluation board software Install.
+-  EVAL-SDP-CB1Z System Demonstration Platform Board Drivers install
+
+The following screen shots show the separate stages of the EVAL-CN0292-SDZ evaluation software. Also shown are the separate steps to install the EVAL-SDP-CB1Z drivers. Proceed through all of the installation steps allowing the software and drivers to be placed in the appropriate locations. Only after the software and drivers have been installed should you connect the EVAL-SDP-CB1Z board to the PC.
+
+**CN0292 Install Window 1:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_6.png
+   :align: center
+   :width: 600px
+
+**CN0292 Install Window 2:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_7.png
+   :align: center
+   :width: 600px
+
+**CN0292 Install Window 3:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_8.png
+   :align: center
+   :width: 600px
+
+**CN0292 Install Window 4:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_9.png
+   :align: center
+   :width: 600px
+
+**CN0292 Install Window 5:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_10.png
+   :align: center
+   :width: 600px
+
+**ADI EVAL-SDP-CB1Z Drivers Setup Window 1:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_11.png
+   :align: center
+   :width: 600px
+
+**ADI EVAL-SDP-CB1Z Drivers Setup Window 2:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_12.png
+   :align: center
+   :width: 600px
+
+**ADI EVAL-SDP-CB1Z Drivers Setup Window 3:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_13.png
+   :align: center
+   :width: 600px
+
+After the installation is complete, connect the EVAL-CN0292SDZ to the EVAL-SDP-CB1Z as described in the Quick Start section.
+
+Connecting EVAL-SDP-CB1Z board via the USB cable as follows:
+
+-  Allow the new Found Hardware Wizard to run.
+-  Once the drivers are installed, check that the board has connected correctly by looking at the Device Manager of the PC.
+-  The Device Manager can be found by right clicking on My Computer->Manage ->Device Manager from the list of System Tools as shown below.
+-  The EVAL-SDP-CB1Z Board should appear under ADI Development Tools. This completes the installation.
+
+**Device Manager Window:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_14.png
+   :align: center
+   :width: 600px
+
+Launching the Software
+----------------------
+
+Once the EVAL-CN0292-SDZ and EVAL-SDP-CB1Z are correctly connected to your PC, the CN0292 software can be launched.
+
+To launch the software, complete the following steps:
+
+-  From the Start menu, select Programs ->Analog Devices -> EVAL-CN0292-SDZ. The main window of the software then displays as in the screen shot below.
+-  If the CN0292 evaluation system is not connected to the USB port via the EVAL-SDP-CB1Z when the software is launched, a connectivity error displays as shown in the screen shot below.
+-  Connect the evaluation board to the USB port of the PC, wait a few seconds, click Rescan, and follow the instructions-
+
+**Connectivity Alert Error:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_15.png
+   :align: center
+   :width: 600px
+
+Software Operation
+------------------
+
+To launch the software, complete the following steps:
+
+From the Start menu, select **Programs** ->\ **Analog Devices** -> **EVAL-CN0292-SDZ** -> **EVAL-CN0292-SDZ.EXE**. The main window of the software then displays as shown below. If the evaluation system is not connected to the USB port when the software is launched, a connectivity error displays. Connect the evaluation board to the USB port of the PC, wait a few seconds, click **Rescan**, and follow the instructions.
+
+**Main Operating Window:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_16.png
+   :align: center
+   :width: 600px
+
+The main window above shows the significant control buttons and analysis indicators of the ADC software. **Top Right Hand Corner: Sampling Button** – starts the ADC sampling and reporting the samples on the front panel. **Top Left Hand Corner: Setup Button** – this button launches the ADC register map setup controls and indicator panel, which is a separate pop-up window. See Figure 17. Two Main Graphs: Top Graph gives each successive sample of the ADC output (input referred). The indicators beside this graph show the latest data value the channel being converted and the flag for the error diagnostics of the ADC. **CRC Error** –this LED icon lights up to show when there has been a CRC error detected on communications between the software and the ADC. The CRC functionality on the ADC is OFF as a default. **Bottom Graph :**\ shows the Histogram analysis and the respective noise analysis on the indicator to the right of it. To exit the software click the Red X at the top right hand corner of the main window. Within any of the Chart panels, the following tools allow user control of the different chart displays.
+
+|image1|\ Used to control cursor if present
+
+|image2|\ Used for zooming in and out
+
+|image3|\ Used for panning
+
+Users can save plots using the “Save plot” button running Eval-cn0292-sdz
+
+Connecting the Hardware
+-----------------------
+
+-  5V 500mA DC power supply powers the EVAL-CN0292-SDZ(CN0292 board) via J14.
+-  Connect the 120-pin connector on the EVAL-CN0292-SDZ boart to the 120-pin connector marked “CON A” on the EVAL-SDP-CB1Z (SDP-B Board)
+-  Connect the USB cable supplied with EVAL-SDP-CB1Z (SDP-B Board) to the USB port on the PC and the SDP Board
+-  Connect voltage signals to Vx – Gx pairs on J2 (or short connect all Vx – Gx pairs for noise test)
+
+NOTE: Verify that the SDP Drivers are loaded properly. For that purpose open the Device manager and check if the SDP Board is recognized. If not repeat steps 1-3
+
+Configuring the ADC
+-------------------
+
+The following ADC configuration is recommended for optimized performance:
+
+-  Enable “GPIO_MUX”;
+-  Set “Delay Conversion” to 4us;
+-  Enable “Data + Status”;
+-  Enable the channels that are to be measured;
+-  Choose external reference;
+-  Leave other registers at reset value.
+
+**ADC Configuration:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_17.png
+   :align: center
+   :width: 800px
+
+Taking Samples and Analyzing Results
+------------------------------------
+
+The test setup is now configured. The number of samples should be set to 1000. Then click on **START SAMPLING**.
+
+**Result Using the "Noise Test" Configration:**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/figure_18.png
+   :align: center
+   :width: 600px
+
+Once the samples have been gathered the results will be displayed in the main waveform graph. Note that the voltage reading are referred to ADC inputs so a 10V input on J2/J15 will result in an aproximate 4V reading on the software.
+
+When precision voltage source is not available, shorted inputs could be used to check the functionality and noise performance of CN0292. By shorting the Vx – Gx pairs on J2, the setup will result in around 17 bits noise-free reading as shown above (ADC filter notch set to 250kHz).
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0292-SDZ?&v=RevC>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/cursor.png
+   :width: 50px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/zoom.png
+   :width: 50px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0292/panning.png
+   :width: 50px

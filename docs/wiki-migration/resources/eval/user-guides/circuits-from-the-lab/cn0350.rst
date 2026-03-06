@@ -1,0 +1,305 @@
+CN0350 Software User Guide
+==========================
+
+Overview
+--------
+
+:adi:`CN0350` provides robust and complete solution for processing charge input signals into digital code, for acceleration and shock measurements where piezoelectric sensors with charge output are used. The design solution is optimized for high precision and low cost measurement, using only two active devices, and has a total error less than 0.25% FSR after calibration over a ±10°C temperature range. The accuracy depends on the calibration.
+
+The circuit shown in Figure 1 incorporates :adi:`AD8608ARUZ` OpAmp, :adi:`AD7091RBRMZ` 12-bit successive approximation (SAR) ADC, to create the charge output from piezoelectric sensors into digital code.
+
+The circuit has 12 pin PMOD connector on board, which could be used for connection to a customer microprocessor or FPGA.
+
+The :adi:`CN0350` circuit note discusses the design steps needed to optimize the circuit shown in Figure 1 for a specific bandwidth including noise analysis and component selection considerations.
+
+The performance of the circuit could be demonstrated with the use of Analog Devices SDP controller :adi:`EVAL-SDP-CB1Z` and SDP-to-PMOD Interposer Board :adi:`SDP-PMD-IB1Z`, both optional purchase items. This user guide will discuss how to use the evaluation software to collect data from the EVAL-CN0350-PMDZ Evaluation Board :adi:`CN0350`
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_overview_fig_1.png
+   :width: 900px
+
+*Figure 1. Charge Input Single Supply Data Acquisition System for Piezoelectric Sensors (All connections and Decoupling Not Shown)*
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  :adi:`EVAL-CN0350-PMDZ <CN0350>` Evaluation Board (**CN-0335 Board**)
+-  :adi:`EVAL-CFTL-6V-PWRZ` **(+6V Power Supply)** or equivalent
+-  :adi:`SDP-PMD-IB1Z` SDP-to-PMOD interposer board
+-  Voltage Source (Voltage Generator)
+-  Multimeter(to measure the input current)
+-  `CN0350 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0350>`__
+
+   -  (supplied with provided CD in kit)
+
+-  PC with the following *Minimum Requirements*
+
+   -  Windows XP Service Pack 2 (32-bit)
+   -  USB type A Port
+   -  Processor rated at 1GHz or faster
+   -  512 MB RAM and 500 MB available hard disk space
+
+-  USB type A to USB type mini-B cable (provided with the EVAL-SDP-CB1Z Controller Board)
+
+General Setup
+-------------
+
+-  The :adi:`EVAL-CFTL-6V-PWRZ` **(+6V DC Power Supply)** powers the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** via the DC barrel jack.
+-  The :adi:`SDP-PMD-IB1Z` **(Interposer Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector A.
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  The :adi:`EVAL-CN0350-SDPZ <CN0350>` **(CN0350)** connects to the :adi:`EVAL-PMD-IB1Z` **(Interposer board)** via the 12-Pin header PMOD connector **(J2 and J3)**
+-  The voltage generator connects to the :adi:`EVAL-CN0350-SDPZ <CN0350>` **(CN0350 Board)** via the terminal block **J1**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_general_setup.png
+   :width: 900px
+
+--------------
+
+Installing the Software
+-----------------------
+
+-  Load the evaluation software by placing the CN0350 evaluation software disc in the CD drive of the PC. You can also download the most up to date copy of the evaluation software from www.analog.com/CN0350. Open the file setup.exe.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0350 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0350>`__ to the default directory path **C:\\Program Files\\Analog Devices\\CN0350\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image1|
+
+-  Click **Next** to view the installation review page
+
+|image2|
+
+-  Click **Next** to start the installation
+
+|image3|
+
+-  Upon completion of the installation of the **CN0350 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+\\\\\
+
+
+
+|image4|
+
+-  Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\C:\\Program Files\\Analog Devices\\SDP\\DriversR2**\
+
+
+   |image5|
+
+-  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+|image6|
+
+   \*
+
+   |image7|
+
+--------------
+
+Connecting the Hardware
+-----------------------
+
+-  Connect the :adi:`+6V DC Power Supply <EVAL-CFTL-6V-PWRZ>` **(Wallwart)** to the barrel jack **J1** of the :adi:`Interposer Board <SDP-PMD-IB1Z>` **(Interposer Board )** as depicted below.
+
+.. tip::
+
+   \ **NOTE:** Make sure that the jumper is positioned as shown below!
+
+
+   |image8|
+
+   \* Connect the 120-pin connector on the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** to the 120-pin connector marked **“CON A”** on the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)**
+
+   |image9|
+
+   \* Connect the USB cable supplied with :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** to the USB port on the PC and the SDP Board
+   |image10|}}
+
+.. tip::
+
+   \ **NOTE:** Verify that the SDP Drivers are loaded properly. For that purpose open the Device manager and check if the SDP Board is recognized. If not repeat steps 1-3
+
+
+\\\\\
+
+
+
+|image11|
+
+-  Connect the :adi:`EVAL-CN0350-PMDZ` **(CN0350 Board)** to the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** via the 12 pin header PMOD connector.
+
+|image12|
+
+   \* Connect the input Voltage generator to J1 Terminal Block located on :adi:`EVAL-CN0350-PMDZ` **(CN0350 Board)**. The positive end of the voltage generator has to be wired to the input marked with **“CAL”** and the negative end of the voltage generator has to be wired to the input marked with **“NEG”**.
+-  After a proper connection of the hardware to the PC the CN0350 Evaluation Software can be used to calibrate the board and capture data.
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Software Control and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| |image13|
+| |image14|
+| \\\\\ |image15|
+
+::
+
+   -**Acquire Data Button**
+   * When this button is pressed, the SDP-B Board will collect conversion data and present it in the graph.   
+   -**Clear Data Button**
+   * When this button is pressed, the software will clear all data collected from the graph history.
+   -**Save Data Button**
+   * When this button is pressed, the software will save the captured data to a tab delimited ASCII spreadsheet file. The units of the saved data depends on the chosen graph units (6).   
+   -**Control Tabs**
+   * __Acquire DataMain__ - Clicking this tab brings the data collection graph to the front.
+   * __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
+   * __SDP Revision __ - Clicking this tab brings the SDP board information window to the front.
+   -**Numerical Indicator**
+   * This indicator displays the current reading value. The value units depend on the chosen graph units (6).
+   -**Graph Units Radio Buttons**
+   * This control determines the units of the data displayed in the graph and the numerical indicator.
+   -**ADC Settings**
+   * This control determines the settings of the SPI communication. The **Sample Rate (Hz)** control determines the conversion frequency and the **Samples** control determines the numbers of samples to be captures when clicking (1) button. The maximum sample rate is set to 620k and the maximum samples are set to 1M. Changing this controls changes automatically the x-axis time on the graph. 
+   -**Graph**
+   * This graph displays the collected data. The units on the graph depend on the chosen graph units (6). 
+   -**Graph Controls **
+   * These controls allow the user to zoom in, zoom out, and pan through the collected data. 
+   -**System Status String Indicator **
+   * This indicator displays a message to the user detailing the current state of the software. 
+   -**System Status LED Indicator**
+   * This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0350:cn0350_using_sw_12inactive.png?nolink|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0350:cn0350_using_sw_12busy.png?nolink|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0350:cn0350_using_sw_12error.png?nolink|}}Error\\  {{:resources:eval:user-guides:circuits-from-the-lab:cn0350:cn0350_using_sw_12waiting.png?nolink|}}Waiting for user action\\
+   -**Calibration Coulombs Numerical Control**
+   * Set this control to the input coulombs in **pC**, used to calibrate the board.
+   -**Calibrate Button**
+   * Pressing this button initiates a calibration of the board.  After pressing this button follow the instructions to calibrate the board.
+   -**Sensor Sensitivity Numerical Control**
+   * This control is used if a real piezoelectric sensor is used to capture data. Set the sensor sensitivity **pC/g** here to be able to display correctly the captured data as acceleration **(g)**. Another calibration is not needed for that purpose.
+   -**SDP Firmware Revision**
+   * Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
+
+--------------
+
+Establishing a USB Connection Link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Follow the instructions to properly install the software and connect the hardware as described in the previous sections.
+-  Open the file named **CN0350.exe** in the installation directory.
+
+.. note::
+
+   \ **NOTE:** If the software was installed to the default location it will be found at
+
+   **C:\\Program Files\\Analog Devices\\CN0350\\CN0350.exe**\
+
+
+-  The software should connect to the board automatically. If the hardware is not recognized by the PC the next window will appear, indicating that the software is waiting for proper hardware connection. If that happens perform the hardware connection procedure described in the previous section. After connecting the hardware the list in the window will populate. Choose the connected hardware and click select.
+
+
+
+|image16|
+
+-  Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
+
+Calibrating the CN0350 Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Establish a USB Connection LinkFor the calibration of CN0350 Board an adjustable amplitude and frequency low impedance output voltage source is required with sine wave output. The power supply voltage source has to be very well isolated from the circuit (the computer). To calibrate the board connect the voltage source (voltage generator) as shown on the picture below. The positive end of the voltage source is wired to the CAL input of the board. The negative end is wired to the NEG of the board. With the described configuration the board can be calibrated for various input ranges by changing the amplitude of the voltage source or the calibration capacitance. The amount of the input charge is determined by the formula Q=Ccal.Vin. On the figure 2 it is shown a calibration configuration for 1000pC at the input of the board (Vin = 1V, Ccal = 1nF). Note that on the board 1nF capacitor is populated, but you can use TP1 and TP2 to add additional capacitor in parallel to the on board capacitor.
+
+.. note::
+
+   \ **NOTE:** Keep in mind that output voltage of the charge amplifier doesn’t have to exceed the limit of the input range of the ADC. For that purpose it is not recommended to drive the output Vout of the charge amplifier more that 1V peak voltage. So for 1nF calibration capacitor don’t apply more than 1V to the input of the board (Vout = Q/C2). If you need to calibrate the system for more than 1000pC add external capacitor in parallel to C2 by using TP3 and TP4.
+
+
+| 
+| |image17|
+| **Figure 2.**
+
+Calibration Procedure Steps
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Establish a USB Connection Link.
+-  Click the **Calibrate System** tab.
+-  Set the low **Calibration Coulombs Control** equal to the coulombs that will be applied to the board during the calibration
+-  Press the **Calibrate** Button.
+-  A pop-up window appears. At this point apply the coulombs to the input of the board as described and click **OK**. If you press **Cancel** at this point you will exit the calibration procedure but the board will not be able to capture data properly.
+-  A second pop-up window appears. Now the input calibration coulombs have to be removed from the board. For that purpose unwire the input voltage source from the input of the board. When ready press **OK**. If you press **Cancel** the board will still be not calibrated.
+
+| 
+| |image18|
+| |image19|
+| ==== Acquiring Data ==== Once calibrated, the board can be used to capture data from real piezoelectric sensors. The positive end of the piezoelectric sensor should be wired to **POS** of the board and the negative to **NEG**. Keep in mind that in order to demonstrate the result from the sensor as acceleration **(g)** you have to adjust the **Sensor Sensitivity Control** equal to the sensitivity of the sensor. Another method to demonstrate the functionality of the board is to use the voltage generator connected to the calibration input of the board. By changing the input voltage amplitude or by changing the calibration capacitor various inputs coulombs can be provided to the input of the board.
+
+-  Establish a USB Connection Link.
+-  Click the **Accuire Button**.
+
+Saving Data to a Spreadsheet File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  **Capture Data**.
+-  Click the **Save Data Button**.
+
+|image20|
+
+-  Click the **OK Button**.
+-  Browse to the directory location where the spreadsheet file is to be saved.
+-  Name the file.
+-  Click the **OK Button**.
+-  Open with Notepad or similar. The saved data shows the collected data according to the chosen **Graph Units Radio buttons**.
+
+.. note::
+
+   The software saves the spreadsheet file as ASCII text with columns separated by tabs.
+
+
+| 
+| =====Registration=====
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0350-PMDZ?&v=RevA>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_installing_sw_1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_installing_sw_2.png
+.. |image3| image:: https://wiki.analog.com/_media/{/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_installing_sw_3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_installing_sw_4.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0335/installing_sw_5.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_installing_sw_6.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0335/installing_sw_6a.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_connecthw_1.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_connecthw_2.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_connecthw_3.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_connecthw_3a.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_connecthw_4.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_using_sw_1.png
+   :width: 900px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_using_sw_2.png
+   :width: 900px
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_using_sw_3.png
+   :width: 900px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/cn0350_establishing_connection_3.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/CN0350_Calibrating_Fig2.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/CN0350_Cal_Procedure_steps 6.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/CN0350_Cal_Procedure_steps 6a.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0350/CN0350_saving_data_3.png

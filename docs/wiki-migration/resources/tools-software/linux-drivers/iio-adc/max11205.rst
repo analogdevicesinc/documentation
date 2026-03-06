@@ -1,0 +1,256 @@
+MAX11205 IIO ADC Linux Driver
+=============================
+
+Supported Devices
+-----------------
+
+-  `MAX11205 <https://www.maximintegrated.com/MAX11205>`__
+
+Evaluation Boards
+-----------------
+
+-  `MAX11205PMB1 <https://www.maximintegrated.com/MAX11205PMB1>`__
+
+Description
+-----------
+
+The MAX11205 is an ultra-low-power (< 300µA max active current), high-resolution, serial output ADC. This device provides the highest resolution per unit power in the industry and is optimized for applications that require very high dynamic range with low power such as sensors on a 4mA to 20mA industrial control loop. The MAX11205 provides a high-accuracy internal oscillator that requires no external components.
+
+When used with the specified data rates, the internal digital filter provides more than 80dB rejection of 50Hz or 60Hz line noise. The MAX11205 provides a simple 2-wire serial interface in the space-saving, 10-pin µMAX® package. The MAX11205 operates over the -40°C to +85°C temperature range.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max11205pmb1.png
+   :alt: max11205pmb1.png
+   :align: center
+   :width: 400px
+
+Source Code
+-----------
+
+Status
+~~~~~~
+
++-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Source                                                                                                                        | Mainlined?                                                                                                                                                  |
++===============================================================================================================================+=============================================================================================================================================================+
+| `git <https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/drivers/iio/adc/max11205.c?h=next-20220923>`__ | `Accepted, waiting for integration <https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/drivers/iio/adc/max11205.c?h=next-20220923>`__ |
++-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Files
+~~~~~
+
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function      | File                                                                                                                                                                             |
++===============+==================================================================================================================================================================================+
+| driver        | `drivers/iio/adc/max11205.c <https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/drivers/iio/adc/max11205.c?h=next-20220923>`__                             |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Documentation | `maxim,max11205.yaml <https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/Documentation/devicetree/bindings/iio/adc/maxim,max11205.yaml?h=next-20220923>`__ |
++---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Driver testing
+--------------
+
+When configured with channel 0 as voltage output the following structure is created under the corresponding IIO device.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices# ls
+      iio:device0  iio_sysfs_trigger  trigger0
+      root@analog:/sys/bus/iio/devices# cd iio:device0
+      root@analog:/sys/bus/iio/devices/iio:device0# ls -l
+      total 0
+      drwxr-xr-x 2 root root    0 Sep  6 08:17 buffer
+      -r--r--r-- 1 root root 4096 Sep  6 08:17 dev
+      -rw-r--r-- 1 root root 4096 Sep  6 08:17 in_voltage0_raw
+      -rw-r--r-- 1 root root 4096 Sep  6 08:17 in_voltage0_sampling_frequency
+      -rw-r--r-- 1 root root 4096 Sep  6 08:17 in_voltage0_scale
+      -r--r--r-- 1 root root 4096 Sep  6 08:17 name
+      lrwxrwxrwx 1 root root    0 Sep  6 08:17 of_node -> ../../../../../../../../firmware/devicetree/base/soc/spi@7e204000/max11205@0
+      drwxr-xr-x 2 root root    0 Sep  6 08:17 power
+      drwxr-xr-x 2 root root    0 Sep  6 08:17 scan_elements
+      lrwxrwxrwx 1 root root    0 Sep  6 08:17 subsystem -> ../../../../../../../../bus/iio
+      drwxr-xr-x 2 root root    0 Sep  6 08:17 trigger
+      -rw-r--r-- 1 root root 4096 Sep  6 08:17 uevent
+   
+
+
+Show device name
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
+      max11205a
+   
+
+
+Show raw measurement
+~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| Raw measurement of voltage on channel 0.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_voltage0_raw**
+      20137
+   
+
+
+U = in_voltage0_raw \* in_voltage0_scale = 20137 \* 0.097656250 = 1966.50390625 mV
+
+Show scale
+~~~~~~~~~~
+
+| **Description:**
+| Scale to be applied to the raw measurement of voltage on channel 0 in order to obtain the actual voltage.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_voltage0_scale**
+      0.097656250
+   
+
+
+Show sampling frequency
+~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| The sampling frequency of the device.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat in_voltage0_sampling_frequency**
+      116
+   
+
+
+Trigger management
+~~~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat trigger/current_trigger**
+      max11205a-dev0
+   
+
+
+Buffer management
+~~~~~~~~~~~~~~~~~
+
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+
+Every buffer implementation features a set of files:
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **length_align_bytes**
+| Using the high-speed interface. DMA buffers may have an alignment requirement for the buffer length. Newer versions of the kernel will report the alignment requirements associated with a device through the \`length_align_bytes\` property.
+
+| **scan_elements**
+| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0/scan_elements# **ls**
+      in_voltage0_en  in_voltage0_index  in_voltage0_type
+   
+
+
+| **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in_voltageX_type / in_voltageX-voltageY_type / timestamp_type:**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space. Form is [s|u]bits/storage-bits. s or u specifies if signed (2's complement) or unsigned. bits is the number of bits of data and storage-bits is the space (after padding) that it occupies in the buffer. Note that some devices will have additional information in the unused bits so to get a clean value, the bits value must be used to mask the buffer output value appropriately. The storage-bits value also specifies the data alignment. So u12/16 will be a unsigned 12 bit integer stored in a 16 bit location aligned to a 16 bit boundary. For other storage combinations this attribute will be extended appropriately.
+
+| **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
+
+
+More Information
+----------------
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

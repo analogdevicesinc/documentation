@@ -1,0 +1,49 @@
+Datasheet
+=========
+
+Rev. A Errata:
+
+`adar1000_datasheet_reva_errata_2020_03_16.pdf <https://wiki.analog.com/_media/resources/errata/adar1000/adar1000_datasheet_reva_errata_2020_03_16.pdf>`__
+
+Rev. B (Preliminary):
+
+`adar1000_revb_preliminary_2021.10.18.pdf <https://wiki.analog.com/_media/resources/errata/adar1000/adar1000_revb_preliminary_2021.10.18.pdf>`__
+
+| `adar1000_revb_preliminary_2022.02.11.pdf <https://wiki.analog.com/_media/resources/errata/adar1000/adar1000_revb_preliminary_2022.02.11.pdf>`__ Notes: SDO pin current limit resistor added
+| ===Rev. B Datasheet now live on the ADAR1000 Product Page!!!===
+| Rev. B Errata:`adar1000_datasheet_revb_errata_additionals_rev1.docx <https://wiki.analog.com/_media/resources/errata/adar1000/adar1000_datasheet_revb_errata_additionals_rev1.docx>`__
+| ===RMS Phase Error Definitions used in the Datasheet===
+| `adar1000_phase_error_definitions.pdf <https://wiki.analog.com/_media/resources/errata/adar1000/adar1000_phase_error_definitions.pdf>`__
+| ==== Silicon Errata: ==== `adar1000_si_errata_preliminaryv0.pdf <https://wiki.analog.com/_media/resources/errata/adar1000/adar1000_si_errata_preliminaryv0.pdf>`__
+
+| 
+| ==== Control Software ==== If FIPS is enabled on your PC, when connecting to the ADAR1000 evaluation board, the error in **bold** below is thrown:
+| **"System.TypeInitializationException: The type initializer for '<Module>' threw an exception. ---> System.InvalidOperationException: This implementation is not part of the Windows Platform FIPS validated cryptographic algorithms."**
+
+There are a couple of solutions:
+
+-  Disable FIPS on your PC by going to: Administrative Tools -> Local Security Policy -> Local Policies -> Security Options -> System Cryptography: Use FIPS compiant algorithms for encryption, hashing and signing -> Choose "Disabled" and hit Apply
+-  If you cannot disable FIPS, to this instead: Within the working directory where the ADAR1000.exe is installed, add the file "ADAR1000.exe.config" to the directory, paste the following text within the config file you just created, and save the file:
+
+::
+
+   <?xml version="1.0"?>
+   <configuration>  
+       <runtime>  
+           <enforceFIPSPolicy enabled="false"/>  
+       </runtime>
+   </configuration>
+
+| 
+
+User Guide
+==========
+
+Rev. B (Preliminary): `adar1000-evalz-ug-1283_rev_b_preliminary_2021.11.12.pdf <https://wiki.analog.com/_media/resources/errata/adar1000/adar1000-evalz-ug-1283_rev_b_preliminary_2021.11.12.pdf>`__
+
+| Notes: Updated tables for P9A connector to reflect both Rev. B and Rev C/D ADAR1000-EVALZ boards.
+| ==== Application Note ==== PCB design techniques for reliable Land Grid Array assembly (Preliminary):
+
+`an-xxxx-lga_pcb_design_for_reliable_assembly_2021.03.18_preliminary.pdf <https://wiki.analog.com/_media/resources/errata/adar1000/an-xxxx-lga_pcb_design_for_reliable_assembly_2021.03.18_preliminary.pdf>`__
+
+Article version found here: :adi:`reliable-pcb-assembly-of-land-grid-array-pkgs.html <en/technical-articles/reliable-pcb-assembly-of-land-grid-array-pkgs.html>`

@@ -1,0 +1,21 @@
+The :adi:`AD5628` device is a low power, octal, 12-bit, buffered voltage-output DAC. The device operates from a single 2.7 V to 5.5 V supply and is guaranteed monotonic by design. The :adi:`AD5628` is available in both a 4 mm × 4 mm LFCSP and a 16-lead TSSOP.
+
+The :adi:`AD5628` has an on-chip reference with an internal gain of 2. The AD5628-1 has an 1.25 V 5 ppm/°C reference, giving a full-scale output range of 2.5 V; the AD5628-2, has a 2.5 V 5 ppm/°C reference, giving a full-scale output range of 5 V. The on-board reference is off, at power-up, allowing the use of an external reference. The internal reference is enabled via a software write.
+
+The part incorporates a power-on reset circuit that ensures that the DAC output powers up to 0 V and remains powered up at this level until a valid write takes place. The part contains a power-down feature that reduces the current consumption of the device to 400 nA at 5 V and provides software-selectable output loads while in power-down mode for any or all DAC channels.
+
+The outputs of all DACs can be updated simultaneously using the LDAC function, with the added functionality of user-selectable DAC channels to simultaneously update. There is also an asynchronous CLR that updates all DACs to a user-programmable code—zero scale, midscale, or full scale.
+
+The :adi:`AD5628` utilizes a versatile 3-wire serial interface that operates at clock rates of up to 50 MHz and is compatible with standard SPI®, QSPI™, MICROWIRE™, and DSP interface standards. The on-chip precision output amplifier enables rail-to-rail output swing.
+
+Applications
+============
+
+-  Process control
+-  Portable battery-powered instruments
+-  Digital gain and offset adjustment
+-  Programmable voltage and current sources
+-  Programmable attenuators
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad5628_pmod_da4.jpg
+   :align: center

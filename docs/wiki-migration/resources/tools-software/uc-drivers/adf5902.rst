@@ -1,0 +1,83 @@
+ADF5902 - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF5902`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADF5902`
+
+Overview
+--------
+
+The :adi:`ADF5902` is a 24 GHz transmitter (Tx) monolithic microwave integrated circuit (MMIC) with an on-chip, 24 GHz voltage controlled oscillator (VCO). The VCO features a fractional-N frequency synthesizer with waveform generation capability with programmable grid array (PGA) and dual transmitter channels for radar systems. The on-chip, 24 GHz VCO generates the 24 GHz signal for the two transmitter channels and the local oscillator (LO) output. Each transmitter channel contains a power control circuit. There is also an on-chip temperature sensor. Control of all the on-chip registers is through a simple, 4-wire serial peripheral interface (SPI).
+
+Applications:
+
+-  Automotive radars
+-  Industrial radars
+-  Microwave radar sensors
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the :adi:`ADF5902` part, which may be used, without modifications, with any microcontroller.
+-  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the :adi:`ADF5902` driver can be used exactly as it is provided.
+
+the Communication Drivers must include two things: SPI transmission methods and GPIO control methods.
+
+For the SPI method, the :adi:`ADF5902` driver calls three functions:
+
+-  spi_init() - initializes the SPI communication peripheral.
+-  spi_remove() – frees memory allocated by the SPI communication driver.
+-  spi_write_and_read() – conduct information transfer with the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_driver_architecture.png
+   :align: center
+
+For the GPIO control methods, the :adi:`ADF5902` driver calls three functions:
+
+-  gpio_get() - initialize GPIO peripheral and allocate memory for one GPIO control.
+-  gpio_remove() - frees memory allocated by the GPIO control driver.
+-  gpio_direction_input() - set GPIO as input.
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+
+-  `ADF5902 Header file <http://analogdevicesinc.github.io/no-OS/adf5902_8h.html>`__
+-  `ADF5902 Source file <http://analogdevicesinc.github.io/no-OS/adf5902_8c.html>`__
+
+Initialization example
+----------------------
+
+:doc:`Evaluating the ADF5902, 24 GHz, ISM Band, Multichannel FMCW Radar Transmitter </wiki-migration/resources/eval/user-guides/eval-adf5902/software/no-os-setup>`
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of ADF5902 Driver.|
+
+   -
+
+   |Header file of ADF5902 Driver.|
+
+.. |Implementation of ADF5902 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf5902/adf5902`.c
+.. |Header file of ADF5902 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf5902/adf5902`.h

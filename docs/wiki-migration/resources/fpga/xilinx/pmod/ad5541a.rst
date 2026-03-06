@@ -1,0 +1,297 @@
+AD5541A Pmod Xilinx FPGA Reference Design
+=========================================
+
+Introduction
+------------
+
+The :adi:`AD5541A` is a single, 16-bit, serial input, unbuffered voltage output digital-to-analog converter (DAC) that operates from a single 2.7V to 5.5V supply. The DAC output range extends from 0V to Vref and is guaranteed monotonic, providing +- 1 LSB INL accuracy at 16 bits without adjustment.
+
+**HW Platform(s):**
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+
+Quick Start Guide
+-----------------
+
+The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+   \* `PmodDA3 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DA3>`__
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with LX9 and/or Xilix tools, please visit
+
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__ for details.
+   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
+   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
+
+
+Avnet LX9 MicroBoard Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD5541A\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodDA3 to J4 connector of LX9 board, pins 1 to 6 (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3.jpg
+   :alt: PmodDA3 and LX-9
+   :width: 200px
+
+Digilent Nexys™3 Spartan-6 FPGA Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD5541A\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodDA3 to JB connector of Nexys™3 board, pins JB1 to JB6 (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3_nexys3.jpg
+   :alt: PmodDA3 and Nexys™3
+   :width: 200px
+
+Avnet ZedBoard
+~~~~~~~~~~~~~~
+
+To begin, connect the PmodDPOT to JA1 connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3_zed.jpg
+   :alt: PmodDA3 and ZedBoard
+   :width: 200px
+
+FPGA Configuration for Nexys3 and LX-9 MicroBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Connect an oscilloscope to the output of PmodDA3 and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad5541a/sw/AD5541A.bit).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodDA3Impact.jpg
+   :alt: Programming FPGA in IMPACT
+   :width: 200px
+
+FPGA Configuration for ZedBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the **download.bat** script from the "../bin" folder downloaded from the github (see the links in the download section of the wiki page). The script will automatically configure the ZYNQ SoC and download the \*.elf file afterwards.
+
+.. tip::
+
+   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+
+
+If programming was successful, the **Main Menu** will apear in your UART terminal, as seen in the picture below. There are 3 options:
+
+-  Press **[f]** to select **Fixed Value Mode**.
+-  Press **[w]** to select **Waveform Generation Mode**.
+-  Press **[p]** to select **Programmable Ramp Signal Generator**.
+
+| |Main Menu|
+| **Fixed Value Mode** allows entering a value between **0x0000** and **0xFFFF**, value that will be programmed in the DAC. If the number of input characters is less than 4 (e.g. fff or 768), the **[Enter]** key must be pressed in order to validate the input. If 4 characters are input, the value is automatically validated (in order to prevent entering more than 4 characters).
+
+| |Fixed Value Mode|
+| Pressing the **[q]** key at any time exits the Fixed Value (or Waveform Generation) Mode and displays the **Main Menu** again.
+
+| |Returning to Main Menu|
+| **Waveform Generation Mode** allows selecting between 4 types of waveforms: **Square**, **Triangle**, **Sawtooth** and **Sine** waveforms. Changing between the 4 is done by pressing **[1]** to **[4]** on the keyboard. Pressing **[q]** at any time will return to the **Main Menu**.
+
+| |Waveform Generation|
+| **Programmable Ramp Signal Generator** allows generating a programmable ramp signal. This mode can be used to test the PmodDA3 using a Digital Multimeter.
+
+| |Ramp Signal Generator Menu|
+| **Enter time step** allows setting a time step between **100** and **5000** ms.
+
+| |Setting time step|
+| **Enter increment size** allows selecting an increment size that suits your design. Values can vary from **0x0000** to **0xFFFF**.
+
+| |Setting step size|
+| **Run Ramp Signal Generator** will start generating the desired output.
+
+| |Running the Ramp Signal Generator|
+
+Using the reference design
+--------------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design is a simple SPI interface used to communicate with the PmodDA3. The software programs the device sending 16-bit data values read from the keyboard input or from predefined look up tables. The user has the ability to select between 3 modes: a Fixed Value Mode, a Waveform Generation Mode and a Programmable Ramp Signal Generator Mode. Communication between the user and the board is done via UART.
+
+|
+
+.. important::
+
+
+| \* Connecting the PmodDA3 to the boards using an extension cable provides ease of use.
+   
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   
+   |
+
+   |
+
+
+.. important::
+
+   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+
+   
+   .. code:: c
+   
+      // Select between PS7 or AXI Interface
+      #define USE_PS7      1
+      // SPI used in the design
+      #define USE_SPI      1
+      // I2C used in the design
+      #define USE_I2C      0
+      // Timer (+interrupts) used in the design
+      #define USE_TIMER    1
+      // External interrupts used in the design
+      #define USE_EXTERNAL     0
+      // GPIO used in the design
+      #define USE_GPIO         0
+   
+
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \**Avnet LX-9 MicroBoard: **
+     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/AD5541A_lx9.zip>`__\ **
+     **\ Digilent Nexys™3:**
+     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/AD5541A_nexys3.zip>`__\ **
+     **\ Avnet ZedBoard:\*\*
+   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   | \* :git-no-OS:`PmodDA3 Driver Files <legacy/Pmods/PmodDA3>`
+   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <legacy/Pmods/Common/sw>`
+   | \* :git-no-OS:`Programming Script <legacy/Pmods/PmodDA3/bin>`
+   |
+
+
+.. container:: hide
+
+   
+   Linux Device Driver
+   ===================
+   
+   Connect PmodDA3 to the JB1 connector of the ZedBoard (upper row of pins).
+   
+   Preparing the SD Card
+   ---------------------
+   
+   In order to prepare the SD Card for booting Linux on the ZedBoard:
+   
+   -  Download the device tree: :git-no-OS:`PmodDA3 Linux devicetree <legacy/Pmods/PmodDA3/dts>`
+   -  Follow the instructions on the following wiki page, but use the device tree downloaded on the previous step
+   
+      -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
+   
+   Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+   
+   There are 2 ways to test the driver.
+   
+   -  Using the terminal window
+   -  Using a serial terminal
+   
+   Using the terminal window
+   -------------------------
+   
+   Open a new terminal window by pressing **Ctrl+Alt+T**.
+   
+   Navigate to the location of the device and identify it using the following commands:
+   
+   ::
+   
+      cd /sys/bus/iio/devices/
+      ls
+      iio:device0 iio:device1 trigger0
+      cd iio\:device0
+      cat name
+      ad5541a
+   
+   If the **cat name** command doesn't return **ad5541a**, then change the number of the iio:device, and check again.
+   
+   ::
+   
+      cd ..
+      cd iio\:device1
+      cat name
+   
+   To see the list of options that the AD5541A driver provides, type:
+   
+   ::
+   
+      ls
+      dev  name  out_voltage0_raw  out_voltage_scale  power  subsystem  uevent
+   
+   To set the raw output voltage, type:
+   
+   ::
+   
+      echo 12000 > out_voltage0_raw
+   
+   To check that the raw output voltage has been set, you can type:
+   
+   ::
+   
+      cat out_voltage0_raw
+      12000
+   
+   .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5541a_linaro_terminal.jpg
+      :alt: AD5541A Set Voltage from Terminal
+      :width: 600px
+   
+   The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+
+   
+   |AD5541A Read Voltage from Serial Terminal|
+
+More information
+----------------
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |Main Menu| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3_menu1.jpg
+   :width: 600px
+.. |Fixed Value Mode| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3_menu2.jpg
+   :width: 600px
+.. |Returning to Main Menu| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3_menu3.jpg
+   :width: 600px
+.. |Waveform Generation| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3_menu4.jpg
+   :width: 600px
+.. |Ramp Signal Generator Menu| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3_menu5.jpg
+   :width: 600px
+.. |Setting time step| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3_menu6.jpg
+   :width: 600px
+.. |Setting step size| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3_menu7.jpg
+   :width: 600px
+.. |Running the Ramp Signal Generator| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodda3_menu8.jpg
+   :width: 600px
+.. |AD5541A Read Voltage from Serial Terminal| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad5541a_linux_serial.jpg
+   :width: 600px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

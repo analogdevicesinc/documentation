@@ -1,0 +1,477 @@
+ADE9078 High Performance, Polyphase Energy Metering IC Driver
+=============================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADE9078`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADE9078`
+
+Description
+-----------
+
+This is a Linux industrial I/O (IIO) subsystem driver, targeting poly-phase energy meter.
+
+The ADE9078 allows the monitoring and metering of three independent phases simultaneously, by using seven high performances ADCs and a flexible DSP core for a fixed fundamental signal frequency of either 50Hz or 60Hz. The IC will monitor the Voltage and Current per phase which enables the DSP core to compute the Power output. It also offers an integrated flexible waveform buffer that stores samples at a fixed data rate or a sampling rate that varies based on line frequency to ensure 64 points per line cycle.
+
+The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Source Code
+===========
+
+Status
+------
+
++----------------------------------------------------------------------------------------------------------------------+------------+
+| Source                                                                                                               | Mainlined? |
++======================================================================================================================+============+
+| :git-linux:`drivers/iio/meter/ade9078.c`                                                                             | no         |
++----------------------------------------------------------------------------------------------------------------------+------------+
+
+Example device initialization
+=============================
+
+The ADE9078 driver is a spi-bus driver and can currently only be instantiated via device tree.
+
+This example has been tested using a Raspberry Pi and the EVAL-ADE9078 board; the driver requirements are independent of the Hardware setup.
+
+Devicetree
+----------
+
+Required devicetree properties:
+
+-  **compatible**: Must be:
+
+   -  adi,ade9078
+
+-  **reg**: Is the SPI device chip select number
+-  **reset-gpios**: The GPIO pin connected to the ADE9078 reset, is active low
+-  **interrupts**: The GPIO pins connected to the ADE9078 interrupts
+-  **interrupt-names**: Must be:
+
+   -  irq0
+   -  irq1
+
+-  **adi,wf-cap-sel**: Waveform buffer resampled or fixed data rate, consult :adi:`Datasheet <media/en/technical-documentation/data-sheets/ADE9078.pdf#%5B%7B%22num%22%3A384%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C36%2C305%2Cnull%5D>`
+-  **adi,wf-mode**: Fixed data rate waveform filling and trigger based modes, consult :adi:`Datasheet <media/en/technical-documentation/data-sheets/ADE9078.pdf#%5B%7B%22num%22%3A371%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C36%2C147%2Cnull%5D>`
+-  **adi,wf-src**: Waveform buffer source, consult :adi:`Datasheet <media/en/technical-documentation/data-sheets/ADE9078.pdf#%5B%7B%22num%22%3A362%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C54%2C458%2Cnull%5D>`
+-  **adi,wf-in-en**: Enables the IN waveform samples in the waveform buffer, consult :adi:`Datasheet <media/en/technical-documentation/data-sheets/ADE9078.pdf#%5B%7B%22num%22%3A362%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C54%2C458%2Cnull%5D>`
+
+Each phase can be configured individually using sub-nodes. If the sub-node of a phase has not been configured then that particular phase will not be present in the the IIO directory of the user-space. By activating a phase, all available measurements (Voltage, Current,Active Power, Reactive Power, etc.) are also activated.
+
+Phase required devicetree properties:
+
+-  **reg**: The phase represented by a number; Must be:
+
+   -  0 - Phase A
+   -  2 - Phase B
+   -  4 - Phase C
+
+Example:
+
+::
+
+   &spi0 {
+           #address-cells = <1>;
+           #size-cells = <0>;
+           status = "okay";
+           ade9078@0 {
+                   compatible = "adi,ade9078";
+                   reg = <0>;
+                   spi-max-frequency = <7000000>;
+                   
+                   #address-cells = <1>;
+               #size-cells = <0>;
+               reset-gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
+           interrupts = <2 IRQ_TYPE_EDGE_FALLING>, <3 IRQ_TYPE_EDGE_FALLING>;
+           interrupt-names = "irq0", "irq1";
+           interrupt-parent = <&gpio>;
+           
+           adi,wf-cap-sel = <0x1>;
+           adi,wf-mode = <0x0>;
+           adi,wf-src = <0x3>;
+           adi,wf-in-en = <0x0>;
+           
+           phase@0 {
+               reg = <0>;
+           };
+
+For more supported devicetree properties please refer to :git-linux:`dt-bindings <Documentation/devicetree/bindings/iio/meter/adi,ade9078.yaml>`
+
+Enabling Linux driver support
+=============================
+
+Configure kernel with “make menuconfig” (alternatively use “make xconfig” or “make qconfig”).
+
+.. hint::
+
+   The ADE9078 driver depends **CONFIG_SPI**.
+
+
+Adding Linux driver support
+===========================
+
+Configure kernel with “make menuconfig” (alternatively use “make xconfig” or “make qconfig”)
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           <*> Industrial I/O support --->
+           --- Industrial I/O support
+           -*-   Enable ring buffer support within IIO
+           -*-     Industrial I/O lock free software ring
+           -*-     Industrial I/O buffering based on kfifo 
+                     Active energy metering IC  --->  
+                     <*> Analog Devices ADE9078 Poly Phase Multifunction Energy Metering IC Driver 
+                     
+
+Hardware configuration
+======================
+
+The ADE9078 can be accessed using a standard SPI interface at a maximum of 10MHz.
+
+Additionally the IC continuously checks the PM0 and PM1 pins which configure the power management modes. These have to be set prior to powering on the ADE9078. For more information on this functionality please refer to the Datasheet, in the :adi:`Power Management <media/en/technical-documentation/data-sheets/ADE9078.pdf#%5B%7B%22num%22%3A124%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C54%2C352%2Cnull%5D>` section.
+
+The driver requires a GPIO pin connected to the RESET pin of the ADE9078. This will be used as a dedicated pin for the RESET. In order to ensure the correct functionality of the circuit, the driver resets the ADE9078 at initiation. The RESET of the ADE9078 is Active Low, thus a pull-up on the pin is recommended, but not mandatory.
+
+Both interrupt pins are used by the driver and must be configured. A simple devicetree configuration example has been provided in the previous section of this document. Most of the functionality of this driver ties in to the interrupts, including the reset sequence, if these are not connected the driver will not initialize.
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/> **cd /sys/bus/iio/devices/**
+      root:/sys/bus/iio/devices> **ls**
+      iio:device0 trigger0
+   
+      root:/sys/bus/iio/devices> **cd iio\:device0**
+      root:/sys/bus/iio/devices/iio:device0> **ls -l**
+      total 0
+      drwxr-xr-x 2 root root    0 Mar  7 10:04 buffer
+      -r--r--r-- 1 root root 4096 Mar  7 10:04 dev
+      drwxr-xr-x 2 root root    0 Mar  7 08:22 events
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_current_A_hardwaregain
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_current_A_raw
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_current_A_rms_offset
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_current_A_rms_raw
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_current_A_rms_scale
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_current_A_scale
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_activ_hardwaregain
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_activ_offset
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_activ_raw
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_activ_scale
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_apparent_raw
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_apparent_scale
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_factor_raw
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_factor_scale
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_fund_reactiv_offset
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_fund_reactiv_raw
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_fund_reactiv_scale
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_reactiv_offset
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_reactiv_raw
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_power_A_reactiv_scale
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_voltage_A_hardwaregain
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_voltage_A_raw
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_voltage_A_rms_offset
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_voltage_A_rms_raw
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_voltage_A_rms_scale
+      -rw-r--r-- 1 root root 4096 Mar  7 10:04 in_voltage_A_scale
+      lrwxrwxrwx 1 root root    0 Mar  7 10:04 of_node -> ../../../../../../../../firmware/devicetree/base/soc/spi@7e204000/ade9078@0
+      drwxr-xr-x 2 root root    0 Mar  7 10:04 power
+      drwxr-xr-x 2 root root    0 Mar  7 08:22 scan_elements
+      lrwxrwxrwx 1 root root    0 Mar  7 10:04 subsystem -> ../../../../../../../../bus/iio
+      -rw-r--r-- 1 root root 4096 Mar  7 08:22 uevent
+   
+
+
+For each phase (A,B,C) which has been declared in the devicetree, the device will have an instance of **in\_\ :math:`{type}_`\ {phase}\_${channel}**. All of the before mentioned instances are read-only
+
+Show device name
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device0> **cat name**
+      ade9078
+   
+
+
+Show measurements
+~~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage_A_raw**
+      6798959
+   
+
+
+This allows the instantaneous read of the current sample acquired bye the voltage ADC of phase A in our example. For channels other then **raw** data will represent a processed value by the DSP in accordance with the :adi:`Datasheet <media/en/technical-documentation/data-sheets/ADE9078.pdf>`. Reading of measurements of this type apply to all instances of **in\_\ :math:`{type}_`\ {phase}\_${channel}**
+
+Show scales
+~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage_A_scale**
+      0.000000013
+   
+
+
+The scale can be acquired by reading the any of the files which have the \*\* \*_scale \*\* suffix. This scale applies to the :doc:`IIO Buffer readings </wiki-migration/resources/tools-software/linux-drivers/iio-meter/ade9078>` as well as to the :doc:`raw measurement </wiki-migration/resources/tools-software/linux-drivers/iio-meter/ade9078>` readings and must be applied as follows:
+
+**U** = *in_voltage_A_raw \* cat in_voltage_A_scale* = 6798959 \* 0.000000013 = **88.386467 mV**
+
+Trigger management
+------------------
+
+No external trigger support is implemented as all the samples in the IIO Buffer will be read out from the internal FIFO as soon as the Buffer has been enabled.
+
+For more details on how the ADE9078 FIFO works please refer to the :adi:`Datasheet <media/en/technical-documentation/data-sheets/ADE9078.pdf>`
+
+Event management
+----------------
+
+The ADE9078 driver allows the configuration of certain events which can be readout using the IIO event feature. IIO events can be configured using the /sys/bus/iio/device/iio:deviceX/events folder, by enabling the desired event. This driver allows the configuration of zero-crossing events as presented in the :adi:`Datasheet <media/en/technical-documentation/data-sheets/ADE9078.pdf#%5B%7B%22num%22%3A264%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C315%2C714%2Cnull%5D>`, for both voltage and current within a configured phase.
+
+Enable event
+~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/> **cd iio\:device0/events**
+      root:/sys/bus/iio/devices/iio:device0/events>  **echo 1 > in_voltage_A_thresh_either_en**
+   
+
+
+This will enable the event to be generated when a zero-crossing occurred and will configure the internal ADE9078 trigger to take the zero-crossing in to account when acquiring a buffer.
+
+When enabling the **any** voltage event, the zero-cross timeout will also be activated for that event. This feature is **only** available for voltage events, zero-cross timeout events for current are not featured in the IC.
+
+Show event value
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/> **cd iio\:device0/events**
+      root:/sys/bus/iio/devices/iio:device0/events>  **cat in_voltage_A_thresh_either_value**
+   
+
+
+The user can readout the state of an event this way, and determine if an event has occurred or not. The results are:
+
+-   0 - not enabled or not occurred
+-   1 - zero-crossing has occurred
+-  -1 - zero-crossing timeout has occurred **(only for voltage events)**
+
+Buffer management
+-----------------
+
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Using the **scan_elements** folder within the device will allow the user to chose which elements will be included in the buffer.
+
+Scan Elements
+~~~~~~~~~~~~~
+
+Before enabling the Buffer, the elements which should be present in the buffer need to be enabled. This is done using the scan_elements folder of the device.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device0> **cd scan_elements/**
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> **ls**
+      in_current_A_en     in_current_A_type  in_voltage_A_index
+      in_current_A_index  in_voltage_A_en    in_voltage_A_type
+   
+
+
+As mentioned before, in this drivers case everything is structured around a phase, which has two signals which it acquires continuously (voltage and current). By activating a phase in the devicetree the user has the option to enable any available element of that phase, to be pushed in to the IIO buffer. The folders content is in structured according to the driver and by following the IIO standard. The tipcal content of the scan_elements folder is:
+
+| **in\_\ :math:`{channel}_`\ {phase}_en**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in\_\ :math:`{channel}_`\ {phase}_type**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device0/scan_elements> **cat in_voltage_A_type**
+      be:s32/32>>0
+   
+
+
+In this case the elements in the buffer will be stored big-endian (**be**), on 32 bits signed of which all 32 bits are used (**s32/32**) and no shifting is required in order to get the resulting sample (**> >0**).
+
+| **in\_\ :math:`{channel}_`\ {phase}_index**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled, thus for user-space to establish the full layout these must be used in conjunction with all **\*_en** attributes to establish which channels are present. This is best described in the :adi:`Fixed Data Rate Waveforms <media/en/technical-documentation/data-sheets/ADE9078.pdf#%5B%7B%22num%22%3A371%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C36%2C147%2Cnull%5D>` and the :adi:`Resamples Waveforms <media/en/technical-documentation/data-sheets/ADE9078.pdf#%5B%7B%22num%22%3A384%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C36%2C305%2Cnull%5D>` sections of the Datasheet.
+
+Buffer
+~~~~~~
+
+Although this is not a typical use case of the IIO buffer, the ADE9078 has an internal buffer which is used for acquiring the desired samples from the IC. Because of this, the internal buffer needs to be configured prior to enabling the acquisition. Thus prior to reading the content of the buffer the **required events and scan elements need to be set**. This will ensure that the buffer is correctly configured for readout. For more details please consult the :adi:`Waveform Buffer <media/en/technical-documentation/data-sheets/ADE9078.pdf#%5B%7B%22num%22%3A353%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C36%2C714%2Cnull%5D>` section of the datasheet.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device0> **cd buffer/**
+      root:/sys/bus/iio/devices/iio:device0/buffer> **ls**
+      data_available  enable  length  watermark
+   
+
+
+Our buffer implementation features a set of files:
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+Sample Readout
+~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device0/buffer> **echo 2 > length**
+      root:/sys/bus/iio/devices/iio:device0/buffer> **echo 1 > enable**
+   
+
+
+Once the enable has been activated, the driver will configure all the necessary registers based on the **event** and **scan_elements** settings. It will trigger when all the conditions are met, which will read out the data from the ADE9078 internal buffer in ti the IIO buffer.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device0/buffer> **cat /dev/iio\:device0 | hexdump -e '1/1 "%02X" 1/1 "%02X" 1/1 "%02X" 1/1 "%02X" "\n"'**
+      FF71917B
+      FF9042E3
+   
+
+
+Because samples are acquired and displayed at every buffer enable, the data in the IIO buffer will be only the measured samples without any additional information such as time stamps. Thus by using hexdump with the above parameters all the desired samples will be displayed on separate lines.
+
+More Information
+================
+
+-  :adi:`Datasheet <media/en/technical-documentation/data-sheets/ADE9078.pdf>`
+-  `Hexdump <https://www.suse.com/c/making-sense-hexdump>`__
+
+IIO Pointers
+^^^^^^^^^^^^
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

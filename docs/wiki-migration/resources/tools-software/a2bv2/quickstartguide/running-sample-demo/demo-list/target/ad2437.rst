@@ -1,0 +1,8 @@
+:doc:`Click here to return to Running sample Demo: Target as Host </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/target>`
+
+Running sample demo: SC59x- AD2437(XLR)
+=======================================
+
+-  Refer :doc:`XLR platform jumper setting </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` for jumper setting
+-  This project can use the existing adi_a2b_busconfig.c or use "C:\\Analog Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Schematics\\PC\\adi_a2b_AD2437A1NZ.ssprj" to export configuration file.
+-  Refer :doc:`XLR platform connection and running sample demo </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/ad2437>` for connections and running sample demo

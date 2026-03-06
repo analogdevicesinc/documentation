@@ -1,0 +1,142 @@
+HMC7044 Clock Jitter Attenuator with JESD204B no-OS Driver
+==========================================================
+
+Supported Devices
+=================
+
+-  :adi:`HMC7044`
+
+Evaluation Boards
+=================
+
+-  :adi:`EVAL-HMC7044`
+
+Overview
+========
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/eval-hmc7044.png
+   :align: center
+   :width: 600px
+
+The :adi:`HMC7044` is a high performance, dual-loop, integer-N jitter attenuator capable of performing reference selection and generation of ultralow phase noise frequencies for high speed data converters with either parallel or serial (JESD204B type) interfaces.
+
+The :adi:`HMC7044` features two integer mode PLLs and overlapping on-chip VCOs that are SPI-selectable with wide tuning ranges around 2.5 GHz and 3 GHz, respectively. The device is designed to meet the requirements of GSM and LTE base station designs, and offers a wide range of clock management and distribution features to simplify baseband and radio card clock tree designs.
+
+The :adi:`HMC7044` provides 14 low noise and configurable outputs to offer flexibility in interfacing with many different components including data converters, field-programmable gate arrays (FPGAs), and mixer local oscillators (LOs).
+
+The DCLK and SYSREF clock outputs of the :adi:`HMC7044` can be configured to support signaling standards, such as CML, LVDS, LVPECL, and LVCMOS, and different bias settings to offset varying board insertion losses.
+
+Applications
+============
+
+-  JESD204B clock generation
+-  Cellular infrastructure (multicarrier GSM, LTE, W-CDMA)
+-  Data converter clocking
+-  Microwave baseband cards
+-  Phase array reference distribution
+
+Source Code
+===========
+
+:git-no-OS:`drivers/frequency/hmc7044/hmc7044.c`
+
+:git-no-OS:`drivers/frequency/hmc7044/hmc7044.h`
+
+Source Code Documentation
+=========================
+
+`drivers/frequency/hmc7044/hmc7044.c <http://analogdevicesinc.github.io/no-OS/hmc7044_8c.html>`__
+
+`drivers/frequency/hmc7044/hmc7044.h <http://analogdevicesinc.github.io/no-OS/hmc7044_8h.html>`__
+
+Driver Description
+==================
+
+The driver implements the necessary routines for managing the device and communicates with the device over an SPI interface. The SPI communication layer is not implemented by the driver and has to be provided by the user at the driver initialization phase.
+
+::
+
+   +-----------------------------------------------------------------+      +-------------------+
+   | Microcontroller                                                 |      | Evaluation board  |
+   |                                                                 |      |                   |
+   | +------------------+      +-----------------------------------+ |      | +---------------+ |
+   | |                  |      |      SPI Communication Driver     | |      | |               | |
+   | |       ADI        |      |                                   | |      | |               | |
+   | |                  |      |         spi_init()                | | SPI  | |    HMC7044    | |
+   | |  HMC7044 Driver  <------>         spi_write_and_read()      <---------->               | |
+   | |                  |      |         spi_remove()              | |      | |               | |
+   | |                  |      |                                   | |      | |               | |
+   | +------------------+      +-----------------------------------+ |      | +---------------+ |
+   +-----------------------------------------------------------------+      +-------------------+
+
+Example usage
+-------------
+
+::
+
+           #include "hmc7044.h"
+
+           int status;
+           struct hmc7044_dev* hmc7044_device;
+
+       struct spi_init_param example_spi_init_param = {
+           .max_speed_hz = 10000000,
+           .mode = 0,
+           .chip_select = 2,
+           .extra = NULL //<-- pass platform specific settings using .extra.
+       };
+
+       struct hmc7044_chan_spec chan_spec[2] = {
+           /* OUTPUT0 */
+           {
+               .disable = 0, .num = 0, .divider = 12, .driver_mode = 2,
+               .coarse_delay = 15
+           },
+           /* OUTPUT1 */
+           {
+               .disable = 0, .num = 1, .divider = 3840, .driver_mode = 1,
+               .start_up_mode_dynamic_enable = true,
+               .high_performance_mode_dis = true,
+               .output_control0_rb4_enable = true,
+               .force_mute_enable = true,
+               .driver_impedance = 1
+           }
+           }
+
+       struct hmc7044_init_param example_hmc7044_param = {
+           .spi_init = &example_spi_init_param,
+           .clkin_freq = {122880000, 122880000, 0, 0},
+           .vcxo_freq = 122880000,
+           .pll2_freq = 2949120000,
+           .pll1_loop_bw = 200,
+           .sysref_timer_div = 3840,
+           .in_buf_mode = {0x09, 0x09, 0x00, 0x00, 0x15},
+           .gpi_ctrl = {0x00, 0x00, 0x00, 0x11},
+           .gpo_ctrl = {0x1f, 0x2b, 0x00, 0x00},
+           .num_channels = 2, //<-- number of channels in .channels.
+           .pll1_ref_prio_ctrl = 0xE5,
+           .sync_pin_mode = 0x1,
+           .high_performance_mode_clock_dist_en = true,
+           .high_performance_mode_pll_vco_en = true,
+           .pulse_gen_mode = 0x0,
+           .channels = chan_spec
+       };
+
+       status = hmc7044_init(&hmc7044_device, &hmc7044_param);
+       if (status != SUCCESS) {
+           // ...
+       }
+
+           // hmc7044 is now initialized according to the hmc7044_param structure.
+           // you may use the remainder of the driver interface to control the device:
+           //         hmc7044_clk_set_rate()
+           //         hmc7044_clk_round_rate()
+           //         hmc7044_clk_recalc_rate()
+           
+           // This example sets the outputs 0 and 1 to explicit clock values.
+           // The driver will try its best to select appropriate dividers so as to 
+           // obtain the desired frequency.
+           hmc7044_clk_set_rate(hmc7044_device, 0, 245760000);
+           hmc7044_clk_set_rate(hmc7044_device, 1, 768000);
+
+           hmc7044_remove(hmc7044_device);

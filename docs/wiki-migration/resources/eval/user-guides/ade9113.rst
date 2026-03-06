@@ -1,0 +1,672 @@
+Layout Guidelines ADE9113 ADE9112 ADE9103
+=========================================
+
+Overview
+--------
+
+These layout guidelines are written as a comprehensive guide to all the considerations that must be taken when creating a PCB (Printed Circuit Board) layout with the ADE9112/ADE9113. The guidelines use standard PCB practices but if not followed, could lead to poor performance in certain EMC (Electromagnetic Compatibility) tests. The EMC testing results will be discussed along with the layout guidelines.
+
+Testing was done on a board with four ADE9113s, meant to replicate a 3-phase system with isolated Neutral current measurement. Note that the EVAL-ADE9113KTZ does not have all of these layout recommendations implemented because there were constant improvements being made and updating the guidelines is the fastest way to communicate those changes. The test board also included an ADE9178 to perform the metrology calculations, specifically to get the energy pulse output for accuracy testing.
+
+**Key Highlights:**
+
+-  A 4-layer PCB is required to pass CISPR 32 Class B emissions, and the guidelines will show the most area effective way to implement it.
+-  An external oscillator (or clock from external source like a microcontroller) must be used in most cases to pass IEC 61000-4-4 EFT testing at ±4800 V, both 5 kHz and 100 kHz. In certain cases a crystal can be used and that is described in the guidelines.
+
+**Testing Referenced in these Guidelines:**
+
+-  **IEC 61000-4-3 RF IMMUNITY** 30 V/m 80% 1 kHz modulation: **<fc #008000>PASSED</fc>**
+-  **IEC 61000-4-4 EFT** ± 4800 V, both 5 kHz and 100 kHz: **<fc #008000>PASSED</fc>**
+
+   -  Tested both with and without PE (Protective Earth) connected to the safe-side GND, the same GND as the ADE9178, on the opposite side of the isolation barrier as the Line voltage.
+   -  For more details: `EFT with Optimized CAP <https://wiki.analog.com/>`__
+
+-  **CISPR 32 Class B** 30 MHz to 1 GHz and 1 GHz to 6 GHz: **<fc #008000>PASSED</fc>**
+
+   -  For more details: `Emissions with optimized PCB Cap <https://wiki.analog.com/>`__
+
+Connection Diagram
+------------------
+
+The ADE9113/9112 SPI are connected is a Daisy Chain configuration. In this configuration the first ADE9113/9112 in the chain, the one connected to MOSI of the MCU, has the 16.384 MHz clock provided by a crystal , external OSC or MCU pin. The remaining ADE9113/9112 have the 16.384Mhz clock provided by the Clockout/Dready pin of the First ADE9113/9112 connected to the XTALIN of the remaining ADE9113/9112. **Note: The schematic uses a crystal but if PE(Protective Earth) is connected to safeside ground an oscillator may required to pass EMC test**. See datasheet for more information. :adi:`ADE9113 Datasheet <media/en/technical-documentation/data-sheets/ade9103-ade9112-ade9113.pdf>`
+
+.. container:: centeralign
+
+   \ |image1|\
+
+
+.. container:: centeralign
+
+   \ **Figure 1: Application Circuit Diagram for a 3 Phase meter with isolated neutral**\
+
+
+Emissions Plots Cispr32 3 Meter Chamber
+---------------------------------------
+
+The emission plots were captured with a 2 layer PCB without internal PCB cap. This is the worst case emissions and over the class B limit. These emissions are tested with the ferrites in isopower on each channel as in Figure 1.
+
+|
+
+.. important::
+
+   \ **It is not recommended to use a 2 Layer PCB. 4 layer PCB with an internal PCB cap is recommended.**\
+
+
+.. container:: centeralign
+
+   \ |image2|\
+
+
+.. container:: centeralign
+
+   \ **Figure 2a: Horizontal emissions of isolated 4 ADE9113 without PCB capacitor with ferrites on VDD\ ISO and AGND\ ISO**\
+
+
+|
+
+.. container:: centeralign
+
+   \ |image3|\
+
+
+.. container:: centeralign
+
+   \ **Figure 2b: Vertical emissions of isolated 4 ADE9113 without PCB capacitor with ferrites on VDD\ ISO and AGND\ ISO**\
+
+
+Layout Stackup for PCB Stitch CAP
+---------------------------------
+
+To improve the emissions an internal PCB cap is created using inner layers of the PCB. This capacitance has low inductance and performs better than external caps. The cap should be > than 30pf. The cap dielectric should be >0.4mm. The thicker The dielectric is the larger the cap area required. The recommendation is to keep the dielectric thickness between 0.4 and 0.5mm. These distances came from IEC 61010-1 **Distance between adjacent conductors along an interface of an inner layer**
+
+|
+
+.. container:: centeralign
+
+   \ |stackup.jpg|\
+
+
+.. container:: centeralign
+
+   \ **Figure 3: 4 Layer Stackup to construct PCB capacitor**\
+
+
+| For more information see :adi:`AN-0971: Recommendations for Control of Radiated Emissions with isoPower Devices <en/resources/app-notes/an-0971.html>`
+
+Layout of PCB on the ADE9178 Evaluation Board
+---------------------------------------------
+
+| The ADE9178 Eval board has been modified to pass EFT with + pulses on PE(Protective Earth) connected to the safe side and emissions based on the original recommendations. If PE(Protective Earth) is not used then the crystal circuit is acceptable. `Using ADE9178 for EV Charger Metrology Solution <:doc:`/wiki-migration/resources/eval/user-guides/ade9178`>`__
+| If PE (Protective Earth) is not used: Changing the Isopower connections, removing the ferrites and connecting GND\ :sub:`ISO` to AGND and VDD\ :sub:`ISO` to VDD see Figure 4. Change the power and ground connection allow for a larger PCB cap area.
+
+Changes if PE(Protective Earth) is used: Replacing the Crystal with an oscillator or clock from the MCU in addition to if PE(Protective Earth) is not used.
+
+
+| 
+|
+
+.. container:: centeralign
+
+   \ |rev_f_channel_a.jpg|\
+
+
+.. container:: centeralign
+
+   \ **Figure 4: Schematic with oscillator connected to ADE9113\ A XTALIN**\
+
+
+| Calculate the PCB cap area needed for layout see Figure 6, 15.2mm \* 28.7mm = 437.3 sqmm Cap area. Using FR4 dielectric K of 4.2 and thickness of 0.5mm = 32.5pf of PCB capacitance. This is the minimum and larger is better. The recommended PCB capacitance is approx. 50% of the cap recommended in the ADE7913/33 :adi:`AN-1332: Architecting a Direct, 3-Phase Energy Meter with Shunts Using the ADE7912/ADE7913 <en/resources/app-notes/an-1332.html>`
+
+C= K*Eo*A/D, where Eo= 8.854x10-12
+
+| where:
+| K is the dielectric constant of the material,
+| A is the overlapping surface area of the plates in m2,
+| d is the distance between the plates in m, and C is capacitance
+
+https://www.daycounter.com/Calculators/Plate-Capacitor-Calculator.phtml
+
+| **Key to layer stackup and layout images**
+| **Layer 1 Signal** <fc #ff0000>(Red)</fc>
+| **Layer 2 AGND_1** <fc #008000>(Green)</fc> Must be under the signal layer 1 to shield layer 1 from layer 3. Layer 3 may have a potential difference of the line voltage to layer 1.
+| \**Layer 3 DGND \*\* <fc #800080>(Purple)</fc> this layer may have line voltage difference to layer 1. This requires layer 2 as a shield between layer 1 and layer 3.
+| \**Layer 4 \*\* No copper under isolated side
+
+| |layer_1_and_2.png|
+|
+
+.. container:: centeralign
+
+   \ **Figure 5: Layer 2 <fc #008000>(AGND_1)</fc> Shields layer 1<fc #ff0000>(Signal)</fc> from layer 3 <fc #800080>(Dgnd)</fc>**\
+
+
+| 
+| |cap_area_optimized_layer_1_2_3.jpg|
+|
+
+.. container:: centeralign
+
+   \ **Figure 6: Capacitor is made up of the overlap of Layer 2 <fc #008000>(AGND_1)</fc> and Layer 3<fc #800080>(Dgnd)</fc>**\
+
+
+| 
+| |cap_area_optimized_layer_2.jpg|
+|
+
+.. container:: centeralign
+
+   \ **Figure 7: Layer 2 Minimize Vias**\
+
+
+   | 
+|
+
+.. container:: centeralign
+
+   The VIAS at the GND pins are critical and should be close as possible to the ADE9113 pins shown in Figure 8.
+
+
+.. container:: centeralign
+
+   \ |image4|\
+
+
+.. container:: centeralign
+
+   \ **Figure 8: Critical VIA Placement**\
+
+
+   |
+
+.. container:: centeralign
+
+   Through VIAS should be limited. The through VIA keep out on layer 3 <fc #800080>(Dgnd)</fc> around the via takes away for the PCB cap See Figure 9.
+
+
+|
+
+.. container:: centeralign
+
+   \ |image5|\
+
+
+.. container:: centeralign
+
+   \ **Figure 9: Layer 3 keep out around vias reduces cap area**\
+
+
+   | ===== Emissions with Recommended PCB Cap =====
+|
+
+.. container:: centeralign
+
+   \ **CISPR32 3 meter chamber emissions ADE9178 32.5pf of PCB cap per channel**\
+
+
+|
+
+.. container:: centeralign
+
+   \ |vertical_ets_3143b_cispr32_ed2.png|\
+
+
+.. container:: centeralign
+
+   \ **Figure 10: Vertical Emissions Recommended Layout**\
+
+
+.. container:: centeralign
+
+   \ |horizontal_ets_3143b_cispr32_ed2.png|\
+
+
+.. container:: centeralign
+
+   \ **Figure 11: Horizontal Emissions Recommended Layout**\
+
+
+|
+
+.. container:: centeralign
+
+   \ **Table 2. Radiated Emissions, 32.5pF stitch cap, Vertical and Horizontal, 30MHz to 1GHz**\
+
+
+.. container:: center
+
+   
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+   | **
+   
+   .. container:: centeralign
+
+      Polarity
+
+   
+   ** | **
+   
+   .. container:: centeralign
+
+      Frequency
+
+   
+   .. container:: centeralign
+
+      (MHz)
+
+   
+   ** | **
+   
+   .. container:: centeralign
+
+      CISPR32_ClassB
+
+   
+   .. container:: centeralign
+
+      Requirement
+
+   
+   .. container:: centeralign
+
+      (dBuV/m)
+
+   
+   ** | **
+   
+   .. container:: centeralign
+
+      QP
+
+   
+   .. container:: centeralign
+
+      (dBuV/m)
+
+   
+   ** | **
+   
+   .. container:: centeralign
+
+      Margin
+
+   
+   .. container:: centeralign
+
+      (dB)
+
+   
+   **
+
+
+   
+   | **Degrees** |
+
+   +=======================================+======================================================================+==================================================================================================================+==================================================================+==================================================================+=============+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      325.51
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 32.34                                                            | -14.66                                                           | 30          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      327.70
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 35.23                                                            | -11.77                                                           | 30          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      329.92
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 34.41                                                            | -12.59                                                           | 30          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      348.10
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 39.44                                                            | -7.56                                                            | 30          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      348.10
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 33.62                                                            | -13.38                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      350.08
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 31.51                                                            | -15.49                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      354.12
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 35.47                                                            | -11.53                                                           | 180         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      356.22
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 41.43                                                            | -5.57                                                            | 30          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      356.22
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 33.29                                                            | -13.71                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      360.15
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 41.08                                                            | -5.92                                                            | 60          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      360.24
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 35.49                                                            | -11.51                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      362.22
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 40.06                                                            | -6.94                                                            | 300         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      362.40
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 34.03                                                            | -12.97                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      364.56
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 35.52                                                            | -11.48                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      364.59
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 39.69                                                            | -7.31                                                            | 60          |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      366.93
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 33.79                                                            | -13.21                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Horizontal                            |
+
+   .. container:: centeralign
+
+      368.76
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 34.88                                                            | -12.12                                                           | 300         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      368.85
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 31.91                                                            | -15.09                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      382.71
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 27.41                                                            | -19.59                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+
+   | Vertical                              |
+
+   .. container:: centeralign
+
+      397.32
+
+   
+   |
+   
+   .. container:: centeralign
+
+      47
+
+   
+   | 31.41                                                            | -15.59                                                           | 330         |
+   +---------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+------------------------------------------------------------------+-------------+
+   
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/schematic.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cspr32_horizontal_no_cap.png
+   :width: 700px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cspr32_vertical_no_cap.png
+   :width: 700px
+.. |stackup.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/stackup.jpg
+   :width: 800px
+.. |rev_f_channel_a.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rev_f_channel_a.jpg
+   :width: 800px
+.. |layer_1_and_2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/layer_1_and_2.png
+   :width: 400px
+.. |cap_area_optimized_layer_1_2_3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_1_2_3.jpg
+   :width: 400px
+.. |cap_area_optimized_layer_2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_2.jpg
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/critical_vias.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_3.jpg
+   :width: 400px
+.. |vertical_ets_3143b_cispr32_ed2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/vertical_ets_3143b_cispr32_ed2.png
+   :width: 700px
+.. |horizontal_ets_3143b_cispr32_ed2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/horizontal_ets_3143b_cispr32_ed2.png
+   :width: 700px

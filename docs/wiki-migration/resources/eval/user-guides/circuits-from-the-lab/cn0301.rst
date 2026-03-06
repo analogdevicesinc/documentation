@@ -1,0 +1,304 @@
+CN-0301 Software User Guide
+===========================
+
+Overview
+--------
+
+:adi:`CN-0301 <CN0301>` is a linear variable differential transformer (LVDT) signal conditioning circuit. The system converts the output of the LVDT sensor to a unipolar DC voltage and drives the inputs of a successive approximation analog-to-digital converter (ADC).
+
+This circuit uses a single chip solution that drives the excitation signal of the primary side of the LVDT and converts the secondary side. The complete system uses a 12-bit ADC resulting in a dynamic range of 82dB at a standard LVDT bandwidth of 250Hz. (The term bandwidth used in this case is referring to a sinusoidally varying mechanical position and can be easily configured to meet wider bandwidth applications by configuring a few external passive components.)
+
+The signal conditioning circuitry of the system consumes only 15mA of current from the ±15V supply and 3mA from the +5V supply making this configuration suitable for industrial precision position and gauging applications such as flight control surface position feedback.
+
+This circuit note discusses the design steps needed to optimize the circuit shown in Figure 1 for a specific bandwidth including noise analysis and component selection considerations.
+
+This user guide will discuss how to use the evaluation software to collect data from the :adi:`EVAL-CN0301-SDPZ` Evaluation Board **(CN-0301 Board)**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-simplified_schematic.png
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  :adi:`EVAL-CN0301-SDPZ` Evaluation Board (**CN-0301 Board**)
+-  :adi:`EVAL-CFTL-6V-PWRZ` **(+6V Power Supply)** or equivalent
+-  :adi:`EVAL-CFTL-LVDT <CN0301>` Linear Variable Differential Transformer (Measurement Specialties, Inc. E-100 Economy Series LVDT)
+-  `CN-0301 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0301>`__
+
+   -  (supplied with provided CD in kit)
+
+-  PC with the following *Minimum Requirements*
+
+   -  Windows XP Service Pack 2 (32-bit)
+   -  USB type A Port
+   -  Processor rated at 1GHz or faster
+   -  512 MB RAM and 500 MB available hard disk space
+
+-  USB type A to USB type mini-B cable
+
+General Setup
+-------------
+
+-  The :adi:`EVAL-CN0301-SDPZ` **(CN-0301 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
+-  The :adi:`EVAL-CFTL-6V-PWRZ` **(+6V DC Power Supply)** powers the :adi:`EVAL-CN0301-SDPZ` **(CN-0301 Board)** via the DC barrel jack
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  The :adi:`EVAL-CFTL-LVDT <CN0301>` **(LVDT)** connects to the :adi:`EVAL-CN0301-SDPZ` **(CN-0301 Board)** via the 6-pin header at **J1**.
+
+| 
+| |image1|
+
+--------------
+
+Installing the Software
+-----------------------
+
+-  Extract the file **CN0301_Evaluation_Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN-0301 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0301>`__ to the default directory path **C:\\Program Files\\Analog Devices\\CN0301\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image2|
+
+-  Click **Next** to view the installation review page
+
+|image3|
+
+-  Click **Next** to start the installation
+
+|image4|
+
+-  Upon completion of the installation of the **CN-0301 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image5|
+
+-  Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image6|
+
+-  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+|image7|
+
+--------------
+
+Connecting the Hardware
+-----------------------
+
+-  Connect the :adi:`EVAL-CFTL-LVDT <CN0301>` **(LVDT)** to **J1** of the :adi:`EVAL-CN0301-SDPZ` **(CN-0301 Board)** as depicted below.
+
+.. tip::
+
+   \ **NOTE:** If a different LVDT is used other than the E-100 LVDT from Measurement Specialties, Inc the wiring schematic will be different!
+
+
+|image8|\ |nolink|
+   |image9|
+-  Connect **J8** of the :adi:`EVAL-CN0301-SDPZ` **(CN-0301 Board)** to **CON A** of the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)**
+
+|image10|
+
+-  Connect the :adi:`EVAL-CFTL-6V-PWRZ` **(+6V DC Power Supply)** to the Barrel Jack at **J4** or the Screw Terminal at **J3** on the :adi:`EVAL-CN0301-SDPZ` **(CN-0301 Board)**
+
+|image11|
+
+   \* Connect the USB cable to **J1** of the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)**
+
+   |image12|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Software Control and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-software.png
+   :width: 900px
+
+--------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-software2.png
+   :width: 900px
+
+::
+
+   -**Connect/Reconnect Button**
+   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0301 Board.  A connection to the SDP-B Board must be made to use the software.   
+   -**Run Button**
+   * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
+   -**Stop Button**
+   * When this button is pressed, the software stop collecting data from the CN-0301 Board
+   -**Save Data Button**
+   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file. 
+   -**Clear Data Button**
+   * When this button is pressed, the software will clear all data collected from the chart history.
+   -**Control Tabs**
+   * __Acquire Data__ - Clicking this tab brings the data collection chart to the front.
+   * __Configure System__ - Clicking this tab bring the system configuration settings to the front.
+   -**Channel 1 Numerical Indicator**
+   * This indicator displays the current position from null on Channel 1.
+   -**Channel 2 Numerical Indicator**
+   * This indicator displays the current position from null on Channel 2.
+   -**Channel Enable Checkboxes**
+   * This control determines which channels display in the chart. 
+   -**Select Units Radio Buttons**
+   * This control determines the Y-Axis units of the data displayed in the chart. 
+   -**ADC Conversion Out of Range LED Indicator**
+   * This indicator determines whether a conversion result is outside the allowable range of conversion results.
+   -**Chart Controls**
+   * These controls allow the user to zoom-in, zoom-out, and pan through the data collected.
+   -**System Status String Indicator**
+   * This indicator displays a message to the user detailing the current state of the software.
+   -**System Status LED Indicator**
+   * This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-inactive.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-busy.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-error.png?nolink&|}}Error\\ 
+   -**ADC Conversion Thresholds Panel**
+   * This panel allows the registers in the AD7992 analog-to-digital converter to be written to and read back.
+   -**LVDT Full Scale Range Panel**
+   * This panel configures the maximum stroke range of the LVDT.  The default configuration is 0.2 inches.
+
+--------------
+
+Establishing a USB Connection Link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Follow the instructions to properly install the software and connect the hardware as described in the previous sections.
+-  Open the file named **CN0301.exe** in the installation directory.
+
+.. note::
+
+   \ **NOTE:** If the software was installed to the default location it will be found at
+
+   **C:\\Program Files\\Analog Devices\\CN0301\\CN0301.exe**\
+
+
+\* Click the **Connect/Reconnect Button**. A window with a progress bar will load.
+
+
+
+|image13|
+
+   \* Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
+
+--------------
+
+Capturing a Data
+~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Click the **Run Button**
+-  Click the **Stop Button** when acquisition is complete.
+
+Saving Data to a Spreadsheet File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  **Capture Data**.
+-  Click the **Save Data Button**.
+-  Configure the format of the spreadsheet data.
+
+   -  Select either **Inches** or **ADC Codes**.
+   -  Select either **Channel 1**, **Channel 2**, or select both channels.
+
+   |image14|
+
+      \* Click the **OK Button**.
+
+-  Browse to the directory location where the spreadsheet file is to be saved.
+-  Name the file.
+-  Click the **OK Button**.
+
+|
+
+.. note::
+
+
+| The software saves the spreadsheet file as ASCII text with columns separated by tabs.
+
+
+Setting ADC Conversion Thresholds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Click the **"Configure System" Control Tab**.
+-  Change the hexadecimal value of the register to be written in the **ADC Conversion Thresholds Panel**.
+-  Press the **Set Thresholds Button**.
+
+|
+
+.. note::
+
+
+| Information regarding the internal register structure can be found in the :adi:`AD7992 Datasheet <AD7992>`.
+
+
+Reading ADC Conversion Thresholds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Click the **"Configure System" Control Tab**.
+-  Press the **Read Thresholds Button**.
+
+|
+
+.. note::
+
+   | The threshold contents will be displayed in the **ADC Conversion Thresholds Panel**.
+
+
+Setting the Full Scale LVDT Range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Click the **"Configure System" Control Tab**.
+-  Change the value of the channel of interest in the **LVDT Full Scale Range Panel**.
+
+   -  The default value is 0.20 inches for both channels.
+
+Downloads
+---------
+
+`CN0301 LabVIEW Source <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-evaluation_software.zip>`__
+
+`API Functions Explained <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/functionsexplained.zip>`__
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0301-SDPZ?&v=RevC>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-test_setup.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-install1.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-install2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-install3.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-install4.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-install5.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-install6.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-wiring_table.png
+.. |nolink| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-wiring_schematic.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-hardware.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-hardware2.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-hardware3.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-hardware4.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0301/CN0301-software-wait.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0301/cn0301-software-save.png

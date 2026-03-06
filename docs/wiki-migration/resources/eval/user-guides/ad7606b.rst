@@ -1,0 +1,35 @@
+AD7606B HDL Reference Design
+============================
+
+Introduction
+------------
+
+The :adi:`EVAL-AD7606B-FMCZ` evaluation board is designed to help users to easily evaluate the features of :adi:`AD7606B` analog-to-digital converter (ADC).
+
+Used devices
+~~~~~~~~~~~~
+
+-  :adi:`AD7606B`
+-  :adi:`ADP7118`
+-  :adi:`ADR4525`
+
+Evaluation board
+~~~~~~~~~~~~~~~~
+
+-  :adi:`EVAL AD7606B Product Page <EVAL-AD7606B-FMCZ>`
+
+Supported FPGA carrier
+~~~~~~~~~~~~~~~~~~~~~~
+
+-  `ZEDBOARD <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+Reference HDL Design
+--------------------
+
+The design is built upon ADI's generic HDL reference design framework. In the :doc:`ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>` can be found an in-depth presentation and instructions about the HDL design framework in general.
+
+Block Diagram
+~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7606b.svg
+   :align: center

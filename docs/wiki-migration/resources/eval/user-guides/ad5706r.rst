@@ -1,0 +1,134 @@
+AD5706R HDL Reference Design
+============================
+
+Overview
+--------
+
+**\*Some specifications about the board, the chip, etc. Typically the information found on the** :adi:`ADI Products <en/products>` **website**\ \*
+
+The AD5706R devices are 4-channel, 16-/12-/10-bit resolution, low noise, programmable current output, digital-to-analog converter (DAC) capable of multiple operating modes and output current ranges with high power efficiency. These are intended for photonics control and current mode biasing applications. The devices incorporate a 2.5V, on-chip voltage reference, die temperature, load DAC, and A/B toggle functions, output monitoring functions, and reset functions.
+
+The family provides multiple programmable output current ranges up to 300mA. With device addressable pins, an SPI transaction can communicate with up to four AD5706R on the same SPI bus. Each DAC operates with an independent positive power supply rails PVDDx from 1.65V to 3.6V, for optimizing power efficiency and thermal power dissipation. The AD5706R operate from a 2.9V to 3.6V AVDD supply and are specified over the −40°C to +125°C temperature range.
+
+Supported devices
+-----------------
+
+`AD5706 Eval Board <https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development>`__
+
+Supported carriers
+------------------
+
+`Coraz7s FPGA Board <https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development/>`__
+
+Hardware requirements
+---------------------
+
+-  Eval AD5706R
+-  `Coraz7s FPGA Board <https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development/>`__
+-  Ethernet cable (for network access)
+-  Micro USB to USB Type A for UART access
+-  1x SD card (at least 16GB); follow :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+
+Block design
+------------
+
+Block diagram
+~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/ad5706r_block_diagram.svg
+   :alt: ad5706r_block_diagram.svg
+   :width: 800px
+
+IP list
+~~~~~~~
+
++-------------+-----------------------------------------------------------------------------------------+
+| IP          | Description                                                                             |
++=============+=========================================================================================+
+| AXI_PWM_GEN | `axi_pwm_gen <https://analogdevicesinc.github.io/hdl/library/axi_pwm_gen/index.html>`__ |
++-------------+-----------------------------------------------------------------------------------------+
+| AXI_CLKGEN  | `axi_clkgen <https://analogdevicesinc.github.io/hdl/library/axi_clkgen/index.html>`__   |
++-------------+-----------------------------------------------------------------------------------------+
+| SPI_ENGINE  | `spi_engine <https://analogdevicesinc.github.io/hdl/library/spi_engine/index.html>`__   |
++-------------+-----------------------------------------------------------------------------------------+
+
+SPI connections
+~~~~~~~~~~~~~~~
+
+======== ============== ======================
+Signal   Coraz7s Pinout Arduino Chipkit Header
+======== ============== ======================
+spi_csb  U15            Chipkit_IO_10
+spi_sdo  K18            Chipkit_IO_11
+spi_sdi  J18            Chipkit_IO_12
+spi_sclk G15            Chipkit_IO_13
+======== ============== ======================
+
+GPIOs
+~~~~~
+
+========= ============== ======================
+Signal    Coraz7s Pinout Arduino Chipkit Header
+========= ============== ======================
+ldacb_tgp M18            Chipkit_IO_9
+shdn      R14            Chipkit_IO_7
+resetb    N18            Chipkit_IO_8
+========= ============== ======================
+
+CPU/Memory interconnects addresses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+=================== ============
+Module              Base Address
+=================== ============
+axi_ad5706r_pwm_gen 0x44a00000
+spi_ad5706r_dac     0x44b00000
+spi_clkgen          0x44c00000
+=================== ============
+
+Interrupts
+~~~~~~~~~~
+
+Building the HDL project
+------------------------
+
+ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must `clone <https::`here </git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>` the HDL repository.
+
+Then go to the **\*PROJECT LOCATION WITHIN HDL (EX: projects/ad5706r/coraz7s)**\ \* location and run the make command by typing in your command prompt:
+
+**Linux/Cygwin**
+
+::
+
+   user@analog:~$ cd hdl/projects/ad5706r/coraz7s
+   user@analog:~/hdl/projects/ad5706r/coraz7s$ make
+
+| Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files.
+| A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
+
+System setup
+------------
+
+\*\* The Coraz7s can be connected to the AD5706R Evaluation Board via the Arduino header. \*\*
+
+Resources
+---------
+
+-  `EVAL-AD5706RARDZ <https://analog.com/eval-ad5706r>`__
+-  `HDL project documentation <http://analogdevicesinc.github.io/hdl/projects/ad5706r/index.html>`__
+-  :doc:`AD5706 HDL Reference Design </wiki-migration/resources/eval/user-guides/ad5706r>`
+
+More information
+----------------
+
+-  :doc:`How to prepare an SD card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` with boot files
+-  :doc:`ADI reference designs HDL user guide </wiki-migration/resources/fpga/docs/hdl>`
+-  :doc:`ADI HDL architecture </wiki-migration/resources/fpga/docs/arch>` wiki page
+-  :doc:`How to build an ADI HDL project </wiki-migration/resources/fpga/docs/build>`
+
+Support
+-------
+
+Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
+
+It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.

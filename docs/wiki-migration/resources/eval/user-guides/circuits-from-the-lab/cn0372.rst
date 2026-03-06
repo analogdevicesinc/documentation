@@ -1,0 +1,328 @@
+CN0372 Evaluation Board and Software User Guide
+===============================================
+
+Overview
+--------
+
+:adi:`CN0372` is a multi-channel data acquisition system suitable for ultra-low power applications. The circuit is configurable for buffered and unbuffered operation as well as for power supply options.
+
+The :adi:`AD7091R-5` accepts the analog signals, buffered or unbuffered, and performs data conversion. The :adi:`ADA4805-1` is an optional buffer which can be used for all input channels because of an access to the multiplexer output of the :adi:`AD7091R-5`. The :adi:`ADP5090` harvests charge from a photovoltaic cell to generate the system DC supply rails. Another option provided to power the board is with the :adi:`ADP1607`. A CR2032 battery connector is available to provide either the input to the :adi:`ADP1607` or accelerate the cold start of the :adi:`ADP5090`.
+
+This user guide will discuss how to operate the :adi:`SDP-PMD-IB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL_SDP-PMOD.html#eb-overview>`, :adi:`EVAL-SDP-CB1Z` and the evaluation software to configure and collect data from the EVAL-CN0372-PMDZ Evaluation Board (**CN0372 Board**). The evaluation board also has PMOD and IMOD compatible headers which allows for connection to other processors or microcontrollers.
+
+A complete design support package for the :adi:`EVAL-CN0372-PMDZ` evaluation board containing schematics, layouts (native and Gerber), and bill-of-materials can be found at: :adi:`CN0372-DesignSupport`.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/1.png
+   :width: 600px
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-CN0372-PMDZ` Evaluation Board
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  :adi:`SDP-PMD-IB1Z` Interposer Board (**Interposer Board**)
+-  8-pin IDSD-04-D flexible cable
+-  `CN0372 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0372>`__
+-  PC with a USB port and Windows® XP or Windows Vista® (32-bit), or Windows 7 (32-bit)
+-  USB cable
+-  Power supply: 6 V wall wart
+-  SRS DS360 Ultralow distortion Function Generator or similar precision source
+-  Cymbet CBC-PV-01 PV Cell
+-  CR2032 battery
+
+General Setup
+-------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/2fromCN.png
+
+-  The **CN0372 Board** connects to the **Interposer Board** via **J2** and **J3**
+-  The **Interposer board** connects to SDP-B Board via the 120-Pin connector
+-  The **SDP-B Board** connects to the PC via the USB cable.
+-  Header **J2** is an 8 pin PMOD compatible I2C interface header - allows for communication to the ADC
+-  Header **J3** is a PMOD Inerface Type 2A header - allows for communication to the ADC
+-  Terminal block **J1** provides the quad channel input (input range:0 to 2.5V)
+-  Terminal block **J4** provide the PV cell input
+-  Terminal block **B3** provide the backup battery option
+
+Power Supply Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To use :adi:`ADP5090` energy harvesting circuit as system supply, connect a PV Cell to **J4** terminal and place **SL4** and **SL5** to A before opening the evaluation software. VDRIVE is taken from VDD_PMOD. For the complete power supply options available, see tables below.
+
+VDD Options
+^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/3new.png
+
+VDRIVE Options
+^^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/4new.png
+
+Solder Link Settings
+~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/5newRC.png
+
+Test Points
+~~~~~~~~~~~
+
+There are numerous test points on the **CN0372 Board**. These test points provide easy access to the signals from the evaluation board for probing, evaluation, and debugging.
+
+Installing the Software
+-----------------------
+
+-  Extract the file **CN0372_Evaluation_Software.zip** and open the file **setup.exe**.
+
+
+|image1|
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0372 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0372>`__ to the default directory path **C:\\Program Files\\Analog Devices\\CN0372\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image2|
+
+-  Click **Next** to view the installation review page.
+
+|image3|
+
+-  Click **Next** to start the installation
+
+|image4|
+
+-  Upon completion of the installation of the **CN0372 Evaluation Software**, click **Next** for the installer of the **ADI SDP Drivers** to execute.
+
+|image5|
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image6|
+
+-  Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image7|
+
+-  Press **“Install”** to install the*\* SDP Drivers*\* and complete the installation of all software. Click **“Close”** when done.
+
+|image8|
+
+Using the Evaluation Software
+-----------------------------
+
+Software Control and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Main Tab
+^^^^^^^^
+
+| |image9|
+
+.. tip::
+
+   \ **NOTE:** Blocks 6,7,8 and 10 have expand buttons (|image10|) that when clicked brings up the window shown in these blocks' description.
+
+
+-  **Analysis Ch**
+
+   -  Selects the channel analyzed and the channel whose parametric performance data is displayed in the plot analysis blocks.
+
+-  **Samples**
+
+   -  Selects number of samples to be taken in a single acquisition.
+
+-  **Single Capture**
+
+::
+
+     *Initiates the sampling and readback of the defined number of measurements. 
+   * **Continuous Capture**
+     *Continuously captures and updates the display and chart. Click a second time to stop sampling. 
+   * **Device Status**
+     *Displays the device generic and operating mode.
+   * **I/P MUX**
+     *Writes to the channel register. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:15.png?direct|}}
+   * **2.5 Vref** 
+     *Source of the Reference Input. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:16.png?direct|}} 
+   * **Control Logic and Registers**
+     *Writes to the configuration Register. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:17.png?direct|}}   
+   * **SCL Rate**
+     * Selects the SCL clock rate. Standard mode is 100 kHz. Fast mode is 400 kHz. Fast mode is the default configuration.
+   * **Alert Register**
+     *Writes to the Alert Register \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:18.png?direct|}}   
+   * **DPS Duty Cycle**
+     *Duty cycle dropdown menu. Options from 10% to 90%.
+   * **Reference Settings**
+     *Displays current reference setting. If **External Reference** is selected, provide an off-board external reference. If this option is selected, the supplied reference value must be entered in **Ref. Value**.
+   * **DPS** 
+     *Toggles dynamic power scaling when [[:adi:`ADA4805-1|ADA4805-1]]` is used.
+   * **Amp PD**
+     *Toggles power down of buffer when [[:adi:`ADA4805-1|ADA4805-1]]` is used.
+   * **Flash LED**
+     *Flashes **LED1A** on the **SDP-B board**, useful for debugging purposes.
+   * **Reset**
+     *Resets ADC and places the default configuration in the control register. 
+   * **Status Bar**
+     *Displays a message to the user detailing the current state of the software.
+
+Waveform Tab
+^^^^^^^^^^^^
+
+-  Displays amplitudes recorded from the captured signal as well as the frequency of the signal tone. The analysis report is generated for the channel selected via the Analysis Ch. drop-down menu.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/19new.png
+
+-  **Analysis Ch**
+
+::
+
+     *Selects the channel analyzed and the channel whose parametric performance data is displayed in the plot analysis blocks.
+   * **Alert**
+     *Illuminates if an alert is generated.
+   * **Plot Legend**
+     *Shows all enabled channels. To remove any undesired channel(s) from the plot, deselect that channel.    
+
+Histogram Tab
+^^^^^^^^^^^^^
+
+-  Tests the ADC for the code distribution of the AC or DC input and computes the mean and standard deviation, or transition noise of the converter, and displays the results.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/20new.png
+
+FFT Tab
+^^^^^^^
+
+-  Tests the traditional ac characteristics of the converter and displays a fast Fourier transform (FFT) of the results. As in the histogram test, raw data is captured and passed to the PC where the FFT is performed, displaying SNR, SINAD, and THD.
+-  The **Spectrum Analysis** panel displays the performance data: SNR, THD, SINAD, dynamic range, and noise performance along with the input signal characteristics.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/21new.png
+
+-  **View Harmonic Content** button switches the panel to display the frequency and amplitude of the fundamental in addition to the second to fifth harmonics.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/22new.png
+
+Summary Tab
+^^^^^^^^^^^
+
+-  Presents a summary of the waveform, histogram and FFT data, including key performance parameters, such as SNR and THD.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/23new.png
+
+Read Register Tab
+^^^^^^^^^^^^^^^^^
+
+-  Displays register contents
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/24.png
+
+-  The **Channel Register** tab indicates the current enable/disable state of all channels.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/25.png
+
+-  The **Configuration Register** tab indicates the configuration state of the :adi:`AD7091R-5`.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/26.png
+
+-  The **Alert Indication** tab indicates the current high and low alert status of individual channels.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/27.png
+
+-  The **Alert Registers** tab indicates the current high, low, and hysteresis alert register values that are programmed into the :adi:`AD7091R-5` control registers.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/28.png
+
+-  The **All Registers** tab displays all current register values contained within the :adi:`AD7091R-5`.
+
+Running the System
+~~~~~~~~~~~~~~~~~~
+
+-  Open the*\* CN0372.exe*\* application from the default installation location.
+-  The software will connect to the board automatically.
+-  Click the **Single Capture** or **Continuous Capture** Button.
+
+Saving Files
+~~~~~~~~~~~~
+
+The software can save the current captured data for future analysis. The software has the ability to capture the current plot images and the current device configuration, as well as the raw waveform data, histogram data, and ac spectrum data.
+
+Saving Data to a Spreadsheet File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Click on **File** Menu.
+
+
+|image11|
+
+-  Select **Save Analysis Data**
+-  Select data to save.
+-  Name the file.
+-  Click the **OK** Button.
+
+Saving Image to File
+^^^^^^^^^^^^^^^^^^^^
+
+-  Click on **File** Menu.
+-  Select **Save Picture**.
+-  Select image to save.
+-  Name the file.
+-  Click the **OK** Button.
+
+Saving Device Configurations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Click on **File** Menu.
+-  Select **Save Register Configuration**.
+-  Name the file.
+-  Click the **OK** Button.
+
+Opening Files
+~~~~~~~~~~~~~
+
+The software can load previously captured data for analysis or previously utilized device configuration.
+
+-  Click on **File** Menu.
+-  Select **Open**.
+-  Load saved data or register configuration.
+-  Click the **OK** Button.
+
+More Information and Useful Links
+---------------------------------
+
+-  `CN0372 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0372>`__
+-  :adi:`CN0372 Circuit Note Page <CN0372>`
+-  :adi:`CN0372 Design Support package <CN0372-DesignSupport>`
+-  :adi:`AD7091R-5 Product Page <AD7091R-5>`
+-  :adi:`ADP5090 Product Page <ADP5090>`
+-  :adi:`ADA4805-1 Product Page <ADA4805-1>`
+-  :adi:`ADP1607 Product Page <ADP1607>`
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0372-PMDZ?&v=RevB>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/6.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/7new.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/8.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/9.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/10.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/11.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/12.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/13.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/14.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/expandnew.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/29-1.png

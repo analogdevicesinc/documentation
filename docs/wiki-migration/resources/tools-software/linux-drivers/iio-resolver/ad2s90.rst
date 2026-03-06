@@ -1,0 +1,106 @@
+AD2S90 IIO Resolver-to-Digital Converter Linux Driver
+=====================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD2S90`
+
+Description
+-----------
+
+.. image:: https://wiki.analog.com/_media/scrape>adi>AD2S90#additional-details__paragraph
+   :alt: scrape>adi>AD2S90#additional-details\__paragraph
+
+-  :adi:`Product Page <ad2s90>`
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting Resolver-to-Digital Converters. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Source Code
+===========
+
+Status
+------
+
++-------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| Source                                                                                                                  | Mainlined?                                                                                                              |
++=========================================================================================================================+=========================================================================================================================+
+| `git <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/staging/iio/resolver/ad2s90.c>`__ | `Yes <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/staging/iio/resolver/ad2s90.c>`__ |
++-------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+
+Files
+-----
+
++----------+-------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                          |
++==========+===============================================================================================================================+
+| driver   | `ad2s90.c <https://git.kernel.org/pub/scm/linux/kernel/git/staging/staging.git/tree/drivers/staging/iio/resolver/ad2s90.c>`__ |
++----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+Adding Linux driver support
+===========================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+.. hint::
+
+   The Driver depends on **CONFIG_SPI**
+
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           [*] Staging drivers  --->
+               <*>     Industrial I/O support --->
+                   --- Industrial I/O support
+                   -*-   Enable ring buffer support within IIO
+                   -*-     Industrial I/O lock free software ring
+                   -*-   Enable triggered sampling support
+
+                         *** Resolver to digital converters ***
+                   [--snip--]
+
+                   <*>   Analog Devices AD2S90 driver
+
+                   [--snip--]
+
+Driver Usage
+============
+
+The device file path may looks like,
+
+::
+
+   /sys/devices/platform/bfin-spi.0/spi0.3/iio/device0/ad2s90>
+
+There are two files:
+
+=========== ========== ===========================
+File Name   Permission Usage
+=========== ========== ===========================
+angular     read only  12 bits angular value
+description read only  description about this chip
+=========== ========== ===========================
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

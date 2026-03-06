@@ -1,0 +1,281 @@
+CN0229 Evaluation Board Guide
+=============================
+
+Overview
+--------
+
+:adi:`CN0229` is a multichannel, flexible, analog output solution with only two analog components and meets most requirements for multichannel I/O cards, programmable logic controllers (PLCs), and distributed control systems (DCSs) applications. The circuit also contains key features for industrial applications, such as on-chip output fault detection, packet error checking (PEC) by the CRC, flexible power-up options, and ESD protection making it an ideal choice for robust industrial control systems.
+
+The :adi:`AD5750-2` is a single-channel, low cost, precision voltage/current output driver developed to meet the requirements of industrial process control applications. The voltage output range can be programmed for the standard output ranges for PLC and DCS applications: 0 V to 5 V, 0 V to 10 V, −5 V to +5 V, and −10 V to +10 V with a 20% overrange setting provided for the standard ranges. The current output, which is provided on a separate pin, can be programmed for the ranges of 4 mA to 20 mA, 0 mA to 20 mA, −20 mA to +20 mA, 0 mA to 24 mA, and −24 mA to +24 mA. The unipolar ranges have a 2% overrange setting.
+
+The :adi:`AD5686R` is a quad 16-bit nanoDAC+ with rail-to-rail voltage-buffered outputs integrated with an on-chip 2 ppm/°C typical (5 ppm/°C maximum), 2.5 V reference. The on-chip reference can drive the reference input of all four AD5750-2s, has a low output impedance of 0.05 Ω, and can source and sink up to 5 mA.
+
+The :adi:`ADuM1301` is a triple-channel digital isolator. The :adi:`ADuM5400` is a quad-channel digital isolator with an integrated, isolated, dc-to-dc converter. They are both based on iCoupler® technology and are used to provide isolation between the signal chain and the system microcontroller, with an isolation rating of 2.5 kV rms. The :adi:`ADuM5400` provides an isolated 5 V power supply for the 5 V circuits in the secondary side.
+
+| The EVAL-CN0229-SDPZ board connects to ADI’s System Demonstration Platform (SDP) and is powered by a triple output DC power supply of +15 V, -15 V and 6 V. |image1|
+| ----
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-CN0229-SDPZ Evaluation Board <EVAL-CN0229-SDPZ>`
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  `CN0229 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0229>`__
+-  Triple Output DC Power Supply (6 V, +15 V and -15 V)
+
+   -  *Agilent E3631A 0 V to 6 V/5 A; ±25 V/1 A Triple Output DC Power Supply*
+
+-  Digital Multimeter for Verification (**Optional**)
+
+   -  *Agilent 34401A 6.5 Digital Multimeter*
+
+-  PC with the following *Minimum Requirements*
+
+   -  Windows 7 or higher
+
+      -  USB interface
+
+--------------
+
+General Setup
+-------------
+
+Block assignments
+~~~~~~~~~~~~~~~~~
+
+| |image2|
+| \* The :adi:`EVAL-CN0229-SDPZ` **(CN-0229 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
+
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  Terminal block **CN1** is the +/- 15 V power supply input
+-  Terminal block **CN2** is the +6 V power supply input
+-  Four OUT\_[x] voltage/current output channels
+
+   -  **Optionally**, the :adi:`AD5750-2` output voltage feedback can be configured by connecting **VSENSE+** and **VSENSE-** across a selected branch in the load circuit. **VSENSE-** should be within +/- 3.0 V of the GND
+
+
+   | 
+|
+
+.. important::
+
+   Do **not** connect the USB cable to the Mini-USB connector on the SDP board before turning on the dc power supply for the **EVAL-CN0229-SDPZ**.
+
+
+Jumper settings
+~~~~~~~~~~~~~~~
+
+See image below for jumper settings. The bolded values are the default settings for the EVAL-CN0229-SPDZ.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0229/9-11-2017_3-22-48_pm.png
+   :align: center
+   :width: 600px
+
+--------------
+
+Installing the Evaluation Software
+----------------------------------
+
+-  Extract the file **CN0229_Evaluation_Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0229 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0229>`__ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0229\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image3|
+
+-  Click **Next** to view the installation review page
+
+|image4|
+
+   \* Click **Next** to start the installation
+
+   |image5|
+
+   \* Upon completion of the installation of the **CN-0229 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image6|
+
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image7|
+
+   \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+   |image8|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Main Tab
+~~~~~~~~
+
+| |image9|
+| \* **Connection** <fc #0000ff>(Highlighted Dark Blue)</fc>
+
+::
+
+     * **Connect Button**
+       * Starts the connection with the [[:adi:`CN0229|CN0229` Evaluation Board]]
+       * **Disconnect Button**
+         * Ends the connection with the [[:adi:`CN0229|CN0229` Evaluation Board]]
+
+-  **System Configuration** <fc #ff0000>(Highlighted Red)</fc>
+
+   -  **Connector**
+
+      -  Selects which 120-pin connection of the SDP-B Board to use
+      -  **SLCK**
+
+         -  Sets the SPI clock frequency used by the evaluation board
+
+-  **Set/Reset** <fc #00ffff>(Highlighted Light Blue </fc><fc #ff3399> and Pink)</fc>
+
+   -  **Reset**
+
+      -  Resets AD5686R
+      -  **Set All**
+
+         -  Sets all channels to their corresponding settings
+
+      -  **Quit**
+
+         -  Exit the application
+
+-  **Channel 1 Settings** <fc #ff00ff>(Highlighted Violet)</fc>
+
+   -  **Output**
+
+      -  Enables or disables Channel 1
+      -  **Range**
+
+         -  Sets the voltage/current output range of Channel 1
+
+      -  **Value**
+
+         -  Sets the hex value corresponding to the desired output level in Channel 1
+
+-  **Channel 2 Settings** <fc #008000>(Highlighted Green)</fc>
+
+   -  **Output**
+
+      -  Enables or disables Channel 2
+      -  **Range**
+
+         -  Sets the voltage/current output range of Channel 2
+
+      -  **Value**
+
+         -  Sets the hex value corresponding to the desired output level in Channel 2
+
+-  **Channel 3 Settings** <fc #B24801>(Highlighted Orange)</fc>
+
+   -  **Output**
+
+      -  Enables or disables Channel 3
+      -  **Range**
+
+         -  Sets the voltage/current output range of Channel 3
+
+      -  **Value**
+
+         -  Sets the hex value corresponding to the desired output level in Channel 3
+
+-  **Channel 4 Settings** <fc #ffff00>(Highlighted Yellow)</fc>
+
+   -  **Output**
+
+      -  Enables or disables Channel 4
+      -  **Range**
+
+         -  Sets the voltage/current output range of Channel 4
+
+      -  **Value**
+
+         -  Sets the hex value corresponding to the desired output level in Channel 4
+
+| 
+| ==== Running the System ====
+
+-  Open the **CN0229.exe** application from the default installation location.
+-  Set the correct connector and SCLK settings for the board in the System Configuration section.
+-  Click the **Connect Button**
+-  Upon successful connection, select the desired channel to be used.
+-  Set the output of the channel to enable.
+-  Select the range of desired output.
+-  Input a corresponding hex value of the output level and select **Set CH[x]**.
+-  In case all channels are to be used, set all desired settings for each channel and click the **Set ALL button**.
+-  Click **Disconnect Button** if finished.
+
+--------------
+
+More Information and Useful Links
+---------------------------------
+
+-  `CN0229 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0229>`__
+-  :adi:`CN0229 Circuit Note Page <CN0229>`
+-  :adi:`CN0229 Design Support Package <CN0229 -DesignSupport>`
+-  :adi:`AD5750-2 Product Page <AD5750-2>`
+-  :adi:`AD5686R Product Page <AD5686R>`
+-  :adi:`ADuM1301 Product Page <ADuM1301>`
+-  :adi:`ADuM5400 Product Page <ADuM5400>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0229-SDPZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0229-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  PADS project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0229-SDPZ?&v=Rev A>`__ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0229/cn0229-hw-1024.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0229/8-7-2017_2-02-51_pm.png
+   :width: 650px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0229/7-28-2017_2-07-38_pm.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0229/7-28-2017_2-07-51_pm.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0229/7-28-2017_2-08-46_pm.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0229/7-28-2017_2-09-40_pm.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0229/7-28-2017_2-09-54_pm.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0229/7-28-2017_2-11-33_pm.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0229/8-7-2017_3-02-03_pm.png
+   :width: 600px

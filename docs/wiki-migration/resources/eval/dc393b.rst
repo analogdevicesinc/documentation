@@ -1,0 +1,7 @@
+Evaluation Board DC393B for LTC1564
+===================================
+
+| **DESCRIPTION**
+| The DC393B evaluation board LTC1564, a digitally controlled amplifier and filter. The LTC1564 is a continuous time 8th order lowpass filter with cutoff frequency (fc) and gain digitally controlled. The LTC1564 is an elliptic lowpass filter giving approximately 100dB attenuation at 2.5 x fc. Signals with low or variable levels can be normalized with the built-in variable gain that reduces input-referred noise with increasing gain for a maximum signal level to noise, SNR. A DC393B can be used stand-alone with external control of the LTC1564 digital inputs or as a Linduino shield using a program to control the LTC1564 4-bit gain and 4-bit bandwidth inputs (Linduino DC2026 is an Analog Devices trademark). The DC393B input is a low noise, high impedance buffer (LT6202) and the output is a buffer (ADA4807-1) for driving a SAR ADC. In addition, a DC393B sinewave peak detector monitors the DC393B output for testing. A separate power supply connection for the DC393B input and the output circuits, allows for single or dual supply operation.
+
+`dc393b_user_guide.pdf <https://wiki.analog.com/_media/resources/eval/dc393b_user_guide.pdf>`__

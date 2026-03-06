@@ -1,0 +1,201 @@
+AD7193 Pmod Xilinx FPGA Reference Design
+========================================
+
+Introduction
+------------
+
+The :adi:`AD7193` is a low noise, complete analog front end for high precision measurement applications. It contains a low noise, 24-bit sigma-delta (Σ-Δ) analog-to-digital converter (ADC). The on-chip low noise gain stage means that signals of small amplitude can interface directly to the ADC. The device can be configured to have four differential inputs or eight pseudo differential inputs. The on-chip channel sequencer allows several channels to be enabled simultaneously, and the AD7193 sequentially converts on each enabled channel, simplifying communication with the part. The on-chip 4.92 MHz clock can be used as the clock source to the ADC or, alternatively, an external clock or crystal can be used. The output data rate from the part can be varied from 4.7 Hz to 4.8 kHz.
+
+**HW Platform(s):**
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+
+Quick Start Guide
+-----------------
+
+The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+-  `PmodAD5 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD5>`__
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with LX9 and/or Xilix tools, please visit
+
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__ for details.
+   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
+   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
+
+
+Avnet LX9 MicroBoard Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD7193\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodAD5 to J5 connector of LX9 board, pins 1 to 6 (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5.jpg
+   :alt: PmodAD5 and LX-9
+   :width: 200px
+
+Digilent Nexys™3 Spartan-6 FPGA Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD7193\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodAD5 to JA connector of Nexys™3 board, pins JA1 to JA6 (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_nexys3.jpg
+   :alt: PmodAD5 and Nexys™3
+   :width: 200px
+
+Avnet ZedBoard
+~~~~~~~~~~~~~~
+
+To begin, connect the PmodAD5 to JA connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_zed.jpg
+   :alt: PmodAD5 and ZedBoard
+   :width: 200px
+
+FPGA Configuration for Nexys3 and LX-9 MicroBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad7193/sw/AD7193.bit).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodAD5impact.jpg
+   :alt: Programming FPGA in IMPACT
+   :width: 200px
+
+FPGA Configuration for ZedBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the **download.bat** script from the "../bin" folder downloaded from the github (see the links in the download section of the wiki page). The script will automatically configure the ZYNQ SoC and download the \*.elf file afterwards.
+
+.. tip::
+
+   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+
+
+If programming was successful, you should be seeing messages appear on the terminal window as shown in the figures below. After programming the AD7193, the program will display the values of all internal registers. After that, it will go through 5 Demo Modes.
+
+| |Display internal registers values|
+| **Read Voltage Values referenced to AINCOM, UNIPOLAR Mode.**
+
+| |Demo mode 1|
+| **Read Voltage Values referenced to AINCOM, BIPOLAR Mode.**
+
+| |Demo mode 2|
+| **Read Differential Voltage Values, UNIPOLAR Mode.**
+
+| |Demo mode 3|
+| **Read Differential Voltage Values, BIPOLAR Mode.**
+
+| |Demo mode 4|
+| **Read Die Temperature Value.**
+
+| |Demo mode 5|
+
+Using the reference design
+--------------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design is a simple SPI Interface, containing CS, SCLK, MISO, MOSI, but also a GPIO to read the RDY status on the MISO line. The information is displayed on UART.
+
+The hardware SPI access allows sending and receiving data from the AD7193, programming its internal registers in order to decide which channels should be converted corresponding to AINCOM or its own differential pair, what GAIN, sampling frequency, etc.
+
+.. important::
+
+   
+   -  Connecting the PmodAD5 to the boards using an extension cable provides ease of use.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  When using AVDD > DVDD (= 3.3V), JP1 on PmodAD5 must be removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.25V
+   -  If using Xilinx Software Development Kit integrated Console as a Hyperterminal clinet, please uncomment all the commented **getchar();** in main.c, because the Console sees [Enter] as 2 consecutive keypresses, so 2 getchar(); are required. If using Tera Term or other similar software, do not modify anything.
+   
+
+
+.. important::
+
+   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+
+   
+   .. code:: c
+   
+      // Select between PS7 or AXI Interface
+      #define USE_PS7      1
+      // SPI used in the design
+      #define USE_SPI      1
+      // I2C used in the design
+      #define USE_I2C      0
+      // Timer (+interrupts) used in the design
+      #define USE_TIMER    0
+      // External interrupts used in the design
+      #define USE_EXTERNAL     0
+      // GPIO used in the design
+      #define USE_GPIO         0
+   
+
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \**Avnet LX-9 MicroBoard: **
+     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7193_lx9.zip>`__\ **
+     **\ Digilent Nexys™3:**
+     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7193_nexys3.zip>`__\ **
+     **\ Avnet ZedBoard:\*\*
+   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   | \* :git-no-OS:`PmodAD5 Driver Files <Pmods/PmodAD5>`
+   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
+   | \* :git-no-OS:`Programming Script <Pmods/PmodAD5/bin>`
+   |
+
+
+More information
+----------------
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |Display internal registers values| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu1.jpg
+   :width: 600px
+.. |Demo mode 1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu2.jpg
+   :width: 600px
+.. |Demo mode 2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu3.jpg
+   :width: 600px
+.. |Demo mode 3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu4.jpg
+   :width: 600px
+.. |Demo mode 4| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu5.jpg
+   :width: 600px
+.. |Demo mode 5| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad5_menu6.jpg
+   :width: 600px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

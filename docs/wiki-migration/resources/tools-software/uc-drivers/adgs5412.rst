@@ -1,0 +1,121 @@
+ADGS5412 - No-OS Driver
+=======================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADGS1412`
+-  :adi:`ADGS5412`
+-  :adi:`ADGS1212`
+-  :adi:`ADGS1612`
+-  :adi:`ADGS5414`
+-  :adi:`ADGS1208`
+-  :adi:`ADGS1209`
+-  :adi:`ADGS1408`
+-  :adi:`ADGS1409`
+-  :adi:`ADGS1414D`
+
+Overview
+--------
+
+The :adi:`ADGS5412` contains four independent single-pole/single-throw (SPST) switches. An SPI interface controls the switches. The SPI interface has robust error detection features. These are CRC error detection, Invalid Read/Write Address detection and SCLK count error detection.
+
+It is possible to daisy-chain multiple :adi:`ADGS5412` devices together. This enables the configuration of multiple device with a minimal amount of digital lines. The :adi:`ADGS5412` can also operate in burst mode to decrease the time between SPI commands.
+
+Each switch conducts equally well in both directions when on, and each switch has an input signal range that extends to the supplies. In the off condition, signal levels up to the supplies are blocked.
+
+The on-resistance profile is very flat over the full analog input range, which ensures good linearity and low distortion when switching audio signals. The :adi:`ADGS5412` exhibits break-before-make switching action allowing use of the device in multiplexer applications with external wiring.
+
+Applications:
+
+-  Relay replacement
+-  Automatic test equipment
+-  Data acquisition
+-  Instrumentation
+-  Avionics
+-  Audio and video switching
+-  Communication systems
+
+Driver Description
+------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Function                                                                                                  | Description                                         |
++===========================================================================================================+=====================================================+
+| ``uint8_t adgs5412_compute_crc8(uint8_t *data, uint8_t data_size);``                                      | Compute CRC8 checksum.                              |
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs5412_spi_reg_read(adgs5412_dev *dev, uint8_t reg_addr, uint8_t *reg_data);``                | SPI register read from device.                      |
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs5412_spi_reg_write(adgs5412_dev *dev, uint8_t reg_addr, uint8_t reg_data);``                | SPI register write to device.                       |
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs5412_spi_reg_read_mask(adgs5412_dev *dev, uint8_t reg_addr, uint8_t mask, uint8_t *data);`` | SPI register read from device using a mask.         |
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs5412_spi_reg_write_mask(adgs5412_dev *dev, uint8_t reg_addr, uint8_t mask, uint8_t data);`` | SPI internal register write to device using a mask. |
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs5412_do_soft_reset(adgs5412_dev *dev);``                                                    | Do a software reset.                                |
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs5412_clear_err_flags(adgs5412_dev *dev);``                                                  | Clear the Error Flags Register.                     |
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs5412_enter_daisy_chain(adgs5412_dev *dev);``                                                | Enter Daisy-Chain Mode.                             |
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs5412_send_daisy_chain_cmds(adgs5412_dev *dev, uint8_t *cmds, uint8_t cmds_size);``          | Send Daisy-Chain commands.                          |
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs5412_setup(adgs5412_dev **device, adgs5412_init_param init_param);``                        | Initialize the device.                              |
++-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++-------------------------------------+
+
+
+| ``typedef enum {                    |
+
+|     ADGS5412_ENABLE,                |
+|     ADGS5412_DISABLE,               |
+| } adgs5412_state;                   |
+|                                     |
+| typedef struct {                    |
+|     /* SPI */                       |
+|     spi_device      spi_dev;        |
+|     /* Device Settings */           |
+|     adgs5412_state  crc_en;         |
+|     adgs5412_state  burst_mode_en;  |
+|     adgs5412_state  daisy_chain_en; |
+| } adgs5412_dev;                     |
+|                                     |
+| typedef struct {                    |
+|     /* SPI */                       |
+|     uint8_t     spi_chip_select;    |
+|     spi_mode        spi_mode;       |
+|     spi_type        spi_type;       |
+|     uint32_t        spi_device_id;  |
+|     /* Device Settings */           |
+|     adgs5412_state  crc_en;         |
+|     adgs5412_state  burst_mode_en;  |
+|     adgs5412_state  daisy_chain_en; |
+| } adgs5412_init_param;``            |
++-------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of ADGS5412 Driver.|
+
+   -
+
+   |Header file of ADGS5412 Driver.|
+
+.. |Implementation of ADGS5412 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/mux/adgs5412/adgs5412`.c
+.. |Header file of ADGS5412 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/mux/adgs5412/adgs5412`.h

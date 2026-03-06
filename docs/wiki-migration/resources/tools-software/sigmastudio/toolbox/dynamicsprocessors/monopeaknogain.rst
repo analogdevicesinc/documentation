@@ -1,0 +1,91 @@
+Mono peak No Gain
+=================
+
+| :doc:`Click here to return to the Dynamics Processors page </wiki-migration/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors>`
+| -----------------------------------------------------------------------------------------------------------------
+
++---+---+
+| The Mono Peak (no gain) algorithm is a dynamics processor that can gate, expand, compress, and limit input signals. The detection path uses the peak level of the input signal to calculate the output gain. Hold and decay parameters are included to allow control of the output gain over time. The transfer function can be fully controlled (within the computational limits of the DSP) using the "Show Graph" GUI control. | |monopeakpic1.png| |
++---+---+
+
+Input Pins
+----------
+
++--------------------+------------------------------------+-------------------------+
+| Name               | Format [int/dec] - [control/audio] | Function Description    |
++====================+====================================+=========================+
+| Pin 0: Audio Input | decimal - audio                    | Audio Input - Channel 0 |
++--------------------+------------------------------------+-------------------------+
+
+Output Pins
+-----------
+
++---------------------+------------------------------------+--------------------------+
+| Name                | Format [int/dec] - [control/audio] | Function Description     |
++=====================+====================================+==========================+
+| Pin 0: Audio Output | decimal - audio                    | Audio Output - Channel 0 |
++---------------------+------------------------------------+--------------------------+
+
+GUI Controls
+------------
+
++------------------+---------------+---------------------+-----------------------------------------------------------------------------------------------------------+
+| GUI Control Name | Default Value | Range               | Function Description                                                                                      |
++==================+===============+=====================+===========================================================================================================+
+| Hold (ms)        | 0             | 0 to 2000           | Hold time applied to the output gain before it starts the decay ramp                                      |
++------------------+---------------+---------------------+-----------------------------------------------------------------------------------------------------------+
+| Decay (dB/s)     | 10            | 0 to 1000           | Speed of the linear decay ramp applied to the output gain until it reaches the current target output gain |
++------------------+---------------+---------------------+-----------------------------------------------------------------------------------------------------------+
+| Soft Knee        | Disabled      | Enabled or Disabled | Controls whether or not the corners (or "knees") on the transfer function are smoothed or not             |
++------------------+---------------+---------------------+-----------------------------------------------------------------------------------------------------------+
+
+DSP Parameter Information
+-------------------------
+
++--------------+----------------------------------------------------------+---------------------------------------------------------------------------+
+| GUI Name     | Compiler Name                                            | Function Description                                                      |
++==============+==========================================================+===========================================================================+
+| Show Graph   | MonoChannelSingleDetectNoPost2prec1_1                    | 33 table points for input-to-output transfer function (compression curve) |
+|              | MonoChannelSingleDetectNoPost2prec1_p1_1                 |                                                                           |
+|              | MonoChannelSingleDetectNoPost2prec1_p1_1_autoincremented |                                                                           |
+|              | ...                                                      |                                                                           |
++--------------+----------------------------------------------------------+---------------------------------------------------------------------------+
+| Hold (ms)    | MonoChannelSingleDetectNoPost2prec1hold_1                | Sets the hold time of the compressor                                      |
++--------------+----------------------------------------------------------+---------------------------------------------------------------------------+
+| Decay (dB/s) | MonoChannelSingleDetectNoPost2prec1decay_1               | Sets the decay rate of the compressor                                     |
++--------------+----------------------------------------------------------+---------------------------------------------------------------------------+
+
+Example
+-------
+
+| This example shows the mono peak compressor being used on an analog input. Depending on the application, a variety of transfer curves could be used to achieve the desired effect. For example, when used on a microphone input, a noise gate curve could be implemented to remove the noise floor when no signal of interest is present.
+| |monopeakpic2.png|
+| Other cells used in this example: Input, Output
+
+Algorithm Details
+-----------------
+
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Toolbox Path               | Dynamics Processors - Peak - Standard Resolution - Lower Range (-90 to +6 dB) - No Post Gain - Mono - Mono Peak (no gain) |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Cores Supported            | ADAU1781                                                                                                                  |
+|                            | ADAU1761                                                                                                                  |
+|                            | ADAU144x                                                                                                                  |
+|                            | ADAU170x                                                                                                                  |
+|                            | AD1940                                                                                                                    |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| "Grow Algorithm" Supported | no                                                                                                                        |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| "Add Algorithm" Supported  | no                                                                                                                        |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Subroutine/Loop Based      | no                                                                                                                        |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Program RAM                | 41                                                                                                                        |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Data RAM                   | 13                                                                                                                        |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Parameter RAM              | 35                                                                                                                        |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------+
+
+.. |monopeakpic1.png| image:: https://wiki.analog.com/_media/monopeakpic1.png
+.. |monopeakpic2.png| image:: https://wiki.analog.com/_media/monopeakpic2.png

@@ -1,0 +1,416 @@
+CN0349 Software User Guide
+==========================
+
+Overview
+--------
+
+:adi:`CN0349` provides robust and complete solution for processing conductivity and temperature inputs into digital code. The design solution is optimized for high precision and low cost measurement, using five active devices, and has a total error less than 1% FSR after calibration. The output of the circuit is fully isolated, and therefore, the ground-loop interference is effectively reduced, making it ideal for industrial applications.
+
+The circuit shown in Figure 1 incorporates the :adi:`AD5934YRSZ` 12 bit Impedance Converter, :adi:`ADG715BRUZ` Octal SPST Switch, :adi:`AD8606ARZ` Rail-to-Rail OpAmp, :adi:`ADuM5000ARWZ` Isolated DC-DC Converter, :adi:`ADuM1250ARZ` Dual I2C Isolator, to convert the conductivity and temperature inputs to digital code.
+
+The circuit has 8pin Digilent Pmod I2C interface connector on board, which could be used for connection to a customer microprocessor or FPGA.
+
+The :adi:`CN0349` circuit note discusses the design steps needed to optimize the circuit shown in Figure 1 for a specific measuring range including accuracy analysis and component selection considerations.
+
+The performance of the circuit can be demonstrated with the use of Analog Devices SDP controller :adi:`EVAL-SDP-CB1Z` and SDP-to-PMOD Interposer Board :adi:`SDP-PMD-IB1Z`, both optional purchase items.
+
+This user guide discusses the use of the evaluation software to collect data from the EVAL-CN0349-PMDZ Evaluation Board :adi:`CN0349`
+
+.. warning::
+
+   There are several important restrictions that need to be addressed if you are developing your own application code using the EVAL-CN0349-PMDZ.
+
+   
+   If you do not follow these requirements, your results will likely be incorrect or erroneous. You can read more about these restrictions in the :doc:`CN0349 Software Recommendations </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0349>` section of this user guide.
+   
+   Analog Devices has incorporated these restrictions into our evaluation software, which is why we won't discuss it within the Evaluation Software section of this user guide.
+
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_00_1024.gif
+   :align: center
+
+*Figure 1. Data Acquisition system for conductivity measurements with isolation (All connections and Decoupling Not Shown)*
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  :adi:`EVAL-CN0349-PMDZ` Evaluation Board (**CN-0349 Board**)
+-  :adi:`EVAL-CFTL-6V-PWRZ` **(+6V Power Supply)** or equivalent
+-  :adi:`SDP-PMD-IB1Z` SDP-to-PMOD interposer board
+-  Resistance Decade Box (to simulate the input impedance, e.g. IET RS-200 Labs Resistance Substituter Decade Box) or real conductivity cell with integrated Pt100 sensor (e.g. Sensorex CS200TC-PT1)
+
+   -  :adi:`CN0349 Evaluation Software <media/en/evaluation-boards-kits/evaluation-software/cn0349-eval-software.zip>`
+   -  (download from above link)
+
+-  PC with the following *Minimum Requirements*
+
+   -  Windows® 7 (64-bit), Windows 8 (64-bit), or Windows 10 (64-bit)
+   -  USB type A Port
+   -  Processor rated at 1GHz or faster
+   -  512 MB RAM and 500 MB available hard disk space
+
+-  USB type A to USB type mini-B cable (provided with the EVAL-SDP-CB1Z Controller Board)
+
+General Setup
+-------------
+
+-  The :adi:`EVAL-CFTL-6V-PWRZ` **(+6V DC Power Supply)** powers the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** via the DC barrel jack.
+-  The :adi:`SDP-PMD-IB1Z` **(Interposer Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector A.
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  The :adi:`EVAL-CN0349-PMDZ` **(CN0349)** connects to the :adi:`EVAL-PMD-IB1Z` **(Interposer board)** via the 8-pin header Digilent Pmod I2C interface connectors (J2 on both boards). Use the 4-pin MTE Cable (Digilent, Inc.) supplied with CN0349 board.
+-  The resistance decade box/the conductivity cell connects to the :adi:`EVAL-CN0349-PMDZ` **(CN0349 Board)** via the terminal block **J1**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_general_setup.png
+   :width: 900px
+
+--------------
+
+Installing the Software
+-----------------------
+
+-  Load the evaluation software by placing the CN0349 evaluation software disc in the CD drive of the PC. You can also download the most up to date copy of the evaluation software from www.analog.com/CN0349. Open the file setup.exe.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0349 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0349>`__ to the default directory path **C:\\Program Files\\Analog Devices\\CN0349\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image1|
+
+-  Click **Next** to view the installation review page
+
+|image2|
+
+-  Click **Next** to start the installation
+
+|image3|
+
+-  Upon completion of the installation of the **CN0349 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+\\\\\
+
+
+
+|image4|
+
+-  Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\DriversR2**\
+
+
+   |image5|
+
+   \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+   |image6|
+
+   ----
+
+Connecting the Hardware
+-----------------------
+
+-  Connect the :adi:`+6V DC Power Supply <EVAL-CFTL-6V-PWRZ>` **(Wallwart)** to the barrel jack **J1** of the :adi:`Interposer Board <SDP-PMD-IB1Z>` **(Interposer Board )** as depicted below.
+
+.. tip::
+
+   \ **NOTE:** Make sure that the jumper is positioned as shown below!
+
+
+   |image7|
+
+   \* Connect the 120-pin connector on the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** to the 120-pin connector marked **“CON A”** on the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)**
+
+   |image8|
+
+   \* Connect the USB cable supplied with :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** to the USB port on the PC and the SDP Board
+   |image9|}}
+
+.. tip::
+
+   \ **NOTE:** Verify that the SDP Drivers are loaded properly. For that purpose open the Device manager and check if the SDP Board is recognized. If not repeat steps 1-3
+
+
+   |image10|
+
+-  Connect the :adi:`EVAL-CN0349-PMDZ` **(CN0349 Board)** to the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** via the 8 pin header Digilent Pmod I2C interface connector.
+
+|image11|
+
+   \* Connect the Resistance Decade Box/Conductivity Cell to pin4 and pin5 of J1 Terminal Block located on :adi:`EVAL-CN0349-PMDZ` **(CN0349 Board)**. If a Conductivity Cell with integrated Pt100 sensor is used, the sensor should be wired to **pin 3** and **pin 2** of **J1** Terminal Block. **Pin 1** can be used to wire the ground shield of the Conductivity Cell.
+-  After a proper connection of the hardware to the PC the **CN0349 Evaluation Software** can be used to calibrate the board and capture data.
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Software Control and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| |image12|
+| |image13|
+| |image14|
+| |image15|
+
+::
+
+   -**Measure Button**
+   * When this button is pressed, the SDP-B Board will perform a measurement procedure and present the data in the measurement data indicators (3,4,5,6).   
+   -**Control Tabs**
+   * __Main__ - Clicking this tab brings the data collection graph to the front.
+   * __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
+   * __Register Value__ - Clicking this tab brings the AD5934 and ADG715 register value panel to the front.
+   * __SDP Revision __ - Clicking this tab brings the SDP board information window to the front.
+   -**Impedance Indicator**
+   * This indicator displays the measured input impedance in Ω).
+   -**Conductivity Indicator**
+   * This indicator displays the measured input conductivity in mS/cm. The measurement result is dependent on the applied probe corrections (7)  and (9).
+   -**Conductivity Temperature Compensated Indicator**
+   * This indicator displays the temperature compensated input conductivity in mS/cm according to the chosen Temperature coefficient (8) 
+   -**Temperature of the Solution Indicator**
+   * This indicator displays the measured temperature in °C, using external Pt100 RTD sensor
+   -**Cell Constant Control (Probe Corrections)**
+   * This control is used to apply the constant of the cell used for the measurement. The value of this control affects the measurement result presented in the Conductivity Indicator (4). 
+   -**Temperature Coefficient Control (Probe Corrections) **
+   * This control is used to apply the temperature coefficient of the measured solution. 
+   -**Offset Control (Probe Corrections) **
+   * This control is used to apply offset correction to the measured Conductivity (4). If offset correction is not needed, leave this control at 0mS/cm.
+   -**Measurement Range Radio Buttons **
+   * This control determines the input measurement range. The two measurement ranges are. 
+   -**Measurement Range Indicator **
+   * This indicator shows the limits of the chosen input measurement range.
+   -**System Status String Indicator**
+   * This indicator displays a message to the user detailing the current state of the software. 
+   -**System Status LED Indicator**
+   * This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12inactive.png?nolink|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12busy.png?nolink|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12error.png?nolink|}}Error\\  {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12waiting.png?nolink|}}Waiting for user action\\
+   -**Calibrate Button**
+   * Pressing this button initiates a calibration of the board.
+   -**Calibration Resistances Controls**
+     * This control is used to apply the values for the three on board calibration resistances **R3, R4, R7**. The values for this controls has to be changed only if different calibration resistances are populated on the board.
+   * **ADG715 register value**
+     * This read only panel showing the ADG715 register value.
+   * **AD5934 register address and value**
+     * This read only panel showing the AD5934 register address and value.
+   -**SDP Firmware Revision**
+   * Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
+
+--------------
+
+Establishing a USB Connection Link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Follow the instructions to properly install the software and connect the hardware as described in the previous sections.
+-  Open the file named **CN0349.exe** in the installation directory or the shortcut in the start menu.
+
+.. tip::
+
+   
+   | **NOTE:** If the software was installed to the default location it will be found at
+   | **C:\\Program Files\\Analog Devices\\CN0349\\CN0349.exe**
+   
+
+
+-  The software should connect to the board automatically. If the hardware is not recognized by the PC the next window will appear, indicating that the software is waiting for proper hardware connection. If that happens perform the hardware connection procedure described in the previous section. After connecting the hardware the list in the window will populate. Choose the connected hardware and click select.
+
+   
+
+
+|image16|
+
+-  Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
+
+Calibrating the CN0349 Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Calibration Procedure Steps
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Establish a USB Connection Link.
+-  Click the **Calibrate System** tab.
+-  Press the **Calibrate** Button.
+-  A pop-up window will appear indicating that the board is being calibrated. Wait for the calibration to finish.
+-  When the calibration is finished a second pop-up window will appear to indicate the end of the measurement. Click the OK button.
+
+| 
+| |image17|
+| |image18|
+
+Measuring Data
+~~~~~~~~~~~~~~
+
+-  Establish a USB Connection Link.
+-  Choose the appropriate \**Probe Corrections \*\*.
+-  Choose the \**Measurement Range \*\*.
+-  Click the **Measure** button .
+-  A pop-up window appear to indicate that the board is performing a measurement procedure.
+-  When the measurement is finished a second pop-up window will appear to indicate the end of the measurement. Click the \*\* OK*\* button to close the pop-up window.
+-  After clicking \*\* OK*\* the indicators are presenting the measured data.
+
+--------------
+
+Using the CN0349 board with other platforms (non-SDP)
+=====================================================
+
+This section will describe how to use the CN0349 board with platforms other than the SDP-B platform (which will be referred to as the "host"). The host can be a MCU platform, FPGA platform, or PC with USB to I2C converter, or any type of programmable platform which has an I2C interface.
+
+Hardware Interface for CN0349
+-----------------------------
+
+For the detailed specifications of the I2C interface, please check: `I2C-bus specification <http://www.nxp.com/documents/user_manual/UM10204.pdf>`__. Notice that the CN0349 board does not support all the features of the I2C-bus specification, and the limitations will be described later.
+
+The EVAL-CN0349-PMDZ evaluation board uses a standard Digilent Pmod 8pin I2C connector interface, **J2**, to communicate with the host. For the detailed Digilent Pmod interface specification please check: `Digilent Pmod Interface Specification <https://www.digilentinc.com/Pmods/Digilent-Pmod_ Interface_Specification.pdf>`__
+
+============= ============== ========
+J2 Pin Number Pin Function   Mnemonic
+============= ============== ========
+Pin 1         Serial Clock   SCL
+Pin 2         Serial Clock   SCL
+Pin 3         Serial Data    SDA
+Pin 4         Serial Data    SDA
+Pin 5         Digital Ground DGND
+Pin 6         Digital Ground DGND
+Pin 7         Digital Power  VDD
+Pin 8         Digital Power  VDD
+============= ============== ========
+
+.. important::
+
+   The CN0349 board can accept both +3.3V±10% or +5V±10% power supplies. Please make sure the host has the same I/O level standard as the CN0349 board. The power supply for the CN0349 board minimum current requirement is 300mA. The power supply for CN0349 must provide this current with minimum voltage drop. Otherwise the permanent damage of CN0349 may occur.
+
+
+Software Recommendations for CN0349
+-----------------------------------
+
+Digital Communication
+~~~~~~~~~~~~~~~~~~~~~
+
+For the customer platform to communicate with the CN0349 board, the I2C communication protocol must be designed carefully. The maximum I2C speed and timing is limited by the ADG715 and the AD5934. Please check the data sheet for the :adi:`ad5934` and :adi:`adg715` for more specific details. The host I2C timing and speed must meet with the requirements of both the ADG715 and AD5934. The maximum I2C clock speed for ADG715 and AD5934 is 400kHz.
+
+.. note::
+
+   On the EVAL-CN0349-PMDZ evaluation board, the ADG715 I2C address is set to: **0x48**, and the AD5934 I2C address is: **0x0d**. Please make sure in the host I2C bus there are no devices that have same address as the ADG715 and AD5934.
+
+
+System Calibration and Ranging
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When designing the software for the CN0349, there are particular register settings that must be adhered to for the AD5934 and the ADG715. These register settings will effect the input range of the individual components, as well as effect system level parameters such as the calibration and range of the entire system, so it's extremely important to follow the software settings provided below.
+
+.. important::
+
+   The hardware limitations in the CN0349 board need to be considered carefully when writing the software. If other settings for AD5934 and ADG715 outside the limits described above are used, the AD5934 ADC input must not be saturated. The AD5934 ADC reference is AVDD2=3.3V which determines the input range. The AD5934 ADC input signal amplitude is a function of the excitation voltage, the RC filter made up of R1, R5, C1, the ADG715 setting, the admittance of conductivity cell, and the AD5934 internal PGA gain settings. Incorrect results will be obtained if any of these factors cause the AD5934 ADC input signal to go out of range.
+
+
+.. important::
+
+   The CN0349 board **MUST** be calibrated before measurement. The calibration theory and calculations are located in circuit note :adi:`CN0349`.
+
+
+-  **INPUT SIGNAL SETTING**
+
+   -  AD5934 - Sets the fullscale output of the excitation signals, and the inputs to the internal A/D converter
+   -  Excitation Voltage and PGA **MUST** have the following settings in the host software, otherwise the results maybe erroneous:
+
++-------------+------------------------+------------------+---------------+--------------------------------------------+
+| Part Number | I\ :sup:`2`\ C Address | Register Address | Register Data | Description                                |
++=============+========================+==================+===============+============================================+
+| AD5934      | 0x0d                   | 0x80             | 0x01          | Excitation Voltage 2.0Vp-p, Internal PGA=1 |
++-------------+------------------------+------------------+---------------+--------------------------------------------+
+
+-  **SYSTEM CALIBRATION**
+
+   -  ADG715 - Responsible for the conductivity calibration
+   -  You **MUST** have at least one of the following calibration settings in your software. Each calibration will increase the accuracy of the system, and provide better results when measuring in either the High or Low Conductivity Range. Two calibration points per range(High or Low) is recommended, otherwise your results will have a higher error:
+
++-------------+------------------------+---------------------+--------------------------------------+---------------------------------------------------------------------------+
+| Part Number | I\ :sup:`2`\ C Address | I\ :sup:`2`\ C Data | Function                             | Description                                                               |
++=============+========================+=====================+======================================+===========================================================================+
+| ADG715      | 0x48                   | 0x09                | High Y\ :sub:`X` Range Calibration 1 | Set R\ :sub:`FB`\ =R\ :sub:`9`\ =100Ω, R\ :sub:`CAL`\ =R\ :sub:`3`\ =100Ω |
++-------------+------------------------+---------------------+--------------------------------------+---------------------------------------------------------------------------+
+| ADG715      | 0x48                   | 0x11                | High Y\ :sub:`X` Range Calibration 2 | Set R\ :sub:`FB`\ =R\ :sub:`9`\ =100Ω, R\ :sub:`CAL`\ =R\ :sub:`4`\ =1kΩ  |
++-------------+------------------------+---------------------+--------------------------------------+---------------------------------------------------------------------------+
+| ADG715      | 0x48                   | 0x12                | Low Y\ :sub:`X` Range Calibration 1  | Set R\ :sub:`FB`\ =R\ :sub:`8`\ =1kΩ, R\ :sub:`CAL`\ =R\ :sub:`4`\ =1kΩ   |
++-------------+------------------------+---------------------+--------------------------------------+---------------------------------------------------------------------------+
+| ADG715      | 0x48                   | 0x22                | Low Y\ :sub:`X` Range Calibration 2  | Set R\ :sub:`FB`\ =R\ :sub:`8`\ =1kΩ, R\ :sub:`CAL`\ =R\ :sub:`7`\ =10kΩ  |
++-------------+------------------------+---------------------+--------------------------------------+---------------------------------------------------------------------------+
+
+-  **SYSTEM MEASUREMENTS**
+
+   -  ADG715 - Responsible for the measurement of the conductivity range.
+   -  It is best to use the range that best describes your unknown conductivity. For example, using the High range, when the conductivity measurement you are trying to obtain should be in the low range will add additional errors to the measurement and reduce accuracy.
+
++-------------+------------------------+---------------------+--------------------------------+-----------------------------------------------------------------------+
+| Part Number | I\ :sup:`2`\ C Address | I\ :sup:`2`\ C Data | Function                       | Description                                                           |
++=============+========================+=====================+================================+=======================================================================+
+| ADG715      | 0x48                   | 0x41                | Measure RTD                    | Set R\ :sub:`FB`\ =R\ :sub:`9`\ =100Ω, R\ :sub:`DUT`\ =R\ :sub:`RTD`  |
++-------------+------------------------+---------------------+--------------------------------+-----------------------------------------------------------------------+
+| ADG715      | 0x48                   | 0x81                | Measure High Y\ :sub:`X` Range | Set R\ :sub:`FB`\ =R\ :sub:`9`\ =100Ω, R\ :sub:`DUT`\ =R\ :sub:`CELL` |
++-------------+------------------------+---------------------+--------------------------------+-----------------------------------------------------------------------+
+| ADG715      | 0x48                   | 0x82                | Measure Low Y\ :sub:`X` Range  | Set R\ :sub:`FB`\ =R\ :sub:`8`\ =1kΩ, R\ :sub:`DUT`\ =R\ :sub:`CELL`  |
++-------------+------------------------+---------------------+--------------------------------+-----------------------------------------------------------------------+
+
+Measurement Ranges and System Outputs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are two allowable measurement ranges for the conductivity cell admittance. If the conductivity cell admittance is out of these ranges, incorrect results may occur.
+
+.. note::
+
+   Please note: the admittance of the cell is not the conductivity of the cell, the cell constant must be used to convert the admittance to conductivity. For the details of the cell constant please check circuit note :adi:`CN0349`.
+
+
++------------+--------------------+------------------------------------------------------------------------+--------------------------------------------------------------+
+|            | Conductivity Value | Calibration                                                            | Measurement                                                  |
++============+====================+========================================================================+==============================================================+
+| Low Range  | 1uS to 1mS         | Low Y\ :sub:`X` Range Calibration 1 & 2 (see calibration table above)  | Measure Low Y\ :sub:`X` Range (see measurement table above)  |
++------------+--------------------+------------------------------------------------------------------------+--------------------------------------------------------------+
+| High Range | 1mS to 1S          | High Y\ :sub:`X` Range Calibration 1 & 2 (see calibration table above) | Measure High Y\ :sub:`X` Range (see measurement table above) |
++------------+--------------------+------------------------------------------------------------------------+--------------------------------------------------------------+
+
+.. tip::
+
+   Please note that the measurement result is the Y\ :sub:`X` not Y\ :sub:`CELL`. the details of converting Y\ :sub:`X` to Y\ :sub:`CELL` are give in :adi:`CN0349`.
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0349-PMDZ?&v=RevA>`__ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_installing_sw_1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_installing_sw_2.png
+.. |image3| image:: https://wiki.analog.com/_media/{/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_installing_sw_3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_installing_sw_4.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/installing_sw_5.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_installing_sw_6.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_connecthw_1.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_connecthw_2.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_connecthw_3.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_connecthw_3a.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_connecthw_4.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_1.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_2.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_3.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_4.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_establishing_connection_3a.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/CN0349_Cal_Procedure_steps 5.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/CN0349_Cal_Procedure_steps 5a.png

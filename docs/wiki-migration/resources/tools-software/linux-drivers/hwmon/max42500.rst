@@ -1,0 +1,17 @@
+MAX42500 System-on-a-Chip (SoC) Power System Monitor
+====================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`MAX42500`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`MAX42500_EVKIT_P1`
+
+Description
+-----------
+
+This is a Hardware Monitor subsystem driver. The device supports two GPIO input ports and an integrated I2C interface. The underlying I2C bus is abstracted in the core implementation by using regmap. The Hwmon subsystem provides a unified framework for drivers doing hardware monitoring. It exposes a set of sysfs file that should follow the `sysfs-interface <https://www.kernel.org/doc/Documentation/hwmon/sysfs-interface>`__.

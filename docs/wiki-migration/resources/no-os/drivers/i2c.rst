@@ -1,0 +1,182 @@
+No-OS I2C API
+=============
+
+Description
+-----------
+
+The no-OS framework provides a common application programming interface to initialize and use an I2C peripheral across various target :git-no-OS:`platforms <drivers/platform>`.
+
+The I2C API documentation is available as `Doxygen documentation <http://analogdevicesinc.github.io/no-OS/no__os__i2c_8h.html>`__.
+
+I2C device initialization
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The no-OS framework provides a way to create an I2C slave device descriptor starting from user specified initialization parameters (*init params*). The init params are generic, defined by no-OS and applicable to all platforms. However, a certain platform may require passing extra initialization parameters that are specific to that platform. The **extra** member of the init params allows the user to pass such specific init params. The extra init params are of the type **[platform]_i2c_init_param** as defined in [platform]_i2c.h header.
+
+.. code:: C
+
+   struct [platform]_i2c_init_param slave_xip = {
+       .specific_parameter = value,
+   };
+
+   struct no_os_i2c_init_param slave_ip = {
+       .device_id = 1,
+       .max_speed_hz = 100000,
+       .slave_address = 0x30,
+       .platform_ops = &[platform]_i2c_ops,
+       .extra = &slave_xip
+   };
+
+Creating/removing an I2C slave device descriptor with the above parameters can be achieved with:
+
+.. code:: C
+
+   int ret;
+   struct no_os_i2c_desc *slave_desc;
+   ret = no_os_i2c_init(&slave_desc, &slave_ip);
+   // ...
+   // ... i2c transfers
+   // ...
+   ret = no_os_i2c_remove(slave_desc);
+
+Such a descriptor is needed for each slave because each slave requires different communication settings (address, speed). When performing transfers, the I2C peripheral is reconfigured with the I2C settings of the particular slave being targeted.
+
+In the above example, the max_speed_hz parameter given is 100 kHz. The no_os_i2c_init() function will choose such an I2C peripheral prescaler so that SCK is guaranteed to be the closest possible value but not greater than 100 kHz, provided a fixed input clock and the range of available prescalers.
+
+Transfers
+~~~~~~~~~
+
+write
+^^^^^
+
+To write a sequence of bytes to a slave with a stop bit at the end, use:
+
+.. code:: C
+
+   uint8_t data[3] = {0xAA, 0xBB, 0xCC};
+   ret = no_os_i2c_write(slave_desc, data, 3, 1);
+   if (ret < 0)
+       ; // take action
+
+read
+^^^^
+
+To read a sequence of bytes from a slave with a stop bit at the end, use:
+
+.. code:: C
+
+   uint8_t data[2];
+   ret = no_os_i2c_read(slave_desc, data, 2, 1);
+   if (ret < 0)
+       ; // take action
+
+   // data now contains the received bytes
+
+write and read
+^^^^^^^^^^^^^^
+
+Let's consider the following sequence where:
+
+-  S - start condition
+-  P - stop condition
+-  A - acknowledge
+-  0x60 / 0x61 - write / read of slave at address 0x30
+-  0xAA - slave specific command
+-  0xBB 0xCC - slave specific response
+
+::
+
+   S 0x60 A 0xAA A S 0x61 A 0xBB A 0xCC A P
+
+This can be translated into code using no-OS API in the following way:
+
+.. code:: C
+
+   uint8_t cmd[1] = {0xAA};
+   ret = no_os_i2c_write(slave_desc, cmd, 1, 0);
+   if (ret < 0)
+       ; // take action
+
+   uint8_t data[2];
+   ret = no_os_i2c_read(slave_desc, data, 2, 1);
+   if (ret < 0)
+       ; // take action
+
+   // here, data contains {0xBB, 0xCC} received from slave
+
+Note that the last parameter of the write and read functions allows the caller to control the generation of the stop condition. Some slaves require that a write to occur and the read to follow without an intermediate stop condition, in which case write operation must have the stop_bit argument zeroed, as in this example. Other slaves require the stop condition be generated between the write and the read operations, so the stop_bit must be 1 for both operations.
+
+I2C Supported Platforms
+-----------------------
+
+STM32 Platform
+~~~~~~~~~~~~~~
+
+The I2C driver documentation for STM32 platform can be found here:
+
+-  `Header file for STM32 i2c driver <http://analogdevicesinc.github.io/no-OS/doxygen/stm32__i2c_8h.html>`__
+-  `Source file for STM32 i2c driver <http://analogdevicesinc.github.io/no-OS/doxygen/stm32__i2c_8c.html>`__
+
+The definition of the extra I2C initialization parameters:
+
+.. code:: C
+
+
+   struct stm32_i2c_init_param {
+       /** I2C Timing */
+       uint32_t i2c_timing;
+   };
+
+Where, The **i2c_timing** is calculated in the application layer. It is applicable for the STM32 MCU generics (Example- STM32H563ZI, STM32L552ZEQ etc.,) that support an I2C timing register. The **i2c_timing** member holds the value of the timing register, which allows the user to configure the I2C clock speed and duty ratio. The timing register is a combination of the values of :
+
+1) Prescaler - PRESC[31:28]
+
+2) Data setup time - SCLDEL[23:20]
+
+3) Data hold time - SDADEL[19:16]
+
+4) SCL high period - SCLH[15:8]
+
+5) SCL Low period - SCLL[7:0]
+
+The timing can also be determined from the autogenerated value calculated by STM32CubeMX.
+
+An example calculation for the I2C timing register from STM32CubeMX is shown below:
+
+.. image:: https://wiki.analog.com/_media/resources/no-os/drivers/i2c_timing.png
+   :align: center
+   :width: 400px
+
+Say I2C peripheral clock = 4MHz To achieve a standard mode (tSCLL = 5µs, tSCLH = 3us) operation,
+
+PRESC = 0x0
+
+SCLDEL = 0x0
+
+SCADEL = 0x0
+
+SCLL+1 = 5us/250ns
+
+SCLL = 0x15
+
+SCLH+1 = 3us/250ns
+
+SCLH = 0xD
+
+Hence, the timing register value would be 0x00000D15
+
+Linux (userspace) Platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To use the no-OS I2C API with a Linux userspace implementation, you may first define the following structure, where the only member to be populated is an integer that corresponds with the **device_id** from your desired usb bus **/dev/i2c-[device_id]**:
+
+::
+
+   struct linux_i2c_desc slave_xip{
+       .fd = 2, // corresponds to /dev/i2c-2
+   };
+
+Then you may initialize I2C the usual way, but provide **slave_xip** defined above and the **linux_i2c_ops** provided by linux_i2c.h to the initialization parameters. This way, the no-OS will use the Linux I2C userspace implementation which performs appropriate ioctl calls for each no-OS I2C API that you may use. The latest implementation can be found at the following links:
+
+-  :git-no-OS:`drivers/platform/linux/linux_i2c.c`
+-  :git-no-OS:`drivers/platform/linux/linux_i2c.h`

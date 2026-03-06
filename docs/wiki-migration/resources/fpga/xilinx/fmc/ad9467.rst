@@ -1,0 +1,241 @@
+AD9467 Native FMC Card / Xilinx Reference Design
+================================================
+
+.. warning::
+
+   We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad9467_fmc/index.html\
+
+
+Introduction
+------------
+
+The :adi:`AD9467` chip used on :adi:`AD9467-FMC-250EBZ <eval-ad9467.html>` is a 16-bit, monolithic, IF sampling analog-to-digital converter (ADC) with a conversion rate of up to 250 MSPS. This reference design includes a data capture interface and the external DDR-DRAM interface for sample storage. It allows programming the device and monitoring its internal status registers. The board also provides other options to drive the clock and analog inputs of the ADC. This can be done by programming the :adi:`AD9517-4` clock chip and/or setting up the ADL5565 differential amplifier respectively.
+
+Supported devices
+-----------------
+
+-  :adi:`AD9467-FMC-250EBZ <eval-ad9467.html>` also referred to as EVAL-AD9467
+
+Supported carriers
+------------------
+
+-  `KC705 <https://www.xilinx.com/KC705>`__ LPC slot
+-  `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`__
+
+Block design
+------------
+
+Xilinx block diagram
+~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9467_ebz/ad9467_fmc.svg
+   :alt: Xilinx HDL Block Diagram
+   :width: 500px
+
+AD9467 FMC card block diagram
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9467_ebz/ad9467_fmc_card.svg
+   :alt: Xilinx HDL Block Diagram
+   :width: 400px
+
+Description
+~~~~~~~~~~~
+
+The reference design is built on a ARM/Microblaze based system tailored for Linux. A functional block diagram of the design is given below.
+
+Through an SPI interface, the software can access the AD9467/AD9517-4 registers, given the possibility to initialize and configure the ADC and/or clock chip.
+
+The LVDS interface captures and buffers data from the ADC. The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software.
+
+Clock selection
+~~~~~~~~~~~~~~~
+
+The board provides three (some modification maybe necessary) possible clock paths for clocking the AD9467, as follows:
+
+Default clock input
+^^^^^^^^^^^^^^^^^^^
+
+| The **default clock input** circuitry is derived from a simple transformer-coupled circuit using a high bandwidth 1:1 impedance ratio transformer (T201) that adds a very low amount of jitter to the clock path. The clock input (J201) is 50 Ω terminated and AC-coupled to handle single-ended sine wave types of inputs. The transformer converts the single-ended input to a differential signal that is clipped before entering the ADC clock inputs.
+
+Crystal oscillator
+^^^^^^^^^^^^^^^^^^
+
+The evaluation board can be set up to be clocked from the **crystal oscillator**, Y200. This oscillator is a low phase noise oscillator from Vectron (VCC6-QCD-250M000).
+
+-  Install C205 and C206
+-  Remove C202
+
+| Jumper P200 is used to disable the oscillator from running.
+
+Clock generator AD9517
+^^^^^^^^^^^^^^^^^^^^^^
+
+A **differential LVPECL or LVDS clock driver** can also be used to clock the ADC input using the :adi:`AD9517 <media/en/technical-documentation/data-sheets/AD9517-4.pdf>`.
+
+-  Populate (C304, C305) for LVPECL clock driver **or** (C306, C307) for LVDS clock driver, with 0.1 µF capacitors
+-  Remove C209 and C210 to disconnect the default clock path inputs
+
+| The AD9517 has many SPI-selectable options that are set to a default mode of operation. Consult the AD9517 data sheet for more information about these and other options.
+|
+
+.. important::
+
+   Please make sure you have removed or inserted the corresponding components on the board to select the desired clock path. The schematic of the board can be found `here <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/02-041710-01-c-1.pdf>`__.
+
+
+Hardware description
+~~~~~~~~~~~~~~~~~~~~
+
+To find out more information about the :adi:`AD9467-FMC-250EBZ <eval-ad9467.html>` board hardware, default operation and jumper selection settings please read the Evaluation User Guide of the board: :doc:`ad9467-fmc-250ebz </wiki-migration/resources/eval/ad9467-fmc-250ebz>` and the one of the other board, with an FMC interposer :adi:`UG200 <media/en/technical-documentation/user-guides/UG-200.pdf>`.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9467_fmc.jpg
+   :width: 300px
+
+Quick start guide
+-----------------
+
+Required hardware
+~~~~~~~~~~~~~~~~~
+
+-  `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`__ or `KC705 <https://www.xilinx.com/KC705>`__ board
+-  :adi:`AD9467-FMC-250EBZ <eval-ad9467.html>`
+-  Signal/clock generator (clock input, 200MHz or 250MHz)
+-  Signal generator (analog input, for data capture)
+-  Signal synthesizer (for data and/or clock input).
+
+Required software
+~~~~~~~~~~~~~~~~~
+
+-  We're upgrading the Xilinx tools on every release. The supported version number can be found in our HDL :doc:`releases page </wiki-migration/resources/fpga/docs/releases>`.
+-  A UART terminal (Tera Term/Putty), baud rate 115200.
+
+Using the HDL reference design
+------------------------------
+
+Check this wiki page if you're not familiar about :doc:`how to build an ADI HDL project </wiki-migration/resources/fpga/docs/build>`.
+
+The PN9/PN23 sequences are not compatible with O.150. Please use the equations given in the reference design. They follow the polynomial equations as in O.150, but ONLY the msb is inverted.
+
+The AD9467 drives the interleaved first byte (D15:D1) on the rising edge and second byte (D14:D0) on the falling edge of DCO clock. However in certain frequencies the captured data (from IDDR) seems to be reverse. If that occurs try setting the "capture select" bit (register 0x0a, bit 0).
+
+Using the Software Reference Design
+-----------------------------------
+
+The Software Reference Design contains an example on how to:
+
+-  Initialize the AD9467 evaluation board
+-  Initialize the AD9467 HDL core
+-  Test the ADC communication using the test patterns and PRBS sequences generated by the AD9467
+-  Capture data from the AD9467 using DMA transfers
+
+The software project contains 3 components: the AD9467-FMC-EBZ reference design files, the AD9467 driver and the AD9517 driver. All the components have to be downloaded from the links provided in the :doc:`Downloads </wiki-migration/resources/fpga/xilinx/fmc/ad9467>` section.
+
+AD9467 Software Driver
+~~~~~~~~~~~~~~~~~~~~~~
+
+Below is presented a short description of all the functions provided in the driver.
+
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function                                                         | Description                                                                                                                                                                                                                                 |
++==================================================================+=============================================================================================================================================================================================================================================+
+| int32_t **ad9467_setup** (int32_t spiBaseAddr, int32_t ssNo)     | Configures the test mode and the output mode to a default state. Receives as parameters the SPI peripheral AXI base address and the slave select line on which the slave is connected. Returns negative error code or 0 in case of success. |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_write** (uint16_t regAddr, uint8_t regVal)      | Writes data into a register. Receives as parameters the address of the register to be written and the value to be written into the register. Returns 0 in case of success or negative error code.                                           |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_read** (uint16_t regAddr)                       | Reads data from a register. Receives as parameter the address of the register to be read and returns the read data or negative error code.                                                                                                  |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_pwr_mode** (int32_t mode)                       | Configures the power mode. Receives as parameter the power mode and returns the negative error code or the set power mode.                                                                                                                  |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_test_mode** (int32_t mode)                      | Sets the ADC's test mode. Receives as parameter the ADC test mode and returns the set test mode or negative error code.                                                                                                                     |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_reset_PN9** (int32_t rst)                       | Sets (1) or clears (0) the reset short PN sequence bit(PN9). Returns the negative error code or the set PN9 status.                                                                                                                         |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_reset_PN23** (int32_t rst)                      | Sets (1) or clears (0) the reset long PN sequence bit(PN23). Returns the negative error code or the set PN23 status.                                                                                                                        |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_external_ref** (int32_t en)                     | Enables (1) or disables (0) the external voltage reference. Returns negative error code or the external reference state.                                                                                                                    |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_analog_input_disconnect** (int32_t en)          | Disconnects (1) or connects (0) the analog input from or to the ADC channel. Returns the negative error code or the analog disconnect status.                                                                                               |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_offset_adj** (int32_t adj)                      | Sets the offset adjustment. Receives as parameter the offset adjust value in LSBs from +127 to -128 and returns the negative error code or the set offset adjustment.                                                                       |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_output_disable** (int32_t en)                   | Disables (1) or enables (0) the data output. Returns the negative error code or the output disable state.                                                                                                                                   |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_output_invert** (int32_t invert)                | Activates the inverted (1) or normal (0) output mode. Returns the negative error code or the set output mode.                                                                                                                               |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_output_format** (int32_t format)                | Specifies the output format. Receives as parameter the output format and returns the negative error code or the set output format.                                                                                                          |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_coarse_LVDS_adj** (int32_t lvds_adj)            | Determines LVDS output properties. Receives as parameter the coarse LVDS adjust and returns the negative error code or LVDS adjust state.                                                                                                   |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_output_current_adj** (int32_t adj)              | Sets the output current adjustment. Receives as parameter the output current adjustment and returns the negative error code or the set current adjustment.                                                                                  |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_dco_clock_invert** (int32_t invert)             | Activates the normal (0) or inverted (1) DCO clock. Returns the negative error code or the DCO clock inversion status.                                                                                                                      |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_dco_output_clock_delay** (int32_t delay)        | Configures the clock delay setting. Receives as parameter the clock delay setting in ps {0, 100, 200, ..., 3100, 3200}. Setting the delay to 0 disables the DCO output clock delay. Returns the negative error code or the set clock delay. |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| float **ad9467_full_scale_range** (float v_fs)                   | Configures the full-scale input voltage selection. Receives as parameter the full-scale input voltage selection and returns the negative error code or the set input voltage selection.                                                     |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_analog_input_coupling** (int32_t coupling_mode) | Sets the AC coupling(0) or DC coupling(1) mode. Returns the negative error code or the set coupling mode.                                                                                                                                   |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_buffer_current_1** (int32_t percentage)         | Changes the input buffer current(1). Receives as parameter the buffer current and returns negative error code or the set buffer current.                                                                                                    |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_buffer_current_2** (int32_t percentage)         | Changes the input buffer current(2). Receives as parameter the buffer current and returns negative error code or the set buffer current.                                                                                                    |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9467_transfer** (void)                               | Initiates a transfer and waits for the operation to end. Returns the negative error code or 0 in case of success.                                                                                                                           |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Software Setup
+~~~~~~~~~~~~~~
+
+.. note::
+
+   Instruction about how to create a software application can be found :doc:`here </wiki-migration/resources/fpga/xilinx/software_setup>`.
+
+
+.. important::
+
+   C302 and C303 are not installed as indicated in the Schematic and BOM.
+
+
+**Board Files:**
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `Rev C Schematics for the card <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/9467fmc01c_sch.pdf>`__
+   -  `Bill of Materials for Rev C <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/9467fmc01c_bom.xls>`__
+   -  `AD9467FMC-250EBZ Gerber/Layout Fabrication Files <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/9467fmc01c.zip>`__
+   
+
+
+Resources
+---------
+
+-  :git-hdl:`AD9467_FMC HDL project source code <projects/ad9467_fmc>` with ZedBoard and KC705 carriers
+-  :doc:`AXI_AD9467 IP wiki documentation </wiki-migration/resources/fpga/docs/axi_ad9467>`
+-  :adi:`AD9467 chip datasheet <media/en/technical-documentation/data-sheets/ad9467.pdf>`
+-  `AD9467-FMC-250EBZ schematic <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/9467fmc01c_sch.pdf>`__
+-  :git-no-OS:`AD9467 no-OS project <projects/ad9467>`
+-  :git-no-OS:`AD9467 no-OS driver <drivers/adc/ad9467>`
+-  :git-no-OS:`AD9517 no-OS driver <drivers/frequency/ad9517>`
+-  :git-linux:`AD9467_FMC/Zed Linux devicetree <arch/arm/boot/dts/zynq-zed-adv7511-ad9467-fmc-250ebz.dts>`
+-  :git-linux:`AD9467_FMC/KC705 Linux devicetree <arch/microblaze/boot/dts/kc705_ad9467_fmc.dts>`
+-  :git-linux:`AD9467 Linux driver <drivers/iio/adc/ad9467.c>`
+
+More information
+----------------
+
+-  :doc:`High-Speed DMA Controller Peripheral </wiki-migration/resources/fpga/docs/axi_dmac>` wiki documentation
+-  :doc:`ADI reference designs HDL user guide </wiki-migration/resources/fpga/docs/hdl>`
+-  :doc:`ADI HDL architecture </wiki-migration/resources/fpga/docs/arch>` wiki page
+-  :doc:`How to build an ADI HDL project </wiki-migration/resources/fpga/docs/build>`
+-  :doc:`How to prepare an SD card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` with boot files
+-  :doc:`AD9467-FMC on Zedboard using ACE </wiki-migration/resources/eval/ad9467-fmc-250ebz-zedboard>`
+
+Support
+-------
+
+Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
+
+It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.

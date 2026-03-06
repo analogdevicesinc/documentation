@@ -1,0 +1,57 @@
+Digital Communications
+======================
+
+The objective of this course material is to provide hands-on learning experiences using Software-Defined Radio and other instrumentation for engineering students and industry practitioners who are interested in mastering the design, implementation, and experimentation of communication systems. :doc:`This material </wiki-migration/university/labs/comms>` and :adi:`related textbook <sdrforengineers>` provides a fresh perspective on understanding and creating new communication systems from scratch. Communication system engineers need to understand the impact of the hardware on the performance of the communication algorithms being used and how well the overall system operates to recovers the intercepted signal.
+
+This material is written for both industry practitioners who are seeking to enhance their skill set by learning about the design and implementation of communication systems using SDR technology, as well as both undergraduate and graduate students who would like to learn about and master communication systems technology in order to become the next generation of industry practitioners and academic researchers. The book contains theoretical explanations about the various elements forming a communication system, practical hands-on examples, and lessons that help synthesize these concepts, and a wealth of important facts and details to take into consideration when building a real-world communication system.
+
+The web site `sdrforengineers <http://sdrforengineers.com/>`__ provides supplementary materials for the text, hands-on content, labs, assignments, end of chapter questions, that anyone can use or contribute to. Additionally, this is outlined with other ADI offering :doc:`here </wiki-migration/university/labs/comms>` under the general banner of communication systems.
+
+You may download the book in its entirety here in pdf format, SDR for Engineers, or by chapter below.
+
+Table of Contents
+-----------------
+
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Course                                             | Session    | Title                                                                                                                                                                                            |
++====================================================+============+==================================================================================================================================================================================================+
+| Communication Systems                              | Chapter:1  | :adi:`Introduction to Software-Defined Radio <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH01.pdf>`                                     |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Digital Signal and Systems                         | Chapter:2  | :adi:`Signals and Systems <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH02.pdf#page=14>`                                                |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Probability For Communications                     | Chapter:3  | :adi:`Probability in Communications <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH03.pdf#page=14>`                                      |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Digital Communications                             | Chapter:4  | :adi:`Digital Communications Fundamentals <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH04.pdf#page=14>`                                |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Digital Communications with Software-Defined Radio | Chapter:5  | :adi:`Understanding SDR Hardware <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH05.pdf#page=14>`                                         |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Digital Communications with Software-Defined Radio | Chapter:6  | :adi:`Timing Synchronization <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH06.pdf#page=14>`                                             |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Digital Communications with Software-Defined Radio | Chapter:7  | :adi:`Carrier Synchronization <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH07.pdf#page=14>`                                            |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Digital Communications with Software-Defined Radio | Chapter:8  | :adi:`Frame Synchronization and Channel Coding <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH08.pdf#page=14>`                           |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Digital Communications with Software-Defined Radio | Chapter:9  | :adi:`Channel Estimation and Equalization <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH09.pdf#page=14>`                                |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Digital Communications with Software-Defined Radio | Chapter:10 | :adi:`Orthogonal Frequency Division Multiplexing <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH10.pdf#page=14>`                         |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Cognitive Radio                                    | Chapter:11 | :adi:`Applications for Software-Defined Radio <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_CH11.pdf#page=14>`                            |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Appendix A | :adi:`A Longer History of Communications <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_Appendix-A.pdf#page=14>`                           |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Appendix B | :adi:`Getting Started with MATLAB and Simulink <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_Appendix-B.pdf#page=14>`                     |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Appendix C | :adi:`Equalizer Derivations <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_Appendix-C.pdf#page=14>`                                        |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Appendix D | :adi:`Trigonometric Identities <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers_Appendix-D.pdf#page=14>`                                     |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Complete   | :adi:`Software-Defined Radio for Engineers (entire book) <media/en/training-seminars/design-handbooks/Software-Defined-Radio-for-Engineers-2018/SDR4Engineers.pdf>`                              |
++----------------------------------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| 
+| **Communications Lab Exercises**
+
+-  `Labs to accompany text <https://github.com/sdrforengineers/LabGuides>`__
+-  :doc:`Lab Activity Material for Communications </wiki-migration/university/labs/comms>`
+
+| 

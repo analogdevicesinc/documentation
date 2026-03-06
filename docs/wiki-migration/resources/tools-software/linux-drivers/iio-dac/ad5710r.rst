@@ -1,0 +1,325 @@
+AD5710R IIO DAC Linux Driver
+============================
+
+The AD5710R features eight output pins that can be independently configured as either a current output digital-to-analog converter (IDAC) or a voltage output digital-to-analog converter (VDAC). The AD5710R includes an integrated 2.5 V, 5 ppm/°C reference. When the AD5710R outputs are configured as a current output digital-to-analog converter (IDAC), the output current range is 0 to 50 mA. When configured as a voltage output digital-to-analog converter (VDAC), the output voltage range is 0 to VREF or 0 to 2 × VREF.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5710R`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5710R`
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting single-channel serial interface DACs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Source Code
+===========
+
+Status
+------
+
++-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| Source                                                                                                      | Mainlined?                                                                                                  |
++=============================================================================================================+=============================================================================================================+
+| `git <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5710r.c>`__ | `WIP <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/ad5710r.c>`__ |
++-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+
+Files
+-----
+
++-------------+--------------------------------------------------------------------------------------------------------------------------+
+| Function    | Status                                                                                                                   |
++=============+==========================================================================================================================+
+| driver      | :git-linux:`WIP <drivers/iio/dac/ad5710r.c>`                                                                             |
++-------------+--------------------------------------------------------------------------------------------------------------------------+
+| dt-bindings | :git-linux:`WIP <Documentation/devicetree/bindings/iio/dac/adi,ad5710r.yaml>`                                            |
++-------------+--------------------------------------------------------------------------------------------------------------------------+
+| overlay     | :git-linux:`WIP <arch/arm/boot/dts/xilinx/zynq-coraz7s-ad5710r.dts>`                                                     |
++-------------+--------------------------------------------------------------------------------------------------------------------------+
+
+Example platform device initialization
+======================================
+
+Devicetree
+----------
+
+Required device tree properties:
+
+-  ``compatible``: Needs to be "adi," followed by the name of the device. E.g. "adi,ad5710r"
+-  ``reg``: The chipselect number used for the device
+-  ``spi-max-frequency``: Maximum SPI clock frequency
+
+Optional device tree properties:
+
+-  ``ref-supply``: Reference Input/Output. The voltage at the REF pin sets the full-scale range of all channels. If not provided the internal reference is used and also provided on the VREF pin.
+-  ``reset-gpios``: Active low signal that is falling edge sensitive. When it is deasserted, the digital core initialization is performed and all DAC registers except the Interface Configuration A register are reset to their default values.
+-  ``ldac-gpios``: LDAC pin to be used as a hardware trigger to update the DAC channels. If not present, the DAC channels are updated by Software LDAC.
+-  ``adi,range-double``: Configure the output range for all channels. If the property is present, the output will range from 0V to 2Vref. If the property is not present, the output will range from 0V to Vref.
+
+Channel device tree properties:
+
+-  ``adi,dac-vmode``: Configure the specific channel as a voltage output digital-to-analog converter (VDAC). If the property is not present, the channel is configured as current output digital-to-analog converter (IDAC)
+
+Example Overlay
+---------------
+
+::
+
+   &spi0 {
+           status = "okay";
+       #address-cells = <1>;
+       #size-cells = <0>;
+
+           ad3530r: dac@0 {
+           compatible = "adi,ad5710r";
+           reg = <0>;
+           spi-max-frequency = <1000000>;
+
+                   reset-gpios = <&gpio0 87 GPIO_ACTIVE_LOW>;
+                   ldac-gpios = <&gpio0 88 GPIO_ACTIVE_LOW>;
+
+           vdd-supply = <&vdd>;
+           iovdd-supply = <&iovdd>;
+
+           #address-cells = <1>;
+           #size-cells = <0>;
+
+                   channel@0 {
+                           reg = <0>;
+                           adi,dac-vmode;
+                   };
+
+                   channel@1 {
+                           reg = <1>;
+                           adi,dac-vmode;
+                   };
+
+                   channel@2 {
+                           reg = <2>;
+                           adi,dac-vmode;
+                   };
+
+                   channel@3 {
+                           reg = <3>;
+                           adi,dac-vmode;
+                   };
+
+                   channel@4 {
+                           reg = <4>;
+                           adi,dac-vmode;
+                   };
+
+                   channel@5 {
+                           reg = <5>;
+                           adi,dac-vmode;
+                   };
+
+                   channel@6 {
+                           reg = <6>;
+                           adi,dac-vmode;
+                   };
+
+                   channel@7 {
+                           reg = <7>;
+                           adi,dac-vmode;
+                   };
+           };
+   };
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# **cd /sys/bus/iio/devices/**
+      root@analog:/sys/bus/iio/devices# **ls**
+      iio:device0  iio:device1  iio_sysfs_trigger
+      root@analog:/sys/bus/iio/devices# **cd iio:device1**
+      root@analog:/sys/bus/iio/devices/iio:device1# **ls -l**
+      total 0
+      -r--r--r-- 1 root root 4096 Jun 19 21:47 name
+      lrwxrwxrwx 1 root root    0 Jun 19 21:47 of_node -> ../../../../../../../../firmware/devicetree/base/axi/spi@e0006000/dac@0
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage0_powerdown
+      -r--r--r-- 1 root root 4096 Jun 19 21:47 out_voltage0_powerdown_mode
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage0_raw
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage0_scale
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage1_powerdown
+      -r--r--r-- 1 root root 4096 Jun 19 21:47 out_voltage1_powerdown_mode
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage1_raw
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage1_scale
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage2_powerdown
+      -r--r--r-- 1 root root 4096 Jun 19 21:47 out_voltage2_powerdown_mode
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage2_raw
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage2_scale
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage3_powerdown
+      -r--r--r-- 1 root root 4096 Jun 19 21:47 out_voltage3_powerdown_mode
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage3_raw
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage3_scale
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage4_powerdown
+      -r--r--r-- 1 root root 4096 Jun 19 21:47 out_voltage4_powerdown_mode
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage4_raw
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage4_scale
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage5_powerdown
+      -r--r--r-- 1 root root 4096 Jun 19 21:47 out_voltage5_powerdown_mode
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage5_raw
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage5_scale
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage6_powerdown
+      -r--r--r-- 1 root root 4096 Jun 19 21:47 out_voltage6_powerdown_mode
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage6_raw
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage6_scale
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage7_powerdown
+      -r--r--r-- 1 root root 4096 Jun 19 21:47 out_voltage7_powerdown_mode
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage7_raw
+      -rw-r--r-- 1 root root 4096 Jun 19 21:47 out_voltage7_scale
+      drwxr-xr-x 2 root root    0 Jun 19 21:47 power
+      lrwxrwxrwx 1 root root    0 Jun 19 21:46 subsystem -> ../../../../../../../../bus/iio
+      -rw-r--r-- 1 root root 4096 Jun 19 21:46 uevent
+      -r--r--r-- 1 root root 4096 Jun 19 21:47 waiting_for_supplier
+      root@analog:/sys/bus/iio/devices/iio:device1#
+   
+
+
+Show device name
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1> **cat name**
+      ad5710r
+   
+
+
+Show scale
+~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_voltageY_scale
+| Scale to be applied to out_voltageY_raw in order to obtain the measured voltage in millivolts.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1> **cat out_voltage0_scale**
+      0.038146972
+   
+
+
+Set channel Y output voltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_voltageY_raw
+| Raw (unscaled, no bias etc.) output voltage for channel Y.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1> **echo 10000 > out_voltage0_raw**
+   
+
+
+**V** = *out_voltage0_raw \* out_voltage0_scale* = 10000 \* 0.038146972 = \*\* 381.46972 *mV*\ \*\*
+
+Enable power down mode on output Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| /sys/bus/iio/devices/iio:deviceX/out_voltageY_powerdown
+
+Writing 1 causes output Y to enter the power down mode. Clearing returns to normal operation.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device1> **echo 1 > out_voltage0_powerdown**
+      root@analog:/sys/bus/iio/devices/iio:device1> **cat out_voltage0_powerdown**
+      1
+      root@analog:/sys/bus/iio/devices/iio:device1> **echo 0 > out_voltage0_powerdown**
+      root@analog:/sys/bus/iio/devices/iio:device1> **cat out_voltage0_powerdown**
+      0
+   
+
+
+Hardware Interface
+==================
+
+**Using:**
+
+-  :adi:`EVAL-AD5710R` AD5710R Evaluation Board
+-  CoraZ7
+
+The AD5710R evaluation board should be connected to the Coraz7 Arduino header, as shown in the image.
+
+
+|image1|
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/ad5710r_evb.jpeg
+   :width: 400px

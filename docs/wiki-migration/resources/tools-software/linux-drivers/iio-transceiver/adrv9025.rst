@@ -1,0 +1,1237 @@
+ADRV9026/ADRV9029 Integrated Radio Frequency Transceiver Linux device driver
+============================================================================
+
+As demand for data increases globally, telecom infrastructure manufacturers are challenged by shorter time to market, increased antenna count, ever-growing cost pressure, and proliferation in variants of form factors, frequency bands, output power, and software. The :adi:`ADRV9026 <en/products/adrv9026.html>`, ADI's 4th generation wideband RF transceiver, delivers quad-channel integration with the lowest power, smallest size, common platform solution available to simplify design and reduce system power, size, weight, and costs for 3G/4G/5G applications, including multi-standard base stations, massive MIMO, and small cells.
+
+Supported Devices
+-----------------
+
+-  :adi:`ADRV9026 <en/products/adrv9026.html>`
+-  :adi:`ADRV9029 <en/products/adrv9029.html>`
+
+Note that the baseline device, ADRV9025, is used within this Wiki with functions/properties that are common to both devices.
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADRV9026/ADRV9029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADRV9026.html>`
+
+Overview
+--------
+
+The :adi:`ADRV9026 <en/products/adrv9026.html>` is a highly integrated, radio frequency (RF) agile transceiver offering four independently controlled transmitters, dedicated observation receiver inputs for monitoring each transmitter channel, four independently controlled receivers, integrated synthesizers, and digital signal processing functions providing a complete transceiver solution. The device provides the performance demanded by cellular infrastructure applications, such as small cell base station radios, macro 3G/4G/5G systems, and massive multiple in/multiple out (MIMO) base stations.
+
+The :adi:`ADRV9029 <en/products/adrv9029.html>` is a highly integrated, radio frequency (RF) agile transceiver offering four independently controlled transmitters, dedicated observation receiver inputs for monitoring each transmitter channel, four independently controlled receivers, integrated synthesizers, and digital signal processing functions providing a complete transceiver solution. The device provides the performance demanded by cellular infrastructure applications, such as small cell base station radios, macro 3G/4G/5G systems, and massive multiple in/multiple out (MIMO) base stations.
+
+Applications
+~~~~~~~~~~~~
+
+-  Macro base stations
+-  Massive MIMO
+-  Small cells
+
+Markets and Technologies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Aerospace and Defense
+-  Communications
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting RF Transceivers. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Source Code
+===========
+
+Status
+------
+
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+| Source                                                                                              | Mainlined?                                                                                |
++=====================================================================================================+===========================================================================================+
+| :git-linux:`git <drivers/iio/adc/adrv902x/adrv9025.c>`                                              | :git-linux:`No <drivers/iio/adc/adrv9009.c>`                                              |
++-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+
+Files
+-----
+
++-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| Function          | File                                                                                                                                          |
++===================+===============================================================================================================================================+
+| driver            | :git-linux:`drivers/iio/adc/adrv902x/adrv9025.c`                                                                                              |
++-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| driver            | :git-linux:`drivers/iio/adc/adrv902x/adrv9025_conv.c`                                                                                         |
++-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| include           | :git-linux:`drivers/iio/adc/adrv902x/adrv9025.h`                                                                                              |
++-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| Talise API driver | :git-linux:`drivers/iio/adc/adrv902x`                                                                                                         |
++-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+Interrelated Device Drivers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+-  :doc:`JESD204 Interface Framework </wiki-migration/resources/fpga/peripherals/jesd204>`
+
+Receive AXI-ADC driver
+^^^^^^^^^^^^^^^^^^^^^^
+
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                          |
++==========+===============================================================================================================================================+
+| driver   | :git-linux:`drivers/iio/adc/cf_axi_adc_core.c`                                                                                                |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| driver   | :git-linux:`drivers/iio/adc/cf_axi_adc_ring_stream.c`                                                                                         |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| include  | :git-linux:`drivers/iio/adc/cf_axi_adc.h`                                                                                                     |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+Transmit AXI-DAC / DDS driver
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                              |
++==========+===================================================================================================================================+
+| driver   | :git-linux:`drivers/iio/frequency/cf_axi_dds.c`                                                                                   |
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+| include  | :git-linux:`drivers/iio/frequency/cf_axi_adc.h <drivers/iio/frequency/cf_axi_dds.h>`                                              |
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+AXI JESD204B HDL driver
+^^^^^^^^^^^^^^^^^^^^^^^
+
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                  |
++==========+=======================================================================================================================================+
+| driver   | :git-linux:`drivers/iio/jesd204/axi_jesd204_rx.c`                                                                                     |
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| driver   | :git-linux:`drivers/iio/jesd204/axi_jesd204_tx.c`                                                                                     |
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+AXI JESD204B GT (Gigabit Tranceiver) HDL driver (XILINX/ALTERA-INTEL)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++----------+-------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                          |
++==========+===============================================================================================================================+
+| driver   | :git-linux:`drivers/iio/jesd204/axi_adxcvr.c`                                                                                 |
++----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+Device Driver Customization
+===========================
+
+Please follow the link here for detailed options and examples:
+
+-  :doc:`ADRV9026/ADRV9029 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9025-customization>`
+
+Processors
+==========
+
+Stream Processor
+----------------
+
+A stream processor is a processor within the transceiver tasked with performing a series of configuration tasks based on some event. After a request from the user, the stream processor performs a series of predefined actions that are loaded into the stream processor during device initialization. This processor takes full advantage of the speed of the internal register buses for efficient execution of commands.
+
+The stream processor can access and modify registers independently, avoiding the need for ARM interaction.
+
+The stream processor executes streams, or series of tasks, for the following:
+
+-  Tx1/Tx2/Tx3/Tx4 enable/disable
+-  Rx1/Rx2/Rx3/Rx4 enable/disable
+-  ORx1/ORx2/ORx3/ORx4 enable/disable
+
+The transceiver flexibility is maintained by implementing the stream processors with similar flexibility. The stream processor image changes with configuration, similar to how the initialization structures change with the selected profiles. For example, the stream that enables the receivers differs depending on the JESD204B and JESD204C interface configuration. For this reason, it is necessary to save a stream image for each device configuration. When the user saves the configuration files (.c) using the GUI, a stream binary image is generated automatically. Use this stream file when initializing the transceiver with the profile in question.
+
+The following are examples of how the stream files can differ:
+
+-  The framer choices for observation receiver and receiver
+-  For link sharing purposes
+-  If floating point formatting is being used on receiver and observation receiver paths, the stream image can change
+
+Eleven separate stream processors exist in the transceiver, which are each responsible for the execution of some dedicated functionality within the device. These stream processors can be divided into two broad categories, slice stream processors and the core stream processor.
+
+The stream binary ``stream_image_XYZ.bin`` must be stored in the /lib/firmware folder, or compiled into the kernel using the CONFIG_FIRMWARE_IN_KERNEL, CONFIG_EXTRA_FIRMWARE config options. Multiple stream binaries can be added. However a unique name must be given. The stream binary loaded during driver probe can be specified using following device tree property:
+
+stream-firmware-name = “stream_image_6E3E00EFB74FE7D465FA88A171B81B8F.bin”;
+
+In case no stream is specified or loaded, the driver will continue to use the standard ``stream_image_6E3E00EFB74FE7D465FA88A171B81B8F.bin`` file.
+
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                                                              |
++==========+===================================================================================================================================================================================+
+| Steam    | :git-linux:`firmware/stream_image_6E3E00EFB74FE7D465FA88A171B81B8F.bin`                                                                                                           |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+ARM Processor
+-------------
+
+The transceiver is equipped with a built in ARM M4 processor. The firmware for this ARM processor is loaded during the initialization process. The firmware memory size is 224 kB, and the ARM has access to another 160 kB of data memory to utilize. The ARM is tasked with configuring the transceiver for the selected use case, performing initial calibrations of the signal paths, and maintaining device performance over time through tracking calibrations.
+
+When the arm core is powered up, the ARM moves into its power-up/reset state. The ARM firmware image is loaded at this point. When the ARM image has been loaded, the ARM is enabled and begins its boot sequence. After the arm has been booted, it enters its ready/idle state. In this state, it can receive configuration settings or commands (instructions), such as performing the initial calibrations or enabling tracking calibrations.
+
+DFE Processor
+-------------
+
+There is a dual core embedded ARM processor in which the DPD and CLGC algorithms reside. One of the dual core ARM processors is a control processor (ARM-C), which is the master, and the second core is a dedicated ARM core for DPD processing (ARM-D).
+
+The firmware files for these processors must be stored in the /lib/firmware folder, or compiled into the kernel using the CONFIG_FIRMWARE_IN_KERNEL, CONFIG_EXTRA_FIRMWARE config options. The fimware loaded during driver probe are specified using following device tree property:
+
+arm-firmware-name = "ADRV9025_FW.bin;ADRV9025_DPDCORE_FW.bin";
+
++------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| Function               | File                                                                                                                          |
++========================+===============================================================================================================================+
+| ARM processor firmware | :git-linux:`firmware/ADRV9025_DPDCORE_FW.bin`                                                                                 |
++------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| DFE processor firmware | :git-linux:`firmware/ADRV9025_FW.bin`                                                                                         |
++------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+
+Gain Tables
+-----------
+
+The Gain tables for the RX and TX paths must also be loaded during boot/setup phase. They are also loaded using the firmware framework.
+
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Function                 | File                                                                                                                              |
++==========================+===================================================================================================================================+
+| RX Gain Correction table | :git-linux:`firmware/ADRV9025_RxGainTable.csv`                                                                                    |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| TX Attenuation table     | :git-linux:`firmware/ADRV9025_TxAttenTable.csv`                                                                                   |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+Enabling Linux driver support
+=============================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig").
+
+.. hint::
+
+   The ADRV9025 driver depends on **CONFIG_SPI**
+
+
+Adding Linux driver support
+===========================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+       <*>     Industrial I/O support --->
+           --- Industrial I/O support
+           -*-   Enable ring buffer support within IIO
+           -*-     Industrial I/O lock free software ring
+           -*-   Enable triggered sampling support
+
+                 *** Analog to digital converters ***
+           [--snip--]
+
+           -*- Analog Devices High-Speed AXI ADC driver core
+           < > Analog Devices AD9361, AD9364 RF Agile Transceiver driver
+           < > Analog Devices AD9371 RF Transceiver driver
+           < > Analog Devices ADRV9009/ADRV9008 RF Transceiver driver
+           <*> Analog Devices ADRV9025/ADRV9026/ADRV9029 RF Transceiver driver
+           < > Analog Devices AD6676 Wideband IF Receiver driver
+           < > Analog Devices AD9467, AD9680, etc. high speed ADCs
+           < > Analog Devices Motor Control (AD-FMCMOTCON) drivers
+
+           [--snip--]
+           
+
+       Frequency Synthesizers DDS/PLL  --->
+               Direct Digital Synthesis  --->
+               <*> Analog Devices CoreFPGA AXI DDS driver
+           Clock Generator/Distribution  --->  
+               < > Analog Devices AD9508 Clock Fanout Buffer                 
+               < > Analog Devices AD9523 Low Jitter Clock Generator          
+               <*> Analog Devices AD9528 Low Jitter Clock Generator          
+               < > Analog Devices AD9548 Network Clock Generator/Synchronizer
+               < > Analog Devices AD9517 12-Output Clock Generator     
+
+       <*>   JESD204 High-Speed Serial Interface Support  --->
+           --- JESD204 High-Speed Serial Interface Support  
+           < >   Altera Arria10 JESD204 PHY Support         
+           <*>   Analog Devices AXI ADXCVR PHY Support      
+           < >   Generic AXI JESD204B configuration driver  
+           <*>   Analog Devices AXI JESD204B TX Support     
+           <*>   Analog Devices AXI JESD204B RX Support  
+               
+
+Driver testing / API
+====================
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. tip::
+
+   \ **TIP:** An example program which uses the interface can be found here:
+
+   
+   -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+   
+   |
+
+
+| *General attribute naming convention:*
+
+================================= ===============
+IIO sysfs attribute naming prefix Target
+================================= ===============
+Transceiver                       
+in_voltage0\_[…]                  RX1
+in_voltage1\_[…]                  RX2
+in_voltage2\_[…]                  RX3
+in_voltage3\_[…]                  RX4
+in_voltage4\_[…]                  Observation RX1
+in_voltage5\_[…]                  Observation RX2
+out_altvoltage0\_[…]              TRX LO1
+out_altvoltage1\_[…]              TRX LO2
+out_altvoltage2\_[…]              TRX AUX LO
+out_voltage0\_[…]                 TX1
+out_voltage1\_[…]                 TX2
+out_voltage2\_[…]                 TX3
+out_voltage3\_[…]                 TX4
+================================= ===============
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# cd /sys/bus/iio/devices/
+      root@analog:/sys/bus/iio/devices# ls
+      iio:device0  iio:device2  iio:device4
+      iio:device1  iio:device3  iio_sysfs_trigger
+   
+      root@analog:/sys/bus/iio/devices# **cd iio:device2**
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# ls -al
+      total 0
+      drwxr-xr-x 3 root root    0 Nov 22 11:04 .
+      drwxr-xr-x 6 root root    0 Nov 22 11:04 ..
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 calibrate
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 calibrate_rx_qec_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 calibrate_tx_lol_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 calibrate_tx_lol_ext_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 calibrate_tx_qec_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_temp0_input
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage0_bb_dc_offset_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage0_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage0_gain_control_mode
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 in_voltage0_gain_control_mode_available
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage0_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage0_hd2_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage0_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage0_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage0_rssi
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage1_bb_dc_offset_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage1_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage1_gain_control_mode
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 in_voltage1_gain_control_mode_available
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage1_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage1_hd2_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage1_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage1_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage1_rssi
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage2_bb_dc_offset_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage2_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage2_gain_control_mode
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 in_voltage2_gain_control_mode_available
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage2_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage2_hd2_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage2_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage2_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage2_rssi
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage3_bb_dc_offset_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage3_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage3_gain_control_mode
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 in_voltage3_gain_control_mode_available
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage3_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage3_hd2_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage3_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage3_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage3_rssi
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage4_bb_dc_offset_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage4_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage4_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage4_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage4_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage5_bb_dc_offset_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage5_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage5_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage5_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage5_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 in_voltage_sampling_frequency
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 jesd204_fsm_ctrl
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 jesd204_fsm_error
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 jesd204_fsm_paused
+      --w------- 1 root root 4096 Nov 22 11:04 jesd204_fsm_resume
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 jesd204_fsm_state
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 name
+      lrwxrwxrwx 1 root root    0 Nov 22 11:04 of_node -> ../../../../../../../../firmware/devicetree/base/axi/spi@ff040000/adrv9025-phy@0
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_altvoltage0_LO1_frequency
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 out_altvoltage0_LO1_label
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_altvoltage1_LO2_frequency
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 out_altvoltage1_LO2_label
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_altvoltage2_AUX_LO_frequency
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 out_altvoltage2_AUX_LO_label
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage0_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage0_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage0_lo_leakage_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage0_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage0_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage1_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage1_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage1_lo_leakage_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage1_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage1_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage2_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage2_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage2_lo_leakage_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage2_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage2_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage3_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage3_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage3_lo_leakage_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage3_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage3_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 out_voltage_sampling_frequency
+      drwxr-xr-x 2 root root    0 Nov 22 11:04 power
+      lrwxrwxrwx 1 root root    0 Nov 22 11:04 subsystem -> ../../../../../../../../bus/iio
+      -rw-r--r-- 1 root root 4096 Nov 22 11:04 uevent
+      -r--r--r-- 1 root root 4096 Nov 22 11:04 waiting_for_supplier
+      root@analog:/sys/bus/iio/devices/iio:device2# 
+   
+
+
+Show device name
+----------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# cat name
+      adrv9025-phy
+   
+
+
+Show device temperature
+-----------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# cat in_temp0_input
+      66000
+   
+
+
+Channel Enable/Powerdown Controls
+---------------------------------
+
+For use cases where pin control mode is not used or required, these attributes can be used to enable/disable the Rx/Tx signal paths while in the ENSM radio_on state.
+
+-  in_voltage0_en
+-  in_voltage1_en
+-  in_voltage2_en
+-  in_voltage3_en
+-  out_voltage0_en
+-  out_voltage1_en
+-  out_voltage2_en
+-  out_voltage3_en
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# cat in_voltage0_en 
+      1
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 0 > in_voltage0_en
+      root@analog:/sys/bus/iio/devices/iio:device2# cat in_voltage0_en 
+      0
+   
+
+
+Local Oscillator Control (LO)
+-----------------------------
+
+The device contains two RF PLLs. Each RF PLL uses the PLL block common to all synthesizers in the device and employ a 4 core VCO block which provides a 6dB phase noise improvement over the single core VCO. The tuneable range of the RF LO is 30-6000 MHz.It is possible to set the LO frequency independently for each port.
+
+================================ ====
+Attribute                        Port
+================================ ====
+out_altvoltage0_RX1_LO_frequency RX1
+out_altvoltage1_RX2_LO_frequency RX2
+out_altvoltage2_TX1_LO_frequency TX1
+out_altvoltage3_TX2_LO_frequency TX2
+================================ ====
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      cat out_altvoltage2_AUX_LO_frequency 
+      3605000000
+      root@analog:/sys/bus/iio/devices/iio:device2# echo 3600000000 > out_altvoltage2_AUX_LO_frequency 
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_altvoltage2_AUX_LO_frequency 
+      3600000000
+   
+
+
+.. important::
+
+   Some care is needed for correctly handle carrier configuration. Note that the driver exposes 4 controls giving the idea that we can, independently, control all 4 ports. That is not true because, as stated above, the device only has 2 PLLs. Hence, applications have to be careful. For an example on how this can be handled and for more details, look at this :git-iio-oscilloscope:`commit <commit/6f77f19f055543c780598529ecdf5f3ed078cbfc>` on the IIO Oscilloscope plugin.
+
+
+Signal Path Configuration
+-------------------------
+
+TX Signal Path
+~~~~~~~~~~~~~~
+
+The ADRV9026 transmitter section consists of four identical and independently controlled channels that provide all the digital processing, mixed-signal, and RF blocks necessary to implement a direct conversion system while sharing a common frequency synthesizer. The digital data from the SERDES lanes pass through a digital processing block that includes a series of programmable half-band filters, interpolation stages, and FIR filters, including a programmable FIR filter with variable interpolation rates and up to 80 taps. The output of this digital chain is connected to the digital-to-analog converter (DAC). The DAC sample rate is adjustable up to 2.5 GHz. The in-phase (I) and quadrature (Q) channels are identical in each transmitter signal chain.
+
+After conversion to baseband analog signals, the I and Q signals are filtered to remove sampling artifacts and fed to the upconversion mixers. Each transmit chain provides a wide attenuation adjustment range with fine granularity to help designers optimize signal-to-noise ratio (SNR).
+
+Properties
+^^^^^^^^^^
+
+The following settings are available for each TX channel:
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# ls -la | grep out_voltage0
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 out_voltage0_en
+      -rw-r--r-- 1 root root 4096 Nov 22 15:25 out_voltage0_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 out_voltage0_lo_leakage_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 out_voltage0_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 out_voltage0_rf_bandwidth
+   
+
+
+Primary Signal Bandwidth
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+To query TX Primary Signal Bandwidth:
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_rf_bandwidth 
+      450000000
+   
+
+
+Hardware Gain
+^^^^^^^^^^^^^
+
+To query and modify TX Hardware Gain:
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_hardwaregain 
+      -10.000000 dB
+      root@analog:/sys/bus/iio/devices/iio:device2# echo -12 > out_voltage0_hardwaregain
+      root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_hardwaregain 
+      -12.000000 dB
+   
+
+
+RX Signal Path
+~~~~~~~~~~~~~~
+
+The ADRV9026 provides four independent receiver channels. Each channel contains all the blocks necessary to receive RF signals and convert these signals to digital data usable by a baseband processor. Each receiver can be configured as a direct conversion system that supports up to a bandwidth of 200 MHz. Each channel contains a programmable attenuator stage, followed by matched I and Q mixers that downconvert received signals to baseband for digitization.
+
+Two gain control options are available, as follows:
+
+-  Users can implement their own gain control algorithms using their baseband processor to manage manual gain control mode
+-  Users can use the on-chip automatic gain control (AGC) system.
+
+Performance is optimized by mapping each gain control setting to specific attenuation levels at each adjustable gain block in the receive signal path. Additionally, each channel contains independent receive signal strength indication (RSSI) measurement capability, dc offset tracking, and all the circuitry necessary for self calibration.
+
+The receivers include analog-to-digital converters (ADCs) and adjustable sample rates that produce data streams from the received signals. The signals can be conditioned further by a series of decimation filters and a programmable FIR filter with additional decimation settings. The sample rate of each digital filter block is adjustable by changing decimation factors to produce the desired output data rate. All receiver outputs are connected to the SERDES block, where the data is formatted and serialized for transmission to the baseband processor.
+
+.. _properties-1:
+
+Properties
+^^^^^^^^^^
+
+The following settings are available for each RX channel:
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      ls -la | grep in_voltage1 
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 in_voltage1_bb_dc_offset_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 in_voltage1_en
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 in_voltage1_gain_control_mode
+      -r--r--r-- 1 root root 4096 Nov 22 12:17 in_voltage1_gain_control_mode_available
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 in_voltage1_hardwaregain
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 in_voltage1_hd2_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 in_voltage1_quadrature_tracking_en
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 in_voltage1_rf_bandwidth
+      -rw-r--r-- 1 root root 4096 Nov 22 12:17 in_voltage1_rssi
+   
+
+
+Advanced Debug Facilities
+-------------------------
+
+The ADRV9025 driver supports advanced debug controls via the kernel `debugfs <https://en.wikipedia.org/wiki/debugfs>`__. These controls are mostly to debug which settings are currently configured in the device. How these device files/controls can be used is described here.
+
+Runtime Device Driver Customization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Through these controls, the user can run and configure BIST tests. In order to identify if the IIO device in question (adrv9025-phy) you first need to identify the IIO device number. Therefore read the name attribute of each IIO device
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# grep "" /sys/bus/iio/devices/iio\:device*/name
+      /sys/bus/iio/devices/iio:device0/name:xilinx-ams
+      /sys/bus/iio/devices/iio:device1/name:ad9528-1
+      /sys/bus/iio/devices/iio:device2/name:adrv9025-phy
+      /sys/bus/iio/devices/iio:device3/name:axi-adrv9025-rx-hpc
+      /sys/bus/iio/devices/iio:device4/name:axi-adrv9025-tx-hpc
+   
+
+
+Change directory to **/sys/kernel/debug**/iio/ iio:deviceX.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# cd /sys/kernel/debug/iio/iio\:device2
+      root@analog:/sys/kernel/debug/iio/iio:device2# ls -la
+      total 0
+      drwxr-xr-x 2 root root 0 Jul 10  2019 .
+      drwxr-xr-x 6 root root 0 Jan  1  1970 ..
+      -rw-r--r-- 1 root root 0 Jul 10  2019 bist_framer_0_prbs
+      -rw-r--r-- 1 root root 0 Jul 10  2019 bist_framer_loopback
+      -rw-r--r-- 1 root root 0 Jul 10  2019 bist_tone
+      -rw-r--r-- 1 root root 0 Jul 10  2019 direct_reg_access
+      root@analog:/sys/kernel/debug/iio/iio:device2#
+   
+
+
+Build-In Self-Test (BIST)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Controlling these attribute files directly take effect and therefore don’t require the ``initialize`` sequence. Test functionality exposed here is only meant to route or inject test patterns/data than can be used to validate the Digital Interface or functionality of the device.
+
+PRBS
+^^^^
+
+Pseudorandom Binary Sequence (`PRBS <https://en.wikipedia.org/wiki/Pseudorandom_binary_sequence>`__) to Framer 0.
+
+SYNTAX:
+
+**bist_framer_0_prbs** *<Data Source>*
+
++-------------+
+
+
+| Data Source |
+
++=============+
+
+| Value       |
+
++-------------+
+
+| 0           |
+
++-------------+
+
+| 1           |
+
++-------------+
+
+| 2           |
+
++-------------+
+
+| 3           |
+
++-------------+
+
+| 4           |
+
++-------------+
+
+| 5           |
+
++-------------+
+
+| 6           |
+
++-------------+
+
+| 7           |
+
++-------------+
+
+| 8           |
+
++-------------+
+
+| 14          |
+
++-------------+
+
+| 15          |
+
++-------------+
+
+**Example**: Inject ramp PRBS
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 8 > bist_framer_0_prbs **
+   
+
+
+BIST Loopback
+^^^^^^^^^^^^^
+
+Allows to digitally loopback framer data into the deframer.
+
+**SYNTAX:**
+
+**bist_framer_loopback** *<Mode>*
+
+===== ==================================
+Value Mode
+===== ==================================
+0     Disable
+1     Digital framer -> Digital deframer
+===== ==================================
+
+**Example**: Digital TX -> Digital RX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 1 > bist_framer_loopback **
+   
+
+
+BIST Tone
+^^^^^^^^^
+
+User selectable tone (with frequency and gain selection), that can be injected into the TX path. All Tx channels are selected.
+
+SYNTAX:
+
+**bist_tone** *<Enable> <Tone Frequency> <Tone Gain>*
+
++--------+
+
+
+| Enable |
+
++========+
+
+| Value  |
+
++--------+
+
+| 0      |
+
++--------+
+
+| 1      |
+
++--------+
+
++-----------------------------------------------+
+
+
+| Tone Frequency                                |
+
++===============================================+
+
+| Signed frequency in Hz of the desired Tx tone |
+
++-----------------------------------------------+
+
++----------------------+
+
+
+| Tone Gain (Optional) |
+
++======================+
+
+| Value                |
+
++----------------------+
+
+| 0                    |
+
++----------------------+
+
+| 1                    |
+
++----------------------+
+
+| 2                    |
+
++----------------------+
+
+| 3                    |
+
++----------------------+
+
+**Example**: Inject 0 dB tone at 3 MHz into TX (all channels enabled)
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 1 3000 > bist_tone **
+   
+
+
+Low level register access via debugfs (direct_reg_access)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This page contains a few lose documentation snippets used in various spots.
+
+IIO device files
+================
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+IIO devices with trigger consumer interface
+===========================================
+
+If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
+
+|
+
+.. hint::
+
+   **Trigger Consumers:**
+
+   | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
+
+
+**Description:** Read name of triggerY
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      irqtrig56
+   
+
+
+**Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ), to current trigger of deviceX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+   
+
+
+**Description:** Read current trigger source of deviceX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      irqtrig56
+   
+
+
+Standalone trigger drivers
+==========================
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| name                                          | description                                                                   |
++===============================================+===============================================================================+
+| iio-trig-gpio                                 | Provides support for using GPIO pins as IIO triggers.                         |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| iio-trig-rtc                                  | Provides support for using periodic capable real time clocks as IIO triggers. |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-sysfs <iio-trig-sysfs>`__           | Provides support for using SYSFS entry as IIO triggers.                       |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-bfin-timer <iio-trig-bfin-timer>`__ | Provides support for using a Blackfin timer as IIO triggers.                  |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+Buffer management
+=================
+
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+
+Every buffer implementation features a set of files:
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **length_align_bytes**
+| Using the high-speed interface. DMA buffers may have an alignment requirement for the buffer length. Newer versions of the kernel will report the alignment requirements associated with a device through the \`length_align_bytes\` property.
+
+| **scan_elements**
+| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+
+Typical ADC scan elements
+=========================
+
+| **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in_voltageX_type / in_voltageX-voltageY_type / timestamp_type:**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space. Form is [s|u]bits/storage-bits. s or u specifies if signed (2's complement) or unsigned. bits is the number of bits of data and storage-bits is the space (after padding) that it occupies in the buffer. Note that some devices will have additional information in the unused bits so to get a clean value, the bits value must be used to mask the buffer output value appropriately. The storage-bits value also specifies the data alignment. So u12/16 will be a unsigned 12 bit integer stored in a 16 bit location aligned to a 16 bit boundary. For other storage combinations this attribute will be extended appropriately.
+
+| **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
+
+Event Management
+================
+
+The Industrial I/O subsystem provides support for passing hardware generated events up to userspace.
+
+In IIO events are not used for passing normal readings from the sensing devices to userspace, but rather for out of band information. Normal data reaches userspace through a low overhead character device - typically via either software or hardware buffer. The stream format is pseudo fixed, so is described and controlled via sysfs rather than adding headers to the data describing what is in it.
+
+Pretty much all IIO events correspond to thresholds on some value derived from one or more raw readings from the sensor. They are provided by the underlying hardware.
+
+**Examples include:**
+
+-  Straight crossing a voltage threshold
+-  Moving average crosses a threshold
+-  Motion detectors (lots of ways of doing this).
+-  Thresholds on sum squared or rms values.
+-  Rate of change thresholds.
+-  Lots more variants...
+
+Events have timestamps.
+
+**The Interface:**
+
+-  Single user at a time.
+
+-  Simple chrdev per device (aggregation across devices doesn't really make sense for IIO as you tend to really care which sensor caused the event rather than just that it happened.)
+
+**The format is:**
+
+.. code:: c
+
+   /**
+    * struct iio_event_data - The actual event being pushed to userspace
+    * @id:     event identifier
+    * @timestamp:  best estimate of time of event occurrence (often from
+    *      the interrupt handler)
+    */
+   struct iio_event_data {
+       u64 id;
+       s64 timestamp;
+   };
+
+Typical event attributes
+========================
+
+| **/sys/bus/iio/devices/iio:deviceX/events**
+| Configuration of which hardware generated events are passed up to user-space.
+
+-  **Threshold Events:**
+
+| **<type>Z[\_name]_thresh[\_rising|falling]_en**
+| Event generated when channel passes a threshold in the specified (\_rising|_falling) direction. If the direction is not specified, then either the device will report an event which ever direction a single threshold value is called in (e.g. <type>[Z][\_name]\_<raw|input>_thresh_value) or <type>[Z][\_name]\_<raw|input>_thresh_rising_value and <type>[Z][\_name]\_<raw|input>_thresh_falling_value may take different values, but the device can only enable both thresholds or neither. Note the driver will assume the last p events requested are to be enabled where p is however many it supports (which may vary depending on the exact set requested. So if you want to be sure you have set what you think you have, check the contents of these attributes after everything is configured. Drivers may have to buffer any parameters so that they are consistent when a given event type is enabled a future point (and not those for whatever event was previously enabled).
+
+| **<type>Z[\_name]_thresh[\_rising|falling]_value**
+| Specifies the value of threshold that the device is comparing against for the events enabled by <type>Z[\_name]_thresh[\_rising|falling]_en. If separate attributes exist for the two directions, but direction is not specified for this attribute, then a single threshold value applies to both directions. The raw or input element of the name indicates whether the value is in raw device units or in processed units (as \_raw and \_input do on sysfs direct channel read attributes).
+
+-  **Rate of Change Events:**
+
+| **<type>[Z][\_name]_roc[\_rising|falling]_en**
+| Event generated when channel passes a threshold on the rate of change (1st differential) in the specified (\_rising|_falling) direction. If the direction is not specified, then either the device will report an event which ever direction a single threshold value is called in (e.g. <type>[Z][\_name]\_<raw|input>_roc_value) or <type>[Z][\_name]\_<raw|input>_roc_rising_value and <type>[Z][\_name]\_<raw|input>_roc_falling_value may take different values, but the device can only enable both rate of change thresholds or neither. Note the driver will assume the last p events requested are to be enabled where p is however many it supports (which may vary depending on the exact set requested. So if you want to be sure you have set what you think you have, check the contents of these attributes after everything is configured. Drivers may have to buffer any parameters so that they are consistent when a given event type is enabled a future point (and not those for whatever event was previously enabled).
+
+| **<type>[Z][\_name]_roc[\_rising|falling]_value**
+| Specifies the value of rate of change threshold that the device is comparing against for the events enabled by <type>[Z][\_name]_roc[\_rising|falling]_en. If separate attributes exist for the two directions, but direction is not specified for this attribute, then a single threshold value applies to both directions. The raw or input element of the name indicates whether the value is in raw device units or in processed units (as \_raw and \_input do on sysfs direct channel read attributes).
+
+-  **Magnitude Events:**
+
+| **<type>Z[\_name]_mag[\_rising|falling]_en**
+| Similar to in_accel_x_thresh[\_rising|_falling]_en, but here the magnitude of the channel is compared to the threshold, not its signed value.
+
+| **<type>Z[\_name]_mag[\_rising|falling]_value**
+| The value to which the magnitude of the channel is compared. If number or direction is not specified, applies to all channels of this type.
+
+-  **Temporal Conditions:**
+
+| **<type>[Z][\_name][\_thresh|_roc][\_rising|falling]_period**
+| Period of time (in seconds) for which the condition must be met before an event is generated. If direction is not specified then this period applies to both directions.
+
+Low level register access via debugfs (direct_reg_access)
+=========================================================
+
+Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver.
+
+.. tip::
+
+   To simplify direct register access you may want to use the libiio :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command line utility.
+
+
+Accessing debugfs requires root privileges.
+
+In order to identify if the IIO device in question feature this option you first need to identify the IIO device number.
+
+Therefore read the name attribute of each IIO device
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# grep "" /sys/bus/iio/devices/iio\:device*/name
+      /sys/bus/iio/devices/iio:device0/name:ad7291
+      /sys/bus/iio/devices/iio:device1/name:ad9361-phy
+      /sys/bus/iio/devices/iio:device2/name:xadc
+      /sys/bus/iio/devices/iio:device3/name:adf4351-udc-rx-pmod
+      /sys/bus/iio/devices/iio:device4/name:adf4351-udc-tx-pmod
+      /sys/bus/iio/devices/iio:device5/name:cf-ad9361-dds-core-lpc
+      /sys/bus/iio/devices/iio:device6/name:cf-ad9361-lpc
+      root@analog:~# 
+   
+
+
+Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the direct_reg_access file exists.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# cd /sys/kernel/debug/iio/iio\:device1
+      root@analog:/sys/kernel/debug/iio/iio:device1# ls direct_reg_access 
+      direct_reg_access
+   
+
+
+**Reading**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 0x7 > direct_reg_access                                                                                                                                 
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
+      0x40
+   
+
+
+**Writing**
+
+Write ADDRESS VALUE
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 0x7 0x50  > direct_reg_access                                                                                                                            
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
+      0x50
+   
+
+
+**Accessing HDL CORE registers**
+
+| Special ADI device driver convention for devices that have both:
+| \* a SPI/I2C control interface
+
+-  and some sort of HDL Core with registers (AXI)
+
+In this case when accessing the HDL Core Registers always set BIT31.
+
+The register map for typical ADI HDL cores can be found here: :doc:`Register Map </wiki-migration/resources/fpga/docs/hdl/regmap>`
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device6# echo 0x80000000 > direct_reg_access                                                                                                                           
+      root@analog:/sys/kernel/debug/iio/iio:device6# cat direct_reg_access 
+      0x80062
+   
+
+
+IIO pointers
+============
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

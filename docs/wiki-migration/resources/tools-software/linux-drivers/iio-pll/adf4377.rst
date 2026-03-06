@@ -1,0 +1,260 @@
+ADF4377 IIO Wideband Synthesizer with Integrated VCO Linux Driver
+=================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF4377`
+-  :adi:`ADF4378`
+
+Supported Boards
+----------------
+
+| This driver supports the
+
+-  :adi:`EVAL-ADF4377`
+-  :adi:`EVAL-ADF4378`
+
+Description
+-----------
+
+The ADF4377 is a high performance, utlralow jitter, dual output integer-N phased locked loop (PLL) with integrated voltage controlled oscillator (VCO) ideally suited for data converter and mixed signal front end (MxFE) clock applications. The high performance PLL has a figure of merit of -239 dBc/Hz, ultralow 1/f Noise and a high phase frequency detector (PFD) frequency that can achieve ultra-low in-band noise and integrated jitter. The ADF4377's fundamental VCO and output divider generate frequencies from 800 MHz to 12.8 GHz. The ADF4377 integrates all necessary power supply bypass capacitors, saving board space on compact boards.
+
+For multiple data converter and MXFE clock applications, the ADF4377 simplifies clock alignment and calibration routines required with other clock solutions, by implementing:
+
+-  automatic reference to output synchronization,
+-  extremely well match reference to output delays across process, voltage, and temperature
+-  jitter free reference to ouput delay adjustment capability
+
+These features allow for predictable and precise multi-chip clock and SYSREF alignment. JESD204B and JESD204C subclass 1 solutions are supported by pairing the ADF4377 with an integrated circuit (IC) that distributes pairs of reference and SYSREF signals.
+
+Source Code
+===========
+
+Status
+------
+
++-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| Source                                                                                                                      | Mainlined?                                                                                                        |
++=============================================================================================================================+===================================================================================================================+
+| :git-linux:`drivers/iio/frequency/adf4377.c`                                                                                | `YES <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/frequency/adf4377.c>`__ |
++-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+
+Files
+-----
+
++-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function          | File                                                                                                                                                  |
++===================+=======================================================================================================================================================+
+| driver            | :git-linux:`drivers/iio/frequency/adf4377.c`                                                                                                          |
++-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Documentation     | :git-linux:`Documentation/devicetree/bindings/iio/frequency/adi,adf4377.yaml`                                                                         |
++-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ABI documentation | :git-linux:`Documentation/ABI/testing/sysfs-bus-iio-frequency-adf4377`                                                                                |
++-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Example platform device initialization
+======================================
+
+The ADF4377 driver is a SPI bus driver and can be instantiated via device tree.
+
+**Required properties:**
+
+-  **compatible**: Should always be one of these:
+
+   -  "adi,adf4377"
+   -  "adi,adf4372"
+
+-  **reg**: SPI chip select number.
+-  **clocks**: a list of phandle, one for each entry in clock-names.
+-  **clock-names**: Must include the following entry: "ref_in"
+
+**Optional properties:**
+
+-  **ce-en-gpios**: Gpio that controls the Chip Enable Pin.
+-  **enclk1-gpios**: Gpio that controls the Enable Clock 1 Output Buffer Pin.
+-  **enclk2-gpios**: Gpio that controls the Enable Clock 2 Output Buffer Pin.
+
+::
+
+   Example:
+
+   spi {
+           #address-cells = <1>;
+           #size-cells = <0>;
+           frequency@0 {
+               compatible = "adi,adf4377";
+               reg = <0>;
+               spi-max-frequency = <10000000>;
+               clocks = <&adf4377_ref_in>;
+               clock-names = "ref_in";
+           };
+       };
+
+Enabling Linux driver support
+=============================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+.. hint::
+
+   The ADF4377 driver depends on **SPI** and selects **REGMAP_SPI**
+
+
+Adding Linux driver support
+===========================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+       <*>     Industrial I/O support --->
+           --- Industrial I/O support
+                    Frequency Synthesizers DDS/PLL --->
+                                *** Phase-Locked Loop (PLL) frequency synthesizers ***
+                                <*> Analog Devices ADF4377 Microwave Wideband Synthesizer
+
+Hardware configuration
+======================
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      analog:/sys/bus/iio/devices/iio:device0# **cd /sys/bus/iio/devices/**
+      root@analog:/sys/bus/iio/devices# **ls**
+      iio:device0
+      root@analog:/sys/bus/iio/devices#
+   
+      root@analog:/sys/bus/iio/devices# **cd iio\:device0**
+      root@analog:/sys/bus/iio/devices/iio:device0# **ls -l**
+      total 0
+      -r--r--r-- 1 root root 4096 sep  4 14:05 dev
+      -rw-r--r-- 1 root root 4096 sep  4 14:05 frequency
+      -rw-r--r-- 1 root root 4096 sep  4 14:05 muxout_select
+      -rw-r--r-- 1 root root 4096 sep  4 14:05 muxout_select_available
+      -r--r--r-- 1 root root 4096 sep  4 14:05 name
+      lrwxrwxrwx 1 root root    0 sep  4 14:05 of_node -> ../../../../../../../../firmware/devicetree/base/soc/spi@7e204000/adf4377@0
+      drwxr-xr-x 2 root root    0 sep  4 14:05 power
+      lrwxrwxrwx 1 root root    0 sep  2 17:46 subsystem -> ../../../../../../../../bus/iio
+      -rw-r--r-- 1 root root 4096 sep  2 17:46 uevent
+   
+      root@analog:/sys/bus/iio/devices/iio:device0#
+   
+
+
+Show device name
+----------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat name**
+      **adf4377**
+   
+
+
+Read frequency
+--------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat frequency**
+      **1000000000**
+   
+
+
+Set frequency
+-------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **echo 1000000000 > frequency**
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat frequency**
+      **1000000000**
+   
+
+
+Muxout Select
+-------------
+
+The mux output allows the user to access various internal points on the chip. Valid values that can be written:
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat muxout_select_available**
+      high_z lock_detect muxout_low f_div_rclk_2 f_div_nclk_2 muxout_high
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat muxout_select**
+      digital_lock
+      root@analog:/sys/bus/iio/devices/iio:device0# **echo lock_detect > muxout_select**
+      root@analog:/sys/bus/iio/devices/iio:device0# **cat muxout_select**
+      lock_detect
+   
+
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

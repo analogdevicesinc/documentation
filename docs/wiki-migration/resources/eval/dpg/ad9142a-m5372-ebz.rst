@@ -1,0 +1,486 @@
+AD9142A-M5372-EBZ Evaluation Board Quick Start Guide
+====================================================
+
+Getting Started with the AD9142A-M5372-EBZ Evaluation Board and Software
+------------------------------------------------------------------------
+
+What's in the Box
+~~~~~~~~~~~~~~~~~
+
+-  AD9142A-M5372-EBZ Evaluation Board
+-  Evaluation Board CD
+-  Mini-USB Cable
+
+Recommended Equipment List
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  +5Vdc, Power Supply
+-  2 Sinusoidal Clock Sources
+-  Spectrum Analyzer
+-  Data Pattern Generator Series 2 or 3 (DPG)
+
+Introduction
+~~~~~~~~~~~~
+
+The AD9142A-M5372-EBZ connects to a DPG for quick evaluation of the AD9142A, a high-speed, signal processing Digital to Analog Converter. The DPG automatically formats the data and sends it to the AD9142A-M5372-EBZ, simplifying evaluation of the device. The Evaluation Board (EVB) runs from a +5V supply. A clock distribution chip AD9516 is included on this EVB as a clock fan-out and frequency divider for the DACCLK, REFCLK and DPG input clock. Also included is a quadrature modulator ADL5375 for quick DAC+IQMOD evaluation. Figure 2 is an image of the top side of the AD9142A-M5372-EBZ.
+
+AD9142A Evaluation Software
+---------------------------
+
+The AD9142A Evaluation Board software has an easy-to-use legacy graphical user interface (GUI), but ACE, a newer evaluation software from ADI, is the preferred evaluation software. Both are included on the Evaluation Board CD. Alternatively, DPGDownloader can be downloaded from the DPG website at http://www.analog.com/dpg. This will install DPGDownloader (for generating and loading vectors into the DPG) and AD9142A SPI software. ACE can be downloaded from the ACE website at https://wiki.analog.com/resources/tools-software/ace. The ACE plug-in for the evaluation board is available for download on the AD9142A eval webpage in the software section at http://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9142A.html#eb-relatedsoftware.
+
+Hardware Setup
+--------------
+
+Connect +5.0V to P5, GND to P6. One low phase noise high frequency clock source should be connected to the SMA connector, J1 (AD9516_CLKIN). The other low phase noise high frequency clock source should be connected to the SMA connector, J15 (LO_IN), and the spectrum analyzer should be connected to the SMA connector, J6. The evaluation board connects to the DPG through the connectors P1 and P2. The PC should be connected to the EVB using the mini-USB connector XP2 after installation of the Evaluation Board software. Figure 1 shows the block diagram of the set-up.
+
+.. container:: center
+
+   
+   +---------------------------------------------------------+-----------------------------------------+
+   | |image3|                                                | |image4|                                |
+   +---------------------------------------------------------+-----------------------------------------+
+   | Figure 1. Block diagram of the AD9142A lab bench set-up | Figure 2. Top view of AD9142A-M5372-EBZ |
+   +---------------------------------------------------------+-----------------------------------------+
+   
+
+
+Getting Started
+---------------
+
+The PC software comes on the included Evaluation Board CD, but may also be downloaded from the DPG Web site at http://www.analog.com/dpg and the ACE website at https://wiki.analog.com/resources/tools-software/ace. The installation will include the DPG Downloader software as well as all the necessary AD9142A files including schematic, board layout, datasheet, AD9142A SPI, and other files. The ACE plug-in for the AD9142A is available on the eval website.
+
+ACE
+~~~
+
+Initial Set-Up
+^^^^^^^^^^^^^^
+
+| 1. Install the DPG Downloader and ACE software and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
+| 2. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB.
+| 3. Connect the DPG unit to your PC and turn on the unit.
+
+Single-Tone Test
+^^^^^^^^^^^^^^^^
+
+| These settings configure the AD9142A to output a sine wave using the DPG and ACE and allow the user to view the single-tone performance at the IQMOD output, under the condition: Fdata = 350MHz, 4X interpolation, IF = 50MHz, LO = 2000MHz, RF = 2050MHz.
+| 1. To begin, open ACE from the start window. It can be found by following the file path to the program or by searching in the Windows search bar for “ACE.” The |ace_icon_small.png| icon indicates the ACE software.
+
+If the board is connected properly, ACE will detect it and display it on the Start page under *Attached Hardware*. Double click this board.
+
+
+|ad9142a_detected_new.png|
+
+.. container:: centeralign
+
+   Figure 3. Detected AD9142A-M537x in ACE.
+
+
+Ensure that the |connection_icon.png| button in lower left corner of the subsystem image (located under the "System" tab) is green, meaning the board is connected. If not, click it, select the AD739A, and click "Acquire." Double click on the subsystem image to reach the board block diagram.
+
+
+
+|ad9142a_system_new.png|
+
+.. container:: centeralign
+
+   Figure 4. The AD9142A-M537x system.
+
+
+| 2. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1400MHz, and the output level to 6dBm. The spectrum analyzer can be configured with Center Frequency = 2050 MHz, Span = 200 MHz, and Resolution Bandwidth of 30 kHz. Choose Input Attenuation to be 24dB. This can be adjusted later if indications are that the analyzer is causing degradations.
+| 3. Follow the sequence below to configure the AD9142A using ACE.
+| a. Click "Modify" on the left under "Initial Configuration Summary" in the same tab as the board block diagram. Copy the information from Figure 5, and click "Apply."
+|
+
+.. container:: column
+
+
+|ad9142a_applypage.png|
+
+.. container:: column
+
+
+|ad9142a_boardview.png|
+
+.. container:: column
+
+   
+   .. container:: centeralign
+
+      Figure 5. Initial Configuration Summary
+
+   
+
+
+.. container:: column
+
+   
+   .. container:: centeralign
+
+      Figure 6. Board block diagram of the AD9124A
+
+   
+
+
+
+| b. Double click on the AD9142A component on the board diagram. This brings up the chip diagram. Set all the settings to match those in the chip diagram below, and click "Apply Changes." Click "Read All" on the upper left of the page if the DLL is not enabled, as indicated by the green light next to "DLL Lock." See the ACE Software Features section for more information about changing parameters.
+| |ad9142a_chipview.png|
+
+
+.. container:: centeralign
+
+   Figure 7. Chip block diagram of the AD9142A
+
+
+| c. Open DPGDownloader. (Start > All Programs > Analog Devices > DPG > DPGDownloader). Ensure that the program detects the AD9142A, as indicated in the "Evaluation Board" drop-down list. For this evaluation board, LVDS is the only valid Port Configuration, and should be selected automatically. If not, select it in the "Port Configuration" drop-down list. The "DCO Frequency" window should show the correct data rate (350 MHz). The actual detected frequency may not be exactly 350 MHz but it should be stable and very close to it as shown in the Figure 8.
+| |ad9142a_dpgd.png|
+
+
+.. container:: centeralign
+
+   Figure 8.
+
+
+| d. Click on "Add Generated Waveform," and then "Single Tone." A Single Tone panel will be added to the vector list. Enter the sample rate, in this case 350 MHz and the desired frequency, 50MHz. Enter the digital amplitude. In this case, use -14dBFS. Check the "Generate Complex Data (I & Q)" box and uncheck the "Unsigned Data" box. Select the In-Phase data vector in the "I Data Vector" drop down menu and the Quadrature data vector in the "Q Data Vector." This should match the image above.
+| e. Click Download (|image5|) and Play (|image6|).
+| 4. The current on the 5V supply should read about 1310mA.
+|
+
+.. container:: center
+
+   
+   +----------------------------------------------------+
+   | |image7|                                           |
+   +----------------------------------------------------+
+
+   | Figure 9. AD9142A-M5372 Eval Board output Spectrum |
+
+   +----------------------------------------------------+
+   
+
+
+SPI Software
+~~~~~~~~~~~~
+
+.. _initial-set-up-1:
+
+Initial Set-Up
+^^^^^^^^^^^^^^
+
+| 1. Install the DPG Downloader and AD9142A SPI software and support files on your PC. Follow the instructions in the installation wizard and use the default (recommended) installation settings.
+| 2. Use a USB cable to connect the EVB to your PC and connect the lab equipment to the EVB.
+| 3. Connect the DPG unit to your PC and turn on the unit.
+
+.. _single-tone-test-1:
+
+Single-Tone Test
+^^^^^^^^^^^^^^^^
+
+| These settings configure the AD9142A to output a sine wave using the DPG and allow the user to view the single-tone performance at the IQMOD output, under the condition: Fdata = 350MHz, 4X interpolation, IF = 50MHz, LO = 2000MHz, RF = 2050MHz.
+| 1. 1. To begin, open the AD9142A SPI application (Start > All Programs > Analog Devices > SPIPro). The screen should look similar to Figure 3.
+|
+
+.. container:: center
+
+   
+   +-----------------------------------------------------+
+   | |image8|                                            |
+   +-----------------------------------------------------+
+
+   | Figure 10. Entry Screen of the AD9142A SPI software |
+
+   +-----------------------------------------------------+
+   
+
+
+| 2. Configure the hardware according to the hardware set-up instructions given in the Hardware Setup section above. Set the frequency of the DAC clock signal generator to 1400MHz, and the output level to 6dBm. The spectrum analyzer can be configured with Center Frequency = 2050 MHz, Span = 200 MHz, and Resolution Bandwidth of 30 kHz. Choose Input Attenuation to be 24dB. This can be adjusted later if indications are that the analyzer is causing degradations.
+| 3. Follow the sequence below to configure the AD9142A SPI registers.
+| a. Click “Reset DAC” button on the “Quick Start” tab.
+| b. Click “Restore Registers from File” and select the configuration file “Config_8X.csv”. This will configure the registers with correct values under the condition we are testing.
+| c. Click “AD9516 Update” button. This step updates the clock distribution chip AD9516 with the settings that were loaded from the configuration file.
+| d. There may be a few registers highlighted in red. The red highlights mean mismatches between the SPI read and write values in the software. Clicking “Read All Registers” reads back all the current values in the registers, which should resolve the highlights.
+| e. Toggle register “FIFO SPI RESET REQUEST”. The FIFO level readback registers (INTEGRAL and FRACTIOANAL) should now match the FIFO level request registers.
+| f. Open DPG Downloader if you have not done so. (Start > All Programs > Analog Devices > DPG > DPGDownloader). Ensure that the program detects the AD9142A, as indicated in the “Evaluation Board” drop-down list, and select it. For this evaluation board, LVDS is the only valid Port Configuration, and it will be selected automatically. The “DCO Frequency” window should show the correct data rate (350 MHz). The actual detected frequency may not be exactly 350 MHz but it should be stable and very close to it as shown in Figure 11.
+|
+
+.. container:: center
+
+   
+   +---------------------------------+
+   | |image9|                        |
+   +---------------------------------+
+
+   | Figure 11. DPG Downloader Panel |
+
+   +---------------------------------+
+
+   | g. Click on “Add Generated Waveform”, and then “Single Tone”. As shown in Figure 5, A Single Tone panel will be added to the vector list. Enter the sample rate, in this case 350 MHz and the desired frequency, 50MHz. Enter the digital amplitude. In this case we use -14dBFS. Check the “Generate Complex Data (I & Q)” box and uncheck the “Unsigned Data” box. Select the In-Phase data vector in the “I Data Vector” drop down menu and the Quadrature data vector in the “Q Data Vector”.
+|
+
+.. container:: center
+
+   
+   +-------------------------------------------+
+   | |image10|                                 |
+   +-------------------------------------------+
+
+   | Figure 12. DPG Downloader sinewave vector |
+
+   +-------------------------------------------+
+   
+
+
+| h. Click Download (|image11|) and Play (|image12|).
+| i. Go back to the AD9142A SPI software and toggle the “FIFO SPI RESET REQUEST” button (from 0 to 1 and back to 0) to reset the FIFO. The FIFO level readback registers (INTEGRAL and FRACTIOANAL) should now match the FIFO level request registers. The AD9142A SPI software and the spectrum analyzer should look like Figure 13 and Figure 14 respectively.
+|
+
+.. container:: center
+
+   
+   +-------------------------------------------------------------------+
+   | |image13|                                                         |
+   +-------------------------------------------------------------------+
+
+   | Figure 13. Configured Quick Start Tab of the AD9142A SPI software |
+
+   +-------------------------------------------------------------------+
+
+   | 4. The current on the 5V supply should read about 1310mA.
+|
+
+.. container:: center
+
+   
+   +-----------------------------------------------------+
+   | |image14|                                           |
+   +-----------------------------------------------------+
+
+   | Figure 14. AD9142A-M5372 Eval Board output Spectrum |
+
+   +-----------------------------------------------------+
+   
+
+
+.. _spi-software-1:
+
+SPI SOFTWARE
+------------
+
+| The AD9142A SPI software is conveniently organized in a series of tabs that groups registers according to their functions. In this way, all registers associated with the digital functions, for example, are on the “Digital Functions” tab. All registers associated with the PLL are on the “PLL” tab, and so on. Normally the “Quick Start” tab is sufficient for a quick evaluation. The most frequently used register controls are included on this tab. A full description of each register and its settings is given in the AD9142A data sheet. Some of the registers and their functions are described here as they pertain to the AD9142A evaluation board. Please note that some of the screen images in this document may not match exactly with the latest revision of the software, due to ongoing improvements and enhancements to the software.
+| The full screen layout is shown in Figure 5. The tabs can be seen across the top of the work area, and four function buttons in the menu area. “Save Registers to File” and “Restore Registers from File” allow the user to save the current register settings into a file for later uses. A register is immediately updated when the value in the control is changed. Switching between tabs does not update register values. “Read All Registers” can be used to monitor a resister with changing readback values. “ Record Sequence” allows the user to record a series of SPI writes in a particular order and to play back the sequence later. A short description of the register is shown in the status bar on the bottom of the work area when the mouse curser hovers over the control. Some of the tabs are discussed below.
+
+Quick Start
+~~~~~~~~~~~
+
+The “Quick Start” tab has selections that apply to the general configuration of the DAC. Reset DAC is recommended every time when the DAC is powered on or reset. Interpolation Rate allows the user to select among the 3 interpolation modes (2X, 4X, and 8X). When the NCO is used, set NCO Enable to 1, fill in the NCO frequency tuning word with the desired value and toggle SPI Update Request. To use the Fs/4 modulation, turn on the Fs/4 Modulation control. FIFO SPI Reset Request sets the FIFO with the requested value through a SPI command. The FIFO Level Read Back should reflect the actual FIFO level after the FIFO SPI Reset Request. Note loading/reloading a vector in the DPG Downloader may generate glitches on the DCI so it is also recommended to toggle the FIFO SPI RESET REQUEST to ensure the FIFO level stays optimal. DCI Clk Div Ratio changes the divide ratio of the AD9516 input clock frequency over DCI frequency. In word mode, this ratio should be the same as the interpolation rate. In byte mode, it should be half of the interpolation rate. For example, if the interpolation ratio is 4x, the DCI divide ratio should be 2x. Unlike the AD9142A, the AD9516 registers in this SPI software are not immediately updated after a user changes the value in a control. AD9516 Update loads the changes in the AD9516 settings.
+
+.. container:: center
+
+   
+   +----------------------------------------+
+   | |image15|                              |
+   +----------------------------------------+
+
+   | Figure 15. AD9142A SPI Quick Start tab |
+
+   +----------------------------------------+
+   
+
+
+PLL
+~~~
+
+| The “PLL” tab includes all the PLL control registers. The recommended settings for the best performance is PLL Charge Pump Current = 7 and PLL LOOP BW = 7. The user needs to follow the sequence below to enable the PLL. 1. Choose the desired divide ratios in the Loop Divider and the VCO Divider.
+| 2. Set PLL Charge Pump Current and PLL Loop BW settings to 7.
+| 3. Set the PLL Mode to Manual.
+| 4. Turn on PLL Enable.
+| 5. Set the PLL Mode to Auto.
+|
+
+.. container:: center
+
+   
+   +--------------------------------+
+   | |image16|                      |
+   +--------------------------------+
+
+   | Figure 16. AD9142A SPI PLL Tab |
+
+   +--------------------------------+
+   
+
+
+EVB Jumper Configurations
+-------------------------
+
+| This evaluation board allows evaluation of both the DAC IF outputs as well as the modulator RF outputs. By default, the solder jumpers are configured to look at the modulator RF outputs. Below is a table listing the jumper configurations and SMA connector connections needed to view either output on a spectrum analyzer.
+|
+
+.. container:: center
+
+   
+   +-------------------+-------------------+------------------------------------------+
+   | Output Viewed     | SMA Connector     | Jumper Configurations                    |
+   +===================+===================+==========================================+
+   | I DAC Output      | J3("DAC1 Output") | JP4 & JP5 Pins 1-2 (outer pads)          |
+   +-------------------+-------------------+------------------------------------------+
+   | Q DAC Output      | J4("DAC2 Output") | JP6 & JP7 Pins 1-2 (outer pads)          |
+   +-------------------+-------------------+------------------------------------------+
+   | ADL5372 RF Output | J6("MOD_OUT")     | JP4, JP5, JP6, JP7 Pins 2-3 (inner pads) |
+   +-------------------+-------------------+------------------------------------------+
+   
+
+
+Note: When viewing the modulator output, a local oscillator (LO) must be connected to J15 (”LO_IN”) to properly modulate the signals
+
+ACE Software
+------------
+
+The ACE software is organized to allow the user to evaluate and control the AD9122A evaluation board. The “Initial Configuration” wizard, which is only available for certain boards, controls the DAC and PLL setups. Block diagram views of the board and chip contain elements that can be used to vary parameters like ref current and data format. These parameters can be changed using check boxes, drop down menus, and input boxes. Some parameters do not have settings shown in the diagram. Double click on the parameter to view the available settings, seen with the NCO settings below.
+
+
+|ad9122_nco.png|
+
+.. container:: centeralign
+
+   Figure 17. NCO settings for the AD9122
+
+
+In addition, some parameters can be enabled or disabled. This feature is evident by the color of the block parameter. For example, if the block parameter is dark blue, the parameter is enabled. If it is light grey, it is disabled. To enable or disable a parameter, click on it.
+
+.. container:: column
+
+
+|ad9739a_on.png|
+
+.. container:: column
+
+
+|ad9739a_off.png|
+
+.. container:: column
+
+   
+   .. container:: centeralign
+
+      Figure 18. Enabled parameter
+
+   
+
+
+.. container:: column
+
+   
+   .. container:: centeralign
+
+      Figure 19. Disabled parameter
+
+   
+
+
+
+More direct changes to registers and bit fields can be made in the memory map, which is linked from the chip block diagram through the “Proceed to Memory Map” button. In this view, names, addresses, and data can be manually altered by the user.
+
+
+   
+
+
+
+|ad9122_memmap.png|
+
+.. container:: centeralign
+
+   Figure 20. Bench Set-Up
+
+
+ACE also contains the Macro Tool, which can be used to record register reads and writes. This is executed in the memory map view or with the initialization wizard. To use, check the “Record Sub-Commands” checkbox and press the record button. Changes in the memory map, which are bolded until they are applied to the part, are recorded as UI commands by the macro tool once the changes are made. Changed register write commands for the controls are also recorded. Hit “Apply Changes” to execute the commands and make changes in the memory map. To stop recording, click the “Stop Recording” button. A macro tool page with the command steps will be created. The macro can be saved using the “Save Macro” button so that it may be loaded for future use.
+
+
+
+|ad9122_macrocommands.png|
+
+.. container:: centeralign
+
+   Figure 21. Macro tool in ACE. The *Stop Recording*, *Record*, and *Save Macro* commands are located at the top of the macro tool.
+
+
+The raw macro file will be saved using ACE syntax, which is not easily readable. To remedy this, the ACE software download includes the Macro to Hex Conversion Tool. The user can choose to include or exclude register write, reads, and/or comments in the conversion. The file pathways for the source and save paths should be the same, except that one should be an .acemacro file and the other should be a .txt file. The “Convert” button converts and opens the converted text file, which is easier to read. The conversion tool can also convert back to an .acemacro file if desired.
+
+.. container:: column
+
+
+|ad9122_m2hconvert_5.png|
+
+.. container:: column
+
+
+|ad9122_m2hconvert_4.png|
+
+.. container:: column
+
+   
+   .. container:: centeralign
+
+      Figure 22. Conversion set-up for macro to hex
+
+   
+
+
+.. container:: column
+
+   
+   .. container:: centeralign
+
+      Figure 23. Converted text file
+
+   
+
+
+
+For more information about ACE and its features, visit https://wiki.analog.com/resources/tools-software/ace.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142a_bench_setup.png
+   :width: 440px
+   :height: 260px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142-m5375_ebz_reva_top.png
+   :width: 200px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142a_bench_setup.png
+   :width: 440px
+   :height: 260px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142-m5375_ebz_reva_top.png
+   :width: 200px
+.. |ace_icon_small.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_icon_small.png
+.. |ad9142a_detected_new.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9142a_detected_new.png
+.. |connection_icon.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/connection_icon.png
+.. |ad9142a_system_new.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9142a_system_new.png
+.. |ad9142a_applypage.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9142a_applypage.png
+.. |ad9142a_boardview.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9142a_boardview.png
+.. |ad9142a_chipview.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9142a_chipview.png
+.. |ad9142a_dpgd.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9142a_dpgd.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/image009.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/image010.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142a-5372_output.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142a-5372_spi_software_entry_screen.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142a_dpg_downloader_entry_screen.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142a_dpg_downloader_sinewave.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/image009.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/image010.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142a-5372_spi_software_entry_screen.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142a-5372_output.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142_spi_software_quick_start_config.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9142/ad9142_spi_software_pll.png
+   :width: 600px
+.. |ad9122_nco.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_nco.png
+.. |ad9739a_on.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9739a_on.png
+.. |ad9739a_off.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9739a_off.png
+.. |ad9122_memmap.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_memmap.png
+.. |ad9122_macrocommands.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_macrocommands.png
+.. |ad9122_m2hconvert_5.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_m2hconvert_5.png
+.. |ad9122_m2hconvert_4.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_m2hconvert_4.png

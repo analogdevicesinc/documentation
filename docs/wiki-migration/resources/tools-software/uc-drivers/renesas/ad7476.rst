@@ -1,0 +1,232 @@
+AD74xx - No-OS Driver for Renesas Microcontroller Platforms
+===========================================================
+
+.. include:: ../ad7476.rst
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  `Renesas Demo Kit for RX63N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx63n-yrdkrx63n-demonstration-kit-rx63n>`__
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD74xx Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad74xx_generic.zip>`__
+   -  `AD7476 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7476_rl78g13.zip>`__
+   -  `AD7476 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7476_rx62n.zip>`__
+   -  \**AD74xx Driver: \*\* :git-no-OS:`drivers/adc/ad74xx`
+   -  \**PmodAD1 Demo for RL78G14: \*\* :git-no-OS:`Renesas/RL78G14/PmodAD1`
+   -  \**RL78G14 Common Drivers: \*\* :git-no-OS:`Renesas/RL78G14/Common`
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7476 demonstration project on a Renesas RL78G13 platform using the PmodAD1.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  `PmodAD1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1>`__
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodAD1 has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+   PmodAD1 J1 connector Pin CS  → YRDKRL78G13 J11 connector Pin 1
+   PmodAD1 J1 connector Pin D0  → YRDKRL78G13 J11 connector Pin 3
+   PmodAD1 J1 connector Pin CLK → YRDKRL78G13 J11 connector Pin 4
+   PmodAD1 J1 connector Pin GND → YRDKRL78G13 J11 connector Pin 5
+   PmodAD1 J1 connector Pin VCC → YRDKRL78G13 J11 connector Pin 6
+
+PmodAD1 should not be inserted in the pmod connector like the other pmods because pin D1(J1 connector) of PmodAD1 is an output pin, same as MOSI pin(pin 2 of J11 connector) of YRDKRL78G13. Damage could result when connecting the two pins togheter. The MOSI pin cannot be changed to be an input pin, as it is used to display data on the LCD. Therefore the connection above should be used to avoid this situation.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g13.jpg
+   :align: center
+
+|
+
+.. important::
+
+
+| \* The reference voltage for the AD7476 is 3.3V.
+   |
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project:
+
+-  samples the input voltage;
+-  displays the value on the LCD (in hexa, decimal and volts).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g13_screen.jpg
+   :align: center
+   :width: 200px
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`__
+
+
+Renesas RL78G14 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7476 demonstration project on a Renesas RL78G14 platform using the PmodAD1.
+
+.. _required-hardware-1:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`__
+-  `PmodAD1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1>`__
+
+.. _required-software-1:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+-  The AD7476 demonstration project for the Renesas RL78G14 platform.
+
+.. note::
+
+   The AD7476 demonstration project for the Renesas RL78G14 platform consists of three parts: the **AD7476 Driver**, the **PmodAD1 Demo for RL78G14** and the **RL78G14 Common Drivers**.
+
+   
+   All three parts have to be downloaded.
+
+
+.. _hardware-setup-1:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodAD1 has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G14:
+
+::
+
+   PmodAD1 J1 connector Pin CS  → RDKRL78G14 J11 connector Pin 1
+   PmodAD1 J1 connector Pin D0  → RDKRL78G14 J11 connector Pin 3
+   PmodAD1 J1 connector Pin CLK → RDKRL78G14 J11 connector Pin 4
+   PmodAD1 J1 connector Pin GND → RDKRL78G14 J11 connector Pin 5
+   PmodAD1 J1 connector Pin VCC → RDKRL78G14 J11 connector Pin 6
+
+PmodAD1 should not be inserted in the pmod connector like the other pmods because pin D1(J1 connector) of PmodAD1 is an output pin, same as MOSI pin(pin 2 of J11 connector) of RDKRL78G14. Damage could result when connecting the two pins togheter. The MOSI pin cannot be changed to be an input pin, as it is used to display data on the LCD. Therefore the connection above should be used to avoid this situation.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g14.jpg
+   :align: center
+
+|
+
+.. important::
+
+
+| \* The reference voltage for the AD7476 is 3.3V.
+   |
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project:
+
+-  samples the input voltage on channel A0;
+-  displays the value on the LCD (in hexa, decimal and volts).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g14_screen.jpg
+   :align: center
+
+.. _software-project-tutorial-1:
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`__
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD7476 demonstration project on a Renesas RX62N platform using the PmodAD1.
+
+.. _required-hardware-2:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+-  `PmodAD1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1>`__
+
+.. _required-software-2:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`__
+-  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`__
+
+.. _hardware-setup-2:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodAD1 has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     PmodAD1 Pin 1 (CS)   → YRDKRX62N J8 connector Pin 15
+     PmodAD1 Pin 3 (MISO) → YRDKRX62N J8 connector Pin 22
+     PmodAD1 Pin 4 (CLK)  → YRDKRX62N J8 connector Pin 20
+     PmodAD1 Pin 5 (GND)  → YRDKRX62N J8 connector Pin 4
+     PmodAD1 Pin 6 (VCC)  → YRDKRX62N J8 connector Pin 3
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/AD7476_RX62N.jpg
+   :align: center
+
+.. _reference-project-overview-2:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project samples the input voltage and displays the value on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/AD7476_RX62N_screen.jpg
+   :align: center
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`__
+
+
+More information
+================
+
+.. include:: ../more-information.rst

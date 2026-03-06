@@ -1,0 +1,208 @@
+AD7091R5 User Guide
+===================
+
+Overview
+--------
+
+The :adi:`AD7091R-5` is a 12-bit, multichannel, ultra low power, successive approximation analog-to-digital converter (ADC). The :adi:`AD7091R-5` operates from a single 2.7 V to 5.25 V power supply and typically consumes only 24 µA at a 3 V supply in fast mode. The :adi:`AD7091R-5` provides a 2-wire serial interface compatible with I2C interfaces. The conversion process can be controlled by a sample mode via the CONVST/GPO1 pin, an autocycle mode selected through software control, or a command mode in which conversions occur across I2C write operations. The device contains a wide bandwidth track-and-hold amplifier that can handle input frequencies up to 1.5 MHz. The :adi:`AD7091R-5` also features an on-chip conversion clock, an on-chip accurate 2.5 V reference, and a programmable out of bounds user alert function. The :adi:`AD7091R-5` offers four single-ended analog input channels with a channel sequencer that allows a preprogrammed selection of channels to be converted sequentially. The :adi:`AD7091R-5` uses advanced design techniques to achieve ultra low power dissipation without compromising performance. It also features flexible power management options. An on-chip configuration register allows the user to set up different operating conditions. These include power management, alert functionality, busy indication, channel sequencing, and general-purpose output pins. The MUXOUT and ADCIN pins allow signal conditioning of the multiplexer output before acquisition by the ADC.
+
+Supported devices
+~~~~~~~~~~~~~~~~~
+
+-  :adi:`AD7091R-5`
+
+Evaluation board
+~~~~~~~~~~~~~~~~
+
+-  :adi:`EVAL-AD7091R-5`
+
+No-OS Driver Description
+------------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------+------------------------------------------+
+| Function                                                     | Description                              |
++==============================================================+==========================================+
+| ``int32_t ad7091r5_init(struct ad7091r5_dev **device,        | Initialize the device.                   |
+|               struct ad7091r5_init_param *init_param);``     |                                          |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_remove(struct ad7091r5_dev *dev);``       | Remove the device and release resources. |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_set_mode(struct ad7091r5_dev *dev,        | Set device mode.                         |
+|               enum ad7091r5_mode mode);``                    |                                          |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_sleep_mode(struct ad7091r5_dev *dev,      | Set device sleep mode.                   |
+|                 enum ad7091r5_sleep_mode mode);``            |                                          |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_set_port(struct ad7091r5_dev *dev,        | Set device set port value.               |
+|               enum ad7091r5_port port, bool value);``        |                                          |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_set_gpo0_mode(struct ad7091r5_dev *dev,   | Set device set GPO0 mode.                |
+|                    enum ad7091r5_gpo0_mode mode,             |                                          |
+|                    bool is_cmos);``                          |                                          |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_set_cycle_timer(struct ad7091r5_dev *dev, | Set cycle timer for autocycle mode.      |
+|                  enum ad7091r5_cycle_timer timer);``         |                                          |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_set_limit(struct ad7091r5_dev *dev,       | Set high limit, low limit, hysteresis.   |
+|                enum ad7091r5_limit limit,                    |                                          |
+|                uint8_t channel,                              |                                          |
+|                uint16_t value);``                            |                                          |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_get_alert(struct ad7091r5_dev *dev,       | Get alert.                               |
+|                uint8_t channel,                              |                                          |
+|                enum ad7091r5_alert_type *alert);``           |                                          |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_get_limit(struct ad7091r5_dev *dev,       | Get high limit, low limit, hysteresis.   |
+|                enum ad7091r5_limit limit,                    |                                          |
+|                uint8_t channel,                              |                                          |
+|                uint16_t *value);``                           |                                          |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_set_channel(struct ad7091r5_dev *dev,     | Select device channel.                   |
+|                  uint8_t channel);``                         |                                          |
++--------------------------------------------------------------+------------------------------------------+
+| ``int32_t ad7091r5_read_one(struct ad7091r5_dev *dev,        | Read one sample.                         |
+|               uint8_t channel,                               |                                          |
+|               uint16_t *read_val);``                         |                                          |
++--------------------------------------------------------------+------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------------------+
+
+
+| ``/**                                                                              |
+
+|   * @enum ad7091r5_mode                                                            |
+|   * @brief Converter supported modes                                               |
+|  */                                                                                |
+| enum ad7091r5_mode {                                                               |
+|     /** Sample mode, conversion started by CONVST */                               |
+|     AD7091R5_MODE_SAMPLE,                                                          |
+|     /** Command mode, conversion starts on the first pos edge of SCL */            |
+|     AD7091R5_MODE_COMMAND,                                                         |
+|     /** Sample mode, convert continuously */                                       |
+|     AD7091R5_MODE_AUTOCYCLE,                                                       |
+| };                                                                                 |
+|                                                                                    |
+| /**                                                                                |
+|   * @enum ad7091r5_sleep_mode                                                      |
+|   * @brief Converter supported sleep modes                                         |
+|  */                                                                                |
+| enum ad7091r5_sleep_mode {                                                         |
+|     /** Default operation:                                                         |
+|      * Sleep mode Off, Internal reference Off */                                   |
+|     AD7091R5_SLEEP_MODE_0,                                                         |
+|     /** Sleep mode Off, Internal reference On */                                   |
+|     AD7091R5_SLEEP_MODE_1,                                                         |
+|     /** Sleep mode On, Internal reference Off */                                   |
+|     AD7091R5_SLEEP_MODE_2,                                                         |
+|     /** Sleep mode On, Internal reference On */                                    |
+|     AD7091R5_SLEEP_MODE_3,                                                         |
+| };                                                                                 |
+|                                                                                    |
+| /**                                                                                |
+|   * @enum ad7091r5_port                                                            |
+|   * @brief Converter general purpose outputs                                       |
+|  */                                                                                |
+| enum ad7091r5_port {                                                               |
+|     /** GPO0 */                                                                    |
+|     AD7091R5_GPO0,                                                                 |
+|     /** GPO1 */                                                                    |
+|     AD7091R5_GPO1,                                                                 |
+|     /** GPO2 */                                                                    |
+|     AD7091R5_GPO2,                                                                 |
+| };                                                                                 |
+|                                                                                    |
+| /**                                                                                |
+|   * @enum ad7091r5_gpo0_mode                                                       |
+|   * @brief Port 0 configuration                                                    |
+|  */                                                                                |
+| enum ad7091r5_gpo0_mode {                                                          |
+|     /** GPO0 is output port */                                                     |
+|     AD7091R5_GPO0_ENABLED,                                                         |
+|     /** GPO0 is Alert indicator */                                                 |
+|     AD7091R5_GPO0_ALERT,                                                           |
+|     /** GPO0 is busy indicator, device is converting */                            |
+|     AD7091R5_GPO0_BUSY,                                                            |
+| };                                                                                 |
+|                                                                                    |
+| /**                                                                                |
+|   * @enum ad7091r5_cycle_timer                                                     |
+|   * @brief Timer used for autocycle mode                                           |
+|  */                                                                                |
+| enum ad7091r5_cycle_timer {                                                        |
+|     /** 100 uS */                                                                  |
+|     AD7091R5_CYCLE_TIMER_100uS,                                                    |
+|     /** 200 uS */                                                                  |
+|     AD7091R5_CYCLE_TIMER_200uS,                                                    |
+|     /** 400 uS */                                                                  |
+|     AD7091R5_CYCLE_TIMER_400uS,                                                    |
+|     /** 800 uS */                                                                  |
+|     AD7091R5_CYCLE_TIMER_800uS,                                                    |
+| };                                                                                 |
+|                                                                                    |
+| /**                                                                                |
+|   * @enum ad7091r5_alert_type                                                      |
+|   * @brief Alert status                                                            |
+|  */                                                                                |
+| enum ad7091r5_alert_type {                                                         |
+|     /** No alert */                                                                |
+|     AD7091R5_NO_ALERT,                                                             |
+|     /** High alert */                                                              |
+|     AD7091R5_HIGH_ALERT,                                                           |
+|     /** Low alert */                                                               |
+|     AD7091R5_LOW_ALERT,                                                            |
+| };                                                                                 |
+|                                                                                    |
+| /**                                                                                |
+|   * @enum ad7091r5_limit                                                           |
+|   * @brief Limit type                                                              |
+|  */                                                                                |
+| enum ad7091r5_limit {                                                              |
+|     /** Low limit */                                                               |
+|     AD7091R5_LOW_LIMIT,                                                            |
+|     /** High limit */                                                              |
+|     AD7091R5_HIGH_LIMIT,                                                           |
+|     /** Hysteresis */                                                              |
+|     AD7091R5_HYSTERESIS,                                                           |
+| };                                                                                 |
+|                                                                                    |
+| /**                                                                                |
+|   * @struct ad7091r5_init_param                                                    |
+|   * @brief  Structure containing the init parameters needed by the ad7091r5 device |
+|  */                                                                                |
+| struct ad7091r5_init_param {                                                       |
+|     /* I2C */                                                                      |
+|     i2c_init_param      *i2c_init;                                                 |
+|     /** RESET GPIO initialization structure. */                                    |
+|     struct gpio_init_param  *gpio_resetn;                                          |
+| };                                                                                 |
+|                                                                                    |
+| /**                                                                                |
+|   * @struct ad7091r5_dev                                                           |
+|   * @brief  Structure representing an ad7091r5 device                              |
+|  */                                                                                |
+| struct ad7091r5_dev {                                                              |
+|     /* I2C descriptor */                                                           |
+|     struct i2c_desc     *i2c_desc;                                                 |
+|     /** RESET GPIO handler. */                                                     |
+|     struct gpio_desc    *gpio_resetn;                                              |
+| };``                                                                               |
++------------------------------------------------------------------------------------+
+
+No-OS Downloads
+---------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  |:git-no-OS:`drivers/adc/ad7091r5|`
+   
+
+
+.. |:git-no-OS:`drivers/adc/ad7091r5|` image:: :git-no-OS:`drivers/adc/ad7091r5`

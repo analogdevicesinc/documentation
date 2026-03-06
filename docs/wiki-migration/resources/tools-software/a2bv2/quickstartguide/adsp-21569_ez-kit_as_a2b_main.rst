@@ -1,0 +1,104 @@
+:doc:`Click here to return to the QSG homepage </wiki-migration/resources/tools-software/a2bv2/quickstartguide>`
+
+:doc:`Click here to return to Using ADSP-21569 EZ-Kit </wiki-migration/resources/tools-software/a2bv2/quickstartguide/adsp-21569_ez-kit>`
+
+:doc:`Clik here to return to Running sample demo, PC as Host </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/pc-as-host>`
+
+ADSP-21569 EZ-Kit as A2B Main
+=============================
+
+This section describes the steps to run the demo using ADSP-21569 EZ-Kit as the A2B main platform. Note: Running this demo requires CrossCore Embedded Studio to be installed on the machine. For details, refer :doc:`section (Software Requirements) </wiki-migration/resources/tools-software/a2bv2/quickstartguide/systemrequirements>`
+
+Setup
+-----
+
+The hardware connections to be done are described below.
+
+A2B Evaluation boards shall be connected in the following order
+
+-  ADZS-21569 EZ-KIT (Main) <–>EVAL-AD2428WC1BZ (Sub 0) <–> EVAL-AD2428WB1BZ (Sub 1) as shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/adsp-21569_ez-kit_as_a2b_main>`
+-  Connect twisted-pair wire between the “B” connector on the Main board and the “A” connector on the Sub 0 board. Repeat the same connection between Sub 0 and Sub 1
+-  Connect 12V power supply to the power connector (P4) on ADZS-21569 EZ-KIT board.
+-  Attach an USBi cable to the main board connector P5 as shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/adsp-21569_ez-kit_as_a2b_main>`. Other end of the cable should be connected to the PC
+-  Connect audio source (e.g., output from an iPod) to ‘Audio Line- in’ ports, shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/adsp-21569_ez-kit_as_a2b_main>`, AD2428WB1BZ boards.
+-  Connect separate audio sinks (e.g., active speakers) to ‘Audio Line-out’ ports, shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/adsp-21569_ez-kit_as_a2b_main>`, on ADZS-21569 EZ-KIT and AD2428WB1BZ boards.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/ADSP21569Ezkit_A2B.jpg
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** ADZS-21569 EZKIT setup
+
+
+Jumper settings for ADZS-21569 EZ-KIT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are no additional jumper settings needed for the purpose of this demo. The jumper settings should be maintained as mentioned in the ADZS-21569 EZ-KIT manual default configuration.
+
+Flashing target framework on ADZS-21569 EZ-KIT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The SS4G target framework must be flashed on the board to facilitate proper download of schematic. This can be done as follows:
+
+-  Ensure that the “Boot Mode” switch is set to 0 on the ADZS-21569 EZ-KIT board.
+-  Connect the JTAG (ICE 1000 or ICE 2000) and power on the board.
+-  The batch script to flash the .ldr file is given as part of the SigmaStudio+ installer. It can be found in <<A2B plugin for SigmaStudio+ installation path>>\\Target\\Utility\\
+-  Run Flash_LDR.bat
+
+|image1|
+
+.. container:: centeralign
+
+   \ **Figure :** Flashing ADZS-21569 EZ-KIT
+
+
+-  Once the flashing is complete, change the boot mode to 1 and reset the board. The framework is now ready for download from SigmaStudio+
+
+Running sample Demo
+~~~~~~~~~~~~~~~~~~~
+
+The following steps describe the procedure to run a sample demo in PC mode
+
+-  Open A2B schematic from (<<A2B plugin for SigmaStudio+ installation path>>\\Schematics\\PC\\adi_a2b_ADSP21569Demo.ssprj).
+
+
+|image2|
+
+.. container:: centeralign
+
+   \ **Figure :** Sample demo schematic in PC mode
+
+
+-  Flash the SigmaStudio target framework on ADSP-21569 following steps in :doc:`section (Flashing target framework on ADZS-21569 EZ-KIT) </wiki-migration/resources/tools-software/a2bv2/quickstartguide/adsp-21569_ez-kit_as_a2b_main>`
+-  Make sure that USBi cable is connected to ADSP-21569 EZ-KIT board as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/adsp-21569_ez-kit_as_a2b_main>` and the board is powered on.
+-  Make sure that .xml files are provided for programming codecs on sub A2B evaluation boards as described in step :doc:`Running sample demo: PC as Host </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/pc-as-host>`
+-  Select the schematic DXE for ADSP 21569 processor by going to the SharcXICore Settings as shown in Figure. The DXE can be found at - <<A2B plugin for SigmaStudio+ installation path>>\\Target\\LDR\\SS_App_Core1.dxe
+
+|image3|
+
+.. container:: centeralign
+
+   \ **Figure :** DXE selection for ADSP-21569
+
+
+-  Click on “LinkCompileDownload” icon in SigmaStudio+. This will start the discovery and configuration of A2B nodes and peripheral devices as per the schematic.
+-  After successful discovery and initialization audio routing can be observed as per the sample demo configuration shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`.
+-  In order to change the audio routing, modify the audio schematic under Sharc core of ADSP-21569 EZ-KIT platform. The default routing is as shown in the below Figure
+
+.. note::
+
+   For creation of .dxe file with different settings, refer to :doc:`Appendix Building ADSP-2156x Project </wiki-migration/resources/tools-software/a2bv2/quickstartguide/appendix-d>`.
+
+
+   |image4|
+
+.. container:: centeralign
+
+   \ **Figure :** ADSP-21569 Audio schematic
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/flashing_adzs-21569_ez-kit.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_demo_schematic_in_pcmode.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/dxe_selection_for_adsp-21569.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/adsp-21569_audio_schematic.jpg

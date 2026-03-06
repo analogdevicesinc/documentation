@@ -1,0 +1,165 @@
+AD5421 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5421`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5421SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD5421SDZ <AD5421>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit. Below is presented a picture of the EVAL-AD5421SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_ad5421.jpg
+   :alt: img_ad5421.jpg
+   :align: center
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5421SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5421_-_sdp1z.png
+   :alt: ad5421\_-\_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`AD5421` is a complete, loop-powered, 4 mA to 20 mA digital-to-analog converter (DAC) designed to meet the needs of smart transmitter manufacturers in the industrial control industry. The DAC provides a high precision, fully integrated, low cost solution in a compact TSSOP package. The AD5421 includes a regulated voltage output that is used to power itself and other devices in the transmitter, and 1.22 V and 2.5 V references.
+
+The **EVAL-AD5421SDZ** evaluation board is a member of a growing number of boards available for the SDP. Designed to help customers evaluate performance or quickly prototype new AD5421 circuits and reduce design time, the EVAL-AD5421SDZ evaluation board can operate in single-supply and dual-supply mode and incorporates an internal power supply powered from the USB.
+
+More information
+----------------
+
+-  :adi:`AD5421 Product Info <AD5421>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD5421SDZ evaluation board user guide </static/imported-files/user_guides/UG-250.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-AD5421** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-AD5421 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD5421 Driver:** :git-no-OS:`drivers/dac/ad5421`
+   
+   -  **AD5421 Commands:** :git-no-OS:`device_commands/AD5421`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+
+| Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+|
+
+.. important::
+
+   | To power on the EVAL-AD5421 evaluation board, you need to provide external differential supply voltage from LOOP- to LOOP+ (for more information see: :adi:`EVAL-AD5421SDZ evaluation board user guide </static/imported-files/user_guides/UG-250.pdf>`).
+
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD5421 reference project for Xilinx KC705 FPGA board.
+
+============= ====================================================
+Command       Description
+============= ====================================================
+**help?**     Displays all available commands.
+**reset!**    Resets the AD5421 device.
+**current=**  Sets the output current. Accepted values:
+              4 .. 20 - the desired output current in milliamps.
+**current?**  Displays the output current.
+**register=** Writes to the DAC register. Accepted values:
+              0 .. 65535 - the value written to the DAC.
+**register?** Displays the last written value to the DAC register.
+**offset=**   Sets the offset. Accepted values:
+              -32768 .. +32767 - digital offset adjustment(LSBs)
+**offset?**   Displays the offset.
+**gain=**     Sets the gain. Accepted values:
+              -65535 .. 0 - digital gain adjustment(LSBs)
+**gain?**     Displays the gain.
+**temp?**     Displays the die temperature.
+**vloop?**    Displays the Vloop - COM voltage.
+**faultReg?** Displays the Fault register.
+============= ====================================================
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD5421 IIO DAC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dac/ad5421>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

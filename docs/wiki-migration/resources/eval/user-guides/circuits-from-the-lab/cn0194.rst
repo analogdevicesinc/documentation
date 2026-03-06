@@ -1,0 +1,206 @@
+CN0194 Software User Guide
+==========================
+
+Overview
+--------
+
+:adi:`CN0194` provides galvanic isolation for high speed, high accuracy, simultaneous sampling analog-to-digital conversion applications. The :adi:`AD7685` is a 16-bit, charge redistribution successive approximation (SAR) analog-to-digital converter (ADC) that operates from a single VDD power supply from 2.3V to 5.5V. It contains a low power, high speed, 16-bit sampling ADC with no missing codes, no pipeline delay, an internal conversion clock, and a versatile serial interface port. The ADC also contains a low noise, wide bandwidth, short aperture delay, track-and-hold circuit. The AD7685 PulSAR ADC is versatile and allows monitoring of multiple channels through daisy chaining.
+
+
+|image1|
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-SDP-CB1Z` Evaluation Board (**SDP-B Board**)
+-  :adi:`EVAL-CN0194-SDPZ` Evaluation Board (**CN-0194 Board**)
+-  Power Supply
+
+   -  Adjustable DC power supply, output should satisfy: from +6V to +12V over than 500mA.
+   -  6 to 12V DC wall wart.
+
+-  USB Type-A plug to USB Mini-B plug cable
+-  PC with the following
+
+   -  Microsoft Windows 7 with sp1 x86 or x64 version, or later
+   -  Intel Core processor (x86 or x64 compatible), 2GHz or faster
+   -  At least 4GB RAM and 8GB available hard disk space
+   -  `.NET Framework 4.5 <http://www.microsoft.com/en-us/download/details.aspx?id=30653>`__ or later
+   -  `Microsoft Visual C++ 2010 SP1 Redistributable <http://www.microsoft.com/en-us/download/details.aspx?id=13523>`__
+   -  SDP EEPROM Programmer software
+
+      -  Supplied with CD
+
+   -  CN0194 Programming File
+
+      -  Supplied with CD
+
+   -  CN0194 SDP Evaluation Software
+
+      -  Supplied with CD
+      -  `CN0194_Evaluation_Software.zip <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0194/2.1.0/cn0194_evaluation_software.zip>`__
+
+Connecting the Hardware
+-----------------------
+
+General Setup
+~~~~~~~~~~~~~
+
+-  EVAL-CN0194-SDPZ connects to the SDP-B Board via the 120-Pin connector **CON A**
+-  Connect +6V DC power supplies on the **J1** and **J2** connectors to power the EVAL-CN0194-SDPZ
+-   - EVAL-CN0194-SDPZ is ready to use if diodes **D3**, **D4**, and **D7** light up.
+-  The EVAL-SDP-CB1Z connects to the PC via the USB cable.
+-  Apply the input signals on the provided points on the board labeled **AIN1** and **AIN2**.
+
+Installing the Software
+-----------------------
+
+-  Extract the file **CN0194_Evaluation_Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0194_Evaluation_Software.zip <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0194/2.1.0/cn0194_evaluation_software.zip>`__ to the default directory path **C:\\Program Files\\Analog Devices\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\** *(in 64-bit operational system)*, and all National Instruments products to **C:\\Program Files\\National Instruments\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\National Instruments\\** *(in 64-bit operational system)*
+
+
+   |image2|
+
+   \* Click **Next** to view the installation review page
+
+   |image3|
+
+   \* Click **Next** to start the installation, after the installation, the installer for the **ADI SDP Drivers** will execute.
+
+   |image4|
+
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\DriversR2\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\SDP\\DriversR2\\** *(in 64-bit operational system)*
+
+
+   |image5|
+
+   \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+   |image6|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Software Control and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_use.jpg
+   :width: 1000px
+
+::
+
+   -**Connect/Disconnect Button**
+   * When this button is clicked, the SDP-B Board USB connection to the CN-0194 Board status will be filliped.  A connection to the SDP-B Board must be made to use the software.   
+   -**Capture Data Button**
+   * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
+   -**Save Data Button**
+   * When this button is pressed, the acquired data will be saved (edit).
+   -**Sample Rate Setting**
+   * The speed at which the ADC will convert.
+   -**Samples Setting**
+   * The number which input to this box is use to set the samples for each time the capture data button pressed.
+   -**Channel Display**
+   * Sets which channel is used and displayed.
+   -**Control Tabs**
+   * __Time Domain__ : This tab shows the signal received in the ADC plotted in amplitude vs time. 
+   * __Frequency Domain__ : This tab shows the signal received in the ADC plotted in amplitude vs frequency. This Tab include two indicators to showing the position and velocity output of RDC, update in real time when RDC is converting.
+   * __Histogram__ : This tab shows distribution of the captured signal amplitude displayed as the ADC code.
+   * __S/W Version Info__ : Showing the SDP-B Board information when USB connection available.
+   -**Navigation Tools**
+   * __Cursor__ 
+   * __Magnification__ : Contains magnification tools 
+   * __Hand__ : Used for navigating through the graph
+   -**Axis Tools**
+   * __Text Box__ : Provides easy graph navigation 
+   * __Lock__ : Enables/Disables auto scroll of the graph
+   * __Settings__ : Conatains axis settings
+   -**SDP Status String Indicator**
+   * This indicator displays a message regarding the status of the SDP-B Board.
+   -**Status LED**
+   * This LED showing the ADC working status, when ADC is converting this LED will be light up, otherwise it will be turn off. 
+   -**Frequency Analysis**
+   * __THD__ : Total harmonic distortion
+   * __SNR__ : Signal to noise ratio in decibels
+   * __SINAD__ : Signal over noise and amplitude distortion
+   * __SFDR__ : Spurious free dynamic range
+   * __Sin/N__ : Signal over noise power
+   * __Noise floor__ : Noise power level
+   * __Fund ampl__ : Amplitude of fundamental frequency
+   * __Fund Freq__ : Fundamental frequency of the signal
+   -** SDP Firmware Revision Details **
+   * __Major Rev__: 
+   * __Minor Rev__: 
+   * __Date__: 
+   * __Host Code Rev__: 
+   * __BF Code Rev__: 
+   * __Time__:  
+
+| 
+
+--------------
+
+Establishing a USB Connection Link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Follow the instructions to properly install the software and connect the hardware as described in the previous sections.
+-  Open the file named **CN0194.exe** in the installation directory.
+
+.. note::
+
+   \ **NOTE:** If the software was installed to the default location it will be found at
+
+   **C:\\Program Files\\Analog Devices\\CN0194\\CN0194.exe** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\CN0194\\CN0194.exe** *(in 64-bit operational system)*\
+
+
+\* Click the **Connect Button**. A window with a progress bar will load.
+
+
+
+|image7|
+
+   \* Upon success, the **System Status String Indicator** will display *SDP Board serial number*
+
+--------------
+
+Capturing Data
+~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  **Set the preferred sample rate, samples and channel**.
+-  Click the **Capture Data Button**.
+-  When the number of samples reached the samples setting the converting will stop.
+-  Click the **Save Data Button** to save the conversion data.
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0194-SDPZ?&v=Rev B>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/cn0194-00-1024_sch.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_1.jpg
+   :width: 584px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_2.jpg
+   :width: 584px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_3.jpg
+   :width: 503px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_4.jpg
+   :width: 584px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0194/software_5.jpg
+   :width: 503px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/software4.png
+   :width: 320px

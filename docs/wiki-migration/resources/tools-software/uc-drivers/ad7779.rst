@@ -1,0 +1,302 @@
+AD7779 - No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7770`
+-  :adi:`AD7771`
+-  :adi:`AD7779`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7770-AD7779`
+
+Overview
+--------
+
+The :adi:`AD7779` is an 8-channel, simultaneous sampling ADC. There are eight full sigma-delta (Σ-Δ) ADCs on chip. The :adi:`AD7779` provides an ultralow input current to allow direct sensor connection. Each input channel has a programmable gain stage allowing gains of 1, 2, 4, and 8 to map lower amplitude sensor outputs into the full-scale ADC input range, maximizing the dynamic range of the signal chain. The :adi:`AD7779` accepts VREF from 1 V up to 3.6 V. The analog inputs accept unipolar (0 V to VREF) or true bipolar (±VREF/2 V) analog input signals with 3.3 V or ±1.65 V analog supply voltages, respectively. The analog inputs can be configured to accept true differential or single-ended signals to match different sensor output configurations.
+
+Each channel contains an ADC modulator and a sinc3, low latency digital filter. An SRC is provided to allow fine resolution control over the :adi:`AD7779` ODR. This control can be used in applications where the ODR resolution is required to maintain coherency with 0.01 Hz changes in the line frequency. The SRC is programmable through the serial port interface (SPI). The :adi:`AD7779` implements two different interfaces: a data output interface and SPI control interface. The ADC data output interface is dedicated to transmitting the ADC conversion results from the :adi:`AD7779` to the processor. The SPI interface is used to write to and read from the :adi:`AD7779` configuration registers and for the control and reading of data from the SAR ADC. The SPI interface can also be configured to output the Σ-Δ conversion data.
+
+The :adi:`AD7779` includes a 12-bit SAR ADC. This ADC can be used for :adi:`AD7779` diagnostics without having to decommission one of the Σ-Δ ADC channels dedicated to system measurement functions. With the use of an external multiplexer, which can be controlled through the three general-purpose inputs/outputs pins (GPIOs), and signal conditioning, the SAR ADC can be used to validate the Σ-Δ ADC measurements in applications where functional safety is required. In addition, the :adi:`AD7779` SAR ADC includes as an internal multiplexer to sense internal nodes.
+
+The :adi:`AD7779` contains a 2.5 V reference and reference buffer. The reference has a typical temperature coefficient of 10 ppm/°C. The :adi:`AD7779` offers two modes of operation: high resolution mode and low power mode. High resolution mode provides a higher dynamic range while consuming 10.75 mW per channel; low power mode consumes just 3.37 mW per channel at a reduced dynamic range specification.
+
+The specified operating temperature range is −40°C to +105°C, although the device is operational up to +125°C. Note that throughout this data sheet, certain terms are used to refer to either the multifunction pins or a range of pins. The multifunction pins, such as DCLK0/SDO, are referred to either by the entire pin name or by a single function of the pin, for example, DCLK0, when only that function is relevant. In the case of ranges of pins, AVSSx refers to the following pins: AVSS1A, AVSS1B, AVSS2A, AVSS2B, AVSS3, and AVSS4.
+
+Applications:
+
+-  Circuit breakers
+-  General-purpose data acquisition
+-  Electroencephalography (EEG)
+-  Industrial process control
+
+Driver Description
+------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| Function                                                                                                         | Description                                                                                     |
++==================================================================================================================+=================================================================================================+
+| ``uint8_t ad7779_compute_crc8(uint8_t *data, uint8_t data_size);``                                               | Compute CRC8 checksum.                                                                          |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_spi_int_reg_read(ad7779_dev *dev, uint8_t reg_addr, uint8_t *reg_data);``                       | SPI read from device.                                                                           |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_spi_int_reg_write(ad7779_dev *dev, uint8_t reg_addr, uint8_t reg_data);``                       | SPI write to device.                                                                            |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_spi_int_reg_read_mask(ad7779_dev *dev, uint8_t reg_addr, uint8_t mask, uint8_t *data);``        | SPI read from device using a mask.                                                              |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_spi_int_reg_write_mask(ad7779_dev *dev, uint8_t reg_addr, uint8_t mask, uint8_t data);``        | SPI write to device using a mask.                                                               |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_spi_sar_read_code(ad7779_dev *dev, ad7779_sar_mux mux_next_conv, uint16_t *sar_code);``         | SPI SAR conversion code read.                                                                   |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_spi_op_mode(ad7779_dev *dev, ad7779_spi_op_mode mode);``                                    | Set SPI operation mode.                                                                         |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_spi_op_mode(ad7779_dev *dev, ad7779_spi_op_mode *mode);``                                   | Get SPI operation mode.                                                                         |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_state(ad7779_dev *dev, ad7779_ch ch, ad7779_state state);``                                 | Set the state (enable, disable) of the channel.                                                 |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_state(ad7779_dev *dev, ad7779_ch ch, ad7779_state *state);``                                | Get the state (enable, disable) of the selected channel.                                        |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_do_update_mode_pins(ad7779_dev *dev);``                                                         | Update the state of the MODEx pins according to the settings specified in the device structure. |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_gain(ad7779_dev *dev, ad7779_ch ch, ad7779_gain gain);``                                    | Set the gain of the selected channel.                                                           |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_gain(ad7779_dev *dev, ad7779_ch ch, ad7779_gain *gain);``                                   | Get the gain of the selected channel.                                                           |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_dec_rate(ad7779_dev *dev, uint16_t int_val, uint16_t dec_val);``                            | Set the decimation rate.                                                                        |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_dec_rate(ad7779_dev *dev, uint16_t *int_val, uint16_t *dec_val);``                          | Get the decimation rate.                                                                        |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_power_mode(ad7779_dev *dev, ad7779_pwr_mode pwr_mode);``                                    | Set the power mode.                                                                             |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_power_mode(ad7779_dev *dev, ad7779_pwr_mode *pwr_mode);``                                   | Get the power mode.                                                                             |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_reference_type(ad7779_dev *dev, ad7779_ref_type ref_type);``                                | Set the reference type.                                                                         |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_reference_type(ad7779_dev *dev, ad7779_ref_type *ref_type);``                               | Get the reference type.                                                                         |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_dclk_div(ad7779_dev *dev, ad7768_dclk_div div);``                                           | Set the DCLK divider.                                                                           |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_dclk_div(ad7779_dev *dev, ad7768_dclk_div *div);``                                          | Get the DCLK divider.                                                                           |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_sync_offset(ad7779_dev *dev, ad7779_ch ch, uint8_t sync_offset);``                          | Set the synchronization offset of the selected channel.                                         |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_sync_offset(ad7779_dev *dev, ad7779_ch ch, uint8_t *sync_offset);``                         | Get the synchronization offset of the selected channel.                                         |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_offset_corr(ad7779_dev *dev, ad7779_ch ch, uint32_t offset);``                              | Set the offset correction of the selected channel.                                              |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_offset_corr(ad7779_dev *dev, ad7779_ch ch, uint32_t *offset);``                             | Get the offset correction of the selected channel.                                              |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_gain_corr(ad7779_dev *dev, ad7779_ch ch, uint32_t gain);``                                  | Set the gain correction of the selected channel.                                                |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_gain_corr(ad7779_dev *dev, ad7779_ch ch, uint32_t *gain);``                                 | Get the gain correction of the selected channel.                                                |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_ref_buf_op_mode(ad7779_dev *dev, ad7779_refx_pin refx_pin, ad7779_ref_buf_op_mode mode);``  | Set the reference buffer operation mode of the selected pin.                                    |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_ref_buf_op_mode(ad7779_dev *dev, ad7779_refx_pin refx_pin, ad7779_ref_buf_op_mode *mode);`` | Get the reference buffer operation mode of the selected pin.                                    |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_set_sar_cfg(ad7779_dev *dev, ad7779_state state, ad7779_sar_mux mux);``                         | Set the SAR ADC configuration.                                                                  |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_get_sar_cfg(ad7779_dev *dev, ad7779_state *state, ad7779_sar_mux *mux);``                       | Get the SAR ADC configuration.                                                                  |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_do_single_sar_conv(ad7779_dev *dev, ad7779_sar_mux mux, uint16_t *sar_code);``                  | Do a single SAR conversion.                                                                     |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_do_spi_soft_reset(ad7779_dev *dev);``                                                           | Do a SPI software reset.                                                                        |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7771_set_sinc5_filter_state(ad7779_dev *dev, ad7779_state state);``                                  | Set the state (enable, disable) of the SINC5 filter.                                            |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7771_get_sinc5_filter_state(ad7779_dev *dev, ad7779_state *state);``                                 | Get the state (enable, disable) of the SINC5 filter.                                            |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| ``int32_t ad7779_setup(ad7779_dev **device, ad7779_init_param init_param);``                                     | Initialize the device.                                                                          |
++------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------------------------+
+
+
+| ``typedef enum {                                                              |
+
+|     AD7779_INT_REG,                                                           |
+|     AD7779_SD_CONV,                                                           |
+|     AD7779_SAR_CONV,                                                          |
+| } ad7779_spi_op_mode;                                                         |
+|                                                                               |
+| typedef enum {                                                                |
+|     AD7779_CH0,                                                               |
+|     AD7779_CH1,                                                               |
+|     AD7779_CH2,                                                               |
+|     AD7779_CH3,                                                               |
+|     AD7779_CH4,                                                               |
+|     AD7779_CH5,                                                               |
+|     AD7779_CH6,                                                               |
+|     AD7779_CH7,                                                               |
+| } ad7779_ch;                                                                  |
+|                                                                               |
+| typedef enum {                                                                |
+|     AD7779_ENABLE,                                                            |
+|     AD7779_DISABLE,                                                           |
+| } ad7779_state;                                                               |
+|                                                                               |
+| typedef enum {                                                                |
+|     AD7779_GAIN_1,                                                            |
+|     AD7779_GAIN_2,                                                            |
+|     AD7779_GAIN_4,                                                            |
+|     AD7779_GAIN_8,                                                            |
+| } ad7779_gain;                                                                |
+|                                                                               |
+| typedef enum {                                                                |
+|     AD7779_DCLK_DIV_1,                                                        |
+|     AD7779_DCLK_DIV_2,                                                        |
+|     AD7779_DCLK_DIV_4,                                                        |
+|     AD7779_DCLK_DIV_8,                                                        |
+|     AD7779_DCLK_DIV_16,                                                       |
+|     AD7779_DCLK_DIV_32,                                                       |
+|     AD7779_DCLK_DIV_64,                                                       |
+|     AD7779_DCLK_DIV_128,                                                      |
+| } ad7768_dclk_div;                                                            |
+|                                                                               |
+| typedef enum {                                                                |
+|     AD7779_HIGH_RES,                                                          |
+|     AD7779_LOW_PWR,                                                           |
+| } ad7779_pwr_mode;                                                            |
+|                                                                               |
+| typedef enum {                                                                |
+|     AD7779_EXT_REF,                                                           |
+|     AD7779_INT_REF,                                                           |
+| } ad7779_ref_type;                                                            |
+|                                                                               |
+| typedef enum {                                                                |
+|     AD7779_REFX_P,                                                            |
+|     AD7779_REFX_N,                                                            |
+| } ad7779_refx_pin;                                                            |
+|                                                                               |
+| typedef enum {                                                                |
+|     AD7779_REF_BUF_ENABLED,                                                   |
+|     AD7779_REF_BUF_PRECHARGED,                                                |
+|     AD7779_REF_BUF_DISABLED,                                                  |
+| } ad7779_ref_buf_op_mode;                                                     |
+|                                                                               |
+| typedef enum {                                                                |
+|     AD7779_AUXAINP_AUXAINN,                                                   |
+|     AD7779_DVBE_AVSSX,                                                        |
+|     AD7779_REF1P_REF1N,                                                       |
+|     AD7779_REF2P_REF2N,                                                       |
+|     AD7779_REF_OUT_AVSSX,                                                     |
+|     AD7779_VCM_AVSSX,                                                         |
+|     AD7779_AREG1CAP_AVSSX_ATT,                                                |
+|     AD7779_AREG2CAP_AVSSX_ATT,                                                |
+|     AD7779_DREGCAP_DGND_ATT,                                                  |
+|     AD7779_AVDD1A_AVSSX_ATT,                                                  |
+|     AD7779_AVDD1B_AVSSX_ATT,                                                  |
+|     AD7779_AVDD2A_AVSSX_ATT,                                                  |
+|     AD7779_AVDD2B_AVSSX_ATT,                                                  |
+|     AD7779_IOVDD_DGND_ATT,                                                    |
+|     AD7779_AVDD4_AVSSX,                                                       |
+|     AD7779_DGND_AVSS1A_ATT,                                                   |
+|     AD7779_DGND_AVSS1B_ATT,                                                   |
+|     AD7779_DGND_AVSSX_ATT,                                                    |
+|     AD7779_AVDD4_AVSSX_ATT,                                                   |
+|     AD7779_REF1P_AVSSX,                                                       |
+|     AD7779_REF2P_AVSSX,                                                       |
+|     AD7779_AVSSX_AVDD4_ATT,                                                   |
+| } ad7779_sar_mux;                                                             |
+|                                                                               |
+| typedef struct {                                                              |
+|     /* SPI */                                                                 |
+|     spi_device              spi_dev;                                          |
+|     /* GPIO */                                                                |
+|     gpio_device             gpio_dev;                                         |
+|     int8_t                  gpio_reset;                                       |
+|     int8_t                  gpio_mode0;                                       |
+|     int8_t                  gpio_mode1;                                       |
+|     int8_t                  gpio_mode2;                                       |
+|     int8_t                  gpio_mode3;                                       |
+|     int8_t                  gpio_dclk0;                                       |
+|     int8_t                  gpio_dclk1;                                       |
+|     int8_t                  gpio_dclk2;                                       |
+|     int8_t                  gpio_sync_in;                                     |
+|     int8_t                  gpio_convst_sar;                                  |
+|     /* Device Settings */                                                     |
+|     ad7779_ctrl_mode        ctrl_mode;                                        |
+|     ad7779_state            spi_crc_en;                                       |
+|     ad7779_spi_op_mode      spi_op_mode;                                      |
+|     ad7779_state            state[8];                                         |
+|     ad7779_gain             gain[8];                                          |
+|     uint16_t                dec_rate_int;                                     |
+|     uint16_t                dec_rate_dec;                                     |
+|     ad7779_ref_type         ref_type;                                         |
+|     ad7779_pwr_mode         pwr_mode;                                         |
+|     ad7768_dclk_div         dclk_div;                                         |
+|     uint8_t                 sync_offset[8];                                   |
+|     uint32_t                offset_corr[8];                                   |
+|     uint32_t                gain_corr[8];                                     |
+|     ad7779_ref_buf_op_mode  ref_buf_op_mode[2];                               |
+|     ad7779_state            sar_state;                                        |
+|     ad7779_sar_mux          sar_mux;                                          |
+|     ad7779_state            sinc5_state;    // Can be enabled only for AD7771 |
+|     uint8_t                 cached_reg_val[AD7779_REG_SRC_UPDATE + 1];        |
+| } ad7779_dev;                                                                 |
+|                                                                               |
+| typedef struct {                                                              |
+|     /* SPI */                                                                 |
+|     uint8_t                 spi_chip_select;                                  |
+|     spi_mode                spi_mode;                                         |
+|     spi_type                spi_type;                                         |
+|     uint32_t                spi_device_id;                                    |
+|     /* GPIO */                                                                |
+|     gpio_type               gpio_type;                                        |
+|     uint32_t                gpio_device_id;                                   |
+|     int8_t                  gpio_reset;                                       |
+|     int8_t                  gpio_mode0;                                       |
+|     int8_t                  gpio_mode1;                                       |
+|     int8_t                  gpio_mode2;                                       |
+|     int8_t                  gpio_mode3;                                       |
+|     int8_t                  gpio_dclk0;                                       |
+|     int8_t                  gpio_dclk1;                                       |
+|     int8_t                  gpio_dclk2;                                       |
+|     int8_t                  gpio_sync_in;                                     |
+|     int8_t                  gpio_convst_sar;                                  |
+|     /* Device Settings */                                                     |
+|     ad7779_ctrl_mode        ctrl_mode;                                        |
+|     ad7779_state            spi_crc_en;                                       |
+|     ad7779_state            state[8];                                         |
+|     ad7779_gain             gain[8];                                          |
+|     uint16_t                dec_rate_int;                                     |
+|     uint16_t                dec_rate_dec;                                     |
+|     ad7779_ref_type         ref_type;                                         |
+|     ad7779_pwr_mode         pwr_mode;                                         |
+|     ad7768_dclk_div         dclk_div;                                         |
+|     uint8_t                 sync_offset[8];                                   |
+|     uint32_t                offset_corr[8];                                   |
+|     uint32_t                gain_corr[8];                                     |
+|     ad7779_ref_buf_op_mode  ref_buf_op_mode[2];                               |
+|     ad7779_state            sinc5_state;    // Can be enabled only for AD7771 |
+| } ad7779_init_param;``                                                        |
++-------------------------------------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD7779 Driver.|
+
+   -
+
+   |Header file of AD7779 Driver.|
+
+.. |Implementation of AD7779 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad7779/ad7779`.c
+.. |Header file of AD7779 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad7779/ad7779`.h

@@ -1,0 +1,138 @@
+AD4130 User Guide
+=================
+
+| 
+| The :adi:`EV-AD4130-8ASDZ-U1/EV-AD4130WASDZ-U1 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4130-8.html#eb-overview>` evaluation kit features the AD4130-8 24-bit, ultra-low power, low noise analog-to-digital converter (ADC).
+| The :adi:`EV-AD4130-8ASDZ-U1/EV-AD4130WASDZ-U1 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4130-8.html#eb-overview>` board connects to the USB port of the PC by connecting to the EVAL-SDP-CK1Z motherboard. A 5V USB supply via the PC is regulated to 3.3 V to supply the AD4130-8 and support all necessary components.
+| The :adi:`AD4130-8 ACE Plugin <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4130-8.html#eb-relatedsoftware>` fully configures the AD4130-8 device register functionality and provides dc time domain analysis in the form of waveform graphs, histograms, and associated noise analysis for ADC performance evaluation.
+| The :adi:`EV-AD4130-8ASDZ-U1/EV-AD4130WASDZ-U1 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4130-8.html#eb-overview>` is an evaluation board that allows the user to evaluate the features of the ADC. The user PC software executable controls the AD4130-8 over the USB through the :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-b.html>` or :adi:`EVAL-SDP-CK1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-k1.html>` System Demonstration Platform (SDP) board.
+| Full specifications on the :adi:`AD4130-8 <en/products/ad7124-8.html>` are available in the product data sheet, which should be consulted in conjunction with this user guide when working with the evaluation board.
+| |image1|
+| ====Features====
+
+-  Full featured evaluation board for the AD4130-8
+   \* PC control in conjunction with Analog Devices, Inc. System
+   \* Demonstration Platform (:adi:`EVAL-SDP-CK1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-k1.html>`)
+   \* PC software for control and data analysis (time domain)
+   \* Standalone capability
+   ====Equipment Needed====
+-  :adi:`EV-AD4130-8ASDZ-U1/EV-AD4130WASDZ-U1 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4130-8.html#eb-overview>` evaluation board
+   \* :adi:`EVAL-SDP-CK1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-k1.html>` System Demonstration Platform
+   \* DC signal source
+   \* USB cable
+   \* PC running Windows with USB 2.0 port
+   ====Related Documents====
+-  :adi:`AD4130-8 Data Sheet <media/en/technical-documentation/data-sheets/ad4130-8.pdf>`
+   ====Required Software====
+-  :adi:`ACE Software <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`
+   \* :adi:`AD4130-8 ACE Plugin <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4130-8.html#eb-relatedsoftware>`
+
+Quick Start Guide
+=================
+
+| To begin using the evaluation board, do the following:
+| \* With the SDP board disconnected from the USB port of the PC, install the ACE software (can be downloaded online). Restart the PC after the software installation is complete. (For complete software installation instructions, see the Evaluation Software section.)
+
+-  Connect the SDP board to the EV-AD4130-8ASDZ-U1/EV-AD4130WASDZ-U1 board.
+
+::
+
+           *{{:resources:wechat_image_20210401114013.jpg?300|}}   {{:resources:wechat_image_20210401114000.jpg?300|}}
+   * Connect the SDP board to the PC using the supplied USB cable. If you are using Windows® XP, you may need to search for the [[http://swdownloads.analog.com/ACE/SDP/SDPDrivers.exe|EVAL-SDP-CB1Z\ EVAL-SDP-CK1Z drivers]]. Choose to automatically search for the drivers for the SDP board if prompted by the operating system.\\
+           *{{:resources:wechat_image_20210401123147.jpg?300|}}
+   * From the Programs menu, go to the Analog Devices subfolder, and click ACE to launch the AD4130-8 ACE Plugin (see the Launching the Software section).
+           *{{:resources:screenshot_2021-04-01_123406.png?400|}}
+
+Hardware Guide
+==============
+
+| Visit the hardware guide chapter `here <:doc:`/wiki-migration/resources/eval/user-guides/ad4130/hardwareguide`>`__
+| **Contents of the Hardware guide**:
+
+-  Device Description
+-  Set Up Procedures
+-  Hardware Link Options
+-  On-Board Connecters
+-  Power Supplies
+-  Serial Interface
+-  Analog Inputs
+-  Reference Options
+
+| 
+
+Software Guide
+==============
+
+| Visit the software guide chapter `here <:doc:`/wiki-migration/resources/eval/user-guides/ad4130/softwareguide`>`__
+| **Contents of the Software guide**:
+
+-  `Ace Plugin <https://wiki.analog.com/resources/eval/user-guides/ad4130/softwareprocedures>`__
+-  `Ace Plugin Install <https://wiki.analog.com/resources/eval/user-guides/ad4130/softwareprocedures>`__
+-  `Ace Plugin Operation <https://wiki.analog.com/resources/eval/user-guides/ad4130/softwareprocedures>`__
+-  `Ace Plugin Demo Modes <https://wiki.analog.com/resources/eval/user-guides/ad4130/softwareprocedures>`__
+
+   -  :doc:`Noise Test Demo </wiki-migration/resources/eval/user-guides/ad4130/noisetest>`
+
+      -  2 Wire RTD Demo
+
+         -  3 Wire RTD Demo
+
+            -  :doc:`4 Wire RTD Demo </wiki-migration/resources/eval/user-guides/ad4130/4wirertdtest>`
+            -  Thermocouple Demo
+            -  4 Wire Bridge Demo
+            -  Thermistor
+            -  :doc:`AD4130-8 Current Consumption Demo </wiki-migration/resources/eval/user-guides/ad4130/current>`
+
+      -   :doc:`Ace Plugin Software Tools and Analysis Windows </wiki-migration/resources/eval/user-guides/ad4130/tools>`
+
+::
+
+           *[[/resources/eval/user-guides/ad4130/map|Memory Map]]
+           *[[/resources/eval/user-guides/ad4130/seq_timing_diagram|Sequencer Timing Diagram]]
+           *[[/resources/eval/user-guides/ad4130/seq_timing_diagram|FIFO Timing Diagram]]
+           *[[/resources/eval/user-guides/ad4130/power|Power Calculator]]
+           *[[/resources/eval/user-guides/ad4130/analysiswindow|Analysis Window]]
+           *[[/resources/eval/user-guides/ad4130/demoanalysiswindow|Noise(Simulation Analysis) Window]]
+           *[[/resources/eval/user-guides/ad4130/filter|Frequency Response Window]]
+           *[[/resources/eval/user-guides/ad4130/step|Step Response Window]]
+   * [[/resources/eval/user-guides/ad4130/softwareprocedures#virtual_eval_guide|Virtual Eval Guide]]
+   * [[/resources/eval/user-guides/ad4130/mbed_iio_app|AD4130 Firmware]]
+
+| 
+
+FIFO
+====
+
+Quick Start Demonstration
+-------------------------
+
+To acquire data from the EV-AD4130WASDZ-U1 without using the FIFO the int_pin_sel bitfield in the io_control_1 register need to be set to “11”.
+
+Configuring the AD4130 FIFO
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  When using the FIFO on the AD4130 the int_pin_sel bitfield in the io_control_1 register need to be set to “00”.
+-  Expand the fifo_ctrl register in the AD4130 Memory Map.
+-  The default value for the watermark bitfield is “0000 0000” which equates to 256 conversions.
+
+   -
+
+
+   |image2|
+
+-  The fifo_mode bitfield sets which config the FIFO is setup for.
+
+   -
+
+
+   |image3|
+
+-  The FIFO will start gathering conversions as soon as the Apply Changes button clicked in the AD4130 Memory Map Tab.
+-  Go the Analysis tab and select the Run Continuous button.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/screenshot_2021-03-25_173601.png
+   :width: 800px
+.. |image2| image:: https://wiki.analog.com/_media/resources/screenshot_2021-04-09_141942.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/screenshot_2021-04-09_142004.png
+   :width: 400px

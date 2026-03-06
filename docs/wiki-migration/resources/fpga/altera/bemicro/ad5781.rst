@@ -1,0 +1,238 @@
+BeMicro FPGA Project for AD5781 with Nios driver
+================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5781`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5781SDZ`
+
+Overview
+========
+
+This lab presents the steps to setup an environment for using the :adi:`EVAL-AD5781SDZ` evaluation board together with the `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__ USB stick, the Nios II Embedded Development Suite (EDS) and the `Micrium μC-Probe <http://micrium.com/tools/ucprobe/overview/>`__ run-time monitoring tool. Below is presented a picture of the EVAL-AD5781SDZ Evaluation Board with the BeMicro SDK Platform.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5781_bemicro.png
+   :alt: ad5781_bemicro.png
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5781SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5781_sdp1z.png
+   :alt: ad5781_sdp1z.png
+   :align: center
+   :width: 400px
+
+The **EVAL-AD5781SDZ** is a full-featured evaluation board, designed to allow the user to easily evaluate all features of the AD5781 voltage output, 18-bit DAC. The AD5781 pins are accessible at on-board connectors for external connection. The board can be controlled by two means, via the on-board connector (J6) or via the system development platform connector (J3).
+
+The :adi:`AD5781` is a high precision, 18-bit digital-to-analog converter (DAC), designed to meet the requirements of precision control applications. The output range of the AD5781 is configured by two reference voltage inputs. The device is specified to operate with a dual power supply of up to 33 V.
+
+More information
+----------------
+
+-  :adi:`AD5781 Product Info <AD5781>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD5781SDZ evaluation board user guide </static/imported-files/user_guides/UG-184.pdf>`
+-  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__
+-  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`__
+-  `Micrium uC-Probe <http://micrium.com/tools/ucprobe/overview/>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Hardware Items
+--------------
+
+Below is presented the list of required hardware items:
+
+-  Arrow Electronics `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__ FPGA-based MCU Evaluation Board
+-  :adi:`BeMicro SDK/SDP Interposer <sdp-bemicro>` adapter board
+-  **EVAL-AD5781SDZ** evaluation board
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+
+Software Tools
+--------------
+
+Below is presented the list of required software tools:
+
+-  `Quartus II Web Edition <http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html>`__ design software v11.0
+-  `Nios II EDS <https://www.altera.com/download/software/nios-ii>`__ v11.0
+-  `uC-Probe <http://micrium.com/tools/ucprobe/trial/>`__ run-time monitoring tool, version 2.5
+
+The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
+
+The **Micrium uC/Probe Trial** version 2.5 is available via download from the web at http://micrium.com/tools/ucprobe/trial/. After installation add to the “Path” system variable the entry "*%QUARTUS_ROOTDIR%\\bin\\*\ “ on the third position in the list.
+
+Downloads
+---------
+
+-  `Lab Design Files <https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5781_evalboardlab.zip>`__
+
+Extract the Lab Files
+---------------------
+
+Create a folder called “\ **ADIEvalBoardLab**\ ” on your PC and extract the **AD5781_EvalBoardLab.zip** archive to this folder. Make sure that there are **NO SPACES** in the directory path. After extracting the archive the following folders should be present in the **ADIEvalBoardLab** folder: **FPGA**, **Software**, **ucProbeInterface**, **NiosCpu**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/labfolders.png
+   :alt: labfolders.png
+   :align: center
+   :width: 500px
+
+
+.. note::
+
+   See `common_usb <https://wiki.analog.com/common_usb>`__
+
+
+Quick Evaluation
+================
+
+
+.. note::
+
+   See `common_quick_eval <https://wiki.analog.com/common_quick_eval>`__
+
+
+FPGA Design
+===========
+
+
+.. note::
+
+   See `common_spi_i2c <https://wiki.analog.com/common_spi_i2c>`__
+
+
+NIOS II Software Design
+=======================
+
+
+.. note::
+
+   See `common <https://wiki.analog.com/common>`__
+
+
+uC-Probe Interface
+==================
+
+A notable challenge in embedded systems development is to overcome the lack of feedback that such systems typically provide. Many developers resort to blinking LEDs or instrumenting their code with *printf()* in order to determine whether or not their systems are running as expected. **Micrium** provides a unique tool named **µC-Probe** to assist these developers. With this tool, developers can effortlessly read and write the variables on a running embedded system. This section presents the steps required to install the **Micrium uC-Probe** software tool and to run the demonstration project for the ADI evaluation board. A description of the **uC-Probe** demonstration interface is provided.
+
+Configure uC-Probe
+------------------
+
+Launch **uC-Probe** from the **Start -> All Programs -> Micrium -> uC-Probe**.
+
+Select **uC-Probe** options.
+
+-  Click on the **uC-Probe** icon on the top left portion of the screen.
+-  Click on the **Options** button to open the dialog box.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeoptionsbtn.png
+   :alt: ucprobeoptionsbtn.png
+   :align: center
+   :width: 300px
+
+Set target board communication protocol as **JTAG UART**
+
+-  Click on the **Communication** tab icon on the top left portion of the dialog box
+-  Select the **JTAG UART** option.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image067.png
+   :alt: image067.png
+   :align: center
+   :width: 400px
+
+Setup **JTAG UART** communication settings
+
+-  Select the **JTAG-UART** option from the **Communication** tab.
+-  Press the **Open File** button to select the JTAG Debug Information file (**.jdi**)
+-  Navigate to the **ADIEvalBoardLab/FPGA** folder and select the BeMicroSDK.jdi file. Press Open.
+-  Type the value **1** in the the **Device Id** window.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeoptionsjtag.png
+   :alt: ucprobeoptionsjtag.png
+   :align: center
+   :width: 400px
+
+-  Select **uCProbe_uart(0)** from the **Instance Id** pulldown menu.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image073.png
+   :alt: image073.png
+   :align: center
+   :width: 400px
+
+-  Press **Apply** and **OK** to exit the options menu. The embedded target has two UARTs. **uC-Probe** will be communicating with the **uCProbe_uart**.
+
+Load and Run the Demonstration Project
+--------------------------------------
+
+-  Click the **Open** option from the **uC-Probe** menu and select the file **ADIEvalBoardLab/ucProbeInterface/AD5781_Interface.wsp**.
+
+|ucprobeopenfile.png|\ |ad5781interfaceopen.png|
+
+-  Before opening the interface **uC-Probe** will ask for a symbols file that must be associated with the interface. If the lab was done according to the steps provided in the **Quick Evaluation** section, select the file **ADIEvalBoardLab/ucProbeInterface/ADIEvalBoard.elf** to be loaded as a symbol file, otherwise select the file **ADIEvalBoardLab/FPGA/software/ADIEvalBoard/ADIEvalBoard.elf** to be loaded as a symbol file.
+
+|ucprobeopenelfquickeval.png|\ |ucprobeopenelfnormal.png|
+
+-  Run the demonstration project by pressing the **Play** button.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image081.png
+   :alt: image081.png
+   :align: center
+   :width: 400px
+
+Demonstration Project User Interface
+====================================
+
+The following figure presents the **uC-Probe** interface that can be used for monitoring and controlling the operation of the **EVAL-AD5781SDZ** evaluation board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5781interface.png
+   :alt: ad5781interface.png
+   :align: center
+   :width: 700px
+
+The communication with the board is activated / deactivated by toggling the **ON/OFF** switch. The **Activity** LED turns green when the communication is active. If the **ON/OFF** switch is set to **ON** and the Activity LED is BLACK it means that there is a communication problem with the board. See the **Troubleshooting** section for indications on how to fix the communication problems.
+
+The value of the AD5781 *DAC Register* is changed using the slider located under the **DAC Register Value (18-bit)** label. The selected value is displayed in the red numeric box located next to the slider.
+
+The value of the AD5781 Clearcode Register is changed using the slider located under the **Clearcode Register Value (18-bit)** label. The selected value is displayed in the red numeric box located next to the slider.
+
+The sliders **Vref+** and **Vref-** are used to specify the reference voltages set on the evaluation board.
+
+The DAC’s output voltage is displayed in the numeric box having the label **Output voltage**.
+
+The values of the *Control Register’s* bits are indicated by the LEDs situated to the right of the **Control Register** label. When a LED id lit it means that the corresponding bit’s value is 1.
+
+The values of the *Status Control Register’s* bits are indicated by the LEDs situated to the right of the **Status Control Register** label. When a LED id lit it means that the corresponding bit’s value is 1.
+
+The DAC register coding is controlled by the **DAC Register Coding** switch. When the switch is set to the **B0** position the binary offset coding is selected by setting the *BIN/2sC* bit of the *Control Register* to 1. When the switch is set to the **C2** position the two’s complement coding is selected by setting the *BIN/2sC* bit of the *Control Register* to 0.
+
+The **Load DAC** switch is used to control the *LDAC* signal of the AD5781. When the switch is pressed the DAC register (and consequently the DAC’s output) is updated with the contents of the DAC’s input register.
+
+The **RBUF Control** switch is used to set the value of the *RBUF* bit from the *Control Register*. When the switch is active the bit’s value is set to 1.
+
+
+.. note::
+
+   See `troubleshooting <https://wiki.analog.com/troubleshooting>`__
+
+
+.. |ucprobeopenfile.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenfile.png
+   :width: 400px
+.. |ad5781interfaceopen.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5781interfaceopen.png
+   :width: 400px
+.. |ucprobeopenelfquickeval.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenelfquickeval.png
+   :width: 300px
+.. |ucprobeopenelfnormal.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenelfnormal.png
+   :width: 300px

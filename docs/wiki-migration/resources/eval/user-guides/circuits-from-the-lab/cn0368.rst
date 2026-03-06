@@ -1,0 +1,185 @@
+Magneto-Resistive Rotational Position Measurement (CN0368)
+==========================================================
+
+Overview
+--------
+
+This circuit provides a contactless, AMR (Anisotropic Magneto Resistive) based angle measurement solution ideal for angle and linear position measurements. The system is capable of providing better than 0.2 degree accuracy. This translates into a linear position accuracy of 2 mil (0.002 inches).
+
+The circuit is ideal for applications where high speed, accurate, non-contact angle and length measurements are critical such as brushless DC motor control.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/cn0368.jpg
+   :align: center
+   :width: 600px
+
+General Setup
+-------------
+
+::
+
+   *One [[:adi:`CN0368|EVAL-CN0368-SDPZ]]` Evaluation Board
+   *[[:adi:`EVAL-SDP-CB1Z|EVAL-SDP-CB1Z]]` Evaluation board
+   *[[/ftp/ftp.analog.com/pub/cftl/cn0368|CN0368 Evaluation Software]]
+   *One USB Type-A plug to USB Mini-B plug cable.
+   *One of the following:
+     *6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
+     *DC power supply with a 0-6V output.  (HP6236B) 
+     *One diametrically magnetized Neodymium magnet 
+     *One Neodymium magnet approximately two inches in length, magnetized along the length of the magnet.
+
+Minimum PC/System Requirements
+------------------------------
+
+-  One PC with the following
+
+   -  Windows XP SP2, Windows Vista or Windows 7 Business/Enterprise/Ultimate editions
+   -  Intel Pentium processor (x86 compatible), 1GHz or faster
+   -  512 MB RAM and 2 GB available hard disk space
+   -  .NET 3.5 Framework
+
+How to Install the Evaluation Software
+--------------------------------------
+
+-  Extract the files within the file **CN0368 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0368 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0368\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+|image1|
+
+-  Press **“Next”**.\
+
+|image2|
+
+-  Press **“Next”**.\
+
+|image3|
+
+-  Press **“Next”**.
+-  Upon completion of the installation of the **CN0368 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
+-
+
+|image4|
+
+-  Press **“Next”**.
+-  It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**
+-  Press **“Install”** to install the Drivers and complete the installation of all software necessary to evaluate the **EVAL-CN0368-SDPZ**
+
+Opening and Enabling the Evaluation Software
+--------------------------------------------
+
+-  Launch the executable found at **C:\\Program Files\\Analog Devices\\CN0368** and press the **“Connect"** button.
+-
+
+|image5|
+
+Calibration Methods
+-------------------
+
+Single Temperature Calibration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Single Temperature Calibration method allows the user to calculate VSIN_Offset and VCOS_Offset before calculating the magnetic field angle. This eliminates any error sources associated with a dynamic calibration procedure, but requires extra steps and time.
+
+-  Select '**Single Temperature Calibration**' from the drop down menu.
+-
+
+|image6|
+
+-  A prompt will appear instructing the user to rotate the magnetic stimulus through 360 degrees.
+
+   -  In this time the software is actively calculating VSIN_Offset and VCOS_Offset.
+
+-  Press '**End Calibration**' when finished.
+
+   -  The software will display the magnetic field angle, VSIN_Offset, and VCOS_Offset.
+
+-  Press '**Sample Data**' to actively calculate the magnetic field angle using the offsets calculated during the Single Temperature Calibration.
+-
+
+|image7|
+
+-  Press '**Click to Stop**' when finished.
+
+Multiple Temperature Calibration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Multiple Temperature Calibration procedure is a method of compensating for temperature effects experienced by the amplifier and ADC. The temperature coefficients and offsets are calculated to provide a more accurate magnetic field angle and system response.
+
+-  Select **Multiple Temperature Calibration** from the drop down menu.
+-  Place the hardware in a temperature controlled environment at the desired T1.
+-
+
+|image8|
+
+-  Press **Ok**.
+-
+
+|image9|
+
+-  Rotate the stimulus through 360 degrees while VSIN_Offset_T1 and VCOS_Offset_T1 are calculated.
+-  Press **Ok**.
+-
+
+|image10|
+
+-  Place the hardware in a temperature controlled environment at the desired T2.
+-  Press **Ok**.
+-
+
+|image11|
+
+-  Rotate the stimulus through 360 degrees while VSIN_Offset_T2 and VCOS_Offset_T2 are calculated.
+-  Press **Ok**.
+-  Press **Sample Data** to observe the magnetic field angle results corrected for temperature and offset effects.
+
+Dynamic Calibration
+~~~~~~~~~~~~~~~~~~~
+
+The Dynamic Calibration method actively calculates VSIN_Offset and VCOS_Offset as the magnetic stimulus rotates through 360 degrees. The software then subtracts these offsets in real time. This method is simpler than the Single Temperature Calibration and Multiple Temperature Calibration and can be implemented faster, with more ease.
+
+-  Select '**Dynamic Calibration**' from the drop down menu.
+-
+
+|image12|
+
+-  The software will automatically begin to sample and convert the VSIN and VCOS channels of the ADA4571.
+-  Rotate the magnetic stimulus through 360 degrees.
+-  The software will display the magnetic field angle, VSIN_Offset, and VCOS_Offset as the stimulus is rotated.
+
+   -  Early calculations for the magnetic field angle will have large errors until the offset's are calculated more precisely, the accuracy of the system will quickly improve with as few as one or two rotations are required.
+
+-  Press '**Click to Stop**' when finished.
+
+   -  The software will revert to its starting position allowing you to experiment with a new calibration method, or simply to sample data with the existing calibration data.
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0368-SDPZ?&v=RevA>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/software_2.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/software_3.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/software_5.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/software_6.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/software_8.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/single_temperature_calibration.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/sample_data.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/multiple_temperature_calibration_1.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/multiple_temperature_calibration_2.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/multiple_temperature_calibration_3.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/multiple_temperature_calibration_4.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0368/dynamic_calibration_2.png
+   :width: 600px

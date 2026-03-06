@@ -1,0 +1,17 @@
+SigmaDSP Architecture (AD1941)
+==============================
+
+:doc:`Click here to return to the SigmaDSP Architecture page </wiki-migration/resources/tools-software/sigmastudio/sigmadsparchitecture>`
+
+| The basic AD1940 Sigma DSP architecture comprises these components:
+
+-  Program RAM stores functionality and execution information, meaning it dictates the signal flow and chain of operations (+, -, x, /, etc.) that are entered for execution.
+-  Parameter RAM and Data Memory. Parameter RAM stores parameter information (either from you or the result of a core operation). The data memory stores serial information, usually audio samples or the result of core operations.
+-  Safeload registers help load parameters smoothly.
+-  :doc:`Target Slew Ram </wiki-migration/resources/tools-software/sigmastudio/sigmadsparchitecture/ad1940/targetslewram>` are registers that help update parameters smoothly.
+-  Depending on the processor there are also additional registers: data capture; DSP core control; and serial input and output control.
+
+| |1940arch.png|
+| This section of the helpfile contains a general summary of AD1940 features and microcontroller considerations. For details concerning these subjects beyond what is in the individual help topics, refer to the ADI website, navigating to your part's datasheet at www.analog.com/sigmadsp.
+
+.. |1940arch.png| image:: https://wiki.analog.com/_media/1940arch.png

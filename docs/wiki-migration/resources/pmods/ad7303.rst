@@ -1,0 +1,10 @@
+The :adi:`AD7303` is a dual, 8-bit voltage out DAC that operates from a single +2.7 V to +5.5 V supply. Its on-chip precision output buffers allow the DAC outputs to swing rail to rail. This device uses a versatile 3-wire serial interface that operates at clock rates up to 30 MHz, and is compatible with QSPI, SPI, microwire and digital signal processor interface standards. The serial input register is sixteen bits wide; 8 bits act as data bits for the DACs, and the remaining eight bits make up a control register.
+
+The on-chip control register is used to address the relevant DAC, to power down the complete device or an individual DAC, to select internal or external reference and to provide a synchronous loading facility for simultaneous update of the DAC outputs with a software LDAC function.
+
+The low power consumption of this part makes it ideally suited to portable battery operated equipment. The power consumption is 7.5 mW max at 3 V, reducing to less than 3 µW in full power-down mode.
+
+The :adi:`AD7303` is available in an 8-pin plastic dual in-line package, 8-lead SOIC and microSOIC packages.
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad7303_pmod_da1.jpg
+   :align: center

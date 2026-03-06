@@ -1,0 +1,17 @@
+AD74412R/AD74413R Wiki
+======================
+
+Introduction
+------------
+
+The AD74412R and AD74413R are quad-channel software configurable input/output devices. They are designed for, but not exclusive to, building control & process control applications. The products provide analog output, analog input, digital input, resistance temperature detector (RTD) and thermocouple measurements integrated into a single chip solution with a serial peripheral interface (SPI). Datasheet and evaluation details can be found at the relevant product pages. See the links below:
+
+-  :adi:`AD74412R product page <en/products/ad74412r.html>`
+-  :adi:`AD74413R product page <en/products/ad74413r.html>`
+
+This Wiki provides additional information on usage options for the software configurable I/O devices.
+
+-  :doc:`Thermocouple & Cold Junction Compensation Measurements </wiki-migration/resources/eval/user-guides/eval-ad7441x/tools/thermocouple>`
+-  :doc:`Supporting 3-wire RTD Measurements </wiki-migration/resources/eval/user-guides/eval-ad7441x/tools/3wrtd>`
+-  :doc:`Fault Detection & Diagnostics with AD74412R/AD74413R </wiki-migration/resources/eval/user-guides/eval-ad7441x0/tools/diagnostics>`
+-  :doc:`Commissioning made easy with AD74412R/AD74413R </wiki-migration/resources/eval/user-guides/eval-ad7441x0/tools/commissioning>`

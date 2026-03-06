@@ -1,0 +1,294 @@
+CN-0383 Hardware and Software User Guide
+========================================
+
+Overview
+--------
+
+:adi:`CN0383` is a completely integrated 2-wire/3-wire/4-wire resistance temperature detector (RTD) measurement system using a low power, precision, 24-Bit Sigma-Delta ADC optimized for high precision measurement applications. With a two-point calibration and linearization, the overall 3-wire and 4-wire system accuracy is better than ±1°C over a temperature range of −50°C to +200°C and ±1°C accuracy over a temperature range of -50°C to +165°C for 2-wire system.
+
+The :adi:`AD7124-4 <en/products/ad7124-4.html>` can be configured for 4 differential or 7 pseudo differential input channels, while the :adi:`AD7124-8 <en/products/ad7124-8.html>` can be configured for 8 differential or 15 pseudo differential channels. The on-chip programmable gain array (PGA) ensures that signals of small amplitude can be interfaced directly to the ADC. The :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` establishes the highest degree of signal chain integration, which includes programmable low drift excitation current sources. Therefore, the design of an RTD system is greatly simplified because most of the required RTD measurement system building blocks are included on-chip. The :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` gives the user the flexibility to employ one of three integrated power modes, where the current consumption, range of output data rates, and rms noise are tailored with the power mode selected. The current consumed by the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` is only 255 µA in low power mode and 930 µA in full power mode. The power options make the device suitable for non-power critical applications, such as input/output modules, and also for low power applications, such as loop-powered smart transmitters where the complete transmitter must consume less than 4 mA.
+
+The device also has a power down option. In power-down mode, the complete ADC along with its auxiliary functions are powered down so that the device consumes 1 µA typical. The\ :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` also has extensive diagnostic functionality integrated as part of its comprehensive feature set.
+
+This user guide will discuss how to operate the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` (CN-0383 Evaluation Hardware), the :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>` (SDP-B)/:adi:`EVAL-SDP-CK1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-k1.html>` (SDP-K1) and the `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/ad7124>`__. A complete design support package for the CN-0383 evaluation material containing schematics, layouts (native and Gerber), and bill-of-materials can be found at: :adi:`CN0383-DesignSupport`.
+
+
+|image1|
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` (CN-0383 Evaluation Hardware)
+-  :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>` (SDP-B) or :adi:`EVAL-SDP-CK1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-k1.html>` (SDP-K1) controller board
+-  `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/ad7124>`__
+-  Power supply: USB
+-  Class B Pt100 2-wire/3-wire/4-wire RTD
+-  A PC running Windows® with USB 2.0 port
+
+Getting Started
+---------------
+
+A complete software user guide for the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` and the SDP board can be found in the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` user guide and the :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>`/:adi:`EVAL-SDP-CK1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-k1.html>` User Guide. Software is required to interface with the hardware. This software can be downloaded from ftp://ftp.analog.com/pub/evalcd/AD7124. If the setup file does not run automatically, double-click setup.exe from the file. Install the evaluation software before connecting the evaluation board and SDP board to the USB port of the PC to ensure that the evaluation system is correctly recognized when connected to the PC. After the evaluation software installation is complete, connect the SDP board (via Connector A) to the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` and then connect the SDP board to the USB port of the PC using the supplied cable. When the evaluation system is detected, proceed through any dialog boxes that appear to complete the installation.
+
+General Setup and Test
+----------------------
+
+Do not connect power to the hardware until both the EVAL-AD7124-4SDZ/EVAL-AD7124-8SDZ and SDP boards are connected via connector A. Figure below shows a functional block diagram of the test setup for the 2-wire, 3-wire or 4-wire RTD configuration. The :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` evaluation board is required to test the circuit. In addition, the following sensor and resistors are required for proper operation:
+
+-  2-wire/3-wire/4-wire Pt100 RTD, Class B
+-  5.11 kΩ precision resistor
+-  250 Ω resistor for buffer headroom (not needed for 3-wire RTD configuration, but included for completeness because it may be required if a Pt1000 RTD is used with a gain of 1)
+
+2-wire RTD
+~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0383/2_wire_functional_diagram.png
+   :align: center
+   :width: 400px
+
+.. _wire-rtd-1:
+
+3-wire RTD
+~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/3_wire_functional_diagram.png
+   :align: center
+   :width: 400px
+
+.. _wire-rtd-2:
+
+4-wire RTD
+~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/4_wire_functional.png
+   :align: center
+   :width: 400px
+
+Hardware Setup
+--------------
+
+To configure the hardware, take the following steps:
+
+-  Set all links on the EVAL-AD7124-4SDZ/EVAL-AD7124-8SDZ to the default board positions as outlined in the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` user guide.
+-  Connect the RTD, precision reference resistor, and resistor for headroom depending on which RTD configuration is using (2-wire/3-wire/4-wire). See figure below.
+-  For RTD measurements, ensure that the following jumpers are removed.
+
+   -  LK3 - Jumper from REFIN- to AVss, this jumper should be removed.
+   -  LK4 - This jumper is used to apply external 2.5V or internal 2.5V to REFIN+, this jumper should be removed.
+   -  LK5 - This is the jumper used for the noise test, the function of this jumper is to short AIN0 to AIN1, this jumper should be removed.
+
+-  Connect the SDP board to the PC via the USB cable.
+
+Evaluation Board Connector for 2-Wire RTD Measurement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn-0383/2-wire_connector.png
+   :align: center
+   :width: 600px
+
+Evaluation Board Connector for 3-Wire RTD Measurement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/3-wire_circuit.png
+   :align: center
+   :width: 600px
+
+Evaluation Board Connector for 4-Wire RTD Measurement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/4_wire_circuit.png
+   :align: center
+   :width: 600px
+
+Using the Evaluation Software
+-----------------------------
+
+The `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/ad7124>`__ interfaces with the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` and :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>` hardware. It can be used to connect to the hardware, configure the ADC, perform a calibrations and execute conversions to evaluate each RTD configuration (CN-0383) reference design.
+
+Run the `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/ad7124>`__, The evaluation software supports both the :adi:`AD7124-4 <en/products/ad7124-4.html>` and the :adi:`AD7124-8 <en/products/ad7124-8.html>` devices. On running the software, the user selects the evaluation board that is connected to the PC. For the AD7124-4, select :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>` from the drop-down list, as shown in Figure below.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/drop_down.png
+   :align: center
+   :width: 400px
+
+After selecting the Evaluation board, the window shown in Figure below appears.
+
+
+|image2|
+
+Demo Mode and ADC Software Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To configure the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` for 2-wire/3-wire/4-wire RTD measurements, click the **2-WIRE RTD/3-WIRE RTD/4-WIRE RTD demo mode button** (see Figure above). Clicking the demo mode button configures the ADC software for each RTD configurations. Also, make sure that you follow the instructions indicated in the |image3| beside each RTD configuration.
+
+2-WIRE RTD demo mode
+^^^^^^^^^^^^^^^^^^^^
+
+To configure the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` for 2-wire RTD measurements, click the 2-WIRE RTD demo mode button. Clicking the 2-WIRE RTD button configures the ADC software as follows:
+
+**1. Channel_0:**
+
+-  AINP_0 = AIN2
+-  AINM_0 = AIN3
+-  Setup0
+-  Enabled = TRUE
+
+**2. Setup_0:**
+
+-  PGA_0 = 16
+-  AIN_BUFP, AIN_BUFM both = ENABLED
+-  BIPOLAR = ENABLED
+-  FS_0 = 384
+-  FILTER_MODE_0 = SINC4
+
+**3. ADC_Control:**
+
+-  MODE = Continuous Conversion
+-  POWER_MODE = FULL
+
+**4. IO_CONTROL_1:**
+
+-  IOUT0 Channel Enable = AIN1
+-  IOUT0 Select = 500 µA
+
+.. _wire-rtd-demo-mode-1:
+
+3-WIRE RTD demo mode
+^^^^^^^^^^^^^^^^^^^^
+
+To configure the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` for 3-wire RTD measurements, click the 3-WIRE RTD demo mode button. Clicking the 3-WIRE RTD button configures the ADC software as follows:
+
+**1. Channel_0:**
+
+-  AINP_0 = AIN2
+-  AINM_0 = AIN3
+-  Setup0
+-  Enabled = TRUE
+
+**2. Setup_0:**
+
+-  PGA_0 = 16
+-  AIN_BUFP, AIN_BUFM both = ENABLED
+-  BIPOLAR = ENABLED
+-  FS_0 = 384
+-  FILTER_MODE_0 = SINC4
+
+**3. ADC_Control:**
+
+-  MODE = Continuous Conversion
+-  POWER_MODE = FULL
+
+**4. IO_CONTROL_1:**
+
+-  IOUT0 Channel Enable = AIN1
+-  IOUT0 Select = 500 µA
+-  IOUT1 Channel Enable = AIN1
+-  IOUT1 Select = 500 µA
+
+.. _wire-rtd-demo-mode-2:
+
+4-WIRE RTD demo mode
+^^^^^^^^^^^^^^^^^^^^
+
+To configure the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` for 4-wire RTD measurements, click the 4-WIRE RTD demo mode button. Clicking the 4-WIRE RTD button configures the ADC software as follows:
+
+**1. Channel_0:**
+
+-  AINP_0 = AIN2
+-  AINM_0 = AIN3
+-  Setup0
+-  Enabled = TRUE
+
+**2. Setup_0:**
+
+-  PGA_0 = 16
+-  AIN_BUFP, AIN_BUFM both = ENABLED
+-  BIPOLAR = ENABLED
+-  FS_0 = 384
+-  FILTER_MODE_0 = SINC4
+
+**3. ADC_Control:**
+
+-  MODE = Continuous Conversion
+-  POWER_MODE = FULL
+
+**4. IO_CONTROL_1:**
+
+-  IOUT0 Channel Enable = AIN1
+-  IOUT0 Select = 500 µA
+
+Calibrations
+~~~~~~~~~~~~
+
+| One additional step is required before the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` is configured for **2-wire/3-wire/4-wire RTD** measurements: an internal full-scale and zero-scale calibration of the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>`. This calibration can be performed via the Register Map tab, as shown in below. |image4|
+| 1. Click the **ADC_Control register**
+| 2. Select **Low Power** mode
+| 3. Perform an internal full-scale calibration
+
+-  Click the **Mode** bitfield of the ADC control register
+-  In the **Mode** bitfield, select the internal full scale calibration option.
+-  Check the calibration performed by clicking the **Gain0** register from the register tree, and check that the coefficients have changed.
+
+::
+
+   4. Perform an internal zero-scale calibration.
+   * Click the **Mode** bitfield of the ADC control register.
+   * In the **Mode** bitfield, select the internal zero-scale calibration option. 
+   * Check the calibrations performed by clicking the **Offset0** register in the register tree, and check that the coefficients have changed.
+   5. When calibrations are complete, change the power mode to the required mode of operation, and ensure that the ADC is set to continuous conversion mode by selecting **Continuous** from the drop-down box in the *Mode* bit field of the **ADC_Control** register. 
+
+RTD Measurements
+~~~~~~~~~~~~~~~~
+
+After calibrations, the board and device can now be configured for **2-wire/3-wire/4-wire** RTD measurements as discussed above.
+
+Click the corresponding RTD demo mode and click SAMPLE to start gathering samples from the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>`. The Waveform tab and the Histogram tab show the data gathered from the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>`.
+
+Waveform Tab
+^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/waveform.png
+   :align: center
+   :width: 600px
+
+Histogram Tab
+^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/histogram.png
+   :align: center
+   :width: 600px
+
+More Information and Useful Links
+---------------------------------
+
+-  :adi:`CN0383 Circuit Note Page <CN0383>`
+-  :adi:`CN0384 Circuit Note Page <CN0384>`
+-  :adi:`CN0382 Circuit Note Page <CN0382>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   :adi:`EVAL-CN0383-ARDZ Design & Integration Files <cn0383-designsupport>`
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   
+
+
+Software
+--------
+
+-  `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/ad7124>`__
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/cn0383/figure1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/main_window.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/qq.png
+   :width: 30px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/register_map.png
+   :width: 600px

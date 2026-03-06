@@ -1,0 +1,365 @@
+ADPD1080 - No-OS Driver
+=======================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADPD1080`
+
+Overview
+--------
+
+The :adi:`ADPD1080`/:adi:`ADPD1081` are highly efficient, photometric front ends, each with an integrated 14-bit analog-to-digital converter (ADC) and a 20-bit burst accumulator that works with flexible light emitting diode (LED) drivers. The :adi:`ADPD1080`/:adi:`ADPD1081` stimulate an LED and measures the corresponding optical return signal. The data output and functional configuration occur over a 1.8 V I2C interface on the :adi:`ADPD1080` or a serial port interface (SPI) on the :adi:`ADPD1081`. The control circuitry includes flexible LED signaling and synchronous detection. The analog front end (AFE) features rejection of signal offset and corruption due to modulated interference commonly caused by ambient light without the need for optical filters or dc cancellation circuitry that requires external control.
+
+| Applications:
+| \* Wearable health and fitness monitors
+
+-  Clinical measurements, for example, SpO2
+-  Industrial monitoring
+-  Background light measurements
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the :adi:`ADPD1080`/:adi:`ADPD1081` part, which may be used, without modifications, with any microcontroller.
+-  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the :adi:`ADPD1080`/:adi:`ADPD1081` driver can be used exactly as it is provided.
+
+the Communication Drivers must include two things: I2C or SPI transmission methods and GPIO control methods. For the I2C method, the :adi:`ADPD1080` driver calls four functions:
+
+-  i2c_init() – initializes the I2C communication peripheral.
+-  i2c_remove() – frees memory allocated by the I2C communication driver.
+-  i2c_write() – writes data to the device.
+-  i2c_read() – reads data from the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_driver_architecture.png
+   :align: center
+
+For the SPI method, the :adi:`ADPD1081` driver calls three functions:
+
+-  spi_init() - initializes the SPI communication peripheral.
+-  spi_remove() – frees memory allocated by the SPI communication driver.
+-  spi_write_and_read() – conduct information transfer with the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_driver_architecture.png
+   :align: center
+
+For the GPIO control methods, the :adi:`ADPD1080`/:adi:`ADPD1081` driver calls three functions:
+
+-  gpio_get() - initialize GPIO peripheral and allocate memory for one GPIO control.
+-  gpio_remove() - frees memory allocated by the GPIO control driver.
+-  gpio_direction_input() - set GPIO as input.
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Function                                                                                                           | Description                                                                         |
++====================================================================================================================+=====================================================================================+
+| ``int32_t adpd188_init(struct adpd188_dev **device, struct adpd188_init_param *init_param);``                      | Initialize the ADPD188 driver.                                                      |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_remove(struct adpd188_dev *dev);``                                                               | Free resources allocated by adpd188_init().                                         |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_reg_read(struct adpd188_dev *dev, uint8_t reg_addr, uint16_t *reg_val);``                        | Read one 16 bit register of the ADPD188.                                            |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_reg_write(struct adpd188_dev *dev, uint8_t reg_addr, uint16_t reg_val);``                        | Write one 16 bit register of the ADPD188.                                           |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_mode_get(struct adpd188_dev *dev, enum adpd188_mode *mode);``                                    | Get the mode of operation of the ADPD188.                                           |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_mode_set(struct adpd188_dev *dev, enum adpd188_mode new_mode);``                                 | Set the mode of operation of the ADPD188.                                           |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_fifo_status_get(struct adpd188_dev *dev, uint8_t *bytes_no);``                                   | Get the number of bytes currently present in FIFO.                                  |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_fifo_clear(struct adpd188_dev *dev);``                                                           | Empty the FIFO.                                                                     |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_fifo_thresh_set(struct adpd188_dev *dev, uint8_t word_no);``                                     | Set the number of 16 bit words that need to be in the FIFO to trigger an interrupt. |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_interrupt_get(struct adpd188_dev *dev, uint8_t *flags);``                                        | Get the slot and FIFO interrupt flags.                                              |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_interrupt_clear(struct adpd188_dev *dev, uint8_t flags);``                                       | Clear the slot and FIFO interrupt flags.                                            |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_interrupt_en(struct adpd188_dev *dev, uint8_t flags);``                                          | Enable the slot and FIFO interrupt flags.                                           |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_gpio_setup(struct adpd188_dev *dev, struct adpd188_gpio_config config);``                        | Setup drive and polarity of the GPIOs.                                              |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_gpio_alt_setup(struct adpd188_dev *dev, uint8_t gpio_id, enum adpd188_gpio_alt_config config);`` | Setup the GPIO source.                                                              |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_sw_reset(struct adpd188_dev *dev);``                                                             | Do software reset of the device.                                                    |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_clk32mhz_cal(struct adpd188_dev *dev);``                                                         | Do internal 32MHz clock calibration.                                                |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_slot_setup(struct adpd188_dev *dev, struct adpd188_slot_config config);``                        | Enable slot and setup its FIFO interaction.                                         |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_adc_fsample_set(struct adpd188_dev *dev, float freq_hz);``                                       | Set sample frequency of the ADC.                                                    |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| ``int32_t adpd188_adc_fsample_get(struct adpd188_dev *dev, float *freq_hz);``                                      | Get sample frequency of the ADC.                                                    |
++--------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------+
+
+
+| ``/**                                                                           |
+
+|   * @union adpd188_phy_init                                                     |
+|   * @brief Communication physical protocol initialization structure. Can be I2C |
+|   *        or SPI.                                                              |
+|  */                                                                             |
+| union adpd188_phy_init {                                                        |
+|     /** I2C initialization structure. */                                        |
+|     struct i2c_init_param i2c_phy;                                              |
+|     /** SPI initialization structure. */                                        |
+|     struct spi_init_param spi_phy;                                              |
+| };                                                                              |
+|                                                                                 |
+| /**                                                                             |
+|   * @enum adpd188_phy_opt                                                       |
+|   * @brief Types of physical communication protocol.                            |
+|  */                                                                             |
+| enum adpd188_phy_opt {                                                          |
+|     /** SPI communication. */                                                   |
+|     ADPD188_SPI,                                                                |
+|     /** I2C communication. */                                                   |
+|     ADPD188_I2C                                                                 |
+| };                                                                              |
+|                                                                                 |
+| /**                                                                             |
+|   * @enum adpd188_mode                                                          |
+|   * @brief ADPD188 operation modes.                                             |
+|  */                                                                             |
+| enum adpd188_mode {                                                             |
+|     /** Standby mode. */                                                        |
+|     ADPD188_STANDBY,                                                            |
+|     /** Program mode. */                                                        |
+|     ADPD188_PROGRAM,                                                            |
+|     /** Normal mode. */                                                         |
+|     ADPD188_NORMAL                                                              |
+| };                                                                              |
+|                                                                                 |
+| /**                                                                             |
+|   * @enum adpd188_interrupt                                                     |
+|   * @brief Interrupt flags of the ADPD188.                                      |
+|  */                                                                             |
+| enum adpd188_interrupt {                                                        |
+|     /** Slot A conversion interrupt flag. */                                    |
+|     ADPD188_SLOTA_INT = 0x1,                                                    |
+|     /** Slot B conversion interrupt flag. */                                    |
+|     ADPD188_SLOTB_INT = 0x2,                                                    |
+|     /** FIFO threshold reached interrupt flag. */                               |
+|     ADPD188_FIFO_INT = 0x4                                                      |
+| };                                                                              |
+|                                                                                 |
+| /**                                                                             |
+|   * @struct adpd188_gpio_config                                                 |
+|   * @brief GPIO level configuration.                                            |
+|  */                                                                             |
+| struct adpd188_gpio_config {                                                    |
+|     /** GPIO ID (0 or 1) */                                                     |
+|     uint8_t gpio_id;                                                            |
+|     /** GPIO polarity */                                                        |
+|     uint8_t gpio_pol;                                                           |
+|     /** Status of the GPIO driver (driven or open-drain) */                     |
+|     uint8_t gpio_drv;                                                           |
+|     /** GPIO enable (only for GPIO0) */                                         |
+|     uint8_t gpio_en;                                                            |
+| };                                                                              |
+|                                                                                 |
+| /**                                                                             |
+|   * @enum adpd188_gpio_alt_config                                               |
+|   * @brief GPIO source configuration.                                           |
+|  */                                                                             |
+| enum adpd188_gpio_alt_config {                                                  |
+|     /** GPIO backwards compatible with the ADPD103 INT functionality. */        |
+|     ADPD188_ADPD103 = 0x00,                                                     |
+|     /** Interrupt function provided on GPIO. */                                 |
+|     ADPD188_INT_FUNC = 0x01,                                                    |
+|     /**                                                                         |
+|      * Asserts at the start of the first time slot and deasserts at end of last |
+|      * time slot.                                                               |
+|      */                                                                         |
+|     ADPD188_ACTIVE_PULSE = 0x02,                                                |
+|     /** Time Slot A pulse output. */                                            |
+|     ADPD188_SLOTA_PULSE = 0x05,                                                 |
+|     /** Time Slot B pulse output. */                                            |
+|     ADPD188_SLOTB_PULSE = 0x06,                                                 |
+|     /** Pulse output of both time slots. */                                     |
+|     ADPD188_ANYSLOT_PULSE = 0x07,                                               |
+|     /** Output data cycle occurred for Time Slot A. */                          |
+|     ADPD188_SLOTA_OUT = 0x0C,                                                   |
+|     /** Output data cycle occurred for Time Slot B. */                          |
+|     ADPD188_SLOTB_OUT = 0x0D,                                                   |
+|     /** Output data cycle occurred. */                                          |
+|     ADPD188_ANYSLOT_OUT = 0x0E,                                                 |
+|     /**                                                                         |
+|      * Toggles on every sample, which provides a signal at half the sampling    |
+|      * rate.                                                                    |
+|      */                                                                         |
+|     ADPD188_HALF_SAMPLING = 0x0F,                                               |
+|     /** Output = 0. */                                                          |
+|     ADPD188_OUT_LOW = 0x10,                                                     |
+|     /** Output = 1. */                                                          |
+|     ADPD188_OUT_HIGH = 0x11,                                                    |
+|     /** 32 kHz oscillator output. */                                            |
+|     ADPD188_32KHZ_OSC = 0x13                                                    |
+| };                                                                              |
+|                                                                                 |
+| /**                                                                             |
+|   * @enum adpd188_slots                                                         |
+|   * @brief ADPD188 time slots.                                                  |
+|  */                                                                             |
+| enum adpd188_slots {                                                            |
+|     /** First slot. */                                                          |
+|     ADPD188_SLOTA,                                                              |
+|     /** Second slot. */                                                         |
+|     ADPD188_SLOTB                                                               |
+| };                                                                              |
+|                                                                                 |
+| /**                                                                             |
+|   * @enum adpd188_slot_fifo_mode                                                |
+|   * @brief The way a time slot stores data in the FIFO.                         |
+|  */                                                                             |
+| enum adpd188_slot_fifo_mode {                                                   |
+|     /** No data to FIFO. */                                                     |
+|     ADPD188_NO_FIFO,                                                            |
+|     /** 16-bit sum of all four channels. */                                     |
+|     ADPD188_16BIT_SUM,                                                          |
+|     /** 32-bit sum of all four channels. */                                     |
+|     ADPD188_32BIT_SUM,                                                          |
+|     /** Four channels of 16-bit sample data for the time slot. */               |
+|     ADPD188_16BIT_4CHAN = 0x4,                                                  |
+|     /** Four channels of 32-bit sample data for the time slot. */               |
+|     ADPD188_32BIT_4CHAN = 0x6                                                   |
+| };                                                                              |
+|                                                                                 |
+| /**                                                                             |
+|   * @struct adpd188_slot_config                                                 |
+|   * @brief Slot configuration initialization structure.                         |
+|  */                                                                             |
+| struct adpd188_slot_config {                                                    |
+|     /** Time slot ID. */                                                        |
+|     enum adpd188_slots slot_id;                                                 |
+|     /** Enable time slot. */                                                    |
+|     bool slot_en;                                                               |
+|     /** Time slot FIFO mode. */                                                 |
+|     enum adpd188_slot_fifo_mode sot_fifo_mode;                                  |
+| };                                                                              |
+|                                                                                 |
+| /**                                                                             |
+|   * @struct adpd188_dev                                                         |
+|   * @brief Driver descriptor structure.                                         |
+|  */                                                                             |
+| struct adpd188_dev {                                                            |
+|     /** Communication physical type. */                                         |
+|     enum adpd188_phy_opt phy_opt;                                               |
+|     /** Communication physical descriptor. */                                   |
+|     void *phy_desc;                                                             |
+|     /** GPIO 0 descriptor. */                                                   |
+|     struct gpio_desc *gpio0;                                                    |
+|     /** GPIO 1 descriptor. */                                                   |
+|     struct gpio_desc *gpio1;                                                    |
+| };                                                                              |
+|                                                                                 |
+| /**                                                                             |
+|   * @struct adpd188_init_param                                                  |
+|   * @brief Driver initialization structure.                                     |
+|  */                                                                             |
+| struct adpd188_init_param {                                                     |
+|     /** Communication physical type. */                                         |
+|     enum adpd188_phy_opt phy_opt;                                               |
+|     /** Communication physical initialization structure. */                     |
+|     union adpd188_phy_init phy_init;                                            |
+|     /** GPIO 0 initialization structure. */                                     |
+|     struct gpio_init_param gpio0_init;                                          |
+|     /** GPIO 0 initialization structure. */                                     |
+|     struct gpio_init_param gpio1_init;                                          |
+| };``                                                                            |
++---------------------------------------------------------------------------------+
+
+Initialization example
+~~~~~~~~~~~~~~~~~~~~~~
+
+This is an initialization example. After doing this the user must put the device in GO mode and read data as described in the datasheet.
+
++---------------------------------------------------------------------------------------------------------------+
+
+
+| ``#include <stdint.h>                                                                                         |
+
+| #include <stdlib.h>                                                                                           |
+| #include "adpd188.h"                                                                                          |
+|                                                                                                               |
+| void main()                                                                                                   |
+| {                                                                                                             |
+|     struct adpd188_dev *adpd_desc;                                                                            |
+|     struct adpd188_init_param adpd_init;                                                                      |
+|     int32_t ret;                                                                                              |
+|     uint16_t reg_data;                                                                                        |
+|                                                                                                               |
+|     adpd_init.phy_opt = ADPD188_SPI;                                                                          |
+|     /* SPI initialization is generally dependent on the platform used */                                      |
+|     adpd_init.phy_init.spi_phy.extra = NULL; /* Platform dependent; this is a dummy value */                  |
+|     adpd_init.phy_init.spi_phy.chip_select = 0; /* Platform dependent; this is a dummy value */               |
+|     adpd_init.phy_init.spi_phy.max_speed_hz = 6000000; /* Platform dependent; this is usually a good value */ |
+|     adpd_init.phy_init.spi_phy.mode = SPI_MODE_3; /* This should always be the mode */                        |
+|     /* GPIO initialization is generally dependent on the platform used */                                     |
+|     adpd_init.gpio0_init.number = 1; /* Platform dependent; this is a dummy value */                          |
+|     adpd_init.gpio0_init.extra = NULL; /* Platform dependent; this is a dummy value */                        |
+|     adpd_init.gpio1_init.number = 2; /* Platform dependent; this is a dummy value */                          |
+|     adpd_init.gpio1_init.extra = NULL; /* Platform dependent; this is a dummy value */                        |
+|                                                                                                               |
+|     ret = adpd188_init(&adpd_desc, &adpd_init);                                                               |
+|     if (ret != 0)                                                                                             |
+|         return -1;                                                                                            |
+|                                                                                                               |
+|     /* Read device ID. For ADPD188BI it must be 0x16. */                                                      |
+|     ret = adpd188_reg_read(adpd_desc, ADPD188_REG_DEVID, &reg_data);                                          |
+|     if (ret != 0)                                                                                             |
+|         return -1;                                                                                            |
+|     if ((reg_data & ADPD188_DEVID_DEV_ID_MASK) != 0x16)                                                       |
+|         return -1;                                                                                            |
+|                                                                                                               |
+|     /** Enable 32kHz clock */                                                                                 |
+|     ret = adpd188_reg_read(adpd_desc, ADPD188_REG_SAMPLE_CLK, &reg_data);                                     |
+|     if (ret != 0)                                                                                             |
+|         return -1;                                                                                            |
+|     reg_data |= ADPD188_SAMPLE_CLK_CLK32K_EN_MASK;                                                            |
+|     ret = adpd188_reg_write(adpd_desc, ADPD188_REG_SAMPLE_CLK, reg_data);                                     |
+|     if (ret != 0)                                                                                             |
+|         return -1;                                                                                            |
+|                                                                                                               |
+|     /* Activate program mode */                                                                               |
+|     ret = adpd188_mode_set(adpd_desc, ADPD188_PROGRAM);                                                       |
+|     if (ret != 0)                                                                                             |
+|         return -1;                                                                                            |
+|                                                                                                               |
+|     /* Initialize device in the datasheet smoke detection configuration */                                    |
+|     ret = adpd188_smoke_detect_setup(adpd_desc);                                                              |
+|     if (ret != 0)                                                                                             |
+|         return -1;                                                                                            |
+| }``                                                                                                           |
++---------------------------------------------------------------------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of ADPD188.108x Driver.|
+
+   -
+
+   |Header file of ADPD188/108x Driver.|
+
+.. |Implementation of ADPD188.108x Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/photo-electronic/adpd188/adpd188`.c
+.. |Header file of ADPD188/108x Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/photo-electronic/adpd188/adpd188`.h

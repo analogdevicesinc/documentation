@@ -1,0 +1,194 @@
+AD9467 Evaluation Board, ADC-FMC Interposer & Xilinx Reference Design
+=====================================================================
+
+.. important::
+
+   This design is **not supported anymore**, thus this wiki page is **kept for legacy purposes only**. The similar design **with an FMC connector is still supported** and can be found here :doc:`AD9467 Native FMC Card / Xilinx Reference Design </wiki-migration/resources/fpga/xilinx/fmc/ad9467>`\
+
+
+Introduction
+------------
+
+The :adi:`AD9467` is a 16-bit, monolithic, IF sampling analog-to-digital converter (ADC) with a conversion rate of up to 250MSPS. This reference design includes the device data capture and SPI interface. The samples are written to the external DDR-DRAM on ML605. It allows programming the device and monitoring its internal registers via SPI. It also allows programming the :adi:`AD9517-4` clock chip as an alternative clock source on the board. The board also provides other options to drive the clock to the ADC.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9467 Evaluation Board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9467.html#eb-overview>`
+-  :adi:`ADC-FMC Interposer A <en/evaluation/eval-adc-fmc-int/eb.html>`
+
+Supported Carriers
+------------------
+
+-  `ML605 <https://www.xilinx.com/ML605>`__
+-  `KC705 <https://www.xilinx.com/KC705>`__
+-  `VC707 <https://www.xilinx.com/VC707>`__
+
+Quick Start Guide
+-----------------
+
+The reference design has been tested with ML605, KC705 and VC707. The notes below refer to ML605, the procedure is same for the other boards. Please make sure you are using the correct reference design for the board(s) that you have. The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  ML605, KC705 or VC707 board
+-  AD9467-2x0EBZ board & Power supply
+-  ADC FMC interposer board
+-  Signal/Clock generator (clock input, 200MHz or 250MHz)
+-  Signal generator (analog input, for data capture)
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 13.2 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 57600.
+
+Bit file
+~~~~~~~~
+
+-  Download the gzip file and extract the **sw/cf_ad9467_ebz.bit** file.
+
+Board Modifications
+~~~~~~~~~~~~~~~~~~~
+
+If you have a Rev. A version of the FMC interposer board, please do the following modifications on the board.
+
+-  Populate R209 (0ohm) and make sure R211 is NOT populated.
+-  Insert (cut the traces) 33ohm resistors on U201 (UG3308) Y ports (pins 11 through 17).
+-  Make sure that R201 through R207 are NOT populated.
+
+If you have a Rev. A version of the AD9467 evaluation board, please do the following modifications on the board.
+
+-  Remove R309 on pin 14 of AD9517 (U300).
+-  Remove R600 on pin 3 of NC7WZ16P (U601).
+-  Remove R601 on pin 1 of NC7WZ16P (U601).
+-  Remove R602 on pin 1 of NC7WZ07P (U600).
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To begin make the following connections (see image below):
+
+-  Connect the AD9467-2x0EBZ board to the FMC Interposer board.
+-  Connect the interposer board to the **FMC-HPC** connector of ML605 board.
+-  Connect power to ML605 and the AD9467-2x0EBZ boards.
+-  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on ML605.
+-  Connect an external clock source to AD9467-2x0EBZ board's J201 SMA connector.
+-  Connect a signal generator to the AIN SMA J100 SMA connector.
+
+If you have AD9467-200EBZ board setup the clock source to be 200MHz, if AD9467-250EBZ set up the clock source to be 250MHz. This quick start bit file configures the AD9467 for all test modes and verifies the captured data accordingly. After the hardware setup, turn the power on to the ML605 and the AD9467-2x0EBZ boards.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_setup.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+Start IMPACT, and initialze the JTAG chain. The program should recognize the Virtex 6 device (see screenshot below). Start a UART terminal (set to 57600 baud rate) and then program the device.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_impact.jpg
+   :alt: IMPACT
+   :width: 200px
+
+If programming was successful, you should be seeing messages appear on the terminal as shown in figure below. After programming the AD9467 and AD9517, the program checks data capture on various test modes. Please note that AD9517 is powered down by default but is still accessable via SPI.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_uart.jpg
+   :alt: Terminal
+   :width: 200px
+
+After patterns and prbs sequences are verified, if no errors are present, you may use the chipscope busplot to see the captured signal (see below). The ADC data is available on pins [15:0] of the chipscope signal.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_chipscope.jpg
+   :alt: Chipscope Busplot
+   :width: 200px
+
+Using the reference design
+--------------------------
+
+The reference design is built on a microblaze based system parameterized for linux. A functional block diagram of the design is given below.
+
+Xilinx block diagram
+^^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9467_ebz/ad9467_fmc.svg
+   :alt: Xilinx HDL Block Diagram
+   :width: 500px
+
+AD9467 FMC Card block diagram
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9467_ebz/ad9467_fmc_card.svg
+   :alt: Xilinx HDL Block Diagram
+   :width: 400px
+
+The reference design consists of three functional modules, a LVDS interface, a PN9/PN23/PAT monitor and a DMA interface.
+
+The LVDS interface captures and buffers data from the ADC. The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software.
+
+Registers
+~~~~~~~~~
+
+Please refer to the regmap.txt file in the pcores directory.
+
+Good To Know
+~~~~~~~~~~~~
+
+The PN9/PN23 sequences are not compatible with O.150. Please use the equations given in the reference design. They follow the polynomial equations as in O.150, but ONLY the msb is inverted.
+
+The AD9467 drives the interleaved first byte (D15:D1) on the rising edge and second byte (D14:D0) on the falling edge of DCO clock. However in certain frequencies the captured data (from IDDR) seems to be reverse. If that occurs try setting the "capture select" bit (register 0x0a, bit 0).
+
+Clock Selection
+~~~~~~~~~~~~~~~
+
+There are several clock paths available on the evaluation board.
+
+Downloads
+---------
+
+FPGA Referece Designs:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**ML605 \*\* `cf_ad9467_ebz_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_edk_14_4_2013_03_08.tar.gz>`__
+   -  \**KC705 \*\* `cf_ad9467_ebz_kc705_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_kc705_edk_14_4_2013_03_08.tar.gz>`__
+   -  \**VC707 \*\* `cf_ad9467_ebz_vc707_edk_14_4_2013_03_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9467_ebz_vc707_edk_14_4_2013_03_08.tar.gz>`__
+   
+
+
+Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
+
+.. hint::
+
+   
+   -  Questions? :ez:`Ask Help & Support <community/fpga>`.
+   
+
+
+Tar file contents
+-----------------
+
+The tar file contains, in most cases, the following files and/or directories. To rebuild the reference design simply double click the XMP file and run the tool. To build SDK, select a workspace and use the C file to build the elf file. Please refer to `Xilinx EDK documentation <https://www.xilinx.com/support/documentation/dt_edk_edk13-2.htm>`__ for details.
+
++--------------------+------------------------------------------------------------------------------------------------------+
+| license.txt        | ADI license & copyright information.                                                                 |
++--------------------+------------------------------------------------------------------------------------------------------+
+| system.mhs         | MHS file.                                                                                            |
++--------------------+------------------------------------------------------------------------------------------------------+
+| system.xmp         | XMP file (use this file to build the reference design).                                              |
++--------------------+------------------------------------------------------------------------------------------------------+
+| data/              | UCF file and/or DDR MIG project files.                                                               |
++--------------------+------------------------------------------------------------------------------------------------------+
+| docs/              | Documentation files (Please note that this wiki page is the documentation for the reference design). |
++--------------------+------------------------------------------------------------------------------------------------------+
+| sw/                | Software (Xilinx SDK) & bit file(s).                                                                 |
++--------------------+------------------------------------------------------------------------------------------------------+
+| cf_lib/edk/pcores/ | Reference design core file(s) (Xilinx EDK).                                                          |
++--------------------+------------------------------------------------------------------------------------------------------+
+
+Support
+-------
+
+**As this design is obsolete, we do not fully support it anymore**. Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
+
+It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.

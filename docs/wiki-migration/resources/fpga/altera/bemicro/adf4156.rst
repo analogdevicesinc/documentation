@@ -1,0 +1,229 @@
+BeMicro FPGA Project for ADF4156 with Nios driver
+=================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF4156`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADF4156SD1Z <EVAL-ADF4156>`
+
+Overview
+========
+
+This lab presents the steps to setup an environment for using the :adi:`EVAL-ADF4156SD1Z <ADF4156>` evaluation board together with the `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__ USB stick, the Nios II Embedded Development Suite (EDS) and the `Micrium µC-Probe <http://micrium.com/tools/ucprobe/overview/>`__ run-time monitoring tool. Below is presented a picture of the EVAL-ADF4156SD1Z Evaluation Board with the BeMicro SDK Platform.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4156_bemicro.jpg
+   :alt: adf4156_bemicro.jpg
+   :align: center
+   :width: 400px
+
+For component evaluation and performance purposes, as opposed to quick prototyping, the user is directed to Analog Devices :doc:`System Demonstration Platform </wiki-migration/resources/eval/sdp>` (**SDP**). The **SDP** consists of a:
+
+-  a controller board, like the :doc:`EVAL-SDP-CS1Z </wiki-migration/resources/eval/sdp/sdp-s>` **(SDP-S)**
+-  an compatible Analog Devices SDP :adi:`product evaluation board <sdp#exallist>`
+-  corresponding PC software
+
+The **EVAL-SDP-CS1Z** controller board is Serial Interfaces Only, low cost, reduced functionality controller board. It has a USB to Serial Engine at its core. It connects to the PC through a USB 2.0 high speed port. The SDP-S has a single 120 pin connector and exposes SPI, I2C and GPIO interfaces to connected SDP daughter boards.
+
+The **EVAL-ADF4156SD1Z** is designed to allow the user to evaluate the performance of the ADF4156 frequency synthesizer for phase-locked loops (PLLs).
+
+The :adi:`ADF4156` is a 6.2 GHz fractional-N frequency synthesizer that implements local oscillators in the upconversion and down-conversion sections of wireless receivers and transmitters. It consists of a low noise digital phase frequency detector (PFD), a precision charge pump, and a programmable reference divider. There is a Σ-Δ based fractional interpolator to allow programmable fractional-N division. The INT, FRAC, and MOD registers define an overall N divider (N = (INT + (FRAC/MOD))). The RF output phase is programmable for applications that require a particular phase relationship between the output and the reference. The ADF4156 also features cycle slip reduction circuitry, leading to faster lock times without the need for modifications to the loop filter.
+
+More information
+----------------
+
+-  :adi:`ADF4156 Product Info <ADF4156>` - pricing, samples, datasheet
+-  :adi:`EVAL-ADF4156SD1Z evaluation board user guide </static/imported-files/user_guides/UG-171.pdf>`
+-  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__
+-  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`__
+-  `Micrium uC-Probe <http://micrium.com/tools/ucprobe/overview/>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Hardware Items
+--------------
+
+Below is presented the list of required hardware items:
+
+-  Arrow Electronics `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`__ FPGA-based MCU Evaluation Board
+-  :adi:`BeMicro SDK/SDP Interposer <sdp-bemicro>` adapter board
+-  **EVAL-ADF4156SD1Z** evaluation board
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+
+Software Tools
+--------------
+
+Below is presented the list of required software tools:
+
+-  `Quartus II Web Edition <http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html>`__ design software v11.0
+-  `Nios II EDS <https://www.altera.com/download/software/nios-ii>`__ v11.0
+-  `uC-Probe <http://micrium.com/tools/ucprobe/trial/>`__ run-time monitoring tool, version 2.5
+
+The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
+
+The **Micrium uC/Probe Trial** version 2.5 is available via download from the web at http://micrium.com/tools/ucprobe/trial/. After installation add to the “Path” system variable the entry "*%QUARTUS_ROOTDIR%\\bin\\*\ “ on the third position in the list.
+
+Downloads
+---------
+
+-  `Lab Design Files <https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4156_evalboardlab.zip>`__
+
+Extract the Lab Files
+---------------------
+
+Create a folder called “\ **ADIEvalBoardLab**\ ” on your PC and extract the **ADF4156_EvalBoardLab.zip** archive to this folder. Make sure that there are **NO SPACES** in the directory path. After extracting the archive the following folders should be present in the **ADIEvalBoardLab** folder: **FPGA**, **Software**, **ucProbeInterface**, **NiosCpu**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/labfolders.png
+   :alt: labfolders.png
+   :align: center
+   :width: 500px
+
+
+.. note::
+
+   See `common_usb <https://wiki.analog.com/common_usb>`__
+
+
+Quick Evaluation
+================
+
+
+.. note::
+
+   See `common_quick_eval <https://wiki.analog.com/common_quick_eval>`__
+
+
+FPGA Design
+===========
+
+
+.. note::
+
+   See `common_spi_i2c <https://wiki.analog.com/common_spi_i2c>`__
+
+
+NIOS II Software Design
+=======================
+
+
+.. note::
+
+   See `common <https://wiki.analog.com/common>`__
+
+
+uC-Probe Interface
+==================
+
+A notable challenge in embedded systems development is to overcome the lack of feedback that such systems typically provide. Many developers resort to blinking LEDs or instrumenting their code with *printf()* in order to determine whether or not their systems are running as expected. **Micrium** provides a unique tool named **µC-Probe** to assist these developers. With this tool, developers can effortlessly read and write the variables on a running embedded system. This section presents the steps required to install the **Micrium uC-Probe** software tool and to run the demonstration project for the ADI evaluation board. A description of the **uC-Probe** demonstration interface is provided.
+
+Configure uC-Probe
+------------------
+
+Launch **uC-Probe** from the **Start -> All Programs -> Micrium -> uC-Probe**.
+
+Select **uC-Probe** options.
+
+-  Click on the **uC-Probe** icon on the top left portion of the screen.
+-  Click on the **Options** button to open the dialog box.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeoptionsbtn.png
+   :alt: ucprobeoptionsbtn.png
+   :align: center
+   :width: 300px
+
+Set target board communication protocol as **JTAG UART**
+
+-  Click on the **Communication** tab icon on the top left portion of the dialog box
+-  Select the **JTAG UART** option.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image067.png
+   :alt: image067.png
+   :align: center
+   :width: 400px
+
+Setup **JTAG UART** communication settings
+
+-  Select the **JTAG-UART** option from the **Communication** tab.
+-  Press the **Open File** button to select the JTAG Debug Information file (**.jdi**)
+-  Navigate to the **ADIEvalBoardLab/FPGA** folder and select the BeMicroSDK.jdi file. Press Open.
+-  Type the value **1** in the the **Device Id** window.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeoptionsjtag.png
+   :alt: ucprobeoptionsjtag.png
+   :align: center
+   :width: 400px
+
+-  Select **uCProbe_uart(0)** from the **Instance Id** pulldown menu.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image073.png
+   :alt: image073.png
+   :align: center
+   :width: 400px
+
+-  Press **Apply** and **OK** to exit the options menu. The embedded target has two UARTs. **uC-Probe** will be communicating with the **uCProbe_uart**.
+
+Load and Run the Demonstration Project
+--------------------------------------
+
+-  Click the **Open** option from the **uC-Probe** menu and select the file **ADIEvalBoardLab/ucProbeInterface/ADF4156_Interface.wsp**.
+
+|ucprobeopenfile.png|\ |adf4156interfaceopen.png|
+
+-  Before opening the interface **uC-Probe** will ask for a symbols file that must be associated with the interface. If the lab was done according to the steps provided in the **Quick Evaluation** section, select the file **ADIEvalBoardLab/ucProbeInterface/ADIEvalBoard.elf** to be loaded as a symbol file, otherwise select the file **ADIEvalBoardLab/FPGA/software/ADIEvalBoard/ADIEvalBoard.elf** to be loaded as a symbol file.
+
+|ucprobeopenelfquickeval.png|\ |ucprobeopenelfnormal.png|
+
+-  Run the demonstration project by pressing the **Play** button.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image081.png
+   :alt: image081.png
+   :align: center
+   :width: 400px
+
+Demonstration Project User Interface
+====================================
+
+The following figure presents the **uC-Probe** interface that can be used for monitoring and controlling the operation of the **EVAL-ADF4156SD1Z** evaluation board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4156_interface.png
+   :alt: adf4156_interface.png
+   :align: center
+   :width: 700px
+
+**Section A** allows for the communication with the board to be activated / deactivated by toggling the *ON/OFF* switch. The *Activity* LED turns green when the communication is active. Before pressing the *ON/OFF* switch, make sure you select the desired *Device Initialization Procedure*. If the *ON/OFF* switch is set to ON and the *Activity* LED is BLACK it means that there is a communication problem with the board. See the **Troubleshooting** section for indications on how to fix the communication problems.
+
+**Sections B** allows the application of newly selected configuration. All the registers should be configured before pressing the *Apply* button. The order in which the registers are programmed after pressing *Apply* is R4, R3, R2, R1, R0.
+
+**Sections C to G** allow for configuration of each register on the *ADF4156*.
+
+**Section C** allows for the configuration of the *FRAC/INT* register.
+
+**Section D** allows for the configuration of the *PHASE* register.
+
+**Sections E** allows for the configuration of the *MOD/R* register.
+
+**Sections F** allows for the configuration of the *FUNCTION* register.
+
+**Sections G** allows for the configuration of the *CLK DIV* register.
+
+
+.. note::
+
+   See `troubleshooting <https://wiki.analog.com/troubleshooting>`__
+
+
+.. |ucprobeopenfile.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenfile.png
+   :width: 400px
+.. |adf4156interfaceopen.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4156interfaceopen.png
+   :width: 400px
+.. |ucprobeopenelfquickeval.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenelfquickeval.png
+   :width: 300px
+.. |ucprobeopenelfnormal.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenelfnormal.png
+   :width: 300px

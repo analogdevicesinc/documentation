@@ -1,0 +1,125 @@
+Complete Closed-Loop Precision Analog Microcontroller Thermocouple Measurement System with 4 mA to 20 mA Output (CN0300)
+========================================================================================================================
+
+Overview
+--------
+
+This circuit using the :adi:`ADUCM360` shows how a thermocouple and RTD can be amplified and sampled using the internal Programmable Gain Amplifier and high performance ADC. The DAC output is then set to control the 4-20mA transmitter interface. :adi:`CN0300` demonstrates the high performance and circuit integration of the :adi:`ADUCM360` - Amplifier, ADC, CPU, DAC and OP-AMP all in one-chip!
+
+General Setup
+-------------
+
+-  :adi:`EVAL-CN0300-EB1Z <CN0300>` Evaluation board.
+-  `CN0300 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0300>`__
+-  USB Cable
+-  One PC or Laptop
+-  T-Type Thermocouple
+
+Minimum PC/System Requirements
+------------------------------
+
+-  One PC with the following
+
+   -  Windows XP SP2, Windows Vista or Windows 7 Business/Enterprise/Ultimate editions
+   -  Intel Pentium processor (x86 compatible), 1GHz or faster
+   -  512 MB RAM and 1 GB available hard disk space
+   -  USB port
+
+How to Install the Evaluation Software
+--------------------------------------
+
+-  Ensure your PC has the USB drivers for the USB-SWD/UART board.
+
+   -  To Install the drivers for the USB-SWD/UART board, unzip the CDM 2.04.06~.zip file for Windows XP drivers
+   -  For other operating systems, go to the FTDI website:
+
+      -  http://www.ftdichip.com/Drivers/D2XX.htm
+
+Step by Step Instruction for Connecting the Hardware
+----------------------------------------------------
+
+-  Connect the EVAL-CN0300-EB1Z board to the USB-SWD/UART board.
+-  Connect a 12V power supply to J3. Make sure to connect a Current Meter in series with the 12V terminal. Short the inputs to J2 together\
+
+|image1|
+
+-  Connect the USB-SWD/UART board to your PC via a USB cable. (Ensure the driver is installed correctly)
+
+Opening and Enabling the Evaluation Software
+--------------------------------------------
+
+-  You now need to determine what com port your PC has allocated to your USB-SWD/UART board
+-  Go to **"Settings, Control panel, System, Hardware, Device Manager"** – see example below where COM port 56 was allocated.\
+
+|image2|
+
+-  Press the reset button on the EVAL-CN0300-EB1Z board and the following should appear on the HyperTerminal window: the current reading on the current meter should match the value “Expected DAC Current” on your screen.\
+
+|image3|
+
+Calibrating the DAC (Only needed if a Recalibration is desired)
+---------------------------------------------------------------
+
+-  Next open the application CM3WSD.exe\
+
+
+|image4|
+
+-  Using the “Browse” tab, call the file CN0300_test.hex
+-  Select the “Configure” tab and select the ADUCM360 in "Parts" tab.\
+
+|image5|
+
+-  Select “Comms” tab. Select the appropriate COM port as determined in step 5. A baud rate of 9600 is fine.\
+
+|image6|
+
+-  Select “Command” tab. Enable the “program and verify” tabs.\
+
+|image7|
+
+-  Next, force the part into download mode – to do this, hold the “SD” button on the EVAL-CN0300-EB1Z board while pressing and releasing the “RESET” button.
+-  Click the “Start” button on CM3WSD. You will see the following:|image8|
+-  Next close CM3WSD and open **HyperTerminal** on your PC.
+-  Set Hyperterminal for the appropriate COM port and for 9600 baud rate, 8 data bits, No parity, 1 stop bit, no flow control.
+-  Press reset and the following should appear on your PC:|image9|
+-  Your current meter should report a value close to 4mA – if it doesn’t follow the instructions on the HyperTerminal screen to calibrate the DAC output to 4mA by pressing the “1” or “0” keys accordingly. Ensure you select the HyperTerminal screen before pressing 1 or 0.
+-  Press return when the current meter reports 4mA
+-  Repeat step 13 for the 20mA calibration.\
+
+|image10|
+
+-  After this the program will continuously output the following information:|image11|
+-  The Final temperature reported should be within a few degrees C of the expected ambient temperature. +/-5C is fine since the ADC is not fully calibrated.
+-  Temporarily disconnect the COM port from HyperTerminal by pressing the phone tab.\
+
+|image12|
+
+-  Repeat Steps 3 to 9 except this time, select the file CN0300_Final.hex. This file is very similar to the test program except it does not call the DAC calibration function.\
+
+|image13|
+
+-  Close CM3WSD. Return to HyperTerminal and select “Connect” by pressing the phone icon.
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0300-EB1Z?&v=RevB>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-hardware-test-setup.jpg
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-pc-device-manager.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-hyperterminal4.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-wsd.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-wsd1.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-wsd2.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-wsd3.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-wsd4.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-hyperterminal.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-hyperterminal1.jpg
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-hyperterminal2.jpg
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-hyperterminal3.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0300/cn0300-software-wsd5.jpg

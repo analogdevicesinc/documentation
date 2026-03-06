@@ -1,0 +1,53 @@
+AD7606 - No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7605-4`
+-  :adi:`AD7606`
+-  :adi:`AD7606-6`
+-  :adi:`AD7606-4`
+-  :adi:`AD7606B`
+-  :adi:`AD7606C-18`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0148`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7605-4`
+-  :adi:`EVAL-AD7606EDZ`
+-  :adi:`EVAL-AD7606-4EDZ`
+-  :adi:`EVAL-AD7606-6EDZ`
+-  :adi:`EVAL-AD7606BFMCZ`
+
+Overview
+--------
+
+The :adi:`AD7606` is a 8-/6-/4-Channel DAS with 16-Bit, Bipolar Input, Simultaneous Sampling ADC. Each part contains analog input clamp protection, a second-order antialiasing filter, a track-and-hold amplifier, a 16-bit charge redistribution successive approximation analog-to-digital converter (ADC), a flexible digital filter, a 2.5 V reference and reference buffer, and high speed serial and parallel interfaces. The :adi:`AD7606` operate from a single 5 V supply and can accommodate ±10 V and ±5 V true bipolar input signals while sampling at throughput rates up to 200 kSPS for all channels. The input clamp protection circuitry can tolerate voltages up to ±16.5 V. The AD7606 has 1 MΩ analog input impedance regardless of sampling frequency. The single supply operation, on-chip filtering, and high input impedance eliminate the need for driver op amps and external bipolar supplies.
+
+The :adi:`AD7606C` is a directly pin replacement (software and hardware) for both AD7608 and AD7609, with higher input impedance, throughput rate and extended temperature range with additional features such as 16/18-bit sample size, system gain/offset/phase calibration, sensor disconnect detection, lower Vdrive operation, diagnostics, additional oversampling ratios and per channel analog input range selection with bipolar differential, bipolar single-ended and unipolar single-ended options.
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD7606 Driver.|
+
+   -
+
+   |Header file of AD7606 Driver.|
+
+.. |Implementation of AD7606 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad7606/ad7606`.c
+.. |Header file of AD7606 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad7606/ad7606`.h

@@ -1,0 +1,651 @@
+AD7291 IIO ADC Linux Driver
+===========================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7291`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7291SDZ`
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting multi channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Source Code
+===========
+
+Status
+------
+
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Source                                                                                                     | Mainlined?                                                                                                 |
++============================================================================================================+============================================================================================================+
+| `git <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7291.c>`__ | `Yes <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7291.c>`__ |
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+Files
+-----
+
++----------+-----------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                            |
++==========+=================================================================================================================+
+| driver   | `ad7291.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7291.c>`__ |
++----------+-----------------------------------------------------------------------------------------------------------------+
+
+Example platform device initialization
+======================================
+
+Specifying reference voltage via the regulator framework
+--------------------------------------------------------
+
+.. tip::
+
+   In case the AD7291 on-chip 2.5V reference is not used, this driver requires specifying the reference voltage, by using the Linux regulator framework.
+
+
+Below example specifies a 3.3 Volt reference for the I2C device 0-002a on I2C-Bus 0. (**0-002a**)
+
+.. code:: c
+
+   #if defined(CONFIG_REGULATOR_FIXED_VOLTAGE) || defined(CONFIG_REGULATOR_FIXED_VOLTAGE_MODULE)
+   static struct regulator_consumer_supply ad7291_consumer_supplies[] = {
+       REGULATOR_SUPPLY("vcc", "0-002a"),
+   };
+
+   static struct regulator_init_data board_avdd_reg_init_data = {
+       .constraints    = {
+           .name   = "3V3",
+           .valid_ops_mask = REGULATOR_CHANGE_STATUS,
+       },
+       .consumer_supplies = ad7291_consumer_supplies,
+       .num_consumer_supplies = ARRAY_SIZE(ad7291_consumer_supplies),
+   };
+
+   static struct fixed_voltage_config board_vdd_pdata = {
+       .supply_name    = "board-3V3",
+       .microvolts = 3300000,
+       .gpio       = -EINVAL,
+       .enabled_at_boot = 0,
+       .init_data  = &board_avdd_reg_init_data,
+   };
+   static struct platform_device brd_voltage_regulator = {
+       .name       = "reg-fixed-voltage",
+       .id     = -1,
+       .num_resources  = 0,
+       .dev        = {
+           .platform_data  = &board_vdd_pdata,
+       },
+   };
+   #endif
+
+.. code:: c
+
+   static struct platform_device *board_devices[] __initdata = {
+   #if defined(CONFIG_REGULATOR_FIXED_VOLTAGE) || defined(CONFIG_REGULATOR_FIXED_VOLTAGE_MODULE)
+       &brd_voltage_regulator
+   #endif
+   };
+
+.. code:: c
+
+   static int __init board_init(void)
+   {
+       [--snip--]
+
+       platform_add_devices(board_devices, ARRAY_SIZE(board_devices));
+
+       [--snip--]
+
+       return 0;
+   }
+   arch_initcall(board_init);
+
+Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.
+
+This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().
+
+So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.
+
+For more information see: `instantiating-devices.rst <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst>`__
+
+
+Depending on the converter IC used, you may need to set the I2C_BOARD_INFO name accordingly, matching your part name.
+
+.. code:: c
+
+   static struct i2c_board_info __initdata board_i2c_board_info[] = {
+   #if defined(CONFIG_AD7291) || defined(CONFIG_AD7291_MODULE)
+       {
+           I2C_BOARD_INFO("ad7291", 0x2A),
+           .irq = IRQ_PG14,
+       },
+   #endif
+   };
+
+.. code:: c
+
+   static int __init board_init(void)
+   {
+       [--snip--]
+
+       i2c_register_board_info(0, board_i2c_board_info,
+                   ARRAY_SIZE(board_i2c_board_info));
+       [--snip--]
+
+       return 0;
+   }
+   arch_initcall(board_init);
+
+Adding Linux driver support
+===========================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+.. hint::
+
+   The driver depends on **CONFIG_I2C**
+
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           [*] Staging drivers  --->
+               <*>     Industrial I/O support --->
+                   --- Industrial I/O support
+                   -*-   Enable ring buffer support within IIO
+                   -*-     Industrial I/O lock free software ring
+                   -*-   Enable triggered sampling support
+
+                         *** Analog to digital converters ***
+                   [--snip--]
+
+                   <*>   Analog Devices AD7291 ADC driver
+
+                   [--snip--]
+
+Hardware configuration
+======================
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7291_eval_lr.jpg
+   :width: 600px
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/> **cd /sys/bus/iio/devices/**
+      root:/sys/bus/iio/devices> **ls**
+      iio:device0
+   
+      root:/sys/bus/iio/devices> **cd iio:device0**
+   
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-002a/iio:device0> **ls -l**
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 dev
+      drwxr-xr-x    2 root     root             0 Jan  1 00:38 events
+      -rw-r--r--    1 root     root          4096 Jan  1 00:38 in_temp0_mean_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 in_temp0_raw
+      -rw-r--r--    1 root     root          4096 Jan  1 00:38 in_temp0_scale
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 in_voltage0_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 in_voltage1_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 in_voltage2_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 in_voltage3_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 in_voltage4_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 in_voltage5_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 in_voltage6_raw
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 in_voltage7_raw
+      -rw-r--r--    1 root     root          4096 Jan  1 00:38 in_voltage_scale
+      -r--r--r--    1 root     root          4096 Jan  1 00:38 name
+      drwxr-xr-x    2 root     root             0 Jan  1 00:38 power
+      --w-------    1 root     root          4096 Jan  1 00:38 reset
+      lrwxrwxrwx    1 root     root             0 Jan  1 00:38 subsystem -> ../../../../../../bus/iio
+      -rw-r--r--    1 root     root          4096 Jan  1 00:38 uevent
+   
+
+
+Show device name
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-002a/iio:device0> **cat name**
+      ad7291
+   
+
+
+Show scale
+~~~~~~~~~~
+
+| **Description:**
+| scale to be applied to in_voltageX_raw in order to obtain the measured voltage in millivolts.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-002a/iio:device0> **cat in_voltage_scale**
+      0.610000
+   
+
+
+Show channel 0 measurement
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:**
+| Raw unscaled voltage measurement on channel 0
+
+========= ===============
+ADC Input Channel name
+========= ===============
+VIN0      in_voltage0_raw
+VIN1      in_voltage1_raw
+VIN2      in_voltage2_raw
+VIN3      in_voltage3_raw
+VIN4      in_voltage4_raw
+VIN5      in_voltage5_raw
+VIN6      in_voltage6_raw
+VIN7      in_voltage7_raw
+========= ===============
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-002a/iio:device0> **cat in_voltage0_raw**
+      1641
+   
+
+
+**U** = *in_voltage0_raw \* in_voltage_scale* = 1641 \* 0.610000 = **1001,01 mV**
+
+Show internal temperature
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **Description:** /sys/bus/iio/devices/iio:deviceX/in_temp0_raw
+| Shows raw unscaled temperature.
+
+================= ====================
+Channel name      Description
+================= ====================
+in_temp0_raw      Current temperature
+in_temp0_mean_raw Averaged temperature
+================= ====================
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-002a/iio:device0> **cat in_temp0_raw**
+      107
+      root:/sys/devices/platform/i2c-bfin-twi.0/i2c-0/0-002a/iio:device0> **cat in_temp0_scale**
+      250
+   
+
+
+**T** = in_temp0_raw \* in_temp0_scale = 107 \* 250 = 26750 = **26.75 °C**
+
+Hardware Events
+===============
+
+The Industrial I/O subsystem provides support for passing hardware generated events up to userspace.
+
+In IIO events are not used for passing normal readings from the sensing devices to userspace, but rather for out of band information. Normal data reaches userspace through a low overhead character device - typically via either software or hardware buffer. The stream format is pseudo fixed, so is described and controlled via sysfs rather than adding headers to the data describing what is in it.
+
+Pretty much all IIO events correspond to thresholds on some value derived from one or more raw readings from the sensor. They are provided by the underlying hardware.
+
+**Examples include:**
+
+-  Straight crossing a voltage threshold
+-  Moving average crosses a threshold
+-  Motion detectors (lots of ways of doing this).
+-  Thresholds on sum squared or rms values.
+-  Rate of change thresholds.
+-  Lots more variants...
+
+Events have timestamps.
+
+**The Interface:**
+
+-  Single user at a time.
+
+-  Simple chrdev per device (aggregation across devices doesn't really make sense for IIO as you tend to really care which sensor caused the event rather than just that it happened.)
+
+**The format is:**
+
+.. code:: c
+
+   /**
+    * struct iio_event_data - The actual event being pushed to userspace
+    * @id:     event identifier
+    * @timestamp:  best estimate of time of event occurrence (often from
+    *      the interrupt handler)
+    */
+   struct iio_event_data {
+       u64 id;
+       s64 timestamp;
+   };
+
+
+| **/sys/bus/iio/devices/iio:deviceX/events**
+| Configuration of which hardware generated events are passed up to user-space.
+
+-  **Threshold Events:**
+
+| **<type>Z[\_name]_thresh[\_rising|falling]_en**
+| Event generated when channel passes a threshold in the specified (\_rising|_falling) direction. If the direction is not specified, then either the device will report an event which ever direction a single threshold value is called in (e.g. <type>[Z][\_name]\_<raw|input>_thresh_value) or <type>[Z][\_name]\_<raw|input>_thresh_rising_value and <type>[Z][\_name]\_<raw|input>_thresh_falling_value may take different values, but the device can only enable both thresholds or neither. Note the driver will assume the last p events requested are to be enabled where p is however many it supports (which may vary depending on the exact set requested. So if you want to be sure you have set what you think you have, check the contents of these attributes after everything is configured. Drivers may have to buffer any parameters so that they are consistent when a given event type is enabled a future point (and not those for whatever event was previously enabled).
+
+| **<type>Z[\_name]_thresh[\_rising|falling]_value**
+| Specifies the value of threshold that the device is comparing against for the events enabled by <type>Z[\_name]_thresh[\_rising|falling]_en. If separate attributes exist for the two directions, but direction is not specified for this attribute, then a single threshold value applies to both directions. The raw or input element of the name indicates whether the value is in raw device units or in processed units (as \_raw and \_input do on sysfs direct channel read attributes).
+
+-  **Rate of Change Events:**
+
+| **<type>[Z][\_name]_roc[\_rising|falling]_en**
+| Event generated when channel passes a threshold on the rate of change (1st differential) in the specified (\_rising|_falling) direction. If the direction is not specified, then either the device will report an event which ever direction a single threshold value is called in (e.g. <type>[Z][\_name]\_<raw|input>_roc_value) or <type>[Z][\_name]\_<raw|input>_roc_rising_value and <type>[Z][\_name]\_<raw|input>_roc_falling_value may take different values, but the device can only enable both rate of change thresholds or neither. Note the driver will assume the last p events requested are to be enabled where p is however many it supports (which may vary depending on the exact set requested. So if you want to be sure you have set what you think you have, check the contents of these attributes after everything is configured. Drivers may have to buffer any parameters so that they are consistent when a given event type is enabled a future point (and not those for whatever event was previously enabled).
+
+| **<type>[Z][\_name]_roc[\_rising|falling]_value**
+| Specifies the value of rate of change threshold that the device is comparing against for the events enabled by <type>[Z][\_name]_roc[\_rising|falling]_en. If separate attributes exist for the two directions, but direction is not specified for this attribute, then a single threshold value applies to both directions. The raw or input element of the name indicates whether the value is in raw device units or in processed units (as \_raw and \_input do on sysfs direct channel read attributes).
+
+-  **Magnitude Events:**
+
+| **<type>Z[\_name]_mag[\_rising|falling]_en**
+| Similar to in_accel_x_thresh[\_rising|_falling]_en, but here the magnitude of the channel is compared to the threshold, not its signed value.
+
+| **<type>Z[\_name]_mag[\_rising|falling]_value**
+| The value to which the magnitude of the channel is compared. If number or direction is not specified, applies to all channels of this type.
+
+-  **Temporal Conditions:**
+
+| **<type>[Z][\_name][\_thresh|_roc][\_rising|falling]_period**
+| Period of time (in seconds) for which the condition must be met before an event is generated. If direction is not specified then this period applies to both directions.
+
+
+Supported Events
+----------------
+
++----------------------------------+
+
+
+| Event Attributes                 |
+
++==================================+
+
+| Channel Temp                     |
+
++----------------------------------+
+
+| in_temp0_thresh_both_hyst_raw    |
+
++----------------------------------+
+
+| in_temp0_thresh_falling_en       |
+
++----------------------------------+
+
+| in_temp0_thresh_falling_value    |
+
++----------------------------------+
+
+| in_temp0_thresh_rising_en        |
+
++----------------------------------+
+
+| in_temp0_thresh_rising_value     |
+
++----------------------------------+
+
+| Channel VIN0                     |
+
++----------------------------------+
+
+| in_voltage0_thresh_both_hyst_raw |
+
++----------------------------------+
+
+| in_voltage0_thresh_falling_en    |
+
++----------------------------------+
+
+| in_voltage0_thresh_falling_value |
+
++----------------------------------+
+
+| in_voltage0_thresh_rising_en     |
+
++----------------------------------+
+
+| in_voltage0_thresh_rising_value  |
+
++----------------------------------+
+
+| Channel VIN1                     |
+
++----------------------------------+
+
+| in_voltage1_thresh_both_hyst_raw |
+
++----------------------------------+
+
+| in_voltage1_thresh_falling_en    |
+
++----------------------------------+
+
+| in_voltage1_thresh_falling_value |
+
++----------------------------------+
+
+| in_voltage1_thresh_rising_en     |
+
++----------------------------------+
+
+| in_voltage1_thresh_rising_value  |
+
++----------------------------------+
+
+| Channel VIN2                     |
+
++----------------------------------+
+
+| in_voltage2_thresh_both_hyst_raw |
+
++----------------------------------+
+
+| in_voltage2_thresh_falling_en    |
+
++----------------------------------+
+
+| in_voltage2_thresh_falling_value |
+
++----------------------------------+
+
+| in_voltage2_thresh_rising_en     |
+
++----------------------------------+
+
+| in_voltage2_thresh_rising_value  |
+
++----------------------------------+
+
+| Channel VIN3                     |
+
++----------------------------------+
+
+| in_voltage3_thresh_both_hyst_raw |
+
++----------------------------------+
+
+| in_voltage3_thresh_falling_en    |
+
++----------------------------------+
+
+| in_voltage3_thresh_falling_value |
+
++----------------------------------+
+
+| in_voltage3_thresh_rising_en     |
+
++----------------------------------+
+
+| in_voltage3_thresh_rising_value  |
+
++----------------------------------+
+
+| Channel VIN4                     |
+
++----------------------------------+
+
+| in_voltage4_thresh_both_hyst_raw |
+
++----------------------------------+
+
+| in_voltage4_thresh_falling_en    |
+
++----------------------------------+
+
+| in_voltage4_thresh_falling_value |
+
++----------------------------------+
+
+| in_voltage4_thresh_rising_en     |
+
++----------------------------------+
+
+| in_voltage4_thresh_rising_value  |
+
++----------------------------------+
+
+| Channel VIN5                     |
+
++----------------------------------+
+
+| in_voltage5_thresh_both_hyst_raw |
+
++----------------------------------+
+
+| in_voltage5_thresh_falling_en    |
+
++----------------------------------+
+
+| in_voltage5_thresh_falling_value |
+
++----------------------------------+
+
+| in_voltage5_thresh_rising_en     |
+
++----------------------------------+
+
+| in_voltage5_thresh_rising_value  |
+
++----------------------------------+
+
+| Channel VIN6                     |
+
++----------------------------------+
+
+| in_voltage6_thresh_both_hyst_raw |
+
++----------------------------------+
+
+| in_voltage6_thresh_falling_en    |
+
++----------------------------------+
+
+| in_voltage6_thresh_falling_value |
+
++----------------------------------+
+
+| in_voltage6_thresh_rising_en     |
+
++----------------------------------+
+
+| in_voltage6_thresh_rising_value  |
+
++----------------------------------+
+
+| Channel VIN7                     |
+
++----------------------------------+
+
+| in_voltage7_thresh_both_hyst_raw |
+
++----------------------------------+
+
+| in_voltage7_thresh_falling_en    |
+
++----------------------------------+
+
+| in_voltage7_thresh_falling_value |
+
++----------------------------------+
+
+| in_voltage7_thresh_rising_en     |
+
++----------------------------------+
+
+| in_voltage7_thresh_rising_value  |
+
++----------------------------------+
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

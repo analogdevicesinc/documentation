@@ -1,0 +1,401 @@
+LT3074 Ultra-fast Linear Regulator with PMBus
+=============================================
+
+Supported Devices
+-----------------
+
+-  :adi:`LT3074`
+
+Description
+-----------
+
+This client driver is dependent to the core PMBus driver. The `PMBus driver <https://www.kernel.org/doc/Documentation/hwmon/pmbus>`__ is responsible for exposing a set of sysfs file required for the PMBus interface. Additionally, the LT3074 driver also adds debugfs entries to allow access to other PMBus commands and manufacturer-specific registers.
+
+Source Code
+===========
+
+Status
+------
+
+============================ =====================
+Source                       Mainlined?
+============================ =====================
+Bitbucket (not yet released) No (not yet released)
+============================ =====================
+
+Files
+-----
+
+======== =======================================
+Function File
+======== =======================================
+driver   `drivers/hwmon/lt3074.c <https://wiki.analog.com/bitbucket>`__
+======== =======================================
+
+Example I2C device initialization
+=================================
+
+Currently, the LT3074 driver can only be instantiated via devicetree.
+
+Required devicetree properties:
+
+-  **compatible**: Must be always one of these:
+
+   -  adi,lt3074
+
+-  **reg**: I2C device base address.
+
+::
+
+   &i2c1 {
+           #address-cells = <1>;
+           #size-cells = <0>;
+
+           lt3074@1d {
+                   compatible = "adi,lt3074";
+                   reg = <0x1d>;
+           };
+   };
+
+Enabling Linux driver support
+=============================
+
+Configure kernel with “make menuconfig” (alternatively use “make xconfig” or “make qconfig”).
+
+.. hint::
+
+   The LT3074 driver is a client driver of the PMBus core driver which depends on **CONFIG_I2C**.
+
+
+Adding Linux driver support
+===========================
+
+Configure kernel with "make menuconfig" (alternatively use “make xconfig” or “make qconfig”).
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           <*>     Hardware Monitoring support --->
+               --- Hardware Monitoring support
+           [--snip--]
+               <*> PMBus support --->
+                   [--snip--]
+                       <*> Analog Devices LT3074 Ultra-fast Linear Regulator
+                   [--snip--]
+           [--snip--]
+
+Hardware configuration
+======================
+
+Driver testing
+==============
+
+HWMON device files
+------------------
+
+All sysfs files of a PMBus driver can be found under /sys/class/hwmon/hwmonX, where X is the hwmon device index. These files contain voltage, temperature and current data of the device. To determine which hwmon device corresponds to which hardware chip, the user can read the name file under /sys/class/hwmon/hwmonX/name. Meanwhile, if debugfs is enabled, all debugfs files are found under /sys/kernel/debug/pmbus/hwmonX. Status and manufacturer-specific registers can be accessed here.
+
+Sysfs
+~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/> **cd /sys/class/hwmon/**
+      root:/sys/class/hwmon> ls
+      hwmon0  hwmon1 hwmon2
+   
+      root:/sys/class/hwmon> **cd hwmon2**
+      root:/sys/class/hwmon/hwmon2> **ls -l**
+      total 0
+      -rw-r--r-- 1 root root 4096 Dec 11 13:11 curr1_crit
+      -r--r--r-- 1 root root 4096 Dec 11 13:11 curr1_crit_alarm
+      -r--r--r-- 1 root root 4096 Dec 11 13:11 curr1_input
+      -r--r--r-- 1 root root 4096 Dec 11 13:11 curr1_label
+      -rw-r--r-- 1 root root 4096 Dec 11 13:11 curr1_lcrit
+      -r--r--r-- 1 root root 4096 Dec 11 13:11 curr1_lcrit_alarm
+      lrwxrwxrwx 1 root root    0 Dec 11 13:11 device -> ../../../1-001d
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in1_input
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in1_label
+      -rw-r--r-- 1 root root 4096 Dec 11 13:03 in1_max
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in1_max_alarm
+      -rw-r--r-- 1 root root 4096 Dec 11 13:03 in1_min
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in1_min_alarm
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in2_input
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in2_label
+      -rw-r--r-- 1 root root 4096 Dec 11 13:03 in2_max
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in2_max_alarm
+      -rw-r--r-- 1 root root 4096 Dec 11 13:03 in2_min
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in2_min_alarm
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in3_input
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in3_label
+      -rw-r--r-- 1 root root 4096 Dec 11 13:03 in3_max
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in3_max_alarm
+      -rw-r--r-- 1 root root 4096 Dec 11 13:03 in3_min
+      -r--r--r-- 1 root root 4096 Dec 11 13:03 in3_min_alarm
+      -r--r--r-- 1 root root 4096 Dec 11 13:11 name
+      lrwxrwxrwx 1 root root    0 Dec 11 13:11 of_node -> ../../../../../../../../firmware/devicetree/base/soc/i2c@7e804000/lt3074@1d
+      drwxr-xr-x 2 root root    0 Dec 11 13:11 power
+      lrwxrwxrwx 1 root root    0 Dec 11 13:11 subsystem -> ../../../../../../../../class/hwmon
+      -r--r--r-- 1 root root 4096 Dec 11 13:11 temp1_input
+      -rw-r--r-- 1 root root 4096 Dec 11 13:11 temp1_max
+      -r--r--r-- 1 root root 4096 Dec 11 13:11 temp1_max_alarm
+      -rw-r--r-- 1 root root 4096 Dec 11 13:03 uevent
+      root:/sys/class/hwmon/hwmon2>
+   
+
+
+Debugfs
+~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/> **cd /sys/kernel/debug/pmbus/hwmon2/**
+      root:/sys/kernel/debug/pmbus/hwmon2> **ls -l**
+   
+      total 0
+      drwxr-xr-x 2 root root 0 Dec 11 13:03 lt3074
+      -r--r--r-- 1 root root 0 Dec 11 13:03 status0
+      -r--r--r-- 1 root root 0 Dec 11 13:03 status0_cml
+      -r--r--r-- 1 root root 0 Dec 11 13:03 status0_input
+      -r--r--r-- 1 root root 0 Dec 11 13:03 status0_iout
+      -r--r--r-- 1 root root 0 Dec 11 13:03 status0_mfr
+      -r--r--r-- 1 root root 0 Dec 11 13:03 status0_temp
+      -r--r--r-- 1 root root 0 Dec 11 13:03 status0_vout
+      root:/sys/kernel/debug/pmbus/hwmon2> **cd lt3074/**
+      root:/sys/kernel/debug/pmbus/hwmon2/lt3074> **ls -l**
+      total 0
+      -r--r--r-- 1 root root 0 Dec 11 13:03 capability
+      -rw-r--r-- 1 root root 0 Dec 11 13:03 clear_fault
+      -rw-r--r-- 1 root root 0 Dec 11 13:03 margin_high
+      -rw-r--r-- 1 root root 0 Dec 11 13:03 margin_low
+      -r--r--r-- 1 root root 0 Dec 11 13:03 mfr_special_id
+      -rw-r--r-- 1 root root 0 Dec 11 13:03 on_off_cfg
+      -rw-r--r-- 1 root root 0 Dec 11 13:03 operation
+      -rw-r--r-- 1 root root 0 Dec 11 13:03 rail_address
+      -rw-r--r-- 1 root root 0 Dec 11 13:03 reset
+      -r--r--r-- 1 root root 0 Dec 11 13:03 vout_mode
+      -rw-r--r-- 1 root root 0 Dec 11 13:03 write_protect
+      root:/sys/kernel/debug/pmbus/hwmon2/lt3074>
+   
+
+
+For more information on the files format, take a look to `sysfs-interface <https://www.kernel.org/doc/Documentation/hwmon/sysfs-interface>`__.
+
+The PMBus core driver exposes sysfs files with the format {channel}\_{attribute}. Below is a mapping of the sysfs file name prefixes to their monitored values:
+
+-  **in1\_**: Input voltage
+-  **in2\_**: Bias voltage
+-  **in3\_**: Output voltage
+-  **curr1\_**: Output current
+
+Below is a mapping of the sysfs file name suffixes to their corresponding attributes:
+
+-  **\_label**: Label name
+-  **\_input**: Voltage/current data
+-  **\_max**: Overvalue warning limit
+-  **\_min**: Undervalue warning limit
+-  **\_max_alarm**: Overvalue warning status
+-  **\_min_alarm**: Undervalue warning status
+-  **\_crit**: Overcurrent fault limit
+-  **\_crit_alarm**: Overcurrent fault status
+-  **\_lcrit**: Undercurrent warning limit
+-  **\_lcrit_alarm**: Undercurrent warning status
+
+Show device name
+~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/hwmon/hwmon2> **cat name**
+      lt3074
+   
+
+
+Show input voltage values
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/hwmon/hwmon2> **cat in1_label**
+      vin
+      root:/sys/class/hwmon/hwmon2> **cat in1_input**
+      5304
+      root:/sys/class/hwmon/hwmon2> **cat in1_max**
+      5500
+      root:/sys/class/hwmon/hwmon2> **cat in1_min**
+      500
+      root:/sys/class/hwmon/hwmon2> **cat in1_max_alarm**
+      0
+      root:/sys/class/hwmon/hwmon2> **cat in1_min_alarm**
+      0
+   
+
+
+Show bias voltage values
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/hwmon/hwmon2> **cat in2_label**
+      vmon
+      root:/sys/class/hwmon/hwmon2> **cat in2_input**
+      3332
+      root:/sys/class/hwmon/hwmon2> **cat in2_max**
+      5500
+      root:/sys/class/hwmon/hwmon2> **cat in2_min**
+      2203
+      root:/sys/class/hwmon/hwmon2> **cat in2_max_alarm**
+      0
+      root:/sys/class/hwmon/hwmon2> **cat in2_min_alarm**
+      0
+   
+
+
+Show output voltage values
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/hwmon/hwmon2> **cat in3_label**
+      vout1
+      root:/sys/class/hwmon/hwmon2> **cat in3_input**
+      1223
+      root:/sys/class/hwmon/hwmon2> **cat in3_max**
+      5000
+      root:/sys/class/hwmon/hwmon2> **cat in3_min**
+      0
+      root:/sys/class/hwmon/hwmon2> **cat in3_max_alarm**
+      0
+      root:/sys/class/hwmon/hwmon2> **cat in3_min_alarm**
+      0
+   
+
+
+Show output current values
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/hwmon/hwmon2> **cat curr1_label**
+      iout1
+      root:/sys/class/hwmon/hwmon2> **cat curr1_input**
+      18
+      root:/sys/class/hwmon/hwmon2> **cat curr1_crit**
+      3300
+      root:/sys/class/hwmon/hwmon2> **cat curr1_crit_alarm**
+      0
+      root:/sys/class/hwmon/hwmon2> **cat curr1_lcrit**
+      100
+      root:/sys/class/hwmon/hwmon2> **cat curr1_lcrit_alarm**
+      1
+   
+
+
+Show status register
+~~~~~~~~~~~~~~~~~~~~
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/kernel/debug/pmbus/hwmon2> **cat status0**
+      0x1001
+   
+
+
+Set margin percentages
+~~~~~~~~~~~~~~~~~~~~~~
+
+Setting the margin percentage is automatically rounded down to the nearest defined setting as stated in the datasheet.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/kernel/debug/pmbus/hwmon2/lt3074> **echo 27 > margin_high**
+      root:/sys/kernel/debug/pmbus/hwmon2/lt3074> **cat margin_high**
+      25
+   
+
+
+More Information
+================
+
+HWMON pointers
+==============
+
+-  HWMON mailing list: linux-hwmon@vger.kernel.org
+-  `HWMON Linux Kernel Documentation <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/hwmon>`__
+-  `HWMON sysfs-interface <https://www.kernel.org/doc/Documentation/hwmon/sysfs-interface>`__
+-  `PMBus Linux Kernel Driver <https://www.kernel.org/doc/Documentation/hwmon/pmbus>`__
+
+.. include:: ../need_help.rst

@@ -1,0 +1,23 @@
+PMB004 User Guide
+=================
+
+**insert picture**
+
+Reference Design Description
+----------------------------
+
+The PMB004 reference design has multiple input signal paths that are capable of measuring IEPE, DC and AC signals. This reference design also has an input amplifier that enables a direct interface to Temperature sensors.
+
+This reference design utilizes the ADAQ7768-1: A highly integrated precision signal chain uModule that is composed of an Anti-Alias Filter, a PGIA, an ADC Driver and a 24-bit Sigma Delta ADC. The PGIA has 7 gain options that is capable of signal amplification and signal attenuation. The high input impedance of the PGIA maintains the integrity of the signal being measured from multiple sensor impedances. The ADAQ7768-1 boasts its superior channel-to-channel phase matching capabilities that is beneficial in a multichannel system application.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/foldername/block_diagram.png
+   :align: center
+
+Customer Value Proposition
+--------------------------
+
+The PMB004 reference design is capable of:
+
+-  Measuring IEPE sensor inputs
+-  Making DC voltage measurements
+-  Making Current Measurements

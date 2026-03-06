@@ -1,0 +1,159 @@
+CN0348 Software User Guide
+==========================
+
+Overview
+--------
+
+:adi:`CN-0348 <CN0348>` showcases a solution for precision 16-bit digital-to-analog conversion with wide dynamic signal range in a single supply system. It utilizes a 5V voltage reference (:adi:`ADR4550`), a voltage output digital-to-analog converter (:adi:`AD5541A`), and a rail-rail amplifier as the output buffer (:adi:`ADA4500-2`). The ADA4500-2 exhibits zero crossover distortion and this feature makes it an excellent choice as an output buffer to maintain the linearity of the AD5541A over its input digital code and provide a wide dynamic output range. The combination of parts provides industry-leading 16-bit integral nonlinearity (INL) of ±1LSB and differential nonlinearity (DNL) of ±1LSB with guaranteed monotonicity. This user guide gives information on how to use the evaluation software to collect data from the :adi:`EVAL-CN0348-SDPZ` Daughter Board.
+
+
+|image1|
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  :adi:`EVAL-CN0348-SDPZ` Evaluation Board (**CN-0348 Board**)
+-  `CN0348 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0348>`__
+
+   -  (supplied with provided CD in kit)
+
+-  PC with the following *Minimum Requirements*
+
+   -  Windows XP SP2, Windows Vista or Windows 7
+   -  USB type A Port
+   -  Processor rated at 1GHz or faster
+   -  512 MB RAM and 500 MB available hard disk space
+
+-  USB type A to USB type mini-B cable
+-  SMB Connector
+-  For INL/DNL data collection:
+
+   -  GPIB Controller for Hi-Speed USB Type A Connector Cable (NI-488.2 3.1.1 GPIB controller driver is available at https://www.ni.com/en-us/support/model.gpib-usb-hs.html
+   -  Agilent 3458A
+
+.. note::
+
+   **NOTE** - Any multimeter can be used with this board. However, for INL/DNL measurement, software interface was written with the Agilent 3458A in mind.
+
+
+Installing the Software
+-----------------------
+
+-  Open the file **setup.exe** that is provided from the CD in kit.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0348 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0348>`__ to the default directory path **C:\\Program Files\\Analog Devices\\CN0348\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+| |image2|
+| \* Click **Next** to view the installation review page
+| |image3|
+| \* Click **Next** to start the installation
+
+-  Upon completion of the installation of the **CN0348 SDP Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image4|
+
+   \* Click **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\DriversR2**\
+
+
+   |image5|
+
+-  Click **“Next”** to install the **SDP Drivers** and complete the installation of all software.
+
+Using the Evaluation Software
+-----------------------------
+
+Software Control and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software1.png
+   :align: center
+   :width: 600px
+
+::
+
+   -**LDAC COntrol**
+   * Always check the box before starting any test  
+   -**Write to DAC Button**
+   * Enter the digital input code in “DIN”  
+   * When “WRITE TO DAC” button is clicked, the digital input code is sent to the DAC 
+   -**Output Indicator**
+   * The LED string indicates the digital input code being written to the DAC (from bit 15 to bit 0)  
+   -**System Status String / LED Indicator**
+   * The string indicator displays a message to the user detailing the current state of the software
+   * The LED indicator displays the current state of the software in the form of an LED. There are three status LED colors\\ {{:resources:eval:user-guides:circuits-from-the-lab:black_led_button.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:green_led_button.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:red_led_button.png?nolink&|}}Error\\  \\ {{ :resources:eval:user-guides:circuits-from-the-lab:software2.png?nolink&600 |}}\\ 
+   -**Code Step Control**
+   * Enter the code step between each digital input to be written to the DAC    
+   -**Agilent 3458A GPIB Address Control**
+   * Enter in the GPIB address of the multimeter      
+   * GPIB Address can be determined from the multimeter by manually pressing down on SHIFT+Local.  By default it should be 22
+   -**Current Code / Voltage Indicator**
+   * This indicates the current digital input code and output voltage of the DAC 
+   -**File Directory Control**
+   * This allows you to enter the file directory and name to save the INL/DNL measurement data
+   -**INL / DNL measurement graphs**
+   * These graphs display the INL and DNL vs. input digital code when data collection is done\\ \\  {{ :resources:eval:user-guides:circuits-from-the-lab:software3.png?nolink&600 |}}\\ 
+   -**Transfer Function Graph**
+   * This graph shows the transfer function of the DAC output voltage vs. input digital code\\ \\  {{ :resources:eval:user-guides:circuits-from-the-lab:software4.png?nolink&600 |}}\\ 
+   -**SDP Board Firmware Information**
+   * This gives you the up to date information on the SDP board firmware
+
+Connecting the Hardware and Taking Measurements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Connect the SDP Board to the CN0348 Board
+-  Connect +6V and analog ground to the CN0348 board (J1)
+-  Connect the USB cable supplied with the SDP board to the USB port on the PC and the SDP board
+-  Connect Vout (J3) to a multimeter
+-  Open **CN0348.exe**. It should be located in **C:\\Program Files\\Analog Devices\\CN0348\\**
+-  The application will attempt to connect to the board immediately
+-  Check **LDAC** box
+-  Perform functionality test by entering the following in **DIN** and click **WRITE TO DAC**
+
+   -  0000; multimeter should read close to 0V
+   -  FFFF; multimeter should read close to 5V
+   -  **OUTPUT** (Bit 15 to Bit 0) should also light up the associated LED indicator
+
+For INL/DNL data collection:
+
+-  Connect Vout to the Agilent 3458A multimeter
+-  Connect the Agilent 3458A to the PC using a GPIB to USB Type A connector (for data collection via Labview software)
+-  Set the multimeter to have “NPLC” as 1
+-  Enter GPIB Address of Agilent 3458A.
+-  Enter desired **Code Step**
+
+   -  Code Step = 16 takes about 4min 10sec to finish measurement
+   -  Code Step = 32 takes about 2min 5sec to finish measurement
+
+-  Enter the file name and path you want to save data in **Enter file name to save data before running**
+-  Click on **Start**
+-  **Current Code** and **Current voltage** should show the progress of measurements
+-  To exit, go to File > Exit.
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0348-SDPZ?&v=RevB>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0348_simplified_schematic.pdf.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0348-install1.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0348-install2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0348-install3.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0348-install4.png

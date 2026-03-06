@@ -1,0 +1,67 @@
+Running Sample Demo: AD2430
+===========================
+
+Using SigmaStudio+ the A2B system can be directly controlled from a connected computer without involving a microcontroller or a DSP. This mode is helpful for quick testing of the capabilities of AD24xx without the need for a microcontroller in the system.
+
+.. note::
+
+   Please refer Appendices A and B for information about navigating in SigmaStudio+ for A2B use-case. A block diagram of a 3 node A2B system with PC as Host is shown below.
+
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_a2b_demo_configuration_1.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** Sample A2B demo configuration
+
+
+For PC Software setup, refer :doc:`Software Requirements </wiki-migration/resources/tools-software/a2bv2/quickstartguide/systemrequirements>` and for Hardware Setup refer :doc:`Standard Power – AD2430 / AD2438 jumper setting </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` . To run the sample demo, refer :doc:`Running the Sample Demo) </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` .
+
+SC59x EZ-Kit Mode
+-----------------
+
+This section describes the steps to run the demo using EV-SC594-SOM with AD2430. \*Note:\* Running this demo requires CrossCore Embedded Studio to be installed on the machine. For details, refer :doc:`Software Requirements </wiki-migration/resources/tools-software/a2bv2/quickstartguide/systemrequirements>`
+
+Setup
+~~~~~
+
+The hardware connections to be done are described below. A2B Evaluation boards shall be connected in the following order
+
+-  EV-SC594-SOM (Rev B) <-> EV-SOMCRR-EZKIT (Rev A) <–>Eval-AD2430WD1BZ(Main) <-> EVAL-AD2428WB1BZ (Sub 0) <–> EVAL-AD2430WC1BZ (Sub 1) as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2430>`
+-  Connect twisted-pair wire between the “B” connector on the Main board and the “A” connector on the Sub 0 board. Repeat the same connection between Sub 0 and Sub 1
+-  Connect 12V power supply to the power connector (P8) on EV-SOMCRR-EZKIT board.
+-  Connect 12V power supply to the power connector (P7) on Eval-AD2430WDZ board.
+-  Attach JTAG to P1 on EV-SC594-SOM board and other end of JTAG to USB port of PC.
+-  Connect audio source (e.g., output from an iPod) to ‘Audio Line- in’ ports, shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2430>`, AD2428WB1BZ boards.
+-  Connect separate audio sinks (e.g., active speakers) to ‘Audio Line-out’ ports, shown :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2430>`, on EV-SOMCRR-EZKIT and AD2428WB1BZ boards.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sc594-ad2430_setup.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** SC594-AD2430 setup
+
+
+Jumper settings for EV-SOMCRR-EZKIT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are no additional jumper settings needed for the purpose of this demo. The jumper settings should be maintained as mentioned in the EV-SOMCRR-EZKIT manual default configuration.
+
+Running target framework on EV-SOMCRR EZ-KIT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Ensure that the “Boot Mode” switch is set to 0 on the EV-SC594-SOM EZ-KIT board.
+-  Connect the JTAG (ICE 1000 or ICE 2000) and power on the board with the setup as shown in\ :doc:`Setup </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2430>` .
+-  Create Debug Session in CCES by clicking Run -> Debug Configurations -> Application with CrossCore Debugger -> Sharc -> SC594 -> Emulator -> ICE 1000 / 2000 -> Finish
+-  Select the SC59x dxe to be loaded and click Debug to start the session as shown below.
+-  In the Debug Window, Run F5 to execute sample demo.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/debug_configuration_sc59x_1.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** Debug Configuration – SC59x
+

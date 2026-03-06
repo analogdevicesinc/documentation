@@ -1,0 +1,311 @@
+AD7780 Pmod Xilinx FPGA Reference Design
+========================================
+
+Introduction
+------------
+
+The :adi:`AD7780` is a complete low power front-end solution for bridge sensor products, including weigh scales, strain gages, and pressure sensors. It contains a precision, low power, 24-bit sigma-delta (Σ-Δ) ADC; an on-chip, low noise programmable gain amplifier (PGA); and an on-chip oscillator.
+
+**HW Platform(s):**
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+
+Quick Start Guide
+-----------------
+
+The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`__
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`__
+-  `PmodAD3 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD3>`__
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with LX9 and/or Xilix tools, please visit
+
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`__ for details.
+   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
+   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
+
+
+Avnet LX9 MicroBoard Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD7780\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodAD3 to J5 connector of LX9 board (see image below). Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3.jpg
+   :alt: PmodAD3 and LX-9
+   :width: 200px
+
+Digilent Nexys™3 Spartan-6 FPGA Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD7780\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodAD3 to JA connector of Nexys™3 board (see image below). Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_nexys3.jpg
+   :alt: PmodAD3 and Nexys™3
+   :width: 200px
+
+Avnet ZedBoard
+~~~~~~~~~~~~~~
+
+To begin, connect the PmodAD3 to JD connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_zed.jpg
+   :alt: PmodAD3 and ZedBoard
+   :width: 200px
+
+FPGA Configuration for Nexys3 and LX-9 MicroBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad7780/sw/AD7780.bit).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodAD3impact.jpg
+   :alt: Programming FPGA in IMPACT
+   :width: 200px
+
+If programming was successful, the Main Menu will appear in your UART terminal, as seen in the pictures below. There are 6 options available for you. Use **[v], [f], [g], [p], [r], [s], [m]** in order to choose the desired one.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_menu1.jpg
+   :alt: Main Menu
+   :width: 600px
+
+**Display Vin** allows printing the input voltage over the **UART** with the appropriate output rate (10 Hz or 16.7 Hz, depending on Filter settings). Pressing **[m]** will return to menu.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_menu2.jpg
+   :alt: Display Vin
+   :width: 600px
+
+If the device is **Powered Down** the user will be prompted to **Power Up** the device prior to trying to display the input voltage.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_menu3.jpg
+   :alt: Display Vin error messege
+   :width: 600px
+
+**Change Filter Option** allows selecting between 10 Hz and 16.7 Hz Output Rate.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_menu4.jpg
+   :alt: Change Filter Options
+   :width: 600px
+
+**Change Gain Option** allows selecting between a gain of 128 or a gain of 1.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_menu5.jpg
+   :alt: Change Gain Option
+   :width: 600px
+
+**Power Down / Power Up** allows powering down the device or powering it back up.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_menu6.jpg
+   :alt: Power Up/Down device
+   :width: 600px
+
+**Modify Voltage Reference** allows changing the voltage reference that is used to calculate the value displayed over UART. The default value is 3300 mV. If using another reference voltage, please modify it here before printing values, in order to obtain correct results. If any value besides **1** to **9** is entered, an error message will be displayed. If a value **higher than 5000** is entered, an error message will be displayed. If entering less than **4** characters, please press **[Enter]** in order to validate your input. If 4 characters are entered, the result is automatically validated.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_menu7.jpg
+   :alt: Modify Voltage Reference
+   :width: 600px
+
+Input errors are displayed in the following picture.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_menu8.jpg
+   :alt: Modify Voltage Reference errors
+   :width: 600px
+
+**Display current settings** allows printing the current settings for the device. Any pressed key will take you back to the menu.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad3_menu9.jpg
+   :alt: Display current settings
+   :width: 600px
+
+FPGA Configuration for ZedBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the **download.bat** script from the "../bin" folder downloaded from the github (see the links in the download section of the wiki page). The script will automatically configure the ZYNQ SoC and download the \*.elf file afterwards.
+
+.. tip::
+
+   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+
+
+If programming was successful, you should be seeing messages appear on the terminal window. After programming the AD7780 device, the program will automatically read the value of the analog voltage input and print it via UART.
+
+Using the reference design
+--------------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+Avnet LX-9 MicroBoard and Digilent Nexys3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The reference design is a custom communication interface, allowing control for the **FILTER**, **GAIN**, **PDRST** pins, **reading data** from the AD7780 and **generating an interrupt** when data has been received.
+
+.. _avnet-zedboard-1:
+
+Avnet ZedBoard
+^^^^^^^^^^^^^^
+
+The reference design is a custom communication interface, **reading data** from the AD7780 and **generating an interrupt** when data has been received. DMA transfers 256 samples from the ADC and prints the input voltage via UART. **FILTER**, **GAIN** and **PDRST** are hardcoded to '1', but can be easily programmed by adding links from your custom HDL to the inputs of the IPCore.
+
+.. important::
+
+   
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  Reference voltage is 3300 mV default. If using another reference voltage, please check that the jumpers are properly set on the PmodAD3, and modify the reference voltage in the software application using UART (select option [r]).
+   -  If using 3 external signals (AVDD, AIN and REF) then 2 jumpers on PmodAD3 must be off (JP1 and JP2).
+   -  If using 2 external signals (AIN and REF) or (AIN and AVDD) then 1 jumper on PmodAD3 must be off (JP2 or JP1).
+   -  Be aware that 0.5V ≤ Vref ≤ AVDD and 2.7V ≤ AVDD ≤ 5.25V.
+   -  Be aware (especially when using gain = 128) that the common-mode voltage (AIN(+) + AIN(−)) / 2 must be ≥ 0.5V.
+   
+
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \**Avnet LX-9 MicroBoard: **
+     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7780_lx9.zip>`__\ **
+     **\ Digilent Nexys™3:**
+     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7780_nexys3.zip>`__\ **
+     **\ Avnet ZedBoard:\*\*
+   | \* :git-no-OS:`XPS Project <Pmods/PmodAD3/cf_ad7780_zed>`
+   | \* :git-no-OS:`AD7780 IPCore <Pmods/PmodAD3/cf_lib/edk/pcores/axi_ad7780_v1_00_a>`
+   | \* :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
+   | \* :git-no-OS:`PmodAD3 Driver Files <Pmods/PmodAD3>`
+   | \* :git-no-OS:`Programming Script <Pmods/PmodAD3/bin>`
+   |
+
+
+.. container:: hide
+
+   
+   Linux Device Driver - Custom HDL PCore
+   ======================================
+   
+   Connect PmodAD3 to the JD1 connector of the ZedBoard (upper row of pins).
+   
+   Preparing the SD Card
+   ---------------------
+   
+   In order to prepare the SD Card for booting Linux on the ZedBoard:
+   
+   -  Download the device tree: :git-no-OS:`PmodAD3 Linux devicetree <Pmods/PmodAD3/dts/zynq-zed-adv7511-pmod-ad3-ipcore.dts>`
+   -  Download the Xilinx XPS project: :git-no-OS:`PmodAD3 Linux XPS Project <Pmods/PmodAD3/cf_ad7780_zed>`
+   -  Download the AD7780 IPcore: :git-no-OS:`AD7780 IPCore <Pmods/PmodAD3/cf_lib/edk/pcores/axi_ad7780_v1_00_a>`
+      \* Download the project libraries: :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
+      \* Follow the instructions on the following wiki page, but use the device tree and project downloaded on the previous step
+   
+      -  :doc:`Linux with HDMI video output on the ZED and ZC702 </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`.
+   
+   Make sure you have an HDMI monitor connected to the ZedBoard, plug in the SD Card and power on the board. If everything is correct, the system should boot up. If you don't have an HDMI monitor, connect to the board via UART, Baud Rate 115200.
+   
+   There are 2 ways to test the driver.
+   
+   -  Using the terminal window
+   -  Using the ADI IIO Oscilloscope
+   
+   Using the terminal window
+   -------------------------
+   
+   Open a new terminal window by pressing **Ctrl+Alt+T**.
+   
+   Navigate to the location of the device and identify it using the following commands:
+   
+   ::
+   
+      cd /sys/bus/iio/devices/
+      ls
+      iio:device0 iio:device1 trigger0
+      cd iio\:device0
+      cat name
+      AD7780
+   
+   If the **cat name** command doesn't return **ad7780**, then change the number of the iio:device, and check again.
+   
+   ::
+   
+      cd ..
+      cd iio\:device1
+      cat name
+   
+   To see the list of options that the AD7780 driver provides, type:
+   
+   ::
+   
+      ls
+      buffer  dev  name  power  scan_elements  subsystem  uevent
+   
+   To read the raw input voltage, type:
+   
+   ::
+   
+      cd buffer
+      echo 40 > length
+      echo 1 > enable
+      hexdump -x /dev/iio\:device0
+      0000000    d34d    7d63    d44d    7d63    d04d    7d63    c84d    7d63
+      0000010    d44d    7d63    d74d    7d63    e04d    7d63    d84d    7d63
+   
+   .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7780_custom_linaro_terminal.jpg
+      :alt: AD7780 Read Voltage from Terminal
+      :width: 600px
+   
+   The commands written above can also be used if not using an HDMI monitor and a wireless keyboard, by using a serial terminal, and typing the commands after the system boot-up is complete.
+   
+   .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7780_custom_linux_serial.jpg
+      :alt: AD7780 Read Voltage from Serial Terminal
+      :width: 600px
+   
+   Using the ADI IIO Oscilloscope
+   ------------------------------
+   
+   Install the ADI IIO Oscilloscope using the instructions from the following wiki page:
+   
+   -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+   
+   Launch the ADI IIO Oscilloscope.
+   
+   Select **AD7780** from the **Device** drop-down menu. Set the desired number of samples in the **Sample Count** tab. Click the **Green Play Button** in order to start capturing and displaying data. Click **Stop** to stop the process.
+
+   
+   |AD7780 IIO Oscilloscope Plot|
+
+More information
+----------------
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |AD7780 IIO Oscilloscope Plot| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7780_custom_iio_plot.jpg
+   :width: 600px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

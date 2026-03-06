@@ -1,0 +1,146 @@
+AD7961 Native FMC Card & Xilinx Reference Design
+================================================
+
+Introduction
+------------
+
+The :adi:`AD7961` is an 16-bit, 5 MSPS charge redistribution successive approximation (SAR), analog-to-digital converter (ADC). The SAR architecture allows unmatched performance both in noise and in linearity. The AD7961 contains a low power, high speed, 16-bit sampling ADC, an internal conversion clock and an internal reference buffer. On the CNV± edge, the AD7961 samples the voltage difference between the IN+ and IN- pins. The voltages on these pins swing in opposite phase between 0 V and 4.096 V/5 V. The reference voltage is applied to the part externally. All conversion results are available on a single LVDS self-clocked or echo-clocked serial interface.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7961-FMC <EVAL-AD7961>`
+
+Supported Carriers
+------------------
+
+-  `KC705 <https://www.xilinx.com/KC705>`__
+
+Quick Start Guide
+-----------------
+
+The reference design has been tested with KC705. It should be easily portable to other boards such as ML605 and VC707, only the UCF and MHS files need to be changed. The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and the programmer (IMPACT). This bit file configuration also captures 8192 samples from the ADC and saves them in a \*.csv file.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  KC705 board
+-  EVAL-AD7961FMCZ board
+-  Signal generator (for data)
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE (Programmer (IMPACT) is sufficient for the demo and is available on Webpack). Use the latest version or the one used in the reference design.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with KC705 and/or Xilix tools, please visit
+
+
+   | `EK-K7-KC705-G.htm <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__ for details.
+   |
+
+Extract the project from the archive file to the location you desire.
+
+Xilinx KC705 Setup
+~~~~~~~~~~~~~~~~~~
+
+To begin, connect the EVAL-AD7961FMCZ board to the FMC-HPC or FMC-LPC connector (depending on archive file) of KC705 board (see images below). Connect power and USB cable from the PC to the *JTAG* USB connectors on the edge of the KC705. Connect a signal source to the AIN+(J5) and AIN-(J4) SMA connectors of the FMC card. After the hardware setup, turn the power on to the KC705.
+
+| KC705 and AD7961 FMC-LPC Connection
+| |KC705 LPC Hardware setup|
+
+| KC705 and AD7961 FMC-HPC Connection
+| |KC705 HPC Hardware setup|
+
+FPGA Configuration
+~~~~~~~~~~~~~~~~~~
+
+Start IMPACT, and initialze the JTAG chain. The program should recognize the FPGA device. Program the device using the ”../Bit/system.bit” file provided in the reference design archive..
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_impact.jpg
+   :alt: FPGA Programming
+   :width: 400px
+
+Data Capture
+~~~~~~~~~~~~
+
+At this point everything is set up and it is possible to start the evaluation of the ADI hardware. To capture data from the ADC run the **data_capture.bat** script located in the **"../DataCapture"** folder from the reference design .zip file. Every time the script is run a new batch of 8192 samples are read from the ADC at the ADC's maximum sampling rate and saved into the Acquisition.csv file located in the same folder as the data capture script. On the UART terminal messages will be displayed to show the status of the program running on the FPGA as shown in the picture below.
+
+| Data Capture Script
+| |Data Capture|
+| Acquisition.csv
+| |Acquisition File|
+| UART Messages
+| |UART messages|
+|
+
+.. tip::
+
+   The first time the data capture script is run it is possible that an error will occur while the script is trying to connect to the system. Just run the script again and the error shouldn't appear anymore.
+
+
+Using the reference design
+--------------------------
+
+Functional description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design is built on a Microblaze based system. It consists of two functional modules, a LVDS interface, and a DMA interface. The LVDS interface captures and buffers data from the ADC. The data is captured using Echoed-Clock mode or Self-Clock mode (depending on the project). The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software, and transfered to the PC using a \*.tcl script.
+
+Downloads
+---------
+
+FPGA Referece Designs:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  **KC705 Echoed Clock:** `cf_ad7961_kc705_echo_edk_14_3_2013_07_17.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_kc705_echo_edk_14_3_2013_07_17.zip>`__ FMC-HPC
+   -  **KC705 Self Clock Using Clock Generator:** `cf_ad7961_kc705_self_edk_14_3_2013_07_17.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_kc705_self_edk_14_3_2013_07_17.zip>`__ FMC-HPC
+   -  **KC705 Self Clock Using IDELAYE2:** `cf_ad7961_kc705_self_iodelay_edk_14_3_2013_07_17.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_kc705_self_iodelay_edk_14_3_2013_07_17.zip>`__ FMC-LPC
+   
+
+
+.. hint::
+
+   
+   -  Questions? :ez:`Ask Help & Support <fpga>`.
+   
+
+
+Zip file contents
+-----------------
+
+The zip file contains, in most cases, the following files and/or directories. To rebuild the reference design simply double click the XMP file and run the tool. To build SDK, select a workspace and use the C file to build the elf file. Please refer to `Xilinx EDK documentation <https://www.xilinx.com/support/documentation/dt_edk_edk13-2.htm>`__ for details.
+
+=========== =======================================================
+Bit         The bitfile required for Quick Evaluation
+DataCapture Data Capture script
+Hdl         Verilog file used to interface the component to a FPGA.
+Microblaze  The XPS Project.
+Software    C files and headers
+=========== =======================================================
+
+More information
+----------------
+
+-  :ez:`Ask questions about the FPGA reference design <community/fpga>`
+
+.. |KC705 LPC Hardware setup| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_kc705_setup_lpc.jpg
+   :width: 400px
+.. |KC705 HPC Hardware setup| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_kc705_setup_hpc.jpg
+   :width: 400px
+.. |Data Capture| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_datacapture.jpg
+   :width: 400px
+.. |Acquisition File| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad7961_acquisition_file.jpg
+   :width: 400px
+.. |UART messages| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/teraterm_adc.png
+   :width: 400px

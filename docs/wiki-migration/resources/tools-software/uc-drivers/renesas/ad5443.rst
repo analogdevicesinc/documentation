@@ -1,0 +1,161 @@
+AD5443 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5426`
+-  :adi:`AD5432`
+-  :adi:`AD5443`
+-  :adi:`AD5444`
+-  :adi:`AD5446`
+-  :adi:`AD5450`
+-  :adi:`AD5451`
+-  :adi:`AD5452`
+-  :adi:`AD5453`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5443SDZ <EVAL-AD5443>`
+-  :adi:`EVAL-AD5443-DBRDZ`
+-  :adi:`EVAL-AD5446SDZ <EVAL-AD5446>`
+-  :adi:`EVAL-AD5453SDZ <EVAL-AD5453>`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0143`
+-  :adi:`CN0151`
+
+Overview
+--------
+
+The AD5426/AD5432/AD5443 are CMOS 8-, 10-, and 12-bit current output digital-to-analog converters (DACs), respectively. These devices operate from a 2.5 V to 5.5 V power supply, making them suitable for battery-powered applications and many other applications.
+
+These DACs use a double buffered, 3-wire serial interface that is compatible with SPI, QSPI™, MICROWIRE™, and most DSP interface standards. In addition, a serial data out pin (SDO) allows for daisy-chaining when multiple packages are used. Data readback allows the user to read the contents of the DAC register via the SDO pin. On power-up, the internal shift register and latches are filled with 0s and the DAC outputs are at zero scale.
+
+Applications
+~~~~~~~~~~~~
+
+-  Portable battery-powered applications
+-  Waveform generators
+-  Instrumentation
+-  Programmable amplifiers and attenuators
+-  Digitally controlled calibration
+-  Programmable filters and oscillators
+-  Composite video
+-  Ultrasound
+-  Gain, offset, and voltage trimming
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5443_sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RX63N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx63n-yrdkrx63n-demonstration-kit-rx63n>`__
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD5443 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5443 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD5443 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD5443 driver:
+
++-----------------------------------------------------------------------------+----------------------------------------+
+| Function                                                                    | Description                            |
++=============================================================================+========================================+
+| unsigned char AD54xx_Init(void)                                             | Initializes the AD54xx device.         |
++-----------------------------------------------------------------------------+----------------------------------------+
+| unsigned short AD54xx_Function(unsigned char function, unsigned short data) | Selects a function of the DAC.         |
++-----------------------------------------------------------------------------+----------------------------------------+
+| void AD54xx_SetDac(unsigned short dacValue)                                 | Writes a value to DAC register.        |
++-----------------------------------------------------------------------------+----------------------------------------+
+| unsigned short AD54xx_GetDac(void)                                          | Writes the value of the DAC register.  |
++-----------------------------------------------------------------------------+----------------------------------------+
+| void AD54xx_Clear(unsigned char type)                                       | Clears DAC output to zero or midscale. |
++-----------------------------------------------------------------------------+----------------------------------------+
+
+Downloads
+---------
+
+-  `AD5443 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad54xx_generic.zip>`__
+-  `AD5443 RX63N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad54xx_rx63n.zip>`__
+
+Renesas RX63N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD5443 demonstration project on a Renesas RX63N platform.
+
+Required Hardware
+^^^^^^^^^^^^^^^^^
+
+-  `Renesas Demo Kit for RX63N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx63n-yrdkrx63n-demonstration-kit-rx63n>`__
+-  :adi:`EVAL-AD5443SDZ(ADI) <EVAL-AD5443SDZ>`
+
+Required Software
+^^^^^^^^^^^^^^^^^
+
+-  `High-performance Embedded Workshop for RX63N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`__
+-  `Renesas Peripheral Driver Library for RX63N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`__
+
+Hardware Setup
+^^^^^^^^^^^^^^
+
+An EVAL-AD5443SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RX63N:
+
+::
+
+     EVAL-AD5443SDZ Pin /SYNC (CS)      → YRDKRX63N J15 connector Pin 1
+     EVAL-AD5443SDZ Pin SDIN  (MOSI)    → YRDKRX63N J15 connector Pin 2
+     EVAL-AD5443SDZ Pin SDO   (MISO)    → YRDKRX63N J15 connector Pin 3
+     EVAL-AD5443SDZ Pin SCLK  (SCLK)    → YRDKRX63N J15 connector Pin 4
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5443_rx63n.jpg
+   :align: center
+
+Reference Project Overview
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The reference project initializes the device and writes a value to DAC register once every second.
+
+
+|image2|
+
+Software Project Setup
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. note::
+
+   See `rx63n_software_design <https://wiki.analog.com/rx63n_software_design>`__
+
+
+More information
+================
+
+.. include:: ../more-information.rst
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5443_rx63n_screen.jpg

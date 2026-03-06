@@ -1,0 +1,122 @@
+**Bold Text**\ ====== AD8422 FAQ Section ======
+
+The following is a listing of Frequently Asked Questions on AD8221, AD8222 and next generation AD8422 from our Technical Support teams
+
+FAQ Topics
+==========
+
+-  What is the output impedance of the AD8221?
+-  Can I replace AD620 or AD8221 with AD8422 in my circuit?
+-  How can I protect the AD8221 from high voltages up to 8kV?.
+-  Is the AD8422 intended for single-supply applications?
+-  Can you advise about stability of the AD8221 at capacitive loads. Which capacitive load is acceptable?
+-  I am trying to make an accurate system stable over a large Temperature range (-60°C - 110°C). What type of gain setting resistor should I use to keep a constant gain?
+-  What differentiates the AD8422 from previous generation of products (AD8221 and AD620)?
+-  Why do you use a 1kOhm unbalanced signal source for CMRR testing (according to datasheet specs) for instrumentation amps like AD8221, but this source imbalance is not used for differential amplifier CMRR specs?
+-  What are some common pitfalls to avoid while designing with AD8422?
+-  The output range in my AD8422 application is not as wide as the specification says. What is wrong?
+-  What is the difference between an RTI error and an RTO error and how do I calculate them for my error budget?
+-  Is there an evaluation board and a spice model for the AD8422 to help me accelerate the design and verification process?
+-  Are there any performance differences between the AD8421 SOIC and MSOP package options?
+
+FAQ Questions and Answers
+=========================
+
+**Q1: What is the output impedance of the AD8221?**
+
+Because of feedback, the output impedance of the AD8221 at DC is nearly non-existent. Maybe a few 10’s of mΩ for the bond wires. We have not characterized the output impedance of the AD8221 across frequency. However if you double the gain of 1 curve in figure 45 of the AD8295 datasheet rev A, it should give you a pretty good approximation. (The output amplifier of the AD8221 is very similar to the op amp in the AD8295 and is in a noise gain of 2.)
+
+**Q2: Can I replace AD620 or AD8221 with AD8422 in my circuit?**
+
+AD8422 is only available in the High-Performance Pinout which was introduced by the AD8221, so a board layout change is required to switch from AD620 to AD8422. AD8422 is pin-to-pin equivalent to AD8221, however it does have a different gain equation, so the value of the Rg resistor must be adjusted.
+
+The AD8221 and AD620 gain equation is: G = 1 + (49.4 kΩ)/R_G The AD8422 gain equation is: G = 1 + (19.8 kΩ)/R_G
+
+To put it another way, multiply your AD8221 or AD620 gain resistor value by 0.4008 in order to achieve the same gain with AD8422.
+
+**Q3: How can I protect the AD8221 from high voltages up to 8kV?.**
+
+The AD8221 will not be able to handle 8kV ESD by itself. Assuming only the inputs of the AD8221 are going to the outside world from his board, so these are the ones he will need to protect. I would recommend adding the RFI filter recommended in the datasheet. Not only will this help with potential RFI problems, but the resistors will help prevent large current from flowing into the AD8221, and the capacitors may smooth out the pulse energy. If you already have an RFI filter on the board, you might try increasing the value of the resistors. This will improve the robustness of the circuit at the expense of some higher noise and lower frequency response. I would also recommend adding diodes to the rails to shunt the energy away from the AD8221. BAV99’s are nice because they have low leakage current. For really robust protection you can use MOVs or TVS diodes on the inputs, although you should evaluate if the leakage current is OK for your application. Suppliers like Littelfuse and Bourns have a lot of circuit protection options.
+
+**Q4: Is the AD8422 intended for single-supply applications?**
+
+The AD8422 works on a wide range of supplies from +3.6V single supply to ±18V dual-supply, providing excellent power-savings and high-precision performance regardless of the supply voltage. The AD8422 is designed for more than just operation at low supplies, but to be very useful in systems that need a single-supply. In addition to having a lower minimum supply voltage than AD8221, the rail-to-rail output of the AD8422 greatly improves the achievable dynamic range in low supply voltage applications.
+
+AD8422 has much better noise and bandwidth characteristics than existing single-supply instrumentation amplifiers such as the AD623 and the AD8226. It is, however, important to note that because of the structure of the input stage, the AD8422 input range does not include ground, so it is not appropriate for single-supply applications that measure at ground.
+
+**Q5: Can you advise about stability of the AD8221 at capacitive loads. Which capacitive load is acceptable?**
+
+The settling time plots in the datasheet are all done with a 100pF load, and the part is very stable with this much capacitance or less. According to our Engineers AD8221 could probably drive about a nanofarad before going unstable (note this has not been tested in lab).
+
+To drive a larger capacitive load, one small resistor is recommended between the AD8221 and the capacitor. Best way to determine the correct resistor value is empirically using a square wave input into the AD8221 and adjusting the resistance until the square wave looks reasonable at the output.
+
+(There is a note on driving a cable on page 21 of AD8222 datasheet (dual of AD8221),you may also find this useful).
+
+**Q6: I am trying to make an accurate system stable over a large Temperature range (-60°C - 110°C). What type of gain setting resistor should I use to keep a constant gain?**
+
+The AD8221 includes some data for 125C operation however, it was only qualified for -40 to +85C operation. I believe the additional data was included for those who wanted to see behavior beyond its specified temperature rating. The AD8221 should work well at your temperatures, however as we don't spec this part above 85 degrees we can not provide any guarantees. We would recommend you also look at the AD8228, which is very similar to the AD8221, except that it has fixed gains of 10 and 100. Because the resistors are all internal, your gain drift with the AD8228 is much better at these gains than with a resistor programmable part like the AD8221.
+
+**Q7: What differentiates the AD8422 from previous generation of products (AD8221 and AD620)?**
+
+AD620 set an industry standard for instrumentation amplifier performance 20 years ago. AD8221 came 10 years later with an improvement over AD620 in all performance specifications and reliability. AD8421 and AD8422 represent the two-pronged third-generation development of this family of products. Rather than just being an incremental improvement in all performance specifications, AD8422 also integrates new features including input over-voltage protection, a rail-to-rail output stage, and it consumes less than one-third the power of the AD8221.
+
+**Q8: Why do you use a 1kOhm unbalanced signal source for CMRR testing (according to datasheet specs) for instrumentation amps like AD8221, but this source imbalance is not used for differential amplifier CMRR specs?**
+
+The instrumentation amplifiers like the AD8221 have very high input impedance, and in fact the input CMRR is based on the transistor matching of the input pair. This matching is excellent, leading to a very high CMRR, typical >110 dB. When we do our characterization over frequency, we add a 1kOhm resistor on one input, and then sweep a common mode signal over frequency. This allows us to provide the customer with a worst case spec on the specifications table. Adding the 1Kohm also simulates what would happen in the real application, where customers will most likely connect the inputs of the AD8221 to a resistive Wheatstone bridge, which has some impedance and will look like an imbalance to the AD8221. So, we add the 1Kohm to provide the customer with a worst case number, and also try to simulate real life conditions. The diff amps on the other hand have a resistive input. So, CMRR performance varies on the matching of those input resistors. The applications are different as well, like for example current sensing, where the inputs of the diff amp are connecting to a very small shunt resistor, which will not cause an imbalance with the input resistors of the diff amp. In fact, with diff amps, we ask customers not to add external resistors to the inputs, since they lead to accuracy issues and mismatch with our trimmed precision resistors internal to the part
+
+**Q9: What are some common pitfalls to avoid while designing with AD8422?**
+
+AD8422 is a high performance precision instrumentation amplifier. In order to achieve the optimum performance, it must be applied properly.
+
+Floating sensors: Instrumentation amplifier inputs are not isolated, and therefore cannot measure floating voltages. For floating sensors, such as thermocouples or transformers, a dc path to ground must be provided for the bias current. This guarantees that the AD8422 inputs don’t float to the edge of the input range and saturate.
+
+For single-supply applications, the inputs must be biased to a voltage within the input range, such as mid-supply. See AN0937 for some more single-supply in-amp considerations: http://www.analog.com/static/imported-files/application_notes/AN-937.pdf
+
+REF input impedance: AD8422’s output is developed relative to the voltage at the REF pin, which is most often tied directly to ground. If the output must be level-shifted, the REF pin can be driven to accomplish this. However, in order to avoid excessive CMRR and gain errors, the REF pin must be driven with a low-impedance source.
+
+RFI Rectification: The AD8422 is a precision amplifier. Therefore, when high-frequency signals such as RF couple into the inputs, they can be rectified into a dc voltage at the output. Since these signals vary with time, this rectification can appear as a train of pulses, which cannot be removed by additional filtering or calibration. The data sheet recommends an RFI filter to reduce RFI rectification. In applications with higher levels of RF interference, chip ferrite beads or common-mode chokes may be used at the inputs to further attenuate RF signals. See A Designers Guide to Instrumentation Amplifiers for more information.
+
+More considerations for applying the AD8422 can be found in the “THEORY OF OPERATION” section of the data sheet.
+
+**Q10: The output range in my AD8422 application is not as wide as the specification says. What is wrong?**
+
+The AD8422 is a modified version of the 3 op-amp instrumentation amplifier, which means that internal nodes, such as the pre-amplifier outputs and the sub tractor op-amp inputs, can saturate. Because the common-mode voltage is not removed until the subtractor stage, the pre-amplifier outputs of the AD8422 experience a combination of the common-mode signal (minus a diode drop) and the gained differential signal. Therefore, the output swing is dependent on the common-mode input voltage as well as the gain and reference pin voltage. Figure 10 through to Figure 15 in the AD8422 data sheet show these limits for some common configurations. See the following video for a more thorough general explanation of these limits: http://www.youtube.com/watch?v=VSf31DaXWUE
+
+**Q11: What is the difference between an RTI error and an RTO error and how do I calculate them for my error budget?**
+
+The AD8422 is composed of a preamplifier stage that applies differential gain, and a subtractor stage that removes the common-mode voltage. The subtractor is in a fixed gain of 1 for a differential signal (noise gain =2), whereas the preamplifier stage gain changes with programmed gain. Because the errors of the output section are multiplied by a fixed gain, this section is often the principal error source at low circuit gains. When the in-amp is operating at higher gains, the gain of the input stage is increased. As the gain is raised, errors contributed by the input section are multiplied, while output errors are not. So, at high gains, the input stage errors dominate. In order to combine the error sources from both stages, the errors are often modeled as a single error source in series with the input, or Referred to the Input (RTI). Equivalently the errors can be modeled as a single error source in series with the output, or Referred to the Output (RTO).
+
+An example of this is the Offset Voltage. For the AD8422BRZ, the maximum offset voltage is composed of the input offset (VOSI) of 25µV and the output offset (VOSO) of 150µV. For example, these specifications can be used to calculate the total offset at a gain of 10. Total RTI Error = V¬OSI + (VOSO/G) = 25µV + (150µV/10) = 40µV
+
+Total RTO Error = G*V¬OSI + VOSO = 10*25µV + 150µV = 400µV
+
+Note that the two error numbers (RTI vs. RTO) are different: the RTO numbers are 10 times larger, and logically they should be, as at a gain of 10, the error at the output of the in-amp should be 10 times the error at its input.
+
+Noise is calculated in a similar way, except that the noise of the two sections adds as the root sum of squares.
+
+Total RTI noise = √eNI2 + (eNO/G)2
+
+Total RTO noise = √(G*eNI)2 + eNO2
+
+In a gain of 10, AD8422 RTI Voltage Noise spectral density is: √(8nV/√Hz2 + (80nV/√Hz / 10)2) = 11.3nV/√Hz RTI.
+
+Note that gain errors, which are multiplicative rather than additive, do not follow this pattern. For example, if there is a 1% error on each stage of a two stage amplifier, there is approximately 2% error, regardless of the gain of each stage, as follows: (G1*1.01) \* (G2*1.01) = G1*G2*1.0201.
+
+**Q12: Is there an evaluation board and a spice model for the AD8422 to help me accelerate the design and verification process?**
+
+Yes. The AD8422 is compatible with the EVAL-INAMP-82RZ (SOIC version) and the EVAL-INAMP-82RMZ (MSOP version): http://www.analog.com/en/evaluation/eval-inamp/eb.html Samples of the AD8422 should be ordered separately from the product page. The Spice model (developed in NI Multisim) can be found at the link provided in the resource section at the end of this page.
+
+**Q13: Are there any performance differences between the AD8421 SOIC and MSOP package options?**
+
+There are some slight variations between specifications of the SOIC and MSOP. In general, the choice of a package comes down to size (MSOP is smaller, and needs a smaller footprint on the PCB), versus absolute best performance (SOIC specs for CMRR, offset and bias current are slightly better).
+
+Useful References from FAQs
+===========================
+
+**Analog Device’s Designer’s Guide to Instrumentation Amplifiers:**
+
+http://www.analog.com/en/specialty-amplifiers/instrumentation-amplifiers/ad8221/products/design-handbooks/CU_dh_designers_guide_to_instrumentation_amps/resources/fca.html
+
+**AD8422 SPICE Model:**
+
+http://www.analog.com/en/specialty-amplifiers/instrumentation-amplifiers/ad8422/products/product.html#product-designtools

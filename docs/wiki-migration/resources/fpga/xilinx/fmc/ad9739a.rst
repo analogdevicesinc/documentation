@@ -1,0 +1,432 @@
+AD9739A Native FMC Card / Xilinx Reference Designs
+==================================================
+
+.. important::
+
+   We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad9739a_fmc/index.html\
+
+
+|
+
+.. warning::
+
+   \ **NOTE:**
+
+   | Support for the eval-ad9739a was discontinued starting with 2022_R2 Kuiper Linux release and it is not supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` to see all Kuiper releases. The HDL project source code can be found on :git-hdl:`hdl_2021_r2 <projects/ad9739a_fmc>` release branch.
+
+
+Introduction
+------------
+
+The :adi:`AD9739A` is a 14-bit, 2.5 GSPS high performance RF DAC capable of synthesizing wideband signals with up to 1.25GHz of bandwidth. This reference design includes a single tone sine generator (DDS) and allows programming the device and monitoring its internal status registers. It also programs the :adi:`ADF4350` clock chip which can generate a 1.6GHz to 2.5GHz clock for the AD9739A from the on-board 25MHz crystal. An alternate clock path using an :adi:`ADCLK914` is available for driving the clock externally.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9739A-FMC <EVAL-AD9739A>`
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_fmc.jpg
+   :width: 400px
+
+.. warning::
+
+   The AD9739A FMC Card is not fully ANSI/VITA 57.1 compatible:
+
+   
+   -  does not meet the mechanical form factor (too tall, too long),
+   -  does not include the I2C EEPROM as specified in Rule 5.69,
+   -  Also see "bugs" below.
+   
+   It was designed, and meets the needs of prototyping platforms, and will work with FPGA Development systems which include an FMC connector. It may not mechanically fit on other ANSI/VITA 57.1 carrier cards.
+
+
+Supported Carriers
+------------------
+
+-  `ML605 <https://www.xilinx.com/ML605>`__ Legacy (limited support)
+-  `KC705 <https://www.xilinx.com/KC705>`__ Legacy (limited support)
+-  `VC707 <https://www.xilinx.com/VC707>`__ Legacy (limited support)
+-  `AC701 <https://www.xilinx.com/AC701>`__ Legacy (limited support)
+-  `ZC706 <https://www.xilinx.com/ZC706>`__ LPC Slot
+
+Quick Start Guide
+-----------------
+
+The reference design has been tested on ML605(Virtex-6), KC705(Kintex-7), VC707(Virtex-7) and ZC706 (Zynq) boards. The notes below refer to ML605, however the procedure is same for the other boards. Currently, we fully support only the ZC706 Vivado based design. Please make sure that you have downloaded and are using the correct design files for your board. All you need is the hardware and a PC running a UART terminal.
+
+A video tutorial is available:
+
+
+|analogTV>1423927819001|
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  ML605/KC705/VC707/AC701 board (use the corresponding design file).
+-  AD9739A-FMC-EBZ board
+-  Spectrum Analyzer
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE Design Suite 14.4
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 57600.
+-  :doc:`DAC Software Suite (optional) </wiki-migration/resources/eval/dpg/dacsoftwaresuite>`
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To begin, connect the AD9739A-FMC-EBZ board to the FMC-LPC connector of ML605 board (see image below). If using KC705 use FMC-LPC, if using VC707 use FMC1-HPC. Connect power and two USB cables from the PC to the *JTAG* and *UART* USB connectors on the edge of the ML605. A spectrum analyzer should be connected to the output SMA jack (OUT/J1). This quick start program uses a 2.5GHz DAC clock and generates a 300MHz tone. Adjust your spectrum analyzer accordingly. On the AD9739A-FMC board, ensure that the SPI source jumper (SPI SRC/P2) is set to FMC and the clock source jumper (CLOCK SOURCE/S1) is set to ADF4350 position. The USB connection on the AD9739A-FMC-EBZ and the SMA Clock Input (SMA CLKIN/J3) are not used in this example. After the hardware setup, turn the power on to the ML605.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/cf_ad9739a_setup.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+Run the **download.bat** script located in the "*SDK/SDK_Workspace/bin*" folder provided within the HDL Reference Design. This script uses XMD to program the FPGA with the HDL Reference Design and download the Software Reference Design into the DDR.
+
+**Note:** The *download.bat* script assumes that the *Xilinx ISE Design Suite 14.4* is installed at this path: *C:/Xilinx/14.4*. If the installation path on your computer is different please modify the script accordingly.
+
+If programming was successful, you should be seeing messages appear on the terminal as shown in figure below. After programming the AD9739A and ADF4350, you have to tell the program from where it should take the input data(from DMA or DDS). Then the program continuously monitors the MU Controller and LVDS Receiver lock status. If either of them are out of lock, the program quits itself with an error. You may also quit the program by pressing [q] key.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/ad9739a_test.png
+   :alt: Terminal
+   :width: 200px
+
+The specturm analyzer output is shown below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/scren180.gif
+   :alt: Spectrum analyzer output
+   :width: 200px
+
+DOCSIS Results
+~~~~~~~~~~~~~~
+
+`Data Over Cable Service Interface Specification <https://en.wikipedia.org/wiki/DOCSIS>`__ is an international telecommunications standard that permits the addition of high-speed data transfer to an existing cable TV (CATV) system. It is employed by many cable television operators to provide data access over their existing infrastructure. It has many specification, certification, and testing criteria. Below are example ACLR and spur measurements for this card with the AD9739A running at 2.5GHz with carrier(s) centered at 980MHz.
+
+Adjacent Channel Leakage Ratio (ACLR) is the ratio of the reconstructed signal power to the power measured in an adjacent channel measured in dB. This is critical in many applications, and can be used to determine the performance of the subsystem in many applications, including DOCSIS.
+
+Click on any picture, to make it bigger, and see the measurement results.
+
+Single Channel
+^^^^^^^^^^^^^^
+
+| |image1| |image2|
+
+Four Channels
+^^^^^^^^^^^^^
+
+| |image3| |image4|
+
+Eight Channels
+^^^^^^^^^^^^^^
+
+| |image5| |image6|
+
+Using the reference design
+--------------------------
+
+Functional description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design consists of two functional modules, a DDS/LVDS interface and a SPI interface. It is part of an AXI based microblaze system as shown in the block diagram below. It is designed to support linux running on microblaze. All other peripherals are available from Xilinx as IP cores.
+
+Xilinx block diagram
+^^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/ad9739a_fmc_xilinx.svg
+   :alt: Xilinx HDL Block Diagram
+   :width: 500px
+
+AD9739A FMC Card block diagram
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/ad9739a_fmc_card_1.svg
+   :alt: Xilinx HDL Block Diagram
+   :width: 400px
+
+The DDS consists of a Xilinx DDS IP core and a DDR based data generator. The core generates 6 samples at every fDAC/3 clock cycles for each port of AD9739A.
+
+The SPI interface allows programming the ADF4350 and/or AD9739A. The provided SDK software shows the initial setup required for both the devices for a 2.5GHz DAC clock with a 300MHz single tone DDS.
+
+Registers
+~~~~~~~~~
+
+Please see the regmap.txt file in the pcores directory.
+
+Hardware Reference
+------------------
+
+There are several hardware options available on the AD9739A-FMC-EBZ:
+
+Clock Selection
+~~~~~~~~~~~~~~~
+
+Two clock paths are available to drive the clock input on the AD9739A-FMC-EBZ. The factory default option connects the :adi:`ADF4350` to the :adi:`AD9739A`. The :adi:`ADF4350` is able to synthesize a clock over the entire specified range of the :adi:`AD9739A` (1.6GHz to 2.5GHz). To enable this clock path, jumper CLOCK SOURCE (S1) must be moved to the :adi:`ADF4350` position.
+
+Alternatively, an external clock can be provided via the SMA CLKIN (J3) jack. To enable this clock path, jumper CLOCK SOURCE (S1) must be moved to the :adi:`ADCLK914` position. C102 and C99 on the back of the board also need to be removed from their default position, and then soldered into the vertical position from the large square pad they were previously soldered to and the narrow pads closer to the :adi:`ADCLK914` (U3). Observe the orientation of the caps before removing them; they must be soldered with their narrow edge against the PCB, and not the wide side as is common with most components.
+
+SPI Source Selection
+~~~~~~~~~~~~~~~~~~~~
+
+There are two options for driving the SPI port of the :adi:`AD9739A` and :adi:`ADF4350` in order to configure these parts.
+
+The first, which is used in the quick start guide above, is to have all the SPI lines driven by the FPGA, lines which are connected to FMC connector. In this case, jumper SPI SRC (P2) is set to FMC. A level translator (:adi:`ADG3308` U1) is used to translate the 2.5V logic from the FPGA to the 3.3V logic required by the parts on the board.
+
+The other option for driving the SPI is to use the on-board USB microcontroller. In this case, jumper SPI SRC (P2) is set to USB. Now the data path is still connected to the FMC connector, but the SPI lines are driven by the microcontroller. This allows the use of the graphical interface PC software that is included with the standard Analog Devices evaluation boards(DAC Software Suite). This option makes it easier to experiment with various settings on the parts before programming the parts from the FPGA.
+
+|
+
+.. tip::
+
+
+| For the highest performance (noise floor below -105dBm), do not power the USB microcontroller while taking measurements. After configuring the part over USB, remove jumper P2. This does not apply to the FMC SPI option, in which case the USB microcontroller is already powered down
+   |
+
+Using the Software Reference Design
+-----------------------------------
+
+The Software Reference Design contains an example on how to:
+
+-  Initialize the AD9739A evaluation board
+-  Initialize the AD9739A HDL core
+-  Generate a 300MHz single tone DDS
+
+The software project contains 3 components: the AD9739A-FMC-EBZ reference design files, the AD9739A driver and the ADF4350 driver. All the components have to be downloaded from the links provided in the **Downloads** section.
+
+AD9739A Software Driver
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Below is presented a short description of all the functions provided in the driver.
+
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function                                                                                | Description                                                                                                                                                                                                                                                        |
++=========================================================================================+====================================================================================================================================================================================================================================================================+
+| int32_t **ad9739a_write**\ (unsigned char registerAddress, unsigned char registerValue) | Writes a value to the selected register. Receives as parameters the address of the register to write to and the value to write to the register. Returns 0 in case of success or negative error code.                                                               |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9739a_read**\ (unsigned char registerAddress)                               | Reads the value of the selected register. Receives as parameter the address of the register to read. Returns the register's value or negative error code.                                                                                                          |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9739a_reset**\ (void)                                                       | Resets the device. Returns negative error code or 0 in case of success.                                                                                                                                                                                            |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9739a_power_down**\ (unsigned char pwrConfig)                               | Powers down LVDS interface and TxDAC. Receives as parameter the modules to be powered-down. Returns negative error code or 0 in case of success.                                                                                                                   |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9739a_operation_mode**\ (unsigned char mode)                                | Sets the normal baseband mode or mix-mode. Receives as parameter the mode of operation. Returns negative error code or 0 in case of success.                                                                                                                       |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| float **ad9739a_DAC_fs_current**\ (float fs_val)                                        | Sets the full-scale output current for the DAC. Receives as parameter the desired full-scale output current. Accepted values: 8.7 to 32.7 (mA) and 0. When 0, the DAC output is disabled(sleep). Returns the actual set full-scale current or negative error code. |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **delay_fdata_cycles**\ (uint32_t cycles)                                       | Delay for a number of fdata clock cycles. Receives as parameter the number of cycles to wait for. Returns negative error code or 0 in case of success.                                                                                                             |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad9739a_setup**\ (int32_t spiBaseAddr, int32_t ssNo)                          | Initializes the AD9739A. Receives as parameters the SPI peripheral AXI base address and the slave select line on which the slave is connected. Returns negative error code or 0 in case of success.                                                                |
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Software Setup
+~~~~~~~~~~~~~~
+
+The **HDL Reference Design** for each supported Xilinx FPGA board contains a folder called **SDK_Workspace** which stores the Xilinx SDK project files needed to build the no-OS software and also the .bit files with the HDL design that must be programmed into the FPGA. These are the steps that need to be followed to recreate the software project:
+
+-  Copy the **SDK_Workspace** folder on your PC. Make sure that the path where it is stored does not contain any spaces.
+-  Copy the no-OS drivers source code to the **SDK_Workspace/sw/src** folder.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/src_files.png
+   :alt: no-OS driver Source Files
+   :width: 200px
+
+-  Open the Xilinx SDK. When the SDK starts it asks you to provide a folder where to store the workspace. Any folder can be provided.
+-  In the SDK select the **File->Import** menu option to import the software projects into the workspace.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/file_import.png
+   :alt: Import Projects
+   :width: 200px
+
+-  In the *Import* window select the **General->Existing Projects into Workspace** option.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/existing_project_import.png
+   :alt: Existing Projects Import
+   :width: 200px
+
+-  In the *Import Projects* window select the **SDK_Workspace** folder as root directory. After the root directory is chosen the projects that reside in that directory will appear in the *Projects* list. Press *Finish* to finalize the import process.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/projects_import.png
+   :alt: Projects Import
+   :width: 200px
+
+-  The *Project Explorer* window now shows the projects that exist in the workspace and the files for each project. The SDK should automatically build the projects and the *Console* window will display the result of the build. If the build is not done automatically select the **Project->Build Automatically** menu option.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/project_explorer.png
+   :alt: Project Explorer
+   :width: 200px
+
+-  At this point the software project setup is complete, the FPGA can be programmed and the software can be downloaded into the system.
+
+The example code is located in the ”\ *main.c*\ ” file and the implementations of the test routines can be found in the "*cf_ad9739a.c*" file.
+
+Using the ADF4350 USB SPI Software
+----------------------------------
+
+After installing the graphical interface PC software that is included with the standard Analog Devices evaluation boards(DAC Software Suite), you can find the software controlling ADF4350 clock chip at Start > Programs > Analog Devices > AD9739A > ADF4350 SPI for AD9739A-FMC-EBZ. Once opened, select File…Open Setup File. Browse for the file 2_5GHz for AD9739A.ini, which is located in Analog Devices\\HSDAC\\AD9739A inside your Program Files directory (usually C:\\Program Files or C:\\Program Files(x86)). This will setup the clock chip to provide a 2.5GHz clock to the AD9739A.
+
+.. image:: https://wiki.analog.com/_media/section>resources/eval/dpg/ad9739a-ebz#AD9739A USB SPI Software&nofooter
+   :alt: ad9739a-ebz#AD9739A USB SPI Software&nofooter
+
+Downloads
+---------
+
+| The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices github.
+|
+
+.. important::
+
+
+| The software project contains 3 components: the AD9739A-FMC-EBZ reference design files, the AD9739A driver and the ADF4350 driver. All the components have to be downloaded from the links below.
+
+
+**HDL Reference Designs:**
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**ML605 HDL Reference Design: \*\* `cf_ad9739a_mb_edk_14_4_2013_02_11.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_mb_edk_14_4_2013_02_11.tar.gz>`__
+   -  \**KC705 HDL Reference Design: \*\* `cf_ad9739a_kc705_edk_14_4_2013_02_11.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_kc705_edk_14_4_2013_02_11.tar.gz>`__
+   -  \**VC707 HDL Reference Design: \*\* `cf_ad9739a_vc707_edk_14_4_2013_02_11.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_vc707_edk_14_4_2013_02_11.tar.gz>`__
+   -  \**AC701 HDL Reference Design: \*\* `cf_ad9739a_ac701_edk_14_4_2013_07_30.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_ad9739a_ac701_edk_14_4_2013_07_30.tar.gz>`__
+   
+
+
+**Vivado HDL Reference Designs:**
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**ZC706 HDL Reference Design: \*\*\ :git-hdl:`projects/ad9739a_fmc/zc706`
+   
+
+
+**no-OS Software:**
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**AD9739A Driver: \*\* :git-no-OS:`drivers/dac/ad9739a`
+   -  \**ADF4350 Driver: \*\* :git-no-OS:`drivers/frequency/adf4350`
+   -  \**AD9739A-FMC-EBZ Reference Design: \*\* :git-no-OS:`ad9739a-fmc-ebz`
+   -  \**Xilinx Platform Drivers: \*\* :git-no-OS:`common_drivers/platform_drivers`
+   -  \**DAC Core Driver: \*\* :git-no-OS:`common_drivers/dac_core`
+   
+
+
+**Board Files:**
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD9739A-FMC-EBZ Schematic RevB <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/ad9739a-fmc-ebz_revb_schematic.pdf>`__
+   -  `AD9739A-FMC-EBZ Schematic RevC <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a-fmc-ebz_revc_schematic.pdf>`__
+   -  `AD9739A-FMC-EBZ Gerber Files RevB <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/ad9739a-fmc-ebz_revb_gerber_files.zip>`__
+   -  `AD9739A-FMC-EBZ Gerber Files RevC <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a-fmc-ebz_revc_gerber_files.zip>`__
+   -  `AD9739A-FMC-EBZ Layout RevB <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/ad9739a-fmc-ebz_revb_layout.pdf>`__
+   -  `AD9739A-FMC-EBZ Layout RevC <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a-fmc-ebz_revc_layout.pdf>`__
+   -  :doc:`AD9739A Evaluation Board and DPG Software </wiki-migration/resources/eval/dpg/eval-ad9739a>`
+   
+
+
+.. warning::
+
+   Rev A and Rev B of this board mistakenly do not follow Rule 5.62 on the ANSI/VITA 57.1 spec - *"The FMC module shall connect TDI to TDO, if the module does not use the JTAG interface."* This may cause some FMC platforms (like the VC707 and KC705) to loose JTAG communication when this card is plugged in. It's normally a simple matter to short D30 and D31 on the development system (sorry, this will be fixed shortly)
+
+
+|
+
+.. hint::
+
+
+| \* Questions? :ez:`Ask Help & Support <community/fpga>`.
+   |
+
+Reference Design Contents
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------+------------------------------------------------------------------------------------------------------+
+| HDL Reference Design      |                                                                                                      |
++===========================+======================================================================================================+
+| license.txt               | ADI license & copyright information.                                                                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| system.mhs                | MHS file.                                                                                            |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| system.xmp                | XMP file (use this file to build the reference design).                                              |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| data/                     | UCF file and/or DDR MIG project files.                                                               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| docs/                     | Documentation files (Please note that this wiki page is the documentation for the reference design). |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| sw/                       | Software (Xilinx SDK) & bit file(s).                                                                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| cf_lib/edk/pcores/        | Reference design core file(s) (Xilinx EDK).                                                          |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| Software Reference Design |                                                                                                      |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| cf_ad9739a.h              | Header file containing the registers definitions for the AD9739A HDL core.                           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| cf_ad9739a.c              | Implementation of the AD9739A HDL core access functions and ADC test and capture functions.          |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| spi.h                     | Header file for the Xilinx AXI SPI driver.                                                           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| spi.c                     | Implementation file for the Xilinx AXI SPI driver.                                                   |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| main.c                    | Implementation of the program's main function.                                                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| AD9739A Software Driver   |                                                                                                      |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| AD9739a.h                 | AD9739A software driver header file.                                                                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| AD9517_cfg.h              | AD9739A software driver configuration file.                                                          |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| AD9517.c                  | AD9739A software driver implementation file.                                                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| ADF4350 Software Driver   |                                                                                                      |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| ADF4350.h                 | ADF4350 software driver header file.                                                                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| ADF4350_cfg.h             | ADF4350 software driver configuration file.                                                          |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| ADF4350.c                 | ADF4350 software driver implementation file.                                                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+
+Third Party Bitstreams
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../../alliances/thirdparty.rst
+
+-  `4 x independent DVB-T channels, RF output (0 to 1.250 GHz) from MVD Cores <http://www.mvd-fpga.com/cores/en/digilent_AD9739A_xilinx_eval.html>`__
+-  `4 x independent ATSC channels, RF output (0 to 1.250 GHz)from MVD Cores <http://www.mvd-fpga.com/cores/en/digilent_AD9739A_xilinx_eval.html>`__
+-  `4 x independent J.83B channels, RF output (0 to 1.250 GHz) from MVD Cores <http://www.mvd-fpga.com/cores/en/digilent_AD9739A_xilinx_eval.html>`__
+-  `4 x independent DVB-C J.83A/C channels, RF output (0 to 1.250 GHz) from MVD Cores <http://www.mvd-fpga.com/cores/en/digilent_AD9739A_xilinx_eval.html>`__
+
+More information
+----------------
+
+.. hint::
+
+   
+   -  :adi:`Purchase AD9739A-FMC-EBZ <en/digital-to-analog-converters/high-speed-da-converters/ad9739a/products/product.html>`
+   -  `VITA's FMC info <http://www.vita.com/fmc>`__
+   -  :ez:`Ask questions about the FPGA reference design <community/fpga>`
+   -  :ez:`Ask questions about the AD9739A <community/data_converters/high-speed_dacs>`
+   
+
+
+.. |analogTV>1423927819001| image:: https://wiki.analog.com/_media/analogTV>1423927819001
+.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/direct_clock_980_1c_aclr.png
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/direct_clock_980_1c_spectrum.png
+   :width: 200px
+.. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/direct_clock_980_4c_aclr.png
+   :width: 200px
+.. |image4| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/direct_clock_980_4c_spectrum.png
+   :width: 200px
+.. |image5| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/direct_clock_980_8c_aclr.png
+   :width: 200px
+.. |image6| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/direct_clock_980_8c_spectrum.png
+   :width: 200px

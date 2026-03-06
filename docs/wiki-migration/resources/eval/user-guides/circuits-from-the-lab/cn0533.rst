@@ -1,0 +1,65 @@
+EVAL-CN0533-EBZ User Guide
+==========================
+
+| :adi:`EVAL-CN0533-EBZ <CN0533>` is a MEMS accelerometer (ADXL1002) vibration sensing solution with included analog 4-20 mA current loop interface circuitry, suitable for Condition-based Monitoring (CbM) applications. 4-20 mA current loop has been an industry analog signaling standard since 1950s. The main advantage of this signal standard is that there exists virtually no attenuation over long cables, therefore more robustness in EMI prone environments, such as industrial and factory settings. This reference design enables utilization of high bandwidth, ultralow noise MEMS accelerometers on a legacy 4-20 mA data acquisition (DAQ) systems for CbM applications.
+
+Hardware Setup
+--------------
+
+Sensor Connections
+~~~~~~~~~~~~~~~~~~
+
+The EVAL-CN0533-EBZ is very straightforward to setup. A cable, power supply (12-24 V), and a 4-20mA receiver are needed. For electrical setup:
+
+-  Solder a triple twisted wire or shielded cable to the EVAL-CN0533-EBZ printed circuit board (PCB). Ground line to GND, 4-20mA output current to IOUT, and 12V supply to VCC as shown in the figure below.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0533_pic.jpg
+   :align: center
+   :width: 250px
+
+-  Supply the EVAL-CN0533-EBZ with 12V, and connect the other end of the IOUT and GND cables to a 4-20 mA receiver such as National Instruments NI-9203. (Note: some 4-20 mA receivers have integrated voltage supply that can be used instead of an external 12V needed to power up EVAL-CN0533-EBZ). Alternatively, an accurate and temperature stable resistor along with a voltage DAQ system may also be used instead of a current DAQ. The resistance value should be according to the input voltage range of the DAQ.
+
+-  Set the acceleration sensitivity to 128 µA/g on the DAQ or vibration measurement equipment (the sensitivity scale of the ADXL1002 may slightly vary from part to part, and the ADXL1002 can be simply calibrated with gravity field or other reference sensors).
+-  The EVAL-CN0533-EBZ is ready for experiment.
+
+Mechanical Mounting
+~~~~~~~~~~~~~~~~~~~
+
+| The accelerometer used in this reference design, ADXL1002, is an ultra-low noise and high bandwidth sensor. To achieve the best performance, a proper mechanical design is required to deliver vibration signal from the measurement point to the sensor. Careful considerations in design of EVAL-CN0533-EBZ PCB has been taken to avoid vibration signal distortion to the sensor due to mechanical resonance of the PCB structure. To best deliver the vibration signal from the measurement point to the PCB, we have designed :adi:`EVAL-XLMOUNT1`. This mechanical interface is optimized to have a 3dB flat mechanical response of up to 20 kHz. Therefore, by utilization of EVAL-XLMOUNT1, the vibration signal will be adequately coupled with the sensor. The following steps describe how to use EVAL-XLMOUNT1 with EVAL-CN0533-EBZ.
+| \* Using four 4-40 3/8” screws, securely mount the EVAL-CN0533-EBZ to the EVAL-XLMOUNT1 mechanical interface. For optimum performance, use all four screws.
+
+-  Firmly mount EVAL-XLMOUNT1 to the vibration platform or shaker table using a M6 or similar diameter screw. Note that the sensitivity direction of the ADXL1002, as shown in the figure above, is aligned with the platform’s main vibration direction.
+-  Follow steps for proper sensor connection outlined above.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   | :adi:`EVAL-CN0533-EBZ Design & Integration Files <cn0533-designsupport>`
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   
+
+
+Additional Information and Useful Links
+---------------------------------------
+
+-  :adi:`ADXL1002 Product Page <ADXL1002>`
+-  :adi:`AD5749 Product Page <AD5749>`
+-  :adi:`LT6654 Product Page <LT6654>`
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0533-EBZ?&v=RevC>`__ to receive all these great benefits and more!
+
+
+// End of Document //

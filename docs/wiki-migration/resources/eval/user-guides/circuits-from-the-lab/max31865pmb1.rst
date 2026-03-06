@@ -1,0 +1,83 @@
+MAX31865PMB1 RTD-to-digital converter PMOD User Guide
+=====================================================
+
+The :adi:`MAX31865PMB1` peripheral module provides the necessary hardware to interface the MAX31865 RTD-to-digital converter to any system that utilizes Pmod compatible expansion ports configurable for SPI communication. The IC is an easy-to-use resistance-to-digital converter optimized for platinum resistance temperature detectors (RTDs). This module is set up to operate with a PT100 platinum RTD.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31865/max31865_board.png
+   :align: center
+   :width: 400px
+
+Hardware
+--------
+
+Power Supply Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| When using the MAX31865 PMOD board, the 3.3 V power comes directly from the host board it is connected to. The power from the host is generally capable of providing up to 100 mA at 3.3 V; but for complete PMOD power specifications, please click\ `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`__.
+| ==== RTD Connector ==== Connector CON1 provides connection to the IC pins, as follows:
+
+-  Connector CON1 pin 1 connects to FORCE+ and FORCE2 (pins 5 and 6) of the IC.
+-  Connector CON1 pin 2 connects to RTDIN+ (pin 7) of the IC.
+-  Connector CON1 pin 3 connects to RTDIN- (pin 8) of the IC.
+-  Connector CON1 pin 4 connects to FORCE- (pin 9) of the IC
+
+| |image1|
+| ==== RTD configuration ==== Two jumpers at J2 are provided to select either 2-wire or 3-wire RTD configuration. For 2-wire RTD, install both jumpers, from 1-2 and 3-4. For 3-wire RTD, install jumper from 3-4 only. |image2|
+| ==== Digital Interface (PMOD) ==== The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`__.
+
+The MAX31865PMB1 peripheral module can plug directly into a Pmod-compatible port (configured for SPI) through connector J1. Connector J1 provides a connection of the module to the host. The pin functions and pin assignments adhere to the Pmod standard recommended by Digilent.
+
+| |image3|
+| ===== Device Driver Support ===== There are two device driver solutions that are provided for controlling the **MAX31865PMB1**:
+
+-  **MAX31865 no-OS Driver**
+
+   -  The :doc:`MAX31865 no-OS driver </wiki-migration/resources/tools-software/uc-drivers/max31865>` is used in bare-metal applications, typically running on low-power, embedded microcontrollers.
+
+-  **MAX31865 Linux Driver**
+
+   -  The :git-linux:`MAX31865 Linux driver <drivers/iio/temperature/max31865.c>` is used in applications running the Linux operating system, typically on larger processors and SoC devices.
+
+      -  The MAX31865 Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
+
+| 
+| ===== More information and Useful links =====
+
+-  :adi:`MAX31865 Product Page <MAX31865>`
+-  :adi:`MAX31865PMB1 Product Page <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/max31865pmb1.html>`
+-  :git-no-OS:`MAX31865PMB1 No-OS Driver <drivers/temperature/max31865pmb1>`
+-  :git-linux:`MAX31865 Linux driver <drivers/iio/temperature/max31865.c>`
+
+Schematics, PCB Layout, Bill of Materials
+-----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  :adi:`MAX31865PMB1 Datasheet <media/en/technical-documentation/data-sheets/MAX31865PMB1.pdf>`
+   
+
+
+Additional Information
+----------------------
+
+-  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`__
+-  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+-  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/MAX31865PMB1?&v=Rev A>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31865/5-5-2023_10-07-41_am.png
+   :width: 650px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31865/5-5-2023_10-09-41_am.png
+   :width: 250px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31865/max31865_spi.png
+   :width: 600px

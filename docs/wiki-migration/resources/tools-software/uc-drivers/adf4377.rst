@@ -1,0 +1,94 @@
+ADF4377 - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF4377`
+-  :adi:`ADF4378`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EV-ADF4377SD1Z`
+
+Overview
+--------
+
+The :adi:`ADF4377` is a high performance, ultralow jitter, dual output integer-N PLL with integrated VCO ideally suited for data converter MxFE clock applications. The high performance PLL has a figure of merit of -239dBc/Hz, ultralow 1/f Noise and a high PFD frequency that can achieve ultralow in-band noise and integrated jitter. The ADF4377's fundamental VCO and output divider generate frequencies from 800 MHz to 12.8 GHz.
+
+The :adi:`ADF4377` integrates all necessary power supply bypass capacitors, saving board space on compact boards.
+
+For multiple data converter and MxFE clock applications, the ADF4377 simplifies clock alignment and calibration routines required with other clock solutions, by implementing:
+
+-  automatic reference to output synchronization
+-  extremely well match reference to output delays across process, voltage, and temperature
+-  sub-ps, jitter free reference to output delay adjustment capability
+
+These features allow for predictable and precise multi-chip clock and SYSREF alignment. JESD204B and JESD204C subclass 1 solutions are supported by pairing the :adi:`ADF4377` with an IC that distributes pairs of reference wnd SYSREF signals.
+
+Applications:
+
+-  High Performance DATA Converter and MxFE Clocking
+-  Wireless infrastucture (MC-GSM, 5G)
+-  Test and Measurement
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the :adi:`ADF4377` part, which may be used, without modifications, with any microcontroller.
+-  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the :adi:`ADF4377` driver can be used exactly as it is provided.
+
+The Communication Drivers must include the SPI transmission methods and GPIO control methods.
+
+For the SPI method, the :adi:`ADF4377` driver calls three functions:
+
+-  spi_init() - initializes the SPI communication peripheral.
+-  spi_remove() – frees memory allocated by the SPI communication driver.
+-  spi_write_and_read() – conduct information transfer with the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_driver_architecture.png
+   :align: center
+
+For the GPIO control methods, the :adi:`ADF4377` driver calls three functions:
+
+-  gpio_get() - initialize GPIO peripheral and allocate memory for one GPIO control.
+-  gpio_remove() - frees memory allocated by the GPIO control driver.
+-  gpio_direction_input() - set GPIO as input.
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+
+-  `ADF4377 Header file <http://analogdevicesinc.github.io/no-OS/adf4377_8h.html>`__
+-  `ADF4377 Source file <http://analogdevicesinc.github.io/no-OS/adf4377_8c.html>`__
+
+Initialization example
+----------------------
+
+:doc:`Evaluating the ADF4377 Microware Wideband Synthesizer with Integrated VCO </wiki-migration/resources/eval/user-guides/eval-adf4377/software/no-os-setup>`
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of ADF4377 Driver.|
+
+   -
+
+   |Header file of ADF4377 Driver.|
+
+.. |Implementation of ADF4377 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf4377/adf4377`.c
+.. |Header file of ADF4377 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf4377/adf4377`.h

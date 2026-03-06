@@ -1,0 +1,145 @@
+CN0216 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7791`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0216`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-CN0216-SDPZ` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-CN0216-SDPZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0216.jpg
+   :alt: cn0216.jpg
+   :align: center
+   :width: 600px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0216-SDPZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0216_sdp1z.jpg
+   :alt: cn0216_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The **EVAL-CN0216-SDPZ** board is a precision weigh scale signal conditioning system. It uses the AD7791, a low power buffered 24-bit sigma-delta ADC along with two external ADA4528-1 zero-drift amplifiers. This solution allows for high dc gain with a single supply.
+
+The :adi:`AD7791` is a low power, complete analog front end for low frequency measurement applications. It contains a low noise 24-bit S-? ADC with one differential input that can be buffered or unbuffered.
+
+The device operates from an internal clock. Therefore, the user does not have to supply a clock source to the device. The output data rate from the part is software programmable and can be varied from 9.5 Hz to 120 Hz, with the rms noise equal to 1.1 µV at the lower update rate. The internal clock frequency can be divided by a factor of 2, 4, or 8, which leads to a reduction in the current consumption. The update rate, cutoff frequency, and settling time will scale with the clock frequency.
+
+More information
+----------------
+
+-  :adi:`CN0216 Product Info <CN0216>` - pricing, samples, datasheet
+-  :adi:`AD7791 Product Info <AD7791>` - pricing, samples, datasheet
+-  :adi:`EVAL-CN0216-SDPZ evaluation board user guide <CN0216>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-CN0216-SDPZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-CN0216 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD7791 Driver:** :git-no-OS:`device_drivers/AD7791`
+   
+   -  **CN0216 Commands:** :git-no-OS:`device_commands/CN0216`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-CN0216 reference project for Xilinx KC705 FPGA board.
+
+================ ============================================
+Command          Description
+================ ============================================
+**help?**        Displays all available commands.
+**adcCode?**     Displays the ADC Code.
+**ad7791Reset!** Resets the serial interface with the AD7791.
+================ ============================================
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

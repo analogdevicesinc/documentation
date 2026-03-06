@@ -1,0 +1,2501 @@
+AD9081 MxFE Linux Driver
+========================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9081`
+-  :adi:`AD9082`
+-  :adi:`AD9988`
+-  :adi:`AD9986`
+-  :adi:`AD9177`
+-  :adi:`AD9207`
+-  :adi:`AD9209`
+
+Supported Boards
+----------------
+
+-  :adi:`AD9081-FMCA-EBZ`
+-  :adi:`AD9082-FMCA-EBZ`
+-  :adi:`AD9988-FMCB-EBZ`
+-  :adi:`AD9986-FMCB-EBZ`
+-  :adi:`Quad-MxFE`
+
+User Guides
+~~~~~~~~~~~
+
+-  :doc:`AD9081/AD9082 Prototyping Platform User Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz>`
+-  :doc:`Quad-MxFE Prototyping Platform User Guide </wiki-migration/resources/eval/user-guides/quadmxfe>`
+
+Supported HDL Cores
+-------------------
+
+-  :doc:`AD9081-FMCA-EBZ (Single MxFE) HDL Reference Design </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_fmca_ebz_hdl>`
+
+Description
+-----------
+
+The mixed signal front end (MxFE®) is a high integration devicewith a 16-bit, 12 GSPS maximum sample rate radio frequency (RF) digital-to-analog converter (DAC) core and a 12-bit, 4 GSPS rate RF analog-to-digital converter (ADC) core. The AD9081 features a 16-lane, 24.75 Gbps JESD204C or 15.5 Gbps JESD204B data transceiver port, an on-chip clock multiplier, and digital signal processing capability targeted at single-and dual-band direct-to-RF radio applications.
+
+The AD9081 supports four transmitter channels and four receiver channels with a 4D4A configuration. The receiver ADC channels can be shared with observation channels in time division duplex(TDD) operating mode. The AD9081 directly addresses the emerging base station applications with high integration and common platform requirements. The device has flexible inter-polation/decimation configurations that enable direct-to-RF multiband radio applications. AD9081 supports a complex transmit input data rate up to 6 GSPS and a receive output data rate in single-channel mode up to 4 GSPS. The maximum radio band spacing supported in multichannel modes is 1.2 GHz. AD9081 features a bypassable interpolator and decimator for achieving ultra wideband capability with low latency loop back and frequency hopping modes targeted at phase array radar system and electronic warfare jammer applications.
+
+For more information about the AD9081 or AD9082, contact Analog Devices, Inc., at: `mxfesupport@analog.com <https://wiki.analog.com/mxfesupport@analog.com>`__.
+
+Source Code
+===========
+
+Status
+------
+
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| Source                                                                                                        | Mainlined?                                                                                                |
++===============================================================================================================+===========================================================================================================+
+| :git-linux:`drivers/iio/adc/ad9081.c`                                                                         | `No <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad9081.c>`__ |
++---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+
+Files
+-----
+
++------------+---------------------------------------------------------------------------------------------------------------+
+| Function   | File                                                                                                          |
++============+===============================================================================================================+
+| driver     | :git-linux:`drivers/iio/adc/ad9081.c`                                                                         |
++------------+---------------------------------------------------------------------------------------------------------------+
+| API driver | :git-linux:`drivers/iio/adc/ad9081`                                                                           |
++------------+---------------------------------------------------------------------------------------------------------------+
+
+Example device trees
+~~~~~~~~~~~~~~~~~~~~
+
+| 
+| .. include:: ../../../eval/user-guides/ad9081_fmca_ebz/quickstart/zynq.rst
+
+.. include:: ../../../eval/user-guides/ad9081_fmca_ebz/quickstart/microblaze.rst
+
+Interrelated Device Drivers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+-  :doc:`JESD204 Interface Framework </wiki-migration/resources/fpga/peripherals/jesd204>`
+
+Transport Layer Receive AXI-ADC driver
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                          |
++==========+===============================================================================================================================================+
+| driver   | :git-linux:`drivers/iio/adc/cf_axi_adc_core.c`                                                                                                |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| driver   | :git-linux:`drivers/iio/adc/cf_axi_adc_ring_stream.c`                                                                                         |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| include  | :git-linux:`drivers/iio/adc/cf_axi_adc.h`                                                                                                     |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+**Documentation:** :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+
+Transport Layer Transmit AXI-DAC / DDS driver
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                              |
++==========+===================================================================================================================================+
+| driver   | :git-linux:`drivers/iio/frequency/cf_axi_dds.c`                                                                                   |
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+| include  | :git-linux:`drivers/iio/frequency/cf_axi_adc.h <drivers/iio/frequency/cf_axi_dds.h>`                                              |
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+**Documentation:** :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+
+Link Layer AXI JESD204B HDL driver
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                  |
++==========+=======================================================================================================================================+
+| driver   | :git-linux:`drivers/iio/jesd204/axi_jesd204_rx.c`                                                                                     |
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+| driver   | :git-linux:`drivers/iio/jesd204/axi_jesd204_tx.c`                                                                                     |
++----------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+**Documentation:**
+
+-  `JESD204B/C Transmit Linux Driver <https://wiki.analog.com/[resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`__
+-  :doc:`JESD204B/C Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+
+PHY Layer AXI JESD204B GT (Gigabit Tranceiver) HDL driver (XILINX/ALTERA-INTEL)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++----------+-------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                          |
++==========+===============================================================================================================================+
+| driver   | :git-linux:`drivers/iio/jesd204/axi_adxcvr.c`                                                                                 |
++----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+**Documentation:**
+
+-  :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+
+Enabling Linux driver support
+=============================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+.. hint::
+
+   The ADRV9009 driver depends on **CONFIG_SPI**
+
+
+Adding Linux driver support
+===========================
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           <*> JESD204 High-Speed Serial Interface Framework
+       <*>     Industrial I/O support --->
+           --- Industrial I/O support
+           -*-   Enable ring buffer support within IIO
+           -*-     Industrial I/O lock free software ring
+           -*-   Enable triggered sampling support
+
+                 *** Analog to digital converters ***
+           [--snip--]
+
+           -*- Analog Devices High-Speed AXI ADC driver core
+                   <*> Analog Devices AD9081 and similar Mixed Signal Front End (MxFE)
+                   < > Analog Devices AD9208 and similar high speed ADCs  
+                   < > Analog Devices AD9361, AD9364 RF Agile Transceiver driver
+           < > Analog Devices AD9371 RF Transceiver driver
+           < > Analog Devices ADRV9009/ADRV9008 RF Transceiver driver
+           < > Analog Devices AD6676 Wideband IF Receiver driver
+           < > Analog Devices AD9467, AD9680, etc. high speed ADCs
+
+           [--snip--]
+           
+
+       Frequency Synthesizers DDS/PLL  --->
+               Direct Digital Synthesis  --->
+               <*> Analog Devices CoreFPGA AXI DDS driver
+           Clock Generator/Distribution  --->  
+               < > Analog Devices AD9508 Clock Fanout Buffer                 
+               < > Analog Devices AD9523 Low Jitter Clock Generator          
+               < > Analog Devices AD9528 Low Jitter Clock Generator          
+               < > Analog Devices AD9548 Network Clock Generator/Synchronizer
+               < > Analog Devices AD9517 12-Output Clock Generator 
+                           <*> Analog Devices HMC7044, HMC7043 Clock Jitter Attenuator with JESD204B
+                           < > Analog Devices LTC6952 Clock Ultralow Jitter with JESD204B/C
+
+       <*>   JESD204 High-Speed Serial Interface Support  --->
+           --- JESD204 High-Speed Serial Interface Support  
+           < >   Altera Arria10 JESD204 PHY Support         
+           <*>   Analog Devices AXI ADXCVR PHY Support      
+           < >   Generic AXI JESD204B configuration driver  
+           <*>   Analog Devices AXI JESD204B TX Support     
+           <*>   Analog Devices AXI JESD204B RX Support  
+               
+
+Device tree customization
+=========================
+
+The AD9081 Linux IIO device driver is configured and customized using device tree, a simple tree structure of nodes and properties. Properties are key-value pairs, and node may contain both properties and child nodes. The top device node of the AD9081/82 contains common and device specific attributes. Under the top node, there are two child-nodes (``adi,tx-dacs`` and ``adi,rx-adcs``). In case of DAC or ADC only operation, both nodes are required and must contain at least the ``adi,dac-frequency-hz`` and respectively the ``adi,adc-frequency-hz`` property. However omitting the child nodes will disable this ADC/DAC data path.
+
+.. code:: c
+
+   &spi {
+       trx0_ad9081: ad9081@0 {
+       
+           // Device common properties
+
+           adi,tx-dacs {
+               // Tx/DAC properties and child-nodes
+           
+           };
+           
+           adi,rx-adcs {
+               // Rx/ADC properties and child-nodes        
+           };
+       };
+   };
+
+Each of these child nodes handle certain aspects of either the digital-to-analog converter core side or the analog-to-digital converter side of the Mixed Signal Frontend (MxFE®) These child-nodes again contain ADC or DAC side common attributes. Such as the ADC/DAC frequency. But also, three child-nodes to customize the main data paths, the channelizers and the serial JESD204 interfaces.
+
+.. code:: c
+
+   adi,rx-adcs {
+
+       adi,main-data-paths {
+
+       };
+
+       adi,channelizer-paths {
+
+       };
+
+       adi,jesd-links {
+       
+       };
+   };
+
+-  The ``adi,main-data-paths`` node iterates the used ADCs or DACs together with its default/dedicated CDDCs and CDUCs. Each of these nodes have in return again properties to configure the default NCO frequencies, modes, decimation, etc. (A list of supported properties/attributes can be found below.)
+-  The second mandatory node is the ``adi,channelizer-paths`` node. The utilized channelizers FDDCs and FDUCs are described in here, which are always related to the main data paths. Therefore, the main data path child-nodes contain a property (``adi,crossbar-select``) of a device node containing a phandle to the FDUC or FDDC that it is attached to.
+-  The last mandatory child-node is the ``adi,jesd-links`` node. This node contains up to two (single/dual link) child-nodes, one for each link.
+
+.. code:: c
+
+    adi,main-data-paths {
+
+       ad9081_dac0: dac@0 {
+
+       };
+       ad9081_dac1: dac@1 {
+
+       };
+       ad9081_dac2: dac@2 {
+
+       };
+       ad9081_dac3: dac@3 {
+
+       };
+   };
+
+   adi,channelizer-paths {
+
+       ad9081_tx_fddc_chan0: channel@0 {
+
+       };
+       ad9081_tx_fddc_chan1: channel@1 {
+
+
+       };
+   };
+
+   adi,jesd-links {
+
+       ad9081_tx_jesd_l0: link@0 {
+       
+       };
+   };
+
+AD9081 Mixed-Signal Front End (MxFE) Device Tree Bindings
+=========================================================
+
+Overview
+--------
+
+The AD9081 is a high-performance, single-chip, mixed-signal front end (MxFE) integrating:
+
+-  **Four 16-bit, 12 GSPS RF DAC cores**
+-  **Four 12-bit, 4 GSPS RF ADC cores**
+
+Compatible Devices
+------------------
+
+The following devices are supported by this driver:
+
+-  ``adi,ad9081`` - AD9081 MxFE
+-  ``adi,ad9082`` - AD9082 MxFE
+-  ``adi,ad9988`` - AD9988 MxFE
+-  ``adi,ad9986`` - AD9986 MxFE
+-  ``adi,ad9177`` - AD9177 Quad DAC
+-  ``adi,ad9207`` - AD9207 Dual ADC
+-  ``adi,ad9209`` - AD9209 Quad ADC
+
+Required Properties
+-------------------
+
+=============== ======= ================================================
+Property        Type    Description
+=============== ======= ================================================
+``compatible``  string  One of the supported device strings listed above
+``reg``         integer SPI chip select number
+``clocks``      phandle Reference to device clock
+``clock-names`` string  Must be "dev_clk"
+=============== ======= ================================================
+
+Optional Properties
+-------------------
+
+Basic Configuration
+~~~~~~~~~~~~~~~~~~~
+
+===================== ========= ============ ===========================
+Property              Type      Range/Values Description
+===================== ========= ============ ===========================
+``spi-max-frequency`` integer   ≤ 25000000   Maximum SPI frequency in Hz
+``reset-gpios``       phandle   -            GPIO for hardware reset
+``interrupts``        interrupt -            Device interrupt line
+===================== ========= ============ ===========================
+
+Standalone and Multi-Device Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------+---------+--------------------------------------------------------+
+| Property                                  | Type    | Description                                            |
++===========================================+=========+========================================================+
+| ``adi,standalone-enable``                 | boolean | Enable standalone mode for the device                  |
++-------------------------------------------+---------+--------------------------------------------------------+
+| ``adi,multidevice-instance-count``        | u32     | Number of devices in multidevice synchronization setup |
++-------------------------------------------+---------+--------------------------------------------------------+
+| ``adi,dual-link-use-separate-tpl-enable`` | boolean | Enable separate TPL for dual-link mode                 |
++-------------------------------------------+---------+--------------------------------------------------------+
+
+JESD Synchronization
+~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------+---------+---------------------------------------+
+| Property                              | Type    | Description                           |
++=======================================+=========+=======================================+
+| ``adi,jesd-sync-pins-01-swap-enable`` | boolean | Swap JESD sync pins 0 and 1           |
++---------------------------------------+---------+---------------------------------------+
+| ``adi,jesd-sync-pin-0a-cmos-enable``  | boolean | Enable CMOS mode for JESD sync pin 0A |
++---------------------------------------+---------+---------------------------------------+
+| ``adi,lmfc-delay-dac-clk-cycles``     | u32     | LMFC delay in DAC clock cycles        |
++---------------------------------------+---------+---------------------------------------+
+
+NCO Synchronization
+~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------+---------+-------+-----------------------------------------------------+
+| Property                                   | Type    | Range | Description                                         |
++============================================+=========+=======+=====================================================+
+| ``adi,nco-sync-ms-extra-lmfc-num``         | u32     | -     | Extra LMFC cycles for NCO sync in master-slave mode |
++--------------------------------------------+---------+-------+-----------------------------------------------------+
+| ``adi,nco-sync-direct-sysref-mode-enable`` | boolean | -     | Enable direct SYSREF mode for NCO synchronization   |
++--------------------------------------------+---------+-------+-----------------------------------------------------+
+
+SYSREF Configuration
+~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------+---------+-------+---------------------------------------------------------+
+| Property                                  | Type    | Range | Description                                             |
++===========================================+=========+=======+=========================================================+
+| ``adi,sysref-average-cnt-exp``            | u32     | 0-15  | SYSREF averaging count exponent (2                      |
++-------------------------------------------+---------+-------+---------------------------------------------------------+
+| ``adi,sysref-ac-coupling-enable``         | boolean | -     | Enable AC coupling for SYSREF                           |
++-------------------------------------------+---------+-------+---------------------------------------------------------+
+| ``adi,sysref-cmos-input-enable``          | boolean | -     | Enable CMOS input mode for SYSREF                       |
++-------------------------------------------+---------+-------+---------------------------------------------------------+
+| ``adi,sysref-single-end-pos-termination`` | u32     | 0-3   | Termination resistance for positive single-ended SYSREF |
++-------------------------------------------+---------+-------+---------------------------------------------------------+
+| ``adi,sysref-single-end-neg-termination`` | u32     | 0-3   | Termination resistance for negative single-ended SYSREF |
++-------------------------------------------+---------+-------+---------------------------------------------------------+
+| ``adi,continuous-sysref-mode-disable``    | boolean | -     | Disable continuous SYSREF mode                          |
++-------------------------------------------+---------+-------+---------------------------------------------------------+
+
+Loopback and GPIO
+~~~~~~~~~~~~~~~~~
+
++----------------------------------------------+------+-------+-------------------------------------------------+
+| Property                                     | Type | Range | Description                                     |
++==============================================+======+=======+=================================================+
+| ``adi,direct-loopback-mode-dac-adc-mapping`` | u32  | 0-255 | Mapping for direct loopback between DAC and ADC |
++----------------------------------------------+------+-------+-------------------------------------------------+
+| ``adi,master-slave-sync-gpio-num``           | u32  | 0-15  | GPIO number for master-slave synchronization    |
++----------------------------------------------+------+-------+-------------------------------------------------+
+
+TX DAC Configuration (adi,tx-dacs)
+----------------------------------
+
+The TX DAC configuration is specified in a sub-node with the following structure:
+
+DAC Global Properties
+~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------+---------+---------------------------------------------------+
+| Property                         | Type    | Description                                       |
++==================================+=========+===================================================+
+| ``adi,dac-frequency-hz``         | u64     | DAC operating frequency in Hz (use ``/bits/ 64``) |
++----------------------------------+---------+---------------------------------------------------+
+| ``adi,ffh-hopf-via-gpio-enable`` | boolean | Enable FFH HOPF via GPIO                          |
++----------------------------------+---------+---------------------------------------------------+
+
+PA Protection Global Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------+-----------+------------------------------------------------------------------+
+| Property                                | Type      | Description                                                      |
++=========================================+===========+==================================================================+
+| ``adi,pa-protection-gpio-as-pa-enable`` | boolean   | Configure GPIO pins 0-3 as PA enable outputs                     |
++-----------------------------------------+-----------+------------------------------------------------------------------+
+| ``adi,pa-protection-rotation-mode``     | u32 (0-3) | Rotation mode configuration (see header file for bitmask values) |
++-----------------------------------------+-----------+------------------------------------------------------------------+
+
+Main Data Paths (adi,main-data-paths)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Contains configuration for up to 4 DACs (dac@0 through dac@3).
+
+Global Main Path Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------+------+----------------+------------------------------------------+
+| Property              | Type | Values         | Description                              |
++=======================+======+================+==========================================+
+| ``adi,interpolation`` | u32  | 1,2,3,4,6,8,12 | Interpolation factor for main data paths |
++-----------------------+------+----------------+------------------------------------------+
+
+Per-DAC Properties (dac@N)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++---------------------------------------------+---------+--------------+---------------------------------------+
+| Property                                    | Type    | Range/Values | Description                           |
++=============================================+=========+==============+=======================================+
+| ``reg``                                     | u32     | 0-3          | DAC channel index                     |
++---------------------------------------------+---------+--------------+---------------------------------------+
+| ``adi,nco-frequency-shift-hz``              | u64     | -            | NCO frequency shift in Hz             |
++---------------------------------------------+---------+--------------+---------------------------------------+
+| ``adi,full-scale-current-ua``               | u32     | 7750-40320   | Full-scale current in microamperes    |
++---------------------------------------------+---------+--------------+---------------------------------------+
+| ``adi,maindp-dac-1x-non1x-crossbar-select`` | u32     | 0-3          | Crossbar selection for 1x/non-1x mode |
++---------------------------------------------+---------+--------------+---------------------------------------+
+| ``adi,crossbar-select``                     | phandle | -            | Reference to channelizer path         |
++---------------------------------------------+---------+--------------+---------------------------------------+
+
+PA Protection Per-DAC Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Soft-Off/On Control
+"""""""""""""""""""
+
++------------------------------------------------+---------+---------+---------------------------------------------------------------+
+| Property                                       | Type    | Range   | Description                                                   |
++================================================+=========+=========+===============================================================+
+| ``adi,pa-protection-soft-off-enable``          | boolean | -       | Enable soft-off gain control                                  |
++------------------------------------------------+---------+---------+---------------------------------------------------------------+
+| ``adi,pa-protection-soft-off-new-gain-enable`` | boolean | -       | Enable new soft-off gain block                                |
++------------------------------------------------+---------+---------+---------------------------------------------------------------+
+| ``adi,pa-protection-soft-off-ramp-rate``       | u32     | 0-15    | Soft-off gain ramp rate (32 steps over 2^(code+8) DAC clocks) |
++------------------------------------------------+---------+---------+---------------------------------------------------------------+
+| ``adi,pa-protection-soft-off-triggers``        | u32     | bitmask | Soft-off triggers (see header file)                           |
++------------------------------------------------+---------+---------+---------------------------------------------------------------+
+| ``adi,pa-protection-soft-on-triggers``         | u32     | bitmask | Soft-on triggers (see header file)                            |
++------------------------------------------------+---------+---------+---------------------------------------------------------------+
+
+Power Averaging
+"""""""""""""""
+
++-------------------------------------------+---------+---------+------------------------------------------+
+| Property                                  | Type    | Range   | Description                              |
++===========================================+=========+=========+==========================================+
+| ``adi,pa-protection-long-avg-enable``     | boolean | -       | Enable long averaging power calculation  |
++-------------------------------------------+---------+---------+------------------------------------------+
+| ``adi,pa-protection-long-avg-time``       | u32     | 0-255   | Time for long averaging                  |
++-------------------------------------------+---------+---------+------------------------------------------+
+| ``adi,pa-protection-long-avg-threshold``  | u32     | 0-65535 | Long average power threshold (I² + Q²)   |
++-------------------------------------------+---------+---------+------------------------------------------+
+| ``adi,pa-protection-short-avg-enable``    | boolean | -       | Enable short averaging power calculation |
++-------------------------------------------+---------+---------+------------------------------------------+
+| ``adi,pa-protection-short-avg-time``      | u32     | 0-255   | Time for short averaging                 |
++-------------------------------------------+---------+---------+------------------------------------------+
+| ``adi,pa-protection-short-avg-threshold`` | u32     | 0-65535 | Short average power threshold (I² + Q²)  |
++-------------------------------------------+---------+---------+------------------------------------------+
+
+Digital Step Attenuator (DSA)
+"""""""""""""""""""""""""""""
+
++-----------------------------------+---------+--------+---------------------------------------------------+
+| Property                          | Type    | Range  | Description                                       |
++===================================+=========+========+===================================================+
+| ``adi,pa-protection-dsa-enable``  | boolean | -      | Enable DSA for this DAC                           |
++-----------------------------------+---------+--------+---------------------------------------------------+
+| ``adi,pa-protection-dsa-code``    | u32     | 0-235  | DSA attenuation code (0=no attenuation, 235=47dB) |
++-----------------------------------+---------+--------+---------------------------------------------------+
+| ``adi,pa-protection-dsa-cutover`` | u32     | 0-255  | DSA cutover threshold                             |
++-----------------------------------+---------+--------+---------------------------------------------------+
+| ``adi,pa-protection-dsa-boost``   | u32     | 0-15   | DSA boost setting above 26mA baseline             |
++-----------------------------------+---------+--------+---------------------------------------------------+
+| ``adi,pa-protection-dsa-gain``    | u32     | 0-4095 | 12-bit DSA digital gain value                     |
++-----------------------------------+---------+--------+---------------------------------------------------+
+
+Channelizer Paths (adi,channelizer-paths)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Contains configuration for up to 8 channels (channel@0 through channel@7).
+
+Global Channelizer Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------+------+-------------+--------------------------------------------+
+| Property              | Type | Values      | Description                                |
++=======================+======+=============+============================================+
+| ``adi,interpolation`` | u32  | 1,2,3,4,6,8 | Interpolation factor for channelizer paths |
++-----------------------+------+-------------+--------------------------------------------+
+
+Per-Channel Properties (channel@N)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+============================== ==== ======= =========================
+Property                       Type Range   Description
+============================== ==== ======= =========================
+``reg``                        u32  0-7     Channelizer index
+``adi,nco-frequency-shift-hz`` u64  -       NCO frequency shift in Hz
+``adi,nco-phase-offset``       u32  0-65535 NCO phase offset
+``adi,gain``                   u32  0-4095  Channel gain (12-bit)
+============================== ==== ======= =========================
+
+JESD Links (adi,jesd-links)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Contains configuration for up to 2 JESD links (link@0 and link@1).
+
+Per-Link Properties (link@N)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------------------------------+----------+--------------+---------------------------------------+
+| Property                     | Type     | Range/Values | Description                           |
++==============================+==========+==============+=======================================+
+| ``reg``                      | u32      | 0-1          | JESD204 link index                    |
++------------------------------+----------+--------------+---------------------------------------+
+| ``adi,logical-lane-mapping`` | u8-array | 1-8 lanes    | Logical lane mapping                  |
++------------------------------+----------+--------------+---------------------------------------+
+| ``adi,link-mode``            | u32      | -            | JESD quick configuration mode         |
++------------------------------+----------+--------------+---------------------------------------+
+| ``adi,subclass``             | u32      | 0,1,2        | JESD subclass                         |
++------------------------------+----------+--------------+---------------------------------------+
+| ``adi,version``              | u32      | 0,1,2        | JESD version (0=204A, 1=204B, 2=204C) |
++------------------------------+----------+--------------+---------------------------------------+
+| ``adi,dual-link``            | u32      | 0,1          | Dual link mode                        |
++------------------------------+----------+--------------+---------------------------------------+
+| ``adi,tpl-phase-adjust``     | u32      | -            | TPL phase adjustment value            |
++------------------------------+----------+--------------+---------------------------------------+
+
+JESD204 Parameters
+^^^^^^^^^^^^^^^^^^
+
+Standard JESD204 parameters with both ``adi,`` and ``jesd204-`` prefixes supported:
+
++-----------+-------------------------------------+-------+---------------------------------+
+| Parameter | Property                            | Range | Description                     |
++===========+=====================================+=======+=================================+
+| M         | ``converters-per-device``           | 1-16  | Number of converters            |
++-----------+-------------------------------------+-------+---------------------------------+
+| F         | ``octets-per-frame``                | 1-256 | Octets per frame                |
++-----------+-------------------------------------+-------+---------------------------------+
+| K         | ``frames-per-multiframe``           | 1-32  | Frames per multiframe           |
++-----------+-------------------------------------+-------+---------------------------------+
+| N         | ``converter-resolution``            | 1-32  | Converter resolution bits       |
++-----------+-------------------------------------+-------+---------------------------------+
+| N'        | ``bits-per-sample``                 | 1-32  | Bits per sample                 |
++-----------+-------------------------------------+-------+---------------------------------+
+| CS        | ``control-bits-per-sample``         | 0-3   | Control bits per sample         |
++-----------+-------------------------------------+-------+---------------------------------+
+| L         | ``lanes-per-device``                | 1-8   | Lanes per device                |
++-----------+-------------------------------------+-------+---------------------------------+
+| S         | ``samples-per-converter-per-frame`` | 1-32  | Samples per converter per frame |
++-----------+-------------------------------------+-------+---------------------------------+
+| HD        | ``high-density``                    | 0,1   | High density mode               |
++-----------+-------------------------------------+-------+---------------------------------+
+| DID       | ``device-id``                       | 0-255 | Device ID                       |
++-----------+-------------------------------------+-------+---------------------------------+
+
+RX ADC Configuration (adi,rx-adcs)
+----------------------------------
+
+The RX ADC configuration follows a similar structure to TX DACs.
+
+ADC Global Properties
+~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------+------+--------+-------------------------------------------------+
+| Property                 | Type | Values | Description                                     |
++==========================+======+========+=================================================+
+| ``adi,adc-frequency-hz`` | u64  | -      | ADC operating frequency in Hz                   |
++--------------------------+------+--------+-------------------------------------------------+
+| ``adi,nyquist-zone``     | u32  | 0,1    | Global Nyquist zone (0=odd, 1=even), default: 0 |
++--------------------------+------+--------+-------------------------------------------------+
+
+.. _main-data-paths-adimain-data-paths-1:
+
+Main Data Paths (adi,main-data-paths)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Contains configuration for up to 4 ADCs (adc@0 through adc@3).
+
+Per-ADC Properties (adc@N)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------+---------------+----------------+---------------------------------------+
+| Property                       | Type          | Range/Values   | Description                           |
++================================+===============+================+=======================================+
+| ``reg``                        | u32           | 0-3            | ADC channel index                     |
++--------------------------------+---------------+----------------+---------------------------------------+
+| ``adi,decimation``             | u32           | 1,2,3,4,6,8,12 | Decimation factor                     |
++--------------------------------+---------------+----------------+---------------------------------------+
+| ``adi,nco-frequency-shift-hz`` | i64           | -              | NCO frequency shift (can be negative) |
++--------------------------------+---------------+----------------+---------------------------------------+
+| ``adi,nco-mixer-mode``         | u32           | 0-3            | NCO mixer mode (see below)            |
++--------------------------------+---------------+----------------+---------------------------------------+
+| ``adi,nyquist-zone``           | u32           | 0,1            | Per-ADC Nyquist zone override         |
++--------------------------------+---------------+----------------+---------------------------------------+
+| ``adi,crossbar-select``        | phandle-array | -              | References to channelizer paths       |
++--------------------------------+---------------+----------------+---------------------------------------+
+
+**NCO Mixer Modes:**
+
+-  0: Variable IF Mode (AD9081_ADC_NCO_VIF)
+-  1: Zero IF Mode (AD9081_ADC_NCO_ZIF)
+-  2: Fs/4 Hz IF Mode (AD9081_ADC_NCO_FS_4_IF)
+-  3: Test Mode (AD9081_ADC_NCO_TEST)
+
+.. _channelizer-paths-adichannelizer-paths-1:
+
+Channelizer Paths (adi,channelizer-paths)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Contains configuration for up to 8 channels (channel@0 through channel@7).
+
+.. _per-channel-properties-channeln-1:
+
+Per-Channel Properties (channel@N)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------+------+-------------+-----------------------------------+
+| Property                       | Type | Range       | Description                       |
++================================+======+=============+===================================+
+| ``reg``                        | u32  | 0-7         | Channelizer index                 |
++--------------------------------+------+-------------+-----------------------------------+
+| ``adi,decimation``             | u32  | 1,2,3,4,6,8 | Decimation factor                 |
++--------------------------------+------+-------------+-----------------------------------+
+| ``adi,gain``                   | u32  | 0-4095      | Channel gain (12-bit)             |
++--------------------------------+------+-------------+-----------------------------------+
+| ``adi,nco-frequency-shift-hz`` | i64  | -           | NCO frequency shift               |
++--------------------------------+------+-------------+-----------------------------------+
+| ``adi,nco-phase-offset``       | u32  | 0-65535     | NCO phase offset                  |
++--------------------------------+------+-------------+-----------------------------------+
+| ``adi,6db-gain-enable``        | u32  | 0,1         | Enable 6dB gain                   |
++--------------------------------+------+-------------+-----------------------------------+
+| ``adi,complex-to-real-enable`` | u32  | 0,1         | Enable complex-to-real conversion |
++--------------------------------+------+-------------+-----------------------------------+
+
+.. _jesd-links-adijesd-links-1:
+
+JESD Links (adi,jesd-links)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+RX JESD links follow the same structure as TX links with additional:
+
++--------------------------+---------------+--------------------------------------------------+
+| Property                 | Type          | Description                                      |
++==========================+===============+==================================================+
+| ``adi,converter-select`` | phandle-array | References to converters with FDDC_I/Q selection |
++--------------------------+---------------+--------------------------------------------------+
+
+Header File Constants
+---------------------
+
+Include the header file for PA protection trigger constants:
+
+.. code:: c
+
+   #include <dt-bindings/iio/adc/adi,ad9081.h>
+
+PA Protection Rotation Mode Flags
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  ``AD9081_PA_ROTATION_JESD_AUTO`` - Enable JESD auto off/on during rotation
+-  ``AD9081_PA_ROTATION_DATAPATH_AUTO`` - Enable datapath auto soft off/on during rotation
+
+PA Protection Soft-Off Triggers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  ``AD9081_PA_SOFT_OFF_SPI`` - Trigger via SPI command
+-  ``AD9081_PA_SOFT_OFF_TXEN`` - Trigger via TXEN pin
+-  ``AD9081_PA_SOFT_OFF_JESD_ERR`` - Trigger on JESD error
+-  Additional triggers available in header file
+
+PA Protection Soft-On Triggers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  ``AD9081_PA_SOFT_ON_SPI`` - Trigger via SPI command
+-  ``AD9081_PA_SOFT_ON_TXEN`` - Trigger via TXEN pin
+-  Additional triggers available in header file
+
+NCO Mixer Modes (ADC)
+~~~~~~~~~~~~~~~~~~~~~
+
+-  ``AD9081_ADC_NCO_VIF`` - Variable IF Mode
+-  ``AD9081_ADC_NCO_ZIF`` - Zero IF Mode
+-  ``AD9081_ADC_NCO_FS_4_IF`` - Fs/4 Hz IF Mode
+-  ``AD9081_ADC_NCO_TEST`` - Test Mode
+
+Notes
+-----
+
+-  **64-bit Values**: Properties exceeding 4GHz require ``/bits/ 64`` prefix
+-  **Negative Frequencies**: NCO frequency shifts can be negative (use parentheses in DTS)
+-  **PA Protection**: When using PA protection features, ensure all required properties for enabled features are specified
+-  **Phandle References**: Use for linking DACs to channelizers and ADCs to channelizers
+
+Device Tree Example
+-------------------
+
+.. code:: c
+
+
+   #include <dt-bindings/iio/adc/adi,ad9081.h>
+   #include <dt-bindings/gpio/gpio.h>
+
+   &spi {
+       trx0_ad9081: ad9081@0 {
+           #address-cells = <1>;
+           #size-cells = <0>;
+           compatible = "adi,ad9081";
+           reg = <0>;
+           spi-max-frequency = <5000000>;
+
+           /* Clocks */
+           clocks = <&hmc7044 2>;
+           clock-names = "dev_clk";
+
+           clock-output-names = "rx_sampl_clk", "tx_sampl_clk";
+           #clock-cells = <1>;
+
+           jesd204-device;
+           #jesd204-cells = <2>;
+           jesd204-top-device = <0>; /* This is the TOP device */
+           jesd204-link-ids = <FRAMER_LINK0_RX DEFRAMER_LINK0_TX>;
+
+           jesd204-inputs =
+               <&axi_ad9081_core_rx 0 FRAMER_LINK0_RX>,
+               <&axi_ad9081_core_tx 0 DEFRAMER_LINK0_TX>;
+
+           adi,tx-dacs {
+               #size-cells = <0>;
+               #address-cells = <1>;
+
+               adi,dac-frequency-hz = /bits/ 64 <6200000000>;
+
+               adi,main-data-paths {
+                   #address-cells = <1>;
+                   #size-cells = <0>;
+
+                   adi,interpolation = <2>;
+
+                   ad9081_dac0: dac@0 {
+                       reg = <0>;
+                       adi,crossbar-select = <&ad9081_tx_fddc_chan0>;
+                       adi,nco-frequency-shift-hz = /bits/ 64 <100000000>; /* 100 MHz */
+                   };
+                   ad9081_dac1: dac@1 {
+                       reg = <1>;
+                       adi,crossbar-select = <&ad9081_tx_fddc_chan1>;
+                       adi,nco-frequency-shift-hz = /bits/ 64 <200000000>; /* 200 MHz */
+                   };
+                   ad9081_dac2: dac@2 {
+                       reg = <2>;
+                       adi,crossbar-select = <&ad9081_tx_fddc_chan0>, <&ad9081_tx_fddc_chan1>; /* All 4 channels @ dac2 */
+                       adi,nco-frequency-shift-hz = /bits/ 64 <300000000>;  /* 300 MHz */
+                   };
+                   ad9081_dac3: dac@3 {
+                       reg = <3>;
+                       adi,crossbar-select = <&ad9081_tx_fddc_chan0>, <&ad9081_tx_fddc_chan1>; /* All 4 channels @ dac2 */
+                       adi,nco-frequency-shift-hz = /bits/ 64 <400000000>; /* 400 MHz */
+                   };
+               };
+
+               adi,channelizer-paths {
+                   #address-cells = <1>;
+                   #size-cells = <0>;
+                   adi,interpolation = <2>;
+
+                   ad9081_tx_fddc_chan0: channel@0 {
+                       reg = <0>;
+                       adi,gain = <0>;
+                       adi,nco-frequency-shift-hz =  /bits/ 64 <50000000>;
+
+                   };
+                   ad9081_tx_fddc_chan1: channel@1 {
+                       reg = <1>;
+                       adi,gain = <0>;
+                       adi,nco-frequency-shift-hz =  /bits/ 64 <100000000>;
+
+                   };
+               };
+
+               adi,jesd-links {
+                   #size-cells = <0>;
+                   #address-cells = <1>;
+
+                   ad9081_tx_jesd_l0: link@0 {
+                       #address-cells = <1>;
+                       #size-cells = <0>;
+                       reg = <0>;
+                       adi,converter-select = <&ad9081_tx_fddc_chan0 0>, <&ad9081_tx_fddc_chan0 1>, /* FIXME not supported */
+                                      <&ad9081_tx_fddc_chan1 0>, <&ad9081_tx_fddc_chan1 1>;
+                       adi,logical-lane-mapping = /bits/ 8 <0 1 2 3 4 5 6 7>;
+
+                       adi,link-mode = <17>;           /* JESD Quick Configuration Mode */
+                       adi,subclass = <1>;         /* JESD SUBCLASS 0,1,2 */
+                       adi,version = <1>;          /* JESD VERSION 0=204A,1=204B,2=204C */
+                       adi,dual-link = <0>;            /* JESD Dual Link Mode */
+
+                       adi,converters-per-device = <4>;    /* JESD M */
+                       adi,octets-per-frame = <1>;     /* JESD F */
+
+                       adi,frames-per-multiframe = <32>;   /* JESD K */
+                       adi,converter-resolution = <16>;    /* JESD N */
+                       adi,bits-per-sample = <16>;     /* JESD NP' */
+                       adi,control-bits-per-sample = <0>;  /* JESD CS */
+                       adi,lanes-per-device = <8>;     /* JESD L */
+                       adi,samples-per-converter-per-frame = <1>; /* JESD S */
+                       adi,high-density = <0>;         /* JESD HD */
+                   };
+               };
+           };
+
+           adi,rx-adcs {
+               #size-cells = <0>;
+               #address-cells = <1>;
+
+               adi,adc-frequency-hz = /bits/ 64 <3100000000>;
+
+               adi,main-data-paths {
+                   #address-cells = <1>;
+                   #size-cells = <0>;
+
+                   ad9081_adc0: adc@0 {
+                       reg = <0>;
+                       adi,decimation = <2>;
+                       adi,nco-frequency-shift-hz =  /bits/ 64 <70000000>;
+                       //adi,crossbar-select = <&ad9081_rx_fddc_chan0>, <&ad9081_rx_fddc_chan2>; /* Static for now */
+                   };
+                   ad9081_adc1: adc@1 {
+                       reg = <1>;
+                       adi,decimation = <2>;
+                       adi,nco-frequency-shift-hz =  /bits/ 64 <150000000>;
+                       //adi,crossbar-select = <&ad9081_rx_fddc_chan1>, <&ad9081_rx_fddc_chan3>; /* Static for now */
+                   };
+               };
+
+               adi,channelizer-paths {
+                   #address-cells = <1>;
+                   #size-cells = <0>;
+
+                   ad9081_rx_fddc_chan0: channel@0 {
+                       reg = <0>;
+                       adi,decimation = <1>;
+                       adi,gain = <0>;
+                       adi,nco-frequency-shift-hz =  /bits/ 64 <30000000>;
+
+                   };
+                   ad9081_rx_fddc_chan1: channel@1 {
+                       reg = <1>;
+                       adi,decimation = <1>;
+                       adi,gain = <0>;
+                       adi,nco-frequency-shift-hz =  /bits/ 64 <60000000>;
+
+                   };
+               };
+
+               adi,jesd-links {
+                   #size-cells = <0>;
+                   #address-cells = <1>;
+
+                   ad9081_rx_jesd_l0: link@0 {
+                       reg = <0>;
+                       adi,converter-select = <&ad9081_rx_fddc_chan0 0>, <&ad9081_rx_fddc_chan0 1>,
+                                   <&ad9081_rx_fddc_chan1 0>, <&ad9081_rx_fddc_chan1 1>;
+                       adi,logical-lane-mapping = /bits/ 8 <0 1 2 3 4 5 6 7>;
+
+
+                       adi,link-mode = <18>;           /* JESD Quick Configuration Mode */
+                       adi,subclass = <1>;         /* JESD SUBCLASS 0,1,2 */
+                       adi,version = <1>;          /* JESD VERSION 0=204A,1=204B,2=204C */
+                       adi,dual-link = <0>;            /* JESD Dual Link Mode */
+
+                       adi,converters-per-device = <4>;    /* JESD M */
+                       adi,octets-per-frame = <1>;     /* JESD F */
+
+                       adi,frames-per-multiframe = <32>;   /* JESD K */
+                       adi,converter-resolution = <16>;    /* JESD N */
+                       adi,bits-per-sample = <16>;     /* JESD NP' */
+                       adi,control-bits-per-sample = <0>;  /* JESD CS */
+                       adi,lanes-per-device = <8>;     /* JESD L */
+                       adi,samples-per-converter-per-frame = <1>; /* JESD S */
+                       adi,high-density = <0>;         /* JESD HD */
+                   };
+               };
+           };
+       };
+   };
+
+General IIO and driver conventions
+==================================
+
+Controlling the MxFE is done via the IIO sysfs interface. For convenience users can use :doc:`libiio </wiki-migration/resources/tools-software/linux-software/libiio>` and its various programming langue bindings. The MxFE IIO device under /sys/bus/iio/devices/iio:deviceX features a set of channels and device attributes, which are explained here. Some basic, but important concepts are explained in the bullet list below:
+
+-  Channels prefixed with ``in_voltageX`` apply to Receive (RX) ADC data paths.
+-  Channels prefixed with ``out_voltageX`` apply to Transmit (TX) DAC data paths.
+-  Each channel has a complex modifier ``in_voltageX_i`` and ``in_voltageX_q`` or ``out_voltageX_i`` and ``out_voltageX_q``. Controlling a channel attribute for the ``i`` modified channel will simultaneously control the ``q`` modified channel and vice versa. So, writing/reading only needs to happen once, since they are mirrored. The complex IQ modifiers are only important for the data buffers, sine I & Q are individual data components.
+-  IIO channels ``[in|out]_voltageX``\ apply to the channelizer data paths (Fine DDC/DUC).
+
+   -  Each IIO channel has some ``[in|out]_voltageX_[i|q]_channel_[attributes]``
+   -  In case the channelizer data paths (Fine DDC/DUC) are bypassed (decimation=1 or interpolation=1), the X still applies to a data path.
+
+      -  On the RX side: The **adi,converter-select** property is used to connect **adi,channelizer-paths**, where the **reg = <X>** property value defines the X in the IIO channel name.
+      -  On the TX side: The **adi,maindp-dac-1x-non1x-crossbar-select = <X>** property within adi,main-data-paths dac@Y takes the data path number (DC_DP_X) as argument (x). So setting it to 0 on the DAC node for DAC1 will instruct the XBAR to route the very first data path to the CDUC1 which by default routes to DAC1. In case this property is not present, the default mapping CDUC0->DAC0, CDUC1->DAC1, … will be used.
+
+-  Each channelizer data path (FDDC, FDUC) connects at least to one Coarse DDC/DUC (CDDC/CDUC), which maps then to one or more ADCs/DACs depending on configuration. These are called main data paths and are controlled via the ``[in|out]_voltageX_[i|q]_main_[attributes]`` attributes.
+
+   -  Be aware, since multiple channels can map to the same main data path (CDDC/CDUC), changing a main attribute of one channel will also update same attribute of any other channel that maps to the same main data path (CDDC/CDUC).
+   -  The crossbar mapping between Fine and Coarse Digital Up/Down Converters, ADCs/DACs is defined in the device tree.
+
+-  Device attributes (without ``in_voltageX``\ or ``out_voltageX`` prefix) apply to the entire device.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/> **cd /sys/bus/iio/devices/**
+      root:/sys/bus/iio/devices> ls
+      iio:device0  iio:device3  iio:device2
+   
+      root:/sys/bus/iio/devices> **cd iio:device2**
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# ls -al
+      total 0
+      drwxr-xr-x 5 root root    0 Mar 28 12:44 .
+      drwxr-xr-x 5 root root    0 Mar 28 12:44 ..
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 adc_clk_powerdown
+      drwxr-xr-x 2 root root    0 Mar 28 12:44 buffer
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 dev
+      --w------- 1 root root 4096 Mar 28 12:44 filter_fir_config
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_temp0_input
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_temp0_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_channel_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_channel_nco_frequency_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_channel_nco_phase
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_main_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_main_ffh_trig_hop_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_i_nyquist_zone
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_channel_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_channel_nco_frequency_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_channel_nco_phase
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_main_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_main_ffh_trig_hop_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage0_q_nyquist_zone
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_channel_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_channel_nco_frequency_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_channel_nco_phase
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_main_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_main_ffh_trig_hop_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_i_nyquist_zone
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_channel_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_channel_nco_frequency_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_channel_nco_phase
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_main_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_main_ffh_trig_hop_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage1_q_nyquist_zone
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_channel_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_channel_nco_frequency_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_channel_nco_phase
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_main_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_main_ffh_trig_hop_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_i_nyquist_zone
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_channel_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_channel_nco_frequency_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_channel_nco_phase
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_main_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_main_ffh_trig_hop_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage2_q_nyquist_zone
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_channel_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_channel_nco_frequency_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_channel_nco_phase
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_main_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_main_ffh_trig_hop_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_i_nyquist_zone
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_channel_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_channel_nco_frequency_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_channel_nco_phase
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_main_6db_digital_gain_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_main_ffh_trig_hop_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage3_q_nyquist_zone
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage_adc_frequency
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage_main_ffh_mode_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage_main_nco_frequency_available
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage_nyquist_zone_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage_sampling_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 in_voltage_test_mode
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 in_voltage_test_mode_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 jesd204_fsm_ctrl
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 jesd204_fsm_error
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 jesd204_fsm_paused
+      --w------- 1 root root 4096 Mar 28 12:44 jesd204_fsm_resume
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 jesd204_fsm_state
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 loopback_mode
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 loopback_mode_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 multichip_sync
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 name
+      lrwxrwxrwx 1 root root    0 Mar 28 12:44 of_node -> ../../../../../firmware/devicetree/base/fpga-axi@0/axi-ad9081-rx-hpc@84a10000
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_channel_nco_gain_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_channel_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_channel_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_channel_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_en
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_main_nco_ffh_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_main_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_i_main_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_channel_nco_gain_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_channel_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_channel_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_channel_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_en
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_main_nco_ffh_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_main_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage0_q_main_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_channel_nco_gain_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_channel_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_channel_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_channel_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_en
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_main_nco_ffh_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_main_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_i_main_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_channel_nco_gain_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_channel_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_channel_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_channel_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_en
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_main_nco_ffh_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_main_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage1_q_main_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_channel_nco_gain_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_channel_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_channel_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_channel_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_en
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_main_nco_ffh_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_main_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_i_main_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_channel_nco_gain_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_channel_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_channel_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_channel_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_en
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_main_nco_ffh_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_main_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage2_q_main_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_channel_nco_gain_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_channel_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_channel_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_channel_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_en
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_main_nco_ffh_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_main_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_i_main_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_channel_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_channel_nco_gain_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_channel_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_channel_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_channel_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_en
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_label
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_main_ffh_mode
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_main_nco_ffh_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_main_nco_ffh_index
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_main_nco_ffh_select
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_main_nco_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_main_nco_phase
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_main_nco_test_tone_en
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage3_q_main_nco_test_tone_scale
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage_channel_nco_frequency_available
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 out_voltage_dac_frequency
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage_main_ffh_gpio_mode_en
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 out_voltage_main_ffh_mode_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage_main_nco_frequency_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 out_voltage_sampling_frequency
+      drwxr-xr-x 2 root root    0 Mar 28 12:44 power
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 powerdown
+      drwxr-xr-x 2 root root    0 Mar 28 12:44 scan_elements
+      lrwxrwxrwx 1 root root    0 Mar 28 12:44 subsystem -> ../../../../../bus/iio
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 sync_start_enable
+      -r--r--r-- 1 root root 4096 Mar 28 12:44 sync_start_enable_available
+      -rw-r--r-- 1 root root 4096 Mar 28 12:44 uevent
+   
+
+
+Show device name
+----------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device2> **cat name**
+      axi-ad9081-rx-hpc
+   
+
+
+ADC Rate
+--------
+
+**What:** ``in_voltage_adc_frequency``
+
+Read only attribute which returns the RX ADC rate Hz.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device2> **cat in_voltage_adc_frequency** 
+      4000000000
+   
+
+
+RX Sample Rate
+--------------
+
+**What:** ``in_voltage_sampling_frequency``
+
+Read only attribute which returns the RX digital IQ base-band rate in Hz. This must not be confused with the ADC rate, which is (MAIN_decimation \* CHANNEL_decimation) time higher. MAIN_decimation, CHANNEL_decimation are defined in the device tree.
+
+in_voltage_sampling_frequency = in_voltage_adc_frequency / (MAIN_decimation \* CHANNEL_decimation)
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device2> **cat in_voltage_sampling_frequency** 
+      250000000
+   
+
+
+DAC Rate
+--------
+
+**What:** ``out_voltage_dac_frequency``
+
+Read only attribute which returns the TX DAC rate Hz.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device2> **cat out_voltage_dac_frequency** 
+      12000000000
+   
+
+
+TX Sample Rate
+--------------
+
+**What:** ``out_voltage_sampling_frequency``
+
+Read only attribute which returns the TX digital IQ base-band rate in Hz. This must not be confused with the DAC rate, which is (MAIN_interpolation \* CHANNEL_interpolation) time higher. MAIN_interpolation, CHANNEL_interpolation are defined in the device tree.
+
+out_voltage_sampling_frequency = fDAC / (MAIN_interpolation \* CHANNEL_interpolation)
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device2> **cat out_voltage_sampling_frequency** 
+      250000000
+   
+
+
+ADC Nyquist Zone Control
+------------------------
+
+| **What:** ``in_voltageX_nyquist_zone``
+| **What:** ``in_voltage_nyquist_zone_available``
+
+Calibration is used to reduce residual spurious artifacts that are common among interleaving ADC architectures because of sub ADC timing, gain, and offsets mismatches. The ADCs are initially factory calibrated, and background calibration is also employed to further improve and maintain the performance across device operating conditions.
+
+One background calibration algorithm employed adjusts the interleaving timing mismatches and depends on the knowledge of the Nyquist zone being odd or even, which depends on the ADC input frequency (fIN), and sample rate (fADC), as defined in the following equation:
+
+Nyquist Zone = ROUNDDOWN × (fIN/(fADC/2)) + 1 (Please see: Calibration and Specifying Nyquist Zone in UG-1578)
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-mxfe/ad908x_nyquist_zones.png
+   :align: center
+   :width: 400px
+
+The current Nyquist Zone can be queried and controlled via the ``in_voltage_nyquist_zone`` attribute.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device2> **cat in_voltage_nyquist_zone_available**
+      **odd even**
+      root:/sys/bus/iio/devices/iio:device2> **echo even > cat in_voltage0_i_nyquist_zone**
+      root:/sys/bus/iio/devices/iio:device2> **cat cat in_voltage0_i_nyquist_zone**
+      **even**
+   
+
+
+NCO Frequency Control
+---------------------
+
+Main Data Path
+~~~~~~~~~~~~~~
+
+**What:** ``[in|out]_voltageX_[i|q]_main_nco_frequency``
+
+| Sets the main data path (CDDC/CDUC) NCO frequency (fCARRIER) in Hz
+| **out_voltageX_i_main_nco_frequency Range is:** −fDAC/2 ≤ fCARRIER < +fDAC/2
+| **in_voltageX_i_main_nco_frequency Range is:** −fADC/2 ≤ fCARRIER < +fADC/2
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1000000000 > out_voltage0_i_main_nco_frequency **
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_main_nco_frequency **
+      **1000000000**
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 300000000 > in_voltage0_i_main_nco_frequency **
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat in_voltage0_i_main_nco_frequency **
+      **300000000 **
+   
+
+
+Channel Data Path
+~~~~~~~~~~~~~~~~~
+
+**What:** ``[in|out]_voltageX_[i|q]_channel_nco_frequency``
+
+| Sets the channel data path (FDDC/FDUC) NCO frequency (fCARRIER) in Hz
+| **out_voltageX_i_channel_nco_frequency Range is:** −(fDAC/MAIN_interpolation)/2 ≤ fCARRIER < +(fDAC/MAIN_interpolation)/2
+| **in_voltageX_i_channel_nco_frequency Range is:** −(fADC/MAIN_decimation)/2 ≤ fCARRIER < +(fADC/MAIN_decimation)/2
+|
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1000000000 > out_voltage0_i_channel_nco_frequency **
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_frequency**
+      **1000000000**
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 300000000 > out_voltage0_i_channel_nco_frequency **
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_frequency**
+      **300000000 **
+   
+
+
+NCO Phase Control
+-----------------
+
+.. _main-data-path-1:
+
+Main Data Path
+~~~~~~~~~~~~~~
+
+**What:** ``[in|out]_voltageX_[i|q]_main_nco_phase``
+
+| Sets the main data path (CDDC/CDUC) NCO phase offset in milli degrees
+| **Range is**: −180° ≤ Degrees Offset ≤ +180° (Values are in milli degrees.)
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 66000 > out_voltage0_i_main_nco_phase **
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_main_nco_phase **
+      **66000**
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo -42000 > in_voltage0_i_main_nco_phase **
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat in_voltage0_i_main_nco_phase **
+      **-42000 **
+   
+
+
+.. _channel-data-path-1:
+
+Channel Data Path
+~~~~~~~~~~~~~~~~~
+
+**What:** ``[in|out]_voltageX_[i|q]_channel_nco_phase``
+
+| Sets the channel data path (FDDC/FDUC) NCO phase offset in milli degrees
+| **Range is**: −180° ≤ Degrees Offset ≤ +180° (Values are in milli degrees.)
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 13123 > out_voltage0_i_channel_nco_phase **
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_phase**
+      **13123**
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 13123 > out_voltage0_i_channel_nco_phase **
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat out_voltage0_i_channel_nco_phase**
+      **13123 **
+   
+
+
+TX NCO Channel Digital Gain
+---------------------------
+
+**What:** ``out_voltageX_[i|q]_channel_nco_gain_scale``
+
+The input data into each channelizer stage can be rescaled prior to additional processing. This feature is useful in multiband applications to prevent digital clipping when the outputs of two or more channelizer stages are summed in the main datapath to produce a multiband band signal. The gain/scale is set via ``out_voltageX_[i|q]_channel_nco_gain_scale`` attribute.
+
+**Range is**: 0 ≤ Gain ≤ 1.999 (−∞ dB < dBGain ≤ +6.018 dB)
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 0.707 > out_voltage0_i_channel_nco_gain_scale**
+   
+
+
+TX NCO Test Tone Modes
+----------------------
+
+| **What:** ``out_voltageX_[i|q]_[channel|main]_nco_test_tone_en``
+| **What:** ``out_voltageX_[i|q]_[channel|main]_nco_test_tone_scale``
+
+The Test Tone Mode can be enabled using the ``out_voltageX_[i|q]_[channel|main]_nco_test_tone_en`` attributes in order to provide a complex, single-tone output. The tone is generated using a programmable internal dc amplitude level that is injected into the complex modulator input to generate an unmodulated single tone. The dc amplitude level is controlled by the ``out_voltageX_[i|q]_[channel|main]_nco_test_tone_scale`` attributes which corresponds to a full-scale tone.
+
+**Range is**: 0 ≤ Scale ≤ 0.9999.
+
+Please see also :doc:`NCO Frequency Control </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>` section.
+
+The ``out_voltageX_[i|q]_channel_nco_test_tone_en`` mode is most useful for applications that require multiple single-tone signals of varying frequency and amplitude, while applications that only require a single tone can use the same feature available on the main datapath NCOs. ``out_voltageX_[i|q]_main_nco_test_tone_en``
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 0.25 > out_voltage0_i_channel_nco_test_tone_scale**
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1 > out_voltage0_i_channel_nco_test_tone_en**
+   
+
+
+Fast Frequency Hopping Control
+------------------------------
+
+The complex NCOs used in both the transmit and receive datapaths support FFH mode. In the transmit datapath, each main datapath NCO consists of a bank of 31 NCOs. In the receive main and channelizer datapaths, each NCO consists of a bank of 16 NCOs. The transmit and receive hop sequence can be independently controlled via GPIOx pins or the SPI register (IIO sysfs attributes). Asynchronous trigger hop mode is an additional mode only supported on the receive path.
+
+Transmit Main Path FFH NCO Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What:** ``out_voltageX_[i|q]_main_nco_ffh_frequency``
+| **What:** ``out_voltageX_[i|q]_main_nco_ffh_index``
+| **What:** ``out_voltageX_[i|q]_main_nco_ffh_select``
+| **What:** ``out_voltageX_[i|q]_main_ffh_mode``
+| **What:** ``out_voltage_main_ffh_gpio_mode_en``
+
+The FFH NCO associated with each main datapath is implemented with 31 additional 32-bit NCOs. Each NCO can be configured with a unique frequency tuning word FTWx where x is a value between 0 and 30. These FTWs can be preloaded into the hopping frequency register bank using the ``out_voltageX_[i|q]_main_nco_ffh_index`` and ``out_voltageX_[i|q]_main_nco_ffh_frequency`` attributes.
+
+The user first addresses hopping frequency register bank by setting its index using ``out_voltageX_[i|q]_main_nco_ffh_index``, followed by setting the frequency using ``out_voltageX_[i|q]_main_nco_ffh_frequency``. The user repeats these steps until all required FTWs are programmed. Once this is done, the pre-configured FTW can be called via the channels ``out_voltageX_[i|q]_main_nco_ffh_select`` attribute, which accepts values between 0..30. Alternatively GPIO based hopping can be enabled using the ``out_voltage_main_ffh_gpio_mode_en`` attribute. The hop transition mode of NCOs can be controlled using the ``out_voltageX_[i|q]_main_ffh_mode`` attribute. Allowed options are phase_continuous, phase_incontinuous, and phase_coherent.
+
+Receive Main Path FFH NCO Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What:** ``in_voltageX_[i|q]_main_nco_frequency``
+| **What:** ``in_voltageX_[i|q]_main_nco_phase``
+| **What:** ``in_voltageX_[i|q]_main_nco_ffh_index``
+| **What:** ``in_voltageX_[i|q]_main_nco_ffh_select``
+| **What:** ``in_voltageX_[i|q]_main_ffh_mode``
+| **What:** ``in_voltageX_[i|q]_main_ffh_trig_hop_en``
+| **What:** ``in_voltageX_[i|q]_main_ffh_gpio_mode_en``
+| Each main data path (CDDC) NCO contains 16 channel registers sets, that can be programmed with unique Frequency (PIW) and Phase (POW) settings. The user sets the channel index using ``in_voltageX_[i|q]_main_nco_ffh_index``, followed by setting the frequency and phase using ``in_voltageX_[i|q]_main_nco_frequency`` and ``in_voltageX_[i|q]_main_nco_phase``. The index attribute accepts values between 0 and 15. The user repeats these steps until all required FTWs are programmed. Once this is done, the pre-configured NCO can be selected via the channels ``in_voltageX_[i|q]_main_nco_ffh_select`` select attribute, which also accepts values between 0..15. Alternatively, GPIO based hopping can be configured using the ``in_voltageX_[i|q]_main_ffh_mode`` attribute. The ``in_voltageX_[i|q]_main_ffh_mode`` attribute options are instantaneous_update, synchronous_update_by_transfer_bit and synchronous_update_by_gpio. Using ``in_voltageX_[i|q]_main_ffh_gpio_mode_en`` the GPIO controlled mode is enabled, the mode switches between the mode set in the devicetree using ``adi,nco-channel-select-mode`` and software/SPI control using ``in_voltageX_[i|q]_main_nco_ffh_select``.
+
+Programmable FIR Filter
+-----------------------
+
+What: ``filter_fir_config``
+
+Both the AD9081 and AD9082 provide a hardware FIR filter that can be programmed with up to 192 taps, and runs at the full converter rate of 4 or 6 GS/s respectively. Typical usecases of this filter include, but are not limited to:
+
+-  Equalization of analog impairments
+-  Channel-to-channel crosstalk correction
+-  Equalization with crosstalk correction
+-  Quadrature error correction
+
+The full capabilities and supported operational modes are described on page 138 and onwards of the :adi:`AD9081/AD9082 User Guide (Rev. PrC) <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
+
+Filter configurations can be written as follows:
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat /root/pfilt.cfg > filter_fir_config **
+   
+
+
+Configuration File Format
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A filter configuration file is an ASCII textfile with LF line-endings, and supports the following directives:
+
+-  All lines starting with a ``#`` symbol are skipped / treated as comments. Note, the ``#`` has to be the **first** character of a line.
+-  Filter mode
+
+   -  The filter mode determines the filter architecture, for more information about these see the user guide.
+   -  Syntax: ``mode: <I_MODE> <Q_MODE>``, where supported values of ``I_MODE`` and ``Q_MODE`` are: ``disabled``, ``real_n4``, ``real_n2``, ``matrix``, ``complex_full``, ``complex_half``, ``real_n``.
+
+-  Filter gain
+
+   -  The digital gain can be used to compensate coefficient gain/losses
+   -  Syntax: ``gain: <Sa> <Sb> <Sc> <Sd>``, where the filter gain values ``S[abcd]`` must be ``-12``, ``-6``, ``0``, ``6`` or ``12`` (Unit is dB).
+
+      -  Note: All values are required, even if only one is actually used!
+
+-  Destination
+
+   -  The destination directive controls which ADC pair and page these values are applied to. Pages can be used to store multiple sets of coefficients and rapidly switch between them using gpios.
+   -  Syntax: ``dest: <ADC_PAIR> <PAGES>``
+
+      -  ``ADC_PAIR`` must be either ``adc_pair_0``, ``adc_pair_1`` or ``adc_pair_all``
+      -  ``PAGES`` must be either ``page_0``, ``page_1``, ``page_2``, ``page_3`` or ``page_all``
+
+-  Delay
+
+   -  This setting is used for filter delay compensation in half complex mode and quadrature error correction / image rejection respectively.
+   -  Syntax: ``delay: <HALF_COMPLEX_DELAY> <IMAGE_CANCEL_DELAY>``
+
+      -  ``HALF_COMPLEX_DELAY``: Integer in [0, 255] (Unit is samples)
+      -  ``IMAGE_CANCEL_DELAY``: Integer in [0, 127] (Unit is samples)
+
+-  Filter coefficients
+
+   -  Lines containing filter coefficients are not prefixed, and should either contain two or four 16-bit integers in decimal notation, where four values are required when ``I_MODE == matrix``.
+
+The parser can be found here: :git-linux:`ad9081_parse_fir <drivers/iio/adc/ad9081.c#L2430-L2647>`
+
+Examples
+^^^^^^^^
+
+The iio-oscilloscope project provides some samples which can be used as a reference:
+
+-  :git-iio-oscilloscope:`filters/ad9081/ad9081_pfir_OFF.cfg`
+-  :git-iio-oscilloscope:`filters/ad9081/ad9081_pfir_DualReal.cfg`
+-  :git-iio-oscilloscope:`filters/ad9081/ad9081_pfir_SingleInphase.cfg`
+-  :git-iio-oscilloscope:`filters/ad9081/ad9081_pfir_Matrix.cfg`
+-  :git-iio-oscilloscope:`filters/ad9081/ad9081_pfir_FullComplex.cfg`
+
+Loopback Modes
+--------------
+
+The AD9081/AD9082 supports two methods to loopback the samples from the receive (ADC) path to the transmit (DAC) path.
+
+JESD Loopback RX->TX
+~~~~~~~~~~~~~~~~~~~~
+
+**What:** ``loopback_mode``
+
+The **indirect loopback** path loops the ADC outputs through the receive and transmit datapaths to take advantage of the signal processing capability. The data loopback occurs between the lane FIFO blocks of the JESD204B/C transmitter and JESD204B/C receiver. For this mode to function correctly the JESD configuration between RX and TX must be identical and only use a single link.The physical to logical lane mapping for both links must also match.
+
+The **direct loopback** path loops the ADC output data directly back into a specified DAC without any signal processing, which provides the shortest path latency but no ability to delay or modify the received signal before re-transmitting through the DAC cores. For this mode to function correctly the ADC and DAC rates must match.
+
++-------+--------------------------------------------------------------------------------------+
+| Mode  | Function                                                                             |
++=======+======================================================================================+
+| ``0`` | Looback mode is disabled                                                             |
++-------+--------------------------------------------------------------------------------------+
+| ``1`` | Indirect Loopback enabled                                                            |
++-------+--------------------------------------------------------------------------------------+
+| ``2`` | Direct Loopback enabled                                                              |
++-------+--------------------------------------------------------------------------------------+
+| ``3`` | Direct Loopback enabled with control of ADC data overflow before looping back to DAC |
++-------+--------------------------------------------------------------------------------------+
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **echo 1 > loopback_mode**
+   
+
+
+On-Die Temperature Reading
+--------------------------
+
+**What:** ``in_temp0_input``
+
+The device contains a Temperature Monitoring Unit (TMU) that functions as a digital thermometer. The TMU is comprised of four sensors placed at different chip locations. The on-die temperature value is measured and digitized through an ADC. At any given time, the temperature in signed milli-degrees Celsius, from the sensor with the **highest** temperature can be read from the ``in_temp0_input`` attribute.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/bus/iio/devices/iio:device2# **cat in_temp0_input**
+      **86120**
+   
+
+
+Low level debug functions via debugfs
+=====================================
+
+::
+
+   root@analog:/sys/kernel/debug/iio/iio:device2# ls -al
+   total 0
+   drwxr-xr-x 2 root root 0 Jan  1  1970 .
+   drwxr-xr-x 5 root root 0 Jan  1  1970 ..
+   -rw-r--r-- 1 root root 0 Jan  1  1970 bist_prbs_error_counters_jrx
+   -rw-r--r-- 1 root root 0 Jan  1  1970 bist_prbs_select_jrx
+   -rw-r--r-- 1 root root 0 Jan  1  1970 bist_prbs_select_jtx
+   -rw-r--r-- 1 root root 0 Jan  1  1970 bist_spo_set_jrx
+   -rw-r--r-- 1 root root 0 Jan  1  1970 bist_spo_sweep_jrx
+   -rw------- 1 root root 0 Jan  1  1970 dac-full-scale-current-ua
+   -rw-r--r-- 1 root root 0 Feb  6 18:18 direct_reg_access
+   -rw-r--r-- 1 root root 0 Jan  1  1970 pseudorandom_err_check
+   -r--r--r-- 1 root root 0 Jan  1  1970 status
+
+JESD Link Status
+~~~~~~~~~~~~~~~~
+
+Reading ``status`` returns a status string.
+
+**Example:**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# **cat status** 
+      **JESD TX (JRX) Link1 0xF lanes in DATA
+      JESD TX (JRX) Link1 TPL Phase Difference Read 0, Set 3
+      JESD RX (JTX) Link1 in DATA, SYNC deasserted, PLL locked, PHASE established, MODE valid**
+      root@analog:/sys/kernel/debug/iio/iio:device2#
+   
+
+
+dac-full-scale-current-ua
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Writing ``dac-full-scale-current-ua`` controls the DAC full scale current in uA. Recommended range is 7000...40000 (7mA - 40mA)
+
+**Example:**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 40000 > dac-full-scale-current-ua** 
+      root@analog:/sys/kernel/debug/iio/iio:device2#
+   
+
+
+bist_prbs_select_jrx
+~~~~~~~~~~~~~~~~~~~~
+
+Writing ``bist_prbs_select_jrx`` selects the `PRBS <https://en.wikipedia.org/wiki/PRBS>`__ type. (accepted values depend on the GT architecture). Reading returns the selected type.
+
+.. tip::
+
+   When testing this feature make sure :doc:`axi_adxcvr-tx prbs_select </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>` is configured with a matching PRBS.
+
+
+===== ============
+Value Comment
+===== ============
+0     PRBS_DISABLE
+7     PRBS7
+9     PRBS9
+15    PRBS15
+31    PRBS31
+===== ============
+
+::
+
+    <PRBS Type> <PRBS test duration time in seconds>
+
+**Example:**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 15 1 > bist_prbs_select_jrx** 
+      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_select_jrx** 
+      **15**
+      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_error_counters_jrx**
+      **0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1** 
+   
+
+
+bist_prbs_error_counters_jrx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Reading ``bist_prbs_error_counters_jrx`` returns the PRBS error counters for all lanes.
+
++-----------------+-----------------+-----------------+-----+-----------------+-----------------+-----------------+-----------------+-----+-----------------+
+| Link0           |                 |                 |     |                 | [: Link1]       |                 |                 |     |                 |
++=================+=================+=================+=====+=================+=================+=================+=================+=====+=================+
+| Lane_0          | Lane_1          | Lane_2          | ... | Lane_L-1        | : Lane_0        | Lane_1          | Lane_2          | ... | Lane_L-1        |
++-----------------+-----------------+-----------------+-----+-----------------+-----------------+-----------------+-----------------+-----+-----------------+
+| <errors>/<pass> | <errors>/<pass> | <errors>/<pass> | ... | <errors>/<pass> | <errors>/<pass> | <errors>/<pass> | <errors>/<pass> | ... | <errors>/<pass> |
++-----------------+-----------------+-----------------+-----+-----------------+-----------------+-----------------+-----------------+-----+-----------------+
+
+Format is: <errors>/<pass>
+
+**Example:**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_error_counters_jrx**
+      **0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1** 
+   
+
+
+bist_prbs_select_jtx
+~~~~~~~~~~~~~~~~~~~~
+
+Writing ``bist_prbs_select_jtx`` selects the `PRBS <https://en.wikipedia.org/wiki/PRBS>`__ type. (accepted values depend on the GT architecture). Reading returns the selected type.
+
+===== ============
+Value Comment
+===== ============
+0     PRBS_DISABLE
+7     PRBS7
+15    PRBS15
+31    PRBS31
+===== ============
+
+**Example:**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 31 > bist_prbs_select_jtx** 
+      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_prbs_select_jtx** 
+      **31**
+   
+
+
+bist_spo_sweep_jrx
+~~~~~~~~~~~~~~~~~~
+
+Writing following 3 values to ``bist_spo_sweep_jrx`` performs a horizontal sweep of the “static phase offset” (SPO) codes and checking for PRBS errors as described in the JESD204B/C Receiver PHY PRBS Testing section of the User Guide. Reading ``bist_spo_sweep_jrx`` returns the good left and right SPO value.
+
+.. tip::
+
+   When testing this feature make sure :doc:`axi_adxcvr-tx prbs_select </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>` is configured with a matching PRBS.
+
+
+===== ============
+Value PRBS type
+===== ============
+0     PRBS_DISABLE
+7     PRBS7
+9     PRBS9
+15    PRBS15
+31    PRBS31
+===== ============
+
+<Lane 0..7> <PRBS type> <PRBS test duration time in seconds>
+
+**Example:**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 0 15 1 > bist_spo_sweep_jrx**
+      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_spo_sweep_jrx**
+      **l:18 r:20**
+   
+
+
+bist_spo_set_jrx
+~~~~~~~~~~~~~~~~
+
+Writing ``bist_spo_set_jrx`` sets the SPO offset. Range depends on the deserializer mode. Reading returns the written value. This feature can be used to implement 2D eye scan externally.
+
+================= =========== =========
+Deserializer mode Lane rate   SPO Range
+================= =========== =========
+HALF_RATE         8...16 Gbps +/- 32
+QUART_RATE        > 16 Gbps   +/- 16
+================= =========== =========
+
+**Example:**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device2# **echo 2 > bist_spo_set_jrx**
+      root@analog:/sys/kernel/debug/iio/iio:device2# **cat bist_spo_set_jrx**
+      **2**
+   
+
+
+bist_2d_eyescan_jrx
+~~~~~~~~~~~~~~~~~~~
+
+The device has built in comparator circuits that enables the ability to reproduce an eye diagram estimate at the output of the CTLE circuit inside the JESD204B/C receiver core.
+
+Writing ``bist_2d_eyescan_jrx`` selects the physical lane (0..7). In HALF_RATE mode two additional arguments are requires. (PRBS type and duration) Reading returns either error (-22) in case the Lane is not mapped, or CSV for SPO offset, good upper and lower voltages in mV.
+
++-------------------+-------------+-----------+------------------------------------------------------------------+
+| Deserializer mode | Lane rate   | SPO Range | bist_2d_eyescan_jrx arguments                                    |
++===================+=============+===========+==================================================================+
+| HALF_RATE         | 8...16 Gbps | +/- 32    | <Physical Lane 0..7> <PRBS type> <PRBS test duration time in ms> |
++-------------------+-------------+-----------+------------------------------------------------------------------+
+| QUART_RATE        | > 16 Gbps   | +/- 16    | <Physical Lane 0..7>                                             |
++-------------------+-------------+-----------+------------------------------------------------------------------+
+
+.. tip::
+
+   When using HALF_RATE mode make sure :doc:`axi_adxcvr-tx prbs_select </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>` is configured with a matching PRBS.
+
+
+===== ============
+Value PRBS type
+===== ============
+0     PRBS_DISABLE
+7     PRBS7
+9     PRBS9
+15    PRBS15
+31    PRBS31
+===== ============
+
+**Example:**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# echo 7 > /sys/bus/platform/devices/84b60000.axi-adxcvr-tx/prbs_select 
+      root@analog:~# iio_attr -D axi-ad9081-rx-hpc bist_2d_eyescan_jrx "1 7 10"
+      # lane 1 spo_steps 64 rate 10000000
+      -1,204,-204
+      -2,204,-204
+      -3,204,-208
+      -4,204,-204
+      -5,204,-204
+      -6,204,-204
+      -7,200,-200
+      -8,200,-200
+      -9,196,-196
+      -10,196,-192
+      -11,188,-184
+      -12,180,-180
+      -13,172,-176
+      -14,160,-164
+      -15,152,-148
+      [-snip-]
+   
+
+
+Example Eye Diagram Created from Half Rate Eye Scan Data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Example from: `pyadi-iio <https://github.com/pyadi-iio>`__
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-mxfe/screenshot_from_2024-01-19_14-15-55.png
+   :align: center
+   :width: 400px
+
+Low level register access via debugfs (direct_reg_access)
+=========================================================
+
+This page contains a few lose documentation snippets used in various spots.
+
+IIO device files
+================
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+IIO devices with trigger consumer interface
+===========================================
+
+If deviceX supports triggered sampling, it’s a so called trigger consumer and there will be an additional folder /sys/bus/iio/device/iio:deviceX/trigger. In this folder there is a file called current_trigger, allowing controlling and viewing the current trigger source connected to deviceX. Available trigger sources can be identified by reading the name file /sys/bus/iio/devices/triggerY/name. The same trigger source can connect to multiple devices, so a single trigger may initialize data capture or reading from a number of sensors, converters, etc.
+
+|
+
+.. hint::
+
+   **Trigger Consumers:**
+
+   | Currently triggers are only used for the filling of software ring buffers and as such any device supporting INDIO_RING_TRIGGERED has the consumer interface automatically created.
+
+
+**Description:** Read name of triggerY
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/triggerY/> **cat name**
+      irqtrig56
+   
+
+
+**Description:** Make irqtrig56 (trigger using system IRQ56, likely a GPIO IRQ), to current trigger of deviceX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> **echo irqtrig56 > current_trigger**
+   
+
+
+**Description:** Read current trigger source of deviceX
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:deviceX/trigger> **cat current_trigger**
+      irqtrig56
+   
+
+
+Standalone trigger drivers
+==========================
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| name                                          | description                                                                   |
++===============================================+===============================================================================+
+| iio-trig-gpio                                 | Provides support for using GPIO pins as IIO triggers.                         |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| iio-trig-rtc                                  | Provides support for using periodic capable real time clocks as IIO triggers. |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-sysfs <iio-trig-sysfs>`__           | Provides support for using SYSFS entry as IIO triggers.                       |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| `iio-trig-bfin-timer <iio-trig-bfin-timer>`__ | Provides support for using a Blackfin timer as IIO triggers.                  |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+Buffer management
+=================
+
+The Industrial I/O subsystem provides support for various ring buffer based data acquisition methods. Apart from device specific hardware buffer support, the user can chose between two different software ring buffer implementations. One is the IIO lock free software ring, and the other is based on Linux kfifo. Devices with buffer support feature an additional sub-folder in the /sys/bus/iio/devices/deviceX/ folder hierarchy. Called deviceX:bufferY, where Y defaults to 0, for devices with a single buffer.
+
+Every buffer implementation features a set of files:
+
+| **length**
+| Get/set the number of sample sets that may be held by the buffer.
+
+| **enable**
+| Enables/disables the buffer. This file should be written last, after length and selection of scan elements.
+
+| **watermark**
+| A single positive integer specifying the maximum number of scan elements to wait for. Poll will block until the watermark is reached. Blocking read will wait until the minimum between the requested read amount or the low water mark is available. Non-blocking read will retrieve the available samples from the buffer even if there are less samples then watermark level. This allows the application to block on poll with a timeout and read the available samples after the timeout expires and thus have a maximum delay guarantee.
+
+| **data_available**
+| A read-only value indicating the bytes of data available in the buffer. In the case of an output buffer, this indicates the amount of empty space available to write data to. In the case of an input buffer, this indicates the amount of data available for reading.
+
+| **length_align_bytes**
+| Using the high-speed interface. DMA buffers may have an alignment requirement for the buffer length. Newer versions of the kernel will report the alignment requirements associated with a device through the \`length_align_bytes\` property.
+
+| **scan_elements**
+| The scan_elements directory contains interfaces for elements that will be captured for a single triggered sample set in the buffer.
+
+Typical ADC scan elements
+=========================
+
+| **in_voltageX_en / in_voltageX-voltageY_en / timestamp_en:**
+| Scan element control for triggered data capture. Writing 1 will enable the scan element, writing 0 will disable it
+
+| **in_voltageX_type / in_voltageX-voltageY_type / timestamp_type:**
+| Description of the scan element data storage within the buffer and therefore in the form in which it is read from user-space. Form is [s|u]bits/storage-bits. s or u specifies if signed (2's complement) or unsigned. bits is the number of bits of data and storage-bits is the space (after padding) that it occupies in the buffer. Note that some devices will have additional information in the unused bits so to get a clean value, the bits value must be used to mask the buffer output value appropriately. The storage-bits value also specifies the data alignment. So u12/16 will be a unsigned 12 bit integer stored in a 16 bit location aligned to a 16 bit boundary. For other storage combinations this attribute will be extended appropriately.
+
+| **in_voltageX_index / in_voltageX-voltageY_index / timestamp_index:**
+| A single positive integer specifying the position of this scan element in the buffer. Note these are not dependent on what is enabled and may not be contiguous. Thus for user-space to establish the full layout these must be used in conjunction with all \_en attributes to establish which channels are present, and the relevant \_type attributes to establish the data storage format.
+
+Event Management
+================
+
+The Industrial I/O subsystem provides support for passing hardware generated events up to userspace.
+
+In IIO events are not used for passing normal readings from the sensing devices to userspace, but rather for out of band information. Normal data reaches userspace through a low overhead character device - typically via either software or hardware buffer. The stream format is pseudo fixed, so is described and controlled via sysfs rather than adding headers to the data describing what is in it.
+
+Pretty much all IIO events correspond to thresholds on some value derived from one or more raw readings from the sensor. They are provided by the underlying hardware.
+
+**Examples include:**
+
+-  Straight crossing a voltage threshold
+-  Moving average crosses a threshold
+-  Motion detectors (lots of ways of doing this).
+-  Thresholds on sum squared or rms values.
+-  Rate of change thresholds.
+-  Lots more variants...
+
+Events have timestamps.
+
+**The Interface:**
+
+-  Single user at a time.
+
+-  Simple chrdev per device (aggregation across devices doesn't really make sense for IIO as you tend to really care which sensor caused the event rather than just that it happened.)
+
+**The format is:**
+
+.. code:: c
+
+   /**
+    * struct iio_event_data - The actual event being pushed to userspace
+    * @id:     event identifier
+    * @timestamp:  best estimate of time of event occurrence (often from
+    *      the interrupt handler)
+    */
+   struct iio_event_data {
+       u64 id;
+       s64 timestamp;
+   };
+
+Typical event attributes
+========================
+
+| **/sys/bus/iio/devices/iio:deviceX/events**
+| Configuration of which hardware generated events are passed up to user-space.
+
+-  **Threshold Events:**
+
+| **<type>Z[\_name]_thresh[\_rising|falling]_en**
+| Event generated when channel passes a threshold in the specified (\_rising|_falling) direction. If the direction is not specified, then either the device will report an event which ever direction a single threshold value is called in (e.g. <type>[Z][\_name]\_<raw|input>_thresh_value) or <type>[Z][\_name]\_<raw|input>_thresh_rising_value and <type>[Z][\_name]\_<raw|input>_thresh_falling_value may take different values, but the device can only enable both thresholds or neither. Note the driver will assume the last p events requested are to be enabled where p is however many it supports (which may vary depending on the exact set requested. So if you want to be sure you have set what you think you have, check the contents of these attributes after everything is configured. Drivers may have to buffer any parameters so that they are consistent when a given event type is enabled a future point (and not those for whatever event was previously enabled).
+
+| **<type>Z[\_name]_thresh[\_rising|falling]_value**
+| Specifies the value of threshold that the device is comparing against for the events enabled by <type>Z[\_name]_thresh[\_rising|falling]_en. If separate attributes exist for the two directions, but direction is not specified for this attribute, then a single threshold value applies to both directions. The raw or input element of the name indicates whether the value is in raw device units or in processed units (as \_raw and \_input do on sysfs direct channel read attributes).
+
+-  **Rate of Change Events:**
+
+| **<type>[Z][\_name]_roc[\_rising|falling]_en**
+| Event generated when channel passes a threshold on the rate of change (1st differential) in the specified (\_rising|_falling) direction. If the direction is not specified, then either the device will report an event which ever direction a single threshold value is called in (e.g. <type>[Z][\_name]\_<raw|input>_roc_value) or <type>[Z][\_name]\_<raw|input>_roc_rising_value and <type>[Z][\_name]\_<raw|input>_roc_falling_value may take different values, but the device can only enable both rate of change thresholds or neither. Note the driver will assume the last p events requested are to be enabled where p is however many it supports (which may vary depending on the exact set requested. So if you want to be sure you have set what you think you have, check the contents of these attributes after everything is configured. Drivers may have to buffer any parameters so that they are consistent when a given event type is enabled a future point (and not those for whatever event was previously enabled).
+
+| **<type>[Z][\_name]_roc[\_rising|falling]_value**
+| Specifies the value of rate of change threshold that the device is comparing against for the events enabled by <type>[Z][\_name]_roc[\_rising|falling]_en. If separate attributes exist for the two directions, but direction is not specified for this attribute, then a single threshold value applies to both directions. The raw or input element of the name indicates whether the value is in raw device units or in processed units (as \_raw and \_input do on sysfs direct channel read attributes).
+
+-  **Magnitude Events:**
+
+| **<type>Z[\_name]_mag[\_rising|falling]_en**
+| Similar to in_accel_x_thresh[\_rising|_falling]_en, but here the magnitude of the channel is compared to the threshold, not its signed value.
+
+| **<type>Z[\_name]_mag[\_rising|falling]_value**
+| The value to which the magnitude of the channel is compared. If number or direction is not specified, applies to all channels of this type.
+
+-  **Temporal Conditions:**
+
+| **<type>[Z][\_name][\_thresh|_roc][\_rising|falling]_period**
+| Period of time (in seconds) for which the condition must be met before an event is generated. If direction is not specified then this period applies to both directions.
+
+Low level register access via debugfs (direct_reg_access)
+=========================================================
+
+Some IIO drivers feature an optional debug facility, allowing users to read or write registers directly. Special care needs to be taken when using this feature, since you can modify registers on the back of the driver.
+
+.. tip::
+
+   To simplify direct register access you may want to use the libiio :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command line utility.
+
+
+Accessing debugfs requires root privileges.
+
+In order to identify if the IIO device in question feature this option you first need to identify the IIO device number.
+
+Therefore read the name attribute of each IIO device
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# grep "" /sys/bus/iio/devices/iio\:device*/name
+      /sys/bus/iio/devices/iio:device0/name:ad7291
+      /sys/bus/iio/devices/iio:device1/name:ad9361-phy
+      /sys/bus/iio/devices/iio:device2/name:xadc
+      /sys/bus/iio/devices/iio:device3/name:adf4351-udc-rx-pmod
+      /sys/bus/iio/devices/iio:device4/name:adf4351-udc-tx-pmod
+      /sys/bus/iio/devices/iio:device5/name:cf-ad9361-dds-core-lpc
+      /sys/bus/iio/devices/iio:device6/name:cf-ad9361-lpc
+      root@analog:~# 
+   
+
+
+Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the direct_reg_access file exists.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# cd /sys/kernel/debug/iio/iio\:device1
+      root@analog:/sys/kernel/debug/iio/iio:device1# ls direct_reg_access 
+      direct_reg_access
+   
+
+
+**Reading**
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 0x7 > direct_reg_access                                                                                                                                 
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
+      0x40
+   
+
+
+**Writing**
+
+Write ADDRESS VALUE
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device1# echo 0x7 0x50  > direct_reg_access                                                                                                                            
+      root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
+      0x50
+   
+
+
+**Accessing HDL CORE registers**
+
+| Special ADI device driver convention for devices that have both:
+| \* a SPI/I2C control interface
+
+-  and some sort of HDL Core with registers (AXI)
+
+In this case when accessing the HDL Core Registers always set BIT31.
+
+The register map for typical ADI HDL cores can be found here: :doc:`Register Map </wiki-migration/resources/fpga/docs/hdl/regmap>`
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:/sys/kernel/debug/iio/iio:device6# echo 0x80000000 > direct_reg_access                                                                                                                           
+      root@analog:/sys/kernel/debug/iio/iio:device6# cat direct_reg_access 
+      0x80062
+   
+
+
+IIO pointers
+============
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+
+
+Special Access Modes
+~~~~~~~~~~~~~~~~~~~~
+
+2. Page Mask Register Access
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Condition:** ``reg & 0x40000000 == 0`` and ``reg & 0x3F000000 != 0`` This mode allows setting a page mask register before performing the actual register access. This is useful for accessing paged/banked registers where a page selection register must be configured first.
+
+**Register Parameter Encoding:**
+
+::
+
+   Bit 31-30 | Bit 29-24          | Bit 23-16        | Bit 15-14 | Bit 13-0
+   ---------|--------------------|--------------------|----------|------------------
+    unused  | Page Mask Register | Page Mask Value    |  unused  | Register Address
+     (0)    |     (0x3F)         |     (0xFF)         |          |    (0x3FFF)
+
++--------------------+---------+------------+---------------------------------------------------+
+| Field              | Bits    | Mask       | Description                                       |
++====================+=========+============+===================================================+
+| Page Mask Register | [29:24] | ``0x3F``   | 6-bit address of the page/mask selection register |
++--------------------+---------+------------+---------------------------------------------------+
+| Page Mask Value    | [23:16] | ``0xFF``   | 8-bit value to write to the page mask register    |
++--------------------+---------+------------+---------------------------------------------------+
+| Register Address   | [13:0]  | ``0x3FFF`` | 14-bit target register address                    |
++--------------------+---------+------------+---------------------------------------------------+
+
+The function first writes the page mask value to the page mask register, then performs the read/write on the target register.
+
+**Usage Examples:**
+
+::
+
+   # Set page mask register 0x1B to value 0x01, then read register 0x301
+   # reg = (0x1B << 24) | (0x01 << 16) | 0x301 = 0x1B010301
+
+   root:/sys/kernel/debug/iio/iio:deviceX> echo 0x1B010301 > direct_reg_access
+   root:/sys/kernel/debug/iio/iio:deviceX> cat direct_reg_access
+
+   # Set page mask register 0x1B to value 0x02, then write 0x55 to register 0x301
+   # reg = (0x1B << 24) | (0x02 << 16) | 0x301 = 0x1B020301
+
+   root:/sys/kernel/debug/iio/iio:deviceX> echo 0x1B020301 0x55 > direct_reg_access
+
+3. CBUS JRX (SerDes/CTLE) Register Access
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Condition:** ``reg & 0x40000000 != 0`` (bit 30 set) This mode provides access to the JESD204 receiver (JRX) CBUS registers, which include the SerDes lane configuration and CTLE (Continuous Time Linear Equalizer) settings.
+
+**Register Parameter Encoding:**
+
+::
+
+   Bit 31 | Bit 30    | Bit 29-16 | Bit 15-8    | Bit 7-0
+   -------|-----------|-----------|-------------|------------------
+   unused | Mode Flag |  unused   | Lane Mask   | Register Address
+          |    (1)    |           |   (0xFF)    |     (0xFF)
+
++------------------+--------+----------------+-------------------------------------------------------------------------------------------+
+| Field            | Bits   | Mask           | Description                                                                               |
++==================+========+================+===========================================================================================+
+| Mode Flag        | [30]   | ``0x40000000`` | Must be set to 1 to enable CBUS access                                                    |
++------------------+--------+----------------+-------------------------------------------------------------------------------------------+
+| Lane Mask        | [15:8] | ``0xFF``       | 8-bit lane mask using ``1 << lane`` encoding (lane 0 = 0x01, lane 1 =0x02, lane 7 = 0x80) |
++------------------+--------+----------------+-------------------------------------------------------------------------------------------+
+| Register Address | [7:0]  | ``0xFF``       | 8-bit CBUS register address                                                               |
++------------------+--------+----------------+-------------------------------------------------------------------------------------------+
+
+**Lane Mask Encoding:**
+
+==== ==========
+Lane Mask Value
+==== ==========
+0    0x01
+1    0x02
+2    0x04
+3    0x08
+4    0x10
+5    0x20
+6    0x40
+7    0x80
+==== ==========
+
+**Usage Examples:**
+
+::
+
+   # Read CBUS register 0xFD on lane 0
+   # reg = 0x40000000 | (0x01 << 8) | 0xFD = 0x400001FD
+   root:/sys/kernel/debug/iio/iio:deviceX> echo 0x400001FD > direct_reg_access
+   root:/sys/kernel/debug/iio/iio:deviceX> cat direct_reg_access
+
+   # Read CBUS register 0xFD on lane 3
+   # reg = 0x40000000 | (0x08 << 8) | 0xFD = 0x400008FD
+
+   root:/sys/kernel/debug/iio/iio:deviceX> echo 0x400008FD > direct_reg_access
+   root:/sys/kernel/debug/iio/iio:deviceX> cat direct_reg_access
+
+   # Write 0x0F to CBUS register 0x20 on lane 5
+   # reg = 0x40000000 | (0x20 << 8) | 0x20 = 0x40002020
+
+   root:/sys/kernel/debug/iio/iio:deviceX> echo 0x40002020 0x0F > direct_reg_access
+
+Summary Table
+~~~~~~~~~~~~~
+
+============ ====== ============ =====================================
+Mode         Bit 30 Bits [29:24] Access Type
+============ ====== ============ =====================================
+Standard SPI 0      0x00         Direct register read/write
+Page Mask    0      0x01-0x3F    Paged register access with mask setup
+CBUS JRX     1      (unused)     SerDes/CTLE lane register access
+============ ====== ============ =====================================

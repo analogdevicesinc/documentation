@@ -1,0 +1,284 @@
+CN0178 Evaluation Board Guide
+=============================
+
+Overview
+--------
+
+:adi:`CN0178` is a circuit that measures the rms signal strength of RF signals with varying crest factors (peak-to-average ratio) over a dynamic range of approximately 65 dB and operates at frequencies from 50 MHz up to 9 GHz using the :adi:`ADL5902` TruPwr™ detector. The measurement result is provided as serial data at the output of a 12-bit ADC. A simple 4-point system calibration at ambient temperature is performed in the digital domain.
+
+The :adi:`ADL5902` provides a solution in a variety of high frequency systems requiring an accurate measurement of signal power. It can operate from 50 MHz to 9 GHz and can accept inputs from −62 dBm to at least +3 dBm with large crest factors, such as GSM, CDMA, W-CDMA, TD-SCDMA, WiMAX, and LTE modulated signals.
+
+The :adi:`AD7466` 12-bit, high speed, low power, successive approximation analog-to-digital converters (ADC). It operates from a single 1.6 V to 3.6 V power supply and feature throughput rates up to 200 kSPS with low power dissipation. The parts contain a low noise, wide bandwidth track-and-hold amplifier, which can handle input frequencies in excess of 3 MHz.
+
+| The EVAL-CN0178-SDPZ board connects to ADI’s System Demonstration Platform (SDP) and is powered by a +6 V supply or +6 V “wall wart”. |image1|
+| ----
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-CN0178-SDPZ Evaluation Board <EVAL-CN0178-SDPZ>`
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  `CN0178 Evaluation Software <http://swdownloads.analog.com/cse/cftl/CN0178/CN0178_SDP_Eval_Software.zip>`__
+-  6 V or 6 V Wall wart
+
+   -  *Agilent E3631A power supply*
+
+-  PC with the following *Minimum Requirements*
+
+   -  Windows 7 (32-bit), Windows Vista (32-bit) or Windows XP
+
+      -  USB interface
+
+-  RF signal source
+
+   -  *Rohde & Schwarz SMT-03 RF signal source*
+
+-  Coaxial RF cable with SMA connectors
+
+--------------
+
+General Setup
+-------------
+
+Block assignments
+~~~~~~~~~~~~~~~~~
+
+| |image2|
+| \* The :adi:`EVAL-CN0178-SDPZ` **(CN-0178 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
+
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  Terminal block **J1** is the +6 V power supply
+-  Terminal block **J2** is the +6 V barrel connector for wall wart supply input
+-  Terminal block **J3** is the SMA connector for RF input
+
+| 
+| ==== Test setup ==== |image3|
+| \* Connect the 120-pin connector on the :adi:`EVAL-CN0178-SDPZ Evaluation Board <EVAL-CN0178-SDPZ>` to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board
+
+-  Connect the RF signal source to the :adi:`EVAL-CN0178-SDPZ Evaluation Board <EVAL-CN0178-SDPZ>` via the SMA RF input connector
+-  With power to the supply off, connect a +6 V power supply to the pins marked “+6V” and “GND” on the board
+
+::
+
+       *//If available, a +6 V "wall wart" can be connected to the barrel connector on the board and used in place of the +6 V power supply//
+   * Connect the USB cable supplied with the SDP board to the USB port on the PC
+   * Apply power to the +6 V supply (or “wall wart”) connected to [[:adi:`EVAL-CN0178-SDPZ|EVAL-CN0178-SDPZ` Evaluation Board]]
+   * Launch the evaluation software
+   * Connect the USB cable from the PC to the USB mini connector on the SDP board
+
+   | 
+|
+
+.. important::
+
+   Do **not** connect the USB cable to the Mini-USB connector on the SDP board before turning on the dc power supply for the **EVAL-CN0178-SDPZ**.
+
+
+Calibration
+~~~~~~~~~~~
+
+Because the slope and intercept of the system vary from device to device, a system level calibration is **required**. For this board, a 4-point calibration is used to correct for some non-linearity in the RF detector's transfer function particularly at the low end.
+
+-  Apply four known signal levels to ADL5902. Note that it should be well within the linear operating range of the device
+
+
+|image4|
+
+   \* Measure the corresponding output codes from the ADC
+-  Calculate SLOPE_ADC and INTERCEPT calibration coefficients using the following equations:
+
+   -  **SLOPE_1** = (CODE_1 - CODE_2)/(PIN_1 - PIN_2)
+
+      -  **INTERCEPT1** = CODE_1/(SLOPE_ADC/PIN_1)
+
+-  This calculation is repeated using CODE2/CODE3 and CODE3/CODE4 to calculate SLOPE2/INTERCEPT2 and SLOPE3/INTERCEPT3 respectively
+-  These will be used to calculate the unknown input power level, PIN, when operation in the field using the equation
+
+   -  **PIN** = (CODE/SLOPE) + INTERCEPT
+
+-  The observed code from the ADC will be compared to the calibration coefficient codes in order to retrieve the appropriate SLOPE and INTERCEPT calibration coefficients.
+
+   -  Example: If CODE from ADC is between CODE1 and CODE2, then SLOPE1/INTERCEPT1 should be used
+
+| 
+
+--------------
+
+Installing the Evaluation Software
+----------------------------------
+
+-  Extract the file **CN0178_Evaluation_Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0178 Evaluation Software <http://swdownloads.analog.com/cse/cftl/CN0178/CN0178_SDP_Eval_Software.zip>`__ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0178\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image5|
+
+-  Click **Next** to view the installation review page
+
+|image6|
+
+   \* Click **Next** to start the installation
+
+   |image7|
+
+   \* Upon completion of the installation of the **CN-0178 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image8|
+
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image9|
+
+   \* Press **“Install”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+   |image10|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Main Window
+~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/9.png
+   :align: center
+   :width: 700px
+
+-  **Connect** Button - Starts the connection between the :adi:`CN0178 Evaluation Board <CN0178>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`.
+-  **Disconnect** Button - Ends the connection between the :adi:`CN0178 Evaluation Board <CN0178>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`
+-  **SDP Connector** - Selects which 120-pin connection of the SDP-B Board to use
+-  **Input Power** - Indicate input signal power level
+-  **Frequency** - Indicate input signal frequency
+-  **Data Acquisition** Controls
+
+|image11|
+
+   -  **Sample Data** - Start acquisition of measurement data
+
+      -  **Remove Data Point** - Remove a data point from samples
+      -  **Clear Data** - Clear the current measurement data
+      -  **Save Data** - Save measurement data to file
+
+-  **Sample Data Graph** Tab - Shows the XY plot of ADC code and output error (%) with respect to the shunt voltage
+
+
+|image12|
+
+   -  **Plot Options** - Edit plot display and options like interpolation and color of output waveform
+
+-  **Calibration** Tab
+
+   -  **Calibration Inputs** - Four point input power levels used for calibration purposes
+
+      -  **Calibration Data** - Enable calibration of the device
+      -  **Calibration Coefficients** - Read only. Calculated calibration coefficients based on four point input power levels
+
+-  **Administration** Tab
+
+
+|image13|
+
+   -  **Read Firmware** - Reads the firmware of CN0150 Evaluation Board
+
+      -  **Flash LED** - Flashes the LED on the SDP controller board
+
+-  **Quit** Button - Closes the evaluation software
+
+
+| 
+
+Running the System
+~~~~~~~~~~~~~~~~~~
+
+::
+
+   -Open the CN0178.exe application from the default installation location
+   -Set the correct connector and click the Connect Button
+   -Upon successful connection, calibrate the device through the calibration tab
+   -After proper calibration, set the correct input parameters and control the data measurement through the data acquisition control buttons
+   -Click Disconnect if finished
+   -Click Quit to exit the program
+
+|
+
+| ----
+
+More Information and Useful Links
+---------------------------------
+
+-  `CN0178 Evaluation Software <http://swdownloads.analog.com/cse/cftl/CN0178/CN0178_SDP_Eval_Software.zip>`__
+-  :adi:`CN0178 Circuit Note Page <CN0178>`
+-  :adi:`CN0178 Design Support Package <media/en/reference-design-documentation/design-integration-files/CN0178-DesignSupport.zip>`
+
+-  :adi:`ADL5902 Product Page <ADL5902>`
+-  :adi:`AD7466 Product Page <AD7466>`
+-  :adi:`ADG3231 Product Page <ADG3231>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0178-SDPZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0178-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  PADS project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0178-SDPZ?&v=Rev C>`__ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/cn0178-hw-1024.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/10-25-2017_2-16-34_pm.png
+   :width: 650px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/10-30-2017_3-33-48_pm.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/8.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/1.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/2.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/3.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/4.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/5.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/6.png
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0178/10.png
+   :width: 700px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/11.png
+   :width: 700px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/15.png
+   :width: 600px

@@ -1,0 +1,511 @@
+EVALUATING THE AD9648 / AD9628 / AD9608 ANALOG-TO-DIGITAL CONVERTER
+===================================================================
+
+Preface
+-------
+
+This user guide describes the evaluation boards :adi:`AD9648-125EBZ <AD9648>`, :adi:`AD9628-125EBZ <AD9628>` and :adi:`AD9608-125EBZ <AD9608>` that are used to evaluate the following Analog Devices, Inc., products: :adi:`AD9648`, :adi:`AD9628` and :adi:`AD9608`. These evaluation boards provide all of the support circuitry required to operate these parts in their various modes and configurations. The application software used to interface with the devices is also described.
+
+The :adi:`AD9648`, :adi:`AD9628` and :adi:`AD9608` data sheets provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at www.analog.com/hsadcevalboard. For additional information or questions, send an email to highspeed.converters@analog.com.
+
+.. note::
+
+   Note that, though the 125 MSPS speed grade ADCs and boards are referred to in this document, this user guide is applicable to the other speed grades, as well.
+
+
+The :adi:`AD9648`/:adi:`AD9628`/:adi:`AD9608` share ADC core characteristics with the :adi:`AD9650`, :adi:`AD9268`, and :adi:`AD9269` family of dual ADCs. Additional application information can be found in the :adi:`Evaluation Board User Guide for Dual ADCs of this family <static/imported-files/user_guides/UG-003.pdf>`.
+
+Typical Measurement Setup
+-------------------------
+
+|image1|\
+
+.. container:: centeralign
+
+   \ *Figure 1. Evaluation Board Connection—*\ :adi:`AD9648-125EBZ <AD9648>`\ *,* :adi:`AD9628-125EBZ <AD9628>`\ *, or* :adi:`AD9608-125EBZ <AD9608>` *(on Left) and* :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` *(on Right)*\
+
+
+|image2|\
+
+.. container:: centeralign
+
+   \ *Figure 2.* :adi:`AD9648-125EBZ <AD9648>`\ */*\ :adi:`AD9628-125EBZ <AD9628>`\ */*\ :adi:`AD9608-125EBZ <AD9608>` *Default Jumper Placement*\
+
+
+Features
+--------
+
+-  Full featured evaluation board for the :adi:`AD9648`, :adi:`AD9628`, and :adi:`AD9608`
+-  SPI interface for setup and control
+-  External, on-board oscillator, or :adi:`ad9517` clocking option
+-  Balun/transformer or amplifier input drive option
+-  LDO regulator or switching power supply options
+-  VisualAnalog® and SPI controller software interfaces
+
+Helpful Documents
+-----------------
+
+-  :adi:`AD9648`, :adi:`AD9628`, or :adi:`AD9608` data sheet
+-  :adi:`HSC-ADC-EVALCZ <hsadcevalboard>`, High speed ADC FIFO evaluation kit
+-  :adi:`AN-905 Application Note <an-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*
+-  :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*
+-  :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*
+-  :adi:`AN-835 Application Note <an-835>`, *Understanding ADC Testing and Evaluation*
+
+Software Needed
+---------------
+
+-  :adi:`SPI Controller <en/design-center/interactive-design-tools/spicontroller.html>`
+-  :adi:`Visual Analog <en/design-center/interactive-design-tools/visualanalog.html>`
+
+Design and Integration Files
+----------------------------
+
+-  Schematics: `AD9648-125EBZ RevC <https://wiki.analog.com/_media/resources/eval/ad9268_58_51_31_04_69_9650_48_28_08_sch.pdf>`__
+-  Bill of Materials: `AD9648-125EBZ RevC <https://wiki.analog.com/_media/resources/eval/ad9268_58_51_31_04_69_9650_48_28_08_bom.xls>`__
+-  PCB Gerber files: `AD9648-125EBZ RevC <https://wiki.analog.com/_media/resources/eval/ad9268_58_51_31_04_69_9650_48_28_08_gerberfiles.zip>`__
+
+.. note::
+
+   Note: :adi:`AD9648` uses the same design and integration files with :adi:`AD9650`, :adi:`AD9268`, and :adi:`AD9269` family of dual ADCs.
+
+
+Equipment Needed
+----------------
+
+-  Analog signal source and antialiasing filter
+-  Sample clock source (if not using the on-board oscillator)
+-  2 switching power supplies (6.0 V, 2.5 A), CUI EPS060250UH-PHP-SZ provided
+-  PC running Windows®
+-  USB 2.0 port
+-  :adi:`AD9648-125EBZ <AD9648>`, :adi:`AD9628-125EBZ <AD9628>`, or :adi:`AD9608-125EBZ <AD9608>` board
+-  :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` FPGA-based data capture kit
+
+Getting Started
+---------------
+
+This section provides quick start procedures for using the :adi:`AD9648-125EBZ <AD9648>`, :adi:`AD9628-125EBZ <AD9628>`, and :adi:`AD9608-125EBZ <AD9608>` board. Both the default and optional settings are described.
+
+Configuring the Board
+~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: indent
+
+   Before using the software for testing, configure the evaluation board as follows:
+
+   
+   -  Connect the evaluation board to the data capture board, as shown in Figure 1.
+   -  On the ADC evaluation board, confirm that the jumpers are installed as shown in figure 2.
+   -  Connect one 6 V, 2.5 A switching power supply (such as the CUI EPS060250UH-PHP-SZ that is supplied) to the :adi:`AD9648`, :adi:`AD9628`, or :adi:`AD9608` board.
+   -  Connect one 6 V, 2.5 A switching power supply (such as the supplied CUI EPS060250UH-PHP-SZ supplied) to the :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` board.
+   -  Connect the :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` board (J6) to the PC with a USB cable.
+   -  Ensure that J605 (OSC_EN) has a jumper installed to use the on-board 20 MHz / 40 MHz / 65 MHz/ 80 MHz Valpey Fisher VFAC3 oscillator. If not, make sure a low jitter sample clock is applied at J602 in using with external clock.
+   -  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal to the desired channel(s). Use a 1 m, shielded, RG-58, 50 Ω coaxial cable to connect the signal generator. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (Analog Devices uses TTE, Allen Avionics, and K & L band-pass filters.)
+   
+
+
+Evaluation Board Hardware
+-------------------------
+
+The evaluation board provides all of the support circuitry required to operate the :adi:`AD9648`, :adi:`AD9628`, and :adi:`AD9608` in their various modes and configurations. Figure 1 shows the typical bench characterization setup used to evaluate AC performance. It is critical that the signal sources used for the analog input and clock have very low phase noise (<1 ps rms jitter) to realize the optimum performance of the signal chain. Proper filtering of the analog input signal to remove harmonics and lower the integrated or broadband noise at the input is necessary to achieve the specified noise performance.
+
+See the :doc:`Getting Started </wiki-migration/resources/eval/ad9648-125ebz_ad9628-125ebz_ad9608-125ebz>` section to get started, and :doc:`Design and Integration Files </wiki-migration/resources/eval/ad9648-125ebz_ad9628-125ebz_ad9608-125ebz>` sections for the complete schematics and layout diagrams. These diagrams demonstrate the routing and grounding techniques that should be applied at the system level when designing application boards using these converters.
+
+Power Supplies
+~~~~~~~~~~~~~~
+
+.. container:: indent
+
+   This evaluation board comes with a wall-mountable switching power supply that provides a 6 V, 2 A maximum output. Connect the supply to a 100 V ac to 240 V ac, 47 Hz to 63 Hz wall outlet. The output from the supply is provided through a 2.1 mm inner diameter jack that connects to the printed circuit board (PCB) at P101. The 6 V supply is fused and conditioned on the PCB before connecting to the low dropout linear regulators (default configuration) that supply the proper bias to each of the various sections on the board.
+
+   
+   The evaluation board can be powered in a nondefault condition using external bench power supplies. To do this:
+   
+   ::
+   
+      *E101, E102, E114, E103, E105 and E107 ferrite beads can be removed to disconnect the outputs from the on-board LDOs.
+        *This enables the user to bias each section of the board individually.
+      *Use P102 and P103 to connect a different supply for each section.
+        *A 1.8 V supply is needed with 1A current capability for DUT_AVDD and DRVDD; however, it is recommended that separate supplies be used for both analog and digital domains.
+        *An additional supply is also required to supply 1.8 V for digital support circuitry on the board, DVDD. This should also have a 1 A current capability and can be combined with DRVDD with little or no degradation in performance.
+        *To operate the evaluation board using the SPI and alternate clock options, a separate 3.3 V analog supply is needed in addition to the other supplies. This 3.3 V supply, or 3V_CLK, should have a 1 A current capability.
+        *Two additional supplies, 5V_AMPVDD and 3V_AMPVDD, are used to bias the optional input path amplifiers and optional VREF buffer. If used, these supplies should each have 1 A current capability.
+   
+   A second optional power supply configuration allows replacing the LDOs that supply the AVDD and DRVDD rails of the ADC with the :adi:`ADP2114` step-down dc-to-dc regulator. Using this switching controller in place of the LDO regulators to power the AVDD and DRVDD supplies of the ADC allows customers to evaluate the performance of the ADC when powered by a more efficient regulator.
+
+
+Input Signals
+~~~~~~~~~~~~~
+
+.. container:: indent
+
+   When connecting the ADC clock and analog source, use clean signal generators with low phase noise, such as the Rohde & Schwarz SMA, or HP 8644B signal generators or an equivalent. Use a 1 m shielded, RG-58, 50 Ω coaxial cable for connecting to the evaluation board. Enter the desired frequency and amplitude in the signal generators (see the Specifications section in the data sheet of the respective part). When connecting the analog input source, use of a multipole, narrow-band band-pass filter with 50 Ω terminations is recommended. Analog Devices, Inc., uses band-pass filters from TTE, Allen Avionics and K & L Microwave, Inc. Connect the filters directly to the evaluation board.
+
+   
+   If an external clock source is used, it should also be supplied with a clean signal generator as previously specified. Analog Devices evaluation boards typically can accept ~2.8 V p-p or 13 dBm sine wave input for the clock.
+
+
+Output Signals
+~~~~~~~~~~~~~~
+
+.. container:: indent
+
+   The default setup uses the Analog Devices high speed converter evaluation platform (:adi:`HSC-ADC-EVALCZ <hsadcevalboard>`) for data capture. The CMOS output signals from Channel A and Channel B are buffered through U801 and U802 and are routed through P903 and P902, respectively, to the FPGA on the data capture board. For more information on the data capture board and its optional settings, visit :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`.
+
+
+Jumper Settings
+---------------
+
+This section explains the default and optional settings or modes allowed on the :adi:`AD9648`, :adi:`AD9628`, and :adi:`AD9608`.
+
+Table 1. Jumper Settings
+^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Jumper | Description                                                                                                                                         |
++========+=====================================================================================================================================================+
+| J201   | Pin 4 and Pin 6 - Default VREF configuration, SENSE pin is connected to AGND for internal VREF operation of 1.0 V for a 2.0 V p-p full-scale range. |
+|        | Pin 4 and Pin 2 - SENSE pin is connected to AVDD for external VREF operation of 1.0 V for a 2.0 V p-p full-scale range.                             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| J605   | With jumper - Default configuration, used the on-board oscillator.                                                                                  |
+|        | No Jumper - Use external clock.                                                                                                                     |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| J205   | Pin 1 and Pin 2 - Enable the Power-Down feature, PDWN pin to DRVDD.                                                                                 |
+|        | Pin 3 and Pin 4 - Disable the outputs using the /OE pin, /OE pin to DRVDD                                                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| J302   | Pin 1 and Pin 2, Pin 4 and Pin 5, Pin 8 and Pin 9 - Default configuration.                                                                          |
+|        | Pin 2 and Pin 3 - Enable the DCS.                                                                                                                   |
+|        | Pin 5 and Pin 6 - Data format set to twos complement.                                                                                               |
+|        | No Jumper - Non-SPI mode, operate the DUT without SPI. DCS is disable, data format is set to offset binary.                                         |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Evaluation Board Circuitry
+--------------------------
+
+This section explains the default and optional ADC settings or modes allowed on the :adi:`AD9648`, :adi:`AD9628`, and :adi:`AD9608` boards.
+
+Power Circuitry
+~~~~~~~~~~~~~~~
+
+.. container:: indent
+
+   Connect the switching power supply that is supplied in the evaluation kit between a rated 100V ac to 240V ac wall outlet (47 Hz to 63 Hz) at P101 (See figure 1).
+
+
+Analog Input
+~~~~~~~~~~~~
+
+.. container:: indent
+
+   The A and B channel inputs on the evaluation board are set up for a double balun-coupled analog input with a 50 Ω impedance.\ |image3|\
+
+   
+   .. container:: centeralign
+
+      \ *Figure 3. Default Analog Input Configuration of the* :adi:`AD9648`\ *,* :adi:`AD9628`\ *, and* :adi:`AD9608`\
+
+   
+   The default analog input configuration supports analog input frequencies of up to ~150 MHz (see figure 3). The nominal input drive level is 10 dBm to achieve 2 V p-p full scale into 50 Ω. At higher frequencies, slightly higher input drive levels are required due to losses in the front-end network.
+   
+   Optionally, the Channel A input on the board can be configured to use the :adi:`AD8375` digitally variable gain amplifier (DVGA). The AD8375 component is included on the evaluation board at U401. However, the path into and out of the AD8375 can be configured in many different ways depending on the application; therefore, the parts in the input and output path are left unpopulated. Users should see the AD8375 data sheet for additional information on the part and for configuring the inputs and outputs. The AD8375 by default is held in power-down mode but can be enabled by adding a jumper on J403.
+   
+   The Channel B input is also set up with an optional input path through the :adi:`ADL5562` ultralow distortion RF/IF differential amplifier. Similar to Channel A, the amplifier is included on the board at U501; however, the input-/output-related components are not included. Users should see the ADL5562 data sheet for additional information on this part and for configuring the inputs and outputs. The ADL5562 is also normally held in power-down mode and can be enabled by adding a jumper on J503. ADL5562 on the Channel B input can also be substituted with :adi:`ADA4937` or the :adi:`ADA4938` to allow evaluation of these parts with the ADC.
+
+
+VREF
+~~~~
+
+.. container:: indent
+
+   The default VREF configuration is to connect the SENSE pin to AGND for internal VREF operation. This is done by connecting Pin 4 and Pin 6 on Header J201 (See figure 2). The internal VREF voltage for :adi:`AD9648`, :adi:`AD9628`, and :adi:`AD9608` board is 1.0 V for a 2.0 V p-p full-scale range. The :adi:`AD9648`, :adi:`AD9628` and :adi:`AD9608` operate with a fixed reference.
+
+   
+   A separate unpopulated external reference option using the :adi:`AD1580` reference and the :adi:`AD822` amplifier is also included on the evaluation board. To enable the external reference, populate CR201, U202, R202, R201, C201 and C202 with the values shown in the Evaluation Board schematics. The J201 jumper should be placed between Pin 4 and Pin 2 to set the reference input to the external reference mode.
+
+
+RBIAS
+~~~~~
+
+.. container:: indent
+
+   RBIAS has a default setting of 10 kΩ (R206) to ground and is used to set the ADC core bias current. Note that using a resistor value other than a 10 kΩ, 1% resistor for RBIAS may degrade the performance of the device.
+
+
+Clock Circuitry
+~~~~~~~~~~~~~~~
+
+.. container:: indent
+
+   The default clock input circuit on the :adi:`AD9648`, :adi:`AD9628`, and :adi:`AD9608` evaluation board uses a simple transformer-coupled circuit using a high bandwidth 1:1 impedance ratio transformer (T601) that adds a low amount of jitter to the clock path. The clock input is 50 Ω terminated and ac-coupled to handle single-ended sine wave types of inputs. The transformer converts the single-ended input to a differential signal that is clipped by CR601 before entering the ADC clock inputs.
+
+   
+   The :adi:`AD9648`, :adi:`AD9628`, and :adi:`AD9608` evaluation board is by default set up to be clocked through the transformer-coupled input network from the crystal oscillator, Y601. This oscillator is a low phase noise oscillator from Valpey Fisher (VFAC3-BHL-105MHz / VFAC3-BHL-125MHz). If a different clock source is desired, remove J605 to disable the oscillator from running and connect the external clock source to the SMA connector, J602 (labeled ENCODE+).
+
+
+PDWN
+~~~~
+
+.. container:: indent
+
+   To enable the power-down feature, add a shorting jumper across J205 at Pin 1 and Pin 2 to connect the PDWN pin to DRVDD.
+
+
+/OE
+~~~
+
+.. container:: indent
+
+   To disable the outputs using the /OE pin, add a shorting jumper across J205 at Pin 3 and Pin 4 to connect the /OE pin to DRVDD.
+
+
+Non-SPI Mode
+~~~~~~~~~~~~
+
+.. container:: indent
+
+   For users who want to operate the DUT without using SPI, remove the shorting jumpers on J302. This disconnects the /CS, SCLK/DFS and SDIO/DCS pins from the SPI control bus, allowing the DUT to operate in non-SPI mode. In this mode, the SCLK/DFS and SDIO/DCS pins take on their alternate functions to select data format and enable/disable the DCS. With the jumpers removed, DCS is disabled; to enable DCS, add a shorting jumper on J302 between Pin 2 to Pin 3. With the jumper removed, the data format is set to offset binary. To set the data format to twos complement, a jumper should be added on J302 between Pin 5 and Pin 6.
+
+
+Switching Power Supply
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: indent
+
+   Optionally, the ADC on the board can be configured to use the :adi:`ADP2114` dual switching power supply to provide power to the DRVDD and AVDD rails of the ADC. To configure the board to operate from the :adi:`ADP2114`, the following changes must be incorporated. See :doc:`Design and Integration Files </wiki-migration/resources/eval/ad9268-125ebz_ad9258-125ebz>` for specific recommendations for part values):
+
+   
+   -  Install R120 and R122 to enable the :adi:`ADP2114`.
+   -  Install R107 and R109.
+   -  Install R110, R111, C108 and C109.
+   -  Install R108, R118, C110, C111, C112 and C113.
+   -  Install L101, L102, E116 and E117.
+   -  Install R124, R125, R116, C137 and R126, R127, R117, C140.
+   -  Remove JP101 and JP103 and install JP102 and JP104.
+   -  Remove E103, E105 and E107 and install E104, E106, and E108.
+   
+   Making these changes enables the switching converter to power the ADC. Using the switching converters as the ADC power source is more efficient than using the default LDOs.
+
+
+Modes of Operation
+------------------
+
+Standalone (PIN) Mode
+~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: indent
+
+   The :adi:`AD9648`, :adi:`AD9628`, or :adi:`AD9608` ADCs can operate in pin mode if there is no need to program and change the default modes of operation via the SPI. For applications that do not require SPI mode operation, the CSB pin is tied to AVDD by removing any jumper on Pin 8 of J302. In this configuration the SDIO pin controls the duty cycle stabilizer, and the SCLK pin controls the digital output format. Table 2 and Table 3 specify the settings for pin mode operation.
+
+   
+   Table 2. Duty Cycle Stabilizer Settings
+   '''''''''''''''''''''''''''''''''''''''
+   
+   ========================== ===========
+   SDIO (J302 Pin 2)          DCS Mode
+   ========================== ===========
+   AVDD (J302 Pin 2 to Pin 3) DCS Enable
+   AGND ("float" J302 Pin 2)  DCS Disable
+   ========================== ===========
+   
+   Table 3. Digital Test Pattern Pin Settings
+   ''''''''''''''''''''''''''''''''''''''''''
+   
+   ========================== ===============
+   SCLK (J302 Pin 5)          Output Format
+   ========================== ===============
+   AVDD (J302 Pin 5 to Pin 6) Twos Complement
+   AGND ("float" J302 Pin 5)  Offset Binary
+   ========================== ===============
+   
+   .. note::
+
+      Note that the above settings only apply when CSB is tied high (J302 Pin 8 "floating") at power up.
+
+   
+   .. tip::
+
+      Additional information on the Standalone (PIN) Mode is provided in the :adi:`AD9648`, :adi:`AD9628`, and :adi:`AD9608` data sheets.
+
+   
+
+
+Default Mode
+~~~~~~~~~~~~
+
+.. container:: indent
+
+   To operate the device under test (DUT) using the SPI, follow the jumper settings for J302 as shown in Table 1.
+
+
+Evaluation And Test
+-------------------
+
+Setting up the ADC Data Capture (Visual Analog Software)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: indent
+
+   After configuring the board, set up the ADC data capture using the following steps:
+
+   
+   -  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 4, where the :adi:`AD9648` is shown as example).\ |image4|\
+   
+   .. container:: centeralign
+
+      \ *Figure 4. VisualAnalog, New Canvas Window*\
+
+   
+   -  After the template is selected, a message appears asking if the default configuration can be used to program the FPGA (Figure 5). Click **YES** and the window closes.\ |image5|\
+   
+   .. container:: centeralign
+
+      \ *Figure 5. VisualAnalog Default Configuration Message*\
+
+   
+   -  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 7. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 6).\ |image6|\
+   
+   .. container:: centeralign
+
+      \ *Figure 6. VisualAnalog Window Toolbar, Collapsed Display*\
+
+   
+   \ |image7|\
+   
+   .. container:: centeralign
+
+      \ *Figure 7. VisualAnalog, Main Window Expanded Display*\
+
+   
+
+
+Setting up the SPI Controller Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: indent
+
+   After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
+
+   
+   -  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 8).\ |image8|\
+   
+   .. container:: centeralign
+
+      \ *Figure 8. SPI Controller, CHIP ID(1) Box*\
+
+   
+   -  Click the **New DUT** button in the **SPIController** window or **Reset** at **CHIP PORT CFG(0)** to reinitializes the DUT interface (see Figure 9).\ |image9|\
+   
+   .. container:: centeralign
+
+      \ *Figure 9. SPI Controller, New DUT Button and Soft Reset*\
+
+   
+   -  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box. If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. Also, check if the **VREF(18)** box is set to **2.00Vp-p** (see Figure 10). See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.\ |image10|\
+   
+   .. container:: centeralign
+
+      \ *Figure 10. SPI Controller, ADCBase0 Tab*\
+
+   
+   -  Note that other settings can be changed on the **ADCBase 0** page (see Figure 10) and the **ADC A** and **ADC B** pages (see Figure 11 & 12) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. In **ADC A** tab click **Output Port A** on **OUTPUT ASSIGN(2E)** and in **ADC B** tab click **Output Port B** on **OUTPUT ASSIGN(2E)** to refresh the registers. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.\ |image11|\
+   
+   .. container:: centeralign
+
+      \ *Figure 11. SPI Controller, ADC A Tab*\
+
+   
+   \ |image12|\
+   
+   .. container:: centeralign
+
+      \ *Figure 12. SPI Controller, ADC B Tab*\
+
+   
+   -  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 13).\ |image13|\
+   
+   .. container:: centeralign
+
+      \ *Figure 13. Run Button (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display*\
+
+   
+
+
+Adjusting the Amplitude of the Input Signal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: indent
+
+   The next step is to adjust the amplitude of the input signal for each channel as follows:
+
+   
+   -  Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9648 Average FFT** window (see Figure 14) to verify this.\ |image14|\
+   
+   .. container:: centeralign
+
+      //Figure 14. Graph Window of VisualAnalog *
+
+   
+   \* Repeat this procedure for Channel B. \* Click the disk icon within the* **Graph** *window to save the performance plot data as* **.csv** *formatted file. See Figure 15 for* :adi:`AD9648` *example. Please refer to the respective data sheet of the product of interest for its typical FFT performance.\ \
+   
+   .. container:: centeralign
+
+      * Figure 15. Typical FFT, :adi:`AD9648`//
+
+   
+
+
+Troubleshooting Tips
+--------------------
+
+If the FFT plot appears abnormal, do the following:
+
+-  If you see an abnormal noise floor, go to the **ADCBase0** tab of the **SPIController** window and toggle the **Chip Power Mode** in **MODES(8)** from **Chip Run** to **Reset** and back.
+-  If you see a normal noise floor when you disconnect the signal generator from the analog input, be sure you are not overdriving the ADC. Reduce the input level, if necessary.
+-  In **VisualAnalog**, click the **Settings** button in the **Input Formatter** block. Check that **Number Format** is set to correct encoding (offset binary by default). Also, check that it matches the data format selected in the **SPIController -> ADCBase0 -> OUTPUT MODE(14)**.Repeat for the other channel.
+
+If the FFT appears normal but the performance is poor, check the following:
+
+-  Make sure that an appropriate filter is used on the analog input.
+-  Make sure that the signal generators for the clock and the analog input are clean (low phase noise).
+-  Change the analog input frequency slightly if noncoherent sampling is being used.
+-  Make sure that the SPI configuration file matches the product being evaluated.
+
+If the FFT window remains blank after **Run** is clicked, do the following:
+
+-  Make sure that the evaluation board is securely connected to the :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` board.
+-  Make sure that the FPGA has been programmed by verifying that the **DONE** LED is illuminated on the :adi:`HSC-ADC-EVALCZ <hsadcevalboard>` board. If this LED is not illuminated, make sure that the U4 switch on the board is in the correct position for USB CONFIG.
+-  Make sure that the correct FPGA program was installed by clicking the **Settings** icon in the **ADC Data Capture** block in **VisualAnalog**. Then select the **FPGA** tab and verify that the proper FPGA bin file is selected for the part.
+
+If VisualAnalog indicates that the **FIFO Capture timed out**, do the following:
+
+-  Make sure that all power and USB connections are secure.
+-  Probe the DCOA signal at RN801 (Pin 2) on the evaluation board and confirm that a clock signal is present at the ADC sampling rate.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9268_hsc-adc-evalcz.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9268_jumper.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9648_def_ain_config.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9648_canvas.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9648_message.png
+   :width: 400px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9648_collapsed.png
+   :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9648_expanded.png
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9648_spi.png
+   :width: 400px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad9648_spi_new.png
+   :width: 400px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad9648_spi_base0.png
+   :width: 400px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad9648_spi_adc_a.png
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad9648_spi_adc_b.png
+   :width: 400px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ad9648_run.png
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ad9648_fft.png
+   :width: 400px

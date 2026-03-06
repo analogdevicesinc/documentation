@@ -1,0 +1,295 @@
+LTC4306 No-OS Driver
+====================
+
+Supported Devices
+-----------------
+
+-  :adi:`LTC4306`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-LTC4306`
+
+| 
+| ===== Overview ===== The :adi:`LTC4306` is a 4-channel, 2-wire bus multiplexer with bus buffers to provide capacitive isolation between the upstream bus and downstream buses. Through software control, the LTC4306 connects the upstream 2-wire bus to any desired combination of downstream buses. Each channel can be pulled up to a supply voltage ranging from 2.2 V to 5.5 V, independent of the LTC4306 supply voltage. The downstream channels are also provided with ALERT1-ALERT4 inputs for fault reporting.
+
+Programmable timeout circuitry disconnects the downstream buses if the bus is stuck low. When activated, rise time accelerators source currents into the 2-wire bus pins to reduce rise time. Driving the ENABLE pin low restores all features to their default states. Three address pins provide 27 distinct addresses.
+
+Applications
+------------
+
+-  Nested Addressing
+-  5 V / 3.3 V Level Translator
+-  Capacitance Buffer/Bus Extender
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/eval-ltc4306-pmdz-angle-web.png
+   :width: 400px
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of the ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platforms; and also provides **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== LTC4306 ADI No-OS driver =====
+
+Driver Source Code
+------------------
+
+The source code for :adi:`LTC4306` driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of LTC4306 Driver|
+
+   -
+
+   |Implementation of LTC4306 Driver|
+
+This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the utility library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+| To use the LTC4306 No-OS driver, you need to provide the specific implementation for the communication APIs and the specific types they use.
+| If the I2C communication is chosen, these are the functions to be called by the LTC4306 driver and have to be implemented:
+
+.. container:: center box
+
+   
+   ====================== ==========================================
+   **no_os_i2c_init()**   initializes the communication peripheral
+   **no_os_i2c_write()**  writes data to the device
+   **no_os_i2c_read()**   reads data from the device
+   **no_os_i2c_remove()** deinitializes the communication peripheral
+   ====================== ==========================================
+   
+
+
+And these are the two data types that have to be defined:
+
+.. container:: center box
+
+   
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_i2c_desc**       | structure holding the I2C descriptor                    |
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_i2c_init_param** | structure holding the parameters for I2C initialization |
+   +--------------------------+---------------------------------------------------------+
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for I2C Communication APIs|
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `LTC4306 Header file <http://analogdevicesinc.github.io/no-OS/ltc4306_8h.html>`__
+   -  `LTC4306 Source file <http://analogdevicesinc.github.io/no-OS/ltc4306_8c.html>`__
+   
+
+
+Device Configuration
+--------------------
+
+Driver Initialization
+^^^^^^^^^^^^^^^^^^^^^
+
+| To use the device, you need to provide the support for the communication protocol (I2C) as mentioned above.
+| The first API function to be called is **ltc4306_addr_gen** to generate the corresponding device's slave address. Once a proper address is generated, use the function **ltc4306_init** to initialize the device and make sure that it returns 0. This indicates a successful driver initialization.
+| === Device Address Generation === The :adi:`LTC4306` has the provision for multiple I2C slave addresses through the **ADR0**, **ADR1**, **ADR2** pins. To generate the proper address, supply the voltage level going into pins **ADR0**, **ADR1**, **ADR2** to the **ltc4306_addr_gen** function.
+
+.. note::
+
+   The header file of the :adi:`LTC4306` driver provides an enumeration for the valid **ADR0**, **ADR1**, **ADR2** input voltage level values. There are a total of 27 valid slave address combinations that can be generated depending on the voltage level supplied to the address pin. For reference, refer to Table 1 of the :adi:`LTC4306` data sheet.
+
+
+Control Register 0
+^^^^^^^^^^^^^^^^^^
+
+| The :adi:`LTC4306`'s register 0 contains status indicators for different operational cases. The following driver functions can be used to get the status of any selected operational indicators and use for decision making or other purposes:
+|
+
+.. container:: center box
+
+   
+   +------------------------------------+-------------------------------------------------------------------------+
+   | **ltc4306_downstream_check**       | indicates whether one or more downstream buses is connected to upstream |
+   +------------------------------------+-------------------------------------------------------------------------+
+   | **ltc4306_read_alert_logic_state** | indicates the logic state of the selected pin                           |
+   +------------------------------------+-------------------------------------------------------------------------+
+   | **ltc4306_read_failed_conn**       | checks for any failure in upstream-downstream/s connection              |
+   +------------------------------------+-------------------------------------------------------------------------+
+   | **ltc4306_get_latched_timeout**    | determines whether a timeout has occurred and not yet been cleared      |
+   +------------------------------------+-------------------------------------------------------------------------+
+   | **ltc4306_get_realtime_timeout**   | checks the real-time status of the Stuck Low timeout circuitry          |
+   +------------------------------------+-------------------------------------------------------------------------+
+   
+
+
+| <note / important> Though Register 0 is a read-only register, it can be written to using the **ltc4306_write** function to reset the fault circuity after any fault/s have been cleared or resolved. No other functionalities are affected by doing so. </WRAP>
+
+| === Control Register 1 ===
+
+Rise Time Accelerators
+""""""""""""""""""""""
+
+The :adi:`LTC4306` contains rise time accelerators that source current to the 2-wire bus pins to reduce rise time for both upstream (host side) and downstream (slave). When activated using the **ltc4306_set_upstream_accel** or **ltc4306_set_downstream_accel**, the accelerators turn on in a controlled manner and source currents during positive transitions.
+
+The accelerator enable status can be checked using the **ltc4306_get_upstream_accel** or **ltc4306_downstream_accel** driver functions.
+
+<note / important> Refer to the data sheet section on **Rise Time Accelerators** and other related sections to avoid damaging the device or any connected downstream devices. </WRAP>
+
+GPIO State
+""""""""""
+
+| The :adi:`LTC4306` also contains 2 GPIO pins. The logic level can be changed and queried using the **ltc4306_set_gpio_output_state** and the logic level checking process is best described by the **ltc4306_get_gpio_output_state** or **ltc4306_read_gpio_logic_state** functions below:
+| ^ ^ **ltc4306_get_gpio_output_state** ^ **ltc4306_read_gpio_logic_state** ^
+
++--------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| General operation  | checks the logic state of the corresponding GPIOs 1 or 2; both functions can be used to confirm the actual status of the GPIOs |                                                                 |
++--------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| Specific operation | reads from the same bit field that the **ltc4306_set_gpio_output_state** manipulates                                           | reads from a different read-only bit field in the same register |
++--------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+
+| 
+| === Control Register 2 ===
+
+GPIO Configuration
+""""""""""""""""""
+
+| The :adi:`LTC4306` GPIO pins can be configured for either input or output operation. When at output mode, the GPIO can be configured as either **push-pull** or **open-drain pull down** architecture to match external circuitry requirements, if any. These can be easily achieved using the **ltc4306_gpio_configure** driver function. The function automatically checks whether the GPIO is configured for input or output and only considers the output architecture when the GPIO is configured as an output.
+| == Connection Requirement == Depending on the requirements, the downstream buses (slave) can be immediately connected to the upstream (host) or not. This is controlled using the **ltc4306_set_conn_req** and can be polled using the **ltc4306_get_conn_req** functions.
+
+| When enabled, the device requires that the corresponding bus logic state to be HIGH. This can also be queried using **ltc4306_read_bus_logic_state** separately. This means that a connection will only be allowed from slave to host when SDAx and SCLx are both above 1 V, which can also serve as protection for all connected devices.
+| == Mass Write == Aside from the pin configured address, the :adi:`LTC4306` also responds to the mass write address **0xBA**. This allows multiple :adi:`LTC4306`'s to be configured using a single command. This functionality is enabled by default, but can be toggled or queried using the **ltc4306_set_mass_write** and **ltc4306_get_mass_write** functions.
+
+<note / important> When mass write is enabled, multiple :adi:`LTC4306`'s can be configured by a single transaction. This can be done by reinitializing any or all device structure/s with an address of **0x5D** (0xBA is the Write Address) and sending the command using one device structure with said address. The other LTC4306's will respond to that address and recognize the configuration command. </WRAP>
+
+Timeout Mode
+""""""""""""
+
+The :adi:`LTC4306` also includes a timeout circuitry. Depending on the timeout programmed using **ltc4306_set_timeout_mode**, the stuck low circuitry will wait for a specified amount of time before disconnecting any downstream bus that is stuck at LOW level logic. The currently programmed timeout mode can be queried using **ltc4306_get_timeout_mode**, if needed.
+
+The valid timeout values are as follows:
+
+.. container:: center box
+
+   
+   ==================== =========================
+   **LTC4306_DISABLED** disable timeout circuitry
+   **LTC4306_30MS**     30 mS timeout
+   **LTC4306_15MS**     15 mS timeout
+   **LTC4306_7P5MS**    7.5 mS timeout
+   ==================== =========================
+   
+
+
+| 
+| === Control Register 3 ===
+
+Downstream Channels
+"""""""""""""""""""
+
+The :adi:`LTC4306` contains 4 downstream channels where other I2C devices can be connected. The driver function **ltc4306_set_downstream_channel** allows connection or disconnection of a selected channel.
+
+| The status of any channel can be queried using either **ltc4306_get_downstream_channel** or **ltc4306_read_bus_logic_state**.
+| The difference between the two functions lies in the bit field accessed. The field accessed by both the **ltc4306_set_downstream_channel** and **ltc4306_get_downstream_channel** is a Read-Write fields, while **ltc4306_read_bus_logic_state** accesses a Read-only field. Both functions can be used for verification of any channel's connection status in some instances.
+
+| 
+| ==== Driver Initialization Example ====
+
+Example Initialization Using Maxim SDK as Platform
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+       int ret;
+
+       struct max_i2c_init_param ltc4306_extra = {
+           .vssel = MXC_GPIO_VSSEL_VDDIOH,
+       };
+
+       struct ltc4306_init_param ltc4306_ip = {
+           .i2c_init.device_id = 0,
+           .i2c_init.max_speed_hz = 100000,
+           .i2c_init.extra = &ltc4306_extra,
+           .i2c_init.platform_ops = &max_i2c_ops,
+       };
+
+       ret = ltc4306_addr_gen(&ltc4306_ip, LTC4306_HIGH, LTC4306_HIGH, LTC4306_HIGH);
+       if (ret)
+           return ret;
+
+       struct ltc4306_dev *ltc4306_device;
+
+       ret = ltc4306_init(&ltc4306_device, ltc4306_ip);
+       if (ret)
+           return ret;
+       
+
+| 
+| === Example Initialization Using ADUCM3029 as Platform ===
+
+::
+
+       int ret;
+
+       struct ltc4306_init_param ltc4306_ip = {
+           .i2c_init.device_id = 0,
+           .i2c_init.max_speed_hz = 100000,
+           .i2c_init.extra = NULL,
+           .i2c_init.platform_ops = &aducm_i2c_ops,
+       };
+
+       ret = ltc4306_addr_gen(&ltc4306_ip, LTC4306_HIGH, LTC4306_HIGH, LTC4306_HIGH);
+       if (ret)
+           return ret;
+
+       struct ltc4306_dev *ltc4306_device;
+
+       ret = ltc4306_init(&ltc4306_device, ltc4306_ip);
+       if (ret)
+           return ret;
+
+| 
+
+.. |Header file of LTC4306 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/io-expander/ltc4306/ltc4306`.h
+.. |Implementation of LTC4306 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/io-expander/ltc4306/ltc4306`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h

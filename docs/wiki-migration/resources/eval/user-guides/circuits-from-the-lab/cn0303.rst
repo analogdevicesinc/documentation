@@ -1,0 +1,140 @@
+Vibration Analysis (CN0303)
+===========================
+
+.. important::
+
+   Analog Devices uses six designations to inform our customers where a semiconductor product is in its :adi:`life cycle <en/support/customer-service-resources/sales/product-life-cycle-information.html>`. From emerging innovations to products which have been in production for twenty years, we understand that insight into life cycle status is important. Device life cycles are tracked on their individual product pages on `analog.com <adi>>`__, and should always be consulted before making any design decisions.
+
+   
+   This particular articl/edocument/design has been retired or deprecated, which means it is no longer maintained or actively updated, even though the devices themselves may be **Recommended for New Designs** or in **Production**. This page is here for historical/reference purposes only.
+
+
+
+An :adi:`archive <media/en/reference-design-documentation/reference-designs/CN0303.pdf>` of the circuit note.
+
+Overview
+--------
+
+This circuit offers a high linearity, low noise, wide-bandwidth vibration sensing solution. It is ideal for applications requiring a large dynamic range (±70g) and a flat frequency response from DC to 22kHz. The circuit provides a low power solution suitable for bearing analysis, engine monitoring and shock detection.
+
+General Setup
+-------------
+
+::
+
+   *One EVAL-CN0303-SDPZ Evaluation Board
+   *One [[:adi:`en/mems-sensors/mems-inertial-sensors/adxl001/products/EVAL-ADXL001/eb`.html|ADXL001]] Evaluation Board
+   *[[:adi:`EVAL-SDP-CB1Z|EVAL-SDP-CB1Z]]` Evaluation board
+   *CN0303 Evaluation Software
+   *One 6V wallwart.  (EVAL-CFTL-6V-PWRZ)
+   *One DC power supply with a 0-6V output.  (HP6236B) 
+   *One USB Type-A plug to USB Mini-B plug cable.
+
+Minimum PC/System Requirements
+------------------------------
+
+-  One PC with the following
+
+   -  Windows XP SP2, Windows Vista or Windows 7 Business/Enterprise/Ultimate editions
+   -  Intel Pentium processor (x86 compatible), 1GHz or faster
+   -  512 MB RAM and 2 GB available hard disk space
+   -  .NET 3.5 Framework
+
+How to Install the Evaluation Software
+--------------------------------------
+
+-  Extract the files within the file **CN0303 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0303 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0303\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+|image1|
+
+-  Press **“Next”**.\
+
+|image2|
+
+-  Press **“Next”**.\
+
+|image3|
+
+-  Press **“Next”**.
+-  Upon completion of the installation of the **CN0303 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
+-
+
+|image4|
+
+-  Press **“Next”**.
+-
+
+|image5|
+
+-  It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**
+-  Press **“Next”** to install the Drivers and complete the installation of all software necessary to evaluate the **EVAL-CN0303-SDPZ**
+
+Step by Step Instruction for Preparing the ADXL001 Evaluation Board
+-------------------------------------------------------------------
+
+-  In order to mitigate high frequency noise outside of the vibration band of interest, a basic RC low pass filter is created by components R1 and C2.
+
+   -  The recommended cutoff frequency is 80kHz (R1 = 1k, C2 = 1nF). This will remove any high frequency noise above 80kHz.
+   -  The cutoff frequency can be adjusted by manipulating R1 and C2.
+   -  A filter is not required. By shorting R1(populating it with a 0 ohm resistor), the accelerometer output will be unfiltered and available at the XOUT pin.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/eval-adxl001.jpg
+   :align: center
+
+Instructions for connecting the ADXL001-70BEZ and EVAL-CN0303_SDPZ
+------------------------------------------------------------------
+
+-  First, connect the discrete female colored cable to connector P1 of the :adi:`ADXL001-70BEZ <en/mems-sensors/mems-inertial-sensors/adxl001/products/EVAL-ADXL001/eb.html>`.
+-  Secondly, connect the discrete female colored cable to connector J6 of the EVAL-CN0303-SDPZ.\
+
+|image6|
+
+-  Connect the :adi:`EVAL-SDP-CB1Z` and the EVAL-CN0303-SDPZ PCB’s using the 120 pin male and female connectors found on the respective boards to **Connector A** of the the SDP-B board.
+-  Plug in the DC barrel jack to connector J5 of the EVAL-CN0303-SDPZ and the mini end of the USB cable into connector J1 of the :adi:`EVAL-SDP-CB1Z`. And connect the other end of the USB cable into the Laptop or PC.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/PCB + Cables.jpg
+   :align: center
+
+Opening and Enabling the Evaluation Software
+--------------------------------------------
+
+-  Launch the executable found at **C:\\Program Files\\Analog Devices\\CN0303** and press the **“Connect"** button.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software_-_2khz_sine_wave.jpg
+   :align: center
+
+Step by Step Instruction to Using the Evaluation Software
+---------------------------------------------------------
+
+-  The following is a list of all available software controls found in the **Acceleration Results** tab, grouped according to their location in the software:
+
+   -  **System Controls**
+
+      -  **Connect** – This button configures the :adi:`ad7476` by writing to the necessary registers.
+      -  **Connector A** - This menu allows the user to select which connector of the SDP board is being utilized.
+
+   -  **Data Acquisition Controls**
+
+      -  **Acquire Data Set** - This control gathers a number of samples 'n', used to analyze the vibration information.
+      -  **FFT Size** - This control determines the number of samples the FFT uses in its calculations.
+      -  **Save Data** - This button prompts and allows the user to save the FFT data to a text file.
+      -  **Clear Data** - This button clears the graph and deletes the array containing the FFT data and any indicators such as 'Max Code', 'Min Code', 'Pk-to-Pk Codes', 'Pk-to-Pk Volts' etc.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software_-_frequency_results_tab.png
+   :align: center
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0303-SDPZ?&v=RevA>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software-installdirectory.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software-starinstall.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software-installcomplete.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-setup_wizard.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-destination_directory.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/PCB.jpg

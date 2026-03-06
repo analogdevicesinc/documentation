@@ -1,0 +1,256 @@
+CN0188 Evaluation Board Guide
+=============================
+
+Overview
+--------
+
+:adi:`CN0188` is a circuit that monitors current in individual channels of −48 V to better than 1% accuracy. The load current passes through a shunt resistor, which is external to the circuit. The shunt resistor value is chosen so that the shunt voltage is approximately 50 mV at maximum load current. The entire circuit operates on a single +3.3 V supply.
+
+The :adi:`AD7171` is a very low power, 16-bit, analog-to-digital converter (ADC). It contains a precision, 16-bit, Σ-Δ ADC and an on-chip oscillator. The measurement result from :adi:`AD7171` is provided as a digital code utilizing a simple 2-wire, SPI-compatible serial interface. Optional galvanic isolation is provided by the :adi:`ADUM5402` quad channel isolator. In addition to isolating the output data, the digital isolator can also supply isolated +3.3 V for the circuit.
+
+The :adi:`ADA4051-2` is a CMOS, micropower, zerodrift operational amplifier utilizing an innovative chopping technique. This amplifier feature rail-to-rail input/output swing and extremely low offset voltage while operating from a 1.8 V to 5.5 V power supply.
+
+The :adi:`ADR381` is precision 2.500 V band gap voltage reference featuring high accuracy, high stability, and low power consumption in a tiny footprint. It is a micropower, low dropout voltage (LDV) device that provides a stable output voltage from supplies as low as 300 mV above the output voltage.
+
+| The :adi:`EVAL-CN0188-SDPZ Board <EVAL-CN0188-SDPZ>` connects to ADI’s System Demonstration Platform (SDP) and is powered by a +6 V supply or +6 V “wall wart”. |image1|
+| ----
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-CN0188-SDPZ Evaluation Board <EVAL-CN0188-SDPZ>`
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  `CN0188 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0188>`__
+-  Power Supply
+
+   -  6 V or 6 V Wall wart
+
+-  PC with the following *Minimum Requirements*
+
+   -  Windows 7 (32-bit), Windows Vista (32-bit) or Windows XP
+
+      -  USB interface
+
+-  Shunt resistor with maximum voltage of 50 mV at the maximum load current
+-  Electronic load
+
+--------------
+
+General Setup
+-------------
+
+Block assignments
+~~~~~~~~~~~~~~~~~
+
+| |image2|
+| \* The :adi:`EVAL-CN0188-SDPZ` **(CN-0188 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
+
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  Terminal block **J2** is the +6 V barrel connector for wall wart supply input
+-  Terminal block **J3** is the test point for 6 V DC output
+-  Terminal block **J4** contains the input terminals for Rshunt and load to ground
+
+| 
+| ==== Test setup ==== |image3|
+
+-  Connect the 120-pin connector on the :adi:`EVAL-CN0188-SDPZ Evaluation Board <EVAL-CN0188-SDPZ>` to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board
+-  Connect a shunt resistor across the input terminals with a load to ground as indicated in figure above
+-  With power to the supply off, connect a +6 V power supply to the pins marked “+6V” and “GND” on the board
+
+::
+
+       *//If available, a +6 V "wall wart" can be connected to the barrel connector on the board and used in place of the +6 V power supply//
+   * Connect the USB cable supplied with the SDP board to the USB port on the PC
+   * Apply power to the +6 V supply (or “wall wart”) connected to [[:adi:`EVAL-CN0188-SDPZ|EVAL-CN0188-SDPZ` Evaluation Board]]
+   * Launch the evaluation software
+   * Connect the USB cable from the PC to the USB mini connector on the SDP board
+
+   | 
+|
+
+.. important::
+
+   Connect the **system ground** and the **PCB isolated ground** to guarantee correct voltage levels and operation. **Test point 31** and **test point 32** give access to the GND_ISO required to properly make this connection.
+
+
+--------------
+
+Installing the Evaluation Software
+----------------------------------
+
+-  Extract the file **CN0188_Evaluation_Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0188 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0188>`__ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0188\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image4|
+
+-  Click **Next** to view the installation review page
+
+|image5|
+
+   \* Click **Next** to start the installation
+
+   |image6|
+
+   \* Upon completion of the installation of the **CN-0188 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image7|
+
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image8|
+
+   \* Press **“Install”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+   |image9|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Test Setup Tab
+~~~~~~~~~~~~~~
+
+Main Window
+~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/8.png
+   :align: center
+   :width: 700px
+
+-  **Connect** Button - Starts the connection between the :adi:`CN0188 Evaluation Board <CN0188>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`.
+-  **Disconnect** Button - Ends the connection between the :adi:`CN0188 Evaluation Board <CN0188>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`
+-  **Select SDP Connector** - Selects which 120-pin connection of the SDP-B Board to use
+-  **Shunt Voltage Input** - Determines input shunt voltage level in millivolts
+-  **Temperature** - Temperature level test conditions of input signal
+-  **Data Acquisition** Controls
+
+|image10|
+
+   -  **Sample Data** - Start acquisition of measurement data
+
+      -  **Remove Data Point** - Remove a data point from samples
+      -  **Save Data** - Save measurement data to file
+      -  **Clear Data** - Clear the current measurement data
+
+-  **Sample Data Graph** Tab - Shows the XY plot of ADC code and output error (%) with respect to the shunt voltage
+
+
+|image11|
+
+   -  **ADC Code Plot** Enable - Show or hide the ADC Code plot
+
+      -  **Error Plot** Enable - Show or hide the Error plot
+      -  **Converted Shunt Voltage** - Shunt voltage value from the ADC
+      -  **Over/Under Voltage** Indicator - Indicates over or under voltage conditions
+      -  **Plot Options** - Edit plot display and options like interpolation and color of output waveform
+
+-  **Administration** Tab
+
+
+|image12|
+
+   -  **Flash LED** - Flashes the LED on the SDP controller board
+
+      -  **Read Firmware** - Reads the firmware of CN0240 Evaluation Board
+
+-  **Quit** Button - Closes the evaluation software
+
+
+| 
+
+Running the System
+~~~~~~~~~~~~~~~~~~
+
+::
+
+   -Open the CN0188.exe application from the default installation location
+   -Set the correct connector and click the Connect Button
+   -Upon successful connection, set the desired input signal parameters such as shunt voltage and temperature
+   -Start and control data acquisition through the data acquisition control buttons
+   -Output data will be shown in the graph. Edit graph through plot options and check boxes provided
+   -Click Disconnect if finished
+   -Click Quit to exit the program
+
+|
+
+| ----
+
+More Information and Useful Links
+---------------------------------
+
+-  `CN0188 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0188>`__
+-  :adi:`CN0188 Circuit Note Page <CN0188>`
+-  :adi:`CN0188 Design Support Package <media/en/reference-design-documentation/design-integration-files/CN0188-DesignSupport.zip>`
+
+-  :adi:`AD7171 Product Page <AD7171>`
+-  :adi:`ADUM5402 Product Page <ADUM5402>`
+-  :adi:`ADA4051-2 Product Page <ADA4051-2>`
+-  :adi:`ADR381 Product Page <ADR381>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0188-SDPZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0188-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  PADS project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0188-SDPZ?&v=Rev C>`__ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/cn0188-hw-1024.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/11-2-2017_2-20-01_pm.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/11-2-2017_2-30-58_pm.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/1.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/2.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/3.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/4.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/5.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/6.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/11.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/12.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/10.png
+   :width: 600px

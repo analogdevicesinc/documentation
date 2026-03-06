@@ -1,0 +1,225 @@
+AD799x - No-OS Driver for Renesas Microcontroller Platforms
+===========================================================
+
+.. include:: ../ad7991.rst
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD799x Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad799x_generic.zip>`__
+   -  `AD7991 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7991_rl78g13.zip>`__
+   -  `AD7991 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7991_rx62n.zip>`__
+   -  \**AD799x Driver: \*\* :git-no-OS:`drivers/adc/ad799x`
+   -  \**PmodAD2 Demo for RL78G14: \*\* :git-no-OS:`Renesas/RL78G14/PmodAD2`
+   -  \**RL78G14 Common Drivers: \*\* :git-no-OS:`Renesas/RL78G14/Common`
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7991 demonstration project on a Renesas RL78G13 platform using the PmodAD2.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  `PmodAD2 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD2>`__
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodAD2 has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     PmodAD2 J1 connector Pin SCL → YRDKRL78G13 J9  connector Pin 1
+     PmodAD2 J1 connector Pin SDA → YRDKRL78G13 J9  connector Pin 3
+     PmodAD2 J1 connector Pin GND → YRDKRL78G13 J11 connector Pin 5
+     PmodAD2 J1 connector Pin VCC → YRDKRL78G13 J11 connector Pin 6
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad2_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the reference project the device is enabled and continuous conversions are made for all four channels. The results of the conversions are displayed on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad2_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`__
+
+
+Renesas RL78G14 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7991 demonstration project on a Renesas RL78G14 platform using the PmodAD2.
+
+.. _required-hardware-1:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`__
+-  `PmodAD2 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD2>`__
+
+.. _required-software-1:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+-  The AD7991 demonstration project for the Renesas RL78G14 platform.
+
+.. note::
+
+   The AD7991 demonstration project for the Renesas RL78G14 platform consists of three parts: the **AD799x Driver**, the **PmodAD2 Demo for RL78G14** and the **RL78G14 Common Drivers**.
+
+   
+   All three parts have to be downloaded.
+
+
+.. _hardware-setup-1:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodAD2 has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G14:
+
+::
+
+     PmodAD2 J1 connector Pin SCL → RDKRL78G14 J8  connector Pin 1
+     PmodAD2 J1 connector Pin SDA → RDKRL78G14 J8  connector Pin 3
+     PmodAD2 J1 connector Pin GND → RDKRL78G14 J11 connector Pin 5
+     PmodAD2 J1 connector Pin VCC → RDKRL78G14 J11 connector Pin 6
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad2_rl78g14.jpg
+   :align: center
+
+   |
+
+.. important::
+
+   
+   -  Using JP1 jumper you can either have 4 input channels or 3 input channels.
+   
+   |
+
+   |
+
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project:
+
+-  initiates continuous conversions for all four channels;
+-  the results of all conversions are displayed on the LCD.
+
+|
+
+.. important::
+
+
+| \* The reference voltage for the AD7991 is the supply voltage which is 3.3V.
+   |
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad2_rl78g14_screen.jpg
+   :align: center
+
+.. _software-project-tutorial-1:
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`__
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD7991 demonstration project on a Renesas RX62N platform using the PmodAD2.
+
+.. _required-hardware-2:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+-  `PmodAD2 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD2>`__
+
+.. _required-software-2:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`__
+-  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`__
+
+.. _hardware-setup-2:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodAD2 has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     PmodAD2 J1 connector 1 (SCL) → YRDKRX62N J2  connector Pin 1
+     PmodAD2 J1 connector 3 (SDA) → YRDKRX62N J2  connector Pin 3
+     PmodAD2 J1 connector 5 (GND) → YRDKRX62N J8  connector Pin 4
+     PmodAD2 J1 connector 7 (VCC) → YRDKRX62N J8  connector Pin 3
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7991_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-2:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the reference project the device is enabled and continuous conversions are made for all four channels. The results of the conversions are displayed on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7991_rx62n_screen.jpg
+   :align: center
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`__
+
+
+More information
+================
+
+.. include:: ../more-information.rst

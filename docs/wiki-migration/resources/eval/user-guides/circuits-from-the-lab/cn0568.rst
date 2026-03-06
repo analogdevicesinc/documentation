@@ -1,0 +1,166 @@
+CN0568:Ultra-fast switching, High Performance PLL and Quadband VCO frequency synthesizer with phase resync
+==========================================================================================================
+
+:adi:`CN0568` This circuit demonstrates the performance of ADI's quadband VCOs with the :adi:`adf41513` PLL device. The circuit design provides a complete frequency synthesizer solution including supply regulators, and control circuitry.
+
+The key components used in this circuit are as follows:
+
+-  :adi:`HMC8074`, :adi:`HMC8362` or :adi:`HMC8364` quadband VCOs
+-  :adi:`adf41513` PLL Frequency Synthesizer
+-  :adi:`lt3045` Linear Regulator
+-  :adi:`adg1604` Multiplexer
+
+Hardware
+--------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/1.jpg
+   :width: 600px
+
+Software Installation
+---------------------
+
+1. Download the software folder from the CN-568 product page.
+
+2. Double click on the 'CN0548.exe'self extracting installer to start the installation process.
+
+3. Follow the installation windows that appear, to install the software in the default location as shown in the screenshots below.
+
+|image1| |image2| |image3| |image4|
+
+4. After the CN0568 software has installed, an installation window for the SDP drivers will appear. If the SDP drivers have not previously been installed on the machine, proceed with this installation step.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/installer_sdpdrivers6.jpg
+   :width: 400px
+
+5. Load the custom firmware to the SDP-K1 board by dragging and dropping the 'SDP_K1_release.hex' file contained within the software download folder, to the SDP-K1 drive listed in the 'Devices and Drives' of the 'This PC' within windows explorer. This step only is only required to be done once as the image remains on the board after removal of the USB cable.
+
+Software Interface
+------------------
+
+The interface used to control the circuit is described in this section. The are 3 regions of the software interface panel as shown below.
+
+1. Graphical control region : This contains all the buttons and numeric controls used to program the ADF41513.
+
+2. Register region : If anything is changed in the graphical control region, a register is highlighted in green. This indicates to the user that the register must be written by pressing the corresponding Write register button. Note: There are some controls where a dedicated button is used to update the register in the graphical control region. In these cases the write register button is not used.
+
+3. Log Window : This is used to show the most recent transactions to the user. A log can be saved of all activity in a session.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software_structure.png
+
+Device Connection
+~~~~~~~~~~~~~~~~~
+
+The device connection tab is displayed first after executing the software interface. From here, the user selects the device variant and the device configuration (single board or multi-board). After these are selected the user presses the Connect button to establish a connection.
+
+Main Controls Tab
+~~~~~~~~~~~~~~~~~
+
+Reference Configuration
+^^^^^^^^^^^^^^^^^^^^^^^
+
+This section contains the controls associated with the reference frequency.
+
+Reference Source
+""""""""""""""""
+
+By default, the board is configured to use the default 100MHz on-board reference crystal oscillator. If a different frequency external reference is used, this is changed in this control.
+
+Reference Frequency
+"""""""""""""""""""
+
+This can only be changed if an external reference frequency is used. This value must match the external frequency applied.
+
+Divider and Doubler
+"""""""""""""""""""
+
+These can be used to change the PFD frequency accordingly on the :adi:`adf41513`.
+
+Frequency Control
+^^^^^^^^^^^^^^^^^
+
+In the frequency control section, the VCO output frequency can be programmed. This is done by inputting the desired frequency in MHz. After inputting the frequency, press the 'Update Frequency' button to update.
+
+Phase Control
+^^^^^^^^^^^^^
+
+The phase of an output signal can be incremented by specifying the value in the Phase Value field. The phase is calculated and can be updated by pressing the Increment Phase button. Phase resync is enabled by default within the initialization sequence. To set the phase resync time, set the CLK1 and CLK2 multipliers accordingly. Note: the phase resync time must be greater than the worst case lock time.
+
+Hop Function Tab
+~~~~~~~~~~~~~~~~
+
+| A frequency hop can be performed continuously between 2 frequencies within the Hop Function tab. VCO Freq. A and VCO Freq. B are the two frequencies that the user specifies for the hop. The dwell time at each frequency is input in the Time Delay field. A frequency hop is started by pressing the Start button. Likewise the frequency hop is stopped using the Stop button.
+| |image5|
+
+Dual Board Control
+^^^^^^^^^^^^^^^^^^
+
+| A dual board configuration can be used when two boards of the same VCO variant are connected via a stacked connection from the Arduino style header. This first must be selected in the Board Configuration section prior to a software connection being established to the board. When using the dual board configuration, the user has the ability to select which board is being controlled through SPI writes by selecting the board in the Board Select drop-down box on the upper right within the main controls tab. This control is only visible if the dual board configuration had been selected at the connection stage.
+| |image6|
+
+| To use the dual board configuration, one of the boards needs to first be reconfigured to receive SPI on a different LE signal line. To do this, remove R41 on the upper board of the stack and insert R42 instead.
+
+Other Functions
+^^^^^^^^^^^^^^^
+
+Some of the basic register controls of the :adi:`adf41513` have been included in the Other Functions tab of the software interface. These controls are related to lock detect settings, PLL settings and the muxout signal. For information about the functionality of each control refer to registers 5, 6, 7 and 12 in the register map section of the :adi:`adf41513` datasheet.
+
+Evaluation Setup
+----------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/setup_circuit_note1.jpg
+
+Required Equipment
+------------------
+
+-  Spectrum Analyzer
+-  1 x 50 Ω, RF / Microwave cable with 2.92mm connectors
+-  2 x BNC to SMA adapter
+-  2 x Dual banana plug to BNC socket
+-  2 x 50 Ω SMA DC cables
+
+Procedure
+---------
+
+1. Download and install the :adi:`CN0568` board software from the product page on analog.com. 2. Set up the evaluation board as shown in the setup image above with:
+
+-  +5v connected to J1 and +25v connected V+SMA of the DC power supply (ensuring supply outputs are switched off). \*
+-  Set current limit of +5v supply to 200mA and set current limit of +25v supply to 20mA.
+-  Evaluation board mounted to the Arduino header of the SDP-K1.
+-  USB cable connected to the host PC from the SDP-K1 Eval board.
+-  50 Ω 2.92mm RF cable connected from RFOUT of the evaluation board to RFIN of the FSW/FSWP.
+
+3. Open the software and select the relevant part/board variant.
+
+4. Turn on the 5v power supply. Then turn on the 25v power supply.
+
+5. Press ‘Write Initialization Sequence’ button to initialize the part.
+
+-  The current drawn on the +5v supply should be between 150-180mA.
+-  The current drawn on the +25v supply should be approximately 4mA.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software_image.png
+
+6. In the spectrum analyzer instrument, set up a phase noise measurement.
+
+7. Table 1. below lists the test frequencies for each part variant. On the evaluation software, in the ‘VCO Out’ box, input the first frequency for the variant used and press ‘Update Frequency’ button.
+
+
+|image7|
+
+8. Wait until the instrument locks to the output frequency and displays the phase noise profile on screen. Note the phase noise at offsets of 100kHz, 1MHz and 10MHz.
+
+9. Table 2. shows the limits of the maximum phase noise at a particular offset frequency for each variant. Boards with phase noise higher than these limits are deemed to be failures.
+
+10. Repeat steps 7-9 for each test frequency in Table 1. for the board variant being tested.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/installer1.jpg
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/installer3.jpg
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/installer4.jpg
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/installer5.jpg
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/hopfunction.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/boardselect.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/updatefrequency.png

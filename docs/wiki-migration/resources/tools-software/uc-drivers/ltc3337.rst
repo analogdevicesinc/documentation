@@ -1,0 +1,218 @@
+LTC3337 - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`LTC3337`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`DC2973A`
+
+| 
+| ===== Overview ===== The :adi:`LTC3337` is a primary battery state of health (SOH) monitor with a built-in precision coulomb counter. It is designed to be placed in series with a primary battery with minimal associated series voltage drop. The patented infinite dynamic range coulomb counter tallies ALL accumulated battery discharge and stores it in an internal register accessible via an I2C interface. A discharge alarm threshold based on this state of charge (SOC) is programmable. When it is reached, an interrupt is generated at the IRQ pin. Coulomb counter accuracy is constant down to no load.
+
+The :adi:`LTC3337` also integrates additional SOH monitoring which measures and reports via I2C: battery voltage, battery impedance, and temperature. To accommodate a wide range of primary battery inputs, the peak input current limit is pin selectable from 5mA to 100mA. Coulombs can be calculated for either the BAT_IN or BAT_OUT pin, determined by the AVCC pin connection. A BAL pin is provided for applications utilizing a stack of two supercapacitors (optional) at the output.
+
+Applications
+------------
+
+-  Low Power Primary Battery Powered Systems
+-  Remote Industrial Sensors (e.g., Meters, Alarms)
+-  Asset Trackers
+-  Electronic Door Locks
+-  Keep-Alive Supplies/Battery Backup
+-  SmartMesh® Applications
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== LTC3337 ADI No-OS driver =====
+
+Driver Source Code
+------------------
+
+The source code for LTC3337 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of LTC3337 Driver|
+
+   -
+
+   |Implementation of LTC3337 Driver|
+
+This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the util library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+To use the LTC3337 No-OS Driver, you need to provide the specific implementation for the communication APIs and the specific types they use. For I2C communication, there are four functions which are called by the LTC3337 driver and have to be implemented:
+
+.. container:: center box
+
+   
+   ====================== ===========================================
+   **no_os_i2c_init()**   initializes the communication peripheral.
+   **no_os_i2c_write()**  writes data to the device.
+   **no_os_i2c_read()**   reads data from the device.
+   **no_os_i2c_remove()** deinitializes the communication peripheral.
+   ====================== ===========================================
+   
+
+
+And the data type that needs to be defined:
+
+.. container:: center box
+
+   
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_i2c_init_param** | structure holding the parameters for i2c initialization |
+   +--------------------------+---------------------------------------------------------+
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for i2c Communication APIs|
+
+Device Configuration
+--------------------
+
+Driver Initialization
+^^^^^^^^^^^^^^^^^^^^^
+
+| To use the device, you need to provide the support for the communication protocol (i2c) as mentioned above.
+| The first API function to be called is ``ltc3337_init``. ``ltc3337_init`` requires initialization parameters of type ``struct ltc3337_init_param``, with the following fields. Make sure that ``ltc3337_init`` returns 0. This indicates a successful driver initialization.
+
+.. container:: center box
+
+   
+   ============ ============================================
+   **prescale** Initial prescale value to set in the LTC3337
+   **i2c_init** Initialization parameters for the i2c bus
+   ============ ============================================
+   
+
+
+| 
+| === Reading Accumulated Charge === The accumulated charge of the coulomb counter may be read by the function ``ltc3337_get_accumulated_charge``. This function can provide either or both the raw 16-bit accumulated charge register of the ltc3337, or the accumulated charge converted to A-hr and nA-hr components. The A-hr and nA-hr components are automatically scaled based on the prescale set in the device, and the I\ :sub:`PEAK` value read from the hardware configuration.
+
+| 
+| === Reading Device Voltage === Various voltage levels of the device may be read using the function ``ltc3337_get_voltage_mv``, with the voltage value being returned in millivolts. Possible voltage sources are:
+
+.. container:: center box
+
+   
+   ===================== =======================================
+   **BAT_IN_IPEAK_ON**   BAT_IN Voltage when I\ :sub:`PEAK` On
+   **BAT_IN_IPEAK_OFF**  BAT_IN Voltage when I\ :sub:`PEAK` Off
+   **BAT_OUT_IPEAK_ON**  BAT_OUT Voltage when I\ :sub:`PEAK` On
+   **BAT_OUT_IPEAK_OFF** BAT_OUT Voltage when I\ :sub:`PEAK` Off
+   ===================== =======================================
+
+   |
+
+
+Alarm Configuration
+^^^^^^^^^^^^^^^^^^^
+
+The LTC3337 features alarms for high and low temperature thresholds, as well as a coulomb counter threshold alarm. To set the temperature alarms, call ``ltc3337_set_temperature_alarms_c``, passing the the high and low temperature thresholds in degrees C. To set the coulomb counter alarm, call ``ltc3337_set_counter_alarm`` with the **register** value to set the alarm for. To help convert standard units (A-hr) to a register value, ``ltc3337_calculate_charge_register`` will generate a register value based on A-hr and nA-hr components, using the prescale and I\ :sub:`PEAK` value of the device.
+
+|
+
+| === Prescale Configuration === The preferred method of setting the device prescale is through the initialization parameters. However, it is possible to change the prescale after the device has been initialized and running. Use the ``ltc3337_set_prescaler`` function to adjust the device prescale.
+
+.. note::
+
+   Changing the prescaler does not affect the value of the accumulated charge register. If the prescaler is set sometime following the initial runtime setup, after charge has been accumulated, the acccumulated charge register should be set according to the current value shifted by the difference in original and current prescaler. This driver does not automatically perform that action.
+
+
+.. note::
+
+   Changing the prescaler does not alter the configuration of alarm. That may need to be changed if configured prior to the prescaler
+
+
+Driver Initialization Example
+-----------------------------
+
+Example Application Using Maxim SDK as Platform
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+     
+   int ret;
+
+   struct no_os_i2c_init_param ltc3337_i2c_ip = {
+       .device_id = 0,
+       .max_speed_hz = 100000,
+       .slave_address = LTC3337_I2C_ADDR,
+       .platform_ops = &max_i2c_ops,
+       .extra = &max_i2c_extra,
+   };
+
+   struct ltc3337_init_param ltc3337_ip = {
+       .prescale = 10,
+       .i2c_init = ltc3337_i2c_ip,
+   };
+
+   struct ltc3337_dev *dev;
+   struct charge_count_t charge;
+   uint16_t raw_value;
+
+   ret = ltc3337_init(&dev, &ltc3337_ip);
+   if (ret)
+       return ret;
+
+   while(1) {
+       ret = ltc3337_get_accumulated_charge(dev, &charge, &raw_value);
+       if(ret)
+           break;
+
+       printf("Accumulated Charge %d.%09d (0x%04X)\n", charge.a_hr, charge.na_hr, raw_value);
+
+       MXC_Delay(5000); 
+   }// end while
+
+   ltc3337_remove(dev);
+
+   return 0;
+
+| 
+
+.. |Header file of LTC3337 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/power/ltc3337/ltc3337`.h
+.. |Implementation of LTC3337 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/power/ltc3337/ltc3337`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for i2c Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h

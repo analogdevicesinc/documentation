@@ -1,0 +1,171 @@
+EVALUATING THE AD9119 AND THE AD9129 DIGITAL-TO-ANALOG CONVERTERS
+=================================================================
+
+Preface
+=======
+
+This user guide describes both the hardware and software setup needed to acquire data capture from :adi:`AD9119-EBZ <eval-ad9119>` / :adi:`AD9129-EBZ <eval-ad9129>` evaluation board to characterize :adi:`AD9119` / :adi:`AD9129` 11-/14-Bit, 5.7 GSPS, RF Digital-to-Analog Converter.
+
+This guide shows how AD9119-EBZ and AD9129-EBZ works with ADS7-V2 controller board developed by Analog Devices. Link to the previous user guide document is provided for customers who still have the DPG2 controller board.
+
+Typical Setup
+=============
+
+.. container:: centeralign
+
+   \ |image1| *Figure 1. EVAL-AD9119 / EVAL-AD9129 Evaluation Setup*\
+
+
+.. tip::
+
+   Tip: Click on any picture in this guide to open an enlarged version.
+
+
+Helpful Files:
+==============
+
+-  User Guide (for DPG2/DPG3 users): :doc:`AD9119-EBZ </wiki-migration/resources/eval/dpg/ad9119-ebz>` , :doc:`AD9129-EBZ </wiki-migration/resources/eval/dpg/ad9129-ebz>` , :doc:`AD9119-MIX-EBZ </wiki-migration/resources/eval/dpg/ad9119-mix-ebz>` , :doc:`AD9129-MIX-EBZ </wiki-migration/resources/eval/dpg/ad9129-mix-ebz>`
+-  Data Sheet: `AD9119/AD9129 <https://www.analog.com/adi>static/imported-files/data_sheets/AD9119_9129.pdf>`__
+-  Schematics: `AD9119/AD9129-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_Schematic_02-049144-02-b.pdf>`__
+-  Bill of Materials: `AD9119/AD9129 RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_bom_05-049144-02-b2.zip>`__
+-  PCB Gerber files: `AD9119/AD9129-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_Gerber_09-049144-01B.zip>`__
+-  PCB BRD file: `AD9119/AD9129-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_BoardFile_08_049144b.zip>`__
+-  PCB Layout PDF: `AD9119/AD9129-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_PCBLayout_01-049144-01-b.pdf>`__
+
+Software Needed:
+================
+
+-  :doc:`Analysis \| Control \| Evaluation (ACE) Software </wiki-migration/resources/tools-software/ace>`
+-  :doc:`DPG Lite </wiki-migration/resources/tools-software/ace/dpg-lite>` (Recommended; Installed with ACE) or :doc:`DPG Downloader </wiki-migration/resources/eval/dpg/dpgdownloader>`
+
+.. important::
+
+   \ **Known Issue:** ACE may fail to detect HS-DAC boards, details :doc:`here </wiki-migration/resources/tools-software/ace/knownissues>`.
+
+
+Hardware Needed:
+================
+
+-  :adi:`AD9119-EBZ <eval-ad9119>` / :adi:`AD9129-EBZ <eval-ad9129>` Evaluation Boards
+-  ADS7 (:doc:`ADS7-V2EBZ </wiki-migration/resources/eval/ads7-v2>`) Board
+-  :adi:`AD-DAC-FMC`-ADP High-Speed DAC Evaluation Board to FMC Adaptor Board
+-  12V 60W AC/DC Power Supply
+-  (2) 5V 1A Power Supply
+-  PC with ACE and DPG Lite Software Applications
+-  High-Frequency Continuous Wave Generator
+-  Signal/Spectrum Analyzer
+-  USB-A to USB-Mini Cable
+-  USB-A to USB-B Cable
+-  (2) SMA Cables
+-  (4) Banana Plug Cables
+
+Quick Start Guide
+=================
+
+-  Attach the evaluation board to the FMC connector of ADS7-V2 using the AD-DAC-FMC-ADP adapter board. Connect continuous wave generator for clock input to J3, and the DAC output from J1 to a signal/spectrum analyzer. Refer to Figures 1.
+
+   -  Connect ADS-V2 to PC via USB and to a 12V 60W AC/DC power supply. Switch the board ON using S1 beside the connector for 12V supply.
+   -  Connect evaluation board to PC via USB and apply power to evaluation board. The board should draw ~330mA at the 5V supply and ~12mA at the -5V supply when there is no sine input to J3 CLOCK and the board should draw ~620mA at (5V) and ~60mA at (-5V) when sine wave input is applied to J3 CLOCK and DPG Lite is set up.
+   -  Set the clock input to **2.5 GHz and 0 dBm**.
+
+-  Open ACE. The board will automatically be recognized by the software. Otherwise, install the plugin for AD9119/AD9129 evaluation board. From the AD9119/AD9129-EBZ tab, click **“Run Example Startup Routine”**.
+
+   -  The two indicators should light up as shown in Figure 2.
+
+.. container:: centeralign
+
+   \ |image2|\ *Figure 2. ACE Initial Board Configuration Wizard*\
+
+
+-  Double click the AD9119/AD9129 Box to open chip view.
+
+   -  The PLL and DLL should both be locked and the delay cells should be checked. If not, click Read All in the upper left corner of the page. And configure the chip view as per Figure 3.
+
+.. container:: centeralign
+
+   \ |image3|\ *Figure 3. ACE Initial Board Configuration Wizard*\
+
+
+-  Start DPG Lite or DPG Downloader.
+
+   -  Ensure that Evaluation board is equal to AD9119 / AD9129 and **DCO frequency** of around **625 MHz** should be displayed.
+
+-  In DPG Lite or DPG Downloader, from the **Add Generator Waveforms** pulldown menu, select **Single Tone** and apply the settings as shown in Figure 4.
+
+   -  Set **Data Rate** to 2.5 GHz and **Desired Frequency** to 411 MHz.
+   -  Set **DAC resolution** to 11 bits for AD9119 and 14 bits for AD9129. Check the **Unsigned Data** box.
+   -  Select the Single Tone from the **Data Vector** pulldown menu.
+
+.. container:: centeralign
+
+   \ |image4|\ *Figure 4. DPG Lite session*\
+
+
+-  Press the download arrow and then the play button. The FFT plot similar to Figure 5 should appear in the signal/spectrum analyzer.
+
+.. container:: centeralign
+
+   \ |image5|\ *Figure 5. EVAL-AD9119 / AD9129 FFT for Data Rate = 2.5 GHz, Fout = 411 MHz*\
+
+
+Troubleshooting
+===============
+
+This section lists items to check and practices to use when debugging any unexpected performance of a board. If unexpected results occur:
+
+-  Check if the Voltage supply test points of the evaluation board have the correct value.
+-  Check if all (3) blue LEDs on the AD-DAC-FMC-ADP board is lit up. Reconnect the board to the FMC connector of ADS7-V2 if not lit up.
+-  Check if the ADS7-V2 is being supplied properly by 12Vdc adaptor. Some LEDs on the ADS7-V2 should lit up.
+-  Power cycle both the ADS7-V2 and the AD9119 / AD9129 evaluation board.
+-  Check on the Spectrum Analyzer if the DAC clock inputs are properly driven. For 2.5GHz clock, the spectrum analyzer should detect a weak signal at 2.5GHz. If not detected, check properly the clock source and connections.
+-  Disconnect and reconnect the ADS7-V2 and AD9119 / AD9129 evaluation board. Reopen DPG Lite software.
+
+AD91x9-MIX-EBZ and AD91x9-CBLTX-EBZ (Obsolete) Documentation
+============================================================
+
++-------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| Item              | <WRAP>AD9119-MIX-EBZ</WRAP>
+
+AD9129-MIX-EBZ
+
+
+| <WRAP>AD9119-CBLTX-EBZ (Obsolete)</WRAP>
+
+AD9129-CBLTX-EBZ (Obsolete)                                                           |
+
++===================+===================================================================================================================================+===============================================================================================================================+
+| Quick Start Guide | <WRAP>\ :doc:`ad9119-mix-ebz </wiki-migration/resources/eval/dpg/ad9119-mix-ebz>`\ </WRAP>
+
+\ :doc:`ad9129-mix-ebz </wiki-migration/resources/eval/dpg/ad9129-mix-ebz>`
+
+
+| `ad9119/ad9129-cbltx-ebz <https://wiki.analog.com/_media/resources/eval/dpg/user-guide/ad9129-cbltx-ebz.pdf>`__               |
+
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| Schematics        | `ad9119/ad9129-mix-ebz <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-MIX-EBZ_Schematic_02-049256-01-a.pdf>`__                                | `ad9119/ad9129-cbltx-ebz <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-CBLTX-EBZ_Schematic_02-049252-01-a.pdf>`__ |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| Bill of Materials | `ad9119/ad9129-mix-ebz <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-MIX-EBZ_BOM_05-049256-01-a.zip>`__                                      | `ad9119/ad9129-cbltx-ebz <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-CBLTX-EBZ_BOM_05-049252-01-a.zip>`__       |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| PCB Gerber Files  | `ad9119/ad9129-mix-ebz <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-MIX-EBZ_Gerber_09-049256-01A.zip>`__                                    | `ad9119/ad9129-cbltx-ebz <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-CBLTX-EBZ_Gerber_09-049252-01A.zip>`__     |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| PCB BRD File      | `ad9119/ad9129-mix-ebz <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-MIX-EBZ_BoadFile_08_049256a.zip>`__                                     | `ad9119/ad9129-cbltx-ebz <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-CBLTX-EBZ_BoardFile_08_049252a.zip>`__     |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| PCB Layout PDF    | `ad9119/ad9129-mix-ebz <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-MIX-EBZ_PCBLayout_01-049256-01-b.pdf>`__                                | `ad9119/ad9129-cbltx-ebz <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-CBLTX-EBZ_PCBLayout_01-049252-01-a.pdf>`__ |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| S2P               | `S2P <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9129/dac_output_s2p_3g_r_l_clkon.s2p>`__                                 |                                                                                                                               |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| S2P Readme        | `S2P Readme <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9129/dac_output_s2p_readme.txt>`__                                |                                                                                                                               |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+
+Download the `AD9119 / AD9129 Update <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/hsdac_update/hsdacupdate_ad9129_1.0.5031.26742.exe>`__
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_TypicalSetup.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_RunExampleStartupRoutine_EVBView.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_Config_ChipView.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_DPGLite.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_SFDR.png
+   :width: 600px

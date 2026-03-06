@@ -1,0 +1,173 @@
+AD7780 - No-OS Driver for Renesas Microcontroller Platforms
+===========================================================
+
+.. include:: ../ad7780.rst
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD7780 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7780_generic.zip>`__
+   -  `AD7780 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7780_rl78g13.zip>`__
+   -  \**AD7780 Driver: \*\* :git-no-OS:`drivers/adc/ad7780`
+   -  \**PmodAD3 Demo for RL78G14: \*\* :git-no-OS:`Renesas/RL78G14/PmodAD3`
+   -  \**RL78G14 Common Drivers: \*\* :git-no-OS:`Renesas/RL78G14/Common`
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7780 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  PmodAD3
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodAD3 has to be connected to the PMOD1 connector.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad3_rl78g13.jpg
+   :align: center
+
+.. important::
+
+   
+   -  If using 3 external signals (AVDD, AIN and REF) then 2 jumpers on PmodAD3 must be off (JP1 and JP2).
+   -  If using 2 external signals (AIN and REF) or (AIN and AVDD) then 1 jumper on PmodAD3 must be off (JP2 or JP1).
+   -  Be aware that 0.5V ≤ Vref ≤ AVDD and 2.7V ≤ AVDD ≤ 5.25V.
+   -  Be aware (especially when using gain = 128) that the common-mode voltage (AIN(+) + AIN(−)) / 2 must be ≥ 0.5V.
+   
+
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project:
+
+-  sets the update rate=16.7Hz and gain=1 for AD7780;
+-  initiates conversions;
+-  reads the captured data from AD7780 and displays it;
+-  displays some features of the conversion (gain, update rate, conversion status and serial transfer status).
+
+.. important::
+
+   
+   -  Reference voltage is 3300 mV default. If using another reference voltage, please check that the jumpers are properly set on the PmodAD3, and modify the vRef parameter in the ‘AD7780_ConvertToVoltage()’ function from ‘PmodAD3.c’.
+   
+
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad3_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`__
+
+
+Renesas RL78G14 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7780 demonstration project on a Renesas RL78G14 platform using the PmodAD3.
+
+.. _required-hardware-1:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`__
+-  PmodAD3
+
+.. _required-software-1:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+-  The AD7780 demonstration project for the Renesas RL78G14 platform.
+
+.. note::
+
+   The AD7780 demonstration project for the Renesas RL78G14 platform consists of three parts: the **AD7780 Driver**, the **PmodAD3 Demo for RL78G14** and the **RL78G14 Common Drivers**.
+
+   
+   All three parts have to be downloaded.
+
+
+.. _hardware-setup-1:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+A PmodAD3 has to be connected to the PMOD1 connector (see image below).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad3_rl78g14.jpg
+   :align: center
+
+.. important::
+
+   
+   -  If using 3 external signals (AVDD, AIN and REF) then 2 jumpers on PmodAD3 must be off (JP1 and JP2).
+   -  If using 2 external signals (AIN and REF) or (AIN and AVDD) then 1 jumper on PmodAD3 must be off (JP2 or JP1).
+   -  Be aware that 0.5V ≤ Vref ≤ AVDD and 2.7V ≤ AVDD ≤ 5.25V.
+   -  Be aware (especially when using gain = 128) that the common-mode voltage (AIN(+) + AIN(−)) / 2 must be ≥ 0.5V.
+   
+
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project:
+
+-  sets the update rate=16.7Hz and gain=1 for AD7780;
+-  initiates conversions;
+-  reads the captured data from AD7780 and displays it;
+-  displays some features of the conversion (gain, update rate, conversion status and serial transfer status).
+
+.. important::
+
+   
+   -  Reference voltage is 3300 mV default. If using another reference voltage, please check that the jumpers are properly set on the PmodAD3, and modify the vRef parameter in the ‘AD7780_ConvertToVoltage()’ function from ‘PmodAD3.c’.
+   
+
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad3_rl78g14_screen.jpg
+   :align: center
+
+.. _software-project-tutorial-1:
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`__
+
+
+More information
+================
+
+.. include:: ../more-information.rst

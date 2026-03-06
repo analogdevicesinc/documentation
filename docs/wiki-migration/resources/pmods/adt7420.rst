@@ -1,0 +1,16 @@
+The :adi:`ADT7420` is a high accuracy digital temperature sensor offering breakthrough performance over a wide industrial range, housed in an LFCSP package. It contains a band gap temperature reference and a 13-bit ADC to monitor and digitize the temperature to a 0.0625°C resolution. The ADC resolution, by default, is set to 13 bits (0.0625°C). This can be changed to 16 bits (0.0078°C) by setting Bit 7 in the configuration register to 1 (Register Address 0x03). The :adi:`ADT7420` is guaranteed to operate over supply voltages from 2.7 V to 5.5 V. Operating at 3.3 V, the average supply current is typically 210 μA. The :adi:`ADT7420` has a shutdown mode that powers down the device and offers a shutdown current of typically 2 μA. The :adi:`ADT7420` is rated for operation over the −40°C to +150°C temperature range.
+
+Pin A0 and Pin A1 are available for address selection, giving the :adi:`ADT7420` four possible I2C addresses. The CT pin is an open-drain output that becomes active when the temperature exceeds a programmable critical temperature limit. The default critical temperature limit is 147°C. The INT pin is also an open-drain output that becomes active when the temperature exceeds a programmable limit. The INT and CT pins can operate in either comparator or interrupt mode.
+
+Applications
+============
+
+-  RTD and thermistor replacement
+-  Medical equipment
+-  Cold junction compensation
+-  Industrial control and test
+-  Food transportation and storage
+-  Environmental monitoring and HVAC
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/adt7420_pmod_tmp2.jpg
+   :align: center

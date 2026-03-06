@@ -1,0 +1,162 @@
+AD5449 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5449`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5449SDZ <EVAL-AD5449>`
+
+Overview
+--------
+
+The :adi:`AD5449` is a CMOS, 12-bit, dual-channel, current output digital-to-analog converter (DAC). This device operates from a 2.5 V to 5.5 V power supply, making it suited to battery-powered applications and other applications. As a result of being manufactured on a CMOS submicron process, this part offers excellent 4-quadrant multiplication characteristics, with large-signal multiplying bandwidths of 10 MHz. The applied external reference input voltage (VREF) determines the full-scale output current. An integrated feedback resistor (RFB) provides temperature tracking and full-scale voltage output when combined with an external current-to-voltage precision amplifier. This DAC uses a double buffered, 3-wire serial interface that is compatible with SPI®, QSPI™, MICROWIRE™, and most DSP interface standards. In addition, a serial data out pin (SDO) allows daisy-chaining when multiple packages are used. Data readback allows the user to read the contents of the DAC register via the SDO pin. On power-up, the internal shift register and latches are filled with 0s, and the DAC outputs are at zero scale.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5449_sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD5449 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5449 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD5449 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD5449 driver:
+
++-------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| Function                                                                      | Description                                                     |
++===============================================================================+=================================================================+
+| unsigned char AD5449_Init(void)                                               | Initialize the communication with the device.                   |
++-------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| void AD5449_SetRegisterValue(unsigned short command, unsigned short dataWord) | Sends a 16-bit value to the Input Shift Register of the device. |
++-------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| unsigned short AD5449_GetRegisterValue(unsigned char dacChannel)              | Reads 12-bit data form DAC register A or DAC register B.        |
++-------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| void AD5449_Setup(unsigned short setupWord)                                   | Enables specific options available for the device.              |
++-------------------------------------------------------------------------------+-----------------------------------------------------------------+
+
+Downloads
+---------
+
+-  `AD5449 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5449_generic.zip>`__
+-  `AD5449 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5449_rl78g13.zip>`__
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD5449 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  :adi:`EVAL-AD5449SDZ(ADI) <AD5449>`
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+-  `Applilet4 for RL78G13 <https://www.renesas.com/us/en/software-tool/ap4-applilet>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD5449SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD5449SDZ Pin /SYNC (CS)      → YRDKRL78G13 J11 connector Pin 1
+     EVAL-AD5449SDZ Pin SDIN  (MOSI)    → YRDKRL78G13 J11 connector Pin 2
+     EVAL-AD5449SDZ Pin SDO   (MISO)    → YRDKRL78G13 J11 connector Pin 3
+     EVAL-AD5449SDZ Pin SCLK  (SCLK)    → YRDKRL78G13 J11 connector Pin 4
+     EVAL-AD5449SDZ Pin LDAC  (LDAC)    → YRDKRL78G13 J11 connector Pin 9  
+     EVAL-AD5449SDZ Pin /CLR  (CLR)     → YRDKRL78G13 J11 connector Pin 10
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5449_rl78g13.jpg
+   :align: center
+
+Software Setup
+~~~~~~~~~~~~~~
+
+With the **Applilet3 for RL78G13** tool the following peripherals have to be configured:
+
+CSI10 (Clocked Serial Interface 10) – For the AD5449 part and the ST7579 LCD
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+
+-  Transfer mode setting: **Single transfer mode**
+-  Data length setting : **8 bits**
+-  Transfer direction setting: **MSB**
+-  Specification of data timing: **Type 3**
+-  Transfer rate setting – Clock mode: **Internal clock (master)**
+-  Transfer rate setting – Baudrate: **1000000** (bps)
+-  Interrupt setting – Transfer interrupt priority (INTCSI10): **Low**
+-  Uncheck the callback functions.
+
+TM00 (Timer 00) – For the DelayMs() function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configure TM00 as an interval timer:
+
+-  Interval timer setting - Interval value(16 bits): **1** ms
+-  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+
+Watchdog Timer
+^^^^^^^^^^^^^^
+
+Disable the watchdog timer:
+
+-  Choose for the Watchdog timer operation setting: **Unused** option.
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The reference project initializes the device, sets the DAC output to middle scale and continuously writes values to DAC register, generating a signal. The values that are written to the device are also displayed on LCD.
+
+
+|image2|
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/page>rl78g13_software_tutorial
+   :alt: page>rl78g13_software_tutorial
+
+More information
+================
+
+.. image:: https://wiki.analog.com/_media/page>more-information
+   :alt: page>more-information
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5449_rl78g13_screen.jpg
+

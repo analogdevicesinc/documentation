@@ -1,0 +1,30 @@
+ADAS1021 User Guide
+===================
+
+The ADAS1021 is a highly integrated analog front end designed for measurement of patient biopotential information. The primary measurement performed is electro cardiac (ECG) activity, where the ADAS1021 employs dedicated Σ-Δ analog-to-digital converters (ADCs) per channel to acquire and digitize on a lead basis. The signal acquisition is architected to support low noise, diagnostic level measurement in the presence of a variety of interferers.
+
+The ADAS1021 evaluation eco-system is designed to be a versatile development and prototyping vehicle to help customers configure and use the ADAS1021 in their target application.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/1021.png
+   :alt: ADAS1021 Evaluation Board, EVAL-ADAS1021ARDZ
+   :align: center
+   :width: 650px
+
+-  :doc:`Introduction </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/introduction>`
+
+-  :doc:`Hardware Details </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/hardware>`
+
+   -  :doc:`Power Connections </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/hardware/power_connections>`
+   -  :doc:`Connectors </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/hardware/connectors>`
+   -  :doc:`Connecting to an ECG Signal </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/hardware/ecg>`
+   -  :doc:`Arduino Compatible connector P2,3,4,5 </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/hardware/arduino>`
+   -  :doc:`Jumpers and Resistor Options </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/hardware/jumpers>`
+   -  :doc:`Schematics & Useful Links </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/hardware/schematics>`
+
+- :doc:`Software Details </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/software>`
+
+-  :doc:`Firmware Examples </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/software/firmware_examples>`
+-  :doc:`Running The Examples </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/software/running_examples>`
+-  :doc:`Data Capture and Transfer </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/software/data_capture>`
+-  :doc:`GUI Setup </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/software/gui>`
+-  :doc:`Device Configurations </wiki-migration/resources/eval/user-guides/eval-adas1021ardz/software/configs>`

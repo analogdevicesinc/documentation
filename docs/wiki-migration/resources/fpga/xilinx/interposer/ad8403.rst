@@ -1,0 +1,169 @@
+AD8403 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD8403`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD8403SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD8403SDZ <AD8403>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD8403SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_ad8403.jpg
+   :alt: img_ad8403.jpg
+   :align: center
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`__
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD8403SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad8403_-_sdp1z.png
+   :alt: ad8403\_-\_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`AD8403` is a quad-channel, 256-position, digitally controlled variable resistor device. This device performs the same electronic adjustment function as a mechanical potentiometer or variable resistor. The AD8403 contains four independent variable resistors. Each variable resistor offers a completely programmable value of resistance between the A terminal and the wiper or the B terminal and the wiper. The fixed A-to-B terminal resistance of 1 kO, 10 kO, 50 kO, or 100 kO has a ±1% channel-to-channel matching tolerance with a nominal temperature coefficient of 500 ppm/°C.
+
+The **EVAL-AD8403SDZ** evaluation board is designed to help customers quickly prototype new AD8403 circuits and reduce design time. The EVAL-AD8403SDZ incorporates several test circuits to evaluate the AD8403 performance.
+
+More information
+----------------
+
+-  :adi:`AD8403 Product Info <AD8403>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD8403SDZ evaluation board user guide </static/imported-files/user_guides/UG-255.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`__
+-  FMC-SDP adapter board
+-  **EVAL-AD8403** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD8403 Driver:** :git-no-OS:`device_drivers/AD5172`
+   
+   -  **AD8403 Commands:** :git-no-OS:`device_commands/AD5172`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD8403 reference project for Xilinx KC705 FPGA board.
+
++---------------+------------------------------------------------------------------------------------------+
+| Command       | Description                                                                              |
++===============+==========================================================================================+
+| **help?**     | Displays all available commands.                                                         |
++---------------+------------------------------------------------------------------------------------------+
+| **rdac=**     | Load the wiper register with a give value. Accepted values:                              |
+|               | channel:                                                                                 |
+|               | 0 - select RDAC 1 wiper register.                                                        |
+|               | 1 - select RDAC 2 wiper register.                                                        |
+|               | 2 - select RDAC 3 wiper register.                                                        |
+|               | 3 - select RDAC 4 wiper register.                                                        |
+|               | value:                                                                                   |
+|               | 0 .. 255 - value to be written in register.                                              |
++---------------+------------------------------------------------------------------------------------------+
+| **rdac?**     | Read back the value of the wiper register. Accepted values:                              |
+|               | channel:                                                                                 |
+|               | 0 - select RDAC 1 wiper register.                                                        |
+|               | 1 - select RDAC 2 wiper register.                                                        |
+|               | 2 - select RDAC 3 wiper register.                                                        |
+|               | 3 - select RDAC 4 wiper register.                                                        |
++---------------+------------------------------------------------------------------------------------------+
+| **wbuf1?**    | Read back the value of the Wiper Buffer in voltage. (VDD=3.2V)                           |
++---------------+------------------------------------------------------------------------------------------+
+| **shutdown=** | Shutdown connects wiper to B terminal and open circuits the A terminal. Accepted values: |
+|               | channel:                                                                                 |
+|               | 0 - select RDAC 1 wiper register.                                                        |
+|               | 1 - select RDAC 2 wiper register.                                                        |
+|               | 2 - select RDAC 3 wiper register.                                                        |
+|               | 3 - select RDAC 4 wiper register.                                                        |
++---------------+------------------------------------------------------------------------------------------+
+| **shutdown?** | Notify about the state of the selected RDAC. Accepted values:                            |
+|               | channel:                                                                                 |
+|               | 0 - select RDAC 1 wiper register.                                                        |
+|               | 1 - select RDAC 2 wiper register.                                                        |
+|               | 2 - select RDAC 3 wiper register.                                                        |
+|               | 3 - select RDAC 4 wiper register.                                                        |
++---------------+------------------------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`__
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD8403 Digital Potentiometer Linux Driver </wiki-migration/resources/tools-software/linux-drivers/misc/dpot>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`__
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

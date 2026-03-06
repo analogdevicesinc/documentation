@@ -1,0 +1,248 @@
+ADF4106 No-OS Driver
+====================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF4001`
+-  :adi:`ADF4002`
+-  :adi:`ADF4106`
+
+Overview
+--------
+
+The :adi:`ADF4001` frequency synthesizer can be used to implement clock sources for PLLs that require very low noise, stable reference signals. :adi:`Info here <en/products/adf4001.html#product-overview>`.
+
+The :adi:`ADF4002` requency synthesizer is used to implement local oscillators in the up-conversion and down-conversion sections of wireless receivers and transmitters. :adi:`Info here <en/products/adf4002.html#product-overview>`.
+
+The :adi:`ADF4106` requency synthesizer can be used to implement local oscillators in the up-conversion and down-conversion sections of wireless receivers and transmitters. :adi:`Info here <en/products/adf4106.html#product-overview>`.
+
+Markets and Technologies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Communications
+
+ADI No-OS
+---------
+
+The goal of ADI Microcontroller No-OS is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers** which can be used as a base for any microcontroller platform and also **example projects** which are using these drivers on various microcontroller platforms.
+
+For more information about ADI No-OS and supported microcontroller platforms see: :doc:`no-OS </wiki-migration/resources/no-os>`.
+
+ADF4106 ADI No-OS driver
+------------------------
+
+ADF4106 Driver Source Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The source code for the ADF4106 driver:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADF4106 Driver|
+
+   -
+
+   |Implementation of ADF4106 Driver|
+
+In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the ADF4106 driver and have to be implemented:
+
+-  no_os_spi_init() – initializes the communication peripheral,
+-  no_os_spi_write_and_read() – writes and reads data to/from the device,
+-  no_os_spi_remove() – deinitializes the communication peripheral.
+
+And there are two data types that have to be defined:
+
+-  no_os_spi_desc - structure holding the SPI descriptor,
+-  no_os_spi_init_param - structure holding the parameters for SPI initialization.
+
+Example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for SPI Communication APIs|
+
+   -
+
+   |Generic header file for I2C Communication APIs|
+
+ADF4106 Code Driver Documentation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+
+-  `ADF4106 Header file <http://analogdevicesinc.github.io/no-OS/adf4106_8h.html>`__,
+-  `ADF4106 Source file <http://analogdevicesinc.github.io/no-OS/adf4106_8c.html>`__.
+
+ADF4106 Device Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Driver Initialization
+~~~~~~~~~~~~~~~~~~~~~
+
+In order to be able to use the device, you will have to provide the support for the communication protocol as mentioned above. The first API to be called is **adf4106_init**. Make sure that it returns 0, which means that the driver was initialized correctly.
+
+Initialization values example:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |ADF4106 Initialization Values|
+
+Set Frequency
+~~~~~~~~~~~~~
+
+Performed by calling the **adf4106_set_frequency** function.
+
+ADF4106 Driver Initialization Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following snipped of code is used for initializing the driver for an ADF4106 device. :adi:`More information here. <media/en/technical-documentation/user-guides/ug-159.pdf>`
+
+SPI Communication Example
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: C
+
+       // PA10
+       const struct no_os_gpio_init_param gpio_le_init = {
+               .number = 10,
+               .port = 0,
+               .pull = NO_OS_PULL_UP,
+               .platform_ops = &stm32_gpio_ops,
+               .extra = NULL
+       };
+       // PB1
+       const struct no_os_gpio_init_param gpio_le2_init = {
+               .number = 1,
+               .port = 1,
+               .pull = NO_OS_PULL_NONE,
+               .platform_ops = &stm32_gpio_ops,
+               .extra = NULL
+       };
+       // PB2
+       struct no_os_gpio_init_param gpio_ce_init = {
+               .number = 2,
+               .port = 1,
+               .pull = NO_OS_PULL_NONE,
+               .platform_ops = &stm32_gpio_ops,
+               .extra = NULL
+       };
+       // PA5
+       struct no_os_gpio_init_param gpio_ce2_init = {
+               .number = 5,
+               .port = 0,
+               .pull = NO_OS_PULL_NONE,
+               .platform_ops = &stm32_gpio_ops,
+               .extra = NULL
+       };
+       struct adf4106_settings_t adf4106_init_settings =
+       {
+               /** Reference Input Frequency */
+               .ref_in = 10000000,
+               /** PFD max frequency */
+               .pfd_max = 1000000,
+               /** The initial value of the 14 bit Reference Counter register */
+               .ref_counter = 10,
+               /** The width of the anti-backlash pulse, this pulse
+                * ensures that no dead zone is in the PFD transfer function and minimizes
+                * phase noise and reference spurs.
+                */
+               .anti_backlash_width = 0,
+               /** Should be set to zero for Normal operation */
+               .test_mode_bits = 0,
+               /** determines the number of consecutive cycles of phase
+                * delay, that must occur before lock detect is set
+                */
+               .lock_detect_precision = 0,
+
+               /* N Latch */
+               /** a 6 bits counter is supported at ADF4106 */
+               .a_n_counter = 8,
+               /** a 13 bits counter */
+               .b_n_counter = 181,
+               /** determines which charge pump current settings is used */
+               .cp_gain = 0,
+
+               /* Functional/Initialization latch */
+               /** resets the R and N counters */
+               .counter_reset = 0,
+               /** activate power down mode */
+               .power_down1 = 0,
+               /** the type of the MUXOUT output */
+               .muxout_control = 1,
+               /** the polarity of the Phase Detector */
+               .phase_detector_pol = 1,
+               /** the type of the Charge Pump output */
+               .cp_type = 0,
+               /** set the de:sired Fast Lock Mode */
+               .fast_lock_mode = 0,
+               /** how long will be the secondary charge pump current
+                * active, before reverting to the primary current
+                */
+               .timer_counter_control = 0,
+               /** is used when the RF output is stable and the system is
+                * in static state
+                */
+               .current_setting1 = 15,
+               /** is meant to be used when the system is dynamic and in a
+                * state of change (i.ae., when a new output frequency is programmed)
+                */
+               .current_setting2 = 15,
+               /** define the type of the power down */
+               .power_down2 = 0,
+               /** the value of the prescaler */
+               .prescaler_value = 2,
+       };
+
+       /* SPI */
+       adf4106_ip.spi_init = adf4106_spi_ip;
+       /* GPIO */
+       adf4106_ip.gpio_le = gpio_le_init;
+       adf4106_ip.gpio_ce = gpio_ce_init;
+       adf4106_ip.gpio_le2 = gpio_le2_init;
+       adf4106_ip.gpio_ce2 = gpio_ce2_init;
+       /* Device Settings */
+       adf4106_ip.this_device = ID_ADF4106,
+       adf4106_ip.init_method = INIT_LATCH,
+       adf4106_ip.adf4106_st = adf4106_init_settings;
+
+       ret = adf4106_init(&adf4106_desc, adf4106_ip);
+       if (ret)
+           goto error;
+
+       pr_info("Device initialized.\n");
+
+Frequency Setting Procedure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The **adf4106_set_frequency** function call sets the output frequency to 5.8 GHz.
+
+.. code:: C
+
+       pr_info("Setting frequency to 5800MHz.\n");
+       set_f = adf4106_set_frequency(adf4106_desc, 5800000000);
+       printf("Frequency set to %luMHz.\n", (int)(set_f/1000000));
+
+.. |Header file of ADF4106 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf4106/adf4106`.h
+.. |Implementation of ADF4106 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf4106/adf4106`.c
+.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
+.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h
+.. |ADF4106 Initialization Values| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf4106/adf4106_cfg`.h

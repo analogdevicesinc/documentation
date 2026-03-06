@@ -1,0 +1,234 @@
+AD7734 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7732`
+-  :adi:`AD7734`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7732EBZ`
+-  :adi:`EVAL-AD7734EBZ`
+
+Overview
+--------
+
+The :adi:`AD7732` and :adi:`AD7734` are high precision, high throughput analog front ends. True 16-bit peak-to-peak resolution is achievable with total conversion times of 500 µs (2 kHz channel switching) making it ideally suitable for high resolution multiplexing applications.
+
+The parts can be configured via a simple digital interface, which allows users to balance the noise performance against data throughput up to a 15.4 kHz.
+
+The analog front end features two fully differential input channels with unipolar or true bipolar input ranges to ±10 V while operating from a single +5 V analog supply. The parts have an overrange and underrange detection capability and accept an analog input overvoltage to ±16.5 V without degrading the performance of the adjacent channels.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7734.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD7734 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7734 driver can be used exactly as it is provided. There are three functions which are called by the AD7734 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   Driver architecture
+
+
+The implementation of these three functions depends on the used microcontroller.
+
+The following functions are implemented in this version of AD7734 driver:
+
++----------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| Function                                                                                           | Description                                                 |
++====================================================================================================+=============================================================+
+| unsigned char AD7734_Init(void)                                                                    | Initializes AD7734 and checks if the device is present.     |
++----------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| void AD7734_Reset(void)                                                                            | Sends 32 consecutive 1's on SPI in order to reset the part. |
++----------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| unsigned long AD7734_GetRegisterValue(unsigned char regAddress, unsigned char size)                | Reads the value of the selected register.                   |
++----------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| void AD7734_SetRegisterValue(unsigned char regAddress, unsigned long regValue, unsigned char size) | Writes a value to the register.                             |
++----------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| void AD7734_Setup(void)                                                                            | Sets the operating mode of AD7734.                          |
++----------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| unsigned char AD7734_Ready(char ch)                                                                | Reads /RDY bit of Status register.                          |
++----------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+
+Downloads
+---------
+
+-  `AD7734 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7734_generic.zip>`__
+-  `AD7734 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7734_rl78g13.zip>`__
+-  `AD7734 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7734_rx62n.zip>`__
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7734 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`__
+-  :adi:`EVAL-AD7734EBZ`
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`__
+-  `Applilet4 for RL78G13 <https://www.renesas.com/us/en/software-tool/ap4-applilet>`__
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD7734EBZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD7734EBZ External Controller Pin 5 CS   → YRDKRL78G13 J11 connector Pin 1
+     EVAL-AD7734EBZ External Controller Pin 9 DIN  → YRDKRL78G13 J11 connector Pin 2
+     EVAL-AD7734EBZ External Controller Pin 4 DOUT → YRDKRL78G13 J11 connector Pin 3
+     EVAL-AD7734EBZ External Controller Pin 1 SCLK → YRDKRL78G13 J11 connector Pin 4
+     EVAL-AD7734EBZ External Controller Pin 2 DGND → YRDKRL78G13 J11 connector Pin 5
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7734_rl78g13.jpg
+   :align: center
+
+Software Setup
+~~~~~~~~~~~~~~
+
+With the **Applilet3 for RL78G13** tool the following peripherals have to be configured:
+
+CSI10 (Clocked Serial Interface 10) – For the AD7734 part and the ST7579 LCD
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+
+-  Transfer mode setting: **Single transfer mode**
+-  Data length setting : **8 bits**
+-  Transfer direction setting: **MSB**
+-  Specification of data timing: **Type 1**
+-  Transfer rate setting – Clock mode: **Internal clock (master)**
+-  Transfer rate setting – Baudrate: **1000000** (bps)
+-  Interrupt setting – Transfer interrupt priority (INTCSI10): **Low**
+-  Uncheck the callback functions.
+
+TM00 (Timer 00) – For the DelayMs() function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configure TM00 as an interval timer:
+
+-  Interval timer setting - Interval value(16 bits): **1** ms
+-  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+
+Watchdog Timer
+^^^^^^^^^^^^^^
+
+Disable the watchdog timer:
+
+-  Choose for the Watchdog timer operation setting: **Unused** option.
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The demo program samples channel 1. The hex values of the configuration and data registers are displayed on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7734_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`__
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD7734 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`__
+-  :adi:`EVAL-AD7734EBZ (ADI) <EVAL-AD7734EBZ>`
+
+.. _required-software-1:
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`__
+
+.. _hardware-setup-1:
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+An EVAL-AD7734EBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     EVAL-AD7734EBZ External Controller Pin 4 DOUT  →  YRDKRX62N J8 connector Pin 22
+     EVAL-AD7734EBZ External Controller Pin 9 DIN   →  YRDKRX62N J8 connector Pin 19
+     EVAL-AD7734EBZ External Controller Pin 1 SCLK  →  YRDKRX62N J8 connector Pin 20
+     EVAL-AD7734EBZ External Controller Pin 5 CS    →  YRDKRX62N J8 connector Pin 15
+     EVAL-AD7734EBZ External Controller Pin 2 DGND  →  YRDKRX62N J8 connector Pin 4
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7734_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The demo program samples channel 1. The hex values of the configuration and data registers are displayed on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7734_rx62n_screen.jpg
+   :align: center
+
+Software Project Setup
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`__
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`__
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

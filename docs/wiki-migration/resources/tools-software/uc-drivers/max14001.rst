@@ -1,0 +1,382 @@
+MAX14001 - No-OS Driver
+=======================
+
+Supported Devices
+-----------------
+
+-  :adi:`MAX14001`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`MAX14001PMB`
+
+| 
+| ===== Overview ===== The :adi:`MAX14001` is an isolated, single-channel analog-to-digital converter (ADC) with programmable voltage comparator and inrush current control optimized for configurable binary input applications. An integrated isolation of 3.75 kV\ :sub:`RMS` is provided between the binary input side (field-side) and the comparator output/SPI-side (logic-side). The integrated DC-DC converter provides power isolation for the system and powers all field-side circuitry, allowing running of field-side diagnostics even when no input signal is present. The 20-pin SSOP package provides 5.5 mm of creepage and clearance with group II CTI rating.
+
+The :adi:`MAX14001` digitizes the input voltage on the field-side of an isolation barrier and transmits the data across the isolation barrier to the logic-side of the device, where the magnitude of the input voltage is compared to programmable thresholds. The binary comparator output pin is high when the input voltage is above the upper threshold and low when it is below the lower threshold. Response time of the comparator to an input change is less than 150 µs with filtering disabled. With filtering enabled, the comparator uses the moving average of the last 2, 4, or 8 ADC readings. Both filtered and unfiltered ADC readings are available through the 5 MHz SPI port, which is also used to set comparator thresholds and other device configuration.
+
+Applications
+------------
+
+-  High-voltage binary input (12 V to 300 V)
+-  Distribution automation
+-  Substation automation
+-  Industrial control, multi-range, digital input modules with individually isolated inputs
+
+|image1|
+
+.. container:: center
+
+   *<fc #000000>MAX14001PMB1 (with MAX14001 on-board chip) </fc>*
+
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== MAX14001 ADI No-OS driver =====
+
+Driver Source Code
+------------------
+
+The source code for the MAX14001 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of MAX14001 Driver|
+
+   -
+
+   |Implementation of MAX14001 Driver|
+
+The MAX14001 driver also uses the ADI utility library, so make sure you add the necessary files to your project. The source code for the utility library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+| To use the MAX14001 No-OS Driver, you need to provide the specific implementation for the communication APIs as well as the specific data types to be used.
+| If SPI communication is chosen, these are the three functions to be called by the MAX14001 driver and have to be implemented:
+
+.. container:: center box
+
+   
+   +--------------------------------+---------------------------------------------+
+   | Function                       | Description                                 |
+   +================================+=============================================+
+   | **no_os_spi_init()**           | initializes the communication peripheral.   |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_write_and_read()** | writes and reads data to/from the device.   |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_remove()**         | deinitializes the communication peripheral. |
+   +--------------------------------+---------------------------------------------+
+   
+
+
+And these are the two data types that have to be defined:
+
+.. container:: center box
+
+   
+   +--------------------------+----------------------------------------------------------+
+   | Function                 | Description                                              |
+   +==========================+==========================================================+
+   | **no_os_spi_desc**       | structure holding the SPI descriptor.                    |
+   +--------------------------+----------------------------------------------------------+
+   | **no_os_spi_init_param** | structure holding the parameters for SPI initialization. |
+   +--------------------------+----------------------------------------------------------+
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for SPI Communication APIs|
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `MAX14001 Header file <http://analogdevicesinc.github.io/no-OS//max14001_8h.html>`__
+   -  `MAX14001 Source file <http://analogdevicesinc.github.io/no-OS//max14001_8c.html>`__
+   
+
+
+Device Configuration
+--------------------
+
+Driver Initialization
+^^^^^^^^^^^^^^^^^^^^^
+
+| To use the device, you need to provide the support for the communication protocol (SPI) as mentioned above.
+| The first API function to be called is **max14001_init**. Make sure that it returns 0, this indicates a successful driver initialization.
+| === Driver Initial Configuration === After initializing the device, **max14001_init_config** is called, this initializes the device configuration after power-on-reset. This function follows the checking process as described in the configuration flowchart below.
+| |image2|
+
+.. container:: center
+
+   *<fc #000000>Register Programming for Configuration of MAX14001 After Power-On-Reset </fc>*
+
+
+| === Write Enable Register Configuration === Prior to writing to any configuration or verification registers, **max14001_wen** is enabled. After configuring all registers, **max14001_wen** is disabled. The purpose of this function is to keep the settings, and ensure it remains unaffected by any noise on the SPI bus.
+
+.. container:: center box
+
+   
+   ================ =================================================
+   Function         Description
+   ================ =================================================
+   **max14001_wen** Enables or disables writing to the SPI registers.
+   ================ =================================================
+   
+
+
+Reset Options
+^^^^^^^^^^^^^
+
+To reset the device, you may use the following functions:
+
+.. container:: center box
+
+   
+   +-------------------------+------------------------------------------------------------+
+   | Function                | Description                                                |
+   +=========================+============================================================+
+   | **max14001_full_reset** | Full reset; has the same effect as power-on-reset (POR).   |
+   +-------------------------+------------------------------------------------------------+
+   | **max14001_reg_reset**  | Software reset; restores all registers to their POR value. |
+   +-------------------------+------------------------------------------------------------+
+   
+
+
+.. note::
+
+   The **max14001_reg_reset** resets only the SPI registers, while the **max14001_full_reset** acts as the global POR, wherein the DC-DC converter will turn off and field-side will be reset as well as the logic-side (SPI interface).
+
+
+Configuration Commands
+^^^^^^^^^^^^^^^^^^^^^^
+
+| Presented below are the configuration commands available to set the diagnostic conditions, inrush pulse, and other controls.
+| **Enabling FAULT Conditions**
+| There are 8 fault conditions that can assert the :math:`overlineFAULT` signal namely:
+|
+
+.. container:: center box
+
+   
+   +------------------------------+----------------------------------------------------------------------------------+
+   | :math:`overlineFAULT` signal | Condition                                                                        |
+   +==============================+==================================================================================+
+   | **ADC**                      | ADC reading stuck at one value                                                   |
+   +------------------------------+----------------------------------------------------------------------------------+
+   | **INRD**                     | Exceeding specified duty-cycle for the inrush current                            |
+   +------------------------------+----------------------------------------------------------------------------------+
+   | **SPI**                      | Number of bits clocked in while CS was asserted is not an integer multiple of 16 |
+   +------------------------------+----------------------------------------------------------------------------------+
+   | **COM**                      | Field-side communication failure                                                 |
+   +------------------------------+----------------------------------------------------------------------------------+
+   | **CRCL**                     | Field-to-logic-side transmission had 6 consecutive CRC errors reported           |
+   +------------------------------+----------------------------------------------------------------------------------+
+   | **CRCF**                     | Logic-to-field-side transmission had 6 consecutive CRC errors reported           |
+   +------------------------------+----------------------------------------------------------------------------------+
+   | **FET**                      | Input voltage detected without input current                                     |
+   +------------------------------+----------------------------------------------------------------------------------+
+   | **MV**                       | Failed memory validation                                                         |
+   +------------------------------+----------------------------------------------------------------------------------+
+   
+   |
+
+
+In addition, there is an option to make the :math:`overlineFAULT` signal latched or dynamic.
+| You may enable fault conditions to assert the :math:`overlineFAULT` signal with the following functions:
+
+.. container:: center box
+
+   
+   +---------------------------+----------------------------------------------------------------+
+   | Function                  | Description                                                    |
+   +===========================+================================================================+
+   | **max14001_dyen_config**  | Enables or disables dynamic :math:`overlineFAULT` signal.      |
+   +---------------------------+----------------------------------------------------------------+
+   | **max14001_eadc_config**  | Enables or disables ADC :math:`overlineFAULT` signal.          |
+   +---------------------------+----------------------------------------------------------------+
+   | **max14001_einrd_config** | Enables or disables INRD :math:`overlineFAULT` signal.         |
+   +---------------------------+----------------------------------------------------------------+
+   | **max14001_espi_config**  | Enables or disables SPI :math:`overlineFAULT` signal.          |
+   +---------------------------+----------------------------------------------------------------+
+   | **max14001_ecom_config**  | Enables or disables COM :math:`overlineFAULT` signal.          |
+   +---------------------------+----------------------------------------------------------------+
+   | **max14001_ecrcl_config** | Enables or disables CRCL :math:`overlineFAULT` signal.         |
+   +---------------------------+----------------------------------------------------------------+
+   | **max14001_ecrcf_config** | Enables or disables CRCF :math:`overlineFAULT` signal.         |
+   +---------------------------+----------------------------------------------------------------+
+   | **max14001_efet_config**  | Enables or disables FET :math:`overlineFAULT` signal.          |
+   +---------------------------+----------------------------------------------------------------+
+   | **max14001_emv_config**   | Enables or disables MV to assert :math:`overlineFAULT` signal. |
+   +---------------------------+----------------------------------------------------------------+
+   
+   |
+
+
+**Inrush Pulse Configuration**
+| You may configure the inrush pulse settings with the following functions:
+
+.. container:: center box
+
+   
+   +--------------------------+--------------------------------------------------------------------------+
+   | Function                 | Description                                                              |
+   +==========================+==========================================================================+
+   | **max14001_du_config**   | Sets the maximum duty cycle for inrush current over the last 10 seconds. |
+   +--------------------------+--------------------------------------------------------------------------+
+   | **max14001_tinr_config** | Sets inrush time, between 0 ms to 120 ms.                                |
+   +--------------------------+--------------------------------------------------------------------------+
+   | **max14001_iinr_config** | Sets inrush current, between 50 µA to 105 mA.                            |
+   +--------------------------+--------------------------------------------------------------------------+
+   
+   |
+
+
+**Controls Configuration**
+
+
+
+| You may configure other settings with the following functions:
+|
+
+.. container:: center box
+
+   
+   +---------------------------+-------------------------------------------------------------------------+
+   | Function                  | Description                                                             |
+   +===========================+=========================================================================+
+   | **max14001_iraw_config**  | Selects inrush comparator input multiplexer.                            |
+   +---------------------------+-------------------------------------------------------------------------+
+   | **max14001_fast_config**  | Selects FAST inrush mode.                                               |
+   +---------------------------+-------------------------------------------------------------------------+
+   | **max14001_ft_config**    | Controls the number of readings that are averaged in the ADC filter.    |
+   +---------------------------+-------------------------------------------------------------------------+
+   | **max14001_exti_config**  | Connects or disconnects the 70 µA current source to the REFIN pin.      |
+   +---------------------------+-------------------------------------------------------------------------+
+   | **max14001_exrf_config**  | Selects the voltage reference source for the ADC, external or internal. |
+   +---------------------------+-------------------------------------------------------------------------+
+   | **max14001_ibias_config** | Sets bias current between 50 µA to 3.75 mA.                             |
+   +---------------------------+-------------------------------------------------------------------------+
+   
+   |
+
+
+.. note::
+
+   The **max14001_wen** needs to be enabled before any configuration and disabled after all configurations.
+
+
+For the valid corresponding mask or values, refer to the device driver header file.
+| ==== Driver Initialization Example ====
+
+Example Initialization Using Maxim SDK as Platform
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+           int ret; 
+       
+           uint16_t adc, fadc;
+       
+       struct max_spi_init_param spi_extra = {
+           .numSlaves = 1,
+           .polarity = SPI_SS_POL_LOW,
+       };
+       struct max14001_init_param init_params_max14001_adc = {
+           .spi_init.device_id = 1,
+           .spi_init.max_speed_hz = 2000000,
+           .spi_init.chip_select = 0,
+           .spi_init.mode = NO_OS_SPI_MODE_0,
+           .spi_init.bit_order = NO_OS_SPI_BIT_ORDER_LSB_FIRST,
+           .spi_init.platform_ops = &max_spi_ops,
+           .spi_init.extra = &spi_extra,
+       };
+       struct max14001_dev *max14001_adc;
+
+
+       ret = max14001_init(&max14001_adc, init_params_max14001_adc);
+       if (ret)
+           return ret;
+
+       ret = max14001_init_config(&max14001_adc);
+       if (ret)
+           return ret;
+
+       ret = max14001_wen(max14001_adc, true);
+       if (ret)
+           return ret;
+
+       ret = max14001_ibias_config(max14001_adc, 3);
+       if (ret)
+           return ret;
+
+       ret = max14001_wen(max14001_adc, false);
+       if (ret)
+           return ret;
+
+       while(1){
+
+       /* Read ADC register values (10 bits) */
+       ret = max14001_get_data_raw(max14001_adc, &adc);
+       if (ret)
+           return ret;
+
+       /* Read FADC register values (10 bits) */
+       ret = max14001_get_data_filtered(max14001_adc, &fadc);
+       if (ret)
+           return ret;
+
+       MXC_Delay(5000); 
+
+       }// end while
+
+       max14001_remove(max14001_adc);
+       
+       return 0;
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max14001pmb.png
+   :width: 400px
+.. |Header file of MAX14001 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max14001/max14001`.h
+.. |Implementation of MAX14001 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max14001/max14001`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max14001_configuration_flowchart.png
+   :width: 600px

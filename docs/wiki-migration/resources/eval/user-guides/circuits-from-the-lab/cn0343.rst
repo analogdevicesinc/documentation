@@ -1,0 +1,369 @@
+CN0343 Ultrasonic Distance Measurement User Guide
+=================================================
+
+Overview
+--------
+
+The CN0343 is a completely self-contained distance sensor that utilizes an ultrasonic transmitter and sensitive analog receiver in conjunction with a precision analog microcontroller to provide distance measurements. The CN0343 approximate range is from 50cm to 10m with a resolution of about 2cm. Temperature compensation is provided by the integrated temperature sensor and analog-to-digital converter (ADC) contained in the microcontroller.
+
+Hardware Connections
+--------------------
+
+The CN0343 have three connectors:
+
+-  **J1** is power connector
+-  **J2** is RS-485 communication interface connector
+-  **J3** is the MCU JTAG debug interface connector
+
+The connectors position marked in the following CN0343 picture in yellow font.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0343/cn0343_connectors.png
+   :align: center
+
+Power supply Connections
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The CN0343 **J1** connector use for power supply with the :adi:`EVAL-CFTL-6V-PWRZ` , before power on the CN0343 please make sure all the necessary connector connected well and firm.
+
+RS-485 interface connections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **J2** connector in CN0343 is use for the RS-485 communication interface, the pin number of **J2** is marked in the following picture in yellow font, the pin map of **J2** is marked in blue font.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0343/cn0343_rs485.png
+   :align: center
+
+The CN0343 RS-485 interface working at the half-duplex mode, there only need one twisted pair cable to build the RS-485 network.
+
+.. note::
+
+   Please notice: the RS-485 interface has limitation on the total devices number in the same network and cable type and length, for the detail of CN0343 RS-485 interface characteristics please check :adi:`adm3483`\
+
+
+JTAG/SWD connections
+~~~~~~~~~~~~~~~~~~~~
+
+The **J3** connector of CN0343 is use for the ADuC7126 MCU JTAG debug and programming download. The pin number of **J3** is marked in the following picture in blue font.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0343/cn0343_jtag.png
+   :align: center
+
+The CN0343 **J3** JTAG 20pins 0.1 inch pitch connector pin map is compatible with the `SEGGER J-LINK debug probe <https://www.segger.com/products/debug-probes/j-link>`__ , for more detail please check the `SEGGER web site <https://www.segger.com>`__ .
+
+Usage Instructions
+------------------
+
+The CN0343 can be running in standalone mode or connect multiple CN0343 into one RS-485 network to make group measurement.
+
+The CN0343 user interface contained one LCD screen and one buzzer as information output, six tactile button as the user input.
+
+LCD Screen and Buttons User Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The CN0343 LCD have a contrast adjust potentiometer **R1** marked in the following picture as purple font.
+
+The CN0343 have six tactile button, the function of each button marked as red font in the following picture.
+
+.. tip::
+
+   In this chapter the *press button* or *button pressed* event expression means single click the tactile button.
+
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0343/cn0343_usage.png
+   :align: center
+
+.. note::
+
+   If the CN0343 power up with the beep and LCD screen display murky or dull, please adjust **R1** with screwdriver gently to make LCD clear
+
+
+The CN0343 have following of running status:
+
+-  **SPLASH:** when power up the CN0343 will enter the **SPLASH** status, the screen will showing
+
+<code> ANALOG DEVICES EVAL-CN0343-EB1Z </code>
+
+.. tip::
+
+   At the **SPLASH** status the CN0343 will not response any of button press or RS-485 input, please wait for 3 seconds, the CN0343 will enter the **MEASURING** status.
+
+
+-  **MEASURING:** At **MEASURING** status the CN0343 will showing:
+
+::
+
+   Distance: 1.253m
+    Temp: 25.2°C 
+
+The distance and temperature value may different based on the CN0343 working situation.
+
+-  **MENU:** if the **OK** button pressed in **MEASURING:** status the CN0343 will enter the **MENU** status, at the **MENU** status the CN0343 will showing one of following screen:
+
+::
+
+   Calibrate
+       Temperature? 
+
+::
+
+   Set address?
+
+::
+
+   Set baud rate?
+
+::
+
+   Set address?
+
+-  **SETTINGS:** if the **OK** pressed in **MENU** status, the corresponding setting status will be entered, at any of **SETTING** status, the screen will showing a blink cursor, for detail of CN0343 operation please reference the following table:
+
++------------+------------+----------------+----------------------------+-----------------------------------+---+
+|            | **SPLASH** | **MEASURING**  | **MENU**                   | **SETTINGS**                      |   |
++------------+------------+----------------+----------------------------+-----------------------------------+---+
+| **UP**     | none       | none           | previous item              | increase number at cursor         |   |
++------------+------------+----------------+----------------------------+-----------------------------------+---+
+| **DOWN**   | none       | none           | next item                  | decrease number at cursor         |   |
++------------+------------+----------------+----------------------------+-----------------------------------+---+
+| **LEFT**   | none       | none           | previous item              | move cursor left                  |   |
++------------+------------+----------------+----------------------------+-----------------------------------+---+
+| **RIGHT**  | none       | none           | next item                  | move cursor right                 |   |
++------------+------------+----------------+----------------------------+-----------------------------------+---+
+| **OK**     | none       | enter **MENU** | enter selected **SETTING** | save and return to **MENU**       |   |
++------------+------------+----------------+----------------------------+-----------------------------------+---+
+| **CANCEL** | none       | none           | return to **MEASURING**    | don't save and return to **MENU** |   |
++------------+------------+----------------+----------------------------+-----------------------------------+---+
+
+RS-485 Interface
+~~~~~~~~~~~~~~~~
+
+The CN0343 software supported RS-485 address range is 1~255 (*this is not equal to the* :adi:`adm3483` *hardware imitated devices number*).
+
+The CN0343 software supported RS-485 baud rate range is: 75bps~250kbps.
+
+.. important::
+
+   If you use multiple CN0343 in a same RS-485 network, please make sure all the CN0343 and host have same RS-485 baud rate and no address conflict. Because the CN0343 working in the half-duplex RS-485 mode, please make sure there only have one RS-485 device transmit data at a time.
+
+
+The CN0343 will response following command:
+
+::
+
+   xxx query\r\n
+
+the <fc #6495ed>xxx</fc> is the CN0343's decimal address, and <fc #6495ed>\\r\\n</fc> is the return characters.
+
+For example:
+
+::
+
+   109 query
+    
+
+will trigger the CN0343 which have RS-485 address 109 send the measure result data to RS-485 network.
+
+.. important::
+
+   Please don't ignore the space character between address <fc #6495ed>109</fc> and <fc #6495ed>query</fc> command
+
+
+Software Programming
+--------------------
+
+The CN0343 software developed under the `Keil Embedded Development Tools <http://www.keil.com/>`__ and debug with `SEGGER J-Link Debug Probes <https://www.segger.com/products/debug-probes/j-link/>`__, for the detail usage of Keil or J-Link please check above links.
+
+Software development environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After download and install the `Keil Embedded Development Tools for ARM <http://www.keil.com/>`__, open the Keil software IDE.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0343/keil_open.png
+   :align: center
+
+To open the CN0343 source code in Keil IDE please use following steps:
+
+-  Click **open** button
+-  Enter the CN0343 source code folder path
+-  Select the file type filter to **Project files \*.uvproj**
+-  Double click the **V5.0.uvproj**
+
+For the detail of Keil usage please reference to `ARM Product Manuals <http://www.keil.com/support/man_arm.htm>`__.
+
+How to download binary firmware to the CN0343
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After the CN0343 software development, to download the binary firmware to internal flash of ADuC7126 please use following steps:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0343/keil_download.png
+   :align: center
+
+-  Click **build all** button, wait for build finish
+-  Click **load** button, wait for download finish
+
+Software Structure
+~~~~~~~~~~~~~~~~~~
+
+The following is the snapshot of the CN0343 software package files:
+
+::
+
+   V5.0
+   ├── debug
+   │   ├── adcdriver.crf
+   │   ├── addressdialog.crf
+   │   ├── aduc7126bits.crf
+   │   ├── baudratedialog.crf
+   │   ├── buzzerdriver.crf
+   │   ├── calibratetemperaturedialog.crf
+   │   ├── debug.build_log.htm
+   │   ├── debug.sct
+   │   ├── exceptions.crf
+   │   ├── homedialog.crf
+   │   ├── initial.crf
+   │   ├── interrupt.crf
+   │   ├── keydriver.crf
+   │   ├── lcddriver.crf
+   │   ├── main.crf
+   │   ├── message.crf
+   │   ├── options.crf
+   │   ├── pwmdriver.crf
+   │   ├── retarget.crf
+   │   ├── rtostimer.crf
+   │   ├── setdialog.crf
+   │   ├── uartcommand.crf
+   │   ├── uart.crf
+   │   ├── uartdriver.crf
+   │   ├── V4.build_log.htm
+   │   └── wnd.crf
+   ├── JLinkArm_debug.ini
+   ├── JLinkArm_release.ini
+   ├── Packs_debug.htm
+   ├── release
+   │   ├── adcdriver.crf
+   │   ├── addressdialog.crf
+   │   ├── aduc7126bits.crf
+   │   ├── baudratedialog.crf
+   │   ├── buzzerdriver.crf
+   │   ├── calibratetemperaturedialog.crf
+   │   ├── exceptions.crf
+   │   ├── ExtDll.iex
+   │   ├── homedialog.crf
+   │   ├── initial.crf
+   │   ├── interrupt.crf
+   │   ├── keydriver.crf
+   │   ├── lcddriver.crf
+   │   ├── main.crf
+   │   ├── message.crf
+   │   ├── options.crf
+   │   ├── pwmdriver.crf
+   │   ├── RamFunctions.sct
+   │   ├── release.axf
+   │   ├── release.build_log.htm
+   │   ├── release.sct
+   │   ├── retarget.crf
+   │   ├── rtostimer.crf
+   │   ├── setdialog.crf
+   │   ├── uartcommand.crf
+   │   ├── uart.crf
+   │   ├── uartdriver.crf
+   │   └── wnd.crf
+   ├── source
+   │   ├── applications
+   │   │   ├── dialog
+   │   │   │   ├── AddressDialog.cpp
+   │   │   │   ├── BaudRateDialog.cpp
+   │   │   │   ├── CalibrateTemperatureDialog.cpp
+   │   │   │   ├── HomeDialog.cpp
+   │   │   │   ├── SetDialog.cpp
+   │   │   │   └── Wnd.cpp
+   │   │   ├── main.cpp
+   │   │   ├── Message.cpp
+   │   │   ├── Options.cpp
+   │   │   └── UARTCommand.cpp
+   │   ├── bios
+   │   │   ├── ADuC7126Bits.cpp
+   │   │   ├── ADuC712x.s
+   │   │   ├── Exceptions.cpp
+   │   │   ├── Initial.cpp
+   │   │   ├── Interrupt.cpp
+   │   │   ├── Retarget.c
+   │   │   ├── Retarget.cpp
+   │   │   └── UART.cpp
+   │   ├── drivers
+   │   │   ├── ADCDriver.cpp
+   │   │   ├── BuzzerDriver.cpp
+   │   │   ├── KeyDriver.cpp
+   │   │   ├── LCDDriver.cpp
+   │   │   ├── PWMDriver.cpp
+   │   │   ├── RTOSTimer.cpp
+   │   │   └── UARTDriver.cpp
+   │   ├── include
+   │   │   ├── applications
+   │   │   │   ├── Dialog
+   │   │   │   │   ├── AddressDialog.h
+   │   │   │   │   ├── BaudRateDialog.h
+   │   │   │   │   ├── CalibrateTemperatureDialog.h
+   │   │   │   │   ├── HomeDialog.h
+   │   │   │   │   ├── SetDialog.h
+   │   │   │   │   └── Wnd.h
+   │   │   │   ├── Message.h
+   │   │   │   ├── Options.h
+   │   │   │   └── UARTCommand.h
+   │   │   ├── bios
+   │   │   │   ├── ADuC7126Bits.H
+   │   │   │   ├── atomic.h
+   │   │   │   ├── Initial.h
+   │   │   │   ├── Interrupt.h
+   │   │   │   ├── Retarget.h
+   │   │   │   └── UART.h
+   │   │   ├── Drivers
+   │   │   │   ├── ADCDriver.h
+   │   │   │   ├── BuzzerDriver.h
+   │   │   │   ├── KeyDriver.h
+   │   │   │   ├── LCDDriver.h
+   │   │   │   ├── PWMDriver.h
+   │   │   │   ├── RTOSTimer.h
+   │   │   │   └── UARTDriver.h
+   │   │   └── library
+   │   │       └── SafeQueue.h
+   │   └── library
+   │       └── SafeQueue.cpp
+   ├── V5.0.build_log.htm
+   ├── V5.0.uvgui.r
+   ├── V5.0.uvgui_r.bak
+   ├── V5.0.uvgui.rl
+   ├── V5.0.uvgui_rl.bak
+   ├── V5.0.uvgui.RLee4
+   ├── V5.0.uvgui_RLee4.bak
+   ├── V5.0.uvopt
+   ├── V5.0_uvopt.bak
+   ├── V5.0.uvproj
+   └── V5.0_uvproj.bak
+
+Schematic, Bill of Materials, Gerber Files, Source Code
+-------------------------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0343-EB1Z Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0343-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  Gerber Files
+   -  PADS Layout Files
+   -  Bill of Materials
+   -  Source Code
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0343-EB1Z?&v=RevA>`__ to receive all these great benefits and more!
+
+
+*End of Document*

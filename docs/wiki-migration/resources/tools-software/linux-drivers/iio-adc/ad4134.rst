@@ -1,0 +1,261 @@
+AD4134 ADC Linux Driver
+=======================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD4134`
+-  :adi:`AD7134`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD4134`
+-  :adi:`eval-ad7134fmcz`
+-  :adi:`CN0561 <en/design-center/reference-designs/circuits-from-the-lab/cn0561.html>`
+
+HDL Reference Designs
+---------------------
+
+-  :doc:`EVAL-AD4134FMCZ HDL Reference Design </wiki-migration/resources/eval/user-guides/ad4134/hdl>`
+-  :doc:`EVAL-AD7134FMCZ HDL Reference Design </wiki-migration/resources/eval/user-guides/ad713x/hdl>`
+-  :doc:`CN0561 HDL Reference Design </wiki-migration/resources/eval/user-guides/cn0561/hdl>`
+
+Supported FPGA carriers
+-----------------------
+
+-  `Zedboard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`__
+
+Status
+------
+
++-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Source                                                                                  | Mainlined?                                                                             |
++=========================================================================================+========================================================================================+
+| :git-linux:`git <eval-ad7134fmcz-review>`                                               | :git-linux:`No <eval-ad7134fmcz-review>`                                               |
++-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+Files
+-----
+
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function             | File                                                                                                                                                                                                                            |
++======================+=================================================================================================================================================================================================================================+
+| driver               | :git-linux:`drivers/iio/adc/ad4134.c <eval-ad7134fmcz-review/drivers/iio/adc/ad4134.c>`                                                                                                                                         |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| device tree bindings | :git-linux:`Documentation/devicetree/bindings/iio/adc/adi,ad4134.yaml <eval-ad7134fmcz-review/Documentation/devicetree/bindings/iio/adc/adi%2Cad4134.yaml>`                                                                     |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| device tree bindings | :git-linux:`Documentation/devicetree/bindings/iio/adc/adi,ad4134-spi-engine.yaml <eval-ad7134fmcz-review/Documentation/devicetree/bindings/iio/adc/adi%2Cad4134-spi-engine.yaml>`                                               |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree           | :git-linux:`arch/arm/boot/dts/zynq-zed-adv7511-ad4134-16.dts <eval-ad7134fmcz-review/arch/arm/boot/dts/zynq-zed-adv7511-ad4134-16.dts>`                                                                                         |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree           | :git-linux:`arch/arm/boot/dts/zynq-zed-adv7511-ad4134-16CRC.dts <eval-ad7134fmcz-review/arch/arm/boot/dts/zynq-zed-adv7511-ad4134-16CRC.dts>`                                                                                   |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree           | :git-linux:`arch/arm/boot/dts/zynq-zed-adv7511-ad4134-24.dts <eval-ad7134fmcz-review/arch/arm/boot/dts/zynq-zed-adv7511-ad4134-24.dts>`                                                                                         |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree           | :git-linux:`arch/arm/boot/dts/zynq-zed-adv7511-ad4134-24CRC.dts <eval-ad7134fmcz-review/arch/arm/boot/dts/zynq-zed-adv7511-ad4134-24CRC.dts>`                                                                                   |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree           | :git-linux:`arch/arm/boot/dts/zynq-zed-adv7511-ad7134-16.dts <eval-ad7134fmcz-review/arch/arm/boot/dts/zynq-zed-adv7511-ad7134-16.dts>`                                                                                         |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree           | :git-linux:`arch/arm/boot/dts/zynq-zed-adv7511-ad7134-16CRC.dts <eval-ad7134fmcz-review/arch/arm/boot/dts/zynq-zed-adv7511-ad7134-16CRC.dts>`                                                                                   |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree           | :git-linux:`arch/arm/boot/dts/zynq-zed-adv7511-ad7134-24.dts <eval-ad7134fmcz-review/arch/arm/boot/dts/zynq-zed-adv7511-ad7134-24.dts>`                                                                                         |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree           | :git-linux:`arch/arm/boot/dts/zynq-zed-adv7511-ad7134-24CRC.dts <eval-ad7134fmcz-review/arch/arm/boot/dts/zynq-zed-adv7511-ad7134-24CRC.dts>`                                                                                   |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree           | :git-linux:`arch/arm/boot/dts/zynq-zed-adv7511-cn0561-24.dts <eval-ad7134fmcz-review/arch/arm/boot/dts/zynq-zed-adv7511-cn0561-24.dts>`                                                                                         |
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Quick Start Guide
+-----------------
+
+Flash Kuiper Linux to the SD card
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Install Kuiper Linux to the SD card. Step by step guides for imaging :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` are available for :doc:`Linux </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>` and :doc:`Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`.
+
+Configuring the SD Card
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the boot files below or follow the next subsections to get BOOT.BIN, uImage, and devicetree.dtb files.
+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| Eval Board                                                                                               | ADC                                        | ADC data packet | FPGA bitstream                                                                                                                             | device tree                                                                                                                                                            | Linux Image                                                                                                      |
++==========================================================================================================+============================================+=================+============================================================================================================================================+========================================================================================================================================================================+==================================================================================================================+
+| :adi:`EVAL-AD4134`                                                                                       | :adi:`AD4134`                              | 16-bit          | `ad4134_BOOT.BIN.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/ad4134_BOOT.BIN.zip>`__         | `zynq-zed-adv7511-ad4134-16.dtb.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/zynq-zed-adv7511-ad4134-16.dtb.zip>`__       | `uimage.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/uimage.zip>`__ |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :adi:`EVAL-AD4134`                                                                                       | :adi:`AD4134`                              | 16-bit+CRC      | `ad4134_BOOT.BIN.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/ad4134_BOOT.BIN.zip>`__         | `zynq-zed-adv7511-ad4134-16CRC.dtb.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/zynq-zed-adv7511-ad4134-16CRC.dtb.zip>`__ | `uimage.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/uimage.zip>`__ |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :adi:`EVAL-AD4134`                                                                                       | :adi:`AD4134`                              | 24-bit          | `ad4134_BOOT.BIN.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/ad4134_BOOT.BIN.zip>`__         | `zynq-zed-adv7511-ad4134-24.dtb.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/zynq-zed-adv7511-ad4134-24.dtb.zip>`__       | `uimage.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/uimage.zip>`__ |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :adi:`EVAL-AD4134`                                                                                       | :adi:`AD4134`                              | 24-bit+CRC      | `ad4134_BOOT.BIN.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/ad4134_BOOT.BIN.zip>`__         | `zynq-zed-adv7511-ad4134-24CRC.dtb.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/zynq-zed-adv7511-ad4134-24CRC.dtb.zip>`__ | `uimage.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/uimage.zip>`__ |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :adi:`eval-ad7134fmcz`                                                                                   | :adi:`AD7134`                              | 16-bit          | `ad7134_duo_BOOT.BIN.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/ad7134_duo_BOOT.BIN.zip>`__ | `zynq-zed-adv7511-ad7134-16.dtb.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/zynq-zed-adv7511-ad7134-16.dtb.zip>`__       | `uimage.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/uimage.zip>`__ |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :adi:`eval-ad7134fmcz`                                                                                   | :adi:`AD7134`                              | 16-bit+CRC      | `ad7134_duo_BOOT.BIN.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/ad7134_duo_BOOT.BIN.zip>`__ | `zynq-zed-adv7511-ad7134-16CRC.dtb.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/zynq-zed-adv7511-ad7134-16CRC.dtb.zip>`__ | `uimage.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/uimage.zip>`__ |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :adi:`eval-ad7134fmcz`                                                                                   | :adi:`AD7134`                              | 24-bit          | `ad7134_duo_BOOT.BIN.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/ad7134_duo_BOOT.BIN.zip>`__ | `zynq-zed-adv7511-ad7134-24.dtb.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/zynq-zed-adv7511-ad7134-24.dtb.zip>`__       | `uimage.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/uimage.zip>`__ |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :adi:`eval-ad7134fmcz`                                                                                   | :adi:`AD7134`                              | 24-bit+CRC      | `ad7134_duo_BOOT.BIN.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/ad7134_duo_BOOT.BIN.zip>`__ | `zynq-zed-adv7511-ad7134-24CRC.dtb.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/zynq-zed-adv7511-ad7134-24CRC.dtb.zip>`__ | `uimage.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/uimage.zip>`__ |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :adi:`CN0561 <en/design-center/reference-designs/circuits-from-the-lab/cn0561.html>`                     | :adi:`AD7134`                              | 24-bit          | `ad7134_duo_BOOT.BIN.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/ad7134_duo_BOOT.BIN.zip>`__ | `zynq-zed-adv7511-cn0561-24.dtb.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/zynq-zed-adv7511-cn0561-24.dtb.zip>`__       | `uimage.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4134/uimage.zip>`__ |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+
+Follow the **Configuring the SD Card for FPGA Projects** section of the :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` page.
+
+Copy the following files onto the BOOT partition to configure the SD card:
+
+-  **BOOT.BIN**: Binary blob file which includes first stage boot loader and FPGA bitstream.
+-  **devicetree.dtb**: Binary blob containing the specification of what hardware is present in the system.
+-  **uImage**: Linux kernel image is the computer program that provides OS functionality.
+
+Get BOOT.BIN from HDL project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To achieve high performance with AD4134 and similar ADCs, the hardware platform must have an integrated FPGA. To configure the FPGA to properly support them, ADI engineers provide :git-hdl>`__ from which one may use `ad4134_fmc <https::`HDL reference projects </github.com/analogdevicesinc/hdl/tree/main/projects/ad4134_fmc>`, :git-hdl:`projects/ad7134_fmc`, or :git-hdl:`projects/cn0561`.
+
+Follow the build instructions on the :doc:`Building HDL </wiki-migration/resources/fpga/docs/build>` page to build the appropriate HDL project and generate a BOOT.BIN file from that.
+
+Get uImage and devicetree.dtb from Linux project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow the :doc:`Linux build guide </wiki-migration/resources/tools-software/linux-build/generic/zynq>` to build a new Linux kernel image and devicetree blob. After that, replace Kuiper Linux image with the newly built *uImage* and copy the proper .dtb file your platform to the BOOT partition as *devicetree.dtb*.
+
+Adding Linux driver support
+===========================
+
+Enabling the driver
+-------------------
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+.. hint::
+
+   The AD4134 Driver depends on **CONFIG_SPI**
+
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           ...
+           <*>     Industrial I/O support --->
+               --- Industrial I/O support
+               ...
+               Analog to digital converters  ---> 
+                   ...
+                   <*>   Analog Devices AD4134 ADC driver
+                   ...
+               ...
+           ...
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. tip::
+
+   \ **TIP:** An example program whiroot@analog:/sys/bus/iio/devices# ls -lch uses the interface can be found here:
+
+   
+   -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+   
+   |
+
+
+Show device name
+^^^^^^^^^^^^^^^^
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# cat /sys/bus/iio/devices/iio:device0/name
+      adc
+   
+
+
+Show channel scale
+^^^^^^^^^^^^^^^^^^
+
+| **Description:**
+| Scale to be applied to in_voltageX_raw in order to obtain the measured voltage in millivolts
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# cat /sys/bus/iio/devices/iio:device0/in_voltage_scale
+      0.000488281
+   
+
+
+Inspect IIO device sysfs interface.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root@analog:~# ls -l /sys/bus/iio/devices/iio:device0/
+      total 0
+      -rw-r--r-- 1 root root 4096 Feb 27 09:10 ad7134_sync
+      drwxr-xr-x 2 root root    0 Feb 27 11:39 buffer
+      drwxr-xr-x 2 root root    0 Feb 27 11:39 buffer0
+      -r--r--r-- 1 root root 4096 Feb 27 11:39 dev
+      -rw-r--r-- 1 root root 4096 Feb 27 11:39 filter_type
+      -r--r--r-- 1 root root 4096 Feb 27 11:39 filter_type_available
+      -rw-r--r-- 1 root root 4096 Feb 27 14:11 in_voltage_sampling_frequency
+      -r--r--r-- 1 root root 4096 Feb 27 11:39 in_voltage_sampling_frequency_available
+      -rw-r--r-- 1 root root 4096 Feb 27 11:39 in_voltage_scale
+      -r--r--r-- 1 root root 4096 Feb 27 11:39 name
+      -rw-r--r-- 1 root root 4096 Feb 27 14:08 odr_set_freq
+      lrwxrwxrwx 1 root root    0 Feb 27 11:39 of_node -> ../../../../../../../../firmware/devicetree/base/axi/spi@e0006000/adc@0
+      drwxr-xr-x 2 root root    0 Feb 27 11:39 power
+      drwxr-xr-x 2 root root    0 Feb 27 11:39 scan_elements
+      lrwxrwxrwx 1 root root    0 Feb 27 11:39 subsystem -> ../../../../../../../../bus/iio
+      -rw-r--r-- 1 root root 4096 Feb 27 11:39 uevent
+      -r--r--r-- 1 root root 4096 Feb 27 11:39 waiting_for_supplier
+   
+
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`__
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`__
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`__
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`__
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

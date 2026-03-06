@@ -1,0 +1,11 @@
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/supportedplatforms>`
+
+ADAU1450
+========
+
+| 
+| The ADAU1452/ADAU1451/ADAU1450 are automotive qualified audio processors that far exceed the digital signal processing capabilities of earlier SigmaDSP® devices.
+| Because the ADAU1450 does not contain an S/PDIF receiver or transmitter, the SPDIFIN and SPDIFOUT pins are nonfunctional. Additionally, the settings of any registers related to the S/PDIF input or output in the ADAU1450 do not have any effect on the operation of the device.
+| Because the ADAU1450 does not contain ASRCs, the settings of any registers related to the ASRCs in the ADAU1450 do not have any effect on the operation of the device.
+
+More details - :adi:`ADAU1450 <en/products/adau1450.html>`

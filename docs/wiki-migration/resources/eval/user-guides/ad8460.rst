@@ -1,0 +1,184 @@
+**\*AD8460**\ \* HDL Reference Design
+=====================================
+
+Overview
+--------
+
+**\*Some specifications about the board, the chip, etc. Typically the information found on the** :adi:`en/products` **website**\ \*
+
+The AD8460 is a high power, high speed arbitrary waveform driver optimized for large dynamic currents into capacitive loads. It is comprised of a 14-bit high speed DAC, a high-voltage high-current analog driver, and fault monitoring and protection. The AD8460 is ideally suited for demanding applications such as arbitrary waveform generation, programmable power supplies, and LCD/OLED panel formation.
+
+A proprietary high-voltage BCDMOS process and innovative architecture from Analog Devices, Inc., enable this high-performance driver to deliver 1A continuous into a resistive or capacitive load, while typically slewing at 1000 V/μs. The external compensation of AD8460 allow unlimited capacitive load drive. The AD8460 operates from high voltage dual supplies of ±50 V and a single low voltage supply of +5 V. Asymmetrical supply operation is available via full-scale adjustment.
+
+Supported devices
+-----------------
+
+AD8460 Eval Board
+
+Supported carriers
+------------------
+
+`Zedboard FPGA Board <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/>`__
+
+Hardware requirements
+---------------------
+
+\**\* MENTION THESE \**\*
+
+-  Eval AD8460
+-  Other boards for connection like SDP-I-FMC, etc
+-  `Zedboard FPGA Board <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/>`__
+-  Ethernet cable (for network access)
+-  Micro USB to USB Type A for UART access
+-  1x SD card (at least 16GB); follow :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+-  Jumper Wires to tap SPI and Data lines
+
+**\*THIS IS JUST AN EXAMPLE**\ \*
+
+-  :adi:`AD9695-1300EBZ <AD9695>`
+-  `ZCU102 <https://www.xilinx.com/ZCU102>`__
+-  :doc:`AD-SYNCHRONA14-EBZ </wiki-migration/resources/eval/user-guides/ad-synchrona14-ebz>`
+-  :adi:`ADALM2000 (M2K) <en/ADALM2000.html>`
+-  :doc:`ADALM2000 BNC adapter board </wiki-migration/university/tools/m2k/accessories/bnc>`
+-  5 \* SMA to SMA cable
+-  Ethernet cable
+-  1x SD card (at least 16GB); follow :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+-  3 \* 50 Ohm DC to 12Ghz SMA Termination
+-  VADJ of Zedboard must be set to **2.5V**
+-  Jumpers P1 and P2 must be put in (1,2) position
+-  On ZCU102: switch 6 from SW15 must be put in ON position to be able to boot from SD card
+-  Power supply of 12V for the carrier
+
+Block design
+------------
+
+Block diagram
+~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/ad8460_hdl_bd_2.svg
+   :alt: ad8460_hdl_bd_2.svg
+   :width: 800px
+
+Clock scheme **\*IF IT APPLIES**\ \*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Description of components
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configurations
+^^^^^^^^^^^^^^
+
+Limitations
+^^^^^^^^^^^
+
+IP list
+~~~~~~~
+
+I2C connections
+~~~~~~~~~~~~~~~
+
+SPI connections
+~~~~~~~~~~~~~~~
+
+\**\* THIS IS JUST AN EXAMPLE \**\*
+
+======== =============== ==================
+Signal   Zedboard Pinout FMC Pin Equivalent
+======== =============== ==================
+spi_sclk R19             FMC-LA10_P
+spi_sdo  N17             FMC-LA11_P
+spi_sdi  P20             FMC-LA12_P
+spi_cs_n R20             FMC-LA09_P
+======== =============== ==================
+
+GPIOs
+~~~~~
+
+============ =============== ==================
+Signal       Zedboard Pinout FMC Pin Equivalent
+============ =============== ==================
+dac_reset_n  K19             FMC-LA14_P
+data_out[0]  T17             FMC-LA07_N
+data_out[1]  T16             FMC-LA07_P
+data_out[2]  J22             FMC-LA08_N
+data_out[3]  J21             FMC-LA08_P
+data_out[4]  K18             FMC-LA05_N
+data_out[5]  J18             FMC-LA05_P
+data_out[6]  L22             FMC-LA06_N
+data_out[7]  L21             FMC-LA06_P
+data_out[8]  M22             FMC-LA04_N
+data_out[9]  M21             FMC-LA04_P
+data_out[10] P22             FMC-LA03_N
+data_out[11] N22             FMC-LA03_P
+data_out[12] P18             FMC-LA02_N
+data_out[13] P17             FMC-LA02_P
+sync_clk     L18             FMC-CLK0_M2C_P
+============ =============== ==================
+
+CPU/Memory interconnects addresses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+================== ============
+Module             Base Address
+================== ============
+axi_ad8460_dma     0x44000000
+axi_ad8460_pwm_gen 0x44a00000
+================== ============
+
+Interrupts
+~~~~~~~~~~
+
+Building the HDL project
+------------------------
+
+ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must `clone <https::`here </git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>` the HDL repository.
+
+Then go to the **\*PROJECT LOCATION WITHIN HDL (EX: projects/ad8460/zed)**\ \* location and run the make command by typing in your command prompt:
+
+**Linux/Cygwin**
+
+::
+
+   user@analog:~$ cd hdl/projects/ad8460/zed
+   user@analog:~/hdl/projects/ad8460/zed$ make
+
+| Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files.
+| A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
+
+System setup
+------------
+
+**\* Upload a picture of what your setup looks like.
+Attention: hide board labels (e.g., from AssetTiger) and other information that is ADI internal only.**\ \*
+
+\**\* PLESE KEEP THIS WHOLE SECTION AND ADAPT IT TO YOUR PROJECT, ESPECIALLY IF YOU HAVE EXTERNAL CLOCKS OR OTHER SIGNALS \**\*
+
+Connections
+~~~~~~~~~~~
+
+-  How the jumpers/switches should be set on the board/carrier: Zedboard jumper JP6 must be shorted
+
+Resources
+---------
+
+\**\* MENTION THESE \**\*
+
+-  Link to the project source code
+-  Links to the wiki documentation of the IPs that are used in this project
+-  Links to the Linux driver and devicetree source code and wiki documentation
+-  Links to the datasheets/schematics of the boards used in this wiki page
+
+More information
+----------------
+
+-  :doc:`How to prepare an SD card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` with boot files
+-  :doc:`ADI reference designs HDL user guide </wiki-migration/resources/fpga/docs/hdl>`
+-  :doc:`ADI HDL architecture </wiki-migration/resources/fpga/docs/arch>` wiki page
+-  :doc:`How to build an ADI HDL project </wiki-migration/resources/fpga/docs/build>`
+
+Support
+-------
+
+Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
+
+It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.

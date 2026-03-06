@@ -1,0 +1,430 @@
+CN-0287 Software User Guide
+===========================
+
+Overview
+--------
+
+:adi:`CN-0287 <CN0287>` is a completely isolated 4-channel temperature measurement circuit optimized for performance, input flexibility, robustness, and low cost. It supports all types of thermocouples with cold junction compensation and any type of RTD (resistance temperature detector) with resistances up to 4 kΩ for 2-, 3-, or 4-wire connection configurations.
+
+The RTD excitation current are is programmable for optimum noise and linearity performance. RTD measurements achieve 0.1°C accuracy (typical), and Type-K thermocouple measurements achieve 0.05°C typical accuracy because of the 16-bit ADT7310 digital temperature sensor used for cold-junction compensation. The circuit uses a four-channel AD7193 24-bit sigma-delta ADC with on-chip PGA for high accuracy and low noise.
+
+Input transient and overvoltage protection are provided by low leakage transient voltage supressors (TVS) and Schottky diodes. The SPI-compatible digital inputs and outputs are isolated (2500 V rms), and the circuit is operated on a fully isolated power supply.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/cn0287_00_1024_81_.png
+   :alt: cn0287_00_1024_81\_.png
+   :width: 600px
+
+--------------
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  :adi:`EVAL-CN0287-SDPZ` Evaluation Board (**CN-0287 Board**)
+-  :adi:`EVAL-CFTL-6V-PWRZ` **(+6V Power Supply)** or equivalent
+-  `CN0287 Evaluation Software <https://swdownloads.analog.com/cse/cftl/CN0287/1.0.2/CN0287_Evaluation_Software.zip>`__
+-  PC with the following *Minimum Requirements*
+
+   -  Windows XP Service Pack 2 (32-bit)
+   -  USB type A Port
+   -  Processor rated at 1GHz or faster
+   -  512 MB RAM and 500 MB available hard disk space
+
+-  USB type A to USB type mini-B cable
+-  One type of temperature sensor or precision DC signal generator or equivalent
+
+   -  RTD(Resistance Temperature Detector ): PT100, PT1000
+   -  TC(Thermocouple): Type J, Type K, Type T, Type S
+   -  Signal Generator: FLUKE 5700A Calibrator
+
+--------------
+
+General Setup
+-------------
+
+-  The :adi:`EVAL-CN0287-SDPZ` **(CN-0287 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
+-  The :adi:`EVAL-CFTL-6V-PWRZ` **(+6V DC Power Supply)** powers the :adi:`EVAL-CN0287-SDPZ` **(CN-0288 Board)** via the DC barrel jack
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+
+| 
+| |image1|
+
+--------------
+
+Installing the Software
+-----------------------
+
+-  Extract the file **CN0287 SDP Evaluation Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0287 Evaluation Software <https://swdownloads.analog.com/cse/cftl/CN0287/1.0.2/CN0287_Evaluation_Software.zip>`__ to the default directory path **C:\\Program Files\\Analog Devices\\CN0287\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image2|
+
+-  Click **Next** to view the installation review page
+
+|image3|
+
+-  Click **Next** to start the installation
+
+|image4|
+
+-  Upon completion of the installation of the **CN0287 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image5|
+
+-  Press **Next** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image6|
+
+-  Press **Next** to install the SDP Drivers and complete the installation of all software. Click **Finish** when done.
+
+|image7|
+
+--------------
+
+Connecting the Hardware
+-----------------------
+
+| 
+| |image8|
+| *Picture of Hardware Connection*
+| |image9|
+| *Connector Configuration and Jumper*
+
+::
+
+   ***Step 1**. Connect the [[:adi:`CN0287|EVAL-CN0287-SDPZ]](CN0287` Board) to [[:adi:`en/system-demonstration-platform/evaluation/index`.html|EVAL-SDP-CB1Z]](SDP Board) through the 120-pin SMD connector.\\ \\ 
+   ***Step 2**. Do the jumper setting correctly based on the type of temperature sensor for evaluation.\\ \\ 
+   ***Step 3**. Plug the mini-USB side of the cable into the mini-USB connector J1 on [[:adi:`en/system-demonstration-platform/evaluation/index`.html|SDP Board]] and leave the other side of the cable(USB Type A) floated.\\ \\ 
+   ***Step 4**. Connect the sensor correctly by the way shown in the figure "//Connector Configuration and Jumper Placements//".\\ \\ 
+   ***Step 5**. With DC power supply off, plug the [[:adi:`CN0287|EVAL-CFTL-6V-PWRZ]](6V` DC Power Supply)into J2 on [[:adi:`CN0287|CN0287` Board]]. (CN5 is also screw terminal for connecting to 6V power supply by ordinary wire.)\\ \\ 
+   ***Step 6**. Connect the USB-Type-A side of the USB cable to the PC.\\ \\ 
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Software Front Panel
+~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/sw_frontpanel_4.png
+   :width: 600px
+
+-  **Connect to SDP-B Board Button**
+
+   -  When this button is pressed, the SDP-B Board makes a USB connection to the CN0287 Board. A connection to the SDP-B Board must be made to use the software.
+
+-  **Run Button**
+
+   -  When this button is pressed, the SDP-B Board will collect start to acquisition the temperature data continuously based on the other configuration for the same channel.
+
+-  **Step Button**
+
+   -  When this button is pressed, the SDP-B Board will stop to data collection.
+
+-  **Clear Button**
+
+   -  When this button is pressed, the CN0287 Evaluation software will clear the data already collected on the **Temperature Tab** and clear the all the graphs on **Temperature Graph Tab**.
+
+-  **Save Data Button**
+
+   -  When this button is pressed, the CN0287 Evaluation software will save the "history data" of the graph on the **Temperature Graph Tab**.
+
+-  **Control Tabs**
+
+   -  *Configuration Tab*: Clicking this tab brings all the configuration items to the front.
+   -  *Temperature Tab*: Clicking this tab brings the Temperature Data to the front.
+   -  *Temperature Graph Tab*: Clicking this tab brings the Temperature Graphs to the front, showing the plot of temperature vs. time.
+   -  *SW/Version Tab*: Clicking this tab showns the Firmware Version of SDP board the software currently connected with and some additional function.
+
+   |image10|
+
+-  **Configuration Block for All Channels**
+
+   -  All the configuration items.(Will be explained for more details in the following sections)
+
+-  **System Status String Indicator**
+
+   -  This indicator displays a message to the user detailing the current state of the software.
+
+-  **System Status LED Indicator**
+
+   -  This indicator displays the current state of the software in the form of an LED. There are four status LED colors.
+      |image11|\ Inactive
+      |image12|\ Busy
+      |image13|\ Error
+
+--------------
+
+Configuration Tab
+~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/channel_configuration_2.png
+   :align: right
+   :width: 200px
+
+-  **Enable Button**
+-  **Sensor Type Dropdown Menu**
+
+   -  Select the type of the temperature sensor connected with current Channel.
+
+-  **Sensor Wiring Dropdown Menu**
+
+   -  Select the way used to connected the temperature sensor to the daughter board for current Channel.
+
+-  **Advanced Settling Button**
+
+   -  When this button is pressed, a window named **"CH[x] Advanced Settling"** pops up with more detailed settling for channel[x]. ([x] is the channel number with the one value of 1,2,3,4.)
+   -  `CH[x] Advanced Setting pop-up window <https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0287/Advanced Settling_with_notes.png>`__
+
+.. tip::
+
+   \ **NOTE:** Make change based on the default settling on the **Advanced Setting** pop-up window when clearly know the meaning and effect of the configuration. It is recommended to read :adi:`ad7193` Datasheet and :adi:`CN0287` Circuit Note for more details.
+
+
+-  **Schematic Diagram for Current Channel**
+
+   -  This schematic diagram shows the type of the sensor, way of connecting the sensor to the connector and the on-board jumper setting based on the current configuration.
+
+-  **Alarm High** and **Alarm Low** text boxes
+
+   -  Customer could set upper and lower limit temperature threshold by changing value of this text box. The **"Alarm Function"** LED Indicator on the **Temperature Tab** will be turned on when the current temperature goes output of range.
+
+-  **Calibrate Button**
+
+   -  When this button is pressed, a window named **"CH[x] Calibration"**\ pups up.([x] is the channel number with the one value of 1,2,3,4.) Follow the tips on the pop-up window to calibrate the current channel correctly.
+   -  `CH[x] Calibration pop-up window <https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0287/calibration_pop_up_windows.png>`__
+
+--------------
+
+Temperature Tab
+~~~~~~~~~~~~~~~
+
+| |image14|
+
+-  **Temperature(degC)**
+
+   -  The measurement result shown in this text box is temperature in degree Centigrade.
+
+-  **Voltage(mV)**
+
+   -  The measurement result shown in this text box is the voltage on the sensor converted based on the "RAW Data" and current configuration.
+
+-  **RAW Data(Hex)**
+
+   -  The digital result in hex directly read from AD7193.
+
+-  **Sensor Connection**
+
+   -  This LED indicator shows the connection status between sensor and daughter board.
+
+      -  a.: Connection Summary for all the necessary wires used for connection.
+
+         -  "Connection Good!" : All the necessary for current sensor under current way of wiring are connected well.
+         -  "Wire Broken!" At least one of the necessary wire for current sensor under current way of wiring is broken.
+         -  "Channel Disabled!" : Current channel is disabled for measurement and wire connection checking.
+
+      -  b.: Connection Status for each necessary wire for current sensor and way of wiring.
+
+         -  "Good!": This wire is connected well to the daughter board.
+         -  "Broken": This wire is broken.
+         -  "Unused!": This wire is not need to be connected under the current sensor type and way of wiring.
+         -  "Unknown": The software can't judge the connection status.
+
+-  **Alarm Function** LED Indicator
+
+   -  In Range!: the current temperature is in the range defined by **"High Alarm"** and **"Low Alarm"** on the **Configuration Tab**.
+   -  High Alarm !!: the current temperature is higher than the **"High Alarm"** value on the **Configuration Tab**.
+   -  Low Alarm !! the current temperature is lower than the **"Low Alarm"** value on the **Configuration Tab**.
+
+| 
+
+--------------
+
+Temperature Graph Tab
+~~~~~~~~~~~~~~~~~~~~~
+
+| |image15|
+
+-  **CH [x]**: Channel Number of the graph below.
+-  **This text indicator** shows the digital value of current temperature measurement result.
+-  **This Graph** shows the current temperature vs time.
+-  **This line shown on the graph** is the upper-limit temperature threshold configured in **"High Alarm"** text box on the **Configuration Tab**.
+-  **This line shown on the graph** is the lower-limit temperature threshold configured in **"Low Alarm"** text box on the **Configuration Tab**.
+
+--------------
+
+Establishing a USB Connection Link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Follow the instructions to properly install the software and connect the hardware as described in the previous sections.
+-  Open the file named **CN0287.exe** in the installation directory.
+
+.. note::
+
+   \ **NOTE:** If the software was installed to the default location it will be found at
+
+   **C:\\Program Files\\Analog Devices\\CN0287\\CN0287.exe**\
+
+
+\* Select the connector to use from the **SDP Connector Dropdown Menu**.
+-  Click the **Connect Button**. A window with a progress bar will load.
+
+|image16|
+
+-  Upon success, the **System Status String Indicator** will display *SDP-B Ready to Acquire Data*
+
+--------------
+
+Make Advanced Settling
+~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Set the *Sensor Type*, *Sensor Wiring* correctly based on the current application.
+-  Click *Advanced Settling Button* for the selected channel.
+-  Make proper settings on the pop-up window.
+-  Click "OK" to activate the current setting.
+
+.. tip::
+
+   **NOTE** If click "Cancel", the Advanced Setting process just made would be ignored and no effect acts on the measurement result.
+
+
+--------------
+
+General Flow to Start or Stop Acquisition
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Select the *Sensor Type* and *Sensor Wiring*.
+-  Check the *Schematic Diagram* to guarantee the wiring and jumper setting are correct.
+-  Make the *Advanced Setting* and *Calibrate* if necessary.
+-  Switch to the **Temperature Tab** and Click *Run Button* to Start Acquisition.
+-  See the measurement result on **Temperature Tab**.
+-  Click the *Stop Button* to Stop the Acquisition.
+
+--------------
+
+Establishing a ADC Calibration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Set the *Sensor Type*, *Sensor Wiring* correctly based on the current application.
+-  **Made Advanced Setting** if necessary.
+-  Click *Calibrate Button* for the selected channel.
+-  Do the following actions on the pop-up window.
+
+   -  Select *ADC Calibration* on the pop-up window.
+   -  Click *Zerosacle Calibrate* and wait for 1 second.
+   -  Click *Fullscale Calibrate* and wait for 1 second.
+   -  Click *OK* to activate the current calibration parameters.
+
+.. tip::
+
+   **NOTE** If click *Cancel*, the calibration process just did would be ignored and no effect acts on the measurement result.
+
+
+--------------
+
+Establishing a System Calibration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Set the *Sensor Type*, *Sensor Wiring* correctly based on the current application.
+-  **Made Advanced Setting** if necessary.
+-  Click *Calibrate Button* for the selected channel.
+-  Do the following actions on the pop-up window.
+
+   -  Select *System Calibration* on the pop-up window.
+   -  Add Zeroscale calibration signal on the hardware and enter the same value into *Zeroscale Value text box*.
+   -  Click *Zerosacle Calibrate* and wait for 1 second.
+   -  Add Fullscale calibration signal on the hardware and enter the same value into *Fullscale Value test box*.
+   -  Click *Fullscale Calibrate* and wait for 1 second.
+   -  Click *OK* to activate the current calibration parameters.
+
+.. tip::
+
+   **NOTE** If click *Cancel*, the calibration process just did would be ignored and no effect acts on the measurement result.
+
+
+--------------
+
+Save Current Configuration or Calibration Parameters to the Customer Default Value
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  **Make Advanced Setting** or **Calibration** based on the current application.
+-  Switch to **SW/Version Info Tab**.
+-  Click *Save into EEPROM* to store the current configuration changes and calibration parameters into on-board EEPROM.
+
+.. tip::
+
+   \ **NOTE:** The configurations and calibration parameters will be the customer default value and uploaded by the software automatically from EEPROMwhen the new connection with daughter board happens.
+
+
+--------------
+
+Recover to the Factory Default Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Switch to the **SW/Version Info Tab**.
+-  Click **Recover to Default Button**, to recover the factory default configuration.
+
+.. tip::
+
+   \ **NOTE:** This function is used to recover the board from some unexpected condition by mis-operations.
+
+
+--------------
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0287-SDPZ?&v=RevA>`__ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/hardware_connection_with_label.png
+   :width: 700px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_1.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_2.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_3.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_4.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_5.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/software_installation_6.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/hardware_connection_with_label.png
+   :width: 650px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0287/jumpersetting.png
+   :width: 650px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/software_swversion_tab.png
+   :width: 300px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/cn0272-software-inactive.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/cn0272-software-busy.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/cn0272-software-error.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/channeltemperature_with_label.png
+   :width: 200px
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/sw_frontpanel_temepraturegraphtab_withlabel.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/cn0272-software-wait.png

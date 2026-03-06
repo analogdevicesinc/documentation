@@ -1,0 +1,62 @@
+AD5758 + ADP1031 Eight Channel Analog Output Module - Demonstration Platform
+============================================================================
+
+.. image:: https://wiki.analog.com/_media/resources/demo/reference-designs/demo-ad5758-ao8z/demo-ad5758-ao87angle-web.gif
+
+The DEMO-AD5758-AO8Z Board demonstrates a system-level concept where the :adi:`AD5758` and the :adi:`ADP1031` are used together to implement a compact, eight-channel, channel-to-channel isolated, analog output (AO) module. The module is designed to dissipate less than 2W worst-case power dissipation over a wide range of operating condition.
+
+.. warning::
+
+   
+   High Voltage Capability
+   ~~~~~~~~~~~~~~~~~~~~~~~
+   
+   | Take appropriate care when using this demo board at high voltages. Do not rely on the PCB for safety functions as it has not been hipot tested\ :sup:`1`\ nor has it been certified for safety.
+   | :sup:`1`\ *Also known as high potential or dielectric withstanding voltage tested.*
+
+
+.. note::
+
+   The purpose of this board is to demonstrate how a system-level approach allows a compact low power solution to be developed. For bench and performance evaluation, please use the :adi:`EVAL-AD5758` and the :adi:`ADP1031CP-EVALZ` evaluation kits.
+
+
+Table of Contents
+=================
+
+-  :doc:`Introduction </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/introduction>`
+-  :doc:`System Specifications </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/specifications>`
+
+   -   :doc:`Absolute Max Ratings </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/specifications>`
+   -   :doc:`Performance Specifications </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/specifications>`
+
+      -   :doc:`Input Voltage </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/specifications>`
+      -   :doc:`Voltage Output Mode </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/specifications>`
+      -   :doc:`Current Output Mode </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/specifications>`
+      -   :doc:`Power Dissipation </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/specifications>`
+
+-  :doc:`Hardware Details </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/hardware_details>`
+
+   -   :doc:`Hardware Description </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/hardware_details>`
+   -   :doc:`Schematics </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/hardware_details>`
+   -   :doc:`Layout </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/hardware_details>`
+   -   :doc:`Bill of Materials </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/hardware_details>`
+
+-  :doc:`Software Details </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/software>`
+
+   -   :doc:`Firmware Installation </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/software>`
+   -   :doc:`GUI installation </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/software>`
+   -   :doc:`Source Code </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/software>`
+
+-  :doc:`Using the Demo Board </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/demonstration_guide>`
+
+   -   :doc:`Connecting the Board </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/demonstration_guide>`
+   -   :doc:`DPC ON vs. DPC OFF Demonstration </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/demonstration_guide>`
+
+-  :doc:`Legal terms and conditions </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/legal_terms_and_conditions>`
+
+--------------
+
+Navigation
+==========
+
+:doc:`Next (Introduction) </wiki-migration/resources/demo/reference-designs/demo-ad5758-ao8z/introduction>`
